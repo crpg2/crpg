@@ -8944,9 +8944,9 @@
     "name": "Jagged Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 130,
-    "weight": 1.53,
-    "tier": 0.238479391,
+    "price": 16613,
+    "weight": 1.43,
+    "tier": 10.1492453,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8958,18 +8958,41 @@
         "stackAmount": 0,
         "length": 141,
         "balance": 0.0,
-        "handling": 76,
+        "handling": 75,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 37,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 53
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 50
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 141,
+        "balance": 0.61,
+        "handling": 73,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 37,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 97,
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
       },
       {
         "class": "TwoHandedPolearm",
@@ -8978,8 +9001,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 141,
-        "balance": 0.69,
-        "handling": 75,
+        "balance": 0.61,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -8987,12 +9010,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 37,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 90
+        "thrustSpeed": 97,
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
       }
     ]
   },
@@ -9001,9 +9024,9 @@
     "name": "Narrow Long Headed Spear",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 131,
+    "price": 2098,
     "weight": 2.17,
-    "tier": 0.241417617,
+    "tier": 2.96025968,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9021,12 +9044,35 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 82,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
         "swingSpeed": 24
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 186,
+        "balance": 0.05,
+        "handling": 61,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 25,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 71
       },
       {
         "class": "TwoHandedPolearm",
@@ -9044,11 +9090,11 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
         "swingSpeed": 71
       }
     ]
@@ -9058,9 +9104,9 @@
     "name": "Weighted Steppe Spear",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 99,
+    "price": 864,
     "weight": 1.73,
-    "tier": 0.1517145,
+    "tier": 1.58801985,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9078,12 +9124,35 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
         "swingSpeed": 31
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 168,
+        "balance": 0.19,
+        "handling": 61,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 19,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 93,
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 75
       },
       {
         "class": "TwoHandedPolearm",
@@ -9101,34 +9170,11 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 93,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 75
-      },
-      {
-        "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_bracing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 168,
-        "balance": 0.19,
-        "handling": 61,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "WideGrip",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 7,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
         "swingSpeed": 75
       }
     ]
@@ -9138,9 +9184,9 @@
     "name": "Fine Steel Leaf Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 189,
+    "price": 4023,
     "weight": 2.01,
-    "tier": 0.3912284,
+    "tier": 4.468119,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9160,12 +9206,37 @@
           "CanDismount",
           "MissileWithPhysics"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 24,
+        "swingDamageType": "Cut",
         "swingSpeed": 39
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 179,
+        "balance": 0.33,
+        "handling": 69,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount",
+          "CanDismount",
+          "MissileWithPhysics"
+        ],
+        "thrustDamage": 25,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 92,
+        "swingDamage": 24,
+        "swingDamageType": "Cut",
+        "swingSpeed": 80
       },
       {
         "class": "TwoHandedPolearm",
@@ -9185,11 +9256,11 @@
           "CanDismount",
           "MissileWithPhysics"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 24,
+        "swingDamageType": "Cut",
         "swingSpeed": 80
       }
     ]
@@ -12974,9 +13045,9 @@
     "name": "Highland War Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 172,
+    "price": 2022,
     "weight": 1.85,
-    "tier": 0.3501738,
+    "tier": 2.888501,
     "requirement": 0,
     "flags": [
       "NotStackable"
@@ -12998,12 +13069,37 @@
           "CanDismount",
           "MissileWithPhysics"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
         "swingSpeed": 28
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 181,
+        "balance": 0.12,
+        "handling": 61,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount",
+          "CanDismount",
+          "MissileWithPhysics"
+        ],
+        "thrustDamage": 24,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 92,
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 73
       },
       {
         "class": "TwoHandedPolearm",
@@ -13023,11 +13119,11 @@
           "CanDismount",
           "MissileWithPhysics"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
         "swingSpeed": 73
       }
     ]
@@ -13730,9 +13826,9 @@
     "name": "Short Militia Spear",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 82,
+    "price": 500,
     "weight": 1.94,
-    "tier": 0.101655178,
+    "tier": 1.02540171,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -13750,12 +13846,35 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 83,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 14,
+        "swingDamageType": "Blunt",
         "swingSpeed": 25
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 175,
+        "balance": 0.08,
+        "handling": 60,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 16,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 91,
+        "swingDamage": 14,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 72
       },
       {
         "class": "TwoHandedPolearm",
@@ -13773,11 +13892,11 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 91,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 14,
+        "swingDamageType": "Blunt",
         "swingSpeed": 72
       }
     ]
@@ -19631,9 +19750,9 @@
     "name": "Short Simple Raider Spear",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 104,
-    "weight": 2.11,
-    "tier": 0.166319653,
+    "price": 2329,
+    "weight": 1.01,
+    "tier": 3.16902637,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -19645,18 +19764,41 @@
         "stackAmount": 0,
         "length": 173,
         "balance": 0.0,
-        "handling": 60,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 20
+        "thrustSpeed": 93,
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 45
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 173,
+        "balance": 0.51,
+        "handling": 70,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 19,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 100,
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
       },
       {
         "class": "TwoHandedPolearm",
@@ -19665,8 +19807,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 173,
-        "balance": 0.0,
-        "handling": 57,
+        "balance": 0.51,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -19674,12 +19816,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 70
+        "thrustSpeed": 100,
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
       }
     ]
   },
@@ -19688,9 +19830,9 @@
     "name": "Broad Leaf Shaped Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 276,
-    "weight": 1.51,
-    "tier": 0.5914234,
+    "price": 4880,
+    "weight": 1.29,
+    "tier": 5.02248573,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -19702,18 +19844,18 @@
         "stackAmount": 0,
         "length": 149,
         "balance": 0.0,
-        "handling": 69,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 3,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 42
+        "thrustSpeed": 90,
+        "swingDamage": 24,
+        "swingDamageType": "Cut",
+        "swingSpeed": 47
       },
       {
         "class": "TwoHandedPolearm",
@@ -19722,8 +19864,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 149,
-        "balance": 0.41,
-        "handling": 66,
+        "balance": 0.53,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -19731,12 +19873,35 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
-        "swingDamage": 3,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 82
+        "thrustSpeed": 98,
+        "swingDamage": 24,
+        "swingDamageType": "Cut",
+        "swingSpeed": 85
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 149,
+        "balance": 0.53,
+        "handling": 70,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 27,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 98,
+        "swingDamage": 24,
+        "swingDamageType": "Cut",
+        "swingSpeed": 85
       }
     ]
   },
@@ -19745,9 +19910,9 @@
     "name": "Jagged Fine Steel Spear",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 172,
+    "price": 4696,
     "weight": 1.87,
-    "tier": 0.349284947,
+    "tier": 4.90771627,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -19765,12 +19930,35 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 19,
+        "swingDamageType": "Blunt",
         "swingSpeed": 44
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 161,
+        "balance": 0.47,
+        "handling": 71,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 26,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 94,
+        "swingDamage": 19,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 84
       },
       {
         "class": "TwoHandedPolearm",
@@ -19788,11 +19976,11 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 19,
+        "swingDamageType": "Blunt",
         "swingSpeed": 84
       }
     ]
@@ -23781,9 +23969,9 @@
     "name": "Knob Headed Spear with Frills",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 128,
-    "weight": 1.82,
-    "tier": 0.233323961,
+    "price": 4161,
+    "weight": 1.19,
+    "tier": 4.561495,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23795,18 +23983,41 @@
         "stackAmount": 0,
         "length": 174,
         "balance": 0.0,
-        "handling": 64,
+        "handling": 71,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 29
+        "thrustSpeed": 90,
+        "swingDamage": 19,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 41
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 174,
+        "balance": 0.4,
+        "handling": 68,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 24,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 98,
+        "swingDamage": 19,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
       },
       {
         "class": "TwoHandedPolearm",
@@ -23815,8 +24026,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 174,
-        "balance": 0.14,
-        "handling": 61,
+        "balance": 0.4,
+        "handling": 68,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -23824,12 +24035,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 74
+        "thrustSpeed": 98,
+        "swingDamage": 19,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
       }
     ]
   },
@@ -23838,9 +24049,9 @@
     "name": "Long Thamaskene Tipped Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 154,
+    "price": 1976,
     "weight": 1.96,
-    "tier": 0.30363217,
+    "tier": 2.84541965,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23858,12 +24069,35 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 83,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
         "swingSpeed": 25
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 188,
+        "balance": 0.07,
+        "handling": 61,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 24,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 91,
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 71
       },
       {
         "class": "TwoHandedPolearm",
@@ -23881,11 +24115,11 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 91,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 16,
+        "swingDamageType": "Blunt",
         "swingSpeed": 71
       }
     ]
@@ -23895,9 +24129,9 @@
     "name": "Knob Headed Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 125,
-    "weight": 1.82,
-    "tier": 0.22532472,
+    "price": 1391,
+    "weight": 1.28,
+    "tier": 2.24278545,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23909,18 +24143,18 @@
         "stackAmount": 0,
         "length": 170,
         "balance": 0.0,
-        "handling": 64,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 30
+        "thrustSpeed": 90,
+        "swingDamage": 17,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 40
       },
       {
         "class": "TwoHandedPolearm",
@@ -23929,8 +24163,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 170,
-        "balance": 0.16,
-        "handling": 61,
+        "balance": 0.38,
+        "handling": 67,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -23938,12 +24172,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 74
+        "thrustSpeed": 97,
+        "swingDamage": 17,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
       }
     ]
   },
@@ -27362,9 +27596,9 @@
     "name": "Triangular Headed Spear",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 88,
+    "price": 898,
     "weight": 1.83,
-    "tier": 0.118593432,
+    "tier": 1.63510907,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -27382,12 +27616,35 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 82,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 15,
+        "swingDamageType": "Blunt",
         "swingSpeed": 18
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 190,
+        "balance": 0.0,
+        "handling": 54,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 22,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 91,
+        "swingDamage": 15,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 66
       },
       {
         "class": "TwoHandedPolearm",
@@ -27405,34 +27662,11 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 91,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 66
-      },
-      {
-        "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_bracing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 190,
-        "balance": 0.0,
-        "handling": 54,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "WideGrip",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 7,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 15,
+        "swingDamageType": "Blunt",
         "swingSpeed": 66
       }
     ]
@@ -29996,9 +30230,9 @@
     "name": "Simple Commoner Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 112,
-    "weight": 1.83,
-    "tier": 0.189396262,
+    "price": 4476,
+    "weight": 1.17,
+    "tier": 4.76752329,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30010,18 +30244,41 @@
         "stackAmount": 0,
         "length": 167,
         "balance": 0.0,
-        "handling": 65,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 32
+        "thrustSpeed": 91,
+        "swingDamage": 17,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 46
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 167,
+        "balance": 0.51,
+        "handling": 70,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 24,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 99,
+        "swingDamage": 17,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
       },
       {
         "class": "TwoHandedPolearm",
@@ -30030,8 +30287,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 167,
-        "balance": 0.21,
-        "handling": 62,
+        "balance": 0.51,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -30039,12 +30296,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 76
+        "thrustSpeed": 99,
+        "swingDamage": 17,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
       }
     ]
   },
@@ -30053,9 +30310,9 @@
     "name": "Simple Short Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 71,
-    "weight": 1.89,
-    "tier": 0.0696537,
+    "price": 1045,
+    "weight": 1.08,
+    "tier": 1.8293469,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30067,18 +30324,41 @@
         "stackAmount": 0,
         "length": 156,
         "balance": 0.0,
-        "handling": 63,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 5,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 83,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 29
+        "thrustSpeed": 92,
+        "swingDamage": 14,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 49
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 156,
+        "balance": 0.58,
+        "handling": 70,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 16,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 99,
+        "swingDamage": 14,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 87
       },
       {
         "class": "TwoHandedPolearm",
@@ -30087,8 +30367,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 156,
-        "balance": 0.17,
-        "handling": 59,
+        "balance": 0.58,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -30096,12 +30376,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 5,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 75
+        "thrustSpeed": 99,
+        "swingDamage": 14,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 87
       }
     ]
   },
@@ -30110,9 +30390,9 @@
     "name": "Tall Tipped Long Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 79,
+    "price": 633,
     "weight": 2.07,
-    "tier": 0.09178169,
+    "tier": 1.24650192,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30130,12 +30410,35 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 79,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 15,
+        "swingDamageType": "Blunt",
         "swingSpeed": 16
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 208,
+        "balance": 0.0,
+        "handling": 49,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 22,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 88,
+        "swingDamage": 15,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 56
       },
       {
         "class": "TwoHandedPolearm",
@@ -30153,11 +30456,11 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 15,
+        "swingDamageType": "Blunt",
         "swingSpeed": 56
       }
     ]
@@ -30167,9 +30470,9 @@
     "name": "Tall Tipped Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 77,
+    "price": 405,
     "weight": 2.1,
-    "tier": 0.0858896151,
+    "tier": 0.85319066,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30187,12 +30490,35 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 79,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 15,
+        "swingDamageType": "Blunt",
         "swingSpeed": 16
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 199,
+        "balance": 0.0,
+        "handling": 49,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 19,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 88,
+        "swingDamage": 15,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 58
       },
       {
         "class": "TwoHandedPolearm",
@@ -30210,34 +30536,11 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 58
-      },
-      {
-        "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_bracing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 199,
-        "balance": 0.0,
-        "handling": 49,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "WideGrip",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 7,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
+        "swingDamage": 15,
+        "swingDamageType": "Blunt",
         "swingSpeed": 58
       }
     ]
