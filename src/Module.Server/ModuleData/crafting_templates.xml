@@ -1683,6 +1683,78 @@
       <UsablePiece piece_id="crpg_wide_leaf_spear_t4_pommel" />
     </UsablePieces>
   </CraftingTemplate>
+    <CraftingTemplate id="crpg_Spear4DMode" item_type="Polearm" modifier_group="polearm" item_holsters="polearm_back:polearm_back_2:polearm_back_3:polearm_back_4" default_item_holster_position_offset="0,0,-0.30" use_weapon_as_holster_mesh="true">
+    <PieceDatas>
+      <PieceData piece_type="Handle" build_order="0" />
+      <PieceData piece_type="Guard" build_order="1" />
+      <PieceData piece_type="Blade" build_order="2" />
+      <PieceData piece_type="Pommel" build_order="-1" />
+    </PieceDatas>
+    <WeaponDescriptions>
+      <WeaponDescription id="crpg_OneHandedPolearm" />
+      <WeaponDescription id="crpg_TwoHandedPolearm" />
+      <WeaponDescription id="crpg_SpearDoubleThrust" />
+    </WeaponDescriptions>
+    <StatsData>
+      <StatData stat_type="Weight" max_value="7.0" />
+      <StatData stat_type="WeaponReach" max_value="300" />
+      <StatData stat_type="ThrustSpeed" max_value="200" />
+      <StatData stat_type="SwingSpeed" max_value="200" />
+      <StatData stat_type="ThrustDamage" max_value="500" />
+      <StatData stat_type="SwingDamage" max_value="500" />
+      <StatData stat_type="Handling" max_value="200" />
+    </StatsData>
+    <UsablePieces>
+    <UsablePiece piece_id="crpg_western_spear_2_t2_blade" />
+    <UsablePiece piece_id="crpg_western_spear_2_t2_handle" />
+    <UsablePiece piece_id="crpg_western_spear_3_t3_blade" />
+    <UsablePiece piece_id="crpg_western_spear_3_t3_guard" />
+    <UsablePiece piece_id="crpg_western_spear_3_t3_handle" />
+    <UsablePiece piece_id="crpg_western_spear_4_t3_blade" />
+    <UsablePiece piece_id="crpg_western_spear_4_t3_handle" />
+    <UsablePiece piece_id="crpg_imperial_spear_t2_blade" />
+    <UsablePiece piece_id="crpg_imperial_spear_t2_handle" />
+    <UsablePiece piece_id="crpg_triangluar_spear_t3_blade" />
+    <UsablePiece piece_id="crpg_triangluar_spear_t3_handle" />
+    <UsablePiece piece_id="crpg_eastern_spear_3_t3_blade" />
+    <UsablePiece piece_id="crpg_eastern_spear_3_t3_guard" />
+    <UsablePiece piece_id="crpg_eastern_spear_3_t3_handle" />
+    <UsablePiece piece_id="crpg_eastern_spear_3_t3_pommel" />
+    <UsablePiece piece_id="crpg_northern_spear_1_t2_blade" />
+    <UsablePiece piece_id="crpg_northern_spear_1_t2_handle" />
+    <UsablePiece piece_id="crpg_western_spear_1_t2_blade" />
+    <UsablePiece piece_id="crpg_western_spear_1_t2_handle" />
+    <UsablePiece piece_id="crpg_southern_spear_3_t3_blade" />
+    <UsablePiece piece_id="crpg_southern_spear_3_t3_guard" />
+    <UsablePiece piece_id="crpg_southern_spear_3_t3_handle" />
+    <UsablePiece piece_id="crpg_eastern_spear_2_t3_blade" />
+    <UsablePiece piece_id="crpg_eastern_spear_2_t3_handle" />
+    <UsablePiece piece_id="crpg_eastern_spear_1_t2_blade" />
+    <UsablePiece piece_id="crpg_eastern_spear_1_t2_handle" />
+    <UsablePiece piece_id="crpg_southern_spear_3_t4_blade" />
+    <UsablePiece piece_id="crpg_southern_spear_3_t4_guard" />
+    <UsablePiece piece_id="crpg_southern_spear_3_t4_handle" />
+    <UsablePiece piece_id="crpg_southern_spear_3_t4_pommel" />
+    <UsablePiece piece_id="crpg_highland_spear_t2_blade" />
+    <UsablePiece piece_id="crpg_highland_spear_t2_guard" />
+    <UsablePiece piece_id="crpg_highland_spear_t2_handle" />
+    <UsablePiece piece_id="crpg_northern_spear_3_t4_blade" />
+    <UsablePiece piece_id="crpg_northern_spear_3_t4_guard" />
+    <UsablePiece piece_id="crpg_northern_spear_3_t4_handle" />
+    <UsablePiece piece_id="crpg_northern_spear_3_t4_pommel" />
+    <UsablePiece piece_id="crpg_eastern_spear_4_t4_blade" />
+    <UsablePiece piece_id="crpg_eastern_spear_4_t4_guard" />
+    <UsablePiece piece_id="crpg_eastern_spear_4_t4_handle" />
+    <UsablePiece piece_id="crpg_eastern_spear_4_t4_pommel" />
+    <UsablePiece piece_id="crpg_northern_spear_2_t3_blade" />
+    <UsablePiece piece_id="crpg_northern_spear_2_t3_guard" />
+    <UsablePiece piece_id="crpg_northern_spear_2_t3_handle" />
+    <UsablePiece piece_id="crpg_practice_spear_t1_blade" />
+    <UsablePiece piece_id="crpg_practice_spear_t1_guard" />
+    <UsablePiece piece_id="crpg_practice_spear_t1_handle" />
+    <UsablePiece piece_id="crpg_practice_spear_t1_pommel" />
+     </UsablePieces>
+  </CraftingTemplate>
   <CraftingTemplate id="crpg_Pike" item_type="Polearm" modifier_group="polearm" item_holsters="polearm_back:polearm_back_2:polearm_back_3:polearm_back_4" default_item_holster_position_offset="0,0,-0.30" use_weapon_as_holster_mesh="true">
     <PieceDatas>
       <PieceData piece_type="Handle" build_order="0" />
