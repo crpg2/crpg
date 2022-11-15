@@ -821,7 +821,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_polearm_1_t5_handle" name="{=ELpWa0K5}Cured Oaken Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_26" length="280" weight="1.6">
+  <CraftingPiece id="crpg_sturgia_polearm_1_t5_handle" name="{=ELpWa0K5}Cured Oaken Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_26" length="280" weight="0.9">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="3" />
@@ -833,7 +833,7 @@
       <Material id="Wood" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_easter_polesword_t4_handle" name="{=yD9v5GS0}Decorated Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_16" length="180" weight="1.6">
+  <CraftingPiece id="crpg_easter_polesword_t4_handle" name="{=yD9v5GS0}Decorated Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_16" length="180" weight="1">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -875,7 +875,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_polearm_2_t5_handle" name="{=aQa3tp6Q}Decorated Long Pine Shaft" tier="5" piece_type="Handle" mesh="spear_handle_8" length="230" weight="0.9" CraftingCost="110">
+  <CraftingPiece id="crpg_empire_polearm_2_t5_handle" name="{=aQa3tp6Q}Decorated Long Pine Shaft" tier="5" piece_type="Handle" mesh="spear_handle_8" length="230" weight="0.7" CraftingCost="110">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -911,7 +911,7 @@
       <Material id="Wood" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_polearm_t2_handle" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.4" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+  <CraftingPiece id="crpg_billhook_polearm_t2_handle" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.2" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
     <BuildData piece_offset="19.4" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -1159,10 +1159,10 @@
       <Material id="Iron4" count="0" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_practice_spear_t1_blade" name="{=V9Kbq6vj}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.4776">
+  <CraftingPiece id="crpg_practice_spear_t1_blade" name="{=V9Kbq6vj}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.5">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Blunt" damage_factor="0.504" />
-      <Swing damage_type="Blunt" damage_factor="0.63" />
+      <Thrust damage_type="Blunt" damage_factor="1.5" />
+      <Swing damage_type="Blunt" damage_factor="3" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
@@ -1171,10 +1171,10 @@
       <Flag name="NoBlood" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_easter_polesword_t4_blade" name="{=3ged5Ozt}Exceptional Eastern Glaive" tier="4" piece_type="Blade" mesh="spear_blade_22" length="89" weight="0.80332">
+  <CraftingPiece id="crpg_easter_polesword_t4_blade" name="{=3ged5Ozt}Exceptional Eastern Glaive" tier="4" piece_type="Blade" mesh="spear_blade_22" length="89" weight="0.5">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.595" />
-      <Swing damage_type="Cut" damage_factor="0.931" />
+      <Thrust damage_type="Pierce" damage_factor="2" />
+      <Swing damage_type="Cut" damage_factor="5.3" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="2" />
@@ -1377,9 +1377,9 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_polearm_1_t5_blade" name="{=PmPxx2gK}Bent Razor Head" tier="4" piece_type="Blade" mesh="spear_blade_44" length="80" weight="0.4085" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_battania_polearm_1_t5_blade" name="{=PmPxx2gK}Bent Razor Head" tier="4" piece_type="Blade" mesh="spear_blade_44" length="80" weight="0.25" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="1.0045" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
@@ -1388,10 +1388,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_polearm_1_t5_blade" name="{=wait0O6m}Warrazor Head" tier="4" piece_type="Blade" mesh="spear_blade_43" length="64.4" weight="0.43" excluded_item_usage_features="">
+  <CraftingPiece id="crpg_sturgia_polearm_1_t5_blade" name="{=wait0O6m}Warrazor Head" tier="4" piece_type="Blade" mesh="spear_blade_43" length="64.4" weight="0.4" excluded_item_usage_features="">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.91" />
-      <Swing damage_type="Cut" damage_factor="1.01885" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="5" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -1415,10 +1415,10 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_polearm_2_t5_blade" name="{=qSV6C2tp}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.86412">
+  <CraftingPiece id="crpg_empire_polearm_2_t5_blade" name="{=qSV6C2tp}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.4">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.98" />
-      <Swing damage_type="Cut" damage_factor="1.375745" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -1737,9 +1737,9 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_polearm_t2_blade" name="{=R62maL2H}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.40812" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_billhook_polearm_t2_blade" name="{=R62maL2H}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.2" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="0.686" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="CanHook" />

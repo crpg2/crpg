@@ -4632,9 +4632,9 @@
     "name": "Rhomphaia",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 110,
-    "weight": 1.18,
-    "tier": 0.184698835,
+    "price": 15656,
+    "weight": 1.03,
+    "tier": 9.821146,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4645,8 +4645,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 203,
-        "balance": 0.25,
-        "handling": 66,
+        "balance": 0.43,
+        "handling": 71,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -4657,10 +4657,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 10,
+        "thrustSpeed": 100,
+        "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 77
+        "swingSpeed": 83
       }
     ]
   },
@@ -5572,9 +5572,9 @@
     "name": "Billhook",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 74,
-    "weight": 1.67,
-    "tier": 0.07791401,
+    "price": 12914,
+    "weight": 1.28,
+    "tier": 8.821015,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -5585,8 +5585,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 138,
-        "balance": 0.55,
-        "handling": 71,
+        "balance": 0.81,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -5597,10 +5597,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 6,
+        "thrustSpeed": 99,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 94
       }
     ]
   },
@@ -8567,9 +8567,9 @@
     "name": "Polesword",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 88,
-    "weight": 2.4,
-    "tier": 0.118908942,
+    "price": 6493,
+    "weight": 1.75,
+    "tier": 5.949976,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8579,20 +8579,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 202,
+        "length": 246,
         "balance": 0.0,
-        "handling": 61,
+        "handling": 64,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 79,
-        "swingDamage": 9,
+        "thrustSpeed": 85,
+        "swingDamage": 53,
         "swingDamageType": "Cut",
-        "swingSpeed": 17
+        "swingSpeed": 15
       },
       {
         "class": "TwoHandedPolearm",
@@ -8600,9 +8600,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 202,
+        "length": 246,
         "balance": 0.0,
-        "handling": 58,
+        "handling": 61,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -8610,12 +8610,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 9,
+        "thrustSpeed": 93,
+        "swingDamage": 53,
         "swingDamageType": "Cut",
-        "swingSpeed": 64
+        "swingSpeed": 65
       }
     ]
   },
@@ -10554,9 +10554,9 @@
     "name": "Fine Steel Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 152,
-    "weight": 1.76,
-    "tier": 0.2992466,
+    "price": 10583,
+    "weight": 1.1,
+    "tier": 7.884511,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10568,18 +10568,18 @@
         "stackAmount": 0,
         "length": 208,
         "balance": 0.0,
-        "handling": 57,
+        "handling": 68,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
-        "swingDamage": 13,
+        "thrustSpeed": 90,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 16
+        "swingSpeed": 34
       },
       {
         "class": "TwoHandedPolearm",
@@ -10588,8 +10588,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 208,
-        "balance": 0.0,
-        "handling": 53,
+        "balance": 0.21,
+        "handling": 66,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -10597,12 +10597,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 13,
+        "thrustSpeed": 98,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 60
+        "swingSpeed": 76
       }
     ]
   },
@@ -21859,9 +21859,9 @@
     "name": "Practice Spear",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 106,
-    "weight": 1.8,
-    "tier": 0.172610953,
+    "price": 4960,
+    "weight": 1.82,
+    "tier": 5.07195,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21880,12 +21880,12 @@
           "WideGrip",
           "NoBlood"
         ],
-        "thrustDamage": 5,
+        "thrustDamage": 15,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 87,
-        "swingDamage": 6,
+        "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 55
+        "swingSpeed": 54
       },
       {
         "class": "TwoHandedPolearm",
@@ -21894,8 +21894,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 116,
-        "balance": 0.72,
-        "handling": 76,
+        "balance": 0.71,
+        "handling": 75,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -21904,10 +21904,10 @@
           "TwoHandIdleOnMount",
           "NoBlood"
         ],
-        "thrustDamage": 5,
+        "thrustDamage": 15,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 94,
-        "swingDamage": 6,
+        "swingDamage": 30,
         "swingDamageType": "Blunt",
         "swingSpeed": 91
       }
@@ -26513,9 +26513,9 @@
     "name": "Warrazor",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 123,
-    "weight": 1.83,
-    "tier": 0.2203229,
+    "price": 11575,
+    "weight": 0.94,
+    "tier": 8.294416,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -26525,9 +26525,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 205,
-        "balance": 0.0,
-        "handling": 52,
+        "length": 164,
+        "balance": 0.49,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -26535,12 +26535,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 10,
+        "thrustSpeed": 100,
+        "swingDamage": 50,
         "swingDamageType": "Cut",
-        "swingSpeed": 62
+        "swingSpeed": 84
       },
       {
         "class": "TwoHandedPolearm",
@@ -26548,9 +26548,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 205,
-        "balance": 0.0,
-        "handling": 52,
+        "length": 164,
+        "balance": 0.49,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -26558,12 +26558,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 10,
+        "thrustSpeed": 100,
+        "swingDamage": 50,
         "swingDamageType": "Cut",
-        "swingSpeed": 62
+        "swingSpeed": 84
       }
     ]
   },

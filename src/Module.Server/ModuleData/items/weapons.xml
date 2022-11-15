@@ -665,7 +665,7 @@
     <Pieces>
       <Piece id="crpg_sturgia_polearm_1_t5_blade" Type="Blade" scale_factor="90" />
       <Piece id="crpg_sturgia_polearm_1_t5_guard" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_sturgia_polearm_1_t5_handle" Type="Handle" scale_factor="90" />
+      <Piece id="crpg_sturgia_polearm_1_t5_handle" Type="Handle" scale_factor="65" />
       <Piece id="crpg_sturgia_polearm_1_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
@@ -687,7 +687,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_easter_polesword_t4" name="{=1mCmYNl6}Polesword" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_easter_polesword_t4_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_easter_polesword_t4_blade" Type="Blade" scale_factor="150" />
       <Piece id="crpg_easter_polesword_t4_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_easter_polesword_t4_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_easter_polesword_t4_pommel" Type="Pommel" scale_factor="100" />
