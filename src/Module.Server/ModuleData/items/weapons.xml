@@ -1026,7 +1026,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_empire_sword_4_t4" name="{=AMIdBVZb}Fine Steel Spatha" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_empire_sword_4_t4_blade" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_empire_sword_4_t4_blade" Type="Blade" scale_factor="104" />
       <Piece id="crpg_empire_sword_4_t4_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_empire_sword_4_t4_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_empire_sword_4_t4_pommel" Type="Pommel" scale_factor="100" />
@@ -1034,7 +1034,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_empire_sword_5_t4" name="{=OLTUHPaD}Fine Steel Paramerion" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_empire_sword_5_t4_blade" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_empire_sword_5_t4_blade" Type="Blade" scale_factor="98" />
       <Piece id="crpg_empire_sword_5_t4_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_empire_sword_5_t4_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_empire_sword_5_t4_pommel" Type="Pommel" scale_factor="100" />
@@ -1146,7 +1146,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_empire_sword_6_t5" name="{=1bc4kTaz}Thamaskene Steel Spathion" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_empire_sword_6_t5_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_empire_sword_6_t5_blade" Type="Blade" scale_factor="85" />
       <Piece id="crpg_empire_sword_6_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_empire_sword_6_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_empire_sword_6_t5_pommel" Type="Pommel" scale_factor="100" />
@@ -1210,7 +1210,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_empire_noble_sword_1_t5" name="{=GyYsQlVd}Decorated Short Spatha" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_empire_noble_sword_1_t5_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_empire_noble_sword_1_t5_blade" Type="Blade" scale_factor="101" />
       <Piece id="crpg_empire_noble_sword_1_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_empire_noble_sword_1_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_empire_noble_sword_1_t5_pommel" Type="Pommel" scale_factor="100" />
@@ -1226,7 +1226,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_empire_noble_sword_3_t5" name="{=HpdJJO9g}Spatha Blade with Ring Pommel" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_empire_noble_sword_3_t5_blade" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_empire_noble_sword_3_t5_blade" Type="Blade" scale_factor="91" />
       <Piece id="crpg_empire_noble_sword_3_t5_guard" Type="Guard" scale_factor="90" />
       <Piece id="crpg_empire_noble_sword_3_t5_handle" Type="Handle" scale_factor="90" />
       <Piece id="crpg_empire_noble_sword_3_t5_pommel" Type="Pommel" scale_factor="90" />

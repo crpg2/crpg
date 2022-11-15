@@ -10360,9 +10360,9 @@
     "name": "Decorated Short Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 372,
-    "weight": 1.5,
-    "tier": 1.42241073,
+    "price": 5980,
+    "weight": 1.46,
+    "tier": 8.810532,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10372,17 +10372,17 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 95,
-        "balance": 0.77,
-        "handling": 93,
+        "length": 96,
+        "balance": 0.79,
+        "handling": 94,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 14,
+        "thrustSpeed": 92,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
         "swingSpeed": 93
       }
@@ -10393,9 +10393,9 @@
     "name": "Thamaskene Steel Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 417,
-    "weight": 1.49,
-    "tier": 1.56209826,
+    "price": 7204,
+    "weight": 1.38,
+    "tier": 9.778958,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10406,18 +10406,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.62,
-        "handling": 89,
+        "balance": 0.71,
+        "handling": 90,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 13,
+        "thrustSpeed": 92,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 91
       }
     ]
   },
@@ -10426,9 +10426,9 @@
     "name": "Spatha Blade with Ring Pommel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 287,
-    "weight": 1.46,
-    "tier": 1.1325587,
+    "price": 5646,
+    "weight": 1.26,
+    "tier": 8.529234,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10438,19 +10438,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 101,
-        "balance": 0.61,
-        "handling": 88,
+        "length": 102,
+        "balance": 0.76,
+        "handling": 91,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 12,
+        "thrustSpeed": 93,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 92
       }
     ]
   },
@@ -10634,9 +10634,9 @@
     "name": "Spatha With Narrow Fuller",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 323,
-    "weight": 1.37,
-    "tier": 1.25994658,
+    "price": 4037,
+    "weight": 1.33,
+    "tier": 7.041461,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10649,18 +10649,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 103,
-        "balance": 0.73,
+        "balance": 0.75,
         "handling": 92,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 11,
+        "thrustSpeed": 93,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 92
       }
     ]
   },
@@ -10669,9 +10669,9 @@
     "name": "Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 323,
-    "weight": 1.41,
-    "tier": 1.25994658,
+    "price": 3148,
+    "weight": 1.37,
+    "tier": 6.08973169,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10684,18 +10684,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 103,
-        "balance": 0.73,
+        "balance": 0.75,
         "handling": 92,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
-        "swingDamage": 11,
+        "swingDamage": 27,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 92
       }
     ]
   },
@@ -10704,9 +10704,9 @@
     "name": "Fine Steel Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 383,
-    "weight": 1.48,
-    "tier": 1.4582516,
+    "price": 4852,
+    "weight": 1.35,
+    "tier": 7.82571459,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10718,19 +10718,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 107,
-        "balance": 0.66,
-        "handling": 90,
+        "length": 105,
+        "balance": 0.77,
+        "handling": 92,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 12,
+        "thrustSpeed": 93,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 93
       }
     ]
   },
@@ -10739,9 +10739,9 @@
     "name": "Fine Steel Paramerion",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 326,
-    "weight": 1.5,
-    "tier": 1.26974916,
+    "price": 5169,
+    "weight": 1.39,
+    "tier": 8.112787,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10751,19 +10751,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
-        "balance": 0.48,
-        "handling": 84,
+        "length": 110,
+        "balance": 0.61,
+        "handling": 87,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 12,
+        "thrustSpeed": 92,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 88
       }
     ]
   },
@@ -10772,9 +10772,9 @@
     "name": "Thamaskene Steel Spathion",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 436,
-    "weight": 1.37,
-    "tier": 1.61905813,
+    "price": 6467,
+    "weight": 1.32,
+    "tier": 9.20655251,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10784,19 +10784,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 114,
-        "balance": 0.59,
-        "handling": 87,
+        "length": 99,
+        "balance": 0.74,
+        "handling": 90,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 13,
+        "thrustSpeed": 93,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 92
       }
     ]
   },
@@ -14019,9 +14019,9 @@
     "name": "Iron Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 168,
-    "weight": 1.69,
-    "tier": 0.655700147,
+    "price": 3644,
+    "weight": 1.34,
+    "tier": 6.634665,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14034,18 +14034,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 93,
-        "balance": 0.62,
-        "handling": 89,
+        "balance": 0.87,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 10,
+        "thrustSpeed": 93,
+        "swingDamage": 28,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 96
       }
     ]
   },
