@@ -1098,7 +1098,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_battania_sword_4_t4" name="{=57jpWo7g}Fine Steel Cavalry Broadsword" crafting_template="crpg_OneHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_battania_sword_4_t4_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_battania_sword_4_t4_blade" Type="Blade" scale_factor="110" />
       <Piece id="crpg_battania_sword_4_t4_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_battania_sword_4_t4_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_battania_sword_4_t4_pommel" Type="Pommel" scale_factor="100" />

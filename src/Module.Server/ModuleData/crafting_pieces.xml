@@ -4674,10 +4674,10 @@
       <Material id="Iron1" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_noble_sword_3_t5_blade" name="{=Izstbt9y}Highland Decorated Blade" tier="5" piece_type="Blade" mesh="battania_noble_blade_2" culture="Culture.battania" length="93.2" weight="1.1">
+  <CraftingPiece id="crpg_battania_noble_sword_3_t5_blade" name="{=Izstbt9y}Highland Decorated Blade" tier="5" piece_type="Blade" mesh="battania_noble_blade_2" culture="Culture.battania" length="93.2" weight="1.5">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_noble_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="1.6" />
-      <Swing damage_type="Cut" damage_factor="3.6" />
+      <Thrust damage_type="Pierce" damage_factor="1.4" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -4863,10 +4863,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_noble_sword_1_t5_blade" name="{=5Xoa1EFa}Engraved Backsword Blade" tier="5" piece_type="Blade" mesh="battania_noble_blade_1" culture="Culture.battania" length="96" weight="0.735">
+  <CraftingPiece id="crpg_battania_noble_sword_1_t5_blade" name="{=5Xoa1EFa}Engraved Backsword Blade" tier="5" piece_type="Blade" mesh="battania_noble_blade_1" culture="Culture.battania" length="96" weight="1.05">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_noble_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="3.5" />
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5230,10 +5230,10 @@
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_sword_2_t3_blade" name="{=zAdloN6Y}Broad Ridged Shortsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_4" culture="Culture.battania" length="67.4" weight="0.91">
+  <CraftingPiece id="crpg_battania_sword_2_t3_blade" name="{=zAdloN6Y}Broad Ridged Shortsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_4" culture="Culture.battania" length="67.4" weight="1.15">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_4_scabbard_4">
-      <Thrust damage_type="Pierce" damage_factor="1.3" />
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="1.4" />
+      <Swing damage_type="Cut" damage_factor="2.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5266,10 +5266,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_sword_4_t4_blade" name="{=rKnBJPfp}Fine Steel Cavalry Broadsword Blade" tier="4" piece_type="Blade" mesh="battania_blade_1" culture="Culture.battania" length="98.9" weight="0.93">
+  <CraftingPiece id="crpg_battania_sword_4_t4_blade" name="{=rKnBJPfp}Fine Steel Cavalry Broadsword Blade" tier="4" piece_type="Blade" mesh="battania_blade_1" culture="Culture.battania" length="98.9" weight="1.05">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.2" />
+      <Thrust damage_type="Pierce" damage_factor="1.3" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
