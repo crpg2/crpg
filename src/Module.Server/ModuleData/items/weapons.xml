@@ -63,8 +63,8 @@
   </CraftedItem>
   <CraftedItem id="crpg_peasant_polearm_1_t1" name="{=aGbTPme1}Scythe" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_peasant_polearm_1_t1_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_peasant_polearm_1_t1_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_peasant_polearm_1_t1_blade" Type="Blade" scale_factor="102" />
+      <Piece id="crpg_peasant_polearm_1_t1_handle" Type="Handle" scale_factor="101" />
     </Pieces>
   </CraftedItem>
   <Item id="crpg_training_bow" name="{=SUSbUAEl}Practice Bow" body_name="bo_composite_shotbow_b" mesh="shortbow_b" weight="0.15" difficulty="0" appearance="1" is_merchandise="false" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
@@ -679,9 +679,9 @@
   </CraftedItem>
   <CraftedItem id="crpg_khuzait_polearm_1_t4" name="{=6hwZwODh}Glaive" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_khuzait_polearm_1_t4_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_khuzait_polearm_1_t4_blade" Type="Blade" scale_factor="102" />
       <Piece id="crpg_khuzait_polearm_1_t4_guard" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_khuzait_polearm_1_t4_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_khuzait_polearm_1_t4_handle" Type="Handle" scale_factor="98" />
       <Piece id="crpg_khuzait_polearm_1_t4_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
@@ -719,10 +719,10 @@
   </CraftedItem>
   <CraftedItem id="crpg_khuzait_polearm_2_t5" name="{=JxV66l02}Long Glaive" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_khuzait_polearm_2_t5_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_khuzait_polearm_2_t5_guard" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_khuzait_polearm_2_t5_handle" Type="Handle" scale_factor="100" />
-      <Piece id="crpg_khuzait_polearm_2_t5_pommel" Type="Pommel" scale_factor="100" />
+      <Piece id="crpg_khuzait_polearm_2_t5_blade" Type="Blade" scale_factor="92" />
+      <Piece id="crpg_khuzait_polearm_2_t5_guard" Type="Guard" scale_factor="92" />
+      <Piece id="crpg_khuzait_polearm_2_t5_handle" Type="Handle" scale_factor="92" />
+      <Piece id="crpg_khuzait_polearm_2_t5_pommel" Type="Pommel" scale_factor="92" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_vlandia_lance_1_t3" name="{=j4XraSN6}Light Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
