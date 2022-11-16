@@ -594,9 +594,9 @@
     "name": "Long Bladed Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 21539,
+    "price": 12345,
     "weight": 1.13,
-    "tier": 12.6662121,
+    "tier": 9.324455,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -621,7 +621,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 99,
-        "swingDamage": 55,
+        "swingDamage": 48,
         "swingDamageType": "Cut",
         "swingSpeed": 86
       }
