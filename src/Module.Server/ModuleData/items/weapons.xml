@@ -414,10 +414,10 @@
       <Piece id="crpg_hooked_axe_t4_handle" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_aserai_2haxe_3_t5" name="{=hTPJXK1w}Heavy Executioner Axe" crafting_template="crpg_TwoHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_aserai_2haxe_3_t5" name="{=hTPJXK1w}Long Bladed Bardiche" crafting_template="crpg_TwoHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_aserai_2haxe_3_t5_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_aserai_2haxe_3_t5_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_aserai_2haxe_3_t5_blade" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_aserai_2haxe_3_t5_handle" Type="Handle" scale_factor="90" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_sturgia_2haxe_2_t5" name="{=cKtkyroA}Northlander Decorated Two Handed Axe" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">

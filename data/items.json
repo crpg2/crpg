@@ -591,12 +591,12 @@
   },
   {
     "id": "crpg_aserai_2haxe_3_t5",
-    "name": "Heavy Executioner Axe",
+    "name": "Long Bladed Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 110,
-    "weight": 1.49,
-    "tier": 0.210450128,
+    "price": 14062,
+    "weight": 1.13,
+    "tier": 10.0248041,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -608,9 +608,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 138,
-        "balance": 0.23,
-        "handling": 69,
+        "length": 128,
+        "balance": 0.53,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -620,10 +620,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 95,
-        "swingDamage": 12,
+        "thrustSpeed": 99,
+        "swingDamage": 55,
         "swingDamageType": "Cut",
-        "swingSpeed": 76
+        "swingSpeed": 86
       }
     ]
   },
