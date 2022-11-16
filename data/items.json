@@ -1530,9 +1530,9 @@
     "name": "Decorated Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 289,
-    "weight": 1.73,
-    "tier": 1.13980818,
+    "price": 6665,
+    "weight": 1.43,
+    "tier": 9.362888,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1545,18 +1545,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 103,
-        "balance": 0.58,
-        "handling": 87,
+        "balance": 0.81,
+        "handling": 91,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 14,
+        "thrustSpeed": 92,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 94
       }
     ]
   },
@@ -1565,9 +1565,9 @@
     "name": "Decorated Long Scimitar",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 283,
-    "weight": 1.78,
-    "tier": 1.118629,
+    "price": 6919,
+    "weight": 1.46,
+    "tier": 9.561105,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1575,23 +1575,23 @@
     "weapons": [
       {
         "class": "OneHandedSword",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_block_shield_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 100,
-        "balance": 0.59,
-        "handling": 88,
+        "length": 98,
+        "balance": 0.82,
+        "handling": 92,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 15,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 91,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 94
       }
     ]
   },
@@ -1600,9 +1600,9 @@
     "name": "Decorated Scimitar with Wide Grip",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 310,
-    "weight": 1.73,
-    "tier": 1.21583223,
+    "price": 7462,
+    "weight": 1.55,
+    "tier": 9.972361,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1614,19 +1614,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 96,
-        "balance": 0.69,
-        "handling": 90,
+        "length": 104,
+        "balance": 0.74,
+        "handling": 91,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 15,
+        "thrustSpeed": 90,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 92
       }
     ]
   },
@@ -1635,9 +1635,9 @@
     "name": "Engraved Angular Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 400,
-    "weight": 1.81,
-    "tier": 1.50862157,
+    "price": 7034,
+    "weight": 1.52,
+    "tier": 9.649201,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1650,18 +1650,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.75,
-        "handling": 94,
+        "balance": 0.95,
+        "handling": 97,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 16,
+        "thrustSpeed": 90,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 98
       }
     ]
   },
@@ -1828,9 +1828,9 @@
     "name": "Iron Flyssa",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 156,
-    "weight": 1.53,
-    "tier": 0.600877941,
+    "price": 3015,
+    "weight": 1.38,
+    "tier": 5.936957,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1842,19 +1842,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
-        "balance": 0.48,
-        "handling": 85,
+        "length": 107,
+        "balance": 0.67,
+        "handling": 89,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 10,
+        "thrustSpeed": 92,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 90
       }
     ]
   },
@@ -1863,9 +1863,9 @@
     "name": "Iron Scimitar",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 210,
-    "weight": 1.38,
-    "tier": 0.8391736,
+    "price": 5373,
+    "weight": 1.1,
+    "tier": 8.293194,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1873,23 +1873,23 @@
     "weapons": [
       {
         "class": "OneHandedSword",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_block_shield_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 103,
-        "balance": 0.74,
-        "handling": 92,
+        "length": 96,
+        "balance": 1.0,
+        "handling": 98,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 7,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 11,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 95,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 100
       }
     ]
   },
@@ -1898,9 +1898,9 @@
     "name": "Slightly Ridged Flyssa",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 237,
-    "weight": 1.45,
-    "tier": 0.9470924,
+    "price": 5230,
+    "weight": 1.31,
+    "tier": 8.167214,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1910,19 +1910,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 115,
-        "balance": 0.53,
-        "handling": 87,
+        "length": 107,
+        "balance": 0.71,
+        "handling": 91,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 12,
+        "thrustSpeed": 93,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 91
       }
     ]
   },
@@ -1931,9 +1931,9 @@
     "name": "Fine Steel Long Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 185,
-    "weight": 1.84,
-    "tier": 0.731412,
+    "price": 4319,
+    "weight": 1.46,
+    "tier": 7.32117367,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1943,19 +1943,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
-        "balance": 0.32,
-        "handling": 83,
+        "length": 109,
+        "balance": 0.67,
+        "handling": 89,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 13,
+        "thrustSpeed": 91,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 79
+        "swingSpeed": 90
       }
     ]
   },
@@ -1964,31 +1964,31 @@
     "name": "Long Fine Steel Scimitar",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 203,
-    "weight": 1.7,
-    "tier": 0.8081093,
+    "price": 6272,
+    "weight": 1.21,
+    "tier": 9.049867,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "OneHandedSword",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_block_shield_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 126,
-        "balance": 0.3,
-        "handling": 81,
+        "length": 101,
+        "balance": 0.89,
+        "handling": 93,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 13,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 79
+        "swingSpeed": 96
       }
     ]
   },
@@ -1997,9 +1997,9 @@
     "name": "Narrow Fine Steel Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 260,
-    "weight": 1.6,
-    "tier": 1.03429544,
+    "price": 5470,
+    "weight": 1.45,
+    "tier": 8.377379,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2009,19 +2009,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
-        "balance": 0.5,
-        "handling": 86,
+        "length": 109,
+        "balance": 0.67,
+        "handling": 89,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 13,
+        "thrustSpeed": 91,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 90
       }
     ]
   },
@@ -2030,9 +2030,9 @@
     "name": "Thamaskene Steel Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 287,
-    "weight": 1.43,
-    "tier": 1.1327678,
+    "price": 4824,
+    "weight": 1.39,
+    "tier": 7.79969358,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2042,19 +2042,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 110,
-        "balance": 0.54,
-        "handling": 86,
+        "length": 105,
+        "balance": 0.6,
+        "handling": 88,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 14,
+        "thrustSpeed": 92,
+        "swingDamage": 28,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 87
       }
     ]
   },
