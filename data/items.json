@@ -7378,9 +7378,9 @@
     "name": "Simple Short Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 5619,
+    "price": 8773,
     "weight": 0.3,
-    "tier": 6.42293835,
+    "tier": 8.291077,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -7389,12 +7389,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 93,
-        "missileSpeed": 83,
+        "accuracy": 117,
+        "missileSpeed": 78,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 92,
+        "handling": 107,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -7407,10 +7407,10 @@
         ],
         "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 98
+        "swingSpeed": 92
       }
     ]
   },
@@ -7419,9 +7419,9 @@
     "name": "Steppe Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 9181,
-    "weight": 0.3,
-    "tier": 8.50634,
+    "price": 12176,
+    "weight": 0.35,
+    "tier": 9.960519,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -7430,12 +7430,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 94,
-        "missileSpeed": 88,
+        "accuracy": 110,
+        "missileSpeed": 80,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 94,
+        "handling": 110,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -7448,10 +7448,10 @@
         ],
         "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 110,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 101
+        "swingSpeed": 95
       }
     ]
   },
@@ -13396,9 +13396,9 @@
     "name": "Hunting Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 2505,
-    "weight": 0.3,
-    "tier": 3.94736767,
+    "price": 3983,
+    "weight": 0.2,
+    "tier": 5.243114,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -13407,12 +13407,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 85,
-        "missileSpeed": 83,
+        "accuracy": 135,
+        "missileSpeed": 75,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 90,
+        "handling": 105,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -13423,12 +13423,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
+        "thrustSpeed": 105,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 97
+        "swingSpeed": 95
       }
     ]
   },
@@ -24850,9 +24850,9 @@
     "name": "Steppe Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 1412,
-    "weight": 0.3,
-    "tier": 2.72180223,
+    "price": 5380,
+    "weight": 0.25,
+    "tier": 6.26219559,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -24861,12 +24861,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 80,
-        "missileSpeed": 83,
+        "accuracy": 128,
+        "missileSpeed": 76,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 84,
+        "handling": 108,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -24877,12 +24877,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
+        "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 94
+        "swingSpeed": 93
       }
     ]
   },
