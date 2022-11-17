@@ -6458,6 +6458,72 @@
     ]
   },
   {
+    "id": "crpg_broad_arrows_a",
+    "name": "Broad Head Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 2163,
+    "weight": 0.098,
+    "tier": 6.575722,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 22,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 10,
+        "thrustDamageType": "Cut",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_broad_arrows_b",
+    "name": "Light Broad Head Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 1265,
+    "weight": 0.078,
+    "tier": 4.752814,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 33,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 6,
+        "thrustDamageType": "Cut",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
     "id": "crpg_broad_falchion_sword_t3",
     "name": "Broad Falchion",
     "culture": "Neutral",
