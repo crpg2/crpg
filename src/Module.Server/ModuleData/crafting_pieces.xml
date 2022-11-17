@@ -5012,11 +5012,11 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ridged_2hsword_t4_blade" name="{=19a3jJ1s}Ridged Great Saber Blade" tier="4" piece_type="Blade" mesh="khuzait_blade_8" culture="Culture.khuzait" length="99" weight="0.9350001">
+  <CraftingPiece id="crpg_ridged_2hsword_t4_blade" name="{=19a3jJ1s}Ridged Great Saber Blade" tier="4" piece_type="Blade" mesh="khuzait_blade_8" culture="Culture.khuzait" length="94" weight="0.9350001">
     <BuildData previous_piece_offset="-0.25" />
     <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_blade_8_scabbard_8">
-      <Thrust damage_type="Pierce" damage_factor="0.9625" />
-      <Swing damage_type="Cut" damage_factor="1.365" />
+      <Thrust damage_type="Pierce" damage_factor="0.9888" />
+      <Swing damage_type="Cut" damage_factor="2.666" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />

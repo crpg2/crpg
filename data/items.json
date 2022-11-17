@@ -22361,9 +22361,9 @@
     "name": "Ridged Great Saber",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 1340,
+    "price": 12543,
     "weight": 1.68,
-    "tier": 2.407456,
+    "tier": 9.407795,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22373,9 +22373,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
-        "balance": 0.5,
-        "handling": 85,
+        "length": 111,
+        "balance": 0.55,
+        "handling": 87,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
@@ -22383,9 +22383,9 @@
         "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 13,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 86
       },
       {
         "class": "TwoHandedSword",
@@ -22393,9 +22393,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
+        "length": 111,
         "balance": 1.0,
-        "handling": 90,
+        "handling": 91,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -22404,9 +22404,9 @@
         "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
-        "swingDamage": 13,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
-        "swingSpeed": 100
+        "swingSpeed": 101
       },
       {
         "class": "OneHandedSword",
@@ -22414,9 +22414,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
-        "balance": 0.5,
-        "handling": 85,
+        "length": 111,
+        "balance": 0.55,
+        "handling": 87,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
@@ -22424,9 +22424,9 @@
         "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 13,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 86
       }
     ]
   },
