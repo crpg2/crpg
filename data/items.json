@@ -10495,9 +10495,9 @@
     "name": "Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 17871,
+    "price": 16361,
     "weight": 1.58,
-    "tier": 10.5666885,
+    "tier": 10.0636616,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10520,7 +10520,7 @@
         "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
-        "swingDamage": 40,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
         "swingSpeed": 86
       }
@@ -15415,9 +15415,9 @@
     "name": "Long Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 22561,
-    "weight": 1.13,
-    "tier": 12.0067549,
+    "price": 15747,
+    "weight": 1.26,
+    "tier": 9.852516,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15428,8 +15428,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 200,
-        "balance": 0.36,
-        "handling": 69,
+        "balance": 0.29,
+        "handling": 67,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -15437,12 +15437,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 99,
-        "swingDamage": 49,
+        "thrustSpeed": 97,
+        "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 80
+        "swingSpeed": 78
       }
     ]
   },
@@ -21270,9 +21270,9 @@
     "name": "Scythe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 3162,
+    "price": 3575,
     "weight": 2.76,
-    "tier": 3.85031319,
+    "tier": 4.15550041,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21298,7 +21298,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 87,
-        "swingDamage": 29,
+        "swingDamage": 30,
         "swingDamageType": "Pierce",
         "swingSpeed": 81
       }
