@@ -1903,7 +1903,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_avalanche_2haxe_handle" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.677" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_avalanche_2haxe_handle" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.67" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="36.879" next_piece_offset="1.6" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -2195,7 +2195,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_2haxe_3_t5_blade" name="{=SEsx3kZz}Heavy Bardiche Head" tier="5" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.74">
+  <CraftingPiece id="crpg_aserai_2haxe_3_t5_blade" name="{=SEsx3kZz}Heavy Bardiche Head" tier="5" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.7">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Cut" damage_factor="4.8" />
@@ -2245,10 +2245,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northern_axe_t3_blade" name="{=USWfzbuW}Northern Broad Great Axe Head" tier="3" piece_type="Blade" mesh="axe_craft_7_head" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.43776">
+  <CraftingPiece id="crpg_northern_axe_t3_blade" name="{=USWfzbuW}Northern Broad Great Axe Head" tier="3" piece_type="Blade" mesh="axe_craft_7_head" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.45">
     <BuildData piece_offset="-5.424" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.3398" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2261,7 +2261,7 @@
   <CraftingPiece id="crpg_avalanche_2haxe_blade" name="{=USWfzbuW}Northern Broad Great Axe Head" tier="3" piece_type="Blade" mesh="axe_craft_7_head" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.43776">
     <BuildData piece_offset="-5.424" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.3398" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />

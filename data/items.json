@@ -594,9 +594,9 @@
     "name": "Long Bladed Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 12345,
-    "weight": 1.13,
-    "tier": 9.324455,
+    "price": 14100,
+    "weight": 1.09,
+    "tier": 10.03962,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -609,8 +609,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.53,
-        "handling": 76,
+        "balance": 0.57,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -620,10 +620,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
+        "thrustSpeed": 100,
         "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 87
       }
     ]
   },
@@ -2150,9 +2150,9 @@
     "name": "Avalanche",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 278,
-    "weight": 1.18,
-    "tier": 0.6720784,
+    "price": 13386,
+    "weight": 1.17,
+    "tier": 9.754447,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -2177,7 +2177,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 99,
-        "swingDamage": 13,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
         "swingSpeed": 89
       }
@@ -19029,9 +19029,9 @@
     "name": "Northlander Broad Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 484,
-    "weight": 1.01,
-    "tier": 1.114852,
+    "price": 13875,
+    "weight": 1.02,
+    "tier": 9.950605,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -19044,8 +19044,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 115,
-        "balance": 0.98,
-        "handling": 87,
+        "balance": 0.97,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -19056,7 +19056,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 102,
-        "swingDamage": 13,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
         "swingSpeed": 99
       }
