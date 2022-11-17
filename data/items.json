@@ -7376,9 +7376,9 @@
     "name": "Simple Short Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 8773,
+    "price": 8749,
     "weight": 0.3,
-    "tier": 8.291077,
+    "tier": 8.278321,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -7387,12 +7387,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 117,
-        "missileSpeed": 78,
+        "accuracy": 116,
+        "missileSpeed": 82,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 107,
+        "handling": 115,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -7405,10 +7405,10 @@
         ],
         "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 107,
+        "thrustSpeed": 115,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 92
+        "swingSpeed": 82
       }
     ]
   },
@@ -7417,9 +7417,9 @@
     "name": "Steppe Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 12176,
+    "price": 12113,
     "weight": 0.35,
-    "tier": 9.960519,
+    "tier": 9.931556,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -7429,11 +7429,11 @@
         "class": "Bow",
         "itemUsage": "bow",
         "accuracy": 110,
-        "missileSpeed": 80,
+        "missileSpeed": 83,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 110,
+        "handling": 121,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -7446,10 +7446,10 @@
         ],
         "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 110,
+        "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 95
+        "swingSpeed": 83
       }
     ]
   },
@@ -13373,9 +13373,9 @@
     "name": "Hunting Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 3983,
+    "price": 4104,
     "weight": 0.2,
-    "tier": 5.243114,
+    "tier": 5.33755159,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -13385,11 +13385,11 @@
         "class": "Bow",
         "itemUsage": "bow",
         "accuracy": 135,
-        "missileSpeed": 75,
+        "missileSpeed": 80,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 105,
+        "handling": 119,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -13402,10 +13402,10 @@
         ],
         "thrustDamage": 9,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 105,
+        "thrustSpeed": 119,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 95
+        "swingSpeed": 80
       }
     ]
   },
@@ -24785,9 +24785,9 @@
     "name": "Steppe Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 5380,
+    "price": 5512,
     "weight": 0.25,
-    "tier": 6.26219559,
+    "tier": 6.35123825,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -24797,11 +24797,11 @@
         "class": "Bow",
         "itemUsage": "bow",
         "accuracy": 128,
-        "missileSpeed": 76,
+        "missileSpeed": 81,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 108,
+        "handling": 118,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -24814,10 +24814,10 @@
         ],
         "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 118,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 93
+        "swingSpeed": 81
       }
     ]
   },
