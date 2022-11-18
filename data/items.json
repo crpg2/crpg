@@ -15965,9 +15965,9 @@
     "name": "Large Franziska Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 202,
-    "weight": 1.21,
-    "tier": 0.805531442,
+    "price": 6839,
+    "weight": 0.79,
+    "tier": 9.499438,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -15979,9 +15979,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 67,
-        "balance": 0.82,
-        "handling": 91,
+        "length": 96,
+        "balance": 0.67,
+        "handling": 84,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -15989,10 +15989,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 12,
+        "thrustSpeed": 98,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 90
       }
     ]
   },
@@ -19088,12 +19088,12 @@
   },
   {
     "id": "crpg_northern_battle_axe_t3",
-    "name": "Simple Raider Battle Axe",
+    "name": "Raider Battle Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 208,
-    "weight": 1.15,
-    "tier": 0.829247057,
+    "price": 7193,
+    "weight": 0.71,
+    "tier": 9.77051449,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -19105,9 +19105,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 75,
-        "balance": 0.75,
-        "handling": 89,
+        "length": 90,
+        "balance": 0.94,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -19115,10 +19115,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 12,
+        "thrustSpeed": 98,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 98
       }
     ]
   },
@@ -28094,9 +28094,9 @@
     "name": "Broad Tzikourion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 173,
-    "weight": 1.23,
-    "tier": 0.6780575,
+    "price": 7434,
+    "weight": 0.86,
+    "tier": 9.951504,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -28108,9 +28108,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 74,
-        "balance": 0.67,
-        "handling": 87,
+        "length": 96,
+        "balance": 0.83,
+        "handling": 89,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -28118,10 +28118,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 12,
+        "thrustSpeed": 97,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 94
       }
     ]
   },

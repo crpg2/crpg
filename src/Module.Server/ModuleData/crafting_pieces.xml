@@ -1794,19 +1794,19 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_large_franziskaa_axe_t3_handle" name="{=qYxzdFAa}Long Oaken Handle With Leather Wraps" tier="3" piece_type="Handle" mesh="axe_craft_27_handle" length="105" weight="0.616">
+  <CraftingPiece id="crpg_large_franziskaa_axe_t3_handle" name="{=qYxzdFAa}Long Oaken Handle With Leather Wraps" tier="3" piece_type="Handle" mesh="axe_craft_27_handle" length="105" weight="0.216">
     <BuildData piece_offset="20" next_piece_offset="1.835" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tzkurion_axe_t3_handle" name="{=vPMsDf85}Oaken Handle With Leather Wraps" tier="3" piece_type="Handle" mesh="axe_craft_26_handle" length="100" weight="0.516">
+  <CraftingPiece id="crpg_tzkurion_axe_t3_handle" name="{=vPMsDf85}Oaken Handle With Leather Wraps" tier="3" piece_type="Handle" mesh="axe_craft_26_handle" length="100" weight="0.393">
     <BuildData piece_offset="20" next_piece_offset="1.835" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northern_battle_axe_t3_handle" name="{=vPMsDf85}Oaken Handle With Leather Wraps" tier="3" piece_type="Handle" mesh="axe_craft_26_handle" length="100" weight="0.516">
+  <CraftingPiece id="crpg_northern_battle_axe_t3_handle" name="{=vPMsDf85}Oaken Handle With Leather Wraps" tier="3" piece_type="Handle" mesh="axe_craft_26_handle" length="100" weight="0.24">
     <BuildData piece_offset="20" next_piece_offset="1.835" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -2309,10 +2309,10 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_large_franziskaa_axe_t3_blade" name="{=cK6D7cyn}Large Franziska Head" tier="3" piece_type="Blade" mesh="axe_craft_12_head" distance_to_next_piece="5" distance_to_previous_piece="1.5" weight="0.595">
+  <CraftingPiece id="crpg_large_franziskaa_axe_t3_blade" name="{=cK6D7cyn}Large Franziska Head" tier="3" piece_type="Blade" mesh="axe_craft_12_head" distance_to_next_piece="5" distance_to_previous_piece="1.5" weight="0.395">
     <BuildData piece_offset="-3" />
     <BladeData stack_amount="2" blade_length="11.622" blade_width="23.945" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.225" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2523,10 +2523,10 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tzkurion_axe_t3_blade" name="{=Tui9qvOZ}Tzikurion Head" tier="3" piece_type="Blade" mesh="axe_craft_26_head" distance_to_next_piece="9" distance_to_previous_piece="3.5" weight="0.714">
+  <CraftingPiece id="crpg_tzkurion_axe_t3_blade" name="{=Tui9qvOZ}Tzikurion Head" tier="3" piece_type="Blade" mesh="axe_craft_26_head" distance_to_next_piece="9" distance_to_previous_piece="3.5" weight="0.252">
     <BuildData piece_offset="-7" />
     <BladeData stack_amount="2" blade_length="17.6" blade_width="19.393" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.225" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2559,10 +2559,10 @@
       <Material id="Iron2" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northern_battle_axe_t3_blade" name="{=cEU66ABf}Northern Battle Axe Blade" tier="3" piece_type="Blade" mesh="axe_craft_36_head" distance_to_next_piece="10.4" distance_to_previous_piece="3.4" weight="0.632">
+  <CraftingPiece id="crpg_northern_battle_axe_t3_blade" name="{=cEU66ABf}Northern Battle Axe Blade" tier="3" piece_type="Blade" mesh="axe_craft_36_head" distance_to_next_piece="10.4" distance_to_previous_piece="3.4" weight="0.35">
     <BuildData piece_offset="-6.8" />
     <BladeData stack_amount="2" blade_length="15.764" blade_width="16" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.26" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />

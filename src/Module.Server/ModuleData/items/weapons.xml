@@ -276,10 +276,10 @@
       <Piece id="crpg_small_bit_axe_t2_handle" Type="Handle" scale_factor="95" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_northern_battle_axe_t3" name="{=DFcMeRdB}Simple Raider Battle Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_northern_battle_axe_t3" name="{=DFcMeRdB}Raider Battle Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_northern_battle_axe_t3_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_northern_battle_axe_t3_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_northern_battle_axe_t3_blade" Type="Blade" scale_factor="120" />
+      <Piece id="crpg_northern_battle_axe_t3_handle" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_vlandia_axe_1_t3" name="{=KanKBHcS}Infantry Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
@@ -308,14 +308,14 @@
   </CraftedItem>
   <CraftedItem id="crpg_tzkurion_axe_t3" name="{=POhLMyat}Broad Tzikourion" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_tzkurion_axe_t3_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_tzkurion_axe_t3_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_tzkurion_axe_t3_blade" Type="Blade" scale_factor="140" />
+      <Piece id="crpg_tzkurion_axe_t3_handle" Type="Handle" scale_factor="130" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_large_franziskaa_axe_t3" name="{=KRhIG1cw}Large Franziska Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_large_franziskaa_axe_t3_blade" Type="Blade" scale_factor="110" />
-      <Piece id="crpg_large_franziskaa_axe_t3_handle" Type="Handle" scale_factor="90" />
+      <Piece id="crpg_large_franziskaa_axe_t3_blade" Type="Blade" scale_factor="130" />
+      <Piece id="crpg_large_franziskaa_axe_t3_handle" Type="Handle" scale_factor="130" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_vlandia_axe_2_t4" name="{=SDBvC0ON}Spiked Battle Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
