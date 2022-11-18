@@ -553,12 +553,12 @@
   },
   {
     "id": "crpg_aserai_2haxe_2_t4",
-    "name": "Executioner Axe",
+    "name": "Long Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 114,
-    "weight": 1.88,
-    "tier": 0.22237739,
+    "price": 7904,
+    "weight": 1.22,
+    "tier": 7.247633,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -570,9 +570,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 115,
-        "balance": 0.28,
-        "handling": 72,
+        "length": 140,
+        "balance": 0.52,
+        "handling": 75,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -582,16 +582,16 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 11,
+        "thrustSpeed": 98,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 78
+        "swingSpeed": 85
       }
     ]
   },
   {
     "id": "crpg_aserai_2haxe_3_t5",
-    "name": "Long Bladed Bardiche",
+    "name": "Large Bladed Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 16752,
@@ -5449,9 +5449,9 @@
     "name": "Bearded Axe",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 312,
-    "weight": 1.24,
-    "tier": 0.752502441,
+    "price": 8341,
+    "weight": 1.12,
+    "tier": 7.47414255,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5463,9 +5463,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 104,
-        "balance": 0.81,
-        "handling": 84,
+        "length": 112,
+        "balance": 0.82,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -5475,8 +5475,8 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
-        "swingDamage": 13,
+        "thrustSpeed": 100,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
         "swingSpeed": 94
       }
@@ -25760,9 +25760,9 @@
     "name": "Northlander Decorated Two Handed Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 131,
-    "weight": 1.68,
-    "tier": 0.2746759,
+    "price": 10358,
+    "weight": 1.02,
+    "tier": 8.451027,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25774,9 +25774,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 121,
-        "balance": 0.23,
-        "handling": 70,
+        "length": 127,
+        "balance": 0.71,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -25786,10 +25786,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 12,
+        "thrustSpeed": 100,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 77
+        "swingSpeed": 91
       }
     ]
   },

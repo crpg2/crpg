@@ -1879,7 +1879,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bearded_axe_t3_handle" name="{=Qqb0VZ1a}Leather Wrapped Two Handed Ash Shaft" tier="3" piece_type="Handle" mesh="axe_craft_29_handle" length="120" weight="0.516">
+  <CraftingPiece id="crpg_bearded_axe_t3_handle" name="{=Qqb0VZ1a}Leather Wrapped Two Handed Ash Shaft" tier="3" piece_type="Handle" mesh="axe_craft_29_handle" length="120" weight="0.45">
     <BuildData piece_offset="35" next_piece_offset="1.835" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -1897,7 +1897,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_2haxe_2_t5_handle" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.677" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_sturgia_2haxe_2_t5_handle" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.45" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="36.879" next_piece_offset="1.6" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -1939,7 +1939,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_2haxe_2_t4_handle" name="{=l13RibeF}Steel Reinforced Great Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.793" excluded_item_usage_features="widegrip">
+  <CraftingPiece id="crpg_aserai_2haxe_2_t4_handle" name="{=l13RibeF}Steel Reinforced Great Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.5" excluded_item_usage_features="widegrip">
     <BuildData piece_offset="28.87" next_piece_offset="2.5" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -2133,10 +2133,10 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bearded_axe_t3_blade" name="{=gSdybwMN}Large Drilled Norse Bearded Head" tier="3" piece_type="Blade" mesh="axe_craft_3_head" distance_to_next_piece="13.057" distance_to_previous_piece="2.314" weight="0.72">
+  <CraftingPiece id="crpg_bearded_axe_t3_blade" name="{=gSdybwMN}Large Drilled Norse Bearded Head" tier="3" piece_type="Blade" mesh="axe_craft_3_head" distance_to_next_piece="13.057" distance_to_previous_piece="2.314" weight="0.625">
     <BuildData piece_offset="-4.628" />
     <BladeData stack_amount="2" blade_length="23.005" blade_width="22.407" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.344" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2170,10 +2170,10 @@
       <Material id="Iron2" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_2haxe_2_t5_blade" name="{=IxCaIvUk}Large Northern Broad Head With Decorated Neck" tier="5" piece_type="Blade" mesh="axe_craft_22_head" distance_to_next_piece="9.3" distance_to_previous_piece="2" weight="1.0">
+  <CraftingPiece id="crpg_sturgia_2haxe_2_t5_blade" name="{=IxCaIvUk}Large Northern Broad Head With Decorated Neck" tier="5" piece_type="Blade" mesh="axe_craft_22_head" distance_to_next_piece="9.3" distance_to_previous_piece="2" weight="0.55">
     <BuildData piece_offset="-4" />
     <BladeData stack_amount="2" blade_length="20.781" blade_width="30.384" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.295" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2209,10 +2209,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_2haxe_2_t4_blade" name="{=0gteBOD7}Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="1.092">
+  <CraftingPiece id="crpg_aserai_2haxe_2_t4_blade" name="{=0gteBOD7}Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.575">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.155" />
+      <Swing damage_type="Cut" damage_factor="4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
