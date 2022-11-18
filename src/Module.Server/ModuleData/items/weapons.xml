@@ -99,11 +99,11 @@
       <Piece id="crpg_wooden_2hsword_t1_pommel" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_practice_spear_t1" name="{=H9hzBJz3}Practice Spear" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_practice_spear_t1" name="{=H9hzBJz3}Bludgeon Staff" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_practice_spear_t1_blade" Type="Blade" />
       <Piece id="crpg_practice_spear_t1_guard" Type="Guard" />
-      <Piece id="crpg_practice_spear_t1_handle" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_practice_spear_t1_handle" Type="Handle" scale_factor="140" />
       <Piece id="crpg_practice_spear_t1_pommel" Type="Pommel" />
     </Pieces>
   </CraftedItem>
@@ -655,17 +655,17 @@
   </CraftedItem>
   <CraftedItem id="crpg_billhook_polearm_t2" name="{=Dj64aJKQ}Billhook" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_billhook_polearm_t2_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_billhook_polearm_t2_blade" Type="Blade" scale_factor="140" />
       <Piece id="crpg_billhook_polearm_t2_guard" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_billhook_polearm_t2_handle" Type="Handle" scale_factor="90" />
+      <Piece id="crpg_billhook_polearm_t2_handle" Type="Handle" scale_factor="80" />
       <Piece id="crpg_billhook_polearm_t2_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_sturgia_polearm_1_t5" name="{=160aqzPm}Warrazor" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_sturgia_polearm_1_t5_blade" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_sturgia_polearm_1_t5_blade" Type="Blade" scale_factor="100" />
       <Piece id="crpg_sturgia_polearm_1_t5_guard" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_sturgia_polearm_1_t5_handle" Type="Handle" scale_factor="65" />
+      <Piece id="crpg_sturgia_polearm_1_t5_handle" Type="Handle" scale_factor="70" />
       <Piece id="crpg_sturgia_polearm_1_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
@@ -695,9 +695,9 @@
   </CraftedItem>
   <CraftedItem id="crpg_battania_polearm_1_t5" name="{=V4b2ZRTH}Rhomphaia" crafting_template="crpg_TwoHandedPolearm" culture="Culture.battania" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_battania_polearm_1_t5_blade" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_battania_polearm_1_t5_blade" Type="Blade" scale_factor="110" />
       <Piece id="crpg_battania_polearm_1_t5_guard" Type="Guard" scale_factor="90" />
-      <Piece id="crpg_battania_polearm_1_t5_handle" Type="Handle" scale_factor="90" />
+      <Piece id="crpg_battania_polearm_1_t5_handle" Type="Handle" scale_factor="65" />
       <Piece id="crpg_battania_polearm_1_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
@@ -711,9 +711,9 @@
   </CraftedItem>
   <CraftedItem id="crpg_empire_polearm_2_t5" name="{=UunjXpgb}Fine Steel Menavlion" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_empire_polearm_2_t5_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_empire_polearm_2_t5_blade" Type="Blade" scale_factor="110" />
       <Piece id="crpg_empire_polearm_2_t5_guard" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_empire_polearm_2_t5_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_empire_polearm_2_t5_handle" Type="Handle" scale_factor="90" />
       <Piece id="crpg_empire_polearm_2_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>

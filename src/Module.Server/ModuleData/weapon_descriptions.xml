@@ -1955,7 +1955,6 @@
       <AvailablePiece id="crpg_eastern_javelin_1_t2_pommel" />
       <AvailablePiece id="crpg_northern_javelin_1_t2_pommel" />
       <AvailablePiece id="crpg_western_javelin_1_t2_pommel" />
-      <AvailablePiece id="crpg_empire_polearm_2_t5_pommel" />
       <AvailablePiece id="crpg_battania_polearm_1_t5_pommel" />
       <AvailablePiece id="crpg_easter_polesword_t4_pommel" />
       <AvailablePiece id="crpg_sturgia_polearm_1_t5_pommel" />
@@ -1987,7 +1986,6 @@
       <AvailablePiece id="crpg_western_javelin_2_t3_guard" />
       <AvailablePiece id="crpg_eastern_javelin_1_t2_guard" />
       <AvailablePiece id="crpg_western_javelin_1_t2_guard" />
-      <AvailablePiece id="crpg_empire_polearm_2_t5_guard" />
       <AvailablePiece id="crpg_easter_polesword_t4_guard" />
       <AvailablePiece id="crpg_sturgia_polearm_1_t5_guard" />
       <AvailablePiece id="crpg_billhook_polearm_t2_guard" />
@@ -2028,7 +2026,6 @@
       <AvailablePiece id="crpg_northern_spear_3_t4_handle" />
       <AvailablePiece id="crpg_eastern_spear_4_t4_handle" />
       <AvailablePiece id="crpg_empire_lance_1_t3_handle" />
-      <AvailablePiece id="crpg_empire_polearm_2_t5_handle" />
       <AvailablePiece id="crpg_battania_polearm_1_t5_handle" />
       <AvailablePiece id="crpg_eastern_spear_5_t5_handle" />
       <AvailablePiece id="crpg_military_fork_t2_handle" />
@@ -2070,7 +2067,6 @@
       <AvailablePiece id="crpg_empire_lance_1_t3_blade" />
       <AvailablePiece id="crpg_easter_polesword_t4_blade" />
       <AvailablePiece id="crpg_vlandia_lance_1_t3_blade" />
-      <AvailablePiece id="crpg_empire_polearm_2_t5_blade" />
       <AvailablePiece id="crpg_western_javelin_1_t2_blade" />
       <AvailablePiece id="crpg_imperial_throwing_spear_1_t4_blade" />
       <AvailablePiece id="crpg_eastern_throwing_spear_2_t4_blade" />

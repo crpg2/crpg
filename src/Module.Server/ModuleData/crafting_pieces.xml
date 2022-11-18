@@ -887,7 +887,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_polearm_1_t5_handle" name="{=aQa3tp6Q}Decorated Long Pine Shaft" tier="5" piece_type="Handle" mesh="spear_handle_8" length="230" weight="0.9" CraftingCost="110">
+  <CraftingPiece id="crpg_battania_polearm_1_t5_handle" name="{=aQa3tp6Q}Decorated Long Pine Shaft" tier="5" piece_type="Handle" mesh="spear_handle_8" length="230" weight="1" CraftingCost="110">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -1159,7 +1159,7 @@
       <Material id="Iron4" count="0" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_practice_spear_t1_blade" name="{=V9Kbq6vj}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.5">
+  <CraftingPiece id="crpg_practice_spear_t1_blade" name="{=V9Kbq6vj}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.3">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Blunt" damage_factor="1.5" />
       <Swing damage_type="Blunt" damage_factor="3" />
@@ -1377,9 +1377,9 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_polearm_1_t5_blade" name="{=PmPxx2gK}Bent Razor Head" tier="4" piece_type="Blade" mesh="spear_blade_44" length="80" weight="0.25" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_battania_polearm_1_t5_blade" name="{=PmPxx2gK}Bent Razor Head" tier="4" piece_type="Blade" mesh="spear_blade_44" length="80" weight="0.55" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="4.8" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
@@ -1388,7 +1388,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_polearm_1_t5_blade" name="{=wait0O6m}Warrazor Head" tier="4" piece_type="Blade" mesh="spear_blade_43" length="64.4" weight="0.4" excluded_item_usage_features="">
+  <CraftingPiece id="crpg_sturgia_polearm_1_t5_blade" name="{=wait0O6m}Warrazor Head" tier="4" piece_type="Blade" mesh="spear_blade_43" length="64.4" weight="0.5" excluded_item_usage_features="">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="1.7" />
       <Swing damage_type="Cut" damage_factor="5" />
@@ -1415,9 +1415,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_polearm_2_t5_blade" name="{=qSV6C2tp}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.4">
+  <CraftingPiece id="crpg_empire_polearm_2_t5_blade" name="{=qSV6C2tp}Swordstaff Head" tier="5" piece_type="Blade" mesh="spear_blade_18" length="70" weight="0.6">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Thrust damage_type="Cut" damage_factor="3" />
       <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Materials>
@@ -1738,9 +1738,9 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_polearm_t2_blade" name="{=R62maL2H}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.2" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_billhook_polearm_t2_blade" name="{=R62maL2H}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.5" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="4.5" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
