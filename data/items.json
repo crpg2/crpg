@@ -5993,6 +5993,42 @@
     ]
   },
   {
+    "id": "crpg_bolt_f",
+    "name": "Heavy Piercing Bolts",
+    "culture": "Empire",
+    "type": "Bolts",
+    "price": 7815,
+    "weight": 0.3,
+    "tier": 9.736687,
+    "requirement": 0,
+    "flags": [
+      "ForceAttachOffHandPrimaryItemBone"
+    ],
+    "weapons": [
+      {
+        "class": "Bolt",
+        "itemUsage": "",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 5,
+        "length": 37,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "AttachAmmoToVisual",
+          "Consumable"
+        ],
+        "thrustDamage": 14,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
     "id": "crpg_bolted_leather_strips",
     "name": "Bolted Leather Strips",
     "culture": "Khuzait",
