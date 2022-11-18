@@ -117,7 +117,7 @@
   </Item>
   <Item multiplayer_item="false" id="crpg_push_fork" name="{=l69aXkKH}Push Fork" is_merchandise="false" body_name="bo_push_fork" recalculate_body="true" mesh="push_fork" subtype="two_handed_wpn" weight="2" difficulty="0" appearance="0.1" Type="Polearm" item_holsters="polearm_back:polearm_back_2">
     <ItemComponent>
-      <Weapon weapon_class="TwoHandedPolearm" weapon_balance="100" thrust_speed="56" speed_rating="70" physics_material="wood_weapon" weapon_length="200" swing_damage="5" thrust_damage="2" swing_damage_type="Blunt" thrust_damage_type="Blunt" item_usage="polearm_block_thrust">
+      <Weapon weapon_class="TwoHandedPolearm" weapon_balance="100" thrust_speed="56" speed_rating="70" physics_material="wood_weapon" weapon_length="200" swing_damage="1" thrust_damage="15" swing_damage_type="Blunt" thrust_damage_type="Blunt" item_usage="polearm_block_thrust">
         <WeaponFlags MeleeWeapon="true" PenaltyWithShield="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" WideGrip="true" />
       </Weapon>
     </ItemComponent>
@@ -560,7 +560,7 @@
       <Piece id="crpg_eastern_spear_4_t4_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_highland_spear_4_t4" name="{=duIWCjdD}Steel Tipped Hooked Spear" crafting_template="crpg_TwoHandedPolearm" culture="Culture.battania" modifier_group="polearm">
+  <CraftedItem id="crpg_highland_spear_4_t4" name="{=duIWCjdD}Steel Tipped Hooked Spear" crafting_template="crpg_Spear4DMode" culture="Culture.battania" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_highland_spear_4_t4_blade" Type="Blade" scale_factor="100" />
       <Piece id="crpg_highland_spear_4_t4_guard" Type="Guard" scale_factor="100" />
