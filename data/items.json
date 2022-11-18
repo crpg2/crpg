@@ -7482,9 +7482,9 @@
     "name": "Simple Light Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 1504,
+    "price": 1325,
     "weight": 1.2,
-    "tier": 2.20283651,
+    "tier": 2.01544929,
     "requirement": 3,
     "flags": [],
     "weapons": [
@@ -7505,7 +7505,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 0,
@@ -7634,9 +7634,9 @@
     "name": "Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 3513,
+    "price": 3154,
     "weight": 1.5,
-    "tier": 3.84904766,
+    "tier": 3.59672141,
     "requirement": 6,
     "flags": [],
     "weapons": [
@@ -7657,7 +7657,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 30,
+        "thrustDamage": 29,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 93,
         "swingDamage": 0,
@@ -7710,9 +7710,9 @@
     "name": "Fine Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 6275,
+    "price": 5708,
     "weight": 2.2,
-    "tier": 5.47687626,
+    "tier": 5.176831,
     "requirement": 9,
     "flags": [],
     "weapons": [
@@ -7733,7 +7733,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 36,
+        "thrustDamage": 35,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
         "swingDamage": 0,
@@ -7747,9 +7747,9 @@
     "name": "Squires Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 9898,
+    "price": 9063,
     "weight": 2.8,
-    "tier": 7.14164352,
+    "tier": 6.789025,
     "requirement": 12,
     "flags": [],
     "weapons": [
@@ -7771,7 +7771,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 40,
+        "thrustDamage": 39,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
         "swingDamage": 0,
