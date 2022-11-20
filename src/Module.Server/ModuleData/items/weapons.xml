@@ -201,7 +201,7 @@
   <CraftedItem id="crpg_black_heart_2haxe_t3" name="{=2dJ5HB8a}Black Heart" crafting_template="crpg_TwoHandedAxe" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_black_heart_2haxe_t3_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_black_heart_2haxe_t3_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_black_heart_2haxe_t3_handle" Type="Handle" scale_factor="101" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_reaper_falx" name="{=oXrbTRJo}Reaper" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
@@ -372,10 +372,10 @@
       <Piece id="crpg_simple_sparth_axe_t2_handle" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_aserai_2haxe_1_t3" name="{=HECAP8QW}Short Handled Bardiche" crafting_template="crpg_TwoHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_aserai_2haxe_1_t3" name="{=HECAP8QW}Chainbreaker" crafting_template="crpg_TwoHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_aserai_2haxe_1_t3_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_aserai_2haxe_1_t3_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_aserai_2haxe_1_t3_handle" Type="Handle" scale_factor="114" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_bearded_axe_t3" name="{=Mb0CuONB}Bearded Axe" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
@@ -405,13 +405,13 @@
   <CraftedItem id="crpg_sturgia_2haxe_1_t4" name="{=jhFSLdve}Drilled Two Handed Axe" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_sturgia_2haxe_1_t4_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_sturgia_2haxe_1_t4_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_sturgia_2haxe_1_t4_handle" Type="Handle" scale_factor="96" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hooked_axe_t4" name="{=P9PcIk4q}Hooked Cavalry Axe" crafting_template="crpg_TwoHandedAxe" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_hooked_axe_t4" name="{=P9PcIk4q}Hooked Axe" crafting_template="crpg_TwoHandedAxe" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_hooked_axe_t4_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_hooked_axe_t4_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_hooked_axe_t4_handle" Type="Handle" scale_factor="128" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_aserai_2haxe_3_t5" name="{=hTPJXK1w}Large Bladed Bardiche" crafting_template="crpg_TwoHandedAxe" culture="Culture.aserai" modifier_group="axe">
