@@ -6564,9 +6564,9 @@
     "name": "Broad Falchion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 227,
-    "weight": 2.14,
-    "tier": 0.9088541,
+    "price": 4563,
+    "weight": 1.94,
+    "tier": 7.555654,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6577,18 +6577,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 108,
-        "balance": 0.25,
-        "handling": 82,
+        "balance": 0.42,
+        "handling": 86,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 12,
+        "thrustSpeed": 87,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 77
+        "swingSpeed": 82
       }
     ]
   },
@@ -7198,12 +7198,12 @@
   },
   {
     "id": "crpg_cleaver_sword_t3",
-    "name": "Cleaver",
+    "name": "Iron Cleaver",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 317,
-    "weight": 1.8,
-    "tier": 1.23877752,
+    "price": 2910,
+    "weight": 2.14,
+    "tier": 5.813064,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -7213,19 +7213,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 105,
-        "balance": 0.42,
-        "handling": 86,
+        "length": 99,
+        "balance": 0.36,
+        "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 12,
+        "thrustSpeed": 85,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 80
       }
     ]
   },
@@ -7922,9 +7922,9 @@
     "name": "Dawnbreaker",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 333,
-    "weight": 1.84,
-    "tier": 1.29404223,
+    "price": 6466,
+    "weight": 1.89,
+    "tier": 9.206009,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -7936,19 +7936,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 98,
-        "balance": 0.51,
+        "length": 102,
+        "balance": 0.43,
         "handling": 88,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 12,
+        "thrustSpeed": 87,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 83
       }
     ]
   },
@@ -11066,12 +11066,12 @@
   },
   {
     "id": "crpg_falchion_sword_t2",
-    "name": "Falchion",
+    "name": "Iron Falchion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 345,
-    "weight": 1.69,
-    "tier": 1.33295643,
+    "price": 3104,
+    "weight": 1.97,
+    "tier": 6.03931332,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11083,19 +11083,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 71,
-        "balance": 0.88,
-        "handling": 100,
+        "length": 97,
+        "balance": 0.53,
+        "handling": 94,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 10,
+        "thrustSpeed": 87,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 85
       }
     ]
   },
@@ -21716,9 +21716,9 @@
     "name": "Pointed Falchion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 463,
-    "weight": 1.68,
-    "tier": 1.69683087,
+    "price": 4908,
+    "weight": 1.96,
+    "tier": 7.877381,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21728,19 +21728,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 108,
-        "balance": 0.41,
-        "handling": 85,
+        "length": 104,
+        "balance": 0.53,
+        "handling": 88,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 15,
+        "thrustSpeed": 87,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 85
       }
     ]
   },
@@ -24604,9 +24604,9 @@
     "name": "Star Falchion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 154,
-    "weight": 2.3,
-    "tier": 0.5932474,
+    "price": 5015,
+    "weight": 2.01,
+    "tier": 7.97491,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24616,19 +24616,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 111,
-        "balance": 0.01,
-        "handling": 76,
+        "length": 108,
+        "balance": 0.36,
+        "handling": 84,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 14,
+        "thrustSpeed": 87,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 70
+        "swingSpeed": 80
       }
     ]
   },
@@ -27209,9 +27209,9 @@
     "name": "Scalpel",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 363,
-    "weight": 1.47,
-    "tier": 1.391722,
+    "price": 6651,
+    "weight": 1.86,
+    "tier": 9.352082,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -27221,19 +27221,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 120,
-        "balance": 0.42,
+        "length": 110,
+        "balance": 0.44,
         "handling": 84,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 12,
+        "thrustSpeed": 87,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 83
       }
     ]
   },
@@ -28051,9 +28051,9 @@
     "name": "Tyrhung",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 335,
-    "weight": 1.95,
-    "tier": 1.2996794,
+    "price": 6993,
+    "weight": 1.49,
+    "tier": 9.618001,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28065,19 +28065,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 96,
-        "balance": 0.52,
-        "handling": 89,
+        "length": 107,
+        "balance": 0.46,
+        "handling": 88,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 12,
+        "thrustSpeed": 90,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 83
       }
     ]
   },
@@ -30796,9 +30796,9 @@
     "name": "Winds Fury",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 694,
-    "weight": 1.39,
-    "tier": 2.30155087,
+    "price": 6458,
+    "weight": 2.05,
+    "tier": 9.19887352,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30808,19 +30808,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 107,
-        "balance": 0.71,
-        "handling": 90,
+        "length": 116,
+        "balance": 0.25,
+        "handling": 83,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 13,
+        "thrustSpeed": 86,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 77
       }
     ]
   },
@@ -30986,9 +30986,9 @@
     "name": "Wooden Sword",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 333,
-    "weight": 0.58,
-    "tier": 1.29523945,
+    "price": 583,
+    "weight": 0.97,
+    "tier": 2.026218,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30999,19 +30999,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 104,
-        "balance": 1.0,
-        "handling": 107,
+        "balance": 0.99,
+        "handling": 99,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
           "NoBlood"
         ],
-        "thrustDamage": 2,
+        "thrustDamage": 4,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 101,
-        "swingDamage": 5,
+        "thrustSpeed": 97,
+        "swingDamage": 8,
         "swingDamageType": "Blunt",
-        "swingSpeed": 109
+        "swingSpeed": 99
       }
     ]
   },
