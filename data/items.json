@@ -4426,9 +4426,9 @@
     "name": "Highland Spiked Club",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 57254,
-    "weight": 0.91,
-    "tier": 29.6289177,
+    "price": 4673,
+    "weight": 1.46,
+    "tier": 7.659144,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4439,18 +4439,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 93,
-        "balance": 0.81,
-        "handling": 92,
+        "balance": 0.43,
+        "handling": 84,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
+        "thrustSpeed": 90,
         "swingDamage": 27,
         "swingDamageType": "Pierce",
-        "swingSpeed": 94
+        "swingSpeed": 82
       }
     ]
   },
@@ -10291,9 +10291,9 @@
     "name": "Spiked Club",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 23440,
-    "weight": 1.15,
-    "tier": 18.5461273,
+    "price": 4744,
+    "weight": 1.48,
+    "tier": 7.72574234,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10304,18 +10304,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 78,
-        "balance": 0.95,
-        "handling": 97,
+        "balance": 0.67,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 91,
         "swingDamage": 23,
         "swingDamageType": "Pierce",
-        "swingSpeed": 98
+        "swingSpeed": 90
       }
     ]
   },
@@ -17478,9 +17478,9 @@
     "name": "Morningstar",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 175881,
-    "weight": 1.11,
-    "tier": 52.798378,
+    "price": 7450,
+    "weight": 1.89,
+    "tier": 9.962963,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17490,19 +17490,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 89,
-        "balance": 0.87,
-        "handling": 93,
+        "length": 80,
+        "balance": 0.53,
+        "handling": 81,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 87,
         "swingDamage": 30,
         "swingDamageType": "Pierce",
-        "swingSpeed": 96
+        "swingSpeed": 86
       }
     ]
   },
@@ -28980,9 +28980,9 @@
     "name": "Spiked Mace",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 27889,
-    "weight": 1.3,
-    "tier": 20.3332138,
+    "price": 5127,
+    "weight": 1.62,
+    "tier": 8.075823,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -28992,19 +28992,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 73,
-        "balance": 0.84,
-        "handling": 96,
+        "length": 70,
+        "balance": 0.6,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 9,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
+        "thrustSpeed": 90,
         "swingDamage": 26,
         "swingDamageType": "Pierce",
-        "swingSpeed": 95
+        "swingSpeed": 87
       }
     ]
   },

@@ -1522,7 +1522,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_vlandia_mace_1_t2" name="{=7jH0kuof}Spiked Mace" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_vlandia_mace_1_t2_blade" Type="Blade" scale_factor="160" />
+      <Piece id="crpg_vlandia_mace_1_t2_blade" Type="Blade" scale_factor="140" />
       <Piece id="crpg_vlandia_mace_1_t2_handle" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
@@ -1591,8 +1591,8 @@
   </CraftedItem>
   <CraftedItem id="crpg_morningstar_mace_t3" name="{=6EWm09LY}Morningstar" crafting_template="crpg_Mace" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_morningstar_mace_t3_blade" Type="Blade" scale_factor="120" />
-      <Piece id="crpg_morningstar_mace_t3_handle" Type="Handle" scale_factor="140" />
+      <Piece id="crpg_morningstar_mace_t3_blade" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_morningstar_mace_t3_handle" Type="Handle" scale_factor="120" />
       <Piece id="crpg_morningstar_mace_t3_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>

@@ -24,7 +24,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_morningstar_mace_t3_handle" name="{=FxCfO3zN}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="mace_handle_1" length="62.5" weight="0.30" CraftingCost="75">
+  <CraftingPiece id="crpg_morningstar_mace_t3_handle" name="{=FxCfO3zN}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="mace_handle_1" length="62.5" weight="0.35" CraftingCost="75">
     <BuildData piece_offset="18" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -148,7 +148,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_mace_1_t2_handle" name="{=V3JMuFEg}Tied Mace Handle" tier="2" piece_type="Handle" mesh="mace_handle_3" length="60" weight="0.40" CraftingCost="75">
+  <CraftingPiece id="crpg_empire_mace_1_t2_handle" name="{=V3JMuFEg}Tied Mace Handle" tier="2" piece_type="Handle" mesh="mace_handle_3" length="60" weight="0.46" CraftingCost="75">
     <BuildData piece_offset="13" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -160,7 +160,7 @@
       <Material id="Wood" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_mace_2_t2_handle" name="{=87BmkiMO}Gnarled Mace Handle" tier="2" piece_type="Handle" mesh="mace_handle_6" length="56.2" weight="0.15" CraftingCost="75">
+  <CraftingPiece id="crpg_battania_mace_2_t2_handle" name="{=87BmkiMO}Gnarled Mace Handle" tier="2" piece_type="Handle" mesh="mace_handle_6" length="56.2" weight="0.35" CraftingCost="75">
     <BuildData piece_offset="15" />
     <Materials>
       <Material id="Wood" count="2" />
@@ -208,9 +208,9 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_morningstar_mace_t3_blade" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.3" full_scale="true">
+  <CraftingPiece id="crpg_morningstar_mace_t3_blade" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.40" full_scale="true">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
       <Swing damage_type="Pierce" damage_factor="3.0" />
     </BladeData>
     <Materials>
@@ -285,7 +285,7 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_mace_2_t2_blade" name="{=0SpLcthg}Highland Spiked Club" tier="2" piece_type="Blade" mesh="mace_head_5" length="25.5" weight="0.40" full_scale="true">
+  <CraftingPiece id="crpg_battania_mace_2_t2_blade" name="{=0SpLcthg}Highland Spiked Club" tier="2" piece_type="Blade" mesh="mace_head_5" length="25.5" weight="0.55" full_scale="true">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
       <Thrust damage_type="Pierce" damage_factor="1.2" />
       <Swing damage_type="Pierce" damage_factor="2.7" />
@@ -408,7 +408,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_mace_1_t2_blade" name="{=L3vLdPJT}Improved Spiked Club Head" tier="2" piece_type="Blade" mesh="mace_head_23" distance_to_next_piece="15.4" distance_to_previous_piece="8.2" weight="0.5" full_scale="true">
+  <CraftingPiece id="crpg_empire_mace_1_t2_blade" name="{=L3vLdPJT}Improved Spiked Club Head" tier="2" piece_type="Blade" mesh="mace_head_23" distance_to_next_piece="15.4" distance_to_previous_piece="8.2" weight="0.70" full_scale="true">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
       <Thrust damage_type="Pierce" damage_factor="1.5" />
       <Swing damage_type="Pierce" damage_factor="2.3" />
@@ -441,7 +441,7 @@
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_mace_1_t2_blade" name="{=lZoqaYmx}Spiked Club Head" tier="2" piece_type="Blade" mesh="mace_head_22" distance_to_next_piece="7.6" distance_to_previous_piece="4.1" weight="0.19" full_scale="true">
+  <CraftingPiece id="crpg_vlandia_mace_1_t2_blade" name="{=lZoqaYmx}Spiked Club Head" tier="2" piece_type="Blade" mesh="mace_head_22" distance_to_next_piece="7.6" distance_to_previous_piece="4.1" weight="0.40" full_scale="true">
     <BladeData stack_amount="0" physics_material="wood_weapon" body_name="bo_mace_a">
       <Thrust damage_type="Pierce" damage_factor="0.9" />
       <Swing damage_type="Pierce" damage_factor="2.6" />
@@ -3252,7 +3252,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_morningstar_mace_t3_pommel" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="empire_pommel_4" culture="Culture.empire" length="6.795" weight="0.170">
+  <CraftingPiece id="crpg_morningstar_mace_t3_pommel" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="empire_pommel_4" culture="Culture.empire" length="6.795" weight="0.69">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
