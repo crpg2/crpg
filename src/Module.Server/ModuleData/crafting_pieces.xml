@@ -2816,7 +2816,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_3_t5_pommel" name="{=zoQhOBku}Round Spiked Pommel" tier="4" piece_type="Pommel" mesh="khuzait_noble_pommel_3" culture="Culture.khuzait" length="5.6" weight="0.26">
+  <CraftingPiece id="crpg_khuzait_noble_sword_3_t5_pommel" name="{=zoQhOBku}Round Spiked Pommel" tier="4" piece_type="Pommel" mesh="khuzait_noble_pommel_3" culture="Culture.khuzait" length="5.6" weight="0.1">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
@@ -2910,7 +2910,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_2_t5_pommel" name="{=26KZ6S7F}Eastern Decorated Pommel" tier="5" piece_type="Pommel" mesh="khuzait_noble_pommel_2" culture="Culture.khuzait" length="4.3" weight="0.26">
+  <CraftingPiece id="crpg_khuzait_noble_sword_2_t5_pommel" name="{=26KZ6S7F}Eastern Decorated Pommel" tier="5" piece_type="Pommel" mesh="khuzait_noble_pommel_2" culture="Culture.khuzait" length="4.3" weight="0.17">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron5" count="1" />
@@ -2922,7 +2922,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_1_t5_pommel" name="{=W5tvNbjY}Eastern Ornamented Pommel" tier="5" piece_type="Pommel" mesh="khuzait_noble_pommel_1" culture="Culture.khuzait" length="3.6" weight="0.26">
+  <CraftingPiece id="crpg_khuzait_noble_sword_1_t5_pommel" name="{=W5tvNbjY}Eastern Ornamented Pommel" tier="5" piece_type="Pommel" mesh="khuzait_noble_pommel_1" culture="Culture.khuzait" length="3.6" weight="0.1">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron5" count="1" />
@@ -2985,7 +2985,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_ild_sword_t3_pommel" name="{=u89rP5qY}Wide Brimmed Pommel" tier="1" piece_type="Pommel" mesh="khuzait_pommel_6" culture="Culture.aserai" length="2.616" weight="0.11">
+  <CraftingPiece id="crpg_broad_ild_sword_t3_pommel" name="{=u89rP5qY}Wide Brimmed Pommel" tier="1" piece_type="Pommel" mesh="khuzait_pommel_6" culture="Culture.aserai" length="2.616" weight="0.1">
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
@@ -3030,7 +3030,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_back_sword_t2_pommel" name="{=WkLj6xAo}Trapezoid Pommel" tier="1" piece_type="Pommel" mesh="cleaver_pommel_1" length="5.255" weight="0.14">
+  <CraftingPiece id="crpg_simple_back_sword_t2_pommel" name="{=WkLj6xAo}Trapezoid Pommel" tier="1" piece_type="Pommel" mesh="cleaver_pommel_1" length="5.255" weight="0.1">
     <Materials>
       <Material id="Iron2" count="2" />
     </Materials>
@@ -3152,12 +3152,12 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_5_t4_pommel" name="{=lv9oJyKJ}Eastern Flat Pommel" tier="3" piece_type="Pommel" mesh="khuzait_pommel_4" culture="Culture.khuzait" length="1.508" weight="0.18">
+  <CraftingPiece id="crpg_khuzait_sword_5_t4_pommel" name="{=lv9oJyKJ}Eastern Flat Pommel" tier="3" piece_type="Pommel" mesh="khuzait_pommel_4" culture="Culture.khuzait" length="1.508" weight="0.1">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_4_t4_pommel" name="{=lv9oJyKJ}Eastern Flat Pommel" tier="3" piece_type="Pommel" mesh="khuzait_pommel_4" culture="Culture.khuzait" length="1.508" weight="0.18">
+  <CraftingPiece id="crpg_khuzait_sword_4_t4_pommel" name="{=lv9oJyKJ}Eastern Flat Pommel" tier="3" piece_type="Pommel" mesh="khuzait_pommel_4" culture="Culture.khuzait" length="1.508" weight="0.1">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
@@ -3167,7 +3167,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_2_t3_pommel" name="{=1pvLe1Mh}Simple Ild Pommel" tier="1" piece_type="Pommel" mesh="khuzait_pommel_3" culture="Culture.khuzait" length="1.741" weight="0.12">
+  <CraftingPiece id="crpg_khuzait_sword_2_t3_pommel" name="{=1pvLe1Mh}Simple Ild Pommel" tier="1" piece_type="Pommel" mesh="khuzait_pommel_3" culture="Culture.khuzait" length="1.741" weight="0.01">
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
@@ -3437,7 +3437,7 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_3_t5_handle" name="{=Ft5A2Eb4}Eastern Leather Covered Reinforced Two Handed Grip" tier="4" piece_type="Handle" mesh="khuzait_noble_grip_1" culture="Culture.khuzait" length="25.2" weight="0.200">
+  <CraftingPiece id="crpg_khuzait_noble_sword_3_t5_handle" name="{=Ft5A2Eb4}Eastern Leather Covered Reinforced Two Handed Grip" tier="4" piece_type="Handle" mesh="khuzait_noble_grip_1" culture="Culture.khuzait" length="25.2" weight="0.3">
     <BuildData piece_offset="0" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="2" />
@@ -3582,13 +3582,13 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_2_t5_handle" name="{=bPUXlfs8}Decorated Eastern Ild Grip" tier="5" piece_type="Handle" mesh="khuzait_noble_grip_2" culture="Culture.khuzait" length="15" weight="0.200">
+  <CraftingPiece id="crpg_khuzait_noble_sword_2_t5_handle" name="{=bPUXlfs8}Decorated Eastern Ild Grip" tier="5" piece_type="Handle" mesh="khuzait_noble_grip_2" culture="Culture.khuzait" length="15" weight="0.36">
     <BuildData piece_offset="0" previous_piece_offset="0.35" next_piece_offset="0.5" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_1_t5_handle" name="{=bPUXlfs8}Decorated Eastern Ild Grip" tier="5" piece_type="Handle" mesh="khuzait_noble_grip_2" culture="Culture.khuzait" length="15" weight="0.200">
+  <CraftingPiece id="crpg_khuzait_noble_sword_1_t5_handle" name="{=bPUXlfs8}Decorated Eastern Ild Grip" tier="5" piece_type="Handle" mesh="khuzait_noble_grip_2" culture="Culture.khuzait" length="15" weight="0.3">
     <BuildData piece_offset="0" previous_piece_offset="0.35" next_piece_offset="0.5" />
     <Materials>
       <Material id="Iron5" count="1" />
@@ -3678,7 +3678,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_ild_sword_t3_handle" name="{=Ldq6AOrb}Iron Ring Bound Rough Leather Two Handed Grip" tier="3" piece_type="Handle" mesh="khuzait_grip_14" culture="Culture.khuzait" length="25" weight="0.1">
+  <CraftingPiece id="crpg_broad_ild_sword_t3_handle" name="{=Ldq6AOrb}Iron Ring Bound Rough Leather Two Handed Grip" tier="3" piece_type="Handle" mesh="khuzait_grip_14" culture="Culture.khuzait" length="25" weight="0.4">
     <BuildData piece_offset="-0.09" previous_piece_offset="0.2" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -3708,13 +3708,13 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_back_sword_t2_handle" name="{=Q9Gfv68h}Two Handed Saber Grip" tier="2" piece_type="Handle" mesh="khuzait_grip_16" culture="Culture.khuzait" length="27" weight="0.1">
+  <CraftingPiece id="crpg_simple_back_sword_t2_handle" name="{=Q9Gfv68h}Two Handed Saber Grip" tier="2" piece_type="Handle" mesh="khuzait_grip_16" culture="Culture.khuzait" length="27" weight="0.55">
     <BuildData piece_offset="-0.04" previous_piece_offset="0.2" next_piece_offset="0" />
     <Materials>
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_sabre_sword_t2_handle" name="{=aj59KGOS}Rough Leather Two Handed Grip" tier="2" piece_type="Handle" mesh="aserai_grip_23" culture="Culture.aserai" length="25" weight="0.20">
+  <CraftingPiece id="crpg_simple_sabre_sword_t2_handle" name="{=aj59KGOS}Rough Leather Two Handed Grip" tier="2" piece_type="Handle" mesh="aserai_grip_23" culture="Culture.aserai" length="25" weight="0.46">
     <BuildData piece_offset="-0.95" previous_piece_offset="0.2" next_piece_offset="0" />
     <Materials>
       <Material id="Iron2" count="2" />
@@ -3841,19 +3841,19 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_5_t4_handle" name="{=Num2tkFb}Plated Long Grip" tier="4" piece_type="Handle" mesh="khuzait_grip_8" culture="Culture.khuzait" length="20.425" weight="0.180">
+  <CraftingPiece id="crpg_khuzait_sword_5_t4_handle" name="{=Num2tkFb}Plated Long Grip" tier="4" piece_type="Handle" mesh="khuzait_grip_8" culture="Culture.khuzait" length="20.425" weight="0.25">
     <BuildData piece_offset="-2.44" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_4_t4_handle" name="{=ooBWHpxP}Leather Covered Angular Eastern Grip" tier="4" piece_type="Handle" mesh="khuzait_grip_15" culture="Culture.khuzait" length="25.5" weight="0.150">
+  <CraftingPiece id="crpg_khuzait_sword_4_t4_handle" name="{=ooBWHpxP}Leather Covered Angular Eastern Grip" tier="4" piece_type="Handle" mesh="khuzait_grip_15" culture="Culture.khuzait" length="25.5" weight="0.43">
     <BuildData piece_offset="-1.98" previous_piece_offset="0.2" next_piece_offset="0.3" />
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_2_t3_handle" name="{=uAfTaa3p}Eastern Fine Leather One Handed Grip" tier="3" piece_type="Handle" mesh="khuzait_grip_4" culture="Culture.khuzait" length="15.2" weight="0.1">
+  <CraftingPiece id="crpg_khuzait_sword_2_t3_handle" name="{=uAfTaa3p}Eastern Fine Leather One Handed Grip" tier="3" piece_type="Handle" mesh="khuzait_grip_4" culture="Culture.khuzait" length="15.2" weight="0.01">
     <BuildData piece_offset="-0.09" previous_piece_offset="0.2" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -3865,13 +3865,13 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_3_t3_handle" name="{=OlUuoUBe}Eastern Iron Bound Fine Leather Grip" tier="3" piece_type="Handle" mesh="khuzait_grip_2" culture="Culture.khuzait" length="15.1" weight="0.1">
+  <CraftingPiece id="crpg_khuzait_sword_3_t3_handle" name="{=OlUuoUBe}Eastern Iron Bound Fine Leather Grip" tier="3" piece_type="Handle" mesh="khuzait_grip_2" culture="Culture.khuzait" length="15.1" weight="0.48">
     <BuildData piece_offset="-0.04" previous_piece_offset="0.2" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_1_t2_handle" name="{=3ZyRhmke}Short Saber Grip" tier="2" piece_type="Handle" mesh="khuzait_grip_7" culture="Culture.khuzait" length="15.1" weight="0.1">
+  <CraftingPiece id="crpg_khuzait_sword_1_t2_handle" name="{=3ZyRhmke}Short Saber Grip" tier="2" piece_type="Handle" mesh="khuzait_grip_7" culture="Culture.khuzait" length="15.1" weight="0.32">
     <BuildData piece_offset="-0.04" previous_piece_offset="0.2" next_piece_offset="0" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -4045,7 +4045,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_3_t5_guard" name="{=wXUjru6o}Knobbed Wide Saber Guard" tier="5" piece_type="Guard" mesh="khuzait_noble_guard_3" culture="Culture.khuzait" length="2.9" weight="0.24">
+  <CraftingPiece id="crpg_khuzait_noble_sword_3_t5_guard" name="{=wXUjru6o}Knobbed Wide Saber Guard" tier="5" piece_type="Guard" mesh="khuzait_noble_guard_3" culture="Culture.khuzait" length="2.9" weight="0.15">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="5" />
     <Materials>
@@ -4143,14 +4143,14 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_2_t5_guard" name="{=DiAHIRxm}Engraved Saber Guard" tier="5" piece_type="Guard" mesh="khuzait_noble_guard_2" culture="Culture.khuzait" length="2.1" weight="0.24">
+  <CraftingPiece id="crpg_khuzait_noble_sword_2_t5_guard" name="{=DiAHIRxm}Engraved Saber Guard" tier="5" piece_type="Guard" mesh="khuzait_noble_guard_2" culture="Culture.khuzait" length="2.1" weight="0.28">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="5" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_1_t5_guard" name="{=azjW7lAg}Engraved Ild Guard" tier="5" piece_type="Guard" mesh="khuzait_noble_guard_1" culture="Culture.khuzait" length="1.8" weight="0.24">
+  <CraftingPiece id="crpg_khuzait_noble_sword_1_t5_guard" name="{=azjW7lAg}Engraved Ild Guard" tier="5" piece_type="Guard" mesh="khuzait_noble_guard_1" culture="Culture.khuzait" length="1.8" weight="0.2">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="3" />
     <Materials>
@@ -4248,7 +4248,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_ild_sword_t3_guard" name="{=CiZRwdet}Eastern Flat Guard" tier="1" piece_type="Guard" mesh="khuzait_guard_1" culture="Culture.khuzait" length="1.456" weight="0.15">
+  <CraftingPiece id="crpg_broad_ild_sword_t3_guard" name="{=CiZRwdet}Eastern Flat Guard" tier="1" piece_type="Guard" mesh="khuzait_guard_1" culture="Culture.khuzait" length="1.456" weight="0.25">
     <BuildData next_piece_offset="0.5" />
     <StatContributions armor_bonus="1" />
     <Materials>
@@ -4269,14 +4269,14 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_back_sword_t2_guard" name="{=JanWod6k}Narrow Warsword Guard" tier="2" piece_type="Guard" mesh="sturgian_guard_7" culture="Culture.sturgia" length="2.4" weight="0.22">
+  <CraftingPiece id="crpg_simple_back_sword_t2_guard" name="{=JanWod6k}Narrow Warsword Guard" tier="2" piece_type="Guard" mesh="sturgian_guard_7" culture="Culture.sturgia" length="2.4" weight="0.45">
     <BuildData next_piece_offset="0.3" />
     <StatContributions armor_bonus="0" />
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_sabre_sword_t2_guard" name="{=gPXRnvas}Disc Guard" tier="1" piece_type="Guard" mesh="khuzait_guard_3" culture="Culture.empire" length="1.207" weight="0.14">
+  <CraftingPiece id="crpg_simple_sabre_sword_t2_guard" name="{=gPXRnvas}Disc Guard" tier="1" piece_type="Guard" mesh="khuzait_guard_3" culture="Culture.empire" length="1.207" weight="0.22">
     <BuildData next_piece_offset="0.4" />
     <StatContributions armor_bonus="1" />
     <Materials>
@@ -4423,21 +4423,21 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_4_t4_guard" name="{=1auabxxv}Rounded Flat Guard" tier="4" piece_type="Guard" mesh="khuzait_guard_9" culture="Culture.khuzait" length="0.459" weight="0.24">
+  <CraftingPiece id="crpg_khuzait_sword_4_t4_guard" name="{=1auabxxv}Rounded Flat Guard" tier="4" piece_type="Guard" mesh="khuzait_guard_9" culture="Culture.khuzait" length="0.459" weight="0.36">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_5_t4_guard" name="{=euI3vluL}Broad Saber Guard" tier="4" piece_type="Guard" mesh="khuzait_guard_7" culture="Culture.khuzait" length="0.55" weight="0.20">
+  <CraftingPiece id="crpg_khuzait_sword_5_t4_guard" name="{=euI3vluL}Broad Saber Guard" tier="4" piece_type="Guard" mesh="khuzait_guard_7" culture="Culture.khuzait" length="0.55" weight="0.25">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_2_t3_guard" name="{=NLs9M1D6}Eastern Simple Oval Guard" tier="1" piece_type="Guard" mesh="khuzait_guard_6" culture="Culture.khuzait" length="0.155" weight="0.10">
+  <CraftingPiece id="crpg_khuzait_sword_2_t3_guard" name="{=NLs9M1D6}Eastern Simple Oval Guard" tier="1" piece_type="Guard" mesh="khuzait_guard_6" culture="Culture.khuzait" length="0.155" weight="0.01">
     <BuildData next_piece_offset="0.1" />
     <StatContributions armor_bonus="2" />
     <Materials>
@@ -4451,14 +4451,14 @@
       <Material id="Iron1" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_3_t3_guard" name="{=nKb9goqQ}Thin Guard" tier="1" piece_type="Guard" mesh="khuzait_guard_5" length="1.846" weight="0.15">
+  <CraftingPiece id="crpg_khuzait_sword_3_t3_guard" name="{=nKb9goqQ}Thin Guard" tier="1" piece_type="Guard" mesh="khuzait_guard_5" length="1.846" weight="0.26">
     <BuildData next_piece_offset="0.3" />
     <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron1" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_1_t2_guard" name="{=6BMAGMRu}Flat Guard" tier="2" piece_type="Guard" mesh="khuzait_guard_4" culture="Culture.khuzait" length="0.5" weight="0.20">
+  <CraftingPiece id="crpg_khuzait_sword_1_t2_guard" name="{=6BMAGMRu}Flat Guard" tier="2" piece_type="Guard" mesh="khuzait_guard_4" culture="Culture.khuzait" length="0.5" weight="0.22">
     <BuildData next_piece_offset="0.1" />
     <StatContributions armor_bonus="3" />
     <Materials>
@@ -4903,11 +4903,11 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_2_t5_blade" name="{=PqoJ1ZeB}Decorated Saber Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_1" culture="Culture.khuzait" length="89.5" weight="1.0">
+  <CraftingPiece id="crpg_khuzait_noble_sword_2_t5_blade" name="{=PqoJ1ZeB}Decorated Saber Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_1" culture="Culture.khuzait" length="89.5" weight="0.96">
     <BuildData previous_piece_offset="-0.25" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_noble_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="0.875" />
-      <Swing damage_type="Cut" damage_factor="1.47" />
+      <Thrust damage_type="Pierce" damage_factor="1.2" />
+      <Swing damage_type="Cut" damage_factor="2.9" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="3" />
@@ -4916,18 +4916,18 @@
   <CraftingPiece id="crpg_khuzait_noble_sword_3_t5_blade" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="1.1">
     <BuildData previous_piece_offset="-0.25" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_noble_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="0.8049999" />
-      <Swing damage_type="Cut" damage_factor="1.666035" />
+      <Thrust damage_type="Pierce" damage_factor="1.0" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_noble_sword_1_t5_blade" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="1.1">
+  <CraftingPiece id="crpg_khuzait_noble_sword_1_t5_blade" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.95">
     <BuildData previous_piece_offset="-0.25" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_noble_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="0.8049999" />
-      <Swing damage_type="Cut" damage_factor="1.666035" />
+      <Thrust damage_type="Pierce" damage_factor="1.0" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="2" />
@@ -5107,10 +5107,10 @@
       <Material id="Iron2" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_sabre_sword_t2_blade" name="{=czhTpYo8}Iron Saber Blade" tier="2" piece_type="Blade" mesh="khuzait_blade_6" culture="Culture.khuzait" length="82.5" weight="1.0">
+  <CraftingPiece id="crpg_simple_sabre_sword_t2_blade" name="{=czhTpYo8}Iron Saber Blade" tier="2" piece_type="Blade" mesh="khuzait_blade_6" culture="Culture.khuzait" length="82.5" weight="1.24">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="0.7" />
-      <Swing damage_type="Cut" damage_factor="1.12" />
+      <Thrust damage_type="Pierce" damage_factor="0.9" />
+      <Swing damage_type="Cut" damage_factor="2.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5360,10 +5360,10 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_back_sword_t2_blade" name="{=wQGWxeCc}Thick Saber Blade" tier="2" piece_type="Blade" mesh="khuzait_blade_7" culture="Culture.khuzait" length="82.5" weight="0.85">
+  <CraftingPiece id="crpg_simple_back_sword_t2_blade" name="{=wQGWxeCc}Thick Saber Blade" tier="2" piece_type="Blade" mesh="khuzait_blade_7" culture="Culture.khuzait" length="82.5" weight="1.01" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="0.735" />
-      <Swing damage_type="Cut" damage_factor="1.085" />
+      <Thrust damage_type="Pierce" damage_factor="0" />
+      <Swing damage_type="Cut" damage_factor="2.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5372,10 +5372,10 @@
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_1_t2_blade" name="{=wQGWxeCc}Thick Saber Blade" tier="2" piece_type="Blade" mesh="khuzait_blade_7" culture="Culture.khuzait" length="82.5" weight="0.85">
+  <CraftingPiece id="crpg_khuzait_sword_1_t2_blade" name="{=wQGWxeCc}Thick Saber Blade" tier="2" piece_type="Blade" mesh="khuzait_blade_7" culture="Culture.khuzait" length="82.5" weight="1.26">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="0.735" />
-      <Swing damage_type="Cut" damage_factor="1.085" />
+      <Thrust damage_type="Pierce" damage_factor="1.0" />
+      <Swing damage_type="Cut" damage_factor="2.6" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5384,10 +5384,10 @@
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_ild_sword_t3_blade" name="{=CODGBskg}Long Saber Blade" tier="3" piece_type="Blade" mesh="khuzait_blade_5" culture="Culture.khuzait" length="101.2" weight="1.03">
+  <CraftingPiece id="crpg_broad_ild_sword_t3_blade" name="{=CODGBskg}Long Saber Blade" tier="3" piece_type="Blade" mesh="khuzait_blade_5" culture="Culture.khuzait" length="101.2" weight="1.3">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_blade_5_scabbard_5">
-      <Thrust damage_type="Pierce" damage_factor="0.8049999" />
-      <Swing damage_type="Cut" damage_factor="1.295" />
+      <Thrust damage_type="Pierce" damage_factor="1.0" />
+      <Swing damage_type="Cut" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5396,10 +5396,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_3_t3_blade" name="{=CODGBskg}Long Saber Blade" tier="3" piece_type="Blade" mesh="khuzait_blade_5" culture="Culture.khuzait" length="101.2" weight="1.03">
+  <CraftingPiece id="crpg_khuzait_sword_3_t3_blade" name="{=CODGBskg}Long Saber Blade" tier="3" piece_type="Blade" mesh="khuzait_blade_5" culture="Culture.khuzait" length="101.2" weight="1.26">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_blade_5_scabbard_5">
-      <Thrust damage_type="Pierce" damage_factor="0.8049999" />
-      <Swing damage_type="Cut" damage_factor="1.295" />
+      <Thrust damage_type="Pierce" damage_factor="1.0" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5408,10 +5408,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_2_t3_blade" name="{=CODGBskg}Long Saber Blade" tier="3" piece_type="Blade" mesh="khuzait_blade_5" culture="Culture.khuzait" length="101.2" weight="1.03">
+  <CraftingPiece id="crpg_khuzait_sword_2_t3_blade" name="{=CODGBskg}Long Saber Blade" tier="3" piece_type="Blade" mesh="khuzait_blade_5" culture="Culture.khuzait" length="101.2" weight="1.45">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_blade_5_scabbard_5">
-      <Thrust damage_type="Pierce" damage_factor="0.8049999" />
-      <Swing damage_type="Cut" damage_factor="1.295" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="2.7" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5420,10 +5420,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_5_t4_blade" name="{=C2hTDlWq}Heavy Saber Blade" tier="4" piece_type="Blade" mesh="khuzait_blade_2" culture="Culture.khuzait" length="94.6" weight="0.96">
+  <CraftingPiece id="crpg_khuzait_sword_5_t4_blade" name="{=C2hTDlWq}Heavy Saber Blade" tier="4" piece_type="Blade" mesh="khuzait_blade_2" culture="Culture.khuzait" length="94.6" weight="1.4">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="0.84" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.3" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5432,10 +5432,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_sword_4_t4_blade" name="{=Ld1nfdj4}Fine Steel Saber Blade" tier="4" piece_type="Blade" mesh="khuzait_blade_1" culture="Culture.khuzait" length="92.4" weight="0.93">
+  <CraftingPiece id="crpg_khuzait_sword_4_t4_blade" name="{=Ld1nfdj4}Fine Steel Saber Blade" tier="4" piece_type="Blade" mesh="khuzait_blade_1" culture="Culture.khuzait" length="92.4" weight="1.06">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="0.84" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.2" />
+      <Swing damage_type="Cut" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
