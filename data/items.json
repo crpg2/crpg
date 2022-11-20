@@ -6462,12 +6462,12 @@
   },
   {
     "id": "crpg_broad_arming_sword_t4",
-    "name": "Broad Arming Sword",
-    "culture": "Neutral",
+    "name": "Iron Pointed Sword",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 97,
-    "weight": 1.67,
-    "tier": 0.301037878,
+    "price": 3553,
+    "weight": 1.62,
+    "tier": 6.537773,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6477,17 +6477,17 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 109,
+        "length": 102,
         "balance": 0.53,
-        "handling": 88,
+        "handling": 85,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 13,
+        "thrustSpeed": 90,
+        "swingDamage": 25,
         "swingDamageType": "Cut",
         "swingSpeed": 85
       }
@@ -23287,12 +23287,12 @@
   },
   {
     "id": "crpg_short_sword_t3",
-    "name": "Short Sword",
-    "culture": "Neutral",
+    "name": "Short Arming Sword",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 159,
-    "weight": 1.49,
-    "tier": 0.615828633,
+    "price": 4652,
+    "weight": 1.95,
+    "tier": 7.64000845,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23304,19 +23304,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 66,
-        "balance": 1.0,
-        "handling": 104,
+        "length": 87,
+        "balance": 0.63,
+        "handling": 92,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 12,
+        "thrustSpeed": 87,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 103
+        "swingSpeed": 88
       }
     ]
   },
@@ -29079,9 +29079,9 @@
     "name": "Decorated Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 445,
-    "weight": 1.59,
-    "tier": 1.64699042,
+    "price": 7525,
+    "weight": 2.13,
+    "tier": 10.0186033,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29093,30 +29093,30 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 82,
-        "balance": 0.87,
-        "handling": 99,
+        "length": 96,
+        "balance": 0.43,
+        "handling": 86,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 16,
+        "thrustSpeed": 85,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 82
       }
     ]
   },
   {
     "id": "crpg_vlandia_noble_sword_2_t5",
-    "name": "Arming Sword with Circle",
+    "name": "Fine Steel Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 169,
-    "weight": 1.67,
-    "tier": 0.6598569,
+    "price": 5533,
+    "weight": 1.95,
+    "tier": 8.432592,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29128,30 +29128,30 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 84,
-        "balance": 0.79,
-        "handling": 97,
+        "length": 100,
+        "balance": 0.42,
+        "handling": 88,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 14,
+        "thrustSpeed": 87,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 82
       }
     ]
   },
   {
     "id": "crpg_vlandia_noble_sword_3_t5",
-    "name": "Gold Engraved Arming Sword",
+    "name": "Engraved Pointed Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 198,
-    "weight": 1.55,
-    "tier": 0.7867433,
+    "price": 7602,
+    "weight": 1.84,
+    "tier": 10.0759859,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29163,30 +29163,30 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 88,
-        "balance": 0.83,
-        "handling": 98,
+        "length": 103,
+        "balance": 0.34,
+        "handling": 86,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 14,
+        "thrustSpeed": 88,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 80
       }
     ]
   },
   {
     "id": "crpg_vlandia_noble_sword_4_t5",
-    "name": "Crescent Guarded Arming Sword",
+    "name": "Crescent Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 317,
-    "weight": 1.37,
-    "tier": 1.24066675,
+    "price": 4527,
+    "weight": 2.03,
+    "tier": 7.521212,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29198,19 +29198,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 76,
-        "balance": 1.0,
-        "handling": 103,
+        "length": 95,
+        "balance": 0.49,
+        "handling": 90,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 14,
+        "thrustSpeed": 87,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 103
+        "swingSpeed": 84
       }
     ]
   },
@@ -29317,9 +29317,9 @@
     "name": "Iron Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 83,
-    "weight": 1.34,
-    "tier": 0.217346311,
+    "price": 2922,
+    "weight": 1.78,
+    "tier": 5.827276,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29331,133 +29331,100 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 103,
-        "balance": 0.75,
-        "handling": 92,
+        "length": 94,
+        "balance": 0.56,
+        "handling": 87,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 10,
-        "swingDamageType": "Cut",
-        "swingSpeed": 92
-      }
-    ]
-  },
-  {
-    "id": "crpg_vlandia_sword_2_t3",
-    "name": "Ridged Tipped Arming Sword",
-    "culture": "Vlandia",
-    "type": "OneHandedWeapon",
-    "price": 116,
-    "weight": 1.45,
-    "tier": 0.4044022,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "OneHandedSword",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 104,
-        "balance": 0.73,
-        "handling": 92,
-        "bodyArmor": 5,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 9,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 12,
-        "swingDamageType": "Cut",
-        "swingSpeed": 91
-      }
-    ]
-  },
-  {
-    "id": "crpg_vlandia_sword_3_t4",
-    "name": "Knightly Arming Sword",
-    "culture": "Vlandia",
-    "type": "OneHandedWeapon",
-    "price": 179,
-    "weight": 1.41,
-    "tier": 0.704860449,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "OneHandedSword",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 105,
-        "balance": 0.74,
-        "handling": 94,
-        "bodyArmor": 5,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 9,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 13,
-        "swingDamageType": "Cut",
-        "swingSpeed": 92
-      }
-    ]
-  },
-  {
-    "id": "crpg_vlandia_sword_4_t4",
-    "name": "Ridged Arming Sword",
-    "culture": "Vlandia",
-    "type": "OneHandedWeapon",
-    "price": 109,
-    "weight": 1.54,
-    "tier": 0.36755985,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "OneHandedSword",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 113,
-        "balance": 0.55,
-        "handling": 87,
-        "bodyArmor": 4,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 9,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 13,
+        "thrustSpeed": 88,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
         "swingSpeed": 86
       }
     ]
   },
   {
-    "id": "crpg_vlandia_sword_5_t5",
-    "name": "Wide Fullered Broad Arming Sword",
+    "id": "crpg_vlandia_sword_2_t3",
+    "name": "Iron Cavalry Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 161,
-    "weight": 1.5,
-    "tier": 0.624971867,
+    "price": 3557,
+    "weight": 2.16,
+    "tier": 6.542375,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 115,
+        "balance": 0.22,
+        "handling": 84,
+        "bodyArmor": 5,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 16,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 85,
+        "swingDamage": 33,
+        "swingDamageType": "Cut",
+        "swingSpeed": 76
+      }
+    ]
+  },
+  {
+    "id": "crpg_vlandia_sword_3_t4",
+    "name": "Knightly Cavalry Sword",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 6910,
+    "weight": 2.11,
+    "tier": 9.55417252,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 117,
+        "balance": 0.25,
+        "handling": 84,
+        "bodyArmor": 5,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 17,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 85,
+        "swingDamage": 35,
+        "swingDamageType": "Cut",
+        "swingSpeed": 77
+      }
+    ]
+  },
+  {
+    "id": "crpg_vlandia_sword_4_t4",
+    "name": "Narrow Arming Sword",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 5255,
+    "weight": 1.56,
+    "tier": 8.189362,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29467,19 +29434,52 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 105,
-        "balance": 0.66,
-        "handling": 89,
+        "length": 98,
+        "balance": 0.48,
+        "handling": 85,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 25,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 26,
+        "swingDamageType": "Cut",
+        "swingSpeed": 84
+      }
+    ]
+  },
+  {
+    "id": "crpg_vlandia_sword_5_t5",
+    "name": "Fine Steel Cavalry Sword",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 5197,
+    "weight": 2.06,
+    "tier": 8.138307,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 115,
+        "balance": 0.26,
+        "handling": 84,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 14,
+        "thrustSpeed": 85,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 77
       }
     ]
   },

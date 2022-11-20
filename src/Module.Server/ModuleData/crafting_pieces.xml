@@ -2800,12 +2800,12 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_3_t5_pommel" name="{=Udo97SZC}Western Decorated Pommel" tier="4" piece_type="Pommel" mesh="vlandian_noble_pommel_3" culture="Culture.vlandia" length="5" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_noble_sword_3_t5_pommel" name="{=Udo97SZC}Western Decorated Pommel" tier="4" piece_type="Pommel" mesh="vlandian_noble_pommel_3" culture="Culture.vlandia" length="5" weight="0.12">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_4_t5_pommel" name="{=h4DmfRfb}Knightly Pommel" tier="4" piece_type="Pommel" mesh="vlandian_noble_pommel_2" culture="Culture.vlandia" length="10" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_noble_sword_4_t5_pommel" name="{=h4DmfRfb}Knightly Pommel" tier="4" piece_type="Pommel" mesh="vlandian_noble_pommel_2" culture="Culture.vlandia" length="10" weight="0.3">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
@@ -2949,12 +2949,12 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_2_t5_pommel" name="{=HuYwPEmh}Ornamental Pommel" tier="5" piece_type="Pommel" mesh="vlandian_noble_pommel_1" culture="Culture.vlandia" length="7.1" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_noble_sword_2_t5_pommel" name="{=HuYwPEmh}Ornamental Pommel" tier="5" piece_type="Pommel" mesh="vlandian_noble_pommel_1" culture="Culture.vlandia" length="7.1" weight="0.28">
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_1_t5_pommel" name="{=gTMThdRJ}Lordly Pommel" tier="5" piece_type="Pommel" mesh="vlandian_noble_pommel_4" culture="Culture.vlandia" length="6" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_noble_sword_1_t5_pommel" name="{=gTMThdRJ}Lordly Pommel" tier="5" piece_type="Pommel" mesh="vlandian_noble_pommel_4" culture="Culture.vlandia" length="6" weight="0.5">
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
@@ -2980,7 +2980,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_short_sword_t3_pommel" name="{=yzsneaL6}Rimmed Wheel Pommel" tier="3" piece_type="Pommel" mesh="vlandian_pommel_8" culture="Culture.vlandia" length="7.77" weight="0.24">
+  <CraftingPiece id="crpg_short_sword_t3_pommel" name="{=yzsneaL6}Rimmed Wheel Pommel" tier="3" piece_type="Pommel" mesh="vlandian_pommel_8" culture="Culture.vlandia" length="7.77" weight="0.45">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
@@ -3306,7 +3306,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_5_t5_pommel" name="{=ugQrq53t}Fan Pommel" tier="5" piece_type="Pommel" mesh="vlandian_pommel_9" culture="Culture.vlandia" length="5.275" weight="0.14">
+  <CraftingPiece id="crpg_vlandia_sword_5_t5_pommel" name="{=ugQrq53t}Fan Pommel" tier="5" piece_type="Pommel" mesh="vlandian_pommel_9" culture="Culture.vlandia" length="5.275" weight="0.02">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
@@ -3322,13 +3322,13 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_arming_sword_t4_pommel" name="{=wvLoXrFV}Western Great Pommel" tier="4" piece_type="Pommel" mesh="vlandian_pommel_7" culture="Culture.vlandia" length="5.231" weight="0.12">
+  <CraftingPiece id="crpg_broad_arming_sword_t4_pommel" name="{=wvLoXrFV}Western Great Pommel" tier="4" piece_type="Pommel" mesh="vlandian_pommel_7" culture="Culture.vlandia" length="5.231" weight="0.35">
     <BuildData next_piece_offset="-0.2" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_4_t4_pommel" name="{=wvLoXrFV}Western Great Pommel" tier="4" piece_type="Pommel" mesh="vlandian_pommel_7" culture="Culture.vlandia" length="5.231" weight="0.12">
+  <CraftingPiece id="crpg_vlandia_sword_4_t4_pommel" name="{=wvLoXrFV}Western Great Pommel" tier="4" piece_type="Pommel" mesh="vlandian_pommel_7" culture="Culture.vlandia" length="5.231" weight="0.05">
     <BuildData next_piece_offset="-0.2" />
     <Materials>
       <Material id="Iron4" count="1" />
@@ -3345,7 +3345,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_2_t3_pommel" name="{=booEob1z}Disc Pommel" tier="2" piece_type="Pommel" mesh="vlandian_pommel_6" culture="Culture.vlandia" length="5.7" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_sword_2_t3_pommel" name="{=booEob1z}Disc Pommel" tier="2" piece_type="Pommel" mesh="vlandian_pommel_6" culture="Culture.vlandia" length="5.7" weight="0.03">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
@@ -3355,7 +3355,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_1_t2_pommel" name="{=joN8ZeJ6}Wheel Pommel" tier="2" piece_type="Pommel" mesh="vlandian_pommel_1" culture="Culture.vlandia" length="5.189" weight="0.2">
+  <CraftingPiece id="crpg_vlandia_sword_1_t2_pommel" name="{=joN8ZeJ6}Wheel Pommel" tier="2" piece_type="Pommel" mesh="vlandian_pommel_1" culture="Culture.vlandia" length="5.189" weight="0.35">
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
@@ -3570,7 +3570,7 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_4_t5_handle" name="{=Nk924YlG}Decorated Fine Steel One Handed Grip" tier="5" piece_type="Handle" mesh="sturgian_noble_grip_2" culture="Culture.sturgia" length="15" weight="0.270">
+  <CraftingPiece id="crpg_vlandia_noble_sword_4_t5_handle" name="{=Nk924YlG}Decorated Fine Steel One Handed Grip" tier="5" piece_type="Handle" mesh="sturgian_noble_grip_2" culture="Culture.sturgia" length="15" weight="0.15">
     <BuildData piece_offset="0" previous_piece_offset="0.2" next_piece_offset="0.3" />
     <Materials>
       <Material id="Iron5" count="2" />
@@ -3612,19 +3612,19 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_3_t5_handle" name="{=TKQl9boE}Golden Decorated Fine Arming Sword Grip" tier="5" piece_type="Handle" mesh="vlandian_noble_grip_4" culture="Culture.vlandia" length="15" weight="0.2">
+  <CraftingPiece id="crpg_vlandia_noble_sword_3_t5_handle" name="{=TKQl9boE}Golden Decorated Fine Arming Sword Grip" tier="5" piece_type="Handle" mesh="vlandian_noble_grip_4" culture="Culture.vlandia" length="15" weight="0.01">
     <BuildData piece_offset="0" previous_piece_offset="0.358" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_2_t5_handle" name="{=TKQl9boE}Golden Decorated Fine Arming Sword Grip" tier="5" piece_type="Handle" mesh="vlandian_noble_grip_4" culture="Culture.vlandia" length="15" weight="0.2">
+  <CraftingPiece id="crpg_vlandia_noble_sword_2_t5_handle" name="{=TKQl9boE}Golden Decorated Fine Arming Sword Grip" tier="5" piece_type="Handle" mesh="vlandian_noble_grip_4" culture="Culture.vlandia" length="15" weight="0.08">
     <BuildData piece_offset="0" previous_piece_offset="0.358" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_1_t5_handle" name="{=3VoW9qZs}Gold Bound Arming Sword Grip" tier="5" piece_type="Handle" mesh="vlandian_noble_grip_3" culture="Culture.vlandia" length="17.5" weight="0.2">
+  <CraftingPiece id="crpg_vlandia_noble_sword_1_t5_handle" name="{=3VoW9qZs}Gold Bound Arming Sword Grip" tier="5" piece_type="Handle" mesh="vlandian_noble_grip_3" culture="Culture.vlandia" length="17.5" weight="0.12">
     <BuildData piece_offset="0" previous_piece_offset="0.358" />
     <Materials>
       <Material id="Iron5" count="2" />
@@ -3636,7 +3636,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_arming_sword_t4_handle" name="{=4TvA6YaC}Marbled Arming Sword Grip" tier="4" piece_type="Handle" mesh="vlandian_noble_grip_2" culture="Culture.vlandia" length="17.5" weight="0.2">
+  <CraftingPiece id="crpg_broad_arming_sword_t4_handle" name="{=4TvA6YaC}Marbled Arming Sword Grip" tier="4" piece_type="Handle" mesh="vlandian_noble_grip_2" culture="Culture.vlandia" length="17.5" weight="0.05">
     <BuildData piece_offset="0" previous_piece_offset="0.358" />
     <Materials>
       <Material id="Iron4" count="1" />
@@ -3666,7 +3666,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_short_sword_t3_handle" name="{=nVrg9Uda}Leather Wrapped Horn Arming Sword Grip" tier="3" piece_type="Handle" mesh="vlandian_grip_23" culture="Culture.vlandia" length="15.9" weight="0.2">
+  <CraftingPiece id="crpg_short_sword_t3_handle" name="{=nVrg9Uda}Leather Wrapped Horn Arming Sword Grip" tier="3" piece_type="Handle" mesh="vlandian_grip_23" culture="Culture.vlandia" length="15.9" weight="0.08">
     <BuildData piece_offset="-1" previous_piece_offset="0.1" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -3973,31 +3973,31 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_5_t5_handle" name="{=tq5XGebt}Bronze Bound Fine Leather Covered Two Handed Sword Grip" tier="4" piece_type="Handle" mesh="vlandian_grip_20" culture="Culture.vlandia" length="19.8" weight="0.2">
+  <CraftingPiece id="crpg_vlandia_sword_5_t5_handle" name="{=tq5XGebt}Bronze Bound Fine Leather Covered Two Handed Sword Grip" tier="4" piece_type="Handle" mesh="vlandian_grip_20" culture="Culture.vlandia" length="19.8" weight="0.31">
     <BuildData piece_offset="-4.5" previous_piece_offset="0.358" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_4_t4_handle" name="{=2MNfdGZQ}Fine Leather Covered Reinforced Horn Longsword Grip" tier="4" piece_type="Handle" mesh="vlandian_grip_10" culture="Culture.vlandia" length="25.2" weight="0.17" item_holster_pos_shift="0,0,-0.02">
+  <CraftingPiece id="crpg_vlandia_sword_4_t4_handle" name="{=2MNfdGZQ}Fine Leather Covered Reinforced Horn Longsword Grip" tier="4" piece_type="Handle" mesh="vlandian_grip_10" culture="Culture.vlandia" length="25.2" weight="0.05" item_holster_pos_shift="0,0,-0.02">
     <BuildData piece_offset="-4.59" previous_piece_offset="0.358" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_3_t4_handle" name="{=3wXjMEwI}Segmented Leather Covered Arming Sword Grip" tier="4" piece_type="Handle" mesh="vlandian_grip_4" culture="Culture.vlandia" length="15.2" weight="0.1">
+  <CraftingPiece id="crpg_vlandia_sword_3_t4_handle" name="{=3wXjMEwI}Segmented Leather Covered Arming Sword Grip" tier="4" piece_type="Handle" mesh="vlandian_grip_4" culture="Culture.vlandia" length="15.2" weight="0.3">
     <BuildData piece_offset="-0.09" previous_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_2_t3_handle" name="{=CE1IQiEU}Spiral Fine Leather Arming Sword Grip" tier="3" piece_type="Handle" mesh="vlandian_grip_21" culture="Culture.vlandia" length="15.4" weight="0.2">
+  <CraftingPiece id="crpg_vlandia_sword_2_t3_handle" name="{=CE1IQiEU}Spiral Fine Leather Arming Sword Grip" tier="3" piece_type="Handle" mesh="vlandian_grip_21" culture="Culture.vlandia" length="15.4" weight="0.37">
     <BuildData piece_offset="0" previous_piece_offset="0.358" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_1_t2_handle" name="{=RWljioj5}Iron And Leather Bound Horn One Handed Grip" tier="2" piece_type="Handle" mesh="vlandian_grip_2" culture="Culture.vlandia" length="15.05" weight="0.1">
+  <CraftingPiece id="crpg_vlandia_sword_1_t2_handle" name="{=RWljioj5}Iron And Leather Bound Horn One Handed Grip" tier="2" piece_type="Handle" mesh="vlandian_grip_2" culture="Culture.vlandia" length="15.05" weight="0.12">
     <BuildData piece_offset="-0.02" previous_piece_offset="0.2" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -4031,7 +4031,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_4_t5_guard" name="{=5KvdG6ep}Knightly Golden Crescent Shaped Guard" tier="5" piece_type="Guard" mesh="vlandian_noble_guard_4" culture="Culture.vlandia" length="2" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_noble_sword_4_t5_guard" name="{=5KvdG6ep}Knightly Golden Crescent Shaped Guard" tier="5" piece_type="Guard" mesh="vlandian_noble_guard_4" culture="Culture.vlandia" length="2" weight="0.09">
     <BuildData next_piece_offset="0.2" previous_piece_offset="0.2" />
     <StatContributions armor_bonus="5" />
     <Materials>
@@ -4185,21 +4185,21 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_2_t5_guard" name="{=6Da4uzZO}Engraved Wide Knightly Guard" tier="5" piece_type="Guard" mesh="vlandian_noble_guard_1" culture="Culture.vlandia" length="2.6" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_noble_sword_2_t5_guard" name="{=6Da4uzZO}Engraved Wide Knightly Guard" tier="5" piece_type="Guard" mesh="vlandian_noble_guard_1" culture="Culture.vlandia" length="2.6" weight="0.05">
     <BuildData next_piece_offset="0.3" />
     <StatContributions armor_bonus="5" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_3_t5_guard" name="{=OPfm5y7W}Golden Knightly Lionheads Guard" tier="5" piece_type="Guard" mesh="vlandian_noble_guard_3" culture="Culture.vlandia" length="2.4" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_noble_sword_3_t5_guard" name="{=OPfm5y7W}Golden Knightly Lionheads Guard" tier="5" piece_type="Guard" mesh="vlandian_noble_guard_3" culture="Culture.vlandia" length="2.4" weight="0.01">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_1_t5_guard" name="{=OPfm5y7W}Golden Knightly Lionheads Guard" tier="5" piece_type="Guard" mesh="vlandian_noble_guard_3" culture="Culture.vlandia" length="2.4" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_noble_sword_1_t5_guard" name="{=OPfm5y7W}Golden Knightly Lionheads Guard" tier="5" piece_type="Guard" mesh="vlandian_noble_guard_3" culture="Culture.vlandia" length="2.4" weight="0.1">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
@@ -4577,21 +4577,21 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_5_t5_guard" name="{=az6t2tOm}Ridged Western Guard" tier="5" piece_type="Guard" mesh="vlandian_guard_8" culture="Culture.vlandia" length="1.42" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_sword_5_t5_guard" name="{=az6t2tOm}Ridged Western Guard" tier="5" piece_type="Guard" mesh="vlandian_guard_8" culture="Culture.vlandia" length="1.42" weight="0.25">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="5" />
     <Materials>
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_arming_sword_t4_guard" name="{=do4vZhh4}Tapered Thin Guard" tier="4" piece_type="Guard" mesh="vlandian_guard_4" culture="Culture.vlandia" length="1.152" weight="0.20">
+  <CraftingPiece id="crpg_broad_arming_sword_t4_guard" name="{=do4vZhh4}Tapered Thin Guard" tier="4" piece_type="Guard" mesh="vlandian_guard_4" culture="Culture.vlandia" length="1.152" weight="0.03">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_4_t4_guard" name="{=do4vZhh4}Tapered Thin Guard" tier="4" piece_type="Guard" mesh="vlandian_guard_4" culture="Culture.vlandia" length="1.152" weight="0.20">
+  <CraftingPiece id="crpg_vlandia_sword_4_t4_guard" name="{=do4vZhh4}Tapered Thin Guard" tier="4" piece_type="Guard" mesh="vlandian_guard_4" culture="Culture.vlandia" length="1.152" weight="0.03">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
@@ -4612,21 +4612,21 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_3_t4_guard" name="{=xoSaQWhX}Western Crescent Guard" tier="4" piece_type="Guard" mesh="vlandian_guard_5" culture="Culture.vlandia" length="0.9" weight="0.20">
+  <CraftingPiece id="crpg_vlandia_sword_3_t4_guard" name="{=xoSaQWhX}Western Crescent Guard" tier="4" piece_type="Guard" mesh="vlandian_guard_5" culture="Culture.vlandia" length="0.9" weight="0.21">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="5" />
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_short_sword_t3_guard" name="{=dpft1I1B}Thin Western Guard" tier="3" piece_type="Guard" mesh="vlandian_guard_2" culture="Culture.vlandia" length="2.809" weight="0.15">
+  <CraftingPiece id="crpg_short_sword_t3_guard" name="{=dpft1I1B}Thin Western Guard" tier="3" piece_type="Guard" mesh="vlandian_guard_2" culture="Culture.vlandia" length="2.809" weight="0.05">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="5" />
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_2_t3_guard" name="{=dpft1I1B}Thin Western Guard" tier="3" piece_type="Guard" mesh="vlandian_guard_2" culture="Culture.vlandia" length="2.809" weight="0.15">
+  <CraftingPiece id="crpg_vlandia_sword_2_t3_guard" name="{=dpft1I1B}Thin Western Guard" tier="3" piece_type="Guard" mesh="vlandian_guard_2" culture="Culture.vlandia" length="2.809" weight="0.26">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="5" />
     <Materials>
@@ -4640,7 +4640,7 @@
       <Material id="Iron1" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_1_t2_guard" name="{=XI5QgznO}Tapered Cleaver Guard" tier="1" piece_type="Guard" mesh="cleaver_guard_2" culture="Culture.aserai" length="1.289" weight="0.058">
+  <CraftingPiece id="crpg_vlandia_sword_1_t2_guard" name="{=XI5QgznO}Tapered Cleaver Guard" tier="1" piece_type="Guard" mesh="cleaver_guard_2" culture="Culture.aserai" length="1.289" weight="0.08">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="3" />
     <Materials>
@@ -4711,10 +4711,10 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_4_t5_blade" name="{=uuover9F}Short Arming Sword Blade" tier="5" piece_type="Blade" mesh="vlandian_noble_blade_3" culture="Culture.vlandia" length="67.5" weight="0.8">
+  <CraftingPiece id="crpg_vlandia_noble_sword_4_t5_blade" name="{=uuover9F}Short Arming Sword Blade" tier="5" piece_type="Blade" mesh="vlandian_noble_blade_3" culture="Culture.vlandia" length="67.5" weight="1.17">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_noble_blade_3_scabbard_3">
-      <Thrust damage_type="Pierce" damage_factor="1.05" />
-      <Swing damage_type="Cut" damage_factor="1.4" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -4723,10 +4723,10 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_3_t5_blade" name="{=O2kPKeuK}Arming Sword Blade With Gold Engraving" tier="5" piece_type="Blade" mesh="vlandian_noble_blade_2" culture="Culture.vlandia" length="74.5" weight="1.0">
+  <CraftingPiece id="crpg_vlandia_noble_sword_3_t5_blade" name="{=O2kPKeuK}Arming Sword Blade With Gold Engraving" tier="5" piece_type="Blade" mesh="vlandian_noble_blade_2" culture="Culture.vlandia" length="74.5" weight="1.36">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_noble_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="1.12" />
-      <Swing damage_type="Cut" damage_factor="1.4" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="2.6" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -4965,10 +4965,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_2_t5_blade" name="{=bki9u9FW}Arming Sword Blade With Golden Circle Imprint" tier="5" piece_type="Blade" mesh="vlandian_noble_blade_1" culture="Culture.vlandia" length="74.3" weight="1.17">
+  <CraftingPiece id="crpg_vlandia_noble_sword_2_t5_blade" name="{=bki9u9FW}Arming Sword Blade With Golden Circle Imprint" tier="5" piece_type="Blade" mesh="vlandian_noble_blade_1" culture="Culture.vlandia" length="74.3" weight="1.27">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_noble_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="1.05" />
-      <Swing damage_type="Cut" damage_factor="1.435" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -4977,10 +4977,10 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_noble_sword_1_t5_blade" name="{=UKWwPPkx}Arming Sword Blade With Golden Petals Imprint" tier="5" piece_type="Blade" mesh="vlandian_noble_blade_4" culture="Culture.vlandia" length="68" weight="1.04">
+  <CraftingPiece id="crpg_vlandia_noble_sword_1_t5_blade" name="{=UKWwPPkx}Arming Sword Blade With Golden Petals Imprint" tier="5" piece_type="Blade" mesh="vlandian_noble_blade_4" culture="Culture.vlandia" length="68" weight="1.13">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_noble_blade_4_scabbard_4">
-      <Thrust damage_type="Pierce" damage_factor="1.05" />
-      <Swing damage_type="Cut" damage_factor="1.68756" />
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5007,10 +5007,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_arming_sword_t4_blade" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.15">
+  <CraftingPiece id="crpg_broad_arming_sword_t4_blade" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.28">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="0.98" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="2.5" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="3" />
@@ -5063,10 +5063,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_short_sword_t3_blade" name="{=BXW4LeQT}Wide Fullered Short Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_9" culture="Culture.sturgia" length="56.1" weight="0.9">
+  <CraftingPiece id="crpg_short_sword_t3_blade" name="{=BXW4LeQT}Wide Fullered Short Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_9" culture="Culture.sturgia" length="56.1" weight="0.99">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_9_scabbard_9">
-      <Thrust damage_type="Pierce" damage_factor="0.945" />
-      <Swing damage_type="Cut" damage_factor="1.26" />
+      <Thrust damage_type="Pierce" damage_factor="1.4" />
+      <Swing damage_type="Cut" damage_factor="2.9" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5620,10 +5620,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_3_t4_blade" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="0.9">
+  <CraftingPiece id="crpg_vlandia_sword_3_t4_blade" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="1.2">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_7_scabbard_7">
-      <Thrust damage_type="Pierce" damage_factor="0.98" />
-      <Swing damage_type="Cut" damage_factor="1.365" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5644,19 +5644,19 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_4_t4_blade" name="{=OTtMvvJK}Ridged Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_5" culture="Culture.vlandia" length="99" weight="1.0">
+  <CraftingPiece id="crpg_vlandia_sword_4_t4_blade" name="{=OTtMvvJK}Ridged Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_5" culture="Culture.vlandia" length="99" weight="1.59">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_5_scabbard_5">
-      <Thrust damage_type="Pierce" damage_factor="0.98" />
-      <Swing damage_type="Cut" damage_factor="1.365" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="2.6" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_2_t3_blade" name="{=zCYuj3yr}Ridged Tipped Arming Sword Blade" tier="3" piece_type="Blade" mesh="vlandian_blade_4" culture="Culture.vlandia" length="93.5" weight="0.95">
+  <CraftingPiece id="crpg_vlandia_sword_2_t3_blade" name="{=zCYuj3yr}Ridged Tipped Arming Sword Blade" tier="3" piece_type="Blade" mesh="vlandian_blade_4" culture="Culture.vlandia" length="93.5" weight="1.34">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_4_scabbard_4">
-      <Thrust damage_type="Pierce" damage_factor="0.945" />
-      <Swing damage_type="Cut" damage_factor="1.26" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5683,19 +5683,19 @@
       <Material id="Iron6" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_5_t5_blade" name="{=mak3naEe}Wide Fullered Broad Two Hander Blade" tier="5" piece_type="Blade" mesh="vlandian_blade_3" culture="Culture.vlandia" length="99.4" weight="1.0125">
+  <CraftingPiece id="crpg_vlandia_sword_5_t5_blade" name="{=mak3naEe}Wide Fullered Broad Two Hander Blade" tier="5" piece_type="Blade" mesh="vlandian_blade_3" culture="Culture.vlandia" length="99.4" weight="1.36">
     <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="1.232" />
-      <Swing damage_type="Cut" damage_factor="1.44648" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_sword_1_t2_blade" name="{=q7jHkLam}Fullered Narrow Arming Sword Blade" tier="2" piece_type="Blade" mesh="vlandian_blade_1" culture="Culture.vlandia" length="94.6" weight="0.98">
+  <CraftingPiece id="crpg_vlandia_sword_1_t2_blade" name="{=q7jHkLam}Fullered Narrow Arming Sword Blade" tier="2" piece_type="Blade" mesh="vlandian_blade_1" culture="Culture.vlandia" length="94.6" weight="1.37">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="0.8049999" />
-      <Swing damage_type="Cut" damage_factor="1.085" />
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Swing damage_type="Cut" damage_factor="2.9" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
