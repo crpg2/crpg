@@ -3058,9 +3058,9 @@
     "name": "Highland Broadsword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 100,
-    "weight": 1.85,
-    "tier": 0.176945642,
+    "price": 5879,
+    "weight": 1.11,
+    "tier": 6.10647535,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3072,19 +3072,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 97,
-        "balance": 0.47,
-        "handling": 86,
+        "length": 113,
+        "balance": 0.88,
+        "handling": 93,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 12,
+        "thrustSpeed": 94,
+        "swingDamage": 21,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 96
       },
       {
         "class": "TwoHandedSword",
@@ -3092,20 +3092,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 97,
-        "balance": 0.98,
-        "handling": 90,
+        "length": 113,
+        "balance": 1.0,
+        "handling": 94,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
-        "swingDamage": 12,
+        "thrustSpeed": 102,
+        "swingDamage": 21,
         "swingDamageType": "Cut",
-        "swingSpeed": 99
+        "swingSpeed": 108
       },
       {
         "class": "OneHandedSword",
@@ -3113,19 +3113,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 97,
-        "balance": 0.47,
-        "handling": 86,
+        "length": 113,
+        "balance": 0.88,
+        "handling": 93,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 12,
+        "thrustSpeed": 94,
+        "swingDamage": 21,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 96
       }
     ]
   },
@@ -3244,9 +3244,9 @@
     "name": "Highland Fine Two Handed Sword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 208,
-    "weight": 1.63,
-    "tier": 0.496409327,
+    "price": 5512,
+    "weight": 2.18,
+    "tier": 5.880083,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3258,19 +3258,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 107,
-        "balance": 0.57,
-        "handling": 87,
+        "length": 128,
+        "balance": 0.0,
+        "handling": 76,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 12,
+        "thrustSpeed": 85,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 70
       },
       {
         "class": "TwoHandedSword",
@@ -3278,20 +3278,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 107,
-        "balance": 1.0,
-        "handling": 90,
+        "length": 128,
+        "balance": 0.64,
+        "handling": 84,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
-        "swingDamage": 12,
+        "thrustSpeed": 92,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 102
+        "swingSpeed": 89
       },
       {
         "class": "OneHandedSword",
@@ -3299,19 +3299,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 107,
-        "balance": 0.57,
-        "handling": 87,
+        "length": 128,
+        "balance": 0.0,
+        "handling": 76,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 12,
+        "thrustSpeed": 85,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 70
       }
     ]
   },
@@ -14422,9 +14422,9 @@
     "name": "Ridged Long Kaskara",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 109,
-    "weight": 1.76,
-    "tier": 0.205586791,
+    "price": 5680,
+    "weight": 1.67,
+    "tier": 5.984647,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14436,19 +14436,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 97,
-        "balance": 0.51,
-        "handling": 86,
+        "length": 140,
+        "balance": 0.2,
+        "handling": 78,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 12,
+        "thrustSpeed": 89,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 75
       },
       {
         "class": "TwoHandedSword",
@@ -14456,20 +14456,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 97,
-        "balance": 1.0,
-        "handling": 90,
+        "length": 140,
+        "balance": 0.79,
+        "handling": 85,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
-        "swingDamage": 12,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 100
+        "swingSpeed": 93
       },
       {
         "class": "OneHandedSword",
@@ -14477,19 +14477,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 97,
-        "balance": 0.51,
-        "handling": 86,
+        "length": 140,
+        "balance": 0.2,
+        "handling": 78,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 12,
+        "thrustSpeed": 89,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 75
       }
     ]
   },
