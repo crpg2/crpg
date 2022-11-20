@@ -1146,7 +1146,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_empire_sword_6_t5" name="{=1bc4kTaz}Thamaskene Steel Spathion" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_empire_sword_6_t5_blade" Type="Blade" scale_factor="85" />
+      <Piece id="crpg_empire_sword_6_t5_blade" Type="Blade" scale_factor="83" />
       <Piece id="crpg_empire_sword_6_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_empire_sword_6_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_empire_sword_6_t5_pommel" Type="Pommel" scale_factor="100" />
@@ -1218,8 +1218,8 @@
   </CraftedItem>
   <CraftedItem id="crpg_empire_noble_sword_2_t5" name="{=Rcc0JW6H}Thamaskene Steel Spatha" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_empire_noble_sword_2_t5_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_empire_noble_sword_2_t5_guard" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_empire_noble_sword_2_t5_blade" Type="Blade" scale_factor="97" />
+      <Piece id="crpg_empire_noble_sword_2_t5_guard" Type="Guard" scale_factor="101" />
       <Piece id="crpg_empire_noble_sword_2_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_empire_noble_sword_2_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>

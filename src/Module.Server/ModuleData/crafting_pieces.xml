@@ -3485,7 +3485,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_iron_spatha_sword_t2_handle" name="{=6HybYLtu}Rough Leather Covered Northern One Handed Grip" tier="2" piece_type="Handle" mesh="sturgian_grip_5" culture="Culture.sturgia" length="15.15" weight="0.12">
+  <CraftingPiece id="crpg_iron_spatha_sword_t2_handle" name="{=6HybYLtu}Rough Leather Covered Northern One Handed Grip" tier="2" piece_type="Handle" mesh="sturgian_grip_5" culture="Culture.sturgia" length="15.15" weight="0.60">
     <BuildData piece_offset="-0.07" next_piece_offset="0.1" previous_piece_offset="0.3" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -3498,7 +3498,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_noble_sword_3_t5_handle" name="{=bQkJSHCt}Bronze Two Handed Grip With Silver Spiral" tier="5" piece_type="Handle" mesh="empire_noble_grip_4" culture="Culture.sturgia" length="25" weight="0.10">
+  <CraftingPiece id="crpg_empire_noble_sword_3_t5_handle" name="{=bQkJSHCt}Bronze Two Handed Grip With Silver Spiral" tier="5" piece_type="Handle" mesh="empire_noble_grip_4" culture="Culture.sturgia" length="25" weight="0.75">
     <BuildData piece_offset="0" next_piece_offset="0" previous_piece_offset="0.5" />
     <Materials>
       <Material id="Iron5" count="2" />
@@ -3606,7 +3606,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_noble_sword_2_t5_handle" name="{=bEbyObu7}Jeweled Golden One Handed Grip" tier="5" piece_type="Handle" mesh="empire_noble_grip_2" culture="Culture.empire" length="15" weight="0.10">
+  <CraftingPiece id="crpg_empire_noble_sword_2_t5_handle" name="{=bEbyObu7}Jeweled Golden One Handed Grip" tier="5" piece_type="Handle" mesh="empire_noble_grip_2" culture="Culture.empire" length="15" weight="0.23">
     <BuildData piece_offset="0" next_piece_offset="0" previous_piece_offset="0.5" />
     <Materials>
       <Material id="Iron5" count="1" />
@@ -3931,19 +3931,19 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_noble_sword_1_t5_handle" name="{=lF10mZnb}Wire Wrapped One Handed Grip" tier="5" piece_type="Handle" mesh="empire_grip_17" culture="Culture.empire" length="17.5" weight="0.10">
+  <CraftingPiece id="crpg_empire_noble_sword_1_t5_handle" name="{=lF10mZnb}Wire Wrapped One Handed Grip" tier="5" piece_type="Handle" mesh="empire_grip_17" culture="Culture.empire" length="17.5" weight="0.29">
     <BuildData piece_offset="0" next_piece_offset="-0.3" previous_piece_offset="0.5" />
     <Materials>
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_6_t5_handle" name="{=lF10mZnb}Wire Wrapped One Handed Grip" tier="5" piece_type="Handle" mesh="empire_grip_17" culture="Culture.empire" length="17.5" weight="0.10">
+  <CraftingPiece id="crpg_empire_sword_6_t5_handle" name="{=lF10mZnb}Wire Wrapped One Handed Grip" tier="5" piece_type="Handle" mesh="empire_grip_17" culture="Culture.empire" length="17.5" weight="1.50">
     <BuildData piece_offset="0" next_piece_offset="-0.3" previous_piece_offset="0.5" />
     <Materials>
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_5_t4_handle" name="{=Lh1E9EsS}Imperial Steel Reinforced Two Handed Grip" tier="4" piece_type="Handle" mesh="empire_grip_11" culture="Culture.empire" length="25" weight="0.1">
+  <CraftingPiece id="crpg_empire_sword_5_t4_handle" name="{=Lh1E9EsS}Imperial Steel Reinforced Two Handed Grip" tier="4" piece_type="Handle" mesh="empire_grip_11" culture="Culture.empire" length="25" weight="1.20">
     <BuildData piece_offset="-0.18" next_piece_offset="-0.3" previous_piece_offset="0.9" />
     <Materials>
       <Material id="Iron4" count="2" />
@@ -3955,7 +3955,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_4_t4_handle" name="{=H2xibh6p}Studded Imperial Grip" tier="4" piece_type="Handle" mesh="empire_grip_5" culture="Culture.empire" length="15" weight="0.12">
+  <CraftingPiece id="crpg_empire_sword_4_t4_handle" name="{=H2xibh6p}Studded Imperial Grip" tier="4" piece_type="Handle" mesh="empire_grip_5" culture="Culture.empire" length="15" weight="0.33">
     <BuildData piece_offset="0" next_piece_offset="0.91" previous_piece_offset="0.8" />
     <Materials>
       <Material id="Iron4" count="1" />
@@ -3967,7 +3967,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_2_t3_handle" name="{=DID87A6l}Woven Leather Grip" tier="3" piece_type="Handle" mesh="empire_grip_1" culture="Culture.empire" length="15.4" weight="0.1">
+  <CraftingPiece id="crpg_empire_sword_2_t3_handle" name="{=DID87A6l}Woven Leather Grip" tier="3" piece_type="Handle" mesh="empire_grip_1" culture="Culture.empire" length="15.4" weight="0.25">
     <BuildData piece_offset="-0.18" next_piece_offset="-0.15" previous_piece_offset="0.6" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -4066,7 +4066,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_noble_sword_3_t5_guard" name="{=fd6Lnv1l}Golden Gladius Guard" tier="5" piece_type="Guard" mesh="empire_noble_guard_3" culture="Culture.empire" length="4.5" weight="0.20">
+  <CraftingPiece id="crpg_empire_noble_sword_3_t5_guard" name="{=fd6Lnv1l}Golden Gladius Guard" tier="5" piece_type="Guard" mesh="empire_noble_guard_3" culture="Culture.empire" length="4.5" weight="0.60">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="5" />
     <Materials>
@@ -4759,10 +4759,10 @@
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_noble_sword_3_t5_blade" name="{=HwCYBWq2}Sharp Tipped Spatha Blade" tier="4" piece_type="Blade" mesh="empire_noble_blade_4" culture="Culture.empire" length="95.8" weight=".97">
+  <CraftingPiece id="crpg_empire_noble_sword_3_t5_blade" name="{=HwCYBWq2}Sharp Tipped Spatha Blade" tier="4" piece_type="Blade" mesh="empire_noble_blade_4" culture="Culture.empire" length="95.8" weight="1.15">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_noble_blade_4_scabbard_4">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="3.2" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="3" />
@@ -4956,7 +4956,7 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_noble_sword_1_t5_blade" name="{=PQThPvP6}Decorated Short Spatha Blade" tier="5" piece_type="Blade" mesh="empire_noble_blade_1" culture="Culture.empire" length="84.7" weight=".95">
+  <CraftingPiece id="crpg_empire_noble_sword_1_t5_blade" name="{=PQThPvP6}Decorated Short Spatha Blade" tier="5" piece_type="Blade" mesh="empire_noble_blade_1" culture="Culture.empire" length="84.7" weight="1.34">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_noble_blade_1_scabbard_1">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="3.1" />
@@ -5094,11 +5094,11 @@
       <Material id="Iron3" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_iron_spatha_sword_t2_blade" name="{=c1YI2Nxt}Iron Spatha Blade" tier="2" piece_type="Blade" mesh="empire_blade_2" culture="Culture.empire" length="91.3" weight=".91">
+  <CraftingPiece id="crpg_iron_spatha_sword_t2_blade" name="{=c1YI2Nxt}Iron Spatha Blade" tier="2" piece_type="Blade" mesh="empire_blade_2" culture="Culture.empire" length="91.3" weight="1.10">
     <BuildData previous_piece_offset="-0.4" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_1_scabbard_1">
       <Thrust damage_type="Pierce" damage_factor="1.6" />
-      <Swing damage_type="Cut" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="2.9" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5520,7 +5520,7 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_noble_sword_2_t5_blade" name="{=dafrn0mR}Thamaskene Steel Spatha Blade" tier="5" piece_type="Blade" mesh="empire_blade_7" culture="Culture.vlandia" length="99" weight="0.88">
+  <CraftingPiece id="crpg_empire_noble_sword_2_t5_blade" name="{=dafrn0mR}Thamaskene Steel Spatha Blade" tier="5" piece_type="Blade" mesh="empire_blade_7" culture="Culture.vlandia" length="99" weight="1.32">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_7_scabbard_7">
       <Thrust damage_type="Pierce" damage_factor="2.2" />
       <Swing damage_type="Cut" damage_factor="3.3" />
@@ -5529,10 +5529,10 @@
       <Material id="Iron6" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_6_t5_blade" name="{=dafrn0mR}Thamaskene Steel Spatha Blade" tier="5" piece_type="Blade" mesh="empire_blade_7" culture="Culture.vlandia" length="99" weight="1.1">
+  <CraftingPiece id="crpg_empire_sword_6_t5_blade" name="{=dafrn0mR}Thamaskene Steel Spatha Blade" tier="5" piece_type="Blade" mesh="empire_blade_7" culture="Culture.vlandia" length="99" weight="1.22">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_7_scabbard_7">
       <Thrust damage_type="Pierce" damage_factor="1.8" />
-      <Swing damage_type="Cut" damage_factor="3.5" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="4" />
@@ -5550,10 +5550,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_4_t4_blade" name="{=kIbtwQRF}Fine Steel Spatha Blade" tier="4" piece_type="Blade" mesh="empire_blade_6" culture="Culture.empire" length="92.4" weight="0.82">
+  <CraftingPiece id="crpg_empire_sword_4_t4_blade" name="{=kIbtwQRF}Fine Steel Spatha Blade" tier="4" piece_type="Blade" mesh="empire_blade_6" culture="Culture.empire" length="92.4" weight="1.12">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_6_scabbard_6">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="2.9" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5562,10 +5562,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_5_t4_blade" name="{=y5A3HGua}Fine Steel Paramerion Blade" tier="4" piece_type="Blade" mesh="empire_blade_5" culture="Culture.empire" length="95.7" weight="0.93">
+  <CraftingPiece id="crpg_empire_sword_5_t4_blade" name="{=y5A3HGua}Fine Steel Paramerion Blade" tier="4" piece_type="Blade" mesh="empire_blade_5" culture="Culture.empire" length="95.7" weight="1.01">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_5_scabbard_5">
-      <Thrust damage_type="Pierce" damage_factor="1.8" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="3" />
@@ -5584,9 +5584,9 @@
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_3_t3_blade" name="{=iuQE1xwL}Narrow Fullered Spatha Blade" tier="3" piece_type="Blade" mesh="empire_blade_1" culture="Culture.empire" length="92.4" weight="0.90">
+  <CraftingPiece id="crpg_empire_sword_3_t3_blade" name="{=iuQE1xwL}Narrow Fullered Spatha Blade" tier="3" piece_type="Blade" mesh="empire_blade_1" culture="Culture.empire" length="92.4" weight="1.18">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
       <Swing damage_type="Cut" damage_factor="2.7" />
     </BladeData>
     <Flags>
@@ -5596,10 +5596,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_2_t3_blade" name="{=iuQE1xwL}Narrow Fullered Spatha Blade" tier="3" piece_type="Blade" mesh="empire_blade_1" culture="Culture.empire" length="92.4" weight="0.90">
+  <CraftingPiece id="crpg_empire_sword_2_t3_blade" name="{=iuQE1xwL}Narrow Fullered Spatha Blade" tier="3" piece_type="Blade" mesh="empire_blade_1" culture="Culture.empire" length="92.4" weight="1.15">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_1_scabbard_1">
       <Thrust damage_type="Pierce" damage_factor="1.7" />
-      <Swing damage_type="Cut" damage_factor="2.9" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
