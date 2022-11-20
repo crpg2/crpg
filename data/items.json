@@ -4522,9 +4522,9 @@
     "name": "Engraved Backsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 7974,
-    "weight": 1.68,
-    "tier": 10.3465776,
+    "price": 7530,
+    "weight": 1.84,
+    "tier": 10.0222273,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4537,15 +4537,15 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 109,
-        "balance": 0.48,
-        "handling": 82,
+        "balance": 0.49,
+        "handling": 81,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 87,
         "swingDamage": 34,
         "swingDamageType": "Cut",
         "swingSpeed": 84
@@ -4554,12 +4554,12 @@
   },
   {
     "id": "crpg_battania_noble_sword_2_t5",
-    "name": "Highland Fine Steel Blade",
+    "name": "Highland Pointed Blade",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 17266,
+    "price": 5695,
     "weight": 1.44,
-    "tier": 15.7561636,
+    "tier": 8.570821,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4572,18 +4572,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 103,
-        "balance": 0.75,
-        "handling": 95,
+        "balance": 0.48,
+        "handling": 88,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 30,
+        "thrustSpeed": 91,
+        "swingDamage": 28,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 84
       }
     ]
   },
@@ -4592,9 +4592,9 @@
     "name": "Decorated Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 7982,
-    "weight": 1.88,
-    "tier": 10.3518448,
+    "price": 7564,
+    "weight": 1.84,
+    "tier": 10.0474939,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4607,18 +4607,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 107,
-        "balance": 0.31,
-        "handling": 84,
+        "balance": 0.28,
+        "handling": 83,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 79
+        "swingSpeed": 78
       }
     ]
   },
@@ -4740,9 +4740,9 @@
     "name": "Ridged Iron Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 7212,
-    "weight": 1.68,
-    "tier": 9.785129,
+    "price": 3359,
+    "weight": 2.0,
+    "tier": 6.326738,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4754,30 +4754,30 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 95,
-        "balance": 0.66,
-        "handling": 92,
+        "length": 97,
+        "balance": 0.3,
+        "handling": 84,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 29,
+        "thrustSpeed": 87,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 78
       }
     ]
   },
   {
     "id": "crpg_battania_sword_2_t3",
-    "name": "Broad Ridged Shortsword",
+    "name": "Fine Steel Broad Shortsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4093,
-    "weight": 1.92,
-    "tier": 7.09823465,
+    "price": 5702,
+    "weight": 2.01,
+    "tier": 8.577124,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4790,29 +4790,29 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 85,
-        "balance": 0.66,
-        "handling": 95,
+        "balance": 0.68,
+        "handling": 96,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 25,
+        "swingDamage": 27,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 90
       }
     ]
   },
   {
     "id": "crpg_battania_sword_3_t3",
-    "name": "Broadsword",
+    "name": "Steel Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 12347,
-    "weight": 1.51,
-    "tier": 13.1489506,
+    "price": 4617,
+    "weight": 1.96,
+    "tier": 7.60711956,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4824,19 +4824,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 98,
-        "balance": 0.69,
-        "handling": 92,
+        "length": 101,
+        "balance": 0.28,
+        "handling": 84,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 32,
+        "thrustSpeed": 87,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 78
       }
     ]
   },
@@ -4845,9 +4845,9 @@
     "name": "Fine Steel Cavalry Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 6689,
-    "weight": 1.55,
-    "tier": 9.38228,
+    "price": 5585,
+    "weight": 1.93,
+    "tier": 8.477069,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4857,19 +4857,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 117,
-        "balance": 0.45,
-        "handling": 85,
+        "length": 120,
+        "balance": 0.23,
+        "handling": 82,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 31,
+        "thrustSpeed": 87,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 76
       }
     ]
   },
@@ -4878,9 +4878,9 @@
     "name": "Highland Broad Blade",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 18516,
-    "weight": 1.53,
-    "tier": 16.3566875,
+    "price": 6256,
+    "weight": 1.96,
+    "tier": 9.0364,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4892,19 +4892,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 99,
-        "balance": 0.69,
-        "handling": 92,
+        "length": 104,
+        "balance": 0.29,
+        "handling": 84,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 35,
+        "thrustSpeed": 87,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 78
       }
     ]
   },
