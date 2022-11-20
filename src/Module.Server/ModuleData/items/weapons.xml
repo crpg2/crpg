@@ -906,7 +906,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_aserai_sword_3_t3" name="{=bANXyotg}Slightly Ridged Flyssa" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_aserai_sword_3_t3_blade" Type="Blade" scale_factor="92" />
+      <Piece id="crpg_aserai_sword_3_t3_blade" Type="Blade" scale_factor="89" />
       <Piece id="crpg_aserai_sword_3_t3_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_aserai_sword_3_t3_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_aserai_sword_3_t3_pommel" Type="Pommel" scale_factor="100" />
@@ -1050,7 +1050,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_aserai_sword_5_t4" name="{=fuyj7s3F}Long Fine Steel Scimitar" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_aserai_sword_5_t4_blade" Type="Blade" scale_factor="86" />
+      <Piece id="crpg_aserai_sword_5_t4_blade" Type="Blade" scale_factor="84" />
       <Piece id="crpg_aserai_sword_5_t4_guard" Type="Guard" scale_factor="98" />
       <Piece id="crpg_aserai_sword_5_t4_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_aserai_sword_5_t4_pommel" Type="Pommel" scale_factor="100" />
@@ -1058,7 +1058,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_aserai_sword_6_t4" name="{=Yd4lmlQp}Narrow Fine Steel Kaskara" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_aserai_sword_6_t4_blade" Type="Blade" scale_factor="98" />
+      <Piece id="crpg_aserai_sword_6_t4_blade" Type="Blade" scale_factor="95" />
       <Piece id="crpg_aserai_sword_6_t4_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_aserai_sword_6_t4_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_aserai_sword_6_t4_pommel" Type="Pommel" scale_factor="100" />
@@ -1234,7 +1234,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_aserai_noble_sword_1_t5" name="{=iEbP2INp}Decorated Kaskara" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_aserai_noble_sword_1_t5_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_aserai_noble_sword_1_t5_blade" Type="Blade" scale_factor="98" />
       <Piece id="crpg_aserai_noble_sword_1_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_aserai_noble_sword_1_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_aserai_noble_sword_1_t5_pommel" Type="Pommel" scale_factor="100" />
@@ -1242,7 +1242,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_aserai_noble_sword_2_t5" name="{=93OHSnEV}Decorated Long Scimitar" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_aserai_noble_sword_2_t5_blade" Type="Blade" scale_factor="98" />
+      <Piece id="crpg_aserai_noble_sword_2_t5_blade" Type="Blade" scale_factor="97" />
       <Piece id="crpg_aserai_noble_sword_2_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_aserai_noble_sword_2_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_aserai_noble_sword_2_t5_pommel" Type="Pommel" scale_factor="100" />
@@ -1258,7 +1258,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_aserai_noble_sword_4_t5" name="{=0lNp3f76}Engraved Angular Kaskara" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_aserai_noble_sword_4_t5_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_aserai_noble_sword_4_t5_blade" Type="Blade" scale_factor="105" />
       <Piece id="crpg_aserai_noble_sword_4_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_aserai_noble_sword_4_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_aserai_noble_sword_4_t5_pommel" Type="Pommel" scale_factor="100" />
