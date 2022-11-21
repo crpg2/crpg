@@ -12438,6 +12438,42 @@
     ]
   },
   {
+    "id": "crpg_heavy_executionner_2sword",
+    "name": "Heavy Executionner Long Sword",
+    "culture": "Battania",
+    "type": "TwoHandedWeapon",
+    "price": 14164,
+    "weight": 2.7,
+    "tier": 10.0650082,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 150,
+        "balance": 0.25,
+        "handling": 75,
+        "bodyArmor": 5,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 44,
+        "swingDamageType": "Cut",
+        "swingSpeed": 77
+      }
+    ]
+  },
+  {
     "id": "crpg_heavy_heater_shield",
     "name": "Heavy Heater Shield",
     "culture": "Vlandia",

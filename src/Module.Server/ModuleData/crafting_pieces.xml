@@ -3306,6 +3306,11 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
+    <CraftingPiece id="crpg_heavy_executionner_2sword_pommel" name="Heavy Executionner Pommel" tier="5" piece_type="Pommel" mesh="vlandian_pommel_9" culture="Culture.vlandia" length="5.275" weight="0.25">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_vlandia_sword_5_t5_pommel" name="{=ugQrq53t}Fan Pommel" tier="5" piece_type="Pommel" mesh="vlandian_pommel_9" culture="Culture.vlandia" length="5.275" weight="0.02">
     <Materials>
       <Material id="Iron4" count="1" />
@@ -3727,6 +3732,12 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_battania_2hsword_5_t5_handle" name="{=saYgR9C6}High Quality Highland Two Handed Grip" tier="2" piece_type="Handle" mesh="battania_grip_6" culture="Culture.battania" length="25.6" weight="0.1">
+    <BuildData piece_offset="-0.22" previous_piece_offset="0.3" next_piece_offset="0.1" />
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_heavy_executionner_2sword_handle" name="Heavy Executionner Handle" tier="2" piece_type="Handle" mesh="battania_grip_6" culture="Culture.battania" length="25.6" weight="0.1">
     <BuildData piece_offset="-0.22" previous_piece_offset="0.3" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron2" count="2" />
@@ -4584,6 +4595,13 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_heavy_executionner_2sword_guard" name="Heavy Executionner Guard" tier="5" piece_type="Guard" mesh="vlandian_guard_8" culture="Culture.vlandia" length="1.42" weight="0.1">
+    <BuildData next_piece_offset="0.2" />
+    <StatContributions armor_bonus="5" />
+    <Materials>
+      <Material id="Iron5" count="2" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_broad_arming_sword_t4_guard" name="{=do4vZhh4}Tapered Thin Guard" tier="4" piece_type="Guard" mesh="vlandian_guard_4" culture="Culture.vlandia" length="1.152" weight="0.03">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
@@ -5214,6 +5232,17 @@
     <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_5_scabbard_5">
       <Thrust damage_type="Pierce" damage_factor="1.2" />
       <Swing damage_type="Cut" damage_factor="2.9" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron6" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_heavy_executionner_2sword_blade" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="1.1" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_5_scabbard_5">
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />

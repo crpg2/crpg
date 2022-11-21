@@ -94,6 +94,10 @@
       <UsablePiece piece_id="crpg_battania_2hsword_5_t5_guard" />
       <UsablePiece piece_id="crpg_battania_2hsword_5_t5_handle" />
       <UsablePiece piece_id="crpg_battania_2hsword_5_t5_pommel" />
+      <UsablePiece piece_id="crpg_heavy_executionner_2sword_blade" />
+      <UsablePiece piece_id="crpg_heavy_executionner_2sword_guard" />
+      <UsablePiece piece_id="crpg_heavy_executionner_2sword_handle" />
+      <UsablePiece piece_id="crpg_heavy_executionner_2sword_pommel" />
       <UsablePiece piece_id="crpg_battania_noble_sword_1_t5_blade" />
       <UsablePiece piece_id="crpg_battania_noble_sword_1_t5_guard" />
       <UsablePiece piece_id="crpg_battania_noble_sword_1_t5_handle" />
@@ -500,6 +504,10 @@
       <UsablePiece piece_id="crpg_battania_2hsword_5_t5_guard" />
       <UsablePiece piece_id="crpg_battania_2hsword_5_t5_handle" />
       <UsablePiece piece_id="crpg_battania_2hsword_5_t5_pommel" />
+      <UsablePiece piece_id="crpg_heavy_executionner_2sword_blade" />
+      <UsablePiece piece_id="crpg_heavy_executionner_2sword_guard" />
+      <UsablePiece piece_id="crpg_heavy_executionner_2sword_handle" />
+      <UsablePiece piece_id="crpg_heavy_executionner_2sword_pommel" />
       <UsablePiece piece_id="crpg_battania_noble_sword_1_t5_pommel" />
       <UsablePiece piece_id="crpg_battania_noble_sword_2_t5_guard" />
       <UsablePiece piece_id="crpg_battania_noble_sword_2_t5_pommel" />
