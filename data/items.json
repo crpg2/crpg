@@ -11461,6 +11461,27 @@
     ]
   },
   {
+    "id": "crpg_fluted_helm_with_faceplate",
+    "name": "Fluted Helm With Faceplate",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 25000,
+    "weight": 3.4,
+    "tier": 8.377901,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 45,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_folded_town_boots",
     "name": "Folded Town Boots",
     "culture": "Empire",
@@ -12181,6 +12202,69 @@
     "tier": 9.357523,
     "requirement": 0,
     "flags": [],
+    "armor": {
+      "headArmor": 50,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_great_helm_base",
+    "name": "Great Helmet",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 40000,
+    "weight": 4.5,
+    "tier": 9.054308,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 50,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_great_helm_brass",
+    "name": "Brass Great Helmet",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 40000,
+    "weight": 4.0,
+    "tier": 9.164759,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 50,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_great_helm_dark",
+    "name": "Blackened Great Helmet",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 40000,
+    "weight": 4.0,
+    "tier": 9.164759,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
     "armor": {
       "headArmor": 50,
       "bodyArmor": 0,
@@ -14522,6 +14606,27 @@
         "swingSpeed": 82
       }
     ]
+  },
+  {
+    "id": "crpg_italio_norman_helm",
+    "name": "Western Helm With Faceplate",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 30000,
+    "weight": 3.5,
+    "tier": 8.355439,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 45,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
   },
   {
     "id": "crpg_jousting_shield",
@@ -17504,6 +17609,132 @@
       "bodyArmor": 11,
       "armArmor": 0,
       "legArmor": 0,
+      "materialType": "Chainmail"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mail_with_tabbard1",
+    "name": "Mail With Tabbard",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 10934,
+    "weight": 29.0,
+    "tier": 7.48867464,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 36,
+      "armArmor": 20,
+      "legArmor": 15,
+      "materialType": "Chainmail"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mail_with_tabbard2",
+    "name": "Mail With Tabbard",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 10934,
+    "weight": 29.0,
+    "tier": 7.48867464,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 36,
+      "armArmor": 20,
+      "legArmor": 15,
+      "materialType": "Chainmail"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mail_with_tabbard3",
+    "name": "Mail With Tabbard",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 10934,
+    "weight": 29.0,
+    "tier": 7.48867464,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 36,
+      "armArmor": 20,
+      "legArmor": 15,
+      "materialType": "Chainmail"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mail_with_tabbard4",
+    "name": "Mail With Tabbard",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 10934,
+    "weight": 29.0,
+    "tier": 7.48867464,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 36,
+      "armArmor": 20,
+      "legArmor": 15,
+      "materialType": "Chainmail"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mail_with_tabbard5",
+    "name": "Mail With Tabbard",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 10934,
+    "weight": 29.0,
+    "tier": 7.48867464,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 36,
+      "armArmor": 20,
+      "legArmor": 15,
+      "materialType": "Chainmail"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mail_with_tabbard6",
+    "name": "Mail With Tabbard",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 10934,
+    "weight": 29.0,
+    "tier": 7.48867464,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 36,
+      "armArmor": 20,
+      "legArmor": 15,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -21748,6 +21979,25 @@
     ]
   },
   {
+    "id": "crpg_pigface_bascinet",
+    "name": "Western Bascinet",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 58000,
+    "weight": 4.5,
+    "tier": 10.32191,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 57,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_pike_wall_banner_t3",
     "name": "Pike Wall Banner",
     "culture": "Vlandia",
@@ -23087,6 +23337,217 @@
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_1ChurburghBoots",
+    "name": "Plate Boots",
+    "culture": "Vlandia",
+    "type": "LegArmor",
+    "price": 36000,
+    "weight": 2.5,
+    "tier": 11.3853388,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 30,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_1ChurburghGauntlet",
+    "name": "Plate Mittens",
+    "culture": "Vlandia",
+    "type": "HandArmor",
+    "price": 35000,
+    "weight": 2.9,
+    "tier": 12.4740782,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 0,
+      "armArmor": 30,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_1ChurburghHelm",
+    "name": "Hounskull Bascinet",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 58000,
+    "weight": 4.5,
+    "tier": 10.32191,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 57,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_1ChurburghTorso",
+    "name": "Plate Cuirass",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 90000,
+    "weight": 30.0,
+    "tier": 11.9324493,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 55,
+      "armArmor": 30,
+      "legArmor": 30,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_barbute1",
+    "name": "Western Barbute",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 40000,
+    "weight": 4.0,
+    "tier": 9.164759,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 50,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_brigandine1",
+    "name": "red Brigandine with armpads",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 25000,
+    "weight": 12.0,
+    "tier": 7.586145,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 32,
+      "armArmor": 18,
+      "legArmor": 12,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_brigandine2",
+    "name": "blue Brigandine with armpads",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 25000,
+    "weight": 12.0,
+    "tier": 7.586145,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 32,
+      "armArmor": 18,
+      "legArmor": 12,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_brigandine3",
+    "name": "blue Brigandine",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 20000,
+    "weight": 12.0,
+    "tier": 6.56787062,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 32,
+      "armArmor": 10,
+      "legArmor": 12,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_brigandine4",
+    "name": "red Brigandine",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 20000,
+    "weight": 12.0,
+    "tier": 6.56787062,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 32,
+      "armArmor": 10,
+      "legArmor": 12,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_brigandine5",
+    "name": "black Brigandine with armpads",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 25000,
+    "weight": 12.0,
+    "tier": 7.586145,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 32,
+      "armArmor": 18,
+      "legArmor": 12,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sa_brigandine6",
+    "name": "black Brigandine",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 20000,
+    "weight": 12.0,
+    "tier": 6.56787062,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 32,
+      "armArmor": 10,
+      "legArmor": 12,
       "materialType": "Plate"
     },
     "weapons": []
@@ -27296,6 +27757,65 @@
     "weapons": []
   },
   {
+    "id": "crpg_sugarloaf_helm",
+    "name": "Banded Sugarloaf Greathelm",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 47000,
+    "weight": 4.2,
+    "tier": 10.2139626,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 56,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sugarloaf_helm4",
+    "name": "Sugarloaf Greathelm",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 47000,
+    "weight": 4.2,
+    "tier": 10.2139626,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 56,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_swadian_shoulders",
+    "name": "Western Shoulder Plates",
+    "culture": "Vlandia",
+    "type": "ShoulderArmor",
+    "price": 6960,
+    "weight": 3.6,
+    "tier": 8.736697,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 20,
+      "armArmor": 10,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_tall_heater_shield",
     "name": "Tall Heater Shield",
     "culture": "Vlandia",
@@ -30114,6 +30634,25 @@
         "swingSpeed": 91
       }
     ]
+  },
+  {
+    "id": "crpg_western_chain_shoulders",
+    "name": "Western chain shoulders",
+    "culture": "Vlandia",
+    "type": "ShoulderArmor",
+    "price": 8000,
+    "weight": 3.6,
+    "tier": 3.494679,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 12,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Chainmail"
+    },
+    "weapons": []
   },
   {
     "id": "crpg_western_crowned_helmet",
