@@ -107,14 +107,6 @@
       <Piece id="crpg_practice_spear_t1_pommel" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <Item id="crpg_horse_whip" name="{=HclLXEaT}Horse Whip" is_merchandise="false" body_name="bo_mace_a" recalculate_body="true" mesh="horse_whip" weight="0.2" Type="OneHandedWeapon" item_holsters="sword_left_hip">
-    <ItemComponent>
-      <Weapon weapon_class="OneHandedSword" weapon_balance="100" thrust_speed="79" speed_rating="99" physics_material="wood_weapon" missile_speed="0" weapon_length="95" thrust_damage="6" thrust_damage_type="Blunt" swing_damage="5" swing_damage_type="Blunt" item_usage="onehanded_block_shield_swing">
-        <WeaponFlags MeleeWeapon="true" />
-      </Weapon>
-    </ItemComponent>
-    <Flags />
-  </Item>
   <Item multiplayer_item="false" id="crpg_push_fork" name="{=l69aXkKH}Push Fork" is_merchandise="false" body_name="bo_push_fork" recalculate_body="true" mesh="push_fork" subtype="two_handed_wpn" weight="2" difficulty="0" appearance="0.1" Type="Polearm" item_holsters="polearm_back:polearm_back_2">
     <ItemComponent>
       <Weapon weapon_class="TwoHandedPolearm" weapon_balance="100" thrust_speed="56" speed_rating="70" physics_material="wood_weapon" weapon_length="200" swing_damage="1" thrust_damage="15" swing_damage_type="Blunt" thrust_damage_type="Blunt" item_usage="polearm_block_thrust">
@@ -194,7 +186,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_judgement_mace_t3" name="{=KRuZuMFI}Judgement" crafting_template="crpg_Mace" is_merchandise="false">
     <Pieces>
-      <Piece id="crpg_judgement_mace_t3_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_judgement_mace_t3_blade" Type="Blade" scale_factor="160" />
       <Piece id="crpg_judgement_mace_t3_handle" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
@@ -1573,8 +1565,8 @@
   </CraftedItem>
   <CraftedItem id="crpg_aserai_mace_3_t3" name="{=FJDCc3Y2}Heavy Horsemans Mace" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_aserai_mace_3_t3_blade" Type="Blade" scale_factor="110" />
-      <Piece id="crpg_aserai_mace_3_t3_handle" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_aserai_mace_3_t3_blade" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_aserai_mace_3_t3_handle" Type="Handle" scale_factor="200" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_battania_mace_1_t3" name="{=9pD32UdV}Light Morningstar" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
