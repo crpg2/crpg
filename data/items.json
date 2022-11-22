@@ -2184,6 +2184,42 @@
     ]
   },
   {
+    "id": "crpg_awlpike",
+    "name": "Awlpike",
+    "culture": "Neutral",
+    "type": "Polearm",
+    "price": 21510,
+    "weight": 2.22,
+    "tier": 11.6982222,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 169,
+        "balance": 0.21,
+        "handling": 65,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 29,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 91,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 76
+      }
+    ]
+  },
+  {
     "id": "crpg_baggy_trunks",
     "name": "Baggy Trunks",
     "culture": "Battania",
@@ -2920,6 +2956,40 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_barmace",
+    "name": "Barmace",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 20736,
+    "weight": 3.02,
+    "tier": 12.4074049,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 94,
+        "balance": 0.25,
+        "handling": 79,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 86,
+        "swingDamage": 36,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 77
       }
     ]
   },
@@ -7915,6 +7985,40 @@
     "weapons": []
   },
   {
+    "id": "crpg_dawn",
+    "name": "Dawn",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 24826,
+    "weight": 1.97,
+    "tier": 13.67967,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 128,
+        "balance": 0.61,
+        "handling": 80,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 24,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 93,
+        "swingDamage": 36,
+        "swingDamageType": "Cut",
+        "swingSpeed": 88
+      }
+    ]
+  },
+  {
     "id": "crpg_dawnbreaker_sword_t3",
     "name": "Dawnbreaker",
     "culture": "Neutral",
@@ -11838,6 +11942,42 @@
     "weapons": []
   },
   {
+    "id": "crpg_gada",
+    "name": "Gada",
+    "culture": "Battania",
+    "type": "TwoHandedWeapon",
+    "price": 2308693,
+    "weight": 2.0,
+    "tier": 141.704987,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 110,
+        "balance": 0.45,
+        "handling": 78,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "TwoHandIdleOnMount",
+          "MultiplePenetration"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 93,
+        "swingDamage": 43,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
     "id": "crpg_gambeson_b",
     "name": "Heavy Aketon",
     "culture": "Vlandia",
@@ -12049,6 +12189,44 @@
       "materialType": "Plate"
     },
     "weapons": []
+  },
+  {
+    "id": "crpg_greataxe",
+    "name": "Greataxe",
+    "culture": "Battania",
+    "type": "TwoHandedWeapon",
+    "price": 75769,
+    "weight": 1.28,
+    "tier": 24.7333126,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedAxe",
+        "itemUsage": "twohanded_widegrip_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 92,
+        "balance": 0.85,
+        "handling": 83,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 99,
+        "swingDamage": 47,
+        "swingDamageType": "Cut",
+        "swingSpeed": 95
+      }
+    ]
   },
   {
     "id": "crpg_green_hood",
@@ -16927,6 +17105,44 @@
       "materialType": "Leather"
     },
     "weapons": []
+  },
+  {
+    "id": "crpg_long_greataxe",
+    "name": "Long Greataxe",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 36896,
+    "weight": 1.34,
+    "tier": 16.9199333,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedAxe",
+        "itemUsage": "twohanded_widegrip_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 111,
+        "balance": 0.68,
+        "handling": 79,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 98,
+        "swingDamage": 44,
+        "swingDamageType": "Cut",
+        "swingSpeed": 90
+      }
+    ]
   },
   {
     "id": "crpg_long_hemp_tunic",
@@ -29754,6 +29970,42 @@
     ]
   },
   {
+    "id": "crpg_war_scythe",
+    "name": "War Scythe",
+    "culture": "Neutral",
+    "type": "Polearm",
+    "price": 60,
+    "weight": 1.54,
+    "tier": 0.0336317,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 169,
+        "balance": 0.56,
+        "handling": 74,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 96,
+        "swingDamage": 11,
+        "swingDamageType": "Cut",
+        "swingSpeed": 86
+      }
+    ]
+  },
+  {
     "id": "crpg_western_2hsword_t3",
     "name": "Tapered Two-Hander",
     "culture": "Vlandia",
@@ -30855,6 +31107,40 @@
         "swingDamage": 34,
         "swingDamageType": "Cut",
         "swingSpeed": 77
+      }
+    ]
+  },
+  {
+    "id": "crpg_winter",
+    "name": "Winter",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 48285,
+    "weight": 2.14,
+    "tier": 19.5169468,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 119,
+        "balance": 0.67,
+        "handling": 82,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 15,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 92,
+        "swingDamage": 42,
+        "swingDamageType": "Cut",
+        "swingSpeed": 90
       }
     ]
   },

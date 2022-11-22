@@ -453,6 +453,16 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_dawn_blade" />
+      <UsablePiece piece_id="crpg_dawn_guard" />
+      <UsablePiece piece_id="crpg_dawn_handle" />
+      <UsablePiece piece_id="crpg_dawn_pommel" />
+      <UsablePiece piece_id="crpg_winter_blade" />
+      <UsablePiece piece_id="crpg_winter_guard" />
+      <UsablePiece piece_id="crpg_winter_handle" />
+      <UsablePiece piece_id="crpg_winter_pommel" />
+      <UsablePiece piece_id="crpg_barmace_blade" />
+      <UsablePiece piece_id="crpg_barmace_handle" />
       <UsablePiece piece_id="crpg_ambassador_sword_t3_guard" />
       <UsablePiece piece_id="crpg_ambassador_sword_t3_handle" />
       <UsablePiece piece_id="crpg_ambassador_sword_t3_pommel" />
@@ -1268,6 +1278,10 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_greataxe_blade" />
+      <UsablePiece piece_id="crpg_greataxe_handle" />
+      <UsablePiece piece_id="crpg_long_greataxe_blade" />
+      <UsablePiece piece_id="crpg_long_greataxe_handle" />
       <UsablePiece piece_id="crpg_ambassador_sword_t3_pommel" />
       <UsablePiece piece_id="crpg_aserai_2haxe_1_t3_blade" />
       <UsablePiece piece_id="crpg_aserai_2haxe_1_t3_handle" />
@@ -1488,6 +1502,10 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_war_scythe_blade" />
+      <UsablePiece piece_id="crpg_war_scythe_handle" />
+      <UsablePiece piece_id="crpg_awlpike_blade" />
+      <UsablePiece piece_id="crpg_awlpike_handle" />
       <UsablePiece piece_id="crpg_aserai_lance_1_t5_blade" />
       <UsablePiece piece_id="crpg_aserai_lance_1_t5_handle" />
       <UsablePiece piece_id="crpg_battania_mace_1_t3_pommel" />
@@ -2284,6 +2302,10 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_bos_head" />
+      <UsablePiece piece_id="crpg_bos_handle" />
+      <UsablePiece piece_id="crpg_gada_blade" />
+      <UsablePiece piece_id="crpg_gada_handle" />
       <UsablePiece piece_id="crpg_eastern_long_steel_mace_t4_blade" />
       <UsablePiece piece_id="crpg_eastern_long_steel_mace_t4_handle" />
       <UsablePiece piece_id="crpg_eastern_long_steel_mace_t4_pommel" />

@@ -939,6 +939,16 @@
       <WeaponFlag value="NotUsableWithOneHand" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_dawn_blade" />
+      <AvailablePiece id="crpg_dawn_guard" />
+      <AvailablePiece id="crpg_dawn_handle" />
+      <AvailablePiece id="crpg_dawn_pommel" />
+      <AvailablePiece id="crpg_winter_blade" />
+      <AvailablePiece id="crpg_winter_guard" />
+      <AvailablePiece id="crpg_winter_handle" />
+      <AvailablePiece id="crpg_winter_pommel" />
+      <AvailablePiece id="crpg_barmace_blade" />
+      <AvailablePiece id="crpg_barmace_handle" />
       <AvailablePiece id="crpg_ambassador_sword_t3_guard" />
       <AvailablePiece id="crpg_ambassador_sword_t3_handle" />
       <AvailablePiece id="crpg_ambassador_sword_t3_pommel" />
@@ -1745,6 +1755,10 @@
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_greataxe_blade" />
+      <AvailablePiece id="crpg_greataxe_handle" />
+      <AvailablePiece id="crpg_long_greataxe_blade" />
+      <AvailablePiece id="crpg_long_greataxe_handle" />
       <AvailablePiece id="crpg_ambassador_sword_t3_pommel" />
       <AvailablePiece id="crpg_aserai_2haxe_1_t3_blade" />
       <AvailablePiece id="crpg_aserai_2haxe_1_t3_handle" />
@@ -2216,6 +2230,10 @@
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_war_scythe_blade" />
+      <AvailablePiece id="crpg_war_scythe_handle" />
+      <AvailablePiece id="crpg_awlpike_blade" />
+      <AvailablePiece id="crpg_awlpike_handle" />
       <AvailablePiece id="crpg_eastern_javelin_3_t4_pommel" />
       <AvailablePiece id="crpg_eastern_spear_5_t5_pommel" />
       <AvailablePiece id="crpg_empire_mace_3_t4_pommel" />
@@ -3394,6 +3412,10 @@
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_bos_blade" />
+      <AvailablePiece id="ccrpg_bos_handle" />
+      <AvailablePiece id="crpg_gada_blade" />
+      <AvailablePiece id="crpg_gada_handle" />      
       <AvailablePiece id="crpg_eastern_long_steel_mace_t4_blade" />
       <AvailablePiece id="crpg_eastern_long_steel_mace_t4_handle" />
       <AvailablePiece id="crpg_eastern_long_steel_mace_t4_pommel" />
