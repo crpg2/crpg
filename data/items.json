@@ -3396,9 +3396,9 @@
     "name": "Norse Hatchet",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 58,
+    "price": 190,
     "weight": 1.09,
-    "tier": 0.0555461943,
+    "tier": 0.754758954,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3421,7 +3421,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 95,
-        "swingDamage": 11,
+        "swingDamage": 20,
         "swingDamageType": "Cut",
         "swingSpeed": 96
       }
@@ -13504,9 +13504,9 @@
     "name": "Tzikourion",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 57,
-    "weight": 1.08,
-    "tier": 0.0499073677,
+    "price": 755,
+    "weight": 0.86,
+    "tier": 2.44391441,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -13519,8 +13519,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.63,
-        "handling": 86,
+        "balance": 0.89,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -13528,10 +13528,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 12,
+        "thrustSpeed": 97,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 96
       }
     ]
   },
@@ -21205,9 +21205,9 @@
     "name": "Pickaxe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 61,
+    "price": 1232,
     "weight": 1.05,
-    "tier": 0.07757739,
+    "tier": 3.40881157,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -21231,8 +21231,8 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 96,
-        "swingDamage": 9,
-        "swingDamageType": "Cut",
+        "swingDamage": 16,
+        "swingDamageType": "Pierce",
         "swingSpeed": 107
       }
     ]
@@ -21399,9 +21399,9 @@
     "name": "Sickle",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 54,
+    "price": 432,
     "weight": 1.18,
-    "tier": 0.0324048735,
+    "tier": 1.6068995,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21424,7 +21424,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 8,
+        "swingDamage": 20,
         "swingDamageType": "Cut",
         "swingSpeed": 97
       }
@@ -23615,9 +23615,9 @@
     "name": "Small Bit Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 61,
+    "price": 221,
     "weight": 1.12,
-    "tier": 0.08192369,
+    "tier": 0.883730233,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -23640,7 +23640,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 11,
+        "swingDamage": 19,
         "swingDamageType": "Cut",
         "swingSpeed": 101
       }
@@ -23727,9 +23727,9 @@
     "name": "Small Spurred Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 59,
+    "price": 173,
     "weight": 1.05,
-    "tier": 0.06298424,
+    "tier": 0.679425955,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -23752,7 +23752,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 96,
-        "swingDamage": 11,
+        "swingDamage": 19,
         "swingDamageType": "Cut",
         "swingSpeed": 97
       }
@@ -28122,9 +28122,9 @@
     "name": "Broad Tzikourion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 7370,
-    "weight": 0.86,
-    "tier": 9.903242,
+    "price": 2079,
+    "weight": 0.79,
+    "tier": 4.746152,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -28137,8 +28137,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 96,
-        "balance": 0.83,
-        "handling": 89,
+        "balance": 0.96,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -28146,10 +28146,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 33,
+        "thrustSpeed": 98,
+        "swingDamage": 25,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 98
       }
     ]
   },

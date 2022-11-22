@@ -252,7 +252,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_peasant_sickle_1_t1_blade" name="{=vxqrW5GN}Sickle Blade" tier="1" piece_type="Blade" mesh="sickle_blade_1" length="38.5" weight="0.762" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Cut" damage_factor="0.84" />
+      <Swing damage_type="Cut" damage_factor="2.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -2335,10 +2335,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_imperial_axe_t3_blade" name="{=iFhr5nGq}Imperial Axe Head" tier="3" piece_type="Blade" mesh="axe_craft_29_head" distance_to_next_piece="2.6" distance_to_previous_piece="2.3" weight="0.719">
+  <CraftingPiece id="crpg_imperial_axe_t3_blade" name="{=iFhr5nGq}Imperial Axe Head" tier="3" piece_type="Blade" mesh="axe_craft_29_head" distance_to_next_piece="2.6" distance_to_previous_piece="2.3" weight="0.5">
     <BuildData piece_offset="-9.6" />
     <BladeData stack_amount="2" blade_length="9.105" blade_width="23.082" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.26" />
+      <Swing damage_type="Cut" damage_factor="2.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2350,7 +2350,7 @@
   <CraftingPiece id="crpg_small_spurred_axe_t2_blade" name="{=fOrRdtNK}Small Spurred Axe Head" tier="2" piece_type="Blade" mesh="axe_craft_24_head" distance_to_next_piece="2.6" distance_to_previous_piece="2.1" weight="0.7">
     <BuildData piece_offset="-4.2" />
     <BladeData stack_amount="2" blade_length="9.46" blade_width="21.987" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.12" />
+      <Swing damage_type="Cut" damage_factor="1.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2401,7 +2401,7 @@
   <CraftingPiece id="crpg_battania_axe_1_t2_blade" name="{=VccYBtB0}Northern Hatchet Head" tier="2" piece_type="Blade" mesh="axe_craft_2_head" distance_to_next_piece="3.986" distance_to_previous_piece="2.314" weight="0.745">
     <BuildData piece_offset="-5.628" />
     <BladeData stack_amount="2" blade_length="12.2" blade_width="24.433" physics_material="metal_weapon" body_name="bo_axe_longer_a">
-      <Swing damage_type="Cut" damage_factor="1.12" />
+      <Swing damage_type="Cut" damage_factor="2.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2426,7 +2426,7 @@
   <CraftingPiece id="crpg_peasant_pickaxe_1_t1_blade" name="{=aPr8NPdo}Western Iron Polearm Head" tier="1" piece_type="Blade" mesh="axe_craft_37_head" distance_to_next_piece="10.4" distance_to_previous_piece="3.4" weight="0.632">
     <BuildData piece_offset="-6.8" />
     <BladeData stack_amount="2" blade_length="15.764" blade_width="12" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="0.98" />
+      <Swing damage_type="Pierce" damage_factor="1.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2524,10 +2524,10 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tzkurion_axe_t3_blade" name="{=Tui9qvOZ}Tzikurion Head" tier="3" piece_type="Blade" mesh="axe_craft_26_head" distance_to_next_piece="9" distance_to_previous_piece="3.5" weight="0.252">
+  <CraftingPiece id="crpg_tzkurion_axe_t3_blade" name="{=Tui9qvOZ}Tzikurion Head" tier="3" piece_type="Blade" mesh="axe_craft_26_head" distance_to_next_piece="9" distance_to_previous_piece="3.5" weight="0.2">
     <BuildData piece_offset="-7" />
     <BladeData stack_amount="2" blade_length="17.6" blade_width="19.393" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Swing damage_type="Cut" damage_factor="2.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2551,7 +2551,7 @@
   <CraftingPiece id="crpg_small_bit_axe_t2_blade" name="{=VfzFTGd8}Small Round Bit Head" tier="2" piece_type="Blade" mesh="axe_craft_35_head" distance_to_next_piece="5" distance_to_previous_piece="3.6" weight="0.632">
     <BuildData piece_offset="-7.2" />
     <BladeData stack_amount="2" blade_length="10.364" blade_width="20.3" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="1.12" />
+      <Swing damage_type="Cut" damage_factor="1.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
