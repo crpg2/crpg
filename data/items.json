@@ -594,9 +594,9 @@
     "name": "Large Bladed Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 23068,
-    "weight": 1.09,
-    "tier": 13.1466427,
+    "price": 13410,
+    "weight": 1.17,
+    "tier": 9.764186,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -609,8 +609,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.57,
-        "handling": 77,
+        "balance": 0.5,
+        "handling": 75,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -620,10 +620,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 100,
+        "thrustSpeed": 99,
         "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 85
       }
     ]
   },
@@ -2150,9 +2150,9 @@
     "name": "Avalanche",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 25467,
-    "weight": 1.17,
-    "tier": 13.86938,
+    "price": 13156,
+    "weight": 1.26,
+    "tier": 9.660987,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -2165,8 +2165,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 138,
-        "balance": 0.65,
-        "handling": 78,
+        "balance": 0.53,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -2176,10 +2176,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
+        "thrustSpeed": 98,
         "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 86
       }
     ]
   },
@@ -19081,9 +19081,9 @@
     "name": "Northlander Broad Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 16641,
-    "weight": 1.02,
-    "tier": 11.0007458,
+    "price": 13333,
+    "weight": 1.05,
+    "tier": 9.732885,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -19096,7 +19096,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 115,
-        "balance": 0.97,
+        "balance": 0.93,
         "handling": 86,
         "bodyArmor": 0,
         "flags": [
@@ -19107,10 +19107,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 102,
+        "thrustSpeed": 101,
         "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 99
+        "swingSpeed": 97
       }
     ]
   },
