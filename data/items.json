@@ -518,9 +518,9 @@
     "name": "Short Handled Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11251,
+    "price": 41740,
     "weight": 1.14,
-    "tier": 8.853102,
+    "tier": 18.0675545,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -556,9 +556,9 @@
     "name": "Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 9078,
+    "price": 33256,
     "weight": 1.22,
-    "tier": 7.84352875,
+    "tier": 16.0072021,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -594,9 +594,9 @@
     "name": "Chainbreaker",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 13616,
+    "price": 51033,
     "weight": 1.28,
-    "tier": 9.84719,
+    "tier": 20.096302,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -695,9 +695,9 @@
     "name": "Wood Splitter Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 238,
+    "price": 549,
     "weight": 1.15,
-    "tier": 0.9485976,
+    "tier": 1.93591368,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -731,9 +731,9 @@
     "name": "Bamboo Handled Ascia Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 60,
+    "price": 72,
     "weight": 1.02,
-    "tier": 0.07419638,
+    "tier": 0.151421234,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -2150,9 +2150,9 @@
     "name": "Avalanche",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 12601,
+    "price": 47039,
     "weight": 1.3,
-    "tier": 9.43199,
+    "tier": 19.2489567,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -2211,9 +2211,9 @@
     "name": "Bamboo Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 54,
+    "price": 59,
     "weight": 1.21,
-    "tier": 0.0317357741,
+    "tier": 0.0647668839,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -2984,9 +2984,9 @@
     "name": "Square Bit Two Handed Axe",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1329,
+    "price": 4037,
     "weight": 1.25,
-    "tier": 2.39323568,
+    "tier": 4.88415432,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3396,9 +3396,9 @@
     "name": "Norse Hatchet",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 190,
+    "price": 410,
     "weight": 1.09,
-    "tier": 0.754758954,
+    "tier": 1.54032457,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3432,9 +3432,9 @@
     "name": "One Handed Bearded Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 63,
+    "price": 79,
     "weight": 1.03,
-    "tier": 0.0947767347,
+    "tier": 0.193421945,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3468,9 +3468,9 @@
     "name": "Round Bitted Fine Steel Hatchet",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 62,
+    "price": 75,
     "weight": 1.05,
-    "tier": 0.08245718,
+    "tier": 0.168279946,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5413,9 +5413,9 @@
     "name": "Battle Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 66,
+    "price": 85,
     "weight": 1.01,
-    "tier": 0.11378181,
+    "tier": 0.2322078,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5449,9 +5449,9 @@
     "name": "Bearded Axe",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 8089,
+    "price": 29418,
     "weight": 1.07,
-    "tier": 7.34464931,
+    "tier": 14.9890795,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5604,9 +5604,9 @@
     "name": "Black Heart",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 6526,
+    "price": 23384,
     "weight": 1.05,
-    "tier": 6.48953867,
+    "tier": 13.2439556,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -13280,9 +13280,9 @@
     "name": "Hooked Axe",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 1652,
+    "price": 5169,
     "weight": 1.15,
-    "tier": 2.774096,
+    "tier": 5.66142,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -13468,9 +13468,9 @@
     "name": "Tzikourion",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 755,
+    "price": 2255,
     "weight": 0.86,
-    "tier": 2.44391441,
+    "tier": 4.987581,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -15957,9 +15957,9 @@
     "name": "Large Franziska Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6240,
+    "price": 23132,
     "weight": 0.79,
-    "tier": 9.023932,
+    "tier": 18.41619,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -19045,9 +19045,9 @@
     "name": "Northlander Broad Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 13230,
+    "price": 49511,
     "weight": 1.02,
-    "tier": 9.690967,
+    "tier": 19.777483,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -19083,9 +19083,9 @@
     "name": "Raider Battle Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 6900,
+    "price": 25723,
     "weight": 0.71,
-    "tier": 9.546295,
+    "tier": 19.4822445,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -20882,9 +20882,9 @@
     "name": "Hoe",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 300,
+    "price": 686,
     "weight": 1.27,
-    "tier": 0.7233017,
+    "tier": 1.47612607,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -21056,9 +21056,9 @@
     "name": "Hatchet",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 55,
+    "price": 61,
     "weight": 1.05,
-    "tier": 0.039200224,
+    "tier": 0.08000045,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -21093,9 +21093,9 @@
     "name": "Makeshift Sledgehammer",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 59,
+    "price": 69,
     "weight": 1.84,
-    "tier": 0.0355420373,
+    "tier": 0.0725347549,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21131,9 +21131,9 @@
     "name": "Sledgehammer",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 56,
+    "price": 62,
     "weight": 1.96,
-    "tier": 0.0229061,
+    "tier": 0.04674714,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21169,9 +21169,9 @@
     "name": "Pickaxe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 1232,
+    "price": 3953,
     "weight": 1.05,
-    "tier": 3.40881157,
+    "tier": 6.95675945,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -21363,9 +21363,9 @@
     "name": "Sickle",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 432,
+    "price": 1161,
     "weight": 1.18,
-    "tier": 1.6068995,
+    "tier": 3.279386,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23454,9 +23454,9 @@
     "name": "Simple Sparth Axe",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 693,
+    "price": 1894,
     "weight": 1.13,
-    "tier": 1.48777819,
+    "tier": 3.03628254,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -23579,9 +23579,9 @@
     "name": "Small Bit Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 221,
+    "price": 500,
     "weight": 1.12,
-    "tier": 0.883730233,
+    "tier": 1.80353093,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -23691,9 +23691,9 @@
     "name": "Small Spurred Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 173,
+    "price": 361,
     "weight": 1.05,
-    "tier": 0.679425955,
+    "tier": 1.38658321,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -23882,9 +23882,9 @@
     "name": "Bamboo Handled Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 61,
+    "price": 74,
     "weight": 0.96,
-    "tier": 0.0784656256,
+    "tier": 0.1601339,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25722,9 +25722,9 @@
     "name": "Drilled Two Handed Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 3931,
+    "price": 13520,
     "weight": 1.03,
-    "tier": 4.806142,
+    "tier": 9.808452,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25760,9 +25760,9 @@
     "name": "Northlander Decorated Two Handed Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 10754,
+    "price": 39795,
     "weight": 1.02,
-    "tier": 8.631357,
+    "tier": 17.615015,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25798,9 +25798,9 @@
     "name": "Galloglaich Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 59,
+    "price": 69,
     "weight": 1.03,
-    "tier": 0.06298424,
+    "tier": 0.128539249,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25834,9 +25834,9 @@
     "name": "Commoner Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 70,
+    "price": 93,
     "weight": 0.94,
-    "tier": 0.136044845,
+    "tier": 0.277642518,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25870,9 +25870,9 @@
     "name": "Veteran Warrior Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 63,
+    "price": 78,
     "weight": 1.19,
-    "tier": 0.09150765,
+    "tier": 0.186750323,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25906,9 +25906,9 @@
     "name": "Rectangular Bitted Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 60,
+    "price": 72,
     "weight": 1.05,
-    "tier": 0.07496008,
+    "tier": 0.152979761,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -28086,9 +28086,9 @@
     "name": "Broad Tzikourion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 2079,
+    "price": 7082,
     "weight": 0.79,
-    "tier": 4.746152,
+    "tier": 9.686027,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -28381,9 +28381,9 @@
     "name": "Short Bill",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 5189,
+    "price": 18272,
     "weight": 1.15,
-    "tier": 5.674094,
+    "tier": 11.5797863,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -28488,9 +28488,9 @@
     "name": "Infantry Axe",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 59,
+    "price": 69,
     "weight": 0.92,
-    "tier": 0.0634864345,
+    "tier": 0.129564181,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -31019,9 +31019,9 @@
     "name": "Woodland Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 61,
+    "price": 73,
     "weight": 1.27,
-    "tier": 0.07650008,
+    "tier": 0.156122625,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
