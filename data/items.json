@@ -5567,9 +5567,9 @@
     "name": "Billhook",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 16948,
-    "weight": 1.66,
-    "tier": 10.2619123,
+    "price": 14888,
+    "weight": 1.67,
+    "tier": 9.55039,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -5580,7 +5580,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 141,
-        "balance": 0.48,
+        "balance": 0.46,
         "handling": 71,
         "bodyArmor": 0,
         "flags": [
@@ -5595,7 +5595,7 @@
         "thrustSpeed": 94,
         "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 83
       }
     ]
   },
@@ -10593,9 +10593,9 @@
     "name": "Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 23883,
-    "weight": 1.62,
-    "tier": 12.3853235,
+    "price": 16233,
+    "weight": 1.69,
+    "tier": 10.0199795,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10606,8 +10606,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 164,
-        "balance": 0.51,
-        "handling": 73,
+        "balance": 0.44,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -10617,10 +10617,10 @@
         ],
         "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 94,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 83
       }
     ]
   },
@@ -15505,9 +15505,9 @@
     "name": "Long Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 16510,
-    "weight": 1.21,
-    "tier": 10.1141453,
+    "price": 14404,
+    "weight": 1.23,
+    "tier": 9.376351,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15518,7 +15518,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 200,
-        "balance": 0.27,
+        "balance": 0.25,
         "handling": 66,
         "bodyArmor": 0,
         "flags": [
@@ -15529,10 +15529,10 @@
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
+        "thrustSpeed": 97,
         "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 78
+        "swingSpeed": 77
       }
     ]
   },
@@ -21884,9 +21884,9 @@
     "name": "Bludgeon Staff",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 48060,
-    "weight": 1.98,
-    "tier": 18.0315819,
+    "price": 13745,
+    "weight": 2.13,
+    "tier": 9.134517,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21898,7 +21898,7 @@
         "stackAmount": 0,
         "length": 143,
         "balance": 0.0,
-        "handling": 75,
+        "handling": 71,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -21907,10 +21907,10 @@
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 85,
+        "thrustSpeed": 83,
         "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 48
+        "swingSpeed": 41
       },
       {
         "class": "TwoHandedPolearm",
@@ -21919,8 +21919,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 143,
-        "balance": 0.56,
-        "handling": 73,
+        "balance": 0.39,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -21931,10 +21931,10 @@
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 93,
+        "thrustSpeed": 91,
         "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 81
       }
     ]
   },
@@ -29314,9 +29314,9 @@
     "name": "Voulge",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 16586,
-    "weight": 1.27,
-    "tier": 10.1400728,
+    "price": 14047,
+    "weight": 1.29,
+    "tier": 9.245844,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -29329,8 +29329,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 142,
-        "balance": 0.46,
-        "handling": 68,
+        "balance": 0.44,
+        "handling": 67,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -29341,7 +29341,7 @@
         ],
         "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
+        "thrustSpeed": 97,
         "swingDamage": 48,
         "swingDamageType": "Cut",
         "swingSpeed": 83
