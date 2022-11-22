@@ -1623,6 +1623,10 @@
       <UsablePiece piece_id="crpg_practice_spear_t1_guard" />
       <UsablePiece piece_id="crpg_practice_spear_t1_handle" />
       <UsablePiece piece_id="crpg_practice_spear_t1_pommel" />
+      <UsablePiece piece_id="crpg_bo_staff_t1_blade" />
+      <UsablePiece piece_id="crpg_bo_staff_t1_guard" />
+      <UsablePiece piece_id="crpg_bo_staff_t1_handle" />
+      <UsablePiece piece_id="crpg_bo_staff_t1_pommel" />
       <UsablePiece piece_id="crpg_shishpar_mace_t4_pommel" />
       <UsablePiece piece_id="crpg_simple_pike_t2_blade" />
       <UsablePiece piece_id="crpg_simple_pike_t2_handle" />

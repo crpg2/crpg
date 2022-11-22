@@ -5638,42 +5638,39 @@
     ]
   },
   {
-    "id": "crpg_bo_staff",
-    "name": "Bo staff",
+    "id": "crpg_bo_staff_t1",
+    "name": "Bo Staff",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 50,
-    "weight": 1.0,
-    "tier": 0.0,
+    "price": 8386,
+    "weight": 2.39,
+    "tier": 6.90302,
     "requirement": 0,
-    "flags": [
-      "WoodenParry",
-      "DoNotScaleBodyAccordingToWeaponLength"
-    ],
+    "flags": [],
     "weapons": [
       {
         "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_swing_thrust",
-        "accuracy": 100,
+        "itemUsage": "polearm_block_shield_swing_thrust",
+        "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 100,
-        "balance": 1.0,
-        "handling": 100,
+        "length": 128,
+        "balance": 0.83,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
           "TwoHandIdleOnMount",
-          "PenaltyWithShield"
+          "NoBlood"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 18,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 100,
-        "swingDamage": 8,
+        "thrustSpeed": 91,
+        "swingDamage": 18,
         "swingDamageType": "Blunt",
-        "swingSpeed": 100
+        "swingSpeed": 94
       }
     ]
   },
@@ -10593,9 +10590,9 @@
     "name": "Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 16233,
-    "weight": 1.69,
-    "tier": 10.0199795,
+    "price": 15546,
+    "weight": 1.66,
+    "tier": 9.782627,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10606,8 +10603,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 164,
-        "balance": 0.44,
-        "handling": 72,
+        "balance": 0.47,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -10615,12 +10612,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 95,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 84
       }
     ]
   },
@@ -15436,9 +15433,9 @@
     "name": "Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 16857,
+    "price": 16094,
     "weight": 1.34,
-    "tier": 10.23147,
+    "tier": 9.972288,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15458,7 +15455,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 98,
         "swingDamage": 39,
@@ -15472,9 +15469,9 @@
     "name": "Long Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 14404,
-    "weight": 1.23,
-    "tier": 9.376351,
+    "price": 15749,
+    "weight": 1.2,
+    "tier": 9.8532,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15485,8 +15482,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 200,
-        "balance": 0.25,
-        "handling": 66,
+        "balance": 0.28,
+        "handling": 67,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -15494,12 +15491,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
-        "swingDamage": 48,
+        "thrustSpeed": 98,
+        "swingDamage": 47,
         "swingDamageType": "Cut",
-        "swingSpeed": 77
+        "swingSpeed": 78
       }
     ]
   },
@@ -29281,9 +29278,9 @@
     "name": "Voulge",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 14047,
+    "price": 14517,
     "weight": 1.29,
-    "tier": 9.245844,
+    "tier": 9.417258,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -29306,7 +29303,7 @@
           "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 48,
