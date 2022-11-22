@@ -3172,6 +3172,8 @@
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_vlandia_axe_2_t4_blade" />
+      <AvailablePiece id="crpg_vlandia_axe_2_t4_handle" />
       <AvailablePiece id="crpg_ambassador_sword_t3_pommel" />
       <AvailablePiece id="crpg_aserai_mace_1_t2_blade" />
       <AvailablePiece id="crpg_aserai_mace_1_t2_handle" />
