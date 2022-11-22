@@ -3647,7 +3647,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ridged_sabre_sword_t4_handle" name="{=YDG2spCf}Eastern Leather Noble Grip" tier="4" piece_type="Handle" mesh="khuzait_noble_grip_3" culture="Culture.khuzait" length="15" weight="0.200">
+  <CraftingPiece id="crpg_ridged_sabre_sword_t4_handle" name="{=YDG2spCf}Eastern Leather Noble Grip" tier="4" piece_type="Handle" mesh="khuzait_noble_grip_3" culture="Culture.khuzait" length="15" weight="0.90">
     <BuildData piece_offset="0" previous_piece_offset="0.35" next_piece_offset="0.5" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -3924,7 +3924,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_sword_3_t3_handle" name="{=hN0kTfhB}Iron Reinforced Crushed Leather Grip" tier="3" piece_type="Handle" mesh="aserai_grip_7" culture="Culture.aserai" length="15" weight="0.075">
+  <CraftingPiece id="crpg_aserai_sword_3_t3_handle" name="{=hN0kTfhB}Iron Reinforced Crushed Leather Grip" tier="3" piece_type="Handle" mesh="aserai_grip_7" culture="Culture.aserai" length="15" weight="1.25">
     <BuildData piece_offset="0" previous_piece_offset="0.3" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -5044,11 +5044,11 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ridged_sabre_sword_t4_blade" name="{=19a3jJ1s}Ridged Great Saber Blade" tier="4" piece_type="Blade" mesh="khuzait_blade_8" culture="Culture.khuzait" length="99" weight="0.9350001">
+  <CraftingPiece id="crpg_ridged_sabre_sword_t4_blade" name="{=19a3jJ1s}Ridged Great Saber Blade" tier="4" piece_type="Blade" mesh="khuzait_blade_8" culture="Culture.khuzait" length="99" weight="1.05">
     <BuildData previous_piece_offset="-0.25" />
     <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_blade_8_scabbard_8">
-      <Thrust damage_type="Pierce" damage_factor="0.9625" />
-      <Swing damage_type="Cut" damage_factor="1.365" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
@@ -5522,9 +5522,9 @@
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_sword_3_t3_blade" name="{=v22onVb2}Slightly Ridged Flyssa Blade" tier="3" piece_type="Blade" mesh="aserai_blade_2" culture="Culture.aserai" length="105.6" weight="1.43">
+  <CraftingPiece id="crpg_aserai_sword_3_t3_blade" name="{=v22onVb2}Slightly Ridged Flyssa Blade" tier="3" piece_type="Blade" mesh="aserai_blade_2" culture="Culture.aserai" length="105.6" weight="1.12">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="aserai_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="1.3" />
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
       <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Materials>
