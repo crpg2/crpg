@@ -1498,7 +1498,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_celtic_dagger" name="{=vPXWpJTP}Highland Dagger" crafting_template="crpg_Dagger" culture="Culture.battania" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_celtic_dagger_blade" Type="Blade" scale_factor="94" />
+      <Piece id="crpg_celtic_dagger_blade" Type="Blade" scale_factor="115" />
       <Piece id="crpg_celtic_dagger_guard" Type="Guard" />
       <Piece id="crpg_celtic_dagger_handle" Type="Handle" />
       <Piece id="crpg_celtic_dagger_pommel" Type="Pommel" />
@@ -1506,7 +1506,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_pugio" name="{=bVzkrtUc}Pugio" crafting_template="crpg_Dagger" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_pugio_blade" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_pugio_blade" Type="Blade" scale_factor="140" />
       <Piece id="crpg_pugio_guard" Type="Guard" scale_factor="90" />
       <Piece id="crpg_pugio_handle" Type="Handle" />
       <Piece id="crpg_pugio_pommel" Type="Pommel" scale_factor="109" />
@@ -1522,7 +1522,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_gladius_b" name="{=AOZbTGOS}Xiphos" crafting_template="crpg_Dagger" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_b_blade" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_gladius_b_blade" Type="Blade" scale_factor="120" />
       <Piece id="crpg_gladius_b_guard" Type="Guard" scale_factor="110" />
       <Piece id="crpg_gladius_b_handle" Type="Handle" />
       <Piece id="crpg_gladius_b_pommel" Type="Pommel" scale_factor="90" />

@@ -6884,9 +6884,9 @@
     "name": "Highland Dagger",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 65683,
-    "weight": 0.56,
-    "tier": 31.8168373,
+    "price": 6225,
+    "weight": 1.6,
+    "tier": 9.01164,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -6894,33 +6894,33 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_block_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 37,
+        "length": 43,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 112,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 101,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
         "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "swingSpeed": 107
       },
       {
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 33,
+        "missileSpeed": 30,
         "stackAmount": 1,
-        "length": 37,
+        "length": 43,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 112,
         "bodyArmor": 3,
         "flags": [
           "RangedWeapon",
@@ -6929,12 +6929,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 14,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 101,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "swingSpeed": 107
       }
     ]
   },
@@ -11922,9 +11922,9 @@
     "name": "Xiphos",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 29150,
-    "weight": 0.85,
-    "tier": 20.8132668,
+    "price": 7033,
+    "weight": 1.55,
+    "tier": 9.648599,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11932,23 +11932,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_block_thrust_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 45,
+        "length": 48,
         "balance": 1.0,
-        "handling": 111,
+        "handling": 109,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
+        "thrustSpeed": 91,
         "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 120
+        "swingSpeed": 108
       }
     ]
   },
@@ -13363,7 +13363,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_block_thrust_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -21942,9 +21942,9 @@
     "name": "Pugio",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 57273,
-    "weight": 0.55,
-    "tier": 29.6341648,
+    "price": 6398,
+    "weight": 2.15,
+    "tier": 9.1513,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21952,33 +21952,33 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_block_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 35,
-        "balance": 1.0,
-        "handling": 118,
+        "length": 50,
+        "balance": 0.93,
+        "handling": 108,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 101,
-        "swingDamage": 24,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 86,
+        "swingDamage": 28,
         "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "swingSpeed": 97
       },
       {
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 33,
+        "missileSpeed": 28,
         "stackAmount": 1,
-        "length": 35,
-        "balance": 1.0,
-        "handling": 118,
+        "length": 50,
+        "balance": 0.93,
+        "handling": 108,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -21987,12 +21987,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 14,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 101,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 86,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "swingSpeed": 97
       }
     ]
   },
@@ -23000,9 +23000,9 @@
     "name": "Seax",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 722,
-    "weight": 0.44,
-    "tier": 2.3688817,
+    "price": 6883,
+    "weight": 1.85,
+    "tier": 9.532998,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -23011,23 +23011,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 111,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 32,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
-        "swingDamage": 12,
-        "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "thrustSpeed": 88,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 107
       }
     ]
   },

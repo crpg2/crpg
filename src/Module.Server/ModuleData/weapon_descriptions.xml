@@ -1222,7 +1222,7 @@
       <AvailablePiece id="crpg_wooden_sword_t1_pommel" />
     </AvailablePieces>
   </WeaponDescription>
-  <WeaponDescription id="crpg_Dagger" weapon_class="Dagger" item_usage_features="onehanded:block:shield:swing:thrust">
+  <WeaponDescription id="crpg_Dagger" weapon_class="Dagger" item_usage_features="onehanded:block:thrust:swing">
     <WeaponFlags>
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
