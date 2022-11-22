@@ -4390,34 +4390,34 @@
   },
   {
     "id": "crpg_battania_mace_1_t3",
-    "name": "Highland Mace",
+    "name": "Light Morningstar",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 62,
-    "weight": 2.13,
-    "tier": 0.08864907,
+    "price": 4819,
+    "weight": 2.05,
+    "tier": 7.795581,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 65,
-        "balance": 0.41,
-        "handling": 89,
+        "length": 72,
+        "balance": 0.46,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 6,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 8,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 82
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 26,
+        "swingDamageType": "Pierce",
+        "swingSpeed": 83
       }
     ]
   },
@@ -17514,29 +17514,29 @@
     "name": "Morningstar",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5182,
+    "price": 6783,
     "weight": 2.14,
-    "tier": 8.124802,
+    "tier": 9.455995,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 80,
-        "balance": 0.38,
-        "handling": 79,
+        "length": 79,
+        "balance": 0.39,
+        "handling": 81,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 18,
-        "thrustDamageType": "Pierce",
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
         "thrustSpeed": 85,
-        "swingDamage": 30,
+        "swingDamage": 31,
         "swingDamageType": "Pierce",
         "swingSpeed": 81
       }

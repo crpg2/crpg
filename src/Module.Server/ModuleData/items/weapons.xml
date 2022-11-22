@@ -1577,11 +1577,11 @@
       <Piece id="crpg_aserai_mace_3_t3_handle" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_battania_mace_1_t3" name="{=9pD32UdV}Highland Mace" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
+  <CraftedItem id="crpg_battania_mace_1_t3" name="{=9pD32UdV}Light Morningstar" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_battania_mace_1_t3_blade" Type="Blade" />
-      <Piece id="crpg_battania_mace_1_t3_handle" Type="Handle" />
-      <Piece id="crpg_battania_mace_1_t3_pommel" Type="Pommel" />
+      <Piece id="crpg_battania_mace_1_t3_blade" Type="Blade" scale_factor="120" />
+      <Piece id="crpg_battania_mace_1_t3_handle" Type="Handle" scale_factor="107"/>
+      <Piece id="crpg_battania_mace_1_t3_pommel" Type="Pommel" scale_factor="103" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_light_mace_t3" name="{=PBLsXDgP}Light Mace" crafting_template="crpg_Mace" modifier_group="mace">
@@ -1599,8 +1599,8 @@
   </CraftedItem>
   <CraftedItem id="crpg_morningstar_mace_t3" name="{=6EWm09LY}Morningstar" crafting_template="crpg_Mace" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_morningstar_mace_t3_blade" Type="Blade" scale_factor="125" />
-      <Piece id="crpg_morningstar_mace_t3_handle" Type="Handle" scale_factor="120" />
+      <Piece id="crpg_morningstar_mace_t3_blade" Type="Blade" scale_factor="135" />
+      <Piece id="crpg_morningstar_mace_t3_handle" Type="Handle" scale_factor="115" />
       <Piece id="crpg_morningstar_mace_t3_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
