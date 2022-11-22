@@ -3394,6 +3394,9 @@
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_eastern_long_steel_mace_t4_blade" />
+      <AvailablePiece id="crpg_eastern_long_steel_mace_t4_handle" />
+      <AvailablePiece id="crpg_eastern_long_steel_mace_t4_pommel" />
       <AvailablePiece id="crpg_ambassador_sword_t3_pommel" />
       <AvailablePiece id="crpg_aserai_2haxe_3_t5_handle" />
       <AvailablePiece id="crpg_aserai_noble_sword_1_t5_pommel" />

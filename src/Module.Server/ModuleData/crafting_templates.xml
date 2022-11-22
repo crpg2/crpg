@@ -2284,6 +2284,9 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_eastern_long_steel_mace_t4_blade" />
+      <UsablePiece piece_id="crpg_eastern_long_steel_mace_t4_handle" />
+      <UsablePiece piece_id="crpg_eastern_long_steel_mace_t4_pommel" />
       <UsablePiece piece_id="crpg_ambassador_sword_t3_pommel" />
       <UsablePiece piece_id="crpg_aserai_2haxe_3_t5_handle" />
       <UsablePiece piece_id="crpg_aserai_noble_sword_1_t5_pommel" />
