@@ -228,7 +228,7 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_sa_1ChurburghBoots" name="Plate Boots" mesh="sa_1churburghboots" culture="Culture.vlandia" weight="2.5" difficulty="0" appearance="1" value="36000" Type="LegArmor">
+  <Item id="crpg_sa_1ChurburghBoots" name="Plate Boots" mesh="sa_1churburghboots" culture="Culture.vlandia" weight="2.5" difficulty="0" appearance="1" Type="LegArmor">
 		<ItemComponent>
 			<Armor leg_armor="30" covers_legs="true" modifier_group="plate" material_type="Plate"/>
 		</ItemComponent>

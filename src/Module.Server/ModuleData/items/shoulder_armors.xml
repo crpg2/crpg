@@ -484,7 +484,7 @@
 		</ItemComponent>
 		<Flags/>
 	</Item>
-	<Item id="crpg_western_chain_shoulders" name="Western chain shoulders" mesh="chain_shoulders" is_merchandise="true" value="8000" culture="Culture.vlandia" weight="3.6" appearance="2" Type="Cape">
+	<Item id="crpg_western_chain_shoulders" name="Western chain shoulders" mesh="chain_shoulders" is_merchandise="true" culture="Culture.vlandia" weight="3.6" appearance="2" Type="Cape">
 		<ItemComponent>
 			<Armor body_armor="12" modifier_group="Chainmail" material_type="Chainmail"/>
 		</ItemComponent>
