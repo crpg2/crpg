@@ -16212,9 +16212,9 @@
     "name": "Large Franziska Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 23132,
-    "weight": 0.79,
-    "tier": 18.41619,
+    "price": 6497,
+    "weight": 1.05,
+    "tier": 9.230255,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -16226,9 +16226,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 96,
-        "balance": 0.67,
-        "handling": 84,
+        "length": 86,
+        "balance": 0.61,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -16236,10 +16236,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 37,
+        "thrustSpeed": 94,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 88
       }
     ]
   },
@@ -19447,9 +19447,9 @@
     "name": "Raider Battle Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 25723,
-    "weight": 0.71,
-    "tier": 19.4822445,
+    "price": 7860,
+    "weight": 0.89,
+    "tier": 10.2640858,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -19462,8 +19462,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 90,
-        "balance": 0.94,
-        "handling": 91,
+        "balance": 0.72,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -19471,10 +19471,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 31,
+        "thrustSpeed": 97,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 91
       }
     ]
   },

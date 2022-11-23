@@ -315,7 +315,7 @@
   <CraftedItem id="crpg_large_franziskaa_axe_t3" name="{=KRhIG1cw}Large Franziska Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_large_franziskaa_axe_t3_blade" Type="Blade" scale_factor="130" />
-      <Piece id="crpg_large_franziskaa_axe_t3_handle" Type="Handle" scale_factor="130" />
+      <Piece id="crpg_large_franziskaa_axe_t3_handle" Type="Handle" scale_factor="115" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_vlandia_axe_2_t4" name="{=SDBvC0ON}Spiked Battle Axe" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
