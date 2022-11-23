@@ -154,7 +154,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_mace_1_t2_handle" name="{=V3JMuFEg}Tied Mace Handle" tier="2" piece_type="Handle" mesh="mace_handle_3" length="60" weight="0.46" CraftingCost="75">
+  <CraftingPiece id="crpg_empire_mace_1_t2_handle" name="{=V3JMuFEg}Tied Mace Handle" tier="2" piece_type="Handle" mesh="mace_handle_3" length="60" weight="0.65" CraftingCost="75">
     <BuildData piece_offset="13" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -297,7 +297,7 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_mace_2_t2_blade" name="{=0SpLcthg}Highland Spiked Club" tier="2" piece_type="Blade" mesh="mace_head_5" length="25.5" weight="0.7" full_scale="true">
+  <CraftingPiece id="crpg_battania_mace_2_t2_blade" name="{=0SpLcthg}Highland Spiked Club" tier="2" piece_type="Blade" mesh="mace_head_5" length="25.5" weight="0.55" full_scale="true">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
       <Thrust damage_type="Pierce" damage_factor="1.2" />
       <Swing damage_type="Pierce" damage_factor="2.7" />
@@ -420,7 +420,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_mace_1_t2_blade" name="{=L3vLdPJT}Improved Spiked Club Head" tier="2" piece_type="Blade" mesh="mace_head_23" distance_to_next_piece="15.4" distance_to_previous_piece="8.2" weight="0.70" full_scale="true">
+  <CraftingPiece id="crpg_empire_mace_1_t2_blade" name="{=L3vLdPJT}Improved Spiked Club Head" tier="2" piece_type="Blade" mesh="mace_head_23" distance_to_next_piece="15.4" distance_to_previous_piece="8.2" weight="0.75" full_scale="true">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
       <Thrust damage_type="Pierce" damage_factor="1.5" />
       <Swing damage_type="Pierce" damage_factor="2.3" />
