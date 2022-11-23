@@ -1842,14 +1842,14 @@
       </Weapon>
     </ItemComponent>
   </Item>
-  <Item id="crpg_crossbow_b" name="{=r07M9xbT}Heavy Crossbow" body_name="bo_cross_bow_heavy" mesh="crossbow_b" culture="Culture.empire" weight="3.5" appearance="0.7" difficulty="20" Type="Crossbow" AmmoOffset="0.0, 0.02131, 0.24975" item_holsters="crossbow_back:bow_hip:mace_right_hip:bow_hip_2" holster_position_shift="0.02,0,-0.4">
+  <Item id="crpg_crossbow_b" name="{=r07M9xbT}Heavy Maple Crossbow" body_name="bo_cross_bow_heavy" mesh="crossbow_b" culture="Culture.empire" weight="3.5" appearance="0.7" difficulty="20" Type="Crossbow" AmmoOffset="0.0, 0.02131, 0.24975" item_holsters="crossbow_back:bow_hip:mace_right_hip:bow_hip_2" holster_position_shift="0.02,0,-0.4">
     <ItemComponent>
       <Weapon weapon_class="Crossbow" ammo_class="Bolt" missile_speed="115" accuracy="97" thrust_damage="45" thrust_speed="88" speed_rating="64" weapon_length="95" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crossbow" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="true" CantReloadOnHorseback="true" CanPenetrateShield="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" />
       </Weapon>
     </ItemComponent>
   </Item>
-  <Item id="crpg_crossbow_c" name="{=0e17RZrZ}Arbalest" body_name="bo_cross_bow_heavy" mesh="crossbow_c" culture="Culture.vlandia" weight="4.0" appearance="0.4" difficulty="20" Type="Crossbow" AmmoOffset="0.0, 0.02131, 0.24675" item_holsters="crossbow_back:bow_hip:mace_right_hip:bow_hip_2" holster_position_shift="0.02,0,-0.4">
+  <Item id="crpg_crossbow_c" name="{=0e17RZrZ}Huntsman's Heavy Arbalest" body_name="bo_cross_bow_heavy" mesh="crossbow_c" culture="Culture.vlandia" weight="4.0" appearance="0.4" difficulty="20" Type="Crossbow" AmmoOffset="0.0, 0.02131, 0.24675" item_holsters="crossbow_back:bow_hip:mace_right_hip:bow_hip_2" holster_position_shift="0.02,0,-0.4">
     <ItemComponent>
       <Weapon weapon_class="Crossbow" ammo_class="Bolt" missile_speed="120" accuracy="98" thrust_damage="50" thrust_speed="87" speed_rating="62" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crossbow" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="true" CantReloadOnHorseback="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" />
@@ -1864,7 +1864,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_crossbow_d" name="{=CPI0wkaZ}Hickory Crossbow" body_name="bo_composite_crossbows" mesh="crossbow_d" culture="Culture.empire" weight="5.0" appearance="0.6" Type="Crossbow" difficulty="40" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="crossbow_back:bow_hip:mace_right_hip:bow_hip_2" holster_position_shift="0.02,0,-0.4">
+  <Item id="crpg_crossbow_d" name="{=CPI0wkaZ}Knight's Heavy Arbalest" body_name="bo_composite_crossbows" mesh="crossbow_d" culture="Culture.empire" weight="5.0" appearance="0.6" Type="Crossbow" difficulty="40" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="crossbow_back:bow_hip:mace_right_hip:bow_hip_2" holster_position_shift="0.02,0,-0.4">
     <ItemComponent>
       <Weapon weapon_class="Crossbow" ammo_class="Bolt" ammo_limit="1" thrust_speed="84" speed_rating="58" missile_speed="125" weapon_length="100" accuracy="99" thrust_damage="57" thrust_damage_type="Pierce" item_usage="crossbow" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="true" CantReloadOnHorseback="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" />
@@ -1880,7 +1880,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_crossbow_f" name="{=TBW9E2ao}Bound Crossbow" body_name="bo_cross_bow_heavy" mesh="crossbow_f" culture="Culture.vlandia" weight="5.2" appearance="0.8" difficulty="70" Type="Crossbow" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="crossbow_back:bow_hip:mace_right_hip:bow_hip_2" holster_position_shift="0.02,0,-0.4">
+  <Item id="crpg_crossbow_f" name="{=TBW9E2ao}Lord's Heavy Arbalest" body_name="bo_cross_bow_heavy" mesh="crossbow_f" culture="Culture.vlandia" weight="5.2" appearance="0.8" difficulty="70" Type="Crossbow" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="crossbow_back:bow_hip:mace_right_hip:bow_hip_2" holster_position_shift="0.02,0,-0.4">
     <ItemComponent>
       <Weapon weapon_class="Crossbow" ammo_class="Bolt" ammo_limit="1" thrust_speed="84" speed_rating="50" missile_speed="132" weapon_length="100" accuracy="100" thrust_damage="64" thrust_damage_type="Pierce" item_usage="crossbow" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="true" CantReloadOnHorseback="true" CanPenetrateShield="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" />
@@ -1888,9 +1888,9 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_crossbow_h" name="{=I1yTY2rx}Squires Light Crossbow" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="crossbow_g" weight="2.8" appearance="0.7" difficulty="40" Type="Crossbow" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="crossbow_back:bow_hip:mace_right_hip:bow_hip_2" holster_position_shift="0.02,0,-0.4">
+  <Item id="crpg_crossbow_h" name="{=I1yTY2rx}Squire's Light Crossbow" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="crossbow_g" weight="2.8" appearance="0.7" difficulty="40" Type="Crossbow" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="crossbow_back:bow_hip:mace_right_hip:bow_hip_2" holster_position_shift="0.02,0,-0.4">
     <ItemComponent>
-      <Weapon weapon_class="Crossbow" ammo_class="Bolt" missile_speed="105" accuracy="98" thrust_damage="39" thrust_speed="86" speed_rating="58" weapon_length="95" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crossbow_light" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
+      <Weapon weapon_class="Crossbow" ammo_class="Bolt" missile_speed="105" accuracy="98" thrust_damage="39" thrust_speed="86" speed_rating="52" weapon_length="95" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crossbow_light" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="true" CantReloadOnHorseback="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" />
       </Weapon>
     </ItemComponent>

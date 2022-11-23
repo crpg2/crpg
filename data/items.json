@@ -7559,7 +7559,7 @@
   },
   {
     "id": "crpg_crossbow_b",
-    "name": "Heavy Crossbow",
+    "name": "Heavy Maple Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
     "price": 6259,
@@ -7598,7 +7598,7 @@
   },
   {
     "id": "crpg_crossbow_c",
-    "name": "Arbalest",
+    "name": "Huntsman's Heavy Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
     "price": 9218,
@@ -7636,7 +7636,7 @@
   },
   {
     "id": "crpg_crossbow_d",
-    "name": "Hickory Crossbow",
+    "name": "Knight's Heavy Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
     "price": 13786,
@@ -7711,7 +7711,7 @@
   },
   {
     "id": "crpg_crossbow_f",
-    "name": "Bound Crossbow",
+    "name": "Lord's Heavy Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
     "price": 17970,
@@ -7787,13 +7787,13 @@
   },
   {
     "id": "crpg_crossbow_h",
-    "name": "Squires Light Crossbow",
+    "name": "Squire's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 9063,
+    "price": 7509,
     "weight": 2.8,
-    "tier": 6.789025,
-    "requirement": 12,
+    "tier": 6.086712,
+    "requirement": 10,
     "flags": [],
     "weapons": [
       {
@@ -7819,7 +7819,7 @@
         "thrustSpeed": 86,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 58
+        "swingSpeed": 52
       }
     ]
   },
