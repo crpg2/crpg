@@ -6930,9 +6930,9 @@
     "name": "Highland Dagger",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 65683,
-    "weight": 0.56,
-    "tier": 31.8168373,
+    "price": 6768,
+    "weight": 1.65,
+    "tier": 9.443936,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -6946,27 +6946,27 @@
         "stackAmount": 0,
         "length": 37,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 113,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 101,
+        "thrustSpeed": 90,
         "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "swingSpeed": 108
       },
       {
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 33,
+        "missileSpeed": 30,
         "stackAmount": 1,
         "length": 37,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 113,
         "bodyArmor": 3,
         "flags": [
           "RangedWeapon",
@@ -6975,12 +6975,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 101,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "swingSpeed": 108
       }
     ]
   },
@@ -12020,9 +12020,9 @@
     "name": "Xiphos",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 29150,
-    "weight": 0.85,
-    "tier": 20.8132668,
+    "price": 4095,
+    "weight": 1.91,
+    "tier": 7.09946728,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12036,17 +12036,17 @@
         "stackAmount": 0,
         "length": 45,
         "balance": 1.0,
-        "handling": 111,
+        "handling": 108,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
+        "thrustSpeed": 88,
         "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 120
+        "swingSpeed": 103
       }
     ]
   },
@@ -23477,9 +23477,9 @@
     "name": "Seax",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 722,
-    "weight": 0.44,
-    "tier": 2.3688817,
+    "price": 5940,
+    "weight": 2.87,
+    "tier": 8.777038,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -23493,18 +23493,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
-        "balance": 1.0,
-        "handling": 118,
+        "balance": 0.72,
+        "handling": 102,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 8,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
-        "swingDamage": 12,
+        "thrustSpeed": 81,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "swingSpeed": 91
       }
     ]
   },

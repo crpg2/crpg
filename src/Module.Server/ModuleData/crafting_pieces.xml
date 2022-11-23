@@ -2659,7 +2659,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_guard" name="{=mQCQF6TL}Narrow Northern Dagger Guard" tier="2" piece_type="Guard" mesh="sturgian_dagger_guard_8" culture="Culture.battania" length="1" weight="0.097">
+  <CraftingPiece id="crpg_seax_guard" name="{=mQCQF6TL}Narrow Northern Dagger Guard" tier="2" piece_type="Guard" mesh="sturgian_dagger_guard_8" culture="Culture.battania" length="1" weight="0.2">
     <BuildData next_piece_offset="0.6" />
     <StatContributions armor_bonus="1" />
     <Materials>
@@ -2706,7 +2706,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_celtic_dagger_blade" name="{=5o5DaSHZ}Broad Dagger Blade" tier="2" piece_type="Blade" mesh="dagger_blade_13" length="29" weight="0.2375">
+  <CraftingPiece id="crpg_celtic_dagger_blade" name="{=5o5DaSHZ}Broad Dagger Blade" tier="2" piece_type="Blade" mesh="dagger_blade_13" length="29" weight="1.4">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="1.68" />
       <Swing damage_type="Cut" damage_factor="2.45" />
@@ -2754,9 +2754,9 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_gladius_b_blade" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="0.2375">
+  <CraftingPiece id="crpg_gladius_b_blade" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="1.2">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="1.68" />
+      <Thrust damage_type="Pierce" damage_factor="1.61" />
       <Swing damage_type="Cut" damage_factor="2.45" />
     </BladeData>
     <Flags>
@@ -2802,10 +2802,10 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_blade" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="0.15">
+  <CraftingPiece id="crpg_seax_blade" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.9">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
       <Thrust damage_type="Pierce" damage_factor="0.84" />
-      <Swing damage_type="Cut" damage_factor="1.225" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -3480,7 +3480,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_handle" name="{=p2aqirUu}Fine Leather Flyssa Grip" tier="4" piece_type="Handle" mesh="aserai_grip_3" culture="Culture.aserai" length="15.9" weight="0.135">
+  <CraftingPiece id="crpg_seax_handle" name="{=p2aqirUu}Fine Leather Flyssa Grip" tier="4" piece_type="Handle" mesh="aserai_grip_3" culture="Culture.aserai" length="15.9" weight="0.8">
     <BuildData piece_offset="-0.41" previous_piece_offset="0.5" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron4" count="1" />
