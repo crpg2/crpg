@@ -5861,7 +5861,7 @@
     "culture": "Neutral",
     "type": "Bolts",
     "price": 5107,
-    "weight": 0.04,
+    "weight": 0.1,
     "tier": 7.659239,
     "requirement": 0,
     "flags": [
@@ -5897,7 +5897,7 @@
     "culture": "Vlandia",
     "type": "Bolts",
     "price": 6641,
-    "weight": 0.05,
+    "weight": 0.15,
     "tier": 8.888707,
     "requirement": 0,
     "flags": [
@@ -5933,7 +5933,7 @@
     "culture": "Vlandia",
     "type": "Bolts",
     "price": 8200,
-    "weight": 0.06,
+    "weight": 0.2,
     "tier": 10.0,
     "requirement": 0,
     "flags": [
@@ -5969,7 +5969,7 @@
     "culture": "Empire",
     "type": "Bolts",
     "price": 3738,
-    "weight": 0.03,
+    "weight": 0.08,
     "tier": 6.39489746,
     "requirement": 0,
     "flags": [
@@ -6005,7 +6005,7 @@
     "culture": "Empire",
     "type": "Bolts",
     "price": 2600,
-    "weight": 0.02,
+    "weight": 0.05,
     "tier": 5.15461874,
     "requirement": 0,
     "flags": [
