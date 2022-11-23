@@ -1584,6 +1584,7 @@
       <Piece id="crpg_battania_mace_1_t3_pommel" Type="Pommel" scale_factor="103" />
     </Pieces>
   </CraftedItem>
+
   <CraftedItem id="crpg_light_mace_t3" name="{=PBLsXDgP}Light Mace" crafting_template="crpg_Mace" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_light_mace_t3_blade" Type="Blade" />
@@ -1604,6 +1605,15 @@
       <Piece id="crpg_morningstar_mace_t3_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+
+<CraftedItem id="crpg_2hmorningstar_mace_t3" name="{=6EWm09LY}Heavy Morningstar" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
+    <Pieces>
+      <Piece id="crpg_2hmorningstar_mace_t3_blade" Type="Blade" scale_factor="165" />
+      <Piece id="crpg_2hmorningstar_mace_t3_handle" Type="Handle" scale_factor="145" />
+      <Piece id="crpg_2hmorningstar_mace_t3_pommel" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+
   <CraftedItem id="crpg_vlandia_mace_2_t4" name="{=dSTxsYsh}Fullered Cavalry Mace" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_vlandia_mace_2_t4_blade" Type="Blade" />

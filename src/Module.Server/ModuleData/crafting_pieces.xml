@@ -37,6 +37,13 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
+ <CraftingPiece id="crpg_2hmorningstar_mace_t3_handle" name="{=FxCfO3zN}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="mace_handle_1" length="62.5" weight="0.32" CraftingCost="75">
+    <BuildData piece_offset="18" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_bone_crusher_mace_t3_handle" name="{=FxCfO3zN}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="mace_handle_1" length="62.5" weight="0.580" CraftingCost="75">
     <BuildData piece_offset="18" />
     <Materials>
@@ -233,6 +240,14 @@
   <CraftingPiece id="crpg_battania_mace_1_t3_blade" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.63" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
       <Swing damage_type="Pierce" damage_factor="2.6" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+<CraftingPiece id="crpg_2hmorningstar_mace_t3_blade" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.33" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Pierce" damage_factor="3.2" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -3291,6 +3306,11 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_morningstar_mace_t3_pommel" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="empire_pommel_4" culture="Culture.empire" length="6.795" weight="0.69">
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+<CraftingPiece id="crpg_2hmorningstar_mace_t3_pommel" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="empire_pommel_4" culture="Culture.empire" length="6.795" weight="0.35">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
