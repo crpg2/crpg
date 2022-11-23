@@ -2240,7 +2240,7 @@
 	</CraftedItem>
 	<CraftedItem id="crpg_winter" name="{=}Winter" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
 		<Pieces>
-			<Piece id="crpg_winter_blade" Type="Blade" scale_factor="140"/>
+			<Piece id="crpg_winter_blade" Type="Blade" scale_factor="160"/>
 			<Piece id="crpg_winter_guard" Type="Guard" scale_factor="140"/>
 			<Piece id="crpg_winter_handle" Type="Handle" scale_factor="140"/>
 			<Piece id="crpg_winter_pommel" Type="Pommel" scale_factor="140"/>
