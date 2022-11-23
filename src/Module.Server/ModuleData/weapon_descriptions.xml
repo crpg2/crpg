@@ -1156,7 +1156,7 @@
       <AvailablePiece id="crpg_battania_2hsword_3_t3_pommel" />
     </AvailablePieces>
   </WeaponDescription>
-  <WeaponDescription id="crpg_Dagger" weapon_class="Dagger" item_usage_features="onehanded:block:thrust:swing">
+  <WeaponDescription id="crpg_Dagger" weapon_class="Dagger" item_usage_features="onehanded:block:shield:swing:thrust">
     <WeaponFlags>
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
