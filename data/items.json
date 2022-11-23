@@ -334,32 +334,33 @@
     "id": "crpg_ambassador_sword_t3",
     "name": "The Ambassador",
     "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 77,
-    "weight": 1.69,
-    "tier": 0.18010284,
+    "type": "TwoHandedWeapon",
+    "price": 13914,
+    "weight": 2.9,
+    "tier": 9.96596,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
-        "class": "OneHandedSword",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 114,
-        "balance": 0.38,
-        "handling": 83,
+        "length": 113,
+        "balance": 0.63,
+        "handling": 84,
         "bodyArmor": 3,
         "flags": [
-          "MeleeWeapon"
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 13,
+        "thrustSpeed": 87,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 88
       }
     ]
   },

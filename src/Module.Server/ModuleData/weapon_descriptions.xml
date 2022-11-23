@@ -381,9 +381,6 @@
       <AvailablePiece id="crpg_northern_2hsword_t4_guard" />
       <AvailablePiece id="crpg_northern_2hsword_t4_handle" />
       <AvailablePiece id="crpg_northern_2hsword_t4_pommel" />
-      <AvailablePiece id="crpg_ambassador_sword_t3_guard" />
-      <AvailablePiece id="crpg_ambassador_sword_t3_handle" />
-      <AvailablePiece id="crpg_ambassador_sword_t3_pommel" />
       <AvailablePiece id="crpg_aserai_sword_1_t2_blade" />
       <AvailablePiece id="crpg_aserai_sword_1_t2_guard" />
       <AvailablePiece id="crpg_aserai_sword_1_t2_pommel" />
@@ -623,9 +620,6 @@
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
     <AvailablePieces>
-      <AvailablePiece id="crpg_ambassador_sword_t3_guard" />
-      <AvailablePiece id="crpg_ambassador_sword_t3_handle" />
-      <AvailablePiece id="crpg_ambassador_sword_t3_pommel" />
       <AvailablePiece id="crpg_aserai_sword_1_t2_blade" />
       <AvailablePiece id="crpg_aserai_sword_1_t2_guard" />
       <AvailablePiece id="crpg_aserai_sword_1_t2_pommel" />
@@ -878,6 +872,7 @@
       <AvailablePiece id="crpg_northern_2hsword_t4_pommel" />
       <AvailablePiece id="crpg_desert_long_sword_t4_pommel" />
       <AvailablePiece id="crpg_desert_long_sword_t4_handle" />
+      <AvailablePiece id="crpg_ambassador_sword_t3_blade" />
       <AvailablePiece id="crpg_ambassador_sword_t3_guard" />
       <AvailablePiece id="crpg_ambassador_sword_t3_handle" />
       <AvailablePiece id="crpg_ambassador_sword_t3_pommel" />
