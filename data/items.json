@@ -554,9 +554,9 @@
     "name": "Short Handled Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 41740,
-    "weight": 1.14,
-    "tier": 18.0675545,
+    "price": 14019,
+    "weight": 1.45,
+    "tier": 10.0077391,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -569,8 +569,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 115,
-        "balance": 0.85,
-        "handling": 83,
+        "balance": 0.69,
+        "handling": 81,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -580,10 +580,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 100,
-        "swingDamage": 38,
+        "thrustSpeed": 97,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 95
+        "swingSpeed": 90
       }
     ]
   },
@@ -592,9 +592,9 @@
     "name": "Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 33256,
-    "weight": 1.22,
-    "tier": 16.0072021,
+    "price": 9120,
+    "weight": 1.46,
+    "tier": 7.86426067,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -606,9 +606,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 140,
-        "balance": 0.52,
-        "handling": 75,
+        "length": 143,
+        "balance": 0.38,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -618,10 +618,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 43,
+        "thrustSpeed": 96,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 81
       }
     ]
   },
@@ -630,9 +630,9 @@
     "name": "Chainbreaker",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 51033,
-    "weight": 1.28,
-    "tier": 20.096302,
+    "price": 14045,
+    "weight": 1.44,
+    "tier": 10.0180674,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -645,8 +645,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.49,
-        "handling": 76,
+        "balance": 0.43,
+        "handling": 74,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -656,10 +656,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 48,
+        "thrustSpeed": 96,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 82
       }
     ]
   },
@@ -2186,9 +2186,9 @@
     "name": "Avalanche",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 47039,
-    "weight": 1.3,
-    "tier": 19.2489567,
+    "price": 13660,
+    "weight": 1.41,
+    "tier": 9.86479,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -2201,8 +2201,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 138,
-        "balance": 0.61,
-        "handling": 78,
+        "balance": 0.5,
+        "handling": 75,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -2212,10 +2212,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 41,
+        "thrustSpeed": 96,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 85
       }
     ]
   },
@@ -3090,9 +3090,9 @@
     "name": "Square Bit Two Handed Axe",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 4037,
-    "weight": 1.25,
-    "tier": 4.88415432,
+    "price": 3222,
+    "weight": 1.34,
+    "tier": 4.25631046,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3105,8 +3105,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 100,
-        "balance": 0.78,
-        "handling": 83,
+        "balance": 0.76,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -3116,10 +3116,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
+        "thrustSpeed": 98,
         "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 92
       }
     ]
   },
@@ -5495,9 +5495,9 @@
     "name": "Bearded Axe",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 29418,
-    "weight": 1.07,
-    "tier": 14.9890795,
+    "price": 10151,
+    "weight": 1.39,
+    "tier": 8.355286,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5510,8 +5510,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.88,
-        "handling": 84,
+        "balance": 0.76,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -5521,10 +5521,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 100,
-        "swingDamage": 36,
+        "thrustSpeed": 98,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 92
       }
     ]
   },
@@ -5650,9 +5650,9 @@
     "name": "Black Heart",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 23384,
-    "weight": 1.05,
-    "tier": 13.2439556,
+    "price": 7438,
+    "weight": 1.26,
+    "tier": 6.999082,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5665,8 +5665,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.71,
-        "handling": 79,
+        "balance": 0.62,
+        "handling": 78,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -5676,10 +5676,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 100,
-        "swingDamage": 39,
+        "thrustSpeed": 98,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 88
       }
     ]
   },
@@ -12216,9 +12216,9 @@
     "name": "Greataxe",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 75769,
-    "weight": 1.28,
-    "tier": 24.7333126,
+    "price": 11087,
+    "weight": 1.41,
+    "tier": 8.780379,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -12230,9 +12230,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 92,
-        "balance": 0.85,
-        "handling": 83,
+        "length": 100,
+        "balance": 0.68,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -12242,10 +12242,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
-        "swingDamage": 47,
+        "thrustSpeed": 97,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 95
+        "swingSpeed": 90
       }
     ]
   },
@@ -13514,9 +13514,9 @@
     "name": "Hooked Axe",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 5169,
+    "price": 4154,
     "weight": 1.15,
-    "tier": 5.66142,
+    "tier": 4.96906,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -13541,7 +13541,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 99,
-        "swingDamage": 35,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
         "swingSpeed": 89
       }
@@ -17153,9 +17153,9 @@
     "name": "Long Greataxe",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 36896,
-    "weight": 1.34,
-    "tier": 16.9199333,
+    "price": 13920,
+    "weight": 1.38,
+    "tier": 9.968618,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -17168,8 +17168,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 111,
-        "balance": 0.68,
-        "handling": 79,
+        "balance": 0.62,
+        "handling": 78,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -17179,10 +17179,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 44,
+        "thrustSpeed": 97,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 88
       }
     ]
   },
@@ -19409,9 +19409,9 @@
     "name": "Northlander Broad Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 49511,
-    "weight": 1.02,
-    "tier": 19.777483,
+    "price": 12938,
+    "weight": 1.26,
+    "tier": 9.57148552,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -19424,8 +19424,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 115,
-        "balance": 0.97,
-        "handling": 86,
+        "balance": 0.76,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -19435,10 +19435,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 102,
+        "thrustSpeed": 99,
         "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 99
+        "swingSpeed": 92
       }
     ]
   },
@@ -26257,9 +26257,9 @@
     "name": "Drilled Two Handed Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 13520,
-    "weight": 1.03,
-    "tier": 9.808452,
+    "price": 5258,
+    "weight": 1.27,
+    "tier": 5.71865654,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -26272,8 +26272,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 111,
-        "balance": 0.83,
-        "handling": 82,
+        "balance": 0.69,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -26283,10 +26283,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 100,
-        "swingDamage": 35,
+        "thrustSpeed": 98,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 90
       }
     ]
   },
@@ -26295,9 +26295,9 @@
     "name": "Northlander Decorated Two Handed Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 39795,
-    "weight": 1.02,
-    "tier": 17.615015,
+    "price": 11947,
+    "weight": 1.23,
+    "tier": 9.155627,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -26310,8 +26310,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 127,
-        "balance": 0.71,
-        "handling": 79,
+        "balance": 0.58,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -26321,10 +26321,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 100,
-        "swingDamage": 40,
+        "thrustSpeed": 98,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 87
       }
     ]
   },
@@ -28975,9 +28975,9 @@
     "name": "Short Bill",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 18272,
-    "weight": 1.15,
-    "tier": 11.5797863,
+    "price": 6365,
+    "weight": 1.5,
+    "tier": 6.396086,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -28990,8 +28990,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 132,
-        "balance": 0.57,
-        "handling": 77,
+        "balance": 0.4,
+        "handling": 74,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -29002,10 +29002,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
+        "thrustSpeed": 95,
         "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 82
       }
     ]
   },

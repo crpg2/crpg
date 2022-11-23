@@ -399,7 +399,7 @@
   <CraftedItem id="crpg_aserai_2haxe_2_t4" name="{=BAsjzOiH}Bardiche" crafting_template="crpg_TwoHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_aserai_2haxe_2_t4_blade" Type="Blade" scale_factor="102" />
-      <Piece id="crpg_aserai_2haxe_2_t4_handle" Type="Handle" scale_factor="126" />
+      <Piece id="crpg_aserai_2haxe_2_t4_handle" Type="Handle" scale_factor="130" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_sturgia_2haxe_1_t4" name="{=jhFSLdve}Drilled Two Handed Axe" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
@@ -2267,7 +2267,7 @@
 	<CraftedItem id="crpg_greataxe" name="{=}Greataxe" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
 		<Pieces>
 			<Piece id="crpg_greataxe_blade" Type="Blade" scale_factor="100"/>
-			<Piece id="crpg_greataxe_handle" Type="Handle" scale_factor="100"/>
+			<Piece id="crpg_greataxe_handle" Type="Handle" scale_factor="108"/>
 		</Pieces>
 	</CraftedItem>
 	<CraftedItem id="crpg_long_greataxe" name="{=}Long Greataxe" crafting_template="crpg_TwoHandedAxe">
