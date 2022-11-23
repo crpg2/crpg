@@ -3673,7 +3673,7 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_desert_long_sword_t4_handle" name="{=vYS4m95c}Leather Bastard Sword Grip with Bronze Rings " tier="4" piece_type="Handle" mesh="aserai_grip_24" culture="Culture.aserai" length="16.8" weight="0.225">
+  <CraftingPiece id="crpg_desert_long_sword_t4_handle" name="{=vYS4m95c}Leather Bastard Sword Grip with Bronze Rings " tier="4" piece_type="Handle" mesh="aserai_grip_24" culture="Culture.aserai" length="16.8" weight="0.85">
     <BuildData piece_offset="0" previous_piece_offset="0.1" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron4" count="2" />
@@ -5045,10 +5045,10 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_desert_long_sword_t4_blade" name="{=N1qLYlxF}Fine Steel Kaskara Blade" tier="4" piece_type="Blade" mesh="aserai_blade_7" culture="Culture.aserai" length="100.1" weight="1.2">
+  <CraftingPiece id="crpg_desert_long_sword_t4_blade" name="{=N1qLYlxF}Fine Steel Kaskara Blade" tier="4" piece_type="Blade" mesh="aserai_blade_7" culture="Culture.aserai" length="100.1" weight="1.57">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="aserai_blade_7_scabbard_7">
-      <Thrust damage_type="Pierce" damage_factor="0.875" />
-      <Swing damage_type="Cut" damage_factor="1.365" />
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="3" />
