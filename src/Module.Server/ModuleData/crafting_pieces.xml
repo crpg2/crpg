@@ -24,7 +24,8 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-    <CraftingPiece id="crpg_eastern_long_steel_mace_t4_handle" name="{=JCYmlrKF}Steel Reinforced Mace Handle" tier="4" piece_type="Handle" mesh="mace_handle_11" length="78" weight="0.2" item_holster_pos_shift="0,0,0.05">
+    <CraftingPiece id="crpg_eastern_long_steel_mace_t4_handle" name="{=JCYmlrKF}Steel Reinforced Mace Handle" tier="4" piece_type="Handle" mesh="mace_handle_11" length="78" weight="0.1" item_holster_pos_shift="0,0,0.05">
+    <BuildData piece_offset="20" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron3" count="1" />
@@ -205,9 +206,9 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-    <CraftingPiece id="crpg_eastern_long_steel_mace_t4_blade" name="{=o2kFafbu}Eastern Steel Mace Head" tier="4" piece_type="Blade" mesh="mace_head_26" length="21.4" weight="0.105 " full_scale="true" excluded_item_usage_features="thrust">
+    <CraftingPiece id="crpg_eastern_long_steel_mace_t4_blade" name="{=o2kFafbu}Eastern Steel Mace Head" tier="4" piece_type="Blade" mesh="mace_head_26" length="21.4" weight="0.39 " full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="3.2" />
+      <Swing damage_type="Blunt" damage_factor="3.3" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />

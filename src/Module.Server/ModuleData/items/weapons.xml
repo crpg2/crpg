@@ -1669,8 +1669,8 @@
   </CraftedItem>
     <CraftedItem id="crpg_eastern_long_steel_mace_t4" name="Long Steel Mace" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_eastern_long_steel_mace_t4_blade" Type="Blade" scale_factor="175" />
-      <Piece id="crpg_eastern_long_steel_mace_t4_handle" Type="Handle" scale_factor="300" />
+      <Piece id="crpg_eastern_long_steel_mace_t4_blade" Type="Blade" scale_factor="150" />
+      <Piece id="crpg_eastern_long_steel_mace_t4_handle" Type="Handle" scale_factor="175" />
       <Piece id="crpg_eastern_long_steel_mace_t4_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
