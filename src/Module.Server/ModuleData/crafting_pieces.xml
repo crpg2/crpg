@@ -2537,7 +2537,7 @@
     <BuildData piece_offset="-8" />
     <BladeData stack_amount="0" blade_length="25.328" blade_width="31.023" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.5" /> 
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -2875,12 +2875,12 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_3_t5_pommel" name="{=LDRnfLRh}Decorated Northern Pommel" tier="4" piece_type="Pommel" mesh="sturgian_noble_pommel_2" culture="Culture.sturgia" length="4.7" weight="0.17">
+  <CraftingPiece id="crpg_sturgia_noble_sword_3_t5_pommel" name="{=LDRnfLRh}Decorated Northern Pommel" tier="4" piece_type="Pommel" mesh="sturgian_noble_pommel_2" culture="Culture.sturgia" length="4.7" weight="0.12">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_4_t5_pommel" name="{=Ao7c1VrC}Northern Triangular Pommel" tier="3" piece_type="Pommel" mesh="sturgian_noble_pommel_1" culture="Culture.sturgia" length="4.3" weight="0.17">
+  <CraftingPiece id="crpg_sturgia_noble_sword_4_t5_pommel" name="{=Ao7c1VrC}Northern Triangular Pommel" tier="3" piece_type="Pommel" mesh="sturgian_noble_pommel_1" culture="Culture.sturgia" length="4.3" weight="0.2">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
@@ -2938,12 +2938,12 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_2_t5_pommel" name="{=usVYZYYD}Northern Lordly Pommel" tier="5" piece_type="Pommel" mesh="sturgian_noble_pommel_4" culture="Culture.sturgia" length="5.4" weight="0.17">
+  <CraftingPiece id="crpg_sturgia_noble_sword_2_t5_pommel" name="{=usVYZYYD}Northern Lordly Pommel" tier="5" piece_type="Pommel" mesh="sturgian_noble_pommel_4" culture="Culture.sturgia" length="5.4" weight="0.2">
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_1_t5_pommel" name="{=HuYwPEmh}Ornamental Pommel" tier="5" piece_type="Pommel" mesh="sturgian_noble_pommel_3" culture="Culture.sturgia" length="3.9" weight="0.17">
+  <CraftingPiece id="crpg_sturgia_noble_sword_1_t5_pommel" name="{=HuYwPEmh}Ornamental Pommel" tier="5" piece_type="Pommel" mesh="sturgian_noble_pommel_3" culture="Culture.sturgia" length="3.9" weight="0.28">
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
@@ -3148,17 +3148,17 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_5_t5_pommel" name="{=fHKHwvsW}Bronze Banded Pommel" tier="5" piece_type="Pommel" mesh="sturgian_pommel_12" culture="Culture.sturgia" length="5.1" weight="0.17">
+  <CraftingPiece id="crpg_sturgia_sword_5_t5_pommel" name="{=fHKHwvsW}Bronze Banded Pommel" tier="5" piece_type="Pommel" mesh="sturgian_pommel_12" culture="Culture.sturgia" length="5.1" weight="0.47">
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_5_t4_pommel" name="{=1ajbJdao}Bar Pommel" tier="4" piece_type="Pommel" mesh="sturgian_pommel_8" culture="Culture.sturgia" length="1.864" weight="0.14">
+  <CraftingPiece id="crpg_sturgia_sword_5_t4_pommel" name="{=1ajbJdao}Bar Pommel" tier="4" piece_type="Pommel" mesh="sturgian_pommel_8" culture="Culture.sturgia" length="1.864" weight="0.25">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_4_t4_pommel" name="{=1ajbJdao}Bar Pommel" tier="4" piece_type="Pommel" mesh="sturgian_pommel_8" culture="Culture.sturgia" length="1.864" weight="0.14">
+  <CraftingPiece id="crpg_sturgia_sword_4_t4_pommel" name="{=1ajbJdao}Bar Pommel" tier="4" piece_type="Pommel" mesh="sturgian_pommel_8" culture="Culture.sturgia" length="1.864" weight="0.25">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
@@ -3179,7 +3179,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_1_t2_pommel" name="{=sHwhgRzK}Crescent Pommel" tier="1" piece_type="Pommel" mesh="sturgian_pommel_7" culture="Culture.khuzait" length="1.711" weight="0.05">
+  <CraftingPiece id="crpg_sturgia_sword_1_t2_pommel" name="{=sHwhgRzK}Crescent Pommel" tier="1" piece_type="Pommel" mesh="sturgian_pommel_7" culture="Culture.khuzait" length="1.711" weight="0.50">
     <BuildData next_piece_offset="-0.2" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -3492,13 +3492,13 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_4_t5_handle" name="{=9T2KA9sk}Gold Bound Decorated Steel Grip" tier="5" piece_type="Handle" mesh="sturgian_noble_grip_4" culture="Culture.sturgia" length="15.7" weight="0.270">
+  <CraftingPiece id="crpg_sturgia_noble_sword_4_t5_handle" name="{=9T2KA9sk}Gold Bound Decorated Steel Grip" tier="5" piece_type="Handle" mesh="sturgian_noble_grip_4" culture="Culture.sturgia" length="15.7" weight="0.3">
     <BuildData piece_offset="0" previous_piece_offset="0.2" next_piece_offset="0.3" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_3_t5_handle" name="{=ueCf3sde}Leather Wrapped Thin One Handed Grip" tier="3" piece_type="Handle" mesh="sturgian_noble_grip_3" culture="Culture.sturgia" length="15" weight="0.270">
+  <CraftingPiece id="crpg_sturgia_noble_sword_3_t5_handle" name="{=ueCf3sde}Leather Wrapped Thin One Handed Grip" tier="3" piece_type="Handle" mesh="sturgian_noble_grip_3" culture="Culture.sturgia" length="17" weight="0.15">
     <BuildData piece_offset="0" previous_piece_offset="0.2" next_piece_offset="0.3" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -3607,7 +3607,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_2_t5_handle" name="{=Nk924YlG}Decorated Fine Steel One Handed Grip" tier="5" piece_type="Handle" mesh="sturgian_noble_grip_2" culture="Culture.sturgia" length="15" weight="0.270">
+  <CraftingPiece id="crpg_sturgia_noble_sword_2_t5_handle" name="{=Nk924YlG}Decorated Fine Steel One Handed Grip" tier="5" piece_type="Handle" mesh="sturgian_noble_grip_2" culture="Culture.sturgia" length="15" weight="0.5">
     <BuildData piece_offset="0" previous_piece_offset="0.2" next_piece_offset="0.3" />
     <Materials>
       <Material id="Iron5" count="2" />
@@ -3619,7 +3619,7 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_1_t5_handle" name="{=HF2WJagx}Decorated Leather Wrapped Warsword Grip" tier="5" piece_type="Handle" mesh="sturgian_noble_grip_1" culture="Culture.sturgia" length="17.8" weight="0.270">
+  <CraftingPiece id="crpg_sturgia_noble_sword_1_t5_handle" name="{=HF2WJagx}Decorated Leather Wrapped Warsword Grip" tier="5" piece_type="Handle" mesh="sturgian_noble_grip_1" culture="Culture.sturgia" length="23" weight="0.31">
     <BuildData piece_offset="0" previous_piece_offset="0.2" next_piece_offset="0.3" />
     <Materials>
       <Material id="Iron5" count="2" />
@@ -3842,7 +3842,7 @@
       <Material id="Iron2" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_5_t5_handle" name="{=ZKsIpbg6}Half Leather Covered Wire Bound Two Handed Grip" tier="5" piece_type="Handle" mesh="sturgian_grip_36" culture="Culture.sturgia" length="19.8" weight="0.30">
+  <CraftingPiece id="crpg_sturgia_sword_5_t5_handle" name="{=ZKsIpbg6}Half Leather Covered Wire Bound Two Handed Grip" tier="5" piece_type="Handle" mesh="sturgian_grip_36" culture="Culture.sturgia" length="19.8" weight="0.4">
     <BuildData piece_offset="0" previous_piece_offset="-0.2" next_piece_offset="0.6" />
     <Materials>
       <Material id="Iron5" count="3" />
@@ -3854,19 +3854,19 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_5_t4_handle" name="{=8olqutaL}Northern Split Two Handed Grip" tier="3" piece_type="Handle" mesh="sturgian_grip_25" culture="Culture.sturgia" length="25" weight="0.13">
+  <CraftingPiece id="crpg_sturgia_sword_5_t4_handle" name="{=8olqutaL}Northern Split Two Handed Grip" tier="3" piece_type="Handle" mesh="sturgian_grip_25" culture="Culture.sturgia" length="27" weight="0.25">
     <BuildData piece_offset="-7.04" next_piece_offset="0.1" previous_piece_offset="0.3" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_4_t4_handle" name="{=LEdJzFrZ}Bevelled Angular One Handed Grip" tier="2" piece_type="Handle" mesh="sturgian_grip_7" culture="Culture.sturgia" length="15" weight="0.1">
+  <CraftingPiece id="crpg_sturgia_sword_4_t4_handle" name="{=LEdJzFrZ}Bevelled Angular One Handed Grip" tier="2" piece_type="Handle" mesh="sturgian_grip_7" culture="Culture.sturgia" length="15" weight="0.45">
     <BuildData piece_offset="0" next_piece_offset="0.1" previous_piece_offset="0.3" />
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_3_t3_handle" name="{=indl9fEW}Roughbound Thick Leather One Handed Grip" tier="2" piece_type="Handle" mesh="sturgian_grip_8" culture="Culture.sturgia" length="15" weight="0.1">
+  <CraftingPiece id="crpg_sturgia_sword_3_t3_handle" name="{=indl9fEW}Roughbound Thick Leather One Handed Grip" tier="2" piece_type="Handle" mesh="sturgian_grip_8" culture="Culture.sturgia" length="18" weight="0.1">
     <BuildData piece_offset="0" next_piece_offset="0" previous_piece_offset="0.4" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -3884,7 +3884,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_1_t2_handle" name="{=qbYoAvs6}Bound Hide One Handed Grip" tier="1" piece_type="Handle" mesh="sturgian_grip_13" length="15.2" weight="0.10">
+  <CraftingPiece id="crpg_sturgia_sword_1_t2_handle" name="{=qbYoAvs6}Bound Hide One Handed Grip" tier="1" piece_type="Handle" mesh="sturgian_grip_13" length="14" weight="0.20">
     <BuildData piece_offset="-0.09" previous_piece_offset="0.3" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -4101,14 +4101,14 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_4_t5_guard" name="{=4z3U5ubo}Golden Warsword Guard" tier="5" piece_type="Guard" mesh="sturgian_noble_guard_4" culture="Culture.sturgia" length="3.4" weight="0.20">
+  <CraftingPiece id="crpg_sturgia_noble_sword_4_t5_guard" name="{=4z3U5ubo}Golden Warsword Guard" tier="5" piece_type="Guard" mesh="sturgian_noble_guard_4" culture="Culture.sturgia" length="3.4" weight="0.35">
     <BuildData next_piece_offset="0.5" previous_piece_offset="0" />
-    <StatContributions armor_bonus="5" />
+    <StatContributions armor_bonus="0" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_3_t5_guard" name="{=3uUaFQ9Y}Hammer Shaped Guard With Engravings" tier="3" piece_type="Guard" mesh="sturgian_noble_guard_3" culture="Culture.sturgia" length="3.8" weight="0.20">
+  <CraftingPiece id="crpg_sturgia_noble_sword_3_t5_guard" name="{=3uUaFQ9Y}Hammer Shaped Guard With Engravings" tier="3" piece_type="Guard" mesh="sturgian_noble_guard_3" culture="Culture.sturgia" length="5" weight="0.3">
     <BuildData next_piece_offset="0.5" previous_piece_offset="0.3" />
     <StatContributions armor_bonus="3" />
     <Materials>
@@ -4180,14 +4180,14 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_sturgia_noble_sword_2_t5_guard" name="{=L4PDF4MY}Warsword Guard With Golden Engravings" tier="5" piece_type="Guard" mesh="sturgian_noble_guard_1" culture="Culture.sturgia" length="2.36" weight="0.20">
     <BuildData next_piece_offset="0.5" previous_piece_offset="0.3" />
-    <StatContributions armor_bonus="2" />
+    <StatContributions armor_bonus="0" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_1_t5_guard" name="{=eapPaDKi}Thick Silvered Warsword Guard " tier="5" piece_type="Guard" mesh="sturgian_noble_guard_2" culture="Culture.sturgia" length="3.5" weight="0.20">
+  <CraftingPiece id="crpg_sturgia_noble_sword_1_t5_guard" name="{=eapPaDKi}Thick Silvered Warsword Guard " tier="5" piece_type="Guard" mesh="sturgian_noble_guard_2" culture="Culture.sturgia" length="6" weight="0.30">
     <BuildData next_piece_offset="0.5" previous_piece_offset="0.3" />
-    <StatContributions armor_bonus="4" />
+    <StatContributions armor_bonus="3" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
@@ -4411,21 +4411,21 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_sturgia_sword_5_t4_guard" name="{=WxnqOG8s}Broad Concave Guard" tier="4" piece_type="Guard" mesh="sturgian_guard_5" culture="Culture.sturgia" length="2.8" weight="0.15">
     <BuildData next_piece_offset="0.5" />
-    <StatContributions armor_bonus="3" />
+    <StatContributions armor_bonus="1" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_sturgia_sword_3_t3_guard" name="{=WxnqOG8s}Broad Concave Guard" tier="4" piece_type="Guard" mesh="sturgian_guard_5" culture="Culture.sturgia" length="2.8" weight="0.15">
     <BuildData next_piece_offset="0.5" />
-    <StatContributions armor_bonus="3" />
+    <StatContributions armor_bonus="1" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_5_t5_guard" name="{=RB3oxhaV}Long-Armed Guard" tier="5" piece_type="Guard" mesh="sturgian_guard_4" culture="Culture.sturgia" length="1" weight="0.18">
+  <CraftingPiece id="crpg_sturgia_sword_5_t5_guard" name="{=RB3oxhaV}Long-Armed Guard" tier="5" piece_type="Guard" mesh="sturgian_guard_4" culture="Culture.sturgia" length="2" weight="0.2">
     <BuildData next_piece_offset="0.4" />
-    <StatContributions armor_bonus="5" />
+    <StatContributions armor_bonus="2" />
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
@@ -4437,7 +4437,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_4_t4_guard" name="{=b1KGhVwD}Concave Northern Guard" tier="4" piece_type="Guard" mesh="sturgian_guard_2" culture="Culture.sturgia" length="2.4" weight="0.25">
+  <CraftingPiece id="crpg_sturgia_sword_4_t4_guard" name="{=b1KGhVwD}Concave Northern Guard" tier="4" piece_type="Guard" mesh="sturgian_guard_2" culture="Culture.sturgia" length="2.4" weight="0.35">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="3" />
     <Materials>
@@ -4791,10 +4791,10 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_4_t5_blade" name="{=blaVlvm2}Decorated Short Warsword Blade" tier="5" piece_type="Blade" mesh="sturgian_noble_blade_4" culture="Culture.sturgia" length="74" weight="0.7">
+  <CraftingPiece id="crpg_sturgia_noble_sword_4_t5_blade" name="{=blaVlvm2}Decorated Short Warsword Blade" tier="5" piece_type="Blade" mesh="sturgian_noble_blade_4" culture="Culture.sturgia" length="74" weight="1.12">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_noble_blade_4_scabbard_4">
-      <Thrust damage_type="Pierce" damage_factor="0.525" />
-      <Swing damage_type="Cut" damage_factor="0.875" />
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Cut" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -4803,10 +4803,10 @@
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_3_t5_blade" name="{=VbpiYB68}Decorated Wide Fullered Short Blade" tier="5" piece_type="Blade" mesh="sturgian_noble_blade_1" culture="Culture.sturgia" length="61.4" weight="0.9">
+  <CraftingPiece id="crpg_sturgia_noble_sword_3_t5_blade" name="{=VbpiYB68}Decorated Wide Fullered Short Blade" tier="5" piece_type="Blade" mesh="sturgian_noble_blade_1" culture="Culture.sturgia" length="90" weight="1.34">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_noble_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="1.05" />
-      <Swing damage_type="Cut" damage_factor="1.575" />
+      <Thrust damage_type="Pierce" damage_factor="1.2" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -4935,10 +4935,10 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_2_t5_blade" name="{=vx2VIbmb}Decorated Long Warsword Blade" tier="5" piece_type="Blade" mesh="sturgian_noble_blade_3" culture="Culture.sturgia" length="73" weight="0.9">
+  <CraftingPiece id="crpg_sturgia_noble_sword_2_t5_blade" name="{=vx2VIbmb}Decorated Long Warsword Blade" tier="5" piece_type="Blade" mesh="sturgian_noble_blade_3" culture="Culture.sturgia" length="102" weight="1.15">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_noble_blade_3_scabbard_3">
-      <Thrust damage_type="Pierce" damage_factor="0.945" />
-      <Swing damage_type="Cut" damage_factor="0.98" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -4947,10 +4947,10 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_noble_sword_1_t5_blade" name="{=mSNaSLiC}Thamaskene Steel Warsword Blade" tier="5" piece_type="Blade" mesh="sturgian_noble_blade_2" culture="Culture.sturgia" length="61.4" weight="0.9">
+  <CraftingPiece id="crpg_sturgia_noble_sword_1_t5_blade" name="{=mSNaSLiC}Thamaskene Steel Warsword Blade" tier="5" piece_type="Blade" mesh="sturgian_noble_blade_2" culture="Culture.sturgia" length="88" weight="1.05">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_noble_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="0.945" />
-      <Swing damage_type="Cut" damage_factor="1.47" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5357,8 +5357,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_sturgia_sword_5_t5_blade" name="{=QIo60ZKh}Fullered Long Warsword Blade" tier="5" piece_type="Blade" mesh="sturgian_blade_8" culture="Culture.sturgia" length="87.3" weight="0.87">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_3_scabbard_3">
-      <Thrust damage_type="Pierce" damage_factor="1.05" />
-      <Swing damage_type="Cut" damage_factor="1.4" />
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5367,10 +5367,10 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_3_t3_blade" name="{=alti0PsZ}Pointy Warsword Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_7" culture="Culture.sturgia" length="74.5" weight="0.76">
+  <CraftingPiece id="crpg_sturgia_sword_3_t3_blade" name="{=alti0PsZ}Pointy Warsword Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_7" culture="Culture.sturgia" length="81" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_7_scabbard_7">
-      <Thrust damage_type="Pierce" damage_factor="0.945" />
-      <Swing damage_type="Cut" damage_factor="1.26" />
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Swing damage_type="Cut" damage_factor="2.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5379,10 +5379,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_5_t4_blade" name="{=weIT4gUP}Fullered Narrow Warsword Blade" tier="4" piece_type="Blade" mesh="sturgian_blade_6" culture="Culture.sturgia" length="73.7" weight="0.74">
+  <CraftingPiece id="crpg_sturgia_sword_5_t4_blade" name="{=weIT4gUP}Fullered Narrow Warsword Blade" tier="4" piece_type="Blade" mesh="sturgian_blade_6" culture="Culture.sturgia" length="70" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_6_scabbard_6">
-      <Thrust damage_type="Pierce" damage_factor="0.98" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="2.7" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5391,10 +5391,10 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_2_t3_blade" name="{=bGfs8gNv}Northern Backsword Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_5" culture="Culture.sturgia" length="68.2" weight="0.7">
+  <CraftingPiece id="crpg_sturgia_sword_2_t3_blade" name="{=bGfs8gNv}Northern Backsword Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_5" culture="Culture.sturgia" length="81" weight="1.3">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_5_scabbard_5">
-      <Thrust damage_type="Pierce" damage_factor="0.945" />
-      <Swing damage_type="Cut" damage_factor="1.26" />
+      <Thrust damage_type="Pierce" damage_factor="1.1" />
+      <Swing damage_type="Cut" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5405,8 +5405,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_sturgia_sword_4_t4_blade" name="{=7ZWtiHKj}Long Warsword Blade" tier="4" piece_type="Blade" mesh="sturgian_blade_2" culture="Culture.sturgia" length="86.9" weight="0.88">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="0.98" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.2" />
+      <Swing damage_type="Cut" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5415,10 +5415,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_sword_1_t2_blade" name="{=xbB9Ga5X}Tapered Northern Blade" tier="2" piece_type="Blade" mesh="sturgian_blade_1" culture="Culture.sturgia" length="73.7" weight="0.76">
+  <CraftingPiece id="crpg_sturgia_sword_1_t2_blade" name="{=xbB9Ga5X}Tapered Northern Blade" tier="2" piece_type="Blade" mesh="sturgian_blade_1" culture="Culture.sturgia" length="81" weight="0.97">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="0.735" />
-      <Swing damage_type="Cut" damage_factor="1.085" />
+      <Thrust damage_type="Pierce" damage_factor="1.3" />
+      <Swing damage_type="Cut" damage_factor="2.7" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
