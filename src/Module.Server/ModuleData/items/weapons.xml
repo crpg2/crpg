@@ -509,7 +509,7 @@
       <Piece id="crpg_southern_spear_3_t3_handle" Type="Handle" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_southern_spear_4_t3" name="{=IDfl59yt}Knob Headed Spear" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_southern_spear_4_t3" name="{=IDfl59yt}Knob Headed Spear" crafting_template="crpg_Spear4DMode" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_southern_spear_4_t3_blade" Type="Blade" scale_factor="100" />
       <Piece id="crpg_southern_spear_4_t3_guard" Type="Guard" scale_factor="100" />
@@ -650,7 +650,7 @@
   <CraftedItem id="crpg_vlandia_pike_1_t5" name="{=h60wQVVX}Pike" crafting_template="crpg_Pike" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_vlandia_pike_1_t5_blade" Type="Blade" scale_factor="110" />
-      <Piece id="crpg_vlandia_pike_1_t5_handle" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_vlandia_pike_1_t5_handle" Type="Handle" scale_factor="220" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_billhook_polearm_t2" name="{=Dj64aJKQ}Billhook" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">

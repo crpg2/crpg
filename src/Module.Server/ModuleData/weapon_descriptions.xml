@@ -2498,6 +2498,9 @@
      <AvailablePiece id="crpg_practice_spear_t1_guard" />
      <AvailablePiece id="crpg_practice_spear_t1_handle" />
      <AvailablePiece id="crpg_practice_spear_t1_pommel" />
+     <AvailablePiece id="crpg_southern_spear_4_t3_blade" />
+     <AvailablePiece id="crpg_southern_spear_4_t3_guard" />
+     <AvailablePiece id="crpg_southern_spear_4_t3_handle" />
     </AvailablePieces>
     </WeaponDescription>
   <WeaponDescription id="crpg_TwoHandedPolearm_Couchable" weapon_class="TwoHandedPolearm" item_usage_features="polearm:couch">
