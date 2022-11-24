@@ -370,9 +370,9 @@
     "name": "The Ambassador",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13914,
+    "price": 11706,
     "weight": 2.9,
-    "tier": 9.96596,
+    "tier": 9.051832,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1337,9 +1337,9 @@
     "name": "Mamluke Lance",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 71,
+    "price": 50,
     "weight": 1.85,
-    "tier": 0.06953861,
+    "tier": 0.00120748591,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1566,9 +1566,9 @@
     "name": "Decorated Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 5957,
+    "price": 4906,
     "weight": 2.0,
-    "tier": 8.790804,
+    "tier": 7.87560272,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1636,9 +1636,9 @@
     "name": "Decorated Scimitar with Wide Grip",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 7144,
+    "price": 5946,
     "weight": 2.19,
-    "tier": 9.733276,
+    "tier": 8.7823925,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1671,9 +1671,9 @@
     "name": "Engraved Angular Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 7191,
+    "price": 6557,
     "weight": 2.18,
-    "tier": 9.768766,
+    "tier": 9.278227,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1864,9 +1864,9 @@
     "name": "Iron Flyssa",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 4585,
+    "price": 3880,
     "weight": 1.56,
-    "tier": 7.577073,
+    "tier": 6.88150644,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1934,9 +1934,9 @@
     "name": "Slightly Ridged Flyssa",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6185,
+    "price": 5265,
     "weight": 2.54,
-    "tier": 8.978758,
+    "tier": 8.198336,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1967,9 +1967,9 @@
     "name": "Fine Steel Long Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6224,
+    "price": 3410,
     "weight": 1.8,
-    "tier": 9.010458,
+    "tier": 6.382591,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2033,9 +2033,9 @@
     "name": "Narrow Fine Steel Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 5739,
+    "price": 4619,
     "weight": 1.82,
-    "tier": 8.608621,
+    "tier": 7.6084013,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2066,9 +2066,9 @@
     "name": "Thamaskene Steel Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 7340,
+    "price": 5550,
     "weight": 1.71,
-    "tier": 9.881093,
+    "tier": 8.446718,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2224,9 +2224,9 @@
     "name": "Awlpike",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 21510,
+    "price": 104027,
     "weight": 2.22,
-    "tier": 11.6982222,
+    "tier": 27.058176,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -3055,9 +3055,9 @@
     "name": "Simple Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 2393,
+    "price": 2015,
     "weight": 2.0,
-    "tier": 5.170497,
+    "tier": 4.65543175,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3128,9 +3128,9 @@
     "name": "Iron Broadsword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1946,
+    "price": 1546,
     "weight": 0.94,
-    "tier": 3.0912497,
+    "tier": 2.65284014,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3164,9 +3164,9 @@
     "name": "Highland Broadsword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 6162,
+    "price": 4596,
     "weight": 1.11,
-    "tier": 6.27683067,
+    "tier": 5.279811,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3240,9 +3240,9 @@
     "name": "Northlander Wide Fullered Greatsword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 13474,
+    "price": 12880,
     "weight": 3.33,
-    "tier": 9.789833,
+    "tier": 9.5475235,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3330,9 +3330,9 @@
     "name": "Highland Fine Two Handed Sword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 5700,
+    "price": 4662,
     "weight": 2.18,
-    "tier": 5.99686527,
+    "tier": 5.32475376,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3406,9 +3406,9 @@
     "name": "Battanian Mountain Blade",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 10808,
+    "price": 9237,
     "weight": 2.22,
-    "tier": 8.655531,
+    "tier": 7.92112827,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3514,9 +3514,9 @@
     "name": "Round Bitted Fine Steel Hatchet",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3474,
+    "price": 2875,
     "weight": 1.03,
-    "tier": 6.452203,
+    "tier": 5.77098036,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -4472,9 +4472,9 @@
     "name": "Highland Spiked Club",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4681,
+    "price": 4205,
     "weight": 1.82,
-    "tier": 7.66718674,
+    "tier": 7.20874,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4568,9 +4568,9 @@
     "name": "Engraved Backsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 6939,
+    "price": 5684,
     "weight": 1.97,
-    "tier": 9.576518,
+    "tier": 8.561647,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4603,9 +4603,9 @@
     "name": "Highland Pointed Blade",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 5961,
+    "price": 4305,
     "weight": 1.5,
-    "tier": 8.794894,
+    "tier": 7.307077,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4638,9 +4638,9 @@
     "name": "Decorated Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 7520,
+    "price": 6843,
     "weight": 2.24,
-    "tier": 10.0149956,
+    "tier": 9.501956,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4786,9 +4786,9 @@
     "name": "Ridged Iron Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3390,
+    "price": 3103,
     "weight": 2.22,
-    "tier": 6.36065626,
+    "tier": 6.03780842,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4821,9 +4821,9 @@
     "name": "Fine Steel Broad Shortsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 5792,
+    "price": 5371,
     "weight": 2.2,
-    "tier": 8.653205,
+    "tier": 8.291864,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4856,9 +4856,9 @@
     "name": "Steel Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4417,
+    "price": 3989,
     "weight": 2.27,
-    "tier": 7.41592264,
+    "tier": 6.992921,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4891,9 +4891,9 @@
     "name": "Fine Steel Cavalry Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 5394,
+    "price": 4804,
     "weight": 2.26,
-    "tier": 8.312022,
+    "tier": 7.78126669,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4924,9 +4924,9 @@
     "name": "Highland Broad Blade",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 6181,
+    "price": 5602,
     "weight": 2.24,
-    "tier": 8.976034,
+    "tier": 8.491984,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -5688,9 +5688,9 @@
     "name": "Bo Staff",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 8386,
+    "price": 5706,
     "weight": 2.39,
-    "tier": 6.90302,
+    "tier": 5.513431,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6508,9 +6508,9 @@
     "name": "Iron Pointed Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 3332,
+    "price": 1605,
     "weight": 1.75,
-    "tier": 6.29623556,
+    "tier": 4.04080153,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6607,9 +6607,9 @@
     "name": "Pointed Falchion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 4519,
+    "price": 3717,
     "weight": 2.1,
-    "tier": 7.513823,
+    "tier": 6.711692,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6640,9 +6640,9 @@
     "name": "Broad Ild",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4348,
+    "price": 4003,
     "weight": 2.08,
-    "tier": 7.349656,
+    "tier": 7.006742,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -6930,9 +6930,9 @@
     "name": "Highland Dagger",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 6768,
+    "price": 5702,
     "weight": 1.65,
-    "tier": 9.443936,
+    "tier": 8.576829,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -7244,9 +7244,9 @@
     "name": "Iron Cleaver",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3118,
+    "price": 2624,
     "weight": 2.28,
-    "tier": 6.05494165,
+    "tier": 5.465074,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -7965,9 +7965,9 @@
     "name": "Dawn",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13883,
+    "price": 45115,
     "weight": 2.58,
-    "tier": 9.953943,
+    "tier": 18.8280754,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -7999,9 +7999,9 @@
     "name": "Dawnbreaker",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 7046,
+    "price": 5902,
     "weight": 2.15,
-    "tier": 9.658815,
+    "tier": 8.745046,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -8427,9 +8427,9 @@
     "name": "Desert Long Sword",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 12833,
+    "price": 10777,
     "weight": 3.02,
-    "tier": 9.528209,
+    "tier": 8.641571,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8667,9 +8667,9 @@
     "name": "Early Retirement",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 10550,
+    "price": 8837,
     "weight": 2.02,
-    "tier": 8.538977,
+    "tier": 7.724425,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8701,9 +8701,9 @@
     "name": "Polesword",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 12686,
+    "price": 6902,
     "weight": 1.75,
-    "tier": 8.733489,
+    "tier": 6.166232,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9113,9 +9113,9 @@
     "name": "Jagged Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 16060,
+    "price": 20817,
     "weight": 1.72,
-    "tier": 9.96081,
+    "tier": 11.4905624,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9193,9 +9193,9 @@
     "name": "Narrow Long Headed Spear",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 7952,
+    "price": 20452,
     "weight": 2.17,
-    "tier": 6.69488049,
+    "tier": 11.3797379,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9273,9 +9273,9 @@
     "name": "Weighted Steppe Spear",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 1465,
+    "price": 888,
     "weight": 1.73,
-    "tier": 2.32493472,
+    "tier": 1.62174284,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9353,9 +9353,9 @@
     "name": "Fine Steel Leaf Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 16037,
+    "price": 14276,
     "weight": 2.01,
-    "tier": 9.952718,
+    "tier": 9.329829,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9439,9 +9439,9 @@
     "name": "Thin Fine Steel Hewing Spear",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 11674,
+    "price": 10174,
     "weight": 1.3,
-    "tier": 8.334493,
+    "tier": 7.71005726,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10107,9 +10107,9 @@
     "name": "Light Cavalry Lance",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 54,
+    "price": 50,
     "weight": 1.95,
-    "tier": 0.0145508721,
+    "tier": 0.0001266776,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10185,9 +10185,9 @@
     "name": "Courser Lance",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 55,
+    "price": 50,
     "weight": 2.22,
-    "tier": 0.0163158216,
+    "tier": 0.000626383058,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10244,9 +10244,9 @@
     "name": "Cataphract Lance",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 63,
+    "price": 50,
     "weight": 2.04,
-    "tier": 0.04250922,
+    "tier": 0.00158090121,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10364,9 +10364,9 @@
     "name": "Spiked Club",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3930,
+    "price": 3355,
     "weight": 1.78,
-    "tier": 6.9323616,
+    "tier": 6.32265949,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10529,9 +10529,9 @@
     "name": "Decorated Short Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7216,
+    "price": 5388,
     "weight": 2.04,
-    "tier": 9.787544,
+    "tier": 8.306443,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10562,9 +10562,9 @@
     "name": "Thamaskene Steel Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7567,
+    "price": 6153,
     "weight": 2.03,
-    "tier": 10.0498648,
+    "tier": 8.952478,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10595,9 +10595,9 @@
     "name": "Spatha Blade with Ring Pommel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6083,
+    "price": 5114,
     "weight": 2.37,
-    "tier": 8.895511,
+    "tier": 8.063723,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10666,9 +10666,9 @@
     "name": "Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 15546,
+    "price": 10197,
     "weight": 1.66,
-    "tier": 9.782627,
+    "tier": 7.72018433,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10702,9 +10702,9 @@
     "name": "Fine Steel Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 8751,
+    "price": 40821,
     "weight": 1.29,
-    "tier": 7.074544,
+    "tier": 16.5309887,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10761,9 +10761,9 @@
     "name": "Spatha With Narrow Fuller",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4883,
+    "price": 3807,
     "weight": 1.78,
-    "tier": 7.85456,
+    "tier": 6.806493,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10796,9 +10796,9 @@
     "name": "Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3595,
+    "price": 2652,
     "weight": 1.65,
-    "tier": 6.5826025,
+    "tier": 5.49951935,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10831,9 +10831,9 @@
     "name": "Fine Steel Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 5242,
+    "price": 4144,
     "weight": 1.91,
-    "tier": 8.17785,
+    "tier": 7.148607,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10866,9 +10866,9 @@
     "name": "Fine Steel Paramerion",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6816,
+    "price": 5917,
     "weight": 2.57,
-    "tier": 9.481414,
+    "tier": 8.757971,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10899,9 +10899,9 @@
     "name": "Thamaskene Steel Spathion",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7516,
+    "price": 6566,
     "weight": 2.79,
-    "tier": 10.0119839,
+    "tier": 9.2847805,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11142,9 +11142,9 @@
     "name": "Iron Falchion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3758,
+    "price": 2999,
     "weight": 2.06,
-    "tier": 6.75475073,
+    "tier": 5.91720772,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11240,9 +11240,9 @@
     "name": "Fine Pike",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 53,
+    "price": 50,
     "weight": 2.81,
-    "tier": 0.009946049,
+    "tier": 0.0005340684,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -12020,9 +12020,9 @@
     "name": "Xiphos",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4095,
+    "price": 3440,
     "weight": 1.91,
-    "tier": 7.09946728,
+    "tier": 6.415774,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12673,9 +12673,9 @@
     "name": "Heavy Executionner Long Sword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 14164,
-    "weight": 2.7,
-    "tier": 10.0650082,
+    "price": 13081,
+    "weight": 3.5,
+    "tier": 9.630092,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12689,15 +12689,15 @@
         "stackAmount": 0,
         "length": 150,
         "balance": 0.25,
-        "handling": 75,
+        "handling": 71,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
+        "thrustDamage": 23,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 83,
         "swingDamage": 44,
         "swingDamageType": "Cut",
         "swingSpeed": 77
@@ -13185,9 +13185,9 @@
     "name": "Reinforced Highland Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 638,
+    "price": 2901,
     "weight": 2.46,
-    "tier": 1.25495744,
+    "tier": 3.647147,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -13286,9 +13286,9 @@
     "name": "Steel Tipped Hooked Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 2303,
+    "price": 1874,
     "weight": 1.48,
-    "tier": 3.14578,
+    "tier": 2.74730158,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -13343,9 +13343,9 @@
     "name": "Highland War Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 6840,
+    "price": 12093,
     "weight": 1.85,
-    "tier": 6.133807,
+    "tier": 8.501625,
     "requirement": 0,
     "flags": [
       "NotStackable"
@@ -13552,9 +13552,9 @@
     "name": "Falx Knife",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 366,
+    "price": 310,
     "weight": 0.82,
-    "tier": 1.40348387,
+    "tier": 1.21700871,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14091,9 +14091,9 @@
     "name": "Short Militia Spear",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 8388,
+    "price": 8663,
     "weight": 1.49,
-    "tier": 6.904067,
+    "tier": 7.03339148,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -14284,9 +14284,9 @@
     "name": "Iron Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4745,
+    "price": 3842,
     "weight": 1.99,
-    "tier": 7.72648859,
+    "tier": 6.8426795,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14641,9 +14641,9 @@
     "name": "Justicier",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 1672,
+    "price": 1369,
     "weight": 2.1,
-    "tier": 2.79643583,
+    "tier": 2.442164,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14677,9 +14677,9 @@
     "name": "Ridged Long Kaskara",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 8611,
+    "price": 3471,
     "weight": 1.67,
-    "tier": 7.611603,
+    "tier": 4.45567942,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15163,9 +15163,9 @@
     "name": "Light Steppe Rider Lance",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 54,
+    "price": 50,
     "weight": 1.91,
-    "tier": 0.0134165529,
+    "tier": 0.000134084359,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15220,9 +15220,9 @@
     "name": "Heavy Cavalry Lance",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 64,
+    "price": 50,
     "weight": 1.94,
-    "tier": 0.0467652343,
+    "tier": 0.000822752132,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15298,9 +15298,9 @@
     "name": "Noble Cavalry Lance",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 80,
+    "price": 50,
     "weight": 1.9,
-    "tier": 0.0953967944,
+    "tier": 0.00323371636,
     "requirement": 0,
     "flags": [
       "NotStackable"
@@ -15400,9 +15400,9 @@
     "name": "Steppe Light Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4033,
+    "price": 3890,
     "weight": 2.15,
-    "tier": 7.03710032,
+    "tier": 6.89191341,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15589,9 +15589,9 @@
     "name": "Decorated Cavalry Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 7443,
+    "price": 6807,
     "weight": 2.5,
-    "tier": 9.958002,
+    "tier": 9.474615,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15622,9 +15622,9 @@
     "name": "Lion Imprinted Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 7097,
+    "price": 5989,
     "weight": 2.06,
-    "tier": 9.697921,
+    "tier": 8.817404,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15655,9 +15655,9 @@
     "name": "Tall Gripped Ild",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 7546,
+    "price": 6944,
     "weight": 2.07,
-    "tier": 10.0344648,
+    "tier": 9.580444,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15688,9 +15688,9 @@
     "name": "Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 16094,
+    "price": 13177,
     "weight": 1.34,
-    "tier": 9.972288,
+    "tier": 8.921305,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15724,9 +15724,9 @@
     "name": "Long Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 15749,
+    "price": 12359,
     "weight": 1.2,
-    "tier": 9.8532,
+    "tier": 8.606313,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15781,9 +15781,9 @@
     "name": "Iron Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 3651,
+    "price": 3090,
     "weight": 2.09,
-    "tier": 6.64225245,
+    "tier": 6.02357531,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15816,9 +15816,9 @@
     "name": "Straight Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4629,
+    "price": 2920,
     "weight": 1.41,
-    "tier": 7.61819935,
+    "tier": 5.82498646,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15851,9 +15851,9 @@
     "name": "Fine Steel Cavalry Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5581,
+    "price": 5068,
     "weight": 2.37,
-    "tier": 8.473193,
+    "tier": 8.022143,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15886,9 +15886,9 @@
     "name": "Fine Steel Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5094,
+    "price": 4264,
     "weight": 2.05,
-    "tier": 8.04619,
+    "tier": 7.26738453,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15921,9 +15921,9 @@
     "name": "Heavy Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4964,
+    "price": 4078,
     "weight": 2.13,
-    "tier": 7.928151,
+    "tier": 7.08320761,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17759,9 +17759,9 @@
     "name": "Notched Military Fork",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 12431,
+    "price": 2340067,
     "weight": 2.09,
-    "tier": 8.634406,
+    "tier": 132.6211,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17818,9 +17818,9 @@
     "name": "Military Fork",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 11115,
+    "price": 465809,
     "weight": 2.17,
-    "tier": 8.10687351,
+    "tier": 58.53056,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -19353,9 +19353,9 @@
     "name": "Fine Steel Two Handed Sword",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 11938,
+    "price": 9905,
     "weight": 2.56,
-    "tier": 9.151905,
+    "tier": 8.24053,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20103,9 +20103,9 @@
     "name": "Short Simple Raider Spear",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 3427,
+    "price": 696,
     "weight": 1.01,
-    "tier": 4.047864,
+    "tier": 1.34446025,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20183,9 +20183,9 @@
     "name": "Broad Leaf Shaped Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 16283,
+    "price": 32126,
     "weight": 1.43,
-    "tier": 10.0372181,
+    "tier": 14.53997,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20263,9 +20263,9 @@
     "name": "Jagged Fine Steel Spear",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 14957,
+    "price": 11745,
     "weight": 1.97,
-    "tier": 9.575117,
+    "tier": 8.36321,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20343,9 +20343,9 @@
     "name": "Fine Steel Hewing Spear",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 14042,
+    "price": 129406,
     "weight": 1.62,
-    "tier": 9.243911,
+    "tier": 30.3096275,
     "requirement": 0,
     "flags": [
       "NotStackable"
@@ -21570,9 +21570,9 @@
     "name": "Iron Pitchfork",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 5303,
+    "price": 4812,
     "weight": 1.92,
-    "tier": 5.278491,
+    "tier": 4.980651,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21629,9 +21629,9 @@
     "name": "Pitchfork",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 1964,
+    "price": 201,
     "weight": 1.47,
-    "tier": 2.83410454,
+    "tier": 0.4207337,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22231,9 +22231,9 @@
     "name": "Bludgeon Staff",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 13745,
+    "price": 11454,
     "weight": 2.13,
-    "tier": 9.134517,
+    "tier": 8.245486,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22290,9 +22290,9 @@
     "name": "Pugio",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6535,
+    "price": 5548,
     "weight": 1.64,
-    "tier": 9.260314,
+    "tier": 8.44488,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22756,9 +22756,9 @@
     "name": "Ridged Great Saber",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 8001,
+    "price": 6227,
     "weight": 1.63,
-    "tier": 7.29842854,
+    "tier": 6.31488132,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22809,9 +22809,9 @@
     "name": "Ridged Saber ",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 4606,
+    "price": 3761,
     "weight": 2.18,
-    "tier": 7.59687328,
+    "tier": 6.75868,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23477,9 +23477,9 @@
     "name": "Seax",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5940,
+    "price": 5730,
     "weight": 2.87,
-    "tier": 8.777038,
+    "tier": 8.600313,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -23675,9 +23675,9 @@
     "name": "Sentinel",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13693,
+    "price": 11480,
     "weight": 2.62,
-    "tier": 9.878063,
+    "tier": 8.953704,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23802,9 +23802,9 @@
     "name": "Short Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 4514,
+    "price": 3830,
     "weight": 2.29,
-    "tier": 7.509364,
+    "tier": 6.830378,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23874,7 +23874,7 @@
     "type": "Polearm",
     "price": 50,
     "weight": 1.62,
-    "tier": 0.002965569,
+    "tier": 1.22035635E-05,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23931,9 +23931,9 @@
     "name": "Simple Saber ",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 2514,
+    "price": 2113,
     "weight": 2.11,
-    "tier": 5.326044,
+    "tier": 4.79337,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24239,9 +24239,9 @@
     "name": "Broad Kaskara",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 13558,
+    "price": 11318,
     "weight": 2.26,
-    "tier": 9.823885,
+    "tier": 8.8827,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24430,9 +24430,9 @@
     "name": "Knob Headed Spear with Frills",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 15220,
+    "price": 6901,
     "weight": 1.19,
-    "tier": 9.6682415,
+    "tier": 6.165792,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24510,9 +24510,9 @@
     "name": "Long Thamaskene Tipped Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 12444,
+    "price": 41854,
     "weight": 1.96,
-    "tier": 8.639345,
+    "tier": 16.75275,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24590,9 +24590,9 @@
     "name": "Knob Headed Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 6881,
+    "price": 2684,
     "weight": 1.28,
-    "tier": 6.155143,
+    "tier": 3.47148633,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -26601,9 +26601,9 @@
     "name": "Druzhinnik Lance",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 79,
+    "price": 50,
     "weight": 1.88,
-    "tier": 0.0925357342,
+    "tier": 0.00147012912,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -26679,9 +26679,9 @@
     "name": "Heavy Druzhinnik Lance",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 75,
+    "price": 50,
     "weight": 2.16,
-    "tier": 0.07939144,
+    "tier": 0.00281348429,
     "requirement": 0,
     "flags": [
       "NotStackable"
@@ -26781,9 +26781,9 @@
     "name": "Thamaskene Steel Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5823,
+    "price": 4805,
     "weight": 1.94,
-    "tier": 8.678755,
+    "tier": 7.782389,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26816,9 +26816,9 @@
     "name": "Decorated Long Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7754,
+    "price": 6341,
     "weight": 2.05,
-    "tier": 10.1867924,
+    "tier": 9.10516,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26851,9 +26851,9 @@
     "name": "Decorated Fullered Sword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7410,
+    "price": 6161,
     "weight": 1.97,
-    "tier": 9.933563,
+    "tier": 8.959278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26886,9 +26886,9 @@
     "name": "Gold Bound Short Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7567,
+    "price": 5973,
     "weight": 1.97,
-    "tier": 10.0496912,
+    "tier": 8.804663,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26997,9 +26997,9 @@
     "name": "Warrazor",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 10140,
+    "price": 8121,
     "weight": 1.13,
-    "tier": 7.69535732,
+    "tier": 6.77655649,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -27056,9 +27056,9 @@
     "name": "Tapered Blade",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 2654,
+    "price": 2249,
     "weight": 1.87,
-    "tier": 5.502546,
+    "tier": 4.97910833,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27091,9 +27091,9 @@
     "name": "Backsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 4288,
+    "price": 3728,
     "weight": 1.78,
-    "tier": 7.290567,
+    "tier": 6.723799,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27126,9 +27126,9 @@
     "name": "Pointy Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3231,
+    "price": 2407,
     "weight": 1.48,
-    "tier": 6.18366051,
+    "tier": 5.18832445,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27161,9 +27161,9 @@
     "name": "Long Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5239,
+    "price": 4472,
     "weight": 1.97,
-    "tier": 8.175372,
+    "tier": 7.46920633,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27196,9 +27196,9 @@
     "name": "Fullered Narrow Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 4622,
+    "price": 3697,
     "weight": 1.69,
-    "tier": 7.6120224,
+    "tier": 6.691409,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27231,9 +27231,9 @@
     "name": "Fullered Long Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3492,
+    "price": 2932,
     "weight": 1.94,
-    "tier": 6.471994,
+    "tier": 5.83899975,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27744,9 +27744,9 @@
     "name": "Thamaskene Pike",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 53,
+    "price": 50,
     "weight": 2.78,
-    "tier": 0.0111574009,
+    "tier": 0.000523229246,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -27803,9 +27803,9 @@
     "name": "Scalpel",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6768,
+    "price": 6201,
     "weight": 2.22,
-    "tier": 9.444033,
+    "tier": 8.992095,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -28139,9 +28139,9 @@
     "name": "Triangular Headed Spear",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 1273,
+    "price": 1876,
     "weight": 1.83,
-    "tier": 2.107901,
+    "tier": 2.74881124,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -28645,9 +28645,9 @@
     "name": "Tyrhung",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6953,
+    "price": 2819,
     "weight": 1.63,
-    "tier": 9.587602,
+    "tier": 5.70379257,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29014,9 +29014,9 @@
     "name": "Wide Fullered Broad Two Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 14005,
+    "price": 11421,
     "weight": 2.64,
-    "tier": 10.0021553,
+    "tier": 8.927613,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29048,9 +29048,9 @@
     "name": "Thamaskene Steel Two Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 14038,
+    "price": 12028,
     "weight": 3.11,
-    "tier": 10.0153027,
+    "tier": 9.190329,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29118,9 +29118,9 @@
     "name": "Spiked Battle Axe",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 7529,
+    "price": 6182,
     "weight": 0.91,
-    "tier": 10.0221777,
+    "tier": 8.976664,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -29297,9 +29297,9 @@
     "name": "Light Lance",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 53,
+    "price": 50,
     "weight": 2.12,
-    "tier": 0.012774976,
+    "tier": 0.000186519741,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29398,9 +29398,9 @@
     "name": "Knight Lance",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 66,
+    "price": 50,
     "weight": 1.99,
-    "tier": 0.0518620536,
+    "tier": 0.0013031417,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29476,9 +29476,9 @@
     "name": "Heavy Knight Lance",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 70,
+    "price": 50,
     "weight": 2.21,
-    "tier": 0.06587923,
+    "tier": 0.00249842345,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29573,9 +29573,9 @@
     "name": "Spiked Mace",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 3289,
+    "price": 3119,
     "weight": 1.83,
-    "tier": 6.249227,
+    "tier": 6.05630255,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29672,9 +29672,9 @@
     "name": "Decorated Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 7368,
+    "price": 6328,
     "weight": 2.23,
-    "tier": 9.902038,
+    "tier": 9.094973,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29707,9 +29707,9 @@
     "name": "Fine Steel Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 5715,
+    "price": 4817,
     "weight": 2.23,
-    "tier": 8.587589,
+    "tier": 7.79347134,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29742,9 +29742,9 @@
     "name": "Engraved Pointed Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 7455,
+    "price": 10610,
     "weight": 2.33,
-    "tier": 9.967127,
+    "tier": 12.1067123,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29777,9 +29777,9 @@
     "name": "Crescent Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 4268,
+    "price": 3569,
     "weight": 2.23,
-    "tier": 7.270982,
+    "tier": 6.555148,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29812,9 +29812,9 @@
     "name": "Pike",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 231,
+    "price": 2963,
     "weight": 0.66,
-    "tier": 0.492404073,
+    "tier": 3.69621968,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29834,7 +29834,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
         "swingDamage": 0,
@@ -29857,7 +29857,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
         "swingDamage": 0,
@@ -29871,9 +29871,9 @@
     "name": "Voulge",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 14517,
+    "price": 12529,
     "weight": 1.29,
-    "tier": 9.417258,
+    "tier": 8.672655,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -29910,9 +29910,9 @@
     "name": "Iron Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 2667,
+    "price": 2195,
     "weight": 2.1,
-    "tier": 5.518829,
+    "tier": 4.90647,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29945,9 +29945,9 @@
     "name": "Iron Cavalry Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 3735,
+    "price": 2979,
     "weight": 2.16,
-    "tier": 6.730774,
+    "tier": 5.89443159,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29980,9 +29980,9 @@
     "name": "Knightly Cavalry Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6934,
+    "price": 5777,
     "weight": 2.16,
-    "tier": 9.572699,
+    "tier": 8.640068,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -30015,9 +30015,9 @@
     "name": "Narrow Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 5598,
+    "price": 4084,
     "weight": 1.71,
-    "tier": 8.488356,
+    "tier": 7.08883572,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30048,9 +30048,9 @@
     "name": "Fine Steel Cavalry Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 5073,
+    "price": 4071,
     "weight": 2.09,
-    "tier": 8.027132,
+    "tier": 7.07611942,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30240,9 +30240,9 @@
     "name": "War Razor",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7872,
+    "price": 7324,
     "weight": 2.49,
-    "tier": 7.23106146,
+    "tier": 6.937565,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30311,9 +30311,9 @@
     "name": "Tapered Two-Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 1947,
+    "price": 1304,
     "weight": 1.48,
-    "tier": 3.09235477,
+    "tier": 2.36271238,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -30387,9 +30387,9 @@
     "name": "Broad Two Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 12414,
+    "price": 10011,
     "weight": 2.61,
-    "tier": 9.35364,
+    "tier": 8.29023,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30768,9 +30768,9 @@
     "name": "Simple Commoner Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 6920,
+    "price": 1625,
     "weight": 1.17,
-    "tier": 6.17595,
+    "tier": 2.495499,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30848,9 +30848,9 @@
     "name": "Simple Short Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 2532,
+    "price": 478,
     "weight": 1.08,
-    "tier": 3.344045,
+    "tier": 0.9878394,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30928,9 +30928,9 @@
     "name": "Tall Tipped Long Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 5029,
+    "price": 18504,
     "weight": 1.58,
-    "tier": 5.11418438,
+    "tier": 10.77132,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31008,9 +31008,9 @@
     "name": "Tall Tipped Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 538,
+    "price": 1060,
     "weight": 2.1,
-    "tier": 1.09065652,
+    "tier": 1.84768081,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31088,9 +31088,9 @@
     "name": "Long Fine Steel Spear",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 6973,
+    "price": 64367,
     "weight": 1.61,
-    "tier": 6.20334148,
+    "tier": 21.0436726,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31145,9 +31145,9 @@
     "name": "Fine Steel Spear",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 1144,
+    "price": 7929,
     "weight": 2.06,
-    "tier": 1.95284045,
+    "tier": 6.683899,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31322,9 +31322,9 @@
     "name": "Wide Leaf Spear",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 1944,
+    "price": 274718,
     "weight": 2.02,
-    "tier": 2.81514835,
+    "tier": 44.6829147,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31402,9 +31402,9 @@
     "name": "Winds Fury",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6834,
+    "price": 4533,
     "weight": 2.03,
-    "tier": 9.49551,
+    "tier": 7.527532,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31435,9 +31435,9 @@
     "name": "Winter",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 12920,
+    "price": 10912,
     "weight": 2.38,
-    "tier": 9.564268,
+    "tier": 8.702215,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31549,9 +31549,9 @@
     "name": "Wooden Twohander",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5900,
+    "price": 4963,
     "weight": 0.97,
-    "tier": 6.11911345,
+    "tier": 5.526697,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31626,9 +31626,9 @@
     "name": "Wooden Sword",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 578,
+    "price": 399,
     "weight": 0.97,
-    "tier": 2.0133853,
+    "tier": 1.50572658,
     "requirement": 0,
     "flags": [],
     "weapons": [

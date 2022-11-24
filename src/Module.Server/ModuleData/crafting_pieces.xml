@@ -1783,7 +1783,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_vlandia_pike_1_t5_blade" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.4" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="1" />
@@ -3369,7 +3369,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-    <CraftingPiece id="crpg_heavy_executionner_2sword_pommel" name="Heavy Executionner Pommel" tier="5" piece_type="Pommel" mesh="vlandian_pommel_9" culture="Culture.vlandia" length="5.275" weight="0.25">
+    <CraftingPiece id="crpg_heavy_executionner_2sword_pommel" name="Heavy Executionner Pommel" tier="5" piece_type="Pommel" mesh="vlandian_pommel_9" culture="Culture.vlandia" length="5.275" weight="0.4">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
@@ -3800,7 +3800,7 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_executionner_2sword_handle" name="Heavy Executionner Handle" tier="2" piece_type="Handle" mesh="battania_grip_6" culture="Culture.battania" length="25.6" weight="0.1">
+  <CraftingPiece id="crpg_heavy_executionner_2sword_handle" name="Heavy Executionner Handle" tier="2" piece_type="Handle" mesh="battania_grip_6" culture="Culture.battania" length="25.6" weight="0.6">
     <BuildData piece_offset="-0.22" previous_piece_offset="0.3" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron2" count="2" />
@@ -4658,7 +4658,7 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_executionner_2sword_guard" name="Heavy Executionner Guard" tier="5" piece_type="Guard" mesh="vlandian_guard_8" culture="Culture.vlandia" length="1.42" weight="0.1">
+  <CraftingPiece id="crpg_heavy_executionner_2sword_guard" name="Heavy Executionner Guard" tier="5" piece_type="Guard" mesh="vlandian_guard_8" culture="Culture.vlandia" length="1.42" weight="0.3">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="5" />
     <Materials>
@@ -5303,8 +5303,9 @@
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_executionner_2sword_blade" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="1.1" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_heavy_executionner_2sword_blade" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="0.65" excluded_item_usage_features="thrust">
     <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_5_scabbard_5">
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
       <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
