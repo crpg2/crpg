@@ -480,7 +480,7 @@
   </Item>
   <Item id="crpg_swadian_shoulders" name="Western Shoulder Plates" mesh="swadian_shoulders" culture="Culture.vlandia" weight="3.6" appearance="2" Type="Cape">
 		<ItemComponent>
-			<Armor body_armor="20" arm_armor="10" modifier_group="plate" material_type="Plate"/>
+			<Armor body_armor="25" arm_armor="9" modifier_group="plate" material_type="Plate"/>
 		</ItemComponent>
 		<Flags/>
 	</Item>
