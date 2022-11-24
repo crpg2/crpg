@@ -31322,9 +31322,9 @@
     "name": "Wide Leaf Spear",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 274718,
+    "price": 11464,
     "weight": 2.02,
-    "tier": 44.6829147,
+    "tier": 8.249556,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31342,7 +31342,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 39,
+        "thrustDamage": 32,
         "thrustDamageType": "Cut",
         "thrustSpeed": 79,
         "swingDamage": 0,
@@ -31365,7 +31365,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 39,
+        "thrustDamage": 32,
         "thrustDamageType": "Cut",
         "thrustSpeed": 87,
         "swingDamage": 0,
@@ -31388,7 +31388,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 39,
+        "thrustDamage": 32,
         "thrustDamageType": "Cut",
         "thrustSpeed": 87,
         "swingDamage": 0,
