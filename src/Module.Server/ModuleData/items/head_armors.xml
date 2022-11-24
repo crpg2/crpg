@@ -812,7 +812,7 @@
   </Item>
   <Item id="crpg_full_helm_over_arming_coif" name="{=WYytQbvS}Full Helm over Arming Coif" mesh="vlandia_helmet_s_f" culture="Culture.vlandia" weight="2.831956" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="53" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
@@ -866,19 +866,19 @@
   </Item>
   <Item id="crpg_full_helm_over_mail_coif" name="{=FsDZC8Yl}Full Helm over Mail Coif" subtype="head_armor" mesh="vlandia_helmet_s_a" culture="Culture.vlandia" weight="3.209259" difficulty="0" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_full_helm_over_laced_coif" name="{=wEfZyccm}Full Helm over Laced Coif" subtype="head_armor" mesh="vlandia_helmet_s_c" culture="Culture.vlandia" weight="2.831956" difficulty="0" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_full_helm_over_cloth_headwrap" name="{=SYvBTD0p}Full Helm over Cloth Headwrap" mesh="vlandia_helmet_s_d" culture="Culture.vlandia" weight="2.831956" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="49" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
