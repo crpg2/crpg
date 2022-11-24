@@ -22756,9 +22756,9 @@
     "name": "Ridged Great Saber",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 50,
+    "price": 8001,
     "weight": 1.63,
-    "tier": 1.131812E-05,
+    "tier": 7.29842854,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22776,10 +22776,10 @@
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 1,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
-        "swingDamage": 1,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
         "swingSpeed": 102
       }
