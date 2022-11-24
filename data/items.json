@@ -3052,12 +3052,12 @@
   },
   {
     "id": "crpg_bastard_sword_t2",
-    "name": "Simple Bastard Sword",
-    "culture": "Neutral",
+    "name": "Simple Warsword",
+    "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 95,
-    "weight": 1.25,
-    "tier": 0.288829029,
+    "price": 2393,
+    "weight": 2.0,
+    "tier": 5.170497,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3070,18 +3070,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 98,
-        "balance": 0.86,
-        "handling": 95,
+        "balance": 0.51,
+        "handling": 83,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
-        "swingDamage": 10,
+        "thrustSpeed": 87,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 95
+        "swingSpeed": 85
       }
     ]
   },

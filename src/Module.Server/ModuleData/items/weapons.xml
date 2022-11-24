@@ -1352,12 +1352,12 @@
       <Piece id="crpg_battania_2hsword_1_t2_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bastard_sword_t2" name="{=arBdK7st}Simple Bastard Sword" crafting_template="crpg_OneHandedSword" modifier_group="sword">
+  <CraftedItem id="crpg_bastard_sword_t2" name="{=arBdK7st}Simple Warsword" crafting_template="crpg_OneHandedSword" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_bastard_sword_t2_blade" Type="Blade" />
-      <Piece id="crpg_bastard_sword_t2_guard" Type="Guard" />
-      <Piece id="crpg_bastard_sword_t2_handle" Type="Handle" />
-      <Piece id="crpg_bastard_sword_t2_pommel" Type="Pommel" />
+      <Piece id="crpg_bastard_sword_t2_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bastard_sword_t2_guard" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_bastard_sword_t2_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bastard_sword_t2_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_battania_2hsword_2_t3" name="{=YrAVxmFn}Highland Broadsword" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">

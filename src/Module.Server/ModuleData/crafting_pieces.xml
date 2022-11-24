@@ -3192,7 +3192,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bastard_sword_t2_pommel" name="{=sHwhgRzK}Crescent Pommel" tier="1" piece_type="Pommel" mesh="sturgian_pommel_7" culture="Culture.khuzait" length="1.711" weight="0.05">
+  <CraftingPiece id="crpg_bastard_sword_t2_pommel" name="{=sHwhgRzK}Crescent Pommel" tier="1" piece_type="Pommel" mesh="sturgian_pommel_7" culture="Culture.khuzait" length="1.711" weight="0.3">
     <BuildData next_piece_offset="-0.2" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -3534,8 +3534,8 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bastard_sword_t2_handle" name="{=Gewh8Bzr}Bound Fur Two Handed Grip" tier="1" piece_type="Handle" mesh="sturgian_grip_33" culture="Culture.sturgia" length="25" weight="0.20">
-    <BuildData piece_offset="-6.7" previous_piece_offset="0.3" next_piece_offset="0.1" />
+  <CraftingPiece id="crpg_bastard_sword_t2_handle" name="{=Gewh8Bzr}Bound Fur Two Handed Grip" tier="1" piece_type="Handle" mesh="sturgian_grip_33" culture="Culture.sturgia" length="25" weight="0.35">
+    <BuildData piece_offset="-6.7" previous_piece_offset="0.3" next_piece_offset="0.35" />
     <Materials>
       <Material id="Iron2" count="2" />
     </Materials>
@@ -4713,7 +4713,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bastard_sword_t2_guard" name="{=XI5QgznO}Tapered Cleaver Guard" tier="1" piece_type="Guard" mesh="cleaver_guard_2" culture="Culture.aserai" length="1.289" weight="0.058">
+  <CraftingPiece id="crpg_bastard_sword_t2_guard" name="{=XI5QgznO}Tapered Cleaver Guard" tier="1" piece_type="Guard" mesh="cleaver_guard_2" culture="Culture.aserai" length="1.289" weight="0.25">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="3" />
     <Materials>
@@ -5662,11 +5662,11 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bastard_sword_t2_blade" name="{=TUbTwW9U}Flat Ridged Spatha Blade" tier="2" piece_type="Blade" mesh="empire_blade_4" culture="Culture.empire" length="91.3" weight="0.94">
+  <CraftingPiece id="crpg_bastard_sword_t2_blade" name="{=TUbTwW9U}Flat Ridged Spatha Blade" tier="2" piece_type="Blade" mesh="empire_blade_4" culture="Culture.empire" length="91.3" weight="1.1">
     <BuildData previous_piece_offset="-0.4" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="0.875" />
-      <Swing damage_type="Cut" damage_factor="1.05" />
+      <Thrust damage_type="Pierce" damage_factor="1.4" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
