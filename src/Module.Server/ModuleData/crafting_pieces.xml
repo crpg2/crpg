@@ -1477,7 +1477,7 @@
   <CraftingPiece id="crpg_vlandia_polearm_1_t5_blade" name="{=LNDbMUK0}Voulge Head" tier="4" piece_type="Blade" mesh="axe_craft_10_head" distance_to_next_piece="23" distance_to_previous_piece="4" weight="0.49">
     <BuildData piece_offset="-8" />
     <BladeData stack_amount="2" blade_length="23.118" blade_width="18.371" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Flags>

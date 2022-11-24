@@ -29871,9 +29871,9 @@
     "name": "Voulge",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 12529,
+    "price": 15359,
     "weight": 1.29,
-    "tier": 8.672655,
+    "tier": 9.717077,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -29896,7 +29896,7 @@
           "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 48,
