@@ -1373,7 +1373,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_northern_spear_4_t5_blade" name="{=MpVC0RXl}Northern Triangular Spear" tier="5" piece_type="Blade" mesh="spear_blade_13" length="50.864" weight="0.3592" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.9" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
     </BladeData>
     <Flags>
       <Flag name="NotStackable" type="ItemFlags" />
@@ -5962,9 +5962,9 @@
 <Material id="Iron3" count="1"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_awlpike_blade" name="{=}Awlpike Blade" tier="4" piece_type="Blade" mesh="awlpike_blade" length="85.8" weight="0.6168" excluded_item_usage_features="swing">
+<CraftingPiece id="crpg_awlpike_blade" name="{=}Awlpike Blade" tier="4" piece_type="Blade" mesh="awlpike_blade" length="85.8" weight="0.45" excluded_item_usage_features="swing">
 <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-<Thrust damage_type="Pierce" damage_factor="2.9"/>
+<Thrust damage_type="Pierce" damage_factor="2.5"/>
 </BladeData>
 <Materials>
 <Material id="Iron4" count="2"/>

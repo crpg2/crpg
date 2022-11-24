@@ -2224,9 +2224,9 @@
     "name": "Awlpike",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 104027,
-    "weight": 2.22,
-    "tier": 27.058176,
+    "price": 14837,
+    "weight": 2.05,
+    "tier": 9.532242,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2237,8 +2237,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 169,
-        "balance": 0.21,
-        "handling": 65,
+        "balance": 0.36,
+        "handling": 68,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -2246,12 +2246,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 92,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 76
+        "swingSpeed": 80
       }
     ]
   },
@@ -20343,9 +20343,9 @@
     "name": "Fine Steel Hewing Spear",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 129406,
+    "price": 12173,
     "weight": 1.62,
-    "tier": 30.3096275,
+    "tier": 8.53315,
     "requirement": 0,
     "flags": [
       "NotStackable"
@@ -20365,7 +20365,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
         "swingDamage": 0,
@@ -20388,7 +20388,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -20411,7 +20411,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
