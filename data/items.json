@@ -22290,9 +22290,9 @@
     "name": "Pugio",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 57273,
-    "weight": 0.55,
-    "tier": 29.6341648,
+    "price": 6535,
+    "weight": 1.64,
+    "tier": 9.260314,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22306,27 +22306,27 @@
         "stackAmount": 0,
         "length": 35,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 113,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 101,
+        "thrustSpeed": 90,
         "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "swingSpeed": 109
       },
       {
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 33,
+        "missileSpeed": 30,
         "stackAmount": 1,
         "length": 35,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 113,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -22335,12 +22335,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 101,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "swingSpeed": 109
       }
     ]
   },

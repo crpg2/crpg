@@ -2767,7 +2767,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pugio_blade" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="0.2375">
+  <CraftingPiece id="crpg_pugio_blade" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="1.45">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="1.68" />
       <Swing damage_type="Cut" damage_factor="2.45" />
