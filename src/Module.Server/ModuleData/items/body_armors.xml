@@ -1393,7 +1393,7 @@
   </Item>
   <Item id="crpg_sa_1ChurburghTorso" name="Plate Cuirass" mesh="sa_1churburghtorso" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="30" difficulty="0" appearance="1" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="55" leg_armor="30" arm_armor="30" covers_body="true" modifier_group="Plate" material_type="Plate"/>
+			<Armor body_armor="64" leg_armor="20" arm_armor="25" covers_body="true" modifier_group="Plate" material_type="Plate"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>

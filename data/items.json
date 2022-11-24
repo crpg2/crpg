@@ -23203,18 +23203,18 @@
     "name": "Plate Cuirass",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 61113,
+    "price": 53134,
     "weight": 30.0,
-    "tier": 11.9324493,
+    "tier": 11.4945612,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 55,
-      "armArmor": 30,
-      "legArmor": 30,
+      "bodyArmor": 64,
+      "armArmor": 25,
+      "legArmor": 20,
       "materialType": "Plate"
     },
     "weapons": []
