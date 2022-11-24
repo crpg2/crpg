@@ -7965,9 +7965,9 @@
     "name": "Dawn",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 45115,
-    "weight": 2.58,
-    "tier": 18.8280754,
+    "price": 13890,
+    "weight": 2.95,
+    "tier": 9.956682,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -7978,19 +7978,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.57,
-        "handling": 72,
+        "balance": 0.42,
+        "handling": 68,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 30,
+        "thrustSpeed": 86,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 82
       }
     ]
   },
@@ -12673,9 +12673,9 @@
     "name": "Heavy Executionner Long Sword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 13081,
-    "weight": 3.5,
-    "tier": 9.630092,
+    "price": 13992,
+    "weight": 3.87,
+    "tier": 9.996853,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12688,16 +12688,16 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 150,
-        "balance": 0.25,
+        "balance": 0.23,
         "handling": 71,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 83,
+        "thrustSpeed": 81,
         "swingDamage": 44,
         "swingDamageType": "Cut",
         "swingSpeed": 77
