@@ -24510,9 +24510,9 @@
     "name": "Long Thamaskene Tipped Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 41854,
+    "price": 12875,
     "weight": 1.96,
-    "tier": 16.75275,
+    "tier": 8.806298,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24530,7 +24530,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 83,
         "swingDamage": 14,
@@ -24553,7 +24553,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 91,
         "swingDamage": 14,
@@ -24576,7 +24576,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 91,
         "swingDamage": 14,
