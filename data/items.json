@@ -15724,9 +15724,9 @@
     "name": "Long Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 12359,
+    "price": 15670,
     "weight": 1.2,
-    "tier": 8.606313,
+    "tier": 9.825846,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15746,8 +15746,8 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
-        "thrustDamageType": "Pierce",
+        "thrustDamage": 22,
+        "thrustDamageType": "Cut",
         "thrustSpeed": 98,
         "swingDamage": 47,
         "swingDamageType": "Cut",

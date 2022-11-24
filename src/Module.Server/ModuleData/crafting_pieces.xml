@@ -1449,7 +1449,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_khuzait_polearm_2_t5_blade" name="{=bjQ8J71a}Long Glaive Head" tier="5" piece_type="Blade" mesh="spear_blade_24" length="68" weight="0.34">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="1.4" />
+      <Thrust damage_type="Cut" damage_factor="2.2" />
       <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Materials>
