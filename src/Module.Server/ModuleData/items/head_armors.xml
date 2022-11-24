@@ -1531,7 +1531,7 @@
 	</Item>
 	<Item id="crpg_pigface_bascinet" name="Western Bascinet" subtype="head_armor" mesh="pigface_bascinet" culture="Culture.vlandia" weight="4.5" difficulty="0" appearance="1" Type="HeadArmor">
 		<ItemComponent>
-			<Armor head_armor="57" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
+			<Armor head_armor="61" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
@@ -1555,7 +1555,7 @@
 	</Item>
 	<Item id="crpg_sa_1ChurburghHelm" name="Hounskull Bascinet" subtype="head_armor" mesh="sa_1churburghhelm" culture="Culture.vlandia" weight="4.5" difficulty="0" appearance="1" Type="HeadArmor">
 		<ItemComponent>
-			<Armor head_armor="57" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
+			<Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
