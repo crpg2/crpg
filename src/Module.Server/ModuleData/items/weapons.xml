@@ -180,7 +180,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_pernach_mace_t3" name="{=WASZXuec}Militia Pernach" crafting_template="crpg_Mace" is_merchandise="false">
     <Pieces>
-      <Piece id="crpg_pernach_mace_t3_blade" Type="Blade" scale_factor="123" />
+      <Piece id="crpg_pernach_mace_t3_blade" Type="Blade" scale_factor="137" />
       <Piece id="crpg_pernach_mace_t3_handle" Type="Handle" scale_factor="137" />
       <Piece id="crpg_pernach_mace_t3_pommel" Type="Pommel" scale_factor="137" />
     </Pieces>
@@ -1594,7 +1594,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_steel_mace_t3" name="{=8pnCvnFR}Steel Shestopyor" crafting_template="crpg_Mace" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_steel_mace_t3_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_steel_mace_t3_blade" Type="Blade" scale_factor="150" />
       <Piece id="crpg_steel_mace_t3_handle" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
@@ -1630,15 +1630,15 @@
   </CraftedItem>
   <CraftedItem id="crpg_empire_mace_3_t4" name="{=YLplNGxb}Calradic Mace" crafting_template="crpg_Mace" culture="Culture.empire" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_empire_mace_3_t4_blade" Type="Blade" />
-      <Piece id="crpg_empire_mace_3_t4_handle" Type="Handle" />
+      <Piece id="crpg_empire_mace_3_t4_blade" Type="Blade" scale_factor="130" />
+      <Piece id="crpg_empire_mace_3_t4_handle" Type="Handle" scale_factor="160" />
       <Piece id="crpg_empire_mace_3_t4_pommel" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_aserai_mace_4_t4" name="{=JM8Mjfa0}Spiralled Mace" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_aserai_mace_4_t4_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_aserai_mace_4_t4_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_aserai_mace_4_t4_blade" Type="Blade" scale_factor="130" />
+      <Piece id="crpg_aserai_mace_4_t4_handle" Type="Handle" scale_factor="130" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_khuzait_mace_2_t4" name="{=fcgDtZy7}Eastern Heavy Mace" crafting_template="crpg_Mace" culture="Culture.khuzait" modifier_group="mace">
@@ -1649,8 +1649,8 @@
   </CraftedItem>
   <CraftedItem id="crpg_khuzait_mace_3_t4" name="{=b88lWWOo}Fine Steel Mace" crafting_template="crpg_Mace" culture="Culture.khuzait" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_khuzait_mace_3_t4_blade" Type="Blade" scale_factor="140" />
-      <Piece id="crpg_khuzait_mace_3_t4_handle" Type="Handle" scale_factor="130" />
+      <Piece id="crpg_khuzait_mace_3_t4_blade" Type="Blade" scale_factor="170" />
+      <Piece id="crpg_khuzait_mace_3_t4_handle" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_shishpar_mace_t4" name="{=9EWN9SiT}Light Shishpar Mace" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">

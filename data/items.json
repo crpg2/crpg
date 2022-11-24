@@ -1533,9 +1533,9 @@
     "name": "Spiralled Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 164,
-    "weight": 1.55,
-    "tier": 0.636818,
+    "price": 7537,
+    "weight": 1.21,
+    "tier": 10.0279627,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1545,19 +1545,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 67,
-        "balance": 0.78,
-        "handling": 97,
+        "length": 87,
+        "balance": 0.61,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 90,
-        "swingDamage": 10,
+        "thrustSpeed": 94,
+        "swingDamage": 21,
         "swingDamageType": "Blunt",
-        "swingSpeed": 93
+        "swingSpeed": 88
       }
     ]
   },
@@ -6095,9 +6095,9 @@
     "name": "Bone Crusher",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 228,
-    "weight": 1.49,
-    "tier": 0.912822247,
+    "price": 6739,
+    "weight": 1.63,
+    "tier": 9.421198,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6108,18 +6108,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 71,
-        "balance": 0.91,
-        "handling": 97,
+        "balance": 0.8,
+        "handling": 95,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 91,
-        "swingDamage": 10,
+        "thrustSpeed": 90,
+        "swingDamage": 19,
         "swingDamageType": "Blunt",
-        "swingSpeed": 97
+        "swingSpeed": 93
       }
     ]
   },
@@ -10397,9 +10397,9 @@
     "name": "Imperial Light Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 149,
+    "price": 5699,
     "weight": 1.9,
-    "tier": 0.569453835,
+    "tier": 8.574321,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10419,7 +10419,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 87,
-        "swingDamage": 10,
+        "swingDamage": 19,
         "swingDamageType": "Blunt",
         "swingSpeed": 91
       }
@@ -10430,9 +10430,9 @@
     "name": "Calradic Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 285,
-    "weight": 1.8,
-    "tier": 1.12660909,
+    "price": 6490,
+    "weight": 1.79,
+    "tier": 9.224512,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10442,19 +10442,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 47,
-        "balance": 1.0,
-        "handling": 106,
+        "length": 73,
+        "balance": 0.63,
+        "handling": 92,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 10,
+        "thrustSpeed": 88,
+        "swingDamage": 21,
         "swingDamageType": "Blunt",
-        "swingSpeed": 101
+        "swingSpeed": 88
       }
     ]
   },
@@ -15433,9 +15433,9 @@
     "name": "Eastern Heavy Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 953,
-    "weight": 1.41,
-    "tier": 2.87241316,
+    "price": 5143,
+    "weight": 1.43,
+    "tier": 8.090238,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15455,7 +15455,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 92,
-        "swingDamage": 14,
+        "swingDamage": 18,
         "swingDamageType": "Blunt",
         "swingSpeed": 92
       }
@@ -15466,9 +15466,9 @@
     "name": "Fine Steel Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5518,
-    "weight": 1.78,
-    "tier": 8.419614,
+    "price": 6520,
+    "weight": 1.42,
+    "tier": 9.248872,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15478,19 +15478,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 90,
-        "balance": 0.23,
-        "handling": 81,
+        "length": 91,
+        "balance": 0.39,
+        "handling": 84,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 88,
-        "swingDamage": 27,
+        "thrustSpeed": 91,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 76
+        "swingSpeed": 81
       }
     ]
   },
@@ -21763,9 +21763,9 @@
     "name": "Militia Pernach",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3191,
-    "weight": 2.91,
-    "tier": 6.138426,
+    "price": 5479,
+    "weight": 2.72,
+    "tier": 8.385604,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21775,17 +21775,17 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 71,
+        "length": 73,
         "balance": 0.39,
-        "handling": 88,
+        "handling": 89,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 80,
-        "swingDamage": 23,
+        "thrustSpeed": 82,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
         "swingSpeed": 81
       }
@@ -25208,9 +25208,9 @@
     "name": "Steel Shestopyor",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 65,
-    "weight": 2.24,
-    "tier": 0.103962995,
+    "price": 5545,
+    "weight": 1.34,
+    "tier": 8.442869,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25220,8 +25220,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 72,
-        "balance": 0.4,
+        "length": 80,
+        "balance": 0.58,
         "handling": 89,
         "bodyArmor": 0,
         "flags": [
@@ -25229,10 +25229,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 9,
+        "thrustSpeed": 92,
+        "swingDamage": 21,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 87
       }
     ]
   },
@@ -29606,9 +29606,9 @@
     "name": "Fullered Cavalry Mace",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 148,
-    "weight": 2.1,
-    "tier": 0.561679661,
+    "price": 5723,
+    "weight": 2.85,
+    "tier": 8.594976,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29619,18 +29619,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 56,
-        "balance": 0.76,
-        "handling": 99,
+        "balance": 0.59,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 10,
+        "thrustSpeed": 81,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 92
+        "swingSpeed": 87
       }
     ]
   },
