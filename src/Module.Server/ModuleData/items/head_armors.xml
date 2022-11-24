@@ -866,7 +866,7 @@
   </Item>
   <Item id="crpg_full_helm_over_mail_coif" name="{=FsDZC8Yl}Full Helm over Mail Coif" subtype="head_armor" mesh="vlandia_helmet_s_a" culture="Culture.vlandia" weight="3.209259" difficulty="0" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
