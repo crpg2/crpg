@@ -10529,9 +10529,9 @@
     "name": "Decorated Short Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7735,
+    "price": 7216,
     "weight": 2.04,
-    "tier": 10.1730194,
+    "tier": 9.787544,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10551,7 +10551,7 @@
         "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 31,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
         "swingSpeed": 84
       }
