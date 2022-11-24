@@ -9,7 +9,7 @@
   <CraftedItem id="crpg_peasant_maul_t1_2" name="{=gYpNILVC}Sledgehammer" crafting_template="crpg_TwoHandedMace" culture="Culture.battania" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_peasant_maul_t1_2_blade" Type="Blade" scale_factor="102" />
-      <Piece id="crpg_peasant_maul_t1_2_handle" Type="Handle" />
+      <Piece id="crpg_peasant_maul_t1_2_handle" Type="Handle" scale_factor="120"/>
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_peasant_pickaxe_1_t1" name="{=zUFRE9y4}Pickaxe" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
