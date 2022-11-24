@@ -5900,7 +5900,7 @@
 <CraftingPiece id="crpg_war_scythe_blade" name="{=}War Scythe Blade" tier="2" piece_type="Blade" mesh="warscythe_head" length="120" weight="0.4248" excluded_item_usage_features="shield:thrust">
 <BuildData piece_offset="-20"/>
 <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-<Swing damage_type="Cut" damage_factor="1.15"/>
+<Swing damage_type="Cut" damage_factor="4.0"/>
 </BladeData>
 <Materials>
 <Material id="Iron3" count="4"/>

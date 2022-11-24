@@ -30275,9 +30275,9 @@
     "name": "War Scythe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 60,
+    "price": 13870,
     "weight": 1.54,
-    "tier": 0.0336317,
+    "tier": 9.18075752,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30300,7 +30300,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 96,
-        "swingDamage": 11,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
         "swingSpeed": 86
       }
