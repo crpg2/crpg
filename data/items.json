@@ -20183,9 +20183,9 @@
     "name": "Broad Leaf Shaped Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 32126,
-    "weight": 1.43,
-    "tier": 14.53997,
+    "price": 14988,
+    "weight": 1.5,
+    "tier": 9.586004,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20197,18 +20197,18 @@
         "stackAmount": 0,
         "length": 149,
         "balance": 0.0,
-        "handling": 70,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
+        "thrustSpeed": 87,
         "swingDamage": 21,
         "swingDamageType": "Cut",
-        "swingSpeed": 44
+        "swingSpeed": 42
       },
       {
         "class": "TwoHandedPolearm",
@@ -20217,8 +20217,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 149,
-        "balance": 0.46,
-        "handling": 67,
+        "balance": 0.42,
+        "handling": 66,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -20226,12 +20226,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 95,
         "swingDamage": 21,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 82
       },
       {
         "class": "TwoHandedPolearm",
@@ -20240,8 +20240,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 149,
-        "balance": 0.46,
-        "handling": 67,
+        "balance": 0.42,
+        "handling": 66,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -20249,12 +20249,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 95,
         "swingDamage": 21,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 82
       }
     ]
   },

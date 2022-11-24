@@ -887,7 +887,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northern_spear_2_t3_handle" name="{=7EZbFRaG}Reinforced Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_21" length="230" weight="1.5">
+  <CraftingPiece id="crpg_northern_spear_2_t3_handle" name="{=7EZbFRaG}Reinforced Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_21" length="230" weight="1.6">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -1573,7 +1573,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_northern_spear_2_t3_blade" name="{=NAHHwS3G}Broad Leaf Shaped Spear Tip" tier="3" piece_type="Blade" mesh="spear_blade_40" length="42" weight="0.3828">
     <BladeData stack_amount="0" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
       <Swing damage_type="Cut" damage_factor="2.1" />
       </BladeData>
     <Materials>
