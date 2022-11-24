@@ -29742,9 +29742,9 @@
     "name": "Engraved Pointed Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 10610,
+    "price": 7484,
     "weight": 2.33,
-    "tier": 12.1067123,
+    "tier": 9.988228,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29763,10 +29763,10 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
-        "swingDamage": 28,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
         "swingSpeed": 80
       }
