@@ -1537,7 +1537,7 @@
 	</Item>
 	<Item id="crpg_sa_barbute1" name="Western Barbute" subtype="head_armor" mesh="sa_barbute1" culture="Culture.vlandia" weight="4" difficulty="0" appearance="1" Type="HeadArmor">
 		<ItemComponent>
-			<Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
+			<Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
