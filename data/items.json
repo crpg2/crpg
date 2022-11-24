@@ -26851,9 +26851,9 @@
     "name": "Decorated Fullered Sword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 8311,
-    "weight": 1.91,
-    "tier": 10.5858135,
+    "price": 7410,
+    "weight": 1.97,
+    "tier": 9.933563,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26866,18 +26866,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.41,
-        "handling": 86,
+        "balance": 0.37,
+        "handling": 85,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 81
       }
     ]
   },
