@@ -1396,7 +1396,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_empire_polearm_1_t4_blade" name="{=dXRt8jY4}Menavlion Head" tier="4" piece_type="Blade" mesh="spear_blade_7" length="52.924" weight="0.43	">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
       <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Materials>
@@ -1429,7 +1429,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_battania_polearm_1_t5_blade" name="{=PmPxx2gK}Bent Razor Head" tier="4" piece_type="Blade" mesh="spear_blade_44" length="80" weight="0.55" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="4.5" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
       <Flag name="CanHook" />

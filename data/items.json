@@ -4673,9 +4673,9 @@
     "name": "Rhomphaia",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 9106,
+    "price": 12863,
     "weight": 1.25,
-    "tier": 7.2373457,
+    "tier": 8.801638,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4699,7 +4699,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 98,
-        "swingDamage": 45,
+        "swingDamage": 47,
         "swingDamageType": "Cut",
         "swingSpeed": 79
       }
@@ -10666,9 +10666,9 @@
     "name": "Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 10197,
+    "price": 15394,
     "weight": 1.66,
-    "tier": 7.72018433,
+    "tier": 9.729289,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10688,7 +10688,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 38,
