@@ -10702,9 +10702,9 @@
     "name": "Fine Steel Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 40821,
+    "price": 8531,
     "weight": 1.29,
-    "tier": 16.5309887,
+    "tier": 6.971644,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10724,10 +10724,10 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 30,
+        "thrustDamage": 26,
         "thrustDamageType": "Cut",
         "thrustSpeed": 96,
-        "swingDamage": 45,
+        "swingDamage": 52,
         "swingDamageType": "Cut",
         "swingSpeed": 71
       }
