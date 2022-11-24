@@ -1741,7 +1741,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_western_spear_3_t3_blade" name="{=CdBAvJdP}Kontos Head" tier="3" piece_type="Blade" mesh="spear_blade_8" length="60.153" weight="0.56">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
       <Swing damage_type="Blunt" damage_factor="1.2" />
     </BladeData>
     <Materials>
