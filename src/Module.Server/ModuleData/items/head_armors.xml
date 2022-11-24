@@ -1507,19 +1507,19 @@
 	</Item>
 	<Item id="crpg_great_helm_base" name="Great Helmet" subtype="head_armor" mesh="great_helm_base" culture="Culture.vlandia" weight="4.5" difficulty="0" appearance="1" Type="HeadArmor">
 		<ItemComponent>
-			<Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
+			<Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>
 	<Item id="crpg_great_helm_brass" name="Brass Great Helmet" subtype="head_armor" mesh="great_helm_brass" culture="Culture.vlandia" weight="4" difficulty="0" appearance="1" Type="HeadArmor">
 		<ItemComponent>
-			<Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
+			<Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>
 	<Item id="crpg_great_helm_dark" name="Blackened Great Helmet" subtype="head_armor" mesh="great_helm_dark" culture="Culture.vlandia" weight="4" difficulty="0" appearance="1" Type="HeadArmor">
 		<ItemComponent>
-			<Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
+			<Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>

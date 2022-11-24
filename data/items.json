@@ -12153,15 +12153,15 @@
     "name": "Great Helmet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 6766,
+    "price": 10271,
     "weight": 4.5,
-    "tier": 9.054308,
+    "tier": 10.1408243,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 50,
+      "headArmor": 56,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12174,15 +12174,15 @@
     "name": "Brass Great Helmet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 7074,
+    "price": 10742,
     "weight": 4.0,
-    "tier": 9.164759,
+    "tier": 10.26453,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 50,
+      "headArmor": 56,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12195,15 +12195,15 @@
     "name": "Blackened Great Helmet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 7074,
+    "price": 10742,
     "weight": 4.0,
-    "tier": 9.164759,
+    "tier": 10.26453,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 50,
+      "headArmor": 56,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
