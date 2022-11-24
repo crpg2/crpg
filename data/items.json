@@ -7619,7 +7619,6 @@
           "NotUsableWithOneHand",
           "HasString",
           "StringHeldByHand",
-          "CanPenetrateShield",
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
@@ -7634,7 +7633,7 @@
   },
   {
     "id": "crpg_crossbow_c",
-    "name": "Huntsman's Heavy Arbalest",
+    "name": "Heavy Hunting Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
     "price": 9218,
@@ -7696,6 +7695,7 @@
           "NotUsableWithOneHand",
           "HasString",
           "StringHeldByHand",
+          "CanPenetrateShield",
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
@@ -7751,7 +7751,7 @@
     "culture": "Vlandia",
     "type": "Crossbow",
     "price": 17970,
-    "weight": 5.2,
+    "weight": 5.5,
     "tier": 9.990774,
     "requirement": 17,
     "flags": [],
@@ -7826,16 +7826,16 @@
     "name": "Squire's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 7509,
+    "price": 8123,
     "weight": 2.8,
-    "tier": 6.086712,
-    "requirement": 10,
+    "tier": 6.37217569,
+    "requirement": 11,
     "flags": [],
     "weapons": [
       {
         "class": "Crossbow",
         "itemUsage": "crossbow_light",
-        "accuracy": 98,
+        "accuracy": 97,
         "missileSpeed": 105,
         "stackAmount": 1,
         "length": 95,
@@ -7855,7 +7855,7 @@
         "thrustSpeed": 86,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 52
+        "swingSpeed": 55
       }
     ]
   },
