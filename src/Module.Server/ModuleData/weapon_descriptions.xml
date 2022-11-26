@@ -3311,7 +3311,7 @@
   </WeaponDescription>
   <WeaponDescription id="crpg_TwoHandedMace" weapon_class="TwoHandedMace" item_usage_features="twohanded:axe">
     <WeaponFlags>
-      <WeaponFlag value=  "MeleeWeapon" />
+      <WeaponFlag value="MeleeWeapon" />
       <WeaponFlag value="NotUsableWithOneHand" />
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
