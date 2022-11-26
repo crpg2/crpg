@@ -839,8 +839,8 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_pike_1_t5_handle" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.1" excluded_item_usage_features="long" CraftingCost="150">
-    <BuildData piece_offset="39.5" />
+  <CraftingPiece id="crpg_vlandia_pike_1_t5_handle" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.4" excluded_item_usage_features="long" CraftingCost="150">
+    <BuildData piece_offset="145" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>

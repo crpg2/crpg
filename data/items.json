@@ -29681,9 +29681,9 @@
     "name": "Pike",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 2963,
-    "weight": 0.66,
-    "tier": 3.69621968,
+    "price": 4282,
+    "weight": 1.0,
+    "tier": 4.641678,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29693,9 +29693,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 504,
+        "length": 502,
         "balance": 0.0,
-        "handling": 32,
+        "handling": 34,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -29708,7 +29708,7 @@
         "thrustSpeed": 86,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 20
+        "swingSpeed": 21
       },
       {
         "class": "TwoHandedPolearm",
@@ -29716,9 +29716,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 504,
+        "length": 502,
         "balance": 0.0,
-        "handling": 32,
+        "handling": 34,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -29731,7 +29731,7 @@
         "thrustSpeed": 86,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 20
+        "swingSpeed": 21
       }
     ]
   },
