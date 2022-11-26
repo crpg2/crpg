@@ -746,7 +746,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_lance_3_t5_handle" name="{=tgJ3dSOx}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.5">
+  <CraftingPiece id="crpg_khuzait_lance_3_t5_handle" name="{=tgJ3dSOx}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.6">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -770,7 +770,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_lance_3_t5_handle" name="{=8yb60cDi}Mahogany Long Spear Shaft" tier="4" piece_type="Handle" mesh="spear_handle_24" length="260" weight="1.6">
+  <CraftingPiece id="crpg_empire_lance_3_t5_handle" name="{=8yb60cDi}Mahogany Long Spear Shaft" tier="4" piece_type="Handle" mesh="spear_handle_24" length="260" weight="1.45">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -782,19 +782,19 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_lance_1_t3_handle" name="{=pocRP9dq}Long Ash Staff" tier="3" piece_type="Handle" mesh="spear_handle_13" length="228" weight="1.6" CraftingCost="110">
+  <CraftingPiece id="crpg_empire_lance_1_t3_handle" name="{=pocRP9dq}Long Ash Staff" tier="3" piece_type="Handle" mesh="spear_handle_13" length="228" weight="1.55" CraftingCost="110">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_lance_2_t5_handle" name="{=e1DF7wbz}Hardened Ashen Staff" tier="5" piece_type="Handle" mesh="spear_handle_19" length="210" weight="1.6">
+  <CraftingPiece id="crpg_sturgia_lance_2_t5_handle" name="{=e1DF7wbz}Hardened Ashen Staff" tier="5" piece_type="Handle" mesh="spear_handle_19" length="210" weight="1.15">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_lance_3_t5_handle" name="{=e1DF7wbz}Hardened Ashen Staff" tier="5" piece_type="Handle" mesh="spear_handle_19" length="210" weight="1.6">
+  <CraftingPiece id="crpg_vlandia_lance_3_t5_handle" name="{=e1DF7wbz}Hardened Ashen Staff" tier="5" piece_type="Handle" mesh="spear_handle_19" length="210" weight="1.43">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -806,7 +806,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_lance_1_t3_handle" name="{=GsBQCQEF}Reinforced Long Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_23" length="250" weight="1.6">
+  <CraftingPiece id="crpg_khuzait_lance_1_t3_handle" name="{=GsBQCQEF}Reinforced Long Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_23" length="250" weight="1.5">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -1295,7 +1295,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_vlandia_lance_2_t4_blade" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.3096" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.91" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="1" />
@@ -1349,9 +1349,9 @@
       <Material id="Wood" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_lance_3_t5_blade" name="{=MpVC0RXl}Northern Triangular Spear" tier="5" piece_type="Blade" mesh="spear_blade_13" length="50.864" weight="0.3592" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_khuzait_lance_3_t5_blade" name="{=MpVC0RXl}Northern Triangular Spear" tier="5" piece_type="Blade" mesh="spear_blade_13" length="50.864" weight="0.39" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.98" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
     </BladeData>
     <Flags>
       <Flag name="NotStackable" type="ItemFlags" />
@@ -1360,9 +1360,9 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sturgia_lance_2_t5_blade" name="{=MpVC0RXl}Northern Triangular Spear" tier="5" piece_type="Blade" mesh="spear_blade_13" length="50.864" weight="0.3592" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_sturgia_lance_2_t5_blade" name="{=MpVC0RXl}Northern Triangular Spear" tier="5" piece_type="Blade" mesh="spear_blade_13" length="50.864" weight="0.38" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.98" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
     </BladeData>
     <Flags>
       <Flag name="NotStackable" type="ItemFlags" />
@@ -1403,9 +1403,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_lance_1_t3_blade" name="{=OryiZr9d}Kontarion" tier="3" piece_type="Blade" mesh="spear_blade_23" length="42" weight="0.352" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_empire_lance_1_t3_blade" name="{=OryiZr9d}Kontarion" tier="3" piece_type="Blade" mesh="spear_blade_23" length="42" weight="0.30" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -1456,9 +1456,9 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_polearm_1_t4_blade" name="{=OBeOZ27b}Glaive Head" tier="4" piece_type="Blade" mesh="spear_blade_19" length="37.4" weight="0.46">
+  <CraftingPiece id="crpg_khuzait_polearm_1_t4_blade" name="{=OBeOZ27b}Glaive Head" tier="4" piece_type="Blade" mesh="spear_blade_19" length="37.4" weight="0.43">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="1.3" />
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
       <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
     <Materials>
@@ -1490,7 +1490,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_sturgia_lance_1_t4_blade" name="{=TKVxb6QD}Thamaskene Steel Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_41" length="53.2" weight="0.2792" excluded_item_usage_features="swing">
     <BladeData stack_amount="0" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.875" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="2" />
@@ -1547,7 +1547,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_khuzait_lance_2_t4_blade" name="{=nRKOX66b}Jagged Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_36" length="42.5" weight="0.268" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.84" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -1649,7 +1649,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_aserai_lance_1_t5_blade" name="{=9aYBy1RN}Fine Steel Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.2456" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.875" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -1672,9 +1672,9 @@
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_lance_1_t3_blade" name="{=ZUp9mm79}Jagged Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_35" length="41" weight="0.3056" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_khuzait_lance_1_t3_blade" name="{=ZUp9mm79}Jagged Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_35" length="41" weight="0.29" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5_1" holster_body_name="bo_throwing_spear_quiver_5_1" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
@@ -1698,9 +1698,9 @@
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_lance_2_t4_blade" name="{=ZcUNAfKT}Extra Long Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_4" length="72.558" weight="0.6168" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_empire_lance_2_t4_blade" name="{=ZcUNAfKT}Extra Long Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_4" length="72.558" weight="0.4168" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.875" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -1748,9 +1748,9 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_lance_3_t5_blade" name="{=QwfDN06p}Knightly Lance Head" tier="5" piece_type="Blade" mesh="spear_blade_5" length="52.242" weight="0.4056" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_vlandia_lance_3_t5_blade" name="{=QwfDN06p}Knightly Lance Head" tier="5" piece_type="Blade" mesh="spear_blade_5" length="52.242" weight="0.3056" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.98" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="1" />
@@ -1773,9 +1773,9 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_lance_3_t5_blade" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.4" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_empire_lance_3_t5_blade" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.5" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.91" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="1" />
@@ -1811,9 +1811,9 @@
       <Material id="Iron1" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_lance_1_t3_blade" name="{=uwG8iwBc}Long Grassland Spear" tier="3" piece_type="Blade" mesh="spear_blade_20" length="46" weight="0.3592" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_vlandia_lance_1_t3_blade" name="{=uwG8iwBc}Long Grassland Spear" tier="3" piece_type="Blade" mesh="spear_blade_20" length="46" weight="0.3492" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.735" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="1" />
@@ -1893,25 +1893,25 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_western_throwing_axe_1_t1_handle" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.226">
+  <CraftingPiece id="crpg_western_throwing_axe_1_t1_handle" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.8">
     <BuildData piece_offset="7.2" next_piece_offset="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northern_throwing_axe_1_t1_handle" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.226">
+  <CraftingPiece id="crpg_northern_throwing_axe_1_t1_handle" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="1">
     <BuildData piece_offset="7.2" next_piece_offset="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_southern_throwing_axe_1_t4_handle" name="{=Wkhv9ESv}Hardened Oaken Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_12_handle" length="70" weight="0.234">
+  <CraftingPiece id="crpg_southern_throwing_axe_1_t4_handle" name="{=Wkhv9ESv}Hardened Oaken Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_12_handle" length="70" weight="1">
     <BuildData piece_offset="8.175" next_piece_offset="4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_highland_throwing_axe_1_t2_handle" name="{=Wkhv9ESv}Hardened Oaken Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_12_handle" length="70" weight="0.234">
+  <CraftingPiece id="crpg_highland_throwing_axe_1_t2_handle" name="{=Wkhv9ESv}Hardened Oaken Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_12_handle" length="70" weight="1">
     <BuildData piece_offset="8.175" next_piece_offset="4" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -2108,7 +2108,7 @@
   <CraftingPiece id="crpg_northern_throwing_axe_1_t1_blade" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.481">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.6275" />
+      <Swing damage_type="Cut" damage_factor="1.1" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -2121,7 +2121,7 @@
   <CraftingPiece id="crpg_western_throwing_axe_1_t1_blade" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.624" />
+      <Swing damage_type="Cut" damage_factor="1.1" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -2134,7 +2134,7 @@
   <CraftingPiece id="crpg_southern_throwing_axe_1_t4_blade" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.624" />
+      <Swing damage_type="Cut" damage_factor="1.125" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -2147,7 +2147,7 @@
   <CraftingPiece id="crpg_highland_throwing_axe_1_t2_blade" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.624" />
+      <Swing damage_type="Cut" damage_factor="1.125" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -5303,7 +5303,7 @@
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_executionner_2sword_blade" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="0.56" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_heavy_executionner_2sword_blade" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="0.56">
     <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_5_scabbard_5">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="4.4" />
