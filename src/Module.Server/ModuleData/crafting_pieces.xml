@@ -840,7 +840,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_vlandia_pike_1_t5_handle" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.4" excluded_item_usage_features="long" CraftingCost="150">
-    <BuildData piece_offset="145" />
+    <BuildData piece_offset="125" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
@@ -1781,7 +1781,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_pike_1_t5_blade" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.4" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_vlandia_pike_1_t5_blade" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.375" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
     </BladeData>
