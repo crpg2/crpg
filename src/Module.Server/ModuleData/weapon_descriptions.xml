@@ -3311,11 +3311,13 @@
   </WeaponDescription>
   <WeaponDescription id="crpg_TwoHandedMace" weapon_class="TwoHandedMace" item_usage_features="twohanded:axe">
     <WeaponFlags>
-      <WeaponFlag value="MeleeWeapon" />
+      <WeaponFlag value=  "MeleeWeapon" />
       <WeaponFlag value="NotUsableWithOneHand" />
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_bos_head" />
+      <AvailablePiece id="crpg_bos_handle" />
       <AvailablePiece id="crpg_2hmorningstar_mace_t3_blade" />
       <AvailablePiece id="crpg_2hmorningstar_mace_t3_handle" />
       <AvailablePiece id="crpg_2hmorningstar_mace_t3_pommel" />
