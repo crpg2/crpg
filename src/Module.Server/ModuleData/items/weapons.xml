@@ -1306,7 +1306,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_sturgia_noble_sword_3_t5" name="{=QA5zGCKf}Decorated Fullered Sword" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_sturgia_noble_sword_3_t5_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_sturgia_noble_sword_3_t5_blade" Type="Blade" scale_factor="145" />
       <Piece id="crpg_sturgia_noble_sword_3_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_sturgia_noble_sword_3_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_sturgia_noble_sword_3_t5_pommel" Type="Pommel" scale_factor="100" />
