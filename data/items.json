@@ -7711,9 +7711,9 @@
     "name": "Knight's Heavy Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 13786,
+    "price": 14182,
     "weight": 5.0,
-    "tier": 8.61823,
+    "tier": 8.756121,
     "requirement": 15,
     "flags": [],
     "weapons": [
@@ -7721,7 +7721,7 @@
         "class": "Crossbow",
         "itemUsage": "crossbow",
         "accuracy": 99,
-        "missileSpeed": 125,
+        "missileSpeed": 127,
         "stackAmount": 1,
         "length": 100,
         "balance": 0.0,
@@ -7893,6 +7893,84 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 55
+      }
+    ]
+  },
+  {
+    "id": "crpg_crossbow_i",
+    "name": "Windlass Lord's Arbalest",
+    "culture": "Vlandia",
+    "type": "Crossbow",
+    "price": 17917,
+    "weight": 7.5,
+    "tier": 9.974548,
+    "requirement": 17,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Crossbow",
+        "itemUsage": "crossbow",
+        "accuracy": 100,
+        "missileSpeed": 130,
+        "stackAmount": 1,
+        "length": 100,
+        "balance": 0.0,
+        "handling": 83,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "CanPenetrateShield",
+          "CantReloadOnHorseback",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 59,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 83,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 60
+      }
+    ]
+  },
+  {
+    "id": "crpg_crossbow_j",
+    "name": "Windlass Knight's Arbalest",
+    "culture": "Empire",
+    "type": "Crossbow",
+    "price": 13197,
+    "weight": 7.0,
+    "tier": 8.409226,
+    "requirement": 15,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Crossbow",
+        "itemUsage": "crossbow",
+        "accuracy": 99,
+        "missileSpeed": 125,
+        "stackAmount": 1,
+        "length": 100,
+        "balance": 0.0,
+        "handling": 84,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "CanPenetrateShield",
+          "CantReloadOnHorseback",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 52,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 84,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 68
       }
     ]
   },
