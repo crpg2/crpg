@@ -7599,7 +7599,7 @@
     "culture": "Empire",
     "type": "Crossbow",
     "price": 1325,
-    "weight": 1.2,
+    "weight": 1.0,
     "tier": 2.01544929,
     "requirement": 3,
     "flags": [],
@@ -25923,6 +25923,47 @@
       "materialType": "Leather"
     },
     "weapons": []
+  },
+  {
+    "id": "crpg_strong_tribal_long_bow",
+    "name": "Strong Tribal Long Bow",
+    "culture": "Aserai",
+    "type": "Bow",
+    "price": 12238,
+    "weight": 0.9,
+    "tier": 9.988505,
+    "requirement": 0,
+    "flags": [
+      "ForceAttachOffHandPrimaryItemBone"
+    ],
+    "weapons": [
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 96,
+        "missileSpeed": 103,
+        "stackAmount": 1,
+        "length": 116,
+        "balance": 0.0,
+        "handling": 76,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 19,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 76,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 86
+      }
+    ]
   },
   {
     "id": "crpg_stronger_reinforced_kite_shield",
