@@ -1693,6 +1693,10 @@
       <UsablePiece piece_id="crpg_wide_leaf_spear_t4_blade" />
       <UsablePiece piece_id="crpg_wide_leaf_spear_t4_handle" />
       <UsablePiece piece_id="crpg_wide_leaf_spear_t4_pommel" />
+      <UsablePiece piece_id="crpg_hoplite_blade_1" />
+      <UsablePiece piece_id="crpg_hoplite_handle_1" />
+      <UsablePiece piece_id="crpg_hoplite_guard_1" />
+      <UsablePiece piece_id="crpg_hoplite_pommel_1" />
       <UsablePiece piece_id="crpg_iklwa_handle_1" />
       <UsablePiece piece_id="crpg_iklwa_blade_1" />
     </UsablePieces>
