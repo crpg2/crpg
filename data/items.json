@@ -5504,6 +5504,27 @@
     ],
     "weapons": [
       {
+        "class": "OneHandedAxe",
+        "itemUsage": "onehanded_rshield_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 112,
+        "balance": 0.16,
+        "handling": 74,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "BonusAgainstShield"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 34,
+        "swingDamageType": "Cut",
+        "swingSpeed": 74
+      },
+      {
         "class": "TwoHandedAxe",
         "itemUsage": "twohanded_widegrip_axe",
         "accuracy": 0,
@@ -5525,6 +5546,27 @@
         "swingDamage": 34,
         "swingDamageType": "Cut",
         "swingSpeed": 92
+      },
+      {
+        "class": "OneHandedAxe",
+        "itemUsage": "onehanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 112,
+        "balance": 0.16,
+        "handling": 74,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "BonusAgainstShield"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 34,
+        "swingDamageType": "Cut",
+        "swingSpeed": 74
       }
     ]
   },
@@ -26287,14 +26329,35 @@
     "name": "Drilled Two Handed Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 5258,
-    "weight": 1.27,
-    "tier": 5.71865654,
+    "price": 5199,
+    "weight": 1.08,
+    "tier": 5.680962,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
     ],
     "weapons": [
+      {
+        "class": "OneHandedAxe",
+        "itemUsage": "onehanded_rshield_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 111,
+        "balance": 0.25,
+        "handling": 73,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "BonusAgainstShield"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 31,
+        "swingDamageType": "Cut",
+        "swingSpeed": 77
+      },
       {
         "class": "TwoHandedAxe",
         "itemUsage": "twohanded_widegrip_axe",
@@ -26302,8 +26365,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 111,
-        "balance": 0.69,
-        "handling": 80,
+        "balance": 0.81,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -26313,10 +26376,31 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 34,
+        "thrustSpeed": 100,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 94
+      },
+      {
+        "class": "OneHandedAxe",
+        "itemUsage": "onehanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 111,
+        "balance": 0.25,
+        "handling": 73,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "BonusAgainstShield"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 31,
+        "swingDamageType": "Cut",
+        "swingSpeed": 77
       }
     ]
   },

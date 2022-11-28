@@ -1625,6 +1625,8 @@
       <AvailablePiece id="crpg_sturgia_2haxe_1_t4_blade" />
       <AvailablePiece id="crpg_sturgia_2haxe_2_t5_blade" />
       <AvailablePiece id="crpg_vlandia_2haxe_1_t4_blade" />
+      <AvailablePiece id="crpg_sturgia_2haxe_1_t4_handle" />
+      <AvailablePiece id="crpg_bearded_axe_t3_handle" />
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_OneHandedBastardAxeAlternative" weapon_class="OneHandedAxe" item_usage_features="onehanded:axe">
@@ -1648,6 +1650,8 @@
       <AvailablePiece id="crpg_sturgia_2haxe_1_t4_blade" />
       <AvailablePiece id="crpg_sturgia_2haxe_2_t5_blade" />
       <AvailablePiece id="crpg_vlandia_2haxe_1_t4_blade" />
+      <AvailablePiece id="crpg_sturgia_2haxe_1_t4_handle" />
+      <AvailablePiece id="crpg_bearded_axe_t3_handle" />
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_TwoHandedAxe" weapon_class="TwoHandedAxe" item_usage_features="twohanded:widegrip:axe">
