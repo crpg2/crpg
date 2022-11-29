@@ -2992,7 +2992,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_noble_sword_1_t5_pommel" name="{=rn6tttI2}Southern Ornamental Pommel" tier="5" piece_type="Pommel" mesh="aserai_noble_pommel_2" culture="Culture.aserai" length="6.4" weight="0.284">
+  <CraftingPiece id="crpg_aserai_noble_sword_1_t5_pommel" name="{=rn6tttI2}Southern Ornamental Pommel" tier="5" piece_type="Pommel" mesh="aserai_noble_pommel_2" culture="Culture.aserai" length="6.4" weight="0.35">
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
@@ -3668,7 +3668,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_noble_sword_1_t5_handle" name="{=p1Uz3dqs}Riveted Decorated Red Kaskara Grip" tier="5" piece_type="Handle" mesh="aserai_noble_grip_1" culture="Culture.aserai" length="15" weight="0.225">
+  <CraftingPiece id="crpg_aserai_noble_sword_1_t5_handle" name="{=p1Uz3dqs}Riveted Decorated Red Kaskara Grip" tier="5" piece_type="Handle" mesh="aserai_noble_grip_1" culture="Culture.aserai" length="15" weight="0.50">
     <BuildData piece_offset="0" previous_piece_offset="0.1" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron5" count="1" />
@@ -3969,7 +3969,7 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_sword_6_t4_handle" name="{=In69b7aL}Half Leather Covered Metal Decorated One Handed Grip" tier="4" piece_type="Handle" mesh="aserai_grip_29" culture="Culture.aserai" length="16.1" weight="0.225">
+  <CraftingPiece id="crpg_aserai_sword_6_t4_handle" name="{=In69b7aL}Half Leather Covered Metal Decorated One Handed Grip" tier="4" piece_type="Handle" mesh="aserai_grip_29" culture="Culture.aserai" length="16.1" weight="0.90">
     <BuildData piece_offset="-1" previous_piece_offset="0.1" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron4" count="2" />
@@ -4017,7 +4017,7 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_5_t4_handle" name="{=Lh1E9EsS}Imperial Steel Reinforced Two Handed Grip" tier="4" piece_type="Handle" mesh="empire_grip_11" culture="Culture.empire" length="25" weight="1.20">
+  <CraftingPiece id="crpg_empire_sword_5_t4_handle" name="{=Lh1E9EsS}Imperial Steel Reinforced Two Handed Grip" tier="4" piece_type="Handle" mesh="empire_grip_11" culture="Culture.empire" length="25" weight="1.33">
     <BuildData piece_offset="-0.18" next_piece_offset="-0.3" previous_piece_offset="0.9" />
     <Materials>
       <Material id="Iron4" count="2" />
@@ -5025,10 +5025,10 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_noble_sword_1_t5_blade" name="{=gwkR6TZL}Decorated Kaskara Blade" tier="5" piece_type="Blade" mesh="aserai_noble_blade_2" culture="Culture.aserai" length="93.2" weight="1.3">
+  <CraftingPiece id="crpg_aserai_noble_sword_1_t5_blade" name="{=gwkR6TZL}Decorated Kaskara Blade" tier="5" piece_type="Blade" mesh="aserai_noble_blade_2" culture="Culture.aserai" length="93.2" weight="0.83">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="aserai_noble_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="1.7" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="1.2" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5546,9 +5546,9 @@
       <Material id="Iron6" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_sword_5_t4_blade" name="{=PQ8rR13R}Long Fine Steel Scimitar Blade" tier="4" piece_type="Blade" mesh="aserai_blade_8" culture="Culture.aserai" length="104.5" weight="1.35" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_aserai_sword_5_t4_blade" name="{=PQ8rR13R}Long Fine Steel Scimitar Blade" tier="4" piece_type="Blade" mesh="aserai_blade_8" culture="Culture.aserai" length="104.5" weight="1.18" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="aserai_blade_8_scabbard_8">
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="3" />
@@ -5577,7 +5577,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_aserai_sword_2_t2_blade" name="{=WNch6azL}Iron Scimitar Blade" tier="2" piece_type="Blade" mesh="aserai_blade_3" culture="Culture.aserai" length="93.2" weight="1.30" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="aserai_blade_3_scabbard_3">
-      <Swing damage_type="Cut" damage_factor="3.0" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5604,10 +5604,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_sword_6_t4_blade" name="{=k66YIIWR}Narrow Fine Steel Kaskara Blade" tier="4" piece_type="Blade" mesh="aserai_blade_1" culture="Culture.aserai" length="102.3" weight="1.37">
+  <CraftingPiece id="crpg_aserai_sword_6_t4_blade" name="{=k66YIIWR}Narrow Fine Steel Kaskara Blade" tier="4" piece_type="Blade" mesh="aserai_blade_1" culture="Culture.aserai" length="102.3" weight="1.10">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="aserai_blade_1_scabbard_1">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="3.2" />
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="3" />
@@ -5655,10 +5655,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_empire_sword_5_t4_blade" name="{=y5A3HGua}Fine Steel Paramerion Blade" tier="4" piece_type="Blade" mesh="empire_blade_5" culture="Culture.empire" length="95.7" weight="1.01">
+  <CraftingPiece id="crpg_empire_sword_5_t4_blade" name="{=y5A3HGua}Fine Steel Paramerion Blade" tier="4" piece_type="Blade" mesh="empire_blade_5" culture="Culture.empire" length="95.7" weight="0.89">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_5_scabbard_5">
-      <Thrust damage_type="Pierce" damage_factor="1.6" />
-      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Thrust damage_type="Pierce" damage_factor="1.2" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="3" />
