@@ -402,6 +402,12 @@
       <Piece id="crpg_aserai_2haxe_2_t4_handle" Type="Handle" scale_factor="130" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_long_bardiche" name="{=}Long Bardiche" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_long_bardiche_head" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_long_bardiche_handle" Type="Handle" scale_factor="150" />
+    </Pieces>
+  </CraftedItem>
   <CraftedItem id="crpg_sturgia_2haxe_1_t4" name="{=jhFSLdve}Drilled Two Handed Axe" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_sturgia_2haxe_1_t4_blade" Type="Blade" scale_factor="100" />
@@ -2308,6 +2314,12 @@
 			<Piece id="crpg_long_greataxe_handle" Type="Handle" scale_factor="120"/>
 		</Pieces>
 	</CraftedItem>
+  <CraftedItem id="crpg_long_hafted_spiked_mace" name="{=}Long Hafted Spiked Mace" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_long_hafted_spiked_mace_head" Type="Blade" scale_factor="160" />
+      <Piece id="crpg_long_hafted_spiked_mace_handle" Type="Handle" scale_factor="290" />
+    </Pieces>
+  </CraftedItem>
    <CraftedItem id="crpg_hoplite_spear_1" name="{=}Hoplite Spear" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_hoplite_blade_1" Type="Blade" scale_factor="90" />

@@ -2292,12 +2292,17 @@
       <AvailablePiece id="crpg_bo_staff_t1_pommel" />
       <AvailablePiece id="crpg_bo_staff_t1_blade" />
       <AvailablePiece id="crpg_bo_staff_t1_guard" />
+      <AvailablePiece id="crpg_long_bardiche_head" />
+      <AvailablePiece id="crpg_long_bardiche_handle" />
+      <AvailablePiece id="crpg_long_hafted_spiked_mace_head" />
+      <AvailablePiece id="crpg_long_hafted_spiked_mace_handle" />
       <AvailablePiece id="crpg_hoplite_handle_1" />
       <AvailablePiece id="crpg_hoplite_blade_1" />
       <AvailablePiece id="crpg_hoplite_guard_1" />
       <AvailablePiece id="crpg_hoplite_pommel_1" />
       <AvailablePiece id="crpg_iklwa_handle_1" />
       <AvailablePiece id="crpg_iklwa_blade_1" />
+
       
     </AvailablePieces>
   </WeaponDescription>

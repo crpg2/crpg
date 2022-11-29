@@ -1693,6 +1693,10 @@
       <UsablePiece piece_id="crpg_wide_leaf_spear_t4_blade" />
       <UsablePiece piece_id="crpg_wide_leaf_spear_t4_handle" />
       <UsablePiece piece_id="crpg_wide_leaf_spear_t4_pommel" />
+      <UsablePiece piece_id="crpg_long_bardiche_head" />
+      <UsablePiece piece_id="crpg_long_bardiche_handle" />
+      <UsablePiece piece_id="crpg_long_hafted_spiked_mace_head" />
+      <UsablePiece piece_id="crpg_long_hafted_spiked_mace_handle" />
       <UsablePiece piece_id="crpg_hoplite_blade_1" />
       <UsablePiece piece_id="crpg_hoplite_handle_1" />
       <UsablePiece piece_id="crpg_hoplite_guard_1" />
