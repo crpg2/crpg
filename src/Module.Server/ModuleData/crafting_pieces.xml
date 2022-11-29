@@ -845,14 +845,14 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_pike_t4_handle" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="2.5" excluded_item_usage_features="long" CraftingCost="150">
-    <BuildData piece_offset="39.5" />
+  <CraftingPiece id="crpg_fine_pike_t4_handle" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.4" excluded_item_usage_features="long" CraftingCost="150">
+    <BuildData piece_offset="130.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_thamaskene_pike_t4_handle" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="2.5" excluded_item_usage_features="long" CraftingCost="150">
-    <BuildData piece_offset="39.5" />
+  <CraftingPiece id="crpg_thamaskene_pike_t4_handle" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="1.5" excluded_item_usage_features="long" CraftingCost="150">
+    <BuildData piece_offset="95.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
@@ -965,8 +965,8 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_pike_t2_handle" name="{=tSQbGb4m}Extra Long Mahogany Shaft" tier="4" piece_type="Handle" mesh="spear_handle_27" length="290" weight="1.6" is_default="true">
-    <BuildData piece_offset="22.9" />
+  <CraftingPiece id="crpg_simple_pike_t2_handle" name="{=tSQbGb4m}Extra Long Mahogany Shaft" tier="4" piece_type="Handle" mesh="spear_handle_27" length="290" weight="0.9" is_default="true">
+    <BuildData piece_offset="90.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
@@ -1278,8 +1278,11 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_simple_pike_t2_blade" name="{=r3R6RM9G}Short Simple Pike Head" tier="1" piece_type="Blade" mesh="spear_blade_9" length="23.328" weight="0.204" excluded_item_usage_features="swing" is_default="true">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
-      <Thrust damage_type="Pierce" damage_factor="0.56" />
+      <Thrust damage_type="Pierce" damage_factor="1.4" />
     </BladeData>
+    <Flags>
+    <Flag name="DropOnWeaponChange" type="ItemFlags" />
+    </Flags>
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
@@ -1301,10 +1304,13 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_pike_t4_blade" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.3096" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_fine_pike_t4_blade" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.2096" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.91" />
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
     </BladeData>
+    <Flags>
+    <Flag name="DropOnWeaponChange" type="ItemFlags" />
+    </Flags>
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
@@ -1498,8 +1504,11 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_thamaskene_pike_t4_blade" name="{=TKVxb6QD}Thamaskene Steel Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_41" length="53.2" weight="0.2792" excluded_item_usage_features="swing">
     <BladeData stack_amount="0" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.875" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
     </BladeData>
+    <Flags>
+     <Flag name="DropOnWeaponChange" type="ItemFlags" />
+    </Flags>
     <Materials>
       <Material id="Iron5" count="2" />
     </Materials>
@@ -1785,6 +1794,9 @@
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
     </BladeData>
+    <Flags>
+     <Flag name="DropOnWeaponChange" type="ItemFlags" />
+    </Flags>
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>

@@ -631,8 +631,8 @@
   </CraftedItem>
   <CraftedItem id="crpg_simple_pike_t2" name="{=GKzw7E8a}Simple Pike" crafting_template="crpg_Pike" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_simple_pike_t2_blade" Type="Blade" scale_factor="90" />
-      <Piece id="crpg_simple_pike_t2_handle" Type="Handle" scale_factor="90" />
+      <Piece id="crpg_simple_pike_t2_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_simple_pike_t2_handle" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_military_fork_pike_t3" name="{=kR1blV2k}Notched Military Fork" crafting_template="crpg_Pike" modifier_group="polearm">
@@ -644,13 +644,13 @@
   <CraftedItem id="crpg_thamaskene_pike_t4" name="{=RwpJFXxc}Thamaskene Pike" crafting_template="crpg_Pike" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_thamaskene_pike_t4_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_thamaskene_pike_t4_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_thamaskene_pike_t4_handle" Type="Handle" scale_factor="160" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_fine_pike_t4" name="{=dkuzrKJF}Fine Pike" crafting_template="crpg_Pike" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fine_pike_t4_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_fine_pike_t4_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_fine_pike_t4_handle" Type="Handle" scale_factor="200" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_vlandia_pike_1_t5" name="{=h60wQVVX}Pike" crafting_template="crpg_Pike" culture="Culture.vlandia" modifier_group="polearm">
