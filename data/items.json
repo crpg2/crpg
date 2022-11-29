@@ -13750,6 +13750,63 @@
     ]
   },
   {
+    "id": "crpg_iklwa_spear_1",
+    "name": "Iklwa",
+    "culture": "Aserai",
+    "type": "Polearm",
+    "price": 708,
+    "weight": 1.11,
+    "tier": 1.36341083,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedPolearm",
+        "itemUsage": "onehanded_polearm_block_long_rshield_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 0.0,
+        "handling": 73,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "WideGrip"
+        ],
+        "thrustDamage": 18,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 92,
+        "swingDamage": 28,
+        "swingDamageType": "Cut",
+        "swingSpeed": 58
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 0.77,
+        "handling": 72,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 18,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 99,
+        "swingDamage": 28,
+        "swingDamageType": "Cut",
+        "swingSpeed": 93
+      }
+    ]
+  },
+  {
     "id": "crpg_imperial_axe_t3",
     "name": "Tzikourion",
     "culture": "Empire",

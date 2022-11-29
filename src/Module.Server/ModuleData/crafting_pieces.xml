@@ -5995,4 +5995,19 @@
 <Material id="Iron3" count="1"/>
 </Materials>
 </CraftingPiece>
+  <CraftingPiece id="crpg_iklwa_blade_1" name="{=}Iklwa Head" tier="3" piece_type="Blade" mesh="spear_blade_8" length="60.153" weight="0.7">
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Cut" damage_factor="2.8" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+   <CraftingPiece id="crpg_iklwa_handle_1" name="{=nGP3FlHm}Long Mahogany Shaft" tier="3" piece_type="Handle" mesh="spear_handle_25" length="270" weight="1.6">
+    <BuildData piece_offset="22.9" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
 </CraftingPieces>

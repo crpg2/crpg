@@ -2300,4 +2300,10 @@
 			<Piece id="crpg_long_greataxe_handle" Type="Handle" scale_factor="120"/>
 		</Pieces>
 	</CraftedItem>
+    <CraftedItem id="crpg_iklwa_spear_1" name="{=}Iklwa" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_iklwa_blade_1" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_iklwa_handle_1" Type="Handle" scale_factor="30" />
+    </Pieces>
+  </CraftedItem>
 </Items>
