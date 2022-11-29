@@ -17516,7 +17516,7 @@
     "weapons": [
       {
         "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_swing",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,

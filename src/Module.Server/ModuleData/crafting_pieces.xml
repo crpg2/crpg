@@ -6083,7 +6083,7 @@
 <Material id="Iron3" count="1"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_long_hafted_spiked_mace_head" name="{=}Long Hafted Spiked Mace" tier="5" piece_type="Blade" mesh="mace_head_11" length="18.3" weight="0.2" full_scale="true" excluded_item_usage_features="thrust">
+<CraftingPiece id="crpg_long_hafted_spiked_mace_head" name="{=}Long Hafted Spiked Mace" tier="5" piece_type="Blade" mesh="mace_head_11" length="18.3" weight="0.2" full_scale="true">
     <BladeData stack_amount="0" physics_material="wood_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="2.7" />
     </BladeData>
