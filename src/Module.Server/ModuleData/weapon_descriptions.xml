@@ -312,9 +312,6 @@
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_blade" />
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_guard" />
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_pommel" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_blade" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_guard" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_pommel" />
       <AvailablePiece id="crpg_vlandia_noble_sword_1_t5_blade" />
       <AvailablePiece id="crpg_vlandia_noble_sword_1_t5_guard" />
       <AvailablePiece id="crpg_vlandia_noble_sword_1_t5_handle" />
@@ -573,9 +570,6 @@
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_blade" />
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_guard" />
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_pommel" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_blade" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_guard" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_pommel" />
       <AvailablePiece id="crpg_vlandia_sword_1_t2_blade" />
       <AvailablePiece id="crpg_vlandia_sword_1_t2_guard" />
       <AvailablePiece id="crpg_vlandia_sword_1_t2_pommel" />
@@ -812,9 +806,6 @@
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_blade" />
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_guard" />
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_pommel" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_blade" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_guard" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_pommel" />
       <AvailablePiece id="crpg_vlandia_sword_1_t2_blade" />
       <AvailablePiece id="crpg_vlandia_sword_1_t2_guard" />
       <AvailablePiece id="crpg_vlandia_sword_1_t2_pommel" />
@@ -1201,7 +1192,6 @@
       <AvailablePiece id="crpg_ambassador_sword_t3_pommel" />
       <AvailablePiece id="crpg_simple_back_sword_t2_pommel" />
       <AvailablePiece id="crpg_falchion_sword_t2_pommel" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_pommel" />
       <AvailablePiece id="crpg_vlandia_sword_5_t5_pommel" />
       <AvailablePiece id="crpg_dawnbreaker_sword_t3_pommel" />
       <AvailablePiece id="crpg_short_sword_t3_pommel" />
@@ -1494,7 +1484,6 @@
       <AvailablePiece id="crpg_simple_back_sword_t2_pommel" />
       <AvailablePiece id="crpg_vlandia_noble_sword_2_t5_pommel" />
       <AvailablePiece id="crpg_falchion_sword_t2_pommel" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_pommel" />
       <AvailablePiece id="crpg_vlandia_sword_5_t5_pommel" />
       <AvailablePiece id="crpg_dawnbreaker_sword_t3_pommel" />
       <AvailablePiece id="crpg_short_sword_t3_pommel" />
@@ -1711,7 +1700,6 @@
       <AvailablePiece id="crpg_broad_ild_sword_t3_pommel" />
       <AvailablePiece id="crpg_celtic_dagger_pommel" />
       <AvailablePiece id="crpg_celtic_throwing_dagger_pommel" />
-      <AvailablePiece id="crpg_cleaver_2hsword_t3_pommel" />
       <AvailablePiece id="crpg_dawnbreaker_sword_t3_pommel" />
       <AvailablePiece id="crpg_desert_long_sword_t4_pommel" />
       <AvailablePiece id="crpg_desert_throwing_knife_pommel" />
@@ -1797,7 +1785,6 @@
       <AvailablePiece id="crpg_vlandia_2haxe_1_t4_blade" />
       <AvailablePiece id="crpg_vlandia_2haxe_1_t4_handle" />
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_pommel" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_pommel" />
       <AvailablePiece id="crpg_vlandia_mace_2_t4_pommel" />
       <AvailablePiece id="crpg_vlandia_mace_3_t5_pommel" />
       <AvailablePiece id="crpg_vlandia_noble_sword_2_t5_pommel" />
@@ -3227,7 +3214,6 @@
       <AvailablePiece id="crpg_the_scalpel_sword_t3_pommel" />
       <AvailablePiece id="crpg_tyrhung_sword_t3_pommel" />
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_pommel" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_pommel" />
       <AvailablePiece id="crpg_vlandia_mace_1_t2_blade" />
       <AvailablePiece id="crpg_vlandia_mace_1_t2_handle" />
       <AvailablePiece id="crpg_vlandia_mace_2_t4_blade" />
@@ -3310,7 +3296,6 @@
       <AvailablePiece id="crpg_broad_ild_sword_t3_pommel" />
       <AvailablePiece id="crpg_celtic_dagger_pommel" />
       <AvailablePiece id="crpg_celtic_throwing_dagger_pommel" />
-      <AvailablePiece id="crpg_cleaver_2hsword_t3_pommel" />
       <AvailablePiece id="crpg_dawnbreaker_sword_t3_pommel" />
       <AvailablePiece id="crpg_desert_long_sword_t4_pommel" />
       <AvailablePiece id="crpg_desert_throwing_knife_pommel" />
@@ -3392,7 +3377,6 @@
       <AvailablePiece id="crpg_the_scalpel_sword_t3_pommel" />
       <AvailablePiece id="crpg_vlandia_2haxe_1_t4_handle" />
       <AvailablePiece id="crpg_vlandia_2hsword_1_t5_pommel" />
-      <AvailablePiece id="crpg_vlandia_2hsword_2_t5_pommel" />
       <AvailablePiece id="crpg_vlandia_mace_2_t4_pommel" />
       <AvailablePiece id="crpg_vlandia_mace_3_t5_pommel" />
       <AvailablePiece id="crpg_vlandia_noble_sword_2_t5_pommel" />

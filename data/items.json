@@ -370,9 +370,9 @@
     "name": "The Ambassador",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 11706,
+    "price": 13765,
     "weight": 2.9,
-    "tier": 9.051832,
+    "tier": 9.906777,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -390,7 +390,7 @@
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
@@ -3000,9 +3000,9 @@
     "name": "Barmace",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 12991,
-    "weight": 3.02,
-    "tier": 9.593447,
+    "price": 13908,
+    "weight": 2.61,
+    "tier": 9.963788,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -3013,8 +3013,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.25,
-        "handling": 79,
+        "balance": 0.42,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -3022,10 +3022,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 86,
-        "swingDamage": 34,
+        "thrustSpeed": 89,
+        "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 77
+        "swingSpeed": 82
       }
     ]
   },
@@ -3240,9 +3240,9 @@
     "name": "Northlander Wide Fullered Greatsword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 12880,
-    "weight": 3.33,
-    "tier": 9.5475235,
+    "price": 13522,
+    "weight": 3.3,
+    "tier": 9.809198,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3255,13 +3255,13 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.23,
+        "balance": 0.25,
         "handling": 71,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 77,
         "swingDamage": 35,
@@ -3275,14 +3275,14 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.81,
-        "handling": 80,
+        "balance": 0.83,
+        "handling": 81,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
         "swingDamage": 35,
@@ -7321,7 +7321,7 @@
   },
   {
     "id": "crpg_cleaver_2hsword_t3",
-    "name": "Two-Handed Cleaver ",
+    "name": "Harvesting Season",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 14068,
@@ -12821,7 +12821,7 @@
   },
   {
     "id": "crpg_heavy_executionner_2sword",
-    "name": "Heavy Executionner Long Sword",
+    "name": "Heavy Executioner Long Sword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
     "price": 13992,
@@ -23817,12 +23817,12 @@
   },
   {
     "id": "crpg_sentinel_2hsword",
-    "name": "Sentinel",
+    "name": "Longsword",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 11480,
-    "weight": 2.62,
-    "tier": 8.953704,
+    "price": 13791,
+    "weight": 2.54,
+    "tier": 9.917134,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23835,19 +23835,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 105,
-        "balance": 0.68,
-        "handling": 85,
+        "balance": 0.73,
+        "handling": 86,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 91
       }
     ]
   },
@@ -29221,9 +29221,9 @@
     "name": "Wide Fullered Broad Two Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 11421,
-    "weight": 2.64,
-    "tier": 8.927613,
+    "price": 13693,
+    "weight": 2.52,
+    "tier": 9.878143,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29234,30 +29234,30 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 131,
-        "balance": 0.38,
-        "handling": 79,
+        "balance": 0.43,
+        "handling": 80,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
         "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 82
       }
     ]
   },
   {
     "id": "crpg_vlandia_2hsword_2_t5",
-    "name": "Thamaskene Steel Two Hander",
+    "name": "M'Lord",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 12028,
-    "weight": 3.11,
-    "tier": 9.190329,
+    "price": 14022,
+    "weight": 2.96,
+    "tier": 10.0088749,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29267,9 +29267,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 124,
-        "balance": 0.43,
-        "handling": 78,
+        "length": 123,
+        "balance": 0.48,
+        "handling": 79,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
@@ -29278,9 +29278,9 @@
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
-        "swingDamage": 42,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 84
       }
     ]
   },

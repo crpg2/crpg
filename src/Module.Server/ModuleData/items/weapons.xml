@@ -226,7 +226,7 @@
       <Piece id="crpg_avalanche_2haxe_handle" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sentinel_2hsword" name="{=XIRtmaQt}Sentinel" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_sentinel_2hsword" name="{=XIRtmaQt}Longsword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_sentinel_2hsword_blade" Type="Blade" scale_factor="108" />
       <Piece id="crpg_sentinel_2hsword_guard" Type="Guard" />
@@ -1376,7 +1376,7 @@
       <Piece id="crpg_battania_2hsword_3_t3_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cleaver_2hsword_t3" name="{=XTGdfqVV}Two-Handed Cleaver " crafting_template="crpg_TwoHandedSword" modifier_group="sword">
+  <CraftedItem id="crpg_cleaver_2hsword_t3" name="{=XTGdfqVV}Harvesting Season" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_cleaver_2hsword_t3_blade" Type="Blade" scale_factor="120" />
       <Piece id="crpg_cleaver_2hsword_t3_guard" Type="Guard" scale_factor="100" />
@@ -1464,7 +1464,7 @@
       <Piece id="crpg_battania_2hsword_5_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-    <CraftedItem id="crpg_heavy_executionner_2sword" name="{=62nIvqbA}Heavy Executionner Long Sword" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
+    <CraftedItem id="crpg_heavy_executionner_2sword" name="{=62nIvqbA}Heavy Executioner Long Sword" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_heavy_executionner_2sword_blade" Type="Blade" scale_factor="165" />
       <Piece id="crpg_heavy_executionner_2sword_guard" Type="Guard" scale_factor="150" />
@@ -1480,12 +1480,12 @@
       <Piece id="crpg_vlandia_2hsword_1_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_vlandia_2hsword_2_t5" name="{=VAO11FSu}Thamaskene Steel Two Hander" crafting_template="crpg_TwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+  <CraftedItem id="crpg_vlandia_2hsword_2_t5" name="{=VAO11FSu}M'Lord" crafting_template="crpg_TwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_vlandia_2hsword_2_t5_blade" Type="Blade" scale_factor="115" />
+      <Piece id="crpg_vlandia_2hsword_2_t5_blade" Type="Blade" scale_factor="113" />
       <Piece id="crpg_vlandia_2hsword_2_t5_guard" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_vlandia_2hsword_2_t5_handle" Type="Handle" scale_factor="100" />
-      <Piece id="crpg_vlandia_2hsword_2_t5_pommel" Type="Pommel" scale_factor="100" />
+      <Piece id="crpg_vlandia_2hsword_2_t5_handle" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_vlandia_2hsword_2_t5_pommel" Type="Pommel" scale_factor="96" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_seax" name="{=3Pv0SlYj}Seax" crafting_template="crpg_Dagger" culture="Culture.sturgia" modifier_group="sword">
