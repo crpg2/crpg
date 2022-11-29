@@ -6620,9 +6620,9 @@
     "name": "Broad Head Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 2163,
+    "price": 4487,
     "weight": 0.098,
-    "tier": 6.575722,
+    "tier": 9.984945,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6631,7 +6631,7 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 22,
+        "stackAmount": 20,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -6639,7 +6639,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 15,
         "thrustDamageType": "Cut",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -6653,9 +6653,9 @@
     "name": "Light Broad Head Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 1265,
+    "price": 2235,
     "weight": 0.078,
-    "tier": 4.752814,
+    "tier": 6.70221043,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6672,7 +6672,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 9,
         "thrustDamageType": "Cut",
         "thrustSpeed": 0,
         "swingDamage": 0,
