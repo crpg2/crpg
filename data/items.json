@@ -10676,6 +10676,40 @@
     ]
   },
   {
+    "id": "crpg_empire_noble_2hsword_2_t5",
+    "name": "Great Thamaskene Steel Spatha",
+    "culture": "Empire",
+    "type": "TwoHandedWeapon",
+    "price": 13491,
+    "weight": 3.75,
+    "tier": 9.797004,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 125,
+        "balance": 0.43,
+        "handling": 81,
+        "bodyArmor": 5,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 16,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 82,
+        "swingDamage": 40,
+        "swingDamageType": "Cut",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
     "id": "crpg_empire_noble_sword_1_t5",
     "name": "Decorated Short Spatha",
     "culture": "Empire",
@@ -15732,6 +15766,40 @@
         "swingDamage": 23,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
+      }
+    ]
+  },
+  {
+    "id": "crpg_khuzait_noble_2hsword_1_t5",
+    "name": "Decorated Great Saber",
+    "culture": "Khuzait",
+    "type": "TwoHandedWeapon",
+    "price": 12619,
+    "weight": 2.22,
+    "tier": 9.439594,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 119,
+        "balance": 0.91,
+        "handling": 90,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 14,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 92,
+        "swingDamage": 29,
+        "swingDamageType": "Cut",
+        "swingSpeed": 97
       }
     ]
   },

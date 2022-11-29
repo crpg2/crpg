@@ -847,6 +847,14 @@
       <WeaponFlag value="NotUsableWithOneHand" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_blade" />
+      <AvailablePiece id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_guard" />
+      <AvailablePiece id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_handle" />
+      <AvailablePiece id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_pommel" /> 
+      <AvailablePiece id="crpg_decorated_great_saber_2hsword_1_t5_blade" />
+      <AvailablePiece id="crpg_decorated_great_saber_2hsword_1_t5_guard" />
+      <AvailablePiece id="crpg_decorated_great_saber_1_t5_handle" />
+      <AvailablePiece id="crpg_decorated_great_saber_1_t5_pommel" />    
       <AvailablePiece id="crpg_dawn_blade" />
       <AvailablePiece id="crpg_dawn_guard" />
       <AvailablePiece id="crpg_dawn_handle" />

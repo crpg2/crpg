@@ -3018,6 +3018,12 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_decorated_great_saber_1_t5_pommel" name="{=W5tvNbjY}Eastern Ornamented Pommel" tier="5" piece_type="Pommel" mesh="khuzait_noble_pommel_1" culture="Culture.khuzait" length="3.6" weight="0.2">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_aserai_noble_sword_2_t5_pommel" name="{=1nGcpiom}Rounded Ornamental Pommel" tier="5" piece_type="Pommel" mesh="aserai_noble_pommel_4" culture="Culture.aserai" length="6.4" weight="0.38">
     <BuildData next_piece_offset="-0.3" />
     <Materials>
@@ -3030,6 +3036,11 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_empire_noble_sword_2_t5_pommel" name="{=GI6XD77j}Imperial Decorated Pommel" tier="5" piece_type="Pommel" mesh="empire_noble_pommel_4" culture="Culture.empire" length="7" weight="0.2" appearance="0.9">
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_pommel" name="{=GI6XD77j}Imperial Decorated Pommel" tier="5" piece_type="Pommel" mesh="empire_noble_pommel_4" culture="Culture.empire" length="7" weight="0.35" appearance="0.9">
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
@@ -3694,6 +3705,12 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_decorated_great_saber_1_t5_handle" name="{=bPUXlfs8}Decorated Eastern Ild Grip" tier="5" piece_type="Handle" mesh="khuzait_noble_grip_2" culture="Culture.khuzait" length="15" weight="0.46">
+    <BuildData piece_offset="0" previous_piece_offset="0.35" next_piece_offset="0.5" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_aserai_noble_sword_2_t5_handle" name="{=Wl1m0LbL}Silver Inlaid Engraved Reinforced Grip" tier="5" piece_type="Handle" mesh="aserai_noble_grip_4" culture="Culture.aserai" length="16.2" weight="1.20">
     <BuildData piece_offset="0" previous_piece_offset="0.1" next_piece_offset="0.1" />
     <Materials>
@@ -3707,6 +3724,12 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_empire_noble_sword_2_t5_handle" name="{=bEbyObu7}Jeweled Golden One Handed Grip" tier="5" piece_type="Handle" mesh="empire_noble_grip_2" culture="Culture.empire" length="15" weight="0.80">
+    <BuildData piece_offset="0" next_piece_offset="0" previous_piece_offset="0.5" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_handle" name="{=bEbyObu7}Jeweled Golden One Handed Grip" tier="5" piece_type="Handle" mesh="empire_noble_grip_2" culture="Culture.empire" length="15" weight="1.50">
     <BuildData piece_offset="0" next_piece_offset="0" previous_piece_offset="0.5" />
     <Materials>
       <Material id="Iron5" count="1" />
@@ -4263,6 +4286,13 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_decorated_great_saber_2hsword_1_t5_guard" name="{=azjW7lAg}Engraved Ild Guard" tier="5" piece_type="Guard" mesh="khuzait_noble_guard_1" culture="Culture.khuzait" length="1.8" weight="0.32">
+    <BuildData next_piece_offset="0.2" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_aserai_noble_sword_2_t5_guard" name="{=9JxsngjD}Engraved Silver Kaskara Guard" tier="5" piece_type="Guard" mesh="aserai_noble_guard_4" culture="Culture.aserai" length="3.4" weight="0.219">
     <BuildData next_piece_offset="1.8" />
     <StatContributions armor_bonus="5" />
@@ -4278,6 +4308,13 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_empire_noble_sword_2_t5_guard" name="{=a4qSDsmb}Imperial Golden Great Sword Guard" tier="5" piece_type="Guard" mesh="empire_noble_guard_4" culture="Culture.empire" length="2.9" weight="0.20">
+    <BuildData next_piece_offset="-0.5" />
+    <StatContributions armor_bonus="5" />
+    <Materials>
+      <Material id="Iron5" count="2" />
+    </Materials>
+  </CraftingPiece>
+   <CraftingPiece id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_guard" name="{=a4qSDsmb}Imperial Golden Great Sword Guard" tier="5" piece_type="Guard" mesh="empire_noble_guard_4" culture="Culture.empire" length="2.9" weight="0.20">
     <BuildData next_piece_offset="-0.5" />
     <StatContributions armor_bonus="5" />
     <Materials>
@@ -5046,6 +5083,16 @@
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_decorated_great_saber_2hsword_1_t5_blade" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.77">
+    <BuildData previous_piece_offset="-0.25" />
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_noble_blade_2_scabbard_2">
+      <Thrust damage_type="Pierce" damage_factor="1.4" />
+      <Swing damage_type="Cut" damage_factor="2.9" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron6" count="2" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_aserai_noble_sword_2_t5_blade" name="{=T1xFTaOf}Decorated Long Scimitar Blade" tier="5" piece_type="Blade" mesh="aserai_noble_blade_1" culture="Culture.aserai" length="90" weight="0.55" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="aserai_noble_blade_1_scabbard_1">
       <Swing damage_type="Cut" damage_factor="3.2" />
@@ -5649,6 +5696,15 @@
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_7_scabbard_7">
       <Thrust damage_type="Pierce" damage_factor="1.7" />
       <Swing damage_type="Cut" damage_factor="3.3" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron6" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_blade" name="{=dafrn0mR}Thamaskene Steel Spatha Blade" tier="5" piece_type="Blade" mesh="empire_blade_7" culture="Culture.vlandia" length="99" weight="1.45">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_7_scabbard_7">
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="4" />

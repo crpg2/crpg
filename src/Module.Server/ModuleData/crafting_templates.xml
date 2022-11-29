@@ -442,6 +442,14 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_blade" />
+      <UsablePiece piece_id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_guard" />
+      <UsablePiece piece_id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_handle" />
+      <UsablePiece piece_id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_pommel" />  
+      <UsablePiece piece_id="crpg_decorated_great_saber_2hsword_1_t5_blade" />
+      <UsablePiece piece_id="crpg_decorated_great_saber_2hsword_1_t5_guard" />
+      <UsablePiece piece_id="crpg_decorated_great_saber_1_t5_handle" />
+      <UsablePiece piece_id="crpg_decorated_great_saber_1_t5_pommel" />      
       <UsablePiece piece_id="crpg_dawn_blade" />
       <UsablePiece piece_id="crpg_dawn_guard" />
       <UsablePiece piece_id="crpg_dawn_handle" />
