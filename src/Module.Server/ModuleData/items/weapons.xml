@@ -2340,7 +2340,7 @@
     <Pieces>
       <Piece id="crpg_hoplite_blade_1" Type="Blade" scale_factor="90" />
       <Piece id="crpg_hoplite_guard_1" Type="Guard" scale_factor="90" />
-      <Piece id="crpg_hoplite_handle_1" Type="Handle" scale_factor="70" />
+      <Piece id="crpg_hoplite_handle_1" Type="Handle" scale_factor="75" />
       <Piece id="crpg_hoplite_pommel_1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>

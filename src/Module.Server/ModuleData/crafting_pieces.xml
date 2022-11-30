@@ -6107,9 +6107,9 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-<CraftingPiece id="crpg_hoplite_blade_1" name="{=}Hoplite Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.1" excluded_item_usage_features="thrust">
+<CraftingPiece id="crpg_hoplite_blade_1" name="{=}Hoplite Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.1" >
   <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
-     <Thrust damage_type="Pierce" damage_factor="2.2" />
+     <Thrust damage_type="Pierce" damage_factor="2.3" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -6124,7 +6124,7 @@
       <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
-    <CraftingPiece id="crpg_hoplite_pommel_1" name="{=}Mace Shaped Pommel" tier="4" piece_type="Pommel" mesh="spear_pommel_11" culture="Culture.empire" length="10" weight="0.0">
+    <CraftingPiece id="crpg_hoplite_pommel_1" name="{=}Mace Shaped Pommel" tier="4" piece_type="Pommel" mesh="spear_pommel_11" culture="Culture.empire" length="10" weight="0.07">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
