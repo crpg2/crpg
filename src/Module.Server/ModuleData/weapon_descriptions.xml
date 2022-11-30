@@ -3057,6 +3057,8 @@
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_blacksmith_war_hammer_mace_t3_handle" />
+      <AvailablePiece id="crpg_blacksmith_war_hammer_1_t1_blade" />
       <AvailablePiece id="crpg_vlandia_axe_2_t4_blade" />
       <AvailablePiece id="crpg_vlandia_axe_2_t4_handle" />
       <AvailablePiece id="crpg_ambassador_sword_t3_pommel" />
