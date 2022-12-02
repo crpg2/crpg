@@ -18073,6 +18073,126 @@
     "weapons": []
   },
   {
+    "id": "crpg_manual_lowland_yew_bow",
+    "name": "Experminetal Manual Yew Bow",
+    "culture": "Vlandia",
+    "type": "Bow",
+    "price": 8703,
+    "weight": 0.55,
+    "tier": 8.25381,
+    "requirement": 0,
+    "flags": [
+      "ForceAttachOffHandPrimaryItemBone"
+    ],
+    "weapons": [
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 109,
+        "missileSpeed": 94,
+        "stackAmount": 1,
+        "length": 117,
+        "balance": 0.0,
+        "handling": 100,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 14,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 100,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 96
+      }
+    ]
+  },
+  {
+    "id": "crpg_manual_noble_bow",
+    "name": "Experimental Manual Noble Bow",
+    "culture": "Neutral",
+    "type": "Bow",
+    "price": 12133,
+    "weight": 0.4,
+    "tier": 9.940793,
+    "requirement": 0,
+    "flags": [
+      "ForceAttachOffHandPrimaryItemBone"
+    ],
+    "weapons": [
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 95,
+        "missileSpeed": 85,
+        "stackAmount": 1,
+        "length": 116,
+        "balance": 0.0,
+        "handling": 100,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 14,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 100,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 98
+      }
+    ]
+  },
+  {
+    "id": "crpg_manual_noble_long_bow",
+    "name": "Experimental Manual Noble Long Bow",
+    "culture": "Neutral",
+    "type": "Bow",
+    "price": 12671,
+    "weight": 0.8,
+    "tier": 10.18288,
+    "requirement": 0,
+    "flags": [
+      "ForceAttachOffHandPrimaryItemBone"
+    ],
+    "weapons": [
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 97,
+        "missileSpeed": 100,
+        "stackAmount": 1,
+        "length": 118,
+        "balance": 0.0,
+        "handling": 86,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 18,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 86,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
+      }
+    ]
+  },
+  {
     "id": "crpg_marksmans_flag_t3",
     "name": "Marksman's Flag",
     "culture": "Neutral",
