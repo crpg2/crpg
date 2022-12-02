@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <CraftingPieces>
   <CraftingPiece id="crpg_pernach_mace_t3_handle" name="{=57DBqJd1}Leather Wrapped Thick Mace Handle" tier="2" piece_type="Handle" mesh="mace_handle_14" length="45" weight="1.0" item_holster_pos_shift="0,0,0.05">
     <BuildData piece_offset="13.7" />
@@ -2337,6 +2337,7 @@
   <CraftingPiece id="crpg_long_bardiche_head" name="{=}Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.6">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Cut" damage_factor="2.5" />
       <Swing damage_type="Cut" damage_factor="5" />
     </BladeData>
     <Flags>
@@ -6129,6 +6130,7 @@
 </CraftingPiece>
 <CraftingPiece id="crpg_long_hafted_spiked_mace_head" name="{=}Long Hafted Spiked Mace" tier="5" piece_type="Blade" mesh="mace_head_11" length="18.3" weight="0.2" full_scale="true">
     <BladeData stack_amount="0" physics_material="wood_weapon" body_name="bo_mace_a">
+      <Thrust damage_type="Blunt" damage_factor="1.5" />
       <Swing damage_type="Blunt" damage_factor="2.7" />
     </BladeData>
     <Flags>
