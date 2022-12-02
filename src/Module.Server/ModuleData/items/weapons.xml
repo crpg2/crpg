@@ -852,6 +852,14 @@
       <Piece id="crpg_sturgia_sword_1_t2_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_thegn_sword_1_t2" name="{=Ag6dujzl}Thegn Sword" crafting_template="crpg_OneHandedSword" culture="Culture.sturgia" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_thegn_sword_1_t2_blade" Type="Blade" scale_factor="113" />
+      <Piece id="crpg_sturgia_sword_1_t2_guard" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_sturgia_sword_1_t2_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_sturgia_sword_3_t3_pommel" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
   <CraftedItem id="crpg_battania_sword_1_t2" name="{=habJjtmv}Ridged Iron Broadsword" crafting_template="crpg_OneHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_battania_sword_1_t2_blade" Type="Blade" scale_factor="109" />
@@ -1334,7 +1342,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_sturgia_noble_sword_3_t5" name="{=QA5zGCKf}Decorated Fullered Sword" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_sturgia_noble_sword_3_t5_blade" Type="Blade" scale_factor="145" />
+      <Piece id="crpg_sturgia_noble_sword_3_t5_blade" Type="Blade" scale_factor="138" />
       <Piece id="crpg_sturgia_noble_sword_3_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_sturgia_noble_sword_3_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_sturgia_noble_sword_3_t5_pommel" Type="Pommel" scale_factor="100" />

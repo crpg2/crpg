@@ -5,6 +5,7 @@
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_thegn_sword_1_t2_blade" />
       <AvailablePiece id="crpg_ambassador_sword_t3_blade" />
       <AvailablePiece id="crpg_ambassador_sword_t3_guard" />
       <AvailablePiece id="crpg_ambassador_sword_t3_handle" />
