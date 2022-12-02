@@ -966,7 +966,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_battania_sword_3_t3" name="{=8jEDX9J4}Steel Broadsword" crafting_template="crpg_OneHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_battania_sword_3_t3_blade" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_battania_sword_3_t3_blade" Type="Blade" scale_factor="113" />
       <Piece id="crpg_battania_sword_3_t3_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_battania_sword_3_t3_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_battania_sword_3_t3_pommel" Type="Pommel" scale_factor="100" />
@@ -1182,7 +1182,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_battania_sword_5_t5" name="{=l9kAJ1Xh}Highland Broad Blade" crafting_template="crpg_OneHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_battania_sword_5_t5_blade" Type="Blade" scale_factor="115" />
+      <Piece id="crpg_battania_sword_5_t5_blade" Type="Blade" scale_factor="122" />
       <Piece id="crpg_battania_sword_5_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_battania_sword_5_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_battania_sword_5_t5_pommel" Type="Pommel" scale_factor="100" />
@@ -1350,7 +1350,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_battania_noble_sword_1_t5" name="{=VucrovFw}Engraved Backsword" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.battania" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_battania_noble_sword_1_t5_blade" Type="Blade" scale_factor="99" />
+      <Piece id="crpg_battania_noble_sword_1_t5_blade" Type="Blade" scale_factor="97" />
       <Piece id="crpg_battania_noble_sword_1_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_battania_noble_sword_1_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_battania_noble_sword_1_t5_pommel" Type="Pommel" scale_factor="100" />
@@ -1366,7 +1366,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_battania_noble_sword_3_t5" name="{=Cr5ak47X}Decorated Broadsword" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.battania" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_battania_noble_sword_3_t5_blade" Type="Blade" scale_factor="101" />
+      <Piece id="crpg_battania_noble_sword_3_t5_blade" Type="Blade" scale_factor="100" />
       <Piece id="crpg_battania_noble_sword_3_t5_guard" Type="Guard" scale_factor="90" />
       <Piece id="crpg_battania_noble_sword_3_t5_handle" Type="Handle" scale_factor="90" />
       <Piece id="crpg_battania_noble_sword_3_t5_pommel" Type="Pommel" scale_factor="90" />
