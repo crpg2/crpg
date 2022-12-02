@@ -6797,9 +6797,9 @@
     "name": "Broad Ild",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4003,
-    "weight": 2.08,
-    "tier": 7.006742,
+    "price": 4321,
+    "weight": 2.21,
+    "tier": 7.322932,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -6811,14 +6811,14 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 94,
-        "balance": 0.74,
-        "handling": 86,
+        "length": 84,
+        "balance": 0.76,
+        "handling": 90,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
         "swingDamage": 29,
@@ -15907,9 +15907,9 @@
     "name": "Decorated Cavalry Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6807,
-    "weight": 2.5,
-    "tier": 9.474615,
+    "price": 7203,
+    "weight": 2.42,
+    "tier": 9.777669,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15920,18 +15920,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 119,
-        "balance": 0.23,
-        "handling": 84,
+        "balance": 0.29,
+        "handling": 87,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 83,
-        "swingDamage": 36,
+        "thrustSpeed": 84,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 77
+        "swingSpeed": 78
       }
     ]
   },
@@ -15940,9 +15940,9 @@
     "name": "Lion Imprinted Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5989,
-    "weight": 2.06,
-    "tier": 8.817404,
+    "price": 7519,
+    "weight": 2.07,
+    "tier": 10.0143423,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15952,19 +15952,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 105,
-        "balance": 0.61,
+        "length": 99,
+        "balance": 0.58,
         "handling": 87,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
-        "swingDamage": 30,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 87
       }
     ]
   },
@@ -15973,9 +15973,9 @@
     "name": "Tall Gripped Ild",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6944,
-    "weight": 2.07,
-    "tier": 9.580444,
+    "price": 6664,
+    "weight": 1.85,
+    "tier": 9.362794,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15985,19 +15985,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 95,
-        "balance": 0.75,
-        "handling": 88,
+        "length": 87,
+        "balance": 0.72,
+        "handling": 92,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
-        "swingDamage": 30,
+        "thrustSpeed": 88,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 91
       }
     ]
   },
@@ -16099,9 +16099,9 @@
     "name": "Iron Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 3090,
-    "weight": 2.09,
-    "tier": 6.02357531,
+    "price": 3672,
+    "weight": 2.12,
+    "tier": 6.66521358,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16114,8 +16114,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 99,
-        "balance": 0.6,
-        "handling": 89,
+        "balance": 0.58,
+        "handling": 86,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
@@ -16123,7 +16123,7 @@
         "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 28,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
         "swingSpeed": 87
       }
@@ -16134,9 +16134,9 @@
     "name": "Straight Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 2920,
+    "price": 4519,
     "weight": 1.41,
-    "tier": 5.82498646,
+    "tier": 7.51439,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16155,10 +16155,10 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
-        "swingDamage": 27,
+        "swingDamage": 28,
         "swingDamageType": "Cut",
         "swingSpeed": 85
       }
@@ -16204,9 +16204,9 @@
     "name": "Fine Steel Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4264,
-    "weight": 2.05,
-    "tier": 7.26738453,
+    "price": 5929,
+    "weight": 1.92,
+    "tier": 8.767962,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16218,17 +16218,17 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 103,
-        "balance": 0.61,
+        "length": 97,
+        "balance": 0.63,
         "handling": 87,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
-        "swingDamage": 29,
+        "thrustSpeed": 87,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
         "swingSpeed": 88
       }
@@ -16239,9 +16239,9 @@
     "name": "Heavy Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4078,
+    "price": 4745,
     "weight": 2.13,
-    "tier": 7.08320761,
+    "tier": 7.72718573,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16260,10 +16260,10 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 30,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
         "swingSpeed": 86
       }
@@ -24335,9 +24335,9 @@
     "name": "Simple Scimitar",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 1962,
-    "weight": 2.06,
-    "tier": 4.580535,
+    "price": 2923,
+    "weight": 2.04,
+    "tier": 5.82862473,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24349,9 +24349,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 97,
-        "balance": 0.62,
-        "handling": 90,
+        "length": 95,
+        "balance": 0.66,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -24359,9 +24359,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 26,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 89
       }
     ]
   },
@@ -24431,9 +24431,9 @@
     "name": "Simple Saber ",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 2113,
+    "price": 2665,
     "weight": 2.11,
-    "tier": 4.79337,
+    "tier": 5.516363,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24445,19 +24445,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 99,
-        "balance": 0.58,
-        "handling": 88,
+        "length": 97,
+        "balance": 0.61,
+        "handling": 87,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 27,
+        "swingDamage": 28,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 88
       }
     ]
   },

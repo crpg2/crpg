@@ -870,7 +870,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_simple_sabre_sword_t2" name="{=oQmUlQWp}Simple Saber " crafting_template="crpg_OneHandedSword" culture="Culture.khuzait" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_simple_sabre_sword_t2_blade" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_simple_sabre_sword_t2_blade" Type="Blade" scale_factor="102" />
       <Piece id="crpg_simple_sabre_sword_t2_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_simple_sabre_sword_t2_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_simple_sabre_sword_t2_pommel" Type="Pommel" scale_factor="100" />
@@ -878,7 +878,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_simple_back_sword_t2" name="{=IK2Z9zWk}Simple Scimitar" crafting_template="crpg_OneHandedSword" culture="Culture.khuzait" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_simple_back_sword_t2_blade" Type="Blade" scale_factor="99" />
+      <Piece id="crpg_simple_back_sword_t2_blade" Type="Blade" scale_factor="96" />
       <Piece id="crpg_simple_back_sword_t2_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_simple_back_sword_t2_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_simple_back_sword_t2_pommel" Type="Pommel" scale_factor="100" />
@@ -990,7 +990,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_broad_ild_sword_t3" name="{=e8amL6a1}Broad Ild" crafting_template="crpg_OneHandedSword" culture="Culture.khuzait" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_broad_ild_sword_t3_blade" Type="Blade" scale_factor="82" />
+      <Piece id="crpg_broad_ild_sword_t3_blade" Type="Blade" scale_factor="72" />
       <Piece id="crpg_broad_ild_sword_t3_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_broad_ild_sword_t3_handle" Type="Handle" scale_factor="80" />
       <Piece id="crpg_broad_ild_sword_t3_pommel" Type="Pommel" scale_factor="100" />
@@ -1078,9 +1078,9 @@
   </CraftedItem>
   <CraftedItem id="crpg_khuzait_sword_4_t4" name="{=gadEbFyj}Fine Steel Saber" crafting_template="crpg_OneHandedSword" culture="Culture.khuzait" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_khuzait_sword_4_t4_blade" Type="Blade" scale_factor="101" />
+      <Piece id="crpg_khuzait_sword_4_t4_blade" Type="Blade" scale_factor="94" />
       <Piece id="crpg_khuzait_sword_4_t4_guard" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_khuzait_sword_4_t4_handle" Type="Handle" scale_factor="90" />
+      <Piece id="crpg_khuzait_sword_4_t4_handle" Type="Handle" scale_factor="95" />
       <Piece id="crpg_khuzait_sword_4_t4_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
@@ -1302,7 +1302,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_khuzait_noble_sword_2_t5" name="{=a10taTGb}Lion Imprinted Saber" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.khuzait" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_khuzait_noble_sword_2_t5_blade" Type="Blade" scale_factor="108" />
+      <Piece id="crpg_khuzait_noble_sword_2_t5_blade" Type="Blade" scale_factor="100" />
       <Piece id="crpg_khuzait_noble_sword_2_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_khuzait_noble_sword_2_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_khuzait_noble_sword_2_t5_pommel" Type="Pommel" scale_factor="100" />
@@ -1310,7 +1310,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_khuzait_noble_sword_3_t5" name="{=tpUzcdY6}Tall Gripped Ild" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.khuzait" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_khuzait_noble_sword_3_t5_blade" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_khuzait_noble_sword_3_t5_blade" Type="Blade" scale_factor="98" />
       <Piece id="crpg_khuzait_noble_sword_3_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_khuzait_noble_sword_3_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_khuzait_noble_sword_3_t5_pommel" Type="Pommel" scale_factor="100" />
