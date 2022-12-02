@@ -4,11 +4,13 @@
     "name": "Heavy Morningstar",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 11297,
-    "weight": 2.3,
-    "tier": 8.87327,
+    "price": 13867,
+    "weight": 2.16,
+    "tier": 9.947458,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "TwoHandedMace",
@@ -17,20 +19,21 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 99,
-        "balance": 0.5,
-        "handling": 80,
+        "balance": 0.57,
+        "handling": 81,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
+          "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 90,
-        "swingDamage": 32,
+        "thrustSpeed": 92,
+        "swingDamage": 30,
         "swingDamageType": "Pierce",
-        "swingSpeed": 85
+        "swingSpeed": 87
       }
     ]
   },
@@ -4439,11 +4442,13 @@
     "name": "Light Morningstar",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4819,
-    "weight": 2.05,
-    "tier": 7.795581,
+    "price": 2968,
+    "weight": 1.97,
+    "tier": 5.881274,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Mace",
@@ -4452,18 +4457,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 72,
-        "balance": 0.46,
-        "handling": 90,
+        "balance": 0.53,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
-          "MeleeWeapon"
+          "MeleeWeapon",
+          "BonusAgainstShield"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 87,
-        "swingDamage": 26,
+        "swingDamage": 22,
         "swingDamageType": "Pierce",
-        "swingSpeed": 83
+        "swingSpeed": 86
       }
     ]
   },
@@ -18287,11 +18293,13 @@
     "name": "Morningstar",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6783,
-    "weight": 2.14,
-    "tier": 9.455995,
+    "price": 3939,
+    "weight": 1.99,
+    "tier": 6.94198227,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Mace",
@@ -18300,18 +18308,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 79,
-        "balance": 0.39,
-        "handling": 81,
+        "balance": 0.49,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
-          "MeleeWeapon"
+          "MeleeWeapon",
+          "BonusAgainstShield"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 31,
+        "thrustSpeed": 87,
+        "swingDamage": 26,
         "swingDamageType": "Pierce",
-        "swingSpeed": 81
+        "swingSpeed": 84
       }
     ]
   },
