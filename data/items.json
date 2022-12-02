@@ -24739,9 +24739,9 @@
     "name": "Broad Kaskara",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11318,
-    "weight": 2.26,
-    "tier": 8.8827,
+    "price": 13859,
+    "weight": 2.16,
+    "tier": 9.944082,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24752,19 +24752,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 123,
-        "balance": 0.52,
-        "handling": 80,
+        "balance": 0.57,
+        "handling": 81,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 39,
+        "thrustSpeed": 92,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 87
       }
     ]
   },
