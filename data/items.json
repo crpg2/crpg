@@ -24335,9 +24335,9 @@
     "name": "Simple Scimitar",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 1855,
-    "weight": 2.19,
-    "tier": 4.423231,
+    "price": 2923,
+    "weight": 2.04,
+    "tier": 5.82862473,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24350,18 +24350,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 95,
-        "balance": 0.56,
-        "handling": 85,
+        "balance": 0.66,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
+        "thrustSpeed": 87,
         "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 89
       }
     ]
   },
