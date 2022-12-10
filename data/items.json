@@ -8936,9 +8936,9 @@
     "name": "Polesword",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 6902,
+    "price": 5149,
     "weight": 1.75,
-    "tier": 6.166232,
+    "tier": 5.18671036,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8961,7 +8961,7 @@
         "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 93,
-        "swingDamage": 53,
+        "swingDamage": 50,
         "swingDamageType": "Cut",
         "swingSpeed": 65
       }
@@ -16069,9 +16069,9 @@
     "name": "Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 15644,
-    "weight": 1.31,
-    "tier": 9.81695,
+    "price": 3923,
+    "weight": 1.58,
+    "tier": 4.399698,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16082,8 +16082,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 147,
-        "balance": 0.66,
-        "handling": 76,
+        "balance": 0.41,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -16091,12 +16091,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
-        "swingDamage": 39,
+        "thrustSpeed": 95,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 82
       }
     ]
   },
@@ -22792,9 +22792,9 @@
     "name": "Bludgeon Staff",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 11454,
+    "price": 1753,
     "weight": 2.13,
-    "tier": 8.245486,
+    "tier": 2.62644267,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22816,7 +22816,7 @@
         "thrustDamage": 15,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 83,
-        "swingDamage": 30,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
         "swingSpeed": 41
       },
@@ -22840,7 +22840,7 @@
         "thrustDamage": 15,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 91,
-        "swingDamage": 30,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
         "swingSpeed": 81
       }
@@ -30834,9 +30834,9 @@
     "name": "War Scythe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 13870,
-    "weight": 1.54,
-    "tier": 9.18075752,
+    "price": 4752,
+    "weight": 1.68,
+    "tier": 4.94275331,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30847,8 +30847,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 169,
-        "balance": 0.56,
-        "handling": 74,
+        "balance": 0.4,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -30858,10 +30858,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 96,
+        "thrustSpeed": 94,
         "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 82
       }
     ]
   },

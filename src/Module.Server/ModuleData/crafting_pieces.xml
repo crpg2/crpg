@@ -1232,7 +1232,7 @@
   <CraftingPiece id="crpg_practice_spear_t1_blade" name="{=V9Kbq6vj}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.45">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Blunt" damage_factor="1.5" />
-      <Swing damage_type="Blunt" damage_factor="3" />
+      <Swing damage_type="Blunt" damage_factor="2.3" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
@@ -1256,7 +1256,7 @@
   <CraftingPiece id="crpg_easter_polesword_t4_blade" name="{=3ged5Ozt}Exceptional Eastern Glaive" tier="4" piece_type="Blade" mesh="spear_blade_22" length="89" weight="0.5">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2" />
-      <Swing damage_type="Cut" damage_factor="5.3" />
+      <Swing damage_type="Cut" damage_factor="5" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="2" />
@@ -1494,10 +1494,10 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_khuzait_polearm_1_t4_blade" name="{=OBeOZ27b}Glaive Head" tier="4" piece_type="Blade" mesh="spear_blade_19" length="37.4" weight="0.43">
+  <CraftingPiece id="crpg_khuzait_polearm_1_t4_blade" name="{=OBeOZ27b}Glaive Head" tier="4" piece_type="Blade" mesh="spear_blade_19" length="37.4" weight="0.7">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="4" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="1" />
@@ -6018,7 +6018,7 @@
 <Material id="Wood" count="1"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_war_scythe_blade" name="{=}War Scythe Blade" tier="2" piece_type="Blade" mesh="warscythe_head" length="120" weight="0.4248" excluded_item_usage_features="shield:thrust">
+<CraftingPiece id="crpg_war_scythe_blade" name="{=}War Scythe Blade" tier="2" piece_type="Blade" mesh="warscythe_head" length="120" weight="0.6" excluded_item_usage_features="shield:thrust">
 <BuildData piece_offset="-20"/>
 <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
 <Swing damage_type="Cut" damage_factor="4.0"/>
