@@ -878,13 +878,13 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_fine_pike_t4_handle" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.4" excluded_item_usage_features="long" CraftingCost="150">
-    <BuildData piece_offset="130.0" />
+    <BuildData piece_offset="100.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_thamaskene_pike_t4_handle" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="1.5" excluded_item_usage_features="long" CraftingCost="150">
-    <BuildData piece_offset="95.0" />
+    <BuildData piece_offset="70.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>

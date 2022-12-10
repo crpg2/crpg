@@ -11467,9 +11467,9 @@
     "name": "Fine Pike",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 1319,
-    "weight": 1.01,
-    "tier": 2.16118813,
+    "price": 1979,
+    "weight": 1.05,
+    "tier": 2.848568,
     "requirement": 0,
     "flags": [
       "DropOnWeaponChange"
@@ -11481,9 +11481,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 590,
+        "length": 554,
         "balance": 0.0,
-        "handling": 31,
+        "handling": 34,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -11493,10 +11493,10 @@
         ],
         "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 83,
+        "thrustSpeed": 86,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 13
+        "swingSpeed": 21
       },
       {
         "class": "TwoHandedPolearm",
@@ -11504,9 +11504,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 590,
+        "length": 554,
         "balance": 0.0,
-        "handling": 31,
+        "handling": 34,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -11516,10 +11516,10 @@
         ],
         "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 83,
+        "thrustSpeed": 86,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 13
+        "swingSpeed": 21
       }
     ]
   },
@@ -28285,9 +28285,9 @@
     "name": "Thamaskene Pike",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 3689,
-    "weight": 2.68,
-    "tier": 4.23687458,
+    "price": 4543,
+    "weight": 2.83,
+    "tier": 4.81075859,
     "requirement": 0,
     "flags": [
       "DropOnWeaponChange"
@@ -28299,9 +28299,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 441,
+        "length": 423,
         "balance": 0.0,
-        "handling": 34,
+        "handling": 36,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -28311,10 +28311,10 @@
         ],
         "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 78,
+        "thrustSpeed": 79,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 17
+        "swingSpeed": 23
       },
       {
         "class": "TwoHandedPolearm",
@@ -28322,9 +28322,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 441,
+        "length": 423,
         "balance": 0.0,
-        "handling": 34,
+        "handling": 36,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -28334,10 +28334,10 @@
         ],
         "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 78,
+        "thrustSpeed": 79,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 17
+        "swingSpeed": 23
       }
     ]
   },
