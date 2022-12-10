@@ -767,7 +767,7 @@
   },
   {
     "id": "crpg_aserai_axe_2_t2",
-    "name": "Bamboo Handled Ascia Axe",
+    "name": "Desert Ascia Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
     "price": 3448,
@@ -2283,7 +2283,7 @@
   },
   {
     "id": "crpg_bamboo_axe_t4",
-    "name": "Bamboo Axe",
+    "name": "Desert Battle Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
     "price": 2620,
@@ -3442,7 +3442,7 @@
   },
   {
     "id": "crpg_battania_axe_1_t2",
-    "name": "Norse Hatchet",
+    "name": "Norse Huscarl Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
     "price": 5385,
@@ -3478,7 +3478,7 @@
   },
   {
     "id": "crpg_battania_axe_2_t4",
-    "name": "One Handed Bearded Axe",
+    "name": "Saxon Bearded Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
     "price": 7710,
@@ -3514,7 +3514,7 @@
   },
   {
     "id": "crpg_battania_axe_3_t5",
-    "name": "Round Bitted Fine Steel Hatchet",
+    "name": "Steel Round Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
     "price": 2938,
@@ -5462,7 +5462,7 @@
   },
   {
     "id": "crpg_battle_axe_t4",
-    "name": "Battle Axe",
+    "name": "Shield Reaver Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
     "price": 4955,
@@ -13983,7 +13983,7 @@
   },
   {
     "id": "crpg_imperial_axe_t3",
-    "name": "Tzikourion",
+    "name": "Tzikourion Axe",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 1749,
@@ -16527,7 +16527,7 @@
   },
   {
     "id": "crpg_large_franziskaa_axe_t3",
-    "name": "Large Franziska Axe",
+    "name": "Long Franziska Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
     "price": 6497,
@@ -24588,7 +24588,7 @@
   },
   {
     "id": "crpg_small_bit_axe_t2",
-    "name": "Small Bit Axe",
+    "name": "Tabar Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
     "price": 408,
@@ -24700,7 +24700,7 @@
   },
   {
     "id": "crpg_small_spurred_axe_t2",
-    "name": "Small Spurred Axe",
+    "name": "Boarding Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
     "price": 2216,
@@ -24891,7 +24891,7 @@
   },
   {
     "id": "crpg_southern_small_axe_t2",
-    "name": "Bamboo Handled Axe",
+    "name": "Desert Crescent Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
     "price": 714,
@@ -26913,7 +26913,7 @@
   },
   {
     "id": "crpg_sturgia_axe_2_t2",
-    "name": "Galloglaich Axe",
+    "name": "Iron Hand Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
     "price": 2366,
@@ -26949,7 +26949,7 @@
   },
   {
     "id": "crpg_sturgia_axe_3_t3",
-    "name": "Commoner Axe",
+    "name": "Forester Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
     "price": 591,
@@ -26985,7 +26985,7 @@
   },
   {
     "id": "crpg_sturgia_axe_4_t4",
-    "name": "Veteran Warrior Axe",
+    "name": "Steel Pillager Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
     "price": 4522,
@@ -27021,7 +27021,7 @@
   },
   {
     "id": "crpg_sturgia_axe_5_t5",
-    "name": "Rectangular Bitted Axe",
+    "name": "Wood Chopper Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
     "price": 1188,
@@ -29255,7 +29255,7 @@
   },
   {
     "id": "crpg_tzkurion_axe_t3",
-    "name": "Broad Tzikourion",
+    "name": "Long Tzikourion Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
     "price": 5629,
@@ -29657,7 +29657,7 @@
   },
   {
     "id": "crpg_vlandia_axe_1_t3",
-    "name": "Infantry Axe",
+    "name": "Steel Footman Axe",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
     "price": 4779,
@@ -29693,7 +29693,7 @@
   },
   {
     "id": "crpg_vlandia_axe_2_t4",
-    "name": "Spiked Battle Axe",
+    "name": "Knightly Spiked Battle Axe",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
     "price": 6448,
@@ -32069,7 +32069,7 @@
   },
   {
     "id": "crpg_woodland_axe_t3",
-    "name": "Woodland Axe",
+    "name": "Shepherd Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
     "price": 896,
