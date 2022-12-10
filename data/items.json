@@ -13784,7 +13784,7 @@
       },
       {
         "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "itemUsage": "polearm_block_long_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -13806,6 +13806,69 @@
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 94
+      }
+    ]
+  },
+  {
+    "id": "crpg_hoplite_spear_2",
+    "name": "Leonidas Wrath",
+    "culture": "Vlandia",
+    "type": "Polearm",
+    "price": 13516,
+    "weight": 1.47,
+    "tier": 9.048988,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedPolearm",
+        "itemUsage": "onehanded_polearm_block_long_rshield_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 167,
+        "balance": 0.0,
+        "handling": 64,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "WideGrip",
+          "CanDismount",
+          "MissileWithPhysics",
+          "MultiplePenetration"
+        ],
+        "thrustDamage": 26,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 87,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 34
+      },
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 167,
+        "balance": 0.25,
+        "handling": 61,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount",
+          "CanDismount",
+          "MissileWithPhysics",
+          "MultiplePenetration"
+        ],
+        "thrustDamage": 26,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 94,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 77
       }
     ]
   },

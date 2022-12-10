@@ -6153,7 +6153,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-<CraftingPiece id="crpg_hoplite_blade_1" name="{=}Hoplite Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.1" >
+<CraftingPiece id="crpg_hoplite_blade_1" name="{=}Hoplite Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.1" excluded_item_usage_features="swing">
   <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
      <Thrust damage_type="Pierce" damage_factor="2.3" />
     </BladeData>
@@ -6186,6 +6186,37 @@
   </CraftingPiece>
    <CraftingPiece id="crpg_iklwa_handle_1" name="{=nGP3FlHm}Long Mahogany Shaft" tier="3" piece_type="Handle" mesh="spear_handle_25" length="270" weight="1.6">
     <BuildData piece_offset="22.9" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_hoplite_pommel_2" name="{=}Mace Shaped Pommel" tier="4" piece_type="Pommel" mesh="spear_pommel_11" culture="Culture.empire" length="10" weight="0.07">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_hoplite_guard_2" name="{=}Blunt Wings" tier="4" piece_type="Guard" mesh="spear_guard_3" culture="Culture.empire" length="12.5" weight="0">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+    <Flags>
+      <Flag name="CanDismount" />
+      <Flag name="CanHook" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_hoplite_blade_2" name="{=Oxew9WCe}Imperial Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_1" length="48" weight="0.3" excluded_item_usage_features="swing">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+     <Flags>
+      <Flag name="CanKnockDown" />
+    </Flags>
+  </CraftingPiece>
+    <CraftingPiece id="crpg_hoplite_handle_2" name="{=RXjhTS9s}Long Wrapped Oak Shaft" tier="2" piece_type="Handle" mesh="spear_handle_6" length="250" weight="1.5" CraftingCost="120">
+    <BuildData piece_offset="24.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
