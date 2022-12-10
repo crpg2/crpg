@@ -24173,9 +24173,9 @@
     "name": "Longsword",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13791,
-    "weight": 2.54,
-    "tier": 9.917134,
+    "price": 13992,
+    "weight": 2.36,
+    "tier": 9.997028,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24188,19 +24188,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 105,
-        "balance": 0.73,
-        "handling": 86,
+        "balance": 0.81,
+        "handling": 87,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 37,
+        "thrustSpeed": 90,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 94
       }
     ]
   },
@@ -29592,9 +29592,9 @@
     "name": "Wide Fullered Broad Two Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 13693,
-    "weight": 2.52,
-    "tier": 9.878143,
+    "price": 13803,
+    "weight": 1.97,
+    "tier": 9.921834,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29605,19 +29605,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 131,
-        "balance": 0.43,
-        "handling": 80,
+        "balance": 0.68,
+        "handling": 83,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 40,
+        "thrustSpeed": 94,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 90
       }
     ]
   },
