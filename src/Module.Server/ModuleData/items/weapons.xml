@@ -14,7 +14,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_peasant_pickaxe_1_t1" name="{=zUFRE9y4}Pickaxe" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_peasant_pickaxe_1_t1_blade" Type="Blade" scale_factor="120" />
+      <Piece id="crpg_peasant_pickaxe_1_t1_blade" Type="Blade" scale_factor="150" />
       <Piece id="crpg_peasant_pickaxe_1_t1_handle" Type="Handle" scale_factor="152" />
     </Pieces>
   </CraftedItem>
@@ -243,7 +243,7 @@
   <CraftedItem id="crpg_aserai_axe_1_t2" name="{=bcjcw1o9}Wood Splitter Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_aserai_axe_1_t2_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_aserai_axe_1_t2_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_aserai_axe_1_t2_handle" Type="Handle" scale_factor="123" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_aserai_axe_2_t2" name="{=89OWzLBb}Bamboo Handled Ascia Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
@@ -261,13 +261,13 @@
   <CraftedItem id="crpg_battania_axe_1_t2" name="{=ljOwXClb}Norse Hatchet" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_battania_axe_1_t2_blade" Type="Blade" scale_factor="103" />
-      <Piece id="crpg_battania_axe_1_t2_handle" Type="Handle" scale_factor="130" />
+      <Piece id="crpg_battania_axe_1_t2_handle" Type="Handle" scale_factor="126" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_small_spurred_axe_t2" name="{=dRWKmbaa}Small Spurred Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_small_spurred_axe_t2_blade" Type="Blade" scale_factor="115" />
-      <Piece id="crpg_small_spurred_axe_t2_handle" Type="Handle" scale_factor="115" />
+      <Piece id="crpg_small_spurred_axe_t2_handle" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_southern_small_axe_t2" name="{=bdTQG99v}Bamboo Handled Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
@@ -291,7 +291,7 @@
   <CraftedItem id="crpg_vlandia_axe_1_t3" name="{=KanKBHcS}Infantry Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_vlandia_axe_1_t3_blade" Type="Blade" scale_factor="115" />
-      <Piece id="crpg_vlandia_axe_1_t3_handle" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_vlandia_axe_1_t3_handle" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_sturgia_axe_3_t3" name="{=xgOuAWEE}Commoner Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
@@ -315,7 +315,7 @@
   <CraftedItem id="crpg_tzkurion_axe_t3" name="{=POhLMyat}Broad Tzikourion" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_tzkurion_axe_t3_blade" Type="Blade" scale_factor="140" />
-      <Piece id="crpg_tzkurion_axe_t3_handle" Type="Handle" scale_factor="130" />
+      <Piece id="crpg_tzkurion_axe_t3_handle" Type="Handle" scale_factor="123" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_large_franziskaa_axe_t3" name="{=KRhIG1cw}Large Franziska Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
@@ -326,8 +326,8 @@
   </CraftedItem>
   <CraftedItem id="crpg_vlandia_axe_2_t4" name="{=SDBvC0ON}Spiked Battle Axe" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_vlandia_axe_2_t4_blade" Type="Blade" scale_factor="150" />
-      <Piece id="crpg_vlandia_axe_2_t4_handle" Type="Handle" scale_factor="150" />
+      <Piece id="crpg_vlandia_axe_2_t4_blade" Type="Blade" scale_factor="140" />
+      <Piece id="crpg_vlandia_axe_2_t4_handle" Type="Handle" scale_factor="140" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_sturgia_axe_4_t4" name="{=Qpl5aCb0}Veteran Warrior Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
@@ -339,7 +339,7 @@
   <CraftedItem id="crpg_battania_axe_2_t4" name="{=pjvwuVuc}One Handed Bearded Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_battania_axe_2_t4_blade" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_battania_axe_2_t4_handle" Type="Handle" scale_factor="106" />
+      <Piece id="crpg_battania_axe_2_t4_handle" Type="Handle" scale_factor="108" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_bamboo_axe_t4" name="{=FAzGPJn6}Bamboo Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
