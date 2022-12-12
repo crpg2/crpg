@@ -27385,9 +27385,9 @@
     "name": "Thamaskene Steel Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5604,
-    "weight": 2.27,
-    "tier": 8.49289,
+    "price": 7205,
+    "weight": 2.11,
+    "tier": 9.779291,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27400,8 +27400,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.39,
-        "handling": 88,
+        "balance": 0.44,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -27409,9 +27409,9 @@
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 33,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 83
       }
     ]
   },
@@ -27660,9 +27660,9 @@
     "name": "Tapered Blade",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 1883,
+    "price": 2323,
     "weight": 1.97,
-    "tier": 4.464974,
+    "tier": 5.078395,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27681,7 +27681,7 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 27,
@@ -27695,9 +27695,9 @@
     "name": "Backsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 2523,
+    "price": 2903,
     "weight": 2.01,
-    "tier": 5.33765173,
+    "tier": 5.80417633,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27712,11 +27712,11 @@
         "length": 89,
         "balance": 0.53,
         "handling": 93,
-        "bodyArmor": 3,
+        "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 28,
@@ -27730,9 +27730,9 @@
     "name": "Pointy Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5417,
-    "weight": 1.57,
-    "tier": 8.331923,
+    "price": 5155,
+    "weight": 1.66,
+    "tier": 8.1007,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27744,9 +27744,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 92,
-        "balance": 0.72,
-        "handling": 95,
+        "length": 93,
+        "balance": 0.68,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -27756,7 +27756,7 @@
         "thrustSpeed": 90,
         "swingDamage": 23,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 90
       }
     ]
   },
@@ -27765,9 +27765,9 @@
     "name": "Long Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 4472,
-    "weight": 1.97,
-    "tier": 7.46920633,
+    "price": 5267,
+    "weight": 2.05,
+    "tier": 8.200376,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27780,18 +27780,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 100,
-        "balance": 0.63,
-        "handling": 91,
+        "balance": 0.59,
+        "handling": 90,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 28,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 87
       }
     ]
   },
@@ -27800,9 +27800,9 @@
     "name": "Fullered Narrow Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 6489,
+    "price": 5255,
     "weight": 1.69,
-    "tier": 9.223653,
+    "tier": 8.189159,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27821,10 +27821,10 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 29,
+        "swingDamage": 27,
         "swingDamageType": "Cut",
         "swingSpeed": 92
       }
@@ -27835,9 +27835,9 @@
     "name": "Fullered Long Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 6430,
-    "weight": 1.72,
-    "tier": 9.176866,
+    "price": 7399,
+    "weight": 1.95,
+    "tier": 9.925604,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27850,18 +27850,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 97,
-        "balance": 0.73,
-        "handling": 85,
+        "balance": 0.66,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 31,
+        "thrustSpeed": 87,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 89
       }
     ]
   },
