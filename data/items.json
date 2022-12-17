@@ -4679,9 +4679,9 @@
     "name": "Rhomphaia",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 20438,
-    "weight": 1.25,
-    "tier": 11.3753214,
+    "price": 12946,
+    "weight": 1.35,
+    "tier": 8.833304,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4692,8 +4692,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 184,
-        "balance": 0.33,
-        "handling": 69,
+        "balance": 0.28,
+        "handling": 67,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -4704,10 +4704,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
+        "thrustSpeed": 96,
         "swingDamage": 47,
         "swingDamageType": "Cut",
-        "swingSpeed": 79
+        "swingSpeed": 78
       }
     ]
   },
@@ -5661,9 +5661,9 @@
     "name": "Billhook",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 23734,
-    "weight": 1.67,
-    "tier": 12.3430233,
+    "price": 15222,
+    "weight": 1.91,
+    "tier": 9.668979,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -5674,8 +5674,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 141,
-        "balance": 0.46,
-        "handling": 71,
+        "balance": 0.42,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -5686,10 +5686,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 82
       }
     ]
   },
@@ -5772,9 +5772,9 @@
     "name": "Bo Staff",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 8352,
+    "price": 1107,
     "weight": 2.39,
-    "tier": 6.886944,
+    "tier": 1.90749764,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -5795,10 +5795,10 @@
           "TwoHandIdleOnMount",
           "NoBlood"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 10,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 91,
-        "swingDamage": 18,
+        "swingDamage": 14,
         "swingDamageType": "Blunt",
         "swingSpeed": 94
       }
@@ -10914,9 +10914,9 @@
     "name": "Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 18269,
-    "weight": 1.66,
-    "tier": 10.6957655,
+    "price": 15781,
+    "weight": 1.72,
+    "tier": 9.864457,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10926,9 +10926,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 164,
-        "balance": 0.47,
-        "handling": 73,
+        "length": 169,
+        "balance": 0.44,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -10938,10 +10938,10 @@
         ],
         "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 94,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 83
       }
     ]
   },
@@ -16090,9 +16090,9 @@
     "name": "Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 5797,
-    "weight": 1.58,
-    "tier": 5.565307,
+    "price": 14671,
+    "weight": 1.63,
+    "tier": 9.472459,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16103,8 +16103,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 147,
-        "balance": 0.41,
-        "handling": 70,
+        "balance": 0.48,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -16112,12 +16112,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
-        "thrustDamageType": "Pierce",
+        "thrustDamage": 25,
+        "thrustDamageType": "Cut",
         "thrustSpeed": 95,
-        "swingDamage": 40,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 84
       }
     ]
   },
@@ -16126,9 +16126,9 @@
     "name": "Long Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 23594,
-    "weight": 1.2,
-    "tier": 12.303441,
+    "price": 14929,
+    "weight": 1.35,
+    "tier": 9.564983,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16139,8 +16139,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 200,
-        "balance": 0.28,
-        "handling": 67,
+        "balance": 0.22,
+        "handling": 65,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -16148,12 +16148,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 24,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 98,
+        "thrustSpeed": 96,
         "swingDamage": 47,
         "swingDamageType": "Cut",
-        "swingSpeed": 78
+        "swingSpeed": 76
       }
     ]
   },
@@ -17511,9 +17511,9 @@
     "name": "Long Bardiche",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 23449,
-    "weight": 1.58,
-    "tier": 12.2621946,
+    "price": 15938,
+    "weight": 1.65,
+    "tier": 9.918792,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -17526,7 +17526,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 161,
-        "balance": 0.23,
+        "balance": 0.21,
         "handling": 67,
         "bodyArmor": 0,
         "flags": [
@@ -17536,12 +17536,12 @@
           "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 23,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
-        "swingDamage": 50,
+        "swingDamage": 49,
         "swingDamageType": "Cut",
-        "swingSpeed": 77
+        "swingSpeed": 76
       }
     ]
   },
@@ -17632,9 +17632,9 @@
     "name": "Long Hafted Spiked Mace",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 17921,
-    "weight": 1.69,
-    "tier": 10.5830441,
+    "price": 13775,
+    "weight": 1.83,
+    "tier": 9.145699,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -17647,8 +17647,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 154,
-        "balance": 0.23,
-        "handling": 68,
+        "balance": 0.2,
+        "handling": 67,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -17657,12 +17657,12 @@
           "TwoHandIdleOnMount",
           "MultiplePenetration"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 76
+        "swingSpeed": 75
       }
     ]
   },
@@ -30640,9 +30640,9 @@
     "name": "Voulge",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 23348,
-    "weight": 1.29,
-    "tier": 12.2334385,
+    "price": 15805,
+    "weight": 1.45,
+    "tier": 9.872618,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -30655,8 +30655,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 142,
-        "balance": 0.44,
-        "handling": 67,
+        "balance": 0.4,
+        "handling": 66,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -30665,12 +30665,12 @@
           "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
-        "swingDamage": 48,
+        "thrustSpeed": 96,
+        "swingDamage": 47,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 82
       }
     ]
   },
@@ -31044,9 +31044,9 @@
     "name": "War Scythe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 7334,
+    "price": 12977,
     "weight": 1.68,
-    "tier": 6.38806343,
+    "tier": 8.845194,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31069,7 +31069,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 40,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
         "swingSpeed": 82
       }
