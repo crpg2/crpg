@@ -5736,9 +5736,9 @@
     "name": "Blacksmith Warhammer",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 8043,
+    "price": 6657,
     "weight": 2.23,
-    "tier": 10.3958168,
+    "tier": 9.357116,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -5751,7 +5751,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 75,
-        "balance": 0.23,
+        "balance": 0.24,
         "handling": 82,
         "bodyArmor": 0,
         "flags": [
@@ -5761,9 +5761,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 85,
-        "swingDamage": 25,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 76
+        "swingSpeed": 77
       }
     ]
   },

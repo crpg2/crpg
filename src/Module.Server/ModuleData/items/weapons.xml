@@ -38,7 +38,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_blacksmith_war_hammer_1_t1" name="{=6WcZ5Tr0}Blacksmith Warhammer" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_blacksmith_war_hammer_1_t1_blade" Type="Blade" scale_factor="155" />
+      <Piece id="crpg_blacksmith_war_hammer_1_t1_blade" Type="Blade" scale_factor="140" />
       <Piece id="crpg_blacksmith_war_hammer_mace_t3_handle" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
