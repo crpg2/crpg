@@ -18699,9 +18699,9 @@
     "name": "Notched Military Fork",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 11641,
-    "weight": 2.18,
-    "tier": 8.3211,
+    "price": 13134,
+    "weight": 3.35,
+    "tier": 8.905211,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -18713,7 +18713,7 @@
         "stackAmount": 0,
         "length": 194,
         "balance": 0.0,
-        "handling": 47,
+        "handling": 40,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -18721,12 +18721,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 33,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
+        "thrustSpeed": 78,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 55
+        "swingSpeed": 43
       },
       {
         "class": "TwoHandedPolearm",
@@ -18736,7 +18736,7 @@
         "stackAmount": 0,
         "length": 194,
         "balance": 0.0,
-        "handling": 47,
+        "handling": 40,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -18744,12 +18744,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 33,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
+        "thrustSpeed": 78,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 55
+        "swingSpeed": 43
       }
     ]
   },
@@ -18758,9 +18758,9 @@
     "name": "Military Fork",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 10412,
-    "weight": 1.54,
-    "tier": 7.812171,
+    "price": 14967,
+    "weight": 2.62,
+    "tier": 9.578633,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -18770,20 +18770,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 165,
+        "length": 150,
         "balance": 0.0,
-        "handling": 64,
+        "handling": 55,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 26,
+        "thrustDamage": 31,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
+        "thrustSpeed": 77,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 29
+        "swingSpeed": 20
       },
       {
         "class": "TwoHandedPolearm",
@@ -18791,9 +18791,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 165,
-        "balance": 0.16,
-        "handling": 61,
+        "length": 150,
+        "balance": 0.0,
+        "handling": 52,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -18801,12 +18801,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 26,
+        "thrustDamage": 31,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 86,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 74
+        "swingSpeed": 64
       }
     ]
   },
@@ -22681,9 +22681,9 @@
     "name": "Iron Pitchfork",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 4026,
-    "weight": 1.92,
-    "tier": 4.470168,
+    "price": 7558,
+    "weight": 2.82,
+    "tier": 6.50062847,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22697,18 +22697,18 @@
         "stackAmount": 0,
         "length": 122,
         "balance": 0.0,
-        "handling": 75,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
+        "thrustSpeed": 79,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 49
+        "swingSpeed": 39
       },
       {
         "class": "TwoHandedPolearm",
@@ -22717,8 +22717,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 122,
-        "balance": 0.57,
-        "handling": 73,
+        "balance": 0.36,
+        "handling": 68,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -22726,12 +22726,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 87
+        "swingSpeed": 80
       }
     ]
   },
@@ -22740,9 +22740,9 @@
     "name": "Pitchfork",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 183,
-    "weight": 1.47,
-    "tier": 0.377611518,
+    "price": 2600,
+    "weight": 2.47,
+    "tier": 3.401403,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22756,18 +22756,18 @@
         "stackAmount": 0,
         "length": 132,
         "balance": 0.0,
-        "handling": 82,
+        "handling": 75,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
+        "thrustSpeed": 82,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 61
+        "swingSpeed": 50
       },
       {
         "class": "TwoHandedPolearm",
@@ -22776,8 +22776,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 132,
-        "balance": 0.89,
-        "handling": 81,
+        "balance": 0.61,
+        "handling": 74,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -22785,12 +22785,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
+        "thrustSpeed": 89,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 96
+        "swingSpeed": 88
       }
     ]
   },
