@@ -8115,16 +8115,16 @@
     "name": "Squire's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 8123,
+    "price": 9894,
     "weight": 2.8,
-    "tier": 6.37217569,
-    "requirement": 11,
+    "tier": 7.140182,
+    "requirement": 12,
     "flags": [],
     "weapons": [
       {
         "class": "Crossbow",
         "itemUsage": "crossbow_light",
-        "accuracy": 97,
+        "accuracy": 98,
         "missileSpeed": 105,
         "stackAmount": 1,
         "length": 95,
@@ -8144,7 +8144,7 @@
         "thrustSpeed": 86,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 55
+        "swingSpeed": 61
       }
     ]
   },
@@ -8223,6 +8223,44 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 68
+      }
+    ]
+  },
+  {
+    "id": "crpg_crossbow_k",
+    "name": "Templar's Light Crossbow",
+    "culture": "Vlandia",
+    "type": "Crossbow",
+    "price": 14299,
+    "weight": 3.1,
+    "tier": 8.796564,
+    "requirement": 15,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Crossbow",
+        "itemUsage": "crossbow_light",
+        "accuracy": 98,
+        "missileSpeed": 110,
+        "stackAmount": 1,
+        "length": 95,
+        "balance": 0.0,
+        "handling": 84,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "CantReloadOnHorseback",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 40,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 84,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 69
       }
     ]
   },
