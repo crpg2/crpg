@@ -2159,7 +2159,7 @@
   <CraftingPiece id="crpg_northern_throwing_axe_1_t1_blade" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.481">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.1" />
+      <Swing damage_type="Cut" damage_factor="1.175" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -2185,7 +2185,7 @@
   <CraftingPiece id="crpg_southern_throwing_axe_1_t4_blade" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.125" />
+      <Swing damage_type="Cut" damage_factor="1.225" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -2198,7 +2198,7 @@
   <CraftingPiece id="crpg_highland_throwing_axe_1_t2_blade" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.125" />
+      <Swing damage_type="Cut" damage_factor="1.225" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -6027,29 +6027,29 @@
 <Material id="Iron3" count="4"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_dawn_blade" name="{=}Dawn Blade" tier="4" piece_type="Blade" mesh="dawn_blade" culture="Culture.battania" length="96.9" weight="0.4">
+<CraftingPiece id="crpg_dawn_blade" name="{=}Dawn Blade" tier="4" piece_type="Blade" mesh="dawn_blade" culture="Culture.battania" length="96.9" weight="1.15">
 <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
 <Thrust damage_type="Pierce" damage_factor="2.8"/>
-<Swing damage_type="Cut" damage_factor="2.9"/>
+<Swing damage_type="Cut" damage_factor="3.1"/>
 </BladeData>
 <Materials>
 <Material id="Iron5" count="4"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_dawn_pommel" name="{=}Dawn Pommel" tier="4" piece_type="Pommel" mesh="dawn_pommel" culture="Culture.battania" length="3.69" weight="0.275">
+<CraftingPiece id="crpg_dawn_pommel" name="{=}Dawn Pommel" tier="4" piece_type="Pommel" mesh="dawn_pommel" culture="Culture.battania" length="3.69" weight="0.15">
 <BuildData next_piece_offset="4"/>
 <Materials>
 <Material id="Iron4" count="1"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_dawn_guard" name="{=}Dawn Guard" tier="5" piece_type="Guard" mesh="dawn_guard" culture="Culture.battania" length="5.65" weight="0.275">
+<CraftingPiece id="crpg_dawn_guard" name="{=}Dawn Guard" tier="5" piece_type="Guard" mesh="dawn_guard" culture="Culture.battania" length="5.65" weight="0.15">
 <BuildData next_piece_offset="11"/>
 <StatContributions armor_bonus="3"/>
 <Materials>
 <Material id="Iron5" count="1"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_dawn_handle" name="{=}Dawn Handle" tier="3" piece_type="Handle" mesh="dawn_handle" culture="Culture.khuzait" length="19.2" weight="0.8">
+<CraftingPiece id="crpg_dawn_handle" name="{=}Dawn Handle" tier="3" piece_type="Handle" mesh="dawn_handle" culture="Culture.khuzait" length="19.2" weight="1">
 <BuildData piece_offset="-5" previous_piece_offset="-2.0" next_piece_offset="2"/>
 <Materials>
 <Material id="Iron3" count="1"/>
