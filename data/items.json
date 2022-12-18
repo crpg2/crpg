@@ -310,6 +310,25 @@
     "weapons": []
   },
   {
+    "id": "crpg_AdamnSaxonHelm",
+    "name": "Saxon Noble Helm",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 4855,
+    "weight": 5.0,
+    "tier": 7.416003,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 48,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_adarga",
     "name": "Adarga",
     "culture": "Aserai",
@@ -6849,6 +6868,43 @@
     "weapons": []
   },
   {
+    "id": "crpg_buckler",
+    "name": "Buckler",
+    "culture": "Sturgia",
+    "type": "Shield",
+    "price": 8729,
+    "weight": 4.7,
+    "tier": 9.691567,
+    "requirement": 0,
+    "flags": [
+      "ForceAttachOffHandPrimaryItemBone",
+      "HeldInOffHand"
+    ],
+    "weapons": [
+      {
+        "class": "LargeShield",
+        "itemUsage": "hand_shield",
+        "accuracy": 100,
+        "missileSpeed": 0,
+        "stackAmount": 250,
+        "length": 35,
+        "balance": 0.0,
+        "handling": 86,
+        "bodyArmor": 9,
+        "flags": [
+          "HasHitPoints",
+          "CanBlockRanged"
+        ],
+        "thrustDamage": 5,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 86,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 100
+      }
+    ]
+  },
+  {
     "id": "crpg_burlap_sack_dress",
     "name": "Burlap Dress",
     "culture": "Looters",
@@ -7379,6 +7435,61 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 82
+      }
+    ]
+  },
+  {
+    "id": "crpg_claymore",
+    "name": "Claymore",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 14064,
+    "weight": 2.46,
+    "tier": 10.0255651,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 144,
+        "balance": 0.52,
+        "handling": 67,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 26,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 89,
+        "swingDamage": 42,
+        "swingDamageType": "Cut",
+        "swingSpeed": 85
+      },
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 144,
+        "balance": 0.52,
+        "handling": 67,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 26,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 89,
+        "swingDamage": 42,
+        "swingDamageType": "Cut",
+        "swingSpeed": 85
       }
     ]
   },
@@ -11440,6 +11551,25 @@
     "weapons": []
   },
   {
+    "id": "crpg_felthat",
+    "name": "Felthat",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 50,
+    "weight": 0.1,
+    "tier": 0.18080914,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 1,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Cloth"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_female_head_wrap",
     "name": "Female Headwrap",
     "culture": "Aserai",
@@ -12915,6 +13045,45 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 82
+      }
+    ]
+  },
+  {
+    "id": "crpg_heavy_blacksmith_hammer",
+    "name": "Heavy Blacksmith Hammer",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 12006,
+    "weight": 2.8,
+    "tier": 9.180807,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 94,
+        "balance": 0.0,
+        "handling": 69,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "TwoHandIdleOnMount",
+          "MultiplePenetration",
+          "CanKnockDown"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 86,
+        "swingDamage": 33,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 70
       }
     ]
   },
@@ -15037,6 +15206,42 @@
         "swingDamage": 26,
         "swingDamageType": "Cut",
         "swingSpeed": 90
+      }
+    ]
+  },
+  {
+    "id": "crpg_kama",
+    "name": "Kama",
+    "culture": "Sturgia",
+    "type": "OneHandedWeapon",
+    "price": 4567,
+    "weight": 1.25,
+    "tier": 7.55979061,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "OneHandedAxe",
+        "itemUsage": "onehanded_shield_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 71,
+        "balance": 0.6,
+        "handling": 85,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "BonusAgainstShield"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 93,
+        "swingDamage": 25,
+        "swingDamageType": "Pierce",
+        "swingSpeed": 87
       }
     ]
   },
@@ -17357,6 +17562,25 @@
     "weapons": []
   },
   {
+    "id": "crpg_light_chain_shoulders",
+    "name": "Light Chain Shoulders",
+    "culture": "Vlandia",
+    "type": "ShoulderArmor",
+    "price": 174,
+    "weight": 1.05,
+    "tier": 2.87292528,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 9,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Chainmail"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_light_harness",
     "name": "Light Harness",
     "culture": "Neutral",
@@ -17687,6 +17911,45 @@
       "materialType": "Cloth"
     },
     "weapons": []
+  },
+  {
+    "id": "crpg_long_maul",
+    "name": "Great Maul",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 13606,
+    "weight": 1.68,
+    "tier": 9.843185,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 133,
+        "balance": 0.0,
+        "handling": 62,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "TwoHandIdleOnMount",
+          "MultiplePenetration",
+          "CanKnockDown"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 93,
+        "swingDamage": 34,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 65
+      }
+    ]
   },
   {
     "id": "crpg_long_padded_robe",
@@ -18157,6 +18420,44 @@
     "weapons": []
   },
   {
+    "id": "crpg_mallet",
+    "name": "Mallet",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 8594,
+    "weight": 2.05,
+    "tier": 7.602605,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 84,
+        "balance": 0.39,
+        "handling": 77,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "TwoHandIdleOnMount",
+          "MultiplePenetration"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 92,
+        "swingDamage": 28,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
+      }
+    ]
+  },
+  {
     "id": "crpg_manual_lowland_yew_bow",
     "name": "Experminetal Manual Yew Bow",
     "culture": "Vlandia",
@@ -18309,6 +18610,45 @@
         "swingDamage": 6,
         "swingDamageType": "Blunt",
         "swingSpeed": 97
+      }
+    ]
+  },
+  {
+    "id": "crpg_maul",
+    "name": "Great Maul",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 13531,
+    "weight": 3.08,
+    "tier": 9.813135,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.05,
+        "handling": 72,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "TwoHandIdleOnMount",
+          "MultiplePenetration",
+          "CanKnockDown"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 86,
+        "swingDamage": 34,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 71
       }
     ]
   },
@@ -24146,6 +24486,25 @@
     "weapons": []
   },
   {
+    "id": "crpg_santa",
+    "name": "Santahat",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 50,
+    "weight": 0.1,
+    "tier": 0.18080914,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 1,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Cloth"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_scale_armor",
     "name": "Rugged Scale Armor",
     "culture": "Battania",
@@ -24478,6 +24837,42 @@
     ]
   },
   {
+    "id": "crpg_sherpherds",
+    "name": "Sherpherd's Axe",
+    "culture": "Sturgia",
+    "type": "OneHandedWeapon",
+    "price": 2040,
+    "weight": 0.97,
+    "tier": 4.691741,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "OneHandedAxe",
+        "itemUsage": "onehanded_shield_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 61,
+        "balance": 1.0,
+        "handling": 98,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "BonusAgainstShield"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 97,
+        "swingDamage": 23,
+        "swingDamageType": "Cut",
+        "swingSpeed": 101
+      }
+    ]
+  },
+  {
     "id": "crpg_shield_wall_banner_t2",
     "name": "Shield Wall Banner",
     "culture": "Sturgia",
@@ -24510,6 +24905,44 @@
         "swingDamage": 6,
         "swingDamageType": "Blunt",
         "swingSpeed": 97
+      }
+    ]
+  },
+  {
+    "id": "crpg_shieldsplitter",
+    "name": "Shieldsplitter",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 13281,
+    "weight": 1.95,
+    "tier": 9.711876,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.44,
+        "handling": 78,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 93,
+        "swingDamage": 33,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
       }
     ]
   },
@@ -25004,6 +25437,43 @@
         "swingDamage": 30,
         "swingDamageType": "Cut",
         "swingSpeed": 90
+      }
+    ]
+  },
+  {
+    "id": "crpg_snowball",
+    "name": "Snowball",
+    "culture": "Neutral",
+    "type": "Thrown",
+    "price": 962,
+    "weight": 0.1,
+    "tier": 2.92118979,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Stone",
+        "itemUsage": "stone",
+        "accuracy": 100,
+        "missileSpeed": 40,
+        "stackAmount": 10,
+        "length": 10,
+        "balance": 0.0,
+        "handling": 102,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 8,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 102,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 102
       }
     ]
   },
@@ -26626,6 +27096,27 @@
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 5,
+      "materialType": "Cloth"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_strawhat",
+    "name": "Strawhat",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 50,
+    "weight": 0.1,
+    "tier": 0.18080914,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 1,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -28506,6 +28997,25 @@
       "armArmor": 0,
       "legArmor": 0,
       "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_tallottoman",
+    "name": "Tall Ottoman Hat",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 50,
+    "weight": 0.1,
+    "tier": 0.18080914,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 1,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Cloth"
     },
     "weapons": []
   },

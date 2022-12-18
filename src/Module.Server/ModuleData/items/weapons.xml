@@ -2396,4 +2396,70 @@
       <Piece id="crpg_hoplite_pommel_2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_maul" name="{=}Great Maul" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_maul_head" Type="Blade" scale_factor="107"/>
+      <Piece id="crpg_maul_handle" Type="Handle" scale_factor="100"/>
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_long_maul" name="{=}Great Maul" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_long_maul_head" Type="Blade" scale_factor="107"/>
+      <Piece id="crpg_long_maul_handle" Type="Handle" scale_factor="165"/>
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_claymore" name="{=}Claymore" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+    <Pieces>
+      <Piece id="crpg_claymore_blade" Type="Blade" scale_factor="125"/>
+      <Piece id="crpg_claymore_guard" Type="Guard" scale_factor="100"/>
+      <Piece id="crpg_claymore_handle" Type="Handle" scale_factor="100"/>
+      <Piece id="crpg_claymore_pommel" Type="Pommel" scale_factor="100"/>
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_claymore" name="{=}Claymore" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+    <Pieces>
+      <Piece id="crpg_claymore_blade" Type="Blade" scale_factor="125"/>
+      <Piece id="crpg_claymore_guard" Type="Guard" scale_factor="100"/>
+      <Piece id="crpg_claymore_handle" Type="Handle" scale_factor="100"/>
+      <Piece id="crpg_claymore_pommel" Type="Pommel" scale_factor="100"/>
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_kama" name="{=}Kama" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_kama_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_kama_handle" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_heavy_blacksmith_hammer" name="{=}Heavy Blacksmith Hammer" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_heavy_blacksmith_hammer_head" Type="Blade" scale_factor="100"/>
+      <Piece id="crpg_heavy_blacksmith_hammer_handle" Type="Handle" scale_factor="110"/>
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_mallet" name="{=}Mallet" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_mallet_head" Type="Blade" scale_factor="100"/>
+      <Piece id="crpg_mallet_handle" Type="Handle" scale_factor="100"/>
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_shieldsplitter" name="{=}Shieldsplitter" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+   <Pieces>
+      <Piece id="crpg_shieldsplitter_head" Type="Blade" scale_factor="100"/>
+      <Piece id="crpg_shieldsplitter_handle" Type="Handle" scale_factor="100"/>
+    </Pieces>
+  </CraftedItem>
+  <Item id="crpg_snowball" name="Snowball" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
+    <ItemComponent>
+      <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="10" physics_material="missile" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="10" thrust_damage="8" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
+        <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <CraftedItem id="crpg_sherpherds" name="Sherpherd's Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_sherpherds_head" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_sherpherds_handle" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
 </Items>

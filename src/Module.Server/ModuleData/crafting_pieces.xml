@@ -6221,4 +6221,168 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_heavy_blacksmith_hammer_head" name="{=}Heavy Smith Hammer Head" tier="1" piece_type="Blade" mesh="blacksmith_hammer_head" length="12.2" weight="1.7" full_scale="true" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="-13.5" next_piece_offset="0" />
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+	  <Flag name="CanKnockDown" />
+	  <Flag name="CanCrushThrough" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_heavy_blacksmith_hammer_handle" name="{=}Heavy Blacksmith Hammer Handle" tier="1" piece_type="Handle" mesh="blacksmith_hammer_handle" length="110" weight="1.0" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+    <BuildData piece_offset="30.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_mallet_head" name="{=}Mallet Head" tier="1" piece_type="Blade" mesh="mallet_head" length="19.5" weight="1.65" full_scale="true" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="-13.5" next_piece_offset="0" />
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+	  <Flag name="CanKnockDown" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_mallet_handle" name="{=}Mallet Handle" tier="1" piece_type="Handle" mesh="mallet_handle" length="96" weight="0.4" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+    <BuildData piece_offset="30.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shieldsplitter_head" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.55" full_scale="true" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="-13.5" next_piece_offset="0" />
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+	  <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_shieldsplitter_handle" name="{=}Shield Splitter Handle" tier="1" piece_type="Handle" mesh="shieldsplitter_handle" length="102" weight="0.4" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+    <BuildData piece_offset="30.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_maul_head" name="{=}Maul Head" tier="1" piece_type="Blade" mesh="maul_head" length="12" weight="1.70" full_scale="true" excluded_item_usage_features="">
+    <BuildData piece_offset="-11.0" next_piece_offset="0" />
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.4" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+	  <Flag name="CanKnockDown" />
+	  <Flag name="CanCrushThrough" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_maul_handle" name="{=}Maul Handle" tier="1" piece_type="Handle" mesh="maul_handle" length="100" weight="1" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+    <BuildData piece_offset="30.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_long_maul_head" name="{=}Long Maul Head" tier="1" piece_type="Blade" mesh="maul_head" length="12" weight="1.1" full_scale="true" excluded_item_usage_features="">
+    <BuildData piece_offset="-11.0" next_piece_offset="0" />
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.4" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+	  <Flag name="CanKnockDown" />
+	  <Flag name="CanCrushThrough" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_long_maul_handle" name="{=}Long Maul Handle" tier="1" piece_type="Handle" mesh="maul_handle" length="100" weight="0.2" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+    <BuildData piece_offset="30.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kama_handle" name="{=}Kama Handle" tier="2" piece_type="Handle" mesh="kama_handle" length="100" weight="0.346">
+    <BuildData piece_offset="20" next_piece_offset="0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kama_blade" name="{=}Kama Blade" tier="2" piece_type="Blade" mesh="kama_blade" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.9">
+    <BuildData piece_offset="-5.0" />
+    <BladeData stack_amount="2" blade_length="6.66" blade_width="32.2" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Pierce" damage_factor="2.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="4" />
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_blade" name="{=}Claymore Blade" tier="4" piece_type="Blade" mesh="claymore_blade" culture="Culture.battania" length="111" weight="0.05">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.6"/>
+      <Swing damage_type="Cut" damage_factor="4.2"/>
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4"/>
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pommel" name="{=}Claymore Pommel" tier="4" piece_type="Pommel" mesh="claymore_pommel" culture="Culture.battania" length="6.64" weight="0.6">
+    <BuildData next_piece_offset="5"/>
+    <Materials>
+      <Material id="Iron4" count="1"/>
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_guard" name="{=}Claymore Guard" tier="5" piece_type="Guard" mesh="claymore_guard" culture="Culture.battania" length="14.5" weight="0.6">
+    <BuildData next_piece_offset="15"/>
+    <StatContributions armor_bonus="3"/>
+    <Materials>
+      <Material id="Iron5" count="1"/>
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_handle" name="{=}Claymore Handle" tier="3" piece_type="Handle" mesh="claymore_handle" culture="Culture.khuzait" length="27.9" weight="1.2">
+    <BuildData piece_offset="-8" previous_piece_offset="0.0" next_piece_offset="0"/>
+    <Materials>
+      <Material id="Iron3" count="1"/>
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sherpherds_handle" name="Sherpherd's Handle" tier="2" piece_type="Handle" mesh="sherpherds_handle" length="82.5" weight="0.346">
+    <BuildData piece_offset="20" next_piece_offset="0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_sherpherds_head" name="Sherpherd's Blade" tier="2" piece_type="Blade" mesh="sherpherds_head" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.625">
+    <BuildData piece_offset="-10.0" />
+    <BladeData stack_amount="2" blade_length="6.6" blade_width="24.7" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Cut" damage_factor="2.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="4" />
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
 </CraftingPieces>

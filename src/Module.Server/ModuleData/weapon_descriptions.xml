@@ -866,6 +866,10 @@
       <AvailablePiece id="crpg_winter_pommel" />
       <AvailablePiece id="crpg_barmace_blade" />
       <AvailablePiece id="crpg_barmace_handle" />
+      <AvailablePiece id="crpg_claymore_blade"/>
+      <AvailablePiece id="crpg_claymore_guard"/>
+      <AvailablePiece id="crpg_claymore_handle"/>
+      <AvailablePiece id="crpg_claymore_pommel"/>
       <AvailablePiece id="crpg_northern_2hsword_t4_blade" />
       <AvailablePiece id="crpg_northern_2hsword_t4_guard" />
       <AvailablePiece id="crpg_northern_2hsword_t4_handle" />
@@ -1600,6 +1604,10 @@
       <AvailablePiece id="crpg_battania_axe_3_t5_blade" />
       <AvailablePiece id="crpg_sturgia_axe_5_t5_blade" />
       <AvailablePiece id="crpg_battania_axe_1_t2_blade" />
+      <AvailablePiece id="crpg_kama_blade"/>
+      <AvailablePiece id="crpg_kama_handle"/>
+	  <AvailablePiece id="crpg_sherpherds_head"/>
+      <AvailablePiece id="crpg_sherpherds_handle"/>
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_OneHandedBastardAxe" weapon_class="OneHandedAxe" item_usage_features="onehanded:rshield:axe">
@@ -3289,10 +3297,18 @@
       <AvailablePiece id="crpg_2hmorningstar_mace_t3_blade" />
       <AvailablePiece id="crpg_2hmorningstar_mace_t3_handle" />
       <AvailablePiece id="crpg_2hmorningstar_mace_t3_pommel" />
-      <AvailablePiece id="crpg_bos_blade" />
-      <AvailablePiece id="ccrpg_bos_handle" />
       <AvailablePiece id="crpg_gada_blade" />
-      <AvailablePiece id="crpg_gada_handle" />      
+      <AvailablePiece id="crpg_gada_handle" />
+      <AvailablePiece id="crpg_heavy_blacksmith_hammer_head"/>
+      <AvailablePiece id="crpg_heavy_blacksmith_hammer_handle"/>
+      <AvailablePiece id="crpg_mallet_head"/>
+      <AvailablePiece id="crpg_mallet_handle"/>
+      <AvailablePiece id="crpg_shieldsplitter_head"/>
+      <AvailablePiece id="crpg_shieldsplitter_handle"/>
+      <AvailablePiece id="crpg_maul_head"/>
+      <AvailablePiece id="crpg_maul_handle"/>
+      <AvailablePiece id="crpg_long_maul_head"/>
+      <AvailablePiece id="crpg_long_maul_handle"/>
       <AvailablePiece id="crpg_eastern_long_steel_mace_t4_blade" />
       <AvailablePiece id="crpg_eastern_long_steel_mace_t4_handle" />
       <AvailablePiece id="crpg_eastern_long_steel_mace_t4_pommel" />
