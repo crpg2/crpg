@@ -3243,9 +3243,9 @@
     "name": "Northlander Wide Fullered Greatsword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 12849,
-    "weight": 3.3,
-    "tier": 9.534797,
+    "price": 11650,
+    "weight": 3.45,
+    "tier": 9.02753,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3258,18 +3258,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.25,
-        "handling": 71,
+        "balance": 0.17,
+        "handling": 70,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 77,
-        "swingDamage": 35,
+        "thrustSpeed": 76,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 77
+        "swingSpeed": 75
       },
       {
         "class": "TwoHandedSword",
@@ -3278,19 +3278,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.83,
-        "handling": 81,
+        "balance": 0.76,
+        "handling": 80,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
-        "swingDamage": 35,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 92
       }
     ]
   },
@@ -24446,9 +24446,9 @@
     "name": "Longsword",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13718,
+    "price": 14073,
     "weight": 2.36,
-    "tier": 9.887862,
+    "tier": 10.0289764,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24468,7 +24468,7 @@
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
         "swingDamage": 35,
@@ -29896,12 +29896,12 @@
   },
   {
     "id": "crpg_vlandia_2hsword_2_t5",
-    "name": "M'Lord",
+    "name": "Muhloord",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 13597,
-    "weight": 2.96,
-    "tier": 9.839615,
+    "price": 13927,
+    "weight": 2.86,
+    "tier": 9.971365,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29911,9 +29911,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 123,
-        "balance": 0.48,
-        "handling": 79,
+        "length": 122,
+        "balance": 0.53,
+        "handling": 80,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
@@ -29921,10 +29921,10 @@
         ],
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
-        "swingDamage": 41,
+        "thrustSpeed": 87,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 85
       }
     ]
   },

@@ -1516,9 +1516,9 @@
       <Piece id="crpg_vlandia_2hsword_1_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_vlandia_2hsword_2_t5" name="{=VAO11FSu}M'Lord" crafting_template="crpg_TwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+  <CraftedItem id="crpg_vlandia_2hsword_2_t5" name="{=VAO11FSu}Muhloord" crafting_template="crpg_TwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_vlandia_2hsword_2_t5_blade" Type="Blade" scale_factor="113" />
+      <Piece id="crpg_vlandia_2hsword_2_t5_blade" Type="Blade" scale_factor="112" />
       <Piece id="crpg_vlandia_2hsword_2_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_vlandia_2hsword_2_t5_handle" Type="Handle" scale_factor="110" />
       <Piece id="crpg_vlandia_2hsword_2_t5_pommel" Type="Pommel" scale_factor="96" />
