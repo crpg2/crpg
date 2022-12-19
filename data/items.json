@@ -7469,27 +7469,6 @@
         "swingDamage": 42,
         "swingDamageType": "Cut",
         "swingSpeed": 85
-      },
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 144,
-        "balance": 0.52,
-        "handling": 67,
-        "bodyArmor": 3,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 26,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 42,
-        "swingDamageType": "Cut",
-        "swingSpeed": 85
       }
     ]
   },
