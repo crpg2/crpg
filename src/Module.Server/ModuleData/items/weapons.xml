@@ -1326,7 +1326,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_sturgia_noble_sword_1_t5" name="{=lXwaLAYP}Thamaskene Steel Warsword" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_sturgia_noble_sword_1_t5_blade" Type="Blade" scale_factor="148" />
+      <Piece id="crpg_sturgia_noble_sword_1_t5_blade" Type="Blade" scale_factor="150" />
       <Piece id="crpg_sturgia_noble_sword_1_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_sturgia_noble_sword_1_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_sturgia_noble_sword_1_t5_pommel" Type="Pommel" scale_factor="100" />
@@ -1334,7 +1334,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_sturgia_noble_sword_2_t5" name="{=4wQRk3f5}Decorated Long Warsword" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_sturgia_noble_sword_2_t5_blade" Type="Blade" scale_factor="138" />
+      <Piece id="crpg_sturgia_noble_sword_2_t5_blade" Type="Blade" scale_factor="139" />
       <Piece id="crpg_sturgia_noble_sword_2_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_sturgia_noble_sword_2_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_sturgia_noble_sword_2_t5_pommel" Type="Pommel" scale_factor="100" />
