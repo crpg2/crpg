@@ -1559,7 +1559,7 @@
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
-	<Item id="crpg_AdamnSaxonHelm" name="Saxon Noble Helm" subtype="head_armor" mesh="adamnsaxon" culture="Culture.vlandia" weight="5" difficulty="0" appearance="1" Type="HeadArmor">
+	<Item id="crpg_AdamnSaxonHelm" name="Saxon Noble Helm" subtype="head_armor" mesh="adamnsaxon" culture="Culture.vlandia" weight="3.02" difficulty="0" appearance="1" Type="HeadArmor">
 		<ItemComponent>
 			<Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
 		</ItemComponent>

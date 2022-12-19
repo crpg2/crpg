@@ -314,9 +314,9 @@
     "name": "Saxon Noble Helm",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 4855,
-    "weight": 5.0,
-    "tier": 7.416003,
+    "price": 5812,
+    "weight": 3.02,
+    "tier": 7.79383039,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -22492,77 +22492,6 @@
       "materialType": "Cloth"
     },
     "weapons": []
-  },
-  {
-    "id": "crpg_peasant_hammer_1_t1",
-    "name": "Blacksmith Hammer",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 1543,
-    "weight": 2.4,
-    "tier": 3.941195,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 32,
-        "balance": 0.67,
-        "handling": 99,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 20,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 90
-      }
-    ]
-  },
-  {
-    "id": "crpg_peasant_hammer_2_t1",
-    "name": "Wooden Hammer",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 881,
-    "weight": 2.48,
-    "tier": 2.72166014,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 45,
-        "balance": 0.59,
-        "handling": 97,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "MultiplePenetration"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 83,
-        "swingDamage": 15,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 87
-      }
-    ]
   },
   {
     "id": "crpg_peasant_hatchet_1_t1",

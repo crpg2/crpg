@@ -30,18 +30,21 @@
       <Piece id="crpg_peasant_sickle_1_t1_handle" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <!--
   <CraftedItem id="crpg_peasant_hammer_1_t1" name="{=6WcZ5Tr0}Blacksmith Hammer" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_peasant_hammer_1_t1_blade" Type="Blade" scale_factor="100" />
       <Piece id="crpg_peasant_hammer_1_t1_handle" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  -->
   <CraftedItem id="crpg_blacksmith_war_hammer_1_t1" name="{=6WcZ5Tr0}Blacksmith Warhammer" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_blacksmith_war_hammer_1_t1_blade" Type="Blade" scale_factor="140" />
       <Piece id="crpg_blacksmith_war_hammer_mace_t3_handle" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
+  <!--
   <CraftedItem id="crpg_peasant_hammer_2_t1" name="{=beVFwINO}Wooden Hammer" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_peasant_hammer_2_t1_blade" Type="Blade" />
@@ -49,6 +52,7 @@
       <Piece id="crpg_peasant_hammer_2_t1_pommel" Type="Pommel" />
     </Pieces>
   </CraftedItem>
+  -->
   <CraftedItem id="crpg_peasant_2haxe_1_t1" name="{=7phSQw5i}Hoe" crafting_template="crpg_TwoHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_peasant_2haxe_1_t1_blade" Type="Blade" scale_factor="100" />
