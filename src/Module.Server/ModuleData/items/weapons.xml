@@ -2410,7 +2410,7 @@
       <Piece id="crpg_maul_handle" Type="Handle" scale_factor="100"/>
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_maul" name="{=}Great Maul" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_long_maul" name="{=}Long Maul" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_long_maul_head" Type="Blade" scale_factor="107"/>
       <Piece id="crpg_long_maul_handle" Type="Handle" scale_factor="165"/>

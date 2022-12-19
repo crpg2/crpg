@@ -1555,9 +1555,9 @@
     "name": "Spiralled Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 8132,
-    "weight": 1.21,
-    "tier": 10.4592237,
+    "price": 7187,
+    "weight": 1.23,
+    "tier": 9.766052,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1568,7 +1568,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 87,
-        "balance": 0.61,
+        "balance": 0.58,
         "handling": 88,
         "bodyArmor": 0,
         "flags": [
@@ -1576,10 +1576,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 21,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 87
       }
     ]
   },
@@ -3500,9 +3500,9 @@
     "name": "Saxon Bearded Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 8319,
-    "weight": 1.05,
-    "tier": 10.5916252,
+    "price": 6528,
+    "weight": 1.08,
+    "tier": 9.255263,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3515,8 +3515,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 73,
-        "balance": 0.71,
-        "handling": 88,
+        "balance": 0.68,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -3524,10 +3524,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 95,
+        "thrustSpeed": 94,
         "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 90
       }
     ]
   },
@@ -6267,9 +6267,9 @@
     "name": "Boulder on a Stick",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 15352,
-    "weight": 2.7,
-    "tier": 10.5232534,
+    "price": 11854,
+    "weight": 2.6,
+    "tier": 9.115625,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6280,8 +6280,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.14,
-        "handling": 69,
+        "balance": 0.2,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -6293,9 +6293,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 87,
-        "swingDamage": 30,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 74
+        "swingSpeed": 75
       }
     ]
   },
@@ -10872,9 +10872,9 @@
     "name": "Cataphract Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7803,
-    "weight": 2.03,
-    "tier": 10.2223911,
+    "price": 6805,
+    "weight": 2.07,
+    "tier": 9.473121,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10885,8 +10885,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 100,
-        "balance": 0.08,
-        "handling": 78,
+        "balance": 0.09,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -10894,7 +10894,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 85,
-        "swingDamage": 30,
+        "swingDamage": 29,
         "swingDamageType": "Blunt",
         "swingSpeed": 72
       }
@@ -17897,7 +17897,7 @@
   },
   {
     "id": "crpg_long_maul",
-    "name": "Great Maul",
+    "name": "Long Maul",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 13606,
