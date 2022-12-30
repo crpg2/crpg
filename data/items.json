@@ -5755,9 +5755,9 @@
     "name": "Blacksmith Warhammer",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6657,
-    "weight": 2.23,
-    "tier": 9.357116,
+    "price": 7325,
+    "weight": 2.12,
+    "tier": 9.87005,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -5770,8 +5770,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 75,
-        "balance": 0.24,
-        "handling": 82,
+        "balance": 0.34,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -5780,9 +5780,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 85,
-        "swingDamage": 24,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 77
+        "swingSpeed": 80
       }
     ]
   },

@@ -332,10 +332,10 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blacksmith_war_hammer_1_t1_blade" name="{=X1FY4VYe}Smith Hammer Head" tier="1" piece_type="Blade" mesh="blacksmith_hammer_tip" length="7.4" weight="0.31" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_blacksmith_war_hammer_1_t1_blade" name="{=X1FY4VYe}Smith Hammer Head" tier="1" piece_type="Blade" mesh="blacksmith_hammer_tip" length="7.4" weight="0.27" full_scale="true" excluded_item_usage_features="thrust">
     <BuildData piece_offset="-5" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.4" />
+      <Swing damage_type="Blunt" damage_factor="2.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
