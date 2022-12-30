@@ -6234,9 +6234,9 @@
     "name": "Bone Crusher",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 7267,
-    "weight": 1.63,
-    "tier": 9.826365,
+    "price": 7286,
+    "weight": 1.93,
+    "tier": 9.840754,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6247,18 +6247,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 71,
-        "balance": 0.8,
-        "handling": 95,
+        "balance": 0.57,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 90,
-        "swingDamage": 19,
+        "thrustSpeed": 87,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 93
+        "swingSpeed": 87
       }
     ]
   },
@@ -9872,9 +9872,9 @@
     "name": "Steel Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5589,
-    "weight": 2.27,
-    "tier": 8.48016548,
+    "price": 6151,
+    "weight": 1.71,
+    "tier": 8.951445,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9884,19 +9884,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 60,
-        "balance": 0.54,
-        "handling": 81,
+        "length": 77,
+        "balance": 0.59,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 27,
+        "thrustSpeed": 88,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 87
       }
     ]
   },
@@ -10839,9 +10839,9 @@
     "name": "Light Royal Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6703,
-    "weight": 2.9,
-    "tier": 9.39277,
+    "price": 6396,
+    "weight": 2.42,
+    "tier": 9.149743,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10851,8 +10851,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 55,
-        "balance": 0.3,
+        "length": 70,
+        "balance": 0.44,
         "handling": 86,
         "bodyArmor": 0,
         "flags": [
@@ -10860,10 +10860,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 80,
-        "swingDamage": 30,
+        "thrustSpeed": 83,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 78
+        "swingSpeed": 83
       }
     ]
   },
@@ -15162,9 +15162,9 @@
     "name": "Judgement",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6072,
-    "weight": 3.17,
-    "tier": 8.885986,
+    "price": 7265,
+    "weight": 2.58,
+    "tier": 9.824456,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15174,19 +15174,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 60,
-        "balance": 0.0,
-        "handling": 82,
+        "length": 70,
+        "balance": 0.17,
+        "handling": 84,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 78,
-        "swingDamage": 36,
+        "thrustSpeed": 82,
+        "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 69
+        "swingSpeed": 75
       }
     ]
   },
@@ -16567,9 +16567,9 @@
     "name": "Knight's Fall",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3954,
-    "weight": 1.9,
-    "tier": 6.956828,
+    "price": 5699,
+    "weight": 1.8,
+    "tier": 8.574381,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16579,9 +16579,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 50,
-        "balance": 0.86,
-        "handling": 90,
+        "length": 82,
+        "balance": 0.56,
+        "handling": 78,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -16589,9 +16589,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 87,
-        "swingDamage": 21,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 95
+        "swingSpeed": 86
       }
     ]
   },
@@ -30826,12 +30826,12 @@
   },
   {
     "id": "crpg_vlandia_mace_2_t4",
-    "name": "Fullered Cavalry Mace",
+    "name": "Fullered Western Mace",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6167,
-    "weight": 2.85,
-    "tier": 8.964608,
+    "price": 6651,
+    "weight": 2.03,
+    "tier": 9.351881,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30841,19 +30841,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 56,
-        "balance": 0.59,
-        "handling": 90,
+        "length": 85,
+        "balance": 0.46,
+        "handling": 81,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 81,
-        "swingDamage": 24,
+        "thrustSpeed": 86,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 83
       }
     ]
   },
@@ -30862,9 +30862,9 @@
     "name": "Pernach",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 130,
-    "weight": 1.92,
-    "tier": 0.473685354,
+    "price": 7382,
+    "weight": 2.14,
+    "tier": 9.912762,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30874,19 +30874,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 69,
-        "balance": 0.61,
-        "handling": 94,
+        "length": 98,
+        "balance": 0.23,
+        "handling": 78,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 10,
+        "thrustSpeed": 85,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 76
       }
     ]
   },

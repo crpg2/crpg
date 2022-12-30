@@ -197,15 +197,15 @@
   </CraftedItem>
   <CraftedItem id="crpg_knights_fall_mace_t3" name="{=BYPhysbH}Knight's Fall" crafting_template="crpg_Mace" is_merchandise="false">
     <Pieces>
-      <Piece id="crpg_knights_fall_mace_t3_blade" Type="Blade" />
-      <Piece id="crpg_knights_fall_mace_t3_handle" Type="Handle" />
+      <Piece id="crpg_knights_fall_mace_t3_blade" Type="Blade" scale_factor="110"/>
+      <Piece id="crpg_knights_fall_mace_t3_handle" Type="Handle" scale_factor="180" />
       <Piece id="crpg_knights_fall_mace_t3_pommel" Type="Pommel" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_judgement_mace_t3" name="{=KRuZuMFI}Judgement" crafting_template="crpg_Mace" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_judgement_mace_t3_blade" Type="Blade" scale_factor="160" />
-      <Piece id="crpg_judgement_mace_t3_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_judgement_mace_t3_handle" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_black_heart_2haxe_t3" name="{=2dJ5HB8a}Black Heart" crafting_template="crpg_TwoHandedAxe" is_merchandise="false">
@@ -1654,10 +1654,10 @@
     </Pieces>
   </CraftedItem>
 
-  <CraftedItem id="crpg_vlandia_mace_2_t4" name="{=dSTxsYsh}Fullered Cavalry Mace" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
+  <CraftedItem id="crpg_vlandia_mace_2_t4" name="{=dSTxsYsh}Fullered Western Mace" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_vlandia_mace_2_t4_blade" Type="Blade" />
-      <Piece id="crpg_vlandia_mace_2_t4_handle" Type="Handle" />
+      <Piece id="crpg_vlandia_mace_2_t4_blade" Type="Blade" scale_factor="130"/>
+      <Piece id="crpg_vlandia_mace_2_t4_handle" Type="Handle" scale_factor="160" />
       <Piece id="crpg_vlandia_mace_2_t4_pommel" Type="Pommel" />
     </Pieces>
   </CraftedItem>
@@ -1702,8 +1702,8 @@
   </CraftedItem>
   <CraftedItem id="crpg_eastern_steel_mace_t4" name="{=xYk4953c}Steel Mace" crafting_template="crpg_Mace" culture="Culture.khuzait" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_eastern_steel_mace_t4_blade" Type="Blade" />
-      <Piece id="crpg_eastern_steel_mace_t4_handle" Type="Handle" />
+      <Piece id="crpg_eastern_steel_mace_t4_blade" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_eastern_steel_mace_t4_handle" Type="Handle" scale_factor="140" />
       <Piece id="crpg_eastern_steel_mace_t4_pommel" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
@@ -1716,15 +1716,15 @@
   </CraftedItem>
   <CraftedItem id="crpg_vlandia_mace_3_t5" name="{=rnzpyc0N}Pernach" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_vlandia_mace_3_t5_blade" Type="Blade" />
-      <Piece id="crpg_vlandia_mace_3_t5_handle" Type="Handle" />
-      <Piece id="crpg_vlandia_mace_3_t5_pommel" Type="Pommel" scale_factor="108" />
+      <Piece id="crpg_vlandia_mace_3_t5_blade" Type="Blade" scale_factor="120"/>
+      <Piece id="crpg_vlandia_mace_3_t5_handle" Type="Handle" scale_factor="150" />
+      <Piece id="crpg_vlandia_mace_3_t5_pommel" Type="Pommel" scale_factor="108"/>
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_empire_mace_4_t5" name="{=UMX05EQF}Light Royal Mace" crafting_template="crpg_Mace" culture="Culture.empire" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_empire_mace_4_t5_blade" Type="Blade" />
-      <Piece id="crpg_empire_mace_4_t5_handle" Type="Handle" />
+      <Piece id="crpg_empire_mace_4_t5_blade" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_empire_mace_4_t5_handle" Type="Handle" scale_factor="130" />
       <Piece id="crpg_empire_mace_4_t5_pommel" Type="Pommel" />
     </Pieces>
   </CraftedItem>
