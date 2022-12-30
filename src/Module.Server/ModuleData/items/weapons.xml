@@ -1074,7 +1074,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_aserai_sword_5_t4" name="{=fuyj7s3F}Fine Steel Scimitar" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_aserai_sword_5_t4_blade" Type="Blade" scale_factor="80" />
+      <Piece id="crpg_aserai_sword_5_t4_blade" Type="Blade" scale_factor="78" />
       <Piece id="crpg_aserai_sword_5_t4_guard" Type="Guard" scale_factor="98" />
       <Piece id="crpg_aserai_sword_5_t4_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_aserai_sword_5_t4_pommel" Type="Pommel" scale_factor="100" />
