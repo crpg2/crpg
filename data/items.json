@@ -24750,12 +24750,12 @@
   },
   {
     "id": "crpg_sherpherds",
-    "name": "Sherpherd's Axe",
-    "culture": "Sturgia",
+    "name": "Shepherd Axe",
+    "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 2040,
-    "weight": 0.97,
-    "tier": 4.691741,
+    "price": 1883,
+    "weight": 0.93,
+    "tier": 4.464855,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -24767,9 +24767,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 61,
-        "balance": 1.0,
-        "handling": 98,
+        "length": 88,
+        "balance": 0.81,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -24778,9 +24778,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 97,
-        "swingDamage": 23,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 101
+        "swingSpeed": 94
       }
     ]
   },
@@ -32798,7 +32798,7 @@
   },
   {
     "id": "crpg_woodland_axe_t3",
-    "name": "Shepherd Axe",
+    "name": "Saxon Hooked Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
     "price": 953,
