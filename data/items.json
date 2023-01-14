@@ -4,9 +4,9 @@
     "name": "Heavy Morningstar",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13629,
+    "price": 11781,
     "weight": 2.16,
-    "tier": 9.852498,
+    "tier": 9.084211,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -42,9 +42,9 @@
     "name": "Scale Shoulder Guards",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 2092,
+    "price": 2031,
     "weight": 2.54253,
-    "tier": 6.36517334,
+    "tier": 6.31143475,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -61,9 +61,9 @@
     "name": "Scale Pauldrons",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 228,
+    "price": 249,
     "weight": 1.050175,
-    "tier": 3.192117,
+    "tier": 3.295497,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -80,9 +80,9 @@
     "name": "Brass Scale Pauldrons",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 177,
+    "price": 191,
     "weight": 0.8876131,
-    "tier": 2.89176655,
+    "tier": 2.97979712,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -101,7 +101,7 @@
     "type": "ShoulderArmor",
     "price": 51,
     "weight": 0.08141746,
-    "tier": 0.666205,
+    "tier": 0.6702949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -120,9 +120,9 @@
     "name": "Bronze Lamellar Shoulder Guards",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 69,
+    "price": 72,
     "weight": 0.4055531,
-    "tier": 1.64024985,
+    "tier": 1.72207248,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -139,9 +139,9 @@
     "name": "Lamellar Shoulder Guards",
     "culture": "Sturgia",
     "type": "ShoulderArmor",
-    "price": 84,
+    "price": 90,
     "weight": 0.5331134,
-    "tier": 1.9570955,
+    "tier": 2.0547235,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -158,9 +158,9 @@
     "name": "Legionary Studded Harness",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 300,
+    "price": 295,
     "weight": 0.9793919,
-    "tier": 3.52125525,
+    "tier": 3.500862,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -177,9 +177,9 @@
     "name": "Plate Pauldrons",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 136,
+    "price": 151,
     "weight": 0.8207818,
-    "tier": 2.57754683,
+    "tier": 2.70612574,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -196,9 +196,9 @@
     "name": "Cured Studded Leather Shoulders",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 740,
+    "price": 720,
     "weight": 1.534879,
-    "tier": 4.701211,
+    "tier": 4.66152,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -215,9 +215,9 @@
     "name": "Reinforced Studded Neckguard",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 1128,
+    "price": 990,
     "weight": 1.534879,
-    "tier": 5.328039,
+    "tier": 5.12767172,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -234,9 +234,9 @@
     "name": "Decorated Lamellar Leather Shoulder Guards",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 136,
+    "price": 151,
     "weight": 0.8207818,
-    "tier": 2.57754683,
+    "tier": 2.70612574,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -253,9 +253,9 @@
     "name": "Decorated Steel Lamellar Shoulder Pieces",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 226,
+    "price": 258,
     "weight": 1.147077,
-    "tier": 3.18000627,
+    "tier": 3.33863831,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -272,9 +272,9 @@
     "name": "Bronze Pauldrons with Neck Guard",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 1536,
+    "price": 1483,
     "weight": 2.167811,
-    "tier": 5.8273015,
+    "tier": 5.769159,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -293,9 +293,9 @@
     "name": "Bronze Pauldrons ",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 84,
+    "price": 90,
     "weight": 0.5331134,
-    "tier": 1.9570955,
+    "tier": 2.0547235,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -371,9 +371,9 @@
     "name": "Aketon",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 287,
+    "price": 266,
     "weight": 2.077283,
-    "tier": 2.473587,
+    "tier": 2.40607762,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -392,9 +392,9 @@
     "name": "The Ambassador",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13240,
+    "price": 10248,
     "weight": 2.9,
-    "tier": 9.6951,
+    "tier": 8.400303,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -481,9 +481,9 @@
     "name": "Armored Baggy Trunks",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 66,
+    "price": 60,
     "weight": 0.7133473,
-    "tier": 1.1032654,
+    "tier": 0.9493293,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -503,9 +503,9 @@
     "name": "Armored Bearskin",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 934,
+    "price": 821,
     "weight": 1.40146,
-    "tier": 5.03915644,
+    "tier": 4.84965324,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -524,7 +524,7 @@
     "type": "HandArmor",
     "price": 53,
     "weight": 0.1884841,
-    "tier": 1.105365,
+    "tier": 1.16420364,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -576,9 +576,9 @@
     "name": "Short Handled Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 13779,
+    "price": 11909,
     "weight": 1.45,
-    "tier": 9.912202,
+    "tier": 9.139261,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -614,9 +614,9 @@
     "name": "Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 8968,
+    "price": 11226,
     "weight": 1.46,
-    "tier": 7.78918457,
+    "tier": 8.842139,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -652,9 +652,9 @@
     "name": "Chainbreaker",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 13804,
+    "price": 16533,
     "weight": 1.44,
-    "tier": 9.922428,
+    "tier": 10.96139,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -690,9 +690,9 @@
     "name": "Gambeson over Mail Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 4130,
+    "price": 3442,
     "weight": 9.722662,
-    "tier": 5.59705639,
+    "tier": 5.315415,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -711,9 +711,9 @@
     "name": "Aserai Chain Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3924,
+    "price": 3462,
     "weight": 9.873398,
-    "tier": 5.5164547,
+    "tier": 5.3242135,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -732,9 +732,9 @@
     "name": "Southern Decorated Chain Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 4415,
+    "price": 3904,
     "weight": 10.3814,
-    "tier": 5.70323849,
+    "tier": 5.50884056,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -753,9 +753,9 @@
     "name": "Wood Splitter Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 4440,
+    "price": 3405,
     "weight": 1.43,
-    "tier": 7.437829,
+    "tier": 6.37673855,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -789,9 +789,9 @@
     "name": "Desert Ascia Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 3706,
+    "price": 2442,
     "weight": 0.97,
-    "tier": 6.700349,
+    "tier": 5.234114,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -844,9 +844,9 @@
     "name": "Southern Reinforced Mail Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 7054,
+    "price": 6213,
     "weight": 13.54583,
-    "tier": 6.50305843,
+    "tier": 6.276918,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -865,9 +865,9 @@
     "name": "Southern Reinforced Sleeveless Mail Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 4352,
+    "price": 3542,
     "weight": 9.823068,
-    "tier": 5.6801486,
+    "tier": 5.35870647,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -886,9 +886,9 @@
     "name": "Southern Reinforced Mail Vest",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 2765,
+    "price": 2524,
     "weight": 6.965938,
-    "tier": 4.9936533,
+    "tier": 4.8643384,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -907,9 +907,9 @@
     "name": "Southern Reinforced Short Mail Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 4878,
+    "price": 4764,
     "weight": 10.33022,
-    "tier": 5.865843,
+    "tier": 5.826917,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -928,9 +928,9 @@
     "name": "Luxury Kaftan with Waistband",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 180,
+    "price": 165,
     "weight": 1.728333,
-    "tier": 2.06770778,
+    "tier": 1.99645579,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -950,9 +950,9 @@
     "name": "Kaftan with Leather Belt",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 79,
+    "price": 75,
     "weight": 0.842865,
-    "tier": 1.3223871,
+    "tier": 1.25892842,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -972,9 +972,9 @@
     "name": "Colored Kaftan",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.6110581,
-    "tier": 1.079704,
+    "tier": 1.04249811,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1016,9 +1016,9 @@
     "name": "Colored Bisht",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 72,
+    "price": 70,
     "weight": 0.7133473,
-    "tier": 1.21642077,
+    "tier": 1.17716837,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1060,9 +1060,9 @@
     "name": "Thawb",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.6110581,
-    "tier": 1.079704,
+    "tier": 1.04249811,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1104,9 +1104,9 @@
     "name": "Simple Peasant Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 72,
+    "price": 70,
     "weight": 0.7133473,
-    "tier": 1.21642077,
+    "tier": 1.17716837,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1211,9 +1211,9 @@
     "name": "Feminine Kaftan",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 90,
+    "price": 86,
     "weight": 1.002803,
-    "tier": 1.4535898,
+    "tier": 1.40086687,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1233,9 +1233,9 @@
     "name": "Kaftan with Waistband",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 56,
+    "price": 55,
     "weight": 0.388297,
-    "tier": 0.803489268,
+    "tier": 0.7575553,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1298,9 +1298,9 @@
     "name": "Mastercrafted Southern Scale over Chain Hauberk",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 20142,
+    "price": 16981,
     "weight": 23.02404,
-    "tier": 8.678017,
+    "tier": 8.283607,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -1319,9 +1319,9 @@
     "name": "Ring Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 258,
+    "price": 245,
     "weight": 1.900137,
-    "tier": 2.38007975,
+    "tier": 2.33564281,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -1340,9 +1340,9 @@
     "name": "Ringmail Shoulder Guard",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 307,
+    "price": 275,
     "weight": 0.798895,
-    "tier": 3.54735374,
+    "tier": 3.41395164,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -1456,9 +1456,9 @@
     "name": "Militia Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 1905,
+    "price": 1246,
     "weight": 2.48,
-    "tier": 4.49759769,
+    "tier": 3.43488121,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1489,9 +1489,9 @@
     "name": "Fullered Light Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 2437,
+    "price": 1205,
     "weight": 1.72,
-    "tier": 5.22725058,
+    "tier": 3.360786,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1522,9 +1522,9 @@
     "name": "Heavy Horsemans Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 5653,
+    "price": 5858,
     "weight": 1.29,
-    "tier": 8.53552151,
+    "tier": 8.708826,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1555,9 +1555,9 @@
     "name": "Spiralled Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 7187,
+    "price": 4640,
     "weight": 1.23,
-    "tier": 9.766052,
+    "tier": 7.628949,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1588,9 +1588,9 @@
     "name": "Decorated Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6502,
+    "price": 4224,
     "weight": 1.82,
-    "tier": 9.234408,
+    "tier": 7.22809362,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1623,9 +1623,9 @@
     "name": "Decorated Elite Scimitar",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 7393,
+    "price": 5170,
     "weight": 2.38,
-    "tier": 9.920519,
+    "tier": 8.114252,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1658,9 +1658,9 @@
     "name": "Decorated Scimitar with Wide Grip",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 7340,
+    "price": 4861,
     "weight": 1.96,
-    "tier": 9.880842,
+    "tier": 7.83404827,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1693,9 +1693,9 @@
     "name": "Engraved Angular Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6787,
+    "price": 3952,
     "weight": 2.23,
-    "tier": 9.458947,
+    "tier": 6.95569229,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1728,9 +1728,9 @@
     "name": "Robe over Mail Shirt",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3550,
+    "price": 3143,
     "weight": 9.225823,
-    "tier": 5.362319,
+    "tier": 5.179704,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -1749,9 +1749,9 @@
     "name": "Mastercrafted Southern Scale over Chain Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 16249,
+    "price": 14538,
     "weight": 19.51269,
-    "tier": 8.184529,
+    "tier": 7.93920755,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -1770,9 +1770,9 @@
     "name": "Mastercrafted Southern Scale Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3813,
+    "price": 3514,
     "weight": 8.211183,
-    "tier": 5.47199345,
+    "tier": 5.34676266,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -1791,9 +1791,9 @@
     "name": "Bronze Scale Shoulder Guards",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 1831,
+    "price": 1705,
     "weight": 2.198272,
-    "tier": 6.127961,
+    "tier": 6.00473976,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -1810,9 +1810,9 @@
     "name": "Long Sleeved Bronze Scale Shoulder Guards",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 3173,
+    "price": 3078,
     "weight": 3.106376,
-    "tier": 7.15519857,
+    "tier": 7.094789,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -1829,9 +1829,9 @@
     "name": "Bronze Scale Pauldrons",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 1261,
+    "price": 1309,
     "weight": 2.259616,
-    "tier": 5.504312,
+    "tier": 5.56485748,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -1848,9 +1848,9 @@
     "name": "Decorated Bronze Scale Pauldrons",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 589,
+    "price": 613,
     "weight": 1.562045,
-    "tier": 4.383502,
+    "tier": 4.43780661,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -1867,9 +1867,9 @@
     "name": "Decorated Long Sleeve Bronze Scale Pauldrons",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 874,
+    "price": 925,
     "weight": 1.9586,
-    "tier": 4.941186,
+    "tier": 5.025558,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -1886,9 +1886,9 @@
     "name": "Iron Flyssa",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 4163,
+    "price": 2963,
     "weight": 1.56,
-    "tier": 7.16756058,
+    "tier": 5.87542343,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1921,9 +1921,9 @@
     "name": "Iron Cavalry Scimitar",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 5891,
+    "price": 4494,
     "weight": 1.85,
-    "tier": 8.73639,
+    "tier": 7.4900465,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1956,9 +1956,9 @@
     "name": "Slightly Ridged Flyssa",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 5627,
+    "price": 3836,
     "weight": 2.54,
-    "tier": 8.51329,
+    "tier": 6.8366456,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1989,9 +1989,9 @@
     "name": "Fine Steel Long Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 3368,
+    "price": 2716,
     "weight": 1.8,
-    "tier": 6.33673239,
+    "tier": 5.57850027,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2022,9 +2022,9 @@
     "name": "Fine Steel Scimitar",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6089,
+    "price": 3799,
     "weight": 1.5,
-    "tier": 8.900365,
+    "tier": 6.79733753,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2055,9 +2055,9 @@
     "name": "Narrow Fine Steel Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6193,
+    "price": 4272,
     "weight": 2.18,
-    "tier": 8.98545551,
+    "tier": 7.27486658,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2088,9 +2088,9 @@
     "name": "Thamaskene Steel Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 7354,
+    "price": 7110,
     "weight": 1.68,
-    "tier": 9.891596,
+    "tier": 9.707533,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2121,9 +2121,9 @@
     "name": "Luxury Kaftan",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 116,
+    "price": 105,
     "weight": 1.221603,
-    "tier": 1.69063663,
+    "tier": 1.59974384,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -2145,7 +2145,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -2187,9 +2187,9 @@
     "name": "Beduin Common Saddle",
     "culture": "Aserai",
     "type": "MountHarness",
-    "price": 2107,
+    "price": 2403,
     "weight": 27.0,
-    "tier": 1.55555558,
+    "tier": 1.71111107,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -2208,9 +2208,9 @@
     "name": "Avalanche",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13426,
+    "price": 15311,
     "weight": 1.41,
-    "tier": 9.77062,
+    "tier": 10.5077677,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -2282,9 +2282,9 @@
     "name": "Baggy Trunks",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 55,
+    "price": 53,
     "weight": 0.3712929,
-    "tier": 0.775395036,
+    "tier": 0.693894267,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -2305,9 +2305,9 @@
     "name": "Desert Battle Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 2811,
+    "price": 2265,
     "weight": 1.06,
-    "tier": 5.69472551,
+    "tier": 5.00066376,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -2341,9 +2341,9 @@
     "name": "Banded Leather over Mail",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 3312,
+    "price": 2918,
     "weight": 8.2586,
-    "tier": 5.257455,
+    "tier": 5.07078362,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -2362,9 +2362,9 @@
     "name": "Commoner Tunic",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.6110581,
-    "tier": 1.079704,
+    "tier": 1.04249811,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -2386,7 +2386,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -2406,9 +2406,9 @@
     "name": "Old Fur Armor",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 229,
+    "price": 189,
     "weight": 1.842267,
-    "tier": 2.2763772,
+    "tier": 2.10986423,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -2428,9 +2428,9 @@
     "name": "Old Fur Coat",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 183,
+    "price": 159,
     "weight": 1.507872,
-    "tier": 2.08400178,
+    "tier": 1.96311045,
     "requirement": 0,
     "flags": [
       "Civilian",
@@ -2450,9 +2450,9 @@
     "name": "Rugged Gambeson",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 484,
+    "price": 409,
     "weight": 3.004161,
-    "tier": 2.95317,
+    "tier": 2.79478383,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -2472,9 +2472,9 @@
     "name": "Commoner Shirt",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 60,
+    "price": 58,
     "weight": 0.5141875,
-    "tier": 0.94162786,
+    "tier": 0.906492,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -2494,9 +2494,9 @@
     "name": "Rugged Beduin Saddle",
     "culture": "Aserai",
     "type": "MountHarness",
-    "price": 1351,
+    "price": 1528,
     "weight": 21.0,
-    "tier": 1.11111116,
+    "tier": 1.22222221,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -2515,9 +2515,9 @@
     "name": "Rugged Fur Saddle",
     "culture": "Battania",
     "type": "MountHarness",
-    "price": 1712,
+    "price": 1945,
     "weight": 23.0,
-    "tier": 1.33333337,
+    "tier": 1.4666667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -2536,9 +2536,9 @@
     "name": "Rugged Saddle",
     "culture": "Neutral",
     "type": "MountHarness",
-    "price": 1024,
+    "price": 1151,
     "weight": 24.0,
-    "tier": 0.8888889,
+    "tier": 0.9777778,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3022,9 +3022,9 @@
     "name": "Barmace",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13670,
+    "price": 11309,
     "weight": 2.61,
-    "tier": 9.86867,
+    "tier": 8.878546,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -3056,9 +3056,9 @@
     "name": "Leather Armor",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 1371,
+    "price": 1243,
     "weight": 5.048733,
-    "tier": 4.07199764,
+    "tier": 3.95506835,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -3077,9 +3077,9 @@
     "name": "Simple Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 2144,
+    "price": 1745,
     "weight": 2.0,
-    "tier": 4.8364,
+    "tier": 4.2576437,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3112,9 +3112,9 @@
     "name": "Square Bit Two Handed Axe",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 3172,
+    "price": 2677,
     "weight": 1.34,
-    "tier": 4.215677,
+    "tier": 3.792719,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3150,9 +3150,9 @@
     "name": "Iron Broadsword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1354,
+    "price": 928,
     "weight": 1.84,
-    "tier": 2.424273,
+    "tier": 1.8541683,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3186,9 +3186,9 @@
     "name": "Highland Broadsword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 4678,
+    "price": 3022,
     "weight": 1.82,
-    "tier": 5.335905,
+    "tier": 4.09065628,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3262,9 +3262,9 @@
     "name": "Northlander Wide Fullered Greatsword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 11650,
+    "price": 10599,
     "weight": 3.45,
-    "tier": 9.02753,
+    "tier": 8.560917,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3318,9 +3318,9 @@
     "name": "Falx",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 13185,
+    "price": 11917,
     "weight": 2.92,
-    "tier": 9.672625,
+    "tier": 9.142721,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -3352,9 +3352,9 @@
     "name": "Highland Fine Two Handed Sword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 4568,
+    "price": 3554,
     "weight": 2.18,
-    "tier": 5.260822,
+    "tier": 4.520189,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3428,9 +3428,9 @@
     "name": "Battanian Mountain Blade",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 9052,
+    "price": 7537,
     "weight": 2.22,
-    "tier": 7.83064365,
+    "tier": 7.05298328,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3464,9 +3464,9 @@
     "name": "Norse Huscarl Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 5801,
+    "price": 3625,
     "weight": 0.99,
-    "tier": 8.661039,
+    "tier": 6.61456,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3500,9 +3500,9 @@
     "name": "Saxon Bearded Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 6528,
+    "price": 4397,
     "weight": 1.08,
-    "tier": 9.255263,
+    "tier": 7.397096,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3536,9 +3536,9 @@
     "name": "Steel Round Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3129,
+    "price": 2095,
     "weight": 1.04,
-    "tier": 6.06767559,
+    "tier": 4.76829433,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3593,9 +3593,9 @@
     "name": "Tartan Tunic",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 93,
+    "price": 90,
     "weight": 0.9793919,
-    "tier": 1.48293412,
+    "tier": 1.45225954,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -3615,9 +3615,9 @@
     "name": "Villager Leather Tunic",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 181,
+    "price": 162,
     "weight": 1.61685,
-    "tier": 2.07585144,
+    "tier": 1.97987568,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -3637,9 +3637,9 @@
     "name": "Townsman Luxury Coat",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 237,
+    "price": 224,
     "weight": 2.137492,
-    "tier": 2.30771136,
+    "tier": 2.257258,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -3659,9 +3659,9 @@
     "name": "Woodland Fur Cloak",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 85,
+    "price": 81,
     "weight": 0.3218308,
-    "tier": 1.97586739,
+    "tier": 1.90156257,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -3678,9 +3678,9 @@
     "name": "Fringed Cape",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 51,
+    "price": 50,
     "weight": 0.06193636,
-    "tier": 0.6668428,
+    "tier": 0.6417654,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -3720,9 +3720,9 @@
     "name": "Tartan Cloak",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 51,
+    "price": 50,
     "weight": 0.06193636,
-    "tier": 0.6668428,
+    "tier": 0.6417654,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -3741,9 +3741,9 @@
     "name": "Tartan Cape",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 59,
+    "price": 58,
     "weight": 0.1751825,
-    "tier": 1.326371,
+    "tier": 1.27649117,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -3760,9 +3760,9 @@
     "name": "Chained Fur Cloak",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 302,
+    "price": 290,
     "weight": 0.9331263,
-    "tier": 3.52783537,
+    "tier": 3.479345,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -3798,9 +3798,9 @@
     "name": "Plaid Dress",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 104,
+    "price": 98,
     "weight": 1.122585,
-    "tier": 1.58583593,
+    "tier": 1.53118908,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -3820,9 +3820,9 @@
     "name": "Woodland Commoner Dress",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.6110581,
-    "tier": 1.079704,
+    "tier": 1.04249811,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -3842,9 +3842,9 @@
     "name": "Tartan Long Dress",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 82,
+    "price": 78,
     "weight": 0.8207818,
-    "tier": 1.35175812,
+    "tier": 1.31048286,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -4035,9 +4035,9 @@
     "name": "Tartan Dress",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.6110581,
-    "tier": 1.079704,
+    "tier": 1.04249811,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -4057,9 +4057,9 @@
     "name": "Villager Thick Dress",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.6110581,
-    "tier": 1.079704,
+    "tier": 1.04249811,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -4081,7 +4081,7 @@
     "type": "LegArmor",
     "price": 73,
     "weight": 0.2304528,
-    "tier": 2.18011761,
+    "tier": 2.17974019,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4119,9 +4119,9 @@
     "name": "Battania Horse Harness",
     "culture": "Battania",
     "type": "MountHarness",
-    "price": 2997,
+    "price": 3442,
     "weight": 30.0,
-    "tier": 2.0,
+    "tier": 2.20000029,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4140,9 +4140,9 @@
     "name": "Half Scaled Barding",
     "culture": "Battania",
     "type": "MountHarness",
-    "price": 13957,
+    "price": 16412,
     "weight": 76.0,
-    "tier": 5.33333349,
+    "tier": 5.866667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4161,9 +4161,9 @@
     "name": "Scale Barding",
     "culture": "Battania",
     "type": "MountHarness",
-    "price": 20458,
+    "price": 24161,
     "weight": 125.0,
-    "tier": 6.66666651,
+    "tier": 7.33333349,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4298,7 +4298,7 @@
     "type": "LegArmor",
     "price": 62,
     "weight": 0.1753114,
-    "tier": 1.82153821,
+    "tier": 1.82122278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4317,9 +4317,9 @@
     "name": "Highland Tartan with Chest Plate",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 455,
+    "price": 402,
     "weight": 2.770139,
-    "tier": 2.89437246,
+    "tier": 2.77852321,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -4338,9 +4338,9 @@
     "name": "Highland Tartan",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 130,
+    "price": 116,
     "weight": 1.427819,
-    "tier": 1.78759658,
+    "tier": 1.68584263,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -4360,9 +4360,9 @@
     "name": "Highland Long Tartan",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 80,
+    "price": 74,
     "weight": 0.7557175,
-    "tier": 1.32719862,
+    "tier": 1.23823869,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -4382,9 +4382,9 @@
     "name": "Highland Kilt over Tartan Trousers",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 50,
     "weight": 0.2302834,
-    "tier": 0.4625166,
+    "tier": 0.362164319,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -4405,9 +4405,9 @@
     "name": "Tartan Toga",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 100,
+    "price": 80,
     "weight": 1.24679,
-    "tier": 1.550567,
+    "tier": 1.325643,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -4428,9 +4428,9 @@
     "name": "Knobbed Club",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3012,
+    "price": 2001,
     "weight": 2.44,
-    "tier": 5.933519,
+    "tier": 4.63508844,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4461,9 +4461,9 @@
     "name": "Light Morningstar",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 6302,
+    "price": 3638,
     "weight": 1.97,
-    "tier": 9.074167,
+    "tier": 6.62880039,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -4497,9 +4497,9 @@
     "name": "Highland Spiked Club",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4512,
+    "price": 3610,
     "weight": 1.82,
-    "tier": 7.50693,
+    "tier": 6.598555,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4530,9 +4530,9 @@
     "name": "Luxury Brigandine",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 15124,
+    "price": 12956,
     "weight": 18.26212,
-    "tier": 8.025626,
+    "tier": 7.69241571,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -4551,9 +4551,9 @@
     "name": "Highborn Mail Armor",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 14874,
+    "price": 12457,
     "weight": 19.07186,
-    "tier": 7.98907375,
+    "tier": 7.61000729,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -4572,9 +4572,9 @@
     "name": "Fian Bracers",
     "culture": "Battania",
     "type": "HandArmor",
-    "price": 1099,
+    "price": 1315,
     "weight": 2.770139,
-    "tier": 6.024886,
+    "tier": 6.34559,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4593,9 +4593,9 @@
     "name": "Engraved Backsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 7072,
+    "price": 5685,
     "weight": 1.95,
-    "tier": 9.678811,
+    "tier": 8.562494,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4628,9 +4628,9 @@
     "name": "Highland Pointed Blade",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 5822,
+    "price": 5326,
     "weight": 2.08,
-    "tier": 8.678561,
+    "tier": 8.252321,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4663,9 +4663,9 @@
     "name": "Decorated Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 7555,
+    "price": 6289,
     "weight": 2.22,
-    "tier": 10.04109,
+    "tier": 9.063758,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4698,9 +4698,9 @@
     "name": "Rhomphaia",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 12946,
+    "price": 22207,
     "weight": 1.35,
-    "tier": 8.833304,
+    "tier": 11.9037714,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4735,9 +4735,9 @@
     "name": "Heavy Tartan Scarf",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 59,
+    "price": 58,
     "weight": 0.2021062,
-    "tier": 1.324667,
+    "tier": 1.30382526,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -4754,9 +4754,9 @@
     "name": "Reinforced Harness with Cape",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 182,
+    "price": 166,
     "weight": 0.5912409,
-    "tier": 2.928172,
+    "tier": 2.81805468,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -4773,9 +4773,9 @@
     "name": "Shoulder Harness",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 59,
+    "price": 58,
     "weight": 0.1751825,
-    "tier": 1.326371,
+    "tier": 1.27649117,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -4792,9 +4792,9 @@
     "name": "Tartan Shoulder Harness",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 108,
+    "price": 101,
     "weight": 0.4055531,
-    "tier": 2.29634976,
+    "tier": 2.209993,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -4811,9 +4811,9 @@
     "name": "Ridged Iron Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3824,
+    "price": 3065,
     "weight": 2.26,
-    "tier": 6.823283,
+    "tier": 5.994641,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4846,9 +4846,9 @@
     "name": "Fine Steel Broad Shortsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 5758,
+    "price": 4220,
     "weight": 2.35,
-    "tier": 8.624041,
+    "tier": 7.22436428,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4881,9 +4881,9 @@
     "name": "Steel Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4697,
+    "price": 3756,
     "weight": 2.18,
-    "tier": 7.6817503,
+    "tier": 6.7528677,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4916,9 +4916,9 @@
     "name": "Fine Steel Cavalry Broadsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 5635,
+    "price": 4889,
     "weight": 2.29,
-    "tier": 8.520099,
+    "tier": 7.85963058,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4949,9 +4949,9 @@
     "name": "Highland Broad Blade",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 6661,
+    "price": 5547,
     "weight": 2.11,
-    "tier": 9.359756,
+    "tier": 8.444689,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -5022,9 +5022,9 @@
     "name": "Scale Warlord Armor",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 9896,
+    "price": 8622,
     "weight": 15.9635,
-    "tier": 7.142723,
+    "tier": 6.875625,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -5043,9 +5043,9 @@
     "name": "Scaled Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 3209,
+    "price": 3207,
     "weight": 2.078812,
-    "tier": 8.786495,
+    "tier": 8.784973,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -5062,9 +5062,9 @@
     "name": "Scale Warlord Bracers",
     "culture": "Battania",
     "type": "HandArmor",
-    "price": 2975,
+    "price": 3589,
     "weight": 4.534222,
-    "tier": 7.989196,
+    "tier": 8.414462,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -5081,9 +5081,9 @@
     "name": "Heavy Warlord Pauldrons",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 6339,
+    "price": 6145,
     "weight": 4.341292,
-    "tier": 8.66193,
+    "tier": 8.5888,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -5102,7 +5102,7 @@
     "type": "LegArmor",
     "price": 73,
     "weight": 0.2304528,
-    "tier": 2.18011761,
+    "tier": 2.17974019,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -5121,9 +5121,9 @@
     "name": "Heavy Mail Shirt with Wide Belt",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 4746,
+    "price": 4122,
     "weight": 10.33022,
-    "tier": 5.82054663,
+    "tier": 5.59384,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -5142,9 +5142,9 @@
     "name": "Woodland Cape",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 59,
+    "price": 58,
     "weight": 0.1751825,
-    "tier": 1.326371,
+    "tier": 1.27649117,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -5161,9 +5161,9 @@
     "name": "Woodland Garments",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 496,
+    "price": 434,
     "weight": 3.038106,
-    "tier": 2.976425,
+    "tier": 2.85049438,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -5183,9 +5183,9 @@
     "name": "Heavy Mail Vest",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 1875,
+    "price": 1595,
     "weight": 5.623061,
-    "tier": 4.463649,
+    "tier": 4.257852,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -5204,9 +5204,9 @@
     "name": "Highland Mail Shirt",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 1108,
+    "price": 1018,
     "weight": 4.226885,
-    "tier": 3.82129979,
+    "tier": 3.725378,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -5225,9 +5225,9 @@
     "name": "Highland Reinforced Mail over Tartan",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 2882,
+    "price": 2521,
     "weight": 7.100904,
-    "tier": 5.052955,
+    "tier": 4.86311674,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -5246,9 +5246,9 @@
     "name": "Highland Reinforced Mail",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 3293,
+    "price": 2890,
     "weight": 7.556981,
-    "tier": 5.248864,
+    "tier": 5.056855,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -5267,9 +5267,9 @@
     "name": "Mail Shoulder Pieces",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 85,
+    "price": 81,
     "weight": 0.3218308,
-    "tier": 1.97586739,
+    "tier": 1.90156257,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -5286,9 +5286,9 @@
     "name": "Mail Shoulder Reinforcements",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 108,
+    "price": 101,
     "weight": 0.4055531,
-    "tier": 2.29634976,
+    "tier": 2.209993,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -5324,9 +5324,9 @@
     "name": "Cured Leather Shoulder Pieces",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 69,
+    "price": 67,
     "weight": 0.244825,
-    "tier": 1.65248728,
+    "tier": 1.59034359,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -5381,9 +5381,9 @@
     "name": "Wildling Armor",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 61,
+    "price": 57,
     "weight": 0.6310917,
-    "tier": 0.993602335,
+    "tier": 0.876463652,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -5404,9 +5404,9 @@
     "name": "Highland Scale Armor over Mail Armor",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 9602,
+    "price": 8412,
     "weight": 14.73814,
-    "tier": 7.08353233,
+    "tier": 6.828823,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -5425,9 +5425,9 @@
     "name": "Highland Scale Armor over Cloth",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 2268,
+    "price": 2016,
     "weight": 6.04574,
-    "tier": 4.717225,
+    "tier": 4.55868053,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -5484,9 +5484,9 @@
     "name": "Shield Reaver Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5336,
+    "price": 4433,
     "weight": 1.15,
-    "tier": 8.260481,
+    "tier": 7.43170929,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5520,9 +5520,9 @@
     "name": "Bearded Axe",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 9980,
+    "price": 7940,
     "weight": 1.39,
-    "tier": 8.275518,
+    "tier": 7.26691675,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5619,9 +5619,9 @@
     "name": "Bear Pelt",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 620,
+    "price": 548,
     "weight": 1.147077,
-    "tier": 4.45200872,
+    "tier": 4.28458548,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -5640,7 +5640,7 @@
     "type": "LegArmor",
     "price": 62,
     "weight": 0.1753114,
-    "tier": 1.82153821,
+    "tier": 1.82122278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -5659,9 +5659,9 @@
     "name": "Belted Leather Cuirass",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 666,
+    "price": 604,
     "weight": 3.244425,
-    "tier": 3.2707777,
+    "tier": 3.17090631,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -5680,9 +5680,9 @@
     "name": "Billhook",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 15222,
+    "price": 23531,
     "weight": 1.91,
-    "tier": 9.668979,
+    "tier": 12.2855167,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -5717,9 +5717,9 @@
     "name": "Black Heart",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7315,
+    "price": 7243,
     "weight": 1.26,
-    "tier": 6.932265,
+    "tier": 6.8928194,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5755,9 +5755,9 @@
     "name": "Blacksmith Warhammer",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 7325,
+    "price": 5340,
     "weight": 2.12,
-    "tier": 9.87005,
+    "tier": 8.264041,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -5791,9 +5791,9 @@
     "name": "Bo Staff",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 1107,
+    "price": 960,
     "weight": 2.39,
-    "tier": 1.90749764,
+    "tier": 1.71859145,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6215,9 +6215,9 @@
     "name": "Bolted Leather Strips",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 140,
+    "price": 129,
     "weight": 0.4954908,
-    "tier": 2.61381388,
+    "tier": 2.51551843,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -6234,9 +6234,9 @@
     "name": "Bone Crusher",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 7286,
+    "price": 4184,
     "weight": 1.93,
-    "tier": 9.840754,
+    "tier": 7.188801,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6267,9 +6267,9 @@
     "name": "Boulder on a Stick",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 11854,
+    "price": 17345,
     "weight": 2.6,
-    "tier": 9.115625,
+    "tier": 11.2538586,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6606,9 +6606,9 @@
     "name": "Bronze Lamellar over Mail",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 11897,
+    "price": 10663,
     "weight": 16.37916,
-    "tier": 7.51439428,
+    "tier": 7.29124355,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -6627,9 +6627,9 @@
     "name": "Bronze Lamellar Shoulder Pieces",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 2442,
+    "price": 2325,
     "weight": 2.63928,
-    "tier": 6.64872837,
+    "tier": 6.55734062,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -6646,9 +6646,9 @@
     "name": "Lamellar Pauldrons",
     "culture": "Sturgia",
     "type": "ShoulderArmor",
-    "price": 2442,
+    "price": 2325,
     "weight": 2.63928,
-    "tier": 6.64872837,
+    "tier": 6.55734062,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -6665,9 +6665,9 @@
     "name": "Decorated Scale Shoulder Guards",
     "culture": "Sturgia",
     "type": "ShoulderArmor",
-    "price": 2476,
+    "price": 2290,
     "weight": 2.510549,
-    "tier": 6.674815,
+    "tier": 6.52998,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -6684,9 +6684,9 @@
     "name": "Iron Pointed Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 3447,
+    "price": 2510,
     "weight": 1.6,
-    "tier": 6.42309952,
+    "tier": 5.3207593,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6783,9 +6783,9 @@
     "name": "Pointed Falchion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 4723,
+    "price": 3587,
     "weight": 1.96,
-    "tier": 7.70676327,
+    "tier": 6.57453537,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6816,9 +6816,9 @@
     "name": "Broad Ild",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4647,
+    "price": 2828,
     "weight": 2.21,
-    "tier": 7.635379,
+    "tier": 5.7149353,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -6851,9 +6851,9 @@
     "name": "Buckled Mail Armor",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 2296,
+    "price": 2188,
     "weight": 6.39116,
-    "tier": 4.73374128,
+    "tier": 4.66844749,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -6911,7 +6911,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -6932,9 +6932,9 @@
     "name": "Burlap Waistcoat",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 56,
+    "price": 55,
     "weight": 0.388297,
-    "tier": 0.803489268,
+    "tier": 0.7575553,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -6954,9 +6954,9 @@
     "name": "Buttoned Leather Bracers",
     "culture": "Battania",
     "type": "HandArmor",
-    "price": 58,
+    "price": 59,
     "weight": 0.2901902,
-    "tier": 1.46676493,
+    "tier": 1.54484069,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -7080,9 +7080,9 @@
     "name": "Camel Saddle",
     "culture": "Aserai",
     "type": "MountHarness",
-    "price": 1712,
+    "price": 1945,
     "weight": 130.0,
-    "tier": 1.33333337,
+    "tier": 1.4666667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -7101,9 +7101,9 @@
     "name": "Camel Saddle with Light Load",
     "culture": "Aserai",
     "type": "MountHarness",
-    "price": 1712,
+    "price": 1945,
     "weight": 130.0,
-    "tier": 1.33333337,
+    "tier": 1.4666667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -7164,9 +7164,9 @@
     "name": "Highland Dagger",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3789,
+    "price": 1167,
     "weight": 1.65,
-    "tier": 6.787448,
+    "tier": 3.289505,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -7344,9 +7344,9 @@
     "name": "Reinforced Chainmail Barding",
     "culture": "Vlandia",
     "type": "MountHarness",
-    "price": 31006,
+    "price": 36770,
     "weight": 130.0,
-    "tier": 8.444445,
+    "tier": 9.288889,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -7365,9 +7365,9 @@
     "name": "Chain Mail Horse Armor",
     "culture": "Neutral",
     "type": "MountHarness",
-    "price": 24161,
+    "price": 28585,
     "weight": 120.0,
-    "tier": 7.33333349,
+    "tier": 8.066667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -7386,9 +7386,9 @@
     "name": "Reinforced Mail Shoulders",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 1557,
+    "price": 1456,
     "weight": 2.047395,
-    "tier": 5.85032558,
+    "tier": 5.738075,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -7443,9 +7443,9 @@
     "name": "Claymore",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 14064,
+    "price": 21960,
     "weight": 2.46,
-    "tier": 10.0255651,
+    "tier": 12.8001308,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -7477,9 +7477,9 @@
     "name": "Harvesting Season",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13827,
+    "price": 15032,
     "weight": 3.12,
-    "tier": 9.931412,
+    "tier": 10.4014721,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -7512,9 +7512,9 @@
     "name": "Iron Cleaver",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3701,
+    "price": 2769,
     "weight": 2.35,
-    "tier": 6.694995,
+    "tier": 5.643364,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -7661,9 +7661,9 @@
     "name": "Cloth Apron",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 151,
+    "price": 132,
     "weight": 1.507872,
-    "tier": 1.91947532,
+    "tier": 1.8036077,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -7706,7 +7706,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -7726,9 +7726,9 @@
     "name": "Brigandine over Mail",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 14671,
+    "price": 12987,
     "weight": 18.32399,
-    "tier": 7.958993,
+    "tier": 7.697421,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -8248,9 +8248,9 @@
     "name": "Crude Hide Armor",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 551,
+    "price": 496,
     "weight": 3.349267,
-    "tier": 3.08020353,
+    "tier": 2.97649956,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -8305,9 +8305,9 @@
     "name": "Frilled Dress",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 80,
+    "price": 74,
     "weight": 0.798895,
-    "tier": 1.32480156,
+    "tier": 1.24861467,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -8327,9 +8327,9 @@
     "name": "Cut Dress with Pouch",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 53,
+    "price": 52,
     "weight": 0.2747839,
-    "tier": 0.6634776,
+    "tier": 0.60664773,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -8349,9 +8349,9 @@
     "name": "Dawn",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 14042,
+    "price": 14272,
     "weight": 3.66,
-    "tier": 10.016715,
+    "tier": 10.1074705,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8383,9 +8383,9 @@
     "name": "Dawnbreaker",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6967,
+    "price": 3978,
     "weight": 2.2,
-    "tier": 9.598087,
+    "tier": 6.981668,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -8437,9 +8437,9 @@
     "name": "Decorated Great Saber",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
-    "price": 12342,
+    "price": 7455,
     "weight": 2.11,
-    "tier": 9.323171,
+    "tier": 7.008624,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8471,9 +8471,9 @@
     "name": "Decorated Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1368,
+    "price": 1367,
     "weight": 1.402491,
-    "tier": 6.92017746,
+    "tier": 6.91897964,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -8490,9 +8490,9 @@
     "name": "Decorated Imperial Gauntlets",
     "culture": "Empire",
     "type": "HandArmor",
-    "price": 1511,
+    "price": 1814,
     "weight": 3.244425,
-    "tier": 6.60427332,
+    "tier": 6.95581865,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -8530,9 +8530,9 @@
     "name": "Huscarl Decorated Mail Shirt",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 2277,
+    "price": 2048,
     "weight": 6.78733,
-    "tier": 4.72242069,
+    "tier": 4.58001137,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -8551,9 +8551,9 @@
     "name": "Decorated Thick Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 104,
+    "price": 98,
     "weight": 1.122585,
-    "tier": 1.58583593,
+    "tier": 1.53118908,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -8702,9 +8702,9 @@
     "name": "Beduin Cloth Saddle",
     "culture": "Aserai",
     "type": "MountHarness",
-    "price": 2107,
+    "price": 2403,
     "weight": 22.5,
-    "tier": 1.55555558,
+    "tier": 1.71111107,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -8723,9 +8723,9 @@
     "name": "Woven Shoulder Pad",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 51,
+    "price": 50,
     "weight": 0.06193636,
-    "tier": 0.6668428,
+    "tier": 0.6417654,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -8805,9 +8805,9 @@
     "name": "Light Lamellar Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 8521,
+    "price": 8663,
     "weight": 12.17084,
-    "tier": 6.853247,
+    "tier": 6.884688,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -8826,9 +8826,9 @@
     "name": "Leather Shoulder Guard",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 69,
+    "price": 67,
     "weight": 0.244825,
-    "tier": 1.65248728,
+    "tier": 1.59034359,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -8845,9 +8845,9 @@
     "name": "Desert Long Sword",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 10446,
+    "price": 8739,
     "weight": 3.02,
-    "tier": 8.491489,
+    "tier": 7.67581844,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8938,9 +8938,9 @@
     "name": "Light Long Padded Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 896,
+    "price": 779,
     "weight": 4.341292,
-    "tier": 3.583628,
+    "tier": 3.43279958,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -8960,9 +8960,9 @@
     "name": "Simple Kaftan",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.5716428,
-    "tier": 1.08155942,
+    "tier": 1.03155422,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -8982,9 +8982,9 @@
     "name": "Robe over Mail Hauberk",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3550,
+    "price": 3143,
     "weight": 9.225823,
-    "tier": 5.362319,
+    "tier": 5.179704,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -9003,9 +9003,9 @@
     "name": "Luxury Scale Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 15705,
+    "price": 13199,
     "weight": 20.0206,
-    "tier": 8.10877,
+    "tier": 7.73170233,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -9063,9 +9063,9 @@
     "name": "Dress",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 61,
+    "price": 60,
     "weight": 0.4587976,
-    "tier": 0.972560465,
+    "tier": 0.947130263,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -9085,9 +9085,9 @@
     "name": "Early Retirement",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 8651,
+    "price": 6643,
     "weight": 2.02,
-    "tier": 7.631368,
+    "tier": 6.557241,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9119,9 +9119,9 @@
     "name": "Polesword",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 6622,
+    "price": 13524,
     "weight": 1.75,
-    "tier": 6.01869,
+    "tier": 9.051901,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9350,9 +9350,9 @@
     "name": "Lancer Lamellar Armor",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 5644,
+    "price": 4991,
     "weight": 10.3814,
-    "tier": 6.110613,
+    "tier": 5.90377569,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -9373,7 +9373,7 @@
     "type": "LegArmor",
     "price": 73,
     "weight": 0.2304528,
-    "tier": 2.18011761,
+    "tier": 2.17974019,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -9392,9 +9392,9 @@
     "name": "Long Steel Mace",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
-    "price": 13172,
+    "price": 20358,
     "weight": 1.89,
-    "tier": 9.667624,
+    "tier": 12.2837963,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9427,9 +9427,9 @@
     "name": "Mirrored Brigandine Armor",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 7684,
+    "price": 6836,
     "weight": 13.48989,
-    "tier": 6.65955544,
+    "tier": 6.446472,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -9448,9 +9448,9 @@
     "name": "Plated Leather Vambraces",
     "culture": "Khuzait",
     "type": "HandArmor",
-    "price": 2629,
+    "price": 3169,
     "weight": 4.264907,
-    "tier": 7.718972,
+    "tier": 8.129853,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -9467,9 +9467,9 @@
     "name": "Brigandine Vest",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 2379,
+    "price": 2160,
     "weight": 5.875444,
-    "tier": 4.782181,
+    "tier": 4.650716,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -9488,9 +9488,9 @@
     "name": "Silk Kaftan",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 104,
+    "price": 98,
     "weight": 1.122585,
-    "tier": 1.58583593,
+    "tier": 1.53118908,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -9510,9 +9510,9 @@
     "name": "Jagged Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 10585,
+    "price": 10986,
     "weight": 1.72,
-    "tier": 7.88540649,
+    "tier": 8.053259,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9590,9 +9590,9 @@
     "name": "Narrow Long Headed Spear",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 9610,
+    "price": 9948,
     "weight": 2.17,
-    "tier": 7.46390247,
+    "tier": 7.61215067,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9670,9 +9670,9 @@
     "name": "Weighted Steppe Spear",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 796,
+    "price": 839,
     "weight": 1.73,
-    "tier": 1.49191928,
+    "tier": 1.55296206,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9750,9 +9750,9 @@
     "name": "Fine Steel Leaf Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 12110,
+    "price": 12373,
     "weight": 2.01,
-    "tier": 8.508371,
+    "tier": 8.611972,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9872,9 +9872,9 @@
     "name": "Steel Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6151,
+    "price": 6376,
     "weight": 1.71,
-    "tier": 8.951445,
+    "tier": 9.133195,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9905,9 +9905,9 @@
     "name": "Stitched Cured Leather Coat",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 1485,
+    "price": 1262,
     "weight": 5.623061,
-    "tier": 4.169342,
+    "tier": 3.97253227,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -9926,9 +9926,9 @@
     "name": "Cured Studded Leather Armor",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 1089,
+    "price": 950,
     "weight": 4.729927,
-    "tier": 3.80121732,
+    "tier": 3.64785051,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -9947,9 +9947,9 @@
     "name": "Reinforced Studded Shoulder Guards",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 2136,
+    "price": 1983,
     "weight": 2.352683,
-    "tier": 6.40277052,
+    "tier": 6.268688,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -10141,7 +10141,7 @@
     "type": "HandArmor",
     "price": 53,
     "weight": 0.1884841,
-    "tier": 1.105365,
+    "tier": 1.16420364,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10259,7 +10259,7 @@
     "type": "ShoulderArmor",
     "price": 69,
     "weight": 0.3058741,
-    "tier": 1.6477747,
+    "tier": 1.643474,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -10340,9 +10340,9 @@
     "name": "Ladies Dress",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 116,
+    "price": 105,
     "weight": 1.221603,
-    "tier": 1.69063663,
+    "tier": 1.59974384,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -10362,9 +10362,9 @@
     "name": "Red Dress",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 82,
+    "price": 78,
     "weight": 0.8207818,
-    "tier": 1.35175812,
+    "tier": 1.31048286,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -10422,9 +10422,9 @@
     "name": "Cavalryman Mail Shirt",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 3430,
+    "price": 3029,
     "weight": 8.73775,
-    "tier": 5.31004429,
+    "tier": 5.12542534,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -10445,7 +10445,7 @@
     "type": "LegArmor",
     "price": 62,
     "weight": 0.1753114,
-    "tier": 1.82153821,
+    "tier": 1.82122278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10679,9 +10679,9 @@
     "name": "Decorated Legionary Mail",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 4944,
+    "price": 4010,
     "weight": 10.89783,
-    "tier": 5.887866,
+    "tier": 5.55055,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -10700,9 +10700,9 @@
     "name": "Ornate Legionary Scale Mail",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 6772,
+    "price": 5572,
     "weight": 12.49636,
-    "tier": 6.42963743,
+    "tier": 6.088809,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -10740,9 +10740,9 @@
     "name": "Spiked Club",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3582,
+    "price": 2297,
     "weight": 1.78,
-    "tier": 6.568593,
+    "tier": 5.043445,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10773,9 +10773,9 @@
     "name": "Imperial Light Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6141,
+    "price": 2958,
     "weight": 1.9,
-    "tier": 8.943066,
+    "tier": 5.87023,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10806,9 +10806,9 @@
     "name": "Calradic Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6997,
+    "price": 3875,
     "weight": 1.79,
-    "tier": 9.62122,
+    "tier": 6.876471,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10839,9 +10839,9 @@
     "name": "Light Royal Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6396,
+    "price": 4487,
     "weight": 2.42,
-    "tier": 9.149743,
+    "tier": 7.483815,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10872,9 +10872,9 @@
     "name": "Cataphract Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6805,
+    "price": 6437,
     "weight": 2.07,
-    "tier": 9.473121,
+    "tier": 9.182265,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10905,9 +10905,9 @@
     "name": "Decorated Short Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7062,
+    "price": 4062,
     "weight": 1.75,
-    "tier": 9.670853,
+    "tier": 7.06691456,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10938,9 +10938,9 @@
     "name": "Thamaskene Steel Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7455,
+    "price": 5377,
     "weight": 2.22,
-    "tier": 9.967152,
+    "tier": 8.296819,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10971,9 +10971,9 @@
     "name": "Spatha Blade with Ring Pommel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7369,
+    "price": 4444,
     "weight": 2.46,
-    "tier": 9.902941,
+    "tier": 7.44226933,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11004,9 +11004,9 @@
     "name": "Bronze Plate Pauldrons",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 106,
+    "price": 115,
     "weight": 0.6717997,
-    "tier": 2.26955819,
+    "tier": 2.3827734,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -11023,9 +11023,9 @@
     "name": "Iron Plate Pauldrons",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 136,
+    "price": 151,
     "weight": 0.8207818,
-    "tier": 2.57754683,
+    "tier": 2.70612574,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -11042,9 +11042,9 @@
     "name": "Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 15781,
+    "price": 19825,
     "weight": 1.72,
-    "tier": 9.864457,
+    "tier": 11.1870556,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11078,9 +11078,9 @@
     "name": "Fine Steel Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 11966,
+    "price": 24065,
     "weight": 1.29,
-    "tier": 8.451273,
+    "tier": 12.4365244,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11116,7 +11116,7 @@
     "type": "BodyArmor",
     "price": 52,
     "weight": 0.1751825,
-    "tier": 0.579663754,
+    "tier": 0.5706096,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11137,9 +11137,9 @@
     "name": "Spatha With Narrow Fuller",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4014,
+    "price": 2788,
     "weight": 1.78,
-    "tier": 7.018116,
+    "tier": 5.66647053,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11172,9 +11172,9 @@
     "name": "Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2761,
+    "price": 1890,
     "weight": 1.65,
-    "tier": 5.63367367,
+    "tier": 4.47537136,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11207,9 +11207,9 @@
     "name": "Fine Steel Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4233,
+    "price": 3112,
     "weight": 1.91,
-    "tier": 7.237092,
+    "tier": 6.04846,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11242,9 +11242,9 @@
     "name": "Fine Steel Paramerion",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7283,
+    "price": 5630,
     "weight": 2.52,
-    "tier": 9.838275,
+    "tier": 8.515496,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11275,9 +11275,9 @@
     "name": "Thamaskene Steel Spathion",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7184,
+    "price": 4946,
     "weight": 2.61,
-    "tier": 9.763939,
+    "tier": 7.911696,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11347,9 +11347,9 @@
     "name": "Infantryman Gambeson",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 608,
+    "price": 523,
     "weight": 3.419776,
-    "tier": 3.17766547,
+    "tier": 3.028619,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11369,9 +11369,9 @@
     "name": "Infantryman Gambeson over Leather Jacket",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 737,
+    "price": 624,
     "weight": 3.816213,
-    "tier": 3.37486124,
+    "tier": 3.20317221,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11391,9 +11391,9 @@
     "name": "Infantryman Gambeson with Skirts",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 737,
+    "price": 624,
     "weight": 3.816213,
-    "tier": 3.37486124,
+    "tier": 3.20317221,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11413,9 +11413,9 @@
     "name": "Infantryman Gambeson with Straps",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 737,
+    "price": 624,
     "weight": 3.816213,
-    "tier": 3.37486124,
+    "tier": 3.20317221,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11435,9 +11435,9 @@
     "name": "Infantryman Long Gambeson",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 814,
+    "price": 698,
     "weight": 4.075933,
-    "tier": 3.47987175,
+    "tier": 3.31868339,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11457,9 +11457,9 @@
     "name": "Auxiliary Armor",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 819,
+    "price": 695,
     "weight": 4.001147,
-    "tier": 3.486353,
+    "tier": 3.31347775,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -11478,9 +11478,9 @@
     "name": "Auxiliary Armor with Straps",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 907,
+    "price": 771,
     "weight": 4.188975,
-    "tier": 3.59686112,
+    "tier": 3.42280841,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -11499,9 +11499,9 @@
     "name": "Legionary Padded Straps",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 484,
+    "price": 468,
     "weight": 1.221603,
-    "tier": 4.12213945,
+    "tier": 4.07808971,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -11518,9 +11518,9 @@
     "name": "Iron Falchion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3559,
+    "price": 2605,
     "weight": 2.0,
-    "tier": 6.54445362,
+    "tier": 5.44171953,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11613,9 +11613,9 @@
     "name": "Cotton Hood",
     "culture": "Neutral",
     "type": "ShoulderArmor",
-    "price": 51,
+    "price": 50,
     "weight": 0.06193636,
-    "tier": 0.6668428,
+    "tier": 0.6417654,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11696,9 +11696,9 @@
     "name": "Tailored Dress",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 72,
+    "price": 70,
     "weight": 0.7133473,
-    "tier": 1.21642077,
+    "tier": 1.17716837,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11720,7 +11720,7 @@
     "type": "LegArmor",
     "price": 56,
     "weight": 0.1254426,
-    "tier": 1.46073663,
+    "tier": 1.46048379,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11741,7 +11741,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11822,7 +11822,7 @@
     "type": "LegArmor",
     "price": 56,
     "weight": 0.1254426,
-    "tier": 1.46073663,
+    "tier": 1.46048379,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11841,9 +11841,9 @@
     "name": "Military Tunic",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 60,
+    "price": 58,
     "weight": 0.4770266,
-    "tier": 0.9431858,
+    "tier": 0.895203352,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12089,9 +12089,9 @@
     "name": "Fur Armor",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 329,
+    "price": 305,
     "weight": 2.228874,
-    "tier": 2.59520125,
+    "tier": 2.52593422,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -12110,9 +12110,9 @@
     "name": "Fur Armor with Strap",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 270,
+    "price": 235,
     "weight": 2.077283,
-    "tier": 2.41981339,
+    "tier": 2.297804,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12132,9 +12132,9 @@
     "name": "Fur Coat over Tunic",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 270,
+    "price": 235,
     "weight": 2.077283,
-    "tier": 2.41981339,
+    "tier": 2.297804,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -12193,9 +12193,9 @@
     "name": "Fur Skirt",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 60,
+    "price": 56,
     "weight": 0.6110581,
-    "tier": 0.966051042,
+    "tier": 0.813657,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12215,9 +12215,9 @@
     "name": "Fur Skirt with Tunic",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 95,
+    "price": 83,
     "weight": 1.147077,
-    "tier": 1.50093842,
+    "tier": 1.36805022,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -12236,9 +12236,9 @@
     "name": "Fur Trimmed Short Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 66,
+    "price": 65,
     "weight": 0.5522661,
-    "tier": 1.11096478,
+    "tier": 1.08341515,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12258,9 +12258,9 @@
     "name": "Fur Trimmed Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 104,
+    "price": 98,
     "weight": 1.122585,
-    "tier": 1.58583593,
+    "tier": 1.53118908,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12280,9 +12280,9 @@
     "name": "Fur Waistcoat over Tunic",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 82,
+    "price": 78,
     "weight": 0.8207818,
-    "tier": 1.35175812,
+    "tier": 1.31048286,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -12301,9 +12301,9 @@
     "name": "Gada",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 12631,
+    "price": 15881,
     "weight": 2.35,
-    "tier": 9.444628,
+    "tier": 10.721365,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -12337,9 +12337,9 @@
     "name": "Heavy Aketon",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 1493,
+    "price": 1326,
     "weight": 5.833124,
-    "tier": 4.17579365,
+    "tier": 4.0318985,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12417,9 +12417,9 @@
     "name": "Xiphos",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2322,
+    "price": 860,
     "weight": 1.91,
-    "tier": 5.07745934,
+    "tier": 2.67822647,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12613,9 +12613,9 @@
     "name": "Greataxe",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 10899,
+    "price": 9862,
     "weight": 1.41,
-    "tier": 8.696558,
+    "tier": 8.220126,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -12653,7 +12653,7 @@
     "type": "ShoulderArmor",
     "price": 53,
     "weight": 0.1137844,
-    "tier": 0.99773,
+    "tier": 0.96020925,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12672,9 +12672,9 @@
     "name": "Guarded Armwraps",
     "culture": "Battania",
     "type": "HandArmor",
-    "price": 100,
+    "price": 109,
     "weight": 0.6717997,
-    "tier": 2.52346373,
+    "tier": 2.6577878,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12693,9 +12693,9 @@
     "name": "Guarded Padded Vambraces",
     "culture": "Aserai",
     "type": "HandArmor",
-    "price": 163,
+    "price": 185,
     "weight": 0.9793918,
-    "tier": 3.20334029,
+    "tier": 3.37385416,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12777,7 +12777,7 @@
     "type": "BodyArmor",
     "price": 53,
     "weight": 0.2901902,
-    "tier": 0.691826463,
+    "tier": 0.6707019,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12797,9 +12797,9 @@
     "name": "Reinforced Half Plate Barding",
     "culture": "Aserai",
     "type": "MountHarness",
-    "price": 25463,
+    "price": 30140,
     "weight": 90.0,
-    "tier": 7.55555534,
+    "tier": 8.311111,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12818,9 +12818,9 @@
     "name": "Cataphract Half Scale Barding",
     "culture": "Empire",
     "type": "MountHarness",
-    "price": 28167,
+    "price": 33374,
     "weight": 80.0,
-    "tier": 8.0,
+    "tier": 8.800001,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12839,9 +12839,9 @@
     "name": "Half Mail Barding",
     "culture": "Vlandia",
     "type": "MountHarness",
-    "price": 21659,
+    "price": 25595,
     "weight": 65.0,
-    "tier": 6.888889,
+    "tier": 7.57777834,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12860,9 +12860,9 @@
     "name": "Heavy Mail Shirt",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 4364,
+    "price": 3789,
     "weight": 10.33022,
-    "tier": 5.68465853,
+    "tier": 5.462101,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -13070,9 +13070,9 @@
     "name": "Heavy Blacksmith Hammer",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 12006,
+    "price": 18520,
     "weight": 2.8,
-    "tier": 9.180807,
+    "tier": 11.66524,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13109,9 +13109,9 @@
     "name": "Heavy Executioner Long Sword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 13148,
+    "price": 17509,
     "weight": 3.87,
-    "tier": 9.657495,
+    "tier": 11.3121853,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13263,9 +13263,9 @@
     "name": "Sleeved Heavy Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 82,
+    "price": 78,
     "weight": 0.7772062,
-    "tier": 1.35421515,
+    "tier": 1.30024123,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -13285,9 +13285,9 @@
     "name": "Heavy Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 82,
+    "price": 78,
     "weight": 0.7772062,
-    "tier": 1.35421515,
+    "tier": 1.30024123,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -13397,9 +13397,9 @@
     "name": "Hemp Tunic",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 60,
+    "price": 58,
     "weight": 0.4770266,
-    "tier": 0.9431858,
+    "tier": 0.895203352,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -13421,7 +13421,7 @@
     "type": "LegArmor",
     "price": 62,
     "weight": 0.1753114,
-    "tier": 1.82153821,
+    "tier": 1.82122278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13440,9 +13440,9 @@
     "name": "Woodland Cloth Armor",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 156,
+    "price": 140,
     "weight": 1.481027,
-    "tier": 1.94879973,
+    "tier": 1.854497,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -13462,9 +13462,9 @@
     "name": "Fur Rimmed Leather Gloves",
     "culture": "Battania",
     "type": "HandArmor",
-    "price": 127,
+    "price": 142,
     "weight": 0.8207818,
-    "tier": 2.86590838,
+    "tier": 3.01846075,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13485,7 +13485,7 @@
     "type": "LegArmor",
     "price": 110,
     "weight": 0.3548054,
-    "tier": 2.89002943,
+    "tier": 2.88952923,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13680,9 +13680,9 @@
     "name": "Steel Tipped Hooked Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 1616,
+    "price": 1666,
     "weight": 1.48,
-    "tier": 2.485578,
+    "tier": 2.53841925,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -13716,9 +13716,9 @@
     "name": "Highland War Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 10325,
+    "price": 10899,
     "weight": 1.85,
-    "tier": 7.7751503,
+    "tier": 8.017228,
     "requirement": 0,
     "flags": [
       "NotStackable"
@@ -13867,7 +13867,7 @@
     "type": "ShoulderArmor",
     "price": 53,
     "weight": 0.1137844,
-    "tier": 0.99773,
+    "tier": 0.96020925,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -13887,9 +13887,9 @@
     "name": "Hooked Axe",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 4088,
+    "price": 4227,
     "weight": 1.15,
-    "tier": 4.921623,
+    "tier": 5.021553,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -13925,9 +13925,9 @@
     "name": "Falx Knife",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 241,
+    "price": 124,
     "weight": 0.82,
-    "tier": 0.9619692,
+    "tier": 0.442285359,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14136,9 +14136,9 @@
     "name": "Iklwa",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 950,
+    "price": 1154,
     "weight": 1.11,
-    "tier": 1.70532775,
+    "tier": 1.96567881,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -14193,9 +14193,9 @@
     "name": "Tzikourion Axe",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1871,
+    "price": 1039,
     "weight": 0.97,
-    "tier": 4.447446,
+    "tier": 3.04485035,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -14270,9 +14270,9 @@
     "name": "Cataphract Lamellar Armor",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 16691,
+    "price": 13954,
     "weight": 20.72603,
-    "tier": 8.24473,
+    "tier": 7.850629,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -14291,9 +14291,9 @@
     "name": "Luxury Lamellar Vest over Leather",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 3317,
+    "price": 2993,
     "weight": 7.695641,
-    "tier": 5.25994635,
+    "tier": 5.108132,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -14312,9 +14312,9 @@
     "name": "Heavy Lamellar Pauldrons",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 4060,
+    "price": 3954,
     "weight": 3.526454,
-    "tier": 7.66293859,
+    "tier": 7.60683775,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -14372,9 +14372,9 @@
     "name": "Infantryman Mail over Leather",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 2765,
+    "price": 2524,
     "weight": 6.965938,
-    "tier": 4.9936533,
+    "tier": 4.8643384,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -14393,9 +14393,9 @@
     "name": "Infantryman Mail over Striped Leather",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 2765,
+    "price": 2524,
     "weight": 6.965938,
-    "tier": 4.9936533,
+    "tier": 4.8643384,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -14414,9 +14414,9 @@
     "name": "Infantryman Mail Vest",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 3777,
+    "price": 3347,
     "weight": 9.473157,
-    "tier": 5.45713043,
+    "tier": 5.273401,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -14456,9 +14456,9 @@
     "name": "Infantryman Rough Gambeson",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 896,
+    "price": 779,
     "weight": 4.341292,
-    "tier": 3.583628,
+    "tier": 3.43279958,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -14499,9 +14499,9 @@
     "name": "Imperial Riding Harness",
     "culture": "Empire",
     "type": "MountHarness",
-    "price": 1351,
+    "price": 1528,
     "weight": 22.0,
-    "tier": 1.11111116,
+    "tier": 1.22222221,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14520,9 +14520,9 @@
     "name": "Toga",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 160,
+    "price": 152,
     "weight": 1.562045,
-    "tier": 1.97045648,
+    "tier": 1.92253506,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -14542,9 +14542,9 @@
     "name": "Heavy Scale Armor over Mail Hauberk",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 21898,
+    "price": 19156,
     "weight": 23.02404,
-    "tier": 8.877511,
+    "tier": 8.560322,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -14561,9 +14561,9 @@
     "name": "Cataphract Scale Barding",
     "culture": "Empire",
     "type": "MountHarness",
-    "price": 42000,
+    "price": 49936,
     "weight": 135.0,
-    "tier": 10.0,
+    "tier": 11.0,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14582,9 +14582,9 @@
     "name": "Short Militia Spear",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 7297,
+    "price": 7443,
     "weight": 1.49,
-    "tier": 6.36949062,
+    "tier": 6.443457,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -14662,9 +14662,9 @@
     "name": "Legionary Reinforced Studded Harness",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 478,
+    "price": 483,
     "weight": 1.323371,
-    "tier": 4.106257,
+    "tier": 4.11764765,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -14775,9 +14775,9 @@
     "name": "Iron Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4081,
+    "price": 2618,
     "weight": 1.99,
-    "tier": 7.08556271,
+    "tier": 5.4571104,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15099,9 +15099,9 @@
     "name": "Judgement",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 7265,
+    "price": 5522,
     "weight": 2.58,
-    "tier": 9.824456,
+    "tier": 8.422888,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15132,9 +15132,9 @@
     "name": "Justicier",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 1345,
+    "price": 1048,
     "weight": 2.1,
-    "tier": 2.413377,
+    "tier": 2.02536345,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15168,9 +15168,9 @@
     "name": "Kama",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 4567,
+    "price": 3362,
     "weight": 1.25,
-    "tier": 7.55979061,
+    "tier": 6.32969761,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -15204,9 +15204,9 @@
     "name": "Ridged Long Kaskara",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 3311,
+    "price": 2571,
     "weight": 1.67,
-    "tier": 4.32866859,
+    "tier": 3.69658017,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15518,9 +15518,9 @@
     "name": "Coat with Mirrored Belt",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 139,
+    "price": 130,
     "weight": 1.375265,
-    "tier": 1.84618855,
+    "tier": 1.78776133,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -15540,9 +15540,9 @@
     "name": "Luxury Coat",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 104,
+    "price": 98,
     "weight": 1.122585,
-    "tier": 1.58583593,
+    "tier": 1.53118908,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -15562,9 +15562,9 @@
     "name": "Luxury Thick Coat",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 104,
+    "price": 98,
     "weight": 1.122585,
-    "tier": 1.58583593,
+    "tier": 1.53118908,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -15605,7 +15605,7 @@
     "type": "LegArmor",
     "price": 62,
     "weight": 0.1753114,
-    "tier": 1.82153821,
+    "tier": 1.82122278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15624,9 +15624,9 @@
     "name": "Aproned Feminine Coat",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 104,
+    "price": 98,
     "weight": 1.122585,
-    "tier": 1.58583593,
+    "tier": 1.53118908,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -15646,9 +15646,9 @@
     "name": "Dress with Fur",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 120,
+    "price": 111,
     "weight": 1.196587,
-    "tier": 1.72000337,
+    "tier": 1.6509335,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -15668,9 +15668,9 @@
     "name": "Reinforced Mirror Armor",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 458,
+    "price": 399,
     "weight": 2.704445,
-    "tier": 2.90002251,
+    "tier": 2.77215028,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -15908,9 +15908,9 @@
     "name": "Reinforced Leather Pauldrons",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 302,
+    "price": 290,
     "weight": 0.9331263,
-    "tier": 3.52783537,
+    "tier": 3.479345,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -15927,9 +15927,9 @@
     "name": "Steppe Light Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4182,
+    "price": 2966,
     "weight": 2.15,
-    "tier": 7.18685246,
+    "tier": 5.87949657,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15960,9 +15960,9 @@
     "name": "Eastern Heavy Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5540,
+    "price": 2779,
     "weight": 1.43,
-    "tier": 8.438167,
+    "tier": 5.656031,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15993,9 +15993,9 @@
     "name": "Fine Steel Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 7030,
+    "price": 5347,
     "weight": 1.42,
-    "tier": 9.646627,
+    "tier": 8.270429,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16026,9 +16026,9 @@
     "name": "Heavy Flanged Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4517,
+    "price": 3325,
     "weight": 2.09,
-    "tier": 7.51172638,
+    "tier": 6.2894516,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16116,9 +16116,9 @@
     "name": "Decorated Cavalry Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6865,
+    "price": 4816,
     "weight": 2.43,
-    "tier": 9.519043,
+    "tier": 7.79265833,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16149,9 +16149,9 @@
     "name": "Lion Imprinted Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 7546,
+    "price": 5374,
     "weight": 2.07,
-    "tier": 10.03405,
+    "tier": 8.293814,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16182,9 +16182,9 @@
     "name": "Tall Gripped Ild",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 7005,
+    "price": 4008,
     "weight": 1.85,
-    "tier": 9.626883,
+    "tier": 7.012227,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16215,9 +16215,9 @@
     "name": "Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 14671,
+    "price": 18860,
     "weight": 1.63,
-    "tier": 9.472459,
+    "tier": 10.88465,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16251,9 +16251,9 @@
     "name": "Long Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 14929,
+    "price": 26735,
     "weight": 1.35,
-    "tier": 9.564983,
+    "tier": 13.16743,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16287,9 +16287,9 @@
     "name": "Mirrored Leather Armor",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 487,
+    "price": 406,
     "weight": 2.936653,
-    "tier": 2.95889616,
+    "tier": 2.788486,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -16308,9 +16308,9 @@
     "name": "Iron Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 3936,
+    "price": 2807,
     "weight": 2.12,
-    "tier": 6.939122,
+    "tier": 5.689923,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16343,9 +16343,9 @@
     "name": "Straight Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4522,
+    "price": 3151,
     "weight": 1.41,
-    "tier": 7.5169363,
+    "tier": 6.09282732,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16378,9 +16378,9 @@
     "name": "Fine Steel Cavalry Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5463,
+    "price": 4178,
     "weight": 2.37,
-    "tier": 8.371743,
+    "tier": 7.18222666,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16413,9 +16413,9 @@
     "name": "Fine Steel Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5944,
+    "price": 4243,
     "weight": 1.92,
-    "tier": 8.780131,
+    "tier": 7.2469964,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16448,9 +16448,9 @@
     "name": "Heavy Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 4928,
+    "price": 3653,
     "weight": 2.14,
-    "tier": 7.8955636,
+    "tier": 6.64511347,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16483,9 +16483,9 @@
     "name": "Kilt over Plated Leather",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 8589,
+    "price": 6619,
     "weight": 13.88306,
-    "tier": 6.86834574,
+    "tier": 6.388789,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -16504,9 +16504,9 @@
     "name": "Knight's Fall",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5699,
+    "price": 5642,
     "weight": 1.8,
-    "tier": 8.574381,
+    "tier": 8.525591,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16582,7 +16582,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -16604,7 +16604,7 @@
     "type": "LegArmor",
     "price": 50,
     "weight": 0.01568033,
-    "tier": 0.367159039,
+    "tier": 0.36709547,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16625,7 +16625,7 @@
     "type": "LegArmor",
     "price": 1159,
     "weight": 1.29863,
-    "tier": 6.599741,
+    "tier": 6.598599,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -16642,9 +16642,9 @@
     "name": "Lamellar Plate Gauntlets",
     "culture": "Empire",
     "type": "HandArmor",
-    "price": 2310,
+    "price": 2782,
     "weight": 4.001147,
-    "tier": 7.44548845,
+    "tier": 7.84181166,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -16661,9 +16661,9 @@
     "name": "Lamellar Shoulder Pieces",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 2476,
+    "price": 2290,
     "weight": 2.510549,
-    "tier": 6.674815,
+    "tier": 6.52998,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -16680,9 +16680,9 @@
     "name": "Lamellar with Scale Skirt",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 19888,
+    "price": 16996,
     "weight": 22.55802,
-    "tier": 8.648203,
+    "tier": 8.285603,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -16739,9 +16739,9 @@
     "name": "Long Franziska Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 7005,
+    "price": 5558,
     "weight": 1.05,
-    "tier": 9.627211,
+    "tier": 8.453867,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -16775,9 +16775,9 @@
     "name": "Layered Leather Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 261,
+    "price": 221,
     "weight": 2.107316,
-    "tier": 2.39056826,
+    "tier": 2.24746561,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -16797,9 +16797,9 @@
     "name": "Layered Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.5716428,
-    "tier": 1.08155942,
+    "tier": 1.03155422,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -16858,9 +16858,9 @@
     "name": "Leather Armor with Iron Plates",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 1006,
+    "price": 924,
     "weight": 4.038483,
-    "tier": 3.71192575,
+    "tier": 3.617544,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -16879,9 +16879,9 @@
     "name": "Leather Apron",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.6110581,
-    "tier": 1.079704,
+    "tier": 1.04249811,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -16903,7 +16903,7 @@
     "type": "LegArmor",
     "price": 56,
     "weight": 0.1254426,
-    "tier": 1.46073663,
+    "tier": 1.46048379,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -16983,7 +16983,7 @@
     "type": "LegArmor",
     "price": 73,
     "weight": 0.2304528,
-    "tier": 2.18011761,
+    "tier": 2.17974019,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17002,9 +17002,9 @@
     "name": "Leather Coat over Cloth",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 135,
+    "price": 121,
     "weight": 1.349235,
-    "tier": 1.8204,
+    "tier": 1.72779119,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17024,9 +17024,9 @@
     "name": "Leather Gloves",
     "culture": "Neutral",
     "type": "HandArmor",
-    "price": 58,
+    "price": 59,
     "weight": 0.2901902,
-    "tier": 1.46676493,
+    "tier": 1.54484069,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17045,9 +17045,9 @@
     "name": "Cured Leather Lamellar Armor",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 2285,
+    "price": 1908,
     "weight": 7.010831,
-    "tier": 4.726965,
+    "tier": 4.48649073,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -17066,9 +17066,9 @@
     "name": "Leather Lamellar Shoulder Guards",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 750,
+    "price": 702,
     "weight": 1.427819,
-    "tier": 4.719612,
+    "tier": 4.62470961,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -17123,9 +17123,9 @@
     "name": "Leather Scale Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 769,
+    "price": 693,
     "weight": 3.889836,
-    "tier": 3.4195776,
+    "tier": 3.31135631,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17147,7 +17147,7 @@
     "type": "LegArmor",
     "price": 52,
     "weight": 0.08147737,
-    "tier": 1.09790254,
+    "tier": 1.09771252,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17166,9 +17166,9 @@
     "name": "Leather Strips over Padded Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 4053,
+    "price": 3737,
     "weight": 8.449179,
-    "tier": 5.567382,
+    "tier": 5.4408145,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17264,9 +17264,9 @@
     "name": "Leather Tunic",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 332,
+    "price": 276,
     "weight": 2.446993,
-    "tier": 2.60396957,
+    "tier": 2.4372716,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17406,9 +17406,9 @@
     "name": "Legionary Mail",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 8323,
+    "price": 7180,
     "weight": 14.6806,
-    "tier": 6.80867052,
+    "tier": 6.53510046,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -17465,9 +17465,9 @@
     "name": "Leopard Pelt",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 59,
+    "price": 58,
     "weight": 0.1751825,
-    "tier": 1.326371,
+    "tier": 1.27649117,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17486,9 +17486,9 @@
     "name": "Light Chain Shoulders",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 174,
+    "price": 159,
     "weight": 1.05,
-    "tier": 2.87292528,
+    "tier": 2.764886,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -17505,9 +17505,9 @@
     "name": "Light Harness",
     "culture": "Neutral",
     "type": "MountHarness",
-    "price": 1712,
+    "price": 1945,
     "weight": 20.0,
-    "tier": 1.33333337,
+    "tier": 1.4666667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17564,9 +17564,9 @@
     "name": "Light Mace",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 540,
+    "price": 355,
     "weight": 1.8,
-    "tier": 1.9118042,
+    "tier": 1.36640322,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17599,7 +17599,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17655,9 +17655,9 @@
     "name": "Long Bardiche",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 15938,
+    "price": 26524,
     "weight": 1.65,
-    "tier": 9.918792,
+    "tier": 13.1111193,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -17694,9 +17694,9 @@
     "name": "Long Simple Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 53,
+    "price": 52,
     "weight": 0.3058741,
-    "tier": 0.6625167,
+    "tier": 0.6186578,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17716,9 +17716,9 @@
     "name": "Long Fur Coat",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 300,
+    "price": 255,
     "weight": 2.259616,
-    "tier": 2.51246214,
+    "tier": 2.36797523,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17738,9 +17738,9 @@
     "name": "Long Greataxe",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13682,
+    "price": 13542,
     "weight": 1.38,
-    "tier": 9.873453,
+    "tier": 9.817274,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -17776,9 +17776,9 @@
     "name": "Long Hafted Spiked Mace",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 13775,
+    "price": 23168,
     "weight": 1.83,
-    "tier": 9.145699,
+    "tier": 12.182004,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -17815,9 +17815,9 @@
     "name": "Long Hemp Tunic",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.6110581,
-    "tier": 1.079704,
+    "tier": 1.04249811,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17837,9 +17837,9 @@
     "name": "Long Maul",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13606,
+    "price": 31278,
     "weight": 1.68,
-    "tier": 9.843185,
+    "tier": 15.4904222,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17876,9 +17876,9 @@
     "name": "Long Padded Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 430,
+    "price": 358,
     "weight": 2.770139,
-    "tier": 2.84174752,
+    "tier": 2.67256236,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17900,7 +17900,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17941,9 +17941,9 @@
     "name": "Heavy Mail Mittens",
     "culture": "Vlandia",
     "type": "HandArmor",
-    "price": 2629,
+    "price": 3169,
     "weight": 4.264907,
-    "tier": 7.718972,
+    "tier": 8.129853,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -18081,9 +18081,9 @@
     "name": "Reinforced Plate Barding",
     "culture": "Aserai",
     "type": "MountHarness",
-    "price": 33979,
+    "price": 40328,
     "weight": 145.0,
-    "tier": 8.888889,
+    "tier": 9.777778,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -18102,9 +18102,9 @@
     "name": "Mail Cavalier Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 286,
+    "price": 285,
     "weight": 0.651819,
-    "tier": 4.27821636,
+    "tier": 4.277476,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -18121,9 +18121,9 @@
     "name": "Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 1863,
+    "price": 1862,
     "weight": 1.61804,
-    "tier": 7.55286551,
+    "tier": 7.551558,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -18159,9 +18159,9 @@
     "name": "Mail Mittens",
     "culture": "Vlandia",
     "type": "HandArmor",
-    "price": 1511,
+    "price": 1814,
     "weight": 3.244425,
-    "tier": 6.60427332,
+    "tier": 6.95581865,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -18178,9 +18178,9 @@
     "name": "Mail Shirt",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 3506,
+    "price": 3043,
     "weight": 9.176619,
-    "tier": 5.34328651,
+    "tier": 5.1320405,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -18199,9 +18199,9 @@
     "name": "Mail Shoulder Guards",
     "culture": "Sturgia",
     "type": "ShoulderArmor",
-    "price": 307,
+    "price": 275,
     "weight": 0.798895,
-    "tier": 3.54735374,
+    "tier": 3.41395164,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -18218,9 +18218,9 @@
     "name": "Mail With Tabbard Pattern 1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 9447,
+    "price": 8626,
     "weight": 18.25,
-    "tier": 7.051705,
+    "tier": 6.8766,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -18239,9 +18239,9 @@
     "name": "Mail With Tabbard Pattern 2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 9447,
+    "price": 8626,
     "weight": 18.25,
-    "tier": 7.051705,
+    "tier": 6.8766,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -18260,9 +18260,9 @@
     "name": "Mail With Tabbard Pattern 3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 9447,
+    "price": 8626,
     "weight": 18.25,
-    "tier": 7.051705,
+    "tier": 6.8766,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -18281,9 +18281,9 @@
     "name": "Mail With Tabbard Pattern 4",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 9447,
+    "price": 8626,
     "weight": 18.25,
-    "tier": 7.051705,
+    "tier": 6.8766,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -18302,9 +18302,9 @@
     "name": "Mail With Tabbard Pattern 5",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 9447,
+    "price": 8626,
     "weight": 18.25,
-    "tier": 7.051705,
+    "tier": 6.8766,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -18323,9 +18323,9 @@
     "name": "Mail With Tabbard Pattern 6",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 9447,
+    "price": 8626,
     "weight": 18.25,
-    "tier": 7.051705,
+    "tier": 6.8766,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -18344,9 +18344,9 @@
     "name": "Mallet",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 8594,
+    "price": 8902,
     "weight": 2.05,
-    "tier": 7.602605,
+    "tier": 7.7569685,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -18538,9 +18538,9 @@
     "name": "Great Maul",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13531,
+    "price": 17904,
     "weight": 3.08,
-    "tier": 9.813135,
+    "tier": 11.451273,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -18577,9 +18577,9 @@
     "name": "Merchant Fur Coat",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 180,
+    "price": 165,
     "weight": 1.728333,
-    "tier": 2.06770778,
+    "tier": 1.99645579,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -18735,9 +18735,9 @@
     "name": "Scholar Robe",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.5716428,
-    "tier": 1.08155942,
+    "tier": 1.03155422,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -18757,9 +18757,9 @@
     "name": "Morningstar",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6698,
+    "price": 5797,
     "weight": 2.02,
-    "tier": 9.389195,
+    "tier": 8.657036,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -19506,9 +19506,9 @@
     "name": "Mule Harness with Pack",
     "culture": "Neutral",
     "type": "MountHarness",
-    "price": 1712,
+    "price": 1945,
     "weight": 120.0,
-    "tier": 1.33333337,
+    "tier": 1.4666667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -19527,9 +19527,9 @@
     "name": "Mule Harness with Baskets",
     "culture": "Neutral",
     "type": "MountHarness",
-    "price": 1712,
+    "price": 1945,
     "weight": 120.0,
-    "tier": 1.33333337,
+    "tier": 1.4666667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -19548,9 +19548,9 @@
     "name": "Mule Harness with Bags",
     "culture": "Neutral",
     "type": "MountHarness",
-    "price": 1712,
+    "price": 1945,
     "weight": 120.0,
-    "tier": 1.33333337,
+    "tier": 1.4666667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -19992,9 +19992,9 @@
     "name": "Ornate Pauldrons",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 886,
+    "price": 904,
     "weight": 1.842267,
-    "tier": 4.960709,
+    "tier": 4.99116373,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -20011,9 +20011,9 @@
     "name": "Ornate Pauldrons with Cape",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 4483,
+    "price": 4504,
     "weight": 3.926823,
-    "tier": 7.87560654,
+    "tier": 7.885675,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -20153,9 +20153,9 @@
     "name": "Huscarl Mail Shirt",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 2681,
+    "price": 2388,
     "weight": 7.742045,
-    "tier": 4.94939137,
+    "tier": 4.787719,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -20193,9 +20193,9 @@
     "name": "Bronze Scale Vest over Gambeson",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 3022,
+    "price": 2548,
     "weight": 7.928597,
-    "tier": 5.12176752,
+    "tier": 4.877774,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -20214,9 +20214,9 @@
     "name": "Bronze Scale Vest",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 1473,
+    "price": 1330,
     "weight": 4.651314,
-    "tier": 4.158847,
+    "tier": 4.03559542,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -20256,9 +20256,9 @@
     "name": "Reinforced Thick Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 104,
+    "price": 97,
     "weight": 1.074133,
-    "tier": 1.588853,
+    "tier": 1.52162981,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -20319,9 +20319,9 @@
     "name": "Leather Armor over Heavy Cloth",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 216,
+    "price": 201,
     "weight": 1.784997,
-    "tier": 2.22656035,
+    "tier": 2.16262364,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -20341,9 +20341,9 @@
     "name": "Sloven Leather",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 278,
+    "price": 251,
     "weight": 2.107316,
-    "tier": 2.444289,
+    "tier": 2.35563231,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -20362,9 +20362,9 @@
     "name": "Leather Tabard over Mail",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 5166,
+    "price": 4504,
     "weight": 11.10673,
-    "tier": 5.96113253,
+    "tier": 5.73566055,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -20383,9 +20383,9 @@
     "name": "Luxury Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 71,
+    "price": 67,
     "weight": 0.7344306,
-    "tier": 1.1870718,
+    "tier": 1.12553227,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -20405,9 +20405,9 @@
     "name": "Fine Steel Two Handed Sword",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 9651,
+    "price": 7427,
     "weight": 2.56,
-    "tier": 8.120361,
+    "tier": 6.99320841,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20461,9 +20461,9 @@
     "name": "Northlander Broad Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 12717,
+    "price": 10528,
     "weight": 1.26,
-    "tier": 9.480112,
+    "tier": 8.528973,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -20499,9 +20499,9 @@
     "name": "Raider Battle Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7525,
+    "price": 5261,
     "weight": 0.91,
-    "tier": 10.0187588,
+    "tier": 8.194605,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -20535,9 +20535,9 @@
     "name": "Bronze Bracers",
     "culture": "Sturgia",
     "type": "HandArmor",
-    "price": 2019,
+    "price": 2429,
     "weight": 3.74306,
-    "tier": 7.16862726,
+    "tier": 7.55021334,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -20554,9 +20554,9 @@
     "name": "Heavy Lamellar over Mail",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 16249,
+    "price": 14538,
     "weight": 19.51269,
-    "tier": 8.184529,
+    "tier": 7.93920755,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -20575,9 +20575,9 @@
     "name": "Coat Of Plates",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 9773,
+    "price": 8005,
     "weight": 14.56576,
-    "tier": 7.118142,
+    "tier": 6.735611,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -20596,9 +20596,9 @@
     "name": "Cold Weather Dress",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 56,
+    "price": 55,
     "weight": 0.388297,
-    "tier": 0.803489268,
+    "tier": 0.7575553,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -20870,9 +20870,9 @@
     "name": "Cured Leather Lamellar Shirt ",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 1150,
+    "price": 1055,
     "weight": 4.038482,
-    "tier": 3.86447072,
+    "tier": 3.765431,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -20891,9 +20891,9 @@
     "name": "Leather Tabard",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 1166,
+    "price": 1001,
     "weight": 4.968383,
-    "tier": 3.88027954,
+    "tier": 3.70614958,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -20912,9 +20912,9 @@
     "name": "Tunic with Leather Vest",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 156,
+    "price": 140,
     "weight": 1.481027,
-    "tier": 1.94879973,
+    "tier": 1.854497,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -20934,9 +20934,9 @@
     "name": "Light Saddle",
     "culture": "Sturgia",
     "type": "MountHarness",
-    "price": 4585,
+    "price": 5304,
     "weight": 30.0,
-    "tier": 2.66666675,
+    "tier": 2.9333334,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20955,9 +20955,9 @@
     "name": "Rough Cavalry Saddle",
     "culture": "Sturgia",
     "type": "MountHarness",
-    "price": 2997,
+    "price": 3442,
     "weight": 35.0,
-    "tier": 2.0,
+    "tier": 2.20000029,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20976,9 +20976,9 @@
     "name": "Light Padded Armor",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 826,
+    "price": 739,
     "weight": 4.188975,
-    "tier": 3.495541,
+    "tier": 3.37747288,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -20998,9 +20998,9 @@
     "name": "Short Gambeson over Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 561,
+    "price": 487,
     "weight": 3.140701,
-    "tier": 3.09799027,
+    "tier": 2.958742,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -21022,7 +21022,7 @@
     "type": "LegArmor",
     "price": 975,
     "weight": 1.197468,
-    "tier": 6.27653837,
+    "tier": 6.27545166,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -21039,9 +21039,9 @@
     "name": "Plate Reinforced Gloves",
     "culture": "Sturgia",
     "type": "HandArmor",
-    "price": 1099,
+    "price": 1315,
     "weight": 2.770139,
-    "tier": 6.024886,
+    "tier": 6.34559,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -21058,9 +21058,9 @@
     "name": "Ring Mail Barding",
     "culture": "Sturgia",
     "type": "MountHarness",
-    "price": 13957,
+    "price": 16412,
     "weight": 82.0,
-    "tier": 5.33333349,
+    "tier": 5.866667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21155,9 +21155,9 @@
     "name": "Short Simple Raider Spear",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 903,
+    "price": 1158,
     "weight": 1.01,
-    "tier": 1.64233685,
+    "tier": 1.97001934,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21235,9 +21235,9 @@
     "name": "Broad Leaf Shaped Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 12631,
+    "price": 12936,
     "weight": 1.5,
-    "tier": 8.712373,
+    "tier": 8.829699,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21315,9 +21315,9 @@
     "name": "Jagged Fine Steel Spear",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 10233,
+    "price": 10546,
     "weight": 1.97,
-    "tier": 7.735788,
+    "tier": 7.86894131,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21517,9 +21517,9 @@
     "name": "Varyag Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 90,
+    "price": 85,
     "weight": 0.9561659,
-    "tier": 1.4563154,
+    "tier": 1.39096224,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -21854,9 +21854,9 @@
     "name": "Padded Cloth with Strips",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 430,
+    "price": 358,
     "weight": 2.770139,
-    "tier": 2.84174752,
+    "tier": 2.67256236,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -21875,9 +21875,9 @@
     "name": "Padded Footman Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 914,
+    "price": 819,
     "weight": 4.379655,
-    "tier": 3.60555434,
+    "tier": 3.48605919,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -21936,9 +21936,9 @@
     "name": "Padded Leather Overcoat",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 364,
+    "price": 329,
     "weight": 2.415419,
-    "tier": 2.686319,
+    "tier": 2.59437633,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -21957,9 +21957,9 @@
     "name": "Padded Leather Shirt",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 737,
+    "price": 624,
     "weight": 3.816213,
-    "tier": 3.37486124,
+    "tier": 3.20317221,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -21979,9 +21979,9 @@
     "name": "Padded Leather Shoulders",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 384,
+    "price": 374,
     "weight": 1.09827,
-    "tier": 3.823286,
+    "tier": 3.7910068,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -21998,9 +21998,9 @@
     "name": "Padded Mittens",
     "culture": "Empire",
     "type": "HandArmor",
-    "price": 163,
+    "price": 185,
     "weight": 0.9793918,
-    "tier": 3.20334029,
+    "tier": 3.37385416,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22019,9 +22019,9 @@
     "name": "Padded Short Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 548,
+    "price": 544,
     "weight": 3.106376,
-    "tier": 3.07491851,
+    "tier": 3.06653285,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -22040,9 +22040,9 @@
     "name": "Padded Vambraces",
     "culture": "Neutral",
     "type": "HandArmor",
-    "price": 100,
+    "price": 109,
     "weight": 0.6717997,
-    "tier": 2.52346373,
+    "tier": 2.6577878,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -22059,9 +22059,9 @@
     "name": "Patched Gambeson",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 484,
+    "price": 409,
     "weight": 3.004161,
-    "tier": 2.95317,
+    "tier": 2.79478383,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -22081,9 +22081,9 @@
     "name": "Legionary Cape",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 1831,
+    "price": 1705,
     "weight": 2.198272,
-    "tier": 6.127961,
+    "tier": 6.00473976,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -22102,9 +22102,9 @@
     "name": "Reinforced Ornate Pauldrons over Scale",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 9271,
+    "price": 9043,
     "weight": 5.292346,
-    "tier": 9.607136,
+    "tier": 9.542507,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -22121,9 +22121,9 @@
     "name": "Pauldrons with Cape",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 886,
+    "price": 904,
     "weight": 1.842267,
-    "tier": 4.960709,
+    "tier": 4.99116373,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -22277,9 +22277,9 @@
     "name": "Hoe",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 677,
+    "price": 542,
     "weight": 1.27,
-    "tier": 1.462035,
+    "tier": 1.22413933,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -22358,9 +22358,9 @@
     "name": "Commoner Clothes",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 60,
+    "price": 58,
     "weight": 0.4770266,
-    "tier": 0.9431858,
+    "tier": 0.895203352,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -22380,9 +22380,9 @@
     "name": "Hatchet",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 251,
+    "price": 171,
     "weight": 1.28,
-    "tier": 1.00064266,
+    "tier": 0.670722544,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -22417,9 +22417,9 @@
     "name": "Makeshift Sledgehammer",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1224,
+    "price": 1359,
     "weight": 1.84,
-    "tier": 2.25984359,
+    "tier": 2.43033886,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22455,9 +22455,9 @@
     "name": "Sledgehammer",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 524,
+    "price": 736,
     "weight": 2.2,
-    "tier": 1.19128644,
+    "tier": 1.55850959,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22493,9 +22493,9 @@
     "name": "Pickaxe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 614,
+    "price": 458,
     "weight": 1.46,
-    "tier": 2.106558,
+    "tier": 1.68362737,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -22648,9 +22648,9 @@
     "name": "Scythe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 6619,
+    "price": 8637,
     "weight": 2.25,
-    "tier": 6.01708126,
+    "tier": 7.021531,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22687,9 +22687,9 @@
     "name": "Sickle",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 1238,
+    "price": 634,
     "weight": 1.18,
-    "tier": 3.420419,
+    "tier": 2.15445876,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22723,9 +22723,9 @@
     "name": "Militia Pernach",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5903,
+    "price": 3686,
     "weight": 2.72,
-    "tier": 8.746235,
+    "tier": 6.679625,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22904,7 +22904,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -22924,9 +22924,9 @@
     "name": "Rough Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 11881,
+    "price": 10460,
     "weight": 17.89237,
-    "tier": 7.51155567,
+    "tier": 7.252712,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -22945,9 +22945,9 @@
     "name": "Splint Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1863,
+    "price": 1862,
     "weight": 1.61804,
-    "tier": 7.55286551,
+    "tier": 7.551558,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -22964,9 +22964,9 @@
     "name": "Plated Striped Vambraces",
     "culture": "Empire",
     "type": "HandArmor",
-    "price": 2019,
+    "price": 2429,
     "weight": 3.74306,
-    "tier": 7.16862726,
+    "tier": 7.55021334,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -23059,9 +23059,9 @@
     "name": "Broad Falchion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 4776,
+    "price": 3120,
     "weight": 1.95,
-    "tier": 7.75533438,
+    "tier": 6.058236,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23191,9 +23191,9 @@
     "name": "Bludgeon Staff",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 2516,
+    "price": 3618,
     "weight": 2.13,
-    "tier": 3.33066678,
+    "tier": 4.18659639,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23250,9 +23250,9 @@
     "name": "Pugio",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3689,
+    "price": 1167,
     "weight": 1.64,
-    "tier": 6.682565,
+    "tier": 3.289505,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23353,7 +23353,7 @@
     "type": "HandArmor",
     "price": 53,
     "weight": 0.1884841,
-    "tier": 1.105365,
+    "tier": 1.16420364,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -23375,7 +23375,7 @@
     "type": "LegArmor",
     "price": 62,
     "weight": 0.1753114,
-    "tier": 1.82153821,
+    "tier": 1.82122278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23394,9 +23394,9 @@
     "name": "Ragged Robes",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 56,
+    "price": 55,
     "weight": 0.388297,
-    "tier": 0.803489268,
+    "tier": 0.7575553,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -23449,9 +23449,9 @@
     "name": "Ranger Mail",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 3659,
+    "price": 3311,
     "weight": 8.4014,
-    "tier": 5.40847826,
+    "tier": 5.25724125,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -23506,9 +23506,9 @@
     "name": "Reaper",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 11164,
+    "price": 9256,
     "weight": 2.22,
-    "tier": 8.814722,
+    "tier": 7.930341,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23541,9 +23541,9 @@
     "name": "Red Tabard over Mail Hauberk",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 5930,
+    "price": 5298,
     "weight": 11.52848,
-    "tier": 6.195841,
+    "tier": 6.003331,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -23636,9 +23636,9 @@
     "name": "Splint Vambraces",
     "culture": "Vlandia",
     "type": "HandArmor",
-    "price": 1511,
+    "price": 1814,
     "weight": 3.244425,
-    "tier": 6.60427332,
+    "tier": 6.95581865,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -23655,9 +23655,9 @@
     "name": "Reinforced Suede Armor",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 458,
+    "price": 399,
     "weight": 2.704445,
-    "tier": 2.90002251,
+    "tier": 2.77215028,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -23676,9 +23676,9 @@
     "name": "Reinforced Suede Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 1368,
+    "price": 1367,
     "weight": 1.402491,
-    "tier": 6.92017746,
+    "tier": 6.91897964,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23697,9 +23697,9 @@
     "name": "Reinforced Suede Shoulder Guards",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 85,
+    "price": 81,
     "weight": 0.3218308,
-    "tier": 1.97586739,
+    "tier": 1.90156257,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -23716,9 +23716,9 @@
     "name": "Ridged Great Saber",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 6344,
+    "price": 4057,
     "weight": 1.85,
-    "tier": 6.38411427,
+    "tier": 4.89896059,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23769,9 +23769,9 @@
     "name": "Ridged Saber ",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 3977,
+    "price": 2861,
     "weight": 2.18,
-    "tier": 6.98030233,
+    "tier": 5.754966,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23802,9 +23802,9 @@
     "name": "Heavy Ring Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 1732,
+    "price": 1505,
     "weight": 6.217651,
-    "tier": 4.361979,
+    "tier": 4.18541574,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -23823,9 +23823,9 @@
     "name": "Rough Bearskin",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 1831,
+    "price": 1705,
     "weight": 2.198272,
-    "tier": 6.127961,
+    "tier": 6.00473976,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -23842,9 +23842,9 @@
     "name": "Rough Fur Armor",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 401,
+    "price": 354,
     "weight": 2.606896,
-    "tier": 2.77632976,
+    "tier": 2.66197848,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -23863,9 +23863,9 @@
     "name": "Rough Fur over Mail",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 5035,
+    "price": 4472,
     "weight": 9.974319,
-    "tier": 5.918184,
+    "tier": 5.7238965,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -23884,7 +23884,7 @@
     "type": "LegArmor",
     "price": 73,
     "weight": 0.2304528,
-    "tier": 2.18011761,
+    "tier": 2.17974019,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23903,9 +23903,9 @@
     "name": "Rough Tied Bracers",
     "culture": "Battania",
     "type": "HandArmor",
-    "price": 163,
+    "price": 185,
     "weight": 0.9793918,
-    "tier": 3.20334029,
+    "tier": 3.37385416,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23924,9 +23924,9 @@
     "name": "Roughcloth Shortcoat",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.5716428,
-    "tier": 1.08155942,
+    "tier": 1.03155422,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -23988,7 +23988,7 @@
     "type": "HandArmor",
     "price": 53,
     "weight": 0.1884841,
-    "tier": 1.105365,
+    "tier": 1.16420364,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24106,9 +24106,9 @@
     "name": "Plate Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 5156,
+    "price": 5153,
     "weight": 2.5,
-    "tier": 10.0033312,
+    "tier": 10.0015984,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -24125,9 +24125,9 @@
     "name": "Plate Mittens",
     "culture": "Vlandia",
     "type": "HandArmor",
-    "price": 5558,
+    "price": 6726,
     "weight": 5.0,
-    "tier": 9.48568249,
+    "tier": 9.990605,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -24163,9 +24163,9 @@
     "name": "Plate Cuirass",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 37356,
+    "price": 34006,
     "weight": 26.0,
-    "tier": 10.2569036,
+    "tier": 10.0005369,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -24203,9 +24203,9 @@
     "name": "red Brigandine with armpads",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 6610,
+    "price": 6125,
     "weight": 14.89,
-    "tier": 6.38632631,
+    "tier": 6.25205469,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -24222,9 +24222,9 @@
     "name": "blue Brigandine with armpads",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 6610,
+    "price": 6125,
     "weight": 14.89,
-    "tier": 6.38632631,
+    "tier": 6.25205469,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -24241,9 +24241,9 @@
     "name": "blue Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 4518,
+    "price": 3971,
     "weight": 11.66,
-    "tier": 5.740406,
+    "tier": 5.53525925,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -24260,9 +24260,9 @@
     "name": "red Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 4518,
+    "price": 3971,
     "weight": 11.66,
-    "tier": 5.740406,
+    "tier": 5.53525925,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -24279,9 +24279,9 @@
     "name": "black Brigandine with armpads",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 6610,
+    "price": 6125,
     "weight": 14.89,
-    "tier": 6.38632631,
+    "tier": 6.25205469,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -24298,9 +24298,9 @@
     "name": "black Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 4518,
+    "price": 3971,
     "weight": 11.66,
-    "tier": 5.740406,
+    "tier": 5.53525925,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -24319,7 +24319,7 @@
     "type": "BodyArmor",
     "price": 53,
     "weight": 0.2901902,
-    "tier": 0.691826463,
+    "tier": 0.6707019,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -24358,9 +24358,9 @@
     "name": "Rugged Scale Armor",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 1939,
+    "price": 1648,
     "weight": 5.415581,
-    "tier": 4.507782,
+    "tier": 4.29849768,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -24379,9 +24379,9 @@
     "name": "Scale Shoulderguards",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 3173,
+    "price": 3078,
     "weight": 3.106376,
-    "tier": 7.15519857,
+    "tier": 7.094789,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -24398,9 +24398,9 @@
     "name": "Scarf",
     "culture": "Neutral",
     "type": "ShoulderArmor",
-    "price": 51,
+    "price": 50,
     "weight": 0.06193636,
-    "tier": 0.6668428,
+    "tier": 0.6417654,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -24456,9 +24456,9 @@
     "name": "Seax",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3797,
+    "price": 1551,
     "weight": 2.87,
-    "tier": 6.79583073,
+    "tier": 3.95397687,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -24654,9 +24654,9 @@
     "name": "Longsword",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 14073,
+    "price": 9490,
     "weight": 2.36,
-    "tier": 10.0289764,
+    "tier": 8.043325,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24690,9 +24690,9 @@
     "name": "Shepherd Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1883,
+    "price": 1191,
     "weight": 0.93,
-    "tier": 4.464855,
+    "tier": 3.33452177,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -24762,9 +24762,9 @@
     "name": "Shieldsplitter",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13281,
+    "price": 13145,
     "weight": 1.95,
-    "tier": 9.711876,
+    "tier": 9.656615,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24800,9 +24800,9 @@
     "name": "Light Shishpar Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 346,
+    "price": 176,
     "weight": 1.67,
-    "tier": 1.3357625,
+    "tier": 0.6927759,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24833,9 +24833,9 @@
     "name": "Short Padded Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 391,
+    "price": 333,
     "weight": 2.574646,
-    "tier": 2.752581,
+    "tier": 2.60537171,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -24855,9 +24855,9 @@
     "name": "Short Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 4628,
+    "price": 3009,
     "weight": 1.97,
-    "tier": 7.616947,
+    "tier": 5.92966,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24890,9 +24890,9 @@
     "name": "Simple Scimitar",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 2797,
+    "price": 2085,
     "weight": 2.05,
-    "tier": 5.67779446,
+    "tier": 4.75393057,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24986,9 +24986,9 @@
     "name": "Simple Saber ",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 2833,
+    "price": 1975,
     "weight": 2.11,
-    "tier": 5.721619,
+    "tier": 4.59886265,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -25021,9 +25021,9 @@
     "name": "Simple Sparth Axe",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 1866,
+    "price": 1252,
     "weight": 1.13,
-    "tier": 3.007297,
+    "tier": 2.29671621,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25059,9 +25059,9 @@
     "name": "Sleeveless Fur Coat",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 270,
+    "price": 235,
     "weight": 2.077283,
-    "tier": 2.41981339,
+    "tier": 2.297804,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -25080,9 +25080,9 @@
     "name": "Sleeveless Padded Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 807,
+    "price": 656,
     "weight": 3.889836,
-    "tier": 3.470616,
+    "tier": 3.25426388,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -25101,9 +25101,9 @@
     "name": "Sleeveless Padded Short Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 487,
+    "price": 406,
     "weight": 2.936653,
-    "tier": 2.95889616,
+    "tier": 2.788486,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -25123,9 +25123,9 @@
     "name": "Sleeveless Studded Fur Armor",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 177,
+    "price": 150,
     "weight": 1.534879,
-    "tier": 2.05456972,
+    "tier": 1.91216111,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -25146,9 +25146,9 @@
     "name": "Tabar Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 430,
+    "price": 312,
     "weight": 1.36,
-    "tier": 1.59961188,
+    "tier": 1.22164655,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25258,9 +25258,9 @@
     "name": "Boarding Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 2375,
+    "price": 1537,
     "weight": 1.26,
-    "tier": 5.1464467,
+    "tier": 3.93041563,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25331,9 +25331,9 @@
     "name": "Broad Kaskara",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 13488,
+    "price": 11712,
     "weight": 2.16,
-    "tier": 9.795668,
+    "tier": 9.05427,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25365,9 +25365,9 @@
     "name": "Bronze Lamellar Vest over Gambeson",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3551,
+    "price": 3076,
     "weight": 7.603107,
-    "tier": 5.36280775,
+    "tier": 5.14796543,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -25388,7 +25388,7 @@
     "type": "LegArmor",
     "price": 50,
     "weight": 0.04435067,
-    "tier": 0.733274,
+    "tier": 0.733147,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -25464,9 +25464,9 @@
     "name": "Short Cloak",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 51,
+    "price": 50,
     "weight": 0.06193636,
-    "tier": 0.6668428,
+    "tier": 0.6417654,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -25486,9 +25486,9 @@
     "name": "Desert Crescent Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 757,
+    "price": 612,
     "weight": 1.03,
-    "tier": 2.44924617,
+    "tier": 2.09983444,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25522,9 +25522,9 @@
     "name": "Knob Headed Spear with Frills",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 6318,
+    "price": 6850,
     "weight": 1.19,
-    "tier": 5.855016,
+    "tier": 6.13938761,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25602,9 +25602,9 @@
     "name": "Long Thamaskene Tipped Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 10818,
+    "price": 11138,
     "weight": 1.96,
-    "tier": 7.983504,
+    "tier": 8.116053,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25682,9 +25682,9 @@
     "name": "Knob Headed Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 2475,
+    "price": 2688,
     "weight": 1.28,
-    "tier": 3.29574656,
+    "tier": 3.47433734,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -26231,9 +26231,9 @@
     "name": "Star Falchion",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 4611,
+    "price": 3533,
     "weight": 2.06,
-    "tier": 7.601243,
+    "tier": 6.516842,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -26300,9 +26300,9 @@
     "name": "Steel Shestopyor",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5975,
+    "price": 3729,
     "weight": 1.34,
-    "tier": 8.80596352,
+    "tier": 6.72524166,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -26371,9 +26371,9 @@
     "name": "Striped Coat",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 72,
+    "price": 69,
     "weight": 0.6717997,
-    "tier": 1.21857679,
+    "tier": 1.1665746,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -26467,9 +26467,9 @@
     "name": "Envelope Dress",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 180,
+    "price": 165,
     "weight": 1.728333,
-    "tier": 2.06770778,
+    "tier": 1.99645579,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -26489,9 +26489,9 @@
     "name": "Steppe Fur Harness",
     "culture": "Khuzait",
     "type": "MountHarness",
-    "price": 2997,
+    "price": 3442,
     "weight": 25.5,
-    "tier": 2.0,
+    "tier": 2.20000029,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26548,9 +26548,9 @@
     "name": "Lamellar Half Barding",
     "culture": "Khuzait",
     "type": "MountHarness",
-    "price": 12059,
+    "price": 14154,
     "weight": 70.0,
-    "tier": 4.888889,
+    "tier": 5.37777758,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26569,9 +26569,9 @@
     "name": "Steppe Saddle",
     "culture": "Khuzait",
     "type": "MountHarness",
-    "price": 2107,
+    "price": 2403,
     "weight": 23.5,
-    "tier": 1.55555558,
+    "tier": 1.71111107,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26652,7 +26652,7 @@
     "type": "LegArmor",
     "price": 56,
     "weight": 0.1254426,
-    "tier": 1.46073663,
+    "tier": 1.46048379,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26671,9 +26671,9 @@
     "name": "Cured Leather Pauldrons",
     "culture": "Khuzait",
     "type": "ShoulderArmor",
-    "price": 85,
+    "price": 81,
     "weight": 0.3218308,
-    "tier": 1.97586739,
+    "tier": 1.90156257,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -26690,9 +26690,9 @@
     "name": "Leather Vambraces",
     "culture": "Khuzait",
     "type": "HandArmor",
-    "price": 337,
+    "price": 394,
     "weight": 1.507872,
-    "tier": 4.18581772,
+    "tier": 4.40862846,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26711,9 +26711,9 @@
     "name": "Steppe Robe",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.6110581,
-    "tier": 1.079704,
+    "tier": 1.04249811,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -26774,9 +26774,9 @@
     "name": "Stitched Leather over Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 7684,
+    "price": 6836,
     "weight": 13.48989,
-    "tier": 6.65955544,
+    "tier": 6.446472,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -26795,9 +26795,9 @@
     "name": "Stitched Leather Shoulders",
     "culture": "Sturgia",
     "type": "ShoulderArmor",
-    "price": 108,
+    "price": 101,
     "weight": 0.4055531,
-    "tier": 2.29634976,
+    "tier": 2.209993,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -26814,9 +26814,9 @@
     "name": "Stitched Leather Vest",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 308,
+    "price": 272,
     "weight": 2.290499,
-    "tier": 2.53669262,
+    "tier": 2.42538428,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -26874,7 +26874,7 @@
     "type": "LegArmor",
     "price": 62,
     "weight": 0.1753114,
-    "tier": 1.82153821,
+    "tier": 1.82122278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26893,9 +26893,9 @@
     "name": "Strapped Leather Bracers",
     "culture": "Battania",
     "type": "HandArmor",
-    "price": 66,
+    "price": 70,
     "weight": 0.4055531,
-    "tier": 1.82375193,
+    "tier": 1.92083013,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26914,9 +26914,9 @@
     "name": "Strapped Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 2153,
+    "price": 2151,
     "weight": 1.729605,
-    "tier": 7.86518526,
+    "tier": 7.86382341,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -26935,7 +26935,7 @@
     "type": "LegArmor",
     "price": 62,
     "weight": 0.1753114,
-    "tier": 1.82153821,
+    "tier": 1.82122278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27011,9 +27011,9 @@
     "name": "Striped Leather Harness",
     "culture": "Empire",
     "type": "MountHarness",
-    "price": 2997,
+    "price": 3442,
     "weight": 26.0,
-    "tier": 2.0,
+    "tier": 2.20000029,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27187,9 +27187,9 @@
     "name": "Studded Fur Armor",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 269,
+    "price": 237,
     "weight": 2.137492,
-    "tier": 2.415047,
+    "tier": 2.30528474,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -27209,9 +27209,9 @@
     "name": "Neckguard with Bronze Plate Pauldrons",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 2092,
+    "price": 2031,
     "weight": 2.54253,
-    "tier": 6.36517334,
+    "tier": 6.31143475,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -27228,9 +27228,9 @@
     "name": "Studded Leather Coat",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 203,
+    "price": 177,
     "weight": 1.784997,
-    "tier": 2.172254,
+    "tier": 2.05327725,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -27249,9 +27249,9 @@
     "name": "Studded Leather over Aketon",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 744,
+    "price": 665,
     "weight": 4.001147,
-    "tier": 3.38456178,
+    "tier": 3.2679317,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -27270,9 +27270,9 @@
     "name": "Studded Leather Vambraces",
     "culture": "Khuzait",
     "type": "HandArmor",
-    "price": 266,
+    "price": 310,
     "weight": 1.323371,
-    "tier": 3.86323547,
+    "tier": 4.068876,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -27289,9 +27289,9 @@
     "name": "Studded Leather Waistcoat",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 91,
+    "price": 83,
     "weight": 0.8651426,
-    "tier": 1.46172428,
+    "tier": 1.370973,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -27350,9 +27350,9 @@
     "name": "Reinforced Mail Barding",
     "culture": "Khuzait",
     "type": "MountHarness",
-    "price": 21659,
+    "price": 25595,
     "weight": 85.0,
-    "tier": 6.888889,
+    "tier": 7.57777834,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27371,9 +27371,9 @@
     "name": "Studded Leather Armor",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 672,
+    "price": 593,
     "weight": 3.74306,
-    "tier": 3.2787528,
+    "tier": 3.15189481,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -27392,9 +27392,9 @@
     "name": "Studded Vambraces",
     "culture": "Khuzait",
     "type": "HandArmor",
-    "price": 66,
+    "price": 70,
     "weight": 0.4055531,
-    "tier": 1.82375193,
+    "tier": 1.92083013,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -27411,9 +27411,9 @@
     "name": "Drilled Two Handed Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 5116,
+    "price": 4284,
     "weight": 1.08,
-    "tier": 5.626728,
+    "tier": 5.06219959,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27491,9 +27491,9 @@
     "name": "Northlander Decorated Two Handed Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 11744,
+    "price": 12174,
     "weight": 1.23,
-    "tier": 9.068224,
+    "tier": 9.252346,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27529,9 +27529,9 @@
     "name": "Iron Hand Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 2537,
+    "price": 1474,
     "weight": 1.09,
-    "tier": 5.3551755,
+    "tier": 3.827446,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27565,9 +27565,9 @@
     "name": "Forester Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 626,
+    "price": 416,
     "weight": 1.02,
-    "tier": 2.13564253,
+    "tier": 1.560115,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27601,9 +27601,9 @@
     "name": "Steel Pillager Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 4867,
+    "price": 3304,
     "weight": 1.16,
-    "tier": 7.84007645,
+    "tier": 6.266036,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27637,9 +27637,9 @@
     "name": "Wood Chopper Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 1267,
+    "price": 1119,
     "weight": 1.15,
-    "tier": 3.47125316,
+    "tier": 3.20056915,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27675,7 +27675,7 @@
     "type": "LegArmor",
     "price": 62,
     "weight": 0.1753114,
-    "tier": 1.82153821,
+    "tier": 1.82122278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27696,7 +27696,7 @@
     "type": "LegArmor",
     "price": 73,
     "weight": 0.2304528,
-    "tier": 2.18011761,
+    "tier": 2.17974019,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27717,7 +27717,7 @@
     "type": "LegArmor",
     "price": 56,
     "weight": 0.1254426,
-    "tier": 1.46073663,
+    "tier": 1.46048379,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27738,7 +27738,7 @@
     "type": "LegArmor",
     "price": 52,
     "weight": 0.08147737,
-    "tier": 1.09790254,
+    "tier": 1.09771252,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27757,9 +27757,9 @@
     "name": "Cavalry Lamellar Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 12577,
+    "price": 11098,
     "weight": 17.09994,
-    "tier": 7.63003254,
+    "tier": 7.37204266,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -27915,7 +27915,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -27935,9 +27935,9 @@
     "name": "Thamaskene Steel Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 6867,
+    "price": 4154,
     "weight": 2.15,
-    "tier": 9.52088,
+    "tier": 7.15892553,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27970,9 +27970,9 @@
     "name": "Decorated Long Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7126,
+    "price": 4664,
     "weight": 2.42,
-    "tier": 9.719834,
+    "tier": 7.650725,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28005,9 +28005,9 @@
     "name": "Decorated Fullered Sword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 6685,
+    "price": 3768,
     "weight": 2.7,
-    "tier": 9.379051,
+    "tier": 6.765382,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28040,9 +28040,9 @@
     "name": "Gold Bound Short Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7365,
+    "price": 3791,
     "weight": 1.82,
-    "tier": 9.899714,
+    "tier": 6.79004049,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28151,9 +28151,9 @@
     "name": "Warrazor",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 12283,
+    "price": 24049,
     "weight": 1.13,
-    "tier": 8.576662,
+    "tier": 12.4318876,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -28210,9 +28210,9 @@
     "name": "Tapered Blade",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 2413,
+    "price": 1609,
     "weight": 1.97,
-    "tier": 5.19616461,
+    "tier": 4.04659271,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28245,9 +28245,9 @@
     "name": "Backsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3058,
+    "price": 1744,
     "weight": 2.01,
-    "tier": 5.985896,
+    "tier": 4.256398,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28280,9 +28280,9 @@
     "name": "Pointy Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3678,
+    "price": 3287,
     "weight": 1.66,
-    "tier": 6.6710043,
+    "tier": 6.24710655,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28315,9 +28315,9 @@
     "name": "Long Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5571,
+    "price": 3426,
     "weight": 2.05,
-    "tier": 8.465142,
+    "tier": 6.40035725,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28350,9 +28350,9 @@
     "name": "Fullered Narrow Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5353,
+    "price": 3308,
     "weight": 1.69,
-    "tier": 8.275482,
+    "tier": 6.270406,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28385,9 +28385,9 @@
     "name": "Fullered Long Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7213,
+    "price": 4389,
     "weight": 1.96,
-    "tier": 9.785841,
+    "tier": 7.38899469,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28439,9 +28439,9 @@
     "name": "Decorated Hauberk",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 6846,
+    "price": 6052,
     "weight": 13.10051,
-    "tier": 6.449135,
+    "tier": 6.23102,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -28460,9 +28460,9 @@
     "name": "Huscarl Hauberk",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 3158,
+    "price": 2749,
     "weight": 8.54501,
-    "tier": 5.186709,
+    "tier": 4.984973,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -28502,9 +28502,9 @@
     "name": "Brigandine over Hauberk",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 21202,
+    "price": 18196,
     "weight": 24.23686,
-    "tier": 8.799905,
+    "tier": 8.441247,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -28618,9 +28618,9 @@
     "name": "Heavy Lamellar over Mail Armor",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 13191,
+    "price": 10822,
     "weight": 17.16047,
-    "tier": 7.73041058,
+    "tier": 7.320951,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -28639,9 +28639,9 @@
     "name": "Heavy Lamellar over Hauberk",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 18904,
+    "price": 15834,
     "weight": 22.2271,
-    "tier": 8.529432,
+    "tier": 8.126809,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -28660,9 +28660,9 @@
     "name": "Heavy Lamellar Vest",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 4819,
+    "price": 3747,
     "weight": 10.02491,
-    "tier": 5.8456707,
+    "tier": 5.44496727,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -28778,9 +28778,9 @@
     "name": "Western Shoulder Plates",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 11334,
+    "price": 10740,
     "weight": 3.08,
-    "tier": 10.1440735,
+    "tier": 9.997521,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -28873,9 +28873,9 @@
     "name": "Tassled Robes",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 82,
+    "price": 78,
     "weight": 0.8207818,
-    "tier": 1.35175812,
+    "tier": 1.31048286,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -28897,7 +28897,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.1884841,
-    "tier": 0.5503304,
+    "tier": 0.518406153,
     "requirement": 0,
     "flags": [
       "Civilian",
@@ -28978,9 +28978,9 @@
     "name": "Great Thamaskene Steel Claymore",
     "culture": "Empire",
     "type": "TwoHandedWeapon",
-    "price": 13517,
+    "price": 11775,
     "weight": 3.51,
-    "tier": 9.807145,
+    "tier": 9.081448,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29012,9 +29012,9 @@
     "name": "Scalpel",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 7047,
+    "price": 5862,
     "weight": 2.37,
-    "tier": 9.659154,
+    "tier": 8.711988,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29045,9 +29045,9 @@
     "name": "Thegn Sword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7402,
+    "price": 3922,
     "weight": 1.89,
-    "tier": 9.927589,
+    "tier": 6.924585,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29080,9 +29080,9 @@
     "name": "Thick Sleeved Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 79,
+    "price": 75,
     "weight": 0.842865,
-    "tier": 1.3223871,
+    "tier": 1.25892842,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -29162,7 +29162,7 @@
     "type": "BodyArmor",
     "price": 56,
     "weight": 0.3712929,
-    "tier": 0.8328317,
+    "tier": 0.8095433,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -29225,9 +29225,9 @@
     "name": "Torn Padded Garments",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 72,
+    "price": 69,
     "weight": 0.6717997,
-    "tier": 1.21857679,
+    "tier": 1.1665746,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -29383,9 +29383,9 @@
     "name": "Triangular Headed Spear",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 1622,
+    "price": 1686,
     "weight": 1.83,
-    "tier": 2.49217844,
+    "tier": 2.5591054,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29780,9 +29780,9 @@
     "name": "Belted Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 63,
     "weight": 0.6110581,
-    "tier": 1.079704,
+    "tier": 1.04249811,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -29802,9 +29802,9 @@
     "name": "Tunic with Rolled Cloth",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 90,
+    "price": 85,
     "weight": 0.9561659,
-    "tier": 1.4563154,
+    "tier": 1.39096224,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -29824,9 +29824,9 @@
     "name": "Tunic with Shoulder Pads",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 72,
+    "price": 70,
     "weight": 0.7133473,
-    "tier": 1.21642077,
+    "tier": 1.17716837,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -29870,7 +29870,7 @@
     "type": "LegArmor",
     "price": 139,
     "weight": 0.4233689,
-    "tier": 3.241141,
+    "tier": 3.24057984,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29889,9 +29889,9 @@
     "name": "Tyrhung",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6802,
+    "price": 5731,
     "weight": 1.63,
-    "tier": 9.470029,
+    "tier": 8.601559,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29924,9 +29924,9 @@
     "name": "Long Tzikourion Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6065,
+    "price": 3641,
     "weight": 0.88,
-    "tier": 8.88065052,
+    "tier": 6.632402,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -29981,9 +29981,9 @@
     "name": "Decorated Leather Harness",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 296,
+    "price": 311,
     "weight": 1.122585,
-    "tier": 3.50134516,
+    "tier": 3.56461334,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -30000,9 +30000,9 @@
     "name": "Decorated Leather Harness over Mail",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 4033,
+    "price": 3975,
     "weight": 3.598177,
-    "tier": 7.64841747,
+    "tier": 7.61815929,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -30019,9 +30019,9 @@
     "name": "Decorated Leather Harness with Padding",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 1278,
+    "price": 1284,
     "weight": 2.137492,
-    "tier": 5.526045,
+    "tier": 5.533109,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -30040,9 +30040,9 @@
     "name": "Caped Leather Harness",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 377,
+    "price": 393,
     "weight": 1.24679,
-    "tier": 3.8013916,
+    "tier": 3.8524437,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -30061,9 +30061,9 @@
     "name": "Decorated Leather Harness over Scale",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 6935,
+    "price": 6841,
     "weight": 4.690566,
-    "tier": 8.877531,
+    "tier": 8.844338,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -30080,9 +30080,9 @@
     "name": "Fortified Mercenary Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 3488,
+    "price": 3048,
     "weight": 9.275116,
-    "tier": 5.33533335,
+    "tier": 5.134692,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -30219,9 +30219,9 @@
     "name": "Short Bill",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 6261,
+    "price": 7436,
     "weight": 1.5,
-    "tier": 6.335025,
+    "tier": 6.998353,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -30258,9 +30258,9 @@
     "name": "Wide Fullered Broad Two Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 13519,
+    "price": 10740,
     "weight": 1.97,
-    "tier": 9.808229,
+    "tier": 8.625071,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30292,9 +30292,9 @@
     "name": "Muhloord",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 13927,
+    "price": 12639,
     "weight": 2.86,
-    "tier": 9.971365,
+    "tier": 9.447915,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30326,9 +30326,9 @@
     "name": "Steel Footman Axe",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 5145,
+    "price": 3487,
     "weight": 1.09,
-    "tier": 8.091822,
+    "tier": 6.46723938,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -30362,9 +30362,9 @@
     "name": "Knightly Spiked Battle Axe",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6859,
+    "price": 5271,
     "weight": 0.93,
-    "tier": 9.51444149,
+    "tier": 8.203447,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -30397,9 +30397,9 @@
     "name": "Cheap Paddings",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 289,
+    "price": 264,
     "weight": 2.017651,
-    "tier": 2.47847,
+    "tier": 2.39877343,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -30418,9 +30418,9 @@
     "name": "Cheap Colored Clothes",
     "culture": "Looters",
     "type": "BodyArmor",
-    "price": 61,
+    "price": 60,
     "weight": 0.4954908,
-    "tier": 0.9709676,
+    "tier": 0.958357155,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -30441,7 +30441,7 @@
     "type": "BodyArmor",
     "price": 50,
     "weight": 0.07145534,
-    "tier": 0.262164444,
+    "tier": 0.23460868,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -30499,9 +30499,9 @@
     "name": "Heavy Mail Hauberk",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 5116,
+    "price": 4516,
     "weight": 11.31695,
-    "tier": 5.94467926,
+    "tier": 5.739829,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -30733,9 +30733,9 @@
     "name": "Spiked Mace",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 3348,
+    "price": 2301,
     "weight": 1.83,
-    "tier": 6.314374,
+    "tier": 5.048772,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30766,9 +30766,9 @@
     "name": "Fullered Western Mace",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6651,
+    "price": 5756,
     "weight": 2.03,
-    "tier": 9.351881,
+    "tier": 8.622633,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30799,9 +30799,9 @@
     "name": "Pernach",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 7382,
+    "price": 7307,
     "weight": 2.14,
-    "tier": 9.912762,
+    "tier": 9.85635948,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30832,9 +30832,9 @@
     "name": "Decorated Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 7183,
+    "price": 5574,
     "weight": 2.05,
-    "tier": 9.76274,
+    "tier": 8.467237,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -30867,9 +30867,9 @@
     "name": "Fine Steel Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6116,
+    "price": 4938,
     "weight": 2.11,
-    "tier": 8.922105,
+    "tier": 7.905008,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -30902,9 +30902,9 @@
     "name": "Engraved Pointed Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 7421,
+    "price": 4688,
     "weight": 1.77,
-    "tier": 9.941756,
+    "tier": 7.673829,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -30937,9 +30937,9 @@
     "name": "Crescent Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 4613,
+    "price": 3737,
     "weight": 2.2,
-    "tier": 7.603147,
+    "tier": 6.732747,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -31033,9 +31033,9 @@
     "name": "Voulge",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 15805,
+    "price": 27446,
     "weight": 1.45,
-    "tier": 9.872618,
+    "tier": 13.35587,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -31072,9 +31072,9 @@
     "name": "Iron Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 3647,
+    "price": 3470,
     "weight": 2.02,
-    "tier": 6.638696,
+    "tier": 6.44819641,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -31107,9 +31107,9 @@
     "name": "Iron Cavalry Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 3625,
+    "price": 2917,
     "weight": 2.09,
-    "tier": 6.61465168,
+    "tier": 5.821357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -31142,9 +31142,9 @@
     "name": "Knightly Cavalry Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 7491,
+    "price": 5774,
     "weight": 2.06,
-    "tier": 9.993812,
+    "tier": 8.638249,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -31177,9 +31177,9 @@
     "name": "Narrow Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 4787,
+    "price": 3486,
     "weight": 1.55,
-    "tier": 7.766143,
+    "tier": 6.465249,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31210,9 +31210,9 @@
     "name": "Fine Steel Cavalry Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6218,
+    "price": 4873,
     "weight": 2.04,
-    "tier": 9.005426,
+    "tier": 7.84533,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31243,9 +31243,9 @@
     "name": "Corseted Dress",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 53,
+    "price": 52,
     "weight": 0.3058741,
-    "tier": 0.6625167,
+    "tier": 0.6186578,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -31267,7 +31267,7 @@
     "type": "BodyArmor",
     "price": 53,
     "weight": 0.2901902,
-    "tier": 0.691826463,
+    "tier": 0.6707019,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -31327,7 +31327,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -31349,7 +31349,7 @@
     "type": "BodyArmor",
     "price": 51,
     "weight": 0.2160417,
-    "tier": 0.549609,
+    "tier": 0.5306698,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -31402,9 +31402,9 @@
     "name": "War Razor",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7197,
+    "price": 6259,
     "weight": 2.49,
-    "tier": 6.868064,
+    "tier": 6.3338747,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31437,9 +31437,9 @@
     "name": "War Scythe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 12977,
+    "price": 18971,
     "weight": 1.68,
-    "tier": 8.845194,
+    "tier": 10.9199886,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31473,9 +31473,9 @@
     "name": "Tapered Two-Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 1277,
+    "price": 886,
     "weight": 1.48,
-    "tier": 2.328378,
+    "tier": 1.79250336,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -31549,9 +31549,9 @@
     "name": "Broad Two Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 9701,
+    "price": 9608,
     "weight": 2.61,
-    "tier": 8.144184,
+    "tier": 8.099928,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31583,9 +31583,9 @@
     "name": "Western chain shoulders",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 411,
+    "price": 366,
     "weight": 0.55,
-    "tier": 3.91128135,
+    "tier": 3.764193,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -31909,9 +31909,9 @@
     "name": "Rough Scale Mail",
     "culture": "Battania",
     "type": "BodyArmor",
-    "price": 6779,
+    "price": 5897,
     "weight": 13.0452,
-    "tier": 6.431439,
+    "tier": 6.186117,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -31930,9 +31930,9 @@
     "name": "Simple Commoner Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 1464,
+    "price": 1516,
     "weight": 1.17,
-    "tier": 2.32357812,
+    "tier": 2.38033438,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32010,9 +32010,9 @@
     "name": "Simple Short Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 471,
+    "price": 578,
     "weight": 1.08,
-    "tier": 0.975268245,
+    "tier": 1.15717757,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32090,9 +32090,9 @@
     "name": "Tall Tipped Long Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 8425,
+    "price": 8592,
     "weight": 1.58,
-    "tier": 6.92173624,
+    "tier": 7.00019932,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32149,9 +32149,9 @@
     "name": "Tall Tipped Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 921,
+    "price": 941,
     "weight": 2.1,
-    "tier": 1.66602075,
+    "tier": 1.69334733,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32362,9 +32362,9 @@
     "name": "White Tabard over Mail Hauberk",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 5930,
+    "price": 5298,
     "weight": 11.52848,
-    "tier": 6.195841,
+    "tier": 6.003331,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -32480,9 +32480,9 @@
     "name": "Winds Fury",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6790,
+    "price": 6195,
     "weight": 1.78,
-    "tier": 9.460735,
+    "tier": 8.986679,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32513,9 +32513,9 @@
     "name": "Winter",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13422,
+    "price": 13296,
     "weight": 2.38,
-    "tier": 9.769176,
+    "tier": 9.718011,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32547,9 +32547,9 @@
     "name": "Wolf Pelt Cape",
     "culture": "Battania",
     "type": "ShoulderArmor",
-    "price": 139,
+    "price": 134,
     "weight": 0.5716428,
-    "tier": 2.60504746,
+    "tier": 2.56406069,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -32627,9 +32627,9 @@
     "name": "Wooden Twohander",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 4970,
+    "price": 3186,
     "weight": 1.47,
-    "tier": 5.5313797,
+    "tier": 4.22709,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32704,9 +32704,9 @@
     "name": "Wooden Sword",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 263,
+    "price": 179,
     "weight": 1.42,
-    "tier": 1.04686892,
+    "tier": 0.707407355,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32738,9 +32738,9 @@
     "name": "Saxon Hooked Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 953,
+    "price": 612,
     "weight": 1.4,
-    "tier": 2.8736093,
+    "tier": 2.0992105,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -32934,7 +32934,7 @@
     "type": "LegArmor",
     "price": 62,
     "weight": 0.1753114,
-    "tier": 1.82153821,
+    "tier": 1.82122278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -32953,9 +32953,9 @@
     "name": "Woven Leather Bracers",
     "culture": "Empire",
     "type": "HandArmor",
-    "price": 80,
+    "price": 86,
     "weight": 0.5331134,
-    "tier": 2.17604446,
+    "tier": 2.29187512,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -32972,9 +32972,9 @@
     "name": "Boarskin Leather Coat",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 542,
+    "price": 465,
     "weight": 3.244425,
-    "tier": 3.06310916,
+    "tier": 2.91537523,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -32993,9 +32993,9 @@
     "name": "Woven Leather Shoulders",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 233,
+    "price": 231,
     "weight": 0.8651426,
-    "tier": 3.21603656,
+    "tier": 3.20764279,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -33012,9 +33012,9 @@
     "name": "Woven Leather Vest",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 269,
+    "price": 237,
     "weight": 2.137492,
-    "tier": 2.415047,
+    "tier": 2.30528474,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -33101,7 +33101,7 @@
     "type": "LegArmor",
     "price": 88,
     "weight": 0.2904038,
-    "tier": 2.53632236,
+    "tier": 2.53588343,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -33120,9 +33120,9 @@
     "name": "Shawl",
     "culture": "Neutral",
     "type": "ShoulderArmor",
-    "price": 51,
+    "price": 50,
     "weight": 0.06193636,
-    "tier": 0.6668428,
+    "tier": 0.6417654,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -33144,7 +33144,7 @@
     "type": "LegArmor",
     "price": 56,
     "weight": 0.1254426,
-    "tier": 1.46073663,
+    "tier": 1.46048379,
     "requirement": 0,
     "flags": [
       "Civilian"
