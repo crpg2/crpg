@@ -930,7 +930,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_aserai_sword_3_t3" name="{=bANXyotg}Slightly Ridged Flyssa" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_aserai_sword_3_t3_blade" Type="Blade" scale_factor="89" />
+      <Piece id="crpg_aserai_sword_3_t3_blade" Type="Blade" scale_factor="83" />
       <Piece id="crpg_aserai_sword_3_t3_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_aserai_sword_3_t3_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_aserai_sword_3_t3_pommel" Type="Pommel" scale_factor="100" />
