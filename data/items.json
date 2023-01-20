@@ -753,9 +753,9 @@
     "name": "Wood Splitter Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 3405,
-    "weight": 1.43,
-    "tier": 6.37673855,
+    "price": 4167,
+    "weight": 1.39,
+    "tier": 7.171903,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -768,8 +768,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 76,
-        "balance": 0.5,
-        "handling": 84,
+        "balance": 0.55,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -777,10 +777,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 91,
+        "thrustSpeed": 92,
         "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 86
       }
     ]
   },
@@ -789,9 +789,9 @@
     "name": "Desert Ascia Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 2442,
-    "weight": 0.97,
-    "tier": 5.234114,
+    "price": 3512,
+    "weight": 0.95,
+    "tier": 6.49407959,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -803,9 +803,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 87,
-        "balance": 0.74,
-        "handling": 88,
+        "length": 83,
+        "balance": 0.8,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -814,9 +814,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 96,
-        "swingDamage": 28,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 93
       }
     ]
   },
@@ -2305,9 +2305,9 @@
     "name": "Desert Battle Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 2265,
-    "weight": 1.06,
-    "tier": 5.00066376,
+    "price": 2961,
+    "weight": 1.11,
+    "tier": 5.87285328,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -2319,9 +2319,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 81,
-        "balance": 0.53,
-        "handling": 83,
+        "length": 75,
+        "balance": 0.56,
+        "handling": 84,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -2330,7 +2330,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 33,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
         "swingSpeed": 86
       }
@@ -3462,11 +3462,11 @@
   {
     "id": "crpg_battania_axe_1_t2",
     "name": "Norse Huscarl Axe",
-    "culture": "Battania",
+    "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3625,
+    "price": 6020,
     "weight": 0.99,
-    "tier": 6.61456,
+    "tier": 8.843622,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3489,7 +3489,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 96,
-        "swingDamage": 30,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
         "swingSpeed": 92
       }
@@ -3500,9 +3500,9 @@
     "name": "Saxon Bearded Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4397,
+    "price": 6926,
     "weight": 1.08,
-    "tier": 7.397096,
+    "tier": 9.566819,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3525,7 +3525,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 34,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
         "swingSpeed": 90
       }
@@ -3536,9 +3536,9 @@
     "name": "Steel Round Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 2095,
+    "price": 2872,
     "weight": 1.04,
-    "tier": 4.76829433,
+    "tier": 5.767396,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -3550,20 +3550,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 80,
-        "balance": 0.68,
+        "length": 77,
+        "balance": 0.71,
         "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "BonusAgainstShield"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
-        "swingDamage": 29,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 91
       }
     ]
   },
@@ -14193,9 +14193,9 @@
     "name": "Tzikourion Axe",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1039,
-    "weight": 0.97,
-    "tier": 3.04485035,
+    "price": 1393,
+    "weight": 1.01,
+    "tier": 3.6908555,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -14208,8 +14208,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 70,
-        "balance": 0.9,
-        "handling": 94,
+        "balance": 0.85,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -14218,9 +14218,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 96,
-        "swingDamage": 24,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 95
       }
     ]
   },
@@ -16739,9 +16739,9 @@
     "name": "Long Franziska Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5558,
+    "price": 6965,
     "weight": 1.05,
-    "tier": 8.453867,
+    "tier": 9.596449,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -16764,7 +16764,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 35,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
         "swingSpeed": 88
       }
@@ -20499,9 +20499,9 @@
     "name": "Raider Battle Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5261,
-    "weight": 0.91,
-    "tier": 8.194605,
+    "price": 6355,
+    "weight": 0.97,
+    "tier": 9.116541,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -20513,9 +20513,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 90,
-        "balance": 0.7,
-        "handling": 86,
+        "length": 85,
+        "balance": 0.67,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -20523,8 +20523,8 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 32,
+        "thrustSpeed": 96,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
         "swingSpeed": 90
       }
@@ -22380,9 +22380,9 @@
     "name": "Hatchet",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 171,
+    "price": 272,
     "weight": 1.28,
-    "tier": 0.670722544,
+    "tier": 1.07758522,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -22406,7 +22406,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 93,
-        "swingDamage": 18,
+        "swingDamage": 20,
         "swingDamageType": "Cut",
         "swingSpeed": 95
       }
@@ -22493,9 +22493,9 @@
     "name": "Pickaxe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 458,
-    "weight": 1.46,
-    "tier": 1.68362737,
+    "price": 431,
+    "weight": 1.64,
+    "tier": 1.60475945,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -22508,9 +22508,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 76,
-        "balance": 0.56,
-        "handling": 87,
+        "length": 77,
+        "balance": 0.37,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -22518,10 +22518,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 91,
-        "swingDamage": 18,
+        "thrustSpeed": 89,
+        "swingDamage": 20,
         "swingDamageType": "Pierce",
-        "swingSpeed": 86
+        "swingSpeed": 81
       }
     ]
   },
@@ -24690,9 +24690,9 @@
     "name": "Shepherd Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1191,
-    "weight": 0.93,
-    "tier": 3.33452177,
+    "price": 1129,
+    "weight": 0.97,
+    "tier": 3.21909142,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -24705,8 +24705,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 88,
-        "balance": 0.81,
-        "handling": 90,
+        "balance": 0.75,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -24714,10 +24714,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 24,
+        "thrustSpeed": 96,
+        "swingDamage": 25,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 92
       }
     ]
   },
@@ -25146,9 +25146,9 @@
     "name": "Tabar Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 312,
+    "price": 390,
     "weight": 1.36,
-    "tier": 1.22164655,
+    "tier": 1.47952044,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25171,7 +25171,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 92,
-        "swingDamage": 23,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
         "swingSpeed": 90
       }
@@ -25486,9 +25486,9 @@
     "name": "Desert Crescent Axe",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 612,
-    "weight": 1.03,
-    "tier": 2.09983444,
+    "price": 737,
+    "weight": 1.09,
+    "tier": 2.40317631,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25500,9 +25500,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 92,
-        "balance": 0.58,
-        "handling": 84,
+        "length": 88,
+        "balance": 0.55,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -25510,10 +25510,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 95,
-        "swingDamage": 25,
+        "thrustSpeed": 94,
+        "swingDamage": 27,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 86
       }
     ]
   },
@@ -27529,9 +27529,9 @@
     "name": "Iron Hand Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 1474,
+    "price": 2477,
     "weight": 1.09,
-    "tier": 3.827446,
+    "tier": 5.27913761,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27554,7 +27554,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 27,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
         "swingSpeed": 94
       }
@@ -27565,9 +27565,9 @@
     "name": "Forester Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 416,
-    "weight": 1.02,
-    "tier": 1.560115,
+    "price": 488,
+    "weight": 1.22,
+    "tier": 1.76880836,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27580,8 +27580,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 74,
-        "balance": 0.78,
-        "handling": 91,
+        "balance": 0.57,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -27589,10 +27589,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 96,
-        "swingDamage": 22,
+        "thrustSpeed": 93,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 87
       }
     ]
   },
@@ -27601,9 +27601,9 @@
     "name": "Steel Pillager Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3304,
+    "price": 4162,
     "weight": 1.16,
-    "tier": 6.266036,
+    "tier": 7.16696644,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27626,7 +27626,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 33,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
         "swingSpeed": 88
       }
@@ -27637,9 +27637,9 @@
     "name": "Wood Chopper Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 1119,
-    "weight": 1.15,
-    "tier": 3.20056915,
+    "price": 2016,
+    "weight": 1.13,
+    "tier": 4.65698147,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27651,9 +27651,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 84,
-        "balance": 0.49,
-        "handling": 81,
+        "length": 79,
+        "balance": 0.58,
+        "handling": 84,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -27662,9 +27662,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 31,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 87
       }
     ]
   },
@@ -29924,9 +29924,9 @@
     "name": "Long Tzikourion Axe",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3641,
+    "price": 4837,
     "weight": 0.88,
-    "tier": 6.632402,
+    "tier": 7.81169033,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -29949,7 +29949,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 97,
-        "swingDamage": 27,
+        "swingDamage": 28,
         "swingDamageType": "Cut",
         "swingSpeed": 95
       }
@@ -30326,9 +30326,9 @@
     "name": "Steel Footman Axe",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 3487,
+    "price": 4397,
     "weight": 1.09,
-    "tier": 6.46723938,
+    "tier": 7.397096,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -30351,7 +30351,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 33,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
         "swingSpeed": 90
       }
@@ -30362,9 +30362,9 @@
     "name": "Knightly Spiked Battle Axe",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 5271,
-    "weight": 0.93,
-    "tier": 8.203447,
+    "price": 7004,
+    "weight": 0.91,
+    "tier": 9.626467,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -30377,15 +30377,15 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 93,
-        "balance": 0.61,
-        "handling": 84,
+        "balance": 0.63,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 97,
         "swingDamage": 34,
         "swingDamageType": "Cut",
         "swingSpeed": 88
@@ -32738,9 +32738,9 @@
     "name": "Saxon Hooked Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 612,
-    "weight": 1.4,
-    "tier": 2.0992105,
+    "price": 669,
+    "weight": 1.37,
+    "tier": 2.2414782,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -32753,7 +32753,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 62,
-        "balance": 0.71,
+        "balance": 0.75,
         "handling": 91,
         "bodyArmor": 0,
         "flags": [
@@ -32765,7 +32765,7 @@
         "thrustSpeed": 92,
         "swingDamage": 26,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 92
       }
     ]
   },
