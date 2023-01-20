@@ -4960,9 +4960,9 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ambassador_sword_t3_blade" name="{=N1qLYlxF}Fine Steel Kaskara Blade" tier="4" piece_type="Blade" mesh="aserai_blade_10" culture="Culture.aserai" length="101" weight="1.53">
+  <CraftingPiece id="crpg_ambassador_sword_t3_blade" name="{=N1qLYlxF}Fine Steel Kaskara Blade" tier="4" piece_type="Blade" mesh="aserai_blade_10" culture="Culture.aserai" length="101" weight="1.47">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="aserai_blade_10_scabbard_10">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
       <Swing damage_type="Cut" damage_factor="3.7" />
     </BladeData>
     <Materials>
@@ -5119,8 +5119,8 @@
   <CraftingPiece id="crpg_decorated_great_saber_2hsword_1_t5_blade" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.77">
     <BuildData previous_piece_offset="-0.25" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_noble_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="1.4" />
-      <Swing damage_type="Cut" damage_factor="2.9" />
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="2" />
@@ -5182,7 +5182,7 @@
       <Material id="Iron6" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_desert_long_sword_t4_blade" name="{=N1qLYlxF}Fine Steel Kaskara Blade" tier="4" piece_type="Blade" mesh="aserai_blade_7" culture="Culture.aserai" length="100.1" weight="1.57">
+  <CraftingPiece id="crpg_desert_long_sword_t4_blade" name="{=N1qLYlxF}Fine Steel Kaskara Blade" tier="4" piece_type="Blade" mesh="aserai_blade_7" culture="Culture.aserai" length="100.1" weight="1.42">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="aserai_blade_7_scabbard_7">
       <Thrust damage_type="Pierce" damage_factor="1.8" />
       <Swing damage_type="Cut" damage_factor="3.8" />
@@ -5748,8 +5748,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_great_thamaskene_steel_spatha_2hsword_2_t5_blade" name="{=dafrn0mR}Thamaskene Steel Spatha Blade" tier="5" piece_type="Blade" mesh="empire_blade_7" culture="Culture.vlandia" length="99" weight="1.30">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_7_scabbard_7">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="4" />
