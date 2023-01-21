@@ -294,43 +294,43 @@
   </Item>
   <Item id="crpg_padded_leather_shoulders" name="{=Bl72Ribb}Padded Leather Shoulders" mesh="shoulder_padding" culture="Culture.vlandia" weight="1.09827" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="8" arm_armor="4" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="12" arm_armor="2" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_chainmail_shoulder_armor" name="{=P9wiCrIU}Reinforced Mail Shoulders" mesh="chainmail_shoulder_armor" culture="Culture.vlandia" weight="2.047395" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="15" arm_armor="4" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="12" arm_armor="2" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_noble_pauldron" name="{=NJSYumaV}Ornate Pauldrons" mesh="noble_pauldron" culture="Culture.vlandia" weight="1.842267" appearance="7" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="8" arm_armor="8" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="13" arm_armor="7" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_noble_pauldron_with_cape" name="{=SRyvwNd1}Ornate Pauldrons with Cape" mesh="noble_pauldron_with_cape" culture="Culture.vlandia" weight="3.926823" appearance="7" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="15" arm_armor="12" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="18" arm_armor="9" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_pauldron_over_scale_armor" name="{=C6f64ZyJ}Reinforced Ornate Pauldrons over Scale" mesh="pauldron_over_scale_armor" culture="Culture.vlandia" weight="5.292346" appearance="7" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="22" arm_armor="12" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="22" arm_armor="6" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_pauldron_with_cape" name="{=re2oRFLW}Pauldrons with Cape" mesh="pauldron_with_cape" culture="Culture.vlandia" weight="1.842267" appearance="6" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="8" arm_armor="8" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="13" arm_armor="7" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_scale_shoulder_armor" name="{=aChUcrRt}Scale Shoulderguards" mesh="scale_shoulder_armor" culture="Culture.vlandia" weight="3.106376" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="16" arm_armor="8" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="17" arm_armor="4" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
@@ -486,13 +486,13 @@
 	</Item>
 	<Item id="crpg_western_chain_shoulders" name="Western chain shoulders" mesh="chain_shoulders" is_merchandise="true" culture="Culture.vlandia" weight="0.55" appearance="2" Type="Cape">
 		<ItemComponent>
-			<Armor body_armor="12" modifier_group="Chainmail" material_type="Chainmail"/>
+			<Armor body_armor="12" arm_armor="2" modifier_group="Chainmail" material_type="Chainmail"/>
 		</ItemComponent>
 		<Flags/>
 	</Item>
 	<Item id="crpg_light_chain_shoulders" name="Light Chain Shoulders" mesh="rhkt_chain_a" is_merchandise="true" culture="Culture.vlandia" weight="1.05" appearance="2" Type="Cape">
 		<ItemComponent>
-			<Armor body_armor="9" modifier_group="Chainmail" material_type="Chainmail"/>
+			<Armor body_armor="12" arm_armor="2" modifier_group="Chainmail" material_type="Chainmail"/>
 		</ItemComponent>
 		<Flags/>
 	</Item>

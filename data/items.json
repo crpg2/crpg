@@ -314,13 +314,13 @@
     "name": "Saxon Noble Helm",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 5812,
+    "price": 16719,
     "weight": 3.02,
-    "tier": 7.79383039,
+    "tier": 10.3917742,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -371,18 +371,18 @@
     "name": "Aketon",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 266,
+    "price": 85,
     "weight": 2.077283,
-    "tier": 2.40607762,
+    "tier": 1.395525,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 13,
+      "bodyArmor": 6,
       "armArmor": 3,
-      "legArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -462,13 +462,13 @@
     "name": "Padded Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 285,
+    "price": 56,
     "weight": 0.6932,
-    "tier": 3.167786,
+    "tier": 1.05592871,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 18,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -2341,18 +2341,18 @@
     "name": "Banded Leather over Mail",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 2918,
+    "price": 3134,
     "weight": 8.2586,
-    "tier": 5.07078362,
+    "tier": 5.175336,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 29,
+      "bodyArmor": 28,
       "armArmor": 8,
-      "legArmor": 10,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -6971,342 +6971,6 @@
     "weapons": []
   },
   {
-    "id": "crpg_camel_10",
-    "name": "Seleucid Light Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 14551,
-    "weight": 520.0,
-    "tier": 8.883225,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 4,
-      "maneuver": 82,
-      "speed": 36,
-      "hitPoints": 231
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_11",
-    "name": "Seleucid Heavy Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 15506,
-    "weight": 520.0,
-    "tier": 9.204619,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 5,
-      "maneuver": 81,
-      "speed": 35,
-      "hitPoints": 249
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_12",
-    "name": "Parthian Light Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 16271,
-    "weight": 520.0,
-    "tier": 9.454871,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 4,
-      "maneuver": 83,
-      "speed": 37,
-      "hitPoints": 231
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_13",
-    "name": "Parthian Heavy Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 17379,
-    "weight": 520.0,
-    "tier": 9.807319,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 5,
-      "maneuver": 82,
-      "speed": 36,
-      "hitPoints": 249
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_14",
-    "name": "Achaemenian Light Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 20002,
-    "weight": 520.0,
-    "tier": 10.5999737,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 5,
-      "maneuver": 84,
-      "speed": 38,
-      "hitPoints": 240
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_15",
-    "name": "Achaemenian Heavy Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 21326,
-    "weight": 520.0,
-    "tier": 10.9804239,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 6,
-      "maneuver": 83,
-      "speed": 37,
-      "hitPoints": 258
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_16",
-    "name": "Safinat al-Barr",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 23251,
-    "weight": 520.0,
-    "tier": 11.5130272,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 7,
-      "maneuver": 85,
-      "speed": 37,
-      "hitPoints": 258
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_17",
-    "name": "Padishah",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 25931,
-    "weight": 520.0,
-    "tier": 12.2194681,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 7,
-      "maneuver": 86,
-      "speed": 38,
-      "hitPoints": 258
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_2",
-    "name": "Pack Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 4779,
-    "weight": 520.0,
-    "tier": 4.651889,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 2,
-      "maneuver": 72,
-      "speed": 29,
-      "hitPoints": 216
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_3",
-    "name": "Pratihara Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 6394,
-    "weight": 520.0,
-    "tier": 5.538042,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 2,
-      "maneuver": 76,
-      "speed": 30,
-      "hitPoints": 222
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_4",
-    "name": "Qedarite Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 7767,
-    "weight": 520.0,
-    "tier": 6.20829725,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 3,
-      "maneuver": 77,
-      "speed": 31,
-      "hitPoints": 228
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_5",
-    "name": "Palmyrene Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 9400,
-    "weight": 520.0,
-    "tier": 6.93329,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 4,
-      "maneuver": 78,
-      "speed": 32,
-      "hitPoints": 234
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_6",
-    "name": "Sargonid Light Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 10628,
-    "weight": 520.0,
-    "tier": 7.43830967,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 4,
-      "maneuver": 80,
-      "speed": 34,
-      "hitPoints": 222
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_7",
-    "name": "Sargonid Heavy Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 11346,
-    "weight": 520.0,
-    "tier": 7.72047329,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 5,
-      "maneuver": 79,
-      "speed": 33,
-      "hitPoints": 240
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_8",
-    "name": "Nabatean Light Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 11916,
-    "weight": 520.0,
-    "tier": 7.93814945,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 4,
-      "maneuver": 81,
-      "speed": 35,
-      "hitPoints": 222
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_camel_9",
-    "name": "Nabatean Heavy Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 12753,
-    "weight": 520.0,
-    "tier": 8.248472,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 5,
-      "maneuver": 80,
-      "speed": 34,
-      "hitPoints": 240
-    },
-    "weapons": []
-  },
-  {
     "id": "crpg_camel_saddle",
     "name": "Camel Saddle",
     "culture": "Aserai",
@@ -7451,13 +7115,13 @@
     "name": "Cervelliere over Arming Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 330,
+    "price": 1142,
     "weight": 0.7517617,
-    "tier": 3.33549166,
+    "tier": 4.91546154,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 19,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -7470,15 +7134,15 @@
     "name": "Cervelliere over Cloth Headwrap",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 382,
+    "price": 1133,
     "weight": 0.8118855,
-    "tier": 3.5022254,
+    "tier": 4.903116,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 20,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -7491,15 +7155,15 @@
     "name": "Cervelliere over Laced Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1177,
+    "price": 1045,
     "weight": 1.417577,
-    "tier": 4.959229,
+    "tier": 4.78822136,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 29,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -7512,15 +7176,15 @@
     "name": "Cervelliere over Padded Cap",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 382,
+    "price": 1133,
     "weight": 0.8118855,
-    "tier": 3.5022254,
+    "tier": 4.903116,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 20,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -7575,15 +7239,15 @@
     "name": "Reinforced Mail Shoulders",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 1456,
+    "price": 515,
     "weight": 2.047395,
-    "tier": 5.738075,
+    "tier": 4.20253372,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 15,
-      "armArmor": 4,
+      "bodyArmor": 12,
+      "armArmor": 2,
       "legArmor": 0,
       "materialType": "Chainmail"
     },
@@ -7893,9 +7557,9 @@
     "name": "Simple Cloth Tunic",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 95,
     "weight": 0.2160417,
-    "tier": 0.5306698,
+    "tier": 1.50140727,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -7903,9 +7567,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -7915,18 +7579,18 @@
     "name": "Brigandine over Mail",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12987,
+    "price": 21211,
     "weight": 18.32399,
-    "tier": 7.697421,
+    "tier": 8.801027,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 50,
-      "armArmor": 14,
-      "legArmor": 16,
+      "bodyArmor": 52,
+      "armArmor": 18,
+      "legArmor": 23,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -11761,13 +11425,13 @@
     "name": "Felthat",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.1,
-    "tier": 0.18080914,
+    "tier": 1.08485484,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 1,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -11988,15 +11652,15 @@
     "name": "Fluted Helm With Faceplate",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 6619,
+    "price": 7637,
     "weight": 3.2,
-    "tier": 8.077569,
+    "tier": 8.400671,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 50,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12183,13 +11847,13 @@
     "name": "Full Helm over Cloth Headwrap",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 6207,
+    "price": 7708,
     "weight": 3.11,
-    "tier": 7.93595743,
+    "tier": 8.421832,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 49,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12202,13 +11866,13 @@
     "name": "Full Helm over Laced Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 6521,
+    "price": 7523,
     "weight": 3.35,
-    "tier": 8.044328,
+    "tier": 8.3661,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 50,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12221,13 +11885,13 @@
     "name": "Full Helm over Mail Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 8026,
+    "price": 7486,
     "weight": 3.4,
-    "tier": 8.515432,
+    "tier": 8.354764,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 53,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12240,13 +11904,13 @@
     "name": "Full Helm over Padded Cap",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 5813,
+    "price": 7781,
     "weight": 3.018642,
-    "tier": 7.794133,
+    "tier": 8.443645,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12259,13 +11923,13 @@
     "name": "Full Helm over Padded Cloth",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 5813,
+    "price": 7781,
     "weight": 3.018642,
-    "tier": 7.794133,
+    "tier": 8.443645,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12526,9 +12190,9 @@
     "name": "Heavy Aketon",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 1326,
+    "price": 1039,
     "weight": 5.833124,
-    "tier": 4.0318985,
+    "tier": 3.747808,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12536,9 +12200,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 18,
-      "armArmor": 9,
-      "legArmor": 9,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -12739,15 +12403,15 @@
     "name": "Great Helmet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 9448,
+    "price": 15462,
     "weight": 3.8,
-    "tier": 8.903204,
+    "tier": 10.1750889,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 56,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12760,15 +12424,15 @@
     "name": "Brass Great Helmet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 9448,
+    "price": 15462,
     "weight": 3.8,
-    "tier": 8.903204,
+    "tier": 10.1750889,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 56,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12781,15 +12445,15 @@
     "name": "Blackened Great Helmet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 9448,
+    "price": 15462,
     "weight": 3.8,
-    "tier": 8.903204,
+    "tier": 10.1750889,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 56,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12903,15 +12567,15 @@
     "name": "Kettle over Laced Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1770,
+    "price": 1008,
     "weight": 1.720762,
-    "tier": 5.58213568,
+    "tier": 4.73635769,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 33,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12924,13 +12588,13 @@
     "name": "Kettle over Mail Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2770,
+    "price": 3325,
     "weight": 2.126303,
-    "tier": 6.340465,
+    "tier": 6.674173,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 38,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12943,15 +12607,15 @@
     "name": "Kettle over Padded Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1945,
+    "price": 998,
     "weight": 1.799568,
-    "tier": 5.735575,
+    "tier": 4.723415,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 34,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13049,16 +12713,16 @@
     "name": "Heavy Mail Shirt",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 3789,
+    "price": 3339,
     "weight": 10.33022,
-    "tier": 5.462101,
+    "tier": 5.26955938,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 27,
-      "armArmor": 12,
-      "legArmor": 14,
+      "bodyArmor": 28,
+      "armArmor": 13,
+      "legArmor": 8,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -13068,16 +12732,16 @@
     "name": "Female Rural Scarf",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.04716628,
-    "tier": 0.5438363,
+    "tier": 1.08767259,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 3,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13112,15 +12776,15 @@
     "name": "Female Rural Headwrap",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.009077156,
-    "tier": 0.181621924,
+    "tier": 1.08973157,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 1,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13133,16 +12797,16 @@
     "name": "Peasant Head Wrapping",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.009077156,
-    "tier": 0.181621924,
+    "tier": 1.08973157,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 1,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13155,16 +12819,16 @@
     "name": "Loose Head Scarf",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.04716628,
-    "tier": 0.5438363,
+    "tier": 1.08767259,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 3,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13177,16 +12841,16 @@
     "name": "Luxurious Head Scarf",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.04716628,
-    "tier": 0.5438363,
+    "tier": 1.08767259,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 3,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15229,15 +14893,15 @@
     "name": "Western Helm With Faceplate",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 4739,
+    "price": 17232,
     "weight": 2.74,
-    "tier": 7.36644125,
+    "tier": 10.4767151,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 45,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15469,13 +15133,13 @@
     "name": "Kettle Hat over Mail Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 3807,
+    "price": 3198,
     "weight": 2.470721,
-    "tier": 6.93163824,
+    "tier": 6.60156,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 42,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15488,15 +15152,15 @@
     "name": "Kettle Hat over Padded Cloth",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1945,
+    "price": 998,
     "weight": 1.799568,
-    "tier": 5.735575,
+    "tier": 4.723415,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 34,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15509,15 +15173,15 @@
     "name": "Kettle Hat over Padded Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 980,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 4.69760227,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15530,13 +15194,13 @@
     "name": "Kettle Helmet over Arming Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1606,
+    "price": 1017,
     "weight": 1.643141,
-    "tier": 5.42778873,
+    "tier": 4.74931574,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 32,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15549,13 +15213,13 @@
     "name": "Kettle Helmet over Laced Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2133,
+    "price": 989,
     "weight": 1.879541,
-    "tier": 5.88811874,
+    "tier": 4.71049547,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 35,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15587,15 +15251,15 @@
     "name": "Kettle Helmet over Padded Cap",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1770,
+    "price": 1008,
     "weight": 1.720762,
-    "tier": 5.58213568,
+    "tier": 4.73635769,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 33,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15608,15 +15272,15 @@
     "name": "Kettle Helmet over Padded Cloth",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1770,
+    "price": 1008,
     "weight": 1.720762,
-    "tier": 5.58213568,
+    "tier": 4.73635769,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 33,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15629,15 +15293,15 @@
     "name": "Kettle Helmet over Padded Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 980,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 4.69760227,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15650,13 +15314,13 @@
     "name": "Kettle Helmet with Leather",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1770,
+    "price": 1008,
     "weight": 1.720762,
-    "tier": 5.58213568,
+    "tier": 4.73635769,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 33,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15669,13 +15333,13 @@
     "name": "Kettle Helmet with Mail",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 3391,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 6.71086,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -16747,16 +16411,16 @@
     "name": "Laced Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 153,
+    "price": 56,
     "weight": 0.4754905,
-    "tier": 2.48735118,
+    "tier": 1.06600761,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 14,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -17170,9 +16834,9 @@
     "name": "Leather Cavalier Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 73,
+    "price": 52,
     "weight": 0.2304528,
-    "tier": 2.17974019,
+    "tier": 1.0898701,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17181,7 +16845,7 @@
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 6,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -17191,9 +16855,9 @@
     "name": "Leather Coat over Cloth",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 121,
+    "price": 88,
     "weight": 1.349235,
-    "tier": 1.72779119,
+    "tier": 1.43159819,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17201,9 +16865,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 8,
-      "armArmor": 2,
-      "legArmor": 4,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -17312,9 +16976,9 @@
     "name": "Leather Scale Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 693,
+    "price": 80,
     "weight": 3.889836,
-    "tier": 3.31135631,
+    "tier": 1.32454252,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17322,9 +16986,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 6,
-      "legArmor": 6,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Leather"
     },
     "weapons": []
@@ -17675,15 +17339,15 @@
     "name": "Light Chain Shoulders",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 159,
+    "price": 578,
     "weight": 1.05,
-    "tier": 2.764886,
+    "tier": 4.35678959,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 9,
-      "armArmor": 0,
+      "bodyArmor": 12,
+      "armArmor": 2,
       "legArmor": 0,
       "materialType": "Chainmail"
     },
@@ -18004,9 +17668,9 @@
     "name": "Long Hemp Tunic",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 63,
+    "price": 92,
     "weight": 0.6110581,
-    "tier": 1.04249811,
+    "tier": 1.47475338,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -18014,8 +17678,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 2,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -18087,9 +17751,9 @@
     "name": "Long Woolen Tunic",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 95,
     "weight": 0.2160417,
-    "tier": 0.5306698,
+    "tier": 1.50140727,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -18097,9 +17761,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -18310,16 +17974,16 @@
     "name": "Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 1862,
+    "price": 2542,
     "weight": 1.61804,
-    "tier": 7.551558,
+    "tier": 8.238063,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 22,
+      "legArmor": 24,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -18348,15 +18012,15 @@
     "name": "Mail Mittens",
     "culture": "Vlandia",
     "type": "HandArmor",
-    "price": 1814,
+    "price": 1254,
     "weight": 3.244425,
-    "tier": 6.95581865,
+    "tier": 6.26023674,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
-      "armArmor": 20,
+      "armArmor": 18,
       "legArmor": 0,
       "materialType": "Chainmail"
     },
@@ -18367,18 +18031,18 @@
     "name": "Mail Shirt",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 3043,
+    "price": 856,
     "weight": 9.176619,
-    "tier": 5.1320405,
+    "tier": 3.53471851,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 25,
-      "armArmor": 11,
-      "legArmor": 13,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -18407,18 +18071,18 @@
     "name": "Mail With Tabbard Pattern 1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 8626,
+    "price": 8881,
     "weight": 18.25,
-    "tier": 6.8766,
+    "tier": 6.93228,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 36,
-      "armArmor": 20,
-      "legArmor": 15,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -18428,18 +18092,18 @@
     "name": "Mail With Tabbard Pattern 2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 8626,
+    "price": 8881,
     "weight": 18.25,
-    "tier": 6.8766,
+    "tier": 6.93228,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 36,
-      "armArmor": 20,
-      "legArmor": 15,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -18449,18 +18113,18 @@
     "name": "Mail With Tabbard Pattern 3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 8626,
+    "price": 8881,
     "weight": 18.25,
-    "tier": 6.8766,
+    "tier": 6.93228,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 36,
-      "armArmor": 20,
-      "legArmor": 15,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -18470,18 +18134,18 @@
     "name": "Mail With Tabbard Pattern 4",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 8626,
+    "price": 8881,
     "weight": 18.25,
-    "tier": 6.8766,
+    "tier": 6.93228,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 36,
-      "armArmor": 20,
-      "legArmor": 15,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -18491,18 +18155,18 @@
     "name": "Mail With Tabbard Pattern 5",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 8626,
+    "price": 8881,
     "weight": 18.25,
-    "tier": 6.8766,
+    "tier": 6.93228,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 36,
-      "armArmor": 20,
-      "legArmor": 15,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -18512,18 +18176,18 @@
     "name": "Mail With Tabbard Pattern 6",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 8626,
+    "price": 8881,
     "weight": 18.25,
-    "tier": 6.8766,
+    "tier": 6.93228,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 36,
-      "armArmor": 20,
-      "legArmor": 15,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -18957,9 +18621,9 @@
     "name": "Scholar Robe",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 63,
+    "price": 92,
     "weight": 0.5716428,
-    "tier": 1.03155422,
+    "tier": 1.47728765,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -18967,8 +18631,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -19011,632 +18675,338 @@
     ]
   },
   {
-    "id": "crpg_mount_balanced_10",
-    "name": "Yunnan Destrier",
-    "culture": "Khuzait",
+    "id": "crpg_mount_camel_10",
+    "name": "Seleucid Light Camel",
+    "culture": "Aserai",
     "type": "Mount",
-    "price": 17369,
-    "weight": 430.0,
-    "tier": 9.804319,
+    "price": 14551,
+    "weight": 520.0,
+    "tier": 8.883225,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 6,
-      "maneuver": 80,
-      "speed": 42,
-      "hitPoints": 210
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_balanced_11",
-    "name": "Auvergne Destrier",
-    "culture": "Vlandia",
-    "type": "Mount",
-    "price": 18924,
-    "weight": 430.0,
-    "tier": 10.2807808,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 7,
-      "maneuver": 81,
-      "speed": 42,
-      "hitPoints": 213
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_balanced_12",
-    "name": "Lusitano Pureblood Destrier",
-    "culture": "Battania",
-    "type": "Mount",
-    "price": 20828,
-    "weight": 430.0,
-    "tier": 10.8387308,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 7,
-      "maneuver": 81,
-      "speed": 43,
-      "hitPoints": 216
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_balanced_13",
-    "name": "Bohemond",
-    "culture": "Vlandia",
-    "type": "Mount",
-    "price": 24283,
-    "weight": 430.0,
-    "tier": 11.7897854,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 8,
-      "maneuver": 82,
-      "speed": 44,
-      "hitPoints": 219
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_balanced_14",
-    "name": "Llamrei",
-    "culture": "Battania",
-    "type": "Mount",
-    "price": 26636,
-    "weight": 430.0,
-    "tier": 12.3993654,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 8,
-      "maneuver": 82,
-      "speed": 45,
-      "hitPoints": 222
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_balanced_5",
-    "name": "Murgese Destrier",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 7572,
-    "weight": 450.0,
-    "tier": 6.11679459,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
+      "bodyLength": 110,
       "chargeDamage": 4,
-      "maneuver": 72,
-      "speed": 37,
-      "hitPoints": 195
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_balanced_6",
-    "name": "Holsteiner Destrier",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 9053,
-    "weight": 430.0,
-    "tier": 6.784462,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
-      "chargeDamage": 4,
-      "maneuver": 74,
-      "speed": 38,
-      "hitPoints": 198
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_balanced_7",
-    "name": "Kathiawadi Destrier",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 10968,
-    "weight": 430.0,
-    "tier": 7.572814,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
-      "chargeDamage": 5,
-      "maneuver": 76,
-      "speed": 39,
-      "hitPoints": 201
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_balanced_8",
-    "name": "Friesian Destrier",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 13051,
-    "weight": 430.0,
-    "tier": 8.356689,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 5,
-      "maneuver": 78,
-      "speed": 40,
-      "hitPoints": 204
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_balanced_9",
-    "name": "Carthusian Destrier",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 15193,
-    "weight": 430.0,
-    "tier": 9.100216,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 6,
-      "maneuver": 79,
-      "speed": 41,
-      "hitPoints": 207
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_charger_10",
-    "name": "Desert Norman Charger",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 17672,
-    "weight": 450.0,
-    "tier": 9.898636,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
-      "chargeDamage": 7,
-      "maneuver": 74,
-      "speed": 44,
-      "hitPoints": 219
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_charger_11",
-    "name": "Andravida Charger",
-    "culture": "Vlandia",
-    "type": "Mount",
-    "price": 19412,
-    "weight": 450.0,
-    "tier": 10.4262953,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
-      "chargeDamage": 8,
-      "maneuver": 75,
-      "speed": 44,
-      "hitPoints": 222
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_charger_12",
-    "name": "Neapolitan Charger",
-    "culture": "Empire",
-    "type": "Mount",
-    "price": 21251,
-    "weight": 450.0,
-    "tier": 10.9591351,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
-      "chargeDamage": 8,
-      "maneuver": 75,
-      "speed": 45,
-      "hitPoints": 225
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_charger_13",
-    "name": "Lionheart",
-    "culture": "Vlandia",
-    "type": "Mount",
-    "price": 24943,
-    "weight": 450.0,
-    "tier": 11.9636717,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
-      "chargeDamage": 9,
-      "maneuver": 76,
-      "speed": 46,
-      "hitPoints": 228
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_charger_14",
-    "name": "Bucephalus",
-    "culture": "Empire",
-    "type": "Mount",
-    "price": 27215,
-    "weight": 450.0,
-    "tier": 12.5450792,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
-      "chargeDamage": 9,
-      "maneuver": 76,
-      "speed": 47,
+      "maneuver": 82,
+      "speed": 36,
       "hitPoints": 231
     },
     "weapons": []
   },
   {
-    "id": "crpg_mount_charger_5",
-    "name": "Norwegian Fjord Draught",
-    "culture": "Khuzait",
+    "id": "crpg_mount_camel_11",
+    "name": "Seleucid Heavy Camel",
+    "culture": "Aserai",
     "type": "Mount",
-    "price": 7423,
-    "weight": 450.0,
-    "tier": 6.04603052,
+    "price": 15506,
+    "weight": 520.0,
+    "tier": 9.204619,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "mount": {
-      "bodyLength": 105,
-      "chargeDamage": 3,
-      "maneuver": 66,
-      "speed": 39,
-      "hitPoints": 204
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_charger_6",
-    "name": "Icelandic Charger",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 9031,
-    "weight": 450.0,
-    "tier": 6.77499628,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
-      "chargeDamage": 4,
-      "maneuver": 68,
-      "speed": 40,
-      "hitPoints": 207
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_charger_7",
-    "name": "Shire Charger",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 10959,
-    "weight": 450.0,
-    "tier": 7.56927633,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
+      "bodyLength": 110,
       "chargeDamage": 5,
-      "maneuver": 70,
-      "speed": 41,
-      "hitPoints": 210
+      "maneuver": 81,
+      "speed": 35,
+      "hitPoints": 249
     },
     "weapons": []
   },
   {
-    "id": "crpg_mount_charger_8",
-    "name": "Ardennes Charger",
-    "culture": "Khuzait",
+    "id": "crpg_mount_camel_12",
+    "name": "Parthian Light Camel",
+    "culture": "Aserai",
     "type": "Mount",
-    "price": 13282,
-    "weight": 450.0,
-    "tier": 8.439761,
+    "price": 16271,
+    "weight": 520.0,
+    "tier": 9.454871,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "mount": {
-      "bodyLength": 105,
+      "bodyLength": 110,
+      "chargeDamage": 4,
+      "maneuver": 83,
+      "speed": 37,
+      "hitPoints": 231
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount_camel_13",
+    "name": "Parthian Heavy Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 17379,
+    "weight": 520.0,
+    "tier": 9.807319,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 5,
+      "maneuver": 82,
+      "speed": 36,
+      "hitPoints": 249
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount_camel_14",
+    "name": "Achaemenian Light Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 20002,
+    "weight": 520.0,
+    "tier": 10.5999737,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 5,
+      "maneuver": 84,
+      "speed": 38,
+      "hitPoints": 240
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount_camel_15",
+    "name": "Achaemenian Heavy Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 21326,
+    "weight": 520.0,
+    "tier": 10.9804239,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
       "chargeDamage": 6,
-      "maneuver": 72,
-      "speed": 42,
-      "hitPoints": 213
+      "maneuver": 83,
+      "speed": 37,
+      "hitPoints": 258
     },
     "weapons": []
   },
   {
-    "id": "crpg_mount_charger_9",
-    "name": "Andalusian Charger",
-    "culture": "Khuzait",
+    "id": "crpg_mount_camel_16",
+    "name": "Safinat al-Barr",
+    "culture": "Aserai",
     "type": "Mount",
-    "price": 15500,
-    "weight": 450.0,
-    "tier": 9.202708,
+    "price": 23251,
+    "weight": 520.0,
+    "tier": 11.5130272,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "mount": {
-      "bodyLength": 105,
+      "bodyLength": 110,
       "chargeDamage": 7,
-      "maneuver": 73,
-      "speed": 43,
+      "maneuver": 85,
+      "speed": 37,
+      "hitPoints": 258
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount_camel_17",
+    "name": "Padishah",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 25931,
+    "weight": 520.0,
+    "tier": 12.2194681,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 7,
+      "maneuver": 86,
+      "speed": 38,
+      "hitPoints": 258
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount_camel_2",
+    "name": "Pack Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 4779,
+    "weight": 520.0,
+    "tier": 4.651889,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 2,
+      "maneuver": 72,
+      "speed": 29,
       "hitPoints": 216
     },
     "weapons": []
   },
   {
-    "id": "crpg_mount_fast_10",
-    "name": "Ahalteke Courser",
-    "culture": "Neutral",
+    "id": "crpg_mount_camel_3",
+    "name": "Pratihara Camel",
+    "culture": "Aserai",
     "type": "Mount",
-    "price": 17651,
-    "weight": 420.0,
-    "tier": 9.892221,
+    "price": 6394,
+    "weight": 520.0,
+    "tier": 5.538042,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 5,
-      "maneuver": 72,
-      "speed": 49,
-      "hitPoints": 201
+      "bodyLength": 110,
+      "chargeDamage": 2,
+      "maneuver": 76,
+      "speed": 30,
+      "hitPoints": 222
     },
     "weapons": []
   },
   {
-    "id": "crpg_mount_fast_11",
-    "name": "Datong Courser",
-    "culture": "Neutral",
+    "id": "crpg_mount_camel_4",
+    "name": "Qedarite Camel",
+    "culture": "Aserai",
     "type": "Mount",
-    "price": 18984,
-    "weight": 420.0,
-    "tier": 10.2989645,
+    "price": 7767,
+    "weight": 520.0,
+    "tier": 6.20829725,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 5,
-      "maneuver": 73,
-      "speed": 49,
-      "hitPoints": 204
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_fast_12",
-    "name": "Darashouri Courser",
-    "culture": "Neutral",
-    "type": "Mount",
-    "price": 20764,
-    "weight": 420.0,
-    "tier": 10.820447,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 5,
-      "maneuver": 73,
-      "speed": 50,
-      "hitPoints": 207
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_fast_13",
-    "name": "Hengeron",
-    "culture": "Neutral",
-    "type": "Mount",
-    "price": 23910,
-    "weight": 420.0,
-    "tier": 11.690567,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 6,
-      "maneuver": 74,
-      "speed": 51,
-      "hitPoints": 210
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_fast_14",
-    "name": "Shadowfax",
-    "culture": "Neutral",
-    "type": "Mount",
-    "price": 26085,
-    "weight": 420.0,
-    "tier": 12.2591181,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 6,
-      "maneuver": 74,
-      "speed": 52,
-      "hitPoints": 213
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_fast_5",
-    "name": "Turkoman Courser",
-    "culture": "Neutral",
-    "type": "Mount",
-    "price": 7750,
-    "weight": 420.0,
-    "tier": 6.200236,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
+      "bodyLength": 110,
       "chargeDamage": 3,
-      "maneuver": 64,
-      "speed": 44,
-      "hitPoints": 186
+      "maneuver": 77,
+      "speed": 31,
+      "hitPoints": 228
     },
     "weapons": []
   },
   {
-    "id": "crpg_mount_fast_6",
-    "name": "Menorquín Courser",
-    "culture": "Neutral",
+    "id": "crpg_mount_camel_5",
+    "name": "Palmyrene Camel",
+    "culture": "Aserai",
     "type": "Mount",
-    "price": 9280,
-    "weight": 420.0,
-    "tier": 6.88217068,
+    "price": 9400,
+    "weight": 520.0,
+    "tier": 6.93329,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "mount": {
-      "bodyLength": 100,
-      "chargeDamage": 3,
-      "maneuver": 66,
-      "speed": 45,
-      "hitPoints": 189
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_fast_7",
-    "name": "Nisean Courser",
-    "culture": "Neutral",
-    "type": "Mount",
-    "price": 11236,
-    "weight": 420.0,
-    "tier": 7.67751741,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 100,
+      "bodyLength": 110,
       "chargeDamage": 4,
-      "maneuver": 68,
-      "speed": 46,
-      "hitPoints": 192
+      "maneuver": 78,
+      "speed": 32,
+      "hitPoints": 234
     },
     "weapons": []
   },
   {
-    "id": "crpg_mount_fast_8",
-    "name": "Thessalian Courser",
-    "culture": "Neutral",
+    "id": "crpg_mount_camel_6",
+    "name": "Sargonid Light Camel",
+    "culture": "Aserai",
     "type": "Mount",
-    "price": 13388,
-    "weight": 420.0,
-    "tier": 8.477386,
+    "price": 10628,
+    "weight": 520.0,
+    "tier": 7.43830967,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "mount": {
-      "bodyLength": 100,
+      "bodyLength": 110,
       "chargeDamage": 4,
-      "maneuver": 70,
-      "speed": 47,
-      "hitPoints": 195
+      "maneuver": 80,
+      "speed": 34,
+      "hitPoints": 222
     },
     "weapons": []
   },
   {
-    "id": "crpg_mount_fast_9",
-    "name": "Einsiedler Courser",
-    "culture": "Neutral",
+    "id": "crpg_mount_camel_7",
+    "name": "Sargonid Heavy Camel",
+    "culture": "Aserai",
     "type": "Mount",
-    "price": 15484,
-    "weight": 420.0,
-    "tier": 9.197222,
+    "price": 11346,
+    "weight": 520.0,
+    "tier": 7.72047329,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "mount": {
-      "bodyLength": 100,
+      "bodyLength": 110,
       "chargeDamage": 5,
-      "maneuver": 71,
-      "speed": 48,
-      "hitPoints": 198
+      "maneuver": 79,
+      "speed": 33,
+      "hitPoints": 240
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount_camel_8",
+    "name": "Nabatean Light Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 11916,
+    "weight": 520.0,
+    "tier": 7.93814945,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 4,
+      "maneuver": 81,
+      "speed": 35,
+      "hitPoints": 222
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount_camel_9",
+    "name": "Nabatean Heavy Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 12753,
+    "weight": 520.0,
+    "tier": 8.248472,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 5,
+      "maneuver": 80,
+      "speed": 34,
+      "hitPoints": 240
     },
     "weapons": []
   },
@@ -19847,216 +19217,6 @@
       "maneuver": 81,
       "speed": 37,
       "hitPoints": 225
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_maneuverable_10",
-    "name": "Berber Jennet",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 16309,
-    "weight": 300.0,
-    "tier": 9.467125,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 95,
-      "chargeDamage": 3,
-      "maneuver": 84,
-      "speed": 43,
-      "hitPoints": 189
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_maneuverable_11",
-    "name": "Tchenarani Palfrey",
-    "culture": "Vlandia",
-    "type": "Mount",
-    "price": 17667,
-    "weight": 300.0,
-    "tier": 9.897135,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 95,
-      "chargeDamage": 4,
-      "maneuver": 85,
-      "speed": 43,
-      "hitPoints": 192
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_maneuverable_12",
-    "name": "Asil Purebred Arabian Palfrey",
-    "culture": "Vlandia",
-    "type": "Mount",
-    "price": 19520,
-    "weight": 300.0,
-    "tier": 10.458271,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 95,
-      "chargeDamage": 4,
-      "maneuver": 85,
-      "speed": 44,
-      "hitPoints": 195
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_maneuverable_13",
-    "name": "Marengo",
-    "culture": "Vlandia",
-    "type": "Mount",
-    "price": 22293,
-    "weight": 300.0,
-    "tier": 11.2507267,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 95,
-      "chargeDamage": 4,
-      "maneuver": 86,
-      "speed": 45,
-      "hitPoints": 198
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_maneuverable_14",
-    "name": "Baucent",
-    "culture": "Vlandia",
-    "type": "Mount",
-    "price": 24810,
-    "weight": 300.0,
-    "tier": 11.9287815,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 95,
-      "chargeDamage": 5,
-      "maneuver": 86,
-      "speed": 46,
-      "hitPoints": 201
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_maneuverable_5",
-    "name": "Irish Hobby",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 7201,
-    "weight": 300.0,
-    "tier": 5.93948174,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 95,
-      "chargeDamage": 2,
-      "maneuver": 76,
-      "speed": 38,
-      "hitPoints": 174
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_maneuverable_6",
-    "name": "Caspian Palfrey",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 8612,
-    "weight": 300.0,
-    "tier": 6.59189034,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 95,
-      "chargeDamage": 2,
-      "maneuver": 78,
-      "speed": 39,
-      "hitPoints": 177
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_maneuverable_7",
-    "name": "Marwari Palfrey",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 10282,
-    "weight": 300.0,
-    "tier": 7.299211,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 95,
-      "chargeDamage": 2,
-      "maneuver": 80,
-      "speed": 40,
-      "hitPoints": 180
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_maneuverable_8",
-    "name": "Moroccan Barb",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 12254,
-    "weight": 300.0,
-    "tier": 8.064646,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 95,
-      "chargeDamage": 2,
-      "maneuver": 82,
-      "speed": 41,
-      "hitPoints": 183
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_maneuverable_9",
-    "name": "Morvandiau Palfrey",
-    "culture": "Khuzait",
-    "type": "Mount",
-    "price": 14228,
-    "weight": 300.0,
-    "tier": 8.772116,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 95,
-      "chargeDamage": 3,
-      "maneuver": 83,
-      "speed": 42,
-      "hitPoints": 186
     },
     "weapons": []
   },
@@ -20334,6 +19494,846 @@
     "weapons": []
   },
   {
+    "id": "crpg_mount1_balanced_10",
+    "name": "Yunnan Destrier",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 17369,
+    "weight": 430.0,
+    "tier": 9.804319,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 6,
+      "maneuver": 80,
+      "speed": 42,
+      "hitPoints": 210
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_balanced_11",
+    "name": "Auvergne Destrier",
+    "culture": "Vlandia",
+    "type": "Mount",
+    "price": 18924,
+    "weight": 430.0,
+    "tier": 10.2807808,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 7,
+      "maneuver": 81,
+      "speed": 42,
+      "hitPoints": 213
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_balanced_12",
+    "name": "Lusitano Pureblood Destrier",
+    "culture": "Battania",
+    "type": "Mount",
+    "price": 20828,
+    "weight": 430.0,
+    "tier": 10.8387308,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 7,
+      "maneuver": 81,
+      "speed": 43,
+      "hitPoints": 216
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_balanced_13",
+    "name": "Bohemond",
+    "culture": "Vlandia",
+    "type": "Mount",
+    "price": 24283,
+    "weight": 430.0,
+    "tier": 11.7897854,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 8,
+      "maneuver": 82,
+      "speed": 44,
+      "hitPoints": 219
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_balanced_14",
+    "name": "Llamrei",
+    "culture": "Battania",
+    "type": "Mount",
+    "price": 26636,
+    "weight": 430.0,
+    "tier": 12.3993654,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 8,
+      "maneuver": 82,
+      "speed": 45,
+      "hitPoints": 222
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_balanced_5",
+    "name": "Murgese Destrier",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 7572,
+    "weight": 450.0,
+    "tier": 6.11679459,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 4,
+      "maneuver": 72,
+      "speed": 37,
+      "hitPoints": 195
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_balanced_6",
+    "name": "Holsteiner Destrier",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 9053,
+    "weight": 430.0,
+    "tier": 6.784462,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 4,
+      "maneuver": 74,
+      "speed": 38,
+      "hitPoints": 198
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_balanced_7",
+    "name": "Kathiawadi Destrier",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 10968,
+    "weight": 430.0,
+    "tier": 7.572814,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 5,
+      "maneuver": 76,
+      "speed": 39,
+      "hitPoints": 201
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_balanced_8",
+    "name": "Friesian Destrier",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 13051,
+    "weight": 430.0,
+    "tier": 8.356689,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 5,
+      "maneuver": 78,
+      "speed": 40,
+      "hitPoints": 204
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_balanced_9",
+    "name": "Carthusian Destrier",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 15193,
+    "weight": 430.0,
+    "tier": 9.100216,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 6,
+      "maneuver": 79,
+      "speed": 41,
+      "hitPoints": 207
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_charger_10",
+    "name": "Desert Norman Charger",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 17672,
+    "weight": 450.0,
+    "tier": 9.898636,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 7,
+      "maneuver": 74,
+      "speed": 44,
+      "hitPoints": 219
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_charger_11",
+    "name": "Andravida Charger",
+    "culture": "Vlandia",
+    "type": "Mount",
+    "price": 19412,
+    "weight": 450.0,
+    "tier": 10.4262953,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 8,
+      "maneuver": 75,
+      "speed": 44,
+      "hitPoints": 222
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_charger_12",
+    "name": "Neapolitan Charger",
+    "culture": "Empire",
+    "type": "Mount",
+    "price": 21251,
+    "weight": 450.0,
+    "tier": 10.9591351,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 8,
+      "maneuver": 75,
+      "speed": 45,
+      "hitPoints": 225
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_charger_13",
+    "name": "Lionheart",
+    "culture": "Vlandia",
+    "type": "Mount",
+    "price": 24943,
+    "weight": 450.0,
+    "tier": 11.9636717,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 9,
+      "maneuver": 76,
+      "speed": 46,
+      "hitPoints": 228
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_charger_14",
+    "name": "Bucephalus",
+    "culture": "Empire",
+    "type": "Mount",
+    "price": 27215,
+    "weight": 450.0,
+    "tier": 12.5450792,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 9,
+      "maneuver": 76,
+      "speed": 47,
+      "hitPoints": 231
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_charger_5",
+    "name": "Norwegian Fjord Draught",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 7423,
+    "weight": 450.0,
+    "tier": 6.04603052,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 3,
+      "maneuver": 66,
+      "speed": 39,
+      "hitPoints": 204
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_charger_6",
+    "name": "Icelandic Charger",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 9031,
+    "weight": 450.0,
+    "tier": 6.77499628,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 4,
+      "maneuver": 68,
+      "speed": 40,
+      "hitPoints": 207
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_charger_7",
+    "name": "Shire Charger",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 10959,
+    "weight": 450.0,
+    "tier": 7.56927633,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 5,
+      "maneuver": 70,
+      "speed": 41,
+      "hitPoints": 210
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_charger_8",
+    "name": "Ardennes Charger",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 13282,
+    "weight": 450.0,
+    "tier": 8.439761,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 6,
+      "maneuver": 72,
+      "speed": 42,
+      "hitPoints": 213
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_charger_9",
+    "name": "Andalusian Charger",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 15500,
+    "weight": 450.0,
+    "tier": 9.202708,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 7,
+      "maneuver": 73,
+      "speed": 43,
+      "hitPoints": 216
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_fast_10",
+    "name": "Ahalteke Courser",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 17651,
+    "weight": 420.0,
+    "tier": 9.892221,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 5,
+      "maneuver": 72,
+      "speed": 49,
+      "hitPoints": 201
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_fast_11",
+    "name": "Datong Courser",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 18984,
+    "weight": 420.0,
+    "tier": 10.2989645,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 5,
+      "maneuver": 73,
+      "speed": 49,
+      "hitPoints": 204
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_fast_12",
+    "name": "Darashouri Courser",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 20764,
+    "weight": 420.0,
+    "tier": 10.820447,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 5,
+      "maneuver": 73,
+      "speed": 50,
+      "hitPoints": 207
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_fast_13",
+    "name": "Hengeron",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 23910,
+    "weight": 420.0,
+    "tier": 11.690567,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 6,
+      "maneuver": 74,
+      "speed": 51,
+      "hitPoints": 210
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_fast_14",
+    "name": "Shadowfax",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 26085,
+    "weight": 420.0,
+    "tier": 12.2591181,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 6,
+      "maneuver": 74,
+      "speed": 52,
+      "hitPoints": 213
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_fast_5",
+    "name": "Turkoman Courser",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 7750,
+    "weight": 420.0,
+    "tier": 6.200236,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 3,
+      "maneuver": 64,
+      "speed": 44,
+      "hitPoints": 186
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_fast_6",
+    "name": "Menorquín Courser",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 9280,
+    "weight": 420.0,
+    "tier": 6.88217068,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 3,
+      "maneuver": 66,
+      "speed": 45,
+      "hitPoints": 189
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_fast_7",
+    "name": "Nisean Courser",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 11236,
+    "weight": 420.0,
+    "tier": 7.67751741,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 4,
+      "maneuver": 68,
+      "speed": 46,
+      "hitPoints": 192
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_fast_8",
+    "name": "Thessalian Courser",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 13388,
+    "weight": 420.0,
+    "tier": 8.477386,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 4,
+      "maneuver": 70,
+      "speed": 47,
+      "hitPoints": 195
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_fast_9",
+    "name": "Einsiedler Courser",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 15484,
+    "weight": 420.0,
+    "tier": 9.197222,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 5,
+      "maneuver": 71,
+      "speed": 48,
+      "hitPoints": 198
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_maneuverable_10",
+    "name": "Berber Jennet",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 16309,
+    "weight": 300.0,
+    "tier": 9.467125,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 95,
+      "chargeDamage": 3,
+      "maneuver": 84,
+      "speed": 43,
+      "hitPoints": 189
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_maneuverable_11",
+    "name": "Tchenarani Palfrey",
+    "culture": "Vlandia",
+    "type": "Mount",
+    "price": 17667,
+    "weight": 300.0,
+    "tier": 9.897135,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 95,
+      "chargeDamage": 4,
+      "maneuver": 85,
+      "speed": 43,
+      "hitPoints": 192
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_maneuverable_12",
+    "name": "Asil Purebred Arabian Palfrey",
+    "culture": "Vlandia",
+    "type": "Mount",
+    "price": 19520,
+    "weight": 300.0,
+    "tier": 10.458271,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 95,
+      "chargeDamage": 4,
+      "maneuver": 85,
+      "speed": 44,
+      "hitPoints": 195
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_maneuverable_13",
+    "name": "Marengo",
+    "culture": "Vlandia",
+    "type": "Mount",
+    "price": 22293,
+    "weight": 300.0,
+    "tier": 11.2507267,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 95,
+      "chargeDamage": 4,
+      "maneuver": 86,
+      "speed": 45,
+      "hitPoints": 198
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_maneuverable_14",
+    "name": "Baucent",
+    "culture": "Vlandia",
+    "type": "Mount",
+    "price": 24810,
+    "weight": 300.0,
+    "tier": 11.9287815,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 95,
+      "chargeDamage": 5,
+      "maneuver": 86,
+      "speed": 46,
+      "hitPoints": 201
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_maneuverable_5",
+    "name": "Irish Hobby",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 7201,
+    "weight": 300.0,
+    "tier": 5.93948174,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 95,
+      "chargeDamage": 2,
+      "maneuver": 76,
+      "speed": 38,
+      "hitPoints": 174
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_maneuverable_6",
+    "name": "Caspian Palfrey",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 8612,
+    "weight": 300.0,
+    "tier": 6.59189034,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 95,
+      "chargeDamage": 2,
+      "maneuver": 78,
+      "speed": 39,
+      "hitPoints": 177
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_maneuverable_7",
+    "name": "Marwari Palfrey",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 10282,
+    "weight": 300.0,
+    "tier": 7.299211,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 95,
+      "chargeDamage": 2,
+      "maneuver": 80,
+      "speed": 40,
+      "hitPoints": 180
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_maneuverable_8",
+    "name": "Moroccan Barb",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 12254,
+    "weight": 300.0,
+    "tier": 8.064646,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 95,
+      "chargeDamage": 2,
+      "maneuver": 82,
+      "speed": 41,
+      "hitPoints": 183
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_maneuverable_9",
+    "name": "Morvandiau Palfrey",
+    "culture": "Khuzait",
+    "type": "Mount",
+    "price": 14228,
+    "weight": 300.0,
+    "tier": 8.772116,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 95,
+      "chargeDamage": 3,
+      "maneuver": 83,
+      "speed": 42,
+      "hitPoints": 186
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_mountain_hunting_bow",
     "name": "Mountain Hunting Bow",
     "culture": "Battania",
@@ -20373,48 +20373,6 @@
         "swingSpeed": 125
       }
     ]
-  },
-  {
-    "id": "crpg_mule",
-    "name": "Mule",
-    "culture": "Neutral",
-    "type": "Mount",
-    "price": 2440,
-    "weight": 300.0,
-    "tier": 3.05089855,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 92,
-      "chargeDamage": 0,
-      "maneuver": 58,
-      "speed": 30,
-      "hitPoints": 200
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mule_2",
-    "name": "Chadz",
-    "culture": "Neutral",
-    "type": "Mount",
-    "price": 6643,
-    "weight": 300.0,
-    "tier": 5.664498,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 92,
-      "chargeDamage": 1,
-      "maneuver": 60,
-      "speed": 33,
-      "hitPoints": 275
-    },
-    "weapons": []
   },
   {
     "id": "crpg_mule_load_a",
@@ -20480,6 +20438,48 @@
     "weapons": []
   },
   {
+    "id": "crpg_mule2_1",
+    "name": "Mule",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 2440,
+    "weight": 300.0,
+    "tier": 3.05089855,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 92,
+      "chargeDamage": 0,
+      "maneuver": 58,
+      "speed": 30,
+      "hitPoints": 200
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mule2_2",
+    "name": "Chadz",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 6643,
+    "weight": 300.0,
+    "tier": 5.664498,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 92,
+      "chargeDamage": 1,
+      "maneuver": 60,
+      "speed": 33,
+      "hitPoints": 275
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_nasal_cervelliere_over_laced_coif",
     "name": "Nasal Cervelliere over Laced Coif",
     "culture": "Vlandia",
@@ -20505,13 +20505,13 @@
     "name": "Nasal Cervelliere over Mail Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 3391,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 6.71086,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -20524,15 +20524,15 @@
     "name": "Nasal Cervelliere over Padded Cap",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 505,
+    "price": 1113,
     "weight": 0.936664,
-    "tier": 3.83277321,
+    "tier": 4.878075,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 22,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -20545,15 +20545,15 @@
     "name": "Nasal Cervelliere over Padded Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 743,
+    "price": 1084,
     "weight": 1.134645,
-    "tier": 4.321307,
+    "tier": 4.839864,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 25,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -20585,15 +20585,15 @@
     "name": "Nasal Helmet over Cloth Headwrap",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 838,
+    "price": 1074,
     "weight": 1.203399,
-    "tier": 4.482219,
+    "tier": 4.827006,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 26,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -20606,15 +20606,15 @@
     "name": "Nasal Helmet over Laced Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1606,
+    "price": 1017,
     "weight": 1.643141,
-    "tier": 5.42778873,
+    "tier": 4.74931574,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 32,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -20627,13 +20627,13 @@
     "name": "Nasal Helmet over Mail",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 3391,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 6.71086,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -20646,13 +20646,13 @@
     "name": "Nasal Helmet over Mail Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2770,
+    "price": 3325,
     "weight": 2.126303,
-    "tier": 6.340465,
+    "tier": 6.674173,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 38,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -20665,15 +20665,15 @@
     "name": "Nasal Helmet over Padded Cloth",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1177,
+    "price": 1045,
     "weight": 1.417577,
-    "tier": 4.959229,
+    "tier": 4.78822136,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 29,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -20686,15 +20686,15 @@
     "name": "Nasal Helmet over Padded Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 980,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 4.69760227,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -20865,15 +20865,15 @@
     "name": "Ornate Pauldrons",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 904,
+    "price": 1862,
     "weight": 1.842267,
-    "tier": 4.99116373,
+    "tier": 6.157576,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 8,
-      "armArmor": 8,
+      "bodyArmor": 13,
+      "armArmor": 7,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -20884,15 +20884,15 @@
     "name": "Ornate Pauldrons with Cape",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 4504,
+    "price": 4348,
     "weight": 3.926823,
-    "tier": 7.885675,
+    "tier": 7.809116,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 15,
-      "armArmor": 12,
+      "bodyArmor": 18,
+      "armArmor": 9,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -22607,16 +22607,16 @@
     "name": "Open Padded Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 153,
+    "price": 56,
     "weight": 0.4754905,
-    "tier": 2.48735118,
+    "tier": 1.06600761,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 14,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -22705,16 +22705,16 @@
     "name": "Padded Cap",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 96,
+    "price": 56,
     "weight": 0.3311607,
-    "tier": 1.96720219,
+    "tier": 1.07301939,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 11,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -22748,18 +22748,18 @@
     "name": "Padded Footman Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 819,
+    "price": 78,
     "weight": 4.379655,
-    "tier": 3.48605919,
+    "tier": 1.30868244,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 7,
-      "legArmor": 7,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -22769,15 +22769,15 @@
     "name": "Padded Half Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 153,
+    "price": 56,
     "weight": 0.4754905,
-    "tier": 2.48735118,
+    "tier": 1.06600761,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 14,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -22790,13 +22790,13 @@
     "name": "Padded Leather Cape",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 96,
+    "price": 56,
     "weight": 0.3311607,
-    "tier": 1.96720219,
+    "tier": 1.07301939,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 11,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -22852,15 +22852,15 @@
     "name": "Padded Leather Shoulders",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 374,
+    "price": 574,
     "weight": 1.09827,
-    "tier": 3.7910068,
+    "tier": 4.348508,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 8,
-      "armArmor": 4,
+      "bodyArmor": 12,
+      "armArmor": 2,
       "legArmor": 0,
       "materialType": "Cloth"
     },
@@ -22975,15 +22975,15 @@
     "name": "Reinforced Ornate Pauldrons over Scale",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 9043,
+    "price": 4255,
     "weight": 5.292346,
-    "tier": 9.542507,
+    "tier": 7.762557,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 22,
-      "armArmor": 12,
+      "armArmor": 6,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -22994,15 +22994,15 @@
     "name": "Pauldrons with Cape",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 904,
+    "price": 1862,
     "weight": 1.842267,
-    "tier": 4.99116373,
+    "tier": 6.157576,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 8,
-      "armArmor": 8,
+      "bodyArmor": 13,
+      "armArmor": 7,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -23070,15 +23070,15 @@
     "name": "Peaked Helmet over Laced Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2545,
+    "price": 971,
     "weight": 2.042925,
-    "tier": 6.190553,
+    "tier": 4.6847434,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 37,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -23110,13 +23110,13 @@
     "name": "Peaked Helmet over Mail Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 3807,
+    "price": 3198,
     "weight": 2.470721,
-    "tier": 6.93163824,
+    "tier": 6.60156,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 42,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -23129,15 +23129,15 @@
     "name": "Peaked Helmet over Padded Cloth",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 980,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 4.69760227,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -23698,13 +23698,13 @@
     "name": "Western Bascinet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 12343,
+    "price": 14740,
     "weight": 4.32,
-    "tier": 9.573756,
+    "tier": 10.0445957,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 61,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -23797,18 +23797,18 @@
     "name": "Rough Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 10460,
+    "price": 11364,
     "weight": 17.89237,
-    "tier": 7.252712,
+    "tier": 7.42029667,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 38,
-      "armArmor": 19,
-      "legArmor": 19,
+      "bodyArmor": 50,
+      "armArmor": 13,
+      "legArmor": 13,
       "materialType": "Plate"
     },
     "weapons": []
@@ -24414,16 +24414,16 @@
     "name": "Red Tabard over Mail Hauberk",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 5298,
+    "price": 11527,
     "weight": 11.52848,
-    "tier": 6.003331,
+    "tier": 7.44931555,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 34,
-      "armArmor": 12,
-      "legArmor": 12,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -24509,15 +24509,15 @@
     "name": "Splint Vambraces",
     "culture": "Vlandia",
     "type": "HandArmor",
-    "price": 1814,
+    "price": 1254,
     "weight": 3.244425,
-    "tier": 6.95581865,
+    "tier": 6.26023674,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
-      "armArmor": 20,
+      "armArmor": 18,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -25036,9 +25036,9 @@
     "name": "Plate Cuirass",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 34006,
+    "price": 38032,
     "weight": 26.0,
-    "tier": 10.0005369,
+    "tier": 10.3064976,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -25047,7 +25047,7 @@
       "headArmor": 0,
       "bodyArmor": 64,
       "armArmor": 25,
-      "legArmor": 20,
+      "legArmor": 25,
       "materialType": "Plate"
     },
     "weapons": []
@@ -25057,13 +25057,13 @@
     "name": "Western Barbute",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 8428,
+    "price": 7342,
     "weight": 3.6,
-    "tier": 8.629949,
+    "tier": 8.310321,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 54,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25076,16 +25076,16 @@
     "name": "red Brigandine with armpads",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 6125,
+    "price": 3798,
     "weight": 14.89,
-    "tier": 6.25205469,
+    "tier": 5.4657526,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 32,
-      "armArmor": 18,
-      "legArmor": 12,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Plate"
     },
     "weapons": []
@@ -25095,16 +25095,16 @@
     "name": "blue Brigandine with armpads",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 6125,
+    "price": 3798,
     "weight": 14.89,
-    "tier": 6.25205469,
+    "tier": 5.4657526,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 32,
-      "armArmor": 18,
-      "legArmor": 12,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Plate"
     },
     "weapons": []
@@ -25114,16 +25114,16 @@
     "name": "blue Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 3971,
+    "price": 10125,
     "weight": 11.66,
-    "tier": 5.53525925,
+    "tier": 7.18787241,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 32,
-      "armArmor": 10,
-      "legArmor": 12,
+      "bodyArmor": 40,
+      "armArmor": 13,
+      "legArmor": 18,
       "materialType": "Plate"
     },
     "weapons": []
@@ -25133,16 +25133,16 @@
     "name": "red Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 3971,
+    "price": 10125,
     "weight": 11.66,
-    "tier": 5.53525925,
+    "tier": 7.18787241,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 32,
-      "armArmor": 10,
-      "legArmor": 12,
+      "bodyArmor": 40,
+      "armArmor": 13,
+      "legArmor": 18,
       "materialType": "Plate"
     },
     "weapons": []
@@ -25152,16 +25152,16 @@
     "name": "black Brigandine with armpads",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 6125,
+    "price": 3798,
     "weight": 14.89,
-    "tier": 6.25205469,
+    "tier": 5.4657526,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 32,
-      "armArmor": 18,
-      "legArmor": 12,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Plate"
     },
     "weapons": []
@@ -25171,16 +25171,16 @@
     "name": "black Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 3971,
+    "price": 10125,
     "weight": 11.66,
-    "tier": 5.53525925,
+    "tier": 7.18787241,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 32,
-      "armArmor": 10,
-      "legArmor": 12,
+      "bodyArmor": 40,
+      "armArmor": 13,
+      "legArmor": 18,
       "materialType": "Plate"
     },
     "weapons": []
@@ -25190,9 +25190,9 @@
     "name": "Sackcloth Tunic",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 53,
+    "price": 94,
     "weight": 0.2901902,
-    "tier": 0.6707019,
+    "tier": 1.49618125,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -25200,9 +25200,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 3,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -25212,13 +25212,13 @@
     "name": "Santahat",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.1,
-    "tier": 0.18080914,
+    "tier": 1.08485484,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 1,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25252,15 +25252,15 @@
     "name": "Scale Shoulderguards",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 3078,
+    "price": 1833,
     "weight": 3.106376,
-    "tier": 7.094789,
+    "tier": 6.12968874,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 8,
+      "bodyArmor": 17,
+      "armArmor": 4,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -25365,15 +25365,15 @@
     "name": "Segmented Cervelliere over Laced Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 656,
+    "price": 1094,
     "weight": 1.067251,
-    "tier": 4.159431,
+    "tier": 4.85266972,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 24,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25386,13 +25386,13 @@
     "name": "Segmented Cervelliere over Mail",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 838,
+    "price": 1074,
     "weight": 1.203399,
-    "tier": 4.482219,
+    "tier": 4.827006,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 26,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25445,15 +25445,15 @@
     "name": "Segmented Skullcap over Laced Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 244,
+    "price": 1162,
     "weight": 0.6362432,
-    "tier": 2.99911356,
+    "tier": 4.93971634,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 17,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25466,13 +25466,13 @@
     "name": "Segmented Skullcap over Mail Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 3807,
+    "price": 3198,
     "weight": 2.470721,
-    "tier": 6.93163824,
+    "tier": 6.60156,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 42,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25506,15 +25506,15 @@
     "name": "Segmented Skullcap over Padded Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1177,
+    "price": 1045,
     "weight": 1.417577,
-    "tier": 4.959229,
+    "tier": 4.78822136,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 29,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25994,9 +25994,9 @@
     "name": "Sleeveless Padded Short Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 406,
+    "price": 82,
     "weight": 2.936653,
-    "tier": 2.788486,
+    "tier": 1.359094,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -26004,9 +26004,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 15,
-      "armArmor": 2,
-      "legArmor": 7,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -27807,16 +27807,16 @@
     "name": "Strapped Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 2151,
+    "price": 2506,
     "weight": 1.729605,
-    "tier": 7.86382341,
+    "tier": 8.205729,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 23,
+      "legArmor": 24,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -27847,15 +27847,15 @@
     "name": "Strawhat",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.1,
-    "tier": 0.18080914,
+    "tier": 1.08485484,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 1,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -29631,15 +29631,15 @@
     "name": "Banded Sugarloaf Greathelm",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 9448,
+    "price": 15462,
     "weight": 3.8,
-    "tier": 8.903204,
+    "tier": 10.1750889,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 56,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -29652,13 +29652,13 @@
     "name": "Sugarloaf Greathelm",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 9448,
+    "price": 15462,
     "weight": 3.8,
-    "tier": 8.903204,
+    "tier": 10.1750889,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 56,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -29747,13 +29747,13 @@
     "name": "Tall Ottoman Hat",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.1,
-    "tier": 0.18080914,
+    "tier": 1.08485484,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 1,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30973,18 +30973,18 @@
     "name": "Fortified Mercenary Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 3048,
+    "price": 852,
     "weight": 9.275116,
-    "tier": 5.134692,
+    "tier": 3.52945781,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 24,
-      "armArmor": 12,
-      "legArmor": 13,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -31032,15 +31032,15 @@
     "name": "Visored Helmet over Laced Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 7936,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 8.489293,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -31072,13 +31072,13 @@
     "name": "Visored Helmet over Padded Cloth",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 7936,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 8.489293,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -31091,15 +31091,15 @@
     "name": "Visored Helmet over Padded Coif",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 5813,
+    "price": 7781,
     "weight": 3.018642,
-    "tier": 7.794133,
+    "tier": 8.443645,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -31392,18 +31392,18 @@
     "name": "Heavy Mail Hauberk",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 4516,
+    "price": 4405,
     "weight": 11.31695,
-    "tier": 5.739829,
+    "tier": 5.69983053,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 28,
-      "armArmor": 14,
-      "legArmor": 14,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -31607,13 +31607,13 @@
     "name": "Plated Helmet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 1310,
+    "price": 1036,
     "weight": 1.491529,
-    "tier": 5.11634445,
+    "tier": 4.775255,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 30,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -32136,9 +32136,9 @@
     "name": "Corseted Dress",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 52,
+    "price": 94,
     "weight": 0.3058741,
-    "tier": 0.6186578,
+    "tier": 1.49508965,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -32146,8 +32146,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -32180,13 +32180,13 @@
     "name": "Closed Knight Helmet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 4739,
+    "price": 8015,
     "weight": 2.740113,
-    "tier": 7.36641645,
+    "tier": 8.512302,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 45,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -32199,13 +32199,13 @@
     "name": "Knight Helmet with Bronze Faceguard",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 4413,
+    "price": 8095,
     "weight": 2.649286,
-    "tier": 7.222288,
+    "tier": 8.535432,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 44,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -32218,9 +32218,9 @@
     "name": "Silken Noble Dress",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 95,
     "weight": 0.2160417,
-    "tier": 0.5306698,
+    "tier": 1.50140727,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -32228,9 +32228,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -32240,9 +32240,9 @@
     "name": "Aproned Dress",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 95,
     "weight": 0.2160417,
-    "tier": 0.5306698,
+    "tier": 1.50140727,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -32250,9 +32250,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -32476,15 +32476,15 @@
     "name": "Western chain shoulders",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 366,
+    "price": 618,
     "weight": 0.55,
-    "tier": 3.764193,
+    "tier": 4.44859171,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 12,
-      "armArmor": 0,
+      "armArmor": 2,
       "legArmor": 0,
       "materialType": "Chainmail"
     },
@@ -32495,13 +32495,13 @@
     "name": "Crowned Helmet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 7936,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 8.489293,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -32514,13 +32514,13 @@
     "name": "Crowned Plate Helmet",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 5813,
+    "price": 7781,
     "weight": 3.018642,
-    "tier": 7.794133,
+    "tier": 8.443645,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -33255,18 +33255,18 @@
     "name": "White Tabard over Mail Hauberk",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 5298,
+    "price": 11527,
     "weight": 11.52848,
-    "tier": 6.003331,
+    "tier": 7.44931555,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 34,
-      "armArmor": 12,
-      "legArmor": 12,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -33499,15 +33499,15 @@
     "name": "Rural Head Wrap",
     "culture": "Vlandia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.009077156,
-    "tier": 0.181621924,
+    "tier": 1.08973157,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 1,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -33905,18 +33905,18 @@
     "name": "Woven Leather Vest",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 237,
+    "price": 85,
     "weight": 2.137492,
-    "tier": 2.30528474,
+    "tier": 1.39277613,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 11,
+      "bodyArmor": 6,
       "armArmor": 3,
-      "legArmor": 5,
+      "legArmor": 2,
       "materialType": "Leather"
     },
     "weapons": []

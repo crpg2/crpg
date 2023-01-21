@@ -98,7 +98,7 @@
   </Item>
   <Item id="crpg_mail_mitten" name="{=g51zVsKU}Mail Mittens" mesh="mail_mitten_c" culture="Culture.vlandia" weight="3.244425" difficulty="0" appearance="1.6" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="20" covers_hands="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor arm_armor="18" covers_hands="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags />
   </Item>
@@ -110,7 +110,7 @@
   </Item>
   <Item id="crpg_reinforced_leather_vambraces" name="{=2Ilvjlz9}Splint Vambraces" mesh="crossbow_armor_leather_hand_b" culture="Culture.vlandia" weight="3.244425" appearance="2" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="20" covers_hands="false" modifier_group="plate" material_type="Plate" />
+      <Armor arm_armor="18" covers_hands="false" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>

@@ -608,49 +608,49 @@
   </Item>
   <Item multiplayer_item="false" id="crpg_sackcloth_tunic" name="{=smKogclC}Sackcloth Tunic" mesh="walker_costume_d" subtype="body_armor" culture="Culture.vlandia" weight="0.2901902" difficulty="0" appearance="0.3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="3" leg_armor="1" arm_armor="1" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_cloth_tunic" name="{=OJIRIm4j}Simple Cloth Tunic" mesh="clothing_a" culture="Culture.vlandia" subtype="body_armor" weight="0.2160417" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="2" leg_armor="1" arm_armor="1" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_long_hemp_tunic" name="{=NUHzapSv}Long Hemp Tunic" mesh="casual_01" culture="Culture.vlandia" weight="0.6110581" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="4" leg_armor="2" arm_armor="2" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_long_woolen_tunic" name="{=U8QfF3Gw}Long Woolen Tunic" mesh="armor_woolen_tunic" culture="Culture.vlandia" subtype="body_armor" weight="0.2160417" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="2" leg_armor="1" arm_armor="1" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_vlandian_noble_woman_dress" name="{=pbxbCnVy}Silken Noble Dress" mesh="vlandian_noble_woman_dress" culture="Culture.vlandia" weight="0.2160417" appearance="4" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="2" leg_armor="1" arm_armor="1" has_gender_variations="false" covers_body="false" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="false" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_vlandian_woman_dress" name="{=qPm3xaiP}Aproned Dress" mesh="vlandian_woman_dress" culture="Culture.vlandia" weight="0.2160417" appearance="2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="2" leg_armor="1" arm_armor="1" has_gender_variations="false" covers_body="false" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="false" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_vlandian_corset_dress" name="{=4eSEJor3}Corseted Dress" mesh="vlandian_corset_dress" culture="Culture.vlandia" weight="0.3058741" appearance="3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="2" leg_armor="2" arm_armor="1" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_monk_robe" name="{=QuaE76ua}Scholar Robe" mesh="monk_robe" culture="Culture.vlandia" weight="0.5716428" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="5" leg_armor="2" arm_armor="1" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
@@ -662,31 +662,31 @@
   </Item>
   <Item id="crpg_padded_coat" name="{=QbfOXJas}Padded Footman Coat" subtype="body_armor" mesh="padded_coat_a" culture="Culture.vlandia" weight="4.379655" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="16" leg_armor="7" arm_armor="7" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_leather_coat_over_cloth" name="{=wKucIANJ}Leather Coat over Cloth" mesh="walker_costume_b" subtype="body_armor" culture="Culture.vlandia" weight="1.349235" difficulty="0" appearance="1" Type="BodyArmor" multiplayer_item="false">
     <ItemComponent>
-      <Armor body_armor="8" leg_armor="4" arm_armor="2" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_gambeson_b" name="{=aQN4Dlx2}Heavy Aketon" mesh="gambeson_b" culture="Culture.vlandia" weight="5.833124" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="18" leg_armor="9" arm_armor="9" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aketon" name="{=7b8Cwogx}Aketon" mesh="crossbow_armor" culture="Culture.vlandia" weight="2.077283" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="13" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_sleeveless_padded_short_coat" name="{=bz5lXkHS}Sleeveless Padded Short Coat" mesh="padded_coat_d" culture="Culture.vlandia" subtype="body_armor" weight="2.936653" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="15" leg_armor="7" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
@@ -704,66 +704,66 @@
   </Item>
   <Item id="crpg_leather_scale_armor" name="{=PL5SG9hI}Leather Scale Armor" mesh="vlandia_leather_scale_armor" subtype="body_armor" culture="Culture.vlandia" weight="3.889836" difficulty="0" appearance="1" Type="BodyArmor" multiplayer_item="false">
     <ItemComponent>
-      <Armor body_armor="16" leg_armor="6" arm_armor="6" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_woven_leather_vest" name="{=LgftnHPs}Woven Leather Vest" subtype="body_armor" mesh="archers_leather_vest" culture="Culture.vlandia" weight="2.137492" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="11" leg_armor="5" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_vlandia_chainmail" name="{=atSRQkCE}Heavy Mail Hauberk" mesh="vlandia_chainmail_a" culture="Culture.vlandia" weight="11.31695" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="28" leg_armor="14" arm_armor="14" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="38" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_hauberk" name="{=CZvGrvzY}Heavy Mail Shirt" subtype="body_armor" mesh="mail_hauberk" culture="Culture.vlandia" weight="10.33022" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="27" leg_armor="14" arm_armor="12" has_gender_variations="true" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
   <Item id="crpg_white_coat_over_mail" name="{=YxglkaXU}White Tabard over Mail Hauberk" subtype="body_armor" mesh="templar_a_white" culture="Culture.vlandia" weight="11.52848" difficulty="0" appearance="1.2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="34" leg_armor="12" arm_armor="12" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="13" arm_armor="18" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_red_coat_over_mail" name="{=aM2EPdXj}Red Tabard over Mail Hauberk" subtype="body_armor" mesh="templar_a_red" culture="Culture.vlandia" weight="11.52848" difficulty="0" appearance="1.2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="34" leg_armor="12" arm_armor="12" has_gender_variations="true" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="13" arm_armor="18" has_gender_variations="true" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
   </Item>
   <Item id="crpg_veteran_mercenary_armor" name="{=EezWSI6v}Fortified Mercenary Armor" subtype="body_armor" mesh="veteran_mercenary_armor" culture="Culture.vlandia" weight="9.275116" difficulty="0" appearance="1.4" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="24" leg_armor="13" arm_armor="12" has_gender_variations="true" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_mail_shirt" name="{=GzgUzrFY}Mail Shirt" mesh="armor_roman_mail_shirt" culture="Culture.vlandia" subtype="body_armor" weight="9.176619" difficulty="0" appearance="1.2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="25" leg_armor="13" arm_armor="11" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_plated_leather_coat" name="{=OvlG2Vu1}Rough Brigandine" subtype="body_armor" mesh="cop_a" culture="Culture.vlandia" weight="17.89237" difficulty="0" appearance="1.6" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="38" leg_armor="19" arm_armor="19" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="50" leg_armor="13" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_coat_of_plates_over_mail" name="{=PtfbqMeg}Brigandine over Mail" mesh="tunic_ironplate_armor" subtype="body_armor" culture="Culture.vlandia" weight="18.32399" difficulty="0" appearance="3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="50" leg_armor="16" arm_armor="14" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="52" leg_armor="23" arm_armor="18" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_banded_leather_over_mail" name="{=iAWzr8Q0}Banded Leather over Mail" mesh="vlandia_leather_armor" culture="Culture.vlandia" weight="8.2586" appearance="1.6" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="29" leg_armor="10" arm_armor="8" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -1393,79 +1393,79 @@
   </Item>
   <Item id="crpg_sa_1ChurburghTorso" name="Plate Cuirass" mesh="sa_1churburghtorso" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="26" difficulty="0" appearance="1" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="64" leg_armor="20" arm_armor="25" covers_body="true" modifier_group="Plate" material_type="Plate"/>
+			<Armor body_armor="64" leg_armor="25" arm_armor="25" covers_body="true" modifier_group="Plate" material_type="Plate"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>
 	<Item id="crpg_sa_brigandine1" name="red Brigandine with armpads" mesh="sa_brigandine1" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="14.89" difficulty="0" appearance="3" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="32" leg_armor="12" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate"/>
+			<Armor body_armor="38" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="plate" material_type="Plate"/>
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
 	<Item id="crpg_sa_brigandine2" name="blue Brigandine with armpads" mesh="sa_brigandine2" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="14.89" difficulty="0" appearance="3" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="32" leg_armor="12" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate"/>
+			<Armor body_armor="38" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="plate" material_type="Plate"/>
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
 	<Item id="crpg_sa_brigandine5" name="black Brigandine with armpads" mesh="sa_brigandine5" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="14.89" difficulty="0" appearance="3" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="32" leg_armor="12" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate"/>
+			<Armor body_armor="38" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="plate" material_type="Plate"/>
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
 	<Item id="crpg_sa_brigandine3" name="blue Brigandine" mesh="sa_brigandine3" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="11.66" difficulty="0" appearance="3" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="32" leg_armor="12" arm_armor="10" covers_body="true" modifier_group="plate" material_type="Plate"/>
+			<Armor body_armor="40" leg_armor="18" arm_armor="13" covers_body="true" modifier_group="plate" material_type="Plate"/>
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
 	<Item id="crpg_sa_brigandine4" name="red Brigandine" mesh="sa_brigandine4" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="11.66" difficulty="0" appearance="3" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="32" leg_armor="12" arm_armor="10" covers_body="true" modifier_group="plate" material_type="Plate"/>
+			<Armor body_armor="40" leg_armor="18" arm_armor="13" covers_body="true" modifier_group="plate" material_type="Plate"/>
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
 	<Item id="crpg_sa_brigandine6" name="black Brigandine" mesh="sa_brigandine6" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="11.66" difficulty="0" appearance="3" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="32" leg_armor="12" arm_armor="10" covers_body="true" modifier_group="plate" material_type="Plate"/>
+			<Armor body_armor="40" leg_armor="18" arm_armor="13" covers_body="true" modifier_group="plate" material_type="Plate"/>
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
 	<Item id="crpg_mail_with_tabbard1" name="Mail With Tabbard Pattern 1" mesh="mail_with_tabbard1" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="18.25" difficulty="0" appearance="1" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="36" leg_armor="15" arm_armor="20" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
+			<Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>
 	<Item id="crpg_mail_with_tabbard2" name="Mail With Tabbard Pattern 2" mesh="mail_with_tabbard2" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="18.25" difficulty="0" appearance="1" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="36" leg_armor="15" arm_armor="20" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
+			<Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>
 	<Item id="crpg_mail_with_tabbard3" name="Mail With Tabbard Pattern 3" mesh="mail_with_tabbard3" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="18.25" difficulty="0" appearance="1" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="36" leg_armor="15" arm_armor="20" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
+			<Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>
 	<Item id="crpg_mail_with_tabbard4" name="Mail With Tabbard Pattern 4" mesh="mail_with_tabbard4" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="18.25" difficulty="0" appearance="1" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="36" leg_armor="15" arm_armor="20" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
+			<Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>
 	<Item id="crpg_mail_with_tabbard5" name="Mail With Tabbard Pattern 5" mesh="mail_with_tabbard5" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="18.25" difficulty="0" appearance="1" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="36" leg_armor="15" arm_armor="20" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
+			<Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>
 	<Item id="crpg_mail_with_tabbard6" name="Mail With Tabbard Pattern 6" mesh="mail_with_tabbard6" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" weight="18.25" difficulty="0" appearance="1" Type="BodyArmor">
 		<ItemComponent>
-			<Armor body_armor="36" leg_armor="15" arm_armor="20" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
+			<Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="Chainmail" material_type="Chainmail"/>
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>

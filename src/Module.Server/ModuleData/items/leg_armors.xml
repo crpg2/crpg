@@ -110,19 +110,19 @@
   </Item>
   <Item id="crpg_mail_chausses" name="{=DoiwC1Qa}Mail Chausses" mesh="mail_chausses_a" culture="Culture.vlandia" weight="1.61804" appearance="1.6" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="22" covers_legs="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor leg_armor="24" covers_legs="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_strapped_mail_chausses" name="{=aYoIrpe0}Strapped Mail Chausses" mesh="mail_chausses_b" culture="Culture.vlandia" weight="1.729605" difficulty="0" appearance="1.6" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="23" covers_legs="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor leg_armor="24" covers_legs="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_leather_cavalier_boots" name="{=oEvhhNNR}Leather Cavalier Boots" mesh="cav_boots" culture="Culture.vlandia" weight="0.2304528" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="6" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="3" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
