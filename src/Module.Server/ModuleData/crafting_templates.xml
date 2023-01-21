@@ -286,9 +286,6 @@
       <UsablePiece piece_id="crpg_ridged_sabre_sword_t4_pommel" />
       <UsablePiece piece_id="crpg_seax_handle" />
       <UsablePiece piece_id="crpg_seax_pommel" />
-      <UsablePiece piece_id="crpg_sentinel_2hsword_blade" />
-      <UsablePiece piece_id="crpg_sentinel_2hsword_guard" />
-      <UsablePiece piece_id="crpg_sentinel_2hsword_pommel" />
       <UsablePiece piece_id="crpg_short_sword_t3_blade" />
       <UsablePiece piece_id="crpg_short_sword_t3_guard" />
       <UsablePiece piece_id="crpg_short_sword_t3_handle" />
@@ -652,10 +649,6 @@
       <UsablePiece piece_id="crpg_ridged_sabre_sword_t4_blade" />
       <UsablePiece piece_id="crpg_ridged_sabre_sword_t4_guard" />
       <UsablePiece piece_id="crpg_seax_pommel" />
-      <UsablePiece piece_id="crpg_sentinel_2hsword_blade" />
-      <UsablePiece piece_id="crpg_sentinel_2hsword_guard" />
-      <UsablePiece piece_id="crpg_sentinel_2hsword_handle" />
-      <UsablePiece piece_id="crpg_sentinel_2hsword_pommel" />
       <UsablePiece piece_id="crpg_short_sword_t3_blade" />
       <UsablePiece piece_id="crpg_short_sword_t3_guard" />
       <UsablePiece piece_id="crpg_short_sword_t3_pommel" />
@@ -707,10 +700,6 @@
       <UsablePiece piece_id="crpg_vlandia_2hsword_1_t5_guard" />
       <UsablePiece piece_id="crpg_vlandia_2hsword_1_t5_handle" />
       <UsablePiece piece_id="crpg_vlandia_2hsword_1_t5_pommel" />
-      <UsablePiece piece_id="crpg_vlandia_2hsword_2_t5_blade" />
-      <UsablePiece piece_id="crpg_vlandia_2hsword_2_t5_guard" />
-      <UsablePiece piece_id="crpg_vlandia_2hsword_2_t5_handle" />
-      <UsablePiece piece_id="crpg_vlandia_2hsword_2_t5_pommel" />
       <UsablePiece piece_id="crpg_vlandia_sword_1_t2_blade" />
       <UsablePiece piece_id="crpg_vlandia_sword_1_t2_guard" />
       <UsablePiece piece_id="crpg_vlandia_sword_1_t2_pommel" />
@@ -749,6 +738,38 @@
       <UsablePiece piece_id="crpg_wooden_sword_t1_blade" />
       <UsablePiece piece_id="crpg_wooden_sword_t1_guard" />
       <UsablePiece piece_id="crpg_wooden_sword_t1_pommel" />
+    </UsablePieces>
+  </CraftingTemplate>
+  <CraftingTemplate id="crpg_SideTwoHandedSword" item_type="TwoHandedWeapon" modifier_group="sword" item_holsters="sword_left_hip_3:sword_left_hip:sword_left_hip_2" piece_type_to_scale_holster_with="Blade" hidden_piece_types_on_holster="Blade" default_item_holster_position_offset="0,0,-0.1">
+    <PieceDatas>
+      <PieceData piece_type="Handle" build_order="0" />
+      <PieceData piece_type="Guard" build_order="1" />
+      <PieceData piece_type="Blade" build_order="2" />
+      <PieceData piece_type="Pommel" build_order="-1" />
+    </PieceDatas>
+    <WeaponDescriptions>
+      <WeaponDescription id="crpg_OneHandedBastardSword" />
+      <WeaponDescription id="crpg_TwoHandedSword" />
+      <WeaponDescription id="crpg_OneHandedBastardSwordAlternative" />
+    </WeaponDescriptions>
+    <StatsData>
+      <StatData stat_type="Weight" max_value="7.0" />
+      <StatData stat_type="WeaponReach" max_value="300" />
+      <StatData stat_type="ThrustSpeed" max_value="200" />
+      <StatData stat_type="SwingSpeed" max_value="200" />
+      <StatData stat_type="ThrustDamage" max_value="500" />
+      <StatData stat_type="SwingDamage" max_value="500" />
+      <StatData stat_type="Handling" max_value="200" />
+    </StatsData>
+    <UsablePieces>
+      <UsablePiece piece_id="crpg_vlandia_2hsword_2_t5_blade" />
+      <UsablePiece piece_id="crpg_vlandia_2hsword_2_t5_guard" />
+      <UsablePiece piece_id="crpg_vlandia_2hsword_2_t5_handle" />
+      <UsablePiece piece_id="crpg_vlandia_2hsword_2_t5_pommel" />
+      <UsablePiece piece_id="crpg_sentinel_2hsword_blade" />
+      <UsablePiece piece_id="crpg_sentinel_2hsword_guard" />
+      <UsablePiece piece_id="crpg_sentinel_2hsword_handle" />
+      <UsablePiece piece_id="crpg_sentinel_2hsword_pommel" />
     </UsablePieces>
   </CraftingTemplate>
   <CraftingTemplate id="crpg_Dagger" item_type="OneHandedWeapon" modifier_group="sword" item_holsters="sword_left_hip_3:sword_left_hip_2:sword_left_hip:sword_back" default_item_holster_position_offset="0,0,-0.1" use_weapon_as_holster_mesh="true">
@@ -895,7 +916,6 @@
       <UsablePiece piece_id="crpg_seax_guard" />
       <UsablePiece piece_id="crpg_seax_handle" />
       <UsablePiece piece_id="crpg_seax_pommel" />
-      <UsablePiece piece_id="crpg_sentinel_2hsword_pommel" />
       <UsablePiece piece_id="crpg_short_sword_t3_handle" />
       <UsablePiece piece_id="crpg_short_sword_t3_pommel" />
       <UsablePiece piece_id="crpg_simple_back_sword_t2_pommel" />
@@ -1035,7 +1055,6 @@
       <UsablePiece piece_id="crpg_seax_guard" />
       <UsablePiece piece_id="crpg_seax_handle" />
       <UsablePiece piece_id="crpg_seax_pommel" />
-      <UsablePiece piece_id="crpg_sentinel_2hsword_pommel" />
       <UsablePiece piece_id="crpg_short_sword_t3_handle" />
       <UsablePiece piece_id="crpg_sturgia_sword_1_t2_handle" />
       <UsablePiece piece_id="crpg_sturgia_sword_1_t2_pommel" />
@@ -2236,7 +2255,6 @@
       <UsablePiece piece_id="crpg_ridged_2hsword_t4_pommel" />
       <UsablePiece piece_id="crpg_ridged_sabre_sword_t4_pommel" />
       <UsablePiece piece_id="crpg_seax_pommel" />
-      <UsablePiece piece_id="crpg_sentinel_2hsword_pommel" />
       <UsablePiece piece_id="crpg_shishpar_mace_t4_blade" />
       <UsablePiece piece_id="crpg_shishpar_mace_t4_handle" />
       <UsablePiece piece_id="crpg_shishpar_mace_t4_pommel" />

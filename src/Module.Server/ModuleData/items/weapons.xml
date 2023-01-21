@@ -236,9 +236,9 @@
       <Piece id="crpg_avalanche_2haxe_handle" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sentinel_2hsword" name="{=XIRtmaQt}Longsword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_sentinel_2hsword" name="{=XIRtmaQt}Longsword" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
-      <Piece id="crpg_sentinel_2hsword_blade" Type="Blade" scale_factor="108" />
+      <Piece id="crpg_sentinel_2hsword_blade" Type="Blade" scale_factor="109" />
       <Piece id="crpg_sentinel_2hsword_guard" Type="Guard" />
       <Piece id="crpg_sentinel_2hsword_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_sentinel_2hsword_pommel" Type="Pommel" />
@@ -1442,7 +1442,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_battania_2hsword_4_t4" name="{=QLcP8bIs}Falx" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_battania_2hsword_4_t4_blade" Type="Blade" scale_factor="135" />
+      <Piece id="crpg_battania_2hsword_4_t4_blade" Type="Blade" scale_factor="129" />
       <Piece id="crpg_battania_2hsword_4_t4_guard" Type="Guard" scale_factor="105" />
       <Piece id="crpg_battania_2hsword_4_t4_handle" Type="Handle" scale_factor="105" />
       <Piece id="crpg_battania_2hsword_4_t4_pommel" Type="Pommel" scale_factor="105" />
@@ -1514,18 +1514,18 @@
   </CraftedItem>
   <CraftedItem id="crpg_vlandia_2hsword_1_t5" name="{=9ZiUK3JJ}Wide Fullered Broad Two Hander" crafting_template="crpg_TwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_vlandia_2hsword_1_t5_blade" Type="Blade" scale_factor="120" />
+      <Piece id="crpg_vlandia_2hsword_1_t5_blade" Type="Blade" scale_factor="124" />
       <Piece id="crpg_vlandia_2hsword_1_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_vlandia_2hsword_1_t5_handle" Type="Handle" scale_factor="100" />
       <Piece id="crpg_vlandia_2hsword_1_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_vlandia_2hsword_2_t5" name="{=VAO11FSu}Muhloord" crafting_template="crpg_TwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+  <CraftedItem id="crpg_vlandia_2hsword_2_t5" name="{=VAO11FSu}Thamaskene Steel Two Hander" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_vlandia_2hsword_2_t5_blade" Type="Blade" scale_factor="112" />
+      <Piece id="crpg_vlandia_2hsword_2_t5_blade" Type="Blade" scale_factor="117" />
       <Piece id="crpg_vlandia_2hsword_2_t5_guard" Type="Guard" scale_factor="100" />
       <Piece id="crpg_vlandia_2hsword_2_t5_handle" Type="Handle" scale_factor="110" />
-      <Piece id="crpg_vlandia_2hsword_2_t5_pommel" Type="Pommel" scale_factor="96" />
+      <Piece id="crpg_vlandia_2hsword_2_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_seax" name="{=3Pv0SlYj}Seax" crafting_template="crpg_Dagger" culture="Culture.sturgia" modifier_group="sword">

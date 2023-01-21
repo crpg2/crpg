@@ -243,9 +243,6 @@
       <AvailablePiece id="crpg_ridged_sabre_sword_t4_pommel" />
       <AvailablePiece id="crpg_seax_handle" />
       <AvailablePiece id="crpg_seax_pommel" />
-      <AvailablePiece id="crpg_sentinel_2hsword_blade" />
-      <AvailablePiece id="crpg_sentinel_2hsword_guard" />
-      <AvailablePiece id="crpg_sentinel_2hsword_pommel" />
       <AvailablePiece id="crpg_short_sword_t3_blade" />
       <AvailablePiece id="crpg_short_sword_t3_guard" />
       <AvailablePiece id="crpg_short_sword_t3_handle" />
@@ -524,6 +521,7 @@
       <AvailablePiece id="crpg_seax_pommel" />
       <AvailablePiece id="crpg_sentinel_2hsword_blade" />
       <AvailablePiece id="crpg_sentinel_2hsword_guard" />
+      <AvailablePiece id="crpg_sentinel_2hsword_handle" />
       <AvailablePiece id="crpg_sentinel_2hsword_pommel" />
       <AvailablePiece id="crpg_short_sword_t3_blade" />
       <AvailablePiece id="crpg_short_sword_t3_guard" />
@@ -758,9 +756,6 @@
       <AvailablePiece id="crpg_ridged_sabre_sword_t4_blade" />
       <AvailablePiece id="crpg_ridged_sabre_sword_t4_guard" />
       <AvailablePiece id="crpg_seax_pommel" />
-      <AvailablePiece id="crpg_sentinel_2hsword_blade" />
-      <AvailablePiece id="crpg_sentinel_2hsword_guard" />
-      <AvailablePiece id="crpg_sentinel_2hsword_pommel" />
       <AvailablePiece id="crpg_short_sword_t3_blade" />
       <AvailablePiece id="crpg_short_sword_t3_guard" />
       <AvailablePiece id="crpg_short_sword_t3_pommel" />
@@ -1037,10 +1032,6 @@
       <AvailablePiece id="crpg_narrow_sword_t3_guard" />
       <AvailablePiece id="crpg_narrow_sword_t3_handle" />
       <AvailablePiece id="crpg_narrow_sword_t3_pommel" />
-      <AvailablePiece id="crpg_northern_2hsword_t4_blade" />
-      <AvailablePiece id="crpg_northern_2hsword_t4_guard" />
-      <AvailablePiece id="crpg_northern_2hsword_t4_handle" />
-      <AvailablePiece id="crpg_northern_2hsword_t4_pommel" />
       <AvailablePiece id="crpg_peasant_hammer_2_t1_pommel" />
       <AvailablePiece id="crpg_pointed_falchion_sword_t4_blade" />
       <AvailablePiece id="crpg_pointed_falchion_sword_t4_guard" />
@@ -1235,7 +1226,6 @@
       <AvailablePiece id="crpg_sturgia_sword_4_t4_pommel" />
       <AvailablePiece id="crpg_bastard_sword_t2_pommel" />
       <AvailablePiece id="crpg_sturgia_sword_1_t2_pommel" />
-      <AvailablePiece id="crpg_sentinel_2hsword_pommel" />
       <AvailablePiece id="crpg_battania_2hsword_1_t2_pommel" />
       <AvailablePiece id="crpg_sturgia_sword_3_t3_pommel" />
       <AvailablePiece id="crpg_sturgia_sword_2_t3_pommel" />
@@ -1404,7 +1394,6 @@
       <AvailablePiece id="crpg_seax_guard" />
       <AvailablePiece id="crpg_seax_handle" />
       <AvailablePiece id="crpg_seax_pommel" />
-      <AvailablePiece id="crpg_sentinel_2hsword_pommel" />
       <AvailablePiece id="crpg_short_sword_t3_handle" />
       <AvailablePiece id="crpg_sturgia_sword_1_t2_handle" />
       <AvailablePiece id="crpg_sturgia_sword_1_t2_pommel" />
@@ -3221,7 +3210,6 @@
       <AvailablePiece id="crpg_ridged_2hsword_t4_pommel" />
       <AvailablePiece id="crpg_ridged_sabre_sword_t4_pommel" />
       <AvailablePiece id="crpg_seax_pommel" />
-      <AvailablePiece id="crpg_sentinel_2hsword_pommel" />
       <AvailablePiece id="crpg_shishpar_mace_t4_blade" />
       <AvailablePiece id="crpg_shishpar_mace_t4_handle" />
       <AvailablePiece id="crpg_shishpar_mace_t4_pommel" />

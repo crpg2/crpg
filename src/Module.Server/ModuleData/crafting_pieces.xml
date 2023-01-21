@@ -2975,7 +2975,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sentinel_2hsword_pommel" name="{=38vt2VVz}Broad Pommel" tier="2" piece_type="Pommel" mesh="sturgian_pommel_5" culture="Culture.sturgia" length="2.072" weight="0.10">
+  <CraftingPiece id="crpg_sentinel_2hsword_pommel" name="{=38vt2VVz}Broad Pommel" tier="2" piece_type="Pommel" mesh="sturgian_pommel_5" culture="Culture.sturgia" length="2.072" weight="0.8">
     <Materials>
       <Material id="Iron1" count="1" />
     </Materials>
@@ -3007,7 +3007,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_2hsword_1_t5_pommel" name="{=nZ5e678J}Simple Wheel Pommel" tier="3" piece_type="Pommel" mesh="vlandian_pommel_4" culture="Culture.vlandia" length="7" weight="0.2">
+  <CraftingPiece id="crpg_vlandia_2hsword_1_t5_pommel" name="{=nZ5e678J}Simple Wheel Pommel" tier="3" piece_type="Pommel" mesh="vlandian_pommel_4" culture="Culture.vlandia" length="7" weight="0.6">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
@@ -3134,7 +3134,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cleaver_2hsword_t3_pommel" name="{=RWm1h40B}Highland Pommel" tier="3" piece_type="Pommel" mesh="cleaver_pommel_2" culture="Culture.aserai" length="6.692" weight="0.24">
+  <CraftingPiece id="crpg_cleaver_2hsword_t3_pommel" name="{=RWm1h40B}Highland Pommel" tier="3" piece_type="Pommel" mesh="cleaver_pommel_2" culture="Culture.aserai" length="6.692" weight="1.02">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
@@ -3192,7 +3192,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_2hsword_4_t4_pommel" name="{=jZnVKvJN}Three Branched Pommel" tier="4" piece_type="Pommel" mesh="battania_pommel_9" culture="Culture.battania" length="5.4" weight="0.15">
+  <CraftingPiece id="crpg_battania_2hsword_4_t4_pommel" name="{=jZnVKvJN}Three Branched Pommel" tier="4" piece_type="Pommel" mesh="battania_pommel_9" culture="Culture.battania" length="5.4" weight="0.65">
     <BuildData next_piece_offset="-0.3" />
     <Materials>
       <Material id="Iron4" count="1" />
@@ -3440,12 +3440,12 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_2hsword_2_t5_pommel" name="{=ugQrq53t}Fan Pommel" tier="5" piece_type="Pommel" mesh="vlandian_pommel_9" culture="Culture.vlandia" length="5.275" weight="0.27">
+  <CraftingPiece id="crpg_vlandia_2hsword_2_t5_pommel" name="{=ugQrq53t}Fan Pommel" tier="5" piece_type="Pommel" mesh="vlandian_pommel_9" culture="Culture.vlandia" length="5.275" weight="0.74">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-    <CraftingPiece id="crpg_heavy_executionner_2sword_pommel" name="Heavy Executionner Pommel" tier="5" piece_type="Pommel" mesh="vlandian_pommel_9" culture="Culture.vlandia" length="5.275" weight="0.4">
+    <CraftingPiece id="crpg_heavy_executionner_2sword_pommel" name="Heavy Executionner Pommel" tier="5" piece_type="Pommel" mesh="vlandian_pommel_9" culture="Culture.vlandia" length="5.275" weight="0.5">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
@@ -3551,7 +3551,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sentinel_2hsword_handle" name="{=bCCYhnbY}Green Leather Grip" tier="3" piece_type="Handle" mesh="aserai_grip_10" culture="Culture.aserai" length="30.9" weight="0.35" item_holster_pos_shift="0,0,-0.02">
+  <CraftingPiece id="crpg_sentinel_2hsword_handle" name="{=bCCYhnbY}Green Leather Grip" tier="3" piece_type="Handle" mesh="aserai_grip_10" culture="Culture.aserai" length="30.9" weight="0.15" item_holster_pos_shift="0,0,-0.02">
     <BuildData piece_offset="-6.75" previous_piece_offset="0.1" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -3575,7 +3575,7 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_2hsword_1_t5_handle" name="{=aVBGVt7N}Tapered Horn Grip" tier="5" piece_type="Handle" mesh="vlandian_grip_8" culture="Culture.vlandia" length="33.2" weight="0.2" item_holster_pos_shift="0,0,-0.02">
+  <CraftingPiece id="crpg_vlandia_2hsword_1_t5_handle" name="{=aVBGVt7N}Tapered Horn Grip" tier="5" piece_type="Handle" mesh="vlandian_grip_8" culture="Culture.vlandia" length="33.2" weight="0.4" item_holster_pos_shift="0,0,-0.02">
     <BuildData piece_offset="-6.75" previous_piece_offset="0.358" />
     <Materials>
       <Material id="Iron5" count="2" />
@@ -3672,7 +3672,7 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_2hsword_2_t5_handle" name="{=aVBGVt7N}Tapered Horn Grip" tier="4" piece_type="Handle" mesh="vlandian_grip_7" culture="Culture.vlandia" length="30.3" weight="0.34" item_holster_pos_shift="0,0,-0.02">
+  <CraftingPiece id="crpg_vlandia_2hsword_2_t5_handle" name="{=aVBGVt7N}Tapered Horn Grip" tier="4" piece_type="Handle" mesh="vlandian_grip_7" culture="Culture.vlandia" length="30.3" weight="0.1" item_holster_pos_shift="0,0,-0.02">
     <BuildData piece_offset="-6.75" previous_piece_offset="0.358" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -3702,7 +3702,7 @@
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cleaver_2hsword_t3_handle" name="{=oGPHQt1J}Tall Cleaver Grip Two Handed" tier="3" piece_type="Handle" mesh="cleaver_grip_8" culture="Culture.aserai" length="26.4" weight="0.165">
+  <CraftingPiece id="crpg_cleaver_2hsword_t3_handle" name="{=oGPHQt1J}Tall Cleaver Grip Two Handed" tier="3" piece_type="Handle" mesh="cleaver_grip_8" culture="Culture.aserai" length="26.4" weight="0.65">
     <BuildData piece_offset="-2.18" previous_piece_offset="0.2" next_piece_offset="0.2" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -4389,7 +4389,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cleaver_2hsword_t3_guard" name="{=Hj151a5b}Tapered Crescent Guard" tier="1" piece_type="Guard" mesh="cleaver_guard_1" length="0.523" weight="0.246">
+  <CraftingPiece id="crpg_cleaver_2hsword_t3_guard" name="{=Hj151a5b}Tapered Crescent Guard" tier="1" piece_type="Guard" mesh="cleaver_guard_1" length="0.523" weight="0.546">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="2" />
     <Materials>
@@ -4746,7 +4746,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_2hsword_2_t5_guard" name="{=az6t2tOm}Ridged Western Guard" tier="5" piece_type="Guard" mesh="vlandian_guard_8" culture="Culture.vlandia" length="1.42" weight="0.68">
+  <CraftingPiece id="crpg_vlandia_2hsword_2_t5_guard" name="{=az6t2tOm}Ridged Western Guard" tier="5" piece_type="Guard" mesh="vlandian_guard_8" culture="Culture.vlandia" length="1.42" weight="0.38">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="5" />
     <Materials>
@@ -4760,7 +4760,7 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_executionner_2sword_guard" name="Heavy Executionner Guard" tier="5" piece_type="Guard" mesh="vlandian_guard_8" culture="Culture.vlandia" length="1.42" weight="0.375">
+  <CraftingPiece id="crpg_heavy_executionner_2sword_guard" name="Heavy Executionner Guard" tier="5" piece_type="Guard" mesh="vlandian_guard_8" culture="Culture.vlandia" length="1.42" weight="0.33">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="5" />
     <Materials>
@@ -4837,7 +4837,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sentinel_2hsword_guard" name="{=yFm0f44p}Pointed Western Guard" tier="3" piece_type="Guard" mesh="vlandian_guard_7" culture="Culture.vlandia" length="1.844" weight="0.45">
+  <CraftingPiece id="crpg_sentinel_2hsword_guard" name="{=yFm0f44p}Pointed Western Guard" tier="3" piece_type="Guard" mesh="vlandian_guard_7" culture="Culture.vlandia" length="1.844" weight="0.55">
     <BuildData next_piece_offset="0.4" />
     <StatContributions armor_bonus="5" />
     <Materials>
@@ -4851,7 +4851,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_2hsword_4_t4_guard" name="{=bM8kSewD}Ridged Northern Guard" tier="1" piece_type="Guard" mesh="sturgian_guard_6" culture="Culture.sturgia" length="1.73" weight="0.5" is_default="true">
+  <CraftingPiece id="crpg_battania_2hsword_4_t4_guard" name="{=bM8kSewD}Ridged Northern Guard" tier="1" piece_type="Guard" mesh="sturgian_guard_6" culture="Culture.sturgia" length="1.73" weight="0.6" is_default="true">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="2" />
     <Materials>
@@ -5268,7 +5268,7 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cleaver_2hsword_t3_blade" name="{=gTzMtKYu}Star Falchion Blade Head" tier="3" piece_type="Blade" mesh="cleaver_blade_4" culture="Culture.vlandia" length="96.8" weight="2.05" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_cleaver_2hsword_t3_blade" name="{=gTzMtKYu}Star Falchion Blade Head" tier="3" piece_type="Blade" mesh="cleaver_blade_4" culture="Culture.vlandia" length="96.8" weight="0.50" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
@@ -5324,7 +5324,7 @@
       <Material id="Iron2" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_2hsword_4_t4_blade" name="{=IUlApNGp}Long Falx Blade" tier="4" piece_type="Blade" mesh="battania_blade_6" culture="Culture.battania" length="95.6" weight="1.525" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_battania_2hsword_4_t4_blade" name="{=IUlApNGp}Long Falx Blade" tier="4" piece_type="Blade" mesh="battania_blade_6" culture="Culture.battania" length="95.6" weight="0.30" excluded_item_usage_features="thrust">
     <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
@@ -5343,10 +5343,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_battania_2hsword_3_t3_blade" name="{=GXhZ8NKv}Wide Fullered Northern Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_3" culture="Culture.sturgia" length="87.3" weight="0.65">
+  <CraftingPiece id="crpg_battania_2hsword_3_t3_blade" name="{=GXhZ8NKv}Wide Fullered Northern Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_3" culture="Culture.sturgia" length="87.3" weight="0.75">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_3_scabbard_3">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5415,10 +5415,10 @@
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_executionner_2sword_blade" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="0.56">
+  <CraftingPiece id="crpg_heavy_executionner_2sword_blade" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="0.20">
     <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_5_scabbard_5">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
-      <Swing damage_type="Cut" damage_factor="4.4" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5858,10 +5858,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_sentinel_2hsword_blade" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="1.35">
+  <CraftingPiece id="crpg_sentinel_2hsword_blade" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="0.25">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_7_scabbard_7">
-      <Thrust damage_type="Pierce" damage_factor="1.4" />
-      <Swing damage_type="Cut" damage_factor="3.5" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -5891,19 +5891,19 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_2hsword_2_t5_blade" name="{=mak3naEe}Wide Fullered Broad Two Hander Blade" tier="5" piece_type="Blade" mesh="vlandian_blade_3" culture="Culture.vlandia" length="99.4" weight="1.40">
-    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.8" />
+  <CraftingPiece id="crpg_vlandia_2hsword_2_t5_blade" name="{=mak3naEe}Wide Fullered Broad Two Hander Blade" tier="5" piece_type="Blade" mesh="vlandian_blade_3" culture="Culture.vlandia" length="99.4" weight="0.10">
+    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_1_scabbard_2">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
       <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_vlandia_2hsword_1_t5_blade" name="{=mak3naEe}Wide Fullered Broad Two Hander Blade" tier="5" piece_type="Blade" mesh="vlandian_blade_3" culture="Culture.vlandia" length="99.4" weight="1.15">
+  <CraftingPiece id="crpg_vlandia_2hsword_1_t5_blade" name="{=mak3naEe}Wide Fullered Broad Two Hander Blade" tier="5" piece_type="Blade" mesh="vlandian_blade_3" culture="Culture.vlandia" length="99.4" weight="0.70">
     <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="1.2" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="4" />
@@ -6027,29 +6027,29 @@
 <Material id="Iron3" count="4"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_dawn_blade" name="{=}Dawn Blade" tier="4" piece_type="Blade" mesh="dawn_blade" culture="Culture.battania" length="96.9" weight="1.15">
+<CraftingPiece id="crpg_dawn_blade" name="{=}Dawn Blade" tier="4" piece_type="Blade" mesh="dawn_blade" culture="Culture.battania" length="96.9" weight="0.15">
 <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
 <Thrust damage_type="Pierce" damage_factor="2.8"/>
-<Swing damage_type="Cut" damage_factor="3.1"/>
+<Swing damage_type="Cut" damage_factor="3.8"/>
 </BladeData>
 <Materials>
 <Material id="Iron5" count="4"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_dawn_pommel" name="{=}Dawn Pommel" tier="4" piece_type="Pommel" mesh="dawn_pommel" culture="Culture.battania" length="3.69" weight="0.15">
+<CraftingPiece id="crpg_dawn_pommel" name="{=}Dawn Pommel" tier="4" piece_type="Pommel" mesh="dawn_pommel" culture="Culture.battania" length="3.69" weight="0.29">
 <BuildData next_piece_offset="4"/>
 <Materials>
 <Material id="Iron4" count="1"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_dawn_guard" name="{=}Dawn Guard" tier="5" piece_type="Guard" mesh="dawn_guard" culture="Culture.battania" length="5.65" weight="0.15">
+<CraftingPiece id="crpg_dawn_guard" name="{=}Dawn Guard" tier="5" piece_type="Guard" mesh="dawn_guard" culture="Culture.battania" length="5.65" weight="0.30">
 <BuildData next_piece_offset="11"/>
 <StatContributions armor_bonus="3"/>
 <Materials>
 <Material id="Iron5" count="1"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_dawn_handle" name="{=}Dawn Handle" tier="3" piece_type="Handle" mesh="dawn_handle" culture="Culture.khuzait" length="19.2" weight="1">
+<CraftingPiece id="crpg_dawn_handle" name="{=}Dawn Handle" tier="3" piece_type="Handle" mesh="dawn_handle" culture="Culture.khuzait" length="19.2" weight="0.60">
 <BuildData piece_offset="-5" previous_piece_offset="-2.0" next_piece_offset="2"/>
 <Materials>
 <Material id="Iron3" count="1"/>
@@ -6057,7 +6057,7 @@
 </CraftingPiece>
 <CraftingPiece id="crpg_winter_blade" name="{=}Ice Blade" tier="4" piece_type="Blade" mesh="ice_blade" culture="Culture.battania" length="81.1" weight="1.03">
 <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-<Thrust damage_type="Pierce" damage_factor="2.0"/>
+<Thrust damage_type="Pierce" damage_factor="2.1"/>
 <Swing damage_type="Cut" damage_factor="3.9"/>
 </BladeData>
 <Materials>
@@ -6114,15 +6114,15 @@
 <Material id="Wood" count="1"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_barmace_blade" name="{=}Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.54" excluded_item_usage_features="thrust">
+<CraftingPiece id="crpg_barmace_blade" name="{=}Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.25" excluded_item_usage_features="thrust">
 <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-<Swing damage_type="Blunt" damage_factor="3.0"/>
+<Swing damage_type="Blunt" damage_factor="2.7"/>
 </BladeData>
 <Materials>
 <Material id="Iron5" count="4"/>
 </Materials>
 </CraftingPiece>
-<CraftingPiece id="crpg_barmace_handle" name="{=}Barmace Handle" tier="3" piece_type="Handle" mesh="barmace_handle" culture="Culture.khuzait" length="24.7" weight="0.1">
+<CraftingPiece id="crpg_barmace_handle" name="{=}Barmace Handle" tier="3" piece_type="Handle" mesh="barmace_handle" culture="Culture.khuzait" length="24.7" weight=".001">
 <BuildData piece_offset="-5" previous_piece_offset="0.0" next_piece_offset="18"/>
 <Materials>
 <Material id="Iron3" count="1"/>
@@ -6307,7 +6307,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_claymore_blade" name="{=}Claymore Blade" tier="4" piece_type="Blade" mesh="claymore_blade" culture="Culture.battania" length="111" weight="0.05">
+  <CraftingPiece id="crpg_claymore_blade" name="{=}Claymore Blade" tier="4" piece_type="Blade" mesh="claymore_blade" culture="Culture.battania" length="111" weight="0.40">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Thrust damage_type="Pierce" damage_factor="2.6"/>
       <Swing damage_type="Cut" damage_factor="4.2"/>
@@ -6322,7 +6322,7 @@
       <Material id="Iron4" count="1"/>
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_claymore_guard" name="{=}Claymore Guard" tier="5" piece_type="Guard" mesh="claymore_guard" culture="Culture.battania" length="14.5" weight="0.6">
+  <CraftingPiece id="crpg_claymore_guard" name="{=}Claymore Guard" tier="5" piece_type="Guard" mesh="claymore_guard" culture="Culture.battania" length="14.5" weight="0.40">
     <BuildData next_piece_offset="15"/>
     <StatContributions armor_bonus="3"/>
     <Materials>
