@@ -1522,9 +1522,9 @@
     "name": "Heavy Horsemans Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 5858,
-    "weight": 1.29,
-    "tier": 8.708826,
+    "price": 3967,
+    "weight": 1.68,
+    "tier": 6.971011,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -1534,19 +1534,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 111,
-        "balance": 0.29,
-        "handling": 77,
+        "length": 91,
+        "balance": 0.36,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 25,
+        "thrustSpeed": 89,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 78
+        "swingSpeed": 80
       }
     ]
   },
@@ -4497,9 +4497,9 @@
     "name": "Highland Spiked Club",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3610,
-    "weight": 1.82,
-    "tier": 6.598555,
+    "price": 3578,
+    "weight": 2.19,
+    "tier": 6.56430149,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4509,19 +4509,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 93,
-        "balance": 0.31,
-        "handling": 83,
+        "length": 92,
+        "balance": 0.38,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 27,
+        "thrustSpeed": 85,
+        "swingDamage": 25,
         "swingDamageType": "Pierce",
-        "swingSpeed": 79
+        "swingSpeed": 81
       }
     ]
   },
@@ -10061,9 +10061,9 @@
     "name": "Steel Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6376,
-    "weight": 1.71,
-    "tier": 9.133195,
+    "price": 6502,
+    "weight": 2.31,
+    "tier": 9.23461151,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10073,19 +10073,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 77,
-        "balance": 0.59,
-        "handling": 77,
+        "length": 93,
+        "balance": 0.39,
+        "handling": 78,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 88,
+        "thrustSpeed": 84,
         "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 81
       }
     ]
   },
@@ -11028,9 +11028,9 @@
     "name": "Light Royal Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4487,
+    "price": 4142,
     "weight": 2.42,
-    "tier": 7.483815,
+    "tier": 7.146285,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11040,8 +11040,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 70,
-        "balance": 0.44,
+        "length": 71,
+        "balance": 0.42,
         "handling": 86,
         "bodyArmor": 0,
         "flags": [
@@ -11052,7 +11052,7 @@
         "thrustSpeed": 83,
         "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 82
       }
     ]
   },
@@ -16693,9 +16693,9 @@
     "name": "Knight's Fall",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5642,
-    "weight": 1.8,
-    "tier": 8.525591,
+    "price": 4518,
+    "weight": 1.68,
+    "tier": 7.51335,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16705,19 +16705,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 82,
-        "balance": 0.56,
-        "handling": 78,
+        "length": 81,
+        "balance": 0.5,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 25,
+        "thrustSpeed": 89,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 85
       }
     ]
   },
@@ -25693,9 +25693,9 @@
     "name": "Light Shishpar Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 176,
-    "weight": 1.67,
-    "tier": 0.6927759,
+    "price": 1535,
+    "weight": 1.99,
+    "tier": 3.92730975,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25705,19 +25705,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 46,
-        "balance": 1.0,
-        "handling": 108,
+        "length": 57,
+        "balance": 0.84,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 90,
-        "swingDamage": 10,
+        "thrustSpeed": 87,
+        "swingDamage": 17,
         "swingDamageType": "Blunt",
-        "swingSpeed": 104
+        "swingSpeed": 95
       }
     ]
   },
@@ -31692,9 +31692,9 @@
     "name": "Pernach",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 7307,
-    "weight": 2.14,
-    "tier": 9.85635948,
+    "price": 6852,
+    "weight": 2.18,
+    "tier": 9.509568,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31704,9 +31704,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 98,
-        "balance": 0.23,
-        "handling": 78,
+        "length": 89,
+        "balance": 0.4,
+        "handling": 74,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -31716,7 +31716,7 @@
         "thrustSpeed": 85,
         "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 76
+        "swingSpeed": 81
       }
     ]
   },
