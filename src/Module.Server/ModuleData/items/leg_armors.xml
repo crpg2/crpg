@@ -2,13 +2,13 @@
 <Items>
   <Item id="crpg_southern_moccasins" name="{=SxqSJK8h}Moccasins" mesh="aserai_female_costume_shoe" culture="Culture.aserai" weight="0.04435067" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="2" covers_legs="false" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor leg_armor="3" covers_legs="false" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_wrapped_shoes" name="{=4YxbZlbi}Wrapped Shoes" mesh="wrapped_shoes" culture="Culture.aserai" weight="0.1254426" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="4" covers_legs="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor leg_armor="3" covers_legs="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>

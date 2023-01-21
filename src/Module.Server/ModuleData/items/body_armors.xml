@@ -2,247 +2,247 @@
 <Items>
   <Item id="crpg_long_desert_robe" name="{=bKBa7ahF}Long Simple Robe" mesh="aserai_tunic_long" culture="Culture.aserai" weight="0.3058741" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="2" leg_armor="2" arm_armor="1" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_layered_robe" name="{=fk42FxCE}Layered Robe" lod_atlas_index="6" mesh="aserai_robe_c" culture="Culture.aserai" weight="0.5716428" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="5" leg_armor="2" arm_armor="1" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_desert_robe" name="{=K2JbjKLG}Simple Kaftan" subtype="body_armor" mesh="aserai_tunic_long" culture="Culture.aserai" weight="0.5716428" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="5" leg_armor="2" arm_armor="1" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aserai_tunic_waistcoat" name="{=whiQg21b}Luxury Kaftan" mesh="aserai_tunic_waistcoat" culture="Culture.aserai" weight="1.221603" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="7" leg_armor="4" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_thick_sleeved_robe" name="{=MKT5IzWm}Thick Sleeved Robe" mesh="aserai_robe_b" culture="Culture.aserai" weight="0.842865" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="5" leg_armor="3" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_villager_female_dress" name="{=tuEQnm2r}Villager Short Dress" mesh="aserai_villager_female_dress" culture="Culture.aserai" weight="0.2160417" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="2" leg_armor="1" arm_armor="1" has_gender_variations="false" covers_body="false" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="false" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_fine_southern_dress" name="{=atu9tCq8}Tailored Dress" mesh="aserai_female_costume" culture="Culture.aserai" weight="0.7133473" appearance="3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="5" leg_armor="2" arm_armor="2" has_gender_variations="false" covers_body="false" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="false" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_female_civil_a" name="{=qi1lkMqk}Feminine Kaftan" mesh="aserai_female_civil_a" culture="Culture.aserai" weight="1.002803" appearance="2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="5" leg_armor="3" arm_armor="3" has_gender_variations="false" covers_body="true" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_female_civil_b" name="{=i6QMSiut}Kaftan with Waistband" mesh="aserai_female_civil_b" culture="Culture.aserai" weight="0.388297" appearance="3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="3" leg_armor="2" arm_armor="1" has_gender_variations="false" covers_body="true" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" body_mesh_type="shoulders" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_civil_a" name="{=HXNb6Cqz}Luxury Kaftan with Waistband" mesh="aserai_civil_a" culture="Culture.aserai" weight="1.728333" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="8" leg_armor="4" arm_armor="4" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_civil_b" name="{=v4THTk5O}Kaftan with Leather Belt" mesh="aserai_civil_b" culture="Culture.aserai" weight="0.842865" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="5" leg_armor="3" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_civil_c" name="{=CBUdkmIw}Colored Kaftan" mesh="aserai_civil_c" culture="Culture.aserai" weight="0.6110581" appearance="2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="4" leg_armor="2" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_civil_d" name="{=SW3lkPHe}Colored Bisht" mesh="aserai_civil_d" culture="Culture.aserai" weight="0.7133473" appearance="0.6" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="5" leg_armor="2" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_civil_e" name="{=FAPHmzxQ}Thawb" mesh="aserai_civil_e" culture="Culture.aserai" weight="0.6110581" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="4" leg_armor="2" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_civil_f" name="{=bLgnonyc}Simple Peasant Robe" mesh="aserai_civil_f" culture="Culture.aserai" weight="0.7133473" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="5" leg_armor="2" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_tassled_southern_robes" name="{=cMdtLfGB}Tassled Robes" mesh="aserai_thobe" culture="Culture.aserai" weight="0.8207818" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="2" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_eastern_silk_clothing" name="{=XiwTesky}Silk Kaftan" mesh="aserai_crowd_costume" culture="Culture.aserai" weight="1.122585" appearance="4" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_short_padded_robe" name="{=QzAvlan7}Short Padded Robe" subtype="body_armor" lod_atlas_index="11" mesh="sarranid_gambeson_v3" culture="Culture.aserai" weight="2.574646" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="14" leg_armor="6" arm_armor="2" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_desert_padded_cloth" name="{=wWqavjat}Light Long Padded Armor" lod_atlas_index="4" mesh="aserai_fabric_armor" culture="Culture.aserai" weight="4.341292" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="16" leg_armor="8" arm_armor="6" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_studded_leather_coat" name="{=XkL1Re8b}Studded Leather Coat" lod_atlas_index="12" mesh="bandit_leather_a" culture="Culture.aserai" weight="1.784997" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="10" leg_armor="5" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_leather_strips_over_padded_robe" name="{=iVataLxL}Leather Strips over Padded Robe" lod_atlas_index="9" subtype="body_armor" mesh="sarranid_gambeson_v1" culture="Culture.aserai" weight="8.449179" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="36" leg_armor="6" arm_armor="7" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="38" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_robe_c_chain" name="{=gSWtpl8a}Robe over Mail Shirt" lod_atlas_index="5" mesh="aserai_robe_c_chain" culture="Culture.aserai" weight="9.225823" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="25" leg_armor="12" arm_armor="12" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Chainmail" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_long_padded_robe" name="{=0SsLGsXk}Long Padded Robe" lod_atlas_index="10" mesh="sarranid_gambeson_v2" culture="Culture.aserai" weight="2.770139" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="14" leg_armor="7" arm_armor="2" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aserai_horseman_armor" name="{=NTaol1uQ}Ring Mail" subtype="body_armor" mesh="aserai_horseman" lod_atlas_index="2" culture="Culture.aserai" weight="1.900137" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="13" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_ringed_desert_armor" name="{=7EAEIUIY}Heavy Ring Mail" mesh="aserai_bigchain_armor" culture="Culture.aserai" weight="6.217651" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="20" leg_armor="10" arm_armor="8" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_archer_armor" name="{=2cSOn9qb}Gambeson over Mail Armor" lod_atlas_index="1" subtype="body_armor" mesh="aserai_archer_armor" culture="Culture.aserai" weight="9.722662" difficulty="0" appearance="2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="29" leg_armor="15" arm_armor="8" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="13" arm_armor="18" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_desert_robe_over_mail" name="{=k71X3WNK}Robe over Mail Hauberk" lod_atlas_index="8" mesh="aserai_chain_tunic_a" culture="Culture.aserai" weight="9.225823" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="25" leg_armor="12" arm_armor="12" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_desert_lamellar" name="{=xlLoyxXT}Light Lamellar Armor" subtype="body_armor" mesh="aserai_cavalry_armor" culture="Culture.aserai" weight="12.17084" difficulty="0" appearance="1.5" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="48" arm_armor="14" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="50" leg_armor="13" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_sturgia_cavalry_armor" name="{=ALbtxxyC}Cavalry Lamellar Armor" subtype="body_armor" mesh="sturgia_cavalry_armor" culture="Culture.aserai" weight="17.09994" difficulty="0" appearance="1.5" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="46" leg_armor="16" arm_armor="14" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="23" arm_armor="18" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_desert_scale_armor" name="{=VkRIefyW}Luxury Scale Armor" lod_atlas_index="3" mesh="aserai_scale_armor_b" culture="Culture.aserai" weight="20.0206" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="47" leg_armor="23" arm_armor="14" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="23" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_stitched_leather_over_mail" name="{=omLMiX89}Stitched Leather over Mail" lod_atlas_index="7" mesh="aserai_plated_skirt" culture="Culture.aserai" weight="13.48989" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="36" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="38" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_southern_lamellar_armor" name="{=3lauB1HH}Bronze Lamellar Vest over Gambeson" subtype="body_armor" mesh="sturgia_costume_i_yellow" culture="Culture.aserai" weight="7.603107" difficulty="0" appearance="1.5" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="37" leg_armor="8" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="40" leg_armor="18" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_armor_02" name="{=eDMDUUfw}Aserai Chain Mail" lod_atlas_index="3" mesh="aserai_armor_02" culture="Culture.aserai" weight="9.873398" appearance="2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="25" leg_armor="13" arm_armor="13" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="38" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_armor_02_b" name="{=dAgxHUsJ}Southern Decorated Chain Mail" lod_atlas_index="3" mesh="aserai_armor_02_b" culture="Culture.aserai" weight="10.3814" appearance="4" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="27" leg_armor="13" arm_armor="13" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="18" arm_armor="13" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_scale_armor_on_cloth" name="{=JbV0WoO7}Mastercrafted Southern Scale Mail" lod_atlas_index="3" mesh="aserai_scale_armor_on_cloth" culture="Culture.aserai" weight="8.211183" appearance="6" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="35" leg_armor="6" arm_armor="7" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_full_scale_armor_on_chain" name="{=U7WGaQ45}Mastercrafted Southern Scale over Chain Hauberk" lod_atlas_index="3" mesh="aserai_full_scale_armor_on_chain" culture="Culture.aserai" weight="23.02404" appearance="7" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="51" leg_armor="25" arm_armor="16" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="64" leg_armor="25" arm_armor="25" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_scale_armor_on_chain" name="{=2VZ10uRa}Mastercrafted Southern Scale over Chain Mail" lod_atlas_index="3" mesh="aserai_scale_armor_on_chain" culture="Culture.aserai" weight="19.51269" appearance="6" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="51" leg_armor="16" arm_armor="16" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="52" leg_armor="18" arm_armor="23" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_chain_plate_armor_a" name="{=YTST4rdh}Southern Reinforced Mail Armor" lod_atlas_index="3" mesh="aserai_chain_plate_armor_a" culture="Culture.aserai" weight="13.54583" appearance="4" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="31" leg_armor="16" arm_armor="16" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_chain_plate_armor_b" name="{=EvW5Xzt2}Southern Reinforced Sleeveless Mail Armor" lod_atlas_index="3" mesh="aserai_chain_plate_armor_b" culture="Culture.aserai" weight="9.823068" appearance="6" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="31" leg_armor="16" arm_armor="6" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="18" arm_armor="13" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_chain_plate_armor_c" name="{=Mm1QAtPx}Southern Reinforced Mail Vest" lod_atlas_index="3" mesh="aserai_chain_plate_armor_c" culture="Culture.aserai" weight="6.965938" appearance="4" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="31" leg_armor="6" arm_armor="6" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_chain_plate_armor_d" name="{=zVieddxB}Southern Reinforced Short Mail Armor" lod_atlas_index="3" mesh="aserai_chain_plate_armor_d" culture="Culture.aserai" weight="10.33022" appearance="4" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="31" leg_armor="6" arm_armor="16" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="38" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -1369,7 +1369,7 @@
   </Item>
   <Item id="crpg_cloth_apron" name="{=2WQTvOLF}Cloth Apron" mesh="costume_merchant_v2" culture="Culture.neutral_culture" weight="1.507872" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="8" leg_armor="5" arm_armor="2" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
@@ -1381,7 +1381,7 @@
   </Item>
   <Item id="crpg_merchants_fur_coat" name="{=2KQbV4To}Merchant Fur Coat" mesh="costume_merchant_v4" culture="Culture.neutral_culture" weight="1.728333" appearance="0.7" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="8" leg_armor="4" arm_armor="4" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>

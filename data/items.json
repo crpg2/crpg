@@ -42,15 +42,15 @@
     "name": "Scale Shoulder Guards",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 2031,
+    "price": 5489,
     "weight": 2.54253,
-    "tier": 6.31143475,
+    "tier": 8.326851,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 14,
-      "armArmor": 7,
+      "bodyArmor": 22,
+      "armArmor": 6,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -61,15 +61,15 @@
     "name": "Scale Pauldrons",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 249,
+    "price": 488,
     "weight": 1.050175,
-    "tier": 3.295497,
+    "tier": 4.133335,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 8,
+      "bodyArmor": 8,
+      "armArmor": 5,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -80,15 +80,15 @@
     "name": "Brass Scale Pauldrons",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 191,
+    "price": 499,
     "weight": 0.8876131,
-    "tier": 2.97979712,
+    "tier": 4.16047144,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 7,
+      "bodyArmor": 8,
+      "armArmor": 5,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -690,18 +690,18 @@
     "name": "Gambeson over Mail Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3442,
+    "price": 12612,
     "weight": 9.722662,
-    "tier": 5.315415,
+    "tier": 7.635798,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 29,
-      "armArmor": 8,
-      "legArmor": 15,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -711,18 +711,18 @@
     "name": "Aserai Chain Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3462,
+    "price": 4726,
     "weight": 9.873398,
-    "tier": 5.3242135,
+    "tier": 5.81379652,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 25,
-      "armArmor": 13,
-      "legArmor": 13,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -732,18 +732,18 @@
     "name": "Southern Decorated Chain Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3904,
+    "price": 10770,
     "weight": 10.3814,
-    "tier": 5.50884056,
+    "tier": 7.311365,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 27,
+      "bodyArmor": 40,
       "armArmor": 13,
-      "legArmor": 13,
+      "legArmor": 18,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -825,13 +825,13 @@
     "name": "Ornate Desert Battle Crown",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 4413,
+    "price": 17406,
     "weight": 2.649286,
-    "tier": 7.222288,
+    "tier": 10.505146,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 44,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -844,18 +844,18 @@
     "name": "Southern Reinforced Mail Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 6213,
+    "price": 10548,
     "weight": 13.54583,
-    "tier": 6.276918,
+    "tier": 7.26954651,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 31,
-      "armArmor": 16,
-      "legArmor": 16,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -865,18 +865,18 @@
     "name": "Southern Reinforced Sleeveless Mail Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3542,
+    "price": 11084,
     "weight": 9.823068,
-    "tier": 5.35870647,
+    "tier": 7.369497,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 31,
-      "armArmor": 6,
-      "legArmor": 16,
+      "bodyArmor": 40,
+      "armArmor": 13,
+      "legArmor": 18,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -886,18 +886,18 @@
     "name": "Southern Reinforced Mail Vest",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 2524,
+    "price": 966,
     "weight": 6.965938,
-    "tier": 4.8643384,
+    "tier": 3.66696239,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 31,
-      "armArmor": 6,
-      "legArmor": 6,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -907,18 +907,18 @@
     "name": "Southern Reinforced Short Mail Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 4764,
+    "price": 4619,
     "weight": 10.33022,
-    "tier": 5.826917,
+    "tier": 5.776248,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 31,
-      "armArmor": 16,
-      "legArmor": 6,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -928,9 +928,9 @@
     "name": "Luxury Kaftan with Waistband",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 165,
+    "price": 86,
     "weight": 1.728333,
-    "tier": 1.99645579,
+    "tier": 1.41212726,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -938,9 +938,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 8,
-      "armArmor": 4,
-      "legArmor": 4,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -950,9 +950,9 @@
     "name": "Kaftan with Leather Belt",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 75,
+    "price": 91,
     "weight": 0.842865,
-    "tier": 1.25892842,
+    "tier": 1.460357,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -960,9 +960,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 2,
-      "legArmor": 3,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -972,9 +972,9 @@
     "name": "Colored Kaftan",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 63,
+    "price": 92,
     "weight": 0.6110581,
-    "tier": 1.04249811,
+    "tier": 1.47475338,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -982,8 +982,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 2,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -994,16 +994,16 @@
     "name": "Keffiyeh with Silken Band",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 51,
+    "price": 56,
     "weight": 0.07261725,
-    "tier": 0.724206567,
+    "tier": 1.08630979,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 4,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -1016,9 +1016,9 @@
     "name": "Colored Bisht",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 70,
+    "price": 91,
     "weight": 0.7133473,
-    "tier": 1.17716837,
+    "tier": 1.468296,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1026,8 +1026,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 2,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -1038,16 +1038,16 @@
     "name": "Colored Turban",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 53,
+    "price": 56,
     "weight": 0.1014857,
-    "tier": 0.903980136,
+    "tier": 1.08477616,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 5,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -1060,9 +1060,9 @@
     "name": "Thawb",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 63,
+    "price": 92,
     "weight": 0.6110581,
-    "tier": 1.04249811,
+    "tier": 1.47475338,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1070,8 +1070,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 2,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -1082,16 +1082,16 @@
     "name": "Colored Keffiyeh",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 53,
+    "price": 56,
     "weight": 0.1014857,
-    "tier": 0.903980136,
+    "tier": 1.08477616,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 5,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -1104,9 +1104,9 @@
     "name": "Simple Peasant Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 70,
+    "price": 91,
     "weight": 0.7133473,
-    "tier": 1.17716837,
+    "tier": 1.468296,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1114,8 +1114,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 2,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -1126,16 +1126,16 @@
     "name": "Bandit Leather Hood",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 53,
+    "price": 56,
     "weight": 0.1014857,
-    "tier": 0.903980136,
+    "tier": 1.08477616,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 5,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -1148,16 +1148,16 @@
     "name": "Keffiyeh with Brown Band",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 51,
+    "price": 56,
     "weight": 0.07261725,
-    "tier": 0.724206567,
+    "tier": 1.08630979,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 4,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -1192,13 +1192,13 @@
     "name": "Luxury Turban Over Helmet",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 3807,
+    "price": 3198,
     "weight": 2.470721,
-    "tier": 6.93163824,
+    "tier": 6.60156,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 42,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -1211,9 +1211,9 @@
     "name": "Feminine Kaftan",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 86,
+    "price": 90,
     "weight": 1.002803,
-    "tier": 1.40086687,
+    "tier": 1.45089769,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1221,9 +1221,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
+      "bodyArmor": 6,
       "armArmor": 3,
-      "legArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -1233,9 +1233,9 @@
     "name": "Kaftan with Waistband",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 55,
+    "price": 93,
     "weight": 0.388297,
-    "tier": 0.7575553,
+    "tier": 1.48943079,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -1243,8 +1243,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 3,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -1255,16 +1255,16 @@
     "name": "Desert Headscarf",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.04716628,
-    "tier": 0.5438363,
+    "tier": 1.08767259,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 3,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -1277,15 +1277,15 @@
     "name": "Headscarf with Fez",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 51,
+    "price": 56,
     "weight": 0.07261725,
-    "tier": 0.724206567,
+    "tier": 1.08630979,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 4,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -1298,17 +1298,17 @@
     "name": "Mastercrafted Southern Scale over Chain Hauberk",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 16981,
+    "price": 41104,
     "weight": 23.02404,
-    "tier": 8.283607,
+    "tier": 10.524107,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 51,
-      "armArmor": 16,
+      "bodyArmor": 64,
+      "armArmor": 25,
       "legArmor": 25,
       "materialType": "Plate"
     },
@@ -1319,18 +1319,18 @@
     "name": "Ring Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 245,
+    "price": 1463,
     "weight": 1.900137,
-    "tier": 2.33564281,
+    "tier": 4.150909,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 13,
+      "bodyArmor": 26,
       "armArmor": 3,
-      "legArmor": 2,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -1340,15 +1340,15 @@
     "name": "Ringmail Shoulder Guard",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 275,
+    "price": 2418,
     "weight": 0.798895,
-    "tier": 3.41395164,
+    "tier": 6.630402,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 11,
-      "armArmor": 0,
+      "bodyArmor": 17,
+      "armArmor": 4,
       "legArmor": 0,
       "materialType": "Leather"
     },
@@ -1437,13 +1437,13 @@
     "name": "Noble Crowned Lord Helmet",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 4739,
+    "price": 8015,
     "weight": 2.740113,
-    "tier": 7.36641645,
+    "tier": 8.512302,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 45,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -1728,18 +1728,18 @@
     "name": "Robe over Mail Shirt",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3143,
+    "price": 2971,
     "weight": 9.225823,
-    "tier": 5.179704,
+    "tier": 5.097323,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 25,
-      "armArmor": 12,
-      "legArmor": 12,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -1749,18 +1749,18 @@
     "name": "Mastercrafted Southern Scale over Chain Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 14538,
+    "price": 22467,
     "weight": 19.51269,
-    "tier": 7.93920755,
+    "tier": 8.939639,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 51,
-      "armArmor": 16,
-      "legArmor": 16,
+      "bodyArmor": 52,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -1770,18 +1770,18 @@
     "name": "Mastercrafted Southern Scale Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3514,
+    "price": 13732,
     "weight": 8.211183,
-    "tier": 5.34676266,
+    "tier": 7.8161087,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 35,
-      "armArmor": 7,
-      "legArmor": 6,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Plate"
     },
     "weapons": []
@@ -1791,15 +1791,15 @@
     "name": "Bronze Scale Shoulder Guards",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 1705,
+    "price": 5709,
     "weight": 2.198272,
-    "tier": 6.00473976,
+    "tier": 8.417357,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 4,
+      "bodyArmor": 22,
+      "armArmor": 6,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -1810,15 +1810,15 @@
     "name": "Long Sleeved Bronze Scale Shoulder Guards",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 3078,
+    "price": 10710,
     "weight": 3.106376,
-    "tier": 7.094789,
+    "tier": 9.990088,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 8,
+      "bodyArmor": 25,
+      "armArmor": 9,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -1829,15 +1829,15 @@
     "name": "Bronze Scale Pauldrons",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 1309,
+    "price": 1774,
     "weight": 2.259616,
-    "tier": 5.56485748,
+    "tier": 6.07318544,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 8,
-      "armArmor": 10,
+      "bodyArmor": 13,
+      "armArmor": 7,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -1848,15 +1848,15 @@
     "name": "Decorated Bronze Scale Pauldrons",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 613,
+    "price": 1927,
     "weight": 1.562045,
-    "tier": 4.43780661,
+    "tier": 6.218408,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
-      "armArmor": 8,
+      "bodyArmor": 13,
+      "armArmor": 7,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -1867,15 +1867,15 @@
     "name": "Decorated Long Sleeve Bronze Scale Pauldrons",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 925,
+    "price": 5349,
     "weight": 1.9586,
-    "tier": 5.025558,
+    "tier": 8.267855,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
-      "armArmor": 10,
+      "bodyArmor": 18,
+      "armArmor": 9,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -2121,9 +2121,9 @@
     "name": "Luxury Kaftan",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 105,
+    "price": 89,
     "weight": 1.221603,
-    "tier": 1.59974384,
+    "tier": 1.43852937,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -2131,9 +2131,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 7,
-      "armArmor": 2,
-      "legArmor": 4,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -2143,9 +2143,9 @@
     "name": "Villager Short Dress",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 95,
     "weight": 0.2160417,
-    "tier": 0.5306698,
+    "tier": 1.50140727,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -2153,9 +2153,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -2165,16 +2165,16 @@
     "name": "Rural Headdress",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.04716628,
-    "tier": 0.5438363,
+    "tier": 1.08767259,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 3,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -6492,13 +6492,13 @@
     "name": "Brass Southern Closed Helmet with Turban",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 4103,
+    "price": 8176,
     "weight": 2.559484,
-    "tier": 7.07736635,
+    "tier": 8.558676,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 43,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -6511,13 +6511,13 @@
     "name": "Brass Turbaned Helmet with Leather Flaps",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 2545,
+    "price": 3358,
     "weight": 2.042925,
-    "tier": 6.190553,
+    "tier": 6.69249,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 37,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -6530,13 +6530,13 @@
     "name": "Brass Southern Helmet with Turban",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 3008,
+    "price": 8510,
     "weight": 2.210786,
-    "tier": 6.489519,
+    "tier": 8.652692,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 39,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -6549,13 +6549,13 @@
     "name": "Brass Southern Closed Helmet",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 3807,
+    "price": 8258,
     "weight": 2.470721,
-    "tier": 6.93163824,
+    "tier": 8.582028,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 42,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -6568,13 +6568,13 @@
     "name": "Brass Southern Helmet with Leather Flaps",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 3391,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 6.71086,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -6587,13 +6587,13 @@
     "name": "Brass Southern Helmet",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 2770,
+    "price": 3325,
     "weight": 2.126303,
-    "tier": 6.340465,
+    "tier": 6.674173,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 38,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -7770,15 +7770,15 @@
     "name": "Spiked Helmet with Closed Turban ",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 576,
+    "price": 1103,
     "weight": 1.001248,
-    "tier": 3.99658751,
+    "tier": 4.86541128,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 23,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -7791,13 +7791,13 @@
     "name": "Closed Steel Cap",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 7483,
+    "price": 16072,
     "weight": 3.403728,
-    "tier": 8.353923,
+    "tier": 10.2817507,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 52,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -7850,9 +7850,9 @@
     "name": "Cloth Apron",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 132,
+    "price": 87,
     "weight": 1.507872,
-    "tier": 1.8036077,
+    "tier": 1.42325509,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -7860,9 +7860,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 8,
-      "armArmor": 2,
-      "legArmor": 5,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -8912,9 +8912,9 @@
     "name": "Woven Shoulder Pad",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 50,
+    "price": 53,
     "weight": 0.06193636,
-    "tier": 0.6417654,
+    "tier": 0.962648153,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -8922,7 +8922,7 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
+      "bodyArmor": 3,
       "armArmor": 0,
       "legArmor": 0,
       "materialType": "Cloth"
@@ -8956,13 +8956,13 @@
     "name": "Steel Cap",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 285,
+    "price": 1152,
     "weight": 0.6932,
-    "tier": 3.167786,
+    "tier": 4.92766762,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 18,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -8975,13 +8975,13 @@
     "name": "Mamluke Helmet with Mail",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 4739,
+    "price": 3106,
     "weight": 2.740113,
-    "tier": 7.36641645,
+    "tier": 6.547925,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 45,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -8994,18 +8994,18 @@
     "name": "Light Lamellar Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 8663,
+    "price": 14171,
     "weight": 12.17084,
-    "tier": 6.884688,
+    "tier": 7.883758,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 48,
-      "armArmor": 14,
-      "legArmor": 0,
+      "bodyArmor": 50,
+      "armArmor": 13,
+      "legArmor": 13,
       "materialType": "Plate"
     },
     "weapons": []
@@ -9015,15 +9015,15 @@
     "name": "Leather Shoulder Guard",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 67,
+    "price": 647,
     "weight": 0.244825,
-    "tier": 1.59034359,
+    "tier": 4.51079273,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 0,
+      "bodyArmor": 12,
+      "armArmor": 2,
       "legArmor": 0,
       "materialType": "Leather"
     },
@@ -9068,15 +9068,15 @@
     "name": "Wrapped Helmet with Mail Coif",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 7936,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 8.489293,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -9127,9 +9127,9 @@
     "name": "Light Long Padded Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 779,
+    "price": 1159,
     "weight": 4.341292,
-    "tier": 3.43279958,
+    "tier": 3.8731916,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -9137,9 +9137,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 6,
-      "legArmor": 8,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -9149,9 +9149,9 @@
     "name": "Simple Kaftan",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 63,
+    "price": 92,
     "weight": 0.5716428,
-    "tier": 1.03155422,
+    "tier": 1.47728765,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -9159,8 +9159,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -9171,18 +9171,18 @@
     "name": "Robe over Mail Hauberk",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3143,
+    "price": 2971,
     "weight": 9.225823,
-    "tier": 5.179704,
+    "tier": 5.097323,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 25,
-      "armArmor": 12,
-      "legArmor": 12,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -9192,17 +9192,17 @@
     "name": "Luxury Scale Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 13199,
+    "price": 20099,
     "weight": 20.0206,
-    "tier": 7.73170233,
+    "tier": 8.673032,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 47,
-      "armArmor": 14,
+      "bodyArmor": 52,
+      "armArmor": 18,
       "legArmor": 23,
       "materialType": "Plate"
     },
@@ -9677,9 +9677,9 @@
     "name": "Silk Kaftan",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 98,
+    "price": 89,
     "weight": 1.122585,
-    "tier": 1.53118908,
+    "tier": 1.444048,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -9689,7 +9689,7 @@
       "headArmor": 0,
       "bodyArmor": 6,
       "armArmor": 3,
-      "legArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -10349,15 +10349,15 @@
     "name": "Emir Helmet",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 3076,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 6.53022528,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -11780,16 +11780,16 @@
     "name": "Female Headwrap",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.02567407,
-    "tier": 0.362943858,
+    "tier": 1.08883154,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 2,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -11885,9 +11885,9 @@
     "name": "Tailored Dress",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 70,
+    "price": 91,
     "weight": 0.7133473,
-    "tier": 1.17716837,
+    "tier": 1.468296,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11895,8 +11895,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 2,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -12882,9 +12882,9 @@
     "name": "Guarded Padded Vambraces",
     "culture": "Aserai",
     "type": "HandArmor",
-    "price": 185,
+    "price": 420,
     "weight": 0.9793918,
-    "tier": 3.37385416,
+    "tier": 4.498472,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12892,7 +12892,7 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
-      "armArmor": 9,
+      "armArmor": 12,
       "legArmor": 0,
       "materialType": "Cloth"
     },
@@ -13090,16 +13090,16 @@
     "name": "Colored Hijab",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.02567407,
-    "tier": 0.362943858,
+    "tier": 1.08883154,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 2,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13199,16 +13199,16 @@
     "name": "Hijab",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.04716628,
-    "tier": 0.5438363,
+    "tier": 1.08767259,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 3,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -16986,9 +16986,9 @@
     "name": "Layered Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 63,
+    "price": 92,
     "weight": 0.5716428,
-    "tier": 1.03155422,
+    "tier": 1.47728765,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -16996,8 +16996,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -17355,9 +17355,9 @@
     "name": "Leather Strips over Padded Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3737,
+    "price": 5105,
     "weight": 8.449179,
-    "tier": 5.4408145,
+    "tier": 5.94111872,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17365,9 +17365,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 36,
-      "armArmor": 7,
-      "legArmor": 6,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -17654,16 +17654,16 @@
     "name": "Leopard Pelt",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 58,
+    "price": 53,
     "weight": 0.1751825,
-    "tier": 1.27649117,
+    "tier": 0.9573684,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
+      "bodyArmor": 3,
       "armArmor": 0,
       "legArmor": 0,
       "materialType": "Leather"
@@ -17883,9 +17883,9 @@
     "name": "Long Simple Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 52,
+    "price": 94,
     "weight": 0.3058741,
-    "tier": 0.6186578,
+    "tier": 1.49508965,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17893,8 +17893,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -18065,9 +18065,9 @@
     "name": "Long Padded Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 358,
+    "price": 83,
     "weight": 2.770139,
-    "tier": 2.67256236,
+    "tier": 1.36571479,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -18075,9 +18075,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 14,
-      "armArmor": 2,
-      "legArmor": 7,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -18109,15 +18109,15 @@
     "name": "Helmet with Open Turban ",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 838,
+    "price": 1074,
     "weight": 1.203399,
-    "tier": 4.482219,
+    "tier": 4.827006,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 26,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -18766,18 +18766,18 @@
     "name": "Merchant Fur Coat",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 165,
+    "price": 86,
     "weight": 1.728333,
-    "tier": 1.99645579,
+    "tier": 1.41212726,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 8,
-      "armArmor": 4,
-      "legArmor": 4,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Leather"
     },
     "weapons": []
@@ -22545,15 +22545,15 @@
     "name": "Spiked Helmet with Open Turban",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 505,
+    "price": 1113,
     "weight": 0.936664,
-    "tier": 3.83277321,
+    "tier": 4.878075,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 22,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -23965,15 +23965,15 @@
     "name": "Pointed Skullcap over Cloth Headwrap",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 1310,
+    "price": 1036,
     "weight": 1.491529,
-    "tier": 5.11634445,
+    "tier": 4.775255,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 30,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -23986,15 +23986,15 @@
     "name": "Pointed Skullcap over Laced Coif",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 1606,
+    "price": 3526,
     "weight": 1.643141,
-    "tier": 5.42778873,
+    "tier": 6.784736,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 32,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -24007,13 +24007,13 @@
     "name": "Pointed Skullcap over Gambeson",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 1606,
+    "price": 3526,
     "weight": 1.643141,
-    "tier": 5.42778873,
+    "tier": 6.784736,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 32,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -24026,13 +24026,13 @@
     "name": "Pointed Skullcap over Mail Coif",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 2545,
+    "price": 3358,
     "weight": 2.042925,
-    "tier": 6.190553,
+    "tier": 6.69249,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 37,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -24045,13 +24045,13 @@
     "name": "Pointed Skullcap with Mail",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 2133,
+    "price": 3424,
     "weight": 1.879541,
-    "tier": 5.88811874,
+    "tier": 6.729278,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 35,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -24675,18 +24675,18 @@
     "name": "Heavy Ring Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 1505,
+    "price": 4239,
     "weight": 6.217651,
-    "tier": 4.18541574,
+    "tier": 5.638384,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 20,
-      "armArmor": 8,
-      "legArmor": 10,
+      "bodyArmor": 28,
+      "armArmor": 13,
+      "legArmor": 8,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -25726,9 +25726,9 @@
     "name": "Short Padded Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 333,
+    "price": 83,
     "weight": 2.574646,
-    "tier": 2.60537171,
+    "tier": 1.37374151,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -25736,9 +25736,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 14,
-      "armArmor": 2,
-      "legArmor": 6,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -26258,18 +26258,18 @@
     "name": "Bronze Lamellar Vest over Gambeson",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 3076,
+    "price": 12590,
     "weight": 7.603107,
-    "tier": 5.14796543,
+    "tier": 7.632097,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 37,
-      "armArmor": 2,
-      "legArmor": 8,
+      "bodyArmor": 40,
+      "armArmor": 13,
+      "legArmor": 18,
       "materialType": "Plate"
     },
     "weapons": []
@@ -26279,9 +26279,9 @@
     "name": "Moccasins",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 50,
+    "price": 52,
     "weight": 0.04435067,
-    "tier": 0.733147,
+    "tier": 1.0997206,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -26290,7 +26290,7 @@
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 2,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -26300,13 +26300,13 @@
     "name": "Noble Steel Cap",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 17059,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 10.44836,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -26357,9 +26357,9 @@
     "name": "Short Cloak",
     "culture": "Aserai",
     "type": "ShoulderArmor",
-    "price": 50,
+    "price": 53,
     "weight": 0.06193636,
-    "tier": 0.6417654,
+    "tier": 0.962648153,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -26367,7 +26367,7 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
+      "bodyArmor": 3,
       "armArmor": 0,
       "legArmor": 0,
       "materialType": "Cloth"
@@ -27667,18 +27667,18 @@
     "name": "Stitched Leather over Mail",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 6836,
+    "price": 4010,
     "weight": 13.48989,
-    "tier": 6.446472,
+    "tier": 5.55058765,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 36,
-      "armArmor": 14,
-      "legArmor": 14,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -28121,18 +28121,18 @@
     "name": "Studded Leather Coat",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 177,
+    "price": 86,
     "weight": 1.784997,
-    "tier": 2.05327725,
+    "tier": 1.40935,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 10,
-      "armArmor": 2,
-      "legArmor": 5,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Leather"
     },
     "weapons": []
@@ -28650,18 +28650,18 @@
     "name": "Cavalry Lamellar Armor",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 11098,
+    "price": 22110,
     "weight": 17.09994,
-    "tier": 7.37204266,
+    "tier": 8.90085,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 46,
-      "armArmor": 14,
-      "legArmor": 16,
+      "bodyArmor": 52,
+      "armArmor": 18,
+      "legArmor": 23,
       "materialType": "Plate"
     },
     "weapons": []
@@ -29766,9 +29766,9 @@
     "name": "Tassled Robes",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 78,
+    "price": 91,
     "weight": 0.8207818,
-    "tier": 1.31048286,
+    "tier": 1.46169245,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -29777,7 +29777,7 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 6,
-      "armArmor": 2,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -29973,9 +29973,9 @@
     "name": "Thick Sleeved Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 75,
+    "price": 91,
     "weight": 0.842865,
-    "tier": 1.25892842,
+    "tier": 1.460357,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -29983,9 +29983,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 2,
-      "legArmor": 3,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -30075,16 +30075,16 @@
     "name": "Tied Head Wrapping",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 53,
+    "price": 56,
     "weight": 0.1014857,
-    "tier": 0.903980136,
+    "tier": 1.08477616,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 5,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30097,15 +30097,15 @@
     "name": "Tight Head Scarf",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 60,
+    "price": 56,
     "weight": 0.1681113,
-    "tier": 1.26150024,
+    "tier": 1.08128583,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 7,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30173,15 +30173,15 @@
     "name": "Helmet with Turban and Coif",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 382,
+    "price": 1133,
     "weight": 0.8118855,
-    "tier": 3.5022254,
+    "tier": 4.903116,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 20,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30435,16 +30435,16 @@
     "name": "Tribal Turban",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 60,
+    "price": 56,
     "weight": 0.1681113,
-    "tier": 1.26150024,
+    "tier": 1.08128583,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 7,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30739,16 +30739,16 @@
     "name": "Turban",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 51,
+    "price": 56,
     "weight": 0.07261725,
-    "tier": 0.724206567,
+    "tier": 1.08630979,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 4,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -33948,16 +33948,16 @@
     "name": "Wrapped Leather Cap",
     "culture": "Aserai",
     "type": "HeadArmor",
-    "price": 112,
+    "price": 56,
     "weight": 0.3773303,
-    "tier": 2.14149237,
+    "tier": 1.07074618,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 12,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -34035,9 +34035,9 @@
     "name": "Wrapped Shoes",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 56,
+    "price": 52,
     "weight": 0.1254426,
-    "tier": 1.46048379,
+    "tier": 1.09536278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -34046,7 +34046,7 @@
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 4,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []

@@ -2,79 +2,79 @@
 <Items>
   <Item id="crpg_southern_shawl" name="{=1EhlbySK}Short Cloak" mesh="aserai_female_costume_cloak" culture="Culture.aserai" weight="0.06193636" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="2" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="3" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_desert_fabric_shoulderpad" name="{=EyQTfFS6}Woven Shoulder Pad" mesh="aserai_bigchain_shoulder_fabric" culture="Culture.aserai" weight="0.06193636" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="2" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="3" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_horseman_shoulder" name="{=5gsp0xUN}Ringmail Shoulder Guard" mesh="aserai_horseman_shoulder" culture="Culture.aserai" subtype="body_armor" weight="0.798895" difficulty="0" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="11" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="17" arm_armor="4" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_leopard_pelt" name="{=QxzcuhmA}Leopard Pelt" mesh="leopard_pelt" culture="Culture.aserai" weight="0.1751825" appearance="4" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="4" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="3" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_desert_leather_shoulderpad" name="{=9w40yGlZ}Leather Shoulder Guard" mesh="aserai_bigchain_shoulder" culture="Culture.aserai" weight="0.244825" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="5" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="12" arm_armor="2" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_aserai_scale_b_shoulder_a" name="{=FQdTo5ay}Scale Shoulder Guards" mesh="aserai_scale_b_shoulder_a" culture="Culture.aserai" weight="2.54253" appearance="3" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="14" arm_armor="7" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="22" arm_armor="6" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_aserai_scale_b_shoulder_b" name="{=U0zBG3F9}Scale Pauldrons" mesh="aserai_scale_b_shoulder_b" culture="Culture.aserai" weight="1.050175" appearance="3" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="2" arm_armor="8" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_aserai_scale_b_shoulder_d" name="{=SIdCIRfG}Brass Scale Pauldrons" mesh="aserai_scale_b_shoulder_d" culture="Culture.aserai" weight="0.8876131" appearance="3" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="2" arm_armor="7" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_aserai_scale_shoulder_a" name="{=imHoaCGi}Bronze Scale Shoulder Guards" mesh="aserai_scale_shoulder_a" culture="Culture.aserai" weight="2.198272" appearance="5" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="16" arm_armor="4" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="22" arm_armor="6" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_aserai_scale_shoulder_b" name="{=z4nryDlp}Long Sleeved Bronze Scale Shoulder Guards" mesh="aserai_scale_shoulder_b" culture="Culture.aserai" weight="3.106376" appearance="5" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="16" arm_armor="8" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="25" arm_armor="9" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_aserai_scale_shoulder_c" name="{=k9ouZ59X}Bronze Scale Pauldrons" mesh="aserai_scale_shoulder_c" culture="Culture.aserai" weight="2.259616" appearance="6" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="8" arm_armor="10" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="13" arm_armor="7" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_aserai_scale_shoulder_d" name="{=KrzAIXgG}Decorated Bronze Scale Pauldrons" mesh="aserai_scale_shoulder_d" culture="Culture.aserai" weight="1.562045" appearance="7" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="6" arm_armor="8" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="13" arm_armor="7" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_aserai_scale_shoulder_e" name="{=dIgaajLB}Decorated Long Sleeve Bronze Scale Pauldrons" mesh="aserai_scale_shoulder_e" culture="Culture.aserai" weight="1.9586" appearance="7" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="6" arm_armor="10" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="18" arm_armor="9" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>

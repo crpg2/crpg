@@ -2,7 +2,7 @@
 <Items>
   <Item id="crpg_headscarf_d" name="{=wW3iouiU}Hijab" mesh="headscarf_d" culture="Culture.aserai" weight="0.04716628" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="3" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="type3" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="type3" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
@@ -20,7 +20,7 @@
   </Item>
   <Item id="crpg_turban" name="{=8SNS2wF9}Turban" mesh="aserai_helmet_i" culture="Culture.aserai" weight="0.07261725" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="4" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
@@ -32,25 +32,25 @@
   </Item>
   <Item id="crpg_wrapped_desert_cap" name="{=3UxfT9Bu}Wrapped Leather Cap" mesh="aserai_helmet_o" culture="Culture.aserai" weight="0.3773303" appearance="0.8" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="12" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="type2" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="type2" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_villager_female_headdress" name="{=2U17pNiY}Rural Headdress" mesh="aserai_villager_female_headdress" culture="Culture.aserai" weight="0.04716628" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="3" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_tuareg" name="{=nZ2MJWhM}Tribal Turban" subtype="head_armor" mesh="tuareg_b" culture="Culture.aserai" weight="0.1681113" appearance="1.5" difficulty="0" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="7" has_gender_variations="false" hair_cover_type="type2" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type2" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_head_scarf" name="{=Gzc0Ql3a}Colored Hijab" mesh="head_scarf_b" culture="Culture.aserai" weight="0.02567407" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="2" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="type2" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="type2" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
@@ -62,43 +62,43 @@
   </Item>
   <Item id="crpg_female_head_wrap" name="{=KhXnRIan}Female Headwrap" mesh="female_peasant_cape_c" culture="Culture.aserai" weight="0.02567407" appearance="0.8" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="2" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_female_civil_hscarf" name="{=NEupkuqV}Desert Headscarf" mesh="aserai_female_civil_hscarf" culture="Culture.aserai" weight="0.04716628" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="3" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_female_civil_hscarf_b" name="{=sc2x2QRe}Headscarf with Fez" mesh="aserai_female_civil_hscarf_b" culture="Culture.aserai" weight="0.07261725" appearance="2.45" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="4" has_gender_variations="false" hair_cover_type="type2" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type2" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_aserai_civil_c_head" name="{=ZFETxZKP}Keffiyeh with Silken Band" mesh="aserai_civil_c_head" culture="Culture.aserai" weight="0.07261725" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="4" has_gender_variations="true" hair_cover_type="type2" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="true" hair_cover_type="type2" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_civil_f_cape" name="{=AoJ4Ztl2}Bandit Leather Hood" mesh="aserai_civil_f_cape" culture="Culture.aserai" weight="0.1014857" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="5" has_gender_variations="true" hair_cover_type="type2" beard_cover_type="type3" modifier_group="leather" material_type="Leather" />
+      <Armor head_armor="6" has_gender_variations="true" hair_cover_type="type2" beard_cover_type="type3" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_civil_d_hscarf" name="{=l91l1TJo}Colored Turban" mesh="aserai_civil_d_hscarf" culture="Culture.aserai" weight="0.1014857" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="5" has_gender_variations="true" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="true" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_civil_e_hscarf" name="{=f2awUw9x}Colored Keffiyeh" mesh="aserai_civil_e_hscarf" culture="Culture.aserai" weight="0.1014857" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="5" has_gender_variations="true" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="true" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
@@ -110,19 +110,19 @@
   </Item>
   <Item id="crpg_aserai_civil_hscarf_a" name="{=W8OGOfyt}Keffiyeh with Brown Band" mesh="aserai_civil_hscarf_a" culture="Culture.aserai" weight="0.07261725" appearance="1.8" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="4" has_gender_variations="true" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="true" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_tied_head_wrapping" name="{=ndfDy5B8}Tied Head Wrapping" subtype="head_armor" mesh="aserai_helmet_p" culture="Culture.aserai" weight="0.1014857" appearance="1.3" difficulty="0" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="5" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="type4" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="type4" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_tight_head_scarf" name="{=U4n0uSlg}Tight Head Scarf" subtype="head_armor" mesh="aserai_helmet_f" culture="Culture.aserai" weight="0.1681113" appearance="2" difficulty="0" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="7" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="all" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -134,145 +134,145 @@
   </Item>
   <Item id="crpg_open_desert_helmet" name="{=NB9bQt6O}Spiked Helmet with Open Turban" subtype="head_armor" mesh="aserai_helmet_a" culture="Culture.aserai" weight="0.936664" difficulty="0" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="22" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_closed_desert_helmet" name="{=T6ObiB5P}Spiked Helmet with Closed Turban " mesh="aserai_helmet_b" culture="Culture.aserai" weight="1.001248" appearance="1.4" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="23" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_loose_wrapped_desert_helmet" name="{=PVWsZleW}Helmet with Open Turban " mesh="aserai_helmet_e" culture="Culture.aserai" weight="1.203399" appearance="1.5" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="26" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_trailed_desert_helmet" name="{=2N0ZP2GB}Helmet with Turban and Coif" subtype="head_armor" mesh="aserai_helmet_g" culture="Culture.aserai" weight="0.8118855" difficulty="0" appearance="1.4" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="20" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_desert_helmet_with_mail" name="{=ebPu5G8o}Mamluke Helmet with Mail" subtype="head_armor" mesh="aserai_helmet_l" culture="Culture.aserai" weight="2.740113" difficulty="0" appearance="1.2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_desert_helmet" name="{=BryUh6yQ}Steel Cap" mesh="aserai_helmet_n" culture="Culture.aserai" weight="0.6932" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="18" has_gender_variations="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_pointed_skullcap_over_mail" name="{=py7VUj47}Pointed Skullcap over Gambeson" mesh="vlandia_helmet_l_b" culture="Culture.aserai" weight="1.643141" appearance="2.5" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="32" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_pointed_skullcap_over_laced_coif" name="{=6n44BIll}Pointed Skullcap over Laced Coif" subtype="head_armor" mesh="vlandia_helmet_l_c" culture="Culture.aserai" weight="1.643141" difficulty="0" appearance="1.7" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="32" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_pointed_skullcap_over_cloth_headwrap" name="{=LqA9uBH9}Pointed Skullcap over Cloth Headwrap" subtype="head_armor" mesh="vlandia_helmet_l_d" culture="Culture.aserai" weight="1.491529" difficulty="0" appearance="1.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="30" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_crown" name="{=6Dk7LClc}Luxury Turban Over Helmet" mesh="aserai_crown" culture="Culture.aserai" weight="2.470721" appearance="8" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_pointed_skullcap_over_mail_coif" name="{=ZOWdFaUi}Pointed Skullcap over Mail Coif" mesh="vlandia_helmet_l_a" culture="Culture.aserai" weight="2.042925" appearance="2.7" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="37" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_closed_desert_helmet_with_mail" name="{=SVTa5spB}Closed Steel Cap" mesh="aserai_helmet_k" culture="Culture.aserai" weight="3.403728" appearance="2.5" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="chain" material_type="Chainmail" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_emirs_helmet" name="{=efW2XbK8}Emir Helmet" subtype="head_armor" mesh="aserai_helmet_r" culture="Culture.aserai" weight="2.831956" difficulty="0" appearance="1.5" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" modifier_group="chain" material_type="Chainmail" beard_cover_type="type3" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="chain" material_type="Chainmail" beard_cover_type="type3" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_desert_mail_coif" name="{=RraboU6p}Wrapped Helmet with Mail Coif" subtype="head_armor" mesh="aserai_helmet_j" culture="Culture.aserai" weight="2.831956" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" modifier_group="chain" material_type="Chainmail" beard_cover_type="type4" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="chain" material_type="Chainmail" beard_cover_type="type4" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_aserai_lord_helmet_a" name="{=VBrLhqiJ}Noble Crowned Lord Helmet" mesh="aserai_lord_helmet_a" culture="Culture.aserai" is_merchandise="false" subtype="head_armor" weight="2.740113" difficulty="0" appearance="4.5" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_southern_noble_helmet" name="{=Z95RglmZ}Noble Steel Cap" mesh="aserai_lord_helmet_b" culture="Culture.aserai" subtype="head_armor" weight="2.831956" difficulty="0" appearance="5.4" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_pointed_skullcap_with_mail" name="{=3DV3GoHb}Pointed Skullcap with Mail" subtype="head_armor" mesh="vlandia_helmet_l_v" culture="Culture.aserai" weight="1.879541" difficulty="0" appearance="2.4" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="35" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_aserai_battle_crown" name="{=fBAf3OWb}Ornate Desert Battle Crown" subtype="head_armor" mesh="aserai_battle_crown" culture="Culture.aserai" is_merchandise="false" weight="2.649286" difficulty="0" appearance="9" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="44" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_brass_aserai_helmet_closed" name="{=pxTmx2ka}Brass Southern Closed Helmet" subtype="head_armor" mesh="brass_aserai_helmet_closed" culture="Culture.aserai" is_merchandise="false" weight="2.470721" difficulty="0" appearance="7" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_brass_aserai_helmet_b_closed" name="{=HrLupYXP}Brass Southern Closed Helmet with Turban" subtype="head_armor" mesh="brass_aserai_helmet_b_closed" culture="Culture.aserai" is_merchandise="false" weight="2.559484" difficulty="0" appearance="8" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="43" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_brass_aserai_helmet_open" name="{=uRsU67qC}Brass Southern Helmet" subtype="head_armor" mesh="brass_aserai_helmet_open" culture="Culture.aserai" is_merchandise="false" weight="2.126303" difficulty="0" appearance="7" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="38" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_brass_aserai_helmet_b_open" name="{=ahN0UNxw}Brass Southern Helmet with Turban" subtype="head_armor" mesh="brass_aserai_helmet_b_open" culture="Culture.aserai" is_merchandise="false" weight="2.210786" difficulty="0" appearance="8" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="39" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+      <Armor head_armor="52 " has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_brass_aserai_helmet_leather" name="{=dHv9Dbkp}Brass Southern Helmet with Leather Flaps" subtype="head_armor" mesh="brass_aserai_helmet_leather" culture="Culture.aserai" is_merchandise="false" weight="1.960666" difficulty="0" appearance="6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="36" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_brass_aserai_helmet_b_leather" name="{=E5b3gc6R}Brass Turbaned Helmet with Leather Flaps" subtype="head_armor" mesh="brass_aserai_helmet_b_leather" culture="Culture.aserai" is_merchandise="false" weight="2.042925" difficulty="0" appearance="7" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="37" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
     </ItemComponent>
     <Flags />
   </Item>

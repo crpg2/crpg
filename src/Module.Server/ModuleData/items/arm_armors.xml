@@ -2,7 +2,7 @@
 <Items>
   <Item id="crpg_guarded_padded_vambrace" name="{=whvMZZba}Guarded Padded Vambraces" mesh="padded_vambrace_a_handguard" culture="Culture.aserai" weight="0.9793918" difficulty="0" appearance="1" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="9" modifier_group="cloth" material_type="Cloth" />
+      <Armor arm_armor="12" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
