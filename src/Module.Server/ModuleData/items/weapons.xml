@@ -864,6 +864,14 @@
       <Piece id="crpg_sturgia_sword_3_t3_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+    <CraftedItem id="crpg_military_cleaver_5_t4" name="{=OLTUHPaD}Soldier's Cleaver" crafting_template="crpg_OneHandedSword" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_military_cleaver_t3_blade" Type="Blade" scale_factor="94" />
+      <Piece id="crpg_military_cleaver_t2_guard" Type="Guard" scale_factor="97" />
+      <Piece id="crpg_military_cleaver_t2_handle" Type="Handle" scale_factor="102" />
+      <Piece id="crpg_military_cleaver_t2_pommel" Type="Pommel" scale_factor="97" />
+    </Pieces>
+  </CraftedItem>
   <CraftedItem id="crpg_battania_sword_1_t2" name="{=habJjtmv}Ridged Iron Broadsword" crafting_template="crpg_OneHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_battania_sword_1_t2_blade" Type="Blade" scale_factor="109" />

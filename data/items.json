@@ -18804,6 +18804,39 @@
     "weapons": []
   },
   {
+    "id": "crpg_military_cleaver_5_t4",
+    "name": "Soldier's Cleaver",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 7445,
+    "weight": 2.35,
+    "tier": 9.959684,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 100,
+        "balance": 0.47,
+        "handling": 80,
+        "bodyArmor": 2,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 84,
+        "swingDamage": 38,
+        "swingDamageType": "Cut",
+        "swingSpeed": 84
+      }
+    ]
+  },
+  {
     "id": "crpg_military_fork_pike_t3",
     "name": "Notched Military Fork",
     "culture": "Neutral",

@@ -3180,6 +3180,11 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_military_cleaver_t2_pommel" name="{=5NeanDJM}Ring Pommel" tier="1" piece_type="Pommel" mesh="vlandian_pommel_10" culture="Culture.vlandia" length="5.5" weight="0.55">
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_celtic_dagger_pommel" name="{=jZnVKvJN}Three Branched Pommel" tier="4" piece_type="Pommel" mesh="battania_pommel_9" culture="Culture.battania" length="5.4" weight="0.12">
     <BuildData next_piece_offset="-0.3" />
     <Materials>
@@ -3882,6 +3887,12 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_military_cleaver_t2_handle" name="{=BL96pnde}Rough Leather One Handed Cleaver Grip" tier="2" piece_type="Handle" mesh="cleaver_grip_5" culture="Culture.aserai" length="15.857" weight="0.70">
+    <BuildData piece_offset="-0.39" previous_piece_offset="0" next_piece_offset="-0.3" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_battania_2hsword_5_t5_handle" name="{=saYgR9C6}High Quality Highland Two Handed Grip" tier="2" piece_type="Handle" mesh="battania_grip_6" culture="Culture.battania" length="25.6" weight="0.1">
     <BuildData piece_offset="-0.22" previous_piece_offset="0.3" next_piece_offset="0.1" />
     <Materials>
@@ -4460,6 +4471,13 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_falchion_sword_t2_guard" name="{=aFxc3ZVL}Concave Disc Guard" tier="2" piece_type="Guard" mesh="khuzait_guard_2" culture="Culture.khuzait" length="1.663" weight="0.15">
+    <BuildData next_piece_offset="1" />
+    <StatContributions armor_bonus="2" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_military_cleaver_t2_guard" name="{=aFxc3ZVL}Concave Disc Guard" tier="2" piece_type="Guard" mesh="khuzait_guard_2" culture="Culture.khuzait" length="1.663" weight="0.33">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="2" />
     <Materials>
@@ -5282,6 +5300,14 @@
   <CraftingPiece id="crpg_star_falchion_sword_t3_blade" name="{=gTzMtKYu}Star Falchion Blade Head" tier="3" piece_type="Blade" mesh="cleaver_blade_4" culture="Culture.vlandia" length="96.8" weight="1.26" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="Cut" damage_factor="3.5" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_military_cleaver_t3_blade" name="{=gTzMtKYu}Star Falchion Blade Head" tier="3" piece_type="Blade" mesh="cleaver_blade_4" culture="Culture.vlandia" length="96.8" weight="0.89" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="4" />
