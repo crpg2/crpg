@@ -1469,4 +1469,22 @@
 		</ItemComponent>
 		<Flags UseTeamColor="true"/>
 	</Item>
+	<Item id="crpg_rus_armour" name="Vaegir Coat of Plates" mesh="Rus_armour" is_merchandise="true" subtype="body_armor" culture="Culture.sturgia" weight="16.38" difficulty="0" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item> 
+  <Item id="crpg_rus_armour1" name="Vaegir Coat of Plates" mesh="Rus_armour1" is_merchandise="true" subtype="body_armor" culture="Culture.sturgia" weight="16.38" difficulty="0" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_khuzait_lamellar_strapped" name="{=}Reinforced Leather Armor" mesh="khuzait_lamellar_strap" culture="Culture.khuzait" weight="7.010831" appearance="1.4" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="24" leg_armor="12" arm_armor="6" covers_body="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
 </Items>

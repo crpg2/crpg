@@ -30,21 +30,18 @@
       <Piece id="crpg_peasant_sickle_1_t1_handle" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <!--
   <CraftedItem id="crpg_peasant_hammer_1_t1" name="{=6WcZ5Tr0}Blacksmith Hammer" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_peasant_hammer_1_t1_blade" Type="Blade" scale_factor="100" />
       <Piece id="crpg_peasant_hammer_1_t1_handle" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  -->
   <CraftedItem id="crpg_blacksmith_war_hammer_1_t1" name="{=6WcZ5Tr0}Blacksmith Warhammer" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_blacksmith_war_hammer_1_t1_blade" Type="Blade" scale_factor="140" />
       <Piece id="crpg_blacksmith_war_hammer_mace_t3_handle" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <!--
   <CraftedItem id="crpg_peasant_hammer_2_t1" name="{=beVFwINO}Wooden Hammer" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_peasant_hammer_2_t1_blade" Type="Blade" />
@@ -52,7 +49,6 @@
       <Piece id="crpg_peasant_hammer_2_t1_pommel" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  -->
   <CraftedItem id="crpg_peasant_2haxe_1_t1" name="{=7phSQw5i}Hoe" crafting_template="crpg_TwoHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_peasant_2haxe_1_t1_blade" Type="Blade" scale_factor="100" />
@@ -2465,5 +2461,163 @@
       <Piece id="crpg_sherpherds_head" Type="Blade" scale_factor="105" />
       <Piece id="crpg_sherpherds_handle" Type="Handle" scale_factor="144" />
     </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_maul" name="{=}Great Maul" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_maul_head" Type="Blade" scale_factor="100"/>
+      <Piece id="crpg_maul_handle" Type="Handle" scale_factor="100"/>
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_claymore" name="{=}Claymore" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+    <Pieces>
+      <Piece id="crpg_claymore_blade" Type="Blade" scale_factor="100"/>
+      <Piece id="crpg_claymore_guard" Type="Guard" scale_factor="100"/>
+      <Piece id="crpg_claymore_handle" Type="Handle" scale_factor="100"/>
+      <Piece id="crpg_claymore_pommel" Type="Pommel" scale_factor="100"/>
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_kama" name="{=}Kama" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_kama_blade" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_kama_handle" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_heavy_blacksmith_hammer" name="{=}Heavy Blacksmith Hammer" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_heavy_blacksmith_hammer_head" Type="Blade" scale_factor="100"/>
+      <Piece id="crpg_heavy_blacksmith_hammer_handle" Type="Handle" scale_factor="100"/>
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_mallet" name="{=}Mallet" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_mallet_head" Type="Blade" scale_factor="100"/>
+      <Piece id="crpg_mallet_handle" Type="Handle" scale_factor="100"/>
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_shieldsplitter" name="{=}Shieldsplitter" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+   <Pieces>
+      <Piece id="crpg_shieldsplitter_head" Type="Blade" scale_factor="100"/>
+      <Piece id="crpg_shieldsplitter_handle" Type="Handle" scale_factor="100"/>
+    </Pieces>
+  </CraftedItem>
+  <Item id="crpg_snowball" name="Snowball" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
+    <ItemComponent>
+      <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="10" physics_material="missile" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="10" thrust_damage="8" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
+        <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <CraftedItem id="crpg_sherpherds" name="Shepherd's Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_sherpherds_head" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_sherpherds_handle" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_katana_red" name="{=}Red Katana" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_katana_blade_red" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_katana_guard" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_katana_handle_red" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_katana_pommel" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_katana_blue" name="{=}Blue Katana" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_katana_blade_blue" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_katana_guard" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_katana_handle_blue" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_katana_pommel" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_katana_green" name="{=}Green Katana" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_katana_blade_green" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_katana_guard" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_katana_handle_green" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_katana_pommel" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_katana_yellow" name="{=}Yellow Katana" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_katana_blade_yellow" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_katana_guard" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_katana_handle_yellow" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_katana_pommel" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_katana_black" name="{=}Black Katana" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_katana_blade_black" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_katana_guard" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_katana_handle_black" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_katana_pommel" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_light_goedendag" name="{=}Light Goedendag" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+    <Pieces>
+      <Piece id="crpg_light_goedendag_head" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_light_goedendag_handle" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_medium_goedendag" name="{=}Medium Goedendag" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+    <Pieces>
+      <Piece id="crpg_medium_goedendag_head" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_medium_goedendag_handle" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_heavy_goedendag" name="{=}Heavy Goedendag" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia" >
+    <Pieces>
+      <Piece id="crpg_heavy_goedendag_head" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_heavy_goedendag_handle" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_military_hammer" name="{=}Military Hammer" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+    <Pieces>
+      <Piece id="crpg_military_hammer_head" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_military_hammer_shaft" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_warhammer" name="{=}Warhammer" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+    <Pieces>
+      <Piece id="crpg_warhammer_head" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_warhammer_shaft" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_spiked_polehammer" name="{=}Spiked Polehammer" crafting_template="crpg_TwoHandedPolearm">
+		<Pieces>
+			<Piece id="crpg_spiked_polehammer_blade" Type="Blade" scale_factor="100"/>
+			<Piece id="crpg_spiked_polehammer_handle" Type="Handle" scale_factor="100"/>
+		</Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_bec_de_corbin" name="{=}Bec De Corbin" crafting_template="crpg_TwoHandedPolearm">
+		<Pieces>
+			<Piece id="crpg_bec_de_corbin_blade" Type="Blade" scale_factor="100"/>
+			<Piece id="crpg_bec_de_corbin_handle" Type="Handle" scale_factor="100"/>
+		</Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_simple_poleaxe" name="{=}Simple Poleaxe" crafting_template="crpg_TwoHandedPolearm">
+		<Pieces>
+			<Piece id="crpg_simple_poleaxe_blade" Type="Blade" scale_factor="100"/>
+			<Piece id="crpg_simple_poleaxe_handle" Type="Handle" scale_factor="100"/>
+		</Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_burgundian_poleaxe" name="{=}Burgundian Poleaxe" crafting_template="crpg_TwoHandedPolearm">
+		<Pieces>
+			<Piece id="crpg_burgundian_axe_blade" Type="Blade" scale_factor="100"/>
+			<Piece id="crpg_burgundian_axe_handle" Type="Handle" scale_factor="100"/>
+		</Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_burgundian_glaive" name="{=}Burgundian Glaive" crafting_template="crpg_TwoHandedPolearm">
+		<Pieces>
+			<Piece id="crpg_burgundian_glaive_blade" Type="Blade" scale_factor="100"/>
+			<Piece id="crpg_burgundian_glaive_handle" Type="Handle" scale_factor="100"/>
+		</Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_french_voulge" name="{=}French Voulge" crafting_template="crpg_TwoHandedPolearm">
+		<Pieces>
+			<Piece id="crpg_french_voulge_blade" Type="Blade" scale_factor="100"/>
+			<Piece id="crpg_french_voulge_handle" Type="Handle" scale_factor="100"/>
+		</Pieces>
   </CraftedItem>
 </Items>
