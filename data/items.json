@@ -5634,6 +5634,44 @@
     "weapons": []
   },
   {
+    "id": "crpg_bec_de_corbin",
+    "name": "Bec De Corbin",
+    "culture": "Neutral",
+    "type": "Polearm",
+    "price": 2404,
+    "weight": 2.4,
+    "tier": 3.2347157,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 141,
+        "balance": 0.0,
+        "handling": 59,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 22,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 88,
+        "swingDamage": 35,
+        "swingDamageType": "Pierce",
+        "swingSpeed": 68
+      }
+    ]
+  },
+  {
     "id": "crpg_belted_leather_boots",
     "name": "Belted Leather Boots",
     "culture": "Battania",
@@ -6869,12 +6907,12 @@
   },
   {
     "id": "crpg_buckler",
-    "name": "Buckler",
+    "name": "Round Buckler",
     "culture": "Sturgia",
     "type": "Shield",
-    "price": 9115,
+    "price": 5715,
     "weight": 1.0,
-    "tier": 9.928137,
+    "tier": 7.63329029,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone",
@@ -6882,25 +6920,101 @@
     ],
     "weapons": [
       {
-        "class": "LargeShield",
+        "class": "SmallShield",
         "itemUsage": "hand_shield",
         "accuracy": 100,
         "missileSpeed": 0,
         "stackAmount": 200,
         "length": 15,
         "balance": 0.0,
-        "handling": 110,
-        "bodyArmor": 15,
+        "handling": 86,
+        "bodyArmor": 8,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
         ],
         "thrustDamage": 5,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 110,
+        "thrustSpeed": 86,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 100
+      }
+    ]
+  },
+  {
+    "id": "crpg_burgundian_glaive",
+    "name": "Burgundian Glaive",
+    "culture": "Neutral",
+    "type": "Polearm",
+    "price": 1153,
+    "weight": 2.0,
+    "tier": 1.96433771,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 189,
+        "balance": 0.0,
+        "handling": 59,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 21,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 91,
+        "swingDamage": 30,
+        "swingDamageType": "Cut",
+        "swingSpeed": 69
+      }
+    ]
+  },
+  {
+    "id": "crpg_burgundian_poleaxe",
+    "name": "Burgundian Poleaxe",
+    "culture": "Neutral",
+    "type": "Polearm",
+    "price": 5239,
+    "weight": 2.4,
+    "tier": 5.240514,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 128,
+        "balance": 0.32,
+        "handling": 70,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 25,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 89,
+        "swingDamage": 37,
+        "swingDamageType": "Cut",
+        "swingSpeed": 79
       }
     ]
   },
@@ -7296,9 +7410,9 @@
     "name": "Claymore",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13819,
-    "weight": 2.7,
-    "tier": 9.92845249,
+    "price": 16554,
+    "weight": 2.6,
+    "tier": 10.9691048,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -7322,6 +7436,27 @@
         "swingDamage": 42,
         "swingDamageType": "Cut",
         "swingSpeed": 81
+      },
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 116,
+        "balance": 0.64,
+        "handling": 72,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 26,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 87,
+        "swingDamage": 42,
+        "swingDamageType": "Cut",
+        "swingSpeed": 89
       }
     ]
   },
@@ -11788,6 +11923,44 @@
     ]
   },
   {
+    "id": "crpg_french_voulge",
+    "name": "French Voulge",
+    "culture": "Neutral",
+    "type": "Polearm",
+    "price": 10822,
+    "weight": 1.8,
+    "tier": 7.985214,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 134,
+        "balance": 0.75,
+        "handling": 79,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 24,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 94,
+        "swingDamage": 27,
+        "swingDamageType": "Cut",
+        "swingSpeed": 92
+      }
+    ]
+  },
+  {
     "id": "crpg_fulcum_standard_t2",
     "name": "Fulcum Standard",
     "culture": "Empire",
@@ -12462,6 +12635,25 @@
     "weapons": []
   },
   {
+    "id": "crpg_great_prankh_helm",
+    "name": "Round Top Great Helmet",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 9448,
+    "weight": 3.8,
+    "tier": 8.903204,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 56,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_greataxe",
     "name": "Greataxe",
     "culture": "Battania",
@@ -12923,9 +13115,9 @@
     "name": "Heavy Blacksmith Hammer",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 18520,
-    "weight": 2.8,
-    "tier": 11.66524,
+    "price": 31111,
+    "weight": 2.7,
+    "tier": 15.4458466,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12954,6 +13146,30 @@
         "swingDamage": 33,
         "swingDamageType": "Blunt",
         "swingSpeed": 70
+      },
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 85,
+        "balance": 0.15,
+        "handling": 73,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "TwoHandIdleOnMount",
+          "MultiplePenetration",
+          "CanKnockDown"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 33,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 74
       }
     ]
   },
@@ -12990,6 +13206,43 @@
         "swingDamage": 45,
         "swingDamageType": "Cut",
         "swingSpeed": 78
+      }
+    ]
+  },
+  {
+    "id": "crpg_heavy_goedendag",
+    "name": "Heavy Goedendag",
+    "culture": "Sturgia",
+    "type": "TwoHandedWeapon",
+    "price": 770214,
+    "weight": 1.3,
+    "tier": 81.35886,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 74,
+        "balance": 1.0,
+        "handling": 92,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "MultiplePenetration"
+        ],
+        "thrustDamage": 25,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 100,
+        "swingDamage": 30,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 105
       }
     ]
   },
@@ -15049,6 +15302,27 @@
         "swingDamage": 25,
         "swingDamageType": "Pierce",
         "swingSpeed": 87
+      },
+      {
+        "class": "OneHandedAxe",
+        "itemUsage": "onehanded_shield_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 71,
+        "balance": 0.6,
+        "handling": 85,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "BonusAgainstShield"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 93,
+        "swingDamage": 25,
+        "swingDamageType": "Pierce",
+        "swingSpeed": 87
       }
     ]
   },
@@ -15125,6 +15399,176 @@
         "swingDamage": 24,
         "swingDamageType": "Cut",
         "swingSpeed": 75
+      }
+    ]
+  },
+  {
+    "id": "crpg_katana_black",
+    "name": "Black Katana",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 32123,
+    "weight": 1.65,
+    "tier": 15.7130718,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 1.0,
+        "handling": 90,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 21,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 96,
+        "swingDamage": 35,
+        "swingDamageType": "Cut",
+        "swingSpeed": 102
+      }
+    ]
+  },
+  {
+    "id": "crpg_katana_blue",
+    "name": "Blue Katana",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 32123,
+    "weight": 1.65,
+    "tier": 15.7130718,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 1.0,
+        "handling": 90,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 21,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 96,
+        "swingDamage": 35,
+        "swingDamageType": "Cut",
+        "swingSpeed": 102
+      }
+    ]
+  },
+  {
+    "id": "crpg_katana_green",
+    "name": "Green Katana",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 32123,
+    "weight": 1.65,
+    "tier": 15.7130718,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 1.0,
+        "handling": 90,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 21,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 96,
+        "swingDamage": 35,
+        "swingDamageType": "Cut",
+        "swingSpeed": 102
+      }
+    ]
+  },
+  {
+    "id": "crpg_katana_red",
+    "name": "Red Katana",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 32123,
+    "weight": 1.65,
+    "tier": 15.7130718,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 1.0,
+        "handling": 90,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 21,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 96,
+        "swingDamage": 35,
+        "swingDamageType": "Cut",
+        "swingSpeed": 102
+      }
+    ]
+  },
+  {
+    "id": "crpg_katana_yellow",
+    "name": "Yellow Katana",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 32123,
+    "weight": 1.65,
+    "tier": 15.7130718,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 1.0,
+        "handling": 90,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 21,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 96,
+        "swingDamage": 35,
+        "swingDamageType": "Cut",
+        "swingSpeed": 102
       }
     ]
   },
@@ -15534,6 +15978,25 @@
       "bodyArmor": 16,
       "armArmor": 2,
       "legArmor": 5,
+      "materialType": "Leather"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_khuzait_lamellar_strapped",
+    "name": "Reinforced Leather Armor",
+    "culture": "Khuzait",
+    "type": "BodyArmor",
+    "price": 1908,
+    "weight": 7.010831,
+    "tier": 4.48649073,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 24,
+      "armArmor": 6,
+      "legArmor": 12,
       "materialType": "Leather"
     },
     "weapons": []
@@ -17354,6 +17817,39 @@
     "weapons": []
   },
   {
+    "id": "crpg_light_goedendag",
+    "name": "Light Goedendag",
+    "culture": "Sturgia",
+    "type": "OneHandedWeapon",
+    "price": 83049,
+    "weight": 0.69,
+    "tier": 35.9198227,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 42,
+        "balance": 1.0,
+        "handling": 113,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 17,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 100,
+        "swingDamage": 21,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 117
+      }
+    ]
+  },
+  {
     "id": "crpg_light_harness",
     "name": "Light Harness",
     "culture": "Neutral",
@@ -17539,6 +18035,43 @@
         "swingDamage": 49,
         "swingDamageType": "Cut",
         "swingSpeed": 76
+      }
+    ]
+  },
+  {
+    "id": "crpg_long_buckler",
+    "name": "Oval Buckler",
+    "culture": "Sturgia",
+    "type": "Shield",
+    "price": 9741,
+    "weight": 1.2,
+    "tier": 10.3004417,
+    "requirement": 0,
+    "flags": [
+      "ForceAttachOffHandPrimaryItemBone",
+      "HeldInOffHand"
+    ],
+    "weapons": [
+      {
+        "class": "SmallShield",
+        "itemUsage": "hand_shield",
+        "accuracy": 100,
+        "missileSpeed": 0,
+        "stackAmount": 220,
+        "length": 24,
+        "balance": 0.0,
+        "handling": 80,
+        "bodyArmor": 8,
+        "flags": [
+          "HasHitPoints",
+          "CanBlockRanged"
+        ],
+        "thrustDamage": 10,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 80,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 100
       }
     ]
   },
@@ -18227,6 +18760,29 @@
         "swingDamage": 28,
         "swingDamageType": "Blunt",
         "swingSpeed": 81
+      },
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 84,
+        "balance": 0.39,
+        "handling": 77,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "TwoHandIdleOnMount",
+          "MultiplePenetration"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 92,
+        "swingDamage": 28,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
       }
     ]
   },
@@ -18391,9 +18947,9 @@
     "name": "Great Maul",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 17904,
-    "weight": 3.08,
-    "tier": 11.451273,
+    "price": 60267,
+    "weight": 2.7,
+    "tier": 21.9362831,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -18422,6 +18978,63 @@
         "swingDamage": 34,
         "swingDamageType": "Blunt",
         "swingSpeed": 71
+      },
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.25,
+        "handling": 75,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "TwoHandIdleOnMount",
+          "MultiplePenetration",
+          "CanKnockDown"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 34,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 77
+      }
+    ]
+  },
+  {
+    "id": "crpg_medium_goedendag",
+    "name": "Medium Goedendag",
+    "culture": "Sturgia",
+    "type": "OneHandedWeapon",
+    "price": 519364,
+    "weight": 0.69,
+    "tier": 91.56154,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 56,
+        "balance": 1.0,
+        "handling": 109,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 20,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 100,
+        "swingDamage": 25,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 114
       }
     ]
   },
@@ -18613,6 +19226,39 @@
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 64
+      }
+    ]
+  },
+  {
+    "id": "crpg_military_hammer",
+    "name": "Military Hammer",
+    "culture": "Sturgia",
+    "type": "OneHandedWeapon",
+    "price": 121901,
+    "weight": 0.69,
+    "tier": 43.7620239,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 49,
+        "balance": 1.0,
+        "handling": 110,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 18,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 100,
+        "swingDamage": 25,
+        "swingDamageType": "Pierce",
+        "swingSpeed": 115
       }
     ]
   },
@@ -23249,6 +23895,77 @@
     "weapons": []
   },
   {
+    "id": "crpg_peasant_hammer_1_t1",
+    "name": "Blacksmith Hammer",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 750,
+    "weight": 2.4,
+    "tier": 2.432588,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 32,
+        "balance": 0.67,
+        "handling": 99,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 84,
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 90
+      }
+    ]
+  },
+  {
+    "id": "crpg_peasant_hammer_2_t1",
+    "name": "Wooden Hammer",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 481,
+    "weight": 2.48,
+    "tier": 1.74985242,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 45,
+        "balance": 0.59,
+        "handling": 97,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "MultiplePenetration"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 83,
+        "swingDamage": 15,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 87
+      }
+    ]
+  },
+  {
     "id": "crpg_peasant_hatchet_1_t1",
     "name": "Hatchet",
     "culture": "Neutral",
@@ -24060,6 +24777,25 @@
     "weapons": []
   },
   {
+    "id": "crpg_pothelm",
+    "name": "Roundtop Full Helm",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 8026,
+    "weight": 3.4,
+    "tier": 8.515432,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 53,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_practice_spear_t1",
     "name": "Bludgeon Staff",
     "culture": "Neutral",
@@ -24692,6 +25428,25 @@
     "weapons": []
   },
   {
+    "id": "crpg_roningasa",
+    "name": "Roningasa",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 50,
+    "weight": 0.1,
+    "tier": 0.18080914,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 1,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Cloth"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_rough_bearskin",
     "name": "Rough Bearskin",
     "culture": "Battania",
@@ -24975,6 +25730,124 @@
     "weapons": []
   },
   {
+    "id": "crpg_rus_armour",
+    "name": "Vaegir Coat of Plates",
+    "culture": "Sturgia",
+    "type": "BodyArmor",
+    "price": 10663,
+    "weight": 16.38,
+    "tier": 7.29118347,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 46,
+      "armArmor": 14,
+      "legArmor": 14,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_armour1",
+    "name": "Vaegir Coat of Plates",
+    "culture": "Sturgia",
+    "type": "BodyArmor",
+    "price": 10663,
+    "weight": 16.38,
+    "tier": 7.29118347,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 46,
+      "armArmor": 14,
+      "legArmor": 14,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_helm_noble",
+    "name": "Vaegir Noble Helmet",
+    "culture": "Sturgia",
+    "type": "HeadArmor",
+    "price": 7037,
+    "weight": 3.31,
+    "tier": 8.214173,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 51,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_helm_regular",
+    "name": "Vaegir Helmet",
+    "culture": "Sturgia",
+    "type": "HeadArmor",
+    "price": 7037,
+    "weight": 3.31,
+    "tier": 8.214173,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 51,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_helm_regular2",
+    "name": "Vaegir Helmet",
+    "culture": "Sturgia",
+    "type": "HeadArmor",
+    "price": 7037,
+    "weight": 3.31,
+    "tier": 8.214173,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 51,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_open_helm",
+    "name": "Vaegir Helmet",
+    "culture": "Sturgia",
+    "type": "HeadArmor",
+    "price": 6207,
+    "weight": 3.11,
+    "tier": 7.93595743,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 49,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_sa_1ChurburghBoots",
     "name": "Plate Boots",
     "culture": "Vlandia",
@@ -25204,6 +26077,44 @@
       "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sallet_base_nochin",
+    "name": "Western Sallet",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 9448,
+    "weight": 3.8,
+    "tier": 8.903204,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 56,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_sallet_no_visor_nochin",
+    "name": "Western open Sallet",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 3808,
+    "weight": 2.47,
+    "tier": 6.931793,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 42,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
     },
     "weapons": []
   },
@@ -25580,12 +26491,12 @@
   },
   {
     "id": "crpg_sherpherds",
-    "name": "Shepherd Axe",
-    "culture": "Battania",
+    "name": "Shepherd's Axe",
+    "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 1129,
-    "weight": 0.97,
-    "tier": 3.21909142,
+    "price": 4009,
+    "weight": 0.8,
+    "tier": 7.01292324,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -25611,6 +26522,27 @@
         "swingDamage": 25,
         "swingDamageType": "Cut",
         "swingSpeed": 92
+      },
+      {
+        "class": "OneHandedAxe",
+        "itemUsage": "onehanded_shield_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 61,
+        "balance": 1.0,
+        "handling": 103,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "BonusAgainstShield"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 98,
+        "swingDamage": 25,
+        "swingDamageType": "Cut",
+        "swingSpeed": 106
       }
     ]
   },
@@ -25663,6 +26595,29 @@
       "Civilian"
     ],
     "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.44,
+        "handling": 78,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 93,
+        "swingDamage": 33,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
+      },
       {
         "class": "TwoHandedMace",
         "itemUsage": "twohanded_axe",
@@ -25871,6 +26826,44 @@
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 56
+      }
+    ]
+  },
+  {
+    "id": "crpg_simple_poleaxe",
+    "name": "Simple Poleaxe",
+    "culture": "Neutral",
+    "type": "Polearm",
+    "price": 1229,
+    "weight": 2.4,
+    "tier": 2.05589271,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 145,
+        "balance": 0.13,
+        "handling": 65,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 22,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 89,
+        "swingDamage": 35,
+        "swingDamageType": "Cut",
+        "swingSpeed": 74
       }
     ]
   },
@@ -26193,6 +27186,30 @@
     "requirement": 0,
     "flags": [],
     "weapons": [
+      {
+        "class": "Stone",
+        "itemUsage": "stone",
+        "accuracy": 100,
+        "missileSpeed": 40,
+        "stackAmount": 10,
+        "length": 10,
+        "balance": 0.0,
+        "handling": 102,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 8,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 102,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 102
+      },
       {
         "class": "Stone",
         "itemUsage": "stone",
@@ -26902,6 +27919,44 @@
       "materialType": "Plate"
     },
     "weapons": []
+  },
+  {
+    "id": "crpg_spiked_polehammer",
+    "name": "Spiked Polehammer",
+    "culture": "Neutral",
+    "type": "Polearm",
+    "price": 1470,
+    "weight": 2.4,
+    "tier": 2.32981586,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 148,
+        "balance": 0.0,
+        "handling": 58,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 21,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 88,
+        "swingDamage": 30,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 65
+      }
+    ]
   },
   {
     "id": "crpg_standard_of_courage_t2",
@@ -30870,6 +31925,44 @@
     "weapons": []
   },
   {
+    "id": "crpg_vaegir_helm",
+    "name": "War Mask",
+    "culture": "Sturgia",
+    "type": "HeadArmor",
+    "price": 8428,
+    "weight": 3.6,
+    "tier": 8.629949,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 54,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_vaegir_helm_open",
+    "name": "War helmet",
+    "culture": "Sturgia",
+    "type": "HeadArmor",
+    "price": 6207,
+    "weight": 3.11,
+    "tier": 7.93595743,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 49,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_varangian_bra_basic",
     "name": "Decorated Leather Harness",
     "culture": "Empire",
@@ -32362,6 +33455,39 @@
     ]
   },
   {
+    "id": "crpg_warhammer",
+    "name": "Warhammer",
+    "culture": "Sturgia",
+    "type": "OneHandedWeapon",
+    "price": 69598,
+    "weight": 0.69,
+    "tier": 32.78522,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 45,
+        "balance": 1.0,
+        "handling": 113,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 19,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 100,
+        "swingDamage": 23,
+        "swingDamageType": "Pierce",
+        "swingSpeed": 117
+      }
+    ]
+  },
+  {
     "id": "crpg_western_2hsword_t3",
     "name": "Tapered Two-Hander",
     "culture": "Vlandia",
@@ -32476,9 +33602,9 @@
     "name": "Western chain shoulders",
     "culture": "Vlandia",
     "type": "ShoulderArmor",
-    "price": 618,
-    "weight": 0.55,
-    "tier": 4.44859171,
+    "price": 544,
+    "weight": 1.55,
+    "tier": 4.27529669,
     "requirement": 0,
     "flags": [],
     "armor": {
