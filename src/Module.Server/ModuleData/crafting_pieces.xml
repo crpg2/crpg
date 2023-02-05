@@ -6382,34 +6382,34 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-    <CraftingPiece id="crpg_light_goedendag_head" name="{=}Light Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_1h_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0"  length="13.3" weight="0.37" full_scale="true" >
+    <CraftingPiece id="crpg_light_goedendag_head" name="{=}Light Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_1h_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0"  length="13.3" weight="0.95" full_scale="true" >
     <BuildData piece_offset="-10.0" />
     <BladeData stack_amount="1" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="1.7" />
-      <Swing damage_type="Blunt" damage_factor="2.1" />
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Blunt" damage_factor="2.2" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_light_goedendag_handle" name="{=}Light Goedendag Handle" tier="4" piece_type="Handle" mesh="goedendag_1h_handle" length="48.2" weight="0.323" item_holster_pos_shift="0,0,-0.1" CraftingCost="90">
-    <BuildData piece_offset="15.0" />
+  <CraftingPiece id="crpg_light_goedendag_handle" name="{=}Light Goedendag Handle" tier="4" piece_type="Handle" mesh="goedendag_1h_handle" length="48.2" weight="0.65" item_holster_pos_shift="0,0,-0.1" CraftingCost="90">
+    <BuildData piece_offset="20.0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_medium_goedendag_head" name="{=}Medium Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_2h_short_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="20.9" weight="0.37" full_scale="true" >
+  <CraftingPiece id="crpg_medium_goedendag_head" name="{=}Medium Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_2h_short_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="20.9" weight="0.90" full_scale="true" >
     <BuildData piece_offset="-10.0" />
     <BladeData stack_amount="1" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Blunt" damage_factor="2.5" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Blunt" damage_factor="2.4" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_medium_goedendag_handle" name="{=}Medium Goedendag Handle" tier="4" piece_type="Handle" mesh="goedendag_2h_short_handle" length="60.2" weight="0.323" item_holster_pos_shift="0,0,-0.1" CraftingCost="90">
-    <BuildData piece_offset="15.0" />
+  <CraftingPiece id="crpg_medium_goedendag_handle" name="{=}Medium Goedendag Handle" tier="4" piece_type="Handle" mesh="goedendag_2h_short_handle" length="60.2" weight="0.80" item_holster_pos_shift="0,0,-0.1" CraftingCost="90">
+    <BuildData piece_offset="22.0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
@@ -6543,34 +6543,37 @@
         <Material id="Wood" count="1"/>
       </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_military_hammer_head" name="{=}Military Hammer Head" tier="4" piece_type="Blade" mesh="military_hammer_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="20.4" weight="0.37" full_scale="true" >
+  <CraftingPiece id="crpg_military_hammer_head" name="{=}Military Hammer Head" tier="4" piece_type="Blade" mesh="military_hammer_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="20.4" weight="0.45" full_scale="true" excluded_item_usage_features="thrust">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="1" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Blunt" damage_factor="1.8" />
-      <Swing damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Blunt" damage_factor="2.2" />
     </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_military_hammer_shaft" name="{=}Military Hammer Handle" tier="4" piece_type="Handle" mesh="military_hammer_handle" length="56.0" weight="0.323" item_holster_pos_shift="0,0,-0.1" CraftingCost="90">
-    <BuildData piece_offset="17.0" next_piece_offset="16" />
+  <CraftingPiece id="crpg_military_hammer_shaft" name="{=}Military Hammer Handle" tier="4" piece_type="Handle" mesh="military_hammer_handle" length="56.0" weight="0.70" item_holster_pos_shift="0,0,-0.1" CraftingCost="90">
+    <BuildData piece_offset="29.0" next_piece_offset="16" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_warhammer_head" name="{=}Warhammer Head" tier="4" piece_type="Blade" mesh="warhammer_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="16.1" weight="0.37" full_scale="true" >
+  <CraftingPiece id="crpg_warhammer_head" name="{=}Warhammer Head" tier="4" piece_type="Blade" mesh="warhammer_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="16.1" weight="0.55" full_scale="true" >
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="1" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Pierce" damage_factor="2.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Blunt" damage_factor="2.6" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_warhammer_shaft" name="{=}Warhammer Handle" tier="4" piece_type="Handle" mesh="warhammer_handle" length="51.7" weight="0.323" item_holster_pos_shift="0,0,-0.1" CraftingCost="90">
-    <BuildData piece_offset="12.0" next_piece_offset="9" />
+  <CraftingPiece id="crpg_warhammer_shaft" name="{=}Warhammer Handle" tier="4" piece_type="Handle" mesh="warhammer_handle" length="51.7" weight="1.05" item_holster_pos_shift="0,0,-0.1" CraftingCost="90">
+    <BuildData piece_offset="27.0" next_piece_offset="9" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>

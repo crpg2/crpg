@@ -2557,13 +2557,13 @@
   <CraftedItem id="crpg_light_goedendag" name="{=}Light Goedendag" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_light_goedendag_head" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_light_goedendag_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_light_goedendag_handle" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_medium_goedendag" name="{=}Medium Goedendag" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_medium_goedendag_head" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_medium_goedendag_handle" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_medium_goedendag_handle" Type="Handle" scale_factor="115" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_heavy_goedendag" name="{=}Heavy Goedendag" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia" >
@@ -2574,14 +2574,14 @@
   </CraftedItem>
   <CraftedItem id="crpg_military_hammer" name="{=}Military Hammer" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_military_hammer_head" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_military_hammer_shaft" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_military_hammer_head" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_military_hammer_shaft" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_warhammer" name="{=}Warhammer" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_warhammer_head" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_warhammer_shaft" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_warhammer_head" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_warhammer_shaft" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_spiked_polehammer" name="{=}Spiked Polehammer" crafting_template="crpg_TwoHandedPolearm">

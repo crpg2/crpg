@@ -17881,9 +17881,9 @@
     "name": "Light Goedendag",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 83049,
-    "weight": 0.69,
-    "tier": 35.9198227,
+    "price": 5656,
+    "weight": 1.66,
+    "tier": 8.537677,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17893,19 +17893,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 42,
-        "balance": 1.0,
-        "handling": 113,
+        "length": 52,
+        "balance": 0.78,
+        "handling": 97,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 21,
+        "thrustSpeed": 90,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 117
+        "swingSpeed": 93
       }
     ]
   },
@@ -19089,9 +19089,9 @@
     "name": "Medium Goedendag",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 519364,
-    "weight": 0.69,
-    "tier": 91.56154,
+    "price": 5894,
+    "weight": 1.82,
+    "tier": 8.738513,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -19101,19 +19101,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 56,
-        "balance": 1.0,
-        "handling": 109,
+        "length": 71,
+        "balance": 0.48,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 25,
+        "thrustSpeed": 88,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 114
+        "swingSpeed": 84
       }
     ]
   },
@@ -19313,31 +19313,34 @@
     "name": "Military Hammer",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 121901,
-    "weight": 0.69,
-    "tier": 43.7620239,
+    "price": 7324,
+    "weight": 1.54,
+    "tier": 9.869123,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "Civilian"
+    ],
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 49,
-        "balance": 1.0,
-        "handling": 110,
+        "length": 78,
+        "balance": 0.42,
+        "handling": 84,
         "bodyArmor": 0,
         "flags": [
-          "MeleeWeapon"
+          "MeleeWeapon",
+          "MultiplePenetration"
         ],
-        "thrustDamage": 18,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 100,
-        "swingDamage": 25,
-        "swingDamageType": "Pierce",
-        "swingSpeed": 115
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 22,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 82
       }
     ]
   },
@@ -33614,9 +33617,9 @@
     "name": "Warhammer",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 69598,
-    "weight": 0.69,
-    "tier": 32.78522,
+    "price": 7411,
+    "weight": 1.99,
+    "tier": 9.934472,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -33626,19 +33629,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 45,
-        "balance": 1.0,
-        "handling": 113,
+        "length": 70,
+        "balance": 0.41,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 23,
-        "swingDamageType": "Pierce",
-        "swingSpeed": 117
+        "thrustSpeed": 87,
+        "swingDamage": 26,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 82
       }
     ]
   },
