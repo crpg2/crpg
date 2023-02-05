@@ -128,31 +128,31 @@
   </Item>
   <Item id="crpg_woven_leather_bracers" name="{=fUmehyHq}Woven Leather Bracers" mesh="vlandia_leather_stripes_bracers" culture="Culture.empire" weight="0.5331134" appearance="1" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="6" covers_hands="false" modifier_group="leather" material_type="Leather" />
+      <Armor arm_armor="3" covers_hands="false" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_padded_mitten" name="{=J3YHMkL3}Padded Mittens" mesh="padded_vambrace_a_mitten" culture="Culture.empire" weight="0.9793918" difficulty="0" appearance="1" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="9" covers_hands="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor arm_armor="12" covers_hands="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_plated_strip_gauntlets" name="{=ulaMq9HL}Plated Striped Vambraces" mesh="empire_plated_gauntlets" culture="Culture.empire" weight="3.74306" appearance="1.3" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="22" covers_hands="false" modifier_group="plate" material_type="Plate" />
+      <Armor arm_armor="18" covers_hands="false" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_lamellar_plate_gauntlets" name="{=XGX6DbFL}Lamellar Plate Gauntlets" mesh="imperial_gauntlets" culture="Culture.empire" weight="4.001147" appearance="3" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="23" covers_hands="true" modifier_group="plate" material_type="Plate" />
+      <Armor arm_armor="30" covers_hands="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_decorated_imperial_gauntlets" name="{=2XEbqNQz}Decorated Imperial Gauntlets" mesh="empire_plate_armor_gauntlets" culture="Culture.empire" weight="3.244425" appearance="3" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="20" covers_hands="true" modifier_group="plate" material_type="Plate" />
+      <Armor arm_armor="24" covers_hands="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>

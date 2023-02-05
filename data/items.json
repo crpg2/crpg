@@ -177,14 +177,14 @@
     "name": "Legionary Studded Harness",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 295,
+    "price": 2355,
     "weight": 0.9793919,
-    "tier": 3.500862,
+    "tier": 6.58162,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 7,
+      "bodyArmor": 17,
       "armArmor": 4,
       "legArmor": 0,
       "materialType": "Plate"
@@ -196,15 +196,15 @@
     "name": "Plate Pauldrons",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 151,
+    "price": 503,
     "weight": 0.8207818,
-    "tier": 2.70612574,
+    "tier": 4.17194366,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 0,
-      "armArmor": 8,
+      "bodyArmor": 8,
+      "armArmor": 5,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -291,9 +291,9 @@
     "name": "Bronze Pauldrons with Neck Guard",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 1483,
+    "price": 1792,
     "weight": 2.167811,
-    "tier": 5.769159,
+    "tier": 6.09115839,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -301,7 +301,7 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 13,
-      "armArmor": 6,
+      "armArmor": 7,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -312,17 +312,17 @@
     "name": "Bronze Pauldrons ",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 90,
+    "price": 523,
     "weight": 0.5331134,
-    "tier": 2.0547235,
+    "tier": 4.22359848,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 0,
-      "armArmor": 6,
+      "bodyArmor": 8,
+      "armArmor": 5,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -390,18 +390,18 @@
     "name": "Aketon",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 85,
+    "price": 1022,
     "weight": 2.077283,
-    "tier": 1.395525,
+    "tier": 3.72942066,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
+      "bodyArmor": 23,
       "armArmor": 3,
-      "legArmor": 2,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -905,18 +905,18 @@
     "name": "Southern Reinforced Mail Vest",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 966,
+    "price": 14854,
     "weight": 6.965938,
-    "tier": 3.66696239,
+    "tier": 7.986067,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 26,
-      "armArmor": 3,
-      "legArmor": 3,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -1747,9 +1747,9 @@
     "name": "Robe over Mail Shirt",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 2971,
+    "price": 3533,
     "weight": 9.225823,
-    "tier": 5.097323,
+    "tier": 5.35476351,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -1757,8 +1757,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 28,
-      "armArmor": 8,
-      "legArmor": 13,
+      "armArmor": 13,
+      "legArmor": 8,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -3075,18 +3075,18 @@
     "name": "Leather Armor",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 1243,
+    "price": 1098,
     "weight": 5.048733,
-    "tier": 3.95506835,
+    "tier": 3.81064153,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 22,
-      "armArmor": 6,
-      "legArmor": 6,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -4717,9 +4717,9 @@
     "name": "Rhomphaia",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 22207,
-    "weight": 1.35,
-    "tier": 11.9037714,
+    "price": 12165,
+    "weight": 1.41,
+    "tier": 8.530093,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -4730,8 +4730,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 184,
-        "balance": 0.28,
-        "handling": 67,
+        "balance": 0.23,
+        "handling": 66,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -4743,9 +4743,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 96,
-        "swingDamage": 47,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 78
+        "swingSpeed": 77
       }
     ]
   },
@@ -5657,9 +5657,9 @@
     "name": "Bec De Corbin",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 2404,
-    "weight": 2.4,
-    "tier": 3.2347157,
+    "price": 16112,
+    "weight": 1.91,
+    "tier": 9.978577,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5671,9 +5671,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 141,
-        "balance": 0.0,
-        "handling": 59,
+        "length": 124,
+        "balance": 0.47,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -5681,12 +5681,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 35,
+        "thrustSpeed": 93,
+        "swingDamage": 30,
         "swingDamageType": "Pierce",
-        "swingSpeed": 68
+        "swingSpeed": 84
       }
     ]
   },
@@ -5737,9 +5737,9 @@
     "name": "Billhook",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 23531,
+    "price": 13892,
     "weight": 1.91,
-    "tier": 12.2855167,
+    "tier": 9.188915,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -5763,7 +5763,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 93,
-        "swingDamage": 48,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
         "swingSpeed": 82
       }
@@ -6966,9 +6966,9 @@
     "name": "Burgundian Glaive",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 1153,
-    "weight": 2.0,
-    "tier": 1.96433771,
+    "price": 15642,
+    "weight": 1.78,
+    "tier": 9.816252,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -6981,8 +6981,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 189,
-        "balance": 0.0,
-        "handling": 59,
+        "balance": 0.21,
+        "handling": 65,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -6990,12 +6990,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 30,
+        "thrustSpeed": 93,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 69
+        "swingSpeed": 76
       }
     ]
   },
@@ -7004,9 +7004,9 @@
     "name": "Burgundian Poleaxe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 5239,
-    "weight": 2.4,
-    "tier": 5.240514,
+    "price": 15591,
+    "weight": 2.27,
+    "tier": 9.798337,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -7019,8 +7019,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.32,
-        "handling": 70,
+        "balance": 0.41,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -7030,10 +7030,10 @@
         ],
         "thrustDamage": 25,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 37,
+        "thrustSpeed": 91,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 79
+        "swingSpeed": 82
       }
     ]
   },
@@ -8478,16 +8478,16 @@
     "name": "Decorated Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1367,
+    "price": 2615,
     "weight": 1.402491,
-    "tier": 6.91897964,
+    "tier": 8.302775,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 20,
+      "legArmor": 24,
       "materialType": "Plate"
     },
     "weapons": []
@@ -8497,15 +8497,15 @@
     "name": "Decorated Imperial Gauntlets",
     "culture": "Empire",
     "type": "HandArmor",
-    "price": 1814,
+    "price": 3486,
     "weight": 3.244425,
-    "tier": 6.95581865,
+    "tier": 8.346983,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
-      "armArmor": 20,
+      "armArmor": 24,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -9145,9 +9145,9 @@
     "name": "Polesword",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 13524,
+    "price": 8916,
     "weight": 1.75,
-    "tier": 9.051901,
+    "tier": 7.150599,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9170,7 +9170,7 @@
         "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 93,
-        "swingDamage": 50,
+        "swingDamage": 47,
         "swingDamageType": "Cut",
         "swingSpeed": 65
       }
@@ -9952,18 +9952,18 @@
     "name": "Cured Studded Leather Armor",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 950,
+    "price": 3980,
     "weight": 4.729927,
-    "tier": 3.64785051,
+    "tier": 5.53891373,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 18,
-      "armArmor": 6,
-      "legArmor": 8,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Leather"
     },
     "weapons": []
@@ -10245,13 +10245,13 @@
     "name": "Jeweled Plumed Battle Crown",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 4739,
+    "price": 8015,
     "weight": 2.740113,
-    "tier": 7.36641645,
+    "tier": 8.512302,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 45,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -10264,13 +10264,13 @@
     "name": "Imperial Plumed Helmet",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5813,
+    "price": 7781,
     "weight": 3.018642,
-    "tier": 7.794133,
+    "tier": 8.443645,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -10305,13 +10305,13 @@
     "name": "Jeweled Crown",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 1945,
+    "price": 998,
     "weight": 1.799568,
-    "tier": 5.735575,
+    "tier": 4.723415,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 34,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -10324,15 +10324,15 @@
     "name": "Golden Laurel Crown",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 53,
+    "price": 56,
     "weight": 0.1014857,
-    "tier": 0.903980136,
+    "tier": 1.08477616,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 5,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -10366,9 +10366,9 @@
     "name": "Ladies Dress",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 105,
+    "price": 89,
     "weight": 1.221603,
-    "tier": 1.59974384,
+    "tier": 1.43852937,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -10376,9 +10376,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 7,
-      "armArmor": 2,
-      "legArmor": 4,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -10388,9 +10388,9 @@
     "name": "Red Dress",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 78,
+    "price": 91,
     "weight": 0.8207818,
-    "tier": 1.31048286,
+    "tier": 1.46169245,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -10399,7 +10399,7 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 6,
-      "armArmor": 2,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -10410,13 +10410,13 @@
     "name": "Royal Cataphract Helmet",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 7039,
+    "price": 7556,
     "weight": 3.306017,
-    "tier": 8.215069,
+    "tier": 8.376148,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 51,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -10429,13 +10429,13 @@
     "name": "Lord Helmet with Metal Strips",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5439,
+    "price": 7858,
     "weight": 2.924803,
-    "tier": 7.65232754,
+    "tier": 8.466405,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 47,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -10448,18 +10448,18 @@
     "name": "Cavalryman Mail Shirt",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 3029,
+    "price": 11763,
     "weight": 8.73775,
-    "tier": 5.12542534,
+    "tier": 7.491006,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 27,
-      "armArmor": 10,
-      "legArmor": 11,
+      "bodyArmor": 40,
+      "armArmor": 13,
+      "legArmor": 18,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -10469,9 +10469,9 @@
     "name": "Horseman Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 62,
+    "price": 52,
     "weight": 0.1753114,
-    "tier": 1.82122278,
+    "tier": 1.09273362,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10480,7 +10480,7 @@
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 5,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -10490,13 +10490,13 @@
     "name": "Imperial Jeweled Helmet",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5439,
+    "price": 7858,
     "weight": 2.924803,
-    "tier": 7.65232754,
+    "tier": 8.466405,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 47,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -10705,18 +10705,18 @@
     "name": "Decorated Legionary Mail",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 4010,
+    "price": 11880,
     "weight": 10.89783,
-    "tier": 5.55055,
+    "tier": 7.511342,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 30,
-      "armArmor": 8,
-      "legArmor": 18,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -10726,17 +10726,17 @@
     "name": "Ornate Legionary Scale Mail",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 5572,
+    "price": 29186,
     "weight": 12.49636,
-    "tier": 6.088809,
+    "tier": 9.596278,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 36,
-      "armArmor": 8,
+      "bodyArmor": 52,
+      "armArmor": 23,
       "legArmor": 18,
       "materialType": "Plate"
     },
@@ -10747,13 +10747,13 @@
     "name": "Palatine Guard Helmet",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 3076,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 6.53022528,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -11030,15 +11030,15 @@
     "name": "Bronze Plate Pauldrons",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 115,
+    "price": 513,
     "weight": 0.6717997,
-    "tier": 2.3827734,
+    "tier": 4.1982193,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 0,
-      "armArmor": 7,
+      "bodyArmor": 8,
+      "armArmor": 5,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -11049,15 +11049,15 @@
     "name": "Iron Plate Pauldrons",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 151,
+    "price": 503,
     "weight": 0.8207818,
-    "tier": 2.70612574,
+    "tier": 4.17194366,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 0,
-      "armArmor": 8,
+      "bodyArmor": 8,
+      "armArmor": 5,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -11068,9 +11068,9 @@
     "name": "Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 19825,
-    "weight": 1.72,
-    "tier": 11.1870556,
+    "price": 15657,
+    "weight": 1.84,
+    "tier": 9.821469,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11081,8 +11081,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 169,
-        "balance": 0.44,
-        "handling": 72,
+        "balance": 0.33,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -11090,12 +11090,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
-        "swingDamage": 38,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 80
       }
     ]
   },
@@ -11104,9 +11104,9 @@
     "name": "Fine Steel Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 24065,
+    "price": 12611,
     "weight": 1.29,
-    "tier": 12.4365244,
+    "tier": 8.704589,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11126,10 +11126,10 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 26,
+        "thrustDamage": 25,
         "thrustDamageType": "Cut",
         "thrustSpeed": 96,
-        "swingDamage": 52,
+        "swingDamage": 48,
         "swingDamageType": "Cut",
         "swingSpeed": 71
       }
@@ -11140,9 +11140,9 @@
     "name": "Short Tunic",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 52,
+    "price": 95,
     "weight": 0.1751825,
-    "tier": 0.5706096,
+    "tier": 1.50433445,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11151,9 +11151,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 0,
-      "legArmor": 0,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -11373,9 +11373,9 @@
     "name": "Infantryman Gambeson",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 523,
+    "price": 5322,
     "weight": 3.419776,
-    "tier": 3.028619,
+    "tier": 6.01099968,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11383,9 +11383,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 15,
-      "armArmor": 4,
-      "legArmor": 7,
+      "bodyArmor": 28,
+      "armArmor": 13,
+      "legArmor": 8,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -11395,9 +11395,9 @@
     "name": "Infantryman Gambeson over Leather Jacket",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 624,
+    "price": 5128,
     "weight": 3.816213,
-    "tier": 3.20317221,
+    "tier": 5.948748,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11405,8 +11405,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 4,
+      "bodyArmor": 28,
+      "armArmor": 13,
       "legArmor": 8,
       "materialType": "Cloth"
     },
@@ -11417,9 +11417,9 @@
     "name": "Infantryman Gambeson with Skirts",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 624,
+    "price": 5128,
     "weight": 3.816213,
-    "tier": 3.20317221,
+    "tier": 5.948748,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11427,8 +11427,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 4,
+      "bodyArmor": 28,
+      "armArmor": 13,
       "legArmor": 8,
       "materialType": "Cloth"
     },
@@ -11439,9 +11439,9 @@
     "name": "Infantryman Gambeson with Straps",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 624,
+    "price": 5128,
     "weight": 3.816213,
-    "tier": 3.20317221,
+    "tier": 5.948748,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11449,8 +11449,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 4,
+      "bodyArmor": 28,
+      "armArmor": 13,
       "legArmor": 8,
       "materialType": "Cloth"
     },
@@ -11461,9 +11461,9 @@
     "name": "Infantryman Long Gambeson",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 698,
+    "price": 5010,
     "weight": 4.075933,
-    "tier": 3.31868339,
+    "tier": 5.909984,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11471,8 +11471,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 5,
+      "bodyArmor": 28,
+      "armArmor": 13,
       "legArmor": 8,
       "materialType": "Cloth"
     },
@@ -11483,18 +11483,18 @@
     "name": "Auxiliary Armor",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 695,
+    "price": 1192,
     "weight": 4.001147,
-    "tier": 3.31347775,
+    "tier": 3.90557671,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 17,
-      "armArmor": 4,
-      "legArmor": 8,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -11504,18 +11504,18 @@
     "name": "Auxiliary Armor with Straps",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 771,
+    "price": 1173,
     "weight": 4.188975,
-    "tier": 3.42280841,
+    "tier": 3.88749385,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 18,
-      "armArmor": 4,
-      "legArmor": 8,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -11525,15 +11525,15 @@
     "name": "Legionary Padded Straps",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 468,
+    "price": 2015,
     "weight": 1.221603,
-    "tier": 4.07808971,
+    "tier": 6.29745865,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 9,
-      "armArmor": 4,
+      "bodyArmor": 13,
+      "armArmor": 7,
       "legArmor": 0,
       "materialType": "Leather"
     },
@@ -11579,13 +11579,13 @@
     "name": "Feathered Spangenhelm over Coif",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 3807,
+    "price": 928,
     "weight": 2.470721,
-    "tier": 6.93163824,
+    "tier": 4.621093,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 42,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -11744,9 +11744,9 @@
     "name": "Fine Town Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 56,
+    "price": 52,
     "weight": 0.1254426,
-    "tier": 1.46048379,
+    "tier": 1.09536278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11755,7 +11755,7 @@
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 4,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -11765,9 +11765,9 @@
     "name": "Rich Tunic",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 95,
     "weight": 0.2160417,
-    "tier": 0.5306698,
+    "tier": 1.50140727,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11775,9 +11775,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -11846,9 +11846,9 @@
     "name": "Folded Town Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 56,
+    "price": 52,
     "weight": 0.1254426,
-    "tier": 1.46048379,
+    "tier": 1.09536278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11857,7 +11857,7 @@
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 4,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -11867,9 +11867,9 @@
     "name": "Military Tunic",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 58,
+    "price": 93,
     "weight": 0.4770266,
-    "tier": 0.895203352,
+    "tier": 1.48347962,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -11877,8 +11877,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -11965,9 +11965,9 @@
     "name": "French Voulge",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 10822,
-    "weight": 1.8,
-    "tier": 7.985214,
+    "price": 15986,
+    "weight": 1.99,
+    "tier": 9.935265,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -11979,9 +11979,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 134,
-        "balance": 0.75,
-        "handling": 79,
+        "length": 133,
+        "balance": 0.61,
+        "handling": 75,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -11989,12 +11989,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
-        "swingDamage": 27,
+        "thrustSpeed": 93,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 88
       }
     ]
   },
@@ -12858,9 +12858,9 @@
     "name": "Half Apron",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 53,
+    "price": 94,
     "weight": 0.2901902,
-    "tier": 0.6707019,
+    "tier": 1.49618125,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12868,9 +12868,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 3,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -13327,13 +13327,13 @@
     "name": "Heavy Nasalhelm over Leather",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5813,
+    "price": 7781,
     "weight": 3.018642,
-    "tier": 7.794133,
+    "tier": 8.443645,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13346,13 +13346,13 @@
     "name": "Heavy Nasalhelm over Mail",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 7039,
+    "price": 7556,
     "weight": 3.306017,
-    "tier": 8.215069,
+    "tier": 8.376148,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 51,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13365,15 +13365,15 @@
     "name": "Heavy Nasalhelm over Padding",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5813,
+    "price": 7781,
     "weight": 3.018642,
-    "tier": 7.794133,
+    "tier": 8.443645,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13386,15 +13386,15 @@
     "name": "Heavy Nasalhelm over Laced Cloth",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 7936,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 8.489293,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13522,13 +13522,13 @@
     "name": "Helmet with Faceguard",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 743,
+    "price": 3773,
     "weight": 1.134645,
-    "tier": 4.321307,
+    "tier": 6.91409063,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 25,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13541,9 +13541,9 @@
     "name": "Hemp Tunic",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 58,
+    "price": 93,
     "weight": 0.4770266,
-    "tier": 0.895203352,
+    "tier": 1.48347962,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -13551,8 +13551,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -14373,16 +14373,16 @@
     "name": "Cloth Coif",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.02567407,
-    "tier": 0.362943858,
+    "tier": 1.08883154,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 2,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -14395,13 +14395,13 @@
     "name": "Goggled Cataphract Helmet",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 7483,
+    "price": 16072,
     "weight": 3.403728,
-    "tier": 8.353923,
+    "tier": 10.2817507,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 52,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -14414,18 +14414,18 @@
     "name": "Cataphract Lamellar Armor",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 13954,
+    "price": 19676,
     "weight": 20.72603,
-    "tier": 7.850629,
+    "tier": 8.62297,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 48,
-      "armArmor": 14,
-      "legArmor": 24,
+      "bodyArmor": 52,
+      "armArmor": 18,
+      "legArmor": 23,
       "materialType": "Plate"
     },
     "weapons": []
@@ -14435,18 +14435,18 @@
     "name": "Luxury Lamellar Vest over Leather",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 2993,
+    "price": 5337,
     "weight": 7.695641,
-    "tier": 5.108132,
+    "tier": 6.01577473,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 33,
-      "armArmor": 6,
-      "legArmor": 7,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Plate"
     },
     "weapons": []
@@ -14456,14 +14456,14 @@
     "name": "Heavy Lamellar Pauldrons",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 3954,
+    "price": 4514,
     "weight": 3.526454,
-    "tier": 7.60683775,
+    "tier": 7.89048338,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 17,
+      "bodyArmor": 18,
       "armArmor": 9,
       "legArmor": 0,
       "materialType": "Plate"
@@ -14497,13 +14497,13 @@
     "name": "Mail Coif",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 330,
+    "price": 1142,
     "weight": 0.7517617,
-    "tier": 3.33549166,
+    "tier": 4.91546154,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 19,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -14516,18 +14516,18 @@
     "name": "Infantryman Mail over Leather",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 2524,
+    "price": 14854,
     "weight": 6.965938,
-    "tier": 4.8643384,
+    "tier": 7.986067,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 31,
-      "armArmor": 6,
-      "legArmor": 6,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -14537,18 +14537,18 @@
     "name": "Infantryman Mail over Striped Leather",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 2524,
+    "price": 14854,
     "weight": 6.965938,
-    "tier": 4.8643384,
+    "tier": 7.986067,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 31,
-      "armArmor": 6,
-      "legArmor": 6,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -14558,18 +14558,18 @@
     "name": "Infantryman Mail Vest",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 3347,
+    "price": 12782,
     "weight": 9.473157,
-    "tier": 5.273401,
+    "tier": 7.66387272,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 26,
-      "armArmor": 12,
-      "legArmor": 12,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -14579,15 +14579,15 @@
     "name": "Legionary Helm",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 3391,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 6.71086,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -14600,9 +14600,9 @@
     "name": "Infantryman Rough Gambeson",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 779,
+    "price": 4896,
     "weight": 4.341292,
-    "tier": 3.43279958,
+    "tier": 5.871894,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -14610,8 +14610,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 6,
+      "bodyArmor": 28,
+      "armArmor": 13,
       "legArmor": 8,
       "materialType": "Cloth"
     },
@@ -14622,15 +14622,15 @@
     "name": "Lightweight Padded Coif",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 153,
+    "price": 56,
     "weight": 0.4754905,
-    "tier": 2.48735118,
+    "tier": 1.06600761,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 14,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -14664,9 +14664,9 @@
     "name": "Toga",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 152,
+    "price": 87,
     "weight": 1.562045,
-    "tier": 1.92253506,
+    "tier": 1.42047179,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -14674,9 +14674,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 8,
-      "armArmor": 4,
-      "legArmor": 3,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -14686,16 +14686,16 @@
     "name": "Heavy Scale Armor over Mail Hauberk",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 19156,
+    "price": 41104,
     "weight": 23.02404,
-    "tier": 8.560322,
+    "tier": 10.524107,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 57,
-      "armArmor": 16,
-      "legArmor": 20,
+      "bodyArmor": 64,
+      "armArmor": 25,
+      "legArmor": 25,
       "materialType": "Plate"
     },
     "weapons": []
@@ -14806,15 +14806,15 @@
     "name": "Legionary Reinforced Studded Harness",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 483,
+    "price": 1988,
     "weight": 1.323371,
-    "tier": 4.11764765,
+    "tier": 6.27319431,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 7,
-      "armArmor": 6,
+      "bodyArmor": 13,
+      "armArmor": 7,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -14954,13 +14954,13 @@
     "name": "Feathered Spangenhelm",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 838,
+    "price": 1074,
     "weight": 1.203399,
-    "tier": 4.482219,
+    "tier": 4.827006,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 26,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -14973,13 +14973,13 @@
     "name": "Feathered Spangenhelm over Leather",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 980,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 4.69760227,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -14992,13 +14992,13 @@
     "name": "Spangenhelm over Mail",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 3807,
+    "price": 3198,
     "weight": 2.470721,
-    "tier": 6.93163824,
+    "tier": 6.60156,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 42,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15011,15 +15011,15 @@
     "name": "Iron Legionary Helm over Cloth",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 3076,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 6.53022528,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15032,13 +15032,13 @@
     "name": "Iron Nasalhelm over Coif",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5813,
+    "price": 3018,
     "weight": 3.018642,
-    "tier": 7.794133,
+    "tier": 6.495111,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15051,13 +15051,13 @@
     "name": "Iron Nasalhelm over Mail",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5813,
+    "price": 7781,
     "weight": 3.018642,
-    "tier": 7.794133,
+    "tier": 8.443645,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15070,13 +15070,13 @@
     "name": "Iron Nasalhelm over Padding",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 3076,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 6.53022528,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15089,13 +15089,13 @@
     "name": "Iron Roundkettle over Leather",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 1310,
+    "price": 1036,
     "weight": 1.491529,
-    "tier": 5.11634445,
+    "tier": 4.775255,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 30,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15108,13 +15108,13 @@
     "name": "Iron Roundkettle over Mail",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 3391,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 6.71086,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -15127,13 +15127,13 @@
     "name": "Iron Spiked Kettle over Mail",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 1770,
+    "price": 3492,
     "weight": 1.720762,
-    "tier": 5.58213568,
+    "tier": 6.76622438,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 33,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -16591,9 +16591,9 @@
     "name": "Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 18860,
-    "weight": 1.63,
-    "tier": 10.88465,
+    "price": 15045,
+    "weight": 1.68,
+    "tier": 9.606287,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16604,8 +16604,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 147,
-        "balance": 0.48,
-        "handling": 72,
+        "balance": 0.44,
+        "handling": 71,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -16615,10 +16615,10 @@
         ],
         "thrustDamage": 25,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 95,
+        "thrustSpeed": 94,
         "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 83
       }
     ]
   },
@@ -16627,9 +16627,9 @@
     "name": "Long Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 26735,
-    "weight": 1.35,
-    "tier": 13.16743,
+    "price": 15356,
+    "weight": 1.44,
+    "tier": 9.716146,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16640,8 +16640,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 200,
-        "balance": 0.22,
-        "handling": 65,
+        "balance": 0.12,
+        "handling": 63,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -16649,12 +16649,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 25,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 96,
+        "thrustSpeed": 95,
         "swingDamage": 47,
         "swingDamageType": "Cut",
-        "swingSpeed": 76
+        "swingSpeed": 73
       }
     ]
   },
@@ -16999,16 +16999,16 @@
     "name": "Lamellar Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1159,
+    "price": 5990,
     "weight": 1.29863,
-    "tier": 6.598599,
+    "tier": 10.41884,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 19,
+      "legArmor": 30,
       "materialType": "Plate"
     },
     "weapons": []
@@ -17018,15 +17018,15 @@
     "name": "Lamellar Plate Gauntlets",
     "culture": "Empire",
     "type": "HandArmor",
-    "price": 2782,
+    "price": 7336,
     "weight": 4.001147,
-    "tier": 7.84181166,
+    "tier": 10.22845,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
-      "armArmor": 23,
+      "armArmor": 30,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -17056,9 +17056,9 @@
     "name": "Lamellar with Scale Skirt",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 16996,
+    "price": 18670,
     "weight": 22.55802,
-    "tier": 8.285603,
+    "tier": 8.500581,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -17066,7 +17066,7 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 52,
-      "armArmor": 16,
+      "armArmor": 18,
       "legArmor": 23,
       "materialType": "Plate"
     },
@@ -17255,9 +17255,9 @@
     "name": "Leather Apron",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 63,
+    "price": 92,
     "weight": 0.6110581,
-    "tier": 1.04249811,
+    "tier": 1.47475338,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17265,8 +17265,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 2,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Leather"
     },
@@ -17336,15 +17336,15 @@
     "name": "Leather Cap",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 66,
+    "price": 56,
     "weight": 0.2053926,
-    "tier": 1.43914938,
+    "tier": 1.079362,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 8,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -17499,9 +17499,9 @@
     "name": "Leather Scale Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 80,
+    "price": 4276,
     "weight": 3.889836,
-    "tier": 1.32454252,
+    "tier": 5.65214252,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17509,9 +17509,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
-      "armArmor": 3,
-      "legArmor": 2,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Leather"
     },
     "weapons": []
@@ -17640,9 +17640,9 @@
     "name": "Leather Tunic",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 276,
+    "price": 1378,
     "weight": 2.446993,
-    "tier": 2.4372716,
+    "tier": 4.07797146,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17650,9 +17650,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 12,
-      "armArmor": 2,
-      "legArmor": 7,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -17662,9 +17662,49 @@
     "name": "Spangenhelm over Leather",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 3261,
+    "price": 945,
     "weight": 2.296359,
-    "tier": 6.637725,
+    "tier": 4.6464076,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 28,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_leatherlame_feathered_spangenhelm_over_mail",
+    "name": "Feathered Spangenhelm over Mail",
+    "culture": "Empire",
+    "type": "HeadArmor",
+    "price": 3198,
+    "weight": 2.470721,
+    "tier": 6.60156,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 40,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_leatherlame_nasalhelm_over_imperial_leather",
+    "name": "Iron Nasalhelm over Leather",
+    "culture": "Empire",
+    "type": "HeadArmor",
+    "price": 3167,
+    "weight": 2.559484,
+    "tier": 6.58359671,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -17679,57 +17719,17 @@
     "weapons": []
   },
   {
-    "id": "crpg_leatherlame_feathered_spangenhelm_over_mail",
-    "name": "Feathered Spangenhelm over Mail",
-    "culture": "Empire",
-    "type": "HeadArmor",
-    "price": 3807,
-    "weight": 2.470721,
-    "tier": 6.93163824,
-    "requirement": 0,
-    "flags": [],
-    "armor": {
-      "headArmor": 42,
-      "bodyArmor": 0,
-      "armArmor": 0,
-      "legArmor": 0,
-      "materialType": "Plate"
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_leatherlame_nasalhelm_over_imperial_leather",
-    "name": "Iron Nasalhelm over Leather",
-    "culture": "Empire",
-    "type": "HeadArmor",
-    "price": 4103,
-    "weight": 2.559484,
-    "tier": 7.07736635,
-    "requirement": 0,
-    "flags": [
-      "UseTeamColor"
-    ],
-    "armor": {
-      "headArmor": 43,
-      "bodyArmor": 0,
-      "armArmor": 0,
-      "legArmor": 0,
-      "materialType": "Plate"
-    },
-    "weapons": []
-  },
-  {
     "id": "crpg_leatherlame_nasalhelm_over_imperial_mail",
     "name": "Bronze Nasalhelm over Mail",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 2770,
+    "price": 3325,
     "weight": 2.126303,
-    "tier": 6.340465,
+    "tier": 6.674173,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 38,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -17742,15 +17742,15 @@
     "name": "Roundkettle Helmet",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 2333,
+    "price": 3391,
     "weight": 1.960666,
-    "tier": 6.039774,
+    "tier": 6.71086,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 36,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -17763,13 +17763,13 @@
     "name": "Roundkettle over Leather",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 1310,
+    "price": 1036,
     "weight": 1.491529,
-    "tier": 5.11634445,
+    "tier": 4.775255,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 30,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -17782,18 +17782,18 @@
     "name": "Legionary Mail",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 7180,
+    "price": 3828,
     "weight": 14.6806,
-    "tier": 6.53510046,
+    "tier": 5.477952,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 34,
-      "armArmor": 15,
-      "legArmor": 18,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -18064,9 +18064,9 @@
     "name": "Long Bardiche",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 26524,
-    "weight": 1.65,
-    "tier": 13.1111193,
+    "price": 15553,
+    "weight": 1.7,
+    "tier": 9.784965,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -18078,9 +18078,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 161,
-        "balance": 0.21,
-        "handling": 67,
+        "length": 158,
+        "balance": 0.17,
+        "handling": 65,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -18089,12 +18089,12 @@
           "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 24,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
-        "swingDamage": 49,
+        "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 76
+        "swingSpeed": 75
       }
     ]
   },
@@ -18222,9 +18222,9 @@
     "name": "Long Hafted Spiked Mace",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 23168,
-    "weight": 1.83,
-    "tier": 12.182004,
+    "price": 13559,
+    "weight": 1.87,
+    "tier": 9.065113,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -18236,8 +18236,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 154,
-        "balance": 0.2,
+        "length": 155,
+        "balance": 0.17,
         "handling": 67,
         "bodyArmor": 0,
         "flags": [
@@ -18247,10 +18247,10 @@
           "TwoHandIdleOnMount",
           "MultiplePenetration"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 17,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 93,
-        "swingDamage": 27,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
         "swingSpeed": 75
       }
@@ -18322,9 +18322,9 @@
     "name": "Long Padded Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 83,
+    "price": 4767,
     "weight": 2.770139,
-    "tier": 1.36571479,
+    "tier": 5.82783461,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -18332,9 +18332,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
-      "armArmor": 3,
-      "legArmor": 2,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -18605,13 +18605,13 @@
     "name": "Mail Coif with Helmet Padding",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 285,
+    "price": 1152,
     "weight": 0.6932,
-    "tier": 3.167786,
+    "tier": 4.92766762,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 18,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -23335,13 +23335,13 @@
     "name": "Open Mail Coif",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 285,
+    "price": 1152,
     "weight": 0.6932,
-    "tier": 3.167786,
+    "tier": 4.92766762,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 18,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -23474,18 +23474,18 @@
     "name": "Padded Cloth with Strips",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 358,
+    "price": 4767,
     "weight": 2.770139,
-    "tier": 2.67256236,
+    "tier": 5.82783461,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 14,
-      "armArmor": 2,
-      "legArmor": 7,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -23495,18 +23495,18 @@
     "name": "Padded Footman Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 78,
+    "price": 4880,
     "weight": 4.379655,
-    "tier": 1.30868244,
+    "tier": 5.86650753,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
-      "armArmor": 3,
-      "legArmor": 2,
+      "bodyArmor": 28,
+      "armArmor": 13,
+      "legArmor": 8,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -23577,9 +23577,9 @@
     "name": "Padded Leather Shirt",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 624,
+    "price": 4304,
     "weight": 3.816213,
-    "tier": 3.20317221,
+    "tier": 5.66275024,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -23587,9 +23587,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 4,
-      "legArmor": 8,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Leather"
     },
     "weapons": []
@@ -23618,9 +23618,9 @@
     "name": "Padded Mittens",
     "culture": "Empire",
     "type": "HandArmor",
-    "price": 185,
+    "price": 420,
     "weight": 0.9793918,
-    "tier": 3.37385416,
+    "tier": 4.498472,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -23628,7 +23628,7 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
-      "armArmor": 9,
+      "armArmor": 12,
       "legArmor": 0,
       "materialType": "Cloth"
     },
@@ -23639,18 +23639,18 @@
     "name": "Padded Short Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 544,
+    "price": 922,
     "weight": 3.106376,
-    "tier": 3.06653285,
+    "tier": 3.61454487,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 15,
-      "armArmor": 7,
-      "legArmor": 2,
+      "bodyArmor": 23,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -23679,9 +23679,9 @@
     "name": "Patched Gambeson",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 409,
+    "price": 4653,
     "weight": 3.004161,
-    "tier": 2.79478383,
+    "tier": 5.78835964,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -23689,9 +23689,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 14,
-      "armArmor": 3,
-      "legArmor": 7,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -23701,17 +23701,17 @@
     "name": "Legionary Cape",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 1705,
+    "price": 1786,
     "weight": 2.198272,
-    "tier": 6.00473976,
+    "tier": 6.08516,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 4,
+      "bodyArmor": 13,
+      "armArmor": 7,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -23978,9 +23978,9 @@
     "name": "Commoner Clothes",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 58,
+    "price": 93,
     "weight": 0.4770266,
-    "tier": 0.895203352,
+    "tier": 1.48347962,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -23988,8 +23988,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -24571,16 +24571,16 @@
     "name": "Pilgrim Hood",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.04716628,
-    "tier": 0.5438363,
+    "tier": 1.08767259,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
       "Civilian"
     ],
     "armor": {
-      "headArmor": 3,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -24636,16 +24636,16 @@
     "name": "Splint Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1862,
+    "price": 924,
     "weight": 1.61804,
-    "tier": 7.551558,
+    "tier": 6.178547,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 22,
+      "legArmor": 18,
       "materialType": "Plate"
     },
     "weapons": []
@@ -24655,15 +24655,15 @@
     "name": "Plated Striped Vambraces",
     "culture": "Empire",
     "type": "HandArmor",
-    "price": 2429,
+    "price": 1198,
     "weight": 3.74306,
-    "tier": 7.55021334,
+    "tier": 6.17744732,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
-      "armArmor": 22,
+      "armArmor": 18,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -24693,13 +24693,13 @@
     "name": "Plumed Helmet",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 5439,
+    "price": 3047,
     "weight": 2.924803,
-    "tier": 7.65232754,
+    "tier": 6.5126195,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 47,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25795,13 +25795,13 @@
     "name": "Light Roundkettle over Leather",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 505,
+    "price": 1113,
     "weight": 0.936664,
-    "tier": 3.83277321,
+    "tier": 4.878075,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 22,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25814,13 +25814,13 @@
     "name": "Roundkettle over Mail",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 1945,
+    "price": 3458,
     "weight": 1.799568,
-    "tier": 5.735575,
+    "tier": 6.747735,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 34,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25833,15 +25833,15 @@
     "name": "Roundkettle over Padding",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 1452,
+    "price": 1026,
     "weight": 1.566723,
-    "tier": 5.27252865,
+    "tier": 4.76228428,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 31,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -25854,13 +25854,131 @@
     "name": "Roundkettle over Laced Cloth",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 838,
+    "price": 1074,
     "weight": 1.203399,
-    "tier": 4.482219,
+    "tier": 4.827006,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 26,
+      "headArmor": 28,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_armour",
+    "name": "Vaegir Coat of Plates",
+    "culture": "Sturgia",
+    "type": "BodyArmor",
+    "price": 10663,
+    "weight": 16.38,
+    "tier": 7.29118347,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 46,
+      "armArmor": 14,
+      "legArmor": 14,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_armour1",
+    "name": "Vaegir Coat of Plates",
+    "culture": "Sturgia",
+    "type": "BodyArmor",
+    "price": 10663,
+    "weight": 16.38,
+    "tier": 7.29118347,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 46,
+      "armArmor": 14,
+      "legArmor": 14,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_helm_noble",
+    "name": "Vaegir Noble Helmet",
+    "culture": "Sturgia",
+    "type": "HeadArmor",
+    "price": 7037,
+    "weight": 3.31,
+    "tier": 8.214173,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 51,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_helm_regular",
+    "name": "Vaegir Helmet",
+    "culture": "Sturgia",
+    "type": "HeadArmor",
+    "price": 7037,
+    "weight": 3.31,
+    "tier": 8.214173,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 51,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_helm_regular2",
+    "name": "Vaegir Helmet",
+    "culture": "Sturgia",
+    "type": "HeadArmor",
+    "price": 7037,
+    "weight": 3.31,
+    "tier": 8.214173,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 51,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_rus_open_helm",
+    "name": "Vaegir Helmet",
+    "culture": "Sturgia",
+    "type": "HeadArmor",
+    "price": 6207,
+    "weight": 3.11,
+    "tier": 7.93595743,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 49,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -26820,9 +26938,9 @@
     "name": "Short Padded Robe",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 83,
+    "price": 5802,
     "weight": 2.574646,
-    "tier": 1.37374151,
+    "tier": 6.158151,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -26830,9 +26948,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
-      "armArmor": 3,
-      "legArmor": 2,
+      "bodyArmor": 28,
+      "armArmor": 13,
+      "legArmor": 8,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -26973,9 +27091,9 @@
     "name": "Simple Poleaxe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 1229,
-    "weight": 2.4,
-    "tier": 2.05589271,
+    "price": 13780,
+    "weight": 2.2,
+    "tier": 9.14757,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -26988,8 +27106,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 145,
-        "balance": 0.13,
-        "handling": 65,
+        "balance": 0.29,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -26997,12 +27115,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 35,
+        "thrustSpeed": 91,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 74
+        "swingSpeed": 78
       }
     ]
   },
@@ -27105,18 +27223,18 @@
     "name": "Sleeveless Padded Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 656,
+    "price": 4276,
     "weight": 3.889836,
-    "tier": 3.25426388,
+    "tier": 5.65214252,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 18,
-      "armArmor": 2,
-      "legArmor": 9,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -27126,9 +27244,9 @@
     "name": "Sleeveless Padded Short Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 82,
+    "price": 4685,
     "weight": 2.936653,
-    "tier": 1.359094,
+    "tier": 5.79958248,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -27136,9 +27254,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
-      "armArmor": 3,
-      "legArmor": 2,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -28043,13 +28161,13 @@
     "name": "Spiked Kettle over Mail",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 942,
+    "price": 3701,
     "weight": 1.27349,
-    "tier": 4.64217234,
+    "tier": 6.87729263,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 27,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -28062,15 +28180,15 @@
     "name": "Spiked Kettle over Padding",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 3008,
+    "price": 953,
     "weight": 2.210786,
-    "tier": 6.489519,
+    "tier": 4.659142,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 39,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -28083,9 +28201,9 @@
     "name": "Spiked Polehammer",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 1470,
-    "weight": 2.4,
-    "tier": 2.32981586,
+    "price": 15580,
+    "weight": 2.0,
+    "tier": 9.794424,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -28098,8 +28216,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 148,
-        "balance": 0.0,
-        "handling": 58,
+        "balance": 0.23,
+        "handling": 67,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -28109,10 +28227,10 @@
         ],
         "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
+        "thrustSpeed": 92,
         "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 65
+        "swingSpeed": 76
       }
     ]
   },
@@ -28978,9 +29096,9 @@
     "name": "Strapped Leather Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 62,
+    "price": 52,
     "weight": 0.1753114,
-    "tier": 1.82122278,
+    "tier": 1.09273362,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -28989,7 +29107,7 @@
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 5,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -29315,15 +29433,15 @@
     "name": "Neckguard with Bronze Plate Pauldrons",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 2031,
+    "price": 4997,
     "weight": 2.54253,
-    "tier": 6.31143475,
+    "tier": 8.114702,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 14,
-      "armArmor": 7,
+      "bodyArmor": 18,
+      "armArmor": 9,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -29334,18 +29452,18 @@
     "name": "Studded Leather Coat",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 86,
+    "price": 1056,
     "weight": 1.784997,
-    "tier": 1.40935,
+    "tier": 3.766367,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
+      "bodyArmor": 23,
       "armArmor": 3,
-      "legArmor": 2,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -30257,9 +30375,9 @@
     "name": "Warrazor",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 24049,
-    "weight": 1.13,
-    "tier": 12.4318876,
+    "price": 13186,
+    "weight": 1.2,
+    "tier": 8.924627,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30270,8 +30388,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 178,
-        "balance": 0.25,
-        "handling": 64,
+        "balance": 0.19,
+        "handling": 63,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -30279,12 +30397,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
-        "swingDamage": 50,
+        "thrustSpeed": 97,
+        "swingDamage": 47,
         "swingDamageType": "Cut",
-        "swingSpeed": 77
+        "swingSpeed": 75
       },
       {
         "class": "TwoHandedPolearm",
@@ -30293,8 +30411,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 178,
-        "balance": 0.25,
-        "handling": 64,
+        "balance": 0.19,
+        "handling": 63,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -30302,12 +30420,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
-        "swingDamage": 50,
+        "thrustSpeed": 97,
+        "swingDamage": 47,
         "swingDamageType": "Cut",
-        "swingSpeed": 77
+        "swingSpeed": 75
       }
     ]
   },
@@ -30941,13 +31059,13 @@
     "name": "Tall Helmet",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 2770,
+    "price": 3325,
     "weight": 2.126303,
-    "tier": 6.340465,
+    "tier": 6.674173,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 38,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -31266,9 +31384,9 @@
     "name": "Tied Cloth Tunic",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 56,
+    "price": 94,
     "weight": 0.3712929,
-    "tier": 0.8095433,
+    "tier": 1.49058771,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -31276,9 +31394,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -31908,9 +32026,9 @@
     "name": "Tunic with Rolled Cloth",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 85,
+    "price": 90,
     "weight": 0.9561659,
-    "tier": 1.39096224,
+    "tier": 1.45361817,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -31919,8 +32037,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 6,
-      "armArmor": 2,
-      "legArmor": 3,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -31930,9 +32048,9 @@
     "name": "Tunic with Shoulder Pads",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 70,
+    "price": 91,
     "weight": 0.7133473,
-    "tier": 1.17716837,
+    "tier": 1.468296,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -31940,8 +32058,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 2,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -32125,15 +32243,15 @@
     "name": "Decorated Leather Harness",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 311,
+    "price": 2308,
     "weight": 1.122585,
-    "tier": 3.56461334,
+    "tier": 6.54440641,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 7,
+      "bodyArmor": 17,
+      "armArmor": 4,
       "legArmor": 0,
       "materialType": "Leather"
     },
@@ -32144,15 +32262,15 @@
     "name": "Decorated Leather Harness over Mail",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 3975,
+    "price": 4923,
     "weight": 3.598177,
-    "tier": 7.61815929,
+    "tier": 8.081426,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 10,
+      "bodyArmor": 22,
+      "armArmor": 6,
       "legArmor": 0,
       "materialType": "Chainmail"
     },
@@ -32163,17 +32281,17 @@
     "name": "Decorated Leather Harness with Padding",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 1284,
+    "price": 5751,
     "weight": 2.137492,
-    "tier": 5.533109,
+    "tier": 8.433963,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 10,
-      "armArmor": 8,
+      "bodyArmor": 22,
+      "armArmor": 6,
       "legArmor": 0,
       "materialType": "Leather"
     },
@@ -32184,17 +32302,17 @@
     "name": "Caped Leather Harness",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 393,
+    "price": 2270,
     "weight": 1.24679,
-    "tier": 3.8524437,
+    "tier": 6.51312447,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 7,
+      "bodyArmor": 17,
+      "armArmor": 4,
       "legArmor": 0,
       "materialType": "Leather"
     },
@@ -32205,15 +32323,15 @@
     "name": "Decorated Leather Harness over Scale",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 6841,
+    "price": 9231,
     "weight": 4.690566,
-    "tier": 8.844338,
+    "tier": 9.595982,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 19,
-      "armArmor": 12,
+      "bodyArmor": 25,
+      "armArmor": 9,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -32664,15 +32782,15 @@
     "name": "Austere Crown",
     "culture": "Empire",
     "type": "HeadArmor",
-    "price": 51,
+    "price": 56,
     "weight": 0.07261725,
-    "tier": 0.724206567,
+    "tier": 1.08630979,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 4,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -33177,9 +33295,9 @@
     "name": "Voulge",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 27446,
-    "weight": 1.45,
-    "tier": 13.35587,
+    "price": 15798,
+    "weight": 1.47,
+    "tier": 9.870372,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -33192,7 +33310,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 142,
-        "balance": 0.4,
+        "balance": 0.38,
         "handling": 66,
         "bodyArmor": 0,
         "flags": [
@@ -33202,12 +33320,12 @@
           "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
-        "swingDamage": 47,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 81
       }
     ]
   },
@@ -33409,9 +33527,9 @@
     "name": "Rich Dress",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 53,
+    "price": 94,
     "weight": 0.2901902,
-    "tier": 0.6707019,
+    "tier": 1.49618125,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -33419,9 +33537,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 3,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -33581,9 +33699,9 @@
     "name": "War Scythe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 18971,
-    "weight": 1.68,
-    "tier": 10.9199886,
+    "price": 12402,
+    "weight": 1.78,
+    "tier": 8.623309,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -33594,8 +33712,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 169,
-        "balance": 0.4,
-        "handling": 70,
+        "balance": 0.31,
+        "handling": 68,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -33606,9 +33724,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 43,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 79
       }
     ]
   },
@@ -35130,15 +35248,15 @@
     "name": "Woven Leather Bracers",
     "culture": "Empire",
     "type": "HandArmor",
-    "price": 86,
+    "price": 53,
     "weight": 0.5331134,
-    "tier": 2.29187512,
+    "tier": 1.14593756,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
-      "armArmor": 6,
+      "armArmor": 3,
       "legArmor": 0,
       "materialType": "Leather"
     },
@@ -35149,18 +35267,18 @@
     "name": "Boarskin Leather Coat",
     "culture": "Empire",
     "type": "BodyArmor",
-    "price": 465,
+    "price": 1274,
     "weight": 3.244425,
-    "tier": 2.91537523,
+    "tier": 3.9839592,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 14,
-      "armArmor": 4,
-      "legArmor": 7,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -35170,15 +35288,15 @@
     "name": "Woven Leather Shoulders",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 231,
+    "price": 500,
     "weight": 0.8651426,
-    "tier": 3.20764279,
+    "tier": 4.164308,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
-      "armArmor": 4,
+      "bodyArmor": 8,
+      "armArmor": 5,
       "legArmor": 0,
       "materialType": "Leather"
     },
@@ -35189,18 +35307,18 @@
     "name": "Woven Leather Vest",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 85,
+    "price": 6095,
     "weight": 2.137492,
-    "tier": 1.39277613,
+    "tier": 6.24347925,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 6,
-      "armArmor": 3,
-      "legArmor": 2,
+      "bodyArmor": 28,
+      "armArmor": 13,
+      "legArmor": 8,
       "materialType": "Leather"
     },
     "weapons": []

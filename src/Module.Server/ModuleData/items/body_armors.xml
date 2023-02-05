@@ -104,7 +104,7 @@
   </Item>
   <Item id="crpg_short_padded_robe" name="{=QzAvlan7}Short Padded Robe" subtype="body_armor" lod_atlas_index="11" mesh="sarranid_gambeson_v3" culture="Culture.aserai" weight="2.574646" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
@@ -116,7 +116,7 @@
   </Item>
   <Item id="crpg_studded_leather_coat" name="{=XkL1Re8b}Studded Leather Coat" lod_atlas_index="12" mesh="bandit_leather_a" culture="Culture.aserai" weight="1.784997" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="23" leg_armor="3" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -128,13 +128,13 @@
   </Item>
   <Item id="crpg_aserai_robe_c_chain" name="{=gSWtpl8a}Robe over Mail Shirt" lod_atlas_index="5" mesh="aserai_robe_c_chain" culture="Culture.aserai" weight="9.225823" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="28" leg_armor="13" arm_armor="8" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Chainmail" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_long_padded_robe" name="{=0SsLGsXk}Long Padded Robe" lod_atlas_index="10" mesh="sarranid_gambeson_v2" culture="Culture.aserai" weight="2.770139" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
@@ -236,7 +236,7 @@
   </Item>
   <Item id="crpg_aserai_chain_plate_armor_c" name="{=Mm1QAtPx}Southern Reinforced Mail Vest" lod_atlas_index="3" mesh="aserai_chain_plate_armor_c" culture="Culture.aserai" weight="6.965938" appearance="4" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="26" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -656,13 +656,13 @@
   </Item>
   <Item id="crpg_padded_leather_shirt" name="{=tiTTWhpW}Padded Leather Shirt" mesh="armor_roman_padded_leather_shirt" culture="Culture.vlandia" weight="3.816213" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="16" leg_armor="8" arm_armor="4" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_padded_coat" name="{=QbfOXJas}Padded Footman Coat" subtype="body_armor" mesh="padded_coat_a" culture="Culture.vlandia" weight="4.379655" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -680,37 +680,37 @@
   </Item>
   <Item id="crpg_aketon" name="{=7b8Cwogx}Aketon" mesh="crossbow_armor" culture="Culture.vlandia" weight="2.077283" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="23" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_sleeveless_padded_short_coat" name="{=bz5lXkHS}Sleeveless Padded Short Coat" mesh="padded_coat_d" culture="Culture.vlandia" subtype="body_armor" weight="2.936653" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_sleeveless_padded_coat" name="{=lZ93DOrn}Sleeveless Padded Coat" subtype="body_armor" mesh="padded_coat_b" culture="Culture.vlandia" weight="3.889836" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="18" leg_armor="9" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_padded_short_coat" name="{=4pqIsPhp}Padded Short Coat" mesh="padded_coat_c" culture="Culture.vlandia" weight="3.106376" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="15" leg_armor="2" arm_armor="7" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="23" leg_armor="3" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_leather_scale_armor" name="{=PL5SG9hI}Leather Scale Armor" mesh="vlandia_leather_scale_armor" subtype="body_armor" culture="Culture.vlandia" weight="3.889836" difficulty="0" appearance="1" Type="BodyArmor" multiplayer_item="false">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_woven_leather_vest" name="{=LgftnHPs}Woven Leather Vest" subtype="body_armor" mesh="archers_leather_vest" culture="Culture.vlandia" weight="2.137492" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -1015,217 +1015,217 @@
   </Item>
   <Item id="crpg_peasant_costume" name="{=gbRVBOLH}Commoner Clothes" mesh="peasant_costume_a" culture="Culture.empire" weight="0.4770266" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="4" leg_armor="2" arm_armor="1" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_fine_town_tunic" name="{=vbPBXiPC}Rich Tunic" mesh="casual_02" culture="Culture.empire" weight="0.2160417" appearance="2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="2" leg_armor="1" arm_armor="1" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_hemp_tunic" name="{=yTWOMSmv}Hemp Tunic" mesh="armor_hemp_tunic" culture="Culture.empire" subtype="body_armor" weight="0.4770266" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="4" leg_armor="2" arm_armor="1" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_tied_cloth_tunic" name="{=MQ8LCvCE}Tied Cloth Tunic" mesh="roman_cloth_tunic_a" culture="Culture.empire" subtype="body_armor" weight="0.3712929" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="4" leg_armor="1" arm_armor="1" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_vlandian_dress" name="{=eRZK8Kbp}Rich Dress" mesh="vlandian_dress" culture="Culture.empire" weight="0.2901902" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="3" leg_armor="1" arm_armor="1" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_dress" name="{=JsmnUp0T}Ladies Dress" mesh="empire_dress" culture="Culture.empire" weight="1.221603" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="7" leg_armor="4" arm_armor="2" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_dress_b" name="{=VqFV9LS4}Red Dress" mesh="empire_dress_b" culture="Culture.empire" weight="0.8207818" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="2" arm_armor="2" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_footmans_tunic" name="{=2AcfBbCR}Military Tunic" mesh="armor_roman_military_tunic" culture="Culture.empire" subtype="body_armor" weight="0.4770266" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="4" leg_armor="2" arm_armor="1" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_tunic_with_shoulder_pads" name="{=y3oIzUEp}Tunic with Shoulder Pads" mesh="roman_cloth_tunic_b" culture="Culture.empire" weight="0.7133473" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="5" leg_armor="2" arm_armor="2" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_tunic_with_rolled_cloth" name="{=QaysED62}Tunic with Rolled Cloth" mesh="armor_tunic_with_rolled_cloth" culture="Culture.empire" subtype="body_armor" weight="0.9561659" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="6" leg_armor="3" arm_armor="2" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_imperial_robes" name="{=R45H8quo}Toga" mesh="empire_outfit_a" culture="Culture.empire" weight="1.562045" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="8" leg_armor="3" arm_armor="4" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_padded_cloth_with_strips" name="{=JKRQ8RDA}Padded Cloth with Strips" mesh="empire_armor_a" culture="Culture.empire" subtype="body_armor" weight="2.770139" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="14" leg_armor="7" arm_armor="2" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_leather_tunic" name="{=ZqTFQeai}Leather Tunic" mesh="leather_tunic" culture="Culture.empire" weight="2.446993" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="12" leg_armor="7" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_patched_gambeson" name="{=Jhshwa48}Patched Gambeson" mesh="bandit_4" culture="Culture.empire" weight="3.004161" difficulty="0" appearance="0.8" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="14" leg_armor="7" arm_armor="3" has_gender_variations="true" covers_body="false" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" has_gender_variations="true" covers_body="false" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_imperial_padded_cloth" name="{=CqMQXzUd}Infantryman Rough Gambeson" mesh="empire_fabric_armor" culture="Culture.empire" weight="4.341292" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="16" leg_armor="8" arm_armor="6" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_warrior_padded_armor_a" name="{=aJLikenm}Infantryman Gambeson" mesh="empire_warrior_padded_armor_a" culture="Culture.empire" weight="3.419776" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="15" leg_armor="7" arm_armor="4" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_warrior_padded_armor_c" name="{=cEhDJAQp}Infantryman Gambeson with Skirts" mesh="empire_warrior_padded_armor_c" culture="Culture.empire" weight="3.816213" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="16" leg_armor="8" arm_armor="4" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_warrior_padded_armor_d" name="{=CLTk2CMs}Infantryman Gambeson with Straps" mesh="empire_warrior_padded_armor_d" culture="Culture.empire" weight="3.816213" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="16" leg_armor="8" arm_armor="4" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_warrior_padded_armor_e" name="{=1BXuUR3s}Infantryman Long Gambeson" mesh="empire_warrior_padded_armor_e" culture="Culture.empire" weight="4.075933" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="16" leg_armor="8" arm_armor="5" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_empire_warrior_padded_armor_f" name="{=GTaxqBcv}Auxiliary Armor" mesh="empire_warrior_padded_armor_f" culture="Culture.empire" weight="4.001147" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="17" leg_armor="8" arm_armor="4" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_warrior_padded_armor_g" name="{=T2POVRtg}Auxiliary Armor with Straps" mesh="empire_warrior_padded_armor_g" culture="Culture.empire" weight="4.188975" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="18" leg_armor="8" arm_armor="4" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_eastern_studded_leather" name="{=n7e0y95m}Cured Studded Leather Armor" mesh="khuzait_leather_armor_b" culture="Culture.empire" weight="4.729927" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="18" leg_armor="8" arm_armor="6" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="28" leg_armor="13" arm_armor="8" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_basic_imperial_leather_armor" name="{=LSaIs3DB}Leather Armor" mesh="empire_leather_armor" culture="Culture.empire" weight="5.048733" appearance="1.3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="22" leg_armor="6" arm_armor="6" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_woven_leather_coat" name="{=wE7RWmIF}Boarskin Leather Coat" mesh="vlandia_leather_stripes" culture="Culture.empire" weight="3.244425" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="14" leg_armor="7" arm_armor="4" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="26" leg_armor="3" arm_armor="3" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_warrior_padded_armor_b" name="{=XNQPPIaA}Infantryman Gambeson over Leather Jacket" mesh="empire_warrior_padded_armor_b" culture="Culture.empire" weight="3.816213" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="16" leg_armor="8" arm_armor="4" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+      <Armor body_armor="28" leg_armor="8" arm_armor="13" covers_body="true" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_imperial_mail_over_stripped_leather" name="{=zadVVah1}Infantryman Mail over Striped Leather" mesh="empire_armor_d" culture="Culture.empire" subtype="body_armor" weight="6.965938" difficulty="0" appearance="1.3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="31" leg_armor="6" arm_armor="6" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_horseman_armor" name="{=wJ4Y9IFc}Cavalryman Mail Shirt" subtype="body_armor" mesh="empire_horseman_armor" culture="Culture.empire" weight="8.73775" difficulty="0" appearance="1.3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="27" leg_armor="11" arm_armor="10" has_gender_variations="true" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="18" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_imperial_mail_over_leather" name="{=l5PPS5lG}Infantryman Mail over Leather" mesh="empire_armor_c" culture="Culture.empire" weight="6.965938" appearance="10.1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="31" leg_armor="6" arm_armor="6" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_imperial_mail_vest" name="{=Kr8b1bxY}Infantryman Mail Vest" mesh="empire_armor_e" culture="Culture.empire" subtype="body_armor" weight="9.473157" difficulty="0" appearance="1.5" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="26" leg_armor="12" arm_armor="12" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_imperial_scale_armor" name="{=VQSdhQE3}Heavy Scale Armor over Mail Hauberk" mesh="imperial_lamellar_b" subtype="body_armor" culture="Culture.empire" weight="23.02404" difficulty="0" appearance="3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="57" leg_armor="20" arm_armor="16" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="64" leg_armor="25" arm_armor="25" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_imperial_lamellar_over_leather" name="{=x3lcf2Do}Luxury Lamellar Vest over Leather" mesh="empire_plate_armor" culture="Culture.empire" weight="7.695641" appearance="1.3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="33" leg_armor="7" arm_armor="6" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="38" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_lamellar_with_scale_skirt" name="{=zGXZJFOb}Lamellar with Scale Skirt" mesh="imperial_lamellar_c" culture="Culture.empire" weight="22.55802" appearance="3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="52" leg_armor="23" arm_armor="16" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="23" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_legionary_mail" name="{=PTKyNh2O}Legionary Mail" mesh="empire_armor_b" culture="Culture.empire" subtype="body_armor" weight="14.6806" difficulty="0" appearance="1.3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="34" leg_armor="18" arm_armor="15" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="38" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_imperial_lamellar" name="{=LMo6MaQS}Cataphract Lamellar Armor" mesh="imperial_lamellar_a" subtype="body_armor" culture="Culture.empire" weight="20.72603" difficulty="0" appearance="3" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="48" leg_armor="24" arm_armor="14" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="23" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_legion_a" name="{=mBVCyRY5}Decorated Legionary Mail" mesh="empire_legion_a" subtype="body_armor" culture="Culture.empire" weight="10.89783" difficulty="0" appearance="5.5" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="30" leg_armor="18" arm_armor="8" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_legion_b" name="{=7HbspP6x}Ornate Legionary Scale Mail" mesh="empire_legion_b" subtype="body_armor" culture="Culture.empire" weight="12.49636" difficulty="0" appearance="6.0" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="36" leg_armor="18" arm_armor="8" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="18" arm_armor="23" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -1279,7 +1279,7 @@
   </Item>
   <Item id="crpg_empire_short_dress" name="{=KdbHrcQx}Short Tunic" mesh="empire_short_dress" culture="Culture.empire" weight="0.1751825" difficulty="0" appearance="0.1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="4" leg_armor="0" has_gender_variations="true" covers_body="false" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" has_gender_variations="true" covers_body="false" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" DoesNotHideChest="true" UseTeamColor="true" />
   </Item>
@@ -1375,7 +1375,7 @@
   </Item>
   <Item id="crpg_half_apron" name="{=FOJHPU5N}Half Apron" mesh="costume_merchant_v3" culture="Culture.neutral_culture" weight="0.2901902" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="3" leg_armor="1" arm_armor="1" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
@@ -1387,7 +1387,7 @@
   </Item>
   <Item id="crpg_leather_apron" name="{=r0Ln9bAp}Leather Apron" mesh="costume_merchant" subtype="body_armor" culture="Culture.neutral_culture" weight="0.6110581" difficulty="0" appearance="0.4" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="4" leg_armor="2" arm_armor="2" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="6" leg_armor="2" arm_armor="3" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>

@@ -1172,7 +1172,7 @@
   </Item>
   <Item id="crpg_imperial_padded_coif" name="{=3Q2F2BKD}Lightweight Padded Coif" subtype="head_armor" mesh="empire_helmet_b" culture="Culture.empire" weight="0.4754905" difficulty="0" appearance="0.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="14" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth" material_type="Cloth" beard_cover_type="type3" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth" material_type="Cloth" beard_cover_type="type3" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
@@ -1190,79 +1190,79 @@
   </Item>
   <Item id="crpg_imperial_cloth_coif" name="{=g5BPd0Oc}Cloth Coif" subtype="head_armor" mesh="empire_helmet_e" culture="Culture.empire" weight="0.02567407" difficulty="0" appearance="0.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="2" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_leather_cap" name="{=uLpnmNkZ}Leather Cap" subtype="head_armor" mesh="leather_cap_a" culture="Culture.empire" weight="0.2053926" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="8" has_gender_variations="false" hair_cover_type="type3" beard_cover_type="type2" modifier_group="leather" material_type="Leather" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type3" beard_cover_type="type2" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_pilgrim_hood" name="{=VXFwEF3M}Pilgrim Hood" mesh="sneak_costume_head" culture="Culture.empire" weight="0.04716628" difficulty="0" appearance="0.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="3" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_tall_helmet" name="{=9FgxK9se}Tall Helmet" subtype="head_armor" mesh="roman_helmet_c" culture="Culture.empire" weight="2.126303" difficulty="0" appearance="2.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="38" has_gender_variations="false" hair_cover_type="type3" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="type3" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_imperial_mail_coif" name="{=77RIGK7B}Mail Coif" subtype="head_armor" mesh="empire_helmet_a" culture="Culture.empire" weight="0.7517617" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="19" has_gender_variations="false" hair_cover_type="all" modifier_group="chain" material_type="Chainmail" beard_cover_type="type2" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" modifier_group="chain" material_type="Chainmail" beard_cover_type="type2" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_imperial_nasal_helm" name="{=rSEXAMUx}Legionary Helm" subtype="head_armor" mesh="empire_helmet_h" culture="Culture.empire" weight="1.960666" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="36" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_leatherlame_nasalhelm_over_imperial_leather" name="{=AQIH729X}Iron Nasalhelm over Leather" subtype="head_armor" mesh="empire_helmet_h_da" culture="Culture.empire" weight="2.559484" difficulty="0" appearance="2.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="43" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_leatherlame_feathered_spangenhelm_over_leather" name="{=xTH3z9Sr}Spangenhelm over Leather" mesh="empire_helmet_i_da" culture="Culture.empire" weight="2.296359" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_leatherlame_roundkettle" name="{=BUlmMbgH}Roundkettle Helmet" subtype="head_armor" mesh="empire_helmet_j__a" culture="Culture.empire" weight="1.960666" difficulty="0" appearance="1.5" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="36" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_roundkettle_over_imperial_padding" name="{=uu9rXeYz}Roundkettle over Padding" subtype="head_armor" mesh="empire_helmet_j_b" culture="Culture.empire" weight="1.566723" difficulty="0" appearance="1.5" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="31" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_roundkettle_over_laced_cloth" name="{=9BENgwRK}Roundkettle over Laced Cloth" subtype="head_armor" mesh="empire_helmet_j_c" culture="Culture.empire" weight="1.203399" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="26" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_roundkettle_over_imperial_leather" name="{=CHaYjWDb}Light Roundkettle over Leather" subtype="head_armor" mesh="empire_helmet_j_d" culture="Culture.empire" weight="0.936664" difficulty="0" appearance="1.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="22" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_leatherlame_roundkettle_over_imperial_leather" name="{=aOwcs7Un}Roundkettle over Leather" mesh="empire_helmet_j_da" culture="Culture.empire" weight="1.491529" appearance="1.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="30" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
@@ -1274,36 +1274,36 @@
   </Item>
   <Item id="crpg_spiked_kettle_over_imperial_padding" name="{=9UJfJrZR}Spiked Kettle over Padding" mesh="empire_helmet_k_b" culture="Culture.empire" weight="2.210786" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="39" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_mail_coif" name="{=Qywm0F8B}Mail Coif with Helmet Padding" subtype="head_armor" mesh="vlandia_helmet_a" culture="Culture.empire" weight="0.6932" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="18" has_gender_variations="false" hair_cover_type="all" modifier_group="chain" material_type="Chainmail" beard_cover_type="type4" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" modifier_group="chain" material_type="Chainmail" beard_cover_type="type4" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_open_mail_coif" name="{=OpYdqPWs}Open Mail Coif" subtype="head_armor" mesh="vlandia_helmet_v" culture="Culture.empire" weight="0.6932" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="18" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="chain" material_type="Chainmail" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_ironlame_roundkettle_over_imperial_leather" name="{=nUarDXVH}Iron Roundkettle over Leather" mesh="empire_helmet_j_db" culture="Culture.empire" weight="1.491529" appearance="1.35" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="30" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_empire_crown" name="{=udQSdRXR}Jeweled Crown" mesh="empire_crown" culture="Culture.empire" is_merchandise="false" weight="1.799568" appearance="6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="34" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
   </Item>
   <Item id="crpg_empire_crown_north" name="{=WF14UrdR}Golden Laurel Crown" mesh="empire_crown_north" culture="Culture.empire" is_merchandise="false" weight="0.1014857" appearance="7" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="5" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="false" />
   </Item>
@@ -1315,169 +1315,169 @@
   </Item>
   <Item id="crpg_vlandia_crown" name="{=1b6T0M72}Austere Crown" mesh="vlandia_crown" culture="Culture.empire" is_merchandise="false" weight="0.07261725" appearance="6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="4" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="false" />
   </Item>
   <Item id="crpg_imperial_goggled_helmet" name="{=xJTfOqD6}Goggled Cataphract Helmet" mesh="imperial_helmet" culture="Culture.empire" weight="3.403728" appearance="2.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="chain" material_type="Chainmail" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_heavy_nasalhelm_over_imperial_mail" name="{=ISQ0cdOc}Heavy Nasalhelm over Mail" subtype="head_armor" mesh="empire_helmet_g_f" culture="Culture.empire" weight="3.306017" difficulty="0" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_ironlame_nasalhelm_over_imperial_coif" name="{=Cg7vqdPQ}Iron Nasalhelm over Coif" mesh="empire_helmet_h_ab" culture="Culture.empire" weight="3.018642" appearance="2.8" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_leatherlame_nasalhelm_over_imperial_mail" name="{=XCnUaINR}Bronze Nasalhelm over Mail" mesh="empire_helmet_h_fa" culture="Culture.empire" weight="2.126303" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="38" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_ironlame_nasalhelm_over_imperial_mail" name="{=DbavaIis}Iron Nasalhelm over Mail" subtype="head_armor" mesh="empire_helmet_h_fb" culture="Culture.empire" weight="3.018642" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_ironlame_feathered_spangenhelm" name="{=ePdiHF5D}Feathered Spangenhelm" subtype="head_armor" mesh="empire_helmet_i" culture="Culture.empire" weight="1.203399" difficulty="0" appearance="2.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="26" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_feathered_spangenhelm_over_imperial_coif" name="{=YFg8x5QC}Feathered Spangenhelm over Coif" subtype="head_armor" mesh="empire_helmet_i_a" culture="Culture.empire" weight="2.470721" difficulty="0" appearance="1.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_leatherlame_feathered_spangenhelm_over_mail" name="{=aoPbMKwB}Feathered Spangenhelm over Mail" subtype="head_armor" mesh="empire_helmet_i_aa" culture="Culture.empire" weight="2.470721" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_ironlame_feathered_spangenhelm_over_mail" name="{=qojh0tsC}Spangenhelm over Mail" subtype="head_armor" mesh="empire_helmet_i_fb" culture="Culture.empire" weight="2.470721" difficulty="0" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_roundkettle_over_imperial_mail" name="{=b7TdIRac}Roundkettle over Mail" subtype="head_armor" mesh="empire_helmet_j_f" culture="Culture.empire" weight="1.799568" appearance="1.65" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="34" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_helmet_with_faceguard" name="{=UoHZGyZa}Helmet with Faceguard" subtype="head_armor" mesh="roman_helmet_b" culture="Culture.empire" weight="1.134645" difficulty="0" appearance="1.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="25" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_heavy_nasalhelm_over_imperial_padding" name="{=ac9xJt2X}Heavy Nasalhelm over Padding" subtype="head_armor" mesh="empire_helmet_g_b" culture="Culture.empire" weight="3.018642" difficulty="0" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_heavy_nasalhelm_over_laced_cloth" name="{=z6eTba5h}Heavy Nasalhelm over Laced Cloth" mesh="empire_helmet_g_c" culture="Culture.empire" weight="2.831956" appearance="2.1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_heavy_nasalhelm_over_imperial_leather" name="{=vimhFdZp}Heavy Nasalhelm over Leather" mesh="empire_helmet_g_d" culture="Culture.empire" weight="3.018642" appearance="3.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_ironlame_feathered_spangenhelm_over_leather" name="{=e3nslzlA}Feathered Spangenhelm over Leather" mesh="empire_helmet_i_db" culture="Culture.empire" weight="1.960666" appearance="2.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="36" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_ironlame_roundkettle_over_imperial_mail" name="{=XuwQvSDo}Iron Roundkettle over Mail" subtype="head_armor" mesh="empire_helmet_j_fb" culture="Culture.empire" weight="1.960666" difficulty="0" appearance="1.65" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="36" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_spiked_kettle_over_imperial_mail" name="{=DeawBxbx}Spiked Kettle over Mail" mesh="empire_helmet_k_f" culture="Culture.empire" weight="1.27349" appearance="1.2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="27" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_ironlame_spiked_kettle_over_mail" name="{=IX3kafcb}Iron Spiked Kettle over Mail" subtype="head_armor" mesh="empire_helmet_k_fb" culture="Culture.empire" weight="1.720762" difficulty="0" appearance="1.9" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="33" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_empire_lord_helmet" name="{=V5qbVfWF}Palatine Guard Helmet" mesh="empire_lord_helmet_a" culture="Culture.empire" subtype="head_armor" weight="2.831956" difficulty="0" appearance="5" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_empire_guarded_lord_helmet" name="{=4vB2SPZa}Royal Cataphract Helmet" mesh="empire_lord_helmet_b" culture="Culture.empire" subtype="head_armor" weight="3.306017" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_empire_jewelled_helmet" name="{=BD07fj39}Imperial Jeweled Helmet" mesh="empire_lord_helmet_c" culture="Culture.empire" subtype="head_armor" weight="2.924803" difficulty="0" appearance="5" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="47" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_empire_helmet_with_metal_strips" name="{=vaVvDVu4}Lord Helmet with Metal Strips" mesh="empire_lord_helmet_c_2" culture="Culture.empire" subtype="head_armor" weight="2.924803" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="47" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_ironlame_nasalhelm_over_imperial_padding" name="{=cQ6IsHSL}Iron Nasalhelm over Padding" subtype="head_armor" mesh="empire_helmet_h_bb" culture="Culture.empire" weight="2.831956" difficulty="0" appearance="2.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_ironlame_nasalhelm_over_imperial_cloth" name="{=twbUeZph}Iron Legionary Helm over Cloth" mesh="empire_helmet_h_eb" culture="Culture.empire" weight="2.831956" appearance="2.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type1" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type1" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_plumed_helmet" name="{=sJ1R62Tn}Plumed Helmet" subtype="head_armor" mesh="roman_helmet_d" culture="Culture.empire" weight="2.924803" difficulty="0" appearance="3.3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="47" has_gender_variations="false" hair_cover_type="type3" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="type3" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_empire_battle_crown_west" name="{=EOplBvKz}Imperial Plumed Helmet" subtype="head_armor" mesh="empire_battle_crown_west" culture="Culture.empire" is_merchandise="false" weight="3.018642" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_empire_battle_crown_north" name="{=AK0lNDmN}Jeweled Plumed Battle Crown" subtype="head_armor" mesh="empire_battle_crown_north" culture="Culture.empire" is_merchandise="false" weight="2.740113" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>

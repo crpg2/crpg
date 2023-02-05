@@ -410,7 +410,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_long_bardiche" name="{=}Long Bardiche" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_long_bardiche_head" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_long_bardiche_head" Type="Blade" scale_factor="87" />
       <Piece id="crpg_long_bardiche_handle" Type="Handle" scale_factor="150" />
     </Pieces>
   </CraftedItem>
@@ -2386,7 +2386,7 @@
 	</CraftedItem>
   <CraftedItem id="crpg_long_hafted_spiked_mace" name="{=}Long Hafted Spiked Mace" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_long_hafted_spiked_mace_head" Type="Blade" scale_factor="160" />
+      <Piece id="crpg_long_hafted_spiked_mace_head" Type="Blade" scale_factor="162" />
       <Piece id="crpg_long_hafted_spiked_mace_handle" Type="Handle" scale_factor="290" />
     </Pieces>
   </CraftedItem>
@@ -2592,7 +2592,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_bec_de_corbin" name="{=}Bec De Corbin" crafting_template="crpg_TwoHandedPolearm">
 		<Pieces>
-			<Piece id="crpg_bec_de_corbin_blade" Type="Blade" scale_factor="100"/>
+			<Piece id="crpg_bec_de_corbin_blade" Type="Blade" scale_factor="83"/>
 			<Piece id="crpg_bec_de_corbin_handle" Type="Handle" scale_factor="100"/>
 		</Pieces>
   </CraftedItem>
@@ -2616,7 +2616,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_french_voulge" name="{=}French Voulge" crafting_template="crpg_TwoHandedPolearm">
 		<Pieces>
-			<Piece id="crpg_french_voulge_blade" Type="Blade" scale_factor="100"/>
+			<Piece id="crpg_french_voulge_blade" Type="Blade" scale_factor="99"/>
 			<Piece id="crpg_french_voulge_handle" Type="Handle" scale_factor="100"/>
 		</Pieces>
   </CraftedItem>

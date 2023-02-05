@@ -354,103 +354,103 @@
   </Item>
   <Item id="crpg_pauldron_cape_a" name="{=pGmYxauO}Legionary Cape" mesh="pauldron_cape_a" culture="Culture.empire" weight="2.198272" appearance="4" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="16" arm_armor="4" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="13" arm_armor="7" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_a_pauldron_cape_b" name="{=URZVE5aK}Bronze Pauldrons with Neck Guard" mesh="pauldron_cape_b" culture="Culture.empire" weight="2.167811" appearance="4" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="13" arm_armor="6" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="13" arm_armor="7" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_a_pauldron_cape_c" name="{=jQKVnVNR}Bronze Pauldrons " mesh="pauldron_cape_c" culture="Culture.empire" weight="0.5331134" appearance="4" Type="Cape">
     <ItemComponent>
-      <Armor arm_armor="6" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_empire_warrior_padded_armor_shoulder" name="{=WDNKhjca}Legionary Padded Straps" mesh="empire_warrior_padded_armor_shoulder" culture="Culture.empire" weight="1.221603" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="9" arm_armor="4" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="13" arm_armor="7" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_woven_leather_shoulders" name="{=c7UNJSNi}Woven Leather Shoulders" mesh="vlandia_leather_stripes_shoulders" culture="Culture.empire" weight="0.8651426" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="6" arm_armor="4" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_imperial_studded_strip_shoulders" name="{=s7siCSsh}Legionary Reinforced Studded Harness" mesh="empire_plated_shoulder" culture="Culture.empire" weight="1.323371" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="7" arm_armor="6" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="13" arm_armor="7" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_empire_plated_shoulder_a" name="{=TS7NjgyH}Legionary Studded Harness" mesh="empire_plated_shoulder_a" culture="Culture.empire" weight="0.9793919" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="7" arm_armor="4" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="17" arm_armor="4" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_empire_plated_shoulder_b" name="{=gA8mOXrC}Plate Pauldrons" mesh="empire_plated_shoulder_b" culture="Culture.empire" weight="0.8207818" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor arm_armor="8" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_varangian_bra_basic" name="{=564PHXk3}Decorated Leather Harness" mesh="varangian_bra_basic" culture="Culture.empire" weight="1.122585" appearance="4" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="4" arm_armor="7" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="17" arm_armor="4" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_varangian_bra_royal" name="{=RXDyumYz}Caped Leather Harness" mesh="varangian_bra_royal" culture="Culture.empire" weight="1.24679" appearance="7" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="5" arm_armor="7" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="17" arm_armor="4" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_varangian_bra_padded" name="{=qaKGuHSt}Decorated Leather Harness with Padding" mesh="varangian_bra_padded" culture="Culture.empire" weight="2.137492" appearance="3" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="10" arm_armor="8" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="22" arm_armor="6" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_imperial_lamellar_shoulders" name="{=Ie0EazLn}Heavy Lamellar Pauldrons" mesh="imperial_shoulders" culture="Culture.empire" weight="3.526454" appearance="3" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="17" arm_armor="9" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="18" arm_armor="9" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_studded_imperial_neckguard" name="{=kjzCaoMK}Neckguard with Bronze Plate Pauldrons" mesh="empire_plate_armor_shoulder" culture="Culture.empire" weight="2.54253" appearance="2" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="14" arm_armor="7" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="18" arm_armor="9" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_empire_plate_armor_shoulder_a" name="{=P96J2c61}Bronze Plate Pauldrons" mesh="empire_plate_armor_shoulder_a" culture="Culture.empire" weight="0.6717997" appearance="2" Type="Cape">
     <ItemComponent>
-      <Armor arm_armor="7" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_empire_plate_armor_shoulder_b" name="{=27GO9o9K}Iron Plate Pauldrons" mesh="empire_plate_armor_shoulder_b" culture="Culture.empire" weight="0.8207818" appearance="2" Type="Cape">
     <ItemComponent>
-      <Armor arm_armor="8" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_varangian_bra_mail" name="{=P0FmQHgF}Decorated Leather Harness over Mail" mesh="varangian_bra_mail" culture="Culture.empire" weight="3.598177" appearance="4" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="16" arm_armor="10" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="22" arm_armor="6" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_varangian_bra_scale" name="{=eN1eFdhF}Decorated Leather Harness over Scale" mesh="varangian_bra_scale" culture="Culture.empire" weight="4.690566" appearance="6" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="19" arm_armor="12" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="25" arm_armor="9" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
