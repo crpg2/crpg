@@ -74,19 +74,19 @@
   </Item>
   <Item id="crpg_steppe_leather_vambraces" name="{=LoUxaFeE}Leather Vambraces" mesh="khuzait_leather_armor_hand" culture="Culture.khuzait" weight="1.507872" appearance="1" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="12" covers_hands="false" modifier_group="leather" material_type="Leather" />
+      <Armor arm_armor="18" covers_hands="false" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_studded_leather_vambraces" name="{=bxa4JHlU}Studded Leather Vambraces" mesh="crossbow_armor_leather_hand_a" culture="Culture.khuzait" weight="1.323371" appearance="1" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="11" covers_hands="false" modifier_group="leather" material_type="Leather" />
+      <Armor arm_armor="18" covers_hands="false" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_studded_vambraces" name="{=8uBew3nD}Studded Vambraces" mesh="bandit_1_wristband" culture="Culture.khuzait" weight="0.4055531" difficulty="0" appearance="1" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="5" covers_hands="false" modifier_group="leather" material_type="Leather" />
+      <Armor arm_armor="12" covers_hands="false" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
@@ -158,13 +158,13 @@
   </Item>
   <Item id="crpg_leather_gloves" name="{=lIJ1EVBh}Leather Gloves" mesh="crossbow_armor_hand" culture="Culture.neutral_culture" weight="0.2901902" appearance="1" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="4" covers_hands="true" modifier_group="leather" material_type="Leather" />
+      <Armor arm_armor="3" covers_hands="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_padded_vambrace" name="{=MamotK0a}Padded Vambraces" mesh="padded_vambrace_a" culture="Culture.neutral_culture" weight="0.6717997" difficulty="0" appearance="1" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="7" modifier_group="cloth" material_type="Cloth" />
+      <Armor arm_armor="12" modifier_group="cloth" material_type="Cloth" />
     </ItemComponent>
     <Flags />
   </Item>

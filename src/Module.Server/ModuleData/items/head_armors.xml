@@ -434,25 +434,25 @@
   </Item>
   <Item id="crpg_upturned_fur_cap" name="{=3bqwOJ8z}Upturned Fur Cap" subtype="head_armor" mesh="khuzait_helmet_a" culture="Culture.khuzait" weight="0.2870449" difficulty="0" appearance="1.4" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="10" has_gender_variations="false" hair_cover_type="type2" modifier_group="leather" material_type="Leather" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type2" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_fur_hood" name="{=C8nk7NEf}Thick Fur Hood" subtype="head_armor" mesh="khuzait_helmet_d" culture="Culture.khuzait" weight="0.3773303" difficulty="0" appearance="1.2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="12" has_gender_variations="false" hair_cover_type="type3" modifier_group="leather" material_type="Leather" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type3" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_peaked_fur_hood" name="{=8tHbqjmB}Peaked Fur Hood" subtype="head_armor" mesh="khuzait_helmet_e" culture="Culture.khuzait" weight="0.425466" difficulty="0" appearance="1.2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="13" has_gender_variations="false" hair_cover_type="type3" modifier_group="leather" material_type="Leather" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type3" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_nomad_cap" name="{=Oa4h7TVi}Nomad Cap" mesh="khuzait_helmet_h" culture="Culture.khuzait" weight="0.07261725" appearance="1.7" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="4" has_gender_variations="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
@@ -470,91 +470,91 @@
   </Item>
   <Item id="crpg_fur_hat" name="{=kEInAJ2P}Nomad Fur Cap" subtype="head_armor" mesh="khuzait_helmet_o" culture="Culture.khuzait" weight="0.1681113" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="7" has_gender_variations="false" hair_cover_type="type1" modifier_group="leather" material_type="Leather" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type1" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_nomad_padded_hood" name="{=yMi4ijgI}Nomad Padded Hood" subtype="head_armor" mesh="khuzait_helmet_p" culture="Culture.khuzait" weight="0.3773303" difficulty="0" appearance="2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="12" has_gender_variations="false" hair_cover_type="type2" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type2" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_khuzait_crown" name="{=noqT1MMC}Ornate Steel Cap" mesh="khuzait_crown" culture="Culture.khuzait" is_merchandise="false" subtype="head_armor" weight="0.936664" difficulty="0" appearance="8" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="22" has_gender_variations="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_plumed_fur_lined_helmet" name="{=ZRDoABz9}Plumed Fur Lined Helmet" subtype="head_armor" mesh="khuzait_helmet_b" culture="Culture.khuzait" weight="1.067251" difficulty="0" appearance="1.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="24" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_nomad_helmet" name="{=WvDZMmaj}Nomad Helmet" subtype="head_armor" mesh="khuzait_helmet_j" culture="Culture.khuzait" weight="1.566723" difficulty="0" appearance="2.2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="31" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="28" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_plumed_nomad_helmet" name="{=m3Nv9rt2}Plumed Nomad Helmet" mesh="khuzait_helmet_k" culture="Culture.khuzait" weight="1.643141" appearance="3.2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="32" has_gender_variations="false" hair_cover_type="type3" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="type3" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_steppe_helmet" name="{=VwQJ4aLY}Infantry Steel Helmet" subtype="head_armor" mesh="khuzait_helmet_l" culture="Culture.khuzait" weight="1.720762" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="33" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_plumed_lamellar_helmet" name="{=YqhOxb1Z}Plumed Lamellar Helmet" subtype="head_armor" mesh="khuzait_helmet_c" culture="Culture.khuzait" weight="1.960666" difficulty="0" appearance="2.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="36" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_spiked_helmet_with_facemask" name="{=5n4rWI9T}Spiked Helmet with Facemask" subtype="head_armor" mesh="khuzait_helmet_f" culture="Culture.khuzait" weight="3.306017" difficulty="0" appearance="2.4" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_spiked_helmet" name="{=ygfhbfr0}Spiked Helmet" subtype="head_armor" mesh="khuzait_helmet_g" culture="Culture.khuzait" weight="3.018642" difficulty="0" appearance="2.2" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_eastern_vendel_helmet" name="{=OrMbh1dn}Heavy Lancer Helmet" mesh="khuzait_helmet_m" culture="Culture.khuzait" weight="3.306017" appearance="3.55" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="type3" beard_cover_type="all" modifier_group="chain" material_type="Chainmail" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="type3" beard_cover_type="all" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_khuzait_noble_helmet_with_feathers" name="{=n1A47HcZ}Noble Lancer Helmet" mesh="khuzait_lord_helmet_a" culture="Culture.khuzait" subtype="head_armor" weight="3.018642" difficulty="0" appearance="4.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_khuzait_noble_helmet_with_fur" name="{=rUMPiiox}Furred Noble Lancer Helmet" mesh="khuzait_lord_helmet_c" culture="Culture.khuzait" subtype="head_armor" weight="2.740113" difficulty="0" appearance="3.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_khuzait_noble_helmet_with_neckguard" name="{=KD3OTFlE}Plumed Noble Lancer Helmet with Neckguard" mesh="khuzait_lord_helmet_b" culture="Culture.khuzait" subtype="head_armor" weight="3.018642" difficulty="0" appearance="3.6" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_khuzait_battle_crown" name="{=5c4cHL9Z}Khuzait Battle Crown" mesh="khuzait_battle_crown" culture="Culture.khuzait" is_merchandise="false" subtype="head_armor" weight="1.960666" difficulty="0" appearance="4" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="36" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
@@ -1483,19 +1483,19 @@
   </Item>
   <Item id="crpg_vlandia_bandit_cape_a" name="{=ewSpZ10R}Rough Padded Cap" subtype="head_armor" mesh="vlandia_bandit_cape_a" culture="Culture.looters" weight="0.3773303" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="12" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_vlandia_bandit_cape_b" name="{=7D3jvAfS}Hide Cap" subtype="head_armor" mesh="vlandia_bandit_cape_b" culture="Culture.looters" weight="0.2053926" difficulty="0" appearance="0.8" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="8" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_merchants_hat" name="{=S9htzkbe}Merchant Hat" mesh="costume_merchant_v4_head" culture="Culture.neutral_culture" weight="0.009077156" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="1" has_gender_variations="false" hair_cover_type="type1" modifier_group="leather" material_type="Leather" />
+      <Armor head_armor="6" has_gender_variations="false" hair_cover_type="type1" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>

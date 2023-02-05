@@ -192,67 +192,67 @@
   </Item>
   <Item id="crpg_bolted_leather_strips" name="{=qGzZ78bM}Bolted Leather Strips" mesh="bandit_11_shoulders" culture="Culture.khuzait" weight="0.4954908" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="8" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="12" arm_armor="2" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_steppe_leather_shoulders" name="{=Oub0aVl3}Cured Leather Pauldrons" mesh="khuzait_leather_armor_shoulder" culture="Culture.khuzait" subtype="body_armor" weight="0.3218308" difficulty="0" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="6" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_reinforced_suede_shoulders" name="{=uIov9Yo9}Reinforced Suede Shoulder Guards" mesh="khuzait_suede_leather_shoulder" culture="Culture.khuzait" subtype="body_armor" weight="0.3218308" difficulty="0" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="6" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_eastern_studded_shoulders" name="{=t6pQ6Vxc}Reinforced Studded Shoulder Guards" mesh="khuzait_leather_shoulder_b" culture="Culture.khuzait" weight="2.352683" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="17" arm_armor="4" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="18" arm_armor="9" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_khuzait_leather_shoulder_b_a" name="{=567zyLq5}Cured Studded Leather Shoulders" mesh="khuzait_leather_shoulder_b_a" culture="Culture.khuzait" weight="1.534879" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="10" arm_armor="5" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_khuzait_leather_shoulder_b_b" name="{=Q19xluDy}Reinforced Studded Neckguard" mesh="khuzait_leather_shoulder_b_b" culture="Culture.khuzait" weight="1.534879" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="17" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="17" arm_armor="4" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_khuzait_leather_pauldron" name="{=UTXWsY1Y}Reinforced Leather Pauldrons" mesh="khuzait_leather_pauldron" culture="Culture.khuzait" weight="0.9331263" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="8" arm_armor="3" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_lamellar_shoulders" name="{=vo9kYKNQ}Lamellar Shoulder Pieces" mesh="metal_lamellar_armor_shoulder" culture="Culture.khuzait" weight="2.510549" appearance="2" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="18" arm_armor="4" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="25" arm_armor="9" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_metal_lamellar_armor_shoulder_a" name="{=Uo2t80GH}Decorated Steel Lamellar Shoulder Pieces" mesh="metal_lamellar_armor_shoulder_a" culture="Culture.khuzait" weight="1.147077" appearance="2" Type="Cape">
     <ItemComponent>
-      <Armor arm_armor="10" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="13" arm_armor="7" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_brass_lamellar_shoulder" name="{=RmPPVmgJ}Bronze Lamellar Shoulder Pieces" mesh="brass_lamellar_shoulder" culture="Culture.khuzait" weight="2.63928" appearance="2" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="16" arm_armor="6" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="22" arm_armor="6" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_brass_lamellar_shoulder_a" name="{=NuWovN18}Bronze Lamellar Shoulder Guards" mesh="brass_lamellar_shoulder_a" culture="Culture.khuzait" weight="0.4055531" appearance="2" Type="Cape">
     <ItemComponent>
-      <Armor arm_armor="5" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="12" arm_armor="2" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
@@ -276,13 +276,13 @@
   </Item>
   <Item id="crpg_leather_lamellar_shoulders" name="{=AHQQp0O0}Leather Lamellar Shoulder Guards" mesh="leather_lamellar_armor_shoulder" culture="Culture.khuzait" weight="1.427819" appearance="1.6" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="12" arm_armor="3" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="17" arm_armor="4" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_leather_lamellar_armor_shoulder_a" name="{=zf2GUNfh}Decorated Lamellar Leather Shoulder Guards" mesh="leather_lamellar_armor_shoulder_a" culture="Culture.khuzait" weight="0.8207818" appearance="1.6" Type="Cape">
     <ItemComponent>
-      <Armor arm_armor="8" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="8" arm_armor="5" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
@@ -456,19 +456,19 @@
   </Item>
   <Item id="crpg_female_hood" name="{=FItBDuqh}Cotton Hood" mesh="female_peasant_cape_a" culture="Culture.neutral_culture" weight="0.06193636" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="2" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="3" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_scarf" name="{=GNdVXMue}Scarf" mesh="sturgia_cape_a" culture="Culture.neutral_culture" subtype="body_armor" weight="0.06193636" difficulty="0" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="2" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="3" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_wrapped_scarf" name="{=h1bcf5zn}Shawl" mesh="aserai_shoulder_a" culture="Culture.neutral_culture" subtype="body_armor" weight="0.06193636" difficulty="0" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="2" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="3" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>

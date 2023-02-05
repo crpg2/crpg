@@ -74,37 +74,37 @@
   </Item>
   <Item id="crpg_eastern_leather_boots" name="{=Ga5mCiLp}Leather Riding Boots" mesh="plated_leather_armor_boot" culture="Culture.khuzait" weight="0.2304528" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="6" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="12" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_khuzait_curved_boots" name="{=D9JrTpwU}Curved Boots" mesh="khuzait_leather_boots" culture="Culture.khuzait" weight="0.1753114" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="5" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="12" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_woven_leather_boots" name="{=J00AF9Qv}Woven Leather Boots" mesh="bandit_10_boots" culture="Culture.khuzait" weight="0.1753114" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="5" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="3" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_steppe_leather_boots" name="{=VpxHysbZ}Sturdy Leather Boots" mesh="khuzait_leather_armor_foot" culture="Culture.khuzait" weight="0.1254426" difficulty="0" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="4" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="12" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_reinforced_suede_boots" name="{=9Eyd2qGo}Reinforced Suede Boots" mesh="khuzait_suede_leather_foot" culture="Culture.khuzait" weight="1.402491" difficulty="0" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="20" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="18" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_leather_boots" name="{=IOOTPpYj}Fur Rimmed Curved Boots" mesh="boot_f" culture="Culture.khuzait" weight="0.1254426" difficulty="0" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="4" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="3" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
@@ -206,7 +206,7 @@
   </Item>
   <Item id="crpg_ladys_shoe" name="{=RU2EppgI}Ladies Shoes" mesh="woman_shoe_a" culture="Culture.neutral_culture" weight="0.01568033" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="1" covers_legs="false" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor leg_armor="3" covers_legs="false" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
@@ -218,13 +218,13 @@
   </Item>
   <Item id="crpg_ragged_boots" name="{=Szuxa9Bs}Ragged Boots" mesh="sneak_costume_foot" culture="Culture.neutral_culture" weight="0.1753114" difficulty="0" appearance="0.3" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="5" covers_legs="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor leg_armor="12" covers_legs="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_strapped_shoes" name="{=LOPavWRp}Strapped Shoes" mesh="strapped_shoes" culture="Culture.neutral_culture" weight="0.1753114" difficulty="0" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="5" covers_legs="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor leg_armor="3" covers_legs="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
