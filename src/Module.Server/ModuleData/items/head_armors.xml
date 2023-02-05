@@ -1667,4 +1667,10 @@
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
+  <Item id="crpg_southern_lord_helmet" name="{=GdM7iaV9}Ornate Desert Helmet" mesh="aserai_lord_helmet_c" culture="Culture.aserai" subtype="head_armor" weight="2.9" difficulty="0" appearance="4.2" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type4" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>

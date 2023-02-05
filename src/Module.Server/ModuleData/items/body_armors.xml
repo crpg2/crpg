@@ -1007,9 +1007,9 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sturgian_lamellar_gambeson_heavy" name="{=luoXhz19}Heavy Lamellar Vest" subtype="body_armor" mesh="sturgian_lamellar_gambeson_heavy" culture="Culture.sturgia" weight="10.02491" difficulty="0" appearance="1.8" Type="BodyArmor">
+  <Item id="crpg_sturgian_lamellar_gambeson_heavy" name="{=luoXhz19}Heavy Lamellar Vest with Skirt" subtype="body_armor" mesh="sturgian_lamellar_gambeson_heavy" culture="Culture.sturgia" weight="10.02491" difficulty="0" appearance="1.8" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="35" leg_armor="18" arm_armor="2" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="23" arm_armor="18" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -1486,5 +1486,17 @@
       <Armor body_armor="24" leg_armor="12" arm_armor="6" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_khuzait_leather_stitched" name="{=z7oMeRl3}Stitched Cured Leather Vest" mesh="khuzait_leather_stitch_a" culture="Culture.empire" weight="4.5" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="38" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_sturgian_lamellar_gambeson_heavy" name="{=luoXhz19}Heavy Lamellar Vest" subtype="body_armor" mesh="sturgian_lamellar_gambeson_heavy" culture="Culture.sturgia" weight="8.3" difficulty="0" appearance="1.8" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="13" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
   </Item>
 </Items>
