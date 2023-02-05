@@ -1589,81 +1589,81 @@
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
-	<Item id="sallet_base" name="Western Sallet" subtype="head_armor" mesh="sallet_base" culture="Culture.vlandia" weight="3.8" difficulty="0" appearance="1" Type="HeadArmor">
+	<Item id="crpg_sallet_base" name="Western Full Sallet" subtype="head_armor" mesh="sallet_base" culture="Culture.vlandia" weight="3.8" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />	
   </Item>
-  <Item id="sallet_no_visor" name="Western open Sallet" subtype="head_armor" mesh="sallet_no_visor" culture="Culture.vlandia" weight="2.47" difficulty="0" appearance="1" Type="HeadArmor">
+  <Item id="crpg_sallet_no_visor" name="Western Open Sallet" subtype="head_armor" mesh="sallet_no_visor" culture="Culture.vlandia" weight="2.47" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />	
   </Item>
   <Item id="crpg_sallet_base_nochin" name="Western Sallet" subtype="head_armor" mesh="sallet_base_nochin" culture="Culture.vlandia" weight="3.8" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
     </ItemComponent>
     <Flags UseTeamColor="false" />	
   </Item>
-  <Item id="crpg_sallet_no_visor_nochin" name="Western open Sallet" subtype="head_armor" mesh="sallet_no_visor_nochin" culture="Culture.vlandia" weight="2.47" difficulty="0" appearance="1" Type="HeadArmor">
+  <Item id="crpg_sallet_no_visor_nochin" name="Western Simple Sallet" subtype="head_armor" mesh="sallet_no_visor_nochin" culture="Culture.vlandia" weight="2.47" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
     </ItemComponent>
     <Flags UseTeamColor="false" />	
   </Item>
   <Item id="crpg_rus_helm_noble" name="Vaegir Noble Helmet" subtype="head_armor" mesh="rus_helm_noble" culture="Culture.sturgia" weight="3.31" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
   <Item id="crpg_rus_helm_regular" name="Vaegir Helmet" subtype="head_armor" mesh="rus_helm_regular" culture="Culture.sturgia" weight="3.31" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
      <Item id="crpg_rus_helm_regular2" name="Vaegir Helmet" subtype="head_armor" mesh="rus_helm_regular2" culture="Culture.sturgia" weight="3.31" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-     <Item id="crpg_rus_open_helm" name="Vaegir Helmet" subtype="head_armor" mesh="rus_open_helm" culture="Culture.sturgia" weight="3.11" difficulty="0" appearance="1" Type="HeadArmor">
+     <Item id="crpg_rus_open_helm" name="Vaegir Open Helmet" subtype="head_armor" mesh="rus_open_helm" culture="Culture.sturgia" weight="3.11" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="49" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_vaegir_helm" name="War Mask" subtype="head_armor" mesh="vaegir_helm" culture="Culture.sturgia" weight="3.60" difficulty="0" appearance="1" Type="HeadArmor">
+  <Item id="crpg_vaegir_helm" name="Vaegir War Mask" subtype="head_armor" mesh="vaegir_helm" culture="Culture.sturgia" weight="3.60" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-   <Item id="crpg_vaegir_helm_open" name="War helmet" subtype="head_armor" mesh="vaegir_helm_open" culture="Culture.sturgia" weight="3.11" difficulty="0" appearance="1" Type="HeadArmor">
+   <Item id="crpg_vaegir_helm_open" name="Vaegir War helmet" subtype="head_armor" mesh="vaegir_helm_open" culture="Culture.sturgia" weight="3.11" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="49" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_pothelm" name="Roundtop Full Helm" subtype="head_armor" mesh="pothelm" culture="Culture.vlandia" weight="3.40" difficulty="0" appearance="1" Type="HeadArmor">
+  <Item id="crpg_pothelm" name="Roundtop Full Helm" subtype="head_armor" mesh="pothelm" culture="Culture.empire" weight="3.40" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="53" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />	
   </Item>
-  <Item id="crpg_great_prankh_helm" name="Round Top Great Helmet" subtype="head_armor" mesh="great_prankh_helm" culture="Culture.vlandia" weight="3.8" difficulty="0" appearance="1" Type="HeadArmor">
+  <Item id="crpg_great_prankh_helm" name="Round Top Great Helmet" subtype="head_armor" mesh="great_prankh_helm" culture="Culture.empire" weight="3.8" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
-      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>	
 	    <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_roningasa" name="Roningasa" subtype="head_armor" mesh="roningasa" culture="Culture.vlandia" weight="0.1" difficulty="0" appearance="1" Type="HeadArmor">
+  <Item id="crpg_roningasa" name="Roningasa" subtype="head_armor" mesh="roningasa" culture="Culture.khuzait" weight="0.1" difficulty="0" appearance="1" Type="HeadArmor">
 		<ItemComponent>
-			<Armor head_armor="1" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none"/>
+			<Armor head_armor="6" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none"/>
 		</ItemComponent>
 		<Flags UseTeamColor="false"/>
 	</Item>
