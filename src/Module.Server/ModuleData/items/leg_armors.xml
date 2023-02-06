@@ -134,31 +134,31 @@
   </Item>
   <Item id="crpg_sturgia_boots_a" name="{=DhHBBpPf}Simple Leather Boots" mesh="sturgia_boots_a" culture="Culture.sturgia" weight="0.1753114" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="5" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="12" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_sturgia_boots_b" name="{=6QNQosHv}Tied Leather Boots" mesh="sturgia_boots_b" culture="Culture.sturgia" weight="0.2304528" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="6" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="12" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_sturgia_boots_c" name="{=4KZekKff}Tied Boots" mesh="sturgia_boots_c" culture="Culture.sturgia" weight="0.1254426" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="4" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="3" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_sturgia_boots_d" name="{=FptcHNb9}Wrapped Boots" mesh="sturgia_boots_d" culture="Culture.sturgia" weight="0.08147737" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="3" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="3 " covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_northern_plated_boots" name="{=18ZFPXsO}Huscarl Plated Boots" mesh="sturgia_plate_boot" culture="Culture.sturgia" weight="1.197468" appearance="3" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="18" covers_legs="true" modifier_group="plate" material_type="Plate" />
+      <Armor leg_armor="30" covers_legs="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>

@@ -116,13 +116,13 @@
   </Item>
   <Item id="crpg_northern_plated_gloves" name="{=G8FQ2exX}Plate Reinforced Gloves" mesh="sturgia_plate_gauntlet" culture="Culture.sturgia" weight="2.770139" appearance="2" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="18" covers_hands="true" modifier_group="plate" material_type="Plate" />
+      <Armor arm_armor="30" covers_hands="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_northern_brass_bracers" name="{=Xrb43Fv4}Bronze Bracers" mesh="sturgia_leather_brass_bracer" culture="Culture.sturgia" weight="3.74306" appearance="1.6" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="22" covers_hands="false" modifier_group="plate" material_type="Plate" />
+      <Armor arm_armor="24" covers_hands="false" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>

@@ -158,15 +158,15 @@
     "name": "Lamellar Shoulder Guards",
     "culture": "Sturgia",
     "type": "ShoulderArmor",
-    "price": 90,
+    "price": 2518,
     "weight": 0.5331134,
-    "tier": 2.0547235,
+    "tier": 6.70638943,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 0,
-      "armArmor": 6,
+      "bodyArmor": 17,
+      "armArmor": 4,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -6703,15 +6703,15 @@
     "name": "Lamellar Pauldrons",
     "culture": "Sturgia",
     "type": "ShoulderArmor",
-    "price": 2325,
+    "price": 4944,
     "weight": 2.63928,
-    "tier": 6.55734062,
+    "tier": 8.090912,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
-      "armArmor": 6,
+      "bodyArmor": 18,
+      "armArmor": 9,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -6722,14 +6722,14 @@
     "name": "Decorated Scale Shoulder Guards",
     "culture": "Sturgia",
     "type": "ShoulderArmor",
-    "price": 2290,
+    "price": 1949,
     "weight": 2.510549,
-    "tier": 6.52998,
+    "tier": 6.23798847,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 18,
+      "bodyArmor": 17,
       "armArmor": 4,
       "legArmor": 0,
       "materialType": "Plate"
@@ -7628,13 +7628,13 @@
     "name": "Northern Closed Warlord Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 7039,
+    "price": 7556,
     "weight": 3.306017,
-    "tier": 8.215069,
+    "tier": 8.376148,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 51,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -8312,9 +8312,9 @@
     "name": "Frilled Dress",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 74,
+    "price": 91,
     "weight": 0.798895,
-    "tier": 1.24861467,
+    "tier": 1.46302319,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -8323,8 +8323,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 6,
-      "armArmor": 1,
-      "legArmor": 3,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -8334,9 +8334,9 @@
     "name": "Cut Dress with Pouch",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 52,
+    "price": 94,
     "weight": 0.2747839,
-    "tier": 0.60664773,
+    "tier": 1.49725807,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -8344,8 +8344,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 3,
-      "armArmor": 0,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -8425,13 +8425,13 @@
     "name": "Reinforced Closed Goggled Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 7483,
+    "price": 16072,
     "weight": 3.403728,
-    "tier": 8.353923,
+    "tier": 10.2817507,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 52,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -8537,18 +8537,18 @@
     "name": "Huscarl Decorated Mail Shirt",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 2048,
+    "price": 15033,
     "weight": 6.78733,
-    "tier": 4.58001137,
+    "tier": 8.01234,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 25,
-      "armArmor": 8,
-      "legArmor": 8,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -8558,9 +8558,9 @@
     "name": "Decorated Thick Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 98,
+    "price": 89,
     "weight": 1.122585,
-    "tier": 1.53118908,
+    "tier": 1.444048,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -8570,7 +8570,7 @@
       "headArmor": 0,
       "bodyArmor": 6,
       "armArmor": 3,
-      "legArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -9089,9 +9089,9 @@
     "name": "Dress",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 60,
+    "price": 93,
     "weight": 0.4587976,
-    "tier": 0.947130263,
+    "tier": 1.48469067,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -9099,9 +9099,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -12300,31 +12300,9 @@
     "name": "Fur Trimmed Short Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 65,
+    "price": 92,
     "weight": 0.5522661,
-    "tier": 1.08341515,
-    "requirement": 0,
-    "flags": [
-      "UseTeamColor",
-      "Civilian"
-    ],
-    "armor": {
-      "headArmor": 0,
-      "bodyArmor": 6,
-      "armArmor": 1,
-      "legArmor": 1,
-      "materialType": "Cloth"
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_fur_trimmed_tunic",
-    "name": "Fur Trimmed Tunic",
-    "culture": "Sturgia",
-    "type": "BodyArmor",
-    "price": 98,
-    "weight": 1.122585,
-    "tier": 1.53118908,
+    "tier": 1.478543,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12334,7 +12312,29 @@
       "headArmor": 0,
       "bodyArmor": 6,
       "armArmor": 3,
-      "legArmor": 3,
+      "legArmor": 2,
+      "materialType": "Cloth"
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_fur_trimmed_tunic",
+    "name": "Fur Trimmed Tunic",
+    "culture": "Sturgia",
+    "type": "BodyArmor",
+    "price": 89,
+    "weight": 1.122585,
+    "tier": 1.444048,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor",
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -12557,13 +12557,13 @@
     "name": "Closed Huscarl Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 7039,
+    "price": 7556,
     "weight": 3.306017,
-    "tier": 8.215069,
+    "tier": 8.376148,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 51,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12576,13 +12576,13 @@
     "name": "Goggled Helmet over Leather",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 895,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 4.571158,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -12595,13 +12595,13 @@
     "name": "Goggled Helmet over Mail",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 6613,
+    "price": 7630,
     "weight": 3.209259,
-    "tier": 8.075494,
+    "tier": 8.398513,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 50,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -13407,9 +13407,9 @@
     "name": "Sleeved Heavy Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 78,
+    "price": 91,
     "weight": 0.7772062,
-    "tier": 1.30024123,
+    "tier": 1.46434927,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -13417,8 +13417,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 7,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -13429,9 +13429,9 @@
     "name": "Heavy Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 78,
+    "price": 91,
     "weight": 0.7772062,
-    "tier": 1.30024123,
+    "tier": 1.46434927,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -13439,8 +13439,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 7,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -16956,9 +16956,9 @@
     "name": "Laced Dress",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 95,
     "weight": 0.2160417,
-    "tier": 0.5306698,
+    "tier": 1.50140727,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -16966,9 +16966,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -17151,9 +17151,9 @@
     "name": "Layered Leather Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 221,
+    "price": 5130,
     "weight": 2.107316,
-    "tier": 2.24746561,
+    "tier": 5.94917345,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -17161,9 +17161,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 11,
-      "armArmor": 2,
-      "legArmor": 6,
+      "bodyArmor": 28,
+      "armArmor": 8,
+      "legArmor": 13,
       "materialType": "Leather"
     },
     "weapons": []
@@ -17234,18 +17234,18 @@
     "name": "Leather Armor with Iron Plates",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 924,
+    "price": 49795,
     "weight": 4.038483,
-    "tier": 3.617544,
+    "tier": 11.0801506,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 22,
-      "armArmor": 4,
-      "legArmor": 4,
+      "bodyArmor": 52,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Plate"
     },
     "weapons": []
@@ -17803,13 +17803,13 @@
     "name": "Warlord Helmet over Full Mail",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 8426,
+    "price": 15760,
     "weight": 3.601973,
-    "tier": 8.6295,
+    "tier": 10.2275562,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 54,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -17822,13 +17822,13 @@
     "name": "Warlord Helmet over Mail",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 5813,
+    "price": 7781,
     "weight": 3.018642,
-    "tier": 7.794133,
+    "tier": 8.443645,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 48,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -18006,9 +18006,9 @@
     "name": "Light Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 95,
     "weight": 0.2160417,
-    "tier": 0.5306698,
+    "tier": 1.50140727,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -18016,9 +18016,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -18664,15 +18664,15 @@
     "name": "Mail Shoulder Guards",
     "culture": "Sturgia",
     "type": "ShoulderArmor",
-    "price": 275,
+    "price": 2418,
     "weight": 0.798895,
-    "tier": 3.41395164,
+    "tier": 6.630402,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 11,
-      "armArmor": 0,
+      "bodyArmor": 17,
+      "armArmor": 4,
       "legArmor": 0,
       "materialType": "Chainmail"
     },
@@ -21336,13 +21336,13 @@
     "name": "Steel Cap with Nose Guard",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 505,
+    "price": 1113,
     "weight": 0.936664,
-    "tier": 3.83277321,
+    "tier": 4.878075,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 22,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -21477,13 +21477,13 @@
     "name": "Nasal Helmet with Leather",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 2545,
+    "price": 971,
     "weight": 2.042925,
-    "tier": 6.190553,
+    "tier": 4.6847434,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 37,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -21496,13 +21496,13 @@
     "name": "Nasal Helmet with Mail",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 3008,
+    "price": 3293,
     "weight": 2.210786,
-    "tier": 6.489519,
+    "tier": 6.65591669,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 39,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -21515,13 +21515,13 @@
     "name": "Nasalhelm over Leather",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 576,
+    "price": 1103,
     "weight": 1.001248,
-    "tier": 3.99658751,
+    "tier": 4.86541128,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 23,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -21534,13 +21534,13 @@
     "name": "Nasalhelm over Mail",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 1770,
+    "price": 3492,
     "weight": 1.720762,
-    "tier": 5.58213568,
+    "tier": 6.76622438,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 33,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -21794,15 +21794,15 @@
     "name": "Fur Rimmed Cap",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 66,
+    "price": 56,
     "weight": 0.2053926,
-    "tier": 1.43914938,
+    "tier": 1.079362,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 8,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -21815,18 +21815,18 @@
     "name": "Huscarl Mail Shirt",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 2388,
+    "price": 14130,
     "weight": 7.742045,
-    "tier": 4.787719,
+    "tier": 7.8775897,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 24,
-      "armArmor": 10,
-      "legArmor": 10,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -21836,13 +21836,13 @@
     "name": "Closed Mail Goggled Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 7039,
+    "price": 16231,
     "weight": 3.306017,
-    "tier": 8.215069,
+    "tier": 10.3091059,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 51,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -21855,18 +21855,18 @@
     "name": "Bronze Scale Vest over Gambeson",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 2548,
+    "price": 17704,
     "weight": 7.928597,
-    "tier": 4.877774,
+    "tier": 8.378417,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 28,
-      "armArmor": 6,
-      "legArmor": 12,
+      "bodyArmor": 50,
+      "armArmor": 13,
+      "legArmor": 13,
       "materialType": "Plate"
     },
     "weapons": []
@@ -21876,18 +21876,18 @@
     "name": "Bronze Scale Vest",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 1330,
+    "price": 6622,
     "weight": 4.651314,
-    "tier": 4.03559542,
+    "tier": 6.389693,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 28,
-      "armArmor": 2,
-      "legArmor": 4,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Plate"
     },
     "weapons": []
@@ -21897,15 +21897,15 @@
     "name": "Fur Cap with Ear Flaps",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 60,
+    "price": 56,
     "weight": 0.1681113,
-    "tier": 1.26150024,
+    "tier": 1.08128583,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 7,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -21918,9 +21918,9 @@
     "name": "Reinforced Thick Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 97,
+    "price": 6986,
     "weight": 1.074133,
-    "tier": 1.52162981,
+    "tier": 6.485635,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -21928,9 +21928,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 7,
-      "armArmor": 2,
-      "legArmor": 3,
+      "bodyArmor": 28,
+      "armArmor": 13,
+      "legArmor": 8,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -21981,9 +21981,9 @@
     "name": "Leather Armor over Heavy Cloth",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 201,
+    "price": 6359,
     "weight": 1.784997,
-    "tier": 2.16262364,
+    "tier": 6.317776,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -21991,9 +21991,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 11,
-      "armArmor": 3,
-      "legArmor": 3,
+      "bodyArmor": 28,
+      "armArmor": 13,
+      "legArmor": 8,
       "materialType": "Leather"
     },
     "weapons": []
@@ -22003,18 +22003,18 @@
     "name": "Sloven Leather",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 251,
+    "price": 85,
     "weight": 2.107316,
-    "tier": 2.35563231,
+    "tier": 1.39414978,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 12,
+      "bodyArmor": 6,
       "armArmor": 3,
-      "legArmor": 4,
+      "legArmor": 2,
       "materialType": "Leather"
     },
     "weapons": []
@@ -22024,18 +22024,18 @@
     "name": "Leather Tabard over Mail",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 4504,
+    "price": 11760,
     "weight": 11.10673,
-    "tier": 5.73566055,
+    "tier": 7.490452,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 30,
-      "armArmor": 12,
-      "legArmor": 14,
+      "bodyArmor": 40,
+      "armArmor": 18,
+      "legArmor": 13,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -22045,9 +22045,9 @@
     "name": "Luxury Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 67,
+    "price": 91,
     "weight": 0.7344306,
-    "tier": 1.12553227,
+    "tier": 1.46698582,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -22055,9 +22055,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 2,
-      "legArmor": 3,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -22197,15 +22197,15 @@
     "name": "Bronze Bracers",
     "culture": "Sturgia",
     "type": "HandArmor",
-    "price": 2429,
+    "price": 3322,
     "weight": 3.74306,
-    "tier": 7.55021334,
+    "tier": 8.236596,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
-      "armArmor": 22,
+      "armArmor": 24,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -22216,18 +22216,18 @@
     "name": "Heavy Lamellar over Mail",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 14538,
+    "price": 20417,
     "weight": 19.51269,
-    "tier": 7.93920755,
+    "tier": 8.710182,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 51,
-      "armArmor": 16,
-      "legArmor": 16,
+      "bodyArmor": 52,
+      "armArmor": 18,
+      "legArmor": 23,
       "materialType": "Plate"
     },
     "weapons": []
@@ -22237,18 +22237,18 @@
     "name": "Coat Of Plates",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 8005,
+    "price": 26744,
     "weight": 14.56576,
-    "tier": 6.735611,
+    "tier": 9.372122,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 45,
-      "armArmor": 6,
-      "legArmor": 19,
+      "bodyArmor": 52,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Plate"
     },
     "weapons": []
@@ -22258,9 +22258,9 @@
     "name": "Cold Weather Dress",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 55,
+    "price": 93,
     "weight": 0.388297,
-    "tier": 0.7575553,
+    "tier": 1.48943079,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -22268,8 +22268,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 3,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -22280,15 +22280,15 @@
     "name": "Fur Cap",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 74,
+    "price": 56,
     "weight": 0.2450832,
-    "tier": 1.616004,
+    "tier": 1.077336,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 9,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -22301,13 +22301,13 @@
     "name": "Sea Raider Goggled Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 6613,
+    "price": 7630,
     "weight": 3.209259,
-    "tier": 8.075494,
+    "tier": 8.398513,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 50,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -22532,18 +22532,18 @@
     "name": "Cured Leather Lamellar Shirt ",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 1055,
+    "price": 6981,
     "weight": 4.038482,
-    "tier": 3.765431,
+    "tier": 6.484277,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 26,
-      "armArmor": 2,
-      "legArmor": 3,
+      "bodyArmor": 38,
+      "armArmor": 8,
+      "legArmor": 8,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -22553,18 +22553,18 @@
     "name": "Leather Tabard",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 1001,
+    "price": 1104,
     "weight": 4.968383,
-    "tier": 3.70614958,
+    "tier": 3.817445,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 18,
-      "armArmor": 6,
-      "legArmor": 9,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -22574,9 +22574,9 @@
     "name": "Tunic with Leather Vest",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 140,
+    "price": 88,
     "weight": 1.481027,
-    "tier": 1.854497,
+    "tier": 1.4246465,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -22584,9 +22584,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 9,
-      "armArmor": 2,
-      "legArmor": 4,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Leather"
     },
     "weapons": []
@@ -22638,9 +22638,9 @@
     "name": "Light Padded Armor",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 739,
+    "price": 1173,
     "weight": 4.188975,
-    "tier": 3.37747288,
+    "tier": 3.88749385,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -22648,9 +22648,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 15,
-      "armArmor": 7,
-      "legArmor": 7,
+      "bodyArmor": 26,
+      "armArmor": 3,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -22660,9 +22660,9 @@
     "name": "Short Gambeson over Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 487,
+    "price": 1286,
     "weight": 3.140701,
-    "tier": 2.958742,
+    "tier": 3.99546623,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -22670,9 +22670,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 16,
+      "bodyArmor": 26,
       "armArmor": 3,
-      "legArmor": 6,
+      "legArmor": 3,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -22682,16 +22682,16 @@
     "name": "Huscarl Plated Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 975,
+    "price": 6076,
     "weight": 1.197468,
-    "tier": 6.27545166,
+    "tier": 10.4590864,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 18,
+      "legArmor": 30,
       "materialType": "Plate"
     },
     "weapons": []
@@ -22701,15 +22701,15 @@
     "name": "Plate Reinforced Gloves",
     "culture": "Sturgia",
     "type": "HandArmor",
-    "price": 1315,
+    "price": 8301,
     "weight": 2.770139,
-    "tier": 6.34559,
+    "tier": 10.575984,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
       "bodyArmor": 0,
-      "armArmor": 18,
+      "armArmor": 30,
       "legArmor": 0,
       "materialType": "Plate"
     },
@@ -23179,9 +23179,9 @@
     "name": "Varyag Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 85,
+    "price": 90,
     "weight": 0.9561659,
-    "tier": 1.39096224,
+    "tier": 1.45361817,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -23190,8 +23190,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 6,
-      "armArmor": 2,
-      "legArmor": 3,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -23201,13 +23201,13 @@
     "name": "Warlord Helmet with Cheek Guards",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 5439,
+    "price": 7858,
     "weight": 2.924803,
-    "tier": 7.65232754,
+    "tier": 8.466405,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 47,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -24635,9 +24635,9 @@
     "name": "Plain Dress",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 95,
     "weight": 0.2160417,
-    "tier": 0.5306698,
+    "tier": 1.50140727,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -24645,9 +24645,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -25733,9 +25733,9 @@
     "name": "Roughcloth Shortcoat",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 63,
+    "price": 92,
     "weight": 0.5716428,
-    "tier": 1.03155422,
+    "tier": 1.47728765,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -25743,8 +25743,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 5,
-      "armArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -25755,15 +25755,15 @@
     "name": "Roughhide Cap",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 60,
+    "price": 56,
     "weight": 0.1681113,
-    "tier": 1.26150024,
+    "tier": 1.08128583,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 7,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -27971,15 +27971,15 @@
     "name": "Spangenhelm with Leather",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 382,
+    "price": 1133,
     "weight": 0.8118855,
-    "tier": 3.5022254,
+    "tier": 4.903116,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 20,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -27992,15 +27992,15 @@
     "name": "Spangenhelm with Padded Cloth",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 285,
+    "price": 1152,
     "weight": 0.6932,
-    "tier": 3.167786,
+    "tier": 4.92766762,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
-      "headArmor": 18,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -28981,15 +28981,15 @@
     "name": "Stitched Leather Shoulders",
     "culture": "Sturgia",
     "type": "ShoulderArmor",
-    "price": 101,
+    "price": 631,
     "weight": 0.4055531,
-    "tier": 2.209993,
+    "tier": 4.47738838,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 7,
-      "armArmor": 0,
+      "bodyArmor": 12,
+      "armArmor": 2,
       "legArmor": 0,
       "materialType": "Leather"
     },
@@ -29000,9 +29000,9 @@
     "name": "Stitched Leather Vest",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 272,
+    "price": 84,
     "weight": 2.290499,
-    "tier": 2.42538428,
+    "tier": 1.38593376,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -29010,9 +29010,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 12,
+      "bodyArmor": 6,
       "armArmor": 3,
-      "legArmor": 5,
+      "legArmor": 2,
       "materialType": "Leather"
     },
     "weapons": []
@@ -29859,9 +29859,9 @@
     "name": "Simple Leather Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 62,
+    "price": 304,
     "weight": 0.1753114,
-    "tier": 1.82122278,
+    "tier": 4.37093449,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29870,7 +29870,7 @@
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 5,
+      "legArmor": 12,
       "materialType": "Leather"
     },
     "weapons": []
@@ -29880,9 +29880,9 @@
     "name": "Tied Leather Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 73,
+    "price": 302,
     "weight": 0.2304528,
-    "tier": 2.17974019,
+    "tier": 4.35948038,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29891,7 +29891,7 @@
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 6,
+      "legArmor": 12,
       "materialType": "Leather"
     },
     "weapons": []
@@ -29901,9 +29901,9 @@
     "name": "Tied Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 56,
+    "price": 52,
     "weight": 0.1254426,
-    "tier": 1.46048379,
+    "tier": 1.09536278,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -29912,7 +29912,7 @@
       "headArmor": 0,
       "bodyArmor": 0,
       "armArmor": 0,
-      "legArmor": 4,
+      "legArmor": 3,
       "materialType": "Leather"
     },
     "weapons": []
@@ -29964,13 +29964,13 @@
     "name": "Heavy Cavalry Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 5081,
+    "price": 3076,
     "weight": 2.831956,
-    "tier": 7.509759,
+    "tier": 6.53022528,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 46,
+      "headArmor": 40,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30099,9 +30099,9 @@
     "name": "Long Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 51,
+    "price": 95,
     "weight": 0.2160417,
-    "tier": 0.5306698,
+    "tier": 1.50140727,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -30109,9 +30109,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 2,
-      "armArmor": 1,
-      "legArmor": 1,
+      "bodyArmor": 6,
+      "armArmor": 3,
+      "legArmor": 2,
       "materialType": "Cloth"
     },
     "weapons": []
@@ -30606,13 +30606,13 @@
     "name": "Battle Crown",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 5439,
+    "price": 7858,
     "weight": 2.924803,
-    "tier": 7.65232754,
+    "tier": 8.466405,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 47,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30625,18 +30625,18 @@
     "name": "Decorated Hauberk",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 6052,
+    "price": 28420,
     "weight": 13.10051,
-    "tier": 6.23102,
+    "tier": 9.52749348,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 32,
-      "armArmor": 15,
-      "legArmor": 15,
+      "bodyArmor": 52,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -30646,18 +30646,18 @@
     "name": "Huscarl Hauberk",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 2749,
+    "price": 11894,
     "weight": 8.54501,
-    "tier": 4.984973,
+    "tier": 7.513884,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 25,
-      "armArmor": 10,
-      "legArmor": 12,
+      "bodyArmor": 40,
+      "armArmor": 13,
+      "legArmor": 18,
       "materialType": "Chainmail"
     },
     "weapons": []
@@ -30667,15 +30667,15 @@
     "name": "Jeweled Fur Rimmed Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 3527,
+    "price": 936,
     "weight": 2.383009,
-    "tier": 6.785095,
+    "tier": 4.63372374,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 41,
+      "headArmor": 28,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30688,17 +30688,17 @@
     "name": "Brigandine over Hauberk",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 18196,
+    "price": 39783,
     "weight": 24.23686,
-    "tier": 8.441247,
+    "tier": 10.432107,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 49,
-      "armArmor": 20,
+      "bodyArmor": 64,
+      "armArmor": 25,
       "legArmor": 25,
       "materialType": "Plate"
     },
@@ -30709,13 +30709,13 @@
     "name": "Closed Decorated Goggled Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 8426,
+    "price": 15760,
     "weight": 3.601973,
-    "tier": 8.6295,
+    "tier": 10.2275562,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 54,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30728,13 +30728,13 @@
     "name": "Plumed Decorated Mailed Nasal Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 6205,
+    "price": 7705,
     "weight": 3.113464,
-    "tier": 7.93518448,
+    "tier": 8.421012,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 49,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30747,13 +30747,13 @@
     "name": "Steel Nasal Cap",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 2133,
+    "price": 8858,
     "weight": 1.879541,
-    "tier": 5.88811874,
+    "tier": 8.748062,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 35,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30766,13 +30766,13 @@
     "name": "Closed Warlord Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 7946,
+    "price": 15915,
     "weight": 3.502383,
-    "tier": 8.492063,
+    "tier": 10.2545662,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 53,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30785,13 +30785,13 @@
     "name": "Mailed Nasal Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 6205,
+    "price": 7705,
     "weight": 3.113464,
-    "tier": 7.93518448,
+    "tier": 8.421012,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 49,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30804,18 +30804,18 @@
     "name": "Heavy Lamellar over Mail Armor",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 10822,
+    "price": 24282,
     "weight": 17.16047,
-    "tier": 7.320951,
+    "tier": 9.130097,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 50,
-      "armArmor": 7,
-      "legArmor": 21,
+      "bodyArmor": 52,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Plate"
     },
     "weapons": []
@@ -30825,18 +30825,18 @@
     "name": "Heavy Lamellar over Hauberk",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 15834,
+    "price": 20731,
     "weight": 22.2271,
-    "tier": 8.126809,
+    "tier": 8.746422,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 50,
-      "armArmor": 15,
-      "legArmor": 25,
+      "bodyArmor": 52,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Plate"
     },
     "weapons": []
@@ -30867,13 +30867,13 @@
     "name": "Ridged Warlord Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 6613,
+    "price": 7630,
     "weight": 3.209259,
-    "tier": 8.075494,
+    "tier": 8.398513,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 50,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30886,13 +30886,13 @@
     "name": "Warlord Helmet with Nose Guard",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 7039,
+    "price": 7556,
     "weight": 3.306017,
-    "tier": 8.215069,
+    "tier": 8.376148,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 51,
+      "headArmor": 52,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -30905,13 +30905,13 @@
     "name": "Plated Warlord Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 7946,
+    "price": 15915,
     "weight": 3.502383,
-    "tier": 8.492063,
+    "tier": 10.2545662,
     "requirement": 0,
     "flags": [],
     "armor": {
-      "headArmor": 53,
+      "headArmor": 64,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,
@@ -31966,9 +31966,9 @@
     "name": "Belted Tunic",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 63,
+    "price": 92,
     "weight": 0.6110581,
-    "tier": 1.04249811,
+    "tier": 1.47475338,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -31976,8 +31976,8 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 4,
-      "armArmor": 2,
+      "bodyArmor": 6,
+      "armArmor": 3,
       "legArmor": 2,
       "materialType": "Cloth"
     },
@@ -34842,15 +34842,15 @@
     "name": "Head Scarf",
     "culture": "Sturgia",
     "type": "HeadArmor",
-    "price": 50,
+    "price": 56,
     "weight": 0.009077156,
-    "tier": 0.181621924,
+    "tier": 1.08973157,
     "requirement": 0,
     "flags": [
       "Civilian"
     ],
     "armor": {
-      "headArmor": 1,
+      "headArmor": 6,
       "bodyArmor": 0,
       "armArmor": 0,
       "legArmor": 0,

@@ -258,13 +258,13 @@
   </Item>
   <Item id="crpg_brass_lamellar_shoulder_white" name="{=DbEzJcbD}Lamellar Pauldrons" mesh="brass_lamellar_shoulder_white" culture="Culture.sturgia" weight="2.63928" appearance="2" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="16" arm_armor="6" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="18" arm_armor="9" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_a_brass_lamellar_shoulder_white_a" name="{=QlpyR6uc}Lamellar Shoulder Guards" mesh="brass_lamellar_shoulder_white_a" culture="Culture.sturgia" weight="0.5331134" appearance="2" Type="Cape">
     <ItemComponent>
-      <Armor arm_armor="6" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="17" arm_armor="4" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
@@ -336,19 +336,19 @@
   </Item>
   <Item id="crpg_stitched_leather_shoulders" name="{=WrwO8xsN}Stitched Leather Shoulders" mesh="aserai_plated_shoulder" culture="Culture.sturgia" weight="0.4055531" appearance="1" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="7" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="12" arm_armor="2" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_mail_shoulders" name="{=W9bsRAfD}Mail Shoulder Guards" mesh="shoulder_chain_a" culture="Culture.sturgia" subtype="body_armor" weight="0.798895" difficulty="0" appearance="1.6" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="11" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="17" arm_armor="4" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags />
   </Item>
   <Item id="crpg_brass_scale_shoulders" name="{=3Xx3hg8s}Decorated Scale Shoulder Guards" mesh="sturgia_leather_brass_shoulder" culture="Culture.sturgia" weight="2.510549" appearance="0.9" Type="Cape">
     <ItemComponent>
-      <Armor body_armor="18" arm_armor="4" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="17" arm_armor="4" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags />
   </Item>
