@@ -410,7 +410,7 @@
   </CraftedItem>
   <CraftedItem id="crpg_long_bardiche" name="{=}Long Bardiche" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_long_bardiche_head" Type="Blade" scale_factor="87" />
+      <Piece id="crpg_long_bardiche_head" Type="Blade" scale_factor="99" />
       <Piece id="crpg_long_bardiche_handle" Type="Handle" scale_factor="150" />
     </Pieces>
   </CraftedItem>

@@ -5797,9 +5797,9 @@
     "name": "Bec De Corbin",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 17671,
+    "price": 15896,
     "weight": 1.91,
-    "tier": 10.5012026,
+    "tier": 9.904106,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5821,7 +5821,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 93,
         "swingDamage": 30,
@@ -5879,9 +5879,9 @@
     "name": "Billhook",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 15998,
-    "weight": 1.91,
-    "tier": 9.939254,
+    "price": 15012,
+    "weight": 1.95,
+    "tier": 9.594488,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -5892,8 +5892,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 141,
-        "balance": 0.42,
-        "handling": 69,
+        "balance": 0.39,
+        "handling": 68,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -5905,9 +5905,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 93,
-        "swingDamage": 45,
+        "swingDamage": 46,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 81
       }
     ]
   },
@@ -7120,9 +7120,9 @@
     "name": "Burgundian Glaive",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 13917,
+    "price": 15192,
     "weight": 1.78,
-    "tier": 9.197954,
+    "tier": 9.658267,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -7144,10 +7144,10 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 93,
-        "swingDamage": 44,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
         "swingSpeed": 76
       }
@@ -7158,9 +7158,9 @@
     "name": "Burgundian Poleaxe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 12513,
-    "weight": 2.27,
-    "tier": 8.666276,
+    "price": 16174,
+    "weight": 2.33,
+    "tier": 9.999937,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -7173,21 +7173,22 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.41,
-        "handling": 72,
+        "balance": 0.37,
+        "handling": 71,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
+          "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 91,
-        "swingDamage": 42,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 81
       }
     ]
   },
@@ -9343,9 +9344,9 @@
     "name": "Polesword",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 5728,
+    "price": 6545,
     "weight": 1.75,
-    "tier": 5.526349,
+    "tier": 5.97756147,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9368,7 +9369,7 @@
         "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 93,
-        "swingDamage": 47,
+        "swingDamage": 48,
         "swingDamageType": "Cut",
         "swingSpeed": 65
       }
@@ -11297,9 +11298,9 @@
     "name": "Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 13906,
+    "price": 14950,
     "weight": 1.84,
-    "tier": 9.193977,
+    "tier": 9.572582,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11319,7 +11320,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 41,
@@ -11333,9 +11334,9 @@
     "name": "Fine Steel Menavlion",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 10375,
-    "weight": 1.29,
-    "tier": 7.79638147,
+    "price": 13185,
+    "weight": 1.26,
+    "tier": 8.924269,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11346,8 +11347,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 201,
-        "balance": 0.06,
-        "handling": 62,
+        "balance": 0.09,
+        "handling": 63,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -11360,7 +11361,7 @@
         "thrustSpeed": 96,
         "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 71
+        "swingSpeed": 72
       }
     ]
   },
@@ -12213,9 +12214,9 @@
     "name": "French Voulge",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 15489,
-    "weight": 1.99,
-    "tier": 9.762769,
+    "price": 15527,
+    "weight": 2.15,
+    "tier": 9.775999,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -12228,8 +12229,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 133,
-        "balance": 0.61,
-        "handling": 75,
+        "balance": 0.48,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -12237,12 +12238,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 37,
+        "thrustSpeed": 92,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 84
       }
     ]
   },
@@ -16949,9 +16950,9 @@
     "name": "Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 14751,
-    "weight": 1.68,
-    "tier": 9.501213,
+    "price": 16190,
+    "weight": 1.71,
+    "tier": 10.0052967,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16962,8 +16963,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 147,
-        "balance": 0.44,
-        "handling": 71,
+        "balance": 0.41,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -16971,12 +16972,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 24,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
-        "swingDamage": 41,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 82
       }
     ]
   },
@@ -16985,9 +16986,9 @@
     "name": "Long Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 13317,
-    "weight": 1.44,
-    "tier": 8.974446,
+    "price": 13834,
+    "weight": 1.41,
+    "tier": 9.167392,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16998,7 +16999,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 200,
-        "balance": 0.12,
+        "balance": 0.15,
         "handling": 63,
         "bodyArmor": 0,
         "flags": [
@@ -17009,10 +17010,10 @@
         ],
         "thrustDamage": 25,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 95,
-        "swingDamage": 47,
+        "thrustSpeed": 96,
+        "swingDamage": 46,
         "swingDamageType": "Cut",
-        "swingSpeed": 73
+        "swingSpeed": 74
       }
     ]
   },
@@ -18464,9 +18465,9 @@
     "name": "Long Bardiche",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 13995,
-    "weight": 1.7,
-    "tier": 9.226804,
+    "price": 15580,
+    "weight": 1.73,
+    "tier": 9.794569,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -18478,8 +18479,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 158,
-        "balance": 0.17,
+        "length": 161,
+        "balance": 0.13,
         "handling": 65,
         "bodyArmor": 0,
         "flags": [
@@ -18489,12 +18490,12 @@
           "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 26,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
-        "swingDamage": 48,
+        "swingDamage": 49,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 74
       }
     ]
   },
@@ -18624,9 +18625,9 @@
     "name": "Long Hafted Spiked Mace",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 17575,
-    "weight": 1.87,
-    "tier": 10.4698267,
+    "price": 13711,
+    "weight": 1.91,
+    "tier": 9.121935,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -18639,8 +18640,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 155,
-        "balance": 0.17,
-        "handling": 67,
+        "balance": 0.14,
+        "handling": 66,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -18651,10 +18652,10 @@
         ],
         "thrustDamage": 17,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 93,
+        "thrustSpeed": 92,
         "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 75
+        "swingSpeed": 74
       }
     ]
   },
@@ -23455,9 +23456,9 @@
     "name": "Broad Leaf Shaped Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 3827,
+    "price": 12389,
     "weight": 1.5,
-    "tier": 4.334009,
+    "tier": 8.617993,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23478,7 +23479,7 @@
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 21,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
         "swingSpeed": 42
       },
@@ -23501,7 +23502,7 @@
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
-        "swingDamage": 21,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
         "swingSpeed": 82
       },
@@ -23524,7 +23525,7 @@
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
-        "swingDamage": 21,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
         "swingSpeed": 82
       }
@@ -24966,9 +24967,9 @@
     "name": "Scythe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 12385,
-    "weight": 2.25,
-    "tier": 8.616375,
+    "price": 8430,
+    "weight": 2.34,
+    "tier": 6.92394543,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -24981,8 +24982,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 98,
-        "balance": 0.58,
-        "handling": 72,
+        "balance": 0.52,
+        "handling": 71,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -24996,7 +24997,7 @@
         "thrustSpeed": 91,
         "swingDamage": 30,
         "swingDamageType": "Pierce",
-        "swingSpeed": 87
+        "swingSpeed": 85
       }
     ]
   },
@@ -27717,9 +27718,9 @@
     "name": "Simple Poleaxe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 10749,
+    "price": 13353,
     "weight": 2.2,
-    "tier": 7.9545083,
+    "tier": 8.987777,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27739,12 +27740,13 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
+          "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 91,
-        "swingDamage": 44,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
         "swingSpeed": 78
       }
@@ -28842,9 +28844,9 @@
     "name": "Spiked Polehammer",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 15290,
+    "price": 16012,
     "weight": 2.0,
-    "tier": 9.693021,
+    "tier": 9.944254,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -28866,7 +28868,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 30,
@@ -34028,9 +34030,9 @@
     "name": "Voulge",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 17802,
-    "weight": 1.47,
-    "tier": 10.5442076,
+    "price": 15815,
+    "weight": 1.5,
+    "tier": 9.876115,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -34043,8 +34045,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 142,
-        "balance": 0.38,
-        "handling": 66,
+        "balance": 0.36,
+        "handling": 65,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -34053,12 +34055,12 @@
           "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 95,
         "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 80
       }
     ]
   },
