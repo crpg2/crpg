@@ -406,16 +406,16 @@
     "name": "Aketon",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 830,
-    "weight": 2.817747,
-    "tier": 3.501227,
+    "price": 1114,
+    "weight": 3.253509,
+    "tier": 3.8279264,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 23,
+      "bodyArmor": 26,
       "armArmor": 3,
       "legArmor": 3,
       "materialType": "Cloth",
@@ -9697,18 +9697,18 @@
     "name": "Brigandine Vest",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 17305,
-    "weight": 15.49771,
-    "tier": 8.326477,
+    "price": 12044,
+    "weight": 12.27731,
+    "tier": 7.5397234,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 52,
-      "armArmor": 18,
-      "legArmor": 18,
+      "bodyArmor": 50,
+      "armArmor": 13,
+      "legArmor": 13,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10497,9 +10497,9 @@
     "name": "Heavy Cloak",
     "culture": "Neutral",
     "type": "ShoulderArmor",
-    "price": 68,
-    "weight": 0.2259883,
-    "tier": 1.63741827,
+    "price": 53,
+    "weight": 0.08992123,
+    "tier": 0.948947,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -10508,7 +10508,7 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 3,
-      "armArmor": 2,
+      "armArmor": 0,
       "legArmor": 0,
       "materialType": "Cloth",
       "familyType": 0
@@ -24255,16 +24255,16 @@
     "name": "Padded Short Coat",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 830,
-    "weight": 2.817747,
-    "tier": 3.501227,
+    "price": 1114,
+    "weight": 3.253509,
+    "tier": 3.8279264,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 23,
+      "bodyArmor": 26,
       "armArmor": 3,
       "legArmor": 3,
       "materialType": "Cloth",
@@ -30116,16 +30116,16 @@
     "name": "Studded Leather Coat",
     "culture": "Aserai",
     "type": "BodyArmor",
-    "price": 830,
-    "weight": 2.817747,
-    "tier": 3.501227,
+    "price": 1114,
+    "weight": 3.253509,
+    "tier": 3.8279264,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 23,
+      "bodyArmor": 26,
       "armArmor": 3,
       "legArmor": 3,
       "materialType": "Leather",
