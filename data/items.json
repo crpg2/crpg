@@ -19827,365 +19827,13 @@
     ]
   },
   {
-    "id": "crpg_mount_camel_10",
-    "name": "Seleucid Light Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 14551,
-    "weight": 520.0,
-    "tier": 8.883225,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 4,
-      "maneuver": 82,
-      "speed": 36,
-      "hitPoints": 231,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_11",
-    "name": "Seleucid Heavy Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 15506,
-    "weight": 520.0,
-    "tier": 9.204619,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 5,
-      "maneuver": 81,
-      "speed": 35,
-      "hitPoints": 249,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_12",
-    "name": "Parthian Light Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 16271,
-    "weight": 520.0,
-    "tier": 9.454871,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 4,
-      "maneuver": 83,
-      "speed": 37,
-      "hitPoints": 231,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_13",
-    "name": "Parthian Heavy Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 17379,
-    "weight": 520.0,
-    "tier": 9.807319,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 5,
-      "maneuver": 82,
-      "speed": 36,
-      "hitPoints": 249,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_14",
-    "name": "Achaemenian Light Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 20002,
-    "weight": 520.0,
-    "tier": 10.5999737,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 5,
-      "maneuver": 84,
-      "speed": 38,
-      "hitPoints": 240,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_15",
-    "name": "Achaemenian Heavy Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 21326,
-    "weight": 520.0,
-    "tier": 10.9804239,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 6,
-      "maneuver": 83,
-      "speed": 37,
-      "hitPoints": 258,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_16",
-    "name": "Safinat al-Barr",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 23251,
-    "weight": 520.0,
-    "tier": 11.5130272,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 7,
-      "maneuver": 85,
-      "speed": 37,
-      "hitPoints": 258,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_17",
-    "name": "Padishah",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 25931,
-    "weight": 520.0,
-    "tier": 12.2194681,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 7,
-      "maneuver": 86,
-      "speed": 38,
-      "hitPoints": 258,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_2",
-    "name": "Pack Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 4779,
-    "weight": 520.0,
-    "tier": 4.651889,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 2,
-      "maneuver": 72,
-      "speed": 29,
-      "hitPoints": 216,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_3",
-    "name": "Pratihara Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 6394,
-    "weight": 520.0,
-    "tier": 5.538042,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 2,
-      "maneuver": 76,
-      "speed": 30,
-      "hitPoints": 222,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_4",
-    "name": "Qedarite Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 7767,
-    "weight": 520.0,
-    "tier": 6.20829725,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 3,
-      "maneuver": 77,
-      "speed": 31,
-      "hitPoints": 228,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_5",
-    "name": "Palmyrene Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 9400,
-    "weight": 520.0,
-    "tier": 6.93329,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 4,
-      "maneuver": 78,
-      "speed": 32,
-      "hitPoints": 234,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_6",
-    "name": "Sargonid Light Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 10628,
-    "weight": 520.0,
-    "tier": 7.43830967,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 4,
-      "maneuver": 80,
-      "speed": 34,
-      "hitPoints": 222,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_7",
-    "name": "Sargonid Heavy Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 11346,
-    "weight": 520.0,
-    "tier": 7.72047329,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 5,
-      "maneuver": 79,
-      "speed": 33,
-      "hitPoints": 240,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_8",
-    "name": "Nabatean Light Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 11916,
-    "weight": 520.0,
-    "tier": 7.93814945,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 4,
-      "maneuver": 81,
-      "speed": 35,
-      "hitPoints": 222,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_camel_9",
-    "name": "Nabatean Heavy Camel",
-    "culture": "Aserai",
-    "type": "Mount",
-    "price": 12753,
-    "weight": 520.0,
-    "tier": 8.248472,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 110,
-      "chargeDamage": 5,
-      "maneuver": 80,
-      "speed": 34,
-      "hitPoints": 240,
-      "familyType": 2
-    },
-    "weapons": []
-  },
-  {
     "id": "crpg_mount_greathorse_10",
     "name": "Barthais Great Horse",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 16650,
+    "price": 15722,
     "weight": 450.0,
-    "tier": 9.576936,
+    "tier": 9.27576,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20195,7 +19843,7 @@
       "chargeDamage": 7,
       "maneuver": 81,
       "speed": 38,
-      "hitPoints": 228,
+      "hitPoints": 222,
       "familyType": 1
     },
     "weapons": []
@@ -20205,9 +19853,9 @@
     "name": "Brabant Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 18219,
+    "price": 18901,
     "weight": 450.0,
-    "tier": 10.0673294,
+    "tier": 10.2740908,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20217,7 +19865,7 @@
       "chargeDamage": 8,
       "maneuver": 82,
       "speed": 38,
-      "hitPoints": 231,
+      "hitPoints": 235,
       "familyType": 1
     },
     "weapons": []
@@ -20227,9 +19875,9 @@
     "name": "Comtois Great Horse",
     "culture": "Empire",
     "type": "Mount",
-    "price": 20806,
+    "price": 19673,
     "weight": 450.0,
-    "tier": 10.8325243,
+    "tier": 10.50343,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20239,7 +19887,7 @@
       "chargeDamage": 8,
       "maneuver": 83,
       "speed": 39,
-      "hitPoints": 234,
+      "hitPoints": 228,
       "familyType": 1
     },
     "weapons": []
@@ -20249,9 +19897,9 @@
     "name": "English Black Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 22128,
+    "price": 20932,
     "weight": 450.0,
-    "tier": 11.2051754,
+    "tier": 10.8683853,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20261,7 +19909,7 @@
       "chargeDamage": 8,
       "maneuver": 84,
       "speed": 39,
-      "hitPoints": 237,
+      "hitPoints": 231,
       "familyType": 1
     },
     "weapons": []
@@ -20271,9 +19919,9 @@
     "name": "Percheron Great Horse",
     "culture": "Empire",
     "type": "Mount",
-    "price": 25207,
+    "price": 23873,
     "weight": 450.0,
-    "tier": 12.0323639,
+    "tier": 11.6804876,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20283,7 +19931,7 @@
       "chargeDamage": 9,
       "maneuver": 84,
       "speed": 40,
-      "hitPoints": 240,
+      "hitPoints": 234,
       "familyType": 1
     },
     "weapons": []
@@ -20293,9 +19941,9 @@
     "name": "Lionheart",
     "culture": "Empire",
     "type": "Mount",
-    "price": 27707,
+    "price": 26248,
     "weight": 450.0,
-    "tier": 12.6679363,
+    "tier": 12.3006783,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20305,7 +19953,7 @@
       "chargeDamage": 9,
       "maneuver": 84,
       "speed": 41,
-      "hitPoints": 243,
+      "hitPoints": 237,
       "familyType": 1
     },
     "weapons": []
@@ -20315,9 +19963,9 @@
     "name": "Suffolk Punch Draught",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 6729,
+    "price": 6346,
     "weight": 450.0,
-    "tier": 5.707611,
+    "tier": 5.513256,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20327,7 +19975,7 @@
       "chargeDamage": 4,
       "maneuver": 72,
       "speed": 33,
-      "hitPoints": 213,
+      "hitPoints": 207,
       "familyType": 1
     },
     "weapons": []
@@ -20337,9 +19985,9 @@
     "name": "Boulonnais Great Horse",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 8216,
+    "price": 7751,
     "weight": 450.0,
-    "tier": 6.41457,
+    "tier": 6.20048952,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20349,7 +19997,7 @@
       "chargeDamage": 5,
       "maneuver": 74,
       "speed": 34,
-      "hitPoints": 216,
+      "hitPoints": 210,
       "familyType": 1
     },
     "weapons": []
@@ -20359,9 +20007,9 @@
     "name": "Galloway Great Horse",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 10022,
+    "price": 9458,
     "weight": 450.0,
-    "tier": 7.19298363,
+    "tier": 6.95779943,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20371,7 +20019,7 @@
       "chargeDamage": 6,
       "maneuver": 76,
       "speed": 35,
-      "hitPoints": 219,
+      "hitPoints": 213,
       "familyType": 1
     },
     "weapons": []
@@ -20381,9 +20029,9 @@
     "name": "Poitevin Great Horse",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 11949,
+    "price": 11275,
     "weight": 450.0,
-    "tier": 7.95053339,
+    "tier": 7.69281,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20393,7 +20041,7 @@
       "chargeDamage": 6,
       "maneuver": 78,
       "speed": 36,
-      "hitPoints": 222,
+      "hitPoints": 216,
       "familyType": 1
     },
     "weapons": []
@@ -20403,9 +20051,9 @@
     "name": "Oberlander Great Horse",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 14534,
+    "price": 13722,
     "weight": 450.0,
-    "tier": 8.877398,
+    "tier": 8.595644,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20415,7 +20063,7 @@
       "chargeDamage": 7,
       "maneuver": 80,
       "speed": 37,
-      "hitPoints": 225,
+      "hitPoints": 219,
       "familyType": 1
     },
     "weapons": []
@@ -20425,9 +20073,9 @@
     "name": "Black Forest Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 14786,
+    "price": 13815,
     "weight": 420.0,
-    "tier": 8.963193,
+    "tier": 8.628228,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20437,7 +20085,7 @@
       "chargeDamage": 3,
       "maneuver": 75,
       "speed": 45,
-      "hitPoints": 198,
+      "hitPoints": 192,
       "familyType": 1
     },
     "weapons": []
@@ -20447,9 +20095,9 @@
     "name": "Bidet Breton Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 16906,
+    "price": 15803,
     "weight": 420.0,
-    "tier": 9.658382,
+    "tier": 9.302354,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20459,7 +20107,7 @@
       "chargeDamage": 3,
       "maneuver": 76,
       "speed": 46,
-      "hitPoints": 201,
+      "hitPoints": 195,
       "familyType": 1
     },
     "weapons": []
@@ -20469,9 +20117,9 @@
     "name": "Dzhabe Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19306,
+    "price": 18054,
     "weight": 420.0,
-    "tier": 10.3948927,
+    "tier": 10.0168886,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20481,7 +20129,7 @@
       "chargeDamage": 3,
       "maneuver": 77,
       "speed": 47,
-      "hitPoints": 204,
+      "hitPoints": 198,
       "familyType": 1
     },
     "weapons": []
@@ -20491,9 +20139,9 @@
     "name": "Karachay Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 20726,
+    "price": 19396,
     "weight": 420.0,
-    "tier": 10.80942,
+    "tier": 10.4217911,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20503,7 +20151,7 @@
       "chargeDamage": 3,
       "maneuver": 78,
       "speed": 47,
-      "hitPoints": 207,
+      "hitPoints": 201,
       "familyType": 1
     },
     "weapons": []
@@ -20513,9 +20161,9 @@
     "name": "Unmol Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 22953,
+    "price": 21501,
     "weight": 420.0,
-    "tier": 11.43211,
+    "tier": 11.0296774,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20525,7 +20173,7 @@
       "chargeDamage": 4,
       "maneuver": 78,
       "speed": 48,
-      "hitPoints": 210,
+      "hitPoints": 204,
       "familyType": 1
     },
     "weapons": []
@@ -20535,9 +20183,9 @@
     "name": "Kehilan al-Khamsa",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 25150,
+    "price": 24092,
     "weight": 420.0,
-    "tier": 12.0175943,
+    "tier": 11.738925,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20547,7 +20195,7 @@
       "chargeDamage": 4,
       "maneuver": 78,
       "speed": 49,
-      "hitPoints": 213,
+      "hitPoints": 209,
       "familyType": 1
     },
     "weapons": []
@@ -20557,9 +20205,9 @@
     "name": "Sumpter Horse",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 3726,
+    "price": 3506,
     "weight": 420.0,
-    "tier": 3.993084,
+    "tier": 3.84466958,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20569,7 +20217,7 @@
       "chargeDamage": 1,
       "maneuver": 60,
       "speed": 34,
-      "hitPoints": 200,
+      "hitPoints": 194,
       "familyType": 1
     },
     "weapons": []
@@ -20579,9 +20227,9 @@
     "name": "Raymond Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 4828,
+    "price": 4519,
     "weight": 420.0,
-    "tier": 4.680662,
+    "tier": 4.49625826,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20591,7 +20239,7 @@
       "chargeDamage": 1,
       "maneuver": 62,
       "speed": 38,
-      "hitPoints": 189,
+      "hitPoints": 183,
       "familyType": 1
     },
     "weapons": []
@@ -20601,9 +20249,9 @@
     "name": "Fell Pony",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 5535,
+    "price": 5163,
     "weight": 420.0,
-    "tier": 5.08262157,
+    "tier": 4.87438154,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20613,7 +20261,7 @@
       "chargeDamage": 2,
       "maneuver": 64,
       "speed": 40,
-      "hitPoints": 180,
+      "hitPoints": 174,
       "familyType": 1
     },
     "weapons": []
@@ -20623,9 +20271,9 @@
     "name": "Welsh Cob",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 6650,
+    "price": 6202,
     "weight": 420.0,
-    "tier": 5.667833,
+    "tier": 5.4389205,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20635,7 +20283,7 @@
       "chargeDamage": 2,
       "maneuver": 66,
       "speed": 41,
-      "hitPoints": 183,
+      "hitPoints": 177,
       "familyType": 1
     },
     "weapons": []
@@ -20645,9 +20293,9 @@
     "name": "Sanhe Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 8090,
+    "price": 7549,
     "weight": 420.0,
-    "tier": 6.356974,
+    "tier": 6.10597372,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20657,7 +20305,7 @@
       "chargeDamage": 3,
       "maneuver": 68,
       "speed": 42,
-      "hitPoints": 186,
+      "hitPoints": 180,
       "familyType": 1
     },
     "weapons": []
@@ -20667,9 +20315,9 @@
     "name": "Megrelakaya Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 9672,
+    "price": 9027,
     "weight": 420.0,
-    "tier": 7.04795742,
+    "tier": 6.77340126,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20679,7 +20327,7 @@
       "chargeDamage": 3,
       "maneuver": 70,
       "speed": 43,
-      "hitPoints": 189,
+      "hitPoints": 183,
       "familyType": 1
     },
     "weapons": []
@@ -20689,9 +20337,9 @@
     "name": "East Anglis Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 11544,
+    "price": 10775,
     "weight": 420.0,
-    "tier": 7.79657173,
+    "tier": 7.49693155,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20701,7 +20349,7 @@
       "chargeDamage": 3,
       "maneuver": 72,
       "speed": 44,
-      "hitPoints": 192,
+      "hitPoints": 186,
       "familyType": 1
     },
     "weapons": []
@@ -20711,9 +20359,9 @@
     "name": "Anadolu Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 13752,
+    "price": 12839,
     "weight": 420.0,
-    "tier": 8.60612,
+    "tier": 8.279811,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20723,7 +20371,7 @@
       "chargeDamage": 3,
       "maneuver": 74,
       "speed": 45,
-      "hitPoints": 195,
+      "hitPoints": 189,
       "familyType": 1
     },
     "weapons": []
@@ -20733,9 +20381,9 @@
     "name": "Yunnan Destrier",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 16755,
+    "price": 15730,
     "weight": 430.0,
-    "tier": 9.610231,
+    "tier": 9.27831,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20745,7 +20393,7 @@
       "chargeDamage": 6,
       "maneuver": 79,
       "speed": 42,
-      "hitPoints": 210,
+      "hitPoints": 204,
       "familyType": 1
     },
     "weapons": []
@@ -20755,9 +20403,9 @@
     "name": "Auvergne Destrier",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 18266,
+    "price": 17169,
     "weight": 430.0,
-    "tier": 10.08158,
+    "tier": 9.741429,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20767,7 +20415,7 @@
       "chargeDamage": 7,
       "maneuver": 80,
       "speed": 42,
-      "hitPoints": 213,
+      "hitPoints": 207,
       "familyType": 1
     },
     "weapons": []
@@ -20777,9 +20425,9 @@
     "name": "Lusitano Pureblood Destrier",
     "culture": "Battania",
     "type": "Mount",
-    "price": 20828,
+    "price": 19583,
     "weight": 430.0,
-    "tier": 10.8387308,
+    "tier": 10.4768829,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20789,7 +20437,7 @@
       "chargeDamage": 7,
       "maneuver": 81,
       "speed": 43,
-      "hitPoints": 216,
+      "hitPoints": 210,
       "familyType": 1
     },
     "weapons": []
@@ -20799,9 +20447,9 @@
     "name": "Bohemond",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 24283,
+    "price": 22855,
     "weight": 430.0,
-    "tier": 11.7897854,
+    "tier": 11.405304,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20811,7 +20459,7 @@
       "chargeDamage": 8,
       "maneuver": 82,
       "speed": 44,
-      "hitPoints": 219,
+      "hitPoints": 213,
       "familyType": 1
     },
     "weapons": []
@@ -20821,9 +20469,9 @@
     "name": "Llamrei",
     "culture": "Battania",
     "type": "Mount",
-    "price": 26636,
+    "price": 25080,
     "weight": 430.0,
-    "tier": 12.3993654,
+    "tier": 11.9993753,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20833,7 +20481,7 @@
       "chargeDamage": 8,
       "maneuver": 82,
       "speed": 45,
-      "hitPoints": 222,
+      "hitPoints": 216,
       "familyType": 1
     },
     "weapons": []
@@ -20843,9 +20491,9 @@
     "name": "Murgese Destrier",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 7014,
+    "price": 6576,
     "weight": 450.0,
-    "tier": 5.8485837,
+    "tier": 5.630917,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20855,7 +20503,7 @@
       "chargeDamage": 4,
       "maneuver": 70,
       "speed": 37,
-      "hitPoints": 195,
+      "hitPoints": 189,
       "familyType": 1
     },
     "weapons": []
@@ -20865,9 +20513,9 @@
     "name": "Holsteiner Destrier",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 8392,
+    "price": 7868,
     "weight": 430.0,
-    "tier": 6.493924,
+    "tier": 6.25500059,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20877,7 +20525,7 @@
       "chargeDamage": 4,
       "maneuver": 72,
       "speed": 38,
-      "hitPoints": 198,
+      "hitPoints": 192,
       "familyType": 1
     },
     "weapons": []
@@ -20887,9 +20535,9 @@
     "name": "Kathiawadi Destrier",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 10183,
+    "price": 9551,
     "weight": 430.0,
-    "tier": 7.25868273,
+    "tier": 6.99706554,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20899,7 +20547,7 @@
       "chargeDamage": 5,
       "maneuver": 74,
       "speed": 39,
-      "hitPoints": 201,
+      "hitPoints": 195,
       "familyType": 1
     },
     "weapons": []
@@ -20909,9 +20557,9 @@
     "name": "Friesian Destrier",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 12128,
+    "price": 11376,
     "weight": 430.0,
-    "tier": 8.017658,
+    "tier": 7.73185444,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20921,7 +20569,7 @@
       "chargeDamage": 5,
       "maneuver": 76,
       "speed": 40,
-      "hitPoints": 204,
+      "hitPoints": 198,
       "familyType": 1
     },
     "weapons": []
@@ -20931,9 +20579,9 @@
     "name": "Carthusian Destrier",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 14654,
+    "price": 13753,
     "weight": 430.0,
-    "tier": 8.918327,
+    "tier": 8.606788,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20943,8 +20591,360 @@
       "chargeDamage": 6,
       "maneuver": 78,
       "speed": 41,
-      "hitPoints": 207,
+      "hitPoints": 201,
       "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_10",
+    "name": "Seleucid Light Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 13735,
+    "weight": 520.0,
+    "tier": 8.600387,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 4,
+      "maneuver": 82,
+      "speed": 36,
+      "hitPoints": 225,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_11",
+    "name": "Seleucid Heavy Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 14701,
+    "weight": 520.0,
+    "tier": 8.934379,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 5,
+      "maneuver": 81,
+      "speed": 35,
+      "hitPoints": 243,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_12",
+    "name": "Parthian Light Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 15352,
+    "weight": 520.0,
+    "tier": 9.153386,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 4,
+      "maneuver": 83,
+      "speed": 37,
+      "hitPoints": 225,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_13",
+    "name": "Parthian Heavy Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 16469,
+    "weight": 520.0,
+    "tier": 9.518836,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 5,
+      "maneuver": 82,
+      "speed": 36,
+      "hitPoints": 243,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_14",
+    "name": "Achaemenian Light Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 18907,
+    "weight": 520.0,
+    "tier": 10.2758207,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 5,
+      "maneuver": 84,
+      "speed": 38,
+      "hitPoints": 234,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_15",
+    "name": "Achaemenian Heavy Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 20243,
+    "weight": 520.0,
+    "tier": 10.6700382,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 6,
+      "maneuver": 83,
+      "speed": 37,
+      "hitPoints": 252,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_16",
+    "name": "Safinat al-Barr",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 22074,
+    "weight": 520.0,
+    "tier": 11.1902046,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 7,
+      "maneuver": 85,
+      "speed": 37,
+      "hitPoints": 252,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_17",
+    "name": "Padishah",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 24610,
+    "weight": 520.0,
+    "tier": 11.8760071,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 7,
+      "maneuver": 86,
+      "speed": 38,
+      "hitPoints": 252,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_2",
+    "name": "Pack Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 4514,
+    "weight": 520.0,
+    "tier": 4.493249,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 2,
+      "maneuver": 72,
+      "speed": 29,
+      "hitPoints": 210,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_3",
+    "name": "Pratihara Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 6039,
+    "weight": 520.0,
+    "tier": 5.35360336,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 2,
+      "maneuver": 76,
+      "speed": 30,
+      "hitPoints": 216,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_4",
+    "name": "Qedarite Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 7344,
+    "weight": 520.0,
+    "tier": 6.00828552,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 3,
+      "maneuver": 77,
+      "speed": 31,
+      "hitPoints": 222,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_5",
+    "name": "Palmyrene Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 8897,
+    "weight": 520.0,
+    "tier": 6.716852,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 4,
+      "maneuver": 78,
+      "speed": 32,
+      "hitPoints": 228,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_6",
+    "name": "Sargonid Light Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 10023,
+    "weight": 520.0,
+    "tier": 7.19307661,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 4,
+      "maneuver": 80,
+      "speed": 34,
+      "hitPoints": 216,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_7",
+    "name": "Sargonid Heavy Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 10750,
+    "weight": 520.0,
+    "tier": 7.486729,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 5,
+      "maneuver": 79,
+      "speed": 33,
+      "hitPoints": 234,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_8",
+    "name": "Nabatean Light Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 11232,
+    "weight": 520.0,
+    "tier": 7.675955,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 4,
+      "maneuver": 81,
+      "speed": 35,
+      "hitPoints": 216,
+      "familyType": 2
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_camel_9",
+    "name": "Nabatean Heavy Camel",
+    "culture": "Aserai",
+    "type": "Mount",
+    "price": 12076,
+    "weight": 520.0,
+    "tier": 7.99815,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 110,
+      "chargeDamage": 5,
+      "maneuver": 80,
+      "speed": 34,
+      "hitPoints": 234,
+      "familyType": 2
     },
     "weapons": []
   },
@@ -20953,9 +20953,9 @@
     "name": "Desert Norman Charger",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 17003,
+    "price": 16015,
     "weight": 450.0,
-    "tier": 9.689158,
+    "tier": 9.37179,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20965,7 +20965,7 @@
       "chargeDamage": 7,
       "maneuver": 73,
       "speed": 44,
-      "hitPoints": 219,
+      "hitPoints": 213,
       "familyType": 1
     },
     "weapons": []
@@ -20975,9 +20975,9 @@
     "name": "Andravida Charger",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 18693,
+    "price": 17629,
     "weight": 450.0,
-    "tier": 10.2113171,
+    "tier": 9.885577,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20987,7 +20987,7 @@
       "chargeDamage": 8,
       "maneuver": 74,
       "speed": 44,
-      "hitPoints": 222,
+      "hitPoints": 216,
       "familyType": 1
     },
     "weapons": []
@@ -20997,9 +20997,9 @@
     "name": "Neapolitan Charger",
     "culture": "Empire",
     "type": "Mount",
-    "price": 21251,
+    "price": 20046,
     "weight": 450.0,
-    "tier": 10.9591351,
+    "tier": 10.6126842,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21009,7 +21009,7 @@
       "chargeDamage": 8,
       "maneuver": 75,
       "speed": 45,
-      "hitPoints": 225,
+      "hitPoints": 219,
       "familyType": 1
     },
     "weapons": []
@@ -21019,9 +21019,9 @@
     "name": "Hengeron",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 24943,
+    "price": 23556,
     "weight": 450.0,
-    "tier": 11.9636717,
+    "tier": 11.5956087,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21031,7 +21031,7 @@
       "chargeDamage": 9,
       "maneuver": 76,
       "speed": 46,
-      "hitPoints": 228,
+      "hitPoints": 222,
       "familyType": 1
     },
     "weapons": []
@@ -21041,9 +21041,9 @@
     "name": "Bucephalus",
     "culture": "Empire",
     "type": "Mount",
-    "price": 27215,
+    "price": 25710,
     "weight": 450.0,
-    "tier": 12.5450792,
+    "tier": 12.162818,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21053,7 +21053,7 @@
       "chargeDamage": 9,
       "maneuver": 76,
       "speed": 47,
-      "hitPoints": 231,
+      "hitPoints": 225,
       "familyType": 1
     },
     "weapons": []
@@ -21063,9 +21063,9 @@
     "name": "Norwegian Fjord Draught",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 6823,
+    "price": 6413,
     "weight": 450.0,
-    "tier": 5.75440836,
+    "tier": 5.547713,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21075,7 +21075,7 @@
       "chargeDamage": 3,
       "maneuver": 64,
       "speed": 39,
-      "hitPoints": 204,
+      "hitPoints": 198,
       "familyType": 1
     },
     "weapons": []
@@ -21085,9 +21085,9 @@
     "name": "Icelandic Charger",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 8316,
+    "price": 7819,
     "weight": 450.0,
-    "tier": 6.459526,
+    "tier": 6.23220158,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21097,7 +21097,7 @@
       "chargeDamage": 4,
       "maneuver": 66,
       "speed": 40,
-      "hitPoints": 207,
+      "hitPoints": 201,
       "familyType": 1
     },
     "weapons": []
@@ -21107,9 +21107,9 @@
     "name": "Shire Charger",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 10109,
+    "price": 9509,
     "weight": 450.0,
-    "tier": 7.22863865,
+    "tier": 6.97926855,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21119,7 +21119,7 @@
       "chargeDamage": 5,
       "maneuver": 68,
       "speed": 41,
-      "hitPoints": 210,
+      "hitPoints": 204,
       "familyType": 1
     },
     "weapons": []
@@ -21129,9 +21129,9 @@
     "name": "Ardennes Charger",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 12275,
+    "price": 11552,
     "weight": 450.0,
-    "tier": 8.072592,
+    "tier": 7.799703,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21141,7 +21141,7 @@
       "chargeDamage": 6,
       "maneuver": 70,
       "speed": 42,
-      "hitPoints": 213,
+      "hitPoints": 207,
       "familyType": 1
     },
     "weapons": []
@@ -21151,9 +21151,9 @@
     "name": "Andalusian Charger",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 14913,
+    "price": 14043,
     "weight": 450.0,
-    "tier": 9.006035,
+    "tier": 8.708097,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21163,7 +21163,7 @@
       "chargeDamage": 7,
       "maneuver": 72,
       "speed": 43,
-      "hitPoints": 216,
+      "hitPoints": 210,
       "familyType": 1
     },
     "weapons": []
@@ -21173,9 +21173,9 @@
     "name": "Ahalteke Courser",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 16952,
+    "price": 15859,
     "weight": 420.0,
-    "tier": 9.672839,
+    "tier": 9.320776,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21185,7 +21185,7 @@
       "chargeDamage": 5,
       "maneuver": 71,
       "speed": 49,
-      "hitPoints": 201,
+      "hitPoints": 195,
       "familyType": 1
     },
     "weapons": []
@@ -21195,9 +21195,9 @@
     "name": "Datong Courser",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 18239,
+    "price": 17075,
     "weight": 420.0,
-    "tier": 10.0734215,
+    "tier": 9.711726,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21207,7 +21207,7 @@
       "chargeDamage": 5,
       "maneuver": 72,
       "speed": 49,
-      "hitPoints": 204,
+      "hitPoints": 198,
       "familyType": 1
     },
     "weapons": []
@@ -21217,9 +21217,9 @@
     "name": "Darashouri Courser",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 20764,
+    "price": 19447,
     "weight": 420.0,
-    "tier": 10.820447,
+    "tier": 10.4367933,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21229,7 +21229,7 @@
       "chargeDamage": 5,
       "maneuver": 73,
       "speed": 50,
-      "hitPoints": 207,
+      "hitPoints": 201,
       "familyType": 1
     },
     "weapons": []
@@ -21239,9 +21239,9 @@
     "name": "Muniqi al-Khamsa",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 23910,
+    "price": 22413,
     "weight": 420.0,
-    "tier": 11.690567,
+    "tier": 11.2840347,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21251,7 +21251,7 @@
       "chargeDamage": 6,
       "maneuver": 74,
       "speed": 51,
-      "hitPoints": 210,
+      "hitPoints": 204,
       "familyType": 1
     },
     "weapons": []
@@ -21261,9 +21261,9 @@
     "name": "Shadowfax",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 26085,
+    "price": 24466,
     "weight": 420.0,
-    "tier": 12.2591181,
+    "tier": 11.8381853,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21273,7 +21273,7 @@
       "chargeDamage": 6,
       "maneuver": 74,
       "speed": 52,
-      "hitPoints": 213,
+      "hitPoints": 207,
       "familyType": 1
     },
     "weapons": []
@@ -21283,9 +21283,9 @@
     "name": "Turkoman Courser",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 7102,
+    "price": 6633,
     "weight": 420.0,
-    "tier": 5.891725,
+    "tier": 5.65955448,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21295,7 +21295,7 @@
       "chargeDamage": 3,
       "maneuver": 62,
       "speed": 44,
-      "hitPoints": 186,
+      "hitPoints": 180,
       "familyType": 1
     },
     "weapons": []
@@ -21305,9 +21305,9 @@
     "name": "Menorquín Courser",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 8516,
+    "price": 7953,
     "weight": 420.0,
-    "tier": 6.54915428,
+    "tier": 6.2944665,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21317,7 +21317,7 @@
       "chargeDamage": 3,
       "maneuver": 64,
       "speed": 45,
-      "hitPoints": 189,
+      "hitPoints": 183,
       "familyType": 1
     },
     "weapons": []
@@ -21327,9 +21327,9 @@
     "name": "Nisean Courser",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 10330,
+    "price": 9653,
     "weight": 420.0,
-    "tier": 7.31866837,
+    "tier": 7.03996849,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21339,7 +21339,7 @@
       "chargeDamage": 4,
       "maneuver": 66,
       "speed": 46,
-      "hitPoints": 192,
+      "hitPoints": 186,
       "familyType": 1
     },
     "weapons": []
@@ -21349,9 +21349,9 @@
     "name": "Thessalian Courser",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 12326,
+    "price": 11519,
     "weight": 420.0,
-    "tier": 8.091337,
+    "tier": 7.7870717,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21361,7 +21361,7 @@
       "chargeDamage": 4,
       "maneuver": 68,
       "speed": 47,
-      "hitPoints": 195,
+      "hitPoints": 189,
       "familyType": 1
     },
     "weapons": []
@@ -21371,9 +21371,9 @@
     "name": "Einsiedler Courser",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 14868,
+    "price": 13904,
     "weight": 420.0,
-    "tier": 8.990841,
+    "tier": 8.659401,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21383,7 +21383,7 @@
       "chargeDamage": 5,
       "maneuver": 70,
       "speed": 48,
-      "hitPoints": 198,
+      "hitPoints": 192,
       "familyType": 1
     },
     "weapons": []
@@ -21393,9 +21393,9 @@
     "name": "Berber Jennet",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 15750,
+    "price": 15200,
     "weight": 300.0,
-    "tier": 9.28492451,
+    "tier": 9.102712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21405,7 +21405,7 @@
       "chargeDamage": 3,
       "maneuver": 83,
       "speed": 43,
-      "hitPoints": 189,
+      "hitPoints": 186,
       "familyType": 1
     },
     "weapons": []
@@ -21415,9 +21415,9 @@
     "name": "Tchenarani Palfrey",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 17069,
+    "price": 16483,
     "weight": 300.0,
-    "tier": 9.709838,
+    "tier": 9.523221,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21427,7 +21427,7 @@
       "chargeDamage": 4,
       "maneuver": 84,
       "speed": 43,
-      "hitPoints": 192,
+      "hitPoints": 189,
       "familyType": 1
     },
     "weapons": []
@@ -21437,9 +21437,9 @@
     "name": "Asil Purebred Arabian Palfrey",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 19520,
+    "price": 18855,
     "weight": 300.0,
-    "tier": 10.458271,
+    "tier": 10.2600384,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21449,7 +21449,7 @@
       "chargeDamage": 4,
       "maneuver": 85,
       "speed": 44,
-      "hitPoints": 195,
+      "hitPoints": 192,
       "familyType": 1
     },
     "weapons": []
@@ -21459,9 +21459,9 @@
     "name": "Marengo",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 22293,
+    "price": 21539,
     "weight": 300.0,
-    "tier": 11.2507267,
+    "tier": 11.0403948,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21471,7 +21471,7 @@
       "chargeDamage": 4,
       "maneuver": 86,
       "speed": 45,
-      "hitPoints": 198,
+      "hitPoints": 195,
       "familyType": 1
     },
     "weapons": []
@@ -21481,9 +21481,9 @@
     "name": "Baucent",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 24810,
+    "price": 23983,
     "weight": 300.0,
-    "tier": 11.9287815,
+    "tier": 11.7100611,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21493,7 +21493,7 @@
       "chargeDamage": 5,
       "maneuver": 86,
       "speed": 46,
-      "hitPoints": 201,
+      "hitPoints": 198,
       "familyType": 1
     },
     "weapons": []
@@ -21503,9 +21503,9 @@
     "name": "Irish Hobby",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 6690,
+    "price": 6451,
     "weight": 300.0,
-    "tier": 5.688221,
+    "tier": 5.56715536,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21515,7 +21515,7 @@
       "chargeDamage": 2,
       "maneuver": 74,
       "speed": 38,
-      "hitPoints": 174,
+      "hitPoints": 171,
       "familyType": 1
     },
     "weapons": []
@@ -21525,9 +21525,9 @@
     "name": "Caspian Palfrey",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 8008,
+    "price": 7722,
     "weight": 300.0,
-    "tier": 6.3196454,
+    "tier": 6.18717146,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21537,7 +21537,7 @@
       "chargeDamage": 2,
       "maneuver": 76,
       "speed": 39,
-      "hitPoints": 177,
+      "hitPoints": 174,
       "familyType": 1
     },
     "weapons": []
@@ -21547,9 +21547,9 @@
     "name": "Marwari Palfrey",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 9570,
+    "price": 9229,
     "weight": 300.0,
-    "tier": 7.00477743,
+    "tier": 6.860152,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21559,7 +21559,7 @@
       "chargeDamage": 2,
       "maneuver": 78,
       "speed": 40,
-      "hitPoints": 180,
+      "hitPoints": 177,
       "familyType": 1
     },
     "weapons": []
@@ -21569,9 +21569,9 @@
     "name": "Moroccan Barb",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 11415,
+    "price": 11009,
     "weight": 300.0,
-    "tier": 7.746775,
+    "tier": 7.58922052,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21581,7 +21581,7 @@
       "chargeDamage": 2,
       "maneuver": 80,
       "speed": 41,
-      "hitPoints": 183,
+      "hitPoints": 180,
       "familyType": 1
     },
     "weapons": []
@@ -21591,9 +21591,9 @@
     "name": "Morvandiau Palfrey",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 13738,
+    "price": 13256,
     "weight": 300.0,
-    "tier": 8.601491,
+    "tier": 8.430206,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21603,7 +21603,7 @@
       "chargeDamage": 3,
       "maneuver": 82,
       "speed": 42,
-      "hitPoints": 186,
+      "hitPoints": 183,
       "familyType": 1
     },
     "weapons": []
@@ -21716,13 +21716,13 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule2_1",
+    "id": "crpg_mule1_1",
     "name": "Mule",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 2440,
+    "price": 2393,
     "weight": 300.0,
-    "tier": 3.05089855,
+    "tier": 3.0125072,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21732,19 +21732,19 @@
       "chargeDamage": 0,
       "maneuver": 58,
       "speed": 30,
-      "hitPoints": 200,
+      "hitPoints": 198,
       "familyType": 1
     },
     "weapons": []
   },
   {
-    "id": "crpg_mule2_2",
+    "id": "crpg_mule1_2",
     "name": "Chadz",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 6643,
+    "price": 6095,
     "weight": 300.0,
-    "tier": 5.664498,
+    "tier": 5.383079,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21754,7 +21754,7 @@
       "chargeDamage": 1,
       "maneuver": 60,
       "speed": 33,
-      "hitPoints": 275,
+      "hitPoints": 264,
       "familyType": 1
     },
     "weapons": []
