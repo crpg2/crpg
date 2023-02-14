@@ -2327,9 +2327,9 @@
     "name": "Awlpike",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 2218,
-    "weight": 2.05,
-    "tier": 3.06931424,
+    "price": 14111,
+    "weight": 2.35,
+    "tier": 9.269431,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2340,8 +2340,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 169,
-        "balance": 0.36,
-        "handling": 68,
+        "balance": 0.29,
+        "handling": 67,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -2349,12 +2349,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 29,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
+        "thrustSpeed": 89,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 80
+        "swingSpeed": 78
       }
     ]
   },
@@ -10068,21 +10068,21 @@
     "name": "Thin Fine Steel Hewing Spear",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 2235,
-    "weight": 1.3,
-    "tier": 3.085048,
+    "price": 7749,
+    "weight": 2.3,
+    "tier": 6.595633,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_thrust",
+        "itemUsage": "polearm_pike",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 213,
-        "balance": 0.02,
-        "handling": 61,
+        "length": 266,
+        "balance": 0.0,
+        "handling": 52,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -10090,12 +10090,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 70
+        "swingSpeed": 51
       }
     ]
   },
@@ -14068,19 +14068,19 @@
     "name": "Reinforced Highland Spear",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 1693,
+    "price": 7104,
     "weight": 2.46,
-    "tier": 2.566266,
+    "tier": 6.270961,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_thrust",
+        "itemUsage": "polearm_pike",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 223,
+        "length": 239,
         "balance": 0.0,
         "handling": 46,
         "bodyArmor": 0,
@@ -14090,12 +14090,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 50
+        "swingSpeed": 49
       },
       {
         "class": "TwoHandedPolearm",
@@ -14103,7 +14103,7 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 223,
+        "length": 239,
         "balance": 0.0,
         "handling": 46,
         "bodyArmor": 0,
@@ -14113,12 +14113,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 50
+        "swingSpeed": 49
       }
     ]
   },
@@ -14408,9 +14408,9 @@
     "name": "Hoplite Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 1159,
+    "price": 10273,
     "weight": 0.83,
-    "tier": 1.97134781,
+    "tier": 7.752721,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -14430,7 +14430,7 @@
           "CanDismount",
           "MissileWithPhysics"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 0,
@@ -14455,7 +14455,7 @@
           "CanDismount",
           "MissileWithPhysics"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 102,
         "swingDamage": 0,
@@ -19680,9 +19680,9 @@
     "name": "Military Fork",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 6357,
-    "weight": 2.62,
-    "tier": 5.876561,
+    "price": 12611,
+    "weight": 2.38,
+    "tier": 8.704406,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -19694,18 +19694,18 @@
         "stackAmount": 0,
         "length": 150,
         "balance": 0.0,
-        "handling": 55,
+        "handling": 57,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 31,
+        "thrustDamage": 32,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 77,
+        "thrustSpeed": 79,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 20
+        "swingSpeed": 21
       },
       {
         "class": "TwoHandedPolearm",
@@ -19715,7 +19715,7 @@
         "stackAmount": 0,
         "length": 150,
         "balance": 0.0,
-        "handling": 52,
+        "handling": 54,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -19723,12 +19723,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 31,
+        "thrustDamage": 32,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 64
+        "swingSpeed": 67
       }
     ]
   },
@@ -23616,9 +23616,9 @@
     "name": "Fine Steel Hewing Spear",
     "culture": "Sturgia",
     "type": "Polearm",
-    "price": 3861,
+    "price": 2160,
     "weight": 1.62,
-    "tier": 4.35698175,
+    "tier": 3.01675558,
     "requirement": 0,
     "flags": [
       "NotStackable"
@@ -23626,13 +23626,13 @@
     "weapons": [
       {
         "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_thrust",
+        "itemUsage": "polearm_pike",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 216,
+        "length": 264,
         "balance": 0.0,
-        "handling": 54,
+        "handling": 55,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -23640,12 +23640,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 64
+        "swingSpeed": 58
       },
       {
         "class": "TwoHandedPolearm",
@@ -23653,9 +23653,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 216,
+        "length": 264,
         "balance": 0.0,
-        "handling": 54,
+        "handling": 55,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -23663,12 +23663,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 64
+        "swingSpeed": 58
       }
     ]
   },
@@ -35270,21 +35270,21 @@
     "name": "Long Fine Steel Spear",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 6306,
-    "weight": 1.7,
-    "tier": 5.8483696,
+    "price": 13709,
+    "weight": 1.97,
+    "tier": 9.121045,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_thrust",
+        "itemUsage": "polearm_pike",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 235,
+        "length": 281,
         "balance": 0.0,
-        "handling": 49,
+        "handling": 47,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -35294,10 +35294,10 @@
         ],
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 55
+        "swingSpeed": 47
       }
     ]
   },
@@ -35306,21 +35306,21 @@
     "name": "Fine Steel Spear",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 4060,
+    "price": 12395,
     "weight": 2.06,
-    "tier": 4.493575,
+    "tier": 8.620455,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_thrust",
+        "itemUsage": "polearm_pike",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 235,
+        "length": 252,
         "balance": 0.0,
-        "handling": 46,
+        "handling": 47,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -35328,12 +35328,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 26,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 51
+        "swingSpeed": 50
       }
     ]
   },
@@ -35463,21 +35463,21 @@
     "name": "Wide Leaf Spear",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 5068,
+    "price": 1274,
     "weight": 2.02,
-    "tier": 5.1378293,
+    "tier": 2.10858,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_thrust",
+        "itemUsage": "polearm_pike",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 222,
+        "length": 240,
         "balance": 0.0,
-        "handling": 48,
+        "handling": 49,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -35485,12 +35485,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 32,
-        "thrustDamageType": "Cut",
-        "thrustSpeed": 87,
+        "thrustDamage": 23,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 88,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 55
+        "swingSpeed": 54
       },
       {
         "class": "TwoHandedPolearm",
@@ -35498,9 +35498,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 222,
+        "length": 240,
         "balance": 0.0,
-        "handling": 48,
+        "handling": 49,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -35508,12 +35508,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 32,
-        "thrustDamageType": "Cut",
-        "thrustSpeed": 87,
+        "thrustDamage": 23,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 88,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 55
+        "swingSpeed": 54
       }
     ]
   },
