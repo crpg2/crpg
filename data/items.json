@@ -1657,9 +1657,9 @@
     "name": "Decorated Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 11537,
-    "weight": 1.84,
-    "tier": 12.673027,
+    "price": 7391,
+    "weight": 1.92,
+    "tier": 9.919053,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1672,18 +1672,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.7,
-        "handling": 88,
+        "balance": 0.66,
+        "handling": 87,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 33,
+        "thrustSpeed": 87,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 89
       }
     ]
   },
@@ -1692,9 +1692,9 @@
     "name": "Decorated Elite Scimitar",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 14059,
-    "weight": 2.35,
-    "tier": 14.1070328,
+    "price": 7580,
+    "weight": 2.45,
+    "tier": 10.0597486,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1707,18 +1707,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 100,
-        "balance": 0.66,
-        "handling": 86,
+        "balance": 0.59,
+        "handling": 85,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 34,
+        "thrustSpeed": 83,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 87
       }
     ]
   },
@@ -1727,9 +1727,9 @@
     "name": "Decorated Scimitar with Wide Grip",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 13480,
-    "weight": 1.95,
-    "tier": 13.7898273,
+    "price": 7406,
+    "weight": 2.06,
+    "tier": 9.930218,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1742,18 +1742,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 101,
-        "balance": 0.58,
-        "handling": 88,
+        "balance": 0.51,
+        "handling": 87,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 34,
+        "thrustSpeed": 86,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 85
       }
     ]
   },
@@ -1762,9 +1762,9 @@
     "name": "Engraved Angular Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 11061,
-    "weight": 2.12,
-    "tier": 12.3851433,
+    "price": 7373,
+    "weight": 2.16,
+    "tier": 9.905505,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -1777,7 +1777,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.67,
+        "balance": 0.66,
         "handling": 92,
         "bodyArmor": 5,
         "flags": [
@@ -1786,9 +1786,9 @@
         "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 32,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 89
       }
     ]
   },
@@ -2033,9 +2033,9 @@
     "name": "Slightly Ridged Flyssa",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 8322,
-    "weight": 2.36,
-    "tier": 10.5941219,
+    "price": 6766,
+    "weight": 2.4,
+    "tier": 9.442557,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2046,8 +2046,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 98,
-        "balance": 0.61,
-        "handling": 90,
+        "balance": 0.6,
+        "handling": 89,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
@@ -2057,7 +2057,7 @@
         "thrustSpeed": 84,
         "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 87
       }
     ]
   },
@@ -2099,9 +2099,9 @@
     "name": "Fine Steel Scimitar",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 13148,
-    "weight": 1.48,
-    "tier": 13.6052046,
+    "price": 7115,
+    "weight": 1.55,
+    "tier": 9.711453,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2112,8 +2112,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 93,
-        "balance": 0.72,
-        "handling": 89,
+        "balance": 0.66,
+        "handling": 88,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
@@ -2121,9 +2121,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 90,
-        "swingDamage": 33,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 89
       }
     ]
   },
@@ -2132,9 +2132,9 @@
     "name": "Narrow Fine Steel Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 10420,
-    "weight": 2.18,
-    "tier": 11.9879646,
+    "price": 7081,
+    "weight": 2.22,
+    "tier": 9.685584,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2145,7 +2145,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 100,
-        "balance": 0.55,
+        "balance": 0.53,
         "handling": 87,
         "bodyArmor": 5,
         "flags": [
@@ -2154,9 +2154,9 @@
         "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 34,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 85
       }
     ]
   },
@@ -2165,9 +2165,9 @@
     "name": "Thamaskene Steel Kaskara",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 13951,
-    "weight": 1.47,
-    "tier": 14.0481462,
+    "price": 7284,
+    "weight": 1.6,
+    "tier": 9.839225,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2178,18 +2178,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 105,
-        "balance": 0.55,
-        "handling": 86,
+        "balance": 0.44,
+        "handling": 84,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 30,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
-        "swingDamage": 33,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 83
       }
     ]
   },
@@ -4982,9 +4982,9 @@
     "name": "Fine Steel Broad Shortsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 7856,
-    "weight": 2.35,
-    "tier": 10.261302,
+    "price": 6812,
+    "weight": 2.41,
+    "tier": 9.478511,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -4997,18 +4997,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 85,
-        "balance": 0.62,
+        "balance": 0.6,
         "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
         "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 87
       }
     ]
   },
@@ -5954,9 +5954,9 @@
     "name": "Blacksmith Warhammer",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 9032,
+    "price": 6302,
     "weight": 2.01,
-    "tier": 11.0834589,
+    "tier": 9.074041,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -5979,7 +5979,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 87,
-        "swingDamage": 22,
+        "swingDamage": 21,
         "swingDamageType": "Blunt",
         "swingSpeed": 83
       }
@@ -6434,9 +6434,9 @@
     "name": "Bone Crusher",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 7829,
-    "weight": 1.78,
-    "tier": 10.2418222,
+    "price": 7530,
+    "weight": 1.8,
+    "tier": 10.0227537,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -6447,15 +6447,15 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 71,
-        "balance": 0.68,
-        "handling": 93,
+        "balance": 0.67,
+        "handling": 92,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
+        "thrustSpeed": 88,
         "swingDamage": 23,
         "swingDamageType": "Blunt",
         "swingSpeed": 90
@@ -8568,9 +8568,9 @@
     "name": "Dawnbreaker",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 12375,
-    "weight": 2.15,
-    "tier": 13.1656466,
+    "price": 6754,
+    "weight": 2.25,
+    "tier": 9.432645,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -8583,8 +8583,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.59,
-        "handling": 92,
+        "balance": 0.51,
+        "handling": 91,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
@@ -8592,9 +8592,9 @@
         "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 33,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 85
       }
     ]
   },
@@ -11079,9 +11079,9 @@
     "name": "Decorated Short Spatha",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 13383,
-    "weight": 1.75,
-    "tier": 13.7361555,
+    "price": 7597,
+    "weight": 1.85,
+    "tier": 10.0722618,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11092,18 +11092,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 96,
-        "balance": 0.67,
-        "handling": 92,
+        "balance": 0.6,
+        "handling": 90,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 88,
         "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 87
       }
     ]
   },
@@ -11145,9 +11145,9 @@
     "name": "Spatha Blade with Ring Pommel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 11640,
-    "weight": 2.46,
-    "tier": 12.7343369,
+    "price": 7518,
+    "weight": 2.51,
+    "tier": 10.0134554,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11158,8 +11158,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.6,
-        "handling": 90,
+        "balance": 0.56,
+        "handling": 89,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
@@ -11167,9 +11167,9 @@
         "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 83,
-        "swingDamage": 33,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 86
       }
     ]
   },
@@ -11419,9 +11419,9 @@
     "name": "Fine Steel Paramerion",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 10915,
-    "weight": 2.44,
-    "tier": 12.2957115,
+    "price": 7377,
+    "weight": 2.46,
+    "tier": 9.908541,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11432,7 +11432,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 104,
-        "balance": 0.53,
+        "balance": 0.49,
         "handling": 85,
         "bodyArmor": 5,
         "flags": [
@@ -11441,9 +11441,9 @@
         "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 83,
-        "swingDamage": 35,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 85
+        "swingSpeed": 84
       }
     ]
   },
@@ -11452,9 +11452,9 @@
     "name": "Thamaskene Steel Spathion",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 13171,
-    "weight": 2.45,
-    "tier": 13.6180286,
+    "price": 6922,
+    "weight": 2.52,
+    "tier": 9.563122,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11465,18 +11465,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 97,
-        "balance": 0.66,
-        "handling": 90,
+        "balance": 0.61,
+        "handling": 89,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 83,
-        "swingDamage": 33,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 88
       }
     ]
   },
@@ -16611,9 +16611,9 @@
     "name": "Eastern Heavy Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 7654,
-    "weight": 1.43,
-    "tier": 10.1142616,
+    "price": 6518,
+    "weight": 1.46,
+    "tier": 9.247271,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16624,7 +16624,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 77,
-        "balance": 0.75,
+        "balance": 0.72,
         "handling": 95,
         "bodyArmor": 0,
         "flags": [
@@ -16635,7 +16635,7 @@
         "thrustSpeed": 92,
         "swingDamage": 21,
         "swingDamageType": "Blunt",
-        "swingSpeed": 92
+        "swingSpeed": 91
       }
     ]
   },
@@ -16803,9 +16803,9 @@
     "name": "Lion Imprinted Saber",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 8556,
-    "weight": 2.07,
-    "tier": 10.7577667,
+    "price": 7253,
+    "weight": 2.09,
+    "tier": 9.815639,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16816,7 +16816,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 99,
-        "balance": 0.58,
+        "balance": 0.56,
         "handling": 86,
         "bodyArmor": 5,
         "flags": [
@@ -16827,7 +16827,7 @@
         "thrustSpeed": 85,
         "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 86
       }
     ]
   },
@@ -16836,9 +16836,9 @@
     "name": "Tall Gripped Ild",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 7729,
-    "weight": 1.85,
-    "tier": 10.1684895,
+    "price": 7430,
+    "weight": 1.86,
+    "tier": 9.948637,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16850,7 +16850,7 @@
         "stackAmount": 0,
         "length": 87,
         "balance": 0.72,
-        "handling": 92,
+        "handling": 91,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
@@ -18199,9 +18199,9 @@
     "name": "Light Goedendag",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 8336,
-    "weight": 1.66,
-    "tier": 10.6038532,
+    "price": 7116,
+    "weight": 1.69,
+    "tier": 9.712103,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -18212,7 +18212,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
-        "balance": 0.78,
+        "balance": 0.76,
         "handling": 97,
         "bodyArmor": 0,
         "flags": [
@@ -18220,10 +18220,10 @@
         ],
         "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
+        "thrustSpeed": 89,
         "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 93
+        "swingSpeed": 92
       }
     ]
   },
@@ -19430,9 +19430,9 @@
     "name": "Medium Goedendag",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7627,
-    "weight": 1.75,
-    "tier": 10.093895,
+    "price": 6471,
+    "weight": 1.76,
+    "tier": 9.209448,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -19443,7 +19443,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 71,
-        "balance": 0.53,
+        "balance": 0.52,
         "handling": 89,
         "bodyArmor": 0,
         "flags": [
@@ -19454,7 +19454,7 @@
         "thrustSpeed": 89,
         "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 85
       }
     ]
   },
@@ -19507,9 +19507,9 @@
     "name": "Soldier's Cleaver",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 10854,
-    "weight": 2.35,
-    "tier": 12.2580347,
+    "price": 7375,
+    "weight": 2.37,
+    "tier": 9.907614,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -19520,7 +19520,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 100,
-        "balance": 0.47,
+        "balance": 0.45,
         "handling": 80,
         "bodyArmor": 2,
         "flags": [
@@ -19529,9 +19529,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 84,
-        "swingDamage": 38,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 83
       }
     ]
   },
@@ -19656,9 +19656,9 @@
     "name": "Military Hammer",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 10949,
+    "price": 7613,
     "weight": 1.49,
-    "tier": 12.3168364,
+    "tier": 10.0838079,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -19681,7 +19681,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 90,
-        "swingDamage": 22,
+        "swingDamage": 21,
         "swingDamageType": "Blunt",
         "swingSpeed": 84
       }
@@ -19715,9 +19715,9 @@
     "name": "Morningstar",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 7803,
-    "weight": 1.89,
-    "tier": 10.22249,
+    "price": 6569,
+    "weight": 1.94,
+    "tier": 9.287622,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -19730,7 +19730,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 79,
-        "balance": 0.55,
+        "balance": 0.52,
         "handling": 82,
         "bodyArmor": 0,
         "flags": [
@@ -19742,7 +19742,7 @@
         "thrustSpeed": 87,
         "swingDamage": 28,
         "swingDamageType": "Pierce",
-        "swingSpeed": 86
+        "swingSpeed": 85
       }
     ]
   },
@@ -24721,9 +24721,9 @@
     "name": "Militia Pernach",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5287,
+    "price": 3893,
     "weight": 2.58,
-    "tier": 8.21804,
+    "tier": 6.89500332,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24743,7 +24743,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 82,
-        "swingDamage": 25,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
         "swingSpeed": 84
       }
@@ -29006,9 +29006,9 @@
     "name": "Steel Shestopyor",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 8549,
-    "weight": 1.34,
-    "tier": 10.75255,
+    "price": 7206,
+    "weight": 1.36,
+    "tier": 9.780048,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -29019,7 +29019,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 80,
-        "balance": 0.58,
+        "balance": 0.56,
         "handling": 89,
         "bodyArmor": 0,
         "flags": [
@@ -29030,7 +29030,7 @@
         "thrustSpeed": 92,
         "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 86
       }
     ]
   },
@@ -30746,9 +30746,9 @@
     "name": "Decorated Northern Backsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 8624,
-    "weight": 1.83,
-    "tier": 10.8047867,
+    "price": 7335,
+    "weight": 1.86,
+    "tier": 9.87755,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -30761,7 +30761,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 88,
-        "balance": 0.72,
+        "balance": 0.7,
         "handling": 89,
         "bodyArmor": 3,
         "flags": [
@@ -30772,7 +30772,7 @@
         "thrustSpeed": 88,
         "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 90
       }
     ]
   },
@@ -30781,9 +30781,9 @@
     "name": "Gold Bound Short Warsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 8697,
-    "weight": 2.05,
-    "tier": 10.8547726,
+    "price": 7040,
+    "weight": 2.11,
+    "tier": 9.653825,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -30796,18 +30796,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.6,
-        "handling": 87,
+        "balance": 0.56,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
+        "thrustSpeed": 85,
         "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 86
       }
     ]
   },
@@ -30986,9 +30986,9 @@
     "name": "Northern Backsword",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7595,
+    "price": 7531,
     "weight": 1.78,
-    "tier": 10.0702677,
+    "tier": 10.0231457,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -31007,7 +31007,7 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
         "swingDamage": 31,
@@ -31776,9 +31776,9 @@
     "name": "Scalpel",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 8082,
-    "weight": 2.37,
-    "tier": 10.4237576,
+    "price": 6791,
+    "weight": 2.4,
+    "tier": 9.461632,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31789,7 +31789,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 104,
-        "balance": 0.48,
+        "balance": 0.46,
         "handling": 82,
         "bodyArmor": 5,
         "flags": [
@@ -31797,10 +31797,10 @@
         ],
         "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
+        "thrustSpeed": 83,
         "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 83
       }
     ]
   },
@@ -31809,9 +31809,9 @@
     "name": "Engraved Thegn Blade",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 8839,
-    "weight": 1.9,
-    "tier": 10.9520922,
+    "price": 7543,
+    "weight": 1.93,
+    "tier": 10.0319767,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -31824,7 +31824,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 86,
-        "balance": 0.67,
+        "balance": 0.64,
         "handling": 87,
         "bodyArmor": 1,
         "flags": [
@@ -31835,7 +31835,7 @@
         "thrustSpeed": 87,
         "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 89
       }
     ]
   },
@@ -33602,9 +33602,9 @@
     "name": "Fullered Western Mace",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 9192,
+    "price": 6698,
     "weight": 1.92,
-    "tier": 11.19124,
+    "tier": 9.389546,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -33624,7 +33624,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 87,
-        "swingDamage": 25,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
         "swingSpeed": 86
       }
@@ -33668,9 +33668,9 @@
     "name": "Decorated Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 7768,
-    "weight": 2.05,
-    "tier": 10.1974258,
+    "price": 7585,
+    "weight": 2.07,
+    "tier": 10.0632906,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -33683,15 +33683,15 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 96,
-        "balance": 0.53,
+        "balance": 0.52,
         "handling": 84,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
+        "thrustSpeed": 85,
         "swingDamage": 35,
         "swingDamageType": "Cut",
         "swingSpeed": 85
@@ -34315,9 +34315,9 @@
     "name": "Warhammer",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7882,
-    "weight": 1.89,
-    "tier": 10.2797108,
+    "price": 6643,
+    "weight": 1.91,
+    "tier": 9.346195,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -34328,7 +34328,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 70,
-        "balance": 0.5,
+        "balance": 0.48,
         "handling": 90,
         "bodyArmor": 0,
         "flags": [
@@ -34339,7 +34339,7 @@
         "thrustSpeed": 87,
         "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 84
       }
     ]
   },
@@ -35382,9 +35382,9 @@
     "name": "Winds Fury",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 9679,
-    "weight": 1.8,
-    "tier": 11.5130367,
+    "price": 6954,
+    "weight": 1.87,
+    "tier": 9.588005,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -35395,7 +35395,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 97,
-        "balance": 0.61,
+        "balance": 0.56,
         "handling": 81,
         "bodyArmor": 2,
         "flags": [
@@ -35403,10 +35403,10 @@
         ],
         "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
+        "thrustSpeed": 87,
         "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 86
       }
     ]
   },
