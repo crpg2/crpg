@@ -19773,11 +19773,11 @@
   {
     "id": "crpg_mount_greathorse_10",
     "name": "Barthais Great Horse",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
-    "price": 15722,
+    "price": 14622,
     "weight": 450.0,
-    "tier": 9.27576,
+    "tier": 8.907614,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -19786,7 +19786,7 @@
       "bodyLength": 105,
       "chargeDamage": 7,
       "maneuver": 81,
-      "speed": 38,
+      "speed": 37,
       "hitPoints": 222,
       "familyType": 1
     },
@@ -19797,9 +19797,9 @@
     "name": "Brabant Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 17224,
+    "price": 16031,
     "weight": 450.0,
-    "tier": 9.758933,
+    "tier": 9.376849,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -19808,7 +19808,7 @@
       "bodyLength": 105,
       "chargeDamage": 8,
       "maneuver": 82,
-      "speed": 38,
+      "speed": 37,
       "hitPoints": 225,
       "familyType": 1
     },
@@ -19817,11 +19817,11 @@
   {
     "id": "crpg_mount_greathorse_12",
     "name": "Comtois Great Horse",
-    "culture": "Empire",
+    "culture": "Vlandia",
     "type": "Mount",
-    "price": 19673,
+    "price": 18328,
     "weight": 450.0,
-    "tier": 10.50343,
+    "tier": 10.1007595,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -19830,7 +19830,7 @@
       "bodyLength": 105,
       "chargeDamage": 8,
       "maneuver": 83,
-      "speed": 39,
+      "speed": 38,
       "hitPoints": 228,
       "familyType": 1
     },
@@ -19841,9 +19841,9 @@
     "name": "English Black Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 20932,
+    "price": 19495,
     "weight": 450.0,
-    "tier": 10.8683853,
+    "tier": 10.4508572,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -19852,7 +19852,7 @@
       "bodyLength": 105,
       "chargeDamage": 8,
       "maneuver": 84,
-      "speed": 39,
+      "speed": 38,
       "hitPoints": 231,
       "familyType": 1
     },
@@ -19861,11 +19861,33 @@
   {
     "id": "crpg_mount_greathorse_14",
     "name": "Percheron Great Horse",
-    "culture": "Empire",
+    "culture": "Vlandia",
     "type": "Mount",
-    "price": 23873,
+    "price": 22288,
     "weight": 450.0,
-    "tier": 11.6804876,
+    "tier": 11.2495375,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "mount": {
+      "bodyLength": 105,
+      "chargeDamage": 9,
+      "maneuver": 84,
+      "speed": 39,
+      "hitPoints": 234,
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount_greathorse_15",
+    "name": "Lionheart",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 24534,
+    "weight": 450.0,
+    "tier": 11.8561363,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -19875,28 +19897,6 @@
       "chargeDamage": 9,
       "maneuver": 84,
       "speed": 40,
-      "hitPoints": 234,
-      "familyType": 1
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_mount_greathorse_15",
-    "name": "Lionheart",
-    "culture": "Empire",
-    "type": "Mount",
-    "price": 26248,
-    "weight": 450.0,
-    "tier": 12.3006783,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "mount": {
-      "bodyLength": 105,
-      "chargeDamage": 9,
-      "maneuver": 84,
-      "speed": 41,
       "hitPoints": 237,
       "familyType": 1
     },
@@ -19905,7 +19905,7 @@
   {
     "id": "crpg_mount_greathorse_5",
     "name": "Suffolk Punch Draught",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 6346,
     "weight": 450.0,
@@ -19927,7 +19927,7 @@
   {
     "id": "crpg_mount_greathorse_6",
     "name": "Boulonnais Great Horse",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 7751,
     "weight": 450.0,
@@ -19949,7 +19949,7 @@
   {
     "id": "crpg_mount_greathorse_7",
     "name": "Galloway Great Horse",
-    "culture": "Khuzait",
+    "culture": "Battania",
     "type": "Mount",
     "price": 9458,
     "weight": 450.0,
@@ -19971,7 +19971,7 @@
   {
     "id": "crpg_mount_greathorse_8",
     "name": "Poitevin Great Horse",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 11275,
     "weight": 450.0,
@@ -19993,11 +19993,11 @@
   {
     "id": "crpg_mount_greathorse_9",
     "name": "Oberlander Great Horse",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
-    "price": 13722,
+    "price": 12748,
     "weight": 450.0,
-    "tier": 8.595644,
+    "tier": 8.2468,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20006,7 +20006,7 @@
       "bodyLength": 105,
       "chargeDamage": 7,
       "maneuver": 80,
-      "speed": 37,
+      "speed": 36,
       "hitPoints": 219,
       "familyType": 1
     },
@@ -20015,7 +20015,7 @@
   {
     "id": "crpg_mount_rouncey_10",
     "name": "Black Forest Rouncey",
-    "culture": "Neutral",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 13815,
     "weight": 420.0,
@@ -20037,7 +20037,7 @@
   {
     "id": "crpg_mount_rouncey_11",
     "name": "Bidet Breton Rouncey",
-    "culture": "Neutral",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 15803,
     "weight": 420.0,
@@ -20059,7 +20059,7 @@
   {
     "id": "crpg_mount_rouncey_12",
     "name": "Dzhabe Rouncey",
-    "culture": "Neutral",
+    "culture": "Khuzait",
     "type": "Mount",
     "price": 18054,
     "weight": 420.0,
@@ -20081,7 +20081,7 @@
   {
     "id": "crpg_mount_rouncey_13",
     "name": "Karachay Rouncey",
-    "culture": "Neutral",
+    "culture": "Khuzait",
     "type": "Mount",
     "price": 19396,
     "weight": 420.0,
@@ -20103,7 +20103,7 @@
   {
     "id": "crpg_mount_rouncey_14",
     "name": "Unmol Rouncey",
-    "culture": "Neutral",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 21501,
     "weight": 420.0,
@@ -20191,7 +20191,7 @@
   {
     "id": "crpg_mount_rouncey_4",
     "name": "Fell Pony",
-    "culture": "Neutral",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 5163,
     "weight": 420.0,
@@ -20213,7 +20213,7 @@
   {
     "id": "crpg_mount_rouncey_5",
     "name": "Welsh Cob",
-    "culture": "Neutral",
+    "culture": "Battania",
     "type": "Mount",
     "price": 6202,
     "weight": 420.0,
@@ -20235,7 +20235,7 @@
   {
     "id": "crpg_mount_rouncey_6",
     "name": "Sanhe Rouncey",
-    "culture": "Neutral",
+    "culture": "Khuzait",
     "type": "Mount",
     "price": 7549,
     "weight": 420.0,
@@ -20257,7 +20257,7 @@
   {
     "id": "crpg_mount_rouncey_7",
     "name": "Megrelakaya Rouncey",
-    "culture": "Neutral",
+    "culture": "Empire",
     "type": "Mount",
     "price": 9027,
     "weight": 420.0,
@@ -20279,7 +20279,7 @@
   {
     "id": "crpg_mount_rouncey_8",
     "name": "East Anglis Rouncey",
-    "culture": "Neutral",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 10775,
     "weight": 420.0,
@@ -20301,7 +20301,7 @@
   {
     "id": "crpg_mount_rouncey_9",
     "name": "Anadolu Rouncey",
-    "culture": "Neutral",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 12839,
     "weight": 420.0,
@@ -20367,7 +20367,7 @@
   {
     "id": "crpg_mount1_balanced_12",
     "name": "Lusitano Pureblood Destrier",
-    "culture": "Battania",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 19583,
     "weight": 430.0,
@@ -20389,7 +20389,7 @@
   {
     "id": "crpg_mount1_balanced_13",
     "name": "Bohemond",
-    "culture": "Vlandia",
+    "culture": "Neutral",
     "type": "Mount",
     "price": 22855,
     "weight": 430.0,
@@ -20411,7 +20411,7 @@
   {
     "id": "crpg_mount1_balanced_14",
     "name": "Llamrei",
-    "culture": "Battania",
+    "culture": "Neutral",
     "type": "Mount",
     "price": 25080,
     "weight": 430.0,
@@ -20433,7 +20433,7 @@
   {
     "id": "crpg_mount1_balanced_5",
     "name": "Murgese Destrier",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 6576,
     "weight": 450.0,
@@ -20455,7 +20455,7 @@
   {
     "id": "crpg_mount1_balanced_6",
     "name": "Holsteiner Destrier",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 7868,
     "weight": 430.0,
@@ -20477,7 +20477,7 @@
   {
     "id": "crpg_mount1_balanced_7",
     "name": "Kathiawadi Destrier",
-    "culture": "Khuzait",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 9551,
     "weight": 430.0,
@@ -20499,7 +20499,7 @@
   {
     "id": "crpg_mount1_balanced_8",
     "name": "Friesian Destrier",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 11376,
     "weight": 430.0,
@@ -20521,7 +20521,7 @@
   {
     "id": "crpg_mount1_balanced_9",
     "name": "Carthusian Destrier",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 13753,
     "weight": 430.0,
@@ -20543,7 +20543,7 @@
   {
     "id": "crpg_mount1_camel_10",
     "name": "Seleucid Light Camel",
-    "culture": "Aserai",
+    "culture": "Empire",
     "type": "Mount",
     "price": 13735,
     "weight": 520.0,
@@ -20565,7 +20565,7 @@
   {
     "id": "crpg_mount1_camel_11",
     "name": "Seleucid Heavy Camel",
-    "culture": "Aserai",
+    "culture": "Empire",
     "type": "Mount",
     "price": 14701,
     "weight": 520.0,
@@ -20675,7 +20675,7 @@
   {
     "id": "crpg_mount1_camel_16",
     "name": "Safinat al-Barr",
-    "culture": "Aserai",
+    "culture": "Neutral",
     "type": "Mount",
     "price": 22074,
     "weight": 520.0,
@@ -20697,7 +20697,7 @@
   {
     "id": "crpg_mount1_camel_17",
     "name": "Padishah",
-    "culture": "Aserai",
+    "culture": "Neutral",
     "type": "Mount",
     "price": 24610,
     "weight": 520.0,
@@ -20719,7 +20719,7 @@
   {
     "id": "crpg_mount1_camel_2",
     "name": "Pack Camel",
-    "culture": "Aserai",
+    "culture": "Neutral",
     "type": "Mount",
     "price": 4514,
     "weight": 520.0,
@@ -20895,7 +20895,7 @@
   {
     "id": "crpg_mount1_charger_10",
     "name": "Desert Norman Charger",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 16015,
     "weight": 450.0,
@@ -20917,7 +20917,7 @@
   {
     "id": "crpg_mount1_charger_11",
     "name": "Andravida Charger",
-    "culture": "Vlandia",
+    "culture": "Empire",
     "type": "Mount",
     "price": 17629,
     "weight": 450.0,
@@ -20939,7 +20939,7 @@
   {
     "id": "crpg_mount1_charger_12",
     "name": "Neapolitan Charger",
-    "culture": "Empire",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 20046,
     "weight": 450.0,
@@ -20961,7 +20961,7 @@
   {
     "id": "crpg_mount1_charger_13",
     "name": "Hengeron",
-    "culture": "Vlandia",
+    "culture": "Neutral",
     "type": "Mount",
     "price": 23556,
     "weight": 450.0,
@@ -20983,7 +20983,7 @@
   {
     "id": "crpg_mount1_charger_14",
     "name": "Bucephalus",
-    "culture": "Empire",
+    "culture": "Neutral",
     "type": "Mount",
     "price": 25710,
     "weight": 450.0,
@@ -21005,7 +21005,7 @@
   {
     "id": "crpg_mount1_charger_5",
     "name": "Norwegian Fjord Draught",
-    "culture": "Khuzait",
+    "culture": "Sturgia",
     "type": "Mount",
     "price": 6413,
     "weight": 450.0,
@@ -21027,7 +21027,7 @@
   {
     "id": "crpg_mount1_charger_6",
     "name": "Icelandic Charger",
-    "culture": "Khuzait",
+    "culture": "Sturgia",
     "type": "Mount",
     "price": 7819,
     "weight": 450.0,
@@ -21049,7 +21049,7 @@
   {
     "id": "crpg_mount1_charger_7",
     "name": "Shire Charger",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 9509,
     "weight": 450.0,
@@ -21071,7 +21071,7 @@
   {
     "id": "crpg_mount1_charger_8",
     "name": "Ardennes Charger",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 11552,
     "weight": 450.0,
@@ -21093,7 +21093,7 @@
   {
     "id": "crpg_mount1_charger_9",
     "name": "Andalusian Charger",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 14043,
     "weight": 450.0,
@@ -21115,7 +21115,7 @@
   {
     "id": "crpg_mount1_fast_10",
     "name": "Ahalteke Courser",
-    "culture": "Neutral",
+    "culture": "Khuzait",
     "type": "Mount",
     "price": 15859,
     "weight": 420.0,
@@ -21137,7 +21137,7 @@
   {
     "id": "crpg_mount1_fast_11",
     "name": "Datong Courser",
-    "culture": "Neutral",
+    "culture": "Khuzait",
     "type": "Mount",
     "price": 17075,
     "weight": 420.0,
@@ -21159,7 +21159,7 @@
   {
     "id": "crpg_mount1_fast_12",
     "name": "Darashouri Courser",
-    "culture": "Neutral",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 19447,
     "weight": 420.0,
@@ -21225,7 +21225,7 @@
   {
     "id": "crpg_mount1_fast_5",
     "name": "Turkoman Courser",
-    "culture": "Neutral",
+    "culture": "Khuzait",
     "type": "Mount",
     "price": 6633,
     "weight": 420.0,
@@ -21247,7 +21247,7 @@
   {
     "id": "crpg_mount1_fast_6",
     "name": "Menorquín Courser",
-    "culture": "Neutral",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 7953,
     "weight": 420.0,
@@ -21269,7 +21269,7 @@
   {
     "id": "crpg_mount1_fast_7",
     "name": "Nisean Courser",
-    "culture": "Neutral",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 9653,
     "weight": 420.0,
@@ -21291,7 +21291,7 @@
   {
     "id": "crpg_mount1_fast_8",
     "name": "Thessalian Courser",
-    "culture": "Neutral",
+    "culture": "Empire",
     "type": "Mount",
     "price": 11519,
     "weight": 420.0,
@@ -21313,7 +21313,7 @@
   {
     "id": "crpg_mount1_fast_9",
     "name": "Einsiedler Courser",
-    "culture": "Neutral",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 13904,
     "weight": 420.0,
@@ -21335,7 +21335,7 @@
   {
     "id": "crpg_mount1_maneuverable_10",
     "name": "Berber Jennet",
-    "culture": "Khuzait",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 15200,
     "weight": 300.0,
@@ -21357,7 +21357,7 @@
   {
     "id": "crpg_mount1_maneuverable_11",
     "name": "Tchenarani Palfrey",
-    "culture": "Vlandia",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 16483,
     "weight": 300.0,
@@ -21379,7 +21379,7 @@
   {
     "id": "crpg_mount1_maneuverable_12",
     "name": "Asil Purebred Arabian Palfrey",
-    "culture": "Vlandia",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 18855,
     "weight": 300.0,
@@ -21401,7 +21401,7 @@
   {
     "id": "crpg_mount1_maneuverable_13",
     "name": "Marengo",
-    "culture": "Vlandia",
+    "culture": "Neutral",
     "type": "Mount",
     "price": 21539,
     "weight": 300.0,
@@ -21423,7 +21423,7 @@
   {
     "id": "crpg_mount1_maneuverable_14",
     "name": "Baucent",
-    "culture": "Vlandia",
+    "culture": "Neutral",
     "type": "Mount",
     "price": 23983,
     "weight": 300.0,
@@ -21445,7 +21445,7 @@
   {
     "id": "crpg_mount1_maneuverable_5",
     "name": "Irish Hobby",
-    "culture": "Khuzait",
+    "culture": "Battania",
     "type": "Mount",
     "price": 6451,
     "weight": 300.0,
@@ -21467,7 +21467,7 @@
   {
     "id": "crpg_mount1_maneuverable_6",
     "name": "Caspian Palfrey",
-    "culture": "Khuzait",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 7722,
     "weight": 300.0,
@@ -21489,7 +21489,7 @@
   {
     "id": "crpg_mount1_maneuverable_7",
     "name": "Marwari Palfrey",
-    "culture": "Khuzait",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 9229,
     "weight": 300.0,
@@ -21511,7 +21511,7 @@
   {
     "id": "crpg_mount1_maneuverable_8",
     "name": "Moroccan Barb",
-    "culture": "Khuzait",
+    "culture": "Aserai",
     "type": "Mount",
     "price": 11009,
     "weight": 300.0,
@@ -21533,7 +21533,7 @@
   {
     "id": "crpg_mount1_maneuverable_9",
     "name": "Morvandiau Palfrey",
-    "culture": "Khuzait",
+    "culture": "Vlandia",
     "type": "Mount",
     "price": 13256,
     "weight": 300.0,
