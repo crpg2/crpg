@@ -9518,9 +9518,9 @@
     "name": "Jereed",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 10279,
+    "price": 6796,
     "weight": 1.2,
-    "tier": 11.9999752,
+    "tier": 9.547419,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9541,7 +9541,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 36,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -9562,7 +9562,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -14170,9 +14170,9 @@
     "name": "Highland Throwing Axe",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 8913,
+    "price": 5173,
     "weight": 1.45,
-    "tier": 11.0968485,
+    "tier": 8.18839,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -14196,7 +14196,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 41,
+        "thrustDamage": 38,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -14220,7 +14220,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 92,
-        "swingDamage": 12,
+        "swingDamage": 11,
         "swingDamageType": "Cut",
         "swingSpeed": 106
       }
@@ -17485,9 +17485,9 @@
     "name": "Leafblade Throwing Knife",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 8220,
+    "price": 5461,
     "weight": 0.44,
-    "tier": 10.612464,
+    "tier": 8.443487,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17510,7 +17510,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 103,
         "swingDamage": 0,
@@ -22942,9 +22942,9 @@
     "name": "Broad Blade Javelin",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 8373,
+    "price": 6796,
     "weight": 1.11,
-    "tier": 10.721179,
+    "tier": 9.547419,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22965,7 +22965,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -23356,9 +23356,9 @@
     "name": "Raider Throwing Axe",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 12047,
-    "weight": 1.48,
-    "tier": 13.084239,
+    "price": 6933,
+    "weight": 1.53,
+    "tier": 9.655089,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -23368,11 +23368,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 25,
+        "missileSpeed": 24,
         "stackAmount": 4,
         "length": 37,
         "balance": 1.0,
-        "handling": 107,
+        "handling": 106,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -23382,12 +23382,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 37,
+        "thrustDamage": 35,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
+        "thrustSpeed": 91,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 108
+        "swingSpeed": 107
       },
       {
         "class": "OneHandedAxe",
@@ -23397,7 +23397,7 @@
         "stackAmount": 0,
         "length": 37,
         "balance": 1.0,
-        "handling": 107,
+        "handling": 106,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -23405,10 +23405,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 11,
+        "thrustSpeed": 91,
+        "swingDamage": 10,
         "swingDamageType": "Cut",
-        "swingSpeed": 108
+        "swingSpeed": 107
       }
     ]
   },
@@ -28424,9 +28424,9 @@
     "name": "Tribesman Throwing Axe",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 12875,
-    "weight": 1.6,
-    "tier": 13.5649242,
+    "price": 6440,
+    "weight": 1.65,
+    "tier": 9.265024,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -28440,7 +28440,7 @@
         "stackAmount": 3,
         "length": 50,
         "balance": 1.0,
-        "handling": 99,
+        "handling": 98,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -28450,12 +28450,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 44,
+        "thrustDamage": 40,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 101
+        "swingSpeed": 100
       },
       {
         "class": "OneHandedAxe",
@@ -28465,7 +28465,7 @@
         "stackAmount": 0,
         "length": 50,
         "balance": 1.0,
-        "handling": 99,
+        "handling": 98,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -28474,9 +28474,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 90,
-        "swingDamage": 12,
+        "swingDamage": 10,
         "swingDamageType": "Cut",
-        "swingSpeed": 101
+        "swingSpeed": 100
       }
     ]
   },
@@ -34634,9 +34634,9 @@
     "name": "Hooked Javelin",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 8373,
+    "price": 6796,
     "weight": 1.41,
-    "tier": 10.721179,
+    "tier": 9.547419,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -34657,7 +34657,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -34678,7 +34678,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 6,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
