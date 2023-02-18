@@ -7369,9 +7369,9 @@
     "name": "Highland Throwing Dagger",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1485,
-    "weight": 0.52,
-    "tier": 3.883634,
+    "price": 7117,
+    "weight": 0.12,
+    "tier": 9.796434,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -7381,11 +7381,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 34,
-        "stackAmount": 9,
+        "missileSpeed": 36,
+        "stackAmount": 6,
         "length": 36,
         "balance": 1.0,
-        "handling": 119,
+        "handling": 121,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -7394,12 +7394,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 127
+        "swingSpeed": 134
       }
     ]
   },
@@ -9227,9 +9227,9 @@
     "name": "Tribesman Throwing Daggers",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 1485,
-    "weight": 0.53,
-    "tier": 3.883634,
+    "price": 6692,
+    "weight": 0.12,
+    "tier": 9.466055,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -9239,11 +9239,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 34,
+        "missileSpeed": 36,
         "stackAmount": 9,
         "length": 43,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 121,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -9252,12 +9252,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 126
+        "swingSpeed": 133
       }
     ]
   },
@@ -11464,9 +11464,9 @@
     "name": "Broad Bladed Throwing Knives",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 2551,
-    "weight": 0.35,
-    "tier": 5.423373,
+    "price": 6323,
+    "weight": 0.15,
+    "tier": 9.169978,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11476,11 +11476,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 35,
-        "stackAmount": 9,
+        "missileSpeed": 36,
+        "stackAmount": 10,
         "length": 39,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 120,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -11489,12 +11489,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 105,
+        "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 130
+        "swingSpeed": 133
       }
     ]
   },
@@ -17464,9 +17464,9 @@
     "name": "Leafblade Throwing Knife",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 5461,
-    "weight": 0.44,
-    "tier": 8.443487,
+    "price": 7107,
+    "weight": 0.15,
+    "tier": 9.789031,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17476,11 +17476,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 34,
-        "stackAmount": 9,
+        "missileSpeed": 36,
+        "stackAmount": 5,
         "length": 30,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 121,
         "bodyArmor": 2,
         "flags": [
           "RangedWeapon",
@@ -17489,12 +17489,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 130
+        "swingSpeed": 134
       }
     ]
   },
