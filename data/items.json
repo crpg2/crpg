@@ -31864,6 +31864,43 @@
     "weapons": []
   },
   {
+    "id": "crpg_throwing_maul",
+    "name": "Throwing Hammers",
+    "culture": "Battania",
+    "type": "Thrown",
+    "price": 6480,
+    "weight": 0.71,
+    "tier": 9.297278,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "ThrowingAxe",
+        "itemUsage": "throwing_axe",
+        "accuracy": 93,
+        "missileSpeed": 27,
+        "stackAmount": 3,
+        "length": 40,
+        "balance": 1.0,
+        "handling": 107,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 32,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 100,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 116
+      }
+    ]
+  },
+  {
     "id": "crpg_throwing_stone",
     "name": "Stone",
     "culture": "Neutral",
