@@ -5797,9 +5797,9 @@
     "name": "Bec De Corbin",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 15537,
-    "weight": 1.91,
-    "tier": 9.779432,
+    "price": 16185,
+    "weight": 2.11,
+    "tier": 10.003664,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5811,8 +5811,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 124,
-        "balance": 0.47,
+        "length": 139,
+        "balance": 0.4,
         "handling": 70,
         "bodyArmor": 0,
         "flags": [
@@ -5821,12 +5821,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 30,
+        "thrustSpeed": 92,
+        "swingDamage": 29,
         "swingDamageType": "Pierce",
-        "swingSpeed": 84
+        "swingSpeed": 82
       }
     ]
   },
@@ -12113,9 +12113,9 @@
     "name": "French Voulge",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 15055,
-    "weight": 2.15,
-    "tier": 9.60979748,
+    "price": 14752,
+    "weight": 2.13,
+    "tier": 9.50171852,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -12127,9 +12127,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 133,
-        "balance": 0.48,
-        "handling": 72,
+        "length": 163,
+        "balance": 0.29,
+        "handling": 71,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -12140,9 +12140,9 @@
         "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
-        "swingDamage": 41,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 78
       }
     ]
   },
@@ -13343,9 +13343,9 @@
     "name": "Heavy Blacksmith Hammer",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 11124,
-    "weight": 2.82,
-    "tier": 8.79707,
+    "price": 12450,
+    "weight": 1.94,
+    "tier": 9.36895752,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13357,9 +13357,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 84,
-        "balance": 0.15,
-        "handling": 74,
+        "length": 99,
+        "balance": 0.1,
+        "handling": 68,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -13370,10 +13370,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
+        "thrustSpeed": 92,
         "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 74
+        "swingSpeed": 72
       }
     ]
   },
@@ -15551,27 +15551,6 @@
       "CanBePickedUpFromCorpse"
     ],
     "weapons": [
-      {
-        "class": "OneHandedAxe",
-        "itemUsage": "onehanded_shield_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 71,
-        "balance": 0.64,
-        "handling": 86,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "BonusAgainstShield"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 26,
-        "swingDamageType": "Pierce",
-        "swingSpeed": 89
-      },
       {
         "class": "OneHandedAxe",
         "itemUsage": "onehanded_shield_axe",
