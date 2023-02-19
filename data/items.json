@@ -20061,9 +20061,9 @@
     "name": "Kehilan al-Khamsa",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 22454,
+    "price": 21501,
     "weight": 420.0,
-    "tier": 11.2952747,
+    "tier": 11.0297079,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -20073,7 +20073,7 @@
       "chargeDamage": 4,
       "maneuver": 78,
       "speed": 49,
-      "hitPoints": 209,
+      "hitPoints": 207,
       "familyType": 1
     },
     "weapons": []
