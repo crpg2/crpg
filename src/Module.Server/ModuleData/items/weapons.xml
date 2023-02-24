@@ -137,7 +137,7 @@
       <Piece id="crpg_winds_fury_sword_t3_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tyrhung_sword_t3" name="{=TbFLTHHm}Tyrhung" crafting_template="crpg_OneHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_tyrhung_sword_t3_v2" name="{=TbFLTHHm}Tyrhung" crafting_template="crpg_OneHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_tyrhung_sword_t3_blade" Type="Blade" scale_factor="113" />
       <Piece id="crpg_tyrhung_sword_t3_guard" Type="Guard" scale_factor="100" />
@@ -153,7 +153,7 @@
       <Piece id="crpg_the_scalpel_sword_t3_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_dawnbreaker_sword_t3" name="{=J3erdO1b}Dawnbreaker" crafting_template="crpg_OneHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_dawnbreaker_sword_t3_v2" name="{=J3erdO1b}Dawnbreaker" crafting_template="crpg_OneHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_dawnbreaker_sword_t3_blade" Type="Blade" scale_factor="105" />
       <Piece id="crpg_dawnbreaker_sword_t3_guard" Type="Guard" scale_factor="100" />
@@ -827,7 +827,7 @@
       <Piece id="crpg_khuzait_sword_1_t2_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sturgia_sword_1_t2_v2" name="{=Ag6dujzl}Iron Thegn Blade" crafting_template="crpg_OneHandedSword" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_sturgia_sword_1_t2" name="{=Ag6dujzl}Iron Thegn Blade" crafting_template="crpg_OneHandedSword" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_sturgia_sword_1_t2_blade" Type="Blade" scale_factor="100" />
       <Piece id="crpg_sturgia_sword_1_t2_guard" Type="Guard" scale_factor="100" />
@@ -1075,7 +1075,7 @@
       <Piece id="crpg_aserai_sword_6_t4_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_khuzait_sword_4_t4" name="{=gadEbFyj}Fine Steel Saber" crafting_template="crpg_OneHandedSword" culture="Culture.khuzait" modifier_group="sword">
+  <CraftedItem id="crpg_khuzait_sword_4_t4_v2" name="{=gadEbFyj}Fine Steel Saber" crafting_template="crpg_OneHandedSword" culture="Culture.khuzait" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_khuzait_sword_4_t4_blade" Type="Blade" scale_factor="94" />
       <Piece id="crpg_khuzait_sword_4_t4_guard" Type="Guard" scale_factor="100" />
@@ -1315,7 +1315,7 @@
       <Piece id="crpg_khuzait_noble_sword_3_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sturgia_noble_sword_1_t5_v2" name="{=lXwaLAYP}Thamaskene Short Warsword" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_sturgia_noble_sword_1_t5" name="{=lXwaLAYP}Thamaskene Short Warsword" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_sturgia_noble_sword_1_t5_blade" Type="Blade" scale_factor="115" />
       <Piece id="crpg_sturgia_noble_sword_1_t5_guard" Type="Guard" scale_factor="100" />
@@ -1379,7 +1379,7 @@
       <Piece id="crpg_battania_2hsword_1_t2_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bastard_sword_t2_v2" name="{=arBdK7st}Simple Short Warsword" crafting_template="crpg_OneHandedSword" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_bastard_sword_t2" name="{=arBdK7st}Simple Short Warsword" crafting_template="crpg_OneHandedSword" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_bastard_sword_t2_blade" Type="Blade" scale_factor="85" />
       <Piece id="crpg_bastard_sword_t2_guard" Type="Guard" scale_factor="100" />
