@@ -2565,7 +2565,7 @@
 			<Piece id="crpg_bec_de_corbin_handle" Type="Handle" scale_factor="98"/>
 		</Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_poleaxe" name="{=}Simple Poleaxe" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_simple_poleaxev2" name="{=}Simple Poleaxe" crafting_template="crpg_TwoHandedPolearm">
 		<Pieces>
 			<Piece id="crpg_simple_poleaxe_blade" Type="Blade" scale_factor="100"/>
 			<Piece id="crpg_simple_poleaxe_handle" Type="Handle" scale_factor="100"/>
@@ -2583,7 +2583,7 @@
 			<Piece id="crpg_burgundian_glaive_handle" Type="Handle" scale_factor="100"/>
 		</Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_french_voulge" name="{=}French Voulge" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_french_voulgev2" name="{=}French Voulge" crafting_template="crpg_TwoHandedPolearm">
 		<Pieces>
 			<Piece id="crpg_french_voulge_blade" Type="Blade" scale_factor="100"/>
 			<Piece id="crpg_french_voulge_handle" Type="Handle" scale_factor="110"/>

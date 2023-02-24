@@ -6462,10 +6462,10 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_french_voulge_blade" name="French Voulge Blade" tier="3" piece_type="Blade" mesh="french_voulge_head" culture="Culture.vlandia" length="58.6" weight="0.7">
+  <CraftingPiece id="crpg_french_voulge_blade" name="French Voulge Blade" tier="3" piece_type="Blade" mesh="french_voulge_head" culture="Culture.vlandia" length="58.6" weight="0.01">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.4"/>
-      <Swing damage_type="Cut" damage_factor="4.3"/>
+      <Thrust damage_type="Pierce" damage_factor="2.1"/>
+      <Swing damage_type="Cut" damage_factor="3.3"/>
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags"/>
@@ -6474,7 +6474,7 @@
       <Material id="Iron4" count="2"/>
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_french_voulge_handle" name="Polearm Shaft with Langets" tier="2" piece_type="Handle" mesh="french_voulge_shaft" length="130" weight="1.3" CraftingCost="120">
+  <CraftingPiece id="crpg_french_voulge_handle" name="Polearm Shaft with Langets" tier="2" piece_type="Handle" mesh="french_voulge_shaft" length="130" weight="3.1" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30"/>
     <Materials>
       <Material id="Wood" count="1"/>
@@ -6517,10 +6517,10 @@
       <Material id="Wood" count="1"/>
     </Materials>
     </CraftingPiece>
-  <CraftingPiece id="crpg_simple_poleaxe_blade" name="Simple Poleaxe Blade" tier="3" piece_type="Blade" mesh="simple_poleaxe_head" culture="Culture.vlandia" length="46.6" weight="0.7">
+  <CraftingPiece id="crpg_simple_poleaxe_blade" name="Simple Poleaxe Blade" tier="3" piece_type="Blade" mesh="simple_poleaxe_head" culture="Culture.vlandia" length="46.6" weight="0.4">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.5"/>
-      <Swing damage_type="Cut" damage_factor="4.3"/>
+      <Thrust damage_type="Pierce" damage_factor="2.3"/>
+      <Swing damage_type="Cut" damage_factor="3.7"/>
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags"/>
@@ -6530,7 +6530,7 @@
       <Material id="Iron4" count="2"/>
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_poleaxe_handle" name="Simple Poleaxe Shaft" tier="2" piece_type="Handle" mesh="simple_poleaxe_shaft" length="156" weight="1.5" CraftingCost="120">
+  <CraftingPiece id="crpg_simple_poleaxe_handle" name="Simple Poleaxe Shaft" tier="2" piece_type="Handle" mesh="simple_poleaxe_shaft" length="156" weight="2.1" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="10" piece_offset="30"/>
     <Materials>
       <Material id="Wood" count="1"/>

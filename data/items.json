@@ -12111,9 +12111,9 @@
     "name": "French Voulge",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 12187,
-    "weight": 2.13,
-    "tier": 9.257897,
+    "price": 5661,
+    "weight": 3.42,
+    "tier": 5.97312355,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -12126,8 +12126,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 163,
-        "balance": 0.29,
-        "handling": 71,
+        "balance": 0.44,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -12135,12 +12135,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 43,
+        "thrustSpeed": 85,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 78
+        "swingSpeed": 83
       }
     ]
   },
@@ -27505,13 +27505,13 @@
     ]
   },
   {
-    "id": "crpg_simple_poleaxe",
+    "id": "crpg_simple_poleaxev2",
     "name": "Simple Poleaxe",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 10593,
-    "weight": 2.2,
-    "tier": 8.558576,
+    "price": 6185,
+    "weight": 2.5,
+    "tier": 6.290326,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27524,8 +27524,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 145,
-        "balance": 0.29,
-        "handling": 69,
+        "balance": 0.38,
+        "handling": 71,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -27534,12 +27534,12 @@
           "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 43,
+        "thrustSpeed": 89,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 78
+        "swingSpeed": 81
       }
     ]
   },
