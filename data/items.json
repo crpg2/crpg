@@ -2347,7 +2347,8 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "CanDismount"
         ],
         "thrustDamage": 29,
         "thrustDamageType": "Pierce",
@@ -9518,6 +9519,7 @@
           "Consumable",
           "UnloadWhenSheathed",
           "AutoReload",
+          "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 34,
@@ -9539,7 +9541,8 @@
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
-          "WideGrip"
+          "WideGrip",
+          "CanDismount"
         ],
         "thrustDamage": 7,
         "thrustDamageType": "Pierce",
@@ -9899,9 +9902,7 @@
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
-          "WideGrip",
-          "CanDismount",
-          "MissileWithPhysics"
+          "WideGrip"
         ],
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
@@ -9924,9 +9925,7 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount",
-          "CanDismount",
-          "MissileWithPhysics"
+          "TwoHandIdleOnMount"
         ],
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
@@ -9949,9 +9948,7 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount",
-          "CanDismount",
-          "MissileWithPhysics"
+          "TwoHandIdleOnMount"
         ],
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
@@ -9987,7 +9984,8 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "CanDismount"
         ],
         "thrustDamage": 25,
         "thrustDamageType": "Pierce",
@@ -13963,7 +13961,8 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "CanDismount"
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
@@ -13986,7 +13985,8 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "CanDismount"
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
@@ -14081,9 +14081,7 @@
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
-          "WideGrip",
-          "CanDismount",
-          "MissileWithPhysics"
+          "WideGrip"
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
@@ -14106,9 +14104,7 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount",
-          "CanDismount",
-          "MissileWithPhysics"
+          "TwoHandIdleOnMount"
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
@@ -14131,9 +14127,7 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount",
-          "CanDismount",
-          "MissileWithPhysics"
+          "TwoHandIdleOnMount"
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
@@ -35145,7 +35139,8 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "CanDismount"
         ],
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
@@ -35181,7 +35176,8 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "CanDismount"
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
@@ -35338,7 +35334,8 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "CanDismount"
         ],
         "thrustDamage": 23,
         "thrustDamageType": "Pierce",
@@ -35361,7 +35358,8 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "CanDismount"
         ],
         "thrustDamage": 23,
         "thrustDamageType": "Pierce",

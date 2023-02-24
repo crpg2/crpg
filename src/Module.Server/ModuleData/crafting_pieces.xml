@@ -1177,19 +1177,11 @@
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
-    <Flags>
-      <Flag name="CanDismount" />
-      <Flag name="CanHook" />
-    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_highland_spear_t2_guard" name="{=Vf2wKojF}Blunt Wings" tier="4" piece_type="Guard" mesh="spear_guard_3" culture="Culture.empire" length="12.5" weight="0">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
-    <Flags>
-      <Flag name="CanDismount" />
-      <Flag name="CanHook" />
-    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_khuzait_lance_1_t3_guard" name="{=YFkEsUhn}Red Horse Tail Frills" tier="4" piece_type="Guard" mesh="spear_banner_17" culture="Culture.neutral_culture" length="8.84" weight="0">
     <Materials>
@@ -1281,6 +1273,9 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanDismount" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_triangluar_spear_t3_blade" name="{=U30HpvtI}Triangular Iron Northern Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_2" length="47.843" weight="0.3912">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
@@ -1630,6 +1625,9 @@
     <Materials>
       <Material id="Iron5" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanDismount" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_eastern_spear_5_t5_blade" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_2" holster_body_name="bo_throwing_spear_quiver_2" holster_mesh_length="94.6">
@@ -1638,6 +1636,9 @@
     <Materials>
       <Material id="Iron5" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanDismount" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_eastern_javelin_2_t3_blade" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.4104" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
@@ -1756,6 +1757,9 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
+     <Flags>
+      <Flag name="CanDismount" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_western_spear_4_t4_blade" name="{=ZcUNAfKT}Extra Long Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_4" length="72.558" weight="0.6168" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
@@ -1764,6 +1768,9 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanDismount" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_highland_spear_3_t3_blade" name="{=CdBAvJdP}Kontos Head" tier="3" piece_type="Blade" mesh="spear_blade_8" length="60.153" weight="0.7" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
@@ -1772,6 +1779,9 @@
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanDismount" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_western_spear_4_t3_blade" name="{=CdBAvJdP}Kontos Head" tier="3" piece_type="Blade" mesh="spear_blade_8" length="60.153" weight="0.7">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
@@ -6117,6 +6127,9 @@
 <Materials>
 <Material id="Iron4" count="2"/>
 </Materials>
+  <Flags>
+      <Flag name="CanDismount" />
+  </Flags>
 </CraftingPiece>
 <CraftingPiece id="crpg_awlpike_handle" name="{=}Awlpike Handle" tier="4" piece_type="Handle" mesh="awlpike_handle" length="160" weight="1.9" is_default="true">
 <BuildData piece_offset="10.0" next_piece_offset="7.0" previous_piece_offset="0"/>
