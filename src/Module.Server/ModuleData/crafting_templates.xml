@@ -416,6 +416,10 @@
       <UsablePiece piece_id="crpg_wooden_2hsword_t1_guard" />
       <UsablePiece piece_id="crpg_wooden_2hsword_t1_handle" />
       <UsablePiece piece_id="crpg_wooden_2hsword_t1_pommel" />
+      <UsablePiece piece_id="crpg_sentinel_2hsword_blade" />
+      <UsablePiece piece_id="crpg_sentinel_2hsword_guard" />
+      <UsablePiece piece_id="crpg_sentinel_2hsword_handle" />
+      <UsablePiece piece_id="crpg_sentinel_2hsword_pommel" />
       <UsablePiece piece_id="crpg_wooden_sword_t1_blade" />
       <UsablePiece piece_id="crpg_wooden_sword_t1_guard" />
       <UsablePiece piece_id="crpg_wooden_sword_t1_handle" />

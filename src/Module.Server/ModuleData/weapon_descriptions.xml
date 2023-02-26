@@ -369,6 +369,10 @@
       <AvailablePiece id="crpg_wooden_sword_t1_guard" />
       <AvailablePiece id="crpg_wooden_sword_t1_handle" />
       <AvailablePiece id="crpg_wooden_sword_t1_pommel" />
+      <AvailablePiece id="crpg_sentinel_2hsword_blade" />
+      <AvailablePiece id="crpg_sentinel_2hsword_guard" />
+      <AvailablePiece id="crpg_sentinel_2hsword_handle" />
+      <AvailablePiece id="crpg_sentinel_2hsword_pommel" />
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_OneHandedBastardSword" weapon_class="OneHandedSword" item_usage_features="onehanded:block:rshield:swing:thrust">
@@ -839,6 +843,10 @@
       <AvailablePiece id="crpg_wooden_sword_t1_blade" />
       <AvailablePiece id="crpg_wooden_sword_t1_guard" />
       <AvailablePiece id="crpg_wooden_sword_t1_pommel" />
+      <AvailablePiece id="crpg_sentinel_2hsword_blade" />
+      <AvailablePiece id="crpg_sentinel_2hsword_guard" />
+      <AvailablePiece id="crpg_sentinel_2hsword_handle" />
+      <AvailablePiece id="crpg_sentinel_2hsword_pommel" />
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_TwoHandedSword" weapon_class="TwoHandedSword" item_usage_features="twohanded:block:swing:thrust">
