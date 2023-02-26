@@ -7081,8 +7081,8 @@
   },
   {
     "id": "crpg_buckler",
-    "name": "Round Buckler",
-    "culture": "Sturgia",
+    "name": "Round Buckler Shield",
+    "culture": "Neutral",
     "type": "Shield",
     "price": 3590,
     "weight": 1.0,
@@ -13487,6 +13487,44 @@
     ]
   },
   {
+    "id": "crpg_Heavy_Highland_Tower_Shield",
+    "name": "Heavy Highland Tower Shield",
+    "culture": "Battania",
+    "type": "Shield",
+    "price": 9802,
+    "weight": 12.0,
+    "tier": 10.335989,
+    "requirement": 0,
+    "flags": [
+      "ForceAttachOffHandPrimaryItemBone",
+      "WoodenParry",
+      "HeldInOffHand"
+    ],
+    "weapons": [
+      {
+        "class": "LargeShield",
+        "itemUsage": "hand_shield",
+        "accuracy": 100,
+        "missileSpeed": 0,
+        "stackAmount": 125,
+        "length": 140,
+        "balance": 0.0,
+        "handling": 55,
+        "bodyArmor": 10,
+        "flags": [
+          "HasHitPoints",
+          "CanBlockRanged"
+        ],
+        "thrustDamage": 5,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 55,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 55
+      }
+    ]
+  },
+  {
     "id": "crpg_heavy_nasalhelm_over_imperial_leather",
     "name": "Heavy Nasalhelm over Leather",
     "culture": "Empire",
@@ -18372,8 +18410,8 @@
   },
   {
     "id": "crpg_long_buckler",
-    "name": "Oval Buckler",
-    "culture": "Sturgia",
+    "name": "Heavy Oval Buckler Shield",
+    "culture": "Neutral",
     "type": "Shield",
     "price": 10277,
     "weight": 1.2,
