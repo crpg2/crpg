@@ -232,7 +232,7 @@
       <Piece id="crpg_avalanche_2haxe_handle" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sentinel_2hsword_abearirl" name="{=XIRtmaQt}Longsword" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_sentinel_2hsword" name="{=XIRtmaQt}Longsword" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_sentinel_2hsword_blade" Type="Blade" scale_factor="109" />
       <Piece id="crpg_sentinel_2hsword_guard" Type="Guard" />
@@ -1291,7 +1291,7 @@
       <Piece id="crpg_khuzait_noble_sword_1_t5_pommel" Type="Pommel" scale_factor="110" />
     </Pieces>
       </CraftedItem>
-  <CraftedItem id="crpg_decorated_great_saber_abearirl" name="{=v7WQhge3}Decorated Great Saber" crafting_template="crpg_TwoHandedSword" is_merchandise="false" culture="Culture.khuzait" modifier_group="sword">
+  <CraftedItem id="crpg_decorated_great_saber" name="{=v7WQhge3}Decorated Great Saber" crafting_template="crpg_TwoHandedSword" is_merchandise="false" culture="Culture.khuzait" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_decorated_great_saber_2hsword_1_t5_blade" Type="Blade" scale_factor="145" />
       <Piece id="crpg_decorated_great_saber_2hsword_1_t5_guard" Type="Guard" scale_factor="96" />
@@ -1507,7 +1507,7 @@
       <Piece id="crpg_vlandia_2hsword_1_t5_pommel" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_vlandia_2hsword_2_t5_abearirl" name="{=VAO11FSu}Thamaskene Steel Two Hander" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+  <CraftedItem id="crpg_vlandia_2hsword_2_t5" name="{=VAO11FSu}Thamaskene Steel Two Hander" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_vlandia_2hsword_2_t5_blade" Type="Blade" scale_factor="117" />
       <Piece id="crpg_vlandia_2hsword_2_t5_guard" Type="Guard" scale_factor="100" />
@@ -2327,9 +2327,9 @@
 			<Piece id="crpg_war_scythe_handle" Type="Handle" scale_factor="100"/>
 		</Pieces>
 	</CraftedItem>
-	<CraftedItem id="crpg_dawn_abearirl" name="{=}Dawn" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+	<CraftedItem id="crpg_dawn" name="{=}Dawn" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
 		<Pieces>
-			<Piece id="crpg_dawn_blade" Type="Blade" scale_factor="134"/>
+			<Piece id="crpg_dawn_blade" Type="Blade" scale_factor="135"/>
 			<Piece id="crpg_dawn_guard" Type="Guard" scale_factor="125"/>
 			<Piece id="crpg_dawn_handle" Type="Handle" scale_factor="140"/>
 			<Piece id="crpg_dawn_pommel" Type="Pommel" scale_factor="140"/>
