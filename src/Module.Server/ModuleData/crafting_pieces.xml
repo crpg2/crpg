@@ -1976,7 +1976,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northern_axe_t3_handle" name="{=Qqb0VZ1a}Leather Wrapped Two Handed Ash Shaft" tier="3" piece_type="Handle" mesh="axe_craft_29_handle" length="120" weight="0.6">
+  <CraftingPiece id="crpg_northern_axe_t3_handle" name="{=Qqb0VZ1a}Leather Wrapped Two Handed Ash Shaft" tier="3" piece_type="Handle" mesh="axe_craft_29_handle" length="120" weight="0.85">
     <BuildData piece_offset="35" next_piece_offset="1.835" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -2056,7 +2056,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_2haxe_1_t3_handle" name="{=XxhFx0yw}Short Leather Wrapped Great Axe Handle" tier="3" piece_type="Handle" mesh="axe_craft_8_handle" length="116" weight="0.7" excluded_item_usage_features="widegrip">
+  <CraftingPiece id="crpg_aserai_2haxe_1_t3_handle" name="{=XxhFx0yw}Short Leather Wrapped Great Axe Handle" tier="3" piece_type="Handle" mesh="axe_craft_8_handle" length="116" weight="2.1" excluded_item_usage_features="widegrip">
     <BuildData piece_offset="23.86" next_piece_offset="1" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -2331,7 +2331,7 @@
       <Material id="Iron4" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_aserai_2haxe_1_t3_blade" name="{=0gteBOD7}Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.65">
+  <CraftingPiece id="crpg_aserai_2haxe_1_t3_blade" name="{=0gteBOD7}Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.25">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Cut" damage_factor="3.9" />
@@ -2370,10 +2370,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northern_axe_t3_blade" name="{=USWfzbuW}Northern Broad Great Axe Head" tier="3" piece_type="Blade" mesh="axe_craft_7_head" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.6">
+  <CraftingPiece id="crpg_northern_axe_t3_blade" name="{=USWfzbuW}Northern Broad Great Axe Head" tier="3" piece_type="Blade" mesh="axe_craft_7_head" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.5">
     <BuildData piece_offset="-5.424" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -6009,7 +6009,7 @@
 <CraftingPiece id="crpg_greataxe_blade" name="{=}Great Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.65">
 <BuildData piece_offset="-14.0"/>
 <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-<Swing damage_type="Cut" damage_factor="4.3"/>
+<Swing damage_type="Cut" damage_factor="4.2"/>
 </BladeData>
 <Flags>
 <Flag name="CanBePickedUpFromCorpse" type="ItemFlags"/>
