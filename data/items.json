@@ -31543,6 +31543,46 @@
     "weapons": []
   },
   {
+    "id": "crpg_takeo_fleur_de_lis",
+    "name": "Takeo's Fleur De Lis",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 1744,
+    "weight": 1.28961,
+    "tier": 5.55833673,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 30,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Cloth",
+      "familyType": 0
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_takeocrown",
+    "name": "Takeo's Crown",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 1744,
+    "weight": 1.28961,
+    "tier": 5.55833673,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 30,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Cloth",
+      "familyType": 0
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_tall_heater_shield",
     "name": "Tall Heater Shield",
     "culture": "Vlandia",
