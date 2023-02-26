@@ -1486,6 +1486,8 @@
     <WeaponDescriptions>
       <WeaponDescription id="crpg_ThrowingAxe" />
       <WeaponDescription id="crpg_OneHandedAxe" />
+      <WeaponDescription id="crpg_ThrowingHammer" />
+      <WeaponDescription id="crpg_Mace" />
     </WeaponDescriptions>
     <StatsData weapon_description="crpg_ThrowingAxe">
       <StatData stat_type="Weight" max_value="7.0" />

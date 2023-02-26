@@ -31948,6 +31948,26 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 104
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 41,
+        "balance": 1.0,
+        "handling": 102,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 10,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 104
       }
     ]
   },
