@@ -3115,9 +3115,9 @@
     "name": "Barmace",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 13570,
-    "weight": 3.06,
-    "tier": 9.828468,
+    "price": 12481,
+    "weight": 2.0,
+    "tier": 9.381781,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -3128,8 +3128,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.61,
-        "handling": 87,
+        "balance": 0.62,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -3137,7 +3137,7 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 86,
+        "thrustSpeed": 94,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
         "swingSpeed": 88
@@ -8510,13 +8510,13 @@
     "weapons": []
   },
   {
-    "id": "crpg_dawn",
+    "id": "crpg_dawn_abearirl",
     "name": "Dawn",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 14161,
-    "weight": 2.09,
-    "tier": 10.063818,
+    "price": 13795,
+    "weight": 2.14,
+    "tier": 9.918665,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8526,9 +8526,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 128,
-        "balance": 0.48,
-        "handling": 68,
+        "length": 127,
+        "balance": 0.49,
+        "handling": 69,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
@@ -8537,7 +8537,7 @@
         "thrustDamage": 30,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
-        "swingDamage": 39,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
         "swingSpeed": 84
       }
@@ -8599,13 +8599,13 @@
     "weapons": []
   },
   {
-    "id": "crpg_decorated_great_saber",
+    "id": "crpg_decorated_great_saber_abearirl",
     "name": "Decorated Great Saber",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
-    "price": 15098,
-    "weight": 2.75,
-    "tier": 10.4267864,
+    "price": 13858,
+    "weight": 3.14,
+    "tier": 9.943854,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8616,19 +8616,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 119,
-        "balance": 0.81,
-        "handling": 89,
+        "balance": 0.76,
+        "handling": 88,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 33,
+        "thrustSpeed": 86,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 92
       }
     ]
   },
@@ -13380,9 +13380,9 @@
     "name": "Heavy Executioner Long Sword",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 13427,
-    "weight": 3.33,
-    "tier": 9.771072,
+    "price": 12666,
+    "weight": 3.3,
+    "tier": 9.459042,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13402,7 +13402,7 @@
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 83,
         "swingDamage": 45,
@@ -15687,9 +15687,9 @@
     "name": "Black Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 14027,
-    "weight": 2.91,
-    "tier": 10.0109644,
+    "price": 16645,
+    "weight": 2.81,
+    "tier": 11.0022411,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15700,19 +15700,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -15721,9 +15721,9 @@
     "name": "Blue Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 14027,
-    "weight": 2.91,
-    "tier": 10.0109644,
+    "price": 16645,
+    "weight": 2.81,
+    "tier": 11.0022411,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15734,19 +15734,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -15755,9 +15755,9 @@
     "name": "Green Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 14027,
-    "weight": 2.91,
-    "tier": 10.0109644,
+    "price": 16645,
+    "weight": 2.81,
+    "tier": 11.0022411,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15768,19 +15768,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -15789,9 +15789,9 @@
     "name": "Red Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 14027,
-    "weight": 2.91,
-    "tier": 10.0109644,
+    "price": 16645,
+    "weight": 2.81,
+    "tier": 11.0022411,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15802,19 +15802,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -15823,9 +15823,9 @@
     "name": "Yellow Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 14027,
-    "weight": 2.91,
-    "tier": 10.0109644,
+    "price": 16645,
+    "weight": 2.81,
+    "tier": 11.0022411,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15836,19 +15836,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -27063,13 +27063,13 @@
     "weapons": []
   },
   {
-    "id": "crpg_sentinel_2hsword",
+    "id": "crpg_sentinel_2hsword_abearirl",
     "name": "Longsword",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 14173,
-    "weight": 2.1,
-    "tier": 10.068449,
+    "price": 14117,
+    "weight": 2.17,
+    "tier": 10.0463905,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -27088,9 +27088,9 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
+        "thrustSpeed": 84,
         "swingDamage": 39,
         "swingDamageType": "Cut",
         "swingSpeed": 75
@@ -27103,15 +27103,15 @@
         "stackAmount": 0,
         "length": 107,
         "balance": 0.79,
-        "handling": 75,
+        "handling": 76,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
+        "thrustSpeed": 91,
         "swingDamage": 39,
         "swingDamageType": "Cut",
         "swingSpeed": 93
@@ -27129,9 +27129,9 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
+        "thrustSpeed": 84,
         "swingDamage": 39,
         "swingDamageType": "Cut",
         "swingSpeed": 75
@@ -33190,9 +33190,9 @@
     "name": "Wide Fullered Broad Two Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 14082,
-    "weight": 2.1,
-    "tier": 10.0324621,
+    "price": 14772,
+    "weight": 2.17,
+    "tier": 10.3018408,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -33203,8 +33203,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 135,
-        "balance": 0.53,
-        "handling": 71,
+        "balance": 0.54,
+        "handling": 72,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
@@ -33212,7 +33212,7 @@
         ],
         "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 90,
         "swingDamage": 40,
         "swingDamageType": "Cut",
         "swingSpeed": 86
@@ -33220,12 +33220,12 @@
     ]
   },
   {
-    "id": "crpg_vlandia_2hsword_2_t5",
+    "id": "crpg_vlandia_2hsword_2_t5_abearirl",
     "name": "Thamaskene Steel Two Hander",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
     "price": 14003,
-    "weight": 2.06,
+    "weight": 1.99,
     "tier": 10.0015564,
     "requirement": 0,
     "flags": [],
@@ -33237,7 +33237,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 127,
-        "balance": 0.57,
+        "balance": 0.6,
         "handling": 72,
         "bodyArmor": 5,
         "flags": [
@@ -33772,9 +33772,9 @@
     "name": "Decorated Arming Sword",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 8111,
+    "price": 7207,
     "weight": 2.03,
-    "tier": 10.4445753,
+    "tier": 9.781045,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -33793,10 +33793,10 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 35,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
         "swingSpeed": 85
       }
