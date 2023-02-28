@@ -2168,7 +2168,7 @@
   <CraftingPiece id="crpg_northern_throwing_axe_1_t1_blade" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.7">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.4" />
+      <Swing damage_type="Cut" damage_factor="1.2" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -2194,7 +2194,7 @@
   <CraftingPiece id="crpg_southern_throwing_axe_1_t4_blade" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.20" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.78" />
+      <Swing damage_type="Cut" damage_factor="1.55" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -2207,7 +2207,7 @@
   <CraftingPiece id="crpg_highland_throwing_axe_1_t2_blade" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.25" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.9" />
+      <Swing damage_type="Cut" damage_factor="1.64" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
