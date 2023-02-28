@@ -15687,9 +15687,9 @@
     "name": "Black Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 16645,
-    "weight": 2.81,
-    "tier": 11.0022411,
+    "price": 14027,
+    "weight": 2.91,
+    "tier": 10.0109644,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15700,19 +15700,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.94,
+        "balance": 0.9,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 97
       }
     ]
   },
@@ -15721,9 +15721,9 @@
     "name": "Blue Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 16645,
-    "weight": 2.81,
-    "tier": 11.0022411,
+    "price": 14027,
+    "weight": 2.91,
+    "tier": 10.0109644,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15734,19 +15734,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.94,
+        "balance": 0.9,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 97
       }
     ]
   },
@@ -15755,9 +15755,9 @@
     "name": "Green Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 16645,
-    "weight": 2.81,
-    "tier": 11.0022411,
+    "price": 14027,
+    "weight": 2.91,
+    "tier": 10.0109644,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15768,19 +15768,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.94,
+        "balance": 0.9,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 97
       }
     ]
   },
@@ -15789,9 +15789,9 @@
     "name": "Red Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 16645,
-    "weight": 2.81,
-    "tier": 11.0022411,
+    "price": 11915,
+    "weight": 2.93,
+    "tier": 9.141764,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15802,19 +15802,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.94,
+        "balance": 0.88,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
+        "thrustSpeed": 86,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 96
       }
     ]
   },
@@ -15823,9 +15823,9 @@
     "name": "Yellow Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 16645,
-    "weight": 2.81,
-    "tier": 11.0022411,
+    "price": 14027,
+    "weight": 2.91,
+    "tier": 10.0109644,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15836,19 +15836,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.94,
+        "balance": 0.9,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 97
       }
     ]
   },
