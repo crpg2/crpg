@@ -32029,9 +32029,9 @@
     "name": "Stone",
     "culture": "Neutral",
     "type": "Thrown",
-    "price": 568,
+    "price": 200,
     "weight": 0.1,
-    "tier": 2.00704,
+    "tier": 1,
     "requirement": 0,
     "flags": [],
     "weapons": [
