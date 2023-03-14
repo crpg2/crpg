@@ -294,7 +294,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_empire_warrior_padded_armor_shoulder" name="{=WDNKhjca}Legionary Padded Straps" mesh="empire_warrior_padded_armor_shoulder" culture="Culture.empire" weight="0.5544987" appearance="1" Type="Cape">
+  <Item id="crpg_empire_warrior_padded_armor_shoulder" name="{=WDNKhjca}Legionary Padded Straps" mesh="empire_warrior_padded_armor_shoulder" culture="Culture.empire" weight="0.6492002" appearance="1" Type="Cape">
     <ItemComponent>
       <Armor body_armor="9" modifier_group="leather" material_type="Leather" arm_armor="5" />
     </ItemComponent>

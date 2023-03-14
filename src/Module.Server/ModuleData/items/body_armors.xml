@@ -906,37 +906,37 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_mail_with_tabbard1" name="Mail With Tabbard Pattern 1" mesh="mail_with_tabbard1" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_mail_with_tabbard1" name="Mail With Tabard Pattern 1" mesh="mail_with_tabbard1" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_mail_with_tabbard2" name="Mail With Tabbard Pattern 2" mesh="mail_with_tabbard2" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_mail_with_tabbard2" name="Mail With Tabard Pattern 2" mesh="mail_with_tabbard2" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_mail_with_tabbard3" name="Mail With Tabbard Pattern 3" mesh="mail_with_tabbard3" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_mail_with_tabbard3" name="Mail With Tabard Pattern 3" mesh="mail_with_tabbard3" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_mail_with_tabbard4" name="Mail With Tabbard Pattern 4" mesh="mail_with_tabbard4" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_mail_with_tabbard4" name="Mail With Tabard Pattern 4" mesh="mail_with_tabbard4" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_mail_with_tabbard5" name="Mail With Tabbard Pattern 5" mesh="mail_with_tabbard5" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_mail_with_tabbard5" name="Mail With Tabard Pattern 5" mesh="mail_with_tabbard5" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_mail_with_tabbard6" name="Mail With Tabbard Pattern 6" mesh="mail_with_tabbard6" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_mail_with_tabbard6" name="Mail With Tabard Pattern 6" mesh="mail_with_tabbard6" culture="Culture.vlandia" weight="9.89492" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
     </ItemComponent>
@@ -1493,5 +1493,10 @@
       <Armor body_armor="29" leg_armor="5" arm_armor="11" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_heraldic_mail_with_tabbard" name="Mail With Tabard Heraldic" mesh="mail_with_tabbard_heraldic" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" using_tableau="true" weight="9.89492" difficulty="0" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
   </Item>
 </Items>

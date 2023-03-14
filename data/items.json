@@ -11636,9 +11636,9 @@
     "name": "Legionary Padded Straps",
     "culture": "Empire",
     "type": "ShoulderArmor",
-    "price": 745,
-    "weight": 0.5544987,
-    "tier": 4.71019363,
+    "price": 732,
+    "weight": 0.6492002,
+    "tier": 4.68433571,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -13734,6 +13734,26 @@
       "armArmor": 1,
       "legArmor": 1,
       "materialType": "Cloth",
+      "familyType": 0
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_heraldic_mail_with_tabbard",
+    "name": "Mail With Tabard Heraldic",
+    "culture": "Vlandia",
+    "type": "BodyArmor",
+    "price": 17906,
+    "weight": 9.89492,
+    "tier": 8.404293,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 44,
+      "armArmor": 11,
+      "legArmor": 11,
+      "materialType": "Chainmail",
       "familyType": 0
     },
     "weapons": []
@@ -18964,7 +18984,7 @@
   },
   {
     "id": "crpg_mail_with_tabbard1",
-    "name": "Mail With Tabbard Pattern 1",
+    "name": "Mail With Tabard Pattern 1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 17906,
@@ -18986,7 +19006,7 @@
   },
   {
     "id": "crpg_mail_with_tabbard2",
-    "name": "Mail With Tabbard Pattern 2",
+    "name": "Mail With Tabard Pattern 2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 17906,
@@ -19008,7 +19028,7 @@
   },
   {
     "id": "crpg_mail_with_tabbard3",
-    "name": "Mail With Tabbard Pattern 3",
+    "name": "Mail With Tabard Pattern 3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 17906,
@@ -19030,7 +19050,7 @@
   },
   {
     "id": "crpg_mail_with_tabbard4",
-    "name": "Mail With Tabbard Pattern 4",
+    "name": "Mail With Tabard Pattern 4",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 17906,
@@ -19052,7 +19072,7 @@
   },
   {
     "id": "crpg_mail_with_tabbard5",
-    "name": "Mail With Tabbard Pattern 5",
+    "name": "Mail With Tabard Pattern 5",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 17906,
@@ -19074,7 +19094,7 @@
   },
   {
     "id": "crpg_mail_with_tabbard6",
-    "name": "Mail With Tabbard Pattern 6",
+    "name": "Mail With Tabard Pattern 6",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 17906,
@@ -31355,6 +31375,26 @@
   {
     "id": "crpg_takeocrown",
     "name": "Takeo's Crown",
+    "culture": "Vlandia",
+    "type": "HeadArmor",
+    "price": 1744,
+    "weight": 1.28961,
+    "tier": 5.55833673,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 30,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Cloth",
+      "familyType": 0
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_takeocrown_noglow",
+    "name": "Takeo's Crown No Glow",
     "culture": "Vlandia",
     "type": "HeadArmor",
     "price": 1744,
