@@ -7430,9 +7430,9 @@
     "name": "Highland Throwing Dagger",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 7117,
+    "price": 3929,
     "weight": 0.12,
-    "tier": 9.796434,
+    "tier": 6.993969,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -9282,9 +9282,9 @@
     "name": "Tribesman Throwing Daggers",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 6692,
+    "price": 2778,
     "weight": 0.12,
-    "tier": 9.466055,
+    "tier": 5.707006,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -9436,9 +9436,9 @@
     "name": "Jagged Javelin",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 998,
+    "price": 750,
     "weight": 0.91,
-    "tier": 2.99371386,
+    "tier": 2.457212,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9494,9 +9494,9 @@
     "name": "Horseman Javelin",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 3554,
+    "price": 3403,
     "weight": 1.11,
-    "tier": 6.598073,
+    "tier": 6.43260336,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9552,9 +9552,9 @@
     "name": "Jereed",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 9590,
+    "price": 10478,
     "weight": 1.2,
-    "tier": 11.5523777,
+    "tier": 12.1264839,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10230,9 +10230,9 @@
     "name": "Jagged Throwing Spear",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 2518,
+    "price": 5162,
     "weight": 2.26,
-    "tier": 5.381048,
+    "tier": 8.178286,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10288,9 +10288,9 @@
     "name": "Triangular Throwing Spear",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 3158,
+    "price": 7083,
     "weight": 2.59,
-    "tier": 6.156497,
+    "tier": 9.770434,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -11594,9 +11594,9 @@
     "name": "Broad Bladed Throwing Knives",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 6323,
+    "price": 2430,
     "weight": 0.15,
-    "tier": 9.169978,
+    "tier": 5.266772,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12718,9 +12718,9 @@
     "name": "Harpoon",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 6796,
+    "price": 7414,
     "weight": 1.35,
-    "tier": 9.547419,
+    "tier": 10.0218868,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -14327,9 +14327,9 @@
     "name": "Highland Throwing Axe",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 6597,
+    "price": 6894,
     "weight": 0.65,
-    "tier": 9.39021,
+    "tier": 9.624246,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -15219,9 +15219,9 @@
     "name": "Pilum",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 2802,
+    "price": 6085,
     "weight": 2.53,
-    "tier": 5.73569965,
+    "tier": 8.974642,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17635,9 +17635,9 @@
     "name": "Leafblade Throwing Knife",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 7107,
+    "price": 4452,
     "weight": 0.15,
-    "tier": 9.789031,
+    "tier": 7.51626825,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -18942,9 +18942,9 @@
     "name": "Lowland Throwing Knife",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 3579,
+    "price": 1439,
     "weight": 0.38,
-    "tier": 6.625308,
+    "tier": 3.80524254,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -22799,9 +22799,9 @@
     "name": "Fish Harpoon",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 621,
+    "price": 439,
     "weight": 0.98,
-    "tier": 2.14467573,
+    "tier": 1.6467365,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22857,9 +22857,9 @@
     "name": "Woodland Javelin",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 6224,
+    "price": 6503,
     "weight": 1.08,
-    "tier": 9.088789,
+    "tier": 9.315316,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22915,9 +22915,9 @@
     "name": "Broad Blade Javelin",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 6796,
+    "price": 7414,
     "weight": 1.11,
-    "tier": 9.547419,
+    "tier": 10.0218868,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -23323,9 +23323,9 @@
     "name": "Raider Throwing Axe",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 7326,
+    "price": 6363,
     "weight": 0.75,
-    "tier": 9.956095,
+    "tier": 9.202117,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -27895,9 +27895,9 @@
     "name": "Snowball",
     "culture": "Neutral",
     "type": "Thrown",
-    "price": 1070,
+    "price": 257,
     "weight": 0.1,
-    "tier": 3.136,
+    "tier": 1.03449476,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -28411,9 +28411,9 @@
     "name": "Tribesman Throwing Axe",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 6597,
+    "price": 6894,
     "weight": 0.72,
-    "tier": 9.39021,
+    "tier": 9.624246,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -31949,9 +31949,9 @@
     "name": "Heavy Stones",
     "culture": "Neutral",
     "type": "Thrown",
-    "price": 2785,
+    "price": 816,
     "weight": 0.1,
-    "tier": 5.71535969,
+    "tier": 2.60776687,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -31986,9 +31986,9 @@
     "name": "Throwing Hammers",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 6230,
+    "price": 4399,
     "weight": 1.22,
-    "tier": 9.093782,
+    "tier": 7.464091,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32043,9 +32043,9 @@
     "name": "Stone",
     "culture": "Neutral",
     "type": "Thrown",
-    "price": 295,
+    "price": 105,
     "weight": 0.1,
-    "tier": 1.17649007,
+    "tier": 0.348776162,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -34948,9 +34948,9 @@
     "name": "Simple Javelin",
     "culture": "Neutral",
     "type": "Thrown",
-    "price": 155,
+    "price": 145,
     "weight": 0.91,
-    "tier": 0.6022818,
+    "tier": 0.5566708,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -35006,9 +35006,9 @@
     "name": "Lowland Javelin",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 6796,
+    "price": 7414,
     "weight": 1.2,
-    "tier": 9.547419,
+    "tier": 10.0218868,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -35064,9 +35064,9 @@
     "name": "Hooked Javelin",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 6796,
+    "price": 7414,
     "weight": 1.41,
-    "tier": 9.547419,
+    "tier": 10.0218868,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -35714,7 +35714,7 @@
     "type": "Thrown",
     "price": 4051,
     "weight": 1.25,
-    "tier": 7.11823,
+    "tier": 7.118234,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
