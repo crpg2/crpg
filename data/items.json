@@ -9494,9 +9494,9 @@
     "name": "Horseman Javelin",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 3403,
+    "price": 4733,
     "weight": 1.11,
-    "tier": 6.43260336,
+    "tier": 7.78345251,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9515,6 +9515,7 @@
           "Consumable",
           "UnloadWhenSheathed",
           "AutoReload",
+          "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 31,
@@ -9536,7 +9537,8 @@
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
-          "WideGrip"
+          "WideGrip",
+          "CanDismount"
         ],
         "thrustDamage": 7,
         "thrustDamageType": "Pierce",
@@ -9552,9 +9554,9 @@
     "name": "Jereed",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 10478,
+    "price": 7414,
     "weight": 1.2,
-    "tier": 12.1264839,
+    "tier": 10.0218868,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -9573,7 +9575,6 @@
           "Consumable",
           "UnloadWhenSheathed",
           "AutoReload",
-          "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 34,
@@ -9595,8 +9596,7 @@
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
-          "WideGrip",
-          "CanDismount"
+          "WideGrip"
         ],
         "thrustDamage": 7,
         "thrustDamageType": "Pierce",
@@ -10230,9 +10230,9 @@
     "name": "Jagged Throwing Spear",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 5162,
+    "price": 1935,
     "weight": 2.26,
-    "tier": 8.178286,
+    "tier": 4.583478,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10251,9 +10251,10 @@
           "Consumable",
           "UnloadWhenSheathed",
           "AutoReload",
+          "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 54,
+        "thrustDamage": 46,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 83,
         "swingDamage": 0,
@@ -10272,9 +10273,10 @@
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
-          "WideGrip"
+          "WideGrip",
+          "CanDismount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 83,
         "swingDamage": 0,
@@ -10288,9 +10290,9 @@
     "name": "Triangular Throwing Spear",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 7083,
+    "price": 4548,
     "weight": 2.59,
-    "tier": 9.770434,
+    "tier": 7.60879755,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -10309,9 +10311,10 @@
           "Consumable",
           "UnloadWhenSheathed",
           "AutoReload",
+          "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 57,
+        "thrustDamage": 52,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -10330,9 +10333,10 @@
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
-          "WideGrip"
+          "WideGrip",
+          "CanDismount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -12718,9 +12722,9 @@
     "name": "Harpoon",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 7414,
+    "price": 2608,
     "weight": 1.35,
-    "tier": 10.0218868,
+    "tier": 5.49582338,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -12741,7 +12745,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 30,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -12762,7 +12766,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 6,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -15219,9 +15223,9 @@
     "name": "Pilum",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 6085,
+    "price": 2790,
     "weight": 2.53,
-    "tier": 8.974642,
+    "tier": 5.720597,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -15240,9 +15244,10 @@
           "Consumable",
           "UnloadWhenSheathed",
           "AutoReload",
+          "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 56,
+        "thrustDamage": 49,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -15261,9 +15266,10 @@
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
-          "WideGrip"
+          "WideGrip",
+          "CanDismount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -22857,9 +22863,9 @@
     "name": "Woodland Javelin",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 6503,
+    "price": 2238,
     "weight": 1.08,
-    "tier": 9.315316,
+    "tier": 5.01003647,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22880,7 +22886,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 33,
+        "thrustDamage": 29,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 0,
@@ -22901,7 +22907,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 0,
@@ -22911,13 +22917,13 @@
     ]
   },
   {
-    "id": "crpg_northern_javelin_3_t4",
+    "id": "crpg_northern_javelin_3_t4v2",
     "name": "Broad Blade Javelin",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 7414,
+    "price": 2993,
     "weight": 1.11,
-    "tier": 10.0218868,
+    "tier": 5.964045,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22939,7 +22945,7 @@
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 34,
-        "thrustDamageType": "Pierce",
+        "thrustDamageType": "Cut",
         "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
@@ -22960,7 +22966,7 @@
           "WideGrip"
         ],
         "thrustDamage": 8,
-        "thrustDamageType": "Pierce",
+        "thrustDamageType": "Cut",
         "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
@@ -35006,9 +35012,9 @@
     "name": "Lowland Javelin",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 7414,
+    "price": 679,
     "weight": 1.2,
-    "tier": 10.0218868,
+    "tier": 2.290671,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -35029,7 +35035,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -35050,7 +35056,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 5,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -35064,9 +35070,9 @@
     "name": "Hooked Javelin",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 7414,
+    "price": 1163,
     "weight": 1.41,
-    "tier": 10.0218868,
+    "tier": 3.31433725,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -35087,7 +35093,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -35108,7 +35114,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 5,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
