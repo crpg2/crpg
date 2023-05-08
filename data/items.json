@@ -22564,9 +22564,9 @@
     "name": "Northlander Broad Axe",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 10162,
+    "price": 12538,
     "weight": 1.44,
-    "tier": 8.36027,
+    "tier": 9.405608,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -22591,7 +22591,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 97,
-        "swingDamage": 36,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
         "swingSpeed": 92
       }
