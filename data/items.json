@@ -692,9 +692,9 @@
     "name": "Chainbreaker",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 10901,
+    "price": 12908,
     "weight": 1.44,
-    "tier": 8.697207,
+    "tier": 9.559271,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -719,7 +719,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 96,
-        "swingDamage": 45,
+        "swingDamage": 46,
         "swingDamageType": "Cut",
         "swingSpeed": 82
       }
