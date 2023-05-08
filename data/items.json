@@ -13002,9 +13002,9 @@
     "name": "Greataxe",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 9960,
+    "price": 11925,
     "weight": 1.41,
-    "tier": 8.26612,
+    "tier": 9.146273,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -13029,7 +13029,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 97,
-        "swingDamage": 42,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
         "swingSpeed": 90
       }
