@@ -616,9 +616,9 @@
     "name": "Short Handled Bardiche",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11155,
+    "price": 13558,
     "weight": 2.64,
-    "tier": 8.810417,
+    "tier": 9.823734,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -643,7 +643,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 89,
-        "swingDamage": 39,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
         "swingSpeed": 89
       }
