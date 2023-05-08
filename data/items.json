@@ -5862,9 +5862,9 @@
     "name": "Bec De Corbin",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 14251,
+    "price": 13144,
     "weight": 2.11,
-    "tier": 10.099164,
+    "tier": 9.65598,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5886,7 +5886,7 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 29,
@@ -28257,9 +28257,9 @@
     "name": "Long Thamaskene Tipped Spear",
     "culture": "Aserai",
     "type": "Polearm",
-    "price": 15562,
-    "weight": 2.03,
-    "tier": 10.6024494,
+    "price": 13342,
+    "weight": 2.07,
+    "tier": 9.736737,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -28271,7 +28271,7 @@
         "stackAmount": 0,
         "length": 195,
         "balance": 0.0,
-        "handling": 63,
+        "handling": 62,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -28282,7 +28282,7 @@
         "thrustSpeed": 82,
         "swingDamage": 14,
         "swingDamageType": "Blunt",
-        "swingSpeed": 21
+        "swingSpeed": 18
       },
       {
         "class": "TwoHandedPolearm",
@@ -28292,7 +28292,7 @@
         "stackAmount": 0,
         "length": 195,
         "balance": 0.0,
-        "handling": 59,
+        "handling": 58,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -28302,10 +28302,10 @@
         ],
         "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 90,
         "swingDamage": 14,
         "swingDamageType": "Blunt",
-        "swingSpeed": 70
+        "swingSpeed": 68
       },
       {
         "class": "TwoHandedPolearm",
@@ -28315,7 +28315,7 @@
         "stackAmount": 0,
         "length": 195,
         "balance": 0.0,
-        "handling": 59,
+        "handling": 58,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -28325,10 +28325,10 @@
         ],
         "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 90,
         "swingDamage": 14,
         "swingDamageType": "Blunt",
-        "swingSpeed": 70
+        "swingSpeed": 68
       }
     ]
   },
@@ -35484,9 +35484,9 @@
     "name": "Tall Tipped War Spear",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 14914,
-    "weight": 1.4,
-    "tier": 10.35623,
+    "price": 13861,
+    "weight": 1.46,
+    "tier": 9.944908,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -35498,7 +35498,7 @@
         "stackAmount": 0,
         "length": 184,
         "balance": 0.0,
-        "handling": 63,
+        "handling": 62,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -35509,7 +35509,7 @@
         "thrustSpeed": 87,
         "swingDamage": 17,
         "swingDamageType": "Blunt",
-        "swingSpeed": 25
+        "swingSpeed": 21
       },
       {
         "class": "TwoHandedPolearm",
@@ -35518,8 +35518,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 184,
-        "balance": 0.07,
-        "handling": 59,
+        "balance": 0.02,
+        "handling": 58,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -35532,7 +35532,7 @@
         "thrustSpeed": 94,
         "swingDamage": 17,
         "swingDamageType": "Blunt",
-        "swingSpeed": 71
+        "swingSpeed": 70
       },
       {
         "class": "TwoHandedPolearm",
@@ -35541,8 +35541,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 184,
-        "balance": 0.07,
-        "handling": 59,
+        "balance": 0.02,
+        "handling": 58,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -35555,7 +35555,7 @@
         "thrustSpeed": 94,
         "swingDamage": 17,
         "swingDamageType": "Blunt",
-        "swingSpeed": 71
+        "swingSpeed": 70
       }
     ]
   },
