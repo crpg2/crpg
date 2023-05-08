@@ -2365,9 +2365,9 @@
     "name": "Avalanche",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 10135,
+    "price": 12305,
     "weight": 1.41,
-    "tier": 8.347772,
+    "tier": 9.30787849,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -2392,7 +2392,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 96,
-        "swingDamage": 39,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
         "swingSpeed": 85
       }
