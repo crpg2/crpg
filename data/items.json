@@ -7998,6 +7998,31 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 82
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 116,
+        "missileSpeed": 82,
+        "stackAmount": 1,
+        "length": 110,
+        "balance": 0.0,
+        "handling": 115,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 12,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 115,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 82
       }
     ]
   },
@@ -8031,6 +8056,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 13,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 121,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 110,
+        "missileSpeed": 83,
+        "stackAmount": 1,
+        "length": 108,
+        "balance": 0.0,
+        "handling": 121,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 13,
@@ -12848,6 +12898,31 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 97
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 110,
+        "missileSpeed": 93,
+        "stackAmount": 1,
+        "length": 111,
+        "balance": 0.0,
+        "handling": 102,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 12,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 102,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 97
       }
     ]
   },
@@ -14045,6 +14120,31 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 86
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 131,
+        "missileSpeed": 101,
+        "stackAmount": 1,
+        "length": 113,
+        "balance": 0.0,
+        "handling": 86,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 12,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 86,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 86
       }
     ]
   },
@@ -14648,6 +14748,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 9,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 119,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 80
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 135,
+        "missileSpeed": 80,
+        "stackAmount": 1,
+        "length": 110,
+        "balance": 0.0,
+        "handling": 119,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 9,
@@ -18940,6 +19065,31 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 82
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 130,
+        "missileSpeed": 86,
+        "stackAmount": 1,
+        "length": 120,
+        "balance": 0.0,
+        "handling": 93,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 11,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 93,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 82
       }
     ]
   },
@@ -19012,6 +19162,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 15,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 100,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 84
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 111,
+        "missileSpeed": 92,
+        "stackAmount": 1,
+        "length": 117,
+        "balance": 0.0,
+        "handling": 100,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 15,
@@ -19355,126 +19530,6 @@
         "swingDamage": 28,
         "swingDamageType": "Blunt",
         "swingSpeed": 81
-      }
-    ]
-  },
-  {
-    "id": "crpg_manual_lowland_yew_bow",
-    "name": "Experminetal Manual Yew Bow",
-    "culture": "Vlandia",
-    "type": "Bow",
-    "price": 7097,
-    "weight": 0.55,
-    "tier": 6.812538,
-    "requirement": 0,
-    "flags": [
-      "ForceAttachOffHandPrimaryItemBone"
-    ],
-    "weapons": [
-      {
-        "class": "Bow",
-        "itemUsage": "long_bow",
-        "accuracy": 109,
-        "missileSpeed": 94,
-        "stackAmount": 1,
-        "length": 117,
-        "balance": 0.0,
-        "handling": 100,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "NotUsableWithOneHand",
-          "HasString",
-          "StringHeldByHand",
-          "UnloadWhenSheathed",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 14,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 96
-      }
-    ]
-  },
-  {
-    "id": "crpg_manual_noble_bow",
-    "name": "Experimental Manual Noble Bow",
-    "culture": "Neutral",
-    "type": "Bow",
-    "price": 13703,
-    "weight": 0.4,
-    "tier": 9.881937,
-    "requirement": 0,
-    "flags": [
-      "ForceAttachOffHandPrimaryItemBone"
-    ],
-    "weapons": [
-      {
-        "class": "Bow",
-        "itemUsage": "bow",
-        "accuracy": 95,
-        "missileSpeed": 85,
-        "stackAmount": 1,
-        "length": 116,
-        "balance": 0.0,
-        "handling": 100,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "NotUsableWithOneHand",
-          "HasString",
-          "StringHeldByHand",
-          "UnloadWhenSheathed",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 14,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 98
-      }
-    ]
-  },
-  {
-    "id": "crpg_manual_noble_long_bow",
-    "name": "Experimental Manual Noble Long Bow",
-    "culture": "Neutral",
-    "type": "Bow",
-    "price": 14947,
-    "weight": 0.8,
-    "tier": 10.3691053,
-    "requirement": 0,
-    "flags": [
-      "ForceAttachOffHandPrimaryItemBone"
-    ],
-    "weapons": [
-      {
-        "class": "Bow",
-        "itemUsage": "long_bow",
-        "accuracy": 97,
-        "missileSpeed": 100,
-        "stackAmount": 1,
-        "length": 118,
-        "balance": 0.0,
-        "handling": 86,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "NotUsableWithOneHand",
-          "HasString",
-          "StringHeldByHand",
-          "UnloadWhenSheathed",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 18,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 88
       }
     ]
   },
@@ -21555,6 +21610,31 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 125
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 98,
+        "missileSpeed": 79,
+        "stackAmount": 1,
+        "length": 108,
+        "balance": 0.0,
+        "handling": 107,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 9,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 107,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 125
       }
     ]
   },
@@ -22010,6 +22090,31 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 98
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 95,
+        "missileSpeed": 85,
+        "stackAmount": 1,
+        "length": 116,
+        "balance": 0.0,
+        "handling": 100,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 14,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 100,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 98
       }
     ]
   },
@@ -22043,6 +22148,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 18,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 86,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 97,
+        "missileSpeed": 100,
+        "stackAmount": 1,
+        "length": 118,
+        "balance": 0.0,
+        "handling": 86,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 18,
@@ -22144,6 +22274,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 15,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 91,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 80
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 110,
+        "missileSpeed": 86,
+        "stackAmount": 1,
+        "length": 114,
+        "balance": 0.0,
+        "handling": 91,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 15,
@@ -22402,6 +22557,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 13,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 106,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 121,
+        "missileSpeed": 88,
+        "stackAmount": 1,
+        "length": 108,
+        "balance": 0.0,
+        "handling": 106,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 13,
@@ -29159,6 +29339,31 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 81
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 128,
+        "missileSpeed": 81,
+        "stackAmount": 1,
+        "length": 110,
+        "balance": 0.0,
+        "handling": 118,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 10,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 118,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
       }
     ]
   },
@@ -29321,6 +29526,31 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 120
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 95,
+        "missileSpeed": 81,
+        "stackAmount": 1,
+        "length": 106,
+        "balance": 0.0,
+        "handling": 106,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 10,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 106,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 120
       }
     ]
   },
@@ -29461,6 +29691,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 12,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 102,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 105
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 98,
+        "missileSpeed": 83,
+        "stackAmount": 1,
+        "length": 107,
+        "balance": 0.0,
+        "handling": 102,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 12,
@@ -29767,6 +30022,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 19,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 76,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 86
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 96,
+        "missileSpeed": 103,
+        "stackAmount": 1,
+        "length": 116,
+        "balance": 0.0,
+        "handling": 76,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 19,
@@ -32265,6 +32545,31 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 106
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 131,
+        "missileSpeed": 95,
+        "stackAmount": 1,
+        "length": 106,
+        "balance": 0.0,
+        "handling": 115,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 7,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 115,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 106
       }
     ]
   },
@@ -32298,6 +32603,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 11,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 95,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 92
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 115,
+        "missileSpeed": 97,
+        "stackAmount": 1,
+        "length": 120,
+        "balance": 0.0,
+        "handling": 95,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 11,
@@ -32419,6 +32749,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 13,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 92,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "bow",
+        "accuracy": 120,
+        "missileSpeed": 85,
+        "stackAmount": 1,
+        "length": 115,
+        "balance": 0.0,
+        "handling": 92,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 13,
@@ -36231,6 +36586,31 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 89
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 99,
+        "missileSpeed": 98,
+        "stackAmount": 1,
+        "length": 118,
+        "balance": 0.0,
+        "handling": 88,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 16,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 88,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 89
       }
     ]
   },
@@ -36264,6 +36644,31 @@
           "StringHeldByHand",
           "UnloadWhenSheathed",
           "AutoReload",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 16,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 101,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 91
+      },
+      {
+        "class": "Bow",
+        "itemUsage": "long_bow",
+        "accuracy": 101,
+        "missileSpeed": 96,
+        "stackAmount": 1,
+        "length": 115,
+        "balance": 0.0,
+        "handling": 101,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
         "thrustDamage": 16,
