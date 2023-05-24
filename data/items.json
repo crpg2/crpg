@@ -10776,10 +10776,10 @@
     "name": "Fur Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 82,
-    "weight": 0.1396242,
+    "price": 81,
+    "weight": 0.2896843,
     "heirloomLevel": 1,
-    "tier": 2.40911865,
+    "tier": 2.37812185,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10799,10 +10799,10 @@
     "name": "Fur Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 89,
-    "weight": 0.1396242,
+    "price": 84,
+    "weight": 0.4861997,
     "heirloomLevel": 2,
-    "tier": 2.5454917,
+    "tier": 2.45170546,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -10822,10 +10822,10 @@
     "name": "Fur Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 96,
-    "weight": 0.1396242,
+    "price": 86,
+    "weight": 0.7265285,
     "heirloomLevel": 3,
-    "tier": 2.68186426,
+    "tier": 2.48747158,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11672,10 +11672,10 @@
     "name": "Highborn Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 68,
-    "weight": 0.1005621,
+    "price": 67,
+    "weight": 0.2343422,
     "heirloomLevel": 1,
-    "tier": 2.03762531,
+    "tier": 2.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11695,10 +11695,10 @@
     "name": "Highborn Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 73,
-    "weight": 0.1005621,
+    "price": 70,
+    "weight": 0.4157146,
     "heirloomLevel": 2,
-    "tier": 2.176735,
+    "tier": 2.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -11718,10 +11718,10 @@
     "name": "Highborn Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 78,
-    "weight": 0.1005621,
+    "price": 72,
+    "weight": 0.6416805,
     "heirloomLevel": 3,
-    "tier": 2.315844,
+    "tier": 2.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13106,10 +13106,10 @@
     "name": "Scaled Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 3408,
-    "weight": 1.955422,
+    "price": 3132,
+    "weight": 2.380153,
     "heirloomLevel": 1,
-    "tier": 8.932759,
+    "tier": 8.727426,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -13127,10 +13127,10 @@
     "name": "Scaled Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 3446,
-    "weight": 1.955422,
+    "price": 2849,
+    "weight": 2.84157,
     "heirloomLevel": 2,
-    "tier": 8.960286,
+    "tier": 8.502814,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -13148,10 +13148,10 @@
     "name": "Scaled Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 3485,
-    "weight": 1.955422,
+    "price": 2536,
+    "weight": 3.338957,
     "heirloomLevel": 3,
-    "tier": 8.987813,
+    "tier": 8.23267651,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -13360,10 +13360,10 @@
     "name": "Woodland Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 82,
-    "weight": 0.1396242,
+    "price": 81,
+    "weight": 0.2896843,
     "heirloomLevel": 1,
-    "tier": 2.40911865,
+    "tier": 2.37812185,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13383,10 +13383,10 @@
     "name": "Woodland Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 89,
-    "weight": 0.1396242,
+    "price": 84,
+    "weight": 0.4861997,
     "heirloomLevel": 2,
-    "tier": 2.5454917,
+    "tier": 2.45170546,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13406,10 +13406,10 @@
     "name": "Woodland Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 96,
-    "weight": 0.1396242,
+    "price": 86,
+    "weight": 0.7265285,
     "heirloomLevel": 3,
-    "tier": 2.68186426,
+    "tier": 2.48747158,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15508,10 +15508,10 @@
     "name": "Belted Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 68,
-    "weight": 0.1005621,
+    "price": 67,
+    "weight": 0.2343422,
     "heirloomLevel": 1,
-    "tier": 2.03762531,
+    "tier": 2.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15531,10 +15531,10 @@
     "name": "Belted Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 73,
-    "weight": 0.1005621,
+    "price": 70,
+    "weight": 0.4157146,
     "heirloomLevel": 2,
-    "tier": 2.176735,
+    "tier": 2.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15554,10 +15554,10 @@
     "name": "Belted Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 78,
-    "weight": 0.1005621,
+    "price": 72,
+    "weight": 0.6416805,
     "heirloomLevel": 3,
-    "tier": 2.315844,
+    "tier": 2.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -25891,10 +25891,10 @@
     "name": "Simple Short Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 9627,
+    "price": 5003,
     "weight": 0.3,
     "heirloomLevel": 1,
-    "tier": 8.109076,
+    "tier": 5.55344152,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -25903,7 +25903,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 117,
+        "accuracy": 116,
         "missileSpeed": 82,
         "stackAmount": 1,
         "length": 110,
@@ -25918,7 +25918,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 116,
         "swingDamage": 0,
@@ -25928,7 +25928,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 117,
+        "accuracy": 116,
         "missileSpeed": 82,
         "stackAmount": 1,
         "length": 110,
@@ -25944,7 +25944,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 116,
         "swingDamage": 0,
@@ -25958,10 +25958,10 @@
     "name": "Simple Short Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 14467,
+    "price": 7083,
     "weight": 0.3,
     "heirloomLevel": 2,
-    "tier": 10.1836977,
+    "tier": 6.804708,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -25970,12 +25970,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 118,
+        "accuracy": 117,
         "missileSpeed": 83,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 117,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -25985,9 +25985,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 117,
+        "thrustSpeed": 116,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 84
@@ -25995,12 +25995,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 118,
+        "accuracy": 117,
         "missileSpeed": 83,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 117,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -26011,9 +26011,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 117,
+        "thrustSpeed": 116,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 84
@@ -26025,10 +26025,10 @@
     "name": "Simple Short Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 23009,
+    "price": 9187,
     "weight": 0.3,
     "heirloomLevel": 3,
-    "tier": 13.1284046,
+    "tier": 7.89697027,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -26037,12 +26037,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 119,
-        "missileSpeed": 84,
+        "accuracy": 117,
+        "missileSpeed": 83,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 118,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -26052,22 +26052,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 118,
+        "thrustSpeed": 116,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 119,
-        "missileSpeed": 84,
+        "accuracy": 117,
+        "missileSpeed": 83,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 118,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -26078,12 +26078,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 118,
+        "thrustSpeed": 116,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 84
       }
     ]
   },
@@ -26159,10 +26159,10 @@
     "name": "Steppe Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 18897,
+    "price": 10125,
     "weight": 0.35,
     "heirloomLevel": 1,
-    "tier": 11.79443,
+    "tier": 8.343509,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -26171,7 +26171,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 111,
+        "accuracy": 110,
         "missileSpeed": 83,
         "stackAmount": 1,
         "length": 108,
@@ -26186,7 +26186,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 122,
         "swingDamage": 0,
@@ -26196,7 +26196,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 111,
+        "accuracy": 110,
         "missileSpeed": 83,
         "stackAmount": 1,
         "length": 108,
@@ -26212,7 +26212,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 122,
         "swingDamage": 0,
@@ -26226,10 +26226,10 @@
     "name": "Steppe Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 28894,
+    "price": 14752,
     "weight": 0.35,
     "heirloomLevel": 2,
-    "tier": 14.8450985,
+    "tier": 10.2941389,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -26238,12 +26238,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 112,
+        "accuracy": 111,
         "missileSpeed": 84,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 123,
+        "handling": 122,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -26253,9 +26253,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 123,
+        "thrustSpeed": 122,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
@@ -26263,12 +26263,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 112,
+        "accuracy": 111,
         "missileSpeed": 84,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 123,
+        "handling": 122,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -26279,9 +26279,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 123,
+        "thrustSpeed": 122,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
@@ -26293,10 +26293,10 @@
     "name": "Steppe Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 46168,
+    "price": 19430,
     "weight": 0.35,
     "heirloomLevel": 3,
-    "tier": 19.05943,
+    "tier": 11.9751768,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -26305,12 +26305,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 113,
-        "missileSpeed": 85,
+        "accuracy": 111,
+        "missileSpeed": 84,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 124,
+        "handling": 122,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -26320,22 +26320,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 124,
+        "thrustSpeed": 122,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 85
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 113,
-        "missileSpeed": 85,
+        "accuracy": 111,
+        "missileSpeed": 84,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 124,
+        "handling": 122,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -26346,12 +26346,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 124,
+        "thrustSpeed": 122,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 85
       }
     ]
   },
@@ -30633,10 +30633,10 @@
     "name": "Decorated Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1562,
-    "weight": 1.219389,
+    "price": 1449,
+    "weight": 1.568189,
     "heirloomLevel": 1,
-    "tier": 7.18612766,
+    "tier": 7.035534,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -30654,10 +30654,10 @@
     "name": "Decorated Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1614,
-    "weight": 1.219389,
+    "price": 1358,
+    "weight": 1.955422,
     "heirloomLevel": 2,
-    "tier": 7.25388432,
+    "tier": 6.90523243,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -30675,10 +30675,10 @@
     "name": "Decorated Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1668,
-    "weight": 1.219389,
+    "price": 1239,
+    "weight": 2.380153,
     "heirloomLevel": 3,
-    "tier": 7.32164,
+    "tier": 6.72742558,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -35804,10 +35804,10 @@
     "name": "Leather Riding Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 82,
-    "weight": 0.1396242,
+    "price": 81,
+    "weight": 0.2896843,
     "heirloomLevel": 1,
-    "tier": 2.40911865,
+    "tier": 2.37812185,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -35827,10 +35827,10 @@
     "name": "Leather Riding Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 89,
-    "weight": 0.1396242,
+    "price": 84,
+    "weight": 0.4861997,
     "heirloomLevel": 2,
-    "tier": 2.5454917,
+    "tier": 2.45170546,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -35850,10 +35850,10 @@
     "name": "Leather Riding Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 96,
-    "weight": 0.1396242,
+    "price": 86,
+    "weight": 0.7265285,
     "heirloomLevel": 3,
-    "tier": 2.68186426,
+    "tier": 2.48747158,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -38092,10 +38092,10 @@
     "name": "Horseman Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 68,
-    "weight": 0.1005621,
+    "price": 67,
+    "weight": 0.2343422,
     "heirloomLevel": 1,
-    "tier": 2.03762531,
+    "tier": 2.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -38115,10 +38115,10 @@
     "name": "Horseman Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 73,
-    "weight": 0.1005621,
+    "price": 70,
+    "weight": 0.4157146,
     "heirloomLevel": 2,
-    "tier": 2.176735,
+    "tier": 2.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -38138,10 +38138,10 @@
     "name": "Horseman Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 78,
-    "weight": 0.1005621,
+    "price": 72,
+    "weight": 0.6416805,
     "heirloomLevel": 3,
-    "tier": 2.315844,
+    "tier": 2.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -43753,9 +43753,9 @@
     "culture": "Empire",
     "type": "LegArmor",
     "price": 59,
-    "weight": 0.06729711,
+    "weight": 0.1842743,
     "heirloomLevel": 1,
-    "tier": 1.66339636,
+    "tier": 1.644294,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -43775,10 +43775,10 @@
     "name": "Fine Town Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 62,
-    "weight": 0.06729711,
+    "price": 61,
+    "weight": 0.3501776,
     "heirloomLevel": 2,
-    "tier": 1.804852,
+    "tier": 1.73984766,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -43798,10 +43798,10 @@
     "name": "Fine Town Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 65,
-    "weight": 0.06729711,
+    "price": 62,
+    "weight": 0.5615475,
     "heirloomLevel": 3,
-    "tier": 1.94630766,
+    "tier": 1.80141211,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -44425,9 +44425,9 @@
     "culture": "Empire",
     "type": "LegArmor",
     "price": 59,
-    "weight": 0.06729711,
+    "weight": 0.1842743,
     "heirloomLevel": 1,
-    "tier": 1.66339636,
+    "tier": 1.644294,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -44447,10 +44447,10 @@
     "name": "Folded Town Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 62,
-    "weight": 0.06729711,
+    "price": 61,
+    "weight": 0.3501776,
     "heirloomLevel": 2,
-    "tier": 1.804852,
+    "tier": 1.73984766,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -44470,10 +44470,10 @@
     "name": "Folded Town Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 65,
-    "weight": 0.06729711,
+    "price": 62,
+    "weight": 0.5615475,
     "heirloomLevel": 3,
-    "tier": 1.94630766,
+    "tier": 1.80141211,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -47653,10 +47653,10 @@
     "name": "Longbow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 3246,
+    "price": 1747,
     "weight": 0.45,
     "heirloomLevel": 1,
-    "tier": 4.276191,
+    "tier": 2.87951517,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -47665,7 +47665,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 111,
+        "accuracy": 110,
         "missileSpeed": 93,
         "stackAmount": 1,
         "length": 111,
@@ -47680,7 +47680,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 103,
         "swingDamage": 0,
@@ -47690,7 +47690,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 111,
+        "accuracy": 110,
         "missileSpeed": 93,
         "stackAmount": 1,
         "length": 111,
@@ -47706,7 +47706,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 103,
         "swingDamage": 0,
@@ -47720,10 +47720,10 @@
     "name": "Longbow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 4246,
+    "price": 2099,
     "weight": 0.45,
     "heirloomLevel": 2,
-    "tier": 5.03510761,
+    "tier": 3.246818,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -47732,12 +47732,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 112,
+        "accuracy": 111,
         "missileSpeed": 94,
         "stackAmount": 1,
         "length": 111,
         "balance": 0.0,
-        "handling": 104,
+        "handling": 103,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -47747,9 +47747,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 104,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 99
@@ -47757,12 +47757,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 112,
+        "accuracy": 111,
         "missileSpeed": 94,
         "stackAmount": 1,
         "length": 111,
         "balance": 0.0,
-        "handling": 104,
+        "handling": 103,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -47773,9 +47773,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 104,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 99
@@ -47787,10 +47787,10 @@
     "name": "Longbow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 5992,
+    "price": 2374,
     "weight": 0.45,
     "heirloomLevel": 3,
-    "tier": 6.17469168,
+    "tier": 3.51406717,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -47799,12 +47799,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 113,
-        "missileSpeed": 95,
+        "accuracy": 111,
+        "missileSpeed": 94,
         "stackAmount": 1,
         "length": 111,
         "balance": 0.0,
-        "handling": 105,
+        "handling": 103,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -47814,22 +47814,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 105,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 100
+        "swingSpeed": 99
       },
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 113,
-        "missileSpeed": 95,
+        "accuracy": 111,
+        "missileSpeed": 94,
         "stackAmount": 1,
         "length": 111,
         "balance": 0.0,
-        "handling": 105,
+        "handling": 103,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -47840,12 +47840,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 105,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 100
+        "swingSpeed": 99
       }
     ]
   },
@@ -54921,10 +54921,10 @@
     "name": "Forester Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 68,
-    "weight": 0.1005621,
+    "price": 67,
+    "weight": 0.2343422,
     "heirloomLevel": 1,
-    "tier": 2.03762531,
+    "tier": 2.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -54944,10 +54944,10 @@
     "name": "Forester Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 73,
-    "weight": 0.1005621,
+    "price": 70,
+    "weight": 0.4157146,
     "heirloomLevel": 2,
-    "tier": 2.176735,
+    "tier": 2.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -54967,10 +54967,10 @@
     "name": "Forester Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 78,
-    "weight": 0.1005621,
+    "price": 72,
+    "weight": 0.6416805,
     "heirloomLevel": 3,
-    "tier": 2.315844,
+    "tier": 2.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -56201,10 +56201,10 @@
     "name": "Woodland Leg Wrappings",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 130,
-    "weight": 0.2343422,
+    "price": 126,
+    "weight": 0.4157146,
     "heirloomLevel": 1,
-    "tier": 3.14266682,
+    "tier": 3.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -56224,10 +56224,10 @@
     "name": "Woodland Leg Wrappings",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 142,
-    "weight": 0.2343422,
+    "price": 131,
+    "weight": 0.6416805,
     "heirloomLevel": 2,
-    "tier": 3.27248478,
+    "tier": 3.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -56247,10 +56247,10 @@
     "name": "Woodland Leg Wrappings",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 156,
-    "weight": 0.2343422,
+    "price": 131,
+    "weight": 0.9101154,
     "heirloomLevel": 3,
-    "tier": 3.40230274,
+    "tier": 3.1547308,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -56481,10 +56481,10 @@
     "name": "Ranger Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 2881,
+    "price": 1567,
     "weight": 0.5,
     "heirloomLevel": 1,
-    "tier": 3.97049212,
+    "tier": 2.67702484,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -56493,7 +56493,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 132,
+        "accuracy": 131,
         "missileSpeed": 101,
         "stackAmount": 1,
         "length": 113,
@@ -56508,7 +56508,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 0,
@@ -56518,7 +56518,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 132,
+        "accuracy": 131,
         "missileSpeed": 101,
         "stackAmount": 1,
         "length": 113,
@@ -56534,7 +56534,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 0,
@@ -56548,10 +56548,10 @@
     "name": "Ranger Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 3716,
+    "price": 1840,
     "weight": 0.5,
     "heirloomLevel": 2,
-    "tier": 4.645078,
+    "tier": 2.97922182,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -56560,12 +56560,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 133,
+        "accuracy": 132,
         "missileSpeed": 102,
         "stackAmount": 1,
         "length": 113,
         "balance": 0.0,
-        "handling": 88,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -56575,9 +56575,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 88
@@ -56585,12 +56585,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 133,
+        "accuracy": 132,
         "missileSpeed": 102,
         "stackAmount": 1,
         "length": 113,
         "balance": 0.0,
-        "handling": 88,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -56601,9 +56601,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 88
@@ -56615,10 +56615,10 @@
     "name": "Ranger Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 5185,
+    "price": 2044,
     "weight": 0.5,
     "heirloomLevel": 3,
-    "tier": 5.67187929,
+    "tier": 3.19199729,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -56627,12 +56627,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 134,
-        "missileSpeed": 103,
+        "accuracy": 132,
+        "missileSpeed": 102,
         "stackAmount": 1,
         "length": 113,
         "balance": 0.0,
-        "handling": 89,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -56642,22 +56642,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 89
+        "swingSpeed": 88
       },
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 134,
-        "missileSpeed": 103,
+        "accuracy": 132,
+        "missileSpeed": 102,
         "stackAmount": 1,
         "length": 113,
         "balance": 0.0,
-        "handling": 89,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -56668,12 +56668,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 89
+        "swingSpeed": 88
       }
     ]
   },
@@ -59438,10 +59438,10 @@
     "name": "Hunting Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 2191,
+    "price": 1015,
     "weight": 0.2,
     "heirloomLevel": 1,
-    "tier": 3.338348,
+    "tier": 1.97997022,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -59450,7 +59450,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 136,
+        "accuracy": 135,
         "missileSpeed": 80,
         "stackAmount": 1,
         "length": 110,
@@ -59465,7 +59465,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 120,
         "swingDamage": 0,
@@ -59475,7 +59475,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 136,
+        "accuracy": 135,
         "missileSpeed": 80,
         "stackAmount": 1,
         "length": 110,
@@ -59491,7 +59491,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 120,
         "swingDamage": 0,
@@ -59505,10 +59505,10 @@
     "name": "Hunting Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 3245,
+    "price": 1373,
     "weight": 0.2,
     "heirloomLevel": 2,
-    "tier": 4.27532673,
+    "tier": 2.44756746,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -59517,12 +59517,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 137,
+        "accuracy": 136,
         "missileSpeed": 81,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 121,
+        "handling": 120,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -59532,9 +59532,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 121,
+        "thrustSpeed": 120,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 82
@@ -59542,12 +59542,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 137,
+        "accuracy": 136,
         "missileSpeed": 81,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 121,
+        "handling": 120,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -59558,9 +59558,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 121,
+        "thrustSpeed": 120,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 82
@@ -59572,10 +59572,10 @@
     "name": "Hunting Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 5289,
+    "price": 1787,
     "weight": 0.2,
     "heirloomLevel": 3,
-    "tier": 5.738406,
+    "tier": 2.92272186,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -59584,12 +59584,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 138,
-        "missileSpeed": 82,
+        "accuracy": 136,
+        "missileSpeed": 81,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 122,
+        "handling": 120,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -59599,22 +59599,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 122,
+        "thrustSpeed": 120,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 82
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 138,
-        "missileSpeed": 82,
+        "accuracy": 136,
+        "missileSpeed": 81,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 122,
+        "handling": 120,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -59625,12 +59625,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 122,
+        "thrustSpeed": 120,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 82
       }
     ]
   },
@@ -67931,10 +67931,10 @@
     "name": "Curved Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 68,
-    "weight": 0.1005621,
+    "price": 67,
+    "weight": 0.2343422,
     "heirloomLevel": 1,
-    "tier": 2.03762531,
+    "tier": 2.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -67954,10 +67954,10 @@
     "name": "Curved Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 73,
-    "weight": 0.1005621,
+    "price": 70,
+    "weight": 0.4157146,
     "heirloomLevel": 2,
-    "tier": 2.176735,
+    "tier": 2.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -67977,10 +67977,10 @@
     "name": "Curved Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 78,
-    "weight": 0.1005621,
+    "price": 72,
+    "weight": 0.6416805,
     "heirloomLevel": 3,
-    "tier": 2.315844,
+    "tier": 2.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -70820,9 +70820,9 @@
     "culture": "Neutral",
     "type": "LegArmor",
     "price": 50,
-    "weight": 0.005549942,
+    "weight": 0.06729711,
     "heirloomLevel": 1,
-    "tier": 0.5277988,
+    "tier": 0.5219408,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -70843,9 +70843,9 @@
     "culture": "Neutral",
     "type": "LegArmor",
     "price": 50,
-    "weight": 0.005549942,
+    "weight": 0.1842743,
     "heirloomLevel": 2,
-    "tier": 0.6736479,
+    "tier": 0.644294,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -70866,9 +70866,9 @@
     "culture": "Neutral",
     "type": "LegArmor",
     "price": 50,
-    "weight": 0.005549942,
+    "weight": 0.3501776,
     "heirloomLevel": 3,
-    "tier": 0.8194971,
+    "tier": 0.73984766,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -70909,10 +70909,10 @@
     "name": "Lamellar Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1338,
-    "weight": 1.111847,
+    "price": 1244,
+    "weight": 1.447602,
     "heirloomLevel": 1,
-    "tier": 6.87628174,
+    "tier": 6.73505926,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -70930,10 +70930,10 @@
     "name": "Lamellar Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1389,
-    "weight": 1.111847,
+    "price": 1172,
+    "weight": 1.822134,
     "heirloomLevel": 2,
-    "tier": 6.95032024,
+    "tier": 6.62062645,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -70951,10 +70951,10 @@
     "name": "Lamellar Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1441,
-    "weight": 1.111847,
+    "price": 1076,
+    "weight": 2.234461,
     "heirloomLevel": 3,
-    "tier": 7.02435875,
+    "tier": 6.45861053,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -71952,9 +71952,9 @@
     "culture": "Khuzait",
     "type": "LegArmor",
     "price": 59,
-    "weight": 0.06729711,
+    "weight": 0.1842743,
     "heirloomLevel": 1,
-    "tier": 1.66339636,
+    "tier": 1.644294,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -71974,10 +71974,10 @@
     "name": "Fur Rimmed Curved Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 62,
-    "weight": 0.06729711,
+    "price": 61,
+    "weight": 0.3501776,
     "heirloomLevel": 2,
-    "tier": 1.804852,
+    "tier": 1.73984766,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -71997,10 +71997,10 @@
     "name": "Fur Rimmed Curved Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 65,
-    "weight": 0.06729711,
+    "price": 62,
+    "weight": 0.5615475,
     "heirloomLevel": 3,
-    "tier": 1.94630766,
+    "tier": 1.80141211,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -72291,10 +72291,10 @@
     "name": "Leather Cavalier Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 82,
-    "weight": 0.1396242,
+    "price": 81,
+    "weight": 0.2896843,
     "heirloomLevel": 1,
-    "tier": 2.40911865,
+    "tier": 2.37812185,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -72314,10 +72314,10 @@
     "name": "Leather Cavalier Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 89,
-    "weight": 0.1396242,
+    "price": 84,
+    "weight": 0.4861997,
     "heirloomLevel": 2,
-    "tier": 2.5454917,
+    "tier": 2.45170546,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -72337,10 +72337,10 @@
     "name": "Leather Cavalier Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 96,
-    "weight": 0.1396242,
+    "price": 86,
+    "weight": 0.7265285,
     "heirloomLevel": 3,
-    "tier": 2.68186426,
+    "tier": 2.48747158,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -72999,10 +72999,10 @@
     "name": "Leather Shoes",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 54,
-    "weight": 0.04009653,
+    "price": 53,
+    "weight": 0.1396242,
     "heirloomLevel": 1,
-    "tier": 1.28676939,
+    "tier": 1.27274585,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -73023,9 +73023,9 @@
     "culture": "Neutral",
     "type": "LegArmor",
     "price": 55,
-    "weight": 0.04009653,
+    "weight": 0.2896843,
     "heirloomLevel": 2,
-    "tier": 1.43015432,
+    "tier": 1.37812185,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -73045,10 +73045,10 @@
     "name": "Leather Shoes",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 57,
-    "weight": 0.04009653,
+    "price": 56,
+    "weight": 0.4861997,
     "heirloomLevel": 3,
-    "tier": 1.57353878,
+    "tier": 1.45170546,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -79280,10 +79280,10 @@
     "name": "Yonsun Yumi",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 4278,
+    "price": 2175,
     "weight": 0.5,
     "heirloomLevel": 1,
-    "tier": 5.0582304,
+    "tier": 3.32283354,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -79292,7 +79292,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 131,
+        "accuracy": 130,
         "missileSpeed": 86,
         "stackAmount": 1,
         "length": 120,
@@ -79307,7 +79307,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -79317,7 +79317,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 131,
+        "accuracy": 130,
         "missileSpeed": 86,
         "stackAmount": 1,
         "length": 120,
@@ -79333,7 +79333,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -79347,10 +79347,10 @@
     "name": "Yonsun Yumi",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 6172,
+    "price": 2887,
     "weight": 0.5,
     "heirloomLevel": 2,
-    "tier": 6.28232241,
+    "tier": 3.97570944,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -79359,12 +79359,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 132,
+        "accuracy": 131,
         "missileSpeed": 87,
         "stackAmount": 1,
         "length": 120,
         "balance": 0.0,
-        "handling": 95,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -79374,9 +79374,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 84
@@ -79384,12 +79384,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 132,
+        "accuracy": 131,
         "missileSpeed": 87,
         "stackAmount": 1,
         "length": 120,
         "balance": 0.0,
-        "handling": 95,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -79400,9 +79400,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 84
@@ -79414,10 +79414,10 @@
     "name": "Yonsun Yumi",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 9597,
+    "price": 3595,
     "weight": 0.5,
     "heirloomLevel": 3,
-    "tier": 8.09481,
+    "tier": 4.552495,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -79426,12 +79426,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 133,
-        "missileSpeed": 88,
+        "accuracy": 131,
+        "missileSpeed": 87,
         "stackAmount": 1,
         "length": 120,
         "balance": 0.0,
-        "handling": 96,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -79441,22 +79441,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 133,
-        "missileSpeed": 88,
+        "accuracy": 131,
+        "missileSpeed": 87,
         "stackAmount": 1,
         "length": 120,
         "balance": 0.0,
-        "handling": 96,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -79467,12 +79467,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 84
       }
     ]
   },
@@ -79708,10 +79708,10 @@
     "name": "Yew Bow",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 8511,
+    "price": 4988,
     "weight": 0.65,
     "heirloomLevel": 1,
-    "tier": 7.56073,
+    "tier": 5.54299927,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -79720,7 +79720,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 112,
+        "accuracy": 111,
         "missileSpeed": 92,
         "stackAmount": 1,
         "length": 117,
@@ -79735,7 +79735,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 101,
         "swingDamage": 0,
@@ -79745,7 +79745,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 112,
+        "accuracy": 111,
         "missileSpeed": 92,
         "stackAmount": 1,
         "length": 117,
@@ -79761,7 +79761,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 101,
         "swingDamage": 0,
@@ -79775,10 +79775,10 @@
     "name": "Yew Bow",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 11238,
+    "price": 6144,
     "weight": 0.65,
     "heirloomLevel": 2,
-    "tier": 8.847153,
+    "tier": 6.26619768,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -79787,12 +79787,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 113,
+        "accuracy": 112,
         "missileSpeed": 93,
         "stackAmount": 1,
         "length": 117,
         "balance": 0.0,
-        "handling": 102,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -79802,9 +79802,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 102,
+        "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 86
@@ -79812,12 +79812,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 113,
+        "accuracy": 112,
         "missileSpeed": 93,
         "stackAmount": 1,
         "length": 117,
         "balance": 0.0,
-        "handling": 102,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -79828,9 +79828,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 102,
+        "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 86
@@ -79842,10 +79842,10 @@
     "name": "Yew Bow",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 15690,
+    "price": 6921,
     "weight": 0.65,
     "heirloomLevel": 3,
-    "tier": 10.6504145,
+    "tier": 6.714425,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -79854,12 +79854,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 114,
-        "missileSpeed": 94,
+        "accuracy": 112,
+        "missileSpeed": 93,
         "stackAmount": 1,
         "length": 117,
         "balance": 0.0,
-        "handling": 103,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -79869,22 +79869,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 86
       },
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 114,
-        "missileSpeed": 94,
+        "accuracy": 112,
+        "missileSpeed": 93,
         "stackAmount": 1,
         "length": 117,
         "balance": 0.0,
-        "handling": 103,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -79895,12 +79895,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 86
       }
     ]
   },
@@ -80014,10 +80014,10 @@
     "name": "Mail Cavalier Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 346,
-    "weight": 0.4861997,
+    "price": 329,
+    "weight": 0.7265285,
     "heirloomLevel": 1,
-    "tier": 4.564632,
+    "tier": 4.48747158,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -80035,10 +80035,10 @@
     "name": "Mail Cavalier Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 373,
-    "weight": 0.4861997,
+    "price": 327,
+    "weight": 1.008739,
     "heirloomLevel": 2,
-    "tier": 4.67755842,
+    "tier": 4.48100376,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -80056,10 +80056,10 @@
     "name": "Mail Cavalier Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 402,
-    "weight": 0.4861997,
+    "price": 316,
+    "weight": 1.331322,
     "heirloomLevel": 3,
-    "tier": 4.790485,
+    "tier": 4.429328,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -80098,10 +80098,10 @@
     "name": "Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 2080,
-    "weight": 1.447602,
+    "price": 1923,
+    "weight": 1.822134,
     "heirloomLevel": 1,
-    "tier": 7.7898407,
+    "tier": 7.62062645,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -80119,10 +80119,10 @@
     "name": "Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 2132,
-    "weight": 1.447602,
+    "price": 1782,
+    "weight": 2.234461,
     "heirloomLevel": 2,
-    "tier": 7.8446207,
+    "tier": 7.45861053,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -80140,10 +80140,10 @@
     "name": "Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 2186,
-    "weight": 1.447602,
+    "price": 1611,
+    "weight": 2.683734,
     "heirloomLevel": 3,
-    "tier": 7.89940166,
+    "tier": 7.249483,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -90045,10 +90045,10 @@
     "name": "Mountain Hunting Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 2242,
+    "price": 1028,
     "weight": 0.25,
     "heirloomLevel": 1,
-    "tier": 3.38849378,
+    "tier": 1.99743176,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -90057,7 +90057,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 99,
+        "accuracy": 98,
         "missileSpeed": 79,
         "stackAmount": 1,
         "length": 108,
@@ -90072,7 +90072,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -90082,7 +90082,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 99,
+        "accuracy": 98,
         "missileSpeed": 79,
         "stackAmount": 1,
         "length": 108,
@@ -90098,7 +90098,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -90112,10 +90112,10 @@
     "name": "Mountain Hunting Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 3326,
+    "price": 1385,
     "weight": 0.25,
     "heirloomLevel": 2,
-    "tier": 4.340431,
+    "tier": 2.46238375,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -90124,12 +90124,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 100,
+        "accuracy": 99,
         "missileSpeed": 80,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 109,
+        "handling": 108,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -90139,9 +90139,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 109,
+        "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 127
@@ -90149,12 +90149,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 100,
+        "accuracy": 99,
         "missileSpeed": 80,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 109,
+        "handling": 108,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -90165,9 +90165,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 109,
+        "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 127
@@ -90179,10 +90179,10 @@
     "name": "Mountain Hunting Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 5421,
+    "price": 1805,
     "weight": 0.25,
     "heirloomLevel": 3,
-    "tier": 5.82298136,
+    "tier": 2.94231462,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -90191,12 +90191,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 101,
-        "missileSpeed": 81,
+        "accuracy": 99,
+        "missileSpeed": 80,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 110,
+        "handling": 108,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -90206,22 +90206,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 110,
+        "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 128
+        "swingSpeed": 127
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 101,
-        "missileSpeed": 81,
+        "accuracy": 99,
+        "missileSpeed": 80,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 110,
+        "handling": 108,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -90232,12 +90232,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 110,
+        "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 128
+        "swingSpeed": 127
       }
     ]
   },
@@ -92645,10 +92645,10 @@
     "name": "Noble Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 18303,
+    "price": 10158,
     "weight": 0.4,
     "heirloomLevel": 1,
-    "tier": 11.5904884,
+    "tier": 8.358808,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -92657,7 +92657,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 96,
+        "accuracy": 95,
         "missileSpeed": 85,
         "stackAmount": 1,
         "length": 116,
@@ -92672,7 +92672,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 101,
         "swingDamage": 0,
@@ -92682,7 +92682,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 96,
+        "accuracy": 95,
         "missileSpeed": 85,
         "stackAmount": 1,
         "length": 116,
@@ -92698,7 +92698,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 101,
         "swingDamage": 0,
@@ -92712,10 +92712,10 @@
     "name": "Noble Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 26973,
+    "price": 14124,
     "weight": 0.4,
     "heirloomLevel": 2,
-    "tier": 14.3057909,
+    "tier": 10.04922,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -92724,12 +92724,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 97,
+        "accuracy": 96,
         "missileSpeed": 86,
         "stackAmount": 1,
         "length": 116,
         "balance": 0.0,
-        "handling": 102,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -92739,9 +92739,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 102,
+        "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 100
@@ -92749,12 +92749,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 97,
+        "accuracy": 96,
         "missileSpeed": 86,
         "stackAmount": 1,
         "length": 116,
         "balance": 0.0,
-        "handling": 102,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -92765,9 +92765,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 102,
+        "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 100
@@ -92779,10 +92779,10 @@
     "name": "Noble Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 41588,
+    "price": 17783,
     "weight": 0.4,
     "heirloomLevel": 3,
-    "tier": 18.0324841,
+    "tier": 11.4090109,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -92791,12 +92791,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 98,
-        "missileSpeed": 87,
+        "accuracy": 96,
+        "missileSpeed": 86,
         "stackAmount": 1,
         "length": 116,
         "balance": 0.0,
-        "handling": 103,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -92806,22 +92806,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 101
+        "swingSpeed": 100
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 98,
-        "missileSpeed": 87,
+        "accuracy": 96,
+        "missileSpeed": 86,
         "stackAmount": 1,
         "length": 116,
         "balance": 0.0,
-        "handling": 103,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -92832,12 +92832,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 101
+        "swingSpeed": 100
       }
     ]
   },
@@ -93237,10 +93237,10 @@
     "name": "Noble Long Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 18067,
+    "price": 11291,
     "weight": 0.8,
     "heirloomLevel": 1,
-    "tier": 11.5084982,
+    "tier": 8.870524,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -93249,7 +93249,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 98,
+        "accuracy": 97,
         "missileSpeed": 100,
         "stackAmount": 1,
         "length": 118,
@@ -93264,7 +93264,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 0,
@@ -93274,7 +93274,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 98,
+        "accuracy": 97,
         "missileSpeed": 100,
         "stackAmount": 1,
         "length": 118,
@@ -93290,7 +93290,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 0,
@@ -93304,10 +93304,10 @@
     "name": "Noble Long Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 23788,
+    "price": 13889,
     "weight": 0.8,
     "heirloomLevel": 2,
-    "tier": 13.3673172,
+    "tier": 9.956318,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -93316,12 +93316,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 99,
+        "accuracy": 98,
         "missileSpeed": 101,
         "stackAmount": 1,
         "length": 118,
         "balance": 0.0,
-        "handling": 88,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -93331,9 +93331,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 90
@@ -93341,12 +93341,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 99,
+        "accuracy": 98,
         "missileSpeed": 101,
         "stackAmount": 1,
         "length": 118,
         "balance": 0.0,
-        "handling": 88,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -93357,9 +93357,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 90
@@ -93371,10 +93371,10 @@
     "name": "Noble Long Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 32720,
+    "price": 15428,
     "weight": 0.8,
     "heirloomLevel": 3,
-    "tier": 15.8686094,
+    "tier": 10.5517492,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -93383,12 +93383,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 100,
-        "missileSpeed": 102,
+        "accuracy": 98,
+        "missileSpeed": 101,
         "stackAmount": 1,
         "length": 118,
         "balance": 0.0,
-        "handling": 89,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -93398,22 +93398,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 91
+        "swingSpeed": 90
       },
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 100,
-        "missileSpeed": 102,
+        "accuracy": 98,
+        "missileSpeed": 101,
         "stackAmount": 1,
         "length": 118,
         "balance": 0.0,
-        "handling": 89,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -93424,12 +93424,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 87,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 91
+        "swingSpeed": 90
       }
     ]
   },
@@ -93757,10 +93757,10 @@
     "name": "Hassun Yumi",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 17725,
+    "price": 10250,
     "weight": 0.7,
     "heirloomLevel": 1,
-    "tier": 11.388319,
+    "tier": 8.401247,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -93769,7 +93769,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 111,
+        "accuracy": 110,
         "missileSpeed": 86,
         "stackAmount": 1,
         "length": 114,
@@ -93784,7 +93784,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -93794,7 +93794,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 111,
+        "accuracy": 110,
         "missileSpeed": 86,
         "stackAmount": 1,
         "length": 114,
@@ -93810,7 +93810,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -93824,10 +93824,10 @@
     "name": "Hassun Yumi",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 25361,
+    "price": 13764,
     "weight": 0.7,
     "heirloomLevel": 2,
-    "tier": 13.8379488,
+    "tier": 9.9064,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -93836,12 +93836,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 112,
+        "accuracy": 111,
         "missileSpeed": 87,
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 93,
+        "handling": 92,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -93851,9 +93851,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
+        "thrustSpeed": 92,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 82
@@ -93861,12 +93861,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 112,
+        "accuracy": 111,
         "missileSpeed": 87,
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 93,
+        "handling": 92,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -93877,9 +93877,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
+        "thrustSpeed": 92,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 82
@@ -93891,10 +93891,10 @@
     "name": "Hassun Yumi",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 38003,
+    "price": 16672,
     "weight": 0.7,
     "heirloomLevel": 3,
-    "tier": 17.1884613,
+    "tier": 11.0122356,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -93903,12 +93903,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 113,
-        "missileSpeed": 88,
+        "accuracy": 111,
+        "missileSpeed": 87,
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 94,
+        "handling": 92,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -93918,22 +93918,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 92,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 82
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 113,
-        "missileSpeed": 88,
+        "accuracy": 111,
+        "missileSpeed": 87,
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 94,
+        "handling": 92,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -93944,12 +93944,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 92,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 82
       }
     ]
   },
@@ -94933,10 +94933,10 @@
     "name": "Nordic Shortbow",
     "culture": "Sturgia",
     "type": "Bow",
-    "price": 18723,
+    "price": 10067,
     "weight": 0.6,
     "heirloomLevel": 1,
-    "tier": 11.73525,
+    "tier": 8.316085,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -94945,7 +94945,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 122,
+        "accuracy": 121,
         "missileSpeed": 88,
         "stackAmount": 1,
         "length": 108,
@@ -94960,7 +94960,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 107,
         "swingDamage": 0,
@@ -94970,7 +94970,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 122,
+        "accuracy": 121,
         "missileSpeed": 88,
         "stackAmount": 1,
         "length": 108,
@@ -94986,7 +94986,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 107,
         "swingDamage": 0,
@@ -95000,10 +95000,10 @@
     "name": "Nordic Shortbow",
     "culture": "Sturgia",
     "type": "Bow",
-    "price": 28600,
+    "price": 14581,
     "weight": 0.6,
     "heirloomLevel": 2,
-    "tier": 14.7637882,
+    "tier": 10.2279749,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -95012,12 +95012,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 123,
+        "accuracy": 122,
         "missileSpeed": 89,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 108,
+        "handling": 107,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -95027,9 +95027,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 83
@@ -95037,12 +95037,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 123,
+        "accuracy": 122,
         "missileSpeed": 89,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 108,
+        "handling": 107,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -95053,9 +95053,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 83
@@ -95067,10 +95067,10 @@
     "name": "Nordic Shortbow",
     "culture": "Sturgia",
     "type": "Bow",
-    "price": 45658,
+    "price": 19187,
     "weight": 0.6,
     "heirloomLevel": 3,
-    "tier": 18.9478188,
+    "tier": 11.8932705,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -95079,12 +95079,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 124,
-        "missileSpeed": 90,
+        "accuracy": 122,
+        "missileSpeed": 89,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 109,
+        "handling": 107,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -95094,22 +95094,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 109,
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 83
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 124,
-        "missileSpeed": 90,
+        "accuracy": 122,
+        "missileSpeed": 89,
         "stackAmount": 1,
         "length": 108,
         "balance": 0.0,
-        "handling": 109,
+        "handling": 107,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -95120,12 +95120,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 109,
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 83
       }
     ]
   },
@@ -97159,10 +97159,10 @@
     "name": "Huscarl Plated Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 1136,
-    "weight": 1.008739,
+    "price": 1059,
+    "weight": 1.331322,
     "heirloomLevel": 1,
-    "tier": 6.561171,
+    "tier": 6.429328,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -97180,10 +97180,10 @@
     "name": "Huscarl Plated Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 1185,
-    "weight": 1.008739,
+    "price": 1004,
+    "weight": 1.693046,
     "heirloomLevel": 2,
-    "tier": 6.64133835,
+    "tier": 6.33072662,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -97201,10 +97201,10 @@
     "name": "Huscarl Plated Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 1236,
-    "weight": 1.008739,
+    "price": 927,
+    "weight": 2.092875,
     "heirloomLevel": 3,
-    "tier": 6.721505,
+    "tier": 6.184555,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -103313,10 +103313,10 @@
     "name": "Splint Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 2080,
-    "weight": 1.447602,
+    "price": 1923,
+    "weight": 1.822134,
     "heirloomLevel": 1,
-    "tier": 7.7898407,
+    "tier": 7.62062645,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -103334,10 +103334,10 @@
     "name": "Splint Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 2132,
-    "weight": 1.447602,
+    "price": 1782,
+    "weight": 2.234461,
     "heirloomLevel": 2,
-    "tier": 7.8446207,
+    "tier": 7.45861053,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -103355,10 +103355,10 @@
     "name": "Splint Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 2186,
-    "weight": 1.447602,
+    "price": 1611,
+    "weight": 2.683734,
     "heirloomLevel": 3,
-    "tier": 7.89940166,
+    "tier": 7.249483,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -105275,10 +105275,10 @@
     "name": "Ragged Boots",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 68,
-    "weight": 0.1005621,
+    "price": 67,
+    "weight": 0.2343422,
     "heirloomLevel": 1,
-    "tier": 2.03762531,
+    "tier": 2.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -105298,10 +105298,10 @@
     "name": "Ragged Boots",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 73,
-    "weight": 0.1005621,
+    "price": 70,
+    "weight": 0.4157146,
     "heirloomLevel": 2,
-    "tier": 2.176735,
+    "tier": 2.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -105321,10 +105321,10 @@
     "name": "Ragged Boots",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 78,
-    "weight": 0.1005621,
+    "price": 72,
+    "weight": 0.6416805,
     "heirloomLevel": 3,
-    "tier": 2.315844,
+    "tier": 2.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -107396,10 +107396,10 @@
     "name": "Reinforced Suede Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 1562,
-    "weight": 1.219389,
+    "price": 1449,
+    "weight": 1.568189,
     "heirloomLevel": 1,
-    "tier": 7.18612766,
+    "tier": 7.035534,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -107419,10 +107419,10 @@
     "name": "Reinforced Suede Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 1614,
-    "weight": 1.219389,
+    "price": 1358,
+    "weight": 1.955422,
     "heirloomLevel": 2,
-    "tier": 7.25388432,
+    "tier": 6.90523243,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -107442,10 +107442,10 @@
     "name": "Reinforced Suede Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 1668,
-    "weight": 1.219389,
+    "price": 1239,
+    "weight": 2.380153,
     "heirloomLevel": 3,
-    "tier": 7.32164,
+    "tier": 6.72742558,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108972,10 +108972,10 @@
     "name": "Rough Tied Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 82,
-    "weight": 0.1396242,
+    "price": 81,
+    "weight": 0.2896843,
     "heirloomLevel": 1,
-    "tier": 2.40911865,
+    "tier": 2.37812185,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108995,10 +108995,10 @@
     "name": "Rough Tied Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 89,
-    "weight": 0.1396242,
+    "price": 84,
+    "weight": 0.4861997,
     "heirloomLevel": 2,
-    "tier": 2.5454917,
+    "tier": 2.45170546,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -109018,10 +109018,10 @@
     "name": "Rough Tied Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 96,
-    "weight": 0.1396242,
+    "price": 86,
+    "weight": 0.7265285,
     "heirloomLevel": 3,
-    "tier": 2.68186426,
+    "tier": 2.48747158,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -110474,10 +110474,10 @@
     "name": "Plate Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 5131,
-    "weight": 2.529919,
+    "price": 4694,
+    "weight": 3.003402,
     "heirloomLevel": 1,
-    "tier": 9.990139,
+    "tier": 9.751083,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -110495,10 +110495,10 @@
     "name": "Plate Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 5129,
-    "weight": 2.529919,
+    "price": 4211,
+    "weight": 3.512634,
     "heirloomLevel": 2,
-    "tier": 9.98924351,
+    "tier": 9.466132,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -110516,10 +110516,10 @@
     "name": "Plate Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 5127,
-    "weight": 2.529919,
+    "price": 3701,
+    "weight": 4.056997,
     "heirloomLevel": 3,
-    "tier": 9.988347,
+    "tier": 9.137992,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -119527,9 +119527,9 @@
     "culture": "Aserai",
     "type": "LegArmor",
     "price": 51,
-    "weight": 0.01932602,
+    "weight": 0.1005621,
     "heirloomLevel": 1,
-    "tier": 0.9081075,
+    "tier": 0.8985158,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -119549,10 +119549,10 @@
     "name": "Moccasins",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 52,
-    "weight": 0.01932602,
+    "price": 51,
+    "weight": 0.2343422,
     "heirloomLevel": 2,
-    "tier": 1.05297208,
+    "tier": 1.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -119572,10 +119572,10 @@
     "name": "Moccasins",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 53,
-    "weight": 0.01932602,
+    "price": 52,
+    "weight": 0.4157146,
     "heirloomLevel": 3,
-    "tier": 1.1978364,
+    "tier": 1.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -123931,10 +123931,10 @@
     "name": "Steppe Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 3883,
+    "price": 1866,
     "weight": 0.25,
     "heirloomLevel": 1,
-    "tier": 4.770804,
+    "tier": 3.00757551,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -123943,7 +123943,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 129,
+        "accuracy": 128,
         "missileSpeed": 81,
         "stackAmount": 1,
         "length": 110,
@@ -123958,7 +123958,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 119,
         "swingDamage": 0,
@@ -123968,7 +123968,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 129,
+        "accuracy": 128,
         "missileSpeed": 81,
         "stackAmount": 1,
         "length": 110,
@@ -123984,7 +123984,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 119,
         "swingDamage": 0,
@@ -123998,10 +123998,10 @@
     "name": "Steppe Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 5839,
+    "price": 2601,
     "weight": 0.25,
     "heirloomLevel": 2,
-    "tier": 6.08221531,
+    "tier": 3.72385144,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -124010,12 +124010,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 130,
+        "accuracy": 129,
         "missileSpeed": 82,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 120,
+        "handling": 119,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -124025,9 +124025,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 120,
+        "thrustSpeed": 119,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 83
@@ -124035,12 +124035,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 130,
+        "accuracy": 129,
         "missileSpeed": 82,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 120,
+        "handling": 119,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -124051,9 +124051,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 120,
+        "thrustSpeed": 119,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 83
@@ -124065,10 +124065,10 @@
     "name": "Steppe Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 9496,
+    "price": 3416,
     "weight": 0.25,
     "heirloomLevel": 3,
-    "tier": 8.046234,
+    "tier": 4.41221571,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -124077,12 +124077,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 131,
-        "missileSpeed": 83,
+        "accuracy": 129,
+        "missileSpeed": 82,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 121,
+        "handling": 119,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -124092,22 +124092,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 121,
+        "thrustSpeed": 119,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 83
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 131,
-        "missileSpeed": 83,
+        "accuracy": 129,
+        "missileSpeed": 82,
         "stackAmount": 1,
         "length": 110,
         "balance": 0.0,
-        "handling": 121,
+        "handling": 119,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -124118,12 +124118,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 121,
+        "thrustSpeed": 119,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 83
       }
     ]
   },
@@ -124703,10 +124703,10 @@
     "name": "Heavy Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 3701,
+    "price": 1766,
     "weight": 0.3,
     "heirloomLevel": 1,
-    "tier": 4.63408661,
+    "tier": 2.90003133,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -124715,7 +124715,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 96,
+        "accuracy": 95,
         "missileSpeed": 81,
         "stackAmount": 1,
         "length": 106,
@@ -124730,7 +124730,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 107,
         "swingDamage": 0,
@@ -124740,7 +124740,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 96,
+        "accuracy": 95,
         "missileSpeed": 81,
         "stackAmount": 1,
         "length": 106,
@@ -124756,7 +124756,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 107,
         "swingDamage": 0,
@@ -124770,10 +124770,10 @@
     "name": "Heavy Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 5522,
+    "price": 2426,
     "weight": 0.3,
     "heirloomLevel": 2,
-    "tier": 5.886358,
+    "tier": 3.56304169,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -124782,12 +124782,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 97,
+        "accuracy": 96,
         "missileSpeed": 82,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 108,
+        "handling": 107,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -124797,9 +124797,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 122
@@ -124807,12 +124807,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 97,
+        "accuracy": 96,
         "missileSpeed": 82,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 108,
+        "handling": 107,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -124823,9 +124823,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 122
@@ -124837,10 +124837,10 @@
     "name": "Heavy Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 8919,
+    "price": 3158,
     "weight": 0.3,
     "heirloomLevel": 3,
-    "tier": 7.76491451,
+    "tier": 4.204112,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -124849,12 +124849,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 98,
-        "missileSpeed": 83,
+        "accuracy": 96,
+        "missileSpeed": 82,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 109,
+        "handling": 107,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -124864,22 +124864,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 109,
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 123
+        "swingSpeed": 122
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 98,
-        "missileSpeed": 83,
+        "accuracy": 96,
+        "missileSpeed": 82,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 109,
+        "handling": 107,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -124890,12 +124890,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 109,
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 123
+        "swingSpeed": 122
       }
     ]
   },
@@ -125012,9 +125012,9 @@
     "culture": "Khuzait",
     "type": "LegArmor",
     "price": 59,
-    "weight": 0.06729711,
+    "weight": 0.1842743,
     "heirloomLevel": 1,
-    "tier": 1.66339636,
+    "tier": 1.644294,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -125034,10 +125034,10 @@
     "name": "Sturdy Leather Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 62,
-    "weight": 0.06729711,
+    "price": 61,
+    "weight": 0.3501776,
     "heirloomLevel": 2,
-    "tier": 1.804852,
+    "tier": 1.73984766,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -125057,10 +125057,10 @@
     "name": "Sturdy Leather Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 65,
-    "weight": 0.06729711,
+    "price": 62,
+    "weight": 0.5615475,
     "heirloomLevel": 3,
-    "tier": 1.94630766,
+    "tier": 1.80141211,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -125555,10 +125555,10 @@
     "name": "Steppe War Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 8586,
+    "price": 4449,
     "weight": 0.35,
     "heirloomLevel": 1,
-    "tier": 7.59889,
+    "tier": 5.178353,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -125567,7 +125567,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 99,
+        "accuracy": 98,
         "missileSpeed": 83,
         "stackAmount": 1,
         "length": 107,
@@ -125582,7 +125582,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 103,
         "swingDamage": 0,
@@ -125592,7 +125592,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 99,
+        "accuracy": 98,
         "missileSpeed": 83,
         "stackAmount": 1,
         "length": 107,
@@ -125608,7 +125608,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 103,
         "swingDamage": 0,
@@ -125622,10 +125622,10 @@
     "name": "Steppe War Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 12743,
+    "price": 6174,
     "weight": 0.35,
     "heirloomLevel": 2,
-    "tier": 9.491011,
+    "tier": 6.28374958,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -125634,12 +125634,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 100,
+        "accuracy": 99,
         "missileSpeed": 84,
         "stackAmount": 1,
         "length": 107,
         "balance": 0.0,
-        "handling": 104,
+        "handling": 103,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -125649,9 +125649,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 104,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 107
@@ -125659,12 +125659,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 100,
+        "accuracy": 99,
         "missileSpeed": 84,
         "stackAmount": 1,
         "length": 107,
         "balance": 0.0,
-        "handling": 104,
+        "handling": 103,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -125675,9 +125675,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 104,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 107
@@ -125689,10 +125689,10 @@
     "name": "Steppe War Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 20061,
+    "price": 7903,
     "weight": 0.35,
     "heirloomLevel": 3,
-    "tier": 12.1856689,
+    "tier": 7.24709034,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -125701,12 +125701,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 101,
-        "missileSpeed": 85,
+        "accuracy": 99,
+        "missileSpeed": 84,
         "stackAmount": 1,
         "length": 107,
         "balance": 0.0,
-        "handling": 105,
+        "handling": 103,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -125716,22 +125716,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 105,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 108
+        "swingSpeed": 107
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 101,
-        "missileSpeed": 85,
+        "accuracy": 99,
+        "missileSpeed": 84,
         "stackAmount": 1,
         "length": 107,
         "balance": 0.0,
-        "handling": 105,
+        "handling": 103,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -125742,12 +125742,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 105,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 108
+        "swingSpeed": 107
       }
     ]
   },
@@ -126232,10 +126232,10 @@
     "name": "Strapped Leather Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 68,
-    "weight": 0.1005621,
+    "price": 67,
+    "weight": 0.2343422,
     "heirloomLevel": 1,
-    "tier": 2.03762531,
+    "tier": 2.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -126255,10 +126255,10 @@
     "name": "Strapped Leather Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 73,
-    "weight": 0.1005621,
+    "price": 70,
+    "weight": 0.4157146,
     "heirloomLevel": 2,
-    "tier": 2.176735,
+    "tier": 2.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -126278,10 +126278,10 @@
     "name": "Strapped Leather Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 78,
-    "weight": 0.1005621,
+    "price": 72,
+    "weight": 0.6416805,
     "heirloomLevel": 3,
-    "tier": 2.315844,
+    "tier": 2.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -126414,10 +126414,10 @@
     "name": "Strapped Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 2375,
-    "weight": 1.568189,
+    "price": 2192,
+    "weight": 1.955422,
     "heirloomLevel": 1,
-    "tier": 8.083648,
+    "tier": 7.90523243,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -126435,10 +126435,10 @@
     "name": "Strapped Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 2426,
-    "weight": 1.568189,
+    "price": 2021,
+    "weight": 2.380153,
     "heirloomLevel": 2,
-    "tier": 8.131761,
+    "tier": 7.72742558,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -126456,10 +126456,10 @@
     "name": "Strapped Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 2478,
-    "weight": 1.568189,
+    "price": 1819,
+    "weight": 2.84157,
     "heirloomLevel": 3,
-    "tier": 8.179873,
+    "tier": 7.50281429,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -126500,10 +126500,10 @@
     "name": "Strapped Shoes",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 68,
-    "weight": 0.1005621,
+    "price": 67,
+    "weight": 0.2343422,
     "heirloomLevel": 1,
-    "tier": 2.03762531,
+    "tier": 2.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -126523,10 +126523,10 @@
     "name": "Strapped Shoes",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 73,
-    "weight": 0.1005621,
+    "price": 70,
+    "weight": 0.4157146,
     "heirloomLevel": 2,
-    "tier": 2.176735,
+    "tier": 2.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -126546,10 +126546,10 @@
     "name": "Strapped Shoes",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 78,
-    "weight": 0.1005621,
+    "price": 72,
+    "weight": 0.6416805,
     "heirloomLevel": 3,
-    "tier": 2.315844,
+    "tier": 2.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -126849,10 +126849,10 @@
     "name": "Strong Tribal Long Bow",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 16487,
+    "price": 10538,
     "weight": 0.9,
     "heirloomLevel": 1,
-    "tier": 10.9448614,
+    "tier": 8.533337,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -126861,7 +126861,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 97,
+        "accuracy": 96,
         "missileSpeed": 103,
         "stackAmount": 1,
         "length": 116,
@@ -126876,7 +126876,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 77,
         "swingDamage": 0,
@@ -126886,7 +126886,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 97,
+        "accuracy": 96,
         "missileSpeed": 103,
         "stackAmount": 1,
         "length": 116,
@@ -126902,7 +126902,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 77,
         "swingDamage": 0,
@@ -126916,10 +126916,10 @@
     "name": "Strong Tribal Long Bow",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 21216,
+    "price": 12574,
     "weight": 0.9,
     "heirloomLevel": 2,
-    "tier": 12.5626774,
+    "tier": 9.420787,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -126928,12 +126928,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 98,
+        "accuracy": 97,
         "missileSpeed": 104,
         "stackAmount": 1,
         "length": 116,
         "balance": 0.0,
-        "handling": 78,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -126943,9 +126943,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 78,
+        "thrustSpeed": 77,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 88
@@ -126953,12 +126953,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 98,
+        "accuracy": 97,
         "missileSpeed": 104,
         "stackAmount": 1,
         "length": 116,
         "balance": 0.0,
-        "handling": 78,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -126969,9 +126969,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 78,
+        "thrustSpeed": 77,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 88
@@ -126983,10 +126983,10 @@
     "name": "Strong Tribal Long Bow",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 28548,
+    "price": 13531,
     "weight": 0.9,
     "heirloomLevel": 3,
-    "tier": 14.7492981,
+    "tier": 9.812775,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -126995,12 +126995,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 99,
-        "missileSpeed": 105,
+        "accuracy": 97,
+        "missileSpeed": 104,
         "stackAmount": 1,
         "length": 116,
         "balance": 0.0,
-        "handling": 79,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -127010,22 +127010,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 79,
+        "thrustSpeed": 77,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 89
+        "swingSpeed": 88
       },
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 99,
-        "missileSpeed": 105,
+        "accuracy": 97,
+        "missileSpeed": 104,
         "stackAmount": 1,
         "length": 116,
         "balance": 0.0,
-        "handling": 79,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -127036,12 +127036,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 79,
+        "thrustSpeed": 77,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 89
+        "swingSpeed": 88
       }
     ]
   },
@@ -128505,10 +128505,10 @@
     "name": "Simple Leather Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 68,
-    "weight": 0.1005621,
+    "price": 67,
+    "weight": 0.2343422,
     "heirloomLevel": 1,
-    "tier": 2.03762531,
+    "tier": 2.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128528,10 +128528,10 @@
     "name": "Simple Leather Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 73,
-    "weight": 0.1005621,
+    "price": 70,
+    "weight": 0.4157146,
     "heirloomLevel": 2,
-    "tier": 2.176735,
+    "tier": 2.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128551,10 +128551,10 @@
     "name": "Simple Leather Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 78,
-    "weight": 0.1005621,
+    "price": 72,
+    "weight": 0.6416805,
     "heirloomLevel": 3,
-    "tier": 2.315844,
+    "tier": 2.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128597,10 +128597,10 @@
     "name": "Tied Leather Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 82,
-    "weight": 0.1396242,
+    "price": 81,
+    "weight": 0.2896843,
     "heirloomLevel": 1,
-    "tier": 2.40911865,
+    "tier": 2.37812185,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128620,10 +128620,10 @@
     "name": "Tied Leather Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 89,
-    "weight": 0.1396242,
+    "price": 84,
+    "weight": 0.4861997,
     "heirloomLevel": 2,
-    "tier": 2.5454917,
+    "tier": 2.45170546,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128643,10 +128643,10 @@
     "name": "Tied Leather Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 96,
-    "weight": 0.1396242,
+    "price": 86,
+    "weight": 0.7265285,
     "heirloomLevel": 3,
-    "tier": 2.68186426,
+    "tier": 2.48747158,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128690,9 +128690,9 @@
     "culture": "Sturgia",
     "type": "LegArmor",
     "price": 59,
-    "weight": 0.06729711,
+    "weight": 0.1842743,
     "heirloomLevel": 1,
-    "tier": 1.66339636,
+    "tier": 1.644294,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128712,10 +128712,10 @@
     "name": "Tied Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 62,
-    "weight": 0.06729711,
+    "price": 61,
+    "weight": 0.3501776,
     "heirloomLevel": 2,
-    "tier": 1.804852,
+    "tier": 1.73984766,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128735,10 +128735,10 @@
     "name": "Tied Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 65,
-    "weight": 0.06729711,
+    "price": 62,
+    "weight": 0.5615475,
     "heirloomLevel": 3,
-    "tier": 1.94630766,
+    "tier": 1.80141211,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128781,10 +128781,10 @@
     "name": "Wrapped Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 54,
-    "weight": 0.04009653,
+    "price": 53,
+    "weight": 0.1396242,
     "heirloomLevel": 1,
-    "tier": 1.28676939,
+    "tier": 1.27274585,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128805,9 +128805,9 @@
     "culture": "Sturgia",
     "type": "LegArmor",
     "price": 55,
-    "weight": 0.04009653,
+    "weight": 0.2896843,
     "heirloomLevel": 2,
-    "tier": 1.43015432,
+    "tier": 1.37812185,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -128827,10 +128827,10 @@
     "name": "Wrapped Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 57,
-    "weight": 0.04009653,
+    "price": 56,
+    "weight": 0.4861997,
     "heirloomLevel": 3,
-    "tier": 1.57353878,
+    "tier": 1.45170546,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -136017,10 +136017,10 @@
     "name": "Practice Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 1765,
+    "price": 690,
     "weight": 0.15,
     "heirloomLevel": 1,
-    "tier": 2.89910531,
+    "tier": 1.48300087,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -136029,7 +136029,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 132,
+        "accuracy": 131,
         "missileSpeed": 95,
         "stackAmount": 1,
         "length": 106,
@@ -136044,7 +136044,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 116,
         "swingDamage": 0,
@@ -136054,7 +136054,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 132,
+        "accuracy": 131,
         "missileSpeed": 95,
         "stackAmount": 1,
         "length": 106,
@@ -136070,7 +136070,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 116,
         "swingDamage": 0,
@@ -136084,10 +136084,10 @@
     "name": "Practice Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 2991,
+    "price": 1055,
     "weight": 0.15,
     "heirloomLevel": 2,
-    "tier": 4.06477642,
+    "tier": 2.03566265,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -136096,12 +136096,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 133,
+        "accuracy": 132,
         "missileSpeed": 96,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 117,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -136111,9 +136111,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 117,
+        "thrustSpeed": 116,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 108
@@ -136121,12 +136121,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 133,
+        "accuracy": 132,
         "missileSpeed": 96,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 117,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -136137,9 +136137,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 117,
+        "thrustSpeed": 116,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 108
@@ -136151,10 +136151,10 @@
     "name": "Practice Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 5627,
+    "price": 1628,
     "weight": 0.15,
     "heirloomLevel": 3,
-    "tier": 5.951712,
+    "tier": 2.74737215,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -136163,12 +136163,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 134,
-        "missileSpeed": 97,
+        "accuracy": 132,
+        "missileSpeed": 96,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 118,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -136178,22 +136178,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 118,
+        "thrustSpeed": 116,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 109
+        "swingSpeed": 108
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 134,
-        "missileSpeed": 97,
+        "accuracy": 132,
+        "missileSpeed": 96,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 118,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -136204,12 +136204,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 118,
+        "thrustSpeed": 116,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 109
+        "swingSpeed": 108
       }
     ]
   },
@@ -136285,10 +136285,10 @@
     "name": "Practice Longbow",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 1584,
+    "price": 845,
     "weight": 0.5,
     "heirloomLevel": 1,
-    "tier": 2.69699264,
+    "tier": 1.72988987,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -136297,7 +136297,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 116,
+        "accuracy": 115,
         "missileSpeed": 97,
         "stackAmount": 1,
         "length": 120,
@@ -136312,7 +136312,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
         "swingDamage": 0,
@@ -136322,7 +136322,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 116,
+        "accuracy": 115,
         "missileSpeed": 97,
         "stackAmount": 1,
         "length": 120,
@@ -136338,7 +136338,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
         "swingDamage": 0,
@@ -136352,10 +136352,10 @@
     "name": "Practice Longbow",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 1951,
+    "price": 939,
     "weight": 0.5,
     "heirloomLevel": 2,
-    "tier": 3.09618759,
+    "tier": 1.8700316,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -136364,12 +136364,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 117,
+        "accuracy": 116,
         "missileSpeed": 98,
         "stackAmount": 1,
         "length": 120,
         "balance": 0.0,
-        "handling": 97,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -136379,9 +136379,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 94
@@ -136389,12 +136389,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 117,
+        "accuracy": 116,
         "missileSpeed": 98,
         "stackAmount": 1,
         "length": 120,
         "balance": 0.0,
-        "handling": 97,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -136405,9 +136405,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 13,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 94
@@ -136419,10 +136419,10 @@
     "name": "Practice Longbow",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 2633,
+    "price": 998,
     "weight": 0.5,
     "heirloomLevel": 3,
-    "tier": 3.753182,
+    "tier": 1.95573556,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -136431,12 +136431,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 118,
-        "missileSpeed": 99,
+        "accuracy": 116,
+        "missileSpeed": 98,
         "stackAmount": 1,
         "length": 120,
         "balance": 0.0,
-        "handling": 98,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -136446,22 +136446,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 95
+        "swingSpeed": 94
       },
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 118,
-        "missileSpeed": 99,
+        "accuracy": 116,
+        "missileSpeed": 98,
         "stackAmount": 1,
         "length": 120,
         "balance": 0.0,
-        "handling": 98,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -136472,12 +136472,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 95
+        "swingSpeed": 94
       }
     ]
   },
@@ -137121,10 +137121,10 @@
     "name": "Rokusun Yumi",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 9065,
+    "price": 4943,
     "weight": 0.6,
     "heirloomLevel": 1,
-    "tier": 7.836961,
+    "tier": 5.513352,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -137133,7 +137133,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 121,
+        "accuracy": 120,
         "missileSpeed": 85,
         "stackAmount": 1,
         "length": 115,
@@ -137148,7 +137148,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 93,
         "swingDamage": 0,
@@ -137158,7 +137158,7 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 121,
+        "accuracy": 120,
         "missileSpeed": 85,
         "stackAmount": 1,
         "length": 115,
@@ -137174,7 +137174,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 93,
         "swingDamage": 0,
@@ -137188,10 +137188,10 @@
     "name": "Rokusun Yumi",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 13038,
+    "price": 6622,
     "weight": 0.6,
     "heirloomLevel": 2,
-    "tier": 9.612581,
+    "tier": 6.5450387,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -137200,12 +137200,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 122,
+        "accuracy": 121,
         "missileSpeed": 86,
         "stackAmount": 1,
         "length": 115,
         "balance": 0.0,
-        "handling": 94,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -137215,9 +137215,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 83
@@ -137225,12 +137225,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 122,
+        "accuracy": 121,
         "missileSpeed": 86,
         "stackAmount": 1,
         "length": 115,
         "balance": 0.0,
-        "handling": 94,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -137241,9 +137241,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 83
@@ -137255,10 +137255,10 @@
     "name": "Rokusun Yumi",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 19875,
+    "price": 8132,
     "weight": 0.6,
     "heirloomLevel": 3,
-    "tier": 12.1238165,
+    "tier": 7.366912,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -137267,12 +137267,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 123,
-        "missileSpeed": 87,
+        "accuracy": 121,
+        "missileSpeed": 86,
         "stackAmount": 1,
         "length": 115,
         "balance": 0.0,
-        "handling": 95,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -137282,22 +137282,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 83
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 123,
-        "missileSpeed": 87,
+        "accuracy": 121,
+        "missileSpeed": 86,
         "stackAmount": 1,
         "length": 115,
         "balance": 0.0,
-        "handling": 95,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -137308,12 +137308,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 83
       }
     ]
   },
@@ -138611,10 +138611,10 @@
     "name": "Folded Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 167,
-    "weight": 0.2896843,
+    "price": 161,
+    "weight": 0.4861997,
     "heirloomLevel": 1,
-    "tier": 3.50416231,
+    "tier": 3.45170546,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -138634,10 +138634,10 @@
     "name": "Folded Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 182,
-    "weight": 0.2896843,
+    "price": 165,
+    "weight": 0.7265285,
     "heirloomLevel": 2,
-    "tier": 3.63020277,
+    "tier": 3.48747158,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -138657,10 +138657,10 @@
     "name": "Folded Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 199,
-    "weight": 0.2896843,
+    "price": 164,
+    "weight": 1.008739,
     "heirloomLevel": 3,
-    "tier": 3.75624371,
+    "tier": 3.48100376,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -145543,10 +145543,10 @@
     "name": "Woodland Longbow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 8570,
+    "price": 5153,
     "weight": 0.7,
     "heirloomLevel": 1,
-    "tier": 7.590697,
+    "tier": 5.65111446,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -145555,7 +145555,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 100,
+        "accuracy": 99,
         "missileSpeed": 98,
         "stackAmount": 1,
         "length": 118,
@@ -145570,7 +145570,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
         "swingDamage": 0,
@@ -145580,7 +145580,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 100,
+        "accuracy": 99,
         "missileSpeed": 98,
         "stackAmount": 1,
         "length": 118,
@@ -145596,7 +145596,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
         "swingDamage": 0,
@@ -145610,10 +145610,10 @@
     "name": "Woodland Longbow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 11041,
+    "price": 6157,
     "weight": 0.7,
     "heirloomLevel": 2,
-    "tier": 8.759979,
+    "tier": 6.27356625,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -145622,12 +145622,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 101,
+        "accuracy": 100,
         "missileSpeed": 99,
         "stackAmount": 1,
         "length": 118,
         "balance": 0.0,
-        "handling": 90,
+        "handling": 89,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -145637,9 +145637,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
+        "thrustSpeed": 89,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 91
@@ -145647,12 +145647,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 101,
+        "accuracy": 100,
         "missileSpeed": 99,
         "stackAmount": 1,
         "length": 118,
         "balance": 0.0,
-        "handling": 90,
+        "handling": 89,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -145663,9 +145663,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
+        "thrustSpeed": 89,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 91
@@ -145677,10 +145677,10 @@
     "name": "Woodland Longbow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 15028,
+    "price": 6713,
     "weight": 0.7,
     "heirloomLevel": 3,
-    "tier": 10.3999987,
+    "tier": 6.596753,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -145689,12 +145689,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 102,
-        "missileSpeed": 100,
+        "accuracy": 100,
+        "missileSpeed": 99,
         "stackAmount": 1,
         "length": 118,
         "balance": 0.0,
-        "handling": 91,
+        "handling": 89,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -145704,22 +145704,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 89,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 92
+        "swingSpeed": 91
       },
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 102,
-        "missileSpeed": 100,
+        "accuracy": 100,
+        "missileSpeed": 99,
         "stackAmount": 1,
         "length": 118,
         "balance": 0.0,
-        "handling": 91,
+        "handling": 89,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -145730,12 +145730,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 89,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 92
+        "swingSpeed": 91
       }
     ]
   },
@@ -145811,10 +145811,10 @@
     "name": "Woodland Yew Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 15963,
+    "price": 9504,
     "weight": 0.7,
     "heirloomLevel": 1,
-    "tier": 10.752039,
+    "tier": 8.050136,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -145823,7 +145823,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 102,
+        "accuracy": 101,
         "missileSpeed": 96,
         "stackAmount": 1,
         "length": 115,
@@ -145838,7 +145838,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 102,
         "swingDamage": 0,
@@ -145848,7 +145848,7 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 102,
+        "accuracy": 101,
         "missileSpeed": 96,
         "stackAmount": 1,
         "length": 115,
@@ -145864,7 +145864,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 102,
         "swingDamage": 0,
@@ -145878,10 +145878,10 @@
     "name": "Woodland Yew Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 21687,
+    "price": 12145,
     "weight": 0.7,
     "heirloomLevel": 2,
-    "tier": 12.713418,
+    "tier": 9.240012,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -145890,12 +145890,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 103,
+        "accuracy": 102,
         "missileSpeed": 97,
         "stackAmount": 1,
         "length": 115,
         "balance": 0.0,
-        "handling": 103,
+        "handling": 102,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -145905,9 +145905,9 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 102,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 93
@@ -145915,12 +145915,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 103,
+        "accuracy": 102,
         "missileSpeed": 97,
         "stackAmount": 1,
         "length": 115,
         "balance": 0.0,
-        "handling": 103,
+        "handling": 102,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -145931,9 +145931,9 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 102,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 93
@@ -145945,10 +145945,10 @@
     "name": "Woodland Yew Bow",
     "culture": "Battania",
     "type": "Bow",
-    "price": 30842,
+    "price": 14095,
     "weight": 0.7,
     "heirloomLevel": 3,
-    "tier": 15.3742323,
+    "tier": 10.0377493,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -145957,12 +145957,12 @@
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 104,
-        "missileSpeed": 98,
+        "accuracy": 102,
+        "missileSpeed": 97,
         "stackAmount": 1,
         "length": 115,
         "balance": 0.0,
-        "handling": 104,
+        "handling": 102,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -145972,22 +145972,22 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 104,
+        "thrustSpeed": 102,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 94
+        "swingSpeed": 93
       },
       {
         "class": "Bow",
         "itemUsage": "long_bow",
-        "accuracy": 104,
-        "missileSpeed": 98,
+        "accuracy": 102,
+        "missileSpeed": 97,
         "stackAmount": 1,
         "length": 115,
         "balance": 0.0,
-        "handling": 104,
+        "handling": 102,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -145998,12 +145998,12 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 104,
+        "thrustSpeed": 102,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 94
+        "swingSpeed": 93
       }
     ]
   },
@@ -146503,10 +146503,10 @@
     "name": "Woven Leather Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 68,
-    "weight": 0.1005621,
+    "price": 67,
+    "weight": 0.2343422,
     "heirloomLevel": 1,
-    "tier": 2.03762531,
+    "tier": 2.01284838,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -146526,10 +146526,10 @@
     "name": "Woven Leather Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 73,
-    "weight": 0.1005621,
+    "price": 70,
+    "weight": 0.4157146,
     "heirloomLevel": 2,
-    "tier": 2.176735,
+    "tier": 2.09778357,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -146549,10 +146549,10 @@
     "name": "Woven Leather Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 78,
-    "weight": 0.1005621,
+    "price": 72,
+    "weight": 0.6416805,
     "heirloomLevel": 3,
-    "tier": 2.315844,
+    "tier": 2.14672184,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -147235,10 +147235,10 @@
     "name": "Wrapped Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 102,
-    "weight": 0.1842743,
+    "price": 100,
+    "weight": 0.3501776,
     "heirloomLevel": 1,
-    "tier": 2.77756286,
+    "tier": 2.73984766,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -147258,10 +147258,10 @@
     "name": "Wrapped Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 112,
-    "weight": 0.1842743,
+    "price": 104,
+    "weight": 0.5615475,
     "heirloomLevel": 2,
-    "tier": 2.910832,
+    "tier": 2.801412,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -147281,10 +147281,10 @@
     "name": "Wrapped Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 122,
-    "weight": 0.1842743,
+    "price": 105,
+    "weight": 0.8160267,
     "heirloomLevel": 3,
-    "tier": 3.04410076,
+    "tier": 2.82351685,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -147424,9 +147424,9 @@
     "culture": "Aserai",
     "type": "LegArmor",
     "price": 59,
-    "weight": 0.06729711,
+    "weight": 0.1842743,
     "heirloomLevel": 1,
-    "tier": 1.66339636,
+    "tier": 1.644294,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -147446,10 +147446,10 @@
     "name": "Wrapped Shoes",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 62,
-    "weight": 0.06729711,
+    "price": 61,
+    "weight": 0.3501776,
     "heirloomLevel": 2,
-    "tier": 1.804852,
+    "tier": 1.73984766,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -147469,10 +147469,10 @@
     "name": "Wrapped Shoes",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 65,
-    "weight": 0.06729711,
+    "price": 62,
+    "weight": 0.5615475,
     "heirloomLevel": 3,
-    "tier": 1.94630766,
+    "tier": 1.80141211,
     "requirement": 0,
     "flags": [
       "Civilian"
