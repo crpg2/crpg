@@ -26782,11 +26782,11 @@
     "name": "Simple Light Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 769,
+    "price": 585,
     "weight": 1.0,
     "heirloomLevel": 1,
-    "tier": 1.34360385,
-    "requirement": 2,
+    "tier": 1.0790087,
+    "requirement": 1,
     "flags": [],
     "weapons": [
       {
@@ -26806,7 +26806,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -26820,11 +26820,11 @@
     "name": "Simple Light Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 853,
+    "price": 457,
     "weight": 1.0,
     "heirloomLevel": 2,
-    "tier": 1.45620191,
-    "requirement": 2,
+    "tier": 0.873594165,
+    "requirement": 1,
     "flags": [],
     "weapons": [
       {
@@ -26844,7 +26844,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 26,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 99,
         "swingDamage": 0,
@@ -26858,11 +26858,11 @@
     "name": "Simple Light Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 1070,
+    "price": 538,
     "weight": 1.0,
     "heirloomLevel": 3,
-    "tier": 1.72736812,
-    "requirement": 3,
+    "tier": 1.005121,
+    "requirement": 1,
     "flags": [],
     "weapons": [
       {
@@ -26882,7 +26882,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 28,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 101,
         "swingDamage": 0,
@@ -26935,11 +26935,11 @@
     "name": "Heavy Maple Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 2134,
+    "price": 1831,
     "weight": 3.5,
     "heirloomLevel": 1,
-    "tier": 2.79365873,
-    "requirement": 5,
+    "tier": 2.520929,
+    "requirement": 4,
     "flags": [],
     "weapons": [
       {
@@ -26960,7 +26960,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 47,
+        "thrustDamage": 46,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
         "swingDamage": 0,
@@ -26974,11 +26974,11 @@
     "name": "Heavy Maple Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 2093,
+    "price": 1484,
     "weight": 3.5,
     "heirloomLevel": 2,
-    "tier": 2.75810575,
-    "requirement": 4,
+    "tier": 2.18263364,
+    "requirement": 3,
     "flags": [],
     "weapons": [
       {
@@ -26999,7 +26999,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 49,
+        "thrustDamage": 47,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -27013,11 +27013,11 @@
     "name": "Heavy Maple Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 2186,
+    "price": 1499,
     "weight": 3.5,
     "heirloomLevel": 3,
-    "tier": 2.83882046,
-    "requirement": 5,
+    "tier": 2.19743824,
+    "requirement": 3,
     "flags": [],
     "weapons": [
       {
@@ -27038,7 +27038,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 51,
+        "thrustDamage": 49,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -27091,11 +27091,11 @@
     "name": "Heavy Hunting Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 4780,
+    "price": 4129,
     "weight": 4.0,
     "heirloomLevel": 1,
-    "tier": 4.65239334,
-    "requirement": 8,
+    "tier": 4.254868,
+    "requirement": 7,
     "flags": [],
     "weapons": [
       {
@@ -27116,7 +27116,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 52,
+        "thrustDamage": 51,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
         "swingDamage": 0,
@@ -27130,11 +27130,11 @@
     "name": "Heavy Hunting Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 5104,
+    "price": 3702,
     "weight": 4.0,
     "heirloomLevel": 2,
-    "tier": 4.84086037,
-    "requirement": 8,
+    "tier": 3.977054,
+    "requirement": 7,
     "flags": [],
     "weapons": [
       {
@@ -27155,7 +27155,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 54,
+        "thrustDamage": 52,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 91,
         "swingDamage": 0,
@@ -27169,11 +27169,11 @@
     "name": "Heavy Hunting Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 5769,
+    "price": 4085,
     "weight": 4.0,
     "heirloomLevel": 3,
-    "tier": 5.209862,
-    "requirement": 9,
+    "tier": 4.22645569,
+    "requirement": 7,
     "flags": [],
     "weapons": [
       {
@@ -27194,7 +27194,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 56,
+        "thrustDamage": 54,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 93,
         "swingDamage": 0,
@@ -27248,11 +27248,11 @@
     "name": "Knight's Heavy Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 12335,
+    "price": 10786,
     "weight": 5.0,
     "heirloomLevel": 1,
-    "tier": 8.094616,
-    "requirement": 14,
+    "tier": 7.50128937,
+    "requirement": 13,
     "flags": [],
     "weapons": [
       {
@@ -27274,7 +27274,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 59,
+        "thrustDamage": 58,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
         "swingDamage": 0,
@@ -27288,11 +27288,11 @@
     "name": "Knight's Heavy Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 14250,
+    "price": 10680,
     "weight": 5.0,
     "heirloomLevel": 2,
-    "tier": 8.779634,
-    "requirement": 15,
+    "tier": 7.45912457,
+    "requirement": 13,
     "flags": [],
     "weapons": [
       {
@@ -27314,7 +27314,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 61,
+        "thrustDamage": 59,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
         "swingDamage": 0,
@@ -27328,11 +27328,11 @@
     "name": "Knight's Heavy Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 17263,
+    "price": 12741,
     "weight": 5.0,
     "heirloomLevel": 3,
-    "tier": 9.771152,
-    "requirement": 17,
+    "tier": 8.244288,
+    "requirement": 14,
     "flags": [],
     "weapons": [
       {
@@ -27354,7 +27354,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 63,
+        "thrustDamage": 61,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
         "swingDamage": 0,
@@ -27406,11 +27406,11 @@
     "name": "Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 5231,
+    "price": 4084,
     "weight": 1.5,
     "heirloomLevel": 1,
-    "tier": 4.91282034,
-    "requirement": 8,
+    "tier": 4.225997,
+    "requirement": 7,
     "flags": [],
     "weapons": [
       {
@@ -27430,7 +27430,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 31,
+        "thrustDamage": 30,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 0,
@@ -27444,11 +27444,11 @@
     "name": "Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 7022,
+    "price": 4115,
     "weight": 1.5,
     "heirloomLevel": 2,
-    "tier": 5.852395,
-    "requirement": 10,
+    "tier": 4.24560547,
+    "requirement": 7,
     "flags": [],
     "weapons": [
       {
@@ -27468,7 +27468,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 33,
+        "thrustDamage": 31,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -27482,11 +27482,11 @@
     "name": "Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 10214,
+    "price": 5849,
     "weight": 1.5,
     "heirloomLevel": 3,
-    "tier": 7.27129745,
-    "requirement": 13,
+    "tier": 5.2525363,
+    "requirement": 9,
     "flags": [],
     "weapons": [
       {
@@ -27506,7 +27506,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 33,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 99,
         "swingDamage": 0,
@@ -27560,11 +27560,11 @@
     "name": "Lord's Heavy Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 20224,
+    "price": 17943,
     "weight": 5.5,
     "heirloomLevel": 1,
-    "tier": 10.6645861,
-    "requirement": 19,
+    "tier": 9.982716,
+    "requirement": 17,
     "flags": [],
     "weapons": [
       {
@@ -27586,7 +27586,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 67,
+        "thrustDamage": 66,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
         "swingDamage": 0,
@@ -27600,11 +27600,11 @@
     "name": "Lord's Heavy Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 24185,
+    "price": 18740,
     "weight": 5.5,
     "heirloomLevel": 2,
-    "tier": 11.76359,
-    "requirement": 21,
+    "tier": 10.2254658,
+    "requirement": 18,
     "flags": [],
     "weapons": [
       {
@@ -27626,7 +27626,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 69,
+        "thrustDamage": 67,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
         "swingDamage": 0,
@@ -27640,11 +27640,11 @@
     "name": "Lord's Heavy Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 30172,
+    "price": 23108,
     "weight": 5.5,
     "heirloomLevel": 3,
-    "tier": 13.2668972,
-    "requirement": 23,
+    "tier": 11.4742508,
+    "requirement": 20,
     "flags": [],
     "weapons": [
       {
@@ -27666,7 +27666,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 71,
+        "thrustDamage": 69,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
         "swingDamage": 0,
@@ -27718,11 +27718,11 @@
     "name": "Fine Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 20050,
+    "price": 16128,
     "weight": 2.2,
     "heirloomLevel": 1,
-    "tier": 10.6139622,
-    "requirement": 19,
+    "tier": 9.40846348,
+    "requirement": 16,
     "flags": [],
     "weapons": [
       {
@@ -27742,7 +27742,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 37,
+        "thrustDamage": 36,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
         "swingDamage": 0,
@@ -27756,11 +27756,11 @@
     "name": "Fine Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 28831,
+    "price": 18264,
     "weight": 2.2,
     "heirloomLevel": 2,
-    "tier": 12.94422,
-    "requirement": 23,
+    "tier": 10.0810032,
+    "requirement": 18,
     "flags": [],
     "weapons": [
       {
@@ -27780,7 +27780,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 39,
+        "thrustDamage": 37,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -27794,11 +27794,11 @@
     "name": "Fine Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 43741,
+    "price": 27484,
     "weight": 2.2,
     "heirloomLevel": 3,
-    "tier": 16.1988621,
-    "requirement": 29,
+    "tier": 12.6124372,
+    "requirement": 22,
     "flags": [],
     "weapons": [
       {
@@ -27818,7 +27818,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 41,
+        "thrustDamage": 39,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -27871,11 +27871,11 @@
     "name": "Squire's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 6071,
+    "price": 5030,
     "weight": 2.8,
     "heirloomLevel": 1,
-    "tier": 5.370491,
-    "requirement": 9,
+    "tier": 4.79841042,
+    "requirement": 8,
     "flags": [],
     "weapons": [
       {
@@ -27896,7 +27896,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 41,
+        "thrustDamage": 40,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
         "swingDamage": 0,
@@ -27910,11 +27910,11 @@
     "name": "Squire's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 7329,
+    "price": 4874,
     "weight": 2.8,
     "heirloomLevel": 2,
-    "tier": 6.00132275,
-    "requirement": 10,
+    "tier": 4.70763969,
+    "requirement": 8,
     "flags": [],
     "weapons": [
       {
@@ -27935,7 +27935,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 43,
+        "thrustDamage": 41,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
         "swingDamage": 0,
@@ -27949,11 +27949,11 @@
     "name": "Squire's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 9460,
+    "price": 6149,
     "weight": 2.8,
     "heirloomLevel": 3,
-    "tier": 6.95867252,
-    "requirement": 12,
+    "tier": 5.41122532,
+    "requirement": 9,
     "flags": [],
     "weapons": [
       {
@@ -27974,7 +27974,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 45,
+        "thrustDamage": 43,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -28028,11 +28028,11 @@
     "name": "Windlass Lord's Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 20018,
+    "price": 17589,
     "weight": 6.5,
     "heirloomLevel": 1,
-    "tier": 10.6045494,
-    "requirement": 19,
+    "tier": 9.873069,
+    "requirement": 17,
     "flags": [],
     "weapons": [
       {
@@ -28054,7 +28054,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 62,
+        "thrustDamage": 61,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
         "swingDamage": 0,
@@ -28068,11 +28068,11 @@
     "name": "Windlass Lord's Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 23798,
+    "price": 18071,
     "weight": 6.5,
     "heirloomLevel": 2,
-    "tier": 11.6604948,
-    "requirement": 20,
+    "tier": 10.0219631,
+    "requirement": 18,
     "flags": [],
     "weapons": [
       {
@@ -28094,7 +28094,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 64,
+        "thrustDamage": 62,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
         "swingDamage": 0,
@@ -28108,11 +28108,11 @@
     "name": "Windlass Lord's Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 29513,
+    "price": 22141,
     "weight": 6.5,
     "heirloomLevel": 3,
-    "tier": 13.1093216,
-    "requirement": 23,
+    "tier": 11.2087355,
+    "requirement": 20,
     "flags": [],
     "weapons": [
       {
@@ -28134,7 +28134,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 66,
+        "thrustDamage": 64,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
         "swingDamage": 0,
@@ -28188,11 +28188,11 @@
     "name": "Windlass Knight's Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 10272,
+    "price": 8879,
     "weight": 6.0,
     "heirloomLevel": 1,
-    "tier": 7.29511356,
-    "requirement": 13,
+    "tier": 6.70930862,
+    "requirement": 12,
     "flags": [],
     "weapons": [
       {
@@ -28214,7 +28214,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 54,
+        "thrustDamage": 53,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
         "swingDamage": 0,
@@ -28228,11 +28228,11 @@
     "name": "Windlass Knight's Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 11727,
+    "price": 8567,
     "weight": 6.0,
     "heirloomLevel": 2,
-    "tier": 7.86626339,
-    "requirement": 14,
+    "tier": 6.57184,
+    "requirement": 11,
     "flags": [],
     "weapons": [
       {
@@ -28254,7 +28254,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 56,
+        "thrustDamage": 54,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
         "swingDamage": 0,
@@ -28268,11 +28268,11 @@
     "name": "Windlass Knight's Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 14065,
+    "price": 10099,
     "weight": 6.0,
     "heirloomLevel": 3,
-    "tier": 8.71577549,
-    "requirement": 15,
+    "tier": 7.22458029,
+    "requirement": 13,
     "flags": [],
     "weapons": [
       {
@@ -28294,7 +28294,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 58,
+        "thrustDamage": 56,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
         "swingDamage": 0,
@@ -28347,11 +28347,11 @@
     "name": "Templar's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 13353,
+    "price": 11049,
     "weight": 3.1,
     "heirloomLevel": 1,
-    "tier": 8.464838,
-    "requirement": 15,
+    "tier": 7.60471869,
+    "requirement": 13,
     "flags": [],
     "weapons": [
       {
@@ -28372,7 +28372,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 42,
+        "thrustDamage": 41,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
         "swingDamage": 0,
@@ -28386,11 +28386,11 @@
     "name": "Templar's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 17157,
+    "price": 11470,
     "weight": 3.1,
     "heirloomLevel": 2,
-    "tier": 9.737772,
-    "requirement": 17,
+    "tier": 7.76799774,
+    "requirement": 13,
     "flags": [],
     "weapons": [
       {
@@ -28411,7 +28411,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 44,
+        "thrustDamage": 42,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
         "swingDamage": 0,
@@ -28425,11 +28425,11 @@
     "name": "Templar's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 23290,
+    "price": 15347,
     "weight": 3.1,
     "heirloomLevel": 3,
-    "tier": 11.5236492,
-    "requirement": 20,
+    "tier": 9.15171,
+    "requirement": 16,
     "flags": [],
     "weapons": [
       {
@@ -28450,7 +28450,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 46,
+        "thrustDamage": 44,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
         "swingDamage": 0,
