@@ -2047,10 +2047,10 @@
     "name": "Imperial Arrows",
     "culture": "Empire",
     "type": "Arrows",
-    "price": 11442,
+    "price": 6440,
     "weight": 0.05,
     "heirloomLevel": 1,
-    "tier": 16.6408272,
+    "tier": 12.1929512,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2059,7 +2059,41 @@
         "itemUsage": "arrow_top",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 9,
+        "stackAmount": 8,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 8,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_arrow_emp_1_a_h2",
+    "name": "Imperial Arrows",
+    "culture": "Empire",
+    "type": "Arrows",
+    "price": 9716,
+    "weight": 0.05,
+    "heirloomLevel": 2,
+    "tier": 15.2431164,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_top",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 10,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -2077,14 +2111,14 @@
     ]
   },
   {
-    "id": "crpg_arrow_emp_1_a_h2",
+    "id": "crpg_arrow_emp_1_a_h3",
     "name": "Imperial Arrows",
     "culture": "Empire",
     "type": "Arrows",
-    "price": 29158,
+    "price": 14698,
     "weight": 0.05,
-    "heirloomLevel": 2,
-    "tier": 27.2607231,
+    "heirloomLevel": 3,
+    "tier": 19.0160275,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2101,41 +2135,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 11,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_arrow_emp_1_a_h3",
-    "name": "Imperial Arrows",
-    "culture": "Empire",
-    "type": "Arrows",
-    "price": 70456,
-    "weight": 0.05,
-    "heirloomLevel": 3,
-    "tier": 43.0227127,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_top",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 15,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 13,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -8035,10 +8035,10 @@
     "name": "Barbed Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 1757,
+    "price": 929,
     "weight": 0.05,
     "heirloomLevel": 1,
-    "tier": 5.810391,
+    "tier": 3.90591741,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8047,7 +8047,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 23,
+        "stackAmount": 22,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 2,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_barbed_arrows_h2",
+    "name": "Barbed Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 1173,
+    "weight": 0.05,
+    "heirloomLevel": 2,
+    "tier": 4.53385258,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 24,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -8065,14 +8099,14 @@
     ]
   },
   {
-    "id": "crpg_barbed_arrows_h2",
+    "id": "crpg_barbed_arrows_h3",
     "name": "Barbed Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 4356,
+    "price": 1575,
     "weight": 0.05,
-    "heirloomLevel": 2,
-    "tier": 9.820566,
+    "heirloomLevel": 3,
+    "tier": 5.438805,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -8089,41 +8123,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 5,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_barbed_arrows_h3",
-    "name": "Barbed Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 11137,
-    "weight": 0.05,
-    "heirloomLevel": 3,
-    "tier": 16.4019737,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 29,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 7,
+        "thrustDamage": 4,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -17160,10 +17160,10 @@
     "name": "Stacked Bodkin Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 9852,
+    "price": 5193,
     "weight": 0.048,
     "heirloomLevel": 1,
-    "tier": 15.3568754,
+    "tier": 10.830308,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17172,7 +17172,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 25,
+        "stackAmount": 24,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 3,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_bodkin_arrows_a_h2",
+    "name": "Stacked Bodkin Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 7596,
+    "weight": 0.048,
+    "heirloomLevel": 2,
+    "tier": 13.3420811,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 26,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -17190,14 +17224,14 @@
     ]
   },
   {
-    "id": "crpg_bodkin_arrows_a_h2",
+    "id": "crpg_bodkin_arrows_a_h3",
     "name": "Stacked Bodkin Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 26455,
+    "price": 11460,
     "weight": 0.048,
-    "heirloomLevel": 2,
-    "tier": 25.911,
+    "heirloomLevel": 3,
+    "tier": 16.6551228,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17214,41 +17248,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 6,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_bodkin_arrows_a_h3",
-    "name": "Stacked Bodkin Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 68780,
-    "weight": 0.048,
-    "heirloomLevel": 3,
-    "tier": 42.4938354,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 31,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 8,
+        "thrustDamage": 5,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -17296,10 +17296,10 @@
     "name": "Bodkin Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 12325,
+    "price": 6641,
     "weight": 0.048,
     "heirloomLevel": 1,
-    "tier": 17.3152962,
+    "tier": 12.3997364,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17308,7 +17308,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 19,
+        "stackAmount": 18,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 4,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_bodkin_arrows_b_h2",
+    "name": "Bodkin Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 9810,
+    "weight": 0.048,
+    "heirloomLevel": 2,
+    "tier": 15.3222828,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 20,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -17326,14 +17360,14 @@
     ]
   },
   {
-    "id": "crpg_bodkin_arrows_b_h2",
+    "id": "crpg_bodkin_arrows_b_h3",
     "name": "Bodkin Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 32646,
+    "price": 14875,
     "weight": 0.048,
-    "heirloomLevel": 2,
-    "tier": 28.91305,
+    "heirloomLevel": 3,
+    "tier": 19.1375389,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17350,41 +17384,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 7,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_bodkin_arrows_b_h3",
-    "name": "Bodkin Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 83513,
-    "weight": 0.048,
-    "heirloomLevel": 3,
-    "tier": 46.94331,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 25,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 9,
+        "thrustDamage": 6,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -17432,10 +17432,10 @@
     "name": "Light Bodkin Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 5193,
+    "price": 2642,
     "weight": 0.048,
     "heirloomLevel": 1,
-    "tier": 10.830308,
+    "tier": 7.389398,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17444,7 +17444,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 24,
+        "stackAmount": 23,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 2,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_bodkin_arrows_c_h2",
+    "name": "Light Bodkin Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 3815,
+    "weight": 0.048,
+    "heirloomLevel": 2,
+    "tier": 9.115342,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 25,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -17462,14 +17496,14 @@
     ]
   },
   {
-    "id": "crpg_bodkin_arrows_c_h2",
+    "id": "crpg_bodkin_arrows_c_h3",
     "name": "Light Bodkin Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 14470,
+    "price": 5753,
     "weight": 0.048,
-    "heirloomLevel": 2,
-    "tier": 18.8592033,
+    "heirloomLevel": 3,
+    "tier": 11.4598923,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -17486,41 +17520,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 5,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_bodkin_arrows_c_h3",
-    "name": "Light Bodkin Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 39421,
-    "weight": 0.048,
-    "heirloomLevel": 3,
-    "tier": 31.8870754,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 30,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 7,
+        "thrustDamage": 4,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -20485,10 +20485,10 @@
     "name": "Broad Head Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 7499,
+    "price": 5012,
     "weight": 0.098,
     "heirloomLevel": 1,
-    "tier": 13.2495756,
+    "tier": 10.6192617,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20497,7 +20497,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 19,
+        "stackAmount": 18,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 13,
+        "thrustDamageType": "Cut",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_broad_arrows_a_h2",
+    "name": "Broad Head Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 5752,
+    "weight": 0.098,
+    "heirloomLevel": 2,
+    "tier": 11.4590244,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 20,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -20515,14 +20549,14 @@
     ]
   },
   {
-    "id": "crpg_broad_arrows_a_h2",
+    "id": "crpg_broad_arrows_a_h3",
     "name": "Broad Head Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 12984,
+    "price": 6751,
     "weight": 0.098,
-    "heirloomLevel": 2,
-    "tier": 17.8031483,
+    "heirloomLevel": 3,
+    "tier": 12.5111446,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20539,41 +20573,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 16,
-        "thrustDamageType": "Cut",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_broad_arrows_a_h3",
-    "name": "Broad Head Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 22840,
-    "weight": 0.098,
-    "heirloomLevel": 3,
-    "tier": 23.9931526,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 25,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 18,
+        "thrustDamage": 15,
         "thrustDamageType": "Cut",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -20621,10 +20621,10 @@
     "name": "Light Broad Head Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 5556,
+    "price": 3659,
     "weight": 0.078,
     "heirloomLevel": 1,
-    "tier": 11.2418747,
+    "tier": 8.902845,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20633,7 +20633,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 36,
+        "stackAmount": 35,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 10,
+        "thrustDamageType": "Cut",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_broad_arrows_b_h2",
+    "name": "Light Broad Head Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 4034,
+    "weight": 0.078,
+    "heirloomLevel": 2,
+    "tier": 9.40616,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 37,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -20651,14 +20685,14 @@
     ]
   },
   {
-    "id": "crpg_broad_arrows_b_h2",
+    "id": "crpg_broad_arrows_b_h3",
     "name": "Light Broad Head Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 9456,
+    "price": 4570,
     "weight": 0.078,
-    "heirloomLevel": 2,
-    "tier": 15.0217361,
+    "heirloomLevel": 3,
+    "tier": 10.0873671,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20675,41 +20709,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 13,
-        "thrustDamageType": "Cut",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_broad_arrows_b_h3",
-    "name": "Light Broad Head Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 16514,
-    "weight": 0.078,
-    "heirloomLevel": 3,
-    "tier": 20.2269363,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 42,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 15,
+        "thrustDamage": 12,
         "thrustDamageType": "Cut",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -32315,10 +32315,10 @@
     "name": "Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 1302,
+    "price": 675,
     "weight": 0.043,
     "heirloomLevel": 1,
-    "tier": 4.839532,
+    "tier": 3.1563766,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32327,7 +32327,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 30,
+        "stackAmount": 29,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 1,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_default_arrows_h2",
+    "name": "Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 835,
+    "weight": 0.043,
+    "heirloomLevel": 2,
+    "tier": 3.64252162,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 31,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -32345,14 +32379,14 @@
     ]
   },
   {
-    "id": "crpg_default_arrows_h2",
+    "id": "crpg_default_arrows_h3",
     "name": "Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 3276,
+    "price": 1106,
     "weight": 0.043,
-    "heirloomLevel": 2,
-    "tier": 8.361364,
+    "heirloomLevel": 3,
+    "tier": 4.367755,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32369,41 +32403,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 4,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_default_arrows_h3",
-    "name": "Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 8584,
-    "weight": 0.043,
-    "heirloomLevel": 3,
-    "tier": 14.2574205,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 36,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 6,
+        "thrustDamage": 3,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -54532,10 +54532,10 @@
     "name": "Stacked Steppe Arrows",
     "culture": "Khuzait",
     "type": "Arrows",
-    "price": 8800,
+    "price": 4907,
     "weight": 0.036,
     "heirloomLevel": 1,
-    "tier": 14.4498234,
+    "tier": 10.4945717,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -54544,7 +54544,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 35,
+        "stackAmount": 34,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 4,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_heavy_steppe_arrows_h2",
+    "name": "Stacked Steppe Arrows",
+    "culture": "Khuzait",
+    "type": "Arrows",
+    "price": 6632,
+    "weight": 0.036,
+    "heirloomLevel": 2,
+    "tier": 12.39047,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 36,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -54562,14 +54596,14 @@
     ]
   },
   {
-    "id": "crpg_heavy_steppe_arrows_h2",
+    "id": "crpg_heavy_steppe_arrows_h3",
     "name": "Stacked Steppe Arrows",
     "culture": "Khuzait",
     "type": "Arrows",
-    "price": 20948,
+    "price": 9253,
     "weight": 0.036,
-    "heirloomLevel": 2,
-    "tier": 22.92852,
+    "heirloomLevel": 3,
+    "tier": 14.8468266,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -54586,41 +54620,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 7,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_heavy_steppe_arrows_h3",
-    "name": "Stacked Steppe Arrows",
-    "culture": "Khuzait",
-    "type": "Arrows",
-    "price": 49162,
-    "weight": 0.036,
-    "heirloomLevel": 3,
-    "tier": 35.74598,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 41,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 9,
+        "thrustDamage": 6,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -102053,10 +102053,10 @@
     "name": "Piercing Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 10793,
+    "price": 6203,
     "weight": 0.041,
     "heirloomLevel": 1,
-    "tier": 16.12834,
+    "tier": 11.9445057,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -102065,7 +102065,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 18,
+        "stackAmount": 17,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 6,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_piercing_arrows_h2",
+    "name": "Piercing Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 8540,
+    "weight": 0.041,
+    "heirloomLevel": 2,
+    "tier": 14.2176151,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 19,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -102083,14 +102117,14 @@
     ]
   },
   {
-    "id": "crpg_piercing_arrows_h2",
+    "id": "crpg_piercing_arrows_h3",
     "name": "Piercing Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 25377,
+    "price": 12071,
     "weight": 0.041,
-    "heirloomLevel": 2,
-    "tier": 25.3535385,
+    "heirloomLevel": 3,
+    "tier": 17.1239014,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -102107,41 +102141,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 9,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_piercing_arrows_h3",
-    "name": "Piercing Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 58684,
-    "weight": 0.041,
-    "heirloomLevel": 3,
-    "tier": 39.1624146,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 24,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 11,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -105870,10 +105870,10 @@
     "name": "Range Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 2379,
+    "price": 1254,
     "weight": 0.043,
     "heirloomLevel": 1,
-    "tier": 6.952295,
+    "tier": 4.72816038,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -105882,7 +105882,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 30,
+        "stackAmount": 29,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 2,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_range_arrows_h2",
+    "name": "Range Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 1614,
+    "weight": 0.043,
+    "heirloomLevel": 2,
+    "tier": 5.52101469,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 31,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -105900,14 +105934,14 @@
     ]
   },
   {
-    "id": "crpg_range_arrows_h2",
+    "id": "crpg_range_arrows_h3",
     "name": "Range Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 5926,
+    "price": 2195,
     "weight": 0.043,
-    "heirloomLevel": 2,
-    "tier": 11.6486988,
+    "heirloomLevel": 3,
+    "tier": 6.63255453,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -105924,41 +105958,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 5,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_range_arrows_h3",
-    "name": "Range Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 15007,
-    "weight": 0.043,
-    "heirloomLevel": 3,
-    "tier": 19.2275925,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 36,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 7,
+        "thrustDamage": 4,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -123762,10 +123762,10 @@
     "name": "Steppe Arrows",
     "culture": "Khuzait",
     "type": "Arrows",
-    "price": 3738,
+    "price": 2019,
     "weight": 0.036,
     "heirloomLevel": 1,
-    "tier": 9.011625,
+    "tier": 6.31332064,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -123774,7 +123774,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 27,
+        "stackAmount": 26,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 3,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_steppe_arrows_h2",
+    "name": "Steppe Arrows",
+    "culture": "Khuzait",
+    "type": "Arrows",
+    "price": 2654,
+    "weight": 0.036,
+    "heirloomLevel": 2,
+    "tier": 7.409879,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 28,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -123792,14 +123826,14 @@
     ]
   },
   {
-    "id": "crpg_steppe_arrows_h2",
+    "id": "crpg_steppe_arrows_h3",
     "name": "Steppe Arrows",
     "culture": "Khuzait",
     "type": "Arrows",
-    "price": 9142,
+    "price": 3654,
     "weight": 0.036,
-    "heirloomLevel": 2,
-    "tier": 14.7505875,
+    "heirloomLevel": 3,
+    "tier": 8.896834,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -123816,41 +123850,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 6,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_steppe_arrows_h3",
-    "name": "Steppe Arrows",
-    "culture": "Khuzait",
-    "type": "Arrows",
-    "price": 22461,
-    "weight": 0.036,
-    "heirloomLevel": 3,
-    "tier": 23.7831764,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 33,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 8,
+        "thrustDamage": 5,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -135756,10 +135756,10 @@
     "name": "Tournament Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 4027,
+    "price": 1983,
     "weight": 0.043,
     "heirloomLevel": 1,
-    "tier": 9.397036,
+    "tier": 6.24608564,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -135768,7 +135768,41 @@
         "itemUsage": "arrow_right",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 33,
+        "stackAmount": 32,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 1,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_tournament_arrows_h2",
+    "name": "Tournament Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 2854,
+    "weight": 0.043,
+    "heirloomLevel": 2,
+    "tier": 7.72647,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_right",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 34,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -135786,14 +135820,14 @@
     ]
   },
   {
-    "id": "crpg_tournament_arrows_h2",
+    "id": "crpg_tournament_arrows_h3",
     "name": "Tournament Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 11577,
+    "price": 4313,
     "weight": 0.043,
-    "heirloomLevel": 2,
-    "tier": 16.74551,
+    "heirloomLevel": 3,
+    "tier": 9.766026,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -135810,41 +135844,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 4,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_tournament_arrows_h3",
-    "name": "Tournament Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 32532,
-    "weight": 0.043,
-    "heirloomLevel": 3,
-    "tier": 28.8602543,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_right",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 39,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 6,
+        "thrustDamage": 3,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 0,
         "swingDamage": 0,
@@ -141570,10 +141570,10 @@
     "name": "Lowland Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 6489,
+    "price": 3516,
     "weight": 0.06,
     "heirloomLevel": 1,
-    "tier": 12.2435474,
+    "tier": 8.704619,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -141582,7 +141582,41 @@
         "itemUsage": "arrow_top",
         "accuracy": 100,
         "missileSpeed": 10,
-        "stackAmount": 43,
+        "stackAmount": 42,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 3,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
+    "id": "crpg_vlandic_arrows_h2",
+    "name": "Lowland Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 4744,
+    "weight": 0.06,
+    "heirloomLevel": 2,
+    "tier": 10.2993183,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_top",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 44,
         "length": 97,
         "balance": 0.0,
         "handling": 0,
@@ -141600,14 +141634,14 @@
     ]
   },
   {
-    "id": "crpg_vlandic_arrows_h2",
+    "id": "crpg_vlandic_arrows_h3",
     "name": "Lowland Arrows",
     "culture": "Neutral",
     "type": "Arrows",
-    "price": 15901,
+    "price": 6636,
     "weight": 0.06,
-    "heirloomLevel": 2,
-    "tier": 19.8261,
+    "heirloomLevel": 3,
+    "tier": 12.3949661,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -141624,41 +141658,7 @@
         "flags": [
           "Consumable"
         ],
-        "thrustDamage": 6,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
-  },
-  {
-    "id": "crpg_vlandic_arrows_h3",
-    "name": "Lowland Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 38445,
-    "weight": 0.06,
-    "heirloomLevel": 3,
-    "tier": 31.4754829,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_top",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 49,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 8,
+        "thrustDamage": 5,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 0,
         "swingDamage": 0,
