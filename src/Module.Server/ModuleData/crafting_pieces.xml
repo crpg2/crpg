@@ -24408,7 +24408,7 @@
   <CraftingPiece id="crpg_greataxe_blade_h1" name="{=}Great Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.595">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.4" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -24421,7 +24421,7 @@
   <CraftingPiece id="crpg_greataxe_blade_h2" name="{=}Great Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.595">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.4" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -24434,7 +24434,7 @@
   <CraftingPiece id="crpg_greataxe_blade_h3" name="{=}Great Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.595">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.4" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -24458,14 +24458,14 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_greataxe_handle_h2" name="{=}Great Axe Handle" tier="5" piece_type="Handle" mesh="greataxe_handle" length="129" weight="0.7" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_greataxe_handle_h2" name="{=}Great Axe Handle" tier="5" piece_type="Handle" mesh="greataxe_handle" length="129" weight="0.65" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="28" next_piece_offset="12.0" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_greataxe_handle_h3" name="{=}Great Axe Handle" tier="5" piece_type="Handle" mesh="greataxe_handle" length="129" weight="0.7" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_greataxe_handle_h3" name="{=}Great Axe Handle" tier="5" piece_type="Handle" mesh="greataxe_handle" length="129" weight="0.6" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="28" next_piece_offset="12.0" />
     <Materials>
       <Material id="Wood" count="1" />
