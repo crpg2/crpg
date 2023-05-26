@@ -8310,14 +8310,14 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northlander_decorated_two_handed_axe_handle_h2" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.6" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_northlander_decorated_two_handed_axe_handle_h2" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.55" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="36.879" next_piece_offset="1.6" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northlander_decorated_two_handed_axe_handle_h3" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.6" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_northlander_decorated_two_handed_axe_handle_h3" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.5" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="36.879" next_piece_offset="1.6" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -8338,14 +8338,14 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_avalanche_handle_h2" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.83" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_avalanche_handle_h2" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.80" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="36.879" next_piece_offset="1.6" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_avalanche_handle_h3" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.83" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_avalanche_handle_h3" name="{=bfueDx6s}Heavily Reinforced Oaken Great Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_4_handle" length="157.5" weight="0.72" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="36.879" next_piece_offset="1.6" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -8422,14 +8422,14 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_chainbreaker_handle_h2" name="{=1T0XBYlc}Hardened Oaken Two Handed Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_1_handle" length="157.6" weight="3.0" item_holster_pos_shift="0,0,-0.1" CraftingCost="75">
+  <CraftingPiece id="crpg_chainbreaker_handle_h2" name="{=1T0XBYlc}Hardened Oaken Two Handed Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_1_handle" length="157.6" weight="2.85" item_holster_pos_shift="0,0,-0.1" CraftingCost="75">
     <BuildData piece_offset="37.408" next_piece_offset="1.42" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_chainbreaker_handle_h3" name="{=1T0XBYlc}Hardened Oaken Two Handed Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_1_handle" length="157.6" weight="3.0" item_holster_pos_shift="0,0,-0.1" CraftingCost="75">
+  <CraftingPiece id="crpg_chainbreaker_handle_h3" name="{=1T0XBYlc}Hardened Oaken Two Handed Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_1_handle" length="157.6" weight="2.75" item_holster_pos_shift="0,0,-0.1" CraftingCost="75">
     <BuildData piece_offset="37.408" next_piece_offset="1.42" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -9432,7 +9432,7 @@
   <CraftingPiece id="crpg_northlander_decorated_two_handed_axe_blade_h1" name="{=IxCaIvUk}Large Northern Broad Head With Decorated Neck" tier="5" piece_type="Blade" mesh="axe_craft_22_head" distance_to_next_piece="9.3" distance_to_previous_piece="2" weight="0.6">
     <BuildData piece_offset="-4" />
     <BladeData stack_amount="2" blade_length="20.781" blade_width="30.384" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.1" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9445,7 +9445,7 @@
   <CraftingPiece id="crpg_northlander_decorated_two_handed_axe_blade_h2" name="{=IxCaIvUk}Large Northern Broad Head With Decorated Neck" tier="5" piece_type="Blade" mesh="axe_craft_22_head" distance_to_next_piece="9.3" distance_to_previous_piece="2" weight="0.6">
     <BuildData piece_offset="-4" />
     <BladeData stack_amount="2" blade_length="20.781" blade_width="30.384" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.1" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9458,7 +9458,7 @@
   <CraftingPiece id="crpg_northlander_decorated_two_handed_axe_blade_h3" name="{=IxCaIvUk}Large Northern Broad Head With Decorated Neck" tier="5" piece_type="Blade" mesh="axe_craft_22_head" distance_to_next_piece="9.3" distance_to_previous_piece="2" weight="0.6">
     <BuildData piece_offset="-4" />
     <BladeData stack_amount="2" blade_length="20.781" blade_width="30.384" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.1" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9536,7 +9536,7 @@
   <CraftingPiece id="crpg_chainbreaker_blade_h1" name="{=SEsx3kZz}Heavy Bardiche Head" tier="5" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.01">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.6" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9549,7 +9549,7 @@
   <CraftingPiece id="crpg_chainbreaker_blade_h2" name="{=SEsx3kZz}Heavy Bardiche Head" tier="5" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.01">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.6" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9562,7 +9562,7 @@
   <CraftingPiece id="crpg_chainbreaker_blade_h3" name="{=SEsx3kZz}Heavy Bardiche Head" tier="5" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.01">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.6" />
+      <Swing damage_type="Cut" damage_factor="4.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9844,7 +9844,7 @@
   <CraftingPiece id="crpg_avalanche_blade_h1" name="{=USWfzbuW}Northern Broad Great Axe Head" tier="3" piece_type="Blade" mesh="axe_craft_7_head" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.5">
     <BuildData piece_offset="-5.424" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.2" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9857,7 +9857,7 @@
   <CraftingPiece id="crpg_avalanche_blade_h2" name="{=USWfzbuW}Northern Broad Great Axe Head" tier="3" piece_type="Blade" mesh="axe_craft_7_head" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.5">
     <BuildData piece_offset="-5.424" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.2" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9870,7 +9870,7 @@
   <CraftingPiece id="crpg_avalanche_blade_h3" name="{=USWfzbuW}Northern Broad Great Axe Head" tier="3" piece_type="Blade" mesh="axe_craft_7_head" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.5">
     <BuildData piece_offset="-5.424" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.2" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />

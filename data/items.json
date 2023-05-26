@@ -5952,10 +5952,10 @@
     "name": "Avalanche +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 9445,
+    "price": 13494,
     "weight": 1.35,
     "heirloomLevel": 1,
-    "tier": 8.02159,
+    "tier": 9.79795,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -5980,7 +5980,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 98,
-        "swingDamage": 42,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
         "swingSpeed": 87
       }
@@ -5991,10 +5991,10 @@
     "name": "Avalanche +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 6967,
-    "weight": 1.35,
+    "price": 14070,
+    "weight": 1.32,
     "heirloomLevel": 2,
-    "tier": 6.74036646,
+    "tier": 10.0277462,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -6007,7 +6007,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 130,
-        "balance": 0.6,
+        "balance": 0.61,
         "handling": 78,
         "bodyArmor": 0,
         "flags": [
@@ -6019,9 +6019,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 98,
-        "swingDamage": 42,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 88
       }
     ]
   },
@@ -6030,10 +6030,10 @@
     "name": "Avalanche +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5296,
-    "weight": 1.35,
+    "price": 13206,
+    "weight": 1.24,
     "heirloomLevel": 3,
-    "tier": 5.74327,
+    "tier": 9.681189,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -6046,8 +6046,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 130,
-        "balance": 0.6,
-        "handling": 78,
+        "balance": 0.65,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -6058,9 +6058,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 98,
-        "swingDamage": 42,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
@@ -24246,10 +24246,10 @@
     "name": "Chainbreaker +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 9167,
+    "price": 10798,
     "weight": 2.71,
     "heirloomLevel": 1,
-    "tier": 7.88705969,
+    "tier": 8.651217,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -24274,7 +24274,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 87,
-        "swingDamage": 46,
+        "swingDamage": 47,
         "swingDamageType": "Cut",
         "swingSpeed": 84
       }
@@ -24285,10 +24285,10 @@
     "name": "Chainbreaker +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 6766,
-    "weight": 2.71,
+    "price": 11738,
+    "weight": 2.58,
     "heirloomLevel": 2,
-    "tier": 6.627321,
+    "tier": 9.065664,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -24301,8 +24301,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.47,
-        "handling": 76,
+        "balance": 0.52,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -24312,10 +24312,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 46,
+        "thrustSpeed": 89,
+        "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 85
       }
     ]
   },
@@ -24324,10 +24324,10 @@
     "name": "Chainbreaker +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 5147,
-    "weight": 2.71,
+    "price": 13008,
+    "weight": 2.49,
     "heirloomLevel": 3,
-    "tier": 5.64694738,
+    "tier": 9.600393,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -24340,8 +24340,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.47,
-        "handling": 76,
+        "balance": 0.55,
+        "handling": 78,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -24351,10 +24351,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 46,
+        "thrustSpeed": 89,
+        "swingDamage": 49,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
@@ -97921,10 +97921,10 @@
     "name": "Northlander Decorated Two Handed Axe +1",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 7983,
+    "price": 11463,
     "weight": 1.2,
     "heirloomLevel": 1,
-    "tier": 7.289445,
+    "tier": 8.946196,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -97949,7 +97949,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 99,
-        "swingDamage": 41,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
         "swingSpeed": 89
       }
@@ -97960,10 +97960,10 @@
     "name": "Northlander Decorated Two Handed Axe +2",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 5910,
-    "weight": 1.2,
+    "price": 10019,
+    "weight": 1.15,
     "heirloomLevel": 2,
-    "tier": 6.125159,
+    "tier": 8.293983,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -97976,7 +97976,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 121,
-        "balance": 0.65,
+        "balance": 0.68,
         "handling": 79,
         "bodyArmor": 0,
         "flags": [
@@ -97987,10 +97987,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
-        "swingDamage": 41,
+        "thrustSpeed": 100,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 90
       }
     ]
   },
@@ -97999,10 +97999,10 @@
     "name": "Northlander Decorated Two Handed Axe +3",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 4508,
-    "weight": 1.2,
+    "price": 10680,
+    "weight": 1.1,
     "heirloomLevel": 3,
-    "tier": 5.21907,
+    "tier": 8.598078,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -98015,7 +98015,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 121,
-        "balance": 0.65,
+        "balance": 0.71,
         "handling": 79,
         "bodyArmor": 0,
         "flags": [
@@ -98026,10 +98026,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
-        "swingDamage": 41,
+        "thrustSpeed": 100,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 91
       }
     ]
   },
