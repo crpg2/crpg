@@ -77068,10 +77068,10 @@
     "name": "Long Greataxe +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7043,
-    "weight": 1.38,
+    "price": 10420,
+    "weight": 1.2,
     "heirloomLevel": 1,
-    "tier": 6.78285074,
+    "tier": 8.479373,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -77084,8 +77084,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 115,
-        "balance": 0.61,
-        "handling": 78,
+        "balance": 0.67,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -77095,10 +77095,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
+        "thrustSpeed": 99,
         "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
@@ -77107,10 +77107,10 @@
     "name": "Long Greataxe +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5228,
-    "weight": 1.38,
+    "price": 10825,
+    "weight": 1.2,
     "heirloomLevel": 2,
-    "tier": 5.69947863,
+    "tier": 8.663353,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -77123,8 +77123,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 115,
-        "balance": 0.61,
-        "handling": 78,
+        "balance": 0.67,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -77134,10 +77134,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 43,
+        "thrustSpeed": 99,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
@@ -77146,10 +77146,10 @@
     "name": "Long Greataxe +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 3999,
-    "weight": 1.38,
+    "price": 11357,
+    "weight": 1.2,
     "heirloomLevel": 3,
-    "tier": 4.856362,
+    "tier": 8.899565,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -77162,8 +77162,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 115,
-        "balance": 0.61,
-        "handling": 78,
+        "balance": 0.67,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -77173,10 +77173,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 43,
+        "thrustSpeed": 99,
+        "swingDamage": 47,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
