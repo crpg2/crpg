@@ -24954,10 +24954,10 @@
     "name": "Claymore +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 9841,
-    "weight": 2.61,
+    "price": 13403,
+    "weight": 2.35,
     "heirloomLevel": 1,
-    "tier": 8.2103405,
+    "tier": 9.761272,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24968,8 +24968,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 150,
-        "balance": 0.37,
-        "handling": 66,
+        "balance": 0.45,
+        "handling": 65,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
@@ -24977,10 +24977,10 @@
         ],
         "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
+        "thrustSpeed": 89,
         "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 83
       }
     ]
   },
@@ -24989,10 +24989,10 @@
     "name": "Claymore +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7254,
-    "weight": 2.61,
+    "price": 13050,
+    "weight": 2.35,
     "heirloomLevel": 2,
-    "tier": 6.89896631,
+    "tier": 9.617548,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25003,19 +25003,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 150,
-        "balance": 0.37,
-        "handling": 66,
+        "balance": 0.45,
+        "handling": 65,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 42,
+        "thrustSpeed": 89,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 83
       }
     ]
   },
@@ -25024,10 +25024,10 @@
     "name": "Claymore +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5509,
-    "weight": 2.61,
+    "price": 13388,
+    "weight": 2.35,
     "heirloomLevel": 3,
-    "tier": 5.87841129,
+    "tier": 9.755251,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25038,19 +25038,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 150,
-        "balance": 0.37,
-        "handling": 66,
+        "balance": 0.45,
+        "handling": 65,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 42,
+        "thrustSpeed": 89,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 83
       }
     ]
   },
