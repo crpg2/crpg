@@ -8443,21 +8443,21 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_short_bill_handle_h1" name="{=1T0XBYlc}Hardened Oaken Two Handed Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_1_handle" length="157.6" weight="0.8" item_holster_pos_shift="0,0,-0.1" CraftingCost="75">
+  <CraftingPiece id="crpg_short_bill_handle_h1" name="{=1T0XBYlc}Hardened Oaken Two Handed Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_1_handle" length="157.6" weight="0.6" item_holster_pos_shift="0,0,-0.1" CraftingCost="75">
     <BuildData piece_offset="37.408" next_piece_offset="1.42" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_short_bill_handle_h2" name="{=1T0XBYlc}Hardened Oaken Two Handed Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_1_handle" length="157.6" weight="0.8" item_holster_pos_shift="0,0,-0.1" CraftingCost="75">
+  <CraftingPiece id="crpg_short_bill_handle_h2" name="{=1T0XBYlc}Hardened Oaken Two Handed Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_1_handle" length="157.6" weight="0.6" item_holster_pos_shift="0,0,-0.1" CraftingCost="75">
     <BuildData piece_offset="37.408" next_piece_offset="1.42" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_short_bill_handle_h3" name="{=1T0XBYlc}Hardened Oaken Two Handed Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_1_handle" length="157.6" weight="0.8" item_holster_pos_shift="0,0,-0.1" CraftingCost="75">
+  <CraftingPiece id="crpg_short_bill_handle_h3" name="{=1T0XBYlc}Hardened Oaken Two Handed Axe Handle" tier="5" piece_type="Handle" mesh="axe_craft_1_handle" length="157.6" weight="0.6" item_holster_pos_shift="0,0,-0.1" CraftingCost="75">
     <BuildData piece_offset="37.408" next_piece_offset="1.42" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -9753,7 +9753,7 @@
   <CraftingPiece id="crpg_short_bill_blade_h2" name="{=R62maL2H}Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.505">
     <BuildData piece_offset="-7.6" />
     <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="3.9" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9766,7 +9766,7 @@
   <CraftingPiece id="crpg_short_bill_blade_h3" name="{=R62maL2H}Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.505">
     <BuildData piece_offset="-7.6" />
     <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="3.9" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
