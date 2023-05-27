@@ -134361,10 +134361,10 @@
     "name": "The Ambassador +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 9457,
-    "weight": 3.26,
+    "price": 13454,
+    "weight": 3.17,
     "heirloomLevel": 1,
-    "tier": 8.027431,
+    "tier": 9.781748,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -134375,8 +134375,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.6,
-        "handling": 84,
+        "balance": 0.64,
+        "handling": 85,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
@@ -134387,7 +134387,7 @@
         "thrustSpeed": 86,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
@@ -134396,10 +134396,10 @@
     "name": "The Ambassador +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 6976,
-    "weight": 3.26,
+    "price": 14087,
+    "weight": 3.17,
     "heirloomLevel": 2,
-    "tier": 6.74527,
+    "tier": 10.0345411,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -134410,8 +134410,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.6,
-        "handling": 84,
+        "balance": 0.64,
+        "handling": 85,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
@@ -134420,9 +134420,9 @@
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
-        "swingDamage": 37,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
@@ -134431,10 +134431,10 @@
     "name": "The Ambassador +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5303,
-    "weight": 3.26,
+    "price": 14395,
+    "weight": 3.17,
     "heirloomLevel": 3,
-    "tier": 5.747451,
+    "tier": 10.1556053,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -134445,19 +134445,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.6,
-        "handling": 84,
+        "balance": 0.64,
+        "handling": 85,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 29,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
-        "swingDamage": 37,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
