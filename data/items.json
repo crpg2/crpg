@@ -98095,10 +98095,10 @@
     "name": "Northlander Wide Fullered Greatsword +1",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 9089,
-    "weight": 3.56,
+    "price": 12677,
+    "weight": 3.39,
     "heirloomLevel": 1,
-    "tier": 7.84897232,
+    "tier": 9.463708,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -98111,18 +98111,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.11,
-        "handling": 70,
+        "balance": 0.2,
+        "handling": 71,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 76,
+        "thrustSpeed": 77,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 73
+        "swingSpeed": 75
       },
       {
         "class": "TwoHandedSword",
@@ -98131,7 +98131,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.71,
+        "balance": 0.79,
         "handling": 80,
         "bodyArmor": 4,
         "flags": [
@@ -98140,10 +98140,10 @@
         ],
         "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 83,
+        "thrustSpeed": 84,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 93
       }
     ]
   },
@@ -98152,10 +98152,10 @@
     "name": "Northlander Wide Fullered Greatsword +2",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 6710,
-    "weight": 3.56,
+    "price": 12190,
+    "weight": 3.39,
     "heirloomLevel": 2,
-    "tier": 6.595317,
+    "tier": 9.259068,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -98168,18 +98168,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.11,
-        "handling": 70,
+        "balance": 0.2,
+        "handling": 71,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 76,
-        "swingDamage": 38,
+        "thrustSpeed": 77,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 73
+        "swingSpeed": 75
       },
       {
         "class": "TwoHandedSword",
@@ -98188,19 +98188,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.71,
+        "balance": 0.79,
         "handling": 80,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 83,
-        "swingDamage": 38,
+        "thrustSpeed": 84,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 93
       }
     ]
   },
@@ -98209,10 +98209,10 @@
     "name": "Northlander Wide Fullered Greatsword +3",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 5105,
-    "weight": 3.56,
+    "price": 13219,
+    "weight": 3.39,
     "heirloomLevel": 3,
-    "tier": 5.6196785,
+    "tier": 9.686796,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -98225,18 +98225,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.11,
-        "handling": 70,
+        "balance": 0.2,
+        "handling": 71,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 76,
-        "swingDamage": 38,
+        "thrustSpeed": 77,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 73
+        "swingSpeed": 75
       },
       {
         "class": "TwoHandedSword",
@@ -98245,19 +98245,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.71,
+        "balance": 0.79,
         "handling": 80,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 83,
-        "swingDamage": 38,
+        "thrustSpeed": 84,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 93
       }
     ]
   },
