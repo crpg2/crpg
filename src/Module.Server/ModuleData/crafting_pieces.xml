@@ -24733,28 +24733,28 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_winter_blade_h1" name="{=}Ice Blade" tier="4" piece_type="Blade" mesh="ice_blade" culture="Culture.battania" length="81.1" weight="1.03">
+  <CraftingPiece id="crpg_winter_blade_h1" name="{=}Ice Blade" tier="4" piece_type="Blade" mesh="ice_blade" culture="Culture.battania" length="81.1" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
       <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_winter_blade_h2" name="{=}Ice Blade" tier="4" piece_type="Blade" mesh="ice_blade" culture="Culture.battania" length="81.1" weight="1.03">
+  <CraftingPiece id="crpg_winter_blade_h2" name="{=}Ice Blade" tier="4" piece_type="Blade" mesh="ice_blade" culture="Culture.battania" length="81.1" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
+      <Thrust damage_type="Pierce" damage_factor="2.9" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_winter_blade_h3" name="{=}Ice Blade" tier="4" piece_type="Blade" mesh="ice_blade" culture="Culture.battania" length="81.1" weight="1.03">
+  <CraftingPiece id="crpg_winter_blade_h3" name="{=}Ice Blade" tier="4" piece_type="Blade" mesh="ice_blade" culture="Culture.battania" length="81.1" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
+      <Thrust damage_type="Pierce" damage_factor="3.0" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
