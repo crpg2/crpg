@@ -15860,10 +15860,10 @@
     "name": "Black Heart Axe +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 4086,
-    "weight": 1.2,
+    "price": 6095,
+    "weight": 1.1,
     "heirloomLevel": 1,
-    "tier": 4.92014933,
+    "tier": 6.236436,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -15876,8 +15876,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 119,
-        "balance": 0.69,
-        "handling": 79,
+        "balance": 0.73,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -15887,10 +15887,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
-        "swingDamage": 37,
+        "thrustSpeed": 100,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 91
       }
     ]
   },
@@ -15899,10 +15899,10 @@
     "name": "Black Heart Axe +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 3074,
-    "weight": 1.2,
+    "price": 6602,
+    "weight": 1.1,
     "heirloomLevel": 2,
-    "tier": 4.134294,
+    "tier": 6.533529,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -15915,8 +15915,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 119,
-        "balance": 0.69,
-        "handling": 79,
+        "balance": 0.73,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -15926,10 +15926,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
-        "swingDamage": 37,
+        "thrustSpeed": 100,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 91
       }
     ]
   },
@@ -15938,10 +15938,10 @@
     "name": "Black Heart Axe +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 2383,
-    "weight": 1.2,
+    "price": 7195,
+    "weight": 1.1,
     "heirloomLevel": 3,
-    "tier": 3.52271152,
+    "tier": 6.866535,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -15954,8 +15954,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 119,
-        "balance": 0.69,
-        "handling": 79,
+        "balance": 0.73,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -15965,10 +15965,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
-        "swingDamage": 37,
+        "thrustSpeed": 100,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 91
       }
     ]
   },
