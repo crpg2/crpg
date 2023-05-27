@@ -50482,10 +50482,10 @@
     "name": "Harvesting Season +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 9648,
-    "weight": 2.78,
+    "price": 13400,
+    "weight": 2.54,
     "heirloomLevel": 1,
-    "tier": 8.118727,
+    "tier": 9.75991,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -50496,8 +50496,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.4,
-        "handling": 66,
+        "balance": 0.43,
+        "handling": 65,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon",
@@ -50506,10 +50506,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 86,
+        "thrustSpeed": 87,
         "swingDamage": 47,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 83
       }
     ]
   },
@@ -50518,10 +50518,10 @@
     "name": "Harvesting Season +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7114,
-    "weight": 2.78,
+    "price": 13525,
+    "weight": 2.54,
     "heirloomLevel": 2,
-    "tier": 6.821987,
+    "tier": 9.810498,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -50532,8 +50532,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.4,
-        "handling": 66,
+        "balance": 0.43,
+        "handling": 65,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon",
@@ -50542,10 +50542,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 86,
-        "swingDamage": 47,
+        "thrustSpeed": 87,
+        "swingDamage": 49,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 83
       }
     ]
   },
@@ -50554,10 +50554,10 @@
     "name": "Harvesting Season +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5405,
-    "weight": 2.78,
+    "price": 13819,
+    "weight": 2.54,
     "heirloomLevel": 3,
-    "tier": 5.812817,
+    "tier": 9.928315,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -50568,8 +50568,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.4,
-        "handling": 66,
+        "balance": 0.43,
+        "handling": 65,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon",
@@ -50578,10 +50578,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 86,
-        "swingDamage": 47,
+        "thrustSpeed": 87,
+        "swingDamage": 51,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 83
       }
     ]
   },
