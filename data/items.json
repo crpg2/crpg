@@ -8176,10 +8176,10 @@
     "name": "Bardiche +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 5576,
-    "weight": 2.56,
+    "price": 8364,
+    "weight": 2.33,
     "heirloomLevel": 1,
-    "tier": 5.920221,
+    "tier": 7.48623133,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -8192,8 +8192,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 143,
-        "balance": 0.45,
-        "handling": 79,
+        "balance": 0.53,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -8203,10 +8203,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 85
       }
     ]
   },
@@ -8215,10 +8215,10 @@
     "name": "Bardiche +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 4161,
-    "weight": 2.56,
+    "price": 8906,
+    "weight": 2.33,
     "heirloomLevel": 2,
-    "tier": 4.97463036,
+    "tier": 7.75889874,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -8231,8 +8231,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 143,
-        "balance": 0.45,
-        "handling": 79,
+        "balance": 0.53,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -8242,10 +8242,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 40,
+        "thrustSpeed": 90,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 85
       }
     ]
   },
@@ -8254,10 +8254,10 @@
     "name": "Bardiche +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 3200,
-    "weight": 2.56,
+    "price": 9556,
+    "weight": 2.33,
     "heirloomLevel": 3,
-    "tier": 4.238739,
+    "tier": 8.075148,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -8270,8 +8270,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 143,
-        "balance": 0.45,
-        "handling": 79,
+        "balance": 0.53,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -8281,10 +8281,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 40,
+        "thrustSpeed": 90,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 83
+        "swingSpeed": 85
       }
     ]
   },
