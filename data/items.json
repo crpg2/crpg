@@ -34602,10 +34602,10 @@
     "name": "Drilled Two Handed Axe +1",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 3367,
-    "weight": 1.13,
+    "price": 4711,
+    "weight": 1.03,
     "heirloomLevel": 1,
-    "tier": 4.3735857,
+    "tier": 5.357907,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -34618,8 +34618,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 90,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.45,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -34630,7 +34630,7 @@
         "thrustSpeed": 94,
         "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 83
       },
       {
         "class": "TwoHandedAxe",
@@ -34639,8 +34639,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 90,
-        "balance": 0.93,
-        "handling": 85,
+        "balance": 0.97,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -34650,10 +34650,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 100,
+        "thrustSpeed": 102,
         "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 99
       },
       {
         "class": "OneHandedAxe",
@@ -34662,8 +34662,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 90,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.45,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -34674,7 +34674,7 @@
         "thrustSpeed": 94,
         "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 83
       }
     ]
   },
@@ -34683,10 +34683,10 @@
     "name": "Drilled Two Handed Axe +2",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 2547,
-    "weight": 1.13,
+    "price": 5198,
+    "weight": 1.0,
     "heirloomLevel": 2,
-    "tier": 3.675026,
+    "tier": 5.680503,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -34699,8 +34699,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 90,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.48,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -34708,10 +34708,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 36,
+        "thrustSpeed": 95,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 84
       },
       {
         "class": "TwoHandedAxe",
@@ -34720,8 +34720,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 90,
-        "balance": 0.93,
-        "handling": 85,
+        "balance": 0.98,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -34731,10 +34731,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 100,
-        "swingDamage": 36,
+        "thrustSpeed": 102,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 99
       },
       {
         "class": "OneHandedAxe",
@@ -34743,8 +34743,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 90,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.48,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -34752,10 +34752,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 36,
+        "thrustSpeed": 95,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 84
       }
     ]
   },
@@ -34764,10 +34764,10 @@
     "name": "Drilled Two Handed Axe +3",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 1985,
-    "weight": 1.13,
+    "price": 5761,
+    "weight": 1.0,
     "heirloomLevel": 3,
-    "tier": 3.13138342,
+    "tier": 6.0346365,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -34780,8 +34780,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 90,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.48,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -34789,10 +34789,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 36,
+        "thrustSpeed": 95,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 84
       },
       {
         "class": "TwoHandedAxe",
@@ -34801,8 +34801,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 90,
-        "balance": 0.93,
-        "handling": 85,
+        "balance": 0.98,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -34812,10 +34812,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 100,
-        "swingDamage": 36,
+        "thrustSpeed": 102,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 99
       },
       {
         "class": "OneHandedAxe",
@@ -34824,8 +34824,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 90,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.48,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -34833,10 +34833,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 36,
+        "thrustSpeed": 95,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 81
+        "swingSpeed": 84
       }
     ]
   },
