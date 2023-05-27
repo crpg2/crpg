@@ -8062,19 +8062,19 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_hoe_handle_h1" name="{=xKGpbQjJ}Long Mahogany Shaft With Leather Wrapping" tier="4" piece_type="Handle" mesh="axe_craft_7_handle" length="124.3" weight="0.570" excluded_item_usage_features="widegrip">
+  <CraftingPiece id="crpg_hoe_handle_h1" name="{=xKGpbQjJ}Long Mahogany Shaft With Leather Wrapping" tier="4" piece_type="Handle" mesh="axe_craft_7_handle" length="124.3" weight="0.4" excluded_item_usage_features="widegrip">
     <BuildData piece_offset="30" next_piece_offset="1.5" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_hoe_handle_h2" name="{=xKGpbQjJ}Long Mahogany Shaft With Leather Wrapping" tier="4" piece_type="Handle" mesh="axe_craft_7_handle" length="124.3" weight="0.570" excluded_item_usage_features="widegrip">
+  <CraftingPiece id="crpg_hoe_handle_h2" name="{=xKGpbQjJ}Long Mahogany Shaft With Leather Wrapping" tier="4" piece_type="Handle" mesh="axe_craft_7_handle" length="124.3" weight="0.4" excluded_item_usage_features="widegrip">
     <BuildData piece_offset="30" next_piece_offset="1.5" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_hoe_handle_h3" name="{=xKGpbQjJ}Long Mahogany Shaft With Leather Wrapping" tier="4" piece_type="Handle" mesh="axe_craft_7_handle" length="124.3" weight="0.570" excluded_item_usage_features="widegrip">
+  <CraftingPiece id="crpg_hoe_handle_h3" name="{=xKGpbQjJ}Long Mahogany Shaft With Leather Wrapping" tier="4" piece_type="Handle" mesh="axe_craft_7_handle" length="124.3" weight="0.4" excluded_item_usage_features="widegrip">
     <BuildData piece_offset="30" next_piece_offset="1.5" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -9896,7 +9896,7 @@
   <CraftingPiece id="crpg_hoe_blade_h1" name="{=LSrJljDL}Adze Head" tier="1" piece_type="Blade" mesh="axe_craft_15_head" distance_to_next_piece="4.1" distance_to_previous_piece="3.2" weight="0.315" is_default="true">
     <BuildData piece_offset="-6.4" />
     <BladeData stack_amount="2" blade_length="4.552" blade_width="25.764" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="2.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9909,7 +9909,7 @@
   <CraftingPiece id="crpg_hoe_blade_h2" name="{=LSrJljDL}Adze Head" tier="1" piece_type="Blade" mesh="axe_craft_15_head" distance_to_next_piece="4.1" distance_to_previous_piece="3.2" weight="0.315" is_default="true">
     <BuildData piece_offset="-6.4" />
     <BladeData stack_amount="2" blade_length="4.552" blade_width="25.764" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9922,7 +9922,7 @@
   <CraftingPiece id="crpg_hoe_blade_h3" name="{=LSrJljDL}Adze Head" tier="1" piece_type="Blade" mesh="axe_craft_15_head" distance_to_next_piece="4.1" distance_to_previous_piece="3.2" weight="0.315" is_default="true">
     <BuildData piece_offset="-6.4" />
     <BladeData stack_amount="2" blade_length="4.552" blade_width="25.764" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />

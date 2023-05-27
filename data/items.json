@@ -57952,10 +57952,10 @@
     "name": "Hoe +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 357,
-    "weight": 1.2,
+    "price": 847,
+    "weight": 0.96,
     "heirloomLevel": 1,
-    "tier": 0.852889836,
+    "tier": 1.73297524,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -57969,8 +57969,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 134,
-        "balance": 0.1,
-        "handling": 70,
+        "balance": 0.23,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -57978,10 +57978,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 22,
+        "thrustSpeed": 94,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 72
+        "swingSpeed": 76
       },
       {
         "class": "TwoHandedAxe",
@@ -57990,8 +57990,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 134,
-        "balance": 0.71,
-        "handling": 80,
+        "balance": 0.81,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58001,10 +58001,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
-        "swingDamage": 22,
+        "thrustSpeed": 102,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 94
       },
       {
         "class": "OneHandedAxe",
@@ -58013,8 +58013,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 134,
-        "balance": 0.1,
-        "handling": 70,
+        "balance": 0.23,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58022,10 +58022,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 22,
+        "thrustSpeed": 94,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 72
+        "swingSpeed": 76
       }
     ]
   },
@@ -58034,10 +58034,10 @@
     "name": "Hoe +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 297,
-    "weight": 1.2,
+    "price": 15303,
+    "weight": 0.96,
     "heirloomLevel": 2,
-    "tier": 0.716664433,
+    "tier": 10.5045223,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -58051,8 +58051,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 134,
-        "balance": 0.1,
-        "handling": 70,
+        "balance": 0.23,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58060,10 +58060,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 22,
+        "thrustSpeed": 94,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 72
+        "swingSpeed": 76
       },
       {
         "class": "TwoHandedAxe",
@@ -58072,8 +58072,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 134,
-        "balance": 0.71,
-        "handling": 80,
+        "balance": 0.81,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58083,10 +58083,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
-        "swingDamage": 22,
+        "thrustSpeed": 102,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 94
       },
       {
         "class": "OneHandedAxe",
@@ -58095,8 +58095,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 134,
-        "balance": 0.1,
-        "handling": 70,
+        "balance": 0.23,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58104,10 +58104,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 22,
+        "thrustSpeed": 94,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 72
+        "swingSpeed": 76
       }
     ]
   },
@@ -58116,10 +58116,10 @@
     "name": "Hoe +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 253,
-    "weight": 1.2,
+    "price": 4995,
+    "weight": 0.96,
     "heirloomLevel": 3,
-    "tier": 0.610649,
+    "tier": 5.548074,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -58133,8 +58133,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 134,
-        "balance": 0.1,
-        "handling": 70,
+        "balance": 0.23,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58142,10 +58142,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 22,
+        "thrustSpeed": 94,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 72
+        "swingSpeed": 76
       },
       {
         "class": "TwoHandedAxe",
@@ -58154,8 +58154,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 134,
-        "balance": 0.71,
-        "handling": 80,
+        "balance": 0.81,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58165,10 +58165,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 99,
-        "swingDamage": 22,
+        "thrustSpeed": 102,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 91
+        "swingSpeed": 94
       },
       {
         "class": "OneHandedAxe",
@@ -58177,8 +58177,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 134,
-        "balance": 0.1,
-        "handling": 70,
+        "balance": 0.23,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58186,10 +58186,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 22,
+        "thrustSpeed": 94,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 72
+        "swingSpeed": 76
       }
     ]
   },
