@@ -133673,10 +133673,10 @@
     "name": "Thamaskene Steel Claymore +1",
     "culture": "Empire",
     "type": "TwoHandedWeapon",
-    "price": 8470,
-    "weight": 3.5,
+    "price": 12058,
+    "weight": 3.37,
     "heirloomLevel": 1,
-    "tier": 7.540286,
+    "tier": 9.203186,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -133687,7 +133687,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.48,
+        "balance": 0.53,
         "handling": 81,
         "bodyArmor": 5,
         "flags": [
@@ -133699,7 +133699,7 @@
         "thrustSpeed": 84,
         "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
@@ -133708,10 +133708,10 @@
     "name": "Thamaskene Steel Claymore +2",
     "culture": "Empire",
     "type": "TwoHandedWeapon",
-    "price": 6262,
-    "weight": 3.5,
+    "price": 12694,
+    "weight": 3.37,
     "heirloomLevel": 2,
-    "tier": 6.335935,
+    "tier": 9.470641,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -133722,7 +133722,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.48,
+        "balance": 0.53,
         "handling": 81,
         "bodyArmor": 5,
         "flags": [
@@ -133732,9 +133732,9 @@
         "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
-        "swingDamage": 40,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
@@ -133743,10 +133743,10 @@
     "name": "Thamaskene Steel Claymore +3",
     "culture": "Empire",
     "type": "TwoHandedWeapon",
-    "price": 4771,
-    "weight": 3.5,
+    "price": 11998,
+    "weight": 3.37,
     "heirloomLevel": 3,
-    "tier": 5.398669,
+    "tier": 9.177427,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -133757,19 +133757,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.48,
+        "balance": 0.53,
         "handling": 81,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 20,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
-        "swingDamage": 40,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
