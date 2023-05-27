@@ -33612,10 +33612,10 @@
     "name": "Desert Longsword +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 7254,
-    "weight": 2.93,
+    "price": 10621,
+    "weight": 2.8,
     "heirloomLevel": 1,
-    "tier": 6.89915,
+    "tier": 8.571221,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -33626,8 +33626,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 116,
-        "balance": 0.61,
-        "handling": 83,
+        "balance": 0.67,
+        "handling": 84,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
@@ -33638,7 +33638,7 @@
         "thrustSpeed": 87,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
@@ -33647,10 +33647,10 @@
     "name": "Desert Longsword +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 5381,
-    "weight": 2.93,
+    "price": 9884,
+    "weight": 2.8,
     "heirloomLevel": 2,
-    "tier": 5.797201,
+    "tier": 8.230402,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -33661,19 +33661,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 116,
-        "balance": 0.61,
-        "handling": 83,
+        "balance": 0.67,
+        "handling": 84,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 38,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
@@ -33682,10 +33682,10 @@
     "name": "Desert Longsword +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 4113,
-    "weight": 2.93,
+    "price": 10766,
+    "weight": 2.8,
     "heirloomLevel": 3,
-    "tier": 4.9396286,
+    "tier": 8.636618,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -33696,19 +33696,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 116,
-        "balance": 0.61,
-        "handling": 83,
+        "balance": 0.67,
+        "handling": 84,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 38,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
