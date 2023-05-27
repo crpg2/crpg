@@ -30507,10 +30507,10 @@
     "name": "Decorated Great Saber +1",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
-    "price": 9857,
-    "weight": 3.14,
+    "price": 13626,
+    "weight": 2.99,
     "heirloomLevel": 1,
-    "tier": 8.218063,
+    "tier": 9.851044,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30521,7 +30521,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 119,
-        "balance": 0.76,
+        "balance": 0.82,
         "handling": 88,
         "bodyArmor": 3,
         "flags": [
@@ -30530,10 +30530,10 @@
         ],
         "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
+        "thrustSpeed": 87,
         "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 94
       }
     ]
   },
@@ -30542,10 +30542,10 @@
     "name": "Decorated Great Saber +2",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
-    "price": 7266,
-    "weight": 3.14,
+    "price": 13370,
+    "weight": 2.99,
     "heirloomLevel": 2,
-    "tier": 6.905455,
+    "tier": 9.74802,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30556,19 +30556,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 119,
-        "balance": 0.76,
+        "balance": 0.82,
         "handling": 88,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
-        "swingDamage": 34,
+        "thrustSpeed": 87,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 94
       }
     ]
   },
@@ -30577,10 +30577,10 @@
     "name": "Decorated Great Saber +3",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
-    "price": 5518,
-    "weight": 3.14,
+    "price": 13552,
+    "weight": 2.99,
     "heirloomLevel": 3,
-    "tier": 5.883939,
+    "tier": 9.821375,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -30591,19 +30591,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 119,
-        "balance": 0.76,
+        "balance": 0.82,
         "handling": 88,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
-        "swingDamage": 34,
+        "thrustSpeed": 87,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 94
       }
     ]
   },
