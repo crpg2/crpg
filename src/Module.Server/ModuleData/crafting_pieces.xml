@@ -8254,19 +8254,19 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_saxon_short_battle_axe_handle_h1" name="{=22f2NR2N}Long Gnarled Ash Shaft" tier="1" piece_type="Handle" mesh="axe_craft_14_handle" length="115" weight="0.433" item_holster_pos_shift="0,0,0.15" excluded_item_usage_features="widegrip" is_default="true">
+  <CraftingPiece id="crpg_saxon_short_battle_axe_handle_h1" name="{=22f2NR2N}Long Gnarled Ash Shaft" tier="1" piece_type="Handle" mesh="axe_craft_14_handle" length="115" weight="0.27" item_holster_pos_shift="0,0,0.15" excluded_item_usage_features="widegrip" is_default="true">
     <BuildData piece_offset="20.1" next_piece_offset="1.1" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_saxon_short_battle_axe_handle_h2" name="{=22f2NR2N}Long Gnarled Ash Shaft" tier="1" piece_type="Handle" mesh="axe_craft_14_handle" length="115" weight="0.433" item_holster_pos_shift="0,0,0.15" excluded_item_usage_features="widegrip" is_default="true">
+  <CraftingPiece id="crpg_saxon_short_battle_axe_handle_h2" name="{=22f2NR2N}Long Gnarled Ash Shaft" tier="1" piece_type="Handle" mesh="axe_craft_14_handle" length="115" weight="0.27" item_holster_pos_shift="0,0,0.15" excluded_item_usage_features="widegrip" is_default="true">
     <BuildData piece_offset="20.1" next_piece_offset="1.1" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_saxon_short_battle_axe_handle_h3" name="{=22f2NR2N}Long Gnarled Ash Shaft" tier="1" piece_type="Handle" mesh="axe_craft_14_handle" length="115" weight="0.433" item_holster_pos_shift="0,0,0.15" excluded_item_usage_features="widegrip" is_default="true">
+  <CraftingPiece id="crpg_saxon_short_battle_axe_handle_h3" name="{=22f2NR2N}Long Gnarled Ash Shaft" tier="1" piece_type="Handle" mesh="axe_craft_14_handle" length="115" weight="0.27" item_holster_pos_shift="0,0,0.15" excluded_item_usage_features="widegrip" is_default="true">
     <BuildData piece_offset="20.1" next_piece_offset="1.1" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -9347,7 +9347,7 @@
   <CraftingPiece id="crpg_saxon_short_battle_axe_blade_h2" name="{=orwoyDlX}Great Sparth Axe Head" tier="2" piece_type="Blade" mesh="axe_craft_5_head" distance_to_next_piece="3.414" distance_to_previous_piece="2.617" weight="1.0">
     <BuildData piece_offset="-5.234" />
     <BladeData stack_amount="2" blade_length="13.105" blade_width="27.618" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.2" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9359,7 +9359,7 @@
   <CraftingPiece id="crpg_saxon_short_battle_axe_blade_h3" name="{=orwoyDlX}Great Sparth Axe Head" tier="2" piece_type="Blade" mesh="axe_craft_5_head" distance_to_next_piece="3.414" distance_to_previous_piece="2.617" weight="1.0">
     <BuildData piece_offset="-5.234" />
     <BladeData stack_amount="2" blade_length="13.105" blade_width="27.618" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.2" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />

@@ -112552,10 +112552,10 @@
     "name": "Saxon Short Battle Axe +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 3916,
-    "weight": 1.43,
+    "price": 5323,
+    "weight": 1.27,
     "heirloomLevel": 1,
-    "tier": 4.79556656,
+    "tier": 5.760544,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -112568,7 +112568,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 78,
-        "balance": 0.85,
+        "balance": 0.9,
         "handling": 85,
         "bodyArmor": 0,
         "flags": [
@@ -112579,10 +112579,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
+        "thrustSpeed": 99,
         "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 95
+        "swingSpeed": 97
       }
     ]
   },
@@ -112591,10 +112591,10 @@
     "name": "Saxon Short Battle Axe +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 2950,
-    "weight": 1.43,
+    "price": 5564,
+    "weight": 1.27,
     "heirloomLevel": 2,
-    "tier": 4.02960825,
+    "tier": 5.91235828,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -112607,7 +112607,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 78,
-        "balance": 0.85,
+        "balance": 0.9,
         "handling": 85,
         "bodyArmor": 0,
         "flags": [
@@ -112618,10 +112618,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 42,
+        "thrustSpeed": 99,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 95
+        "swingSpeed": 97
       }
     ]
   },
@@ -112630,10 +112630,10 @@
     "name": "Saxon Short Battle Axe +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 2289,
-    "weight": 1.43,
+    "price": 5866,
+    "weight": 1.27,
     "heirloomLevel": 3,
-    "tier": 3.43351221,
+    "tier": 6.09886265,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -112646,7 +112646,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 78,
-        "balance": 0.85,
+        "balance": 0.9,
         "handling": 85,
         "bodyArmor": 0,
         "flags": [
@@ -112657,10 +112657,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 42,
+        "thrustSpeed": 99,
+        "swingDamage": 46,
         "swingDamageType": "Cut",
-        "swingSpeed": 95
+        "swingSpeed": 97
       }
     ]
   },
