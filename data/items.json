@@ -16012,10 +16012,10 @@
     "name": "Black Katana +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 9975,
-    "weight": 2.91,
+    "price": 11927,
+    "weight": 2.81,
     "heirloomLevel": 1,
-    "tier": 8.273521,
+    "tier": 9.14709949,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16026,19 +16026,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -16047,10 +16047,10 @@
     "name": "Black Katana +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 7351,
-    "weight": 2.91,
+    "price": 11406,
+    "weight": 2.81,
     "heirloomLevel": 2,
-    "tier": 6.952056,
+    "tier": 8.92118,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16061,19 +16061,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -16082,10 +16082,10 @@
     "name": "Black Katana +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 5582,
-    "weight": 2.91,
+    "price": 12569,
+    "weight": 2.81,
     "heirloomLevel": 3,
-    "tier": 5.923647,
+    "tier": 9.418371,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16096,19 +16096,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -16684,10 +16684,10 @@
     "name": "Blue Katana +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 9975,
-    "weight": 2.91,
+    "price": 11927,
+    "weight": 2.81,
     "heirloomLevel": 1,
-    "tier": 8.273521,
+    "tier": 9.14709949,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16698,19 +16698,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -16719,10 +16719,10 @@
     "name": "Blue Katana +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 7351,
-    "weight": 2.91,
+    "price": 11406,
+    "weight": 2.81,
     "heirloomLevel": 2,
-    "tier": 6.952056,
+    "tier": 8.92118,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16733,19 +16733,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -16754,10 +16754,10 @@
     "name": "Blue Katana +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 5582,
-    "weight": 2.91,
+    "price": 12569,
+    "weight": 2.81,
     "heirloomLevel": 3,
-    "tier": 5.923647,
+    "tier": 9.418371,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -16768,19 +16768,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -49305,10 +49305,10 @@
     "name": "Green Katana +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 9975,
-    "weight": 2.91,
+    "price": 11927,
+    "weight": 2.81,
     "heirloomLevel": 1,
-    "tier": 8.273521,
+    "tier": 9.14709949,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -49319,19 +49319,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -49340,10 +49340,10 @@
     "name": "Green Katana +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 7351,
-    "weight": 2.91,
+    "price": 11406,
+    "weight": 2.81,
     "heirloomLevel": 2,
-    "tier": 6.952056,
+    "tier": 8.92118,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -49354,19 +49354,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -49375,10 +49375,10 @@
     "name": "Green Katana +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 5582,
-    "weight": 2.91,
+    "price": 12569,
+    "weight": 2.81,
     "heirloomLevel": 3,
-    "tier": 5.923647,
+    "tier": 9.418371,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -49389,19 +49389,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -106364,10 +106364,10 @@
     "name": "Red Katana +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 8500,
-    "weight": 2.93,
+    "price": 11927,
+    "weight": 2.81,
     "heirloomLevel": 1,
-    "tier": 7.55517673,
+    "tier": 9.14709949,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -106378,19 +106378,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.88,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
+        "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 98
       }
     ]
   },
@@ -106399,10 +106399,10 @@
     "name": "Red Katana +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 6284,
-    "weight": 2.93,
+    "price": 11406,
+    "weight": 2.81,
     "heirloomLevel": 2,
-    "tier": 6.348447,
+    "tier": 8.92118,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -106413,19 +106413,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.88,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
-        "swingDamage": 37,
+        "thrustSpeed": 87,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 98
       }
     ]
   },
@@ -106434,10 +106434,10 @@
     "name": "Red Katana +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 4787,
-    "weight": 2.93,
+    "price": 12569,
+    "weight": 2.81,
     "heirloomLevel": 3,
-    "tier": 5.40932941,
+    "tier": 9.418371,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -106448,19 +106448,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.88,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
-        "swingDamage": 37,
+        "thrustSpeed": 87,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 98
       }
     ]
   },
@@ -147987,10 +147987,10 @@
     "name": "Yellow Katana +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 9975,
-    "weight": 2.91,
+    "price": 11927,
+    "weight": 2.81,
     "heirloomLevel": 1,
-    "tier": 8.273521,
+    "tier": 9.14709949,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -148001,19 +148001,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -148022,10 +148022,10 @@
     "name": "Yellow Katana +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 7351,
-    "weight": 2.91,
+    "price": 11406,
+    "weight": 2.81,
     "heirloomLevel": 2,
-    "tier": 6.952056,
+    "tier": 8.92118,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -148036,19 +148036,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
@@ -148057,10 +148057,10 @@
     "name": "Yellow Katana +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 5582,
-    "weight": 2.91,
+    "price": 12569,
+    "weight": 2.81,
     "heirloomLevel": 3,
-    "tier": 5.923647,
+    "tier": 9.418371,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -148071,19 +148071,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   }
