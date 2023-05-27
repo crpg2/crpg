@@ -78486,10 +78486,10 @@
     "name": "Longsword +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 10038,
-    "weight": 2.17,
+    "price": 13948,
+    "weight": 1.96,
     "heirloomLevel": 1,
-    "tier": 8.302805,
+    "tier": 9.979699,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -78502,18 +78502,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 107,
-        "balance": 0.2,
+        "balance": 0.28,
         "handling": 64,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
+        "thrustSpeed": 85,
         "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 78
       },
       {
         "class": "TwoHandedSword",
@@ -78522,19 +78522,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 107,
-        "balance": 0.79,
-        "handling": 76,
+        "balance": 0.85,
+        "handling": 75,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 93,
         "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 95
       },
       {
         "class": "OneHandedSword",
@@ -78543,18 +78543,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 107,
-        "balance": 0.2,
+        "balance": 0.28,
         "handling": 64,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
+        "thrustSpeed": 85,
         "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 78
       }
     ]
   },
@@ -78563,10 +78563,10 @@
     "name": "Longsword +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7396,
-    "weight": 2.17,
+    "price": 15680,
+    "weight": 1.96,
     "heirloomLevel": 2,
-    "tier": 6.97666168,
+    "tier": 10.6467276,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -78579,18 +78579,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 107,
-        "balance": 0.2,
+        "balance": 0.28,
         "handling": 64,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
-        "swingDamage": 39,
+        "thrustSpeed": 85,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 78
       },
       {
         "class": "TwoHandedSword",
@@ -78599,19 +78599,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 107,
-        "balance": 0.79,
-        "handling": 76,
+        "balance": 0.85,
+        "handling": 75,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 39,
+        "thrustSpeed": 93,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 95
       },
       {
         "class": "OneHandedSword",
@@ -78620,18 +78620,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 107,
-        "balance": 0.2,
+        "balance": 0.28,
         "handling": 64,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
-        "swingDamage": 39,
+        "thrustSpeed": 85,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 78
       }
     ]
   },
@@ -78640,10 +78640,10 @@
     "name": "Longsword +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5615,
-    "weight": 2.17,
+    "price": 14033,
+    "weight": 1.96,
     "heirloomLevel": 3,
-    "tier": 5.94461155,
+    "tier": 10.0134411,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -78656,18 +78656,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 107,
-        "balance": 0.2,
+        "balance": 0.28,
         "handling": 64,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
-        "swingDamage": 39,
+        "thrustSpeed": 85,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 78
       },
       {
         "class": "TwoHandedSword",
@@ -78676,19 +78676,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 107,
-        "balance": 0.79,
-        "handling": 76,
+        "balance": 0.85,
+        "handling": 75,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 39,
+        "thrustSpeed": 93,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 95
       },
       {
         "class": "OneHandedSword",
@@ -78697,18 +78697,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 107,
-        "balance": 0.2,
+        "balance": 0.28,
         "handling": 64,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 84,
-        "swingDamage": 39,
+        "thrustSpeed": 85,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 78
       }
     ]
   },
