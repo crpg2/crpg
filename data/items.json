@@ -146051,10 +146051,10 @@
     "name": "Woodsman Two Handed Axe +1",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1707,
-    "weight": 1.41,
+    "price": 2268,
+    "weight": 1.24,
     "heirloomLevel": 1,
-    "tier": 2.83555555,
+    "tier": 3.41271448,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -146067,7 +146067,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 85,
-        "balance": 0.83,
+        "balance": 0.88,
         "handling": 85,
         "bodyArmor": 0,
         "flags": [
@@ -146078,10 +146078,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
+        "thrustSpeed": 100,
         "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 96
       }
     ]
   },
@@ -146090,10 +146090,10 @@
     "name": "Woodsman Two Handed Axe +2",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1320,
-    "weight": 1.41,
+    "price": 2485,
+    "weight": 1.24,
     "heirloomLevel": 2,
-    "tier": 2.382654,
+    "tier": 3.61819029,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -146106,7 +146106,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 85,
-        "balance": 0.83,
+        "balance": 0.88,
         "handling": 85,
         "bodyArmor": 0,
         "flags": [
@@ -146117,10 +146117,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 36,
+        "thrustSpeed": 100,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 96
       }
     ]
   },
@@ -146129,10 +146129,10 @@
     "name": "Woodsman Two Handed Axe +3",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1052,
-    "weight": 1.41,
+    "price": 2735,
+    "weight": 1.24,
     "heirloomLevel": 3,
-    "tier": 2.03019047,
+    "tier": 3.84375572,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -146145,7 +146145,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 85,
-        "balance": 0.83,
+        "balance": 0.88,
         "handling": 85,
         "bodyArmor": 0,
         "flags": [
@@ -146156,10 +146156,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 36,
+        "thrustSpeed": 100,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 96
       }
     ]
   },
