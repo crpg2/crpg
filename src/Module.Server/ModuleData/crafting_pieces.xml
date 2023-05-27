@@ -8182,19 +8182,19 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_hooked_two_handed_axe_handle_h1" name="{=J3ADekEw}Oaken Great Axe Shaft" tier="4" piece_type="Handle" mesh="axe_craft_31_handle" length="140" weight="0.45">
+  <CraftingPiece id="crpg_hooked_two_handed_axe_handle_h1" name="{=J3ADekEw}Oaken Great Axe Shaft" tier="4" piece_type="Handle" mesh="axe_craft_31_handle" length="140" weight="0.25">
     <BuildData piece_offset="20" next_piece_offset="1.835" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_hooked_two_handed_axe_handle_h2" name="{=J3ADekEw}Oaken Great Axe Shaft" tier="4" piece_type="Handle" mesh="axe_craft_31_handle" length="140" weight="0.45">
+  <CraftingPiece id="crpg_hooked_two_handed_axe_handle_h2" name="{=J3ADekEw}Oaken Great Axe Shaft" tier="4" piece_type="Handle" mesh="axe_craft_31_handle" length="140" weight="0.25">
     <BuildData piece_offset="20" next_piece_offset="1.835" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_hooked_two_handed_axe_handle_h3" name="{=J3ADekEw}Oaken Great Axe Shaft" tier="4" piece_type="Handle" mesh="axe_craft_31_handle" length="140" weight="0.45">
+  <CraftingPiece id="crpg_hooked_two_handed_axe_handle_h3" name="{=J3ADekEw}Oaken Great Axe Shaft" tier="4" piece_type="Handle" mesh="axe_craft_31_handle" length="140" weight="0.25">
     <BuildData piece_offset="20" next_piece_offset="1.835" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -9193,7 +9193,7 @@
   <CraftingPiece id="crpg_hooked_two_handed_axe_blade_h2" name="{=a0erBuF1}Hooked Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_34_head" distance_to_next_piece="8.8" distance_to_previous_piece="4" weight="0.825">
     <BuildData piece_offset="-8" />
     <BladeData stack_amount="2" blade_length="20.281" blade_width="19.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -9206,7 +9206,7 @@
   <CraftingPiece id="crpg_hooked_two_handed_axe_blade_h3" name="{=a0erBuF1}Hooked Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_34_head" distance_to_next_piece="8.8" distance_to_previous_piece="4" weight="0.825">
     <BuildData piece_offset="-8" />
     <BladeData stack_amount="2" blade_length="20.281" blade_width="19.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
