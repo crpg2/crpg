@@ -21434,10 +21434,10 @@
     "name": "Broad Kaskara +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 7404,
-    "weight": 2.16,
+    "price": 11423,
+    "weight": 2.02,
     "heirloomLevel": 1,
-    "tier": 6.98078,
+    "tier": 8.928574,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21448,8 +21448,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 123,
-        "balance": 0.57,
-        "handling": 81,
+        "balance": 0.64,
+        "handling": 83,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
@@ -21457,10 +21457,10 @@
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
+        "thrustSpeed": 93,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
@@ -21469,10 +21469,10 @@
     "name": "Broad Kaskara +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 5489,
-    "weight": 2.16,
+    "price": 10566,
+    "weight": 2.02,
     "heirloomLevel": 2,
-    "tier": 5.865794,
+    "tier": 8.546223,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21483,19 +21483,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 123,
-        "balance": 0.57,
-        "handling": 81,
+        "balance": 0.64,
+        "handling": 83,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 38,
+        "thrustSpeed": 93,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
@@ -21504,10 +21504,10 @@
     "name": "Broad Kaskara +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 4194,
-    "weight": 2.16,
+    "price": 11545,
+    "weight": 2.02,
     "heirloomLevel": 3,
-    "tier": 4.998072,
+    "tier": 8.981957,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21518,19 +21518,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 123,
-        "balance": 0.57,
-        "handling": 81,
+        "balance": 0.64,
+        "handling": 83,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 38,
+        "thrustSpeed": 93,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
