@@ -24980,7 +24980,7 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_barmace_blade_h1" name="{=}Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.25" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_barmace_blade_h1" name="{=}Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.18" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="Blunt" damage_factor="2.7" />
     </BladeData>
@@ -24988,17 +24988,17 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_barmace_blade_h2" name="{=}Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.25" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_barmace_blade_h2" name="{=}Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.18" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Swing damage_type="Blunt" damage_factor="2.7" />
+      <Swing damage_type="Blunt" damage_factor="2.8" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_barmace_blade_h3" name="{=}Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.25" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_barmace_blade_h3" name="{=}Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.18" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Swing damage_type="Blunt" damage_factor="2.7" />
+      <Swing damage_type="Blunt" damage_factor="2.9" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
