@@ -24939,7 +24939,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_gada_blade_h1" name="{=}Gada Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="1.42" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_gada_blade_h1" name="{=}Gada Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="1.32" full_scale="true" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="2.9" />
     </BladeData>
@@ -24950,9 +24950,9 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_gada_blade_h2" name="{=}Gada Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="1.42" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_gada_blade_h2" name="{=}Gada Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="1.32" full_scale="true" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.9" />
+      <Swing damage_type="Blunt" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="CanKnockDown" />
@@ -24961,9 +24961,9 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_gada_blade_h3" name="{=}Gada Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="1.42" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_gada_blade_h3" name="{=}Gada Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="1.32" full_scale="true" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.9" />
+      <Swing damage_type="Blunt" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="CanKnockDown" />

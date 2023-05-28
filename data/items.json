@@ -47231,10 +47231,10 @@
     "name": "Gada +1",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 5971,
-    "weight": 2.42,
+    "price": 9420,
+    "weight": 2.32,
     "heirloomLevel": 1,
-    "tier": 6.16207933,
+    "tier": 8.009924,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -47245,8 +47245,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.15,
-        "handling": 72,
+        "balance": 0.23,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -47256,10 +47256,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 74
+        "swingSpeed": 76
       }
     ]
   },
@@ -47268,10 +47268,10 @@
     "name": "Gada +2",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 4448,
-    "weight": 2.42,
+    "price": 8963,
+    "weight": 2.32,
     "heirloomLevel": 2,
-    "tier": 5.177858,
+    "tier": 7.78684139,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -47282,8 +47282,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.15,
-        "handling": 72,
+        "balance": 0.23,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -47293,10 +47293,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 29,
+        "thrustSpeed": 90,
+        "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 74
+        "swingSpeed": 76
       }
     ]
   },
@@ -47305,10 +47305,10 @@
     "name": "Gada +3",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 3416,
-    "weight": 2.42,
+    "price": 8667,
+    "weight": 2.32,
     "heirloomLevel": 3,
-    "tier": 4.41190434,
+    "tier": 7.639608,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -47319,8 +47319,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.15,
-        "handling": 72,
+        "balance": 0.23,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -47330,10 +47330,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 29,
+        "thrustSpeed": 90,
+        "swingDamage": 31,
         "swingDamageType": "Blunt",
-        "swingSpeed": 74
+        "swingSpeed": 76
       }
     ]
   },
