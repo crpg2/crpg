@@ -132679,10 +132679,10 @@
     "name": "Tapered Two-Hander +1",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 1527,
-    "weight": 2.45,
+    "price": 2207,
+    "weight": 2.29,
     "heirloomLevel": 1,
-    "tier": 2.63147688,
+    "tier": 3.35367346,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -132696,17 +132696,17 @@
         "stackAmount": 0,
         "length": 145,
         "balance": 0.0,
-        "handling": 67,
+        "handling": 69,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
+        "thrustSpeed": 83,
         "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 55
+        "swingSpeed": 59
       },
       {
         "class": "TwoHandedSword",
@@ -132715,8 +132715,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 145,
-        "balance": 0.29,
-        "handling": 78,
+        "balance": 0.36,
+        "handling": 79,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -132724,10 +132724,10 @@
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 78
+        "swingSpeed": 80
       },
       {
         "class": "OneHandedSword",
@@ -132737,17 +132737,17 @@
         "stackAmount": 0,
         "length": 145,
         "balance": 0.0,
-        "handling": 67,
+        "handling": 69,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
+        "thrustSpeed": 83,
         "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 55
+        "swingSpeed": 59
       }
     ]
   },
@@ -132756,10 +132756,10 @@
     "name": "Tapered Two-Hander +2",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 1186,
-    "weight": 2.45,
+    "price": 2441,
+    "weight": 2.29,
     "heirloomLevel": 2,
-    "tier": 2.211172,
+    "tier": 3.57739639,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -132773,17 +132773,17 @@
         "stackAmount": 0,
         "length": 145,
         "balance": 0.0,
-        "handling": 67,
+        "handling": 69,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
-        "swingDamage": 34,
+        "thrustSpeed": 83,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 55
+        "swingSpeed": 59
       },
       {
         "class": "TwoHandedSword",
@@ -132792,8 +132792,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 145,
-        "balance": 0.29,
-        "handling": 78,
+        "balance": 0.36,
+        "handling": 79,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -132801,10 +132801,10 @@
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 34,
+        "thrustSpeed": 90,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 78
+        "swingSpeed": 80
       },
       {
         "class": "OneHandedSword",
@@ -132814,17 +132814,17 @@
         "stackAmount": 0,
         "length": 145,
         "balance": 0.0,
-        "handling": 67,
+        "handling": 69,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
-        "swingDamage": 34,
+        "thrustSpeed": 83,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 55
+        "swingSpeed": 59
       }
     ]
   },
@@ -132833,10 +132833,10 @@
     "name": "Tapered Two-Hander +3",
     "culture": "Vlandia",
     "type": "TwoHandedWeapon",
-    "price": 948,
-    "weight": 2.45,
+    "price": 2707,
+    "weight": 2.29,
     "heirloomLevel": 3,
-    "tier": 1.88407493,
+    "tier": 3.81912947,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -132850,17 +132850,17 @@
         "stackAmount": 0,
         "length": 145,
         "balance": 0.0,
-        "handling": 67,
+        "handling": 69,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
-        "swingDamage": 34,
+        "thrustSpeed": 83,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 55
+        "swingSpeed": 59
       },
       {
         "class": "TwoHandedSword",
@@ -132869,19 +132869,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 145,
-        "balance": 0.29,
-        "handling": 78,
+        "balance": 0.36,
+        "handling": 79,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 34,
+        "thrustSpeed": 90,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 78
+        "swingSpeed": 80
       },
       {
         "class": "OneHandedSword",
@@ -132891,17 +132891,17 @@
         "stackAmount": 0,
         "length": 145,
         "balance": 0.0,
-        "handling": 67,
+        "handling": 69,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
-        "swingDamage": 34,
+        "thrustSpeed": 83,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 55
+        "swingSpeed": 59
       }
     ]
   },
