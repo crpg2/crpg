@@ -106137,10 +106137,10 @@
     "name": "Reaper +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 6150,
-    "weight": 2.22,
+    "price": 9082,
+    "weight": 2.1,
     "heirloomLevel": 1,
-    "tier": 6.269241,
+    "tier": 7.845233,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -106151,8 +106151,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 131,
-        "balance": 0.57,
-        "handling": 82,
+        "balance": 0.64,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -106164,7 +106164,7 @@
         "thrustSpeed": 92,
         "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
@@ -106173,10 +106173,10 @@
     "name": "Reaper +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 4579,
-    "weight": 2.22,
+    "price": 8327,
+    "weight": 2.1,
     "heirloomLevel": 2,
-    "tier": 5.26790142,
+    "tier": 7.46727133,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -106187,8 +106187,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 131,
-        "balance": 0.57,
-        "handling": 82,
+        "balance": 0.64,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -106198,9 +106198,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 92,
-        "swingDamage": 34,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
@@ -106209,10 +106209,10 @@
     "name": "Reaper +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 3513,
-    "weight": 2.22,
+    "price": 8111,
+    "weight": 2.07,
     "heirloomLevel": 3,
-    "tier": 4.488628,
+    "tier": 7.356111,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -106223,8 +106223,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 131,
-        "balance": 0.57,
-        "handling": 82,
+        "balance": 0.66,
+        "handling": 84,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -106233,10 +106233,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 34,
+        "thrustSpeed": 93,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
