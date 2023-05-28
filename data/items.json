@@ -55855,10 +55855,10 @@
     "name": "Highland Fine Two Handed Sword +1",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 2542,
-    "weight": 2.18,
+    "price": 3610,
+    "weight": 2.05,
     "heirloomLevel": 1,
-    "tier": 3.67000532,
+    "tier": 4.5642767,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -55871,8 +55871,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.0,
-        "handling": 76,
+        "balance": 0.1,
+        "handling": 77,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
@@ -55882,7 +55882,7 @@
         "thrustSpeed": 85,
         "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 70
+        "swingSpeed": 72
       },
       {
         "class": "TwoHandedSword",
@@ -55891,8 +55891,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.64,
-        "handling": 84,
+        "balance": 0.71,
+        "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon",
@@ -55900,10 +55900,10 @@
         ],
         "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
+        "thrustSpeed": 93,
         "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 91
       },
       {
         "class": "OneHandedSword",
@@ -55912,8 +55912,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.0,
-        "handling": 76,
+        "balance": 0.1,
+        "handling": 77,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
@@ -55923,7 +55923,7 @@
         "thrustSpeed": 85,
         "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 70
+        "swingSpeed": 72
       }
     ]
   },
@@ -55932,10 +55932,10 @@
     "name": "Highland Fine Two Handed Sword +2",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1939,
-    "weight": 2.18,
+    "price": 4270,
+    "weight": 2.05,
     "heirloomLevel": 2,
-    "tier": 3.08382344,
+    "tier": 5.05229664,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -55948,8 +55948,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.0,
-        "handling": 76,
+        "balance": 0.1,
+        "handling": 77,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
@@ -55957,9 +55957,9 @@
         "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 30,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 70
+        "swingSpeed": 72
       },
       {
         "class": "TwoHandedSword",
@@ -55968,8 +55968,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.64,
-        "handling": 84,
+        "balance": 0.71,
+        "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon",
@@ -55977,10 +55977,10 @@
         ],
         "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 30,
+        "thrustSpeed": 93,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 91
       },
       {
         "class": "OneHandedSword",
@@ -55989,8 +55989,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.0,
-        "handling": 76,
+        "balance": 0.1,
+        "handling": 77,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
@@ -55998,9 +55998,9 @@
         "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 30,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 70
+        "swingSpeed": 72
       }
     ]
   },
@@ -56009,10 +56009,10 @@
     "name": "Highland Fine Two Handed Sword +3",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1524,
-    "weight": 2.18,
+    "price": 4203,
+    "weight": 2.05,
     "heirloomLevel": 3,
-    "tier": 2.62763643,
+    "tier": 5.004372,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -56025,18 +56025,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.0,
-        "handling": 76,
+        "balance": 0.1,
+        "handling": 77,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 30,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 70
+        "swingSpeed": 72
       },
       {
         "class": "TwoHandedSword",
@@ -56045,19 +56045,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.64,
-        "handling": 84,
+        "balance": 0.71,
+        "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 30,
+        "thrustSpeed": 93,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 89
+        "swingSpeed": 91
       },
       {
         "class": "OneHandedSword",
@@ -56066,18 +56066,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 128,
-        "balance": 0.0,
-        "handling": 76,
+        "balance": 0.1,
+        "handling": 77,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
-        "swingDamage": 30,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 70
+        "swingSpeed": 72
       }
     ]
   },
