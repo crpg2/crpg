@@ -24326,19 +24326,19 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_boulder_on_a_stick_handle_h1" name="{=}Stick for the Boulder" tier="1" piece_type="Handle" mesh="greataxe_handle" length="129" weight="1.7" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+  <CraftingPiece id="crpg_boulder_on_a_stick_handle_h1" name="{=}Stick for the Boulder" tier="1" piece_type="Handle" mesh="greataxe_handle" length="129" weight="1.45" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
     <BuildData piece_offset="14.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_boulder_on_a_stick_handle_h2" name="{=}Stick for the Boulder" tier="1" piece_type="Handle" mesh="greataxe_handle" length="129" weight="1.7" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+  <CraftingPiece id="crpg_boulder_on_a_stick_handle_h2" name="{=}Stick for the Boulder" tier="1" piece_type="Handle" mesh="greataxe_handle" length="129" weight="1.45" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
     <BuildData piece_offset="14.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_boulder_on_a_stick_handle_h3" name="{=}Stick for the Boulder" tier="1" piece_type="Handle" mesh="greataxe_handle" length="129" weight="1.7" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+  <CraftingPiece id="crpg_boulder_on_a_stick_handle_h3" name="{=}Stick for the Boulder" tier="1" piece_type="Handle" mesh="greataxe_handle" length="129" weight="1.45" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
     <BuildData piece_offset="14.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -24370,7 +24370,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_boulder_on_a_stick_blade_h2" name="{=}Boulder for the Stick" tier="2" piece_type="Blade" mesh="crpg_bos_head" length="23.1" weight="1.4" full_scale="true" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.8" />
+      <Swing damage_type="Blunt" damage_factor="2.9" />
     </BladeData>
     <Flags>
       <Flag name="CanKnockDown" />
@@ -24382,7 +24382,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_boulder_on_a_stick_blade_h3" name="{=}Boulder for the Stick" tier="2" piece_type="Blade" mesh="crpg_bos_head" length="23.1" weight="1.4" full_scale="true" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.8" />
+      <Swing damage_type="Blunt" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="CanKnockDown" />

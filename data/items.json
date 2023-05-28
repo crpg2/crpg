@@ -18828,10 +18828,10 @@
     "name": "Boulder on a Stick +1",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 6915,
-    "weight": 3.1,
+    "price": 11118,
+    "weight": 2.85,
     "heirloomLevel": 1,
-    "tier": 6.711287,
+    "tier": 8.794261,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -18842,8 +18842,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.1,
-        "handling": 68,
+        "balance": 0.14,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -18854,10 +18854,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
+        "thrustSpeed": 86,
         "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 72
+        "swingSpeed": 74
       }
     ]
   },
@@ -18866,10 +18866,10 @@
     "name": "Boulder on a Stick +2",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 5135,
-    "weight": 3.1,
+    "price": 10670,
+    "weight": 2.85,
     "heirloomLevel": 2,
-    "tier": 5.639346,
+    "tier": 8.59318352,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -18880,8 +18880,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.1,
-        "handling": 68,
+        "balance": 0.14,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -18892,10 +18892,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 28,
+        "thrustSpeed": 86,
+        "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 72
+        "swingSpeed": 74
       }
     ]
   },
@@ -18904,10 +18904,10 @@
     "name": "Boulder on a Stick +3",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 3929,
-    "weight": 3.1,
+    "price": 10402,
+    "weight": 2.85,
     "heirloomLevel": 3,
-    "tier": 4.805124,
+    "tier": 8.471103,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -18918,8 +18918,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 102,
-        "balance": 0.1,
-        "handling": 68,
+        "balance": 0.14,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -18930,10 +18930,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 28,
+        "thrustSpeed": 86,
+        "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 72
+        "swingSpeed": 74
       }
     ]
   },
