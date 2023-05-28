@@ -21249,7 +21249,7 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_two_hander_blade_h1" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.55">
+  <CraftingPiece id="crpg_broad_two_hander_blade_h1" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.40">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="1.7" />
       <Swing damage_type="Cut" damage_factor="3.9" />
@@ -21258,19 +21258,19 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_two_hander_blade_h2" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.55">
+  <CraftingPiece id="crpg_broad_two_hander_blade_h2" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.40">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="1.7" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broad_two_hander_blade_h3" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.55">
+  <CraftingPiece id="crpg_broad_two_hander_blade_h3" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.40">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
-      <Thrust damage_type="Pierce" damage_factor="1.7" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="3" />
