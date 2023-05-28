@@ -14442,10 +14442,10 @@
     "name": "Battanian Mountain Blade +1",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 4092,
-    "weight": 2.22,
+    "price": 6031,
+    "weight": 2.08,
     "heirloomLevel": 1,
-    "tier": 4.92459869,
+    "tier": 6.198253,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14458,8 +14458,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 126,
-        "balance": 0.49,
-        "handling": 82,
+        "balance": 0.55,
+        "handling": 83,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
@@ -14470,7 +14470,7 @@
         "thrustSpeed": 92,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
@@ -14479,10 +14479,10 @@
     "name": "Battanian Mountain Blade +2",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 3078,
-    "weight": 2.22,
+    "price": 5444,
+    "weight": 2.08,
     "heirloomLevel": 2,
-    "tier": 4.13802958,
+    "tier": 5.83725262,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14495,8 +14495,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 126,
-        "balance": 0.49,
-        "handling": 82,
+        "balance": 0.55,
+        "handling": 83,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
@@ -14505,9 +14505,9 @@
         "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
-        "swingDamage": 37,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
@@ -14516,10 +14516,10 @@
     "name": "Battanian Mountain Blade +3",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 2386,
-    "weight": 2.22,
+    "price": 6024,
+    "weight": 2.08,
     "heirloomLevel": 3,
-    "tier": 3.52589536,
+    "tier": 6.19394732,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14532,8 +14532,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 126,
-        "balance": 0.49,
-        "handling": 82,
+        "balance": 0.55,
+        "handling": 83,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
@@ -14542,9 +14542,9 @@
         "thrustDamage": 12,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
-        "swingDamage": 37,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
