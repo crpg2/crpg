@@ -52658,10 +52658,10 @@
     "name": "Heavy Goedendag",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 10104,
+    "price": 11449,
     "weight": 2.6,
     "heirloomLevel": 0,
-    "tier": 8.333689,
+    "tier": 8.939813,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -52682,7 +52682,7 @@
           "NotUsableWithOneHand",
           "MultiplePenetration"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
         "swingDamage": 24,
@@ -52696,10 +52696,10 @@
     "name": "Heavy Goedendag +1",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 7233,
-    "weight": 2.6,
+    "price": 11812,
+    "weight": 2.5,
     "heirloomLevel": 1,
-    "tier": 6.88734436,
+    "tier": 9.097779,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -52712,20 +52712,20 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 74,
-        "balance": 0.61,
-        "handling": 84,
+        "balance": 0.68,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "MultiplePenetration"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
@@ -52734,10 +52734,10 @@
     "name": "Heavy Goedendag +2",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 5365,
-    "weight": 2.6,
+    "price": 11549,
+    "weight": 2.5,
     "heirloomLevel": 2,
-    "tier": 5.787284,
+    "tier": 8.983603,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -52750,20 +52750,20 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 74,
-        "balance": 0.61,
-        "handling": 84,
+        "balance": 0.68,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "MultiplePenetration"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 24,
+        "thrustSpeed": 90,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
@@ -52772,10 +52772,10 @@
     "name": "Heavy Goedendag +3",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 4101,
-    "weight": 2.6,
+    "price": 11467,
+    "weight": 2.5,
     "heirloomLevel": 3,
-    "tier": 4.93117571,
+    "tier": 8.947878,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -52788,20 +52788,20 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 74,
-        "balance": 0.61,
-        "handling": 84,
+        "balance": 0.68,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "MultiplePenetration"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 24,
+        "thrustSpeed": 90,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
