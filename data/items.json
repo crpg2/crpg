@@ -141708,10 +141708,10 @@
     "name": "War Razor +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 3578,
-    "weight": 2.49,
+    "price": 5261,
+    "weight": 2.39,
     "heirloomLevel": 1,
-    "tier": 4.538932,
+    "tier": 5.72045,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -141722,8 +141722,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.49,
-        "handling": 81,
+        "balance": 0.54,
+        "handling": 82,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
@@ -141732,10 +141732,10 @@
         ],
         "thrustDamage": 9,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
@@ -141744,10 +141744,10 @@
     "name": "War Razor +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 2701,
-    "weight": 2.49,
+    "price": 4734,
+    "weight": 2.39,
     "heirloomLevel": 2,
-    "tier": 3.81396341,
+    "tier": 5.373917,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -141758,8 +141758,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.49,
-        "handling": 81,
+        "balance": 0.54,
+        "handling": 82,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
@@ -141768,10 +141768,10 @@
         ],
         "thrustDamage": 9,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 38,
+        "thrustSpeed": 90,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
@@ -141780,10 +141780,10 @@
     "name": "War Razor +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 2102,
-    "weight": 2.49,
+    "price": 4692,
+    "weight": 2.39,
     "heirloomLevel": 3,
-    "tier": 3.2497685,
+    "tier": 5.345338,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -141794,20 +141794,20 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.49,
-        "handling": 81,
+        "balance": 0.54,
+        "handling": 82,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "BonusAgainstShield"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 38,
+        "thrustSpeed": 90,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
