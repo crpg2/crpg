@@ -48746,10 +48746,10 @@
     "name": "Great Maul +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 6800,
-    "weight": 3.08,
+    "price": 10579,
+    "weight": 2.95,
     "heirloomLevel": 1,
-    "tier": 6.64623737,
+    "tier": 8.552252,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -48762,8 +48762,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.25,
-        "handling": 75,
+        "balance": 0.3,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -48774,10 +48774,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
+        "thrustSpeed": 89,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 77
+        "swingSpeed": 79
       },
       {
         "class": "TwoHandedMace",
@@ -48786,8 +48786,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.05,
-        "handling": 72,
+        "balance": 0.12,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -48801,7 +48801,7 @@
         "thrustSpeed": 86,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 71
+        "swingSpeed": 73
       }
     ]
   },
@@ -48810,10 +48810,10 @@
     "name": "Great Maul +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5051,
-    "weight": 3.08,
+    "price": 10253,
+    "weight": 2.95,
     "heirloomLevel": 2,
-    "tier": 5.584683,
+    "tier": 8.4027,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -48826,8 +48826,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.25,
-        "handling": 75,
+        "balance": 0.3,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -48838,10 +48838,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 27,
+        "thrustSpeed": 89,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 77
+        "swingSpeed": 79
       },
       {
         "class": "TwoHandedMace",
@@ -48850,8 +48850,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.05,
-        "handling": 72,
+        "balance": 0.12,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -48863,9 +48863,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 86,
-        "swingDamage": 27,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 71
+        "swingSpeed": 73
       }
     ]
   },
@@ -48874,10 +48874,10 @@
     "name": "Great Maul +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 3867,
-    "weight": 3.08,
+    "price": 10087,
+    "weight": 2.95,
     "heirloomLevel": 3,
-    "tier": 4.75854874,
+    "tier": 8.325809,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -48890,8 +48890,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.25,
-        "handling": 75,
+        "balance": 0.3,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -48902,10 +48902,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 27,
+        "thrustSpeed": 89,
+        "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 77
+        "swingSpeed": 79
       },
       {
         "class": "TwoHandedMace",
@@ -48914,8 +48914,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.05,
-        "handling": 72,
+        "balance": 0.12,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -48927,9 +48927,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 86,
-        "swingDamage": 27,
+        "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 71
+        "swingSpeed": 73
       }
     ]
   },
