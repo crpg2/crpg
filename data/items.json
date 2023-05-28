@@ -107736,10 +107736,10 @@
     "name": "Ridged Great Saber +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 4601,
-    "weight": 1.91,
+    "price": 6470,
+    "weight": 1.77,
     "heirloomLevel": 1,
-    "tier": 5.283344,
+    "tier": 6.457206,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -107750,8 +107750,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 114,
-        "balance": 0.9,
-        "handling": 88,
+        "balance": 0.97,
+        "handling": 89,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -107759,10 +107759,10 @@
         ],
         "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 95,
         "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 99
       }
     ]
   },
@@ -107771,10 +107771,10 @@
     "name": "Ridged Great Saber +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 3450,
-    "weight": 1.91,
+    "price": 6221,
+    "weight": 1.77,
     "heirloomLevel": 2,
-    "tier": 4.43947554,
+    "tier": 6.3116374,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -107785,19 +107785,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 114,
-        "balance": 0.9,
-        "handling": 88,
+        "balance": 0.97,
+        "handling": 89,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
-        "swingDamage": 29,
+        "thrustSpeed": 95,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 99
       }
     ]
   },
@@ -107806,10 +107806,10 @@
     "name": "Ridged Great Saber +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 2666,
-    "weight": 1.91,
+    "price": 6189,
+    "weight": 1.77,
     "heirloomLevel": 3,
-    "tier": 3.78274918,
+    "tier": 6.292651,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -107820,19 +107820,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 114,
-        "balance": 0.9,
-        "handling": 88,
+        "balance": 0.97,
+        "handling": 89,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
-        "swingDamage": 29,
+        "thrustSpeed": 95,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 99
       }
     ]
   },
