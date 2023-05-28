@@ -43558,10 +43558,10 @@
     "name": "Fine Steel Two Handed Sword +1",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 4004,
-    "weight": 2.56,
+    "price": 4929,
+    "weight": 2.43,
     "heirloomLevel": 1,
-    "tier": 4.86055946,
+    "tier": 5.504513,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -43575,17 +43575,17 @@
         "stackAmount": 0,
         "length": 110,
         "balance": 0.0,
-        "handling": 76,
+        "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
+        "thrustSpeed": 83,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 66
+        "swingSpeed": 68
       },
       {
         "class": "TwoHandedSword",
@@ -43594,8 +43594,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.54,
-        "handling": 84,
+        "balance": 0.6,
+        "handling": 85,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -43603,10 +43603,10 @@
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 87
       }
     ]
   },
@@ -43615,10 +43615,10 @@
     "name": "Fine Steel Two Handed Sword +2",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 3014,
-    "weight": 2.56,
+    "price": 5301,
+    "weight": 2.43,
     "heirloomLevel": 2,
-    "tier": 4.084219,
+    "tier": 5.746154,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -43632,17 +43632,17 @@
         "stackAmount": 0,
         "length": 110,
         "balance": 0.0,
-        "handling": 76,
+        "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
-        "swingDamage": 38,
+        "thrustSpeed": 83,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 66
+        "swingSpeed": 68
       },
       {
         "class": "TwoHandedSword",
@@ -43651,8 +43651,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.54,
-        "handling": 84,
+        "balance": 0.6,
+        "handling": 85,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -43660,10 +43660,10 @@
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 38,
+        "thrustSpeed": 90,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 87
       }
     ]
   },
@@ -43672,10 +43672,10 @@
     "name": "Fine Steel Two Handed Sword +3",
     "culture": "Sturgia",
     "type": "TwoHandedWeapon",
-    "price": 2338,
-    "weight": 2.56,
+    "price": 5738,
+    "weight": 2.43,
     "heirloomLevel": 3,
-    "tier": 3.480046,
+    "tier": 6.02058,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -43689,17 +43689,17 @@
         "stackAmount": 0,
         "length": 110,
         "balance": 0.0,
-        "handling": 76,
+        "handling": 77,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
-        "swingDamage": 38,
+        "thrustSpeed": 83,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 66
+        "swingSpeed": 68
       },
       {
         "class": "TwoHandedSword",
@@ -43708,8 +43708,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.54,
-        "handling": 84,
+        "balance": 0.6,
+        "handling": 85,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -43717,10 +43717,10 @@
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 38,
+        "thrustSpeed": 90,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 87
       }
     ]
   },
