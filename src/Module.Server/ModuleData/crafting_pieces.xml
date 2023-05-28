@@ -22320,7 +22320,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_highland_broadsword_blade_h1" name="{=QCE1sAu3}Broadsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_3" culture="Culture.battania" length="80.8" weight="1.07">
+  <CraftingPiece id="crpg_highland_broadsword_blade_h1" name="{=QCE1sAu3}Broadsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_3" culture="Culture.battania" length="80.8" weight="1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_3_scabbard_3">
       <Thrust damage_type="Pierce" damage_factor="1.4" />
       <Swing damage_type="Cut" damage_factor="2.8" />
@@ -22332,10 +22332,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_highland_broadsword_blade_h2" name="{=QCE1sAu3}Broadsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_3" culture="Culture.battania" length="80.8" weight="1.07">
+  <CraftingPiece id="crpg_highland_broadsword_blade_h2" name="{=QCE1sAu3}Broadsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_3" culture="Culture.battania" length="80.8" weight="1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_3_scabbard_3">
       <Thrust damage_type="Pierce" damage_factor="1.4" />
-      <Swing damage_type="Cut" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -22344,10 +22344,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_highland_broadsword_blade_h3" name="{=QCE1sAu3}Broadsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_3" culture="Culture.battania" length="80.8" weight="1.07">
+  <CraftingPiece id="crpg_highland_broadsword_blade_h3" name="{=QCE1sAu3}Broadsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_3" culture="Culture.battania" length="80.8" weight="1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_3_scabbard_3">
-      <Thrust damage_type="Pierce" damage_factor="1.4" />
-      <Swing damage_type="Cut" damage_factor="2.8" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />

@@ -55211,10 +55211,10 @@
     "name": "Highland Broadsword +1",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 3574,
-    "weight": 1.82,
+    "price": 4143,
+    "weight": 1.72,
     "heirloomLevel": 1,
-    "tier": 4.5360117,
+    "tier": 4.96148872,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -55227,18 +55227,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 113,
-        "balance": 0.36,
-        "handling": 84,
+        "balance": 0.42,
+        "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
+        "thrustSpeed": 89,
         "swingDamage": 28,
         "swingDamageType": "Cut",
-        "swingSpeed": 80
+        "swingSpeed": 82
       },
       {
         "class": "TwoHandedSword",
@@ -55247,7 +55247,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 113,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 89,
         "bodyArmor": 2,
         "flags": [
@@ -55256,10 +55256,10 @@
         ],
         "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 95,
         "swingDamage": 28,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedSword",
@@ -55268,18 +55268,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 113,
-        "balance": 0.36,
-        "handling": 84,
+        "balance": 0.42,
+        "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
+        "thrustSpeed": 89,
         "swingDamage": 28,
         "swingDamageType": "Cut",
-        "swingSpeed": 80
+        "swingSpeed": 82
       }
     ]
   },
@@ -55288,10 +55288,10 @@
     "name": "Highland Broadsword +2",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 2699,
-    "weight": 1.82,
+    "price": 5059,
+    "weight": 1.72,
     "heirloomLevel": 2,
-    "tier": 3.81150937,
+    "tier": 5.58977747,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -55304,18 +55304,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 113,
-        "balance": 0.36,
-        "handling": 84,
+        "balance": 0.42,
+        "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 28,
+        "thrustSpeed": 89,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 80
+        "swingSpeed": 82
       },
       {
         "class": "TwoHandedSword",
@@ -55324,7 +55324,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 113,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 89,
         "bodyArmor": 2,
         "flags": [
@@ -55333,10 +55333,10 @@
         ],
         "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
-        "swingDamage": 28,
+        "thrustSpeed": 95,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedSword",
@@ -55345,18 +55345,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 113,
-        "balance": 0.36,
-        "handling": 84,
+        "balance": 0.42,
+        "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 28,
+        "thrustSpeed": 89,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 80
+        "swingSpeed": 82
       }
     ]
   },
@@ -55365,10 +55365,10 @@
     "name": "Highland Broadsword +3",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 2100,
-    "weight": 1.82,
+    "price": 5102,
+    "weight": 1.72,
     "heirloomLevel": 3,
-    "tier": 3.24767685,
+    "tier": 5.61786938,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -55381,18 +55381,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 113,
-        "balance": 0.36,
-        "handling": 84,
+        "balance": 0.42,
+        "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 28,
+        "thrustSpeed": 89,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
-        "swingSpeed": 80
+        "swingSpeed": 82
       },
       {
         "class": "TwoHandedSword",
@@ -55401,19 +55401,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 113,
-        "balance": 0.9,
+        "balance": 0.94,
         "handling": 89,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
-        "swingDamage": 28,
+        "thrustSpeed": 95,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedSword",
@@ -55422,18 +55422,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 113,
-        "balance": 0.36,
-        "handling": 84,
+        "balance": 0.42,
+        "handling": 85,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 28,
+        "thrustSpeed": 89,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
-        "swingSpeed": 80
+        "swingSpeed": 82
       }
     ]
   },
