@@ -25408,58 +25408,6 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_mallet_blade_h0" name="{=}Mallet Head" tier="1" piece_type="Blade" mesh="mallet_head" length="19.5" weight="1.65" full_scale="true" excluded_item_usage_features="thrust">
-    <BuildData piece_offset="-13.5" next_piece_offset="0" />
-    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.8" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
-    </Flags>
-    <Materials>
-      <Material id="Iron2" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_mallet_blade_h1" name="{=}Mallet Head" tier="1" piece_type="Blade" mesh="mallet_head" length="19.5" weight="1.65" full_scale="true" excluded_item_usage_features="thrust">
-    <BuildData piece_offset="-13.5" next_piece_offset="0" />
-    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.8" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
-    </Flags>
-    <Materials>
-      <Material id="Iron2" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_mallet_blade_h2" name="{=}Mallet Head" tier="1" piece_type="Blade" mesh="mallet_head" length="19.5" weight="1.65" full_scale="true" excluded_item_usage_features="thrust">
-    <BuildData piece_offset="-13.5" next_piece_offset="0" />
-    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.8" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
-    </Flags>
-    <Materials>
-      <Material id="Iron2" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_mallet_blade_h3" name="{=}Mallet Head" tier="1" piece_type="Blade" mesh="mallet_head" length="19.5" weight="1.65" full_scale="true" excluded_item_usage_features="thrust">
-    <BuildData piece_offset="-13.5" next_piece_offset="0" />
-    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.8" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
-    </Flags>
-    <Materials>
-      <Material id="Iron2" count="2" />
-    </Materials>
-  </CraftingPiece>
   <CraftingPiece id="crpg_mallet_handle_h0" name="{=}Mallet Handle" tier="1" piece_type="Handle" mesh="mallet_handle" length="96" weight="0.4" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
     <BuildData piece_offset="30.0" />
     <Materials>
