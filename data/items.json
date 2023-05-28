@@ -114529,10 +114529,10 @@
     "name": "Shieldsplitter +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7304,
-    "weight": 1.95,
+    "price": 11045,
+    "weight": 1.85,
     "heirloomLevel": 1,
-    "tier": 6.926599,
+    "tier": 8.761618,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -114545,8 +114545,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.44,
-        "handling": 78,
+        "balance": 0.5,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -114556,10 +114556,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
+        "thrustSpeed": 94,
         "swingDamage": 33,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 85
       },
       {
         "class": "TwoHandedMace",
@@ -114568,8 +114568,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.44,
-        "handling": 78,
+        "balance": 0.5,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -114579,10 +114579,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
+        "thrustSpeed": 94,
         "swingDamage": 33,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 85
       }
     ]
   },
@@ -114591,10 +114591,10 @@
     "name": "Shieldsplitter +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5417,
-    "weight": 1.95,
+    "price": 10184,
+    "weight": 1.85,
     "heirloomLevel": 2,
-    "tier": 5.82026768,
+    "tier": 8.3706,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -114607,8 +114607,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.44,
-        "handling": 78,
+        "balance": 0.5,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -114618,10 +114618,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 33,
+        "thrustSpeed": 94,
+        "swingDamage": 34,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 85
       },
       {
         "class": "TwoHandedMace",
@@ -114630,8 +114630,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.44,
-        "handling": 78,
+        "balance": 0.5,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -114641,10 +114641,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 33,
+        "thrustSpeed": 94,
+        "swingDamage": 34,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 85
       }
     ]
   },
@@ -114653,10 +114653,10 @@
     "name": "Shieldsplitter +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 4140,
-    "weight": 1.95,
+    "price": 11863,
+    "weight": 1.85,
     "heirloomLevel": 3,
-    "tier": 4.95928144,
+    "tier": 9.119562,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -114669,8 +114669,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.44,
-        "handling": 78,
+        "balance": 0.5,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -114680,10 +114680,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 33,
+        "thrustSpeed": 94,
+        "swingDamage": 36,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 85
       },
       {
         "class": "TwoHandedMace",
@@ -114692,8 +114692,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 81,
-        "balance": 0.44,
-        "handling": 78,
+        "balance": 0.5,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -114703,10 +114703,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 33,
+        "thrustSpeed": 94,
+        "swingDamage": 36,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 85
       }
     ]
   },

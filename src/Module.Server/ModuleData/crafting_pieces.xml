@@ -25521,7 +25521,7 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shieldsplitter_blade_h1" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.55" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_shieldsplitter_blade_h1" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.45" full_scale="true" excluded_item_usage_features="thrust">
     <BuildData piece_offset="-13.5" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="3.3" />
@@ -25534,10 +25534,10 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shieldsplitter_blade_h2" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.55" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_shieldsplitter_blade_h2" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.45" full_scale="true" excluded_item_usage_features="thrust">
     <BuildData piece_offset="-13.5" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="3.3" />
+      <Swing damage_type="Blunt" damage_factor="3.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -25547,62 +25547,10 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shieldsplitter_blade_h3" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.55" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_shieldsplitter_blade_h3" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.45" full_scale="true" excluded_item_usage_features="thrust">
     <BuildData piece_offset="-13.5" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="3.3" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
-    </Flags>
-    <Materials>
-      <Material id="Iron2" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_shieldsplitter_blade_h0" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.55" full_scale="true" excluded_item_usage_features="thrust">
-    <BuildData piece_offset="-13.5" next_piece_offset="0" />
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="3.3" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
-    </Flags>
-    <Materials>
-      <Material id="Iron2" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_shieldsplitter_blade_h1" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.55" full_scale="true" excluded_item_usage_features="thrust">
-    <BuildData piece_offset="-13.5" next_piece_offset="0" />
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="3.3" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
-    </Flags>
-    <Materials>
-      <Material id="Iron2" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_shieldsplitter_blade_h2" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.55" full_scale="true" excluded_item_usage_features="thrust">
-    <BuildData piece_offset="-13.5" next_piece_offset="0" />
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="3.3" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
-    </Flags>
-    <Materials>
-      <Material id="Iron2" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_shieldsplitter_blade_h3" name="{=}Shield Splitter Head" tier="1" piece_type="Blade" mesh="shieldsplitter_head" length="13.4" weight="1.55" full_scale="true" excluded_item_usage_features="thrust">
-    <BuildData piece_offset="-13.5" next_piece_offset="0" />
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="3.3" />
+      <Swing damage_type="Blunt" damage_factor="3.6" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
