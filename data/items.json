@@ -108062,10 +108062,10 @@
     "name": "Ridged Long Kaskara +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 1968,
-    "weight": 1.67,
+    "price": 2708,
+    "weight": 1.55,
     "heirloomLevel": 1,
-    "tier": 3.11345959,
+    "tier": 3.819989,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108078,18 +108078,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 140,
-        "balance": 0.2,
-        "handling": 78,
+        "balance": 0.3,
+        "handling": 80,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 79
       },
       {
         "class": "TwoHandedSword",
@@ -108098,8 +108098,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 140,
-        "balance": 0.79,
-        "handling": 85,
+        "balance": 0.86,
+        "handling": 86,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
@@ -108107,10 +108107,10 @@
         ],
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 97,
         "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 95
       },
       {
         "class": "OneHandedSword",
@@ -108119,18 +108119,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 140,
-        "balance": 0.2,
-        "handling": 78,
+        "balance": 0.3,
+        "handling": 80,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 79
       }
     ]
   },
@@ -108139,10 +108139,10 @@
     "name": "Ridged Long Kaskara +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 1514,
+    "price": 2488,
     "weight": 1.67,
     "heirloomLevel": 2,
-    "tier": 2.61617112,
+    "tier": 3.62089348,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108164,7 +108164,7 @@
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 24,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
         "swingSpeed": 75
       },
@@ -108185,7 +108185,7 @@
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
-        "swingDamage": 24,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
         "swingSpeed": 93
       },
@@ -108205,7 +108205,7 @@
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 24,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
         "swingSpeed": 75
       }
@@ -108216,10 +108216,10 @@
     "name": "Ridged Long Kaskara +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 1200,
+    "price": 2572,
     "weight": 1.67,
     "heirloomLevel": 3,
-    "tier": 2.22916341,
+    "tier": 3.698009,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108238,10 +108238,10 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 24,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
         "swingSpeed": 75
       },
@@ -108259,10 +108259,10 @@
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
-        "swingDamage": 24,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
         "swingSpeed": 93
       },
@@ -108279,10 +108279,10 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 24,
+        "swingDamage": 26,
         "swingDamageType": "Cut",
         "swingSpeed": 75
       }
