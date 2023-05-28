@@ -81057,10 +81057,10 @@
     "name": "Makeshift Sledgehammer",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 2235,
-    "weight": 1.84,
+    "price": 2195,
+    "weight": 2.05,
     "heirloomLevel": 0,
-    "tier": 3.38157773,
+    "tier": 3.34240651,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81073,8 +81073,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.6,
-        "handling": 75,
+        "balance": 0.4,
+        "handling": 72,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81084,10 +81084,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 17,
+        "thrustSpeed": 92,
+        "swingDamage": 20,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 81
       }
     ]
   },
@@ -81096,10 +81096,10 @@
     "name": "Makeshift Sledgehammer +1",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1670,
-    "weight": 1.84,
+    "price": 2379,
+    "weight": 1.99,
     "heirloomLevel": 1,
-    "tier": 2.794692,
+    "tier": 3.519441,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81112,8 +81112,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.6,
-        "handling": 75,
+        "balance": 0.45,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81123,10 +81123,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 17,
+        "thrustSpeed": 92,
+        "swingDamage": 20,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 83
       }
     ]
   },
@@ -81135,10 +81135,10 @@
     "name": "Makeshift Sledgehammer +2",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1293,
-    "weight": 1.84,
+    "price": 2517,
+    "weight": 1.99,
     "heirloomLevel": 2,
-    "tier": 2.34831738,
+    "tier": 3.6476264,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81151,8 +81151,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.6,
-        "handling": 75,
+        "balance": 0.45,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81162,10 +81162,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 17,
+        "thrustSpeed": 92,
+        "swingDamage": 21,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 83
       }
     ]
   },
@@ -81174,10 +81174,10 @@
     "name": "Makeshift Sledgehammer +3",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 1030,
-    "weight": 1.84,
+    "price": 2682,
+    "weight": 1.99,
     "heirloomLevel": 3,
-    "tier": 2.00093317,
+    "tier": 3.79630423,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81190,8 +81190,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.6,
-        "handling": 75,
+        "balance": 0.45,
+        "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81201,10 +81201,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 17,
+        "thrustSpeed": 92,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 83
       }
     ]
   },

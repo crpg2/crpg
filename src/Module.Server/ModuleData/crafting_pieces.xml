@@ -7836,9 +7836,9 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_makeshift_sledgehammer_blade_h0" name="{=LFfUtZrT}Hammer Head" tier="2" piece_type="Blade" mesh="mace_head_24" length="12.6" weight="0.719" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_makeshift_sledgehammer_blade_h0" name="{=LFfUtZrT}Hammer Head" tier="2" piece_type="Blade" mesh="mace_head_24" length="12.6" weight="1" full_scale="true" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="1.7" />
+      <Swing damage_type="Blunt" damage_factor="2.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -7849,9 +7849,9 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_makeshift_sledgehammer_blade_h1" name="{=LFfUtZrT}Hammer Head" tier="2" piece_type="Blade" mesh="mace_head_24" length="12.6" weight="0.719" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_makeshift_sledgehammer_blade_h1" name="{=LFfUtZrT}Hammer Head" tier="2" piece_type="Blade" mesh="mace_head_24" length="12.6" weight="0.92" full_scale="true" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="1.7" />
+      <Swing damage_type="Blunt" damage_factor="2.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -7862,9 +7862,9 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_makeshift_sledgehammer_blade_h2" name="{=LFfUtZrT}Hammer Head" tier="2" piece_type="Blade" mesh="mace_head_24" length="12.6" weight="0.719" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_makeshift_sledgehammer_blade_h2" name="{=LFfUtZrT}Hammer Head" tier="2" piece_type="Blade" mesh="mace_head_24" length="12.6" weight="0.92" full_scale="true" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="1.7" />
+      <Swing damage_type="Blunt" damage_factor="2.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -7875,9 +7875,9 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_makeshift_sledgehammer_blade_h3" name="{=LFfUtZrT}Hammer Head" tier="2" piece_type="Blade" mesh="mace_head_24" length="12.6" weight="0.719" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_makeshift_sledgehammer_blade_h3" name="{=LFfUtZrT}Hammer Head" tier="2" piece_type="Blade" mesh="mace_head_24" length="12.6" weight="0.92" full_scale="true" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="1.7" />
+      <Swing damage_type="Blunt" damage_factor="2.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
