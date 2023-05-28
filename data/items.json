@@ -77697,10 +77697,10 @@
     "name": "Long Steel Mace",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
-    "price": 8279,
-    "weight": 1.96,
+    "price": 13302,
+    "weight": 1.86,
     "heirloomLevel": 0,
-    "tier": 7.44240427,
+    "tier": 9.720564,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -77711,8 +77711,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 135,
-        "balance": 0.12,
-        "handling": 68,
+        "balance": 0.19,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -77724,7 +77724,7 @@
         "thrustSpeed": 92,
         "swingDamage": 33,
         "swingDamageType": "Blunt",
-        "swingSpeed": 73
+        "swingSpeed": 75
       }
     ]
   },
@@ -77733,10 +77733,10 @@
     "name": "Long Steel Mace +1",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
-    "price": 5952,
-    "weight": 1.96,
+    "price": 11648,
+    "weight": 1.82,
     "heirloomLevel": 1,
-    "tier": 6.1507473,
+    "tier": 9.02664852,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -77747,8 +77747,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 135,
-        "balance": 0.12,
-        "handling": 68,
+        "balance": 0.21,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -77757,10 +77757,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
+        "thrustSpeed": 93,
         "swingDamage": 33,
         "swingDamageType": "Blunt",
-        "swingSpeed": 73
+        "swingSpeed": 76
       }
     ]
   },
@@ -77769,10 +77769,10 @@
     "name": "Long Steel Mace +2",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
-    "price": 4435,
-    "weight": 1.96,
+    "price": 13893,
+    "weight": 1.79,
     "heirloomLevel": 2,
-    "tier": 5.16833544,
+    "tier": 9.957622,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -77783,8 +77783,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 135,
-        "balance": 0.12,
-        "handling": 68,
+        "balance": 0.23,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -77793,10 +77793,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 33,
+        "thrustSpeed": 93,
+        "swingDamage": 34,
         "swingDamageType": "Blunt",
-        "swingSpeed": 73
+        "swingSpeed": 77
       }
     ]
   },
@@ -77805,10 +77805,10 @@
     "name": "Long Steel Mace +3",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
-    "price": 3405,
-    "weight": 1.96,
+    "price": 13034,
+    "weight": 1.79,
     "heirloomLevel": 3,
-    "tier": 4.40378952,
+    "tier": 9.610914,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -77819,8 +77819,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 135,
-        "balance": 0.12,
-        "handling": 68,
+        "balance": 0.23,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -77829,10 +77829,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 33,
+        "thrustSpeed": 93,
+        "swingDamage": 35,
         "swingDamageType": "Blunt",
-        "swingSpeed": 73
+        "swingSpeed": 77
       }
     ]
   },
