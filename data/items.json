@@ -66229,10 +66229,10 @@
     "name": "Justicier +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 2322,
-    "weight": 2.27,
+    "price": 3318,
+    "weight": 2.09,
     "heirloomLevel": 1,
-    "tier": 3.46454859,
+    "tier": 4.33421373,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -66245,8 +66245,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 127,
-        "balance": 0.53,
-        "handling": 83,
+        "balance": 0.63,
+        "handling": 84,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -66254,10 +66254,10 @@
         ],
         "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 92,
         "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 88
       }
     ]
   },
@@ -66266,10 +66266,10 @@
     "name": "Justicier +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 1776,
-    "weight": 2.27,
+    "price": 3802,
+    "weight": 2.09,
     "heirloomLevel": 2,
-    "tier": 2.91118288,
+    "tier": 4.710483,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -66282,8 +66282,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 127,
-        "balance": 0.53,
-        "handling": 83,
+        "balance": 0.63,
+        "handling": 84,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -66291,10 +66291,10 @@
         ],
         "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 32,
+        "thrustSpeed": 92,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 88
       }
     ]
   },
@@ -66303,10 +66303,10 @@
     "name": "Justicier +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 1400,
-    "weight": 2.27,
+    "price": 3160,
+    "weight": 2.09,
     "heirloomLevel": 3,
-    "tier": 2.48053432,
+    "tier": 4.205441,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -66319,19 +66319,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 127,
-        "balance": 0.53,
-        "handling": 83,
+        "balance": 0.63,
+        "handling": 84,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 32,
+        "thrustSpeed": 92,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 88
       }
     ]
   },
