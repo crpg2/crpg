@@ -53537,10 +53537,10 @@
     "name": "Heavy Morningstar +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 9587,
-    "weight": 2.16,
+    "price": 14321,
+    "weight": 2.07,
     "heirloomLevel": 1,
-    "tier": 8.090007,
+    "tier": 10.1267281,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -53553,8 +53553,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 99,
-        "balance": 0.57,
-        "handling": 81,
+        "balance": 0.64,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -53567,7 +53567,7 @@
         "thrustSpeed": 92,
         "swingDamage": 31,
         "swingDamageType": "Pierce",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
@@ -53576,10 +53576,10 @@
     "name": "Heavy Morningstar +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7070,
-    "weight": 2.16,
+    "price": 13385,
+    "weight": 2.07,
     "heirloomLevel": 2,
-    "tier": 6.797853,
+    "tier": 9.753977,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -53592,8 +53592,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 99,
-        "balance": 0.57,
-        "handling": 81,
+        "balance": 0.64,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -53604,9 +53604,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 92,
-        "swingDamage": 31,
+        "swingDamage": 32,
         "swingDamageType": "Pierce",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
@@ -53615,10 +53615,10 @@
     "name": "Heavy Morningstar +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5373,
-    "weight": 2.16,
+    "price": 12733,
+    "weight": 2.07,
     "heirloomLevel": 3,
-    "tier": 5.7922554,
+    "tier": 9.486864,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -53631,8 +53631,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 99,
-        "balance": 0.57,
-        "handling": 81,
+        "balance": 0.64,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -53643,9 +53643,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 92,
-        "swingDamage": 31,
+        "swingDamage": 33,
         "swingDamageType": "Pierce",
-        "swingSpeed": 87
+        "swingSpeed": 89
       }
     ]
   },
