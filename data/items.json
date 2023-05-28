@@ -81213,10 +81213,10 @@
     "name": "Mallet",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 8562,
-    "weight": 2.05,
+    "price": 4840,
+    "weight": 1.75,
     "heirloomLevel": 0,
-    "tier": 7.5866127,
+    "tier": 5.44485,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81229,8 +81229,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.57,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81240,10 +81240,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 28,
+        "thrustSpeed": 94,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 87
       },
       {
         "class": "TwoHandedMace",
@@ -81252,8 +81252,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.57,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81263,10 +81263,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 28,
+        "thrustSpeed": 94,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 87
       }
     ]
   },
@@ -81275,10 +81275,10 @@
     "name": "Mallet +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 6151,
-    "weight": 2.05,
+    "price": 5345,
+    "weight": 1.65,
     "heirloomLevel": 1,
-    "tier": 6.26992941,
+    "tier": 5.77445173,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81291,8 +81291,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.64,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81302,10 +81302,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 28,
+        "thrustSpeed": 95,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 89
       },
       {
         "class": "TwoHandedMace",
@@ -81314,8 +81314,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.64,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81325,10 +81325,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 28,
+        "thrustSpeed": 95,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 89
       }
     ]
   },
@@ -81337,10 +81337,10 @@
     "name": "Mallet +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 4579,
-    "weight": 2.05,
+    "price": 5503,
+    "weight": 1.65,
     "heirloomLevel": 2,
-    "tier": 5.26848269,
+    "tier": 5.87416,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81353,8 +81353,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.64,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81364,10 +81364,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 28,
+        "thrustSpeed": 95,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 89
       },
       {
         "class": "TwoHandedMace",
@@ -81376,8 +81376,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.64,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81387,10 +81387,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 28,
+        "thrustSpeed": 95,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 89
       }
     ]
   },
@@ -81399,10 +81399,10 @@
     "name": "Mallet +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 3514,
-    "weight": 2.05,
+    "price": 5722,
+    "weight": 1.65,
     "heirloomLevel": 3,
-    "tier": 4.48912048,
+    "tier": 6.010358,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81415,8 +81415,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.64,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81426,10 +81426,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 28,
+        "thrustSpeed": 95,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 89
       },
       {
         "class": "TwoHandedMace",
@@ -81438,8 +81438,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.39,
-        "handling": 77,
+        "balance": 0.64,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -81449,10 +81449,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 28,
+        "thrustSpeed": 95,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 89
       }
     ]
   },
