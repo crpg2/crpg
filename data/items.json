@@ -51690,10 +51690,10 @@
     "name": "Heavy Blacksmith Hammer +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7748,
-    "weight": 1.94,
+    "price": 12499,
+    "weight": 1.84,
     "heirloomLevel": 1,
-    "tier": 7.16545,
+    "tier": 9.389383,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -51706,8 +51706,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 99,
-        "balance": 0.1,
-        "handling": 68,
+        "balance": 0.16,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -51718,10 +51718,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
+        "thrustSpeed": 93,
         "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 72
+        "swingSpeed": 74
       }
     ]
   },
@@ -51730,10 +51730,10 @@
     "name": "Heavy Blacksmith Hammer +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5739,
-    "weight": 1.94,
+    "price": 11882,
+    "weight": 1.84,
     "heirloomLevel": 2,
-    "tier": 6.02097034,
+    "tier": 9.127882,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -51746,8 +51746,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 99,
-        "balance": 0.1,
-        "handling": 68,
+        "balance": 0.16,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -51758,10 +51758,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 29,
+        "thrustSpeed": 93,
+        "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 72
+        "swingSpeed": 74
       }
     ]
   },
@@ -51770,10 +51770,10 @@
     "name": "Heavy Blacksmith Hammer +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 4380,
-    "weight": 1.94,
+    "price": 11484,
+    "weight": 1.84,
     "heirloomLevel": 3,
-    "tier": 5.130294,
+    "tier": 8.955293,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -51786,8 +51786,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 99,
-        "balance": 0.1,
-        "handling": 68,
+        "balance": 0.16,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -51798,10 +51798,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 29,
+        "thrustSpeed": 93,
+        "swingDamage": 31,
         "swingDamageType": "Blunt",
-        "swingSpeed": 72
+        "swingSpeed": 74
       }
     ]
   },
