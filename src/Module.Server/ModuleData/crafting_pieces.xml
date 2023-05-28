@@ -24224,10 +24224,10 @@
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wooden_twohander_blade_h0" name="{=p2xjr5Bp}Wooden Blade" tier="1" piece_type="Blade" mesh="wood_blade_1" culture="Culture.empire" length="86.9" weight="1.04" is_hidden="true" CraftingCost="75">
+  <CraftingPiece id="crpg_wooden_twohander_blade_h0" name="{=p2xjr5Bp}Wooden Blade" tier="1" piece_type="Blade" mesh="wood_blade_1" culture="Culture.empire" length="86.9" weight="1.2" is_hidden="true" CraftingCost="75">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_sword_one_handed">
       <Thrust damage_type="Blunt" damage_factor="0.7" />
-      <Swing damage_type="Blunt" damage_factor="1.6" />
+      <Swing damage_type="Blunt" damage_factor="1.8" />
     </BladeData>
     <Flags>
       <Flag name="NoBlood" />
@@ -24236,10 +24236,10 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wooden_twohander_blade_h1" name="{=p2xjr5Bp}Wooden Blade" tier="1" piece_type="Blade" mesh="wood_blade_1" culture="Culture.empire" length="86.9" weight="1.04" is_hidden="true" CraftingCost="75">
+  <CraftingPiece id="crpg_wooden_twohander_blade_h1" name="{=p2xjr5Bp}Wooden Blade" tier="1" piece_type="Blade" mesh="wood_blade_1" culture="Culture.empire" length="86.9" weight="1.1" is_hidden="true" CraftingCost="75">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_sword_one_handed">
       <Thrust damage_type="Blunt" damage_factor="0.7" />
-      <Swing damage_type="Blunt" damage_factor="1.6" />
+      <Swing damage_type="Blunt" damage_factor="1.8" />
     </BladeData>
     <Flags>
       <Flag name="NoBlood" />
@@ -24248,10 +24248,10 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wooden_twohander_blade_h2" name="{=p2xjr5Bp}Wooden Blade" tier="1" piece_type="Blade" mesh="wood_blade_1" culture="Culture.empire" length="86.9" weight="1.04" is_hidden="true" CraftingCost="75">
+  <CraftingPiece id="crpg_wooden_twohander_blade_h2" name="{=p2xjr5Bp}Wooden Blade" tier="1" piece_type="Blade" mesh="wood_blade_1" culture="Culture.empire" length="86.9" weight="1.1" is_hidden="true" CraftingCost="75">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_sword_one_handed">
       <Thrust damage_type="Blunt" damage_factor="0.7" />
-      <Swing damage_type="Blunt" damage_factor="1.6" />
+      <Swing damage_type="Blunt" damage_factor="1.9" />
     </BladeData>
     <Flags>
       <Flag name="NoBlood" />
@@ -24260,10 +24260,10 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_wooden_twohander_blade_h3" name="{=p2xjr5Bp}Wooden Blade" tier="1" piece_type="Blade" mesh="wood_blade_1" culture="Culture.empire" length="86.9" weight="1.04" is_hidden="true" CraftingCost="75">
+  <CraftingPiece id="crpg_wooden_twohander_blade_h3" name="{=p2xjr5Bp}Wooden Blade" tier="1" piece_type="Blade" mesh="wood_blade_1" culture="Culture.empire" length="86.9" weight="1.1" is_hidden="true" CraftingCost="75">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Blunt" damage_factor="0.7" />
-      <Swing damage_type="Blunt" damage_factor="1.6" />
+      <Thrust damage_type="Blunt" damage_factor="1.6" />
+      <Swing damage_type="Blunt" damage_factor="1.9" />
     </BladeData>
     <Flags>
       <Flag name="NoBlood" />

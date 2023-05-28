@@ -144928,10 +144928,10 @@
     "name": "Wooden Twohander",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 4542,
-    "weight": 1.47,
+    "price": 5051,
+    "weight": 1.67,
     "heirloomLevel": 0,
-    "tier": 5.24286175,
+    "tier": 5.584526,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -144942,8 +144942,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.31,
-        "handling": 83,
+        "balance": 0.16,
+        "handling": 80,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
@@ -144951,10 +144951,10 @@
         ],
         "thrustDamage": 7,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 90,
-        "swingDamage": 16,
+        "thrustSpeed": 89,
+        "swingDamage": 18,
         "swingDamageType": "Blunt",
-        "swingSpeed": 79
+        "swingSpeed": 74
       },
       {
         "class": "TwoHandedSword",
@@ -144963,8 +144963,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.88,
-        "handling": 89,
+        "balance": 0.76,
+        "handling": 86,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
@@ -144973,10 +144973,10 @@
         ],
         "thrustDamage": 7,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 98,
-        "swingDamage": 16,
+        "thrustSpeed": 96,
+        "swingDamage": 18,
         "swingDamageType": "Blunt",
-        "swingSpeed": 96
+        "swingSpeed": 92
       },
       {
         "class": "OneHandedSword",
@@ -144985,8 +144985,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.31,
-        "handling": 83,
+        "balance": 0.16,
+        "handling": 80,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
@@ -144994,10 +144994,10 @@
         ],
         "thrustDamage": 7,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 90,
-        "swingDamage": 16,
+        "thrustSpeed": 89,
+        "swingDamage": 18,
         "swingDamageType": "Blunt",
-        "swingSpeed": 79
+        "swingSpeed": 74
       }
     ]
   },
@@ -145006,10 +145006,10 @@
     "name": "Wooden Twohander +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 3317,
-    "weight": 1.47,
+    "price": 5446,
+    "weight": 1.54,
     "heirloomLevel": 1,
-    "tier": 4.33294439,
+    "tier": 5.838456,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -145020,8 +145020,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.31,
-        "handling": 83,
+        "balance": 0.25,
+        "handling": 82,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
@@ -145030,9 +145030,9 @@
         "thrustDamage": 7,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 90,
-        "swingDamage": 16,
+        "swingDamage": 18,
         "swingDamageType": "Blunt",
-        "swingSpeed": 79
+        "swingSpeed": 77
       },
       {
         "class": "TwoHandedSword",
@@ -145041,8 +145041,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.88,
-        "handling": 89,
+        "balance": 0.83,
+        "handling": 88,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
@@ -145051,10 +145051,10 @@
         ],
         "thrustDamage": 7,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 98,
-        "swingDamage": 16,
+        "thrustSpeed": 97,
+        "swingDamage": 18,
         "swingDamageType": "Blunt",
-        "swingSpeed": 96
+        "swingSpeed": 94
       },
       {
         "class": "OneHandedSword",
@@ -145063,8 +145063,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.31,
-        "handling": 83,
+        "balance": 0.25,
+        "handling": 82,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
@@ -145073,9 +145073,9 @@
         "thrustDamage": 7,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 90,
-        "swingDamage": 16,
+        "swingDamage": 18,
         "swingDamageType": "Blunt",
-        "swingSpeed": 79
+        "swingSpeed": 77
       }
     ]
   },
@@ -145084,10 +145084,10 @@
     "name": "Wooden Twohander +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 2510,
-    "weight": 1.47,
+    "price": 6015,
+    "weight": 1.54,
     "heirloomLevel": 2,
-    "tier": 3.64087629,
+    "tier": 6.188688,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -145098,8 +145098,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.31,
-        "handling": 83,
+        "balance": 0.25,
+        "handling": 82,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
@@ -145108,9 +145108,9 @@
         "thrustDamage": 7,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 90,
-        "swingDamage": 16,
+        "swingDamage": 19,
         "swingDamageType": "Blunt",
-        "swingSpeed": 79
+        "swingSpeed": 77
       },
       {
         "class": "TwoHandedSword",
@@ -145119,8 +145119,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.88,
-        "handling": 89,
+        "balance": 0.83,
+        "handling": 88,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
@@ -145129,10 +145129,10 @@
         ],
         "thrustDamage": 7,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 98,
-        "swingDamage": 16,
+        "thrustSpeed": 97,
+        "swingDamage": 19,
         "swingDamageType": "Blunt",
-        "swingSpeed": 96
+        "swingSpeed": 94
       },
       {
         "class": "OneHandedSword",
@@ -145141,8 +145141,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.31,
-        "handling": 83,
+        "balance": 0.25,
+        "handling": 82,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
@@ -145151,9 +145151,9 @@
         "thrustDamage": 7,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 90,
-        "swingDamage": 16,
+        "swingDamage": 19,
         "swingDamageType": "Blunt",
-        "swingSpeed": 79
+        "swingSpeed": 77
       }
     ]
   },
@@ -145162,10 +145162,10 @@
     "name": "Wooden Twohander +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 1957,
-    "weight": 1.47,
+    "price": 5035,
+    "weight": 1.54,
     "heirloomLevel": 3,
-    "tier": 3.10228515,
+    "tier": 5.574191,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -145176,19 +145176,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.31,
-        "handling": 83,
+        "balance": 0.25,
+        "handling": 82,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
           "NoBlood"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 16,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 90,
-        "swingDamage": 16,
+        "swingDamage": 19,
         "swingDamageType": "Blunt",
-        "swingSpeed": 79
+        "swingSpeed": 77
       },
       {
         "class": "TwoHandedSword",
@@ -145197,20 +145197,20 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.88,
-        "handling": 89,
+        "balance": 0.83,
+        "handling": 88,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "NoBlood"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 16,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 98,
-        "swingDamage": 16,
+        "thrustSpeed": 97,
+        "swingDamage": 19,
         "swingDamageType": "Blunt",
-        "swingSpeed": 96
+        "swingSpeed": 94
       },
       {
         "class": "OneHandedSword",
@@ -145219,19 +145219,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 124,
-        "balance": 0.31,
-        "handling": 83,
+        "balance": 0.25,
+        "handling": 82,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon",
           "NoBlood"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 16,
         "thrustDamageType": "Blunt",
         "thrustSpeed": 90,
-        "swingDamage": 16,
+        "swingDamage": 19,
         "swingDamageType": "Blunt",
-        "swingSpeed": 79
+        "swingSpeed": 77
       }
     ]
   },
