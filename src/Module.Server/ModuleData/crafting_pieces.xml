@@ -6998,7 +6998,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_blade_javelin_blade_h1" name="{=9aYBy1RN}Fine Steel Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.2456" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
-      <Thrust damage_type="Cut" damage_factor="0.845" />
+      <Thrust damage_type="Cut" damage_factor="0.87" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -7006,7 +7006,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_blade_javelin_blade_h2" name="{=9aYBy1RN}Fine Steel Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.2456" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
-      <Thrust damage_type="Cut" damage_factor="0.845" />
+      <Thrust damage_type="Cut" damage_factor="0.92" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -7014,7 +7014,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_blade_javelin_blade_h3" name="{=9aYBy1RN}Fine Steel Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.2456" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
-      <Thrust damage_type="Cut" damage_factor="0.845" />
+      <Thrust damage_type="Cut" damage_factor="0.96" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
