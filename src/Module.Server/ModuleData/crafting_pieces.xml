@@ -6706,7 +6706,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_jereed_blade_h1" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_2" holster_body_name="bo_throwing_spear_quiver_2" holster_mesh_length="94.6">
-      <Thrust damage_type="Pierce" damage_factor="0.78" />
+      <Thrust damage_type="Pierce" damage_factor="0.81" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="2" />
@@ -6714,7 +6714,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_jereed_blade_h2" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_2" holster_body_name="bo_throwing_spear_quiver_2" holster_mesh_length="94.6">
-      <Thrust damage_type="Pierce" damage_factor="0.78" />
+      <Thrust damage_type="Pierce" damage_factor="0.84" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="2" />
@@ -6722,7 +6722,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_jereed_blade_h3" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_2" holster_body_name="bo_throwing_spear_quiver_2" holster_mesh_length="94.6">
-      <Thrust damage_type="Pierce" damage_factor="0.78" />
+      <Thrust damage_type="Pierce" damage_factor="0.88" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="2" />

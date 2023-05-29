@@ -65723,10 +65723,10 @@
     "name": "Jereed +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 5097,
+    "price": 6699,
     "weight": 1.2,
     "heirloomLevel": 1,
-    "tier": 8.11969948,
+    "tier": 9.471567,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -65747,7 +65747,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 35,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -65768,7 +65768,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -65782,10 +65782,10 @@
     "name": "Jereed +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 3389,
+    "price": 6107,
     "weight": 1.2,
     "heirloomLevel": 2,
-    "tier": 6.41751242,
+    "tier": 8.992528,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -65806,7 +65806,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 36,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -65827,7 +65827,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -65841,10 +65841,10 @@
     "name": "Jereed +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 2168,
+    "price": 7583,
     "weight": 1.2,
     "heirloomLevel": 3,
-    "tier": 4.91532469,
+    "tier": 10.1483946,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -65865,7 +65865,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 38,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -65886,7 +65886,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
