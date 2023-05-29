@@ -79036,10 +79036,10 @@
     "name": "Lowland Javelin +1",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 371,
+    "price": 668,
     "weight": 1.2,
     "heirloomLevel": 1,
-    "tier": 1.433452,
+    "tier": 2.26293159,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -79060,7 +79060,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -79081,7 +79081,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 5,
+        "thrustDamage": 6,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -79095,10 +79095,10 @@
     "name": "Lowland Javelin +2",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 193,
+    "price": 699,
     "weight": 1.2,
     "heirloomLevel": 2,
-    "tier": 0.776232839,
+    "tier": 2.33684015,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -79119,7 +79119,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 29,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -79140,7 +79140,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 5,
+        "thrustDamage": 6,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -79154,10 +79154,10 @@
     "name": "Lowland Javelin +3",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 100,
+    "price": 777,
     "weight": 1.2,
     "heirloomLevel": 3,
-    "tier": 0.319013774,
+    "tier": 2.520393,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -79178,7 +79178,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 31,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -79199,7 +79199,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 5,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
