@@ -116618,10 +116618,10 @@
     "name": "Simple Javelin +1",
     "culture": "Neutral",
     "type": "Thrown",
-    "price": 77,
+    "price": 99,
     "weight": 0.91,
     "heirloomLevel": 1,
-    "tier": 0.184793338,
+    "tier": 0.312911659,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -116642,7 +116642,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 31,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -116677,10 +116677,10 @@
     "name": "Simple Javelin +2",
     "culture": "Neutral",
     "type": "Thrown",
-    "price": 51,
+    "price": 82,
     "weight": 0.91,
     "heirloomLevel": 2,
-    "tier": 0.0129159139,
+    "tier": 0.2120393,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -116701,7 +116701,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -116722,7 +116722,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -116736,10 +116736,10 @@
     "name": "Simple Javelin +3",
     "culture": "Neutral",
     "type": "Thrown",
-    "price": 55,
+    "price": 101,
     "weight": 0.91,
     "heirloomLevel": 3,
-    "tier": 0.04103848,
+    "tier": 0.325426072,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -116760,7 +116760,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 39,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -116781,7 +116781,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 11,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
