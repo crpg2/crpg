@@ -5550,7 +5550,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fish_harpoon_blade_h1" name="{=Js1FKwrL}Javelin Head" tier="2" piece_type="Blade" mesh="spear_blade_16" length="23.328" weight="0.204" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
-      <Thrust damage_type="Pierce" damage_factor="0.63" />
+      <Thrust damage_type="Pierce" damage_factor="0.67" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -5558,7 +5558,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fish_harpoon_blade_h2" name="{=Js1FKwrL}Javelin Head" tier="2" piece_type="Blade" mesh="spear_blade_16" length="23.328" weight="0.204" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
-      <Thrust damage_type="Pierce" damage_factor="0.63" />
+      <Thrust damage_type="Pierce" damage_factor="0.72" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -5566,7 +5566,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fish_harpoon_blade_h3" name="{=Js1FKwrL}Javelin Head" tier="2" piece_type="Blade" mesh="spear_blade_16" length="23.328" weight="0.204" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
-      <Thrust damage_type="Pierce" damage_factor="0.63" />
+      <Thrust damage_type="Pierce" damage_factor="0.77" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />

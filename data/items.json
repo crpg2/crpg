@@ -43976,10 +43976,10 @@
     "name": "Fish Harpoon +1",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 231,
+    "price": 413,
     "weight": 0.98,
     "heirloomLevel": 1,
-    "tier": 0.935136437,
+    "tier": 1.56580663,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -44000,7 +44000,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
         "swingDamage": 0,
@@ -44035,10 +44035,10 @@
     "name": "Fish Harpoon +2",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 119,
+    "price": 414,
     "weight": 0.98,
     "heirloomLevel": 2,
-    "tier": 0.42353645,
+    "tier": 1.57024884,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -44059,7 +44059,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
         "swingDamage": 0,
@@ -44080,7 +44080,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
         "swingDamage": 0,
@@ -44094,10 +44094,10 @@
     "name": "Fish Harpoon +3",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 66,
+    "price": 445,
     "weight": 0.98,
     "heirloomLevel": 3,
-    "tier": 0.111936413,
+    "tier": 1.66313994,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -44118,7 +44118,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 29,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
         "swingDamage": 0,
@@ -44139,7 +44139,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 96,
         "swingDamage": 0,
