@@ -50269,10 +50269,10 @@
     "name": "Harpoon +1",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 1626,
+    "price": 2178,
     "weight": 1.35,
     "heirloomLevel": 1,
-    "tier": 4.113147,
+    "tier": 4.92853355,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -50293,7 +50293,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 30,
+        "thrustDamage": 31,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -50328,10 +50328,10 @@
     "name": "Harpoon +2",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 967,
+    "price": 2499,
     "weight": 1.35,
     "heirloomLevel": 2,
-    "tier": 2.93047047,
+    "tier": 5.356446,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -50352,7 +50352,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 30,
+        "thrustDamage": 33,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -50373,7 +50373,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -50387,10 +50387,10 @@
     "name": "Harpoon +3",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 545,
+    "price": 3005,
     "weight": 1.35,
     "heirloomLevel": 3,
-    "tier": 1.9477942,
+    "tier": 5.97868824,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -50411,7 +50411,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 30,
+        "thrustDamage": 35,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -50432,7 +50432,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 6,
+        "thrustDamage": 7,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
