@@ -59032,10 +59032,10 @@
     "name": "Horseman Javelin +1",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 3125,
+    "price": 4192,
     "weight": 1.11,
     "heirloomLevel": 1,
-    "tier": 6.118975,
+    "tier": 7.26057339,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -59057,7 +59057,7 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 31,
+        "thrustDamage": 32,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -59079,7 +59079,7 @@
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -59093,10 +59093,10 @@
     "name": "Horseman Javelin +2",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 1984,
+    "price": 5099,
     "weight": 1.11,
     "heirloomLevel": 2,
-    "tier": 4.65449762,
+    "tier": 8.121672,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -59118,7 +59118,7 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 31,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -59140,7 +59140,7 @@
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -59154,10 +59154,10 @@
     "name": "Horseman Javelin +3",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 1203,
+    "price": 4701,
     "weight": 1.11,
     "heirloomLevel": 3,
-    "tier": 3.39002,
+    "tier": 7.753537,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -59179,7 +59179,7 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 31,
+        "thrustDamage": 35,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -59201,7 +59201,7 @@
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
         "swingDamage": 0,

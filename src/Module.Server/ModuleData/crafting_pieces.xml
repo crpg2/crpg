@@ -6817,7 +6817,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_horseman_javelin_blade_h1" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.4104" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.77" />
+      <Thrust damage_type="Pierce" damage_factor="0.8" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -6828,7 +6828,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_horseman_javelin_blade_h2" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.4104" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.77" />
+      <Thrust damage_type="Pierce" damage_factor="0.83" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -6839,7 +6839,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_horseman_javelin_blade_h3" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.4104" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.77" />
+      <Thrust damage_type="Pierce" damage_factor="0.87" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
