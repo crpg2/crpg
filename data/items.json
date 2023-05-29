@@ -102681,10 +102681,10 @@
     "name": "Pilum +1",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 1751,
+    "price": 2507,
     "weight": 2.53,
     "heirloomLevel": 1,
-    "tier": 4.30790424,
+    "tier": 5.36652327,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -102706,7 +102706,7 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 49,
+        "thrustDamage": 51,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -102742,10 +102742,10 @@
     "name": "Pilum +2",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 1049,
+    "price": 2773,
     "weight": 2.53,
     "heirloomLevel": 2,
-    "tier": 3.09521174,
+    "tier": 5.69997358,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -102767,7 +102767,7 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 49,
+        "thrustDamage": 54,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -102789,7 +102789,7 @@
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -102803,10 +102803,10 @@
     "name": "Pilum +3",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 596,
+    "price": 2617,
     "weight": 2.53,
     "heirloomLevel": 3,
-    "tier": 2.082519,
+    "tier": 5.506835,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -102828,7 +102828,7 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 49,
+        "thrustDamage": 56,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -102850,7 +102850,7 @@
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
