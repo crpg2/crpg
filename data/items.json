@@ -136871,10 +136871,10 @@
     "name": "Triangular Throwing Spear +1",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 2993,
+    "price": 4242,
     "weight": 2.59,
     "heirloomLevel": 1,
-    "tier": 5.964229,
+    "tier": 7.30993748,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -136896,7 +136896,7 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 52,
+        "thrustDamage": 54,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -136932,10 +136932,10 @@
     "name": "Triangular Throwing Spear +2",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 1892,
+    "price": 4828,
     "weight": 2.59,
     "heirloomLevel": 2,
-    "tier": 4.51966047,
+    "tier": 7.873023,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -136957,7 +136957,7 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 52,
+        "thrustDamage": 57,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -136979,7 +136979,7 @@
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -136993,10 +136993,10 @@
     "name": "Triangular Throwing Spear +3",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 1142,
+    "price": 4712,
     "weight": 2.59,
     "heirloomLevel": 3,
-    "tier": 3.27509236,
+    "tier": 7.763762,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -137018,7 +137018,7 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 52,
+        "thrustDamage": 59,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,
@@ -137040,7 +137040,7 @@
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 80,
         "swingDamage": 0,

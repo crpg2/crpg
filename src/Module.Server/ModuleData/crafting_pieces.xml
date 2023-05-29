@@ -6417,7 +6417,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.76" />
+      <Thrust damage_type="Pierce" damage_factor="0.79" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6428,7 +6428,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.76" />
+      <Thrust damage_type="Pierce" damage_factor="0.83" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6439,7 +6439,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.76" />
+      <Thrust damage_type="Pierce" damage_factor="0.86" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
