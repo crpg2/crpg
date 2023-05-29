@@ -117998,10 +117998,10 @@
     "name": "Sledgehammer +1",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 676,
-    "weight": 2.2,
+    "price": 952,
+    "weight": 2.13,
     "heirloomLevel": 1,
-    "tier": 1.46030784,
+    "tier": 1.88972116,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -118014,8 +118014,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.23,
-        "handling": 68,
+        "balance": 0.3,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -118028,7 +118028,7 @@
         "thrustSpeed": 90,
         "swingDamage": 19,
         "swingDamageType": "Blunt",
-        "swingSpeed": 76
+        "swingSpeed": 78
       }
     ]
   },
@@ -118037,10 +118037,10 @@
     "name": "Sledgehammer +2",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 544,
-    "weight": 2.2,
+    "price": 1015,
+    "weight": 2.13,
     "heirloomLevel": 2,
-    "tier": 1.22706413,
+    "tier": 1.979744,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -118053,8 +118053,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.23,
-        "handling": 68,
+        "balance": 0.3,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -118065,9 +118065,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 90,
-        "swingDamage": 19,
+        "swingDamage": 20,
         "swingDamageType": "Blunt",
-        "swingSpeed": 76
+        "swingSpeed": 78
       }
     ]
   },
@@ -118076,10 +118076,10 @@
     "name": "Sledgehammer +3",
     "culture": "Battania",
     "type": "TwoHandedWeapon",
-    "price": 449,
-    "weight": 2.2,
+    "price": 1088,
+    "weight": 2.13,
     "heirloomLevel": 3,
-    "tier": 1.045546,
+    "tier": 2.08064866,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -118092,8 +118092,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.23,
-        "handling": 68,
+        "balance": 0.3,
+        "handling": 69,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -118104,9 +118104,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 90,
-        "swingDamage": 19,
+        "swingDamage": 21,
         "swingDamageType": "Blunt",
-        "swingSpeed": 76
+        "swingSpeed": 78
       }
     ]
   },
