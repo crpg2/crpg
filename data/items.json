@@ -145299,10 +145299,10 @@
     "name": "Woodland Javelin +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1374,
+    "price": 1851,
     "weight": 1.08,
     "heirloomLevel": 1,
-    "tier": 3.69440413,
+    "tier": 4.45976162,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -145323,7 +145323,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 30,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 0,
@@ -145358,10 +145358,10 @@
     "name": "Woodland Javelin +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 803,
+    "price": 2122,
     "weight": 1.08,
     "heirloomLevel": 2,
-    "tier": 2.578772,
+    "tier": 4.850403,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -145382,7 +145382,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 32,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 0,
@@ -145403,7 +145403,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 0,
@@ -145417,10 +145417,10 @@
     "name": "Woodland Javelin +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 445,
+    "price": 2556,
     "weight": 1.08,
     "heirloomLevel": 3,
-    "tier": 1.66313994,
+    "tier": 5.42943525,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -145441,7 +145441,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 0,
@@ -145462,7 +145462,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
         "swingDamage": 0,

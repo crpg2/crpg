@@ -6858,7 +6858,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h1" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.73" />
+      <Thrust damage_type="Pierce" damage_factor="0.76" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -6866,7 +6866,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h2" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.73" />
+      <Thrust damage_type="Pierce" damage_factor="0.8" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -6874,7 +6874,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h3" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.73" />
+      <Thrust damage_type="Pierce" damage_factor="0.85" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
