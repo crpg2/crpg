@@ -139388,10 +139388,10 @@
     "name": "Throwing Hammers +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 3169,
+    "price": 4381,
     "weight": 1.22,
     "rank": 1,
-    "tier": 6.1686697,
+    "tier": 7.44648647,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -139412,7 +139412,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 26,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -139447,10 +139447,10 @@
     "name": "Throwing Hammers +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 2367,
+    "price": 4435,
     "weight": 1.22,
     "rank": 2,
-    "tier": 5.18339539,
+    "tier": 7.499778,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -139471,7 +139471,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 27,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -139494,7 +139494,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 7,
+        "swingDamage": 8,
         "swingDamageType": "Blunt",
         "swingSpeed": 104
       }
@@ -139506,10 +139506,10 @@
     "name": "Throwing Hammers +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1823,
+    "price": 4549,
     "weight": 1.22,
     "rank": 3,
-    "tier": 4.416622,
+    "tier": 7.60916042,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -139530,7 +139530,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 28,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -139553,7 +139553,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 7,
+        "swingDamage": 8,
         "swingDamageType": "Blunt",
         "swingSpeed": 104
       }
