@@ -11482,7 +11482,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_bladed_throwing_knives_blade_h1" name="{=HysmKS5a}Ridged Wide Dagger Blade" tier="1" piece_type="Blade" mesh="dagger_blade_12" length="25.2" weight="0.03" is_default="true">
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_3" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="6.2" />
+      <Thrust damage_type="Pierce" damage_factor="6.5" />
       <Swing damage_type="Cut" damage_factor="1.225" />
     </BladeData>
     <Flags>
@@ -11494,7 +11494,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_bladed_throwing_knives_blade_h2" name="{=HysmKS5a}Ridged Wide Dagger Blade" tier="1" piece_type="Blade" mesh="dagger_blade_12" length="25.2" weight="0.03" is_default="true">
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_3" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="6.2" />
+      <Thrust damage_type="Pierce" damage_factor="6.8" />
       <Swing damage_type="Cut" damage_factor="1.225" />
     </BladeData>
     <Flags>
@@ -11506,7 +11506,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_bladed_throwing_knives_blade_h3" name="{=HysmKS5a}Ridged Wide Dagger Blade" tier="1" piece_type="Blade" mesh="dagger_blade_12" length="25.2" weight="0.03" is_default="true">
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_3" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="6.2" />
+      <Thrust damage_type="Pierce" damage_factor="7.1" />
       <Swing damage_type="Cut" damage_factor="1.225" />
     </BladeData>
     <Flags>

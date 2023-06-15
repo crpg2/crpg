@@ -21800,10 +21800,10 @@
     "name": "Broad Bladed Throwing Knives +1",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 1780,
+    "price": 2874,
     "weight": 0.15,
     "rank": 1,
-    "tier": 4.35270357,
+    "tier": 5.822881,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21826,7 +21826,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -21841,10 +21841,10 @@
     "name": "Broad Bladed Throwing Knives +2",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 1353,
+    "price": 3407,
     "weight": 0.15,
     "rank": 2,
-    "tier": 3.65748024,
+    "tier": 6.43745565,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21867,7 +21867,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -21882,10 +21882,10 @@
     "name": "Broad Bladed Throwing Knives +3",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 1060,
+    "price": 4043,
     "weight": 0.15,
     "rank": 3,
-    "tier": 3.11643338,
+    "tier": 7.110485,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -21908,7 +21908,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
