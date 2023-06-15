@@ -142124,10 +142124,10 @@
     "name": "Tribesman Throwing Axe +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 4916,
+    "price": 6335,
     "weight": 0.72,
     "rank": 1,
-    "tier": 7.95392132,
+    "tier": 9.179378,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142151,7 +142151,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 33,
+        "thrustDamage": 34,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -142175,7 +142175,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 15,
+        "swingDamage": 16,
         "swingDamageType": "Cut",
         "swingSpeed": 117
       }
@@ -142187,10 +142187,10 @@
     "name": "Tribesman Throwing Axe +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 3634,
+    "price": 7583,
     "weight": 0.72,
     "rank": 2,
-    "tier": 6.683502,
+    "tier": 10.1482105,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142214,7 +142214,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 33,
+        "thrustDamage": 36,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -142238,7 +142238,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 15,
+        "swingDamage": 16,
         "swingDamageType": "Cut",
         "swingSpeed": 117
       }
@@ -142250,10 +142250,10 @@
     "name": "Tribesman Throwing Axe +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 2769,
+    "price": 7203,
     "weight": 0.72,
     "rank": 3,
-    "tier": 5.69481945,
+    "tier": 9.862375,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142277,7 +142277,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 33,
+        "thrustDamage": 37,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -142301,7 +142301,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 15,
+        "swingDamage": 17,
         "swingDamageType": "Cut",
         "swingSpeed": 117
       }
