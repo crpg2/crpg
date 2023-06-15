@@ -59342,10 +59342,10 @@
     "name": "Highland Throwing Dagger +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 2839,
+    "price": 4158,
     "weight": 0.12,
     "rank": 1,
-    "tier": 5.780139,
+    "tier": 7.22627544,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -59368,7 +59368,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -59383,10 +59383,10 @@
     "name": "Highland Throwing Dagger +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 2126,
+    "price": 4452,
     "weight": 0.12,
     "rank": 2,
-    "tier": 4.85692263,
+    "tier": 7.516267,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -59409,7 +59409,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -59424,10 +59424,10 @@
     "name": "Highland Throwing Dagger +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1642,
+    "price": 4810,
     "weight": 0.12,
     "rank": 3,
-    "tier": 4.13844347,
+    "tier": 7.85594654,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -59450,7 +59450,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
