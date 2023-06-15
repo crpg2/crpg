@@ -142354,10 +142354,10 @@
     "name": "Tribesman Throwing Daggers +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 2027,
+    "price": 3201,
     "weight": 0.12,
     "rank": 1,
-    "tier": 4.71653366,
+    "tier": 6.205493,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142380,7 +142380,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -142395,10 +142395,10 @@
     "name": "Tribesman Throwing Daggers +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 1534,
+    "price": 3705,
     "weight": 0.12,
     "rank": 2,
-    "tier": 3.96319842,
+    "tier": 6.759404,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142421,7 +142421,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -142436,10 +142436,10 @@
     "name": "Tribesman Throwing Daggers +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 1196,
+    "price": 4300,
     "weight": 0.12,
     "rank": 3,
-    "tier": 3.37692714,
+    "tier": 7.367344,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142462,7 +142462,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
