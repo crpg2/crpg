@@ -46654,10 +46654,10 @@
     "name": "Francesca +1",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 2924,
+    "price": 3761,
     "weight": 1.25,
     "rank": 1,
-    "tier": 5.88283825,
+    "tier": 6.819206,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -46681,7 +46681,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 32,
+        "thrustDamage": 33,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -46717,10 +46717,10 @@
     "name": "Francesca +2",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 2189,
+    "price": 4539,
     "weight": 1.25,
     "rank": 2,
-    "tier": 4.94321775,
+    "tier": 7.600052,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -46744,7 +46744,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 32,
+        "thrustDamage": 35,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -46780,10 +46780,10 @@
     "name": "Francesca +3",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 1689,
+    "price": 4347,
     "weight": 1.25,
     "rank": 3,
-    "tier": 4.211973,
+    "tier": 7.413405,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -46807,7 +46807,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 32,
+        "thrustDamage": 36,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -46831,7 +46831,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 11,
+        "swingDamage": 12,
         "swingDamageType": "Cut",
         "swingSpeed": 111
       }
