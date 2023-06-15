@@ -8972,7 +8972,7 @@
   <CraftingPiece id="crpg_raider_throwing_axe_blade_h1" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.7">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.2" />
+      <Swing damage_type="Cut" damage_factor="1.24" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -8985,7 +8985,7 @@
   <CraftingPiece id="crpg_raider_throwing_axe_blade_h2" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.7">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.2" />
+      <Swing damage_type="Cut" damage_factor="1.29" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -8998,7 +8998,7 @@
   <CraftingPiece id="crpg_raider_throwing_axe_blade_h3" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.7">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.2" />
+      <Swing damage_type="Cut" damage_factor="1.34" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
