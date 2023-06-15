@@ -82140,10 +82140,10 @@
     "name": "Lowland Throwing Knife +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1074,
+    "price": 1686,
     "weight": 0.38,
     "rank": 1,
-    "tier": 3.1448288,
+    "tier": 4.207032,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -82166,7 +82166,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 104,
         "swingDamage": 0,
@@ -82181,10 +82181,10 @@
     "name": "Lowland Throwing Knife +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 832,
+    "price": 1981,
     "weight": 0.38,
     "rank": 2,
-    "tier": 2.64252949,
+    "tier": 4.651061,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -82207,7 +82207,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 104,
         "swingDamage": 0,
@@ -82222,10 +82222,10 @@
     "name": "Lowland Throwing Knife +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 663,
+    "price": 2332,
     "weight": 0.38,
     "rank": 3,
-    "tier": 2.25162315,
+    "tier": 5.137325,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -82248,7 +82248,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 104,
         "swingDamage": 0,
