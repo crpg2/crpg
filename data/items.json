@@ -73986,10 +73986,10 @@
     "name": "Leafblade Throwing Knife +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 3206,
+    "price": 4560,
     "weight": 0.15,
     "rank": 1,
-    "tier": 6.211792,
+    "tier": 7.61968756,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -74012,7 +74012,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -74027,10 +74027,10 @@
     "name": "Leafblade Throwing Knife +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 2394,
+    "price": 4738,
     "weight": 0.15,
     "rank": 2,
-    "tier": 5.21963024,
+    "tier": 7.788579,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -74053,7 +74053,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -74068,10 +74068,10 @@
     "name": "Leafblade Throwing Knife +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1843,
+    "price": 4978,
     "weight": 0.15,
     "rank": 3,
-    "tier": 4.44749641,
+    "tier": 8.011133,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -74094,7 +74094,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 23,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
