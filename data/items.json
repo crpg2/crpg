@@ -128814,13 +128814,13 @@
   {
     "id": "crpg_steppe_heavy_bow_h0",
     "baseId": "crpg_steppe_heavy_bow",
-    "name": "Heavy Recurve Bow",
+    "name": "Light Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 770,
+    "price": 7597,
     "weight": 0.3,
     "rank": 0,
-    "tier": 1.61414814,
+    "tier": 7.08474255,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -128829,12 +128829,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 95,
-        "missileSpeed": 81,
+        "accuracy": 128,
+        "missileSpeed": 88,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 106,
+        "handling": 122,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -128846,20 +128846,20 @@
         ],
         "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 106,
+        "thrustSpeed": 122,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 120
+        "swingSpeed": 130
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 95,
-        "missileSpeed": 81,
+        "accuracy": 128,
+        "missileSpeed": 88,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 106,
+        "handling": 122,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -128872,23 +128872,23 @@
         ],
         "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 106,
+        "thrustSpeed": 122,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 120
+        "swingSpeed": 130
       }
     ]
   },
   {
     "id": "crpg_steppe_heavy_bow_h1",
     "baseId": "crpg_steppe_heavy_bow",
-    "name": "Heavy Recurve Bow +1",
+    "name": "Light Recurve Bow +1",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 721,
+    "price": 6678,
     "weight": 0.3,
     "rank": 1,
-    "tier": 1.53409767,
+    "tier": 6.57722759,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -128897,12 +128897,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 97,
-        "missileSpeed": 83,
+        "accuracy": 130,
+        "missileSpeed": 90,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 107,
+        "handling": 123,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -128914,20 +128914,20 @@
         ],
         "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 107,
+        "thrustSpeed": 123,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 123
+        "swingSpeed": 133
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 97,
-        "missileSpeed": 83,
+        "accuracy": 130,
+        "missileSpeed": 90,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 107,
+        "handling": 123,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -128940,23 +128940,23 @@
         ],
         "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 107,
+        "thrustSpeed": 123,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 123
+        "swingSpeed": 133
       }
     ]
   },
   {
     "id": "crpg_steppe_heavy_bow_h2",
     "baseId": "crpg_steppe_heavy_bow",
-    "name": "Heavy Recurve Bow +2",
+    "name": "Light Recurve Bow +2",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 626,
+    "price": 5455,
     "weight": 0.3,
     "rank": 2,
-    "tier": 1.3737905,
+    "tier": 5.84431553,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -128965,12 +128965,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 97,
-        "missileSpeed": 83,
+        "accuracy": 130,
+        "missileSpeed": 90,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 109,
+        "handling": 125,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -128982,20 +128982,20 @@
         ],
         "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 109,
+        "thrustSpeed": 125,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 124
+        "swingSpeed": 134
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 97,
-        "missileSpeed": 83,
+        "accuracy": 130,
+        "missileSpeed": 90,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 109,
+        "handling": 125,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -129008,23 +129008,23 @@
         ],
         "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 109,
+        "thrustSpeed": 125,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 124
+        "swingSpeed": 134
       }
     ]
   },
   {
     "id": "crpg_steppe_heavy_bow_h3",
     "baseId": "crpg_steppe_heavy_bow",
-    "name": "Heavy Recurve Bow +3",
+    "name": "Light Recurve Bow +3",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 949,
+    "price": 9441,
     "weight": 0.3,
     "rank": 3,
-    "tier": 1.88521028,
+    "tier": 8.019973,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -129033,12 +129033,12 @@
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 97,
-        "missileSpeed": 83,
+        "accuracy": 130,
+        "missileSpeed": 90,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 109,
+        "handling": 125,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -129050,20 +129050,20 @@
         ],
         "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 109,
+        "thrustSpeed": 125,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 124
+        "swingSpeed": 134
       },
       {
         "class": "Bow",
         "itemUsage": "bow",
-        "accuracy": 97,
-        "missileSpeed": 83,
+        "accuracy": 130,
+        "missileSpeed": 90,
         "stackAmount": 1,
         "length": 106,
         "balance": 0.0,
-        "handling": 109,
+        "handling": 125,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -129076,10 +129076,10 @@
         ],
         "thrustDamage": 11,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 109,
+        "thrustSpeed": 125,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 124
+        "swingSpeed": 134
       }
     ]
   },
