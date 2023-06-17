@@ -26845,10 +26845,10 @@
     "name": "Simple Short Bow +1",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 6752,
+    "price": 6487,
     "weight": 0.3,
     "rank": 1,
-    "tier": 6.619142,
+    "tier": 6.46697855,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -26877,7 +26877,7 @@
         "thrustSpeed": 117,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       },
       {
         "class": "Bow",
@@ -26903,7 +26903,7 @@
         "thrustSpeed": 117,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       }
     ]
   },
@@ -26913,10 +26913,10 @@
     "name": "Simple Short Bow +2",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 6792,
+    "price": 6525,
     "weight": 0.3,
     "rank": 2,
-    "tier": 6.64186573,
+    "tier": 6.48917866,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -26945,7 +26945,7 @@
         "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       },
       {
         "class": "Bow",
@@ -26971,7 +26971,7 @@
         "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       }
     ]
   },
@@ -26981,10 +26981,10 @@
     "name": "Simple Short Bow +3",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 6647,
+    "price": 6386,
     "weight": 0.3,
     "rank": 3,
-    "tier": 6.559264,
+    "tier": 6.40847635,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -27013,7 +27013,7 @@
         "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       },
       {
         "class": "Bow",
@@ -27039,7 +27039,7 @@
         "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       }
     ]
   },
@@ -27117,10 +27117,10 @@
     "name": "Steppe Recurve Bow +1",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 14016,
+    "price": 13447,
     "weight": 0.35,
     "rank": 1,
-    "tier": 10.0065413,
+    "tier": 9.77911949,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -27149,7 +27149,7 @@
         "thrustSpeed": 123,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 86
       },
       {
         "class": "Bow",
@@ -27175,7 +27175,7 @@
         "thrustSpeed": 123,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 86
       }
     ]
   },
@@ -27185,10 +27185,10 @@
     "name": "Steppe Recurve Bow +2",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 14085,
+    "price": 13513,
     "weight": 0.35,
     "rank": 2,
-    "tier": 10.0336723,
+    "tier": 9.805634,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -27217,7 +27217,7 @@
         "thrustSpeed": 127,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 86
       },
       {
         "class": "Bow",
@@ -27243,7 +27243,7 @@
         "thrustSpeed": 127,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 86
       }
     ]
   },
@@ -27253,10 +27253,10 @@
     "name": "Steppe Recurve Bow +3",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 13961,
+    "price": 13395,
     "weight": 0.35,
     "rank": 3,
-    "tier": 9.984844,
+    "tier": 9.757916,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -27285,7 +27285,7 @@
         "thrustSpeed": 127,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 86
       },
       {
         "class": "Bow",
@@ -27311,7 +27311,7 @@
         "thrustSpeed": 127,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 86
       }
     ]
   },
@@ -61399,10 +61399,10 @@
     "name": "Hunting Bow +1",
     "culture": "Battania",
     "type": "Bow",
-    "price": 1515,
+    "price": 1462,
     "weight": 0.2,
     "rank": 1,
-    "tier": 2.6168704,
+    "tier": 2.55529714,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -61431,7 +61431,7 @@
         "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 83
       },
       {
         "class": "Bow",
@@ -61457,7 +61457,7 @@
         "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 83
       }
     ]
   },
@@ -61467,10 +61467,10 @@
     "name": "Hunting Bow +2",
     "culture": "Battania",
     "type": "Bow",
-    "price": 1491,
+    "price": 1440,
     "weight": 0.2,
     "rank": 2,
-    "tier": 2.58949423,
+    "tier": 2.528565,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -61499,7 +61499,7 @@
         "thrustSpeed": 125,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 83
       },
       {
         "class": "Bow",
@@ -61525,7 +61525,7 @@
         "thrustSpeed": 125,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 83
       }
     ]
   },
@@ -61535,10 +61535,10 @@
     "name": "Hunting Bow +3",
     "culture": "Battania",
     "type": "Bow",
-    "price": 1422,
+    "price": 1373,
     "weight": 0.2,
     "rank": 3,
-    "tier": 2.5069232,
+    "tier": 2.44793677,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -61567,7 +61567,7 @@
         "thrustSpeed": 125,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 83
       },
       {
         "class": "Bow",
@@ -61593,7 +61593,7 @@
         "thrustSpeed": 125,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 83
       }
     ]
   },
@@ -81895,10 +81895,10 @@
     "name": "Yonsun Yumi +1",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 2223,
+    "price": 2144,
     "weight": 0.5,
     "rank": 1,
-    "tier": 3.36984944,
+    "tier": 3.29238129,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -81927,7 +81927,7 @@
         "thrustSpeed": 95,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       },
       {
         "class": "Bow",
@@ -81953,7 +81953,7 @@
         "thrustSpeed": 95,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       }
     ]
   },
@@ -81963,10 +81963,10 @@
     "name": "Yonsun Yumi +2",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 2287,
+    "price": 2206,
     "weight": 0.5,
     "rank": 2,
-    "tier": 3.43157053,
+    "tier": 3.35268331,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -81995,7 +81995,7 @@
         "thrustSpeed": 99,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       },
       {
         "class": "Bow",
@@ -82021,7 +82021,7 @@
         "thrustSpeed": 99,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       }
     ]
   },
@@ -82031,10 +82031,10 @@
     "name": "Yonsun Yumi +3",
     "culture": "Vlandia",
     "type": "Bow",
-    "price": 2191,
+    "price": 2113,
     "weight": 0.5,
     "rank": 3,
-    "tier": 3.33778453,
+    "tier": 3.2610538,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -82063,7 +82063,7 @@
         "thrustSpeed": 99,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       },
       {
         "class": "Bow",
@@ -82089,7 +82089,7 @@
         "thrustSpeed": 99,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 85
       }
     ]
   },
@@ -93101,10 +93101,10 @@
     "name": "Mountain Hunting Bow +1",
     "culture": "Battania",
     "type": "Bow",
-    "price": 480,
+    "price": 471,
     "weight": 0.25,
     "rank": 1,
-    "tier": 1.1066227,
+    "tier": 1.0895977,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -93133,7 +93133,7 @@
         "thrustSpeed": 109,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 130
+        "swingSpeed": 128
       },
       {
         "class": "Bow",
@@ -93159,7 +93159,7 @@
         "thrustSpeed": 109,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 130
+        "swingSpeed": 128
       }
     ]
   },
@@ -93169,10 +93169,10 @@
     "name": "Mountain Hunting Bow +2",
     "culture": "Battania",
     "type": "Bow",
-    "price": 494,
+    "price": 485,
     "weight": 0.25,
     "rank": 2,
-    "tier": 1.13413358,
+    "tier": 1.11668527,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -93201,7 +93201,7 @@
         "thrustSpeed": 113,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 130
+        "swingSpeed": 128
       },
       {
         "class": "Bow",
@@ -93227,7 +93227,7 @@
         "thrustSpeed": 113,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 130
+        "swingSpeed": 128
       }
     ]
   },
@@ -93237,10 +93237,10 @@
     "name": "Mountain Hunting Bow +3",
     "culture": "Battania",
     "type": "Bow",
-    "price": 502,
+    "price": 493,
     "weight": 0.25,
     "rank": 3,
-    "tier": 1.14901912,
+    "tier": 1.131342,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -93269,7 +93269,7 @@
         "thrustSpeed": 113,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 130
+        "swingSpeed": 128
       },
       {
         "class": "Bow",
@@ -93295,7 +93295,7 @@
         "thrustSpeed": 113,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 130
+        "swingSpeed": 128
       }
     ]
   },
@@ -95797,10 +95797,10 @@
     "name": "Noble Bow +1",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 13672,
+    "price": 13198,
     "weight": 0.4,
     "rank": 1,
-    "tier": 9.869686,
+    "tier": 9.678043,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -95829,7 +95829,7 @@
         "thrustSpeed": 102,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 103
+        "swingSpeed": 101
       },
       {
         "class": "Bow",
@@ -95855,7 +95855,7 @@
         "thrustSpeed": 102,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 103
+        "swingSpeed": 101
       }
     ]
   },
@@ -95865,10 +95865,10 @@
     "name": "Noble Bow +2",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 14481,
+    "price": 13977,
     "weight": 0.4,
     "rank": 2,
-    "tier": 10.1889467,
+    "tier": 9.991104,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -95897,7 +95897,7 @@
         "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 103
+        "swingSpeed": 101
       },
       {
         "class": "Bow",
@@ -95923,7 +95923,7 @@
         "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 103
+        "swingSpeed": 101
       }
     ]
   },
@@ -95933,10 +95933,10 @@
     "name": "Noble Bow +3",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 14826,
+    "price": 14310,
     "weight": 0.4,
     "rank": 3,
-    "tier": 10.3226776,
+    "tier": 10.1222372,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -95965,7 +95965,7 @@
         "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 103
+        "swingSpeed": 101
       },
       {
         "class": "Bow",
@@ -95991,7 +95991,7 @@
         "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 103
+        "swingSpeed": 101
       }
     ]
   },
@@ -96933,10 +96933,10 @@
     "name": "Hassun Yumi +1",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 14328,
+    "price": 13732,
     "weight": 0.7,
     "rank": 1,
-    "tier": 10.1291933,
+    "tier": 9.893631,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -96965,7 +96965,7 @@
         "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -96991,7 +96991,7 @@
         "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -97001,10 +97001,10 @@
     "name": "Hassun Yumi +2",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 15070,
+    "price": 14442,
     "weight": 0.7,
     "rank": 2,
-    "tier": 10.4160728,
+    "tier": 10.1738386,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -97033,7 +97033,7 @@
         "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -97059,7 +97059,7 @@
         "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -97069,10 +97069,10 @@
     "name": "Hassun Yumi +3",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 14938,
+    "price": 14315,
     "weight": 0.7,
     "rank": 3,
-    "tier": 10.3653851,
+    "tier": 10.12433,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -97101,7 +97101,7 @@
         "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -97127,7 +97127,7 @@
         "thrustSpeed": 101,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -98153,10 +98153,10 @@
     "name": "Nordic Shortbow +1",
     "culture": "Sturgia",
     "type": "Bow",
-    "price": 12263,
+    "price": 11757,
     "weight": 0.6,
     "rank": 1,
-    "tier": 9.290041,
+    "tier": 9.073994,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -98185,7 +98185,7 @@
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -98211,7 +98211,7 @@
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -98221,10 +98221,10 @@
     "name": "Nordic Shortbow +2",
     "culture": "Sturgia",
     "type": "Bow",
-    "price": 12453,
+    "price": 11939,
     "weight": 0.6,
     "rank": 2,
-    "tier": 9.369842,
+    "tier": 9.15193748,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -98253,7 +98253,7 @@
         "thrustSpeed": 112,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -98279,7 +98279,7 @@
         "thrustSpeed": 112,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -98289,10 +98289,10 @@
     "name": "Nordic Shortbow +3",
     "culture": "Sturgia",
     "type": "Bow",
-    "price": 12050,
+    "price": 11554,
     "weight": 0.6,
     "rank": 3,
-    "tier": 9.199688,
+    "tier": 8.985741,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -98321,7 +98321,7 @@
         "thrustSpeed": 112,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -98347,7 +98347,7 @@
         "thrustSpeed": 112,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -128089,10 +128089,10 @@
     "name": "Steppe Bow +1",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 2652,
+    "price": 2555,
     "weight": 0.25,
     "rank": 1,
-    "tier": 3.76979637,
+    "tier": 3.682127,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -128121,7 +128121,7 @@
         "thrustSpeed": 120,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -128147,7 +128147,7 @@
         "thrustSpeed": 120,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -128157,10 +128157,10 @@
     "name": "Steppe Bow +2",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 2626,
+    "price": 2530,
     "weight": 0.25,
     "rank": 2,
-    "tier": 3.746675,
+    "tier": 3.6595428,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -128189,7 +128189,7 @@
         "thrustSpeed": 124,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -128215,7 +128215,7 @@
         "thrustSpeed": 124,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -128225,10 +128225,10 @@
     "name": "Steppe Bow +3",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 2521,
+    "price": 2430,
     "weight": 0.25,
     "rank": 3,
-    "tier": 3.65148664,
+    "tier": 3.56656837,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -128257,7 +128257,7 @@
         "thrustSpeed": 124,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -128283,7 +128283,7 @@
         "thrustSpeed": 124,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -128885,10 +128885,10 @@
     "name": "Light Recurve Bow +1",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 7508,
+    "price": 7316,
     "weight": 0.3,
     "rank": 1,
-    "tier": 7.037262,
+    "tier": 6.93300629,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -128917,7 +128917,7 @@
         "thrustSpeed": 124,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 135
+        "swingSpeed": 133
       },
       {
         "class": "Bow",
@@ -128943,7 +128943,7 @@
         "thrustSpeed": 124,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 135
+        "swingSpeed": 133
       }
     ]
   },
@@ -128953,10 +128953,10 @@
     "name": "Light Recurve Bow +2",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 7388,
+    "price": 7199,
     "weight": 0.3,
     "rank": 2,
-    "tier": 6.972291,
+    "tier": 6.86899662,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -128985,7 +128985,7 @@
         "thrustSpeed": 128,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 135
+        "swingSpeed": 133
       },
       {
         "class": "Bow",
@@ -129011,7 +129011,7 @@
         "thrustSpeed": 128,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 135
+        "swingSpeed": 133
       }
     ]
   },
@@ -129021,10 +129021,10 @@
     "name": "Light Recurve Bow +3",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 7066,
+    "price": 6885,
     "weight": 0.3,
     "rank": 3,
-    "tier": 6.79515171,
+    "tier": 6.69448328,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -129053,7 +129053,7 @@
         "thrustSpeed": 128,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 135
+        "swingSpeed": 133
       },
       {
         "class": "Bow",
@@ -129079,7 +129079,7 @@
         "thrustSpeed": 128,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 135
+        "swingSpeed": 133
       }
     ]
   },
@@ -129765,10 +129765,10 @@
     "name": "Steppe War Bow +1",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 2447,
+    "price": 2378,
     "weight": 0.35,
     "rank": 1,
-    "tier": 3.58317685,
+    "tier": 3.51802826,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -129797,7 +129797,7 @@
         "thrustSpeed": 104,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 110
+        "swingSpeed": 108
       },
       {
         "class": "Bow",
@@ -129823,7 +129823,7 @@
         "thrustSpeed": 104,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 110
+        "swingSpeed": 108
       }
     ]
   },
@@ -129833,10 +129833,10 @@
     "name": "Steppe War Bow +2",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 2565,
+    "price": 2491,
     "weight": 0.35,
     "rank": 2,
-    "tier": 3.69103622,
+    "tier": 3.62392688,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -129865,7 +129865,7 @@
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 110
+        "swingSpeed": 108
       },
       {
         "class": "Bow",
@@ -129891,7 +129891,7 @@
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 110
+        "swingSpeed": 108
       }
     ]
   },
@@ -129901,10 +129901,10 @@
     "name": "Steppe War Bow +3",
     "culture": "Khuzait",
     "type": "Bow",
-    "price": 2618,
+    "price": 2543,
     "weight": 0.35,
     "rank": 3,
-    "tier": 3.73948145,
+    "tier": 3.671491,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -129933,7 +129933,7 @@
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 110
+        "swingSpeed": 108
       },
       {
         "class": "Bow",
@@ -129959,7 +129959,7 @@
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 110
+        "swingSpeed": 108
       }
     ]
   },
@@ -140577,10 +140577,10 @@
     "name": "Practice Bow +1",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 397,
+    "price": 389,
     "weight": 0.15,
     "rank": 1,
-    "tier": 0.938904166,
+    "tier": 0.921987057,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -140609,7 +140609,7 @@
         "thrustSpeed": 117,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 111
+        "swingSpeed": 109
       },
       {
         "class": "Bow",
@@ -140635,7 +140635,7 @@
         "thrustSpeed": 117,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 111
+        "swingSpeed": 109
       }
     ]
   },
@@ -140645,10 +140645,10 @@
     "name": "Practice Bow +2",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 395,
+    "price": 387,
     "weight": 0.15,
     "rank": 2,
-    "tier": 0.9339921,
+    "tier": 0.9171635,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -140677,7 +140677,7 @@
         "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 111
+        "swingSpeed": 109
       },
       {
         "class": "Bow",
@@ -140703,7 +140703,7 @@
         "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 111
+        "swingSpeed": 109
       }
     ]
   },
@@ -140713,10 +140713,10 @@
     "name": "Practice Bow +3",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 382,
+    "price": 375,
     "weight": 0.15,
     "rank": 3,
-    "tier": 0.9075881,
+    "tier": 0.891235054,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -140745,7 +140745,7 @@
         "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 111
+        "swingSpeed": 109
       },
       {
         "class": "Bow",
@@ -140771,7 +140771,7 @@
         "thrustSpeed": 121,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 111
+        "swingSpeed": 109
       }
     ]
   },
@@ -141697,10 +141697,10 @@
     "name": "Rokusun Yumi +1",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 5369,
+    "price": 5159,
     "weight": 0.6,
     "rank": 1,
-    "tier": 5.78993464,
+    "tier": 5.655284,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -141729,7 +141729,7 @@
         "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -141755,7 +141755,7 @@
         "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -141765,10 +141765,10 @@
     "name": "Rokusun Yumi +2",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 5603,
+    "price": 5383,
     "weight": 0.6,
     "rank": 2,
-    "tier": 5.93694258,
+    "tier": 5.798874,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -141797,7 +141797,7 @@
         "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -141823,7 +141823,7 @@
         "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -141833,10 +141833,10 @@
     "name": "Rokusun Yumi +3",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 5442,
+    "price": 5229,
     "weight": 0.6,
     "rank": 3,
-    "tier": 5.835693,
+    "tier": 5.69997931,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -141865,7 +141865,7 @@
         "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -141891,7 +141891,7 @@
         "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
