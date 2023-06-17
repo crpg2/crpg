@@ -96865,10 +96865,10 @@
     "name": "Hassun Yumi",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 10513,
+    "price": 13541,
     "weight": 0.7,
     "rank": 0,
-    "tier": 8.521887,
+    "tier": 9.816967,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -96882,7 +96882,7 @@
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 91,
+        "handling": 95,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -96894,10 +96894,10 @@
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 95,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 80
+        "swingSpeed": 81
       },
       {
         "class": "Bow",
@@ -96907,7 +96907,7 @@
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 91,
+        "handling": 95,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -96920,10 +96920,10 @@
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 95,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 80
+        "swingSpeed": 81
       }
     ]
   },
@@ -96933,10 +96933,10 @@
     "name": "Hassun Yumi +1",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 9724,
+    "price": 12471,
     "weight": 0.7,
     "rank": 1,
-    "tier": 8.155263,
+    "tier": 9.37755,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -96950,7 +96950,7 @@
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 92,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -96962,10 +96962,10 @@
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 84
       },
       {
         "class": "Bow",
@@ -96975,7 +96975,7 @@
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 92,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -96988,10 +96988,10 @@
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 84
       }
     ]
   },
@@ -97001,10 +97001,10 @@
     "name": "Hassun Yumi +2",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 8191,
+    "price": 10426,
     "weight": 0.7,
     "rank": 2,
-    "tier": 7.39744949,
+    "tier": 8.482354,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -97018,7 +97018,7 @@
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 94,
+        "handling": 98,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -97030,10 +97030,10 @@
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 85
       },
       {
         "class": "Bow",
@@ -97043,7 +97043,7 @@
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 94,
+        "handling": 98,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -97056,10 +97056,10 @@
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 85
       }
     ]
   },
@@ -97069,10 +97069,10 @@
     "name": "Hassun Yumi +3",
     "culture": "Aserai",
     "type": "Bow",
-    "price": 10915,
+    "price": 13949,
     "weight": 0.7,
     "rank": 3,
-    "tier": 8.703651,
+    "tier": 9.980122,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -97086,7 +97086,7 @@
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 94,
+        "handling": 98,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -97098,10 +97098,10 @@
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 85
       },
       {
         "class": "Bow",
@@ -97111,7 +97111,7 @@
         "stackAmount": 1,
         "length": 114,
         "balance": 0.0,
-        "handling": 94,
+        "handling": 98,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -97124,10 +97124,10 @@
         ],
         "thrustDamage": 16,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 85
       }
     ]
   },

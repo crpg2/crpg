@@ -3006,7 +3006,7 @@
   </Item>
   <Item id="crpg_nomad_bow_h0" name="{=ifzgMcrK}Hassun Yumi" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="0.7" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="91" speed_rating="80" missile_speed="86" weapon_length="114" accuracy="110" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="95" speed_rating="81" missile_speed="86" weapon_length="114" accuracy="110" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -3014,7 +3014,7 @@
   </Item>
   <Item id="crpg_nomad_bow_h1" name="{=ifzgMcrK}Hassun Yumi +1" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="0.7" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="92" speed_rating="83" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="96" speed_rating="84" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -3022,7 +3022,7 @@
   </Item>
   <Item id="crpg_nomad_bow_h2" name="{=ifzgMcrK}Hassun Yumi +2" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="0.7" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="94" speed_rating="84" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="98" speed_rating="85" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -3030,7 +3030,7 @@
   </Item>
   <Item id="crpg_nomad_bow_h3" name="{=ifzgMcrK}Hassun Yumi +3" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="0.7" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="94" speed_rating="84" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="16" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="98" speed_rating="85" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="16" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -3038,7 +3038,7 @@
   </Item>
   <Item id="crpg_nomad_bow_h0" name="{=ifzgMcrK}Hassun Yumi" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="0.7" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="91" speed_rating="80" missile_speed="86" weapon_length="114" accuracy="110" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="95" speed_rating="81" missile_speed="86" weapon_length="114" accuracy="110" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -3046,7 +3046,7 @@
   </Item>
   <Item id="crpg_nomad_bow_h1" name="{=ifzgMcrK}Hassun Yumi +1" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="0.7" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="92" speed_rating="83" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="96" speed_rating="84" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -3054,7 +3054,7 @@
   </Item>
   <Item id="crpg_nomad_bow_h2" name="{=ifzgMcrK}Hassun Yumi +2" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="0.7" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="94" speed_rating="84" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="98" speed_rating="85" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -3062,7 +3062,7 @@
   </Item>
   <Item id="crpg_nomad_bow_h3" name="{=ifzgMcrK}Hassun Yumi +3" body_name="bo_composite_longbow_g" mesh="longbow_g" culture="Culture.aserai" weight="0.7" difficulty="50" appearance="0.3" Type="Bow" item_holsters="bow_back:bow_back_2:bow_hip:bow_hip_2">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="94" speed_rating="84" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="16" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="98" speed_rating="85" missile_speed="88" weapon_length="114" accuracy="112" thrust_damage="16" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.15,0,0" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
