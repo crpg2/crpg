@@ -26772,8 +26772,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_composite_bow_h0",
-    "baseId": "crpg_composite_bow",
+    "id": "crpg_composite_bow_REFUND_h0",
+    "baseId": "crpg_composite_bow_REFUND",
     "name": "Simple Short Bow",
     "culture": "Neutral",
     "type": "Bow",
@@ -26840,8 +26840,8 @@
     ]
   },
   {
-    "id": "crpg_composite_bow_h1",
-    "baseId": "crpg_composite_bow",
+    "id": "crpg_composite_bow_REFUND_h1",
+    "baseId": "crpg_composite_bow_REFUND",
     "name": "Simple Short Bow +1",
     "culture": "Neutral",
     "type": "Bow",
@@ -26908,8 +26908,8 @@
     ]
   },
   {
-    "id": "crpg_composite_bow_h2",
-    "baseId": "crpg_composite_bow",
+    "id": "crpg_composite_bow_REFUND_h2",
+    "baseId": "crpg_composite_bow_REFUND",
     "name": "Simple Short Bow +2",
     "culture": "Neutral",
     "type": "Bow",
@@ -26976,8 +26976,8 @@
     ]
   },
   {
-    "id": "crpg_composite_bow_h3",
-    "baseId": "crpg_composite_bow",
+    "id": "crpg_composite_bow_REFUND_h3",
+    "baseId": "crpg_composite_bow_REFUND",
     "name": "Simple Short Bow +3",
     "culture": "Neutral",
     "type": "Bow",
@@ -27044,8 +27044,8 @@
     ]
   },
   {
-    "id": "crpg_composite_steppe_bow_h0",
-    "baseId": "crpg_composite_steppe_bow",
+    "id": "crpg_composite_steppe_bow_REFUND_h0",
+    "baseId": "crpg_composite_steppe_bow_REFUND",
     "name": "Steppe Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
@@ -27112,8 +27112,8 @@
     ]
   },
   {
-    "id": "crpg_composite_steppe_bow_h1",
-    "baseId": "crpg_composite_steppe_bow",
+    "id": "crpg_composite_steppe_bow_REFUND_h1",
+    "baseId": "crpg_composite_steppe_bow_REFUND",
     "name": "Steppe Recurve Bow +1",
     "culture": "Khuzait",
     "type": "Bow",
@@ -27180,8 +27180,8 @@
     ]
   },
   {
-    "id": "crpg_composite_steppe_bow_h2",
-    "baseId": "crpg_composite_steppe_bow",
+    "id": "crpg_composite_steppe_bow_REFUND_h2",
+    "baseId": "crpg_composite_steppe_bow_REFUND",
     "name": "Steppe Recurve Bow +2",
     "culture": "Khuzait",
     "type": "Bow",
@@ -27248,8 +27248,8 @@
     ]
   },
   {
-    "id": "crpg_composite_steppe_bow_h3",
-    "baseId": "crpg_composite_steppe_bow",
+    "id": "crpg_composite_steppe_bow_REFUND_h3",
+    "baseId": "crpg_composite_steppe_bow_REFUND",
     "name": "Steppe Recurve Bow +3",
     "culture": "Khuzait",
     "type": "Bow",
@@ -49216,8 +49216,8 @@
     ]
   },
   {
-    "id": "crpg_glen_ranger_bow_h0",
-    "baseId": "crpg_glen_ranger_bow",
+    "id": "crpg_glen_ranger_bow_REFUND_h0",
+    "baseId": "crpg_glen_ranger_bow_REFUND",
     "name": "Longbow",
     "culture": "Battania",
     "type": "Bow",
@@ -49284,8 +49284,8 @@
     ]
   },
   {
-    "id": "crpg_glen_ranger_bow_h1",
-    "baseId": "crpg_glen_ranger_bow",
+    "id": "crpg_glen_ranger_bow_REFUND_h1",
+    "baseId": "crpg_glen_ranger_bow_REFUND",
     "name": "Longbow +1",
     "culture": "Battania",
     "type": "Bow",
@@ -49352,8 +49352,8 @@
     ]
   },
   {
-    "id": "crpg_glen_ranger_bow_h2",
-    "baseId": "crpg_glen_ranger_bow",
+    "id": "crpg_glen_ranger_bow_REFUND_h2",
+    "baseId": "crpg_glen_ranger_bow_REFUND",
     "name": "Longbow +2",
     "culture": "Battania",
     "type": "Bow",
@@ -49420,8 +49420,8 @@
     ]
   },
   {
-    "id": "crpg_glen_ranger_bow_h3",
-    "baseId": "crpg_glen_ranger_bow",
+    "id": "crpg_glen_ranger_bow_REFUND_h3",
+    "baseId": "crpg_glen_ranger_bow_REFUND",
     "name": "Longbow +3",
     "culture": "Battania",
     "type": "Bow",
@@ -58312,8 +58312,8 @@
     ]
   },
   {
-    "id": "crpg_highland_ranger_bow_h0",
-    "baseId": "crpg_highland_ranger_bow",
+    "id": "crpg_highland_ranger_bow_REFUND_h0",
+    "baseId": "crpg_highland_ranger_bow_REFUND",
     "name": "Ranger Bow",
     "culture": "Battania",
     "type": "Bow",
@@ -58380,8 +58380,8 @@
     ]
   },
   {
-    "id": "crpg_highland_ranger_bow_h1",
-    "baseId": "crpg_highland_ranger_bow",
+    "id": "crpg_highland_ranger_bow_REFUND_h1",
+    "baseId": "crpg_highland_ranger_bow_REFUND",
     "name": "Ranger Bow +1",
     "culture": "Battania",
     "type": "Bow",
@@ -58448,8 +58448,8 @@
     ]
   },
   {
-    "id": "crpg_highland_ranger_bow_h2",
-    "baseId": "crpg_highland_ranger_bow",
+    "id": "crpg_highland_ranger_bow_REFUND_h2",
+    "baseId": "crpg_highland_ranger_bow_REFUND",
     "name": "Ranger Bow +2",
     "culture": "Battania",
     "type": "Bow",
@@ -58516,8 +58516,8 @@
     ]
   },
   {
-    "id": "crpg_highland_ranger_bow_h3",
-    "baseId": "crpg_highland_ranger_bow",
+    "id": "crpg_highland_ranger_bow_REFUND_h3",
+    "baseId": "crpg_highland_ranger_bow_REFUND",
     "name": "Ranger Bow +3",
     "culture": "Battania",
     "type": "Bow",
@@ -61326,8 +61326,8 @@
     ]
   },
   {
-    "id": "crpg_hunting_bow_h0",
-    "baseId": "crpg_hunting_bow",
+    "id": "crpg_hunting_bow_REFUND_h0",
+    "baseId": "crpg_hunting_bow_REFUND",
     "name": "Hunting Bow",
     "culture": "Battania",
     "type": "Bow",
@@ -61394,8 +61394,8 @@
     ]
   },
   {
-    "id": "crpg_hunting_bow_h1",
-    "baseId": "crpg_hunting_bow",
+    "id": "crpg_hunting_bow_REFUND_h1",
+    "baseId": "crpg_hunting_bow_REFUND",
     "name": "Hunting Bow +1",
     "culture": "Battania",
     "type": "Bow",
@@ -61462,8 +61462,8 @@
     ]
   },
   {
-    "id": "crpg_hunting_bow_h2",
-    "baseId": "crpg_hunting_bow",
+    "id": "crpg_hunting_bow_REFUND_h2",
+    "baseId": "crpg_hunting_bow_REFUND",
     "name": "Hunting Bow +2",
     "culture": "Battania",
     "type": "Bow",
@@ -61530,8 +61530,8 @@
     ]
   },
   {
-    "id": "crpg_hunting_bow_h3",
-    "baseId": "crpg_hunting_bow",
+    "id": "crpg_hunting_bow_REFUND_h3",
+    "baseId": "crpg_hunting_bow_REFUND",
     "name": "Hunting Bow +3",
     "culture": "Battania",
     "type": "Bow",
@@ -81822,8 +81822,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_longbow_h0",
-    "baseId": "crpg_lowland_longbow",
+    "id": "crpg_lowland_longbow_REFUND_h0",
+    "baseId": "crpg_lowland_longbow_REFUND",
     "name": "Yonsun Yumi",
     "culture": "Vlandia",
     "type": "Bow",
@@ -81890,8 +81890,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_longbow_h1",
-    "baseId": "crpg_lowland_longbow",
+    "id": "crpg_lowland_longbow_REFUND_h1",
+    "baseId": "crpg_lowland_longbow_REFUND",
     "name": "Yonsun Yumi +1",
     "culture": "Vlandia",
     "type": "Bow",
@@ -81958,8 +81958,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_longbow_h2",
-    "baseId": "crpg_lowland_longbow",
+    "id": "crpg_lowland_longbow_REFUND_h2",
+    "baseId": "crpg_lowland_longbow_REFUND",
     "name": "Yonsun Yumi +2",
     "culture": "Vlandia",
     "type": "Bow",
@@ -82026,8 +82026,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_longbow_h3",
-    "baseId": "crpg_lowland_longbow",
+    "id": "crpg_lowland_longbow_REFUND_h3",
+    "baseId": "crpg_lowland_longbow_REFUND",
     "name": "Yonsun Yumi +3",
     "culture": "Vlandia",
     "type": "Bow",
@@ -82258,8 +82258,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_yew_bow_h0",
-    "baseId": "crpg_lowland_yew_bow",
+    "id": "crpg_lowland_yew_bow_REFUND_h0",
+    "baseId": "crpg_lowland_yew_bow_REFUND",
     "name": "Yew Bow",
     "culture": "Vlandia",
     "type": "Bow",
@@ -82326,8 +82326,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_yew_bow_h1",
-    "baseId": "crpg_lowland_yew_bow",
+    "id": "crpg_lowland_yew_bow_REFUND_h1",
+    "baseId": "crpg_lowland_yew_bow_REFUND",
     "name": "Yew Bow +1",
     "culture": "Vlandia",
     "type": "Bow",
@@ -82394,8 +82394,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_yew_bow_h2",
-    "baseId": "crpg_lowland_yew_bow",
+    "id": "crpg_lowland_yew_bow_REFUND_h2",
+    "baseId": "crpg_lowland_yew_bow_REFUND",
     "name": "Yew Bow +2",
     "culture": "Vlandia",
     "type": "Bow",
@@ -82462,8 +82462,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_yew_bow_h3",
-    "baseId": "crpg_lowland_yew_bow",
+    "id": "crpg_lowland_yew_bow_REFUND_h3",
+    "baseId": "crpg_lowland_yew_bow_REFUND",
     "name": "Yew Bow +3",
     "culture": "Vlandia",
     "type": "Bow",
@@ -93028,8 +93028,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mountain_hunting_bow_h0",
-    "baseId": "crpg_mountain_hunting_bow",
+    "id": "crpg_mountain_hunting_bow_REFUND_h0",
+    "baseId": "crpg_mountain_hunting_bow_REFUND",
     "name": "Mountain Hunting Bow",
     "culture": "Battania",
     "type": "Bow",
@@ -93096,8 +93096,8 @@
     ]
   },
   {
-    "id": "crpg_mountain_hunting_bow_h1",
-    "baseId": "crpg_mountain_hunting_bow",
+    "id": "crpg_mountain_hunting_bow_REFUND_h1",
+    "baseId": "crpg_mountain_hunting_bow_REFUND",
     "name": "Mountain Hunting Bow +1",
     "culture": "Battania",
     "type": "Bow",
@@ -93164,8 +93164,8 @@
     ]
   },
   {
-    "id": "crpg_mountain_hunting_bow_h2",
-    "baseId": "crpg_mountain_hunting_bow",
+    "id": "crpg_mountain_hunting_bow_REFUND_h2",
+    "baseId": "crpg_mountain_hunting_bow_REFUND",
     "name": "Mountain Hunting Bow +2",
     "culture": "Battania",
     "type": "Bow",
@@ -93232,8 +93232,8 @@
     ]
   },
   {
-    "id": "crpg_mountain_hunting_bow_h3",
-    "baseId": "crpg_mountain_hunting_bow",
+    "id": "crpg_mountain_hunting_bow_REFUND_h3",
+    "baseId": "crpg_mountain_hunting_bow_REFUND",
     "name": "Mountain Hunting Bow +3",
     "culture": "Battania",
     "type": "Bow",
@@ -95724,8 +95724,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_noble_bow_h0",
-    "baseId": "crpg_noble_bow",
+    "id": "crpg_noble_bow_REFUND_h0",
+    "baseId": "crpg_noble_bow_REFUND",
     "name": "Noble Bow",
     "culture": "Neutral",
     "type": "Bow",
@@ -95792,8 +95792,8 @@
     ]
   },
   {
-    "id": "crpg_noble_bow_h1",
-    "baseId": "crpg_noble_bow",
+    "id": "crpg_noble_bow_REFUND_h1",
+    "baseId": "crpg_noble_bow_REFUND",
     "name": "Noble Bow +1",
     "culture": "Neutral",
     "type": "Bow",
@@ -95860,8 +95860,8 @@
     ]
   },
   {
-    "id": "crpg_noble_bow_h2",
-    "baseId": "crpg_noble_bow",
+    "id": "crpg_noble_bow_REFUND_h2",
+    "baseId": "crpg_noble_bow_REFUND",
     "name": "Noble Bow +2",
     "culture": "Neutral",
     "type": "Bow",
@@ -95928,8 +95928,8 @@
     ]
   },
   {
-    "id": "crpg_noble_bow_h3",
-    "baseId": "crpg_noble_bow",
+    "id": "crpg_noble_bow_REFUND_h3",
+    "baseId": "crpg_noble_bow_REFUND",
     "name": "Noble Bow +3",
     "culture": "Neutral",
     "type": "Bow",
@@ -96324,8 +96324,8 @@
     ]
   },
   {
-    "id": "crpg_noble_long_bow_h0",
-    "baseId": "crpg_noble_long_bow",
+    "id": "crpg_noble_long_bow_REFUND_h0",
+    "baseId": "crpg_noble_long_bow_REFUND",
     "name": "Noble Long Bow",
     "culture": "Neutral",
     "type": "Bow",
@@ -96392,8 +96392,8 @@
     ]
   },
   {
-    "id": "crpg_noble_long_bow_h1",
-    "baseId": "crpg_noble_long_bow",
+    "id": "crpg_noble_long_bow_REFUND_h1",
+    "baseId": "crpg_noble_long_bow_REFUND",
     "name": "Noble Long Bow +1",
     "culture": "Neutral",
     "type": "Bow",
@@ -96460,8 +96460,8 @@
     ]
   },
   {
-    "id": "crpg_noble_long_bow_h2",
-    "baseId": "crpg_noble_long_bow",
+    "id": "crpg_noble_long_bow_REFUND_h2",
+    "baseId": "crpg_noble_long_bow_REFUND",
     "name": "Noble Long Bow +2",
     "culture": "Neutral",
     "type": "Bow",
@@ -96528,8 +96528,8 @@
     ]
   },
   {
-    "id": "crpg_noble_long_bow_h3",
-    "baseId": "crpg_noble_long_bow",
+    "id": "crpg_noble_long_bow_REFUND_h3",
+    "baseId": "crpg_noble_long_bow_REFUND",
     "name": "Noble Long Bow +3",
     "culture": "Neutral",
     "type": "Bow",
@@ -96860,8 +96860,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_nomad_bow_h0",
-    "baseId": "crpg_nomad_bow",
+    "id": "crpg_nomad_bow_REFUND_h0",
+    "baseId": "crpg_nomad_bow_REFUND",
     "name": "Hassun Yumi",
     "culture": "Aserai",
     "type": "Bow",
@@ -96928,8 +96928,8 @@
     ]
   },
   {
-    "id": "crpg_nomad_bow_h1",
-    "baseId": "crpg_nomad_bow",
+    "id": "crpg_nomad_bow_REFUND_h1",
+    "baseId": "crpg_nomad_bow_REFUND",
     "name": "Hassun Yumi +1",
     "culture": "Aserai",
     "type": "Bow",
@@ -96996,8 +96996,8 @@
     ]
   },
   {
-    "id": "crpg_nomad_bow_h2",
-    "baseId": "crpg_nomad_bow",
+    "id": "crpg_nomad_bow_REFUND_h2",
+    "baseId": "crpg_nomad_bow_REFUND",
     "name": "Hassun Yumi +2",
     "culture": "Aserai",
     "type": "Bow",
@@ -97064,8 +97064,8 @@
     ]
   },
   {
-    "id": "crpg_nomad_bow_h3",
-    "baseId": "crpg_nomad_bow",
+    "id": "crpg_nomad_bow_REFUND_h3",
+    "baseId": "crpg_nomad_bow_REFUND",
     "name": "Hassun Yumi +3",
     "culture": "Aserai",
     "type": "Bow",
@@ -98080,8 +98080,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_nordic_shortbow_h0",
-    "baseId": "crpg_nordic_shortbow",
+    "id": "crpg_nordic_shortbow_REFUND_h0",
+    "baseId": "crpg_nordic_shortbow_REFUND",
     "name": "Nordic Shortbow",
     "culture": "Sturgia",
     "type": "Bow",
@@ -98148,8 +98148,8 @@
     ]
   },
   {
-    "id": "crpg_nordic_shortbow_h1",
-    "baseId": "crpg_nordic_shortbow",
+    "id": "crpg_nordic_shortbow_REFUND_h1",
+    "baseId": "crpg_nordic_shortbow_REFUND",
     "name": "Nordic Shortbow +1",
     "culture": "Sturgia",
     "type": "Bow",
@@ -98216,8 +98216,8 @@
     ]
   },
   {
-    "id": "crpg_nordic_shortbow_h2",
-    "baseId": "crpg_nordic_shortbow",
+    "id": "crpg_nordic_shortbow_REFUND_h2",
+    "baseId": "crpg_nordic_shortbow_REFUND",
     "name": "Nordic Shortbow +2",
     "culture": "Sturgia",
     "type": "Bow",
@@ -98284,8 +98284,8 @@
     ]
   },
   {
-    "id": "crpg_nordic_shortbow_h3",
-    "baseId": "crpg_nordic_shortbow",
+    "id": "crpg_nordic_shortbow_REFUND_h3",
+    "baseId": "crpg_nordic_shortbow_REFUND",
     "name": "Nordic Shortbow +3",
     "culture": "Sturgia",
     "type": "Bow",
@@ -128016,8 +128016,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_bow_h0",
-    "baseId": "crpg_steppe_bow",
+    "id": "crpg_steppe_bow_REFUND_h0",
+    "baseId": "crpg_steppe_bow_REFUND",
     "name": "Steppe Bow",
     "culture": "Khuzait",
     "type": "Bow",
@@ -128084,8 +128084,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_bow_h1",
-    "baseId": "crpg_steppe_bow",
+    "id": "crpg_steppe_bow_REFUND_h1",
+    "baseId": "crpg_steppe_bow_REFUND",
     "name": "Steppe Bow +1",
     "culture": "Khuzait",
     "type": "Bow",
@@ -128152,8 +128152,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_bow_h2",
-    "baseId": "crpg_steppe_bow",
+    "id": "crpg_steppe_bow_REFUND_h2",
+    "baseId": "crpg_steppe_bow_REFUND",
     "name": "Steppe Bow +2",
     "culture": "Khuzait",
     "type": "Bow",
@@ -128220,8 +128220,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_bow_h3",
-    "baseId": "crpg_steppe_bow",
+    "id": "crpg_steppe_bow_REFUND_h3",
+    "baseId": "crpg_steppe_bow_REFUND",
     "name": "Steppe Bow +3",
     "culture": "Khuzait",
     "type": "Bow",
@@ -128812,8 +128812,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_heavy_bow_h0",
-    "baseId": "crpg_steppe_heavy_bow",
+    "id": "crpg_steppe_heavy_bow_REFUND_h0",
+    "baseId": "crpg_steppe_heavy_bow_REFUND",
     "name": "Light Recurve Bow",
     "culture": "Khuzait",
     "type": "Bow",
@@ -128880,8 +128880,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_heavy_bow_h1",
-    "baseId": "crpg_steppe_heavy_bow",
+    "id": "crpg_steppe_heavy_bow_REFUND_h1",
+    "baseId": "crpg_steppe_heavy_bow_REFUND",
     "name": "Light Recurve Bow +1",
     "culture": "Khuzait",
     "type": "Bow",
@@ -128948,8 +128948,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_heavy_bow_h2",
-    "baseId": "crpg_steppe_heavy_bow",
+    "id": "crpg_steppe_heavy_bow_REFUND_h2",
+    "baseId": "crpg_steppe_heavy_bow_REFUND",
     "name": "Light Recurve Bow +2",
     "culture": "Khuzait",
     "type": "Bow",
@@ -129016,8 +129016,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_heavy_bow_h3",
-    "baseId": "crpg_steppe_heavy_bow",
+    "id": "crpg_steppe_heavy_bow_REFUND_h3",
+    "baseId": "crpg_steppe_heavy_bow_REFUND",
     "name": "Light Recurve Bow +3",
     "culture": "Khuzait",
     "type": "Bow",
@@ -129692,8 +129692,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_war_bow_h0",
-    "baseId": "crpg_steppe_war_bow",
+    "id": "crpg_steppe_war_bow_REFUND_h0",
+    "baseId": "crpg_steppe_war_bow_REFUND",
     "name": "Steppe War Bow",
     "culture": "Khuzait",
     "type": "Bow",
@@ -129760,8 +129760,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_war_bow_h1",
-    "baseId": "crpg_steppe_war_bow",
+    "id": "crpg_steppe_war_bow_REFUND_h1",
+    "baseId": "crpg_steppe_war_bow_REFUND",
     "name": "Steppe War Bow +1",
     "culture": "Khuzait",
     "type": "Bow",
@@ -129828,8 +129828,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_war_bow_h2",
-    "baseId": "crpg_steppe_war_bow",
+    "id": "crpg_steppe_war_bow_REFUND_h2",
+    "baseId": "crpg_steppe_war_bow_REFUND",
     "name": "Steppe War Bow +2",
     "culture": "Khuzait",
     "type": "Bow",
@@ -129896,8 +129896,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_war_bow_h3",
-    "baseId": "crpg_steppe_war_bow",
+    "id": "crpg_steppe_war_bow_REFUND_h3",
+    "baseId": "crpg_steppe_war_bow_REFUND",
     "name": "Steppe War Bow +3",
     "culture": "Khuzait",
     "type": "Bow",
@@ -131032,8 +131032,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_strong_tribal_long_bow_h0",
-    "baseId": "crpg_strong_tribal_long_bow",
+    "id": "crpg_strong_tribal_long_bow_REFUND_h0",
+    "baseId": "crpg_strong_tribal_long_bow_REFUND",
     "name": "Strong Tribal Long Bow",
     "culture": "Aserai",
     "type": "Bow",
@@ -131100,8 +131100,8 @@
     ]
   },
   {
-    "id": "crpg_strong_tribal_long_bow_h1",
-    "baseId": "crpg_strong_tribal_long_bow",
+    "id": "crpg_strong_tribal_long_bow_REFUND_h1",
+    "baseId": "crpg_strong_tribal_long_bow_REFUND",
     "name": "Strong Tribal Long Bow +1",
     "culture": "Aserai",
     "type": "Bow",
@@ -131168,8 +131168,8 @@
     ]
   },
   {
-    "id": "crpg_strong_tribal_long_bow_h2",
-    "baseId": "crpg_strong_tribal_long_bow",
+    "id": "crpg_strong_tribal_long_bow_REFUND_h2",
+    "baseId": "crpg_strong_tribal_long_bow_REFUND",
     "name": "Strong Tribal Long Bow +2",
     "culture": "Aserai",
     "type": "Bow",
@@ -131236,8 +131236,8 @@
     ]
   },
   {
-    "id": "crpg_strong_tribal_long_bow_h3",
-    "baseId": "crpg_strong_tribal_long_bow",
+    "id": "crpg_strong_tribal_long_bow_REFUND_h3",
+    "baseId": "crpg_strong_tribal_long_bow_REFUND",
     "name": "Strong Tribal Long Bow +3",
     "culture": "Aserai",
     "type": "Bow",
@@ -140504,8 +140504,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_training_bow_h0",
-    "baseId": "crpg_training_bow",
+    "id": "crpg_training_bow_REFUND_h0",
+    "baseId": "crpg_training_bow_REFUND",
     "name": "Practice Bow",
     "culture": "Neutral",
     "type": "Bow",
@@ -140572,8 +140572,8 @@
     ]
   },
   {
-    "id": "crpg_training_bow_h1",
-    "baseId": "crpg_training_bow",
+    "id": "crpg_training_bow_REFUND_h1",
+    "baseId": "crpg_training_bow_REFUND",
     "name": "Practice Bow +1",
     "culture": "Neutral",
     "type": "Bow",
@@ -140640,8 +140640,8 @@
     ]
   },
   {
-    "id": "crpg_training_bow_h2",
-    "baseId": "crpg_training_bow",
+    "id": "crpg_training_bow_REFUND_h2",
+    "baseId": "crpg_training_bow_REFUND",
     "name": "Practice Bow +2",
     "culture": "Neutral",
     "type": "Bow",
@@ -140708,8 +140708,8 @@
     ]
   },
   {
-    "id": "crpg_training_bow_h3",
-    "baseId": "crpg_training_bow",
+    "id": "crpg_training_bow_REFUND_h3",
+    "baseId": "crpg_training_bow_REFUND",
     "name": "Practice Bow +3",
     "culture": "Neutral",
     "type": "Bow",
@@ -140776,8 +140776,8 @@
     ]
   },
   {
-    "id": "crpg_training_longbow_h0",
-    "baseId": "crpg_training_longbow",
+    "id": "crpg_training_longbow_REFUND_h0",
+    "baseId": "crpg_training_longbow_REFUND",
     "name": "Practice Longbow",
     "culture": "Vlandia",
     "type": "Bow",
@@ -140844,8 +140844,8 @@
     ]
   },
   {
-    "id": "crpg_training_longbow_h1",
-    "baseId": "crpg_training_longbow",
+    "id": "crpg_training_longbow_REFUND_h1",
+    "baseId": "crpg_training_longbow_REFUND",
     "name": "Practice Longbow +1",
     "culture": "Vlandia",
     "type": "Bow",
@@ -140912,8 +140912,8 @@
     ]
   },
   {
-    "id": "crpg_training_longbow_h2",
-    "baseId": "crpg_training_longbow",
+    "id": "crpg_training_longbow_REFUND_h2",
+    "baseId": "crpg_training_longbow_REFUND",
     "name": "Practice Longbow +2",
     "culture": "Vlandia",
     "type": "Bow",
@@ -140980,8 +140980,8 @@
     ]
   },
   {
-    "id": "crpg_training_longbow_h3",
-    "baseId": "crpg_training_longbow",
+    "id": "crpg_training_longbow_REFUND_h3",
+    "baseId": "crpg_training_longbow_REFUND",
     "name": "Practice Longbow +3",
     "culture": "Vlandia",
     "type": "Bow",
@@ -141624,8 +141624,8 @@
     ]
   },
   {
-    "id": "crpg_tribal_bow_h0",
-    "baseId": "crpg_tribal_bow",
+    "id": "crpg_tribal_bow_REFUND_h0",
+    "baseId": "crpg_tribal_bow_REFUND",
     "name": "Rokusun Yumi",
     "culture": "Aserai",
     "type": "Bow",
@@ -141692,8 +141692,8 @@
     ]
   },
   {
-    "id": "crpg_tribal_bow_h1",
-    "baseId": "crpg_tribal_bow",
+    "id": "crpg_tribal_bow_REFUND_h1",
+    "baseId": "crpg_tribal_bow_REFUND",
     "name": "Rokusun Yumi +1",
     "culture": "Aserai",
     "type": "Bow",
@@ -141760,8 +141760,8 @@
     ]
   },
   {
-    "id": "crpg_tribal_bow_h2",
-    "baseId": "crpg_tribal_bow",
+    "id": "crpg_tribal_bow_REFUND_h2",
+    "baseId": "crpg_tribal_bow_REFUND",
     "name": "Rokusun Yumi +2",
     "culture": "Aserai",
     "type": "Bow",
@@ -141828,8 +141828,8 @@
     ]
   },
   {
-    "id": "crpg_tribal_bow_h3",
-    "baseId": "crpg_tribal_bow",
+    "id": "crpg_tribal_bow_REFUND_h3",
+    "baseId": "crpg_tribal_bow_REFUND",
     "name": "Rokusun Yumi +3",
     "culture": "Aserai",
     "type": "Bow",
@@ -150324,8 +150324,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_longbow_h0",
-    "baseId": "crpg_woodland_longbow",
+    "id": "crpg_woodland_longbow_REFUND_h0",
+    "baseId": "crpg_woodland_longbow_REFUND",
     "name": "Woodland Longbow",
     "culture": "Battania",
     "type": "Bow",
@@ -150392,8 +150392,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_longbow_h1",
-    "baseId": "crpg_woodland_longbow",
+    "id": "crpg_woodland_longbow_REFUND_h1",
+    "baseId": "crpg_woodland_longbow_REFUND",
     "name": "Woodland Longbow +1",
     "culture": "Battania",
     "type": "Bow",
@@ -150460,8 +150460,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_longbow_h2",
-    "baseId": "crpg_woodland_longbow",
+    "id": "crpg_woodland_longbow_REFUND_h2",
+    "baseId": "crpg_woodland_longbow_REFUND",
     "name": "Woodland Longbow +2",
     "culture": "Battania",
     "type": "Bow",
@@ -150528,8 +150528,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_longbow_h3",
-    "baseId": "crpg_woodland_longbow",
+    "id": "crpg_woodland_longbow_REFUND_h3",
+    "baseId": "crpg_woodland_longbow_REFUND",
     "name": "Woodland Longbow +3",
     "culture": "Battania",
     "type": "Bow",
@@ -150596,8 +150596,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_yew_bow_h0",
-    "baseId": "crpg_woodland_yew_bow",
+    "id": "crpg_woodland_yew_bow_REFUND_h0",
+    "baseId": "crpg_woodland_yew_bow_REFUND",
     "name": "Woodland Yew Bow",
     "culture": "Battania",
     "type": "Bow",
@@ -150664,8 +150664,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_yew_bow_h1",
-    "baseId": "crpg_woodland_yew_bow",
+    "id": "crpg_woodland_yew_bow_REFUND_h1",
+    "baseId": "crpg_woodland_yew_bow_REFUND",
     "name": "Woodland Yew Bow +1",
     "culture": "Battania",
     "type": "Bow",
@@ -150732,8 +150732,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_yew_bow_h2",
-    "baseId": "crpg_woodland_yew_bow",
+    "id": "crpg_woodland_yew_bow_REFUND_h2",
+    "baseId": "crpg_woodland_yew_bow_REFUND",
     "name": "Woodland Yew Bow +2",
     "culture": "Battania",
     "type": "Bow",
@@ -150800,8 +150800,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_yew_bow_h3",
-    "baseId": "crpg_woodland_yew_bow",
+    "id": "crpg_woodland_yew_bow_REFUND_h3",
+    "baseId": "crpg_woodland_yew_bow_REFUND",
     "name": "Woodland Yew Bow +3",
     "culture": "Battania",
     "type": "Bow",
