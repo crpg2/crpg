@@ -2886,7 +2886,7 @@
   </Item>
   <Item id="crpg_noble_bow_h1" name="{=EO7pCu1b}Noble Bow +1" body_name="bo_composite_shotbow_f" mesh="shortbow_f" weight="0.4" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="101" speed_rating="101" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="101" speed_rating="101" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -2894,7 +2894,7 @@
   </Item>
   <Item id="crpg_noble_bow_h2" name="{=EO7pCu1b}Noble Bow +2" body_name="bo_composite_shotbow_f" mesh="shortbow_f" weight="0.4" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="102" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="102" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -2902,7 +2902,7 @@
   </Item>
   <Item id="crpg_noble_bow_h3" name="{=EO7pCu1b}Noble Bow +3" body_name="bo_composite_shotbow_f" mesh="shortbow_f" weight="0.4" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="102" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="102" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="16" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -2918,7 +2918,7 @@
   </Item>
   <Item id="crpg_noble_bow_h1" name="{=EO7pCu1b}Noble Bow +1" body_name="bo_composite_shotbow_f" mesh="shortbow_f" weight="0.4" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="101" speed_rating="101" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="101" speed_rating="101" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -2926,7 +2926,7 @@
   </Item>
   <Item id="crpg_noble_bow_h2" name="{=EO7pCu1b}Noble Bow +2" body_name="bo_composite_shotbow_f" mesh="shortbow_f" weight="0.4" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="102" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="102" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>
@@ -2934,7 +2934,7 @@
   </Item>
   <Item id="crpg_noble_bow_h3" name="{=EO7pCu1b}Noble Bow +3" body_name="bo_composite_shotbow_f" mesh="shortbow_f" weight="0.4" difficulty="70" appearance="0.1" Type="Bow" item_holsters="bow_back_2:bow_hip:bow_hip_2:bow_back">
     <ItemComponent>
-      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="102" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="15" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
+      <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="103" speed_rating="102" missile_speed="87" weapon_length="116" accuracy="100" thrust_damage="16" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
       </Weapon>
     </ItemComponent>

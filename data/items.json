@@ -95729,10 +95729,10 @@
     "name": "Noble Bow",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 7178,
+    "price": 13208,
     "weight": 0.4,
     "rank": 0,
-    "tier": 6.857283,
+    "tier": 9.68207,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -95756,7 +95756,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -95782,7 +95782,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -95797,10 +95797,10 @@
     "name": "Noble Bow +1",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 6620,
+    "price": 12145,
     "weight": 0.4,
     "rank": 1,
-    "tier": 6.544074,
+    "tier": 9.23984,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -95824,7 +95824,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 101,
         "swingDamage": 0,
@@ -95850,7 +95850,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 101,
         "swingDamage": 0,
@@ -95865,10 +95865,10 @@
     "name": "Noble Bow +2",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 5528,
+    "price": 10066,
     "weight": 0.4,
     "rank": 2,
-    "tier": 5.889758,
+    "tier": 8.315982,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -95892,7 +95892,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 103,
         "swingDamage": 0,
@@ -95918,7 +95918,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 14,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 103,
         "swingDamage": 0,
@@ -95933,10 +95933,10 @@
     "name": "Noble Bow +3",
     "culture": "Neutral",
     "type": "Bow",
-    "price": 7599,
+    "price": 13460,
     "weight": 0.4,
     "rank": 3,
-    "tier": 7.08580875,
+    "tier": 9.784374,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandPrimaryItemBone"
@@ -95960,7 +95960,7 @@
           "UnloadWhenSheathed",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 103,
         "swingDamage": 0,
@@ -95986,7 +95986,7 @@
           "AutoReload",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 15,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 103,
         "swingDamage": 0,
