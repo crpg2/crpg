@@ -27708,8 +27708,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_a_h0",
-    "baseId": "crpg_crossbow_a",
+    "id": "crpg_crossbow_a_REFUND_h0",
+    "baseId": "crpg_crossbow_a_REFUND",
     "name": "Simple Light Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27747,8 +27747,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_a_h1",
-    "baseId": "crpg_crossbow_a",
+    "id": "crpg_crossbow_a_REFUND_h1",
+    "baseId": "crpg_crossbow_a_REFUND",
     "name": "Simple Light Crossbow +1",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27786,8 +27786,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_a_h2",
-    "baseId": "crpg_crossbow_a",
+    "id": "crpg_crossbow_a_REFUND_h2",
+    "baseId": "crpg_crossbow_a_REFUND",
     "name": "Simple Light Crossbow +2",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27825,8 +27825,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_a_h3",
-    "baseId": "crpg_crossbow_a",
+    "id": "crpg_crossbow_a_REFUND_h3",
+    "baseId": "crpg_crossbow_a_REFUND",
     "name": "Simple Light Crossbow +3",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27864,8 +27864,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_b_h0",
-    "baseId": "crpg_crossbow_b",
+    "id": "crpg_crossbow_b_REFUND_h0",
+    "baseId": "crpg_crossbow_b_REFUND",
     "name": "Heavy Maple Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27904,8 +27904,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_b_h1",
-    "baseId": "crpg_crossbow_b",
+    "id": "crpg_crossbow_b_REFUND_h1",
+    "baseId": "crpg_crossbow_b_REFUND",
     "name": "Heavy Maple Crossbow +1",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27944,8 +27944,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_b_h2",
-    "baseId": "crpg_crossbow_b",
+    "id": "crpg_crossbow_b_REFUND_h2",
+    "baseId": "crpg_crossbow_b_REFUND",
     "name": "Heavy Maple Crossbow +2",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27984,8 +27984,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_b_h3",
-    "baseId": "crpg_crossbow_b",
+    "id": "crpg_crossbow_b_REFUND_h3",
+    "baseId": "crpg_crossbow_b_REFUND",
     "name": "Heavy Maple Crossbow +3",
     "culture": "Empire",
     "type": "Crossbow",
@@ -28024,8 +28024,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_c_h0",
-    "baseId": "crpg_crossbow_c",
+    "id": "crpg_crossbow_c_REFUND_h0",
+    "baseId": "crpg_crossbow_c_REFUND",
     "name": "Heavy Hunting Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28064,8 +28064,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_c_h1",
-    "baseId": "crpg_crossbow_c",
+    "id": "crpg_crossbow_c_REFUND_h1",
+    "baseId": "crpg_crossbow_c_REFUND",
     "name": "Heavy Hunting Arbalest +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28104,8 +28104,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_c_h2",
-    "baseId": "crpg_crossbow_c",
+    "id": "crpg_crossbow_c_REFUND_h2",
+    "baseId": "crpg_crossbow_c_REFUND",
     "name": "Heavy Hunting Arbalest +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28144,8 +28144,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_c_h3",
-    "baseId": "crpg_crossbow_c",
+    "id": "crpg_crossbow_c_REFUND_h3",
+    "baseId": "crpg_crossbow_c_REFUND",
     "name": "Heavy Hunting Arbalest +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28184,8 +28184,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_d_h0",
-    "baseId": "crpg_crossbow_d",
+    "id": "crpg_crossbow_d_REFUND_h0",
+    "baseId": "crpg_crossbow_d_REFUND",
     "name": "Knight's Heavy Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
@@ -28225,8 +28225,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_d_h1",
-    "baseId": "crpg_crossbow_d",
+    "id": "crpg_crossbow_d_REFUND_h1",
+    "baseId": "crpg_crossbow_d_REFUND",
     "name": "Knight's Heavy Arbalest +1",
     "culture": "Empire",
     "type": "Crossbow",
@@ -28266,8 +28266,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_d_h2",
-    "baseId": "crpg_crossbow_d",
+    "id": "crpg_crossbow_d_REFUND_h2",
+    "baseId": "crpg_crossbow_d_REFUND",
     "name": "Knight's Heavy Arbalest +2",
     "culture": "Empire",
     "type": "Crossbow",
@@ -28307,8 +28307,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_d_h3",
-    "baseId": "crpg_crossbow_d",
+    "id": "crpg_crossbow_d_REFUND_h3",
+    "baseId": "crpg_crossbow_d_REFUND",
     "name": "Knight's Heavy Arbalest +3",
     "culture": "Empire",
     "type": "Crossbow",
@@ -28348,8 +28348,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_e_h0",
-    "baseId": "crpg_crossbow_e",
+    "id": "crpg_crossbow_e_REFUND_h0",
+    "baseId": "crpg_crossbow_e_REFUND",
     "name": "Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28387,8 +28387,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_e_h1",
-    "baseId": "crpg_crossbow_e",
+    "id": "crpg_crossbow_e_REFUND_h1",
+    "baseId": "crpg_crossbow_e_REFUND",
     "name": "Light Crossbow +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28426,8 +28426,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_e_h2",
-    "baseId": "crpg_crossbow_e",
+    "id": "crpg_crossbow_e_REFUND_h2",
+    "baseId": "crpg_crossbow_e_REFUND",
     "name": "Light Crossbow +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28465,8 +28465,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_e_h3",
-    "baseId": "crpg_crossbow_e",
+    "id": "crpg_crossbow_e_REFUND_h3",
+    "baseId": "crpg_crossbow_e_REFUND",
     "name": "Light Crossbow +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28504,8 +28504,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_f_h0",
-    "baseId": "crpg_crossbow_f",
+    "id": "crpg_crossbow_f_REFUND_h0",
+    "baseId": "crpg_crossbow_f_REFUND",
     "name": "Lord's Heavy Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28545,8 +28545,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_f_h1",
-    "baseId": "crpg_crossbow_f",
+    "id": "crpg_crossbow_f_REFUND_h1",
+    "baseId": "crpg_crossbow_f_REFUND",
     "name": "Lord's Heavy Arbalest +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28586,8 +28586,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_f_h2",
-    "baseId": "crpg_crossbow_f",
+    "id": "crpg_crossbow_f_REFUND_h2",
+    "baseId": "crpg_crossbow_f_REFUND",
     "name": "Lord's Heavy Arbalest +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28627,8 +28627,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_f_h3",
-    "baseId": "crpg_crossbow_f",
+    "id": "crpg_crossbow_f_REFUND_h3",
+    "baseId": "crpg_crossbow_f_REFUND",
     "name": "Lord's Heavy Arbalest +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28668,8 +28668,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_g_h0",
-    "baseId": "crpg_crossbow_g",
+    "id": "crpg_crossbow_g_REFUND_h0",
+    "baseId": "crpg_crossbow_g_REFUND",
     "name": "Fine Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28707,8 +28707,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_g_h1",
-    "baseId": "crpg_crossbow_g",
+    "id": "crpg_crossbow_g_REFUND_h1",
+    "baseId": "crpg_crossbow_g_REFUND",
     "name": "Fine Light Crossbow +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28746,8 +28746,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_g_h2",
-    "baseId": "crpg_crossbow_g",
+    "id": "crpg_crossbow_g_REFUND_h2",
+    "baseId": "crpg_crossbow_g_REFUND",
     "name": "Fine Light Crossbow +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28785,8 +28785,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_g_h3",
-    "baseId": "crpg_crossbow_g",
+    "id": "crpg_crossbow_g_REFUND_h3",
+    "baseId": "crpg_crossbow_g_REFUND",
     "name": "Fine Light Crossbow +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28824,8 +28824,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_h_h0",
-    "baseId": "crpg_crossbow_h",
+    "id": "crpg_crossbow_h_REFUND_h0",
+    "baseId": "crpg_crossbow_h_REFUND",
     "name": "Squire's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28864,8 +28864,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_h_h1",
-    "baseId": "crpg_crossbow_h",
+    "id": "crpg_crossbow_h_REFUND_h1",
+    "baseId": "crpg_crossbow_h_REFUND",
     "name": "Squire's Light Crossbow +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28904,8 +28904,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_h_h2",
-    "baseId": "crpg_crossbow_h",
+    "id": "crpg_crossbow_h_REFUND_h2",
+    "baseId": "crpg_crossbow_h_REFUND",
     "name": "Squire's Light Crossbow +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28944,8 +28944,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_h_h3",
-    "baseId": "crpg_crossbow_h",
+    "id": "crpg_crossbow_h_REFUND_h3",
+    "baseId": "crpg_crossbow_h_REFUND",
     "name": "Squire's Light Crossbow +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28984,8 +28984,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_i_h0",
-    "baseId": "crpg_crossbow_i",
+    "id": "crpg_crossbow_i_REFUND_h0",
+    "baseId": "crpg_crossbow_i_REFUND",
     "name": "Windlass Lord's Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29025,8 +29025,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_i_h1",
-    "baseId": "crpg_crossbow_i",
+    "id": "crpg_crossbow_i_REFUND_h1",
+    "baseId": "crpg_crossbow_i_REFUND",
     "name": "Windlass Lord's Arbalest +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29066,8 +29066,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_i_h2",
-    "baseId": "crpg_crossbow_i",
+    "id": "crpg_crossbow_i_REFUND_h2",
+    "baseId": "crpg_crossbow_i_REFUND",
     "name": "Windlass Lord's Arbalest +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29107,8 +29107,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_i_h3",
-    "baseId": "crpg_crossbow_i",
+    "id": "crpg_crossbow_i_REFUND_h3",
+    "baseId": "crpg_crossbow_i_REFUND",
     "name": "Windlass Lord's Arbalest +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29148,8 +29148,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_j_h0",
-    "baseId": "crpg_crossbow_j",
+    "id": "crpg_crossbow_j_REFUND_h0",
+    "baseId": "crpg_crossbow_j_REFUND",
     "name": "Windlass Knight's Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
@@ -29189,8 +29189,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_j_h1",
-    "baseId": "crpg_crossbow_j",
+    "id": "crpg_crossbow_j_REFUND_h1",
+    "baseId": "crpg_crossbow_j_REFUND",
     "name": "Windlass Knight's Arbalest +1",
     "culture": "Empire",
     "type": "Crossbow",
@@ -29230,8 +29230,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_j_h2",
-    "baseId": "crpg_crossbow_j",
+    "id": "crpg_crossbow_j_REFUND_h2",
+    "baseId": "crpg_crossbow_j_REFUND",
     "name": "Windlass Knight's Arbalest +2",
     "culture": "Empire",
     "type": "Crossbow",
@@ -29271,8 +29271,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_j_h3",
-    "baseId": "crpg_crossbow_j",
+    "id": "crpg_crossbow_j_REFUND_h3",
+    "baseId": "crpg_crossbow_j_REFUND",
     "name": "Windlass Knight's Arbalest +3",
     "culture": "Empire",
     "type": "Crossbow",
@@ -29312,8 +29312,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_k_h0",
-    "baseId": "crpg_crossbow_k",
+    "id": "crpg_crossbow_k_REFUND_h0",
+    "baseId": "crpg_crossbow_k_REFUND",
     "name": "Templar's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29352,8 +29352,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_k_h1",
-    "baseId": "crpg_crossbow_k",
+    "id": "crpg_crossbow_k_REFUND_h1",
+    "baseId": "crpg_crossbow_k_REFUND",
     "name": "Templar's Light Crossbow +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29392,8 +29392,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_k_h2",
-    "baseId": "crpg_crossbow_k",
+    "id": "crpg_crossbow_k_REFUND_h2",
+    "baseId": "crpg_crossbow_k_REFUND",
     "name": "Templar's Light Crossbow +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29432,8 +29432,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_k_h3",
-    "baseId": "crpg_crossbow_k",
+    "id": "crpg_crossbow_k_REFUND_h3",
+    "baseId": "crpg_crossbow_k_REFUND",
     "name": "Templar's Light Crossbow +3",
     "culture": "Vlandia",
     "type": "Crossbow",
