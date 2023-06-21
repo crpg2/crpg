@@ -6990,7 +6990,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_blade_javelin_blade_h0" name="{=9aYBy1RN}Fine Steel Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.2456" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
-      <Thrust damage_type="Cut" damage_factor="0.845" />
+      <Thrust damage_type="Cut" damage_factor="1" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -8959,7 +8959,7 @@
   <CraftingPiece id="crpg_raider_throwing_axe_blade_h0" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.7">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.2" />
+      <Swing damage_type="Cut" damage_factor="1.425" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9063,14 +9063,13 @@
   <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.20" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.55" />
+      <Swing damage_type="Cut" damage_factor="1.85" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h1" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.20" is_default="true">
@@ -9115,7 +9114,7 @@
   <CraftingPiece id="crpg_highland_throwing_axe_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.25" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.64" />
+      <Swing damage_type="Cut" damage_factor="1.95" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />

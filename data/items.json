@@ -21519,10 +21519,10 @@
     "name": "Broad Blade Javelin",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 1890,
+    "price": 7196,
     "weight": 1.11,
     "rank": 0,
-    "tier": 4.51802969,
+    "tier": 9.856853,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21543,7 +21543,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 40,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -21564,7 +21564,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 10,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -59049,10 +59049,10 @@
     "name": "Highland Throwing Axe",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1879,
+    "price": 7432,
     "weight": 0.65,
     "rank": 0,
-    "tier": 4.50095,
+    "tier": 10.035697,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -59076,7 +59076,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 33,
+        "thrustDamage": 39,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -59100,7 +59100,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 16,
+        "swingDamage": 19,
         "swingDamageType": "Cut",
         "swingSpeed": 119
       }
@@ -109181,10 +109181,10 @@
     "name": "Raider Throwing Axe",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 1748,
+    "price": 6403,
     "weight": 0.75,
     "rank": 0,
-    "tier": 4.303534,
+    "tier": 9.234506,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -109208,7 +109208,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 34,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -109232,7 +109232,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 12,
+        "swingDamage": 14,
         "swingDamageType": "Cut",
         "swingSpeed": 114
       }
@@ -142061,10 +142061,10 @@
     "name": "Tribesman Throwing Axe",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 7432,
+    "price": 6566,
     "weight": 0.72,
     "rank": 0,
-    "tier": 10.035697,
+    "tier": 9.365694,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142084,11 +142084,10 @@
           "RangedWeapon",
           "Consumable",
           "UnloadWhenSheathed",
-          "BonusAgainstShield",
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 39,
+        "thrustDamage": 40,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
