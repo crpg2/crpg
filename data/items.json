@@ -142123,10 +142123,10 @@
     "name": "Tribesman Throwing Axe +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 8125,
+    "price": 7099,
     "weight": 0.72,
     "rank": 1,
-    "tier": 10.54422,
+    "tier": 9.782799,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142146,11 +142146,10 @@
           "RangedWeapon",
           "Consumable",
           "UnloadWhenSheathed",
-          "BonusAgainstShield",
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 41,
+        "thrustDamage": 42,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -142186,10 +142185,10 @@
     "name": "Tribesman Throwing Axe +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 7314,
+    "price": 6364,
     "weight": 0.72,
     "rank": 2,
-    "tier": 9.946525,
+    "tier": 9.20318,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142209,11 +142208,10 @@
           "RangedWeapon",
           "Consumable",
           "UnloadWhenSheathed",
-          "BonusAgainstShield",
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 42,
+        "thrustDamage": 43,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -142237,7 +142235,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 19,
+        "swingDamage": 20,
         "swingDamageType": "Cut",
         "swingSpeed": 117
       }
@@ -142249,10 +142247,10 @@
     "name": "Tribesman Throwing Axe +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 6721,
+    "price": 7061,
     "weight": 0.72,
     "rank": 3,
-    "tier": 9.488538,
+    "tier": 9.754061,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142272,11 +142270,10 @@
           "RangedWeapon",
           "Consumable",
           "UnloadWhenSheathed",
-          "BonusAgainstShield",
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 43,
+        "thrustDamage": 45,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
