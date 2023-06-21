@@ -59112,10 +59112,10 @@
     "name": "Highland Throwing Axe +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1741,
+    "price": 6566,
     "weight": 0.65,
     "rank": 1,
-    "tier": 4.29289961,
+    "tier": 9.365694,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -59139,7 +59139,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 40,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -59163,7 +59163,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 17,
+        "swingDamage": 20,
         "swingDamageType": "Cut",
         "swingSpeed": 119
       }
@@ -59175,10 +59175,10 @@
     "name": "Highland Throwing Axe +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1647,
+    "price": 7314,
     "weight": 0.65,
     "rank": 2,
-    "tier": 4.14573431,
+    "tier": 9.946525,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -59202,7 +59202,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 42,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -59226,7 +59226,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 17,
+        "swingDamage": 20,
         "swingDamageType": "Cut",
         "swingSpeed": 119
       }
@@ -59238,10 +59238,10 @@
     "name": "Highland Throwing Axe +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1955,
+    "price": 6721,
     "weight": 0.65,
     "rank": 3,
-    "tier": 4.61231565,
+    "tier": 9.488538,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -59265,7 +59265,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 37,
+        "thrustDamage": 43,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -59289,7 +59289,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 18,
+        "swingDamage": 21,
         "swingDamageType": "Cut",
         "swingSpeed": 119
       }
