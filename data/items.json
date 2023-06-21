@@ -21579,10 +21579,10 @@
     "name": "Broad Blade Javelin +1",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 1740,
+    "price": 7783,
     "weight": 1.11,
     "rank": 1,
-    "tier": 4.291326,
+    "tier": 10.2958345,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21603,7 +21603,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 42,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -21624,7 +21624,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 10,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -21639,10 +21639,10 @@
     "name": "Broad Blade Javelin +2",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 2021,
+    "price": 6973,
     "weight": 1.11,
     "rank": 2,
-    "tier": 4.70821142,
+    "tier": 9.685819,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21663,7 +21663,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 37,
+        "thrustDamage": 43,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -21684,7 +21684,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 10,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -21699,10 +21699,10 @@
     "name": "Broad Blade Javelin +3",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 2353,
+    "price": 7741,
     "weight": 1.11,
     "rank": 3,
-    "tier": 5.16503954,
+    "tier": 10.265584,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -21723,7 +21723,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 39,
+        "thrustDamage": 45,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
         "swingDamage": 0,
@@ -21744,7 +21744,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 11,
         "thrustDamageType": "Cut",
         "thrustSpeed": 94,
         "swingDamage": 0,
