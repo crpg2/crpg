@@ -109244,10 +109244,10 @@
     "name": "Raider Throwing Axe +1",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 1672,
+    "price": 5842,
     "weight": 0.75,
     "rank": 1,
-    "tier": 4.185153,
+    "tier": 8.771142,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -109271,7 +109271,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 30,
+        "thrustDamage": 35,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -109295,7 +109295,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 12,
+        "swingDamage": 14,
         "swingDamageType": "Cut",
         "swingSpeed": 114
       }
@@ -109307,10 +109307,10 @@
     "name": "Raider Throwing Axe +2",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 1628,
+    "price": 6892,
     "weight": 0.75,
     "rank": 2,
-    "tier": 4.11612368,
+    "tier": 9.623225,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -109334,7 +109334,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 31,
+        "thrustDamage": 37,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -109358,7 +109358,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 12,
+        "swingDamage": 15,
         "swingDamageType": "Cut",
         "swingSpeed": 114
       }
@@ -109370,10 +109370,10 @@
     "name": "Raider Throwing Axe +3",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 1609,
+    "price": 6508,
     "weight": 0.75,
     "rank": 3,
-    "tier": 4.08458662,
+    "tier": 9.319433,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -109397,7 +109397,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 32,
+        "thrustDamage": 38,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
         "swingDamage": 0,
@@ -109421,7 +109421,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 100,
-        "swingDamage": 13,
+        "swingDamage": 16,
         "swingDamageType": "Cut",
         "swingSpeed": 114
       }
