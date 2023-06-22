@@ -142309,51 +142309,10 @@
     "name": "Tribesman Throwing Daggers",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 2778,
+    "price": 4445,
     "weight": 0.12,
     "rank": 0,
-    "tier": 5.707006,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "ThrowingKnife",
-        "itemUsage": "throwing_knife",
-        "accuracy": 95,
-        "missileSpeed": 36,
-        "stackAmount": 9,
-        "length": 43,
-        "balance": 1.0,
-        "handling": 121,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 17,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
-        "swingDamage": 0,
-        "swingDamageType": "Cut",
-        "swingSpeed": 133
-      }
-    ]
-  },
-  {
-    "id": "crpg_tribesman_throwing_daggers_h1",
-    "baseId": "crpg_tribesman_throwing_daggers",
-    "name": "Tribesman Throwing Daggers +1",
-    "culture": "Aserai",
-    "type": "Thrown",
-    "price": 3201,
-    "weight": 0.12,
-    "rank": 1,
-    "tier": 6.205493,
+    "tier": 7.508647,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142386,15 +142345,15 @@
     ]
   },
   {
-    "id": "crpg_tribesman_throwing_daggers_h2",
+    "id": "crpg_tribesman_throwing_daggers_h1",
     "baseId": "crpg_tribesman_throwing_daggers",
-    "name": "Tribesman Throwing Daggers +2",
+    "name": "Tribesman Throwing Daggers +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 3705,
+    "price": 5014,
     "weight": 0.12,
-    "rank": 2,
-    "tier": 6.759404,
+    "rank": 1,
+    "tier": 8.04425,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142427,15 +142386,15 @@
     ]
   },
   {
-    "id": "crpg_tribesman_throwing_daggers_h3",
+    "id": "crpg_tribesman_throwing_daggers_h2",
     "baseId": "crpg_tribesman_throwing_daggers",
-    "name": "Tribesman Throwing Daggers +3",
+    "name": "Tribesman Throwing Daggers +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 4300,
+    "price": 5696,
     "weight": 0.12,
-    "rank": 3,
-    "tier": 7.367344,
+    "rank": 2,
+    "tier": 8.646397,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142459,6 +142418,47 @@
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 20,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 108,
+        "swingDamage": 0,
+        "swingDamageType": "Cut",
+        "swingSpeed": 133
+      }
+    ]
+  },
+  {
+    "id": "crpg_tribesman_throwing_daggers_h3",
+    "baseId": "crpg_tribesman_throwing_daggers",
+    "name": "Tribesman Throwing Daggers +3",
+    "culture": "Aserai",
+    "type": "Thrown",
+    "price": 6498,
+    "weight": 0.12,
+    "rank": 3,
+    "tier": 9.311499,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "ThrowingKnife",
+        "itemUsage": "throwing_knife",
+        "accuracy": 95,
+        "missileSpeed": 36,
+        "stackAmount": 9,
+        "length": 43,
+        "balance": 1.0,
+        "handling": 121,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,

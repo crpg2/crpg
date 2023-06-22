@@ -11370,7 +11370,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tribesman_throwing_daggers_blade_h0" name="{=5o5DaSHZ}Broad Dagger Blade" tier="2" piece_type="Blade" mesh="dagger_blade_13" length="29" weight="0.03">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Thrust damage_type="Pierce" damage_factor="8.4" />
       <Swing damage_type="Cut" damage_factor="2.45" />
     </BladeData>
     <Flags>
@@ -11382,7 +11382,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tribesman_throwing_daggers_blade_h1" name="{=5o5DaSHZ}Broad Dagger Blade" tier="2" piece_type="Blade" mesh="dagger_blade_13" length="29" weight="0.03">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="8.4" />
+      <Thrust damage_type="Pierce" damage_factor="8.8" />
       <Swing damage_type="Cut" damage_factor="2.45" />
     </BladeData>
     <Flags>
@@ -11394,7 +11394,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tribesman_throwing_daggers_blade_h2" name="{=5o5DaSHZ}Broad Dagger Blade" tier="2" piece_type="Blade" mesh="dagger_blade_13" length="29" weight="0.03">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="8.8" />
+      <Thrust damage_type="Pierce" damage_factor="9.2" />
       <Swing damage_type="Cut" damage_factor="2.45" />
     </BladeData>
     <Flags>
@@ -11406,7 +11406,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tribesman_throwing_daggers_blade_h3" name="{=5o5DaSHZ}Broad Dagger Blade" tier="2" piece_type="Blade" mesh="dagger_blade_13" length="29" weight="0.03">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="9.2" />
+      <Thrust damage_type="Pierce" damage_factor="9.7" />
       <Swing damage_type="Cut" damage_factor="2.45" />
     </BladeData>
     <Flags>
