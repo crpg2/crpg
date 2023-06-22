@@ -18220,8 +18220,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_a_h0",
-    "baseId": "crpg_bolt_a",
+    "id": "crpg_bolt_a_v1_h0",
+    "baseId": "crpg_bolt_a_v1",
     "name": "Light Bolts",
     "culture": "Neutral",
     "type": "Bolts",
@@ -18258,8 +18258,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_a_h1",
-    "baseId": "crpg_bolt_a",
+    "id": "crpg_bolt_a_v1_h1",
+    "baseId": "crpg_bolt_a_v1",
     "name": "Light Bolts +1",
     "culture": "Neutral",
     "type": "Bolts",
@@ -18296,8 +18296,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_a_h2",
-    "baseId": "crpg_bolt_a",
+    "id": "crpg_bolt_a_v1_h2",
+    "baseId": "crpg_bolt_a_v1",
     "name": "Light Bolts +2",
     "culture": "Neutral",
     "type": "Bolts",
@@ -18334,8 +18334,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_a_h3",
-    "baseId": "crpg_bolt_a",
+    "id": "crpg_bolt_a_v1_h3",
+    "baseId": "crpg_bolt_a_v1",
     "name": "Light Bolts +3",
     "culture": "Neutral",
     "type": "Bolts",
@@ -18372,8 +18372,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_b_h0",
-    "baseId": "crpg_bolt_b",
+    "id": "crpg_bolt_b_v1_h0",
+    "baseId": "crpg_bolt_b_v1",
     "name": "Bolts",
     "culture": "Vlandia",
     "type": "Bolts",
@@ -18410,8 +18410,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_b_h1",
-    "baseId": "crpg_bolt_b",
+    "id": "crpg_bolt_b_v1_h1",
+    "baseId": "crpg_bolt_b_v1",
     "name": "Bolts +1",
     "culture": "Vlandia",
     "type": "Bolts",
@@ -18448,8 +18448,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_b_h2",
-    "baseId": "crpg_bolt_b",
+    "id": "crpg_bolt_b_v1_h2",
+    "baseId": "crpg_bolt_b_v1",
     "name": "Bolts +2",
     "culture": "Vlandia",
     "type": "Bolts",
@@ -18486,8 +18486,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_b_h3",
-    "baseId": "crpg_bolt_b",
+    "id": "crpg_bolt_b_v1_h3",
+    "baseId": "crpg_bolt_b_v1",
     "name": "Bolts +3",
     "culture": "Vlandia",
     "type": "Bolts",
@@ -18524,8 +18524,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_c_h0",
-    "baseId": "crpg_bolt_c",
+    "id": "crpg_bolt_c_v1_h0",
+    "baseId": "crpg_bolt_c_v1",
     "name": "Heavy Bolts",
     "culture": "Vlandia",
     "type": "Bolts",
@@ -18562,8 +18562,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_c_h1",
-    "baseId": "crpg_bolt_c",
+    "id": "crpg_bolt_c_v1_h1",
+    "baseId": "crpg_bolt_c_v1",
     "name": "Heavy Bolts +1",
     "culture": "Vlandia",
     "type": "Bolts",
@@ -18600,8 +18600,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_c_h2",
-    "baseId": "crpg_bolt_c",
+    "id": "crpg_bolt_c_v1_h2",
+    "baseId": "crpg_bolt_c_v1",
     "name": "Heavy Bolts +2",
     "culture": "Vlandia",
     "type": "Bolts",
@@ -18638,8 +18638,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_c_h3",
-    "baseId": "crpg_bolt_c",
+    "id": "crpg_bolt_c_v1_h3",
+    "baseId": "crpg_bolt_c_v1",
     "name": "Heavy Bolts +3",
     "culture": "Vlandia",
     "type": "Bolts",
@@ -18676,8 +18676,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_d_h0",
-    "baseId": "crpg_bolt_d",
+    "id": "crpg_bolt_d_v1_h0",
+    "baseId": "crpg_bolt_d_v1",
     "name": "Heavy Quarrels",
     "culture": "Empire",
     "type": "Bolts",
@@ -18714,8 +18714,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_d_h1",
-    "baseId": "crpg_bolt_d",
+    "id": "crpg_bolt_d_v1_h1",
+    "baseId": "crpg_bolt_d_v1",
     "name": "Heavy Quarrels +1",
     "culture": "Empire",
     "type": "Bolts",
@@ -18752,8 +18752,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_d_h2",
-    "baseId": "crpg_bolt_d",
+    "id": "crpg_bolt_d_v1_h2",
+    "baseId": "crpg_bolt_d_v1",
     "name": "Heavy Quarrels +2",
     "culture": "Empire",
     "type": "Bolts",
@@ -18790,8 +18790,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_d_h3",
-    "baseId": "crpg_bolt_d",
+    "id": "crpg_bolt_d_v1_h3",
+    "baseId": "crpg_bolt_d_v1",
     "name": "Heavy Quarrels +3",
     "culture": "Empire",
     "type": "Bolts",
@@ -18828,8 +18828,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_e_h0",
-    "baseId": "crpg_bolt_e",
+    "id": "crpg_bolt_e_v1_h0",
+    "baseId": "crpg_bolt_e_v1",
     "name": "Light Quarrels",
     "culture": "Empire",
     "type": "Bolts",
@@ -18866,8 +18866,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_e_h1",
-    "baseId": "crpg_bolt_e",
+    "id": "crpg_bolt_e_v1_h1",
+    "baseId": "crpg_bolt_e_v1",
     "name": "Light Quarrels +1",
     "culture": "Empire",
     "type": "Bolts",
@@ -18904,8 +18904,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_e_h2",
-    "baseId": "crpg_bolt_e",
+    "id": "crpg_bolt_e_v1_h2",
+    "baseId": "crpg_bolt_e_v1",
     "name": "Light Quarrels +2",
     "culture": "Empire",
     "type": "Bolts",
@@ -18942,8 +18942,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_e_h3",
-    "baseId": "crpg_bolt_e",
+    "id": "crpg_bolt_e_v1_h3",
+    "baseId": "crpg_bolt_e_v1",
     "name": "Light Quarrels +3",
     "culture": "Empire",
     "type": "Bolts",
@@ -18980,8 +18980,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_f_h0",
-    "baseId": "crpg_bolt_f",
+    "id": "crpg_bolt_f_v1_h0",
+    "baseId": "crpg_bolt_f_v1",
     "name": "Heavy Piercing Bolts",
     "culture": "Empire",
     "type": "Bolts",
@@ -19018,8 +19018,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_f_h1",
-    "baseId": "crpg_bolt_f",
+    "id": "crpg_bolt_f_v1_h1",
+    "baseId": "crpg_bolt_f_v1",
     "name": "Heavy Piercing Bolts +1",
     "culture": "Empire",
     "type": "Bolts",
@@ -19056,8 +19056,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_f_h2",
-    "baseId": "crpg_bolt_f",
+    "id": "crpg_bolt_f_v1_h2",
+    "baseId": "crpg_bolt_f_v1",
     "name": "Heavy Piercing Bolts +2",
     "culture": "Empire",
     "type": "Bolts",
@@ -19094,8 +19094,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_f_h3",
-    "baseId": "crpg_bolt_f",
+    "id": "crpg_bolt_f_v1_h3",
+    "baseId": "crpg_bolt_f_v1",
     "name": "Heavy Piercing Bolts +3",
     "culture": "Empire",
     "type": "Bolts",
@@ -19132,8 +19132,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_g_h0",
-    "baseId": "crpg_bolt_g",
+    "id": "crpg_bolt_g_v1_h0",
+    "baseId": "crpg_bolt_g_v1",
     "name": "Hunting Bolts",
     "culture": "Empire",
     "type": "Bolts",
@@ -19170,8 +19170,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_g_h1",
-    "baseId": "crpg_bolt_g",
+    "id": "crpg_bolt_g_v1_h1",
+    "baseId": "crpg_bolt_g_v1",
     "name": "Hunting Bolts +1",
     "culture": "Empire",
     "type": "Bolts",
@@ -19208,8 +19208,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_g_h2",
-    "baseId": "crpg_bolt_g",
+    "id": "crpg_bolt_g_v1_h2",
+    "baseId": "crpg_bolt_g_v1",
     "name": "Hunting Bolts +2",
     "culture": "Empire",
     "type": "Bolts",
@@ -19246,8 +19246,8 @@
     ]
   },
   {
-    "id": "crpg_bolt_g_h3",
-    "baseId": "crpg_bolt_g",
+    "id": "crpg_bolt_g_v1_h3",
+    "baseId": "crpg_bolt_g_v1",
     "name": "Hunting Bolts +3",
     "culture": "Empire",
     "type": "Bolts",
@@ -27708,8 +27708,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_a_REFUND_h0",
-    "baseId": "crpg_crossbow_a_REFUND",
+    "id": "crpg_crossbow_a_v1_h0",
+    "baseId": "crpg_crossbow_a_v1",
     "name": "Simple Light Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27747,8 +27747,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_a_REFUND_h1",
-    "baseId": "crpg_crossbow_a_REFUND",
+    "id": "crpg_crossbow_a_v1_h1",
+    "baseId": "crpg_crossbow_a_v1",
     "name": "Simple Light Crossbow +1",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27786,8 +27786,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_a_REFUND_h2",
-    "baseId": "crpg_crossbow_a_REFUND",
+    "id": "crpg_crossbow_a_v1_h2",
+    "baseId": "crpg_crossbow_a_v1",
     "name": "Simple Light Crossbow +2",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27795,7 +27795,7 @@
     "weight": 1.0,
     "rank": 2,
     "tier": 1.313482,
-    "requirement": 3,
+    "requirement": 0,
     "flags": [],
     "weapons": [
       {
@@ -27825,8 +27825,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_a_REFUND_h3",
-    "baseId": "crpg_crossbow_a_REFUND",
+    "id": "crpg_crossbow_a_v1_h3",
+    "baseId": "crpg_crossbow_a_v1",
     "name": "Simple Light Crossbow +3",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27834,7 +27834,7 @@
     "weight": 1.0,
     "rank": 3,
     "tier": 1.4109453,
-    "requirement": 3,
+    "requirement": 0,
     "flags": [],
     "weapons": [
       {
@@ -27864,8 +27864,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_b_REFUND_h0",
-    "baseId": "crpg_crossbow_b_REFUND",
+    "id": "crpg_crossbow_b_v1_h0",
+    "baseId": "crpg_crossbow_b_v1",
     "name": "Heavy Maple Crossbow",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27904,8 +27904,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_b_REFUND_h1",
-    "baseId": "crpg_crossbow_b_REFUND",
+    "id": "crpg_crossbow_b_v1_h1",
+    "baseId": "crpg_crossbow_b_v1",
     "name": "Heavy Maple Crossbow +1",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27944,8 +27944,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_b_REFUND_h2",
-    "baseId": "crpg_crossbow_b_REFUND",
+    "id": "crpg_crossbow_b_v1_h2",
+    "baseId": "crpg_crossbow_b_v1",
     "name": "Heavy Maple Crossbow +2",
     "culture": "Empire",
     "type": "Crossbow",
@@ -27984,8 +27984,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_b_REFUND_h3",
-    "baseId": "crpg_crossbow_b_REFUND",
+    "id": "crpg_crossbow_b_v1_h3",
+    "baseId": "crpg_crossbow_b_v1",
     "name": "Heavy Maple Crossbow +3",
     "culture": "Empire",
     "type": "Crossbow",
@@ -28024,15 +28024,15 @@
     ]
   },
   {
-    "id": "crpg_crossbow_c_REFUND_h0",
-    "baseId": "crpg_crossbow_c_REFUND",
+    "id": "crpg_crossbow_c_v1_h0",
+    "baseId": "crpg_crossbow_c_v1",
     "name": "Heavy Hunting Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 4038,
+    "price": 4727,
     "weight": 4.0,
     "rank": 0,
-    "tier": 4.19670057,
+    "tier": 4.62135935,
     "requirement": 9,
     "flags": [],
     "weapons": [
@@ -28054,7 +28054,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 41,
+        "thrustDamage": 42,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 0,
@@ -28064,15 +28064,15 @@
     ]
   },
   {
-    "id": "crpg_crossbow_c_REFUND_h1",
-    "baseId": "crpg_crossbow_c_REFUND",
+    "id": "crpg_crossbow_c_v1_h1",
+    "baseId": "crpg_crossbow_c_v1",
     "name": "Heavy Hunting Arbalest +1",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 4045,
+    "price": 4717,
     "weight": 4.0,
     "rank": 1,
-    "tier": 4.20090151,
+    "tier": 4.61550474,
     "requirement": 9,
     "flags": [],
     "weapons": [
@@ -28094,7 +28094,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 42,
+        "thrustDamage": 43,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
         "swingDamage": 0,
@@ -28104,15 +28104,15 @@
     ]
   },
   {
-    "id": "crpg_crossbow_c_REFUND_h2",
-    "baseId": "crpg_crossbow_c_REFUND",
+    "id": "crpg_crossbow_c_v1_h2",
+    "baseId": "crpg_crossbow_c_v1",
     "name": "Heavy Hunting Arbalest +2",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 4265,
+    "price": 4960,
     "weight": 4.0,
     "rank": 2,
-    "tier": 4.339914,
+    "tier": 4.757929,
     "requirement": 9,
     "flags": [],
     "weapons": [
@@ -28134,7 +28134,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 43,
+        "thrustDamage": 44,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
         "swingDamage": 0,
@@ -28144,15 +28144,15 @@
     ]
   },
   {
-    "id": "crpg_crossbow_c_REFUND_h3",
-    "baseId": "crpg_crossbow_c_REFUND",
+    "id": "crpg_crossbow_c_v1_h3",
+    "baseId": "crpg_crossbow_c_v1",
     "name": "Heavy Hunting Arbalest +3",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 4351,
+    "price": 5045,
     "weight": 4.0,
     "rank": 3,
-    "tier": 4.39382839,
+    "tier": 4.80709171,
     "requirement": 9,
     "flags": [],
     "weapons": [
@@ -28174,7 +28174,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 44,
+        "thrustDamage": 45,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
         "swingDamage": 0,
@@ -28184,8 +28184,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_d_REFUND_h0",
-    "baseId": "crpg_crossbow_d_REFUND",
+    "id": "crpg_crossbow_d_v1_h0",
+    "baseId": "crpg_crossbow_d_v1",
     "name": "Knight's Heavy Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
@@ -28193,7 +28193,7 @@
     "weight": 5.0,
     "rank": 0,
     "tier": 7.62141562,
-    "requirement": 18,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
@@ -28225,8 +28225,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_d_REFUND_h1",
-    "baseId": "crpg_crossbow_d_REFUND",
+    "id": "crpg_crossbow_d_v1_h1",
+    "baseId": "crpg_crossbow_d_v1",
     "name": "Knight's Heavy Arbalest +1",
     "culture": "Empire",
     "type": "Crossbow",
@@ -28234,7 +28234,7 @@
     "weight": 5.0,
     "rank": 1,
     "tier": 7.557624,
-    "requirement": 18,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
@@ -28266,8 +28266,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_d_REFUND_h2",
-    "baseId": "crpg_crossbow_d_REFUND",
+    "id": "crpg_crossbow_d_v1_h2",
+    "baseId": "crpg_crossbow_d_v1",
     "name": "Knight's Heavy Arbalest +2",
     "culture": "Empire",
     "type": "Crossbow",
@@ -28275,7 +28275,7 @@
     "weight": 5.0,
     "rank": 2,
     "tier": 7.728811,
-    "requirement": 18,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
@@ -28307,8 +28307,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_d_REFUND_h3",
-    "baseId": "crpg_crossbow_d_REFUND",
+    "id": "crpg_crossbow_d_v1_h3",
+    "baseId": "crpg_crossbow_d_v1",
     "name": "Knight's Heavy Arbalest +3",
     "culture": "Empire",
     "type": "Crossbow",
@@ -28316,7 +28316,7 @@
     "weight": 5.0,
     "rank": 3,
     "tier": 7.73388433,
-    "requirement": 18,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
@@ -28348,8 +28348,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_e_REFUND_h0",
-    "baseId": "crpg_crossbow_e_REFUND",
+    "id": "crpg_crossbow_e_v1_h0",
+    "baseId": "crpg_crossbow_e_v1",
     "name": "Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28357,7 +28357,7 @@
     "weight": 1.5,
     "rank": 0,
     "tier": 4.009727,
-    "requirement": 9,
+    "requirement": 6,
     "flags": [],
     "weapons": [
       {
@@ -28387,8 +28387,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_e_REFUND_h1",
-    "baseId": "crpg_crossbow_e_REFUND",
+    "id": "crpg_crossbow_e_v1_h1",
+    "baseId": "crpg_crossbow_e_v1",
     "name": "Light Crossbow +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28396,7 +28396,7 @@
     "weight": 1.5,
     "rank": 1,
     "tier": 4.011671,
-    "requirement": 9,
+    "requirement": 6,
     "flags": [],
     "weapons": [
       {
@@ -28426,8 +28426,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_e_REFUND_h2",
-    "baseId": "crpg_crossbow_e_REFUND",
+    "id": "crpg_crossbow_e_v1_h2",
+    "baseId": "crpg_crossbow_e_v1",
     "name": "Light Crossbow +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28435,7 +28435,7 @@
     "weight": 1.5,
     "rank": 2,
     "tier": 4.17155933,
-    "requirement": 9,
+    "requirement": 6,
     "flags": [],
     "weapons": [
       {
@@ -28465,8 +28465,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_e_REFUND_h3",
-    "baseId": "crpg_crossbow_e_REFUND",
+    "id": "crpg_crossbow_e_v1_h3",
+    "baseId": "crpg_crossbow_e_v1",
     "name": "Light Crossbow +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28474,7 +28474,7 @@
     "weight": 1.5,
     "rank": 3,
     "tier": 4.262825,
-    "requirement": 9,
+    "requirement": 6,
     "flags": [],
     "weapons": [
       {
@@ -28504,8 +28504,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_f_REFUND_h0",
-    "baseId": "crpg_crossbow_f_REFUND",
+    "id": "crpg_crossbow_f_v1_h0",
+    "baseId": "crpg_crossbow_f_v1",
     "name": "Lord's Heavy Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28513,7 +28513,7 @@
     "weight": 5.5,
     "rank": 0,
     "tier": 10.0880566,
-    "requirement": 24,
+    "requirement": 21,
     "flags": [],
     "weapons": [
       {
@@ -28545,8 +28545,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_f_REFUND_h1",
-    "baseId": "crpg_crossbow_f_REFUND",
+    "id": "crpg_crossbow_f_v1_h1",
+    "baseId": "crpg_crossbow_f_v1",
     "name": "Lord's Heavy Arbalest +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28554,7 +28554,7 @@
     "weight": 5.5,
     "rank": 1,
     "tier": 10.0068417,
-    "requirement": 24,
+    "requirement": 21,
     "flags": [],
     "weapons": [
       {
@@ -28586,8 +28586,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_f_REFUND_h2",
-    "baseId": "crpg_crossbow_f_REFUND",
+    "id": "crpg_crossbow_f_v1_h2",
+    "baseId": "crpg_crossbow_f_v1",
     "name": "Lord's Heavy Arbalest +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28595,7 +28595,7 @@
     "weight": 5.5,
     "rank": 2,
     "tier": 10.2298059,
-    "requirement": 24,
+    "requirement": 21,
     "flags": [],
     "weapons": [
       {
@@ -28627,8 +28627,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_f_REFUND_h3",
-    "baseId": "crpg_crossbow_f_REFUND",
+    "id": "crpg_crossbow_f_v1_h3",
+    "baseId": "crpg_crossbow_f_v1",
     "name": "Lord's Heavy Arbalest +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28636,7 +28636,7 @@
     "weight": 5.5,
     "rank": 3,
     "tier": 10.1835146,
-    "requirement": 24,
+    "requirement": 21,
     "flags": [],
     "weapons": [
       {
@@ -28668,16 +28668,16 @@
     ]
   },
   {
-    "id": "crpg_crossbow_g_REFUND_h0",
-    "baseId": "crpg_crossbow_g_REFUND",
+    "id": "crpg_crossbow_g_v1_h0",
+    "baseId": "crpg_crossbow_g_v1",
     "name": "Fine Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 13384,
+    "price": 10448,
     "weight": 2.2,
     "rank": 0,
-    "tier": 8.476203,
-    "requirement": 18,
+    "tier": 7.366169,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
@@ -28697,7 +28697,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 88,
         "swingDamage": 0,
@@ -28707,16 +28707,16 @@
     ]
   },
   {
-    "id": "crpg_crossbow_g_REFUND_h1",
-    "baseId": "crpg_crossbow_g_REFUND",
+    "id": "crpg_crossbow_g_v1_h1",
+    "baseId": "crpg_crossbow_g_v1",
     "name": "Fine Light Crossbow +1",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 13531,
+    "price": 10560,
     "weight": 2.2,
     "rank": 1,
-    "tier": 8.528099,
-    "requirement": 18,
+    "tier": 7.411265,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
@@ -28736,7 +28736,7 @@
           "StringHeldByHand",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 29,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 91,
         "swingDamage": 0,
@@ -28746,16 +28746,16 @@
     ]
   },
   {
-    "id": "crpg_crossbow_g_REFUND_h2",
-    "baseId": "crpg_crossbow_g_REFUND",
+    "id": "crpg_crossbow_g_v1_h2",
+    "baseId": "crpg_crossbow_g_v1",
     "name": "Fine Light Crossbow +2",
     "culture": "Vlandia",
     "type": "Crossbow",
-    "price": 13892,
+    "price": 10929,
     "weight": 2.2,
     "rank": 2,
-    "tier": 8.655426,
-    "requirement": 18,
+    "tier": 7.55779934,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
@@ -28763,6 +28763,45 @@
         "itemUsage": "crossbow_light",
         "accuracy": 97,
         "missileSpeed": 84,
+        "stackAmount": 1,
+        "length": 90,
+        "balance": 0.0,
+        "handling": 93,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "NotUsableWithOneHand",
+          "HasString",
+          "StringHeldByHand",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 29,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 93,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 64
+      }
+    ]
+  },
+  {
+    "id": "crpg_crossbow_g_v1_h3",
+    "baseId": "crpg_crossbow_g_v1",
+    "name": "Fine Light Crossbow +3",
+    "culture": "Vlandia",
+    "type": "Crossbow",
+    "price": 10914,
+    "weight": 2.2,
+    "rank": 3,
+    "tier": 7.551679,
+    "requirement": 15,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Crossbow",
+        "itemUsage": "crossbow_light",
+        "accuracy": 97,
+        "missileSpeed": 85,
         "stackAmount": 1,
         "length": 90,
         "balance": 0.0,
@@ -28785,47 +28824,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_g_REFUND_h3",
-    "baseId": "crpg_crossbow_g_REFUND",
-    "name": "Fine Light Crossbow +3",
-    "culture": "Vlandia",
-    "type": "Crossbow",
-    "price": 13763,
-    "weight": 2.2,
-    "rank": 3,
-    "tier": 8.610041,
-    "requirement": 18,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Crossbow",
-        "itemUsage": "crossbow_light",
-        "accuracy": 97,
-        "missileSpeed": 85,
-        "stackAmount": 1,
-        "length": 90,
-        "balance": 0.0,
-        "handling": 93,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "NotUsableWithOneHand",
-          "HasString",
-          "StringHeldByHand",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 31,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 64
-      }
-    ]
-  },
-  {
-    "id": "crpg_crossbow_h_REFUND_h0",
-    "baseId": "crpg_crossbow_h_REFUND",
+    "id": "crpg_crossbow_h_v1_h0",
+    "baseId": "crpg_crossbow_h_v1",
     "name": "Squire's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28833,7 +28833,7 @@
     "weight": 2.8,
     "rank": 0,
     "tier": 5.13243628,
-    "requirement": 12,
+    "requirement": 9,
     "flags": [],
     "weapons": [
       {
@@ -28864,8 +28864,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_h_REFUND_h1",
-    "baseId": "crpg_crossbow_h_REFUND",
+    "id": "crpg_crossbow_h_v1_h1",
+    "baseId": "crpg_crossbow_h_v1",
     "name": "Squire's Light Crossbow +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28873,7 +28873,7 @@
     "weight": 2.8,
     "rank": 1,
     "tier": 5.14496946,
-    "requirement": 12,
+    "requirement": 9,
     "flags": [],
     "weapons": [
       {
@@ -28904,8 +28904,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_h_REFUND_h2",
-    "baseId": "crpg_crossbow_h_REFUND",
+    "id": "crpg_crossbow_h_v1_h2",
+    "baseId": "crpg_crossbow_h_v1",
     "name": "Squire's Light Crossbow +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28913,7 +28913,7 @@
     "weight": 2.8,
     "rank": 2,
     "tier": 5.13787746,
-    "requirement": 12,
+    "requirement": 9,
     "flags": [],
     "weapons": [
       {
@@ -28944,8 +28944,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_h_REFUND_h3",
-    "baseId": "crpg_crossbow_h_REFUND",
+    "id": "crpg_crossbow_h_v1_h3",
+    "baseId": "crpg_crossbow_h_v1",
     "name": "Squire's Light Crossbow +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28953,7 +28953,7 @@
     "weight": 2.8,
     "rank": 3,
     "tier": 5.02590132,
-    "requirement": 12,
+    "requirement": 9,
     "flags": [],
     "weapons": [
       {
@@ -28984,8 +28984,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_i_REFUND_h0",
-    "baseId": "crpg_crossbow_i_REFUND",
+    "id": "crpg_crossbow_i_v1_h0",
+    "baseId": "crpg_crossbow_i_v1",
     "name": "Windlass Lord's Arbalest",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -28993,7 +28993,7 @@
     "weight": 6.5,
     "rank": 0,
     "tier": 10.1620722,
-    "requirement": 24,
+    "requirement": 21,
     "flags": [],
     "weapons": [
       {
@@ -29025,8 +29025,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_i_REFUND_h1",
-    "baseId": "crpg_crossbow_i_REFUND",
+    "id": "crpg_crossbow_i_v1_h1",
+    "baseId": "crpg_crossbow_i_v1",
     "name": "Windlass Lord's Arbalest +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29034,7 +29034,7 @@
     "weight": 6.5,
     "rank": 1,
     "tier": 10.0073042,
-    "requirement": 24,
+    "requirement": 21,
     "flags": [],
     "weapons": [
       {
@@ -29066,8 +29066,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_i_REFUND_h2",
-    "baseId": "crpg_crossbow_i_REFUND",
+    "id": "crpg_crossbow_i_v1_h2",
+    "baseId": "crpg_crossbow_i_v1",
     "name": "Windlass Lord's Arbalest +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29075,7 +29075,7 @@
     "weight": 6.5,
     "rank": 2,
     "tier": 10.16823,
-    "requirement": 24,
+    "requirement": 21,
     "flags": [],
     "weapons": [
       {
@@ -29107,8 +29107,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_i_REFUND_h3",
-    "baseId": "crpg_crossbow_i_REFUND",
+    "id": "crpg_crossbow_i_v1_h3",
+    "baseId": "crpg_crossbow_i_v1",
     "name": "Windlass Lord's Arbalest +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29116,7 +29116,7 @@
     "weight": 6.5,
     "rank": 3,
     "tier": 10.1222954,
-    "requirement": 24,
+    "requirement": 21,
     "flags": [],
     "weapons": [
       {
@@ -29148,16 +29148,16 @@
     ]
   },
   {
-    "id": "crpg_crossbow_j_REFUND_h0",
-    "baseId": "crpg_crossbow_j_REFUND",
+    "id": "crpg_crossbow_j_v1_h0",
+    "baseId": "crpg_crossbow_j_v1",
     "name": "Windlass Knight's Arbalest",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 9858,
+    "price": 8405,
     "weight": 6.0,
     "rank": 0,
-    "tier": 7.12537146,
-    "requirement": 15,
+    "tier": 6.499359,
+    "requirement": 12,
     "flags": [],
     "weapons": [
       {
@@ -29179,7 +29179,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 44,
+        "thrustDamage": 43,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 84,
         "swingDamage": 0,
@@ -29189,16 +29189,16 @@
     ]
   },
   {
-    "id": "crpg_crossbow_j_REFUND_h1",
-    "baseId": "crpg_crossbow_j_REFUND",
+    "id": "crpg_crossbow_j_v1_h1",
+    "baseId": "crpg_crossbow_j_v1",
     "name": "Windlass Knight's Arbalest +1",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 9674,
+    "price": 8279,
     "weight": 6.0,
     "rank": 1,
-    "tier": 7.04869843,
-    "requirement": 15,
+    "tier": 6.44272375,
+    "requirement": 12,
     "flags": [],
     "weapons": [
       {
@@ -29220,7 +29220,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 45,
+        "thrustDamage": 44,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
         "swingDamage": 0,
@@ -29230,16 +29230,16 @@
     ]
   },
   {
-    "id": "crpg_crossbow_j_REFUND_h2",
-    "baseId": "crpg_crossbow_j_REFUND",
+    "id": "crpg_crossbow_j_v1_h2",
+    "baseId": "crpg_crossbow_j_v1",
     "name": "Windlass Knight's Arbalest +2",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 10028,
+    "price": 8608,
     "weight": 6.0,
     "rank": 2,
-    "tier": 7.195485,
-    "requirement": 15,
+    "tier": 6.589898,
+    "requirement": 12,
     "flags": [],
     "weapons": [
       {
@@ -29261,7 +29261,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 46,
+        "thrustDamage": 45,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 86,
         "swingDamage": 0,
@@ -29271,16 +29271,16 @@
     ]
   },
   {
-    "id": "crpg_crossbow_j_REFUND_h3",
-    "baseId": "crpg_crossbow_j_REFUND",
+    "id": "crpg_crossbow_j_v1_h3",
+    "baseId": "crpg_crossbow_j_v1",
     "name": "Windlass Knight's Arbalest +3",
     "culture": "Empire",
     "type": "Crossbow",
-    "price": 10088,
+    "price": 8687,
     "weight": 6.0,
     "rank": 3,
-    "tier": 7.219967,
-    "requirement": 15,
+    "tier": 6.62483358,
+    "requirement": 12,
     "flags": [],
     "weapons": [
       {
@@ -29302,7 +29302,7 @@
           "CantReloadOnHorseback",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 47,
+        "thrustDamage": 46,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 0,
@@ -29312,8 +29312,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_k_REFUND_h0",
-    "baseId": "crpg_crossbow_k_REFUND",
+    "id": "crpg_crossbow_k_v1_h0",
+    "baseId": "crpg_crossbow_k_v1",
     "name": "Templar's Light Crossbow",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29321,7 +29321,7 @@
     "weight": 3.1,
     "rank": 0,
     "tier": 7.892029,
-    "requirement": 18,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
@@ -29352,8 +29352,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_k_REFUND_h1",
-    "baseId": "crpg_crossbow_k_REFUND",
+    "id": "crpg_crossbow_k_v1_h1",
+    "baseId": "crpg_crossbow_k_v1",
     "name": "Templar's Light Crossbow +1",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29361,7 +29361,7 @@
     "weight": 3.1,
     "rank": 1,
     "tier": 7.824341,
-    "requirement": 18,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
@@ -29392,8 +29392,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_k_REFUND_h2",
-    "baseId": "crpg_crossbow_k_REFUND",
+    "id": "crpg_crossbow_k_v1_h2",
+    "baseId": "crpg_crossbow_k_v1",
     "name": "Templar's Light Crossbow +2",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29401,7 +29401,7 @@
     "weight": 3.1,
     "rank": 2,
     "tier": 7.763874,
-    "requirement": 18,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
@@ -29432,8 +29432,8 @@
     ]
   },
   {
-    "id": "crpg_crossbow_k_REFUND_h3",
-    "baseId": "crpg_crossbow_k_REFUND",
+    "id": "crpg_crossbow_k_v1_h3",
+    "baseId": "crpg_crossbow_k_v1",
     "name": "Templar's Light Crossbow +3",
     "culture": "Vlandia",
     "type": "Crossbow",
@@ -29441,7 +29441,7 @@
     "weight": 3.1,
     "rank": 3,
     "tier": 7.56281948,
-    "requirement": 18,
+    "requirement": 15,
     "flags": [],
     "weapons": [
       {
