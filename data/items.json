@@ -59967,10 +59967,10 @@
     "name": "Hoe +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 15303,
+    "price": 1698,
     "weight": 0.96,
     "rank": 2,
-    "tier": 10.5045223,
+    "tier": 2.8254416,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -59994,7 +59994,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 38,
+        "swingDamage": 28,
         "swingDamageType": "Cut",
         "swingSpeed": 76
       },
@@ -60017,7 +60017,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 102,
-        "swingDamage": 38,
+        "swingDamage": 28,
         "swingDamageType": "Cut",
         "swingSpeed": 94
       },
@@ -60038,7 +60038,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 94,
-        "swingDamage": 38,
+        "swingDamage": 28,
         "swingDamageType": "Cut",
         "swingSpeed": 76
       }
