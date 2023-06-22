@@ -11514,7 +11514,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_leafblade_throwing_knife_blade_h0" name="{=HysmKS5a}Ridged Wide Dagger Blade" tier="1" piece_type="Blade" mesh="dagger_blade_12" length="25.2" weight="0.06" is_default="true">
     <BladeData stack_amount="5" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_3" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="8.5" />
+      <Thrust damage_type="Pierce" damage_factor="8.9" />
       <Swing damage_type="Cut" damage_factor="1.225" />
     </BladeData>
     <Flags>
@@ -11526,7 +11526,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_leafblade_throwing_knife_blade_h1" name="{=HysmKS5a}Ridged Wide Dagger Blade" tier="1" piece_type="Blade" mesh="dagger_blade_12" length="25.2" weight="0.06" is_default="true">
     <BladeData stack_amount="5" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_3" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="8.9" />
+      <Thrust damage_type="Pierce" damage_factor="9.3" />
       <Swing damage_type="Cut" damage_factor="1.225" />
     </BladeData>
     <Flags>
@@ -11538,7 +11538,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_leafblade_throwing_knife_blade_h2" name="{=HysmKS5a}Ridged Wide Dagger Blade" tier="1" piece_type="Blade" mesh="dagger_blade_12" length="25.2" weight="0.06" is_default="true">
     <BladeData stack_amount="5" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_3" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="9.3" />
+      <Thrust damage_type="Pierce" damage_factor="9.7" />
       <Swing damage_type="Cut" damage_factor="1.225" />
     </BladeData>
     <Flags>
@@ -11550,7 +11550,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_leafblade_throwing_knife_blade_h3" name="{=HysmKS5a}Ridged Wide Dagger Blade" tier="1" piece_type="Blade" mesh="dagger_blade_12" length="25.2" weight="0.06" is_default="true">
     <BladeData stack_amount="5" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_3" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="9.7 " />
+      <Thrust damage_type="Pierce" damage_factor="10.1 " />
       <Swing damage_type="Cut" damage_factor="1.225" />
     </BladeData>
     <Flags>
@@ -11706,7 +11706,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_highland_throwing_dagger_blade_h0" name="{=TLtaGEcB}Wide Makhaira Blade" tier="2" piece_type="Blade" mesh="dagger_blade_10" length="30" weight="0.03">
     <BladeData stack_amount="6" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="10" />
+      <Thrust damage_type="Pierce" damage_factor="10.5" />
       <Swing damage_type="Cut" damage_factor="2.45" />
     </BladeData>
     <Flags>
@@ -11718,7 +11718,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_highland_throwing_dagger_blade_h1" name="{=TLtaGEcB}Wide Makhaira Blade" tier="2" piece_type="Blade" mesh="dagger_blade_10" length="30" weight="0.03">
     <BladeData stack_amount="6" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="10.5" />
+      <Thrust damage_type="Pierce" damage_factor="11" />
       <Swing damage_type="Cut" damage_factor="2.45" />
     </BladeData>
     <Flags>
@@ -11730,7 +11730,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_highland_throwing_dagger_blade_h2" name="{=TLtaGEcB}Wide Makhaira Blade" tier="2" piece_type="Blade" mesh="dagger_blade_10" length="30" weight="0.03">
     <BladeData stack_amount="6" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="11" />
+      <Thrust damage_type="Pierce" damage_factor="11.5" />
       <Swing damage_type="Cut" damage_factor="2.45" />
     </BladeData>
     <Flags>
@@ -11742,7 +11742,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_highland_throwing_dagger_blade_h3" name="{=TLtaGEcB}Wide Makhaira Blade" tier="2" piece_type="Blade" mesh="dagger_blade_10" length="30" weight="0.03">
     <BladeData stack_amount="6" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="11.5" />
+      <Thrust damage_type="Pierce" damage_factor="12" />
       <Swing damage_type="Cut" damage_factor="2.45" />
     </BladeData>
     <Flags>
