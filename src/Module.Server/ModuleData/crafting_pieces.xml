@@ -9905,7 +9905,7 @@
   <CraftingPiece id="crpg_hoe_blade_h2" name="{=LSrJljDL}Adze Head" tier="1" piece_type="Blade" mesh="axe_craft_15_head" distance_to_next_piece="4.1" distance_to_previous_piece="3.2" weight="0.315" is_default="true">
     <BuildData piece_offset="-6.4" />
     <BladeData stack_amount="2" blade_length="4.552" blade_width="25.764" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="3.8" />
+      <Swing damage_type="Cut" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
