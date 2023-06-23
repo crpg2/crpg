@@ -85548,10 +85548,10 @@
     "name": "Militia Pernach +1",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 4271,
-    "weight": 2.5,
+    "price": 3892,
+    "weight": 2.58,
     "rank": 1,
-    "tier": 7.274137,
+    "tier": 6.89427662,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -85562,18 +85562,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 73,
-        "balance": 0.54,
-        "handling": 91,
+        "balance": 0.49,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 83,
-        "swingDamage": 24,
+        "thrustSpeed": 82,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
@@ -85583,10 +85583,10 @@
     "name": "Militia Pernach +2",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 4282,
-    "weight": 2.5,
+    "price": 3856,
+    "weight": 2.58,
     "rank": 2,
-    "tier": 7.28514338,
+    "tier": 6.857329,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -85597,18 +85597,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 73,
-        "balance": 0.54,
-        "handling": 91,
+        "balance": 0.49,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 83,
-        "swingDamage": 25,
+        "thrustSpeed": 82,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 84
       }
     ]
   },
