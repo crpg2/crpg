@@ -33201,10 +33201,10 @@
     "name": "Round Steppe Shield",
     "culture": "Khuzait",
     "type": "Shield",
-    "price": 535,
+    "price": 3119,
     "weight": 2.070964,
     "rank": 0,
-    "tier": 1.63966656,
+    "tier": 5.358023,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -33221,7 +33221,7 @@
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 1,
+        "bodyArmor": 22,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -33241,10 +33241,10 @@
     "name": "Round Steppe Shield +1",
     "culture": "Khuzait",
     "type": "Shield",
-    "price": 549,
+    "price": 3270,
     "weight": 2.070964,
     "rank": 1,
-    "tier": 1.67363679,
+    "tier": 5.51221,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -33261,7 +33261,7 @@
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 2,
+        "bodyArmor": 24,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -33281,10 +33281,10 @@
     "name": "Round Steppe Shield +2",
     "culture": "Khuzait",
     "type": "Shield",
-    "price": 517,
+    "price": 3234,
     "weight": 2.070964,
     "rank": 2,
-    "tier": 1.59680164,
+    "tier": 5.47599936,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -33301,7 +33301,7 @@
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 2,
+        "bodyArmor": 25,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -33321,10 +33321,10 @@
     "name": "Round Steppe Shield +3",
     "culture": "Khuzait",
     "type": "Shield",
-    "price": 491,
+    "price": 3229,
     "weight": 2.070964,
     "rank": 3,
-    "tier": 1.53319812,
+    "tier": 5.470299,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -33341,7 +33341,7 @@
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 2,
+        "bodyArmor": 26,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -101849,10 +101849,10 @@
     "name": "Decorated Eastern Shield",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 8070,
-    "weight": 2.724953,
+    "price": 8822,
+    "weight": 2.679537,
     "rank": 0,
-    "tier": 9.276356,
+    "tier": 9.749346,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -101865,11 +101865,11 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 300,
+        "stackAmount": 295,
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 22,
+        "bodyArmor": 24,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -101889,10 +101889,10 @@
     "name": "Decorated Eastern Shield +1",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 8485,
-    "weight": 2.724953,
+    "price": 9260,
+    "weight": 2.679537,
     "rank": 1,
-    "tier": 9.540171,
+    "tier": 10.0154018,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -101905,11 +101905,11 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 321,
+        "stackAmount": 316,
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 24,
+        "bodyArmor": 26,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -101929,10 +101929,10 @@
     "name": "Decorated Eastern Shield +2",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 8381,
-    "weight": 2.724953,
+    "price": 9152,
+    "weight": 2.679537,
     "rank": 2,
-    "tier": 9.474773,
+    "tier": 9.95045948,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -101945,11 +101945,11 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 342,
+        "stackAmount": 337,
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 25,
+        "bodyArmor": 27,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -101969,10 +101969,10 @@
     "name": "Decorated Eastern Shield +3",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 8362,
-    "weight": 2.724953,
+    "price": 9043,
+    "weight": 2.679537,
     "rank": 3,
-    "tier": 9.462505,
+    "tier": 9.88418,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -101985,11 +101985,11 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 363,
+        "stackAmount": 357,
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 26,
+        "bodyArmor": 28,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -128481,10 +128481,10 @@
     "name": "Eastern Cavalry Shield",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 535,
+    "price": 2327,
     "weight": 2.070964,
     "rank": 0,
-    "tier": 1.63966656,
+    "tier": 4.484829,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -128501,7 +128501,7 @@
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 1,
+        "bodyArmor": 18,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -128521,10 +128521,10 @@
     "name": "Eastern Cavalry Shield +1",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 549,
+    "price": 2293,
     "weight": 2.070964,
     "rank": 1,
-    "tier": 1.67363679,
+    "tier": 4.44466352,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -128541,7 +128541,7 @@
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 2,
+        "bodyArmor": 19,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -128561,10 +128561,10 @@
     "name": "Eastern Cavalry Shield +2",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 517,
+    "price": 2285,
     "weight": 2.070964,
     "rank": 2,
-    "tier": 1.59680164,
+    "tier": 4.43555975,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -128581,7 +128581,7 @@
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 2,
+        "bodyArmor": 20,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
@@ -128601,10 +128601,10 @@
     "name": "Eastern Cavalry Shield +3",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 491,
+    "price": 2298,
     "weight": 2.070964,
     "rank": 3,
-    "tier": 1.53319812,
+    "tier": 4.45027,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -128621,7 +128621,7 @@
         "length": 62,
         "balance": 0.0,
         "handling": 82,
-        "bodyArmor": 2,
+        "bodyArmor": 21,
         "flags": [
           "HasHitPoints",
           "CanBlockRanged"
