@@ -10876,25 +10876,25 @@
       <Piece id="crpg_iron_pitchfork_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hoe_h0" name="{=7phSQw5i}Hoe" crafting_template="crpg_TwoHandedAxe" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_hoe_v1_h0" name="{=7phSQw5i}Hoe" crafting_template="crpg_TwoHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_hoe_blade_h0" Type="Blade" scale_factor="120" />
       <Piece id="crpg_hoe_handle_h0" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hoe_h1" name="{=7phSQw5i}Hoe +1" crafting_template="crpg_TwoHandedAxe" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_hoe_v1_h1" name="{=7phSQw5i}Hoe +1" crafting_template="crpg_TwoHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_hoe_blade_h1" Type="Blade" scale_factor="120" />
       <Piece id="crpg_hoe_handle_h1" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hoe_h2" name="{=7phSQw5i}Hoe +2" crafting_template="crpg_TwoHandedAxe" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_hoe_v1_h2" name="{=7phSQw5i}Hoe +2" crafting_template="crpg_TwoHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_hoe_blade_h2" Type="Blade" scale_factor="120" />
       <Piece id="crpg_hoe_handle_h2" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hoe_h3" name="{=7phSQw5i}Hoe +3" crafting_template="crpg_TwoHandedAxe" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_hoe_v1_h3" name="{=7phSQw5i}Hoe +3" crafting_template="crpg_TwoHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_hoe_blade_h3" Type="Blade" scale_factor="120" />
       <Piece id="crpg_hoe_handle_h3" Type="Handle" scale_factor="145" />
