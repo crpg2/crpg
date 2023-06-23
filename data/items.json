@@ -85905,10 +85905,10 @@
     "name": "Barthais Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 7213,
+    "price": 6816,
     "weight": 450.0,
     "rank": 0,
-    "tier": 6.60902452,
+    "tier": 6.39503,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -85927,10 +85927,10 @@
     "name": "Barthais Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 7888,
+    "price": 7048,
     "weight": 450.0,
     "rank": 1,
-    "tier": 6.95907164,
+    "tier": 6.52093124,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -85938,7 +85938,7 @@
       "chargeDamage": 7,
       "maneuver": 81,
       "speed": 39,
-      "hitPoints": 240,
+      "hitPoints": 239,
       "familyType": 1
     },
     "weapons": []
@@ -85949,10 +85949,10 @@
     "name": "Barthais Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 7041,
+    "price": 7014,
     "weight": 450.0,
     "rank": 2,
-    "tier": 6.516818,
+    "tier": 6.5024147,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -85960,7 +85960,7 @@
       "chargeDamage": 7,
       "maneuver": 82,
       "speed": 39,
-      "hitPoints": 245,
+      "hitPoints": 255,
       "familyType": 1
     },
     "weapons": []
@@ -85971,10 +85971,10 @@
     "name": "Barthais Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6827,
+    "price": 6957,
     "weight": 450.0,
     "rank": 3,
-    "tier": 6.4011364,
+    "tier": 6.47204733,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -85982,7 +85982,7 @@
       "chargeDamage": 7,
       "maneuver": 83,
       "speed": 39,
-      "hitPoints": 255,
+      "hitPoints": 270,
       "familyType": 1
     },
     "weapons": []
@@ -85993,10 +85993,10 @@
     "name": "Brabant Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 8579,
+    "price": 7928,
     "weight": 450.0,
     "rank": 0,
-    "tier": 7.30232668,
+    "tier": 6.97951651,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86015,10 +86015,10 @@
     "name": "Brabant Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 9318,
+    "price": 8265,
     "weight": 450.0,
     "rank": 1,
-    "tier": 7.6552844,
+    "tier": 7.1483593,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86037,10 +86037,10 @@
     "name": "Brabant Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 8277,
+    "price": 8091,
     "weight": 450.0,
     "rank": 2,
-    "tier": 7.154306,
+    "tier": 7.06154871,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86048,7 +86048,7 @@
       "chargeDamage": 8,
       "maneuver": 83,
       "speed": 39,
-      "hitPoints": 248,
+      "hitPoints": 258,
       "familyType": 1
     },
     "weapons": []
@@ -86059,10 +86059,10 @@
     "name": "Brabant Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 7984,
+    "price": 8067,
     "weight": 450.0,
     "rank": 3,
-    "tier": 7.00737572,
+    "tier": 7.049452,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86070,7 +86070,7 @@
       "chargeDamage": 8,
       "maneuver": 84,
       "speed": 39,
-      "hitPoints": 258,
+      "hitPoints": 274,
       "familyType": 1
     },
     "weapons": []
@@ -86081,10 +86081,10 @@
     "name": "Comtois Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 11202,
+    "price": 10324,
     "weight": 450.0,
     "rank": 0,
-    "tier": 8.495793,
+    "tier": 8.113392,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86103,10 +86103,10 @@
     "name": "Comtois Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 12125,
+    "price": 10706,
     "weight": 450.0,
     "rank": 1,
-    "tier": 8.882159,
+    "tier": 8.2820015,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86125,10 +86125,10 @@
     "name": "Comtois Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 10738,
+    "price": 10559,
     "weight": 450.0,
     "rank": 2,
-    "tier": 8.295722,
+    "tier": 8.217441,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86136,7 +86136,7 @@
       "chargeDamage": 8,
       "maneuver": 84,
       "speed": 40,
-      "hitPoints": 251,
+      "hitPoints": 262,
       "familyType": 1
     },
     "weapons": []
@@ -86147,10 +86147,10 @@
     "name": "Comtois Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 10334,
+    "price": 10392,
     "weight": 450.0,
     "rank": 3,
-    "tier": 8.118014,
+    "tier": 8.143608,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86158,7 +86158,7 @@
       "chargeDamage": 8,
       "maneuver": 85,
       "speed": 40,
-      "hitPoints": 261,
+      "hitPoints": 277,
       "familyType": 1
     },
     "weapons": []
@@ -86169,10 +86169,10 @@
     "name": "English Black Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 12590,
+    "price": 11551,
     "weight": 450.0,
     "rank": 0,
-    "tier": 9.071406,
+    "tier": 8.643631,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86191,10 +86191,10 @@
     "name": "English Black Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 13608,
+    "price": 11958,
     "weight": 450.0,
     "rank": 1,
-    "tier": 9.473424,
+    "tier": 8.813656,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86213,10 +86213,10 @@
     "name": "English Black Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 12024,
+    "price": 11762,
     "weight": 450.0,
     "rank": 2,
-    "tier": 8.840792,
+    "tier": 8.732114,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86224,7 +86224,7 @@
       "chargeDamage": 8,
       "maneuver": 85,
       "speed": 40,
-      "hitPoints": 254,
+      "hitPoints": 265,
       "familyType": 1
     },
     "weapons": []
@@ -86235,10 +86235,10 @@
     "name": "English Black Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 11545,
+    "price": 11661,
     "weight": 450.0,
     "rank": 3,
-    "tier": 8.64136,
+    "tier": 8.690082,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86246,7 +86246,7 @@
       "chargeDamage": 8,
       "maneuver": 86,
       "speed": 40,
-      "hitPoints": 264,
+      "hitPoints": 281,
       "familyType": 1
     },
     "weapons": []
@@ -86257,10 +86257,10 @@
     "name": "Percheron Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 16379,
+    "price": 14660,
     "weight": 450.0,
     "rank": 0,
-    "tier": 10.498621,
+    "tier": 9.873873,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86279,10 +86279,10 @@
     "name": "Percheron Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 17512,
+    "price": 15066,
     "weight": 450.0,
     "rank": 1,
-    "tier": 10.8925934,
+    "tier": 10.0243692,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86301,10 +86301,10 @@
     "name": "Percheron Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 15407,
+    "price": 14736,
     "weight": 450.0,
     "rank": 2,
-    "tier": 10.1494026,
+    "tier": 9.90224,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86312,7 +86312,7 @@
       "chargeDamage": 9,
       "maneuver": 85,
       "speed": 41,
-      "hitPoints": 257,
+      "hitPoints": 268,
       "familyType": 1
     },
     "weapons": []
@@ -86323,10 +86323,10 @@
     "name": "Percheron Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 14721,
+    "price": 14539,
     "weight": 450.0,
     "rank": 3,
-    "tier": 9.896812,
+    "tier": 9.828469,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86334,7 +86334,7 @@
       "chargeDamage": 9,
       "maneuver": 86,
       "speed": 41,
-      "hitPoints": 267,
+      "hitPoints": 284,
       "familyType": 1
     },
     "weapons": []
@@ -86345,10 +86345,10 @@
     "name": "Lionheart",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19799,
+    "price": 17617,
     "weight": 450.0,
     "rank": 0,
-    "tier": 11.6507111,
+    "tier": 10.928174,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86367,10 +86367,10 @@
     "name": "Lionheart +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 21078,
+    "price": 18006,
     "weight": 450.0,
     "rank": 1,
-    "tier": 12.0562019,
+    "tier": 11.0603285,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86389,10 +86389,10 @@
     "name": "Lionheart +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 18518,
+    "price": 17755,
     "weight": 450.0,
     "rank": 2,
-    "tier": 11.23168,
+    "tier": 10.9752417,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86400,7 +86400,7 @@
       "chargeDamage": 9,
       "maneuver": 85,
       "speed": 42,
-      "hitPoints": 260,
+      "hitPoints": 272,
       "familyType": 1
     },
     "weapons": []
@@ -86411,10 +86411,10 @@
     "name": "Lionheart +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 17672,
+    "price": 17476,
     "weight": 450.0,
     "rank": 3,
-    "tier": 10.9470711,
+    "tier": 10.8799582,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86422,7 +86422,7 @@
       "chargeDamage": 9,
       "maneuver": 86,
       "speed": 42,
-      "hitPoints": 270,
+      "hitPoints": 288,
       "familyType": 1
     },
     "weapons": []
@@ -86433,10 +86433,10 @@
     "name": "Suffolk Punch Draught",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1489,
+    "price": 1480,
     "weight": 450.0,
     "rank": 0,
-    "tier": 2.47147512,
+    "tier": 2.46131039,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86455,10 +86455,10 @@
     "name": "Suffolk Punch Draught +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1659,
+    "price": 1563,
     "weight": 450.0,
     "rank": 1,
-    "tier": 2.659473,
+    "tier": 2.554441,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86466,7 +86466,7 @@
       "chargeDamage": 4,
       "maneuver": 72,
       "speed": 35,
-      "hitPoints": 225,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -86477,10 +86477,10 @@
     "name": "Suffolk Punch Draught +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1526,
+    "price": 1559,
     "weight": 450.0,
     "rank": 2,
-    "tier": 2.513073,
+    "tier": 2.55013561,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86488,7 +86488,7 @@
       "chargeDamage": 4,
       "maneuver": 73,
       "speed": 35,
-      "hitPoints": 230,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -86499,10 +86499,10 @@
     "name": "Suffolk Punch Draught +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1512,
+    "price": 1565,
     "weight": 450.0,
     "rank": 3,
-    "tier": 2.49748349,
+    "tier": 2.556766,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86510,7 +86510,7 @@
       "chargeDamage": 4,
       "maneuver": 74,
       "speed": 35,
-      "hitPoints": 240,
+      "hitPoints": 252,
       "familyType": 1
     },
     "weapons": []
@@ -86521,10 +86521,10 @@
     "name": "Boulonnais Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2141,
+    "price": 2096,
     "weight": 450.0,
     "rank": 0,
-    "tier": 3.14827561,
+    "tier": 3.10491657,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86543,10 +86543,10 @@
     "name": "Boulonnais Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2377,
+    "price": 2204,
     "weight": 450.0,
     "rank": 1,
-    "tier": 3.36764383,
+    "tier": 3.2080164,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86554,7 +86554,7 @@
       "chargeDamage": 5,
       "maneuver": 74,
       "speed": 36,
-      "hitPoints": 228,
+      "hitPoints": 227,
       "familyType": 1
     },
     "weapons": []
@@ -86565,10 +86565,10 @@
     "name": "Boulonnais Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2169,
+    "price": 2188,
     "weight": 450.0,
     "rank": 2,
-    "tier": 3.17477679,
+    "tier": 3.19219565,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86576,7 +86576,7 @@
       "chargeDamage": 5,
       "maneuver": 75,
       "speed": 36,
-      "hitPoints": 233,
+      "hitPoints": 241,
       "familyType": 1
     },
     "weapons": []
@@ -86587,10 +86587,10 @@
     "name": "Boulonnais Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2139,
+    "price": 2207,
     "weight": 450.0,
     "rank": 3,
-    "tier": 3.145619,
+    "tier": 3.21045,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86598,7 +86598,7 @@
       "chargeDamage": 5,
       "maneuver": 76,
       "speed": 36,
-      "hitPoints": 243,
+      "hitPoints": 256,
       "familyType": 1
     },
     "weapons": []
@@ -86609,10 +86609,10 @@
     "name": "Galloway Great Horse",
     "culture": "Battania",
     "type": "Mount",
-    "price": 3109,
+    "price": 2997,
     "weight": 450.0,
     "rank": 0,
-    "tier": 3.99133182,
+    "tier": 3.90069175,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86631,10 +86631,10 @@
     "name": "Galloway Great Horse +1",
     "culture": "Battania",
     "type": "Mount",
-    "price": 3434,
+    "price": 3136,
     "weight": 450.0,
     "rank": 1,
-    "tier": 4.24468374,
+    "tier": 4.01275,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86642,7 +86642,7 @@
       "chargeDamage": 6,
       "maneuver": 76,
       "speed": 37,
-      "hitPoints": 231,
+      "hitPoints": 230,
       "familyType": 1
     },
     "weapons": []
@@ -86653,10 +86653,10 @@
     "name": "Galloway Great Horse +2",
     "culture": "Battania",
     "type": "Mount",
-    "price": 3111,
+    "price": 3127,
     "weight": 450.0,
     "rank": 2,
-    "tier": 3.99240947,
+    "tier": 4.00545073,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86664,7 +86664,7 @@
       "chargeDamage": 6,
       "maneuver": 77,
       "speed": 37,
-      "hitPoints": 236,
+      "hitPoints": 245,
       "familyType": 1
     },
     "weapons": []
@@ -86675,10 +86675,10 @@
     "name": "Galloway Great Horse +3",
     "culture": "Battania",
     "type": "Mount",
-    "price": 3051,
+    "price": 3108,
     "weight": 450.0,
     "rank": 3,
-    "tier": 3.94409156,
+    "tier": 3.9904027,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86686,7 +86686,7 @@
       "chargeDamage": 6,
       "maneuver": 78,
       "speed": 37,
-      "hitPoints": 246,
+      "hitPoints": 259,
       "familyType": 1
     },
     "weapons": []
@@ -86697,10 +86697,10 @@
     "name": "Poitevin Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4363,
+    "price": 4204,
     "weight": 450.0,
     "rank": 0,
-    "tier": 4.91177654,
+    "tier": 4.803048,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86719,10 +86719,10 @@
     "name": "Poitevin Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4809,
+    "price": 4380,
     "weight": 450.0,
     "rank": 1,
-    "tier": 5.207473,
+    "tier": 4.923258,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86730,7 +86730,7 @@
       "chargeDamage": 6,
       "maneuver": 78,
       "speed": 38,
-      "hitPoints": 234,
+      "hitPoints": 233,
       "familyType": 1
     },
     "weapons": []
@@ -86741,10 +86741,10 @@
     "name": "Poitevin Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4334,
+    "price": 4351,
     "weight": 450.0,
     "rank": 2,
-    "tier": 4.89163733,
+    "tier": 4.9032526,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86752,7 +86752,7 @@
       "chargeDamage": 6,
       "maneuver": 79,
       "speed": 38,
-      "hitPoints": 239,
+      "hitPoints": 248,
       "familyType": 1
     },
     "weapons": []
@@ -86763,10 +86763,10 @@
     "name": "Poitevin Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4236,
+    "price": 4352,
     "weight": 450.0,
     "rank": 3,
-    "tier": 4.824725,
+    "tier": 4.9038887,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86774,7 +86774,7 @@
       "chargeDamage": 6,
       "maneuver": 80,
       "speed": 38,
-      "hitPoints": 249,
+      "hitPoints": 263,
       "familyType": 1
     },
     "weapons": []
@@ -86785,10 +86785,10 @@
     "name": "Oberlander Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 5517,
+    "price": 5235,
     "weight": 450.0,
     "rank": 0,
-    "tier": 5.64981174,
+    "tier": 5.47735929,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86807,10 +86807,10 @@
     "name": "Oberlander Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6053,
+    "price": 5442,
     "weight": 450.0,
     "rank": 1,
-    "tier": 5.9672184,
+    "tier": 5.604541,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86818,7 +86818,7 @@
       "chargeDamage": 7,
       "maneuver": 80,
       "speed": 38,
-      "hitPoints": 237,
+      "hitPoints": 236,
       "familyType": 1
     },
     "weapons": []
@@ -86829,10 +86829,10 @@
     "name": "Oberlander Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 5422,
+    "price": 5375,
     "weight": 450.0,
     "rank": 2,
-    "tier": 5.59198475,
+    "tier": 5.563649,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86840,7 +86840,7 @@
       "chargeDamage": 7,
       "maneuver": 81,
       "speed": 38,
-      "hitPoints": 242,
+      "hitPoints": 251,
       "familyType": 1
     },
     "weapons": []
@@ -86851,10 +86851,10 @@
     "name": "Oberlander Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 5269,
+    "price": 5349,
     "weight": 450.0,
     "rank": 3,
-    "tier": 5.49837828,
+    "tier": 5.547698,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86862,7 +86862,7 @@
       "chargeDamage": 7,
       "maneuver": 82,
       "speed": 38,
-      "hitPoints": 252,
+      "hitPoints": 266,
       "familyType": 1
     },
     "weapons": []
@@ -86873,10 +86873,10 @@
     "name": "Black Forest Rouncey",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6780,
+    "price": 6936,
     "weight": 420.0,
     "rank": 0,
-    "tier": 6.37551069,
+    "tier": 6.460486,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86895,10 +86895,10 @@
     "name": "Black Forest Rouncey +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 7557,
+    "price": 7103,
     "weight": 420.0,
     "rank": 1,
-    "tier": 6.78903866,
+    "tier": 6.550042,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86906,7 +86906,7 @@
       "chargeDamage": 4,
       "maneuver": 75,
       "speed": 46,
-      "hitPoints": 210,
+      "hitPoints": 208,
       "familyType": 1
     },
     "weapons": []
@@ -86917,10 +86917,10 @@
     "name": "Black Forest Rouncey +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6881,
+    "price": 7054,
     "weight": 420.0,
     "rank": 2,
-    "tier": 6.430378,
+    "tier": 6.52418947,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86928,7 +86928,7 @@
       "chargeDamage": 4,
       "maneuver": 76,
       "speed": 46,
-      "hitPoints": 215,
+      "hitPoints": 221,
       "familyType": 1
     },
     "weapons": []
@@ -86939,10 +86939,10 @@
     "name": "Black Forest Rouncey +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6872,
+    "price": 7059,
     "weight": 420.0,
     "rank": 3,
-    "tier": 6.425933,
+    "tier": 6.52680874,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86950,7 +86950,7 @@
       "chargeDamage": 4,
       "maneuver": 77,
       "speed": 46,
-      "hitPoints": 225,
+      "hitPoints": 234,
       "familyType": 1
     },
     "weapons": []
@@ -86961,10 +86961,10 @@
     "name": "Bidet Breton Rouncey",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 8833,
+    "price": 8938,
     "weight": 420.0,
     "rank": 0,
-    "tier": 7.42521572,
+    "tier": 7.47582865,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86983,10 +86983,10 @@
     "name": "Bidet Breton Rouncey +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 9805,
+    "price": 9109,
     "weight": 420.0,
     "rank": 1,
-    "tier": 7.87994576,
+    "tier": 7.556792,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -86994,7 +86994,7 @@
       "chargeDamage": 4,
       "maneuver": 76,
       "speed": 47,
-      "hitPoints": 213,
+      "hitPoints": 211,
       "familyType": 1
     },
     "weapons": []
@@ -87005,10 +87005,10 @@
     "name": "Bidet Breton Rouncey +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 8895,
+    "price": 9016,
     "weight": 420.0,
     "rank": 2,
-    "tier": 7.4552474,
+    "tier": 7.51289368,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87016,7 +87016,7 @@
       "chargeDamage": 4,
       "maneuver": 77,
       "speed": 47,
-      "hitPoints": 218,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -87027,10 +87027,10 @@
     "name": "Bidet Breton Rouncey +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 8859,
+    "price": 9100,
     "weight": 420.0,
     "rank": 3,
-    "tier": 7.437975,
+    "tier": 7.552751,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87038,7 +87038,7 @@
       "chargeDamage": 4,
       "maneuver": 78,
       "speed": 47,
-      "hitPoints": 228,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -87049,10 +87049,10 @@
     "name": "Dzhabe Rouncey",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 11511,
+    "price": 11516,
     "weight": 420.0,
     "rank": 0,
-    "tier": 8.626778,
+    "tier": 8.628864,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87071,10 +87071,10 @@
     "name": "Dzhabe Rouncey +1",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 12723,
+    "price": 11678,
     "weight": 420.0,
     "rank": 1,
-    "tier": 9.124744,
+    "tier": 8.697145,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87082,7 +87082,7 @@
       "chargeDamage": 4,
       "maneuver": 77,
       "speed": 48,
-      "hitPoints": 216,
+      "hitPoints": 214,
       "familyType": 1
     },
     "weapons": []
@@ -87093,10 +87093,10 @@
     "name": "Dzhabe Rouncey +2",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 11503,
+    "price": 11663,
     "weight": 420.0,
     "rank": 2,
-    "tier": 8.623405,
+    "tier": 8.690613,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87104,7 +87104,7 @@
       "chargeDamage": 4,
       "maneuver": 78,
       "speed": 48,
-      "hitPoints": 221,
+      "hitPoints": 228,
       "familyType": 1
     },
     "weapons": []
@@ -87115,10 +87115,10 @@
     "name": "Dzhabe Rouncey +3",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 11423,
+    "price": 11593,
     "weight": 420.0,
     "rank": 3,
-    "tier": 8.589654,
+    "tier": 8.661376,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87126,7 +87126,7 @@
       "chargeDamage": 4,
       "maneuver": 79,
       "speed": 48,
-      "hitPoints": 231,
+      "hitPoints": 241,
       "familyType": 1
     },
     "weapons": []
@@ -87137,10 +87137,10 @@
     "name": "Karachay Rouncey",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 13169,
+    "price": 13077,
     "weight": 420.0,
     "rank": 0,
-    "tier": 9.302174,
+    "tier": 9.265793,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87159,10 +87159,10 @@
     "name": "Karachay Rouncey +1",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 14518,
+    "price": 13231,
     "weight": 420.0,
     "rank": 1,
-    "tier": 9.82057,
+    "tier": 9.32661152,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87170,7 +87170,7 @@
       "chargeDamage": 4,
       "maneuver": 78,
       "speed": 48,
-      "hitPoints": 219,
+      "hitPoints": 217,
       "familyType": 1
     },
     "weapons": []
@@ -87181,10 +87181,10 @@
     "name": "Karachay Rouncey +2",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 13089,
+    "price": 13170,
     "weight": 420.0,
     "rank": 2,
-    "tier": 9.270371,
+    "tier": 9.302421,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87192,7 +87192,7 @@
       "chargeDamage": 4,
       "maneuver": 79,
       "speed": 48,
-      "hitPoints": 224,
+      "hitPoints": 231,
       "familyType": 1
     },
     "weapons": []
@@ -87203,10 +87203,10 @@
     "name": "Karachay Rouncey +3",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 12959,
+    "price": 13204,
     "weight": 420.0,
     "rank": 3,
-    "tier": 9.218844,
+    "tier": 9.315879,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87214,7 +87214,7 @@
       "chargeDamage": 4,
       "maneuver": 80,
       "speed": 48,
-      "hitPoints": 234,
+      "hitPoints": 245,
       "familyType": 1
     },
     "weapons": []
@@ -87225,10 +87225,10 @@
     "name": "Unmol Rouncey",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 16141,
+    "price": 15800,
     "weight": 420.0,
     "rank": 0,
-    "tier": 10.4139,
+    "tier": 10.2920465,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87247,10 +87247,10 @@
     "name": "Unmol Rouncey +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 17668,
+    "price": 15894,
     "weight": 420.0,
     "rank": 1,
-    "tier": 10.9457312,
+    "tier": 10.3256111,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87258,7 +87258,7 @@
       "chargeDamage": 5,
       "maneuver": 78,
       "speed": 49,
-      "hitPoints": 222,
+      "hitPoints": 220,
       "familyType": 1
     },
     "weapons": []
@@ -87269,10 +87269,10 @@
     "name": "Unmol Rouncey +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 15885,
+    "price": 15759,
     "weight": 420.0,
     "rank": 2,
-    "tier": 10.3223705,
+    "tier": 10.2770844,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87280,7 +87280,7 @@
       "chargeDamage": 5,
       "maneuver": 79,
       "speed": 49,
-      "hitPoints": 227,
+      "hitPoints": 234,
       "familyType": 1
     },
     "weapons": []
@@ -87291,10 +87291,10 @@
     "name": "Unmol Rouncey +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 15678,
+    "price": 15746,
     "weight": 420.0,
     "rank": 3,
-    "tier": 10.2480431,
+    "tier": 10.2725992,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87302,7 +87302,7 @@
       "chargeDamage": 5,
       "maneuver": 80,
       "speed": 49,
-      "hitPoints": 237,
+      "hitPoints": 248,
       "familyType": 1
     },
     "weapons": []
@@ -87313,10 +87313,10 @@
     "name": "Kehilan al-Khamsa",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19329,
+    "price": 18635,
     "weight": 420.0,
     "rank": 0,
-    "tier": 11.4987631,
+    "tier": 11.2707386,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87335,10 +87335,10 @@
     "name": "Kehilan al-Khamsa +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 21054,
+    "price": 18894,
     "weight": 420.0,
     "rank": 1,
-    "tier": 12.0484142,
+    "tier": 11.3560867,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87346,7 +87346,7 @@
       "chargeDamage": 5,
       "maneuver": 78,
       "speed": 50,
-      "hitPoints": 225,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -87357,10 +87357,10 @@
     "name": "Kehilan al-Khamsa +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 18895,
+    "price": 18676,
     "weight": 420.0,
     "rank": 2,
-    "tier": 11.3566341,
+    "tier": 11.2841434,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87368,7 +87368,7 @@
       "chargeDamage": 5,
       "maneuver": 79,
       "speed": 50,
-      "hitPoints": 230,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -87379,10 +87379,10 @@
     "name": "Kehilan al-Khamsa +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 18615,
+    "price": 18611,
     "weight": 420.0,
     "rank": 3,
-    "tier": 11.26387,
+    "tier": 11.2627029,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87390,7 +87390,7 @@
       "chargeDamage": 5,
       "maneuver": 80,
       "speed": 50,
-      "hitPoints": 240,
+      "hitPoints": 252,
       "familyType": 1
     },
     "weapons": []
@@ -87401,10 +87401,10 @@
     "name": "Sumpter Horse",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 495,
+    "price": 502,
     "weight": 420.0,
     "rank": 0,
-    "tier": 1.07759559,
+    "tier": 1.09071589,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87423,10 +87423,10 @@
     "name": "Sumpter Horse +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 550,
+    "price": 525,
     "weight": 420.0,
     "rank": 1,
-    "tier": 1.17555666,
+    "tier": 1.131503,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87434,7 +87434,7 @@
       "chargeDamage": 1,
       "maneuver": 60,
       "speed": 35,
-      "hitPoints": 213,
+      "hitPoints": 211,
       "familyType": 1
     },
     "weapons": []
@@ -87445,10 +87445,10 @@
     "name": "Sumpter Horse +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 522,
+    "price": 531,
     "weight": 420.0,
     "rank": 2,
-    "tier": 1.12681043,
+    "tier": 1.1418972,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87456,7 +87456,7 @@
       "chargeDamage": 1,
       "maneuver": 61,
       "speed": 35,
-      "hitPoints": 218,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -87467,10 +87467,10 @@
     "name": "Sumpter Horse +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 529,
+    "price": 543,
     "weight": 420.0,
     "rank": 3,
-    "tier": 1.13887942,
+    "tier": 1.16470063,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87478,7 +87478,7 @@
       "chargeDamage": 1,
       "maneuver": 62,
       "speed": 35,
-      "hitPoints": 228,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -87489,10 +87489,10 @@
     "name": "Raymond Rouncey",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 816,
+    "price": 839,
     "weight": 420.0,
     "rank": 0,
-    "tier": 1.60587656,
+    "tier": 1.63961065,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87511,10 +87511,10 @@
     "name": "Raymond Rouncey +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 913,
+    "price": 867,
     "weight": 420.0,
     "rank": 1,
-    "tier": 1.74590147,
+    "tier": 1.68014657,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87522,7 +87522,7 @@
       "chargeDamage": 2,
       "maneuver": 62,
       "speed": 39,
-      "hitPoints": 201,
+      "hitPoints": 198,
       "familyType": 1
     },
     "weapons": []
@@ -87533,10 +87533,10 @@
     "name": "Raymond Rouncey +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 862,
+    "price": 881,
     "weight": 420.0,
     "rank": 2,
-    "tier": 1.67353523,
+    "tier": 1.70043588,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87544,7 +87544,7 @@
       "chargeDamage": 2,
       "maneuver": 63,
       "speed": 39,
-      "hitPoints": 206,
+      "hitPoints": 211,
       "familyType": 1
     },
     "weapons": []
@@ -87555,10 +87555,10 @@
     "name": "Raymond Rouncey +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 877,
+    "price": 891,
     "weight": 420.0,
     "rank": 3,
-    "tier": 1.695157,
+    "tier": 1.7147671,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87566,7 +87566,7 @@
       "chargeDamage": 2,
       "maneuver": 64,
       "speed": 39,
-      "hitPoints": 216,
+      "hitPoints": 223,
       "familyType": 1
     },
     "weapons": []
@@ -87577,10 +87577,10 @@
     "name": "Fell Pony",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1086,
+    "price": 1143,
     "weight": 420.0,
     "rank": 0,
-    "tier": 1.98212409,
+    "tier": 2.05588031,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87599,10 +87599,10 @@
     "name": "Fell Pony +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1224,
+    "price": 1169,
     "weight": 420.0,
     "rank": 1,
-    "tier": 2.15749645,
+    "tier": 2.08917522,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87610,7 +87610,7 @@
       "chargeDamage": 3,
       "maneuver": 64,
       "speed": 41,
-      "hitPoints": 192,
+      "hitPoints": 188,
       "familyType": 1
     },
     "weapons": []
@@ -87621,10 +87621,10 @@
     "name": "Fell Pony +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1152,
+    "price": 1193,
     "weight": 420.0,
     "rank": 2,
-    "tier": 2.06751347,
+    "tier": 2.11889148,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87632,7 +87632,7 @@
       "chargeDamage": 3,
       "maneuver": 65,
       "speed": 41,
-      "hitPoints": 197,
+      "hitPoints": 201,
       "familyType": 1
     },
     "weapons": []
@@ -87643,10 +87643,10 @@
     "name": "Fell Pony +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1176,
+    "price": 1210,
     "weight": 420.0,
     "rank": 3,
-    "tier": 2.09729767,
+    "tier": 2.13979769,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87654,7 +87654,7 @@
       "chargeDamage": 3,
       "maneuver": 66,
       "speed": 41,
-      "hitPoints": 207,
+      "hitPoints": 213,
       "familyType": 1
     },
     "weapons": []
@@ -87665,10 +87665,10 @@
     "name": "Welsh Cob",
     "culture": "Battania",
     "type": "Mount",
-    "price": 1499,
+    "price": 1575,
     "weight": 420.0,
     "rank": 0,
-    "tier": 2.48267841,
+    "tier": 2.568099,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87687,10 +87687,10 @@
     "name": "Welsh Cob +1",
     "culture": "Battania",
     "type": "Mount",
-    "price": 1689,
+    "price": 1625,
     "weight": 420.0,
     "rank": 1,
-    "tier": 2.692029,
+    "tier": 2.6222136,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87698,7 +87698,7 @@
       "chargeDamage": 3,
       "maneuver": 66,
       "speed": 42,
-      "hitPoints": 195,
+      "hitPoints": 192,
       "familyType": 1
     },
     "weapons": []
@@ -87709,10 +87709,10 @@
     "name": "Welsh Cob +2",
     "culture": "Battania",
     "type": "Mount",
-    "price": 1581,
+    "price": 1631,
     "weight": 420.0,
     "rank": 2,
-    "tier": 2.57429934,
+    "tier": 2.629627,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87720,7 +87720,7 @@
       "chargeDamage": 3,
       "maneuver": 67,
       "speed": 42,
-      "hitPoints": 200,
+      "hitPoints": 204,
       "familyType": 1
     },
     "weapons": []
@@ -87731,10 +87731,10 @@
     "name": "Welsh Cob +3",
     "culture": "Battania",
     "type": "Mount",
-    "price": 1608,
+    "price": 1649,
     "weight": 420.0,
     "rank": 3,
-    "tier": 2.60451722,
+    "tier": 2.64810276,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87742,7 +87742,7 @@
       "chargeDamage": 3,
       "maneuver": 68,
       "speed": 42,
-      "hitPoints": 210,
+      "hitPoints": 216,
       "familyType": 1
     },
     "weapons": []
@@ -87753,10 +87753,10 @@
     "name": "Sanhe Rouncey",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 2144,
+    "price": 2236,
     "weight": 420.0,
     "rank": 0,
-    "tier": 3.15062165,
+    "tier": 3.23732662,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87775,10 +87775,10 @@
     "name": "Sanhe Rouncey +1",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 2409,
+    "price": 2295,
     "weight": 420.0,
     "rank": 1,
-    "tier": 3.39655781,
+    "tier": 3.29241085,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87786,7 +87786,7 @@
       "chargeDamage": 4,
       "maneuver": 68,
       "speed": 43,
-      "hitPoints": 198,
+      "hitPoints": 195,
       "familyType": 1
     },
     "weapons": []
@@ -87797,10 +87797,10 @@
     "name": "Sanhe Rouncey +2",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 2237,
+    "price": 2291,
     "weight": 420.0,
     "rank": 2,
-    "tier": 3.23879862,
+    "tier": 3.288904,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87808,7 +87808,7 @@
       "chargeDamage": 4,
       "maneuver": 69,
       "speed": 43,
-      "hitPoints": 203,
+      "hitPoints": 207,
       "familyType": 1
     },
     "weapons": []
@@ -87819,10 +87819,10 @@
     "name": "Sanhe Rouncey +3",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 2265,
+    "price": 2329,
     "weight": 420.0,
     "rank": 3,
-    "tier": 3.264883,
+    "tier": 3.32368159,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87830,7 +87830,7 @@
       "chargeDamage": 4,
       "maneuver": 70,
       "speed": 43,
-      "hitPoints": 213,
+      "hitPoints": 220,
       "familyType": 1
     },
     "weapons": []
@@ -87841,10 +87841,10 @@
     "name": "Megrelakaya Rouncey",
     "culture": "Empire",
     "type": "Mount",
-    "price": 2996,
+    "price": 3116,
     "weight": 420.0,
     "rank": 0,
-    "tier": 3.89982176,
+    "tier": 3.99619031,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87863,10 +87863,10 @@
     "name": "Megrelakaya Rouncey +1",
     "culture": "Empire",
     "type": "Mount",
-    "price": 3362,
+    "price": 3185,
     "weight": 420.0,
     "rank": 1,
-    "tier": 4.1896534,
+    "tier": 4.051151,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87874,7 +87874,7 @@
       "chargeDamage": 4,
       "maneuver": 70,
       "speed": 44,
-      "hitPoints": 201,
+      "hitPoints": 198,
       "familyType": 1
     },
     "weapons": []
@@ -87885,10 +87885,10 @@
     "name": "Megrelakaya Rouncey +2",
     "culture": "Empire",
     "type": "Mount",
-    "price": 3105,
+    "price": 3204,
     "weight": 420.0,
     "rank": 2,
-    "tier": 3.987533,
+    "tier": 4.066026,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87896,7 +87896,7 @@
       "chargeDamage": 4,
       "maneuver": 71,
       "speed": 44,
-      "hitPoints": 206,
+      "hitPoints": 211,
       "familyType": 1
     },
     "weapons": []
@@ -87907,10 +87907,10 @@
     "name": "Megrelakaya Rouncey +3",
     "culture": "Empire",
     "type": "Mount",
-    "price": 3133,
+    "price": 3206,
     "weight": 420.0,
     "rank": 3,
-    "tier": 4.01013041,
+    "tier": 4.067962,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87918,7 +87918,7 @@
       "chargeDamage": 4,
       "maneuver": 72,
       "speed": 44,
-      "hitPoints": 216,
+      "hitPoints": 223,
       "familyType": 1
     },
     "weapons": []
@@ -87929,10 +87929,10 @@
     "name": "East Anglis Rouncey",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4208,
+    "price": 4358,
     "weight": 420.0,
     "rank": 0,
-    "tier": 4.80545664,
+    "tier": 4.90811872,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87951,10 +87951,10 @@
     "name": "East Anglis Rouncey +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4713,
+    "price": 4435,
     "weight": 420.0,
     "rank": 1,
-    "tier": 5.14488554,
+    "tier": 4.96023,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87962,7 +87962,7 @@
       "chargeDamage": 4,
       "maneuver": 72,
       "speed": 45,
-      "hitPoints": 204,
+      "hitPoints": 201,
       "familyType": 1
     },
     "weapons": []
@@ -87973,10 +87973,10 @@
     "name": "East Anglis Rouncey +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4328,
+    "price": 4442,
     "weight": 420.0,
     "rank": 2,
-    "tier": 4.88772726,
+    "tier": 4.965083,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -87984,7 +87984,7 @@
       "chargeDamage": 4,
       "maneuver": 73,
       "speed": 45,
-      "hitPoints": 209,
+      "hitPoints": 214,
       "familyType": 1
     },
     "weapons": []
@@ -87995,10 +87995,10 @@
     "name": "East Anglis Rouncey +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4352,
+    "price": 4479,
     "weight": 420.0,
     "rank": 3,
-    "tier": 4.904052,
+    "tier": 4.98980045,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88006,7 +88006,7 @@
       "chargeDamage": 4,
       "maneuver": 74,
       "speed": 45,
-      "hitPoints": 219,
+      "hitPoints": 227,
       "familyType": 1
     },
     "weapons": []
@@ -88017,10 +88017,10 @@
     "name": "Anadolu Rouncey",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 5930,
+    "price": 6109,
     "weight": 420.0,
     "rank": 0,
-    "tier": 5.89559555,
+    "tier": 5.999232,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88039,10 +88039,10 @@
     "name": "Anadolu Rouncey +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 6626,
+    "price": 6188,
     "weight": 420.0,
     "rank": 1,
-    "tier": 6.29068,
+    "tier": 6.04483366,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88050,7 +88050,7 @@
       "chargeDamage": 4,
       "maneuver": 74,
       "speed": 46,
-      "hitPoints": 207,
+      "hitPoints": 204,
       "familyType": 1
     },
     "weapons": []
@@ -88061,10 +88061,10 @@
     "name": "Anadolu Rouncey +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 6051,
+    "price": 6171,
     "weight": 420.0,
     "rank": 2,
-    "tier": 5.96564674,
+    "tier": 6.03509,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88072,7 +88072,7 @@
       "chargeDamage": 4,
       "maneuver": 75,
       "speed": 46,
-      "hitPoints": 212,
+      "hitPoints": 217,
       "familyType": 1
     },
     "weapons": []
@@ -88083,10 +88083,10 @@
     "name": "Anadolu Rouncey +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 6062,
+    "price": 6271,
     "weight": 420.0,
     "rank": 3,
-    "tier": 5.97205734,
+    "tier": 6.09177876,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88094,7 +88094,7 @@
       "chargeDamage": 4,
       "maneuver": 76,
       "speed": 46,
-      "hitPoints": 222,
+      "hitPoints": 231,
       "familyType": 1
     },
     "weapons": []
@@ -88105,10 +88105,10 @@
     "name": "Yunnan Destrier",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 7645,
+    "price": 7714,
     "weight": 430.0,
     "rank": 0,
-    "tier": 6.834821,
+    "tier": 6.870007,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88127,10 +88127,10 @@
     "name": "Yunnan Destrier +1",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 8467,
+    "price": 7901,
     "weight": 430.0,
     "rank": 1,
-    "tier": 7.24756956,
+    "tier": 6.96562624,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88138,7 +88138,7 @@
       "chargeDamage": 6,
       "maneuver": 79,
       "speed": 43,
-      "hitPoints": 219,
+      "hitPoints": 217,
       "familyType": 1
     },
     "weapons": []
@@ -88149,10 +88149,10 @@
     "name": "Yunnan Destrier +2",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 7630,
+    "price": 7836,
     "weight": 430.0,
     "rank": 2,
-    "tier": 6.82716465,
+    "tier": 6.932447,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88160,7 +88160,7 @@
       "chargeDamage": 6,
       "maneuver": 80,
       "speed": 43,
-      "hitPoints": 224,
+      "hitPoints": 231,
       "familyType": 1
     },
     "weapons": []
@@ -88171,10 +88171,10 @@
     "name": "Yunnan Destrier +3",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 7522,
+    "price": 7828,
     "weight": 430.0,
     "rank": 3,
-    "tier": 6.77104473,
+    "tier": 6.92864466,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88182,7 +88182,7 @@
       "chargeDamage": 6,
       "maneuver": 81,
       "speed": 43,
-      "hitPoints": 234,
+      "hitPoints": 245,
       "familyType": 1
     },
     "weapons": []
@@ -88193,10 +88193,10 @@
     "name": "Auvergne Destrier",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 9021,
+    "price": 8984,
     "weight": 430.0,
     "rank": 0,
-    "tier": 7.51510429,
+    "tier": 7.4977107,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88215,10 +88215,10 @@
     "name": "Auvergne Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 9932,
+    "price": 9173,
     "weight": 430.0,
     "rank": 1,
-    "tier": 7.93746328,
+    "tier": 7.58710146,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88226,7 +88226,7 @@
       "chargeDamage": 7,
       "maneuver": 80,
       "speed": 43,
-      "hitPoints": 222,
+      "hitPoints": 220,
       "familyType": 1
     },
     "weapons": []
@@ -88237,10 +88237,10 @@
     "name": "Auvergne Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 8911,
+    "price": 9050,
     "weight": 430.0,
     "rank": 2,
-    "tier": 7.462912,
+    "tier": 7.528867,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88248,7 +88248,7 @@
       "chargeDamage": 7,
       "maneuver": 81,
       "speed": 43,
-      "hitPoints": 227,
+      "hitPoints": 234,
       "familyType": 1
     },
     "weapons": []
@@ -88259,10 +88259,10 @@
     "name": "Auvergne Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 8742,
+    "price": 8999,
     "weight": 430.0,
     "rank": 3,
-    "tier": 7.381631,
+    "tier": 7.50471163,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88270,7 +88270,7 @@
       "chargeDamage": 7,
       "maneuver": 82,
       "speed": 43,
-      "hitPoints": 237,
+      "hitPoints": 248,
       "familyType": 1
     },
     "weapons": []
@@ -88281,10 +88281,10 @@
     "name": "Lusitano Pureblood Destrier",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 11747,
+    "price": 11624,
     "weight": 430.0,
     "rank": 0,
-    "tier": 8.72596,
+    "tier": 8.674257,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88303,10 +88303,10 @@
     "name": "Lusitano Pureblood Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 12884,
+    "price": 11954,
     "weight": 430.0,
     "rank": 1,
-    "tier": 9.189092,
+    "tier": 8.811731,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88314,7 +88314,7 @@
       "chargeDamage": 7,
       "maneuver": 81,
       "speed": 44,
-      "hitPoints": 225,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -88325,10 +88325,10 @@
     "name": "Lusitano Pureblood Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 11524,
+    "price": 11748,
     "weight": 430.0,
     "rank": 2,
-    "tier": 8.6325,
+    "tier": 8.726136,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88336,7 +88336,7 @@
       "chargeDamage": 7,
       "maneuver": 82,
       "speed": 44,
-      "hitPoints": 230,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -88347,10 +88347,10 @@
     "name": "Lusitano Pureblood Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 11277,
+    "price": 11641,
     "weight": 430.0,
     "rank": 3,
-    "tier": 8.52800751,
+    "tier": 8.681767,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88358,7 +88358,7 @@
       "chargeDamage": 7,
       "maneuver": 83,
       "speed": 44,
-      "hitPoints": 240,
+      "hitPoints": 252,
       "familyType": 1
     },
     "weapons": []
@@ -88369,10 +88369,10 @@
     "name": "Bohemond",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 16056,
+    "price": 15700,
     "weight": 430.0,
     "rank": 0,
-    "tier": 10.3835316,
+    "tier": 10.2558622,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88391,10 +88391,10 @@
     "name": "Bohemond +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 17458,
+    "price": 16038,
     "weight": 430.0,
     "rank": 1,
-    "tier": 10.8740883,
+    "tier": 10.3770676,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88402,7 +88402,7 @@
       "chargeDamage": 8,
       "maneuver": 82,
       "speed": 45,
-      "hitPoints": 228,
+      "hitPoints": 227,
       "familyType": 1
     },
     "weapons": []
@@ -88413,10 +88413,10 @@
     "name": "Bohemond +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 15537,
+    "price": 15667,
     "weight": 430.0,
     "rank": 2,
-    "tier": 10.196722,
+    "tier": 10.243886,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88424,7 +88424,7 @@
       "chargeDamage": 8,
       "maneuver": 83,
       "speed": 45,
-      "hitPoints": 233,
+      "hitPoints": 241,
       "familyType": 1
     },
     "weapons": []
@@ -88435,10 +88435,10 @@
     "name": "Bohemond +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 15127,
+    "price": 15611,
     "weight": 430.0,
     "rank": 3,
-    "tier": 10.0469933,
+    "tier": 10.2237186,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88446,7 +88446,7 @@
       "chargeDamage": 8,
       "maneuver": 84,
       "speed": 45,
-      "hitPoints": 243,
+      "hitPoints": 256,
       "familyType": 1
     },
     "weapons": []
@@ -88457,10 +88457,10 @@
     "name": "Llamrei",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19311,
+    "price": 18698,
     "weight": 430.0,
     "rank": 0,
-    "tier": 11.49285,
+    "tier": 11.2915983,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88479,10 +88479,10 @@
     "name": "Llamrei +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 20903,
+    "price": 19001,
     "weight": 430.0,
     "rank": 1,
-    "tier": 12.0013409,
+    "tier": 11.3915129,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88490,7 +88490,7 @@
       "chargeDamage": 8,
       "maneuver": 82,
       "speed": 46,
-      "hitPoints": 231,
+      "hitPoints": 230,
       "familyType": 1
     },
     "weapons": []
@@ -88501,10 +88501,10 @@
     "name": "Llamrei +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 18573,
+    "price": 18733,
     "weight": 430.0,
     "rank": 2,
-    "tier": 11.24994,
+    "tier": 11.3029528,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88512,7 +88512,7 @@
       "chargeDamage": 8,
       "maneuver": 83,
       "speed": 46,
-      "hitPoints": 236,
+      "hitPoints": 245,
       "familyType": 1
     },
     "weapons": []
@@ -88523,10 +88523,10 @@
     "name": "Llamrei +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 18054,
+    "price": 18417,
     "weight": 430.0,
     "rank": 3,
-    "tier": 11.0765514,
+    "tier": 11.1981277,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88534,7 +88534,7 @@
       "chargeDamage": 8,
       "maneuver": 84,
       "speed": 46,
-      "hitPoints": 246,
+      "hitPoints": 259,
       "familyType": 1
     },
     "weapons": []
@@ -88545,10 +88545,10 @@
     "name": "Murgese Destrier",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1446,
+    "price": 1504,
     "weight": 450.0,
     "rank": 0,
-    "tier": 2.42216825,
+    "tier": 2.488534,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88567,10 +88567,10 @@
     "name": "Murgese Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1626,
+    "price": 1559,
     "weight": 450.0,
     "rank": 1,
-    "tier": 2.62369752,
+    "tier": 2.550228,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88578,7 +88578,7 @@
       "chargeDamage": 4,
       "maneuver": 70,
       "speed": 38,
-      "hitPoints": 204,
+      "hitPoints": 201,
       "familyType": 1
     },
     "weapons": []
@@ -88589,10 +88589,10 @@
     "name": "Murgese Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1508,
+    "price": 1565,
     "weight": 450.0,
     "rank": 2,
-    "tier": 2.4935863,
+    "tier": 2.55648828,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88600,7 +88600,7 @@
       "chargeDamage": 4,
       "maneuver": 71,
       "speed": 38,
-      "hitPoints": 209,
+      "hitPoints": 214,
       "familyType": 1
     },
     "weapons": []
@@ -88611,10 +88611,10 @@
     "name": "Murgese Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 1516,
+    "price": 1580,
     "weight": 450.0,
     "rank": 3,
-    "tier": 2.5019722,
+    "tier": 2.572908,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88622,7 +88622,7 @@
       "chargeDamage": 4,
       "maneuver": 72,
       "speed": 38,
-      "hitPoints": 219,
+      "hitPoints": 227,
       "familyType": 1
     },
     "weapons": []
@@ -88633,10 +88633,10 @@
     "name": "Holsteiner Destrier",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2005,
+    "price": 2084,
     "weight": 430.0,
     "rank": 0,
-    "tier": 3.01538348,
+    "tier": 3.0932796,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88655,10 +88655,10 @@
     "name": "Holsteiner Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2254,
+    "price": 2152,
     "weight": 430.0,
     "rank": 1,
-    "tier": 3.254296,
+    "tier": 3.15840888,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88666,7 +88666,7 @@
       "chargeDamage": 4,
       "maneuver": 72,
       "speed": 39,
-      "hitPoints": 207,
+      "hitPoints": 204,
       "familyType": 1
     },
     "weapons": []
@@ -88677,10 +88677,10 @@
     "name": "Holsteiner Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2078,
+    "price": 2151,
     "weight": 430.0,
     "rank": 2,
-    "tier": 3.08761263,
+    "tier": 3.157723,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88688,7 +88688,7 @@
       "chargeDamage": 4,
       "maneuver": 73,
       "speed": 39,
-      "hitPoints": 212,
+      "hitPoints": 217,
       "familyType": 1
     },
     "weapons": []
@@ -88699,10 +88699,10 @@
     "name": "Holsteiner Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2082,
+    "price": 2187,
     "weight": 430.0,
     "rank": 3,
-    "tier": 3.0913353,
+    "tier": 3.19173026,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88710,7 +88710,7 @@
       "chargeDamage": 4,
       "maneuver": 74,
       "speed": 39,
-      "hitPoints": 222,
+      "hitPoints": 231,
       "familyType": 1
     },
     "weapons": []
@@ -88721,10 +88721,10 @@
     "name": "Kathiawadi Destrier",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2884,
+    "price": 2966,
     "weight": 430.0,
     "rank": 0,
-    "tier": 3.80782032,
+    "tier": 3.8755796,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88743,10 +88743,10 @@
     "name": "Kathiawadi Destrier +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3229,
+    "price": 3084,
     "weight": 430.0,
     "rank": 1,
-    "tier": 4.08615065,
+    "tier": 3.97105336,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88754,7 +88754,7 @@
       "chargeDamage": 5,
       "maneuver": 74,
       "speed": 40,
-      "hitPoints": 210,
+      "hitPoints": 208,
       "familyType": 1
     },
     "weapons": []
@@ -88765,10 +88765,10 @@
     "name": "Kathiawadi Destrier +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2956,
+    "price": 3064,
     "weight": 430.0,
     "rank": 2,
-    "tier": 3.86738873,
+    "tier": 3.9547503,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88776,7 +88776,7 @@
       "chargeDamage": 5,
       "maneuver": 75,
       "speed": 40,
-      "hitPoints": 215,
+      "hitPoints": 221,
       "familyType": 1
     },
     "weapons": []
@@ -88787,10 +88787,10 @@
     "name": "Kathiawadi Destrier +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2947,
+    "price": 3065,
     "weight": 430.0,
     "rank": 3,
-    "tier": 3.85976243,
+    "tier": 3.95599031,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88798,7 +88798,7 @@
       "chargeDamage": 5,
       "maneuver": 76,
       "speed": 40,
-      "hitPoints": 225,
+      "hitPoints": 234,
       "familyType": 1
     },
     "weapons": []
@@ -88809,10 +88809,10 @@
     "name": "Friesian Destrier",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4040,
+    "price": 4147,
     "weight": 430.0,
     "rank": 0,
-    "tier": 4.6881814,
+    "tier": 4.763632,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88831,10 +88831,10 @@
     "name": "Friesian Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4515,
+    "price": 4293,
     "weight": 430.0,
     "rank": 1,
-    "tier": 5.014047,
+    "tier": 4.86427641,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88842,7 +88842,7 @@
       "chargeDamage": 5,
       "maneuver": 76,
       "speed": 41,
-      "hitPoints": 213,
+      "hitPoints": 211,
       "familyType": 1
     },
     "weapons": []
@@ -88853,10 +88853,10 @@
     "name": "Friesian Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4111,
+    "price": 4247,
     "weight": 430.0,
     "rank": 2,
-    "tier": 4.738271,
+    "tier": 4.83264828,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88864,7 +88864,7 @@
       "chargeDamage": 5,
       "maneuver": 77,
       "speed": 41,
-      "hitPoints": 218,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -88875,10 +88875,10 @@
     "name": "Friesian Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4085,
+    "price": 4280,
     "weight": 430.0,
     "rank": 3,
-    "tier": 4.71966457,
+    "tier": 4.85511255,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88886,7 +88886,7 @@
       "chargeDamage": 5,
       "maneuver": 78,
       "speed": 41,
-      "hitPoints": 228,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -88897,10 +88897,10 @@
     "name": "Carthusian Destrier",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 5867,
+    "price": 5962,
     "weight": 430.0,
     "rank": 0,
-    "tier": 5.858279,
+    "tier": 5.91401148,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88919,10 +88919,10 @@
     "name": "Carthusian Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6520,
+    "price": 6137,
     "weight": 430.0,
     "rank": 1,
-    "tier": 6.232229,
+    "tier": 6.015535,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88930,7 +88930,7 @@
       "chargeDamage": 6,
       "maneuver": 78,
       "speed": 42,
-      "hitPoints": 216,
+      "hitPoints": 214,
       "familyType": 1
     },
     "weapons": []
@@ -88941,10 +88941,10 @@
     "name": "Carthusian Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 5897,
+    "price": 6106,
     "weight": 430.0,
     "rank": 2,
-    "tier": 5.87614536,
+    "tier": 5.997624,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88952,7 +88952,7 @@
       "chargeDamage": 6,
       "maneuver": 79,
       "speed": 42,
-      "hitPoints": 221,
+      "hitPoints": 228,
       "familyType": 1
     },
     "weapons": []
@@ -88963,10 +88963,10 @@
     "name": "Carthusian Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 5828,
+    "price": 6051,
     "weight": 430.0,
     "rank": 3,
-    "tier": 5.835724,
+    "tier": 5.96564674,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -88974,7 +88974,7 @@
       "chargeDamage": 6,
       "maneuver": 80,
       "speed": 42,
-      "hitPoints": 231,
+      "hitPoints": 241,
       "familyType": 1
     },
     "weapons": []
@@ -88985,10 +88985,10 @@
     "name": "Seleucid Light Camel",
     "culture": "Empire",
     "type": "Mount",
-    "price": 6030,
+    "price": 5932,
     "weight": 520.0,
     "rank": 0,
-    "tier": 5.95369434,
+    "tier": 5.896412,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89007,10 +89007,10 @@
     "name": "Seleucid Light Camel +1",
     "culture": "Empire",
     "type": "Mount",
-    "price": 6678,
+    "price": 6172,
     "weight": 520.0,
     "rank": 1,
-    "tier": 6.31948,
+    "tier": 6.0353,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89018,7 +89018,7 @@
       "chargeDamage": 4,
       "maneuver": 82,
       "speed": 38,
-      "hitPoints": 240,
+      "hitPoints": 239,
       "familyType": 2
     },
     "weapons": []
@@ -89029,10 +89029,10 @@
     "name": "Seleucid Light Camel +2",
     "culture": "Empire",
     "type": "Mount",
-    "price": 5984,
+    "price": 6165,
     "weight": 520.0,
     "rank": 2,
-    "tier": 5.92684937,
+    "tier": 6.031125,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89040,7 +89040,7 @@
       "chargeDamage": 4,
       "maneuver": 83,
       "speed": 38,
-      "hitPoints": 245,
+      "hitPoints": 255,
       "familyType": 2
     },
     "weapons": []
@@ -89051,10 +89051,10 @@
     "name": "Seleucid Light Camel +3",
     "culture": "Empire",
     "type": "Mount",
-    "price": 5827,
+    "price": 6134,
     "weight": 520.0,
     "rank": 3,
-    "tier": 5.83508062,
+    "tier": 6.013589,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89062,7 +89062,7 @@
       "chargeDamage": 4,
       "maneuver": 84,
       "speed": 38,
-      "hitPoints": 255,
+      "hitPoints": 270,
       "familyType": 2
     },
     "weapons": []
@@ -89073,10 +89073,10 @@
     "name": "Seleucid Heavy Camel",
     "culture": "Empire",
     "type": "Mount",
-    "price": 6360,
+    "price": 5870,
     "weight": 520.0,
     "rank": 0,
-    "tier": 6.142173,
+    "tier": 5.86013,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89095,10 +89095,10 @@
     "name": "Seleucid Heavy Camel +1",
     "culture": "Empire",
     "type": "Mount",
-    "price": 6947,
+    "price": 6186,
     "weight": 520.0,
     "rank": 1,
-    "tier": 6.466213,
+    "tier": 6.043153,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89106,7 +89106,7 @@
       "chargeDamage": 5,
       "maneuver": 81,
       "speed": 37,
-      "hitPoints": 258,
+      "hitPoints": 259,
       "familyType": 2
     },
     "weapons": []
@@ -89117,10 +89117,10 @@
     "name": "Seleucid Heavy Camel +2",
     "culture": "Empire",
     "type": "Mount",
-    "price": 6193,
+    "price": 6099,
     "weight": 520.0,
     "rank": 2,
-    "tier": 6.047245,
+    "tier": 5.993252,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89128,7 +89128,7 @@
       "chargeDamage": 5,
       "maneuver": 82,
       "speed": 37,
-      "hitPoints": 263,
+      "hitPoints": 275,
       "familyType": 2
     },
     "weapons": []
@@ -89139,10 +89139,10 @@
     "name": "Seleucid Heavy Camel +3",
     "culture": "Empire",
     "type": "Mount",
-    "price": 5973,
+    "price": 6115,
     "weight": 520.0,
     "rank": 3,
-    "tier": 5.92048073,
+    "tier": 6.00297737,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89150,7 +89150,7 @@
       "chargeDamage": 5,
       "maneuver": 83,
       "speed": 37,
-      "hitPoints": 273,
+      "hitPoints": 292,
       "familyType": 2
     },
     "weapons": []
@@ -89161,10 +89161,10 @@
     "name": "Parthian Light Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 7591,
+    "price": 7461,
     "weight": 520.0,
     "rank": 0,
-    "tier": 6.80689859,
+    "tier": 6.73943567,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89183,10 +89183,10 @@
     "name": "Parthian Light Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 8391,
+    "price": 7738,
     "weight": 520.0,
     "rank": 1,
-    "tier": 7.21044445,
+    "tier": 6.88248825,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89194,7 +89194,7 @@
       "chargeDamage": 4,
       "maneuver": 83,
       "speed": 39,
-      "hitPoints": 240,
+      "hitPoints": 239,
       "familyType": 2
     },
     "weapons": []
@@ -89205,10 +89205,10 @@
     "name": "Parthian Light Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 7500,
+    "price": 7722,
     "weight": 520.0,
     "rank": 2,
-    "tier": 6.75978565,
+    "tier": 6.87420034,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89216,7 +89216,7 @@
       "chargeDamage": 4,
       "maneuver": 84,
       "speed": 39,
-      "hitPoints": 245,
+      "hitPoints": 255,
       "familyType": 2
     },
     "weapons": []
@@ -89227,10 +89227,10 @@
     "name": "Parthian Light Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 7296,
+    "price": 7676,
     "weight": 520.0,
     "rank": 3,
-    "tier": 6.65286446,
+    "tier": 6.850743,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89238,7 +89238,7 @@
       "chargeDamage": 4,
       "maneuver": 85,
       "speed": 39,
-      "hitPoints": 255,
+      "hitPoints": 270,
       "familyType": 2
     },
     "weapons": []
@@ -89249,10 +89249,10 @@
     "name": "Parthian Heavy Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 8042,
+    "price": 7419,
     "weight": 520.0,
     "rank": 0,
-    "tier": 7.036935,
+    "tier": 6.717234,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89271,10 +89271,10 @@
     "name": "Parthian Heavy Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 8766,
+    "price": 7793,
     "weight": 520.0,
     "rank": 1,
-    "tier": 7.39297152,
+    "tier": 6.91042376,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89282,7 +89282,7 @@
       "chargeDamage": 5,
       "maneuver": 82,
       "speed": 38,
-      "hitPoints": 258,
+      "hitPoints": 259,
       "familyType": 2
     },
     "weapons": []
@@ -89293,10 +89293,10 @@
     "name": "Parthian Heavy Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 7794,
+    "price": 7674,
     "weight": 520.0,
     "rank": 2,
-    "tier": 6.91138,
+    "tier": 6.849798,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89304,7 +89304,7 @@
       "chargeDamage": 5,
       "maneuver": 83,
       "speed": 38,
-      "hitPoints": 263,
+      "hitPoints": 275,
       "familyType": 2
     },
     "weapons": []
@@ -89315,10 +89315,10 @@
     "name": "Parthian Heavy Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 7509,
+    "price": 7689,
     "weight": 520.0,
     "rank": 3,
-    "tier": 6.76443338,
+    "tier": 6.857415,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89326,7 +89326,7 @@
       "chargeDamage": 5,
       "maneuver": 84,
       "speed": 38,
-      "hitPoints": 273,
+      "hitPoints": 292,
       "familyType": 2
     },
     "weapons": []
@@ -89337,10 +89337,10 @@
     "name": "Achaemenian Light Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 11213,
+    "price": 10623,
     "weight": 520.0,
     "rank": 0,
-    "tier": 8.500686,
+    "tier": 8.245746,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89359,10 +89359,10 @@
     "name": "Achaemenian Light Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 12252,
+    "price": 11033,
     "weight": 520.0,
     "rank": 1,
-    "tier": 8.934208,
+    "tier": 8.42334,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89381,10 +89381,10 @@
     "name": "Achaemenian Light Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 10878,
+    "price": 10911,
     "weight": 520.0,
     "rank": 2,
-    "tier": 8.356827,
+    "tier": 8.371085,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89392,7 +89392,7 @@
       "chargeDamage": 5,
       "maneuver": 85,
       "speed": 40,
-      "hitPoints": 254,
+      "hitPoints": 265,
       "familyType": 2
     },
     "weapons": []
@@ -89403,10 +89403,10 @@
     "name": "Achaemenian Light Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 10507,
+    "price": 10871,
     "weight": 520.0,
     "rank": 3,
-    "tier": 8.194428,
+    "tier": 8.353704,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89414,7 +89414,7 @@
       "chargeDamage": 5,
       "maneuver": 86,
       "speed": 40,
-      "hitPoints": 264,
+      "hitPoints": 281,
       "familyType": 2
     },
     "weapons": []
@@ -89425,10 +89425,10 @@
     "name": "Achaemenian Heavy Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 11869,
+    "price": 10556,
     "weight": 520.0,
     "rank": 0,
-    "tier": 8.776767,
+    "tier": 8.216163,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89447,10 +89447,10 @@
     "name": "Achaemenian Heavy Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 12793,
+    "price": 10980,
     "weight": 520.0,
     "rank": 1,
-    "tier": 9.15282,
+    "tier": 8.400921,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89458,7 +89458,7 @@
       "chargeDamage": 6,
       "maneuver": 83,
       "speed": 39,
-      "hitPoints": 267,
+      "hitPoints": 268,
       "familyType": 2
     },
     "weapons": []
@@ -89469,10 +89469,10 @@
     "name": "Achaemenian Heavy Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 11302,
+    "price": 10835,
     "weight": 520.0,
     "rank": 2,
-    "tier": 8.538418,
+    "tier": 8.338094,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89480,7 +89480,7 @@
       "chargeDamage": 6,
       "maneuver": 84,
       "speed": 39,
-      "hitPoints": 272,
+      "hitPoints": 285,
       "familyType": 2
     },
     "weapons": []
@@ -89491,10 +89491,10 @@
     "name": "Achaemenian Heavy Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 10814,
+    "price": 10774,
     "weight": 520.0,
     "rank": 3,
-    "tier": 8.328658,
+    "tier": 8.311663,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89502,7 +89502,7 @@
       "chargeDamage": 6,
       "maneuver": 85,
       "speed": 39,
-      "hitPoints": 282,
+      "hitPoints": 302,
       "familyType": 2
     },
     "weapons": []
@@ -89513,10 +89513,10 @@
     "name": "Safinat al-Barr",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 14275,
+    "price": 12660,
     "weight": 520.0,
     "rank": 0,
-    "tier": 9.729063,
+    "tier": 9.099353,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89535,10 +89535,10 @@
     "name": "Safinat al-Barr +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 15352,
+    "price": 13163,
     "weight": 520.0,
     "rank": 1,
-    "tier": 10.1296015,
+    "tier": 9.29983,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89546,7 +89546,7 @@
       "chargeDamage": 7,
       "maneuver": 85,
       "speed": 39,
-      "hitPoints": 267,
+      "hitPoints": 268,
       "familyType": 2
     },
     "weapons": []
@@ -89557,10 +89557,10 @@
     "name": "Safinat al-Barr +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 13508,
+    "price": 12946,
     "weight": 520.0,
     "rank": 2,
-    "tier": 9.434885,
+    "tier": 9.213741,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89568,7 +89568,7 @@
       "chargeDamage": 7,
       "maneuver": 86,
       "speed": 39,
-      "hitPoints": 272,
+      "hitPoints": 285,
       "familyType": 2
     },
     "weapons": []
@@ -89579,10 +89579,10 @@
     "name": "Safinat al-Barr +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 12879,
+    "price": 12834,
     "weight": 520.0,
     "rank": 3,
-    "tier": 9.186927,
+    "tier": 9.168996,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89590,7 +89590,7 @@
       "chargeDamage": 7,
       "maneuver": 87,
       "speed": 39,
-      "hitPoints": 282,
+      "hitPoints": 302,
       "familyType": 2
     },
     "weapons": []
@@ -89601,10 +89601,10 @@
     "name": "Padishah",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 17991,
+    "price": 15979,
     "weight": 520.0,
     "rank": 0,
-    "tier": 11.0551043,
+    "tier": 10.3562927,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89623,10 +89623,10 @@
     "name": "Padishah +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19305,
+    "price": 16558,
     "weight": 520.0,
     "rank": 1,
-    "tier": 11.4907236,
+    "tier": 10.5616884,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89634,7 +89634,7 @@
       "chargeDamage": 7,
       "maneuver": 86,
       "speed": 40,
-      "hitPoints": 267,
+      "hitPoints": 268,
       "familyType": 2
     },
     "weapons": []
@@ -89645,10 +89645,10 @@
     "name": "Padishah +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 16953,
+    "price": 16268,
     "weight": 520.0,
     "rank": 2,
-    "tier": 10.69958,
+    "tier": 10.4592142,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89656,7 +89656,7 @@
       "chargeDamage": 7,
       "maneuver": 87,
       "speed": 40,
-      "hitPoints": 272,
+      "hitPoints": 285,
       "familyType": 2
     },
     "weapons": []
@@ -89667,10 +89667,10 @@
     "name": "Padishah +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 16147,
+    "price": 16112,
     "weight": 520.0,
     "rank": 3,
-    "tier": 10.4162054,
+    "tier": 10.4037876,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89678,7 +89678,7 @@
       "chargeDamage": 7,
       "maneuver": 88,
       "speed": 40,
-      "hitPoints": 282,
+      "hitPoints": 302,
       "familyType": 2
     },
     "weapons": []
@@ -89689,10 +89689,10 @@
     "name": "Pack Camel",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 777,
+    "price": 807,
     "weight": 520.0,
     "rank": 0,
-    "tier": 1.546651,
+    "tier": 1.59237134,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89711,10 +89711,10 @@
     "name": "Pack Camel +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 875,
+    "price": 863,
     "weight": 520.0,
     "rank": 1,
-    "tier": 1.69186783,
+    "tier": 1.67503607,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89722,7 +89722,7 @@
       "chargeDamage": 2,
       "maneuver": 72,
       "speed": 31,
-      "hitPoints": 225,
+      "hitPoints": 224,
       "familyType": 2
     },
     "weapons": []
@@ -89733,10 +89733,10 @@
     "name": "Pack Camel +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 813,
+    "price": 863,
     "weight": 520.0,
     "rank": 2,
-    "tier": 1.600718,
+    "tier": 1.67476809,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89744,7 +89744,7 @@
       "chargeDamage": 2,
       "maneuver": 73,
       "speed": 31,
-      "hitPoints": 230,
+      "hitPoints": 238,
       "familyType": 2
     },
     "weapons": []
@@ -89755,10 +89755,10 @@
     "name": "Pack Camel +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 808,
+    "price": 868,
     "weight": 520.0,
     "rank": 3,
-    "tier": 1.59347391,
+    "tier": 1.681412,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89766,7 +89766,7 @@
       "chargeDamage": 2,
       "maneuver": 74,
       "speed": 31,
-      "hitPoints": 240,
+      "hitPoints": 252,
       "familyType": 2
     },
     "weapons": []
@@ -89777,10 +89777,10 @@
     "name": "Pratihara Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 1272,
+    "price": 1320,
     "weight": 520.0,
     "rank": 0,
-    "tier": 2.21683478,
+    "tier": 2.27470016,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89799,10 +89799,10 @@
     "name": "Pratihara Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 1435,
+    "price": 1408,
     "weight": 520.0,
     "rank": 1,
-    "tier": 2.409607,
+    "tier": 2.37819481,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89810,7 +89810,7 @@
       "chargeDamage": 2,
       "maneuver": 76,
       "speed": 32,
-      "hitPoints": 231,
+      "hitPoints": 230,
       "familyType": 2
     },
     "weapons": []
@@ -89821,10 +89821,10 @@
     "name": "Pratihara Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 1318,
+    "price": 1410,
     "weight": 520.0,
     "rank": 2,
-    "tier": 2.272081,
+    "tier": 2.381335,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89832,7 +89832,7 @@
       "chargeDamage": 2,
       "maneuver": 77,
       "speed": 32,
-      "hitPoints": 236,
+      "hitPoints": 245,
       "familyType": 2
     },
     "weapons": []
@@ -89843,10 +89843,10 @@
     "name": "Pratihara Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 1301,
+    "price": 1408,
     "weight": 520.0,
     "rank": 3,
-    "tier": 2.25229883,
+    "tier": 2.37875462,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89854,7 +89854,7 @@
       "chargeDamage": 2,
       "maneuver": 78,
       "speed": 32,
-      "hitPoints": 246,
+      "hitPoints": 259,
       "familyType": 2
     },
     "weapons": []
@@ -89865,10 +89865,10 @@
     "name": "Qedarite Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 1778,
+    "price": 1788,
     "weight": 520.0,
     "rank": 0,
-    "tier": 2.785752,
+    "tier": 2.79590726,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89887,10 +89887,10 @@
     "name": "Qedarite Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 1992,
+    "price": 1894,
     "weight": 520.0,
     "rank": 1,
-    "tier": 3.00252,
+    "tier": 2.905226,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89898,7 +89898,7 @@
       "chargeDamage": 3,
       "maneuver": 77,
       "speed": 33,
-      "hitPoints": 237,
+      "hitPoints": 236,
       "familyType": 2
     },
     "weapons": []
@@ -89909,10 +89909,10 @@
     "name": "Qedarite Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 1816,
+    "price": 1888,
     "weight": 520.0,
     "rank": 2,
-    "tier": 2.82488155,
+    "tier": 2.89845,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89920,7 +89920,7 @@
       "chargeDamage": 3,
       "maneuver": 78,
       "speed": 33,
-      "hitPoints": 242,
+      "hitPoints": 251,
       "familyType": 2
     },
     "weapons": []
@@ -89931,10 +89931,10 @@
     "name": "Qedarite Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 1783,
+    "price": 1893,
     "weight": 520.0,
     "rank": 3,
-    "tier": 2.79091239,
+    "tier": 2.90348721,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89942,7 +89942,7 @@
       "chargeDamage": 3,
       "maneuver": 79,
       "speed": 33,
-      "hitPoints": 252,
+      "hitPoints": 266,
       "familyType": 2
     },
     "weapons": []
@@ -89953,10 +89953,10 @@
     "name": "Palmyrene Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2495,
+    "price": 2434,
     "weight": 520.0,
     "rank": 0,
-    "tier": 3.47414422,
+    "tier": 3.41914439,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89975,10 +89975,10 @@
     "name": "Palmyrene Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2774,
+    "price": 2587,
     "weight": 520.0,
     "rank": 1,
-    "tier": 3.71555948,
+    "tier": 3.555304,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -89997,10 +89997,10 @@
     "name": "Palmyrene Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2511,
+    "price": 2562,
     "weight": 520.0,
     "rank": 2,
-    "tier": 3.48856354,
+    "tier": 3.533327,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90008,7 +90008,7 @@
       "chargeDamage": 4,
       "maneuver": 79,
       "speed": 34,
-      "hitPoints": 248,
+      "hitPoints": 258,
       "familyType": 2
     },
     "weapons": []
@@ -90019,10 +90019,10 @@
     "name": "Palmyrene Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2452,
+    "price": 2578,
     "weight": 520.0,
     "rank": 3,
-    "tier": 3.43591237,
+    "tier": 3.547517,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90030,7 +90030,7 @@
       "chargeDamage": 4,
       "maneuver": 80,
       "speed": 34,
-      "hitPoints": 258,
+      "hitPoints": 274,
       "familyType": 2
     },
     "weapons": []
@@ -90041,10 +90041,10 @@
     "name": "Sargonid Light Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3331,
+    "price": 3369,
     "weight": 520.0,
     "rank": 0,
-    "tier": 4.16546345,
+    "tier": 4.194578,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90063,10 +90063,10 @@
     "name": "Sargonid Light Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3726,
+    "price": 3548,
     "weight": 520.0,
     "rank": 1,
-    "tier": 4.46246862,
+    "tier": 4.33106,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90074,7 +90074,7 @@
       "chargeDamage": 4,
       "maneuver": 80,
       "speed": 36,
-      "hitPoints": 231,
+      "hitPoints": 230,
       "familyType": 2
     },
     "weapons": []
@@ -90085,10 +90085,10 @@
     "name": "Sargonid Light Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3369,
+    "price": 3535,
     "weight": 520.0,
     "rank": 2,
-    "tier": 4.19479752,
+    "tier": 4.32132339,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90096,7 +90096,7 @@
       "chargeDamage": 4,
       "maneuver": 81,
       "speed": 36,
-      "hitPoints": 236,
+      "hitPoints": 245,
       "familyType": 2
     },
     "weapons": []
@@ -90107,10 +90107,10 @@
     "name": "Sargonid Light Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3304,
+    "price": 3510,
     "weight": 520.0,
     "rank": 3,
-    "tier": 4.144437,
+    "tier": 4.30221844,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90118,7 +90118,7 @@
       "chargeDamage": 4,
       "maneuver": 82,
       "speed": 36,
-      "hitPoints": 246,
+      "hitPoints": 259,
       "familyType": 2
     },
     "weapons": []
@@ -90129,10 +90129,10 @@
     "name": "Sargonid Heavy Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3517,
+    "price": 3329,
     "weight": 520.0,
     "rank": 0,
-    "tier": 4.307844,
+    "tier": 4.16411829,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90151,10 +90151,10 @@
     "name": "Sargonid Heavy Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3879,
+    "price": 3514,
     "weight": 520.0,
     "rank": 1,
-    "tier": 4.573778,
+    "tier": 4.30538559,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90173,10 +90173,10 @@
     "name": "Sargonid Heavy Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3488,
+    "price": 3493,
     "weight": 520.0,
     "rank": 2,
-    "tier": 4.28595734,
+    "tier": 4.289769,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90184,7 +90184,7 @@
       "chargeDamage": 5,
       "maneuver": 80,
       "speed": 35,
-      "hitPoints": 254,
+      "hitPoints": 265,
       "familyType": 2
     },
     "weapons": []
@@ -90195,10 +90195,10 @@
     "name": "Sargonid Heavy Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3387,
+    "price": 3496,
     "weight": 520.0,
     "rank": 3,
-    "tier": 4.20879841,
+    "tier": 4.291791,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90206,7 +90206,7 @@
       "chargeDamage": 5,
       "maneuver": 81,
       "speed": 35,
-      "hitPoints": 264,
+      "hitPoints": 281,
       "familyType": 2
     },
     "weapons": []
@@ -90217,10 +90217,10 @@
     "name": "Nabatean Light Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4184,
+    "price": 4234,
     "weight": 520.0,
     "rank": 0,
-    "tier": 4.78881,
+    "tier": 4.82350254,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90239,10 +90239,10 @@
     "name": "Nabatean Light Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4674,
+    "price": 4446,
     "weight": 520.0,
     "rank": 1,
-    "tier": 5.11903667,
+    "tier": 4.967822,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90250,7 +90250,7 @@
       "chargeDamage": 4,
       "maneuver": 81,
       "speed": 37,
-      "hitPoints": 231,
+      "hitPoints": 230,
       "familyType": 2
     },
     "weapons": []
@@ -90261,10 +90261,10 @@
     "name": "Nabatean Light Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4215,
+    "price": 4426,
     "weight": 520.0,
     "rank": 2,
-    "tier": 4.810126,
+    "tier": 4.953986,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90272,7 +90272,7 @@
       "chargeDamage": 4,
       "maneuver": 82,
       "speed": 37,
-      "hitPoints": 236,
+      "hitPoints": 245,
       "familyType": 2
     },
     "weapons": []
@@ -90283,10 +90283,10 @@
     "name": "Nabatean Light Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4129,
+    "price": 4389,
     "weight": 520.0,
     "rank": 3,
-    "tier": 4.75087166,
+    "tier": 4.92946672,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90294,7 +90294,7 @@
       "chargeDamage": 4,
       "maneuver": 83,
       "speed": 37,
-      "hitPoints": 246,
+      "hitPoints": 259,
       "familyType": 2
     },
     "weapons": []
@@ -90305,10 +90305,10 @@
     "name": "Nabatean Heavy Camel",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4439,
+    "price": 4205,
     "weight": 520.0,
     "rank": 0,
-    "tier": 4.96311045,
+    "tier": 4.80372524,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90327,10 +90327,10 @@
     "name": "Nabatean Heavy Camel +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4888,
+    "price": 4425,
     "weight": 520.0,
     "rank": 1,
-    "tier": 5.2578907,
+    "tier": 4.953373,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90349,10 +90349,10 @@
     "name": "Nabatean Heavy Camel +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4383,
+    "price": 4394,
     "weight": 520.0,
     "rank": 2,
-    "tier": 4.92527342,
+    "tier": 4.93272638,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90360,7 +90360,7 @@
       "chargeDamage": 5,
       "maneuver": 81,
       "speed": 36,
-      "hitPoints": 254,
+      "hitPoints": 265,
       "familyType": 2
     },
     "weapons": []
@@ -90371,10 +90371,10 @@
     "name": "Nabatean Heavy Camel +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4251,
+    "price": 4394,
     "weight": 520.0,
     "rank": 3,
-    "tier": 4.83528757,
+    "tier": 4.93241072,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90382,7 +90382,7 @@
       "chargeDamage": 5,
       "maneuver": 82,
       "speed": 36,
-      "hitPoints": 264,
+      "hitPoints": 281,
       "familyType": 2
     },
     "weapons": []
@@ -90393,10 +90393,10 @@
     "name": "Desert Norman Charger",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 7514,
+    "price": 7113,
     "weight": 450.0,
     "rank": 0,
-    "tier": 6.766771,
+    "tier": 6.55584049,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90415,10 +90415,10 @@
     "name": "Desert Norman Charger +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 8151,
+    "price": 7262,
     "weight": 450.0,
     "rank": 1,
-    "tier": 7.0915637,
+    "tier": 6.634841,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90426,7 +90426,7 @@
       "chargeDamage": 7,
       "maneuver": 73,
       "speed": 45,
-      "hitPoints": 228,
+      "hitPoints": 227,
       "familyType": 1
     },
     "weapons": []
@@ -90437,10 +90437,10 @@
     "name": "Desert Norman Charger +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 7359,
+    "price": 7173,
     "weight": 450.0,
     "rank": 2,
-    "tier": 6.68588543,
+    "tier": 6.58754063,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90448,7 +90448,7 @@
       "chargeDamage": 7,
       "maneuver": 74,
       "speed": 45,
-      "hitPoints": 233,
+      "hitPoints": 241,
       "familyType": 1
     },
     "weapons": []
@@ -90459,10 +90459,10 @@
     "name": "Desert Norman Charger +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 7241,
+    "price": 7219,
     "weight": 450.0,
     "rank": 3,
-    "tier": 6.623485,
+    "tier": 6.61172867,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90470,7 +90470,7 @@
       "chargeDamage": 7,
       "maneuver": 75,
       "speed": 45,
-      "hitPoints": 243,
+      "hitPoints": 256,
       "familyType": 1
     },
     "weapons": []
@@ -90481,10 +90481,10 @@
     "name": "Andravida Charger",
     "culture": "Empire",
     "type": "Mount",
-    "price": 9028,
+    "price": 8457,
     "weight": 450.0,
     "rank": 0,
-    "tier": 7.518686,
+    "tier": 7.242971,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90503,10 +90503,10 @@
     "name": "Andravida Charger +1",
     "culture": "Empire",
     "type": "Mount",
-    "price": 9728,
+    "price": 8601,
     "weight": 450.0,
     "rank": 1,
-    "tier": 7.844568,
+    "tier": 7.313283,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90514,7 +90514,7 @@
       "chargeDamage": 8,
       "maneuver": 74,
       "speed": 45,
-      "hitPoints": 231,
+      "hitPoints": 230,
       "familyType": 1
     },
     "weapons": []
@@ -90525,10 +90525,10 @@
     "name": "Andravida Charger +2",
     "culture": "Empire",
     "type": "Mount",
-    "price": 8737,
+    "price": 8535,
     "weight": 450.0,
     "rank": 2,
-    "tier": 7.37921762,
+    "tier": 7.280949,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90536,7 +90536,7 @@
       "chargeDamage": 8,
       "maneuver": 75,
       "speed": 45,
-      "hitPoints": 236,
+      "hitPoints": 245,
       "familyType": 1
     },
     "weapons": []
@@ -90547,10 +90547,10 @@
     "name": "Andravida Charger +3",
     "culture": "Empire",
     "type": "Mount",
-    "price": 8549,
+    "price": 8448,
     "weight": 450.0,
     "rank": 3,
-    "tier": 7.287662,
+    "tier": 7.238538,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90558,7 +90558,7 @@
       "chargeDamage": 8,
       "maneuver": 76,
       "speed": 45,
-      "hitPoints": 246,
+      "hitPoints": 259,
       "familyType": 1
     },
     "weapons": []
@@ -90569,10 +90569,10 @@
     "name": "Neapolitan Charger",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 11682,
+    "price": 10895,
     "weight": 450.0,
     "rank": 0,
-    "tier": 8.698932,
+    "tier": 8.363984,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90591,10 +90591,10 @@
     "name": "Neapolitan Charger +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 12547,
+    "price": 11029,
     "weight": 450.0,
     "rank": 1,
-    "tier": 9.053946,
+    "tier": 8.421738,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90602,7 +90602,7 @@
       "chargeDamage": 8,
       "maneuver": 75,
       "speed": 46,
-      "hitPoints": 234,
+      "hitPoints": 233,
       "familyType": 1
     },
     "weapons": []
@@ -90613,10 +90613,10 @@
     "name": "Neapolitan Charger +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 11236,
+    "price": 10911,
     "weight": 450.0,
     "rank": 2,
-    "tier": 8.510253,
+    "tier": 8.370935,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90624,7 +90624,7 @@
       "chargeDamage": 8,
       "maneuver": 76,
       "speed": 46,
-      "hitPoints": 239,
+      "hitPoints": 248,
       "familyType": 1
     },
     "weapons": []
@@ -90635,10 +90635,10 @@
     "name": "Neapolitan Charger +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 10968,
+    "price": 10882,
     "weight": 450.0,
     "rank": 3,
-    "tier": 8.395447,
+    "tier": 8.358549,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90646,7 +90646,7 @@
       "chargeDamage": 8,
       "maneuver": 77,
       "speed": 46,
-      "hitPoints": 249,
+      "hitPoints": 263,
       "familyType": 1
     },
     "weapons": []
@@ -90657,10 +90657,10 @@
     "name": "Hengeron",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 16201,
+    "price": 15034,
     "weight": 450.0,
     "rank": 0,
-    "tier": 10.4354,
+    "tier": 10.0127592,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90679,10 +90679,10 @@
     "name": "Hengeron +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 17233,
+    "price": 15108,
     "weight": 450.0,
     "rank": 1,
-    "tier": 10.7965965,
+    "tier": 10.0401726,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90690,7 +90690,7 @@
       "chargeDamage": 9,
       "maneuver": 76,
       "speed": 47,
-      "hitPoints": 237,
+      "hitPoints": 236,
       "familyType": 1
     },
     "weapons": []
@@ -90701,10 +90701,10 @@
     "name": "Hengeron +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 15342,
+    "price": 14835,
     "weight": 450.0,
     "rank": 2,
-    "tier": 10.1257668,
+    "tier": 9.938989,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90712,7 +90712,7 @@
       "chargeDamage": 9,
       "maneuver": 77,
       "speed": 47,
-      "hitPoints": 242,
+      "hitPoints": 251,
       "familyType": 1
     },
     "weapons": []
@@ -90723,10 +90723,10 @@
     "name": "Hengeron +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 14887,
+    "price": 14697,
     "weight": 450.0,
     "rank": 3,
-    "tier": 9.95850849,
+    "tier": 9.887551,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90734,7 +90734,7 @@
       "chargeDamage": 9,
       "maneuver": 78,
       "speed": 47,
-      "hitPoints": 252,
+      "hitPoints": 266,
       "familyType": 1
     },
     "weapons": []
@@ -90745,10 +90745,10 @@
     "name": "Bucephalus",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19269,
+    "price": 17761,
     "weight": 450.0,
     "rank": 0,
-    "tier": 11.4791059,
+    "tier": 10.9773483,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90767,10 +90767,10 @@
     "name": "Bucephalus +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 20415,
+    "price": 17763,
     "weight": 450.0,
     "rank": 1,
-    "tier": 11.84773,
+    "tier": 10.9780006,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90778,7 +90778,7 @@
       "chargeDamage": 9,
       "maneuver": 76,
       "speed": 48,
-      "hitPoints": 240,
+      "hitPoints": 239,
       "familyType": 1
     },
     "weapons": []
@@ -90789,10 +90789,10 @@
     "name": "Bucephalus +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 18151,
+    "price": 17591,
     "weight": 450.0,
     "rank": 2,
-    "tier": 11.1090488,
+    "tier": 10.9193907,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90800,7 +90800,7 @@
       "chargeDamage": 9,
       "maneuver": 77,
       "speed": 48,
-      "hitPoints": 245,
+      "hitPoints": 255,
       "familyType": 1
     },
     "weapons": []
@@ -90811,10 +90811,10 @@
     "name": "Bucephalus +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 17591,
+    "price": 17385,
     "weight": 450.0,
     "rank": 3,
-    "tier": 10.9192972,
+    "tier": 10.8489428,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90822,7 +90822,7 @@
       "chargeDamage": 9,
       "maneuver": 78,
       "speed": 48,
-      "hitPoints": 255,
+      "hitPoints": 270,
       "familyType": 1
     },
     "weapons": []
@@ -90833,10 +90833,10 @@
     "name": "Norwegian Fjord Draught",
     "culture": "Sturgia",
     "type": "Mount",
-    "price": 1317,
+    "price": 1302,
     "weight": 450.0,
     "rank": 0,
-    "tier": 2.2704916,
+    "tier": 2.25281978,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90855,10 +90855,10 @@
     "name": "Norwegian Fjord Draught +1",
     "culture": "Sturgia",
     "type": "Mount",
-    "price": 1459,
+    "price": 1347,
     "weight": 450.0,
     "rank": 1,
-    "tier": 2.43725133,
+    "tier": 2.3063283,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90866,7 +90866,7 @@
       "chargeDamage": 3,
       "maneuver": 64,
       "speed": 40,
-      "hitPoints": 213,
+      "hitPoints": 211,
       "familyType": 1
     },
     "weapons": []
@@ -90877,10 +90877,10 @@
     "name": "Norwegian Fjord Draught +2",
     "culture": "Sturgia",
     "type": "Mount",
-    "price": 1362,
+    "price": 1353,
     "weight": 450.0,
     "rank": 2,
-    "tier": 2.32439756,
+    "tier": 2.31406832,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90888,7 +90888,7 @@
       "chargeDamage": 3,
       "maneuver": 65,
       "speed": 40,
-      "hitPoints": 218,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -90899,10 +90899,10 @@
     "name": "Norwegian Fjord Draught +3",
     "culture": "Sturgia",
     "type": "Mount",
-    "price": 1372,
+    "price": 1381,
     "weight": 450.0,
     "rank": 3,
-    "tier": 2.33659935,
+    "tier": 2.347237,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90910,7 +90910,7 @@
       "chargeDamage": 3,
       "maneuver": 66,
       "speed": 40,
-      "hitPoints": 228,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -90921,10 +90921,10 @@
     "name": "Icelandic Charger",
     "culture": "Sturgia",
     "type": "Mount",
-    "price": 1885,
+    "price": 1843,
     "weight": 450.0,
     "rank": 0,
-    "tier": 2.89563084,
+    "tier": 2.85330319,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90943,10 +90943,10 @@
     "name": "Icelandic Charger +1",
     "culture": "Sturgia",
     "type": "Mount",
-    "price": 2082,
+    "price": 1899,
     "weight": 450.0,
     "rank": 1,
-    "tier": 3.091077,
+    "tier": 2.90947056,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90954,7 +90954,7 @@
       "chargeDamage": 4,
       "maneuver": 66,
       "speed": 41,
-      "hitPoints": 216,
+      "hitPoints": 214,
       "familyType": 1
     },
     "weapons": []
@@ -90965,10 +90965,10 @@
     "name": "Icelandic Charger +2",
     "culture": "Sturgia",
     "type": "Mount",
-    "price": 1928,
+    "price": 1917,
     "weight": 450.0,
     "rank": 2,
-    "tier": 2.93964362,
+    "tier": 2.928126,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90976,7 +90976,7 @@
       "chargeDamage": 4,
       "maneuver": 67,
       "speed": 41,
-      "hitPoints": 221,
+      "hitPoints": 228,
       "familyType": 1
     },
     "weapons": []
@@ -90987,10 +90987,10 @@
     "name": "Icelandic Charger +3",
     "culture": "Sturgia",
     "type": "Mount",
-    "price": 1933,
+    "price": 1928,
     "weight": 450.0,
     "rank": 3,
-    "tier": 2.94469738,
+    "tier": 2.93897176,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -90998,7 +90998,7 @@
       "chargeDamage": 4,
       "maneuver": 68,
       "speed": 41,
-      "hitPoints": 231,
+      "hitPoints": 241,
       "familyType": 1
     },
     "weapons": []
@@ -91009,10 +91009,10 @@
     "name": "Shire Charger",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2718,
+    "price": 2632,
     "weight": 450.0,
     "rank": 0,
-    "tier": 3.667954,
+    "tier": 3.594083,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91031,10 +91031,10 @@
     "name": "Shire Charger +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2990,
+    "price": 2698,
     "weight": 450.0,
     "rank": 1,
-    "tier": 3.89499235,
+    "tier": 3.65077519,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91042,7 +91042,7 @@
       "chargeDamage": 5,
       "maneuver": 68,
       "speed": 42,
-      "hitPoints": 219,
+      "hitPoints": 217,
       "familyType": 1
     },
     "weapons": []
@@ -91053,10 +91053,10 @@
     "name": "Shire Charger +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2749,
+    "price": 2709,
     "weight": 450.0,
     "rank": 2,
-    "tier": 3.69437122,
+    "tier": 3.66021323,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91064,7 +91064,7 @@
       "chargeDamage": 5,
       "maneuver": 69,
       "speed": 42,
-      "hitPoints": 224,
+      "hitPoints": 231,
       "familyType": 1
     },
     "weapons": []
@@ -91075,10 +91075,10 @@
     "name": "Shire Charger +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2742,
+    "price": 2737,
     "weight": 450.0,
     "rank": 3,
-    "tier": 3.68844581,
+    "tier": 3.6846323,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91086,7 +91086,7 @@
       "chargeDamage": 5,
       "maneuver": 70,
       "speed": 42,
-      "hitPoints": 234,
+      "hitPoints": 245,
       "familyType": 1
     },
     "weapons": []
@@ -91097,10 +91097,10 @@
     "name": "Ardennes Charger",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 3951,
+    "price": 3792,
     "weight": 450.0,
     "rank": 0,
-    "tier": 4.625175,
+    "tier": 4.51072454,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91119,10 +91119,10 @@
     "name": "Ardennes Charger +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 4325,
+    "price": 3866,
     "weight": 450.0,
     "rank": 1,
-    "tier": 4.88612127,
+    "tier": 4.56463,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91130,7 +91130,7 @@
       "chargeDamage": 6,
       "maneuver": 70,
       "speed": 43,
-      "hitPoints": 222,
+      "hitPoints": 220,
       "familyType": 1
     },
     "weapons": []
@@ -91141,10 +91141,10 @@
     "name": "Ardennes Charger +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 3947,
+    "price": 3859,
     "weight": 450.0,
     "rank": 2,
-    "tier": 4.62255144,
+    "tier": 4.55916071,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91152,7 +91152,7 @@
       "chargeDamage": 6,
       "maneuver": 71,
       "speed": 43,
-      "hitPoints": 227,
+      "hitPoints": 234,
       "familyType": 1
     },
     "weapons": []
@@ -91163,10 +91163,10 @@
     "name": "Ardennes Charger +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 3916,
+    "price": 3879,
     "weight": 450.0,
     "rank": 3,
-    "tier": 4.600176,
+    "tier": 4.573545,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91174,7 +91174,7 @@
       "chargeDamage": 6,
       "maneuver": 72,
       "speed": 43,
-      "hitPoints": 237,
+      "hitPoints": 248,
       "familyType": 1
     },
     "weapons": []
@@ -91185,10 +91185,10 @@
     "name": "Andalusian Charger",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 5800,
+    "price": 5522,
     "weight": 450.0,
     "rank": 0,
-    "tier": 5.81892729,
+    "tier": 5.652977,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91207,10 +91207,10 @@
     "name": "Andalusian Charger +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6311,
+    "price": 5663,
     "weight": 450.0,
     "rank": 1,
-    "tier": 6.1147995,
+    "tier": 5.73801565,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91218,7 +91218,7 @@
       "chargeDamage": 7,
       "maneuver": 72,
       "speed": 44,
-      "hitPoints": 225,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -91229,10 +91229,10 @@
     "name": "Andalusian Charger +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 5717,
+    "price": 5611,
     "weight": 450.0,
     "rank": 2,
-    "tier": 5.770073,
+    "tier": 5.706766,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91240,7 +91240,7 @@
       "chargeDamage": 7,
       "maneuver": 73,
       "speed": 44,
-      "hitPoints": 230,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -91251,10 +91251,10 @@
     "name": "Andalusian Charger +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 5639,
+    "price": 5604,
     "weight": 450.0,
     "rank": 3,
-    "tier": 5.723317,
+    "tier": 5.702317,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91262,7 +91262,7 @@
       "chargeDamage": 7,
       "maneuver": 74,
       "speed": 44,
-      "hitPoints": 240,
+      "hitPoints": 252,
       "familyType": 1
     },
     "weapons": []
@@ -91273,10 +91273,10 @@
     "name": "Ahalteke Courser",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 8664,
+    "price": 8517,
     "weight": 420.0,
     "rank": 0,
-    "tier": 7.343635,
+    "tier": 7.27232075,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91295,10 +91295,10 @@
     "name": "Ahalteke Courser +1",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 9516,
+    "price": 8600,
     "weight": 420.0,
     "rank": 1,
-    "tier": 7.74742651,
+    "tier": 7.312514,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91306,7 +91306,7 @@
       "chargeDamage": 5,
       "maneuver": 71,
       "speed": 50,
-      "hitPoints": 213,
+      "hitPoints": 211,
       "familyType": 1
     },
     "weapons": []
@@ -91317,10 +91317,10 @@
     "name": "Ahalteke Courser +2",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 8675,
+    "price": 8541,
     "weight": 420.0,
     "rank": 2,
-    "tier": 7.34929943,
+    "tier": 7.28384542,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91328,7 +91328,7 @@
       "chargeDamage": 5,
       "maneuver": 72,
       "speed": 50,
-      "hitPoints": 218,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -91339,10 +91339,10 @@
     "name": "Ahalteke Courser +3",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 8676,
+    "price": 8649,
     "weight": 420.0,
     "rank": 3,
-    "tier": 7.34952736,
+    "tier": 7.33652,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91350,7 +91350,7 @@
       "chargeDamage": 5,
       "maneuver": 73,
       "speed": 50,
-      "hitPoints": 228,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -91361,10 +91361,10 @@
     "name": "Datong Courser",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 9953,
+    "price": 9710,
     "weight": 420.0,
     "rank": 0,
-    "tier": 7.947199,
+    "tier": 7.83651447,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91383,10 +91383,10 @@
     "name": "Datong Courser +1",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 10906,
+    "price": 9782,
     "weight": 420.0,
     "rank": 1,
-    "tier": 8.36863,
+    "tier": 7.86939955,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91394,7 +91394,7 @@
       "chargeDamage": 5,
       "maneuver": 72,
       "speed": 50,
-      "hitPoints": 216,
+      "hitPoints": 214,
       "familyType": 1
     },
     "weapons": []
@@ -91405,10 +91405,10 @@
     "name": "Datong Courser +2",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 9913,
+    "price": 9801,
     "weight": 420.0,
     "rank": 2,
-    "tier": 7.92889166,
+    "tier": 7.87799454,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91416,7 +91416,7 @@
       "chargeDamage": 5,
       "maneuver": 73,
       "speed": 50,
-      "hitPoints": 221,
+      "hitPoints": 228,
       "familyType": 1
     },
     "weapons": []
@@ -91427,10 +91427,10 @@
     "name": "Datong Courser +3",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 9883,
+    "price": 9777,
     "weight": 420.0,
     "rank": 3,
-    "tier": 7.915475,
+    "tier": 7.867084,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91438,7 +91438,7 @@
       "chargeDamage": 5,
       "maneuver": 74,
       "speed": 50,
-      "hitPoints": 231,
+      "hitPoints": 241,
       "familyType": 1
     },
     "weapons": []
@@ -91449,10 +91449,10 @@
     "name": "Darashouri Courser",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 12921,
+    "price": 12467,
     "weight": 420.0,
     "rank": 0,
-    "tier": 9.203749,
+    "tier": 9.021854,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91471,10 +91471,10 @@
     "name": "Darashouri Courser +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 14101,
+    "price": 12502,
     "weight": 420.0,
     "rank": 1,
-    "tier": 9.662846,
+    "tier": 9.03585,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91482,7 +91482,7 @@
       "chargeDamage": 5,
       "maneuver": 73,
       "speed": 51,
-      "hitPoints": 219,
+      "hitPoints": 217,
       "familyType": 1
     },
     "weapons": []
@@ -91493,10 +91493,10 @@
     "name": "Darashouri Courser +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 12773,
+    "price": 12484,
     "weight": 420.0,
     "rank": 2,
-    "tier": 9.144876,
+    "tier": 9.028689,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91504,7 +91504,7 @@
       "chargeDamage": 5,
       "maneuver": 74,
       "speed": 51,
-      "hitPoints": 224,
+      "hitPoints": 231,
       "familyType": 1
     },
     "weapons": []
@@ -91515,10 +91515,10 @@
     "name": "Darashouri Courser +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 12699,
+    "price": 12559,
     "weight": 420.0,
     "rank": 3,
-    "tier": 9.114969,
+    "tier": 9.058801,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91526,7 +91526,7 @@
       "chargeDamage": 5,
       "maneuver": 75,
       "speed": 51,
-      "hitPoints": 234,
+      "hitPoints": 245,
       "familyType": 1
     },
     "weapons": []
@@ -91537,10 +91537,10 @@
     "name": "Muniqi al-Khamsa",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 17201,
+    "price": 16504,
     "weight": 420.0,
     "rank": 0,
-    "tier": 10.78561,
+    "tier": 10.5425205,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91559,10 +91559,10 @@
     "name": "Muniqi al-Khamsa +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 18649,
+    "price": 16454,
     "weight": 420.0,
     "rank": 1,
-    "tier": 11.2751131,
+    "tier": 10.5247641,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91570,7 +91570,7 @@
       "chargeDamage": 6,
       "maneuver": 74,
       "speed": 52,
-      "hitPoints": 222,
+      "hitPoints": 220,
       "familyType": 1
     },
     "weapons": []
@@ -91581,10 +91581,10 @@
     "name": "Muniqi al-Khamsa +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 16819,
+    "price": 16341,
     "weight": 420.0,
     "rank": 2,
-    "tier": 10.6529579,
+    "tier": 10.484973,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91592,7 +91592,7 @@
       "chargeDamage": 6,
       "maneuver": 75,
       "speed": 52,
-      "hitPoints": 227,
+      "hitPoints": 234,
       "familyType": 1
     },
     "weapons": []
@@ -91603,10 +91603,10 @@
     "name": "Muniqi al-Khamsa +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 16649,
+    "price": 16359,
     "weight": 420.0,
     "rank": 3,
-    "tier": 10.5933733,
+    "tier": 10.4912872,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91614,7 +91614,7 @@
       "chargeDamage": 6,
       "maneuver": 76,
       "speed": 52,
-      "hitPoints": 237,
+      "hitPoints": 248,
       "familyType": 1
     },
     "weapons": []
@@ -91625,10 +91625,10 @@
     "name": "Shadowfax",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 20432,
+    "price": 19326,
     "weight": 420.0,
     "rank": 0,
-    "tier": 11.8530216,
+    "tier": 11.4978437,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91647,10 +91647,10 @@
     "name": "Shadowfax +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 22048,
+    "price": 19422,
     "weight": 420.0,
     "rank": 1,
-    "tier": 12.355197,
+    "tier": 11.5288725,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91658,7 +91658,7 @@
       "chargeDamage": 6,
       "maneuver": 74,
       "speed": 53,
-      "hitPoints": 225,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -91669,10 +91669,10 @@
     "name": "Shadowfax +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19852,
+    "price": 19231,
     "weight": 420.0,
     "rank": 2,
-    "tier": 11.6679688,
+    "tier": 11.46677,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91680,7 +91680,7 @@
       "chargeDamage": 6,
       "maneuver": 75,
       "speed": 53,
-      "hitPoints": 230,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -91691,10 +91691,10 @@
     "name": "Shadowfax +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19616,
+    "price": 19202,
     "weight": 420.0,
     "rank": 3,
-    "tier": 11.5918121,
+    "tier": 11.45717,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91702,7 +91702,7 @@
       "chargeDamage": 6,
       "maneuver": 76,
       "speed": 53,
-      "hitPoints": 240,
+      "hitPoints": 252,
       "familyType": 1
     },
     "weapons": []
@@ -91713,10 +91713,10 @@
     "name": "Turkoman Courser",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 1621,
+    "price": 1642,
     "weight": 420.0,
     "rank": 0,
-    "tier": 2.617908,
+    "tier": 2.640939,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91735,10 +91735,10 @@
     "name": "Turkoman Courser +1",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 1808,
+    "price": 1675,
     "weight": 420.0,
     "rank": 1,
-    "tier": 2.81636286,
+    "tier": 2.67713451,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91746,7 +91746,7 @@
       "chargeDamage": 3,
       "maneuver": 62,
       "speed": 45,
-      "hitPoints": 198,
+      "hitPoints": 195,
       "familyType": 1
     },
     "weapons": []
@@ -91757,10 +91757,10 @@
     "name": "Turkoman Courser +2",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 1697,
+    "price": 1687,
     "weight": 420.0,
     "rank": 2,
-    "tier": 2.700495,
+    "tier": 2.689371,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91768,7 +91768,7 @@
       "chargeDamage": 3,
       "maneuver": 63,
       "speed": 45,
-      "hitPoints": 203,
+      "hitPoints": 207,
       "familyType": 1
     },
     "weapons": []
@@ -91779,10 +91779,10 @@
     "name": "Turkoman Courser +3",
     "culture": "Khuzait",
     "type": "Mount",
-    "price": 1732,
+    "price": 1728,
     "weight": 420.0,
     "rank": 3,
-    "tier": 2.73761868,
+    "tier": 2.73269272,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91790,7 +91790,7 @@
       "chargeDamage": 3,
       "maneuver": 64,
       "speed": 45,
-      "hitPoints": 213,
+      "hitPoints": 220,
       "familyType": 1
     },
     "weapons": []
@@ -91801,10 +91801,10 @@
     "name": "Menorquín Courser",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2265,
+    "price": 2285,
     "weight": 420.0,
     "rank": 0,
-    "tier": 3.264903,
+    "tier": 3.283188,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91823,10 +91823,10 @@
     "name": "Menorquín Courser +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2525,
+    "price": 2322,
     "weight": 420.0,
     "rank": 1,
-    "tier": 3.50020361,
+    "tier": 3.31801081,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91834,7 +91834,7 @@
       "chargeDamage": 3,
       "maneuver": 64,
       "speed": 46,
-      "hitPoints": 201,
+      "hitPoints": 198,
       "familyType": 1
     },
     "weapons": []
@@ -91845,10 +91845,10 @@
     "name": "Menorquín Courser +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2356,
+    "price": 2355,
     "weight": 420.0,
     "rank": 2,
-    "tier": 3.34873819,
+    "tier": 3.34800982,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91856,7 +91856,7 @@
       "chargeDamage": 3,
       "maneuver": 65,
       "speed": 46,
-      "hitPoints": 206,
+      "hitPoints": 211,
       "familyType": 1
     },
     "weapons": []
@@ -91867,10 +91867,10 @@
     "name": "Menorquín Courser +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 2396,
+    "price": 2376,
     "weight": 420.0,
     "rank": 3,
-    "tier": 3.3855474,
+    "tier": 3.36687183,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91878,7 +91878,7 @@
       "chargeDamage": 3,
       "maneuver": 66,
       "speed": 46,
-      "hitPoints": 216,
+      "hitPoints": 223,
       "familyType": 1
     },
     "weapons": []
@@ -91889,10 +91889,10 @@
     "name": "Nisean Courser",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3267,
+    "price": 3277,
     "weight": 420.0,
     "rank": 0,
-    "tier": 4.116195,
+    "tier": 4.1235795,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91911,10 +91911,10 @@
     "name": "Nisean Courser +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3628,
+    "price": 3314,
     "weight": 420.0,
     "rank": 1,
-    "tier": 4.39028263,
+    "tier": 4.15240574,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91922,7 +91922,7 @@
       "chargeDamage": 4,
       "maneuver": 66,
       "speed": 47,
-      "hitPoints": 204,
+      "hitPoints": 201,
       "familyType": 1
     },
     "weapons": []
@@ -91933,10 +91933,10 @@
     "name": "Nisean Courser +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3361,
+    "price": 3340,
     "weight": 420.0,
     "rank": 2,
-    "tier": 4.1883707,
+    "tier": 4.17284536,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91944,7 +91944,7 @@
       "chargeDamage": 4,
       "maneuver": 67,
       "speed": 47,
-      "hitPoints": 209,
+      "hitPoints": 214,
       "familyType": 1
     },
     "weapons": []
@@ -91955,10 +91955,10 @@
     "name": "Nisean Courser +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3401,
+    "price": 3389,
     "weight": 420.0,
     "rank": 3,
-    "tier": 4.21925,
+    "tier": 4.20997667,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91966,7 +91966,7 @@
       "chargeDamage": 4,
       "maneuver": 68,
       "speed": 47,
-      "hitPoints": 219,
+      "hitPoints": 227,
       "familyType": 1
     },
     "weapons": []
@@ -91977,10 +91977,10 @@
     "name": "Thessalian Courser",
     "culture": "Empire",
     "type": "Mount",
-    "price": 4607,
+    "price": 4595,
     "weight": 420.0,
     "rank": 0,
-    "tier": 5.07481766,
+    "tier": 5.067225,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -91999,10 +91999,10 @@
     "name": "Thessalian Courser +1",
     "culture": "Empire",
     "type": "Mount",
-    "price": 5104,
+    "price": 4627,
     "weight": 420.0,
     "rank": 1,
-    "tier": 5.39552,
+    "tier": 5.08830166,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92010,7 +92010,7 @@
       "chargeDamage": 4,
       "maneuver": 68,
       "speed": 48,
-      "hitPoints": 207,
+      "hitPoints": 204,
       "familyType": 1
     },
     "weapons": []
@@ -92021,10 +92021,10 @@
     "name": "Thessalian Courser +2",
     "culture": "Empire",
     "type": "Mount",
-    "price": 4701,
+    "price": 4644,
     "weight": 420.0,
     "rank": 2,
-    "tier": 5.13719463,
+    "tier": 5.099184,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92032,7 +92032,7 @@
       "chargeDamage": 4,
       "maneuver": 69,
       "speed": 48,
-      "hitPoints": 212,
+      "hitPoints": 217,
       "familyType": 1
     },
     "weapons": []
@@ -92043,10 +92043,10 @@
     "name": "Thessalian Courser +3",
     "culture": "Empire",
     "type": "Mount",
-    "price": 4740,
+    "price": 4746,
     "weight": 420.0,
     "rank": 3,
-    "tier": 5.16242456,
+    "tier": 5.16608953,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92054,7 +92054,7 @@
       "chargeDamage": 4,
       "maneuver": 70,
       "speed": 48,
-      "hitPoints": 222,
+      "hitPoints": 231,
       "familyType": 1
     },
     "weapons": []
@@ -92065,10 +92065,10 @@
     "name": "Einsiedler Courser",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6680,
+    "price": 6634,
     "weight": 420.0,
     "rank": 0,
-    "tier": 6.32082844,
+    "tier": 6.2954936,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92087,10 +92087,10 @@
     "name": "Einsiedler Courser +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 7365,
+    "price": 6729,
     "weight": 420.0,
     "rank": 1,
-    "tier": 6.689019,
+    "tier": 6.347797,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92098,7 +92098,7 @@
       "chargeDamage": 5,
       "maneuver": 70,
       "speed": 49,
-      "hitPoints": 210,
+      "hitPoints": 208,
       "familyType": 1
     },
     "weapons": []
@@ -92109,10 +92109,10 @@
     "name": "Einsiedler Courser +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6738,
+    "price": 6706,
     "weight": 420.0,
     "rank": 2,
-    "tier": 6.352637,
+    "tier": 6.33487654,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92120,7 +92120,7 @@
       "chargeDamage": 5,
       "maneuver": 71,
       "speed": 49,
-      "hitPoints": 215,
+      "hitPoints": 221,
       "familyType": 1
     },
     "weapons": []
@@ -92131,10 +92131,10 @@
     "name": "Einsiedler Courser +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6757,
+    "price": 6733,
     "weight": 420.0,
     "rank": 3,
-    "tier": 6.36325836,
+    "tier": 6.35011,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92142,7 +92142,7 @@
       "chargeDamage": 5,
       "maneuver": 72,
       "speed": 49,
-      "hitPoints": 225,
+      "hitPoints": 234,
       "familyType": 1
     },
     "weapons": []
@@ -92153,10 +92153,10 @@
     "name": "Berber Jennet",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 8014,
+    "price": 8881,
     "weight": 300.0,
     "rank": 0,
-    "tier": 7.022807,
+    "tier": 7.448237,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92175,10 +92175,10 @@
     "name": "Berber Jennet +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 9133,
+    "price": 9112,
     "weight": 300.0,
     "rank": 1,
-    "tier": 7.568383,
+    "tier": 7.55818653,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92186,7 +92186,7 @@
       "chargeDamage": 3,
       "maneuver": 83,
       "speed": 44,
-      "hitPoints": 201,
+      "hitPoints": 198,
       "familyType": 1
     },
     "weapons": []
@@ -92197,10 +92197,10 @@
     "name": "Berber Jennet +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 8280,
+    "price": 9066,
     "weight": 300.0,
     "rank": 2,
-    "tier": 7.155486,
+    "tier": 7.53644562,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92208,7 +92208,7 @@
       "chargeDamage": 3,
       "maneuver": 84,
       "speed": 44,
-      "hitPoints": 206,
+      "hitPoints": 211,
       "familyType": 1
     },
     "weapons": []
@@ -92219,10 +92219,10 @@
     "name": "Berber Jennet +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 8274,
+    "price": 8969,
     "weight": 300.0,
     "rank": 3,
-    "tier": 7.15286446,
+    "tier": 7.49033976,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92230,7 +92230,7 @@
       "chargeDamage": 3,
       "maneuver": 85,
       "speed": 44,
-      "hitPoints": 216,
+      "hitPoints": 223,
       "familyType": 1
     },
     "weapons": []
@@ -92241,10 +92241,10 @@
     "name": "Tchenarani Palfrey",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 9321,
+    "price": 10222,
     "weight": 300.0,
     "rank": 0,
-    "tier": 7.65644073,
+    "tier": 8.06797,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92263,10 +92263,10 @@
     "name": "Tchenarani Palfrey +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 10570,
+    "price": 10455,
     "weight": 300.0,
     "rank": 1,
-    "tier": 8.222254,
+    "tier": 8.171778,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92274,7 +92274,7 @@
       "chargeDamage": 4,
       "maneuver": 84,
       "speed": 44,
-      "hitPoints": 204,
+      "hitPoints": 201,
       "familyType": 1
     },
     "weapons": []
@@ -92285,10 +92285,10 @@
     "name": "Tchenarani Palfrey +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 9546,
+    "price": 10355,
     "weight": 300.0,
     "rank": 2,
-    "tier": 7.760981,
+    "tier": 8.127352,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92296,7 +92296,7 @@
       "chargeDamage": 4,
       "maneuver": 85,
       "speed": 44,
-      "hitPoints": 209,
+      "hitPoints": 214,
       "familyType": 1
     },
     "weapons": []
@@ -92307,10 +92307,10 @@
     "name": "Tchenarani Palfrey +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 9499,
+    "price": 10330,
     "weight": 300.0,
     "rank": 3,
-    "tier": 7.73942471,
+    "tier": 8.116042,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92318,7 +92318,7 @@
       "chargeDamage": 4,
       "maneuver": 86,
       "speed": 44,
-      "hitPoints": 219,
+      "hitPoints": 227,
       "familyType": 1
     },
     "weapons": []
@@ -92329,10 +92329,10 @@
     "name": "Asil Purebred Arabian Palfrey",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 12204,
+    "price": 13233,
     "weight": 300.0,
     "rank": 0,
-    "tier": 8.914717,
+    "tier": 9.327362,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92351,10 +92351,10 @@
     "name": "Asil Purebred Arabian Palfrey +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 13775,
+    "price": 13464,
     "weight": 300.0,
     "rank": 1,
-    "tier": 9.537965,
+    "tier": 9.417759,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92362,7 +92362,7 @@
       "chargeDamage": 4,
       "maneuver": 85,
       "speed": 45,
-      "hitPoints": 207,
+      "hitPoints": 204,
       "familyType": 1
     },
     "weapons": []
@@ -92373,10 +92373,10 @@
     "name": "Asil Purebred Arabian Palfrey +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 12397,
+    "price": 13289,
     "weight": 300.0,
     "rank": 2,
-    "tier": 8.993326,
+    "tier": 9.349146,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92384,7 +92384,7 @@
       "chargeDamage": 4,
       "maneuver": 86,
       "speed": 45,
-      "hitPoints": 212,
+      "hitPoints": 217,
       "familyType": 1
     },
     "weapons": []
@@ -92395,10 +92395,10 @@
     "name": "Asil Purebred Arabian Palfrey +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 12300,
+    "price": 13378,
     "weight": 300.0,
     "rank": 3,
-    "tier": 8.953986,
+    "tier": 9.384224,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92406,7 +92406,7 @@
       "chargeDamage": 4,
       "maneuver": 87,
       "speed": 45,
-      "hitPoints": 222,
+      "hitPoints": 231,
       "familyType": 1
     },
     "weapons": []
@@ -92417,10 +92417,10 @@
     "name": "Marengo",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 15972,
+    "price": 17114,
     "weight": 300.0,
     "rank": 0,
-    "tier": 10.3537092,
+    "tier": 10.7554951,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92439,10 +92439,10 @@
     "name": "Marengo +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 17939,
+    "price": 17561,
     "weight": 300.0,
     "rank": 1,
-    "tier": 11.0375776,
+    "tier": 10.9093513,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92450,7 +92450,7 @@
       "chargeDamage": 4,
       "maneuver": 86,
       "speed": 46,
-      "hitPoints": 210,
+      "hitPoints": 208,
       "familyType": 1
     },
     "weapons": []
@@ -92461,10 +92461,10 @@
     "name": "Marengo +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 16092,
+    "price": 17259,
     "weight": 300.0,
     "rank": 2,
-    "tier": 10.3964424,
+    "tier": 10.8055077,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92472,7 +92472,7 @@
       "chargeDamage": 4,
       "maneuver": 87,
       "speed": 46,
-      "hitPoints": 215,
+      "hitPoints": 221,
       "familyType": 1
     },
     "weapons": []
@@ -92483,10 +92483,10 @@
     "name": "Marengo +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 15919,
+    "price": 17098,
     "weight": 300.0,
     "rank": 3,
-    "tier": 10.334672,
+    "tier": 10.7500982,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92494,7 +92494,7 @@
       "chargeDamage": 4,
       "maneuver": 88,
       "speed": 46,
-      "hitPoints": 225,
+      "hitPoints": 234,
       "familyType": 1
     },
     "weapons": []
@@ -92505,10 +92505,10 @@
     "name": "Baucent",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19758,
+    "price": 20817,
     "weight": 300.0,
     "rank": 0,
-    "tier": 11.6376371,
+    "tier": 11.9742336,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92527,10 +92527,10 @@
     "name": "Baucent +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 22024,
+    "price": 21230,
     "weight": 300.0,
     "rank": 1,
-    "tier": 12.3479309,
+    "tier": 12.1032362,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92538,7 +92538,7 @@
       "chargeDamage": 5,
       "maneuver": 86,
       "speed": 47,
-      "hitPoints": 213,
+      "hitPoints": 211,
       "familyType": 1
     },
     "weapons": []
@@ -92549,10 +92549,10 @@
     "name": "Baucent +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19700,
+    "price": 20785,
     "weight": 300.0,
     "rank": 2,
-    "tier": 11.6190624,
+    "tier": 11.964345,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92560,7 +92560,7 @@
       "chargeDamage": 5,
       "maneuver": 87,
       "speed": 47,
-      "hitPoints": 218,
+      "hitPoints": 224,
       "familyType": 1
     },
     "weapons": []
@@ -92571,10 +92571,10 @@
     "name": "Baucent +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 19426,
+    "price": 20774,
     "weight": 300.0,
     "rank": 3,
-    "tier": 11.5302687,
+    "tier": 11.9607744,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92582,7 +92582,7 @@
       "chargeDamage": 5,
       "maneuver": 88,
       "speed": 47,
-      "hitPoints": 228,
+      "hitPoints": 238,
       "familyType": 1
     },
     "weapons": []
@@ -92593,10 +92593,10 @@
     "name": "Irish Hobby",
     "culture": "Battania",
     "type": "Mount",
-    "price": 1552,
+    "price": 1779,
     "weight": 300.0,
     "rank": 0,
-    "tier": 2.54186749,
+    "tier": 2.78691244,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92615,10 +92615,10 @@
     "name": "Irish Hobby +1",
     "culture": "Battania",
     "type": "Mount",
-    "price": 1795,
+    "price": 1846,
     "weight": 300.0,
     "rank": 1,
-    "tier": 2.80306363,
+    "tier": 2.855839,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92626,7 +92626,7 @@
       "chargeDamage": 2,
       "maneuver": 74,
       "speed": 39,
-      "hitPoints": 186,
+      "hitPoints": 182,
       "familyType": 1
     },
     "weapons": []
@@ -92637,10 +92637,10 @@
     "name": "Irish Hobby +2",
     "culture": "Battania",
     "type": "Mount",
-    "price": 1673,
+    "price": 1855,
     "weight": 300.0,
     "rank": 2,
-    "tier": 2.67400742,
+    "tier": 2.86518764,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92648,7 +92648,7 @@
       "chargeDamage": 2,
       "maneuver": 75,
       "speed": 39,
-      "hitPoints": 191,
+      "hitPoints": 194,
       "familyType": 1
     },
     "weapons": []
@@ -92659,10 +92659,10 @@
     "name": "Irish Hobby +3",
     "culture": "Battania",
     "type": "Mount",
-    "price": 1702,
+    "price": 1853,
     "weight": 300.0,
     "rank": 3,
-    "tier": 2.705766,
+    "tier": 2.86281061,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92670,7 +92670,7 @@
       "chargeDamage": 2,
       "maneuver": 76,
       "speed": 39,
-      "hitPoints": 201,
+      "hitPoints": 205,
       "familyType": 1
     },
     "weapons": []
@@ -92681,10 +92681,10 @@
     "name": "Caspian Palfrey",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2158,
+    "price": 2469,
     "weight": 300.0,
     "rank": 0,
-    "tier": 3.16430736,
+    "tier": 3.45055318,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92703,10 +92703,10 @@
     "name": "Caspian Palfrey +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2494,
+    "price": 2550,
     "weight": 300.0,
     "rank": 1,
-    "tier": 3.473472,
+    "tier": 3.5225718,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92714,7 +92714,7 @@
       "chargeDamage": 2,
       "maneuver": 76,
       "speed": 40,
-      "hitPoints": 189,
+      "hitPoints": 185,
       "familyType": 1
     },
     "weapons": []
@@ -92725,10 +92725,10 @@
     "name": "Caspian Palfrey +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2311,
+    "price": 2552,
     "weight": 300.0,
     "rank": 2,
-    "tier": 3.30718112,
+    "tier": 3.524148,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92736,7 +92736,7 @@
       "chargeDamage": 2,
       "maneuver": 77,
       "speed": 40,
-      "hitPoints": 194,
+      "hitPoints": 197,
       "familyType": 1
     },
     "weapons": []
@@ -92747,10 +92747,10 @@
     "name": "Caspian Palfrey +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 2344,
+    "price": 2569,
     "weight": 300.0,
     "rank": 3,
-    "tier": 3.33795857,
+    "tier": 3.53920245,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92758,7 +92758,7 @@
       "chargeDamage": 2,
       "maneuver": 78,
       "speed": 40,
-      "hitPoints": 204,
+      "hitPoints": 209,
       "familyType": 1
     },
     "weapons": []
@@ -92769,10 +92769,10 @@
     "name": "Marwari Palfrey",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3021,
+    "price": 3441,
     "weight": 300.0,
     "rank": 0,
-    "tier": 3.91979122,
+    "tier": 4.25014448,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92791,10 +92791,10 @@
     "name": "Marwari Palfrey +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3485,
+    "price": 3538,
     "weight": 300.0,
     "rank": 1,
-    "tier": 4.28360844,
+    "tier": 4.32318258,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92802,7 +92802,7 @@
       "chargeDamage": 2,
       "maneuver": 78,
       "speed": 41,
-      "hitPoints": 192,
+      "hitPoints": 188,
       "familyType": 1
     },
     "weapons": []
@@ -92813,10 +92813,10 @@
     "name": "Marwari Palfrey +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3210,
+    "price": 3570,
     "weight": 300.0,
     "rank": 2,
-    "tier": 4.070955,
+    "tier": 4.347624,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92824,7 +92824,7 @@
       "chargeDamage": 2,
       "maneuver": 79,
       "speed": 41,
-      "hitPoints": 197,
+      "hitPoints": 201,
       "familyType": 1
     },
     "weapons": []
@@ -92835,10 +92835,10 @@
     "name": "Marwari Palfrey +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 3245,
+    "price": 3578,
     "weight": 300.0,
     "rank": 3,
-    "tier": 4.098703,
+    "tier": 4.353291,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92846,7 +92846,7 @@
       "chargeDamage": 2,
       "maneuver": 80,
       "speed": 41,
-      "hitPoints": 207,
+      "hitPoints": 213,
       "familyType": 1
     },
     "weapons": []
@@ -92857,10 +92857,10 @@
     "name": "Moroccan Barb",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4247,
+    "price": 4812,
     "weight": 300.0,
     "rank": 0,
-    "tier": 4.83268929,
+    "tier": 5.2092557,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92879,10 +92879,10 @@
     "name": "Moroccan Barb +1",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4888,
+    "price": 4992,
     "weight": 300.0,
     "rank": 1,
-    "tier": 5.25839663,
+    "tier": 5.3242836,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92890,7 +92890,7 @@
       "chargeDamage": 2,
       "maneuver": 80,
       "speed": 42,
-      "hitPoints": 195,
+      "hitPoints": 192,
       "familyType": 1
     },
     "weapons": []
@@ -92901,10 +92901,10 @@
     "name": "Moroccan Barb +2",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4477,
+    "price": 4947,
     "weight": 300.0,
     "rank": 2,
-    "tier": 4.98837757,
+    "tier": 5.29581356,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92912,7 +92912,7 @@
       "chargeDamage": 2,
       "maneuver": 81,
       "speed": 42,
-      "hitPoints": 200,
+      "hitPoints": 204,
       "familyType": 1
     },
     "weapons": []
@@ -92923,10 +92923,10 @@
     "name": "Moroccan Barb +3",
     "culture": "Aserai",
     "type": "Mount",
-    "price": 4510,
+    "price": 4938,
     "weight": 300.0,
     "rank": 3,
-    "tier": 5.01034975,
+    "tier": 5.28992653,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92934,7 +92934,7 @@
       "chargeDamage": 2,
       "maneuver": 82,
       "speed": 42,
-      "hitPoints": 210,
+      "hitPoints": 216,
       "familyType": 1
     },
     "weapons": []
@@ -92945,10 +92945,10 @@
     "name": "Morvandiau Palfrey",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6118,
+    "price": 6857,
     "weight": 300.0,
     "rank": 0,
-    "tier": 6.00467634,
+    "tier": 6.417592,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92967,10 +92967,10 @@
     "name": "Morvandiau Palfrey +1",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 7004,
+    "price": 7073,
     "weight": 300.0,
     "rank": 1,
-    "tier": 6.49715233,
+    "tier": 6.53401947,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -92978,7 +92978,7 @@
       "chargeDamage": 3,
       "maneuver": 82,
       "speed": 43,
-      "hitPoints": 198,
+      "hitPoints": 195,
       "familyType": 1
     },
     "weapons": []
@@ -92989,10 +92989,10 @@
     "name": "Morvandiau Palfrey +2",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6373,
+    "price": 6970,
     "weight": 300.0,
     "rank": 2,
-    "tier": 6.14975166,
+    "tier": 6.478695,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -93000,7 +93000,7 @@
       "chargeDamage": 3,
       "maneuver": 83,
       "speed": 43,
-      "hitPoints": 203,
+      "hitPoints": 207,
       "familyType": 1
     },
     "weapons": []
@@ -93011,10 +93011,10 @@
     "name": "Morvandiau Palfrey +3",
     "culture": "Vlandia",
     "type": "Mount",
-    "price": 6388,
+    "price": 7008,
     "weight": 300.0,
     "rank": 3,
-    "tier": 6.15813828,
+    "tier": 6.49939728,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -93022,7 +93022,7 @@
       "chargeDamage": 3,
       "maneuver": 84,
       "speed": 43,
-      "hitPoints": 213,
+      "hitPoints": 220,
       "familyType": 1
     },
     "weapons": []
@@ -93569,10 +93569,10 @@
     "name": "Mule",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 262,
+    "price": 274,
     "weight": 300.0,
     "rank": 0,
-    "tier": 0.597764552,
+    "tier": 0.624822855,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -93591,10 +93591,10 @@
     "name": "Mule +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 290,
+    "price": 301,
     "weight": 300.0,
     "rank": 1,
-    "tier": 0.663047731,
+    "tier": 0.6869062,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -93602,7 +93602,7 @@
       "chargeDamage": 0,
       "maneuver": 58,
       "speed": 31,
-      "hitPoints": 213,
+      "hitPoints": 217,
       "familyType": 1
     },
     "weapons": []
@@ -93613,10 +93613,10 @@
     "name": "Mule +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 279,
+    "price": 320,
     "weight": 300.0,
     "rank": 2,
-    "tier": 0.6376867,
+    "tier": 0.727782,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -93624,7 +93624,7 @@
       "chargeDamage": 0,
       "maneuver": 59,
       "speed": 31,
-      "hitPoints": 218,
+      "hitPoints": 237,
       "familyType": 1
     },
     "weapons": []
@@ -93635,10 +93635,10 @@
     "name": "Mule +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 283,
+    "price": 341,
     "weight": 300.0,
     "rank": 3,
-    "tier": 0.6469042,
+    "tier": 0.774116158,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -93646,7 +93646,7 @@
       "chargeDamage": 0,
       "maneuver": 60,
       "speed": 31,
-      "hitPoints": 228,
+      "hitPoints": 258,
       "familyType": 1
     },
     "weapons": []
@@ -93657,10 +93657,10 @@
     "name": "Chadz",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 905,
+    "price": 786,
     "weight": 300.0,
     "rank": 0,
-    "tier": 1.73506629,
+    "tier": 1.56104934,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -93679,10 +93679,10 @@
     "name": "Chadz +1",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 975,
+    "price": 864,
     "weight": 300.0,
     "rank": 1,
-    "tier": 1.832874,
+    "tier": 1.6766268,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -93690,7 +93690,7 @@
       "chargeDamage": 1,
       "maneuver": 60,
       "speed": 34,
-      "hitPoints": 279,
+      "hitPoints": 287,
       "familyType": 1
     },
     "weapons": []
@@ -93701,10 +93701,10 @@
     "name": "Chadz +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 907,
+    "price": 921,
     "weight": 300.0,
     "rank": 2,
-    "tier": 1.738115,
+    "tier": 1.75760877,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -93712,7 +93712,7 @@
       "chargeDamage": 1,
       "maneuver": 61,
       "speed": 34,
-      "hitPoints": 284,
+      "hitPoints": 312,
       "familyType": 1
     },
     "weapons": []
@@ -93723,10 +93723,10 @@
     "name": "Chadz +3",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 895,
+    "price": 981,
     "weight": 300.0,
     "rank": 3,
-    "tier": 1.721294,
+    "tier": 1.84076059,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -93734,7 +93734,7 @@
       "chargeDamage": 1,
       "maneuver": 62,
       "speed": 34,
-      "hitPoints": 294,
+      "hitPoints": 337,
       "familyType": 1
     },
     "weapons": []
