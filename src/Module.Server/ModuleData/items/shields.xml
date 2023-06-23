@@ -1216,33 +1216,33 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_scouts_shield_v1_h0" name="{=dbbwszHd}Decorated Round Shield" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" culture="Culture.battania" using_tableau="true" weight="4.600378" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04">
+  <Item id="crpg_highland_scouts_shield_v1_h0" name="{=dbbwszHd}Decorated Round Shield" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" culture="Culture.battania" using_tableau="true" weight="5.175426" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="2" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="320" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="8" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="360" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_scouts_shield_v1_h1" name="{=dbbwszHd}Decorated Round Shield +1" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" culture="Culture.battania" using_tableau="true" weight="4.600378" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04">
+  <Item id="crpg_highland_scouts_shield_v1_h1" name="{=dbbwszHd}Decorated Round Shield +1" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" culture="Culture.battania" using_tableau="true" weight="5.175426" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="3" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="343" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="386" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_scouts_shield_v1_h2" name="{=dbbwszHd}Decorated Round Shield +2" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" culture="Culture.battania" using_tableau="true" weight="4.600378" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04">
+  <Item id="crpg_highland_scouts_shield_v1_h2" name="{=dbbwszHd}Decorated Round Shield +2" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" culture="Culture.battania" using_tableau="true" weight="5.175426" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="3" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="365" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="411" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_scouts_shield_v1_h3" name="{=dbbwszHd}Decorated Round Shield +3" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" culture="Culture.battania" using_tableau="true" weight="4.600378" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04">
+  <Item id="crpg_highland_scouts_shield_v1_h3" name="{=dbbwszHd}Decorated Round Shield +3" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" culture="Culture.battania" using_tableau="true" weight="5.175426" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="3" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="388" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="10" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="436" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
