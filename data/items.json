@@ -20191,10 +20191,10 @@
     "name": "Bracketed Heater Shield",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 422,
+    "price": 330,
     "weight": 2.761391,
     "rank": 0,
-    "tier": 1.35650551,
+    "tier": 1.09876943,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -20203,7 +20203,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -20231,10 +20231,10 @@
     "name": "Bracketed Heater Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 407,
+    "price": 319,
     "weight": 2.761391,
     "rank": 1,
-    "tier": 1.31571031,
+    "tier": 1.06572545,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -20243,7 +20243,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -20271,10 +20271,10 @@
     "name": "Bracketed Heater Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 391,
+    "price": 308,
     "weight": 2.761391,
     "rank": 2,
-    "tier": 1.27256846,
+    "tier": 1.03078032,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -20283,7 +20283,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -20311,10 +20311,10 @@
     "name": "Bracketed Heater Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 378,
+    "price": 298,
     "weight": 2.761391,
     "rank": 3,
-    "tier": 1.23662519,
+    "tier": 1.00166631,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -20323,7 +20323,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -131309,10 +131309,10 @@
     "name": "Reinforced Oaken Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 1819,
+    "price": 1313,
     "weight": 4.142087,
     "rank": 0,
-    "tier": 3.84519529,
+    "tier": 3.114608,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -131321,7 +131321,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -131349,10 +131349,10 @@
     "name": "Reinforced Oaken Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 1936,
+    "price": 1394,
     "weight": 4.142087,
     "rank": 1,
-    "tier": 4.000137,
+    "tier": 3.2401104,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -131361,7 +131361,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -131389,10 +131389,10 @@
     "name": "Reinforced Oaken Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 1837,
+    "price": 1326,
     "weight": 4.142087,
     "rank": 2,
-    "tier": 3.8696816,
+    "tier": 3.13444233,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -131401,7 +131401,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -131429,10 +131429,10 @@
     "name": "Reinforced Oaken Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
-    "price": 1770,
+    "price": 1279,
     "weight": 4.142087,
     "rank": 3,
-    "tier": 3.77874756,
+    "tier": 3.06078529,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -131441,7 +131441,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
