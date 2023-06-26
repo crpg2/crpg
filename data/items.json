@@ -34995,7 +34995,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -35035,7 +35035,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -35075,7 +35075,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -35115,7 +35115,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -38219,7 +38219,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -38259,7 +38259,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -38299,7 +38299,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -38339,7 +38339,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -58601,7 +58601,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -58641,7 +58641,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -58681,7 +58681,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -58721,7 +58721,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -58761,7 +58761,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -58801,7 +58801,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -58841,7 +58841,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -58881,7 +58881,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -100717,7 +100717,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "hand_shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -100757,7 +100757,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "hand_shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -100797,7 +100797,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "hand_shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -100837,7 +100837,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "hand_shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -123727,7 +123727,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -123767,7 +123767,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -123807,7 +123807,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -123847,7 +123847,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -144433,7 +144433,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "hand_shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -144473,7 +144473,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "hand_shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -144513,7 +144513,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "hand_shield",
         "accuracy": 100,
         "missileSpeed": 0,
@@ -144553,7 +144553,7 @@
     ],
     "weapons": [
       {
-        "class": "SmallShield",
+        "class": "LargeShield",
         "itemUsage": "hand_shield",
         "accuracy": 100,
         "missileSpeed": 0,
