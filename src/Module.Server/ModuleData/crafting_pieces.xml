@@ -21542,7 +21542,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_harvesting_season_blade_h0" name="{=gTzMtKYu}Star Falchion Blade Head" tier="3" piece_type="Blade" mesh="cleaver_blade_4" culture="Culture.vlandia" length="96.8" weight="0.40" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Swing damage_type="Cut" damage_factor="4.7" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="BonusAgainstShield" />
@@ -21553,7 +21553,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_harvesting_season_blade_h1" name="{=gTzMtKYu}Star Falchion Blade Head" tier="3" piece_type="Blade" mesh="cleaver_blade_4" culture="Culture.vlandia" length="96.8" weight="0.20" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Swing damage_type="Cut" damage_factor="4.7" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="BonusAgainstShield" />
@@ -21564,7 +21564,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_harvesting_season_blade_h2" name="{=gTzMtKYu}Star Falchion Blade Head" tier="3" piece_type="Blade" mesh="cleaver_blade_4" culture="Culture.vlandia" length="96.8" weight="0.20" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Swing damage_type="Cut" damage_factor="4.9" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
       <Flag name="BonusAgainstShield" />
@@ -21575,7 +21575,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_harvesting_season_blade_h3" name="{=gTzMtKYu}Star Falchion Blade Head" tier="3" piece_type="Blade" mesh="cleaver_blade_4" culture="Culture.vlandia" length="96.8" weight="0.20" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Swing damage_type="Cut" damage_factor="5.1" />
+      <Swing damage_type="Cut" damage_factor="4.9" />
     </BladeData>
     <Flags>
       <Flag name="BonusAgainstShield" />

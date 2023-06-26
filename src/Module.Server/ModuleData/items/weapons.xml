@@ -5220,7 +5220,7 @@
       <Piece id="crpg_tapered_two-hander_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_harvesting_season_h0" name="{=XTGdfqVV}Harvesting Season" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
+  <CraftedItem id="crpg_harvesting_season_v1_h0" name="{=XTGdfqVV}Harvesting Season" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_harvesting_season_blade_h0" Type="Blade" scale_factor="120" />
       <Piece id="crpg_harvesting_season_guard_h0" Type="Guard" scale_factor="100" />
@@ -5228,7 +5228,7 @@
       <Piece id="crpg_harvesting_season_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_harvesting_season_h1" name="{=XTGdfqVV}Harvesting Season +1" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
+  <CraftedItem id="crpg_harvesting_season_v1_h1" name="{=XTGdfqVV}Harvesting Season +1" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_harvesting_season_blade_h1" Type="Blade" scale_factor="120" />
       <Piece id="crpg_harvesting_season_guard_h1" Type="Guard" scale_factor="100" />
@@ -5236,7 +5236,7 @@
       <Piece id="crpg_harvesting_season_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_harvesting_season_h2" name="{=XTGdfqVV}Harvesting Season +2" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
+  <CraftedItem id="crpg_harvesting_season_v1_h2" name="{=XTGdfqVV}Harvesting Season +2" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_harvesting_season_blade_h2" Type="Blade" scale_factor="120" />
       <Piece id="crpg_harvesting_season_guard_h2" Type="Guard" scale_factor="100" />
@@ -5244,7 +5244,7 @@
       <Piece id="crpg_harvesting_season_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_harvesting_season_h3" name="{=XTGdfqVV}Harvesting Season +3" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
+  <CraftedItem id="crpg_harvesting_season_v1_h3" name="{=XTGdfqVV}Harvesting Season +3" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_harvesting_season_blade_h3" Type="Blade" scale_factor="120" />
       <Piece id="crpg_harvesting_season_guard_h3" Type="Guard" scale_factor="100" />
