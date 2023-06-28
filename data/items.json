@@ -54964,45 +54964,10 @@
     "name": "Heavy Horsemans Mace +1",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 3819,
+    "price": 5184,
     "weight": 1.6,
     "rank": 1,
-    "tier": 6.81811047,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 94,
-        "balance": 0.43,
-        "handling": 84,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 90,
-        "swingDamage": 24,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 82
-      }
-    ]
-  },
-  {
-    "id": "crpg_heavy_horsemans_mace_h2",
-    "baseId": "crpg_heavy_horsemans_mace",
-    "name": "Heavy Horsemans Mace +2",
-    "culture": "Aserai",
-    "type": "OneHandedWeapon",
-    "price": 3828,
-    "weight": 1.6,
-    "rank": 2,
-    "tier": 6.82842731,
+    "tier": 8.126394,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -55023,6 +54988,41 @@
         "thrustDamageType": "Undefined",
         "thrustSpeed": 90,
         "swingDamage": 25,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 82
+      }
+    ]
+  },
+  {
+    "id": "crpg_heavy_horsemans_mace_h2",
+    "baseId": "crpg_heavy_horsemans_mace",
+    "name": "Heavy Horsemans Mace +2",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 5135,
+    "weight": 1.6,
+    "rank": 2,
+    "tier": 8.082842,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 94,
+        "balance": 0.43,
+        "handling": 84,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
         "swingSpeed": 82
       }
@@ -71932,45 +71932,10 @@
     "name": "Knight's Fall +1",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 2938,
+    "price": 4016,
     "weight": 1.68,
     "rank": 1,
-    "tier": 5.8465004,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.5,
-        "handling": 85,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 23,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 85
-      }
-    ]
-  },
-  {
-    "id": "crpg_knights_fall_h2",
-    "baseId": "crpg_knights_fall",
-    "name": "Knight's Fall +2",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 2983,
-    "weight": 1.68,
-    "rank": 2,
-    "tier": 5.89925766,
+    "tier": 7.02060556,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -71991,6 +71956,41 @@
         "thrustDamageType": "Undefined",
         "thrustSpeed": 89,
         "swingDamage": 24,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
+      }
+    ]
+  },
+  {
+    "id": "crpg_knights_fall_h2",
+    "baseId": "crpg_knights_fall",
+    "name": "Knight's Fall +2",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 4027,
+    "weight": 1.68,
+    "rank": 2,
+    "tier": 7.031228,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.5,
+        "handling": 85,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
       }
@@ -79066,10 +79066,10 @@
     "name": "Long Fine Steel Spear +1",
     "culture": "Empire",
     "type": "Polearm",
-    "price": 11951,
-    "weight": 1.79,
+    "price": 11085,
+    "weight": 1.83,
     "rank": 1,
-    "tier": 9.15708,
+    "tier": 8.779509,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -79081,7 +79081,7 @@
         "stackAmount": 0,
         "length": 281,
         "balance": 0.0,
-        "handling": 48,
+        "handling": 47,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
