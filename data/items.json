@@ -149764,8 +149764,8 @@
     ]
   },
   {
-    "id": "crpg_wooden_twohander_h0",
-    "baseId": "crpg_wooden_twohander",
+    "id": "crpg_wooden_twohander_v1_h0",
+    "baseId": "crpg_wooden_twohander_v1",
     "name": "Wooden Twohander",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
@@ -149801,8 +149801,8 @@
     ]
   },
   {
-    "id": "crpg_wooden_twohander_h1",
-    "baseId": "crpg_wooden_twohander",
+    "id": "crpg_wooden_twohander_v1_h1",
+    "baseId": "crpg_wooden_twohander_v1",
     "name": "Wooden Twohander +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
@@ -149838,8 +149838,8 @@
     ]
   },
   {
-    "id": "crpg_wooden_twohander_h2",
-    "baseId": "crpg_wooden_twohander",
+    "id": "crpg_wooden_twohander_v1_h2",
+    "baseId": "crpg_wooden_twohander_v1",
     "name": "Wooden Twohander +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
@@ -149875,8 +149875,8 @@
     ]
   },
   {
-    "id": "crpg_wooden_twohander_h3",
-    "baseId": "crpg_wooden_twohander",
+    "id": "crpg_wooden_twohander_v1_h3",
+    "baseId": "crpg_wooden_twohander_v1",
     "name": "Wooden Twohander +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
