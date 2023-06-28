@@ -1432,8 +1432,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_adarga_v1_h0",
-    "baseId": "crpg_adarga_v1",
+    "id": "crpg_adarga_v2_h0",
+    "baseId": "crpg_adarga_v2",
     "name": "Adarga",
     "culture": "Aserai",
     "type": "Shield",
@@ -1472,8 +1472,8 @@
     ]
   },
   {
-    "id": "crpg_adarga_v1_h1",
-    "baseId": "crpg_adarga_v1",
+    "id": "crpg_adarga_v2_h1",
+    "baseId": "crpg_adarga_v2",
     "name": "Adarga +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -1512,8 +1512,8 @@
     ]
   },
   {
-    "id": "crpg_adarga_v1_h2",
-    "baseId": "crpg_adarga_v1",
+    "id": "crpg_adarga_v2_h2",
+    "baseId": "crpg_adarga_v2",
     "name": "Adarga +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -1552,8 +1552,8 @@
     ]
   },
   {
-    "id": "crpg_adarga_v1_h3",
-    "baseId": "crpg_adarga_v1",
+    "id": "crpg_adarga_v2_h3",
+    "baseId": "crpg_adarga_v2",
     "name": "Adarga +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -11638,8 +11638,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battania_large_shield_a_v1_h0",
-    "baseId": "crpg_battania_large_shield_a_v1",
+    "id": "crpg_battania_large_shield_a_v2_h0",
+    "baseId": "crpg_battania_large_shield_a_v2",
     "name": "Bronze Reinforced Highland Large Shield",
     "culture": "Battania",
     "type": "Shield",
@@ -11678,8 +11678,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_a_v1_h1",
-    "baseId": "crpg_battania_large_shield_a_v1",
+    "id": "crpg_battania_large_shield_a_v2_h1",
+    "baseId": "crpg_battania_large_shield_a_v2",
     "name": "Bronze Reinforced Highland Large Shield +1",
     "culture": "Battania",
     "type": "Shield",
@@ -11718,8 +11718,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_a_v1_h2",
-    "baseId": "crpg_battania_large_shield_a_v1",
+    "id": "crpg_battania_large_shield_a_v2_h2",
+    "baseId": "crpg_battania_large_shield_a_v2",
     "name": "Bronze Reinforced Highland Large Shield +2",
     "culture": "Battania",
     "type": "Shield",
@@ -11758,8 +11758,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_a_v1_h3",
-    "baseId": "crpg_battania_large_shield_a_v1",
+    "id": "crpg_battania_large_shield_a_v2_h3",
+    "baseId": "crpg_battania_large_shield_a_v2",
     "name": "Bronze Reinforced Highland Large Shield +3",
     "culture": "Battania",
     "type": "Shield",
@@ -11798,8 +11798,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_b_v1_h0",
-    "baseId": "crpg_battania_large_shield_b_v1",
+    "id": "crpg_battania_large_shield_b_v2_h0",
+    "baseId": "crpg_battania_large_shield_b_v2",
     "name": "Iron Reinforced Highland Large Shield",
     "culture": "Battania",
     "type": "Shield",
@@ -11838,8 +11838,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_b_v1_h1",
-    "baseId": "crpg_battania_large_shield_b_v1",
+    "id": "crpg_battania_large_shield_b_v2_h1",
+    "baseId": "crpg_battania_large_shield_b_v2",
     "name": "Iron Reinforced Highland Large Shield +1",
     "culture": "Battania",
     "type": "Shield",
@@ -11878,8 +11878,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_b_v1_h2",
-    "baseId": "crpg_battania_large_shield_b_v1",
+    "id": "crpg_battania_large_shield_b_v2_h2",
+    "baseId": "crpg_battania_large_shield_b_v2",
     "name": "Iron Reinforced Highland Large Shield +2",
     "culture": "Battania",
     "type": "Shield",
@@ -11918,8 +11918,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_b_v1_h3",
-    "baseId": "crpg_battania_large_shield_b_v1",
+    "id": "crpg_battania_large_shield_b_v2_h3",
+    "baseId": "crpg_battania_large_shield_b_v2",
     "name": "Iron Reinforced Highland Large Shield +3",
     "culture": "Battania",
     "type": "Shield",
@@ -11958,8 +11958,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_c_v1_h0",
-    "baseId": "crpg_battania_large_shield_c_v1",
+    "id": "crpg_battania_large_shield_c_v2_h0",
+    "baseId": "crpg_battania_large_shield_c_v2",
     "name": "Highland Large Shield",
     "culture": "Battania",
     "type": "Shield",
@@ -11998,8 +11998,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_c_v1_h1",
-    "baseId": "crpg_battania_large_shield_c_v1",
+    "id": "crpg_battania_large_shield_c_v2_h1",
+    "baseId": "crpg_battania_large_shield_c_v2",
     "name": "Highland Large Shield +1",
     "culture": "Battania",
     "type": "Shield",
@@ -12038,8 +12038,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_c_v1_h2",
-    "baseId": "crpg_battania_large_shield_c_v1",
+    "id": "crpg_battania_large_shield_c_v2_h2",
+    "baseId": "crpg_battania_large_shield_c_v2",
     "name": "Highland Large Shield +2",
     "culture": "Battania",
     "type": "Shield",
@@ -12078,8 +12078,8 @@
     ]
   },
   {
-    "id": "crpg_battania_large_shield_c_v1_h3",
-    "baseId": "crpg_battania_large_shield_c_v1",
+    "id": "crpg_battania_large_shield_c_v2_h3",
+    "baseId": "crpg_battania_large_shield_c_v2",
     "name": "Highland Large Shield +3",
     "culture": "Battania",
     "type": "Shield",
@@ -13358,8 +13358,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battania_targe_b_v1_h0",
-    "baseId": "crpg_battania_targe_b_v1",
+    "id": "crpg_battania_targe_b_v2_h0",
+    "baseId": "crpg_battania_targe_b_v2",
     "name": "Targe",
     "culture": "Battania",
     "type": "Shield",
@@ -13398,8 +13398,8 @@
     ]
   },
   {
-    "id": "crpg_battania_targe_b_v1_h1",
-    "baseId": "crpg_battania_targe_b_v1",
+    "id": "crpg_battania_targe_b_v2_h1",
+    "baseId": "crpg_battania_targe_b_v2",
     "name": "Targe +1",
     "culture": "Battania",
     "type": "Shield",
@@ -13438,8 +13438,8 @@
     ]
   },
   {
-    "id": "crpg_battania_targe_b_v1_h2",
-    "baseId": "crpg_battania_targe_b_v1",
+    "id": "crpg_battania_targe_b_v2_h2",
+    "baseId": "crpg_battania_targe_b_v2",
     "name": "Targe +2",
     "culture": "Battania",
     "type": "Shield",
@@ -13478,8 +13478,8 @@
     ]
   },
   {
-    "id": "crpg_battania_targe_b_v1_h3",
-    "baseId": "crpg_battania_targe_b_v1",
+    "id": "crpg_battania_targe_b_v2_h3",
+    "baseId": "crpg_battania_targe_b_v2",
     "name": "Targe +3",
     "culture": "Battania",
     "type": "Shield",
@@ -15618,8 +15618,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battered_horsemans_kite_shield_v1_h0",
-    "baseId": "crpg_battered_horsemans_kite_shield_v1",
+    "id": "crpg_battered_horsemans_kite_shield_v2_h0",
+    "baseId": "crpg_battered_horsemans_kite_shield_v2",
     "name": "Simple Horseman Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -15658,8 +15658,8 @@
     ]
   },
   {
-    "id": "crpg_battered_horsemans_kite_shield_v1_h1",
-    "baseId": "crpg_battered_horsemans_kite_shield_v1",
+    "id": "crpg_battered_horsemans_kite_shield_v2_h1",
+    "baseId": "crpg_battered_horsemans_kite_shield_v2",
     "name": "Simple Horseman Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -15698,8 +15698,8 @@
     ]
   },
   {
-    "id": "crpg_battered_horsemans_kite_shield_v1_h2",
-    "baseId": "crpg_battered_horsemans_kite_shield_v1",
+    "id": "crpg_battered_horsemans_kite_shield_v2_h2",
+    "baseId": "crpg_battered_horsemans_kite_shield_v2",
     "name": "Simple Horseman Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -15738,8 +15738,8 @@
     ]
   },
   {
-    "id": "crpg_battered_horsemans_kite_shield_v1_h3",
-    "baseId": "crpg_battered_horsemans_kite_shield_v1",
+    "id": "crpg_battered_horsemans_kite_shield_v2_h3",
+    "baseId": "crpg_battered_horsemans_kite_shield_v2",
     "name": "Simple Horseman Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -19668,8 +19668,8 @@
     ]
   },
   {
-    "id": "crpg_bound_adarga_v1_h0",
-    "baseId": "crpg_bound_adarga_v1",
+    "id": "crpg_bound_adarga_v2_h0",
+    "baseId": "crpg_bound_adarga_v2",
     "name": "Wooden Adarga",
     "culture": "Aserai",
     "type": "Shield",
@@ -19708,8 +19708,8 @@
     ]
   },
   {
-    "id": "crpg_bound_adarga_v1_h1",
-    "baseId": "crpg_bound_adarga_v1",
+    "id": "crpg_bound_adarga_v2_h1",
+    "baseId": "crpg_bound_adarga_v2",
     "name": "Wooden Adarga +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -19748,8 +19748,8 @@
     ]
   },
   {
-    "id": "crpg_bound_adarga_v1_h2",
-    "baseId": "crpg_bound_adarga_v1",
+    "id": "crpg_bound_adarga_v2_h2",
+    "baseId": "crpg_bound_adarga_v2",
     "name": "Wooden Adarga +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -19788,8 +19788,8 @@
     ]
   },
   {
-    "id": "crpg_bound_adarga_v1_h3",
-    "baseId": "crpg_bound_adarga_v1",
+    "id": "crpg_bound_adarga_v2_h3",
+    "baseId": "crpg_bound_adarga_v2",
     "name": "Wooden Adarga +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -19828,8 +19828,8 @@
     ]
   },
   {
-    "id": "crpg_bound_desert_round_shield_v1_h0",
-    "baseId": "crpg_bound_desert_round_shield_v1",
+    "id": "crpg_bound_desert_round_shield_v2_h0",
+    "baseId": "crpg_bound_desert_round_shield_v2",
     "name": "Desert Round Shield",
     "culture": "Aserai",
     "type": "Shield",
@@ -19868,8 +19868,8 @@
     ]
   },
   {
-    "id": "crpg_bound_desert_round_shield_v1_h1",
-    "baseId": "crpg_bound_desert_round_shield_v1",
+    "id": "crpg_bound_desert_round_shield_v2_h1",
+    "baseId": "crpg_bound_desert_round_shield_v2",
     "name": "Desert Round Shield +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -19908,8 +19908,8 @@
     ]
   },
   {
-    "id": "crpg_bound_desert_round_shield_v1_h2",
-    "baseId": "crpg_bound_desert_round_shield_v1",
+    "id": "crpg_bound_desert_round_shield_v2_h2",
+    "baseId": "crpg_bound_desert_round_shield_v2",
     "name": "Desert Round Shield +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -19948,8 +19948,8 @@
     ]
   },
   {
-    "id": "crpg_bound_desert_round_shield_v1_h3",
-    "baseId": "crpg_bound_desert_round_shield_v1",
+    "id": "crpg_bound_desert_round_shield_v2_h3",
+    "baseId": "crpg_bound_desert_round_shield_v2",
     "name": "Desert Round Shield +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -19988,8 +19988,8 @@
     ]
   },
   {
-    "id": "crpg_bound_horsemans_kite_shield_v1_h0",
-    "baseId": "crpg_bound_horsemans_kite_shield_v1",
+    "id": "crpg_bound_horsemans_kite_shield_v2_h0",
+    "baseId": "crpg_bound_horsemans_kite_shield_v2",
     "name": "Cavalry Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -20028,8 +20028,8 @@
     ]
   },
   {
-    "id": "crpg_bound_horsemans_kite_shield_v1_h1",
-    "baseId": "crpg_bound_horsemans_kite_shield_v1",
+    "id": "crpg_bound_horsemans_kite_shield_v2_h1",
+    "baseId": "crpg_bound_horsemans_kite_shield_v2",
     "name": "Cavalry Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -20068,8 +20068,8 @@
     ]
   },
   {
-    "id": "crpg_bound_horsemans_kite_shield_v1_h2",
-    "baseId": "crpg_bound_horsemans_kite_shield_v1",
+    "id": "crpg_bound_horsemans_kite_shield_v2_h2",
+    "baseId": "crpg_bound_horsemans_kite_shield_v2",
     "name": "Cavalry Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -20108,8 +20108,8 @@
     ]
   },
   {
-    "id": "crpg_bound_horsemans_kite_shield_v1_h3",
-    "baseId": "crpg_bound_horsemans_kite_shield_v1",
+    "id": "crpg_bound_horsemans_kite_shield_v2_h3",
+    "baseId": "crpg_bound_horsemans_kite_shield_v2",
     "name": "Cavalry Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -20186,8 +20186,8 @@
     ]
   },
   {
-    "id": "crpg_bracketed_heater_shield_v1_h0",
-    "baseId": "crpg_bracketed_heater_shield_v1",
+    "id": "crpg_bracketed_heater_shield_v2_h0",
+    "baseId": "crpg_bracketed_heater_shield_v2",
     "name": "Bracketed Heater Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -20226,8 +20226,8 @@
     ]
   },
   {
-    "id": "crpg_bracketed_heater_shield_v1_h1",
-    "baseId": "crpg_bracketed_heater_shield_v1",
+    "id": "crpg_bracketed_heater_shield_v2_h1",
+    "baseId": "crpg_bracketed_heater_shield_v2",
     "name": "Bracketed Heater Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -20266,8 +20266,8 @@
     ]
   },
   {
-    "id": "crpg_bracketed_heater_shield_v1_h2",
-    "baseId": "crpg_bracketed_heater_shield_v1",
+    "id": "crpg_bracketed_heater_shield_v2_h2",
+    "baseId": "crpg_bracketed_heater_shield_v2",
     "name": "Bracketed Heater Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -20306,8 +20306,8 @@
     ]
   },
   {
-    "id": "crpg_bracketed_heater_shield_v1_h3",
-    "baseId": "crpg_bracketed_heater_shield_v1",
+    "id": "crpg_bracketed_heater_shield_v2_h3",
+    "baseId": "crpg_bracketed_heater_shield_v2",
     "name": "Bracketed Heater Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -22750,8 +22750,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_buckler_v1_h0",
-    "baseId": "crpg_buckler_v1",
+    "id": "crpg_buckler_v2_h0",
+    "baseId": "crpg_buckler_v2",
     "name": "Round Buckler Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -22789,8 +22789,8 @@
     ]
   },
   {
-    "id": "crpg_buckler_v1_h1",
-    "baseId": "crpg_buckler_v1",
+    "id": "crpg_buckler_v2_h1",
+    "baseId": "crpg_buckler_v2",
     "name": "Round Buckler Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -22828,8 +22828,8 @@
     ]
   },
   {
-    "id": "crpg_buckler_v1_h2",
-    "baseId": "crpg_buckler_v1",
+    "id": "crpg_buckler_v2_h2",
+    "baseId": "crpg_buckler_v2",
     "name": "Round Buckler Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -22867,8 +22867,8 @@
     ]
   },
   {
-    "id": "crpg_buckler_v1_h3",
-    "baseId": "crpg_buckler_v1",
+    "id": "crpg_buckler_v2_h3",
+    "baseId": "crpg_buckler_v2",
     "name": "Round Buckler Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -25670,8 +25670,8 @@
     ]
   },
   {
-    "id": "crpg_chivalric_kite_shield_v1_h0",
-    "baseId": "crpg_chivalric_kite_shield_v1",
+    "id": "crpg_chivalric_kite_shield_v2_h0",
+    "baseId": "crpg_chivalric_kite_shield_v2",
     "name": "Knights Kite Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -25710,8 +25710,8 @@
     ]
   },
   {
-    "id": "crpg_chivalric_kite_shield_v1_h1",
-    "baseId": "crpg_chivalric_kite_shield_v1",
+    "id": "crpg_chivalric_kite_shield_v2_h1",
+    "baseId": "crpg_chivalric_kite_shield_v2",
     "name": "Knights Kite Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -25750,8 +25750,8 @@
     ]
   },
   {
-    "id": "crpg_chivalric_kite_shield_v1_h2",
-    "baseId": "crpg_chivalric_kite_shield_v1",
+    "id": "crpg_chivalric_kite_shield_v2_h2",
+    "baseId": "crpg_chivalric_kite_shield_v2",
     "name": "Knights Kite Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -25790,8 +25790,8 @@
     ]
   },
   {
-    "id": "crpg_chivalric_kite_shield_v1_h3",
-    "baseId": "crpg_chivalric_kite_shield_v1",
+    "id": "crpg_chivalric_kite_shield_v2_h3",
+    "baseId": "crpg_chivalric_kite_shield_v2",
     "name": "Knights Kite Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -29560,8 +29560,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_curved_round_shield_v1_h0",
-    "baseId": "crpg_curved_round_shield_v1",
+    "id": "crpg_curved_round_shield_v2_h0",
+    "baseId": "crpg_curved_round_shield_v2",
     "name": "Curved Round Shield",
     "culture": "Aserai",
     "type": "Shield",
@@ -29600,8 +29600,8 @@
     ]
   },
   {
-    "id": "crpg_curved_round_shield_v1_h1",
-    "baseId": "crpg_curved_round_shield_v1",
+    "id": "crpg_curved_round_shield_v2_h1",
+    "baseId": "crpg_curved_round_shield_v2",
     "name": "Curved Round Shield +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -29640,8 +29640,8 @@
     ]
   },
   {
-    "id": "crpg_curved_round_shield_v1_h2",
-    "baseId": "crpg_curved_round_shield_v1",
+    "id": "crpg_curved_round_shield_v2_h2",
+    "baseId": "crpg_curved_round_shield_v2",
     "name": "Curved Round Shield +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -29680,8 +29680,8 @@
     ]
   },
   {
-    "id": "crpg_curved_round_shield_v1_h3",
-    "baseId": "crpg_curved_round_shield_v1",
+    "id": "crpg_curved_round_shield_v2_h3",
+    "baseId": "crpg_curved_round_shield_v2",
     "name": "Curved Round Shield +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -33196,8 +33196,8 @@
     ]
   },
   {
-    "id": "crpg_decorated_steppe_shield_v1_h0",
-    "baseId": "crpg_decorated_steppe_shield_v1",
+    "id": "crpg_decorated_steppe_shield_v2_h0",
+    "baseId": "crpg_decorated_steppe_shield_v2",
     "name": "Round Steppe Shield",
     "culture": "Khuzait",
     "type": "Shield",
@@ -33236,8 +33236,8 @@
     ]
   },
   {
-    "id": "crpg_decorated_steppe_shield_v1_h1",
-    "baseId": "crpg_decorated_steppe_shield_v1",
+    "id": "crpg_decorated_steppe_shield_v2_h1",
+    "baseId": "crpg_decorated_steppe_shield_v2",
     "name": "Round Steppe Shield +1",
     "culture": "Khuzait",
     "type": "Shield",
@@ -33276,8 +33276,8 @@
     ]
   },
   {
-    "id": "crpg_decorated_steppe_shield_v1_h2",
-    "baseId": "crpg_decorated_steppe_shield_v1",
+    "id": "crpg_decorated_steppe_shield_v2_h2",
+    "baseId": "crpg_decorated_steppe_shield_v2",
     "name": "Round Steppe Shield +2",
     "culture": "Khuzait",
     "type": "Shield",
@@ -33316,8 +33316,8 @@
     ]
   },
   {
-    "id": "crpg_decorated_steppe_shield_v1_h3",
-    "baseId": "crpg_decorated_steppe_shield_v1",
+    "id": "crpg_decorated_steppe_shield_v2_h3",
+    "baseId": "crpg_decorated_steppe_shield_v2",
     "name": "Round Steppe Shield +3",
     "culture": "Khuzait",
     "type": "Shield",
@@ -34978,8 +34978,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_desert_oval_shield_v1_h0",
-    "baseId": "crpg_desert_oval_shield_v1",
+    "id": "crpg_desert_oval_shield_v2_h0",
+    "baseId": "crpg_desert_oval_shield_v2",
     "name": "Desert Oval Shield",
     "culture": "Aserai",
     "type": "Shield",
@@ -35018,8 +35018,8 @@
     ]
   },
   {
-    "id": "crpg_desert_oval_shield_v1_h1",
-    "baseId": "crpg_desert_oval_shield_v1",
+    "id": "crpg_desert_oval_shield_v2_h1",
+    "baseId": "crpg_desert_oval_shield_v2",
     "name": "Desert Oval Shield +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -35058,8 +35058,8 @@
     ]
   },
   {
-    "id": "crpg_desert_oval_shield_v1_h2",
-    "baseId": "crpg_desert_oval_shield_v1",
+    "id": "crpg_desert_oval_shield_v2_h2",
+    "baseId": "crpg_desert_oval_shield_v2",
     "name": "Desert Oval Shield +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -35098,8 +35098,8 @@
     ]
   },
   {
-    "id": "crpg_desert_oval_shield_v1_h3",
-    "baseId": "crpg_desert_oval_shield_v1",
+    "id": "crpg_desert_oval_shield_v2_h3",
+    "baseId": "crpg_desert_oval_shield_v2",
     "name": "Desert Oval Shield +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -37850,8 +37850,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_eastern_wicker_shield_v1_h0",
-    "baseId": "crpg_eastern_wicker_shield_v1",
+    "id": "crpg_eastern_wicker_shield_v2_h0",
+    "baseId": "crpg_eastern_wicker_shield_v2",
     "name": "Wicker Square Shield",
     "culture": "Khuzait",
     "type": "Shield",
@@ -37890,8 +37890,8 @@
     ]
   },
   {
-    "id": "crpg_eastern_wicker_shield_v1_h1",
-    "baseId": "crpg_eastern_wicker_shield_v1",
+    "id": "crpg_eastern_wicker_shield_v2_h1",
+    "baseId": "crpg_eastern_wicker_shield_v2",
     "name": "Wicker Square Shield +1",
     "culture": "Khuzait",
     "type": "Shield",
@@ -37930,8 +37930,8 @@
     ]
   },
   {
-    "id": "crpg_eastern_wicker_shield_v1_h2",
-    "baseId": "crpg_eastern_wicker_shield_v1",
+    "id": "crpg_eastern_wicker_shield_v2_h2",
+    "baseId": "crpg_eastern_wicker_shield_v2",
     "name": "Wicker Square Shield +2",
     "culture": "Khuzait",
     "type": "Shield",
@@ -37970,8 +37970,8 @@
     ]
   },
   {
-    "id": "crpg_eastern_wicker_shield_v1_h3",
-    "baseId": "crpg_eastern_wicker_shield_v1",
+    "id": "crpg_eastern_wicker_shield_v2_h3",
+    "baseId": "crpg_eastern_wicker_shield_v2",
     "name": "Wicker Square Shield +3",
     "culture": "Khuzait",
     "type": "Shield",
@@ -38202,8 +38202,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_emirs_oval_shield_v1_h0",
-    "baseId": "crpg_emirs_oval_shield_v1",
+    "id": "crpg_emirs_oval_shield_v2_h0",
+    "baseId": "crpg_emirs_oval_shield_v2",
     "name": "Decorated Oval Shield",
     "culture": "Aserai",
     "type": "Shield",
@@ -38242,8 +38242,8 @@
     ]
   },
   {
-    "id": "crpg_emirs_oval_shield_v1_h1",
-    "baseId": "crpg_emirs_oval_shield_v1",
+    "id": "crpg_emirs_oval_shield_v2_h1",
+    "baseId": "crpg_emirs_oval_shield_v2",
     "name": "Decorated Oval Shield +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -38282,8 +38282,8 @@
     ]
   },
   {
-    "id": "crpg_emirs_oval_shield_v1_h2",
-    "baseId": "crpg_emirs_oval_shield_v1",
+    "id": "crpg_emirs_oval_shield_v2_h2",
+    "baseId": "crpg_emirs_oval_shield_v2",
     "name": "Decorated Oval Shield +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -38322,8 +38322,8 @@
     ]
   },
   {
-    "id": "crpg_emirs_oval_shield_v1_h3",
-    "baseId": "crpg_emirs_oval_shield_v1",
+    "id": "crpg_emirs_oval_shield_v2_h3",
+    "baseId": "crpg_emirs_oval_shield_v2",
     "name": "Decorated Oval Shield +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -45662,8 +45662,8 @@
     ]
   },
   {
-    "id": "crpg_flat_heater_shield_v1_h0",
-    "baseId": "crpg_flat_heater_shield_v1",
+    "id": "crpg_flat_heater_shield_v2_h0",
+    "baseId": "crpg_flat_heater_shield_v2",
     "name": "Flat Heater Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -45702,8 +45702,8 @@
     ]
   },
   {
-    "id": "crpg_flat_heater_shield_v1_h1",
-    "baseId": "crpg_flat_heater_shield_v1",
+    "id": "crpg_flat_heater_shield_v2_h1",
+    "baseId": "crpg_flat_heater_shield_v2",
     "name": "Flat Heater Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -45742,8 +45742,8 @@
     ]
   },
   {
-    "id": "crpg_flat_heater_shield_v1_h2",
-    "baseId": "crpg_flat_heater_shield_v1",
+    "id": "crpg_flat_heater_shield_v2_h2",
+    "baseId": "crpg_flat_heater_shield_v2",
     "name": "Flat Heater Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -45782,8 +45782,8 @@
     ]
   },
   {
-    "id": "crpg_flat_heater_shield_v1_h3",
-    "baseId": "crpg_flat_heater_shield_v1",
+    "id": "crpg_flat_heater_shield_v2_h3",
+    "baseId": "crpg_flat_heater_shield_v2",
     "name": "Flat Heater Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -46114,8 +46114,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_footmans_wicker_shield_v1_h0",
-    "baseId": "crpg_footmans_wicker_shield_v1",
+    "id": "crpg_footmans_wicker_shield_v2_h0",
+    "baseId": "crpg_footmans_wicker_shield_v2",
     "name": "Wicker Shield",
     "culture": "Khuzait",
     "type": "Shield",
@@ -46154,8 +46154,8 @@
     ]
   },
   {
-    "id": "crpg_footmans_wicker_shield_v1_h1",
-    "baseId": "crpg_footmans_wicker_shield_v1",
+    "id": "crpg_footmans_wicker_shield_v2_h1",
+    "baseId": "crpg_footmans_wicker_shield_v2",
     "name": "Wicker Shield +1",
     "culture": "Khuzait",
     "type": "Shield",
@@ -46194,8 +46194,8 @@
     ]
   },
   {
-    "id": "crpg_footmans_wicker_shield_v1_h2",
-    "baseId": "crpg_footmans_wicker_shield_v1",
+    "id": "crpg_footmans_wicker_shield_v2_h2",
+    "baseId": "crpg_footmans_wicker_shield_v2",
     "name": "Wicker Shield +2",
     "culture": "Khuzait",
     "type": "Shield",
@@ -46234,8 +46234,8 @@
     ]
   },
   {
-    "id": "crpg_footmans_wicker_shield_v1_h3",
-    "baseId": "crpg_footmans_wicker_shield_v1",
+    "id": "crpg_footmans_wicker_shield_v2_h3",
+    "baseId": "crpg_footmans_wicker_shield_v2",
     "name": "Wicker Shield +3",
     "culture": "Khuzait",
     "type": "Shield",
@@ -46426,8 +46426,8 @@
     ]
   },
   {
-    "id": "crpg_fortified_kite_shield_v1_h0",
-    "baseId": "crpg_fortified_kite_shield_v1",
+    "id": "crpg_fortified_kite_shield_v2_h0",
+    "baseId": "crpg_fortified_kite_shield_v2",
     "name": "Fortified Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -46466,8 +46466,8 @@
     ]
   },
   {
-    "id": "crpg_fortified_kite_shield_v1_h1",
-    "baseId": "crpg_fortified_kite_shield_v1",
+    "id": "crpg_fortified_kite_shield_v2_h1",
+    "baseId": "crpg_fortified_kite_shield_v2",
     "name": "Fortified Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -46506,8 +46506,8 @@
     ]
   },
   {
-    "id": "crpg_fortified_kite_shield_v1_h2",
-    "baseId": "crpg_fortified_kite_shield_v1",
+    "id": "crpg_fortified_kite_shield_v2_h2",
+    "baseId": "crpg_fortified_kite_shield_v2",
     "name": "Fortified Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -46546,8 +46546,8 @@
     ]
   },
   {
-    "id": "crpg_fortified_kite_shield_v1_h3",
-    "baseId": "crpg_fortified_kite_shield_v1",
+    "id": "crpg_fortified_kite_shield_v2_h3",
+    "baseId": "crpg_fortified_kite_shield_v2",
     "name": "Fortified Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -53260,8 +53260,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_heater_shield_with_cutout_v1_h0",
-    "baseId": "crpg_heater_shield_with_cutout_v1",
+    "id": "crpg_heater_shield_with_cutout_v2_h0",
+    "baseId": "crpg_heater_shield_with_cutout_v2",
     "name": "Heater Shield with Cutout",
     "culture": "Vlandia",
     "type": "Shield",
@@ -53300,8 +53300,8 @@
     ]
   },
   {
-    "id": "crpg_heater_shield_with_cutout_v1_h1",
-    "baseId": "crpg_heater_shield_with_cutout_v1",
+    "id": "crpg_heater_shield_with_cutout_v2_h1",
+    "baseId": "crpg_heater_shield_with_cutout_v2",
     "name": "Heater Shield with Cutout +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -53340,8 +53340,8 @@
     ]
   },
   {
-    "id": "crpg_heater_shield_with_cutout_v1_h2",
-    "baseId": "crpg_heater_shield_with_cutout_v1",
+    "id": "crpg_heater_shield_with_cutout_v2_h2",
+    "baseId": "crpg_heater_shield_with_cutout_v2",
     "name": "Heater Shield with Cutout +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -53380,8 +53380,8 @@
     ]
   },
   {
-    "id": "crpg_heater_shield_with_cutout_v1_h3",
-    "baseId": "crpg_heater_shield_with_cutout_v1",
+    "id": "crpg_heater_shield_with_cutout_v2_h3",
+    "baseId": "crpg_heater_shield_with_cutout_v2",
     "name": "Heater Shield with Cutout +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -54604,8 +54604,8 @@
     ]
   },
   {
-    "id": "crpg_heavy_heater_shield_v1_h0",
-    "baseId": "crpg_heavy_heater_shield_v1",
+    "id": "crpg_heavy_heater_shield_v2_h0",
+    "baseId": "crpg_heavy_heater_shield_v2",
     "name": "Heavy Heater Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -54644,8 +54644,8 @@
     ]
   },
   {
-    "id": "crpg_heavy_heater_shield_v1_h1",
-    "baseId": "crpg_heavy_heater_shield_v1",
+    "id": "crpg_heavy_heater_shield_v2_h1",
+    "baseId": "crpg_heavy_heater_shield_v2",
     "name": "Heavy Heater Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -54684,8 +54684,8 @@
     ]
   },
   {
-    "id": "crpg_heavy_heater_shield_v1_h2",
-    "baseId": "crpg_heavy_heater_shield_v1",
+    "id": "crpg_heavy_heater_shield_v2_h2",
+    "baseId": "crpg_heavy_heater_shield_v2",
     "name": "Heavy Heater Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -54724,8 +54724,8 @@
     ]
   },
   {
-    "id": "crpg_heavy_heater_shield_v1_h3",
-    "baseId": "crpg_heavy_heater_shield_v1",
+    "id": "crpg_heavy_heater_shield_v2_h3",
+    "baseId": "crpg_heavy_heater_shield_v2",
     "name": "Heavy Heater Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -54764,8 +54764,8 @@
     ]
   },
   {
-    "id": "crpg_Heavy_Highland_Tower_Shield_v1_h0",
-    "baseId": "crpg_Heavy_Highland_Tower_Shield_v1",
+    "id": "crpg_Heavy_Highland_Tower_Shield_v2_h0",
+    "baseId": "crpg_Heavy_Highland_Tower_Shield_v2",
     "name": "Heavy Highland Tower Shield",
     "culture": "Battania",
     "type": "Shield",
@@ -54804,8 +54804,8 @@
     ]
   },
   {
-    "id": "crpg_Heavy_Highland_Tower_Shield_v1_h1",
-    "baseId": "crpg_Heavy_Highland_Tower_Shield_v1",
+    "id": "crpg_Heavy_Highland_Tower_Shield_v2_h1",
+    "baseId": "crpg_Heavy_Highland_Tower_Shield_v2",
     "name": "Heavy Highland Tower Shield +1",
     "culture": "Battania",
     "type": "Shield",
@@ -54844,8 +54844,8 @@
     ]
   },
   {
-    "id": "crpg_Heavy_Highland_Tower_Shield_v1_h2",
-    "baseId": "crpg_Heavy_Highland_Tower_Shield_v1",
+    "id": "crpg_Heavy_Highland_Tower_Shield_v2_h2",
+    "baseId": "crpg_Heavy_Highland_Tower_Shield_v2",
     "name": "Heavy Highland Tower Shield +2",
     "culture": "Battania",
     "type": "Shield",
@@ -54884,8 +54884,8 @@
     ]
   },
   {
-    "id": "crpg_Heavy_Highland_Tower_Shield_v1_h3",
-    "baseId": "crpg_Heavy_Highland_Tower_Shield_v1",
+    "id": "crpg_Heavy_Highland_Tower_Shield_v2_h3",
+    "baseId": "crpg_Heavy_Highland_Tower_Shield_v2",
     "name": "Heavy Highland Tower Shield +3",
     "culture": "Battania",
     "type": "Shield",
@@ -56036,8 +56036,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_heavy_round_shield_v1_h0",
-    "baseId": "crpg_heavy_round_shield_v1",
+    "id": "crpg_heavy_round_shield_v2_h0",
+    "baseId": "crpg_heavy_round_shield_v2",
     "name": "Heavy Round Shield",
     "culture": "Sturgia",
     "type": "Shield",
@@ -56076,8 +56076,8 @@
     ]
   },
   {
-    "id": "crpg_heavy_round_shield_v1_h1",
-    "baseId": "crpg_heavy_round_shield_v1",
+    "id": "crpg_heavy_round_shield_v2_h1",
+    "baseId": "crpg_heavy_round_shield_v2",
     "name": "Heavy Round Shield +1",
     "culture": "Sturgia",
     "type": "Shield",
@@ -56116,8 +56116,8 @@
     ]
   },
   {
-    "id": "crpg_heavy_round_shield_v1_h2",
-    "baseId": "crpg_heavy_round_shield_v1",
+    "id": "crpg_heavy_round_shield_v2_h2",
+    "baseId": "crpg_heavy_round_shield_v2",
     "name": "Heavy Round Shield +2",
     "culture": "Sturgia",
     "type": "Shield",
@@ -56156,8 +56156,8 @@
     ]
   },
   {
-    "id": "crpg_heavy_round_shield_v1_h3",
-    "baseId": "crpg_heavy_round_shield_v1",
+    "id": "crpg_heavy_round_shield_v2_h3",
+    "baseId": "crpg_heavy_round_shield_v2",
     "name": "Heavy Round Shield +3",
     "culture": "Sturgia",
     "type": "Shield",
@@ -58584,8 +58584,8 @@
     ]
   },
   {
-    "id": "crpg_highland_riders_shield_v1_h0",
-    "baseId": "crpg_highland_riders_shield_v1",
+    "id": "crpg_highland_riders_shield_v2_h0",
+    "baseId": "crpg_highland_riders_shield_v2",
     "name": "Highland Round Shield",
     "culture": "Battania",
     "type": "Shield",
@@ -58624,8 +58624,8 @@
     ]
   },
   {
-    "id": "crpg_highland_riders_shield_v1_h1",
-    "baseId": "crpg_highland_riders_shield_v1",
+    "id": "crpg_highland_riders_shield_v2_h1",
+    "baseId": "crpg_highland_riders_shield_v2",
     "name": "Highland Round Shield +1",
     "culture": "Battania",
     "type": "Shield",
@@ -58664,8 +58664,8 @@
     ]
   },
   {
-    "id": "crpg_highland_riders_shield_v1_h2",
-    "baseId": "crpg_highland_riders_shield_v1",
+    "id": "crpg_highland_riders_shield_v2_h2",
+    "baseId": "crpg_highland_riders_shield_v2",
     "name": "Highland Round Shield +2",
     "culture": "Battania",
     "type": "Shield",
@@ -58704,8 +58704,8 @@
     ]
   },
   {
-    "id": "crpg_highland_riders_shield_v1_h3",
-    "baseId": "crpg_highland_riders_shield_v1",
+    "id": "crpg_highland_riders_shield_v2_h3",
+    "baseId": "crpg_highland_riders_shield_v2",
     "name": "Highland Round Shield +3",
     "culture": "Battania",
     "type": "Shield",
@@ -58744,8 +58744,8 @@
     ]
   },
   {
-    "id": "crpg_highland_scouts_shield_v1_h0",
-    "baseId": "crpg_highland_scouts_shield_v1",
+    "id": "crpg_highland_scouts_shield_v2_h0",
+    "baseId": "crpg_highland_scouts_shield_v2",
     "name": "Decorated Round Shield",
     "culture": "Battania",
     "type": "Shield",
@@ -58784,8 +58784,8 @@
     ]
   },
   {
-    "id": "crpg_highland_scouts_shield_v1_h1",
-    "baseId": "crpg_highland_scouts_shield_v1",
+    "id": "crpg_highland_scouts_shield_v2_h1",
+    "baseId": "crpg_highland_scouts_shield_v2",
     "name": "Decorated Round Shield +1",
     "culture": "Battania",
     "type": "Shield",
@@ -58824,8 +58824,8 @@
     ]
   },
   {
-    "id": "crpg_highland_scouts_shield_v1_h2",
-    "baseId": "crpg_highland_scouts_shield_v1",
+    "id": "crpg_highland_scouts_shield_v2_h2",
+    "baseId": "crpg_highland_scouts_shield_v2",
     "name": "Decorated Round Shield +2",
     "culture": "Battania",
     "type": "Shield",
@@ -58864,8 +58864,8 @@
     ]
   },
   {
-    "id": "crpg_highland_scouts_shield_v1_h3",
-    "baseId": "crpg_highland_scouts_shield_v1",
+    "id": "crpg_highland_scouts_shield_v2_h3",
+    "baseId": "crpg_highland_scouts_shield_v2",
     "name": "Decorated Round Shield +3",
     "culture": "Battania",
     "type": "Shield",
@@ -61166,8 +61166,8 @@
     ]
   },
   {
-    "id": "crpg_horsemans_heater_shield_v1_h0",
-    "baseId": "crpg_horsemans_heater_shield_v1",
+    "id": "crpg_horsemans_heater_shield_v2_h0",
+    "baseId": "crpg_horsemans_heater_shield_v2",
     "name": "Small Cavalry Heater Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -61206,8 +61206,8 @@
     ]
   },
   {
-    "id": "crpg_horsemans_heater_shield_v1_h1",
-    "baseId": "crpg_horsemans_heater_shield_v1",
+    "id": "crpg_horsemans_heater_shield_v2_h1",
+    "baseId": "crpg_horsemans_heater_shield_v2",
     "name": "Small Cavalry Heater Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -61246,8 +61246,8 @@
     ]
   },
   {
-    "id": "crpg_horsemans_heater_shield_v1_h2",
-    "baseId": "crpg_horsemans_heater_shield_v1",
+    "id": "crpg_horsemans_heater_shield_v2_h2",
+    "baseId": "crpg_horsemans_heater_shield_v2",
     "name": "Small Cavalry Heater Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -61286,8 +61286,8 @@
     ]
   },
   {
-    "id": "crpg_horsemans_heater_shield_v1_h3",
-    "baseId": "crpg_horsemans_heater_shield_v1",
+    "id": "crpg_horsemans_heater_shield_v2_h3",
+    "baseId": "crpg_horsemans_heater_shield_v2",
     "name": "Small Cavalry Heater Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -66748,8 +66748,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_ironrim_kite_shield_v1_h0",
-    "baseId": "crpg_ironrim_kite_shield_v1",
+    "id": "crpg_ironrim_kite_shield_v2_h0",
+    "baseId": "crpg_ironrim_kite_shield_v2",
     "name": "Iron Rimmed Kite Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -66788,8 +66788,8 @@
     ]
   },
   {
-    "id": "crpg_ironrim_kite_shield_v1_h1",
-    "baseId": "crpg_ironrim_kite_shield_v1",
+    "id": "crpg_ironrim_kite_shield_v2_h1",
+    "baseId": "crpg_ironrim_kite_shield_v2",
     "name": "Iron Rimmed Kite Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -66828,8 +66828,8 @@
     ]
   },
   {
-    "id": "crpg_ironrim_kite_shield_v1_h2",
-    "baseId": "crpg_ironrim_kite_shield_v1",
+    "id": "crpg_ironrim_kite_shield_v2_h2",
+    "baseId": "crpg_ironrim_kite_shield_v2",
     "name": "Iron Rimmed Kite Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -66868,8 +66868,8 @@
     ]
   },
   {
-    "id": "crpg_ironrim_kite_shield_v1_h3",
-    "baseId": "crpg_ironrim_kite_shield_v1",
+    "id": "crpg_ironrim_kite_shield_v2_h3",
+    "baseId": "crpg_ironrim_kite_shield_v2",
     "name": "Iron Rimmed Kite Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -68060,8 +68060,8 @@
     ]
   },
   {
-    "id": "crpg_jousting_shield_v1_h0",
-    "baseId": "crpg_jousting_shield_v1",
+    "id": "crpg_jousting_shield_v2_h0",
+    "baseId": "crpg_jousting_shield_v2",
     "name": "Knights Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -68100,8 +68100,8 @@
     ]
   },
   {
-    "id": "crpg_jousting_shield_v1_h1",
-    "baseId": "crpg_jousting_shield_v1",
+    "id": "crpg_jousting_shield_v2_h1",
+    "baseId": "crpg_jousting_shield_v2",
     "name": "Knights Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -68140,8 +68140,8 @@
     ]
   },
   {
-    "id": "crpg_jousting_shield_v1_h2",
-    "baseId": "crpg_jousting_shield_v1",
+    "id": "crpg_jousting_shield_v2_h2",
+    "baseId": "crpg_jousting_shield_v2",
     "name": "Knights Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -68180,8 +68180,8 @@
     ]
   },
   {
-    "id": "crpg_jousting_shield_v1_h3",
-    "baseId": "crpg_jousting_shield_v1",
+    "id": "crpg_jousting_shield_v2_h3",
+    "baseId": "crpg_jousting_shield_v2",
     "name": "Knights Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -73580,8 +73580,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_large_adarga_v1_h0",
-    "baseId": "crpg_large_adarga_v1",
+    "id": "crpg_large_adarga_v2_h0",
+    "baseId": "crpg_large_adarga_v2",
     "name": "Large Adarga",
     "culture": "Aserai",
     "type": "Shield",
@@ -73620,8 +73620,8 @@
     ]
   },
   {
-    "id": "crpg_large_adarga_v1_h1",
-    "baseId": "crpg_large_adarga_v1",
+    "id": "crpg_large_adarga_v2_h1",
+    "baseId": "crpg_large_adarga_v2",
     "name": "Large Adarga +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -73660,8 +73660,8 @@
     ]
   },
   {
-    "id": "crpg_large_adarga_v1_h2",
-    "baseId": "crpg_large_adarga_v1",
+    "id": "crpg_large_adarga_v2_h2",
+    "baseId": "crpg_large_adarga_v2",
     "name": "Large Adarga +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -73700,8 +73700,8 @@
     ]
   },
   {
-    "id": "crpg_large_adarga_v1_h3",
-    "baseId": "crpg_large_adarga_v1",
+    "id": "crpg_large_adarga_v2_h3",
+    "baseId": "crpg_large_adarga_v2",
     "name": "Large Adarga +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -74396,8 +74396,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_leather_bound_kite_shield_v1_h0",
-    "baseId": "crpg_leather_bound_kite_shield_v1",
+    "id": "crpg_leather_bound_kite_shield_v2_h0",
+    "baseId": "crpg_leather_bound_kite_shield_v2",
     "name": "Leather Bound Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -74436,8 +74436,8 @@
     ]
   },
   {
-    "id": "crpg_leather_bound_kite_shield_v1_h1",
-    "baseId": "crpg_leather_bound_kite_shield_v1",
+    "id": "crpg_leather_bound_kite_shield_v2_h1",
+    "baseId": "crpg_leather_bound_kite_shield_v2",
     "name": "Leather Bound Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -74476,8 +74476,8 @@
     ]
   },
   {
-    "id": "crpg_leather_bound_kite_shield_v1_h2",
-    "baseId": "crpg_leather_bound_kite_shield_v1",
+    "id": "crpg_leather_bound_kite_shield_v2_h2",
+    "baseId": "crpg_leather_bound_kite_shield_v2",
     "name": "Leather Bound Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -74516,8 +74516,8 @@
     ]
   },
   {
-    "id": "crpg_leather_bound_kite_shield_v1_h3",
-    "baseId": "crpg_leather_bound_kite_shield_v1",
+    "id": "crpg_leather_bound_kite_shield_v2_h3",
+    "baseId": "crpg_leather_bound_kite_shield_v2",
     "name": "Leather Bound Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -75128,8 +75128,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_leather_round_shield_v1_h0",
-    "baseId": "crpg_leather_round_shield_v1",
+    "id": "crpg_leather_round_shield_v2_h0",
+    "baseId": "crpg_leather_round_shield_v2",
     "name": "Large Round Shield",
     "culture": "Sturgia",
     "type": "Shield",
@@ -75168,8 +75168,8 @@
     ]
   },
   {
-    "id": "crpg_leather_round_shield_v1_h1",
-    "baseId": "crpg_leather_round_shield_v1",
+    "id": "crpg_leather_round_shield_v2_h1",
+    "baseId": "crpg_leather_round_shield_v2",
     "name": "Large Round Shield +1",
     "culture": "Sturgia",
     "type": "Shield",
@@ -75208,8 +75208,8 @@
     ]
   },
   {
-    "id": "crpg_leather_round_shield_v1_h2",
-    "baseId": "crpg_leather_round_shield_v1",
+    "id": "crpg_leather_round_shield_v2_h2",
+    "baseId": "crpg_leather_round_shield_v2",
     "name": "Large Round Shield +2",
     "culture": "Sturgia",
     "type": "Shield",
@@ -75248,8 +75248,8 @@
     ]
   },
   {
-    "id": "crpg_leather_round_shield_v1_h3",
-    "baseId": "crpg_leather_round_shield_v1",
+    "id": "crpg_leather_round_shield_v2_h3",
+    "baseId": "crpg_leather_round_shield_v2",
     "name": "Large Round Shield +3",
     "culture": "Sturgia",
     "type": "Shield",
@@ -77272,8 +77272,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_light_horsemans_kite_shield_v1_h0",
-    "baseId": "crpg_light_horsemans_kite_shield_v1",
+    "id": "crpg_light_horsemans_kite_shield_v2_h0",
+    "baseId": "crpg_light_horsemans_kite_shield_v2",
     "name": "Light Cavalry Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -77312,8 +77312,8 @@
     ]
   },
   {
-    "id": "crpg_light_horsemans_kite_shield_v1_h1",
-    "baseId": "crpg_light_horsemans_kite_shield_v1",
+    "id": "crpg_light_horsemans_kite_shield_v2_h1",
+    "baseId": "crpg_light_horsemans_kite_shield_v2",
     "name": "Light Cavalry Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -77352,8 +77352,8 @@
     ]
   },
   {
-    "id": "crpg_light_horsemans_kite_shield_v1_h2",
-    "baseId": "crpg_light_horsemans_kite_shield_v1",
+    "id": "crpg_light_horsemans_kite_shield_v2_h2",
+    "baseId": "crpg_light_horsemans_kite_shield_v2",
     "name": "Light Cavalry Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -77392,8 +77392,8 @@
     ]
   },
   {
-    "id": "crpg_light_horsemans_kite_shield_v1_h3",
-    "baseId": "crpg_light_horsemans_kite_shield_v1",
+    "id": "crpg_light_horsemans_kite_shield_v2_h3",
+    "baseId": "crpg_light_horsemans_kite_shield_v2",
     "name": "Light Cavalry Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -78446,8 +78446,8 @@
     ]
   },
   {
-    "id": "crpg_long_buckler_v1_h0",
-    "baseId": "crpg_long_buckler_v1",
+    "id": "crpg_long_buckler_v2_h0",
+    "baseId": "crpg_long_buckler_v2",
     "name": "Heavy Oval Buckler Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -78485,8 +78485,8 @@
     ]
   },
   {
-    "id": "crpg_long_buckler_v1_h1",
-    "baseId": "crpg_long_buckler_v1",
+    "id": "crpg_long_buckler_v2_h1",
+    "baseId": "crpg_long_buckler_v2",
     "name": "Heavy Oval Buckler Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -78524,8 +78524,8 @@
     ]
   },
   {
-    "id": "crpg_long_buckler_v1_h2",
-    "baseId": "crpg_long_buckler_v1",
+    "id": "crpg_long_buckler_v2_h2",
+    "baseId": "crpg_long_buckler_v2",
     "name": "Heavy Oval Buckler Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -78563,8 +78563,8 @@
     ]
   },
   {
-    "id": "crpg_long_buckler_v1_h3",
-    "baseId": "crpg_long_buckler_v1",
+    "id": "crpg_long_buckler_v2_h3",
+    "baseId": "crpg_long_buckler_v2",
     "name": "Heavy Oval Buckler Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -99608,8 +99608,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_horsemans_shield_v1_h0",
-    "baseId": "crpg_northern_horsemans_shield_v1",
+    "id": "crpg_northern_horsemans_shield_v2_h0",
+    "baseId": "crpg_northern_horsemans_shield_v2",
     "name": "Reinforced Cavalry Shield",
     "culture": "Sturgia",
     "type": "Shield",
@@ -99648,8 +99648,8 @@
     ]
   },
   {
-    "id": "crpg_northern_horsemans_shield_v1_h1",
-    "baseId": "crpg_northern_horsemans_shield_v1",
+    "id": "crpg_northern_horsemans_shield_v2_h1",
+    "baseId": "crpg_northern_horsemans_shield_v2",
     "name": "Reinforced Cavalry Shield +1",
     "culture": "Sturgia",
     "type": "Shield",
@@ -99688,8 +99688,8 @@
     ]
   },
   {
-    "id": "crpg_northern_horsemans_shield_v1_h2",
-    "baseId": "crpg_northern_horsemans_shield_v1",
+    "id": "crpg_northern_horsemans_shield_v2_h2",
+    "baseId": "crpg_northern_horsemans_shield_v2",
     "name": "Reinforced Cavalry Shield +2",
     "culture": "Sturgia",
     "type": "Shield",
@@ -99728,8 +99728,8 @@
     ]
   },
   {
-    "id": "crpg_northern_horsemans_shield_v1_h3",
-    "baseId": "crpg_northern_horsemans_shield_v1",
+    "id": "crpg_northern_horsemans_shield_v2_h3",
+    "baseId": "crpg_northern_horsemans_shield_v2",
     "name": "Reinforced Cavalry Shield +3",
     "culture": "Sturgia",
     "type": "Shield",
@@ -100700,8 +100700,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_round_shield_v1_h0",
-    "baseId": "crpg_northern_round_shield_v1",
+    "id": "crpg_northern_round_shield_v2_h0",
+    "baseId": "crpg_northern_round_shield_v2",
     "name": "Round Shield",
     "culture": "Sturgia",
     "type": "Shield",
@@ -100740,8 +100740,8 @@
     ]
   },
   {
-    "id": "crpg_northern_round_shield_v1_h1",
-    "baseId": "crpg_northern_round_shield_v1",
+    "id": "crpg_northern_round_shield_v2_h1",
+    "baseId": "crpg_northern_round_shield_v2",
     "name": "Round Shield +1",
     "culture": "Sturgia",
     "type": "Shield",
@@ -100780,8 +100780,8 @@
     ]
   },
   {
-    "id": "crpg_northern_round_shield_v1_h2",
-    "baseId": "crpg_northern_round_shield_v1",
+    "id": "crpg_northern_round_shield_v2_h2",
+    "baseId": "crpg_northern_round_shield_v2",
     "name": "Round Shield +2",
     "culture": "Sturgia",
     "type": "Shield",
@@ -100820,8 +100820,8 @@
     ]
   },
   {
-    "id": "crpg_northern_round_shield_v1_h3",
-    "baseId": "crpg_northern_round_shield_v1",
+    "id": "crpg_northern_round_shield_v2_h3",
+    "baseId": "crpg_northern_round_shield_v2",
     "name": "Round Shield +3",
     "culture": "Sturgia",
     "type": "Shield",
@@ -100860,8 +100860,8 @@
     ]
   },
   {
-    "id": "crpg_northern_scouts_shield_v1_h0",
-    "baseId": "crpg_northern_scouts_shield_v1",
+    "id": "crpg_northern_scouts_shield_v2_h0",
+    "baseId": "crpg_northern_scouts_shield_v2",
     "name": "Sturdy Cavalry Kite Shield",
     "culture": "Sturgia",
     "type": "Shield",
@@ -100900,8 +100900,8 @@
     ]
   },
   {
-    "id": "crpg_northern_scouts_shield_v1_h1",
-    "baseId": "crpg_northern_scouts_shield_v1",
+    "id": "crpg_northern_scouts_shield_v2_h1",
+    "baseId": "crpg_northern_scouts_shield_v2",
     "name": "Sturdy Cavalry Kite Shield +1",
     "culture": "Sturgia",
     "type": "Shield",
@@ -100940,8 +100940,8 @@
     ]
   },
   {
-    "id": "crpg_northern_scouts_shield_v1_h2",
-    "baseId": "crpg_northern_scouts_shield_v1",
+    "id": "crpg_northern_scouts_shield_v2_h2",
+    "baseId": "crpg_northern_scouts_shield_v2",
     "name": "Sturdy Cavalry Kite Shield +2",
     "culture": "Sturgia",
     "type": "Shield",
@@ -100980,8 +100980,8 @@
     ]
   },
   {
-    "id": "crpg_northern_scouts_shield_v1_h3",
-    "baseId": "crpg_northern_scouts_shield_v1",
+    "id": "crpg_northern_scouts_shield_v2_h3",
+    "baseId": "crpg_northern_scouts_shield_v2",
     "name": "Sturdy Cavalry Kite Shield +3",
     "culture": "Sturgia",
     "type": "Shield",
@@ -101844,8 +101844,8 @@
     ]
   },
   {
-    "id": "crpg_noyans_shield_v1_h0",
-    "baseId": "crpg_noyans_shield_v1",
+    "id": "crpg_noyans_shield_v2_h0",
+    "baseId": "crpg_noyans_shield_v2",
     "name": "Decorated Eastern Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -101884,8 +101884,8 @@
     ]
   },
   {
-    "id": "crpg_noyans_shield_v1_h1",
-    "baseId": "crpg_noyans_shield_v1",
+    "id": "crpg_noyans_shield_v2_h1",
+    "baseId": "crpg_noyans_shield_v2",
     "name": "Decorated Eastern Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -101924,8 +101924,8 @@
     ]
   },
   {
-    "id": "crpg_noyans_shield_v1_h2",
-    "baseId": "crpg_noyans_shield_v1",
+    "id": "crpg_noyans_shield_v2_h2",
+    "baseId": "crpg_noyans_shield_v2",
     "name": "Decorated Eastern Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -101964,8 +101964,8 @@
     ]
   },
   {
-    "id": "crpg_noyans_shield_v1_h3",
-    "baseId": "crpg_noyans_shield_v1",
+    "id": "crpg_noyans_shield_v2_h3",
+    "baseId": "crpg_noyans_shield_v2",
     "name": "Decorated Eastern Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -102004,8 +102004,8 @@
     ]
   },
   {
-    "id": "crpg_old_horsemans_kite_shield_v1_h0",
-    "baseId": "crpg_old_horsemans_kite_shield_v1",
+    "id": "crpg_old_horsemans_kite_shield_v2_h0",
+    "baseId": "crpg_old_horsemans_kite_shield_v2",
     "name": "Wooden Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -102044,8 +102044,8 @@
     ]
   },
   {
-    "id": "crpg_old_horsemans_kite_shield_v1_h1",
-    "baseId": "crpg_old_horsemans_kite_shield_v1",
+    "id": "crpg_old_horsemans_kite_shield_v2_h1",
+    "baseId": "crpg_old_horsemans_kite_shield_v2",
     "name": "Wooden Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -102084,8 +102084,8 @@
     ]
   },
   {
-    "id": "crpg_old_horsemans_kite_shield_v1_h2",
-    "baseId": "crpg_old_horsemans_kite_shield_v1",
+    "id": "crpg_old_horsemans_kite_shield_v2_h2",
+    "baseId": "crpg_old_horsemans_kite_shield_v2",
     "name": "Wooden Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -102124,8 +102124,8 @@
     ]
   },
   {
-    "id": "crpg_old_horsemans_kite_shield_v1_h3",
-    "baseId": "crpg_old_horsemans_kite_shield_v1",
+    "id": "crpg_old_horsemans_kite_shield_v2_h3",
+    "baseId": "crpg_old_horsemans_kite_shield_v2",
     "name": "Wooden Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -102164,8 +102164,8 @@
     ]
   },
   {
-    "id": "crpg_old_kite_shield_v1_h0",
-    "baseId": "crpg_old_kite_shield_v1",
+    "id": "crpg_old_kite_shield_v2_h0",
+    "baseId": "crpg_old_kite_shield_v2",
     "name": "Makeshift Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -102204,8 +102204,8 @@
     ]
   },
   {
-    "id": "crpg_old_kite_shield_v1_h1",
-    "baseId": "crpg_old_kite_shield_v1",
+    "id": "crpg_old_kite_shield_v2_h1",
+    "baseId": "crpg_old_kite_shield_v2",
     "name": "Makeshift Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -102244,8 +102244,8 @@
     ]
   },
   {
-    "id": "crpg_old_kite_shield_v1_h2",
-    "baseId": "crpg_old_kite_shield_v1",
+    "id": "crpg_old_kite_shield_v2_h2",
+    "baseId": "crpg_old_kite_shield_v2",
     "name": "Makeshift Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -102284,8 +102284,8 @@
     ]
   },
   {
-    "id": "crpg_old_kite_shield_v1_h3",
-    "baseId": "crpg_old_kite_shield_v1",
+    "id": "crpg_old_kite_shield_v2_h3",
+    "baseId": "crpg_old_kite_shield_v2",
     "name": "Makeshift Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -102708,8 +102708,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_ornate_adarga_v1_h0",
-    "baseId": "crpg_ornate_adarga_v1",
+    "id": "crpg_ornate_adarga_v2_h0",
+    "baseId": "crpg_ornate_adarga_v2",
     "name": "Ornate Adarga",
     "culture": "Aserai",
     "type": "Shield",
@@ -102748,8 +102748,8 @@
     ]
   },
   {
-    "id": "crpg_ornate_adarga_v1_h1",
-    "baseId": "crpg_ornate_adarga_v1",
+    "id": "crpg_ornate_adarga_v2_h1",
+    "baseId": "crpg_ornate_adarga_v2",
     "name": "Ornate Adarga +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -102788,8 +102788,8 @@
     ]
   },
   {
-    "id": "crpg_ornate_adarga_v1_h2",
-    "baseId": "crpg_ornate_adarga_v1",
+    "id": "crpg_ornate_adarga_v2_h2",
+    "baseId": "crpg_ornate_adarga_v2",
     "name": "Ornate Adarga +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -102828,8 +102828,8 @@
     ]
   },
   {
-    "id": "crpg_ornate_adarga_v1_h3",
-    "baseId": "crpg_ornate_adarga_v1",
+    "id": "crpg_ornate_adarga_v2_h3",
+    "baseId": "crpg_ornate_adarga_v2",
     "name": "Ornate Adarga +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -102868,8 +102868,8 @@
     ]
   },
   {
-    "id": "crpg_oval_shield_v1_h0",
-    "baseId": "crpg_oval_shield_v1",
+    "id": "crpg_oval_shield_v2_h0",
+    "baseId": "crpg_oval_shield_v2",
     "name": "Wooden Oval Shield",
     "culture": "Aserai",
     "type": "Shield",
@@ -102908,8 +102908,8 @@
     ]
   },
   {
-    "id": "crpg_oval_shield_v1_h1",
-    "baseId": "crpg_oval_shield_v1",
+    "id": "crpg_oval_shield_v2_h1",
+    "baseId": "crpg_oval_shield_v2",
     "name": "Wooden Oval Shield +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -102948,8 +102948,8 @@
     ]
   },
   {
-    "id": "crpg_oval_shield_v1_h2",
-    "baseId": "crpg_oval_shield_v1",
+    "id": "crpg_oval_shield_v2_h2",
+    "baseId": "crpg_oval_shield_v2",
     "name": "Wooden Oval Shield +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -102988,8 +102988,8 @@
     ]
   },
   {
-    "id": "crpg_oval_shield_v1_h3",
-    "baseId": "crpg_oval_shield_v1",
+    "id": "crpg_oval_shield_v2_h3",
+    "baseId": "crpg_oval_shield_v2",
     "name": "Wooden Oval Shield +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -104440,8 +104440,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_pavise_shield_v1_h0",
-    "baseId": "crpg_pavise_shield_v1",
+    "id": "crpg_pavise_shield_v2_h0",
+    "baseId": "crpg_pavise_shield_v2",
     "name": "Pavise Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -104480,8 +104480,8 @@
     ]
   },
   {
-    "id": "crpg_pavise_shield_v1_h1",
-    "baseId": "crpg_pavise_shield_v1",
+    "id": "crpg_pavise_shield_v2_h1",
+    "baseId": "crpg_pavise_shield_v2",
     "name": "Pavise Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -104520,8 +104520,8 @@
     ]
   },
   {
-    "id": "crpg_pavise_shield_v1_h2",
-    "baseId": "crpg_pavise_shield_v1",
+    "id": "crpg_pavise_shield_v2_h2",
+    "baseId": "crpg_pavise_shield_v2",
     "name": "Pavise Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -104560,8 +104560,8 @@
     ]
   },
   {
-    "id": "crpg_pavise_shield_v1_h3",
-    "baseId": "crpg_pavise_shield_v1",
+    "id": "crpg_pavise_shield_v2_h3",
+    "baseId": "crpg_pavise_shield_v2",
     "name": "Pavise Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -110082,8 +110082,8 @@
     ]
   },
   {
-    "id": "crpg_reinforced_flat_kite_shield_v1_h0",
-    "baseId": "crpg_reinforced_flat_kite_shield_v1",
+    "id": "crpg_reinforced_flat_kite_shield_v2_h0",
+    "baseId": "crpg_reinforced_flat_kite_shield_v2",
     "name": "Reinforced Flat Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -110122,8 +110122,8 @@
     ]
   },
   {
-    "id": "crpg_reinforced_flat_kite_shield_v1_h1",
-    "baseId": "crpg_reinforced_flat_kite_shield_v1",
+    "id": "crpg_reinforced_flat_kite_shield_v2_h1",
+    "baseId": "crpg_reinforced_flat_kite_shield_v2",
     "name": "Reinforced Flat Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -110162,8 +110162,8 @@
     ]
   },
   {
-    "id": "crpg_reinforced_flat_kite_shield_v1_h2",
-    "baseId": "crpg_reinforced_flat_kite_shield_v1",
+    "id": "crpg_reinforced_flat_kite_shield_v2_h2",
+    "baseId": "crpg_reinforced_flat_kite_shield_v2",
     "name": "Reinforced Flat Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -110202,8 +110202,8 @@
     ]
   },
   {
-    "id": "crpg_reinforced_flat_kite_shield_v1_h3",
-    "baseId": "crpg_reinforced_flat_kite_shield_v1",
+    "id": "crpg_reinforced_flat_kite_shield_v2_h3",
+    "baseId": "crpg_reinforced_flat_kite_shield_v2",
     "name": "Reinforced Flat Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -110494,8 +110494,8 @@
     ]
   },
   {
-    "id": "crpg_reinforced_horsemans_kite_shield_v1_h0",
-    "baseId": "crpg_reinforced_horsemans_kite_shield_v1",
+    "id": "crpg_reinforced_horsemans_kite_shield_v2_h0",
+    "baseId": "crpg_reinforced_horsemans_kite_shield_v2",
     "name": "Reinforced Cavalry Small Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -110534,8 +110534,8 @@
     ]
   },
   {
-    "id": "crpg_reinforced_horsemans_kite_shield_v1_h1",
-    "baseId": "crpg_reinforced_horsemans_kite_shield_v1",
+    "id": "crpg_reinforced_horsemans_kite_shield_v2_h1",
+    "baseId": "crpg_reinforced_horsemans_kite_shield_v2",
     "name": "Reinforced Cavalry Small Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -110574,8 +110574,8 @@
     ]
   },
   {
-    "id": "crpg_reinforced_horsemans_kite_shield_v1_h2",
-    "baseId": "crpg_reinforced_horsemans_kite_shield_v1",
+    "id": "crpg_reinforced_horsemans_kite_shield_v2_h2",
+    "baseId": "crpg_reinforced_horsemans_kite_shield_v2",
     "name": "Reinforced Cavalry Small Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -110614,8 +110614,8 @@
     ]
   },
   {
-    "id": "crpg_reinforced_horsemans_kite_shield_v1_h3",
-    "baseId": "crpg_reinforced_horsemans_kite_shield_v1",
+    "id": "crpg_reinforced_horsemans_kite_shield_v2_h3",
+    "baseId": "crpg_reinforced_horsemans_kite_shield_v2",
     "name": "Reinforced Cavalry Small Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -122630,8 +122630,8 @@
     ]
   },
   {
-    "id": "crpg_small_flat_heater_shield_v1_h0",
-    "baseId": "crpg_small_flat_heater_shield_v1",
+    "id": "crpg_small_flat_heater_shield_v2_h0",
+    "baseId": "crpg_small_flat_heater_shield_v2",
     "name": "Small Flat Heater Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -122670,8 +122670,8 @@
     ]
   },
   {
-    "id": "crpg_small_flat_heater_shield_v1_h1",
-    "baseId": "crpg_small_flat_heater_shield_v1",
+    "id": "crpg_small_flat_heater_shield_v2_h1",
+    "baseId": "crpg_small_flat_heater_shield_v2",
     "name": "Small Flat Heater Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -122710,8 +122710,8 @@
     ]
   },
   {
-    "id": "crpg_small_flat_heater_shield_v1_h2",
-    "baseId": "crpg_small_flat_heater_shield_v1",
+    "id": "crpg_small_flat_heater_shield_v2_h2",
+    "baseId": "crpg_small_flat_heater_shield_v2",
     "name": "Small Flat Heater Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -122750,8 +122750,8 @@
     ]
   },
   {
-    "id": "crpg_small_flat_heater_shield_v1_h3",
-    "baseId": "crpg_small_flat_heater_shield_v1",
+    "id": "crpg_small_flat_heater_shield_v2_h3",
+    "baseId": "crpg_small_flat_heater_shield_v2",
     "name": "Small Flat Heater Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -122790,8 +122790,8 @@
     ]
   },
   {
-    "id": "crpg_small_heater_shield_v1_h0",
-    "baseId": "crpg_small_heater_shield_v1",
+    "id": "crpg_small_heater_shield_v2_h0",
+    "baseId": "crpg_small_heater_shield_v2",
     "name": "Small Heater Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -122830,8 +122830,8 @@
     ]
   },
   {
-    "id": "crpg_small_heater_shield_v1_h1",
-    "baseId": "crpg_small_heater_shield_v1",
+    "id": "crpg_small_heater_shield_v2_h1",
+    "baseId": "crpg_small_heater_shield_v2",
     "name": "Small Heater Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -122870,8 +122870,8 @@
     ]
   },
   {
-    "id": "crpg_small_heater_shield_v1_h2",
-    "baseId": "crpg_small_heater_shield_v1",
+    "id": "crpg_small_heater_shield_v2_h2",
+    "baseId": "crpg_small_heater_shield_v2",
     "name": "Small Heater Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -122910,8 +122910,8 @@
     ]
   },
   {
-    "id": "crpg_small_heater_shield_v1_h3",
-    "baseId": "crpg_small_heater_shield_v1",
+    "id": "crpg_small_heater_shield_v2_h3",
+    "baseId": "crpg_small_heater_shield_v2",
     "name": "Small Heater Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -123710,8 +123710,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_southern_oval_shield_v1_h0",
-    "baseId": "crpg_southern_oval_shield_v1",
+    "id": "crpg_southern_oval_shield_v2_h0",
+    "baseId": "crpg_southern_oval_shield_v2",
     "name": "Reinforced Oval Shield",
     "culture": "Aserai",
     "type": "Shield",
@@ -123750,8 +123750,8 @@
     ]
   },
   {
-    "id": "crpg_southern_oval_shield_v1_h1",
-    "baseId": "crpg_southern_oval_shield_v1",
+    "id": "crpg_southern_oval_shield_v2_h1",
+    "baseId": "crpg_southern_oval_shield_v2",
     "name": "Reinforced Oval Shield +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -123790,8 +123790,8 @@
     ]
   },
   {
-    "id": "crpg_southern_oval_shield_v1_h2",
-    "baseId": "crpg_southern_oval_shield_v1",
+    "id": "crpg_southern_oval_shield_v2_h2",
+    "baseId": "crpg_southern_oval_shield_v2",
     "name": "Reinforced Oval Shield +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -123830,8 +123830,8 @@
     ]
   },
   {
-    "id": "crpg_southern_oval_shield_v1_h3",
-    "baseId": "crpg_southern_oval_shield_v1",
+    "id": "crpg_southern_oval_shield_v2_h3",
+    "baseId": "crpg_southern_oval_shield_v2",
     "name": "Reinforced Oval Shield +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -127232,8 +127232,8 @@
     ]
   },
   {
-    "id": "crpg_steel_round_shield_v1_h0",
-    "baseId": "crpg_steel_round_shield_v1",
+    "id": "crpg_steel_round_shield_v2_h0",
+    "baseId": "crpg_steel_round_shield_v2",
     "name": "Steel Round Shield",
     "culture": "Khuzait",
     "type": "Shield",
@@ -127272,8 +127272,8 @@
     ]
   },
   {
-    "id": "crpg_steel_round_shield_v1_h1",
-    "baseId": "crpg_steel_round_shield_v1",
+    "id": "crpg_steel_round_shield_v2_h1",
+    "baseId": "crpg_steel_round_shield_v2",
     "name": "Steel Round Shield +1",
     "culture": "Khuzait",
     "type": "Shield",
@@ -127312,8 +127312,8 @@
     ]
   },
   {
-    "id": "crpg_steel_round_shield_v1_h2",
-    "baseId": "crpg_steel_round_shield_v1",
+    "id": "crpg_steel_round_shield_v2_h2",
+    "baseId": "crpg_steel_round_shield_v2",
     "name": "Steel Round Shield +2",
     "culture": "Khuzait",
     "type": "Shield",
@@ -127352,8 +127352,8 @@
     ]
   },
   {
-    "id": "crpg_steel_round_shield_v1_h3",
-    "baseId": "crpg_steel_round_shield_v1",
+    "id": "crpg_steel_round_shield_v2_h3",
+    "baseId": "crpg_steel_round_shield_v2",
     "name": "Steel Round Shield +3",
     "culture": "Khuzait",
     "type": "Shield",
@@ -128476,8 +128476,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_guardian_shield_v1_h0",
-    "baseId": "crpg_steppe_guardian_shield_v1",
+    "id": "crpg_steppe_guardian_shield_v2_h0",
+    "baseId": "crpg_steppe_guardian_shield_v2",
     "name": "Eastern Cavalry Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -128516,8 +128516,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_guardian_shield_v1_h1",
-    "baseId": "crpg_steppe_guardian_shield_v1",
+    "id": "crpg_steppe_guardian_shield_v2_h1",
+    "baseId": "crpg_steppe_guardian_shield_v2",
     "name": "Eastern Cavalry Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -128556,8 +128556,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_guardian_shield_v1_h2",
-    "baseId": "crpg_steppe_guardian_shield_v1",
+    "id": "crpg_steppe_guardian_shield_v2_h2",
+    "baseId": "crpg_steppe_guardian_shield_v2",
     "name": "Eastern Cavalry Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -128596,8 +128596,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_guardian_shield_v1_h3",
-    "baseId": "crpg_steppe_guardian_shield_v1",
+    "id": "crpg_steppe_guardian_shield_v2_h3",
+    "baseId": "crpg_steppe_guardian_shield_v2",
     "name": "Eastern Cavalry Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -131304,8 +131304,8 @@
     ]
   },
   {
-    "id": "crpg_stronger_reinforced_kite_shield_v1_h0",
-    "baseId": "crpg_stronger_reinforced_kite_shield_v1",
+    "id": "crpg_stronger_reinforced_kite_shield_v2_h0",
+    "baseId": "crpg_stronger_reinforced_kite_shield_v2",
     "name": "Reinforced Oaken Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -131344,8 +131344,8 @@
     ]
   },
   {
-    "id": "crpg_stronger_reinforced_kite_shield_v1_h1",
-    "baseId": "crpg_stronger_reinforced_kite_shield_v1",
+    "id": "crpg_stronger_reinforced_kite_shield_v2_h1",
+    "baseId": "crpg_stronger_reinforced_kite_shield_v2",
     "name": "Reinforced Oaken Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -131384,8 +131384,8 @@
     ]
   },
   {
-    "id": "crpg_stronger_reinforced_kite_shield_v1_h2",
-    "baseId": "crpg_stronger_reinforced_kite_shield_v1",
+    "id": "crpg_stronger_reinforced_kite_shield_v2_h2",
+    "baseId": "crpg_stronger_reinforced_kite_shield_v2",
     "name": "Reinforced Oaken Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -131424,8 +131424,8 @@
     ]
   },
   {
-    "id": "crpg_stronger_reinforced_kite_shield_v1_h3",
-    "baseId": "crpg_stronger_reinforced_kite_shield_v1",
+    "id": "crpg_stronger_reinforced_kite_shield_v2_h3",
+    "baseId": "crpg_stronger_reinforced_kite_shield_v2",
     "name": "Reinforced Oaken Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -131464,8 +131464,8 @@
     ]
   },
   {
-    "id": "crpg_studded_adarga_v1_h0",
-    "baseId": "crpg_studded_adarga_v1",
+    "id": "crpg_studded_adarga_v2_h0",
+    "baseId": "crpg_studded_adarga_v2",
     "name": "Studded Adarga",
     "culture": "Aserai",
     "type": "Shield",
@@ -131504,8 +131504,8 @@
     ]
   },
   {
-    "id": "crpg_studded_adarga_v1_h1",
-    "baseId": "crpg_studded_adarga_v1",
+    "id": "crpg_studded_adarga_v2_h1",
+    "baseId": "crpg_studded_adarga_v2",
     "name": "Studded Adarga +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -131544,8 +131544,8 @@
     ]
   },
   {
-    "id": "crpg_studded_adarga_v1_h2",
-    "baseId": "crpg_studded_adarga_v1",
+    "id": "crpg_studded_adarga_v2_h2",
+    "baseId": "crpg_studded_adarga_v2",
     "name": "Studded Adarga +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -131584,8 +131584,8 @@
     ]
   },
   {
-    "id": "crpg_studded_adarga_v1_h3",
-    "baseId": "crpg_studded_adarga_v1",
+    "id": "crpg_studded_adarga_v2_h3",
+    "baseId": "crpg_studded_adarga_v2",
     "name": "Studded Adarga +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -131624,8 +131624,8 @@
     ]
   },
   {
-    "id": "crpg_studded_bound_kite_shield_v1_h0",
-    "baseId": "crpg_studded_bound_kite_shield_v1",
+    "id": "crpg_studded_bound_kite_shield_v2_h0",
+    "baseId": "crpg_studded_bound_kite_shield_v2",
     "name": "Studded Bound Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -131664,8 +131664,8 @@
     ]
   },
   {
-    "id": "crpg_studded_bound_kite_shield_v1_h1",
-    "baseId": "crpg_studded_bound_kite_shield_v1",
+    "id": "crpg_studded_bound_kite_shield_v2_h1",
+    "baseId": "crpg_studded_bound_kite_shield_v2",
     "name": "Studded Bound Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -131704,8 +131704,8 @@
     ]
   },
   {
-    "id": "crpg_studded_bound_kite_shield_v1_h2",
-    "baseId": "crpg_studded_bound_kite_shield_v1",
+    "id": "crpg_studded_bound_kite_shield_v2_h2",
+    "baseId": "crpg_studded_bound_kite_shield_v2",
     "name": "Studded Bound Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -131744,8 +131744,8 @@
     ]
   },
   {
-    "id": "crpg_studded_bound_kite_shield_v1_h3",
-    "baseId": "crpg_studded_bound_kite_shield_v1",
+    "id": "crpg_studded_bound_kite_shield_v2_h3",
+    "baseId": "crpg_studded_bound_kite_shield_v2",
     "name": "Studded Bound Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -132356,8 +132356,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_studded_round_shield_v1_h0",
-    "baseId": "crpg_studded_round_shield_v1",
+    "id": "crpg_studded_round_shield_v2_h0",
+    "baseId": "crpg_studded_round_shield_v2",
     "name": "Iron Round Shield",
     "culture": "Aserai",
     "type": "Shield",
@@ -132396,8 +132396,8 @@
     ]
   },
   {
-    "id": "crpg_studded_round_shield_v1_h1",
-    "baseId": "crpg_studded_round_shield_v1",
+    "id": "crpg_studded_round_shield_v2_h1",
+    "baseId": "crpg_studded_round_shield_v2",
     "name": "Iron Round Shield +1",
     "culture": "Aserai",
     "type": "Shield",
@@ -132436,8 +132436,8 @@
     ]
   },
   {
-    "id": "crpg_studded_round_shield_v1_h2",
-    "baseId": "crpg_studded_round_shield_v1",
+    "id": "crpg_studded_round_shield_v2_h2",
+    "baseId": "crpg_studded_round_shield_v2",
     "name": "Iron Round Shield +2",
     "culture": "Aserai",
     "type": "Shield",
@@ -132476,8 +132476,8 @@
     ]
   },
   {
-    "id": "crpg_studded_round_shield_v1_h3",
-    "baseId": "crpg_studded_round_shield_v1",
+    "id": "crpg_studded_round_shield_v2_h3",
+    "baseId": "crpg_studded_round_shield_v2",
     "name": "Iron Round Shield +3",
     "culture": "Aserai",
     "type": "Shield",
@@ -133456,8 +133456,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_sturgia_old_shield_a_v1_h0",
-    "baseId": "crpg_sturgia_old_shield_a_v1",
+    "id": "crpg_sturgia_old_shield_a_v2_h0",
+    "baseId": "crpg_sturgia_old_shield_a_v2",
     "name": "Iron Rimmed Large Round Shield",
     "culture": "Sturgia",
     "type": "Shield",
@@ -133496,8 +133496,8 @@
     ]
   },
   {
-    "id": "crpg_sturgia_old_shield_a_v1_h1",
-    "baseId": "crpg_sturgia_old_shield_a_v1",
+    "id": "crpg_sturgia_old_shield_a_v2_h1",
+    "baseId": "crpg_sturgia_old_shield_a_v2",
     "name": "Iron Rimmed Large Round Shield +1",
     "culture": "Sturgia",
     "type": "Shield",
@@ -133536,8 +133536,8 @@
     ]
   },
   {
-    "id": "crpg_sturgia_old_shield_a_v1_h2",
-    "baseId": "crpg_sturgia_old_shield_a_v1",
+    "id": "crpg_sturgia_old_shield_a_v2_h2",
+    "baseId": "crpg_sturgia_old_shield_a_v2",
     "name": "Iron Rimmed Large Round Shield +2",
     "culture": "Sturgia",
     "type": "Shield",
@@ -133576,8 +133576,8 @@
     ]
   },
   {
-    "id": "crpg_sturgia_old_shield_a_v1_h3",
-    "baseId": "crpg_sturgia_old_shield_a_v1",
+    "id": "crpg_sturgia_old_shield_a_v2_h3",
+    "baseId": "crpg_sturgia_old_shield_a_v2",
     "name": "Iron Rimmed Large Round Shield +3",
     "culture": "Sturgia",
     "type": "Shield",
@@ -133616,8 +133616,8 @@
     ]
   },
   {
-    "id": "crpg_sturgia_old_shield_b_v1_h0",
-    "baseId": "crpg_sturgia_old_shield_b_v1",
+    "id": "crpg_sturgia_old_shield_b_v2_h0",
+    "baseId": "crpg_sturgia_old_shield_b_v2",
     "name": "Simple Large Round Shield",
     "culture": "Sturgia",
     "type": "Shield",
@@ -133656,8 +133656,8 @@
     ]
   },
   {
-    "id": "crpg_sturgia_old_shield_b_v1_h1",
-    "baseId": "crpg_sturgia_old_shield_b_v1",
+    "id": "crpg_sturgia_old_shield_b_v2_h1",
+    "baseId": "crpg_sturgia_old_shield_b_v2",
     "name": "Simple Large Round Shield +1",
     "culture": "Sturgia",
     "type": "Shield",
@@ -133696,8 +133696,8 @@
     ]
   },
   {
-    "id": "crpg_sturgia_old_shield_b_v1_h2",
-    "baseId": "crpg_sturgia_old_shield_b_v1",
+    "id": "crpg_sturgia_old_shield_b_v2_h2",
+    "baseId": "crpg_sturgia_old_shield_b_v2",
     "name": "Simple Large Round Shield +2",
     "culture": "Sturgia",
     "type": "Shield",
@@ -133736,8 +133736,8 @@
     ]
   },
   {
-    "id": "crpg_sturgia_old_shield_b_v1_h3",
-    "baseId": "crpg_sturgia_old_shield_b_v1",
+    "id": "crpg_sturgia_old_shield_b_v2_h3",
+    "baseId": "crpg_sturgia_old_shield_b_v2",
     "name": "Simple Large Round Shield +3",
     "culture": "Sturgia",
     "type": "Shield",
@@ -136068,8 +136068,8 @@
     ]
   },
   {
-    "id": "crpg_tall_heater_shield_v1_h0",
-    "baseId": "crpg_tall_heater_shield_v1",
+    "id": "crpg_tall_heater_shield_v2_h0",
+    "baseId": "crpg_tall_heater_shield_v2",
     "name": "Tall Heater Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -136108,8 +136108,8 @@
     ]
   },
   {
-    "id": "crpg_tall_heater_shield_v1_h1",
-    "baseId": "crpg_tall_heater_shield_v1",
+    "id": "crpg_tall_heater_shield_v2_h1",
+    "baseId": "crpg_tall_heater_shield_v2",
     "name": "Tall Heater Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -136148,8 +136148,8 @@
     ]
   },
   {
-    "id": "crpg_tall_heater_shield_v1_h2",
-    "baseId": "crpg_tall_heater_shield_v1",
+    "id": "crpg_tall_heater_shield_v2_h2",
+    "baseId": "crpg_tall_heater_shield_v2",
     "name": "Tall Heater Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -136188,8 +136188,8 @@
     ]
   },
   {
-    "id": "crpg_tall_heater_shield_v1_h3",
-    "baseId": "crpg_tall_heater_shield_v1",
+    "id": "crpg_tall_heater_shield_v2_h3",
+    "baseId": "crpg_tall_heater_shield_v2",
     "name": "Tall Heater Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -141896,8 +141896,8 @@
     ]
   },
   {
-    "id": "crpg_tribal_steppe_shield_v1_h0",
-    "baseId": "crpg_tribal_steppe_shield_v1",
+    "id": "crpg_tribal_steppe_shield_v2_h0",
+    "baseId": "crpg_tribal_steppe_shield_v2",
     "name": "Tribal Steppe Shield",
     "culture": "Khuzait",
     "type": "Shield",
@@ -141936,8 +141936,8 @@
     ]
   },
   {
-    "id": "crpg_tribal_steppe_shield_v1_h1",
-    "baseId": "crpg_tribal_steppe_shield_v1",
+    "id": "crpg_tribal_steppe_shield_v2_h1",
+    "baseId": "crpg_tribal_steppe_shield_v2",
     "name": "Tribal Steppe Shield +1",
     "culture": "Khuzait",
     "type": "Shield",
@@ -141976,8 +141976,8 @@
     ]
   },
   {
-    "id": "crpg_tribal_steppe_shield_v1_h2",
-    "baseId": "crpg_tribal_steppe_shield_v1",
+    "id": "crpg_tribal_steppe_shield_v2_h2",
+    "baseId": "crpg_tribal_steppe_shield_v2",
     "name": "Tribal Steppe Shield +2",
     "culture": "Khuzait",
     "type": "Shield",
@@ -142016,8 +142016,8 @@
     ]
   },
   {
-    "id": "crpg_tribal_steppe_shield_v1_h3",
-    "baseId": "crpg_tribal_steppe_shield_v1",
+    "id": "crpg_tribal_steppe_shield_v2_h3",
+    "baseId": "crpg_tribal_steppe_shield_v2",
     "name": "Tribal Steppe Shield +3",
     "culture": "Khuzait",
     "type": "Shield",
@@ -144416,8 +144416,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_viking_round_shield_v1_h0",
-    "baseId": "crpg_viking_round_shield_v1",
+    "id": "crpg_viking_round_shield_v2_h0",
+    "baseId": "crpg_viking_round_shield_v2",
     "name": "Norse Round Shield",
     "culture": "Sturgia",
     "type": "Shield",
@@ -144456,8 +144456,8 @@
     ]
   },
   {
-    "id": "crpg_viking_round_shield_v1_h1",
-    "baseId": "crpg_viking_round_shield_v1",
+    "id": "crpg_viking_round_shield_v2_h1",
+    "baseId": "crpg_viking_round_shield_v2",
     "name": "Norse Round Shield +1",
     "culture": "Sturgia",
     "type": "Shield",
@@ -144496,8 +144496,8 @@
     ]
   },
   {
-    "id": "crpg_viking_round_shield_v1_h2",
-    "baseId": "crpg_viking_round_shield_v1",
+    "id": "crpg_viking_round_shield_v2_h2",
+    "baseId": "crpg_viking_round_shield_v2",
     "name": "Norse Round Shield +2",
     "culture": "Sturgia",
     "type": "Shield",
@@ -144536,8 +144536,8 @@
     ]
   },
   {
-    "id": "crpg_viking_round_shield_v1_h3",
-    "baseId": "crpg_viking_round_shield_v1",
+    "id": "crpg_viking_round_shield_v2_h3",
+    "baseId": "crpg_viking_round_shield_v2",
     "name": "Norse Round Shield +3",
     "culture": "Sturgia",
     "type": "Shield",
@@ -147356,8 +147356,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_western_kite_shield_v1_h0",
-    "baseId": "crpg_western_kite_shield_v1",
+    "id": "crpg_western_kite_shield_v2_h0",
+    "baseId": "crpg_western_kite_shield_v2",
     "name": "Kite Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -147396,8 +147396,8 @@
     ]
   },
   {
-    "id": "crpg_western_kite_shield_v1_h1",
-    "baseId": "crpg_western_kite_shield_v1",
+    "id": "crpg_western_kite_shield_v2_h1",
+    "baseId": "crpg_western_kite_shield_v2",
     "name": "Kite Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -147436,8 +147436,8 @@
     ]
   },
   {
-    "id": "crpg_western_kite_shield_v1_h2",
-    "baseId": "crpg_western_kite_shield_v1",
+    "id": "crpg_western_kite_shield_v2_h2",
+    "baseId": "crpg_western_kite_shield_v2",
     "name": "Kite Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -147476,8 +147476,8 @@
     ]
   },
   {
-    "id": "crpg_western_kite_shield_v1_h3",
-    "baseId": "crpg_western_kite_shield_v1",
+    "id": "crpg_western_kite_shield_v2_h3",
+    "baseId": "crpg_western_kite_shield_v2",
     "name": "Kite Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -147604,8 +147604,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_western_riders_kite_shield_v1_h0",
-    "baseId": "crpg_western_riders_kite_shield_v1",
+    "id": "crpg_western_riders_kite_shield_v2_h0",
+    "baseId": "crpg_western_riders_kite_shield_v2",
     "name": "Horseman Kite Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -147644,8 +147644,8 @@
     ]
   },
   {
-    "id": "crpg_western_riders_kite_shield_v1_h1",
-    "baseId": "crpg_western_riders_kite_shield_v1",
+    "id": "crpg_western_riders_kite_shield_v2_h1",
+    "baseId": "crpg_western_riders_kite_shield_v2",
     "name": "Horseman Kite Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -147684,8 +147684,8 @@
     ]
   },
   {
-    "id": "crpg_western_riders_kite_shield_v1_h2",
-    "baseId": "crpg_western_riders_kite_shield_v1",
+    "id": "crpg_western_riders_kite_shield_v2_h2",
+    "baseId": "crpg_western_riders_kite_shield_v2",
     "name": "Horseman Kite Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -147724,8 +147724,8 @@
     ]
   },
   {
-    "id": "crpg_western_riders_kite_shield_v1_h3",
-    "baseId": "crpg_western_riders_kite_shield_v1",
+    "id": "crpg_western_riders_kite_shield_v2_h3",
+    "baseId": "crpg_western_riders_kite_shield_v2",
     "name": "Horseman Kite Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -148100,8 +148100,8 @@
     ]
   },
   {
-    "id": "crpg_wide_heater_shield_v1_h0",
-    "baseId": "crpg_wide_heater_shield_v1",
+    "id": "crpg_wide_heater_shield_v2_h0",
+    "baseId": "crpg_wide_heater_shield_v2",
     "name": "Wide Heater Shield",
     "culture": "Vlandia",
     "type": "Shield",
@@ -148140,8 +148140,8 @@
     ]
   },
   {
-    "id": "crpg_wide_heater_shield_v1_h1",
-    "baseId": "crpg_wide_heater_shield_v1",
+    "id": "crpg_wide_heater_shield_v2_h1",
+    "baseId": "crpg_wide_heater_shield_v2",
     "name": "Wide Heater Shield +1",
     "culture": "Vlandia",
     "type": "Shield",
@@ -148180,8 +148180,8 @@
     ]
   },
   {
-    "id": "crpg_wide_heater_shield_v1_h2",
-    "baseId": "crpg_wide_heater_shield_v1",
+    "id": "crpg_wide_heater_shield_v2_h2",
+    "baseId": "crpg_wide_heater_shield_v2",
     "name": "Wide Heater Shield +2",
     "culture": "Vlandia",
     "type": "Shield",
@@ -148220,8 +148220,8 @@
     ]
   },
   {
-    "id": "crpg_wide_heater_shield_v1_h3",
-    "baseId": "crpg_wide_heater_shield_v1",
+    "id": "crpg_wide_heater_shield_v2_h3",
+    "baseId": "crpg_wide_heater_shield_v2",
     "name": "Wide Heater Shield +3",
     "culture": "Vlandia",
     "type": "Shield",
@@ -150856,8 +150856,8 @@
     ]
   },
   {
-    "id": "crpg_worn_horsemans_kite_shield_v1_h0",
-    "baseId": "crpg_worn_horsemans_kite_shield_v1",
+    "id": "crpg_worn_horsemans_kite_shield_v2_h0",
+    "baseId": "crpg_worn_horsemans_kite_shield_v2",
     "name": "Makeshift Horseman Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -150896,8 +150896,8 @@
     ]
   },
   {
-    "id": "crpg_worn_horsemans_kite_shield_v1_h1",
-    "baseId": "crpg_worn_horsemans_kite_shield_v1",
+    "id": "crpg_worn_horsemans_kite_shield_v2_h1",
+    "baseId": "crpg_worn_horsemans_kite_shield_v2",
     "name": "Makeshift Horseman Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -150936,8 +150936,8 @@
     ]
   },
   {
-    "id": "crpg_worn_horsemans_kite_shield_v1_h2",
-    "baseId": "crpg_worn_horsemans_kite_shield_v1",
+    "id": "crpg_worn_horsemans_kite_shield_v2_h2",
+    "baseId": "crpg_worn_horsemans_kite_shield_v2",
     "name": "Makeshift Horseman Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -150976,8 +150976,8 @@
     ]
   },
   {
-    "id": "crpg_worn_horsemans_kite_shield_v1_h3",
-    "baseId": "crpg_worn_horsemans_kite_shield_v1",
+    "id": "crpg_worn_horsemans_kite_shield_v2_h3",
+    "baseId": "crpg_worn_horsemans_kite_shield_v2",
     "name": "Makeshift Horseman Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
@@ -151016,8 +151016,8 @@
     ]
   },
   {
-    "id": "crpg_worn_kite_shield_v1_h0",
-    "baseId": "crpg_worn_kite_shield_v1",
+    "id": "crpg_worn_kite_shield_v2_h0",
+    "baseId": "crpg_worn_kite_shield_v2",
     "name": "Worn Kite Shield",
     "culture": "Neutral",
     "type": "Shield",
@@ -151056,8 +151056,8 @@
     ]
   },
   {
-    "id": "crpg_worn_kite_shield_v1_h1",
-    "baseId": "crpg_worn_kite_shield_v1",
+    "id": "crpg_worn_kite_shield_v2_h1",
+    "baseId": "crpg_worn_kite_shield_v2",
     "name": "Worn Kite Shield +1",
     "culture": "Neutral",
     "type": "Shield",
@@ -151096,8 +151096,8 @@
     ]
   },
   {
-    "id": "crpg_worn_kite_shield_v1_h2",
-    "baseId": "crpg_worn_kite_shield_v1",
+    "id": "crpg_worn_kite_shield_v2_h2",
+    "baseId": "crpg_worn_kite_shield_v2",
     "name": "Worn Kite Shield +2",
     "culture": "Neutral",
     "type": "Shield",
@@ -151136,8 +151136,8 @@
     ]
   },
   {
-    "id": "crpg_worn_kite_shield_v1_h3",
-    "baseId": "crpg_worn_kite_shield_v1",
+    "id": "crpg_worn_kite_shield_v2_h3",
+    "baseId": "crpg_worn_kite_shield_v2",
     "name": "Worn Kite Shield +3",
     "culture": "Neutral",
     "type": "Shield",
