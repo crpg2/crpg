@@ -160,7 +160,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_Heavy_Highland_Tower_Shield_v1_h0" name="{crpg_Heavy_Highland_Tower_Shield}Heavy Highland Tower Shield" body_name="bo_cap_battania_large_shield_b" shield_body_name="bo_battania_large_shield_b" recalculate_body="false" mesh="mp_battania_large_shield_b" using_tableau="true" weight="6.536864" appearance="1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0" culture="Culture.battania">
+  <Item id="crpg_Heavy_Highland_Tower_Shield_v1_h0" name="{crpg_Heavy_Highland_Tower_Shield}Heavy Highland Tower Shield" body_name="bo_cap_battania_large_shield_b" shield_body_name="bo_battania_large_shield_b" recalculate_body="false" mesh="mp_battania_large_shield_b" using_tableau="true" weight="8.257091" appearance="1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0" culture="Culture.battania">
     <ItemComponent>
       <Weapon weapon_class="LargeShield" body_armor="10" thrust_speed="55" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="55" physics_material="wood_shield" item_usage="hand_shield" position="0.04, -0.01, 0.0" rotation="-75.00,-62.90,0.00" weapon_length="87" center_of_mass="0.0,0.065,0.05" hit_points="480" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
@@ -168,25 +168,25 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_Heavy_Highland_Tower_Shield_v1_h1" name="{crpg_Heavy_Highland_Tower_Shield}Heavy Highland Tower Shield +1" body_name="bo_cap_battania_large_shield_b" shield_body_name="bo_battania_large_shield_b" recalculate_body="false" mesh="mp_battania_large_shield_b" using_tableau="true" weight="6.536864" appearance="1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0" culture="Culture.battania">
+  <Item id="crpg_Heavy_Highland_Tower_Shield_v1_h1" name="{crpg_Heavy_Highland_Tower_Shield}Heavy Highland Tower Shield +1" body_name="bo_cap_battania_large_shield_b" shield_body_name="bo_battania_large_shield_b" recalculate_body="false" mesh="mp_battania_large_shield_b" using_tableau="true" weight="8.257091" appearance="1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="55" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="55" physics_material="wood_shield" item_usage="hand_shield" position="0.04, -0.01, 0.0" rotation="-75.00,-62.90,0.00" weapon_length="87" center_of_mass="0.0,0.065,0.05" hit_points="411" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="55" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="55" physics_material="wood_shield" item_usage="hand_shield" position="0.04, -0.01, 0.0" rotation="-75.00,-62.90,0.00" weapon_length="87" center_of_mass="0.0,0.065,0.05" hit_points="519" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_Heavy_Highland_Tower_Shield_v1_h2" name="{crpg_Heavy_Highland_Tower_Shield}Heavy Highland Tower Shield +2" body_name="bo_cap_battania_large_shield_b" shield_body_name="bo_battania_large_shield_b" recalculate_body="false" mesh="mp_battania_large_shield_b" using_tableau="true" weight="6.536864" appearance="1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0" culture="Culture.battania">
+  <Item id="crpg_Heavy_Highland_Tower_Shield_v1_h2" name="{crpg_Heavy_Highland_Tower_Shield}Heavy Highland Tower Shield +2" body_name="bo_cap_battania_large_shield_b" shield_body_name="bo_battania_large_shield_b" recalculate_body="false" mesh="mp_battania_large_shield_b" using_tableau="true" weight="8.257091" appearance="1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="55" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="55" physics_material="wood_shield" item_usage="hand_shield" position="0.04, -0.01, 0.0" rotation="-75.00,-62.90,0.00" weapon_length="87" center_of_mass="0.0,0.065,0.05" hit_points="441" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="55" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="55" physics_material="wood_shield" item_usage="hand_shield" position="0.04, -0.01, 0.0" rotation="-75.00,-62.90,0.00" weapon_length="87" center_of_mass="0.0,0.065,0.05" hit_points="557" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_Heavy_Highland_Tower_Shield_v1_h3" name="{crpg_Heavy_Highland_Tower_Shield}Heavy Highland Tower Shield +3" body_name="bo_cap_battania_large_shield_b" shield_body_name="bo_battania_large_shield_b" recalculate_body="false" mesh="mp_battania_large_shield_b" using_tableau="true" weight="6.536864" appearance="1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0" culture="Culture.battania">
+  <Item id="crpg_Heavy_Highland_Tower_Shield_v1_h3" name="{crpg_Heavy_Highland_Tower_Shield}Heavy Highland Tower Shield +3" body_name="bo_cap_battania_large_shield_b" shield_body_name="bo_battania_large_shield_b" recalculate_body="false" mesh="mp_battania_large_shield_b" using_tableau="true" weight="8.257091" appearance="1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="55" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="55" physics_material="wood_shield" item_usage="hand_shield" position="0.04, -0.01, 0.0" rotation="-75.00,-62.90,0.00" weapon_length="87" center_of_mass="0.0,0.065,0.05" hit_points="472" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="55" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="55" physics_material="wood_shield" item_usage="hand_shield" position="0.04, -0.01, 0.0" rotation="-75.00,-62.90,0.00" weapon_length="87" center_of_mass="0.0,0.065,0.05" hit_points="596" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -288,65 +288,65 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_scouts_shield_v1_h0" name="{=dbbwszHd}Decorated Round Shield" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" using_tableau="true" weight="4.977818" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
+  <Item id="crpg_highland_scouts_shield_v1_h0" name="{=dbbwszHd}Decorated Round Shield" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" using_tableau="true" weight="6.913636" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="8" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="360" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="8" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="500" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_scouts_shield_v1_h1" name="{=dbbwszHd}Decorated Round Shield +1" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" using_tableau="true" weight="4.977818" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
+  <Item id="crpg_highland_scouts_shield_v1_h1" name="{=dbbwszHd}Decorated Round Shield +1" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" using_tableau="true" weight="6.913636" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="389" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="540" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_scouts_shield_v1_h2" name="{=dbbwszHd}Decorated Round Shield +2" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" using_tableau="true" weight="4.977818" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
+  <Item id="crpg_highland_scouts_shield_v1_h2" name="{=dbbwszHd}Decorated Round Shield +2" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" using_tableau="true" weight="6.913636" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="418" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="580" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_scouts_shield_v1_h3" name="{=dbbwszHd}Decorated Round Shield +3" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" using_tableau="true" weight="4.977818" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
+  <Item id="crpg_highland_scouts_shield_v1_h3" name="{=dbbwszHd}Decorated Round Shield +3" body_name="bo_cap_shield_battania_cavalary_a" shield_body_name="bo_shield_battania_cavalary_a" recalculate_body="false" mesh="shield_battania_cavalary_a" using_tableau="true" weight="6.913636" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="447" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="620" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_riders_shield_v1_h0" name="{=OSHSIyhN}Highland Round Shield" body_name="bo_cap_shield_battania_cavalary_b" shield_body_name="bo_shield_battania_cavalary_b" recalculate_body="false" mesh="shield_battania_cavalary_b" using_tableau="true" weight="4.424727" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
+  <Item id="crpg_highland_riders_shield_v1_h0" name="{=OSHSIyhN}Highland Round Shield" body_name="bo_cap_shield_battania_cavalary_b" shield_body_name="bo_shield_battania_cavalary_b" recalculate_body="false" mesh="shield_battania_cavalary_b" using_tableau="true" weight="5.807455" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="14" thrust_speed="120" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="320" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="14" thrust_speed="120" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="420" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_riders_shield_v1_h1" name="{=OSHSIyhN}Highland Round Shield +1" body_name="bo_cap_shield_battania_cavalary_b" shield_body_name="bo_shield_battania_cavalary_b" recalculate_body="false" mesh="shield_battania_cavalary_b" using_tableau="true" weight="4.424727" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
+  <Item id="crpg_highland_riders_shield_v1_h1" name="{=OSHSIyhN}Highland Round Shield +1" body_name="bo_cap_shield_battania_cavalary_b" shield_body_name="bo_shield_battania_cavalary_b" recalculate_body="false" mesh="shield_battania_cavalary_b" using_tableau="true" weight="5.807455" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="15" thrust_speed="120" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="346" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="15" thrust_speed="120" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="454" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_riders_shield_v1_h2" name="{=OSHSIyhN}Highland Round Shield +2" body_name="bo_cap_shield_battania_cavalary_b" shield_body_name="bo_shield_battania_cavalary_b" recalculate_body="false" mesh="shield_battania_cavalary_b" using_tableau="true" weight="4.424727" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
+  <Item id="crpg_highland_riders_shield_v1_h2" name="{=OSHSIyhN}Highland Round Shield +2" body_name="bo_cap_shield_battania_cavalary_b" shield_body_name="bo_shield_battania_cavalary_b" recalculate_body="false" mesh="shield_battania_cavalary_b" using_tableau="true" weight="5.807455" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="15" thrust_speed="120" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="372" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="15" thrust_speed="120" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="488" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_highland_riders_shield_v1_h3" name="{=OSHSIyhN}Highland Round Shield +3" body_name="bo_cap_shield_battania_cavalary_b" shield_body_name="bo_shield_battania_cavalary_b" recalculate_body="false" mesh="shield_battania_cavalary_b" using_tableau="true" weight="4.424727" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
+  <Item id="crpg_highland_riders_shield_v1_h3" name="{=OSHSIyhN}Highland Round Shield +3" body_name="bo_cap_shield_battania_cavalary_b" shield_body_name="bo_shield_battania_cavalary_b" recalculate_body="false" mesh="shield_battania_cavalary_b" using_tableau="true" weight="5.807455" appearance="0.9" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,-0.05,-0.04" culture="Culture.battania">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="16" thrust_speed="120" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="397" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="16" thrust_speed="120" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="78" center_of_mass="-0.0,0.055,0.05" hit_points="521" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -1984,7 +1984,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_long_buckler_v1_h0" name="{=}Heavy Oval Buckler Shield" body_name="bo_cap_crpg_long_buckler" shield_body_name="bo_crpg_long_buckler" recalculate_body="false" mesh="long_buckler" using_tableau="true" weight="0.9595045" difficulty="0" appearance="0.9" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.15,0.40,-0.10">
+  <Item id="crpg_long_buckler_v1_h0" name="{=}Heavy Oval Buckler Shield" body_name="bo_cap_crpg_long_buckler" shield_body_name="bo_crpg_long_buckler" recalculate_body="false" mesh="long_buckler" using_tableau="true" weight="0.8792273" difficulty="0" appearance="0.9" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.15,0.40,-0.10">
     <ItemComponent>
       <Weapon weapon_class="SmallShield" body_armor="8" thrust_speed="80" thrust_damage="10" thrust_damage_type="Blunt" speed_rating="100" physics_material="metal_shield" item_usage="hand_shield" position="0.0, 0.01, 0.0" rotation="-10.0,-90.0,0.0" weapon_length="29" center_of_mass="0.0,0.1,0,1" hit_points="460" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
@@ -1992,25 +1992,25 @@
     </ItemComponent>
     <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_long_buckler_v1_h1" name="{=}Heavy Oval Buckler Shield +1" body_name="bo_cap_crpg_long_buckler" shield_body_name="bo_crpg_long_buckler" recalculate_body="false" mesh="long_buckler" using_tableau="true" weight="0.9595045" difficulty="0" appearance="0.9" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.15,0.40,-0.10">
+  <Item id="crpg_long_buckler_v1_h1" name="{=}Heavy Oval Buckler Shield +1" body_name="bo_cap_crpg_long_buckler" shield_body_name="bo_crpg_long_buckler" recalculate_body="false" mesh="long_buckler" using_tableau="true" weight="0.8792273" difficulty="0" appearance="0.9" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.15,0.40,-0.10">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="9" thrust_speed="80" thrust_damage="10" thrust_damage_type="Blunt" speed_rating="100" physics_material="metal_shield" item_usage="hand_shield" position="0.0, 0.01, 0.0" rotation="-10.0,-90.0,0.0" weapon_length="29" center_of_mass="0.0,0.1,0,1" hit_points="543" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="9" thrust_speed="80" thrust_damage="10" thrust_damage_type="Blunt" speed_rating="100" physics_material="metal_shield" item_usage="hand_shield" position="0.0, 0.01, 0.0" rotation="-10.0,-90.0,0.0" weapon_length="29" center_of_mass="0.0,0.1,0,1" hit_points="497" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_long_buckler_v1_h2" name="{=}Heavy Oval Buckler Shield +2" body_name="bo_cap_crpg_long_buckler" shield_body_name="bo_crpg_long_buckler" recalculate_body="false" mesh="long_buckler" using_tableau="true" weight="0.9595045" difficulty="0" appearance="0.9" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.15,0.40,-0.10">
+  <Item id="crpg_long_buckler_v1_h2" name="{=}Heavy Oval Buckler Shield +2" body_name="bo_cap_crpg_long_buckler" shield_body_name="bo_crpg_long_buckler" recalculate_body="false" mesh="long_buckler" using_tableau="true" weight="0.8792273" difficulty="0" appearance="0.9" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.15,0.40,-0.10">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="9" thrust_speed="80" thrust_damage="10" thrust_damage_type="Blunt" speed_rating="100" physics_material="metal_shield" item_usage="hand_shield" position="0.0, 0.01, 0.0" rotation="-10.0,-90.0,0.0" weapon_length="29" center_of_mass="0.0,0.1,0,1" hit_points="583" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="9" thrust_speed="80" thrust_damage="10" thrust_damage_type="Blunt" speed_rating="100" physics_material="metal_shield" item_usage="hand_shield" position="0.0, 0.01, 0.0" rotation="-10.0,-90.0,0.0" weapon_length="29" center_of_mass="0.0,0.1,0,1" hit_points="534" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_long_buckler_v1_h3" name="{=}Heavy Oval Buckler Shield +3" body_name="bo_cap_crpg_long_buckler" shield_body_name="bo_crpg_long_buckler" recalculate_body="false" mesh="long_buckler" using_tableau="true" weight="0.9595045" difficulty="0" appearance="0.9" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.15,0.40,-0.10">
+  <Item id="crpg_long_buckler_v1_h3" name="{=}Heavy Oval Buckler Shield +3" body_name="bo_cap_crpg_long_buckler" shield_body_name="bo_crpg_long_buckler" recalculate_body="false" mesh="long_buckler" using_tableau="true" weight="0.8792273" difficulty="0" appearance="0.9" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.15,0.40,-0.10">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="9" thrust_speed="80" thrust_damage="10" thrust_damage_type="Blunt" speed_rating="100" physics_material="metal_shield" item_usage="hand_shield" position="0.0, 0.01, 0.0" rotation="-10.0,-90.0,0.0" weapon_length="29" center_of_mass="0.0,0.1,0,1" hit_points="623" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="9" thrust_speed="80" thrust_damage="10" thrust_damage_type="Blunt" speed_rating="100" physics_material="metal_shield" item_usage="hand_shield" position="0.0, 0.01, 0.0" rotation="-10.0,-90.0,0.0" weapon_length="29" center_of_mass="0.0,0.1,0,1" hit_points="571" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
