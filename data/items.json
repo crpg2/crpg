@@ -15954,8 +15954,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bec_de_corbin_h0",
-    "baseId": "crpg_bec_de_corbin",
+    "id": "crpg_bec_de_corbin_v1_h0",
+    "baseId": "crpg_bec_de_corbin_v1",
     "name": "Bec De Corbin",
     "culture": "Neutral",
     "type": "Polearm",
@@ -15994,8 +15994,8 @@
     ]
   },
   {
-    "id": "crpg_bec_de_corbin_h1",
-    "baseId": "crpg_bec_de_corbin",
+    "id": "crpg_bec_de_corbin_v1_h1",
+    "baseId": "crpg_bec_de_corbin_v1",
     "name": "Bec De Corbin +1",
     "culture": "Neutral",
     "type": "Polearm",
@@ -16034,8 +16034,8 @@
     ]
   },
   {
-    "id": "crpg_bec_de_corbin_h2",
-    "baseId": "crpg_bec_de_corbin",
+    "id": "crpg_bec_de_corbin_v1_h2",
+    "baseId": "crpg_bec_de_corbin_v1",
     "name": "Bec De Corbin +2",
     "culture": "Neutral",
     "type": "Polearm",
@@ -16074,8 +16074,8 @@
     ]
   },
   {
-    "id": "crpg_bec_de_corbin_h3",
-    "baseId": "crpg_bec_de_corbin",
+    "id": "crpg_bec_de_corbin_v1_h3",
+    "baseId": "crpg_bec_de_corbin_v1",
     "name": "Bec De Corbin +3",
     "culture": "Neutral",
     "type": "Polearm",
@@ -16306,8 +16306,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_billhook_h0",
-    "baseId": "crpg_billhook",
+    "id": "crpg_billhook_v1_h0",
+    "baseId": "crpg_billhook_v1",
     "name": "Billhook",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -16345,8 +16345,8 @@
     ]
   },
   {
-    "id": "crpg_billhook_h1",
-    "baseId": "crpg_billhook",
+    "id": "crpg_billhook_v1_h1",
+    "baseId": "crpg_billhook_v1",
     "name": "Billhook +1",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -16384,8 +16384,8 @@
     ]
   },
   {
-    "id": "crpg_billhook_h2",
-    "baseId": "crpg_billhook",
+    "id": "crpg_billhook_v1_h2",
+    "baseId": "crpg_billhook_v1",
     "name": "Billhook +2",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -16423,8 +16423,8 @@
     ]
   },
   {
-    "id": "crpg_billhook_h3",
-    "baseId": "crpg_billhook",
+    "id": "crpg_billhook_v1_h3",
+    "baseId": "crpg_billhook_v1",
     "name": "Billhook +3",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -22906,8 +22906,8 @@
     ]
   },
   {
-    "id": "crpg_burgundian_glaive_h0",
-    "baseId": "crpg_burgundian_glaive",
+    "id": "crpg_burgundian_glaive_v1_h0",
+    "baseId": "crpg_burgundian_glaive_v1",
     "name": "Burgundian Glaive",
     "culture": "Neutral",
     "type": "Polearm",
@@ -22946,8 +22946,8 @@
     ]
   },
   {
-    "id": "crpg_burgundian_glaive_h1",
-    "baseId": "crpg_burgundian_glaive",
+    "id": "crpg_burgundian_glaive_v1_h1",
+    "baseId": "crpg_burgundian_glaive_v1",
     "name": "Burgundian Glaive +1",
     "culture": "Neutral",
     "type": "Polearm",
@@ -22986,8 +22986,8 @@
     ]
   },
   {
-    "id": "crpg_burgundian_glaive_h2",
-    "baseId": "crpg_burgundian_glaive",
+    "id": "crpg_burgundian_glaive_v1_h2",
+    "baseId": "crpg_burgundian_glaive_v1",
     "name": "Burgundian Glaive +2",
     "culture": "Neutral",
     "type": "Polearm",
@@ -23026,8 +23026,8 @@
     ]
   },
   {
-    "id": "crpg_burgundian_glaive_h3",
-    "baseId": "crpg_burgundian_glaive",
+    "id": "crpg_burgundian_glaive_v1_h3",
+    "baseId": "crpg_burgundian_glaive_v1",
     "name": "Burgundian Glaive +3",
     "culture": "Neutral",
     "type": "Polearm",
@@ -23066,8 +23066,8 @@
     ]
   },
   {
-    "id": "crpg_burgundian_poleaxe_h0",
-    "baseId": "crpg_burgundian_poleaxe",
+    "id": "crpg_burgundian_poleaxe_v1_h0",
+    "baseId": "crpg_burgundian_poleaxe_v1",
     "name": "Burgundian Poleaxe",
     "culture": "Neutral",
     "type": "Polearm",
@@ -23107,8 +23107,8 @@
     ]
   },
   {
-    "id": "crpg_burgundian_poleaxe_h1",
-    "baseId": "crpg_burgundian_poleaxe",
+    "id": "crpg_burgundian_poleaxe_v1_h1",
+    "baseId": "crpg_burgundian_poleaxe_v1",
     "name": "Burgundian Poleaxe +1",
     "culture": "Neutral",
     "type": "Polearm",
@@ -23148,8 +23148,8 @@
     ]
   },
   {
-    "id": "crpg_burgundian_poleaxe_h2",
-    "baseId": "crpg_burgundian_poleaxe",
+    "id": "crpg_burgundian_poleaxe_v1_h2",
+    "baseId": "crpg_burgundian_poleaxe_v1",
     "name": "Burgundian Poleaxe +2",
     "culture": "Neutral",
     "type": "Polearm",
@@ -23189,8 +23189,8 @@
     ]
   },
   {
-    "id": "crpg_burgundian_poleaxe_h3",
-    "baseId": "crpg_burgundian_poleaxe",
+    "id": "crpg_burgundian_poleaxe_v1_h3",
+    "baseId": "crpg_burgundian_poleaxe_v1",
     "name": "Burgundian Poleaxe +3",
     "culture": "Neutral",
     "type": "Polearm",
@@ -36366,8 +36366,8 @@
     ]
   },
   {
-    "id": "crpg_early_halberd_h0",
-    "baseId": "crpg_early_halberd",
+    "id": "crpg_early_halberd_v1_h0",
+    "baseId": "crpg_early_halberd_v1",
     "name": "Early Halberd",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -36407,8 +36407,8 @@
     ]
   },
   {
-    "id": "crpg_early_halberd_h1",
-    "baseId": "crpg_early_halberd",
+    "id": "crpg_early_halberd_v1_h1",
+    "baseId": "crpg_early_halberd_v1",
     "name": "Early Halberd +1",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -36448,8 +36448,8 @@
     ]
   },
   {
-    "id": "crpg_early_halberd_h2",
-    "baseId": "crpg_early_halberd",
+    "id": "crpg_early_halberd_v1_h2",
+    "baseId": "crpg_early_halberd_v1",
     "name": "Early Halberd +2",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -36489,8 +36489,8 @@
     ]
   },
   {
-    "id": "crpg_early_halberd_h3",
-    "baseId": "crpg_early_halberd",
+    "id": "crpg_early_halberd_v1_h3",
+    "baseId": "crpg_early_halberd_v1",
     "name": "Early Halberd +3",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -44110,8 +44110,8 @@
     ]
   },
   {
-    "id": "crpg_fine_steel_menavlion_h0",
-    "baseId": "crpg_fine_steel_menavlion",
+    "id": "crpg_fine_steel_menavlion_v1_h0",
+    "baseId": "crpg_fine_steel_menavlion_v1",
     "name": "Fine Steel Menavlion",
     "culture": "Empire",
     "type": "Polearm",
@@ -44148,8 +44148,8 @@
     ]
   },
   {
-    "id": "crpg_fine_steel_menavlion_h1",
-    "baseId": "crpg_fine_steel_menavlion",
+    "id": "crpg_fine_steel_menavlion_v1_h1",
+    "baseId": "crpg_fine_steel_menavlion_v1",
     "name": "Fine Steel Menavlion +1",
     "culture": "Empire",
     "type": "Polearm",
@@ -44186,8 +44186,8 @@
     ]
   },
   {
-    "id": "crpg_fine_steel_menavlion_h2",
-    "baseId": "crpg_fine_steel_menavlion",
+    "id": "crpg_fine_steel_menavlion_v1_h2",
+    "baseId": "crpg_fine_steel_menavlion_v1",
     "name": "Fine Steel Menavlion +2",
     "culture": "Empire",
     "type": "Polearm",
@@ -44224,8 +44224,8 @@
     ]
   },
   {
-    "id": "crpg_fine_steel_menavlion_h3",
-    "baseId": "crpg_fine_steel_menavlion",
+    "id": "crpg_fine_steel_menavlion_v1_h3",
+    "baseId": "crpg_fine_steel_menavlion_v1",
     "name": "Fine Steel Menavlion +3",
     "culture": "Empire",
     "type": "Polearm",
@@ -78282,8 +78282,8 @@
     ]
   },
   {
-    "id": "crpg_long_bardiche_h0",
-    "baseId": "crpg_long_bardiche",
+    "id": "crpg_long_bardiche_v1_h0",
+    "baseId": "crpg_long_bardiche_v1",
     "name": "Long Bardiche",
     "culture": "Aserai",
     "type": "Polearm",
@@ -78323,8 +78323,8 @@
     ]
   },
   {
-    "id": "crpg_long_bardiche_h1",
-    "baseId": "crpg_long_bardiche",
+    "id": "crpg_long_bardiche_v1_h1",
+    "baseId": "crpg_long_bardiche_v1",
     "name": "Long Bardiche +1",
     "culture": "Aserai",
     "type": "Polearm",
@@ -78364,8 +78364,8 @@
     ]
   },
   {
-    "id": "crpg_long_bardiche_h2",
-    "baseId": "crpg_long_bardiche",
+    "id": "crpg_long_bardiche_v1_h2",
+    "baseId": "crpg_long_bardiche_v1",
     "name": "Long Bardiche +2",
     "culture": "Aserai",
     "type": "Polearm",
@@ -78405,8 +78405,8 @@
     ]
   },
   {
-    "id": "crpg_long_bardiche_h3",
-    "baseId": "crpg_long_bardiche",
+    "id": "crpg_long_bardiche_v1_h3",
+    "baseId": "crpg_long_bardiche_v1",
     "name": "Long Bardiche +3",
     "culture": "Aserai",
     "type": "Polearm",
@@ -79430,8 +79430,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_long_glaive_h0",
-    "baseId": "crpg_long_glaive",
+    "id": "crpg_long_glaive_v1_h0",
+    "baseId": "crpg_long_glaive_v1",
     "name": "Long Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -79468,8 +79468,8 @@
     ]
   },
   {
-    "id": "crpg_long_glaive_h1",
-    "baseId": "crpg_long_glaive",
+    "id": "crpg_long_glaive_v1_h1",
+    "baseId": "crpg_long_glaive_v1",
     "name": "Long Glaive +1",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -79506,8 +79506,8 @@
     ]
   },
   {
-    "id": "crpg_long_glaive_h2",
-    "baseId": "crpg_long_glaive",
+    "id": "crpg_long_glaive_v1_h2",
+    "baseId": "crpg_long_glaive_v1",
     "name": "Long Glaive +2",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -79544,8 +79544,8 @@
     ]
   },
   {
-    "id": "crpg_long_glaive_h3",
-    "baseId": "crpg_long_glaive",
+    "id": "crpg_long_glaive_v1_h3",
+    "baseId": "crpg_long_glaive_v1",
     "name": "Long Glaive +3",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -79742,8 +79742,8 @@
     ]
   },
   {
-    "id": "crpg_long_hafted_spiked_mace_h0",
-    "baseId": "crpg_long_hafted_spiked_mace",
+    "id": "crpg_long_hafted_spiked_mace_v1_h0",
+    "baseId": "crpg_long_hafted_spiked_mace_v1",
     "name": "Long Hafted Spiked Mace",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -79783,8 +79783,8 @@
     ]
   },
   {
-    "id": "crpg_long_hafted_spiked_mace_h1",
-    "baseId": "crpg_long_hafted_spiked_mace",
+    "id": "crpg_long_hafted_spiked_mace_v1_h1",
+    "baseId": "crpg_long_hafted_spiked_mace_v1",
     "name": "Long Hafted Spiked Mace +1",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -79824,8 +79824,8 @@
     ]
   },
   {
-    "id": "crpg_long_hafted_spiked_mace_h2",
-    "baseId": "crpg_long_hafted_spiked_mace",
+    "id": "crpg_long_hafted_spiked_mace_v1_h2",
+    "baseId": "crpg_long_hafted_spiked_mace_v1",
     "name": "Long Hafted Spiked Mace +2",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -79865,8 +79865,8 @@
     ]
   },
   {
-    "id": "crpg_long_hafted_spiked_mace_h3",
-    "baseId": "crpg_long_hafted_spiked_mace",
+    "id": "crpg_long_hafted_spiked_mace_v1_h3",
+    "baseId": "crpg_long_hafted_spiked_mace_v1",
     "name": "Long Hafted Spiked Mace +3",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -84640,8 +84640,8 @@
     ]
   },
   {
-    "id": "crpg_menavlion_h0",
-    "baseId": "crpg_menavlion",
+    "id": "crpg_menavlion_v1_h0",
+    "baseId": "crpg_menavlion_v1",
     "name": "Menavlion",
     "culture": "Empire",
     "type": "Polearm",
@@ -84678,8 +84678,8 @@
     ]
   },
   {
-    "id": "crpg_menavlion_h1",
-    "baseId": "crpg_menavlion",
+    "id": "crpg_menavlion_v1_h1",
+    "baseId": "crpg_menavlion_v1",
     "name": "Menavlion +1",
     "culture": "Empire",
     "type": "Polearm",
@@ -84716,8 +84716,8 @@
     ]
   },
   {
-    "id": "crpg_menavlion_h2",
-    "baseId": "crpg_menavlion",
+    "id": "crpg_menavlion_v1_h2",
+    "baseId": "crpg_menavlion_v1",
     "name": "Menavlion +2",
     "culture": "Empire",
     "type": "Polearm",
@@ -84754,8 +84754,8 @@
     ]
   },
   {
-    "id": "crpg_menavlion_h3",
-    "baseId": "crpg_menavlion",
+    "id": "crpg_menavlion_v1_h3",
+    "baseId": "crpg_menavlion_v1",
     "name": "Menavlion +3",
     "culture": "Empire",
     "type": "Polearm",
@@ -111198,8 +111198,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rhomphaia_h0",
-    "baseId": "crpg_rhomphaia",
+    "id": "crpg_rhomphaia_v1_h0",
+    "baseId": "crpg_rhomphaia_v1",
     "name": "Rhomphaia",
     "culture": "Battania",
     "type": "Polearm",
@@ -111237,8 +111237,8 @@
     ]
   },
   {
-    "id": "crpg_rhomphaia_h1",
-    "baseId": "crpg_rhomphaia",
+    "id": "crpg_rhomphaia_v1_h1",
+    "baseId": "crpg_rhomphaia_v1",
     "name": "Rhomphaia +1",
     "culture": "Battania",
     "type": "Polearm",
@@ -111276,8 +111276,8 @@
     ]
   },
   {
-    "id": "crpg_rhomphaia_h2",
-    "baseId": "crpg_rhomphaia",
+    "id": "crpg_rhomphaia_v1_h2",
+    "baseId": "crpg_rhomphaia_v1",
     "name": "Rhomphaia +2",
     "culture": "Battania",
     "type": "Polearm",
@@ -111315,8 +111315,8 @@
     ]
   },
   {
-    "id": "crpg_rhomphaia_h3",
-    "baseId": "crpg_rhomphaia",
+    "id": "crpg_rhomphaia_v1_h3",
+    "baseId": "crpg_rhomphaia_v1",
     "name": "Rhomphaia +3",
     "culture": "Battania",
     "type": "Polearm",
@@ -118942,8 +118942,8 @@
     ]
   },
   {
-    "id": "crpg_short_leaf_shaped_spear_h0",
-    "baseId": "crpg_short_leaf_shaped_spear",
+    "id": "crpg_short_leaf_shaped_spear_v1_h0",
+    "baseId": "crpg_short_leaf_shaped_spear_v1",
     "name": "Short Leaf Shaped Spear",
     "culture": "Battania",
     "type": "Polearm",
@@ -119024,8 +119024,8 @@
     ]
   },
   {
-    "id": "crpg_short_leaf_shaped_spear_h1",
-    "baseId": "crpg_short_leaf_shaped_spear",
+    "id": "crpg_short_leaf_shaped_spear_v1_h1",
+    "baseId": "crpg_short_leaf_shaped_spear_v1",
     "name": "Short Leaf Shaped Spear +1",
     "culture": "Battania",
     "type": "Polearm",
@@ -119106,8 +119106,8 @@
     ]
   },
   {
-    "id": "crpg_short_leaf_shaped_spear_h2",
-    "baseId": "crpg_short_leaf_shaped_spear",
+    "id": "crpg_short_leaf_shaped_spear_v1_h2",
+    "baseId": "crpg_short_leaf_shaped_spear_v1",
     "name": "Short Leaf Shaped Spear +2",
     "culture": "Battania",
     "type": "Polearm",
@@ -119188,8 +119188,8 @@
     ]
   },
   {
-    "id": "crpg_short_leaf_shaped_spear_h3",
-    "baseId": "crpg_short_leaf_shaped_spear",
+    "id": "crpg_short_leaf_shaped_spear_v1_h3",
+    "baseId": "crpg_short_leaf_shaped_spear_v1",
     "name": "Short Leaf Shaped Spear +3",
     "culture": "Battania",
     "type": "Polearm",
@@ -119698,8 +119698,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_short_raider_spear_h0",
-    "baseId": "crpg_short_raider_spear",
+    "id": "crpg_short_raider_spear_v1_h0",
+    "baseId": "crpg_short_raider_spear_v1",
     "name": "Short Raider Spear",
     "culture": "Sturgia",
     "type": "Polearm",
@@ -119780,8 +119780,8 @@
     ]
   },
   {
-    "id": "crpg_short_raider_spear_h1",
-    "baseId": "crpg_short_raider_spear",
+    "id": "crpg_short_raider_spear_v1_h1",
+    "baseId": "crpg_short_raider_spear_v1",
     "name": "Short Raider Spear +1",
     "culture": "Sturgia",
     "type": "Polearm",
@@ -119862,8 +119862,8 @@
     ]
   },
   {
-    "id": "crpg_short_raider_spear_h2",
-    "baseId": "crpg_short_raider_spear",
+    "id": "crpg_short_raider_spear_v1_h2",
+    "baseId": "crpg_short_raider_spear_v1",
     "name": "Short Raider Spear +2",
     "culture": "Sturgia",
     "type": "Polearm",
@@ -119944,8 +119944,8 @@
     ]
   },
   {
-    "id": "crpg_short_raider_spear_h3",
-    "baseId": "crpg_short_raider_spear",
+    "id": "crpg_short_raider_spear_v1_h3",
+    "baseId": "crpg_short_raider_spear_v1",
     "name": "Short Raider Spear +3",
     "culture": "Sturgia",
     "type": "Polearm",
@@ -125634,8 +125634,8 @@
     ]
   },
   {
-    "id": "crpg_spiked_polehammer_h0",
-    "baseId": "crpg_spiked_polehammer",
+    "id": "crpg_spiked_polehammer_v1_h0",
+    "baseId": "crpg_spiked_polehammer_v1",
     "name": "Spiked Polehammer",
     "culture": "Neutral",
     "type": "Polearm",
@@ -125674,8 +125674,8 @@
     ]
   },
   {
-    "id": "crpg_spiked_polehammer_h1",
-    "baseId": "crpg_spiked_polehammer",
+    "id": "crpg_spiked_polehammer_v1_h1",
+    "baseId": "crpg_spiked_polehammer_v1",
     "name": "Spiked Polehammer +1",
     "culture": "Neutral",
     "type": "Polearm",
@@ -125714,8 +125714,8 @@
     ]
   },
   {
-    "id": "crpg_spiked_polehammer_h2",
-    "baseId": "crpg_spiked_polehammer",
+    "id": "crpg_spiked_polehammer_v1_h2",
+    "baseId": "crpg_spiked_polehammer_v1",
     "name": "Spiked Polehammer +2",
     "culture": "Neutral",
     "type": "Polearm",
@@ -125754,8 +125754,8 @@
     ]
   },
   {
-    "id": "crpg_spiked_polehammer_h3",
-    "baseId": "crpg_spiked_polehammer",
+    "id": "crpg_spiked_polehammer_v1_h3",
+    "baseId": "crpg_spiked_polehammer_v1",
     "name": "Spiked Polehammer +3",
     "culture": "Neutral",
     "type": "Polearm",
@@ -136644,8 +136644,8 @@
     ]
   },
   {
-    "id": "crpg_tall_tipped_war_spear_h0",
-    "baseId": "crpg_tall_tipped_war_spear",
+    "id": "crpg_tall_tipped_war_spear_v1_h0",
+    "baseId": "crpg_tall_tipped_war_spear_v1",
     "name": "Tall Tipped War Spear",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -136726,8 +136726,8 @@
     ]
   },
   {
-    "id": "crpg_tall_tipped_war_spear_h1",
-    "baseId": "crpg_tall_tipped_war_spear",
+    "id": "crpg_tall_tipped_war_spear_v1_h1",
+    "baseId": "crpg_tall_tipped_war_spear_v1",
     "name": "Tall Tipped War Spear +1",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -136808,8 +136808,8 @@
     ]
   },
   {
-    "id": "crpg_tall_tipped_war_spear_h2",
-    "baseId": "crpg_tall_tipped_war_spear",
+    "id": "crpg_tall_tipped_war_spear_v1_h2",
+    "baseId": "crpg_tall_tipped_war_spear_v1",
     "name": "Tall Tipped War Spear +2",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -136890,8 +136890,8 @@
     ]
   },
   {
-    "id": "crpg_tall_tipped_war_spear_h3",
-    "baseId": "crpg_tall_tipped_war_spear",
+    "id": "crpg_tall_tipped_war_spear_v1_h3",
+    "baseId": "crpg_tall_tipped_war_spear_v1",
     "name": "Tall Tipped War Spear +3",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -146556,8 +146556,8 @@
     ]
   },
   {
-    "id": "crpg_war_scythe_h0",
-    "baseId": "crpg_war_scythe",
+    "id": "crpg_war_scythe_v1_h0",
+    "baseId": "crpg_war_scythe_v1",
     "name": "War Scythe",
     "culture": "Neutral",
     "type": "Polearm",
@@ -146594,8 +146594,8 @@
     ]
   },
   {
-    "id": "crpg_war_scythe_h1",
-    "baseId": "crpg_war_scythe",
+    "id": "crpg_war_scythe_v1_h1",
+    "baseId": "crpg_war_scythe_v1",
     "name": "War Scythe +1",
     "culture": "Neutral",
     "type": "Polearm",
@@ -146632,8 +146632,8 @@
     ]
   },
   {
-    "id": "crpg_war_scythe_h2",
-    "baseId": "crpg_war_scythe",
+    "id": "crpg_war_scythe_v1_h2",
+    "baseId": "crpg_war_scythe_v1",
     "name": "War Scythe +2",
     "culture": "Neutral",
     "type": "Polearm",
@@ -146670,8 +146670,8 @@
     ]
   },
   {
-    "id": "crpg_war_scythe_h3",
-    "baseId": "crpg_war_scythe",
+    "id": "crpg_war_scythe_v1_h3",
+    "baseId": "crpg_war_scythe_v1",
     "name": "War Scythe +3",
     "culture": "Neutral",
     "type": "Polearm",
@@ -146848,8 +146848,8 @@
     ]
   },
   {
-    "id": "crpg_warrazor_h0",
-    "baseId": "crpg_warrazor",
+    "id": "crpg_warrazor_v1_h0",
+    "baseId": "crpg_warrazor_v1",
     "name": "Warrazor",
     "culture": "Sturgia",
     "type": "Polearm",
@@ -146909,8 +146909,8 @@
     ]
   },
   {
-    "id": "crpg_warrazor_h1",
-    "baseId": "crpg_warrazor",
+    "id": "crpg_warrazor_v1_h1",
+    "baseId": "crpg_warrazor_v1",
     "name": "Warrazor +1",
     "culture": "Sturgia",
     "type": "Polearm",
@@ -146970,8 +146970,8 @@
     ]
   },
   {
-    "id": "crpg_warrazor_h2",
-    "baseId": "crpg_warrazor",
+    "id": "crpg_warrazor_v1_h2",
+    "baseId": "crpg_warrazor_v1",
     "name": "Warrazor +2",
     "culture": "Sturgia",
     "type": "Polearm",
@@ -147031,8 +147031,8 @@
     ]
   },
   {
-    "id": "crpg_warrazor_h3",
-    "baseId": "crpg_warrazor",
+    "id": "crpg_warrazor_v1_h3",
+    "baseId": "crpg_warrazor_v1",
     "name": "Warrazor +3",
     "culture": "Sturgia",
     "type": "Polearm",
