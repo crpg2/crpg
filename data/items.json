@@ -60696,10 +60696,10 @@
     "name": "Hoplite Spear +1",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 4109,
-    "weight": 0.83,
+    "price": 4384,
+    "weight": 0.8,
     "rank": 1,
-    "tier": 4.936537,
+    "tier": 5.13299274,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -60711,7 +60711,7 @@
         "stackAmount": 0,
         "length": 152,
         "balance": 0.0,
-        "handling": 76,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -60721,7 +60721,7 @@
         ],
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 58
@@ -60733,7 +60733,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 152,
-        "balance": 0.81,
+        "balance": 0.83,
         "handling": 75,
         "bodyArmor": 0,
         "flags": [
@@ -60746,7 +60746,7 @@
         ],
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 102,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 94
@@ -60759,10 +60759,10 @@
     "name": "Hoplite Spear +2",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 5269,
-    "weight": 0.83,
+    "price": 5630,
+    "weight": 0.8,
     "rank": 2,
-    "tier": 5.72557926,
+    "tier": 5.95343542,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -60774,7 +60774,7 @@
         "stackAmount": 0,
         "length": 152,
         "balance": 0.0,
-        "handling": 76,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -60784,7 +60784,7 @@
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 58
@@ -60796,7 +60796,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 152,
-        "balance": 0.81,
+        "balance": 0.83,
         "handling": 75,
         "bodyArmor": 0,
         "flags": [
@@ -60809,7 +60809,7 @@
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 102,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 94
@@ -60817,15 +60817,15 @@
     ]
   },
   {
-    "id": "crpg_hoplite_spear_h3",
+    "id": "crpg_hoplite_spear_v2_h3",
     "baseId": "crpg_hoplite_spear",
     "name": "Hoplite Spear +3",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 5833,
-    "weight": 0.61,
+    "price": 5585,
+    "weight": 0.65,
     "rank": 3,
-    "tier": 6.078319,
+    "tier": 5.925412,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -60837,7 +60837,7 @@
         "stackAmount": 0,
         "length": 152,
         "balance": 0.0,
-        "handling": 80,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -60850,7 +60850,7 @@
         "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 63
+        "swingSpeed": 62
       },
       {
         "class": "TwoHandedPolearm",
@@ -60859,8 +60859,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 152,
-        "balance": 0.96,
-        "handling": 79,
+        "balance": 0.94,
+        "handling": 78,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -119193,10 +119193,10 @@
     "name": "Short Leaf Shaped Spear +3",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 10025,
+    "price": 12783,
     "weight": 1.5,
     "rank": 3,
-    "tier": 8.296492,
+    "tier": 9.507753,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -119217,7 +119217,7 @@
         "thrustDamage": 29,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 25,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
         "swingSpeed": 41
       },
@@ -119240,7 +119240,7 @@
         "thrustDamage": 29,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
-        "swingDamage": 25,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
         "swingSpeed": 81
       },
@@ -119263,7 +119263,7 @@
         "thrustDamage": 29,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 95,
-        "swingDamage": 25,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
         "swingSpeed": 81
       }
