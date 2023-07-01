@@ -55252,10 +55252,10 @@
     "name": "Heavy Knightly Lance +3",
     "culture": "Vlandia",
     "type": "Polearm",
-    "price": 9224,
-    "weight": 1.97,
+    "price": 9982,
+    "weight": 1.95,
     "rank": 3,
-    "tier": 7.91488934,
+    "tier": 8.276653,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -55277,7 +55277,7 @@
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 60
@@ -55300,7 +55300,7 @@
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 60
