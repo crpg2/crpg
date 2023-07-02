@@ -49064,8 +49064,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_glaive_h0",
-    "baseId": "crpg_glaive",
+    "id": "crpg_glaive_v1_h0",
+    "baseId": "crpg_glaive_v1",
     "name": "Glaive",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -49102,8 +49102,8 @@
     ]
   },
   {
-    "id": "crpg_glaive_h1",
-    "baseId": "crpg_glaive",
+    "id": "crpg_glaive_v1_h1",
+    "baseId": "crpg_glaive_v1",
     "name": "Glaive +1",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -49140,8 +49140,8 @@
     ]
   },
   {
-    "id": "crpg_glaive_h2",
-    "baseId": "crpg_glaive",
+    "id": "crpg_glaive_v1_h2",
+    "baseId": "crpg_glaive_v1",
     "name": "Glaive +2",
     "culture": "Khuzait",
     "type": "Polearm",
@@ -49178,8 +49178,8 @@
     ]
   },
   {
-    "id": "crpg_glaive_h3",
-    "baseId": "crpg_glaive",
+    "id": "crpg_glaive_v1_h3",
+    "baseId": "crpg_glaive_v1",
     "name": "Glaive +3",
     "culture": "Khuzait",
     "type": "Polearm",
