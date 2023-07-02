@@ -5922,7 +5922,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_hooked_javelin_blade_h1" name="{=emUoygLE}Harpoon Head" tier="2" piece_type="Blade" mesh="spear_blade_10" length="39.775" weight="0.54" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1" holster_body_name="bo_throwing_spear_quiver_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.55" />
+      <Thrust damage_type="Pierce" damage_factor="0.57" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -5930,7 +5930,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_hooked_javelin_blade_h2" name="{=emUoygLE}Harpoon Head" tier="2" piece_type="Blade" mesh="spear_blade_10" length="39.775" weight="0.54" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1" holster_body_name="bo_throwing_spear_quiver_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.55" />
+      <Thrust damage_type="Pierce" damage_factor="0.60" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -5938,7 +5938,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_hooked_javelin_blade_h3" name="{=emUoygLE}Harpoon Head" tier="2" piece_type="Blade" mesh="spear_blade_10" length="39.775" weight="0.54" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1" holster_body_name="bo_throwing_spear_quiver_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.55" />
+      <Thrust damage_type="Pierce" damage_factor="0.62" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -6804,9 +6804,9 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horseman_javelin_blade_h0" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.4104" excluded_item_usage_features="swing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.77" />
+  <CraftingPiece id="crpg_horseman_javelin_blade_h0" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
+    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
+      <Thrust damage_type="Pierce" damage_factor="0.52" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -6815,9 +6815,9 @@
       <Flag name="CanDismount" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horseman_javelin_blade_h1" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.4104" excluded_item_usage_features="swing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.8" />
+  <CraftingPiece id="crpg_horseman_javelin_blade_h1" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
+    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
+      <Thrust damage_type="Pierce" damage_factor="0.54" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -6826,9 +6826,9 @@
       <Flag name="CanDismount" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horseman_javelin_blade_h2" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.4104" excluded_item_usage_features="swing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.83" />
+  <CraftingPiece id="crpg_horseman_javelin_blade_h2" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
+    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
+      <Thrust damage_type="Pierce" damage_factor="0.55" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -6837,9 +6837,9 @@
       <Flag name="CanDismount" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horseman_javelin_blade_h3" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.4104" excluded_item_usage_features="swing">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.87" />
+  <CraftingPiece id="crpg_horseman_javelin_blade_h3" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
+    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
+      <Thrust damage_type="Pierce" damage_factor="0.57" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -7090,7 +7090,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_javelin_blade_h0" name="{=ZUp9mm79}Jagged Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_35" length="41" weight="0.3056" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5_1" holster_body_name="bo_throwing_spear_quiver_5_1" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.7" />
+      <Thrust damage_type="Pierce" damage_factor="0.9" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
@@ -7098,7 +7098,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_javelin_blade_h1" name="{=ZUp9mm79}Jagged Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_35" length="41" weight="0.3056" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5_1" holster_body_name="bo_throwing_spear_quiver_5_1" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.7" />
+      <Thrust damage_type="Pierce" damage_factor="0.95" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
@@ -7106,7 +7106,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_javelin_blade_h2" name="{=ZUp9mm79}Jagged Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_35" length="41" weight="0.3056" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5_1" holster_body_name="bo_throwing_spear_quiver_5_1" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.7" />
+      <Thrust damage_type="Pierce" damage_factor="0.98" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
@@ -7114,7 +7114,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_javelin_blade_h3" name="{=ZUp9mm79}Jagged Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_35" length="41" weight="0.3056" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5_1" holster_body_name="bo_throwing_spear_quiver_5_1" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.7" />
+      <Thrust damage_type="Pierce" damage_factor="1.02" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />

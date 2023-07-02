@@ -60293,10 +60293,10 @@
     "name": "Hooked Javelin +1",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 876,
+    "price": 1135,
     "weight": 1.41,
     "rank": 1,
-    "tier": 2.73912144,
+    "tier": 3.26154828,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -60317,7 +60317,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -60353,10 +60353,10 @@
     "name": "Hooked Javelin +2",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 684,
+    "price": 1125,
     "weight": 1.41,
     "rank": 2,
-    "tier": 2.30162287,
+    "tier": 3.24338531,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -60377,7 +60377,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 29,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -60398,7 +60398,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 5,
+        "thrustDamage": 6,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -60413,10 +60413,10 @@
     "name": "Hooked Javelin +3",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 550,
+    "price": 1130,
     "weight": 1.41,
     "rank": 3,
-    "tier": 1.96114659,
+    "tier": 3.251967,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -60437,7 +60437,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 30,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -60458,7 +60458,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 5,
+        "thrustDamage": 6,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -60923,10 +60923,10 @@
     "name": "Horseman Javelin",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 4733,
-    "weight": 1.11,
+    "price": 2636,
+    "weight": 1.5,
     "rank": 0,
-    "tier": 7.78345251,
+    "tier": 5.53091431,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -60934,11 +60934,11 @@
         "class": "Javelin",
         "itemUsage": "throwing_javelin",
         "accuracy": 92,
-        "missileSpeed": 28,
-        "stackAmount": 3,
+        "missileSpeed": 27,
+        "stackAmount": 4,
         "length": 67,
-        "balance": 1.0,
-        "handling": 96,
+        "balance": 0.79,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -60948,12 +60948,12 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 31,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 104
+        "swingSpeed": 93
       },
       {
         "class": "OneHandedPolearm",
@@ -60962,20 +60962,20 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 67,
-        "balance": 0.78,
-        "handling": 93,
+        "balance": 0.44,
+        "handling": 89,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 5,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 93
+        "swingSpeed": 83
       }
     ]
   },
@@ -60985,10 +60985,10 @@
     "name": "Horseman Javelin +1",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 4427,
-    "weight": 1.11,
+    "price": 2595,
+    "weight": 1.5,
     "rank": 1,
-    "tier": 7.49153137,
+    "tier": 5.47880125,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -60996,11 +60996,11 @@
         "class": "Javelin",
         "itemUsage": "throwing_javelin",
         "accuracy": 92,
-        "missileSpeed": 28,
-        "stackAmount": 3,
+        "missileSpeed": 27,
+        "stackAmount": 4,
         "length": 67,
-        "balance": 1.0,
-        "handling": 96,
+        "balance": 0.79,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -61010,12 +61010,12 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 32,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 104
+        "swingSpeed": 93
       },
       {
         "class": "OneHandedPolearm",
@@ -61024,20 +61024,20 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 67,
-        "balance": 0.78,
-        "handling": 93,
+        "balance": 0.44,
+        "handling": 89,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 5,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 93
+        "swingSpeed": 83
       }
     ]
   },
@@ -61047,10 +61047,10 @@
     "name": "Horseman Javelin +2",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 5436,
-    "weight": 1.11,
+    "price": 2597,
+    "weight": 1.5,
     "rank": 2,
-    "tier": 8.421169,
+    "tier": 5.481773,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -61058,11 +61058,11 @@
         "class": "Javelin",
         "itemUsage": "throwing_javelin",
         "accuracy": 92,
-        "missileSpeed": 28,
-        "stackAmount": 3,
+        "missileSpeed": 27,
+        "stackAmount": 4,
         "length": 67,
-        "balance": 1.0,
-        "handling": 96,
+        "balance": 0.79,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -61072,12 +61072,12 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 104
+        "swingSpeed": 93
       },
       {
         "class": "OneHandedPolearm",
@@ -61086,20 +61086,20 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 67,
-        "balance": 0.78,
-        "handling": 93,
+        "balance": 0.44,
+        "handling": 89,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 5,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 93
+        "swingSpeed": 83
       }
     ]
   },
@@ -61109,10 +61109,10 @@
     "name": "Horseman Javelin +3",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 5238,
-    "weight": 1.11,
+    "price": 2634,
+    "weight": 1.5,
     "rank": 3,
-    "tier": 8.246619,
+    "tier": 5.527754,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -61120,11 +61120,11 @@
         "class": "Javelin",
         "itemUsage": "throwing_javelin",
         "accuracy": 92,
-        "missileSpeed": 28,
-        "stackAmount": 3,
+        "missileSpeed": 27,
+        "stackAmount": 4,
         "length": 67,
-        "balance": 1.0,
-        "handling": 96,
+        "balance": 0.79,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -61134,12 +61134,12 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 29,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 104
+        "swingSpeed": 93
       },
       {
         "class": "OneHandedPolearm",
@@ -61148,20 +61148,20 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 67,
-        "balance": 0.78,
-        "handling": 93,
+        "balance": 0.44,
+        "handling": 89,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 5,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 90,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 93
+        "swingSpeed": 83
       }
     ]
   },
@@ -67009,10 +67009,10 @@
     "name": "Jagged Javelin",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 750,
+    "price": 5005,
     "weight": 0.91,
     "rank": 0,
-    "tier": 2.457212,
+    "tier": 8.036196,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -67033,7 +67033,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 32,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -67054,7 +67054,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -67069,10 +67069,10 @@
     "name": "Jagged Javelin +1",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 577,
+    "price": 4643,
     "weight": 0.91,
     "rank": 1,
-    "tier": 2.03075385,
+    "tier": 7.69860744,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -67093,7 +67093,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 33,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -67114,7 +67114,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -67129,10 +67129,10 @@
     "name": "Jagged Javelin +2",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 459,
+    "price": 4400,
     "weight": 0.91,
     "rank": 2,
-    "tier": 1.70639729,
+    "tier": 7.46563625,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -67153,7 +67153,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -67174,7 +67174,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 9,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -67189,10 +67189,10 @@
     "name": "Jagged Javelin +3",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 377,
+    "price": 5377,
     "weight": 0.91,
     "rank": 3,
-    "tier": 1.45397174,
+    "tier": 8.369429,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -67213,7 +67213,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 36,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
@@ -67234,7 +67234,7 @@
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 97,
         "swingDamage": 0,
