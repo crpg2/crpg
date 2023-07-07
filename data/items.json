@@ -60628,8 +60628,8 @@
     ]
   },
   {
-    "id": "crpg_hoplite_spear_h0",
-    "baseId": "crpg_hoplite_spear",
+    "id": "crpg_hoplite_spear_v2_h0",
+    "baseId": "crpg_hoplite_spear_v2",
     "name": "Hoplite Spear",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -60691,8 +60691,8 @@
     ]
   },
   {
-    "id": "crpg_hoplite_spear_h1",
-    "baseId": "crpg_hoplite_spear",
+    "id": "crpg_hoplite_spear_v2_h1",
+    "baseId": "crpg_hoplite_spear_v2",
     "name": "Hoplite Spear +1",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -60754,8 +60754,8 @@
     ]
   },
   {
-    "id": "crpg_hoplite_spear_h2",
-    "baseId": "crpg_hoplite_spear",
+    "id": "crpg_hoplite_spear_v2_h2",
+    "baseId": "crpg_hoplite_spear_v2",
     "name": "Hoplite Spear +2",
     "culture": "Vlandia",
     "type": "Polearm",
@@ -60817,8 +60817,8 @@
     ]
   },
   {
-    "id": "crpg_hoplite_spear_v1_h3",
-    "baseId": "crpg_hoplite_spear_v1",
+    "id": "crpg_hoplite_spear_v2_h3",
+    "baseId": "crpg_hoplite_spear_v2",
     "name": "Hoplite Spear +3",
     "culture": "Vlandia",
     "type": "Polearm",
