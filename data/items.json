@@ -41655,10 +41655,10 @@
     "name": "Falx Knife",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 315,
-    "weight": 0.82,
+    "price": 4377,
+    "weight": 0.53,
     "rank": 0,
-    "tier": 1.23381877,
+    "tier": 7.377295,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -41666,23 +41666,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 54,
         "balance": 1.0,
-        "handling": 115,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 98,
-        "swingDamage": 12,
-        "swingDamageType": "Cut",
-        "swingSpeed": 118
+        "thrustSpeed": 103,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 125
       }
     ]
   },
@@ -41692,10 +41692,10 @@
     "name": "Falx Knife +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 363,
-    "weight": 0.78,
+    "price": 4834,
+    "weight": 0.53,
     "rank": 1,
-    "tier": 1.39416718,
+    "tier": 7.809491,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -41703,23 +41703,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 54,
         "balance": 1.0,
-        "handling": 115,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 35,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 99,
-        "swingDamage": 13,
-        "swingDamageType": "Cut",
-        "swingSpeed": 119
+        "thrustSpeed": 103,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 125
       }
     ]
   },
@@ -41729,10 +41729,10 @@
     "name": "Falx Knife +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 476,
-    "weight": 0.74,
+    "price": 5435,
+    "weight": 0.53,
     "rank": 2,
-    "tier": 1.73625124,
+    "tier": 8.346952,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -41740,23 +41740,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 54,
         "balance": 1.0,
-        "handling": 115,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 36,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 14,
-        "swingDamageType": "Cut",
-        "swingSpeed": 120
+        "thrustSpeed": 103,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 125
       }
     ]
   },
@@ -41766,10 +41766,10 @@
     "name": "Falx Knife +3",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 934,
-    "weight": 0.7,
+    "price": 6195,
+    "weight": 0.53,
     "rank": 3,
-    "tier": 2.833798,
+    "tier": 8.987175,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -41777,23 +41777,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 54,
         "balance": 1.0,
-        "handling": 115,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 12,
+        "thrustDamage": 37,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 16,
-        "swingDamageType": "Cut",
-        "swingSpeed": 121
+        "thrustSpeed": 103,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 125
       }
     ]
   },
@@ -57421,10 +57421,10 @@
     "name": "Highland Dagger",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3264,
+    "price": 2294,
     "weight": 1.65,
     "rank": 0,
-    "tier": 6.220983,
+    "tier": 5.038997,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -57432,7 +57432,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -57482,10 +57482,10 @@
     "name": "Highland Dagger +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 2740,
+    "price": 1936,
     "weight": 1.65,
     "rank": 1,
-    "tier": 5.608511,
+    "tier": 4.5428915,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -57493,7 +57493,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -57543,10 +57543,10 @@
     "name": "Highland Dagger +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3125,
+    "price": 2199,
     "weight": 1.56,
     "rank": 2,
-    "tier": 6.06351948,
+    "tier": 4.91145039,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -57554,7 +57554,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -57604,10 +57604,10 @@
     "name": "Highland Dagger +3",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4724,
+    "price": 3284,
     "weight": 1.51,
     "rank": 3,
-    "tier": 7.707372,
+    "tier": 6.24297237,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -57615,7 +57615,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -108401,10 +108401,10 @@
     "name": "Pugio",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3327,
+    "price": 2337,
     "weight": 1.64,
     "rank": 0,
-    "tier": 6.2916193,
+    "tier": 5.096213,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108412,7 +108412,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -108462,10 +108462,10 @@
     "name": "Pugio +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2792,
+    "price": 1972,
     "weight": 1.64,
     "rank": 1,
-    "tier": 5.67215967,
+    "tier": 4.594449,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108473,7 +108473,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -108523,10 +108523,10 @@
     "name": "Pugio +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3275,
+    "price": 2301,
     "weight": 1.59,
     "rank": 2,
-    "tier": 6.233747,
+    "tier": 5.049335,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108534,7 +108534,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -108584,10 +108584,10 @@
     "name": "Pugio +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4952,
+    "price": 3438,
     "weight": 1.55,
     "rank": 3,
-    "tier": 7.917498,
+    "tier": 6.41317368,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108595,7 +108595,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -117233,10 +117233,10 @@
     "name": "Seax",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3892,
-    "weight": 2.84,
+    "price": 5216,
+    "weight": 0.63,
     "rank": 0,
-    "tier": 6.893443,
+    "tier": 8.155311,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -117245,23 +117245,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
-        "balance": 0.75,
-        "handling": 103,
+        "balance": 1.0,
+        "handling": 117,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 35,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 81,
-        "swingDamage": 32,
-        "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "thrustSpeed": 101,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 124
       }
     ]
   },
@@ -117271,10 +117271,10 @@
     "name": "Seax +1",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3573,
-    "weight": 2.84,
+    "price": 4416,
+    "weight": 0.49,
     "rank": 1,
-    "tier": 6.559542,
+    "tier": 7.41499329,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -117283,23 +117283,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
-        "balance": 0.75,
-        "handling": 103,
+        "balance": 1.0,
+        "handling": 118,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 26,
+        "thrustDamage": 35,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 81,
-        "swingDamage": 33,
-        "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "thrustSpeed": 103,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 127
       }
     ]
   },
@@ -117309,10 +117309,10 @@
     "name": "Seax +2",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3937,
-    "weight": 2.78,
+    "price": 4961,
+    "weight": 0.49,
     "rank": 2,
-    "tier": 6.93976068,
+    "tier": 7.925307,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -117321,23 +117321,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
-        "balance": 0.77,
-        "handling": 103,
+        "balance": 1.0,
+        "handling": 118,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 27,
+        "thrustDamage": 36,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
-        "swingDamage": 34,
-        "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "thrustSpeed": 103,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 127
       }
     ]
   },
@@ -117347,10 +117347,10 @@
     "name": "Seax +3",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5562,
-    "weight": 2.69,
+    "price": 5651,
+    "weight": 0.49,
     "rank": 3,
-    "tier": 8.457094,
+    "tier": 8.533185,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -117359,23 +117359,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
-        "balance": 0.82,
-        "handling": 104,
+        "balance": 1.0,
+        "handling": 118,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 28,
+        "thrustDamage": 37,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 82,
-        "swingDamage": 36,
-        "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "thrustSpeed": 103,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 127
       }
     ]
   },
@@ -152645,10 +152645,10 @@
     "name": "Xiphos",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2177,
+    "price": 1551,
     "weight": 1.91,
     "rank": 0,
-    "tier": 4.881998,
+    "tier": 3.95441866,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -152656,7 +152656,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -152682,10 +152682,10 @@
     "name": "Xiphos +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2120,
+    "price": 1512,
     "weight": 1.86,
     "rank": 1,
-    "tier": 4.80322,
+    "tier": 3.89060736,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -152693,7 +152693,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -152719,10 +152719,10 @@
     "name": "Xiphos +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2500,
+    "price": 1772,
     "weight": 1.78,
     "rank": 2,
-    "tier": 5.30828667,
+    "tier": 4.299712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -152730,7 +152730,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -152756,10 +152756,10 @@
     "name": "Xiphos +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3771,
+    "price": 2638,
     "weight": 1.69,
     "rank": 3,
-    "tier": 6.76911449,
+    "tier": 5.482981,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -152767,7 +152767,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,

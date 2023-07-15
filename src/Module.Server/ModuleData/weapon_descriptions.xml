@@ -4641,7 +4641,7 @@
       <AvailablePiece id="crpg_northlander_wide_fullered_greatsword_pommel_h3" />
     </AvailablePieces>
   </WeaponDescription>
-  <WeaponDescription id="crpg_Dagger" weapon_class="Dagger" item_usage_features="onehanded:block:shield:swing:thrust">
+  <WeaponDescription id="crpg_Dagger" weapon_class="Dagger" item_usage_features="onehanded:shield:swing:thrust">
     <WeaponFlags>
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>

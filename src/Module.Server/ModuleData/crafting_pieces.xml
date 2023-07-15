@@ -11752,10 +11752,9 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_falx_knife_blade_h0" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.475">
+  <CraftingPiece id="crpg_falx_knife_blade_h0" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.2" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="0.84" />
-      <Swing damage_type="Cut" damage_factor="1.225" />
+      <Thrust damage_type="Pierce" damage_factor="3.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -11764,10 +11763,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_falx_knife_blade_h1" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.44">
+  <CraftingPiece id="crpg_falx_knife_blade_h1" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.2" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="0.9" />
-      <Swing damage_type="Cut" damage_factor="1.3" />
+      <Thrust damage_type="Pierce" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -11776,10 +11774,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_falx_knife_blade_h2" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.4">
+  <CraftingPiece id="crpg_falx_knife_blade_h2" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.2" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="1.0" />
-      <Swing damage_type="Cut" damage_factor="1.4" />
+      <Thrust damage_type="Pierce" damage_factor="3.6" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -11788,10 +11785,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_falx_knife_blade_h3" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.36">
+  <CraftingPiece id="crpg_falx_knife_blade_h3" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.2" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="1.2" />
-      <Swing damage_type="Cut" damage_factor="1.6" />
+      <Thrust damage_type="Pierce" damage_factor="3.7" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -11800,10 +11796,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_blade_h0" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.87">
+  <CraftingPiece id="crpg_seax_blade_h0" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="0.2" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Cut" damage_factor="3.2" />
+      <Thrust damage_type="Pierce" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -11813,10 +11808,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_blade_h1" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.87">
+  <CraftingPiece id="crpg_seax_blade_h1" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="0.05" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -11826,10 +11820,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_blade_h2" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.8">
+  <CraftingPiece id="crpg_seax_blade_h2" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="0.05" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="3.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -11839,10 +11832,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_blade_h3" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.7">
+  <CraftingPiece id="crpg_seax_blade_h3" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="0.05" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.8" />
-      <Swing damage_type="Cut" damage_factor="3.6" />
+      <Thrust damage_type="Pierce" damage_factor="3.7" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -14596,25 +14588,25 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_handle_h0" name="{=p2aqirUu}Fine Leather Flyssa Grip" tier="4" piece_type="Handle" mesh="aserai_grip_3" culture="Culture.aserai" length="15.9" weight="0.8">
+  <CraftingPiece id="crpg_seax_handle_h0" name="{=p2aqirUu}Fine Leather Flyssa Grip" tier="4" piece_type="Handle" mesh="aserai_grip_3" culture="Culture.aserai" length="15.9" weight="0.2">
     <BuildData piece_offset="-0.41" previous_piece_offset="0.5" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_handle_h1" name="{=p2aqirUu}Fine Leather Flyssa Grip" tier="4" piece_type="Handle" mesh="aserai_grip_3" culture="Culture.aserai" length="15.9" weight="0.8">
+  <CraftingPiece id="crpg_seax_handle_h1" name="{=p2aqirUu}Fine Leather Flyssa Grip" tier="4" piece_type="Handle" mesh="aserai_grip_3" culture="Culture.aserai" length="15.9" weight="0.2">
     <BuildData piece_offset="-0.41" previous_piece_offset="0.5" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_handle_h2" name="{=p2aqirUu}Fine Leather Flyssa Grip" tier="4" piece_type="Handle" mesh="aserai_grip_3" culture="Culture.aserai" length="15.9" weight="0.8">
+  <CraftingPiece id="crpg_seax_handle_h2" name="{=p2aqirUu}Fine Leather Flyssa Grip" tier="4" piece_type="Handle" mesh="aserai_grip_3" culture="Culture.aserai" length="15.9" weight="0.2">
     <BuildData piece_offset="-0.41" previous_piece_offset="0.5" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_handle_h3" name="{=p2aqirUu}Fine Leather Flyssa Grip" tier="4" piece_type="Handle" mesh="aserai_grip_3" culture="Culture.aserai" length="15.9" weight="0.8">
+  <CraftingPiece id="crpg_seax_handle_h3" name="{=p2aqirUu}Fine Leather Flyssa Grip" tier="4" piece_type="Handle" mesh="aserai_grip_3" culture="Culture.aserai" length="15.9" weight="0.2">
     <BuildData piece_offset="-0.41" previous_piece_offset="0.5" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron4" count="1" />
