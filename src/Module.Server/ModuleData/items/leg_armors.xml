@@ -936,4 +936,220 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
+  <Item id="crpg_14_decor_paltedboots_noble1_h0" name="Decorated Plate Leggings" mesh="14_decor_paltedboots_noble1" culture="Culture.neutral_culture" weight="2.809756" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="23" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14_decor_paltedboots_noble1_h1" name="Decorated Plate Leggings +1" mesh="14_decor_paltedboots_noble1" culture="Culture.neutral_culture" weight="2.809756" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="24" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14_decor_paltedboots_noble1_h2" name="Decorated Plate Leggings +2" mesh="14_decor_paltedboots_noble1" culture="Culture.neutral_culture" weight="2.809756" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="26" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14_decor_paltedboots_noble1_h3" name="Decorated Plate Leggings +3" mesh="14_decor_paltedboots_noble1" culture="Culture.neutral_culture" weight="2.809756" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="28" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_14_midsplinted_greaves_h0" name="Splinted Plate Leggings" mesh="14_midsplinted_greaves" culture="Culture.neutral_culture" weight="2.310423" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="20" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_14_midsplinted_greaves_h1" name="Splinted Plate Leggings +1" mesh="14_midsplinted_greaves" culture="Culture.neutral_culture" weight="2.310423" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="21" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_14_midsplinted_greaves_h2" name="Splinted Plate Leggings +2" mesh="14_midsplinted_greaves" culture="Culture.neutral_culture" weight="2.310423" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="23" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_14_midsplinted_greaves_h3" name="Splinted Plate Leggings +3" mesh="14_midsplinted_greaves" culture="Culture.neutral_culture" weight="2.310423" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="25" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_longboots_1_h0" name="Hosen Split, Long Boots" mesh="longboots_1" culture="Culture.neutral_culture" weight="0.8754867" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="10" covers_legs="true" modifier_group="leather" material_type="Leather" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_longboots_1_h1" name="Hosen Split, Long Boots +1" mesh="longboots_1" culture="Culture.neutral_culture" weight="0.8754867" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="11" covers_legs="true" modifier_group="leather" material_type="Leather" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_longboots_1_h2" name="Hosen Split, Long Boots +2" mesh="longboots_1" culture="Culture.neutral_culture" weight="0.8754867" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="13" covers_legs="true" modifier_group="leather" material_type="Leather" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_longboots_1_h3" name="Hosen Split, Long Boots +3" mesh="longboots_1" culture="Culture.neutral_culture" weight="0.8754867" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="15" covers_legs="true" modifier_group="leather" material_type="Leather" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14_noblesabaton1_h0" name="Brass Rimmed Plate Leggings" mesh="14_noblesabaton1" culture="Culture.neutral_culture" weight="2.310423" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="20" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14_noblesabaton1_h1" name="Brass Rimmed Plate Leggings +1" mesh="14_noblesabaton1" culture="Culture.neutral_culture" weight="2.310423" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="21" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14_noblesabaton1_h2" name="Brass Rimmed Plate Leggings +2" mesh="14_noblesabaton1" culture="Culture.neutral_culture" weight="2.310423" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="23" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14_noblesabaton1_h3" name="Brass Rimmed Plate Leggings +3" mesh="14_noblesabaton1" culture="Culture.neutral_culture" weight="2.310423" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="25" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_high_splinted_leggings1_h0" name="EABL_[Legs] Splinted Plate Leggings. Faction Coloured" mesh="high_splinted_leggings1" culture="Culture.neutral_culture" weight="2.473754" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="21" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_high_splinted_leggings1_h1" name="EABL_[Legs] Splinted Plate Leggings. Faction Coloured +1" mesh="high_splinted_leggings1" culture="Culture.neutral_culture" weight="2.473754" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="22" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_high_splinted_leggings1_h2" name="EABL_[Legs] Splinted Plate Leggings. Faction Coloured +2" mesh="high_splinted_leggings1" culture="Culture.neutral_culture" weight="2.473754" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="24" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_high_splinted_leggings1_h3" name="EABL_[Legs] Splinted Plate Leggings. Faction Coloured +3" mesh="high_splinted_leggings1" culture="Culture.neutral_culture" weight="2.473754" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="26" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_mailchasseus_1_h0" name="Mail Chasseus" mesh="mailchasseus_1" culture="Culture.neutral_culture" weight="3.157661" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="25" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_mailchasseus_1_h1" name="Mail Chasseus +1" mesh="mailchasseus_1" culture="Culture.neutral_culture" weight="3.157661" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="26" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_mailchasseus_1_h2" name="Mail Chasseus +2" mesh="mailchasseus_1" culture="Culture.neutral_culture" weight="3.157661" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="28" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_mailchasseus_1_h3" name="Mail Chasseus +3" mesh="mailchasseus_1" culture="Culture.neutral_culture" weight="3.157661" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="30" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_2_h0" name="Hosen (Primary Color)" mesh="hosen_2" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="16" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_2_h1" name="Hosen (Primary Color) +1" mesh="hosen_2" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="17" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_2_h2" name="Hosen (Primary Color) +2" mesh="hosen_2" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="19" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_2_h3" name="Hosen (Primary Color) +3" mesh="hosen_2" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="21" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_3_h0" name="Hosen (Secondary Color)" mesh="hosen_3" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="16" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_3_h1" name="Hosen (Secondary Color) +1" mesh="hosen_3" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="17" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_3_h2" name="Hosen (Secondary Color) +2" mesh="hosen_3" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="19" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_3_h3" name="Hosen (Secondary Color) +3" mesh="hosen_3" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="21" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_1_h0" name="Hosen (Split Color)" mesh="hosen_1" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="16" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_1_h1" name="Hosen (Split Color) +1" mesh="hosen_1" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="17" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_1_h2" name="Hosen (Split Color) +2" mesh="hosen_1" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="19" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hosen_1_h3" name="Hosen (Split Color) +3" mesh="hosen_1" culture="Culture.neutral_culture" weight="1.690509" difficulty="0" appearance="10" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="21" covers_legs="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
 </Items>

@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Items>
-  <Item id="crpg_heraldic_mail_with_tabbard_v1_h0" name="Mail With Tabard Heraldic" mesh="mail_with_tabbard_heraldic" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" using_tableau="true" weight="11.77339" difficulty="0" appearance="1" Type="BodyArmor">
-    <ItemComponent>
-      <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_heraldic_mail_with_tabbard_v1_h1" name="Mail With Tabard Heraldic +1" mesh="mail_with_tabbard_heraldic" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" using_tableau="true" weight="11.77339" difficulty="0" appearance="1" Type="BodyArmor">
-    <ItemComponent>
-      <Armor body_armor="46" leg_armor="12" arm_armor="12" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_heraldic_mail_with_tabbard_v1_h2" name="Mail With Tabard Heraldic +2" mesh="mail_with_tabbard_heraldic" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" using_tableau="true" weight="11.77339" difficulty="0" appearance="1" Type="BodyArmor">
-    <ItemComponent>
-      <Armor body_armor="48" leg_armor="13" arm_armor="13" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_heraldic_mail_with_tabbard_v1_h3" name="Mail With Tabard Heraldic +3" mesh="mail_with_tabbard_heraldic" is_merchandise="true" subtype="body_armor" culture="Culture.vlandia" using_tableau="true" weight="11.77339" difficulty="0" appearance="1" Type="BodyArmor">
-    <ItemComponent>
-      <Armor body_armor="50" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
-    </ItemComponent>
-  </Item>
   <Item id="crpg_woven_leather_vest_v1_h0" name="{=LgftnHPs}Woven Leather Vest" mesh="archers_leather_vest" culture="Culture.vlandia" weight="7.048351" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
       <Armor body_armor="29" leg_armor="5" arm_armor="11" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
@@ -5993,6 +5973,774 @@
   <Item id="crpg_aketon_v1_h3" name="{=7b8Cwogx}Aketon +3" mesh="crossbow_armor" culture="Culture.vlandia" weight="6.058478" appearance="1" Type="BodyArmor">
     <ItemComponent>
       <Armor body_armor="33" leg_armor="10" arm_armor="10" covers_body="true" modifier_group="cloth" material_type="Cloth" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_late_brig_armor1_h0" name="[15th Century] Heavy Brigandine" subtype="body_armor" mesh="late_brig_armor1" culture="Culture.neutral_culture" weight="24.34885" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="55" leg_armor="15" arm_armor="36" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_late_brig_armor1_h1" name="[15th Century] Heavy Brigandine +1" subtype="body_armor" mesh="late_brig_armor1" culture="Culture.neutral_culture" weight="24.34885" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="57" leg_armor="16" arm_armor="37" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_late_brig_armor1_h2" name="[15th Century] Heavy Brigandine +2" subtype="body_armor" mesh="late_brig_armor1" culture="Culture.neutral_culture" weight="24.34885" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="59" leg_armor="17" arm_armor="38" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_late_brig_armor1_h3" name="[15th Century] Heavy Brigandine +3" subtype="body_armor" mesh="late_brig_armor1" culture="Culture.neutral_culture" weight="24.34885" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="61" leg_armor="18" arm_armor="39" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_strapped_brigandine_1_h0" name="[15th Century] Strapped Brigandine, Splinted" subtype="body_armor" mesh="strapped_brigandine_1" culture="Culture.neutral_culture" weight="14.20411" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="10" arm_armor="15" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_strapped_brigandine_1_h1" name="[15th Century] Strapped Brigandine, Splinted +1" subtype="body_armor" mesh="strapped_brigandine_1" culture="Culture.neutral_culture" weight="14.20411" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="11" arm_armor="16" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_strapped_brigandine_1_h2" name="[15th Century] Strapped Brigandine, Splinted +2" subtype="body_armor" mesh="strapped_brigandine_1" culture="Culture.neutral_culture" weight="14.20411" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="54" leg_armor="12" arm_armor="17" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_strapped_brigandine_1_h3" name="[15th Century] Strapped Brigandine, Splinted +3" subtype="body_armor" mesh="strapped_brigandine_1" culture="Culture.neutral_culture" weight="14.20411" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="56" leg_armor="13" arm_armor="18" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_giornea_tableau1_h0" name="15th Century] Giornea Plate Armor, Tableau Clan Banner" subtype="body_armor" mesh="giornea_tableau1" using_tableau="true" culture="Culture.neutral_culture" weight="24.69533" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="64" leg_armor="15" arm_armor="30" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_giornea_tableau1_h1" name="15th Century] Giornea Plate Armor, Tableau Clan Banner +1" subtype="body_armor" mesh="giornea_tableau1" using_tableau="true" culture="Culture.neutral_culture" weight="24.69533" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="66" leg_armor="16" arm_armor="31" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_giornea_tableau1_h2" name="15th Century] Giornea Plate Armor, Tableau Clan Banner +2" subtype="body_armor" mesh="giornea_tableau1" using_tableau="true" culture="Culture.neutral_culture" weight="24.69533" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="68" leg_armor="17" arm_armor="32" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_giornea_tableau1_h3" name="15th Century] Giornea Plate Armor, Tableau Clan Banner +3" subtype="body_armor" mesh="giornea_tableau1" using_tableau="true" culture="Culture.neutral_culture" weight="24.69533" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="70" leg_armor="18" arm_armor="33" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_armor_cloth1_h0" name="[16th Century] Plate Armor, Clothing" subtype="body_armor" mesh="ren_armor_cloth1" culture="Culture.neutral_culture" weight="48.8413" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="80" leg_armor="45" arm_armor="50" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_armor_cloth1_h1" name="[16th Century] Plate Armor, Clothing +1" subtype="body_armor" mesh="ren_armor_cloth1" culture="Culture.neutral_culture" weight="48.8413" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="82" leg_armor="46" arm_armor="51" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_armor_cloth1_h2" name="[16th Century] Plate Armor, Clothing +2" subtype="body_armor" mesh="ren_armor_cloth1" culture="Culture.neutral_culture" weight="48.8413" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="84" leg_armor="47" arm_armor="52" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_armor_cloth1_h3" name="[16th Century] Plate Armor, Clothing +3" subtype="body_armor" mesh="ren_armor_cloth1" culture="Culture.neutral_culture" weight="48.8413" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="86" leg_armor="48" arm_armor="53" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_heavytabard_tableau_1_h0" name="[15th Century] Tabarded Heavy Plate Armor, Tableau Clan Banner" subtype="body_armor" mesh="heavytabard_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="25.8603" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="68" leg_armor="15" arm_armor="30" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_heavytabard_tableau_1_h1" name="[15th Century] Tabarded Heavy Plate Armor, Tableau Clan Banner +1" subtype="body_armor" mesh="heavytabard_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="25.8603" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="70" leg_armor="16" arm_armor="31" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_heavytabard_tableau_1_h2" name="[15th Century] Tabarded Heavy Plate Armor, Tableau Clan Banner +2" subtype="body_armor" mesh="heavytabard_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="25.8603" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="72" leg_armor="17" arm_armor="32" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_heavytabard_tableau_1_h3" name="[15th Century] Tabarded Heavy Plate Armor, Tableau Clan Banner +3" subtype="body_armor" mesh="heavytabard_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="25.8603" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="74" leg_armor="18" arm_armor="33" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_gambvest_cross_1_h0" name="Universal] Padded Vest over Mail, Cross" subtype="body_armor" mesh="gambvest_cross_1" culture="Culture.neutral_culture" weight="14.87553" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="42" leg_armor="15" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_gambvest_cross_1_h1" name="Universal] Padded Vest over Mail, Cross +1" subtype="body_armor" mesh="gambvest_cross_1" culture="Culture.neutral_culture" weight="14.87553" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="44" leg_armor="16" arm_armor="20" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_gambvest_cross_1_h2" name="Universal] Padded Vest over Mail, Cross +2" subtype="body_armor" mesh="gambvest_cross_1" culture="Culture.neutral_culture" weight="14.87553" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="17" arm_armor="21" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_gambvest_cross_1_h3" name="Universal] Padded Vest over Mail, Cross +3" subtype="body_armor" mesh="gambvest_cross_1" culture="Culture.neutral_culture" weight="14.87553" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="18" arm_armor="22" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_15th_heavypalte_1_h0" name="[15th Century] Heavy Plate Armor, Swordbreaker" subtype="body_armor" mesh="15th_heavypalte_1" culture="Culture.neutral_culture" weight="26.59614" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="65" leg_armor="20" arm_armor="30" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_15th_heavypalte_1_h1" name="[15th Century] Heavy Plate Armor, Swordbreaker +1" subtype="body_armor" mesh="15th_heavypalte_1" culture="Culture.neutral_culture" weight="26.59614" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="67" leg_armor="21" arm_armor="31" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_15th_heavypalte_1_h2" name="[15th Century] Heavy Plate Armor, Swordbreaker +2" subtype="body_armor" mesh="15th_heavypalte_1" culture="Culture.neutral_culture" weight="26.59614" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="69" leg_armor="22" arm_armor="32" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_15th_heavypalte_1_h3" name="[15th Century] Heavy Plate Armor, Swordbreaker +3" subtype="body_armor" mesh="15th_heavypalte_1" culture="Culture.neutral_culture" weight="26.59614" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="71" leg_armor="23" arm_armor="33" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_breastplate_shash1_h0" name="EABL_[15th Century] Breastplate with Shash" subtype="body_armor" mesh="breastplate_shash1" culture="Culture.neutral_culture" weight="18.78775" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="35" leg_armor="15" arm_armor="36" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_breastplate_shash1_h1" name="EABL_[15th Century] Breastplate with Shash +1" subtype="body_armor" mesh="breastplate_shash1" culture="Culture.neutral_culture" weight="18.78775" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="37" leg_armor="16" arm_armor="37" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_breastplate_shash1_h2" name="EABL_[15th Century] Breastplate with Shash +2" subtype="body_armor" mesh="breastplate_shash1" culture="Culture.neutral_culture" weight="18.78775" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="39" leg_armor="17" arm_armor="38" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_breastplate_shash1_h3" name="EABL_[15th Century] Breastplate with Shash +3" subtype="body_armor" mesh="breastplate_shash1" culture="Culture.neutral_culture" weight="18.78775" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="41" leg_armor="18" arm_armor="39" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_1_h0" name="Tabard over Mail Crusader Pattern" mesh="rhkt_tabard_crusader" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_1_h1" name="Tabard over Mail Crusader Pattern +1" mesh="rhkt_tabard_crusader" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="12" arm_armor="12" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_1_h2" name="Tabard over Mail Crusader Pattern +2" mesh="rhkt_tabard_crusader" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="13" arm_armor="13" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_1_h3" name="Tabard over Mail Crusader Pattern +3" mesh="rhkt_tabard_crusader" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_2_h0" name="Tabard over Mail Square Pattern" mesh="rhkt_tabard_english" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_2_h1" name="Tabard over Mail Square Pattern +1" mesh="rhkt_tabard_english" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="12" arm_armor="12" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_2_h2" name="Tabard over Mail Square Pattern +2" mesh="rhkt_tabard_english" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="13" arm_armor="13" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_2_h3" name="Tabard over Mail Square Pattern +3" mesh="rhkt_tabard_english" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_3_h0" name="Tabard over Mail Fleeur De Lis Pattern" mesh="rhkt_tabard_french" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_3_h1" name="Tabard over Mail Fleeur De Lis Pattern +1" mesh="rhkt_tabard_french" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="12" arm_armor="12" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_3_h2" name="Tabard over Mail Fleeur De Lis Pattern +2" mesh="rhkt_tabard_french" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="13" arm_armor="13" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_3_h3" name="Tabard over Mail Fleeur De Lis Pattern +3" mesh="rhkt_tabard_french" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_4_h0" name="Tabard over Mail Eagle Pattern" mesh="rhkt_tabard_hroman" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="44" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_4_h1" name="Tabard over Mail Eagle Pattern +1" mesh="rhkt_tabard_hroman" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="12" arm_armor="12" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_4_h2" name="Tabard over Mail Eagle Pattern +2" mesh="rhkt_tabard_hroman" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="13" arm_armor="13" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tabard_over_mail_4_h3" name="Tabard over Mail Eagle Pattern +3" mesh="rhkt_tabard_hroman" culture="Culture.vlandia" weight="11.77339" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat1_h0" name="Tabard over Coat of Plate Rim and Cross" mesh="coat1" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat1_h1" name="Tabard over Coat of Plate Rim and Cross +1" mesh="coat1" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="15" arm_armor="15" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat1_h2" name="Tabard over Coat of Plate Rim and Cross +2" mesh="coat1" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="54" leg_armor="16" arm_armor="16" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat1_h3" name="Tabard over Coat of Plate Rim and Cross +3" mesh="coat1" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="56" leg_armor="17" arm_armor="17" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat2_h0" name="Tabard over Coat of Plate Stripes" mesh="coat2" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat2_h1" name="Tabard over Coat of Plate Stripes +1" mesh="coat2" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="15" arm_armor="15" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat2_h2" name="Tabard over Coat of Plate Stripes +2" mesh="coat2" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="54" leg_armor="16" arm_armor="16" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat2_h3" name="Tabard over Coat of Plate Stripes +3" mesh="coat2" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="56" leg_armor="17" arm_armor="17" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat3_h0" name="Tabard over Coat of Plate Checkers" mesh="coat3" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat3_h1" name="Tabard over Coat of Plate Checkers +1" mesh="coat3" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="15" arm_armor="15" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat3_h2" name="Tabard over Coat of Plate Checkers +2" mesh="coat3" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="54" leg_armor="16" arm_armor="16" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_coat3_h3" name="Tabard over Coat of Plate Checkers +3" mesh="coat3" culture="Culture.vlandia" weight="14.97575" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="56" leg_armor="17" arm_armor="17" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_surcoat1_h0" name="Surcoat, Jerusalem (White)" subtype="body_armor" mesh="jer_surcoat1" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="70" leg_armor="20" arm_armor="45" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_jer_surcoat1_h1" name="Surcoat, Jerusalem (White) +1" subtype="body_armor" mesh="jer_surcoat1" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="72" leg_armor="21" arm_armor="46" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_jer_surcoat1_h2" name="Surcoat, Jerusalem (White) +2" subtype="body_armor" mesh="jer_surcoat1" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="74" leg_armor="22" arm_armor="47" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_jer_surcoat1_h3" name="Surcoat, Jerusalem (White) +3" subtype="body_armor" mesh="jer_surcoat1" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="76" leg_armor="23" arm_armor="48" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_jer_surcoat2_h0" name="Surcoat, Jerusalem (Team Color)" subtype="body_armor" mesh="jer_surcoat1" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="70" leg_armor="20" arm_armor="45" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_surcoat2_h1" name="Surcoat, Jerusalem (Team Color) +1" subtype="body_armor" mesh="jer_surcoat1" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="72" leg_armor="21" arm_armor="46" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_surcoat2_h2" name="Surcoat, Jerusalem (Team Color) +2" subtype="body_armor" mesh="jer_surcoat1" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="74" leg_armor="22" arm_armor="47" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_surcoat2_h3" name="Surcoat, Jerusalem (Team Color) +3" subtype="body_armor" mesh="jer_surcoat1" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="76" leg_armor="23" arm_armor="48" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_surcoat3_h0" name="Surcoat, Jerusalem (Teal)" subtype="body_armor" mesh="jer_surcoat1_teal" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="70" leg_armor="20" arm_armor="45" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_surcoat3_h1" name="Surcoat, Jerusalem (Teal) +1" subtype="body_armor" mesh="jer_surcoat1_teal" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="72" leg_armor="21" arm_armor="46" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_surcoat3_h2" name="Surcoat, Jerusalem (Teal) +2" subtype="body_armor" mesh="jer_surcoat1_teal" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="74" leg_armor="22" arm_armor="47" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_surcoat3_h3" name="Surcoat, Jerusalem (Teal) +3" subtype="body_armor" mesh="jer_surcoat1_teal" culture="Culture.neutral_culture" weight="34.10758" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="76" leg_armor="23" arm_armor="48" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_14th_tabarded_platearmor_1_h0" name="[14th Century] Tabarded Regular Plate Armor, Fleurs" subtype="body_armor" mesh="14th_tabarded_platearmor_1" culture="Culture.neutral_culture" weight="20.43998" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="58" leg_armor="15" arm_armor="23" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14th_tabarded_platearmor_1_h1" name="[14th Century] Tabarded Regular Plate Armor, Fleurs +1" subtype="body_armor" mesh="14th_tabarded_platearmor_1" culture="Culture.neutral_culture" weight="20.43998" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="60" leg_armor="16" arm_armor="24" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14th_tabarded_platearmor_1_h2" name="[14th Century] Tabarded Regular Plate Armor, Fleurs +2" subtype="body_armor" mesh="14th_tabarded_platearmor_1" culture="Culture.neutral_culture" weight="20.43998" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="62" leg_armor="17" arm_armor="25" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14th_tabarded_platearmor_1_h3" name="[14th Century] Tabarded Regular Plate Armor, Fleurs +3" subtype="body_armor" mesh="14th_tabarded_platearmor_1" culture="Culture.neutral_culture" weight="20.43998" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="64" leg_armor="18" arm_armor="26" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_high_padding_armoured_1_h0" name="[14th Century] Padded Armor, Plated with Rondels" subtype="body_armor" mesh="high_padding_armoured_1" culture="Culture.neutral_culture" weight="9.324908" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="21" leg_armor="15" arm_armor="17" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_high_padding_armoured_1_h1" name="[14th Century] Padded Armor, Plated with Rondels +1" subtype="body_armor" mesh="high_padding_armoured_1" culture="Culture.neutral_culture" weight="9.324908" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="23" leg_armor="16" arm_armor="18" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_high_padding_armoured_1_h2" name="[14th Century] Padded Armor, Plated with Rondels +2" subtype="body_armor" mesh="high_padding_armoured_1" culture="Culture.neutral_culture" weight="9.324908" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="25" leg_armor="17" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_high_padding_armoured_1_h3" name="[14th Century] Padded Armor, Plated with Rondels +3" subtype="body_armor" mesh="high_padding_armoured_1" culture="Culture.neutral_culture" weight="9.324908" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="27" leg_armor="18" arm_armor="20" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_unigambeson_sleeves_1_h0" name="Sleeved Gambeson over Cloth, Split" subtype="body_armor" mesh="unigambeson_sleeves_1" culture="Culture.neutral_culture" weight="7.538375" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="23" leg_armor="15" arm_armor="9" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_unigambeson_sleeves_1_h1" name="Sleeved Gambeson over Cloth, Split +1" subtype="body_armor" mesh="unigambeson_sleeves_1" culture="Culture.neutral_culture" weight="7.538375" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="25" leg_armor="16" arm_armor="10" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_unigambeson_sleeves_1_h2" name="Sleeved Gambeson over Cloth, Split +2" subtype="body_armor" mesh="unigambeson_sleeves_1" culture="Culture.neutral_culture" weight="7.538375" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="27" leg_armor="17" arm_armor="11" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_unigambeson_sleeves_1_h3" name="Sleeved Gambeson over Cloth, Split +3" subtype="body_armor" mesh="unigambeson_sleeves_1" culture="Culture.neutral_culture" weight="7.538375" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="29" leg_armor="18" arm_armor="12" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_surcoat_tableau_1_h0" name="Surcoat with Ailettes, Tableau Clan Banner" subtype="body_armor" mesh="surcoat_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="43" leg_armor="15" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_surcoat_tableau_1_h1" name="Surcoat with Ailettes, Tableau Clan Banner +1" subtype="body_armor" mesh="surcoat_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="45" leg_armor="16" arm_armor="20" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_surcoat_tableau_1_h2" name="Surcoat with Ailettes, Tableau Clan Banner +2" subtype="body_armor" mesh="surcoat_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="47" leg_armor="17" arm_armor="21" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_surcoat_tableau_1_h3" name="Surcoat with Ailettes, Tableau Clan Banner +3" subtype="body_armor" mesh="surcoat_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="49" leg_armor="18" arm_armor="22" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_surcoat_tableau_1o_h0" name="Surcoat, Tableau Clan Banner" subtype="body_armor" mesh="surcoat_tableau_1o" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="43" leg_armor="15" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_surcoat_tableau_1o_h1" name="Surcoat, Tableau Clan Banner +1" subtype="body_armor" mesh="surcoat_tableau_1o" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="45" leg_armor="16" arm_armor="20" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_surcoat_tableau_1o_h2" name="Surcoat, Tableau Clan Banner +2" subtype="body_armor" mesh="surcoat_tableau_1o" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="47" leg_armor="17" arm_armor="21" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_surcoat_tableau_1o_h3" name="Surcoat, Tableau Clan Banner +3" subtype="body_armor" mesh="surcoat_tableau_1o" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="49" leg_armor="18" arm_armor="22" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_med_surcoat_tableau_h0" name="Surcoat, Tableau Clan Banner" subtype="body_armor" mesh="med_surcoat_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="43" leg_armor="15" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_med_surcoat_tableau_h1" name="Surcoat, Tableau Clan Banner +1" subtype="body_armor" mesh="med_surcoat_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="45" leg_armor="16" arm_armor="20" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_med_surcoat_tableau_h2" name="Surcoat, Tableau Clan Banner +2" subtype="body_armor" mesh="med_surcoat_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="47" leg_armor="17" arm_armor="21" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_med_surcoat_tableau_h3" name="Surcoat, Tableau Clan Banner +3" subtype="body_armor" mesh="med_surcoat_tableau_1" using_tableau="true" culture="Culture.neutral_culture" weight="15.12644" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="49" leg_armor="18" arm_armor="22" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tab_vest_gamb1_h0" name="Vest over Gambeson, Tableau Clan Banner" subtype="body_armor" mesh="tab_vest_gamb1" using_tableau="true" culture="Culture.neutral_culture" weight="3.303281" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="14" leg_armor="6" arm_armor="6" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tab_vest_gamb1_h1" name="Vest over Gambeson, Tableau Clan Banner +1" subtype="body_armor" mesh="tab_vest_gamb1" using_tableau="true" culture="Culture.neutral_culture" weight="3.303281" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="16" leg_armor="7" arm_armor="7" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tab_vest_gamb1_h2" name="Vest over Gambeson, Tableau Clan Banner +2" subtype="body_armor" mesh="tab_vest_gamb1" using_tableau="true" culture="Culture.neutral_culture" weight="3.303281" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="18" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tab_vest_gamb1_h3" name="Vest over Gambeson, Tableau Clan Banner +3" subtype="body_armor" mesh="tab_vest_gamb1" using_tableau="true" culture="Culture.neutral_culture" weight="3.303281" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="20" leg_armor="9" arm_armor="9" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tab_gamb_2_h0" name="Gambeson over Chainmail, Tableau Clan Banner" subtype="body_armor" mesh="tab_gamb_2" using_tableau="true" culture="Culture.neutral_culture" weight="10.34782" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="23" leg_armor="15" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tab_gamb_2_h1" name="Gambeson over Chainmail, Tableau Clan Banner +1" subtype="body_armor" mesh="tab_gamb_2" using_tableau="true" culture="Culture.neutral_culture" weight="10.34782" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="25" leg_armor="16" arm_armor="20" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tab_gamb_2_h2" name="Gambeson over Chainmail, Tableau Clan Banner +2" subtype="body_armor" mesh="tab_gamb_2" using_tableau="true" culture="Culture.neutral_culture" weight="10.34782" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="27" leg_armor="17" arm_armor="21" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tab_gamb_2_h3" name="Gambeson over Chainmail, Tableau Clan Banner +3" subtype="body_armor" mesh="tab_gamb_2" using_tableau="true" culture="Culture.neutral_culture" weight="10.34782" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="29" leg_armor="18" arm_armor="22" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" family_type="3" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_padded_surcoat_1_h0" name="Padded Surcoat over Mail, Checker and Lion" subtype="body_armor" mesh="padded_surcoat_1" culture="Culture.neutral_culture" weight="14.87553" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="42" leg_armor="15" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_padded_surcoat_1_h1" name="Padded Surcoat over Mail, Checker and Lion +1" subtype="body_armor" mesh="padded_surcoat_1" culture="Culture.neutral_culture" weight="14.87553" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="44" leg_armor="16" arm_armor="20" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_padded_surcoat_1_h2" name="Padded Surcoat over Mail, Checker and Lion +2" subtype="body_armor" mesh="padded_surcoat_1" culture="Culture.neutral_culture" weight="14.87553" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="17" arm_armor="21" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_padded_surcoat_1_h3" name="Padded Surcoat over Mail, Checker and Lion +3" subtype="body_armor" mesh="padded_surcoat_1" culture="Culture.neutral_culture" weight="14.87553" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="18" arm_armor="22" has_gender_variations="false" covers_body="true" modifier_group="chain" material_type="Chainmail" family_type="3" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aserai_brass_plate_a_h0" name="{=bxzrU99N}Southern Mail Shirt with Brass Plates" lod_atlas_index="3" mesh="aserai_brass_plate_a" culture="Culture.aserai" weight="12.86428" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="34" leg_armor="16" arm_armor="18" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aserai_brass_plate_a_h1" name="{=bxzrU99N}Southern Mail Shirt with Brass Plates +1" lod_atlas_index="3" mesh="aserai_brass_plate_a" culture="Culture.aserai" weight="12.86428" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="36" leg_armor="17" arm_armor="19" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aserai_brass_plate_a_h2" name="{=bxzrU99N}Southern Mail Shirt with Brass Plates +2" lod_atlas_index="3" mesh="aserai_brass_plate_a" culture="Culture.aserai" weight="12.86428" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="38" leg_armor="18" arm_armor="20" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aserai_brass_plate_a_h3" name="{=bxzrU99N}Southern Mail Shirt with Brass Plates +3" lod_atlas_index="3" mesh="aserai_brass_plate_a" culture="Culture.aserai" weight="12.86428" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="40" leg_armor="19" arm_armor="21" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aserai_brass_plate_b_h0" name="{=OyBdFyeV}Southern Sleeveless Mail Shirt with Brass Plates" lod_atlas_index="3" mesh="aserai_brass_plate_b" culture="Culture.aserai" weight="9.281129" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="34" leg_armor="16" arm_armor="6" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aserai_brass_plate_b_h1" name="{=OyBdFyeV}Southern Sleeveless Mail Shirt with Brass Plates +1" lod_atlas_index="3" mesh="aserai_brass_plate_b" culture="Culture.aserai" weight="9.281129" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="36" leg_armor="17" arm_armor="7" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aserai_brass_plate_b_h2" name="{=OyBdFyeV}Southern Sleeveless Mail Shirt with Brass Plates +2" lod_atlas_index="3" mesh="aserai_brass_plate_b" culture="Culture.aserai" weight="9.281129" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="38" leg_armor="18" arm_armor="8" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aserai_brass_plate_b_h3" name="{=OyBdFyeV}Southern Sleeveless Mail Shirt with Brass Plates +3" lod_atlas_index="3" mesh="aserai_brass_plate_b" culture="Culture.aserai" weight="9.281129" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="40" leg_armor="19" arm_armor="9" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_battania_brass_plate_armor_h0" name="{=79I1U8OC}Bronze Breastplate" subtype="body_armor" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="8.825031" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="42" leg_armor="8" arm_armor="5" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags DoesNotHideChest="true" UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_battania_brass_plate_armor_h1" name="{=79I1U8OC}Bronze Breastplate +1" subtype="body_armor" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="8.825031" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="44" leg_armor="9" arm_armor="6" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags DoesNotHideChest="true" UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_battania_brass_plate_armor_h2" name="{=79I1U8OC}Bronze Breastplate +2" subtype="body_armor" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="8.825031" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="10" arm_armor="7" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags DoesNotHideChest="true" UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_battania_brass_plate_armor_h3" name="{=79I1U8OC}Bronze Breastplate +3" subtype="body_armor" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="8.825031" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="11" arm_armor="8" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags DoesNotHideChest="true" UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_khuzait_heavy_armor_h0" name="{=CttLMqiq}Khan's Coat of Plates" mesh="khuzait_heavy_armor" culture="Culture.khuzait" weight="20.4674" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="26" arm_armor="23" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_khuzait_heavy_armor_h1" name="{=CttLMqiq}Khan's Coat of Plates +1" mesh="khuzait_heavy_armor" culture="Culture.khuzait" weight="20.4674" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="27" arm_armor="24" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_khuzait_heavy_armor_h2" name="{=CttLMqiq}Khan's Coat of Plates +2" mesh="khuzait_heavy_armor" culture="Culture.khuzait" weight="20.4674" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="28" arm_armor="25" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_khuzait_heavy_armor_h3" name="{=CttLMqiq}Khan's Coat of Plates +3" mesh="khuzait_heavy_armor" culture="Culture.khuzait" weight="20.4674" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="29" arm_armor="26" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_empire_plate_vest_armor_h0" name="{=TOf8dVcn}Ornate Scale Armor" mesh="empire_plate_vest_armor" subtype="body_armor" culture="Culture.empire" weight="11.74998" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="39" leg_armor="19" arm_armor="8" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_empire_plate_vest_armor_h1" name="{=TOf8dVcn}Ornate Scale Armor +1" mesh="empire_plate_vest_armor" subtype="body_armor" culture="Culture.empire" weight="11.74998" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="41" leg_armor="20" arm_armor="9" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_empire_plate_vest_armor_h2" name="{=TOf8dVcn}Ornate Scale Armor +2" mesh="empire_plate_vest_armor" subtype="body_armor" culture="Culture.empire" weight="11.74998" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="43" leg_armor="21" arm_armor="10" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_empire_plate_vest_armor_h3" name="{=TOf8dVcn}Ornate Scale Armor +3" mesh="empire_plate_vest_armor" subtype="body_armor" culture="Culture.empire" weight="11.74998" difficulty="0" appearance="10" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="45" leg_armor="22" arm_armor="11" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>

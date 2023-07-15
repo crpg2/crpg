@@ -6768,4 +6768,340 @@
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
+  <Item id="crpg_fullmailcoif1_h0" name="Full Faced Mail Coif (EBA)" mesh="fullmailcoif1" culture="Culture.neutral_culture" weight="0.5984282" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="12" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_fullmailcoif1_h1" name="Full Faced Mail Coif (EBA) +1" mesh="fullmailcoif1" culture="Culture.neutral_culture" weight="0.5984282" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="14" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_fullmailcoif1_h2" name="Full Faced Mail Coif (EBA) +2" mesh="fullmailcoif1" culture="Culture.neutral_culture" weight="0.5984282" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="16" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_fullmailcoif1_h3" name="Full Faced Mail Coif (EBA) +3" mesh="fullmailcoif1" culture="Culture.neutral_culture" weight="0.5984282" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="18" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_landsknechthat_1_h0" name="[16th Century] Landsknechts Hat, Decorated (EBA)" mesh="landsknechthat_1" culture="Culture.neutral_culture" weight="3.80764" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_landsknechthat_1_h1" name="[16th Century] Landsknechts Hat, Decorated (EBA) +1" mesh="landsknechthat_1" culture="Culture.neutral_culture" weight="3.80764" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="47" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_landsknechthat_1_h2" name="[16th Century] Landsknechts Hat, Decorated (EBA) +2" mesh="landsknechthat_1" culture="Culture.neutral_culture" weight="3.80764" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="49" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_landsknechthat_1_h3" name="[16th Century] Landsknechts Hat, Decorated (EBA) +3" mesh="landsknechthat_1" culture="Culture.neutral_culture" weight="3.80764" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_velvet_sallet_gold_1_h0" name="[15th Century] Velvet Sallet Golden, Primary Colour (EBA)" mesh="velvet_sallet_gold_1" culture="Culture.neutral_culture" weight="4.661901" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_velvet_sallet_gold_1_h1" name="[15th Century] Velvet Sallet Golden, Primary Colour (EBA) +1" mesh="velvet_sallet_gold_1" culture="Culture.neutral_culture" weight="4.661901" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_velvet_sallet_gold_1_h2" name="[15th Century] Velvet Sallet Golden, Primary Colour (EBA) +2" mesh="velvet_sallet_gold_1" culture="Culture.neutral_culture" weight="4.661901" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_velvet_sallet_gold_1_h3" name="[15th Century] Velvet Sallet Golden, Primary Colour (EBA) +3" mesh="velvet_sallet_gold_1" culture="Culture.neutral_culture" weight="4.661901" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="58" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14th_noble_greathelmet1_h0" name="[14th Century] Great Helmet, Decorated and Crown (EBA)" mesh="14th_noble_greathelmet1" culture="Culture.neutral_culture" weight="3.228808" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14th_noble_greathelmet1_h1" name="[14th Century] Great Helmet, Decorated and Crown (EBA) +1" mesh="14th_noble_greathelmet1" culture="Culture.neutral_culture" weight="3.228808" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14th_noble_greathelmet1_h2" name="[14th Century] Great Helmet, Decorated and Crown (EBA) +2" mesh="14th_noble_greathelmet1" culture="Culture.neutral_culture" weight="3.228808" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="44" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_14th_noble_greathelmet1_h3" name="[14th Century] Great Helmet, Decorated and Crown (EBA) +3" mesh="14th_noble_greathelmet1" culture="Culture.neutral_culture" weight="3.228808" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_bretache_n1_h0" name="[14th Century] Bretache, Decorated (EBA)" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="39" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_bretache_n1_h1" name="[14th Century] Bretache, Decorated (EBA) +1" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="41" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_bretache_n1_h2" name="[14th Century] Bretache, Decorated (EBA) +2" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="43" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_bretache_n1_h3" name="[14th Century] Bretache, Decorated (EBA) +3" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_sa_visoredkettle_h0" name="Visored Kettlehelmet" subtype="head_armor" mesh="sa_visoredkettlehelmet" culture="Culture.sturgia" weight="5.042735" difficulty="0" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="55" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_sa_visoredkettle_h1" name="Visored Kettlehelmet +1" subtype="head_armor" mesh="sa_visoredkettlehelmet" culture="Culture.sturgia" weight="5.042735" difficulty="0" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="57" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_sa_visoredkettle_h2" name="Visored Kettlehelmet +2" subtype="head_armor" mesh="sa_visoredkettlehelmet" culture="Culture.sturgia" weight="5.042735" difficulty="0" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="59" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_sa_visoredkettle_h3" name="Visored Kettlehelmet +3" subtype="head_armor" mesh="sa_visoredkettlehelmet" culture="Culture.sturgia" weight="5.042735" difficulty="0" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="61" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_jer_nasal1_h0" name="Early Nasalhelmet, Crusader Painted" mesh="jer_nasal1" culture="Culture.neutral_culture" weight="2.678265" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="35" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_nasal1_h1" name="Early Nasalhelmet, Crusader Painted +1" mesh="jer_nasal1" culture="Culture.neutral_culture" weight="2.678265" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="37" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_nasal1_h2" name="Early Nasalhelmet, Crusader Painted +2" mesh="jer_nasal1" culture="Culture.neutral_culture" weight="2.678265" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="39" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_nasal1_h3" name="Early Nasalhelmet, Crusader Painted +3" mesh="jer_nasal1" culture="Culture.neutral_culture" weight="2.678265" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="41" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_nasal2_h0" name="Early Nasalhelmet, Crusader Painted, Yellow" mesh="jer_nasal2" culture="Culture.neutral_culture" weight="2.678265" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="35" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_nasal2_h1" name="Early Nasalhelmet, Crusader Painted, Yellow +1" mesh="jer_nasal2" culture="Culture.neutral_culture" weight="2.678265" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="37" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_nasal2_h2" name="Early Nasalhelmet, Crusader Painted, Yellow +2" mesh="jer_nasal2" culture="Culture.neutral_culture" weight="2.678265" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="39" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jer_nasal2_h3" name="Early Nasalhelmet, Crusader Painted, Yellow +3" mesh="jer_nasal2" culture="Culture.neutral_culture" weight="2.678265" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="41" has_gender_variations="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_gld_grff_basc1_h0" name="[14th Century] Griffin Visor Bascinet, Emblem and Covered Aventail" mesh="gld_grff_basc1" culture="Culture.neutral_culture" weight="3.342379" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="41" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_gld_grff_basc1_h1" name="[14th Century] Griffin Visor Bascinet, Emblem and Covered Aventail +1" mesh="gld_grff_basc1" culture="Culture.neutral_culture" weight="3.342379" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="43" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_gld_grff_basc1_h2" name="[14th Century] Griffin Visor Bascinet, Emblem and Covered Aventail +2" mesh="gld_grff_basc1" culture="Culture.neutral_culture" weight="3.342379" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_gld_grff_basc1_h3" name="[14th Century] Griffin Visor Bascinet, Emblem and Covered Aventail +3" mesh="gld_grff_basc1" culture="Culture.neutral_culture" weight="3.342379" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="47" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_bl_winged_helmet1_h0" name="[14th Century] Darkened Decorated Winged Helmet" mesh="bl_winged_helmet1" culture="Culture.neutral_culture" weight="10.04842" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="90" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_bl_winged_helmet1_h1" name="[14th Century] Darkened Decorated Winged Helmet +1" mesh="bl_winged_helmet1" culture="Culture.neutral_culture" weight="10.04842" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="92" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_bl_winged_helmet1_h2" name="[14th Century] Darkened Decorated Winged Helmet +2" mesh="bl_winged_helmet1" culture="Culture.neutral_culture" weight="10.04842" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="94" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_bl_winged_helmet1_h3" name="[14th Century] Darkened Decorated Winged Helmet +3" mesh="bl_winged_helmet1" culture="Culture.neutral_culture" weight="10.04842" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="96" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_greathelmet_cloth_1_h0" name="[14th Century] Greathelmet with Decorative Cloth" mesh="greathelmet_cloth_1" culture="Culture.neutral_culture" weight="3.80764" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_greathelmet_cloth_1_h1" name="[14th Century] Greathelmet with Decorative Cloth +1" mesh="greathelmet_cloth_1" culture="Culture.neutral_culture" weight="3.80764" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="47" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_greathelmet_cloth_1_h2" name="[14th Century] Greathelmet with Decorative Cloth +2" mesh="greathelmet_cloth_1" culture="Culture.neutral_culture" weight="3.80764" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="49" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_greathelmet_cloth_1_h3" name="[14th Century] Greathelmet with Decorative Cloth +3" mesh="greathelmet_cloth_1" culture="Culture.neutral_culture" weight="3.80764" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_levy_hood_1_h0" name="Poor Hood, Split" mesh="levy_hood_1" culture="Culture.neutral_culture" weight="0.1756776" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="5" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_levy_hood_1_h1" name="Poor Hood, Split +1" mesh="levy_hood_1" culture="Culture.neutral_culture" weight="0.1756776" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="7" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_levy_hood_1_h2" name="Poor Hood, Split +2" mesh="levy_hood_1" culture="Culture.neutral_culture" weight="0.1756776" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="9" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_levy_hood_1_h3" name="Poor Hood, Split +3" mesh="levy_hood_1" culture="Culture.neutral_culture" weight="0.1756776" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="11" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_early_norm_crown_1_h0" name="Norman Crown, Maille" mesh="early_norm_crown_1" culture="Culture.neutral_culture" weight="1.055698" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="18" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_early_norm_crown_1_h1" name="Norman Crown, Maille +1" mesh="early_norm_crown_1" culture="Culture.neutral_culture" weight="1.055698" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="20" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_early_norm_crown_1_h2" name="Norman Crown, Maille +2" mesh="early_norm_crown_1" culture="Culture.neutral_culture" weight="1.055698" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="22" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_early_norm_crown_1_h3" name="Norman Crown, Maille +3" mesh="early_norm_crown_1" culture="Culture.neutral_culture" weight="1.055698" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="24" has_gender_variations="false" hair_cover_type="all" beard_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_early_mailcoif_1_h0" name="[12th Century] Early Maille Coif" mesh="early_mailcoif_1" culture="Culture.neutral_culture" weight="0.5984282" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="12" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_early_mailcoif_1_h1" name="[12th Century] Early Maille Coif +1" mesh="early_mailcoif_1" culture="Culture.neutral_culture" weight="0.5984282" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="14" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_early_mailcoif_1_h2" name="[12th Century] Early Maille Coif +2" mesh="early_mailcoif_1" culture="Culture.neutral_culture" weight="0.5984282" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="16" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_early_mailcoif_1_h3" name="[12th Century] Early Maille Coif +3" mesh="early_mailcoif_1" culture="Culture.neutral_culture" weight="0.5984282" appearance="10" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="18" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
 </Items>

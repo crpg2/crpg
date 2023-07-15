@@ -27372,4 +27372,1052 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_blade_h0" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_blade_h1" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_blade_h2" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_blade_h3" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_square_shuriken_blade_h0" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_square_shuriken_blade_h1" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_square_shuriken_blade_h2" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_square_shuriken_blade_h3" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiral_shuriken_blade_h0" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiral_shuriken_blade_h1" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiral_shuriken_blade_h2" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiral_shuriken_blade_h3" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwing_spike_blade_h0" name="Throwing Spike Blade" tier="2" piece_type="Blade" mesh="throwing_spike" length="47" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwing_spike_blade_h1" name="Throwing Spike Blade" tier="2" piece_type="Blade" mesh="throwing_spike" length="47" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwing_spike_blade_h2" name="Throwing Spike Blade" tier="2" piece_type="Blade" mesh="throwing_spike" length="47" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwing_spike_blade_h3" name="Throwing Spike Blade" tier="2" piece_type="Blade" mesh="throwing_spike" length="47" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="8" />
+      <Swing damage_type="Cut" damage_factor="2.45" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwing_spike_handle_h0" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwing_spike_handle_h1" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwing_spike_handle_h2" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwing_spike_handle_h3" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiral_shuriken_handle_h0" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiral_shuriken_handle_h1" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiral_shuriken_handle_h2" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiral_shuriken_handle_h3" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_square_shuriken_handle_h0" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_square_shuriken_handle_h1" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_square_shuriken_handle_h2" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_square_shuriken_handle_h3" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_handle_h0" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_handle_h1" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_handle_h2" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_handle_h3" name="Default Throwing Handle" tier="2" piece_type="Handle" mesh="" culture="Culture.sturgia" length="15.15" weight="0.12">
+    <BuildData piece_offset="-5.0" next_piece_offset="0.0" previous_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_steel_pick_handle_h0" name="{=}Steel Pick Handle" tier="4" piece_type="Handle" mesh="steel_pick_handle" length="62" weight="1.6" is_default="true">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_steel_pick_handle_h1" name="{=}Steel Pick Handle" tier="4" piece_type="Handle" mesh="steel_pick_handle" length="62" weight="1.6" is_default="true">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_steel_pick_handle_h2" name="{=}Steel Pick Handle" tier="4" piece_type="Handle" mesh="steel_pick_handle" length="62" weight="1.6" is_default="true">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_steel_pick_handle_h3" name="{=}Steel Pick Handle" tier="4" piece_type="Handle" mesh="steel_pick_handle" length="62" weight="1.6" is_default="true">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_steel_pick_blade_h0" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="0.6168" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Pierce" damage_factor="2.5" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_steel_pick_blade_h1" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="0.6168" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Pierce" damage_factor="2.5" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_steel_pick_blade_h2" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="0.6168" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Pierce" damage_factor="2.5" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_steel_pick_blade_h3" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="0.6168" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Pierce" damage_factor="2.5" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_helpinghand_handle_h0" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="helpinghand_handle" length="32" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="-4.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_helpinghand_handle_h1" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="helpinghand_handle" length="32" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="-4.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_helpinghand_handle_h2" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="helpinghand_handle" length="32" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="-4.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_helpinghand_handle_h3" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="helpinghand_handle" length="32" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="-4.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_helpinghand_head_h0" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="helpinghand_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="9.5" blade_width="7.8" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_helpinghand_head_h1" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="helpinghand_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="9.5" blade_width="7.8" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_helpinghand_head_h2" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="helpinghand_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="9.5" blade_width="7.8" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_helpinghand_head_h3" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="helpinghand_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="9.5" blade_width="7.8" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingmace_handle_h0" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="throwing_mace_shaft" length="32" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingmace_handle_h1" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="throwing_mace_shaft" length="32" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingmace_handle_h2" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="throwing_mace_shaft" length="32" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingmace_handle_h3" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="throwing_mace_shaft" length="32" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingmace_head_h0" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="throwing_mace_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="12.8" blade_width="5.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingmace_head_h1" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="throwing_mace_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="12.8" blade_width="5.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingmace_head_h2" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="throwing_mace_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="12.8" blade_width="5.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingmace_head_h3" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="throwing_mace_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="12.8" blade_width="5.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingclub_handle_h0" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="throwing_club_handle" length="25" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="15.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingclub_handle_h1" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="throwing_club_handle" length="25" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="15.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingclub_handle_h2" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="throwing_club_handle" length="25" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="15.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingclub_handle_h3" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="throwing_club_handle" length="25" weight="0.35">
+    <BuildData piece_offset="0" next_piece_offset="15.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingclub_head_h0" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="throwing_club_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="12.0" blade_width="9.5" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingclub_head_h1" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="throwing_club_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="12.0" blade_width="9.5" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingclub_head_h2" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="throwing_club_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="12.0" blade_width="9.5" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_throwingclub_head_h3" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="throwing_club_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
+    <BuildData piece_offset="0" />
+    <BladeData stack_amount="3" blade_length="12.0" blade_width="9.5" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Blunt" damage_factor="1.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_blade_h0" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_blade_h1" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_blade_h2" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_blade_h3" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_pommel_h0" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_pommel_h1" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_pommel_h2" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_pommel_h3" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_guard_h0" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_guard_h1" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_guard_h2" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_guard_h3" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_handle_h0" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="0.1">
+    <BuildData piece_offset="-3" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_handle_h1" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="0.1">
+    <BuildData piece_offset="-3" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_handle_h2" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="0.1">
+    <BuildData piece_offset="-3" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_handle_h3" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="0.1">
+    <BuildData piece_offset="-3" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_blade_h0" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_blade_h1" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_blade_h2" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_blade_h3" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_pommel_h0" name="{=}Cutlass Pommel" tier="4" piece_type="Pommel" mesh="cutlass_pommel" culture="Culture.battania" length="8.57" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_pommel_h1" name="{=}Cutlass Pommel" tier="4" piece_type="Pommel" mesh="cutlass_pommel" culture="Culture.battania" length="8.57" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_pommel_h2" name="{=}Cutlass Pommel" tier="4" piece_type="Pommel" mesh="cutlass_pommel" culture="Culture.battania" length="8.57" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_pommel_h3" name="{=}Cutlass Pommel" tier="4" piece_type="Pommel" mesh="cutlass_pommel" culture="Culture.battania" length="8.57" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_guard_h0" name="{=}Cutlass Guard" tier="5" piece_type="Guard" mesh="cutlass_guard" culture="Culture.battania" length="11.2" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_guard_h1" name="{=}Cutlass Guard" tier="5" piece_type="Guard" mesh="cutlass_guard" culture="Culture.battania" length="11.2" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_guard_h2" name="{=}Cutlass Guard" tier="5" piece_type="Guard" mesh="cutlass_guard" culture="Culture.battania" length="11.2" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_guard_h3" name="{=}Cutlass Guard" tier="5" piece_type="Guard" mesh="cutlass_guard" culture="Culture.battania" length="11.2" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_handle_h0" name="{=}Cutlass Handle" tier="3" piece_type="Handle" mesh="cutlass_handle" culture="Culture.khuzait" length="10.2" weight="0.1">
+    <BuildData piece_offset="1" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_handle_h1" name="{=}Cutlass Handle" tier="3" piece_type="Handle" mesh="cutlass_handle" culture="Culture.khuzait" length="10.2" weight="0.1">
+    <BuildData piece_offset="1" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_handle_h2" name="{=}Cutlass Handle" tier="3" piece_type="Handle" mesh="cutlass_handle" culture="Culture.khuzait" length="10.2" weight="0.1">
+    <BuildData piece_offset="1" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cutlass_handle_h3" name="{=}Cutlass Handle" tier="3" piece_type="Handle" mesh="cutlass_handle" culture="Culture.khuzait" length="10.2" weight="0.1">
+    <BuildData piece_offset="1" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_blade_h0" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_blade_h1" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_blade_h2" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_blade_h3" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_pommel_h0" name="{=}Ancient Longsword Pommel" tier="4" piece_type="Pommel" mesh="longsword_pommel" culture="Culture.battania" length="5.75" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_pommel_h1" name="{=}Ancient Longsword Pommel" tier="4" piece_type="Pommel" mesh="longsword_pommel" culture="Culture.battania" length="5.75" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_pommel_h2" name="{=}Ancient Longsword Pommel" tier="4" piece_type="Pommel" mesh="longsword_pommel" culture="Culture.battania" length="5.75" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_pommel_h3" name="{=}Ancient Longsword Pommel" tier="4" piece_type="Pommel" mesh="longsword_pommel" culture="Culture.battania" length="5.75" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_guard_h0" name="{=}Ancient Longsword Guard" tier="5" piece_type="Guard" mesh="longsword_guard" culture="Culture.battania" length="1.32" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_guard_h1" name="{=}Ancient Longsword Guard" tier="5" piece_type="Guard" mesh="longsword_guard" culture="Culture.battania" length="1.32" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_guard_h2" name="{=}Ancient Longsword Guard" tier="5" piece_type="Guard" mesh="longsword_guard" culture="Culture.battania" length="1.32" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_guard_h3" name="{=}Ancient Longsword Guard" tier="5" piece_type="Guard" mesh="longsword_guard" culture="Culture.battania" length="1.32" weight="0.097">
+    <BuildData next_piece_offset="0" />
+    <StatContributions armor_bonus="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_handle_h0" name="{=}Ancient Longsword Handle" tier="3" piece_type="Handle" mesh="longsword_handle" culture="Culture.khuzait" length="24.2" weight="0.1">
+    <BuildData piece_offset="-1" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_handle_h1" name="{=}Ancient Longsword Handle" tier="3" piece_type="Handle" mesh="longsword_handle" culture="Culture.khuzait" length="24.2" weight="0.1">
+    <BuildData piece_offset="-1" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_handle_h2" name="{=}Ancient Longsword Handle" tier="3" piece_type="Handle" mesh="longsword_handle" culture="Culture.khuzait" length="24.2" weight="0.1">
+    <BuildData piece_offset="-1" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientlongsword_handle_h3" name="{=}Ancient Longsword Handle" tier="3" piece_type="Handle" mesh="longsword_handle" culture="Culture.khuzait" length="24.2" weight="0.1">
+    <BuildData piece_offset="-1" previous_piece_offset="0.0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_meowhammer_head_h0" name="{=}Le Bonke Head" tier="1" piece_type="Blade" mesh="meowhammer_head" length="13.5" weight="2.05" full_scale="true" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="0" next_piece_offset="0" />
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+      <Flag name="CanCrushThrough" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_meowhammer_head_h1" name="{=}Le Bonke Head" tier="1" piece_type="Blade" mesh="meowhammer_head" length="13.5" weight="2.05" full_scale="true" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="0" next_piece_offset="0" />
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+      <Flag name="CanCrushThrough" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_meowhammer_head_h2" name="{=}Le Bonke Head" tier="1" piece_type="Blade" mesh="meowhammer_head" length="13.5" weight="2.05" full_scale="true" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="0" next_piece_offset="0" />
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+      <Flag name="CanCrushThrough" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_meowhammer_head_h3" name="{=}Le Bonke Head" tier="1" piece_type="Blade" mesh="meowhammer_head" length="13.5" weight="2.05" full_scale="true" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="0" next_piece_offset="0" />
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+      <Flag name="CanCrushThrough" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_meowhammer_handle_h0" name="{=}Le Bonke Handle" tier="1" piece_type="Handle" mesh="meowhammer_handle" length="91.2" full_scale="true" weight="1.60" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+    <BuildData piece_offset="20.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_meowhammer_handle_h1" name="{=}Le Bonke Handle" tier="1" piece_type="Handle" mesh="meowhammer_handle" length="91.2" full_scale="true" weight="1.60" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+    <BuildData piece_offset="20.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_meowhammer_handle_h2" name="{=}Le Bonke Handle" tier="1" piece_type="Handle" mesh="meowhammer_handle" length="91.2" full_scale="true" weight="1.60" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+    <BuildData piece_offset="20.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_meowhammer_handle_h3" name="{=}Le Bonke Handle" tier="1" piece_type="Handle" mesh="meowhammer_handle" length="91.2" full_scale="true" weight="1.60" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+    <BuildData piece_offset="20.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_blade_h0" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_blade_h1" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_blade_h2" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_blade_h3" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_pommel_h0" name="{=}Broad Short Sword Pommel" tier="4" piece_type="Pommel" mesh="shortbroadsword_pommel" culture="Culture.battania" length="3.37" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_pommel_h1" name="{=}Broad Short Sword Pommel" tier="4" piece_type="Pommel" mesh="shortbroadsword_pommel" culture="Culture.battania" length="3.37" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_pommel_h2" name="{=}Broad Short Sword Pommel" tier="4" piece_type="Pommel" mesh="shortbroadsword_pommel" culture="Culture.battania" length="3.37" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_pommel_h3" name="{=}Broad Short Sword Pommel" tier="4" piece_type="Pommel" mesh="shortbroadsword_pommel" culture="Culture.battania" length="3.37" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_guard_h0" name="{=}Broad Short Sword Guard" tier="5" piece_type="Guard" mesh="shortbroadsword_guard" culture="Culture.battania" length="2.73" weight="0.097">
+    <BuildData next_piece_offset="2" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_guard_h1" name="{=}Broad Short Sword Guard" tier="5" piece_type="Guard" mesh="shortbroadsword_guard" culture="Culture.battania" length="2.73" weight="0.097">
+    <BuildData next_piece_offset="2" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_guard_h2" name="{=}Broad Short Sword Guard" tier="5" piece_type="Guard" mesh="shortbroadsword_guard" culture="Culture.battania" length="2.73" weight="0.097">
+    <BuildData next_piece_offset="2" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_guard_h3" name="{=}Broad Short Sword Guard" tier="5" piece_type="Guard" mesh="shortbroadsword_guard" culture="Culture.battania" length="2.73" weight="0.097">
+    <BuildData next_piece_offset="2" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_handle_h0" name="{=}Broad Short Sword Handle" tier="3" piece_type="Handle" mesh="shortbroadsword_handle" culture="Culture.khuzait" length="8.97" weight="0.1">
+    <BuildData piece_offset="0" previous_piece_offset="1" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_handle_h1" name="{=}Broad Short Sword Handle" tier="3" piece_type="Handle" mesh="shortbroadsword_handle" culture="Culture.khuzait" length="8.97" weight="0.1">
+    <BuildData piece_offset="0" previous_piece_offset="1" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_handle_h2" name="{=}Broad Short Sword Handle" tier="3" piece_type="Handle" mesh="shortbroadsword_handle" culture="Culture.khuzait" length="8.97" weight="0.1">
+    <BuildData piece_offset="0" previous_piece_offset="1" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_broadshortsword_handle_h3" name="{=}Broad Short Sword Handle" tier="3" piece_type="Handle" mesh="shortbroadsword_handle" culture="Culture.khuzait" length="8.97" weight="0.1">
+    <BuildData piece_offset="0" previous_piece_offset="1" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_guard_h0" name="{=}Rondel Guard" tier="1" piece_type="Guard" mesh="rondel_guard" culture="Culture.battania" full_scale="true" length="1.1" weight="0.2">
+    <BuildData next_piece_offset="1.0" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_guard_h1" name="{=}Rondel Guard" tier="1" piece_type="Guard" mesh="rondel_guard" culture="Culture.battania" full_scale="true" length="1.1" weight="0.2">
+    <BuildData next_piece_offset="1.0" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_guard_h2" name="{=}Rondel Guard" tier="1" piece_type="Guard" mesh="rondel_guard" culture="Culture.battania" full_scale="true" length="1.1" weight="0.2">
+    <BuildData next_piece_offset="1.0" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_guard_h3" name="{=}Rondel Guard" tier="1" piece_type="Guard" mesh="rondel_guard" culture="Culture.battania" full_scale="true" length="1.1" weight="0.2">
+    <BuildData next_piece_offset="1.0" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_blade_h0" name="{=}Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade" full_scale="true" length="31.4" weight="0.3">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="3.8" />
+      <Swing damage_type="Blunt" damage_factor="0.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_blade_h1" name="{=}Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade" full_scale="true" length="31.4" weight="0.3">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="3.8" />
+      <Swing damage_type="Blunt" damage_factor="0.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_blade_h2" name="{=}Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade" full_scale="true" length="31.4" weight="0.3">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="3.8" />
+      <Swing damage_type="Blunt" damage_factor="0.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_blade_h3" name="{=}Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade" full_scale="true" length="31.4" weight="0.3">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="3.8" />
+      <Swing damage_type="Blunt" damage_factor="0.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_pommel_h0" name="{=}Rondel Pommel" tier="4" piece_type="Pommel" mesh="rondel_pommel" culture="Culture.battania" full_scale="true" length="1.02" weight="0.2">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_pommel_h1" name="{=}Rondel Pommel" tier="4" piece_type="Pommel" mesh="rondel_pommel" culture="Culture.battania" full_scale="true" length="1.02" weight="0.2">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_pommel_h2" name="{=}Rondel Pommel" tier="4" piece_type="Pommel" mesh="rondel_pommel" culture="Culture.battania" full_scale="true" length="1.02" weight="0.2">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_pommel_h3" name="{=}Rondel Pommel" tier="4" piece_type="Pommel" mesh="rondel_pommel" culture="Culture.battania" full_scale="true" length="1.02" weight="0.2">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_handle_h0" name="{=}Rondel Grip" tier="2" piece_type="Handle" mesh="rondel_handle" culture="Culture.sturgia" full_scale="true" length="13.0" weight="0.2">
+    <BuildData piece_offset="0" previous_piece_offset="0.0" next_piece_offset="1.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_handle_h1" name="{=}Rondel Grip" tier="2" piece_type="Handle" mesh="rondel_handle" culture="Culture.sturgia" full_scale="true" length="13.0" weight="0.2">
+    <BuildData piece_offset="0" previous_piece_offset="0.0" next_piece_offset="1.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_handle_h2" name="{=}Rondel Grip" tier="2" piece_type="Handle" mesh="rondel_handle" culture="Culture.sturgia" full_scale="true" length="13.0" weight="0.2">
+    <BuildData piece_offset="0" previous_piece_offset="0.0" next_piece_offset="1.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_rondel_handle_h3" name="{=}Rondel Grip" tier="2" piece_type="Handle" mesh="rondel_handle" culture="Culture.sturgia" full_scale="true" length="13.0" weight="0.2">
+    <BuildData piece_offset="0" previous_piece_offset="0.0" next_piece_offset="1.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
 </CraftingPieces>
