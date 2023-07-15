@@ -41655,10 +41655,10 @@
     "name": "Falx Knife",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 187,
+    "price": 315,
     "weight": 0.82,
     "rank": 0,
-    "tier": 0.739684641,
+    "tier": 1.23381877,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -41692,10 +41692,10 @@
     "name": "Falx Knife +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 210,
+    "price": 363,
     "weight": 0.78,
     "rank": 1,
-    "tier": 0.835890949,
+    "tier": 1.39416718,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -41729,10 +41729,10 @@
     "name": "Falx Knife +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 262,
+    "price": 476,
     "weight": 0.74,
     "rank": 2,
-    "tier": 1.04119515,
+    "tier": 1.73625124,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -41766,10 +41766,10 @@
     "name": "Falx Knife +3",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 464,
+    "price": 934,
     "weight": 0.7,
     "rank": 3,
-    "tier": 1.70016825,
+    "tier": 2.833798,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -57421,10 +57421,10 @@
     "name": "Highland Dagger",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1420,
+    "price": 3264,
     "weight": 1.65,
     "rank": 0,
-    "tier": 3.73700523,
+    "tier": 6.220983,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -57482,10 +57482,10 @@
     "name": "Highland Dagger +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1210,
+    "price": 2740,
     "weight": 1.65,
     "rank": 1,
-    "tier": 3.36914635,
+    "tier": 5.608511,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -57543,10 +57543,10 @@
     "name": "Highland Dagger +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1365,
+    "price": 3125,
     "weight": 1.56,
     "rank": 2,
-    "tier": 3.64387631,
+    "tier": 6.06351948,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -57604,10 +57604,10 @@
     "name": "Highland Dagger +3",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1999,
+    "price": 4724,
     "weight": 1.51,
     "rank": 3,
-    "tier": 4.63248634,
+    "tier": 7.707372,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108401,10 +108401,10 @@
     "name": "Pugio",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1445,
+    "price": 3327,
     "weight": 1.64,
     "rank": 0,
-    "tier": 3.778895,
+    "tier": 6.2916193,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108462,10 +108462,10 @@
     "name": "Pugio +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1231,
+    "price": 2792,
     "weight": 1.64,
     "rank": 1,
-    "tier": 3.40689039,
+    "tier": 5.67215967,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108523,10 +108523,10 @@
     "name": "Pugio +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1425,
+    "price": 3275,
     "weight": 1.59,
     "rank": 2,
-    "tier": 3.74533319,
+    "tier": 6.233747,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -108584,10 +108584,10 @@
     "name": "Pugio +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2087,
+    "price": 4952,
     "weight": 1.55,
     "rank": 3,
-    "tier": 4.757662,
+    "tier": 7.917498,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -117233,10 +117233,10 @@
     "name": "Seax",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 1699,
+    "price": 3892,
     "weight": 2.84,
     "rank": 0,
-    "tier": 4.18788528,
+    "tier": 6.893443,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -117271,10 +117271,10 @@
     "name": "Seax +1",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 1574,
+    "price": 3573,
     "weight": 2.84,
     "rank": 1,
-    "tier": 3.99061918,
+    "tier": 6.559542,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -117309,10 +117309,10 @@
     "name": "Seax +2",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 1724,
+    "price": 3937,
     "weight": 2.78,
     "rank": 2,
-    "tier": 4.22660351,
+    "tier": 6.93976068,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -117347,10 +117347,10 @@
     "name": "Seax +3",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 2377,
+    "price": 5562,
     "weight": 2.69,
     "rank": 3,
-    "tier": 5.149564,
+    "tier": 8.457094,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -152645,10 +152645,10 @@
     "name": "Xiphos",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 983,
+    "price": 2177,
     "weight": 1.91,
     "rank": 0,
-    "tier": 2.93302035,
+    "tier": 4.881998,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -152682,10 +152682,10 @@
     "name": "Xiphos +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 960,
+    "price": 2120,
     "weight": 1.86,
     "rank": 1,
-    "tier": 2.886886,
+    "tier": 4.80322,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -152719,10 +152719,10 @@
     "name": "Xiphos +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1115,
+    "price": 2500,
     "weight": 1.78,
     "rank": 2,
-    "tier": 3.19190526,
+    "tier": 5.30828667,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -152756,10 +152756,10 @@
     "name": "Xiphos +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1624,
+    "price": 3771,
     "weight": 1.69,
     "rank": 3,
-    "tier": 4.07106829,
+    "tier": 6.76911449,
     "requirement": 0,
     "flags": [
       "Civilian"
