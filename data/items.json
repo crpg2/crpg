@@ -82118,6 +82118,41 @@
     "weapons": []
   },
   {
+    "id": "crpg_lowland_arrows_h0",
+    "baseId": "crpg_lowland_arrows",
+    "name": "Lowland Arrows",
+    "culture": "Neutral",
+    "type": "Arrows",
+    "price": 3466,
+    "weight": 0.06,
+    "rank": 0,
+    "tier": 8.63318348,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Arrow",
+        "itemUsage": "arrow_top",
+        "accuracy": 100,
+        "missileSpeed": 10,
+        "stackAmount": 40,
+        "length": 97,
+        "balance": 0.0,
+        "handling": 0,
+        "bodyArmor": 0,
+        "flags": [
+          "Consumable"
+        ],
+        "thrustDamage": 2,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 0,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 0
+      }
+    ]
+  },
+  {
     "id": "crpg_lowland_arrows_h1",
     "baseId": "crpg_lowland_arrows",
     "name": "Lowland Arrows +1",
@@ -148207,41 +148242,6 @@
       "familyType": 0
     },
     "weapons": []
-  },
-  {
-    "id": "crpg_vlandic_arrows_v2_h0",
-    "baseId": "crpg_vlandic_arrows_v2",
-    "name": "Lowland Arrows",
-    "culture": "Neutral",
-    "type": "Arrows",
-    "price": 3466,
-    "weight": 0.06,
-    "rank": 0,
-    "tier": 8.63318348,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Arrow",
-        "itemUsage": "arrow_top",
-        "accuracy": 100,
-        "missileSpeed": 10,
-        "stackAmount": 40,
-        "length": 97,
-        "balance": 0.0,
-        "handling": 0,
-        "bodyArmor": 0,
-        "flags": [
-          "Consumable"
-        ],
-        "thrustDamage": 2,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 0,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 0
-      }
-    ]
   },
   {
     "id": "crpg_war_razor_h0",
