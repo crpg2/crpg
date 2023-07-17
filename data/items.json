@@ -121823,10 +121823,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4662,
+    "price": 4165,
     "weight": 1.2,
     "rank": 0,
-    "tier": 7.64921856,
+    "tier": 7.16952038,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -121834,7 +121834,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -121848,8 +121848,8 @@
         "thrustDamage": 38,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
-        "swingDamage": 5,
-        "swingDamageType": "Blunt",
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
         "swingSpeed": 118
       }
     ]
@@ -121860,10 +121860,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3355,
+    "price": 4397,
     "weight": 1.2,
     "rank": 1,
-    "tier": 6.32166767,
+    "tier": 7.396811,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -121871,7 +121871,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -121882,11 +121882,11 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 38,
+        "thrustDamage": 39,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 94,
-        "swingDamage": 5,
-        "swingDamageType": "Blunt",
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
         "swingSpeed": 118
       }
     ]
@@ -121897,10 +121897,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2503,
-    "weight": 1.2,
+    "price": 4043,
+    "weight": 0.93,
     "rank": 2,
-    "tier": 5.311956,
+    "tier": 7.047624,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -121908,7 +121908,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -121919,12 +121919,12 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 38,
+        "thrustDamage": 39,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
-        "swingDamage": 5,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 118
+        "thrustSpeed": 97,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 123
       }
     ]
   },
@@ -121934,10 +121934,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1925,
-    "weight": 1.2,
+    "price": 4457,
+    "weight": 0.93,
     "rank": 3,
-    "tier": 4.526164,
+    "tier": 7.454511,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -121945,7 +121945,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -121956,12 +121956,12 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 38,
+        "thrustDamage": 40,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
-        "swingDamage": 5,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 118
+        "thrustSpeed": 97,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 123
       }
     ]
   },
