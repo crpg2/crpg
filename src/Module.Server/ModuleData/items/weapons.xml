@@ -456,28 +456,28 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <CraftedItem id="crpg_shieldsplitter_h0" name="{=}Shieldsplitter" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_h0" name="{=}Bone Breaker" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_shieldsplitter_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shieldsplitter_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_shieldsplitter_h1" name="{=}Shieldsplitter +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_h1" name="{=}Bone Breaker +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_shieldsplitter_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shieldsplitter_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_shieldsplitter_h2" name="{=}Shieldsplitter +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_h2" name="{=}Bone Breaker +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_shieldsplitter_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shieldsplitter_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_shieldsplitter_h3" name="{=}Shieldsplitter +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_h3" name="{=}Bone Breaker +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_shieldsplitter_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shieldsplitter_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_mallet_h0" name="{=}Mallet" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
@@ -608,28 +608,28 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <CraftedItem id="crpg_shieldsplitter_h0" name="{=}Shieldsplitter" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_h0" name="{=}Bone Breaker" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_shieldsplitter_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shieldsplitter_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_shieldsplitter_h1" name="{=}Shieldsplitter +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_h1" name="{=}Bone Breaker +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_shieldsplitter_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shieldsplitter_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_shieldsplitter_h2" name="{=}Shieldsplitter +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_h2" name="{=}Bone Breaker +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_shieldsplitter_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shieldsplitter_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_shieldsplitter_h3" name="{=}Shieldsplitter +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_h3" name="{=}Bone Breaker +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_shieldsplitter_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shieldsplitter_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bone_breaker_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_mallet_h0" name="{=}Mallet" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">

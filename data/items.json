@@ -20392,6 +20392,258 @@
     "weapons": []
   },
   {
+    "id": "crpg_bone_breaker_h0",
+    "baseId": "crpg_bone_breaker",
+    "name": "Bone Breaker",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 10207,
+    "weight": 1.95,
+    "rank": 0,
+    "tier": 8.381186,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.44,
+        "handling": 78,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 93,
+        "swingDamage": 33,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
+      },
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.44,
+        "handling": 78,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 93,
+        "swingDamage": 33,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_bone_breaker_h1",
+    "baseId": "crpg_bone_breaker",
+    "name": "Bone Breaker +1",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 11045,
+    "weight": 1.85,
+    "rank": 1,
+    "tier": 8.761618,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.5,
+        "handling": 79,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 33,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
+      },
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.5,
+        "handling": 79,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 33,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
+      }
+    ]
+  },
+  {
+    "id": "crpg_bone_breaker_h2",
+    "baseId": "crpg_bone_breaker",
+    "name": "Bone Breaker +2",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 10184,
+    "weight": 1.85,
+    "rank": 2,
+    "tier": 8.3706,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.5,
+        "handling": 79,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 34,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
+      },
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.5,
+        "handling": 79,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 34,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
+      }
+    ]
+  },
+  {
+    "id": "crpg_bone_breaker_h3",
+    "baseId": "crpg_bone_breaker",
+    "name": "Bone Breaker +3",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 11863,
+    "weight": 1.85,
+    "rank": 3,
+    "tier": 9.119562,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.5,
+        "handling": 79,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 36,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
+      },
+      {
+        "class": "TwoHandedMace",
+        "itemUsage": "twohanded_axe",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.5,
+        "handling": 79,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 36,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
+      }
+    ]
+  },
+  {
     "id": "crpg_bone_crusher_h0",
     "baseId": "crpg_bone_crusher",
     "name": "Bone Crusher",
@@ -79308,8 +79560,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_lamellar_plate_boots_v1_h0",
-    "baseId": "crpg_lamellar_plate_boots_v1",
+    "id": "crpg_lamellar_plate_boots_v2_h0",
+    "baseId": "crpg_lamellar_plate_boots_v2",
     "name": "Lamellar Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
@@ -79330,8 +79582,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_lamellar_plate_boots_v1_h1",
-    "baseId": "crpg_lamellar_plate_boots_v1",
+    "id": "crpg_lamellar_plate_boots_v2_h1",
+    "baseId": "crpg_lamellar_plate_boots_v2",
     "name": "Lamellar Plate Boots +1",
     "culture": "Empire",
     "type": "LegArmor",
@@ -79352,8 +79604,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_lamellar_plate_boots_v1_h2",
-    "baseId": "crpg_lamellar_plate_boots_v1",
+    "id": "crpg_lamellar_plate_boots_v2_h2",
+    "baseId": "crpg_lamellar_plate_boots_v2",
     "name": "Lamellar Plate Boots +2",
     "culture": "Empire",
     "type": "LegArmor",
@@ -79374,8 +79626,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_lamellar_plate_boots_v1_h3",
-    "baseId": "crpg_lamellar_plate_boots_v1",
+    "id": "crpg_lamellar_plate_boots_v2_h3",
+    "baseId": "crpg_lamellar_plate_boots_v2",
     "name": "Lamellar Plate Boots +3",
     "culture": "Empire",
     "type": "LegArmor",
@@ -109188,8 +109440,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_plated_boots_v1_h0",
-    "baseId": "crpg_northern_plated_boots_v1",
+    "id": "crpg_northern_plated_boots_v2_h0",
+    "baseId": "crpg_northern_plated_boots_v2",
     "name": "Huscarl Plated Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
@@ -109210,8 +109462,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_plated_boots_v1_h1",
-    "baseId": "crpg_northern_plated_boots_v1",
+    "id": "crpg_northern_plated_boots_v2_h1",
+    "baseId": "crpg_northern_plated_boots_v2",
     "name": "Huscarl Plated Boots +1",
     "culture": "Sturgia",
     "type": "LegArmor",
@@ -109232,8 +109484,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_plated_boots_v1_h2",
-    "baseId": "crpg_northern_plated_boots_v1",
+    "id": "crpg_northern_plated_boots_v2_h2",
+    "baseId": "crpg_northern_plated_boots_v2",
     "name": "Huscarl Plated Boots +2",
     "culture": "Sturgia",
     "type": "LegArmor",
@@ -109254,8 +109506,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_plated_boots_v1_h3",
-    "baseId": "crpg_northern_plated_boots_v1",
+    "id": "crpg_northern_plated_boots_v2_h3",
+    "baseId": "crpg_northern_plated_boots_v2",
     "name": "Huscarl Plated Boots +3",
     "culture": "Sturgia",
     "type": "LegArmor",
@@ -123626,8 +123878,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_noble_v1_h0",
-    "baseId": "crpg_rus_helm_noble_v1",
+    "id": "crpg_rus_helm_noble_v2_h0",
+    "baseId": "crpg_rus_helm_noble_v2",
     "name": "Vaegir Noble Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123648,8 +123900,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_noble_v1_h1",
-    "baseId": "crpg_rus_helm_noble_v1",
+    "id": "crpg_rus_helm_noble_v2_h1",
+    "baseId": "crpg_rus_helm_noble_v2",
     "name": "Vaegir Noble Helmet +1",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123670,8 +123922,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_noble_v1_h2",
-    "baseId": "crpg_rus_helm_noble_v1",
+    "id": "crpg_rus_helm_noble_v2_h2",
+    "baseId": "crpg_rus_helm_noble_v2",
     "name": "Vaegir Noble Helmet +2",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123692,8 +123944,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_noble_v1_h3",
-    "baseId": "crpg_rus_helm_noble_v1",
+    "id": "crpg_rus_helm_noble_v2_h3",
+    "baseId": "crpg_rus_helm_noble_v2",
     "name": "Vaegir Noble Helmet +3",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123714,8 +123966,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_regular_v1_h0",
-    "baseId": "crpg_rus_helm_regular_v1",
+    "id": "crpg_rus_helm_regular_v2_h0",
+    "baseId": "crpg_rus_helm_regular_v2",
     "name": "Vaegir Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123736,8 +123988,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_regular_v1_h1",
-    "baseId": "crpg_rus_helm_regular_v1",
+    "id": "crpg_rus_helm_regular_v2_h1",
+    "baseId": "crpg_rus_helm_regular_v2",
     "name": "Vaegir Helmet +1",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123758,8 +124010,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_regular_v1_h2",
-    "baseId": "crpg_rus_helm_regular_v1",
+    "id": "crpg_rus_helm_regular_v2_h2",
+    "baseId": "crpg_rus_helm_regular_v2",
     "name": "Vaegir Helmet +2",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123780,8 +124032,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_regular_v1_h3",
-    "baseId": "crpg_rus_helm_regular_v1",
+    "id": "crpg_rus_helm_regular_v2_h3",
+    "baseId": "crpg_rus_helm_regular_v2",
     "name": "Vaegir Helmet +3",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123802,8 +124054,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_regular2_v1_h0",
-    "baseId": "crpg_rus_helm_regular2_v1",
+    "id": "crpg_rus_helm_regular2_v2_h0",
+    "baseId": "crpg_rus_helm_regular2_v2",
     "name": "Shiny Vaegir Helmet",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123824,8 +124076,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_regular2_v1_h1",
-    "baseId": "crpg_rus_helm_regular2_v1",
+    "id": "crpg_rus_helm_regular2_v2_h1",
+    "baseId": "crpg_rus_helm_regular2_v2",
     "name": "Shiny Vaegir Helmet +1",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123846,8 +124098,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_regular2_v1_h2",
-    "baseId": "crpg_rus_helm_regular2_v1",
+    "id": "crpg_rus_helm_regular2_v2_h2",
+    "baseId": "crpg_rus_helm_regular2_v2",
     "name": "Shiny Vaegir Helmet +2",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -123868,8 +124120,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_rus_helm_regular2_v1_h3",
-    "baseId": "crpg_rus_helm_regular2_v1",
+    "id": "crpg_rus_helm_regular2_v2_h3",
+    "baseId": "crpg_rus_helm_regular2_v2",
     "name": "Shiny Vaegir Helmet +3",
     "culture": "Sturgia",
     "type": "HeadArmor",
@@ -128514,258 +128766,6 @@
         "swingDamage": 6,
         "swingDamageType": "Blunt",
         "swingSpeed": 97
-      }
-    ]
-  },
-  {
-    "id": "crpg_shieldsplitter_h0",
-    "baseId": "crpg_shieldsplitter",
-    "name": "Shieldsplitter",
-    "culture": "Neutral",
-    "type": "TwoHandedWeapon",
-    "price": 10207,
-    "weight": 1.95,
-    "rank": 0,
-    "tier": 8.381186,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.44,
-        "handling": 78,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 33,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 83
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.44,
-        "handling": 78,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 33,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 83
-      }
-    ]
-  },
-  {
-    "id": "crpg_shieldsplitter_h1",
-    "baseId": "crpg_shieldsplitter",
-    "name": "Shieldsplitter +1",
-    "culture": "Neutral",
-    "type": "TwoHandedWeapon",
-    "price": 11045,
-    "weight": 1.85,
-    "rank": 1,
-    "tier": 8.761618,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.5,
-        "handling": 79,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 33,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 85
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.5,
-        "handling": 79,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 33,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 85
-      }
-    ]
-  },
-  {
-    "id": "crpg_shieldsplitter_h2",
-    "baseId": "crpg_shieldsplitter",
-    "name": "Shieldsplitter +2",
-    "culture": "Neutral",
-    "type": "TwoHandedWeapon",
-    "price": 10184,
-    "weight": 1.85,
-    "rank": 2,
-    "tier": 8.3706,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.5,
-        "handling": 79,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 34,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 85
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.5,
-        "handling": 79,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 34,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 85
-      }
-    ]
-  },
-  {
-    "id": "crpg_shieldsplitter_h3",
-    "baseId": "crpg_shieldsplitter",
-    "name": "Shieldsplitter +3",
-    "culture": "Neutral",
-    "type": "TwoHandedWeapon",
-    "price": 11863,
-    "weight": 1.85,
-    "rank": 3,
-    "tier": 9.119562,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.5,
-        "handling": 79,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 36,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 85
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.5,
-        "handling": 79,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 36,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 85
       }
     ]
   },
