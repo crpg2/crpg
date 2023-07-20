@@ -11512,33 +11512,33 @@
       <Piece id="crpg_throwingclub_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_langes_messer_h0" name="{=}Langes Messer" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_langes_messer_h0" name="{=Kadse}Langes Messer" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_langes_messer_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_langes_messer_blade_h0" Type="Blade" scale_factor="108" />
       <Piece id="crpg_langes_messer_guard_h0" Type="Guard" scale_factor="100" />
       <Piece id="crpg_langes_messer_handle_h0" Type="Handle" scale_factor="100" />
       <Piece id="crpg_langes_messer_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_langes_messer_h1" name="{=}Langes Messer" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_langes_messer_h1" name="{=Kadse}Langes Messer +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_langes_messer_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_langes_messer_blade_h1" Type="Blade" scale_factor="108" />
       <Piece id="crpg_langes_messer_guard_h1" Type="Guard" scale_factor="100" />
       <Piece id="crpg_langes_messer_handle_h1" Type="Handle" scale_factor="100" />
       <Piece id="crpg_langes_messer_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_langes_messer_h2" name="{=}Langes Messer" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_langes_messer_h2" name="{=Kadse}Langes Messer +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_langes_messer_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_langes_messer_blade_h2" Type="Blade" scale_factor="108" />
       <Piece id="crpg_langes_messer_guard_h2" Type="Guard" scale_factor="100" />
       <Piece id="crpg_langes_messer_handle_h2" Type="Handle" scale_factor="100" />
       <Piece id="crpg_langes_messer_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_langes_messer_h3" name="{=}Langes Messer" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_langes_messer_h3" name="{=Kadse}Langes Messer +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_langes_messer_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_langes_messer_blade_h3" Type="Blade" scale_factor="108" />
       <Piece id="crpg_langes_messer_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_langes_messer_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_langes_messer_pommel_h3" Type="Pommel" scale_factor="100" />

@@ -27916,81 +27916,81 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_blade_h0" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="1.0">
+  <CraftingPiece id="crpg_langes_messer_blade_h0" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.35">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_blade_h1" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="1.0">
+  <CraftingPiece id="crpg_langes_messer_blade_h1" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.40">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_blade_h2" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="1.0">
+  <CraftingPiece id="crpg_langes_messer_blade_h2" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.40">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_blade_h3" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="1.0">
+  <CraftingPiece id="crpg_langes_messer_blade_h3" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.40">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_pommel_h0" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.12">
+  <CraftingPiece id="crpg_langes_messer_pommel_h0" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.72">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_pommel_h1" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.12">
+  <CraftingPiece id="crpg_langes_messer_pommel_h1" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.71">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_pommel_h2" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.12">
+  <CraftingPiece id="crpg_langes_messer_pommel_h2" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.71">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_pommel_h3" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.12">
+  <CraftingPiece id="crpg_langes_messer_pommel_h3" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.68">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_guard_h0" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.097">
+  <CraftingPiece id="crpg_langes_messer_guard_h0" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.65">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_guard_h1" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.097">
+  <CraftingPiece id="crpg_langes_messer_guard_h1" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.65">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_guard_h2" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.097">
+  <CraftingPiece id="crpg_langes_messer_guard_h2" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.65">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_guard_h3" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.097">
+  <CraftingPiece id="crpg_langes_messer_guard_h3" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.75">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_handle_h0" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="0.1">
-    <BuildData piece_offset="-3" previous_piece_offset="0.0" next_piece_offset="0" />
+  <CraftingPiece id="crpg_langes_messer_handle_h0" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.95">
+    <BuildData piece_offset="-6.5" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_handle_h1" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="0.1">
-    <BuildData piece_offset="-3" previous_piece_offset="0.0" next_piece_offset="0" />
+  <CraftingPiece id="crpg_langes_messer_handle_h1" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.47">
+    <BuildData piece_offset="-6.5" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_handle_h2" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="0.1">
-    <BuildData piece_offset="-3" previous_piece_offset="0.0" next_piece_offset="0" />
+  <CraftingPiece id="crpg_langes_messer_handle_h2" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.47">
+    <BuildData piece_offset="-6.5" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_handle_h3" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="0.1">
-    <BuildData piece_offset="-3" previous_piece_offset="0.0" next_piece_offset="0" />
+  <CraftingPiece id="crpg_langes_messer_handle_h3" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.27">
+    <BuildData piece_offset="-6.5" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
   <CraftingPiece id="crpg_cutlass_blade_h0" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.0">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
