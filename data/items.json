@@ -5,10 +5,10 @@
     "name": "Decorated Plate Leggings",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1749,
+    "price": 3096,
     "weight": 2.60973,
     "rank": 0,
-    "tier": 8.544799,
+    "tier": 10.0056181,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -30,10 +30,10 @@
     "name": "Decorated Plate Leggings +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1652,
+    "price": 2920,
     "weight": 2.60973,
     "rank": 1,
-    "tier": 8.409167,
+    "tier": 9.8468,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -55,10 +55,10 @@
     "name": "Decorated Plate Leggings +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1749,
+    "price": 3096,
     "weight": 2.60973,
     "rank": 2,
-    "tier": 8.5448,
+    "tier": 10.005619,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -80,10 +80,10 @@
     "name": "Decorated Plate Leggings +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1841,
+    "price": 3263,
     "weight": 2.60973,
     "rank": 3,
-    "tier": 8.668636,
+    "tier": 10.1506281,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -105,10 +105,10 @@
     "name": "Brass Rimmed Plate Leggings",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1749,
+    "price": 3096,
     "weight": 2.60973,
     "rank": 0,
-    "tier": 8.544799,
+    "tier": 10.0056181,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -130,10 +130,10 @@
     "name": "Brass Rimmed Plate Leggings +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1652,
+    "price": 2920,
     "weight": 2.60973,
     "rank": 1,
-    "tier": 8.409167,
+    "tier": 9.8468,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -155,10 +155,10 @@
     "name": "Brass Rimmed Plate Leggings +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1749,
+    "price": 3096,
     "weight": 2.60973,
     "rank": 2,
-    "tier": 8.5448,
+    "tier": 10.005619,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -180,10 +180,10 @@
     "name": "Brass Rimmed Plate Leggings +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1841,
+    "price": 3263,
     "weight": 2.60973,
     "rank": 3,
-    "tier": 8.668636,
+    "tier": 10.1506281,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -12395,10 +12395,10 @@
     "name": "Fur Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 59,
+    "price": 65,
     "weight": 0.2741811,
     "rank": 0,
-    "tier": 1.93518043,
+    "tier": 2.26601887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12419,10 +12419,10 @@
     "name": "Fur Boots +1",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 63,
+    "price": 72,
     "weight": 0.2741811,
     "rank": 1,
-    "tier": 2.15020084,
+    "tier": 2.51779914,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12443,10 +12443,10 @@
     "name": "Fur Boots +2",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 76,
+    "price": 95,
     "weight": 0.2741811,
     "rank": 2,
-    "tier": 2.63888216,
+    "tier": 3.09002566,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -12467,10 +12467,10 @@
     "name": "Fur Boots +3",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 95,
+    "price": 127,
     "weight": 0.2741811,
     "rank": 3,
-    "tier": 3.08507037,
+    "tier": 3.612494,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13323,10 +13323,10 @@
     "name": "Highborn Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 55,
+    "price": 58,
     "weight": 0.2124143,
     "rank": 0,
-    "tier": 1.6187036,
+    "tier": 1.89543712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13347,10 +13347,10 @@
     "name": "Highborn Leather Boots +1",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 58,
+    "price": 63,
     "weight": 0.2124143,
     "rank": 1,
-    "tier": 1.84994709,
+    "tier": 2.166214,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13371,10 +13371,10 @@
     "name": "Highborn Leather Boots +2",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 68,
+    "price": 80,
     "weight": 0.2124143,
     "rank": 2,
-    "tier": 2.354478,
+    "tier": 2.75699949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -13395,10 +13395,10 @@
     "name": "Highborn Leather Boots +3",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 83,
+    "price": 106,
     "weight": 0.2124143,
     "rank": 3,
-    "tier": 2.81513667,
+    "tier": 3.29641247,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -14819,10 +14819,10 @@
     "name": "Scaled Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 389,
+    "price": 648,
     "weight": 1.27646,
     "rank": 0,
-    "tier": 5.48294735,
+    "tier": 6.4203124,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -14841,10 +14841,10 @@
     "name": "Scaled Boots +1",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 395,
+    "price": 660,
     "weight": 1.27646,
     "rank": 1,
-    "tier": 5.511958,
+    "tier": 6.454283,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -14863,10 +14863,10 @@
     "name": "Scaled Boots +2",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 469,
+    "price": 791,
     "weight": 1.27646,
     "rank": 2,
-    "tier": 5.815247,
+    "tier": 6.809422,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -14885,10 +14885,10 @@
     "name": "Scaled Boots +3",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 545,
+    "price": 927,
     "weight": 1.27646,
     "rank": 3,
-    "tier": 6.09216356,
+    "tier": 7.13368034,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -15083,10 +15083,10 @@
     "name": "Woodland Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 59,
+    "price": 65,
     "weight": 0.2741811,
     "rank": 0,
-    "tier": 1.93518043,
+    "tier": 2.26601887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15107,10 +15107,10 @@
     "name": "Woodland Boots +1",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 63,
+    "price": 72,
     "weight": 0.2741811,
     "rank": 1,
-    "tier": 2.15020084,
+    "tier": 2.51779914,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15131,10 +15131,10 @@
     "name": "Woodland Boots +2",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 76,
+    "price": 95,
     "weight": 0.2741811,
     "rank": 2,
-    "tier": 2.63888216,
+    "tier": 3.09002566,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -15155,10 +15155,10 @@
     "name": "Woodland Boots +3",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 95,
+    "price": 127,
     "weight": 0.2741811,
     "rank": 3,
-    "tier": 3.08507037,
+    "tier": 3.612494,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17319,10 +17319,10 @@
     "name": "Belted Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 55,
+    "price": 58,
     "weight": 0.2124143,
     "rank": 0,
-    "tier": 1.6187036,
+    "tier": 1.89543712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17343,10 +17343,10 @@
     "name": "Belted Leather Boots +1",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 58,
+    "price": 63,
     "weight": 0.2124143,
     "rank": 1,
-    "tier": 1.84994709,
+    "tier": 2.166214,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17367,10 +17367,10 @@
     "name": "Belted Leather Boots +2",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 68,
+    "price": 80,
     "weight": 0.2124143,
     "rank": 2,
-    "tier": 2.354478,
+    "tier": 2.75699949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -17391,10 +17391,10 @@
     "name": "Belted Leather Boots +3",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 83,
+    "price": 106,
     "weight": 0.2124143,
     "rank": 3,
-    "tier": 2.81513667,
+    "tier": 3.29641247,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -34293,10 +34293,10 @@
     "name": "Decorated Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 526,
+    "price": 893,
     "weight": 1.479339,
     "rank": 0,
-    "tier": 6.02661848,
+    "tier": 7.05692959,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -34315,10 +34315,10 @@
     "name": "Decorated Plate Boots +1",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 526,
+    "price": 893,
     "weight": 1.479339,
     "rank": 1,
-    "tier": 6.026619,
+    "tier": 7.05693,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -34337,10 +34337,10 @@
     "name": "Decorated Plate Boots +2",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 609,
+    "price": 1042,
     "weight": 1.479339,
     "rank": 2,
-    "tier": 6.30055571,
+    "tier": 7.377699,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -34359,10 +34359,10 @@
     "name": "Decorated Plate Boots +3",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 693,
+    "price": 1193,
     "weight": 1.479339,
     "rank": 3,
-    "tier": 6.55067348,
+    "tier": 7.670577,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -39683,10 +39683,10 @@
     "name": "Leather Riding Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 59,
+    "price": 65,
     "weight": 0.2741811,
     "rank": 0,
-    "tier": 1.93518043,
+    "tier": 2.26601887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -39707,10 +39707,10 @@
     "name": "Leather Riding Boots +1",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 63,
+    "price": 72,
     "weight": 0.2741811,
     "rank": 1,
-    "tier": 2.15020084,
+    "tier": 2.51779914,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -39731,10 +39731,10 @@
     "name": "Leather Riding Boots +2",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 76,
+    "price": 95,
     "weight": 0.2741811,
     "rank": 2,
-    "tier": 2.63888216,
+    "tier": 3.09002566,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -39755,10 +39755,10 @@
     "name": "Leather Riding Boots +3",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 95,
+    "price": 127,
     "weight": 0.2741811,
     "rank": 3,
-    "tier": 3.08507037,
+    "tier": 3.612494,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -40783,10 +40783,10 @@
     "name": "Splinted Plate Leggings",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1749,
+    "price": 3096,
     "weight": 2.60973,
     "rank": 0,
-    "tier": 8.544799,
+    "tier": 10.0056181,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -40808,10 +40808,10 @@
     "name": "Splinted Plate Leggings +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1652,
+    "price": 2920,
     "weight": 2.60973,
     "rank": 1,
-    "tier": 8.409167,
+    "tier": 9.8468,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -40833,10 +40833,10 @@
     "name": "Splinted Plate Leggings +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1749,
+    "price": 3096,
     "weight": 2.60973,
     "rank": 2,
-    "tier": 8.5448,
+    "tier": 10.005619,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -40858,10 +40858,10 @@
     "name": "Splinted Plate Leggings +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1841,
+    "price": 3263,
     "weight": 2.60973,
     "rank": 3,
-    "tier": 8.668636,
+    "tier": 10.1506281,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -42167,10 +42167,10 @@
     "name": "Horseman Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 55,
+    "price": 58,
     "weight": 0.2124143,
     "rank": 0,
-    "tier": 1.6187036,
+    "tier": 1.89543712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -42191,10 +42191,10 @@
     "name": "Horseman Boots +1",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 58,
+    "price": 63,
     "weight": 0.2124143,
     "rank": 1,
-    "tier": 1.84994709,
+    "tier": 2.166214,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -42215,10 +42215,10 @@
     "name": "Horseman Boots +2",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 68,
+    "price": 80,
     "weight": 0.2124143,
     "rank": 2,
-    "tier": 2.354478,
+    "tier": 2.75699949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -42239,10 +42239,10 @@
     "name": "Horseman Boots +3",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 83,
+    "price": 106,
     "weight": 0.2124143,
     "rank": 3,
-    "tier": 2.81513667,
+    "tier": 3.29641247,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -48743,10 +48743,10 @@
     "name": "Fine Town Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 52,
+    "price": 54,
     "weight": 0.155421,
     "rank": 0,
-    "tier": 1.29947972,
+    "tier": 1.52163887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -48767,10 +48767,10 @@
     "name": "Fine Town Boots +1",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 54,
+    "price": 57,
     "weight": 0.155421,
     "rank": 1,
-    "tier": 1.54699981,
+    "tier": 1.81147492,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -48791,10 +48791,10 @@
     "name": "Fine Town Boots +2",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 61,
+    "price": 69,
     "weight": 0.155421,
     "rank": 2,
-    "tier": 2.06735444,
+    "tier": 2.42078924,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -48815,10 +48815,10 @@
     "name": "Fine Town Boots +3",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 73,
+    "price": 89,
     "weight": 0.155421,
     "rank": 3,
-    "tier": 2.54246044,
+    "tier": 2.97711968,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -49435,10 +49435,10 @@
     "name": "Folded Town Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 52,
+    "price": 54,
     "weight": 0.155421,
     "rank": 0,
-    "tier": 1.29947972,
+    "tier": 1.52163887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -49459,10 +49459,10 @@
     "name": "Folded Town Boots +1",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 54,
+    "price": 57,
     "weight": 0.155421,
     "rank": 1,
-    "tier": 1.54699981,
+    "tier": 1.81147492,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -49483,10 +49483,10 @@
     "name": "Folded Town Boots +2",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 61,
+    "price": 69,
     "weight": 0.155421,
     "rank": 2,
-    "tier": 2.06735444,
+    "tier": 2.42078924,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -49507,10 +49507,10 @@
     "name": "Folded Town Boots +3",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 73,
+    "price": 89,
     "weight": 0.155421,
     "rank": 3,
-    "tier": 2.54246044,
+    "tier": 2.97711968,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -62253,10 +62253,10 @@
     "name": "[Legs] Splinted Plate Leggings. Faction Coloured",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1749,
+    "price": 3096,
     "weight": 2.60973,
     "rank": 0,
-    "tier": 8.544799,
+    "tier": 10.0056181,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -62278,10 +62278,10 @@
     "name": "[Legs] Splinted Plate Leggings. Faction Coloured +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1652,
+    "price": 2920,
     "weight": 2.60973,
     "rank": 1,
-    "tier": 8.409167,
+    "tier": 9.8468,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -62303,10 +62303,10 @@
     "name": "[Legs] Splinted Plate Leggings. Faction Coloured +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1749,
+    "price": 3096,
     "weight": 2.60973,
     "rank": 2,
-    "tier": 8.5448,
+    "tier": 10.005619,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -62328,10 +62328,10 @@
     "name": "[Legs] Splinted Plate Leggings. Faction Coloured +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1841,
+    "price": 3263,
     "weight": 2.60973,
     "rank": 3,
-    "tier": 8.668636,
+    "tier": 10.1506281,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -62353,10 +62353,10 @@
     "name": "Forester Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 55,
+    "price": 58,
     "weight": 0.2124143,
     "rank": 0,
-    "tier": 1.6187036,
+    "tier": 1.89543712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -62377,10 +62377,10 @@
     "name": "Forester Boots +1",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 58,
+    "price": 63,
     "weight": 0.2124143,
     "rank": 1,
-    "tier": 1.84994709,
+    "tier": 2.166214,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -62401,10 +62401,10 @@
     "name": "Forester Boots +2",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 68,
+    "price": 80,
     "weight": 0.2124143,
     "rank": 2,
-    "tier": 2.354478,
+    "tier": 2.75699949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -62425,10 +62425,10 @@
     "name": "Forester Boots +3",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 83,
+    "price": 106,
     "weight": 0.2124143,
     "rank": 3,
-    "tier": 2.81513667,
+    "tier": 3.29641247,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -63661,10 +63661,10 @@
     "name": "Woodland Leg Wrappings",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 73,
+    "price": 90,
     "weight": 0.4101585,
     "rank": 0,
-    "tier": 2.55929685,
+    "tier": 2.996834,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -63685,10 +63685,10 @@
     "name": "Woodland Leg Wrappings +1",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 80,
+    "price": 101,
     "weight": 0.4101585,
     "rank": 1,
-    "tier": 2.74210382,
+    "tier": 3.21089363,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -63709,10 +63709,10 @@
     "name": "Woodland Leg Wrappings +2",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 101,
+    "price": 138,
     "weight": 0.4101585,
     "rank": 2,
-    "tier": 3.199121,
+    "tier": 3.74604249,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -63733,10 +63733,10 @@
     "name": "Woodland Leg Wrappings +3",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 128,
+    "price": 185,
     "weight": 0.4101585,
     "rank": 3,
-    "tier": 3.61639786,
+    "tier": 4.234657,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -66647,10 +66647,10 @@
     "name": "Hosen (Split Color)",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 281,
+    "price": 456,
     "weight": 1.082415,
     "rank": 0,
-    "tier": 4.92551947,
+    "tier": 5.767586,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66672,10 +66672,10 @@
     "name": "Hosen (Split Color) +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 291,
+    "price": 474,
     "weight": 1.082415,
     "rank": 1,
-    "tier": 4.98415756,
+    "tier": 5.836249,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66697,10 +66697,10 @@
     "name": "Hosen (Split Color) +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 354,
+    "price": 586,
     "weight": 1.082415,
     "rank": 2,
-    "tier": 5.31732225,
+    "tier": 6.226372,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66722,10 +66722,10 @@
     "name": "Hosen (Split Color) +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 421,
+    "price": 705,
     "weight": 1.082415,
     "rank": 3,
-    "tier": 5.621517,
+    "tier": 6.582571,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66747,10 +66747,10 @@
     "name": "Hosen (Primary Color)",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 281,
+    "price": 456,
     "weight": 1.082415,
     "rank": 0,
-    "tier": 4.92551947,
+    "tier": 5.767586,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66772,10 +66772,10 @@
     "name": "Hosen (Primary Color) +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 291,
+    "price": 474,
     "weight": 1.082415,
     "rank": 1,
-    "tier": 4.98415756,
+    "tier": 5.836249,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66797,10 +66797,10 @@
     "name": "Hosen (Primary Color) +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 354,
+    "price": 586,
     "weight": 1.082415,
     "rank": 2,
-    "tier": 5.31732225,
+    "tier": 6.226372,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66822,10 +66822,10 @@
     "name": "Hosen (Primary Color) +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 421,
+    "price": 705,
     "weight": 1.082415,
     "rank": 3,
-    "tier": 5.621517,
+    "tier": 6.582571,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66847,10 +66847,10 @@
     "name": "Hosen (Secondary Color)",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 281,
+    "price": 456,
     "weight": 1.082415,
     "rank": 0,
-    "tier": 4.92551947,
+    "tier": 5.767586,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66872,10 +66872,10 @@
     "name": "Hosen (Secondary Color) +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 291,
+    "price": 474,
     "weight": 1.082415,
     "rank": 1,
-    "tier": 4.98415756,
+    "tier": 5.836249,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66897,10 +66897,10 @@
     "name": "Hosen (Secondary Color) +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 354,
+    "price": 586,
     "weight": 1.082415,
     "rank": 2,
-    "tier": 5.31732225,
+    "tier": 6.226372,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -66922,10 +66922,10 @@
     "name": "Hosen (Secondary Color) +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 421,
+    "price": 705,
     "weight": 1.082415,
     "rank": 3,
-    "tier": 5.621517,
+    "tier": 6.582571,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -76309,10 +76309,10 @@
     "name": "Curved Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 55,
+    "price": 58,
     "weight": 0.2124143,
     "rank": 0,
-    "tier": 1.6187036,
+    "tier": 1.89543712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -76333,10 +76333,10 @@
     "name": "Curved Boots +1",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 58,
+    "price": 63,
     "weight": 0.2124143,
     "rank": 1,
-    "tier": 1.84994709,
+    "tier": 2.166214,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -76357,10 +76357,10 @@
     "name": "Curved Boots +2",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 68,
+    "price": 80,
     "weight": 0.2124143,
     "rank": 2,
-    "tier": 2.354478,
+    "tier": 2.75699949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -76381,10 +76381,10 @@
     "name": "Curved Boots +3",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 83,
+    "price": 106,
     "weight": 0.2124143,
     "rank": 3,
-    "tier": 2.81513667,
+    "tier": 3.29641247,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -79472,7 +79472,7 @@
     "price": 50,
     "weight": 0.02231649,
     "rank": 0,
-    "tier": 0.327553928,
+    "tier": 0.383552551,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -79496,7 +79496,7 @@
     "price": 50,
     "weight": 0.02231649,
     "rank": 1,
-    "tier": 0.6239123,
+    "tier": 0.730576336,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -79517,10 +79517,10 @@
     "name": "Ladies Shoes +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 51,
+    "price": 53,
     "weight": 0.02231649,
     "rank": 2,
-    "tier": 1.19110513,
+    "tier": 1.39473653,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -79541,10 +79541,10 @@
     "name": "Ladies Shoes +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 56,
+    "price": 60,
     "weight": 0.02231649,
     "rank": 3,
-    "tier": 1.7089771,
+    "tier": 2.00114369,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -79565,10 +79565,10 @@
     "name": "Lamellar Plate Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1425,
+    "price": 2510,
     "weight": 2.369447,
     "rank": 0,
-    "tier": 8.067018,
+    "tier": 9.446156,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -79587,10 +79587,10 @@
     "name": "Lamellar Plate Boots +1",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1358,
+    "price": 2389,
     "weight": 2.369447,
     "rank": 1,
-    "tier": 7.95726252,
+    "tier": 9.31763649,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -79609,10 +79609,10 @@
     "name": "Lamellar Plate Boots +2",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1458,
+    "price": 2570,
     "weight": 2.369447,
     "rank": 2,
-    "tier": 8.1194,
+    "tier": 9.507493,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -79631,10 +79631,10 @@
     "name": "Lamellar Plate Boots +3",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 1555,
+    "price": 2745,
     "weight": 2.369447,
     "rank": 3,
-    "tier": 8.26744,
+    "tier": 9.680842,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -81313,10 +81313,10 @@
     "name": "Fur Rimmed Curved Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 52,
+    "price": 54,
     "weight": 0.155421,
     "rank": 0,
-    "tier": 1.29947972,
+    "tier": 1.52163887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81337,10 +81337,10 @@
     "name": "Fur Rimmed Curved Boots +1",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 54,
+    "price": 57,
     "weight": 0.155421,
     "rank": 1,
-    "tier": 1.54699981,
+    "tier": 1.81147492,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81361,10 +81361,10 @@
     "name": "Fur Rimmed Curved Boots +2",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 61,
+    "price": 69,
     "weight": 0.155421,
     "rank": 2,
-    "tier": 2.06735444,
+    "tier": 2.42078924,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81385,10 +81385,10 @@
     "name": "Fur Rimmed Curved Boots +3",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 73,
+    "price": 89,
     "weight": 0.155421,
     "rank": 3,
-    "tier": 2.54246044,
+    "tier": 2.97711968,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81665,10 +81665,10 @@
     "name": "Leather Cavalier Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 59,
+    "price": 65,
     "weight": 0.2741811,
     "rank": 0,
-    "tier": 1.93518043,
+    "tier": 2.26601887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81689,10 +81689,10 @@
     "name": "Leather Cavalier Boots +1",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 63,
+    "price": 72,
     "weight": 0.2741811,
     "rank": 1,
-    "tier": 2.15020084,
+    "tier": 2.51779914,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81713,10 +81713,10 @@
     "name": "Leather Cavalier Boots +2",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 76,
+    "price": 95,
     "weight": 0.2741811,
     "rank": 2,
-    "tier": 2.63888216,
+    "tier": 3.09002566,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81737,10 +81737,10 @@
     "name": "Leather Cavalier Boots +3",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 95,
+    "price": 127,
     "weight": 0.2741811,
     "rank": 3,
-    "tier": 3.08507037,
+    "tier": 3.612494,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -82404,7 +82404,7 @@
     "price": 51,
     "weight": 0.1038952,
     "rank": 0,
-    "tier": 0.9777034,
+    "tier": 1.14485157,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -82425,10 +82425,10 @@
     "name": "Leather Shoes +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 52,
+    "price": 53,
     "weight": 0.1038952,
     "rank": 1,
-    "tier": 1.24152815,
+    "tier": 1.45377982,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -82449,10 +82449,10 @@
     "name": "Leather Shoes +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 57,
+    "price": 61,
     "weight": 0.1038952,
     "rank": 2,
-    "tier": 1.77764249,
+    "tier": 2.08154821,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -82473,10 +82473,10 @@
     "name": "Leather Shoes +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 65,
+    "price": 77,
     "weight": 0.1038952,
     "rank": 3,
-    "tier": 2.26713824,
+    "tier": 2.65472841,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -89035,10 +89035,10 @@
     "name": "Hosen Split, Long Boots",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 99,
+    "price": 135,
     "weight": 0.5605648,
     "rank": 0,
-    "tier": 3.17089248,
+    "tier": 3.71298838,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -89060,10 +89060,10 @@
     "name": "Hosen Split, Long Boots +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 108,
+    "price": 150,
     "weight": 0.5605648,
     "rank": 1,
-    "tier": 3.32188749,
+    "tier": 3.88979745,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -89085,10 +89085,10 @@
     "name": "Hosen Split, Long Boots +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 138,
+    "price": 203,
     "weight": 0.5605648,
     "rank": 2,
-    "tier": 3.7474184,
+    "tier": 4.388077,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -89110,10 +89110,10 @@
     "name": "Hosen Split, Long Boots +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 174,
+    "price": 268,
     "weight": 0.5605648,
     "rank": 3,
-    "tier": 4.13594675,
+    "tier": 4.843028,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -90351,10 +90351,10 @@
     "name": "Mail Cavalier Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 607,
+    "price": 1037,
     "weight": 1.583918,
     "rank": 0,
-    "tier": 6.29332972,
+    "tier": 7.369237,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -90373,10 +90373,10 @@
     "name": "Mail Cavalier Boots +1",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 602,
+    "price": 1029,
     "weight": 1.583918,
     "rank": 1,
-    "tier": 6.27905941,
+    "tier": 7.352527,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -90395,10 +90395,10 @@
     "name": "Mail Cavalier Boots +2",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 689,
+    "price": 1185,
     "weight": 1.583918,
     "rank": 2,
-    "tier": 6.538524,
+    "tier": 7.65635061,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -90417,10 +90417,10 @@
     "name": "Mail Cavalier Boots +3",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 777,
+    "price": 1344,
     "weight": 1.583918,
     "rank": 3,
-    "tier": 6.77542734,
+    "tier": 7.93375444,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -90439,10 +90439,10 @@
     "name": "Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 696,
+    "price": 1197,
     "weight": 1.690509,
     "rank": 0,
-    "tier": 6.55665159,
+    "tier": 7.677577,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -90461,10 +90461,10 @@
     "name": "Mail Chausses +1",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 686,
+    "price": 1179,
     "weight": 1.690509,
     "rank": 1,
-    "tier": 6.52826834,
+    "tier": 7.644341,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -90483,10 +90483,10 @@
     "name": "Mail Chausses +2",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 776,
+    "price": 1342,
     "weight": 1.690509,
     "rank": 2,
-    "tier": 6.77340126,
+    "tier": 7.931381,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -90505,10 +90505,10 @@
     "name": "Mail Chausses +3",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 868,
+    "price": 1506,
     "weight": 1.690509,
     "rank": 3,
-    "tier": 6.997217,
+    "tier": 8.193461,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -91463,10 +91463,10 @@
     "name": "Mail Chasseus",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1017,
+    "price": 1774,
     "weight": 2.021817,
     "rank": 0,
-    "tier": 7.32655048,
+    "tier": 8.579098,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -91488,10 +91488,10 @@
     "name": "Mail Chasseus +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 984,
+    "price": 1715,
     "weight": 2.021817,
     "rank": 1,
-    "tier": 7.25677347,
+    "tier": 8.497392,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -91513,10 +91513,10 @@
     "name": "Mail Chasseus +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1082,
+    "price": 1893,
     "weight": 2.021817,
     "rank": 2,
-    "tier": 7.45976,
+    "tier": 8.735081,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -91538,10 +91538,10 @@
     "name": "Mail Chasseus +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 1179,
+    "price": 2067,
     "weight": 2.021817,
     "rank": 3,
-    "tier": 7.64509535,
+    "tier": 8.952101,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -109445,10 +109445,10 @@
     "name": "Huscarl Plated Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 793,
+    "price": 1373,
     "weight": 1.799056,
     "rank": 0,
-    "tier": 6.81661,
+    "tier": 7.981978,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -109467,10 +109467,10 @@
     "name": "Huscarl Plated Boots +1",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 777,
+    "price": 1343,
     "weight": 1.799056,
     "rank": 1,
-    "tier": 6.774271,
+    "tier": 7.9324007,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -109489,10 +109489,10 @@
     "name": "Huscarl Plated Boots +2",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 871,
+    "price": 1512,
     "weight": 1.799056,
     "rank": 2,
-    "tier": 7.00521135,
+    "tier": 8.202823,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -109511,10 +109511,10 @@
     "name": "Huscarl Plated Boots +3",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 965,
+    "price": 1680,
     "weight": 1.799056,
     "rank": 3,
-    "tier": 7.216072,
+    "tier": 8.449732,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -116065,10 +116065,10 @@
     "name": "Splint Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 696,
+    "price": 1197,
     "weight": 1.690509,
     "rank": 0,
-    "tier": 6.55665159,
+    "tier": 7.677577,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -116087,10 +116087,10 @@
     "name": "Splint Boots +1",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 686,
+    "price": 1179,
     "weight": 1.690509,
     "rank": 1,
-    "tier": 6.52826834,
+    "tier": 7.644341,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -116109,10 +116109,10 @@
     "name": "Splint Boots +2",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 776,
+    "price": 1342,
     "weight": 1.690509,
     "rank": 2,
-    "tier": 6.77340126,
+    "tier": 7.931381,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -116131,10 +116131,10 @@
     "name": "Splint Boots +3",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 868,
+    "price": 1506,
     "weight": 1.690509,
     "rank": 3,
-    "tier": 6.997217,
+    "tier": 8.193461,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -118097,10 +118097,10 @@
     "name": "Ragged Boots",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 55,
+    "price": 58,
     "weight": 0.2124143,
     "rank": 0,
-    "tier": 1.6187036,
+    "tier": 1.89543712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -118121,10 +118121,10 @@
     "name": "Ragged Boots +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 58,
+    "price": 63,
     "weight": 0.2124143,
     "rank": 1,
-    "tier": 1.84994709,
+    "tier": 2.166214,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -118145,10 +118145,10 @@
     "name": "Ragged Boots +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 68,
+    "price": 80,
     "weight": 0.2124143,
     "rank": 2,
-    "tier": 2.354478,
+    "tier": 2.75699949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -118169,10 +118169,10 @@
     "name": "Ragged Boots +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 83,
+    "price": 106,
     "weight": 0.2124143,
     "rank": 3,
-    "tier": 2.81513667,
+    "tier": 3.29641247,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -120423,10 +120423,10 @@
     "name": "Reinforced Suede Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 526,
+    "price": 893,
     "weight": 1.479339,
     "rank": 0,
-    "tier": 6.02661848,
+    "tier": 7.05692959,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -120447,10 +120447,10 @@
     "name": "Reinforced Suede Boots +1",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 526,
+    "price": 893,
     "weight": 1.479339,
     "rank": 1,
-    "tier": 6.026619,
+    "tier": 7.05693,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -120471,10 +120471,10 @@
     "name": "Reinforced Suede Boots +2",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 609,
+    "price": 1042,
     "weight": 1.479339,
     "rank": 2,
-    "tier": 6.30055571,
+    "tier": 7.377699,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -120495,10 +120495,10 @@
     "name": "Reinforced Suede Boots +3",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 693,
+    "price": 1193,
     "weight": 1.479339,
     "rank": 3,
-    "tier": 6.55067348,
+    "tier": 7.670577,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122663,10 +122663,10 @@
     "name": "Rough Tied Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 59,
+    "price": 65,
     "weight": 0.2741811,
     "rank": 0,
-    "tier": 1.93518043,
+    "tier": 2.26601887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122687,10 +122687,10 @@
     "name": "Rough Tied Boots +1",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 63,
+    "price": 72,
     "weight": 0.2741811,
     "rank": 1,
-    "tier": 2.15020084,
+    "tier": 2.51779914,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122711,10 +122711,10 @@
     "name": "Rough Tied Boots +2",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 76,
+    "price": 95,
     "weight": 0.2741811,
     "rank": 2,
-    "tier": 2.63888216,
+    "tier": 3.09002566,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122735,10 +122735,10 @@
     "name": "Rough Tied Boots +3",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 95,
+    "price": 127,
     "weight": 0.2741811,
     "rank": 3,
-    "tier": 3.08507037,
+    "tier": 3.612494,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -124235,10 +124235,10 @@
     "name": "Plate Boots",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 1749,
+    "price": 3096,
     "weight": 2.60973,
     "rank": 0,
-    "tier": 8.544799,
+    "tier": 10.0056181,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -124257,10 +124257,10 @@
     "name": "Plate Boots +1",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 1652,
+    "price": 2920,
     "weight": 2.60973,
     "rank": 1,
-    "tier": 8.409167,
+    "tier": 9.8468,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -124279,10 +124279,10 @@
     "name": "Plate Boots +2",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 1749,
+    "price": 3096,
     "weight": 2.60973,
     "rank": 2,
-    "tier": 8.5448,
+    "tier": 10.005619,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -124301,10 +124301,10 @@
     "name": "Plate Boots +3",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 1841,
+    "price": 3263,
     "weight": 2.60973,
     "rank": 3,
-    "tier": 8.668636,
+    "tier": 10.1506281,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -134590,7 +134590,7 @@
     "price": 50,
     "weight": 0.05889356,
     "rank": 0,
-    "tier": 0.6536195,
+    "tier": 0.7653623,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -134611,10 +134611,10 @@
     "name": "Moccasins +1",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 50,
+    "price": 51,
     "weight": 0.05889356,
     "rank": 1,
-    "tier": 0.9337422,
+    "tier": 1.09337485,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -134635,10 +134635,10 @@
     "name": "Moccasins +2",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 53,
+    "price": 56,
     "weight": 0.05889356,
     "rank": 2,
-    "tier": 1.48549891,
+    "tier": 1.73945987,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -134659,10 +134659,10 @@
     "name": "Moccasins +3",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 60,
+    "price": 67,
     "weight": 0.05889356,
     "rank": 3,
-    "tier": 1.989277,
+    "tier": 2.32936382,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -140713,10 +140713,10 @@
     "name": "Sturdy Leather Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 52,
+    "price": 54,
     "weight": 0.155421,
     "rank": 0,
-    "tier": 1.29947972,
+    "tier": 1.52163887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -140737,10 +140737,10 @@
     "name": "Sturdy Leather Boots +1",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 54,
+    "price": 57,
     "weight": 0.155421,
     "rank": 1,
-    "tier": 1.54699981,
+    "tier": 1.81147492,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -140761,10 +140761,10 @@
     "name": "Sturdy Leather Boots +2",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 61,
+    "price": 69,
     "weight": 0.155421,
     "rank": 2,
-    "tier": 2.06735444,
+    "tier": 2.42078924,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -140785,10 +140785,10 @@
     "name": "Sturdy Leather Boots +3",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 73,
+    "price": 89,
     "weight": 0.155421,
     "rank": 3,
-    "tier": 2.54246044,
+    "tier": 2.97711968,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142075,10 +142075,10 @@
     "name": "Strapped Leather Boots",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 55,
+    "price": 58,
     "weight": 0.2124143,
     "rank": 0,
-    "tier": 1.6187036,
+    "tier": 1.89543712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142099,10 +142099,10 @@
     "name": "Strapped Leather Boots +1",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 58,
+    "price": 63,
     "weight": 0.2124143,
     "rank": 1,
-    "tier": 1.84994709,
+    "tier": 2.166214,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142123,10 +142123,10 @@
     "name": "Strapped Leather Boots +2",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 68,
+    "price": 80,
     "weight": 0.2124143,
     "rank": 2,
-    "tier": 2.354478,
+    "tier": 2.75699949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142147,10 +142147,10 @@
     "name": "Strapped Leather Boots +3",
     "culture": "Empire",
     "type": "LegArmor",
-    "price": 83,
+    "price": 106,
     "weight": 0.2124143,
     "rank": 3,
-    "tier": 2.81513667,
+    "tier": 3.29641247,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142267,10 +142267,10 @@
     "name": "Strapped Mail Chausses",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 793,
+    "price": 1373,
     "weight": 1.799056,
     "rank": 0,
-    "tier": 6.81661,
+    "tier": 7.981978,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -142289,10 +142289,10 @@
     "name": "Strapped Mail Chausses +1",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 777,
+    "price": 1343,
     "weight": 1.799056,
     "rank": 1,
-    "tier": 6.774271,
+    "tier": 7.9324007,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -142311,10 +142311,10 @@
     "name": "Strapped Mail Chausses +2",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 871,
+    "price": 1512,
     "weight": 1.799056,
     "rank": 2,
-    "tier": 7.00521135,
+    "tier": 8.202823,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -142333,10 +142333,10 @@
     "name": "Strapped Mail Chausses +3",
     "culture": "Vlandia",
     "type": "LegArmor",
-    "price": 965,
+    "price": 1680,
     "weight": 1.799056,
     "rank": 3,
-    "tier": 7.216072,
+    "tier": 8.449732,
     "requirement": 0,
     "flags": [],
     "armor": {
@@ -142355,10 +142355,10 @@
     "name": "Strapped Shoes",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 55,
+    "price": 58,
     "weight": 0.2124143,
     "rank": 0,
-    "tier": 1.6187036,
+    "tier": 1.89543712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142379,10 +142379,10 @@
     "name": "Strapped Shoes +1",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 58,
+    "price": 63,
     "weight": 0.2124143,
     "rank": 1,
-    "tier": 1.84994709,
+    "tier": 2.166214,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142403,10 +142403,10 @@
     "name": "Strapped Shoes +2",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 68,
+    "price": 80,
     "weight": 0.2124143,
     "rank": 2,
-    "tier": 2.354478,
+    "tier": 2.75699949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -142427,10 +142427,10 @@
     "name": "Strapped Shoes +3",
     "culture": "Neutral",
     "type": "LegArmor",
-    "price": 83,
+    "price": 106,
     "weight": 0.2124143,
     "rank": 3,
-    "tier": 2.81513667,
+    "tier": 3.29641247,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144429,10 +144429,10 @@
     "name": "Simple Leather Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 55,
+    "price": 58,
     "weight": 0.2124143,
     "rank": 0,
-    "tier": 1.6187036,
+    "tier": 1.89543712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144453,10 +144453,10 @@
     "name": "Simple Leather Boots +1",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 58,
+    "price": 63,
     "weight": 0.2124143,
     "rank": 1,
-    "tier": 1.84994709,
+    "tier": 2.166214,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144477,10 +144477,10 @@
     "name": "Simple Leather Boots +2",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 68,
+    "price": 80,
     "weight": 0.2124143,
     "rank": 2,
-    "tier": 2.354478,
+    "tier": 2.75699949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144501,10 +144501,10 @@
     "name": "Simple Leather Boots +3",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 83,
+    "price": 106,
     "weight": 0.2124143,
     "rank": 3,
-    "tier": 2.81513667,
+    "tier": 3.29641247,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144525,10 +144525,10 @@
     "name": "Tied Leather Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 59,
+    "price": 65,
     "weight": 0.2741811,
     "rank": 0,
-    "tier": 1.93518043,
+    "tier": 2.26601887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144549,10 +144549,10 @@
     "name": "Tied Leather Boots +1",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 63,
+    "price": 72,
     "weight": 0.2741811,
     "rank": 1,
-    "tier": 2.15020084,
+    "tier": 2.51779914,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144573,10 +144573,10 @@
     "name": "Tied Leather Boots +2",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 76,
+    "price": 95,
     "weight": 0.2741811,
     "rank": 2,
-    "tier": 2.63888216,
+    "tier": 3.09002566,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144597,10 +144597,10 @@
     "name": "Tied Leather Boots +3",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 95,
+    "price": 127,
     "weight": 0.2741811,
     "rank": 3,
-    "tier": 3.08507037,
+    "tier": 3.612494,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144621,10 +144621,10 @@
     "name": "Tied Boots",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 52,
+    "price": 54,
     "weight": 0.155421,
     "rank": 0,
-    "tier": 1.29947972,
+    "tier": 1.52163887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144645,10 +144645,10 @@
     "name": "Tied Boots +1",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 54,
+    "price": 57,
     "weight": 0.155421,
     "rank": 1,
-    "tier": 1.54699981,
+    "tier": 1.81147492,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144669,10 +144669,10 @@
     "name": "Tied Boots +2",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 61,
+    "price": 69,
     "weight": 0.155421,
     "rank": 2,
-    "tier": 2.06735444,
+    "tier": 2.42078924,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144693,10 +144693,10 @@
     "name": "Tied Boots +3",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 73,
+    "price": 89,
     "weight": 0.155421,
     "rank": 3,
-    "tier": 2.54246044,
+    "tier": 2.97711968,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144720,7 +144720,7 @@
     "price": 51,
     "weight": 0.1038952,
     "rank": 0,
-    "tier": 0.9777034,
+    "tier": 1.14485157,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144741,10 +144741,10 @@
     "name": "Wrapped Boots +1",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 52,
+    "price": 53,
     "weight": 0.1038952,
     "rank": 1,
-    "tier": 1.24152815,
+    "tier": 1.45377982,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144765,10 +144765,10 @@
     "name": "Wrapped Boots +2",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 57,
+    "price": 61,
     "weight": 0.1038952,
     "rank": 2,
-    "tier": 1.77764249,
+    "tier": 2.08154821,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -144789,10 +144789,10 @@
     "name": "Wrapped Boots +3",
     "culture": "Sturgia",
     "type": "LegArmor",
-    "price": 65,
+    "price": 77,
     "weight": 0.1038952,
     "rank": 3,
-    "tier": 2.26713824,
+    "tier": 2.65472841,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -156133,10 +156133,10 @@
     "name": "Folded Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 85,
+    "price": 110,
     "weight": 0.483688,
     "rank": 0,
-    "tier": 2.866704,
+    "tier": 3.35679579,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -156157,10 +156157,10 @@
     "name": "Folded Leather Boots +1",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 92,
+    "price": 123,
     "weight": 0.483688,
     "rank": 1,
-    "tier": 3.03354931,
+    "tier": 3.55216527,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -156181,10 +156181,10 @@
     "name": "Folded Leather Boots +2",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 118,
+    "price": 168,
     "weight": 0.483688,
     "rank": 2,
-    "tier": 3.47479272,
+    "tier": 4.06884336,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -156205,10 +156205,10 @@
     "name": "Folded Leather Boots +3",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 149,
+    "price": 223,
     "weight": 0.483688,
     "rank": 3,
-    "tier": 3.87766767,
+    "tier": 4.540594,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -163629,10 +163629,10 @@
     "name": "Woven Leather Boots",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 55,
+    "price": 58,
     "weight": 0.2124143,
     "rank": 0,
-    "tier": 1.6187036,
+    "tier": 1.89543712,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -163653,10 +163653,10 @@
     "name": "Woven Leather Boots +1",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 58,
+    "price": 63,
     "weight": 0.2124143,
     "rank": 1,
-    "tier": 1.84994709,
+    "tier": 2.166214,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -163677,10 +163677,10 @@
     "name": "Woven Leather Boots +2",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 68,
+    "price": 80,
     "weight": 0.2124143,
     "rank": 2,
-    "tier": 2.354478,
+    "tier": 2.75699949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -163701,10 +163701,10 @@
     "name": "Woven Leather Boots +3",
     "culture": "Khuzait",
     "type": "LegArmor",
-    "price": 83,
+    "price": 106,
     "weight": 0.2124143,
     "rank": 3,
-    "tier": 2.81513667,
+    "tier": 3.29641247,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -164393,10 +164393,10 @@
     "name": "Wrapped Leather Boots",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 65,
+    "price": 76,
     "weight": 0.3402225,
     "rank": 0,
-    "tier": 2.24875426,
+    "tier": 2.63320136,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -164417,10 +164417,10 @@
     "name": "Wrapped Leather Boots +1",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 70,
+    "price": 85,
     "weight": 0.3402225,
     "rank": 1,
-    "tier": 2.44762349,
+    "tier": 2.86606932,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -164441,10 +164441,10 @@
     "name": "Wrapped Leather Boots +2",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 87,
+    "price": 114,
     "weight": 0.3402225,
     "rank": 2,
-    "tier": 2.92045975,
+    "tier": 3.41974163,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -164465,10 +164465,10 @@
     "name": "Wrapped Leather Boots +3",
     "culture": "Battania",
     "type": "LegArmor",
-    "price": 110,
+    "price": 154,
     "weight": 0.3402225,
     "rank": 3,
-    "tier": 3.35218,
+    "tier": 3.925269,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -164589,10 +164589,10 @@
     "name": "Wrapped Shoes",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 52,
+    "price": 54,
     "weight": 0.155421,
     "rank": 0,
-    "tier": 1.29947972,
+    "tier": 1.52163887,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -164613,10 +164613,10 @@
     "name": "Wrapped Shoes +1",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 54,
+    "price": 57,
     "weight": 0.155421,
     "rank": 1,
-    "tier": 1.54699981,
+    "tier": 1.81147492,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -164637,10 +164637,10 @@
     "name": "Wrapped Shoes +2",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 61,
+    "price": 69,
     "weight": 0.155421,
     "rank": 2,
-    "tier": 2.06735444,
+    "tier": 2.42078924,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -164661,10 +164661,10 @@
     "name": "Wrapped Shoes +3",
     "culture": "Aserai",
     "type": "LegArmor",
-    "price": 73,
+    "price": 89,
     "weight": 0.155421,
     "rank": 3,
-    "tier": 2.54246044,
+    "tier": 2.97711968,
     "requirement": 0,
     "flags": [
       "Civilian"
