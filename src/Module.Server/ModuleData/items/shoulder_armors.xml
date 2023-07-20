@@ -984,27 +984,27 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_cape_1_h0" name="Cape, Main Colour" mesh="cape_1" culture="Culture.neutral_culture" weight="0.7661253" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_cape_1_h0" name="Cape, Main Colour" mesh="cape_1" culture="Culture.neutral_culture" weight="0.2903072" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="10" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="5" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_cape_1_h1" name="Cape, Main Colour +1" mesh="cape_1" culture="Culture.neutral_culture" weight="0.7661253" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_cape_1_h1" name="Cape, Main Colour +1" mesh="cape_1" culture="Culture.neutral_culture" weight="0.2903072" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="12" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="0" />
+      <Armor body_armor="7" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="0" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_cape_1_h2" name="Cape, Main Colour +2" mesh="cape_1" culture="Culture.neutral_culture" weight="0.7661253" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_cape_1_h2" name="Cape, Main Colour +2" mesh="cape_1" culture="Culture.neutral_culture" weight="0.2903072" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="13" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="0" />
+      <Armor body_armor="8" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="0" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_cape_1_h3" name="Cape, Main Colour +3" mesh="cape_1" culture="Culture.neutral_culture" weight="0.7661253" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_cape_1_h3" name="Cape, Main Colour +3" mesh="cape_1" culture="Culture.neutral_culture" weight="0.2903072" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="14" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="1" />
+      <Armor body_armor="9" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="1" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
@@ -1368,27 +1368,27 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_heavybevor_late1_h0" name="[15th Century] Standalone Bevor" mesh="heavybevor_late1" culture="Culture.neutral_culture" weight="2.763222" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_heavybevor_late1_h0" name="Standalone Bevor" mesh="heavybevor_late1" culture="Culture.neutral_culture" weight="3.734274" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="25" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="12" modifier_group="plate" material_type="Plate" head_armor="19" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_heavybevor_late1_h1" name="[15th Century] Standalone Bevor +1" mesh="heavybevor_late1" culture="Culture.neutral_culture" weight="2.763222" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_heavybevor_late1_h1" name="Standalone Bevor +1" mesh="heavybevor_late1" culture="Culture.neutral_culture" weight="3.734274" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="27" modifier_group="plate" material_type="Plate" arm_armor="0" />
+      <Armor body_armor="14" modifier_group="plate" material_type="Plate" arm_armor="0" head_armor="19" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_heavybevor_late1_h2" name="[15th Century] Standalone Bevor +2" mesh="heavybevor_late1" culture="Culture.neutral_culture" weight="2.763222" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_heavybevor_late1_h2" name="Standalone Bevor +2" mesh="heavybevor_late1" culture="Culture.neutral_culture" weight="3.734274" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="28" modifier_group="plate" material_type="Plate" arm_armor="0" />
+      <Armor body_armor="15" modifier_group="plate" material_type="Plate" arm_armor="0" head_armor="19" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_heavybevor_late1_h3" name="[15th Century] Standalone Bevor +3" mesh="heavybevor_late1" culture="Culture.neutral_culture" weight="2.763222" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_heavybevor_late1_h3" name="Standalone Bevor +3" mesh="heavybevor_late1" culture="Culture.neutral_culture" weight="3.734274" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="29" modifier_group="plate" material_type="Plate" arm_armor="1" />
+      <Armor body_armor="16" modifier_group="plate" material_type="Plate" arm_armor="1" head_armor="19" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
@@ -1608,27 +1608,27 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_noble_bevor_1_h0" name="[15th Century] Standalone Noble Bevor" mesh="noble_bevor_1" culture="Culture.neutral_culture" weight="2.763222" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_noble_bevor_1_h0" name="Standalone Noble Bevor" mesh="noble_bevor_1" culture="Culture.neutral_culture" weight="3.734274" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="25" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="14" modifier_group="plate" material_type="Plate" head_armor="17" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_noble_bevor_1_h1" name="[15th Century] Standalone Noble Bevor +1" mesh="noble_bevor_1" culture="Culture.neutral_culture" weight="2.763222" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_noble_bevor_1_h1" name="Standalone Noble Bevor +1" mesh="noble_bevor_1" culture="Culture.neutral_culture" weight="3.734274" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="27" modifier_group="plate" material_type="Plate" arm_armor="0" />
+      <Armor body_armor="16" modifier_group="plate" material_type="Plate" arm_armor="0" head_armor="17" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_noble_bevor_1_h2" name="[15th Century] Standalone Noble Bevor +2" mesh="noble_bevor_1" culture="Culture.neutral_culture" weight="2.763222" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_noble_bevor_1_h2" name="Standalone Noble Bevor +2" mesh="noble_bevor_1" culture="Culture.neutral_culture" weight="3.734274" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="28" modifier_group="plate" material_type="Plate" arm_armor="0" />
+      <Armor body_armor="17" modifier_group="plate" material_type="Plate" arm_armor="0" head_armor="17" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_noble_bevor_1_h3" name="[15th Century] Standalone Noble Bevor +3" mesh="noble_bevor_1" culture="Culture.neutral_culture" weight="2.763222" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_noble_bevor_1_h3" name="Standalone Noble Bevor +3" mesh="noble_bevor_1" culture="Culture.neutral_culture" weight="3.734274" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="29" modifier_group="plate" material_type="Plate" arm_armor="1" />
+      <Armor body_armor="18" modifier_group="plate" material_type="Plate" arm_armor="1" head_armor="17" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
@@ -1944,27 +1944,27 @@
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_shoulder_cloth1_h0" name="Hood, Split" mesh="shoulder_cloth1" culture="Culture.neutral_culture" weight="0.7661253" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_shoulder_cloth1_h0" name="Hood, Split" mesh="shoulder_cloth1" culture="Culture.neutral_culture" weight="0.2124143" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="10" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="4" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_shoulder_cloth1_h1" name="Hood, Split +1" mesh="shoulder_cloth1" culture="Culture.neutral_culture" weight="0.7661253" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_shoulder_cloth1_h1" name="Hood, Split +1" mesh="shoulder_cloth1" culture="Culture.neutral_culture" weight="0.2124143" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="12" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="0" />
+      <Armor body_armor="6" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="0" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_shoulder_cloth1_h2" name="Hood, Split +2" mesh="shoulder_cloth1" culture="Culture.neutral_culture" weight="0.7661253" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_shoulder_cloth1_h2" name="Hood, Split +2" mesh="shoulder_cloth1" culture="Culture.neutral_culture" weight="0.2124143" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="13" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="0" />
+      <Armor body_armor="7" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="0" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
-  <Item id="crpg_shoulder_cloth1_h3" name="Hood, Split +3" mesh="shoulder_cloth1" culture="Culture.neutral_culture" weight="0.7661253" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
+  <Item id="crpg_shoulder_cloth1_h3" name="Hood, Split +3" mesh="shoulder_cloth1" culture="Culture.neutral_culture" weight="0.2124143" appearance="10" Type="Cape" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="14" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="1" />
+      <Armor body_armor="8" modifier_group="cloth_unarmoured" material_type="Cloth" arm_armor="1" />
     </ItemComponent>
     <Flags Civilian="true" UseTeamColor="true" />
   </Item>
