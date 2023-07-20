@@ -22696,7 +22696,7 @@
   {
     "id": "crpg_broad_bladed_throwing_knives_v1_h0",
     "baseId": "crpg_broad_bladed_throwing_knives_v1",
-    "name": "Broad Bladed Throwing Knives",
+    "name": "Broad Bladed Throwing Daggers",
     "culture": "Empire",
     "type": "Thrown",
     "price": 2430,
@@ -22737,7 +22737,7 @@
   {
     "id": "crpg_broad_bladed_throwing_knives_v1_h1",
     "baseId": "crpg_broad_bladed_throwing_knives_v1",
-    "name": "Broad Bladed Throwing Knives +1",
+    "name": "Broad Bladed Throwing Daggers +1",
     "culture": "Empire",
     "type": "Thrown",
     "price": 2874,
@@ -22778,7 +22778,7 @@
   {
     "id": "crpg_broad_bladed_throwing_knives_v1_h2",
     "baseId": "crpg_broad_bladed_throwing_knives_v1",
-    "name": "Broad Bladed Throwing Knives +2",
+    "name": "Broad Bladed Throwing Daggers +2",
     "culture": "Empire",
     "type": "Thrown",
     "price": 3407,
@@ -22819,7 +22819,7 @@
   {
     "id": "crpg_broad_bladed_throwing_knives_v1_h3",
     "baseId": "crpg_broad_bladed_throwing_knives_v1",
-    "name": "Broad Bladed Throwing Knives +3",
+    "name": "Broad Bladed Throwing Daggers +3",
     "culture": "Empire",
     "type": "Thrown",
     "price": 4043,
@@ -61562,13 +61562,13 @@
   {
     "id": "crpg_helping_hand_h0",
     "baseId": "crpg_helping_hand",
-    "name": "Helping Hand",
+    "name": "Helping Hand Steel Throwing Club",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 446,
-    "weight": 0.8,
+    "price": 3709,
+    "weight": 1.2,
     "rank": 0,
-    "tier": 1.66816747,
+    "tier": 6.76382971,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -61576,11 +61576,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 26,
-        "stackAmount": 3,
+        "missileSpeed": 25,
+        "stackAmount": 2,
         "length": 28,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -61589,25 +61589,45 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 29,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 124
+        "swingSpeed": 117
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 28,
+        "balance": 1.0,
+        "handling": 116,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 12,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 117
       }
     ]
   },
   {
     "id": "crpg_helping_hand_h1",
     "baseId": "crpg_helping_hand",
-    "name": "Helping Hand",
+    "name": "Helping Hand Steel Throwing Club +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 354,
-    "weight": 0.8,
+    "price": 3536,
+    "weight": 1.2,
     "rank": 1,
-    "tier": 1.37865078,
+    "tier": 6.577774,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -61615,11 +61635,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 26,
-        "stackAmount": 3,
+        "missileSpeed": 25,
+        "stackAmount": 2,
         "length": 28,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -61628,25 +61648,45 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 30,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 124
+        "swingSpeed": 117
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 28,
+        "balance": 1.0,
+        "handling": 116,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 12,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 117
       }
     ]
   },
   {
     "id": "crpg_helping_hand_h2",
     "baseId": "crpg_helping_hand",
-    "name": "Helping Hand",
+    "name": "Helping Hand Steel Throwing Club +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 290,
-    "weight": 0.8,
+    "price": 3436,
+    "weight": 1.2,
     "rank": 2,
-    "tier": 1.15844941,
+    "tier": 6.469281,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -61654,11 +61694,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 26,
-        "stackAmount": 3,
+        "missileSpeed": 25,
+        "stackAmount": 2,
         "length": 28,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -61667,25 +61707,45 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 31,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 124
+        "swingSpeed": 117
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 28,
+        "balance": 1.0,
+        "handling": 116,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 13,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 117
       }
     ]
   },
   {
     "id": "crpg_helping_hand_h3",
     "baseId": "crpg_helping_hand",
-    "name": "Helping Hand",
+    "name": "Helping Hand Steel Throwing Club +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 244,
-    "weight": 0.8,
+    "price": 3391,
+    "weight": 1.2,
     "rank": 3,
-    "tier": 0.9870814,
+    "tier": 6.419713,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -61693,11 +61753,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 26,
-        "stackAmount": 3,
+        "missileSpeed": 25,
+        "stackAmount": 2,
         "length": 28,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -61706,12 +61766,32 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 32,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 124
+        "swingSpeed": 117
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 28,
+        "balance": 1.0,
+        "handling": 116,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 94,
+        "swingDamage": 13,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 117
       }
     ]
   },
@@ -64280,15 +64360,15 @@
     ]
   },
   {
-    "id": "crpg_highland_throwing_dagger_v1_h0",
-    "baseId": "crpg_highland_throwing_dagger_v1",
-    "name": "Highland Throwing Dagger",
+    "id": "crpg_highland_throwing_dagger_v2_h0",
+    "baseId": "crpg_highland_throwing_dagger_v2",
+    "name": "Steel Throwing Knife",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 5810,
-    "weight": 0.12,
+    "price": 707,
+    "weight": 0.19,
     "rank": 0,
-    "tier": 8.743795,
+    "tier": 2.358011,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -64298,7 +64378,89 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
+        "stackAmount": 6,
+        "length": 36,
+        "balance": 1.0,
+        "handling": 121,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 20,
+        "thrustDamageType": "Cut",
+        "thrustSpeed": 107,
+        "swingDamage": 0,
+        "swingDamageType": "Cut",
+        "swingSpeed": 133
+      }
+    ]
+  },
+  {
+    "id": "crpg_highland_throwing_dagger_v2_h1",
+    "baseId": "crpg_highland_throwing_dagger_v2",
+    "name": "Steel Throwing Knife +1",
+    "culture": "Battania",
+    "type": "Thrown",
+    "price": 752,
+    "weight": 0.19,
+    "rank": 1,
+    "tier": 2.46302652,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "ThrowingKnife",
+        "itemUsage": "throwing_knife",
+        "accuracy": 95,
+        "missileSpeed": 35,
+        "stackAmount": 6,
+        "length": 36,
+        "balance": 1.0,
+        "handling": 121,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 21,
+        "thrustDamageType": "Cut",
+        "thrustSpeed": 107,
+        "swingDamage": 0,
+        "swingDamageType": "Cut",
+        "swingSpeed": 133
+      }
+    ]
+  },
+  {
+    "id": "crpg_highland_throwing_dagger_v2_h2",
+    "baseId": "crpg_highland_throwing_dagger_v2",
+    "name": "Steel Throwing Knife +2",
+    "culture": "Battania",
+    "type": "Thrown",
+    "price": 807,
+    "weight": 0.19,
+    "rank": 2,
+    "tier": 2.58742785,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "ThrowingKnife",
+        "itemUsage": "throwing_knife",
+        "accuracy": 95,
+        "missileSpeed": 35,
         "stackAmount": 6,
         "length": 36,
         "balance": 1.0,
@@ -64312,24 +64474,24 @@
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 22,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustDamageType": "Cut",
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 134
+        "swingSpeed": 133
       }
     ]
   },
   {
-    "id": "crpg_highland_throwing_dagger_v1_h1",
-    "baseId": "crpg_highland_throwing_dagger_v1",
-    "name": "Highland Throwing Dagger +1",
+    "id": "crpg_highland_throwing_dagger_v2_h3",
+    "baseId": "crpg_highland_throwing_dagger_v2",
+    "name": "Steel Throwing Knife +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 6049,
-    "weight": 0.12,
-    "rank": 1,
-    "tier": 8.94498,
+    "price": 871,
+    "weight": 0.19,
+    "rank": 3,
+    "tier": 2.729033,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -64339,7 +64501,7 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
         "stackAmount": 6,
         "length": 36,
         "balance": 1.0,
@@ -64353,93 +64515,11 @@
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 23,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustDamageType": "Cut",
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 134
-      }
-    ]
-  },
-  {
-    "id": "crpg_highland_throwing_dagger_v1_h2",
-    "baseId": "crpg_highland_throwing_dagger_v1",
-    "name": "Highland Throwing Dagger +2",
-    "culture": "Battania",
-    "type": "Thrown",
-    "price": 6384,
-    "weight": 0.12,
-    "rank": 2,
-    "tier": 9.219824,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "ThrowingKnife",
-        "itemUsage": "throwing_knife",
-        "accuracy": 95,
-        "missileSpeed": 36,
-        "stackAmount": 6,
-        "length": 36,
-        "balance": 1.0,
-        "handling": 121,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 24,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
-        "swingDamage": 0,
-        "swingDamageType": "Cut",
-        "swingSpeed": 134
-      }
-    ]
-  },
-  {
-    "id": "crpg_highland_throwing_dagger_v1_h3",
-    "baseId": "crpg_highland_throwing_dagger_v1",
-    "name": "Highland Throwing Dagger +3",
-    "culture": "Battania",
-    "type": "Thrown",
-    "price": 6807,
-    "weight": 0.12,
-    "rank": 3,
-    "tier": 9.556449,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "ThrowingKnife",
-        "itemUsage": "throwing_knife",
-        "accuracy": 95,
-        "missileSpeed": 36,
-        "stackAmount": 6,
-        "length": 36,
-        "balance": 1.0,
-        "handling": 121,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 25,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
-        "swingDamage": 0,
-        "swingDamageType": "Cut",
-        "swingSpeed": 134
+        "swingSpeed": 133
       }
     ]
   },
@@ -80618,7 +80698,7 @@
   {
     "id": "crpg_leafblade_throwing_knife_v1_h0",
     "baseId": "crpg_leafblade_throwing_knife_v1",
-    "name": "Leafblade Throwing Knife",
+    "name": "Leafblade Throwing Daggers",
     "culture": "Battania",
     "type": "Thrown",
     "price": 6384,
@@ -80659,7 +80739,7 @@
   {
     "id": "crpg_leafblade_throwing_knife_v1_h1",
     "baseId": "crpg_leafblade_throwing_knife_v1",
-    "name": "Leafblade Throwing Knife +1",
+    "name": "Leafblade Throwing Daggers +1",
     "culture": "Battania",
     "type": "Thrown",
     "price": 6445,
@@ -80700,7 +80780,7 @@
   {
     "id": "crpg_leafblade_throwing_knife_v1_h2",
     "baseId": "crpg_leafblade_throwing_knife_v1",
-    "name": "Leafblade Throwing Knife +2",
+    "name": "Leafblade Throwing Daggers +2",
     "culture": "Battania",
     "type": "Thrown",
     "price": 6611,
@@ -80741,7 +80821,7 @@
   {
     "id": "crpg_leafblade_throwing_knife_v1_h3",
     "baseId": "crpg_leafblade_throwing_knife_v1",
-    "name": "Leafblade Throwing Knife +3",
+    "name": "Leafblade Throwing Daggers +3",
     "culture": "Battania",
     "type": "Thrown",
     "price": 6865,
@@ -89764,13 +89844,13 @@
   {
     "id": "crpg_lowland_throwing_knife_v1_h0",
     "baseId": "crpg_lowland_throwing_knife_v1",
-    "name": "Lowland Throwing Knife",
+    "name": "Militia Throwing Knives",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1439,
+    "price": 463,
     "weight": 0.38,
     "rank": 0,
-    "tier": 3.80524254,
+    "tier": 1.71546531,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -89794,7 +89874,7 @@
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 16,
-        "thrustDamageType": "Pierce",
+        "thrustDamageType": "Cut",
         "thrustSpeed": 104,
         "swingDamage": 0,
         "swingDamageType": "Cut",
@@ -89805,13 +89885,13 @@
   {
     "id": "crpg_lowland_throwing_knife_v1_h1",
     "baseId": "crpg_lowland_throwing_knife_v1",
-    "name": "Lowland Throwing Knife +1",
+    "name": "Militia Throwing Knives +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1686,
+    "price": 527,
     "weight": 0.38,
     "rank": 1,
-    "tier": 4.207032,
+    "tier": 1.89659882,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -89835,7 +89915,7 @@
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 17,
-        "thrustDamageType": "Pierce",
+        "thrustDamageType": "Cut",
         "thrustSpeed": 104,
         "swingDamage": 0,
         "swingDamageType": "Cut",
@@ -89846,13 +89926,13 @@
   {
     "id": "crpg_lowland_throwing_knife_v1_h2",
     "baseId": "crpg_lowland_throwing_knife_v1",
-    "name": "Lowland Throwing Knife +2",
+    "name": "Militia Throwing Knives +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 1981,
+    "price": 602,
     "weight": 0.38,
     "rank": 2,
-    "tier": 4.651061,
+    "tier": 2.09677386,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -89876,7 +89956,7 @@
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 18,
-        "thrustDamageType": "Pierce",
+        "thrustDamageType": "Cut",
         "thrustSpeed": 104,
         "swingDamage": 0,
         "swingDamageType": "Cut",
@@ -89887,13 +89967,13 @@
   {
     "id": "crpg_lowland_throwing_knife_v1_h3",
     "baseId": "crpg_lowland_throwing_knife_v1",
-    "name": "Lowland Throwing Knife +3",
+    "name": "Militia Throwing Knives +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 2332,
+    "price": 690,
     "weight": 0.38,
     "rank": 3,
-    "tier": 5.137325,
+    "tier": 2.31598949,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -89917,7 +89997,7 @@
           "AmmoBreaksOnBounceBack"
         ],
         "thrustDamage": 19,
-        "thrustDamageType": "Pierce",
+        "thrustDamageType": "Cut",
         "thrustSpeed": 104,
         "swingDamage": 0,
         "swingDamageType": "Cut",
@@ -136772,13 +136852,13 @@
   {
     "id": "crpg_spiral_shuriken_h0",
     "baseId": "crpg_spiral_shuriken",
-    "name": "Spiralshape Shuriken",
+    "name": "Throwing Star Sun",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 16961,
+    "price": 714,
     "weight": 0.15,
     "rank": 0,
-    "tier": 15.73643,
+    "tier": 2.37434626,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -136789,7 +136869,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -136801,8 +136881,8 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
-        "thrustDamageType": "Pierce",
+        "thrustDamage": 16,
+        "thrustDamageType": "Cut",
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Cut",
@@ -136813,13 +136893,13 @@
   {
     "id": "crpg_spiral_shuriken_h1",
     "baseId": "crpg_spiral_shuriken",
-    "name": "Spiralshape Shuriken",
+    "name": "Throwing Star Sun +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 11913,
+    "price": 824,
     "weight": 0.15,
     "rank": 1,
-    "tier": 13.0053129,
+    "tier": 2.62505,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -136830,7 +136910,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -136842,8 +136922,8 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
-        "thrustDamageType": "Pierce",
+        "thrustDamage": 17,
+        "thrustDamageType": "Cut",
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Cut",
@@ -136854,13 +136934,13 @@
   {
     "id": "crpg_spiral_shuriken_h2",
     "baseId": "crpg_spiral_shuriken",
-    "name": "Spiralshape Shuriken",
+    "name": "Throwing Star Sun +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 8668,
+    "price": 953,
     "weight": 0.15,
     "rank": 2,
-    "tier": 10.9280758,
+    "tier": 2.90210962,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -136871,7 +136951,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -136883,8 +136963,8 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
-        "thrustDamageType": "Pierce",
+        "thrustDamage": 18,
+        "thrustDamageType": "Cut",
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Cut",
@@ -136895,13 +136975,13 @@
   {
     "id": "crpg_spiral_shuriken_h3",
     "baseId": "crpg_spiral_shuriken",
-    "name": "Spiralshape Shuriken",
+    "name": "Throwing Star Sun +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 6498,
+    "price": 1105,
     "weight": 0.15,
     "rank": 3,
-    "tier": 9.311499,
+    "tier": 3.20552182,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -136912,7 +136992,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -136924,8 +137004,8 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
-        "thrustDamageType": "Pierce",
+        "thrustDamage": 19,
+        "thrustDamageType": "Cut",
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Cut",
@@ -137076,13 +137156,13 @@
   {
     "id": "crpg_square_shuriken_h0",
     "baseId": "crpg_square_shuriken",
-    "name": "Squareshape Shuriken",
+    "name": "Throwing Star Diamond",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 16961,
+    "price": 544,
     "weight": 0.15,
     "rank": 0,
-    "tier": 15.73643,
+    "tier": 1.94400191,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -137093,7 +137173,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -137105,7 +137185,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -137117,13 +137197,13 @@
   {
     "id": "crpg_square_shuriken_h1",
     "baseId": "crpg_square_shuriken",
-    "name": "Squareshape Shuriken",
+    "name": "Throwing Star Diamond +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 11913,
+    "price": 680,
     "weight": 0.15,
     "rank": 1,
-    "tier": 13.0053129,
+    "tier": 2.2929666,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -137134,7 +137214,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -137146,7 +137226,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -137158,13 +137238,13 @@
   {
     "id": "crpg_square_shuriken_h2",
     "baseId": "crpg_square_shuriken",
-    "name": "Squareshape Shuriken",
+    "name": "Throwing Star Diamond +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 8668,
+    "price": 850,
     "weight": 0.15,
     "rank": 2,
-    "tier": 10.9280758,
+    "tier": 2.683145,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -137175,7 +137255,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -137187,7 +137267,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -137199,13 +137279,13 @@
   {
     "id": "crpg_square_shuriken_h3",
     "baseId": "crpg_square_shuriken",
-    "name": "Squareshape Shuriken",
+    "name": "Throwing Star Diamond +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 6498,
+    "price": 1060,
     "weight": 0.15,
     "rank": 3,
-    "tier": 9.311499,
+    "tier": 3.11643338,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -137216,7 +137296,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -137228,7 +137308,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 16,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -151650,13 +151730,13 @@
   {
     "id": "crpg_throwing_club_h0",
     "baseId": "crpg_throwing_club",
-    "name": "Throwing Club",
+    "name": "Militia Throwing Club",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 321,
+    "price": 282,
     "weight": 0.8,
     "rank": 0,
-    "tier": 1.26790392,
+    "tier": 1.13019407,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -151677,10 +151757,30 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 15,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 98,
         "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 127
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 12,
+        "balance": 1.0,
+        "handling": 119,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 98,
+        "swingDamage": 9,
         "swingDamageType": "Blunt",
         "swingSpeed": 127
       }
@@ -151689,13 +151789,13 @@
   {
     "id": "crpg_throwing_club_h1",
     "baseId": "crpg_throwing_club",
-    "name": "Throwing Club",
+    "name": "Militia Throwing Club +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 260,
+    "price": 292,
     "weight": 0.8,
     "rank": 1,
-    "tier": 1.04785442,
+    "tier": 1.16454482,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -151716,10 +151816,30 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 16,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 98,
         "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 127
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 12,
+        "balance": 1.0,
+        "handling": 119,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 98,
+        "swingDamage": 10,
         "swingDamageType": "Blunt",
         "swingSpeed": 127
       }
@@ -151728,13 +151848,13 @@
   {
     "id": "crpg_throwing_club_h2",
     "baseId": "crpg_throwing_club",
-    "name": "Throwing Club",
+    "name": "Militia Throwing Club +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 218,
+    "price": 383,
     "weight": 0.8,
     "rank": 2,
-    "tier": 0.880488753,
+    "tier": 1.47423816,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -151761,19 +151881,39 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 127
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 12,
+        "balance": 1.0,
+        "handling": 119,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 98,
+        "swingDamage": 11,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 127
       }
     ]
   },
   {
     "id": "crpg_throwing_club_h3",
     "baseId": "crpg_throwing_club",
-    "name": "Throwing Club",
+    "name": "Militia Throwing Club +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 187,
+    "price": 398,
     "weight": 0.8,
     "rank": 3,
-    "tier": 0.750239,
+    "tier": 1.52074265,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -151794,10 +151934,30 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 18,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 98,
         "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 127
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 12,
+        "balance": 1.0,
+        "handling": 119,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 98,
+        "swingDamage": 11,
         "swingDamageType": "Blunt",
         "swingSpeed": 127
       }
@@ -152201,10 +152361,10 @@
     "name": "Throwing Mace",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 628,
-    "weight": 0.8,
+    "price": 888,
+    "weight": 1.0,
     "rank": 0,
-    "tier": 2.162463,
+    "tier": 2.76614881,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -152216,7 +152376,7 @@
         "stackAmount": 3,
         "length": 18,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 117,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -152225,25 +152385,45 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 20,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 125
+        "swingSpeed": 121
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 18,
+        "balance": 1.0,
+        "handling": 117,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 97,
+        "swingDamage": 9,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 121
       }
     ]
   },
   {
     "id": "crpg_throwing_mace_h1",
     "baseId": "crpg_throwing_mace",
-    "name": "Throwing Mace",
+    "name": "Throwing Mace +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 487,
-    "weight": 0.8,
+    "price": 947,
+    "weight": 1.0,
     "rank": 1,
-    "tier": 1.78715956,
+    "tier": 2.88933921,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -152255,7 +152435,7 @@
         "stackAmount": 3,
         "length": 18,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 117,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -152264,25 +152444,45 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 21,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 125
+        "swingSpeed": 121
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 18,
+        "balance": 1.0,
+        "handling": 117,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 97,
+        "swingDamage": 10,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 121
       }
     ]
   },
   {
     "id": "crpg_throwing_mace_h2",
     "baseId": "crpg_throwing_mace",
-    "name": "Throwing Mace",
+    "name": "Throwing Mace +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 392,
-    "weight": 0.8,
+    "price": 1019,
+    "weight": 1.0,
     "rank": 2,
-    "tier": 1.5017103,
+    "tier": 3.035273,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -152294,7 +152494,7 @@
         "stackAmount": 3,
         "length": 18,
         "balance": 1.0,
-        "handling": 118,
+        "handling": 117,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -152303,25 +152503,45 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 22,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Blunt",
-        "swingSpeed": 125
+        "swingSpeed": 121
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 18,
+        "balance": 1.0,
+        "handling": 117,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 97,
+        "swingDamage": 10,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 121
       }
     ]
   },
   {
     "id": "crpg_throwing_mace_h3",
     "baseId": "crpg_throwing_mace",
-    "name": "Throwing Mace",
+    "name": "Throwing Mace +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 324,
-    "weight": 0.8,
+    "price": 1103,
+    "weight": 1.0,
     "rank": 3,
-    "tier": 1.279564,
+    "tier": 3.20138931,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -152333,6 +152553,67 @@
         "stackAmount": 3,
         "length": 18,
         "balance": 1.0,
+        "handling": 117,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 23,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 97,
+        "swingDamage": 0,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 121
+      },
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 18,
+        "balance": 1.0,
+        "handling": 117,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 97,
+        "swingDamage": 11,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 121
+      }
+    ]
+  },
+  {
+    "id": "crpg_throwing_spike_h0",
+    "baseId": "crpg_throwing_spike",
+    "name": "Throwing Dart",
+    "culture": "Aserai",
+    "type": "Thrown",
+    "price": 3653,
+    "weight": 0.45,
+    "rank": 0,
+    "tier": 6.70432425,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "ThrowingKnife",
+        "itemUsage": "throwing_knife",
+        "accuracy": 95,
+        "missileSpeed": 34,
+        "stackAmount": 5,
+        "length": 50,
+        "balance": 1.0,
         "handling": 118,
         "bodyArmor": 0,
         "flags": [
@@ -152342,66 +152623,25 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 19,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 98,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 125
-      }
-    ]
-  },
-  {
-    "id": "crpg_throwing_spike_h0",
-    "baseId": "crpg_throwing_spike",
-    "name": "Throwing Spike",
-    "culture": "Aserai",
-    "type": "Thrown",
-    "price": 16961,
-    "weight": 0.15,
-    "rank": 0,
-    "tier": 15.73643,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "ThrowingKnife",
-        "itemUsage": "throwing_knife",
-        "accuracy": 95,
-        "missileSpeed": 36,
-        "stackAmount": 9,
-        "length": 50,
-        "balance": 1.0,
-        "handling": 121,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 21,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 133
+        "swingSpeed": 126
       }
     ]
   },
   {
     "id": "crpg_throwing_spike_h1",
     "baseId": "crpg_throwing_spike",
-    "name": "Throwing Spike",
+    "name": "Throwing Dart +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 11913,
-    "weight": 0.15,
+    "price": 3740,
+    "weight": 0.45,
     "rank": 1,
-    "tier": 13.0053129,
+    "tier": 6.79657459,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -152411,11 +152651,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
-        "stackAmount": 9,
+        "missileSpeed": 34,
+        "stackAmount": 5,
         "length": 50,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 118,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -152424,25 +152664,25 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 133
+        "swingSpeed": 126
       }
     ]
   },
   {
     "id": "crpg_throwing_spike_h2",
     "baseId": "crpg_throwing_spike",
-    "name": "Throwing Spike",
+    "name": "Throwing Dart +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 8668,
-    "weight": 0.15,
+    "price": 3884,
+    "weight": 0.45,
     "rank": 2,
-    "tier": 10.9280758,
+    "tier": 6.947219,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -152452,11 +152692,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
-        "stackAmount": 9,
+        "missileSpeed": 34,
+        "stackAmount": 5,
         "length": 50,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 118,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -152465,25 +152705,25 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 133
+        "swingSpeed": 126
       }
     ]
   },
   {
     "id": "crpg_throwing_spike_h3",
     "baseId": "crpg_throwing_spike",
-    "name": "Throwing Spike",
+    "name": "Throwing Dart +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 6498,
-    "weight": 0.15,
+    "price": 4078,
+    "weight": 0.45,
     "rank": 3,
-    "tier": 9.311499,
+    "tier": 7.14573526,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -152493,11 +152733,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
-        "stackAmount": 9,
+        "missileSpeed": 34,
+        "stackAmount": 5,
         "length": 50,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 118,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -152506,12 +152746,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 133
+        "swingSpeed": 126
       }
     ]
   },
@@ -153850,13 +154090,13 @@
   {
     "id": "crpg_tri_shuriken_h0",
     "baseId": "crpg_tri_shuriken",
-    "name": "Trishape Shuriken",
+    "name": "Throwing Star Triangle",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 16961,
+    "price": 3980,
     "weight": 0.15,
     "rank": 0,
-    "tier": 15.73643,
+    "tier": 7.045687,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -153867,7 +154107,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -153879,7 +154119,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -153891,13 +154131,13 @@
   {
     "id": "crpg_tri_shuriken_h1",
     "baseId": "crpg_tri_shuriken",
-    "name": "Trishape Shuriken",
+    "name": "Throwing Star Triangle +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 11913,
+    "price": 4603,
     "weight": 0.15,
     "rank": 1,
-    "tier": 13.0053129,
+    "tier": 7.66110373,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -153908,7 +154148,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -153920,7 +154160,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -153932,13 +154172,13 @@
   {
     "id": "crpg_tri_shuriken_h2",
     "baseId": "crpg_tri_shuriken",
-    "name": "Trishape Shuriken",
+    "name": "Throwing Star Triangle +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 8668,
+    "price": 5349,
     "weight": 0.15,
     "rank": 2,
-    "tier": 10.9280758,
+    "tier": 8.344942,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -153949,7 +154189,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -153961,7 +154201,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
@@ -153973,13 +154213,13 @@
   {
     "id": "crpg_tri_shuriken_h3",
     "baseId": "crpg_tri_shuriken",
-    "name": "Trishape Shuriken",
+    "name": "Throwing Star Triangle +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 6498,
+    "price": 6232,
     "weight": 0.15,
     "rank": 3,
-    "tier": 9.311499,
+    "tier": 9.095486,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -153990,7 +154230,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 9,
+        "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -154002,7 +154242,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
