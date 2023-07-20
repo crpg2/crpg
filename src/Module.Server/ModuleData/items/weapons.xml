@@ -11608,25 +11608,25 @@
       <Piece id="crpg_ancientlongsword_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_le_bonke_h0" name="{=}Le Bonke" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_le_bonke_h0" name="{=Diggles}Norse Battle Hammer" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_meowhammer_head_h0" Type="Blade" scale_factor="95" />
       <Piece id="crpg_meowhammer_handle_h0" Type="Handle" scale_factor="109" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_le_bonke_h1" name="{=}Le Bonke" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_le_bonke_h1" name="{=Diggles}Norse Battle Hammer +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_meowhammer_head_h1" Type="Blade" scale_factor="95" />
       <Piece id="crpg_meowhammer_handle_h1" Type="Handle" scale_factor="109" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_le_bonke_h2" name="{=}Le Bonke" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_le_bonke_h2" name="{=Diggles}Norse Battle Hammer +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_meowhammer_head_h2" Type="Blade" scale_factor="95" />
       <Piece id="crpg_meowhammer_handle_h2" Type="Handle" scale_factor="109" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_le_bonke_h3" name="{=}Le Bonke" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_le_bonke_h3" name="{=Diggles}Norse Battle Hammer +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_meowhammer_head_h3" Type="Blade" scale_factor="95" />
       <Piece id="crpg_meowhammer_handle_h3" Type="Handle" scale_factor="109" />

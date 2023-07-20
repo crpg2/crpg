@@ -80534,7 +80534,7 @@
   {
     "id": "crpg_le_bonke_h0",
     "baseId": "crpg_le_bonke",
-    "name": "Le Bonke",
+    "name": "Norse Battle Hammer",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 13586,
@@ -80575,13 +80575,13 @@
   {
     "id": "crpg_le_bonke_h1",
     "baseId": "crpg_le_bonke",
-    "name": "Le Bonke",
+    "name": "Norse Battle Hammer +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 9668,
+    "price": 12427,
     "weight": 3.83,
     "rank": 1,
-    "tier": 8.128285,
+    "tier": 9.359076,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -80607,7 +80607,7 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 82,
-        "swingDamage": 30,
+        "swingDamage": 31,
         "swingDamageType": "Blunt",
         "swingSpeed": 74
       }
@@ -80616,13 +80616,13 @@
   {
     "id": "crpg_le_bonke_h2",
     "baseId": "crpg_le_bonke",
-    "name": "Le Bonke",
+    "name": "Norse Battle Hammer +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 7128,
-    "weight": 3.83,
+    "price": 14538,
+    "weight": 3.7,
     "rank": 2,
-    "tier": 6.830017,
+    "tier": 10.2113,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -80635,8 +80635,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.14,
-        "handling": 75,
+        "balance": 0.21,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -80648,22 +80648,22 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 82,
-        "swingDamage": 30,
+        "swingDamage": 31,
         "swingDamageType": "Blunt",
-        "swingSpeed": 74
+        "swingSpeed": 76
       }
     ]
   },
   {
     "id": "crpg_le_bonke_h3",
     "baseId": "crpg_le_bonke",
-    "name": "Le Bonke",
+    "name": "Norse Battle Hammer +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 5416,
-    "weight": 3.83,
+    "price": 13933,
+    "weight": 3.7,
     "rank": 3,
-    "tier": 5.81966162,
+    "tier": 9.973471,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -80676,8 +80676,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 0.14,
-        "handling": 75,
+        "balance": 0.21,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -80689,9 +80689,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 82,
-        "swingDamage": 30,
+        "swingDamage": 32,
         "swingDamageType": "Blunt",
-        "swingSpeed": 74
+        "swingSpeed": 76
       }
     ]
   },

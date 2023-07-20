@@ -28161,7 +28161,7 @@
   <CraftingPiece id="crpg_meowhammer_head_h1" name="{=}Le Bonke Head" tier="1" piece_type="Blade" mesh="meowhammer_head" length="13.5" weight="2.05" full_scale="true" excluded_item_usage_features="thrust">
     <BuildData piece_offset="0" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="3.0" />
+      <Swing damage_type="Blunt" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -28172,10 +28172,10 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowhammer_head_h2" name="{=}Le Bonke Head" tier="1" piece_type="Blade" mesh="meowhammer_head" length="13.5" weight="2.05" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_meowhammer_head_h2" name="{=}Le Bonke Head" tier="1" piece_type="Blade" mesh="meowhammer_head" length="13.5" weight="1.9" full_scale="true" excluded_item_usage_features="thrust">
     <BuildData piece_offset="0" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="3.0" />
+      <Swing damage_type="Blunt" damage_factor="3.1 " />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -28186,10 +28186,10 @@
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowhammer_head_h3" name="{=}Le Bonke Head" tier="1" piece_type="Blade" mesh="meowhammer_head" length="13.5" weight="2.05" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_meowhammer_head_h3" name="{=}Le Bonke Head" tier="1" piece_type="Blade" mesh="meowhammer_head" length="13.5" weight="1.90" full_scale="true" excluded_item_usage_features="thrust">
     <BuildData piece_offset="0" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="3.0" />
+      <Swing damage_type="Blunt" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
