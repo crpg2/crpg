@@ -312,27 +312,27 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_lamellar_plate_gauntlets_v1_h0" name="{=XGX6DbFL}Lamellar Plate Gauntlets" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.458775" appearance="3" Type="HandArmor">
-    <ItemComponent>
-      <Armor arm_armor="23" modifier_group="plate" material_type="Plate" covers_hands="true" />
-    </ItemComponent>
-    <Flags />
-  </Item>
-  <Item id="crpg_lamellar_plate_gauntlets_v1_h1" name="{=XGX6DbFL}Lamellar Plate Gauntlets +1" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.458775" appearance="3" Type="HandArmor">
+  <Item id="crpg_lamellar_plate_gauntlets_v1_h0" name="{=XGX6DbFL}Lamellar Plate Gauntlets" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.60973" appearance="3" Type="HandArmor">
     <ItemComponent>
       <Armor arm_armor="24" modifier_group="plate" material_type="Plate" covers_hands="true" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_lamellar_plate_gauntlets_v1_h2" name="{=XGX6DbFL}Lamellar Plate Gauntlets +2" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.458775" appearance="3" Type="HandArmor">
+  <Item id="crpg_lamellar_plate_gauntlets_v1_h1" name="{=XGX6DbFL}Lamellar Plate Gauntlets +1" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.60973" appearance="3" Type="HandArmor">
     <ItemComponent>
       <Armor arm_armor="25" modifier_group="plate" material_type="Plate" covers_hands="true" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_lamellar_plate_gauntlets_v1_h3" name="{=XGX6DbFL}Lamellar Plate Gauntlets +3" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.458775" appearance="3" Type="HandArmor">
+  <Item id="crpg_lamellar_plate_gauntlets_v1_h2" name="{=XGX6DbFL}Lamellar Plate Gauntlets +2" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.60973" appearance="3" Type="HandArmor">
     <ItemComponent>
-      <Armor arm_armor="27" modifier_group="plate" material_type="Plate" covers_hands="true" />
+      <Armor arm_armor="26" modifier_group="plate" material_type="Plate" covers_hands="true" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_lamellar_plate_gauntlets_v1_h3" name="{=XGX6DbFL}Lamellar Plate Gauntlets +3" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.60973" appearance="3" Type="HandArmor">
+    <ItemComponent>
+      <Armor arm_armor="28" modifier_group="plate" material_type="Plate" covers_hands="true" />
     </ItemComponent>
     <Flags />
   </Item>
