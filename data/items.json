@@ -115372,15 +115372,15 @@
     "weapons": []
   },
   {
-    "id": "crpg_pilum_v1_h0",
-    "baseId": "crpg_pilum_v1",
-    "name": "Pilum",
+    "id": "crpg_pilum_v2_h0",
+    "baseId": "crpg_pilum_v2",
+    "name": "Pilum Steel Throwing Spear",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 2272,
-    "weight": 2.53,
+    "price": 3851,
+    "weight": 1.08,
     "rank": 0,
-    "tier": 5.720597,
+    "tier": 7.786367,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -115388,11 +115388,11 @@
         "class": "Javelin",
         "itemUsage": "throwing_javelin",
         "accuracy": 92,
-        "missileSpeed": 24,
+        "missileSpeed": 28,
         "stackAmount": 1,
-        "length": 176,
-        "balance": 0.0,
-        "handling": 55,
+        "length": 125,
+        "balance": 0.95,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -115404,10 +115404,10 @@
         ],
         "thrustDamage": 49,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 80,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 49
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedPolearm",
@@ -115415,34 +115415,34 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 176,
-        "balance": 0.0,
-        "handling": 70,
+        "length": 125,
+        "balance": 0.23,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 12,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 80,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 33
+        "swingSpeed": 76
       }
     ]
   },
   {
-    "id": "crpg_pilum_v1_h1",
-    "baseId": "crpg_pilum_v1",
-    "name": "Pilum +1",
+    "id": "crpg_pilum_v2_h1",
+    "baseId": "crpg_pilum_v2",
+    "name": "Pilum Steel Throwing Spear +1",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 2278,
-    "weight": 2.53,
+    "price": 3860,
+    "weight": 1.08,
     "rank": 1,
-    "tier": 5.72864,
+    "tier": 7.79731464,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -115450,11 +115450,11 @@
         "class": "Javelin",
         "itemUsage": "throwing_javelin",
         "accuracy": 92,
-        "missileSpeed": 24,
+        "missileSpeed": 28,
         "stackAmount": 1,
-        "length": 176,
-        "balance": 0.0,
-        "handling": 55,
+        "length": 125,
+        "balance": 0.95,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -115466,10 +115466,10 @@
         ],
         "thrustDamage": 51,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 80,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 49
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedPolearm",
@@ -115477,34 +115477,34 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 176,
-        "balance": 0.0,
-        "handling": 70,
+        "length": 125,
+        "balance": 0.23,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 7,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 80,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 33
+        "swingSpeed": 76
       }
     ]
   },
   {
-    "id": "crpg_pilum_v1_h2",
-    "baseId": "crpg_pilum_v1",
-    "name": "Pilum +2",
+    "id": "crpg_pilum_v2_h2",
+    "baseId": "crpg_pilum_v2",
+    "name": "Pilum Steel Throwing Spear +2",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 2697,
-    "weight": 2.53,
+    "price": 3933,
+    "weight": 1.08,
     "rank": 2,
-    "tier": 6.3332634,
+    "tier": 7.880529,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -115512,11 +115512,11 @@
         "class": "Javelin",
         "itemUsage": "throwing_javelin",
         "accuracy": 92,
-        "missileSpeed": 24,
+        "missileSpeed": 28,
         "stackAmount": 1,
-        "length": 176,
-        "balance": 0.0,
-        "handling": 55,
+        "length": 125,
+        "balance": 0.95,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -115526,12 +115526,12 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 54,
+        "thrustDamage": 53,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 80,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 49
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedPolearm",
@@ -115539,34 +115539,34 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 176,
-        "balance": 0.0,
-        "handling": 70,
+        "length": 125,
+        "balance": 0.23,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 13,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 80,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 33
+        "swingSpeed": 76
       }
     ]
   },
   {
-    "id": "crpg_pilum_v1_h3",
-    "baseId": "crpg_pilum_v1",
-    "name": "Pilum +3",
+    "id": "crpg_pilum_v2_h3",
+    "baseId": "crpg_pilum_v2",
+    "name": "Pilum Steel Throwing Spear +3",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 2765,
-    "weight": 2.53,
+    "price": 4057,
+    "weight": 1.08,
     "rank": 3,
-    "tier": 6.42563343,
+    "tier": 8.021357,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -115574,11 +115574,11 @@
         "class": "Javelin",
         "itemUsage": "throwing_javelin",
         "accuracy": 92,
-        "missileSpeed": 24,
+        "missileSpeed": 28,
         "stackAmount": 1,
-        "length": 176,
-        "balance": 0.0,
-        "handling": 55,
+        "length": 125,
+        "balance": 0.95,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -115588,12 +115588,12 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 56,
+        "thrustDamage": 55,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 80,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 49
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedPolearm",
@@ -115601,21 +115601,21 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 176,
-        "balance": 0.0,
-        "handling": 70,
+        "length": 125,
+        "balance": 0.23,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip",
           "CanDismount"
         ],
-        "thrustDamage": 8,
+        "thrustDamage": 14,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 80,
+        "thrustSpeed": 94,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 33
+        "swingSpeed": 76
       }
     ]
   },

@@ -2472,22 +2472,22 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_pommel_h0" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="spear_pommel_5" culture="Culture.empire" length="3" weight="0">
+  <CraftingPiece id="crpg_pilum_pommel_h0" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="pilum_pommel" culture="Culture.empire" length="10" weight="0">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_pommel_h1" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="spear_pommel_5" culture="Culture.empire" length="3" weight="0">
+  <CraftingPiece id="crpg_pilum_pommel_h1" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="pilum_pommel" culture="Culture.empire" length="10" weight="0">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_pommel_h2" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="spear_pommel_5" culture="Culture.empire" length="3" weight="0">
+  <CraftingPiece id="crpg_pilum_pommel_h2" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="pilum_pommel" culture="Culture.empire" length="10" weight="0">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_pommel_h3" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="spear_pommel_5" culture="Culture.empire" length="3" weight="0">
+  <CraftingPiece id="crpg_pilum_pommel_h3" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="pilum_pommel" culture="Culture.empire" length="10" weight="0">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
@@ -2772,22 +2772,26 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_handle_h0" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_pilum_handle_h0" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="pilum_handle" length="102" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+    <BuildData piece_offset="0" previous_piece_offset="4.5" next_piece_offset="-4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_handle_h1" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_pilum_handle_h1" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="pilum_handle" length="102" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+    <BuildData piece_offset="0" previous_piece_offset="4.5" next_piece_offset="-4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_handle_h2" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_pilum_handle_h2" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="pilum_handle" length="102" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+    <BuildData piece_offset="0" previous_piece_offset="4.5" next_piece_offset="-4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_handle_h3" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_pilum_handle_h3" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="pilum_handle" length="102" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+    <BuildData piece_offset="0" previous_piece_offset="4.5" next_piece_offset="-4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
@@ -6360,9 +6364,9 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.73" />
+  <CraftingPiece id="crpg_pilum_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+      <Thrust damage_type="Pierce" damage_factor="1.25" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6371,9 +6375,9 @@
       <Flag name="CanDismount" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.76" />
+  <CraftingPiece id="crpg_pilum_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+      <Thrust damage_type="Pierce" damage_factor="1.3" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6382,9 +6386,9 @@
       <Flag name="CanDismount" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.8" />
+  <CraftingPiece id="crpg_pilum_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+      <Thrust damage_type="Pierce" damage_factor="1.35" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6393,9 +6397,9 @@
       <Flag name="CanDismount" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pilum_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.84" />
+  <CraftingPiece id="crpg_pilum_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+      <Thrust damage_type="Pierce" damage_factor="1.4" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
