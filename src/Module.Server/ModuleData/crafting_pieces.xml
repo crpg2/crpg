@@ -28044,28 +28044,28 @@
   <CraftingPiece id="crpg_cutlass_handle_h3" name="{=}Cutlass Handle" tier="3" piece_type="Handle" mesh="cutlass_handle" culture="Culture.khuzait" length="10.2" weight="0.1">
     <BuildData piece_offset="1" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ancientlongsword_blade_h0" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.0">
+  <CraftingPiece id="crpg_ancientlongsword_blade_h0" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="2.05">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ancientlongsword_blade_h1" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.0">
+  <CraftingPiece id="crpg_ancientlongsword_blade_h1" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.9">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ancientlongsword_blade_h2" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.0">
+  <CraftingPiece id="crpg_ancientlongsword_blade_h2" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.8">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ancientlongsword_blade_h3" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.0">
+  <CraftingPiece id="crpg_ancientlongsword_blade_h3" name="{=}Ancient Longsword Blade" tier="4" piece_type="Blade" mesh="longsword_blade" culture="Culture.battania" length="99.8" weight="1.7">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_ancientlongsword_pommel_h0" name="{=}Ancient Longsword Pommel" tier="4" piece_type="Pommel" mesh="longsword_pommel" culture="Culture.battania" length="5.75" weight="0.12">

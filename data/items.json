@@ -2193,10 +2193,10 @@
     "name": "Ancient Longsword",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 171,
-    "weight": 1.32,
+    "price": 12659,
+    "weight": 2.37,
     "rank": 0,
-    "tier": 0.394946963,
+    "tier": 9.456266,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2207,18 +2207,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.62,
-        "handling": 88,
+        "balance": 0.0,
+        "handling": 74,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 83,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 66
       },
       {
         "class": "TwoHandedSword",
@@ -2227,19 +2227,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 1.0,
-        "handling": 92,
+        "balance": 0.54,
+        "handling": 82,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 99,
-        "swingDamage": 13,
+        "thrustSpeed": 90,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 103
+        "swingSpeed": 86
       },
       {
         "class": "OneHandedSword",
@@ -2248,18 +2248,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.62,
-        "handling": 88,
+        "balance": 0.0,
+        "handling": 74,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 83,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 66
       }
     ]
   },
@@ -2269,10 +2269,10 @@
     "name": "Ancient Longsword",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 148,
-    "weight": 1.32,
+    "price": 13728,
+    "weight": 2.22,
     "rank": 1,
-    "tier": 0.326402456,
+    "tier": 9.89209652,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2283,18 +2283,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.62,
-        "handling": 88,
+        "balance": 0.0,
+        "handling": 75,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 85,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 69
       },
       {
         "class": "TwoHandedSword",
@@ -2303,19 +2303,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 1.0,
-        "handling": 92,
+        "balance": 0.61,
+        "handling": 84,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 99,
-        "swingDamage": 13,
+        "thrustSpeed": 92,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 103
+        "swingSpeed": 88
       },
       {
         "class": "OneHandedSword",
@@ -2324,18 +2324,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.62,
-        "handling": 88,
+        "balance": 0.0,
+        "handling": 75,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 85,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 69
       }
     ]
   },
@@ -2345,10 +2345,10 @@
     "name": "Ancient Longsword",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 130,
-    "weight": 1.32,
+    "price": 11746,
+    "weight": 2.12,
     "rank": 2,
-    "tier": 0.2742687,
+    "tier": 9.068907,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2359,18 +2359,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.62,
-        "handling": 88,
+        "balance": 0.04,
+        "handling": 77,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 85,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 71
       },
       {
         "class": "TwoHandedSword",
@@ -2379,19 +2379,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 1.0,
-        "handling": 92,
+        "balance": 0.66,
+        "handling": 84,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 99,
-        "swingDamage": 13,
+        "thrustSpeed": 92,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 103
+        "swingSpeed": 89
       },
       {
         "class": "OneHandedSword",
@@ -2400,18 +2400,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.62,
-        "handling": 88,
+        "balance": 0.04,
+        "handling": 77,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 85,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 71
       }
     ]
   },
@@ -2421,10 +2421,10 @@
     "name": "Ancient Longsword",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 117,
-    "weight": 1.32,
+    "price": 12648,
+    "weight": 2.02,
     "rank": 3,
-    "tier": 0.233696461,
+    "tier": 9.451505,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -2435,18 +2435,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.62,
-        "handling": 88,
+        "balance": 0.1,
+        "handling": 78,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 85,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 73
       },
       {
         "class": "TwoHandedSword",
@@ -2455,19 +2455,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 1.0,
-        "handling": 92,
+        "balance": 0.71,
+        "handling": 85,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 99,
-        "swingDamage": 13,
+        "thrustSpeed": 93,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 103
+        "swingSpeed": 91
       },
       {
         "class": "OneHandedSword",
@@ -2476,18 +2476,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 112,
-        "balance": 0.62,
-        "handling": 88,
+        "balance": 0.1,
+        "handling": 78,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 85,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 73
       }
     ]
   },
