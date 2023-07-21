@@ -136855,10 +136855,10 @@
     "name": "Throwing Star Sun",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 589,
+    "price": 4736,
     "weight": 0.15,
     "rank": 0,
-    "tier": 2.37434626,
+    "tier": 8.758319,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -136881,11 +136881,11 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 21,
         "thrustDamageType": "Cut",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
@@ -136896,10 +136896,10 @@
     "name": "Throwing Star Sun +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 677,
+    "price": 5019,
     "weight": 0.15,
     "rank": 1,
-    "tier": 2.62505,
+    "tier": 9.049232,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -136922,11 +136922,11 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 22,
         "thrustDamageType": "Cut",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
@@ -136937,10 +136937,10 @@
     "name": "Throwing Star Sun +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 782,
+    "price": 5383,
     "weight": 0.15,
     "rank": 2,
-    "tier": 2.90210962,
+    "tier": 9.412378,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -136963,11 +136963,11 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 23,
         "thrustDamageType": "Cut",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
@@ -136978,10 +136978,10 @@
     "name": "Throwing Star Sun +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 906,
+    "price": 5826,
     "weight": 0.15,
     "rank": 3,
-    "tier": 3.20552182,
+    "tier": 9.837744,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -137004,11 +137004,11 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 24,
         "thrustDamageType": "Cut",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
@@ -137189,7 +137189,7 @@
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
@@ -137230,7 +137230,7 @@
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
@@ -137271,7 +137271,7 @@
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
@@ -137312,7 +137312,7 @@
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
@@ -154093,51 +154093,10 @@
     "name": "Throwing Star Triangle",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 3237,
+    "price": 5239,
     "weight": 0.15,
     "rank": 0,
-    "tier": 7.045687,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "ThrowingKnife",
-        "itemUsage": "throwing_knife",
-        "accuracy": 95,
-        "missileSpeed": 36,
-        "stackAmount": 10,
-        "length": 23,
-        "balance": 1.0,
-        "handling": 121,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 17,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
-        "swingDamage": 0,
-        "swingDamageType": "Cut",
-        "swingSpeed": 136
-      }
-    ]
-  },
-  {
-    "id": "crpg_tri_shuriken_h1",
-    "baseId": "crpg_tri_shuriken",
-    "name": "Throwing Star Triangle +1",
-    "culture": "Aserai",
-    "type": "Thrown",
-    "price": 3743,
-    "weight": 0.15,
-    "rank": 1,
-    "tier": 7.66110373,
+    "tier": 9.269937,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -154164,21 +154123,21 @@
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
   },
   {
-    "id": "crpg_tri_shuriken_h2",
+    "id": "crpg_tri_shuriken_h1",
     "baseId": "crpg_tri_shuriken",
-    "name": "Throwing Star Triangle +2",
+    "name": "Throwing Star Triangle +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 4348,
+    "price": 5926,
     "weight": 0.15,
-    "rank": 2,
-    "tier": 8.344942,
+    "rank": 1,
+    "tier": 9.931172,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -154205,21 +154164,21 @@
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
   },
   {
-    "id": "crpg_tri_shuriken_h3",
+    "id": "crpg_tri_shuriken_h2",
     "baseId": "crpg_tri_shuriken",
-    "name": "Throwing Star Triangle +3",
+    "name": "Throwing Star Triangle +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 5064,
+    "price": 4629,
     "weight": 0.15,
-    "rank": 3,
-    "tier": 9.095486,
+    "rank": 2,
+    "tier": 8.646397,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -154230,7 +154189,7 @@
         "itemUsage": "throwing_knife",
         "accuracy": 95,
         "missileSpeed": 36,
-        "stackAmount": 10,
+        "stackAmount": 9,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -154246,7 +154205,48 @@
         "thrustDamageType": "Pierce",
         "thrustSpeed": 108,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
+        "swingDamageType": "Undefined",
+        "swingSpeed": 136
+      }
+    ]
+  },
+  {
+    "id": "crpg_tri_shuriken_h3",
+    "baseId": "crpg_tri_shuriken",
+    "name": "Throwing Star Triangle +3",
+    "culture": "Aserai",
+    "type": "Thrown",
+    "price": 5281,
+    "weight": 0.15,
+    "rank": 3,
+    "tier": 9.311499,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "ThrowingKnife",
+        "itemUsage": "throwing_knife",
+        "accuracy": 95,
+        "missileSpeed": 36,
+        "stackAmount": 9,
+        "length": 23,
+        "balance": 1.0,
+        "handling": 121,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 21,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 108,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
         "swingSpeed": 136
       }
     ]
