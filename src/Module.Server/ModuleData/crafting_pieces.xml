@@ -27672,41 +27672,37 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_steel_pick_blade_h0" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="0.6168" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_steel_pick_blade_h0" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.75" excluded_item_usage_features="thrust">
     <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Pierce" damage_factor="3.2" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_steel_pick_blade_h1" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="0.6168" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_steel_pick_blade_h1" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.70" excluded_item_usage_features="thrust">
     <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Pierce" damage_factor="3.3" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_steel_pick_blade_h2" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="0.6168" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_steel_pick_blade_h2" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.70" excluded_item_usage_features="thrust">
     <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Pierce" damage_factor="3.4" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_steel_pick_blade_h3" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="0.6168" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_steel_pick_blade_h3" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.70" excluded_item_usage_features="thrust">
     <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Pierce" damage_factor="3.5" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />

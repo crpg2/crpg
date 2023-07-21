@@ -138597,10 +138597,10 @@
     "name": "Steel Pick",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 34072,
-    "weight": 2.22,
+    "price": 6737,
+    "weight": 3.35,
     "rank": 0,
-    "tier": 23.4323063,
+    "tier": 9.789401,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -138611,19 +138611,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 65,
-        "balance": 0.99,
-        "handling": 98,
+        "balance": 0.43,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "BonusAgainstShield"
         ],
-        "thrustDamage": 25,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 25,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 77,
+        "swingDamage": 32,
         "swingDamageType": "Pierce",
-        "swingSpeed": 99
+        "swingSpeed": 82
       }
     ]
   },
@@ -138633,10 +138633,10 @@
     "name": "Steel Pick",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 23729,
-    "weight": 2.22,
+    "price": 7349,
+    "weight": 3.3,
     "rank": 1,
-    "tier": 19.3655415,
+    "tier": 10.2745113,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -138647,19 +138647,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 65,
-        "balance": 0.99,
-        "handling": 98,
+        "balance": 0.45,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "BonusAgainstShield"
         ],
-        "thrustDamage": 25,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 25,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 78,
+        "swingDamage": 33,
         "swingDamageType": "Pierce",
-        "swingSpeed": 99
+        "swingSpeed": 83
       }
     ]
   },
@@ -138669,10 +138669,10 @@
     "name": "Steel Pick",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 17110,
-    "weight": 2.22,
+    "price": 6770,
+    "weight": 3.3,
     "rank": 2,
-    "tier": 16.2724342,
+    "tier": 9.815969,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -138683,19 +138683,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 65,
-        "balance": 0.99,
-        "handling": 98,
+        "balance": 0.45,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "BonusAgainstShield"
         ],
-        "thrustDamage": 25,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 25,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 78,
+        "swingDamage": 34,
         "swingDamageType": "Pierce",
-        "swingSpeed": 99
+        "swingSpeed": 83
       }
     ]
   },
@@ -138705,10 +138705,10 @@
     "name": "Steel Pick",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 12706,
-    "weight": 2.22,
+    "price": 6353,
+    "weight": 3.3,
     "rank": 3,
-    "tier": 13.8652678,
+    "tier": 9.474199,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -138719,19 +138719,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 65,
-        "balance": 0.99,
-        "handling": 98,
+        "balance": 0.45,
+        "handling": 88,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "BonusAgainstShield"
         ],
-        "thrustDamage": 25,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 25,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 78,
+        "swingDamage": 35,
         "swingDamageType": "Pierce",
-        "swingSpeed": 99
+        "swingSpeed": 83
       }
     ]
   },
