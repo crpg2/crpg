@@ -28200,28 +28200,28 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broadshortsword_blade_h0" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.0">
+  <CraftingPiece id="crpg_broadshortsword_blade_h0" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.42">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="2.4" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broadshortsword_blade_h1" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.0">
+  <CraftingPiece id="crpg_broadshortsword_blade_h1" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.42">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="2.9" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broadshortsword_blade_h2" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.0">
+  <CraftingPiece id="crpg_broadshortsword_blade_h2" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.42">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="3.5" />
+      <Swing damage_type="Cut" damage_factor="2.9" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_broadshortsword_blade_h3" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.0">
+  <CraftingPiece id="crpg_broadshortsword_blade_h3" name="{=}Broad Short Sword Blade" tier="4" piece_type="Blade" mesh="shortbroadsword_blade" culture="Culture.battania" length="60.7" weight="1.42">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="3.6" />
+      <Swing damage_type="Cut" damage_factor="2.9" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_broadshortsword_pommel_h0" name="{=}Broad Short Sword Pommel" tier="4" piece_type="Pommel" mesh="shortbroadsword_pommel" culture="Culture.battania" length="3.37" weight="0.12">

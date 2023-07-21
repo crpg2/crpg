@@ -23991,10 +23991,10 @@
     "name": "Broad Shortsword",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 116,
-    "weight": 1.57,
+    "price": 7009,
+    "weight": 2.07,
     "rank": 0,
-    "tier": 0.425630331,
+    "tier": 10.0072956,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24005,18 +24005,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 79,
-        "balance": 0.87,
-        "handling": 100,
+        "balance": 0.56,
+        "handling": 95,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 13,
+        "thrustSpeed": 87,
+        "swingDamage": 24,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 86
       }
     ]
   },
@@ -24026,10 +24026,10 @@
     "name": "Broad Shortsword",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 103,
-    "weight": 1.57,
+    "price": 6006,
+    "weight": 2.07,
     "rank": 1,
-    "tier": 0.351760656,
+    "tier": 9.180085,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24040,18 +24040,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 79,
-        "balance": 0.87,
-        "handling": 100,
+        "balance": 0.56,
+        "handling": 95,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 13,
+        "thrustSpeed": 87,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 86
       }
     ]
   },
@@ -24061,10 +24061,10 @@
     "name": "Broad Shortsword",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 93,
-    "weight": 1.57,
+    "price": 6425,
+    "weight": 2.07,
     "rank": 2,
-    "tier": 0.295576632,
+    "tier": 9.533771,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24075,18 +24075,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 79,
-        "balance": 0.87,
-        "handling": 100,
+        "balance": 0.56,
+        "handling": 95,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 35,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 13,
+        "thrustSpeed": 87,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 86
       }
     ]
   },
@@ -24096,10 +24096,10 @@
     "name": "Broad Shortsword",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 86,
-    "weight": 1.57,
+    "price": 7018,
+    "weight": 2.07,
     "rank": 3,
-    "tier": 0.251852244,
+    "tier": 10.015007,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24110,18 +24110,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 79,
-        "balance": 0.87,
-        "handling": 100,
+        "balance": 0.56,
+        "handling": 95,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 36,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 13,
+        "thrustSpeed": 87,
+        "swingDamage": 29,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 86
       }
     ]
   },
