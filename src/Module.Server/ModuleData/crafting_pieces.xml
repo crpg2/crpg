@@ -27467,7 +27467,7 @@
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
-  </CraftingPiece>  
+  </CraftingPiece>
   <CraftingPiece id="crpg_spiral_shuriken_blade_h2" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.03">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">

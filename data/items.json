@@ -39587,19 +39587,19 @@
     "name": "Lancer Lamellar Armor",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 17707,
-    "weight": 19.19034,
+    "price": 14107,
+    "weight": 19.27114,
     "rank": 0,
-    "tier": 9.676377,
+    "tier": 9.098252,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 52,
-      "armArmor": 32,
-      "legArmor": 10,
+      "bodyArmor": 54,
+      "armArmor": 10,
+      "legArmor": 35,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -39611,19 +39611,19 @@
     "name": "Lancer Lamellar Armor +1",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 17076,
-    "weight": 19.19034,
+    "price": 13725,
+    "weight": 19.27114,
     "rank": 1,
-    "tier": 9.581812,
+    "tier": 9.030672,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 54,
-      "armArmor": 33,
-      "legArmor": 11,
+      "bodyArmor": 56,
+      "armArmor": 11,
+      "legArmor": 36,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -39635,19 +39635,19 @@
     "name": "Lancer Lamellar Armor +2",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 16517,
-    "weight": 19.19034,
+    "price": 13385,
+    "weight": 19.27114,
     "rank": 2,
-    "tier": 9.495842,
+    "tier": 8.969236,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 56,
-      "armArmor": 34,
-      "legArmor": 12,
+      "bodyArmor": 58,
+      "armArmor": 12,
+      "legArmor": 37,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -39659,19 +39659,19 @@
     "name": "Lancer Lamellar Armor +3",
     "culture": "Khuzait",
     "type": "BodyArmor",
-    "price": 16018,
-    "weight": 19.19034,
+    "price": 13079,
+    "weight": 19.27114,
     "rank": 3,
-    "tier": 9.417348,
+    "tier": 8.913143,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 58,
-      "armArmor": 35,
-      "legArmor": 13,
+      "bodyArmor": 60,
+      "armArmor": 13,
+      "legArmor": 38,
       "materialType": "Plate",
       "familyType": 0
     },

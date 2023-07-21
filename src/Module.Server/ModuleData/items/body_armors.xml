@@ -2016,27 +2016,27 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_eastern_lamellar_armor_v3_h0" name="{=tG1Q8r2u}Lancer Lamellar Armor" mesh="metal_lamellar_armor" culture="Culture.khuzait" weight="19.19034" appearance="2" Type="BodyArmor">
+  <Item id="crpg_eastern_lamellar_armor_v3_h0" name="{=tG1Q8r2u}Lancer Lamellar Armor" mesh="metal_lamellar_armor" culture="Culture.khuzait" weight="19.27114" appearance="2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="52" leg_armor="10" arm_armor="32" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="54" leg_armor="35" arm_armor="10" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_eastern_lamellar_armor_v3_h1" name="{=tG1Q8r2u}Lancer Lamellar Armor +1" mesh="metal_lamellar_armor" culture="Culture.khuzait" weight="19.19034" appearance="2" Type="BodyArmor">
+  <Item id="crpg_eastern_lamellar_armor_v3_h1" name="{=tG1Q8r2u}Lancer Lamellar Armor +1" mesh="metal_lamellar_armor" culture="Culture.khuzait" weight="19.27114" appearance="2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="54" leg_armor="11" arm_armor="33" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="56" leg_armor="36" arm_armor="11" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_eastern_lamellar_armor_v3_h2" name="{=tG1Q8r2u}Lancer Lamellar Armor +2" mesh="metal_lamellar_armor" culture="Culture.khuzait" weight="19.19034" appearance="2" Type="BodyArmor">
+  <Item id="crpg_eastern_lamellar_armor_v3_h2" name="{=tG1Q8r2u}Lancer Lamellar Armor +2" mesh="metal_lamellar_armor" culture="Culture.khuzait" weight="19.27114" appearance="2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="56" leg_armor="12" arm_armor="34" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="58" leg_armor="37" arm_armor="12" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_eastern_lamellar_armor_v3_h3" name="{=tG1Q8r2u}Lancer Lamellar Armor +3" mesh="metal_lamellar_armor" culture="Culture.khuzait" weight="19.19034" appearance="2" Type="BodyArmor">
+  <Item id="crpg_eastern_lamellar_armor_v3_h3" name="{=tG1Q8r2u}Lancer Lamellar Armor +3" mesh="metal_lamellar_armor" culture="Culture.khuzait" weight="19.27114" appearance="2" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="58" leg_armor="13" arm_armor="35" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="60" leg_armor="38" arm_armor="13" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
