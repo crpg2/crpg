@@ -13280,22 +13280,22 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_pommel_h0" name="{=dTkiV4i6}Fishing Boat Pommel" tier="3" piece_type="Pommel" mesh="battania_pommel_3" culture="Culture.battania" length="3.1" weight="0.8">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_pommel_h0" name="{=dTkiV4i6}Fishing Boat Pommel" tier="3" piece_type="Pommel" mesh="battania_pommel_3" culture="Culture.battania" length="3.1" weight="0.40">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_pommel_h1" name="{=dTkiV4i6}Fishing Boat Pommel" tier="3" piece_type="Pommel" mesh="battania_pommel_3" culture="Culture.battania" length="3.1" weight="0.8">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_pommel_h1" name="{=dTkiV4i6}Fishing Boat Pommel" tier="3" piece_type="Pommel" mesh="battania_pommel_3" culture="Culture.battania" length="3.1" weight="0.40">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_pommel_h2" name="{=dTkiV4i6}Fishing Boat Pommel" tier="3" piece_type="Pommel" mesh="battania_pommel_3" culture="Culture.battania" length="3.1" weight="0.8">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_pommel_h2" name="{=dTkiV4i6}Fishing Boat Pommel" tier="3" piece_type="Pommel" mesh="battania_pommel_3" culture="Culture.battania" length="3.1" weight="0.40">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_pommel_h3" name="{=dTkiV4i6}Fishing Boat Pommel" tier="3" piece_type="Pommel" mesh="battania_pommel_3" culture="Culture.battania" length="3.1" weight="0.8">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_pommel_h3" name="{=dTkiV4i6}Fishing Boat Pommel" tier="3" piece_type="Pommel" mesh="battania_pommel_3" culture="Culture.battania" length="3.1" weight="0.40">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
@@ -16160,25 +16160,25 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_handle_h0" name="{=62biJ5O5}Highland Fine Leather One Handed Grip" tier="3" piece_type="Handle" mesh="battania_grip_3" culture="Culture.battania" length="15" weight="0.35">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_handle_h0" name="{=62biJ5O5}Highland Fine Leather One Handed Grip" tier="3" piece_type="Handle" mesh="battania_grip_3" culture="Culture.battania" length="15" weight="0.20">
     <BuildData piece_offset="0" previous_piece_offset="0.3" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_handle_h1" name="{=62biJ5O5}Highland Fine Leather One Handed Grip" tier="3" piece_type="Handle" mesh="battania_grip_3" culture="Culture.battania" length="15" weight="0.35">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_handle_h1" name="{=62biJ5O5}Highland Fine Leather One Handed Grip" tier="3" piece_type="Handle" mesh="battania_grip_3" culture="Culture.battania" length="15" weight="0.20">
     <BuildData piece_offset="0" previous_piece_offset="0.3" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_handle_h2" name="{=62biJ5O5}Highland Fine Leather One Handed Grip" tier="3" piece_type="Handle" mesh="battania_grip_3" culture="Culture.battania" length="15" weight="0.35">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_handle_h2" name="{=62biJ5O5}Highland Fine Leather One Handed Grip" tier="3" piece_type="Handle" mesh="battania_grip_3" culture="Culture.battania" length="15" weight="0.20">
     <BuildData piece_offset="0" previous_piece_offset="0.3" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_handle_h3" name="{=62biJ5O5}Highland Fine Leather One Handed Grip" tier="3" piece_type="Handle" mesh="battania_grip_3" culture="Culture.battania" length="15" weight="0.35">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_handle_h3" name="{=62biJ5O5}Highland Fine Leather One Handed Grip" tier="3" piece_type="Handle" mesh="battania_grip_3" culture="Culture.battania" length="15" weight="0.20">
     <BuildData piece_offset="0" previous_piece_offset="0.3" next_piece_offset="0.1" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -18500,28 +18500,28 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_guard_h0" name="{=AkfEFzkk}Bowl Guard" tier="2" piece_type="Guard" mesh="battania_guard_6" culture="Culture.battania" length="5.7" weight="0.2">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_guard_h0" name="{=AkfEFzkk}Bowl Guard" tier="2" piece_type="Guard" mesh="battania_guard_6" culture="Culture.battania" length="5.7" weight="0.15">
     <BuildData next_piece_offset="1.8" />
     <StatContributions armor_bonus="2" />
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_guard_h1" name="{=AkfEFzkk}Bowl Guard" tier="2" piece_type="Guard" mesh="battania_guard_6" culture="Culture.battania" length="5.7" weight="0.2">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_guard_h1" name="{=AkfEFzkk}Bowl Guard" tier="2" piece_type="Guard" mesh="battania_guard_6" culture="Culture.battania" length="5.7" weight="0.15">
     <BuildData next_piece_offset="1.8" />
     <StatContributions armor_bonus="2" />
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_guard_h2" name="{=AkfEFzkk}Bowl Guard" tier="2" piece_type="Guard" mesh="battania_guard_6" culture="Culture.battania" length="5.7" weight="0.2">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_guard_h2" name="{=AkfEFzkk}Bowl Guard" tier="2" piece_type="Guard" mesh="battania_guard_6" culture="Culture.battania" length="5.7" weight="0.15">
     <BuildData next_piece_offset="1.8" />
     <StatContributions armor_bonus="2" />
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_guard_h3" name="{=AkfEFzkk}Bowl Guard" tier="2" piece_type="Guard" mesh="battania_guard_6" culture="Culture.battania" length="5.7" weight="0.2">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_guard_h3" name="{=AkfEFzkk}Bowl Guard" tier="2" piece_type="Guard" mesh="battania_guard_6" culture="Culture.battania" length="5.7" weight="0.15">
     <BuildData next_piece_offset="1.8" />
     <StatContributions armor_bonus="2" />
     <Materials>
@@ -22252,10 +22252,10 @@
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_blade_h0" name="{=zAdloN6Y}Broad Ridged Shortsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_4" culture="Culture.battania" length="67.4" weight="0.79">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_blade_h0" name="{=zAdloN6Y}Broad Ridged Shortsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_4" culture="Culture.battania" length="67.4" weight="1.00">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_4_scabbard_4">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -22264,10 +22264,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_blade_h1" name="{=zAdloN6Y}Broad Ridged Shortsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_4" culture="Culture.battania" length="67.4" weight="0.65">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_blade_h1" name="{=zAdloN6Y}Broad Ridged Shortsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_4" culture="Culture.battania" length="67.4" weight="1.00">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_4_scabbard_4">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -22276,10 +22276,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_blade_h2" name="{=zAdloN6Y}Broad Ridged Shortsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_4" culture="Culture.battania" length="67.4" weight="0.6">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_blade_h2" name="{=zAdloN6Y}Broad Ridged Shortsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_4" culture="Culture.battania" length="67.4" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_4_scabbard_4">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.5" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -22288,10 +22288,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_broad_shortsword_blade_h3" name="{=zAdloN6Y}Broad Ridged Shortsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_4" culture="Culture.battania" length="67.4" weight="0.52">
+  <CraftingPiece id="crpg_fine_steel_broad_shortsword_blade_h3" name="{=zAdloN6Y}Broad Ridged Shortsword Blade" tier="3" piece_type="Blade" mesh="battania_blade_4" culture="Culture.battania" length="67.4" weight="0.90">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_4_scabbard_4">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.6" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
