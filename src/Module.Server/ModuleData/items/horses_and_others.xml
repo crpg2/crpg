@@ -4031,7 +4031,7 @@
           <Mesh name="horse_mane" affected_by_cover="true" />
         </AdditionalMeshes>
         <Materials>
-          <Material name="horse_brown_mat">
+          <Material name="horse_white_mat">
             <MeshMultipliers>
               <MeshMultiplier mesh_multiplier="FF303030" percentage="1.0" />
             </MeshMultipliers>
@@ -4047,7 +4047,7 @@
           <Mesh name="horse_mane" affected_by_cover="true" />
         </AdditionalMeshes>
         <Materials>
-          <Material name="horse_brown_mat">
+          <Material name="horse_white_mat">
             <MeshMultipliers>
               <MeshMultiplier mesh_multiplier="FF303030" percentage="1.0" />
             </MeshMultipliers>
@@ -4063,7 +4063,7 @@
           <Mesh name="horse_mane" affected_by_cover="true" />
         </AdditionalMeshes>
         <Materials>
-          <Material name="horse_brown_mat">
+          <Material name="horse_white_mat">
             <MeshMultipliers>
               <MeshMultiplier mesh_multiplier="FF303030" percentage="1.0" />
             </MeshMultipliers>
@@ -4079,7 +4079,7 @@
           <Mesh name="horse_mane" affected_by_cover="true" />
         </AdditionalMeshes>
         <Materials>
-          <Material name="horse_brown_mat">
+          <Material name="horse_white_mat">
             <MeshMultipliers>
               <MeshMultiplier mesh_multiplier="FF303030" percentage="1.0" />
             </MeshMultipliers>
@@ -4203,6 +4203,70 @@
   <Item id="crpg_mount1_saddlehorse_13_h3" name="Senne Saddle Horse +3" mesh="horse_brown" item_category="noble_horse" difficulty="0" culture="Culture.vlandia" weight="420" Type="Horse">
     <ItemComponent>
       <Horse monster="Monster.horse" maneuver="76" speed="60" charge_damage="3" body_length="98" is_mountable="true" is_pack_animal="true" extra_health="-16" modifier_group="horse">
+        <AdditionalMeshes>
+          <Mesh name="horse_mane" affected_by_cover="true" />
+        </AdditionalMeshes>
+        <Materials>
+          <Material name="horse_grey_mat">
+            <MeshMultipliers>
+              <MeshMultiplier mesh_multiplier="FF303030" percentage="1.0" />
+            </MeshMultipliers>
+          </Material>
+        </Materials>
+      </Horse>
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_saddlehorse_15_h0" name="Grani" mesh="horse_brown" item_category="noble_horse" difficulty="0" weight="420" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.horse" maneuver="74" speed="60" charge_damage="3" body_length="100" is_mountable="true" is_pack_animal="true" extra_health="-44" modifier_group="horse">
+        <AdditionalMeshes>
+          <Mesh name="horse_mane" affected_by_cover="true" />
+        </AdditionalMeshes>
+        <Materials>
+          <Material name="horse_grey_mat">
+            <MeshMultipliers>
+              <MeshMultiplier mesh_multiplier="FF303030" percentage="1.0" />
+            </MeshMultipliers>
+          </Material>
+        </Materials>
+      </Horse>
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_saddlehorse_15_h1" name="Grani" mesh="horse_brown" item_category="noble_horse" difficulty="0" weight="420" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.horse" maneuver="74" speed="61" charge_damage="3" body_length="100" is_mountable="true" is_pack_animal="true" extra_health="-34" modifier_group="horse">
+        <AdditionalMeshes>
+          <Mesh name="horse_mane" affected_by_cover="true" />
+        </AdditionalMeshes>
+        <Materials>
+          <Material name="horse_grey_mat">
+            <MeshMultipliers>
+              <MeshMultiplier mesh_multiplier="FF303030" percentage="1.0" />
+            </MeshMultipliers>
+          </Material>
+        </Materials>
+      </Horse>
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_saddlehorse_15_h2" name="Grani" mesh="horse_brown" item_category="noble_horse" difficulty="0" weight="420" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.horse" maneuver="75" speed="61" charge_damage="3" body_length="100" is_mountable="true" is_pack_animal="true" extra_health="-24" modifier_group="horse">
+        <AdditionalMeshes>
+          <Mesh name="horse_mane" affected_by_cover="true" />
+        </AdditionalMeshes>
+        <Materials>
+          <Material name="horse_grey_mat">
+            <MeshMultipliers>
+              <MeshMultiplier mesh_multiplier="FF303030" percentage="1.0" />
+            </MeshMultipliers>
+          </Material>
+        </Materials>
+      </Horse>
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_saddlehorse_15_h3" name="Grani" mesh="horse_brown" item_category="noble_horse" difficulty="0" weight="420" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.horse" maneuver="76" speed="61" charge_damage="3" body_length="100" is_mountable="true" is_pack_animal="true" extra_health="-13" modifier_group="horse">
         <AdditionalMeshes>
           <Mesh name="horse_mane" affected_by_cover="true" />
         </AdditionalMeshes>

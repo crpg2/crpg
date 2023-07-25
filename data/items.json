@@ -101492,6 +101492,94 @@
     "weapons": []
   },
   {
+    "id": "crpg_mount1_saddlehorse_15_h0",
+    "baseId": "crpg_mount1_saddlehorse_15",
+    "name": "Grani",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 10868,
+    "weight": 420.0,
+    "rank": 0,
+    "tier": 11.09903,
+    "requirement": 0,
+    "flags": [],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 3,
+      "maneuver": 74,
+      "speed": 60,
+      "hitPoints": 156,
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_saddlehorse_15_h1",
+    "baseId": "crpg_mount1_saddlehorse_15",
+    "name": "Grani",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 10710,
+    "weight": 420.0,
+    "rank": 1,
+    "tier": 11.0099354,
+    "requirement": 0,
+    "flags": [],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 3,
+      "maneuver": 74,
+      "speed": 61,
+      "hitPoints": 166,
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_saddlehorse_15_h2",
+    "baseId": "crpg_mount1_saddlehorse_15",
+    "name": "Grani",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 10582,
+    "weight": 420.0,
+    "rank": 2,
+    "tier": 10.9372978,
+    "requirement": 0,
+    "flags": [],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 3,
+      "maneuver": 75,
+      "speed": 61,
+      "hitPoints": 176,
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_mount1_saddlehorse_15_h3",
+    "baseId": "crpg_mount1_saddlehorse_15",
+    "name": "Grani",
+    "culture": "Neutral",
+    "type": "Mount",
+    "price": 10708,
+    "weight": 420.0,
+    "rank": 3,
+    "tier": 11.0085678,
+    "requirement": 0,
+    "flags": [],
+    "mount": {
+      "bodyLength": 100,
+      "chargeDamage": 3,
+      "maneuver": 76,
+      "speed": 61,
+      "hitPoints": 187,
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_mount1_saddlehorse_5_h0",
     "baseId": "crpg_mount1_saddlehorse_5",
     "name": "Mérengais Saddle Horse",
