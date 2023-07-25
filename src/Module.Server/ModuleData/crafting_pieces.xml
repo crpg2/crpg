@@ -27956,28 +27956,28 @@
   <CraftingPiece id="crpg_langes_messer_handle_h3" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.27">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_cutlass_blade_h0" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.0">
+  <CraftingPiece id="crpg_cutlass_blade_h0" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.5">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cutlass_blade_h1" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.0">
+  <CraftingPiece id="crpg_cutlass_blade_h1" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.4">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cutlass_blade_h2" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.0">
+  <CraftingPiece id="crpg_cutlass_blade_h2" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.35">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cutlass_blade_h3" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.0">
+  <CraftingPiece id="crpg_cutlass_blade_h3" name="{=}Cutlass Blade" tier="4" piece_type="Blade" mesh="cutlass_blade" culture="Culture.battania" length="67.4" weight="1.25">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_cutlass_pommel_h0" name="{=}Cutlass Pommel" tier="4" piece_type="Pommel" mesh="cutlass_pommel" culture="Culture.battania" length="8.57" weight="0.12">

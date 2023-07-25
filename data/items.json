@@ -32397,10 +32397,10 @@
     "name": "Cutlass",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 114,
-    "weight": 1.37,
+    "price": 4962,
+    "weight": 1.87,
     "rank": 0,
-    "tier": 0.415943563,
+    "tier": 8.242411,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32411,18 +32411,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 88,
-        "balance": 0.83,
-        "handling": 97,
+        "balance": 0.49,
+        "handling": 90,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 88,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 84
       }
     ]
   },
@@ -32432,10 +32432,10 @@
     "name": "Cutlass",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 101,
-    "weight": 1.37,
+    "price": 5235,
+    "weight": 1.77,
     "rank": 1,
-    "tier": 0.343755066,
+    "tier": 8.497213,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32446,18 +32446,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 88,
-        "balance": 0.83,
-        "handling": 97,
+        "balance": 0.55,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 89,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 86
       }
     ]
   },
@@ -32467,10 +32467,10 @@
     "name": "Cutlass",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 92,
-    "weight": 1.37,
+    "price": 5086,
+    "weight": 1.72,
     "rank": 2,
-    "tier": 0.288849622,
+    "tier": 8.359385,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32481,18 +32481,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 88,
-        "balance": 0.83,
-        "handling": 97,
+        "balance": 0.6,
+        "handling": 92,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 89,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 87
       }
     ]
   },
@@ -32502,10 +32502,10 @@
     "name": "Cutlass",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 85,
-    "weight": 1.37,
+    "price": 5576,
+    "weight": 1.62,
     "rank": 3,
-    "tier": 0.246120363,
+    "tier": 8.804898,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -32516,18 +32516,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 88,
-        "balance": 0.83,
-        "handling": 97,
+        "balance": 0.66,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 93,
-        "swingDamage": 13,
+        "thrustSpeed": 90,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 89
       }
     ]
   },
@@ -113637,10 +113637,10 @@
     "name": "Pavise",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 109,
+    "price": 4956,
     "weight": 4.113909,
     "rank": 0,
-    "tier": 0.386680454,
+    "tier": 8.236979,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -113653,7 +113653,7 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 130,
+        "stackAmount": 600,
         "length": 118,
         "balance": 0.0,
         "handling": 80,
@@ -113677,10 +113677,10 @@
     "name": "Pavise +1",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 112,
+    "price": 4953,
     "weight": 4.113909,
     "rank": 1,
-    "tier": 0.4060065,
+    "tier": 8.234594,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -113693,7 +113693,7 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 141,
+        "stackAmount": 635,
         "length": 118,
         "balance": 0.0,
         "handling": 80,
@@ -113717,10 +113717,10 @@
     "name": "Pavise +2",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 110,
+    "price": 5139,
     "weight": 4.113909,
     "rank": 2,
-    "tier": 0.391265571,
+    "tier": 8.408405,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -113733,7 +113733,7 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 151,
+        "stackAmount": 700,
         "length": 118,
         "balance": 0.0,
         "handling": 80,
@@ -113757,10 +113757,10 @@
     "name": "Pavise +3",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 108,
+    "price": 5424,
     "weight": 4.113909,
     "rank": 3,
-    "tier": 0.383728117,
+    "tier": 8.66912,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -113773,7 +113773,7 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 162,
+        "stackAmount": 770,
         "length": 118,
         "balance": 0.0,
         "handling": 80,
