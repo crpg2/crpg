@@ -23991,10 +23991,10 @@
     "name": "Broad Shortsword",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 7009,
-    "weight": 2.07,
+    "price": 6997,
+    "weight": 1.72,
     "rank": 0,
-    "tier": 10.0072956,
+    "tier": 9.998259,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24005,18 +24005,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 79,
-        "balance": 0.56,
-        "handling": 95,
+        "balance": 0.7,
+        "handling": 97,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 30,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 24,
+        "thrustSpeed": 89,
+        "swingDamage": 30,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 90
       }
     ]
   },
@@ -24026,10 +24026,10 @@
     "name": "Broad Shortsword",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6006,
-    "weight": 2.07,
+    "price": 6635,
+    "weight": 1.72,
     "rank": 1,
-    "tier": 9.180085,
+    "tier": 9.706822,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24040,18 +24040,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 79,
-        "balance": 0.56,
-        "handling": 95,
+        "balance": 0.7,
+        "handling": 97,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 31,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 29,
+        "thrustSpeed": 89,
+        "swingDamage": 31,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 90
       }
     ]
   },
@@ -24061,10 +24061,10 @@
     "name": "Broad Shortsword",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6425,
-    "weight": 2.07,
+    "price": 5991,
+    "weight": 1.72,
     "rank": 2,
-    "tier": 9.533771,
+    "tier": 9.167226,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24075,18 +24075,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 79,
-        "balance": 0.56,
-        "handling": 95,
+        "balance": 0.7,
+        "handling": 97,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 31,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 29,
+        "thrustSpeed": 89,
+        "swingDamage": 32,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 90
       }
     ]
   },
@@ -24096,10 +24096,10 @@
     "name": "Broad Shortsword",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 7018,
-    "weight": 2.07,
+    "price": 6935,
+    "weight": 1.67,
     "rank": 3,
-    "tier": 10.015007,
+    "tier": 9.948439,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -24110,18 +24110,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 79,
-        "balance": 0.56,
-        "handling": 95,
+        "balance": 0.71,
+        "handling": 97,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 36,
+        "thrustDamage": 32,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 29,
+        "thrustSpeed": 90,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 86
+        "swingSpeed": 91
       }
     ]
   },
@@ -46191,10 +46191,10 @@
     "name": "Fine Steel Broad Shortsword",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 6630,
-    "weight": 1.85,
+    "price": 5088,
+    "weight": 2.22,
     "rank": 0,
-    "tier": 9.702599,
+    "tier": 8.360392,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -46207,18 +46207,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 85,
-        "balance": 0.7,
-        "handling": 92,
+        "balance": 0.58,
+        "handling": 82,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 28,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 30,
+        "thrustSpeed": 85,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 87
       }
     ]
   },
@@ -46228,10 +46228,10 @@
     "name": "Fine Steel Broad Shortsword +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 7368,
-    "weight": 1.85,
+    "price": 5336,
+    "weight": 2.07,
     "rank": 1,
-    "tier": 10.288702,
+    "tier": 8.589457,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -46244,18 +46244,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 85,
-        "balance": 0.7,
-        "handling": 92,
+        "balance": 0.65,
+        "handling": 83,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 28,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 32,
+        "thrustSpeed": 85,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 90
+        "swingSpeed": 89
       }
     ]
   },
@@ -46265,10 +46265,10 @@
     "name": "Fine Steel Broad Shortsword +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 7684,
-    "weight": 1.79,
+    "price": 5780,
+    "weight": 2.01,
     "rank": 2,
-    "tier": 10.5314655,
+    "tier": 8.984725,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -46281,18 +46281,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 85,
-        "balance": 0.75,
-        "handling": 93,
+        "balance": 0.68,
+        "handling": 83,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 28,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 32,
+        "thrustSpeed": 87,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 90
       }
     ]
   },
@@ -46302,10 +46302,10 @@
     "name": "Fine Steel Broad Shortsword +3",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 6783,
-    "weight": 1.74,
+    "price": 6343,
+    "weight": 1.92,
     "rank": 3,
-    "tier": 9.826647,
+    "tier": 9.465937,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -46318,18 +46318,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 85,
-        "balance": 0.78,
-        "handling": 93,
+        "balance": 0.72,
+        "handling": 83,
         "bodyArmor": 2,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 28,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 32,
+        "thrustSpeed": 87,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 91
       }
     ]
   },
