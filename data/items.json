@@ -44623,10 +44623,10 @@
     "name": "Falx Knife",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4086,
+    "price": 1716,
     "weight": 0.53,
     "rank": 0,
-    "tier": 7.377295,
+    "tier": 4.39590073,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -44645,7 +44645,7 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 32,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 103,
         "swingDamage": 0,
@@ -44660,10 +44660,10 @@
     "name": "Falx Knife +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4513,
-    "weight": 0.53,
+    "price": 1740,
+    "weight": 0.22,
     "rank": 1,
-    "tier": 7.809491,
+    "tier": 4.433961,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -44677,17 +44677,17 @@
         "stackAmount": 0,
         "length": 54,
         "balance": 1.0,
-        "handling": 116,
+        "handling": 121,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 32,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 125
+        "swingSpeed": 131
       }
     ]
   },
@@ -44697,10 +44697,10 @@
     "name": "Falx Knife +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 5073,
-    "weight": 0.53,
+    "price": 2010,
+    "weight": 0.22,
     "rank": 2,
-    "tier": 8.346952,
+    "tier": 4.84555,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -44714,17 +44714,17 @@
         "stackAmount": 0,
         "length": 54,
         "balance": 1.0,
-        "handling": 116,
+        "handling": 121,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 36,
+        "thrustDamage": 33,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 125
+        "swingSpeed": 131
       }
     ]
   },
@@ -44734,10 +44734,10 @@
     "name": "Falx Knife +3",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 5783,
-    "weight": 0.53,
+    "price": 2350,
+    "weight": 0.22,
     "rank": 3,
-    "tier": 8.987175,
+    "tier": 5.327701,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -44751,17 +44751,17 @@
         "stackAmount": 0,
         "length": 54,
         "balance": 1.0,
-        "handling": 116,
+        "handling": 121,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 37,
+        "thrustDamage": 34,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 125
+        "swingSpeed": 131
       }
     ]
   },
@@ -63009,10 +63009,10 @@
     "name": "Highland Dagger",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 2143,
+    "price": 1014,
     "weight": 1.65,
     "rank": 0,
-    "tier": 5.038997,
+    "tier": 3.13152981,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -63031,10 +63031,10 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
-        "swingDamage": 24,
+        "swingDamage": 22,
         "swingDamageType": "Cut",
         "swingSpeed": 108
       },
@@ -63055,7 +63055,7 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
         "swingDamage": 0,
@@ -63070,10 +63070,10 @@
     "name": "Highland Dagger +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1810,
-    "weight": 1.65,
+    "price": 862,
+    "weight": 1.56,
     "rank": 1,
-    "tier": 4.5428915,
+    "tier": 2.80659032,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -63092,12 +63092,12 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 25,
+        "thrustSpeed": 91,
+        "swingDamage": 22,
         "swingDamageType": "Cut",
-        "swingSpeed": 108
+        "swingSpeed": 109
       },
       {
         "class": "ThrowingKnife",
@@ -63116,12 +63116,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
+        "thrustSpeed": 91,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 108
+        "swingSpeed": 109
       }
     ]
   },
@@ -63131,71 +63131,10 @@
     "name": "Highland Dagger +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 2055,
-    "weight": 1.56,
-    "rank": 2,
-    "tier": 4.91145039,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 37,
-        "balance": 1.0,
-        "handling": 113,
-        "bodyArmor": 3,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 18,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 26,
-        "swingDamageType": "Cut",
-        "swingSpeed": 109
-      },
-      {
-        "class": "ThrowingKnife",
-        "itemUsage": "throwing_knife",
-        "accuracy": 95,
-        "missileSpeed": 30,
-        "stackAmount": 1,
-        "length": 37,
-        "balance": 1.0,
-        "handling": 113,
-        "bodyArmor": 3,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 35,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 0,
-        "swingDamageType": "Cut",
-        "swingSpeed": 109
-      }
-    ]
-  },
-  {
-    "id": "crpg_highland_dagger_h3",
-    "baseId": "crpg_highland_dagger",
-    "name": "Highland Dagger +3",
-    "culture": "Battania",
-    "type": "OneHandedWeapon",
-    "price": 3067,
+    "price": 995,
     "weight": 1.51,
-    "rank": 3,
-    "tier": 6.24297237,
+    "rank": 2,
+    "tier": 3.09329867,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -63214,10 +63153,10 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 10,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
-        "swingDamage": 28,
+        "swingDamage": 23,
         "swingDamageType": "Cut",
         "swingSpeed": 110
       },
@@ -63238,7 +63177,68 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 36,
+        "thrustDamage": 19,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 92,
+        "swingDamage": 0,
+        "swingDamageType": "Cut",
+        "swingSpeed": 110
+      }
+    ]
+  },
+  {
+    "id": "crpg_highland_dagger_h3",
+    "baseId": "crpg_highland_dagger",
+    "name": "Highland Dagger +3",
+    "culture": "Battania",
+    "type": "OneHandedWeapon",
+    "price": 1035,
+    "weight": 1.51,
+    "rank": 3,
+    "tier": 3.17529488,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "Dagger",
+        "itemUsage": "onehanded_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 37,
+        "balance": 1.0,
+        "handling": 113,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 13,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 92,
+        "swingDamage": 24,
+        "swingDamageType": "Cut",
+        "swingSpeed": 110
+      },
+      {
+        "class": "ThrowingKnife",
+        "itemUsage": "throwing_knife",
+        "accuracy": 95,
+        "missileSpeed": 30,
+        "stackAmount": 1,
+        "length": 37,
+        "balance": 1.0,
+        "handling": 113,
+        "bodyArmor": 3,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
         "swingDamage": 0,
@@ -117665,10 +117665,10 @@
     "name": "Pugio",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2183,
-    "weight": 1.64,
+    "price": 3627,
+    "weight": 1.25,
     "rank": 0,
-    "tier": 5.096213,
+    "tier": 6.88583755,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -117676,33 +117676,33 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 35,
         "balance": 1.0,
-        "handling": 113,
+        "handling": 115,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 16,
+        "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 24,
-        "swingDamageType": "Cut",
-        "swingSpeed": 109
+        "thrustSpeed": 94,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 115
       },
       {
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 30,
+        "missileSpeed": 31,
         "stackAmount": 1,
         "length": 35,
         "balance": 1.0,
-        "handling": 113,
+        "handling": 115,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -117711,12 +117711,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 47,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
+        "thrustSpeed": 94,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
-        "swingSpeed": 109
+        "swingDamageType": "Undefined",
+        "swingSpeed": 115
       }
     ]
   },
@@ -117726,10 +117726,10 @@
     "name": "Pugio +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1843,
-    "weight": 1.64,
+    "price": 3111,
+    "weight": 1.14,
     "rank": 1,
-    "tier": 4.594449,
+    "tier": 6.295926,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -117737,33 +117737,33 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 35,
         "balance": 1.0,
-        "handling": 113,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 31,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 25,
-        "swingDamageType": "Cut",
-        "swingSpeed": 109
+        "thrustSpeed": 95,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 117
       },
       {
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 30,
+        "missileSpeed": 31,
         "stackAmount": 1,
         "length": 35,
         "balance": 1.0,
-        "handling": 113,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -117772,12 +117772,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 34,
+        "thrustDamage": 48,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
+        "thrustSpeed": 95,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
-        "swingSpeed": 109
+        "swingDamageType": "Undefined",
+        "swingSpeed": 117
       }
     ]
   },
@@ -117787,10 +117787,10 @@
     "name": "Pugio +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2150,
-    "weight": 1.59,
+    "price": 3050,
+    "weight": 1.09,
     "rank": 2,
-    "tier": 5.049335,
+    "tier": 6.2236104,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -117798,33 +117798,33 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 35,
         "balance": 1.0,
-        "handling": 114,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 18,
+        "thrustDamage": 32,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 26,
-        "swingDamageType": "Cut",
-        "swingSpeed": 110
+        "thrustSpeed": 96,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 118
       },
       {
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 30,
+        "missileSpeed": 32,
         "stackAmount": 1,
         "length": 35,
         "balance": 1.0,
-        "handling": 114,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -117833,12 +117833,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 49,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
+        "thrustSpeed": 96,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
-        "swingSpeed": 110
+        "swingDamageType": "Undefined",
+        "swingSpeed": 118
       }
     ]
   },
@@ -117848,10 +117848,10 @@
     "name": "Pugio +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3210,
-    "weight": 1.55,
+    "price": 3221,
+    "weight": 1.05,
     "rank": 3,
-    "tier": 6.41317368,
+    "tier": 6.425602,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -117859,33 +117859,33 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_shield_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 35,
         "balance": 1.0,
-        "handling": 114,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 35,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 28,
-        "swingDamageType": "Cut",
-        "swingSpeed": 111
+        "thrustSpeed": 96,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 118
       },
       {
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 30,
+        "missileSpeed": 32,
         "stackAmount": 1,
         "length": 35,
         "balance": 1.0,
-        "handling": 114,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -117894,12 +117894,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 37,
+        "thrustDamage": 51,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
+        "thrustSpeed": 96,
         "swingDamage": 0,
-        "swingDamageType": "Cut",
-        "swingSpeed": 111
+        "swingDamageType": "Undefined",
+        "swingSpeed": 118
       }
     ]
   },
@@ -122243,10 +122243,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3889,
-    "weight": 1.2,
+    "price": 4843,
+    "weight": 0.93,
     "rank": 0,
-    "tier": 7.16952038,
+    "tier": 8.12953,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122267,10 +122267,10 @@
         ],
         "thrustDamage": 38,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 118
+        "swingSpeed": 123
       }
     ]
   },
@@ -122280,10 +122280,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4105,
-    "weight": 1.2,
+    "price": 5116,
+    "weight": 0.93,
     "rank": 1,
-    "tier": 7.396811,
+    "tier": 8.387259,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122304,10 +122304,10 @@
         ],
         "thrustDamage": 39,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 118
+        "swingSpeed": 123
       }
     ]
   },
@@ -122317,10 +122317,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3775,
-    "weight": 0.93,
+    "price": 4959,
+    "weight": 0.75,
     "rank": 2,
-    "tier": 7.047624,
+    "tier": 8.24008751,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122334,17 +122334,17 @@
         "stackAmount": 0,
         "length": 41,
         "balance": 1.0,
-        "handling": 115,
+        "handling": 117,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 39,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
+        "thrustSpeed": 100,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 123
+        "swingSpeed": 125
       }
     ]
   },
@@ -122354,10 +122354,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4161,
-    "weight": 0.93,
+    "price": 5476,
+    "weight": 0.75,
     "rank": 3,
-    "tier": 7.454511,
+    "tier": 8.715819,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122371,17 +122371,17 @@
         "stackAmount": 0,
         "length": 41,
         "balance": 1.0,
-        "handling": 115,
+        "handling": 117,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 40,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
+        "thrustSpeed": 100,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 123
+        "swingSpeed": 125
       }
     ]
   },
@@ -127625,10 +127625,10 @@
     "name": "Seax",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 4870,
-    "weight": 0.63,
+    "price": 3285,
+    "weight": 2.07,
     "rank": 0,
-    "tier": 8.155311,
+    "tier": 6.49956369,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -127637,23 +127637,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
-        "balance": 1.0,
-        "handling": 117,
+        "balance": 0.91,
+        "handling": 104,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 101,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 124
+        "thrustSpeed": 87,
+        "swingDamage": 30,
+        "swingDamageType": "Cut",
+        "swingSpeed": 97
       }
     ]
   },
@@ -127663,10 +127663,10 @@
     "name": "Seax +1",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 4123,
-    "weight": 0.49,
+    "price": 3321,
+    "weight": 1.93,
     "rank": 1,
-    "tier": 7.41499329,
+    "tier": 6.54099655,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -127675,23 +127675,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
-        "balance": 1.0,
-        "handling": 118,
+        "balance": 0.99,
+        "handling": 105,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 127
+        "thrustSpeed": 88,
+        "swingDamage": 30,
+        "swingDamageType": "Cut",
+        "swingSpeed": 99
       }
     ]
   },
@@ -127701,10 +127701,10 @@
     "name": "Seax +2",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 4631,
-    "weight": 0.49,
+    "price": 3264,
+    "weight": 1.9,
     "rank": 2,
-    "tier": 7.925307,
+    "tier": 6.47593975,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -127713,23 +127713,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
-        "balance": 1.0,
-        "handling": 118,
+        "balance": 0.99,
+        "handling": 106,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 36,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 127
+        "thrustSpeed": 88,
+        "swingDamage": 31,
+        "swingDamageType": "Cut",
+        "swingSpeed": 99
       }
     ]
   },
@@ -127739,10 +127739,10 @@
     "name": "Seax +3",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5275,
-    "weight": 0.49,
+    "price": 3911,
+    "weight": 1.9,
     "rank": 3,
-    "tier": 8.533185,
+    "tier": 7.193189,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse",
@@ -127751,23 +127751,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_shield_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 52,
-        "balance": 1.0,
-        "handling": 118,
+        "balance": 0.99,
+        "handling": 106,
         "bodyArmor": 1,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 37,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 103,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 127
+        "thrustSpeed": 88,
+        "swingDamage": 33,
+        "swingDamageType": "Cut",
+        "swingSpeed": 99
       }
     ]
   },
@@ -165093,47 +165093,10 @@
     "name": "Xiphos",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1451,
-    "weight": 1.91,
-    "rank": 0,
-    "tier": 3.95441866,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 45,
-        "balance": 1.0,
-        "handling": 108,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 16,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 88,
-        "swingDamage": 24,
-        "swingDamageType": "Cut",
-        "swingSpeed": 103
-      }
-    ]
-  },
-  {
-    "id": "crpg_xiphos_h1",
-    "baseId": "crpg_xiphos",
-    "name": "Xiphos +1",
-    "culture": "Empire",
-    "type": "OneHandedWeapon",
-    "price": 1414,
+    "price": 1917,
     "weight": 1.86,
-    "rank": 1,
-    "tier": 3.89060736,
+    "rank": 0,
+    "tier": 4.707634,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -165162,15 +165125,52 @@
     ]
   },
   {
+    "id": "crpg_xiphos_h1",
+    "baseId": "crpg_xiphos",
+    "name": "Xiphos +1",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 1846,
+    "weight": 1.86,
+    "rank": 1,
+    "tier": 4.598617,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "Dagger",
+        "itemUsage": "onehanded_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 45,
+        "balance": 1.0,
+        "handling": 108,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 17,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 88,
+        "swingDamage": 26,
+        "swingDamageType": "Cut",
+        "swingSpeed": 104
+      }
+    ]
+  },
+  {
     "id": "crpg_xiphos_h2",
     "baseId": "crpg_xiphos",
     "name": "Xiphos +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1657,
-    "weight": 1.78,
+    "price": 1894,
+    "weight": 1.69,
     "rank": 2,
-    "tier": 4.299712,
+    "tier": 4.67189074,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -165191,10 +165191,10 @@
         ],
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
+        "thrustSpeed": 90,
         "swingDamage": 26,
         "swingDamageType": "Cut",
-        "swingSpeed": 105
+        "swingSpeed": 106
       }
     ]
   },
@@ -165204,10 +165204,10 @@
     "name": "Xiphos +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2465,
+    "price": 1896,
     "weight": 1.69,
     "rank": 3,
-    "tier": 5.482981,
+    "tier": 4.674758,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -165226,10 +165226,10 @@
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 18,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
-        "swingDamage": 28,
+        "swingDamage": 27,
         "swingDamageType": "Cut",
         "swingSpeed": 106
       }
