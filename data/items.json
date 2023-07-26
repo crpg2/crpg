@@ -2492,6 +2492,146 @@
     ]
   },
   {
+    "id": "crpg_arabian_mace_h0",
+    "baseId": "crpg_arabian_mace",
+    "name": "Arabian Mace",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 2810,
+    "weight": 2.09,
+    "rank": 0,
+    "tier": 5.929326,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.19,
+        "handling": 82,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 85,
+        "swingDamage": 29,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 75
+      }
+    ]
+  },
+  {
+    "id": "crpg_arabian_mace_h1",
+    "baseId": "crpg_arabian_mace",
+    "name": "Arabian Mace +1",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 3139,
+    "weight": 2.01,
+    "rank": 1,
+    "tier": 6.32889271,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.25,
+        "handling": 83,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 29,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 77
+      }
+    ]
+  },
+  {
+    "id": "crpg_arabian_mace_h2",
+    "baseId": "crpg_arabian_mace",
+    "name": "Arabian Mace +2",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 2992,
+    "weight": 2.01,
+    "rank": 2,
+    "tier": 6.152626,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.25,
+        "handling": 83,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 30,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 77
+      }
+    ]
+  },
+  {
+    "id": "crpg_arabian_mace_h3",
+    "baseId": "crpg_arabian_mace",
+    "name": "Arabian Mace +3",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 3515,
+    "weight": 1.98,
+    "rank": 3,
+    "tier": 6.762145,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 81,
+        "balance": 0.27,
+        "handling": 83,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 31,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 78
+      }
+    ]
+  },
+  {
     "id": "crpg_archers_flag_t1",
     "baseId": "crpg_archers_flag",
     "name": "Archer's Flag",
@@ -18071,10 +18211,10 @@
     "name": "Blacksmith Hammer",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 551,
-    "weight": 2.4,
+    "price": 1951,
+    "weight": 1.88,
     "rank": 0,
-    "tier": 2.03764749,
+    "tier": 4.75752258,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -18087,18 +18227,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 32,
-        "balance": 0.67,
-        "handling": 99,
+        "balance": 0.94,
+        "handling": 104,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
+        "thrustSpeed": 88,
         "swingDamage": 20,
         "swingDamageType": "Blunt",
-        "swingSpeed": 90
+        "swingSpeed": 98
       }
     ]
   },
@@ -18108,10 +18248,10 @@
     "name": "Blacksmith Hammer +1",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 584,
-    "weight": 2.25,
+    "price": 2012,
+    "weight": 1.88,
     "rank": 1,
-    "tier": 2.12674212,
+    "tier": 4.84963942,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -18124,18 +18264,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 32,
-        "balance": 0.76,
-        "handling": 101,
+        "balance": 0.94,
+        "handling": 104,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 20,
+        "thrustSpeed": 88,
+        "swingDamage": 21,
         "swingDamageType": "Blunt",
-        "swingSpeed": 92
+        "swingSpeed": 98
       }
     ]
   },
@@ -18145,10 +18285,10 @@
     "name": "Blacksmith Hammer +2",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 699,
-    "weight": 2.2,
+    "price": 2434,
+    "weight": 1.84,
     "rank": 2,
-    "tier": 2.42420173,
+    "tier": 5.44261026,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -18161,18 +18301,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 32,
-        "balance": 0.77,
-        "handling": 101,
+        "balance": 0.97,
+        "handling": 104,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 21,
+        "thrustSpeed": 88,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 93
+        "swingSpeed": 99
       }
     ]
   },
@@ -18182,10 +18322,10 @@
     "name": "Blacksmith Hammer +3",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 977,
-    "weight": 2.2,
+    "price": 3074,
+    "weight": 1.77,
     "rank": 3,
-    "tier": 3.05443859,
+    "tier": 6.251976,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -18198,18 +18338,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 32,
-        "balance": 0.77,
-        "handling": 101,
+        "balance": 1.0,
+        "handling": 105,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
+        "thrustSpeed": 89,
         "swingDamage": 23,
         "swingDamageType": "Blunt",
-        "swingSpeed": 93
+        "swingSpeed": 100
       }
     ]
   },
@@ -20647,12 +20787,12 @@
     "id": "crpg_bone_crusher_h0",
     "baseId": "crpg_bone_crusher",
     "name": "Bone Crusher",
-    "culture": "Neutral",
+    "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6830,
-    "weight": 1.75,
+    "price": 3390,
+    "weight": 2.33,
     "rank": 0,
-    "tier": 9.864588,
+    "tier": 6.62093449,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20662,19 +20802,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 71,
-        "balance": 0.71,
-        "handling": 93,
+        "length": 94,
+        "balance": 0.19,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 22,
+        "thrustSpeed": 84,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 91
+        "swingSpeed": 75
       }
     ]
   },
@@ -20682,12 +20822,12 @@
     "id": "crpg_bone_crusher_h1",
     "baseId": "crpg_bone_crusher",
     "name": "Bone Crusher +1",
-    "culture": "Neutral",
+    "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6837,
-    "weight": 1.75,
+    "price": 3962,
+    "weight": 2.27,
     "rank": 1,
-    "tier": 9.869741,
+    "tier": 7.24704456,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20697,19 +20837,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 71,
-        "balance": 0.71,
-        "handling": 93,
+        "length": 94,
+        "balance": 0.25,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 23,
+        "thrustSpeed": 84,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 91
+        "swingSpeed": 77
       }
     ]
   },
@@ -20717,12 +20857,12 @@
     "id": "crpg_bone_crusher_h2",
     "baseId": "crpg_bone_crusher",
     "name": "Bone Crusher +2",
-    "culture": "Neutral",
+    "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6948,
-    "weight": 1.75,
+    "price": 3806,
+    "weight": 2.27,
     "rank": 2,
-    "tier": 9.958807,
+    "tier": 7.081343,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20732,19 +20872,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 71,
-        "balance": 0.71,
-        "handling": 93,
+        "length": 94,
+        "balance": 0.25,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 24,
+        "thrustSpeed": 84,
+        "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 91
+        "swingSpeed": 77
       }
     ]
   },
@@ -20752,12 +20892,12 @@
     "id": "crpg_bone_crusher_h3",
     "baseId": "crpg_bone_crusher",
     "name": "Bone Crusher +3",
-    "culture": "Neutral",
+    "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 7144,
-    "weight": 1.75,
+    "price": 4641,
+    "weight": 2.19,
     "rank": 3,
-    "tier": 10.1138573,
+    "tier": 7.93455,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -20767,19 +20907,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 71,
-        "balance": 0.71,
-        "handling": 93,
+        "length": 94,
+        "balance": 0.32,
+        "handling": 84,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 25,
+        "thrustSpeed": 85,
+        "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 91
+        "swingSpeed": 79
       }
     ]
   },
@@ -25002,15 +25142,15 @@
     "weapons": []
   },
   {
-    "id": "crpg_calradic_mace_h0",
-    "baseId": "crpg_calradic_mace",
-    "name": "Calradic Mace",
+    "id": "crpg_byzantine_mace_h0",
+    "baseId": "crpg_byzantine_mace",
+    "name": "Byzantine Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3033,
-    "weight": 1.79,
+    "price": 5384,
+    "weight": 1.82,
     "rank": 0,
-    "tier": 6.20233774,
+    "tier": 8.632379,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25020,8 +25160,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 73,
-        "balance": 0.63,
+        "length": 67,
+        "balance": 0.66,
         "handling": 92,
         "bodyArmor": 0,
         "flags": [
@@ -25030,7 +25170,147 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 88,
-        "swingDamage": 21,
+        "swingDamage": 23,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 89
+      }
+    ]
+  },
+  {
+    "id": "crpg_byzantine_mace_h1",
+    "baseId": "crpg_byzantine_mace",
+    "name": "Byzantine Mace +1",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 5312,
+    "weight": 1.82,
+    "rank": 1,
+    "tier": 8.5669,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 67,
+        "balance": 0.66,
+        "handling": 92,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 24,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 89
+      }
+    ]
+  },
+  {
+    "id": "crpg_byzantine_mace_h2",
+    "baseId": "crpg_byzantine_mace",
+    "name": "Byzantine Mace +2",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 5326,
+    "weight": 1.82,
+    "rank": 2,
+    "tier": 8.579864,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 67,
+        "balance": 0.66,
+        "handling": 92,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 25,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 89
+      }
+    ]
+  },
+  {
+    "id": "crpg_byzantine_mace_h3",
+    "baseId": "crpg_byzantine_mace",
+    "name": "Byzantine Mace +3",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 6442,
+    "weight": 1.8,
+    "rank": 3,
+    "tier": 9.54776,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 67,
+        "balance": 0.68,
+        "handling": 92,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 26,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 90
+      }
+    ]
+  },
+  {
+    "id": "crpg_calradic_mace_h0",
+    "baseId": "crpg_calradic_mace",
+    "name": "Calradic Mace",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 6281,
+    "weight": 1.72,
+    "rank": 0,
+    "tier": 9.413677,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 74,
+        "balance": 0.62,
+        "handling": 92,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
         "swingSpeed": 88
       }
@@ -25042,10 +25322,10 @@
     "name": "Calradic Mace +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3082,
-    "weight": 1.79,
+    "price": 6196,
+    "weight": 1.72,
     "rank": 1,
-    "tier": 6.261012,
+    "tier": 9.342277,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25055,8 +25335,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 73,
-        "balance": 0.63,
+        "length": 74,
+        "balance": 0.62,
         "handling": 92,
         "bodyArmor": 0,
         "flags": [
@@ -25064,8 +25344,8 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 88,
-        "swingDamage": 22,
+        "thrustSpeed": 89,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
         "swingSpeed": 88
       }
@@ -25077,10 +25357,10 @@
     "name": "Calradic Mace +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3173,
-    "weight": 1.79,
+    "price": 6213,
+    "weight": 1.72,
     "rank": 2,
-    "tier": 6.36912251,
+    "tier": 9.356409,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25090,8 +25370,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 73,
-        "balance": 0.63,
+        "length": 74,
+        "balance": 0.62,
         "handling": 92,
         "bodyArmor": 0,
         "flags": [
@@ -25099,8 +25379,8 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 88,
-        "swingDamage": 23,
+        "thrustSpeed": 89,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
         "swingSpeed": 88
       }
@@ -25112,10 +25392,10 @@
     "name": "Calradic Mace +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4065,
-    "weight": 1.78,
+    "price": 6558,
+    "weight": 1.7,
     "rank": 3,
-    "tier": 7.355445,
+    "tier": 9.643142,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -25125,8 +25405,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 73,
-        "balance": 0.64,
+        "length": 74,
+        "balance": 0.63,
         "handling": 93,
         "bodyArmor": 0,
         "flags": [
@@ -25135,9 +25415,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 89,
-        "swingDamage": 24,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 89
+        "swingSpeed": 88
       }
     ]
   },
@@ -35100,6 +35380,146 @@
     ]
   },
   {
+    "id": "crpg_decorated_round_mace_h0",
+    "baseId": "crpg_decorated_round_mace",
+    "name": "Decorated Round Mace",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6630,
+    "weight": 1.88,
+    "rank": 0,
+    "tier": 9.702719,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 58,
+        "balance": 0.84,
+        "handling": 101,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 21,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 95
+      }
+    ]
+  },
+  {
+    "id": "crpg_decorated_round_mace_h1",
+    "baseId": "crpg_decorated_round_mace",
+    "name": "Decorated Round Mace +1",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6743,
+    "weight": 1.88,
+    "rank": 1,
+    "tier": 9.794507,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 58,
+        "balance": 0.84,
+        "handling": 101,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 22,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 95
+      }
+    ]
+  },
+  {
+    "id": "crpg_decorated_round_mace_h2",
+    "baseId": "crpg_decorated_round_mace",
+    "name": "Decorated Round Mace +2",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6954,
+    "weight": 1.88,
+    "rank": 2,
+    "tier": 9.963628,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 58,
+        "balance": 0.84,
+        "handling": 101,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 23,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 95
+      }
+    ]
+  },
+  {
+    "id": "crpg_decorated_round_mace_h3",
+    "baseId": "crpg_decorated_round_mace",
+    "name": "Decorated Round Mace +3",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6378,
+    "weight": 1.86,
+    "rank": 3,
+    "tier": 9.494458,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 58,
+        "balance": 0.87,
+        "handling": 102,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 23,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 96
+      }
+    ]
+  },
+  {
     "id": "crpg_decorated_scimitar_with_wide_grip_h0",
     "baseId": "crpg_decorated_scimitar_with_wide_grip",
     "name": "Decorated Scimitar with Wide Grip",
@@ -39447,10 +39867,10 @@
     "name": "Eastern Heavy Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6810,
-    "weight": 1.46,
+    "price": 3728,
+    "weight": 2.04,
     "rank": 0,
-    "tier": 9.848647,
+    "tier": 6.99636,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -39461,18 +39881,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 77,
-        "balance": 0.72,
-        "handling": 95,
+        "balance": 0.29,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 21,
+        "thrustSpeed": 87,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 91
+        "swingSpeed": 78
       }
     ]
   },
@@ -39482,10 +39902,10 @@
     "name": "Eastern Heavy Mace +1",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5753,
-    "weight": 1.43,
+    "price": 4105,
+    "weight": 1.96,
     "rank": 1,
-    "tier": 8.961069,
+    "tier": 7.39614,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -39496,18 +39916,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 77,
-        "balance": 0.75,
-        "handling": 95,
+        "balance": 0.34,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 21,
+        "thrustSpeed": 87,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 92
+        "swingSpeed": 80
       }
     ]
   },
@@ -39517,10 +39937,10 @@
     "name": "Eastern Heavy Mace +2",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6026,
-    "weight": 1.43,
+    "price": 3943,
+    "weight": 1.96,
     "rank": 2,
-    "tier": 9.197234,
+    "tier": 7.227029,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -39531,18 +39951,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 77,
-        "balance": 0.75,
-        "handling": 95,
+        "balance": 0.34,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 22,
+        "thrustSpeed": 87,
+        "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 92
+        "swingSpeed": 80
       }
     ]
   },
@@ -39552,10 +39972,10 @@
     "name": "Eastern Heavy Mace +3",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6369,
-    "weight": 1.43,
+    "price": 4847,
+    "weight": 1.92,
     "rank": 3,
-    "tier": 9.487356,
+    "tier": 8.133238,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -39566,18 +39986,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 77,
-        "balance": 0.75,
-        "handling": 95,
+        "balance": 0.38,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 23,
+        "thrustSpeed": 87,
+        "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 92
+        "swingSpeed": 81
       }
     ]
   },
@@ -44618,8 +45038,8 @@
     ]
   },
   {
-    "id": "crpg_falx_knife_h0",
-    "baseId": "crpg_falx_knife",
+    "id": "crpg_falx_knife_v1_h0",
+    "baseId": "crpg_falx_knife_v1",
     "name": "Falx Knife",
     "culture": "Battania",
     "type": "OneHandedWeapon",
@@ -44655,8 +45075,8 @@
     ]
   },
   {
-    "id": "crpg_falx_knife_h1",
-    "baseId": "crpg_falx_knife",
+    "id": "crpg_falx_knife_v1_h1",
+    "baseId": "crpg_falx_knife_v1",
     "name": "Falx Knife +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
@@ -44692,8 +45112,8 @@
     ]
   },
   {
-    "id": "crpg_falx_knife_h2",
-    "baseId": "crpg_falx_knife",
+    "id": "crpg_falx_knife_v1_h2",
+    "baseId": "crpg_falx_knife_v1",
     "name": "Falx Knife +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
@@ -44729,8 +45149,8 @@
     ]
   },
   {
-    "id": "crpg_falx_knife_h3",
-    "baseId": "crpg_falx_knife",
+    "id": "crpg_falx_knife_v1_h3",
+    "baseId": "crpg_falx_knife_v1",
     "name": "Falx Knife +3",
     "culture": "Battania",
     "type": "OneHandedWeapon",
@@ -47487,10 +47907,10 @@
     "name": "Fine Steel Mace",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5533,
-    "weight": 1.37,
+    "price": 2931,
+    "weight": 1.71,
     "rank": 0,
-    "tier": 8.766809,
+    "tier": 6.078887,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -47500,19 +47920,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 91,
-        "balance": 0.44,
-        "handling": 85,
+        "length": 90,
+        "balance": 0.16,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 24,
+        "thrustSpeed": 88,
+        "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 74
       }
     ]
   },
@@ -47522,10 +47942,10 @@
     "name": "Fine Steel Mace +1",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5387,
-    "weight": 1.37,
+    "price": 3298,
+    "weight": 1.64,
     "rank": 1,
-    "tier": 8.635548,
+    "tier": 6.514557,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -47535,19 +47955,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 91,
-        "balance": 0.44,
-        "handling": 85,
+        "length": 90,
+        "balance": 0.22,
+        "handling": 80,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 25,
+        "thrustSpeed": 89,
+        "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 76
       }
     ]
   },
@@ -47557,10 +47977,10 @@
     "name": "Fine Steel Mace +2",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 5336,
-    "weight": 1.37,
+    "price": 3997,
+    "weight": 1.61,
     "rank": 2,
-    "tier": 8.589266,
+    "tier": 7.283947,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -47570,19 +47990,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 91,
-        "balance": 0.44,
-        "handling": 85,
+        "length": 90,
+        "balance": 0.24,
+        "handling": 81,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 26,
+        "thrustSpeed": 89,
+        "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 77
       }
     ]
   },
@@ -47592,10 +48012,10 @@
     "name": "Fine Steel Mace +3",
     "culture": "Khuzait",
     "type": "OneHandedWeapon",
-    "price": 6739,
-    "weight": 1.32,
+    "price": 3867,
+    "weight": 1.61,
     "rank": 3,
-    "tier": 9.7913,
+    "tier": 7.14622259,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -47605,19 +48025,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 91,
-        "balance": 0.48,
-        "handling": 86,
+        "length": 90,
+        "balance": 0.24,
+        "handling": 81,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 27,
+        "thrustSpeed": 89,
+        "swingDamage": 31,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 77
       }
     ]
   },
@@ -49170,6 +49590,286 @@
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 97
+      }
+    ]
+  },
+  {
+    "id": "crpg_flanged_ball_mace_h0",
+    "baseId": "crpg_flanged_ball_mace",
+    "name": "Flanged Ball Mace",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6895,
+    "weight": 1.61,
+    "rank": 0,
+    "tier": 9.916945,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.8,
+        "handling": 95,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 93
+      }
+    ]
+  },
+  {
+    "id": "crpg_flanged_ball_mace_h1",
+    "baseId": "crpg_flanged_ball_mace",
+    "name": "Flanged Ball Mace +1",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6023,
+    "weight": 1.59,
+    "rank": 1,
+    "tier": 9.195243,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.82,
+        "handling": 96,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 94
+      }
+    ]
+  },
+  {
+    "id": "crpg_flanged_ball_mace_h2",
+    "baseId": "crpg_flanged_ball_mace",
+    "name": "Flanged Ball Mace +2",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6421,
+    "weight": 1.59,
+    "rank": 2,
+    "tier": 9.530154,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.82,
+        "handling": 96,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 21,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 94
+      }
+    ]
+  },
+  {
+    "id": "crpg_flanged_ball_mace_h3",
+    "baseId": "crpg_flanged_ball_mace",
+    "name": "Flanged Ball Mace +3",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6897,
+    "weight": 1.59,
+    "rank": 3,
+    "tier": 9.9186,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.82,
+        "handling": 96,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 22,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 94
+      }
+    ]
+  },
+  {
+    "id": "crpg_flanged_mace_h0",
+    "baseId": "crpg_flanged_mace",
+    "name": "Flanged Mace",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6664,
+    "weight": 1.81,
+    "rank": 0,
+    "tier": 9.730039,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 82,
+        "balance": 0.62,
+        "handling": 93,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 22,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
+      }
+    ]
+  },
+  {
+    "id": "crpg_flanged_mace_h1",
+    "baseId": "crpg_flanged_mace",
+    "name": "Flanged Mace +1",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6670,
+    "weight": 1.81,
+    "rank": 1,
+    "tier": 9.735121,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 82,
+        "balance": 0.62,
+        "handling": 93,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 23,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
+      }
+    ]
+  },
+  {
+    "id": "crpg_flanged_mace_h2",
+    "baseId": "crpg_flanged_mace",
+    "name": "Flanged Mace +2",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6778,
+    "weight": 1.81,
+    "rank": 2,
+    "tier": 9.822974,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 82,
+        "balance": 0.62,
+        "handling": 93,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 24,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
+      }
+    ]
+  },
+  {
+    "id": "crpg_flanged_mace_h3",
+    "baseId": "crpg_flanged_mace",
+    "name": "Flanged Mace +3",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6969,
+    "weight": 1.81,
+    "rank": 3,
+    "tier": 9.975905,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 82,
+        "balance": 0.62,
+        "handling": 93,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 25,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
       }
     ]
   },
@@ -51076,155 +51776,15 @@
     "weapons": []
   },
   {
-    "id": "crpg_fullered_light_mace_h0",
-    "baseId": "crpg_fullered_light_mace",
-    "name": "Fullered Light Mace",
-    "culture": "Aserai",
-    "type": "OneHandedWeapon",
-    "price": 1040,
-    "weight": 1.72,
-    "rank": 0,
-    "tier": 3.184981,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 55,
-        "balance": 0.75,
-        "handling": 97,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 18,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 92
-      }
-    ]
-  },
-  {
-    "id": "crpg_fullered_light_mace_h1",
-    "baseId": "crpg_fullered_light_mace",
-    "name": "Fullered Light Mace +1",
-    "culture": "Aserai",
-    "type": "OneHandedWeapon",
-    "price": 1070,
-    "weight": 1.62,
-    "rank": 1,
-    "tier": 3.246553,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 55,
-        "balance": 0.82,
-        "handling": 98,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 90,
-        "swingDamage": 18,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 94
-      }
-    ]
-  },
-  {
-    "id": "crpg_fullered_light_mace_h2",
-    "baseId": "crpg_fullered_light_mace",
-    "name": "Fullered Light Mace +2",
-    "culture": "Aserai",
-    "type": "OneHandedWeapon",
-    "price": 1170,
-    "weight": 1.62,
-    "rank": 2,
-    "tier": 3.44202423,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 55,
-        "balance": 0.82,
-        "handling": 98,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 90,
-        "swingDamage": 19,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 94
-      }
-    ]
-  },
-  {
-    "id": "crpg_fullered_light_mace_h3",
-    "baseId": "crpg_fullered_light_mace",
-    "name": "Fullered Light Mace +3",
-    "culture": "Aserai",
-    "type": "OneHandedWeapon",
-    "price": 1533,
-    "weight": 1.57,
-    "rank": 3,
-    "tier": 4.095804,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 55,
-        "balance": 0.84,
-        "handling": 99,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 90,
-        "swingDamage": 20,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 95
-      }
-    ]
-  },
-  {
     "id": "crpg_fullered_western_mace_h0",
     "baseId": "crpg_fullered_western_mace",
     "name": "Fullered Western Mace",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6586,
-    "weight": 1.92,
+    "price": 4857,
+    "weight": 2.03,
     "rank": 0,
-    "tier": 9.66678,
+    "tier": 8.143152,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -51234,8 +51794,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 85,
-        "balance": 0.55,
+        "length": 88,
+        "balance": 0.43,
         "handling": 82,
         "bodyArmor": 0,
         "flags": [
@@ -51243,10 +51803,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 24,
+        "thrustSpeed": 86,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 82
       }
     ]
   },
@@ -51256,10 +51816,10 @@
     "name": "Fullered Western Mace +1",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6411,
-    "weight": 1.92,
+    "price": 4673,
+    "weight": 2.03,
     "rank": 1,
-    "tier": 9.522043,
+    "tier": 7.96618748,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -51269,8 +51829,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 85,
-        "balance": 0.55,
+        "length": 88,
+        "balance": 0.43,
         "handling": 82,
         "bodyArmor": 0,
         "flags": [
@@ -51278,10 +51838,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 25,
+        "thrustSpeed": 86,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 82
       }
     ]
   },
@@ -51291,10 +51851,10 @@
     "name": "Fullered Western Mace +2",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6350,
-    "weight": 1.92,
+    "price": 4578,
+    "weight": 2.03,
     "rank": 2,
-    "tier": 9.47101,
+    "tier": 7.873216,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -51304,8 +51864,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 85,
-        "balance": 0.55,
+        "length": 88,
+        "balance": 0.43,
         "handling": 82,
         "bodyArmor": 0,
         "flags": [
@@ -51313,10 +51873,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 26,
+        "thrustSpeed": 86,
+        "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 82
       }
     ]
   },
@@ -51326,10 +51886,10 @@
     "name": "Fullered Western Mace +3",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6375,
-    "weight": 1.92,
+    "price": 5489,
+    "weight": 2.0,
     "rank": 3,
-    "tier": 9.491853,
+    "tier": 8.72707748,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -51339,8 +51899,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 85,
-        "balance": 0.55,
+        "length": 88,
+        "balance": 0.45,
         "handling": 82,
         "bodyArmor": 0,
         "flags": [
@@ -51349,9 +51909,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 87,
-        "swingDamage": 27,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 83
       }
     ]
   },
@@ -59223,12 +59783,12 @@
     "id": "crpg_heavy_flanged_mace_h0",
     "baseId": "crpg_heavy_flanged_mace",
     "name": "Heavy Flanged Mace",
-    "culture": "Khuzait",
+    "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6847,
-    "weight": 1.99,
+    "price": 3813,
+    "weight": 2.05,
     "rank": 0,
-    "tier": 9.877777,
+    "tier": 7.088258,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -59238,114 +59798,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 74,
-        "balance": 0.61,
-        "handling": 86,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 24,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 88
-      }
-    ]
-  },
-  {
-    "id": "crpg_heavy_flanged_mace_h1",
-    "baseId": "crpg_heavy_flanged_mace",
-    "name": "Heavy Flanged Mace +1",
-    "culture": "Khuzait",
-    "type": "OneHandedWeapon",
-    "price": 6664,
-    "weight": 1.99,
-    "rank": 1,
-    "tier": 9.729882,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 74,
-        "balance": 0.61,
-        "handling": 86,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 25,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 88
-      }
-    ]
-  },
-  {
-    "id": "crpg_heavy_flanged_mace_h2",
-    "baseId": "crpg_heavy_flanged_mace",
-    "name": "Heavy Flanged Mace +2",
-    "culture": "Khuzait",
-    "type": "OneHandedWeapon",
-    "price": 6600,
-    "weight": 1.99,
-    "rank": 2,
-    "tier": 9.677736,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 74,
-        "balance": 0.61,
-        "handling": 86,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 26,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 88
-      }
-    ]
-  },
-  {
-    "id": "crpg_heavy_flanged_mace_h3",
-    "baseId": "crpg_heavy_flanged_mace",
-    "name": "Heavy Flanged Mace +3",
-    "culture": "Khuzait",
-    "type": "OneHandedWeapon",
-    "price": 6626,
-    "weight": 1.99,
-    "rank": 3,
-    "tier": 9.699033,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 74,
-        "balance": 0.61,
-        "handling": 86,
+        "length": 69,
+        "balance": 0.37,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -59355,7 +59810,112 @@
         "thrustSpeed": 87,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 81
+      }
+    ]
+  },
+  {
+    "id": "crpg_heavy_flanged_mace_h1",
+    "baseId": "crpg_heavy_flanged_mace",
+    "name": "Heavy Flanged Mace +1",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 4302,
+    "weight": 1.95,
+    "rank": 1,
+    "tier": 7.59827137,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 69,
+        "balance": 0.43,
+        "handling": 89,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 27,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_heavy_flanged_mace_h2",
+    "baseId": "crpg_heavy_flanged_mace",
+    "name": "Heavy Flanged Mace +2",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 4172,
+    "weight": 1.95,
+    "rank": 2,
+    "tier": 7.46539927,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 69,
+        "balance": 0.43,
+        "handling": 89,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 28,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_heavy_flanged_mace_h3",
+    "baseId": "crpg_heavy_flanged_mace",
+    "name": "Heavy Flanged Mace +3",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 4937,
+    "weight": 1.9,
+    "rank": 3,
+    "tier": 8.219231,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 69,
+        "balance": 0.47,
+        "handling": 89,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 29,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 84
       }
     ]
   },
@@ -59841,10 +60401,10 @@
     "name": "Heavy Horsemans Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 4970,
-    "weight": 1.6,
+    "price": 6263,
+    "weight": 1.58,
     "rank": 0,
-    "tier": 8.249914,
+    "tier": 9.398403,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -59855,8 +60415,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.43,
-        "handling": 84,
+        "balance": 0.45,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -59866,7 +60426,7 @@
         "thrustSpeed": 90,
         "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 82
+        "swingSpeed": 83
       }
     ]
   },
@@ -59876,10 +60436,10 @@
     "name": "Heavy Horsemans Mace +1",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 4839,
-    "weight": 1.6,
+    "price": 6096,
+    "weight": 1.58,
     "rank": 1,
-    "tier": 8.126394,
+    "tier": 9.25768852,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -59890,8 +60450,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.43,
-        "handling": 84,
+        "balance": 0.45,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -59901,7 +60461,7 @@
         "thrustSpeed": 90,
         "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 82
+        "swingSpeed": 83
       }
     ]
   },
@@ -59911,10 +60471,10 @@
     "name": "Heavy Horsemans Mace +2",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 4794,
-    "weight": 1.6,
+    "price": 6038,
+    "weight": 1.58,
     "rank": 2,
-    "tier": 8.082842,
+    "tier": 9.208071,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -59925,8 +60485,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.43,
-        "handling": 84,
+        "balance": 0.45,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -59936,7 +60496,7 @@
         "thrustSpeed": 90,
         "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 82
+        "swingSpeed": 83
       }
     ]
   },
@@ -63004,8 +63564,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_highland_dagger_h0",
-    "baseId": "crpg_highland_dagger",
+    "id": "crpg_highland_dagger_v1_h0",
+    "baseId": "crpg_highland_dagger_v1",
     "name": "Highland Dagger",
     "culture": "Battania",
     "type": "OneHandedWeapon",
@@ -63065,8 +63625,8 @@
     ]
   },
   {
-    "id": "crpg_highland_dagger_h1",
-    "baseId": "crpg_highland_dagger",
+    "id": "crpg_highland_dagger_v1_h1",
+    "baseId": "crpg_highland_dagger_v1",
     "name": "Highland Dagger +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
@@ -63126,8 +63686,8 @@
     ]
   },
   {
-    "id": "crpg_highland_dagger_h2",
-    "baseId": "crpg_highland_dagger",
+    "id": "crpg_highland_dagger_v1_h2",
+    "baseId": "crpg_highland_dagger_v1",
     "name": "Highland Dagger +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
@@ -63187,8 +63747,8 @@
     ]
   },
   {
-    "id": "crpg_highland_dagger_h3",
-    "baseId": "crpg_highland_dagger",
+    "id": "crpg_highland_dagger_v1_h3",
+    "baseId": "crpg_highland_dagger_v1",
     "name": "Highland Dagger +3",
     "culture": "Battania",
     "type": "OneHandedWeapon",
@@ -68084,146 +68644,6 @@
       "familyType": 0
     },
     "weapons": []
-  },
-  {
-    "id": "crpg_imperial_light_mace_h0",
-    "baseId": "crpg_imperial_light_mace",
-    "name": "Imperial Light Mace",
-    "culture": "Empire",
-    "type": "OneHandedWeapon",
-    "price": 2439,
-    "weight": 1.9,
-    "rank": 0,
-    "tier": 5.44923973,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 70,
-        "balance": 0.71,
-        "handling": 96,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 19,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 91
-      }
-    ]
-  },
-  {
-    "id": "crpg_imperial_light_mace_h1",
-    "baseId": "crpg_imperial_light_mace",
-    "name": "Imperial Light Mace +1",
-    "culture": "Empire",
-    "type": "OneHandedWeapon",
-    "price": 2564,
-    "weight": 1.9,
-    "rank": 1,
-    "tier": 5.61486149,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 70,
-        "balance": 0.71,
-        "handling": 96,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 20,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 91
-      }
-    ]
-  },
-  {
-    "id": "crpg_imperial_light_mace_h2",
-    "baseId": "crpg_imperial_light_mace",
-    "name": "Imperial Light Mace +2",
-    "culture": "Empire",
-    "type": "OneHandedWeapon",
-    "price": 2723,
-    "weight": 1.9,
-    "rank": 2,
-    "tier": 5.81936932,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 70,
-        "balance": 0.71,
-        "handling": 96,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 21,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 91
-      }
-    ]
-  },
-  {
-    "id": "crpg_imperial_light_mace_h3",
-    "baseId": "crpg_imperial_light_mace",
-    "name": "Imperial Light Mace +3",
-    "culture": "Empire",
-    "type": "OneHandedWeapon",
-    "price": 3556,
-    "weight": 1.83,
-    "rank": 3,
-    "tier": 6.80763149,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 70,
-        "balance": 0.76,
-        "handling": 97,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 88,
-        "swingDamage": 22,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 92
-      }
-    ]
   },
   {
     "id": "crpg_imperial_mail_coif_v2_h0",
@@ -74381,10 +74801,10 @@
     "name": "Judgement",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 4651,
-    "weight": 2.36,
+    "price": 5105,
+    "weight": 2.33,
     "rank": 0,
-    "tier": 7.944322,
+    "tier": 8.37657,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -74394,7 +74814,7 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 70,
+        "length": 72,
         "balance": 0.33,
         "handling": 87,
         "bodyArmor": 0,
@@ -74416,10 +74836,10 @@
     "name": "Judgement +1",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5306,
-    "weight": 2.28,
+    "price": 5829,
+    "weight": 2.24,
     "rank": 1,
-    "tier": 8.561754,
+    "tier": 9.027595,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -74429,8 +74849,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 70,
-        "balance": 0.38,
+        "length": 72,
+        "balance": 0.4,
         "handling": 89,
         "bodyArmor": 0,
         "flags": [
@@ -74451,10 +74871,10 @@
     "name": "Judgement +2",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5048,
-    "weight": 2.28,
+    "price": 5544,
+    "weight": 2.24,
     "rank": 2,
-    "tier": 8.323303,
+    "tier": 8.77617,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -74464,8 +74884,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 70,
-        "balance": 0.38,
+        "length": 72,
+        "balance": 0.4,
         "handling": 89,
         "bodyArmor": 0,
         "flags": [
@@ -74486,10 +74906,10 @@
     "name": "Judgement +3",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 5909,
-    "weight": 2.24,
+    "price": 6495,
+    "weight": 2.2,
     "rank": 3,
-    "tier": 9.097019,
+    "tier": 9.591983,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -74499,8 +74919,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 70,
-        "balance": 0.41,
+        "length": 72,
+        "balance": 0.43,
         "handling": 89,
         "bodyArmor": 0,
         "flags": [
@@ -78237,10 +78657,10 @@
     "name": "Knight's Fall",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3800,
-    "weight": 1.68,
+    "price": 6205,
+    "weight": 1.58,
     "rank": 0,
-    "tier": 7.074263,
+    "tier": 9.349911,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -78250,17 +78670,17 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 81,
+        "length": 83,
         "balance": 0.5,
-        "handling": 85,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 23,
+        "thrustSpeed": 90,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
       }
@@ -78272,10 +78692,10 @@
     "name": "Knight's Fall +1",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3750,
-    "weight": 1.68,
+    "price": 6040,
+    "weight": 1.58,
     "rank": 1,
-    "tier": 7.02060556,
+    "tier": 9.209921,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -78285,17 +78705,17 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 81,
+        "length": 83,
         "balance": 0.5,
-        "handling": 85,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 24,
+        "thrustSpeed": 90,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
       }
@@ -78307,10 +78727,10 @@
     "name": "Knight's Fall +2",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3760,
-    "weight": 1.68,
+    "price": 5983,
+    "weight": 1.58,
     "rank": 2,
-    "tier": 7.031228,
+    "tier": 9.160562,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -78320,17 +78740,17 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 81,
+        "length": 83,
         "balance": 0.5,
-        "handling": 85,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 25,
+        "thrustSpeed": 90,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
       }
@@ -78342,10 +78762,10 @@
     "name": "Knight's Fall +3",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 4756,
-    "weight": 1.64,
+    "price": 6006,
+    "weight": 1.58,
     "rank": 3,
-    "tier": 8.04654,
+    "tier": 9.180716,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -78355,19 +78775,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 81,
-        "balance": 0.55,
-        "handling": 86,
+        "length": 83,
+        "balance": 0.5,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 26,
+        "thrustSpeed": 90,
+        "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 85
       }
     ]
   },
@@ -79028,15 +79448,15 @@
     ]
   },
   {
-    "id": "crpg_knobbed_club_h0",
-    "baseId": "crpg_knobbed_club",
-    "name": "Knobbed Club",
+    "id": "crpg_knobbed_ball_club_h0",
+    "baseId": "crpg_knobbed_ball_club",
+    "name": "Knobbed Ball Club",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1065,
-    "weight": 2.44,
+    "price": 3726,
+    "weight": 2.05,
     "rank": 0,
-    "tier": 3.236771,
+    "tier": 6.994136,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -79046,32 +79466,32 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 54,
-        "balance": 0.33,
-        "handling": 88,
+        "length": 56,
+        "balance": 0.5,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 83,
+        "thrustSpeed": 87,
         "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 79
+        "swingSpeed": 85
       }
     ]
   },
   {
-    "id": "crpg_knobbed_club_h1",
-    "baseId": "crpg_knobbed_club",
-    "name": "Knobbed Club +1",
+    "id": "crpg_knobbed_ball_club_h1",
+    "baseId": "crpg_knobbed_ball_club",
+    "name": "Knobbed Ball Club +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1153,
-    "weight": 2.34,
+    "price": 3548,
+    "weight": 2.05,
     "rank": 1,
-    "tier": 3.40950155,
+    "tier": 6.798724,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -79081,67 +79501,32 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 54,
-        "balance": 0.38,
-        "handling": 89,
+        "length": 56,
+        "balance": 0.5,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 26,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 81
-      }
-    ]
-  },
-  {
-    "id": "crpg_knobbed_club_h2",
-    "baseId": "crpg_knobbed_club",
-    "name": "Knobbed Club +2",
-    "culture": "Battania",
-    "type": "OneHandedWeapon",
-    "price": 1385,
-    "weight": 2.26,
-    "rank": 2,
-    "tier": 3.83876228,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 54,
-        "balance": 0.43,
-        "handling": 90,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
+        "thrustSpeed": 87,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 82
+        "swingSpeed": 85
       }
     ]
   },
   {
-    "id": "crpg_knobbed_club_h3",
-    "baseId": "crpg_knobbed_club",
-    "name": "Knobbed Club +3",
+    "id": "crpg_knobbed_ball_club_h2",
+    "baseId": "crpg_knobbed_ball_club",
+    "name": "Knobbed Ball Club +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1749,
-    "weight": 2.26,
-    "rank": 3,
-    "tier": 4.44748259,
+    "price": 4112,
+    "weight": 2.0,
+    "rank": 2,
+    "tier": 7.403985,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -79151,19 +79536,194 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 54,
-        "balance": 0.43,
-        "handling": 90,
+        "length": 56,
+        "balance": 0.54,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
+        "thrustSpeed": 87,
+        "swingDamage": 28,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 86
+      }
+    ]
+  },
+  {
+    "id": "crpg_knobbed_ball_club_h3",
+    "baseId": "crpg_knobbed_ball_club",
+    "name": "Knobbed Ball Club +3",
+    "culture": "Battania",
+    "type": "OneHandedWeapon",
+    "price": 5024,
+    "weight": 1.94,
+    "rank": 3,
+    "tier": 8.301357,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 56,
+        "balance": 0.57,
+        "handling": 92,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
         "swingDamage": 29,
         "swingDamageType": "Blunt",
-        "swingSpeed": 82
+        "swingSpeed": 87
+      }
+    ]
+  },
+  {
+    "id": "crpg_knobbed_mace_h0",
+    "baseId": "crpg_knobbed_mace",
+    "name": "Knobbed Mace",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 5433,
+    "weight": 1.8,
+    "rank": 0,
+    "tier": 8.677272,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 62,
+        "balance": 0.76,
+        "handling": 94,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 22,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 92
+      }
+    ]
+  },
+  {
+    "id": "crpg_knobbed_mace_h1",
+    "baseId": "crpg_knobbed_mace",
+    "name": "Knobbed Mace +1",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 5438,
+    "weight": 1.8,
+    "rank": 1,
+    "tier": 8.681801,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 62,
+        "balance": 0.76,
+        "handling": 94,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 23,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 92
+      }
+    ]
+  },
+  {
+    "id": "crpg_knobbed_mace_h2",
+    "baseId": "crpg_knobbed_mace",
+    "name": "Knobbed Mace +2",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 5526,
+    "weight": 1.8,
+    "rank": 2,
+    "tier": 8.760149,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 62,
+        "balance": 0.76,
+        "handling": 94,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 24,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 92
+      }
+    ]
+  },
+  {
+    "id": "crpg_knobbed_mace_h3",
+    "baseId": "crpg_knobbed_mace",
+    "name": "Knobbed Mace +3",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 6731,
+    "weight": 1.78,
+    "rank": 3,
+    "tier": 9.784486,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 62,
+        "balance": 0.78,
+        "handling": 94,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 25,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 93
       }
     ]
   },
@@ -85192,146 +85752,6 @@
     ]
   },
   {
-    "id": "crpg_light_mace_h0",
-    "baseId": "crpg_light_mace",
-    "name": "Light Mace",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 480,
-    "weight": 1.8,
-    "rank": 0,
-    "tier": 1.83324909,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 45,
-        "balance": 0.97,
-        "handling": 92,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 88,
-        "swingDamage": 15,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 99
-      }
-    ]
-  },
-  {
-    "id": "crpg_light_mace_h1",
-    "baseId": "crpg_light_mace",
-    "name": "Light Mace +1",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 498,
-    "weight": 1.7,
-    "rank": 1,
-    "tier": 1.88605559,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 45,
-        "balance": 1.0,
-        "handling": 94,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 15,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 101
-      }
-    ]
-  },
-  {
-    "id": "crpg_light_mace_h2",
-    "baseId": "crpg_light_mace",
-    "name": "Light Mace +2",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 571,
-    "weight": 1.7,
-    "rank": 2,
-    "tier": 2.09170675,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 45,
-        "balance": 1.0,
-        "handling": 94,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 16,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 101
-      }
-    ]
-  },
-  {
-    "id": "crpg_light_mace_h3",
-    "baseId": "crpg_light_mace",
-    "name": "Light Mace +3",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 931,
-    "weight": 1.7,
-    "rank": 3,
-    "tier": 2.957553,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 45,
-        "balance": 1.0,
-        "handling": 94,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 18,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 101
-      }
-    ]
-  },
-  {
     "id": "crpg_light_morningstar_h0",
     "baseId": "crpg_light_morningstar",
     "name": "Light Morningstar",
@@ -85761,10 +86181,10 @@
     "name": "Light Royal Mace",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2744,
-    "weight": 2.42,
+    "price": 6661,
+    "weight": 1.85,
     "rank": 0,
-    "tier": 5.845641,
+    "tier": 9.727835,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -85774,19 +86194,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 71,
-        "balance": 0.42,
-        "handling": 86,
+        "length": 72,
+        "balance": 0.76,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 83,
-        "swingDamage": 25,
+        "thrustSpeed": 88,
+        "swingDamage": 21,
         "swingDamageType": "Blunt",
-        "swingSpeed": 82
+        "swingSpeed": 92
       }
     ]
   },
@@ -85796,10 +86216,10 @@
     "name": "Light Royal Mace +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2958,
-    "weight": 2.32,
+    "price": 6775,
+    "weight": 1.85,
     "rank": 1,
-    "tier": 6.112012,
+    "tier": 9.819862,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -85809,19 +86229,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 71,
-        "balance": 0.49,
-        "handling": 87,
+        "length": 72,
+        "balance": 0.76,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 25,
+        "thrustSpeed": 88,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 92
       }
     ]
   },
@@ -85831,10 +86251,10 @@
     "name": "Light Royal Mace +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2931,
-    "weight": 2.32,
+    "price": 6986,
+    "weight": 1.85,
     "rank": 2,
-    "tier": 6.079256,
+    "tier": 9.989421,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -85844,19 +86264,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 71,
-        "balance": 0.49,
-        "handling": 87,
+        "length": 72,
+        "balance": 0.76,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 26,
+        "thrustSpeed": 88,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 92
       }
     ]
   },
@@ -85866,10 +86286,10 @@
     "name": "Light Royal Mace +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 3656,
-    "weight": 2.28,
+    "price": 7280,
+    "weight": 1.85,
     "rank": 3,
-    "tier": 6.917684,
+    "tier": 10.221036,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -85879,9 +86299,149 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 71,
-        "balance": 0.53,
-        "handling": 88,
+        "length": 72,
+        "balance": 0.76,
+        "handling": 96,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 24,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 92
+      }
+    ]
+  },
+  {
+    "id": "crpg_light_shestopyor_h0",
+    "baseId": "crpg_light_shestopyor",
+    "name": "Light Shestopyor",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 6124,
+    "weight": 2.3,
+    "rank": 0,
+    "tier": 9.281523,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 66,
+        "balance": 0.55,
+        "handling": 94,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 85,
+        "swingDamage": 25,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 86
+      }
+    ]
+  },
+  {
+    "id": "crpg_light_shestopyor_h1",
+    "baseId": "crpg_light_shestopyor",
+    "name": "Light Shestopyor +1",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 6743,
+    "weight": 2.21,
+    "rank": 1,
+    "tier": 9.794492,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 66,
+        "balance": 0.61,
+        "handling": 96,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 85,
+        "swingDamage": 25,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
+      }
+    ]
+  },
+  {
+    "id": "crpg_light_shestopyor_h2",
+    "baseId": "crpg_light_shestopyor",
+    "name": "Light Shestopyor +2",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 6679,
+    "weight": 2.21,
+    "rank": 2,
+    "tier": 9.741999,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 66,
+        "balance": 0.61,
+        "handling": 96,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 85,
+        "swingDamage": 26,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
+      }
+    ]
+  },
+  {
+    "id": "crpg_light_shestopyor_h3",
+    "baseId": "crpg_light_shestopyor",
+    "name": "Light Shestopyor +3",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 6705,
+    "weight": 2.21,
+    "rank": 3,
+    "tier": 9.763437,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 66,
+        "balance": 0.61,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -85891,7 +86451,7 @@
         "thrustSpeed": 85,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 88
       }
     ]
   },
@@ -85901,10 +86461,10 @@
     "name": "Light Shishpar Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 1362,
-    "weight": 1.99,
+    "price": 6512,
+    "weight": 1.72,
     "rank": 0,
-    "tier": 3.79880071,
+    "tier": 9.60586,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -85914,19 +86474,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 57,
-        "balance": 0.84,
-        "handling": 101,
+        "length": 70,
+        "balance": 0.71,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 17,
+        "thrustSpeed": 89,
+        "swingDamage": 22,
         "swingDamageType": "Blunt",
-        "swingSpeed": 95
+        "swingSpeed": 91
       }
     ]
   },
@@ -85936,10 +86496,10 @@
     "name": "Light Shishpar Mace +1",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 1389,
-    "weight": 1.91,
+    "price": 6518,
+    "weight": 1.72,
     "rank": 1,
-    "tier": 3.84629321,
+    "tier": 9.610879,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -85949,19 +86509,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 57,
-        "balance": 0.9,
-        "handling": 102,
+        "length": 70,
+        "balance": 0.71,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 88,
-        "swingDamage": 17,
+        "thrustSpeed": 89,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
-        "swingSpeed": 97
+        "swingSpeed": 91
       }
     ]
   },
@@ -85971,10 +86531,10 @@
     "name": "Light Shishpar Mace +2",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 1555,
-    "weight": 1.91,
+    "price": 6624,
+    "weight": 1.72,
     "rank": 2,
-    "tier": 4.13244152,
+    "tier": 9.697609,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -85984,19 +86544,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 57,
-        "balance": 0.9,
-        "handling": 102,
+        "length": 70,
+        "balance": 0.71,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 88,
-        "swingDamage": 18,
+        "thrustSpeed": 89,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 97
+        "swingSpeed": 91
       }
     ]
   },
@@ -86006,10 +86566,10 @@
     "name": "Light Shishpar Mace +3",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 2087,
-    "weight": 1.87,
+    "price": 6810,
+    "weight": 1.72,
     "rank": 3,
-    "tier": 4.958194,
+    "tier": 9.848594,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -86019,19 +86579,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 57,
-        "balance": 0.95,
-        "handling": 103,
+        "length": 70,
+        "balance": 0.71,
+        "handling": 93,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 88,
-        "swingDamage": 19,
+        "thrustSpeed": 89,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 98
+        "swingSpeed": 91
       }
     ]
   },
@@ -86134,6 +86694,146 @@
       "familyType": 0
     },
     "weapons": []
+  },
+  {
+    "id": "crpg_light_winged_mace_h0",
+    "baseId": "crpg_light_winged_mace",
+    "name": "Light Winged Mace",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6424,
+    "weight": 1.4,
+    "rank": 0,
+    "tier": 9.532592,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 65,
+        "balance": 0.82,
+        "handling": 95,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 92,
+        "swingDamage": 21,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 94
+      }
+    ]
+  },
+  {
+    "id": "crpg_light_winged_mace_h1",
+    "baseId": "crpg_light_winged_mace",
+    "name": "Light Winged Mace +1",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6533,
+    "weight": 1.4,
+    "rank": 1,
+    "tier": 9.622772,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 65,
+        "balance": 0.82,
+        "handling": 95,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 92,
+        "swingDamage": 22,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 94
+      }
+    ]
+  },
+  {
+    "id": "crpg_light_winged_mace_h2",
+    "baseId": "crpg_light_winged_mace",
+    "name": "Light Winged Mace +2",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 6736,
+    "weight": 1.4,
+    "rank": 2,
+    "tier": 9.788927,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 65,
+        "balance": 0.82,
+        "handling": 95,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 92,
+        "swingDamage": 23,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 94
+      }
+    ]
+  },
+  {
+    "id": "crpg_light_winged_mace_h3",
+    "baseId": "crpg_light_winged_mace",
+    "name": "Light Winged Mace +3",
+    "culture": "Aserai",
+    "type": "OneHandedWeapon",
+    "price": 7020,
+    "weight": 1.4,
+    "rank": 3,
+    "tier": 10.01589,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 65,
+        "balance": 0.82,
+        "handling": 95,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 92,
+        "swingDamage": 24,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 94
+      }
+    ]
   },
   {
     "id": "crpg_lion_imprinted_saber_h0",
@@ -86950,6 +87650,146 @@
         "swingDamage": 0,
         "swingDamageType": "Undefined",
         "swingSpeed": 17
+      }
+    ]
+  },
+  {
+    "id": "crpg_long_cavalry_mace_h0",
+    "baseId": "crpg_long_cavalry_mace",
+    "name": "Long Cavalry Mace",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 5293,
+    "weight": 1.84,
+    "rank": 0,
+    "tier": 8.549776,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 0.27,
+        "handling": 82,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 26,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 78
+      }
+    ]
+  },
+  {
+    "id": "crpg_long_cavalry_mace_h1",
+    "baseId": "crpg_long_cavalry_mace",
+    "name": "Long Cavalry Mace +1",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 5035,
+    "weight": 1.84,
+    "rank": 1,
+    "tier": 8.310899,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 0.27,
+        "handling": 82,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 27,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 78
+      }
+    ]
+  },
+  {
+    "id": "crpg_long_cavalry_mace_h2",
+    "baseId": "crpg_long_cavalry_mace",
+    "name": "Long Cavalry Mace +2",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 4880,
+    "weight": 1.84,
+    "rank": 2,
+    "tier": 8.165567,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 0.27,
+        "handling": 82,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 28,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 78
+      }
+    ]
+  },
+  {
+    "id": "crpg_long_cavalry_mace_h3",
+    "baseId": "crpg_long_cavalry_mace",
+    "name": "Long Cavalry Mace +3",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 6114,
+    "weight": 1.81,
+    "rank": 3,
+    "tier": 9.272746,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 102,
+        "balance": 0.31,
+        "handling": 83,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 29,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 79
       }
     ]
   },
@@ -88300,6 +89140,146 @@
       "familyType": 0
     },
     "weapons": []
+  },
+  {
+    "id": "crpg_long_pernach_h0",
+    "baseId": "crpg_long_pernach",
+    "name": "Long Pernach",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 5732,
+    "weight": 1.99,
+    "rank": 0,
+    "tier": 8.942796,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 92,
+        "balance": 0.34,
+        "handling": 84,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 26,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 80
+      }
+    ]
+  },
+  {
+    "id": "crpg_long_pernach_h1",
+    "baseId": "crpg_long_pernach",
+    "name": "Long Pernach +1",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 6538,
+    "weight": 1.91,
+    "rank": 1,
+    "tier": 9.627118,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 92,
+        "balance": 0.42,
+        "handling": 86,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 26,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 82
+      }
+    ]
+  },
+  {
+    "id": "crpg_long_pernach_h2",
+    "baseId": "crpg_long_pernach",
+    "name": "Long Pernach +2",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 6402,
+    "weight": 1.91,
+    "rank": 2,
+    "tier": 9.514761,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 92,
+        "balance": 0.42,
+        "handling": 86,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 27,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 82
+      }
+    ]
+  },
+  {
+    "id": "crpg_long_pernach_h3",
+    "baseId": "crpg_long_pernach",
+    "name": "Long Pernach +3",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 6360,
+    "weight": 1.91,
+    "rank": 3,
+    "tier": 9.479579,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 92,
+        "balance": 0.42,
+        "handling": 86,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 28,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 82
+      }
+    ]
   },
   {
     "id": "crpg_long_steel_mace_h0",
@@ -92529,10 +93509,10 @@
     "name": "Medium Goedendag",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 6272,
-    "weight": 1.76,
+    "price": 6955,
+    "weight": 1.7,
     "rank": 0,
-    "tier": 9.405788,
+    "tier": 9.964259,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -92543,18 +93523,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 71,
-        "balance": 0.52,
-        "handling": 89,
+        "balance": 0.57,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 25,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 87
       }
     ]
   },
@@ -92564,10 +93544,10 @@
     "name": "Medium Goedendag +1",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5954,
-    "weight": 1.76,
+    "price": 6857,
+    "weight": 1.7,
     "rank": 1,
-    "tier": 9.135416,
+    "tier": 9.886338,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -92578,8 +93558,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 71,
-        "balance": 0.52,
-        "handling": 89,
+        "balance": 0.57,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -92587,9 +93567,9 @@
         "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 26,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 87
       }
     ]
   },
@@ -92599,10 +93579,10 @@
     "name": "Medium Goedendag +2",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 5764,
-    "weight": 1.76,
+    "price": 6884,
+    "weight": 1.7,
     "rank": 2,
-    "tier": 8.971235,
+    "tier": 9.908052,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -92613,18 +93593,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 71,
-        "balance": 0.52,
-        "handling": 89,
+        "balance": 0.57,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 24,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 27,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 87
       }
     ]
   },
@@ -92634,10 +93614,10 @@
     "name": "Medium Goedendag +3",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 7210,
-    "weight": 1.73,
+    "price": 7010,
+    "weight": 1.7,
     "rank": 3,
-    "tier": 10.1660013,
+    "tier": 10.0085983,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -92648,18 +93628,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 71,
-        "balance": 0.55,
-        "handling": 90,
+        "balance": 0.57,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 25,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 28,
+        "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 87
       }
     ]
   },
@@ -93249,10 +94229,10 @@
     "name": "Military Hammer",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 6797,
-    "weight": 1.45,
+    "price": 5660,
+    "weight": 1.54,
     "rank": 0,
-    "tier": 9.838278,
+    "tier": 8.879196,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -93264,8 +94244,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 78,
-        "balance": 0.52,
+        "length": 74,
+        "balance": 0.5,
         "handling": 87,
         "bodyArmor": 0,
         "flags": [
@@ -93273,7 +94253,7 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 91,
+        "thrustSpeed": 90,
         "swingDamage": 25,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
@@ -93286,10 +94266,10 @@
     "name": "Military Hammer +1",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 6535,
-    "weight": 1.45,
+    "price": 5443,
+    "weight": 1.54,
     "rank": 1,
-    "tier": 9.624474,
+    "tier": 8.686237,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -93301,8 +94281,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 78,
-        "balance": 0.52,
+        "length": 74,
+        "balance": 0.5,
         "handling": 87,
         "bodyArmor": 0,
         "flags": [
@@ -93310,7 +94290,7 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 91,
+        "thrustSpeed": 90,
         "swingDamage": 26,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
@@ -93323,10 +94303,10 @@
     "name": "Military Hammer +2",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 6399,
-    "weight": 1.45,
+    "price": 5331,
+    "weight": 1.54,
     "rank": 2,
-    "tier": 9.512148,
+    "tier": 8.584857,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -93338,8 +94318,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 78,
-        "balance": 0.52,
+        "length": 74,
+        "balance": 0.5,
         "handling": 87,
         "bodyArmor": 0,
         "flags": [
@@ -93347,7 +94327,7 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 91,
+        "thrustSpeed": 90,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
@@ -93360,10 +94340,10 @@
     "name": "Military Hammer +3",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 6357,
-    "weight": 1.45,
+    "price": 6361,
+    "weight": 1.52,
     "rank": 3,
-    "tier": 9.476975,
+    "tier": 9.480344,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -93375,8 +94355,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 78,
-        "balance": 0.52,
+        "length": 74,
+        "balance": 0.53,
         "handling": 87,
         "bodyArmor": 0,
         "flags": [
@@ -93384,150 +94364,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 91,
+        "thrustSpeed": 90,
         "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
-      }
-    ]
-  },
-  {
-    "id": "crpg_militia_mace_h0",
-    "baseId": "crpg_militia_mace",
-    "name": "Militia Mace",
-    "culture": "Aserai",
-    "type": "OneHandedWeapon",
-    "price": 717,
-    "weight": 2.48,
-    "rank": 0,
-    "tier": 2.46830845,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 52,
-        "balance": 0.33,
-        "handling": 89,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 83,
-        "swingDamage": 24,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 80
-      }
-    ]
-  },
-  {
-    "id": "crpg_militia_mace_h1",
-    "baseId": "crpg_militia_mace",
-    "name": "Militia Mace +1",
-    "culture": "Aserai",
-    "type": "OneHandedWeapon",
-    "price": 794,
-    "weight": 2.35,
-    "rank": 1,
-    "tier": 2.65025067,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 52,
-        "balance": 0.4,
-        "handling": 91,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 24,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 82
-      }
-    ]
-  },
-  {
-    "id": "crpg_militia_mace_h2",
-    "baseId": "crpg_militia_mace",
-    "name": "Militia Mace +2",
-    "culture": "Aserai",
-    "type": "OneHandedWeapon",
-    "price": 929,
-    "weight": 2.28,
-    "rank": 2,
-    "tier": 2.95303679,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 52,
-        "balance": 0.43,
-        "handling": 91,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 25,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 83
-      }
-    ]
-  },
-  {
-    "id": "crpg_militia_mace_h3",
-    "baseId": "crpg_militia_mace",
-    "name": "Militia Mace +3",
-    "culture": "Aserai",
-    "type": "OneHandedWeapon",
-    "price": 1202,
-    "weight": 2.28,
-    "rank": 3,
-    "tier": 3.50321651,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 52,
-        "balance": 0.43,
-        "handling": 91,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 27,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 83
+        "swingSpeed": 86
       }
     ]
   },
@@ -93537,10 +94377,10 @@
     "name": "Militia Pernach",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3730,
-    "weight": 2.58,
+    "price": 7190,
+    "weight": 2.25,
     "rank": 0,
-    "tier": 6.999068,
+    "tier": 10.1501474,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -93550,19 +94390,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 73,
-        "balance": 0.49,
-        "handling": 90,
+        "length": 76,
+        "balance": 0.55,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 82,
+        "thrustSpeed": 85,
         "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
@@ -93572,10 +94412,10 @@
     "name": "Militia Pernach +1",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3634,
-    "weight": 2.58,
+    "price": 6997,
+    "weight": 2.25,
     "rank": 1,
-    "tier": 6.89427662,
+    "tier": 9.998171,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -93585,19 +94425,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 73,
-        "balance": 0.49,
-        "handling": 90,
+        "length": 76,
+        "balance": 0.55,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 82,
+        "thrustSpeed": 85,
         "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
@@ -93607,10 +94447,10 @@
     "name": "Militia Pernach +2",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 3601,
-    "weight": 2.58,
+    "price": 6930,
+    "weight": 2.25,
     "rank": 2,
-    "tier": 6.857329,
+    "tier": 9.944586,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -93620,19 +94460,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 73,
-        "balance": 0.49,
-        "handling": 90,
+        "length": 76,
+        "balance": 0.55,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 82,
+        "thrustSpeed": 85,
         "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 84
+        "swingSpeed": 86
       }
     ]
   },
@@ -93642,10 +94482,10 @@
     "name": "Militia Pernach +3",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 4501,
-    "weight": 2.55,
+    "price": 6957,
+    "weight": 2.25,
     "rank": 3,
-    "tier": 7.79715443,
+    "tier": 9.966472,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -93655,19 +94495,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 73,
-        "balance": 0.5,
-        "handling": 91,
+        "length": 76,
+        "balance": 0.55,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 82,
+        "thrustSpeed": 85,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 86
       }
     ]
   },
@@ -101516,7 +102356,7 @@
   {
     "id": "crpg_mount1_saddlehorse_15_h1",
     "baseId": "crpg_mount1_saddlehorse_15",
-    "name": "Grani",
+    "name": "Grani +1",
     "culture": "Neutral",
     "type": "Mount",
     "price": 10710,
@@ -101538,13 +102378,13 @@
   {
     "id": "crpg_mount1_saddlehorse_15_h2",
     "baseId": "crpg_mount1_saddlehorse_15",
-    "name": "Grani",
+    "name": "Grani +2",
     "culture": "Neutral",
     "type": "Mount",
-    "price": 10582,
+    "price": 10754,
     "weight": 420.0,
     "rank": 2,
-    "tier": 10.9372978,
+    "tier": 11.0348921,
     "requirement": 0,
     "flags": [],
     "mount": {
@@ -101552,7 +102392,7 @@
       "chargeDamage": 3,
       "maneuver": 75,
       "speed": 61,
-      "hitPoints": 176,
+      "hitPoints": 177,
       "familyType": 1
     },
     "weapons": []
@@ -101560,7 +102400,7 @@
   {
     "id": "crpg_mount1_saddlehorse_15_h3",
     "baseId": "crpg_mount1_saddlehorse_15",
-    "name": "Grani",
+    "name": "Grani +3",
     "culture": "Neutral",
     "type": "Mount",
     "price": 10708,
@@ -113638,7 +114478,7 @@
     "culture": "Vlandia",
     "type": "Shield",
     "price": 4956,
-    "weight": 4.113909,
+    "weight": 18.98727,
     "rank": 0,
     "tier": 8.236979,
     "requirement": 0,
@@ -113677,10 +114517,10 @@
     "name": "Pavise +1",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 4953,
-    "weight": 4.113909,
+    "price": 5321,
+    "weight": 18.98727,
     "rank": 1,
-    "tier": 8.234594,
+    "tier": 8.57521248,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -113693,7 +114533,7 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 635,
+        "stackAmount": 648,
         "length": 118,
         "balance": 0.0,
         "handling": 80,
@@ -113717,10 +114557,10 @@
     "name": "Pavise +2",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 5139,
-    "weight": 4.113909,
+    "price": 5036,
+    "weight": 18.98727,
     "rank": 2,
-    "tier": 8.408405,
+    "tier": 8.312587,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -113733,7 +114573,7 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 700,
+        "stackAmount": 696,
         "length": 118,
         "balance": 0.0,
         "handling": 80,
@@ -113757,10 +114597,10 @@
     "name": "Pavise +3",
     "culture": "Vlandia",
     "type": "Shield",
-    "price": 5424,
-    "weight": 4.113909,
+    "price": 4805,
+    "weight": 18.98727,
     "rank": 3,
-    "tier": 8.66912,
+    "tier": 8.093557,
     "requirement": 0,
     "flags": [
       "ForceAttachOffHandSecondaryItemBone",
@@ -113773,7 +114613,7 @@
         "itemUsage": "shield",
         "accuracy": 100,
         "missileSpeed": 0,
-        "stackAmount": 770,
+        "stackAmount": 744,
         "length": 118,
         "balance": 0.0,
         "handling": 80,
@@ -114508,15 +115348,15 @@
     "weapons": []
   },
   {
-    "id": "crpg_pernach_h0",
-    "baseId": "crpg_pernach",
-    "name": "Pernach",
-    "culture": "Vlandia",
+    "id": "crpg_persian_steel_mace_h0",
+    "baseId": "crpg_persian_steel_mace",
+    "name": "Persian Steel Mace",
+    "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6330,
-    "weight": 2.12,
+    "price": 6960,
+    "weight": 1.79,
     "rank": 0,
-    "tier": 9.454965,
+    "tier": 9.968363,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -114526,32 +115366,32 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 89,
-        "balance": 0.43,
-        "handling": 74,
+        "length": 90,
+        "balance": 0.47,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 27,
+        "thrustSpeed": 88,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 82
+        "swingSpeed": 84
       }
     ]
   },
   {
-    "id": "crpg_pernach_h1",
-    "baseId": "crpg_pernach",
-    "name": "Pernach +1",
-    "culture": "Vlandia",
+    "id": "crpg_persian_steel_mace_h1",
+    "baseId": "crpg_persian_steel_mace",
+    "name": "Persian Steel Mace +1",
+    "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6578,
-    "weight": 2.06,
+    "price": 6774,
+    "weight": 1.79,
     "rank": 1,
-    "tier": 9.659853,
+    "tier": 9.819113,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -114561,32 +115401,32 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 89,
+        "length": 90,
         "balance": 0.47,
-        "handling": 74,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 27,
+        "thrustSpeed": 88,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
         "swingSpeed": 84
       }
     ]
   },
   {
-    "id": "crpg_pernach_h2",
-    "baseId": "crpg_pernach",
-    "name": "Pernach +2",
-    "culture": "Vlandia",
+    "id": "crpg_persian_steel_mace_h2",
+    "baseId": "crpg_persian_steel_mace",
+    "name": "Persian Steel Mace +2",
+    "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6373,
-    "weight": 2.06,
+    "price": 6709,
+    "weight": 1.79,
     "rank": 2,
-    "tier": 9.490931,
+    "tier": 9.766491,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -114596,32 +115436,32 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 89,
+        "length": 90,
         "balance": 0.47,
-        "handling": 74,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 28,
+        "thrustSpeed": 88,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
         "swingSpeed": 84
       }
     ]
   },
   {
-    "id": "crpg_pernach_h3",
-    "baseId": "crpg_pernach",
-    "name": "Pernach +3",
-    "culture": "Vlandia",
+    "id": "crpg_persian_steel_mace_h3",
+    "baseId": "crpg_persian_steel_mace",
+    "name": "Persian Steel Mace +3",
+    "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6270,
-    "weight": 2.06,
+    "price": 6735,
+    "weight": 1.79,
     "rank": 3,
-    "tier": 9.404082,
+    "tier": 9.787982,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -114631,17 +115471,17 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 89,
+        "length": 90,
         "balance": 0.47,
-        "handling": 74,
+        "handling": 87,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 29,
+        "thrustSpeed": 88,
+        "swingDamage": 27,
         "swingDamageType": "Blunt",
         "swingSpeed": 84
       }
@@ -117660,8 +118500,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_pugio_h0",
-    "baseId": "crpg_pugio",
+    "id": "crpg_pugio_v1_h0",
+    "baseId": "crpg_pugio_v1",
     "name": "Pugio",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -117721,8 +118561,8 @@
     ]
   },
   {
-    "id": "crpg_pugio_h1",
-    "baseId": "crpg_pugio",
+    "id": "crpg_pugio_v1_h1",
+    "baseId": "crpg_pugio_v1",
     "name": "Pugio +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -117782,8 +118622,8 @@
     ]
   },
   {
-    "id": "crpg_pugio_h2",
-    "baseId": "crpg_pugio",
+    "id": "crpg_pugio_v1_h2",
+    "baseId": "crpg_pugio_v1",
     "name": "Pugio +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -117843,8 +118683,8 @@
     ]
   },
   {
-    "id": "crpg_pugio_h3",
-    "baseId": "crpg_pugio",
+    "id": "crpg_pugio_v1_h3",
+    "baseId": "crpg_pugio_v1",
     "name": "Pugio +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -122238,8 +123078,8 @@
     ]
   },
   {
-    "id": "crpg_rondel_h0",
-    "baseId": "crpg_rondel",
+    "id": "crpg_rondel_v1_h0",
+    "baseId": "crpg_rondel_v1",
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -122275,8 +123115,8 @@
     ]
   },
   {
-    "id": "crpg_rondel_h1",
-    "baseId": "crpg_rondel",
+    "id": "crpg_rondel_v1_h1",
+    "baseId": "crpg_rondel_v1",
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -122312,8 +123152,8 @@
     ]
   },
   {
-    "id": "crpg_rondel_h2",
-    "baseId": "crpg_rondel",
+    "id": "crpg_rondel_v1_h2",
+    "baseId": "crpg_rondel_v1",
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -122349,8 +123189,8 @@
     ]
   },
   {
-    "id": "crpg_rondel_h3",
-    "baseId": "crpg_rondel",
+    "id": "crpg_rondel_v1_h3",
+    "baseId": "crpg_rondel_v1",
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -124228,6 +125068,146 @@
       "familyType": 0
     },
     "weapons": []
+  },
+  {
+    "id": "crpg_rus_mace_h0",
+    "baseId": "crpg_rus_mace",
+    "name": "Rus Mace",
+    "culture": "Sturgia",
+    "type": "OneHandedWeapon",
+    "price": 4773,
+    "weight": 1.93,
+    "rank": 0,
+    "tier": 8.062839,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 54,
+        "balance": 0.61,
+        "handling": 94,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 25,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
+      }
+    ]
+  },
+  {
+    "id": "crpg_rus_mace_h1",
+    "baseId": "crpg_rus_mace",
+    "name": "Rus Mace +1",
+    "culture": "Sturgia",
+    "type": "OneHandedWeapon",
+    "price": 4592,
+    "weight": 1.93,
+    "rank": 1,
+    "tier": 7.88762045,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 54,
+        "balance": 0.61,
+        "handling": 94,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 26,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
+      }
+    ]
+  },
+  {
+    "id": "crpg_rus_mace_h2",
+    "baseId": "crpg_rus_mace",
+    "name": "Rus Mace +2",
+    "culture": "Sturgia",
+    "type": "OneHandedWeapon",
+    "price": 4499,
+    "weight": 1.93,
+    "rank": 2,
+    "tier": 7.795564,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 54,
+        "balance": 0.61,
+        "handling": 94,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 27,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 88
+      }
+    ]
+  },
+  {
+    "id": "crpg_rus_mace_h3",
+    "baseId": "crpg_rus_mace",
+    "name": "Rus Mace +3",
+    "culture": "Sturgia",
+    "type": "OneHandedWeapon",
+    "price": 5528,
+    "weight": 1.86,
+    "rank": 3,
+    "tier": 8.762236,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 54,
+        "balance": 0.64,
+        "handling": 95,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 28,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 89
+      }
+    ]
   },
   {
     "id": "crpg_rus_open_helm_v2_h0",
@@ -127620,8 +128600,8 @@
     ]
   },
   {
-    "id": "crpg_seax_h0",
-    "baseId": "crpg_seax",
+    "id": "crpg_seax_v1_h0",
+    "baseId": "crpg_seax_v1",
     "name": "Seax",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
@@ -127658,8 +128638,8 @@
     ]
   },
   {
-    "id": "crpg_seax_h1",
-    "baseId": "crpg_seax",
+    "id": "crpg_seax_v1_h1",
+    "baseId": "crpg_seax_v1",
     "name": "Seax +1",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
@@ -127696,8 +128676,8 @@
     ]
   },
   {
-    "id": "crpg_seax_h2",
-    "baseId": "crpg_seax",
+    "id": "crpg_seax_v1_h2",
+    "baseId": "crpg_seax_v1",
     "name": "Seax +2",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
@@ -127734,8 +128714,8 @@
     ]
   },
   {
-    "id": "crpg_seax_h3",
-    "baseId": "crpg_seax",
+    "id": "crpg_seax_v1_h3",
+    "baseId": "crpg_seax_v1",
     "name": "Seax +3",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
@@ -130250,6 +131230,146 @@
         "swingDamage": 22,
         "swingDamageType": "Blunt",
         "swingSpeed": 89
+      }
+    ]
+  },
+  {
+    "id": "crpg_short_western_mace_h0",
+    "baseId": "crpg_short_western_mace",
+    "name": "Short Western Mace",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 6765,
+    "weight": 1.47,
+    "rank": 0,
+    "tier": 9.81196,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 60,
+        "balance": 0.9,
+        "handling": 100,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 92,
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 97
+      }
+    ]
+  },
+  {
+    "id": "crpg_short_western_mace_h1",
+    "baseId": "crpg_short_western_mace",
+    "name": "Short Western Mace +1",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 7002,
+    "weight": 1.47,
+    "rank": 1,
+    "tier": 10.0019436,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 60,
+        "balance": 0.9,
+        "handling": 100,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 92,
+        "swingDamage": 21,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 97
+      }
+    ]
+  },
+  {
+    "id": "crpg_short_western_mace_h2",
+    "baseId": "crpg_short_western_mace",
+    "name": "Short Western Mace +2",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 7338,
+    "weight": 1.47,
+    "rank": 2,
+    "tier": 10.265543,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 60,
+        "balance": 0.9,
+        "handling": 100,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 92,
+        "swingDamage": 22,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 97
+      }
+    ]
+  },
+  {
+    "id": "crpg_short_western_mace_h3",
+    "baseId": "crpg_short_western_mace",
+    "name": "Short Western Mace +3",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 7761,
+    "weight": 1.47,
+    "rank": 3,
+    "tier": 10.5893641,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 60,
+        "balance": 0.9,
+        "handling": 100,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 92,
+        "swingDamage": 23,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 97
       }
     ]
   },
@@ -137107,10 +138227,10 @@
     "name": "Spiralled Mace",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6797,
-    "weight": 1.21,
+    "price": 6382,
+    "weight": 1.52,
     "rank": 0,
-    "tier": 9.838298,
+    "tier": 9.498114,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -137120,8 +138240,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 87,
-        "balance": 0.61,
+        "length": 86,
+        "balance": 0.55,
         "handling": 88,
         "bodyArmor": 0,
         "flags": [
@@ -137129,10 +138249,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 22,
+        "thrustSpeed": 90,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 86
       }
     ]
   },
@@ -137142,10 +138262,10 @@
     "name": "Spiralled Mace +1",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6804,
-    "weight": 1.21,
+    "price": 6296,
+    "weight": 1.52,
     "rank": 1,
-    "tier": 9.843435,
+    "tier": 9.426069,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -137155,8 +138275,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 87,
-        "balance": 0.61,
+        "length": 86,
+        "balance": 0.55,
         "handling": 88,
         "bodyArmor": 0,
         "flags": [
@@ -137164,10 +138284,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 23,
+        "thrustSpeed": 90,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 86
       }
     ]
   },
@@ -137177,10 +138297,10 @@
     "name": "Spiralled Mace +2",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 6915,
-    "weight": 1.21,
+    "price": 6313,
+    "weight": 1.52,
     "rank": 2,
-    "tier": 9.932264,
+    "tier": 9.440332,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -137190,8 +138310,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 87,
-        "balance": 0.61,
+        "length": 86,
+        "balance": 0.55,
         "handling": 88,
         "bodyArmor": 0,
         "flags": [
@@ -137199,10 +138319,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 24,
+        "thrustSpeed": 90,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 86
       }
     ]
   },
@@ -137212,10 +138332,10 @@
     "name": "Spiralled Mace +3",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 7109,
-    "weight": 1.21,
+    "price": 6410,
+    "weight": 1.52,
     "rank": 3,
-    "tier": 10.0869017,
+    "tier": 9.521522,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -137225,8 +138345,8 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 87,
-        "balance": 0.61,
+        "length": 86,
+        "balance": 0.55,
         "handling": 88,
         "bodyArmor": 0,
         "flags": [
@@ -137234,10 +138354,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 25,
+        "thrustSpeed": 90,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 86
       }
     ]
   },
@@ -138054,6 +139174,146 @@
     ]
   },
   {
+    "id": "crpg_star_pointed_mace_h0",
+    "baseId": "crpg_star_pointed_mace",
+    "name": "Star Pointed Mace",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 5759,
+    "weight": 1.88,
+    "rank": 0,
+    "tier": 8.966162,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 61,
+        "balance": 0.64,
+        "handling": 93,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 88,
+        "swingDamage": 24,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 89
+      }
+    ]
+  },
+  {
+    "id": "crpg_star_pointed_mace_h1",
+    "baseId": "crpg_star_pointed_mace",
+    "name": "Star Pointed Mace +1",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 6267,
+    "weight": 1.79,
+    "rank": 1,
+    "tier": 9.402311,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 61,
+        "balance": 0.71,
+        "handling": 95,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 24,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 91
+      }
+    ]
+  },
+  {
+    "id": "crpg_star_pointed_mace_h2",
+    "baseId": "crpg_star_pointed_mace",
+    "name": "Star Pointed Mace +2",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 6284,
+    "weight": 1.79,
+    "rank": 2,
+    "tier": 9.416535,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 61,
+        "balance": 0.71,
+        "handling": 95,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 25,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 91
+      }
+    ]
+  },
+  {
+    "id": "crpg_star_pointed_mace_h3",
+    "baseId": "crpg_star_pointed_mace",
+    "name": "Star Pointed Mace +3",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 6381,
+    "weight": 1.79,
+    "rank": 3,
+    "tier": 9.497522,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 61,
+        "balance": 0.71,
+        "handling": 95,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 26,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 91
+      }
+    ]
+  },
+  {
     "id": "crpg_steel_banner_t3",
     "baseId": "crpg_steel_banner",
     "name": "Steel Banner",
@@ -138236,6 +139496,146 @@
         "swingDamage": 37,
         "swingDamageType": "Cut",
         "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_steel_flanged_mace_h0",
+    "baseId": "crpg_steel_flanged_mace",
+    "name": "Steel Flanged Mace",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 4686,
+    "weight": 2.06,
+    "rank": 0,
+    "tier": 7.97847271,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.44,
+        "handling": 87,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 86,
+        "swingDamage": 25,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_steel_flanged_mace_h1",
+    "baseId": "crpg_steel_flanged_mace",
+    "name": "Steel Flanged Mace +1",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 4509,
+    "weight": 2.06,
+    "rank": 1,
+    "tier": 7.80508566,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.44,
+        "handling": 87,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 86,
+        "swingDamage": 26,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_steel_flanged_mace_h2",
+    "baseId": "crpg_steel_flanged_mace",
+    "name": "Steel Flanged Mace +2",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 4417,
+    "weight": 2.06,
+    "rank": 2,
+    "tier": 7.713993,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.44,
+        "handling": 87,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 86,
+        "swingDamage": 27,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_steel_flanged_mace_h3",
+    "baseId": "crpg_steel_flanged_mace",
+    "name": "Steel Flanged Mace +3",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 5500,
+    "weight": 2.01,
+    "rank": 3,
+    "tier": 8.73711,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.48,
+        "handling": 88,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 28,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 84
       }
     ]
   },
@@ -138540,15 +139940,15 @@
     ]
   },
   {
-    "id": "crpg_steel_mace_h0",
-    "baseId": "crpg_steel_mace",
-    "name": "Steel Mace",
-    "culture": "Khuzait",
+    "id": "crpg_steel_pernach_h0",
+    "baseId": "crpg_steel_pernach",
+    "name": "Steel Pernach",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 5574,
-    "weight": 2.31,
+    "price": 2968,
+    "weight": 2.42,
     "rank": 0,
-    "tier": 8.803408,
+    "tier": 6.12369251,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -138558,67 +139958,32 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 93,
-        "balance": 0.39,
-        "handling": 78,
+        "length": 87,
+        "balance": 0.3,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
-        "swingDamage": 26,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 81
-      }
-    ]
-  },
-  {
-    "id": "crpg_steel_mace_h1",
-    "baseId": "crpg_steel_mace",
-    "name": "Steel Mace +1",
-    "culture": "Khuzait",
-    "type": "OneHandedWeapon",
-    "price": 5301,
-    "weight": 2.31,
-    "rank": 1,
-    "tier": 8.55744648,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 93,
-        "balance": 0.39,
-        "handling": 78,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
+        "thrustSpeed": 83,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 78
       }
     ]
   },
   {
-    "id": "crpg_steel_mace_h2",
-    "baseId": "crpg_steel_mace",
-    "name": "Steel Mace +2",
-    "culture": "Khuzait",
+    "id": "crpg_steel_pernach_h1",
+    "baseId": "crpg_steel_pernach",
+    "name": "Steel Pernach +1",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 5139,
-    "weight": 2.31,
-    "rank": 2,
-    "tier": 8.407801,
+    "price": 2801,
+    "weight": 2.42,
+    "rank": 1,
+    "tier": 5.91757,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -138628,32 +139993,32 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 93,
-        "balance": 0.39,
-        "handling": 78,
+        "length": 87,
+        "balance": 0.3,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 84,
+        "thrustSpeed": 83,
         "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 81
+        "swingSpeed": 78
       }
     ]
   },
   {
-    "id": "crpg_steel_mace_h3",
-    "baseId": "crpg_steel_mace",
-    "name": "Steel Mace +3",
-    "culture": "Khuzait",
+    "id": "crpg_steel_pernach_h2",
+    "baseId": "crpg_steel_pernach",
+    "name": "Steel Pernach +2",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 6409,
-    "weight": 2.27,
-    "rank": 3,
-    "tier": 9.520258,
+    "price": 3258,
+    "weight": 2.38,
+    "rank": 2,
+    "tier": 6.46820736,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -138663,9 +140028,44 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 93,
-        "balance": 0.43,
-        "handling": 79,
+        "length": 87,
+        "balance": 0.32,
+        "handling": 76,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 83,
+        "swingDamage": 29,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 79
+      }
+    ]
+  },
+  {
+    "id": "crpg_steel_pernach_h3",
+    "baseId": "crpg_steel_pernach",
+    "name": "Steel Pernach +3",
+    "culture": "Vlandia",
+    "type": "OneHandedWeapon",
+    "price": 3845,
+    "weight": 2.35,
+    "rank": 3,
+    "tier": 7.12267971,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 87,
+        "balance": 0.34,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -138673,9 +140073,9 @@
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
         "thrustSpeed": 84,
-        "swingDamage": 29,
+        "swingDamage": 30,
         "swingDamageType": "Blunt",
-        "swingSpeed": 82
+        "swingSpeed": 80
       }
     ]
   },
@@ -139288,146 +140688,6 @@
     ]
   },
   {
-    "id": "crpg_steel_shestopyor_h0",
-    "baseId": "crpg_steel_shestopyor",
-    "name": "Steel Shestopyor",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 6804,
-    "weight": 1.39,
-    "rank": 0,
-    "tier": 9.84382,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 80,
-        "balance": 0.53,
-        "handling": 88,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 24,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 86
-      }
-    ]
-  },
-  {
-    "id": "crpg_steel_shestopyor_h1",
-    "baseId": "crpg_steel_shestopyor",
-    "name": "Steel Shestopyor +1",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 6623,
-    "weight": 1.39,
-    "rank": 1,
-    "tier": 9.696431,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 80,
-        "balance": 0.53,
-        "handling": 88,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 25,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 86
-      }
-    ]
-  },
-  {
-    "id": "crpg_steel_shestopyor_h2",
-    "baseId": "crpg_steel_shestopyor",
-    "name": "Steel Shestopyor +2",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 6559,
-    "weight": 1.39,
-    "rank": 2,
-    "tier": 9.644461,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 80,
-        "balance": 0.53,
-        "handling": 88,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 26,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 86
-      }
-    ]
-  },
-  {
-    "id": "crpg_steel_shestopyor_h3",
-    "baseId": "crpg_steel_shestopyor",
-    "name": "Steel Shestopyor +3",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 6585,
-    "weight": 1.39,
-    "rank": 3,
-    "tier": 9.665686,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 80,
-        "balance": 0.53,
-        "handling": 88,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 92,
-        "swingDamage": 27,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 86
-      }
-    ]
-  },
-  {
     "id": "crpg_steel_tipped_hooked_spear_h0",
     "baseId": "crpg_steel_tipped_hooked_spear",
     "name": "Steel Tipped Hooked Spear",
@@ -139668,6 +140928,146 @@
         "swingDamage": 17,
         "swingDamageType": "Pierce",
         "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_steel_winged_shestopyor_h0",
+    "baseId": "crpg_steel_winged_shestopyor",
+    "name": "Steel Winged Shestopyor",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 4555,
+    "weight": 1.54,
+    "rank": 0,
+    "tier": 7.8504715,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 82,
+        "balance": 0.38,
+        "handling": 84,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 26,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
+      }
+    ]
+  },
+  {
+    "id": "crpg_steel_winged_shestopyor_h1",
+    "baseId": "crpg_steel_winged_shestopyor",
+    "name": "Steel Winged Shestopyor +1",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 4334,
+    "weight": 1.54,
+    "rank": 1,
+    "tier": 7.631133,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 82,
+        "balance": 0.38,
+        "handling": 84,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 27,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
+      }
+    ]
+  },
+  {
+    "id": "crpg_steel_winged_shestopyor_h2",
+    "baseId": "crpg_steel_winged_shestopyor",
+    "name": "Steel Winged Shestopyor +2",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 4203,
+    "weight": 1.54,
+    "rank": 2,
+    "tier": 7.49768829,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 82,
+        "balance": 0.38,
+        "handling": 84,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 28,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 81
+      }
+    ]
+  },
+  {
+    "id": "crpg_steel_winged_shestopyor_h3",
+    "baseId": "crpg_steel_winged_shestopyor",
+    "name": "Steel Winged Shestopyor +3",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 5211,
+    "weight": 1.48,
+    "rank": 3,
+    "tier": 8.47438049,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 82,
+        "balance": 0.43,
+        "handling": 85,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 90,
+        "swingDamage": 29,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 82
       }
     ]
   },
@@ -141076,146 +142476,6 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_light_mace_h0",
-    "baseId": "crpg_steppe_light_mace",
-    "name": "Steppe Light Mace",
-    "culture": "Khuzait",
-    "type": "OneHandedWeapon",
-    "price": 1674,
-    "weight": 2.15,
-    "rank": 0,
-    "tier": 4.328363,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 72,
-        "balance": 0.31,
-        "handling": 86,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 25,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 79
-      }
-    ]
-  },
-  {
-    "id": "crpg_steppe_light_mace_h1",
-    "baseId": "crpg_steppe_light_mace",
-    "name": "Steppe Light Mace +1",
-    "culture": "Khuzait",
-    "type": "OneHandedWeapon",
-    "price": 1822,
-    "weight": 2.05,
-    "rank": 1,
-    "tier": 4.561429,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 72,
-        "balance": 0.38,
-        "handling": 87,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 25,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 81
-      }
-    ]
-  },
-  {
-    "id": "crpg_steppe_light_mace_h2",
-    "baseId": "crpg_steppe_light_mace",
-    "name": "Steppe Light Mace +2",
-    "culture": "Khuzait",
-    "type": "OneHandedWeapon",
-    "price": 1806,
-    "weight": 2.05,
-    "rank": 2,
-    "tier": 4.53660965,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 72,
-        "balance": 0.38,
-        "handling": 87,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 26,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 81
-      }
-    ]
-  },
-  {
-    "id": "crpg_steppe_light_mace_h3",
-    "baseId": "crpg_steppe_light_mace",
-    "name": "Steppe Light Mace +3",
-    "culture": "Khuzait",
-    "type": "OneHandedWeapon",
-    "price": 2341,
-    "weight": 2.05,
-    "rank": 3,
-    "tier": 5.315473,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 72,
-        "balance": 0.38,
-        "handling": 87,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon"
-        ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 28,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 81
-      }
-    ]
-  },
-  {
     "id": "crpg_steppe_robe_v2_h0",
     "baseId": "crpg_steppe_robe_v2",
     "name": "Steppe Robe",
@@ -141314,6 +142574,146 @@
       "familyType": 0
     },
     "weapons": []
+  },
+  {
+    "id": "crpg_steppe_spiked_mace_h0",
+    "baseId": "crpg_steppe_spiked_mace",
+    "name": "Steppe Spiked Mace",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 6983,
+    "weight": 1.57,
+    "rank": 0,
+    "tier": 9.987246,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 76,
+        "balance": 0.68,
+        "handling": 92,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 8,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 22,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 90
+      }
+    ]
+  },
+  {
+    "id": "crpg_steppe_spiked_mace_h1",
+    "baseId": "crpg_steppe_spiked_mace",
+    "name": "Steppe Spiked Mace +1",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 6147,
+    "weight": 1.53,
+    "rank": 1,
+    "tier": 9.300554,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 76,
+        "balance": 0.71,
+        "handling": 93,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 9,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 22,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 91
+      }
+    ]
+  },
+  {
+    "id": "crpg_steppe_spiked_mace_h2",
+    "baseId": "crpg_steppe_spiked_mace",
+    "name": "Steppe Spiked Mace +2",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 6345,
+    "weight": 1.53,
+    "rank": 2,
+    "tier": 9.466935,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 76,
+        "balance": 0.71,
+        "handling": 93,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 10,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 23,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 91
+      }
+    ]
+  },
+  {
+    "id": "crpg_steppe_spiked_mace_h3",
+    "baseId": "crpg_steppe_spiked_mace",
+    "name": "Steppe Spiked Mace +3",
+    "culture": "Khuzait",
+    "type": "OneHandedWeapon",
+    "price": 6619,
+    "weight": 1.53,
+    "rank": 3,
+    "tier": 9.693798,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 76,
+        "balance": 0.71,
+        "handling": 93,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 11,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 24,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 91
+      }
+    ]
   },
   {
     "id": "crpg_steppe_war_bow_h0",
@@ -162553,10 +163953,10 @@
     "name": "Wooden Hammer",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 427,
-    "weight": 2.48,
+    "price": 2218,
+    "weight": 2.28,
     "rank": 0,
-    "tier": 1.67343581,
+    "tier": 5.14493561,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -162569,121 +163969,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 45,
-        "balance": 0.59,
-        "handling": 97,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "MultiplePenetration"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 83,
-        "swingDamage": 15,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 87
-      }
-    ]
-  },
-  {
-    "id": "crpg_wooden_hammer_h1",
-    "baseId": "crpg_wooden_hammer",
-    "name": "Wooden Hammer +1",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 455,
-    "weight": 2.33,
-    "rank": 1,
-    "tier": 1.75959659,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 45,
-        "balance": 0.66,
-        "handling": 99,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "MultiplePenetration"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 15,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 89
-      }
-    ]
-  },
-  {
-    "id": "crpg_wooden_hammer_h2",
-    "baseId": "crpg_wooden_hammer",
-    "name": "Wooden Hammer +2",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 521,
-    "weight": 2.33,
-    "rank": 2,
-    "tier": 1.95145833,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 45,
-        "balance": 0.66,
-        "handling": 99,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "MultiplePenetration"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 16,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 89
-      }
-    ]
-  },
-  {
-    "id": "crpg_wooden_hammer_h3",
-    "baseId": "crpg_wooden_hammer",
-    "name": "Wooden Hammer +3",
-    "culture": "Neutral",
-    "type": "OneHandedWeapon",
-    "price": 841,
-    "weight": 2.33,
-    "rank": 3,
-    "tier": 2.7592504,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 45,
-        "balance": 0.66,
+        "balance": 0.69,
         "handling": 99,
         "bodyArmor": 0,
         "flags": [
@@ -162695,7 +163981,121 @@
         "thrustSpeed": 85,
         "swingDamage": 18,
         "swingDamageType": "Blunt",
-        "swingSpeed": 89
+        "swingSpeed": 90
+      }
+    ]
+  },
+  {
+    "id": "crpg_wooden_hammer_h1",
+    "baseId": "crpg_wooden_hammer",
+    "name": "Wooden Hammer +1",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 2377,
+    "weight": 2.28,
+    "rank": 1,
+    "tier": 5.36491728,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 45,
+        "balance": 0.69,
+        "handling": 99,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "MultiplePenetration"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 85,
+        "swingDamage": 19,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 90
+      }
+    ]
+  },
+  {
+    "id": "crpg_wooden_hammer_h2",
+    "baseId": "crpg_wooden_hammer",
+    "name": "Wooden Hammer +2",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 2569,
+    "weight": 2.28,
+    "rank": 2,
+    "tier": 5.620494,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 45,
+        "balance": 0.69,
+        "handling": 99,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "MultiplePenetration"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 85,
+        "swingDamage": 20,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 90
+      }
+    ]
+  },
+  {
+    "id": "crpg_wooden_hammer_h3",
+    "baseId": "crpg_wooden_hammer",
+    "name": "Wooden Hammer +3",
+    "culture": "Neutral",
+    "type": "OneHandedWeapon",
+    "price": 3294,
+    "weight": 2.24,
+    "rank": 3,
+    "tier": 6.51020432,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "Mace",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 45,
+        "balance": 0.71,
+        "handling": 99,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "MultiplePenetration"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 85,
+        "swingDamage": 21,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 91
       }
     ]
   },
@@ -165088,8 +166488,8 @@
     ]
   },
   {
-    "id": "crpg_xiphos_h0",
-    "baseId": "crpg_xiphos",
+    "id": "crpg_xiphos_v1_h0",
+    "baseId": "crpg_xiphos_v1",
     "name": "Xiphos",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -165125,8 +166525,8 @@
     ]
   },
   {
-    "id": "crpg_xiphos_h1",
-    "baseId": "crpg_xiphos",
+    "id": "crpg_xiphos_v1_h1",
+    "baseId": "crpg_xiphos_v1",
     "name": "Xiphos +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -165162,8 +166562,8 @@
     ]
   },
   {
-    "id": "crpg_xiphos_h2",
-    "baseId": "crpg_xiphos",
+    "id": "crpg_xiphos_v1_h2",
+    "baseId": "crpg_xiphos_v1",
     "name": "Xiphos +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
@@ -165199,8 +166599,8 @@
     ]
   },
   {
-    "id": "crpg_xiphos_h3",
-    "baseId": "crpg_xiphos",
+    "id": "crpg_xiphos_v1_h3",
+    "baseId": "crpg_xiphos_v1",
     "name": "Xiphos +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",

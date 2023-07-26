@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <Item id="crpg_14th_noble_greathelmet1_v1_h0" name="Great Helmet, Decorated and Crown (EBA)" mesh="14th_noble_greathelmet1" culture="Culture.neutral_culture" weight="5.17156" appearance="10" Type="HeadArmor">
     <ItemComponent>
