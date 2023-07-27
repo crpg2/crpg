@@ -11640,7 +11640,7 @@
       <Piece id="crpg_broadshortsword_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_broadshortsword_h1" name="{=}Broad Shortsword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_broadshortsword_h1" name="{=}Broad Shortsword +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_broadshortsword_blade_h1" Type="Blade" scale_factor="120" />
       <Piece id="crpg_broadshortsword_guard_h1" Type="Guard" scale_factor="100" />
@@ -11648,7 +11648,7 @@
       <Piece id="crpg_broadshortsword_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_broadshortsword_h2" name="{=}Broad Shortsword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_broadshortsword_h2" name="{=}Broad Shortsword +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_broadshortsword_blade_h2" Type="Blade" scale_factor="120" />
       <Piece id="crpg_broadshortsword_guard_h2" Type="Guard" scale_factor="100" />
@@ -11656,7 +11656,7 @@
       <Piece id="crpg_broadshortsword_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_broadshortsword_h3" name="{=}Broad Shortsword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_broadshortsword_h3" name="{=}Broad Shortsword +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_broadshortsword_blade_h3" Type="Blade" scale_factor="120" />
       <Piece id="crpg_broadshortsword_guard_h3" Type="Guard" scale_factor="100" />

@@ -24163,7 +24163,7 @@
   {
     "id": "crpg_broadshortsword_h1",
     "baseId": "crpg_broadshortsword",
-    "name": "Broad Shortsword",
+    "name": "Broad Shortsword +1",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
     "price": 6635,
@@ -24198,7 +24198,7 @@
   {
     "id": "crpg_broadshortsword_h2",
     "baseId": "crpg_broadshortsword",
-    "name": "Broad Shortsword",
+    "name": "Broad Shortsword +2",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
     "price": 5991,
@@ -24233,7 +24233,7 @@
   {
     "id": "crpg_broadshortsword_h3",
     "baseId": "crpg_broadshortsword",
-    "name": "Broad Shortsword",
+    "name": "Broad Shortsword +3",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
     "price": 6935,
