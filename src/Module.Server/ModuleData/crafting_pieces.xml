@@ -9028,6 +9028,7 @@
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.425" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9041,6 +9042,7 @@
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.485" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9054,6 +9056,7 @@
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.545" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9067,6 +9070,7 @@
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.605" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9080,6 +9084,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.1" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9093,6 +9098,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.14" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9106,6 +9112,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.19" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9119,6 +9126,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.24" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9132,6 +9140,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.85" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9144,6 +9153,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.94" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9156,6 +9166,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="2.01" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9168,6 +9179,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="2.09" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9180,6 +9192,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="1.95" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9193,6 +9206,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="2.0" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9206,6 +9220,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="2.06" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -9219,6 +9234,7 @@
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Cut" damage_factor="2.12" />
+      <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -25644,6 +25660,7 @@
     <BuildData piece_offset="-11.0" next_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="0.75" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
@@ -25653,6 +25670,7 @@
     <BuildData piece_offset="-11.0" next_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="0.78" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
@@ -25662,6 +25680,7 @@
     <BuildData piece_offset="-11.0" next_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="0.81" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
@@ -25671,6 +25690,7 @@
     <BuildData piece_offset="-11.0" next_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="0.84" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
@@ -27748,6 +27768,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="9.5" blade_width="7.8" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.2" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27757,6 +27778,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="9.5" blade_width="7.8" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.25" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27766,6 +27788,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="9.5" blade_width="7.8" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.30" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27775,6 +27798,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="9.5" blade_width="7.8" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.325" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27808,6 +27832,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="12.8" blade_width="5.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="0.95" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27817,6 +27842,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="12.8" blade_width="5.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.0" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27826,6 +27852,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="12.8" blade_width="5.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.05" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27835,6 +27862,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="12.8" blade_width="5.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.1" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27868,6 +27896,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="12.0" blade_width="9.5" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="0.95" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27877,6 +27906,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="12.0" blade_width="9.5" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.0" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27886,6 +27916,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="12.0" blade_width="9.5" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.1" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -27895,6 +27926,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="12.0" blade_width="9.5" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.15" />
+      <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
