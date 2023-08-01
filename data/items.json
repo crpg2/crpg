@@ -18062,15 +18062,15 @@
     ]
   },
   {
-    "id": "crpg_black_katana_h0",
-    "baseId": "crpg_black_katana",
+    "id": "crpg_black_katana_v1_h0",
+    "baseId": "crpg_black_katana_v1",
     "name": "Black Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 14027,
-    "weight": 2.91,
+    "price": 6371,
+    "weight": 2.93,
     "rank": 0,
-    "tier": 10.0109644,
+    "tier": 6.3999567,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -18080,9 +18080,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.9,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.94,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -18091,22 +18091,22 @@
         "thrustDamage": 15,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
   {
-    "id": "crpg_black_katana_h1",
-    "baseId": "crpg_black_katana",
+    "id": "crpg_black_katana_v1_h1",
+    "baseId": "crpg_black_katana_v1",
     "name": "Black Katana +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11927,
-    "weight": 2.81,
+    "price": 6612,
+    "weight": 2.89,
     "rank": 1,
-    "tier": 9.14709949,
+    "tier": 6.539037,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -18116,92 +18116,92 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.97,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 17,
+        "thrustDamage": 15,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 87,
+        "swingDamage": 35,
+        "swingDamageType": "Cut",
+        "swingSpeed": 99
+      }
+    ]
+  },
+  {
+    "id": "crpg_black_katana_v1_h2",
+    "baseId": "crpg_black_katana_v1",
+    "name": "Black Katana +2",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 6219,
+    "weight": 2.84,
+    "rank": 2,
+    "tier": 6.31047153,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 95,
+        "balance": 0.98,
+        "handling": 78,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 18,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 87,
+        "swingDamage": 36,
+        "swingDamageType": "Cut",
+        "swingSpeed": 99
+      }
+    ]
+  },
+  {
+    "id": "crpg_black_katana_v1_h3",
+    "baseId": "crpg_black_katana_v1",
+    "name": "Black Katana +3",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 7029,
+    "weight": 2.79,
+    "rank": 3,
+    "tier": 6.77471,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 95,
+        "balance": 1.0,
+        "handling": 78,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
-      }
-    ]
-  },
-  {
-    "id": "crpg_black_katana_h2",
-    "baseId": "crpg_black_katana",
-    "name": "Black Katana +2",
-    "culture": "Aserai",
-    "type": "TwoHandedWeapon",
-    "price": 11406,
-    "weight": 2.81,
-    "rank": 2,
-    "tier": 8.92118,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
-        "bodyArmor": 4,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 21,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 38,
-        "swingDamageType": "Cut",
-        "swingSpeed": 98
-      }
-    ]
-  },
-  {
-    "id": "crpg_black_katana_h3",
-    "baseId": "crpg_black_katana",
-    "name": "Black Katana +3",
-    "culture": "Aserai",
-    "type": "TwoHandedWeapon",
-    "price": 12569,
-    "weight": 2.81,
-    "rank": 3,
-    "tier": 9.418371,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
-        "bodyArmor": 4,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 21,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 40,
-        "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 100
       }
     ]
   },
@@ -18750,15 +18750,15 @@
     ]
   },
   {
-    "id": "crpg_blue_katana_h0",
-    "baseId": "crpg_blue_katana",
+    "id": "crpg_blue_katana_v1_h0",
+    "baseId": "crpg_blue_katana_v1",
     "name": "Blue Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 14027,
-    "weight": 2.91,
+    "price": 7892,
+    "weight": 2.9,
     "rank": 0,
-    "tier": 10.0109644,
+    "tier": 7.241481,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -18768,9 +18768,81 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.9,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.96,
+        "handling": 78,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 15,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 87,
+        "swingDamage": 35,
+        "swingDamageType": "Cut",
+        "swingSpeed": 98
+      }
+    ]
+  },
+  {
+    "id": "crpg_blue_katana_v1_h1",
+    "baseId": "crpg_blue_katana_v1",
+    "name": "Blue Katana +1",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 8146,
+    "weight": 2.89,
+    "rank": 1,
+    "tier": 7.37393665,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 95,
+        "balance": 0.97,
+        "handling": 78,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 15,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 87,
+        "swingDamage": 36,
+        "swingDamageType": "Cut",
+        "swingSpeed": 99
+      }
+    ]
+  },
+  {
+    "id": "crpg_blue_katana_v1_h2",
+    "baseId": "crpg_blue_katana_v1",
+    "name": "Blue Katana +2",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 8596,
+    "weight": 2.79,
+    "rank": 2,
+    "tier": 7.603887,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 95,
+        "balance": 1.0,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -18781,20 +18853,20 @@
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 100
       }
     ]
   },
   {
-    "id": "crpg_blue_katana_h1",
-    "baseId": "crpg_blue_katana",
-    "name": "Blue Katana +1",
+    "id": "crpg_blue_katana_v1_h3",
+    "baseId": "crpg_blue_katana_v1",
+    "name": "Blue Katana +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11927,
-    "weight": 2.81,
-    "rank": 1,
-    "tier": 9.14709949,
+    "price": 8536,
+    "weight": 2.79,
+    "rank": 3,
+    "tier": 7.573396,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -18804,45 +18876,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
-        "bodyArmor": 4,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 17,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 37,
-        "swingDamageType": "Cut",
-        "swingSpeed": 98
-      }
-    ]
-  },
-  {
-    "id": "crpg_blue_katana_h2",
-    "baseId": "crpg_blue_katana",
-    "name": "Blue Katana +2",
-    "culture": "Aserai",
-    "type": "TwoHandedWeapon",
-    "price": 11406,
-    "weight": 2.81,
-    "rank": 2,
-    "tier": 8.92118,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
+        "length": 95,
+        "balance": 1.0,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -18853,43 +18889,7 @@
         "thrustSpeed": 87,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
-      }
-    ]
-  },
-  {
-    "id": "crpg_blue_katana_h3",
-    "baseId": "crpg_blue_katana",
-    "name": "Blue Katana +3",
-    "culture": "Aserai",
-    "type": "TwoHandedWeapon",
-    "price": 12569,
-    "weight": 2.81,
-    "rank": 3,
-    "tier": 9.418371,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
-        "bodyArmor": 4,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 21,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 40,
-        "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 100
       }
     ]
   },
@@ -55512,15 +55512,15 @@
     "weapons": []
   },
   {
-    "id": "crpg_green_katana_h0",
-    "baseId": "crpg_green_katana",
+    "id": "crpg_green_katana_v1_h0",
+    "baseId": "crpg_green_katana_v1",
     "name": "Green Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 14027,
-    "weight": 2.91,
+    "price": 12000,
+    "weight": 2.93,
     "rank": 0,
-    "tier": 10.0109644,
+    "tier": 9.178157,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -55530,9 +55530,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.9,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.94,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -55543,20 +55543,20 @@
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 98
       }
     ]
   },
   {
-    "id": "crpg_green_katana_h1",
-    "baseId": "crpg_green_katana",
+    "id": "crpg_green_katana_v1_h1",
+    "baseId": "crpg_green_katana_v1",
     "name": "Green Katana +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11927,
-    "weight": 2.81,
+    "price": 12475,
+    "weight": 2.89,
     "rank": 1,
-    "tier": 9.14709949,
+    "tier": 9.379419,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -55566,9 +55566,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.97,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -55577,22 +55577,22 @@
         "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 99
       }
     ]
   },
   {
-    "id": "crpg_green_katana_h2",
-    "baseId": "crpg_green_katana",
+    "id": "crpg_green_katana_v1_h2",
+    "baseId": "crpg_green_katana_v1",
     "name": "Green Katana +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11406,
-    "weight": 2.81,
+    "price": 12051,
+    "weight": 2.84,
     "rank": 2,
-    "tier": 8.92118,
+    "tier": 9.200023,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -55602,33 +55602,33 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.98,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 38,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 99
       }
     ]
   },
   {
-    "id": "crpg_green_katana_h3",
-    "baseId": "crpg_green_katana",
+    "id": "crpg_green_katana_v1_h3",
+    "baseId": "crpg_green_katana_v1",
     "name": "Green Katana +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 12569,
-    "weight": 2.81,
+    "price": 12249,
+    "weight": 2.84,
     "rank": 3,
-    "tier": 9.418371,
+    "tier": 9.283962,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -55638,20 +55638,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.98,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 99
       }
     ]
   },
@@ -120270,15 +120270,15 @@
     "weapons": []
   },
   {
-    "id": "crpg_red_katana_h0",
-    "baseId": "crpg_red_katana",
+    "id": "crpg_red_katana_v1_h0",
+    "baseId": "crpg_red_katana_v1",
     "name": "Red Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11915,
+    "price": 12000,
     "weight": 2.93,
     "rank": 0,
-    "tier": 9.141764,
+    "tier": 9.178157,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -120288,9 +120288,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.88,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.94,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -120298,23 +120298,23 @@
         ],
         "thrustDamage": 15,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 86,
+        "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 96
+        "swingSpeed": 98
       }
     ]
   },
   {
-    "id": "crpg_red_katana_h1",
-    "baseId": "crpg_red_katana",
+    "id": "crpg_red_katana_v1_h1",
+    "baseId": "crpg_red_katana_v1",
     "name": "Red Katana +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11927,
-    "weight": 2.81,
+    "price": 12475,
+    "weight": 2.89,
     "rank": 1,
-    "tier": 9.14709949,
+    "tier": 9.379419,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -120324,9 +120324,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.97,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -120335,22 +120335,22 @@
         "thrustDamage": 17,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 37,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 99
       }
     ]
   },
   {
-    "id": "crpg_red_katana_h2",
-    "baseId": "crpg_red_katana",
+    "id": "crpg_red_katana_v1_h2",
+    "baseId": "crpg_red_katana_v1",
     "name": "Red Katana +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11406,
-    "weight": 2.81,
+    "price": 12051,
+    "weight": 2.84,
     "rank": 2,
-    "tier": 8.92118,
+    "tier": 9.200023,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -120360,33 +120360,33 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.98,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 38,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 99
       }
     ]
   },
   {
-    "id": "crpg_red_katana_h3",
-    "baseId": "crpg_red_katana",
+    "id": "crpg_red_katana_v1_h3",
+    "baseId": "crpg_red_katana_v1",
     "name": "Red Katana +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 12569,
-    "weight": 2.81,
+    "price": 12249,
+    "weight": 2.84,
     "rank": 3,
-    "tier": 9.418371,
+    "tier": 9.283962,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -120396,20 +120396,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.98,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
         "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 99
       }
     ]
   },
@@ -166636,15 +166636,15 @@
     ]
   },
   {
-    "id": "crpg_yellow_katana_h0",
-    "baseId": "crpg_yellow_katana",
+    "id": "crpg_yellow_katana_v1_h0",
+    "baseId": "crpg_yellow_katana_v1",
     "name": "Yellow Katana",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 14027,
-    "weight": 2.91,
+    "price": 7892,
+    "weight": 2.9,
     "rank": 0,
-    "tier": 10.0109644,
+    "tier": 7.241481,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -166654,9 +166654,81 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.9,
-        "handling": 77,
+        "length": 95,
+        "balance": 0.96,
+        "handling": 78,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 15,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 87,
+        "swingDamage": 35,
+        "swingDamageType": "Cut",
+        "swingSpeed": 98
+      }
+    ]
+  },
+  {
+    "id": "crpg_yellow_katana_v1_h1",
+    "baseId": "crpg_yellow_katana_v1",
+    "name": "Yellow Katana +1",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 8146,
+    "weight": 2.89,
+    "rank": 1,
+    "tier": 7.37393665,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 95,
+        "balance": 0.97,
+        "handling": 78,
+        "bodyArmor": 4,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 15,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 87,
+        "swingDamage": 36,
+        "swingDamageType": "Cut",
+        "swingSpeed": 99
+      }
+    ]
+  },
+  {
+    "id": "crpg_yellow_katana_v1_h2",
+    "baseId": "crpg_yellow_katana_v1",
+    "name": "Yellow Katana +2",
+    "culture": "Aserai",
+    "type": "TwoHandedWeapon",
+    "price": 8596,
+    "weight": 2.79,
+    "rank": 2,
+    "tier": 7.603887,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 95,
+        "balance": 1.0,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -166667,20 +166739,20 @@
         "thrustSpeed": 87,
         "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 97
+        "swingSpeed": 100
       }
     ]
   },
   {
-    "id": "crpg_yellow_katana_h1",
-    "baseId": "crpg_yellow_katana",
-    "name": "Yellow Katana +1",
+    "id": "crpg_yellow_katana_v1_h3",
+    "baseId": "crpg_yellow_katana_v1",
+    "name": "Yellow Katana +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 11927,
-    "weight": 2.81,
-    "rank": 1,
-    "tier": 9.14709949,
+    "price": 8536,
+    "weight": 2.79,
+    "rank": 3,
+    "tier": 7.573396,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -166690,45 +166762,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
-        "bodyArmor": 4,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 17,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 37,
-        "swingDamageType": "Cut",
-        "swingSpeed": 98
-      }
-    ]
-  },
-  {
-    "id": "crpg_yellow_katana_h2",
-    "baseId": "crpg_yellow_katana",
-    "name": "Yellow Katana +2",
-    "culture": "Aserai",
-    "type": "TwoHandedWeapon",
-    "price": 11406,
-    "weight": 2.81,
-    "rank": 2,
-    "tier": 8.92118,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
+        "length": 95,
+        "balance": 1.0,
+        "handling": 78,
         "bodyArmor": 4,
         "flags": [
           "MeleeWeapon",
@@ -166739,43 +166775,7 @@
         "thrustSpeed": 87,
         "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
-      }
-    ]
-  },
-  {
-    "id": "crpg_yellow_katana_h3",
-    "baseId": "crpg_yellow_katana",
-    "name": "Yellow Katana +3",
-    "culture": "Aserai",
-    "type": "TwoHandedWeapon",
-    "price": 12569,
-    "weight": 2.81,
-    "rank": 3,
-    "tier": 9.418371,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 102,
-        "balance": 0.94,
-        "handling": 77,
-        "bodyArmor": 4,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 21,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 40,
-        "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 100
       }
     ]
   },
