@@ -1,603 +1,603 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item id="crpg_camel_saddle_b_v1_h0" name="{=OflbQCw6}Camel Saddle with Light Load" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="130" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_b_v1_h0" name="{=OflbQCw6}Camel Saddle with Light Load" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_b_v1_h1" name="{=OflbQCw6}Camel Saddle with Light Load +1" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="130" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_b_v1_h1" name="{=OflbQCw6}Camel Saddle with Light Load +1" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="11" mane_cover_type="none" family_type="2" material_type="Leather" />
+      <Armor body_armor="9" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_b_v1_h2" name="{=OflbQCw6}Camel Saddle with Light Load +2" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="130" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_b_v1_h2" name="{=OflbQCw6}Camel Saddle with Light Load +2" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="16" mane_cover_type="none" family_type="2" material_type="Leather" />
+      <Armor body_armor="12" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_b_v1_h3" name="{=OflbQCw6}Camel Saddle with Light Load +3" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="130" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_b_v1_h3" name="{=OflbQCw6}Camel Saddle with Light Load +3" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="21" mane_cover_type="none" family_type="2" material_type="Leather" />
+      <Armor body_armor="15" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_v1_h0" name="{=q1z4FQub}Camel Saddle" mesh="camel_saddle1" culture="Culture.aserai" weight="130" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_v1_h0" name="{=q1z4FQub}Camel Saddle" mesh="camel_saddle1" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_v1_h1" name="{=q1z4FQub}Camel Saddle +1" mesh="camel_saddle1" culture="Culture.aserai" weight="130" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_v1_h1" name="{=q1z4FQub}Camel Saddle +1" mesh="camel_saddle1" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="11" mane_cover_type="none" family_type="2" material_type="Leather" />
+      <Armor body_armor="9" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_v1_h2" name="{=q1z4FQub}Camel Saddle +2" mesh="camel_saddle1" culture="Culture.aserai" weight="130" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_v1_h2" name="{=q1z4FQub}Camel Saddle +2" mesh="camel_saddle1" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="16" mane_cover_type="none" family_type="2" material_type="Leather" />
+      <Armor body_armor="12" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_v1_h3" name="{=q1z4FQub}Camel Saddle +3" mesh="camel_saddle1" culture="Culture.aserai" weight="130" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_v1_h3" name="{=q1z4FQub}Camel Saddle +3" mesh="camel_saddle1" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="21" mane_cover_type="none" family_type="2" material_type="Leather" />
+      <Armor body_armor="15" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_c_v1_h0" name="{=JHef9oad}Mule Harness with Bags" mesh="mule_load_c" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
-    <ItemComponent>
-      <Armor body_armor="6" mane_cover_type="all" family_type="1" material_type="Cloth" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_mule_load_c_v1_h1" name="{=JHef9oad}Mule Harness with Bags +1" mesh="mule_load_c" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
-    <ItemComponent>
-      <Armor body_armor="11" mane_cover_type="all" family_type="1" material_type="Cloth" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_mule_load_c_v1_h2" name="{=JHef9oad}Mule Harness with Bags +2" mesh="mule_load_c" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
-    <ItemComponent>
-      <Armor body_armor="16" mane_cover_type="all" family_type="1" material_type="Cloth" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_mule_load_c_v1_h3" name="{=JHef9oad}Mule Harness with Bags +3" mesh="mule_load_c" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
-    <ItemComponent>
-      <Armor body_armor="21" mane_cover_type="all" family_type="1" material_type="Cloth" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_mule_load_b_v1_h0" name="{=2SUb8jNP}Mule Harness with Baskets" mesh="mule_load_b" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
+  <Item id="crpg_mule_load_c_v1_h0" name="{=JHef9oad}Mule Harness with Bags" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h1" name="{=2SUb8jNP}Mule Harness with Baskets +1" mesh="mule_load_b" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
+  <Item id="crpg_mule_load_c_v1_h1" name="{=JHef9oad}Mule Harness with Bags +1" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="11" mane_cover_type="all" family_type="1" material_type="Cloth" />
+      <Armor body_armor="9" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h2" name="{=2SUb8jNP}Mule Harness with Baskets +2" mesh="mule_load_b" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
+  <Item id="crpg_mule_load_c_v1_h2" name="{=JHef9oad}Mule Harness with Bags +2" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="16" mane_cover_type="all" family_type="1" material_type="Cloth" />
+      <Armor body_armor="12" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h3" name="{=2SUb8jNP}Mule Harness with Baskets +3" mesh="mule_load_b" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
+  <Item id="crpg_mule_load_c_v1_h3" name="{=JHef9oad}Mule Harness with Bags +3" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="21" mane_cover_type="all" family_type="1" material_type="Cloth" />
+      <Armor body_armor="15" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h0" name="{=7S6BjECG}Mule Harness with Pack" mesh="mule_load_a" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
+  <Item id="crpg_mule_load_b_v1_h0" name="{=2SUb8jNP}Mule Harness with Baskets" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h1" name="{=7S6BjECG}Mule Harness with Pack +1" mesh="mule_load_a" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
+  <Item id="crpg_mule_load_b_v1_h1" name="{=2SUb8jNP}Mule Harness with Baskets +1" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="11" mane_cover_type="all" family_type="1" material_type="Cloth" />
+      <Armor body_armor="9" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h2" name="{=7S6BjECG}Mule Harness with Pack +2" mesh="mule_load_a" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
+  <Item id="crpg_mule_load_b_v1_h2" name="{=2SUb8jNP}Mule Harness with Baskets +2" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="16" mane_cover_type="all" family_type="1" material_type="Cloth" />
+      <Armor body_armor="12" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h3" name="{=7S6BjECG}Mule Harness with Pack +3" mesh="mule_load_a" is_merchandise="false" weight="120" appearance="1" Type="HorseHarness">
+  <Item id="crpg_mule_load_b_v1_h3" name="{=2SUb8jNP}Mule Harness with Baskets +3" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="21" mane_cover_type="all" family_type="1" material_type="Cloth" />
+      <Armor body_armor="15" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_battania_horse_harness_scaled_v1_h0" name="{=amqJbdDV}Scale Barding" mesh="battania_horse_harness_scaled" culture="Culture.battania" weight="125" appearance="0.65" Type="HorseHarness">
+  <Item id="crpg_mule_load_a_v1_h0" name="{=7S6BjECG}Mule Harness with Pack" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="6" mane_cover_type="all" family_type="1" material_type="Cloth" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mule_load_a_v1_h1" name="{=7S6BjECG}Mule Harness with Pack +1" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="9" mane_cover_type="all" family_type="1" material_type="Cloth" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mule_load_a_v1_h2" name="{=7S6BjECG}Mule Harness with Pack +2" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="12" mane_cover_type="all" family_type="1" material_type="Cloth" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mule_load_a_v1_h3" name="{=7S6BjECG}Mule Harness with Pack +3" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="15" mane_cover_type="all" family_type="1" material_type="Cloth" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_battania_horse_harness_scaled_v1_h0" name="{=amqJbdDV}Scale Barding" mesh="battania_horse_harness_scaled" culture="Culture.battania" weight="30" appearance="0.65" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="30" mane_cover_type="all" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_battania_horse_harness_scaled_v1_h1" name="{=amqJbdDV}Scale Barding +1" mesh="battania_horse_harness_scaled" culture="Culture.battania" weight="125" appearance="0.65" Type="HorseHarness">
+  <Item id="crpg_battania_horse_harness_scaled_v1_h1" name="{=amqJbdDV}Scale Barding +1" mesh="battania_horse_harness_scaled" culture="Culture.battania" weight="30" appearance="0.65" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="35" mane_cover_type="all" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="33" mane_cover_type="all" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_battania_horse_harness_scaled_v1_h2" name="{=amqJbdDV}Scale Barding +2" mesh="battania_horse_harness_scaled" culture="Culture.battania" weight="125" appearance="0.65" Type="HorseHarness">
+  <Item id="crpg_battania_horse_harness_scaled_v1_h2" name="{=amqJbdDV}Scale Barding +2" mesh="battania_horse_harness_scaled" culture="Culture.battania" weight="30" appearance="0.65" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="40" mane_cover_type="all" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="36" mane_cover_type="all" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_battania_horse_harness_scaled_v1_h3" name="{=amqJbdDV}Scale Barding +3" mesh="battania_horse_harness_scaled" culture="Culture.battania" weight="125" appearance="0.65" Type="HorseHarness">
-    <ItemComponent>
-      <Armor body_armor="45" mane_cover_type="all" family_type="1" material_type="Chainmail" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_battania_horse_harness_halfscaled_v1_h0" name="{=W8r7A7qH}Half Scaled Barding" mesh="battania_horse_harness_halfscaled" culture="Culture.battania" weight="76" appearance="1" Type="HorseHarness">
-    <ItemComponent>
-      <Armor body_armor="24" mane_cover_type="all" family_type="1" material_type="Chainmail" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_battania_horse_harness_halfscaled_v1_h1" name="{=W8r7A7qH}Half Scaled Barding +1" mesh="battania_horse_harness_halfscaled" culture="Culture.battania" weight="76" appearance="1" Type="HorseHarness">
-    <ItemComponent>
-      <Armor body_armor="29" mane_cover_type="all" family_type="1" material_type="Chainmail" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_battania_horse_harness_halfscaled_v1_h2" name="{=W8r7A7qH}Half Scaled Barding +2" mesh="battania_horse_harness_halfscaled" culture="Culture.battania" weight="76" appearance="1" Type="HorseHarness">
-    <ItemComponent>
-      <Armor body_armor="34" mane_cover_type="all" family_type="1" material_type="Chainmail" />
-    </ItemComponent>
-  </Item>
-  <Item id="crpg_battania_horse_harness_halfscaled_v1_h3" name="{=W8r7A7qH}Half Scaled Barding +3" mesh="battania_horse_harness_halfscaled" culture="Culture.battania" weight="76" appearance="1" Type="HorseHarness">
+  <Item id="crpg_battania_horse_harness_scaled_v1_h3" name="{=amqJbdDV}Scale Barding +3" mesh="battania_horse_harness_scaled" culture="Culture.battania" weight="30" appearance="0.65" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="39" mane_cover_type="all" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_battania_horse_harness_v1_h0" name="{=33aaUcaX}Battania Horse Harness" mesh="battania_horse_harness" culture="Culture.battania" weight="30" appearance="1" Type="HorseHarness">
+  <Item id="crpg_battania_horse_harness_halfscaled_v1_h0" name="{=W8r7A7qH}Half Scaled Barding" mesh="battania_horse_harness_halfscaled" culture="Culture.battania" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="24" mane_cover_type="all" family_type="1" material_type="Chainmail" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_battania_horse_harness_halfscaled_v1_h1" name="{=W8r7A7qH}Half Scaled Barding +1" mesh="battania_horse_harness_halfscaled" culture="Culture.battania" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="27" mane_cover_type="all" family_type="1" material_type="Chainmail" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_battania_horse_harness_halfscaled_v1_h2" name="{=W8r7A7qH}Half Scaled Barding +2" mesh="battania_horse_harness_halfscaled" culture="Culture.battania" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="30" mane_cover_type="all" family_type="1" material_type="Chainmail" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_battania_horse_harness_halfscaled_v1_h3" name="{=W8r7A7qH}Half Scaled Barding +3" mesh="battania_horse_harness_halfscaled" culture="Culture.battania" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="33" mane_cover_type="all" family_type="1" material_type="Chainmail" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_battania_horse_harness_v1_h0" name="{=33aaUcaX}Battania Horse Harness" mesh="battania_horse_harness" culture="Culture.battania" weight="9" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="none" family_type="1" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_battania_horse_harness_v1_h1" name="{=33aaUcaX}Battania Horse Harness +1" mesh="battania_horse_harness" culture="Culture.battania" weight="30" appearance="1" Type="HorseHarness">
+  <Item id="crpg_battania_horse_harness_v1_h1" name="{=33aaUcaX}Battania Horse Harness +1" mesh="battania_horse_harness" culture="Culture.battania" weight="9" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="14" mane_cover_type="none" family_type="1" material_type="Leather" />
+      <Armor body_armor="12" mane_cover_type="none" family_type="1" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_battania_horse_harness_v1_h2" name="{=33aaUcaX}Battania Horse Harness +2" mesh="battania_horse_harness" culture="Culture.battania" weight="30" appearance="1" Type="HorseHarness">
+  <Item id="crpg_battania_horse_harness_v1_h2" name="{=33aaUcaX}Battania Horse Harness +2" mesh="battania_horse_harness" culture="Culture.battania" weight="9" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="19" mane_cover_type="none" family_type="1" material_type="Leather" />
+      <Armor body_armor="15" mane_cover_type="none" family_type="1" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_battania_horse_harness_v1_h3" name="{=33aaUcaX}Battania Horse Harness +3" mesh="battania_horse_harness" culture="Culture.battania" weight="30" appearance="1" Type="HorseHarness">
+  <Item id="crpg_battania_horse_harness_v1_h3" name="{=33aaUcaX}Battania Horse Harness +3" mesh="battania_horse_harness" culture="Culture.battania" weight="9" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="24" mane_cover_type="none" family_type="1" material_type="Leather" />
+      <Armor body_armor="18" mane_cover_type="none" family_type="1" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_ring_barding_v1_h0" name="{=MI65uuKB}Ring Mail Barding" mesh="horse_harness_sturgia_a_clotest" culture="Culture.sturgia" weight="82" appearance="0.9" Type="HorseHarness">
+  <Item id="crpg_northern_ring_barding_v1_h0" name="{=MI65uuKB}Ring Mail Barding" mesh="horse_harness_sturgia_a_clotest" culture="Culture.sturgia" weight="24" appearance="0.9" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="24" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_sturgia_a_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_ring_barding_v1_h1" name="{=MI65uuKB}Ring Mail Barding +1" mesh="horse_harness_sturgia_a_clotest" culture="Culture.sturgia" weight="82" appearance="0.9" Type="HorseHarness">
+  <Item id="crpg_northern_ring_barding_v1_h1" name="{=MI65uuKB}Ring Mail Barding +1" mesh="horse_harness_sturgia_a_clotest" culture="Culture.sturgia" weight="24" appearance="0.9" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="29" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_sturgia_a_rein" material_type="Chainmail" />
+      <Armor body_armor="27" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_sturgia_a_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_ring_barding_v1_h2" name="{=MI65uuKB}Ring Mail Barding +2" mesh="horse_harness_sturgia_a_clotest" culture="Culture.sturgia" weight="82" appearance="0.9" Type="HorseHarness">
+  <Item id="crpg_northern_ring_barding_v1_h2" name="{=MI65uuKB}Ring Mail Barding +2" mesh="horse_harness_sturgia_a_clotest" culture="Culture.sturgia" weight="24" appearance="0.9" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="34" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_sturgia_a_rein" material_type="Chainmail" />
+      <Armor body_armor="30" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_sturgia_a_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_ring_barding_v1_h3" name="{=MI65uuKB}Ring Mail Barding +3" mesh="horse_harness_sturgia_a_clotest" culture="Culture.sturgia" weight="82" appearance="0.9" Type="HorseHarness">
+  <Item id="crpg_northern_ring_barding_v1_h3" name="{=MI65uuKB}Ring Mail Barding +3" mesh="horse_harness_sturgia_a_clotest" culture="Culture.sturgia" weight="24" appearance="0.9" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="39" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_sturgia_a_rein" material_type="Chainmail" />
+      <Armor body_armor="33" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_sturgia_a_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_noble_harness_v1_h0" name="{=lZZOQsxc}Rough Cavalry Saddle" mesh="horse_harness_sturgia_b_clotest" culture="Culture.sturgia" weight="35" appearance="1" Type="HorseHarness">
+  <Item id="crpg_northern_noble_harness_v1_h0" name="{=lZZOQsxc}Rough Cavalry Saddle" mesh="horse_harness_sturgia_b_clotest" culture="Culture.sturgia" weight="9" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_sturgia_b_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_noble_harness_v1_h1" name="{=lZZOQsxc}Rough Cavalry Saddle +1" mesh="horse_harness_sturgia_b_clotest" culture="Culture.sturgia" weight="35" appearance="1" Type="HorseHarness">
+  <Item id="crpg_northern_noble_harness_v1_h1" name="{=lZZOQsxc}Rough Cavalry Saddle +1" mesh="horse_harness_sturgia_b_clotest" culture="Culture.sturgia" weight="9" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="14" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_sturgia_b_rein" material_type="Leather" />
+      <Armor body_armor="12" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_sturgia_b_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_noble_harness_v1_h2" name="{=lZZOQsxc}Rough Cavalry Saddle +2" mesh="horse_harness_sturgia_b_clotest" culture="Culture.sturgia" weight="35" appearance="1" Type="HorseHarness">
+  <Item id="crpg_northern_noble_harness_v1_h2" name="{=lZZOQsxc}Rough Cavalry Saddle +2" mesh="horse_harness_sturgia_b_clotest" culture="Culture.sturgia" weight="9" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="19" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_sturgia_b_rein" material_type="Leather" />
+      <Armor body_armor="15" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_sturgia_b_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_noble_harness_v1_h3" name="{=lZZOQsxc}Rough Cavalry Saddle +3" mesh="horse_harness_sturgia_b_clotest" culture="Culture.sturgia" weight="35" appearance="1" Type="HorseHarness">
+  <Item id="crpg_northern_noble_harness_v1_h3" name="{=lZZOQsxc}Rough Cavalry Saddle +3" mesh="horse_harness_sturgia_b_clotest" culture="Culture.sturgia" weight="9" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="24" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_sturgia_b_rein" material_type="Leather" />
+      <Armor body_armor="18" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_sturgia_b_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_light_harness_v1_h0" name="{=uRqm1nJ7}Light Saddle" mesh="horse_harness_roman_b_new" culture="Culture.sturgia" weight="30" appearance="1" Type="HorseHarness">
+  <Item id="crpg_northern_light_harness_v1_h0" name="{=uRqm1nJ7}Light Saddle" mesh="horse_harness_roman_b_new" culture="Culture.sturgia" weight="12" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="12" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_roman_b_new_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_light_harness_v1_h1" name="{=uRqm1nJ7}Light Saddle +1" mesh="horse_harness_roman_b_new" culture="Culture.sturgia" weight="30" appearance="1" Type="HorseHarness">
+  <Item id="crpg_northern_light_harness_v1_h1" name="{=uRqm1nJ7}Light Saddle +1" mesh="horse_harness_roman_b_new" culture="Culture.sturgia" weight="12" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="17" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_roman_b_new_rein" material_type="Leather" />
+      <Armor body_armor="15" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_roman_b_new_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_light_harness_v1_h2" name="{=uRqm1nJ7}Light Saddle +2" mesh="horse_harness_roman_b_new" culture="Culture.sturgia" weight="30" appearance="1" Type="HorseHarness">
+  <Item id="crpg_northern_light_harness_v1_h2" name="{=uRqm1nJ7}Light Saddle +2" mesh="horse_harness_roman_b_new" culture="Culture.sturgia" weight="12" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="22" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_roman_b_new_rein" material_type="Leather" />
+      <Armor body_armor="18" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_roman_b_new_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_northern_light_harness_v1_h3" name="{=uRqm1nJ7}Light Saddle +3" mesh="horse_harness_roman_b_new" culture="Culture.sturgia" weight="30" appearance="1" Type="HorseHarness">
+  <Item id="crpg_northern_light_harness_v1_h3" name="{=uRqm1nJ7}Light Saddle +3" mesh="horse_harness_roman_b_new" culture="Culture.sturgia" weight="12" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="27" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_roman_b_new_rein" material_type="Leather" />
+      <Armor body_armor="21" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_roman_b_new_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_half_barding_v1_h0" name="{=qNNja5IF}Lamellar Half Barding" mesh="horse_harness_khuzait_d_clotest" culture="Culture.khuzait" subtype="body_armor" weight="70" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_half_barding_v1_h0" name="{=qNNja5IF}Lamellar Half Barding" mesh="horse_harness_khuzait_d_clotest" culture="Culture.khuzait" subtype="body_armor" weight="22" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="22" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_d_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_half_barding_v1_h1" name="{=qNNja5IF}Lamellar Half Barding +1" mesh="horse_harness_khuzait_d_clotest" culture="Culture.khuzait" subtype="body_armor" weight="70" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_half_barding_v1_h1" name="{=qNNja5IF}Lamellar Half Barding +1" mesh="horse_harness_khuzait_d_clotest" culture="Culture.khuzait" subtype="body_armor" weight="22" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="27" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_d_rein" material_type="Chainmail" />
+      <Armor body_armor="25" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_d_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_half_barding_v1_h2" name="{=qNNja5IF}Lamellar Half Barding +2" mesh="horse_harness_khuzait_d_clotest" culture="Culture.khuzait" subtype="body_armor" weight="70" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_half_barding_v1_h2" name="{=qNNja5IF}Lamellar Half Barding +2" mesh="horse_harness_khuzait_d_clotest" culture="Culture.khuzait" subtype="body_armor" weight="22" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="32" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_d_rein" material_type="Chainmail" />
+      <Armor body_armor="28" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_d_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_half_barding_v1_h3" name="{=qNNja5IF}Lamellar Half Barding +3" mesh="horse_harness_khuzait_d_clotest" culture="Culture.khuzait" subtype="body_armor" weight="70" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_half_barding_v1_h3" name="{=qNNja5IF}Lamellar Half Barding +3" mesh="horse_harness_khuzait_d_clotest" culture="Culture.khuzait" subtype="body_armor" weight="22" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="37" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_d_rein" material_type="Chainmail" />
+      <Armor body_armor="31" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_d_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_fur_harness_v1_h0" name="{=EfRKaKs0}Steppe Fur Harness" mesh="horse_harness_khuzait_a_clotest" culture="Culture.khuzait" subtype="body_armor" weight="25.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_fur_harness_v1_h0" name="{=EfRKaKs0}Steppe Fur Harness" mesh="horse_harness_khuzait_a_clotest" culture="Culture.khuzait" subtype="body_armor" weight="9" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_a_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_fur_harness_v1_h1" name="{=EfRKaKs0}Steppe Fur Harness +1" mesh="horse_harness_khuzait_a_clotest" culture="Culture.khuzait" subtype="body_armor" weight="25.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_fur_harness_v1_h1" name="{=EfRKaKs0}Steppe Fur Harness +1" mesh="horse_harness_khuzait_a_clotest" culture="Culture.khuzait" subtype="body_armor" weight="9" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="14" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_a_rein" material_type="Chainmail" />
+      <Armor body_armor="12" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_a_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_fur_harness_v1_h2" name="{=EfRKaKs0}Steppe Fur Harness +2" mesh="horse_harness_khuzait_a_clotest" culture="Culture.khuzait" subtype="body_armor" weight="25.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_fur_harness_v1_h2" name="{=EfRKaKs0}Steppe Fur Harness +2" mesh="horse_harness_khuzait_a_clotest" culture="Culture.khuzait" subtype="body_armor" weight="9" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="19" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_a_rein" material_type="Chainmail" />
+      <Armor body_armor="15" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_a_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_fur_harness_v1_h3" name="{=EfRKaKs0}Steppe Fur Harness +3" mesh="horse_harness_khuzait_a_clotest" culture="Culture.khuzait" subtype="body_armor" weight="25.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_fur_harness_v1_h3" name="{=EfRKaKs0}Steppe Fur Harness +3" mesh="horse_harness_khuzait_a_clotest" culture="Culture.khuzait" subtype="body_armor" weight="9" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="24" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_a_rein" material_type="Chainmail" />
+      <Armor body_armor="18" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_a_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_harness_v1_h0" name="{=OaQE1Frx}Steppe Saddle" mesh="horse_harness_khuzait_b_clotest" culture="Culture.khuzait" subtype="body_armor" weight="23.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_harness_v1_h0" name="{=OaQE1Frx}Steppe Saddle" mesh="horse_harness_khuzait_b_clotest" culture="Culture.khuzait" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="7" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_b_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_harness_v1_h1" name="{=OaQE1Frx}Steppe Saddle +1" mesh="horse_harness_khuzait_b_clotest" culture="Culture.khuzait" subtype="body_armor" weight="23.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_harness_v1_h1" name="{=OaQE1Frx}Steppe Saddle +1" mesh="horse_harness_khuzait_b_clotest" culture="Culture.khuzait" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="12" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_b_rein" material_type="Chainmail" />
+      <Armor body_armor="10" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_b_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_harness_v1_h2" name="{=OaQE1Frx}Steppe Saddle +2" mesh="horse_harness_khuzait_b_clotest" culture="Culture.khuzait" subtype="body_armor" weight="23.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_harness_v1_h2" name="{=OaQE1Frx}Steppe Saddle +2" mesh="horse_harness_khuzait_b_clotest" culture="Culture.khuzait" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="17" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_b_rein" material_type="Chainmail" />
+      <Armor body_armor="13" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_b_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_steppe_harness_v1_h3" name="{=OaQE1Frx}Steppe Saddle +3" mesh="horse_harness_khuzait_b_clotest" culture="Culture.khuzait" subtype="body_armor" weight="23.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_steppe_harness_v1_h3" name="{=OaQE1Frx}Steppe Saddle +3" mesh="horse_harness_khuzait_b_clotest" culture="Culture.khuzait" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="22" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_b_rein" material_type="Chainmail" />
+      <Armor body_armor="16" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_khuzait_b_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_mail_and_plate_barding_v1_h0" name="{=Vj4ZBxm5}Reinforced Plate Barding" mesh="horse_harness_aserai_c_clotest" culture="Culture.aserai" subtype="body_armor" weight="145" difficulty="0" appearance="0.4" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_mail_and_plate_barding_v1_h0" name="{=Vj4ZBxm5}Reinforced Plate Barding" mesh="horse_harness_aserai_c_clotest" culture="Culture.aserai" subtype="body_armor" weight="40" difficulty="0" appearance="0.4" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="40" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_c_rein" material_type="Plate" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_mail_and_plate_barding_v1_h1" name="{=Vj4ZBxm5}Reinforced Plate Barding +1" mesh="horse_harness_aserai_c_clotest" culture="Culture.aserai" subtype="body_armor" weight="145" difficulty="0" appearance="0.4" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_mail_and_plate_barding_v1_h1" name="{=Vj4ZBxm5}Reinforced Plate Barding +1" mesh="horse_harness_aserai_c_clotest" culture="Culture.aserai" subtype="body_armor" weight="40" difficulty="0" appearance="0.4" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="45" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_c_rein" material_type="Plate" />
+      <Armor body_armor="43" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_c_rein" material_type="Plate" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_mail_and_plate_barding_v1_h2" name="{=Vj4ZBxm5}Reinforced Plate Barding +2" mesh="horse_harness_aserai_c_clotest" culture="Culture.aserai" subtype="body_armor" weight="145" difficulty="0" appearance="0.4" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_mail_and_plate_barding_v1_h2" name="{=Vj4ZBxm5}Reinforced Plate Barding +2" mesh="horse_harness_aserai_c_clotest" culture="Culture.aserai" subtype="body_armor" weight="40" difficulty="0" appearance="0.4" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="50" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_c_rein" material_type="Plate" />
+      <Armor body_armor="46" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_c_rein" material_type="Plate" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_mail_and_plate_barding_v1_h3" name="{=Vj4ZBxm5}Reinforced Plate Barding +3" mesh="horse_harness_aserai_c_clotest" culture="Culture.aserai" subtype="body_armor" weight="145" difficulty="0" appearance="0.4" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_mail_and_plate_barding_v1_h3" name="{=Vj4ZBxm5}Reinforced Plate Barding +3" mesh="horse_harness_aserai_c_clotest" culture="Culture.aserai" subtype="body_armor" weight="40" difficulty="0" appearance="0.4" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="55" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_c_rein" material_type="Plate" />
+      <Armor body_armor="49" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_c_rein" material_type="Plate" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_half_mail_and_plate_barding_v1_h0" name="{=NRB3V6yP}Reinforced Half Plate Barding" mesh="horse_harness_aserai_d_clotest" culture="Culture.aserai" subtype="body_armor" weight="90" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_half_mail_and_plate_barding_v1_h0" name="{=NRB3V6yP}Reinforced Half Plate Barding" mesh="horse_harness_aserai_d_clotest" culture="Culture.aserai" subtype="body_armor" weight="34" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="34" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_d_rein" material_type="Plate" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_half_mail_and_plate_barding_v1_h1" name="{=NRB3V6yP}Reinforced Half Plate Barding +1" mesh="horse_harness_aserai_d_clotest" culture="Culture.aserai" subtype="body_armor" weight="90" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_half_mail_and_plate_barding_v1_h1" name="{=NRB3V6yP}Reinforced Half Plate Barding +1" mesh="horse_harness_aserai_d_clotest" culture="Culture.aserai" subtype="body_armor" weight="34" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="39" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_d_rein" material_type="Plate" />
+      <Armor body_armor="37" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_d_rein" material_type="Plate" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_half_mail_and_plate_barding_v1_h2" name="{=NRB3V6yP}Reinforced Half Plate Barding +2" mesh="horse_harness_aserai_d_clotest" culture="Culture.aserai" subtype="body_armor" weight="90" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_half_mail_and_plate_barding_v1_h2" name="{=NRB3V6yP}Reinforced Half Plate Barding +2" mesh="horse_harness_aserai_d_clotest" culture="Culture.aserai" subtype="body_armor" weight="34" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="44" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_d_rein" material_type="Plate" />
+      <Armor body_armor="40" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_d_rein" material_type="Plate" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_half_mail_and_plate_barding_v1_h3" name="{=NRB3V6yP}Reinforced Half Plate Barding +3" mesh="horse_harness_aserai_d_clotest" culture="Culture.aserai" subtype="body_armor" weight="90" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_half_mail_and_plate_barding_v1_h3" name="{=NRB3V6yP}Reinforced Half Plate Barding +3" mesh="horse_harness_aserai_d_clotest" culture="Culture.aserai" subtype="body_armor" weight="34" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="49" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_d_rein" material_type="Plate" />
+      <Armor body_armor="43" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_aserai_d_rein" material_type="Plate" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_aseran_village_harness_v1_h0" name="{=79bPUaOK}Beduin Common Saddle" mesh="horse_harness_aserai_b_clotest" culture="Culture.aserai" subtype="body_armor" weight="27" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_aseran_village_harness_v1_h0" name="{=79bPUaOK}Beduin Common Saddle" mesh="horse_harness_aserai_b_clotest" culture="Culture.aserai" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="7" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_aserai_b_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_aseran_village_harness_v1_h1" name="{=79bPUaOK}Beduin Common Saddle +1" mesh="horse_harness_aserai_b_clotest" culture="Culture.aserai" subtype="body_armor" weight="27" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_aseran_village_harness_v1_h1" name="{=79bPUaOK}Beduin Common Saddle +1" mesh="horse_harness_aserai_b_clotest" culture="Culture.aserai" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="12" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_aserai_b_rein" material_type="Cloth" />
+      <Armor body_armor="10" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_aserai_b_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_aseran_village_harness_v1_h2" name="{=79bPUaOK}Beduin Common Saddle +2" mesh="horse_harness_aserai_b_clotest" culture="Culture.aserai" subtype="body_armor" weight="27" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_aseran_village_harness_v1_h2" name="{=79bPUaOK}Beduin Common Saddle +2" mesh="horse_harness_aserai_b_clotest" culture="Culture.aserai" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="17" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_aserai_b_rein" material_type="Cloth" />
+      <Armor body_armor="13" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_aserai_b_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_aseran_village_harness_v1_h3" name="{=79bPUaOK}Beduin Common Saddle +3" mesh="horse_harness_aserai_b_clotest" culture="Culture.aserai" subtype="body_armor" weight="27" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_aseran_village_harness_v1_h3" name="{=79bPUaOK}Beduin Common Saddle +3" mesh="horse_harness_aserai_b_clotest" culture="Culture.aserai" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="22" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_aserai_b_rein" material_type="Cloth" />
+      <Armor body_armor="16" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_aserai_b_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_desert_cloth_harness_v1_h0" name="{=LhUhcbzI}Beduin Cloth Saddle" mesh="horse_harness_aserai_a_clotest" culture="Culture.aserai" subtype="body_armor" weight="22.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_desert_cloth_harness_v1_h0" name="{=LhUhcbzI}Beduin Cloth Saddle" mesh="horse_harness_aserai_a_clotest" culture="Culture.aserai" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="7" mane_cover_type="none" reins_mesh="horse_harness_aserai_a_rein" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_desert_cloth_harness_v1_h1" name="{=LhUhcbzI}Beduin Cloth Saddle +1" mesh="horse_harness_aserai_a_clotest" culture="Culture.aserai" subtype="body_armor" weight="22.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_desert_cloth_harness_v1_h1" name="{=LhUhcbzI}Beduin Cloth Saddle +1" mesh="horse_harness_aserai_a_clotest" culture="Culture.aserai" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="12" mane_cover_type="none" reins_mesh="horse_harness_aserai_a_rein" family_type="1" material_type="Cloth" />
+      <Armor body_armor="10" mane_cover_type="none" reins_mesh="horse_harness_aserai_a_rein" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_desert_cloth_harness_v1_h2" name="{=LhUhcbzI}Beduin Cloth Saddle +2" mesh="horse_harness_aserai_a_clotest" culture="Culture.aserai" subtype="body_armor" weight="22.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_desert_cloth_harness_v1_h2" name="{=LhUhcbzI}Beduin Cloth Saddle +2" mesh="horse_harness_aserai_a_clotest" culture="Culture.aserai" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="17" mane_cover_type="none" reins_mesh="horse_harness_aserai_a_rein" family_type="1" material_type="Cloth" />
+      <Armor body_armor="13" mane_cover_type="none" reins_mesh="horse_harness_aserai_a_rein" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_desert_cloth_harness_v1_h3" name="{=LhUhcbzI}Beduin Cloth Saddle +3" mesh="horse_harness_aserai_a_clotest" culture="Culture.aserai" subtype="body_armor" weight="22.5" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_desert_cloth_harness_v1_h3" name="{=LhUhcbzI}Beduin Cloth Saddle +3" mesh="horse_harness_aserai_a_clotest" culture="Culture.aserai" subtype="body_armor" weight="7" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="22" mane_cover_type="none" reins_mesh="horse_harness_aserai_a_rein" family_type="1" material_type="Cloth" />
+      <Armor body_armor="16" mane_cover_type="none" reins_mesh="horse_harness_aserai_a_rein" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_studded_steppe_barding_v1_h0" name="{=LzlQUcak}Reinforced Mail Barding" mesh="horse_harness_khuzait_c_clotest" culture="Culture.khuzait" subtype="body_armor" weight="85" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_studded_steppe_barding_v1_h0" name="{=LzlQUcak}Reinforced Mail Barding" mesh="horse_harness_khuzait_c_clotest" culture="Culture.khuzait" subtype="body_armor" weight="31" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="31" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_c_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_studded_steppe_barding_v1_h1" name="{=LzlQUcak}Reinforced Mail Barding +1" mesh="horse_harness_khuzait_c_clotest" culture="Culture.khuzait" subtype="body_armor" weight="85" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_studded_steppe_barding_v1_h1" name="{=LzlQUcak}Reinforced Mail Barding +1" mesh="horse_harness_khuzait_c_clotest" culture="Culture.khuzait" subtype="body_armor" weight="31" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="36" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_c_rein" material_type="Chainmail" />
+      <Armor body_armor="34" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_c_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_studded_steppe_barding_v1_h2" name="{=LzlQUcak}Reinforced Mail Barding +2" mesh="horse_harness_khuzait_c_clotest" culture="Culture.khuzait" subtype="body_armor" weight="85" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_studded_steppe_barding_v1_h2" name="{=LzlQUcak}Reinforced Mail Barding +2" mesh="horse_harness_khuzait_c_clotest" culture="Culture.khuzait" subtype="body_armor" weight="31" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="41" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_c_rein" material_type="Chainmail" />
+      <Armor body_armor="37" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_c_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_studded_steppe_barding_v1_h3" name="{=LzlQUcak}Reinforced Mail Barding +3" mesh="horse_harness_khuzait_c_clotest" culture="Culture.khuzait" subtype="body_armor" weight="85" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_studded_steppe_barding_v1_h3" name="{=LzlQUcak}Reinforced Mail Barding +3" mesh="horse_harness_khuzait_c_clotest" culture="Culture.khuzait" subtype="body_armor" weight="31" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="46" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_c_rein" material_type="Chainmail" />
+      <Armor body_armor="40" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_khuzait_c_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_imperial_scale_barding_v1_h0" name="{=ds1nrqNv}Cataphract Scale Barding" mesh="horse_harness_imperial_b_clotest" culture="Culture.empire" subtype="body_armor" weight="135" difficulty="0" appearance="0.5" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_imperial_scale_barding_v1_h0" name="{=ds1nrqNv}Cataphract Scale Barding" mesh="horse_harness_imperial_b_clotest" culture="Culture.empire" subtype="body_armor" weight="45" difficulty="0" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="45" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_b_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_imperial_scale_barding_v1_h1" name="{=ds1nrqNv}Cataphract Scale Barding +1" mesh="horse_harness_imperial_b_clotest" culture="Culture.empire" subtype="body_armor" weight="135" difficulty="0" appearance="0.5" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_imperial_scale_barding_v1_h1" name="{=ds1nrqNv}Cataphract Scale Barding +1" mesh="horse_harness_imperial_b_clotest" culture="Culture.empire" subtype="body_armor" weight="45" difficulty="0" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="50" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_b_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_b_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_imperial_scale_barding_v1_h2" name="{=ds1nrqNv}Cataphract Scale Barding +2" mesh="horse_harness_imperial_b_clotest" culture="Culture.empire" subtype="body_armor" weight="135" difficulty="0" appearance="0.5" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_imperial_scale_barding_v1_h2" name="{=ds1nrqNv}Cataphract Scale Barding +2" mesh="horse_harness_imperial_b_clotest" culture="Culture.empire" subtype="body_armor" weight="45" difficulty="0" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="55" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_b_rein" material_type="Chainmail" />
+      <Armor body_armor="51" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_b_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_imperial_scale_barding_v1_h3" name="{=ds1nrqNv}Cataphract Scale Barding +3" mesh="horse_harness_imperial_b_clotest" culture="Culture.empire" subtype="body_armor" weight="135" difficulty="0" appearance="0.5" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_imperial_scale_barding_v1_h3" name="{=ds1nrqNv}Cataphract Scale Barding +3" mesh="horse_harness_imperial_b_clotest" culture="Culture.empire" subtype="body_armor" weight="45" difficulty="0" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="60" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_b_rein" material_type="Chainmail" />
+      <Armor body_armor="54" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_b_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_half_scale_barding_v3_h0" name="{=i2QlHUVW}Cataphract Half Scale Barding" mesh="horse_harness_imperial_c_clotest" culture="Culture.empire" subtype="body_armor" weight="80" difficulty="0" appearance="0.5" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_half_scale_barding_v3_h0" name="{=i2QlHUVW}Cataphract Half Scale Barding" mesh="horse_harness_imperial_c_clotest" culture="Culture.empire" subtype="body_armor" weight="42" difficulty="0" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="42" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_c_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_half_scale_barding_v3_h1" name="{=i2QlHUVW}Cataphract Half Scale Barding +1" mesh="horse_harness_imperial_c_clotest" culture="Culture.empire" subtype="body_armor" weight="80" difficulty="0" appearance="0.5" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_half_scale_barding_v3_h1" name="{=i2QlHUVW}Cataphract Half Scale Barding +1" mesh="horse_harness_imperial_c_clotest" culture="Culture.empire" subtype="body_armor" weight="42" difficulty="0" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="47" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_c_rein" material_type="Chainmail" />
+      <Armor body_armor="45" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_c_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_half_scale_barding_v3_h2" name="{=i2QlHUVW}Cataphract Half Scale Barding +2" mesh="horse_harness_imperial_c_clotest" culture="Culture.empire" subtype="body_armor" weight="80" difficulty="0" appearance="0.5" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_half_scale_barding_v3_h2" name="{=i2QlHUVW}Cataphract Half Scale Barding +2" mesh="horse_harness_imperial_c_clotest" culture="Culture.empire" subtype="body_armor" weight="42" difficulty="0" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="52" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_c_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_c_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_half_scale_barding_v3_h3" name="{=i2QlHUVW}Cataphract Half Scale Barding +3" mesh="horse_harness_imperial_c_clotest" culture="Culture.empire" subtype="body_armor" weight="80" difficulty="0" appearance="0.5" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_half_scale_barding_v3_h3" name="{=i2QlHUVW}Cataphract Half Scale Barding +3" mesh="horse_harness_imperial_c_clotest" culture="Culture.empire" subtype="body_armor" weight="42" difficulty="0" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="57" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_c_rein" material_type="Chainmail" />
+      <Armor body_armor="51" mane_cover_type="all" family_type="1" reins_mesh="horse_harness_imperial_c_rein" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_imperial_riding_harness_v1_h0" name="{=NUmDuEqI}Imperial Riding Harness" mesh="horse_harness_a_new" culture="Culture.empire" weight="22" appearance="1" Type="HorseHarness">
+  <Item id="crpg_imperial_riding_harness_v1_h0" name="{=NUmDuEqI}Imperial Riding Harness" mesh="horse_harness_a_new" culture="Culture.empire" weight="5" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="5" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_a_new_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_imperial_riding_harness_v1_h1" name="{=NUmDuEqI}Imperial Riding Harness +1" mesh="horse_harness_a_new" culture="Culture.empire" weight="22" appearance="1" Type="HorseHarness">
+  <Item id="crpg_imperial_riding_harness_v1_h1" name="{=NUmDuEqI}Imperial Riding Harness +1" mesh="horse_harness_a_new" culture="Culture.empire" weight="5" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="10" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_a_new_rein" material_type="Leather" />
+      <Armor body_armor="8" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_a_new_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_imperial_riding_harness_v1_h2" name="{=NUmDuEqI}Imperial Riding Harness +2" mesh="horse_harness_a_new" culture="Culture.empire" weight="22" appearance="1" Type="HorseHarness">
+  <Item id="crpg_imperial_riding_harness_v1_h2" name="{=NUmDuEqI}Imperial Riding Harness +2" mesh="horse_harness_a_new" culture="Culture.empire" weight="5" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="15" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_a_new_rein" material_type="Leather" />
+      <Armor body_armor="11" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_a_new_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_imperial_riding_harness_v1_h3" name="{=NUmDuEqI}Imperial Riding Harness +3" mesh="horse_harness_a_new" culture="Culture.empire" weight="22" appearance="1" Type="HorseHarness">
+  <Item id="crpg_imperial_riding_harness_v1_h3" name="{=NUmDuEqI}Imperial Riding Harness +3" mesh="horse_harness_a_new" culture="Culture.empire" weight="5" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="20" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_a_new_rein" material_type="Leather" />
+      <Armor body_armor="14" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_a_new_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_stripped_leather_harness_v1_h0" name="{=Yh7Dorsr}Striped Leather Harness" mesh="horse_harness_imperial_a_clotest" culture="Culture.empire" subtype="body_armor" weight="26" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_stripped_leather_harness_v1_h0" name="{=Yh7Dorsr}Striped Leather Harness" mesh="horse_harness_imperial_a_clotest" culture="Culture.empire" subtype="body_armor" weight="9" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_imperial_a_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_stripped_leather_harness_v1_h1" name="{=Yh7Dorsr}Striped Leather Harness +1" mesh="horse_harness_imperial_a_clotest" culture="Culture.empire" subtype="body_armor" weight="26" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_stripped_leather_harness_v1_h1" name="{=Yh7Dorsr}Striped Leather Harness +1" mesh="horse_harness_imperial_a_clotest" culture="Culture.empire" subtype="body_armor" weight="9" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="14" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_imperial_a_rein" material_type="Leather" />
+      <Armor body_armor="12" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_imperial_a_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_stripped_leather_harness_v1_h2" name="{=Yh7Dorsr}Striped Leather Harness +2" mesh="horse_harness_imperial_a_clotest" culture="Culture.empire" subtype="body_armor" weight="26" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_stripped_leather_harness_v1_h2" name="{=Yh7Dorsr}Striped Leather Harness +2" mesh="horse_harness_imperial_a_clotest" culture="Culture.empire" subtype="body_armor" weight="9" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="19" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_imperial_a_rein" material_type="Leather" />
+      <Armor body_armor="15" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_imperial_a_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_stripped_leather_harness_v1_h3" name="{=Yh7Dorsr}Striped Leather Harness +3" mesh="horse_harness_imperial_a_clotest" culture="Culture.empire" subtype="body_armor" weight="26" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_stripped_leather_harness_v1_h3" name="{=Yh7Dorsr}Striped Leather Harness +3" mesh="horse_harness_imperial_a_clotest" culture="Culture.empire" subtype="body_armor" weight="9" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="24" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_imperial_a_rein" material_type="Leather" />
+      <Armor body_armor="18" mane_cover_type="none" family_type="1" reins_mesh="horse_harness_imperial_a_rein" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_chain_horse_harness_v1_h0" name="{=JkxPt29i}Chain Mail Horse Armor" mesh="horse_harness_e" subtype="body_armor" weight="120" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_chain_horse_harness_v1_h0" name="{=JkxPt29i}Chain Mail Horse Armor" mesh="horse_harness_e" subtype="body_armor" weight="33" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="33" hair_cover_type="all" covers_head="true" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_e_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_chain_horse_harness_v1_h1" name="{=JkxPt29i}Chain Mail Horse Armor +1" mesh="horse_harness_e" subtype="body_armor" weight="120" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_chain_horse_harness_v1_h1" name="{=JkxPt29i}Chain Mail Horse Armor +1" mesh="horse_harness_e" subtype="body_armor" weight="33" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="38" hair_cover_type="all" covers_head="true" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_e_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="36" hair_cover_type="all" covers_head="true" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_e_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_chain_horse_harness_v1_h2" name="{=JkxPt29i}Chain Mail Horse Armor +2" mesh="horse_harness_e" subtype="body_armor" weight="120" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_chain_horse_harness_v1_h2" name="{=JkxPt29i}Chain Mail Horse Armor +2" mesh="horse_harness_e" subtype="body_armor" weight="33" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="43" hair_cover_type="all" covers_head="true" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_e_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="39" hair_cover_type="all" covers_head="true" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_e_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_chain_horse_harness_v1_h3" name="{=JkxPt29i}Chain Mail Horse Armor +3" mesh="horse_harness_e" subtype="body_armor" weight="120" difficulty="0" appearance="0.6" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_chain_horse_harness_v1_h3" name="{=JkxPt29i}Chain Mail Horse Armor +3" mesh="horse_harness_e" subtype="body_armor" weight="33" difficulty="0" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="48" hair_cover_type="all" covers_head="true" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_e_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="42" hair_cover_type="all" covers_head="true" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_e_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_chain_barding_v1_h0" name="{=HJriXlcb}Reinforced Chainmail Barding" mesh="horse_harness_vlandia_a_clotest" culture="Culture.vlandia" weight="130" appearance="0.5" Type="HorseHarness">
+  <Item id="crpg_chain_barding_v1_h0" name="{=HJriXlcb}Reinforced Chainmail Barding" mesh="horse_harness_vlandia_a_clotest" culture="Culture.vlandia" weight="38" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="38" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_a_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_chain_barding_v1_h1" name="{=HJriXlcb}Reinforced Chainmail Barding +1" mesh="horse_harness_vlandia_a_clotest" culture="Culture.vlandia" weight="130" appearance="0.5" Type="HorseHarness">
+  <Item id="crpg_chain_barding_v1_h1" name="{=HJriXlcb}Reinforced Chainmail Barding +1" mesh="horse_harness_vlandia_a_clotest" culture="Culture.vlandia" weight="38" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="43" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_a_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="41" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_a_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_chain_barding_v1_h2" name="{=HJriXlcb}Reinforced Chainmail Barding +2" mesh="horse_harness_vlandia_a_clotest" culture="Culture.vlandia" weight="130" appearance="0.5" Type="HorseHarness">
+  <Item id="crpg_chain_barding_v1_h2" name="{=HJriXlcb}Reinforced Chainmail Barding +2" mesh="horse_harness_vlandia_a_clotest" culture="Culture.vlandia" weight="38" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="48" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_a_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="44" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_a_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_chain_barding_v1_h3" name="{=HJriXlcb}Reinforced Chainmail Barding +3" mesh="horse_harness_vlandia_a_clotest" culture="Culture.vlandia" weight="130" appearance="0.5" Type="HorseHarness">
+  <Item id="crpg_chain_barding_v1_h3" name="{=HJriXlcb}Reinforced Chainmail Barding +3" mesh="horse_harness_vlandia_a_clotest" culture="Culture.vlandia" weight="38" appearance="0.5" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="53" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_a_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="47" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_a_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_halfchain_barding_v1_h0" name="{=iquQ9dro}Half Mail Barding" mesh="horse_harness_vlandia_b_clotest" culture="Culture.vlandia" weight="65" appearance="0.6" Type="HorseHarness">
+  <Item id="crpg_halfchain_barding_v1_h0" name="{=iquQ9dro}Half Mail Barding" mesh="horse_harness_vlandia_b_clotest" culture="Culture.vlandia" weight="31" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="31" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_b_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_halfchain_barding_v1_h1" name="{=iquQ9dro}Half Mail Barding +1" mesh="horse_harness_vlandia_b_clotest" culture="Culture.vlandia" weight="65" appearance="0.6" Type="HorseHarness">
+  <Item id="crpg_halfchain_barding_v1_h1" name="{=iquQ9dro}Half Mail Barding +1" mesh="horse_harness_vlandia_b_clotest" culture="Culture.vlandia" weight="31" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="36" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_b_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="34" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_b_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_halfchain_barding_v1_h2" name="{=iquQ9dro}Half Mail Barding +2" mesh="horse_harness_vlandia_b_clotest" culture="Culture.vlandia" weight="65" appearance="0.6" Type="HorseHarness">
+  <Item id="crpg_halfchain_barding_v1_h2" name="{=iquQ9dro}Half Mail Barding +2" mesh="horse_harness_vlandia_b_clotest" culture="Culture.vlandia" weight="31" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="41" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_b_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="37" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_b_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_halfchain_barding_v1_h3" name="{=iquQ9dro}Half Mail Barding +3" mesh="horse_harness_vlandia_b_clotest" culture="Culture.vlandia" weight="65" appearance="0.6" Type="HorseHarness">
+  <Item id="crpg_halfchain_barding_v1_h3" name="{=iquQ9dro}Half Mail Barding +3" mesh="horse_harness_vlandia_b_clotest" culture="Culture.vlandia" weight="31" appearance="0.6" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="46" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_b_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
+      <Armor body_armor="40" mane_cover_type="all" maneuver_bonus="0" speed_bonus="0" reins_mesh="horse_harness_vlandia_b_rein" charge_bonus="0" family_type="1" material_type="Chainmail" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_light_harness_v1_h0" name="{=O37kzdXO}Light Harness" mesh="horse_harness_b" weight="20" appearance="1" Type="HorseHarness">
+  <Item id="crpg_light_harness_v1_h0" name="{=O37kzdXO}Light Harness" mesh="horse_harness_b" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="none" maneuver_bonus="0" speed_bonus="0" charge_bonus="0" family_type="1" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_light_harness_v1_h1" name="{=O37kzdXO}Light Harness +1" mesh="horse_harness_b" weight="20" appearance="1" Type="HorseHarness">
+  <Item id="crpg_light_harness_v1_h1" name="{=O37kzdXO}Light Harness +1" mesh="horse_harness_b" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="11" mane_cover_type="none" maneuver_bonus="0" speed_bonus="0" charge_bonus="0" family_type="1" material_type="Leather" />
+      <Armor body_armor="9" mane_cover_type="none" maneuver_bonus="0" speed_bonus="0" charge_bonus="0" family_type="1" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_light_harness_v1_h2" name="{=O37kzdXO}Light Harness +2" mesh="horse_harness_b" weight="20" appearance="1" Type="HorseHarness">
+  <Item id="crpg_light_harness_v1_h2" name="{=O37kzdXO}Light Harness +2" mesh="horse_harness_b" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="16" mane_cover_type="none" maneuver_bonus="0" speed_bonus="0" charge_bonus="0" family_type="1" material_type="Leather" />
+      <Armor body_armor="12" mane_cover_type="none" maneuver_bonus="0" speed_bonus="0" charge_bonus="0" family_type="1" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_light_harness_v1_h3" name="{=O37kzdXO}Light Harness +3" mesh="horse_harness_b" weight="20" appearance="1" Type="HorseHarness">
+  <Item id="crpg_light_harness_v1_h3" name="{=O37kzdXO}Light Harness +3" mesh="horse_harness_b" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="21" mane_cover_type="none" maneuver_bonus="0" speed_bonus="0" charge_bonus="0" family_type="1" material_type="Leather" />
+      <Armor body_armor="15" mane_cover_type="none" maneuver_bonus="0" speed_bonus="0" charge_bonus="0" family_type="1" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_highland_v1_h0" name="{=CHxRDUN1}Rugged Fur Saddle" mesh="bandit_saddle_highland" culture="Culture.battania" subtype="body_armor" weight="23" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_highland_v1_h0" name="{=CHxRDUN1}Rugged Fur Saddle" mesh="bandit_saddle_highland" culture="Culture.battania" subtype="body_armor" weight="6" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_highland_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_highland_v1_h1" name="{=CHxRDUN1}Rugged Fur Saddle +1" mesh="bandit_saddle_highland" culture="Culture.battania" subtype="body_armor" weight="23" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_highland_v1_h1" name="{=CHxRDUN1}Rugged Fur Saddle +1" mesh="bandit_saddle_highland" culture="Culture.battania" subtype="body_armor" weight="6" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="11" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_highland_rein" material_type="Cloth" />
+      <Armor body_armor="9" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_highland_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_highland_v1_h2" name="{=CHxRDUN1}Rugged Fur Saddle +2" mesh="bandit_saddle_highland" culture="Culture.battania" subtype="body_armor" weight="23" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_highland_v1_h2" name="{=CHxRDUN1}Rugged Fur Saddle +2" mesh="bandit_saddle_highland" culture="Culture.battania" subtype="body_armor" weight="6" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="16" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_highland_rein" material_type="Cloth" />
+      <Armor body_armor="12" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_highland_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_highland_v1_h3" name="{=CHxRDUN1}Rugged Fur Saddle +3" mesh="bandit_saddle_highland" culture="Culture.battania" subtype="body_armor" weight="23" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_highland_v1_h3" name="{=CHxRDUN1}Rugged Fur Saddle +3" mesh="bandit_saddle_highland" culture="Culture.battania" subtype="body_armor" weight="6" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="21" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_highland_rein" material_type="Cloth" />
+      <Armor body_armor="15" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_highland_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_steppe_v1_h0" name="{=p2jR7Urm}Rugged Saddle" mesh="bandit_saddle_a" subtype="body_armor" weight="24" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_steppe_v1_h0" name="{=p2jR7Urm}Rugged Saddle" mesh="bandit_saddle_a" subtype="body_armor" weight="4" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="4" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_a_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_steppe_v1_h1" name="{=p2jR7Urm}Rugged Saddle +1" mesh="bandit_saddle_a" subtype="body_armor" weight="24" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_steppe_v1_h1" name="{=p2jR7Urm}Rugged Saddle +1" mesh="bandit_saddle_a" subtype="body_armor" weight="4" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="9" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_a_rein" material_type="Cloth" />
+      <Armor body_armor="7" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_a_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_steppe_v1_h2" name="{=p2jR7Urm}Rugged Saddle +2" mesh="bandit_saddle_a" subtype="body_armor" weight="24" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_steppe_v1_h2" name="{=p2jR7Urm}Rugged Saddle +2" mesh="bandit_saddle_a" subtype="body_armor" weight="4" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="14" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_a_rein" material_type="Cloth" />
+      <Armor body_armor="10" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_a_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_steppe_v1_h3" name="{=p2jR7Urm}Rugged Saddle +3" mesh="bandit_saddle_a" subtype="body_armor" weight="24" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_steppe_v1_h3" name="{=p2jR7Urm}Rugged Saddle +3" mesh="bandit_saddle_a" subtype="body_armor" weight="4" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="19" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_a_rein" material_type="Cloth" />
+      <Armor body_armor="13" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_a_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_desert_v1_h0" name="{=8PXbyI2r}Rugged Beduin Saddle" mesh="bandit_saddle_desert" culture="Culture.aserai" subtype="body_armor" weight="21" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_desert_v1_h0" name="{=8PXbyI2r}Rugged Beduin Saddle" mesh="bandit_saddle_desert" culture="Culture.aserai" subtype="body_armor" weight="5" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="5" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_desert_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_desert_v1_h1" name="{=8PXbyI2r}Rugged Beduin Saddle +1" mesh="bandit_saddle_desert" culture="Culture.aserai" subtype="body_armor" weight="21" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_desert_v1_h1" name="{=8PXbyI2r}Rugged Beduin Saddle +1" mesh="bandit_saddle_desert" culture="Culture.aserai" subtype="body_armor" weight="5" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="10" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_desert_rein" material_type="Cloth" />
+      <Armor body_armor="8" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_desert_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_desert_v1_h2" name="{=8PXbyI2r}Rugged Beduin Saddle +2" mesh="bandit_saddle_desert" culture="Culture.aserai" subtype="body_armor" weight="21" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_desert_v1_h2" name="{=8PXbyI2r}Rugged Beduin Saddle +2" mesh="bandit_saddle_desert" culture="Culture.aserai" subtype="body_armor" weight="5" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="15" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_desert_rein" material_type="Cloth" />
+      <Armor body_armor="11" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_desert_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item multiplayer_item="false" id="crpg_bandit_saddle_desert_v1_h3" name="{=8PXbyI2r}Rugged Beduin Saddle +3" mesh="bandit_saddle_desert" culture="Culture.aserai" subtype="body_armor" weight="21" difficulty="0" appearance="1" Type="HorseHarness">
+  <Item multiplayer_item="false" id="crpg_bandit_saddle_desert_v1_h3" name="{=8PXbyI2r}Rugged Beduin Saddle +3" mesh="bandit_saddle_desert" culture="Culture.aserai" subtype="body_armor" weight="5" difficulty="0" appearance="1" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="20" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_desert_rein" material_type="Cloth" />
+      <Armor body_armor="14" mane_cover_type="none" family_type="1" reins_mesh="bandit_saddle_desert_rein" material_type="Cloth" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_2_v1_h0" name="Pack Camel" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
@@ -5988,219 +5988,219 @@
       </Horse>
     </ItemComponent>
   </Item>
-  <Item id="crpg_caparison_template_jerusalem_v1_h0" name="Caparison, Jerusalem (White)" mesh="caparison_template_jerusalem" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_jerusalem_v1_h0" name="Caparison, Jerusalem (White)" mesh="caparison_template_jerusalem" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="39" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_jerusalem_v1_h1" name="Caparison, Jerusalem (White) +1" mesh="caparison_template_jerusalem" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_jerusalem_v1_h1" name="Caparison, Jerusalem (White) +1" mesh="caparison_template_jerusalem" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="44" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="42" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_jerusalem_v1_h2" name="Caparison, Jerusalem (White) +2" mesh="caparison_template_jerusalem" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_jerusalem_v1_h2" name="Caparison, Jerusalem (White) +2" mesh="caparison_template_jerusalem" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="49" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="45" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_jerusalem_v1_h3" name="Caparison, Jerusalem (White) +3" mesh="caparison_template_jerusalem" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_jerusalem_v1_h3" name="Caparison, Jerusalem (White) +3" mesh="caparison_template_jerusalem" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="54" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_jerusalem_teal_v1_h0" name="Caparison, Jerusalem (Teal)" mesh="caparison_template_jerusalem_teal" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_jerusalem_teal_v1_h0" name="Caparison, Jerusalem (Teal)" mesh="caparison_template_jerusalem_teal" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="39" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_jerusalem_teal_v1_h1" name="Caparison, Jerusalem (Teal) +1" mesh="caparison_template_jerusalem_teal" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_jerusalem_teal_v1_h1" name="Caparison, Jerusalem (Teal) +1" mesh="caparison_template_jerusalem_teal" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="44" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="42" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_jerusalem_teal_v1_h2" name="Caparison, Jerusalem (Teal) +2" mesh="caparison_template_jerusalem_teal" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_jerusalem_teal_v1_h2" name="Caparison, Jerusalem (Teal) +2" mesh="caparison_template_jerusalem_teal" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="49" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="45" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_jerusalem_teal_v1_h3" name="Caparison, Jerusalem (Teal) +3" mesh="caparison_template_jerusalem_teal" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_jerusalem_teal_v1_h3" name="Caparison, Jerusalem (Teal) +3" mesh="caparison_template_jerusalem_teal" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="54" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_brabant_v1_h0" name="Caparison, Brabant" mesh="caparison_template_brabant" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_brabant_v1_h0" name="Caparison, Brabant" mesh="caparison_template_brabant" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="39" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_brabant_v1_h1" name="Caparison, Brabant +1" mesh="caparison_template_brabant" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_brabant_v1_h1" name="Caparison, Brabant +1" mesh="caparison_template_brabant" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="44" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="42" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_brabant_v1_h2" name="Caparison, Brabant +2" mesh="caparison_template_brabant" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_brabant_v1_h2" name="Caparison, Brabant +2" mesh="caparison_template_brabant" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="49" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="45" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_brabant_v1_h3" name="Caparison, Brabant +3" mesh="caparison_template_brabant" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_brabant_v1_h3" name="Caparison, Brabant +3" mesh="caparison_template_brabant" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="54" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_teutonic_v1_h0" name="Caparison, Teutonic" mesh="caparison_template_teutonic" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_teutonic_v1_h0" name="Caparison, Teutonic" mesh="caparison_template_teutonic" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="39" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_teutonic_v1_h1" name="Caparison, Teutonic +1" mesh="caparison_template_teutonic" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_teutonic_v1_h1" name="Caparison, Teutonic +1" mesh="caparison_template_teutonic" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="44" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="42" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_teutonic_v1_h2" name="Caparison, Teutonic +2" mesh="caparison_template_teutonic" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_teutonic_v1_h2" name="Caparison, Teutonic +2" mesh="caparison_template_teutonic" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="49" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="45" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_teutonic_v1_h3" name="Caparison, Teutonic +3" mesh="caparison_template_teutonic" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_teutonic_v1_h3" name="Caparison, Teutonic +3" mesh="caparison_template_teutonic" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="54" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_teutonic2_v1_h0" name="Caparison, Teutonic" mesh="caparison_template_teutonic2" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_teutonic2_v1_h0" name="Caparison, Teutonic" mesh="caparison_template_teutonic2" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="39" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_teutonic2_v1_h1" name="Caparison, Teutonic +1" mesh="caparison_template_teutonic2" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_teutonic2_v1_h1" name="Caparison, Teutonic +1" mesh="caparison_template_teutonic2" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="44" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="42" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_teutonic2_v1_h2" name="Caparison, Teutonic +2" mesh="caparison_template_teutonic2" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_teutonic2_v1_h2" name="Caparison, Teutonic +2" mesh="caparison_template_teutonic2" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="49" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="45" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_teutonic2_v1_h3" name="Caparison, Teutonic +3" mesh="caparison_template_teutonic2" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_teutonic2_v1_h3" name="Caparison, Teutonic +3" mesh="caparison_template_teutonic2" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="54" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_bavaria_v1_h0" name="Caparison, Bavaria" mesh="caparison_template_bavaria" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_bavaria_v1_h0" name="Caparison, Bavaria" mesh="caparison_template_bavaria" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="39" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_bavaria_v1_h1" name="Caparison, Bavaria +1" mesh="caparison_template_bavaria" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_bavaria_v1_h1" name="Caparison, Bavaria +1" mesh="caparison_template_bavaria" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="44" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="42" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_bavaria_v1_h2" name="Caparison, Bavaria +2" mesh="caparison_template_bavaria" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_bavaria_v1_h2" name="Caparison, Bavaria +2" mesh="caparison_template_bavaria" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="49" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="45" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_bavaria_v1_h3" name="Caparison, Bavaria +3" mesh="caparison_template_bavaria" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_bavaria_v1_h3" name="Caparison, Bavaria +3" mesh="caparison_template_bavaria" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="54" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_brienne_v1_h0" name="Caparison, Brienne" mesh="caparison_template_brienne" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_brienne_v1_h0" name="Caparison, Brienne" mesh="caparison_template_brienne" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="39" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_brienne_v1_h1" name="Caparison, Brienne +1" mesh="caparison_template_brienne" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_brienne_v1_h1" name="Caparison, Brienne +1" mesh="caparison_template_brienne" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="44" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="42" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_brienne_v1_h2" name="Caparison, Brienne +2" mesh="caparison_template_brienne" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_brienne_v1_h2" name="Caparison, Brienne +2" mesh="caparison_template_brienne" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="49" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="45" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_brienne_v1_h3" name="Caparison, Brienne +3" mesh="caparison_template_brienne" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_brienne_v1_h3" name="Caparison, Brienne +3" mesh="caparison_template_brienne" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="54" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_champagne_v1_h0" name="Caparison, Champagne" mesh="caparison_template_champagne" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_champagne_v1_h0" name="Caparison, Champagne" mesh="caparison_template_champagne" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="39" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_champagne_v1_h1" name="Caparison, Champagne +1" mesh="caparison_template_champagne" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_champagne_v1_h1" name="Caparison, Champagne +1" mesh="caparison_template_champagne" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="44" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="42" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_champagne_v1_h2" name="Caparison, Champagne +2" mesh="caparison_template_champagne" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_champagne_v1_h2" name="Caparison, Champagne +2" mesh="caparison_template_champagne" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="49" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="45" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_template_champagne_v1_h3" name="Caparison, Champagne +3" mesh="caparison_template_champagne" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_template_champagne_v1_h3" name="Caparison, Champagne +3" mesh="caparison_template_champagne" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="54" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_1_v1_h0" name="Armoured Caparison, Checkered (Teamcolor)" mesh="caparison_1" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_1_v1_h0" name="Armoured Caparison, Checkered (Teamcolor)" mesh="caparison_1" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="39" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_1_v1_h1" name="Armoured Caparison, Checkered (Teamcolor) +1" mesh="caparison_1" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_1_v1_h1" name="Armoured Caparison, Checkered (Teamcolor) +1" mesh="caparison_1" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="44" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="42" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_1_v1_h2" name="Armoured Caparison, Checkered (Teamcolor) +2" mesh="caparison_1" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_1_v1_h2" name="Armoured Caparison, Checkered (Teamcolor) +2" mesh="caparison_1" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="49" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="45" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_caparison_1_v1_h3" name="Armoured Caparison, Checkered (Teamcolor) +3" mesh="caparison_1" weight="16" appearance="10" Type="HorseHarness">
+  <Item id="crpg_caparison_1_v1_h3" name="Armoured Caparison, Checkered (Teamcolor) +3" mesh="caparison_1" weight="39" appearance="10" Type="HorseHarness">
     <ItemComponent>
-      <Armor body_armor="54" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
+      <Armor body_armor="48" mane_cover_type="all" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
