@@ -7314,8 +7314,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_aseran_village_harness_h0",
-    "baseId": "crpg_aseran_village_harness",
+    "id": "crpg_aseran_village_harness_v1_h0",
+    "baseId": "crpg_aseran_village_harness_v1",
     "name": "Beduin Common Saddle",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -7336,8 +7336,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_aseran_village_harness_h1",
-    "baseId": "crpg_aseran_village_harness",
+    "id": "crpg_aseran_village_harness_v1_h1",
+    "baseId": "crpg_aseran_village_harness_v1",
     "name": "Beduin Common Saddle +1",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -7358,8 +7358,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_aseran_village_harness_h2",
-    "baseId": "crpg_aseran_village_harness",
+    "id": "crpg_aseran_village_harness_v1_h2",
+    "baseId": "crpg_aseran_village_harness_v1",
     "name": "Beduin Common Saddle +2",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -7380,8 +7380,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_aseran_village_harness_h3",
-    "baseId": "crpg_aseran_village_harness",
+    "id": "crpg_aseran_village_harness_v1_h3",
+    "baseId": "crpg_aseran_village_harness_v1",
     "name": "Beduin Common Saddle +3",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -8838,8 +8838,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_desert_h0",
-    "baseId": "crpg_bandit_saddle_desert",
+    "id": "crpg_bandit_saddle_desert_v1_h0",
+    "baseId": "crpg_bandit_saddle_desert_v1",
     "name": "Rugged Beduin Saddle",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -8860,8 +8860,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_desert_h1",
-    "baseId": "crpg_bandit_saddle_desert",
+    "id": "crpg_bandit_saddle_desert_v1_h1",
+    "baseId": "crpg_bandit_saddle_desert_v1",
     "name": "Rugged Beduin Saddle +1",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -8882,8 +8882,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_desert_h2",
-    "baseId": "crpg_bandit_saddle_desert",
+    "id": "crpg_bandit_saddle_desert_v1_h2",
+    "baseId": "crpg_bandit_saddle_desert_v1",
     "name": "Rugged Beduin Saddle +2",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -8904,8 +8904,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_desert_h3",
-    "baseId": "crpg_bandit_saddle_desert",
+    "id": "crpg_bandit_saddle_desert_v1_h3",
+    "baseId": "crpg_bandit_saddle_desert_v1",
     "name": "Rugged Beduin Saddle +3",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -8926,8 +8926,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_highland_h0",
-    "baseId": "crpg_bandit_saddle_highland",
+    "id": "crpg_bandit_saddle_highland_v1_h0",
+    "baseId": "crpg_bandit_saddle_highland_v1",
     "name": "Rugged Fur Saddle",
     "culture": "Battania",
     "type": "MountHarness",
@@ -8948,8 +8948,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_highland_h1",
-    "baseId": "crpg_bandit_saddle_highland",
+    "id": "crpg_bandit_saddle_highland_v1_h1",
+    "baseId": "crpg_bandit_saddle_highland_v1",
     "name": "Rugged Fur Saddle +1",
     "culture": "Battania",
     "type": "MountHarness",
@@ -8970,8 +8970,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_highland_h2",
-    "baseId": "crpg_bandit_saddle_highland",
+    "id": "crpg_bandit_saddle_highland_v1_h2",
+    "baseId": "crpg_bandit_saddle_highland_v1",
     "name": "Rugged Fur Saddle +2",
     "culture": "Battania",
     "type": "MountHarness",
@@ -8992,8 +8992,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_highland_h3",
-    "baseId": "crpg_bandit_saddle_highland",
+    "id": "crpg_bandit_saddle_highland_v1_h3",
+    "baseId": "crpg_bandit_saddle_highland_v1",
     "name": "Rugged Fur Saddle +3",
     "culture": "Battania",
     "type": "MountHarness",
@@ -9014,8 +9014,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_steppe_h0",
-    "baseId": "crpg_bandit_saddle_steppe",
+    "id": "crpg_bandit_saddle_steppe_v1_h0",
+    "baseId": "crpg_bandit_saddle_steppe_v1",
     "name": "Rugged Saddle",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -9036,8 +9036,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_steppe_h1",
-    "baseId": "crpg_bandit_saddle_steppe",
+    "id": "crpg_bandit_saddle_steppe_v1_h1",
+    "baseId": "crpg_bandit_saddle_steppe_v1",
     "name": "Rugged Saddle +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -9058,8 +9058,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_steppe_h2",
-    "baseId": "crpg_bandit_saddle_steppe",
+    "id": "crpg_bandit_saddle_steppe_v1_h2",
+    "baseId": "crpg_bandit_saddle_steppe_v1",
     "name": "Rugged Saddle +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -9080,8 +9080,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_bandit_saddle_steppe_h3",
-    "baseId": "crpg_bandit_saddle_steppe",
+    "id": "crpg_bandit_saddle_steppe_v1_h3",
+    "baseId": "crpg_bandit_saddle_steppe_v1",
     "name": "Rugged Saddle +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -12714,96 +12714,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battania_horse_harness_h0",
-    "baseId": "crpg_battania_horse_harness",
-    "name": "Battania Horse Harness",
-    "culture": "Battania",
-    "type": "MountHarness",
-    "price": 721,
-    "weight": 30.0,
-    "rank": 0,
-    "tier": 2.090909,
-    "requirement": 0,
-    "flags": [],
-    "armor": {
-      "headArmor": 0,
-      "bodyArmor": 9,
-      "armArmor": 0,
-      "legArmor": 0,
-      "materialType": "Leather",
-      "familyType": 1
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_battania_horse_harness_h1",
-    "baseId": "crpg_battania_horse_harness",
-    "name": "Battania Horse Harness +1",
-    "culture": "Battania",
-    "type": "MountHarness",
-    "price": 1185,
-    "weight": 30.0,
-    "rank": 1,
-    "tier": 2.95684123,
-    "requirement": 0,
-    "flags": [],
-    "armor": {
-      "headArmor": 0,
-      "bodyArmor": 14,
-      "armArmor": 0,
-      "legArmor": 0,
-      "materialType": "Leather",
-      "familyType": 1
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_battania_horse_harness_h2",
-    "baseId": "crpg_battania_horse_harness",
-    "name": "Battania Horse Harness +2",
-    "culture": "Battania",
-    "type": "MountHarness",
-    "price": 1654,
-    "weight": 30.0,
-    "rank": 2,
-    "tier": 3.67845082,
-    "requirement": 0,
-    "flags": [],
-    "armor": {
-      "headArmor": 0,
-      "bodyArmor": 19,
-      "armArmor": 0,
-      "legArmor": 0,
-      "materialType": "Leather",
-      "familyType": 1
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_battania_horse_harness_h3",
-    "baseId": "crpg_battania_horse_harness",
-    "name": "Battania Horse Harness +3",
-    "culture": "Battania",
-    "type": "MountHarness",
-    "price": 2111,
-    "weight": 30.0,
-    "rank": 3,
-    "tier": 4.28904438,
-    "requirement": 0,
-    "flags": [],
-    "armor": {
-      "headArmor": 0,
-      "bodyArmor": 24,
-      "armArmor": 0,
-      "legArmor": 0,
-      "materialType": "Leather",
-      "familyType": 1
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_battania_horse_harness_halfscaled_h0",
-    "baseId": "crpg_battania_horse_harness_halfscaled",
+    "id": "crpg_battania_horse_harness_halfscaled_v1_h0",
+    "baseId": "crpg_battania_horse_harness_halfscaled_v1",
     "name": "Half Scaled Barding",
     "culture": "Battania",
     "type": "MountHarness",
@@ -12824,8 +12736,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battania_horse_harness_halfscaled_h1",
-    "baseId": "crpg_battania_horse_harness_halfscaled",
+    "id": "crpg_battania_horse_harness_halfscaled_v1_h1",
+    "baseId": "crpg_battania_horse_harness_halfscaled_v1",
     "name": "Half Scaled Barding +1",
     "culture": "Battania",
     "type": "MountHarness",
@@ -12846,8 +12758,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battania_horse_harness_halfscaled_h2",
-    "baseId": "crpg_battania_horse_harness_halfscaled",
+    "id": "crpg_battania_horse_harness_halfscaled_v1_h2",
+    "baseId": "crpg_battania_horse_harness_halfscaled_v1",
     "name": "Half Scaled Barding +2",
     "culture": "Battania",
     "type": "MountHarness",
@@ -12868,8 +12780,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battania_horse_harness_halfscaled_h3",
-    "baseId": "crpg_battania_horse_harness_halfscaled",
+    "id": "crpg_battania_horse_harness_halfscaled_v1_h3",
+    "baseId": "crpg_battania_horse_harness_halfscaled_v1",
     "name": "Half Scaled Barding +3",
     "culture": "Battania",
     "type": "MountHarness",
@@ -12890,8 +12802,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battania_horse_harness_scaled_h0",
-    "baseId": "crpg_battania_horse_harness_scaled",
+    "id": "crpg_battania_horse_harness_scaled_v1_h0",
+    "baseId": "crpg_battania_horse_harness_scaled_v1",
     "name": "Scale Barding",
     "culture": "Battania",
     "type": "MountHarness",
@@ -12912,8 +12824,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battania_horse_harness_scaled_h1",
-    "baseId": "crpg_battania_horse_harness_scaled",
+    "id": "crpg_battania_horse_harness_scaled_v1_h1",
+    "baseId": "crpg_battania_horse_harness_scaled_v1",
     "name": "Scale Barding +1",
     "culture": "Battania",
     "type": "MountHarness",
@@ -12934,8 +12846,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battania_horse_harness_scaled_h2",
-    "baseId": "crpg_battania_horse_harness_scaled",
+    "id": "crpg_battania_horse_harness_scaled_v1_h2",
+    "baseId": "crpg_battania_horse_harness_scaled_v1",
     "name": "Scale Barding +2",
     "culture": "Battania",
     "type": "MountHarness",
@@ -12956,8 +12868,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_battania_horse_harness_scaled_h3",
-    "baseId": "crpg_battania_horse_harness_scaled",
+    "id": "crpg_battania_horse_harness_scaled_v1_h3",
+    "baseId": "crpg_battania_horse_harness_scaled_v1",
     "name": "Scale Barding +3",
     "culture": "Battania",
     "type": "MountHarness",
@@ -12973,6 +12885,94 @@
       "armArmor": 0,
       "legArmor": 0,
       "materialType": "Chainmail",
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_battania_horse_harness_v1_h0",
+    "baseId": "crpg_battania_horse_harness_v1",
+    "name": "Battania Horse Harness",
+    "culture": "Battania",
+    "type": "MountHarness",
+    "price": 721,
+    "weight": 30.0,
+    "rank": 0,
+    "tier": 2.090909,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 9,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Leather",
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_battania_horse_harness_v1_h1",
+    "baseId": "crpg_battania_horse_harness_v1",
+    "name": "Battania Horse Harness +1",
+    "culture": "Battania",
+    "type": "MountHarness",
+    "price": 1185,
+    "weight": 30.0,
+    "rank": 1,
+    "tier": 2.95684123,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 14,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Leather",
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_battania_horse_harness_v1_h2",
+    "baseId": "crpg_battania_horse_harness_v1",
+    "name": "Battania Horse Harness +2",
+    "culture": "Battania",
+    "type": "MountHarness",
+    "price": 1654,
+    "weight": 30.0,
+    "rank": 2,
+    "tier": 3.67845082,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 19,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Leather",
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_battania_horse_harness_v1_h3",
+    "baseId": "crpg_battania_horse_harness_v1",
+    "name": "Battania Horse Harness +3",
+    "culture": "Battania",
+    "type": "MountHarness",
+    "price": 2111,
+    "weight": 30.0,
+    "rank": 3,
+    "tier": 4.28904438,
+    "requirement": 0,
+    "flags": [],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 24,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Leather",
       "familyType": 1
     },
     "weapons": []
@@ -25330,8 +25330,8 @@
     ]
   },
   {
-    "id": "crpg_camel_saddle_b_h0",
-    "baseId": "crpg_camel_saddle_b",
+    "id": "crpg_camel_saddle_b_v1_h0",
+    "baseId": "crpg_camel_saddle_b_v1",
     "name": "Camel Saddle with Light Load",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -25352,8 +25352,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_camel_saddle_b_h1",
-    "baseId": "crpg_camel_saddle_b",
+    "id": "crpg_camel_saddle_b_v1_h1",
+    "baseId": "crpg_camel_saddle_b_v1",
     "name": "Camel Saddle with Light Load +1",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -25374,8 +25374,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_camel_saddle_b_h2",
-    "baseId": "crpg_camel_saddle_b",
+    "id": "crpg_camel_saddle_b_v1_h2",
+    "baseId": "crpg_camel_saddle_b_v1",
     "name": "Camel Saddle with Light Load +2",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -25396,8 +25396,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_camel_saddle_b_h3",
-    "baseId": "crpg_camel_saddle_b",
+    "id": "crpg_camel_saddle_b_v1_h3",
+    "baseId": "crpg_camel_saddle_b_v1",
     "name": "Camel Saddle with Light Load +3",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -25418,8 +25418,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_camel_saddle_h0",
-    "baseId": "crpg_camel_saddle",
+    "id": "crpg_camel_saddle_v1_h0",
+    "baseId": "crpg_camel_saddle_v1",
     "name": "Camel Saddle",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -25440,8 +25440,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_camel_saddle_h1",
-    "baseId": "crpg_camel_saddle",
+    "id": "crpg_camel_saddle_v1_h1",
+    "baseId": "crpg_camel_saddle_v1",
     "name": "Camel Saddle +1",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -25462,8 +25462,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_camel_saddle_h2",
-    "baseId": "crpg_camel_saddle",
+    "id": "crpg_camel_saddle_v1_h2",
+    "baseId": "crpg_camel_saddle_v1",
     "name": "Camel Saddle +2",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -25484,8 +25484,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_camel_saddle_h3",
-    "baseId": "crpg_camel_saddle",
+    "id": "crpg_camel_saddle_v1_h3",
+    "baseId": "crpg_camel_saddle_v1",
     "name": "Camel Saddle +3",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -25506,8 +25506,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_1_h0",
-    "baseId": "crpg_caparison_1",
+    "id": "crpg_caparison_1_v1_h0",
+    "baseId": "crpg_caparison_1_v1",
     "name": "Armoured Caparison, Checkered (Teamcolor)",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25531,8 +25531,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_1_h1",
-    "baseId": "crpg_caparison_1",
+    "id": "crpg_caparison_1_v1_h1",
+    "baseId": "crpg_caparison_1_v1",
     "name": "Armoured Caparison, Checkered (Teamcolor) +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25556,8 +25556,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_1_h2",
-    "baseId": "crpg_caparison_1",
+    "id": "crpg_caparison_1_v1_h2",
+    "baseId": "crpg_caparison_1_v1",
     "name": "Armoured Caparison, Checkered (Teamcolor) +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25581,8 +25581,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_1_h3",
-    "baseId": "crpg_caparison_1",
+    "id": "crpg_caparison_1_v1_h3",
+    "baseId": "crpg_caparison_1_v1",
     "name": "Armoured Caparison, Checkered (Teamcolor) +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25606,8 +25606,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_bavaria_h0",
-    "baseId": "crpg_caparison_template_bavaria",
+    "id": "crpg_caparison_template_bavaria_v1_h0",
+    "baseId": "crpg_caparison_template_bavaria_v1",
     "name": "Caparison, Bavaria",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25631,8 +25631,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_bavaria_h1",
-    "baseId": "crpg_caparison_template_bavaria",
+    "id": "crpg_caparison_template_bavaria_v1_h1",
+    "baseId": "crpg_caparison_template_bavaria_v1",
     "name": "Caparison, Bavaria +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25656,8 +25656,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_bavaria_h2",
-    "baseId": "crpg_caparison_template_bavaria",
+    "id": "crpg_caparison_template_bavaria_v1_h2",
+    "baseId": "crpg_caparison_template_bavaria_v1",
     "name": "Caparison, Bavaria +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25681,8 +25681,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_bavaria_h3",
-    "baseId": "crpg_caparison_template_bavaria",
+    "id": "crpg_caparison_template_bavaria_v1_h3",
+    "baseId": "crpg_caparison_template_bavaria_v1",
     "name": "Caparison, Bavaria +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25706,8 +25706,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_brabant_h0",
-    "baseId": "crpg_caparison_template_brabant",
+    "id": "crpg_caparison_template_brabant_v1_h0",
+    "baseId": "crpg_caparison_template_brabant_v1",
     "name": "Caparison, Brabant",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25731,8 +25731,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_brabant_h1",
-    "baseId": "crpg_caparison_template_brabant",
+    "id": "crpg_caparison_template_brabant_v1_h1",
+    "baseId": "crpg_caparison_template_brabant_v1",
     "name": "Caparison, Brabant +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25756,8 +25756,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_brabant_h2",
-    "baseId": "crpg_caparison_template_brabant",
+    "id": "crpg_caparison_template_brabant_v1_h2",
+    "baseId": "crpg_caparison_template_brabant_v1",
     "name": "Caparison, Brabant +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25781,8 +25781,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_brabant_h3",
-    "baseId": "crpg_caparison_template_brabant",
+    "id": "crpg_caparison_template_brabant_v1_h3",
+    "baseId": "crpg_caparison_template_brabant_v1",
     "name": "Caparison, Brabant +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25806,8 +25806,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_brienne_h0",
-    "baseId": "crpg_caparison_template_brienne",
+    "id": "crpg_caparison_template_brienne_v1_h0",
+    "baseId": "crpg_caparison_template_brienne_v1",
     "name": "Caparison, Brienne",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25831,8 +25831,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_brienne_h1",
-    "baseId": "crpg_caparison_template_brienne",
+    "id": "crpg_caparison_template_brienne_v1_h1",
+    "baseId": "crpg_caparison_template_brienne_v1",
     "name": "Caparison, Brienne +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25856,8 +25856,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_brienne_h2",
-    "baseId": "crpg_caparison_template_brienne",
+    "id": "crpg_caparison_template_brienne_v1_h2",
+    "baseId": "crpg_caparison_template_brienne_v1",
     "name": "Caparison, Brienne +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25881,8 +25881,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_brienne_h3",
-    "baseId": "crpg_caparison_template_brienne",
+    "id": "crpg_caparison_template_brienne_v1_h3",
+    "baseId": "crpg_caparison_template_brienne_v1",
     "name": "Caparison, Brienne +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25906,8 +25906,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_champagne_h0",
-    "baseId": "crpg_caparison_template_champagne",
+    "id": "crpg_caparison_template_champagne_v1_h0",
+    "baseId": "crpg_caparison_template_champagne_v1",
     "name": "Caparison, Champagne",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25931,8 +25931,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_champagne_h1",
-    "baseId": "crpg_caparison_template_champagne",
+    "id": "crpg_caparison_template_champagne_v1_h1",
+    "baseId": "crpg_caparison_template_champagne_v1",
     "name": "Caparison, Champagne +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25956,8 +25956,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_champagne_h2",
-    "baseId": "crpg_caparison_template_champagne",
+    "id": "crpg_caparison_template_champagne_v1_h2",
+    "baseId": "crpg_caparison_template_champagne_v1",
     "name": "Caparison, Champagne +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -25981,8 +25981,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_champagne_h3",
-    "baseId": "crpg_caparison_template_champagne",
+    "id": "crpg_caparison_template_champagne_v1_h3",
+    "baseId": "crpg_caparison_template_champagne_v1",
     "name": "Caparison, Champagne +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26006,108 +26006,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_jerusalem_h0",
-    "baseId": "crpg_caparison_template_jerusalem",
-    "name": "Caparison, Jerusalem (White)",
-    "culture": "Neutral",
-    "type": "MountHarness",
-    "price": 7541,
-    "weight": 16.0,
-    "rank": 0,
-    "tier": 9.060606,
-    "requirement": 0,
-    "flags": [
-      "UseTeamColor",
-      "Civilian"
-    ],
-    "armor": {
-      "headArmor": 0,
-      "bodyArmor": 39,
-      "armArmor": 0,
-      "legArmor": 0,
-      "materialType": "Chainmail",
-      "familyType": 1
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_caparison_template_jerusalem_h1",
-    "baseId": "crpg_caparison_template_jerusalem",
-    "name": "Caparison, Jerusalem (White) +1",
-    "culture": "Neutral",
-    "type": "MountHarness",
-    "price": 7890,
-    "weight": 16.0,
-    "rank": 1,
-    "tier": 9.29293,
-    "requirement": 0,
-    "flags": [
-      "UseTeamColor",
-      "Civilian"
-    ],
-    "armor": {
-      "headArmor": 0,
-      "bodyArmor": 44,
-      "armArmor": 0,
-      "legArmor": 0,
-      "materialType": "Chainmail",
-      "familyType": 1
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_caparison_template_jerusalem_h2",
-    "baseId": "crpg_caparison_template_jerusalem",
-    "name": "Caparison, Jerusalem (White) +2",
-    "culture": "Neutral",
-    "type": "MountHarness",
-    "price": 8186,
-    "weight": 16.0,
-    "rank": 2,
-    "tier": 9.486532,
-    "requirement": 0,
-    "flags": [
-      "UseTeamColor",
-      "Civilian"
-    ],
-    "armor": {
-      "headArmor": 0,
-      "bodyArmor": 49,
-      "armArmor": 0,
-      "legArmor": 0,
-      "materialType": "Chainmail",
-      "familyType": 1
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_caparison_template_jerusalem_h3",
-    "baseId": "crpg_caparison_template_jerusalem",
-    "name": "Caparison, Jerusalem (White) +3",
-    "culture": "Neutral",
-    "type": "MountHarness",
-    "price": 8442,
-    "weight": 16.0,
-    "rank": 3,
-    "tier": 9.650351,
-    "requirement": 0,
-    "flags": [
-      "UseTeamColor",
-      "Civilian"
-    ],
-    "armor": {
-      "headArmor": 0,
-      "bodyArmor": 54,
-      "armArmor": 0,
-      "legArmor": 0,
-      "materialType": "Chainmail",
-      "familyType": 1
-    },
-    "weapons": []
-  },
-  {
-    "id": "crpg_caparison_template_jerusalem_teal_h0",
-    "baseId": "crpg_caparison_template_jerusalem_teal",
+    "id": "crpg_caparison_template_jerusalem_teal_v1_h0",
+    "baseId": "crpg_caparison_template_jerusalem_teal_v1",
     "name": "Caparison, Jerusalem (Teal)",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26131,8 +26031,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_jerusalem_teal_h1",
-    "baseId": "crpg_caparison_template_jerusalem_teal",
+    "id": "crpg_caparison_template_jerusalem_teal_v1_h1",
+    "baseId": "crpg_caparison_template_jerusalem_teal_v1",
     "name": "Caparison, Jerusalem (Teal) +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26156,8 +26056,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_jerusalem_teal_h2",
-    "baseId": "crpg_caparison_template_jerusalem_teal",
+    "id": "crpg_caparison_template_jerusalem_teal_v1_h2",
+    "baseId": "crpg_caparison_template_jerusalem_teal_v1",
     "name": "Caparison, Jerusalem (Teal) +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26181,8 +26081,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_jerusalem_teal_h3",
-    "baseId": "crpg_caparison_template_jerusalem_teal",
+    "id": "crpg_caparison_template_jerusalem_teal_v1_h3",
+    "baseId": "crpg_caparison_template_jerusalem_teal_v1",
     "name": "Caparison, Jerusalem (Teal) +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26206,8 +26106,108 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_teutonic_h0",
-    "baseId": "crpg_caparison_template_teutonic",
+    "id": "crpg_caparison_template_jerusalem_v1_h0",
+    "baseId": "crpg_caparison_template_jerusalem_v1",
+    "name": "Caparison, Jerusalem (White)",
+    "culture": "Neutral",
+    "type": "MountHarness",
+    "price": 7541,
+    "weight": 16.0,
+    "rank": 0,
+    "tier": 9.060606,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor",
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 39,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Chainmail",
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_caparison_template_jerusalem_v1_h1",
+    "baseId": "crpg_caparison_template_jerusalem_v1",
+    "name": "Caparison, Jerusalem (White) +1",
+    "culture": "Neutral",
+    "type": "MountHarness",
+    "price": 7890,
+    "weight": 16.0,
+    "rank": 1,
+    "tier": 9.29293,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor",
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 44,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Chainmail",
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_caparison_template_jerusalem_v1_h2",
+    "baseId": "crpg_caparison_template_jerusalem_v1",
+    "name": "Caparison, Jerusalem (White) +2",
+    "culture": "Neutral",
+    "type": "MountHarness",
+    "price": 8186,
+    "weight": 16.0,
+    "rank": 2,
+    "tier": 9.486532,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor",
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 49,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Chainmail",
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_caparison_template_jerusalem_v1_h3",
+    "baseId": "crpg_caparison_template_jerusalem_v1",
+    "name": "Caparison, Jerusalem (White) +3",
+    "culture": "Neutral",
+    "type": "MountHarness",
+    "price": 8442,
+    "weight": 16.0,
+    "rank": 3,
+    "tier": 9.650351,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor",
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 0,
+      "bodyArmor": 54,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Chainmail",
+      "familyType": 1
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_caparison_template_teutonic_v1_h0",
+    "baseId": "crpg_caparison_template_teutonic_v1",
     "name": "Caparison, Teutonic",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26231,8 +26231,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_teutonic_h1",
-    "baseId": "crpg_caparison_template_teutonic",
+    "id": "crpg_caparison_template_teutonic_v1_h1",
+    "baseId": "crpg_caparison_template_teutonic_v1",
     "name": "Caparison, Teutonic +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26256,8 +26256,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_teutonic_h2",
-    "baseId": "crpg_caparison_template_teutonic",
+    "id": "crpg_caparison_template_teutonic_v1_h2",
+    "baseId": "crpg_caparison_template_teutonic_v1",
     "name": "Caparison, Teutonic +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26281,8 +26281,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_teutonic_h3",
-    "baseId": "crpg_caparison_template_teutonic",
+    "id": "crpg_caparison_template_teutonic_v1_h3",
+    "baseId": "crpg_caparison_template_teutonic_v1",
     "name": "Caparison, Teutonic +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26306,8 +26306,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_teutonic2_h0",
-    "baseId": "crpg_caparison_template_teutonic2",
+    "id": "crpg_caparison_template_teutonic2_v1_h0",
+    "baseId": "crpg_caparison_template_teutonic2_v1",
     "name": "Caparison, Teutonic",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26331,8 +26331,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_teutonic2_h1",
-    "baseId": "crpg_caparison_template_teutonic2",
+    "id": "crpg_caparison_template_teutonic2_v1_h1",
+    "baseId": "crpg_caparison_template_teutonic2_v1",
     "name": "Caparison, Teutonic +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26356,8 +26356,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_teutonic2_h2",
-    "baseId": "crpg_caparison_template_teutonic2",
+    "id": "crpg_caparison_template_teutonic2_v1_h2",
+    "baseId": "crpg_caparison_template_teutonic2_v1",
     "name": "Caparison, Teutonic +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -26381,8 +26381,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_caparison_template_teutonic2_h3",
-    "baseId": "crpg_caparison_template_teutonic2",
+    "id": "crpg_caparison_template_teutonic2_v1_h3",
+    "baseId": "crpg_caparison_template_teutonic2_v1",
     "name": "Caparison, Teutonic +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -27586,8 +27586,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_chain_barding_h0",
-    "baseId": "crpg_chain_barding",
+    "id": "crpg_chain_barding_v1_h0",
+    "baseId": "crpg_chain_barding_v1",
     "name": "Reinforced Chainmail Barding",
     "culture": "Vlandia",
     "type": "MountHarness",
@@ -27608,8 +27608,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_chain_barding_h1",
-    "baseId": "crpg_chain_barding",
+    "id": "crpg_chain_barding_v1_h1",
+    "baseId": "crpg_chain_barding_v1",
     "name": "Reinforced Chainmail Barding +1",
     "culture": "Vlandia",
     "type": "MountHarness",
@@ -27630,8 +27630,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_chain_barding_h2",
-    "baseId": "crpg_chain_barding",
+    "id": "crpg_chain_barding_v1_h2",
+    "baseId": "crpg_chain_barding_v1",
     "name": "Reinforced Chainmail Barding +2",
     "culture": "Vlandia",
     "type": "MountHarness",
@@ -27652,8 +27652,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_chain_barding_h3",
-    "baseId": "crpg_chain_barding",
+    "id": "crpg_chain_barding_v1_h3",
+    "baseId": "crpg_chain_barding_v1",
     "name": "Reinforced Chainmail Barding +3",
     "culture": "Vlandia",
     "type": "MountHarness",
@@ -27674,8 +27674,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_chain_horse_harness_h0",
-    "baseId": "crpg_chain_horse_harness",
+    "id": "crpg_chain_horse_harness_v1_h0",
+    "baseId": "crpg_chain_horse_harness_v1",
     "name": "Chain Mail Horse Armor",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -27696,8 +27696,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_chain_horse_harness_h1",
-    "baseId": "crpg_chain_horse_harness",
+    "id": "crpg_chain_horse_harness_v1_h1",
+    "baseId": "crpg_chain_horse_harness_v1",
     "name": "Chain Mail Horse Armor +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -27718,8 +27718,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_chain_horse_harness_h2",
-    "baseId": "crpg_chain_horse_harness",
+    "id": "crpg_chain_horse_harness_v1_h2",
+    "baseId": "crpg_chain_horse_harness_v1",
     "name": "Chain Mail Horse Armor +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -27740,8 +27740,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_chain_horse_harness_h3",
-    "baseId": "crpg_chain_horse_harness",
+    "id": "crpg_chain_horse_harness_v1_h3",
+    "baseId": "crpg_chain_horse_harness_v1",
     "name": "Chain Mail Horse Armor +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -36738,8 +36738,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_desert_cloth_harness_h0",
-    "baseId": "crpg_desert_cloth_harness",
+    "id": "crpg_desert_cloth_harness_v1_h0",
+    "baseId": "crpg_desert_cloth_harness_v1",
     "name": "Beduin Cloth Saddle",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -36760,8 +36760,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_desert_cloth_harness_h1",
-    "baseId": "crpg_desert_cloth_harness",
+    "id": "crpg_desert_cloth_harness_v1_h1",
+    "baseId": "crpg_desert_cloth_harness_v1",
     "name": "Beduin Cloth Saddle +1",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -36782,8 +36782,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_desert_cloth_harness_h2",
-    "baseId": "crpg_desert_cloth_harness",
+    "id": "crpg_desert_cloth_harness_v1_h2",
+    "baseId": "crpg_desert_cloth_harness_v1",
     "name": "Beduin Cloth Saddle +2",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -36804,8 +36804,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_desert_cloth_harness_h3",
-    "baseId": "crpg_desert_cloth_harness",
+    "id": "crpg_desert_cloth_harness_v1_h3",
+    "baseId": "crpg_desert_cloth_harness_v1",
     "name": "Beduin Cloth Saddle +3",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -56040,8 +56040,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_half_mail_and_plate_barding_h0",
-    "baseId": "crpg_half_mail_and_plate_barding",
+    "id": "crpg_half_mail_and_plate_barding_v1_h0",
+    "baseId": "crpg_half_mail_and_plate_barding_v1",
     "name": "Reinforced Half Plate Barding",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -56062,8 +56062,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_half_mail_and_plate_barding_h1",
-    "baseId": "crpg_half_mail_and_plate_barding",
+    "id": "crpg_half_mail_and_plate_barding_v1_h1",
+    "baseId": "crpg_half_mail_and_plate_barding_v1",
     "name": "Reinforced Half Plate Barding +1",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -56084,8 +56084,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_half_mail_and_plate_barding_h2",
-    "baseId": "crpg_half_mail_and_plate_barding",
+    "id": "crpg_half_mail_and_plate_barding_v1_h2",
+    "baseId": "crpg_half_mail_and_plate_barding_v1",
     "name": "Reinforced Half Plate Barding +2",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -56106,8 +56106,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_half_mail_and_plate_barding_h3",
-    "baseId": "crpg_half_mail_and_plate_barding",
+    "id": "crpg_half_mail_and_plate_barding_v1_h3",
+    "baseId": "crpg_half_mail_and_plate_barding_v1",
     "name": "Reinforced Half Plate Barding +3",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -56128,8 +56128,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_half_scale_barding_v2_h0",
-    "baseId": "crpg_half_scale_barding_v2",
+    "id": "crpg_half_scale_barding_v3_h0",
+    "baseId": "crpg_half_scale_barding_v3",
     "name": "Cataphract Half Scale Barding",
     "culture": "Empire",
     "type": "MountHarness",
@@ -56150,8 +56150,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_half_scale_barding_v2_h1",
-    "baseId": "crpg_half_scale_barding_v2",
+    "id": "crpg_half_scale_barding_v3_h1",
+    "baseId": "crpg_half_scale_barding_v3",
     "name": "Cataphract Half Scale Barding +1",
     "culture": "Empire",
     "type": "MountHarness",
@@ -56172,8 +56172,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_half_scale_barding_v2_h2",
-    "baseId": "crpg_half_scale_barding_v2",
+    "id": "crpg_half_scale_barding_v3_h2",
+    "baseId": "crpg_half_scale_barding_v3",
     "name": "Cataphract Half Scale Barding +2",
     "culture": "Empire",
     "type": "MountHarness",
@@ -56194,8 +56194,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_half_scale_barding_v2_h3",
-    "baseId": "crpg_half_scale_barding_v2",
+    "id": "crpg_half_scale_barding_v3_h3",
+    "baseId": "crpg_half_scale_barding_v3",
     "name": "Cataphract Half Scale Barding +3",
     "culture": "Empire",
     "type": "MountHarness",
@@ -56216,8 +56216,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_halfchain_barding_h0",
-    "baseId": "crpg_halfchain_barding",
+    "id": "crpg_halfchain_barding_v1_h0",
+    "baseId": "crpg_halfchain_barding_v1",
     "name": "Half Mail Barding",
     "culture": "Vlandia",
     "type": "MountHarness",
@@ -56238,8 +56238,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_halfchain_barding_h1",
-    "baseId": "crpg_halfchain_barding",
+    "id": "crpg_halfchain_barding_v1_h1",
+    "baseId": "crpg_halfchain_barding_v1",
     "name": "Half Mail Barding +1",
     "culture": "Vlandia",
     "type": "MountHarness",
@@ -56260,8 +56260,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_halfchain_barding_h2",
-    "baseId": "crpg_halfchain_barding",
+    "id": "crpg_halfchain_barding_v1_h2",
+    "baseId": "crpg_halfchain_barding_v1",
     "name": "Half Mail Barding +2",
     "culture": "Vlandia",
     "type": "MountHarness",
@@ -56282,8 +56282,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_halfchain_barding_h3",
-    "baseId": "crpg_halfchain_barding",
+    "id": "crpg_halfchain_barding_v1_h3",
+    "baseId": "crpg_halfchain_barding_v1",
     "name": "Half Mail Barding +3",
     "culture": "Vlandia",
     "type": "MountHarness",
@@ -69126,8 +69126,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_imperial_riding_harness_h0",
-    "baseId": "crpg_imperial_riding_harness",
+    "id": "crpg_imperial_riding_harness_v1_h0",
+    "baseId": "crpg_imperial_riding_harness_v1",
     "name": "Imperial Riding Harness",
     "culture": "Empire",
     "type": "MountHarness",
@@ -69148,8 +69148,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_imperial_riding_harness_h1",
-    "baseId": "crpg_imperial_riding_harness",
+    "id": "crpg_imperial_riding_harness_v1_h1",
+    "baseId": "crpg_imperial_riding_harness_v1",
     "name": "Imperial Riding Harness +1",
     "culture": "Empire",
     "type": "MountHarness",
@@ -69170,8 +69170,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_imperial_riding_harness_h2",
-    "baseId": "crpg_imperial_riding_harness",
+    "id": "crpg_imperial_riding_harness_v1_h2",
+    "baseId": "crpg_imperial_riding_harness_v1",
     "name": "Imperial Riding Harness +2",
     "culture": "Empire",
     "type": "MountHarness",
@@ -69192,8 +69192,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_imperial_riding_harness_h3",
-    "baseId": "crpg_imperial_riding_harness",
+    "id": "crpg_imperial_riding_harness_v1_h3",
+    "baseId": "crpg_imperial_riding_harness_v1",
     "name": "Imperial Riding Harness +3",
     "culture": "Empire",
     "type": "MountHarness",
@@ -69402,8 +69402,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_imperial_scale_barding_h0",
-    "baseId": "crpg_imperial_scale_barding",
+    "id": "crpg_imperial_scale_barding_v1_h0",
+    "baseId": "crpg_imperial_scale_barding_v1",
     "name": "Cataphract Scale Barding",
     "culture": "Empire",
     "type": "MountHarness",
@@ -69424,8 +69424,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_imperial_scale_barding_h1",
-    "baseId": "crpg_imperial_scale_barding",
+    "id": "crpg_imperial_scale_barding_v1_h1",
+    "baseId": "crpg_imperial_scale_barding_v1",
     "name": "Cataphract Scale Barding +1",
     "culture": "Empire",
     "type": "MountHarness",
@@ -69446,8 +69446,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_imperial_scale_barding_h2",
-    "baseId": "crpg_imperial_scale_barding",
+    "id": "crpg_imperial_scale_barding_v1_h2",
+    "baseId": "crpg_imperial_scale_barding_v1",
     "name": "Cataphract Scale Barding +2",
     "culture": "Empire",
     "type": "MountHarness",
@@ -69468,8 +69468,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_imperial_scale_barding_h3",
-    "baseId": "crpg_imperial_scale_barding",
+    "id": "crpg_imperial_scale_barding_v1_h3",
+    "baseId": "crpg_imperial_scale_barding_v1",
     "name": "Cataphract Scale Barding +3",
     "culture": "Empire",
     "type": "MountHarness",
@@ -85044,8 +85044,8 @@
     ]
   },
   {
-    "id": "crpg_light_harness_h0",
-    "baseId": "crpg_light_harness",
+    "id": "crpg_light_harness_v1_h0",
+    "baseId": "crpg_light_harness_v1",
     "name": "Light Harness",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -85066,8 +85066,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_light_harness_h1",
-    "baseId": "crpg_light_harness",
+    "id": "crpg_light_harness_v1_h1",
+    "baseId": "crpg_light_harness_v1",
     "name": "Light Harness +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -85088,8 +85088,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_light_harness_h2",
-    "baseId": "crpg_light_harness",
+    "id": "crpg_light_harness_v1_h2",
+    "baseId": "crpg_light_harness_v1",
     "name": "Light Harness +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -85110,8 +85110,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_light_harness_h3",
-    "baseId": "crpg_light_harness",
+    "id": "crpg_light_harness_v1_h3",
+    "baseId": "crpg_light_harness_v1",
     "name": "Light Harness +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -91050,8 +91050,8 @@
     ]
   },
   {
-    "id": "crpg_mail_and_plate_barding_h0",
-    "baseId": "crpg_mail_and_plate_barding",
+    "id": "crpg_mail_and_plate_barding_v1_h0",
+    "baseId": "crpg_mail_and_plate_barding_v1",
     "name": "Reinforced Plate Barding",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -91072,8 +91072,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mail_and_plate_barding_h1",
-    "baseId": "crpg_mail_and_plate_barding",
+    "id": "crpg_mail_and_plate_barding_v1_h1",
+    "baseId": "crpg_mail_and_plate_barding_v1",
     "name": "Reinforced Plate Barding +1",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -91094,8 +91094,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mail_and_plate_barding_h2",
-    "baseId": "crpg_mail_and_plate_barding",
+    "id": "crpg_mail_and_plate_barding_v1_h2",
+    "baseId": "crpg_mail_and_plate_barding_v1",
     "name": "Reinforced Plate Barding +2",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -91116,8 +91116,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mail_and_plate_barding_h3",
-    "baseId": "crpg_mail_and_plate_barding",
+    "id": "crpg_mail_and_plate_barding_v1_h3",
+    "baseId": "crpg_mail_and_plate_barding_v1",
     "name": "Reinforced Plate Barding +3",
     "culture": "Aserai",
     "type": "MountHarness",
@@ -94484,8 +94484,8 @@
     ]
   },
   {
-    "id": "crpg_mount_greathorse_10_h0",
-    "baseId": "crpg_mount_greathorse_10",
+    "id": "crpg_mount_greathorse_10_v1_h0",
+    "baseId": "crpg_mount_greathorse_10_v1",
     "name": "Barthais Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94506,8 +94506,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_10_h1",
-    "baseId": "crpg_mount_greathorse_10",
+    "id": "crpg_mount_greathorse_10_v1_h1",
+    "baseId": "crpg_mount_greathorse_10_v1",
     "name": "Barthais Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94528,8 +94528,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_10_h2",
-    "baseId": "crpg_mount_greathorse_10",
+    "id": "crpg_mount_greathorse_10_v1_h2",
+    "baseId": "crpg_mount_greathorse_10_v1",
     "name": "Barthais Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94550,8 +94550,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_10_h3",
-    "baseId": "crpg_mount_greathorse_10",
+    "id": "crpg_mount_greathorse_10_v1_h3",
+    "baseId": "crpg_mount_greathorse_10_v1",
     "name": "Barthais Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94572,8 +94572,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_11_h0",
-    "baseId": "crpg_mount_greathorse_11",
+    "id": "crpg_mount_greathorse_11_v1_h0",
+    "baseId": "crpg_mount_greathorse_11_v1",
     "name": "Brabant Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94594,8 +94594,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_11_h1",
-    "baseId": "crpg_mount_greathorse_11",
+    "id": "crpg_mount_greathorse_11_v1_h1",
+    "baseId": "crpg_mount_greathorse_11_v1",
     "name": "Brabant Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94616,8 +94616,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_11_h2",
-    "baseId": "crpg_mount_greathorse_11",
+    "id": "crpg_mount_greathorse_11_v1_h2",
+    "baseId": "crpg_mount_greathorse_11_v1",
     "name": "Brabant Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94638,8 +94638,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_11_h3",
-    "baseId": "crpg_mount_greathorse_11",
+    "id": "crpg_mount_greathorse_11_v1_h3",
+    "baseId": "crpg_mount_greathorse_11_v1",
     "name": "Brabant Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94660,8 +94660,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_12_h0",
-    "baseId": "crpg_mount_greathorse_12",
+    "id": "crpg_mount_greathorse_12_v1_h0",
+    "baseId": "crpg_mount_greathorse_12_v1",
     "name": "Comtois Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94682,8 +94682,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_12_h1",
-    "baseId": "crpg_mount_greathorse_12",
+    "id": "crpg_mount_greathorse_12_v1_h1",
+    "baseId": "crpg_mount_greathorse_12_v1",
     "name": "Comtois Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94704,8 +94704,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_12_h2",
-    "baseId": "crpg_mount_greathorse_12",
+    "id": "crpg_mount_greathorse_12_v1_h2",
+    "baseId": "crpg_mount_greathorse_12_v1",
     "name": "Comtois Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94726,8 +94726,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_12_h3",
-    "baseId": "crpg_mount_greathorse_12",
+    "id": "crpg_mount_greathorse_12_v1_h3",
+    "baseId": "crpg_mount_greathorse_12_v1",
     "name": "Comtois Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94748,8 +94748,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_13_h0",
-    "baseId": "crpg_mount_greathorse_13",
+    "id": "crpg_mount_greathorse_13_v1_h0",
+    "baseId": "crpg_mount_greathorse_13_v1",
     "name": "English Black Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94770,8 +94770,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_13_h1",
-    "baseId": "crpg_mount_greathorse_13",
+    "id": "crpg_mount_greathorse_13_v1_h1",
+    "baseId": "crpg_mount_greathorse_13_v1",
     "name": "English Black Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94792,8 +94792,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_13_h2",
-    "baseId": "crpg_mount_greathorse_13",
+    "id": "crpg_mount_greathorse_13_v1_h2",
+    "baseId": "crpg_mount_greathorse_13_v1",
     "name": "English Black Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94814,8 +94814,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_13_h3",
-    "baseId": "crpg_mount_greathorse_13",
+    "id": "crpg_mount_greathorse_13_v1_h3",
+    "baseId": "crpg_mount_greathorse_13_v1",
     "name": "English Black Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94836,8 +94836,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_14_h0",
-    "baseId": "crpg_mount_greathorse_14",
+    "id": "crpg_mount_greathorse_14_v1_h0",
+    "baseId": "crpg_mount_greathorse_14_v1",
     "name": "Percheron Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94858,8 +94858,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_14_h1",
-    "baseId": "crpg_mount_greathorse_14",
+    "id": "crpg_mount_greathorse_14_v1_h1",
+    "baseId": "crpg_mount_greathorse_14_v1",
     "name": "Percheron Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94880,8 +94880,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_14_h2",
-    "baseId": "crpg_mount_greathorse_14",
+    "id": "crpg_mount_greathorse_14_v1_h2",
+    "baseId": "crpg_mount_greathorse_14_v1",
     "name": "Percheron Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94902,8 +94902,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_14_h3",
-    "baseId": "crpg_mount_greathorse_14",
+    "id": "crpg_mount_greathorse_14_v1_h3",
+    "baseId": "crpg_mount_greathorse_14_v1",
     "name": "Percheron Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -94924,8 +94924,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_15_h0",
-    "baseId": "crpg_mount_greathorse_15",
+    "id": "crpg_mount_greathorse_15_v1_h0",
+    "baseId": "crpg_mount_greathorse_15_v1",
     "name": "Lionheart",
     "culture": "Neutral",
     "type": "Mount",
@@ -94946,8 +94946,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_15_h1",
-    "baseId": "crpg_mount_greathorse_15",
+    "id": "crpg_mount_greathorse_15_v1_h1",
+    "baseId": "crpg_mount_greathorse_15_v1",
     "name": "Lionheart +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -94968,8 +94968,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_15_h2",
-    "baseId": "crpg_mount_greathorse_15",
+    "id": "crpg_mount_greathorse_15_v1_h2",
+    "baseId": "crpg_mount_greathorse_15_v1",
     "name": "Lionheart +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -94990,8 +94990,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_15_h3",
-    "baseId": "crpg_mount_greathorse_15",
+    "id": "crpg_mount_greathorse_15_v1_h3",
+    "baseId": "crpg_mount_greathorse_15_v1",
     "name": "Lionheart +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -95012,8 +95012,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_5_h0",
-    "baseId": "crpg_mount_greathorse_5",
+    "id": "crpg_mount_greathorse_5_v1_h0",
+    "baseId": "crpg_mount_greathorse_5_v1",
     "name": "Suffolk Punch Draught",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95034,8 +95034,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_5_h1",
-    "baseId": "crpg_mount_greathorse_5",
+    "id": "crpg_mount_greathorse_5_v1_h1",
+    "baseId": "crpg_mount_greathorse_5_v1",
     "name": "Suffolk Punch Draught +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95056,8 +95056,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_5_h2",
-    "baseId": "crpg_mount_greathorse_5",
+    "id": "crpg_mount_greathorse_5_v1_h2",
+    "baseId": "crpg_mount_greathorse_5_v1",
     "name": "Suffolk Punch Draught +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95078,8 +95078,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_5_h3",
-    "baseId": "crpg_mount_greathorse_5",
+    "id": "crpg_mount_greathorse_5_v1_h3",
+    "baseId": "crpg_mount_greathorse_5_v1",
     "name": "Suffolk Punch Draught +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95100,8 +95100,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_6_h0",
-    "baseId": "crpg_mount_greathorse_6",
+    "id": "crpg_mount_greathorse_6_v1_h0",
+    "baseId": "crpg_mount_greathorse_6_v1",
     "name": "Boulonnais Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95122,8 +95122,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_6_h1",
-    "baseId": "crpg_mount_greathorse_6",
+    "id": "crpg_mount_greathorse_6_v1_h1",
+    "baseId": "crpg_mount_greathorse_6_v1",
     "name": "Boulonnais Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95144,8 +95144,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_6_h2",
-    "baseId": "crpg_mount_greathorse_6",
+    "id": "crpg_mount_greathorse_6_v1_h2",
+    "baseId": "crpg_mount_greathorse_6_v1",
     "name": "Boulonnais Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95166,8 +95166,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_6_h3",
-    "baseId": "crpg_mount_greathorse_6",
+    "id": "crpg_mount_greathorse_6_v1_h3",
+    "baseId": "crpg_mount_greathorse_6_v1",
     "name": "Boulonnais Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95188,8 +95188,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_7_h0",
-    "baseId": "crpg_mount_greathorse_7",
+    "id": "crpg_mount_greathorse_7_v1_h0",
+    "baseId": "crpg_mount_greathorse_7_v1",
     "name": "Galloway Great Horse",
     "culture": "Battania",
     "type": "Mount",
@@ -95210,8 +95210,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_7_h1",
-    "baseId": "crpg_mount_greathorse_7",
+    "id": "crpg_mount_greathorse_7_v1_h1",
+    "baseId": "crpg_mount_greathorse_7_v1",
     "name": "Galloway Great Horse +1",
     "culture": "Battania",
     "type": "Mount",
@@ -95232,8 +95232,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_7_h2",
-    "baseId": "crpg_mount_greathorse_7",
+    "id": "crpg_mount_greathorse_7_v1_h2",
+    "baseId": "crpg_mount_greathorse_7_v1",
     "name": "Galloway Great Horse +2",
     "culture": "Battania",
     "type": "Mount",
@@ -95254,8 +95254,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_7_h3",
-    "baseId": "crpg_mount_greathorse_7",
+    "id": "crpg_mount_greathorse_7_v1_h3",
+    "baseId": "crpg_mount_greathorse_7_v1",
     "name": "Galloway Great Horse +3",
     "culture": "Battania",
     "type": "Mount",
@@ -95276,8 +95276,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_8_h0",
-    "baseId": "crpg_mount_greathorse_8",
+    "id": "crpg_mount_greathorse_8_v1_h0",
+    "baseId": "crpg_mount_greathorse_8_v1",
     "name": "Poitevin Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95298,8 +95298,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_8_h1",
-    "baseId": "crpg_mount_greathorse_8",
+    "id": "crpg_mount_greathorse_8_v1_h1",
+    "baseId": "crpg_mount_greathorse_8_v1",
     "name": "Poitevin Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95320,8 +95320,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_8_h2",
-    "baseId": "crpg_mount_greathorse_8",
+    "id": "crpg_mount_greathorse_8_v1_h2",
+    "baseId": "crpg_mount_greathorse_8_v1",
     "name": "Poitevin Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95342,8 +95342,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_8_h3",
-    "baseId": "crpg_mount_greathorse_8",
+    "id": "crpg_mount_greathorse_8_v1_h3",
+    "baseId": "crpg_mount_greathorse_8_v1",
     "name": "Poitevin Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95364,8 +95364,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_9_h0",
-    "baseId": "crpg_mount_greathorse_9",
+    "id": "crpg_mount_greathorse_9_v1_h0",
+    "baseId": "crpg_mount_greathorse_9_v1",
     "name": "Oberlander Great Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95386,8 +95386,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_9_h1",
-    "baseId": "crpg_mount_greathorse_9",
+    "id": "crpg_mount_greathorse_9_v1_h1",
+    "baseId": "crpg_mount_greathorse_9_v1",
     "name": "Oberlander Great Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95408,8 +95408,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_9_h2",
-    "baseId": "crpg_mount_greathorse_9",
+    "id": "crpg_mount_greathorse_9_v1_h2",
+    "baseId": "crpg_mount_greathorse_9_v1",
     "name": "Oberlander Great Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95430,8 +95430,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_greathorse_9_h3",
-    "baseId": "crpg_mount_greathorse_9",
+    "id": "crpg_mount_greathorse_9_v1_h3",
+    "baseId": "crpg_mount_greathorse_9_v1",
     "name": "Oberlander Great Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95452,8 +95452,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_10_h0",
-    "baseId": "crpg_mount_rouncey_10",
+    "id": "crpg_mount_rouncey_10_v1_h0",
+    "baseId": "crpg_mount_rouncey_10_v1",
     "name": "Black Forest Rouncey",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95474,8 +95474,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_10_h1",
-    "baseId": "crpg_mount_rouncey_10",
+    "id": "crpg_mount_rouncey_10_v1_h1",
+    "baseId": "crpg_mount_rouncey_10_v1",
     "name": "Black Forest Rouncey +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95496,8 +95496,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_10_h2",
-    "baseId": "crpg_mount_rouncey_10",
+    "id": "crpg_mount_rouncey_10_v1_h2",
+    "baseId": "crpg_mount_rouncey_10_v1",
     "name": "Black Forest Rouncey +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95518,8 +95518,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_10_h3",
-    "baseId": "crpg_mount_rouncey_10",
+    "id": "crpg_mount_rouncey_10_v1_h3",
+    "baseId": "crpg_mount_rouncey_10_v1",
     "name": "Black Forest Rouncey +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95540,8 +95540,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_11_h0",
-    "baseId": "crpg_mount_rouncey_11",
+    "id": "crpg_mount_rouncey_11_v1_h0",
+    "baseId": "crpg_mount_rouncey_11_v1",
     "name": "Bidet Breton Rouncey",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95562,8 +95562,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_11_h1",
-    "baseId": "crpg_mount_rouncey_11",
+    "id": "crpg_mount_rouncey_11_v1_h1",
+    "baseId": "crpg_mount_rouncey_11_v1",
     "name": "Bidet Breton Rouncey +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95584,8 +95584,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_11_h2",
-    "baseId": "crpg_mount_rouncey_11",
+    "id": "crpg_mount_rouncey_11_v1_h2",
+    "baseId": "crpg_mount_rouncey_11_v1",
     "name": "Bidet Breton Rouncey +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95606,8 +95606,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_11_h3",
-    "baseId": "crpg_mount_rouncey_11",
+    "id": "crpg_mount_rouncey_11_v1_h3",
+    "baseId": "crpg_mount_rouncey_11_v1",
     "name": "Bidet Breton Rouncey +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -95628,8 +95628,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_12_h0",
-    "baseId": "crpg_mount_rouncey_12",
+    "id": "crpg_mount_rouncey_12_v1_h0",
+    "baseId": "crpg_mount_rouncey_12_v1",
     "name": "Dzhabe Rouncey",
     "culture": "Khuzait",
     "type": "Mount",
@@ -95650,8 +95650,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_12_h1",
-    "baseId": "crpg_mount_rouncey_12",
+    "id": "crpg_mount_rouncey_12_v1_h1",
+    "baseId": "crpg_mount_rouncey_12_v1",
     "name": "Dzhabe Rouncey +1",
     "culture": "Khuzait",
     "type": "Mount",
@@ -95672,8 +95672,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_12_h2",
-    "baseId": "crpg_mount_rouncey_12",
+    "id": "crpg_mount_rouncey_12_v1_h2",
+    "baseId": "crpg_mount_rouncey_12_v1",
     "name": "Dzhabe Rouncey +2",
     "culture": "Khuzait",
     "type": "Mount",
@@ -95694,8 +95694,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_12_h3",
-    "baseId": "crpg_mount_rouncey_12",
+    "id": "crpg_mount_rouncey_12_v1_h3",
+    "baseId": "crpg_mount_rouncey_12_v1",
     "name": "Dzhabe Rouncey +3",
     "culture": "Khuzait",
     "type": "Mount",
@@ -95716,8 +95716,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_13_h0",
-    "baseId": "crpg_mount_rouncey_13",
+    "id": "crpg_mount_rouncey_13_v1_h0",
+    "baseId": "crpg_mount_rouncey_13_v1",
     "name": "Karachay Rouncey",
     "culture": "Khuzait",
     "type": "Mount",
@@ -95738,8 +95738,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_13_h1",
-    "baseId": "crpg_mount_rouncey_13",
+    "id": "crpg_mount_rouncey_13_v1_h1",
+    "baseId": "crpg_mount_rouncey_13_v1",
     "name": "Karachay Rouncey +1",
     "culture": "Khuzait",
     "type": "Mount",
@@ -95760,8 +95760,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_13_h2",
-    "baseId": "crpg_mount_rouncey_13",
+    "id": "crpg_mount_rouncey_13_v1_h2",
+    "baseId": "crpg_mount_rouncey_13_v1",
     "name": "Karachay Rouncey +2",
     "culture": "Khuzait",
     "type": "Mount",
@@ -95782,8 +95782,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_13_h3",
-    "baseId": "crpg_mount_rouncey_13",
+    "id": "crpg_mount_rouncey_13_v1_h3",
+    "baseId": "crpg_mount_rouncey_13_v1",
     "name": "Karachay Rouncey +3",
     "culture": "Khuzait",
     "type": "Mount",
@@ -95804,8 +95804,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_14_h0",
-    "baseId": "crpg_mount_rouncey_14",
+    "id": "crpg_mount_rouncey_14_v1_h0",
+    "baseId": "crpg_mount_rouncey_14_v1",
     "name": "Unmol Rouncey",
     "culture": "Aserai",
     "type": "Mount",
@@ -95826,8 +95826,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_14_h1",
-    "baseId": "crpg_mount_rouncey_14",
+    "id": "crpg_mount_rouncey_14_v1_h1",
+    "baseId": "crpg_mount_rouncey_14_v1",
     "name": "Unmol Rouncey +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -95848,8 +95848,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_14_h2",
-    "baseId": "crpg_mount_rouncey_14",
+    "id": "crpg_mount_rouncey_14_v1_h2",
+    "baseId": "crpg_mount_rouncey_14_v1",
     "name": "Unmol Rouncey +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -95870,8 +95870,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_14_h3",
-    "baseId": "crpg_mount_rouncey_14",
+    "id": "crpg_mount_rouncey_14_v1_h3",
+    "baseId": "crpg_mount_rouncey_14_v1",
     "name": "Unmol Rouncey +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -95892,8 +95892,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_15_h0",
-    "baseId": "crpg_mount_rouncey_15",
+    "id": "crpg_mount_rouncey_15_v1_h0",
+    "baseId": "crpg_mount_rouncey_15_v1",
     "name": "Kehilan al-Khamsa",
     "culture": "Neutral",
     "type": "Mount",
@@ -95914,8 +95914,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_15_h1",
-    "baseId": "crpg_mount_rouncey_15",
+    "id": "crpg_mount_rouncey_15_v1_h1",
+    "baseId": "crpg_mount_rouncey_15_v1",
     "name": "Kehilan al-Khamsa +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -95936,8 +95936,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_15_h2",
-    "baseId": "crpg_mount_rouncey_15",
+    "id": "crpg_mount_rouncey_15_v1_h2",
+    "baseId": "crpg_mount_rouncey_15_v1",
     "name": "Kehilan al-Khamsa +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -95958,8 +95958,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_15_h3",
-    "baseId": "crpg_mount_rouncey_15",
+    "id": "crpg_mount_rouncey_15_v1_h3",
+    "baseId": "crpg_mount_rouncey_15_v1",
     "name": "Kehilan al-Khamsa +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -95980,8 +95980,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_2_h0",
-    "baseId": "crpg_mount_rouncey_2",
+    "id": "crpg_mount_rouncey_2_v1_h0",
+    "baseId": "crpg_mount_rouncey_2_v1",
     "name": "Sumpter Horse",
     "culture": "Neutral",
     "type": "Mount",
@@ -96002,8 +96002,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_2_h1",
-    "baseId": "crpg_mount_rouncey_2",
+    "id": "crpg_mount_rouncey_2_v1_h1",
+    "baseId": "crpg_mount_rouncey_2_v1",
     "name": "Sumpter Horse +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -96024,8 +96024,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_2_h2",
-    "baseId": "crpg_mount_rouncey_2",
+    "id": "crpg_mount_rouncey_2_v1_h2",
+    "baseId": "crpg_mount_rouncey_2_v1",
     "name": "Sumpter Horse +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -96046,8 +96046,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_2_h3",
-    "baseId": "crpg_mount_rouncey_2",
+    "id": "crpg_mount_rouncey_2_v1_h3",
+    "baseId": "crpg_mount_rouncey_2_v1",
     "name": "Sumpter Horse +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -96068,8 +96068,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_3_h0",
-    "baseId": "crpg_mount_rouncey_3",
+    "id": "crpg_mount_rouncey_3_v1_h0",
+    "baseId": "crpg_mount_rouncey_3_v1",
     "name": "Raymond Rouncey",
     "culture": "Neutral",
     "type": "Mount",
@@ -96090,8 +96090,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_3_h1",
-    "baseId": "crpg_mount_rouncey_3",
+    "id": "crpg_mount_rouncey_3_v1_h1",
+    "baseId": "crpg_mount_rouncey_3_v1",
     "name": "Raymond Rouncey +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -96112,8 +96112,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_3_h2",
-    "baseId": "crpg_mount_rouncey_3",
+    "id": "crpg_mount_rouncey_3_v1_h2",
+    "baseId": "crpg_mount_rouncey_3_v1",
     "name": "Raymond Rouncey +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -96134,8 +96134,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_3_h3",
-    "baseId": "crpg_mount_rouncey_3",
+    "id": "crpg_mount_rouncey_3_v1_h3",
+    "baseId": "crpg_mount_rouncey_3_v1",
     "name": "Raymond Rouncey +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -96156,8 +96156,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_4_h0",
-    "baseId": "crpg_mount_rouncey_4",
+    "id": "crpg_mount_rouncey_4_v1_h0",
+    "baseId": "crpg_mount_rouncey_4_v1",
     "name": "Fell Pony",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96178,8 +96178,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_4_h1",
-    "baseId": "crpg_mount_rouncey_4",
+    "id": "crpg_mount_rouncey_4_v1_h1",
+    "baseId": "crpg_mount_rouncey_4_v1",
     "name": "Fell Pony +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96200,8 +96200,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_4_h2",
-    "baseId": "crpg_mount_rouncey_4",
+    "id": "crpg_mount_rouncey_4_v1_h2",
+    "baseId": "crpg_mount_rouncey_4_v1",
     "name": "Fell Pony +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96222,8 +96222,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_4_h3",
-    "baseId": "crpg_mount_rouncey_4",
+    "id": "crpg_mount_rouncey_4_v1_h3",
+    "baseId": "crpg_mount_rouncey_4_v1",
     "name": "Fell Pony +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96244,8 +96244,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_5_h0",
-    "baseId": "crpg_mount_rouncey_5",
+    "id": "crpg_mount_rouncey_5_v1_h0",
+    "baseId": "crpg_mount_rouncey_5_v1",
     "name": "Welsh Cob",
     "culture": "Battania",
     "type": "Mount",
@@ -96266,8 +96266,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_5_h1",
-    "baseId": "crpg_mount_rouncey_5",
+    "id": "crpg_mount_rouncey_5_v1_h1",
+    "baseId": "crpg_mount_rouncey_5_v1",
     "name": "Welsh Cob +1",
     "culture": "Battania",
     "type": "Mount",
@@ -96288,8 +96288,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_5_h2",
-    "baseId": "crpg_mount_rouncey_5",
+    "id": "crpg_mount_rouncey_5_v1_h2",
+    "baseId": "crpg_mount_rouncey_5_v1",
     "name": "Welsh Cob +2",
     "culture": "Battania",
     "type": "Mount",
@@ -96310,8 +96310,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_5_h3",
-    "baseId": "crpg_mount_rouncey_5",
+    "id": "crpg_mount_rouncey_5_v1_h3",
+    "baseId": "crpg_mount_rouncey_5_v1",
     "name": "Welsh Cob +3",
     "culture": "Battania",
     "type": "Mount",
@@ -96332,8 +96332,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_6_h0",
-    "baseId": "crpg_mount_rouncey_6",
+    "id": "crpg_mount_rouncey_6_v1_h0",
+    "baseId": "crpg_mount_rouncey_6_v1",
     "name": "Sanhe Rouncey",
     "culture": "Khuzait",
     "type": "Mount",
@@ -96354,8 +96354,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_6_h1",
-    "baseId": "crpg_mount_rouncey_6",
+    "id": "crpg_mount_rouncey_6_v1_h1",
+    "baseId": "crpg_mount_rouncey_6_v1",
     "name": "Sanhe Rouncey +1",
     "culture": "Khuzait",
     "type": "Mount",
@@ -96376,8 +96376,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_6_h2",
-    "baseId": "crpg_mount_rouncey_6",
+    "id": "crpg_mount_rouncey_6_v1_h2",
+    "baseId": "crpg_mount_rouncey_6_v1",
     "name": "Sanhe Rouncey +2",
     "culture": "Khuzait",
     "type": "Mount",
@@ -96398,8 +96398,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_6_h3",
-    "baseId": "crpg_mount_rouncey_6",
+    "id": "crpg_mount_rouncey_6_v1_h3",
+    "baseId": "crpg_mount_rouncey_6_v1",
     "name": "Sanhe Rouncey +3",
     "culture": "Khuzait",
     "type": "Mount",
@@ -96420,8 +96420,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_7_h0",
-    "baseId": "crpg_mount_rouncey_7",
+    "id": "crpg_mount_rouncey_7_v1_h0",
+    "baseId": "crpg_mount_rouncey_7_v1",
     "name": "Megrelakaya Rouncey",
     "culture": "Empire",
     "type": "Mount",
@@ -96442,8 +96442,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_7_h1",
-    "baseId": "crpg_mount_rouncey_7",
+    "id": "crpg_mount_rouncey_7_v1_h1",
+    "baseId": "crpg_mount_rouncey_7_v1",
     "name": "Megrelakaya Rouncey +1",
     "culture": "Empire",
     "type": "Mount",
@@ -96464,8 +96464,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_7_h2",
-    "baseId": "crpg_mount_rouncey_7",
+    "id": "crpg_mount_rouncey_7_v1_h2",
+    "baseId": "crpg_mount_rouncey_7_v1",
     "name": "Megrelakaya Rouncey +2",
     "culture": "Empire",
     "type": "Mount",
@@ -96486,8 +96486,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_7_h3",
-    "baseId": "crpg_mount_rouncey_7",
+    "id": "crpg_mount_rouncey_7_v1_h3",
+    "baseId": "crpg_mount_rouncey_7_v1",
     "name": "Megrelakaya Rouncey +3",
     "culture": "Empire",
     "type": "Mount",
@@ -96508,8 +96508,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_8_h0",
-    "baseId": "crpg_mount_rouncey_8",
+    "id": "crpg_mount_rouncey_8_v1_h0",
+    "baseId": "crpg_mount_rouncey_8_v1",
     "name": "East Anglis Rouncey",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96530,8 +96530,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_8_h1",
-    "baseId": "crpg_mount_rouncey_8",
+    "id": "crpg_mount_rouncey_8_v1_h1",
+    "baseId": "crpg_mount_rouncey_8_v1",
     "name": "East Anglis Rouncey +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96552,8 +96552,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_8_h2",
-    "baseId": "crpg_mount_rouncey_8",
+    "id": "crpg_mount_rouncey_8_v1_h2",
+    "baseId": "crpg_mount_rouncey_8_v1",
     "name": "East Anglis Rouncey +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96574,8 +96574,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_8_h3",
-    "baseId": "crpg_mount_rouncey_8",
+    "id": "crpg_mount_rouncey_8_v1_h3",
+    "baseId": "crpg_mount_rouncey_8_v1",
     "name": "East Anglis Rouncey +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96596,8 +96596,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_9_h0",
-    "baseId": "crpg_mount_rouncey_9",
+    "id": "crpg_mount_rouncey_9_v1_h0",
+    "baseId": "crpg_mount_rouncey_9_v1",
     "name": "Anadolu Rouncey",
     "culture": "Aserai",
     "type": "Mount",
@@ -96618,8 +96618,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_9_h1",
-    "baseId": "crpg_mount_rouncey_9",
+    "id": "crpg_mount_rouncey_9_v1_h1",
+    "baseId": "crpg_mount_rouncey_9_v1",
     "name": "Anadolu Rouncey +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -96640,8 +96640,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_9_h2",
-    "baseId": "crpg_mount_rouncey_9",
+    "id": "crpg_mount_rouncey_9_v1_h2",
+    "baseId": "crpg_mount_rouncey_9_v1",
     "name": "Anadolu Rouncey +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -96662,8 +96662,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount_rouncey_9_h3",
-    "baseId": "crpg_mount_rouncey_9",
+    "id": "crpg_mount_rouncey_9_v1_h3",
+    "baseId": "crpg_mount_rouncey_9_v1",
     "name": "Anadolu Rouncey +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -96684,8 +96684,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_10_h0",
-    "baseId": "crpg_mount1_balanced_10",
+    "id": "crpg_mount1_balanced_10_v1_h0",
+    "baseId": "crpg_mount1_balanced_10_v1",
     "name": "Yunnan Destrier",
     "culture": "Khuzait",
     "type": "Mount",
@@ -96706,8 +96706,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_10_h1",
-    "baseId": "crpg_mount1_balanced_10",
+    "id": "crpg_mount1_balanced_10_v1_h1",
+    "baseId": "crpg_mount1_balanced_10_v1",
     "name": "Yunnan Destrier +1",
     "culture": "Khuzait",
     "type": "Mount",
@@ -96728,8 +96728,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_10_h2",
-    "baseId": "crpg_mount1_balanced_10",
+    "id": "crpg_mount1_balanced_10_v1_h2",
+    "baseId": "crpg_mount1_balanced_10_v1",
     "name": "Yunnan Destrier +2",
     "culture": "Khuzait",
     "type": "Mount",
@@ -96750,8 +96750,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_10_h3",
-    "baseId": "crpg_mount1_balanced_10",
+    "id": "crpg_mount1_balanced_10_v1_h3",
+    "baseId": "crpg_mount1_balanced_10_v1",
     "name": "Yunnan Destrier +3",
     "culture": "Khuzait",
     "type": "Mount",
@@ -96772,8 +96772,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_11_h0",
-    "baseId": "crpg_mount1_balanced_11",
+    "id": "crpg_mount1_balanced_11_v1_h0",
+    "baseId": "crpg_mount1_balanced_11_v1",
     "name": "Auvergne Destrier",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96794,8 +96794,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_11_h1",
-    "baseId": "crpg_mount1_balanced_11",
+    "id": "crpg_mount1_balanced_11_v1_h1",
+    "baseId": "crpg_mount1_balanced_11_v1",
     "name": "Auvergne Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96816,8 +96816,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_11_h2",
-    "baseId": "crpg_mount1_balanced_11",
+    "id": "crpg_mount1_balanced_11_v1_h2",
+    "baseId": "crpg_mount1_balanced_11_v1",
     "name": "Auvergne Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96838,8 +96838,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_11_h3",
-    "baseId": "crpg_mount1_balanced_11",
+    "id": "crpg_mount1_balanced_11_v1_h3",
+    "baseId": "crpg_mount1_balanced_11_v1",
     "name": "Auvergne Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96860,8 +96860,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_12_h0",
-    "baseId": "crpg_mount1_balanced_12",
+    "id": "crpg_mount1_balanced_12_v1_h0",
+    "baseId": "crpg_mount1_balanced_12_v1",
     "name": "Lusitano Pureblood Destrier",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96882,8 +96882,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_12_h1",
-    "baseId": "crpg_mount1_balanced_12",
+    "id": "crpg_mount1_balanced_12_v1_h1",
+    "baseId": "crpg_mount1_balanced_12_v1",
     "name": "Lusitano Pureblood Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96904,8 +96904,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_12_h2",
-    "baseId": "crpg_mount1_balanced_12",
+    "id": "crpg_mount1_balanced_12_v1_h2",
+    "baseId": "crpg_mount1_balanced_12_v1",
     "name": "Lusitano Pureblood Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96926,8 +96926,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_12_h3",
-    "baseId": "crpg_mount1_balanced_12",
+    "id": "crpg_mount1_balanced_12_v1_h3",
+    "baseId": "crpg_mount1_balanced_12_v1",
     "name": "Lusitano Pureblood Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -96948,8 +96948,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_13_h0",
-    "baseId": "crpg_mount1_balanced_13",
+    "id": "crpg_mount1_balanced_13_v1_h0",
+    "baseId": "crpg_mount1_balanced_13_v1",
     "name": "Bohemond",
     "culture": "Neutral",
     "type": "Mount",
@@ -96970,8 +96970,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_13_h1",
-    "baseId": "crpg_mount1_balanced_13",
+    "id": "crpg_mount1_balanced_13_v1_h1",
+    "baseId": "crpg_mount1_balanced_13_v1",
     "name": "Bohemond +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -96992,8 +96992,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_13_h2",
-    "baseId": "crpg_mount1_balanced_13",
+    "id": "crpg_mount1_balanced_13_v1_h2",
+    "baseId": "crpg_mount1_balanced_13_v1",
     "name": "Bohemond +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -97014,8 +97014,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_13_h3",
-    "baseId": "crpg_mount1_balanced_13",
+    "id": "crpg_mount1_balanced_13_v1_h3",
+    "baseId": "crpg_mount1_balanced_13_v1",
     "name": "Bohemond +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -97036,8 +97036,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_14_h0",
-    "baseId": "crpg_mount1_balanced_14",
+    "id": "crpg_mount1_balanced_14_v1_h0",
+    "baseId": "crpg_mount1_balanced_14_v1",
     "name": "Llamrei",
     "culture": "Neutral",
     "type": "Mount",
@@ -97058,8 +97058,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_14_h1",
-    "baseId": "crpg_mount1_balanced_14",
+    "id": "crpg_mount1_balanced_14_v1_h1",
+    "baseId": "crpg_mount1_balanced_14_v1",
     "name": "Llamrei +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -97080,8 +97080,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_14_h2",
-    "baseId": "crpg_mount1_balanced_14",
+    "id": "crpg_mount1_balanced_14_v1_h2",
+    "baseId": "crpg_mount1_balanced_14_v1",
     "name": "Llamrei +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -97102,8 +97102,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_14_h3",
-    "baseId": "crpg_mount1_balanced_14",
+    "id": "crpg_mount1_balanced_14_v1_h3",
+    "baseId": "crpg_mount1_balanced_14_v1",
     "name": "Llamrei +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -97124,8 +97124,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_5_h0",
-    "baseId": "crpg_mount1_balanced_5",
+    "id": "crpg_mount1_balanced_5_v1_h0",
+    "baseId": "crpg_mount1_balanced_5_v1",
     "name": "Murgese Destrier",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97146,8 +97146,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_5_h1",
-    "baseId": "crpg_mount1_balanced_5",
+    "id": "crpg_mount1_balanced_5_v1_h1",
+    "baseId": "crpg_mount1_balanced_5_v1",
     "name": "Murgese Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97168,8 +97168,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_5_h2",
-    "baseId": "crpg_mount1_balanced_5",
+    "id": "crpg_mount1_balanced_5_v1_h2",
+    "baseId": "crpg_mount1_balanced_5_v1",
     "name": "Murgese Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97190,8 +97190,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_5_h3",
-    "baseId": "crpg_mount1_balanced_5",
+    "id": "crpg_mount1_balanced_5_v1_h3",
+    "baseId": "crpg_mount1_balanced_5_v1",
     "name": "Murgese Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97212,8 +97212,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_6_h0",
-    "baseId": "crpg_mount1_balanced_6",
+    "id": "crpg_mount1_balanced_6_v1_h0",
+    "baseId": "crpg_mount1_balanced_6_v1",
     "name": "Holsteiner Destrier",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97234,8 +97234,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_6_h1",
-    "baseId": "crpg_mount1_balanced_6",
+    "id": "crpg_mount1_balanced_6_v1_h1",
+    "baseId": "crpg_mount1_balanced_6_v1",
     "name": "Holsteiner Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97256,8 +97256,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_6_h2",
-    "baseId": "crpg_mount1_balanced_6",
+    "id": "crpg_mount1_balanced_6_v1_h2",
+    "baseId": "crpg_mount1_balanced_6_v1",
     "name": "Holsteiner Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97278,8 +97278,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_6_h3",
-    "baseId": "crpg_mount1_balanced_6",
+    "id": "crpg_mount1_balanced_6_v1_h3",
+    "baseId": "crpg_mount1_balanced_6_v1",
     "name": "Holsteiner Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97300,8 +97300,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_7_h0",
-    "baseId": "crpg_mount1_balanced_7",
+    "id": "crpg_mount1_balanced_7_v1_h0",
+    "baseId": "crpg_mount1_balanced_7_v1",
     "name": "Kathiawadi Destrier",
     "culture": "Aserai",
     "type": "Mount",
@@ -97322,8 +97322,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_7_h1",
-    "baseId": "crpg_mount1_balanced_7",
+    "id": "crpg_mount1_balanced_7_v1_h1",
+    "baseId": "crpg_mount1_balanced_7_v1",
     "name": "Kathiawadi Destrier +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -97344,8 +97344,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_7_h2",
-    "baseId": "crpg_mount1_balanced_7",
+    "id": "crpg_mount1_balanced_7_v1_h2",
+    "baseId": "crpg_mount1_balanced_7_v1",
     "name": "Kathiawadi Destrier +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -97366,8 +97366,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_7_h3",
-    "baseId": "crpg_mount1_balanced_7",
+    "id": "crpg_mount1_balanced_7_v1_h3",
+    "baseId": "crpg_mount1_balanced_7_v1",
     "name": "Kathiawadi Destrier +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -97388,8 +97388,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_8_h0",
-    "baseId": "crpg_mount1_balanced_8",
+    "id": "crpg_mount1_balanced_8_v1_h0",
+    "baseId": "crpg_mount1_balanced_8_v1",
     "name": "Friesian Destrier",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97410,8 +97410,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_8_h1",
-    "baseId": "crpg_mount1_balanced_8",
+    "id": "crpg_mount1_balanced_8_v1_h1",
+    "baseId": "crpg_mount1_balanced_8_v1",
     "name": "Friesian Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97432,8 +97432,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_8_h2",
-    "baseId": "crpg_mount1_balanced_8",
+    "id": "crpg_mount1_balanced_8_v1_h2",
+    "baseId": "crpg_mount1_balanced_8_v1",
     "name": "Friesian Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97454,8 +97454,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_8_h3",
-    "baseId": "crpg_mount1_balanced_8",
+    "id": "crpg_mount1_balanced_8_v1_h3",
+    "baseId": "crpg_mount1_balanced_8_v1",
     "name": "Friesian Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97476,8 +97476,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_9_h0",
-    "baseId": "crpg_mount1_balanced_9",
+    "id": "crpg_mount1_balanced_9_v1_h0",
+    "baseId": "crpg_mount1_balanced_9_v1",
     "name": "Carthusian Destrier",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97498,8 +97498,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_9_h1",
-    "baseId": "crpg_mount1_balanced_9",
+    "id": "crpg_mount1_balanced_9_v1_h1",
+    "baseId": "crpg_mount1_balanced_9_v1",
     "name": "Carthusian Destrier +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97520,8 +97520,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_9_h2",
-    "baseId": "crpg_mount1_balanced_9",
+    "id": "crpg_mount1_balanced_9_v1_h2",
+    "baseId": "crpg_mount1_balanced_9_v1",
     "name": "Carthusian Destrier +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97542,8 +97542,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_balanced_9_h3",
-    "baseId": "crpg_mount1_balanced_9",
+    "id": "crpg_mount1_balanced_9_v1_h3",
+    "baseId": "crpg_mount1_balanced_9_v1",
     "name": "Carthusian Destrier +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -97564,8 +97564,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_10_h0",
-    "baseId": "crpg_mount1_camel_10",
+    "id": "crpg_mount1_camel_10_v1_h0",
+    "baseId": "crpg_mount1_camel_10_v1",
     "name": "Seleucid Light Camel",
     "culture": "Empire",
     "type": "Mount",
@@ -97586,8 +97586,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_10_h1",
-    "baseId": "crpg_mount1_camel_10",
+    "id": "crpg_mount1_camel_10_v1_h1",
+    "baseId": "crpg_mount1_camel_10_v1",
     "name": "Seleucid Light Camel +1",
     "culture": "Empire",
     "type": "Mount",
@@ -97608,8 +97608,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_10_h2",
-    "baseId": "crpg_mount1_camel_10",
+    "id": "crpg_mount1_camel_10_v1_h2",
+    "baseId": "crpg_mount1_camel_10_v1",
     "name": "Seleucid Light Camel +2",
     "culture": "Empire",
     "type": "Mount",
@@ -97630,8 +97630,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_10_h3",
-    "baseId": "crpg_mount1_camel_10",
+    "id": "crpg_mount1_camel_10_v1_h3",
+    "baseId": "crpg_mount1_camel_10_v1",
     "name": "Seleucid Light Camel +3",
     "culture": "Empire",
     "type": "Mount",
@@ -97652,8 +97652,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_11_h0",
-    "baseId": "crpg_mount1_camel_11",
+    "id": "crpg_mount1_camel_11_v1_h0",
+    "baseId": "crpg_mount1_camel_11_v1",
     "name": "Seleucid Heavy Camel",
     "culture": "Empire",
     "type": "Mount",
@@ -97674,8 +97674,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_11_h1",
-    "baseId": "crpg_mount1_camel_11",
+    "id": "crpg_mount1_camel_11_v1_h1",
+    "baseId": "crpg_mount1_camel_11_v1",
     "name": "Seleucid Heavy Camel +1",
     "culture": "Empire",
     "type": "Mount",
@@ -97696,8 +97696,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_11_h2",
-    "baseId": "crpg_mount1_camel_11",
+    "id": "crpg_mount1_camel_11_v1_h2",
+    "baseId": "crpg_mount1_camel_11_v1",
     "name": "Seleucid Heavy Camel +2",
     "culture": "Empire",
     "type": "Mount",
@@ -97718,8 +97718,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_11_h3",
-    "baseId": "crpg_mount1_camel_11",
+    "id": "crpg_mount1_camel_11_v1_h3",
+    "baseId": "crpg_mount1_camel_11_v1",
     "name": "Seleucid Heavy Camel +3",
     "culture": "Empire",
     "type": "Mount",
@@ -97740,8 +97740,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_12_h0",
-    "baseId": "crpg_mount1_camel_12",
+    "id": "crpg_mount1_camel_12_v1_h0",
+    "baseId": "crpg_mount1_camel_12_v1",
     "name": "Parthian Light Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -97762,8 +97762,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_12_h1",
-    "baseId": "crpg_mount1_camel_12",
+    "id": "crpg_mount1_camel_12_v1_h1",
+    "baseId": "crpg_mount1_camel_12_v1",
     "name": "Parthian Light Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -97784,8 +97784,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_12_h2",
-    "baseId": "crpg_mount1_camel_12",
+    "id": "crpg_mount1_camel_12_v1_h2",
+    "baseId": "crpg_mount1_camel_12_v1",
     "name": "Parthian Light Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -97806,8 +97806,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_12_h3",
-    "baseId": "crpg_mount1_camel_12",
+    "id": "crpg_mount1_camel_12_v1_h3",
+    "baseId": "crpg_mount1_camel_12_v1",
     "name": "Parthian Light Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -97828,8 +97828,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_13_h0",
-    "baseId": "crpg_mount1_camel_13",
+    "id": "crpg_mount1_camel_13_v1_h0",
+    "baseId": "crpg_mount1_camel_13_v1",
     "name": "Parthian Heavy Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -97850,8 +97850,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_13_h1",
-    "baseId": "crpg_mount1_camel_13",
+    "id": "crpg_mount1_camel_13_v1_h1",
+    "baseId": "crpg_mount1_camel_13_v1",
     "name": "Parthian Heavy Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -97872,8 +97872,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_13_h2",
-    "baseId": "crpg_mount1_camel_13",
+    "id": "crpg_mount1_camel_13_v1_h2",
+    "baseId": "crpg_mount1_camel_13_v1",
     "name": "Parthian Heavy Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -97894,8 +97894,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_13_h3",
-    "baseId": "crpg_mount1_camel_13",
+    "id": "crpg_mount1_camel_13_v1_h3",
+    "baseId": "crpg_mount1_camel_13_v1",
     "name": "Parthian Heavy Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -97916,8 +97916,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_14_h0",
-    "baseId": "crpg_mount1_camel_14",
+    "id": "crpg_mount1_camel_14_v1_h0",
+    "baseId": "crpg_mount1_camel_14_v1",
     "name": "Achaemenian Light Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -97938,8 +97938,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_14_h1",
-    "baseId": "crpg_mount1_camel_14",
+    "id": "crpg_mount1_camel_14_v1_h1",
+    "baseId": "crpg_mount1_camel_14_v1",
     "name": "Achaemenian Light Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -97960,8 +97960,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_14_h2",
-    "baseId": "crpg_mount1_camel_14",
+    "id": "crpg_mount1_camel_14_v1_h2",
+    "baseId": "crpg_mount1_camel_14_v1",
     "name": "Achaemenian Light Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -97982,8 +97982,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_14_h3",
-    "baseId": "crpg_mount1_camel_14",
+    "id": "crpg_mount1_camel_14_v1_h3",
+    "baseId": "crpg_mount1_camel_14_v1",
     "name": "Achaemenian Light Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -98004,8 +98004,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_15_h0",
-    "baseId": "crpg_mount1_camel_15",
+    "id": "crpg_mount1_camel_15_v1_h0",
+    "baseId": "crpg_mount1_camel_15_v1",
     "name": "Achaemenian Heavy Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -98026,8 +98026,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_15_h1",
-    "baseId": "crpg_mount1_camel_15",
+    "id": "crpg_mount1_camel_15_v1_h1",
+    "baseId": "crpg_mount1_camel_15_v1",
     "name": "Achaemenian Heavy Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -98048,8 +98048,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_15_h2",
-    "baseId": "crpg_mount1_camel_15",
+    "id": "crpg_mount1_camel_15_v1_h2",
+    "baseId": "crpg_mount1_camel_15_v1",
     "name": "Achaemenian Heavy Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -98070,8 +98070,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_15_h3",
-    "baseId": "crpg_mount1_camel_15",
+    "id": "crpg_mount1_camel_15_v1_h3",
+    "baseId": "crpg_mount1_camel_15_v1",
     "name": "Achaemenian Heavy Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -98092,8 +98092,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_16_h0",
-    "baseId": "crpg_mount1_camel_16",
+    "id": "crpg_mount1_camel_16_v1_h0",
+    "baseId": "crpg_mount1_camel_16_v1",
     "name": "Safinat al-Barr",
     "culture": "Neutral",
     "type": "Mount",
@@ -98114,8 +98114,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_16_h1",
-    "baseId": "crpg_mount1_camel_16",
+    "id": "crpg_mount1_camel_16_v1_h1",
+    "baseId": "crpg_mount1_camel_16_v1",
     "name": "Safinat al-Barr +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -98136,8 +98136,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_16_h2",
-    "baseId": "crpg_mount1_camel_16",
+    "id": "crpg_mount1_camel_16_v1_h2",
+    "baseId": "crpg_mount1_camel_16_v1",
     "name": "Safinat al-Barr +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -98158,8 +98158,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_16_h3",
-    "baseId": "crpg_mount1_camel_16",
+    "id": "crpg_mount1_camel_16_v1_h3",
+    "baseId": "crpg_mount1_camel_16_v1",
     "name": "Safinat al-Barr +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -98180,8 +98180,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_17_h0",
-    "baseId": "crpg_mount1_camel_17",
+    "id": "crpg_mount1_camel_17_v1_h0",
+    "baseId": "crpg_mount1_camel_17_v1",
     "name": "Padishah",
     "culture": "Neutral",
     "type": "Mount",
@@ -98202,8 +98202,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_17_h1",
-    "baseId": "crpg_mount1_camel_17",
+    "id": "crpg_mount1_camel_17_v1_h1",
+    "baseId": "crpg_mount1_camel_17_v1",
     "name": "Padishah +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -98224,8 +98224,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_17_h2",
-    "baseId": "crpg_mount1_camel_17",
+    "id": "crpg_mount1_camel_17_v1_h2",
+    "baseId": "crpg_mount1_camel_17_v1",
     "name": "Padishah +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -98246,8 +98246,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_17_h3",
-    "baseId": "crpg_mount1_camel_17",
+    "id": "crpg_mount1_camel_17_v1_h3",
+    "baseId": "crpg_mount1_camel_17_v1",
     "name": "Padishah +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -98268,8 +98268,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_2_h0",
-    "baseId": "crpg_mount1_camel_2",
+    "id": "crpg_mount1_camel_2_v1_h0",
+    "baseId": "crpg_mount1_camel_2_v1",
     "name": "Pack Camel",
     "culture": "Neutral",
     "type": "Mount",
@@ -98290,8 +98290,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_2_h1",
-    "baseId": "crpg_mount1_camel_2",
+    "id": "crpg_mount1_camel_2_v1_h1",
+    "baseId": "crpg_mount1_camel_2_v1",
     "name": "Pack Camel +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -98312,8 +98312,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_2_h2",
-    "baseId": "crpg_mount1_camel_2",
+    "id": "crpg_mount1_camel_2_v1_h2",
+    "baseId": "crpg_mount1_camel_2_v1",
     "name": "Pack Camel +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -98334,8 +98334,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_2_h3",
-    "baseId": "crpg_mount1_camel_2",
+    "id": "crpg_mount1_camel_2_v1_h3",
+    "baseId": "crpg_mount1_camel_2_v1",
     "name": "Pack Camel +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -98356,8 +98356,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_3_h0",
-    "baseId": "crpg_mount1_camel_3",
+    "id": "crpg_mount1_camel_3_v1_h0",
+    "baseId": "crpg_mount1_camel_3_v1",
     "name": "Pratihara Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -98378,8 +98378,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_3_h1",
-    "baseId": "crpg_mount1_camel_3",
+    "id": "crpg_mount1_camel_3_v1_h1",
+    "baseId": "crpg_mount1_camel_3_v1",
     "name": "Pratihara Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -98400,8 +98400,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_3_h2",
-    "baseId": "crpg_mount1_camel_3",
+    "id": "crpg_mount1_camel_3_v1_h2",
+    "baseId": "crpg_mount1_camel_3_v1",
     "name": "Pratihara Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -98422,8 +98422,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_3_h3",
-    "baseId": "crpg_mount1_camel_3",
+    "id": "crpg_mount1_camel_3_v1_h3",
+    "baseId": "crpg_mount1_camel_3_v1",
     "name": "Pratihara Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -98444,8 +98444,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_4_h0",
-    "baseId": "crpg_mount1_camel_4",
+    "id": "crpg_mount1_camel_4_v1_h0",
+    "baseId": "crpg_mount1_camel_4_v1",
     "name": "Qedarite Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -98466,8 +98466,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_4_h1",
-    "baseId": "crpg_mount1_camel_4",
+    "id": "crpg_mount1_camel_4_v1_h1",
+    "baseId": "crpg_mount1_camel_4_v1",
     "name": "Qedarite Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -98488,8 +98488,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_4_h2",
-    "baseId": "crpg_mount1_camel_4",
+    "id": "crpg_mount1_camel_4_v1_h2",
+    "baseId": "crpg_mount1_camel_4_v1",
     "name": "Qedarite Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -98510,8 +98510,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_4_h3",
-    "baseId": "crpg_mount1_camel_4",
+    "id": "crpg_mount1_camel_4_v1_h3",
+    "baseId": "crpg_mount1_camel_4_v1",
     "name": "Qedarite Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -98532,8 +98532,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_5_h0",
-    "baseId": "crpg_mount1_camel_5",
+    "id": "crpg_mount1_camel_5_v1_h0",
+    "baseId": "crpg_mount1_camel_5_v1",
     "name": "Palmyrene Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -98554,8 +98554,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_5_h1",
-    "baseId": "crpg_mount1_camel_5",
+    "id": "crpg_mount1_camel_5_v1_h1",
+    "baseId": "crpg_mount1_camel_5_v1",
     "name": "Palmyrene Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -98576,8 +98576,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_5_h2",
-    "baseId": "crpg_mount1_camel_5",
+    "id": "crpg_mount1_camel_5_v1_h2",
+    "baseId": "crpg_mount1_camel_5_v1",
     "name": "Palmyrene Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -98598,8 +98598,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_5_h3",
-    "baseId": "crpg_mount1_camel_5",
+    "id": "crpg_mount1_camel_5_v1_h3",
+    "baseId": "crpg_mount1_camel_5_v1",
     "name": "Palmyrene Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -98620,8 +98620,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_6_h0",
-    "baseId": "crpg_mount1_camel_6",
+    "id": "crpg_mount1_camel_6_v1_h0",
+    "baseId": "crpg_mount1_camel_6_v1",
     "name": "Sargonid Light Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -98642,8 +98642,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_6_h1",
-    "baseId": "crpg_mount1_camel_6",
+    "id": "crpg_mount1_camel_6_v1_h1",
+    "baseId": "crpg_mount1_camel_6_v1",
     "name": "Sargonid Light Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -98664,8 +98664,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_6_h2",
-    "baseId": "crpg_mount1_camel_6",
+    "id": "crpg_mount1_camel_6_v1_h2",
+    "baseId": "crpg_mount1_camel_6_v1",
     "name": "Sargonid Light Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -98686,8 +98686,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_6_h3",
-    "baseId": "crpg_mount1_camel_6",
+    "id": "crpg_mount1_camel_6_v1_h3",
+    "baseId": "crpg_mount1_camel_6_v1",
     "name": "Sargonid Light Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -98708,8 +98708,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_7_h0",
-    "baseId": "crpg_mount1_camel_7",
+    "id": "crpg_mount1_camel_7_v1_h0",
+    "baseId": "crpg_mount1_camel_7_v1",
     "name": "Sargonid Heavy Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -98730,8 +98730,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_7_h1",
-    "baseId": "crpg_mount1_camel_7",
+    "id": "crpg_mount1_camel_7_v1_h1",
+    "baseId": "crpg_mount1_camel_7_v1",
     "name": "Sargonid Heavy Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -98752,8 +98752,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_7_h2",
-    "baseId": "crpg_mount1_camel_7",
+    "id": "crpg_mount1_camel_7_v1_h2",
+    "baseId": "crpg_mount1_camel_7_v1",
     "name": "Sargonid Heavy Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -98774,8 +98774,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_7_h3",
-    "baseId": "crpg_mount1_camel_7",
+    "id": "crpg_mount1_camel_7_v1_h3",
+    "baseId": "crpg_mount1_camel_7_v1",
     "name": "Sargonid Heavy Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -98796,8 +98796,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_8_h0",
-    "baseId": "crpg_mount1_camel_8",
+    "id": "crpg_mount1_camel_8_v1_h0",
+    "baseId": "crpg_mount1_camel_8_v1",
     "name": "Nabatean Light Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -98818,8 +98818,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_8_h1",
-    "baseId": "crpg_mount1_camel_8",
+    "id": "crpg_mount1_camel_8_v1_h1",
+    "baseId": "crpg_mount1_camel_8_v1",
     "name": "Nabatean Light Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -98840,8 +98840,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_8_h2",
-    "baseId": "crpg_mount1_camel_8",
+    "id": "crpg_mount1_camel_8_v1_h2",
+    "baseId": "crpg_mount1_camel_8_v1",
     "name": "Nabatean Light Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -98862,8 +98862,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_8_h3",
-    "baseId": "crpg_mount1_camel_8",
+    "id": "crpg_mount1_camel_8_v1_h3",
+    "baseId": "crpg_mount1_camel_8_v1",
     "name": "Nabatean Light Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -98884,8 +98884,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_9_h0",
-    "baseId": "crpg_mount1_camel_9",
+    "id": "crpg_mount1_camel_9_v1_h0",
+    "baseId": "crpg_mount1_camel_9_v1",
     "name": "Nabatean Heavy Camel",
     "culture": "Aserai",
     "type": "Mount",
@@ -98906,8 +98906,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_9_h1",
-    "baseId": "crpg_mount1_camel_9",
+    "id": "crpg_mount1_camel_9_v1_h1",
+    "baseId": "crpg_mount1_camel_9_v1",
     "name": "Nabatean Heavy Camel +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -98928,8 +98928,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_9_h2",
-    "baseId": "crpg_mount1_camel_9",
+    "id": "crpg_mount1_camel_9_v1_h2",
+    "baseId": "crpg_mount1_camel_9_v1",
     "name": "Nabatean Heavy Camel +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -98950,8 +98950,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_camel_9_h3",
-    "baseId": "crpg_mount1_camel_9",
+    "id": "crpg_mount1_camel_9_v1_h3",
+    "baseId": "crpg_mount1_camel_9_v1",
     "name": "Nabatean Heavy Camel +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -98972,8 +98972,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_10_h0",
-    "baseId": "crpg_mount1_charger_10",
+    "id": "crpg_mount1_charger_10_v1_h0",
+    "baseId": "crpg_mount1_charger_10_v1",
     "name": "Desert Norman Charger",
     "culture": "Vlandia",
     "type": "Mount",
@@ -98994,8 +98994,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_10_h1",
-    "baseId": "crpg_mount1_charger_10",
+    "id": "crpg_mount1_charger_10_v1_h1",
+    "baseId": "crpg_mount1_charger_10_v1",
     "name": "Desert Norman Charger +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99016,8 +99016,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_10_h2",
-    "baseId": "crpg_mount1_charger_10",
+    "id": "crpg_mount1_charger_10_v1_h2",
+    "baseId": "crpg_mount1_charger_10_v1",
     "name": "Desert Norman Charger +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99038,8 +99038,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_10_h3",
-    "baseId": "crpg_mount1_charger_10",
+    "id": "crpg_mount1_charger_10_v1_h3",
+    "baseId": "crpg_mount1_charger_10_v1",
     "name": "Desert Norman Charger +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99060,8 +99060,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_11_h0",
-    "baseId": "crpg_mount1_charger_11",
+    "id": "crpg_mount1_charger_11_v1_h0",
+    "baseId": "crpg_mount1_charger_11_v1",
     "name": "Andravida Charger",
     "culture": "Empire",
     "type": "Mount",
@@ -99082,8 +99082,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_11_h1",
-    "baseId": "crpg_mount1_charger_11",
+    "id": "crpg_mount1_charger_11_v1_h1",
+    "baseId": "crpg_mount1_charger_11_v1",
     "name": "Andravida Charger +1",
     "culture": "Empire",
     "type": "Mount",
@@ -99104,8 +99104,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_11_h2",
-    "baseId": "crpg_mount1_charger_11",
+    "id": "crpg_mount1_charger_11_v1_h2",
+    "baseId": "crpg_mount1_charger_11_v1",
     "name": "Andravida Charger +2",
     "culture": "Empire",
     "type": "Mount",
@@ -99126,8 +99126,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_11_h3",
-    "baseId": "crpg_mount1_charger_11",
+    "id": "crpg_mount1_charger_11_v1_h3",
+    "baseId": "crpg_mount1_charger_11_v1",
     "name": "Andravida Charger +3",
     "culture": "Empire",
     "type": "Mount",
@@ -99148,8 +99148,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_12_h0",
-    "baseId": "crpg_mount1_charger_12",
+    "id": "crpg_mount1_charger_12_v1_h0",
+    "baseId": "crpg_mount1_charger_12_v1",
     "name": "Neapolitan Charger",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99170,8 +99170,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_12_h1",
-    "baseId": "crpg_mount1_charger_12",
+    "id": "crpg_mount1_charger_12_v1_h1",
+    "baseId": "crpg_mount1_charger_12_v1",
     "name": "Neapolitan Charger +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99192,8 +99192,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_12_h2",
-    "baseId": "crpg_mount1_charger_12",
+    "id": "crpg_mount1_charger_12_v1_h2",
+    "baseId": "crpg_mount1_charger_12_v1",
     "name": "Neapolitan Charger +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99214,8 +99214,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_12_h3",
-    "baseId": "crpg_mount1_charger_12",
+    "id": "crpg_mount1_charger_12_v1_h3",
+    "baseId": "crpg_mount1_charger_12_v1",
     "name": "Neapolitan Charger +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99236,8 +99236,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_13_h0",
-    "baseId": "crpg_mount1_charger_13",
+    "id": "crpg_mount1_charger_13_v1_h0",
+    "baseId": "crpg_mount1_charger_13_v1",
     "name": "Hengeron",
     "culture": "Neutral",
     "type": "Mount",
@@ -99258,8 +99258,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_13_h1",
-    "baseId": "crpg_mount1_charger_13",
+    "id": "crpg_mount1_charger_13_v1_h1",
+    "baseId": "crpg_mount1_charger_13_v1",
     "name": "Hengeron +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -99280,8 +99280,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_13_h2",
-    "baseId": "crpg_mount1_charger_13",
+    "id": "crpg_mount1_charger_13_v1_h2",
+    "baseId": "crpg_mount1_charger_13_v1",
     "name": "Hengeron +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -99302,8 +99302,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_13_h3",
-    "baseId": "crpg_mount1_charger_13",
+    "id": "crpg_mount1_charger_13_v1_h3",
+    "baseId": "crpg_mount1_charger_13_v1",
     "name": "Hengeron +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -99324,8 +99324,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_14_h0",
-    "baseId": "crpg_mount1_charger_14",
+    "id": "crpg_mount1_charger_14_v1_h0",
+    "baseId": "crpg_mount1_charger_14_v1",
     "name": "Bucephalus",
     "culture": "Neutral",
     "type": "Mount",
@@ -99346,8 +99346,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_14_h1",
-    "baseId": "crpg_mount1_charger_14",
+    "id": "crpg_mount1_charger_14_v1_h1",
+    "baseId": "crpg_mount1_charger_14_v1",
     "name": "Bucephalus +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -99368,8 +99368,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_14_h2",
-    "baseId": "crpg_mount1_charger_14",
+    "id": "crpg_mount1_charger_14_v1_h2",
+    "baseId": "crpg_mount1_charger_14_v1",
     "name": "Bucephalus +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -99390,8 +99390,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_14_h3",
-    "baseId": "crpg_mount1_charger_14",
+    "id": "crpg_mount1_charger_14_v1_h3",
+    "baseId": "crpg_mount1_charger_14_v1",
     "name": "Bucephalus +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -99412,8 +99412,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_5_h0",
-    "baseId": "crpg_mount1_charger_5",
+    "id": "crpg_mount1_charger_5_v1_h0",
+    "baseId": "crpg_mount1_charger_5_v1",
     "name": "Norwegian Fjord Draught",
     "culture": "Sturgia",
     "type": "Mount",
@@ -99434,8 +99434,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_5_h1",
-    "baseId": "crpg_mount1_charger_5",
+    "id": "crpg_mount1_charger_5_v1_h1",
+    "baseId": "crpg_mount1_charger_5_v1",
     "name": "Norwegian Fjord Draught +1",
     "culture": "Sturgia",
     "type": "Mount",
@@ -99456,8 +99456,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_5_h2",
-    "baseId": "crpg_mount1_charger_5",
+    "id": "crpg_mount1_charger_5_v1_h2",
+    "baseId": "crpg_mount1_charger_5_v1",
     "name": "Norwegian Fjord Draught +2",
     "culture": "Sturgia",
     "type": "Mount",
@@ -99478,8 +99478,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_5_h3",
-    "baseId": "crpg_mount1_charger_5",
+    "id": "crpg_mount1_charger_5_v1_h3",
+    "baseId": "crpg_mount1_charger_5_v1",
     "name": "Norwegian Fjord Draught +3",
     "culture": "Sturgia",
     "type": "Mount",
@@ -99500,8 +99500,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_6_h0",
-    "baseId": "crpg_mount1_charger_6",
+    "id": "crpg_mount1_charger_6_v1_h0",
+    "baseId": "crpg_mount1_charger_6_v1",
     "name": "Icelandic Charger",
     "culture": "Sturgia",
     "type": "Mount",
@@ -99522,8 +99522,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_6_h1",
-    "baseId": "crpg_mount1_charger_6",
+    "id": "crpg_mount1_charger_6_v1_h1",
+    "baseId": "crpg_mount1_charger_6_v1",
     "name": "Icelandic Charger +1",
     "culture": "Sturgia",
     "type": "Mount",
@@ -99544,8 +99544,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_6_h2",
-    "baseId": "crpg_mount1_charger_6",
+    "id": "crpg_mount1_charger_6_v1_h2",
+    "baseId": "crpg_mount1_charger_6_v1",
     "name": "Icelandic Charger +2",
     "culture": "Sturgia",
     "type": "Mount",
@@ -99566,8 +99566,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_6_h3",
-    "baseId": "crpg_mount1_charger_6",
+    "id": "crpg_mount1_charger_6_v1_h3",
+    "baseId": "crpg_mount1_charger_6_v1",
     "name": "Icelandic Charger +3",
     "culture": "Sturgia",
     "type": "Mount",
@@ -99588,8 +99588,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_7_h0",
-    "baseId": "crpg_mount1_charger_7",
+    "id": "crpg_mount1_charger_7_v1_h0",
+    "baseId": "crpg_mount1_charger_7_v1",
     "name": "Shire Charger",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99610,8 +99610,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_7_h1",
-    "baseId": "crpg_mount1_charger_7",
+    "id": "crpg_mount1_charger_7_v1_h1",
+    "baseId": "crpg_mount1_charger_7_v1",
     "name": "Shire Charger +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99632,8 +99632,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_7_h2",
-    "baseId": "crpg_mount1_charger_7",
+    "id": "crpg_mount1_charger_7_v1_h2",
+    "baseId": "crpg_mount1_charger_7_v1",
     "name": "Shire Charger +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99654,8 +99654,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_7_h3",
-    "baseId": "crpg_mount1_charger_7",
+    "id": "crpg_mount1_charger_7_v1_h3",
+    "baseId": "crpg_mount1_charger_7_v1",
     "name": "Shire Charger +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99676,8 +99676,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_8_h0",
-    "baseId": "crpg_mount1_charger_8",
+    "id": "crpg_mount1_charger_8_v1_h0",
+    "baseId": "crpg_mount1_charger_8_v1",
     "name": "Ardennes Charger",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99698,8 +99698,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_8_h1",
-    "baseId": "crpg_mount1_charger_8",
+    "id": "crpg_mount1_charger_8_v1_h1",
+    "baseId": "crpg_mount1_charger_8_v1",
     "name": "Ardennes Charger +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99720,8 +99720,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_8_h2",
-    "baseId": "crpg_mount1_charger_8",
+    "id": "crpg_mount1_charger_8_v1_h2",
+    "baseId": "crpg_mount1_charger_8_v1",
     "name": "Ardennes Charger +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99742,8 +99742,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_8_h3",
-    "baseId": "crpg_mount1_charger_8",
+    "id": "crpg_mount1_charger_8_v1_h3",
+    "baseId": "crpg_mount1_charger_8_v1",
     "name": "Ardennes Charger +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99764,8 +99764,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_9_h0",
-    "baseId": "crpg_mount1_charger_9",
+    "id": "crpg_mount1_charger_9_v1_h0",
+    "baseId": "crpg_mount1_charger_9_v1",
     "name": "Andalusian Charger",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99786,8 +99786,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_9_h1",
-    "baseId": "crpg_mount1_charger_9",
+    "id": "crpg_mount1_charger_9_v1_h1",
+    "baseId": "crpg_mount1_charger_9_v1",
     "name": "Andalusian Charger +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99808,8 +99808,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_9_h2",
-    "baseId": "crpg_mount1_charger_9",
+    "id": "crpg_mount1_charger_9_v1_h2",
+    "baseId": "crpg_mount1_charger_9_v1",
     "name": "Andalusian Charger +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99830,8 +99830,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_charger_9_h3",
-    "baseId": "crpg_mount1_charger_9",
+    "id": "crpg_mount1_charger_9_v1_h3",
+    "baseId": "crpg_mount1_charger_9_v1",
     "name": "Andalusian Charger +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -99852,8 +99852,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_10_h0",
-    "baseId": "crpg_mount1_courser_10",
+    "id": "crpg_mount1_courser_10_v1_h0",
+    "baseId": "crpg_mount1_courser_10_v1",
     "name": "Ahalteke Courser",
     "culture": "Khuzait",
     "type": "Mount",
@@ -99874,8 +99874,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_10_h1",
-    "baseId": "crpg_mount1_courser_10",
+    "id": "crpg_mount1_courser_10_v1_h1",
+    "baseId": "crpg_mount1_courser_10_v1",
     "name": "Ahalteke Courser +1",
     "culture": "Khuzait",
     "type": "Mount",
@@ -99896,8 +99896,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_10_h2",
-    "baseId": "crpg_mount1_courser_10",
+    "id": "crpg_mount1_courser_10_v1_h2",
+    "baseId": "crpg_mount1_courser_10_v1",
     "name": "Ahalteke Courser +2",
     "culture": "Khuzait",
     "type": "Mount",
@@ -99918,8 +99918,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_10_h3",
-    "baseId": "crpg_mount1_courser_10",
+    "id": "crpg_mount1_courser_10_v1_h3",
+    "baseId": "crpg_mount1_courser_10_v1",
     "name": "Ahalteke Courser +3",
     "culture": "Khuzait",
     "type": "Mount",
@@ -99940,8 +99940,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_11_h0",
-    "baseId": "crpg_mount1_courser_11",
+    "id": "crpg_mount1_courser_11_v1_h0",
+    "baseId": "crpg_mount1_courser_11_v1",
     "name": "Datong Courser",
     "culture": "Khuzait",
     "type": "Mount",
@@ -99962,8 +99962,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_11_h1",
-    "baseId": "crpg_mount1_courser_11",
+    "id": "crpg_mount1_courser_11_v1_h1",
+    "baseId": "crpg_mount1_courser_11_v1",
     "name": "Datong Courser +1",
     "culture": "Khuzait",
     "type": "Mount",
@@ -99984,8 +99984,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_11_h2",
-    "baseId": "crpg_mount1_courser_11",
+    "id": "crpg_mount1_courser_11_v1_h2",
+    "baseId": "crpg_mount1_courser_11_v1",
     "name": "Datong Courser +2",
     "culture": "Khuzait",
     "type": "Mount",
@@ -100006,8 +100006,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_11_h3",
-    "baseId": "crpg_mount1_courser_11",
+    "id": "crpg_mount1_courser_11_v1_h3",
+    "baseId": "crpg_mount1_courser_11_v1",
     "name": "Datong Courser +3",
     "culture": "Khuzait",
     "type": "Mount",
@@ -100028,8 +100028,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_12_h0",
-    "baseId": "crpg_mount1_courser_12",
+    "id": "crpg_mount1_courser_12_v1_h0",
+    "baseId": "crpg_mount1_courser_12_v1",
     "name": "Darashouri Courser",
     "culture": "Aserai",
     "type": "Mount",
@@ -100050,8 +100050,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_12_h1",
-    "baseId": "crpg_mount1_courser_12",
+    "id": "crpg_mount1_courser_12_v1_h1",
+    "baseId": "crpg_mount1_courser_12_v1",
     "name": "Darashouri Courser +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -100072,8 +100072,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_12_h2",
-    "baseId": "crpg_mount1_courser_12",
+    "id": "crpg_mount1_courser_12_v1_h2",
+    "baseId": "crpg_mount1_courser_12_v1",
     "name": "Darashouri Courser +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -100094,8 +100094,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_12_h3",
-    "baseId": "crpg_mount1_courser_12",
+    "id": "crpg_mount1_courser_12_v1_h3",
+    "baseId": "crpg_mount1_courser_12_v1",
     "name": "Darashouri Courser +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -100116,8 +100116,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_13_h0",
-    "baseId": "crpg_mount1_courser_13",
+    "id": "crpg_mount1_courser_13_v1_h0",
+    "baseId": "crpg_mount1_courser_13_v1",
     "name": "Sanfratellano Courser",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100138,8 +100138,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_13_h1",
-    "baseId": "crpg_mount1_courser_13",
+    "id": "crpg_mount1_courser_13_v1_h1",
+    "baseId": "crpg_mount1_courser_13_v1",
     "name": "Sanfratellano Courser +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100160,8 +100160,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_13_h2",
-    "baseId": "crpg_mount1_courser_13",
+    "id": "crpg_mount1_courser_13_v1_h2",
+    "baseId": "crpg_mount1_courser_13_v1",
     "name": "Sanfratellano Courser +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100182,8 +100182,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_13_h3",
-    "baseId": "crpg_mount1_courser_13",
+    "id": "crpg_mount1_courser_13_v1_h3",
+    "baseId": "crpg_mount1_courser_13_v1",
     "name": "Sanfratellano Courser +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100204,8 +100204,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_14_h0",
-    "baseId": "crpg_mount1_courser_14",
+    "id": "crpg_mount1_courser_14_v1_h0",
+    "baseId": "crpg_mount1_courser_14_v1",
     "name": "Muniqi al-Khamsa",
     "culture": "Neutral",
     "type": "Mount",
@@ -100226,8 +100226,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_14_h1",
-    "baseId": "crpg_mount1_courser_14",
+    "id": "crpg_mount1_courser_14_v1_h1",
+    "baseId": "crpg_mount1_courser_14_v1",
     "name": "Muniqi al-Khamsa +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -100248,8 +100248,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_14_h2",
-    "baseId": "crpg_mount1_courser_14",
+    "id": "crpg_mount1_courser_14_v1_h2",
+    "baseId": "crpg_mount1_courser_14_v1",
     "name": "Muniqi al-Khamsa +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -100270,8 +100270,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_14_h3",
-    "baseId": "crpg_mount1_courser_14",
+    "id": "crpg_mount1_courser_14_v1_h3",
+    "baseId": "crpg_mount1_courser_14_v1",
     "name": "Muniqi al-Khamsa +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -100292,8 +100292,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_5_h0",
-    "baseId": "crpg_mount1_courser_5",
+    "id": "crpg_mount1_courser_5_v1_h0",
+    "baseId": "crpg_mount1_courser_5_v1",
     "name": "Turkoman Courser",
     "culture": "Khuzait",
     "type": "Mount",
@@ -100314,8 +100314,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_5_h1",
-    "baseId": "crpg_mount1_courser_5",
+    "id": "crpg_mount1_courser_5_v1_h1",
+    "baseId": "crpg_mount1_courser_5_v1",
     "name": "Turkoman Courser +1",
     "culture": "Khuzait",
     "type": "Mount",
@@ -100336,8 +100336,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_5_h2",
-    "baseId": "crpg_mount1_courser_5",
+    "id": "crpg_mount1_courser_5_v1_h2",
+    "baseId": "crpg_mount1_courser_5_v1",
     "name": "Turkoman Courser +2",
     "culture": "Khuzait",
     "type": "Mount",
@@ -100358,8 +100358,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_5_h3",
-    "baseId": "crpg_mount1_courser_5",
+    "id": "crpg_mount1_courser_5_v1_h3",
+    "baseId": "crpg_mount1_courser_5_v1",
     "name": "Turkoman Courser +3",
     "culture": "Khuzait",
     "type": "Mount",
@@ -100380,8 +100380,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_6_h0",
-    "baseId": "crpg_mount1_courser_6",
+    "id": "crpg_mount1_courser_6_v1_h0",
+    "baseId": "crpg_mount1_courser_6_v1",
     "name": "Menorquín Courser",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100402,8 +100402,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_6_h1",
-    "baseId": "crpg_mount1_courser_6",
+    "id": "crpg_mount1_courser_6_v1_h1",
+    "baseId": "crpg_mount1_courser_6_v1",
     "name": "Menorquín Courser +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100424,8 +100424,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_6_h2",
-    "baseId": "crpg_mount1_courser_6",
+    "id": "crpg_mount1_courser_6_v1_h2",
+    "baseId": "crpg_mount1_courser_6_v1",
     "name": "Menorquín Courser +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100446,8 +100446,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_6_h3",
-    "baseId": "crpg_mount1_courser_6",
+    "id": "crpg_mount1_courser_6_v1_h3",
+    "baseId": "crpg_mount1_courser_6_v1",
     "name": "Menorquín Courser +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100468,8 +100468,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_7_h0",
-    "baseId": "crpg_mount1_courser_7",
+    "id": "crpg_mount1_courser_7_v1_h0",
+    "baseId": "crpg_mount1_courser_7_v1",
     "name": "Nisean Courser",
     "culture": "Aserai",
     "type": "Mount",
@@ -100490,8 +100490,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_7_h1",
-    "baseId": "crpg_mount1_courser_7",
+    "id": "crpg_mount1_courser_7_v1_h1",
+    "baseId": "crpg_mount1_courser_7_v1",
     "name": "Nisean Courser +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -100512,8 +100512,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_7_h2",
-    "baseId": "crpg_mount1_courser_7",
+    "id": "crpg_mount1_courser_7_v1_h2",
+    "baseId": "crpg_mount1_courser_7_v1",
     "name": "Nisean Courser +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -100534,8 +100534,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_7_h3",
-    "baseId": "crpg_mount1_courser_7",
+    "id": "crpg_mount1_courser_7_v1_h3",
+    "baseId": "crpg_mount1_courser_7_v1",
     "name": "Nisean Courser +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -100556,8 +100556,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_8_h0",
-    "baseId": "crpg_mount1_courser_8",
+    "id": "crpg_mount1_courser_8_v1_h0",
+    "baseId": "crpg_mount1_courser_8_v1",
     "name": "Thessalian Courser",
     "culture": "Empire",
     "type": "Mount",
@@ -100578,8 +100578,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_8_h1",
-    "baseId": "crpg_mount1_courser_8",
+    "id": "crpg_mount1_courser_8_v1_h1",
+    "baseId": "crpg_mount1_courser_8_v1",
     "name": "Thessalian Courser +1",
     "culture": "Empire",
     "type": "Mount",
@@ -100600,8 +100600,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_8_h2",
-    "baseId": "crpg_mount1_courser_8",
+    "id": "crpg_mount1_courser_8_v1_h2",
+    "baseId": "crpg_mount1_courser_8_v1",
     "name": "Thessalian Courser +2",
     "culture": "Empire",
     "type": "Mount",
@@ -100622,8 +100622,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_8_h3",
-    "baseId": "crpg_mount1_courser_8",
+    "id": "crpg_mount1_courser_8_v1_h3",
+    "baseId": "crpg_mount1_courser_8_v1",
     "name": "Thessalian Courser +3",
     "culture": "Empire",
     "type": "Mount",
@@ -100644,8 +100644,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_9_h0",
-    "baseId": "crpg_mount1_courser_9",
+    "id": "crpg_mount1_courser_9_v1_h0",
+    "baseId": "crpg_mount1_courser_9_v1",
     "name": "Einsiedler Courser",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100666,8 +100666,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_9_h1",
-    "baseId": "crpg_mount1_courser_9",
+    "id": "crpg_mount1_courser_9_v1_h1",
+    "baseId": "crpg_mount1_courser_9_v1",
     "name": "Einsiedler Courser +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100688,8 +100688,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_9_h2",
-    "baseId": "crpg_mount1_courser_9",
+    "id": "crpg_mount1_courser_9_v1_h2",
+    "baseId": "crpg_mount1_courser_9_v1",
     "name": "Einsiedler Courser +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100710,8 +100710,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_courser_9_h3",
-    "baseId": "crpg_mount1_courser_9",
+    "id": "crpg_mount1_courser_9_v1_h3",
+    "baseId": "crpg_mount1_courser_9_v1",
     "name": "Einsiedler Courser +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -100732,8 +100732,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_10_h0",
-    "baseId": "crpg_mount1_maneuverable_10",
+    "id": "crpg_mount1_maneuverable_10_v1_h0",
+    "baseId": "crpg_mount1_maneuverable_10_v1",
     "name": "Berber Jennet",
     "culture": "Aserai",
     "type": "Mount",
@@ -100754,8 +100754,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_10_h1",
-    "baseId": "crpg_mount1_maneuverable_10",
+    "id": "crpg_mount1_maneuverable_10_v1_h1",
+    "baseId": "crpg_mount1_maneuverable_10_v1",
     "name": "Berber Jennet +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -100776,8 +100776,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_10_h2",
-    "baseId": "crpg_mount1_maneuverable_10",
+    "id": "crpg_mount1_maneuverable_10_v1_h2",
+    "baseId": "crpg_mount1_maneuverable_10_v1",
     "name": "Berber Jennet +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -100798,8 +100798,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_10_h3",
-    "baseId": "crpg_mount1_maneuverable_10",
+    "id": "crpg_mount1_maneuverable_10_v1_h3",
+    "baseId": "crpg_mount1_maneuverable_10_v1",
     "name": "Berber Jennet +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -100820,8 +100820,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_11_h0",
-    "baseId": "crpg_mount1_maneuverable_11",
+    "id": "crpg_mount1_maneuverable_11_v1_h0",
+    "baseId": "crpg_mount1_maneuverable_11_v1",
     "name": "Tchenarani Palfrey",
     "culture": "Aserai",
     "type": "Mount",
@@ -100842,8 +100842,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_11_h1",
-    "baseId": "crpg_mount1_maneuverable_11",
+    "id": "crpg_mount1_maneuverable_11_v1_h1",
+    "baseId": "crpg_mount1_maneuverable_11_v1",
     "name": "Tchenarani Palfrey +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -100864,8 +100864,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_11_h2",
-    "baseId": "crpg_mount1_maneuverable_11",
+    "id": "crpg_mount1_maneuverable_11_v1_h2",
+    "baseId": "crpg_mount1_maneuverable_11_v1",
     "name": "Tchenarani Palfrey +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -100886,8 +100886,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_11_h3",
-    "baseId": "crpg_mount1_maneuverable_11",
+    "id": "crpg_mount1_maneuverable_11_v1_h3",
+    "baseId": "crpg_mount1_maneuverable_11_v1",
     "name": "Tchenarani Palfrey +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -100908,8 +100908,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_12_h0",
-    "baseId": "crpg_mount1_maneuverable_12",
+    "id": "crpg_mount1_maneuverable_12_v1_h0",
+    "baseId": "crpg_mount1_maneuverable_12_v1",
     "name": "Asil Purebred Arabian Palfrey",
     "culture": "Aserai",
     "type": "Mount",
@@ -100930,8 +100930,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_12_h1",
-    "baseId": "crpg_mount1_maneuverable_12",
+    "id": "crpg_mount1_maneuverable_12_v1_h1",
+    "baseId": "crpg_mount1_maneuverable_12_v1",
     "name": "Asil Purebred Arabian Palfrey +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -100952,8 +100952,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_12_h2",
-    "baseId": "crpg_mount1_maneuverable_12",
+    "id": "crpg_mount1_maneuverable_12_v1_h2",
+    "baseId": "crpg_mount1_maneuverable_12_v1",
     "name": "Asil Purebred Arabian Palfrey +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -100974,8 +100974,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_12_h3",
-    "baseId": "crpg_mount1_maneuverable_12",
+    "id": "crpg_mount1_maneuverable_12_v1_h3",
+    "baseId": "crpg_mount1_maneuverable_12_v1",
     "name": "Asil Purebred Arabian Palfrey +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -100996,8 +100996,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_13_h0",
-    "baseId": "crpg_mount1_maneuverable_13",
+    "id": "crpg_mount1_maneuverable_13_v1_h0",
+    "baseId": "crpg_mount1_maneuverable_13_v1",
     "name": "Marengo",
     "culture": "Neutral",
     "type": "Mount",
@@ -101018,8 +101018,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_13_h1",
-    "baseId": "crpg_mount1_maneuverable_13",
+    "id": "crpg_mount1_maneuverable_13_v1_h1",
+    "baseId": "crpg_mount1_maneuverable_13_v1",
     "name": "Marengo +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -101040,8 +101040,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_13_h2",
-    "baseId": "crpg_mount1_maneuverable_13",
+    "id": "crpg_mount1_maneuverable_13_v1_h2",
+    "baseId": "crpg_mount1_maneuverable_13_v1",
     "name": "Marengo +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -101062,8 +101062,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_13_h3",
-    "baseId": "crpg_mount1_maneuverable_13",
+    "id": "crpg_mount1_maneuverable_13_v1_h3",
+    "baseId": "crpg_mount1_maneuverable_13_v1",
     "name": "Marengo +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -101084,8 +101084,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_14_h0",
-    "baseId": "crpg_mount1_maneuverable_14",
+    "id": "crpg_mount1_maneuverable_14_v1_h0",
+    "baseId": "crpg_mount1_maneuverable_14_v1",
     "name": "Baucent",
     "culture": "Neutral",
     "type": "Mount",
@@ -101106,8 +101106,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_14_h1",
-    "baseId": "crpg_mount1_maneuverable_14",
+    "id": "crpg_mount1_maneuverable_14_v1_h1",
+    "baseId": "crpg_mount1_maneuverable_14_v1",
     "name": "Baucent +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -101128,8 +101128,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_14_h2",
-    "baseId": "crpg_mount1_maneuverable_14",
+    "id": "crpg_mount1_maneuverable_14_v1_h2",
+    "baseId": "crpg_mount1_maneuverable_14_v1",
     "name": "Baucent +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -101150,8 +101150,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_14_h3",
-    "baseId": "crpg_mount1_maneuverable_14",
+    "id": "crpg_mount1_maneuverable_14_v1_h3",
+    "baseId": "crpg_mount1_maneuverable_14_v1",
     "name": "Baucent +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -101172,8 +101172,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_5_h0",
-    "baseId": "crpg_mount1_maneuverable_5",
+    "id": "crpg_mount1_maneuverable_5_v1_h0",
+    "baseId": "crpg_mount1_maneuverable_5_v1",
     "name": "Irish Hobby",
     "culture": "Battania",
     "type": "Mount",
@@ -101194,8 +101194,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_5_h1",
-    "baseId": "crpg_mount1_maneuverable_5",
+    "id": "crpg_mount1_maneuverable_5_v1_h1",
+    "baseId": "crpg_mount1_maneuverable_5_v1",
     "name": "Irish Hobby +1",
     "culture": "Battania",
     "type": "Mount",
@@ -101216,8 +101216,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_5_h2",
-    "baseId": "crpg_mount1_maneuverable_5",
+    "id": "crpg_mount1_maneuverable_5_v1_h2",
+    "baseId": "crpg_mount1_maneuverable_5_v1",
     "name": "Irish Hobby +2",
     "culture": "Battania",
     "type": "Mount",
@@ -101238,8 +101238,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_5_h3",
-    "baseId": "crpg_mount1_maneuverable_5",
+    "id": "crpg_mount1_maneuverable_5_v1_h3",
+    "baseId": "crpg_mount1_maneuverable_5_v1",
     "name": "Irish Hobby +3",
     "culture": "Battania",
     "type": "Mount",
@@ -101260,8 +101260,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_6_h0",
-    "baseId": "crpg_mount1_maneuverable_6",
+    "id": "crpg_mount1_maneuverable_6_v1_h0",
+    "baseId": "crpg_mount1_maneuverable_6_v1",
     "name": "Caspian Palfrey",
     "culture": "Aserai",
     "type": "Mount",
@@ -101282,8 +101282,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_6_h1",
-    "baseId": "crpg_mount1_maneuverable_6",
+    "id": "crpg_mount1_maneuverable_6_v1_h1",
+    "baseId": "crpg_mount1_maneuverable_6_v1",
     "name": "Caspian Palfrey +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -101304,8 +101304,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_6_h2",
-    "baseId": "crpg_mount1_maneuverable_6",
+    "id": "crpg_mount1_maneuverable_6_v1_h2",
+    "baseId": "crpg_mount1_maneuverable_6_v1",
     "name": "Caspian Palfrey +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -101326,8 +101326,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_6_h3",
-    "baseId": "crpg_mount1_maneuverable_6",
+    "id": "crpg_mount1_maneuverable_6_v1_h3",
+    "baseId": "crpg_mount1_maneuverable_6_v1",
     "name": "Caspian Palfrey +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -101348,8 +101348,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_7_h0",
-    "baseId": "crpg_mount1_maneuverable_7",
+    "id": "crpg_mount1_maneuverable_7_v1_h0",
+    "baseId": "crpg_mount1_maneuverable_7_v1",
     "name": "Marwari Palfrey",
     "culture": "Aserai",
     "type": "Mount",
@@ -101370,8 +101370,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_7_h1",
-    "baseId": "crpg_mount1_maneuverable_7",
+    "id": "crpg_mount1_maneuverable_7_v1_h1",
+    "baseId": "crpg_mount1_maneuverable_7_v1",
     "name": "Marwari Palfrey +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -101392,8 +101392,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_7_h2",
-    "baseId": "crpg_mount1_maneuverable_7",
+    "id": "crpg_mount1_maneuverable_7_v1_h2",
+    "baseId": "crpg_mount1_maneuverable_7_v1",
     "name": "Marwari Palfrey +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -101414,8 +101414,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_7_h3",
-    "baseId": "crpg_mount1_maneuverable_7",
+    "id": "crpg_mount1_maneuverable_7_v1_h3",
+    "baseId": "crpg_mount1_maneuverable_7_v1",
     "name": "Marwari Palfrey +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -101436,8 +101436,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_8_h0",
-    "baseId": "crpg_mount1_maneuverable_8",
+    "id": "crpg_mount1_maneuverable_8_v1_h0",
+    "baseId": "crpg_mount1_maneuverable_8_v1",
     "name": "Moroccan Barb",
     "culture": "Aserai",
     "type": "Mount",
@@ -101458,8 +101458,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_8_h1",
-    "baseId": "crpg_mount1_maneuverable_8",
+    "id": "crpg_mount1_maneuverable_8_v1_h1",
+    "baseId": "crpg_mount1_maneuverable_8_v1",
     "name": "Moroccan Barb +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -101480,8 +101480,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_8_h2",
-    "baseId": "crpg_mount1_maneuverable_8",
+    "id": "crpg_mount1_maneuverable_8_v1_h2",
+    "baseId": "crpg_mount1_maneuverable_8_v1",
     "name": "Moroccan Barb +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -101502,8 +101502,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_8_h3",
-    "baseId": "crpg_mount1_maneuverable_8",
+    "id": "crpg_mount1_maneuverable_8_v1_h3",
+    "baseId": "crpg_mount1_maneuverable_8_v1",
     "name": "Moroccan Barb +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -101524,8 +101524,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_9_h0",
-    "baseId": "crpg_mount1_maneuverable_9",
+    "id": "crpg_mount1_maneuverable_9_v1_h0",
+    "baseId": "crpg_mount1_maneuverable_9_v1",
     "name": "Morvandiau Palfrey",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101546,8 +101546,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_9_h1",
-    "baseId": "crpg_mount1_maneuverable_9",
+    "id": "crpg_mount1_maneuverable_9_v1_h1",
+    "baseId": "crpg_mount1_maneuverable_9_v1",
     "name": "Morvandiau Palfrey +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101568,8 +101568,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_9_h2",
-    "baseId": "crpg_mount1_maneuverable_9",
+    "id": "crpg_mount1_maneuverable_9_v1_h2",
+    "baseId": "crpg_mount1_maneuverable_9_v1",
     "name": "Morvandiau Palfrey +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101590,8 +101590,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_maneuverable_9_h3",
-    "baseId": "crpg_mount1_maneuverable_9",
+    "id": "crpg_mount1_maneuverable_9_v1_h3",
+    "baseId": "crpg_mount1_maneuverable_9_v1",
     "name": "Morvandiau Palfrey +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101612,8 +101612,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_10_h0",
-    "baseId": "crpg_mount1_saddlehorse_10",
+    "id": "crpg_mount1_saddlehorse_10_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_10_v1",
     "name": "Maremmano Saddle Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101634,8 +101634,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_10_h1",
-    "baseId": "crpg_mount1_saddlehorse_10",
+    "id": "crpg_mount1_saddlehorse_10_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_10_v1",
     "name": "Maremmano Saddle Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101656,8 +101656,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_10_h2",
-    "baseId": "crpg_mount1_saddlehorse_10",
+    "id": "crpg_mount1_saddlehorse_10_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_10_v1",
     "name": "Maremmano Saddle Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101678,8 +101678,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_10_h3",
-    "baseId": "crpg_mount1_saddlehorse_10",
+    "id": "crpg_mount1_saddlehorse_10_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_10_v1",
     "name": "Maremmano Saddle Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101700,8 +101700,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_11_h0",
-    "baseId": "crpg_mount1_saddlehorse_11",
+    "id": "crpg_mount1_saddlehorse_11_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_11_v1",
     "name": "Lipizzana Saddle Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101722,8 +101722,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_11_h1",
-    "baseId": "crpg_mount1_saddlehorse_11",
+    "id": "crpg_mount1_saddlehorse_11_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_11_v1",
     "name": "Lipizzana Saddle Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101744,8 +101744,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_11_h2",
-    "baseId": "crpg_mount1_saddlehorse_11",
+    "id": "crpg_mount1_saddlehorse_11_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_11_v1",
     "name": "Lipizzana Saddle Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101766,8 +101766,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_11_h3",
-    "baseId": "crpg_mount1_saddlehorse_11",
+    "id": "crpg_mount1_saddlehorse_11_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_11_v1",
     "name": "Lipizzana Saddle Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101788,8 +101788,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_12_h0",
-    "baseId": "crpg_mount1_saddlehorse_12",
+    "id": "crpg_mount1_saddlehorse_12_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_12_v1",
     "name": "Charollais Saddle Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101810,8 +101810,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_12_h1",
-    "baseId": "crpg_mount1_saddlehorse_12",
+    "id": "crpg_mount1_saddlehorse_12_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_12_v1",
     "name": "Charollais Saddle Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101832,8 +101832,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_12_h2",
-    "baseId": "crpg_mount1_saddlehorse_12",
+    "id": "crpg_mount1_saddlehorse_12_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_12_v1",
     "name": "Charollais Saddle Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101854,8 +101854,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_12_h3",
-    "baseId": "crpg_mount1_saddlehorse_12",
+    "id": "crpg_mount1_saddlehorse_12_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_12_v1",
     "name": "Charollais Saddle Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101876,8 +101876,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_13_h0",
-    "baseId": "crpg_mount1_saddlehorse_13",
+    "id": "crpg_mount1_saddlehorse_13_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_13_v1",
     "name": "Senne Saddle Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101898,8 +101898,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_13_h1",
-    "baseId": "crpg_mount1_saddlehorse_13",
+    "id": "crpg_mount1_saddlehorse_13_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_13_v1",
     "name": "Senne Saddle Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101920,8 +101920,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_13_h2",
-    "baseId": "crpg_mount1_saddlehorse_13",
+    "id": "crpg_mount1_saddlehorse_13_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_13_v1",
     "name": "Senne Saddle Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101942,8 +101942,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_13_h3",
-    "baseId": "crpg_mount1_saddlehorse_13",
+    "id": "crpg_mount1_saddlehorse_13_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_13_v1",
     "name": "Senne Saddle Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -101964,8 +101964,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_14_h0",
-    "baseId": "crpg_mount1_saddlehorse_14",
+    "id": "crpg_mount1_saddlehorse_14_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_14_v1",
     "name": "Shadowfax",
     "culture": "Neutral",
     "type": "Mount",
@@ -101986,8 +101986,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_14_h1",
-    "baseId": "crpg_mount1_saddlehorse_14",
+    "id": "crpg_mount1_saddlehorse_14_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_14_v1",
     "name": "Shadowfax +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -102008,8 +102008,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_14_h2",
-    "baseId": "crpg_mount1_saddlehorse_14",
+    "id": "crpg_mount1_saddlehorse_14_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_14_v1",
     "name": "Shadowfax +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -102030,8 +102030,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_14_h3",
-    "baseId": "crpg_mount1_saddlehorse_14",
+    "id": "crpg_mount1_saddlehorse_14_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_14_v1",
     "name": "Shadowfax +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -102052,8 +102052,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_15_h0",
-    "baseId": "crpg_mount1_saddlehorse_15",
+    "id": "crpg_mount1_saddlehorse_15_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_15_v1",
     "name": "Grani",
     "culture": "Neutral",
     "type": "Mount",
@@ -102074,8 +102074,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_15_h1",
-    "baseId": "crpg_mount1_saddlehorse_15",
+    "id": "crpg_mount1_saddlehorse_15_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_15_v1",
     "name": "Grani +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -102096,8 +102096,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_15_h2",
-    "baseId": "crpg_mount1_saddlehorse_15",
+    "id": "crpg_mount1_saddlehorse_15_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_15_v1",
     "name": "Grani +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -102118,8 +102118,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_15_h3",
-    "baseId": "crpg_mount1_saddlehorse_15",
+    "id": "crpg_mount1_saddlehorse_15_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_15_v1",
     "name": "Grani +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -102140,8 +102140,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_5_h0",
-    "baseId": "crpg_mount1_saddlehorse_5",
+    "id": "crpg_mount1_saddlehorse_5_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_5_v1",
     "name": "Mérengais Saddle Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -102162,8 +102162,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_5_h1",
-    "baseId": "crpg_mount1_saddlehorse_5",
+    "id": "crpg_mount1_saddlehorse_5_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_5_v1",
     "name": "Mérengais Saddle Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -102184,8 +102184,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_5_h2",
-    "baseId": "crpg_mount1_saddlehorse_5",
+    "id": "crpg_mount1_saddlehorse_5_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_5_v1",
     "name": "Mérengais Saddle Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -102206,8 +102206,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_5_h3",
-    "baseId": "crpg_mount1_saddlehorse_5",
+    "id": "crpg_mount1_saddlehorse_5_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_5_v1",
     "name": "Mérengais Saddle Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -102228,8 +102228,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_6_h0",
-    "baseId": "crpg_mount1_saddlehorse_6",
+    "id": "crpg_mount1_saddlehorse_6_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_6_v1",
     "name": "Galician Saddle Horse",
     "culture": "Vlandia",
     "type": "Mount",
@@ -102250,8 +102250,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_6_h1",
-    "baseId": "crpg_mount1_saddlehorse_6",
+    "id": "crpg_mount1_saddlehorse_6_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_6_v1",
     "name": "Galician Saddle Horse +1",
     "culture": "Vlandia",
     "type": "Mount",
@@ -102272,8 +102272,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_6_h2",
-    "baseId": "crpg_mount1_saddlehorse_6",
+    "id": "crpg_mount1_saddlehorse_6_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_6_v1",
     "name": "Galician Saddle Horse +2",
     "culture": "Vlandia",
     "type": "Mount",
@@ -102294,8 +102294,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_6_h3",
-    "baseId": "crpg_mount1_saddlehorse_6",
+    "id": "crpg_mount1_saddlehorse_6_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_6_v1",
     "name": "Galician Saddle Horse +3",
     "culture": "Vlandia",
     "type": "Mount",
@@ -102316,8 +102316,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_7_h0",
-    "baseId": "crpg_mount1_saddlehorse_7",
+    "id": "crpg_mount1_saddlehorse_7_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_7_v1",
     "name": "Lichuan Saddle Horse",
     "culture": "Khuzait",
     "type": "Mount",
@@ -102338,8 +102338,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_7_h1",
-    "baseId": "crpg_mount1_saddlehorse_7",
+    "id": "crpg_mount1_saddlehorse_7_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_7_v1",
     "name": "Lichuan Saddle Horse +1",
     "culture": "Khuzait",
     "type": "Mount",
@@ -102360,8 +102360,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_7_h2",
-    "baseId": "crpg_mount1_saddlehorse_7",
+    "id": "crpg_mount1_saddlehorse_7_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_7_v1",
     "name": "Lichuan Saddle Horse +2",
     "culture": "Khuzait",
     "type": "Mount",
@@ -102382,8 +102382,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_7_h3",
-    "baseId": "crpg_mount1_saddlehorse_7",
+    "id": "crpg_mount1_saddlehorse_7_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_7_v1",
     "name": "Lichuan Saddle Horse +3",
     "culture": "Khuzait",
     "type": "Mount",
@@ -102404,8 +102404,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_8_h0",
-    "baseId": "crpg_mount1_saddlehorse_8",
+    "id": "crpg_mount1_saddlehorse_8_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_8_v1",
     "name": "Dongolawi Saddle Horse",
     "culture": "Aserai",
     "type": "Mount",
@@ -102426,8 +102426,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_8_h1",
-    "baseId": "crpg_mount1_saddlehorse_8",
+    "id": "crpg_mount1_saddlehorse_8_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_8_v1",
     "name": "Dongolawi Saddle Horse +1",
     "culture": "Aserai",
     "type": "Mount",
@@ -102448,8 +102448,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_8_h2",
-    "baseId": "crpg_mount1_saddlehorse_8",
+    "id": "crpg_mount1_saddlehorse_8_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_8_v1",
     "name": "Dongolawi Saddle Horse +2",
     "culture": "Aserai",
     "type": "Mount",
@@ -102470,8 +102470,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_8_h3",
-    "baseId": "crpg_mount1_saddlehorse_8",
+    "id": "crpg_mount1_saddlehorse_8_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_8_v1",
     "name": "Dongolawi Saddle Horse +3",
     "culture": "Aserai",
     "type": "Mount",
@@ -102492,8 +102492,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_9_h0",
-    "baseId": "crpg_mount1_saddlehorse_9",
+    "id": "crpg_mount1_saddlehorse_9_v1_h0",
+    "baseId": "crpg_mount1_saddlehorse_9_v1",
     "name": "Kyrgyz Saddle Horse",
     "culture": "Khuzait",
     "type": "Mount",
@@ -102514,8 +102514,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_9_h1",
-    "baseId": "crpg_mount1_saddlehorse_9",
+    "id": "crpg_mount1_saddlehorse_9_v1_h1",
+    "baseId": "crpg_mount1_saddlehorse_9_v1",
     "name": "Kyrgyz Saddle Horse +1",
     "culture": "Khuzait",
     "type": "Mount",
@@ -102536,8 +102536,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_9_h2",
-    "baseId": "crpg_mount1_saddlehorse_9",
+    "id": "crpg_mount1_saddlehorse_9_v1_h2",
+    "baseId": "crpg_mount1_saddlehorse_9_v1",
     "name": "Kyrgyz Saddle Horse +2",
     "culture": "Khuzait",
     "type": "Mount",
@@ -102558,8 +102558,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mount1_saddlehorse_9_h3",
-    "baseId": "crpg_mount1_saddlehorse_9",
+    "id": "crpg_mount1_saddlehorse_9_v1_h3",
+    "baseId": "crpg_mount1_saddlehorse_9_v1",
     "name": "Kyrgyz Saddle Horse +3",
     "culture": "Khuzait",
     "type": "Mount",
@@ -102580,8 +102580,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_a_h0",
-    "baseId": "crpg_mule_load_a",
+    "id": "crpg_mule_load_a_v1_h0",
+    "baseId": "crpg_mule_load_a_v1",
     "name": "Mule Harness with Pack",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102602,8 +102602,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_a_h1",
-    "baseId": "crpg_mule_load_a",
+    "id": "crpg_mule_load_a_v1_h1",
+    "baseId": "crpg_mule_load_a_v1",
     "name": "Mule Harness with Pack +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102624,8 +102624,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_a_h2",
-    "baseId": "crpg_mule_load_a",
+    "id": "crpg_mule_load_a_v1_h2",
+    "baseId": "crpg_mule_load_a_v1",
     "name": "Mule Harness with Pack +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102646,8 +102646,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_a_h3",
-    "baseId": "crpg_mule_load_a",
+    "id": "crpg_mule_load_a_v1_h3",
+    "baseId": "crpg_mule_load_a_v1",
     "name": "Mule Harness with Pack +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102668,8 +102668,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_b_h0",
-    "baseId": "crpg_mule_load_b",
+    "id": "crpg_mule_load_b_v1_h0",
+    "baseId": "crpg_mule_load_b_v1",
     "name": "Mule Harness with Baskets",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102690,8 +102690,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_b_h1",
-    "baseId": "crpg_mule_load_b",
+    "id": "crpg_mule_load_b_v1_h1",
+    "baseId": "crpg_mule_load_b_v1",
     "name": "Mule Harness with Baskets +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102712,8 +102712,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_b_h2",
-    "baseId": "crpg_mule_load_b",
+    "id": "crpg_mule_load_b_v1_h2",
+    "baseId": "crpg_mule_load_b_v1",
     "name": "Mule Harness with Baskets +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102734,8 +102734,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_b_h3",
-    "baseId": "crpg_mule_load_b",
+    "id": "crpg_mule_load_b_v1_h3",
+    "baseId": "crpg_mule_load_b_v1",
     "name": "Mule Harness with Baskets +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102756,8 +102756,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_c_h0",
-    "baseId": "crpg_mule_load_c",
+    "id": "crpg_mule_load_c_v1_h0",
+    "baseId": "crpg_mule_load_c_v1",
     "name": "Mule Harness with Bags",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102778,8 +102778,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_c_h1",
-    "baseId": "crpg_mule_load_c",
+    "id": "crpg_mule_load_c_v1_h1",
+    "baseId": "crpg_mule_load_c_v1",
     "name": "Mule Harness with Bags +1",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102800,8 +102800,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_c_h2",
-    "baseId": "crpg_mule_load_c",
+    "id": "crpg_mule_load_c_v1_h2",
+    "baseId": "crpg_mule_load_c_v1",
     "name": "Mule Harness with Bags +2",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102822,8 +102822,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule_load_c_h3",
-    "baseId": "crpg_mule_load_c",
+    "id": "crpg_mule_load_c_v1_h3",
+    "baseId": "crpg_mule_load_c_v1",
     "name": "Mule Harness with Bags +3",
     "culture": "Neutral",
     "type": "MountHarness",
@@ -102844,8 +102844,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule1_1_h0",
-    "baseId": "crpg_mule1_1",
+    "id": "crpg_mule1_1_v1_h0",
+    "baseId": "crpg_mule1_1_v1",
     "name": "Mule",
     "culture": "Neutral",
     "type": "Mount",
@@ -102866,8 +102866,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule1_1_h1",
-    "baseId": "crpg_mule1_1",
+    "id": "crpg_mule1_1_v1_h1",
+    "baseId": "crpg_mule1_1_v1",
     "name": "Mule +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -102888,8 +102888,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule1_1_h2",
-    "baseId": "crpg_mule1_1",
+    "id": "crpg_mule1_1_v1_h2",
+    "baseId": "crpg_mule1_1_v1",
     "name": "Mule +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -102910,8 +102910,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule1_1_h3",
-    "baseId": "crpg_mule1_1",
+    "id": "crpg_mule1_1_v1_h3",
+    "baseId": "crpg_mule1_1_v1",
     "name": "Mule +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -102932,8 +102932,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule1_2_h0",
-    "baseId": "crpg_mule1_2",
+    "id": "crpg_mule1_2_v1_h0",
+    "baseId": "crpg_mule1_2_v1",
     "name": "Chadz",
     "culture": "Neutral",
     "type": "Mount",
@@ -102954,8 +102954,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule1_2_h1",
-    "baseId": "crpg_mule1_2",
+    "id": "crpg_mule1_2_v1_h1",
+    "baseId": "crpg_mule1_2_v1",
     "name": "Chadz +1",
     "culture": "Neutral",
     "type": "Mount",
@@ -102976,8 +102976,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule1_2_h2",
-    "baseId": "crpg_mule1_2",
+    "id": "crpg_mule1_2_v1_h2",
+    "baseId": "crpg_mule1_2_v1",
     "name": "Chadz +2",
     "culture": "Neutral",
     "type": "Mount",
@@ -102998,8 +102998,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_mule1_2_h3",
-    "baseId": "crpg_mule1_2",
+    "id": "crpg_mule1_2_v1_h3",
+    "baseId": "crpg_mule1_2_v1",
     "name": "Chadz +3",
     "culture": "Neutral",
     "type": "Mount",
@@ -109712,8 +109712,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_light_harness_h0",
-    "baseId": "crpg_northern_light_harness",
+    "id": "crpg_northern_light_harness_v1_h0",
+    "baseId": "crpg_northern_light_harness_v1",
     "name": "Light Saddle",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -109734,8 +109734,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_light_harness_h1",
-    "baseId": "crpg_northern_light_harness",
+    "id": "crpg_northern_light_harness_v1_h1",
+    "baseId": "crpg_northern_light_harness_v1",
     "name": "Light Saddle +1",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -109756,8 +109756,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_light_harness_h2",
-    "baseId": "crpg_northern_light_harness",
+    "id": "crpg_northern_light_harness_v1_h2",
+    "baseId": "crpg_northern_light_harness_v1",
     "name": "Light Saddle +2",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -109778,8 +109778,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_light_harness_h3",
-    "baseId": "crpg_northern_light_harness",
+    "id": "crpg_northern_light_harness_v1_h3",
+    "baseId": "crpg_northern_light_harness_v1",
     "name": "Light Saddle +3",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -109800,8 +109800,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_noble_harness_h0",
-    "baseId": "crpg_northern_noble_harness",
+    "id": "crpg_northern_noble_harness_v1_h0",
+    "baseId": "crpg_northern_noble_harness_v1",
     "name": "Rough Cavalry Saddle",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -109822,8 +109822,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_noble_harness_h1",
-    "baseId": "crpg_northern_noble_harness",
+    "id": "crpg_northern_noble_harness_v1_h1",
+    "baseId": "crpg_northern_noble_harness_v1",
     "name": "Rough Cavalry Saddle +1",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -109844,8 +109844,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_noble_harness_h2",
-    "baseId": "crpg_northern_noble_harness",
+    "id": "crpg_northern_noble_harness_v1_h2",
+    "baseId": "crpg_northern_noble_harness_v1",
     "name": "Rough Cavalry Saddle +2",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -109866,8 +109866,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_noble_harness_h3",
-    "baseId": "crpg_northern_noble_harness",
+    "id": "crpg_northern_noble_harness_v1_h3",
+    "baseId": "crpg_northern_noble_harness_v1",
     "name": "Rough Cavalry Saddle +3",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -110264,8 +110264,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_ring_barding_h0",
-    "baseId": "crpg_northern_ring_barding",
+    "id": "crpg_northern_ring_barding_v1_h0",
+    "baseId": "crpg_northern_ring_barding_v1",
     "name": "Ring Mail Barding",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -110286,8 +110286,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_ring_barding_h1",
-    "baseId": "crpg_northern_ring_barding",
+    "id": "crpg_northern_ring_barding_v1_h1",
+    "baseId": "crpg_northern_ring_barding_v1",
     "name": "Ring Mail Barding +1",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -110308,8 +110308,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_ring_barding_h2",
-    "baseId": "crpg_northern_ring_barding",
+    "id": "crpg_northern_ring_barding_v1_h2",
+    "baseId": "crpg_northern_ring_barding_v1",
     "name": "Ring Mail Barding +2",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -110330,8 +110330,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_northern_ring_barding_h3",
-    "baseId": "crpg_northern_ring_barding",
+    "id": "crpg_northern_ring_barding_v1_h3",
+    "baseId": "crpg_northern_ring_barding_v1",
     "name": "Ring Mail Barding +3",
     "culture": "Sturgia",
     "type": "MountHarness",
@@ -141308,8 +141308,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_fur_harness_h0",
-    "baseId": "crpg_steppe_fur_harness",
+    "id": "crpg_steppe_fur_harness_v1_h0",
+    "baseId": "crpg_steppe_fur_harness_v1",
     "name": "Steppe Fur Harness",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141330,8 +141330,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_fur_harness_h1",
-    "baseId": "crpg_steppe_fur_harness",
+    "id": "crpg_steppe_fur_harness_v1_h1",
+    "baseId": "crpg_steppe_fur_harness_v1",
     "name": "Steppe Fur Harness +1",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141352,8 +141352,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_fur_harness_h2",
-    "baseId": "crpg_steppe_fur_harness",
+    "id": "crpg_steppe_fur_harness_v1_h2",
+    "baseId": "crpg_steppe_fur_harness_v1",
     "name": "Steppe Fur Harness +2",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141374,8 +141374,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_fur_harness_h3",
-    "baseId": "crpg_steppe_fur_harness",
+    "id": "crpg_steppe_fur_harness_v1_h3",
+    "baseId": "crpg_steppe_fur_harness_v1",
     "name": "Steppe Fur Harness +3",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141556,8 +141556,8 @@
     ]
   },
   {
-    "id": "crpg_steppe_half_barding_h0",
-    "baseId": "crpg_steppe_half_barding",
+    "id": "crpg_steppe_half_barding_v1_h0",
+    "baseId": "crpg_steppe_half_barding_v1",
     "name": "Lamellar Half Barding",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141578,8 +141578,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_half_barding_h1",
-    "baseId": "crpg_steppe_half_barding",
+    "id": "crpg_steppe_half_barding_v1_h1",
+    "baseId": "crpg_steppe_half_barding_v1",
     "name": "Lamellar Half Barding +1",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141600,8 +141600,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_half_barding_h2",
-    "baseId": "crpg_steppe_half_barding",
+    "id": "crpg_steppe_half_barding_v1_h2",
+    "baseId": "crpg_steppe_half_barding_v1",
     "name": "Lamellar Half Barding +2",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141622,8 +141622,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_half_barding_h3",
-    "baseId": "crpg_steppe_half_barding",
+    "id": "crpg_steppe_half_barding_v1_h3",
+    "baseId": "crpg_steppe_half_barding_v1",
     "name": "Lamellar Half Barding +3",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141644,8 +141644,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_harness_h0",
-    "baseId": "crpg_steppe_harness",
+    "id": "crpg_steppe_harness_v1_h0",
+    "baseId": "crpg_steppe_harness_v1",
     "name": "Steppe Saddle",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141666,8 +141666,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_harness_h1",
-    "baseId": "crpg_steppe_harness",
+    "id": "crpg_steppe_harness_v1_h1",
+    "baseId": "crpg_steppe_harness_v1",
     "name": "Steppe Saddle +1",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141688,8 +141688,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_harness_h2",
-    "baseId": "crpg_steppe_harness",
+    "id": "crpg_steppe_harness_v1_h2",
+    "baseId": "crpg_steppe_harness_v1",
     "name": "Steppe Saddle +2",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -141710,8 +141710,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_steppe_harness_h3",
-    "baseId": "crpg_steppe_harness",
+    "id": "crpg_steppe_harness_v1_h3",
+    "baseId": "crpg_steppe_harness_v1",
     "name": "Steppe Saddle +3",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -143692,8 +143692,8 @@
     ]
   },
   {
-    "id": "crpg_stripped_leather_harness_h0",
-    "baseId": "crpg_stripped_leather_harness",
+    "id": "crpg_stripped_leather_harness_v1_h0",
+    "baseId": "crpg_stripped_leather_harness_v1",
     "name": "Striped Leather Harness",
     "culture": "Empire",
     "type": "MountHarness",
@@ -143714,8 +143714,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_stripped_leather_harness_h1",
-    "baseId": "crpg_stripped_leather_harness",
+    "id": "crpg_stripped_leather_harness_v1_h1",
+    "baseId": "crpg_stripped_leather_harness_v1",
     "name": "Striped Leather Harness +1",
     "culture": "Empire",
     "type": "MountHarness",
@@ -143736,8 +143736,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_stripped_leather_harness_h2",
-    "baseId": "crpg_stripped_leather_harness",
+    "id": "crpg_stripped_leather_harness_v1_h2",
+    "baseId": "crpg_stripped_leather_harness_v1",
     "name": "Striped Leather Harness +2",
     "culture": "Empire",
     "type": "MountHarness",
@@ -143758,8 +143758,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_stripped_leather_harness_h3",
-    "baseId": "crpg_stripped_leather_harness",
+    "id": "crpg_stripped_leather_harness_v1_h3",
+    "baseId": "crpg_stripped_leather_harness_v1",
     "name": "Striped Leather Harness +3",
     "culture": "Empire",
     "type": "MountHarness",
@@ -145264,8 +145264,8 @@
     ]
   },
   {
-    "id": "crpg_studded_steppe_barding_h0",
-    "baseId": "crpg_studded_steppe_barding",
+    "id": "crpg_studded_steppe_barding_v1_h0",
+    "baseId": "crpg_studded_steppe_barding_v1",
     "name": "Reinforced Mail Barding",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -145286,8 +145286,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_studded_steppe_barding_h1",
-    "baseId": "crpg_studded_steppe_barding",
+    "id": "crpg_studded_steppe_barding_v1_h1",
+    "baseId": "crpg_studded_steppe_barding_v1",
     "name": "Reinforced Mail Barding +1",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -145308,8 +145308,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_studded_steppe_barding_h2",
-    "baseId": "crpg_studded_steppe_barding",
+    "id": "crpg_studded_steppe_barding_v1_h2",
+    "baseId": "crpg_studded_steppe_barding_v1",
     "name": "Reinforced Mail Barding +2",
     "culture": "Khuzait",
     "type": "MountHarness",
@@ -145330,8 +145330,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_studded_steppe_barding_h3",
-    "baseId": "crpg_studded_steppe_barding",
+    "id": "crpg_studded_steppe_barding_v1_h3",
+    "baseId": "crpg_studded_steppe_barding_v1",
     "name": "Reinforced Mail Barding +3",
     "culture": "Khuzait",
     "type": "MountHarness",
