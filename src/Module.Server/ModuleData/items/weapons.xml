@@ -576,86 +576,6 @@
       <Piece id="crpg_shepherd_axe_handle_h3" Type="Handle" scale_factor="144" />
     </Pieces>
   </CraftedItem>
-  <Item id="crpg_snowball_v1_h0" name="Snowball" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
-    <ItemComponent>
-      <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="10" physics_material="missile" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="10" thrust_damage="8" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
-        <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
-      </Weapon>
-    </ItemComponent>
-    <Flags />
-  </Item>
-  <Item id="crpg_snowball_v1_h1" name="Snowball +1" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
-    <ItemComponent>
-      <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="10" physics_material="missile" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="10" thrust_damage="8" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
-        <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
-      </Weapon>
-    </ItemComponent>
-    <Flags />
-  </Item>
-  <Item id="crpg_snowball_v1_h2" name="Snowball +2" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
-    <ItemComponent>
-      <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="10" physics_material="missile" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="10" thrust_damage="8" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
-        <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
-      </Weapon>
-    </ItemComponent>
-    <Flags />
-  </Item>
-  <Item id="crpg_snowball_v1_h3" name="Snowball +3" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
-    <ItemComponent>
-      <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="10" physics_material="missile" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="10" thrust_damage="8" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
-        <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
-      </Weapon>
-    </ItemComponent>
-    <Flags />
-  </Item>
-  <CraftedItem id="crpg_bone_breaker_h0" name="{=}Bone Breaker" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_bone_breaker_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_bone_breaker_handle_h0" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_bone_breaker_h1" name="{=}Bone Breaker +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_bone_breaker_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_bone_breaker_handle_h1" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_bone_breaker_h2" name="{=}Bone Breaker +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_bone_breaker_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_bone_breaker_handle_h2" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_bone_breaker_h3" name="{=}Bone Breaker +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_bone_breaker_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_bone_breaker_handle_h3" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_mallet_h0" name="{=}Mallet" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_mallet_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_mallet_handle_h0" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_mallet_h1" name="{=}Mallet +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_mallet_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_mallet_handle_h1" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_mallet_h2" name="{=}Mallet +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_mallet_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_mallet_handle_h2" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_mallet_h3" name="{=}Mallet +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_mallet_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_mallet_handle_h3" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
   <CraftedItem id="crpg_kama_h0" name="{=}Kama" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_kama_blade_h0" Type="Blade" scale_factor="100" />
@@ -734,30 +654,6 @@
     <Pieces>
       <Piece id="crpg_long_maul_blade_h3" Type="Blade" scale_factor="107" />
       <Piece id="crpg_long_maul_handle_h3" Type="Handle" scale_factor="165" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_great_maul_h0" name="{=}Great Maul" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_great_maul_blade_h0" Type="Blade" scale_factor="107" />
-      <Piece id="crpg_great_maul_handle_h0" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_great_maul_h1" name="{=}Great Maul +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_great_maul_blade_h1" Type="Blade" scale_factor="107" />
-      <Piece id="crpg_great_maul_handle_h1" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_great_maul_h2" name="{=}Great Maul +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_great_maul_blade_h2" Type="Blade" scale_factor="107" />
-      <Piece id="crpg_great_maul_handle_h2" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_great_maul_h3" name="{=}Great Maul +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
-    <Pieces>
-      <Piece id="crpg_great_maul_blade_h3" Type="Blade" scale_factor="107" />
-      <Piece id="crpg_great_maul_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_iklwa_h0" name="{=kaikaikai}Iklwa" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">

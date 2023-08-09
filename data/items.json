@@ -20568,29 +20568,6 @@
         "swingDamage": 33,
         "swingDamageType": "Blunt",
         "swingSpeed": 83
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.44,
-        "handling": 78,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 93,
-        "swingDamage": 33,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 83
       }
     ]
   },
@@ -20609,29 +20586,6 @@
       "Civilian"
     ],
     "weapons": [
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.5,
-        "handling": 79,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 33,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 85
-      },
       {
         "class": "TwoHandedMace",
         "itemUsage": "twohanded_axe",
@@ -20694,29 +20648,6 @@
         "swingDamage": 34,
         "swingDamageType": "Blunt",
         "swingSpeed": 85
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.5,
-        "handling": 79,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 34,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 85
       }
     ]
   },
@@ -20735,29 +20666,6 @@
       "Civilian"
     ],
     "weapons": [
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.5,
-        "handling": 79,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "BonusAgainstShield",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 36,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 85
-      },
       {
         "class": "TwoHandedMace",
         "itemUsage": "twohanded_axe",
@@ -54814,7 +54722,7 @@
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 9487,
-    "weight": 3.08,
+    "weight": 2.7,
     "rank": 0,
     "tier": 8.0419445,
     "requirement": 0,
@@ -54845,30 +54753,6 @@
         "swingDamage": 27,
         "swingDamageType": "Blunt",
         "swingSpeed": 77
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.05,
-        "handling": 72,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "TwoHandIdleOnMount",
-          "MultiplePenetration",
-          "CanKnockDown"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 86,
-        "swingDamage": 27,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 71
       }
     ]
   },
@@ -54879,7 +54763,7 @@
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 10579,
-    "weight": 2.95,
+    "weight": 2.6,
     "rank": 1,
     "tier": 8.552252,
     "requirement": 0,
@@ -54910,30 +54794,6 @@
         "swingDamage": 27,
         "swingDamageType": "Blunt",
         "swingSpeed": 79
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.12,
-        "handling": 73,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "TwoHandIdleOnMount",
-          "MultiplePenetration",
-          "CanKnockDown"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 86,
-        "swingDamage": 27,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 73
       }
     ]
   },
@@ -54944,7 +54804,7 @@
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 10253,
-    "weight": 2.95,
+    "weight": 2.6,
     "rank": 2,
     "tier": 8.4027,
     "requirement": 0,
@@ -54975,30 +54835,6 @@
         "swingDamage": 28,
         "swingDamageType": "Blunt",
         "swingSpeed": 79
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.12,
-        "handling": 73,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "TwoHandIdleOnMount",
-          "MultiplePenetration",
-          "CanKnockDown"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 86,
-        "swingDamage": 28,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 73
       }
     ]
   },
@@ -55009,7 +54845,7 @@
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 10087,
-    "weight": 2.95,
+    "weight": 2.6,
     "rank": 3,
     "tier": 8.325809,
     "requirement": 0,
@@ -55040,30 +54876,6 @@
         "swingDamage": 29,
         "swingDamageType": "Blunt",
         "swingSpeed": 79
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 81,
-        "balance": 0.12,
-        "handling": 73,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "TwoHandIdleOnMount",
-          "MultiplePenetration",
-          "CanKnockDown"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 86,
-        "swingDamage": 29,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 73
       }
     ]
   },
@@ -92834,29 +92646,6 @@
         "swingDamage": 22,
         "swingDamageType": "Blunt",
         "swingSpeed": 87
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 84,
-        "balance": 0.57,
-        "handling": 80,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "TwoHandIdleOnMount",
-          "MultiplePenetration"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 22,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 87
       }
     ]
   },
@@ -92875,29 +92664,6 @@
       "Civilian"
     ],
     "weapons": [
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 84,
-        "balance": 0.64,
-        "handling": 82,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "TwoHandIdleOnMount",
-          "MultiplePenetration"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 95,
-        "swingDamage": 22,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 89
-      },
       {
         "class": "TwoHandedMace",
         "itemUsage": "twohanded_axe",
@@ -92960,29 +92726,6 @@
         "swingDamage": 23,
         "swingDamageType": "Blunt",
         "swingSpeed": 89
-      },
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 84,
-        "balance": 0.64,
-        "handling": 82,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "TwoHandIdleOnMount",
-          "MultiplePenetration"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 95,
-        "swingDamage": 23,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 89
       }
     ]
   },
@@ -93001,29 +92744,6 @@
       "Civilian"
     ],
     "weapons": [
-      {
-        "class": "TwoHandedMace",
-        "itemUsage": "twohanded_axe",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 84,
-        "balance": 0.64,
-        "handling": 82,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "TwoHandIdleOnMount",
-          "MultiplePenetration"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 95,
-        "swingDamage": 24,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 89
-      },
       {
         "class": "TwoHandedMace",
         "itemUsage": "twohanded_axe",
@@ -135249,30 +134969,6 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 102
-      },
-      {
-        "class": "Stone",
-        "itemUsage": "stone",
-        "accuracy": 100,
-        "missileSpeed": 40,
-        "stackAmount": 10,
-        "length": 10,
-        "balance": 0.0,
-        "handling": 102,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 102,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 102
       }
     ]
   },
@@ -135289,30 +134985,6 @@
     "requirement": 0,
     "flags": [],
     "weapons": [
-      {
-        "class": "Stone",
-        "itemUsage": "stone",
-        "accuracy": 100,
-        "missileSpeed": 40,
-        "stackAmount": 10,
-        "length": 10,
-        "balance": 0.0,
-        "handling": 102,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 102,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 102
-      },
       {
         "class": "Stone",
         "itemUsage": "stone",
@@ -135375,30 +135047,6 @@
         "swingDamage": 0,
         "swingDamageType": "Blunt",
         "swingSpeed": 102
-      },
-      {
-        "class": "Stone",
-        "itemUsage": "stone",
-        "accuracy": 100,
-        "missileSpeed": 40,
-        "stackAmount": 10,
-        "length": 10,
-        "balance": 0.0,
-        "handling": 102,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 102,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 102
       }
     ]
   },
@@ -135415,30 +135063,6 @@
     "requirement": 0,
     "flags": [],
     "weapons": [
-      {
-        "class": "Stone",
-        "itemUsage": "stone",
-        "accuracy": 100,
-        "missileSpeed": 40,
-        "stackAmount": 10,
-        "length": 10,
-        "balance": 0.0,
-        "handling": 102,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 102,
-        "swingDamage": 0,
-        "swingDamageType": "Blunt",
-        "swingSpeed": 102
-      },
       {
         "class": "Stone",
         "itemUsage": "stone",
