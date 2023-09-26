@@ -156349,10 +156349,10 @@
     "name": "Tribesman Throwing Daggers",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 14674,
-    "weight": 0.12,
+    "price": 5203,
+    "weight": 0.2,
     "rank": 0,
-    "tier": 16.2830868,
+    "tier": 9.234619,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -156362,11 +156362,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
         "stackAmount": 9,
         "length": 43,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 120,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -156377,10 +156377,10 @@
         ],
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 133
+        "swingSpeed": 132
       }
     ]
   },
@@ -156390,10 +156390,10 @@
     "name": "Tribesman Throwing Daggers +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 17810,
-    "weight": 0.12,
+    "price": 5736,
+    "weight": 0.21,
     "rank": 1,
-    "tier": 18.0560341,
+    "tier": 9.752487,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -156403,11 +156403,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
         "stackAmount": 9,
         "length": 43,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 120,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -156418,10 +156418,10 @@
         ],
         "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 133
+        "swingSpeed": 131
       }
     ]
   },
@@ -156431,10 +156431,10 @@
     "name": "Tribesman Throwing Daggers +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 21846,
-    "weight": 0.12,
+    "price": 5917,
+    "weight": 0.23,
     "rank": 2,
-    "tier": 20.1208744,
+    "tier": 9.922734,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -156444,11 +156444,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
         "stackAmount": 9,
         "length": 43,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 120,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -156459,10 +156459,10 @@
         ],
         "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 133
+        "swingSpeed": 131
       }
     ]
   },
@@ -156472,10 +156472,10 @@
     "name": "Tribesman Throwing Daggers +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 26975,
-    "weight": 0.12,
+    "price": 6219,
+    "weight": 0.25,
     "rank": 3,
-    "tier": 22.4865837,
+    "tier": 10.2022467,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -156485,11 +156485,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
         "stackAmount": 9,
         "length": 43,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 120,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -156500,10 +156500,10 @@
         ],
         "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 133
+        "swingSpeed": 130
       }
     ]
   },
