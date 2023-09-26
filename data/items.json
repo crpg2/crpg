@@ -81321,10 +81321,10 @@
     "name": "Leafblade Throwing Daggers",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 52745,
-    "weight": 0.15,
+    "price": 5248,
+    "weight": 0.46,
     "rank": 0,
-    "tier": 31.90365,
+    "tier": 9.279547,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81334,11 +81334,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 34,
         "stackAmount": 5,
         "length": 30,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 120,
         "bodyArmor": 2,
         "flags": [
           "RangedWeapon",
@@ -81349,10 +81349,10 @@
         ],
         "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 134
+        "swingSpeed": 128
       }
     ]
   },
@@ -81362,10 +81362,10 @@
     "name": "Leafblade Throwing Daggers +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 53564,
-    "weight": 0.15,
+    "price": 5324,
+    "weight": 0.46,
     "rank": 1,
-    "tier": 32.15953,
+    "tier": 9.353969,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81375,11 +81375,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 34,
         "stackAmount": 5,
         "length": 30,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 120,
         "bodyArmor": 2,
         "flags": [
           "RangedWeapon",
@@ -81390,10 +81390,10 @@
         ],
         "thrustDamage": 25,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 134
+        "swingSpeed": 128
       }
     ]
   },
@@ -81403,10 +81403,10 @@
     "name": "Leafblade Throwing Daggers +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 55820,
-    "weight": 0.15,
+    "price": 5530,
+    "weight": 0.46,
     "rank": 2,
-    "tier": 32.8536758,
+    "tier": 9.555873,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81416,11 +81416,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 34,
         "stackAmount": 5,
         "length": 30,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 120,
         "bodyArmor": 2,
         "flags": [
           "RangedWeapon",
@@ -81431,10 +81431,10 @@
         ],
         "thrustDamage": 26,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 134
+        "swingSpeed": 128
       }
     ]
   },
@@ -81444,10 +81444,10 @@
     "name": "Leafblade Throwing Daggers +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 59336,
-    "weight": 0.15,
+    "price": 5852,
+    "weight": 0.46,
     "rank": 3,
-    "tier": 33.90851,
+    "tier": 9.86268,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -81457,11 +81457,11 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 34,
         "stackAmount": 5,
         "length": 30,
         "balance": 1.0,
-        "handling": 121,
+        "handling": 120,
         "bodyArmor": 2,
         "flags": [
           "RangedWeapon",
@@ -81472,10 +81472,10 @@
         ],
         "thrustDamage": 27,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 103,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 134
+        "swingSpeed": 128
       }
     ]
   },
