@@ -9136,10 +9136,10 @@
       <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.20" is_default="true">
+  <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.52" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.85" />
+      <Swing damage_type="Cut" damage_factor="1.27" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9149,10 +9149,10 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h1" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.20" is_default="true">
+  <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h1" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.565" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.94" />
+      <Swing damage_type="Cut" damage_factor="1.29" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9162,10 +9162,10 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h2" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.20" is_default="true">
+  <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h2" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.51" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="2.01" />
+      <Swing damage_type="Cut" damage_factor="1.36" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9175,10 +9175,10 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h3" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.20" is_default="true">
+  <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h3" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.54" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="2.09" />
+      <Swing damage_type="Cut" damage_factor="1.4" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>

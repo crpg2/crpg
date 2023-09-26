@@ -156101,10 +156101,10 @@
     "name": "Tribesman Throwing Axe",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 13385,
-    "weight": 0.72,
+    "price": 5946,
+    "weight": 1.04,
     "rank": 0,
-    "tier": 15.49988,
+    "tier": 9.950542,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -156114,11 +156114,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 27,
+        "missileSpeed": 26,
         "stackAmount": 3,
         "length": 50,
         "balance": 1.0,
-        "handling": 110,
+        "handling": 102,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -156129,10 +156129,10 @@
         ],
         "thrustDamage": 40,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 117
+        "swingSpeed": 106
       },
       {
         "class": "OneHandedAxe",
@@ -156142,7 +156142,7 @@
         "stackAmount": 0,
         "length": 50,
         "balance": 1.0,
-        "handling": 110,
+        "handling": 102,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -156150,10 +156150,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
-        "swingDamage": 18,
+        "thrustSpeed": 96,
+        "swingDamage": 12,
         "swingDamageType": "Cut",
-        "swingSpeed": 117
+        "swingSpeed": 106
       }
     ]
   },
@@ -156163,10 +156163,10 @@
     "name": "Tribesman Throwing Axe +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 15121,
-    "weight": 0.72,
+    "price": 6249,
+    "weight": 1.08,
     "rank": 1,
-    "tier": 16.546772,
+    "tier": 10.22919,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -156176,11 +156176,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 27,
+        "missileSpeed": 26,
         "stackAmount": 3,
         "length": 50,
         "balance": 1.0,
-        "handling": 110,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -156191,10 +156191,10 @@
         ],
         "thrustDamage": 42,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
+        "thrustSpeed": 95,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 117
+        "swingSpeed": 105
       },
       {
         "class": "OneHandedAxe",
@@ -156204,7 +156204,7 @@
         "stackAmount": 0,
         "length": 50,
         "balance": 1.0,
-        "handling": 110,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -156212,10 +156212,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
-        "swingDamage": 19,
+        "thrustSpeed": 95,
+        "swingDamage": 12,
         "swingDamageType": "Cut",
-        "swingSpeed": 117
+        "swingSpeed": 105
       }
     ]
   },
@@ -156225,10 +156225,10 @@
     "name": "Tribesman Throwing Axe +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 12746,
-    "weight": 0.72,
+    "price": 5772,
+    "weight": 1.03,
     "rank": 2,
-    "tier": 15.0982151,
+    "tier": 9.786782,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -156238,11 +156238,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 27,
+        "missileSpeed": 26,
         "stackAmount": 3,
         "length": 50,
         "balance": 1.0,
-        "handling": 110,
+        "handling": 102,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -156253,10 +156253,10 @@
         ],
         "thrustDamage": 43,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 117
+        "swingSpeed": 107
       },
       {
         "class": "OneHandedAxe",
@@ -156266,7 +156266,7 @@
         "stackAmount": 0,
         "length": 50,
         "balance": 1.0,
-        "handling": 110,
+        "handling": 102,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -156274,10 +156274,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
-        "swingDamage": 20,
+        "thrustSpeed": 96,
+        "swingDamage": 13,
         "swingDamageType": "Cut",
-        "swingSpeed": 117
+        "swingSpeed": 107
       }
     ]
   },
@@ -156287,10 +156287,10 @@
     "name": "Tribesman Throwing Axe +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 14997,
-    "weight": 0.72,
+    "price": 6412,
+    "weight": 1.06,
     "rank": 3,
-    "tier": 16.4738979,
+    "tier": 10.3762951,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -156300,11 +156300,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 27,
+        "missileSpeed": 26,
         "stackAmount": 3,
         "length": 50,
         "balance": 1.0,
-        "handling": 110,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -156315,10 +156315,10 @@
         ],
         "thrustDamage": 45,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 117
+        "swingSpeed": 106
       },
       {
         "class": "OneHandedAxe",
@@ -156328,7 +156328,7 @@
         "stackAmount": 0,
         "length": 50,
         "balance": 1.0,
-        "handling": 110,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -156336,10 +156336,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
-        "swingDamage": 20,
+        "thrustSpeed": 96,
+        "swingDamage": 14,
         "swingDamageType": "Cut",
-        "swingSpeed": 117
+        "swingSpeed": 106
       }
     ]
   },
