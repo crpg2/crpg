@@ -122799,10 +122799,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4843,
-    "weight": 0.93,
+    "price": 6612,
+    "weight": 0.99,
     "rank": 0,
-    "tier": 8.12953,
+    "tier": 9.687575,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122814,9 +122814,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 41,
+        "length": 45,
         "balance": 1.0,
-        "handling": 115,
+        "handling": 114,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -122826,7 +122826,7 @@
         "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 123
+        "swingSpeed": 120
       }
     ]
   },
@@ -122836,10 +122836,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 5116,
-    "weight": 0.93,
+    "price": 6993,
+    "weight": 0.99,
     "rank": 1,
-    "tier": 8.387259,
+    "tier": 9.99469948,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122851,9 +122851,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 41,
+        "length": 45,
         "balance": 1.0,
-        "handling": 115,
+        "handling": 114,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
@@ -122863,7 +122863,7 @@
         "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 123
+        "swingSpeed": 120
       }
     ]
   },
@@ -122873,10 +122873,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 4959,
-    "weight": 0.75,
+    "price": 5866,
+    "weight": 0.81,
     "rank": 2,
-    "tier": 8.24008751,
+    "tier": 9.059749,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122888,19 +122888,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 41,
+        "length": 45,
         "balance": 1.0,
-        "handling": 117,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 39,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
+        "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 125
+        "swingSpeed": 123
       }
     ]
   },
@@ -122910,10 +122910,10 @@
     "name": "Rondel",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 5476,
-    "weight": 0.75,
+    "price": 6484,
+    "weight": 0.81,
     "rank": 3,
-    "tier": 8.715819,
+    "tier": 9.582803,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -122925,19 +122925,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 41,
+        "length": 45,
         "balance": 1.0,
-        "handling": 117,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 40,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
+        "thrustSpeed": 98,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 125
+        "swingSpeed": 123
       }
     ]
   },
@@ -129212,15 +129212,15 @@
     "weapons": []
   },
   {
-    "id": "crpg_shepherd_axe_h0",
-    "baseId": "crpg_shepherd_axe",
-    "name": "Shepherd Axe",
+    "id": "crpg_shepherd_axe_v1_h0",
+    "baseId": "crpg_shepherd_axe_v1",
+    "name": "Shepherd's Axe",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1185,
-    "weight": 0.97,
+    "price": 4165,
+    "weight": 1.11,
     "rank": 0,
-    "tier": 3.47091436,
+    "tier": 7.458426,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -129232,9 +129232,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 88,
-        "balance": 0.75,
-        "handling": 88,
+        "length": 95,
+        "balance": 0.48,
+        "handling": 81,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -129242,23 +129242,23 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 96,
-        "swingDamage": 25,
+        "thrustSpeed": 94,
+        "swingDamage": 36,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 84
       }
     ]
   },
   {
-    "id": "crpg_shepherd_axe_h1",
-    "baseId": "crpg_shepherd_axe",
-    "name": "Shepherd Axe +1",
+    "id": "crpg_shepherd_axe_v1_h1",
+    "baseId": "crpg_shepherd_axe_v1",
+    "name": "Shepherd's Axe +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1267,
-    "weight": 0.92,
+    "price": 4399,
+    "weight": 1.09,
     "rank": 1,
-    "tier": 3.625522,
+    "tier": 7.69586658,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -129270,9 +129270,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 88,
-        "balance": 0.82,
-        "handling": 90,
+        "length": 95,
+        "balance": 0.51,
+        "handling": 81,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -129280,23 +129280,23 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 25,
+        "thrustSpeed": 94,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 94
+        "swingSpeed": 85
       }
     ]
   },
   {
-    "id": "crpg_shepherd_axe_h2",
-    "baseId": "crpg_shepherd_axe",
-    "name": "Shepherd Axe +2",
+    "id": "crpg_shepherd_axe_v1_h2",
+    "baseId": "crpg_shepherd_axe_v1",
+    "name": "Shepherd's Axe +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1504,
-    "weight": 0.9,
+    "price": 4140,
+    "weight": 1.08,
     "rank": 2,
-    "tier": 4.046478,
+    "tier": 7.43258762,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -129308,9 +129308,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 88,
-        "balance": 0.86,
-        "handling": 91,
+        "length": 95,
+        "balance": 0.52,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -129318,23 +129318,23 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 26,
+        "thrustSpeed": 94,
+        "swingDamage": 38,
         "swingDamageType": "Cut",
-        "swingSpeed": 95
+        "swingSpeed": 85
       }
     ]
   },
   {
-    "id": "crpg_shepherd_axe_h3",
-    "baseId": "crpg_shepherd_axe",
-    "name": "Shepherd Axe +3",
+    "id": "crpg_shepherd_axe_v1_h3",
+    "baseId": "crpg_shepherd_axe_v1",
+    "name": "Shepherd's Axe +3",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 1940,
-    "weight": 0.9,
+    "price": 4553,
+    "weight": 1.06,
     "rank": 3,
-    "tier": 4.74184132,
+    "tier": 7.84917545,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -129346,9 +129346,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 88,
-        "balance": 0.86,
-        "handling": 91,
+        "length": 95,
+        "balance": 0.55,
+        "handling": 82,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -129356,10 +129356,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 28,
+        "thrustSpeed": 94,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 95
+        "swingSpeed": 86
       }
     ]
   },

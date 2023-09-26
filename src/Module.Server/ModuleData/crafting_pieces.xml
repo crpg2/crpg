@@ -26012,10 +26012,10 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shepherd_axe_blade_h0" name="Sherpherd's Blade" tier="2" piece_type="Blade" mesh="sherpherds_head" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.45">
+  <CraftingPiece id="crpg_shepherd_axe_blade_h0" name="Sherpherd's Blade" tier="2" piece_type="Blade" mesh="sherpherds_head" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.55">
     <BuildData piece_offset="-10.0" />
     <BladeData stack_amount="2" blade_length="6.6" blade_width="24.7" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -26025,10 +26025,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shepherd_axe_blade_h1" name="Sherpherd's Blade" tier="2" piece_type="Blade" mesh="sherpherds_head" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.4">
+  <CraftingPiece id="crpg_shepherd_axe_blade_h1" name="Sherpherd's Blade" tier="2" piece_type="Blade" mesh="sherpherds_head" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.53">
     <BuildData piece_offset="-10.0" />
     <BladeData stack_amount="2" blade_length="6.6" blade_width="24.7" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -26038,10 +26038,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shepherd_axe_blade_h2" name="Sherpherd's Blade" tier="2" piece_type="Blade" mesh="sherpherds_head" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.38">
+  <CraftingPiece id="crpg_shepherd_axe_blade_h2" name="Sherpherd's Blade" tier="2" piece_type="Blade" mesh="sherpherds_head" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.52">
     <BuildData piece_offset="-10.0" />
     <BladeData stack_amount="2" blade_length="6.6" blade_width="24.7" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -26051,10 +26051,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shepherd_axe_blade_h3" name="Sherpherd's Blade" tier="2" piece_type="Blade" mesh="sherpherds_head" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.38">
+  <CraftingPiece id="crpg_shepherd_axe_blade_h3" name="Sherpherd's Blade" tier="2" piece_type="Blade" mesh="sherpherds_head" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.50">
     <BuildData piece_offset="-10.0" />
     <BladeData stack_amount="2" blade_length="6.6" blade_width="24.7" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
