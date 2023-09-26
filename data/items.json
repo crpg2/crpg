@@ -22754,8 +22754,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_broad_blade_javelin_v1_h0",
-    "baseId": "crpg_broad_blade_javelin_v1",
+    "id": "crpg_broad_blade_javelin_v2_h0",
+    "baseId": "crpg_broad_blade_javelin_v2",
     "name": "Broad Blade Javelin",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -22814,8 +22814,8 @@
     ]
   },
   {
-    "id": "crpg_broad_blade_javelin_v1_h1",
-    "baseId": "crpg_broad_blade_javelin_v1",
+    "id": "crpg_broad_blade_javelin_v2_h1",
+    "baseId": "crpg_broad_blade_javelin_v2",
     "name": "Broad Blade Javelin +1",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -22874,8 +22874,8 @@
     ]
   },
   {
-    "id": "crpg_broad_blade_javelin_v1_h2",
-    "baseId": "crpg_broad_blade_javelin_v1",
+    "id": "crpg_broad_blade_javelin_v2_h2",
+    "baseId": "crpg_broad_blade_javelin_v2",
     "name": "Broad Blade Javelin +2",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -22934,8 +22934,8 @@
     ]
   },
   {
-    "id": "crpg_broad_blade_javelin_v1_h3",
-    "baseId": "crpg_broad_blade_javelin_v1",
+    "id": "crpg_broad_blade_javelin_v2_h3",
+    "baseId": "crpg_broad_blade_javelin_v2",
     "name": "Broad Blade Javelin +3",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -22994,8 +22994,8 @@
     ]
   },
   {
-    "id": "crpg_broad_bladed_throwing_knives_v1_h0",
-    "baseId": "crpg_broad_bladed_throwing_knives_v1",
+    "id": "crpg_broad_bladed_throwing_knives_v2_h0",
+    "baseId": "crpg_broad_bladed_throwing_knives_v2",
     "name": "Broad Bladed Throwing Daggers",
     "culture": "Empire",
     "type": "Thrown",
@@ -23035,8 +23035,8 @@
     ]
   },
   {
-    "id": "crpg_broad_bladed_throwing_knives_v1_h1",
-    "baseId": "crpg_broad_bladed_throwing_knives_v1",
+    "id": "crpg_broad_bladed_throwing_knives_v2_h1",
+    "baseId": "crpg_broad_bladed_throwing_knives_v2",
     "name": "Broad Bladed Throwing Daggers +1",
     "culture": "Empire",
     "type": "Thrown",
@@ -23076,8 +23076,8 @@
     ]
   },
   {
-    "id": "crpg_broad_bladed_throwing_knives_v1_h2",
-    "baseId": "crpg_broad_bladed_throwing_knives_v1",
+    "id": "crpg_broad_bladed_throwing_knives_v2_h2",
+    "baseId": "crpg_broad_bladed_throwing_knives_v2",
     "name": "Broad Bladed Throwing Daggers +2",
     "culture": "Empire",
     "type": "Thrown",
@@ -23117,8 +23117,8 @@
     ]
   },
   {
-    "id": "crpg_broad_bladed_throwing_knives_v1_h3",
-    "baseId": "crpg_broad_bladed_throwing_knives_v1",
+    "id": "crpg_broad_bladed_throwing_knives_v2_h3",
+    "baseId": "crpg_broad_bladed_throwing_knives_v2",
     "name": "Broad Bladed Throwing Daggers +3",
     "culture": "Empire",
     "type": "Thrown",
@@ -49262,8 +49262,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_fish_harpoon_v1_h0",
-    "baseId": "crpg_fish_harpoon_v1",
+    "id": "crpg_fish_harpoon_v2_h0",
+    "baseId": "crpg_fish_harpoon_v2",
     "name": "Fish Harpoon",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -49322,8 +49322,8 @@
     ]
   },
   {
-    "id": "crpg_fish_harpoon_v1_h1",
-    "baseId": "crpg_fish_harpoon_v1",
+    "id": "crpg_fish_harpoon_v2_h1",
+    "baseId": "crpg_fish_harpoon_v2",
     "name": "Fish Harpoon +1",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -49382,8 +49382,8 @@
     ]
   },
   {
-    "id": "crpg_fish_harpoon_v1_h2",
-    "baseId": "crpg_fish_harpoon_v1",
+    "id": "crpg_fish_harpoon_v2_h2",
+    "baseId": "crpg_fish_harpoon_v2",
     "name": "Fish Harpoon +2",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -49442,8 +49442,8 @@
     ]
   },
   {
-    "id": "crpg_fish_harpoon_v1_h3",
-    "baseId": "crpg_fish_harpoon_v1",
+    "id": "crpg_fish_harpoon_v2_h3",
+    "baseId": "crpg_fish_harpoon_v2",
     "name": "Fish Harpoon +3",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -50706,8 +50706,8 @@
     ]
   },
   {
-    "id": "crpg_francesca_v1_h0",
-    "baseId": "crpg_francesca_v1",
+    "id": "crpg_francesca_v2_h0",
+    "baseId": "crpg_francesca_v2",
     "name": "Francesca",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -50769,8 +50769,8 @@
     ]
   },
   {
-    "id": "crpg_francesca_v1_h1",
-    "baseId": "crpg_francesca_v1",
+    "id": "crpg_francesca_v2_h1",
+    "baseId": "crpg_francesca_v2",
     "name": "Francesca +1",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -50832,8 +50832,8 @@
     ]
   },
   {
-    "id": "crpg_francesca_v1_h2",
-    "baseId": "crpg_francesca_v1",
+    "id": "crpg_francesca_v2_h2",
+    "baseId": "crpg_francesca_v2",
     "name": "Francesca +2",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -50895,8 +50895,8 @@
     ]
   },
   {
-    "id": "crpg_francesca_v1_h3",
-    "baseId": "crpg_francesca_v1",
+    "id": "crpg_francesca_v2_h3",
+    "baseId": "crpg_francesca_v2",
     "name": "Francesca +3",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -56944,8 +56944,8 @@
     ]
   },
   {
-    "id": "crpg_harpoon_v1_h0",
-    "baseId": "crpg_harpoon_v1",
+    "id": "crpg_harpoon_v2_h0",
+    "baseId": "crpg_harpoon_v2",
     "name": "Harpoon",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -57004,8 +57004,8 @@
     ]
   },
   {
-    "id": "crpg_harpoon_v1_h1",
-    "baseId": "crpg_harpoon_v1",
+    "id": "crpg_harpoon_v2_h1",
+    "baseId": "crpg_harpoon_v2",
     "name": "Harpoon +1",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -57064,8 +57064,8 @@
     ]
   },
   {
-    "id": "crpg_harpoon_v1_h2",
-    "baseId": "crpg_harpoon_v1",
+    "id": "crpg_harpoon_v2_h2",
+    "baseId": "crpg_harpoon_v2",
     "name": "Harpoon +2",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -57124,8 +57124,8 @@
     ]
   },
   {
-    "id": "crpg_harpoon_v1_h3",
-    "baseId": "crpg_harpoon_v1",
+    "id": "crpg_harpoon_v2_h3",
+    "baseId": "crpg_harpoon_v2",
     "name": "Harpoon +3",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -62180,8 +62180,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_helping_hand_h0",
-    "baseId": "crpg_helping_hand",
+    "id": "crpg_helping_hand_v1_h0",
+    "baseId": "crpg_helping_hand_v1",
     "name": "Helping Hand Steel Throwing Club",
     "culture": "Battania",
     "type": "Thrown",
@@ -62239,8 +62239,8 @@
     ]
   },
   {
-    "id": "crpg_helping_hand_h1",
-    "baseId": "crpg_helping_hand",
+    "id": "crpg_helping_hand_v1_h1",
+    "baseId": "crpg_helping_hand_v1",
     "name": "Helping Hand Steel Throwing Club +1",
     "culture": "Battania",
     "type": "Thrown",
@@ -62298,8 +62298,8 @@
     ]
   },
   {
-    "id": "crpg_helping_hand_h2",
-    "baseId": "crpg_helping_hand",
+    "id": "crpg_helping_hand_v1_h2",
+    "baseId": "crpg_helping_hand_v1",
     "name": "Helping Hand Steel Throwing Club +2",
     "culture": "Battania",
     "type": "Thrown",
@@ -62357,8 +62357,8 @@
     ]
   },
   {
-    "id": "crpg_helping_hand_h3",
-    "baseId": "crpg_helping_hand",
+    "id": "crpg_helping_hand_v1_h3",
+    "baseId": "crpg_helping_hand_v1",
     "name": "Helping Hand Steel Throwing Club +3",
     "culture": "Battania",
     "type": "Thrown",
@@ -64728,8 +64728,8 @@
     ]
   },
   {
-    "id": "crpg_highland_throwing_axe_v1_h0",
-    "baseId": "crpg_highland_throwing_axe_v1",
+    "id": "crpg_highland_throwing_axe_v2_h0",
+    "baseId": "crpg_highland_throwing_axe_v2",
     "name": "Highland Throwing Axe",
     "culture": "Battania",
     "type": "Thrown",
@@ -64791,8 +64791,8 @@
     ]
   },
   {
-    "id": "crpg_highland_throwing_axe_v1_h1",
-    "baseId": "crpg_highland_throwing_axe_v1",
+    "id": "crpg_highland_throwing_axe_v2_h1",
+    "baseId": "crpg_highland_throwing_axe_v2",
     "name": "Highland Throwing Axe +1",
     "culture": "Battania",
     "type": "Thrown",
@@ -64854,8 +64854,8 @@
     ]
   },
   {
-    "id": "crpg_highland_throwing_axe_v1_h2",
-    "baseId": "crpg_highland_throwing_axe_v1",
+    "id": "crpg_highland_throwing_axe_v2_h2",
+    "baseId": "crpg_highland_throwing_axe_v2",
     "name": "Highland Throwing Axe +2",
     "culture": "Battania",
     "type": "Thrown",
@@ -64917,8 +64917,8 @@
     ]
   },
   {
-    "id": "crpg_highland_throwing_axe_v1_h3",
-    "baseId": "crpg_highland_throwing_axe_v1",
+    "id": "crpg_highland_throwing_axe_v2_h3",
+    "baseId": "crpg_highland_throwing_axe_v2",
     "name": "Highland Throwing Axe +3",
     "culture": "Battania",
     "type": "Thrown",
@@ -64980,8 +64980,8 @@
     ]
   },
   {
-    "id": "crpg_highland_throwing_dagger_v2_h0",
-    "baseId": "crpg_highland_throwing_dagger_v2",
+    "id": "crpg_highland_throwing_dagger_v3_h0",
+    "baseId": "crpg_highland_throwing_dagger_v3",
     "name": "Steel Throwing Knife",
     "culture": "Battania",
     "type": "Thrown",
@@ -65021,8 +65021,8 @@
     ]
   },
   {
-    "id": "crpg_highland_throwing_dagger_v2_h1",
-    "baseId": "crpg_highland_throwing_dagger_v2",
+    "id": "crpg_highland_throwing_dagger_v3_h1",
+    "baseId": "crpg_highland_throwing_dagger_v3",
     "name": "Steel Throwing Knife +1",
     "culture": "Battania",
     "type": "Thrown",
@@ -65062,8 +65062,8 @@
     ]
   },
   {
-    "id": "crpg_highland_throwing_dagger_v2_h2",
-    "baseId": "crpg_highland_throwing_dagger_v2",
+    "id": "crpg_highland_throwing_dagger_v3_h2",
+    "baseId": "crpg_highland_throwing_dagger_v3",
     "name": "Steel Throwing Knife +2",
     "culture": "Battania",
     "type": "Thrown",
@@ -65103,8 +65103,8 @@
     ]
   },
   {
-    "id": "crpg_highland_throwing_dagger_v2_h3",
-    "baseId": "crpg_highland_throwing_dagger_v2",
+    "id": "crpg_highland_throwing_dagger_v3_h3",
+    "baseId": "crpg_highland_throwing_dagger_v3",
     "name": "Steel Throwing Knife +3",
     "culture": "Battania",
     "type": "Thrown",
@@ -65912,8 +65912,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_hooked_javelin_v1_h0",
-    "baseId": "crpg_hooked_javelin_v1",
+    "id": "crpg_hooked_javelin_v2_h0",
+    "baseId": "crpg_hooked_javelin_v2",
     "name": "Hooked Javelin",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -65972,8 +65972,8 @@
     ]
   },
   {
-    "id": "crpg_hooked_javelin_v1_h1",
-    "baseId": "crpg_hooked_javelin_v1",
+    "id": "crpg_hooked_javelin_v2_h1",
+    "baseId": "crpg_hooked_javelin_v2",
     "name": "Hooked Javelin +1",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -66032,8 +66032,8 @@
     ]
   },
   {
-    "id": "crpg_hooked_javelin_v1_h2",
-    "baseId": "crpg_hooked_javelin_v1",
+    "id": "crpg_hooked_javelin_v2_h2",
+    "baseId": "crpg_hooked_javelin_v2",
     "name": "Hooked Javelin +2",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -66092,8 +66092,8 @@
     ]
   },
   {
-    "id": "crpg_hooked_javelin_v1_h3",
-    "baseId": "crpg_hooked_javelin_v1",
+    "id": "crpg_hooked_javelin_v2_h3",
+    "baseId": "crpg_hooked_javelin_v2",
     "name": "Hooked Javelin +3",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -66602,8 +66602,8 @@
     ]
   },
   {
-    "id": "crpg_horseman_javelin_v1_h0",
-    "baseId": "crpg_horseman_javelin_v1",
+    "id": "crpg_horseman_javelin_v2_h0",
+    "baseId": "crpg_horseman_javelin_v2",
     "name": "Horseman Javelin",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -66664,8 +66664,8 @@
     ]
   },
   {
-    "id": "crpg_horseman_javelin_v1_h1",
-    "baseId": "crpg_horseman_javelin_v1",
+    "id": "crpg_horseman_javelin_v2_h1",
+    "baseId": "crpg_horseman_javelin_v2",
     "name": "Horseman Javelin +1",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -66726,8 +66726,8 @@
     ]
   },
   {
-    "id": "crpg_horseman_javelin_v1_h2",
-    "baseId": "crpg_horseman_javelin_v1",
+    "id": "crpg_horseman_javelin_v2_h2",
+    "baseId": "crpg_horseman_javelin_v2",
     "name": "Horseman Javelin +2",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -66788,8 +66788,8 @@
     ]
   },
   {
-    "id": "crpg_horseman_javelin_v1_h3",
-    "baseId": "crpg_horseman_javelin_v1",
+    "id": "crpg_horseman_javelin_v2_h3",
+    "baseId": "crpg_horseman_javelin_v2",
     "name": "Horseman Javelin +3",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -72916,8 +72916,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_jagged_javelin_v1_h0",
-    "baseId": "crpg_jagged_javelin_v1",
+    "id": "crpg_jagged_javelin_v2_h0",
+    "baseId": "crpg_jagged_javelin_v2",
     "name": "Jagged Javelin",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -72976,8 +72976,8 @@
     ]
   },
   {
-    "id": "crpg_jagged_javelin_v1_h1",
-    "baseId": "crpg_jagged_javelin_v1",
+    "id": "crpg_jagged_javelin_v2_h1",
+    "baseId": "crpg_jagged_javelin_v2",
     "name": "Jagged Javelin +1",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -73036,8 +73036,8 @@
     ]
   },
   {
-    "id": "crpg_jagged_javelin_v1_h2",
-    "baseId": "crpg_jagged_javelin_v1",
+    "id": "crpg_jagged_javelin_v2_h2",
+    "baseId": "crpg_jagged_javelin_v2",
     "name": "Jagged Javelin +2",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -73096,8 +73096,8 @@
     ]
   },
   {
-    "id": "crpg_jagged_javelin_v1_h3",
-    "baseId": "crpg_jagged_javelin_v1",
+    "id": "crpg_jagged_javelin_v2_h3",
+    "baseId": "crpg_jagged_javelin_v2",
     "name": "Jagged Javelin +3",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -73484,8 +73484,8 @@
     ]
   },
   {
-    "id": "crpg_jagged_throwing_spear_v1_h0",
-    "baseId": "crpg_jagged_throwing_spear_v1",
+    "id": "crpg_jagged_throwing_spear_v2_h0",
+    "baseId": "crpg_jagged_throwing_spear_v2",
     "name": "Jagged Throwing Spear",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -73546,8 +73546,8 @@
     ]
   },
   {
-    "id": "crpg_jagged_throwing_spear_v1_h1",
-    "baseId": "crpg_jagged_throwing_spear_v1",
+    "id": "crpg_jagged_throwing_spear_v2_h1",
+    "baseId": "crpg_jagged_throwing_spear_v2",
     "name": "Jagged Throwing Spear +1",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -73608,8 +73608,8 @@
     ]
   },
   {
-    "id": "crpg_jagged_throwing_spear_v1_h2",
-    "baseId": "crpg_jagged_throwing_spear_v1",
+    "id": "crpg_jagged_throwing_spear_v2_h2",
+    "baseId": "crpg_jagged_throwing_spear_v2",
     "name": "Jagged Throwing Spear +2",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -73670,8 +73670,8 @@
     ]
   },
   {
-    "id": "crpg_jagged_throwing_spear_v1_h3",
-    "baseId": "crpg_jagged_throwing_spear_v1",
+    "id": "crpg_jagged_throwing_spear_v2_h3",
+    "baseId": "crpg_jagged_throwing_spear_v2",
     "name": "Jagged Throwing Spear +3",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -74204,8 +74204,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_jereed_v1_h0",
-    "baseId": "crpg_jereed_v1",
+    "id": "crpg_jereed_v2_h0",
+    "baseId": "crpg_jereed_v2",
     "name": "Jereed",
     "culture": "Aserai",
     "type": "Thrown",
@@ -74264,8 +74264,8 @@
     ]
   },
   {
-    "id": "crpg_jereed_v1_h1",
-    "baseId": "crpg_jereed_v1",
+    "id": "crpg_jereed_v2_h1",
+    "baseId": "crpg_jereed_v2",
     "name": "Jereed +1",
     "culture": "Aserai",
     "type": "Thrown",
@@ -74324,8 +74324,8 @@
     ]
   },
   {
-    "id": "crpg_jereed_v1_h2",
-    "baseId": "crpg_jereed_v1",
+    "id": "crpg_jereed_v2_h2",
+    "baseId": "crpg_jereed_v2",
     "name": "Jereed +2",
     "culture": "Aserai",
     "type": "Thrown",
@@ -74384,8 +74384,8 @@
     ]
   },
   {
-    "id": "crpg_jereed_v1_h3",
-    "baseId": "crpg_jereed_v1",
+    "id": "crpg_jereed_v2_h3",
+    "baseId": "crpg_jereed_v2",
     "name": "Jereed +3",
     "culture": "Aserai",
     "type": "Thrown",
@@ -81316,8 +81316,8 @@
     ]
   },
   {
-    "id": "crpg_leafblade_throwing_knife_v1_h0",
-    "baseId": "crpg_leafblade_throwing_knife_v1",
+    "id": "crpg_leafblade_throwing_knife_v2_h0",
+    "baseId": "crpg_leafblade_throwing_knife_v2",
     "name": "Leafblade Throwing Daggers",
     "culture": "Battania",
     "type": "Thrown",
@@ -81357,8 +81357,8 @@
     ]
   },
   {
-    "id": "crpg_leafblade_throwing_knife_v1_h1",
-    "baseId": "crpg_leafblade_throwing_knife_v1",
+    "id": "crpg_leafblade_throwing_knife_v2_h1",
+    "baseId": "crpg_leafblade_throwing_knife_v2",
     "name": "Leafblade Throwing Daggers +1",
     "culture": "Battania",
     "type": "Thrown",
@@ -81398,8 +81398,8 @@
     ]
   },
   {
-    "id": "crpg_leafblade_throwing_knife_v1_h2",
-    "baseId": "crpg_leafblade_throwing_knife_v1",
+    "id": "crpg_leafblade_throwing_knife_v2_h2",
+    "baseId": "crpg_leafblade_throwing_knife_v2",
     "name": "Leafblade Throwing Daggers +2",
     "culture": "Battania",
     "type": "Thrown",
@@ -81439,8 +81439,8 @@
     ]
   },
   {
-    "id": "crpg_leafblade_throwing_knife_v1_h3",
-    "baseId": "crpg_leafblade_throwing_knife_v1",
+    "id": "crpg_leafblade_throwing_knife_v2_h3",
+    "baseId": "crpg_leafblade_throwing_knife_v2",
     "name": "Leafblade Throwing Daggers +3",
     "culture": "Battania",
     "type": "Thrown",
@@ -90642,8 +90642,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_javelin_v1_h0",
-    "baseId": "crpg_lowland_javelin_v1",
+    "id": "crpg_lowland_javelin_v2_h0",
+    "baseId": "crpg_lowland_javelin_v2",
     "name": "Lowland Javelin",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -90702,8 +90702,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_javelin_v1_h1",
-    "baseId": "crpg_lowland_javelin_v1",
+    "id": "crpg_lowland_javelin_v2_h1",
+    "baseId": "crpg_lowland_javelin_v2",
     "name": "Lowland Javelin +1",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -90762,8 +90762,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_javelin_v1_h2",
-    "baseId": "crpg_lowland_javelin_v1",
+    "id": "crpg_lowland_javelin_v2_h2",
+    "baseId": "crpg_lowland_javelin_v2",
     "name": "Lowland Javelin +2",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -90822,8 +90822,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_javelin_v1_h3",
-    "baseId": "crpg_lowland_javelin_v1",
+    "id": "crpg_lowland_javelin_v2_h3",
+    "baseId": "crpg_lowland_javelin_v2",
     "name": "Lowland Javelin +3",
     "culture": "Vlandia",
     "type": "Thrown",
@@ -90882,8 +90882,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_throwing_knife_v1_h0",
-    "baseId": "crpg_lowland_throwing_knife_v1",
+    "id": "crpg_lowland_throwing_knife_v2_h0",
+    "baseId": "crpg_lowland_throwing_knife_v2",
     "name": "Militia Throwing Knives",
     "culture": "Battania",
     "type": "Thrown",
@@ -90923,8 +90923,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_throwing_knife_v1_h1",
-    "baseId": "crpg_lowland_throwing_knife_v1",
+    "id": "crpg_lowland_throwing_knife_v2_h1",
+    "baseId": "crpg_lowland_throwing_knife_v2",
     "name": "Militia Throwing Knives +1",
     "culture": "Battania",
     "type": "Thrown",
@@ -90964,8 +90964,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_throwing_knife_v1_h2",
-    "baseId": "crpg_lowland_throwing_knife_v1",
+    "id": "crpg_lowland_throwing_knife_v2_h2",
+    "baseId": "crpg_lowland_throwing_knife_v2",
     "name": "Militia Throwing Knives +2",
     "culture": "Battania",
     "type": "Thrown",
@@ -91005,8 +91005,8 @@
     ]
   },
   {
-    "id": "crpg_lowland_throwing_knife_v1_h3",
-    "baseId": "crpg_lowland_throwing_knife_v1",
+    "id": "crpg_lowland_throwing_knife_v2_h3",
+    "baseId": "crpg_lowland_throwing_knife_v2",
     "name": "Militia Throwing Knives +3",
     "culture": "Battania",
     "type": "Thrown",
@@ -116016,8 +116016,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_pilum_v2_h0",
-    "baseId": "crpg_pilum_v2",
+    "id": "crpg_pilum_v3_h0",
+    "baseId": "crpg_pilum_v3",
     "name": "Pilum Steel Throwing Spear",
     "culture": "Empire",
     "type": "Thrown",
@@ -116078,8 +116078,8 @@
     ]
   },
   {
-    "id": "crpg_pilum_v2_h1",
-    "baseId": "crpg_pilum_v2",
+    "id": "crpg_pilum_v3_h1",
+    "baseId": "crpg_pilum_v3",
     "name": "Pilum Steel Throwing Spear +1",
     "culture": "Empire",
     "type": "Thrown",
@@ -116140,8 +116140,8 @@
     ]
   },
   {
-    "id": "crpg_pilum_v2_h2",
-    "baseId": "crpg_pilum_v2",
+    "id": "crpg_pilum_v3_h2",
+    "baseId": "crpg_pilum_v3",
     "name": "Pilum Steel Throwing Spear +2",
     "culture": "Empire",
     "type": "Thrown",
@@ -116202,8 +116202,8 @@
     ]
   },
   {
-    "id": "crpg_pilum_v2_h3",
-    "baseId": "crpg_pilum_v2",
+    "id": "crpg_pilum_v3_h3",
+    "baseId": "crpg_pilum_v3",
     "name": "Pilum Steel Throwing Spear +3",
     "culture": "Empire",
     "type": "Thrown",
@@ -119084,8 +119084,8 @@
     ]
   },
   {
-    "id": "crpg_raider_throwing_axe_v1_h0",
-    "baseId": "crpg_raider_throwing_axe_v1",
+    "id": "crpg_raider_throwing_axe_v2_h0",
+    "baseId": "crpg_raider_throwing_axe_v2",
     "name": "Raider Throwing Axe",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -119147,8 +119147,8 @@
     ]
   },
   {
-    "id": "crpg_raider_throwing_axe_v1_h1",
-    "baseId": "crpg_raider_throwing_axe_v1",
+    "id": "crpg_raider_throwing_axe_v2_h1",
+    "baseId": "crpg_raider_throwing_axe_v2",
     "name": "Raider Throwing Axe +1",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -119210,8 +119210,8 @@
     ]
   },
   {
-    "id": "crpg_raider_throwing_axe_v1_h2",
-    "baseId": "crpg_raider_throwing_axe_v1",
+    "id": "crpg_raider_throwing_axe_v2_h2",
+    "baseId": "crpg_raider_throwing_axe_v2",
     "name": "Raider Throwing Axe +2",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -119273,8 +119273,8 @@
     ]
   },
   {
-    "id": "crpg_raider_throwing_axe_v1_h3",
-    "baseId": "crpg_raider_throwing_axe_v1",
+    "id": "crpg_raider_throwing_axe_v2_h3",
+    "baseId": "crpg_raider_throwing_axe_v2",
     "name": "Raider Throwing Axe +3",
     "culture": "Sturgia",
     "type": "Thrown",
@@ -131670,8 +131670,8 @@
     ]
   },
   {
-    "id": "crpg_simple_javelin_v1_h0",
-    "baseId": "crpg_simple_javelin_v1",
+    "id": "crpg_simple_javelin_v2_h0",
+    "baseId": "crpg_simple_javelin_v2",
     "name": "Simple Javelin",
     "culture": "Neutral",
     "type": "Thrown",
@@ -131730,8 +131730,8 @@
     ]
   },
   {
-    "id": "crpg_simple_javelin_v1_h1",
-    "baseId": "crpg_simple_javelin_v1",
+    "id": "crpg_simple_javelin_v2_h1",
+    "baseId": "crpg_simple_javelin_v2",
     "name": "Simple Javelin +1",
     "culture": "Neutral",
     "type": "Thrown",
@@ -131790,8 +131790,8 @@
     ]
   },
   {
-    "id": "crpg_simple_javelin_v1_h2",
-    "baseId": "crpg_simple_javelin_v1",
+    "id": "crpg_simple_javelin_v2_h2",
+    "baseId": "crpg_simple_javelin_v2",
     "name": "Simple Javelin +2",
     "culture": "Neutral",
     "type": "Thrown",
@@ -131850,8 +131850,8 @@
     ]
   },
   {
-    "id": "crpg_simple_javelin_v1_h3",
-    "baseId": "crpg_simple_javelin_v1",
+    "id": "crpg_simple_javelin_v2_h3",
+    "baseId": "crpg_simple_javelin_v2",
     "name": "Simple Javelin +3",
     "culture": "Neutral",
     "type": "Thrown",
@@ -134930,8 +134930,8 @@
     ]
   },
   {
-    "id": "crpg_snowball_v1_h0",
-    "baseId": "crpg_snowball_v1",
+    "id": "crpg_snowball_v2_h0",
+    "baseId": "crpg_snowball_v2",
     "name": "Snowball",
     "culture": "Neutral",
     "type": "Thrown",
@@ -134969,8 +134969,8 @@
     ]
   },
   {
-    "id": "crpg_snowball_v1_h1",
-    "baseId": "crpg_snowball_v1",
+    "id": "crpg_snowball_v2_h1",
+    "baseId": "crpg_snowball_v2",
     "name": "Snowball +1",
     "culture": "Neutral",
     "type": "Thrown",
@@ -135008,8 +135008,8 @@
     ]
   },
   {
-    "id": "crpg_snowball_v1_h2",
-    "baseId": "crpg_snowball_v1",
+    "id": "crpg_snowball_v2_h2",
+    "baseId": "crpg_snowball_v2",
     "name": "Snowball +2",
     "culture": "Neutral",
     "type": "Thrown",
@@ -135047,8 +135047,8 @@
     ]
   },
   {
-    "id": "crpg_snowball_v1_h3",
-    "baseId": "crpg_snowball_v1",
+    "id": "crpg_snowball_v2_h3",
+    "baseId": "crpg_snowball_v2",
     "name": "Snowball +3",
     "culture": "Neutral",
     "type": "Thrown",
@@ -137678,8 +137678,8 @@
     ]
   },
   {
-    "id": "crpg_spiral_shuriken_h0",
-    "baseId": "crpg_spiral_shuriken",
+    "id": "crpg_spiral_shuriken_v1_h0",
+    "baseId": "crpg_spiral_shuriken_v1",
     "name": "Throwing Star Sun",
     "culture": "Aserai",
     "type": "Thrown",
@@ -137719,8 +137719,8 @@
     ]
   },
   {
-    "id": "crpg_spiral_shuriken_h1",
-    "baseId": "crpg_spiral_shuriken",
+    "id": "crpg_spiral_shuriken_v1_h1",
+    "baseId": "crpg_spiral_shuriken_v1",
     "name": "Throwing Star Sun +1",
     "culture": "Aserai",
     "type": "Thrown",
@@ -137760,8 +137760,8 @@
     ]
   },
   {
-    "id": "crpg_spiral_shuriken_h2",
-    "baseId": "crpg_spiral_shuriken",
+    "id": "crpg_spiral_shuriken_v1_h2",
+    "baseId": "crpg_spiral_shuriken_v1",
     "name": "Throwing Star Sun +2",
     "culture": "Aserai",
     "type": "Thrown",
@@ -137801,8 +137801,8 @@
     ]
   },
   {
-    "id": "crpg_spiral_shuriken_h3",
-    "baseId": "crpg_spiral_shuriken",
+    "id": "crpg_spiral_shuriken_v1_h3",
+    "baseId": "crpg_spiral_shuriken_v1",
     "name": "Throwing Star Sun +3",
     "culture": "Aserai",
     "type": "Thrown",
@@ -137982,8 +137982,8 @@
     ]
   },
   {
-    "id": "crpg_square_shuriken_h0",
-    "baseId": "crpg_square_shuriken",
+    "id": "crpg_square_shuriken_v1_h0",
+    "baseId": "crpg_square_shuriken_v1",
     "name": "Throwing Star Diamond",
     "culture": "Aserai",
     "type": "Thrown",
@@ -138023,8 +138023,8 @@
     ]
   },
   {
-    "id": "crpg_square_shuriken_h1",
-    "baseId": "crpg_square_shuriken",
+    "id": "crpg_square_shuriken_v1_h1",
+    "baseId": "crpg_square_shuriken_v1",
     "name": "Throwing Star Diamond +1",
     "culture": "Aserai",
     "type": "Thrown",
@@ -138064,8 +138064,8 @@
     ]
   },
   {
-    "id": "crpg_square_shuriken_h2",
-    "baseId": "crpg_square_shuriken",
+    "id": "crpg_square_shuriken_v1_h2",
+    "baseId": "crpg_square_shuriken_v1",
     "name": "Throwing Star Diamond +2",
     "culture": "Aserai",
     "type": "Thrown",
@@ -138105,8 +138105,8 @@
     ]
   },
   {
-    "id": "crpg_square_shuriken_h3",
-    "baseId": "crpg_square_shuriken",
+    "id": "crpg_square_shuriken_v1_h3",
+    "baseId": "crpg_square_shuriken_v1",
     "name": "Throwing Star Diamond +3",
     "culture": "Aserai",
     "type": "Thrown",
@@ -152836,8 +152836,8 @@
     "weapons": []
   },
   {
-    "id": "crpg_throwing_club_h0",
-    "baseId": "crpg_throwing_club",
+    "id": "crpg_throwing_club_v1_h0",
+    "baseId": "crpg_throwing_club_v1",
     "name": "Militia Throwing Club",
     "culture": "Battania",
     "type": "Thrown",
@@ -152895,8 +152895,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_club_h1",
-    "baseId": "crpg_throwing_club",
+    "id": "crpg_throwing_club_v1_h1",
+    "baseId": "crpg_throwing_club_v1",
     "name": "Militia Throwing Club +1",
     "culture": "Battania",
     "type": "Thrown",
@@ -152954,8 +152954,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_club_h2",
-    "baseId": "crpg_throwing_club",
+    "id": "crpg_throwing_club_v1_h2",
+    "baseId": "crpg_throwing_club_v1",
     "name": "Militia Throwing Club +2",
     "culture": "Battania",
     "type": "Thrown",
@@ -153013,8 +153013,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_club_h3",
-    "baseId": "crpg_throwing_club",
+    "id": "crpg_throwing_club_v1_h3",
+    "baseId": "crpg_throwing_club_v1",
     "name": "Militia Throwing Club +3",
     "culture": "Battania",
     "type": "Thrown",
@@ -153072,8 +153072,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_hammers_v1_h0",
-    "baseId": "crpg_throwing_hammers_v1",
+    "id": "crpg_throwing_hammers_v2_h0",
+    "baseId": "crpg_throwing_hammers_v2",
     "name": "Throwing Hammers",
     "culture": "Battania",
     "type": "Thrown",
@@ -153131,8 +153131,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_hammers_v1_h1",
-    "baseId": "crpg_throwing_hammers_v1",
+    "id": "crpg_throwing_hammers_v2_h1",
+    "baseId": "crpg_throwing_hammers_v2",
     "name": "Throwing Hammers +1",
     "culture": "Battania",
     "type": "Thrown",
@@ -153190,8 +153190,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_hammers_v1_h2",
-    "baseId": "crpg_throwing_hammers_v1",
+    "id": "crpg_throwing_hammers_v2_h2",
+    "baseId": "crpg_throwing_hammers_v2",
     "name": "Throwing Hammers +2",
     "culture": "Battania",
     "type": "Thrown",
@@ -153249,8 +153249,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_hammers_v1_h3",
-    "baseId": "crpg_throwing_hammers_v1",
+    "id": "crpg_throwing_hammers_v2_h3",
+    "baseId": "crpg_throwing_hammers_v2",
     "name": "Throwing Hammers +3",
     "culture": "Battania",
     "type": "Thrown",
@@ -153308,8 +153308,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_heavy_stone_v1_h0",
-    "baseId": "crpg_throwing_heavy_stone_v1",
+    "id": "crpg_throwing_heavy_stone_v2_h0",
+    "baseId": "crpg_throwing_heavy_stone_v2",
     "name": "Heavy Stones",
     "culture": "Neutral",
     "type": "Thrown",
@@ -153347,8 +153347,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_heavy_stone_v1_h1",
-    "baseId": "crpg_throwing_heavy_stone_v1",
+    "id": "crpg_throwing_heavy_stone_v2_h1",
+    "baseId": "crpg_throwing_heavy_stone_v2",
     "name": "Heavy Stones +1",
     "culture": "Neutral",
     "type": "Thrown",
@@ -153386,8 +153386,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_heavy_stone_v1_h2",
-    "baseId": "crpg_throwing_heavy_stone_v1",
+    "id": "crpg_throwing_heavy_stone_v2_h2",
+    "baseId": "crpg_throwing_heavy_stone_v2",
     "name": "Heavy Stones +2",
     "culture": "Neutral",
     "type": "Thrown",
@@ -153425,8 +153425,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_heavy_stone_v1_h3",
-    "baseId": "crpg_throwing_heavy_stone_v1",
+    "id": "crpg_throwing_heavy_stone_v2_h3",
+    "baseId": "crpg_throwing_heavy_stone_v2",
     "name": "Heavy Stones +3",
     "culture": "Neutral",
     "type": "Thrown",
@@ -153464,8 +153464,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_mace_h0",
-    "baseId": "crpg_throwing_mace",
+    "id": "crpg_throwing_mace_v1_h0",
+    "baseId": "crpg_throwing_mace_v1",
     "name": "Throwing Mace",
     "culture": "Battania",
     "type": "Thrown",
@@ -153523,8 +153523,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_mace_h1",
-    "baseId": "crpg_throwing_mace",
+    "id": "crpg_throwing_mace_v1_h1",
+    "baseId": "crpg_throwing_mace_v1",
     "name": "Throwing Mace +1",
     "culture": "Battania",
     "type": "Thrown",
@@ -153582,8 +153582,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_mace_h2",
-    "baseId": "crpg_throwing_mace",
+    "id": "crpg_throwing_mace_v1_h2",
+    "baseId": "crpg_throwing_mace_v1",
     "name": "Throwing Mace +2",
     "culture": "Battania",
     "type": "Thrown",
@@ -153641,8 +153641,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_mace_h3",
-    "baseId": "crpg_throwing_mace",
+    "id": "crpg_throwing_mace_v1_h3",
+    "baseId": "crpg_throwing_mace_v1",
     "name": "Throwing Mace +3",
     "culture": "Battania",
     "type": "Thrown",
@@ -153700,8 +153700,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_spike_h0",
-    "baseId": "crpg_throwing_spike",
+    "id": "crpg_throwing_spike_v1_h0",
+    "baseId": "crpg_throwing_spike_v1",
     "name": "Throwing Dart",
     "culture": "Aserai",
     "type": "Thrown",
@@ -153741,8 +153741,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_spike_h1",
-    "baseId": "crpg_throwing_spike",
+    "id": "crpg_throwing_spike_v1_h1",
+    "baseId": "crpg_throwing_spike_v1",
     "name": "Throwing Dart +1",
     "culture": "Aserai",
     "type": "Thrown",
@@ -153782,8 +153782,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_spike_h2",
-    "baseId": "crpg_throwing_spike",
+    "id": "crpg_throwing_spike_v1_h2",
+    "baseId": "crpg_throwing_spike_v1",
     "name": "Throwing Dart +2",
     "culture": "Aserai",
     "type": "Thrown",
@@ -153823,8 +153823,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_spike_h3",
-    "baseId": "crpg_throwing_spike",
+    "id": "crpg_throwing_spike_v1_h3",
+    "baseId": "crpg_throwing_spike_v1",
     "name": "Throwing Dart +3",
     "culture": "Aserai",
     "type": "Thrown",
@@ -153864,8 +153864,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_stone_v1_h0",
-    "baseId": "crpg_throwing_stone_v1",
+    "id": "crpg_throwing_stone_v2_h0",
+    "baseId": "crpg_throwing_stone_v2",
     "name": "Stone",
     "culture": "Neutral",
     "type": "Thrown",
@@ -153903,8 +153903,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_stone_v1_h1",
-    "baseId": "crpg_throwing_stone_v1",
+    "id": "crpg_throwing_stone_v2_h1",
+    "baseId": "crpg_throwing_stone_v2",
     "name": "Stone +1",
     "culture": "Neutral",
     "type": "Thrown",
@@ -153942,8 +153942,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_stone_v1_h2",
-    "baseId": "crpg_throwing_stone_v1",
+    "id": "crpg_throwing_stone_v2_h2",
+    "baseId": "crpg_throwing_stone_v2",
     "name": "Stone +2",
     "culture": "Neutral",
     "type": "Thrown",
@@ -153981,8 +153981,8 @@
     ]
   },
   {
-    "id": "crpg_throwing_stone_v1_h3",
-    "baseId": "crpg_throwing_stone_v1",
+    "id": "crpg_throwing_stone_v2_h3",
+    "baseId": "crpg_throwing_stone_v2",
     "name": "Stone +3",
     "culture": "Neutral",
     "type": "Thrown",
@@ -155196,8 +155196,8 @@
     ]
   },
   {
-    "id": "crpg_tri_shuriken_h0",
-    "baseId": "crpg_tri_shuriken",
+    "id": "crpg_tri_shuriken_v1_h0",
+    "baseId": "crpg_tri_shuriken_v1",
     "name": "Throwing Star Triangle",
     "culture": "Aserai",
     "type": "Thrown",
@@ -155237,8 +155237,8 @@
     ]
   },
   {
-    "id": "crpg_tri_shuriken_h1",
-    "baseId": "crpg_tri_shuriken",
+    "id": "crpg_tri_shuriken_v1_h1",
+    "baseId": "crpg_tri_shuriken_v1",
     "name": "Throwing Star Triangle +1",
     "culture": "Aserai",
     "type": "Thrown",
@@ -155278,8 +155278,8 @@
     ]
   },
   {
-    "id": "crpg_tri_shuriken_h2",
-    "baseId": "crpg_tri_shuriken",
+    "id": "crpg_tri_shuriken_v1_h2",
+    "baseId": "crpg_tri_shuriken_v1",
     "name": "Throwing Star Triangle +2",
     "culture": "Aserai",
     "type": "Thrown",
@@ -155319,8 +155319,8 @@
     ]
   },
   {
-    "id": "crpg_tri_shuriken_h3",
-    "baseId": "crpg_tri_shuriken",
+    "id": "crpg_tri_shuriken_v1_h3",
+    "baseId": "crpg_tri_shuriken_v1",
     "name": "Throwing Star Triangle +3",
     "culture": "Aserai",
     "type": "Thrown",
@@ -155688,8 +155688,8 @@
     ]
   },
   {
-    "id": "crpg_triangular_throwing_spear_v1_h0",
-    "baseId": "crpg_triangular_throwing_spear_v1",
+    "id": "crpg_triangular_throwing_spear_v2_h0",
+    "baseId": "crpg_triangular_throwing_spear_v2",
     "name": "Triangular Throwing Spear",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -155750,8 +155750,8 @@
     ]
   },
   {
-    "id": "crpg_triangular_throwing_spear_v1_h1",
-    "baseId": "crpg_triangular_throwing_spear_v1",
+    "id": "crpg_triangular_throwing_spear_v2_h1",
+    "baseId": "crpg_triangular_throwing_spear_v2",
     "name": "Triangular Throwing Spear +1",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -155812,8 +155812,8 @@
     ]
   },
   {
-    "id": "crpg_triangular_throwing_spear_v1_h2",
-    "baseId": "crpg_triangular_throwing_spear_v1",
+    "id": "crpg_triangular_throwing_spear_v2_h2",
+    "baseId": "crpg_triangular_throwing_spear_v2",
     "name": "Triangular Throwing Spear +2",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -155874,8 +155874,8 @@
     ]
   },
   {
-    "id": "crpg_triangular_throwing_spear_v1_h3",
-    "baseId": "crpg_triangular_throwing_spear_v1",
+    "id": "crpg_triangular_throwing_spear_v2_h3",
+    "baseId": "crpg_triangular_throwing_spear_v2",
     "name": "Triangular Throwing Spear +3",
     "culture": "Khuzait",
     "type": "Thrown",
@@ -156096,8 +156096,8 @@
     ]
   },
   {
-    "id": "crpg_tribesman_throwing_axe_v1_h0",
-    "baseId": "crpg_tribesman_throwing_axe_v1",
+    "id": "crpg_tribesman_throwing_axe_v2_h0",
+    "baseId": "crpg_tribesman_throwing_axe_v2",
     "name": "Tribesman Throwing Axe",
     "culture": "Aserai",
     "type": "Thrown",
@@ -156158,8 +156158,8 @@
     ]
   },
   {
-    "id": "crpg_tribesman_throwing_axe_v1_h1",
-    "baseId": "crpg_tribesman_throwing_axe_v1",
+    "id": "crpg_tribesman_throwing_axe_v2_h1",
+    "baseId": "crpg_tribesman_throwing_axe_v2",
     "name": "Tribesman Throwing Axe +1",
     "culture": "Aserai",
     "type": "Thrown",
@@ -156220,8 +156220,8 @@
     ]
   },
   {
-    "id": "crpg_tribesman_throwing_axe_v1_h2",
-    "baseId": "crpg_tribesman_throwing_axe_v1",
+    "id": "crpg_tribesman_throwing_axe_v2_h2",
+    "baseId": "crpg_tribesman_throwing_axe_v2",
     "name": "Tribesman Throwing Axe +2",
     "culture": "Aserai",
     "type": "Thrown",
@@ -156282,8 +156282,8 @@
     ]
   },
   {
-    "id": "crpg_tribesman_throwing_axe_v1_h3",
-    "baseId": "crpg_tribesman_throwing_axe_v1",
+    "id": "crpg_tribesman_throwing_axe_v2_h3",
+    "baseId": "crpg_tribesman_throwing_axe_v2",
     "name": "Tribesman Throwing Axe +3",
     "culture": "Aserai",
     "type": "Thrown",
@@ -156344,8 +156344,8 @@
     ]
   },
   {
-    "id": "crpg_tribesman_throwing_daggers_v1_h0",
-    "baseId": "crpg_tribesman_throwing_daggers_v1",
+    "id": "crpg_tribesman_throwing_daggers_v2_h0",
+    "baseId": "crpg_tribesman_throwing_daggers_v2",
     "name": "Tribesman Throwing Daggers",
     "culture": "Aserai",
     "type": "Thrown",
@@ -156385,8 +156385,8 @@
     ]
   },
   {
-    "id": "crpg_tribesman_throwing_daggers_v1_h1",
-    "baseId": "crpg_tribesman_throwing_daggers_v1",
+    "id": "crpg_tribesman_throwing_daggers_v2_h1",
+    "baseId": "crpg_tribesman_throwing_daggers_v2",
     "name": "Tribesman Throwing Daggers +1",
     "culture": "Aserai",
     "type": "Thrown",
@@ -156426,8 +156426,8 @@
     ]
   },
   {
-    "id": "crpg_tribesman_throwing_daggers_v1_h2",
-    "baseId": "crpg_tribesman_throwing_daggers_v1",
+    "id": "crpg_tribesman_throwing_daggers_v2_h2",
+    "baseId": "crpg_tribesman_throwing_daggers_v2",
     "name": "Tribesman Throwing Daggers +2",
     "culture": "Aserai",
     "type": "Thrown",
@@ -156467,8 +156467,8 @@
     ]
   },
   {
-    "id": "crpg_tribesman_throwing_daggers_v1_h3",
-    "baseId": "crpg_tribesman_throwing_daggers_v1",
+    "id": "crpg_tribesman_throwing_daggers_v2_h3",
+    "baseId": "crpg_tribesman_throwing_daggers_v2",
     "name": "Tribesman Throwing Daggers +3",
     "culture": "Aserai",
     "type": "Thrown",
@@ -164012,8 +164012,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_javelin_v1_h0",
-    "baseId": "crpg_woodland_javelin_v1",
+    "id": "crpg_woodland_javelin_v2_h0",
+    "baseId": "crpg_woodland_javelin_v2",
     "name": "Woodland Javelin",
     "culture": "Battania",
     "type": "Thrown",
@@ -164072,8 +164072,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_javelin_v1_h1",
-    "baseId": "crpg_woodland_javelin_v1",
+    "id": "crpg_woodland_javelin_v2_h1",
+    "baseId": "crpg_woodland_javelin_v2",
     "name": "Woodland Javelin +1",
     "culture": "Battania",
     "type": "Thrown",
@@ -164132,8 +164132,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_javelin_v1_h2",
-    "baseId": "crpg_woodland_javelin_v1",
+    "id": "crpg_woodland_javelin_v2_h2",
+    "baseId": "crpg_woodland_javelin_v2",
     "name": "Woodland Javelin +2",
     "culture": "Battania",
     "type": "Thrown",
@@ -164192,8 +164192,8 @@
     ]
   },
   {
-    "id": "crpg_woodland_javelin_v1_h3",
-    "baseId": "crpg_woodland_javelin_v1",
+    "id": "crpg_woodland_javelin_v2_h3",
+    "baseId": "crpg_woodland_javelin_v2",
     "name": "Woodland Javelin +3",
     "culture": "Battania",
     "type": "Thrown",
