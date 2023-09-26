@@ -9188,10 +9188,10 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_highland_throwing_axe_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.25" is_default="true">
+  <CraftingPiece id="crpg_highland_throwing_axe_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.65" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.95" />
+      <Swing damage_type="Cut" damage_factor="1.225"/>
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9202,10 +9202,10 @@
       <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_highland_throwing_axe_blade_h1" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.25" is_default="true">
+  <CraftingPiece id="crpg_highland_throwing_axe_blade_h1" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.55" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="1.375" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9216,10 +9216,10 @@
       <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_highland_throwing_axe_blade_h2" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.25" is_default="true">
+  <CraftingPiece id="crpg_highland_throwing_axe_blade_h2" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.65" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="2.06" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9230,10 +9230,10 @@
       <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_highland_throwing_axe_blade_h3" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.25" is_default="true">
+  <CraftingPiece id="crpg_highland_throwing_axe_blade_h3" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.58" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="2.12" />
+      <Swing damage_type="Cut" damage_factor="1.45" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>

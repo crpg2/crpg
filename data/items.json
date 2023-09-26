@@ -64733,10 +64733,10 @@
     "name": "Highland Throwing Axe",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 16458,
-    "weight": 0.65,
+    "price": 5933,
+    "weight": 1.05,
     "rank": 0,
-    "tier": 17.3127556,
+    "tier": 9.938238,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -64746,11 +64746,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 27,
+        "missileSpeed": 26,
         "stackAmount": 3,
         "length": 43,
         "balance": 1.0,
-        "handling": 111,
+        "handling": 104,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -64762,10 +64762,10 @@
         ],
         "thrustDamage": 39,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 119
+        "swingSpeed": 108
       },
       {
         "class": "OneHandedAxe",
@@ -64775,7 +64775,7 @@
         "stackAmount": 0,
         "length": 43,
         "balance": 1.0,
-        "handling": 111,
+        "handling": 104,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -64783,10 +64783,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
-        "swingDamage": 19,
+        "thrustSpeed": 96,
+        "swingDamage": 12,
         "swingDamageType": "Cut",
-        "swingSpeed": 119
+        "swingSpeed": 108
       }
     ]
   },
@@ -64796,10 +64796,10 @@
     "name": "Highland Throwing Axe +1",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 13559,
-    "weight": 0.65,
+    "price": 5895,
+    "weight": 0.95,
     "rank": 1,
-    "tier": 15.6082716,
+    "tier": 9.902931,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -64809,11 +64809,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 27,
+        "missileSpeed": 26,
         "stackAmount": 3,
         "length": 43,
         "balance": 1.0,
-        "handling": 111,
+        "handling": 105,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -64825,10 +64825,10 @@
         ],
         "thrustDamage": 40,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 119
+        "swingSpeed": 110
       },
       {
         "class": "OneHandedAxe",
@@ -64838,7 +64838,7 @@
         "stackAmount": 0,
         "length": 43,
         "balance": 1.0,
-        "handling": 111,
+        "handling": 105,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -64846,10 +64846,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
-        "swingDamage": 20,
+        "thrustSpeed": 97,
+        "swingDamage": 13,
         "swingDamageType": "Cut",
-        "swingSpeed": 119
+        "swingSpeed": 110
       }
     ]
   },
@@ -64859,10 +64859,10 @@
     "name": "Highland Throwing Axe +2",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 16050,
-    "weight": 0.65,
+    "price": 5792,
+    "weight": 1.05,
     "rank": 2,
-    "tier": 17.08253,
+    "tier": 9.806078,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -64872,11 +64872,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 27,
+        "missileSpeed": 26,
         "stackAmount": 3,
         "length": 43,
         "balance": 1.0,
-        "handling": 111,
+        "handling": 104,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -64888,10 +64888,10 @@
         ],
         "thrustDamage": 42,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
+        "thrustSpeed": 96,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 119
+        "swingSpeed": 108
       },
       {
         "class": "OneHandedAxe",
@@ -64901,7 +64901,7 @@
         "stackAmount": 0,
         "length": 43,
         "balance": 1.0,
-        "handling": 111,
+        "handling": 104,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -64909,10 +64909,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
-        "swingDamage": 20,
+        "thrustSpeed": 96,
+        "swingDamage": 13,
         "swingDamageType": "Cut",
-        "swingSpeed": 119
+        "swingSpeed": 108
       }
     ]
   },
@@ -64922,10 +64922,10 @@
     "name": "Highland Throwing Axe +3",
     "culture": "Battania",
     "type": "Thrown",
-    "price": 14063,
-    "weight": 0.65,
+    "price": 5775,
+    "weight": 0.98,
     "rank": 3,
-    "tier": 15.9163694,
+    "tier": 9.789267,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -64935,11 +64935,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 27,
+        "missileSpeed": 26,
         "stackAmount": 3,
         "length": 43,
         "balance": 1.0,
-        "handling": 111,
+        "handling": 105,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -64951,10 +64951,10 @@
         ],
         "thrustDamage": 43,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 119
+        "swingSpeed": 109
       },
       {
         "class": "OneHandedAxe",
@@ -64964,7 +64964,7 @@
         "stackAmount": 0,
         "length": 43,
         "balance": 1.0,
-        "handling": 111,
+        "handling": 105,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -64972,10 +64972,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 100,
-        "swingDamage": 21,
+        "thrustSpeed": 97,
+        "swingDamage": 14,
         "swingDamageType": "Cut",
-        "swingSpeed": 119
+        "swingSpeed": 109
       }
     ]
   },
