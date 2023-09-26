@@ -155201,10 +155201,10 @@
     "name": "Throwing Star Triangle",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 14337,
-    "weight": 0.15,
+    "price": 5109,
+    "weight": 0.2,
     "rank": 0,
-    "tier": 16.08206,
+    "tier": 9.140911,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -155214,7 +155214,48 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
+        "stackAmount": 11,
+        "length": 23,
+        "balance": 1.0,
+        "handling": 121,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 17,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 106,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 135
+      }
+    ]
+  },
+  {
+    "id": "crpg_tri_shuriken_h1",
+    "baseId": "crpg_tri_shuriken",
+    "name": "Throwing Star Triangle +1",
+    "culture": "Aserai",
+    "type": "Thrown",
+    "price": 4986,
+    "weight": 0.19,
+    "rank": 1,
+    "tier": 9.01638,
+    "requirement": 0,
+    "flags": [
+      "Civilian"
+    ],
+    "weapons": [
+      {
+        "class": "ThrowingKnife",
+        "itemUsage": "throwing_knife",
+        "accuracy": 95,
+        "missileSpeed": 35,
         "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
@@ -155229,23 +155270,23 @@
         ],
         "thrustDamage": 18,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
+        "thrustSpeed": 107,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 136
+        "swingSpeed": 135
       }
     ]
   },
   {
-    "id": "crpg_tri_shuriken_h1",
+    "id": "crpg_tri_shuriken_h2",
     "baseId": "crpg_tri_shuriken",
-    "name": "Throwing Star Triangle +1",
+    "name": "Throwing Star Triangle +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 17399,
-    "weight": 0.15,
-    "rank": 1,
-    "tier": 17.8331223,
+    "price": 5248,
+    "weight": 0.17,
+    "rank": 2,
+    "tier": 9.279402,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -155255,8 +155296,8 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
-        "stackAmount": 10,
+        "missileSpeed": 35,
+        "stackAmount": 9,
         "length": 23,
         "balance": 1.0,
         "handling": 121,
@@ -155273,20 +155314,20 @@
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 136
+        "swingSpeed": 135
       }
     ]
   },
   {
-    "id": "crpg_tri_shuriken_h2",
+    "id": "crpg_tri_shuriken_h3",
     "baseId": "crpg_tri_shuriken",
-    "name": "Throwing Star Triangle +2",
+    "name": "Throwing Star Triangle +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 14361,
-    "weight": 0.15,
-    "rank": 2,
-    "tier": 16.0966988,
+    "price": 5970,
+    "weight": 0.18,
+    "rank": 3,
+    "tier": 9.972418,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -155296,7 +155337,7 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
         "stackAmount": 9,
         "length": 23,
         "balance": 1.0,
@@ -155314,48 +155355,7 @@
         "thrustSpeed": 108,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 136
-      }
-    ]
-  },
-  {
-    "id": "crpg_tri_shuriken_h3",
-    "baseId": "crpg_tri_shuriken",
-    "name": "Throwing Star Triangle +3",
-    "culture": "Aserai",
-    "type": "Thrown",
-    "price": 17687,
-    "weight": 0.15,
-    "rank": 3,
-    "tier": 17.9892654,
-    "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
-    "weapons": [
-      {
-        "class": "ThrowingKnife",
-        "itemUsage": "throwing_knife",
-        "accuracy": 95,
-        "missileSpeed": 36,
-        "stackAmount": 9,
-        "length": 23,
-        "balance": 1.0,
-        "handling": 121,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 21,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 108,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 136
+        "swingSpeed": 135
       }
     ]
   },
