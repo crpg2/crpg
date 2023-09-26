@@ -27484,10 +27484,10 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spiral_shuriken_blade_h0" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.03">
+  <CraftingPiece id="crpg_spiral_shuriken_blade_h0" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.09">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="cut" damage_factor="7.8" />
+      <Thrust damage_type="cut" damage_factor="5.8" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -27496,10 +27496,10 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spiral_shuriken_blade_h1" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.03">
+  <CraftingPiece id="crpg_spiral_shuriken_blade_h1" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.1">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="cut" damage_factor="8.4" />
+      <Thrust damage_type="cut" damage_factor="6.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -27508,10 +27508,10 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spiral_shuriken_blade_h2" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.03">
+  <CraftingPiece id="crpg_spiral_shuriken_blade_h2" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.11">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Cut" damage_factor="8.8" />
+      <Thrust damage_type="Cut" damage_factor="6.0"/>
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -27520,10 +27520,10 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spiral_shuriken_blade_h3" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.03">
+  <CraftingPiece id="crpg_spiral_shuriken_blade_h3" name="Spiralshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="spiral_shuriken" length="20" weight="0.13">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Cut" damage_factor="9.2" />
+      <Thrust damage_type="Cut" damage_factor="5.7" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />

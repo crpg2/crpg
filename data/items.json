@@ -137683,10 +137683,10 @@
     "name": "Throwing Star Sun",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 12313,
-    "weight": 0.15,
+    "price": 6005,
+    "weight": 0.21,
     "rank": 0,
-    "tier": 14.8194733,
+    "tier": 10.00543,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -137696,7 +137696,7 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
         "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
@@ -137711,10 +137711,10 @@
         ],
         "thrustDamage": 21,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 108,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 136
+        "swingSpeed": 135
       }
     ]
   },
@@ -137724,10 +137724,10 @@
     "name": "Throwing Star Sun +1",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 13488,
-    "weight": 0.15,
+    "price": 6032,
+    "weight": 0.22,
     "rank": 1,
-    "tier": 15.5639219,
+    "tier": 10.0304127,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -137737,7 +137737,7 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
         "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
@@ -137752,10 +137752,10 @@
         ],
         "thrustDamage": 22,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 108,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 136
+        "swingSpeed": 135
       }
     ]
   },
@@ -137765,10 +137765,10 @@
     "name": "Throwing Star Sun +2",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 15058,
-    "weight": 0.15,
+    "price": 6192,
+    "weight": 0.23,
     "rank": 2,
-    "tier": 16.510128,
+    "tier": 10.1775913,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -137778,7 +137778,7 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
         "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
@@ -137793,10 +137793,10 @@
         ],
         "thrustDamage": 23,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 108,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 136
+        "swingSpeed": 134
       }
     ]
   },
@@ -137806,10 +137806,10 @@
     "name": "Throwing Star Sun +3",
     "culture": "Aserai",
     "type": "Thrown",
-    "price": 17050,
-    "weight": 0.15,
+    "price": 6005,
+    "weight": 0.25,
     "rank": 3,
-    "tier": 17.64188,
+    "tier": 10.0052319,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -137819,7 +137819,7 @@
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 36,
+        "missileSpeed": 35,
         "stackAmount": 10,
         "length": 23,
         "balance": 1.0,
@@ -137834,10 +137834,10 @@
         ],
         "thrustDamage": 24,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 108,
+        "thrustSpeed": 106,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 136
+        "swingSpeed": 134
       }
     ]
   },
