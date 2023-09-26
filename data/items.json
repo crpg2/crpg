@@ -39168,7 +39168,7 @@
   {
     "id": "crpg_early_halberd_v2_h0",
     "baseId": "crpg_early_halberd_v2",
-    "name": "Early Halberd",
+    "name": "Voulge",
     "culture": "Vlandia",
     "type": "Polearm",
     "price": 13082,
@@ -39209,7 +39209,7 @@
   {
     "id": "crpg_early_halberd_v2_h1",
     "baseId": "crpg_early_halberd_v2",
-    "name": "Early Halberd +1",
+    "name": "Voulge +1",
     "culture": "Vlandia",
     "type": "Polearm",
     "price": 12947,
@@ -39250,7 +39250,7 @@
   {
     "id": "crpg_early_halberd_v2_h2",
     "baseId": "crpg_early_halberd_v2",
-    "name": "Early Halberd +2",
+    "name": "Voulge +2",
     "culture": "Vlandia",
     "type": "Polearm",
     "price": 13225,
@@ -39291,7 +39291,7 @@
   {
     "id": "crpg_early_halberd_v2_h3",
     "baseId": "crpg_early_halberd_v2",
-    "name": "Early Halberd +3",
+    "name": "Voulge +3",
     "culture": "Vlandia",
     "type": "Polearm",
     "price": 13676,
@@ -65146,7 +65146,7 @@
   {
     "id": "crpg_highland_war_spear_h0",
     "baseId": "crpg_highland_war_spear",
-    "name": "Highland War Spear",
+    "name": "Highland Marshal's Spear",
     "culture": "Battania",
     "type": "Polearm",
     "price": 13559,
@@ -65230,7 +65230,7 @@
   {
     "id": "crpg_highland_war_spear_h1",
     "baseId": "crpg_highland_war_spear",
-    "name": "Highland War Spear +1",
+    "name": "Highland Marshal's Spear +1",
     "culture": "Battania",
     "type": "Polearm",
     "price": 12207,
@@ -65314,7 +65314,7 @@
   {
     "id": "crpg_highland_war_spear_h2",
     "baseId": "crpg_highland_war_spear",
-    "name": "Highland War Spear +2",
+    "name": "Highland Marshal's Spear +2",
     "culture": "Battania",
     "type": "Polearm",
     "price": 15066,
@@ -65398,7 +65398,7 @@
   {
     "id": "crpg_highland_war_spear_h3",
     "baseId": "crpg_highland_war_spear",
-    "name": "Highland War Spear +3",
+    "name": "Highland Marshal's Spear +3",
     "culture": "Battania",
     "type": "Polearm",
     "price": 14267,
@@ -130624,7 +130624,7 @@
   {
     "id": "crpg_short_raider_spear_v1_h0",
     "baseId": "crpg_short_raider_spear_v1",
-    "name": "Short Raider Spear",
+    "name": "Vanguard's Short Spear",
     "culture": "Sturgia",
     "type": "Polearm",
     "price": 13531,
@@ -130706,7 +130706,7 @@
   {
     "id": "crpg_short_raider_spear_v1_h1",
     "baseId": "crpg_short_raider_spear_v1",
-    "name": "Short Raider Spear +1",
+    "name": "Vanguard's Short Spear +1",
     "culture": "Sturgia",
     "type": "Polearm",
     "price": 11818,
@@ -130788,7 +130788,7 @@
   {
     "id": "crpg_short_raider_spear_v1_h2",
     "baseId": "crpg_short_raider_spear_v1",
-    "name": "Short Raider Spear +2",
+    "name": "Vanguard's Short Spear +2",
     "culture": "Sturgia",
     "type": "Polearm",
     "price": 12798,
@@ -130870,7 +130870,7 @@
   {
     "id": "crpg_short_raider_spear_v1_h3",
     "baseId": "crpg_short_raider_spear_v1",
-    "name": "Short Raider Spear +3",
+    "name": "Vanguard's Short Spear +3",
     "culture": "Sturgia",
     "type": "Polearm",
     "price": 13862,
@@ -131344,7 +131344,7 @@
   {
     "id": "crpg_simple_commoner_spear_h0",
     "baseId": "crpg_simple_commoner_spear",
-    "name": "Simple Commoner Spear",
+    "name": "Noble Hunting Spear",
     "culture": "Vlandia",
     "type": "Polearm",
     "price": 13235,
@@ -131426,7 +131426,7 @@
   {
     "id": "crpg_simple_commoner_spear_h1",
     "baseId": "crpg_simple_commoner_spear",
-    "name": "Simple Commoner Spear +1",
+    "name": "Noble Hunting Spear +1",
     "culture": "Vlandia",
     "type": "Polearm",
     "price": 11628,
@@ -131508,7 +131508,7 @@
   {
     "id": "crpg_simple_commoner_spear_h2",
     "baseId": "crpg_simple_commoner_spear",
-    "name": "Simple Commoner Spear +2",
+    "name": "Noble Hunting Spear +2",
     "culture": "Vlandia",
     "type": "Polearm",
     "price": 13068,
@@ -131590,7 +131590,7 @@
   {
     "id": "crpg_simple_commoner_spear_h3",
     "baseId": "crpg_simple_commoner_spear",
-    "name": "Simple Commoner Spear +3",
+    "name": "Noble Hunting Spear +3",
     "culture": "Vlandia",
     "type": "Polearm",
     "price": 14030,

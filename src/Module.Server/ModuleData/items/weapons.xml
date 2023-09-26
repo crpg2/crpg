@@ -8340,7 +8340,7 @@
       <Piece id="crpg_fine_steel_menavlion_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_early_halberd_v2_h0" name="{=kaikaikai}Early Halberd" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_early_halberd_v2_h0" name="{=kaikaikai}Voulge" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_early_halberd_blade_h0" Type="Blade" scale_factor="99" />
       <Piece id="crpg_early_halberd_guard_h0" Type="Guard" scale_factor="100" />
@@ -8348,7 +8348,7 @@
       <Piece id="crpg_early_halberd_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_early_halberd_v2_h1" name="{=kaikaikai}Early Halberd +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_early_halberd_v2_h1" name="{=kaikaikai}Voulge +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_early_halberd_blade_h1" Type="Blade" scale_factor="99" />
       <Piece id="crpg_early_halberd_guard_h1" Type="Guard" scale_factor="100" />
@@ -8356,7 +8356,7 @@
       <Piece id="crpg_early_halberd_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_early_halberd_v2_h2" name="{=kaikaikai}Early Halberd +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_early_halberd_v2_h2" name="{=kaikaikai}Voulge +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_early_halberd_blade_h2" Type="Blade" scale_factor="99" />
       <Piece id="crpg_early_halberd_guard_h2" Type="Guard" scale_factor="100" />
@@ -8364,7 +8364,7 @@
       <Piece id="crpg_early_halberd_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_early_halberd_v2_h3" name="{=kaikaikai}Early Halberd +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_early_halberd_v2_h3" name="{=kaikaikai}Voulge +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_early_halberd_blade_h3" Type="Blade" scale_factor="99" />
       <Piece id="crpg_early_halberd_guard_h3" Type="Guard" scale_factor="100" />
@@ -9256,28 +9256,28 @@
       <Piece id="crpg_military_fork_handle_h3" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_highland_war_spear_h0" name="{=rhWOdhjr}Highland War Spear" crafting_template="crpg_Spear4DMode" culture="Culture.battania" modifier_group="polearm">
+  <CraftedItem id="crpg_highland_war_spear_h0" name="{=rhWOdhjr}Highland Marshal's Spear" crafting_template="crpg_Spear4DMode" culture="Culture.battania" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_highland_war_spear_blade_h0" Type="Blade" scale_factor="90" />
       <Piece id="crpg_highland_war_spear_guard_h0" Type="Guard" scale_factor="90" />
       <Piece id="crpg_highland_war_spear_handle_h0" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_highland_war_spear_h1" name="{=rhWOdhjr}Highland War Spear +1" crafting_template="crpg_Spear4DMode" culture="Culture.battania" modifier_group="polearm">
+  <CraftedItem id="crpg_highland_war_spear_h1" name="{=rhWOdhjr}Highland Marshal's Spear +1" crafting_template="crpg_Spear4DMode" culture="Culture.battania" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_highland_war_spear_blade_h1" Type="Blade" scale_factor="90" />
       <Piece id="crpg_highland_war_spear_guard_h1" Type="Guard" scale_factor="90" />
       <Piece id="crpg_highland_war_spear_handle_h1" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_highland_war_spear_h2" name="{=rhWOdhjr}Highland War Spear +2" crafting_template="crpg_Spear4DMode" culture="Culture.battania" modifier_group="polearm">
+  <CraftedItem id="crpg_highland_war_spear_h2" name="{=rhWOdhjr}Highland Marshal's Spear +2" crafting_template="crpg_Spear4DMode" culture="Culture.battania" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_highland_war_spear_blade_h2" Type="Blade" scale_factor="90" />
       <Piece id="crpg_highland_war_spear_guard_h2" Type="Guard" scale_factor="90" />
       <Piece id="crpg_highland_war_spear_handle_h2" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_highland_war_spear_h3" name="{=rhWOdhjr}Highland War Spear +3" crafting_template="crpg_Spear4DMode" culture="Culture.battania" modifier_group="polearm">
+  <CraftedItem id="crpg_highland_war_spear_h3" name="{=rhWOdhjr}Highland Marshal's Spear +3" crafting_template="crpg_Spear4DMode" culture="Culture.battania" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_highland_war_spear_blade_h3" Type="Blade" scale_factor="90" />
       <Piece id="crpg_highland_war_spear_guard_h3" Type="Guard" scale_factor="90" />
@@ -9308,25 +9308,25 @@
       <Piece id="crpg_short_militia_spear_handle_h3" Type="Handle" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_raider_spear_v1_h0" name="{=RzLZHrYT}Short Raider Spear" crafting_template="crpg_Spear4DMode" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_short_raider_spear_v1_h0" name="{=RzLZHrYT}Vanguard's Short Spear" crafting_template="crpg_Spear4DMode" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_raider_spear_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_short_raider_spear_handle_h0" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_raider_spear_v1_h1" name="{=RzLZHrYT}Short Raider Spear +1" crafting_template="crpg_Spear4DMode" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_short_raider_spear_v1_h1" name="{=RzLZHrYT}Vanguard's Short Spear +1" crafting_template="crpg_Spear4DMode" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_raider_spear_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_short_raider_spear_handle_h1" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_raider_spear_v1_h2" name="{=RzLZHrYT}Short Raider Spear +2" crafting_template="crpg_Spear4DMode" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_short_raider_spear_v1_h2" name="{=RzLZHrYT}Vanguard's Short Spear +2" crafting_template="crpg_Spear4DMode" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_raider_spear_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_short_raider_spear_handle_h2" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_raider_spear_v1_h3" name="{=RzLZHrYT}Short Raider Spear +3" crafting_template="crpg_Spear4DMode" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_short_raider_spear_v1_h3" name="{=RzLZHrYT}Vanguard's Short Spear +3" crafting_template="crpg_Spear4DMode" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_raider_spear_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_short_raider_spear_handle_h3" Type="Handle" scale_factor="80" />
@@ -9380,25 +9380,25 @@
       <Piece id="crpg_simple_short_spear_handle_h3" Type="Handle" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_commoner_spear_h0" name="{=hyq1zBg5}Simple Commoner Spear" crafting_template="crpg_Spear4DMode" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_simple_commoner_spear_h0" name="{=hyq1zBg5}Noble Hunting Spear" crafting_template="crpg_Spear4DMode" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_simple_commoner_spear_blade_h0" Type="Blade" scale_factor="90" />
       <Piece id="crpg_simple_commoner_spear_handle_h0" Type="Handle" scale_factor="85" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_commoner_spear_h1" name="{=hyq1zBg5}Simple Commoner Spear +1" crafting_template="crpg_Spear4DMode" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_simple_commoner_spear_h1" name="{=hyq1zBg5}Noble Hunting Spear +1" crafting_template="crpg_Spear4DMode" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_simple_commoner_spear_blade_h1" Type="Blade" scale_factor="90" />
       <Piece id="crpg_simple_commoner_spear_handle_h1" Type="Handle" scale_factor="85" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_commoner_spear_h2" name="{=hyq1zBg5}Simple Commoner Spear +2" crafting_template="crpg_Spear4DMode" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_simple_commoner_spear_h2" name="{=hyq1zBg5}Noble Hunting Spear +2" crafting_template="crpg_Spear4DMode" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_simple_commoner_spear_blade_h2" Type="Blade" scale_factor="90" />
       <Piece id="crpg_simple_commoner_spear_handle_h2" Type="Handle" scale_factor="85" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_commoner_spear_h3" name="{=hyq1zBg5}Simple Commoner Spear +3" crafting_template="crpg_Spear4DMode" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_simple_commoner_spear_h3" name="{=hyq1zBg5}Noble Hunting Spear +3" crafting_template="crpg_Spear4DMode" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_simple_commoner_spear_blade_h3" Type="Blade" scale_factor="90" />
       <Piece id="crpg_simple_commoner_spear_handle_h3" Type="Handle" scale_factor="85" />
