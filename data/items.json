@@ -22759,10 +22759,10 @@
     "name": "Broad Blade Javelin",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 6642,
-    "weight": 1.11,
+    "price": 5217,
+    "weight": 1.27,
     "rank": 0,
-    "tier": 10.5812321,
+    "tier": 9.248163,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22773,8 +22773,8 @@
         "missileSpeed": 28,
         "stackAmount": 3,
         "length": 87,
-        "balance": 1.0,
-        "handling": 95,
+        "balance": 0.96,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -22785,10 +22785,10 @@
         ],
         "thrustDamage": 40,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 104
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedPolearm",
@@ -22797,19 +22797,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 87,
-        "balance": 0.62,
-        "handling": 92,
+        "balance": 0.48,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 9,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 88
+        "swingSpeed": 84
       }
     ]
   },
@@ -22819,10 +22819,10 @@
     "name": "Broad Blade Javelin +1",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 7477,
-    "weight": 1.11,
+    "price": 5863,
+    "weight": 1.27,
     "rank": 1,
-    "tier": 11.295908,
+    "tier": 9.8728,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22833,8 +22833,8 @@
         "missileSpeed": 28,
         "stackAmount": 3,
         "length": 87,
-        "balance": 1.0,
-        "handling": 95,
+        "balance": 0.96,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -22845,10 +22845,10 @@
         ],
         "thrustDamage": 42,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 104
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedPolearm",
@@ -22857,19 +22857,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 87,
-        "balance": 0.62,
-        "handling": 92,
+        "balance": 0.48,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 9,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 88
+        "swingSpeed": 84
       }
     ]
   },
@@ -22879,10 +22879,10 @@
     "name": "Broad Blade Javelin +2",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 6335,
-    "weight": 1.11,
+    "price": 4979,
+    "weight": 1.27,
     "rank": 2,
-    "tier": 10.30703,
+    "tier": 9.008506,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22893,8 +22893,8 @@
         "missileSpeed": 28,
         "stackAmount": 3,
         "length": 87,
-        "balance": 1.0,
-        "handling": 95,
+        "balance": 0.96,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -22905,10 +22905,10 @@
         ],
         "thrustDamage": 43,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 104
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedPolearm",
@@ -22917,19 +22917,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 87,
-        "balance": 0.62,
-        "handling": 92,
+        "balance": 0.48,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 9,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 88
+        "swingSpeed": 84
       }
     ]
   },
@@ -22939,10 +22939,10 @@
     "name": "Broad Blade Javelin +3",
     "culture": "Sturgia",
     "type": "Thrown",
-    "price": 7417,
-    "weight": 1.11,
+    "price": 5817,
+    "weight": 1.27,
     "rank": 3,
-    "tier": 11.2461624,
+    "tier": 9.829323,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -22953,8 +22953,8 @@
         "missileSpeed": 28,
         "stackAmount": 3,
         "length": 87,
-        "balance": 1.0,
-        "handling": 95,
+        "balance": 0.96,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -22965,10 +22965,10 @@
         ],
         "thrustDamage": 45,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 104
+        "swingSpeed": 98
       },
       {
         "class": "OneHandedPolearm",
@@ -22977,19 +22977,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 87,
-        "balance": 0.62,
-        "handling": 92,
+        "balance": 0.48,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "WideGrip"
         ],
-        "thrustDamage": 11,
+        "thrustDamage": 10,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 93,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 88
+        "swingSpeed": 84
       }
     ]
   },
