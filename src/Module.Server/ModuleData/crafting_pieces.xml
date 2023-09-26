@@ -26195,54 +26195,50 @@
   <CraftingPiece id="crpg_heavy_goedendag_blade_h0" name="{=}Heavy Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_2h_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" weight="1.1">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="1" blade_length="30.5" blade_width="8.5" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="2.8" />
-      <Swing damage_type="Blunt" damage_factor="2.4" />
+      <Thrust damage_type="Pierce" damage_factor="3.2" />
+      <Swing damage_type="Blunt" damage_factor="2.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_goedendag_blade_h1" name="{=}Heavy Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_2h_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" weight="1.0">
+  <CraftingPiece id="crpg_heavy_goedendag_blade_h1" name="{=}Heavy Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_2h_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" weight="1.1">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="1" blade_length="30.5" blade_width="8.5" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="2.8" />
-      <Swing damage_type="Blunt" damage_factor="2.4" />
+      <Thrust damage_type="Pierce" damage_factor="3.3" />
+      <Swing damage_type="Blunt" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_goedendag_blade_h2" name="{=}Heavy Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_2h_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" weight="1.0">
+  <CraftingPiece id="crpg_heavy_goedendag_blade_h2" name="{=}Heavy Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_2h_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" weight="1.05">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="1" blade_length="30.5" blade_width="8.5" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="2.8" />
-      <Swing damage_type="Blunt" damage_factor="2.5" />
+      <Thrust damage_type="Pierce" damage_factor="3.3" />
+      <Swing damage_type="Blunt" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_goedendag_blade_h3" name="{=}Heavy Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_2h_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" weight="1.0">
+  <CraftingPiece id="crpg_heavy_goedendag_blade_h3" name="{=}Heavy Goedendag Head" tier="4" piece_type="Blade" mesh="goedendag_2h_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" weight="1.00">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="1" blade_length="30.5" blade_width="8.5" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="2.8" />
-      <Swing damage_type="Blunt" damage_factor="2.6" />
+      <Thrust damage_type="Pierce" damage_factor="3.3" />
+      <Swing damage_type="Blunt" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="4" />

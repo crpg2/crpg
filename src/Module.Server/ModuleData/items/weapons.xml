@@ -192,25 +192,25 @@
       <Piece id="crpg_military_hammer_handle_h3" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_goedendag_h0" name="{=}Heavy Goedendag" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
+  <CraftedItem id="crpg_heavy_goedendag_v1_h0" name="{=}Heavy Goedendag" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
     <Pieces>
       <Piece id="crpg_heavy_goedendag_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_heavy_goedendag_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_goedendag_h1" name="{=}Heavy Goedendag +1" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
+  <CraftedItem id="crpg_heavy_goedendag_v1_h1" name="{=}Heavy Goedendag +1" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
     <Pieces>
       <Piece id="crpg_heavy_goedendag_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_heavy_goedendag_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_goedendag_h2" name="{=}Heavy Goedendag +2" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
+  <CraftedItem id="crpg_heavy_goedendag_v1_h2" name="{=}Heavy Goedendag +2" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
     <Pieces>
       <Piece id="crpg_heavy_goedendag_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_heavy_goedendag_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_goedendag_h3" name="{=}Heavy Goedendag +3" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
+  <CraftedItem id="crpg_heavy_goedendag_v1_h3" name="{=}Heavy Goedendag +3" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
     <Pieces>
       <Piece id="crpg_heavy_goedendag_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_heavy_goedendag_handle_h3" Type="Handle" scale_factor="100" />
