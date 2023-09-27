@@ -118221,10 +118221,10 @@
     "name": "Pugio",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 13536,
-    "weight": 1.25,
+    "price": 5014,
+    "weight": 1.14,
     "rank": 0,
-    "tier": 14.3477554,
+    "tier": 8.29196548,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -118238,17 +118238,17 @@
         "stackAmount": 0,
         "length": 35,
         "balance": 1.0,
-        "handling": 115,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 28,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 95,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 115
+        "swingSpeed": 117
       },
       {
         "class": "ThrowingKnife",
@@ -118258,7 +118258,7 @@
         "stackAmount": 1,
         "length": 35,
         "balance": 1.0,
-        "handling": 115,
+        "handling": 116,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -118267,12 +118267,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 47,
+        "thrustDamage": 43,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 95,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 115
+        "swingSpeed": 117
       }
     ]
   },
@@ -118282,10 +118282,10 @@
     "name": "Pugio +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 12519,
-    "weight": 1.14,
+    "price": 5617,
+    "weight": 1.01,
     "rank": 1,
-    "tier": 13.7544479,
+    "tier": 8.841497,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -118306,16 +118306,16 @@
         ],
         "thrustDamage": 31,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 117
+        "swingSpeed": 119
       },
       {
         "class": "ThrowingKnife",
         "itemUsage": "throwing_knife",
         "accuracy": 95,
-        "missileSpeed": 31,
+        "missileSpeed": 32,
         "stackAmount": 1,
         "length": 35,
         "balance": 1.0,
@@ -118328,12 +118328,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 48,
+        "thrustDamage": 44,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 117
+        "swingSpeed": 119
       }
     ]
   },
@@ -118343,10 +118343,10 @@
     "name": "Pugio +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 12421,
-    "weight": 1.09,
+    "price": 6240,
+    "weight": 1.01,
     "rank": 2,
-    "tier": 13.6964293,
+    "tier": 9.379011,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -118367,10 +118367,10 @@
         ],
         "thrustDamage": 32,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 118
+        "swingSpeed": 119
       },
       {
         "class": "ThrowingKnife",
@@ -118389,12 +118389,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 49,
+        "thrustDamage": 46,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 118
+        "swingSpeed": 119
       }
     ]
   },
@@ -118404,10 +118404,10 @@
     "name": "Pugio +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 14548,
-    "weight": 1.05,
+    "price": 5867,
+    "weight": 0.96,
     "rank": 3,
-    "tier": 14.915987,
+    "tier": 9.060857,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -118421,17 +118421,17 @@
         "stackAmount": 0,
         "length": 35,
         "balance": 1.0,
-        "handling": 116,
+        "handling": 117,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 35,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 118
+        "swingSpeed": 120
       },
       {
         "class": "ThrowingKnife",
@@ -118441,7 +118441,7 @@
         "stackAmount": 1,
         "length": 35,
         "balance": 1.0,
-        "handling": 116,
+        "handling": 117,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -118450,12 +118450,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 51,
+        "thrustDamage": 47,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 96,
+        "thrustSpeed": 97,
         "swingDamage": 0,
         "swingDamageType": "Undefined",
-        "swingSpeed": 118
+        "swingSpeed": 120
       }
     ]
   },
