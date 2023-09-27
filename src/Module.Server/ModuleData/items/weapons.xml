@@ -4832,7 +4832,7 @@
       <Piece id="crpg_falx_knife_pommel_h3" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pugio_v1_h0" name="{=Yeldur}Pugio" crafting_template="crpg_Dagger" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_pugio_v1_h0" name="{=Yeldur}Pugio (Thrown 43p)" crafting_template="crpg_Dagger" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_pugio_blade_h0" Type="Blade" scale_factor="90" />
       <Piece id="crpg_pugio_guard_h0" Type="Guard" scale_factor="90" />
@@ -4840,7 +4840,7 @@
       <Piece id="crpg_pugio_pommel_h0" Type="Pommel" scale_factor="109" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pugio_v1_h1" name="{=Yeldur}Pugio +1" crafting_template="crpg_Dagger" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_pugio_v1_h1" name="{=Yeldur}Pugio +1 (Thrown 44p)" crafting_template="crpg_Dagger" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_pugio_blade_h1" Type="Blade" scale_factor="90" />
       <Piece id="crpg_pugio_guard_h1" Type="Guard" scale_factor="90" />
@@ -4848,7 +4848,7 @@
       <Piece id="crpg_pugio_pommel_h1" Type="Pommel" scale_factor="109" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pugio_v1_h2" name="{=Yeldur}Pugio +2" crafting_template="crpg_Dagger" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_pugio_v1_h2" name="{=Yeldur}Pugio +2 (Thrown 46p)" crafting_template="crpg_Dagger" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_pugio_blade_h2" Type="Blade" scale_factor="90" />
       <Piece id="crpg_pugio_guard_h2" Type="Guard" scale_factor="90" />
@@ -4856,7 +4856,7 @@
       <Piece id="crpg_pugio_pommel_h2" Type="Pommel" scale_factor="109" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pugio_v1_h3" name="{=Yeldur}Pugio +3" crafting_template="crpg_Dagger" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_pugio_v1_h3" name="{=Yeldur}Pugio +3 (Thrown 47p)" crafting_template="crpg_Dagger" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_pugio_blade_h3" Type="Blade" scale_factor="90" />
       <Piece id="crpg_pugio_guard_h3" Type="Guard" scale_factor="90" />

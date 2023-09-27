@@ -118218,7 +118218,7 @@
   {
     "id": "crpg_pugio_v1_h0",
     "baseId": "crpg_pugio_v1",
-    "name": "Pugio",
+    "name": "Pugio (Thrown 43p)",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 5014,
@@ -118279,7 +118279,7 @@
   {
     "id": "crpg_pugio_v1_h1",
     "baseId": "crpg_pugio_v1",
-    "name": "Pugio +1",
+    "name": "Pugio +1 (Thrown 44p)",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 5617,
@@ -118340,7 +118340,7 @@
   {
     "id": "crpg_pugio_v1_h2",
     "baseId": "crpg_pugio_v1",
-    "name": "Pugio +2",
+    "name": "Pugio +2 (Thrown 46p)",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 6240,
@@ -118401,7 +118401,7 @@
   {
     "id": "crpg_pugio_v1_h3",
     "baseId": "crpg_pugio_v1",
-    "name": "Pugio +3",
+    "name": "Pugio +3 (Thrown 47p)",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 5867,
