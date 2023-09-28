@@ -60048,6 +60048,426 @@
     "weapons": []
   },
   {
+    "id": "crpg_gladius_mainz_h0",
+    "baseId": "crpg_gladius_mainz",
+    "name": "Mainz Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 5166,
+    "weight": 1.66,
+    "rank": 0,
+    "tier": 8.433072,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 68,
+        "balance": 0.74,
+        "handling": 97,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 32,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 29,
+        "swingDamageType": "Cut",
+        "swingSpeed": 92
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_mainz_h1",
+    "baseId": "crpg_gladius_mainz",
+    "name": "Mainz Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 4016,
+    "weight": 1.66,
+    "rank": 1,
+    "tier": 7.304232,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 68,
+        "balance": 0.74,
+        "handling": 97,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 33,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 29,
+        "swingDamageType": "Cut",
+        "swingSpeed": 92
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_mainz_h2",
+    "baseId": "crpg_gladius_mainz",
+    "name": "Mainz Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 3652,
+    "weight": 1.66,
+    "rank": 2,
+    "tier": 6.914077,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 68,
+        "balance": 0.74,
+        "handling": 97,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 33,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 30,
+        "swingDamageType": "Cut",
+        "swingSpeed": 92
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_mainz_h3",
+    "baseId": "crpg_gladius_mainz",
+    "name": "Mainz Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 4266,
+    "weight": 1.66,
+    "rank": 3,
+    "tier": 7.56196356,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 68,
+        "balance": 0.74,
+        "handling": 97,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 35,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 31,
+        "swingDamageType": "Cut",
+        "swingSpeed": 92
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_pompeian_h0",
+    "baseId": "crpg_gladius_pompeian",
+    "name": "Pompeian Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 4250,
+    "weight": 1.68,
+    "rank": 0,
+    "tier": 7.545569,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 58,
+        "balance": 0.86,
+        "handling": 102,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 34,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 27,
+        "swingDamageType": "Cut",
+        "swingSpeed": 95
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_pompeian_h1",
+    "baseId": "crpg_gladius_pompeian",
+    "name": "Pompeian Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 4326,
+    "weight": 1.68,
+    "rank": 1,
+    "tier": 7.6230607,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 58,
+        "balance": 0.86,
+        "handling": 102,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 35,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 27,
+        "swingDamageType": "Cut",
+        "swingSpeed": 95
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_pompeian_h2",
+    "baseId": "crpg_gladius_pompeian",
+    "name": "Pompeian Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 4736,
+    "weight": 1.68,
+    "rank": 2,
+    "tier": 8.027646,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 58,
+        "balance": 0.86,
+        "handling": 102,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 36,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 28,
+        "swingDamageType": "Cut",
+        "swingSpeed": 95
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_pompeian_h3",
+    "baseId": "crpg_gladius_pompeian",
+    "name": "Pompeian Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 5262,
+    "weight": 1.68,
+    "rank": 3,
+    "tier": 8.521927,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 58,
+        "balance": 0.86,
+        "handling": 102,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 37,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 29,
+        "swingDamageType": "Cut",
+        "swingSpeed": 95
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_republican_h0",
+    "baseId": "crpg_gladius_republican",
+    "name": "Republican Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 3825,
+    "weight": 1.57,
+    "rank": 0,
+    "tier": 7.10160971,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.71,
+        "handling": 96,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 30,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 27,
+        "swingDamageType": "Cut",
+        "swingSpeed": 91
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_republican_h1",
+    "baseId": "crpg_gladius_republican",
+    "name": "Republican Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 3001,
+    "weight": 1.57,
+    "rank": 1,
+    "tier": 6.16413641,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.71,
+        "handling": 96,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 31,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 27,
+        "swingDamageType": "Cut",
+        "swingSpeed": 91
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_republican_h2",
+    "baseId": "crpg_gladius_republican",
+    "name": "Republican Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 3022,
+    "weight": 1.57,
+    "rank": 2,
+    "tier": 6.1897,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.71,
+        "handling": 96,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 32,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 28,
+        "swingDamageType": "Cut",
+        "swingSpeed": 91
+      }
+    ]
+  },
+  {
+    "id": "crpg_gladius_republican_h3",
+    "baseId": "crpg_gladius_republican",
+    "name": "Republican Gladius",
+    "culture": "Empire",
+    "type": "OneHandedWeapon",
+    "price": 4603,
+    "weight": 1.57,
+    "rank": 3,
+    "tier": 7.89819241,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "OneHandedSword",
+        "itemUsage": "onehanded_block_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 78,
+        "balance": 0.71,
+        "handling": 96,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon"
+        ],
+        "thrustDamage": 34,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 29,
+        "swingDamageType": "Cut",
+        "swingSpeed": 91
+      }
+    ]
+  },
+  {
     "id": "crpg_glaive_v1_h0",
     "baseId": "crpg_glaive_v1",
     "name": "Glaive",
