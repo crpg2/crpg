@@ -30980,7 +30980,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_rondel_reverse_blade_h0" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse" full_scale="true" length="31.4" weight="0.3">
+  <CraftingPiece id="crpg_rondel_reverse_blade_h0" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse"  length="31.4" weight="0.3">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="3.8" />
       <Swing damage_type="Pierce" damage_factor="3.8" />
@@ -30992,7 +30992,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_rondel_reverse_blade_h1" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse" full_scale="true" length="31.4" weight="0.3">
+  <CraftingPiece id="crpg_rondel_reverse_blade_h1" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse"  length="31.4" weight="0.3">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="3.8" />
       <Swing damage_type="Pierce" damage_factor="3.8" />
@@ -31004,7 +31004,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_rondel_reverse_blade_h2" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse" full_scale="true" length="31.4" weight="0.3">
+  <CraftingPiece id="crpg_rondel_reverse_blade_h2" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse" length="31.4" weight="0.3">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="3.8" />
       <Swing damage_type="Pierce" damage_factor="3.8" />
@@ -31016,7 +31016,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_rondel_reverse_blade_h3" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse" full_scale="true" length="31.4" weight="0.3">
+  <CraftingPiece id="crpg_rondel_reverse_blade_h3" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse"  length="31.4" weight="0.3">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="3.8" />
       <Swing damage_type="Pierce" damage_factor="3.8" />
