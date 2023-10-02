@@ -132315,10 +132315,10 @@
     "name": "Rondel_Reverse",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2408053,
-    "weight": 1.2,
+    "price": 2780643,
+    "weight": 1.13,
     "rank": 0,
-    "tier": 205.553711,
+    "tier": 220.971191,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -132339,10 +132339,10 @@
         ],
         "thrustDamage": 38,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 95,
         "swingDamage": 38,
         "swingDamageType": "Pierce",
-        "swingSpeed": 120
+        "swingSpeed": 121
       }
     ]
   },
@@ -132352,10 +132352,10 @@
     "name": "Rondel_Reverse",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1648626,
-    "weight": 1.2,
+    "price": 1903400,
+    "weight": 1.13,
     "rank": 1,
-    "tier": 169.879135,
+    "tier": 182.62085,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -132376,10 +132376,10 @@
         ],
         "thrustDamage": 38,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 95,
         "swingDamage": 38,
         "swingDamageType": "Pierce",
-        "swingSpeed": 120
+        "swingSpeed": 121
       }
     ]
   },
@@ -132389,10 +132389,10 @@
     "name": "Rondel_Reverse",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1167052,
-    "weight": 1.2,
+    "price": 1347165,
+    "weight": 1.13,
     "rank": 2,
-    "tier": 142.745651,
+    "tier": 153.45224,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -132413,10 +132413,10 @@
         ],
         "thrustDamage": 38,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 95,
         "swingDamage": 38,
         "swingDamageType": "Pierce",
-        "swingSpeed": 120
+        "swingSpeed": 121
       }
     ]
   },
@@ -132426,10 +132426,10 @@
     "name": "Rondel_Reverse",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 849689,
-    "weight": 1.2,
+    "price": 980632,
+    "weight": 1.13,
     "rank": 3,
-    "tier": 121.629471,
+    "tier": 130.752182,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -132450,10 +132450,10 @@
         ],
         "thrustDamage": 38,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 94,
+        "thrustSpeed": 95,
         "swingDamage": 38,
         "swingDamageType": "Pierce",
-        "swingSpeed": 120
+        "swingSpeed": 121
       }
     ]
   },
