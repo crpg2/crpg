@@ -80194,13 +80194,13 @@
   {
     "id": "crpg_ironrod_h0",
     "baseId": "crpg_ironrod",
-    "name": "Ironrod",
+    "name": "Iron Rod",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 3986,
-    "weight": 2.67,
+    "price": 5609,
+    "weight": 2.55,
     "rank": 0,
-    "tier": 4.84675264,
+    "tier": 5.94031763,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -80210,9 +80210,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
-        "balance": 0.36,
-        "handling": 62,
+        "length": 130,
+        "balance": 0.39,
+        "handling": 64,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -80221,25 +80221,25 @@
           "TwoHandIdleOnMount",
           "NoBlood"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 20,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 87,
-        "swingDamage": 25,
+        "thrustSpeed": 88,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 80
+        "swingSpeed": 81
       }
     ]
   },
   {
     "id": "crpg_ironrod_h1",
     "baseId": "crpg_ironrod",
-    "name": "Ironrod",
+    "name": "Iron Rod",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 2921,
-    "weight": 2.67,
+    "price": 5865,
+    "weight": 2.55,
     "rank": 1,
-    "tier": 4.00558,
+    "tier": 6.098267,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -80249,9 +80249,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
-        "balance": 0.36,
-        "handling": 62,
+        "length": 130,
+        "balance": 0.39,
+        "handling": 64,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -80260,25 +80260,25 @@
           "TwoHandIdleOnMount",
           "NoBlood"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 22,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 87,
+        "thrustSpeed": 88,
         "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 80
+        "swingSpeed": 81
       }
     ]
   },
   {
     "id": "crpg_ironrod_h2",
     "baseId": "crpg_ironrod",
-    "name": "Ironrod",
+    "name": "Iron Rod",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 2219,
-    "weight": 2.67,
+    "price": 6495,
+    "weight": 2.44,
     "rank": 2,
-    "tier": 3.36579943,
+    "tier": 6.471701,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -80288,9 +80288,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
-        "balance": 0.36,
-        "handling": 62,
+        "length": 130,
+        "balance": 0.43,
+        "handling": 65,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -80299,25 +80299,25 @@
           "TwoHandIdleOnMount",
           "NoBlood"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 22,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 87,
+        "thrustSpeed": 89,
         "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 80
+        "swingSpeed": 83
       }
     ]
   },
   {
     "id": "crpg_ironrod_h3",
     "baseId": "crpg_ironrod",
-    "name": "Ironrod",
+    "name": "Iron Rod",
     "culture": "Neutral",
     "type": "Polearm",
-    "price": 1737,
-    "weight": 2.67,
+    "price": 7131,
+    "weight": 2.44,
     "rank": 3,
-    "tier": 2.86790085,
+    "tier": 6.83130169,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -80327,9 +80327,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 116,
-        "balance": 0.36,
-        "handling": 62,
+        "length": 130,
+        "balance": 0.43,
+        "handling": 65,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -80338,12 +80338,12 @@
           "TwoHandIdleOnMount",
           "NoBlood"
         ],
-        "thrustDamage": 21,
+        "thrustDamage": 24,
         "thrustDamageType": "Blunt",
-        "thrustSpeed": 87,
-        "swingDamage": 25,
+        "thrustSpeed": 89,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 80
+        "swingSpeed": 83
       }
     ]
   },

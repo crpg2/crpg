@@ -31742,8 +31742,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_ironrod_blade_h0" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Blunt" damage_factor="2.1" />
-      <Swing damage_type="Blunt" damage_factor="2.5" />
+      <Thrust damage_type="Blunt" damage_factor="2.0" />
+      <Swing damage_type="Blunt" damage_factor="2.4" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
@@ -31754,7 +31754,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_ironrod_blade_h1" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Blunt" damage_factor="2.1" />
+      <Thrust damage_type="Blunt" damage_factor="2.2" />
       <Swing damage_type="Blunt" damage_factor="2.5" />
     </BladeData>
     <Materials>
@@ -31766,7 +31766,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_ironrod_blade_h2" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Blunt" damage_factor="2.1" />
+      <Thrust damage_type="Blunt" damage_factor="2.2" />
       <Swing damage_type="Blunt" damage_factor="2.5" />
     </BladeData>
     <Materials>
@@ -31778,8 +31778,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_ironrod_blade_h3" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Blunt" damage_factor="2.1" />
-      <Swing damage_type="Blunt" damage_factor="2.5" />
+      <Thrust damage_type="Blunt" damage_factor="2.4" />
+      <Swing damage_type="Blunt" damage_factor="2.6" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
@@ -31788,25 +31788,25 @@
       <Flag name="NoBlood" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ironrod_handle_h0" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.67" excluded_item_usage_features="long" is_default="true">
+  <CraftingPiece id="crpg_ironrod_handle_h0" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.3" excluded_item_usage_features="long" is_default="true">
     <BuildData piece_offset="14.9" />
     <Materials>
       <Material id="Metal" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ironrod_handle_h1" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.67" excluded_item_usage_features="long" is_default="true">
+  <CraftingPiece id="crpg_ironrod_handle_h1" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.3" excluded_item_usage_features="long" is_default="true">
     <BuildData piece_offset="14.9" />
     <Materials>
       <Material id="Metal" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ironrod_handle_h2" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.67" excluded_item_usage_features="long" is_default="true">
+  <CraftingPiece id="crpg_ironrod_handle_h2" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.2" excluded_item_usage_features="long" is_default="true">
     <BuildData piece_offset="14.9" />
     <Materials>
       <Material id="Metal" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ironrod_handle_h3" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.67" excluded_item_usage_features="long" is_default="true">
+  <CraftingPiece id="crpg_ironrod_handle_h3" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.2" excluded_item_usage_features="long" is_default="true">
     <BuildData piece_offset="14.9" />
     <Materials>
       <Material id="Metal" count="1" />
