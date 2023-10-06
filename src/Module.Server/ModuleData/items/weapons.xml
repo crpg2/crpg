@@ -4020,7 +4020,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="common_hunting_bow_h0" name="{=wltdyF2j}Common Hunting Bow" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.301667" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_h0" name="{=wltdyF2j}Common Hunting Bow" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.301667" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="92" speed_rating="82" missile_speed="71" weapon_length="110" accuracy="125" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="long_bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -4028,7 +4028,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="common_hunting_bow_h1" name="{=wltdyF2j}Common Hunting Bow +1" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.183333" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_h1" name="{=wltdyF2j}Common Hunting Bow +1" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.183333" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="94" speed_rating="85" missile_speed="80" weapon_length="110" accuracy="125" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -4036,7 +4036,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="common_hunting_bow_h2" name="{=wltdyF2j}Common Hunting Bow +2" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.084722" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_h2" name="{=wltdyF2j}Common Hunting Bow +2" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.084722" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="98" speed_rating="85" missile_speed="80" weapon_length="110" accuracy="128" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -4044,7 +4044,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="common_hunting_bow_h3" name="{=wltdyF2j}Common Hunting Bow +3" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.001282" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_h3" name="{=wltdyF2j}Common Hunting Bow +3" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.001282" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="98" speed_rating="85" missile_speed="80" weapon_length="110" accuracy="134" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" UnloadWhenSheathed="true" />
@@ -4052,7 +4052,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="common_hunting_bow_h0" name="{=wltdyF2j}Common Hunting Bow" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.301667" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_h0" name="{=wltdyF2j}Common Hunting Bow" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.301667" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="92" speed_rating="82" missile_speed="71" weapon_length="110" accuracy="125" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="long_bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
@@ -4060,7 +4060,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="common_hunting_bow_h1" name="{=wltdyF2j}Common Hunting Bow +1" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.183333" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_h1" name="{=wltdyF2j}Common Hunting Bow +1" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.183333" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="94" speed_rating="85" missile_speed="80" weapon_length="110" accuracy="125" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
@@ -4068,7 +4068,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="common_hunting_bow_h2" name="{=wltdyF2j}Common Hunting Bow +2" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.084722" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_h2" name="{=wltdyF2j}Common Hunting Bow +2" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.084722" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="98" speed_rating="85" missile_speed="80" weapon_length="110" accuracy="128" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
@@ -4076,7 +4076,7 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="common_hunting_bow_h3" name="{=wltdyF2j}Common Hunting Bow +3" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.001282" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
+  <Item id="crpg_common_hunting_bow_h3" name="{=wltdyF2j}Common Hunting Bow +3" body_name="bo_composite_shotbow_h" mesh="shortbow_h" culture="Culture.battania" weight="1.001282" difficulty="0" appearance="1" Type="Bow" item_holsters="bow_hip:bow_hip_2:bow_back:bow_back_2">
     <ItemComponent>
       <Weapon weapon_class="Bow" ammo_class="Arrow" ammo_limit="1" thrust_speed="98" speed_rating="85" missile_speed="80" weapon_length="110" accuracy="134" thrust_damage="14" thrust_damage_type="Pierce" item_usage="bow" physics_material="wood_weapon" center_of_mass="0.1,0,-0.15" modifier_group="bow">
         <WeaponFlags RangedWeapon="true" HasString="true" StringHeldByHand="true" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" AutoReload="true" UnloadWhenSheathed="true" />
