@@ -31792,28 +31792,28 @@
       <Material id="Metal" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_jian_blade_h0" name="{=}Jian Blade" tier="4" piece_type="Blade" mesh="jian_blade" culture="Culture.battania" length="107" weight="1.0">
+  <CraftingPiece id="crpg_jian_blade_h0" name="{=}Jian Blade" tier="4" piece_type="Blade" mesh="jian_blade" culture="Culture.battania" length="107" weight="1.44">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_jian_blade_h1" name="{=}Jian Blade" tier="4" piece_type="Blade" mesh="jian_blade" culture="Culture.battania" length="107" weight="1.0">
+  <CraftingPiece id="crpg_jian_blade_h1" name="{=}Jian Blade" tier="4" piece_type="Blade" mesh="jian_blade" culture="Culture.battania" length="107" weight="1.41">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_jian_blade_h2" name="{=}Jian Blade" tier="4" piece_type="Blade" mesh="jian_blade" culture="Culture.battania" length="107" weight="1.0">
+  <CraftingPiece id="crpg_jian_blade_h2" name="{=}Jian Blade" tier="4" piece_type="Blade" mesh="jian_blade" culture="Culture.battania" length="107" weight="1.41">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_jian_blade_h3" name="{=}Jian Blade" tier="4" piece_type="Blade" mesh="jian_blade" culture="Culture.battania" length="107" weight="1.0">
+  <CraftingPiece id="crpg_jian_blade_h3" name="{=}Jian Blade" tier="4" piece_type="Blade" mesh="jian_blade" culture="Culture.battania" length="107" weight="1.35">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_jian_pommel_h0" name="{=}Jian Pommel" tier="4" piece_type="Pommel" mesh="jian_pommel" culture="Culture.battania" length="1.6" weight="0.12">

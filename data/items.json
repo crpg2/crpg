@@ -83293,10 +83293,10 @@
     "name": "Jian",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 80,
-    "weight": 1.32,
+    "price": 6739,
+    "weight": 1.44,
     "rank": 0,
-    "tier": 0.213496044,
+    "tier": 9.791136,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -83306,17 +83306,17 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 128,
-        "balance": 0.4,
-        "handling": 82,
+        "length": 109,
+        "balance": 0.42,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 19,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 13,
+        "thrustSpeed": 91,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
         "swingSpeed": 82
       }
@@ -83328,10 +83328,10 @@
     "name": "Jian",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 74,
-    "weight": 1.32,
+    "price": 6264,
+    "weight": 1.42,
     "rank": 1,
-    "tier": 0.176443025,
+    "tier": 9.399458,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -83341,19 +83341,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 128,
-        "balance": 0.4,
-        "handling": 82,
+        "length": 109,
+        "balance": 0.43,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 13,
+        "thrustSpeed": 91,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 83
       }
     ]
   },
@@ -83363,10 +83363,10 @@
     "name": "Jian",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 70,
-    "weight": 1.32,
+    "price": 6899,
+    "weight": 1.42,
     "rank": 2,
-    "tier": 0.14826113,
+    "tier": 9.919757,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -83376,19 +83376,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 128,
-        "balance": 0.4,
-        "handling": 82,
+        "length": 109,
+        "balance": 0.43,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 13,
+        "thrustSpeed": 91,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 83
       }
     ]
   },
@@ -83398,10 +83398,10 @@
     "name": "Jian",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
-    "price": 67,
-    "weight": 1.32,
+    "price": 6707,
+    "weight": 1.37,
     "rank": 3,
-    "tier": 0.12632902,
+    "tier": 9.764719,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -83411,19 +83411,19 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 128,
-        "balance": 0.4,
-        "handling": 82,
+        "length": 109,
+        "balance": 0.48,
+        "handling": 84,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 92,
-        "swingDamage": 13,
+        "swingDamage": 37,
         "swingDamageType": "Cut",
-        "swingSpeed": 82
+        "swingSpeed": 84
       }
     ]
   },

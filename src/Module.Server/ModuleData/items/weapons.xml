@@ -12688,36 +12688,36 @@
       <Piece id="crpg_fangtian_ji_pommel_h3" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_jian_h0" name="{=}Jian" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_jian_h0" name="{=kaikaikai}Jian" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_jian_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_jian_guard_h0" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_jian_handle_h0" Type="Handle" scale_factor="100" />
-      <Piece id="crpg_jian_pommel_h0" Type="Pommel" scale_factor="100" />
+      <Piece id="crpg_jian_blade_h0" Type="Blade" scale_factor="85" />
+      <Piece id="crpg_jian_guard_h0" Type="Guard" scale_factor="85" />
+      <Piece id="crpg_jian_handle_h0" Type="Handle" scale_factor="85" />
+      <Piece id="crpg_jian_pommel_h0" Type="Pommel" scale_factor="85" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_jian_h1" name="{=}Jian" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_jian_h1" name="{=kaikaikai}Jian" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_jian_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_jian_guard_h1" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_jian_handle_h1" Type="Handle" scale_factor="100" />
-      <Piece id="crpg_jian_pommel_h1" Type="Pommel" scale_factor="100" />
+      <Piece id="crpg_jian_blade_h1" Type="Blade" scale_factor="85" />
+      <Piece id="crpg_jian_guard_h1" Type="Guard" scale_factor="85" />
+      <Piece id="crpg_jian_handle_h1" Type="Handle" scale_factor="85" />
+      <Piece id="crpg_jian_pommel_h1" Type="Pommel" scale_factor="85" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_jian_h2" name="{=}Jian" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_jian_h2" name="{=kaikaikai}Jian" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_jian_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_jian_guard_h2" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_jian_handle_h2" Type="Handle" scale_factor="100" />
-      <Piece id="crpg_jian_pommel_h2" Type="Pommel" scale_factor="100" />
+      <Piece id="crpg_jian_blade_h2" Type="Blade" scale_factor="85" />
+      <Piece id="crpg_jian_guard_h2" Type="Guard" scale_factor="85" />
+      <Piece id="crpg_jian_handle_h2" Type="Handle" scale_factor="85" />
+      <Piece id="crpg_jian_pommel_h2" Type="Pommel" scale_factor="85" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_jian_h3" name="{=}Jian" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_jian_h3" name="{=kaikaikai}Jian" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_jian_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_jian_guard_h3" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_jian_handle_h3" Type="Handle" scale_factor="100" />
-      <Piece id="crpg_jian_pommel_h3" Type="Pommel" scale_factor="100" />
+      <Piece id="crpg_jian_blade_h3" Type="Blade" scale_factor="85" />
+      <Piece id="crpg_jian_guard_h3" Type="Guard" scale_factor="85" />
+      <Piece id="crpg_jian_handle_h3" Type="Handle" scale_factor="85" />
+      <Piece id="crpg_jian_pommel_h3" Type="Pommel" scale_factor="85" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_ironrod_h0" name="{=Yeldur}Iron Rod" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
