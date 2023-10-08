@@ -31076,10 +31076,10 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shep_damast_blade_h0" name="{=}Elegant Shepherd Axe Blade" tier="2" piece_type="Blade" mesh="sherpas_damasc_blade" length="9.41" weight="0.45">
+  <CraftingPiece id="crpg_shep_damast_blade_h0" name="{=}Elegant Shepherd Axe Blade" tier="2" piece_type="Blade" mesh="sherpas_damasc_blade" length="9.41" weight="0.60">
     <BuildData piece_offset="-3.0" />
     <BladeData stack_amount="2" blade_length="6.6" blade_width="24.7" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -31089,10 +31089,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shep_damast_blade_h1" name="{=}Elegant Shepherd Axe Blade" tier="2" piece_type="Blade" mesh="sherpas_damasc_blade" length="9.41" weight="0.45">
+  <CraftingPiece id="crpg_shep_damast_blade_h1" name="{=}Elegant Shepherd Axe Blade" tier="2" piece_type="Blade" mesh="sherpas_damasc_blade" length="9.41" weight="0.60">
     <BuildData piece_offset="-3.0" />
     <BladeData stack_amount="2" blade_length="6.6" blade_width="24.7" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -31102,10 +31102,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shep_damast_blade_h2" name="{=}Elegant Shepherd Axe Blade" tier="2" piece_type="Blade" mesh="sherpas_damasc_blade" length="9.41" weight="0.45">
+  <CraftingPiece id="crpg_shep_damast_blade_h2" name="{=}Elegant Shepherd Axe Blade" tier="2" piece_type="Blade" mesh="sherpas_damasc_blade" length="9.41" weight="0.60">
     <BuildData piece_offset="-3.0" />
     <BladeData stack_amount="2" blade_length="6.6" blade_width="24.7" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -31115,10 +31115,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_shep_damast_blade_h3" name="{=}Elegant Shepherd Axe Blade" tier="2" piece_type="Blade" mesh="sherpas_damasc_blade" length="9.41" weight="0.45">
+  <CraftingPiece id="crpg_shep_damast_blade_h3" name="{=}Elegant Shepherd Axe Blade" tier="2" piece_type="Blade" mesh="sherpas_damasc_blade" length="9.41" weight="0.59">
     <BuildData piece_offset="-3.0" />
     <BladeData stack_amount="2" blade_length="6.6" blade_width="24.7" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />

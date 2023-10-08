@@ -142837,10 +142837,10 @@
     "name": "Elegant Shepherd Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 3558,
-    "weight": 0.92,
+    "price": 5881,
+    "weight": 1.2,
     "rank": 0,
-    "tier": 6.809275,
+    "tier": 9.073133,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142852,9 +142852,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 82,
-        "balance": 0.99,
-        "handling": 96,
+        "length": 105,
+        "balance": 0.36,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -142862,10 +142862,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 25,
+        "thrustSpeed": 93,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 99
+        "swingSpeed": 80
       }
     ]
   },
@@ -142875,10 +142875,10 @@
     "name": "Elegant Shepherd Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 2574,
-    "weight": 0.92,
+    "price": 5064,
+    "weight": 1.2,
     "rank": 1,
-    "tier": 5.62749863,
+    "tier": 8.338434,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142890,9 +142890,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 82,
-        "balance": 0.99,
-        "handling": 96,
+        "length": 105,
+        "balance": 0.36,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -142900,10 +142900,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 25,
+        "thrustSpeed": 93,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 99
+        "swingSpeed": 80
       }
     ]
   },
@@ -142913,10 +142913,10 @@
     "name": "Elegant Shepherd Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 1931,
-    "weight": 0.92,
+    "price": 5347,
+    "weight": 1.2,
     "rank": 2,
-    "tier": 4.728662,
+    "tier": 8.599066,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142928,9 +142928,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 82,
-        "balance": 0.99,
-        "handling": 96,
+        "length": 105,
+        "balance": 0.36,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -142938,10 +142938,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 25,
+        "thrustSpeed": 93,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 99
+        "swingSpeed": 80
       }
     ]
   },
@@ -142951,10 +142951,10 @@
     "name": "Elegant Shepherd Axe",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
-    "price": 1494,
-    "weight": 0.92,
+    "price": 5823,
+    "weight": 1.19,
     "rank": 3,
-    "tier": 4.02915525,
+    "tier": 9.022679,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -142966,9 +142966,9 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 82,
-        "balance": 0.99,
-        "handling": 96,
+        "length": 105,
+        "balance": 0.38,
+        "handling": 79,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -142976,10 +142976,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 25,
+        "thrustSpeed": 93,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 99
+        "swingSpeed": 81
       }
     ]
   },

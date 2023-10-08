@@ -12378,29 +12378,29 @@
   </CraftedItem>
   <CraftedItem id="crpg_shep_damast_h0" name="Elegant Shepherd Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_shep_damast_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shep_damast_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_shep_damast_blade_h0" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_shep_damast_handle_h0" Type="Handle" scale_factor="131" />
       <Piece id="crpg_shep_damast_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_shep_damast_h1" name="Elegant Shepherd Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_shep_damast_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shep_damast_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_shep_damast_blade_h1" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_shep_damast_handle_h1" Type="Handle" scale_factor="131" />
       <Piece id="crpg_shep_damast_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_shep_damast_h2" name="Elegant Shepherd Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_shep_damast_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shep_damast_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_shep_damast_blade_h2" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_shep_damast_handle_h2" Type="Handle" scale_factor="131" />
       <Piece id="crpg_shep_damast_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_shep_damast_h3" name="Elegant Shepherd Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_shep_damast_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_shep_damast_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_shep_damast_blade_h3" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_shep_damast_handle_h3" Type="Handle" scale_factor="131" />
       <Piece id="crpg_shep_damast_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
