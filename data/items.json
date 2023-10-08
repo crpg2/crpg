@@ -52135,10 +52135,10 @@
     "name": "Fangtian Ji",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 1810,
-    "weight": 2.58,
+    "price": 13991,
+    "weight": 2.53,
     "rank": 0,
-    "tier": 2.94700313,
+    "tier": 9.996742,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -52149,8 +52149,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 169,
-        "balance": 0.19,
-        "handling": 68,
+        "balance": 0.25,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -52158,12 +52158,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 33,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 77
       }
     ]
   },
@@ -52173,10 +52173,10 @@
     "name": "Fangtian Ji",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 1363,
-    "weight": 2.58,
+    "price": 14102,
+    "weight": 2.51,
     "rank": 1,
-    "tier": 2.43553972,
+    "tier": 10.04069,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -52187,8 +52187,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 169,
-        "balance": 0.19,
-        "handling": 68,
+        "balance": 0.27,
+        "handling": 70,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -52196,12 +52196,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 33,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 78
       }
     ]
   },
@@ -52211,10 +52211,10 @@
     "name": "Fangtian Ji",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 1063,
-    "weight": 2.58,
+    "price": 13388,
+    "weight": 2.48,
     "rank": 2,
-    "tier": 2.04653,
+    "tier": 9.755415,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -52225,8 +52225,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 169,
-        "balance": 0.19,
-        "handling": 68,
+        "balance": 0.29,
+        "handling": 71,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -52234,12 +52234,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 33,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 78
       }
     ]
   },
@@ -52249,10 +52249,10 @@
     "name": "Fangtian Ji",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 854,
-    "weight": 2.58,
+    "price": 13615,
+    "weight": 2.48,
     "rank": 3,
-    "tier": 1.743789,
+    "tier": 9.846613,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -52263,8 +52263,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 169,
-        "balance": 0.19,
-        "handling": 68,
+        "balance": 0.29,
+        "handling": 71,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -52272,12 +52272,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 26,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 89,
-        "swingDamage": 33,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 75
+        "swingSpeed": 78
       }
     ]
   },
@@ -102788,166 +102788,6 @@
     ]
   },
   {
-    "id": "crpg_meowaxe_h0",
-    "baseId": "crpg_meowaxe",
-    "name": "Meowaxe",
-    "culture": "Battania",
-    "type": "Polearm",
-    "price": 1194666,
-    "weight": 1.84,
-    "rank": 0,
-    "tier": 101.610207,
-    "requirement": 0,
-    "flags": [
-      "CanBePickedUpFromCorpse"
-    ],
-    "weapons": [
-      {
-        "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 110,
-        "balance": 1.0,
-        "handling": 88,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "WideGrip",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 95,
-        "swingDamage": 47,
-        "swingDamageType": "Cut",
-        "swingSpeed": 101
-      }
-    ]
-  },
-  {
-    "id": "crpg_meowaxe_h1",
-    "baseId": "crpg_meowaxe",
-    "name": "Meowaxe",
-    "culture": "Battania",
-    "type": "Polearm",
-    "price": 819835,
-    "weight": 1.84,
-    "rank": 1,
-    "tier": 83.97539,
-    "requirement": 0,
-    "flags": [
-      "CanBePickedUpFromCorpse"
-    ],
-    "weapons": [
-      {
-        "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 110,
-        "balance": 1.0,
-        "handling": 88,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "WideGrip",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 95,
-        "swingDamage": 47,
-        "swingDamageType": "Cut",
-        "swingSpeed": 101
-      }
-    ]
-  },
-  {
-    "id": "crpg_meowaxe_h2",
-    "baseId": "crpg_meowaxe",
-    "name": "Meowaxe",
-    "culture": "Battania",
-    "type": "Polearm",
-    "price": 581847,
-    "weight": 1.84,
-    "rank": 2,
-    "tier": 70.56263,
-    "requirement": 0,
-    "flags": [
-      "CanBePickedUpFromCorpse"
-    ],
-    "weapons": [
-      {
-        "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 110,
-        "balance": 1.0,
-        "handling": 88,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "WideGrip",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 95,
-        "swingDamage": 47,
-        "swingDamageType": "Cut",
-        "swingSpeed": 101
-      }
-    ]
-  },
-  {
-    "id": "crpg_meowaxe_h3",
-    "baseId": "crpg_meowaxe",
-    "name": "Meowaxe",
-    "culture": "Battania",
-    "type": "Polearm",
-    "price": 424797,
-    "weight": 1.84,
-    "rank": 3,
-    "tier": 60.12437,
-    "requirement": 0,
-    "flags": [
-      "CanBePickedUpFromCorpse"
-    ],
-    "weapons": [
-      {
-        "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 110,
-        "balance": 1.0,
-        "handling": 88,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "WideGrip",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 95,
-        "swingDamage": 47,
-        "swingDamageType": "Cut",
-        "swingSpeed": 101
-      }
-    ]
-  },
-  {
     "id": "crpg_meowdao_h0",
     "baseId": "crpg_meowdao",
     "name": "Meowdao",
@@ -118120,6 +117960,166 @@
     "weapons": []
   },
   {
+    "id": "crpg_Norse_Battle_Axe_h0",
+    "baseId": "crpg_Norse_Battle_Axe",
+    "name": "Norse Battle Axe",
+    "culture": "Battania",
+    "type": "Polearm",
+    "price": 12431,
+    "weight": 2.58,
+    "rank": 0,
+    "tier": 9.360576,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 110,
+        "balance": 0.46,
+        "handling": 73,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 44,
+        "swingDamageType": "Cut",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_Norse_Battle_Axe_h1",
+    "baseId": "crpg_Norse_Battle_Axe",
+    "name": "Norse Battle Axe",
+    "culture": "Battania",
+    "type": "Polearm",
+    "price": 12687,
+    "weight": 2.55,
+    "rank": 1,
+    "tier": 9.467926,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 110,
+        "balance": 0.48,
+        "handling": 73,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 45,
+        "swingDamageType": "Cut",
+        "swingSpeed": 84
+      }
+    ]
+  },
+  {
+    "id": "crpg_Norse_Battle_Axe_h2",
+    "baseId": "crpg_Norse_Battle_Axe",
+    "name": "Norse Battle Axe",
+    "culture": "Battania",
+    "type": "Polearm",
+    "price": 12986,
+    "weight": 2.55,
+    "rank": 2,
+    "tier": 9.591462,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 110,
+        "balance": 0.48,
+        "handling": 73,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 47,
+        "swingDamageType": "Cut",
+        "swingSpeed": 84
+      }
+    ]
+  },
+  {
+    "id": "crpg_Norse_Battle_Axe_h3",
+    "baseId": "crpg_Norse_Battle_Axe",
+    "name": "Norse Battle Axe",
+    "culture": "Battania",
+    "type": "Polearm",
+    "price": 13441,
+    "weight": 2.55,
+    "rank": 3,
+    "tier": 9.77649,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 110,
+        "balance": 0.48,
+        "handling": 73,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 49,
+        "swingDamageType": "Cut",
+        "swingSpeed": 84
+      }
+    ]
+  },
+  {
     "id": "crpg_norse_huscarl_axe_h0",
     "baseId": "crpg_norse_huscarl_axe",
     "name": "Norse Huscarl Axe",
@@ -128697,10 +128697,10 @@
     "name": "Pudao",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 39989,
-    "weight": 2.74,
+    "price": 13799,
+    "weight": 3.2,
     "rank": 0,
-    "tier": 17.6607456,
+    "tier": 9.920314,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -128711,8 +128711,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 143,
-        "balance": 0.75,
-        "handling": 87,
+        "balance": 0.39,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -128720,12 +128720,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 33,
+        "thrustSpeed": 86,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 81
       }
     ]
   },
@@ -128735,10 +128735,10 @@
     "name": "Pudao",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 27997,
-    "weight": 2.74,
+    "price": 13397,
+    "weight": 3.15,
     "rank": 1,
-    "tier": 14.5956593,
+    "tier": 9.759034,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -128749,8 +128749,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 143,
-        "balance": 0.75,
-        "handling": 87,
+        "balance": 0.43,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -128758,12 +128758,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 33,
+        "thrustSpeed": 86,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 82
       }
     ]
   },
@@ -128773,10 +128773,10 @@
     "name": "Pudao",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 20300,
-    "weight": 2.74,
+    "price": 13935,
+    "weight": 3.15,
     "rank": 2,
-    "tier": 12.2644043,
+    "tier": 9.974273,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -128787,8 +128787,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 143,
-        "balance": 0.75,
-        "handling": 87,
+        "balance": 0.43,
+        "handling": 77,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -128796,12 +128796,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 33,
+        "thrustSpeed": 86,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 82
       }
     ]
   },
@@ -128811,10 +128811,10 @@
     "name": "Pudao",
     "culture": "Khuzait",
     "type": "Polearm",
-    "price": 15160,
-    "weight": 2.74,
+    "price": 13677,
+    "weight": 3.1,
     "rank": 3,
-    "tier": 10.4501448,
+    "tier": 9.871737,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -128825,8 +128825,8 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 143,
-        "balance": 0.75,
-        "handling": 87,
+        "balance": 0.46,
+        "handling": 78,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -128834,12 +128834,12 @@
           "WideGrip",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 89,
-        "swingDamage": 33,
+        "thrustSpeed": 86,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 92
+        "swingSpeed": 83
       }
     ]
   },
