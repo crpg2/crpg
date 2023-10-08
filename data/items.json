@@ -75369,12 +75369,12 @@
     "id": "crpg_horsemanspick_h0",
     "baseId": "crpg_horsemanspick",
     "name": "Horseman's Pick",
-    "culture": "Sturgia",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 71644,
-    "weight": 0.69,
+    "price": 6767,
+    "weight": 1.17,
     "rank": 0,
-    "tier": 34.49645,
+    "tier": 9.813545,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -75385,31 +75385,31 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 1.0,
-        "handling": 100,
+        "balance": 0.55,
+        "handling": 85,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 23,
+        "thrustSpeed": 94,
+        "swingDamage": 27,
         "swingDamageType": "Pierce",
-        "swingSpeed": 104
+        "swingSpeed": 86
       }
     ]
   },
   {
     "id": "crpg_horsemanspick_h1",
     "baseId": "crpg_horsemanspick",
-    "name": "Horseman's Pick",
-    "culture": "Sturgia",
+    "name": "Horseman's Pick +1",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 49600,
-    "weight": 0.69,
+    "price": 7108,
+    "weight": 1.12,
     "rank": 1,
-    "tier": 28.50946,
+    "tier": 10.0860929,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -75420,31 +75420,31 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 1.0,
-        "handling": 100,
+        "balance": 0.61,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 23,
+        "thrustSpeed": 94,
+        "swingDamage": 27,
         "swingDamageType": "Pierce",
-        "swingSpeed": 104
+        "swingSpeed": 88
       }
     ]
   },
   {
     "id": "crpg_horsemanspick_h2",
     "baseId": "crpg_horsemanspick",
-    "name": "Horseman's Pick",
-    "culture": "Sturgia",
+    "name": "Horseman's Pick +2",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 35538,
-    "weight": 0.69,
+    "price": 6993,
+    "weight": 1.12,
     "rank": 2,
-    "tier": 23.955864,
+    "tier": 9.994542,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -75455,31 +75455,31 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 1.0,
-        "handling": 100,
+        "balance": 0.61,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 23,
+        "thrustSpeed": 94,
+        "swingDamage": 28,
         "swingDamageType": "Pierce",
-        "swingSpeed": 104
+        "swingSpeed": 88
       }
     ]
   },
   {
     "id": "crpg_horsemanspick_h3",
     "baseId": "crpg_horsemanspick",
-    "name": "Horseman's Pick",
-    "culture": "Sturgia",
+    "name": "Horseman's Pick +3",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 26212,
-    "weight": 0.69,
+    "price": 6990,
+    "weight": 1.12,
     "rank": 3,
-    "tier": 20.412096,
+    "tier": 9.992727,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -75490,18 +75490,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 84,
-        "balance": 1.0,
-        "handling": 100,
+        "balance": 0.61,
+        "handling": 86,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 19,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 23,
+        "thrustSpeed": 94,
+        "swingDamage": 29,
         "swingDamageType": "Pierce",
-        "swingSpeed": 104
+        "swingSpeed": 88
       }
     ]
   },
@@ -88240,15 +88240,15 @@
     ]
   },
   {
-    "id": "crpg_knobbed_ball_club_h0",
-    "baseId": "crpg_knobbed_ball_club",
+    "id": "crpg_knobbed_ball_club_v1_h0",
+    "baseId": "crpg_knobbed_ball_club_v1",
     "name": "Knobbed Ball Club",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3726,
-    "weight": 2.05,
+    "price": 3998,
+    "weight": 1.78,
     "rank": 0,
-    "tier": 6.994136,
+    "tier": 7.284484,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -88259,31 +88259,31 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 56,
-        "balance": 0.5,
-        "handling": 91,
+        "balance": 0.68,
+        "handling": 94,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 26,
+        "thrustSpeed": 89,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 90
       }
     ]
   },
   {
-    "id": "crpg_knobbed_ball_club_h1",
-    "baseId": "crpg_knobbed_ball_club",
+    "id": "crpg_knobbed_ball_club_v1_h1",
+    "baseId": "crpg_knobbed_ball_club_v1",
     "name": "Knobbed Ball Club +1",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 3548,
-    "weight": 2.05,
+    "price": 4322,
+    "weight": 1.68,
     "rank": 1,
-    "tier": 6.798724,
+    "tier": 7.619016,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -88294,31 +88294,31 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 56,
-        "balance": 0.5,
-        "handling": 91,
+        "balance": 0.75,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 27,
+        "thrustSpeed": 90,
+        "swingDamage": 23,
         "swingDamageType": "Blunt",
-        "swingSpeed": 85
+        "swingSpeed": 92
       }
     ]
   },
   {
-    "id": "crpg_knobbed_ball_club_h2",
-    "baseId": "crpg_knobbed_ball_club",
+    "id": "crpg_knobbed_ball_club_v1_h2",
+    "baseId": "crpg_knobbed_ball_club_v1",
     "name": "Knobbed Ball Club +2",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 4112,
-    "weight": 2.0,
+    "price": 4391,
+    "weight": 1.68,
     "rank": 2,
-    "tier": 7.403985,
+    "tier": 7.687772,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -88329,31 +88329,31 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 56,
-        "balance": 0.54,
-        "handling": 91,
+        "balance": 0.75,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 28,
+        "thrustSpeed": 90,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 92
       }
     ]
   },
   {
-    "id": "crpg_knobbed_ball_club_h3",
-    "baseId": "crpg_knobbed_ball_club",
+    "id": "crpg_knobbed_ball_club_v1_h3",
+    "baseId": "crpg_knobbed_ball_club_v1",
     "name": "Knobbed Ball Club +3",
     "culture": "Battania",
     "type": "OneHandedWeapon",
-    "price": 5024,
-    "weight": 1.94,
+    "price": 4511,
+    "weight": 1.68,
     "rank": 3,
-    "tier": 8.301357,
+    "tier": 7.80746555,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -88364,18 +88364,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 56,
-        "balance": 0.57,
-        "handling": 92,
+        "balance": 0.75,
+        "handling": 96,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 87,
-        "swingDamage": 29,
+        "thrustSpeed": 90,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 87
+        "swingSpeed": 92
       }
     ]
   },
@@ -95400,15 +95400,15 @@
     ]
   },
   {
-    "id": "crpg_light_shestopyor_h0",
-    "baseId": "crpg_light_shestopyor",
+    "id": "crpg_light_shestopyor_v1_h0",
+    "baseId": "crpg_light_shestopyor_v1",
     "name": "Light Shestopyor",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6124,
-    "weight": 2.3,
+    "price": 6673,
+    "weight": 2.08,
     "rank": 0,
-    "tier": 9.281523,
+    "tier": 9.737288,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -95419,31 +95419,31 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 66,
-        "balance": 0.55,
-        "handling": 94,
+        "balance": 0.61,
+        "handling": 95,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 25,
+        "thrustSpeed": 87,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 86
+        "swingSpeed": 88
       }
     ]
   },
   {
-    "id": "crpg_light_shestopyor_h1",
-    "baseId": "crpg_light_shestopyor",
+    "id": "crpg_light_shestopyor_v1_h1",
+    "baseId": "crpg_light_shestopyor_v1",
     "name": "Light Shestopyor +1",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6743,
-    "weight": 2.21,
+    "price": 7018,
+    "weight": 1.99,
     "rank": 1,
-    "tier": 9.794492,
+    "tier": 10.0146217,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -95454,7 +95454,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 66,
-        "balance": 0.61,
+        "balance": 0.68,
         "handling": 96,
         "bodyArmor": 0,
         "flags": [
@@ -95462,23 +95462,23 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 25,
+        "thrustSpeed": 87,
+        "swingDamage": 24,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
   {
-    "id": "crpg_light_shestopyor_h2",
-    "baseId": "crpg_light_shestopyor",
+    "id": "crpg_light_shestopyor_v1_h2",
+    "baseId": "crpg_light_shestopyor_v1",
     "name": "Light Shestopyor +2",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6679,
-    "weight": 2.21,
+    "price": 7037,
+    "weight": 1.99,
     "rank": 2,
-    "tier": 9.741999,
+    "tier": 10.0297756,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -95489,7 +95489,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 66,
-        "balance": 0.61,
+        "balance": 0.68,
         "handling": 96,
         "bodyArmor": 0,
         "flags": [
@@ -95497,23 +95497,23 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 26,
+        "thrustSpeed": 87,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
   {
-    "id": "crpg_light_shestopyor_h3",
-    "baseId": "crpg_light_shestopyor",
+    "id": "crpg_light_shestopyor_v1_h3",
+    "baseId": "crpg_light_shestopyor_v1",
     "name": "Light Shestopyor +3",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 6705,
-    "weight": 2.21,
+    "price": 7146,
+    "weight": 1.99,
     "rank": 3,
-    "tier": 9.763437,
+    "tier": 10.1160364,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -95524,7 +95524,7 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 66,
-        "balance": 0.61,
+        "balance": 0.68,
         "handling": 96,
         "bodyArmor": 0,
         "flags": [
@@ -95532,10 +95532,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 85,
-        "swingDamage": 27,
+        "thrustSpeed": 87,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 88
+        "swingSpeed": 90
       }
     ]
   },
@@ -121702,13 +121702,13 @@
   {
     "id": "crpg_onehanded_barmace_h0",
     "baseId": "crpg_onehanded_barmace",
-    "name": "Small Barmace",
-    "culture": "Neutral",
+    "name": "One-Handed Barmace",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 96820,
-    "weight": 1.25,
+    "price": 5560,
+    "weight": 1.95,
     "rank": 0,
-    "tier": 40.2896843,
+    "tier": 8.7908,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -121718,32 +121718,32 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 58,
-        "balance": 0.99,
-        "handling": 100,
+        "length": 64,
+        "balance": 0.53,
+        "handling": 91,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 27,
+        "thrustSpeed": 87,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 99
+        "swingSpeed": 85
       }
     ]
   },
   {
     "id": "crpg_onehanded_barmace_h1",
     "baseId": "crpg_onehanded_barmace",
-    "name": "Small Barmace",
-    "culture": "Neutral",
+    "name": "One-Handed Barmace +1",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 66905,
-    "weight": 1.25,
+    "price": 5927,
+    "weight": 1.89,
     "rank": 1,
-    "tier": 33.2972641,
+    "tier": 9.112108,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -121753,32 +121753,32 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 58,
-        "balance": 0.99,
-        "handling": 100,
+        "length": 64,
+        "balance": 0.57,
+        "handling": 92,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 27,
+        "thrustSpeed": 87,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 99
+        "swingSpeed": 87
       }
     ]
   },
   {
     "id": "crpg_onehanded_barmace_h2",
     "baseId": "crpg_onehanded_barmace",
-    "name": "Small Barmace",
-    "culture": "Neutral",
+    "name": "One-Handed Barmace +2",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 47841,
-    "weight": 1.25,
+    "price": 5804,
+    "weight": 1.89,
     "rank": 2,
-    "tier": 27.9789371,
+    "tier": 9.005759,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -121788,32 +121788,32 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 58,
-        "balance": 0.99,
-        "handling": 100,
+        "length": 64,
+        "balance": 0.57,
+        "handling": 92,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
+        "thrustSpeed": 87,
         "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 99
+        "swingSpeed": 87
       }
     ]
   },
   {
     "id": "crpg_onehanded_barmace_h3",
     "baseId": "crpg_onehanded_barmace",
-    "name": "Small Barmace",
-    "culture": "Neutral",
+    "name": "One-Handed Barmace +3",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 35211,
-    "weight": 1.25,
+    "price": 5766,
+    "weight": 1.89,
     "rank": 3,
-    "tier": 23.8400574,
+    "tier": 8.972463,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -121823,163 +121823,159 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 58,
-        "balance": 0.99,
-        "handling": 100,
+        "length": 64,
+        "balance": 0.57,
+        "handling": 92,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 94,
-        "swingDamage": 27,
+        "thrustSpeed": 87,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 99
+        "swingSpeed": 87
       }
     ]
   },
   {
     "id": "crpg_onehanded_gada_h0",
     "baseId": "crpg_onehanded_gada",
-    "name": "Small Gada",
-    "culture": "Battania",
+    "name": "Steel Ball Mace",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 4745110,
-    "weight": 0.91,
+    "price": 3808,
+    "weight": 1.51,
     "rank": 0,
-    "tier": 289.016479,
+    "tier": 7.08258057,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_tipdraw_swing",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 66,
-        "balance": 1.0,
-        "handling": 99,
+        "length": 67,
+        "balance": 0.54,
+        "handling": 81,
         "bodyArmor": 0,
         "flags": [
-          "MeleeWeapon",
-          "MultiplePenetration"
+          "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 29,
+        "thrustSpeed": 90,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 105
+        "swingSpeed": 86
       }
     ]
   },
   {
     "id": "crpg_onehanded_gada_h1",
     "baseId": "crpg_onehanded_gada",
-    "name": "Small Gada",
-    "culture": "Battania",
+    "name": "Steel Ball Mace +1",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 3246439,
-    "weight": 0.91,
+    "price": 4229,
+    "weight": 1.38,
     "rank": 1,
-    "tier": 238.856567,
+    "tier": 7.52407837,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_tipdraw_swing",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 66,
-        "balance": 1.0,
-        "handling": 99,
+        "length": 67,
+        "balance": 0.63,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
-          "MeleeWeapon",
-          "MultiplePenetration"
+          "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 29,
+        "thrustSpeed": 92,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 105
+        "swingSpeed": 88
       }
     ]
   },
   {
     "id": "crpg_onehanded_gada_h2",
     "baseId": "crpg_onehanded_gada",
-    "name": "Small Gada",
-    "culture": "Battania",
+    "name": "Steel Ball Mace +2",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 2296433,
-    "weight": 0.91,
+    "price": 4190,
+    "weight": 1.38,
     "rank": 2,
-    "tier": 200.705872,
+    "tier": 7.48375559,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_tipdraw_swing",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 66,
-        "balance": 1.0,
-        "handling": 99,
+        "length": 67,
+        "balance": 0.63,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
-          "MeleeWeapon",
-          "MultiplePenetration"
+          "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 29,
+        "thrustSpeed": 92,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 105
+        "swingSpeed": 88
       }
     ]
   },
   {
     "id": "crpg_onehanded_gada_h3",
     "baseId": "crpg_onehanded_gada",
-    "name": "Small Gada",
-    "culture": "Battania",
+    "name": "Steel Ball Mace +3",
+    "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 1670608,
-    "weight": 0.91,
+    "price": 4206,
+    "weight": 1.38,
     "rank": 3,
-    "tier": 171.015671,
+    "tier": 7.500225,
     "requirement": 0,
     "flags": [],
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_tipdraw_swing",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 66,
-        "balance": 1.0,
-        "handling": 99,
+        "length": 67,
+        "balance": 0.63,
+        "handling": 83,
         "bodyArmor": 0,
         "flags": [
-          "MeleeWeapon",
-          "MultiplePenetration"
+          "MeleeWeapon"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 97,
-        "swingDamage": 29,
+        "thrustSpeed": 92,
+        "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 105
+        "swingSpeed": 88
       }
     ]
   },

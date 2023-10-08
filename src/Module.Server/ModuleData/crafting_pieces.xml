@@ -1480,33 +1480,33 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knobbed_ball_club_blade_h0" name="{=knobbedclubcraftingpiece}Knobbed Club" tier="2" piece_type="Blade" mesh="mace_head_6" length="11.4" weight="1.5" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_knobbed_ball_club_blade_h0" name="{=knobbedclubcraftingpiece}Knobbed Club" tier="2" piece_type="Blade" mesh="mace_head_6" length="11.4" weight="1.25" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.6" />
+      <Swing damage_type="Blunt" damage_factor="2.3" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knobbed_ball_club_blade_h1" name="{=knobbedclubcraftingpiece}Knobbed Club" tier="2" piece_type="Blade" mesh="mace_head_6" length="11.4" weight="1.5" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_knobbed_ball_club_blade_h1" name="{=knobbedclubcraftingpiece}Knobbed Club" tier="2" piece_type="Blade" mesh="mace_head_6" length="11.4" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.7" />
+      <Swing damage_type="Blunt" damage_factor="2.3" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knobbed_ball_club_blade_h2" name="{=knobbedclubcraftingpiece}Knobbed Club" tier="2" piece_type="Blade" mesh="mace_head_6" length="11.4" weight="1.45" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_knobbed_ball_club_blade_h2" name="{=knobbedclubcraftingpiece}Knobbed Club" tier="2" piece_type="Blade" mesh="mace_head_6" length="11.4" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.8" />
+      <Swing damage_type="Blunt" damage_factor="2.4" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knobbed_ball_club_blade_h3" name="{=knobbedclubcraftingpiece}Knobbed Club" tier="2" piece_type="Blade" mesh="mace_head_6" length="11.4" weight="1.4" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_knobbed_ball_club_blade_h3" name="{=knobbedclubcraftingpiece}Knobbed Club" tier="2" piece_type="Blade" mesh="mace_head_6" length="11.4" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.9" />
+      <Swing damage_type="Blunt" damage_factor="2.5" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="2" />
@@ -28906,7 +28906,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_light_shestopyor_blade_h0" name="{=1yEQNTG1}Long Shestopyor Head" tier="4" piece_type="Blade" mesh="mace_head_3" length="18.181" weight="0.7" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.5" />
+      <Swing damage_type="Blunt" damage_factor="2.4" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
@@ -28914,7 +28914,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_light_shestopyor_blade_h1" name="{=1yEQNTG1}Long Shestopyor Head" tier="4" piece_type="Blade" mesh="mace_head_3" length="18.181" weight="0.64" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.5" />
+      <Swing damage_type="Blunt" damage_factor="2.4" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
@@ -28922,7 +28922,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_light_shestopyor_blade_h2" name="{=1yEQNTG1}Long Shestopyor Head" tier="4" piece_type="Blade" mesh="mace_head_3" length="18.181" weight="0.64" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.6" />
+      <Swing damage_type="Blunt" damage_factor="2.5" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
@@ -28930,31 +28930,31 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_light_shestopyor_blade_h3" name="{=1yEQNTG1}Long Shestopyor Head" tier="4" piece_type="Blade" mesh="mace_head_3" length="18.181" weight="0.64" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.7" />
+      <Swing damage_type="Blunt" damage_factor="2.6" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_light_shestopyor_handle_h0" name="{=kjw9c4M2}Steel Angular Mace Handle" tier="4" piece_type="Handle" mesh="mace_handle_10" length="52" weight="1.100" item_holster_pos_shift="0,0,0.05" CraftingCost="80">
+  <CraftingPiece id="crpg_light_shestopyor_handle_h0" name="{=kjw9c4M2}Steel Angular Mace Handle" tier="4" piece_type="Handle" mesh="mace_handle_10" length="52" weight="0.9" item_holster_pos_shift="0,0,0.05" CraftingCost="80">
     <BuildData piece_offset="16" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_light_shestopyor_handle_h1" name="{=kjw9c4M2}Steel Angular Mace Handle" tier="4" piece_type="Handle" mesh="mace_handle_10" length="52" weight="1.100" item_holster_pos_shift="0,0,0.05" CraftingCost="80">
+  <CraftingPiece id="crpg_light_shestopyor_handle_h1" name="{=kjw9c4M2}Steel Angular Mace Handle" tier="4" piece_type="Handle" mesh="mace_handle_10" length="52" weight="0.9" item_holster_pos_shift="0,0,0.05" CraftingCost="80">
     <BuildData piece_offset="16" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_light_shestopyor_handle_h2" name="{=kjw9c4M2}Steel Angular Mace Handle" tier="4" piece_type="Handle" mesh="mace_handle_10" length="52" weight="1.100" item_holster_pos_shift="0,0,0.05" CraftingCost="80">
+  <CraftingPiece id="crpg_light_shestopyor_handle_h2" name="{=kjw9c4M2}Steel Angular Mace Handle" tier="4" piece_type="Handle" mesh="mace_handle_10" length="52" weight="0.9" item_holster_pos_shift="0,0,0.05" CraftingCost="80">
     <BuildData piece_offset="16" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_light_shestopyor_handle_h3" name="{=kjw9c4M2}Steel Angular Mace Handle" tier="4" piece_type="Handle" mesh="mace_handle_10" length="52" weight="1.100" item_holster_pos_shift="0,0,0.05" CraftingCost="80">
+  <CraftingPiece id="crpg_light_shestopyor_handle_h3" name="{=kjw9c4M2}Steel Angular Mace Handle" tier="4" piece_type="Handle" mesh="mace_handle_10" length="52" weight="0.9" item_holster_pos_shift="0,0,0.05" CraftingCost="80">
     <BuildData piece_offset="16" />
     <Materials>
       <Material id="Iron4" count="3" />
@@ -30756,41 +30756,41 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horsemanspick_head_h0" name="{=}Horseman's Pick Head" tier="4" piece_type="Blade" mesh="horsemanspick_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="46.2" weight="0.37" full_scale="true">
+  <CraftingPiece id="crpg_horsemanspick_head_h0" name="{=}Horseman's Pick Head" tier="4" piece_type="Blade" mesh="horsemanspick_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="46.2" weight="0.85" full_scale="true">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="1" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Pierce" damage_factor="2.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Pierce" damage_factor="2.7" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horsemanspick_head_h1" name="{=}Horseman's Pick Head" tier="4" piece_type="Blade" mesh="horsemanspick_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="46.2" weight="0.37" full_scale="true">
+  <CraftingPiece id="crpg_horsemanspick_head_h1" name="{=}Horseman's Pick Head" tier="4" piece_type="Blade" mesh="horsemanspick_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="46.2" weight="0.8" full_scale="true">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="1" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Pierce" damage_factor="2.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Pierce" damage_factor="2.7" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horsemanspick_head_h2" name="{=}Horseman's Pick Head" tier="4" piece_type="Blade" mesh="horsemanspick_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="46.2" weight="0.37" full_scale="true">
+  <CraftingPiece id="crpg_horsemanspick_head_h2" name="{=}Horseman's Pick Head" tier="4" piece_type="Blade" mesh="horsemanspick_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="46.2" weight="0.8" full_scale="true">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="1" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Pierce" damage_factor="2.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Pierce" damage_factor="2.8" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horsemanspick_head_h3" name="{=}Horseman's Pick Head" tier="4" piece_type="Blade" mesh="horsemanspick_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="46.2" weight="0.37" full_scale="true">
+  <CraftingPiece id="crpg_horsemanspick_head_h3" name="{=}Horseman's Pick Head" tier="4" piece_type="Blade" mesh="horsemanspick_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="46.2" weight="0.8" full_scale="true">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="1" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Pierce" damage_factor="2.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Pierce" damage_factor="2.9" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -31580,75 +31580,79 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_gada_handle_h0" name="{=}Onehanded Gada Handle" tier="1" piece_type="Handle" mesh="gada_handle" length="112" weight="1.0" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
-    <BuildData piece_offset="32.0" previous_piece_offset="0.0" next_piece_offset="6" />
+  <CraftingPiece id="crpg_onehanded_gada_handle_h0" name="{=}Steel Ball Mace Handle" tier="1" piece_type="Handle" mesh="gada_handle" length="112" weight="3.5" full_scale="true" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+    <BuildData piece_offset="33.0" previous_piece_offset="0.0" next_piece_offset="6" />
     <Materials>
-      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_gada_handle_h1" name="{=}Onehanded Gada Handle" tier="1" piece_type="Handle" mesh="gada_handle" length="112" weight="1.0" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
-    <BuildData piece_offset="32.0" previous_piece_offset="0.0" next_piece_offset="6" />
+  <CraftingPiece id="crpg_onehanded_gada_handle_h1" name="{=}Steel Ball Mace Handle" tier="1" piece_type="Handle" mesh="gada_handle" length="112" weight="3.2" full_scale="true" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+    <BuildData piece_offset="33.0" previous_piece_offset="0.0" next_piece_offset="6" />
     <Materials>
-      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_gada_handle_h2" name="{=}Onehanded Gada Handle" tier="1" piece_type="Handle" mesh="gada_handle" length="112" weight="1.0" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
-    <BuildData piece_offset="32.0" previous_piece_offset="0.0" next_piece_offset="6" />
+  <CraftingPiece id="crpg_onehanded_gada_handle_h2" name="{=}Steel Ball Mace Handle" tier="1" piece_type="Handle" mesh="gada_handle" length="112" weight="3.2" full_scale="true" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+    <BuildData piece_offset="33.0" previous_piece_offset="0.0" next_piece_offset="6" />
     <Materials>
-      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_gada_handle_h3" name="{=}Onehanded Gada Handle" tier="1" piece_type="Handle" mesh="gada_handle" length="112" weight="1.0" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
-    <BuildData piece_offset="32.0" previous_piece_offset="0.0" next_piece_offset="6" />
+  <CraftingPiece id="crpg_onehanded_gada_handle_h3" name="{=}Steel Ball Mace Handle" tier="1" piece_type="Handle" mesh="gada_handle" length="112" weight="3.2" full_scale="true" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+    <BuildData piece_offset="33.0" previous_piece_offset="0.0" next_piece_offset="6" />
     <Materials>
-      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_gada_blade_h0" name="{=}Onehanded Gada Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="1.42" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_onehanded_gada_blade_h0" name="{=}Steel Ball Mace Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="3.5" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.9" />
+      <Swing damage_type="Blunt" damage_factor="2.5" />
     </BladeData>
-    <Flags>
-      <Flag name="CanKnockDown" />
-    </Flags>
     <Materials>
-      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_gada_blade_h1" name="{=}Onehanded Gada Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="1.42" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_onehanded_gada_blade_h1" name="{=}Steel Ball Mace Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="3.2" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.9" />
+      <Swing damage_type="Blunt" damage_factor="2.5" />
     </BladeData>
-    <Flags>
-      <Flag name="CanKnockDown" />
-    </Flags>
     <Materials>
-      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_gada_blade_h2" name="{=}Onehanded Gada Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="1.42" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_onehanded_gada_blade_h2" name="{=}Steel Ball Mace Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="3.2" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.9" />
+      <Swing damage_type="Blunt" damage_factor="2.6" />
     </BladeData>
-    <Flags>
-      <Flag name="CanKnockDown" />
-    </Flags>
     <Materials>
-      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_gada_blade_h3" name="{=}Onehanded Gada Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="1.42" full_scale="true" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_onehanded_gada_blade_h3" name="{=}Steel Ball Mace Head" tier="2" piece_type="Blade" mesh="gada_blade" length="27.9" weight="3.2" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.9" />
+      <Swing damage_type="Blunt" damage_factor="2.7" />
     </BladeData>
-    <Flags>
-      <Flag name="CanKnockDown" />
-    </Flags>
     <Materials>
-      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_barmace_blade_h0" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.25">
+  <CraftingPiece id="crpg_onehanded_barmace_blade_h0" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.275">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Swing damage_type="Blunt" damage_factor="2.6" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_onehanded_barmace_blade_h1" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.2">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Swing damage_type="Blunt" damage_factor="2.6" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_onehanded_barmace_blade_h2" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.2">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="Blunt" damage_factor="2.7" />
     </BladeData>
@@ -31656,50 +31660,34 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_barmace_blade_h1" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.25">
+  <CraftingPiece id="crpg_onehanded_barmace_blade_h3" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.2">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Swing damage_type="Blunt" damage_factor="2.7" />
+      <Swing damage_type="Blunt" damage_factor="2.8" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_barmace_blade_h2" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.25">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Swing damage_type="Blunt" damage_factor="2.7" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron5" count="4" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_small_barmace_blade_h3" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" culture="Culture.battania" length="68.5" weight="1.25">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Swing damage_type="Blunt" damage_factor="2.7" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron5" count="4" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_small_barmace_handle_h0" name="{=}Onehanded Barmace Handle" tier="3" piece_type="Handle" mesh="barmace_handle" culture="Culture.khuzait" length="24.7" weight=".001">
-    <BuildData piece_offset="-5" previous_piece_offset="0.0" next_piece_offset="18" />
+  <CraftingPiece id="crpg_onehanded_barmace_handle_h0" name="{=}Onehanded Barmace Handle" tier="3" piece_type="Handle" mesh="barmace_handle" full_scale="true" length="24.7" weight="0.001">
+    <BuildData piece_offset="-2.00" previous_piece_offset="0.0" next_piece_offset="12" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_barmace_handle_h1" name="{=}Onehanded Barmace Handle" tier="3" piece_type="Handle" mesh="barmace_handle" culture="Culture.khuzait" length="24.7" weight=".001">
-    <BuildData piece_offset="-5" previous_piece_offset="0.0" next_piece_offset="18" />
+  <CraftingPiece id="crpg_onehanded_barmace_handle_h1" name="{=}Onehanded Barmace Handle" tier="3" piece_type="Handle" mesh="barmace_handle" full_scale="true" length="24.7" weight="0.001">
+    <BuildData piece_offset="-2.00" previous_piece_offset="0.0" next_piece_offset="12" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_barmace_handle_h2" name="{=}Onehanded Barmace Handle" tier="3" piece_type="Handle" mesh="barmace_handle" culture="Culture.khuzait" length="24.7" weight=".001">
-    <BuildData piece_offset="-5" previous_piece_offset="0.0" next_piece_offset="18" />
+  <CraftingPiece id="crpg_onehanded_barmace_handle_h2" name="{=}Onehanded Barmace Handle" tier="3" piece_type="Handle" mesh="barmace_handle" full_scale="true" length="24.7" weight="0.001">
+    <BuildData piece_offset="-2.00" previous_piece_offset="0.0" next_piece_offset="12" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_small_barmace_handle_h3" name="{=}Onehanded Barmace Handle" tier="3" piece_type="Handle" mesh="barmace_handle" culture="Culture.khuzait" length="24.7" weight=".001">
-    <BuildData piece_offset="-5" previous_piece_offset="0.0" next_piece_offset="18" />
+  <CraftingPiece id="crpg_onehanded_barmace_handle_h3" name="{=}Onehanded Barmace Handle" tier="3" piece_type="Handle" mesh="barmace_handle" full_scale="true" length="24.7" weight="0.001">
+    <BuildData piece_offset="-2.00" previous_piece_offset="0.0" next_piece_offset="12" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>

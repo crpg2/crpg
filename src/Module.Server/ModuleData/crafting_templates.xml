@@ -7959,22 +7959,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
-      <UsablePiece piece_id="crpg_small_gada_handle_h0" />
-      <UsablePiece piece_id="crpg_small_gada_handle_h1" />
-      <UsablePiece piece_id="crpg_small_gada_handle_h2" />
-      <UsablePiece piece_id="crpg_small_gada_handle_h3" />
-      <UsablePiece piece_id="crpg_small_gada_blade_h0" />
-      <UsablePiece piece_id="crpg_small_gada_blade_h1" />
-      <UsablePiece piece_id="crpg_small_gada_blade_h2" />
-      <UsablePiece piece_id="crpg_small_gada_blade_h3" />
-      <UsablePiece piece_id="crpg_small_barmace_blade_h0" />
-      <UsablePiece piece_id="crpg_small_barmace_blade_h1" />
-      <UsablePiece piece_id="crpg_small_barmace_blade_h2" />
-      <UsablePiece piece_id="crpg_small_barmace_blade_h3" />
-      <UsablePiece piece_id="crpg_small_barmace_handle_h0" />
-      <UsablePiece piece_id="crpg_small_barmace_handle_h1" />
-      <UsablePiece piece_id="crpg_small_barmace_handle_h2" />
-      <UsablePiece piece_id="crpg_small_barmace_handle_h3" />
+      <UsablePiece piece_id="crpg_onehanded_gada_handle_h0" />
+      <UsablePiece piece_id="crpg_onehanded_gada_handle_h1" />
+      <UsablePiece piece_id="crpg_onehanded_gada_handle_h2" />
+      <UsablePiece piece_id="crpg_onehanded_gada_handle_h3" />
+      <UsablePiece piece_id="crpg_onehanded_gada_blade_h0" />
+      <UsablePiece piece_id="crpg_onehanded_gada_blade_h1" />
+      <UsablePiece piece_id="crpg_onehanded_gada_blade_h2" />
+      <UsablePiece piece_id="crpg_onehanded_gada_blade_h3" />
+      <UsablePiece piece_id="crpg_onehanded_barmace_blade_h0" />
+      <UsablePiece piece_id="crpg_onehanded_barmace_blade_h1" />
+      <UsablePiece piece_id="crpg_onehanded_barmace_blade_h2" />
+      <UsablePiece piece_id="crpg_onehanded_barmace_blade_h3" />
+      <UsablePiece piece_id="crpg_onehanded_barmace_handle_h0" />
+      <UsablePiece piece_id="crpg_onehanded_barmace_handle_h1" />
+      <UsablePiece piece_id="crpg_onehanded_barmace_handle_h2" />
+      <UsablePiece piece_id="crpg_onehanded_barmace_handle_h3" />
       <UsablePiece piece_id="crpg_horsemanspick_head_h0" />
       <UsablePiece piece_id="crpg_horsemanspick_head_h1" />
       <UsablePiece piece_id="crpg_horsemanspick_head_h2" />

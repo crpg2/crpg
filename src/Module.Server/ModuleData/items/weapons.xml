@@ -4616,25 +4616,25 @@
       <Piece id="crpg_highland_spiked_club_handle_h3" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knobbed_ball_club_h0" name="{=knobbedclubweapon}Knobbed Ball Club" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
+  <CraftedItem id="crpg_knobbed_ball_club_v1_h0" name="{=knobbedclubweapon}Knobbed Ball Club" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_knobbed_ball_club_blade_h0" Type="Blade" scale_factor="102" />
       <Piece id="crpg_knobbed_ball_club_handle_h0" Type="Handle" scale_factor="104" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knobbed_ball_club_h1" name="{=knobbedclubweapon}Knobbed Ball Club +1" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
+  <CraftedItem id="crpg_knobbed_ball_club_v1_h1" name="{=knobbedclubweapon}Knobbed Ball Club +1" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_knobbed_ball_club_blade_h1" Type="Blade" scale_factor="102" />
       <Piece id="crpg_knobbed_ball_club_handle_h1" Type="Handle" scale_factor="104" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knobbed_ball_club_h2" name="{=knobbedclubweapon}Knobbed Ball Club +2" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
+  <CraftedItem id="crpg_knobbed_ball_club_v1_h2" name="{=knobbedclubweapon}Knobbed Ball Club +2" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_knobbed_ball_club_blade_h2" Type="Blade" scale_factor="102" />
       <Piece id="crpg_knobbed_ball_club_handle_h2" Type="Handle" scale_factor="104" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knobbed_ball_club_h3" name="{=knobbedclubweapon}Knobbed Ball Club +3" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
+  <CraftedItem id="crpg_knobbed_ball_club_v1_h3" name="{=knobbedclubweapon}Knobbed Ball Club +3" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_knobbed_ball_club_blade_h3" Type="Blade" scale_factor="102" />
       <Piece id="crpg_knobbed_ball_club_handle_h3" Type="Handle" scale_factor="104" />
@@ -11772,28 +11772,28 @@
       <Piece id="crpg_byzantine_mace_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_light_shestopyor_h0" name="{=8pnCvnFR}Light Shestopyor" crafting_template="crpg_Mace" modifier_group="mace">
+  <CraftedItem id="crpg_light_shestopyor_v1_h0" name="{=8pnCvnFR}Light Shestopyor" crafting_template="crpg_Mace" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_light_shestopyor_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_light_shestopyor_handle_h0" Type="Handle" scale_factor="107" />
       <Piece id="crpg_light_shestopyor_pommel_h0" Type="Pommel" scale_factor="60" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_light_shestopyor_h1" name="{=8pnCvnFR}Light Shestopyor +1" crafting_template="crpg_Mace" modifier_group="mace">
+  <CraftedItem id="crpg_light_shestopyor_v1_h1" name="{=8pnCvnFR}Light Shestopyor +1" crafting_template="crpg_Mace" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_light_shestopyor_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_light_shestopyor_handle_h1" Type="Handle" scale_factor="107" />
       <Piece id="crpg_light_shestopyor_pommel_h1" Type="Pommel" scale_factor="60" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_light_shestopyor_h2" name="{=8pnCvnFR}Light Shestopyor +2" crafting_template="crpg_Mace" modifier_group="mace">
+  <CraftedItem id="crpg_light_shestopyor_v1_h2" name="{=8pnCvnFR}Light Shestopyor +2" crafting_template="crpg_Mace" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_light_shestopyor_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_light_shestopyor_handle_h2" Type="Handle" scale_factor="107" />
       <Piece id="crpg_light_shestopyor_pommel_h2" Type="Pommel" scale_factor="60" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_light_shestopyor_h3" name="{=8pnCvnFR}Light Shestopyor +3" crafting_template="crpg_Mace" modifier_group="mace">
+  <CraftedItem id="crpg_light_shestopyor_v1_h3" name="{=8pnCvnFR}Light Shestopyor +3" crafting_template="crpg_Mace" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_light_shestopyor_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_light_shestopyor_handle_h3" Type="Handle" scale_factor="107" />
@@ -12352,25 +12352,25 @@
       <Piece id="crpg_rondel_reverse_pommel_h3" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_horsemanspick_h0" name="{=}Horseman's Pick" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_horsemanspick_h0" name="{=}Horseman's Pick" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_horsemanspick_head_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_horsemanspick_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_horsemanspick_h1" name="{=}Horseman's Pick" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_horsemanspick_h1" name="{=}Horseman's Pick +1" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_horsemanspick_head_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_horsemanspick_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_horsemanspick_h2" name="{=}Horseman's Pick" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_horsemanspick_h2" name="{=}Horseman's Pick +2" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_horsemanspick_head_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_horsemanspick_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_horsemanspick_h3" name="{=}Horseman's Pick" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
+  <CraftedItem id="crpg_horsemanspick_h3" name="{=}Horseman's Pick +3" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_horsemanspick_head_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_horsemanspick_handle_h3" Type="Handle" scale_factor="100" />
@@ -12492,52 +12492,52 @@
       <Piece id="crpg_zweihander_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_onehanded_gada_h0" name="{=}Small Gada" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_onehanded_gada_h0" name="{=}Steel Ball Mace" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.vlandia"  modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_small_gada_blade_h0" Type="Blade" scale_factor="60" />
-      <Piece id="crpg_small_gada_handle_h0" Type="Handle" scale_factor="60" />
+      <Piece id="crpg_onehanded_gada_blade_h0" Type="Blade" scale_factor="60" />
+      <Piece id="crpg_onehanded_gada_handle_h0" Type="Handle" scale_factor="60" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_onehanded_gada_h1" name="{=}Small Gada" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_onehanded_gada_h1" name="{=}Steel Ball Mace +1" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.vlandia"  modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_small_gada_blade_h1" Type="Blade" scale_factor="60" />
-      <Piece id="crpg_small_gada_handle_h1" Type="Handle" scale_factor="60" />
+      <Piece id="crpg_onehanded_gada_blade_h1" Type="Blade" scale_factor="60" />
+      <Piece id="crpg_onehanded_gada_handle_h1" Type="Handle" scale_factor="60" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_onehanded_gada_h2" name="{=}Small Gada" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_onehanded_gada_h2" name="{=}Steel Ball Mace +2" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.vlandia"  modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_small_gada_blade_h2" Type="Blade" scale_factor="60" />
-      <Piece id="crpg_small_gada_handle_h2" Type="Handle" scale_factor="60" />
+      <Piece id="crpg_onehanded_gada_blade_h2" Type="Blade" scale_factor="60" />
+      <Piece id="crpg_onehanded_gada_handle_h2" Type="Handle" scale_factor="60" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_onehanded_gada_h3" name="{=}Small Gada" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_onehanded_gada_h3" name="{=}Steel Ball Mace +3" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.vlandia"  modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_small_gada_blade_h3" Type="Blade" scale_factor="60" />
-      <Piece id="crpg_small_gada_handle_h3" Type="Handle" scale_factor="60" />
+      <Piece id="crpg_onehanded_gada_blade_h3" Type="Blade" scale_factor="60" />
+      <Piece id="crpg_onehanded_gada_handle_h3" Type="Handle" scale_factor="60" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_onehanded_barmace_h0" name="{=}Small Barmace" crafting_template="crpg_Mace" is_merchandise="false">
+  <CraftedItem id="crpg_onehanded_barmace_h0" name="{=}One-Handed Barmace" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.vlandia"  modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_small_barmace_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_small_barmace_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_onehanded_barmace_blade_h0" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_onehanded_barmace_handle_h0" Type="Handle" scale_factor="95" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_onehanded_barmace_h1" name="{=}Small Barmace" crafting_template="crpg_Mace" is_merchandise="false">
+  <CraftedItem id="crpg_onehanded_barmace_h1" name="{=}One-Handed Barmace +1" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.vlandia"  modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_small_barmace_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_small_barmace_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_onehanded_barmace_blade_h1" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_onehanded_barmace_handle_h1" Type="Handle" scale_factor="95" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_onehanded_barmace_h2" name="{=}Small Barmace" crafting_template="crpg_Mace" is_merchandise="false">
+  <CraftedItem id="crpg_onehanded_barmace_h2" name="{=}One-Handed Barmace +2" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.vlandia"  modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_small_barmace_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_small_barmace_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_onehanded_barmace_blade_h2" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_onehanded_barmace_handle_h2" Type="Handle" scale_factor="95" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_onehanded_barmace_h3" name="{=}Small Barmace" crafting_template="crpg_Mace" is_merchandise="false">
+  <CraftedItem id="crpg_onehanded_barmace_h3" name="{=}One-Handed Barmace +3" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.vlandia"  modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_small_barmace_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_small_barmace_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_onehanded_barmace_blade_h3" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_onehanded_barmace_handle_h3" Type="Handle" scale_factor="95" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_kriegsmesser_h0" name="{=}Kriegsmesser" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
