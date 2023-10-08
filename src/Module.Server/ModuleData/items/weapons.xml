@@ -12404,36 +12404,36 @@
       <Piece id="crpg_shep_damast_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_meowdao_h0" name="{=}Meowdao" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_meowdao_h0" name="{=kaikaikai}Meowdao" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_meowdao_blade_h0" Type="Blade" scale_factor="90" />
-      <Piece id="crpg_meowdao_guard_h0" Type="Guard" scale_factor="90" />
-      <Piece id="crpg_meowdao_handle_h0" Type="Handle" scale_factor="90" />
-      <Piece id="crpg_meowdao_pommel_h0" Type="Pommel" scale_factor="90" />
+      <Piece id="crpg_meowdao_blade_h0" Type="Blade" scale_factor="107" />
+      <Piece id="crpg_meowdao_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_meowdao_handle_h0" Type="Handle" scale_factor="85" />
+      <Piece id="crpg_meowdao_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_meowdao_h1" name="{=}Meowdao" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_meowdao_h1" name="{=kaikaikai}Meowdao" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_meowdao_blade_h1" Type="Blade" scale_factor="90" />
-      <Piece id="crpg_meowdao_guard_h1" Type="Guard" scale_factor="90" />
-      <Piece id="crpg_meowdao_handle_h1" Type="Handle" scale_factor="90" />
-      <Piece id="crpg_meowdao_pommel_h1" Type="Pommel" scale_factor="90" />
+      <Piece id="crpg_meowdao_blade_h1" Type="Blade" scale_factor="107" />
+      <Piece id="crpg_meowdao_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_meowdao_handle_h1" Type="Handle" scale_factor="85" />
+      <Piece id="crpg_meowdao_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_meowdao_h2" name="{=}Meowdao" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_meowdao_h2" name="{=kaikaikai}Meowdao" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_meowdao_blade_h2" Type="Blade" scale_factor="90" />
-      <Piece id="crpg_meowdao_guard_h2" Type="Guard" scale_factor="90" />
-      <Piece id="crpg_meowdao_handle_h2" Type="Handle" scale_factor="90" />
-      <Piece id="crpg_meowdao_pommel_h2" Type="Pommel" scale_factor="90" />
+      <Piece id="crpg_meowdao_blade_h2" Type="Blade" scale_factor="107" />
+      <Piece id="crpg_meowdao_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_meowdao_handle_h2" Type="Handle" scale_factor="85" />
+      <Piece id="crpg_meowdao_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_meowdao_h3" name="{=}Meowdao" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_meowdao_h3" name="{=kaikaikai}Meowdao" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_meowdao_blade_h3" Type="Blade" scale_factor="90" />
-      <Piece id="crpg_meowdao_guard_h3" Type="Guard" scale_factor="90" />
-      <Piece id="crpg_meowdao_handle_h3" Type="Handle" scale_factor="90" />
-      <Piece id="crpg_meowdao_pommel_h3" Type="Pommel" scale_factor="90" />
+      <Piece id="crpg_meowdao_blade_h3" Type="Blade" scale_factor="107" />
+      <Piece id="crpg_meowdao_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_meowdao_handle_h3" Type="Handle" scale_factor="85" />
+      <Piece id="crpg_meowdao_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_meowaxe_h0" name="{=}Meowaxe" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false" culture="Culture.battania">
@@ -12460,33 +12460,33 @@
       <Piece id="crpg_meowaxe_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_zweihander_h0" name="{=}Zweihander" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_zweihander_h0" name="{=kaikaikai}Zweihander" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
-      <Piece id="crpg_zweihander_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_zweihander_blade_h0" Type="Blade" scale_factor="122" />
       <Piece id="crpg_zweihander_guard_h0" Type="Guard" scale_factor="100" />
       <Piece id="crpg_zweihander_handle_h0" Type="Handle" scale_factor="100" />
       <Piece id="crpg_zweihander_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_zweihander_h1" name="{=}Zweihander" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_zweihander_h1" name="{=kaikaikai}Zweihander" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
-      <Piece id="crpg_zweihander_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_zweihander_blade_h1" Type="Blade" scale_factor="122" />
       <Piece id="crpg_zweihander_guard_h1" Type="Guard" scale_factor="100" />
       <Piece id="crpg_zweihander_handle_h1" Type="Handle" scale_factor="100" />
       <Piece id="crpg_zweihander_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_zweihander_h2" name="{=}Zweihander" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_zweihander_h2" name="{=kaikaikai}Zweihander" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
-      <Piece id="crpg_zweihander_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_zweihander_blade_h2" Type="Blade" scale_factor="122" />
       <Piece id="crpg_zweihander_guard_h2" Type="Guard" scale_factor="100" />
       <Piece id="crpg_zweihander_handle_h2" Type="Handle" scale_factor="100" />
       <Piece id="crpg_zweihander_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_zweihander_h3" name="{=}Zweihander" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_zweihander_h3" name="{=kaikaikai}Zweihander" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
-      <Piece id="crpg_zweihander_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_zweihander_blade_h3" Type="Blade" scale_factor="122" />
       <Piece id="crpg_zweihander_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_zweihander_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_zweihander_pommel_h3" Type="Pommel" scale_factor="100" />
@@ -12572,7 +12572,7 @@
       <Piece id="crpg_kriegsmesser_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_executionerssword_h0" name="{=}Executioner's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_executionerssword_h0" name="{=kaikaikai}Executioner's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_executionerssword_blade_h0" Type="Blade" scale_factor="120" />
       <Piece id="crpg_executionerssword_guard_h0" Type="Guard" scale_factor="100" />
@@ -12580,7 +12580,7 @@
       <Piece id="crpg_executionerssword_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_executionerssword_h1" name="{=}Executioner's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_executionerssword_h1" name="{=kaikaikai}Executioner's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_executionerssword_blade_h1" Type="Blade" scale_factor="120" />
       <Piece id="crpg_executionerssword_guard_h1" Type="Guard" scale_factor="100" />
@@ -12588,7 +12588,7 @@
       <Piece id="crpg_executionerssword_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_executionerssword_h2" name="{=}Executioner's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_executionerssword_h2" name="{=kaikaikai}Executioner's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_executionerssword_blade_h2" Type="Blade" scale_factor="120" />
       <Piece id="crpg_executionerssword_guard_h2" Type="Guard" scale_factor="100" />
@@ -12596,7 +12596,7 @@
       <Piece id="crpg_executionerssword_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_executionerssword_h3" name="{=}Executioner's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_executionerssword_h3" name="{=kaikaikai}Executioner's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_executionerssword_blade_h3" Type="Blade" scale_factor="120" />
       <Piece id="crpg_executionerssword_guard_h3" Type="Guard" scale_factor="100" />

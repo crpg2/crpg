@@ -30460,37 +30460,37 @@
   <CraftingPiece id="crpg_kriegsmesser_handle_h3" name="{=}Kriegsmesser Handle" tier="3" piece_type="Handle" mesh="kriegsmesser_handle" culture="Culture.khuzait" length="26.3" weight="0.1">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.1" next_piece_offset="1" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_zweihander_blade_h0" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.0">
+  <CraftingPiece id="crpg_zweihander_blade_h0" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.93">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_zweihander_blade_h1" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.0">
+  <CraftingPiece id="crpg_zweihander_blade_h1" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.9">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_zweihander_blade_h2" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.0">
+  <CraftingPiece id="crpg_zweihander_blade_h2" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.9">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_zweihander_blade_h3" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.0">
+  <CraftingPiece id="crpg_zweihander_blade_h3" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.88">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="5.0" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
@@ -30572,37 +30572,37 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_executionerssword_blade_h0" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="1.0">
+  <CraftingPiece id="crpg_executionerssword_blade_h0" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="1.61">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_executionerssword_blade_h1" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="1.0">
+  <CraftingPiece id="crpg_executionerssword_blade_h1" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="1.55">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_executionerssword_blade_h2" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="1.0">
+  <CraftingPiece id="crpg_executionerssword_blade_h2" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="1.51">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_executionerssword_blade_h3" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="1.0">
+  <CraftingPiece id="crpg_executionerssword_blade_h3" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="1.51">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
@@ -31232,28 +31232,28 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_blade_h0" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.0">
+  <CraftingPiece id="crpg_meowdao_blade_h0" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.7">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_blade_h1" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.0">
+  <CraftingPiece id="crpg_meowdao_blade_h1" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.64">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_blade_h2" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.0">
+  <CraftingPiece id="crpg_meowdao_blade_h2" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.64">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_blade_h3" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.0">
+  <CraftingPiece id="crpg_meowdao_blade_h3" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.6">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_meowdao_pommel_h0" name="{=}Meowdao Pommel" tier="4" piece_type="Pommel" mesh="meowdao_pommel" culture="Culture.battania" length="2.5" weight="0.12">

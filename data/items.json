@@ -51599,10 +51599,10 @@
     "name": "Executioner's Sword",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 137,
-    "weight": 1.54,
+    "price": 13651,
+    "weight": 2.27,
     "rank": 0,
-    "tier": 0.294382274,
+    "tier": 9.861127,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -51613,19 +51613,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.96,
-        "handling": 89,
+        "balance": 0.57,
+        "handling": 83,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
-        "swingDamage": 13,
+        "thrustSpeed": 91,
+        "swingDamage": 39,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 87
       }
     ]
   },
@@ -51635,10 +51635,10 @@
     "name": "Executioner's Sword",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 120,
-    "weight": 1.54,
+    "price": 13295,
+    "weight": 2.2,
     "rank": 1,
-    "tier": 0.24329114,
+    "tier": 9.717514,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -51649,19 +51649,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.96,
-        "handling": 89,
+        "balance": 0.6,
+        "handling": 84,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
-        "swingDamage": 13,
+        "thrustSpeed": 92,
+        "swingDamage": 40,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 87
       }
     ]
   },
@@ -51671,10 +51671,10 @@
     "name": "Executioner's Sword",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 108,
-    "weight": 1.54,
+    "price": 13750,
+    "weight": 2.15,
     "rank": 2,
-    "tier": 0.2044321,
+    "tier": 9.900779,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -51685,19 +51685,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.96,
-        "handling": 89,
+        "balance": 0.62,
+        "handling": 84,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
-        "swingDamage": 13,
+        "thrustSpeed": 92,
+        "swingDamage": 41,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 88
       }
     ]
   },
@@ -51707,10 +51707,10 @@
     "name": "Executioner's Sword",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 99,
-    "weight": 1.54,
+    "price": 13481,
+    "weight": 2.15,
     "rank": 3,
-    "tier": 0.17419073,
+    "tier": 9.792738,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -51721,19 +51721,19 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 120,
-        "balance": 0.96,
-        "handling": 89,
+        "balance": 0.62,
+        "handling": 84,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 97,
-        "swingDamage": 13,
+        "thrustSpeed": 92,
+        "swingDamage": 42,
         "swingDamageType": "Cut",
-        "swingSpeed": 98
+        "swingSpeed": 88
       }
     ]
   },
@@ -102953,10 +102953,10 @@
     "name": "Meowdao",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 167,
-    "weight": 1.15,
+    "price": 13651,
+    "weight": 2.12,
     "rank": 0,
-    "tier": 0.383891821,
+    "tier": 9.861121,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -102966,20 +102966,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 121,
-        "balance": 1.0,
-        "handling": 88,
+        "length": 140,
+        "balance": 0.36,
+        "handling": 77,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 13,
+        "thrustSpeed": 92,
+        "swingDamage": 43,
         "swingDamageType": "Cut",
-        "swingSpeed": 101
+        "swingSpeed": 80
       }
     ]
   },
@@ -102989,10 +102989,10 @@
     "name": "Meowdao",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 145,
-    "weight": 1.15,
+    "price": 13842,
+    "weight": 2.06,
     "rank": 1,
-    "tier": 0.317265958,
+    "tier": 9.937375,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -103002,20 +103002,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 121,
-        "balance": 1.0,
-        "handling": 88,
+        "length": 140,
+        "balance": 0.4,
+        "handling": 77,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 13,
+        "thrustSpeed": 92,
+        "swingDamage": 44,
         "swingDamageType": "Cut",
-        "swingSpeed": 101
+        "swingSpeed": 81
       }
     ]
   },
@@ -103025,10 +103025,10 @@
     "name": "Meowdao",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 128,
-    "weight": 1.15,
+    "price": 12385,
+    "weight": 2.06,
     "rank": 2,
-    "tier": 0.266591549,
+    "tier": 9.341549,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -103038,20 +103038,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 121,
-        "balance": 1.0,
-        "handling": 88,
+        "length": 140,
+        "balance": 0.4,
+        "handling": 77,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 13,
+        "thrustSpeed": 92,
+        "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 101
+        "swingSpeed": 81
       }
     ]
   },
@@ -103061,10 +103061,10 @@
     "name": "Meowdao",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
-    "price": 115,
-    "weight": 1.15,
+    "price": 13749,
+    "weight": 2.01,
     "rank": 3,
-    "tier": 0.227155015,
+    "tier": 9.900276,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -103074,20 +103074,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 121,
-        "balance": 1.0,
-        "handling": 88,
+        "length": 140,
+        "balance": 0.42,
+        "handling": 78,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 100,
-        "swingDamage": 13,
+        "thrustSpeed": 92,
+        "swingDamage": 46,
         "swingDamageType": "Cut",
-        "swingSpeed": 101
+        "swingSpeed": 82
       }
     ]
   },
@@ -183021,10 +183021,10 @@
     "name": "Zweihander",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 224,
-    "weight": 1.32,
+    "price": 13812,
+    "weight": 2.67,
     "rank": 0,
-    "tier": 0.537871242,
+    "tier": 9.925501,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -183034,20 +183034,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 138,
-        "balance": 1.0,
-        "handling": 89,
+        "length": 160,
+        "balance": 0.15,
+        "handling": 75,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 21,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 99,
-        "swingDamage": 13,
+        "thrustSpeed": 87,
+        "swingDamage": 46,
         "swingDamageType": "Cut",
-        "swingSpeed": 100
+        "swingSpeed": 74
       }
     ]
   },
@@ -183057,10 +183057,10 @@
     "name": "Zweihander",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 189,
-    "weight": 1.32,
+    "price": 13375,
+    "weight": 2.63,
     "rank": 1,
-    "tier": 0.444521427,
+    "tier": 9.74992752,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -183070,20 +183070,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 138,
-        "balance": 1.0,
-        "handling": 89,
+        "length": 160,
+        "balance": 0.17,
+        "handling": 75,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 99,
-        "swingDamage": 13,
+        "thrustSpeed": 88,
+        "swingDamage": 46,
         "swingDamageType": "Cut",
-        "swingSpeed": 100
+        "swingSpeed": 75
       }
     ]
   },
@@ -183093,10 +183093,10 @@
     "name": "Zweihander",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 164,
-    "weight": 1.32,
+    "price": 14018,
+    "weight": 2.63,
     "rank": 2,
-    "tier": 0.373521566,
+    "tier": 10.007308,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -183106,20 +183106,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 138,
-        "balance": 1.0,
-        "handling": 89,
+        "length": 160,
+        "balance": 0.17,
+        "handling": 75,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 99,
-        "swingDamage": 13,
+        "thrustSpeed": 88,
+        "swingDamage": 48,
         "swingDamageType": "Cut",
-        "swingSpeed": 100
+        "swingSpeed": 75
       }
     ]
   },
@@ -183129,10 +183129,10 @@
     "name": "Zweihander",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 145,
-    "weight": 1.32,
+    "price": 14094,
+    "weight": 2.61,
     "rank": 3,
-    "tier": 0.3182669,
+    "tier": 10.0371685,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -183142,20 +183142,20 @@
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 138,
-        "balance": 1.0,
-        "handling": 89,
+        "length": 160,
+        "balance": 0.19,
+        "handling": 75,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand"
         ],
-        "thrustDamage": 10,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 99,
-        "swingDamage": 13,
+        "thrustSpeed": 89,
+        "swingDamage": 50,
         "swingDamageType": "Cut",
-        "swingSpeed": 100
+        "swingSpeed": 75
       }
     ]
   }
