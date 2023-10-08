@@ -30684,73 +30684,73 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tetsubo_head_h0" name="{=}Tetsubo Head" tier="1" piece_type="Blade" mesh="tetsubo_head" length="93.4" weight="0.67" full_scale="true">
+  <CraftingPiece id="crpg_tetsubo_head_h0" name="{=}Tetsubo Head" tier="1" piece_type="Blade" mesh="tetsubo_head" length="93.4" weight="2.0" full_scale="true">
     <BuildData piece_offset="-29.5" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="0.42525" />
+      <Swing damage_type="Blunt" damage_factor="2.5" />
     </BladeData>
     <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tetsubo_head_h1" name="{=}Tetsubo Head" tier="1" piece_type="Blade" mesh="tetsubo_head" length="93.4" weight="0.67" full_scale="true">
+  <CraftingPiece id="crpg_tetsubo_head_h1" name="{=}Tetsubo Head" tier="1" piece_type="Blade" mesh="tetsubo_head" length="93.4" weight="1.95" full_scale="true">
     <BuildData piece_offset="-29.5" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="0.42525" />
+      <Swing damage_type="Blunt" damage_factor="2.6" />
     </BladeData>
     <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tetsubo_head_h2" name="{=}Tetsubo Head" tier="1" piece_type="Blade" mesh="tetsubo_head" length="93.4" weight="0.67" full_scale="true">
+  <CraftingPiece id="crpg_tetsubo_head_h2" name="{=}Tetsubo Head" tier="1" piece_type="Blade" mesh="tetsubo_head" length="93.4" weight="1.85" full_scale="true">
     <BuildData piece_offset="-29.5" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="0.42525" />
+      <Swing damage_type="Blunt" damage_factor="2.7" />
     </BladeData>
     <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tetsubo_head_h3" name="{=}Tetsubo Head" tier="1" piece_type="Blade" mesh="tetsubo_head" length="93.4" weight="0.67" full_scale="true">
+  <CraftingPiece id="crpg_tetsubo_head_h3" name="{=}Tetsubo Head" tier="1" piece_type="Blade" mesh="tetsubo_head" length="93.4" weight="1.8" full_scale="true">
     <BuildData piece_offset="-29.5" next_piece_offset="0" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="0.42525" />
+      <Swing damage_type="Blunt" damage_factor="2.8" />
     </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
+   <Flags>
+      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron2" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tetsubo_handle_h0" name="{=}Tetsubo Handle" tier="1" piece_type="Handle" mesh="tetsubo_handle" length="46" full_scale="false" weight="0.3" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+  <CraftingPiece id="crpg_tetsubo_handle_h0" name="{=}Tetsubo Handle" tier="1" piece_type="Handle" mesh="tetsubo_handle" length="46" full_scale="false" weight="1.5" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
     <BuildData piece_offset="-5" next_piece_offset="-25.4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tetsubo_handle_h1" name="{=}Tetsubo Handle" tier="1" piece_type="Handle" mesh="tetsubo_handle" length="46" full_scale="false" weight="0.3" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+  <CraftingPiece id="crpg_tetsubo_handle_h1" name="{=}Tetsubo Handle" tier="1" piece_type="Handle" mesh="tetsubo_handle" length="46" full_scale="false" weight="1.85" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
     <BuildData piece_offset="-5" next_piece_offset="-25.4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tetsubo_handle_h2" name="{=}Tetsubo Handle" tier="1" piece_type="Handle" mesh="tetsubo_handle" length="46" full_scale="false" weight="0.3" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+  <CraftingPiece id="crpg_tetsubo_handle_h2" name="{=}Tetsubo Handle" tier="1" piece_type="Handle" mesh="tetsubo_handle" length="46" full_scale="false" weight="2.05" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
     <BuildData piece_offset="-5" next_piece_offset="-25.4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tetsubo_handle_h3" name="{=}Tetsubo Handle" tier="1" piece_type="Handle" mesh="tetsubo_handle" length="46" full_scale="false" weight="0.3" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
+  <CraftingPiece id="crpg_tetsubo_handle_h3" name="{=}Tetsubo Handle" tier="1" piece_type="Handle" mesh="tetsubo_handle" length="46" full_scale="false" weight="2.3" item_holster_pos_shift="0,0,0.1" CraftingCost="75" is_default="true">
     <BuildData piece_offset="-5" next_piece_offset="-25.4" />
     <Materials>
       <Material id="Wood" count="1" />

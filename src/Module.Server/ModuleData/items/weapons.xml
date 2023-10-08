@@ -11944,25 +11944,25 @@
       <Piece id="crpg_gladius_republican_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tetsubo_h0" name="{=}Tetsubo" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_tetsubo_h0" name="{=Diggles}Tetsubo" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_tetsubo_head_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tetsubo_handle_h0" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tetsubo_h1" name="{=}Tetsubo" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_tetsubo_h1" name="{=Diggles}Tetsubo" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_tetsubo_head_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tetsubo_handle_h1" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tetsubo_h2" name="{=}Tetsubo" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_tetsubo_h2" name="{=Diggles}Tetsubo" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_tetsubo_head_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tetsubo_handle_h2" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tetsubo_h3" name="{=}Tetsubo" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_tetsubo_h3" name="{=Diggles}Tetsubo" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_tetsubo_head_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tetsubo_handle_h3" Type="Handle" scale_factor="120" />

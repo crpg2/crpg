@@ -166061,14 +166061,12 @@
     "name": "Tetsubo",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 60,
-    "weight": 1.03,
+    "price": 9287,
+    "weight": 3.8,
     "rank": 0,
-    "tier": 0.03977846,
+    "tier": 7.94561243,
     "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
+    "flags": [],
     "weapons": [
       {
         "class": "TwoHandedMace",
@@ -166077,20 +166075,21 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 116,
-        "balance": 1.0,
-        "handling": 93,
+        "balance": 0.27,
+        "handling": 75,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "MultiplePenetration"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 102,
-        "swingDamage": 4,
+        "thrustSpeed": 82,
+        "swingDamage": 25,
         "swingDamageType": "Blunt",
-        "swingSpeed": 107
+        "swingSpeed": 78
       }
     ]
   },
@@ -166100,14 +166099,12 @@
     "name": "Tetsubo",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 58,
-    "weight": 1.03,
+    "price": 8935,
+    "weight": 4.17,
     "rank": 1,
-    "tier": 0.0328747556,
+    "tier": 7.77294064,
     "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
+    "flags": [],
     "weapons": [
       {
         "class": "TwoHandedMace",
@@ -166116,20 +166113,21 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 116,
-        "balance": 1.0,
-        "handling": 93,
+        "balance": 0.27,
+        "handling": 75,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "MultiplePenetration"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 102,
-        "swingDamage": 4,
+        "thrustSpeed": 80,
+        "swingDamage": 26,
         "swingDamageType": "Blunt",
-        "swingSpeed": 107
+        "swingSpeed": 78
       }
     ]
   },
@@ -166139,14 +166137,12 @@
     "name": "Tetsubo",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 57,
-    "weight": 1.03,
+    "price": 9170,
+    "weight": 4.31,
     "rank": 2,
-    "tier": 0.0276239216,
+    "tier": 7.888448,
     "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
+    "flags": [],
     "weapons": [
       {
         "class": "TwoHandedMace",
@@ -166155,20 +166151,21 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 116,
-        "balance": 1.0,
-        "handling": 93,
+        "balance": 0.29,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "MultiplePenetration"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 102,
-        "swingDamage": 4,
+        "thrustSpeed": 79,
+        "swingDamage": 27,
         "swingDamageType": "Blunt",
-        "swingSpeed": 107
+        "swingSpeed": 78
       }
     ]
   },
@@ -166178,14 +166175,12 @@
     "name": "Tetsubo",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
-    "price": 56,
-    "weight": 1.03,
+    "price": 9110,
+    "weight": 4.56,
     "rank": 3,
-    "tier": 0.0235375483,
+    "tier": 7.85928345,
     "requirement": 0,
-    "flags": [
-      "Civilian"
-    ],
+    "flags": [],
     "weapons": [
       {
         "class": "TwoHandedMace",
@@ -166194,20 +166189,21 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 116,
-        "balance": 1.0,
-        "handling": 93,
+        "balance": 0.29,
+        "handling": 76,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
-          "TwoHandIdleOnMount"
+          "TwoHandIdleOnMount",
+          "MultiplePenetration"
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Undefined",
-        "thrustSpeed": 102,
-        "swingDamage": 4,
+        "thrustSpeed": 78,
+        "swingDamage": 28,
         "swingDamageType": "Blunt",
-        "swingSpeed": 107
+        "swingSpeed": 78
       }
     ]
   },
