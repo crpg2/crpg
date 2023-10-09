@@ -31180,52 +31180,60 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowaxe_blade_h0" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.75">
+  <CraftingPiece id="crpg_meowaxe_blade_h0" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.82">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Blunt" damage_factor="2.0"/>
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron5" count="3" />
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_meowaxe_blade_h1" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.78">
+    <BuildData piece_offset="-12" />
+    <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Blunt" damage_factor="2.0"/>
       <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron5" count="3" />
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowaxe_blade_h1" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.72">
+  <CraftingPiece id="crpg_meowaxe_blade_h2" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.75">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Blunt" damage_factor="2.2"/>
       <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron5" count="3" />
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowaxe_blade_h2" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.72">
+  <CraftingPiece id="crpg_meowaxe_blade_h3" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.75">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Blunt" damage_factor="2.2"/>
       <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron5" count="3" />
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_meowaxe_blade_h3" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.72">
-    <BuildData piece_offset="-12" />
-    <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.9" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron5" count="3" />

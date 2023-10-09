@@ -117965,10 +117965,92 @@
     "name": "Norse Battle Axe",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 12431,
-    "weight": 2.58,
+    "price": 13282,
+    "weight": 2.64,
     "rank": 0,
-    "tier": 9.360576,
+    "tier": 9.712137,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 110,
+        "balance": 0.41,
+        "handling": 72,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 20,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 89,
+        "swingDamage": 43,
+        "swingDamageType": "Cut",
+        "swingSpeed": 82
+      }
+    ]
+  },
+  {
+    "id": "crpg_Norse_Battle_Axe_h1",
+    "baseId": "crpg_Norse_Battle_Axe",
+    "name": "Norse Battle Axe",
+    "culture": "Battania",
+    "type": "Polearm",
+    "price": 13457,
+    "weight": 2.61,
+    "rank": 1,
+    "tier": 9.7831955,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "TwoHandedPolearm",
+        "itemUsage": "polearm_block_long_shield_swing_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 110,
+        "balance": 0.43,
+        "handling": 72,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand",
+          "WideGrip",
+          "BonusAgainstShield",
+          "TwoHandIdleOnMount"
+        ],
+        "thrustDamage": 20,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 89,
+        "swingDamage": 44,
+        "swingDamageType": "Cut",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_Norse_Battle_Axe_h2",
+    "baseId": "crpg_Norse_Battle_Axe",
+    "name": "Norse Battle Axe",
+    "culture": "Battania",
+    "type": "Polearm",
+    "price": 12990,
+    "weight": 2.58,
+    "rank": 2,
+    "tier": 9.59304,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -117988,94 +118070,15 @@
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
+          "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 44,
-        "swingDamageType": "Cut",
-        "swingSpeed": 83
-      }
-    ]
-  },
-  {
-    "id": "crpg_Norse_Battle_Axe_h1",
-    "baseId": "crpg_Norse_Battle_Axe",
-    "name": "Norse Battle Axe",
-    "culture": "Battania",
-    "type": "Polearm",
-    "price": 12687,
-    "weight": 2.55,
-    "rank": 1,
-    "tier": 9.467926,
-    "requirement": 0,
-    "flags": [
-      "CanBePickedUpFromCorpse"
-    ],
-    "weapons": [
-      {
-        "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 110,
-        "balance": 0.48,
-        "handling": 73,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "WideGrip",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
+        "thrustDamage": 22,
+        "thrustDamageType": "Blunt",
         "thrustSpeed": 89,
         "swingDamage": 45,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
-      }
-    ]
-  },
-  {
-    "id": "crpg_Norse_Battle_Axe_h2",
-    "baseId": "crpg_Norse_Battle_Axe",
-    "name": "Norse Battle Axe",
-    "culture": "Battania",
-    "type": "Polearm",
-    "price": 12986,
-    "weight": 2.55,
-    "rank": 2,
-    "tier": 9.591462,
-    "requirement": 0,
-    "flags": [
-      "CanBePickedUpFromCorpse"
-    ],
-    "weapons": [
-      {
-        "class": "TwoHandedPolearm",
-        "itemUsage": "polearm_block_long_shield_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 110,
-        "balance": 0.48,
-        "handling": 73,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand",
-          "WideGrip",
-          "TwoHandIdleOnMount"
-        ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
-        "thrustSpeed": 89,
-        "swingDamage": 47,
-        "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 83
       }
     ]
   },
@@ -118085,10 +118088,10 @@
     "name": "Norse Battle Axe",
     "culture": "Battania",
     "type": "Polearm",
-    "price": 13441,
-    "weight": 2.55,
+    "price": 13418,
+    "weight": 2.58,
     "rank": 3,
-    "tier": 9.77649,
+    "tier": 9.767394,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -118101,21 +118104,22 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 110,
-        "balance": 0.48,
+        "balance": 0.46,
         "handling": 73,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
           "NotUsableWithOneHand",
           "WideGrip",
+          "BonusAgainstShield",
           "TwoHandIdleOnMount"
         ],
-        "thrustDamage": 0,
-        "thrustDamageType": "Undefined",
+        "thrustDamage": 22,
+        "thrustDamageType": "Blunt",
         "thrustSpeed": 89,
-        "swingDamage": 49,
+        "swingDamage": 47,
         "swingDamageType": "Cut",
-        "swingSpeed": 84
+        "swingSpeed": 83
       }
     ]
   },
