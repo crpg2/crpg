@@ -88525,10 +88525,10 @@
     "name": "Kopesh",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 10650,
-    "weight": 1.98,
+    "price": 7001,
+    "weight": 2.12,
     "rank": 0,
-    "tier": 12.5985432,
+    "tier": 10.0011082,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -88541,31 +88541,31 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 77,
-        "balance": 0.8,
-        "handling": 89,
+        "balance": 0.72,
+        "handling": 88,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
+        "thrustSpeed": 85,
         "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 91
       }
     ]
   },
   {
     "id": "crpg_kopesh_h1",
     "baseId": "crpg_kopesh",
-    "name": "Kopesh",
+    "name": "Kopesh +1",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 7528,
-    "weight": 1.98,
+    "price": 6445,
+    "weight": 2.12,
     "rank": 1,
-    "tier": 10.4120188,
+    "tier": 9.550359,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -88578,31 +88578,31 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 77,
-        "balance": 0.8,
-        "handling": 89,
+        "balance": 0.72,
+        "handling": 88,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 33,
+        "thrustSpeed": 85,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 91
       }
     ]
   },
   {
     "id": "crpg_kopesh_h2",
     "baseId": "crpg_kopesh",
-    "name": "Kopesh",
+    "name": "Kopesh +2",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 5513,
-    "weight": 1.98,
+    "price": 6952,
+    "weight": 2.06,
     "rank": 2,
-    "tier": 8.748986,
+    "tier": 9.9618,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -88615,31 +88615,31 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 77,
-        "balance": 0.8,
-        "handling": 89,
+        "balance": 0.75,
+        "handling": 88,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 22,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 87,
-        "swingDamage": 33,
+        "thrustSpeed": 86,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
-        "swingSpeed": 93
+        "swingSpeed": 92
       }
     ]
   },
   {
     "id": "crpg_kopesh_h3",
     "baseId": "crpg_kopesh",
-    "name": "Kopesh",
+    "name": "Kopesh +3",
     "culture": "Vlandia",
     "type": "OneHandedWeapon",
-    "price": 4161,
-    "weight": 1.98,
+    "price": 6690,
+    "weight": 2.0,
     "rank": 3,
-    "tier": 7.45476,
+    "tier": 9.75137,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -88652,16 +88652,16 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 77,
-        "balance": 0.8,
+        "balance": 0.78,
         "handling": 89,
         "bodyArmor": 5,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 22,
+        "thrustDamage": 24,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 87,
-        "swingDamage": 33,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
         "swingSpeed": 93
       }
@@ -113049,10 +113049,10 @@
     "name": "Narrow Sword",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 76,
-    "weight": 1.52,
+    "price": 6473,
+    "weight": 1.67,
     "rank": 0,
-    "tier": 0.187024921,
+    "tier": 9.573423,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -113065,18 +113065,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.63,
-        "handling": 91,
+        "balance": 0.54,
+        "handling": 89,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 12,
+        "thrustSpeed": 89,
+        "swingDamage": 33,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 86
       }
     ]
   },
@@ -113086,10 +113086,10 @@
     "name": "Narrow Sword +1",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 71,
-    "weight": 1.52,
+    "price": 6883,
+    "weight": 1.62,
     "rank": 1,
-    "tier": 0.15456602,
+    "tier": 9.9071,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -113102,18 +113102,18 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.63,
-        "handling": 91,
+        "balance": 0.58,
+        "handling": 89,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 20,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
-        "swingDamage": 12,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
-        "swingSpeed": 88
+        "swingSpeed": 87
       }
     ]
   },
@@ -113123,10 +113123,10 @@
     "name": "Narrow Sword +2",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 68,
-    "weight": 1.52,
+    "price": 6732,
+    "weight": 1.57,
     "rank": 2,
-    "tier": 0.129878387,
+    "tier": 9.785597,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -113139,16 +113139,16 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.63,
-        "handling": 91,
+        "balance": 0.61,
+        "handling": 90,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 23,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
-        "swingDamage": 12,
+        "swingDamage": 34,
         "swingDamageType": "Cut",
         "swingSpeed": 88
       }
@@ -113160,10 +113160,10 @@
     "name": "Narrow Sword +3",
     "culture": "Neutral",
     "type": "OneHandedWeapon",
-    "price": 65,
-    "weight": 1.52,
+    "price": 6678,
+    "weight": 1.57,
     "rank": 3,
-    "tier": 0.110665619,
+    "tier": 9.741187,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -113176,16 +113176,16 @@
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 94,
-        "balance": 0.63,
-        "handling": 91,
+        "balance": 0.61,
+        "handling": 90,
         "bodyArmor": 3,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 9,
+        "thrustDamage": 25,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
-        "swingDamage": 12,
+        "swingDamage": 35,
         "swingDamageType": "Cut",
         "swingSpeed": 88
       }
