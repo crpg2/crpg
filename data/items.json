@@ -135920,22 +135920,22 @@
   {
     "id": "crpg_rus_armour2_h0",
     "baseId": "crpg_rus_armour2",
-    "name": "Vaegir coat of plates",
+    "name": "Half Shiny Vaegir Coat of Plates",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 101394,
-    "weight": 112.0623,
+    "price": 15563,
+    "weight": 18.49407,
     "rank": 0,
-    "tier": 15.4151764,
+    "tier": 9.344125,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 140,
-      "armArmor": 95,
-      "legArmor": 120,
+      "bodyArmor": 52,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -135944,22 +135944,22 @@
   {
     "id": "crpg_rus_armour2_h1",
     "baseId": "crpg_rus_armour2",
-    "name": "Vaegir coat of plates +1",
+    "name": "Half Shiny Vaegir Coat of Plates +1",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 88135,
-    "weight": 112.0623,
+    "price": 15114,
+    "weight": 18.49407,
     "rank": 1,
-    "tier": 14.8553972,
+    "tier": 9.270161,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 142,
-      "armArmor": 96,
-      "legArmor": 121,
+      "bodyArmor": 54,
+      "armArmor": 24,
+      "legArmor": 19,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -135968,22 +135968,22 @@
   {
     "id": "crpg_rus_armour2_h2",
     "baseId": "crpg_rus_armour2",
-    "name": "Vaegir coat of plates +2",
+    "name": "Half Shiny Vaegir Coat of Plates +2",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 77248,
-    "weight": 112.0623,
+    "price": 14714,
+    "weight": 18.49407,
     "rank": 2,
-    "tier": 14.3465052,
+    "tier": 9.20292,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 144,
-      "armArmor": 97,
-      "legArmor": 122,
+      "bodyArmor": 56,
+      "armArmor": 25,
+      "legArmor": 20,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -135992,22 +135992,22 @@
   {
     "id": "crpg_rus_armour2_h3",
     "baseId": "crpg_rus_armour2",
-    "name": "Vaegir coat of plates +3",
+    "name": "Half Shiny Vaegir Coat of Plates +3",
     "culture": "Sturgia",
     "type": "BodyArmor",
-    "price": 68216,
-    "weight": 112.0623,
+    "price": 14355,
+    "weight": 18.49407,
     "rank": 3,
-    "tier": 13.8818665,
+    "tier": 9.141527,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 146,
-      "armArmor": 98,
-      "legArmor": 123,
+      "bodyArmor": 58,
+      "armArmor": 26,
+      "legArmor": 21,
       "materialType": "Plate",
       "familyType": 0
     },

@@ -6840,27 +6840,27 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_rus_armour2_h0" name="Vaegir coat of plates" mesh="Rus_armour2" is_merchandise="true" subtype="body_armor" culture="Culture.sturgia" weight="112.0623" difficulty="0" appearance="1" Type="BodyArmor">
+  <Item id="crpg_rus_armour2_h0" name="Half Shiny Vaegir Coat of Plates" mesh="Rus_armour2" is_merchandise="true" subtype="body_armor" culture="Culture.sturgia" weight="18.49407" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="140" leg_armor="120" arm_armor="95" covers_body="true" modifier_group="Plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="18" arm_armor="23" covers_body="true" modifier_group="Plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_rus_armour2_h1" name="Vaegir coat of plates +1" mesh="Rus_armour2" is_merchandise="true" subtype="body_armor" culture="Culture.sturgia" weight="112.0623" difficulty="0" appearance="1" Type="BodyArmor">
+  <Item id="crpg_rus_armour2_h1" name="Half Shiny Vaegir Coat of Plates +1" mesh="Rus_armour2" is_merchandise="true" subtype="body_armor" culture="Culture.sturgia" weight="18.49407" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="142" leg_armor="121" arm_armor="96" covers_body="true" modifier_group="Plate" material_type="Plate" />
+      <Armor body_armor="54" leg_armor="19" arm_armor="24" covers_body="true" modifier_group="Plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_rus_armour2_h2" name="Vaegir coat of plates +2" mesh="Rus_armour2" is_merchandise="true" subtype="body_armor" culture="Culture.sturgia" weight="112.0623" difficulty="0" appearance="1" Type="BodyArmor">
+  <Item id="crpg_rus_armour2_h2" name="Half Shiny Vaegir Coat of Plates +2" mesh="Rus_armour2" is_merchandise="true" subtype="body_armor" culture="Culture.sturgia" weight="18.49407" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="144" leg_armor="122" arm_armor="97" covers_body="true" modifier_group="Plate" material_type="Plate" />
+      <Armor body_armor="56" leg_armor="20" arm_armor="25" covers_body="true" modifier_group="Plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_rus_armour2_h3" name="Vaegir coat of plates +3" mesh="Rus_armour2" is_merchandise="true" subtype="body_armor" culture="Culture.sturgia" weight="112.0623" difficulty="0" appearance="1" Type="BodyArmor">
+  <Item id="crpg_rus_armour2_h3" name="Half Shiny Vaegir Coat of Plates +3" mesh="Rus_armour2" is_merchandise="true" subtype="body_armor" culture="Culture.sturgia" weight="18.49407" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="146" leg_armor="123" arm_armor="98" covers_body="true" modifier_group="Plate" material_type="Plate" />
+      <Armor body_armor="58" leg_armor="21" arm_armor="26" covers_body="true" modifier_group="Plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
