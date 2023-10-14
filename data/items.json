@@ -33834,22 +33834,22 @@
   {
     "id": "crpg_coat_of_plates1_c_h0",
     "baseId": "crpg_coat_of_plates1_c",
-    "name": "coat of plates",
+    "name": "Coat of Plates Striped",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12358,
-    "weight": 16.02676,
+    "price": 14839,
+    "weight": 17.88432,
     "rank": 0,
-    "tier": 8.776591,
+    "tier": 9.224064,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 45,
-      "armArmor": 20,
-      "legArmor": 20,
+      "bodyArmor": 50,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -33858,22 +33858,22 @@
   {
     "id": "crpg_coat_of_plates1_c_h1",
     "baseId": "crpg_coat_of_plates1_c",
-    "name": "coat of plates +1",
+    "name": "Coat of Plates Striped +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12212,
-    "weight": 16.02676,
+    "price": 14464,
+    "weight": 17.88432,
     "rank": 1,
-    "tier": 8.748236,
+    "tier": 9.160161,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 47,
-      "armArmor": 21,
-      "legArmor": 21,
+      "bodyArmor": 52,
+      "armArmor": 24,
+      "legArmor": 19,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -33882,22 +33882,22 @@
   {
     "id": "crpg_coat_of_plates1_c_h2",
     "baseId": "crpg_coat_of_plates1_c",
-    "name": "coat of plates +2",
+    "name": "Coat of Plates Striped +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12081,
-    "weight": 16.02676,
+    "price": 14129,
+    "weight": 17.88432,
     "rank": 2,
-    "tier": 8.722457,
+    "tier": 9.102068,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 49,
-      "armArmor": 22,
-      "legArmor": 22,
+      "bodyArmor": 54,
+      "armArmor": 25,
+      "legArmor": 20,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -33906,22 +33906,22 @@
   {
     "id": "crpg_coat_of_plates1_c_h3",
     "baseId": "crpg_coat_of_plates1_c",
-    "name": "coat of plates +3",
+    "name": "Coat of Plates Striped +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 11961,
-    "weight": 16.02676,
+    "price": 13828,
+    "weight": 17.88432,
     "rank": 3,
-    "tier": 8.698922,
+    "tier": 9.04902649,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 51,
-      "armArmor": 23,
-      "legArmor": 23,
+      "bodyArmor": 56,
+      "armArmor": 26,
+      "legArmor": 21,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -33930,13 +33930,13 @@
   {
     "id": "crpg_coat_of_plates10_c_h0",
     "baseId": "crpg_coat_of_plates10_c",
-    "name": "Armoured coat of plates",
+    "name": "Armoured Coat of Plates Checkers",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18904,
-    "weight": 22.4122,
+    "price": 15579,
+    "weight": 18.78775,
     "rank": 0,
-    "tier": 9.849033,
+    "tier": 9.34670448,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -33944,8 +33944,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 50,
-      "armArmor": 30,
-      "legArmor": 30,
+      "armArmor": 24,
+      "legArmor": 21,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -33954,13 +33954,13 @@
   {
     "id": "crpg_coat_of_plates10_c_h1",
     "baseId": "crpg_coat_of_plates10_c",
-    "name": "Armoured coat of plates +1",
+    "name": "Armoured Coat of Plates Checkers +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18047,
-    "weight": 22.4122,
+    "price": 15116,
+    "weight": 18.78775,
     "rank": 1,
-    "tier": 9.726305,
+    "tier": 9.270579,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -33968,8 +33968,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 52,
-      "armArmor": 31,
-      "legArmor": 31,
+      "armArmor": 25,
+      "legArmor": 22,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -33978,13 +33978,13 @@
   {
     "id": "crpg_coat_of_plates10_c_h2",
     "baseId": "crpg_coat_of_plates10_c",
-    "name": "Armoured coat of plates +2",
+    "name": "Armoured Coat of Plates Checkers +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17293,
-    "weight": 22.4122,
+    "price": 14705,
+    "weight": 18.78775,
     "rank": 2,
-    "tier": 9.614732,
+    "tier": 9.201374,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -33992,8 +33992,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 54,
-      "armArmor": 32,
-      "legArmor": 32,
+      "armArmor": 26,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34002,13 +34002,13 @@
   {
     "id": "crpg_coat_of_plates10_c_h3",
     "baseId": "crpg_coat_of_plates10_c",
-    "name": "Armoured coat of plates +3",
+    "name": "Armoured Coat of Plates Checkers +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16626,
-    "weight": 22.4122,
+    "price": 14336,
+    "weight": 18.78775,
     "rank": 3,
-    "tier": 9.512862,
+    "tier": 9.138186,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34016,8 +34016,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 56,
-      "armArmor": 33,
-      "legArmor": 33,
+      "armArmor": 27,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34026,13 +34026,13 @@
   {
     "id": "crpg_coat_of_plates11_c_h0",
     "baseId": "crpg_coat_of_plates11_c",
-    "name": "Blackend Armoured coat of plates",
+    "name": "Blackend Armoured Coat of Plates Striped",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18904,
-    "weight": 22.4122,
+    "price": 15579,
+    "weight": 18.78775,
     "rank": 0,
-    "tier": 9.849033,
+    "tier": 9.34670448,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34040,8 +34040,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 50,
-      "armArmor": 30,
-      "legArmor": 30,
+      "armArmor": 24,
+      "legArmor": 21,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34050,13 +34050,13 @@
   {
     "id": "crpg_coat_of_plates11_c_h1",
     "baseId": "crpg_coat_of_plates11_c",
-    "name": "Blackend Armoured coat of plates +1",
+    "name": "Blackend Armoured Coat of Plates Striped +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18047,
-    "weight": 22.4122,
+    "price": 15116,
+    "weight": 18.78775,
     "rank": 1,
-    "tier": 9.726305,
+    "tier": 9.270579,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34064,8 +34064,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 52,
-      "armArmor": 31,
-      "legArmor": 31,
+      "armArmor": 25,
+      "legArmor": 22,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34074,13 +34074,13 @@
   {
     "id": "crpg_coat_of_plates11_c_h2",
     "baseId": "crpg_coat_of_plates11_c",
-    "name": "Blackend Armoured coat of plates +2",
+    "name": "Blackend Armoured Coat of Plates Striped +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17293,
-    "weight": 22.4122,
+    "price": 14705,
+    "weight": 18.78775,
     "rank": 2,
-    "tier": 9.614732,
+    "tier": 9.201374,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34088,8 +34088,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 54,
-      "armArmor": 32,
-      "legArmor": 32,
+      "armArmor": 26,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34098,13 +34098,13 @@
   {
     "id": "crpg_coat_of_plates11_c_h3",
     "baseId": "crpg_coat_of_plates11_c",
-    "name": "Blackend Armoured coat of plates +3",
+    "name": "Blackend Armoured Coat of Plates Striped +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16626,
-    "weight": 22.4122,
+    "price": 14336,
+    "weight": 18.78775,
     "rank": 3,
-    "tier": 9.512862,
+    "tier": 9.138186,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34112,8 +34112,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 56,
-      "armArmor": 33,
-      "legArmor": 33,
+      "armArmor": 27,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34122,13 +34122,13 @@
   {
     "id": "crpg_coat_of_plates12_c_h0",
     "baseId": "crpg_coat_of_plates12_c",
-    "name": "Blackend Armoured coat of plates",
+    "name": "Blackend Armoured Coat of Plates Cross",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18904,
-    "weight": 22.4122,
+    "price": 15579,
+    "weight": 18.78775,
     "rank": 0,
-    "tier": 9.849033,
+    "tier": 9.34670448,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34136,8 +34136,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 50,
-      "armArmor": 30,
-      "legArmor": 30,
+      "armArmor": 24,
+      "legArmor": 21,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34146,13 +34146,13 @@
   {
     "id": "crpg_coat_of_plates12_c_h1",
     "baseId": "crpg_coat_of_plates12_c",
-    "name": "Blackend Armoured coat of plates +1",
+    "name": "Blackend Armoured Coat of Plates Cross +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18047,
-    "weight": 22.4122,
+    "price": 15116,
+    "weight": 18.78775,
     "rank": 1,
-    "tier": 9.726305,
+    "tier": 9.270579,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34160,8 +34160,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 52,
-      "armArmor": 31,
-      "legArmor": 31,
+      "armArmor": 25,
+      "legArmor": 22,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34170,13 +34170,13 @@
   {
     "id": "crpg_coat_of_plates12_c_h2",
     "baseId": "crpg_coat_of_plates12_c",
-    "name": "Blackend Armoured coat of plates +2",
+    "name": "Blackend Armoured Coat of Plates Cross +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17293,
-    "weight": 22.4122,
+    "price": 14705,
+    "weight": 18.78775,
     "rank": 2,
-    "tier": 9.614732,
+    "tier": 9.201374,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34184,8 +34184,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 54,
-      "armArmor": 32,
-      "legArmor": 32,
+      "armArmor": 26,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34194,13 +34194,13 @@
   {
     "id": "crpg_coat_of_plates12_c_h3",
     "baseId": "crpg_coat_of_plates12_c",
-    "name": "Blackend Armoured coat of plates +3",
+    "name": "Blackend Armoured Coat of Plates Cross +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16626,
-    "weight": 22.4122,
+    "price": 14336,
+    "weight": 18.78775,
     "rank": 3,
-    "tier": 9.512862,
+    "tier": 9.138186,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34208,8 +34208,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 56,
-      "armArmor": 33,
-      "legArmor": 33,
+      "armArmor": 27,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34218,22 +34218,22 @@
   {
     "id": "crpg_coat_of_plates2_c_h0",
     "baseId": "crpg_coat_of_plates2_c",
-    "name": "coat of plates royal pattern",
+    "name": "Coat of Plates Royal",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12358,
-    "weight": 16.02676,
+    "price": 14839,
+    "weight": 17.88432,
     "rank": 0,
-    "tier": 8.776591,
+    "tier": 9.224064,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 45,
-      "armArmor": 20,
-      "legArmor": 20,
+      "bodyArmor": 50,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34242,22 +34242,22 @@
   {
     "id": "crpg_coat_of_plates2_c_h1",
     "baseId": "crpg_coat_of_plates2_c",
-    "name": "coat of plates royal pattern +1",
+    "name": "Coat of Plates Royal +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12212,
-    "weight": 16.02676,
+    "price": 14464,
+    "weight": 17.88432,
     "rank": 1,
-    "tier": 8.748236,
+    "tier": 9.160161,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 47,
-      "armArmor": 21,
-      "legArmor": 21,
+      "bodyArmor": 52,
+      "armArmor": 24,
+      "legArmor": 19,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34266,22 +34266,22 @@
   {
     "id": "crpg_coat_of_plates2_c_h2",
     "baseId": "crpg_coat_of_plates2_c",
-    "name": "coat of plates royal pattern +2",
+    "name": "Coat of Plates Royal +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12081,
-    "weight": 16.02676,
+    "price": 14129,
+    "weight": 17.88432,
     "rank": 2,
-    "tier": 8.722457,
+    "tier": 9.102068,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 49,
-      "armArmor": 22,
-      "legArmor": 22,
+      "bodyArmor": 54,
+      "armArmor": 25,
+      "legArmor": 20,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34290,22 +34290,22 @@
   {
     "id": "crpg_coat_of_plates2_c_h3",
     "baseId": "crpg_coat_of_plates2_c",
-    "name": "coat of plates royal pattern +3",
+    "name": "Coat of Plates Royal +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 11961,
-    "weight": 16.02676,
+    "price": 13828,
+    "weight": 17.88432,
     "rank": 3,
-    "tier": 8.698922,
+    "tier": 9.04902649,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 51,
-      "armArmor": 23,
-      "legArmor": 23,
+      "bodyArmor": 56,
+      "armArmor": 26,
+      "legArmor": 21,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34314,22 +34314,22 @@
   {
     "id": "crpg_coat_of_plates3_c_h0",
     "baseId": "crpg_coat_of_plates3_c",
-    "name": "coat of plates lys pattern",
+    "name": "Coat of Plates Lys",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12358,
-    "weight": 16.02676,
+    "price": 14839,
+    "weight": 17.88432,
     "rank": 0,
-    "tier": 8.776591,
+    "tier": 9.224064,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 45,
-      "armArmor": 20,
-      "legArmor": 20,
+      "bodyArmor": 50,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34338,22 +34338,22 @@
   {
     "id": "crpg_coat_of_plates3_c_h1",
     "baseId": "crpg_coat_of_plates3_c",
-    "name": "coat of plates lys pattern +1",
+    "name": "Coat of Plates Lys +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12212,
-    "weight": 16.02676,
+    "price": 14464,
+    "weight": 17.88432,
     "rank": 1,
-    "tier": 8.748236,
+    "tier": 9.160161,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 47,
-      "armArmor": 21,
-      "legArmor": 21,
+      "bodyArmor": 52,
+      "armArmor": 24,
+      "legArmor": 19,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34362,22 +34362,22 @@
   {
     "id": "crpg_coat_of_plates3_c_h2",
     "baseId": "crpg_coat_of_plates3_c",
-    "name": "coat of plates lys pattern +2",
+    "name": "Coat of Plates Lys +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12081,
-    "weight": 16.02676,
+    "price": 14129,
+    "weight": 17.88432,
     "rank": 2,
-    "tier": 8.722457,
+    "tier": 9.102068,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 49,
-      "armArmor": 22,
-      "legArmor": 22,
+      "bodyArmor": 54,
+      "armArmor": 25,
+      "legArmor": 20,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34386,22 +34386,22 @@
   {
     "id": "crpg_coat_of_plates3_c_h3",
     "baseId": "crpg_coat_of_plates3_c",
-    "name": "coat of plates lys pattern +3",
+    "name": "Coat of Plates Lys +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 11961,
-    "weight": 16.02676,
+    "price": 13828,
+    "weight": 17.88432,
     "rank": 3,
-    "tier": 8.698922,
+    "tier": 9.04902649,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 51,
-      "armArmor": 23,
-      "legArmor": 23,
+      "bodyArmor": 56,
+      "armArmor": 26,
+      "legArmor": 21,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34410,22 +34410,22 @@
   {
     "id": "crpg_coat_of_plates4_c_h0",
     "baseId": "crpg_coat_of_plates4_c",
-    "name": "coat of plates checker pattern",
+    "name": "Coat of Plates Checker",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12358,
-    "weight": 16.02676,
+    "price": 14839,
+    "weight": 17.88432,
     "rank": 0,
-    "tier": 8.776591,
+    "tier": 9.224064,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 45,
-      "armArmor": 20,
-      "legArmor": 20,
+      "bodyArmor": 50,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34434,22 +34434,22 @@
   {
     "id": "crpg_coat_of_plates4_c_h1",
     "baseId": "crpg_coat_of_plates4_c",
-    "name": "coat of plates checker pattern +1",
+    "name": "Coat of Plates Checker +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12212,
-    "weight": 16.02676,
+    "price": 14464,
+    "weight": 17.88432,
     "rank": 1,
-    "tier": 8.748236,
+    "tier": 9.160161,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 47,
-      "armArmor": 21,
-      "legArmor": 21,
+      "bodyArmor": 52,
+      "armArmor": 24,
+      "legArmor": 19,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34458,22 +34458,22 @@
   {
     "id": "crpg_coat_of_plates4_c_h2",
     "baseId": "crpg_coat_of_plates4_c",
-    "name": "coat of plates checker pattern +2",
+    "name": "Coat of Plates Checker +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12081,
-    "weight": 16.02676,
+    "price": 14129,
+    "weight": 17.88432,
     "rank": 2,
-    "tier": 8.722457,
+    "tier": 9.102068,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 49,
-      "armArmor": 22,
-      "legArmor": 22,
+      "bodyArmor": 54,
+      "armArmor": 25,
+      "legArmor": 20,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34482,22 +34482,22 @@
   {
     "id": "crpg_coat_of_plates4_c_h3",
     "baseId": "crpg_coat_of_plates4_c",
-    "name": "coat of plates checker pattern +3",
+    "name": "Coat of Plates Checker +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 11961,
-    "weight": 16.02676,
+    "price": 13828,
+    "weight": 17.88432,
     "rank": 3,
-    "tier": 8.698922,
+    "tier": 9.04902649,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 51,
-      "armArmor": 23,
-      "legArmor": 23,
+      "bodyArmor": 56,
+      "armArmor": 26,
+      "legArmor": 21,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34506,22 +34506,22 @@
   {
     "id": "crpg_coat_of_plates5_c_h0",
     "baseId": "crpg_coat_of_plates5_c",
-    "name": "coat of plates cross pattern",
+    "name": "Coat of Plates Cross",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12358,
-    "weight": 16.02676,
+    "price": 14839,
+    "weight": 17.88432,
     "rank": 0,
-    "tier": 8.776591,
+    "tier": 9.224064,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 45,
-      "armArmor": 20,
-      "legArmor": 20,
+      "bodyArmor": 50,
+      "armArmor": 23,
+      "legArmor": 18,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34530,22 +34530,22 @@
   {
     "id": "crpg_coat_of_plates5_c_h1",
     "baseId": "crpg_coat_of_plates5_c",
-    "name": "coat of plates cross pattern +1",
+    "name": "Coat of Plates Cross +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12212,
-    "weight": 16.02676,
+    "price": 14464,
+    "weight": 17.88432,
     "rank": 1,
-    "tier": 8.748236,
+    "tier": 9.160161,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 47,
-      "armArmor": 21,
-      "legArmor": 21,
+      "bodyArmor": 52,
+      "armArmor": 24,
+      "legArmor": 19,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34554,22 +34554,22 @@
   {
     "id": "crpg_coat_of_plates5_c_h2",
     "baseId": "crpg_coat_of_plates5_c",
-    "name": "coat of plates cross pattern +2",
+    "name": "Coat of Plates Cross +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12081,
-    "weight": 16.02676,
+    "price": 14129,
+    "weight": 17.88432,
     "rank": 2,
-    "tier": 8.722457,
+    "tier": 9.102068,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 49,
-      "armArmor": 22,
-      "legArmor": 22,
+      "bodyArmor": 54,
+      "armArmor": 25,
+      "legArmor": 20,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34578,22 +34578,22 @@
   {
     "id": "crpg_coat_of_plates5_c_h3",
     "baseId": "crpg_coat_of_plates5_c",
-    "name": "coat of plates cross pattern +3",
+    "name": "Coat of Plates Cross +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 11961,
-    "weight": 16.02676,
+    "price": 13828,
+    "weight": 17.88432,
     "rank": 3,
-    "tier": 8.698922,
+    "tier": 9.04902649,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 51,
-      "armArmor": 23,
-      "legArmor": 23,
+      "bodyArmor": 56,
+      "armArmor": 26,
+      "legArmor": 21,
       "materialType": "Chainmail",
       "familyType": 0
     },
@@ -34602,13 +34602,13 @@
   {
     "id": "crpg_coat_of_plates6_c_h0",
     "baseId": "crpg_coat_of_plates6_c",
-    "name": "Trimmed Armoured coat of plates",
+    "name": "Trimmed Armoured Coat of Plates Checkers",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18904,
-    "weight": 22.4122,
+    "price": 15579,
+    "weight": 18.78775,
     "rank": 0,
-    "tier": 9.849033,
+    "tier": 9.34670448,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34616,8 +34616,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 50,
-      "armArmor": 30,
-      "legArmor": 30,
+      "armArmor": 24,
+      "legArmor": 21,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34626,13 +34626,13 @@
   {
     "id": "crpg_coat_of_plates6_c_h1",
     "baseId": "crpg_coat_of_plates6_c",
-    "name": "Trimmed Armoured coat of plates +1",
+    "name": "Trimmed Armoured Coat of Plates Checkers +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18047,
-    "weight": 22.4122,
+    "price": 15116,
+    "weight": 18.78775,
     "rank": 1,
-    "tier": 9.726305,
+    "tier": 9.270579,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34640,8 +34640,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 52,
-      "armArmor": 31,
-      "legArmor": 31,
+      "armArmor": 25,
+      "legArmor": 22,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34650,13 +34650,13 @@
   {
     "id": "crpg_coat_of_plates6_c_h2",
     "baseId": "crpg_coat_of_plates6_c",
-    "name": "Trimmed Armoured coat of plates +2",
+    "name": "Trimmed Armoured Coat of Plates Checkers +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17293,
-    "weight": 22.4122,
+    "price": 14705,
+    "weight": 18.78775,
     "rank": 2,
-    "tier": 9.614732,
+    "tier": 9.201374,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34664,8 +34664,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 54,
-      "armArmor": 32,
-      "legArmor": 32,
+      "armArmor": 26,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34674,13 +34674,13 @@
   {
     "id": "crpg_coat_of_plates6_c_h3",
     "baseId": "crpg_coat_of_plates6_c",
-    "name": "Trimmed Armoured coat of plates +3",
+    "name": "Trimmed Armoured Coat of Plates Checkers +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16626,
-    "weight": 22.4122,
+    "price": 14336,
+    "weight": 18.78775,
     "rank": 3,
-    "tier": 9.512862,
+    "tier": 9.138186,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34688,8 +34688,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 56,
-      "armArmor": 33,
-      "legArmor": 33,
+      "armArmor": 27,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34698,13 +34698,13 @@
   {
     "id": "crpg_coat_of_plates7_c_h0",
     "baseId": "crpg_coat_of_plates7_c",
-    "name": "Trimmed Armoured coat of plates",
+    "name": "Trimmed Armoured Coat of Plates Striped",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18904,
-    "weight": 22.4122,
+    "price": 15579,
+    "weight": 18.78775,
     "rank": 0,
-    "tier": 9.849033,
+    "tier": 9.34670448,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34712,8 +34712,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 50,
-      "armArmor": 30,
-      "legArmor": 30,
+      "armArmor": 24,
+      "legArmor": 21,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34722,13 +34722,13 @@
   {
     "id": "crpg_coat_of_plates7_c_h1",
     "baseId": "crpg_coat_of_plates7_c",
-    "name": "Trimmed Armoured coat of plates +1",
+    "name": "Trimmed Armoured Coat of Plates Striped +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18047,
-    "weight": 22.4122,
+    "price": 15116,
+    "weight": 18.78775,
     "rank": 1,
-    "tier": 9.726305,
+    "tier": 9.270579,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34736,8 +34736,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 52,
-      "armArmor": 31,
-      "legArmor": 31,
+      "armArmor": 25,
+      "legArmor": 22,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34746,13 +34746,13 @@
   {
     "id": "crpg_coat_of_plates7_c_h2",
     "baseId": "crpg_coat_of_plates7_c",
-    "name": "Trimmed Armoured coat of plates +2",
+    "name": "Trimmed Armoured Coat of Plates Striped +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17293,
-    "weight": 22.4122,
+    "price": 14705,
+    "weight": 18.78775,
     "rank": 2,
-    "tier": 9.614732,
+    "tier": 9.201374,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34760,8 +34760,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 54,
-      "armArmor": 32,
-      "legArmor": 32,
+      "armArmor": 26,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34770,13 +34770,13 @@
   {
     "id": "crpg_coat_of_plates7_c_h3",
     "baseId": "crpg_coat_of_plates7_c",
-    "name": "Trimmed Armoured coat of plates +3",
+    "name": "Trimmed Armoured Coat of Plates Striped +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16626,
-    "weight": 22.4122,
+    "price": 14336,
+    "weight": 18.78775,
     "rank": 3,
-    "tier": 9.512862,
+    "tier": 9.138186,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34784,8 +34784,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 56,
-      "armArmor": 33,
-      "legArmor": 33,
+      "armArmor": 27,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34794,13 +34794,13 @@
   {
     "id": "crpg_coat_of_plates8_c_h0",
     "baseId": "crpg_coat_of_plates8_c",
-    "name": "Trimmed Armoured coat of plates",
+    "name": "Trimmed Armoured Coat of Plates Lys",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18904,
-    "weight": 22.4122,
+    "price": 15579,
+    "weight": 18.78775,
     "rank": 0,
-    "tier": 9.849033,
+    "tier": 9.34670448,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34808,8 +34808,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 50,
-      "armArmor": 30,
-      "legArmor": 30,
+      "armArmor": 24,
+      "legArmor": 21,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34818,13 +34818,13 @@
   {
     "id": "crpg_coat_of_plates8_c_h1",
     "baseId": "crpg_coat_of_plates8_c",
-    "name": "Trimmed Armoured coat of plates +1",
+    "name": "Trimmed Armoured Coat of Plates Lys +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18047,
-    "weight": 22.4122,
+    "price": 15116,
+    "weight": 18.78775,
     "rank": 1,
-    "tier": 9.726305,
+    "tier": 9.270579,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34832,8 +34832,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 52,
-      "armArmor": 31,
-      "legArmor": 31,
+      "armArmor": 25,
+      "legArmor": 22,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34842,13 +34842,13 @@
   {
     "id": "crpg_coat_of_plates8_c_h2",
     "baseId": "crpg_coat_of_plates8_c",
-    "name": "Trimmed Armoured coat of plates +2",
+    "name": "Trimmed Armoured Coat of Plates Lys +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17293,
-    "weight": 22.4122,
+    "price": 14705,
+    "weight": 18.78775,
     "rank": 2,
-    "tier": 9.614732,
+    "tier": 9.201374,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34856,8 +34856,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 54,
-      "armArmor": 32,
-      "legArmor": 32,
+      "armArmor": 26,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34866,13 +34866,13 @@
   {
     "id": "crpg_coat_of_plates8_c_h3",
     "baseId": "crpg_coat_of_plates8_c",
-    "name": "Trimmed Armoured coat of plates +3",
+    "name": "Trimmed Armoured Coat of Plates Lys +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16626,
-    "weight": 22.4122,
+    "price": 14336,
+    "weight": 18.78775,
     "rank": 3,
-    "tier": 9.512862,
+    "tier": 9.138186,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34880,8 +34880,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 56,
-      "armArmor": 33,
-      "legArmor": 33,
+      "armArmor": 27,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34890,13 +34890,13 @@
   {
     "id": "crpg_coat_of_plates9_c_h0",
     "baseId": "crpg_coat_of_plates9_c",
-    "name": "Armoured coat of plates",
+    "name": "Armoured Coat of Plates Striped",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18904,
-    "weight": 22.4122,
+    "price": 15579,
+    "weight": 18.78775,
     "rank": 0,
-    "tier": 9.849033,
+    "tier": 9.34670448,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34904,8 +34904,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 50,
-      "armArmor": 30,
-      "legArmor": 30,
+      "armArmor": 24,
+      "legArmor": 21,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34914,13 +34914,13 @@
   {
     "id": "crpg_coat_of_plates9_c_h1",
     "baseId": "crpg_coat_of_plates9_c",
-    "name": "Armoured coat of plates +1",
+    "name": "Armoured Coat of Plates Striped +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18047,
-    "weight": 22.4122,
+    "price": 15116,
+    "weight": 18.78775,
     "rank": 1,
-    "tier": 9.726305,
+    "tier": 9.270579,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34928,8 +34928,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 52,
-      "armArmor": 31,
-      "legArmor": 31,
+      "armArmor": 25,
+      "legArmor": 22,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34938,13 +34938,13 @@
   {
     "id": "crpg_coat_of_plates9_c_h2",
     "baseId": "crpg_coat_of_plates9_c",
-    "name": "Armoured coat of plates +2",
+    "name": "Armoured Coat of Plates Striped +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17293,
-    "weight": 22.4122,
+    "price": 14705,
+    "weight": 18.78775,
     "rank": 2,
-    "tier": 9.614732,
+    "tier": 9.201374,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34952,8 +34952,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 54,
-      "armArmor": 32,
-      "legArmor": 32,
+      "armArmor": 26,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -34962,13 +34962,13 @@
   {
     "id": "crpg_coat_of_plates9_c_h3",
     "baseId": "crpg_coat_of_plates9_c",
-    "name": "Armoured coat of plates +3",
+    "name": "Armoured Coat of Plates Striped +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16626,
-    "weight": 22.4122,
+    "price": 14336,
+    "weight": 18.78775,
     "rank": 3,
-    "tier": 9.512862,
+    "tier": 9.138186,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -34976,8 +34976,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 56,
-      "armArmor": 33,
-      "legArmor": 33,
+      "armArmor": 27,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -138068,7 +138068,7 @@
   {
     "id": "crpg_sa_brigandine1_v3_h0",
     "baseId": "crpg_sa_brigandine1_v3",
-    "name": "red Brigandine with armpads",
+    "name": "Red Brigandine with Armpads",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 13348,
@@ -138090,7 +138090,7 @@
   {
     "id": "crpg_sa_brigandine1_v3_h1",
     "baseId": "crpg_sa_brigandine1_v3",
-    "name": "red Brigandine with armpads +1",
+    "name": "Red Brigandine with Armpads +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 13154,
@@ -138112,7 +138112,7 @@
   {
     "id": "crpg_sa_brigandine1_v3_h2",
     "baseId": "crpg_sa_brigandine1_v3",
-    "name": "red Brigandine with armpads +2",
+    "name": "Red Brigandine with Armpads +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12979,
@@ -138134,7 +138134,7 @@
   {
     "id": "crpg_sa_brigandine1_v3_h3",
     "baseId": "crpg_sa_brigandine1_v3",
-    "name": "red Brigandine with armpads +3",
+    "name": "Red Brigandine with Armpads +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12821,
@@ -138156,7 +138156,7 @@
   {
     "id": "crpg_sa_brigandine2_v3_h0",
     "baseId": "crpg_sa_brigandine2_v3",
-    "name": "blue Brigandine with armpads",
+    "name": "Blue Brigandine with Armpads",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 13348,
@@ -138178,7 +138178,7 @@
   {
     "id": "crpg_sa_brigandine2_v3_h1",
     "baseId": "crpg_sa_brigandine2_v3",
-    "name": "blue Brigandine with armpads +1",
+    "name": "Blue Brigandine with Armpads +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 13154,
@@ -138200,7 +138200,7 @@
   {
     "id": "crpg_sa_brigandine2_v3_h2",
     "baseId": "crpg_sa_brigandine2_v3",
-    "name": "blue Brigandine with armpads +2",
+    "name": "Blue Brigandine with Armpads +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12979,
@@ -138222,7 +138222,7 @@
   {
     "id": "crpg_sa_brigandine2_v3_h3",
     "baseId": "crpg_sa_brigandine2_v3",
-    "name": "blue Brigandine with armpads +3",
+    "name": "Blue Brigandine with Armpads +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12821,
@@ -138244,7 +138244,7 @@
   {
     "id": "crpg_sa_brigandine3_v2_h0",
     "baseId": "crpg_sa_brigandine3_v2",
-    "name": "blue Brigandine",
+    "name": "Blue Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12683,
@@ -138266,7 +138266,7 @@
   {
     "id": "crpg_sa_brigandine3_v2_h1",
     "baseId": "crpg_sa_brigandine3_v2",
-    "name": "blue Brigandine +1",
+    "name": "Blue Brigandine +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12549,
@@ -138288,7 +138288,7 @@
   {
     "id": "crpg_sa_brigandine3_v2_h2",
     "baseId": "crpg_sa_brigandine3_v2",
-    "name": "blue Brigandine +2",
+    "name": "Blue Brigandine +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12428,
@@ -138310,7 +138310,7 @@
   {
     "id": "crpg_sa_brigandine3_v2_h3",
     "baseId": "crpg_sa_brigandine3_v2",
-    "name": "blue Brigandine +3",
+    "name": "Blue Brigandine +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12318,
@@ -138332,7 +138332,7 @@
   {
     "id": "crpg_sa_brigandine4_v2_h0",
     "baseId": "crpg_sa_brigandine4_v2",
-    "name": "red Brigandine",
+    "name": "Bed Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12683,
@@ -138354,7 +138354,7 @@
   {
     "id": "crpg_sa_brigandine4_v2_h1",
     "baseId": "crpg_sa_brigandine4_v2",
-    "name": "red Brigandine +1",
+    "name": "Bed Brigandine +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12549,
@@ -138376,7 +138376,7 @@
   {
     "id": "crpg_sa_brigandine4_v2_h2",
     "baseId": "crpg_sa_brigandine4_v2",
-    "name": "red Brigandine +2",
+    "name": "Bed Brigandine +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12428,
@@ -138398,7 +138398,7 @@
   {
     "id": "crpg_sa_brigandine4_v2_h3",
     "baseId": "crpg_sa_brigandine4_v2",
-    "name": "red Brigandine +3",
+    "name": "Bed Brigandine +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12318,
@@ -138420,7 +138420,7 @@
   {
     "id": "crpg_sa_brigandine5_v3_h0",
     "baseId": "crpg_sa_brigandine5_v3",
-    "name": "black Brigandine with armpads",
+    "name": "Black Brigandine with Armpads",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 13348,
@@ -138442,7 +138442,7 @@
   {
     "id": "crpg_sa_brigandine5_v3_h1",
     "baseId": "crpg_sa_brigandine5_v3",
-    "name": "black Brigandine with armpads +1",
+    "name": "Black Brigandine with Armpads +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 13154,
@@ -138464,7 +138464,7 @@
   {
     "id": "crpg_sa_brigandine5_v3_h2",
     "baseId": "crpg_sa_brigandine5_v3",
-    "name": "black Brigandine with armpads +2",
+    "name": "Black Brigandine with Armpads +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12979,
@@ -138486,7 +138486,7 @@
   {
     "id": "crpg_sa_brigandine5_v3_h3",
     "baseId": "crpg_sa_brigandine5_v3",
-    "name": "black Brigandine with armpads +3",
+    "name": "Black Brigandine with Armpads +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12821,
@@ -138508,7 +138508,7 @@
   {
     "id": "crpg_sa_brigandine6_v2_h0",
     "baseId": "crpg_sa_brigandine6_v2",
-    "name": "black Brigandine",
+    "name": "Black Brigandine",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12683,
@@ -138530,7 +138530,7 @@
   {
     "id": "crpg_sa_brigandine6_v2_h1",
     "baseId": "crpg_sa_brigandine6_v2",
-    "name": "black Brigandine +1",
+    "name": "Black Brigandine +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12549,
@@ -138552,7 +138552,7 @@
   {
     "id": "crpg_sa_brigandine6_v2_h2",
     "baseId": "crpg_sa_brigandine6_v2",
-    "name": "black Brigandine +2",
+    "name": "Black Brigandine +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12428,
@@ -138574,7 +138574,7 @@
   {
     "id": "crpg_sa_brigandine6_v2_h3",
     "baseId": "crpg_sa_brigandine6_v2",
-    "name": "black Brigandine +3",
+    "name": "Black Brigandine +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12318,
