@@ -10264,7 +10264,7 @@
   {
     "id": "crpg_ba_platearmor2_h0",
     "baseId": "crpg_ba_platearmor2",
-    "name": "Bahamut Full Plate Armor ",
+    "name": "Bahamut Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 15128,
@@ -10286,7 +10286,7 @@
   {
     "id": "crpg_ba_platearmor2_h1",
     "baseId": "crpg_ba_platearmor2",
-    "name": "Bahamut Full Plate Armor  +1",
+    "name": "Bahamut Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 14689,
@@ -10308,7 +10308,7 @@
   {
     "id": "crpg_ba_platearmor2_h2",
     "baseId": "crpg_ba_platearmor2",
-    "name": "Bahamut Full Plate Armor  +2",
+    "name": "Bahamut Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 14298,
@@ -10330,7 +10330,7 @@
   {
     "id": "crpg_ba_platearmor2_h3",
     "baseId": "crpg_ba_platearmor2",
-    "name": "Bahamut Full Plate Armor  +3",
+    "name": "Bahamut Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 13948,
@@ -10352,7 +10352,7 @@
   {
     "id": "crpg_ba_platearmor2gold_h0",
     "baseId": "crpg_ba_platearmor2gold",
-    "name": "Bahamut Gold Full Plate Armor ",
+    "name": "Bahamut Gold Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 15128,
@@ -10374,7 +10374,7 @@
   {
     "id": "crpg_ba_platearmor2gold_h1",
     "baseId": "crpg_ba_platearmor2gold",
-    "name": "Bahamut Gold Full Plate Armor  +1",
+    "name": "Bahamut Gold Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 14689,
@@ -10396,7 +10396,7 @@
   {
     "id": "crpg_ba_platearmor2gold_h2",
     "baseId": "crpg_ba_platearmor2gold",
-    "name": "Bahamut Gold Full Plate Armor  +2",
+    "name": "Bahamut Gold Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 14298,
@@ -10418,7 +10418,7 @@
   {
     "id": "crpg_ba_platearmor2gold_h3",
     "baseId": "crpg_ba_platearmor2gold",
-    "name": "Bahamut Gold Full Plate Armor  +3",
+    "name": "Bahamut Gold Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 13948,
@@ -10440,7 +10440,7 @@
   {
     "id": "crpg_ba_platearmor2worn_h0",
     "baseId": "crpg_ba_platearmor2worn",
-    "name": "Bahamut Battered Full Plate Armor ",
+    "name": "Bahamut Battered Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12940,
@@ -10462,7 +10462,7 @@
   {
     "id": "crpg_ba_platearmor2worn_h1",
     "baseId": "crpg_ba_platearmor2worn",
-    "name": "Bahamut Battered Full Plate Armor  +1",
+    "name": "Bahamut Battered Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12720,
@@ -10484,7 +10484,7 @@
   {
     "id": "crpg_ba_platearmor2worn_h2",
     "baseId": "crpg_ba_platearmor2worn",
-    "name": "Bahamut Battered Full Plate Armor  +2",
+    "name": "Bahamut Battered Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12522,
@@ -10506,7 +10506,7 @@
   {
     "id": "crpg_ba_platearmor2worn_h3",
     "baseId": "crpg_ba_platearmor2worn",
-    "name": "Bahamut Battered Full Plate Armor  +3",
+    "name": "Bahamut Battered Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 12344,
