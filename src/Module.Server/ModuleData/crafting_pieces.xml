@@ -30364,80 +30364,80 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_blade_h0" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.0">
+  <CraftingPiece id="crpg_kriegsmesser_blade_h0" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_blade_h1" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.0">
+  <CraftingPiece id="crpg_kriegsmesser_blade_h1" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_blade_h2" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.0">
+  <CraftingPiece id="crpg_kriegsmesser_blade_h2" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_blade_h3" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.0">
+  <CraftingPiece id="crpg_kriegsmesser_blade_h3" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="1.015" />
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_pommel_h0" name="{=}Kriegsmesser Pommel" tier="4" piece_type="Pommel" mesh="kriegsmesser_pommel" culture="Culture.battania" length="6.31" weight="0.12">
+  <CraftingPiece id="crpg_kriegsmesser_pommel_h0" name="{=}Kriegsmesser Pommel" tier="4" piece_type="Pommel" mesh="kriegsmesser_pommel" culture="Culture.battania" length="6.31" weight="0.5">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_pommel_h1" name="{=}Kriegsmesser Pommel" tier="4" piece_type="Pommel" mesh="kriegsmesser_pommel" culture="Culture.battania" length="6.31" weight="0.12">
+  <CraftingPiece id="crpg_kriegsmesser_pommel_h1" name="{=}Kriegsmesser Pommel" tier="4" piece_type="Pommel" mesh="kriegsmesser_pommel" culture="Culture.battania" length="6.31" weight="0.5">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_pommel_h2" name="{=}Kriegsmesser Pommel" tier="4" piece_type="Pommel" mesh="kriegsmesser_pommel" culture="Culture.battania" length="6.31" weight="0.12">
+  <CraftingPiece id="crpg_kriegsmesser_pommel_h2" name="{=}Kriegsmesser Pommel" tier="4" piece_type="Pommel" mesh="kriegsmesser_pommel" culture="Culture.battania" length="6.31" weight="0.5">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_pommel_h3" name="{=}Kriegsmesser Pommel" tier="4" piece_type="Pommel" mesh="kriegsmesser_pommel" culture="Culture.battania" length="6.31" weight="0.12">
+  <CraftingPiece id="crpg_kriegsmesser_pommel_h3" name="{=}Kriegsmesser Pommel" tier="4" piece_type="Pommel" mesh="kriegsmesser_pommel" culture="Culture.battania" length="6.31" weight="0.5">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_guard_h0" name="{=}Kriegsmesser Guard" tier="5" piece_type="Guard" mesh="kriegsmesser_guard" culture="Culture.battania" length="3.91" weight="0.097">
+  <CraftingPiece id="crpg_kriegsmesser_guard_h0" name="{=}Kriegsmesser Guard" tier="5" piece_type="Guard" mesh="kriegsmesser_guard" culture="Culture.battania" length="3.91" weight="0.3">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_guard_h1" name="{=}Kriegsmesser Guard" tier="5" piece_type="Guard" mesh="kriegsmesser_guard" culture="Culture.battania" length="3.91" weight="0.097">
+  <CraftingPiece id="crpg_kriegsmesser_guard_h1" name="{=}Kriegsmesser Guard" tier="5" piece_type="Guard" mesh="kriegsmesser_guard" culture="Culture.battania" length="3.91" weight="0.3">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_guard_h2" name="{=}Kriegsmesser Guard" tier="5" piece_type="Guard" mesh="kriegsmesser_guard" culture="Culture.battania" length="3.91" weight="0.097">
+  <CraftingPiece id="crpg_kriegsmesser_guard_h2" name="{=}Kriegsmesser Guard" tier="5" piece_type="Guard" mesh="kriegsmesser_guard" culture="Culture.battania" length="3.91" weight="0.3">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_guard_h3" name="{=}Kriegsmesser Guard" tier="5" piece_type="Guard" mesh="kriegsmesser_guard" culture="Culture.battania" length="3.91" weight="0.097">
+  <CraftingPiece id="crpg_kriegsmesser_guard_h3" name="{=}Kriegsmesser Guard" tier="5" piece_type="Guard" mesh="kriegsmesser_guard" culture="Culture.battania" length="3.91" weight="0.3">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_handle_h0" name="{=}Kriegsmesser Handle" tier="3" piece_type="Handle" mesh="kriegsmesser_handle" culture="Culture.khuzait" length="26.3" weight="0.1">
+  <CraftingPiece id="crpg_kriegsmesser_handle_h0" name="{=}Kriegsmesser Handle" tier="3" piece_type="Handle" mesh="kriegsmesser_handle" culture="Culture.khuzait" length="26.3" weight="0.2">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.1" next_piece_offset="1" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_handle_h1" name="{=}Kriegsmesser Handle" tier="3" piece_type="Handle" mesh="kriegsmesser_handle" culture="Culture.khuzait" length="26.3" weight="0.1">
+  <CraftingPiece id="crpg_kriegsmesser_handle_h1" name="{=}Kriegsmesser Handle" tier="3" piece_type="Handle" mesh="kriegsmesser_handle" culture="Culture.khuzait" length="26.3" weight="0.2">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.1" next_piece_offset="1" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_handle_h2" name="{=}Kriegsmesser Handle" tier="3" piece_type="Handle" mesh="kriegsmesser_handle" culture="Culture.khuzait" length="26.3" weight="0.1">
+  <CraftingPiece id="crpg_kriegsmesser_handle_h2" name="{=}Kriegsmesser Handle" tier="3" piece_type="Handle" mesh="kriegsmesser_handle" culture="Culture.khuzait" length="26.3" weight="0.2">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.1" next_piece_offset="1" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_handle_h3" name="{=}Kriegsmesser Handle" tier="3" piece_type="Handle" mesh="kriegsmesser_handle" culture="Culture.khuzait" length="26.3" weight="0.1">
+  <CraftingPiece id="crpg_kriegsmesser_handle_h3" name="{=}Kriegsmesser Handle" tier="3" piece_type="Handle" mesh="kriegsmesser_handle" culture="Culture.khuzait" length="26.3" weight="0.2">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.1" next_piece_offset="1" />
   </CraftingPiece>
   <CraftingPiece id="crpg_zweihander_blade_h0" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.93">
