@@ -51998,7 +51998,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -52035,7 +52035,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -52072,7 +52072,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -52109,7 +52109,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -71744,7 +71744,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -71805,7 +71805,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -71866,7 +71866,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -71927,7 +71927,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -128860,7 +128860,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -128921,7 +128921,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -128982,7 +128982,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -129043,7 +129043,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -133868,13 +133868,13 @@
   {
     "id": "crpg_rondel_reverse_h0",
     "baseId": "crpg_rondel_reverse",
-    "name": "Rondel_Reverse",
+    "name": "Rondel Reverse",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 2780643,
-    "weight": 1.13,
+    "price": 6384,
+    "weight": 3.6,
     "rank": 0,
-    "tier": 220.971191,
+    "tier": 9.499791,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -133882,36 +133882,36 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 17,
-        "balance": 1.0,
-        "handling": 115,
+        "balance": 0.6,
+        "handling": 104,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 38,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustDamage": 15,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 77,
         "swingDamage": 38,
         "swingDamageType": "Pierce",
-        "swingSpeed": 121
+        "swingSpeed": 87
       }
     ]
   },
   {
     "id": "crpg_rondel_reverse_h1",
     "baseId": "crpg_rondel_reverse",
-    "name": "Rondel_Reverse",
+    "name": "Rondel Reverse",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1903400,
-    "weight": 1.13,
+    "price": 6715,
+    "weight": 3.49,
     "rank": 1,
-    "tier": 182.62085,
+    "tier": 9.771568,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -133919,36 +133919,36 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 17,
-        "balance": 1.0,
-        "handling": 115,
+        "balance": 0.64,
+        "handling": 105,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 38,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustDamage": 15,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 77,
         "swingDamage": 38,
         "swingDamageType": "Pierce",
-        "swingSpeed": 121
+        "swingSpeed": 89
       }
     ]
   },
   {
     "id": "crpg_rondel_reverse_h2",
     "baseId": "crpg_rondel_reverse",
-    "name": "Rondel_Reverse",
+    "name": "Rondel Reverse",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 1347165,
-    "weight": 1.13,
+    "price": 7133,
+    "weight": 3.38,
     "rank": 2,
-    "tier": 153.45224,
+    "tier": 10.1056108,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -133956,36 +133956,36 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 17,
-        "balance": 1.0,
-        "handling": 115,
+        "balance": 0.67,
+        "handling": 105,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
         "thrustDamage": 38,
         "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
+        "thrustSpeed": 78,
         "swingDamage": 38,
         "swingDamageType": "Pierce",
-        "swingSpeed": 121
+        "swingSpeed": 90
       }
     ]
   },
   {
     "id": "crpg_rondel_reverse_h3",
     "baseId": "crpg_rondel_reverse",
-    "name": "Rondel_Reverse",
+    "name": "Rondel Reverse",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 980632,
-    "weight": 1.13,
+    "price": 6530,
+    "weight": 3.38,
     "rank": 3,
-    "tier": 130.752182,
+    "tier": 9.620286,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -133993,23 +133993,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
         "length": 17,
-        "balance": 1.0,
-        "handling": 115,
+        "balance": 0.67,
+        "handling": 105,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 38,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 95,
-        "swingDamage": 38,
+        "thrustDamage": 15,
+        "thrustDamageType": "Blunt",
+        "thrustSpeed": 78,
+        "swingDamage": 40,
         "swingDamageType": "Pierce",
-        "swingSpeed": 121
+        "swingSpeed": 90
       }
     ]
   },
@@ -134030,7 +134030,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -134067,7 +134067,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -134104,7 +134104,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -134141,7 +134141,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_thrust",
+        "itemUsage": "onehanded_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -141953,7 +141953,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -141991,7 +141991,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -142029,7 +142029,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -142067,7 +142067,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -165312,7 +165312,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -165349,7 +165349,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -165386,7 +165386,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -165423,7 +165423,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -182180,7 +182180,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -182217,7 +182217,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -182254,7 +182254,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -182291,7 +182291,7 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_shield_swing_thrust",
+        "itemUsage": "onehanded_swing_thrust",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
