@@ -103,7 +103,7 @@ internal class CrpgSubModule : MBSubModuleBase
         InitializeGameModels(starterObject);
         CrpgSkills.Initialize(game);
         CrpgBannerEffects.Initialize(game);
-        ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("Crpg", "managed_core_parameters"));
+        ManagedParameters.Instance.Initialize(ModuleHelper.GetXmlPath("cRPG_Beta", "managed_core_parameters"));
 #if CRPG_CLIENT
         game.GameTextManager.LoadGameTexts();
 #endif
@@ -197,7 +197,7 @@ internal class CrpgSubModule : MBSubModuleBase
 #endif
     private CrpgConstants LoadCrpgConstants()
     {
-        string path = ModuleHelper.GetModuleFullPath("cRPG") + "ModuleData/constants.json";
+        string path = ModuleHelper.GetModuleFullPath("cRPG_Beta") + "ModuleData/constants.json";
         return JsonConvert.DeserializeObject<CrpgConstants>(File.ReadAllText(path))!;
     }
 

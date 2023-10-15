@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Module>
-  <Name value="cRPG"/>
-  <Id value="cRPG"/>
-  <Version value="v1.2.12.115"/>
+  <Name value="cRPG_Beta"/>
+  <Id value="cRPG_Beta"/>
+  <Version value="v1.2.12.905"/>
   <ModuleCategory value="Multiplayer"/>
   <DependedModules>
     <DependedModule Id="Native" DependentVersion="v1.2.12" Optional="false"/>
@@ -10,7 +10,7 @@
   </DependedModules>
   <SubModules>
     <SubModule>
-      <Name value="cRPG"/>
+      <Name value="cRPG_Beta"/>
       <DLLName value="Crpg.Module.dll"/>
       <SubModuleClassType value="Crpg.Module.CrpgSubModule"/>
       <Tags />
