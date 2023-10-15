@@ -11,8 +11,8 @@
     <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="Exists('Resources\crpg_launcher_icon.ico')">
-    <ApplicationIcon>Resources\crpg_launcher_icon.ico</ApplicationIcon>
+  <PropertyGroup Condition="Exists('C:\crpg_launcher_icon.ico')">
+    <ApplicationIcon>C:\crpg_launcher_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

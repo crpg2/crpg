@@ -123,7 +123,7 @@ static GameInstallationInfo? ResolveBannerlordSteamInstallation()
             return new GameInstallationInfo(
                 bannerlordPath,
                 bannerlordExePath,
-                "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /multiplayer",
+                "_MODULES_*Native*Multiplayer*cRPG_Beta*_MODULES_ /multiplayer",
                 Path.GetDirectoryName(bannerlordExePath));
         }
     }
@@ -188,10 +188,10 @@ static GameInstallationInfo? ResolveBannerlordXboxInstallation()
 
 static async Task UpdateCrpgAsync(string bannerlordPath, bool isBeta = false,bool isServer = false)
 {
-    string crpgPath = Path.Combine(bannerlordPath, "Modules/cRPG");
+    string crpgPath = Path.Combine(bannerlordPath, "Modules/cRPG_Beta");
     string tagPath = Path.Combine(crpgPath, "Tag.txt");
     string? tag = File.Exists(tagPath) ? File.ReadAllText(tagPath) : null;
-    string websiteUrl = "https://c-rpg.eu/";
+    string websiteUrl = "https://namidaka.fr/";
     string fileName = "cRPG.zip";
     if (isBeta)
     {
