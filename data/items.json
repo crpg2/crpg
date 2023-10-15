@@ -9072,22 +9072,22 @@
   {
     "id": "crpg_ba_heraldictabard3_h0",
     "baseId": "crpg_ba_heraldictabard3",
-    "name": "Bahamut Tabard over Plate Armor",
+    "name": "Bahamut Tabard over Battered Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 13538,
-    "weight": 17.72622,
+    "price": 20899,
+    "weight": 23.90339,
     "rank": 0,
-    "tier": 8.99716,
+    "tier": 10.1193752,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 50,
-      "armArmor": 16,
-      "legArmor": 26,
+      "bodyArmor": 61,
+      "armArmor": 25,
+      "legArmor": 27,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -9096,22 +9096,22 @@
   {
     "id": "crpg_ba_heraldictabard3_h1",
     "baseId": "crpg_ba_heraldictabard3",
-    "name": "Bahamut Tabard over Plate Armor +1",
+    "name": "Bahamut Tabard over Battered Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 13253,
-    "weight": 17.72622,
+    "price": 19819,
+    "weight": 23.90339,
     "rank": 1,
-    "tier": 8.945213,
+    "tier": 9.975584,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 52,
-      "armArmor": 17,
-      "legArmor": 27,
+      "bodyArmor": 63,
+      "armArmor": 26,
+      "legArmor": 28,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -9120,22 +9120,22 @@
   {
     "id": "crpg_ba_heraldictabard3_h2",
     "baseId": "crpg_ba_heraldictabard3",
-    "name": "Bahamut Tabard over Plate Armor +2",
+    "name": "Bahamut Tabard over Battered Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12998,
-    "weight": 17.72622,
+    "price": 18874,
+    "weight": 23.90339,
     "rank": 2,
-    "tier": 8.89799,
+    "tier": 9.844863,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 54,
-      "armArmor": 18,
-      "legArmor": 28,
+      "bodyArmor": 65,
+      "armArmor": 27,
+      "legArmor": 29,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -9144,22 +9144,22 @@
   {
     "id": "crpg_ba_heraldictabard3_h3",
     "baseId": "crpg_ba_heraldictabard3",
-    "name": "Bahamut Tabard over Plate Armor +3",
+    "name": "Bahamut Tabard over Battered Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12768,
-    "weight": 17.72622,
+    "price": 18042,
+    "weight": 23.90339,
     "rank": 3,
-    "tier": 8.854873,
+    "tier": 9.725511,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 56,
-      "armArmor": 19,
-      "legArmor": 29,
+      "bodyArmor": 67,
+      "armArmor": 28,
+      "legArmor": 30,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10179,17 +10179,17 @@
     "name": "Bahamut Full Plate Armor with Rondel",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16910,
-    "weight": 20.43998,
+    "price": 21803,
+    "weight": 24.75321,
     "rank": 0,
-    "tier": 9.556587,
+    "tier": 10.2355843,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 56,
-      "armArmor": 20,
-      "legArmor": 25,
+      "bodyArmor": 62,
+      "armArmor": 26,
+      "legArmor": 28,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10201,17 +10201,17 @@
     "name": "Bahamut Full Plate Armor with Rondel +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16285,
-    "weight": 20.43998,
+    "price": 20613,
+    "weight": 24.75321,
     "rank": 1,
-    "tier": 9.45959,
+    "tier": 10.0818443,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 58,
-      "armArmor": 21,
-      "legArmor": 26,
+      "bodyArmor": 64,
+      "armArmor": 27,
+      "legArmor": 29,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10223,17 +10223,17 @@
     "name": "Bahamut Full Plate Armor with Rondel +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15732,
-    "weight": 20.43998,
+    "price": 19574,
+    "weight": 24.75321,
     "rank": 2,
-    "tier": 9.371408,
+    "tier": 9.942079,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 60,
-      "armArmor": 22,
-      "legArmor": 27,
+      "bodyArmor": 66,
+      "armArmor": 28,
+      "legArmor": 30,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10245,17 +10245,17 @@
     "name": "Bahamut Full Plate Armor with Rondel +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15239,
-    "weight": 20.43998,
+    "price": 18660,
+    "weight": 24.75321,
     "rank": 3,
-    "tier": 9.290897,
+    "tier": 9.814467,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 62,
-      "armArmor": 23,
-      "legArmor": 28,
+      "bodyArmor": 68,
+      "armArmor": 29,
+      "legArmor": 31,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10267,17 +10267,17 @@
     "name": "Bahamut Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15128,
-    "weight": 18.9619,
+    "price": 21803,
+    "weight": 24.75321,
     "rank": 0,
-    "tier": 9.272479,
+    "tier": 10.2355843,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 53,
-      "armArmor": 18,
-      "legArmor": 25,
+      "bodyArmor": 62,
+      "armArmor": 26,
+      "legArmor": 28,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10289,17 +10289,17 @@
     "name": "Bahamut Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 14689,
-    "weight": 18.9619,
+    "price": 20613,
+    "weight": 24.75321,
     "rank": 1,
-    "tier": 9.198694,
+    "tier": 10.0818443,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 55,
-      "armArmor": 19,
-      "legArmor": 26,
+      "bodyArmor": 64,
+      "armArmor": 27,
+      "legArmor": 29,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10311,17 +10311,17 @@
     "name": "Bahamut Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 14298,
-    "weight": 18.9619,
+    "price": 19574,
+    "weight": 24.75321,
     "rank": 2,
-    "tier": 9.131616,
+    "tier": 9.942079,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 57,
-      "armArmor": 20,
-      "legArmor": 27,
+      "bodyArmor": 66,
+      "armArmor": 28,
+      "legArmor": 30,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10333,17 +10333,17 @@
     "name": "Bahamut Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 13948,
-    "weight": 18.9619,
+    "price": 18660,
+    "weight": 24.75321,
     "rank": 3,
-    "tier": 9.070373,
+    "tier": 9.814467,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 59,
-      "armArmor": 21,
-      "legArmor": 28,
+      "bodyArmor": 68,
+      "armArmor": 29,
+      "legArmor": 31,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10355,17 +10355,17 @@
     "name": "Bahamut Gold Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15128,
-    "weight": 18.9619,
+    "price": 21803,
+    "weight": 24.75321,
     "rank": 0,
-    "tier": 9.272479,
+    "tier": 10.2355843,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 53,
-      "armArmor": 18,
-      "legArmor": 25,
+      "bodyArmor": 62,
+      "armArmor": 26,
+      "legArmor": 28,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10377,17 +10377,17 @@
     "name": "Bahamut Gold Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 14689,
-    "weight": 18.9619,
+    "price": 20613,
+    "weight": 24.75321,
     "rank": 1,
-    "tier": 9.198694,
+    "tier": 10.0818443,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 55,
-      "armArmor": 19,
-      "legArmor": 26,
+      "bodyArmor": 64,
+      "armArmor": 27,
+      "legArmor": 29,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10399,17 +10399,17 @@
     "name": "Bahamut Gold Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 14298,
-    "weight": 18.9619,
+    "price": 19574,
+    "weight": 24.75321,
     "rank": 2,
-    "tier": 9.131616,
+    "tier": 9.942079,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 57,
-      "armArmor": 20,
-      "legArmor": 27,
+      "bodyArmor": 66,
+      "armArmor": 28,
+      "legArmor": 30,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10421,17 +10421,17 @@
     "name": "Bahamut Gold Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 13948,
-    "weight": 18.9619,
+    "price": 18660,
+    "weight": 24.75321,
     "rank": 3,
-    "tier": 9.070373,
+    "tier": 9.814467,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 59,
-      "armArmor": 21,
-      "legArmor": 28,
+      "bodyArmor": 68,
+      "armArmor": 29,
+      "legArmor": 31,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10443,17 +10443,17 @@
     "name": "Bahamut Battered Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12940,
-    "weight": 17.00676,
+    "price": 20899,
+    "weight": 23.90339,
     "rank": 0,
-    "tier": 8.887122,
+    "tier": 10.1193752,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 49,
-      "armArmor": 16,
-      "legArmor": 24,
+      "bodyArmor": 61,
+      "armArmor": 25,
+      "legArmor": 27,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10465,17 +10465,17 @@
     "name": "Bahamut Battered Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12720,
-    "weight": 17.00676,
+    "price": 19819,
+    "weight": 23.90339,
     "rank": 1,
-    "tier": 8.845795,
+    "tier": 9.975584,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 51,
-      "armArmor": 17,
-      "legArmor": 25,
+      "bodyArmor": 63,
+      "armArmor": 26,
+      "legArmor": 28,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10487,17 +10487,17 @@
     "name": "Bahamut Battered Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12522,
-    "weight": 17.00676,
+    "price": 18874,
+    "weight": 23.90339,
     "rank": 2,
-    "tier": 8.808223,
+    "tier": 9.844863,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 53,
-      "armArmor": 18,
-      "legArmor": 26,
+      "bodyArmor": 65,
+      "armArmor": 27,
+      "legArmor": 29,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10509,17 +10509,17 @@
     "name": "Bahamut Battered Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 12344,
-    "weight": 17.00676,
+    "price": 18042,
+    "weight": 23.90339,
     "rank": 3,
-    "tier": 8.773917,
+    "tier": 9.725511,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 55,
-      "armArmor": 19,
-      "legArmor": 27,
+      "bodyArmor": 67,
+      "armArmor": 28,
+      "legArmor": 30,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10531,17 +10531,17 @@
     "name": "Bahamut Gold Full Plate Armor with Rondel",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16910,
-    "weight": 20.43998,
+    "price": 21803,
+    "weight": 24.75321,
     "rank": 0,
-    "tier": 9.556587,
+    "tier": 10.2355843,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 56,
-      "armArmor": 20,
-      "legArmor": 25,
+      "bodyArmor": 62,
+      "armArmor": 26,
+      "legArmor": 28,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10553,17 +10553,17 @@
     "name": "Bahamut Gold Full Plate Armor with Rondel +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16285,
-    "weight": 20.43998,
+    "price": 20613,
+    "weight": 24.75321,
     "rank": 1,
-    "tier": 9.45959,
+    "tier": 10.0818443,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 58,
-      "armArmor": 21,
-      "legArmor": 26,
+      "bodyArmor": 64,
+      "armArmor": 27,
+      "legArmor": 29,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10575,17 +10575,17 @@
     "name": "Bahamut Gold Full Plate Armor with Rondel +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15732,
-    "weight": 20.43998,
+    "price": 19574,
+    "weight": 24.75321,
     "rank": 2,
-    "tier": 9.371408,
+    "tier": 9.942079,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 60,
-      "armArmor": 22,
-      "legArmor": 27,
+      "bodyArmor": 66,
+      "armArmor": 28,
+      "legArmor": 30,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -10597,17 +10597,17 @@
     "name": "Bahamut Gold Full Plate Armor with Rondel +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15239,
-    "weight": 20.43998,
+    "price": 18660,
+    "weight": 24.75321,
     "rank": 3,
-    "tier": 9.290897,
+    "tier": 9.814467,
     "requirement": 0,
     "flags": [],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 62,
-      "armArmor": 23,
-      "legArmor": 28,
+      "bodyArmor": 68,
+      "armArmor": 29,
+      "legArmor": 31,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137223,19 +137223,19 @@
     "name": "Blackend Plate Cuirass",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 20828,
-    "weight": 24.04683,
+    "price": 19297,
+    "weight": 21.6561,
     "rank": 0,
-    "tier": 10.1101551,
+    "tier": 9.903888,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 55,
-      "armArmor": 30,
-      "legArmor": 30,
+      "bodyArmor": 68,
+      "armArmor": 17,
+      "legArmor": 17,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137247,19 +137247,19 @@
     "name": "Blackend Plate Cuirass +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 19749,
-    "weight": 24.04683,
+    "price": 18439,
+    "weight": 21.6561,
     "rank": 1,
-    "tier": 9.966043,
+    "tier": 9.782933,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 57,
-      "armArmor": 31,
-      "legArmor": 31,
+      "bodyArmor": 70,
+      "armArmor": 18,
+      "legArmor": 18,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137271,19 +137271,19 @@
     "name": "Blackend Plate Cuirass +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18805,
-    "weight": 24.04683,
+    "price": 17684,
+    "weight": 21.6561,
     "rank": 2,
-    "tier": 9.835034,
+    "tier": 9.672974,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 59,
-      "armArmor": 32,
-      "legArmor": 32,
+      "bodyArmor": 72,
+      "armArmor": 19,
+      "legArmor": 19,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137295,19 +137295,19 @@
     "name": "Blackend Plate Cuirass +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17972,
-    "weight": 24.04683,
+    "price": 17015,
+    "weight": 21.6561,
     "rank": 3,
-    "tier": 9.715417,
+    "tier": 9.572576,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 61,
-      "armArmor": 33,
-      "legArmor": 33,
+      "bodyArmor": 74,
+      "armArmor": 20,
+      "legArmor": 20,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137780,22 +137780,22 @@
   {
     "id": "crpg_Sa_brigandine_plate1_h0",
     "baseId": "crpg_Sa_brigandine_plate1",
-    "name": "Reinforced red Brigandine with mail",
+    "name": "Reinforced Red Brigandine with Mail",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17402,
-    "weight": 21.12849,
+    "price": 17694,
+    "weight": 20.78342,
     "rank": 0,
-    "tier": 9.631073,
+    "tier": 9.67444,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 46,
-      "armArmor": 30,
-      "legArmor": 30,
+      "bodyArmor": 55,
+      "armArmor": 24,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137804,22 +137804,22 @@
   {
     "id": "crpg_Sa_brigandine_plate1_h1",
     "baseId": "crpg_Sa_brigandine_plate1",
-    "name": "Reinforced red Brigandine with mail +1",
+    "name": "Reinforced Red Brigandine with Mail +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16713,
-    "weight": 21.12849,
+    "price": 16996,
+    "weight": 20.78342,
     "rank": 1,
-    "tier": 9.526272,
+    "tier": 9.569688,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 48,
-      "armArmor": 31,
-      "legArmor": 31,
+      "bodyArmor": 57,
+      "armArmor": 25,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137828,22 +137828,22 @@
   {
     "id": "crpg_Sa_brigandine_plate1_h2",
     "baseId": "crpg_Sa_brigandine_plate1",
-    "name": "Reinforced red Brigandine with mail +2",
+    "name": "Reinforced Red Brigandine with Mail +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16104,
-    "weight": 21.12849,
+    "price": 16380,
+    "weight": 20.78342,
     "rank": 2,
-    "tier": 9.430996,
+    "tier": 9.474458,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 50,
-      "armArmor": 32,
-      "legArmor": 32,
+      "bodyArmor": 59,
+      "armArmor": 26,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137852,22 +137852,22 @@
   {
     "id": "crpg_Sa_brigandine_plate1_h3",
     "baseId": "crpg_Sa_brigandine_plate1",
-    "name": "Reinforced red Brigandine with mail +3",
+    "name": "Reinforced Red Brigandine with Mail +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15563,
-    "weight": 21.12849,
+    "price": 15832,
+    "weight": 20.78342,
     "rank": 3,
-    "tier": 9.344007,
+    "tier": 9.387509,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 52,
-      "armArmor": 33,
-      "legArmor": 33,
+      "bodyArmor": 61,
+      "armArmor": 27,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137876,22 +137876,22 @@
   {
     "id": "crpg_Sa_brigandine_plate2_h0",
     "baseId": "crpg_Sa_brigandine_plate2",
-    "name": "Reinforced blue Brigandine with mail",
+    "name": "Reinforced Blue Brigandine with Mail",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17402,
-    "weight": 21.12849,
+    "price": 17694,
+    "weight": 20.78342,
     "rank": 0,
-    "tier": 9.631073,
+    "tier": 9.67444,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 46,
-      "armArmor": 30,
-      "legArmor": 30,
+      "bodyArmor": 55,
+      "armArmor": 24,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137900,22 +137900,22 @@
   {
     "id": "crpg_Sa_brigandine_plate2_h1",
     "baseId": "crpg_Sa_brigandine_plate2",
-    "name": "Reinforced blue Brigandine with mail +1",
+    "name": "Reinforced Blue Brigandine with Mail +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16713,
-    "weight": 21.12849,
+    "price": 16996,
+    "weight": 20.78342,
     "rank": 1,
-    "tier": 9.526272,
+    "tier": 9.569688,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 48,
-      "armArmor": 31,
-      "legArmor": 31,
+      "bodyArmor": 57,
+      "armArmor": 25,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137924,22 +137924,22 @@
   {
     "id": "crpg_Sa_brigandine_plate2_h2",
     "baseId": "crpg_Sa_brigandine_plate2",
-    "name": "Reinforced blue Brigandine with mail +2",
+    "name": "Reinforced Blue Brigandine with Mail +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16104,
-    "weight": 21.12849,
+    "price": 16380,
+    "weight": 20.78342,
     "rank": 2,
-    "tier": 9.430996,
+    "tier": 9.474458,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 50,
-      "armArmor": 32,
-      "legArmor": 32,
+      "bodyArmor": 59,
+      "armArmor": 26,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137948,22 +137948,22 @@
   {
     "id": "crpg_Sa_brigandine_plate2_h3",
     "baseId": "crpg_Sa_brigandine_plate2",
-    "name": "Reinforced blue Brigandine with mail +3",
+    "name": "Reinforced Blue Brigandine with Mail +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15563,
-    "weight": 21.12849,
+    "price": 15832,
+    "weight": 20.78342,
     "rank": 3,
-    "tier": 9.344007,
+    "tier": 9.387509,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 52,
-      "armArmor": 33,
-      "legArmor": 33,
+      "bodyArmor": 61,
+      "armArmor": 27,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137972,22 +137972,22 @@
   {
     "id": "crpg_Sa_brigandine_plate3_h0",
     "baseId": "crpg_Sa_brigandine_plate3",
-    "name": "Reinforced black Brigandine with mail",
+    "name": "Reinforced Black Brigandine with Mail",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17402,
-    "weight": 21.12849,
+    "price": 17694,
+    "weight": 20.78342,
     "rank": 0,
-    "tier": 9.631073,
+    "tier": 9.67444,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 46,
-      "armArmor": 30,
-      "legArmor": 30,
+      "bodyArmor": 55,
+      "armArmor": 24,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -137996,22 +137996,22 @@
   {
     "id": "crpg_Sa_brigandine_plate3_h1",
     "baseId": "crpg_Sa_brigandine_plate3",
-    "name": "Reinforced black Brigandine with mail +1",
+    "name": "Reinforced Black Brigandine with Mail +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16713,
-    "weight": 21.12849,
+    "price": 16996,
+    "weight": 20.78342,
     "rank": 1,
-    "tier": 9.526272,
+    "tier": 9.569688,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 48,
-      "armArmor": 31,
-      "legArmor": 31,
+      "bodyArmor": 57,
+      "armArmor": 25,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -138020,22 +138020,22 @@
   {
     "id": "crpg_Sa_brigandine_plate3_h2",
     "baseId": "crpg_Sa_brigandine_plate3",
-    "name": "Reinforced black Brigandine with mail +2",
+    "name": "Reinforced Black Brigandine with Mail +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16104,
-    "weight": 21.12849,
+    "price": 16380,
+    "weight": 20.78342,
     "rank": 2,
-    "tier": 9.430996,
+    "tier": 9.474458,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 50,
-      "armArmor": 32,
-      "legArmor": 32,
+      "bodyArmor": 59,
+      "armArmor": 26,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -138044,22 +138044,22 @@
   {
     "id": "crpg_Sa_brigandine_plate3_h3",
     "baseId": "crpg_Sa_brigandine_plate3",
-    "name": "Reinforced black Brigandine with mail +3",
+    "name": "Reinforced Black Brigandine with Mail +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15563,
-    "weight": 21.12849,
+    "price": 15832,
+    "weight": 20.78342,
     "rank": 3,
-    "tier": 9.344007,
+    "tier": 9.387509,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 52,
-      "armArmor": 33,
-      "legArmor": 33,
+      "bodyArmor": 61,
+      "armArmor": 27,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -139151,19 +139151,19 @@
     "name": "Trimmed Plate Cuirass",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 20828,
-    "weight": 24.04683,
+    "price": 19297,
+    "weight": 21.6561,
     "rank": 0,
-    "tier": 10.1101551,
+    "tier": 9.903888,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 55,
-      "armArmor": 30,
-      "legArmor": 30,
+      "bodyArmor": 68,
+      "armArmor": 17,
+      "legArmor": 17,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -139175,19 +139175,19 @@
     "name": "Trimmed Plate Cuirass +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 19749,
-    "weight": 24.04683,
+    "price": 18439,
+    "weight": 21.6561,
     "rank": 1,
-    "tier": 9.966043,
+    "tier": 9.782933,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 57,
-      "armArmor": 31,
-      "legArmor": 31,
+      "bodyArmor": 70,
+      "armArmor": 18,
+      "legArmor": 18,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -139199,19 +139199,19 @@
     "name": "Trimmed Plate Cuirass +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18805,
-    "weight": 24.04683,
+    "price": 17684,
+    "weight": 21.6561,
     "rank": 2,
-    "tier": 9.835034,
+    "tier": 9.672974,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 59,
-      "armArmor": 32,
-      "legArmor": 32,
+      "bodyArmor": 72,
+      "armArmor": 19,
+      "legArmor": 19,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -139223,19 +139223,19 @@
     "name": "Trimmed Plate Cuirass +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17972,
-    "weight": 24.04683,
+    "price": 17015,
+    "weight": 21.6561,
     "rank": 3,
-    "tier": 9.715417,
+    "tier": 9.572576,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 61,
-      "armArmor": 33,
-      "legArmor": 33,
+      "bodyArmor": 74,
+      "armArmor": 20,
+      "legArmor": 20,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -139532,13 +139532,13 @@
   {
     "id": "crpg_Sa_tabbartplate_h0",
     "baseId": "crpg_Sa_tabbartplate",
-    "name": "Western Plate Armor With skirt",
+    "name": "Western Plate Armor with Skirt",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 20136,
-    "weight": 23.60296,
+    "price": 18467,
+    "weight": 21.46129,
     "rank": 0,
-    "tier": 10.0183725,
+    "tier": 9.786944,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -139546,8 +139546,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 58,
-      "armArmor": 25,
-      "legArmor": 30,
+      "armArmor": 23,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -139556,13 +139556,13 @@
   {
     "id": "crpg_Sa_tabbartplate_h1",
     "baseId": "crpg_Sa_tabbartplate",
-    "name": "Western Plate Armor With skirt +1",
+    "name": "Western Plate Armor with Skirt +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 19132,
-    "weight": 23.60296,
+    "price": 17682,
+    "weight": 21.46129,
     "rank": 1,
-    "tier": 9.880994,
+    "tier": 9.672716,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -139570,8 +139570,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 60,
-      "armArmor": 26,
-      "legArmor": 31,
+      "armArmor": 24,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -139580,13 +139580,13 @@
   {
     "id": "crpg_Sa_tabbartplate_h2",
     "baseId": "crpg_Sa_tabbartplate",
-    "name": "Western Plate Armor With skirt +2",
+    "name": "Western Plate Armor with Skirt +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18252,
-    "weight": 23.60296,
+    "price": 16991,
+    "weight": 21.46129,
     "rank": 2,
-    "tier": 9.756102,
+    "tier": 9.568871,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -139594,8 +139594,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 62,
-      "armArmor": 27,
-      "legArmor": 32,
+      "armArmor": 25,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -139604,13 +139604,13 @@
   {
     "id": "crpg_Sa_tabbartplate_h3",
     "baseId": "crpg_Sa_tabbartplate",
-    "name": "Western Plate Armor With skirt +3",
+    "name": "Western Plate Armor with Skirt +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17476,
-    "weight": 23.60296,
+    "price": 16377,
+    "weight": 21.46129,
     "rank": 3,
-    "tier": 9.642073,
+    "tier": 9.474055,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -139618,8 +139618,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 64,
-      "armArmor": 28,
-      "legArmor": 33,
+      "armArmor": 26,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162321,10 +162321,10 @@
     "name": "Western Brass Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 19466,
-    "weight": 22.46851,
+    "price": 18467,
+    "weight": 21.46129,
     "rank": 0,
-    "tier": 9.927292,
+    "tier": 9.786944,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162332,8 +162332,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 58,
-      "armArmor": 25,
-      "legArmor": 25,
+      "armArmor": 23,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162345,10 +162345,10 @@
     "name": "Western Brass Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18562,
-    "weight": 22.46851,
+    "price": 17682,
+    "weight": 21.46129,
     "rank": 1,
-    "tier": 9.800516,
+    "tier": 9.672716,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162356,8 +162356,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 60,
-      "armArmor": 26,
-      "legArmor": 26,
+      "armArmor": 24,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162369,10 +162369,10 @@
     "name": "Western Brass Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17767,
-    "weight": 22.46851,
+    "price": 16991,
+    "weight": 21.46129,
     "rank": 2,
-    "tier": 9.685264,
+    "tier": 9.568871,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162380,8 +162380,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 62,
-      "armArmor": 27,
-      "legArmor": 27,
+      "armArmor": 25,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162393,10 +162393,10 @@
     "name": "Western Brass Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17064,
-    "weight": 22.46851,
+    "price": 16377,
+    "weight": 21.46129,
     "rank": 3,
-    "tier": 9.580036,
+    "tier": 9.474055,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162404,8 +162404,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 64,
-      "armArmor": 28,
-      "legArmor": 28,
+      "armArmor": 26,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162417,10 +162417,10 @@
     "name": "Western Cuirass",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16944,
-    "weight": 20.52226,
+    "price": 17745,
+    "weight": 20.90746,
     "rank": 0,
-    "tier": 9.561802,
+    "tier": 9.681986,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162428,8 +162428,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 58,
-      "armArmor": 18,
-      "legArmor": 25,
+      "armArmor": 21,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162441,10 +162441,10 @@
     "name": "Western Cuirass +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16313,
-    "weight": 20.52226,
+    "price": 17038,
+    "weight": 20.90746,
     "rank": 1,
-    "tier": 9.464039,
+    "tier": 9.57611,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162452,8 +162452,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 60,
-      "armArmor": 19,
-      "legArmor": 26,
+      "armArmor": 22,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162465,10 +162465,10 @@
     "name": "Western Cuirass +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15755,
-    "weight": 20.52226,
+    "price": 16414,
+    "weight": 20.90746,
     "rank": 2,
-    "tier": 9.375163,
+    "tier": 9.479858,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162476,8 +162476,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 62,
-      "armArmor": 20,
-      "legArmor": 27,
+      "armArmor": 23,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162489,10 +162489,10 @@
     "name": "Western Cuirass +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15258,
-    "weight": 20.52226,
+    "price": 15859,
+    "weight": 20.90746,
     "rank": 3,
-    "tier": 9.294015,
+    "tier": 9.391976,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162500,8 +162500,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 64,
-      "armArmor": 21,
-      "legArmor": 28,
+      "armArmor": 24,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162513,10 +162513,10 @@
     "name": "Western Leather Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 19466,
-    "weight": 22.46851,
+    "price": 18467,
+    "weight": 21.46129,
     "rank": 0,
-    "tier": 9.927292,
+    "tier": 9.786944,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162524,8 +162524,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 58,
-      "armArmor": 25,
-      "legArmor": 25,
+      "armArmor": 23,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162537,10 +162537,10 @@
     "name": "Western Leather Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18562,
-    "weight": 22.46851,
+    "price": 17682,
+    "weight": 21.46129,
     "rank": 1,
-    "tier": 9.800516,
+    "tier": 9.672716,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162548,8 +162548,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 60,
-      "armArmor": 26,
-      "legArmor": 26,
+      "armArmor": 24,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162561,10 +162561,10 @@
     "name": "Western Leather Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17767,
-    "weight": 22.46851,
+    "price": 16991,
+    "weight": 21.46129,
     "rank": 2,
-    "tier": 9.685264,
+    "tier": 9.568871,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162572,8 +162572,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 62,
-      "armArmor": 27,
-      "legArmor": 27,
+      "armArmor": 25,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162585,10 +162585,10 @@
     "name": "Western Leather Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17064,
-    "weight": 22.46851,
+    "price": 16377,
+    "weight": 21.46129,
     "rank": 3,
-    "tier": 9.580036,
+    "tier": 9.474055,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162596,8 +162596,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 64,
-      "armArmor": 28,
-      "legArmor": 28,
+      "armArmor": 26,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162609,10 +162609,10 @@
     "name": "Western Leather Plate Armor With Armguards",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17653,
-    "weight": 21.07317,
+    "price": 18105,
+    "weight": 21.18386,
     "rank": 0,
-    "tier": 9.668476,
+    "tier": 9.734691,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162620,8 +162620,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 58,
-      "armArmor": 20,
-      "legArmor": 25,
+      "armArmor": 22,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162633,10 +162633,10 @@
     "name": "Western Leather Plate Armor With Armguards +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16947,
-    "weight": 21.07317,
+    "price": 17359,
+    "weight": 21.18386,
     "rank": 1,
-    "tier": 9.562229,
+    "tier": 9.624619,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162644,8 +162644,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 60,
-      "armArmor": 21,
-      "legArmor": 26,
+      "armArmor": 23,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162657,10 +162657,10 @@
     "name": "Western Leather Plate Armor With Armguards +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16323,
-    "weight": 21.07317,
+    "price": 16702,
+    "weight": 21.18386,
     "rank": 2,
-    "tier": 9.46564,
+    "tier": 9.524551,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162668,8 +162668,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 62,
-      "armArmor": 22,
-      "legArmor": 27,
+      "armArmor": 24,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162681,10 +162681,10 @@
     "name": "Western Leather Plate Armor With Armguards +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15769,
-    "weight": 21.07317,
+    "price": 16118,
+    "weight": 21.18386,
     "rank": 3,
-    "tier": 9.377452,
+    "tier": 9.433188,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162692,8 +162692,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 64,
-      "armArmor": 23,
-      "legArmor": 28,
+      "armArmor": 25,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162705,10 +162705,10 @@
     "name": "Western Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 19466,
-    "weight": 22.46851,
+    "price": 18467,
+    "weight": 21.46129,
     "rank": 0,
-    "tier": 9.927292,
+    "tier": 9.786944,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162716,8 +162716,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 58,
-      "armArmor": 25,
-      "legArmor": 25,
+      "armArmor": 23,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162729,10 +162729,10 @@
     "name": "Western Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18562,
-    "weight": 22.46851,
+    "price": 17682,
+    "weight": 21.46129,
     "rank": 1,
-    "tier": 9.800516,
+    "tier": 9.672716,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162740,8 +162740,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 60,
-      "armArmor": 26,
-      "legArmor": 26,
+      "armArmor": 24,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162753,10 +162753,10 @@
     "name": "Western Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17767,
-    "weight": 22.46851,
+    "price": 16991,
+    "weight": 21.46129,
     "rank": 2,
-    "tier": 9.685264,
+    "tier": 9.568871,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162764,8 +162764,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 62,
-      "armArmor": 27,
-      "legArmor": 27,
+      "armArmor": 25,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162777,10 +162777,10 @@
     "name": "Western Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17064,
-    "weight": 22.46851,
+    "price": 16377,
+    "weight": 21.46129,
     "rank": 3,
-    "tier": 9.580036,
+    "tier": 9.474055,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162788,8 +162788,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 64,
-      "armArmor": 28,
-      "legArmor": 28,
+      "armArmor": 26,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162801,10 +162801,10 @@
     "name": "Western Cuirass With Armguards",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17653,
-    "weight": 21.07317,
+    "price": 18105,
+    "weight": 21.18386,
     "rank": 0,
-    "tier": 9.668476,
+    "tier": 9.734691,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162812,8 +162812,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 58,
-      "armArmor": 20,
-      "legArmor": 25,
+      "armArmor": 22,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162825,10 +162825,10 @@
     "name": "Western Cuirass With Armguards +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16947,
-    "weight": 21.07317,
+    "price": 17359,
+    "weight": 21.18386,
     "rank": 1,
-    "tier": 9.562229,
+    "tier": 9.624619,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162836,8 +162836,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 60,
-      "armArmor": 21,
-      "legArmor": 26,
+      "armArmor": 23,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162849,10 +162849,10 @@
     "name": "Western Cuirass With Armguards +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16323,
-    "weight": 21.07317,
+    "price": 16702,
+    "weight": 21.18386,
     "rank": 2,
-    "tier": 9.46564,
+    "tier": 9.524551,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162860,8 +162860,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 62,
-      "armArmor": 22,
-      "legArmor": 27,
+      "armArmor": 24,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162873,10 +162873,10 @@
     "name": "Western Cuirass With Armguards +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15769,
-    "weight": 21.07317,
+    "price": 16118,
+    "weight": 21.18386,
     "rank": 3,
-    "tier": 9.377452,
+    "tier": 9.433188,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162884,8 +162884,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 64,
-      "armArmor": 23,
-      "legArmor": 28,
+      "armArmor": 25,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -162982,13 +162982,13 @@
   {
     "id": "crpg_swadian_striped_cuirass_h0",
     "baseId": "crpg_swadian_striped_cuirass",
-    "name": "Western Cuirass",
+    "name": "Western Cuirass Striped",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16944,
-    "weight": 20.52226,
+    "price": 17745,
+    "weight": 20.90746,
     "rank": 0,
-    "tier": 9.561802,
+    "tier": 9.681986,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -162996,8 +162996,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 58,
-      "armArmor": 18,
-      "legArmor": 25,
+      "armArmor": 21,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -163006,13 +163006,13 @@
   {
     "id": "crpg_swadian_striped_cuirass_h1",
     "baseId": "crpg_swadian_striped_cuirass",
-    "name": "Western Cuirass +1",
+    "name": "Western Cuirass Striped +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 16313,
-    "weight": 20.52226,
+    "price": 17038,
+    "weight": 20.90746,
     "rank": 1,
-    "tier": 9.464039,
+    "tier": 9.57611,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -163020,8 +163020,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 60,
-      "armArmor": 19,
-      "legArmor": 26,
+      "armArmor": 22,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -163030,13 +163030,13 @@
   {
     "id": "crpg_swadian_striped_cuirass_h2",
     "baseId": "crpg_swadian_striped_cuirass",
-    "name": "Western Cuirass +2",
+    "name": "Western Cuirass Striped +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15755,
-    "weight": 20.52226,
+    "price": 16414,
+    "weight": 20.90746,
     "rank": 2,
-    "tier": 9.375163,
+    "tier": 9.479858,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -163044,8 +163044,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 62,
-      "armArmor": 20,
-      "legArmor": 27,
+      "armArmor": 23,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -163054,13 +163054,13 @@
   {
     "id": "crpg_swadian_striped_cuirass_h3",
     "baseId": "crpg_swadian_striped_cuirass",
-    "name": "Western Cuirass +3",
+    "name": "Western Cuirass Striped +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 15258,
-    "weight": 20.52226,
+    "price": 15859,
+    "weight": 20.90746,
     "rank": 3,
-    "tier": 9.294015,
+    "tier": 9.391976,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -163068,8 +163068,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 64,
-      "armArmor": 21,
-      "legArmor": 28,
+      "armArmor": 24,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -163078,13 +163078,13 @@
   {
     "id": "crpg_swadian_striped_plate_armor_h0",
     "baseId": "crpg_swadian_striped_plate_armor",
-    "name": "Western Plate Armor",
+    "name": "Western Plate Armor Striped",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 19466,
-    "weight": 22.46851,
+    "price": 18467,
+    "weight": 21.46129,
     "rank": 0,
-    "tier": 9.927292,
+    "tier": 9.786944,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -163092,8 +163092,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 58,
-      "armArmor": 25,
-      "legArmor": 25,
+      "armArmor": 23,
+      "legArmor": 23,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -163102,13 +163102,13 @@
   {
     "id": "crpg_swadian_striped_plate_armor_h1",
     "baseId": "crpg_swadian_striped_plate_armor",
-    "name": "Western Plate Armor +1",
+    "name": "Western Plate Armor Striped +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 18562,
-    "weight": 22.46851,
+    "price": 17682,
+    "weight": 21.46129,
     "rank": 1,
-    "tier": 9.800516,
+    "tier": 9.672716,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -163116,8 +163116,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 60,
-      "armArmor": 26,
-      "legArmor": 26,
+      "armArmor": 24,
+      "legArmor": 24,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -163126,13 +163126,13 @@
   {
     "id": "crpg_swadian_striped_plate_armor_h2",
     "baseId": "crpg_swadian_striped_plate_armor",
-    "name": "Western Plate Armor +2",
+    "name": "Western Plate Armor Striped +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17767,
-    "weight": 22.46851,
+    "price": 16991,
+    "weight": 21.46129,
     "rank": 2,
-    "tier": 9.685264,
+    "tier": 9.568871,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -163140,8 +163140,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 62,
-      "armArmor": 27,
-      "legArmor": 27,
+      "armArmor": 25,
+      "legArmor": 25,
       "materialType": "Plate",
       "familyType": 0
     },
@@ -163150,13 +163150,13 @@
   {
     "id": "crpg_swadian_striped_plate_armor_h3",
     "baseId": "crpg_swadian_striped_plate_armor",
-    "name": "Western Plate Armor +3",
+    "name": "Western Plate Armor Striped +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
-    "price": 17064,
-    "weight": 22.46851,
+    "price": 16377,
+    "weight": 21.46129,
     "rank": 3,
-    "tier": 9.580036,
+    "tier": 9.474055,
     "requirement": 0,
     "flags": [
       "UseTeamColor"
@@ -163164,8 +163164,8 @@
     "armor": {
       "headArmor": 0,
       "bodyArmor": 64,
-      "armArmor": 28,
-      "legArmor": 28,
+      "armArmor": 26,
+      "legArmor": 26,
       "materialType": "Plate",
       "familyType": 0
     },
