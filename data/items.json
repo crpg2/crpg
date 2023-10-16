@@ -21916,7 +21916,7 @@
   {
     "id": "crpg_black_nodachi_h1",
     "baseId": "crpg_black_nodachi",
-    "name": "Black Nodachi",
+    "name": "Black Nodachi +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 5559,
@@ -21952,7 +21952,7 @@
   {
     "id": "crpg_black_nodachi_h2",
     "baseId": "crpg_black_nodachi",
-    "name": "Black Nodachi",
+    "name": "Black Nodachi +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 5908,
@@ -21988,7 +21988,7 @@
   {
     "id": "crpg_black_nodachi_h3",
     "baseId": "crpg_black_nodachi",
-    "name": "Black Nodachi",
+    "name": "Black Nodachi +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 6680,
@@ -22888,7 +22888,7 @@
   {
     "id": "crpg_blue_nodachi_h1",
     "baseId": "crpg_blue_nodachi",
-    "name": "Blue Nodachi",
+    "name": "Blue Nodachi +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 7429,
@@ -22924,7 +22924,7 @@
   {
     "id": "crpg_blue_nodachi_h2",
     "baseId": "crpg_blue_nodachi",
-    "name": "Blue Nodachi",
+    "name": "Blue Nodachi +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 9270,
@@ -22960,7 +22960,7 @@
   {
     "id": "crpg_blue_nodachi_h3",
     "baseId": "crpg_blue_nodachi",
-    "name": "Blue Nodachi",
+    "name": "Blue Nodachi +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 9653,
@@ -51472,7 +51472,7 @@
   {
     "id": "crpg_executionerssword_h1",
     "baseId": "crpg_executionerssword",
-    "name": "Executioner's Sword",
+    "name": "Executioner's Sword +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 13295,
@@ -51508,7 +51508,7 @@
   {
     "id": "crpg_executionerssword_h2",
     "baseId": "crpg_executionerssword",
-    "name": "Executioner's Sword",
+    "name": "Executioner's Sword +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 13750,
@@ -51544,7 +51544,7 @@
   {
     "id": "crpg_executionerssword_h3",
     "baseId": "crpg_executionerssword",
-    "name": "Executioner's Sword",
+    "name": "Executioner's Sword +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 13481,
@@ -52010,7 +52010,7 @@
   {
     "id": "crpg_fangtian_ji_h1",
     "baseId": "crpg_fangtian_ji",
-    "name": "Fangtian Ji",
+    "name": "Fangtian Ji +1",
     "culture": "Khuzait",
     "type": "Polearm",
     "price": 14102,
@@ -52048,7 +52048,7 @@
   {
     "id": "crpg_fangtian_ji_h2",
     "baseId": "crpg_fangtian_ji",
-    "name": "Fangtian Ji",
+    "name": "Fangtian Ji +2",
     "culture": "Khuzait",
     "type": "Polearm",
     "price": 13388,
@@ -52086,7 +52086,7 @@
   {
     "id": "crpg_fangtian_ji_h3",
     "baseId": "crpg_fangtian_ji",
-    "name": "Fangtian Ji",
+    "name": "Fangtian Ji +3",
     "culture": "Khuzait",
     "type": "Polearm",
     "price": 13615,
@@ -60765,7 +60765,7 @@
   {
     "id": "crpg_gladius_mainz_h1",
     "baseId": "crpg_gladius_mainz",
-    "name": "Mainz Gladius",
+    "name": "Mainz Gladius +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 4016,
@@ -60800,7 +60800,7 @@
   {
     "id": "crpg_gladius_mainz_h2",
     "baseId": "crpg_gladius_mainz",
-    "name": "Mainz Gladius",
+    "name": "Mainz Gladius +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 3652,
@@ -60835,7 +60835,7 @@
   {
     "id": "crpg_gladius_mainz_h3",
     "baseId": "crpg_gladius_mainz",
-    "name": "Mainz Gladius",
+    "name": "Mainz Gladius +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 4266,
@@ -60905,7 +60905,7 @@
   {
     "id": "crpg_gladius_pompeian_h1",
     "baseId": "crpg_gladius_pompeian",
-    "name": "Pompeian Gladius",
+    "name": "Pompeian Gladius +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 4326,
@@ -60940,7 +60940,7 @@
   {
     "id": "crpg_gladius_pompeian_h2",
     "baseId": "crpg_gladius_pompeian",
-    "name": "Pompeian Gladius",
+    "name": "Pompeian Gladius +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 4736,
@@ -60975,7 +60975,7 @@
   {
     "id": "crpg_gladius_pompeian_h3",
     "baseId": "crpg_gladius_pompeian",
-    "name": "Pompeian Gladius",
+    "name": "Pompeian Gladius +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 5262,
@@ -61045,7 +61045,7 @@
   {
     "id": "crpg_gladius_republican_h1",
     "baseId": "crpg_gladius_republican",
-    "name": "Republican Gladius",
+    "name": "Republican Gladius +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 3001,
@@ -61080,7 +61080,7 @@
   {
     "id": "crpg_gladius_republican_h2",
     "baseId": "crpg_gladius_republican",
-    "name": "Republican Gladius",
+    "name": "Republican Gladius +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 3022,
@@ -61115,7 +61115,7 @@
   {
     "id": "crpg_gladius_republican_h3",
     "baseId": "crpg_gladius_republican",
-    "name": "Republican Gladius",
+    "name": "Republican Gladius +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 4603,
@@ -63418,7 +63418,7 @@
   {
     "id": "crpg_green_nodachi_h1",
     "baseId": "crpg_green_nodachi",
-    "name": "Green Nodachi",
+    "name": "Green Nodachi +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 11323,
@@ -63454,7 +63454,7 @@
   {
     "id": "crpg_green_nodachi_h2",
     "baseId": "crpg_green_nodachi",
-    "name": "Green Nodachi",
+    "name": "Green Nodachi +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 12840,
@@ -63490,7 +63490,7 @@
   {
     "id": "crpg_green_nodachi_h3",
     "baseId": "crpg_green_nodachi",
-    "name": "Green Nodachi",
+    "name": "Green Nodachi +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 13201,
@@ -80877,7 +80877,7 @@
   {
     "id": "crpg_ironrod_h1",
     "baseId": "crpg_ironrod",
-    "name": "Iron Rod",
+    "name": "Iron Rod +1",
     "culture": "Neutral",
     "type": "Polearm",
     "price": 5865,
@@ -80916,7 +80916,7 @@
   {
     "id": "crpg_ironrod_h2",
     "baseId": "crpg_ironrod",
-    "name": "Iron Rod",
+    "name": "Iron Rod +2",
     "culture": "Neutral",
     "type": "Polearm",
     "price": 6495,
@@ -80955,7 +80955,7 @@
   {
     "id": "crpg_ironrod_h3",
     "baseId": "crpg_ironrod",
-    "name": "Iron Rod",
+    "name": "Iron Rod +3",
     "culture": "Neutral",
     "type": "Polearm",
     "price": 7131,
@@ -82845,7 +82845,7 @@
   {
     "id": "crpg_jian_h1",
     "baseId": "crpg_jian",
-    "name": "Jian",
+    "name": "Jian +1",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
     "price": 6264,
@@ -82880,7 +82880,7 @@
   {
     "id": "crpg_jian_h2",
     "baseId": "crpg_jian",
-    "name": "Jian",
+    "name": "Jian +2",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
     "price": 6899,
@@ -82915,7 +82915,7 @@
   {
     "id": "crpg_jian_h3",
     "baseId": "crpg_jian",
-    "name": "Jian",
+    "name": "Jian +3",
     "culture": "Aserai",
     "type": "OneHandedWeapon",
     "price": 6707,
@@ -88066,7 +88066,7 @@
   {
     "id": "crpg_kriegsmesser_h1",
     "baseId": "crpg_kriegsmesser",
-    "name": "Kriegsmesser",
+    "name": "Kriegsmesser +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 13742,
@@ -88102,7 +88102,7 @@
   {
     "id": "crpg_kriegsmesser_h2",
     "baseId": "crpg_kriegsmesser",
-    "name": "Kriegsmesser",
+    "name": "Kriegsmesser +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 13987,
@@ -88138,7 +88138,7 @@
   {
     "id": "crpg_kriegsmesser_h3",
     "baseId": "crpg_kriegsmesser",
-    "name": "Kriegsmesser",
+    "name": "Kriegsmesser +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 14410,
@@ -102186,7 +102186,7 @@
   {
     "id": "crpg_meowdao_h1",
     "baseId": "crpg_meowdao",
-    "name": "Meowdao",
+    "name": "Meowdao +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 13842,
@@ -102222,7 +102222,7 @@
   {
     "id": "crpg_meowdao_h2",
     "baseId": "crpg_meowdao",
-    "name": "Meowdao",
+    "name": "Meowdao +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 12385,
@@ -102258,7 +102258,7 @@
   {
     "id": "crpg_meowdao_h3",
     "baseId": "crpg_meowdao",
-    "name": "Meowdao",
+    "name": "Meowdao +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 13749,
@@ -117363,7 +117363,7 @@
   {
     "id": "crpg_Norse_Battle_Axe_h1",
     "baseId": "crpg_Norse_Battle_Axe",
-    "name": "Norse Battle Axe",
+    "name": "Norse Battle Axe +1",
     "culture": "Battania",
     "type": "Polearm",
     "price": 13457,
@@ -117404,7 +117404,7 @@
   {
     "id": "crpg_Norse_Battle_Axe_h2",
     "baseId": "crpg_Norse_Battle_Axe",
-    "name": "Norse Battle Axe",
+    "name": "Norse Battle Axe +2",
     "culture": "Battania",
     "type": "Polearm",
     "price": 12990,
@@ -117445,7 +117445,7 @@
   {
     "id": "crpg_Norse_Battle_Axe_h3",
     "baseId": "crpg_Norse_Battle_Axe",
-    "name": "Norse Battle Axe",
+    "name": "Norse Battle Axe +3",
     "culture": "Battania",
     "type": "Polearm",
     "price": 13418,
@@ -127772,7 +127772,7 @@
   {
     "id": "crpg_pudao_h1",
     "baseId": "crpg_pudao",
-    "name": "Pudao",
+    "name": "Pudao +1",
     "culture": "Khuzait",
     "type": "Polearm",
     "price": 13397,
@@ -127810,7 +127810,7 @@
   {
     "id": "crpg_pudao_h2",
     "baseId": "crpg_pudao",
-    "name": "Pudao",
+    "name": "Pudao +2",
     "culture": "Khuzait",
     "type": "Polearm",
     "price": 13935,
@@ -127848,7 +127848,7 @@
   {
     "id": "crpg_pudao_h3",
     "baseId": "crpg_pudao",
-    "name": "Pudao",
+    "name": "Pudao +3",
     "culture": "Khuzait",
     "type": "Polearm",
     "price": 13677,
@@ -129836,7 +129836,7 @@
   {
     "id": "crpg_red_nodachi_h1",
     "baseId": "crpg_red_nodachi",
-    "name": "Red Nodachi",
+    "name": "Red Nodachi +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 11323,
@@ -129872,7 +129872,7 @@
   {
     "id": "crpg_red_nodachi_h2",
     "baseId": "crpg_red_nodachi",
-    "name": "Red Nodachi",
+    "name": "Red Nodachi +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 12840,
@@ -129908,7 +129908,7 @@
   {
     "id": "crpg_red_nodachi_h3",
     "baseId": "crpg_red_nodachi",
-    "name": "Red Nodachi",
+    "name": "Red Nodachi +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 13201,
@@ -132945,7 +132945,7 @@
   {
     "id": "crpg_rondel_reverse_h1",
     "baseId": "crpg_rondel_reverse",
-    "name": "Rondel Reverse",
+    "name": "Rondel Reverse +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 6715,
@@ -132982,7 +132982,7 @@
   {
     "id": "crpg_rondel_reverse_h2",
     "baseId": "crpg_rondel_reverse",
-    "name": "Rondel Reverse",
+    "name": "Rondel Reverse +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 7133,
@@ -133019,7 +133019,7 @@
   {
     "id": "crpg_rondel_reverse_h3",
     "baseId": "crpg_rondel_reverse",
-    "name": "Rondel Reverse",
+    "name": "Rondel Reverse +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 6530,
@@ -133093,7 +133093,7 @@
   {
     "id": "crpg_rondel_v1_h1",
     "baseId": "crpg_rondel_v1",
-    "name": "Rondel",
+    "name": "Rondel +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 6993,
@@ -133130,7 +133130,7 @@
   {
     "id": "crpg_rondel_v1_h2",
     "baseId": "crpg_rondel_v1",
-    "name": "Rondel",
+    "name": "Rondel +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 5866,
@@ -133167,7 +133167,7 @@
   {
     "id": "crpg_rondel_v1_h3",
     "baseId": "crpg_rondel_v1",
-    "name": "Rondel",
+    "name": "Rondel +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
     "price": 6484,
@@ -141912,7 +141912,7 @@
   {
     "id": "crpg_shep_damast_h1",
     "baseId": "crpg_shep_damast",
-    "name": "Elegant Shepherd Axe",
+    "name": "Elegant Shepherd Axe +1",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
     "price": 5064,
@@ -141950,7 +141950,7 @@
   {
     "id": "crpg_shep_damast_h2",
     "baseId": "crpg_shep_damast",
-    "name": "Elegant Shepherd Axe",
+    "name": "Elegant Shepherd Axe +2",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
     "price": 5347,
@@ -141988,7 +141988,7 @@
   {
     "id": "crpg_shep_damast_h3",
     "baseId": "crpg_shep_damast",
-    "name": "Elegant Shepherd Axe",
+    "name": "Elegant Shepherd Axe +3",
     "culture": "Sturgia",
     "type": "OneHandedWeapon",
     "price": 5823,
@@ -164976,7 +164976,7 @@
   {
     "id": "crpg_tetsubo_h1",
     "baseId": "crpg_tetsubo",
-    "name": "Tetsubo",
+    "name": "Tetsubo +1",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
     "price": 8935,
@@ -165014,7 +165014,7 @@
   {
     "id": "crpg_tetsubo_h2",
     "baseId": "crpg_tetsubo",
-    "name": "Tetsubo",
+    "name": "Tetsubo +2",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
     "price": 9170,
@@ -165052,7 +165052,7 @@
   {
     "id": "crpg_tetsubo_h3",
     "baseId": "crpg_tetsubo",
-    "name": "Tetsubo",
+    "name": "Tetsubo +3",
     "culture": "Khuzait",
     "type": "TwoHandedWeapon",
     "price": 9110,
@@ -181214,7 +181214,7 @@
   {
     "id": "crpg_yellow_nodachi_h1",
     "baseId": "crpg_yellow_nodachi",
-    "name": "Yellow Nodachi",
+    "name": "Yellow Nodachi +1",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 7429,
@@ -181250,7 +181250,7 @@
   {
     "id": "crpg_yellow_nodachi_h2",
     "baseId": "crpg_yellow_nodachi",
-    "name": "Yellow Nodachi",
+    "name": "Yellow Nodachi +2",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 9270,
@@ -181286,7 +181286,7 @@
   {
     "id": "crpg_yellow_nodachi_h3",
     "baseId": "crpg_yellow_nodachi",
-    "name": "Yellow Nodachi",
+    "name": "Yellow Nodachi +3",
     "culture": "Aserai",
     "type": "TwoHandedWeapon",
     "price": 9653,
@@ -181770,7 +181770,7 @@
   {
     "id": "crpg_zweihander_h1",
     "baseId": "crpg_zweihander",
-    "name": "Zweihander",
+    "name": "Zweihander +1",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 13375,
@@ -181806,7 +181806,7 @@
   {
     "id": "crpg_zweihander_h2",
     "baseId": "crpg_zweihander",
-    "name": "Zweihander",
+    "name": "Zweihander +2",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 14018,
@@ -181842,7 +181842,7 @@
   {
     "id": "crpg_zweihander_h3",
     "baseId": "crpg_zweihander",
-    "name": "Zweihander",
+    "name": "Zweihander +3",
     "culture": "Neutral",
     "type": "TwoHandedWeapon",
     "price": 14094,
