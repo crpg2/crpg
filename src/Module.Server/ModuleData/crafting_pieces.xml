@@ -30552,7 +30552,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_executionerssword_blade_h0" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="2.5"  excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_executionerssword_blade_h0" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="2.5" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="blunt" damage_factor="2.9" />
     </BladeData>
@@ -30560,7 +30560,7 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_executionerssword_blade_h1" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="2.35"  excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_executionerssword_blade_h1" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="2.35" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="blunt" damage_factor="2.9" />
     </BladeData>
@@ -30568,7 +30568,7 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_executionerssword_blade_h2" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="2.35"  excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_executionerssword_blade_h2" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="2.35" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="blunt" damage_factor="3.0" />
     </BladeData>
@@ -30576,7 +30576,7 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_executionerssword_blade_h3" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="2.35"  excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_executionerssword_blade_h3" name="{=}Executioners Blade" tier="4" piece_type="Blade" mesh="executionerssword_blade" culture="Culture.battania" length="95.5" weight="2.35" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="blunt" damage_factor="3.1" />
     </BladeData>
