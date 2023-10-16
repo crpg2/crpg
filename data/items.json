@@ -31450,6 +31450,150 @@
     ]
   },
   {
+    "id": "crpg_ceremonial_executioner_sword_h0",
+    "baseId": "crpg_ceremonial_executioner_sword",
+    "name": "Ceremonial Executioner's Sword",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 12597,
+    "weight": 2.84,
+    "rank": 0,
+    "tier": 9.430442,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 101,
+        "balance": 0.47,
+        "handling": 81,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 87,
+        "swingDamage": 29,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 84
+      }
+    ]
+  },
+  {
+    "id": "crpg_ceremonial_executioner_sword_h1",
+    "baseId": "crpg_ceremonial_executioner_sword",
+    "name": "Ceremonial Executioner's Sword +1",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 11276,
+    "weight": 2.69,
+    "rank": 1,
+    "tier": 8.864064,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 101,
+        "balance": 0.53,
+        "handling": 82,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 29,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
+      }
+    ]
+  },
+  {
+    "id": "crpg_ceremonial_executioner_sword_h2",
+    "baseId": "crpg_ceremonial_executioner_sword",
+    "name": "Ceremonial Executioner's Sword +2",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 10723,
+    "weight": 2.69,
+    "rank": 2,
+    "tier": 8.617194,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 101,
+        "balance": 0.53,
+        "handling": 82,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 30,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
+      }
+    ]
+  },
+  {
+    "id": "crpg_ceremonial_executioner_sword_h3",
+    "baseId": "crpg_ceremonial_executioner_sword",
+    "name": "Ceremonial Executioner's Sword +3",
+    "culture": "Neutral",
+    "type": "TwoHandedWeapon",
+    "price": 10365,
+    "weight": 2.69,
+    "rank": 3,
+    "tier": 8.454264,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "TwoHandedSword",
+        "itemUsage": "twohanded_block_swing",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 101,
+        "balance": 0.53,
+        "handling": 82,
+        "bodyArmor": 3,
+        "flags": [
+          "MeleeWeapon",
+          "NotUsableWithOneHand"
+        ],
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 89,
+        "swingDamage": 31,
+        "swingDamageType": "Blunt",
+        "swingSpeed": 85
+      }
+    ]
+  },
+  {
     "id": "crpg_cervelliere_over_arming_coif_v2_h0",
     "baseId": "crpg_cervelliere_over_arming_coif_v2",
     "name": "Cervelliere over Arming Coif",
@@ -51432,150 +51576,6 @@
       "familyType": 0
     },
     "weapons": []
-  },
-  {
-    "id": "crpg_executionerssword_h0",
-    "baseId": "crpg_executionerssword",
-    "name": "Executioner's Sword",
-    "culture": "Neutral",
-    "type": "TwoHandedWeapon",
-    "price": 13651,
-    "weight": 2.27,
-    "rank": 0,
-    "tier": 9.861127,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 120,
-        "balance": 0.57,
-        "handling": 83,
-        "bodyArmor": 3,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 21,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 91,
-        "swingDamage": 39,
-        "swingDamageType": "Cut",
-        "swingSpeed": 87
-      }
-    ]
-  },
-  {
-    "id": "crpg_executionerssword_h1",
-    "baseId": "crpg_executionerssword",
-    "name": "Executioner's Sword +1",
-    "culture": "Neutral",
-    "type": "TwoHandedWeapon",
-    "price": 13295,
-    "weight": 2.2,
-    "rank": 1,
-    "tier": 9.717514,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 120,
-        "balance": 0.6,
-        "handling": 84,
-        "bodyArmor": 3,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 23,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 40,
-        "swingDamageType": "Cut",
-        "swingSpeed": 87
-      }
-    ]
-  },
-  {
-    "id": "crpg_executionerssword_h2",
-    "baseId": "crpg_executionerssword",
-    "name": "Executioner's Sword +2",
-    "culture": "Neutral",
-    "type": "TwoHandedWeapon",
-    "price": 13750,
-    "weight": 2.15,
-    "rank": 2,
-    "tier": 9.900779,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 120,
-        "balance": 0.62,
-        "handling": 84,
-        "bodyArmor": 3,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 23,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 41,
-        "swingDamageType": "Cut",
-        "swingSpeed": 88
-      }
-    ]
-  },
-  {
-    "id": "crpg_executionerssword_h3",
-    "baseId": "crpg_executionerssword",
-    "name": "Executioner's Sword +3",
-    "culture": "Neutral",
-    "type": "TwoHandedWeapon",
-    "price": 13481,
-    "weight": 2.15,
-    "rank": 3,
-    "tier": 9.792738,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "TwoHandedSword",
-        "itemUsage": "twohanded_block_swing_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 120,
-        "balance": 0.62,
-        "handling": 84,
-        "bodyArmor": 3,
-        "flags": [
-          "MeleeWeapon",
-          "NotUsableWithOneHand"
-        ],
-        "thrustDamage": 25,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 92,
-        "swingDamage": 42,
-        "swingDamageType": "Cut",
-        "swingSpeed": 88
-      }
-    ]
   },
   {
     "id": "crpg_eyepatch_1_v1_h0",
