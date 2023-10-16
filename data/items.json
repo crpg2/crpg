@@ -117970,7 +117970,7 @@
   {
     "id": "crpg_northern_coat_of_plates_v2_h0",
     "baseId": "crpg_northern_coat_of_plates_v2",
-    "name": "Coat Of Plates",
+    "name": "Northern Coat Of Plates",
     "culture": "Sturgia",
     "type": "BodyArmor",
     "price": 10923,
@@ -117994,7 +117994,7 @@
   {
     "id": "crpg_northern_coat_of_plates_v2_h1",
     "baseId": "crpg_northern_coat_of_plates_v2",
-    "name": "Coat Of Plates +1",
+    "name": "Northern Coat Of Plates +1",
     "culture": "Sturgia",
     "type": "BodyArmor",
     "price": 10924,
@@ -118018,7 +118018,7 @@
   {
     "id": "crpg_northern_coat_of_plates_v2_h2",
     "baseId": "crpg_northern_coat_of_plates_v2",
-    "name": "Coat Of Plates +2",
+    "name": "Northern Coat Of Plates +2",
     "culture": "Sturgia",
     "type": "BodyArmor",
     "price": 10925,
@@ -118042,7 +118042,7 @@
   {
     "id": "crpg_northern_coat_of_plates_v2_h3",
     "baseId": "crpg_northern_coat_of_plates_v2",
-    "name": "Coat Of Plates +3",
+    "name": "Northern Coat Of Plates +3",
     "culture": "Sturgia",
     "type": "BodyArmor",
     "price": 10926,
