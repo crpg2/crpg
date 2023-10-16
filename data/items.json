@@ -133871,10 +133871,10 @@
     "name": "Rondel Reverse",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6384,
-    "weight": 3.6,
+    "price": 6827,
+    "weight": 2.94,
     "rank": 0,
-    "tier": 9.499791,
+    "tier": 9.861868,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -133882,23 +133882,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_swing_thrust",
+        "itemUsage": "onehanded_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 17,
-        "balance": 0.6,
-        "handling": 104,
+        "length": 22,
+        "balance": 0.54,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 15,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 77,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 80,
         "swingDamage": 38,
         "swingDamageType": "Pierce",
-        "swingSpeed": 87
+        "swingSpeed": 86
       }
     ]
   },
@@ -133908,10 +133908,10 @@
     "name": "Rondel Reverse +1",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6715,
-    "weight": 3.49,
+    "price": 7112,
+    "weight": 2.8,
     "rank": 1,
-    "tier": 9.771568,
+    "tier": 10.0893946,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -133919,23 +133919,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_swing_thrust",
+        "itemUsage": "onehanded_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 17,
-        "balance": 0.64,
-        "handling": 105,
+        "length": 22,
+        "balance": 0.6,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 15,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 77,
-        "swingDamage": 38,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 82,
+        "swingDamage": 39,
         "swingDamageType": "Pierce",
-        "swingSpeed": 89
+        "swingSpeed": 87
       }
     ]
   },
@@ -133945,10 +133945,10 @@
     "name": "Rondel Reverse +2",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 7133,
-    "weight": 3.38,
+    "price": 6328,
+    "weight": 2.8,
     "rank": 2,
-    "tier": 10.1056108,
+    "tier": 9.452967,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -133956,23 +133956,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_swing_thrust",
+        "itemUsage": "onehanded_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 17,
-        "balance": 0.67,
-        "handling": 105,
+        "length": 22,
+        "balance": 0.6,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 38,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 78,
-        "swingDamage": 38,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 82,
+        "swingDamage": 40,
         "swingDamageType": "Pierce",
-        "swingSpeed": 90
+        "swingSpeed": 87
       }
     ]
   },
@@ -133982,10 +133982,10 @@
     "name": "Rondel Reverse +3",
     "culture": "Empire",
     "type": "OneHandedWeapon",
-    "price": 6530,
-    "weight": 3.38,
+    "price": 6918,
+    "weight": 2.8,
     "rank": 3,
-    "tier": 9.620286,
+    "tier": 9.934776,
     "requirement": 0,
     "flags": [
       "Civilian"
@@ -133993,23 +133993,23 @@
     "weapons": [
       {
         "class": "Dagger",
-        "itemUsage": "onehanded_swing_thrust",
+        "itemUsage": "onehanded_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
-        "length": 17,
-        "balance": 0.67,
-        "handling": 105,
+        "length": 22,
+        "balance": 0.6,
+        "handling": 101,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon"
         ],
-        "thrustDamage": 15,
-        "thrustDamageType": "Blunt",
-        "thrustSpeed": 78,
-        "swingDamage": 40,
+        "thrustDamage": 0,
+        "thrustDamageType": "Undefined",
+        "thrustSpeed": 82,
+        "swingDamage": 42,
         "swingDamageType": "Pierce",
-        "swingSpeed": 90
+        "swingSpeed": 87
       }
     ]
   },
