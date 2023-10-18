@@ -31616,7 +31616,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_onehanded_barmace_blade_h0" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.275">
+  <CraftingPiece id="crpg_onehanded_barmace_blade_h0" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.275" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="Blunt" damage_factor="2.6" />
     </BladeData>
@@ -31624,7 +31624,7 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_onehanded_barmace_blade_h1" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.2">
+  <CraftingPiece id="crpg_onehanded_barmace_blade_h1" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.2" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="Blunt" damage_factor="2.6" />
     </BladeData>
@@ -31632,7 +31632,7 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_onehanded_barmace_blade_h2" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.2">
+  <CraftingPiece id="crpg_onehanded_barmace_blade_h2" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.2" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="Blunt" damage_factor="2.7" />
     </BladeData>
@@ -31640,7 +31640,7 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_onehanded_barmace_blade_h3" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.2">
+  <CraftingPiece id="crpg_onehanded_barmace_blade_h3" name="{=}Onehanded Barmace Blade" tier="4" piece_type="Blade" mesh="barmace_blade" full_scale="true" length="68.5" weight="2.2" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Swing damage_type="Blunt" damage_factor="2.8" />
     </BladeData>

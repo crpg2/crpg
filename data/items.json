@@ -121718,7 +121718,7 @@
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -121753,7 +121753,7 @@
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -121788,7 +121788,7 @@
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
@@ -121823,7 +121823,7 @@
     "weapons": [
       {
         "class": "Mace",
-        "itemUsage": "onehanded_block_shield_tipdraw_swing_thrust",
+        "itemUsage": "onehanded_block_shield_tipdraw_swing",
         "accuracy": 0,
         "missileSpeed": 0,
         "stackAmount": 0,
