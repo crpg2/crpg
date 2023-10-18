@@ -1784,6 +1784,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_meowdao_blade_h0" />
+      <UsablePiece piece_id="crpg_meowdao_blade_h1" />
+      <UsablePiece piece_id="crpg_meowdao_blade_h2" />
+      <UsablePiece piece_id="crpg_meowdao_blade_h3" />
+      <UsablePiece piece_id="crpg_meowdao_handle_h0" />
+      <UsablePiece piece_id="crpg_meowdao_handle_h1" />
+      <UsablePiece piece_id="crpg_meowdao_handle_h2" />
+      <UsablePiece piece_id="crpg_meowdao_handle_h3" />
+      <UsablePiece piece_id="crpg_meowdao_guard_h0" />
+      <UsablePiece piece_id="crpg_meowdao_guard_h1" />
+      <UsablePiece piece_id="crpg_meowdao_guard_h2" />
+      <UsablePiece piece_id="crpg_meowdao_guard_h3" />
+      <UsablePiece piece_id="crpg_meowdao_pommel_h0" />
+      <UsablePiece piece_id="crpg_meowdao_pommel_h1" />
+      <UsablePiece piece_id="crpg_meowdao_pommel_h2" />
+      <UsablePiece piece_id="crpg_meowdao_pommel_h3" />
       <UsablePiece piece_id="crpg_zweihander_blade_h0" />
       <UsablePiece piece_id="crpg_zweihander_blade_h1" />
       <UsablePiece piece_id="crpg_zweihander_blade_h2" />
@@ -3144,22 +3160,6 @@
       <UsablePiece piece_id="crpg_kriegsmesser_pommel_h1" />
       <UsablePiece piece_id="crpg_kriegsmesser_pommel_h2" />
       <UsablePiece piece_id="crpg_kriegsmesser_pommel_h3" />
-      <UsablePiece piece_id="crpg_meowdao_blade_h0" />
-      <UsablePiece piece_id="crpg_meowdao_blade_h1" />
-      <UsablePiece piece_id="crpg_meowdao_blade_h2" />
-      <UsablePiece piece_id="crpg_meowdao_blade_h3" />
-      <UsablePiece piece_id="crpg_meowdao_handle_h0" />
-      <UsablePiece piece_id="crpg_meowdao_handle_h1" />
-      <UsablePiece piece_id="crpg_meowdao_handle_h2" />
-      <UsablePiece piece_id="crpg_meowdao_handle_h3" />
-      <UsablePiece piece_id="crpg_meowdao_guard_h0" />
-      <UsablePiece piece_id="crpg_meowdao_guard_h1" />
-      <UsablePiece piece_id="crpg_meowdao_guard_h2" />
-      <UsablePiece piece_id="crpg_meowdao_guard_h3" />
-      <UsablePiece piece_id="crpg_meowdao_pommel_h0" />
-      <UsablePiece piece_id="crpg_meowdao_pommel_h1" />
-      <UsablePiece piece_id="crpg_meowdao_pommel_h2" />
-      <UsablePiece piece_id="crpg_meowdao_pommel_h3" />
       <UsablePiece piece_id="crpg_thamaskene_steel_two_hander_blade_h0" />
       <UsablePiece piece_id="crpg_thamaskene_steel_two_hander_blade_h1" />
       <UsablePiece piece_id="crpg_thamaskene_steel_two_hander_blade_h2" />
@@ -3230,7 +3230,7 @@
       <UsablePiece piece_id="crpg_ancientlongsword_pommel_h3" />
     </UsablePieces>
   </CraftingTemplate>
-  <CraftingTemplate id="crpg_Dagger_Scabbard" item_type="OneHandedWeapon" modifier_group="sword" item_holsters="sword_left_hip_3:sword_left_hip_2:sword_left_hip:sword_back" default_item_holster_position_offset="0,0,-0.1" use_weapon_as_holster_mesh="false">
+  <CraftingTemplate id="crpg_Dagger_Scabbard" item_type="OneHandedWeapon" modifier_group="sword" item_holsters="sword_left_hip_3:sword_left_hip_2:sword_left_hip:sword_back" piece_type_to_scale_holster_with="Blade" hidden_piece_types_on_holster="Blade" default_item_holster_position_offset="0,0,-0.1" use_weapon_as_holster_mesh="false">
     <PieceDatas>
       <PieceData piece_type="Handle" build_order="0" />
       <PieceData piece_type="Guard" build_order="1" />

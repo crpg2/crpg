@@ -12404,7 +12404,7 @@
       <Piece id="crpg_shep_damast_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_meowdao_h0" name="{=kaikaikai}Meowdao" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_meowdao_h0" name="{=kaikaikai}Meowdao" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_meowdao_blade_h0" Type="Blade" scale_factor="107" />
       <Piece id="crpg_meowdao_guard_h0" Type="Guard" scale_factor="100" />
@@ -12412,7 +12412,7 @@
       <Piece id="crpg_meowdao_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_meowdao_h1" name="{=kaikaikai}Meowdao +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_meowdao_h1" name="{=kaikaikai}Meowdao +1" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_meowdao_blade_h1" Type="Blade" scale_factor="107" />
       <Piece id="crpg_meowdao_guard_h1" Type="Guard" scale_factor="100" />
@@ -12420,7 +12420,7 @@
       <Piece id="crpg_meowdao_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_meowdao_h2" name="{=kaikaikai}Meowdao +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_meowdao_h2" name="{=kaikaikai}Meowdao +2" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_meowdao_blade_h2" Type="Blade" scale_factor="107" />
       <Piece id="crpg_meowdao_guard_h2" Type="Guard" scale_factor="100" />
@@ -12428,7 +12428,7 @@
       <Piece id="crpg_meowdao_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_meowdao_h3" name="{=kaikaikai}Meowdao +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_meowdao_h3" name="{=kaikaikai}Meowdao +3" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_meowdao_blade_h3" Type="Blade" scale_factor="107" />
       <Piece id="crpg_meowdao_guard_h3" Type="Guard" scale_factor="100" />
