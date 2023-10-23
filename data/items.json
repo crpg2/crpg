@@ -9072,7 +9072,7 @@
   {
     "id": "crpg_ba_heraldictabard3_h0",
     "baseId": "crpg_ba_heraldictabard3",
-    "name": "Bahamut Tabard over Battered Full Plate Armor",
+    "name": "Tabard over Battered Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 20899,
@@ -9096,7 +9096,7 @@
   {
     "id": "crpg_ba_heraldictabard3_h1",
     "baseId": "crpg_ba_heraldictabard3",
-    "name": "Bahamut Tabard over Battered Full Plate Armor +1",
+    "name": "Tabard over Battered Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 19819,
@@ -9120,7 +9120,7 @@
   {
     "id": "crpg_ba_heraldictabard3_h2",
     "baseId": "crpg_ba_heraldictabard3",
-    "name": "Bahamut Tabard over Battered Full Plate Armor +2",
+    "name": "Tabard over Battered Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 18874,
@@ -9144,7 +9144,7 @@
   {
     "id": "crpg_ba_heraldictabard3_h3",
     "baseId": "crpg_ba_heraldictabard3",
-    "name": "Bahamut Tabard over Battered Full Plate Armor +3",
+    "name": "Tabard over Battered Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 18042,
@@ -10176,7 +10176,7 @@
   {
     "id": "crpg_ba_platearmor_h0",
     "baseId": "crpg_ba_platearmor",
-    "name": "Bahamut Full Plate Armor with Rondel",
+    "name": "Full Plate Armor with Rondel",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 21803,
@@ -10198,7 +10198,7 @@
   {
     "id": "crpg_ba_platearmor_h1",
     "baseId": "crpg_ba_platearmor",
-    "name": "Bahamut Full Plate Armor with Rondel +1",
+    "name": "Full Plate Armor with Rondel +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 20613,
@@ -10220,7 +10220,7 @@
   {
     "id": "crpg_ba_platearmor_h2",
     "baseId": "crpg_ba_platearmor",
-    "name": "Bahamut Full Plate Armor with Rondel +2",
+    "name": "Full Plate Armor with Rondel +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 19574,
@@ -10242,7 +10242,7 @@
   {
     "id": "crpg_ba_platearmor_h3",
     "baseId": "crpg_ba_platearmor",
-    "name": "Bahamut Full Plate Armor with Rondel +3",
+    "name": "Full Plate Armor with Rondel +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 18660,
@@ -10264,7 +10264,7 @@
   {
     "id": "crpg_ba_platearmor2_h0",
     "baseId": "crpg_ba_platearmor2",
-    "name": "Bahamut Full Plate Armor",
+    "name": "Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 21803,
@@ -10286,7 +10286,7 @@
   {
     "id": "crpg_ba_platearmor2_h1",
     "baseId": "crpg_ba_platearmor2",
-    "name": "Bahamut Full Plate Armor +1",
+    "name": "Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 20613,
@@ -10308,7 +10308,7 @@
   {
     "id": "crpg_ba_platearmor2_h2",
     "baseId": "crpg_ba_platearmor2",
-    "name": "Bahamut Full Plate Armor +2",
+    "name": "Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 19574,
@@ -10330,7 +10330,7 @@
   {
     "id": "crpg_ba_platearmor2_h3",
     "baseId": "crpg_ba_platearmor2",
-    "name": "Bahamut Full Plate Armor +3",
+    "name": "Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 18660,
@@ -10352,7 +10352,7 @@
   {
     "id": "crpg_ba_platearmor2gold_h0",
     "baseId": "crpg_ba_platearmor2gold",
-    "name": "Bahamut Gold Full Plate Armor",
+    "name": "Gold Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 21803,
@@ -10374,7 +10374,7 @@
   {
     "id": "crpg_ba_platearmor2gold_h1",
     "baseId": "crpg_ba_platearmor2gold",
-    "name": "Bahamut Gold Full Plate Armor +1",
+    "name": "Gold Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 20613,
@@ -10396,7 +10396,7 @@
   {
     "id": "crpg_ba_platearmor2gold_h2",
     "baseId": "crpg_ba_platearmor2gold",
-    "name": "Bahamut Gold Full Plate Armor +2",
+    "name": "Gold Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 19574,
@@ -10418,7 +10418,7 @@
   {
     "id": "crpg_ba_platearmor2gold_h3",
     "baseId": "crpg_ba_platearmor2gold",
-    "name": "Bahamut Gold Full Plate Armor +3",
+    "name": "Gold Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 18660,
@@ -10440,7 +10440,7 @@
   {
     "id": "crpg_ba_platearmor2worn_h0",
     "baseId": "crpg_ba_platearmor2worn",
-    "name": "Bahamut Battered Full Plate Armor",
+    "name": "Battered Full Plate Armor",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 20899,
@@ -10462,7 +10462,7 @@
   {
     "id": "crpg_ba_platearmor2worn_h1",
     "baseId": "crpg_ba_platearmor2worn",
-    "name": "Bahamut Battered Full Plate Armor +1",
+    "name": "Battered Full Plate Armor +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 19819,
@@ -10484,7 +10484,7 @@
   {
     "id": "crpg_ba_platearmor2worn_h2",
     "baseId": "crpg_ba_platearmor2worn",
-    "name": "Bahamut Battered Full Plate Armor +2",
+    "name": "Battered Full Plate Armor +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 18874,
@@ -10506,7 +10506,7 @@
   {
     "id": "crpg_ba_platearmor2worn_h3",
     "baseId": "crpg_ba_platearmor2worn",
-    "name": "Bahamut Battered Full Plate Armor +3",
+    "name": "Battered Full Plate Armor +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 18042,
@@ -10528,7 +10528,7 @@
   {
     "id": "crpg_ba_platearmorgold_h0",
     "baseId": "crpg_ba_platearmorgold",
-    "name": "Bahamut Gold Full Plate Armor with Rondel",
+    "name": "Gold Full Plate Armor with Rondel",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 21803,
@@ -10550,7 +10550,7 @@
   {
     "id": "crpg_ba_platearmorgold_h1",
     "baseId": "crpg_ba_platearmorgold",
-    "name": "Bahamut Gold Full Plate Armor with Rondel +1",
+    "name": "Gold Full Plate Armor with Rondel +1",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 20613,
@@ -10572,7 +10572,7 @@
   {
     "id": "crpg_ba_platearmorgold_h2",
     "baseId": "crpg_ba_platearmorgold",
-    "name": "Bahamut Gold Full Plate Armor with Rondel +2",
+    "name": "Gold Full Plate Armor with Rondel +2",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 19574,
@@ -10594,7 +10594,7 @@
   {
     "id": "crpg_ba_platearmorgold_h3",
     "baseId": "crpg_ba_platearmorgold",
-    "name": "Bahamut Gold Full Plate Armor with Rondel +3",
+    "name": "Gold Full Plate Armor with Rondel +3",
     "culture": "Vlandia",
     "type": "BodyArmor",
     "price": 18660,
@@ -47560,13 +47560,13 @@
   {
     "id": "crpg_eba_Hussar_armor_h0",
     "baseId": "crpg_eba_Hussar_armor",
-    "name": "Hussar Armor, Decorated",
+    "name": "Decorated Hussar Armor",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 21676,
-    "weight": 23.53159,
+    "price": 14890,
+    "weight": 17.75254,
     "rank": 0,
-    "tier": 10.2195406,
+    "tier": 9.23263,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47574,9 +47574,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 67,
-      "armArmor": 24,
-      "legArmor": 18,
+      "bodyArmor": 56,
+      "armArmor": 18,
+      "legArmor": 15,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47585,13 +47585,13 @@
   {
     "id": "crpg_eba_Hussar_armor_h1",
     "baseId": "crpg_eba_Hussar_armor",
-    "name": "Hussar Armor, Decorated +1",
+    "name": "Decorated Hussar Armor +1",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 20546,
-    "weight": 23.53159,
+    "price": 14517,
+    "weight": 17.75254,
     "rank": 1,
-    "tier": 10.0729666,
+    "tier": 9.169278,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47599,9 +47599,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 69,
-      "armArmor": 25,
-      "legArmor": 19,
+      "bodyArmor": 58,
+      "armArmor": 19,
+      "legArmor": 16,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47610,13 +47610,13 @@
   {
     "id": "crpg_eba_Hussar_armor_h2",
     "baseId": "crpg_eba_Hussar_armor",
-    "name": "Hussar Armor, Decorated +2",
+    "name": "Decorated Hussar Armor +2",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 19557,
-    "weight": 23.53159,
+    "price": 14184,
+    "weight": 17.75254,
     "rank": 2,
-    "tier": 9.939716,
+    "tier": 9.111686,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47624,9 +47624,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 71,
-      "armArmor": 26,
-      "legArmor": 20,
+      "bodyArmor": 60,
+      "armArmor": 20,
+      "legArmor": 17,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47635,13 +47635,13 @@
   {
     "id": "crpg_eba_Hussar_armor_h3",
     "baseId": "crpg_eba_Hussar_armor",
-    "name": "Hussar Armor, Decorated +3",
+    "name": "Decorated Hussar Armor +3",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 18685,
-    "weight": 23.53159,
+    "price": 13885,
+    "weight": 17.75254,
     "rank": 3,
-    "tier": 9.818054,
+    "tier": 9.059102,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47649,9 +47649,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 73,
-      "armArmor": 27,
-      "legArmor": 21,
+      "bodyArmor": 62,
+      "armArmor": 21,
+      "legArmor": 18,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47660,13 +47660,13 @@
   {
     "id": "crpg_eba_Hussar_armor_prime_h0",
     "baseId": "crpg_eba_Hussar_armor_prime",
-    "name": "Hussar Armor, prime color",
+    "name": "Hussar Armor Primary Color",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 21676,
-    "weight": 23.53159,
+    "price": 14890,
+    "weight": 17.75254,
     "rank": 0,
-    "tier": 10.2195406,
+    "tier": 9.23263,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47674,9 +47674,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 67,
-      "armArmor": 24,
-      "legArmor": 18,
+      "bodyArmor": 56,
+      "armArmor": 18,
+      "legArmor": 15,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47685,13 +47685,13 @@
   {
     "id": "crpg_eba_Hussar_armor_prime_h1",
     "baseId": "crpg_eba_Hussar_armor_prime",
-    "name": "Hussar Armor, prime color +1",
+    "name": "Hussar Armor Primary Color +1",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 20546,
-    "weight": 23.53159,
+    "price": 14517,
+    "weight": 17.75254,
     "rank": 1,
-    "tier": 10.0729666,
+    "tier": 9.169278,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47699,9 +47699,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 69,
-      "armArmor": 25,
-      "legArmor": 19,
+      "bodyArmor": 58,
+      "armArmor": 19,
+      "legArmor": 16,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47710,13 +47710,13 @@
   {
     "id": "crpg_eba_Hussar_armor_prime_h2",
     "baseId": "crpg_eba_Hussar_armor_prime",
-    "name": "Hussar Armor, prime color +2",
+    "name": "Hussar Armor Primary Color +2",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 19557,
-    "weight": 23.53159,
+    "price": 14184,
+    "weight": 17.75254,
     "rank": 2,
-    "tier": 9.939716,
+    "tier": 9.111686,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47724,9 +47724,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 71,
-      "armArmor": 26,
-      "legArmor": 20,
+      "bodyArmor": 60,
+      "armArmor": 20,
+      "legArmor": 17,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47735,13 +47735,13 @@
   {
     "id": "crpg_eba_Hussar_armor_prime_h3",
     "baseId": "crpg_eba_Hussar_armor_prime",
-    "name": "Hussar Armor, prime color +3",
+    "name": "Hussar Armor Primary Color +3",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 18685,
-    "weight": 23.53159,
+    "price": 13885,
+    "weight": 17.75254,
     "rank": 3,
-    "tier": 9.818054,
+    "tier": 9.059102,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47749,9 +47749,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 73,
-      "armArmor": 27,
-      "legArmor": 21,
+      "bodyArmor": 62,
+      "armArmor": 21,
+      "legArmor": 18,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47760,13 +47760,13 @@
   {
     "id": "crpg_eba_Hussar_armor_sec_h0",
     "baseId": "crpg_eba_Hussar_armor_sec",
-    "name": "Hussar Armor, sec color",
+    "name": "Hussar Armor, Secondary Color",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 21676,
-    "weight": 23.53159,
+    "price": 14890,
+    "weight": 17.75254,
     "rank": 0,
-    "tier": 10.2195406,
+    "tier": 9.23263,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47774,9 +47774,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 67,
-      "armArmor": 24,
-      "legArmor": 18,
+      "bodyArmor": 56,
+      "armArmor": 18,
+      "legArmor": 15,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47785,13 +47785,13 @@
   {
     "id": "crpg_eba_Hussar_armor_sec_h1",
     "baseId": "crpg_eba_Hussar_armor_sec",
-    "name": "Hussar Armor, sec color +1",
+    "name": "Hussar Armor, Secondary Color +1",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 20546,
-    "weight": 23.53159,
+    "price": 14517,
+    "weight": 17.75254,
     "rank": 1,
-    "tier": 10.0729666,
+    "tier": 9.169278,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47799,9 +47799,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 69,
-      "armArmor": 25,
-      "legArmor": 19,
+      "bodyArmor": 58,
+      "armArmor": 19,
+      "legArmor": 16,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47810,13 +47810,13 @@
   {
     "id": "crpg_eba_Hussar_armor_sec_h2",
     "baseId": "crpg_eba_Hussar_armor_sec",
-    "name": "Hussar Armor, sec color +2",
+    "name": "Hussar Armor, Secondary Color +2",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 19557,
-    "weight": 23.53159,
+    "price": 14184,
+    "weight": 17.75254,
     "rank": 2,
-    "tier": 9.939716,
+    "tier": 9.111686,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47824,9 +47824,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 71,
-      "armArmor": 26,
-      "legArmor": 20,
+      "bodyArmor": 60,
+      "armArmor": 20,
+      "legArmor": 17,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47835,13 +47835,13 @@
   {
     "id": "crpg_eba_Hussar_armor_sec_h3",
     "baseId": "crpg_eba_Hussar_armor_sec",
-    "name": "Hussar Armor, sec color +3",
+    "name": "Hussar Armor, Secondary Color +3",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 18685,
-    "weight": 23.53159,
+    "price": 13885,
+    "weight": 17.75254,
     "rank": 3,
-    "tier": 9.818054,
+    "tier": 9.059102,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47849,9 +47849,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 73,
-      "armArmor": 27,
-      "legArmor": 21,
+      "bodyArmor": 62,
+      "armArmor": 21,
+      "legArmor": 18,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47860,13 +47860,13 @@
   {
     "id": "crpg_eba_WHussar_armor_h0",
     "baseId": "crpg_eba_WHussar_armor",
-    "name": "Winged Hussar Armor, Decorated",
+    "name": "Winged Decorated Hussar Armor",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 21676,
-    "weight": 23.53159,
+    "price": 14890,
+    "weight": 17.75254,
     "rank": 0,
-    "tier": 10.2195406,
+    "tier": 9.23263,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47874,9 +47874,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 67,
-      "armArmor": 24,
-      "legArmor": 18,
+      "bodyArmor": 56,
+      "armArmor": 18,
+      "legArmor": 15,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47885,13 +47885,13 @@
   {
     "id": "crpg_eba_WHussar_armor_h1",
     "baseId": "crpg_eba_WHussar_armor",
-    "name": "Winged Hussar Armor, Decorated +1",
+    "name": "Winged Decorated Hussar Armor +1",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 20546,
-    "weight": 23.53159,
+    "price": 14517,
+    "weight": 17.75254,
     "rank": 1,
-    "tier": 10.0729666,
+    "tier": 9.169278,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47899,9 +47899,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 69,
-      "armArmor": 25,
-      "legArmor": 19,
+      "bodyArmor": 58,
+      "armArmor": 19,
+      "legArmor": 16,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47910,13 +47910,13 @@
   {
     "id": "crpg_eba_WHussar_armor_h2",
     "baseId": "crpg_eba_WHussar_armor",
-    "name": "Winged Hussar Armor, Decorated +2",
+    "name": "Winged Decorated Hussar Armor +2",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 19557,
-    "weight": 23.53159,
+    "price": 14184,
+    "weight": 17.75254,
     "rank": 2,
-    "tier": 9.939716,
+    "tier": 9.111686,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47924,9 +47924,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 71,
-      "armArmor": 26,
-      "legArmor": 20,
+      "bodyArmor": 60,
+      "armArmor": 20,
+      "legArmor": 17,
       "materialType": "Plate",
       "familyType": 3
     },
@@ -47935,13 +47935,13 @@
   {
     "id": "crpg_eba_WHussar_armor_h3",
     "baseId": "crpg_eba_WHussar_armor",
-    "name": "Winged Hussar Armor, Decorated +3",
+    "name": "Winged Decorated Hussar Armor +3",
     "culture": "Neutral",
     "type": "BodyArmor",
-    "price": 18685,
-    "weight": 23.53159,
+    "price": 13885,
+    "weight": 17.75254,
     "rank": 3,
-    "tier": 9.818054,
+    "tier": 9.059102,
     "requirement": 0,
     "flags": [
       "UseTeamColor",
@@ -47949,9 +47949,9 @@
     ],
     "armor": {
       "headArmor": 0,
-      "bodyArmor": 73,
-      "armArmor": 27,
-      "legArmor": 21,
+      "bodyArmor": 62,
+      "armArmor": 21,
+      "legArmor": 18,
       "materialType": "Plate",
       "familyType": 3
     },
