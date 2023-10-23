@@ -7704,6 +7704,30 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
+  <Item id="crpg_tc_side_empire_battle_crown_west_h0" name="{=}Imperial Side Plumed Helmet (Team Color)" mesh="tc_side_empire_battle_crown_west" culture="Culture.empire" weight="4.167696" appearance="3" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_tc_side_empire_battle_crown_west_h1" name="{=}Imperial Side Plumed Helmet (Team Color) +1" mesh="tc_side_empire_battle_crown_west" culture="Culture.empire" weight="4.167696" appearance="3" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_tc_side_empire_battle_crown_west_h2" name="{=}Imperial Side Plumed Helmet (Team Color) +2" mesh="tc_side_empire_battle_crown_west" culture="Culture.empire" weight="4.167696" appearance="3" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_tc_side_empire_battle_crown_west_h3" name="{=}Imperial Side Plumed Helmet (Team Color) +3" mesh="tc_side_empire_battle_crown_west" culture="Culture.empire" weight="4.167696" appearance="3" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
   <Item id="crpg_thinhide_coif_v2_h0" name="{=Q50hfNjW}Thinhide Coif" mesh="battania_helmet_a" culture="Culture.battania" weight="0.4000348" appearance="1.6" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="9" has_gender_variations="false" hair_cover_type="type3" modifier_group="leather" material_type="Leather" />

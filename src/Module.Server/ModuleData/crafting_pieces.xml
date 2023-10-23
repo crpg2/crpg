@@ -29488,25 +29488,25 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_nodachi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_blue_nodachi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_nodachi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_blue_nodachi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_nodachi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_blue_nodachi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_nodachi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_blue_nodachi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
@@ -29592,25 +29592,25 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_nodachi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_green_nodachi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_nodachi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_green_nodachi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_nodachi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_green_nodachi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_nodachi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_green_nodachi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
@@ -29696,25 +29696,25 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_nodachi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_yellow_nodachi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_nodachi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_yellow_nodachi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_nodachi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_yellow_nodachi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_nodachi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_yellow_nodachi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
@@ -29800,25 +29800,25 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_nodachi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_black_nodachi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_nodachi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_black_nodachi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_nodachi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_black_nodachi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_nodachi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.01">
+  <CraftingPiece id="crpg_black_nodachi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="0.01">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
@@ -30008,25 +30008,25 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_wakizashi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_blue_wakizashi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_wakizashi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_blue_wakizashi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_wakizashi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_blue_wakizashi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_wakizashi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_blue_wakizashi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
@@ -30112,25 +30112,25 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_wakizashi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_green_wakizashi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_wakizashi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_green_wakizashi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_wakizashi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_green_wakizashi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_wakizashi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_green_wakizashi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
@@ -30216,25 +30216,25 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_wakizashi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_yellow_wakizashi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_wakizashi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_yellow_wakizashi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_wakizashi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_yellow_wakizashi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_wakizashi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_yellow_wakizashi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
@@ -30320,25 +30320,25 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_wakizashi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_black_wakizashi_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_wakizashi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_black_wakizashi_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_wakizashi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_black_wakizashi_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_wakizashi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="0.8">
+  <CraftingPiece id="crpg_black_wakizashi_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="0.8">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />

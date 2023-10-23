@@ -166056,6 +166056,106 @@
     "weapons": []
   },
   {
+    "id": "crpg_tc_side_empire_battle_crown_west_h0",
+    "baseId": "crpg_tc_side_empire_battle_crown_west",
+    "name": "Imperial Side Plumed Helmet (Team Color)",
+    "culture": "Empire",
+    "type": "HeadArmor",
+    "price": 4054,
+    "weight": 4.167696,
+    "rank": 0,
+    "tier": 8.117633,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor",
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 48,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate",
+      "familyType": 0
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_tc_side_empire_battle_crown_west_h1",
+    "baseId": "crpg_tc_side_empire_battle_crown_west",
+    "name": "Imperial Side Plumed Helmet (Team Color) +1",
+    "culture": "Empire",
+    "type": "HeadArmor",
+    "price": 3939,
+    "weight": 4.167696,
+    "rank": 1,
+    "tier": 8.053208,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor",
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 50,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate",
+      "familyType": 0
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_tc_side_empire_battle_crown_west_h2",
+    "baseId": "crpg_tc_side_empire_battle_crown_west",
+    "name": "Imperial Side Plumed Helmet (Team Color) +2",
+    "culture": "Empire",
+    "type": "HeadArmor",
+    "price": 3836,
+    "weight": 4.167696,
+    "rank": 2,
+    "tier": 7.99463844,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor",
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 52,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate",
+      "familyType": 0
+    },
+    "weapons": []
+  },
+  {
+    "id": "crpg_tc_side_empire_battle_crown_west_h3",
+    "baseId": "crpg_tc_side_empire_battle_crown_west",
+    "name": "Imperial Side Plumed Helmet (Team Color) +3",
+    "culture": "Empire",
+    "type": "HeadArmor",
+    "price": 3744,
+    "weight": 4.167696,
+    "rank": 3,
+    "tier": 7.941163,
+    "requirement": 0,
+    "flags": [
+      "UseTeamColor",
+      "Civilian"
+    ],
+    "armor": {
+      "headArmor": 54,
+      "bodyArmor": 0,
+      "armArmor": 0,
+      "legArmor": 0,
+      "materialType": "Plate",
+      "familyType": 0
+    },
+    "weapons": []
+  },
+  {
     "id": "crpg_tetsubo_h0",
     "baseId": "crpg_tetsubo",
     "name": "Tetsubo",
