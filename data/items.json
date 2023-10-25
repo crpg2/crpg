@@ -27164,7 +27164,9 @@
     "rank": 0,
     "tier": 9.248163,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -27224,7 +27226,9 @@
     "rank": 1,
     "tier": 9.8728,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -27284,7 +27288,9 @@
     "rank": 2,
     "tier": 9.008506,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -27344,7 +27350,9 @@
     "rank": 3,
     "tier": 9.829323,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -57995,10 +58003,10 @@
     "name": "Francesca",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 425,
-    "weight": 1.25,
+    "price": 1207,
+    "weight": 0.7,
     "rank": 0,
-    "tier": 1.85753345,
+    "tier": 3.86897659,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -58008,11 +58016,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 25,
+        "missileSpeed": 27,
         "stackAmount": 3,
         "length": 38,
         "balance": 1.0,
-        "handling": 108,
+        "handling": 111,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -58024,10 +58032,10 @@
         ],
         "thrustDamage": 32,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 100,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 111
+        "swingSpeed": 117
       },
       {
         "class": "OneHandedAxe",
@@ -58037,7 +58045,7 @@
         "stackAmount": 0,
         "length": 38,
         "balance": 1.0,
-        "handling": 108,
+        "handling": 111,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58045,10 +58053,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
-        "swingDamage": 11,
+        "thrustSpeed": 100,
+        "swingDamage": 14,
         "swingDamageType": "Cut",
-        "swingSpeed": 111
+        "swingSpeed": 117
       }
     ]
   },
@@ -58058,10 +58066,10 @@
     "name": "Francesca +1",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 392,
-    "weight": 1.25,
+    "price": 1093,
+    "weight": 0.7,
     "rank": 1,
-    "tier": 1.74172235,
+    "tier": 3.62775946,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -58071,11 +58079,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 25,
+        "missileSpeed": 27,
         "stackAmount": 3,
         "length": 38,
         "balance": 1.0,
-        "handling": 108,
+        "handling": 111,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -58087,10 +58095,10 @@
         ],
         "thrustDamage": 33,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 100,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 111
+        "swingSpeed": 117
       },
       {
         "class": "OneHandedAxe",
@@ -58100,7 +58108,7 @@
         "stackAmount": 0,
         "length": 38,
         "balance": 1.0,
-        "handling": 108,
+        "handling": 111,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58108,10 +58116,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
-        "swingDamage": 11,
+        "thrustSpeed": 100,
+        "swingDamage": 14,
         "swingDamageType": "Cut",
-        "swingSpeed": 111
+        "swingSpeed": 117
       }
     ]
   },
@@ -58121,10 +58129,10 @@
     "name": "Francesca +2",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 483,
-    "weight": 1.25,
+    "price": 1018,
+    "weight": 0.7,
     "rank": 2,
-    "tier": 2.0492878,
+    "tier": 3.464341,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -58134,11 +58142,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 25,
+        "missileSpeed": 27,
         "stackAmount": 3,
         "length": 38,
         "balance": 1.0,
-        "handling": 108,
+        "handling": 111,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -58148,12 +58156,12 @@
           "AutoReload",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 35,
+        "thrustDamage": 34,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 100,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 111
+        "swingSpeed": 117
       },
       {
         "class": "OneHandedAxe",
@@ -58163,7 +58171,7 @@
         "stackAmount": 0,
         "length": 38,
         "balance": 1.0,
-        "handling": 108,
+        "handling": 111,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58171,10 +58179,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
-        "swingDamage": 11,
+        "thrustSpeed": 100,
+        "swingDamage": 15,
         "swingDamageType": "Cut",
-        "swingSpeed": 111
+        "swingSpeed": 117
       }
     ]
   },
@@ -58184,10 +58192,10 @@
     "name": "Francesca +3",
     "culture": "Vlandia",
     "type": "Thrown",
-    "price": 460,
-    "weight": 1.25,
+    "price": 1328,
+    "weight": 0.7,
     "rank": 3,
-    "tier": 1.97426164,
+    "tier": 4.11210537,
     "requirement": 0,
     "flags": [
       "CanBePickedUpFromCorpse"
@@ -58197,11 +58205,11 @@
         "class": "ThrowingAxe",
         "itemUsage": "throwing_axe",
         "accuracy": 93,
-        "missileSpeed": 25,
+        "missileSpeed": 27,
         "stackAmount": 3,
         "length": 38,
         "balance": 1.0,
-        "handling": 108,
+        "handling": 111,
         "bodyArmor": 0,
         "flags": [
           "RangedWeapon",
@@ -58213,10 +58221,10 @@
         ],
         "thrustDamage": 36,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
+        "thrustSpeed": 100,
         "swingDamage": 0,
         "swingDamageType": "Cut",
-        "swingSpeed": 111
+        "swingSpeed": 117
       },
       {
         "class": "OneHandedAxe",
@@ -58226,7 +58234,7 @@
         "stackAmount": 0,
         "length": 38,
         "balance": 1.0,
-        "handling": 108,
+        "handling": 111,
         "bodyArmor": 0,
         "flags": [
           "MeleeWeapon",
@@ -58234,10 +58242,10 @@
         ],
         "thrustDamage": 0,
         "thrustDamageType": "Cut",
-        "thrustSpeed": 94,
-        "swingDamage": 12,
+        "thrustSpeed": 100,
+        "swingDamage": 15,
         "swingDamageType": "Cut",
-        "swingSpeed": 111
+        "swingSpeed": 117
       }
     ]
   },
@@ -74963,136 +74971,14 @@
     "name": "Horseman Javelin",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 570,
+    "price": 1249,
     "weight": 1.5,
     "rank": 0,
-    "tier": 2.31923223,
+    "tier": 3.9543376,
     "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Javelin",
-        "itemUsage": "throwing_javelin",
-        "accuracy": 92,
-        "missileSpeed": 27,
-        "stackAmount": 4,
-        "length": 67,
-        "balance": 0.79,
-        "handling": 88,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "CanDismount",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 26,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 93
-      },
-      {
-        "class": "OneHandedPolearm",
-        "itemUsage": "onehanded_polearm_block_shield_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 67,
-        "balance": 0.44,
-        "handling": 89,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "WideGrip",
-          "CanDismount"
-        ],
-        "thrustDamage": 5,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 83
-      }
-    ]
-  },
-  {
-    "id": "crpg_horseman_javelin_v2_h1",
-    "baseId": "crpg_horseman_javelin_v2",
-    "name": "Horseman Javelin +1",
-    "culture": "Khuzait",
-    "type": "Thrown",
-    "price": 559,
-    "weight": 1.5,
-    "rank": 1,
-    "tier": 2.28653,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Javelin",
-        "itemUsage": "throwing_javelin",
-        "accuracy": 92,
-        "missileSpeed": 27,
-        "stackAmount": 4,
-        "length": 67,
-        "balance": 0.79,
-        "handling": 88,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "CanDismount",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 27,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 93
-      },
-      {
-        "class": "OneHandedPolearm",
-        "itemUsage": "onehanded_polearm_block_shield_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 67,
-        "balance": 0.44,
-        "handling": 89,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "WideGrip",
-          "CanDismount"
-        ],
-        "thrustDamage": 5,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 90,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 83
-      }
-    ]
-  },
-  {
-    "id": "crpg_horseman_javelin_v2_h2",
-    "baseId": "crpg_horseman_javelin_v2",
-    "name": "Horseman Javelin +2",
-    "culture": "Khuzait",
-    "type": "Thrown",
-    "price": 560,
-    "weight": 1.5,
-    "rank": 2,
-    "tier": 2.28838968,
-    "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -75144,17 +75030,19 @@
     ]
   },
   {
-    "id": "crpg_horseman_javelin_v2_h3",
+    "id": "crpg_horseman_javelin_v2_h1",
     "baseId": "crpg_horseman_javelin_v2",
-    "name": "Horseman Javelin +3",
+    "name": "Horseman Javelin +1",
     "culture": "Khuzait",
     "type": "Thrown",
-    "price": 569,
+    "price": 1186,
     "weight": 1.5,
-    "rank": 3,
-    "tier": 2.317243,
+    "rank": 1,
+    "tier": 3.82493067,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -75197,6 +75085,134 @@
           "CanDismount"
         ],
         "thrustDamage": 5,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_horseman_javelin_v2_h2",
+    "baseId": "crpg_horseman_javelin_v2",
+    "name": "Horseman Javelin +2",
+    "culture": "Khuzait",
+    "type": "Thrown",
+    "price": 1155,
+    "weight": 1.5,
+    "rank": 2,
+    "tier": 3.760671,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "Javelin",
+        "itemUsage": "throwing_javelin",
+        "accuracy": 92,
+        "missileSpeed": 27,
+        "stackAmount": 4,
+        "length": 67,
+        "balance": 0.79,
+        "handling": 88,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "CanDismount",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 30,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 93
+      },
+      {
+        "class": "OneHandedPolearm",
+        "itemUsage": "onehanded_polearm_block_shield_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 67,
+        "balance": 0.44,
+        "handling": 89,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "WideGrip",
+          "CanDismount"
+        ],
+        "thrustDamage": 5,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 83
+      }
+    ]
+  },
+  {
+    "id": "crpg_horseman_javelin_v2_h3",
+    "baseId": "crpg_horseman_javelin_v2",
+    "name": "Horseman Javelin +3",
+    "culture": "Khuzait",
+    "type": "Thrown",
+    "price": 1648,
+    "weight": 1.5,
+    "rank": 3,
+    "tier": 4.7074523,
+    "requirement": 0,
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
+    "weapons": [
+      {
+        "class": "Javelin",
+        "itemUsage": "throwing_javelin",
+        "accuracy": 92,
+        "missileSpeed": 27,
+        "stackAmount": 4,
+        "length": 67,
+        "balance": 0.79,
+        "handling": 88,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "CanDismount",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 32,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 90,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 93
+      },
+      {
+        "class": "OneHandedPolearm",
+        "itemUsage": "onehanded_polearm_block_shield_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 67,
+        "balance": 0.44,
+        "handling": 89,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "WideGrip",
+          "CanDismount"
+        ],
+        "thrustDamage": 6,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 90,
         "swingDamage": 0,
@@ -81770,7 +81786,9 @@
     "rank": 0,
     "tier": 9.14263248,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -81830,7 +81848,9 @@
     "rank": 1,
     "tier": 8.572627,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -81890,7 +81910,9 @@
     "rank": 2,
     "tier": 8.186453,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -81950,7 +81972,9 @@
     "rank": 3,
     "tier": 9.717165,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -83058,7 +83082,9 @@
     "rank": 0,
     "tier": 10.0004559,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -83118,7 +83144,9 @@
     "rank": 1,
     "tier": 9.257282,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -83178,7 +83206,9 @@
     "rank": 2,
     "tier": 8.733853,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -83238,7 +83268,9 @@
     "rank": 3,
     "tier": 10.1387281,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -99928,7 +99960,9 @@
     "rank": 0,
     "tier": 1.09279776,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -99988,7 +100022,9 @@
     "rank": 1,
     "tier": 1.42893493,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -100048,7 +100084,9 @@
     "rank": 2,
     "tier": 1.84116817,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -100108,7 +100146,9 @@
     "rank": 3,
     "tier": 2.34069943,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -126220,15 +126260,15 @@
     "weapons": []
   },
   {
-    "id": "crpg_pilum_v3_h0",
-    "baseId": "crpg_pilum_v3",
+    "id": "crpg_pilum_v4_h0",
+    "baseId": "crpg_pilum_v4",
     "name": "Pilum Steel Throwing Spear",
     "culture": "Empire",
     "type": "Thrown",
-    "price": 5260,
+    "price": 4605,
     "weight": 2.08,
     "rank": 0,
-    "tier": 9.291267,
+    "tier": 8.620951,
     "requirement": 0,
     "flags": [],
     "weapons": [
@@ -126237,7 +126277,7 @@
         "itemUsage": "throwing_javelin",
         "accuracy": 92,
         "missileSpeed": 26,
-        "stackAmount": 1,
+        "stackAmount": 2,
         "length": 125,
         "balance": 0.54,
         "handling": 78,
@@ -126250,7 +126290,193 @@
           "CanDismount",
           "AmmoBreaksOnBounceBack"
         ],
-        "thrustDamage": 49,
+        "thrustDamage": 40,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 85,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 86
+      },
+      {
+        "class": "OneHandedPolearm",
+        "itemUsage": "onehanded_polearm_block_shield_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 125,
+        "balance": 0.0,
+        "handling": 85,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "WideGrip",
+          "CanDismount"
+        ],
+        "thrustDamage": 6,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 85,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 68
+      }
+    ]
+  },
+  {
+    "id": "crpg_pilum_v4_h1",
+    "baseId": "crpg_pilum_v4",
+    "name": "Pilum Steel Throwing Spear +1",
+    "culture": "Empire",
+    "type": "Thrown",
+    "price": 3809,
+    "weight": 2.08,
+    "rank": 1,
+    "tier": 7.737288,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Javelin",
+        "itemUsage": "throwing_javelin",
+        "accuracy": 92,
+        "missileSpeed": 26,
+        "stackAmount": 2,
+        "length": 125,
+        "balance": 0.54,
+        "handling": 78,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "CanDismount",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 41,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 85,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 86
+      },
+      {
+        "class": "OneHandedPolearm",
+        "itemUsage": "onehanded_polearm_block_shield_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 125,
+        "balance": 0.0,
+        "handling": 85,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "WideGrip",
+          "CanDismount"
+        ],
+        "thrustDamage": 6,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 85,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 68
+      }
+    ]
+  },
+  {
+    "id": "crpg_pilum_v4_h2",
+    "baseId": "crpg_pilum_v4",
+    "name": "Pilum Steel Throwing Spear +2",
+    "culture": "Empire",
+    "type": "Thrown",
+    "price": 3272,
+    "weight": 2.08,
+    "rank": 2,
+    "tier": 7.088823,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Javelin",
+        "itemUsage": "throwing_javelin",
+        "accuracy": 92,
+        "missileSpeed": 26,
+        "stackAmount": 2,
+        "length": 125,
+        "balance": 0.54,
+        "handling": 78,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "CanDismount",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 42,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 85,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 86
+      },
+      {
+        "class": "OneHandedPolearm",
+        "itemUsage": "onehanded_polearm_block_shield_thrust",
+        "accuracy": 0,
+        "missileSpeed": 0,
+        "stackAmount": 0,
+        "length": 125,
+        "balance": 0.0,
+        "handling": 85,
+        "bodyArmor": 0,
+        "flags": [
+          "MeleeWeapon",
+          "WideGrip",
+          "CanDismount"
+        ],
+        "thrustDamage": 6,
+        "thrustDamageType": "Pierce",
+        "thrustSpeed": 85,
+        "swingDamage": 0,
+        "swingDamageType": "Undefined",
+        "swingSpeed": 68
+      }
+    ]
+  },
+  {
+    "id": "crpg_pilum_v4_h3",
+    "baseId": "crpg_pilum_v4",
+    "name": "Pilum Steel Throwing Spear +3",
+    "culture": "Empire",
+    "type": "Thrown",
+    "price": 3857,
+    "weight": 2.08,
+    "rank": 3,
+    "tier": 7.79385853,
+    "requirement": 0,
+    "flags": [],
+    "weapons": [
+      {
+        "class": "Javelin",
+        "itemUsage": "throwing_javelin",
+        "accuracy": 92,
+        "missileSpeed": 26,
+        "stackAmount": 2,
+        "length": 125,
+        "balance": 0.54,
+        "handling": 78,
+        "bodyArmor": 0,
+        "flags": [
+          "RangedWeapon",
+          "Consumable",
+          "UnloadWhenSheathed",
+          "AutoReload",
+          "CanDismount",
+          "AmmoBreaksOnBounceBack"
+        ],
+        "thrustDamage": 44,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
         "swingDamage": 0,
@@ -126273,192 +126499,6 @@
           "CanDismount"
         ],
         "thrustDamage": 7,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 68
-      }
-    ]
-  },
-  {
-    "id": "crpg_pilum_v3_h1",
-    "baseId": "crpg_pilum_v3",
-    "name": "Pilum Steel Throwing Spear +1",
-    "culture": "Empire",
-    "type": "Thrown",
-    "price": 5280,
-    "weight": 2.08,
-    "rank": 1,
-    "tier": 9.310873,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Javelin",
-        "itemUsage": "throwing_javelin",
-        "accuracy": 92,
-        "missileSpeed": 26,
-        "stackAmount": 1,
-        "length": 125,
-        "balance": 0.54,
-        "handling": 78,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "CanDismount",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 51,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 86
-      },
-      {
-        "class": "OneHandedPolearm",
-        "itemUsage": "onehanded_polearm_block_shield_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 125,
-        "balance": 0.0,
-        "handling": 85,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "WideGrip",
-          "CanDismount"
-        ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 68
-      }
-    ]
-  },
-  {
-    "id": "crpg_pilum_v3_h2",
-    "baseId": "crpg_pilum_v3",
-    "name": "Pilum Steel Throwing Spear +2",
-    "culture": "Empire",
-    "type": "Thrown",
-    "price": 5432,
-    "weight": 2.08,
-    "rank": 2,
-    "tier": 9.46031952,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Javelin",
-        "itemUsage": "throwing_javelin",
-        "accuracy": 92,
-        "missileSpeed": 26,
-        "stackAmount": 1,
-        "length": 125,
-        "balance": 0.54,
-        "handling": 78,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "CanDismount",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 53,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 86
-      },
-      {
-        "class": "OneHandedPolearm",
-        "itemUsage": "onehanded_polearm_block_shield_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 125,
-        "balance": 0.0,
-        "handling": 85,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "WideGrip",
-          "CanDismount"
-        ],
-        "thrustDamage": 8,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 68
-      }
-    ]
-  },
-  {
-    "id": "crpg_pilum_v3_h3",
-    "baseId": "crpg_pilum_v3",
-    "name": "Pilum Steel Throwing Spear +3",
-    "culture": "Empire",
-    "type": "Thrown",
-    "price": 5696,
-    "weight": 2.08,
-    "rank": 3,
-    "tier": 9.715036,
-    "requirement": 0,
-    "flags": [],
-    "weapons": [
-      {
-        "class": "Javelin",
-        "itemUsage": "throwing_javelin",
-        "accuracy": 92,
-        "missileSpeed": 26,
-        "stackAmount": 1,
-        "length": 125,
-        "balance": 0.54,
-        "handling": 78,
-        "bodyArmor": 0,
-        "flags": [
-          "RangedWeapon",
-          "Consumable",
-          "UnloadWhenSheathed",
-          "AutoReload",
-          "CanDismount",
-          "AmmoBreaksOnBounceBack"
-        ],
-        "thrustDamage": 55,
-        "thrustDamageType": "Pierce",
-        "thrustSpeed": 85,
-        "swingDamage": 0,
-        "swingDamageType": "Undefined",
-        "swingSpeed": 86
-      },
-      {
-        "class": "OneHandedPolearm",
-        "itemUsage": "onehanded_polearm_block_shield_thrust",
-        "accuracy": 0,
-        "missileSpeed": 0,
-        "stackAmount": 0,
-        "length": 125,
-        "balance": 0.0,
-        "handling": 85,
-        "bodyArmor": 0,
-        "flags": [
-          "MeleeWeapon",
-          "WideGrip",
-          "CanDismount"
-        ],
-        "thrustDamage": 8,
         "thrustDamageType": "Pierce",
         "thrustSpeed": 85,
         "swingDamage": 0,
@@ -145452,7 +145492,9 @@
     "rank": 0,
     "tier": 0.5000514,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -145512,7 +145554,9 @@
     "rank": 1,
     "tier": 0.607260346,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -145572,7 +145616,9 @@
     "rank": 2,
     "tier": 0.909605861,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -145632,7 +145678,9 @@
     "rank": 3,
     "tier": 1.921251,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -180178,7 +180226,9 @@
     "rank": 0,
     "tier": 3.79205585,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -180238,7 +180288,9 @@
     "rank": 1,
     "tier": 3.63667226,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -180298,7 +180350,9 @@
     "rank": 2,
     "tier": 4.458051,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",
@@ -180358,7 +180412,9 @@
     "rank": 3,
     "tier": 5.425343,
     "requirement": 0,
-    "flags": [],
+    "flags": [
+      "CanBePickedUpFromCorpse"
+    ],
     "weapons": [
       {
         "class": "Javelin",

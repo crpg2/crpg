@@ -6403,6 +6403,9 @@
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_simple_javelin_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
@@ -6411,6 +6414,9 @@
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_simple_javelin_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
@@ -6419,6 +6425,9 @@
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_simple_javelin_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
@@ -6427,10 +6436,13 @@
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.78" />
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="0.65" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6440,8 +6452,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.82" />
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="0.66" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6451,8 +6463,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.86" />
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="0.67" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6462,8 +6474,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.89" />
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="0.71" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6473,7 +6485,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
       <Thrust damage_type="Pierce" damage_factor="0.76" />
     </BladeData>
     <Materials>
@@ -6484,7 +6496,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
       <Thrust damage_type="Pierce" damage_factor="0.79" />
     </BladeData>
     <Materials>
@@ -6495,7 +6507,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
       <Thrust damage_type="Pierce" damage_factor="0.83" />
     </BladeData>
     <Materials>
@@ -6506,7 +6518,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
       <Thrust damage_type="Pierce" damage_factor="0.86" />
     </BladeData>
     <Materials>
@@ -6517,7 +6529,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
       <Thrust damage_type="Pierce" damage_factor="0.71" />
     </BladeData>
     <Materials>
@@ -6528,7 +6540,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
       <Thrust damage_type="Pierce" damage_factor="0.74" />
     </BladeData>
     <Materials>
@@ -6539,7 +6551,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
       <Thrust damage_type="Pierce" damage_factor="0.78" />
     </BladeData>
     <Materials>
@@ -6550,7 +6562,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
       <Thrust damage_type="Pierce" damage_factor="0.82" />
     </BladeData>
     <Materials>
@@ -6771,6 +6783,9 @@
     <Materials>
       <Material id="Iron5" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jereed_blade_h1" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_2" holster_body_name="bo_throwing_spear_quiver_2" holster_mesh_length="94.6">
@@ -6779,6 +6794,9 @@
     <Materials>
       <Material id="Iron5" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jereed_blade_h2" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_2" holster_body_name="bo_throwing_spear_quiver_2" holster_mesh_length="94.6">
@@ -6787,6 +6805,9 @@
     <Materials>
       <Material id="Iron5" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jereed_blade_h3" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_2" holster_body_name="bo_throwing_spear_quiver_2" holster_mesh_length="94.6">
@@ -6795,6 +6816,9 @@
     <Materials>
       <Material id="Iron5" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_thin_fine_steel_hewing_spear_blade_h0" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_2" holster_body_name="bo_throwing_spear_quiver_2" holster_mesh_length="94.6">
@@ -6874,38 +6898,17 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_horseman_javelin_blade_h0" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
     <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.52" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron3" count="2" />
-    </Materials>
-    <Flags>
-      <Flag name="CanDismount" />
-    </Flags>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_horseman_javelin_blade_h1" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
-    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
-      <Thrust damage_type="Pierce" damage_factor="0.54" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron3" count="2" />
-    </Materials>
-    <Flags>
-      <Flag name="CanDismount" />
-    </Flags>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_horseman_javelin_blade_h2" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
-    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
       <Thrust damage_type="Pierce" damage_factor="0.55" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="2" />
     </Materials>
     <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horseman_javelin_blade_h3" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_horseman_javelin_blade_h1" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
     <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
       <Thrust damage_type="Pierce" damage_factor="0.57" />
     </BladeData>
@@ -6913,6 +6916,31 @@
       <Material id="Iron3" count="2" />
     </Materials>
     <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horseman_javelin_blade_h2" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
+    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
+      <Thrust damage_type="Pierce" damage_factor="0.59" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horseman_javelin_blade_h3" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
+    <BladeData stack_amount="4" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5" holster_body_name="bo_throwing_spear_quiver_5" holster_mesh_length="96.7">
+      <Thrust damage_type="Pierce" damage_factor="0.64" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
     </Flags>
   </CraftingPiece>
@@ -6923,6 +6951,9 @@
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h1" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
@@ -6931,6 +6962,9 @@
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h2" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
@@ -6939,6 +6973,9 @@
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h3" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
@@ -6947,6 +6984,9 @@
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_knob_headed_spear_blade_h0" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
@@ -7063,6 +7103,9 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_blade_javelin_blade_h1" name="{=9aYBy1RN}Fine Steel Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.4" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
@@ -7071,6 +7114,9 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_blade_javelin_blade_h2" name="{=9aYBy1RN}Fine Steel Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.4" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
@@ -7079,6 +7125,9 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_blade_javelin_blade_h3" name="{=9aYBy1RN}Fine Steel Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.4" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
@@ -7087,6 +7136,9 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_az-zaġāyah_blade_h0" name="{=Telford}Fine Steel Leaf Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_42" length="42" weight="0.2456" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4_1" holster_body_name="bo_throwing_spear_quiver_4_1" holster_mesh_length="96.2">
@@ -7163,6 +7215,9 @@
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_javelin_blade_h1" name="{=ZUp9mm79}Jagged Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_35" length="41" weight="0.3056" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5_1" holster_body_name="bo_throwing_spear_quiver_5_1" holster_mesh_length="96.7">
@@ -7171,6 +7226,9 @@
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_javelin_blade_h2" name="{=ZUp9mm79}Jagged Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_35" length="41" weight="0.3056" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5_1" holster_body_name="bo_throwing_spear_quiver_5_1" holster_mesh_length="96.7">
@@ -7179,6 +7237,9 @@
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_javelin_blade_h3" name="{=ZUp9mm79}Jagged Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_35" length="41" weight="0.3056" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5_1" holster_body_name="bo_throwing_spear_quiver_5_1" holster_mesh_length="96.7">
@@ -7187,6 +7248,9 @@
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_decorated_steppe_lance_blade_h0" name="{=Telford}Jagged Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_35" length="41" weight="0.29" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_5_1" holster_body_name="bo_throwing_spear_quiver_5_1" holster_mesh_length="96.7">
@@ -7563,6 +7627,9 @@
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_lowland_javelin_blade_h1" name="{=Oxew9WCe}Imperial Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_1" length="48" weight="0.3384" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
@@ -7571,6 +7638,9 @@
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_lowland_javelin_blade_h2" name="{=Oxew9WCe}Imperial Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_1" length="48" weight="0.3384" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
@@ -7579,6 +7649,9 @@
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_lowland_javelin_blade_h3" name="{=Oxew9WCe}Imperial Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_1" length="48" weight="0.3384" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
@@ -7587,6 +7660,9 @@
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_simple_commoner_spear_blade_h0" name="{=Oxew9WCe}Imperial Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_1" length="48" weight="0.3">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
@@ -8148,25 +8224,25 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_francesca_handle_h0" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.8">
+  <CraftingPiece id="crpg_francesca_handle_h0" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.25">
     <BuildData piece_offset="7.2" next_piece_offset="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_francesca_handle_h1" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.8">
+  <CraftingPiece id="crpg_francesca_handle_h1" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.25">
     <BuildData piece_offset="7.2" next_piece_offset="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_francesca_handle_h2" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.8">
+  <CraftingPiece id="crpg_francesca_handle_h2" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.25">
     <BuildData piece_offset="7.2" next_piece_offset="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_francesca_handle_h3" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.8">
+  <CraftingPiece id="crpg_francesca_handle_h3" name="{=Rh3h5NIg}Hardened Short Hardwood Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_11_handle" length="60" weight="0.25">
     <BuildData piece_offset="7.2" next_piece_offset="4" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -9083,7 +9159,7 @@
   <CraftingPiece id="crpg_francesca_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.1" />
+      <Swing damage_type="Cut" damage_factor="1.45" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9097,7 +9173,7 @@
   <CraftingPiece id="crpg_francesca_blade_h1" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.14" />
+      <Swing damage_type="Cut" damage_factor="1.475" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9111,7 +9187,7 @@
   <CraftingPiece id="crpg_francesca_blade_h2" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.19" />
+      <Swing damage_type="Cut" damage_factor="1.5" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9125,7 +9201,7 @@
   <CraftingPiece id="crpg_francesca_blade_h3" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.24" />
+      <Swing damage_type="Cut" damage_factor="1.585" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
