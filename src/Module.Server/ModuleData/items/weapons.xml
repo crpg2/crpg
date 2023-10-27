@@ -9692,25 +9692,25 @@
       <Piece id="crpg_woodsman_two_handed_axe_handle_h3" Type="Handle" scale_factor="85" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_round_axe_h0" name="{=pP0GacSW}Steel Round Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_steel_round_axe_h0" name="{=Diggles}Steel Round Axe" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_round_axe_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_steel_round_axe_handle_h0" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_round_axe_h1" name="{=pP0GacSW}Steel Round Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_steel_round_axe_h1" name="{=Diggles}Steel Round Axe +1" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_round_axe_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_steel_round_axe_handle_h1" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_round_axe_h2" name="{=pP0GacSW}Steel Round Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_steel_round_axe_h2" name="{=Diggles}Steel Round Axe +2" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_round_axe_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_steel_round_axe_handle_h2" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_round_axe_h3" name="{=pP0GacSW}Steel Round Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_steel_round_axe_h3" name="{=Diggles}Steel Round Axe +3" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_round_axe_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_steel_round_axe_handle_h3" Type="Handle" scale_factor="91" />
@@ -9836,28 +9836,28 @@
       <Piece id="crpg_steel_pillager_axe_handle_h3" Type="Handle" scale_factor="124" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_spiked_battle_axe_h0" name="{=SDBvC0ON}Knightly Spiked Battle Axe" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_knightly_spiked_battle_axe_v1_h0" name="{=Diggles}Knightly Spiked Battle Axe" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_knightly_spiked_battle_axe_blade_h0" Type="Blade" scale_factor="135" />
-      <Piece id="crpg_knightly_spiked_battle_axe_handle_h0" Type="Handle" scale_factor="140" />
+      <Piece id="crpg_knightly_spiked_battle_axe_blade_h0" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_knightly_spiked_battle_axe_handle_h0" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_spiked_battle_axe_h1" name="{=SDBvC0ON}Knightly Spiked Battle Axe +1" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_knightly_spiked_battle_axe_v1_h1" name="{=Diggles}Knightly Spiked Battle Axe +1" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_knightly_spiked_battle_axe_blade_h1" Type="Blade" scale_factor="135" />
-      <Piece id="crpg_knightly_spiked_battle_axe_handle_h1" Type="Handle" scale_factor="140" />
+      <Piece id="crpg_knightly_spiked_battle_axe_blade_h1" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_knightly_spiked_battle_axe_handle_h1" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_spiked_battle_axe_h2" name="{=SDBvC0ON}Knightly Spiked Battle Axe +2" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_knightly_spiked_battle_axe_v1_h2" name="{=Diggles}Knightly Spiked Battle Axe +2" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_knightly_spiked_battle_axe_blade_h2" Type="Blade" scale_factor="135" />
-      <Piece id="crpg_knightly_spiked_battle_axe_handle_h2" Type="Handle" scale_factor="140" />
+      <Piece id="crpg_knightly_spiked_battle_axe_blade_h2" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_knightly_spiked_battle_axe_handle_h2" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_spiked_battle_axe_h3" name="{=SDBvC0ON}Knightly Spiked Battle Axe +3" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_knightly_spiked_battle_axe_v1_h3" name="{=Diggles}Knightly Spiked Battle Axe +3" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
-      <Piece id="crpg_knightly_spiked_battle_axe_blade_h3" Type="Blade" scale_factor="135" />
-      <Piece id="crpg_knightly_spiked_battle_axe_handle_h3" Type="Handle" scale_factor="140" />
+      <Piece id="crpg_knightly_spiked_battle_axe_blade_h3" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_knightly_spiked_battle_axe_handle_h3" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_long_franziska_axe_h0" name="{=KRhIG1cw}Long Franziska Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">

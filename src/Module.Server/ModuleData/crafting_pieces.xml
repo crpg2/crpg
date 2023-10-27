@@ -9052,25 +9052,25 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knightly_spiked_battle_axe_handle_h0" name="{=VL00fQvj}Reinforced Axe handle" tier="4" piece_type="Handle" mesh="axe_craft_13_handle" length="74.7" weight="0.2072" CraftingCost="75">
+  <CraftingPiece id="crpg_knightly_spiked_battle_axe_handle_h0" name="{=VL00fQvj}Reinforced Axe handle" tier="4" piece_type="Handle" mesh="axe_craft_13_handle" length="74.7" weight="0.75" CraftingCost="75">
     <BuildData piece_offset="21" next_piece_offset="1.5" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knightly_spiked_battle_axe_handle_h1" name="{=VL00fQvj}Reinforced Axe handle" tier="4" piece_type="Handle" mesh="axe_craft_13_handle" length="74.7" weight="0.2072" CraftingCost="75">
+  <CraftingPiece id="crpg_knightly_spiked_battle_axe_handle_h1" name="{=VL00fQvj}Reinforced Axe handle" tier="4" piece_type="Handle" mesh="axe_craft_13_handle" length="74.7" weight="0.75" CraftingCost="75">
     <BuildData piece_offset="21" next_piece_offset="1.5" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knightly_spiked_battle_axe_handle_h2" name="{=VL00fQvj}Reinforced Axe handle" tier="4" piece_type="Handle" mesh="axe_craft_13_handle" length="74.7" weight="0.2072" CraftingCost="75">
+  <CraftingPiece id="crpg_knightly_spiked_battle_axe_handle_h2" name="{=VL00fQvj}Reinforced Axe handle" tier="4" piece_type="Handle" mesh="axe_craft_13_handle" length="74.7" weight="0.75" CraftingCost="75">
     <BuildData piece_offset="21" next_piece_offset="1.5" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knightly_spiked_battle_axe_handle_h3" name="{=VL00fQvj}Reinforced Axe handle" tier="4" piece_type="Handle" mesh="axe_craft_13_handle" length="74.7" weight="0.2072" CraftingCost="75">
+  <CraftingPiece id="crpg_knightly_spiked_battle_axe_handle_h3" name="{=VL00fQvj}Reinforced Axe handle" tier="4" piece_type="Handle" mesh="axe_craft_13_handle" length="74.7" weight="0.75" CraftingCost="75">
     <BuildData piece_offset="21" next_piece_offset="1.5" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -10444,6 +10444,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -10458,6 +10459,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -10472,6 +10474,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -10486,6 +10489,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="3" />
@@ -10948,53 +10952,57 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knightly_spiked_battle_axe_blade_h0" name="{=m6CVEgTU}Spiked Battle Axe Blade" tier="4" piece_type="Blade" mesh="axe_craft_25_head" distance_to_next_piece="13.9" distance_to_previous_piece="4" weight="0.46">
+  <CraftingPiece id="crpg_knightly_spiked_battle_axe_blade_h0" name="{=m6CVEgTU}Spiked Battle Axe Blade" tier="4" piece_type="Blade" mesh="axe_craft_25_head" distance_to_next_piece="13.9" distance_to_previous_piece="4" weight="0.35">
     <BuildData piece_offset="-8" />
     <BladeData stack_amount="0" blade_length="25.328" blade_width="31.023" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knightly_spiked_battle_axe_blade_h1" name="{=m6CVEgTU}Spiked Battle Axe Blade" tier="4" piece_type="Blade" mesh="axe_craft_25_head" distance_to_next_piece="13.9" distance_to_previous_piece="4" weight="0.43">
+  <CraftingPiece id="crpg_knightly_spiked_battle_axe_blade_h1" name="{=m6CVEgTU}Spiked Battle Axe Blade" tier="4" piece_type="Blade" mesh="axe_craft_25_head" distance_to_next_piece="13.9" distance_to_previous_piece="4" weight="0.35">
     <BuildData piece_offset="-8" />
     <BladeData stack_amount="0" blade_length="25.328" blade_width="31.023" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="3" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_knightly_spiked_battle_axe_blade_h2" name="{=m6CVEgTU}Spiked Battle Axe Blade" tier="4" piece_type="Blade" mesh="axe_craft_25_head" distance_to_next_piece="13.9" distance_to_previous_piece="4" weight="0.43">
-    <BuildData piece_offset="-8" />
-    <BladeData stack_amount="0" blade_length="25.328" blade_width="31.023" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_knightly_spiked_battle_axe_blade_h3" name="{=m6CVEgTU}Spiked Battle Axe Blade" tier="4" piece_type="Blade" mesh="axe_craft_25_head" distance_to_next_piece="13.9" distance_to_previous_piece="4" weight="0.43">
+  <CraftingPiece id="crpg_knightly_spiked_battle_axe_blade_h2" name="{=m6CVEgTU}Spiked Battle Axe Blade" tier="4" piece_type="Blade" mesh="axe_craft_25_head" distance_to_next_piece="13.9" distance_to_previous_piece="4" weight="0.35">
     <BuildData piece_offset="-8" />
     <BladeData stack_amount="0" blade_length="25.328" blade_width="31.023" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Pierce" damage_factor="2.4" />
-      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="3" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_knightly_spiked_battle_axe_blade_h3" name="{=m6CVEgTU}Spiked Battle Axe Blade" tier="4" piece_type="Blade" mesh="axe_craft_25_head" distance_to_next_piece="13.9" distance_to_previous_piece="4" weight="0.35">
+    <BuildData piece_offset="-8" />
+    <BladeData stack_amount="0" blade_length="25.328" blade_width="31.023" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="3" />
