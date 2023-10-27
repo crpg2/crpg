@@ -12192,7 +12192,7 @@
       <Piece id="crpg_yellow_wakizashi_pommel_h3" Type="Pommel" scale_factor="70" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_green_nodachi_h0" name="{=Yeldur}Green Nodachi" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_green_nodachi_v1_h0" name="{=Yeldur}Green Nodachi" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_green_nodachi_blade_h0" Type="Blade" scale_factor="125" />
       <Piece id="crpg_green_nodachi_guard_h0" Type="Guard" scale_factor="100" />
@@ -12200,7 +12200,7 @@
       <Piece id="crpg_green_nodachi_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_green_nodachi_h1" name="{=Yeldur}Green Nodachi +1" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_green_nodachi_v1_h1" name="{=Yeldur}Green Nodachi +1" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_green_nodachi_blade_h1" Type="Blade" scale_factor="125" />
       <Piece id="crpg_green_nodachi_guard_h1" Type="Guard" scale_factor="100" />
@@ -12208,7 +12208,7 @@
       <Piece id="crpg_green_nodachi_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_green_nodachi_h2" name="{=Yeldur}Green Nodachi +2" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_green_nodachi_v1_h2" name="{=Yeldur}Green Nodachi +2" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_green_nodachi_blade_h2" Type="Blade" scale_factor="125" />
       <Piece id="crpg_green_nodachi_guard_h2" Type="Guard" scale_factor="100" />
@@ -12216,7 +12216,7 @@
       <Piece id="crpg_green_nodachi_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_green_nodachi_h3" name="{=Yeldur}Green Nodachi +3" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_green_nodachi_v1_h3" name="{=Yeldur}Green Nodachi +3" crafting_template="crpg_TwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_green_nodachi_blade_h3" Type="Blade" scale_factor="125" />
       <Piece id="crpg_green_nodachi_guard_h3" Type="Guard" scale_factor="100" />
