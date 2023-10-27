@@ -26492,10 +26492,10 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_burgundian_poleaxe_blade_h0" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.86">
+  <CraftingPiece id="crpg_burgundian_poleaxe_blade_h0" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.94">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Cut" damage_factor="4.1" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -26505,36 +26505,36 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_burgundian_poleaxe_blade_h1" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.81">
+  <CraftingPiece id="crpg_burgundian_poleaxe_blade_h1" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.915">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Cut" damage_factor="4.2" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_burgundian_poleaxe_blade_h2" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.8">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
-      <Swing damage_type="Cut" damage_factor="4.3" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_burgundian_poleaxe_blade_h3" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.8">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_burgundian_poleaxe_blade_h2" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.89">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_burgundian_poleaxe_blade_h3" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.89">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -30924,37 +30924,37 @@
     <Flags>
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pudao_blade_h0" name="{=}Pudao Blade" tier="2" piece_type="Blade" mesh="pudao_blade" length="71.1" weight="0.8">
+  <CraftingPiece id="crpg_pudao_blade_h0" name="{=}Pudao Blade" tier="2" piece_type="Blade" mesh="pudao_blade" length="71.1" weight="0.95">
     <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="4.0" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pudao_blade_h1" name="{=}Pudao Blade" tier="2" piece_type="Blade" mesh="pudao_blade" length="71.1" weight="0.75">
+  <CraftingPiece id="crpg_pudao_blade_h1" name="{=}Pudao Blade" tier="2" piece_type="Blade" mesh="pudao_blade" length="71.1" weight="0.9">
     <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="4.0" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pudao_blade_h2" name="{=}Pudao Blade" tier="2" piece_type="Blade" mesh="pudao_blade" length="71.1" weight="0.75">
+  <CraftingPiece id="crpg_pudao_blade_h2" name="{=}Pudao Blade" tier="2" piece_type="Blade" mesh="pudao_blade" length="71.1" weight="0.9">
     <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="4.2" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pudao_blade_h3" name="{=}Pudao Blade" tier="2" piece_type="Blade" mesh="pudao_blade" length="71.1" weight="0.70">
+  <CraftingPiece id="crpg_pudao_blade_h3" name="{=}Pudao Blade" tier="2" piece_type="Blade" mesh="pudao_blade" length="71.1" weight="0.85">
     <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
-      <Swing damage_type="Cut" damage_factor="4.2" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -31384,37 +31384,37 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fangtian_ji_blade_h0" name="{=}Fangtian Ji Blade" tier="2" piece_type="Blade" mesh="qinglong_double_blade" length="45.8" weight="0.30" full_scale="true">
+  <CraftingPiece id="crpg_fangtian_ji_blade_h0" name="{=}Fangtian Ji Blade" tier="2" piece_type="Blade" mesh="qinglong_double_blade" length="45.8" weight="0.34" full_scale="true">
     <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="4.2" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron2" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_fangtian_ji_blade_h1" name="{=}Fangtian Ji Blade" tier="2" piece_type="Blade" mesh="qinglong_double_blade" length="45.8" weight="0.285" full_scale="true">
-    <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="4.3" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron2" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_fangtian_ji_blade_h2" name="{=}Fangtian Ji Blade" tier="2" piece_type="Blade" mesh="qinglong_double_blade" length="45.8" weight="0.265" full_scale="true">
-    <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
-      <Swing damage_type="Cut" damage_factor="4.3" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron2" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_fangtian_ji_blade_h3" name="{=}Fangtian Ji Blade" tier="2" piece_type="Blade" mesh="qinglong_double_blade" length="45.8" weight="0.26" full_scale="true">
-    <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
       <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fangtian_ji_blade_h1" name="{=}Fangtian Ji Blade" tier="2" piece_type="Blade" mesh="qinglong_double_blade" length="45.8" weight="0.315" full_scale="true">
+    <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fangtian_ji_blade_h2" name="{=}Fangtian Ji Blade" tier="2" piece_type="Blade" mesh="qinglong_double_blade" length="45.8" weight="0.315" full_scale="true">
+    <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fangtian_ji_blade_h3" name="{=}Fangtian Ji Blade" tier="2" piece_type="Blade" mesh="qinglong_double_blade" length="45.8" weight="0.3" full_scale="true">
+    <BladeData stack_amount="5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />

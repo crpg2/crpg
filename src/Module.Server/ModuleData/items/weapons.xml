@@ -48,25 +48,25 @@
       <Piece id="crpg_burgundian_glaive_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_poleaxe_v1_h0" name="{=kaikaikai}Burgundian Poleaxe" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_poleaxe_v2_h0" name="{=kaikaikai}Burgundian Poleaxe" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_poleaxe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_poleaxe_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_poleaxe_v1_h1" name="{=kaikaikai}Burgundian Poleaxe +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_poleaxe_v2_h1" name="{=kaikaikai}Burgundian Poleaxe +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_poleaxe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_poleaxe_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_poleaxe_v1_h2" name="{=kaikaikai}Burgundian Poleaxe +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_poleaxe_v2_h2" name="{=kaikaikai}Burgundian Poleaxe +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_poleaxe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_poleaxe_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_poleaxe_v1_h3" name="{=kaikaikai}Burgundian Poleaxe +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_poleaxe_v2_h3" name="{=kaikaikai}Burgundian Poleaxe +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_poleaxe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_poleaxe_handle_h3" Type="Handle" scale_factor="100" />
@@ -11968,7 +11968,7 @@
       <Piece id="crpg_tetsubo_handle_h3" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pudao_h0" name="{=kaikaikai}Pudao" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_podao_v1_h0" name="{=kaikaikai}Podao" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pudao_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pudao_guard_h0" Type="Guard" scale_factor="100" />
@@ -11976,7 +11976,7 @@
       <Piece id="crpg_pudao_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pudao_h1" name="{=kaikaikai}Pudao +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_podao_v1_h1" name="{=kaikaikai}Podao +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pudao_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pudao_guard_h1" Type="Guard" scale_factor="100" />
@@ -11984,7 +11984,7 @@
       <Piece id="crpg_pudao_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pudao_h2" name="{=kaikaikai}Pudao +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_podao_v1_h2" name="{=kaikaikai}Podao +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pudao_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pudao_guard_h2" Type="Guard" scale_factor="100" />
@@ -11992,7 +11992,7 @@
       <Piece id="crpg_pudao_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pudao_h3" name="{=kaikaikai}Pudao +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_podao_v1_h3" name="{=kaikaikai}Podao +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pudao_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pudao_guard_h3" Type="Guard" scale_factor="100" />
@@ -12660,28 +12660,28 @@
       <Piece id="crpg_tanto_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fangtian_ji_h0" name="{=kaikaikai}Fangtian Ji" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_fangtian_ji_v1_h0" name="{=kaikaikai}Fangtian Ji" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fangtian_ji_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_handle_h0" Type="Handle" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_pommel_h0" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fangtian_ji_h1" name="{=kaikaikai}Fangtian Ji +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_fangtian_ji_v1_h1" name="{=kaikaikai}Fangtian Ji +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fangtian_ji_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_handle_h1" Type="Handle" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_pommel_h1" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fangtian_ji_h2" name="{=kaikaikai}Fangtian Ji +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_fangtian_ji_v1_h2" name="{=kaikaikai}Fangtian Ji +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fangtian_ji_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_handle_h2" Type="Handle" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_pommel_h2" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fangtian_ji_h3" name="{=kaikaikai}Fangtian Ji +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_fangtian_ji_v1_h3" name="{=kaikaikai}Fangtian Ji +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fangtian_ji_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_handle_h3" Type="Handle" scale_factor="110" />
