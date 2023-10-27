@@ -3250,6 +3250,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_longdagger_blade_h0" />
+      <UsablePiece piece_id="crpg_longdagger_blade_h1" />
+      <UsablePiece piece_id="crpg_longdagger_blade_h2" />
+      <UsablePiece piece_id="crpg_longdagger_blade_h3" />
+      <UsablePiece piece_id="crpg_longdagger_guard_h0" />
+      <UsablePiece piece_id="crpg_longdagger_guard_h1" />
+      <UsablePiece piece_id="crpg_longdagger_guard_h2" />
+      <UsablePiece piece_id="crpg_longdagger_guard_h3" />
+      <UsablePiece piece_id="crpg_longdagger_handle_h0" />
+      <UsablePiece piece_id="crpg_longdagger_handle_h1" />
+      <UsablePiece piece_id="crpg_longdagger_handle_h2" />
+      <UsablePiece piece_id="crpg_longdagger_handle_h3" />
+      <UsablePiece piece_id="crpg_longdagger_pommel_h0" />
+      <UsablePiece piece_id="crpg_longdagger_pommel_h1" />
+      <UsablePiece piece_id="crpg_longdagger_pommel_h2" />
+      <UsablePiece piece_id="crpg_longdagger_pommel_h3" />
       <UsablePiece piece_id="crpg_tanto_blade_h0" />
       <UsablePiece piece_id="crpg_tanto_blade_h1" />
       <UsablePiece piece_id="crpg_tanto_blade_h2" />
@@ -3920,31 +3936,31 @@
   </CraftingTemplate>
   <CraftingTemplate id="crpg_Dagger_Reverse" item_type="OneHandedWeapon" modifier_group="sword" item_holsters="dagger_reverse_left_hip:dagger_reverse_right_hip:sword_reverse_left_hip" default_item_holster_position_offset="0,0,-0.1" use_weapon_as_holster_mesh="true">
     <PieceDatas>
-    <PieceData piece_type="Handle" build_order="0" />
-    <PieceData piece_type="Guard" build_order="1" />
-    <PieceData piece_type="Blade" build_order="2" />
-    <PieceData piece_type="Pommel" build_order="-1" />
-  </PieceDatas>
-  <WeaponDescriptions>
-    <WeaponDescription id="crpg_Dagger" />
-    <WeaponDescription id="crpg_ThrowingKnife" />
-  </WeaponDescriptions>
-  <StatsData weapon_description="crpg_Dagger">
-    <StatData stat_type="Weight" max_value="7.0" />
-    <StatData stat_type="WeaponReach" max_value="300" />
-    <StatData stat_type="ThrustSpeed" max_value="200" />
-    <StatData stat_type="SwingSpeed" max_value="200" />
-    <StatData stat_type="ThrustDamage" max_value="500" />
-    <StatData stat_type="SwingDamage" max_value="500" />
-    <StatData stat_type="Handling" max_value="200" />
-  </StatsData>
-  <StatsData weapon_description="crpg_ThrowingKnife">
-    <StatData stat_type="Weight" max_value="2.0" />
-    <StatData stat_type="WeaponReach" max_value="100" />
-    <StatData stat_type="MissileSpeed" max_value="150" />
-    <StatData stat_type="MissileDamage" max_value="200" />
-    <StatData stat_type="Accuracy" max_value="100" />
-  </StatsData>
+      <PieceData piece_type="Handle" build_order="0" />
+      <PieceData piece_type="Guard" build_order="1" />
+      <PieceData piece_type="Blade" build_order="2" />
+      <PieceData piece_type="Pommel" build_order="-1" />
+    </PieceDatas>
+    <WeaponDescriptions>
+      <WeaponDescription id="crpg_Dagger" />
+      <WeaponDescription id="crpg_ThrowingKnife" />
+    </WeaponDescriptions>
+    <StatsData weapon_description="crpg_Dagger">
+      <StatData stat_type="Weight" max_value="7.0" />
+      <StatData stat_type="WeaponReach" max_value="300" />
+      <StatData stat_type="ThrustSpeed" max_value="200" />
+      <StatData stat_type="SwingSpeed" max_value="200" />
+      <StatData stat_type="ThrustDamage" max_value="500" />
+      <StatData stat_type="SwingDamage" max_value="500" />
+      <StatData stat_type="Handling" max_value="200" />
+    </StatsData>
+    <StatsData weapon_description="crpg_ThrowingKnife">
+      <StatData stat_type="Weight" max_value="2.0" />
+      <StatData stat_type="WeaponReach" max_value="100" />
+      <StatData stat_type="MissileSpeed" max_value="150" />
+      <StatData stat_type="MissileDamage" max_value="200" />
+      <StatData stat_type="Accuracy" max_value="100" />
+    </StatsData>
     <UsablePieces>
       <UsablePiece piece_id="crpg_rondel_reverse_blade_h0" />
       <UsablePiece piece_id="crpg_rondel_reverse_blade_h1" />
@@ -3964,7 +3980,6 @@
       <UsablePiece piece_id="crpg_rondel_reverse_pommel_h3" />
     </UsablePieces>
   </CraftingTemplate>
-
   <CraftingTemplate id="crpg_ThrowingKnife" item_type="Thrown" modifier_group="knife_throwing" item_holsters="throwing_knife_2:throwing_knife:throwing_stone:throwing_stone_2" piece_type_to_scale_holster_with="Blade" default_item_holster_position_offset="0,0,-0.1" always_show_holster_with_weapon="true">
     <PieceDatas>
       <PieceData piece_type="Handle" build_order="0" />
@@ -4464,6 +4479,14 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_runic_axe_blade_h0" />
+      <UsablePiece piece_id="crpg_runic_axe_blade_h1" />
+      <UsablePiece piece_id="crpg_runic_axe_blade_h2" />
+      <UsablePiece piece_id="crpg_runic_axe_blade_h3" />
+      <UsablePiece piece_id="crpg_runic_axe_handle_h0" />
+      <UsablePiece piece_id="crpg_runic_axe_handle_h1" />
+      <UsablePiece piece_id="crpg_runic_axe_handle_h2" />
+      <UsablePiece piece_id="crpg_runic_axe_handle_h3" />
       <UsablePiece piece_id="crpg_shep_damast_handle_h0" />
       <UsablePiece piece_id="crpg_shep_damast_handle_h1" />
       <UsablePiece piece_id="crpg_shep_damast_handle_h2" />
@@ -5963,6 +5986,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_german_halberd_blade_h0" />
+      <UsablePiece piece_id="crpg_german_halberd_blade_h1" />
+      <UsablePiece piece_id="crpg_german_halberd_blade_h2" />
+      <UsablePiece piece_id="crpg_german_halberd_blade_h3" />
+      <UsablePiece piece_id="crpg_german_halberd_handle_h0" />
+      <UsablePiece piece_id="crpg_german_halberd_handle_h1" />
+      <UsablePiece piece_id="crpg_german_halberd_handle_h2" />
+      <UsablePiece piece_id="crpg_german_halberd_handle_h3" />
+      <UsablePiece piece_id="crpg_german_halberd_guard_h0" />
+      <UsablePiece piece_id="crpg_german_halberd_guard_h1" />
+      <UsablePiece piece_id="crpg_german_halberd_guard_h2" />
+      <UsablePiece piece_id="crpg_german_halberd_guard_h3" />
+      <UsablePiece piece_id="crpg_german_halberd_pommel_h0" />
+      <UsablePiece piece_id="crpg_german_halberd_pommel_h1" />
+      <UsablePiece piece_id="crpg_german_halberd_pommel_h2" />
+      <UsablePiece piece_id="crpg_german_halberd_pommel_h3" />
       <UsablePiece piece_id="crpg_ironrod_blade_h0" />
       <UsablePiece piece_id="crpg_ironrod_blade_h1" />
       <UsablePiece piece_id="crpg_ironrod_blade_h2" />

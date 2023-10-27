@@ -5082,6 +5082,22 @@
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_longdagger_blade_h0" />
+      <AvailablePiece id="crpg_longdagger_blade_h1" />
+      <AvailablePiece id="crpg_longdagger_blade_h2" />
+      <AvailablePiece id="crpg_longdagger_blade_h3" />
+      <AvailablePiece id="crpg_longdagger_guard_h0" />
+      <AvailablePiece id="crpg_longdagger_guard_h1" />
+      <AvailablePiece id="crpg_longdagger_guard_h2" />
+      <AvailablePiece id="crpg_longdagger_guard_h3" />
+      <AvailablePiece id="crpg_longdagger_handle_h0" />
+      <AvailablePiece id="crpg_longdagger_handle_h1" />
+      <AvailablePiece id="crpg_longdagger_handle_h2" />
+      <AvailablePiece id="crpg_longdagger_handle_h3" />
+      <AvailablePiece id="crpg_longdagger_pommel_h0" />
+      <AvailablePiece id="crpg_longdagger_pommel_h1" />
+      <AvailablePiece id="crpg_longdagger_pommel_h2" />
+      <AvailablePiece id="crpg_longdagger_pommel_h3" />
       <AvailablePiece id="crpg_tribesman_throwing_daggers_blade_h0" />
       <AvailablePiece id="crpg_tribesman_throwing_daggers_blade_h1" />
       <AvailablePiece id="crpg_tribesman_throwing_daggers_blade_h2" />
@@ -6178,6 +6194,14 @@
       <WeaponFlag value="BonusAgainstShield" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_runic_axe_blade_h0" />
+      <AvailablePiece id="crpg_runic_axe_blade_h1" />
+      <AvailablePiece id="crpg_runic_axe_blade_h2" />
+      <AvailablePiece id="crpg_runic_axe_blade_h3" />
+      <AvailablePiece id="crpg_runic_axe_handle_h0" />
+      <AvailablePiece id="crpg_runic_axe_handle_h1" />
+      <AvailablePiece id="crpg_runic_axe_handle_h2" />
+      <AvailablePiece id="crpg_runic_axe_handle_h3" />
       <AvailablePiece id="crpg_tribesman_throwing_axe_handle_h0" />
       <AvailablePiece id="crpg_tribesman_throwing_axe_handle_h1" />
       <AvailablePiece id="crpg_tribesman_throwing_axe_handle_h2" />
@@ -8717,6 +8741,22 @@
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_german_halberd_blade_h0" />
+      <AvailablePiece id="crpg_german_halberd_blade_h1" />
+      <AvailablePiece id="crpg_german_halberd_blade_h2" />
+      <AvailablePiece id="crpg_german_halberd_blade_h3" />
+      <AvailablePiece id="crpg_german_halberd_handle_h0" />
+      <AvailablePiece id="crpg_german_halberd_handle_h1" />
+      <AvailablePiece id="crpg_german_halberd_handle_h2" />
+      <AvailablePiece id="crpg_german_halberd_handle_h3" />
+      <AvailablePiece id="crpg_german_halberd_guard_h0" />
+      <AvailablePiece id="crpg_german_halberd_guard_h1" />
+      <AvailablePiece id="crpg_german_halberd_guard_h2" />
+      <AvailablePiece id="crpg_german_halberd_guard_h3" />
+      <AvailablePiece id="crpg_german_halberd_pommel_h0" />
+      <AvailablePiece id="crpg_german_halberd_pommel_h1" />
+      <AvailablePiece id="crpg_german_halberd_pommel_h2" />
+      <AvailablePiece id="crpg_german_halberd_pommel_h3" />
       <AvailablePiece id="crpg_ironrod_blade_h0" />
       <AvailablePiece id="crpg_ironrod_blade_h1" />
       <AvailablePiece id="crpg_ironrod_blade_h2" />
@@ -10871,6 +10911,22 @@
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_german_halberd_blade_h0" />
+      <AvailablePiece id="crpg_german_halberd_blade_h1" />
+      <AvailablePiece id="crpg_german_halberd_blade_h2" />
+      <AvailablePiece id="crpg_german_halberd_blade_h3" />
+      <AvailablePiece id="crpg_german_halberd_handle_h0" />
+      <AvailablePiece id="crpg_german_halberd_handle_h1" />
+      <AvailablePiece id="crpg_german_halberd_handle_h2" />
+      <AvailablePiece id="crpg_german_halberd_handle_h3" />
+      <AvailablePiece id="crpg_german_halberd_guard_h0" />
+      <AvailablePiece id="crpg_german_halberd_guard_h1" />
+      <AvailablePiece id="crpg_german_halberd_guard_h2" />
+      <AvailablePiece id="crpg_german_halberd_guard_h3" />
+      <AvailablePiece id="crpg_german_halberd_pommel_h0" />
+      <AvailablePiece id="crpg_german_halberd_pommel_h1" />
+      <AvailablePiece id="crpg_german_halberd_pommel_h2" />
+      <AvailablePiece id="crpg_german_halberd_pommel_h3" />
       <AvailablePiece id="crpg_courser_lance_blade_h0" />
       <AvailablePiece id="crpg_courser_lance_blade_h1" />
       <AvailablePiece id="crpg_courser_lance_blade_h2" />

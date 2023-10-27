@@ -7632,4 +7632,148 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_cuir_bouilli_over_mail_h0" name="{=Norr}Cuir Bouilli Over Mail" mesh="cuir_bouilli_over_mail" culture="Culture.vlandia" weight="15.45441" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="17" arm_armor="19" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_cuir_bouilli_over_mail_h1" name="{=Norr}Cuir Bouilli Over Mail +1" mesh="cuir_bouilli_over_mail" culture="Culture.vlandia" weight="15.45441" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="18" arm_armor="20" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_cuir_bouilli_over_mail_h2" name="{=Norr}Cuir Bouilli Over Mail +2" mesh="cuir_bouilli_over_mail" culture="Culture.vlandia" weight="15.45441" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="19" arm_armor="21" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_cuir_bouilli_over_mail_h3" name="{=Norr}Cuir Bouilli Over Mail +3" mesh="cuir_bouilli_over_mail" culture="Culture.vlandia" weight="15.45441" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="20" arm_armor="22" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_dark_cuir_bouilli_over_mail_h0" name="{=Norr}Dark Cuir Bouilli Over Mail" mesh="cuir_bouilli_over_mail_dark" culture="Culture.vlandia" weight="15.45441" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="17" arm_armor="19" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_dark_cuir_bouilli_over_mail_h1" name="{=Norr}Dark Cuir Bouilli Over Mail +1" mesh="cuir_bouilli_over_mail_dark" culture="Culture.vlandia" weight="15.45441" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="18" arm_armor="20" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_dark_cuir_bouilli_over_mail_h2" name="{=Norr}Dark Cuir Bouilli Over Mail +2" mesh="cuir_bouilli_over_mail_dark" culture="Culture.vlandia" weight="15.45441" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="19" arm_armor="21" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_dark_cuir_bouilli_over_mail_h3" name="{=Norr}Dark Cuir Bouilli Over Mail +3" mesh="cuir_bouilli_over_mail_dark" culture="Culture.vlandia" weight="15.45441" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="20" arm_armor="22" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aserai_cav_armor_h0" name="{=Norr}Dessert Calvary Armor" mesh="faction_color_test" culture="Culture.aserai" weight="11.99641" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="45" leg_armor="12" arm_armor="10" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aserai_cav_armor_h1" name="{=Norr}Dessert Calvary Armor +1" mesh="faction_color_test" culture="Culture.aserai" weight="11.99641" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="47" leg_armor="13" arm_armor="11" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aserai_cav_armor_h2" name="{=Norr}Dessert Calvary Armor +2" mesh="faction_color_test" culture="Culture.aserai" weight="11.99641" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="49" leg_armor="14" arm_armor="12" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aserai_cav_armor_h3" name="{=Norr}Dessert Calvary Armor +3" mesh="faction_color_test" culture="Culture.aserai" weight="11.99641" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="51" leg_armor="15" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_sturgia_cav_armor_h0" name="{=Norr}Reinforced Cavalry Armor" mesh="sturgia_cavalry_armor_reinforced" culture="Culture.sturgia" weight="16.54048" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="49" leg_armor="18" arm_armor="19" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_sturgia_cav_armor_h1" name="{=Norr}Reinforced Cavalry Armor +1" mesh="sturgia_cavalry_armor_reinforced" culture="Culture.sturgia" weight="16.54048" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="51" leg_armor="19" arm_armor="20" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_sturgia_cav_armor_h2" name="{=Norr}Reinforced Cavalry Armor +2" mesh="sturgia_cavalry_armor_reinforced" culture="Culture.sturgia" weight="16.54048" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="53" leg_armor="20" arm_armor="21" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_sturgia_cav_armor_h3" name="{=Norr}Reinforced Cavalry Armor +3" mesh="sturgia_cavalry_armor_reinforced" culture="Culture.sturgia" weight="16.54048" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="55" leg_armor="21" arm_armor="22" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_hideous_kafa_body_h0" name="{=Meow}Monster Body" mesh="hideous_armor" culture="Culture.battania" weight="7.932902" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="34" leg_armor="10" arm_armor="6" covers_body="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hideous_kafa_body_h1" name="{=Meow}Monster Body +1" mesh="hideous_armor" culture="Culture.battania" weight="7.932902" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="36" leg_armor="11" arm_armor="7" covers_body="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hideous_kafa_body_h2" name="{=Meow}Monster Body +2" mesh="hideous_armor" culture="Culture.battania" weight="7.932902" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="38" leg_armor="12" arm_armor="8" covers_body="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hideous_kafa_body_h3" name="{=Meow}Monster Body +3" mesh="hideous_armor" culture="Culture.battania" weight="7.932902" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="40" leg_armor="13" arm_armor="9" covers_body="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_hallow_armor_h0" name="{=Meow}Rusty Hallow Plate Armor" mesh="hallow_armor" weight="21.5169" appearance="1.5" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="62" leg_armor="15" arm_armor="25" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_hallow_armor_h1" name="{=Meow}Rusty Hallow Plate Armor +1" mesh="hallow_armor" weight="21.5169" appearance="1.5" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="64" leg_armor="16" arm_armor="26" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_hallow_armor_h2" name="{=Meow}Rusty Hallow Plate Armor +2" mesh="hallow_armor" weight="21.5169" appearance="1.5" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="66" leg_armor="17" arm_armor="27" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_hallow_armor_h3" name="{=Meow}Rusty Hallow Plate Armor +3" mesh="hallow_armor" weight="21.5169" appearance="1.5" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="68" leg_armor="18" arm_armor="28" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>

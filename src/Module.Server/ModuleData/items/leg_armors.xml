@@ -1320,4 +1320,28 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
+  <Item id="crpg_hallow_boots_h0" name="{=Meow}Rusty Hallow Plate Boots" mesh="hallow_armor_boots" weight="1.799056" difficulty="0" appearance="3" Type="LegArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor leg_armor="23" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_hallow_boots_h1" name="{=Meow}Rusty Hallow Plate Boots +1" mesh="hallow_armor_boots" weight="1.799056" difficulty="0" appearance="3" Type="LegArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor leg_armor="24" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_hallow_boots_h2" name="{=Meow}Rusty Hallow Plate Boots +2" mesh="hallow_armor_boots" weight="1.799056" difficulty="0" appearance="3" Type="LegArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor leg_armor="26" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_hallow_boots_h3" name="{=Meow}Rusty Hallow Plate Boots +3" mesh="hallow_armor_boots" weight="1.799056" difficulty="0" appearance="3" Type="LegArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor leg_armor="28" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>

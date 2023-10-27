@@ -1008,4 +1008,28 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_hallow_gauntlets_h0" name="{=Meow}Rusty Hallow Plate Gauntlets" mesh="hallow_armor_gauntlets" weight="2.021817" appearance="3" Type="HandArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor arm_armor="20" covers_hands="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_hallow_gauntlets_h1" name="{=Meow}Rusty Hallow Plate Gauntlets +1" mesh="hallow_armor_gauntlets" weight="2.021817" appearance="3" Type="HandArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor arm_armor="21" covers_hands="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_hallow_gauntlets_h2" name="{=Meow}Rusty Hallow Plate Gauntlets +2" mesh="hallow_armor_gauntlets" weight="2.021817" appearance="3" Type="HandArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor arm_armor="22" covers_hands="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_hallow_gauntlets_h3" name="{=Meow}Rusty Hallow Plate Gauntlets +3" mesh="hallow_armor_gauntlets" weight="2.021817" appearance="3" Type="HandArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor arm_armor="24" covers_hands="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>

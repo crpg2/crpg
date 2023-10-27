@@ -8640,4 +8640,196 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
+  <Item id="crpg_eba_pan_sallet1_h0" name="{=Norr}Painted Sallet and Bevor" mesh="pan_sallet1" culture="Culture.neutral_culture" weight="5.963575" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_pan_sallet1_h1" name="{=Norr}Painted Sallet and Bevor +1" mesh="pan_sallet1" culture="Culture.neutral_culture" weight="5.963575" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_pan_sallet1_h2" name="{=Norr}Painted Sallet and Bevor +2" mesh="pan_sallet1" culture="Culture.neutral_culture" weight="5.963575" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_pan_sallet1_h3" name="{=Norr}Painted Sallet and Bevor +3" mesh="pan_sallet1" culture="Culture.neutral_culture" weight="5.963575" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_el_brass_topnasal1_h0" name="{=Diggles}Eastern Brass Nasal, Maille" mesh="el_brass_topnasal1" culture="Culture.neutral_culture" weight="3.572845" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="43" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_el_brass_topnasal1_h1" name="{=Diggles}Eastern Brass Nasal, Maille +1" mesh="el_brass_topnasal1" culture="Culture.neutral_culture" weight="3.572845" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_el_brass_topnasal1_h2" name="{=Diggles}Eastern Brass Nasal, Maille +2" mesh="el_brass_topnasal1" culture="Culture.neutral_culture" weight="3.572845" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="47" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_el_brass_topnasal1_h3" name="{=Diggles}Eastern Brass Nasal, Maille +3" mesh="el_brass_topnasal1" culture="Culture.neutral_culture" weight="3.572845" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="49" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_el_painted_topnasal1_h0" name="{=Diggles}Eastern Painted Nasal, Maille" mesh="el_painted_topnasal1" culture="Culture.neutral_culture" weight="3.572845" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="43" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_el_painted_topnasal1_h1" name="{=Diggles}Eastern Painted Nasal, Maille +1" mesh="el_painted_topnasal1" culture="Culture.neutral_culture" weight="3.572845" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_el_painted_topnasal1_h2" name="{=Diggles}Eastern Painted Nasal, Maille +2" mesh="el_painted_topnasal1" culture="Culture.neutral_culture" weight="3.572845" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="47" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_el_painted_topnasal1_h3" name="{=Diggles}Eastern Painted Nasal, Maille +3" mesh="el_painted_topnasal1" culture="Culture.neutral_culture" weight="3.572845" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="49" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_es_ib_faceplate_1_h0" name="{=Diggles}Iberian Faceplate, Maille" mesh="es_ib_faceplate_1" culture="Culture.neutral_culture" weight="4.167696" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_es_ib_faceplate_1_h1" name="{=Diggles}Iberian Faceplate, Maille +1" mesh="es_ib_faceplate_1" culture="Culture.neutral_culture" weight="4.167696" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_es_ib_faceplate_1_h2" name="{=Diggles}Iberian Faceplate, Maille +2" mesh="es_ib_faceplate_1" culture="Culture.neutral_culture" weight="4.167696" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_es_ib_faceplate_1_h3" name="{=Diggles}Iberian Faceplate, Maille +3" mesh="es_ib_faceplate_1" culture="Culture.neutral_culture" weight="4.167696" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_jackolantern_h0" name="{=Meow}Jack-o'-lantern" mesh="jackolantern" culture="Culture.vlandia" weight="2.362481" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="32" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="all" covers_head="true" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jackolantern_h1" name="{=Meow}Jack-o'-lantern +1" mesh="jackolantern" culture="Culture.vlandia" weight="2.362481" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="34" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="all" covers_head="true" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jackolantern_h2" name="{=Meow}Jack-o'-lantern +2" mesh="jackolantern" culture="Culture.vlandia" weight="2.362481" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="36" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="all" covers_head="true" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_jackolantern_h3" name="{=Meow}Jack-o'-lantern +3" mesh="jackolantern" culture="Culture.vlandia" weight="2.362481" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="38" has_gender_variations="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="all" covers_head="true" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_hideous_kafa_head_h0" name="{=Meow}Monster Head" mesh="hideous_kafa" culture="Culture.battania" weight="2.362481" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor head_armor="32" has_gender_variations="false" hair_cover_type="all" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_hideous_kafa_head_h1" name="{=Meow}Monster Head +1" mesh="hideous_kafa" culture="Culture.battania" weight="2.362481" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor head_armor="34" has_gender_variations="false" hair_cover_type="all" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_hideous_kafa_head_h2" name="{=Meow}Monster Head +2" mesh="hideous_kafa" culture="Culture.battania" weight="2.362481" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor head_armor="36" has_gender_variations="false" hair_cover_type="all" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_hideous_kafa_head_h3" name="{=Meow}Monster Head +3" mesh="hideous_kafa" culture="Culture.battania" weight="2.362481" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="true">
+    <ItemComponent>
+      <Armor head_armor="38" has_gender_variations="false" hair_cover_type="all" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_hallow_helmet_h0" name="{=Meow}Rusty Hallow Helmet" mesh="hallow_armor_helmet" weight="5.963575" appearance="6" Type="HeadArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_hallow_helmet_h1" name="{=Meow}Rusty Hallow Helmet +1" mesh="hallow_armor_helmet" weight="5.963575" appearance="6" Type="HeadArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_hallow_helmet_h2" name="{=Meow}Rusty Hallow Helmet +2" mesh="hallow_armor_helmet" weight="5.963575" appearance="6" Type="HeadArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_hallow_helmet_h3" name="{=Meow}Rusty Hallow Helmet +3" mesh="hallow_armor_helmet" weight="5.963575" appearance="6" Type="HeadArmor" is_merchandise="true">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_eba_ital_bascinet_h0" name="Italian Bascinet" mesh="ital_bascinet_1" culture="Culture.neutral_culture" weight="4.914843" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_ital_bascinet_h1" name="Italian Bascinet +1" mesh="ital_bascinet_1" culture="Culture.neutral_culture" weight="4.914843" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_ital_bascinet_h2" name="Italian Bascinet +2" mesh="ital_bascinet_1" culture="Culture.neutral_culture" weight="4.914843" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="58" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_eba_ital_bascinet_h3" name="Italian Bascinet +3" mesh="ital_bascinet_1" culture="Culture.neutral_culture" weight="4.914843" appearance="1.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="60" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
 </Items>
