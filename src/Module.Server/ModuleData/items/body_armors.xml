@@ -5976,73 +5976,73 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat1_v1_h0" name="Tabard over Coat of Plate Checkers" mesh="coat1" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat1_v1_h0" name="Tabard over Coat of Plate Rim and Cross" mesh="coat1" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="50" leg_armor="14" arm_armor="21" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat1_v1_h1" name="Tabard over Coat of Plate Checkers +1" mesh="coat1" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat1_v1_h1" name="Tabard over Coat of Plate Rim and Cross +1" mesh="coat1" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="52" leg_armor="15" arm_armor="22" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat1_v1_h2" name="Tabard over Coat of Plate Checkers +2" mesh="coat1" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat1_v1_h2" name="Tabard over Coat of Plate Rim and Cross +2" mesh="coat1" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="54" leg_armor="16" arm_armor="23" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat1_v1_h3" name="Tabard over Coat of Plate Checkers +3" mesh="coat1" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat1_v1_h3" name="Tabard over Coat of Plate Rim and Cross +3" mesh="coat1" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="56" leg_armor="17" arm_armor="24" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat2_v1_h0" name="Tabard over Coat of Plate Rim and Cross" mesh="coat2" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat2_v1_h0" name="Tabard over Coat of Plate Stripes" mesh="coat2" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="50" leg_armor="14" arm_armor="21" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat2_v1_h1" name="Tabard over Coat of Plate Rim and Cross +1" mesh="coat2" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat2_v1_h1" name="Tabard over Coat of Plate Stripes +1" mesh="coat2" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="52" leg_armor="15" arm_armor="22" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat2_v1_h2" name="Tabard over Coat of Plate Rim and Cross +2" mesh="coat2" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat2_v1_h2" name="Tabard over Coat of Plate Stripes +2" mesh="coat2" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="54" leg_armor="16" arm_armor="23" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat2_v1_h3" name="Tabard over Coat of Plate Rim and Cross +3" mesh="coat2" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat2_v1_h3" name="Tabard over Coat of Plate Stripes +3" mesh="coat2" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="56" leg_armor="17" arm_armor="24" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat3_v1_h0" name="Tabard over Coat of Plate Stripes" mesh="coat3" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat3_v1_h0" name="Tabard over Coat of Plate Checkers" mesh="coat3" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="50" leg_armor="14" arm_armor="21" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat3_v1_h1" name="Tabard over Coat of Plate Stripes +1" mesh="coat3" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat3_v1_h1" name="Tabard over Coat of Plate Checkers +1" mesh="coat3" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="52" leg_armor="15" arm_armor="22" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat3_v1_h2" name="Tabard over Coat of Plate Stripes +2" mesh="coat3" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat3_v1_h2" name="Tabard over Coat of Plate Checkers +2" mesh="coat3" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="54" leg_armor="16" arm_armor="23" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_sa_coat3_v1_h3" name="Tabard over Coat of Plate Stripes +3" mesh="coat3" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_sa_coat3_v1_h3" name="Tabard over Coat of Plate Checkers +3" mesh="coat3" culture="Culture.vlandia" weight="16.52758" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="56" leg_armor="17" arm_armor="24" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
