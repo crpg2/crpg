@@ -340,7 +340,8 @@ internal class CrpgItemValueModel : ItemValueModel
             }
         }
 
-        return maxTier * maxTier / 10f; // makes weapon of lower Tier Better
+        float stretchingFactor = 2.0f; // Change Me To stretch weapon even more so lower tiers are more worth it.
+        return (float)(Math.Pow(maxTier, stretchingFactor) / Math.Pow(10.0f, stretchingFactor - 1.0f)); // makes weapon of lower Tier Better
     }
 
     private float CalculateTierNonCraftedWeapon(WeaponComponent weaponComponent)

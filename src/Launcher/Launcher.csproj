@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -16,8 +16,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Gameloop.Vdf" Version="0.6.2" />
+    <PackageReference Include="LibGit2Sharp" Version="0.27.2" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+>>>>>>> 9e7a620f (final)
+=======
     <PackageReference Include="Gameloop.Vdf" />
+    <PackageReference Include="LibGit2Sharp" />
     <PackageReference Include="Microsoft.Win32.Registry" />
+=======
+    <PackageReference Include="Gameloop.Vdf" Version="0.6.2" />
+    <PackageReference Include="LibGit2Sharp" Version="0.27.2" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+>>>>>>> 9e7a620f (final)
   </ItemGroup>
 
 </Project>
