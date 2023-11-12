@@ -12844,7 +12844,7 @@
       <Piece id="crpg_longdagger_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <Item id="crpg_throwing_sandwich_h0" name="{=Diggles}Throwing Sandwich" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="sandwich" weight="0.666" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+  <Item id="throwing_sandwich_h0" name="{=Diggles}Throwing Sandwich" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="sandwich" weight="0.666" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
     <ItemComponent>
       <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="2" physics_material="missile" accuracy="92" thrust_speed="121" speed_rating="102" missile_speed="15" weapon_length="10" thrust_damage="23" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
         <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
@@ -12852,7 +12852,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_throwing_sandwich_h1" name="{=Diggles}Throwing Sandwich +1" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="sandwich" weight="0.666" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+  <Item id="throwing_sandwich_h1" name="{=Diggles}Throwing Sandwich +1" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="sandwich" weight="0.666" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
     <ItemComponent>
       <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="3" physics_material="missile" accuracy="92" thrust_speed="121" speed_rating="102" missile_speed="15" weapon_length="10" thrust_damage="23" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
         <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
@@ -12860,7 +12860,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_throwing_sandwich_h2" name="{=Diggles}Throwing Sandwich +2" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="sandwich" weight="0.666" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+  <Item id="throwing_sandwich_h2" name="{=Diggles}Throwing Sandwich +2" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="sandwich" weight="0.666" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
     <ItemComponent>
       <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="4" physics_material="missile" accuracy="92" thrust_speed="121" speed_rating="102" missile_speed="15" weapon_length="10" thrust_damage="23" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
         <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
@@ -12868,7 +12868,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_throwing_sandwich_h3" name="{=Diggles}Throwing Sandwich +3" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="sandwich" weight="0.666" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+  <Item id="throwing_sandwich_h3" name="{=Diggles}Throwing Sandwich +3" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="sandwich" weight="0.666" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
     <ItemComponent>
       <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="5" physics_material="missile" accuracy="92" thrust_speed="121" speed_rating="102" missile_speed="15" weapon_length="10" thrust_damage="23" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
         <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />

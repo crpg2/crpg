@@ -2640,25 +2640,25 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_hallow_pauldron_h0" name="{=Meow}Rusty Hallow Plate Pauldrons" mesh="hallow_armor_shoulder" weight="4.075861" appearance="3" Type="Cape" is_merchandise="true">
+  <Item id="hallow_pauldron_h0" name="{=Meow}Rusty Hallow Plate Pauldrons" mesh="hallow_armor_shoulder" weight="4.075861" appearance="3" Type="Cape" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="20" modifier_group="plate" material_type="Plate" arm_armor="10" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_hallow_pauldron_h1" name="{=Meow}Rusty Hallow Plate Pauldrons +1" mesh="hallow_armor_shoulder" weight="4.075861" appearance="3" Type="Cape" is_merchandise="true">
+  <Item id="hallow_pauldron_h1" name="{=Meow}Rusty Hallow Plate Pauldrons +1" mesh="hallow_armor_shoulder" weight="4.075861" appearance="3" Type="Cape" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="22" modifier_group="plate" material_type="Plate" arm_armor="10" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_hallow_pauldron_h2" name="{=Meow}Rusty Hallow Plate Pauldrons +2" mesh="hallow_armor_shoulder" weight="4.075861" appearance="3" Type="Cape" is_merchandise="true">
+  <Item id="hallow_pauldron_h2" name="{=Meow}Rusty Hallow Plate Pauldrons +2" mesh="hallow_armor_shoulder" weight="4.075861" appearance="3" Type="Cape" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="23" modifier_group="plate" material_type="Plate" arm_armor="10" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_hallow_pauldron_h3" name="{=Meow}Rusty Hallow Plate Pauldrons +3" mesh="hallow_armor_shoulder" weight="4.075861" appearance="3" Type="Cape" is_merchandise="true">
+  <Item id="hallow_pauldron_h3" name="{=Meow}Rusty Hallow Plate Pauldrons +3" mesh="hallow_armor_shoulder" weight="4.075861" appearance="3" Type="Cape" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="24" modifier_group="plate" material_type="Plate" arm_armor="11" />
     </ItemComponent>
