@@ -8832,4 +8832,28 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
+  <Item id="crpg_tallottoman_tc_h0" name="Tall Ottoman Hat (Team Color)" mesh="tallottoman_tc" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="1" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tallottoman_tc_h1" name="Tall Ottoman Hat (Team Color) +1" mesh="tallottoman_tc" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="3" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tallottoman_tc_h2" name="Tall Ottoman Hat (Team Color) +2" mesh="tallottoman_tc" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="5" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_tallottoman_tc_h3" name="Tall Ottoman Hat (Team Color) +3" mesh="tallottoman_tc" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="7" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>
