@@ -2760,4 +2760,52 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_cuir_bouilli_shoulders_tc_h0" name="{=Norr}Cuir Bouilli Shoulders Full Color" mesh="cuir_bouilli_shoulders_tc" culture="Culture.vlandia" weight="2.035984" appearance="2" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="14" modifier_group="leather" material_type="Leather" arm_armor="4" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_cuir_bouilli_shoulders_tc_h1" name="{=Norr}Cuir Bouilli Shoulders Full Color +1" mesh="cuir_bouilli_shoulders_tc" culture="Culture.vlandia" weight="2.035984" appearance="2" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="16" modifier_group="leather" material_type="Leather" arm_armor="4" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_cuir_bouilli_shoulders_tc_h2" name="{=Norr}Cuir Bouilli Shoulders Full Color +2" mesh="cuir_bouilli_shoulders_tc" culture="Culture.vlandia" weight="2.035984" appearance="2" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="17" modifier_group="leather" material_type="Leather" arm_armor="4" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_cuir_bouilli_shoulders_tc_h3" name="{=Norr}Cuir Bouilli Shoulders Full Color +3" mesh="cuir_bouilli_shoulders_tc" culture="Culture.vlandia" weight="2.035984" appearance="2" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="18" modifier_group="leather" material_type="Leather" arm_armor="5" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_dark_cuir_bouilli_shoulders_tc_h0" name="{=Norr}Dark Cuir Bouilli Shoulders Square Pattern" mesh="cuir_bouilli_shoulders_dark_tc" culture="Culture.vlandia" weight="2.035984" appearance="2" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="14" modifier_group="leather" material_type="Leather" arm_armor="4" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_dark_cuir_bouilli_shoulders_tc_h1" name="{=Norr}Dark Cuir Bouilli Shoulders Square Pattern +1" mesh="cuir_bouilli_shoulders_dark_tc" culture="Culture.vlandia" weight="2.035984" appearance="2" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="16" modifier_group="leather" material_type="Leather" arm_armor="4" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_dark_cuir_bouilli_shoulders_tc_h2" name="{=Norr}Dark Cuir Bouilli Shoulders Square Pattern +2" mesh="cuir_bouilli_shoulders_dark_tc" culture="Culture.vlandia" weight="2.035984" appearance="2" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="17" modifier_group="leather" material_type="Leather" arm_armor="4" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_dark_cuir_bouilli_shoulders_tc_h3" name="{=Norr}Dark Cuir Bouilli Shoulders Square Pattern +3" mesh="cuir_bouilli_shoulders_dark_tc" culture="Culture.vlandia" weight="2.035984" appearance="2" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="18" modifier_group="leather" material_type="Leather" arm_armor="5" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>
