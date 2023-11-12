@@ -30448,28 +30448,28 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_blade_h0" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.1">
+  <CraftingPiece id="crpg_kriegsmesser_blade_h0" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" full_scale="true" length="99.7" weight="1.05">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="4.2" />
-    </BladeData>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_blade_h1" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.1">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="4.4" />
-    </BladeData>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_blade_h2" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.1">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
       <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kriegsmesser_blade_h3" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" length="99.7" weight="1.1">
+  <CraftingPiece id="crpg_kriegsmesser_blade_h1" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" full_scale="true" length="99.7" weight="1.05">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
       <Swing damage_type="Cut" damage_factor="4.8" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kriegsmesser_blade_h2" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" full_scale="true" length="99.7" weight="1.00">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Swing damage_type="Cut" damage_factor="4.9" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kriegsmesser_blade_h3" name="{=}Kriegsmesser Blade" tier="4" piece_type="Blade" mesh="kriegsmesser_blade" culture="Culture.battania" full_scale="true" length="99.7" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Swing damage_type="Cut" damage_factor="5.1" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_kriegsmesser_pommel_h0" name="{=}Kriegsmesser Pommel" tier="4" piece_type="Pommel" mesh="kriegsmesser_pommel" culture="Culture.battania" length="6.31" weight="0.5">
