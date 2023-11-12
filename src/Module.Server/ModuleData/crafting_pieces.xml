@@ -31428,28 +31428,52 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fangtian_ji_handle_h0" name="{=}Fangtian Ji Handle" tier="3" piece_type="Handle" mesh="qinglong_handle" length="160" weight="1.6" full_scale="true">
-    <BuildData piece_offset="30" previous_piece_offset="1" next_piece_offset="2" />
+  <CraftingPiece id="crpg_fangtian_ji_handle_h0" name="{=}Fangtian Ji Handle" tier="3" piece_type="Handle" mesh="qinglong_handle" length="160" weight="1.5" full_scale="true">
+    <BuildData piece_offset="32" previous_piece_offset="1" next_piece_offset="10" />
     <Materials>
       <Material id="Wood" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fangtian_ji_handle_h1" name="{=}Fangtian Ji Handle" tier="3" piece_type="Handle" mesh="qinglong_handle" length="160" weight="1.6" full_scale="true">
-    <BuildData piece_offset="30" previous_piece_offset="1" next_piece_offset="2" />
+  <CraftingPiece id="crpg_fangtian_ji_handle_h1" name="{=}Fangtian Ji Handle" tier="3" piece_type="Handle" mesh="qinglong_handle" length="160" weight="1.5" full_scale="true">
+    <BuildData piece_offset="32" previous_piece_offset="1" next_piece_offset="10" />
     <Materials>
       <Material id="Wood" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fangtian_ji_handle_h2" name="{=}Fangtian Ji Handle" tier="3" piece_type="Handle" mesh="qinglong_handle" length="160" weight="1.6" full_scale="true">
-    <BuildData piece_offset="30" previous_piece_offset="1" next_piece_offset="2" />
+  <CraftingPiece id="crpg_fangtian_ji_handle_h2" name="{=}Fangtian Ji Handle" tier="3" piece_type="Handle" mesh="qinglong_handle" length="160" weight="1.5" full_scale="true">
+    <BuildData piece_offset="32" previous_piece_offset="1" next_piece_offset="10" />
     <Materials>
       <Material id="Wood" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fangtian_ji_handle_h3" name="{=}Fangtian Ji Handle" tier="3" piece_type="Handle" mesh="qinglong_handle" length="160" weight="1.6" full_scale="true">
-    <BuildData piece_offset="30" previous_piece_offset="1" next_piece_offset="2" />
+  <CraftingPiece id="crpg_fangtian_ji_handle_h3" name="{=}Fangtian Ji Handle" tier="3" piece_type="Handle" mesh="qinglong_handle" length="160" weight="1.5" full_scale="true">
+    <BuildData piece_offset="32" previous_piece_offset="1" next_piece_offset="10" />
     <Materials>
       <Material id="Wood" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fangtian_ji_guard_h0" name="{=Meow}Red Horse Tail Frills" tier="3" piece_type="Guard" mesh="spear_banner_17" culture="Culture.neutral_culture" length="4" weight="0" full_scale="true">
+    <BuildData next_piece_offset="-2" />
+    <Materials>
+      <Material id="Iron4" count="0" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fangtian_ji_guard_h1" name="{=Meow}Red Horse Tail Frills" tier="3" piece_type="Guard" mesh="spear_banner_17" culture="Culture.neutral_culture" length="4" weight="0" full_scale="true">
+    <BuildData next_piece_offset="-2" />
+    <Materials>
+      <Material id="Iron4" count="0" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fangtian_ji_guard_h2" name="{=Meow}Red Horse Tail Frills" tier="3" piece_type="Guard" mesh="spear_banner_17" culture="Culture.neutral_culture" length="4" weight="0" full_scale="true">
+    <BuildData next_piece_offset="-2" />
+    <Materials>
+      <Material id="Iron4" count="0" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fangtian_ji_guard_h3" name="{=Meow}Red Horse Tail Frills" tier="3" piece_type="Guard" mesh="spear_banner_17" culture="Culture.neutral_culture" length="4" weight="0" full_scale="true">
+    <BuildData next_piece_offset="-2" />
+    <Materials>
+      <Material id="Iron4" count="0" />
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_kopesh_blade_h0" name="{=}Kopesh Blade" tier="5" piece_type="Blade" mesh="kopesh_blade" culture="Culture.vlandia" length="65.5" weight="0.96">
