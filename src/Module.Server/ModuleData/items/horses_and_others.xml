@@ -6268,4 +6268,244 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
+  <Item id="crpg_tv_camelarmor_a_h0" name="{=Telford}Southern Brass Half Scale Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_a" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="32" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_a_h1" name="{=Telford}Southern Brass Half Scale Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_a" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="35" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_a_h2" name="{=Telford}Southern Brass Half Scale Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_a" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="38" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_a_h3" name="{=Telford}Southern Brass Half Scale Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_a" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="41" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_b_h0" name="{=Telford}Southern Steel Half Scale Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_b" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="32" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_b_h1" name="{=Telford}Southern Steel Half Scale Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_b" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="35" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_b_h2" name="{=Telford}Southern Steel Half Scale Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_b" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="38" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_b_h3" name="{=Telford}Southern Steel Half Scale Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_b" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="41" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_c_h0" name="{=Telford}Southern Brass Scale Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_c" culture="Culture.aserai" weight="36" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="36" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_c_h1" name="{=Telford}Southern Brass Scale Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_c" culture="Culture.aserai" weight="36" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="39" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_c_h2" name="{=Telford}Southern Brass Scale Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_c" culture="Culture.aserai" weight="36" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="42" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_c_h3" name="{=Telford}Southern Brass Scale Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_c" culture="Culture.aserai" weight="36" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="45" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_d_h0" name="{=Telford}Southern Steel Scale Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_d" culture="Culture.aserai" weight="40" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="40" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_d_h1" name="{=Telford}Southern Steel Scale Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_d" culture="Culture.aserai" weight="40" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="43" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_d_h2" name="{=Telford}Southern Steel Scale Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_d" culture="Culture.aserai" weight="40" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="46" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_d_h3" name="{=Telford}Southern Steel Scale Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_d" culture="Culture.aserai" weight="40" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="49" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_e_h0" name="{=Telford}Southern Half Studded Leather Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_e" culture="Culture.aserai" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="24" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_e_h1" name="{=Telford}Southern Half Studded Leather Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_e" culture="Culture.aserai" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="27" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_e_h2" name="{=Telford}Southern Half Studded Leather Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_e" culture="Culture.aserai" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="30" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_e_h3" name="{=Telford}Southern Half Studded Leather Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_e" culture="Culture.aserai" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="33" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_f_h0" name="{=Telford}Southern Studded Leather Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_f" culture="Culture.aserai" weight="28" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="28" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_f_h1" name="{=Telford}Southern Studded Leather Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_f" culture="Culture.aserai" weight="28" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="31" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_f_h2" name="{=Telford}Southern Studded Leather Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_f" culture="Culture.aserai" weight="28" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="34" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_f_h3" name="{=Telford}Southern Studded Leather Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_f" culture="Culture.aserai" weight="28" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="37" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_g_h0" name="{=Telford}Southern Half Padded Leather Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_g" culture="Culture.aserai" weight="16" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="16" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_g_h1" name="{=Telford}Southern Half Padded Leather Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_g" culture="Culture.aserai" weight="16" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="19" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_g_h2" name="{=Telford}Southern Half Padded Leather Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_g" culture="Culture.aserai" weight="16" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="22" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_g_h3" name="{=Telford}Southern Half Padded Leather Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_g" culture="Culture.aserai" weight="16" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="25" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_h_h0" name="{=Telford}Southern Padded Leather Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_h" culture="Culture.aserai" weight="20" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="20" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_h_h1" name="{=Telford}Southern Padded Leather Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_h" culture="Culture.aserai" weight="20" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="23" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_h_h2" name="{=Telford}Southern Padded Leather Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_h" culture="Culture.aserai" weight="20" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="26" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_h_h3" name="{=Telford}Southern Padded Leather Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_h" culture="Culture.aserai" weight="20" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="29" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_i_h0" name="{=Telford}Southern Half Wicker Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_i" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="6" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_i_h1" name="{=Telford}Southern Half Wicker Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_i" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="9" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_i_h2" name="{=Telford}Southern Half Wicker Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_i" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="12" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_i_h3" name="{=Telford}Southern Half Wicker Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_i" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="15" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_j_h0" name="{=Telford}Southern Wicker Dromedary Barding" is_merchandise="true" mesh="tv_camel_Scale_armor_j" culture="Culture.aserai" weight="12" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="12" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_j_h1" name="{=Telford}Southern Wicker Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_Scale_armor_j" culture="Culture.aserai" weight="12" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="15" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_j_h2" name="{=Telford}Southern Wicker Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_Scale_armor_j" culture="Culture.aserai" weight="12" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="18" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_j_h3" name="{=Telford}Southern Wicker Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_Scale_armor_j" culture="Culture.aserai" weight="12" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="21" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
 </Items>
