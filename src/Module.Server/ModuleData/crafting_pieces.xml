@@ -32304,4 +32304,116 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_bamboospear_pommel_h3" name="{=}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_handle_h0" name="{=}Jousting Lance Handle" tier="4" piece_type="Handle" mesh="joustinglance_handle" length="38.2" weight="0.1">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_handle_h1" name="{=}Jousting Lance Handle" tier="4" piece_type="Handle" mesh="joustinglance_handle" length="38.2" weight="0.1">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_handle_h2" name="{=}Jousting Lance Handle" tier="4" piece_type="Handle" mesh="joustinglance_handle" length="38.2" weight="0.1">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_handle_h3" name="{=}Jousting Lance Handle" tier="4" piece_type="Handle" mesh="joustinglance_handle" length="38.2" weight="0.1">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_guard_h0" name="{=}Jousting Lance Guard" tier="4" piece_type="Guard" mesh="joustinglance_guard" culture="Culture.vlandia" length="299" weight="0.1">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Wood" count="5" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_guard_h1" name="{=}Jousting Lance Guard" tier="4" piece_type="Guard" mesh="joustinglance_guard" culture="Culture.vlandia" length="299" weight="0.1">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Wood" count="5" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_guard_h2" name="{=}Jousting Lance Guard" tier="4" piece_type="Guard" mesh="joustinglance_guard" culture="Culture.vlandia" length="299" weight="0.1">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Wood" count="5" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_guard_h3" name="{=}Jousting Lance Guard" tier="4" piece_type="Guard" mesh="joustinglance_guard" culture="Culture.vlandia" length="299" weight="0.1">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Wood" count="5" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_pommel_h0" name="{=}Jousting Lance Pommel" tier="4" piece_type="Pommel" mesh="joustinglance_pommel" culture="Culture.vlandia" length="65.9" weight="0.1">
+    <Materials>
+      <Material id="Wood" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_pommel_h1" name="{=}Jousting Lance Pommel" tier="4" piece_type="Pommel" mesh="joustinglance_pommel" culture="Culture.vlandia" length="65.9" weight="0.1">
+    <Materials>
+      <Material id="Wood" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_pommel_h2" name="{=}Jousting Lance Pommel" tier="4" piece_type="Pommel" mesh="joustinglance_pommel" culture="Culture.vlandia" length="65.9" weight="0.1">
+    <Materials>
+      <Material id="Wood" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_pommel_h3" name="{=}Jousting Lance Pommel" tier="4" piece_type="Pommel" mesh="joustinglance_pommel" culture="Culture.vlandia" length="65.9" weight="0.1">
+    <Materials>
+      <Material id="Wood" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_blade_h0" name="{=}Jousting Lance Head" tier="4" piece_type="Blade" mesh="joustinglance_blade" length="26.3" weight="0.1" excluded_item_usage_features="swing">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="DropOnWeaponChange" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_blade_h1" name="{=}Jousting Lance Head" tier="4" piece_type="Blade" mesh="joustinglance_blade" length="26.3" weight="0.1" excluded_item_usage_features="swing">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="DropOnWeaponChange" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_blade_h2" name="{=}Jousting Lance Head" tier="4" piece_type="Blade" mesh="joustinglance_blade" length="26.3" weight="0.1" excluded_item_usage_features="swing">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+    </BladeData>
+    <Flags>
+      <Flag name="DropOnWeaponChange" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_joustinglance_striped_ry_blade_h3" name="{=}Jousting Lance Head" tier="4" piece_type="Blade" mesh="joustinglance_blade" length="26.3" weight="0.1" excluded_item_usage_features="swing">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="DropOnWeaponChange" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
 </CraftingPieces>
