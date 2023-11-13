@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item id="crpg_camel_saddle_b_v1_h0" name="{=OflbQCw6}Camel Saddle with Light Load" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="camel_saddle_b_v1_h0" name="{=Meow}Camel Saddle with Light Load" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_b_v1_h1" name="{=OflbQCw6}Camel Saddle with Light Load +1" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="camel_saddle_b_v1_h1" name="{=Meow}Camel Saddle with Light Load +1" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_b_v1_h2" name="{=OflbQCw6}Camel Saddle with Light Load +2" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="camel_saddle_b_v1_h2" name="{=Meow}Camel Saddle with Light Load +2" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="12" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_b_v1_h3" name="{=OflbQCw6}Camel Saddle with Light Load +3" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="camel_saddle_b_v1_h3" name="{=Meow}Camel Saddle with Light Load +3" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="15" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
@@ -40,62 +40,62 @@
       <Armor body_armor="15" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_c_v1_h0" name="{=JHef9oad}Mule Harness with Bags" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_c_v1_h0" name="{=Meow}Mule Harness with Bags" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_c_v1_h1" name="{=JHef9oad}Mule Harness with Bags +1" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_c_v1_h1" name="{=Meow}Mule Harness with Bags +1" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_c_v1_h2" name="{=JHef9oad}Mule Harness with Bags +2" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_c_v1_h2" name="{=Meow}Mule Harness with Bags +2" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="12" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_c_v1_h3" name="{=JHef9oad}Mule Harness with Bags +3" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_c_v1_h3" name="{=Meow}Mule Harness with Bags +3" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="15" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h0" name="{=2SUb8jNP}Mule Harness with Baskets" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_b_v1_h0" name="{=Meow}Mule Harness with Baskets" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h1" name="{=2SUb8jNP}Mule Harness with Baskets +1" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_b_v1_h1" name="{=Meow}Mule Harness with Baskets +1" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h2" name="{=2SUb8jNP}Mule Harness with Baskets +2" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_b_v1_h2" name="{=Meow}Mule Harness with Baskets +2" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="12" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h3" name="{=2SUb8jNP}Mule Harness with Baskets +3" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_b_v1_h3" name="{=Meow}Mule Harness with Baskets +3" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="15" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h0" name="{=7S6BjECG}Mule Harness with Pack" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_a_v1_h0" name="{=Meow}Mule Harness with Pack" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h1" name="{=7S6BjECG}Mule Harness with Pack +1" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_a_v1_h1" name="{=Meow}Mule Harness with Pack +1" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h2" name="{=7S6BjECG}Mule Harness with Pack +2" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_a_v1_h2" name="{=Meow}Mule Harness with Pack +2" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="12" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h3" name="{=7S6BjECG}Mule Harness with Pack +3" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_a_v1_h3" name="{=Meow}Mule Harness with Pack +3" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="15" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
