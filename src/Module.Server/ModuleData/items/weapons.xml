@@ -2144,7 +2144,7 @@
       <Piece id="crpg_horseman_javelin_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_woodland_javelin_v2_h0" name="{=ObGN145P}Woodland Javelin" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_woodland_javelin_v3_h0" name="{=Diggles}Steel Skirmisher Javelin" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_woodland_javelin_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_woodland_javelin_guard_h0" Type="Guard" scale_factor="100" />
@@ -2152,7 +2152,7 @@
       <Piece id="crpg_woodland_javelin_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_woodland_javelin_v2_h1" name="{=ObGN145P}Woodland Javelin +1" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_woodland_javelin_v3_h1" name="{=Diggles}Steel Skirmisher +1" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_woodland_javelin_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_woodland_javelin_guard_h1" Type="Guard" scale_factor="100" />
@@ -2160,7 +2160,7 @@
       <Piece id="crpg_woodland_javelin_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_woodland_javelin_v2_h2" name="{=ObGN145P}Woodland Javelin +2" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_woodland_javelin_v3_h2" name="{=Diggles}Steel Skirmisher +2" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_woodland_javelin_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_woodland_javelin_guard_h2" Type="Guard" scale_factor="100" />
@@ -2168,7 +2168,7 @@
       <Piece id="crpg_woodland_javelin_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_woodland_javelin_v2_h3" name="{=ObGN145P}Woodland Javelin +3" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_woodland_javelin_v3_h3" name="{=Diggles}Steel Skirmisher +3" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_woodland_javelin_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_woodland_javelin_guard_h3" Type="Guard" scale_factor="100" />
@@ -2208,7 +2208,7 @@
       <Piece id="crpg_harpoon_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_lowland_javelin_v2_h0" name="{=oV5AhcDl}Lowland Javelin" crafting_template="crpg_Javelin" culture="Culture.vlandia" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_lowland_javelin_v3_h0" name="{=Diggles}Militia Skirmisher Javelin" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_lowland_javelin_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_lowland_javelin_guard_h0" Type="Guard" scale_factor="100" />
@@ -2216,7 +2216,7 @@
       <Piece id="crpg_lowland_javelin_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_lowland_javelin_v2_h1" name="{=oV5AhcDl}Lowland Javelin +1" crafting_template="crpg_Javelin" culture="Culture.vlandia" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_lowland_javelin_v3_h1" name="{=DigglesMilitia Skirmisher Javelin +1" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_lowland_javelin_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_lowland_javelin_guard_h1" Type="Guard" scale_factor="100" />
@@ -2224,7 +2224,7 @@
       <Piece id="crpg_lowland_javelin_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_lowland_javelin_v2_h2" name="{=oV5AhcDl}Lowland Javelin +2" crafting_template="crpg_Javelin" culture="Culture.vlandia" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_lowland_javelin_v3_h2" name="{=Diggles}Militia Skirmisher Javelin +2" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_lowland_javelin_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_lowland_javelin_guard_h2" Type="Guard" scale_factor="100" />
@@ -2232,7 +2232,7 @@
       <Piece id="crpg_lowland_javelin_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_lowland_javelin_v2_h3" name="{=oV5AhcDl}Lowland Javelin +3" crafting_template="crpg_Javelin" culture="Culture.vlandia" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_lowland_javelin_v3_h3" name="{=Diggles}Militia Skirmisher Javelin +3" crafting_template="crpg_Javelin" culture="Culture.battania" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_lowland_javelin_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_lowland_javelin_guard_h3" Type="Guard" scale_factor="100" />
@@ -2304,7 +2304,7 @@
       <Piece id="crpg_fish_harpoon_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_javelin_v2_h0" name="{=0NLJnGfF}Simple Javelin" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_simple_javelin_v3_h0" name="{=Diggles}Simple Javelin" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_simple_javelin_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_simple_javelin_guard_h0" Type="Guard" scale_factor="100" />
@@ -2312,7 +2312,7 @@
       <Piece id="crpg_simple_javelin_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_javelin_v2_h1" name="{=0NLJnGfF}Simple Javelin +1" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_simple_javelin_v3_h1" name="{=Diggles}Simple Javelin +1" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_simple_javelin_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_simple_javelin_guard_h1" Type="Guard" scale_factor="100" />
@@ -2320,7 +2320,7 @@
       <Piece id="crpg_simple_javelin_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_javelin_v2_h2" name="{=0NLJnGfF}Simple Javelin +2" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_simple_javelin_v3_h2" name="{=Diggles}Simple Javelin +2" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_simple_javelin_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_simple_javelin_guard_h2" Type="Guard" scale_factor="100" />
@@ -2328,7 +2328,7 @@
       <Piece id="crpg_simple_javelin_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_javelin_v2_h3" name="{=0NLJnGfF}Simple Javelin +3" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
+  <CraftedItem id="crpg_simple_javelin_v3_h3" name="{=Diggles}Simple Javelin +3" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
     <Pieces>
       <Piece id="crpg_simple_javelin_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_simple_javelin_guard_h3" Type="Guard" scale_factor="100" />
@@ -8776,7 +8776,7 @@
       <Piece id="crpg_wide_leaf_spear_pommel_h3" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pilum_v4_h0" name="{=Diggles}Pilum Steel Throwing Spear" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_pilum_v5_h0" name="{=Diggles}Pilum Steel Throwing Spear" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pilum_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pilum_guard_h0" Type="Guard" scale_factor="100" />
@@ -8784,7 +8784,7 @@
       <Piece id="crpg_pilum_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pilum_v4_h1" name="{=Diggles}Pilum Steel Throwing Spear +1" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_pilum_v5_h1" name="{=Diggles}Pilum Steel Throwing Spear +1" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pilum_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pilum_guard_h1" Type="Guard" scale_factor="100" />
@@ -8792,7 +8792,7 @@
       <Piece id="crpg_pilum_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pilum_v4_h2" name="{=Diggles}Pilum Steel Throwing Spear +2" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_pilum_v5_h2" name="{=Diggles}Pilum Steel Throwing Spear +2" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pilum_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pilum_guard_h2" Type="Guard" scale_factor="100" />
@@ -8800,7 +8800,7 @@
       <Piece id="crpg_pilum_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pilum_v4_h3" name="{=Diggles}Pilum Steel Throwing Spear +3" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_pilum_v5_h3" name="{=Diggles}Pilum Steel Throwing Spear +3" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pilum_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pilum_guard_h3" Type="Guard" scale_factor="100" />
@@ -9024,32 +9024,32 @@
       <Piece id="crpg_triangular_headed_spear_handle_h3" Type="Handle" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_jagged_throwing_spear_v2_h0" name="{=EgrNdBct}Jagged Throwing Spear" crafting_template="crpg_Javelin" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_jagged_throwing_spear_v3_h0" name="{=Diggles}Skirmisher Throwing Spear" crafting_template="crpg_Javelin" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_jagged_throwing_spear_blade_h0" Type="Blade" scale_factor="350" />
+      <Piece id="crpg_jagged_throwing_spear_blade_h0" Type="Blade" scale_factor="250" />
       <Piece id="crpg_jagged_throwing_spear_guard_h0" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_jagged_throwing_spear_handle_h0" Type="Handle" scale_factor="175" />
+      <Piece id="crpg_jagged_throwing_spear_handle_h0" Type="Handle" scale_factor="150" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_jagged_throwing_spear_v2_h1" name="{=EgrNdBct}Jagged Throwing Spear +1" crafting_template="crpg_Javelin" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_jagged_throwing_spear_v3_h1" name="{=Diggles}Skirmisher Throwing Spear +1" crafting_template="crpg_Javelin" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_jagged_throwing_spear_blade_h1" Type="Blade" scale_factor="350" />
+      <Piece id="crpg_jagged_throwing_spear_blade_h1" Type="Blade" scale_factor="250" />
       <Piece id="crpg_jagged_throwing_spear_guard_h1" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_jagged_throwing_spear_handle_h1" Type="Handle" scale_factor="175" />
+      <Piece id="crpg_jagged_throwing_spear_handle_h1" Type="Handle" scale_factor="150" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_jagged_throwing_spear_v2_h2" name="{=EgrNdBct}Jagged Throwing Spear +2" crafting_template="crpg_Javelin" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_jagged_throwing_spear_v3_h2" name="{=Diggles}Skirmisher Throwing Spear +2" crafting_template="crpg_Javelin" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_jagged_throwing_spear_blade_h2" Type="Blade" scale_factor="350" />
+      <Piece id="crpg_jagged_throwing_spear_blade_h2" Type="Blade" scale_factor="250" />
       <Piece id="crpg_jagged_throwing_spear_guard_h2" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_jagged_throwing_spear_handle_h2" Type="Handle" scale_factor="175" />
+      <Piece id="crpg_jagged_throwing_spear_handle_h2" Type="Handle" scale_factor="150" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_jagged_throwing_spear_v2_h3" name="{=EgrNdBct}Jagged Throwing Spear +3" crafting_template="crpg_Javelin" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_jagged_throwing_spear_v3_h3" name="{=Diggles}Skirmisher Throwing Spear +3" crafting_template="crpg_Javelin" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
-      <Piece id="crpg_jagged_throwing_spear_blade_h3" Type="Blade" scale_factor="350" />
+      <Piece id="crpg_jagged_throwing_spear_blade_h3" Type="Blade" scale_factor="250" />
       <Piece id="crpg_jagged_throwing_spear_guard_h3" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_jagged_throwing_spear_handle_h3" Type="Handle" scale_factor="175" />
+      <Piece id="crpg_jagged_throwing_spear_handle_h3" Type="Handle" scale_factor="150" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_short_leaf_shaped_spear_v1_h0" name="{=xTyib5ms}Short Leaf Shaped Spear" crafting_template="crpg_Spear4DMode" culture="Culture.battania" modifier_group="polearm">
@@ -11216,25 +11216,25 @@
       <Piece id="crpg_makeshift_sledgehammer_handle_h3" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tri_shuriken_v1_h0" name="{=Diggles}Throwing Star Triangle" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
+  <CraftedItem id="crpg_tri_shuriken_v2_h0" name="{=Diggles}Throwing Star Triangle" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
     <Pieces>
       <Piece id="crpg_tri_shuriken_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tri_shuriken_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tri_shuriken_v1_h1" name="{=Diggles}Throwing Star Triangle +1" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
+  <CraftedItem id="crpg_tri_shuriken_v2_h1" name="{=Diggles}Throwing Star Triangle +1" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
     <Pieces>
       <Piece id="crpg_tri_shuriken_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tri_shuriken_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tri_shuriken_v1_h2" name="{=Diggles}Throwing Star Triangle +2" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
+  <CraftedItem id="crpg_tri_shuriken_v2_h2" name="{=Diggles}Throwing Star Triangle +2" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
     <Pieces>
       <Piece id="crpg_tri_shuriken_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tri_shuriken_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tri_shuriken_v1_h3" name="{=Diggles}Throwing Star Triangle +3" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
+  <CraftedItem id="crpg_tri_shuriken_v2_h3" name="{=Diggles}Throwing Star Triangle +3" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
     <Pieces>
       <Piece id="crpg_tri_shuriken_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tri_shuriken_handle_h3" Type="Handle" scale_factor="100" />
@@ -11264,25 +11264,25 @@
       <Piece id="crpg_throwing_spike_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_square_shuriken_v1_h0" name="{=Diggles}Throwing Star Diamond" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
+  <CraftedItem id="crpg_square_shuriken_v2_h0" name="{=Diggles}Throwing Star Diamond" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
     <Pieces>
       <Piece id="crpg_square_shuriken_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_square_shuriken_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_square_shuriken_v1_h1" name="{=Diggles}Throwing Star Diamond +1" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
+  <CraftedItem id="crpg_square_shuriken_v2_h1" name="{=Diggles}Throwing Star Diamond +1" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
     <Pieces>
       <Piece id="crpg_square_shuriken_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_square_shuriken_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_square_shuriken_v1_h2" name="{=Diggles}Throwing Star Diamond +2" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
+  <CraftedItem id="crpg_square_shuriken_v2_h2" name="{=Diggles}Throwing Star Diamond +2" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
     <Pieces>
       <Piece id="crpg_square_shuriken_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_square_shuriken_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_square_shuriken_v1_h3" name="{=Diggles}Throwing Star Diamond +3" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
+  <CraftedItem id="crpg_square_shuriken_v2_h3" name="{=Diggles}Throwing Star Diamond +3" crafting_template="crpg_ThrowingKnife" culture="Culture.aserai" modifier_group="knife_throwing">
     <Pieces>
       <Piece id="crpg_square_shuriken_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_square_shuriken_handle_h3" Type="Handle" scale_factor="100" />

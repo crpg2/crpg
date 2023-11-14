@@ -2736,22 +2736,22 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fish_harpoon_handle_h0" name="{=mcYSvJfA}Tree Branch" tier="2" piece_type="Handle" mesh="spear_handle_12" length="90" weight="0.8" excluded_item_usage_features="long" CraftingCost="90">
+  <CraftingPiece id="crpg_fish_harpoon_handle_h0" name="{=mcYSvJfA}Tree Branch" tier="2" piece_type="Handle" mesh="spear_handle_12" length="90" weight="0.27" excluded_item_usage_features="long" CraftingCost="90">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fish_harpoon_handle_h1" name="{=mcYSvJfA}Tree Branch" tier="2" piece_type="Handle" mesh="spear_handle_12" length="90" weight="0.8" excluded_item_usage_features="long" CraftingCost="90">
+  <CraftingPiece id="crpg_fish_harpoon_handle_h1" name="{=mcYSvJfA}Tree Branch" tier="2" piece_type="Handle" mesh="spear_handle_12" length="90" weight="0.27" excluded_item_usage_features="long" CraftingCost="90">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fish_harpoon_handle_h2" name="{=mcYSvJfA}Tree Branch" tier="2" piece_type="Handle" mesh="spear_handle_12" length="90" weight="0.8" excluded_item_usage_features="long" CraftingCost="90">
+  <CraftingPiece id="crpg_fish_harpoon_handle_h2" name="{=mcYSvJfA}Tree Branch" tier="2" piece_type="Handle" mesh="spear_handle_12" length="90" weight="0.27" excluded_item_usage_features="long" CraftingCost="90">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fish_harpoon_handle_h3" name="{=mcYSvJfA}Tree Branch" tier="2" piece_type="Handle" mesh="spear_handle_12" length="90" weight="0.8" excluded_item_usage_features="long" CraftingCost="90">
+  <CraftingPiece id="crpg_fish_harpoon_handle_h3" name="{=mcYSvJfA}Tree Branch" tier="2" piece_type="Handle" mesh="spear_handle_12" length="90" weight="0.27" excluded_item_usage_features="long" CraftingCost="90">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
@@ -2816,22 +2816,22 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_lowland_javelin_handle_h0" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_lowland_javelin_handle_h0" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.1" excluded_item_usage_features="long" CraftingCost="80">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_lowland_javelin_handle_h1" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_lowland_javelin_handle_h1" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.1" excluded_item_usage_features="long" CraftingCost="80">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_lowland_javelin_handle_h2" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_lowland_javelin_handle_h2" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.1" excluded_item_usage_features="long" CraftingCost="80">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_lowland_javelin_handle_h3" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_lowland_javelin_handle_h3" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.1" excluded_item_usage_features="long" CraftingCost="80">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
@@ -2880,22 +2880,22 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_jagged_throwing_spear_handle_h0" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_jagged_throwing_spear_handle_h0" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.65" excluded_item_usage_features="long" CraftingCost="80">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_jagged_throwing_spear_handle_h1" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_jagged_throwing_spear_handle_h1" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.65" excluded_item_usage_features="long" CraftingCost="80">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_jagged_throwing_spear_handle_h2" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_jagged_throwing_spear_handle_h2" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.65" excluded_item_usage_features="long" CraftingCost="80">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_jagged_throwing_spear_handle_h3" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.866" excluded_item_usage_features="long" CraftingCost="80">
+  <CraftingPiece id="crpg_jagged_throwing_spear_handle_h3" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="spear_handle_11" length="90" weight="0.65" excluded_item_usage_features="long" CraftingCost="80">
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
@@ -2960,49 +2960,49 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_woodland_javelin_handle_h0" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.7" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
+  <CraftingPiece id="crpg_woodland_javelin_handle_h0" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.22" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
     <BuildData piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_woodland_javelin_handle_h1" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.7" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
+  <CraftingPiece id="crpg_woodland_javelin_handle_h1" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.22" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
     <BuildData piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_woodland_javelin_handle_h2" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.7" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
+  <CraftingPiece id="crpg_woodland_javelin_handle_h2" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.22" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
     <BuildData piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_woodland_javelin_handle_h3" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.7" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
+  <CraftingPiece id="crpg_woodland_javelin_handle_h3" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.22" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
     <BuildData piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_javelin_handle_h0" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.7" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
+  <CraftingPiece id="crpg_simple_javelin_handle_h0" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.29" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
     <BuildData piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_javelin_handle_h1" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.7" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
+  <CraftingPiece id="crpg_simple_javelin_handle_h1" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.29" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
     <BuildData piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_javelin_handle_h2" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.7" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
+  <CraftingPiece id="crpg_simple_javelin_handle_h2" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.29" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
     <BuildData piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_simple_javelin_handle_h3" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.7" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
+  <CraftingPiece id="crpg_simple_javelin_handle_h3" name="{=MCRppfbZ}Pine Javelin Shaft" tier="2" piece_type="Handle" mesh="spear_handle_2" length="85.1" weight="0.29" excluded_item_usage_features="long" CraftingCost="80" is_default="true">
     <BuildData piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -5610,7 +5610,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fish_harpoon_blade_h0" name="{=Js1FKwrL}Javelin Head" tier="2" piece_type="Blade" mesh="spear_blade_16" length="23.328" weight="0.204" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
-      <Thrust damage_type="Pierce" damage_factor="0.63" />
+      <Thrust damage_type="Pierce" damage_factor="1.3" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -5618,7 +5618,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fish_harpoon_blade_h1" name="{=Js1FKwrL}Javelin Head" tier="2" piece_type="Blade" mesh="spear_blade_16" length="23.328" weight="0.204" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
-      <Thrust damage_type="Pierce" damage_factor="0.67" />
+      <Thrust damage_type="Pierce" damage_factor="1.35" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -5626,7 +5626,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fish_harpoon_blade_h2" name="{=Js1FKwrL}Javelin Head" tier="2" piece_type="Blade" mesh="spear_blade_16" length="23.328" weight="0.204" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
-      <Thrust damage_type="Pierce" damage_factor="0.72" />
+      <Thrust damage_type="Pierce" damage_factor="1.4" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -5634,7 +5634,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fish_harpoon_blade_h3" name="{=Js1FKwrL}Javelin Head" tier="2" piece_type="Blade" mesh="spear_blade_16" length="23.328" weight="0.204" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
-      <Thrust damage_type="Pierce" damage_factor="0.77" />
+      <Thrust damage_type="Pierce" damage_factor="1.45" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6398,7 +6398,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_simple_javelin_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.833" />
+      <Thrust damage_type="Pierce" damage_factor="1.35" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6409,7 +6409,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_simple_javelin_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.89" />
+      <Thrust damage_type="Pierce" damage_factor="1.375" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6420,7 +6420,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_simple_javelin_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="0.96" />
+      <Thrust damage_type="Pierce" damage_factor="1.45" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6431,7 +6431,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_simple_javelin_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_1_1" holster_body_name="bo_throwing_spear_quiver_1_1" holster_mesh_length="68.9">
-      <Thrust damage_type="Pierce" damage_factor="1.1" />
+      <Thrust damage_type="Pierce" damage_factor="1.55" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6441,8 +6441,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.65" />
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="0.785" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6452,8 +6452,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.66" />
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="0.8" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6463,8 +6463,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.67" />
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="0.825" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6474,8 +6474,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.71" />
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="0.855" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6529,8 +6529,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.71" />
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+      <Thrust damage_type="Pierce" damage_factor="0.89" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6540,8 +6540,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.74" />
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+      <Thrust damage_type="Pierce" damage_factor="0.93" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6551,8 +6551,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.78" />
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+      <Thrust damage_type="Pierce" damage_factor="0.962" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6562,8 +6562,8 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="0.82" />
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+      <Thrust damage_type="Pierce" damage_factor="1.0" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -6946,7 +6946,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h0" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.73" />
+      <Thrust damage_type="Pierce" damage_factor="1.17" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -6957,7 +6957,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h1" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.76" />
+      <Thrust damage_type="Pierce" damage_factor="1.19" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -6968,7 +6968,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h2" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.8" />
+      <Thrust damage_type="Pierce" damage_factor="1.22" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -6979,7 +6979,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h3" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.85" />
+      <Thrust damage_type="Pierce" damage_factor="1.3" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="1" />
@@ -7622,7 +7622,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_lowland_javelin_blade_h0" name="{=Oxew9WCe}Imperial Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_1" length="48" weight="0.3384" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.58" />
+      <Thrust damage_type="Pierce" damage_factor="1.375" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -7633,7 +7633,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_lowland_javelin_blade_h1" name="{=Oxew9WCe}Imperial Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_1" length="48" weight="0.3384" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.61" />
+      <Thrust damage_type="Pierce" damage_factor="1.4" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -7644,7 +7644,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_lowland_javelin_blade_h2" name="{=Oxew9WCe}Imperial Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_1" length="48" weight="0.3384" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.66" />
+      <Thrust damage_type="Pierce" damage_factor="1.45" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -7655,7 +7655,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_lowland_javelin_blade_h3" name="{=Oxew9WCe}Imperial Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_1" length="48" weight="0.3384" excluded_item_usage_features="swing">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_4" holster_body_name="bo_throwing_spear_quiver_4" holster_mesh_length="96.2">
-      <Thrust damage_type="Pierce" damage_factor="0.7" />
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
     </BladeData>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -27474,7 +27474,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tri_shuriken_blade_h0" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.08">
     <BuildData piece_offset="0.0" />
-    <BladeData stack_amount="11" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+    <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="5" />
     </BladeData>
     <Flags>
@@ -27484,7 +27484,31 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tri_shuriken_blade_h1" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.07">
+  <CraftingPiece id="crpg_tri_shuriken_blade_h1" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.08">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="5.25" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_blade_h2" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.08">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="5.25" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_blade_h3" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.08">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="5.5" />
@@ -27496,55 +27520,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tri_shuriken_blade_h2" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.05">
-    <BuildData piece_offset="0.0" />
-    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="6.5" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_tri_shuriken_blade_h3" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.06">
-    <BuildData piece_offset="0.0" />
-    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="6.5" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="2" />
-    </Materials>
-  </CraftingPiece>
   <CraftingPiece id="crpg_square_shuriken_blade_h0" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
-    <BuildData piece_offset="0.0" />
-    <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="5" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_square_shuriken_blade_h1" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
-    <BuildData piece_offset="0.0" />
-    <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="5.35" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_square_shuriken_blade_h2" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="5.75" />
@@ -27556,10 +27532,34 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_square_shuriken_blade_h3" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
+  <CraftingPiece id="crpg_square_shuriken_blade_h1" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="6.2" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_square_shuriken_blade_h2" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="6.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_square_shuriken_blade_h3" name="Squareshaped Shuriken Blade" tier="2" piece_type="Blade" mesh="square_shuriken" length="20" weight="0.03">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="6.75" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
