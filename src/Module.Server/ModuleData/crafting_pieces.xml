@@ -188,29 +188,29 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_handle_h0" name="{=FxCfO3zN}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="mace_handle_1" length="62.5" weight="0.32" CraftingCost="75">
-    <BuildData piece_offset="18" />
+  <CraftingPiece id="crpg_heavy_morningstar_handle_h0" name="{=}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="heavy_morningstar_handle" full_scale="true" length="84" weight="0.32" CraftingCost="75">
+    <BuildData piece_offset="23" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_handle_h1" name="{=FxCfO3zN}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="mace_handle_1" length="62.5" weight="0.32" CraftingCost="75">
-    <BuildData piece_offset="18" />
+  <CraftingPiece id="crpg_heavy_morningstar_handle_h1" name="{=}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="heavy_morningstar_handle" full_scale="true" length="84" weight="0.32" CraftingCost="75">
+    <BuildData piece_offset="23" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_handle_h2" name="{=FxCfO3zN}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="mace_handle_1" length="62.5" weight="0.32" CraftingCost="75">
-    <BuildData piece_offset="18" />
+  <CraftingPiece id="crpg_heavy_morningstar_handle_h2" name="{=}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="heavy_morningstar_handle" full_scale="true" length="84" weight="0.32" CraftingCost="75">
+    <BuildData piece_offset="23" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_handle_h3" name="{=FxCfO3zN}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="mace_handle_1" length="62.5" weight="0.32" CraftingCost="75">
-    <BuildData piece_offset="18" />
+  <CraftingPiece id="crpg_heavy_morningstar_handle_h3" name="{=}Iron Reinforced Mace Handle" tier="3" piece_type="Handle" mesh="heavy_morningstar_handle" full_scale="true" length="84" weight="0.35" CraftingCost="75">
+    <BuildData piece_offset="23" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron3" count="1" />
@@ -1104,7 +1104,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_blade_h0" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.30" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_heavy_morningstar_blade_h0" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="heavy_morningstar_head" length="25" weight="0.95" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
       <Swing damage_type="Pierce" damage_factor="3.1" />
     </BladeData>
@@ -1116,7 +1116,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_blade_h1" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.279" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_heavy_morningstar_blade_h1" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="heavy_morningstar_head" length="25" weight="0.879" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
       <Swing damage_type="Pierce" damage_factor="3.1" />
     </BladeData>
@@ -1128,7 +1128,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_blade_h2" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.279" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_heavy_morningstar_blade_h2" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="heavy_morningstar_head" length="25" weight="0.861" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
       <Swing damage_type="Pierce" damage_factor="3.2" />
     </BladeData>
@@ -1140,7 +1140,7 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_blade_h3" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.279" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_heavy_morningstar_blade_h3" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="heavy_morningstar_head" length="25" weight="0.8" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
       <Swing damage_type="Pierce" damage_factor="3.3" />
     </BladeData>
@@ -14048,22 +14048,22 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_pommel_h0" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="empire_pommel_4" culture="Culture.empire" length="6.795" weight="0.35">
+  <CraftingPiece id="crpg_heavy_morningstar_pommel_h0" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="heavy_morningstar_pommel" culture="Culture.empire" full_scale="true" length="6.74" weight="0.35">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_pommel_h1" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="empire_pommel_4" culture="Culture.empire" length="6.795" weight="0.35">
+  <CraftingPiece id="crpg_heavy_morningstar_pommel_h1" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="heavy_morningstar_pommel" culture="Culture.empire" full_scale="true" length="6.74" weight="0.35">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_pommel_h2" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="empire_pommel_4" culture="Culture.empire" length="6.795" weight="0.35">
+  <CraftingPiece id="crpg_heavy_morningstar_pommel_h2" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="heavy_morningstar_pommel" culture="Culture.empire" full_scale="true" length="6.74" weight="0.35">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_heavy_morningstar_pommel_h3" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="empire_pommel_4" culture="Culture.empire" length="6.795" weight="0.35">
+  <CraftingPiece id="crpg_heavy_morningstar_pommel_h3" name="{=d4aLa7tz}Top Pommel" tier="3" piece_type="Pommel" mesh="heavy_morningstar_pommel" culture="Culture.empire" full_scale="true" length="6.74" weight="0.35">
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>

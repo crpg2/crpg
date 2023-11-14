@@ -4432,32 +4432,32 @@
       <Piece id="crpg_fullered_western_mace_pommel_h3" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_morningstar_h0" name="{=6EWm09LY}Heavy Morningstar" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
+  <CraftedItem id="crpg_heavy_morningstar_v1_h0" name="{=Meow}Heavy Morningstar" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_heavy_morningstar_blade_h0" Type="Blade" scale_factor="165" />
-      <Piece id="crpg_heavy_morningstar_handle_h0" Type="Handle" scale_factor="145" />
-      <Piece id="crpg_heavy_morningstar_pommel_h0" Type="Pommel" scale_factor="100" />
+      <Piece id="crpg_heavy_morningstar_blade_h0" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_heavy_morningstar_handle_h0" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_heavy_morningstar_pommel_h0" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_morningstar_h1" name="{=6EWm09LY}Heavy Morningstar +1" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
+  <CraftedItem id="crpg_heavy_morningstar_v1_h1" name="{=Meow}Heavy Morningstar +1" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_heavy_morningstar_blade_h1" Type="Blade" scale_factor="165" />
-      <Piece id="crpg_heavy_morningstar_handle_h1" Type="Handle" scale_factor="145" />
-      <Piece id="crpg_heavy_morningstar_pommel_h1" Type="Pommel" scale_factor="100" />
+      <Piece id="crpg_heavy_morningstar_blade_h1" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_heavy_morningstar_handle_h1" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_heavy_morningstar_pommel_h1" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_morningstar_h2" name="{=6EWm09LY}Heavy Morningstar +2" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
+  <CraftedItem id="crpg_heavy_morningstar_v1_h2" name="{=Meow}Heavy Morningstar +2" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_heavy_morningstar_blade_h2" Type="Blade" scale_factor="165" />
-      <Piece id="crpg_heavy_morningstar_handle_h2" Type="Handle" scale_factor="145" />
-      <Piece id="crpg_heavy_morningstar_pommel_h2" Type="Pommel" scale_factor="100" />
+      <Piece id="crpg_heavy_morningstar_blade_h2" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_heavy_morningstar_handle_h2" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_heavy_morningstar_pommel_h2" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_morningstar_h3" name="{=6EWm09LY}Heavy Morningstar +3" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
+  <CraftedItem id="crpg_heavy_morningstar_v1_h3" name="{=Meow}Heavy Morningstar +3" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_heavy_morningstar_blade_h3" Type="Blade" scale_factor="165" />
-      <Piece id="crpg_heavy_morningstar_handle_h3" Type="Handle" scale_factor="145" />
-      <Piece id="crpg_heavy_morningstar_pommel_h3" Type="Pommel" scale_factor="100" />
+      <Piece id="crpg_heavy_morningstar_blade_h3" Type="Blade" scale_factor="113" />
+      <Piece id="crpg_heavy_morningstar_handle_h3" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_heavy_morningstar_pommel_h3" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_morningstar_h0" name="{=6EWm09LY}Morningstar" crafting_template="crpg_Mace" modifier_group="mace">
