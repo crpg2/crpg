@@ -27820,31 +27820,31 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_helpinghand_handle_h0" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="helpinghand_handle" length="43.2" weight="0.05">
+  <CraftingPiece id="crpg_helpinghand_handle_h0" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="gp_helpinghand_handle" length="43.2" weight="0.05">
     <BuildData piece_offset="5" next_piece_offset="0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_helpinghand_handle_h1" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="helpinghand_handle" length="43.2" weight="0.12">
+  <CraftingPiece id="crpg_helpinghand_handle_h1" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="gp_helpinghand_handle" length="43.2" weight="0.12">
     <BuildData piece_offset="5" next_piece_offset="0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_helpinghand_handle_h2" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="helpinghand_handle" length="43.2" weight="0.12">
+  <CraftingPiece id="crpg_helpinghand_handle_h2" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="gp_helpinghand_handle" length="43.2" weight="0.12">
     <BuildData piece_offset="5" next_piece_offset="0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_helpinghand_handle_h3" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="helpinghand_handle" length="43.2" weight="0.12">
+  <CraftingPiece id="crpg_helpinghand_handle_h3" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="gp_helpinghand_handle" length="43.2" weight="0.12">
     <BuildData piece_offset="5" next_piece_offset="0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_helpinghand_head_h0" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="helpinghand_head" length="12.9" weight="0.98" is_default="true">
+  <CraftingPiece id="crpg_helpinghand_head_h0" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="gp_helpinghand_head" length="12.9" weight="0.98" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="12.9" blade_width="8.16" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="0.965" />
@@ -27854,7 +27854,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_helpinghand_head_h1" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="helpinghand_head" length="12.9" weight="0.995" is_default="true">
+  <CraftingPiece id="crpg_helpinghand_head_h1" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="gp_helpinghand_head" length="12.9" weight="0.995" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="12.9" blade_width="8.16" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="0.995" />
@@ -27864,7 +27864,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_helpinghand_head_h2" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="helpinghand_head" length="12.9" weight="0.995" is_default="true">
+  <CraftingPiece id="crpg_helpinghand_head_h2" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="gp_helpinghand_head" length="12.9" weight="0.995" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="12.9" blade_width="8.16" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.05" />
@@ -27874,7 +27874,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_helpinghand_head_h3" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="helpinghand_head" length="12.9" weight="0.995" is_default="true">
+  <CraftingPiece id="crpg_helpinghand_head_h3" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="gp_helpinghand_head" length="12.9" weight="0.995" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="12.9" blade_width="8.16" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.085" />
@@ -27884,31 +27884,31 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingmace_handle_h0" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="throwing_mace_shaft" length="43.7" weight="0.15">
+  <CraftingPiece id="crpg_throwingmace_handle_h0" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="gp_throwing_mace_shaft" length="43.7" weight="0.15">
     <BuildData piece_offset="5" next_piece_offset="7.5" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingmace_handle_h1" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="throwing_mace_shaft" length="43.7" weight="0.15">
+  <CraftingPiece id="crpg_throwingmace_handle_h1" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="gp_throwing_mace_shaft" length="43.7" weight="0.15">
     <BuildData piece_offset="5" next_piece_offset="7.5" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingmace_handle_h2" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="throwing_mace_shaft" length="43.7" weight="0.15">
+  <CraftingPiece id="crpg_throwingmace_handle_h2" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="gp_throwing_mace_shaft" length="43.7" weight="0.15">
     <BuildData piece_offset="5" next_piece_offset="7.5" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingmace_handle_h3" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="throwing_mace_shaft" length="43.7" weight="0.15">
+  <CraftingPiece id="crpg_throwingmace_handle_h3" name="Throwing Mace Handle" tier="3" piece_type="Handle" mesh="gp_throwing_mace_shaft" length="43.7" weight="0.15">
     <BuildData piece_offset="5" next_piece_offset="7.5" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingmace_head_h0" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="throwing_mace_head" length="17.3" weight="0.6" is_default="true">
+  <CraftingPiece id="crpg_throwingmace_head_h0" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="gp_throwing_mace_head" length="17.3" weight="0.6" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="17.3" blade_width="7.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="0.95" />
@@ -27918,7 +27918,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingmace_head_h1" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="throwing_mace_head" length="17.3" weight="0.6" is_default="true">
+  <CraftingPiece id="crpg_throwingmace_head_h1" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="gp_throwing_mace_head" length="17.3" weight="0.6" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="17.3" blade_width="7.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.0" />
@@ -27928,7 +27928,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingmace_head_h2" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="throwing_mace_head" length="17.3" weight="0.6" is_default="true">
+  <CraftingPiece id="crpg_throwingmace_head_h2" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="gp_throwing_mace_head" length="17.3" weight="0.6" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="17.3" blade_width="7.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.05" />
@@ -27938,7 +27938,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingmace_head_h3" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="throwing_mace_head" length="17.3" weight="0.6" is_default="true">
+  <CraftingPiece id="crpg_throwingmace_head_h3" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="gp_throwing_mace_head" length="17.3" weight="0.6" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="17.3" blade_width="7.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.1" />
@@ -27948,31 +27948,31 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingclub_handle_h0" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="throwing_club_handle" length="34.1" weight="0.15">
+  <CraftingPiece id="crpg_throwingclub_handle_h0" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="gp_throwing_club_handle" length="34.1" weight="0.15">
     <BuildData piece_offset="3" next_piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingclub_handle_h1" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="throwing_club_handle" length="34.1" weight="0.15">
+  <CraftingPiece id="crpg_throwingclub_handle_h1" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="gp_throwing_club_handle" length="34.1" weight="0.15">
     <BuildData piece_offset="3" next_piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingclub_handle_h2" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="throwing_club_handle" length="34.1" weight="0.15">
+  <CraftingPiece id="crpg_throwingclub_handle_h2" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="gp_throwing_club_handle" length="34.1" weight="0.15">
     <BuildData piece_offset="3" next_piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingclub_handle_h3" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="throwing_club_handle" length="34.1" weight="0.15">
+  <CraftingPiece id="crpg_throwingclub_handle_h3" name="Throwing Club Handle" tier="3" piece_type="Handle" mesh="gp_throwing_club_handle" length="34.1" weight="0.15">
     <BuildData piece_offset="3" next_piece_offset="0.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingclub_head_h0" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="throwing_club_head" length="16.2" weight="0.35" is_default="true">
+  <CraftingPiece id="crpg_throwingclub_head_h0" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="gp_throwing_club_head" length="16.2" weight="0.35" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="4" blade_length="16.2" blade_width="12.9" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.0" />
@@ -27982,7 +27982,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingclub_head_h1" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="throwing_club_head" length="16.2" weight="0.35" is_default="true">
+  <CraftingPiece id="crpg_throwingclub_head_h1" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="gp_throwing_club_head" length="16.2" weight="0.35" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="4" blade_length="16.2" blade_width="12.9" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.1" />
@@ -27992,7 +27992,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingclub_head_h2" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="throwing_club_head" length="16.2" weight="0.35" is_default="true">
+  <CraftingPiece id="crpg_throwingclub_head_h2" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="gp_throwing_club_head" length="16.2" weight="0.35" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="4" blade_length="16.2" blade_width="12.9" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.155" />
@@ -28002,7 +28002,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_throwingclub_head_h3" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="throwing_club_head" length="16.2" weight="0.35" is_default="true">
+  <CraftingPiece id="crpg_throwingclub_head_h3" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="gp_throwing_club_head" length="16.2" weight="0.35" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="4" blade_length="16.2" blade_width="12.9" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
       <Swing damage_type="Blunt" damage_factor="1.2" />
