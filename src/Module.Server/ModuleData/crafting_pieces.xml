@@ -6529,7 +6529,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="0.89" />
     </BladeData>
     <Materials>
@@ -6540,7 +6540,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="0.93" />
     </BladeData>
     <Materials>
@@ -6551,7 +6551,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="0.962" />
     </BladeData>
     <Materials>
@@ -6562,7 +6562,7 @@
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b" >
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="1.0" />
     </BladeData>
     <Materials>

@@ -20,22 +20,22 @@
       <Armor body_armor="15" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_v1_h0" name="{=q1z4FQub}Camel Saddle" mesh="camel_saddle1" culture="Culture.aserai" weight="10" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_v1_h0" name="{=q1z4FQub}Camel Saddle" mesh="camel_saddle1" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_v1_h1" name="{=q1z4FQub}Camel Saddle +1" mesh="camel_saddle1" culture="Culture.aserai" weight="10" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_v1_h1" name="{=q1z4FQub}Camel Saddle +1" mesh="camel_saddle1" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_v1_h2" name="{=q1z4FQub}Camel Saddle +2" mesh="camel_saddle1" culture="Culture.aserai" weight="10" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_v1_h2" name="{=q1z4FQub}Camel Saddle +2" mesh="camel_saddle1" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="12" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_v1_h3" name="{=q1z4FQub}Camel Saddle +3" mesh="camel_saddle1" culture="Culture.aserai" weight="10" appearance="1" Type="HorseHarness">
+  <Item id="crpg_camel_saddle_v1_h3" name="{=q1z4FQub}Camel Saddle +3" mesh="camel_saddle1" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="15" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
