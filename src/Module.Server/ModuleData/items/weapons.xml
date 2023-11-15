@@ -1202,7 +1202,7 @@
   </Item>
   <Item id="crpg_arrows_v1_h1" name="{=gFtu0j4T}Simple Arrows +1" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" mesh="arrow_bl_i" weight="0.085" appearance="1" flying_mesh="arrow_bl_flying" holster_mesh="arrow_bl_i_quiver" holster_mesh_with_weapon="arrow_bl_i_quiver" Type="Arrows" item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts" holster_position_shift="0.0,0.0,0.15">
     <ItemComponent>
-      <Weapon weapon_class="Arrow" stack_amount="32" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="0" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
+      <Weapon weapon_class="Arrow" stack_amount="32" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="1" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
         <WeaponFlags Consumable="true" AmmoSticksWhenShot="true" AmmoBreaksOnBounceBack="true" />
       </Weapon>
     </ItemComponent>
@@ -1210,7 +1210,7 @@
   </Item>
   <Item id="crpg_arrows_v1_h2" name="{=gFtu0j4T}Simple Arrows +2" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" mesh="arrow_bl_i" weight="0.085" appearance="1" flying_mesh="arrow_bl_flying" holster_mesh="arrow_bl_i_quiver" holster_mesh_with_weapon="arrow_bl_i_quiver" Type="Arrows" item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts" holster_position_shift="0.0,0.0,0.15">
     <ItemComponent>
-      <Weapon weapon_class="Arrow" stack_amount="36" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="0" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
+      <Weapon weapon_class="Arrow" stack_amount="36" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="1" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
         <WeaponFlags Consumable="true" AmmoSticksWhenShot="true" AmmoBreaksOnBounceBack="true" />
       </Weapon>
     </ItemComponent>
@@ -1218,7 +1218,7 @@
   </Item>
   <Item id="crpg_arrows_v1_h3" name="{=gFtu0j4T}Simple Arrows +3" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" mesh="arrow_bl_i" weight="0.085" appearance="1" flying_mesh="arrow_bl_flying" holster_mesh="arrow_bl_i_quiver" holster_mesh_with_weapon="arrow_bl_i_quiver" Type="Arrows" item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts" holster_position_shift="0.0,0.0,0.15">
     <ItemComponent>
-      <Weapon weapon_class="Arrow" stack_amount="36" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="1" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
+      <Weapon weapon_class="Arrow" stack_amount="36" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="2" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
         <WeaponFlags Consumable="true" AmmoSticksWhenShot="true" AmmoBreaksOnBounceBack="true" />
       </Weapon>
     </ItemComponent>
@@ -1266,7 +1266,7 @@
   </Item>
   <Item id="crpg_range_arrows_h1" name="{=Biq7t1xv}Range Arrows +1" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" mesh="arrow_bl_i" weight="0.09" appearance="1" flying_mesh="arrow_bl_flying" holster_mesh="arrow_bl_i_quiver" holster_mesh_with_weapon="arrow_bl_i_quiver" Type="Arrows" item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts" holster_position_shift="0.0,0.0,0.15">
     <ItemComponent>
-      <Weapon weapon_class="Arrow" stack_amount="32" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="1" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
+      <Weapon weapon_class="Arrow" stack_amount="32" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="2" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
         <WeaponFlags Consumable="true" AmmoSticksWhenShot="true" AmmoBreaksOnBounceBack="true" />
       </Weapon>
     </ItemComponent>
@@ -1274,7 +1274,7 @@
   </Item>
   <Item id="crpg_range_arrows_h2" name="{=Biq7t1xv}Range Arrows +2" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" mesh="arrow_bl_i" weight="0.09" appearance="1" flying_mesh="arrow_bl_flying" holster_mesh="arrow_bl_i_quiver" holster_mesh_with_weapon="arrow_bl_i_quiver" Type="Arrows" item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts" holster_position_shift="0.0,0.0,0.15">
     <ItemComponent>
-      <Weapon weapon_class="Arrow" stack_amount="36" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="1" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
+      <Weapon weapon_class="Arrow" stack_amount="36" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="2" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
         <WeaponFlags Consumable="true" AmmoSticksWhenShot="true" AmmoBreaksOnBounceBack="true" />
       </Weapon>
     </ItemComponent>
@@ -1282,7 +1282,7 @@
   </Item>
   <Item id="crpg_range_arrows_h3" name="{=Biq7t1xv}Range Arrows +3" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" mesh="arrow_bl_i" weight="0.09" appearance="1" flying_mesh="arrow_bl_flying" holster_mesh="arrow_bl_i_quiver" holster_mesh_with_weapon="arrow_bl_i_quiver" Type="Arrows" item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts" holster_position_shift="0.0,0.0,0.15">
     <ItemComponent>
-      <Weapon weapon_class="Arrow" stack_amount="36" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="2" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
+      <Weapon weapon_class="Arrow" stack_amount="36" thrust_speed="0" speed_rating="0" physics_material="missile" missile_speed="10" weapon_length="97" thrust_damage="3" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
         <WeaponFlags Consumable="true" AmmoSticksWhenShot="true" AmmoBreaksOnBounceBack="true" />
       </Weapon>
     </ItemComponent>
@@ -1552,7 +1552,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_piercing_arrow_h1" name="{=rdKSIamN}Piercing Arrows +1" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" mesh="arrow_bl_a" holster_mesh="arrow_bl_a_quiver" holster_mesh_with_weapon="arrow_bl_a_quiver" weight="0.1" flying_mesh="arrow_bl_flying" appearance="1" Type="Arrows" item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts" holster_position_shift="0.0,0.0,0.15">
+  <Item id="crpg_piercing_arrows_h1" name="{=rdKSIamN}Piercing Arrows +1" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" mesh="arrow_bl_a" holster_mesh="arrow_bl_a_quiver" holster_mesh_with_weapon="arrow_bl_a_quiver" weight="0.1" flying_mesh="arrow_bl_flying" appearance="1" Type="Arrows" item_holsters="quiver_back_middle:quiver_bolts_2:quiver_bolts" holster_position_shift="0.0,0.0,0.15">
     <ItemComponent>
       <Weapon weapon_class="Arrow" stack_amount="18" physics_material="missile" thrust_speed="0" speed_rating="0" missile_speed="10" weapon_length="97" thrust_damage="5" thrust_damage_type="Pierce" item_usage="arrow_right" passby_sound_code="event:/mission/combat/missile/passby" rotation="0, -80, 25" sticking_position="0,-0.97,0" sticking_rotation="90,0,0" center_of_mass="0,0,-0.13" modifier_group="arrow">
         <WeaponFlags Consumable="true" AmmoSticksWhenShot="true" AmmoBreaksOnBounceBack="true" />
