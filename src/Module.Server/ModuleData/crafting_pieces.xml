@@ -27474,7 +27474,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tri_shuriken_blade_h0" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.08">
     <BuildData piece_offset="0.0" />
-    <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+    <BladeData stack_amount="11" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="5" />
     </BladeData>
     <Flags>
@@ -27484,34 +27484,34 @@
       <Material id="Iron3" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tri_shuriken_blade_h1" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.08">
-    <BuildData piece_offset="0.0" />
-    <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="5.25" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_tri_shuriken_blade_h2" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.08">
-    <BuildData piece_offset="0.0" />
-    <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="5.25" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_tri_shuriken_blade_h3" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.08">
+  <CraftingPiece id="crpg_tri_shuriken_blade_h1" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.07">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="10" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="5.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_blade_h2" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.05">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="6.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tri_shuriken_blade_h3" name="Trishaped Shuriken Blade" tier="2" piece_type="Blade" mesh="tri_shuriken" length="20" weight="0.06">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_1" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="6.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
