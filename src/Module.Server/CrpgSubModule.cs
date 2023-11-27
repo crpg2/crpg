@@ -139,7 +139,7 @@ internal class CrpgSubModule : MBSubModuleBase
         }
 
         string currentConfigFilePath = TaleWorlds.MountAndBlade.Module.CurrentModule.StartupInfo.CustomGameServerConfigFile;
-        string mapconfigfilepath = Path.Combine(Directory.GetCurrentDirectory(), ModuleHelper.GetModuleFullPath("cRPG"), currentConfigFilePath.Replace(".txt", string.Empty) + "_maps.txt");
+        string mapconfigfilepath = Path.Combine(Directory.GetCurrentDirectory(), ModuleHelper.GetModuleFullPath("cRPG_Beta"), currentConfigFilePath.Replace(".txt", string.Empty) + "_maps.txt");
 
         if (File.Exists(mapconfigfilepath))
         {
