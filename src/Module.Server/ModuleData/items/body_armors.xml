@@ -528,27 +528,27 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aserai_full_scale_armor_on_chain_v3_h0" name="{=U7WGaQ45}Mastercrafted Southern Scale over Chain Hauberk" mesh="aserai_full_scale_armor_on_chain" culture="Culture.aserai" weight="12.07888" appearance="7" Type="BodyArmor" lod_atlas_index="3">
+  <Item id="crpg_aserai_full_scale_armor_on_chain_v4_h0" name="{=U7WGaQ45}Mastercrafted Southern Scale over Chain Hauberk" mesh="aserai_full_scale_armor_on_chain" culture="Culture.aserai" weight="17.59478" appearance="7" Type="BodyArmor" lod_atlas_index="3">
     <ItemComponent>
-      <Armor body_armor="42" leg_armor="13" arm_armor="13" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="20" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_aserai_full_scale_armor_on_chain_v3_h1" name="{=U7WGaQ45}Mastercrafted Southern Scale over Chain Hauberk +1" mesh="aserai_full_scale_armor_on_chain" culture="Culture.aserai" weight="12.07888" appearance="7" Type="BodyArmor" lod_atlas_index="3">
+  <Item id="crpg_aserai_full_scale_armor_on_chain_v4_h1" name="{=U7WGaQ45}Mastercrafted Southern Scale over Chain Hauberk +1" mesh="aserai_full_scale_armor_on_chain" culture="Culture.aserai" weight="17.59478" appearance="7" Type="BodyArmor" lod_atlas_index="3">
     <ItemComponent>
-      <Armor body_armor="44" leg_armor="14" arm_armor="14" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="54" leg_armor="21" arm_armor="19" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_aserai_full_scale_armor_on_chain_v3_h2" name="{=U7WGaQ45}Mastercrafted Southern Scale over Chain Hauberk +2" mesh="aserai_full_scale_armor_on_chain" culture="Culture.aserai" weight="12.07888" appearance="7" Type="BodyArmor" lod_atlas_index="3">
+  <Item id="crpg_aserai_full_scale_armor_on_chain_v4_h2" name="{=U7WGaQ45}Mastercrafted Southern Scale over Chain Hauberk +2" mesh="aserai_full_scale_armor_on_chain" culture="Culture.aserai" weight="17.59478" appearance="7" Type="BodyArmor" lod_atlas_index="3">
     <ItemComponent>
-      <Armor body_armor="46" leg_armor="15" arm_armor="15" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="56" leg_armor="22" arm_armor="20" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_aserai_full_scale_armor_on_chain_v3_h3" name="{=U7WGaQ45}Mastercrafted Southern Scale over Chain Hauberk +3" mesh="aserai_full_scale_armor_on_chain" culture="Culture.aserai" weight="12.07888" appearance="7" Type="BodyArmor" lod_atlas_index="3">
+  <Item id="crpg_aserai_full_scale_armor_on_chain_v4_h3" name="{=U7WGaQ45}Mastercrafted Southern Scale over Chain Hauberk +3" mesh="aserai_full_scale_armor_on_chain" culture="Culture.aserai" weight="17.59478" appearance="7" Type="BodyArmor" lod_atlas_index="3">
     <ItemComponent>
-      <Armor body_armor="48" leg_armor="16" arm_armor="16" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="58" leg_armor="23" arm_armor="21" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -600,27 +600,27 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_aserai_scale_armor_on_chain_v3_h0" name="{=2VZ10uRa}Mastercrafted Southern Scale over Chain Mail" mesh="aserai_scale_armor_on_chain" culture="Culture.aserai" weight="11.14612" appearance="6" Type="BodyArmor" lod_atlas_index="3">
+  <Item id="crpg_aserai_scale_armor_on_chain_v4_h0" name="{=2VZ10uRa}Mastercrafted Southern Scale over Chain Mail" mesh="aserai_scale_armor_on_chain" culture="Culture.aserai" weight="16.14194" appearance="6" Type="BodyArmor" lod_atlas_index="3">
     <ItemComponent>
-      <Armor body_armor="42" leg_armor="8" arm_armor="13" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="52" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_aserai_scale_armor_on_chain_v3_h1" name="{=2VZ10uRa}Mastercrafted Southern Scale over Chain Mail +1" mesh="aserai_scale_armor_on_chain" culture="Culture.aserai" weight="11.14612" appearance="6" Type="BodyArmor" lod_atlas_index="3">
+  <Item id="crpg_aserai_scale_armor_on_chain_v4_h1" name="{=2VZ10uRa}Mastercrafted Southern Scale over Chain Mail +1" mesh="aserai_scale_armor_on_chain" culture="Culture.aserai" weight="16.14194" appearance="6" Type="BodyArmor" lod_atlas_index="3">
     <ItemComponent>
-      <Armor body_armor="44" leg_armor="9" arm_armor="14" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="54" leg_armor="14" arm_armor="19" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_aserai_scale_armor_on_chain_v3_h2" name="{=2VZ10uRa}Mastercrafted Southern Scale over Chain Mail +2" mesh="aserai_scale_armor_on_chain" culture="Culture.aserai" weight="11.14612" appearance="6" Type="BodyArmor" lod_atlas_index="3">
+  <Item id="crpg_aserai_scale_armor_on_chain_v4_h2" name="{=2VZ10uRa}Mastercrafted Southern Scale over Chain Mail +2" mesh="aserai_scale_armor_on_chain" culture="Culture.aserai" weight="16.14194" appearance="6" Type="BodyArmor" lod_atlas_index="3">
     <ItemComponent>
-      <Armor body_armor="46" leg_armor="10" arm_armor="15" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="56" leg_armor="15" arm_armor="20" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_aserai_scale_armor_on_chain_v3_h3" name="{=2VZ10uRa}Mastercrafted Southern Scale over Chain Mail +3" mesh="aserai_scale_armor_on_chain" culture="Culture.aserai" weight="11.14612" appearance="6" Type="BodyArmor" lod_atlas_index="3">
+  <Item id="crpg_aserai_scale_armor_on_chain_v4_h3" name="{=2VZ10uRa}Mastercrafted Southern Scale over Chain Mail +3" mesh="aserai_scale_armor_on_chain" culture="Culture.aserai" weight="16.14194" appearance="6" Type="BodyArmor" lod_atlas_index="3">
     <ItemComponent>
-      <Armor body_armor="48" leg_armor="11" arm_armor="16" covers_body="true" modifier_group="chain" material_type="Chainmail" />
+      <Armor body_armor="58" leg_armor="16" arm_armor="21" covers_body="true" modifier_group="chain" material_type="Chainmail" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
