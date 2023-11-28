@@ -462,6 +462,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                         bipedalCombatSpeedMinMultiplier,
                         MathF.Clamp((adjustedWeaponLength - 80) / 120f, 0, 1f)),
                         1f);
+                    InformationManager.DisplayMessage(new InformationMessage($"{agent.Name} has {props.CombatMaxSpeedMultiplier} CSM "));
                 }
 
                 // does this govern couching?

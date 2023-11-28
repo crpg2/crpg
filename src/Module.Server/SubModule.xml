@@ -2,7 +2,7 @@
 <Module>
   <Name value="cRPG_Beta"/>
   <Id value="cRPG_Beta"/>
-  <Version value="v1.2.12.925"/>
+  <Version value="v1.2.12.960"/>
   <ModuleCategory value="Multiplayer"/>
   <DependedModules>
     <DependedModule Id="Native" DependentVersion="v1.2.12" Optional="false"/>
