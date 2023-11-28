@@ -5696,7 +5696,7 @@
       <Piece id="crpg_decorated_long_warsword_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_thamaskene_short_warsword_h0" name="{=lXwaLAYP}Thamaskene Short Warsword" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_thamaskene_short_warsword_v2_h0" name="{=Diggles}Norse Short Warsword" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_thamaskene_short_warsword_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_thamaskene_short_warsword_guard_h0" Type="Guard" scale_factor="100" />
@@ -5704,7 +5704,7 @@
       <Piece id="crpg_thamaskene_short_warsword_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_thamaskene_short_warsword_h1" name="{=lXwaLAYP}Thamaskene Short Warsword +1" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_thamaskene_short_warsword_v2_h1" name="{=Diggles}Norse Short Warsword +1" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_thamaskene_short_warsword_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_thamaskene_short_warsword_guard_h1" Type="Guard" scale_factor="100" />
@@ -5712,7 +5712,7 @@
       <Piece id="crpg_thamaskene_short_warsword_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_thamaskene_short_warsword_h2" name="{=lXwaLAYP}Thamaskene Short Warsword +2" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_thamaskene_short_warsword_v2_h2" name="{=Diggles}Norse Short Warsword +2" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_thamaskene_short_warsword_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_thamaskene_short_warsword_guard_h2" Type="Guard" scale_factor="100" />
@@ -5720,7 +5720,7 @@
       <Piece id="crpg_thamaskene_short_warsword_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_thamaskene_short_warsword_h3" name="{=lXwaLAYP}Thamaskene Short Warsword +3" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_thamaskene_short_warsword_v2_h3" name="{=Diggles}Norse Short Warsword +3" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_thamaskene_short_warsword_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_thamaskene_short_warsword_guard_h3" Type="Guard" scale_factor="100" />
@@ -5984,33 +5984,33 @@
       <Piece id="crpg_decorated_kaskara_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_h0" name="{=HpdJJO9g}Spatha Blade with Ring Pommel" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v2_h0" name="{=Diggles}Prefect's Spatha" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h0" Type="Blade" scale_factor="91" />
+      <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h0" Type="Blade" scale_factor="84" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_guard_h0" Type="Guard" scale_factor="90" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_handle_h0" Type="Handle" scale_factor="90" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_pommel_h0" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_h1" name="{=HpdJJO9g}Spatha Blade with Ring Pommel +1" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v2_h1" name="{=Diggles}Prefect's Spatha +1" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h1" Type="Blade" scale_factor="91" />
+      <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h1" Type="Blade" scale_factor="84" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_guard_h1" Type="Guard" scale_factor="90" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_handle_h1" Type="Handle" scale_factor="90" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_pommel_h1" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_h2" name="{=HpdJJO9g}Spatha Blade with Ring Pommel +2" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v2_h2" name="{=Diggles}Prefect's Spatha +2" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h2" Type="Blade" scale_factor="91" />
+      <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h2" Type="Blade" scale_factor="84" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_guard_h2" Type="Guard" scale_factor="90" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_handle_h2" Type="Handle" scale_factor="90" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_pommel_h2" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_h3" name="{=HpdJJO9g}Spatha Blade with Ring Pommel +3" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v2_h3" name="{=Diggles}Prefect's Spatha +3" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h3" Type="Blade" scale_factor="91" />
+      <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h3" Type="Blade" scale_factor="84" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_guard_h3" Type="Guard" scale_factor="90" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_handle_h3" Type="Handle" scale_factor="90" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_pommel_h3" Type="Pommel" scale_factor="90" />
@@ -7328,65 +7328,65 @@
       <Piece id="crpg_slightly_ridged_flyssa_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_h0" name="{=M2wvaObX}Spatha" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_v2_h0" name="{=Diggles}Cavalry Spatha" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spatha_blade_h0" Type="Blade" scale_factor="107" />
       <Piece id="crpg_spatha_guard_h0" Type="Guard" scale_factor="100" />
       <Piece id="crpg_spatha_handle_h0" Type="Handle" scale_factor="100" />
       <Piece id="crpg_spatha_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_h1" name="{=M2wvaObX}Spatha +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_v2_h1" name="{=Diggles}Cavalry Spatha +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spatha_blade_h1" Type="Blade" scale_factor="107" />
       <Piece id="crpg_spatha_guard_h1" Type="Guard" scale_factor="100" />
       <Piece id="crpg_spatha_handle_h1" Type="Handle" scale_factor="100" />
       <Piece id="crpg_spatha_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_h2" name="{=M2wvaObX}Spatha +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_v2_h2" name="{=Diggles}Cavalry Spatha +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spatha_blade_h2" Type="Blade" scale_factor="107" />
       <Piece id="crpg_spatha_guard_h2" Type="Guard" scale_factor="100" />
       <Piece id="crpg_spatha_handle_h2" Type="Handle" scale_factor="100" />
       <Piece id="crpg_spatha_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_h3" name="{=M2wvaObX}Spatha +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_v2_h3" name="{=Diggles}Cavalry Spatha +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spatha_blade_h3" Type="Blade" scale_factor="107" />
       <Piece id="crpg_spatha_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_spatha_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_spatha_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_with_narrow_fuller_h0" name="{=4OaVIYuD}Spatha With Narrow Fuller" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_with_narrow_fuller_v2_h0" name="{=Diggles}Imperial Spatha" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_with_narrow_fuller_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spatha_with_narrow_fuller_blade_h0" Type="Blade" scale_factor="87" />
       <Piece id="crpg_spatha_with_narrow_fuller_guard_h0" Type="Guard" scale_factor="100" />
       <Piece id="crpg_spatha_with_narrow_fuller_handle_h0" Type="Handle" scale_factor="100" />
       <Piece id="crpg_spatha_with_narrow_fuller_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_with_narrow_fuller_h1" name="{=4OaVIYuD}Spatha With Narrow Fuller +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_with_narrow_fuller_v2_h1" name="{=Diggles}Imperial Spatha +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_with_narrow_fuller_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spatha_with_narrow_fuller_blade_h1" Type="Blade" scale_factor="87" />
       <Piece id="crpg_spatha_with_narrow_fuller_guard_h1" Type="Guard" scale_factor="100" />
       <Piece id="crpg_spatha_with_narrow_fuller_handle_h1" Type="Handle" scale_factor="100" />
       <Piece id="crpg_spatha_with_narrow_fuller_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_with_narrow_fuller_h2" name="{=4OaVIYuD}Spatha With Narrow Fuller +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_with_narrow_fuller_v2_h2" name="{=Diggles}Imperial Spatha +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_with_narrow_fuller_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spatha_with_narrow_fuller_blade_h2" Type="Blade" scale_factor="87" />
       <Piece id="crpg_spatha_with_narrow_fuller_guard_h2" Type="Guard" scale_factor="100" />
       <Piece id="crpg_spatha_with_narrow_fuller_handle_h2" Type="Handle" scale_factor="100" />
       <Piece id="crpg_spatha_with_narrow_fuller_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_with_narrow_fuller_h3" name="{=4OaVIYuD}Spatha With Narrow Fuller +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_with_narrow_fuller_v2_h3" name="{=Diggles}Imperial Spatha +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_spatha_with_narrow_fuller_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spatha_with_narrow_fuller_blade_h3" Type="Blade" scale_factor="87" />
       <Piece id="crpg_spatha_with_narrow_fuller_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_spatha_with_narrow_fuller_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_spatha_with_narrow_fuller_pommel_h3" Type="Pommel" scale_factor="100" />
@@ -7424,33 +7424,33 @@
       <Piece id="crpg_iron_cavalry_sword_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_spatha_h0" name="{=1CamO1P3}Iron Spatha" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_iron_spatha_v2_h0" name="{=Diggles}Republican Spatha" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_iron_spatha_blade_h0" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_iron_spatha_blade_h0" Type="Blade" scale_factor="82" />
       <Piece id="crpg_iron_spatha_guard_h0" Type="Guard" scale_factor="100" />
       <Piece id="crpg_iron_spatha_handle_h0" Type="Handle" scale_factor="100" />
       <Piece id="crpg_iron_spatha_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_spatha_h1" name="{=1CamO1P3}Iron Spatha +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_iron_spatha_v2_h1" name="{=Diggles}Republican Spatha +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_iron_spatha_blade_h1" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_iron_spatha_blade_h1" Type="Blade" scale_factor="82" />
       <Piece id="crpg_iron_spatha_guard_h1" Type="Guard" scale_factor="100" />
       <Piece id="crpg_iron_spatha_handle_h1" Type="Handle" scale_factor="100" />
       <Piece id="crpg_iron_spatha_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_spatha_h2" name="{=1CamO1P3}Iron Spatha +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_iron_spatha_v2_h2" name="{=Diggles}Republican Spatha +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_iron_spatha_blade_h2" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_iron_spatha_blade_h2" Type="Blade" scale_factor="82" />
       <Piece id="crpg_iron_spatha_guard_h2" Type="Guard" scale_factor="100" />
       <Piece id="crpg_iron_spatha_handle_h2" Type="Handle" scale_factor="100" />
       <Piece id="crpg_iron_spatha_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_spatha_h3" name="{=1CamO1P3}Iron Spatha +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_iron_spatha_v2_h3" name="{=Diggles}Republican Spatha +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_iron_spatha_blade_h3" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_iron_spatha_blade_h3" Type="Blade" scale_factor="82" />
       <Piece id="crpg_iron_spatha_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_iron_spatha_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_iron_spatha_pommel_h3" Type="Pommel" scale_factor="100" />

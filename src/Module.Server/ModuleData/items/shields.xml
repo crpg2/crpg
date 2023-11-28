@@ -224,33 +224,33 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_emirs_oval_shield_v2_h0" name="{=G7AEWZ6c}Decorated Oval Shield" body_name="bo_cap_shield_aserai_infantary_c" shield_body_name="bo_shield_aserai_infantary_c" recalculate_body="false" mesh="shield_aserai_infantary_c" using_tableau="true" weight="2.201141" appearance="0.7" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
+  <Item id="crpg_emirs_oval_shield_v3_h0" name="{=Diggles}Decorated Oval Shield" body_name="bo_cap_shield_aserai_infantary_c" shield_body_name="bo_shield_aserai_infantary_c" recalculate_body="false" mesh="shield_aserai_infantary_c" using_tableau="true" weight="3.705625" appearance="0.7" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="2" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="297" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="8" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="500" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_emirs_oval_shield_v2_h1" name="{=G7AEWZ6c}Decorated Oval Shield +1" body_name="bo_cap_shield_aserai_infantary_c" shield_body_name="bo_shield_aserai_infantary_c" recalculate_body="false" mesh="shield_aserai_infantary_c" using_tableau="true" weight="2.201141" appearance="0.7" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
+  <Item id="crpg_emirs_oval_shield_v3_h1" name="{=Diggles}Decorated Oval Shield +1" body_name="bo_cap_shield_aserai_infantary_c" shield_body_name="bo_shield_aserai_infantary_c" recalculate_body="false" mesh="shield_aserai_infantary_c" using_tableau="true" weight="3.705625" appearance="0.7" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="3" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="321" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="540" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_emirs_oval_shield_v2_h2" name="{=G7AEWZ6c}Decorated Oval Shield +2" body_name="bo_cap_shield_aserai_infantary_c" shield_body_name="bo_shield_aserai_infantary_c" recalculate_body="false" mesh="shield_aserai_infantary_c" using_tableau="true" weight="2.201141" appearance="0.7" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
+  <Item id="crpg_emirs_oval_shield_v3_h2" name="{=Diggles}Decorated Oval Shield +2" body_name="bo_cap_shield_aserai_infantary_c" shield_body_name="bo_shield_aserai_infantary_c" recalculate_body="false" mesh="shield_aserai_infantary_c" using_tableau="true" weight="3.705625" appearance="0.7" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="3" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="345" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="580" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_emirs_oval_shield_v2_h3" name="{=G7AEWZ6c}Decorated Oval Shield +3" body_name="bo_cap_shield_aserai_infantary_c" shield_body_name="bo_shield_aserai_infantary_c" recalculate_body="false" mesh="shield_aserai_infantary_c" using_tableau="true" weight="2.201141" appearance="0.7" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
+  <Item id="crpg_emirs_oval_shield_v3_h3" name="{=Diggles}Decorated Oval Shield +3" body_name="bo_cap_shield_aserai_infantary_c" shield_body_name="bo_shield_aserai_infantary_c" recalculate_body="false" mesh="shield_aserai_infantary_c" using_tableau="true" weight="3.705625" appearance="0.7" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="3" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="369" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="9" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="620" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -1408,33 +1408,33 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_southern_oval_shield_v2_h0" name="{=8nNLS96w}Reinforced Oval Shield" body_name="bo_cap_shield_aserai_infantary_b" shield_body_name="bo_shield_aserai_infantary_b" recalculate_body="false" mesh="shield_aserai_infantary_b" using_tableau="true" weight="2.030683" appearance="0.8" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
+  <Item id="crpg_southern_oval_shield_v3_h0" name="{=Diggles}Reinforced Oval Shield" body_name="bo_cap_shield_aserai_infantary_b" shield_body_name="bo_shield_aserai_infantary_b" recalculate_body="false" mesh="shield_aserai_infantary_b" using_tableau="true" weight="2.534647" appearance="0.8" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="1" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="274" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="3" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="342" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_southern_oval_shield_v2_h1" name="{=8nNLS96w}Reinforced Oval Shield +1" body_name="bo_cap_shield_aserai_infantary_b" shield_body_name="bo_shield_aserai_infantary_b" recalculate_body="false" mesh="shield_aserai_infantary_b" using_tableau="true" weight="2.030683" appearance="0.8" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
+  <Item id="crpg_southern_oval_shield_v3_h1" name="{=Diggles}Reinforced Oval Shield +1" body_name="bo_cap_shield_aserai_infantary_b" shield_body_name="bo_shield_aserai_infantary_b" recalculate_body="false" mesh="shield_aserai_infantary_b" using_tableau="true" weight="2.534647" appearance="0.8" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="2" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="296" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="4" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="370" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_southern_oval_shield_v2_h2" name="{=8nNLS96w}Reinforced Oval Shield +2" body_name="bo_cap_shield_aserai_infantary_b" shield_body_name="bo_shield_aserai_infantary_b" recalculate_body="false" mesh="shield_aserai_infantary_b" using_tableau="true" weight="2.030683" appearance="0.8" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
+  <Item id="crpg_southern_oval_shield_v3_h2" name="{=Diggles}Reinforced Oval Shield +2" body_name="bo_cap_shield_aserai_infantary_b" shield_body_name="bo_shield_aserai_infantary_b" recalculate_body="false" mesh="shield_aserai_infantary_b" using_tableau="true" weight="2.534647" appearance="0.8" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="2" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="318" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="4" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="397" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_southern_oval_shield_v2_h3" name="{=8nNLS96w}Reinforced Oval Shield +3" body_name="bo_cap_shield_aserai_infantary_b" shield_body_name="bo_shield_aserai_infantary_b" recalculate_body="false" mesh="shield_aserai_infantary_b" using_tableau="true" weight="2.030683" appearance="0.8" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
+  <Item id="crpg_southern_oval_shield_v3_h3" name="{=Diggles}Reinforced Oval Shield +3" body_name="bo_cap_shield_aserai_infantary_b" shield_body_name="bo_shield_aserai_infantary_b" recalculate_body="false" mesh="shield_aserai_infantary_b" using_tableau="true" weight="2.534647" appearance="0.8" Type="Shield" item_holsters="shield_oval:shield_4:shield_3:shield_2" has_lower_holster_priority="true" holster_position_shift="-0.04,-0.0,0" culture="Culture.aserai">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="2" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="340" modifier_group="shield">
+      <Weapon weapon_class="LargeShield" body_armor="4" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="77" center_of_mass="-0.035, 0.1, 0.1" hit_points="425" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
