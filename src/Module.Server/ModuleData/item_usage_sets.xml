@@ -636,4 +636,629 @@
                   is_left_stance="True" />
     </kick_usages>
   </item_usage_set>
+  <item_usage_set
+		id="polearm"
+		switch_to_alternate_action="act_switch_alternate_javelin"
+		switch_to_alternate_action_left_stance="act_switch_alternate_javelin"
+		equip_sound="event:/mission/combat/equip/spear_equip"
+		unequip_sound="event:/mission/combat/equip/spear_unequip">
+		<flags>
+			<flag
+				name="requires_no_shield" />
+		</flags>
+		<idles>
+			<idle
+				action="act_idle_spear_1"
+				is_left_stance="False"
+				require_free_left_hand="False" />
+			<idle
+				action="act_idle_spear_1_left_stance"
+				is_left_stance="True"
+				require_free_left_hand="False" />
+		</idles>
+		<movement_sets>
+			<movement_set
+				id="parry_polearm_with_shield"
+				require_left_hand_usage_root_set="shield" />
+			<movement_set
+				id="polearm_with_hand_shield"
+				require_left_hand_usage_root_set="hand_shield" />
+			<movement_set
+				id="parry_polearm" />
+		</movement_sets>
+		<rider_idles>
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_idle_spear_1"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_idle_1" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_idle_spear_2"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_idle_2" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_idle_spear_3"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_idle_3" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_idle_spear_4"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_idle_4" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_stand_spear_1"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_stand_1" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_stand_spear_2"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_stand_2" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_stand_spear_3"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_stand_3" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_stand_spear_4"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_stand_4" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_idle_spear_1"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_idle_1" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_idle_spear_2"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_idle_2" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_idle_spear_3"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_idle_3" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_idle_spear_4"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_idle_4" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_idle_spear_5"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_idle_5" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_spear_1"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_stand_1" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_spear_2"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_stand_2" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_spear_3"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_stand_3" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_spear_4"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_stand_4" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_spear_5"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_stand_5" />
+			<rider_idle
+				mount_id="horse"
+				pace="0"
+				action="act_rider_stand_polearm_pace_0"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_stand_polearm_pace_1"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="horse"
+				pace="2"
+				action="act_rider_stand_polearm_pace_2"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="horse"
+				pace="3"
+				action="act_rider_stand_polearm_pace_3"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="horse"
+				pace="4"
+				action="act_rider_stand_polearm_pace_4"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="horse"
+				pace="5"
+				action="act_rider_stand_polearm_pace_5"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="0"
+				action="act_camel_rider_stand_polearm_pace_0"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_polearm_pace_1"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="2"
+				action="act_camel_rider_stand_polearm_pace_2"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="3"
+				action="act_camel_rider_stand_polearm_pace_3"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="4"
+				action="act_camel_rider_stand_polearm_pace_4"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="5"
+				action="act_camel_rider_stand_polearm_pace_5"
+				require_free_left_hand="True" />
+		</rider_idles>
+		<usages>
+		</usages>
+		<guards>
+			<guard
+				style="up"
+				action="act_guard_up_staff"
+				require_free_left_hand="True"
+				hand_position="0,0.1,-0.3"
+				hand_rotation="-36,-36"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="up"
+				action="act_guard_up_staff_left_stance"
+				require_free_left_hand="True"
+				is_left_stance="True"
+				hand_position="0,0.1,-0.3"
+				hand_rotation="-36,-36"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="up"
+				action="act_guard_staff_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="up"
+				action="act_guard_staff_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="up"
+				action="act_guard_staff_hand_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="up"
+				action="act_guard_staff_hand_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="up"
+				action="act_guard_staff_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="banner"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="up"
+				action="act_guard_staff_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="banner"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="down"
+				action="act_guard_bottom_staff"
+				require_free_left_hand="True"
+				hand_position="0,0.1,-0.4"
+				hand_rotation="-54,-72"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="down"
+				action="act_guard_bottom_staff_left_stance"
+				require_free_left_hand="True"
+				is_left_stance="True"
+				hand_position="0,0.1,-0.4"
+				hand_rotation="-54,-72"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="down"
+				action="act_guard_staff_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="down"
+				action="act_guard_staff_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="down"
+				action="act_guard_staff_hand_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="down"
+				action="act_guard_staff_hand_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="down"
+				action="act_guard_staff_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="banner"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="down"
+				action="act_guard_staff_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="banner"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="left"
+				action="act_guard_left_staff"
+				require_free_left_hand="True"
+				hand_position="-0.2,0.1,-0.2"
+				hand_rotation="-90,0"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="left"
+				action="act_guard_left_staff_left_stance"
+				require_free_left_hand="True"
+				is_left_stance="True"
+				hand_position="-0.2,0.1,-0.2"
+				hand_rotation="-90,0"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="left"
+				action="act_guard_staff_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="left"
+				action="act_guard_staff_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="left"
+				action="act_guard_staff_hand_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="left"
+				action="act_guard_staff_hand_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="left"
+				action="act_guard_staff_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="banner"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="left"
+				action="act_guard_staff_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="banner"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="right"
+				action="act_guard_right_staff"
+				require_free_left_hand="True"
+				hand_position="0.2,0.1,-0.2"
+				hand_rotation="90,0"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="right"
+				action="act_guard_right_staff_left_stance"
+				require_free_left_hand="True"
+				is_left_stance="True"
+				hand_position="0.2,0.1,-0.2"
+				hand_rotation="90,0"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="right"
+				action="act_guard_staff_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="right"
+				action="act_guard_staff_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="right"
+				action="act_guard_staff_hand_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="right"
+				action="act_guard_staff_hand_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="right"
+				action="act_guard_staff_shield"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="banner"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="right"
+				action="act_guard_staff_shield_left_stance"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="banner"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-54,-108"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="none"
+				require_free_left_hand="True"
+				hand_position="0,0.2,-0.3"
+				hand_rotation="-72,0"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="none"
+				require_free_left_hand="True"
+				is_left_stance="True"
+				hand_position="0,0.2,-0.3"
+				hand_rotation="-72,0"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="none"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield"
+				hand_position="0,0,-0.5"
+				hand_rotation="-36,-126"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="none"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-36,-126"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="none"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield"
+				hand_position="0,0,-0.5"
+				hand_rotation="-36,-126"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="none"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-36,-126"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="none"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="banner"
+				hand_position="0,0,-0.5"
+				hand_rotation="-36,-126"
+				arm_rotation="0,0"
+				arm_length="0" />
+			<guard
+				style="none"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="banner"
+				is_left_stance="True"
+				hand_position="0,0,-0.5"
+				hand_rotation="-36,-126"
+				arm_rotation="0,0"
+				arm_length="0" />
+		</guards>
+		<kick_usages>
+			<kick_usage
+				release_action="act_staff_bash"
+				hit_action="act_hit_staff_bash"
+				require_free_left_hand="True"
+				is_left_stance="False" />
+			<kick_usage
+				release_action="act_staff_bash_left_stance"
+				hit_action="act_hit_staff_bash_left_stance"
+				require_free_left_hand="True"
+				is_left_stance="True" />
+		</kick_usages>
+	</item_usage_set>
+       	<item_usage_set
+		id="onehanded_polearm"
+		switch_to_alternate_action="act_switch_alternate_javelin"
+		switch_to_alternate_action_left_stance="act_switch_alternate_javelin"
+		equip_sound="event:/mission/combat/equip/spear_equip"
+		unequip_sound="event:/mission/combat/equip/spear_unequip">
+		<idles>
+			<idle
+				action="act_idle_1h_with_shield_1"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield" />
+			<idle
+				action="act_idle_1h_with_shield_1"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield" />
+			<idle
+				action="act_idle_1h_with_shield_1_left_stance"
+				is_left_stance="True"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="shield" />
+			<idle
+				action="act_idle_1h_with_shield_1_left_stance"
+				is_left_stance="True"
+				require_free_left_hand="False"
+				require_left_hand_usage_root_set="hand_shield" />
+			<idle
+				action="act_idle_1h_without_shield_1"
+				require_free_left_hand="False" />
+			<idle
+				action="act_idle_1h_without_shield_1_left_stance"
+				is_left_stance="True"
+				require_free_left_hand="False" />
+		</idles>
+		<movement_sets>
+			<movement_set
+				id="onehanded_swing_cantblock_with_shield"
+				require_left_hand_usage_root_set="shield" />
+			<movement_set
+				id="1h_with_hand_shield"
+				require_left_hand_usage_root_set="hand_shield" />
+			<movement_set
+				id="onehanded_swing_cantblock" />
+		</movement_sets>
+		<usages>
+		</usages>
+              </item_usage_set>
 </item_usage_sets>
