@@ -32304,7 +32304,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_bamboospear_pommel_h3" name="{=}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_joustinglance_striped_ry_handle_h0" name="{=}Jousting Lance Handle" tier="4" piece_type="Handle" mesh="joustinglance_handle" length="38.2" weight="0.1" item_holster_pos_shift="0,0,0.05">
+  <CraftingPiece id="crpg_joustinglance_striped_ry_handle_h0" name="{=}Jousting Lance Handle" tier="4" piece_type="Handle" mesh="joustinglance_handle" length="38.2" weight="0.1" item_holster_pos_shift="0,0,-4.25">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="2" />
