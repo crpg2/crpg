@@ -637,7 +637,7 @@
     </kick_usages>
   </item_usage_set>
   <item_usage_set
-		id="polearm"
+		id="polearm_shield"
 		switch_to_alternate_action="act_switch_alternate_javelin"
 		switch_to_alternate_action_left_stance="act_switch_alternate_javelin"
 		equip_sound="event:/mission/combat/equip/spear_equip"
