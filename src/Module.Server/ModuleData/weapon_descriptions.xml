@@ -7775,6 +7775,22 @@
       <WeaponFlag value="WideGrip" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_joustinglance_striped_ry_blade_h0" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_blade_h1" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_blade_h2" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_blade_h3" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_guard_h0" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_guard_h1" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_guard_h2" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_guard_h3" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_handle_h0" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_handle_h1" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_handle_h2" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_handle_h3" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_pommel_h0" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_pommel_h1" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_pommel_h2" />
+      <AvailablePiece id="crpg_joustinglance_striped_ry_pommel_h3" />
       <AvailablePiece id="crpg_bamboospear_blade_h0" />
       <AvailablePiece id="crpg_bamboospear_blade_h1" />
       <AvailablePiece id="crpg_bamboospear_blade_h2" />
