@@ -9692,505 +9692,505 @@
       <Piece id="crpg_woodsman_two_handed_axe_handle_h3" Type="Handle" scale_factor="85" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_round_axe_v1_h0" name="{=Diggles}Steel Round Axe" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_steel_round_axe_v2_h0" name="{=Diggles}Steel Round Axe" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_round_axe_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_steel_round_axe_handle_h0" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_round_axe_v1_h1" name="{=Diggles}Steel Round Axe +1" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_steel_round_axe_v2_h1" name="{=Diggles}Steel Round Axe +1" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_round_axe_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_steel_round_axe_handle_h1" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_round_axe_v1_h2" name="{=Diggles}Steel Round Axe +2" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_steel_round_axe_v2_h2" name="{=Diggles}Steel Round Axe +2" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_round_axe_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_steel_round_axe_handle_h2" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_round_axe_v1_h3" name="{=Diggles}Steel Round Axe +3" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_steel_round_axe_v2_h3" name="{=Diggles}Steel Round Axe +3" crafting_template="crpg_Mace" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_round_axe_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_steel_round_axe_handle_h3" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wood_chopper_axe_v1_h0" name="{=uSBxV2Ob}Wood Chopper Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_wood_chopper_axe_v2_h0" name="{=Diggles}Wood Chopper Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_wood_chopper_axe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wood_chopper_axe_handle_h0" Type="Handle" scale_factor="94" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wood_chopper_axe_v1_h1" name="{=uSBxV2Ob}Wood Chopper Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_wood_chopper_axe_v2_h1" name="{=Diggles}Wood Chopper Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_wood_chopper_axe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wood_chopper_axe_handle_h1" Type="Handle" scale_factor="94" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wood_chopper_axe_v1_h2" name="{=uSBxV2Ob}Wood Chopper Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_wood_chopper_axe_v2_h2" name="{=Diggles}Wood Chopper Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_wood_chopper_axe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wood_chopper_axe_handle_h2" Type="Handle" scale_factor="94" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wood_chopper_axe_v1_h3" name="{=uSBxV2Ob}Wood Chopper Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_wood_chopper_axe_v2_h3" name="{=Diggles}Wood Chopper Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_wood_chopper_axe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wood_chopper_axe_handle_h3" Type="Handle" scale_factor="94" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_shield_reaver_axe_v1_h0" name="{=xWFW8jXw}Shield Reaver Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_shield_reaver_axe_v2_h0" name="{=Diggles}Shield Reaver Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_shield_reaver_axe_blade_h0" Type="Blade" scale_factor="105" />
       <Piece id="crpg_shield_reaver_axe_handle_h0" Type="Handle" scale_factor="117" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_shield_reaver_axe_v1_h1" name="{=xWFW8jXw}Shield Reaver Axe +1" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_shield_reaver_axe_v2_h1" name="{=Diggles}Shield Reaver Axe +1" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_shield_reaver_axe_blade_h1" Type="Blade" scale_factor="105" />
       <Piece id="crpg_shield_reaver_axe_handle_h1" Type="Handle" scale_factor="117" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_shield_reaver_axe_v1_h2" name="{=xWFW8jXw}Shield Reaver Axe +2" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_shield_reaver_axe_v2_h2" name="{=Diggles}Shield Reaver Axe +2" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_shield_reaver_axe_blade_h2" Type="Blade" scale_factor="105" />
       <Piece id="crpg_shield_reaver_axe_handle_h2" Type="Handle" scale_factor="117" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_shield_reaver_axe_v1_h3" name="{=xWFW8jXw}Shield Reaver Axe +3" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_shield_reaver_axe_v2_h3" name="{=Diggles}Shield Reaver Axe +3" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_shield_reaver_axe_blade_h3" Type="Blade" scale_factor="105" />
       <Piece id="crpg_shield_reaver_axe_handle_h3" Type="Handle" scale_factor="117" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_battle_axe_v1_h0" name="{=FAzGPJn6}Desert Battle Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_battle_axe_v2_h0" name="{=Diggles}Desert Battle Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_battle_axe_blade_h0" Type="Blade" scale_factor="105" />
       <Piece id="crpg_desert_battle_axe_handle_h0" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_battle_axe_v1_h1" name="{=FAzGPJn6}Desert Battle Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_battle_axe_v2_h1" name="{=Diggles}Desert Battle Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_battle_axe_blade_h1" Type="Blade" scale_factor="105" />
       <Piece id="crpg_desert_battle_axe_handle_h1" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_battle_axe_v1_h2" name="{=FAzGPJn6}Desert Battle Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_battle_axe_v2_h2" name="{=Diggles}Desert Battle Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_battle_axe_blade_h2" Type="Blade" scale_factor="105" />
       <Piece id="crpg_desert_battle_axe_handle_h2" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_battle_axe_v1_h3" name="{=FAzGPJn6}Desert Battle Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_battle_axe_v2_h3" name="{=Diggles}Desert Battle Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_battle_axe_blade_h3" Type="Blade" scale_factor="105" />
       <Piece id="crpg_desert_battle_axe_handle_h3" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_bearded_axe_v1_h0" name="{=pjvwuVuc}Saxon Bearded Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_bearded_axe_v2_h0" name="{=Diggles}Saxon Bearded Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_bearded_axe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_bearded_axe_handle_h0" Type="Handle" scale_factor="108" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_bearded_axe_v1_h1" name="{=pjvwuVuc}Saxon Bearded Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_bearded_axe_v2_h1" name="{=Diggles}Saxon Bearded Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_bearded_axe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_bearded_axe_handle_h1" Type="Handle" scale_factor="108" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_bearded_axe_v1_h2" name="{=pjvwuVuc}Saxon Bearded Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_bearded_axe_v2_h2" name="{=Diggles}Saxon Bearded Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_bearded_axe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_bearded_axe_handle_h2" Type="Handle" scale_factor="108" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_bearded_axe_v1_h3" name="{=pjvwuVuc}Saxon Bearded Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_bearded_axe_v2_h3" name="{=Diggles}Saxon Bearded Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_bearded_axe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_bearded_axe_handle_h3" Type="Handle" scale_factor="108" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_pillager_axe_v1_h0" name="{=Qpl5aCb0}Steel Pillager Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_steel_pillager_axe_v2_h0" name="{=Diggles}Steel Pillager Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_pillager_axe_blade_h0" Type="Blade" scale_factor="105" />
       <Piece id="crpg_steel_pillager_axe_handle_h0" Type="Handle" scale_factor="124" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_pillager_axe_v1_h1" name="{=Qpl5aCb0}Steel Pillager Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_steel_pillager_axe_v2_h1" name="{=Diggles}Steel Pillager Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_pillager_axe_blade_h1" Type="Blade" scale_factor="105" />
       <Piece id="crpg_steel_pillager_axe_handle_h1" Type="Handle" scale_factor="124" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_pillager_axe_v1_h2" name="{=Qpl5aCb0}Steel Pillager Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_steel_pillager_axe_v2_h2" name="{=Diggles}Steel Pillager Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_pillager_axe_blade_h2" Type="Blade" scale_factor="105" />
       <Piece id="crpg_steel_pillager_axe_handle_h2" Type="Handle" scale_factor="124" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_pillager_axe_v1_h3" name="{=Qpl5aCb0}Steel Pillager Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_steel_pillager_axe_v2_h3" name="{=Diggles}Steel Pillager Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_pillager_axe_blade_h3" Type="Blade" scale_factor="105" />
       <Piece id="crpg_steel_pillager_axe_handle_h3" Type="Handle" scale_factor="124" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_spiked_battle_axe_v2_h0" name="{=Diggles}Knightly Spiked Battle Axe" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_knightly_spiked_battle_axe_v3_h0" name="{=Diggles}Knightly Spiked Battle Axe" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_knightly_spiked_battle_axe_blade_h0" Type="Blade" scale_factor="125" />
       <Piece id="crpg_knightly_spiked_battle_axe_handle_h0" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_spiked_battle_axe_v2_h1" name="{=Diggles}Knightly Spiked Battle Axe +1" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_knightly_spiked_battle_axe_v3_h1" name="{=Diggles}Knightly Spiked Battle Axe +1" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_knightly_spiked_battle_axe_blade_h1" Type="Blade" scale_factor="125" />
       <Piece id="crpg_knightly_spiked_battle_axe_handle_h1" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_spiked_battle_axe_v2_h2" name="{=Diggles}Knightly Spiked Battle Axe +2" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_knightly_spiked_battle_axe_v3_h2" name="{=Diggles}Knightly Spiked Battle Axe +2" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_knightly_spiked_battle_axe_blade_h2" Type="Blade" scale_factor="125" />
       <Piece id="crpg_knightly_spiked_battle_axe_handle_h2" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_spiked_battle_axe_v2_h3" name="{=Diggles}Knightly Spiked Battle Axe +3" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_knightly_spiked_battle_axe_v3_h3" name="{=Diggles}Knightly Spiked Battle Axe +3" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_knightly_spiked_battle_axe_blade_h3" Type="Blade" scale_factor="125" />
       <Piece id="crpg_knightly_spiked_battle_axe_handle_h3" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_franziska_axe_v1_h0" name="{=KRhIG1cw}Long Franziska Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_long_franziska_axe_v2_h0" name="{=Diggles}Long Franziska Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_long_franziska_axe_blade_h0" Type="Blade" scale_factor="130" />
       <Piece id="crpg_long_franziska_axe_handle_h0" Type="Handle" scale_factor="115" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_franziska_axe_v1_h1" name="{=KRhIG1cw}Long Franziska Axe +1" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_long_franziska_axe_v2_h1" name="{=Diggles}Long Franziska Axe +1" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_long_franziska_axe_blade_h1" Type="Blade" scale_factor="130" />
       <Piece id="crpg_long_franziska_axe_handle_h1" Type="Handle" scale_factor="115" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_franziska_axe_v1_h2" name="{=KRhIG1cw}Long Franziska Axe +2" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_long_franziska_axe_v2_h2" name="{=Diggles}Long Franziska Axe +2" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_long_franziska_axe_blade_h2" Type="Blade" scale_factor="130" />
       <Piece id="crpg_long_franziska_axe_handle_h2" Type="Handle" scale_factor="115" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_franziska_axe_v1_h3" name="{=KRhIG1cw}Long Franziska Axe +3" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_long_franziska_axe_v2_h3" name="{=Diggles}Long Franziska Axe +3" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_long_franziska_axe_blade_h3" Type="Blade" scale_factor="130" />
       <Piece id="crpg_long_franziska_axe_handle_h3" Type="Handle" scale_factor="115" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_tzikourion_axe_v1_h0" name="{=POhLMyat}Long Tzikourion Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_long_tzikourion_axe_v2_h0" name="{=Diggles}Long Tzikourion Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_long_tzikourion_axe_blade_h0" Type="Blade" scale_factor="140" />
       <Piece id="crpg_long_tzikourion_axe_handle_h0" Type="Handle" scale_factor="123" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_tzikourion_axe_v1_h1" name="{=POhLMyat}Long Tzikourion Axe +1" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_long_tzikourion_axe_v2_h1" name="{=Diggles}Long Tzikourion Axe +1" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_long_tzikourion_axe_blade_h1" Type="Blade" scale_factor="140" />
       <Piece id="crpg_long_tzikourion_axe_handle_h1" Type="Handle" scale_factor="123" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_tzikourion_axe_v1_h2" name="{=POhLMyat}Long Tzikourion Axe +2" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_long_tzikourion_axe_v2_h2" name="{=Diggles}Long Tzikourion Axe +2" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_long_tzikourion_axe_blade_h2" Type="Blade" scale_factor="140" />
       <Piece id="crpg_long_tzikourion_axe_handle_h2" Type="Handle" scale_factor="123" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_tzikourion_axe_v1_h3" name="{=POhLMyat}Long Tzikourion Axe +3" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_long_tzikourion_axe_v2_h3" name="{=Diggles}Long Tzikourion Axe +3" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_long_tzikourion_axe_blade_h3" Type="Blade" scale_factor="140" />
       <Piece id="crpg_long_tzikourion_axe_handle_h3" Type="Handle" scale_factor="123" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_hooked_axe_v1_h0" name="{=6q0nmVtg}Saxon Hooked Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_hooked_axe_v2_h0" name="{=Diggles}Saxon Hooked Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_hooked_axe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_hooked_axe_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_hooked_axe_v1_h1" name="{=6q0nmVtg}Saxon Hooked Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_hooked_axe_v2_h1" name="{=Diggles}Saxon Hooked Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_hooked_axe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_hooked_axe_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_hooked_axe_v1_h2" name="{=6q0nmVtg}Saxon Hooked Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_hooked_axe_v2_h2" name="{=Diggles}Saxon Hooked Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_hooked_axe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_hooked_axe_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_hooked_axe_v1_h3" name="{=6q0nmVtg}Saxon Hooked Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_hooked_axe_v2_h3" name="{=Diggles}Saxon Hooked Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.battania" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_hooked_axe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_hooked_axe_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tzikourion_axe_v1_h0" name="{=tsaSBPKu}Tzikourion Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.empire" modifier_group="axe">
+  <CraftedItem id="crpg_tzikourion_axe_v2_h0" name="{=Diggles}Light Tzikourion Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.empire" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_tzikourion_axe_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_tzikourion_axe_handle_h0" Type="Handle" scale_factor="86" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tzikourion_axe_v1_h1" name="{=tsaSBPKu}Tzikourion Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.empire" modifier_group="axe">
+  <CraftedItem id="crpg_tzikourion_axe_v2_h1" name="{=Diggles}Light Tzikourion Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.empire" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_tzikourion_axe_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_tzikourion_axe_handle_h1" Type="Handle" scale_factor="86" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tzikourion_axe_v1_h2" name="{=tsaSBPKu}Tzikourion Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.empire" modifier_group="axe">
+  <CraftedItem id="crpg_tzikourion_axe_v2_h2" name="{=Diggles}Light Tzikourion Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.empire" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_tzikourion_axe_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_tzikourion_axe_handle_h2" Type="Handle" scale_factor="86" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tzikourion_axe_v1_h3" name="{=tsaSBPKu}Tzikourion Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.empire" modifier_group="axe">
+  <CraftedItem id="crpg_tzikourion_axe_v2_h3" name="{=Diggles}Light Tzikourion Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.empire" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_tzikourion_axe_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_tzikourion_axe_handle_h3" Type="Handle" scale_factor="86" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_forester_axe_v1_h0" name="{=xgOuAWEE}Forester Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_forester_axe_v2_h0" name="{=Diggles}Forester Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_forester_axe_blade_h0" Type="Blade" scale_factor="107" />
       <Piece id="crpg_forester_axe_handle_h0" Type="Handle" scale_factor="111" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_forester_axe_v1_h1" name="{=xgOuAWEE}Forester Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_forester_axe_v2_h1" name="{=Diggles}Forester Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_forester_axe_blade_h1" Type="Blade" scale_factor="107" />
       <Piece id="crpg_forester_axe_handle_h1" Type="Handle" scale_factor="111" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_forester_axe_v1_h2" name="{=xgOuAWEE}Forester Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_forester_axe_v2_h2" name="{=Diggles}Forester Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_forester_axe_blade_h2" Type="Blade" scale_factor="107" />
       <Piece id="crpg_forester_axe_handle_h2" Type="Handle" scale_factor="111" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_forester_axe_v1_h3" name="{=xgOuAWEE}Forester Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_forester_axe_v2_h3" name="{=Diggles}Forester Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_forester_axe_blade_h3" Type="Blade" scale_factor="107" />
       <Piece id="crpg_forester_axe_handle_h3" Type="Handle" scale_factor="111" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_footman_axe_v1_h0" name="{=KanKBHcS}Steel Footman Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_steel_footman_axe_v1_h0" name="{=Diggles}Steel Footman Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_footman_axe_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_steel_footman_axe_handle_h0" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_footman_axe_v1_h1" name="{=KanKBHcS}Steel Footman Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_steel_footman_axe_v2_h1" name="{=Diggles}Steel Footman Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_footman_axe_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_steel_footman_axe_handle_h1" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_footman_axe_v1_h2" name="{=KanKBHcS}Steel Footman Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_steel_footman_axe_v2_h2" name="{=Diggles}Steel Footman Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_footman_axe_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_steel_footman_axe_handle_h2" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_footman_axe_v1_h3" name="{=KanKBHcS}Steel Footman Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_steel_footman_axe_v2_h3" name="{=Diggles}Steel Footman Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_footman_axe_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_steel_footman_axe_handle_h3" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_raider_battle_axe_v1_h0" name="{=DFcMeRdB}Raider Battle Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_raider_battle_axe_v2_h0" name="{=Diggles}Raider Battle Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_raider_battle_axe_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_raider_battle_axe_handle_h0" Type="Handle" scale_factor="113" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_raider_battle_axe_v1_h1" name="{=DFcMeRdB}Raider Battle Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_raider_battle_axe_v2_h1" name="{=Diggles}Raider Battle Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_raider_battle_axe_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_raider_battle_axe_handle_h1" Type="Handle" scale_factor="113" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_raider_battle_axe_v1_h2" name="{=DFcMeRdB}Raider Battle Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_raider_battle_axe_v2_h2" name="{=Diggles}Raider Battle Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_raider_battle_axe_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_raider_battle_axe_handle_h2" Type="Handle" scale_factor="113" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_raider_battle_axe_v1_h3" name="{=DFcMeRdB}Raider Battle Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_raider_battle_axe_v2_h3" name="{=Diggles}Raider Battle Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_raider_battle_axe_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_raider_battle_axe_handle_h3" Type="Handle" scale_factor="113" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tabar_axe_v1_h0" name="{=XRaPBg6d}Tabar Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_tabar_axe_v2_h0" name="{=Diggles}Tabar Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_tabar_axe_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_tabar_axe_handle_h0" Type="Handle" scale_factor="114" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tabar_axe_v1_h1" name="{=XRaPBg6d}Tabar Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_tabar_axe_v2_h1" name="{=Diggles}Tabar Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_tabar_axe_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_tabar_axe_handle_h1" Type="Handle" scale_factor="114" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tabar_axe_v1_h2" name="{=XRaPBg6d}Tabar Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_tabar_axe_v2_h2" name="{=Diggles}Tabar Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_tabar_axe_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_tabar_axe_handle_h2" Type="Handle" scale_factor="114" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tabar_axe_v1_h3" name="{=XRaPBg6d}Tabar Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_tabar_axe_v2_h3" name="{=Diggles}Tabar Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_tabar_axe_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_tabar_axe_handle_h3" Type="Handle" scale_factor="114" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_crescent_axe_v1_h0" name="{=bdTQG99v}Desert Crescent Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_crescent_axe_v2_h0" name="{=Diggles}Desert Crescent Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_crescent_axe_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_desert_crescent_axe_handle_h0" Type="Handle" scale_factor="139" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_crescent_axe_v1_h1" name="{=bdTQG99v}Desert Crescent Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_crescent_axe_v2_h1" name="{=Diggles}Desert Crescent Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_crescent_axe_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_desert_crescent_axe_handle_h1" Type="Handle" scale_factor="139" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_crescent_axe_v1_h2" name="{=bdTQG99v}Desert Crescent Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_crescent_axe_v2_h2" name="{=Diggles}Desert Crescent Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_crescent_axe_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_desert_crescent_axe_handle_h2" Type="Handle" scale_factor="139" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_crescent_axe_v1_h3" name="{=bdTQG99v}Desert Crescent Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_crescent_axe_v2_h3" name="{=Diggles}Desert Crescent Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_crescent_axe_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_desert_crescent_axe_handle_h3" Type="Handle" scale_factor="139" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_boarding_axe_v1_h0" name="{=dRWKmbaa}Boarding Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_boarding_axe_v2_h0" name="{=Diggles}Boarding Axe" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_boarding_axe_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_boarding_axe_handle_h0" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_boarding_axe_v1_h1" name="{=dRWKmbaa}Boarding Axe +1" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_boarding_axe_v2_h1" name="{=Diggles}Boarding Axe +1" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_boarding_axe_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_boarding_axe_handle_h1" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_boarding_axe_v1_h2" name="{=dRWKmbaa}Boarding Axe +2" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_boarding_axe_v2_h2" name="{=Diggles}Boarding Axe +2" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_boarding_axe_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_boarding_axe_handle_h2" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_boarding_axe_v1_h3" name="{=dRWKmbaa}Boarding Axe +3" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_boarding_axe_v2_h3" name="{=Diggles}Boarding Axe +3" crafting_template="crpg_OneHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_boarding_axe_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_boarding_axe_handle_h3" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_norse_huscarl_axe_v1_h0" name="{=ljOwXClb}Norse Huscarl Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_norse_huscarl_axe_v2_h0" name="{=Diggles}Norse Huscarl Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_norse_huscarl_axe_blade_h0" Type="Blade" scale_factor="103" />
       <Piece id="crpg_norse_huscarl_axe_handle_h0" Type="Handle" scale_factor="126" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_norse_huscarl_axe_v1_h1" name="{=ljOwXClb}Norse Huscarl Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_norse_huscarl_axe_v2_h1" name="{=Diggles}Norse Huscarl Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_norse_huscarl_axe_blade_h1" Type="Blade" scale_factor="103" />
       <Piece id="crpg_norse_huscarl_axe_handle_h1" Type="Handle" scale_factor="126" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_norse_huscarl_axe_v1_h2" name="{=ljOwXClb}Norse Huscarl Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_norse_huscarl_axe_v2_h2" name="{=Diggles}Norse Huscarl Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_norse_huscarl_axe_blade_h2" Type="Blade" scale_factor="103" />
       <Piece id="crpg_norse_huscarl_axe_handle_h2" Type="Handle" scale_factor="126" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_norse_huscarl_axe_v1_h3" name="{=ljOwXClb}Norse Huscarl Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_norse_huscarl_axe_v2_h3" name="{=Diggles}Norse Huscarl Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_norse_huscarl_axe_blade_h3" Type="Blade" scale_factor="103" />
       <Piece id="crpg_norse_huscarl_axe_handle_h3" Type="Handle" scale_factor="126" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_hand_axe_v1_h0" name="{=hQrLHkaU}Iron Hand Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_iron_hand_axe_v2_h0" name="{=Diggles}Iron Hand Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_iron_hand_axe_blade_h0" Type="Blade" scale_factor="107" />
       <Piece id="crpg_iron_hand_axe_handle_h0" Type="Handle" scale_factor="106" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_hand_axe_v1_h1" name="{=hQrLHkaU}Iron Hand Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_iron_hand_axe_v2_h1" name="{=Diggles}Iron Hand Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_iron_hand_axe_blade_h1" Type="Blade" scale_factor="107" />
       <Piece id="crpg_iron_hand_axe_handle_h1" Type="Handle" scale_factor="106" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_hand_axe_v1_h2" name="{=hQrLHkaU}Iron Hand Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_iron_hand_axe_v2_h2" name="{=Diggles}Iron Hand Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_iron_hand_axe_blade_h2" Type="Blade" scale_factor="107" />
       <Piece id="crpg_iron_hand_axe_handle_h2" Type="Handle" scale_factor="106" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_hand_axe_v1_h3" name="{=hQrLHkaU}Iron Hand Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_iron_hand_axe_v2_h3" name="{=Diggles}Iron Hand Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_iron_hand_axe_blade_h3" Type="Blade" scale_factor="107" />
       <Piece id="crpg_iron_hand_axe_handle_h3" Type="Handle" scale_factor="106" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_ascia_axe_v1_h0" name="{=89OWzLBb}Desert Ascia Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_ascia_axe_v2_h0" name="{=Diggles}Desert Ascia Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_ascia_axe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_desert_ascia_axe_handle_h0" Type="Handle" scale_factor="134" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_ascia_axe_v1_h1" name="{=89OWzLBb}Desert Ascia Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_ascia_axe_v2_h1" name="{=Diggles}Desert Ascia Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_ascia_axe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_desert_ascia_axe_handle_h1" Type="Handle" scale_factor="134" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_ascia_axe_v1_h2" name="{=89OWzLBb}Desert Ascia Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_ascia_axe_v2_h2" name="{=Diggles}Desert Ascia Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_ascia_axe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_desert_ascia_axe_handle_h2" Type="Handle" scale_factor="134" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_desert_ascia_axe_v1_h3" name="{=89OWzLBb}Desert Ascia Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_desert_ascia_axe_v2_h3" name="{=Diggles}Desert Ascia Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_desert_ascia_axe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_desert_ascia_axe_handle_h3" Type="Handle" scale_factor="134" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wood_splitter_axe_v1_h0" name="{=bcjcw1o9}Wood Splitter Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_wood_splitter_axe_v2_h0" name="{=Diggles}Head Splitter Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_wood_splitter_axe_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_wood_splitter_axe_handle_h0" Type="Handle" scale_factor="123" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wood_splitter_axe_v1_h1" name="{=bcjcw1o9}Wood Splitter Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_wood_splitter_axe_v2_h1" name="{=Diggles}Head Splitter Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_wood_splitter_axe_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_wood_splitter_axe_handle_h1" Type="Handle" scale_factor="123" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wood_splitter_axe_v1_h2" name="{=bcjcw1o9}Wood Splitter Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_wood_splitter_axe_v2_h2" name="{=Diggles}Head Splitter Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_wood_splitter_axe_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_wood_splitter_axe_handle_h2" Type="Handle" scale_factor="123" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wood_splitter_axe_v1_h3" name="{=bcjcw1o9}Wood Splitter Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
+  <CraftedItem id="crpg_wood_splitter_axe_v2_h3" name="{=Diggles}Head Splitter Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_wood_splitter_axe_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_wood_splitter_axe_handle_h3" Type="Handle" scale_factor="123" />
@@ -11120,25 +11120,25 @@
       <Piece id="crpg_sickle_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatchet_v1_h0" name="{=GghHAbIT}Hatchet" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_hatchet_v2_h0" name="{=Diggles}Hatchet" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_hatchet_blade_h0" Type="Blade" scale_factor="105" />
       <Piece id="crpg_hatchet_handle_h0" Type="Handle" scale_factor="147" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatchet_v1_h1" name="{=GghHAbIT}Hatchet +1" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_hatchet_v2_h1" name="{=Diggles}Hatchet +1" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_hatchet_blade_h1" Type="Blade" scale_factor="105" />
       <Piece id="crpg_hatchet_handle_h1" Type="Handle" scale_factor="147" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatchet_v1_h2" name="{=GghHAbIT}Hatchet +2" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_hatchet_v2_h2" name="{=Diggles}Hatchet +2" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_hatchet_blade_h2" Type="Blade" scale_factor="105" />
       <Piece id="crpg_hatchet_handle_h2" Type="Handle" scale_factor="147" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hatchet_v1_h3" name="{=GghHAbIT}Hatchet +3" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_hatchet_v2_h3" name="{=Diggles}Hatchet +3" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_hatchet_blade_h3" Type="Blade" scale_factor="105" />
       <Piece id="crpg_hatchet_handle_h3" Type="Handle" scale_factor="147" />
