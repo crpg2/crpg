@@ -12940,4 +12940,100 @@
       <Piece id="crpg_joustinglance_striped_ry_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_candycane_pole_h0" name="{=BalanceMe}Candycane Polearm" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_candycane_pole_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_pole_h1" name="{=BalanceMe}Candycane Polearm" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_candycane_pole_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_pole_h2" name="{=BalanceMe}Candycane Polearm" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_candycane_pole_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_pole_h3" name="{=BalanceMe}Candycane Polearm" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_candycane_pole_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_pole_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_2h_h0" name="{=BalanceMe}Candycane Twohanded Mace" crafting_template="crpg_TwoHandedMace">
+    <Pieces>
+      <Piece id="crpg_candycane_2h_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_2h_h1" name="{=BalanceMe}Candycane Twohanded Mace" crafting_template="crpg_TwoHandedMace">
+    <Pieces>
+      <Piece id="crpg_candycane_2h_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_2h_h2" name="{=BalanceMe}Candycane Twohanded Mace" crafting_template="crpg_TwoHandedMace">
+    <Pieces>
+      <Piece id="crpg_candycane_2h_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_2h_h3" name="{=BalanceMe}Candycane Twohanded Mace" crafting_template="crpg_TwoHandedMace">
+    <Pieces>
+      <Piece id="crpg_candycane_2h_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_2h_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_1h_h0" name="{=BalanceMe}Candycane Onehanded Mace" crafting_template="crpg_Mace">
+    <Pieces>
+      <Piece id="crpg_candycane_1h_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_1h_h1" name="{=BalanceMe}Candycane Onehanded Mace" crafting_template="crpg_Mace">
+    <Pieces>
+      <Piece id="crpg_candycane_1h_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_1h_h2" name="{=BalanceMe}Candycane Onehanded Mace" crafting_template="crpg_Mace">
+    <Pieces>
+      <Piece id="crpg_candycane_1h_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_candycane_1h_h3" name="{=BalanceMe}Candycane Onehanded Mace" crafting_template="crpg_Mace">
+    <Pieces>
+      <Piece id="crpg_candycane_1h_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_candycane_1h_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
 </Items>
