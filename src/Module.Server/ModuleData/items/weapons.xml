@@ -4248,28 +4248,28 @@
       <Piece id="crpg_bone_crusher_pommel_h3" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_round_mace_v1_h0" name="{=9EWN9SiT}Decorated Round Mace" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_decorated_round_mace_v2_h0" name="{=9EWN9SiT}Decorated Round Mace" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_decorated_round_mace_blade_h0" Type="Blade" scale_factor="107" />
       <Piece id="crpg_decorated_round_mace_handle_h0" Type="Handle" scale_factor="120" />
       <Piece id="crpg_decorated_round_mace_pommel_h0" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_round_mace_v1_h1" name="{=9EWN9SiT}Decorated Round Mace +1" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_decorated_round_mace_v2_h1" name="{=9EWN9SiT}Decorated Round Mace +1" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_decorated_round_mace_blade_h1" Type="Blade" scale_factor="107" />
       <Piece id="crpg_decorated_round_mace_handle_h1" Type="Handle" scale_factor="120" />
       <Piece id="crpg_decorated_round_mace_pommel_h1" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_round_mace_v1_h2" name="{=9EWN9SiT}Decorated Round Mace +2" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_decorated_round_mace_v2_h2" name="{=9EWN9SiT}Decorated Round Mace +2" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_decorated_round_mace_blade_h2" Type="Blade" scale_factor="107" />
       <Piece id="crpg_decorated_round_mace_handle_h2" Type="Handle" scale_factor="120" />
       <Piece id="crpg_decorated_round_mace_pommel_h2" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_round_mace_v1_h3" name="{=9EWN9SiT}Decorated Round Mace +3" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_decorated_round_mace_v2_h3" name="{=9EWN9SiT}Decorated Round Mace +3" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_decorated_round_mace_blade_h3" Type="Blade" scale_factor="107" />
       <Piece id="crpg_decorated_round_mace_handle_h3" Type="Handle" scale_factor="120" />
@@ -4668,27 +4668,27 @@
       <Piece id="crpg_steppe_spiked_mace_pommel_h3" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_light_winged_mace_v1_h0" name="{=6QI8X6CY}Light Winged Mace" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_light_winged_mace_v2_h0" name="{=6QI8X6CY}Winged Mace" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_light_winged_mace_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_light_winged_mace_blade_h0" Type="Blade" scale_factor="125" />
       <Piece id="crpg_light_winged_mace_handle_h0" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_light_winged_mace_v1_h1" name="{=6QI8X6CY}Light Winged Mace +1" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_light_winged_mace_v2_h1" name="{=6QI8X6CY}Winged Mace +1" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_light_winged_mace_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_light_winged_mace_blade_h1" Type="Blade" scale_factor="125" />
       <Piece id="crpg_light_winged_mace_handle_h1" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_light_winged_mace_v1_h2" name="{=6QI8X6CY}Light Winged Mace +2" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_light_winged_mace_v2_h2" name="{=6QI8X6CY}Winged Mace +2" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_light_winged_mace_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_light_winged_mace_blade_h2" Type="Blade" scale_factor="125" />
       <Piece id="crpg_light_winged_mace_handle_h2" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_light_winged_mace_v1_h3" name="{=6QI8X6CY}Light Winged Mace +3" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_light_winged_mace_v2_h3" name="{=6QI8X6CY}Winged Mace +3" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
-      <Piece id="crpg_light_winged_mace_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_light_winged_mace_blade_h3" Type="Blade" scale_factor="125" />
       <Piece id="crpg_light_winged_mace_handle_h3" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
@@ -11072,28 +11072,28 @@
       <Piece id="crpg_blacksmith_warhammer_handle_h3" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_blacksmith_hammer_v1_h0" name="{=6WcZ5Tr0}Blacksmith Hammer" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_blacksmith_hammer_v2_h0" name="{=6WcZ5Tr0}Blacksmith Hammer" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_blacksmith_hammer_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_blacksmith_hammer_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_blacksmith_hammer_blade_h0" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_blacksmith_hammer_handle_h0" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_blacksmith_hammer_v1_h1" name="{=6WcZ5Tr0}Blacksmith Hammer +1" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_blacksmith_hammer_v2_h1" name="{=6WcZ5Tr0}Blacksmith Hammer +1" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_blacksmith_hammer_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_blacksmith_hammer_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_blacksmith_hammer_blade_h1" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_blacksmith_hammer_handle_h1" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_blacksmith_hammer_v1_h2" name="{=6WcZ5Tr0}Blacksmith Hammer +2" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_blacksmith_hammer_v2_h2" name="{=6WcZ5Tr0}Blacksmith Hammer +2" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_blacksmith_hammer_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_blacksmith_hammer_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_blacksmith_hammer_blade_h2" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_blacksmith_hammer_handle_h2" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_blacksmith_hammer_v1_h3" name="{=6WcZ5Tr0}Blacksmith Hammer +3" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_blacksmith_hammer_v2_h3" name="{=6WcZ5Tr0}Blacksmith Hammer +3" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
     <Pieces>
-      <Piece id="crpg_blacksmith_hammer_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_blacksmith_hammer_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_blacksmith_hammer_blade_h3" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_blacksmith_hammer_handle_h3" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_sickle_v1_h0" name="{=4wdgiTta}Sickle" crafting_template="crpg_OneHandedAxe" modifier_group="cheap_weapon">
@@ -11824,25 +11824,25 @@
       <Piece id="crpg_knobbed_mace_handle_h3" Type="Handle" scale_factor="82" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_western_mace_v1_h0" name="{=dSTxsYsh}Short Western Mace" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
+  <CraftedItem id="crpg_short_western_mace_v2_h0" name="{=dSTxsYsh}Short Western Mace" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_short_western_mace_blade_h0" Type="Blade" scale_factor="95" />
       <Piece id="crpg_short_western_mace_handle_h0" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_western_mace_v1_h1" name="{=dSTxsYsh}Short Western Mace +1" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
+  <CraftedItem id="crpg_short_western_mace_v2_h1" name="{=dSTxsYsh}Short Western Mace +1" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_short_western_mace_blade_h1" Type="Blade" scale_factor="95" />
       <Piece id="crpg_short_western_mace_handle_h1" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_western_mace_v1_h2" name="{=dSTxsYsh}Short Western Mace +2" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
+  <CraftedItem id="crpg_short_western_mace_v2_h2" name="{=dSTxsYsh}Short Western Mace +2" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_short_western_mace_blade_h2" Type="Blade" scale_factor="95" />
       <Piece id="crpg_short_western_mace_handle_h2" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_western_mace_v1_h3" name="{=dSTxsYsh}Short Western Mace +3" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
+  <CraftedItem id="crpg_short_western_mace_v2_h3" name="{=dSTxsYsh}Short Western Mace +3" crafting_template="crpg_Mace" culture="Culture.vlandia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_short_western_mace_blade_h3" Type="Blade" scale_factor="95" />
       <Piece id="crpg_short_western_mace_handle_h3" Type="Handle" scale_factor="105" />
