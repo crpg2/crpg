@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Items>
   <Item id="crpg_14_decor_paltedboots_noble1_v1_h0" name="Decorated Plate Leggings" mesh="14_decor_paltedboots_noble1" culture="Culture.neutral_culture" weight="2.60973" appearance="10" Type="LegArmor" difficulty="0">
     <ItemComponent>
@@ -1180,49 +1180,49 @@
     <ItemComponent>
       <Armor leg_armor="4" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags Civilian="true" />
+    <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_sturgia_boots_c_v2_h1" name="{=4KZekKff}Tied Boots +1" mesh="sturgia_boots_c" culture="Culture.sturgia" weight="0.155421" appearance="1" Type="LegArmor">
     <ItemComponent>
       <Armor leg_armor="5" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags Civilian="true" />
+    <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_sturgia_boots_c_v2_h2" name="{=4KZekKff}Tied Boots +2" mesh="sturgia_boots_c" culture="Culture.sturgia" weight="0.155421" appearance="1" Type="LegArmor">
     <ItemComponent>
       <Armor leg_armor="7" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags Civilian="true" />
+    <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_sturgia_boots_c_v2_h3" name="{=4KZekKff}Tied Boots +3" mesh="sturgia_boots_c" culture="Culture.sturgia" weight="0.155421" appearance="1" Type="LegArmor">
     <ItemComponent>
       <Armor leg_armor="9" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags Civilian="true" />
+    <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_sturgia_boots_d_v2_h0" name="{=FptcHNb9}Wrapped Boots" mesh="sturgia_boots_d" culture="Culture.sturgia" weight="0.1038952" appearance="1" Type="LegArmor">
     <ItemComponent>
       <Armor leg_armor="3" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags Civilian="true" />
+    <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_sturgia_boots_d_v2_h1" name="{=FptcHNb9}Wrapped Boots +1" mesh="sturgia_boots_d" culture="Culture.sturgia" weight="0.1038952" appearance="1" Type="LegArmor">
     <ItemComponent>
       <Armor leg_armor="4" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags Civilian="true" />
+    <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_sturgia_boots_d_v2_h2" name="{=FptcHNb9}Wrapped Boots +2" mesh="sturgia_boots_d" culture="Culture.sturgia" weight="0.1038952" appearance="1" Type="LegArmor">
     <ItemComponent>
       <Armor leg_armor="6" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags Civilian="true" />
+    <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_sturgia_boots_d_v2_h3" name="{=FptcHNb9}Wrapped Boots +3" mesh="sturgia_boots_d" culture="Culture.sturgia" weight="0.1038952" appearance="1" Type="LegArmor">
     <ItemComponent>
       <Armor leg_armor="8" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags Civilian="true" />
+    <Flags Civilian="true" UseTeamColor="true" />
   </Item>
   <Item id="crpg_turndown_leather_boots_v2_h0" name="{=xwWYJb5A}Folded Leather Boots" mesh="sea_raider_leather_boot" culture="Culture.battania" weight="0.483688" appearance="1" Type="LegArmor">
     <ItemComponent>

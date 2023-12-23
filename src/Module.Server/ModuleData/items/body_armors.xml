@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Items>
   <Item id="crpg_14th_tabarded_platearmor_1_v1_h0" name="Tabarded Regular Plate Armor, Fleurs" mesh="14th_tabarded_platearmor_1" culture="Culture.neutral_culture" weight="19.97553" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
@@ -2188,25 +2188,25 @@
     <ItemComponent>
       <Armor body_armor="27" leg_armor="6" arm_armor="15" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags />
+    <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_crude_leather_armor_v2_h1" name="{=j2IVY6G6}Crude Hide Armor +1" mesh="bandit_5" culture="Culture.khuzait" weight="7.466329" appearance="1" Type="BodyArmor">
     <ItemComponent>
       <Armor body_armor="29" leg_armor="7" arm_armor="16" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags />
+    <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_crude_leather_armor_v2_h2" name="{=j2IVY6G6}Crude Hide Armor +2" mesh="bandit_5" culture="Culture.khuzait" weight="7.466329" appearance="1" Type="BodyArmor">
     <ItemComponent>
       <Armor body_armor="31" leg_armor="8" arm_armor="17" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags />
+    <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_crude_leather_armor_v2_h3" name="{=j2IVY6G6}Crude Hide Armor +3" mesh="bandit_5" culture="Culture.khuzait" weight="7.466329" appearance="1" Type="BodyArmor">
     <ItemComponent>
       <Armor body_armor="33" leg_armor="9" arm_armor="18" has_gender_variations="true" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags />
+    <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_cut_dress_v2_h0" name="{=mzc6SKeH}Frilled Dress" mesh="female_tavern_wench_dress_a" culture="Culture.sturgia" weight="1.656987" appearance="1" Type="BodyArmor">
     <ItemComponent>
@@ -3988,25 +3988,25 @@
     <ItemComponent>
       <Armor body_armor="40" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags UseTeamColor="false" />
+    <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_khuzait_lamellar_strapped_v2_h1" name="{=}Steppe Reinforced Leather Armor +1" mesh="khuzait_lamellar_strap" culture="Culture.khuzait" weight="12.72043" appearance="1.4" Type="BodyArmor">
     <ItemComponent>
       <Armor body_armor="42" leg_armor="14" arm_armor="19" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags UseTeamColor="false" />
+    <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_khuzait_lamellar_strapped_v2_h2" name="{=}Steppe Reinforced Leather Armor +2" mesh="khuzait_lamellar_strap" culture="Culture.khuzait" weight="12.72043" appearance="1.4" Type="BodyArmor">
     <ItemComponent>
       <Armor body_armor="44" leg_armor="15" arm_armor="20" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags UseTeamColor="false" />
+    <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_khuzait_lamellar_strapped_v2_h3" name="{=}Steppe Reinforced Leather Armor +3" mesh="khuzait_lamellar_strap" culture="Culture.khuzait" weight="12.72043" appearance="1.4" Type="BodyArmor">
     <ItemComponent>
       <Armor body_armor="46" leg_armor="16" arm_armor="21" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
-    <Flags UseTeamColor="false" />
+    <Flags UseTeamColor="true" />
   </Item>
   <Item id="crpg_khuzait_leather_stitched_v2_h0" name="{=z7oMeRl3}Stitched Cured Leather Vest" mesh="khuzait_leather_stitch_a" culture="Culture.empire" weight="8.998008" appearance="1" Type="BodyArmor">
     <ItemComponent>
