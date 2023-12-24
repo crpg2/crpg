@@ -13036,4 +13036,76 @@
       <Piece id="crpg_candycane_1h_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_short_bardiche_h0" name="{=Salt}Short Bardiche" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_short_bardiche_blade_h0" Type="Blade" scale_factor="70" />
+      <Piece id="crpg_short_bardiche_handle_h0" Type="Handle" scale_factor="120" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_short_bardiche_h1" name="{=Salt}Short Bardiche +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_short_bardiche_blade_h1" Type="Blade" scale_factor="70" />
+      <Piece id="crpg_short_bardiche_handle_h1" Type="Handle" scale_factor="120" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_short_bardiche_h2" name="{=Salt}Short Bardiche +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_short_bardiche_blade_h2" Type="Blade" scale_factor="70" />
+      <Piece id="crpg_short_bardiche_handle_h2" Type="Handle" scale_factor="120" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_short_bardiche_h3" name="{=Salt}Short Bardiche +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_short_bardiche_blade_h3" Type="Blade" scale_factor="70" />
+      <Piece id="crpg_short_bardiche_handle_h3" Type="Handle" scale_factor="120" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_bill_h0" name="{=Salt}Bill" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_bill_blade_h0" Type="Blade" scale_factor="120" />
+      <Piece id="crpg_bill_handle_h0" Type="Handle" scale_factor="80" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_bill_h1" name="{=Salt}Bill +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_bill_blade_h1" Type="Blade" scale_factor="120" />
+      <Piece id="crpg_bill_handle_h1" Type="Handle" scale_factor="80" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_bill_h2" name="{=Salt}Bill +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_bill_blade_h2" Type="Blade" scale_factor="120" />
+      <Piece id="crpg_bill_handle_h2" Type="Handle" scale_factor="80" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_bill_h3" name="{=Salt}Bill +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_bill_blade_h3" Type="Blade" scale_factor="120" />
+      <Piece id="crpg_bill_handle_h3" Type="Handle" scale_factor="80" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_short_voulge_h0" name="{=Salt}Short Voulge" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_short_voulge_blade_h0" Type="Blade" scale_factor="150" />
+      <Piece id="crpg_short_voulge_handle_h0" Type="Handle" scale_factor="70" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_short_voulge_h1" name="{=Salt}Short Voulge +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_short_voulge_blade_h1" Type="Blade" scale_factor="150" />
+      <Piece id="crpg_short_voulge_handle_h1" Type="Handle" scale_factor="70" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_short_voulge_h2" name="{=Salt}Short Voulge +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_short_voulge_blade_h2" Type="Blade" scale_factor="150" />
+      <Piece id="crpg_short_voulge_handle_h2" Type="Handle" scale_factor="70" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_short_voulge_h3" name="{=Salt}Short Voulge +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_short_voulge_blade_h3" Type="Blade" scale_factor="150" />
+      <Piece id="crpg_short_voulge_handle_h3" Type="Handle" scale_factor="70" />
+    </Pieces>
+  </CraftedItem>
 </Items>

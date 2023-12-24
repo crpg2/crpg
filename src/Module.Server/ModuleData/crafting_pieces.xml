@@ -32676,4 +32676,244 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_candycane_1h_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
+  <CraftingPiece id="crpg_short_bardiche_blade_h0" name="{=}Short Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.9">
+    <BuildData piece_offset="-12" />
+    <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Cut" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_bardiche_blade_h1" name="{=}Short Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.9">
+    <BuildData piece_offset="-12" />
+    <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Cut" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_bardiche_blade_h2" name="{=}Short Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.85">
+    <BuildData piece_offset="-12" />
+    <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Cut" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_bardiche_blade_h3" name="{=}Short Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.85">
+    <BuildData piece_offset="-12" />
+    <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Cut" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_bardiche_handle_h0" name="{=}Short Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="1.3" excluded_item_usage_features="widegrip">
+    <BuildData piece_offset="28.87" next_piece_offset="2.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_bardiche_handle_h1" name="{=}Short Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="1.3" excluded_item_usage_features="widegrip">
+    <BuildData piece_offset="28.87" next_piece_offset="2.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_bardiche_handle_h2" name="{=}Short Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="1.2" excluded_item_usage_features="widegrip">
+    <BuildData piece_offset="28.87" next_piece_offset="2.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_bardiche_handle_h3" name="{=}Short Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="1.2" excluded_item_usage_features="widegrip">
+    <BuildData piece_offset="28.87" next_piece_offset="2.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bill_blade_h0" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.505">
+    <BuildData piece_offset="-7.6" />
+    <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Cut" damage_factor="3.9" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bill_blade_h1" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.505">
+    <BuildData piece_offset="-7.6" />
+    <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bill_blade_h2" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.505">
+    <BuildData piece_offset="-7.6" />
+    <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bill_blade_h3" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.505">
+    <BuildData piece_offset="-7.6" />
+    <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bill_handle_h0" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.6" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+    <BuildData piece_offset="19.4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bill_handle_h1" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.5" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+    <BuildData piece_offset="19.4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bill_handle_h2" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.5" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+    <BuildData piece_offset="19.4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bill_handle_h3" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.4" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+    <BuildData piece_offset="19.4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_voulge_handle_h0" name="{=}Short Voulge Shaft" tier="5" piece_type="Handle" mesh="spear_handle_8" length="230" weight="1.3" CraftingCost="110">
+    <BuildData piece_offset="22.9" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_voulge_handle_h1" name="{=}Short Voulge Shaft" tier="5" piece_type="Handle" mesh="spear_handle_8" length="230" weight="1.3" CraftingCost="110">
+    <BuildData piece_offset="22.9" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_voulge_handle_h2" name="{=}Short Voulge Shaft" tier="5" piece_type="Handle" mesh="spear_handle_8" length="230" weight="1.25" CraftingCost="110">
+    <BuildData piece_offset="22.9" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_voulge_handle_h3" name="{=}Short Voulge Shaft" tier="5" piece_type="Handle" mesh="spear_handle_8" length="230" weight="1.25" CraftingCost="110">
+    <BuildData piece_offset="22.9" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_voulge_blade_h0" name="{=}Short Voulge Head" tier="4" piece_type="Blade" mesh="axe_craft_10_head" distance_to_next_piece="23" distance_to_previous_piece="4" weight="0.55">
+    <BuildData piece_offset="-8" />
+    <BladeData stack_amount="2" blade_length="23.118" blade_width="18.371" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron5" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_voulge_blade_h1" name="{=}Short Voulge Head" tier="4" piece_type="Blade" mesh="axe_craft_10_head" distance_to_next_piece="23" distance_to_previous_piece="4" weight="0.55">
+    <BuildData piece_offset="-8" />
+    <BladeData stack_amount="2" blade_length="23.118" blade_width="18.371" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron5" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_voulge_blade_h2" name="{=}Short Voulge Head" tier="4" piece_type="Blade" mesh="axe_craft_10_head" distance_to_next_piece="23" distance_to_previous_piece="4" weight="0.5">
+    <BuildData piece_offset="-8" />
+    <BladeData stack_amount="2" blade_length="23.118" blade_width="18.371" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron5" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_short_voulge_blade_h3" name="{=}Short Voulge Head" tier="4" piece_type="Blade" mesh="axe_craft_10_head" distance_to_next_piece="23" distance_to_previous_piece="4" weight="0.5">
+    <BuildData piece_offset="-8" />
+    <BladeData stack_amount="2" blade_length="23.118" blade_width="18.371" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron5" count="2" />
+    </Materials>
+  </CraftingPiece>
 </CraftingPieces>
