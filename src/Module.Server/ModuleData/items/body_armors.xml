@@ -6798,19 +6798,19 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_swadian_cuirass_h1" name="Western Cuirass +1" mesh="swadian_leather_plate_with_armguards" culture="Culture.vlandia" weight="20.90746" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_swadian_cuirass_h1" name="Western Cuirass +1" mesh="swadian_cuirass" culture="Culture.vlandia" weight="20.90746" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="60" leg_armor="24" arm_armor="22" covers_body="true" modifier_group="Plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_swadian_cuirass_h2" name="Western Cuirass +2" mesh="swadian_leather_plate_with_armguards" culture="Culture.vlandia" weight="20.90746" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_swadian_cuirass_h2" name="Western Cuirass +2" mesh="swadian_cuirass" culture="Culture.vlandia" weight="20.90746" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="62" leg_armor="25" arm_armor="23" covers_body="true" modifier_group="Plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_swadian_cuirass_h3" name="Western Cuirass +3" mesh="swadian_leather_plate_with_armguards" culture="Culture.vlandia" weight="20.90746" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_swadian_cuirass_h3" name="Western Cuirass +3" mesh="swadian_cuirass" culture="Culture.vlandia" weight="20.90746" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="64" leg_armor="26" arm_armor="24" covers_body="true" modifier_group="Plate" material_type="Plate" />
     </ItemComponent>
