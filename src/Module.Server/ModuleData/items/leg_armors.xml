@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Items>
   <Item id="crpg_14_decor_paltedboots_noble1_v1_h0" name="Decorated Plate Leggings" mesh="14_decor_paltedboots_noble1" culture="Culture.neutral_culture" weight="2.60973" appearance="10" Type="LegArmor" difficulty="0">
     <ItemComponent>

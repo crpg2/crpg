@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Items>
   <Item id="crpg_a_aserai_scale_b_shoulder_a_v2_h0" name="{=FQdTo5ay}Scale Shoulder Guards" mesh="aserai_scale_b_shoulder_a" culture="Culture.aserai" weight="2.473754" appearance="3" Type="Cape">
     <ItemComponent>

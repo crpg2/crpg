@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Items>
   <Item id="crpg_14th_tabarded_platearmor_1_v1_h0" name="Tabarded Regular Plate Armor, Fleurs" mesh="14th_tabarded_platearmor_1" culture="Culture.neutral_culture" weight="19.97553" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>

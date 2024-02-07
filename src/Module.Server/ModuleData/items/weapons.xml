@@ -13108,4 +13108,36 @@
       <Piece id="crpg_short_voulge_handle_h3" Type="Handle" scale_factor="70" />
     </Pieces>
   </CraftedItem>
+  <Item id="crpg_smokebomb_h0" name="{=Meow}Smokebomb" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="torch_flame_base" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+    <ItemComponent>
+      <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="1" physics_material="smokebomb_h0" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="15" thrust_damage="7" item_usage="stone" rotation="100,30,20" trail_particle_name="smokebomb_h0" passby_sound_code="" rotation_speed="0, -3.0, 0">
+        <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" AmmoBreaksOnBounceBack="true" LeavesTrail="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_smokebomb_h1" name="{=Meow}Smokebomb +1" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="torch_flame_base" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+    <ItemComponent>
+      <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="1" physics_material="smokebomb_h1" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="16" thrust_damage="7" item_usage="stone" rotation="100,30,20" trail_particle_name="smokebomb_h1" passby_sound_code="" rotation_speed="0, -3.0, 0">
+        <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" AmmoBreaksOnBounceBack="true" LeavesTrail="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_smokebomb_h2" name="{=Meow}Smokebomb +2" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="torch_flame_base" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+    <ItemComponent>
+      <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="1" physics_material="smokebomb_h2" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="17" thrust_damage="7" item_usage="stone" rotation="100,30,20" trail_particle_name="smokebomb_h2" passby_sound_code="" rotation_speed="0, -3.0, 0">
+        <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" AmmoBreaksOnBounceBack="true" LeavesTrail="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_smokebomb_h3" name="{=Meow}Smokebomb +3" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" mesh="torch_flame_base" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="throwing_stone:throwing_stone_2">
+    <ItemComponent>
+      <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="1" physics_material="smokebomb_h3" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="18" thrust_damage="7" item_usage="stone" rotation="100,30,20" trail_particle_name="smokebomb_h3" passby_sound_code="" rotation_speed="0, -3.0, 0">
+        <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" AmmoBreaksOnBounceBack="true" LeavesTrail="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>
