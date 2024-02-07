@@ -13980,25 +13980,25 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_paramerion_pommel_h0" name="{=MGD7zTLf}Faceted Wheel Pommel" tier="4" piece_type="Pommel" mesh="empire_pommel_5" culture="Culture.empire" length="6.911" weight="0.2">
+  <CraftingPiece id="crpg_fine_steel_paramerion_pommel_h0" name="{=MGD7zTLf}Faceted Wheel Pommel" tier="4" piece_type="Pommel" mesh="empire_pommel_5" culture="Culture.empire" length="6.911" weight="0.22">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_paramerion_pommel_h1" name="{=MGD7zTLf}Faceted Wheel Pommel" tier="4" piece_type="Pommel" mesh="empire_pommel_5" culture="Culture.empire" length="6.911" weight="0.2">
+  <CraftingPiece id="crpg_fine_steel_paramerion_pommel_h1" name="{=MGD7zTLf}Faceted Wheel Pommel" tier="4" piece_type="Pommel" mesh="empire_pommel_5" culture="Culture.empire" length="6.911" weight="0.22">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_paramerion_pommel_h2" name="{=MGD7zTLf}Faceted Wheel Pommel" tier="4" piece_type="Pommel" mesh="empire_pommel_5" culture="Culture.empire" length="6.911" weight="0.2">
+  <CraftingPiece id="crpg_fine_steel_paramerion_pommel_h2" name="{=MGD7zTLf}Faceted Wheel Pommel" tier="4" piece_type="Pommel" mesh="empire_pommel_5" culture="Culture.empire" length="6.911" weight="0.22">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_paramerion_pommel_h3" name="{=MGD7zTLf}Faceted Wheel Pommel" tier="4" piece_type="Pommel" mesh="empire_pommel_5" culture="Culture.empire" length="6.911" weight="0.2">
+  <CraftingPiece id="crpg_fine_steel_paramerion_pommel_h3" name="{=MGD7zTLf}Faceted Wheel Pommel" tier="4" piece_type="Pommel" mesh="empire_pommel_5" culture="Culture.empire" length="6.911" weight="0.22">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
@@ -23777,7 +23777,7 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_paramerion_blade_h1" name="{=y5A3HGua}Fine Steel Paramerion Blade" tier="4" piece_type="Blade" mesh="empire_blade_5" culture="Culture.empire" length="95.7" weight="0.73">
+  <CraftingPiece id="crpg_fine_steel_paramerion_blade_h1" name="{=y5A3HGua}Fine Steel Paramerion Blade" tier="4" piece_type="Blade" mesh="empire_blade_5" culture="Culture.empire" length="95.7" weight="0.79">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_5_scabbard_5">
       <Thrust damage_type="Pierce" damage_factor="1.9" />
       <Swing damage_type="Cut" damage_factor="3.4" />
@@ -23786,7 +23786,7 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_paramerion_blade_h2" name="{=y5A3HGua}Fine Steel Paramerion Blade" tier="4" piece_type="Blade" mesh="empire_blade_5" culture="Culture.empire" length="95.7" weight="0.73">
+  <CraftingPiece id="crpg_fine_steel_paramerion_blade_h2" name="{=y5A3HGua}Fine Steel Paramerion Blade" tier="4" piece_type="Blade" mesh="empire_blade_5" culture="Culture.empire" length="95.7" weight="0.79">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_5_scabbard_5">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Cut" damage_factor="3.5" />
@@ -23795,7 +23795,7 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_steel_paramerion_blade_h3" name="{=y5A3HGua}Fine Steel Paramerion Blade" tier="4" piece_type="Blade" mesh="empire_blade_5" culture="Culture.empire" length="95.7" weight="0.73">
+  <CraftingPiece id="crpg_fine_steel_paramerion_blade_h3" name="{=y5A3HGua}Fine Steel Paramerion Blade" tier="4" piece_type="Blade" mesh="empire_blade_5" culture="Culture.empire" length="95.7" weight="0.79">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="empire_blade_5_scabbard_5">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="3.6" />
@@ -32066,10 +32066,11 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_german_halberd_blade_h0" name="{=kaikaikai}German Halberd Blade" tier="3" piece_type="Blade" mesh="german_halberd_blade" culture="Culture.vlandia" length="68.8" weight="0.53">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="5.1" />
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.9" />
     </BladeData>
     <Flags>
+      <Flag name="BonusAgainstShield" />
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
     <Materials>
@@ -32078,10 +32079,11 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_german_halberd_blade_h1" name="{=kaikaikai}German Halberd Blade" tier="3" piece_type="Blade" mesh="german_halberd_blade" culture="Culture.vlandia" length="68.8" weight="0.53">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="5.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="5.1" />
     </BladeData>
     <Flags>
+      <Flag name="BonusAgainstShield" />
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
     <Materials>
@@ -32090,10 +32092,11 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_german_halberd_blade_h2" name="{=kaikaikai}German Halberd Blade" tier="3" piece_type="Blade" mesh="german_halberd_blade" culture="Culture.vlandia" length="68.8" weight="0.49">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.4" />
-      <Swing damage_type="Cut" damage_factor="5.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="5.1" />
     </BladeData>
     <Flags>
+      <Flag name="BonusAgainstShield" />
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
     <Materials>
@@ -32102,10 +32105,11 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_german_halberd_blade_h3" name="{=kaikaikai}German Halberd Blade" tier="3" piece_type="Blade" mesh="german_halberd_blade" culture="Culture.vlandia" length="68.8" weight="0.49">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.4" />
-      <Swing damage_type="Cut" damage_factor="5.4" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="5.3" />
     </BladeData>
     <Flags>
+      <Flag name="BonusAgainstShield" />
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
     <Materials>

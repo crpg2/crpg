@@ -6784,35 +6784,35 @@
       <Piece id="crpg_fine_steel_long_kaskara_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_paramerion_v1_h0" name="{=OLTUHPaD}Fine Steel Paramerion" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_fine_steel_paramerion_v2_h0" name="{=OLTUHPaD}Fine Steel Paramerion" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_fine_steel_paramerion_blade_h0" Type="Blade" scale_factor="93" />
       <Piece id="crpg_fine_steel_paramerion_guard_h0" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_fine_steel_paramerion_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_fine_steel_paramerion_handle_h0" Type="Handle" scale_factor="99" />
       <Piece id="crpg_fine_steel_paramerion_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_paramerion_v1_h1" name="{=OLTUHPaD}Fine Steel Paramerion +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_fine_steel_paramerion_v2_h1" name="{=OLTUHPaD}Fine Steel Paramerion +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_fine_steel_paramerion_blade_h1" Type="Blade" scale_factor="93" />
       <Piece id="crpg_fine_steel_paramerion_guard_h1" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_fine_steel_paramerion_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_fine_steel_paramerion_handle_h1" Type="Handle" scale_factor="90" />
       <Piece id="crpg_fine_steel_paramerion_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_paramerion_v1_h2" name="{=OLTUHPaD}Fine Steel Paramerion +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_fine_steel_paramerion_v2_h2" name="{=OLTUHPaD}Fine Steel Paramerion +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_fine_steel_paramerion_blade_h2" Type="Blade" scale_factor="93" />
       <Piece id="crpg_fine_steel_paramerion_guard_h2" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_fine_steel_paramerion_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_fine_steel_paramerion_handle_h2" Type="Handle" scale_factor="90" />
       <Piece id="crpg_fine_steel_paramerion_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_paramerion_v1_h3" name="{=OLTUHPaD}Fine Steel Paramerion +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_fine_steel_paramerion_v2_h3" name="{=OLTUHPaD}Fine Steel Paramerion +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_fine_steel_paramerion_blade_h3" Type="Blade" scale_factor="93" />
       <Piece id="crpg_fine_steel_paramerion_guard_h3" Type="Guard" scale_factor="100" />
-      <Piece id="crpg_fine_steel_paramerion_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_fine_steel_paramerion_handle_h3" Type="Handle" scale_factor="90" />
       <Piece id="crpg_fine_steel_paramerion_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
@@ -12756,7 +12756,7 @@
       <Piece id="crpg_ironrod_pommel_h3" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_german_halberd_v1_h0" name="{=kaikaikai}German Halberd" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_german_halberd_v2_h0" name="{=kaikaikai}German Halberd" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_german_halberd_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_german_halberd_handle_h0" Type="Handle" scale_factor="100" />
@@ -12764,7 +12764,7 @@
       <Piece id="crpg_german_halberd_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_german_halberd_v1_h1" name="{=kaikaikai}German Halberd +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_german_halberd_v2_h1" name="{=kaikaikai}German Halberd +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_german_halberd_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_german_halberd_handle_h1" Type="Handle" scale_factor="100" />
@@ -12772,7 +12772,7 @@
       <Piece id="crpg_german_halberd_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_german_halberd_v1_h2" name="{=kaikaikai}German Halberd +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_german_halberd_v2_h2" name="{=kaikaikai}German Halberd +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_german_halberd_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_german_halberd_handle_h2" Type="Handle" scale_factor="100" />
@@ -12780,7 +12780,7 @@
       <Piece id="crpg_german_halberd_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_german_halberd_v1_h3" name="{=kaikaikai}German Halberd +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_german_halberd_v2_h3" name="{=kaikaikai}German Halberd +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_german_halberd_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_german_halberd_handle_h3" Type="Handle" scale_factor="100" />
