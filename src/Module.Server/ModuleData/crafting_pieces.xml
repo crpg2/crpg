@@ -11962,8 +11962,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_seax_blade_h0" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.75">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Cut" damage_factor="3.0" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -11975,8 +11975,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_seax_blade_h1" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.60">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Cut" damage_factor="3.0" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -11988,8 +11988,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_seax_blade_h2" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.56">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="3.1" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -12001,8 +12001,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_seax_blade_h3" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.56">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
