@@ -31591,7 +31591,7 @@
   <CraftingPiece id="crpg_tanto_blade_h0" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.75">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
       <Thrust damage_type="Pierce" damage_factor="3.1" />
-      <Swing damage_type="Cut" damage_factor="2.9" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31600,10 +31600,22 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tanto_blade_h1" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.6">
+  <CraftingPiece id="crpg_tanto_blade_h1" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.55">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
+      <Thrust damage_type="Pierce" damage_factor="3.1" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tanto_blade_h2" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.55">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
       <Thrust damage_type="Pierce" damage_factor="3.2" />
-      <Swing damage_type="Cut" damage_factor="2.9" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31612,22 +31624,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tanto_blade_h2" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.5">
+  <CraftingPiece id="crpg_tanto_blade_h3" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.55">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
       <Thrust damage_type="Pierce" damage_factor="3.3" />
-      <Swing damage_type="Cut" damage_factor="2.9" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_tanto_blade_h3" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.5">
-    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
-      <Thrust damage_type="Pierce" damage_factor="3.4" />
-      <Swing damage_type="Cut" damage_factor="3.0" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
