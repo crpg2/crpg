@@ -2304,7 +2304,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
   </Item>
-  <Item id="crpg_gingerbread_shield_h0" name="{=BalanceMe}Gingerbread Shield" body_name="bo_cap_sturgia_shield_a" shield_body_name="bo_sturgia_shield_b" recalculate_body="false" mesh="gingerbread" using_tableau="true" weight="4.761" difficulty="0" appearance="1" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="0,0,0.01" culture="Culture.sturgia">
+  <Item id="gingerbread_shield_h0" name="{=BalanceMe}Gingerbread Shield" body_name="bo_cap_sturgia_shield_a" shield_body_name="bo_sturgia_shield_b" recalculate_body="false" mesh="gingerbread" using_tableau="true" weight="4.761" difficulty="0" appearance="1" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="0,0,0.01" culture="Culture.sturgia">
     <ItemComponent>
       <Weapon weapon_class="LargeShield" body_armor="1" thrust_speed="89" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="89" physics_material="wood_shield" item_usage="hand_shield" position="-0.02, 0.0, 0.0" rotation="-15.0,-90.0,-10.0" weapon_length="92" center_of_mass="0, 0.15, 0" hit_points="450" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
@@ -2312,7 +2312,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_gingerbread_shield_h1" name="{=BalanceMe}Gingerbread Shield +1" body_name="bo_cap_sturgia_shield_a" shield_body_name="bo_sturgia_shield_b" recalculate_body="false" mesh="gingerbread" using_tableau="true" weight="4.761" difficulty="0" appearance="1" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="0,0,0.01" culture="Culture.sturgia">
+  <Item id="gingerbread_shield_h1" name="{=BalanceMe}Gingerbread Shield +1" body_name="bo_cap_sturgia_shield_a" shield_body_name="bo_sturgia_shield_b" recalculate_body="false" mesh="gingerbread" using_tableau="true" weight="4.761" difficulty="0" appearance="1" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="0,0,0.01" culture="Culture.sturgia">
     <ItemComponent>
       <Weapon weapon_class="LargeShield" body_armor="2" thrust_speed="89" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="89" physics_material="wood_shield" item_usage="hand_shield" position="-0.02, 0.0, 0.0" rotation="-15.0,-90.0,-10.0" weapon_length="92" center_of_mass="0, 0.15, 0" hit_points="486" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
@@ -2320,7 +2320,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_gingerbread_shield_h2" name="{=BalanceMe}Gingerbread Shield +2" body_name="bo_cap_sturgia_shield_a" shield_body_name="bo_sturgia_shield_b" recalculate_body="false" mesh="gingerbread" using_tableau="true" weight="4.761" difficulty="0" appearance="1" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="0,0,0.01" culture="Culture.sturgia">
+  <Item id="gingerbread_shield_h2" name="{=BalanceMe}Gingerbread Shield +2" body_name="bo_cap_sturgia_shield_a" shield_body_name="bo_sturgia_shield_b" recalculate_body="false" mesh="gingerbread" using_tableau="true" weight="4.761" difficulty="0" appearance="1" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="0,0,0.01" culture="Culture.sturgia">
     <ItemComponent>
       <Weapon weapon_class="LargeShield" body_armor="2" thrust_speed="89" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="89" physics_material="wood_shield" item_usage="hand_shield" position="-0.02, 0.0, 0.0" rotation="-15.0,-90.0,-10.0" weapon_length="92" center_of_mass="0, 0.15, 0" hit_points="522" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
@@ -2328,7 +2328,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <Item id="crpg_gingerbread_shield_h3" name="{=BalanceMe}Gingerbread Shield +3" body_name="bo_cap_sturgia_shield_a" shield_body_name="bo_sturgia_shield_b" recalculate_body="false" mesh="gingerbread" using_tableau="true" weight="4.761" difficulty="0" appearance="1" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="0,0,0.01" culture="Culture.sturgia">
+  <Item id="gingerbread_shield_h3" name="{=BalanceMe}Gingerbread Shield +3" body_name="bo_cap_sturgia_shield_a" shield_body_name="bo_sturgia_shield_b" recalculate_body="false" mesh="gingerbread" using_tableau="true" weight="4.761" difficulty="0" appearance="1" Type="Shield" item_holsters="shield_round:shield_4" has_lower_holster_priority="true" holster_position_shift="0,0,0.01" culture="Culture.sturgia">
     <ItemComponent>
       <Weapon weapon_class="LargeShield" body_armor="2" thrust_speed="89" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="89" physics_material="wood_shield" item_usage="hand_shield" position="-0.02, 0.0, 0.0" rotation="-15.0,-90.0,-10.0" weapon_length="92" center_of_mass="0, 0.15, 0" hit_points="558" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />

@@ -6744,25 +6744,25 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_santa_v2_h0" name="Santahat" mesh="santa_hat" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="santa_v2_h0" name="Santahat" mesh="santa_hat" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="1" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_santa_v2_h1" name="Santahat +1" mesh="santa_hat" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="santa_v2_h1" name="Santahat +1" mesh="santa_hat" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="3" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_santa_v2_h2" name="Santahat +2" mesh="santa_hat" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="santa_v2_h2" name="Santahat +2" mesh="santa_hat" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="5" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_santa_v2_h3" name="Santahat +3" mesh="santa_hat" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="santa_v2_h3" name="Santahat +3" mesh="santa_hat" culture="Culture.vlandia" weight="0.01845688" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="7" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
     </ItemComponent>
