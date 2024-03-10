@@ -4248,28 +4248,28 @@
       <Piece id="crpg_bone_crusher_pommel_h3" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_round_mace_v2_h0" name="{=9EWN9SiT}Decorated Round Mace" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_decorated_round_mace_v1_h0" name="{=9EWN9SiT}Decorated Round Mace" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_decorated_round_mace_blade_h0" Type="Blade" scale_factor="107" />
       <Piece id="crpg_decorated_round_mace_handle_h0" Type="Handle" scale_factor="120" />
       <Piece id="crpg_decorated_round_mace_pommel_h0" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_round_mace_v2_h1" name="{=9EWN9SiT}Decorated Round Mace +1" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_decorated_round_mace_v1_h1" name="{=9EWN9SiT}Decorated Round Mace +1" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_decorated_round_mace_blade_h1" Type="Blade" scale_factor="107" />
       <Piece id="crpg_decorated_round_mace_handle_h1" Type="Handle" scale_factor="120" />
       <Piece id="crpg_decorated_round_mace_pommel_h1" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_round_mace_v2_h2" name="{=9EWN9SiT}Decorated Round Mace +2" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_decorated_round_mace_v1_h2" name="{=9EWN9SiT}Decorated Round Mace +2" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_decorated_round_mace_blade_h2" Type="Blade" scale_factor="107" />
       <Piece id="crpg_decorated_round_mace_handle_h2" Type="Handle" scale_factor="120" />
       <Piece id="crpg_decorated_round_mace_pommel_h2" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_round_mace_v2_h3" name="{=9EWN9SiT}Decorated Round Mace +3" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_decorated_round_mace_v1_h3" name="{=9EWN9SiT}Decorated Round Mace +3" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_decorated_round_mace_blade_h3" Type="Blade" scale_factor="107" />
       <Piece id="crpg_decorated_round_mace_handle_h3" Type="Handle" scale_factor="120" />
