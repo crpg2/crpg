@@ -32920,4 +32920,432 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_blade_h0" name="{=Salt}English Bill Blade" tier="3" piece_type="Blade" mesh="englishbill_blade" culture="Culture.vlandia" length="64.2" weight="0.25">
+    <BladeData stack_amount="3" blade_length="64.2" blade_width="15.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Pierce" damage_factor="3.4" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+      <Flag name="CanHook" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_blade_h1" name="{=Salt}English Bill Blade" tier="3" piece_type="Blade" mesh="englishbill_blade" culture="Culture.vlandia" length="64.2" weight="0.25">
+    <BladeData stack_amount="3" blade_length="64.2" blade_width="15.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Pierce" damage_factor="3.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+      <Flag name="CanHook" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_blade_h2" name="{=Salt}English Bill Blade" tier="3" piece_type="Blade" mesh="englishbill_blade" culture="Culture.vlandia" length="64.2" weight="0.2">
+    <BladeData stack_amount="3" blade_length="64.2" blade_width="15.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Pierce" damage_factor="3.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+      <Flag name="CanHook" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_blade_h3" name="{=Salt}English Bill Blade" tier="3" piece_type="Blade" mesh="englishbill_blade" culture="Culture.vlandia" length="64.2" weight="0.2">
+    <BladeData stack_amount="3" blade_length="64.2" blade_width="15.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Pierce" damage_factor="3.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+      <Flag name="CanHook" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_handle_h0" name="{=Salt}English Bill Handle" tier="2" piece_type="Handle" mesh="englishbill_handle" length="170" weight="1.9">
+    <BuildData previous_piece_offset="0" next_piece_offset="1" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_handle_h1" name="{=Salt}English Bill Handle" tier="2" piece_type="Handle" mesh="englishbill_handle" length="170" weight="1.9">
+    <BuildData previous_piece_offset="0" next_piece_offset="1" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_handle_h2" name="{=Salt}English Bill Handle" tier="2" piece_type="Handle" mesh="englishbill_handle" length="170" weight="1.9">
+    <BuildData previous_piece_offset="0" next_piece_offset="1" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_handle_h3" name="{=Salt}English Bill Handle" tier="2" piece_type="Handle" mesh="englishbill_handle" length="170" weight="1.9">
+    <BuildData previous_piece_offset="0" next_piece_offset="1" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_guard_h0" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_guard_h1" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_guard_h2" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_guard_h3" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_pommel_h0" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_pommel_h1" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_pommel_h2" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_english_bill_pommel_h3" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_blade_h0" name="{=Yeldur}Long Dagger Blade" tier="2" piece_type="Blade" mesh="black_longdagger_blade" full_scale="false" length="40.4" weight="0.01">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="black_longdagger_scabbard" holster_mesh_length="43.3">
+      <Thrust damage_type="Pierce" damage_factor="1.5" />
+      <Swing damage_type="Cut" damage_factor="0.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_blade_h1" name="{=Yeldur}Long Dagger Blade" tier="2" piece_type="Blade" mesh="black_longdagger_blade" full_scale="false" length="40.4" weight="0.01">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="black_longdagger_scabbard" holster_mesh_length="43.3">
+      <Thrust damage_type="Pierce" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="0.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_blade_h2" name="{=Yeldur}Long Dagger Blade" tier="2" piece_type="Blade" mesh="black_longdagger_blade" full_scale="false" length="40.4" weight="0.01">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="black_longdagger_scabbard" holster_mesh_length="43.3">
+      <Thrust damage_type="Pierce" damage_factor="3.5" />
+      <Swing damage_type="Cut" damage_factor="0.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_blade_h3" name="{=Yeldur}Long Dagger Blade" tier="2" piece_type="Blade" mesh="black_longdagger_blade" full_scale="false" length="40.4" weight="0.01">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="black_longdagger_scabbard" holster_mesh_length="43.3">
+      <Thrust damage_type="Pierce" damage_factor="3.6" />
+      <Swing damage_type="Cut" damage_factor="0.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_handle_h0" name="{=Yeldur}Long Dagger Grip" tier="2" piece_type="Handle" mesh="black_longdagger_handle" culture="Culture.sturgia" full_scale="false" length="12.0" weight="0.01">
+    <BuildData piece_offset="-1" previous_piece_offset="0.0" next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_handle_h1" name="{=Yeldur}Long Dagger Grip" tier="2" piece_type="Handle" mesh="black_longdagger_handle" culture="Culture.sturgia" full_scale="false" length="12.0" weight="0.01">
+    <BuildData piece_offset="-1" previous_piece_offset="0.0" next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_handle_h2" name="{=Yeldur}Long Dagger Grip" tier="2" piece_type="Handle" mesh="black_longdagger_handle" culture="Culture.sturgia" full_scale="false" length="12.0" weight="0.01">
+    <BuildData piece_offset="-1" previous_piece_offset="0.0" next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_handle_h3" name="{=Yeldur}Long Dagger Grip" tier="2" piece_type="Handle" mesh="black_longdagger_handle" culture="Culture.sturgia" full_scale="false" length="12.0" weight="0.01">
+    <BuildData piece_offset="-1" previous_piece_offset="0.0" next_piece_offset="0.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_guard_h0" name="{=Yeldur}Long Dagger Guard" tier="1" piece_type="Guard" mesh="black_longdagger_guard" culture="Culture.battania" full_scale="false" length="4.75" weight="0.01">
+    <BuildData next_piece_offset="1.7" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_guard_h1" name="{=Yeldur}Long Dagger Guard" tier="1" piece_type="Guard" mesh="black_longdagger_guard" culture="Culture.battania" full_scale="false" length="4.75" weight="0.01">
+    <BuildData next_piece_offset="1.7" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_guard_h2" name="{=Yeldur}Long Dagger Guard" tier="1" piece_type="Guard" mesh="black_longdagger_guard" culture="Culture.battania" full_scale="false" length="4.75" weight="0.01">
+    <BuildData next_piece_offset="1.7" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_guard_h3" name="{=Yeldur}Long Dagger Guard" tier="1" piece_type="Guard" mesh="black_longdagger_guard" culture="Culture.battania" full_scale="false" length="4.75" weight="0.01">
+    <BuildData next_piece_offset="1.7" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_pommel_h0" name="{=Yeldur}Long Dagger Pommel" tier="4" piece_type="Pommel" mesh="black_longdagger_pommel" culture="Culture.battania" full_scale="false" length="5.28" weight="0.01">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_pommel_h1" name="{=Yeldur}Long Dagger Pommel" tier="4" piece_type="Pommel" mesh="black_longdagger_pommel" culture="Culture.battania" full_scale="false" length="5.28" weight="0.01">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_pommel_h2" name="{=Yeldur}Long Dagger Pommel" tier="4" piece_type="Pommel" mesh="black_longdagger_pommel" culture="Culture.battania" full_scale="false" length="5.28" weight="0.01">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_black_longdagger_pommel_h3" name="{=Yeldur}Long Dagger Pommel" tier="4" piece_type="Pommel" mesh="black_longdagger_pommel" culture="Culture.battania" full_scale="false" length="5.28" weight="0.01">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_blade_h0" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="seax_blade" full_scale="false" length="49.1" weight="2.2">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="" holster_mesh_length="43.3">
+      <Thrust damage_type="Pierce" damage_factor="3.1" />
+      <Swing damage_type="Cut" damage_factor="2.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_blade_h1" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="seax_blade" full_scale="false" length="49.1" weight="2.2">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="" holster_mesh_length="43.3">
+      <Thrust damage_type="Pierce" damage_factor="3.2" />
+      <Swing damage_type="Cut" damage_factor="2.7" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_blade_h2" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="seax_blade" full_scale="false" length="49.1" weight="2.2">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="" holster_mesh_length="43.3">
+      <Thrust damage_type="Pierce" damage_factor="3.3" />
+      <Swing damage_type="Cut" damage_factor="2.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_blade_h3" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="seax_blade" full_scale="false" length="49.1" weight="2.2">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="" holster_mesh_length="43.3">
+      <Thrust damage_type="Pierce" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_handle_h0" name="{=}Long Dagger Grip" tier="2" piece_type="Handle" mesh="seax_handle" culture="Culture.sturgia" full_scale="false" length="16.0" weight="0.01">
+    <BuildData piece_offset="-1" previous_piece_offset="1.0" next_piece_offset="1.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_handle_h1" name="{=}Long Dagger Grip" tier="2" piece_type="Handle" mesh="seax_handle" culture="Culture.sturgia" full_scale="false" length="16.0" weight="0.01">
+    <BuildData piece_offset="-1" previous_piece_offset="1.0" next_piece_offset="1.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_handle_h2" name="{=}Long Dagger Grip" tier="2" piece_type="Handle" mesh="seax_handle" culture="Culture.sturgia" full_scale="false" length="16.0" weight="0.01">
+    <BuildData piece_offset="-1" previous_piece_offset="1.0" next_piece_offset="1.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_handle_h3" name="{=}Long Dagger Grip" tier="2" piece_type="Handle" mesh="seax_handle" culture="Culture.sturgia" full_scale="false" length="16.0" weight="0.01">
+    <BuildData piece_offset="-1" previous_piece_offset="1.0" next_piece_offset="1.0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_guard_h0" name="{=}Long Dagger Guard" tier="1" piece_type="Guard" mesh="seax_guard" culture="Culture.battania" full_scale="false" length="2.41" weight="0.01">
+    <BuildData next_piece_offset="0.0" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_guard_h1" name="{=}Long Dagger Guard" tier="1" piece_type="Guard" mesh="seax_guard" culture="Culture.battania" full_scale="false" length="2.41" weight="0.01">
+    <BuildData next_piece_offset="0.0" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_guard_h2" name="{=}Long Dagger Guard" tier="1" piece_type="Guard" mesh="seax_guard" culture="Culture.battania" full_scale="false" length="2.41" weight="0.01">
+    <BuildData next_piece_offset="0.0" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_guard_h3" name="{=}Long Dagger Guard" tier="1" piece_type="Guard" mesh="seax_guard" culture="Culture.battania" full_scale="false" length="2.41" weight="0.01">
+    <BuildData next_piece_offset="0.0" />
+    <StatContributions armor_bonus="0" />
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_pommel_h0" name="{=}Long Dagger Pommel" tier="4" piece_type="Pommel" mesh="seax_pommel" culture="Culture.battania" full_scale="false" length="3.55" weight="0.01">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_pommel_h1" name="{=}Long Dagger Pommel" tier="4" piece_type="Pommel" mesh="seax_pommel" culture="Culture.battania" full_scale="false" length="3.55" weight="0.01">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_pommel_h2" name="{=}Long Dagger Pommel" tier="4" piece_type="Pommel" mesh="seax_pommel" culture="Culture.battania" full_scale="false" length="3.55" weight="0.01">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longseax_pommel_h3" name="{=}Long Dagger Pommel" tier="4" piece_type="Pommel" mesh="seax_pommel" culture="Culture.battania" full_scale="false" length="3.55" weight="0.01">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_blade_h0" name="Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.05">
+    <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_blade_h1" name="{=Salt}Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.05">
+    <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_blade_h2" name="{=Salt}Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.02">
+    <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_blade_h3" name="{=Salt}Swiss Halberd Blade" tier="3" piece_type="Blade" mesh="swiss_halberd_blade" culture="Culture.vlandia" length="109" weight="0.02">
+    <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="5.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_handle_h0" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.95">
+    <BuildData previous_piece_offset="0" next_piece_offset="58" piece_offset="50" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_handle_h1" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.95">
+    <BuildData previous_piece_offset="0" next_piece_offset="58" piece_offset="50" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_handle_h2" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.95">
+    <BuildData previous_piece_offset="0" next_piece_offset="58" piece_offset="50" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_handle_h3" name="{=Salt}Swiss Halberd Handle" tier="2" piece_type="Handle" mesh="swiss_halberd_handle" length="232" weight="1.95">
+    <BuildData previous_piece_offset="0" next_piece_offset="58" piece_offset="50" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_guard_h0" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_guard_h1" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_guard_h2" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_guard_h3" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_pommel_h0" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_pommel_h1" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_pommel_h2" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_swiss_halberd_pommel_h3" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
 </CraftingPieces>
