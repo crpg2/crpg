@@ -9980,7 +9980,7 @@
       <Piece id="crpg_forester_axe_handle_h3" Type="Handle" scale_factor="111" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_footman_axe_v1_h0" name="{=Diggles}Steel Footman Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
+  <CraftedItem id="crpg_steel_footman_axe_v2_h0" name="{=Diggles}Steel Footman Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.vlandia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_steel_footman_axe_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_steel_footman_axe_handle_h0" Type="Handle" scale_factor="105" />
