@@ -20645,7 +20645,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_tapered_two-hander_blade_h0" name="{=ZJrqEfBF}Tapered Kaskara Blade" tier="3" piece_type="Blade" mesh="vlandian_blade_8" culture="Culture.aserai" length="80.3" weight="1.25">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_8_scabbard_8">
       <Thrust damage_type="Pierce" damage_factor="1.6" />
       <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
@@ -20657,7 +20657,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_tapered_two-hander_blade_h1" name="{=ZJrqEfBF}Tapered Kaskara Blade" tier="3" piece_type="Blade" mesh="vlandian_blade_8" culture="Culture.aserai" length="80.3" weight="1.15">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_8_scabbard_8">
       <Thrust damage_type="Pierce" damage_factor="1.6" />
       <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
@@ -20669,7 +20669,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_tapered_two-hander_blade_h2" name="{=ZJrqEfBF}Tapered Kaskara Blade" tier="3" piece_type="Blade" mesh="vlandian_blade_8" culture="Culture.aserai" length="80.3" weight="1.15">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_8_scabbard_8">
       <Thrust damage_type="Pierce" damage_factor="1.6" />
       <Swing damage_type="Cut" damage_factor="3.6" />
     </BladeData>
@@ -20681,7 +20681,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_tapered_two-hander_blade_h3" name="{=ZJrqEfBF}Tapered Kaskara Blade" tier="3" piece_type="Blade" mesh="vlandian_blade_8" culture="Culture.aserai" length="80.3" weight="1.15">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_8_scabbard_8">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Cut" damage_factor="3.7" />
     </BladeData>
@@ -21353,7 +21353,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_two_hander_blade_h0" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.55">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="1.7" />
       <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
@@ -21362,7 +21362,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_two_hander_blade_h1" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.40">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="1.7" />
       <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
@@ -21371,7 +21371,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_two_hander_blade_h2" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.40">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="1.7" />
       <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
@@ -21380,7 +21380,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_broad_two_hander_blade_h3" name="{=KFqa2uF1}Broad Two Hander Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_2" culture="Culture.vlandia" length="99" weight="1.40">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
@@ -22133,7 +22133,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_iron_broadsword_blade_h0" name="{=3Y7plSBX}Iron Broadsword Blade" tier="2" piece_type="Blade" mesh="battania_blade_3_iron" culture="Culture.battania" length="80.8" weight="1.25">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_3_scabbard_3">
       <Thrust damage_type="Pierce" damage_factor="1.00" />
       <Swing damage_type="Cut" damage_factor="2.5" />
     </BladeData>
@@ -22145,7 +22145,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_iron_broadsword_blade_h1" name="{=3Y7plSBX}Iron Broadsword Blade" tier="2" piece_type="Blade" mesh="battania_blade_3_iron" culture="Culture.battania" length="80.8" weight="1.15">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_3_scabbard_3">
       <Thrust damage_type="Pierce" damage_factor="1.00" />
       <Swing damage_type="Cut" damage_factor="2.5" />
     </BladeData>
@@ -22157,7 +22157,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_iron_broadsword_blade_h2" name="{=3Y7plSBX}Iron Broadsword Blade" tier="2" piece_type="Blade" mesh="battania_blade_3_iron" culture="Culture.battania" length="80.8" weight="1.15">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_3_scabbard_3">
       <Thrust damage_type="Pierce" damage_factor="1.00" />
       <Swing damage_type="Cut" damage_factor="2.7" />
     </BladeData>
@@ -22169,7 +22169,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_iron_broadsword_blade_h3" name="{=3Y7plSBX}Iron Broadsword Blade" tier="2" piece_type="Blade" mesh="battania_blade_3_iron" culture="Culture.battania" length="80.8" weight="1.15">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_3_scabbard_3">
       <Thrust damage_type="Pierce" damage_factor="1.3" />
       <Swing damage_type="Cut" damage_factor="2.8" />
     </BladeData>
@@ -22277,7 +22277,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_heavy_executioner_long_sword_blade_h0" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="0.20">
-    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_5_scabbard_5">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
@@ -22289,7 +22289,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_heavy_executioner_long_sword_blade_h1" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="0.10">
-    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_5_scabbard_5">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
@@ -22301,7 +22301,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_heavy_executioner_long_sword_blade_h2" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="0.10">
-    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_5_scabbard_5">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
@@ -22313,7 +22313,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_heavy_executioner_long_sword_blade_h3" name="Heavy Executionner Long Blade" tier="5" piece_type="Blade" mesh="battania_blade_5" culture="Culture.battania" length="80.8" weight="0.10">
-    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="battania_blade_5_scabbard_5">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="4.9" />
     </BladeData>
@@ -24217,7 +24217,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_wide_fullered_broad_two_hander_blade_h0" name="{=mak3naEe}Wide Fullered Broad Two Hander Blade" tier="5" piece_type="Blade" mesh="vlandian_blade_3" culture="Culture.vlandia" length="99.4" weight="0.70">
-    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="1.9" />
       <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
@@ -24226,7 +24226,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_wide_fullered_broad_two_hander_blade_h1" name="{=mak3naEe}Wide Fullered Broad Two Hander Blade" tier="5" piece_type="Blade" mesh="vlandian_blade_3" culture="Culture.vlandia" length="99.4" weight="0.40">
-    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="1.9" />
       <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
@@ -24235,7 +24235,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_wide_fullered_broad_two_hander_blade_h2" name="{=mak3naEe}Wide Fullered Broad Two Hander Blade" tier="5" piece_type="Blade" mesh="vlandian_blade_3" culture="Culture.vlandia" length="99.4" weight="0.40">
-    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="2.2" />
       <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
@@ -24244,7 +24244,7 @@
     </Materials>
   </CraftingPiece>
   <CraftingPiece id="crpg_wide_fullered_broad_two_hander_blade_h3" name="{=mak3naEe}Wide Fullered Broad Two Hander Blade" tier="5" piece_type="Blade" mesh="vlandian_blade_3" culture="Culture.vlandia" length="99.4" weight="0.40">
-    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+    <BladeData stack_amount="0" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
