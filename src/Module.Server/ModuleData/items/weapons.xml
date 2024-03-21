@@ -5472,7 +5472,7 @@
       <Piece id="crpg_simple_short_warsword_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-   <CraftedItem id="crpg_iron_broadsword_v2_h0" name="{=DQaV0i5W}Iron Broadsword" crafting_template="crpg_SideTwoHandedSword" culture="Culture.battania" modifier_group="sword">
+  <CraftedItem id="crpg_iron_broadsword_v2_h0" name="{=DQaV0i5W}Iron Broadsword" crafting_template="crpg_SideTwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_iron_broadsword_blade_h0" Type="Blade" scale_factor="120" />
       <Piece id="crpg_iron_broadsword_guard_h0" Type="Guard" scale_factor="100" />
@@ -13266,6 +13266,382 @@
       <Piece id="crpg_swiss_halberd_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_long_arming_sword_h0" name="{=Salt}Long Arming Sword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_long_arming_sword_blade_h0" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_long_arming_sword_guard_h0" Type="Guard" scale_factor="120" />
+      <Piece id="crpg_long_arming_sword_handle_h0" Type="Handle" scale_factor="95" />
+      <Piece id="crpg_long_arming_sword_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_long_arming_sword_h1" name="{=Salt}Long Arming Sword +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_long_arming_sword_blade_h1" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_long_arming_sword_guard_h1" Type="Guard" scale_factor="120" />
+      <Piece id="crpg_long_arming_sword_handle_h1" Type="Handle" scale_factor="95" />
+      <Piece id="crpg_long_arming_sword_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_long_arming_sword_h2" name="{=Salt}Long Arming Sword +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_long_arming_sword_blade_h2" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_long_arming_sword_guard_h2" Type="Guard" scale_factor="120" />
+      <Piece id="crpg_long_arming_sword_handle_h2" Type="Handle" scale_factor="95" />
+      <Piece id="crpg_long_arming_sword_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_long_arming_sword_h3" name="{=Salt}Long Arming Sword +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_long_arming_sword_blade_h3" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_long_arming_sword_guard_h3" Type="Guard" scale_factor="120" />
+      <Piece id="crpg_long_arming_sword_handle_h3" Type="Handle" scale_factor="95" />
+      <Piece id="crpg_long_arming_sword_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_solingen_sword_h0" name="{=Salt}Solingen Sword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_solingen_sword_blade_h0" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_solingen_sword_guard_h0" Type="Guard" scale_factor="80" />
+      <Piece id="crpg_solingen_sword_handle_h0" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_solingen_sword_pommel_h0" Type="Pommel" scale_factor="120" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_solingen_sword_h1" name="{=Salt}Solingen Sword +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_solingen_sword_blade_h1" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_solingen_sword_guard_h1" Type="Guard" scale_factor="80" />
+      <Piece id="crpg_solingen_sword_handle_h1" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_solingen_sword_pommel_h1" Type="Pommel" scale_factor="120" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_solingen_sword_h2" name="{=Salt}Solingen Sword +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_solingen_sword_blade_h2" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_solingen_sword_guard_h2" Type="Guard" scale_factor="80" />
+      <Piece id="crpg_solingen_sword_handle_h2" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_solingen_sword_pommel_h2" Type="Pommel" scale_factor="120" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_solingen_sword_h3" name="{=Salt}Solingen Sword +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_solingen_sword_blade_h3" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_solingen_sword_guard_h3" Type="Guard" scale_factor="80" />
+      <Piece id="crpg_solingen_sword_handle_h3" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_solingen_sword_pommel_h3" Type="Pommel" scale_factor="120" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_kilij_h0" name="{=Salt}Kilij" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_kilij_blade_h0" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_kilij_guard_h0" Type="Guard" scale_factor="90" />
+      <Piece id="crpg_kilij_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_kilij_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_kilij_h1" name="{=Salt}Kilij +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_kilij_blade_h1" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_kilij_guard_h1" Type="Guard" scale_factor="90" />
+      <Piece id="crpg_kilij_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_kilij_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_kilij_h2" name="{=Salt}Kilij +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_kilij_blade_h2" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_kilij_guard_h2" Type="Guard" scale_factor="90" />
+      <Piece id="crpg_kilij_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_kilij_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_kilij_h3" name="{=Salt}Kilij +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_kilij_blade_h3" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_kilij_guard_h3" Type="Guard" scale_factor="90" />
+      <Piece id="crpg_kilij_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_kilij_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_shamshir_h0" name="{=Salt}Shamshir" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_shamshir_blade_h0" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_shamshir_guard_h0" Type="Guard" scale_factor="110" />
+      <Piece id="crpg_shamshir_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_shamshir_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_shamshir_h1" name="{=Salt}Shamshir +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_shamshir_blade_h1" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_shamshir_guard_h1" Type="Guard" scale_factor="110" />
+      <Piece id="crpg_shamshir_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_shamshir_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_shamshir_h2" name="{=Salt}Shamshir +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_shamshir_blade_h2" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_shamshir_guard_h2" Type="Guard" scale_factor="110" />
+      <Piece id="crpg_shamshir_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_shamshir_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_shamshir_h3" name="{=Salt}Shamshir +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_shamshir_blade_h3" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_shamshir_guard_h3" Type="Guard" scale_factor="110" />
+      <Piece id="crpg_shamshir_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_shamshir_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_arabian_cavalry_sword_h0" name="{=Salt}Arabian Cavalry Sword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_arabian_cavalry_sword_blade_h0" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_arabian_cavalry_sword_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_arabian_cavalry_sword_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_arabian_cavalry_sword_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_arabian_cavalry_sword_h1" name="{=Salt}Arabian Cavalry Sword +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_arabian_cavalry_sword_blade_h1" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_arabian_cavalry_sword_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_arabian_cavalry_sword_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_arabian_cavalry_sword_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_arabian_cavalry_sword_h2" name="{=Salt}Arabian Cavalry Sword +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_arabian_cavalry_sword_blade_h2" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_arabian_cavalry_sword_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_arabian_cavalry_sword_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_arabian_cavalry_sword_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_arabian_cavalry_sword_h3" name="{=Salt}Arabian Cavalry Sword +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_arabian_cavalry_sword_blade_h3" Type="Blade" scale_factor="95" />
+      <Piece id="crpg_arabian_cavalry_sword_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_arabian_cavalry_sword_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_arabian_cavalry_sword_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_karabela_h0" name="{=Salt}Karabela" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_karabela_blade_h0" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_karabela_guard_h0" Type="Guard" scale_factor="95" />
+      <Piece id="crpg_karabela_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_karabela_pommel_h0" Type="Pommel" scale_factor="95" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_karabela_h1" name="{=Salt}Karabela +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_karabela_blade_h1" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_karabela_guard_h1" Type="Guard" scale_factor="95" />
+      <Piece id="crpg_karabela_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_karabela_pommel_h1" Type="Pommel" scale_factor="95" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_karabela_h2" name="{=Salt}Karabela +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_karabela_blade_h2" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_karabela_guard_h2" Type="Guard" scale_factor="95" />
+      <Piece id="crpg_karabela_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_karabela_pommel_h2" Type="Pommel" scale_factor="95" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_karabela_h3" name="{=Salt}Karabela +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_karabela_blade_h3" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_karabela_guard_h3" Type="Guard" scale_factor="95" />
+      <Piece id="crpg_karabela_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_karabela_pommel_h3" Type="Pommel" scale_factor="95" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_greatlongaxe_h0" name="{=Salt}Great Long Axe" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_greatlongaxe_blade_h0" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_greatlongaxe_handle_h0" Type="Handle" scale_factor="165" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_greatlongaxe_h1" name="{=Salt}Great Long Axe +1" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_greatlongaxe_blade_h1" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_greatlongaxe_handle_h1" Type="Handle" scale_factor="165" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_greatlongaxe_h2" name="{=Salt}Great Long Axe +2" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_greatlongaxe_blade_h2" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_greatlongaxe_handle_h2" Type="Handle" scale_factor="165" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_greatlongaxe_h3" name="{=Salt}Great Long Axe +3" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_greatlongaxe_blade_h3" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_greatlongaxe_handle_h3" Type="Handle" scale_factor="165" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_arabian_straight_sword_h0" name="{=Salt}Arabian Straight Sword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_arabian_straight_sword_blade_h0" Type="Blade" scale_factor="85" />
+      <Piece id="crpg_arabian_straight_sword_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_arabian_straight_sword_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_arabian_straight_sword_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_arabian_straight_sword_h1" name="{=Salt}Arabian Straight Sword +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_arabian_straight_sword_blade_h1" Type="Blade" scale_factor="85" />
+      <Piece id="crpg_arabian_straight_sword_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_arabian_straight_sword_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_arabian_straight_sword_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_arabian_straight_sword_h2" name="{=Salt}Arabian Straight Sword +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_arabian_straight_sword_blade_h2" Type="Blade" scale_factor="85" />
+      <Piece id="crpg_arabian_straight_sword_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_arabian_straight_sword_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_arabian_straight_sword_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_arabian_straight_sword_h3" name="{=Salt}Arabian Straight Sword +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_arabian_straight_sword_blade_h3" Type="Blade" scale_factor="85" />
+      <Piece id="crpg_arabian_straight_sword_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_arabian_straight_sword_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_arabian_straight_sword_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_noble_steel_scimitar_h0" name="{=Salt}Noble Steel Scimitar" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_noble_steel_scimitar_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_noble_steel_scimitar_h1" name="{=Salt}Noble Steel Scimitar +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_noble_steel_scimitar_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_noble_steel_scimitar_h2" name="{=Salt}Noble Steel Scimitar +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_noble_steel_scimitar_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_noble_steel_scimitar_h3" name="{=Salt}Noble Steel Scimitar +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_noble_steel_scimitar_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_noble_steel_scimitar_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_heavy_arming_sword_h0" name="{=Salt}Heavy Arming Sword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_heavy_arming_sword_blade_h0" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_heavy_arming_sword_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_heavy_arming_sword_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_heavy_arming_sword_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_heavy_arming_sword_h1" name="{=Salt}Heavy Arming Sword +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_heavy_arming_sword_blade_h1" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_heavy_arming_sword_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_heavy_arming_sword_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_heavy_arming_sword_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_heavy_arming_sword_h2" name="{=Salt}Heavy Arming Sword +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_heavy_arming_sword_blade_h2" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_heavy_arming_sword_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_heavy_arming_sword_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_heavy_arming_sword_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_heavy_arming_sword_h3" name="{=Salt}Heavy Arming Sword +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_heavy_arming_sword_blade_h3" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_heavy_arming_sword_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_heavy_arming_sword_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_heavy_arming_sword_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_large_falchion_h0" name="{=Salt}Large Falchion" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_large_falchion_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_large_falchion_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_large_falchion_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_large_falchion_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_large_falchion_h1" name="{=Salt}Large Falchion +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_large_falchion_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_large_falchion_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_large_falchion_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_large_falchion_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_large_falchion_h2" name="{=Salt}Large Falchion +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_large_falchion_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_large_falchion_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_large_falchion_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_large_falchion_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_large_falchion_h3" name="{=Salt}Large Falchion +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_large_falchion_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_large_falchion_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_large_falchion_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_large_falchion_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_decorated_short_sword_h0" name="{=Salt}Decorated Thegn Blade" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_decorated_short_sword_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_decorated_short_sword_h1" name="{=Salt}Decorated Thegn Blade +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_decorated_short_sword_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_decorated_short_sword_h2" name="{=Salt}Decorated Thegn Blade +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_decorated_short_sword_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_decorated_short_sword_h3" name="{=Salt}Decorated Thegn Blade +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_decorated_short_sword_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_decorated_short_sword_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
 </Items>
