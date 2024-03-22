@@ -1,144 +1,144 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <CraftedItem id="crpg_french_voulge_v1_h0" name="{=kaikaikai}French Voulge" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_french_voulge_v2_h0" name="{=kaikaikai}French Voulge" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_french_voulge_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_french_voulge_handle_h0" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_french_voulge_v1_h1" name="{=kaikaikai}French Voulge +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_french_voulge_v2_h1" name="{=kaikaikai}French Voulge +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_french_voulge_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_french_voulge_handle_h1" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_french_voulge_v1_h2" name="{=kaikaikai}French Voulge +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_french_voulge_v2_h2" name="{=kaikaikai}French Voulge +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_french_voulge_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_french_voulge_handle_h2" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_french_voulge_v1_h3" name="{=kaikaikai}French Voulge +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_french_voulge_v2_h3" name="{=kaikaikai}French Voulge +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_french_voulge_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_french_voulge_handle_h3" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_glaive_v3_h0" name="{=kaikaikai}Burgundian Glaive" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_glaive_v4_h0" name="{=kaikaikai}Burgundian Glaive" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_glaive_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_glaive_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_glaive_v3_h1" name="{=kaikaikai}Burgundian Glaive +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_glaive_v4_h1" name="{=kaikaikai}Burgundian Glaive +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_glaive_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_glaive_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_glaive_v3_h2" name="{=kaikaikai}Burgundian Glaive +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_glaive_v4_h2" name="{=kaikaikai}Burgundian Glaive +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_glaive_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_glaive_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_glaive_v3_h3" name="{=kaikaikai}Burgundian Glaive +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_glaive_v4_h3" name="{=kaikaikai}Burgundian Glaive +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_glaive_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_glaive_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_poleaxe_v5_h0" name="{=kaikaikai}Burgundian Poleaxe" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_poleaxe_v6_h0" name="{=kaikaikai}Burgundian Poleaxe" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_poleaxe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_poleaxe_handle_h0" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_poleaxe_v5_h1" name="{=kaikaikai}Burgundian Poleaxe +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_poleaxe_v6_h1" name="{=kaikaikai}Burgundian Poleaxe +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_poleaxe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_poleaxe_handle_h1" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_poleaxe_v5_h2" name="{=kaikaikai}Burgundian Poleaxe +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_poleaxe_v6_h2" name="{=kaikaikai}Burgundian Poleaxe +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_poleaxe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_poleaxe_handle_h2" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_burgundian_poleaxe_v5_h3" name="{=kaikaikai}Burgundian Poleaxe +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_burgundian_poleaxe_v6_h3" name="{=kaikaikai}Burgundian Poleaxe +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_burgundian_poleaxe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_burgundian_poleaxe_handle_h3" Type="Handle" scale_factor="125" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_poleaxe_v1_h0" name="{=kaikaikai}Simple Poleaxe" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_simple_poleaxe_v2_h0" name="{=kaikaikai}Simple Poleaxe" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_simple_poleaxe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_simple_poleaxe_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_poleaxe_v1_h1" name="{=kaikaikai}Simple Poleaxe +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_simple_poleaxe_v2_h1" name="{=kaikaikai}Simple Poleaxe +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_simple_poleaxe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_simple_poleaxe_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_poleaxe_v1_h2" name="{=kaikaikai}Simple Poleaxe +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_simple_poleaxe_v2_h2" name="{=kaikaikai}Simple Poleaxe +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_simple_poleaxe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_simple_poleaxe_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_simple_poleaxe_v1_h3" name="{=kaikaikai}Simple Poleaxe +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_simple_poleaxe_v2_h3" name="{=kaikaikai}Simple Poleaxe +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_simple_poleaxe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_simple_poleaxe_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bec_de_corbin_v3_h0" name="{=kaikaikai}Bec De Corbin" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bec_de_corbin_v4_h0" name="{=kaikaikai}Bec De Corbin" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bec_de_corbin_blade_h0" Type="Blade" scale_factor="98" />
       <Piece id="crpg_bec_de_corbin_handle_h0" Type="Handle" scale_factor="98" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bec_de_corbin_v3_h1" name="{=kaikaikai}Bec De Corbin +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bec_de_corbin_v4_h1" name="{=kaikaikai}Bec De Corbin +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bec_de_corbin_blade_h1" Type="Blade" scale_factor="98" />
       <Piece id="crpg_bec_de_corbin_handle_h1" Type="Handle" scale_factor="98" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bec_de_corbin_v3_h2" name="{=kaikaikai}Bec De Corbin +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bec_de_corbin_v4_h2" name="{=kaikaikai}Bec De Corbin +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bec_de_corbin_blade_h2" Type="Blade" scale_factor="98" />
       <Piece id="crpg_bec_de_corbin_handle_h2" Type="Handle" scale_factor="98" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bec_de_corbin_v3_h3" name="{=kaikaikai}Bec De Corbin +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bec_de_corbin_v4_h3" name="{=kaikaikai}Bec De Corbin +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bec_de_corbin_blade_h3" Type="Blade" scale_factor="98" />
       <Piece id="crpg_bec_de_corbin_handle_h3" Type="Handle" scale_factor="98" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v4_h0" name="{=kaikaikai}Spiked Polehammer" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_spiked_polehammer_v5_h0" name="{=kaikaikai}Spiked Polehammer" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_spiked_polehammer_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_spiked_polehammer_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v4_h1" name="{=kaikaikai}Spiked Polehammer +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_spiked_polehammer_v5_h1" name="{=kaikaikai}Spiked Polehammer +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_spiked_polehammer_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_spiked_polehammer_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v4_h2" name="{=kaikaikai}Spiked Polehammer +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_spiked_polehammer_v5_h2" name="{=kaikaikai}Spiked Polehammer +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_spiked_polehammer_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_spiked_polehammer_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v4_h3" name="{=kaikaikai}Spiked Polehammer +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_spiked_polehammer_v5_h3" name="{=kaikaikai}Spiked Polehammer +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_spiked_polehammer_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_spiked_polehammer_handle_h3" Type="Handle" scale_factor="100" />
@@ -656,31 +656,31 @@
       <Piece id="crpg_long_maul_handle_h3" Type="Handle" scale_factor="165" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iklwa_v1_h0" name="{=kaikaikai}Iklwa" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_iklwa_v2_h0" name="{=kaikaikai}Iklwa" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_iklwa_blade_h0" Type="Blade" scale_factor="90" />
       <Piece id="crpg_iklwa_handle_h0" Type="Handle" scale_factor="30" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iklwa_v1_h1" name="{=kaikaikai}Iklwa +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_iklwa_v2_h1" name="{=kaikaikai}Iklwa +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_iklwa_blade_h1" Type="Blade" scale_factor="90" />
       <Piece id="crpg_iklwa_handle_h1" Type="Handle" scale_factor="30" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iklwa_v1_h2" name="{=kaikaikai}Iklwa +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_iklwa_v2_h2" name="{=kaikaikai}Iklwa +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_iklwa_blade_h2" Type="Blade" scale_factor="90" />
       <Piece id="crpg_iklwa_handle_h2" Type="Handle" scale_factor="30" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iklwa_v1_h3" name="{=kaikaikai}Iklwa +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_iklwa_v2_h3" name="{=kaikaikai}Iklwa +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_iklwa_blade_h3" Type="Blade" scale_factor="90" />
       <Piece id="crpg_iklwa_handle_h3" Type="Handle" scale_factor="30" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hoplite_spear_v3_h0" name="{=}Hoplite Spear" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_hoplite_spear_v4_h0" name="{=}Hoplite Spear" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_hoplite_spear_blade_h0" Type="Blade" scale_factor="90" />
       <Piece id="crpg_hoplite_spear_guard_h0" Type="Guard" scale_factor="90" />
@@ -688,7 +688,7 @@
       <Piece id="crpg_hoplite_spear_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hoplite_spear_v3_h1" name="{=}Hoplite Spear +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_hoplite_spear_v4_h1" name="{=}Hoplite Spear +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_hoplite_spear_blade_h1" Type="Blade" scale_factor="90" />
       <Piece id="crpg_hoplite_spear_guard_h1" Type="Guard" scale_factor="90" />
@@ -696,7 +696,7 @@
       <Piece id="crpg_hoplite_spear_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hoplite_spear_v3_h2" name="{=}Hoplite Spear +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_hoplite_spear_v4_h2" name="{=}Hoplite Spear +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_hoplite_spear_blade_h2" Type="Blade" scale_factor="90" />
       <Piece id="crpg_hoplite_spear_guard_h2" Type="Guard" scale_factor="90" />
@@ -704,7 +704,7 @@
       <Piece id="crpg_hoplite_spear_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_hoplite_spear_v3_h3" name="{=}Hoplite Spear +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_hoplite_spear_v4_h3" name="{=}Hoplite Spear +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_hoplite_spear_blade_h3" Type="Blade" scale_factor="90" />
       <Piece id="crpg_hoplite_spear_guard_h3" Type="Guard" scale_factor="90" />
@@ -712,25 +712,25 @@
       <Piece id="crpg_hoplite_spear_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_hafted_spiked_mace_v2_h0" name="{=kaikaikai}Long Hafted Spiked Mace" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_long_hafted_spiked_mace_v3_h0" name="{=kaikaikai}Long Hafted Spiked Mace" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_hafted_spiked_mace_blade_h0" Type="Blade" scale_factor="162" />
       <Piece id="crpg_long_hafted_spiked_mace_handle_h0" Type="Handle" scale_factor="290" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_hafted_spiked_mace_v2_h1" name="{=kaikaikai}Long Hafted Spiked Mace +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_long_hafted_spiked_mace_v3_h1" name="{=kaikaikai}Long Hafted Spiked Mace +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_hafted_spiked_mace_blade_h1" Type="Blade" scale_factor="162" />
       <Piece id="crpg_long_hafted_spiked_mace_handle_h1" Type="Handle" scale_factor="290" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_hafted_spiked_mace_v2_h2" name="{=kaikaikai}Long Hafted Spiked Mace +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_long_hafted_spiked_mace_v3_h2" name="{=kaikaikai}Long Hafted Spiked Mace +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_hafted_spiked_mace_blade_h2" Type="Blade" scale_factor="162" />
       <Piece id="crpg_long_hafted_spiked_mace_handle_h2" Type="Handle" scale_factor="290" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_hafted_spiked_mace_v2_h3" name="{=kaikaikai}Long Hafted Spiked Mace +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_long_hafted_spiked_mace_v3_h3" name="{=kaikaikai}Long Hafted Spiked Mace +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_hafted_spiked_mace_blade_h3" Type="Blade" scale_factor="162" />
       <Piece id="crpg_long_hafted_spiked_mace_handle_h3" Type="Handle" scale_factor="290" />
@@ -832,25 +832,25 @@
       <Piece id="crpg_barmace_handle_h3" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_awlpike_v1_h0" name="{=}Awlpike" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_awlpike_v2_h0" name="{=}Awlpike" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_awlpike_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_awlpike_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_awlpike_v1_h1" name="{=}Awlpike +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_awlpike_v2_h1" name="{=}Awlpike +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_awlpike_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_awlpike_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_awlpike_v1_h2" name="{=}Awlpike +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_awlpike_v2_h2" name="{=}Awlpike +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_awlpike_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_awlpike_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_awlpike_v1_h3" name="{=}Awlpike +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_awlpike_v2_h3" name="{=}Awlpike +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_awlpike_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_awlpike_handle_h3" Type="Handle" scale_factor="100" />
@@ -920,25 +920,25 @@
       <Piece id="crpg_dawn_pommel_h3" Type="Pommel" scale_factor="140" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_war_scythe_v2_h0" name="{=kaikaikai}War Scythe" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_war_scythe_v3_h0" name="{=kaikaikai}War Scythe" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_war_scythe_blade_h0" Type="Blade" scale_factor="80" />
       <Piece id="crpg_war_scythe_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_war_scythe_v2_h1" name="{=kaikaikai}War Scythe +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_war_scythe_v3_h1" name="{=kaikaikai}War Scythe +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_war_scythe_blade_h1" Type="Blade" scale_factor="80" />
       <Piece id="crpg_war_scythe_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_war_scythe_v2_h2" name="{=kaikaikai}War Scythe +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_war_scythe_v3_h2" name="{=kaikaikai}War Scythe +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_war_scythe_blade_h2" Type="Blade" scale_factor="80" />
       <Piece id="crpg_war_scythe_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_war_scythe_v2_h3" name="{=kaikaikai}War Scythe +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_war_scythe_v3_h3" name="{=kaikaikai}War Scythe +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_war_scythe_blade_h3" Type="Blade" scale_factor="80" />
       <Piece id="crpg_war_scythe_handle_h3" Type="Handle" scale_factor="100" />
@@ -7808,83 +7808,83 @@
       <Piece id="crpg_iron_arming_sword_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_demilance_v1_h0" name="{=Telford}Decorated Demilance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_decorated_demilance_v2_h0" name="{=Telford}Decorated Demilance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_decorated_demilance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_decorated_demilance_guard_h0" Type="Guard" scale_factor="100" />
       <Piece id="crpg_decorated_demilance_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_demilance_v1_h1" name="{=Telford}Decorated Demilance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_decorated_demilance_v2_h1" name="{=Telford}Decorated Demilance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_decorated_demilance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_decorated_demilance_guard_h1" Type="Guard" scale_factor="100" />
       <Piece id="crpg_decorated_demilance_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_demilance_v1_h2" name="{=Telford}Decorated Demilance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_decorated_demilance_v2_h2" name="{=Telford}Decorated Demilance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_decorated_demilance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_decorated_demilance_guard_h2" Type="Guard" scale_factor="100" />
       <Piece id="crpg_decorated_demilance_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_demilance_v1_h3" name="{=Telford}Decorated Demilance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_decorated_demilance_v2_h3" name="{=Telford}Decorated Demilance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_decorated_demilance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_decorated_demilance_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_decorated_demilance_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wrapped_short_lance_v1_h0" name="{=Telford}Wrapped Short Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_wrapped_short_lance_v2_h0" name="{=Telford}Wrapped Short Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_wrapped_short_lance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wrapped_short_lance_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wrapped_short_lance_v1_h1" name="{=Telford}Wrapped Short Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_wrapped_short_lance_v2_h1" name="{=Telford}Wrapped Short Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_wrapped_short_lance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wrapped_short_lance_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wrapped_short_lance_v1_h2" name="{=Telford}Wrapped Short Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_wrapped_short_lance_v2_h2" name="{=Telford}Wrapped Short Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_wrapped_short_lance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wrapped_short_lance_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_wrapped_short_lance_v1_h3" name="{=Telford}Wrapped Short Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_wrapped_short_lance_v2_h3" name="{=Telford}Wrapped Short Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_wrapped_short_lance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wrapped_short_lance_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_chinese_war_lance_v1_h0" name="{=Telford}Chinese War Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_chinese_war_lance_v2_h0" name="{=Telford}Chinese War Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_chinese_war_lance_blade_h0" Type="Blade" scale_factor="98" />
       <Piece id="crpg_chinese_war_lance_handle_h0" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_chinese_war_lance_v1_h1" name="{=Telford}Chinese War Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_chinese_war_lance_v2_h1" name="{=Telford}Chinese War Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_chinese_war_lance_blade_h1" Type="Blade" scale_factor="98" />
       <Piece id="crpg_chinese_war_lance_handle_h1" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_chinese_war_lance_v1_h2" name="{=Telford}Chinese War Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_chinese_war_lance_v2_h2" name="{=Telford}Chinese War Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_chinese_war_lance_blade_h2" Type="Blade" scale_factor="98" />
       <Piece id="crpg_chinese_war_lance_handle_h2" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_chinese_war_lance_v1_h3" name="{=Telford}Chinese War Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_chinese_war_lance_v2_h3" name="{=Telford}Chinese War Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_chinese_war_lance_blade_h3" Type="Blade" scale_factor="98" />
       <Piece id="crpg_chinese_war_lance_handle_h3" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v1_h0" name="{=Telford}Spanish Full Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v2_h0" name="{=Telford}Spanish Full Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h0" Type="Guard" scale_factor="100" />
@@ -7892,7 +7892,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v1_h1" name="{=Telford}Spanish Full Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v2_h1" name="{=Telford}Spanish Full Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h1" Type="Guard" scale_factor="100" />
@@ -7900,7 +7900,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v1_h2" name="{=Telford}Spanish Full Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v2_h2" name="{=Telford}Spanish Full Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h2" Type="Guard" scale_factor="100" />
@@ -7908,7 +7908,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v1_h3" name="{=Telford}Spanish Full Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v2_h3" name="{=Telford}Spanish Full Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h3" Type="Guard" scale_factor="100" />
@@ -7916,7 +7916,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v1_h0" name="{=Telford}Noble Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v2_h0" name="{=Telford}Noble Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h0" Type="Guard" scale_factor="100" />
@@ -7924,7 +7924,7 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v1_h1" name="{=Telford}Noble Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v2_h1" name="{=Telford}Noble Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h1" Type="Guard" scale_factor="100" />
@@ -7932,7 +7932,7 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v1_h2" name="{=Telford}Noble Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v2_h2" name="{=Telford}Noble Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h2" Type="Guard" scale_factor="100" />
@@ -7940,7 +7940,7 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v1_h3" name="{=Telford}Noble Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v2_h3" name="{=Telford}Noble Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h3" Type="Guard" scale_factor="100" />
@@ -7948,79 +7948,79 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cataphract_lance_v1_h0" name="{=Telford}Cataphract Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_cataphract_lance_v2_h0" name="{=Telford}Cataphract Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cataphract_lance_blade_h0" Type="Blade" scale_factor="124" />
       <Piece id="crpg_cataphract_lance_handle_h0" Type="Handle" scale_factor="118" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cataphract_lance_v1_h1" name="{=Telford}Cataphract Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_cataphract_lance_v2_h1" name="{=Telford}Cataphract Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cataphract_lance_blade_h1" Type="Blade" scale_factor="124" />
       <Piece id="crpg_cataphract_lance_handle_h1" Type="Handle" scale_factor="118" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cataphract_lance_v1_h2" name="{=Telford}Cataphract Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_cataphract_lance_v2_h2" name="{=Telford}Cataphract Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cataphract_lance_blade_h2" Type="Blade" scale_factor="124" />
       <Piece id="crpg_cataphract_lance_handle_h2" Type="Handle" scale_factor="118" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cataphract_lance_v1_h3" name="{=Telford}Cataphract Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_cataphract_lance_v2_h3" name="{=Telford}Cataphract Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cataphract_lance_blade_h3" Type="Blade" scale_factor="124" />
       <Piece id="crpg_cataphract_lance_handle_h3" Type="Handle" scale_factor="118" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_druzhinnik_lance_v1_h0" name="{=Telford}Heavy Druzhinnik Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_druzhinnik_lance_v2_h0" name="{=Telford}Heavy Druzhinnik Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_druzhinnik_lance_blade_h0" Type="Blade" scale_factor="148" />
       <Piece id="crpg_heavy_druzhinnik_lance_handle_h0" Type="Handle" scale_factor="148" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_druzhinnik_lance_v1_h1" name="{=Telford}Heavy Druzhinnik Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_druzhinnik_lance_v2_h1" name="{=Telford}Heavy Druzhinnik Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_druzhinnik_lance_blade_h1" Type="Blade" scale_factor="148" />
       <Piece id="crpg_heavy_druzhinnik_lance_handle_h1" Type="Handle" scale_factor="148" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_druzhinnik_lance_v1_h2" name="{=Telford}Heavy Druzhinnik Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_druzhinnik_lance_v2_h2" name="{=Telford}Heavy Druzhinnik Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_druzhinnik_lance_blade_h2" Type="Blade" scale_factor="148" />
       <Piece id="crpg_heavy_druzhinnik_lance_handle_h2" Type="Handle" scale_factor="148" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_druzhinnik_lance_v1_h3" name="{=Telford}Heavy Druzhinnik Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_druzhinnik_lance_v2_h3" name="{=Telford}Heavy Druzhinnik Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_druzhinnik_lance_blade_h3" Type="Blade" scale_factor="148" />
       <Piece id="crpg_heavy_druzhinnik_lance_handle_h3" Type="Handle" scale_factor="148" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_knightly_lance_v1_h0" name="{=Telford}Heavy Knightly Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_knightly_lance_v2_h0" name="{=Telford}Heavy Knightly Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_knightly_lance_blade_h0" Type="Blade" scale_factor="140" />
       <Piece id="crpg_heavy_knightly_lance_handle_h0" Type="Handle" scale_factor="138" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_knightly_lance_v1_h1" name="{=Telford}Heavy Knightly Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_knightly_lance_v2_h1" name="{=Telford}Heavy Knightly Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_knightly_lance_blade_h1" Type="Blade" scale_factor="140" />
       <Piece id="crpg_heavy_knightly_lance_handle_h1" Type="Handle" scale_factor="138" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_knightly_lance_v1_h2" name="{=Telford}Heavy Knightly Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_knightly_lance_v2_h2" name="{=Telford}Heavy Knightly Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_knightly_lance_blade_h2" Type="Blade" scale_factor="140" />
       <Piece id="crpg_heavy_knightly_lance_handle_h2" Type="Handle" scale_factor="138" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_knightly_lance_v1_h3" name="{=Telford}Heavy Knightly Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_knightly_lance_v2_h3" name="{=Telford}Heavy Knightly Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_knightly_lance_blade_h3" Type="Blade" scale_factor="140" />
       <Piece id="crpg_heavy_knightly_lance_handle_h3" Type="Handle" scale_factor="138" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_cavalry_lance_v1_h0" name="{=Telford}Heavy Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_cavalry_lance_v2_h0" name="{=Telford}Heavy Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_cavalry_lance_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_heavy_cavalry_lance_guard_h0" Type="Guard" scale_factor="100" />
@@ -8028,7 +8028,7 @@
       <Piece id="crpg_heavy_cavalry_lance_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_cavalry_lance_v1_h1" name="{=Telford}Heavy Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_cavalry_lance_v2_h1" name="{=Telford}Heavy Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_cavalry_lance_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_heavy_cavalry_lance_guard_h1" Type="Guard" scale_factor="100" />
@@ -8036,7 +8036,7 @@
       <Piece id="crpg_heavy_cavalry_lance_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_cavalry_lance_v1_h2" name="{=Telford}Heavy Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_cavalry_lance_v2_h2" name="{=Telford}Heavy Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_cavalry_lance_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_heavy_cavalry_lance_guard_h2" Type="Guard" scale_factor="100" />
@@ -8044,7 +8044,7 @@
       <Piece id="crpg_heavy_cavalry_lance_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_cavalry_lance_v1_h3" name="{=Telford}Heavy Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_heavy_cavalry_lance_v2_h3" name="{=Telford}Heavy Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_heavy_cavalry_lance_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_heavy_cavalry_lance_guard_h3" Type="Guard" scale_factor="100" />
@@ -8052,231 +8052,231 @@
       <Piece id="crpg_heavy_cavalry_lance_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_druzhinnik_lance_v1_h0" name="{=Telford}Druzhinnik Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_druzhinnik_lance_v2_h0" name="{=Telford}Druzhinnik Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_druzhinnik_lance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_druzhinnik_lance_handle_h0" Type="Handle" scale_factor="113" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_druzhinnik_lance_v1_h1" name="{=Telford}Druzhinnik Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_druzhinnik_lance_v2_h1" name="{=Telford}Druzhinnik Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_druzhinnik_lance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_druzhinnik_lance_handle_h1" Type="Handle" scale_factor="113" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_druzhinnik_lance_v1_h2" name="{=Telford}Druzhinnik Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_druzhinnik_lance_v2_h2" name="{=Telford}Druzhinnik Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_druzhinnik_lance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_druzhinnik_lance_handle_h2" Type="Handle" scale_factor="113" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_druzhinnik_lance_v1_h3" name="{=Telford}Druzhinnik Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_druzhinnik_lance_v2_h3" name="{=Telford}Druzhinnik Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_druzhinnik_lance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_druzhinnik_lance_handle_h3" Type="Handle" scale_factor="113" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_courser_lance_v1_h0" name="{=Telford}Courser Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_courser_lance_v2_h0" name="{=Telford}Courser Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_courser_lance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_courser_lance_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_courser_lance_v1_h1" name="{=Telford}Courser Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_courser_lance_v2_h1" name="{=Telford}Courser Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_courser_lance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_courser_lance_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_courser_lance_v1_h2" name="{=Telford}Courser Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_courser_lance_v2_h2" name="{=Telford}Courser Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_courser_lance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_courser_lance_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_courser_lance_v1_h3" name="{=Telford}Courser Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_courser_lance_v2_h3" name="{=Telford}Courser Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_courser_lance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_courser_lance_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v1_h0" name="{=Telford}Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v2_h0" name="{=Telford}Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h0" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v1_h1" name="{=Telford}Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v2_h1" name="{=Telford}Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h1" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v1_h2" name="{=Telford}Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v2_h2" name="{=Telford}Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h2" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v1_h3" name="{=Telford}Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v2_h3" name="{=Telford}Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h3" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zaġāyah_v1_h0" name="{=Telford}Az-zaġāyah" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zaġāyah_v2_h0" name="{=Telford}Az-zaġāyah" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_az-zaġāyah_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_az-zaġāyah_handle_h0" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zaġāyah_v1_h1" name="{=Telford}Az-zaġāyah +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zaġāyah_v2_h1" name="{=Telford}Az-zaġāyah +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_az-zaġāyah_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_az-zaġāyah_handle_h1" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zaġāyah_v1_h2" name="{=Telford}Az-zaġāyah +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zaġāyah_v2_h2" name="{=Telford}Az-zaġāyah +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_az-zaġāyah_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_az-zaġāyah_handle_h2" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zaġāyah_v1_h3" name="{=Telford}Az-zaġāyah +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zaġāyah_v2_h3" name="{=Telford}Az-zaġāyah +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_az-zaġāyah_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_az-zaġāyah_handle_h3" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_steppe_lance_v1_h0" name="{=Telford}Decorated Steppe Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_decorated_steppe_lance_v2_h0" name="{=Telford}Decorated Steppe Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_decorated_steppe_lance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_decorated_steppe_lance_guard_h0" Type="Guard" scale_factor="100" />
       <Piece id="crpg_decorated_steppe_lance_handle_h0" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_steppe_lance_v1_h1" name="{=Telford}Decorated Steppe Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_decorated_steppe_lance_v2_h1" name="{=Telford}Decorated Steppe Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_decorated_steppe_lance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_decorated_steppe_lance_guard_h1" Type="Guard" scale_factor="100" />
       <Piece id="crpg_decorated_steppe_lance_handle_h1" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_steppe_lance_v1_h2" name="{=Telford}Decorated Steppe Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_decorated_steppe_lance_v2_h2" name="{=Telford}Decorated Steppe Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_decorated_steppe_lance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_decorated_steppe_lance_guard_h2" Type="Guard" scale_factor="100" />
       <Piece id="crpg_decorated_steppe_lance_handle_h2" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_decorated_steppe_lance_v1_h3" name="{=Telford}Decorated Steppe Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_decorated_steppe_lance_v2_h3" name="{=Telford}Decorated Steppe Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_decorated_steppe_lance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_decorated_steppe_lance_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_decorated_steppe_lance_handle_h3" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sasanian_light_lance_v1_h0" name="{=Telford}Sasanian Light Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_sasanian_light_lance_v2_h0" name="{=Telford}Sasanian Light Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_sasanian_light_lance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_sasanian_light_lance_handle_h0" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sasanian_light_lance_v1_h1" name="{=Telford}Sasanian Light Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_sasanian_light_lance_v2_h1" name="{=Telford}Sasanian Light Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_sasanian_light_lance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_sasanian_light_lance_handle_h1" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sasanian_light_lance_v1_h2" name="{=Telford}Sasanian Light Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_sasanian_light_lance_v2_h2" name="{=Telford}Sasanian Light Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_sasanian_light_lance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_sasanian_light_lance_handle_h2" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_sasanian_light_lance_v1_h3" name="{=Telford}Sasanian Light Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_sasanian_light_lance_v2_h3" name="{=Telford}Sasanian Light Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_sasanian_light_lance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_sasanian_light_lance_handle_h3" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v1_h0" name="{=Telford}Long Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v2_h0" name="{=Telford}Long Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h0" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v1_h1" name="{=Telford}Long Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v2_h1" name="{=Telford}Long Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h1" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v1_h2" name="{=Telford}Long Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v2_h2" name="{=Telford}Long Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h2" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v1_h3" name="{=Telford}Long Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v2_h3" name="{=Telford}Long Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h3" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_lance_v1_h0" name="{=Telford}Knightly Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_knightly_lance_v2_h0" name="{=Telford}Knightly Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_knightly_lance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_knightly_lance_handle_h0" Type="Handle" scale_factor="88" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_lance_v1_h1" name="{=Telford}Knightly Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_knightly_lance_v2_h1" name="{=Telford}Knightly Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_knightly_lance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_knightly_lance_handle_h1" Type="Handle" scale_factor="88" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_lance_v1_h2" name="{=Telford}Knightly Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_knightly_lance_v2_h2" name="{=Telford}Knightly Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_knightly_lance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_knightly_lance_handle_h2" Type="Handle" scale_factor="88" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_knightly_lance_v1_h3" name="{=Telford}Knightly Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_knightly_lance_v2_h3" name="{=Telford}Knightly Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_knightly_lance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_knightly_lance_handle_h3" Type="Handle" scale_factor="88" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_mamluke_lance_v1_h0" name="{=Telford}Mamluke Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_mamluke_lance_v2_h0" name="{=Telford}Mamluke Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_mamluke_lance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_mamluke_lance_handle_h0" Type="Handle" scale_factor="80" />
       <Piece id="crpg_mamluke_lance_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_mamluke_lance_v1_h1" name="{=Telford}Mamluke Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_mamluke_lance_v2_h1" name="{=Telford}Mamluke Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_mamluke_lance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_mamluke_lance_handle_h1" Type="Handle" scale_factor="80" />
       <Piece id="crpg_mamluke_lance_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_mamluke_lance_v1_h2" name="{=Telford}Mamluke Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_mamluke_lance_v2_h2" name="{=Telford}Mamluke Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_mamluke_lance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_mamluke_lance_handle_h2" Type="Handle" scale_factor="80" />
       <Piece id="crpg_mamluke_lance_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_mamluke_lance_v1_h3" name="{=Telford}Mamluke Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_mamluke_lance_v2_h3" name="{=Telford}Mamluke Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_mamluke_lance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_mamluke_lance_handle_h3" Type="Handle" scale_factor="80" />
       <Piece id="crpg_mamluke_lance_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_glaive_v3_h0" name="{=kaikaikai}Long Glaive" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_long_glaive_v4_h0" name="{=kaikaikai}Long Glaive" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_glaive_blade_h0" Type="Blade" scale_factor="97" />
       <Piece id="crpg_long_glaive_guard_h0" Type="Guard" scale_factor="97" />
@@ -8284,7 +8284,7 @@
       <Piece id="crpg_long_glaive_pommel_h0" Type="Pommel" scale_factor="97" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_glaive_v3_h1" name="{=kaikaikai}Long Glaive +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_long_glaive_v4_h1" name="{=kaikaikai}Long Glaive +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_glaive_blade_h1" Type="Blade" scale_factor="97" />
       <Piece id="crpg_long_glaive_guard_h1" Type="Guard" scale_factor="97" />
@@ -8292,7 +8292,7 @@
       <Piece id="crpg_long_glaive_pommel_h1" Type="Pommel" scale_factor="97" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_glaive_v3_h2" name="{=kaikaikai}Long Glaive +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_long_glaive_v4_h2" name="{=kaikaikai}Long Glaive +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_glaive_blade_h2" Type="Blade" scale_factor="97" />
       <Piece id="crpg_long_glaive_guard_h2" Type="Guard" scale_factor="97" />
@@ -8300,7 +8300,7 @@
       <Piece id="crpg_long_glaive_pommel_h2" Type="Pommel" scale_factor="97" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_glaive_v3_h3" name="{=kaikaikai}Long Glaive +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_long_glaive_v4_h3" name="{=kaikaikai}Long Glaive +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_glaive_blade_h3" Type="Blade" scale_factor="97" />
       <Piece id="crpg_long_glaive_guard_h3" Type="Guard" scale_factor="97" />
@@ -8308,7 +8308,7 @@
       <Piece id="crpg_long_glaive_pommel_h3" Type="Pommel" scale_factor="97" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_menavlion_v3_h0" name="{=kaikaikai}Fine Steel Menavlion" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_fine_steel_menavlion_v4_h0" name="{=kaikaikai}Fine Steel Menavlion" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fine_steel_menavlion_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fine_steel_menavlion_guard_h0" Type="Guard" scale_factor="100" />
@@ -8316,7 +8316,7 @@
       <Piece id="crpg_fine_steel_menavlion_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_menavlion_v3_h1" name="{=kaikaikai}Fine Steel Menavlion +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_fine_steel_menavlion_v4_h1" name="{=kaikaikai}Fine Steel Menavlion +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fine_steel_menavlion_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fine_steel_menavlion_guard_h1" Type="Guard" scale_factor="100" />
@@ -8324,7 +8324,7 @@
       <Piece id="crpg_fine_steel_menavlion_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_menavlion_v3_h2" name="{=kaikaikai}Fine Steel Menavlion +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_fine_steel_menavlion_v4_h2" name="{=kaikaikai}Fine Steel Menavlion +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fine_steel_menavlion_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fine_steel_menavlion_guard_h2" Type="Guard" scale_factor="100" />
@@ -8332,7 +8332,7 @@
       <Piece id="crpg_fine_steel_menavlion_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fine_steel_menavlion_v3_h3" name="{=kaikaikai}Fine Steel Menavlion +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_fine_steel_menavlion_v4_h3" name="{=kaikaikai}Fine Steel Menavlion +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fine_steel_menavlion_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fine_steel_menavlion_guard_h3" Type="Guard" scale_factor="100" />
@@ -8340,7 +8340,7 @@
       <Piece id="crpg_fine_steel_menavlion_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_early_halberd_v3_h0" name="{=kaikaikai}Voulge" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_early_halberd_v4_h0" name="{=kaikaikai}Voulge" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_early_halberd_blade_h0" Type="Blade" scale_factor="99" />
       <Piece id="crpg_early_halberd_guard_h0" Type="Guard" scale_factor="100" />
@@ -8348,7 +8348,7 @@
       <Piece id="crpg_early_halberd_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_early_halberd_v3_h1" name="{=kaikaikai}Voulge +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_early_halberd_v4_h1" name="{=kaikaikai}Voulge +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_early_halberd_blade_h1" Type="Blade" scale_factor="99" />
       <Piece id="crpg_early_halberd_guard_h1" Type="Guard" scale_factor="100" />
@@ -8356,7 +8356,7 @@
       <Piece id="crpg_early_halberd_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_early_halberd_v3_h2" name="{=kaikaikai}Voulge +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_early_halberd_v4_h2" name="{=kaikaikai}Voulge +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_early_halberd_blade_h2" Type="Blade" scale_factor="99" />
       <Piece id="crpg_early_halberd_guard_h2" Type="Guard" scale_factor="100" />
@@ -8364,7 +8364,7 @@
       <Piece id="crpg_early_halberd_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_early_halberd_v3_h3" name="{=kaikaikai}Voulge +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_early_halberd_v4_h3" name="{=kaikaikai}Voulge +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_early_halberd_blade_h3" Type="Blade" scale_factor="99" />
       <Piece id="crpg_early_halberd_guard_h3" Type="Guard" scale_factor="100" />
@@ -8372,7 +8372,7 @@
       <Piece id="crpg_early_halberd_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_rhomphaia_v2_h0" name="{=kaikaikai}Rhomphaia" crafting_template="crpg_TwoHandedPolearm" culture="Culture.battania" modifier_group="polearm">
+  <CraftedItem id="crpg_rhomphaia_v3_h0" name="{=kaikaikai}Rhomphaia" crafting_template="crpg_TwoHandedPolearm" culture="Culture.battania" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_rhomphaia_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_rhomphaia_guard_h0" Type="Guard" scale_factor="90" />
@@ -8380,7 +8380,7 @@
       <Piece id="crpg_rhomphaia_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_rhomphaia_v2_h1" name="{=kaikaikai}Rhomphaia +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.battania" modifier_group="polearm">
+  <CraftedItem id="crpg_rhomphaia_v3_h1" name="{=kaikaikai}Rhomphaia +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.battania" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_rhomphaia_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_rhomphaia_guard_h1" Type="Guard" scale_factor="90" />
@@ -8388,7 +8388,7 @@
       <Piece id="crpg_rhomphaia_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_rhomphaia_v2_h2" name="{=kaikaikai}Rhomphaia +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.battania" modifier_group="polearm">
+  <CraftedItem id="crpg_rhomphaia_v3_h2" name="{=kaikaikai}Rhomphaia +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.battania" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_rhomphaia_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_rhomphaia_guard_h2" Type="Guard" scale_factor="90" />
@@ -8396,7 +8396,7 @@
       <Piece id="crpg_rhomphaia_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_rhomphaia_v2_h3" name="{=kaikaikai}Rhomphaia +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.battania" modifier_group="polearm">
+  <CraftedItem id="crpg_rhomphaia_v3_h3" name="{=kaikaikai}Rhomphaia +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.battania" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_rhomphaia_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_rhomphaia_guard_h3" Type="Guard" scale_factor="90" />
@@ -8404,7 +8404,7 @@
       <Piece id="crpg_rhomphaia_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_polesword_v2_h0" name="{=kaikaikai}Polesword" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_polesword_v3_h0" name="{=kaikaikai}Polesword" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_polesword_blade_h0" Type="Blade" scale_factor="150" />
       <Piece id="crpg_polesword_guard_h0" Type="Guard" scale_factor="100" />
@@ -8412,7 +8412,7 @@
       <Piece id="crpg_polesword_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_polesword_v2_h1" name="{=kaikaikai}Polesword +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_polesword_v3_h1" name="{=kaikaikai}Polesword +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_polesword_blade_h1" Type="Blade" scale_factor="150" />
       <Piece id="crpg_polesword_guard_h1" Type="Guard" scale_factor="100" />
@@ -8420,7 +8420,7 @@
       <Piece id="crpg_polesword_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_polesword_v2_h2" name="{=kaikaikai}Polesword +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_polesword_v3_h2" name="{=kaikaikai}Polesword +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_polesword_blade_h2" Type="Blade" scale_factor="150" />
       <Piece id="crpg_polesword_guard_h2" Type="Guard" scale_factor="100" />
@@ -8428,7 +8428,7 @@
       <Piece id="crpg_polesword_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_polesword_v2_h3" name="{=kaikaikai}Polesword +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_polesword_v3_h3" name="{=kaikaikai}Polesword +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_polesword_blade_h3" Type="Blade" scale_factor="150" />
       <Piece id="crpg_polesword_guard_h3" Type="Guard" scale_factor="100" />
@@ -8436,7 +8436,7 @@
       <Piece id="crpg_polesword_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_glaive_v2_h0" name="{=kaikaikai}Glaive" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_glaive_v3_h0" name="{=kaikaikai}Glaive" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_glaive_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_glaive_guard_h0" Type="Guard" scale_factor="100" />
@@ -8444,7 +8444,7 @@
       <Piece id="crpg_glaive_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_glaive_v2_h1" name="{=kaikaikai}Glaive +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_glaive_v3_h1" name="{=kaikaikai}Glaive +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_glaive_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_glaive_guard_h1" Type="Guard" scale_factor="100" />
@@ -8452,7 +8452,7 @@
       <Piece id="crpg_glaive_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_glaive_v2_h2" name="{=kaikaikai}Glaive +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_glaive_v3_h2" name="{=kaikaikai}Glaive +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_glaive_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_glaive_guard_h2" Type="Guard" scale_factor="100" />
@@ -8460,7 +8460,7 @@
       <Piece id="crpg_glaive_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_glaive_v2_h3" name="{=kaikaikai}Glaive +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_glaive_v3_h3" name="{=kaikaikai}Glaive +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_glaive_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_glaive_guard_h3" Type="Guard" scale_factor="100" />
@@ -8468,7 +8468,7 @@
       <Piece id="crpg_glaive_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_menavlion_v2_h0" name="{=kaikaikai}Menavlion" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_menavlion_v3_h0" name="{=kaikaikai}Menavlion" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_menavlion_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_menavlion_guard_h0" Type="Guard" scale_factor="100" />
@@ -8476,7 +8476,7 @@
       <Piece id="crpg_menavlion_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_menavlion_v2_h1" name="{=kaikaikai}Menavlion +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_menavlion_v3_h1" name="{=kaikaikai}Menavlion +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_menavlion_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_menavlion_guard_h1" Type="Guard" scale_factor="100" />
@@ -8484,7 +8484,7 @@
       <Piece id="crpg_menavlion_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_menavlion_v2_h2" name="{=kaikaikai}Menavlion +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_menavlion_v3_h2" name="{=kaikaikai}Menavlion +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_menavlion_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_menavlion_guard_h2" Type="Guard" scale_factor="100" />
@@ -8492,7 +8492,7 @@
       <Piece id="crpg_menavlion_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_menavlion_v2_h3" name="{=kaikaikai}Menavlion +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_menavlion_v3_h3" name="{=kaikaikai}Menavlion +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_menavlion_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_menavlion_guard_h3" Type="Guard" scale_factor="100" />
@@ -8500,7 +8500,7 @@
       <Piece id="crpg_menavlion_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_warrazor_v3_h0" name="{=kaikaikai}Warrazor" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_warrazor_v4_h0" name="{=kaikaikai}Warrazor" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_warrazor_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_warrazor_guard_h0" Type="Guard" scale_factor="100" />
@@ -8508,7 +8508,7 @@
       <Piece id="crpg_warrazor_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_warrazor_v3_h1" name="{=kaikaikai}Warrazor +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_warrazor_v4_h1" name="{=kaikaikai}Warrazor +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_warrazor_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_warrazor_guard_h1" Type="Guard" scale_factor="100" />
@@ -8516,7 +8516,7 @@
       <Piece id="crpg_warrazor_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_warrazor_v3_h2" name="{=kaikaikai}Warrazor +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_warrazor_v4_h2" name="{=kaikaikai}Warrazor +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_warrazor_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_warrazor_guard_h2" Type="Guard" scale_factor="100" />
@@ -8524,7 +8524,7 @@
       <Piece id="crpg_warrazor_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_warrazor_v3_h3" name="{=kaikaikai}Warrazor +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_warrazor_v4_h3" name="{=kaikaikai}Warrazor +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_warrazor_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_warrazor_guard_h3" Type="Guard" scale_factor="100" />
@@ -8532,7 +8532,7 @@
       <Piece id="crpg_warrazor_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_billhook_v3_h0" name="{=kaikaikai}Billhook" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_billhook_v4_h0" name="{=kaikaikai}Billhook" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_billhook_blade_h0" Type="Blade" scale_factor="140" />
       <Piece id="crpg_billhook_guard_h0" Type="Guard" scale_factor="100" />
@@ -8540,7 +8540,7 @@
       <Piece id="crpg_billhook_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_billhook_v3_h1" name="{=kaikaikai}Billhook +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_billhook_v4_h1" name="{=kaikaikai}Billhook +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_billhook_blade_h1" Type="Blade" scale_factor="140" />
       <Piece id="crpg_billhook_guard_h1" Type="Guard" scale_factor="100" />
@@ -8548,7 +8548,7 @@
       <Piece id="crpg_billhook_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_billhook_v3_h2" name="{=kaikaikai}Billhook +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_billhook_v4_h2" name="{=kaikaikai}Billhook +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_billhook_blade_h2" Type="Blade" scale_factor="140" />
       <Piece id="crpg_billhook_guard_h2" Type="Guard" scale_factor="100" />
@@ -8556,7 +8556,7 @@
       <Piece id="crpg_billhook_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_billhook_v3_h3" name="{=kaikaikai}Billhook +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_billhook_v4_h3" name="{=kaikaikai}Billhook +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_billhook_blade_h3" Type="Blade" scale_factor="140" />
       <Piece id="crpg_billhook_guard_h3" Type="Guard" scale_factor="100" />
@@ -9232,25 +9232,25 @@
       <Piece id="crpg_tall_tipped_war_spear_handle_h3" Type="Handle" scale_factor="75" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_military_fork_v1_h0" name="{=FbG3CW5p}Military Fork" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_military_fork_v2_h0" name="{=FbG3CW5p}Military Fork" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_military_fork_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_military_fork_handle_h0" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_military_fork_v1_h1" name="{=FbG3CW5p}Military Fork +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_military_fork_v2_h1" name="{=FbG3CW5p}Military Fork +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_military_fork_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_military_fork_handle_h1" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_military_fork_v1_h2" name="{=FbG3CW5p}Military Fork +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_military_fork_v2_h2" name="{=FbG3CW5p}Military Fork +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_military_fork_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_military_fork_handle_h2" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_military_fork_v1_h3" name="{=FbG3CW5p}Military Fork +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
+  <CraftedItem id="crpg_military_fork_v2_h3" name="{=FbG3CW5p}Military Fork +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.sturgia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_military_fork_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_military_fork_handle_h3" Type="Handle" scale_factor="80" />
@@ -9500,25 +9500,25 @@
       <Piece id="crpg_drilled_two_handed_axe_handle_h3" Type="Handle" scale_factor="78" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_bardiche_v2_h0" name="{=kaikaikai}Long Bardiche" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_long_bardiche_v3_h0" name="{=kaikaikai}Long Bardiche" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_bardiche_blade_h0" Type="Blade" scale_factor="99" />
       <Piece id="crpg_long_bardiche_handle_h0" Type="Handle" scale_factor="150" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_bardiche_v2_h1" name="{=kaikaikai}Long Bardiche +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_long_bardiche_v3_h1" name="{=kaikaikai}Long Bardiche +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_bardiche_blade_h1" Type="Blade" scale_factor="99" />
       <Piece id="crpg_long_bardiche_handle_h1" Type="Handle" scale_factor="150" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_bardiche_v2_h2" name="{=kaikaikai}Long Bardiche +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_long_bardiche_v3_h2" name="{=kaikaikai}Long Bardiche +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_bardiche_blade_h2" Type="Blade" scale_factor="99" />
       <Piece id="crpg_long_bardiche_handle_h2" Type="Handle" scale_factor="150" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_bardiche_v2_h3" name="{=kaikaikai}Long Bardiche +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_long_bardiche_v3_h3" name="{=kaikaikai}Long Bardiche +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_bardiche_blade_h3" Type="Blade" scale_factor="99" />
       <Piece id="crpg_long_bardiche_handle_h3" Type="Handle" scale_factor="150" />
@@ -10668,7 +10668,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" DropOnWeaponChange="true" DoNotScaleBodyAccordingToWeaponLength="true" QuickFadeOut="true" />
   </Item>
-  <CraftedItem id="crpg_bo_staff_v1_h0" name="{=kaikaikai}Bo Staff" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_bo_staff_v2_h0" name="{=kaikaikai}Bo Staff" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_bo_staff_blade_h0" Type="Blade" scale_factor="1" />
       <Piece id="crpg_bo_staff_guard_h0" Type="Guard" />
@@ -10676,7 +10676,7 @@
       <Piece id="crpg_bo_staff_pommel_h0" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bo_staff_v1_h1" name="{=kaikaikai}Bo Staff +1" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_bo_staff_v2_h1" name="{=kaikaikai}Bo Staff +1" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_bo_staff_blade_h1" Type="Blade" scale_factor="1" />
       <Piece id="crpg_bo_staff_guard_h1" Type="Guard" />
@@ -10684,7 +10684,7 @@
       <Piece id="crpg_bo_staff_pommel_h1" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bo_staff_v1_h2" name="{=kaikaikai}Bo Staff +2" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_bo_staff_v2_h2" name="{=kaikaikai}Bo Staff +2" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_bo_staff_blade_h2" Type="Blade" scale_factor="1" />
       <Piece id="crpg_bo_staff_guard_h2" Type="Guard" />
@@ -10692,7 +10692,7 @@
       <Piece id="crpg_bo_staff_pommel_h2" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bo_staff_v1_h3" name="{=kaikaikai}Bo Staff +3" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_bo_staff_v2_h3" name="{=kaikaikai}Bo Staff +3" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_bo_staff_blade_h3" Type="Blade" scale_factor="1" />
       <Piece id="crpg_bo_staff_guard_h3" Type="Guard" />
@@ -10700,7 +10700,7 @@
       <Piece id="crpg_bo_staff_pommel_h3" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bludgeon_staff_v1_h0" name="{=kaikaikai}Bludgeon Staff" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_bludgeon_staff_v2_h0" name="{=kaikaikai}Bludgeon Staff" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_bludgeon_staff_blade_h0" Type="Blade" />
       <Piece id="crpg_bludgeon_staff_guard_h0" Type="Guard" />
@@ -10708,7 +10708,7 @@
       <Piece id="crpg_bludgeon_staff_pommel_h0" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bludgeon_staff_v1_h1" name="{=kaikaikai}Bludgeon Staff +1" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_bludgeon_staff_v2_h1" name="{=kaikaikai}Bludgeon Staff +1" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_bludgeon_staff_blade_h1" Type="Blade" />
       <Piece id="crpg_bludgeon_staff_guard_h1" Type="Guard" />
@@ -10716,7 +10716,7 @@
       <Piece id="crpg_bludgeon_staff_pommel_h1" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bludgeon_staff_v1_h2" name="{=kaikaikai}Bludgeon Staff +2" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_bludgeon_staff_v2_h2" name="{=kaikaikai}Bludgeon Staff +2" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_bludgeon_staff_blade_h2" Type="Blade" />
       <Piece id="crpg_bludgeon_staff_guard_h2" Type="Guard" />
@@ -10724,7 +10724,7 @@
       <Piece id="crpg_bludgeon_staff_pommel_h2" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bludgeon_staff_v1_h3" name="{=kaikaikai}Bludgeon Staff +3" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_bludgeon_staff_v2_h3" name="{=kaikaikai}Bludgeon Staff +3" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_bludgeon_staff_blade_h3" Type="Blade" />
       <Piece id="crpg_bludgeon_staff_guard_h3" Type="Guard" />
@@ -10924,73 +10924,73 @@
     </ItemComponent>
     <Flags ForceAttachOffHandPrimaryItemBone="true" />
   </Item>
-  <CraftedItem id="crpg_scythe_v1_h0" name="{=kaikaikai}Scythe" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_scythe_v2_h0" name="{=kaikaikai}Scythe" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_scythe_blade_h0" Type="Blade" scale_factor="103" />
       <Piece id="crpg_scythe_handle_h0" Type="Handle" scale_factor="102" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_scythe_v1_h1" name="{=kaikaikai}Scythe +1" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_scythe_v2_h1" name="{=kaikaikai}Scythe +1" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_scythe_blade_h1" Type="Blade" scale_factor="103" />
       <Piece id="crpg_scythe_handle_h1" Type="Handle" scale_factor="102" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_scythe_v1_h2" name="{=kaikaikai}Scythe +2" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_scythe_v2_h2" name="{=kaikaikai}Scythe +2" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_scythe_blade_h2" Type="Blade" scale_factor="103" />
       <Piece id="crpg_scythe_handle_h2" Type="Handle" scale_factor="102" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_scythe_v1_h3" name="{=kaikaikai}Scythe +3" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_scythe_v2_h3" name="{=kaikaikai}Scythe +3" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_scythe_blade_h3" Type="Blade" scale_factor="103" />
       <Piece id="crpg_scythe_handle_h3" Type="Handle" scale_factor="102" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pitchfork_v1_h0" name="{=JBVAeXx3}Pitchfork" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_pitchfork_v2_h0" name="{=JBVAeXx3}Pitchfork" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_pitchfork_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pitchfork_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pitchfork_v1_h1" name="{=JBVAeXx3}Pitchfork +1" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_pitchfork_v2_h1" name="{=JBVAeXx3}Pitchfork +1" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_pitchfork_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pitchfork_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pitchfork_v1_h2" name="{=JBVAeXx3}Pitchfork +2" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_pitchfork_v2_h2" name="{=JBVAeXx3}Pitchfork +2" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_pitchfork_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pitchfork_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_pitchfork_v1_h3" name="{=JBVAeXx3}Pitchfork +3" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_pitchfork_v2_h3" name="{=JBVAeXx3}Pitchfork +3" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_pitchfork_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pitchfork_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_pitchfork_v1_h0" name="{=oFEzCTpW}Iron Pitchfork" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_iron_pitchfork_v2_h0" name="{=oFEzCTpW}Iron Pitchfork" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_iron_pitchfork_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_iron_pitchfork_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_pitchfork_v1_h1" name="{=oFEzCTpW}Iron Pitchfork +1" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_iron_pitchfork_v2_h1" name="{=oFEzCTpW}Iron Pitchfork +1" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_iron_pitchfork_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_iron_pitchfork_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_pitchfork_v1_h2" name="{=oFEzCTpW}Iron Pitchfork +2" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_iron_pitchfork_v2_h2" name="{=oFEzCTpW}Iron Pitchfork +2" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_iron_pitchfork_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_iron_pitchfork_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_iron_pitchfork_v1_h3" name="{=oFEzCTpW}Iron Pitchfork +3" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_iron_pitchfork_v2_h3" name="{=oFEzCTpW}Iron Pitchfork +3" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_iron_pitchfork_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_iron_pitchfork_handle_h3" Type="Handle" scale_factor="100" />
@@ -11968,7 +11968,7 @@
       <Piece id="crpg_tetsubo_handle_h3" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_podao_v2_h0" name="{=kaikaikai}Podao" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_podao_v3_h0" name="{=kaikaikai}Podao" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pudao_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pudao_guard_h0" Type="Guard" scale_factor="100" />
@@ -11976,7 +11976,7 @@
       <Piece id="crpg_pudao_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_podao_v2_h1" name="{=kaikaikai}Podao +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_podao_v3_h1" name="{=kaikaikai}Podao +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pudao_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pudao_guard_h1" Type="Guard" scale_factor="100" />
@@ -11984,7 +11984,7 @@
       <Piece id="crpg_pudao_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_podao_v2_h2" name="{=kaikaikai}Podao +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_podao_v3_h2" name="{=kaikaikai}Podao +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pudao_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pudao_guard_h2" Type="Guard" scale_factor="100" />
@@ -11992,7 +11992,7 @@
       <Piece id="crpg_pudao_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_podao_v2_h3" name="{=kaikaikai}Podao +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_podao_v3_h3" name="{=kaikaikai}Podao +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_pudao_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_pudao_guard_h3" Type="Guard" scale_factor="100" />
@@ -12436,25 +12436,25 @@
       <Piece id="crpg_meowdao_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_Norse_Battle_Axe_v1_h0" name="{=kaikaikai}Norse Battle Axe" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_Norse_Battle_Axe_v2_h0" name="{=kaikaikai}Norse Battle Axe" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_meowaxe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_meowaxe_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_Norse_Battle_Axe_v1_h1" name="{=kaikaikai}Norse Battle Axe +1" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_Norse_Battle_Axe_v2_h1" name="{=kaikaikai}Norse Battle Axe +1" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_meowaxe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_meowaxe_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_Norse_Battle_Axe_v1_h2" name="{=kaikaikai}Norse Battle Axe +2" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_Norse_Battle_Axe_v2_h2" name="{=kaikaikai}Norse Battle Axe +2" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_meowaxe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_meowaxe_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_Norse_Battle_Axe_v1_h3" name="{=kaikaikai}Norse Battle Axe +3" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_Norse_Battle_Axe_v2_h3" name="{=kaikaikai}Norse Battle Axe +3" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_meowaxe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_meowaxe_handle_h3" Type="Handle" scale_factor="100" />
@@ -12660,7 +12660,7 @@
       <Piece id="crpg_tanto_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fangtian_ji_v2_h0" name="{=kaikaikai}Fangtian Ji" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_fangtian_ji_v3_h0" name="{=kaikaikai}Fangtian Ji" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fangtian_ji_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_guard_h0" Type="Guard" scale_factor="110" />
@@ -12668,7 +12668,7 @@
       <Piece id="crpg_fangtian_ji_pommel_h0" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fangtian_ji_v2_h1" name="{=kaikaikai}Fangtian Ji +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_fangtian_ji_v3_h1" name="{=kaikaikai}Fangtian Ji +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fangtian_ji_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_guard_h1" Type="Guard" scale_factor="110" />
@@ -12676,7 +12676,7 @@
       <Piece id="crpg_fangtian_ji_pommel_h1" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fangtian_ji_v2_h2" name="{=kaikaikai}Fangtian Ji +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_fangtian_ji_v3_h2" name="{=kaikaikai}Fangtian Ji +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fangtian_ji_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_guard_h2" Type="Guard" scale_factor="110" />
@@ -12684,7 +12684,7 @@
       <Piece id="crpg_fangtian_ji_pommel_h2" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fangtian_ji_v2_h3" name="{=kaikaikai}Fangtian Ji +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_fangtian_ji_v3_h3" name="{=kaikaikai}Fangtian Ji +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_fangtian_ji_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_fangtian_ji_guard_h3" Type="Guard" scale_factor="110" />
@@ -12724,7 +12724,7 @@
       <Piece id="crpg_jian_pommel_h3" Type="Pommel" scale_factor="85" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ironrod_v2_h0" name="{=Yeldur}Iron Rod" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_ironrod_v3_h0" name="{=Yeldur}Iron Rod" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_ironrod_blade_h0" Type="Blade" scale_factor="1" />
       <Piece id="crpg_ironrod_guard_h0" Type="Guard" />
@@ -12732,7 +12732,7 @@
       <Piece id="crpg_ironrod_pommel_h0" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ironrod_v2_h1" name="{=Yeldur}Iron Rod +1" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_ironrod_v3_h1" name="{=Yeldur}Iron Rod +1" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_ironrod_blade_h1" Type="Blade" scale_factor="1" />
       <Piece id="crpg_ironrod_guard_h1" Type="Guard" />
@@ -12740,7 +12740,7 @@
       <Piece id="crpg_ironrod_pommel_h1" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ironrod_v2_h2" name="{=Yeldur}Iron Rod +2" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_ironrod_v3_h2" name="{=Yeldur}Iron Rod +2" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_ironrod_blade_h2" Type="Blade" scale_factor="1" />
       <Piece id="crpg_ironrod_guard_h2" Type="Guard" />
@@ -12748,7 +12748,7 @@
       <Piece id="crpg_ironrod_pommel_h2" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ironrod_v2_h3" name="{=Yeldur}Iron Rod +3" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
+  <CraftedItem id="crpg_ironrod_v3_h3" name="{=Yeldur}Iron Rod +3" is_merchandise="false" crafting_template="crpg_TwoHandedPolearm" has_modifier="false">
     <Pieces>
       <Piece id="crpg_ironrod_blade_h3" Type="Blade" scale_factor="1" />
       <Piece id="crpg_ironrod_guard_h3" Type="Guard" />
@@ -12756,7 +12756,7 @@
       <Piece id="crpg_ironrod_pommel_h3" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_german_halberd_v2_h0" name="{=kaikaikai}German Halberd" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_german_halberd_v3_h0" name="{=kaikaikai}German Halberd" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_german_halberd_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_german_halberd_handle_h0" Type="Handle" scale_factor="100" />
@@ -12764,7 +12764,7 @@
       <Piece id="crpg_german_halberd_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_german_halberd_v2_h1" name="{=kaikaikai}German Halberd +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_german_halberd_v3_h1" name="{=kaikaikai}German Halberd +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_german_halberd_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_german_halberd_handle_h1" Type="Handle" scale_factor="100" />
@@ -12772,7 +12772,7 @@
       <Piece id="crpg_german_halberd_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_german_halberd_v2_h2" name="{=kaikaikai}German Halberd +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_german_halberd_v3_h2" name="{=kaikaikai}German Halberd +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_german_halberd_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_german_halberd_handle_h2" Type="Handle" scale_factor="100" />
@@ -12780,7 +12780,7 @@
       <Piece id="crpg_german_halberd_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_german_halberd_v2_h3" name="{=kaikaikai}German Halberd +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_german_halberd_v3_h3" name="{=kaikaikai}German Halberd +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_german_halberd_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_german_halberd_handle_h3" Type="Handle" scale_factor="100" />
@@ -12876,7 +12876,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <CraftedItem id="crpg_bamboospear_v1_h0" name="{=Diggles}Bamboo Spear" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bamboospear_v2_h0" name="{=Diggles}Bamboo Spear" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bamboospear_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bamboospear_guard_h0" Type="Guard" scale_factor="100" />
@@ -12884,7 +12884,7 @@
       <Piece id="crpg_bamboospear_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bamboospear_v1_h1" name="{=Diggles}Bamboo Spear +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bamboospear_v2_h1" name="{=Diggles}Bamboo Spear +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bamboospear_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bamboospear_guard_h1" Type="Guard" scale_factor="100" />
@@ -12892,7 +12892,7 @@
       <Piece id="crpg_bamboospear_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bamboospear_v1_h2" name="{=Diggles}Bamboo Spear +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bamboospear_v2_h2" name="{=Diggles}Bamboo Spear +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bamboospear_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bamboospear_guard_h2" Type="Guard" scale_factor="100" />
@@ -12900,7 +12900,7 @@
       <Piece id="crpg_bamboospear_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bamboospear_v1_h3" name="{=Diggles}Bamboo Spear +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_bamboospear_v2_h3" name="{=Diggles}Bamboo Spear +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_bamboospear_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bamboospear_guard_h3" Type="Guard" scale_factor="100" />
@@ -12908,7 +12908,7 @@
       <Piece id="crpg_bamboospear_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_joustinglance_striped_ry_v1_h0" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
+  <CraftedItem id="crpg_joustinglance_striped_ry_v2_h0" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
     <Pieces>
       <Piece id="crpg_joustinglance_striped_ry_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_joustinglance_striped_ry_guard_h0" Type="Guard" scale_factor="100" />
@@ -12916,7 +12916,7 @@
       <Piece id="crpg_joustinglance_striped_ry_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_joustinglance_striped_ry_v1_h1" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
+  <CraftedItem id="crpg_joustinglance_striped_ry_v2_h1" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
     <Pieces>
       <Piece id="crpg_joustinglance_striped_ry_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_joustinglance_striped_ry_guard_h1" Type="Guard" scale_factor="100" />
@@ -12924,7 +12924,7 @@
       <Piece id="crpg_joustinglance_striped_ry_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_joustinglance_striped_ry_v1_h2" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
+  <CraftedItem id="crpg_joustinglance_striped_ry_v2_h2" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
     <Pieces>
       <Piece id="crpg_joustinglance_striped_ry_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_joustinglance_striped_ry_guard_h2" Type="Guard" scale_factor="100" />
@@ -12932,7 +12932,7 @@
       <Piece id="crpg_joustinglance_striped_ry_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_joustinglance_striped_ry_v1_h3" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
+  <CraftedItem id="crpg_joustinglance_striped_ry_v2_h3" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
     <Pieces>
       <Piece id="crpg_joustinglance_striped_ry_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_joustinglance_striped_ry_guard_h3" Type="Guard" scale_factor="100" />
@@ -12940,7 +12940,7 @@
       <Piece id="crpg_joustinglance_striped_ry_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_pole_h0" name="{=BalanceMe}Candycane Polearm" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="candycane_pole_v1_h0" name="{=BalanceMe}Candycane Polearm" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_candycane_pole_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_pole_handle_h0" Type="Handle" scale_factor="100" />
@@ -12948,7 +12948,7 @@
       <Piece id="crpg_candycane_pole_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_pole_h1" name="{=BalanceMe}Candycane Polearm +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="candycane_pole_v1_h1" name="{=BalanceMe}Candycane Polearm +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_candycane_pole_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_pole_handle_h1" Type="Handle" scale_factor="100" />
@@ -12956,7 +12956,7 @@
       <Piece id="crpg_candycane_pole_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_pole_h2" name="{=BalanceMe}Candycane Polearm +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="candycane_pole_v1_h2" name="{=BalanceMe}Candycane Polearm +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_candycane_pole_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_pole_handle_h2" Type="Handle" scale_factor="100" />
@@ -12964,7 +12964,7 @@
       <Piece id="crpg_candycane_pole_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_pole_h3" name="{=BalanceMe}Candycane Polearm +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="candycane_pole_v1_h3" name="{=BalanceMe}Candycane Polearm +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_candycane_pole_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_pole_handle_h3" Type="Handle" scale_factor="100" />
@@ -13036,73 +13036,73 @@
       <Piece id="crpg_candycane_1h_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_bardiche_h0" name="{=Salt}Short Bardiche" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_short_bardiche_v1_h0" name="{=Salt}Short Bardiche" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_bardiche_blade_h0" Type="Blade" scale_factor="70" />
       <Piece id="crpg_short_bardiche_handle_h0" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_bardiche_h1" name="{=Salt}Short Bardiche +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_short_bardiche_v1_h1" name="{=Salt}Short Bardiche +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_bardiche_blade_h1" Type="Blade" scale_factor="70" />
       <Piece id="crpg_short_bardiche_handle_h1" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_bardiche_h2" name="{=Salt}Short Bardiche +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_short_bardiche_v1_h2" name="{=Salt}Short Bardiche +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_bardiche_blade_h2" Type="Blade" scale_factor="70" />
       <Piece id="crpg_short_bardiche_handle_h2" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_bardiche_h3" name="{=Salt}Short Bardiche +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_short_bardiche_v1_h3" name="{=Salt}Short Bardiche +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_bardiche_blade_h3" Type="Blade" scale_factor="70" />
       <Piece id="crpg_short_bardiche_handle_h3" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bill_h0" name="{=Salt}Bill" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_bill_v1_h0" name="{=Salt}Bill" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_bill_blade_h0" Type="Blade" scale_factor="120" />
       <Piece id="crpg_bill_handle_h0" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bill_h1" name="{=Salt}Bill +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_bill_v1_h1" name="{=Salt}Bill +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_bill_blade_h1" Type="Blade" scale_factor="120" />
       <Piece id="crpg_bill_handle_h1" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bill_h2" name="{=Salt}Bill +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_bill_v1_h2" name="{=Salt}Bill +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_bill_blade_h2" Type="Blade" scale_factor="120" />
       <Piece id="crpg_bill_handle_h2" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bill_h3" name="{=Salt}Bill +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_bill_v1_h3" name="{=Salt}Bill +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_bill_blade_h3" Type="Blade" scale_factor="120" />
       <Piece id="crpg_bill_handle_h3" Type="Handle" scale_factor="80" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_voulge_h0" name="{=Salt}Short Voulge" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_short_voulge_v1_h0" name="{=Salt}Short Voulge" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_voulge_blade_h0" Type="Blade" scale_factor="150" />
       <Piece id="crpg_short_voulge_handle_h0" Type="Handle" scale_factor="70" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_voulge_h1" name="{=Salt}Short Voulge +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_short_voulge_v1_h1" name="{=Salt}Short Voulge +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_voulge_blade_h1" Type="Blade" scale_factor="150" />
       <Piece id="crpg_short_voulge_handle_h1" Type="Handle" scale_factor="70" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_voulge_h2" name="{=Salt}Short Voulge +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_short_voulge_v1_h2" name="{=Salt}Short Voulge +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_voulge_blade_h2" Type="Blade" scale_factor="150" />
       <Piece id="crpg_short_voulge_handle_h2" Type="Handle" scale_factor="70" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_short_voulge_h3" name="{=Salt}Short Voulge +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_short_voulge_v1_h3" name="{=Salt}Short Voulge +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_short_voulge_blade_h3" Type="Blade" scale_factor="150" />
       <Piece id="crpg_short_voulge_handle_h3" Type="Handle" scale_factor="70" />
@@ -13140,7 +13140,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <CraftedItem id="crpg_english_bill_h0" name="{=Salt}English Bill" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_english_bill_v1_h0" name="{=Salt}English Bill" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h0" Type="Handle" scale_factor="100" />
@@ -13148,7 +13148,7 @@
       <Piece id="crpg_english_bill_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_english_bill_h1" name="{=Salt}English Bill +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_english_bill_v1_h1" name="{=Salt}English Bill +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h1" Type="Handle" scale_factor="100" />
@@ -13156,7 +13156,7 @@
       <Piece id="crpg_english_bill_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_english_bill_h2" name="{=Salt}English Bill +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_english_bill_v1_h2" name="{=Salt}English Bill +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h2" Type="Handle" scale_factor="100" />
@@ -13164,7 +13164,7 @@
       <Piece id="crpg_english_bill_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_english_bill_h3" name="{=Salt}English Bill +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_english_bill_v1_h3" name="{=Salt}English Bill +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h3" Type="Handle" scale_factor="100" />
@@ -13236,7 +13236,7 @@
       <Piece id="crpg_black_longdagger_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_h0" name="{=Salt}Swiss Halberd" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_swiss_halberd_v1_h0" name="{=Salt}Swiss Halberd" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h0" Type="Handle" scale_factor="100" />
@@ -13244,7 +13244,7 @@
       <Piece id="crpg_swiss_halberd_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_h1" name="{=Salt}Swiss Halberd +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_swiss_halberd_v1_h1" name="{=Salt}Swiss Halberd +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h1" Type="Handle" scale_factor="100" />
@@ -13252,7 +13252,7 @@
       <Piece id="crpg_swiss_halberd_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_h2" name="{=Salt}Swiss Halberd +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_swiss_halberd_v1_h2" name="{=Salt}Swiss Halberd +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h2" Type="Handle" scale_factor="100" />
@@ -13260,7 +13260,7 @@
       <Piece id="crpg_swiss_halberd_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_h3" name="{=Salt}Swiss Halberd +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_swiss_halberd_v1_h3" name="{=Salt}Swiss Halberd +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h3" Type="Handle" scale_factor="100" />
