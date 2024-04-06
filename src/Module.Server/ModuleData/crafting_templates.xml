@@ -1936,6 +1936,22 @@
       <UsablePiece piece_id="crpg_gladius_republican_pommel_h1" />
       <UsablePiece piece_id="crpg_gladius_republican_pommel_h2" />
       <UsablePiece piece_id="crpg_gladius_republican_pommel_h3" />
+      <UsablePiece piece_id="crpg_strangearmingsword_blade_h0" />
+      <UsablePiece piece_id="crpg_strangearmingsword_blade_h1" />
+      <UsablePiece piece_id="crpg_strangearmingsword_blade_h2" />
+      <UsablePiece piece_id="crpg_strangearmingsword_blade_h3" />
+      <UsablePiece piece_id="crpg_strangearmingsword_guard_h0" />
+      <UsablePiece piece_id="crpg_strangearmingsword_guard_h1" />
+      <UsablePiece piece_id="crpg_strangearmingsword_guard_h2" />
+      <UsablePiece piece_id="crpg_strangearmingsword_guard_h3" />
+      <UsablePiece piece_id="crpg_strangearmingsword_handle_h0" />
+      <UsablePiece piece_id="crpg_strangearmingsword_handle_h1" />
+      <UsablePiece piece_id="crpg_strangearmingsword_handle_h2" />
+      <UsablePiece piece_id="crpg_strangearmingsword_handle_h3" />
+      <UsablePiece piece_id="crpg_strangearmingsword_pommel_h0" />
+      <UsablePiece piece_id="crpg_strangearmingsword_pommel_h1" />
+      <UsablePiece piece_id="crpg_strangearmingsword_pommel_h2" />
+      <UsablePiece piece_id="crpg_strangearmingsword_pommel_h3" />
     </UsablePieces>
   </CraftingTemplate>
   <CraftingTemplate id="crpg_TwoHandedSword" item_type="TwoHandedWeapon" modifier_group="sword" item_holsters="sword_back:sword_back_2:sword_back_3:sword_back_4" piece_type_to_scale_holster_with="Blade" hidden_piece_types_on_holster="Blade" default_item_holster_position_offset="0,0,-0.1">

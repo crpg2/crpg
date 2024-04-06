@@ -34772,4 +34772,68 @@
   <CraftingPiece id="crpg_ringduva_twofightingaxe_handle_h3" name="Ancient Fighting Axe Handle" tier="2" piece_type="Handle" mesh="fighting_axe_handle" length="101" weight="0.5" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="3.5" piece_offset="27" />
   </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_blade_h0" name="{=}Strange Armingsword Blade" tier="4" piece_type="Blade" mesh="armingsword_blade" culture="Culture.battania" length="96.4" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="armingsword_scabbard" holster_mesh_length="101">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_blade_h1" name="{=}Strange Armingsword Blade" tier="4" piece_type="Blade" mesh="armingsword_blade" culture="Culture.battania" length="96.4" weight="0.95">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="armingsword_scabbard" holster_mesh_length="101">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_blade_h2" name="{=}Strange Armingsword Blade" tier="4" piece_type="Blade" mesh="armingsword_blade" culture="Culture.battania" length="96.4" weight="0.95">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="armingsword_scabbard" holster_mesh_length="101">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_blade_h3" name="{=}Strange Armingsword Blade" tier="4" piece_type="Blade" mesh="armingsword_blade" culture="Culture.battania" length="96.4" weight="0.95">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="armingsword_scabbard" holster_mesh_length="101">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_pommel_h0" name="{=}Strange Armingsword Pommel" tier="4" piece_type="Pommel" mesh="armingsword_pommel" full_scale="true" culture="Culture.battania" length="5.4" weight="0.3">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_pommel_h1" name="{=}Strange Armingsword Pommel" tier="4" piece_type="Pommel" mesh="armingsword_pommel" full_scale="true" culture="Culture.battania" length="5.4" weight="0.3">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_pommel_h2" name="{=}Strange Armingsword Pommel" tier="4" piece_type="Pommel" mesh="armingsword_pommel" full_scale="true" culture="Culture.battania" length="5.4" weight="0.3">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_pommel_h3" name="{=}Strange Armingsword Pommel" tier="4" piece_type="Pommel" mesh="armingsword_pommel" full_scale="true" culture="Culture.battania" length="5.4" weight="0.3">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_guard_h0" name="{=}Strange Armingsword Guard" tier="5" piece_type="Guard" mesh="armingsword_handguard" full_scale="true" culture="Culture.battania" length="3.09" weight="0.3">
+    <BuildData next_piece_offset="1" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_guard_h1" name="{=}Strange Armingsword Guard" tier="5" piece_type="Guard" mesh="armingsword_handguard" full_scale="true" culture="Culture.battania" length="3.09" weight="0.3">
+    <BuildData next_piece_offset="1" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_guard_h2" name="{=}Strange Armingsword Guard" tier="5" piece_type="Guard" mesh="armingsword_handguard" full_scale="true" culture="Culture.battania" length="3.09" weight="0.3">
+    <BuildData next_piece_offset="1" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_guard_h3" name="{=}Strange Armingsword Guard" tier="5" piece_type="Guard" mesh="armingsword_handguard" full_scale="true" culture="Culture.battania" length="3.09" weight="0.3">
+    <BuildData next_piece_offset="1" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_handle_h0" name="{=}Strange Armingsword Handle" tier="3" piece_type="Handle" mesh="armingsword_handle" full_scale="true" culture="Culture.khuzait" length="15.6" weight="0.3">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_handle_h1" name="{=}Strange Armingsword Handle" tier="3" piece_type="Handle" mesh="armingsword_handle" full_scale="true" culture="Culture.khuzait" length="15.6" weight="0.3">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_handle_h2" name="{=}Strange Armingsword Handle" tier="3" piece_type="Handle" mesh="armingsword_handle" full_scale="true" culture="Culture.khuzait" length="15.6" weight="0.3">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_strangearmingsword_handle_h3" name="{=}Strange Armingsword Handle" tier="3" piece_type="Handle" mesh="armingsword_handle" full_scale="true" culture="Culture.khuzait" length="15.6" weight="0.3">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="1" />
+  </CraftingPiece>
 </CraftingPieces>
