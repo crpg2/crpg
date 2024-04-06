@@ -13140,7 +13140,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <CraftedItem id="crpg_english_bill_v1_h0" name="{=Salt}English Bill" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_english_bill_v2_h0" name="{=Salt}English Bill" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h0" Type="Handle" scale_factor="100" />
@@ -13148,7 +13148,7 @@
       <Piece id="crpg_english_bill_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_english_bill_v1_h1" name="{=Salt}English Bill +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_english_bill_v2_h1" name="{=Salt}English Bill +1" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h1" Type="Handle" scale_factor="100" />
@@ -13156,7 +13156,7 @@
       <Piece id="crpg_english_bill_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_english_bill_v1_h2" name="{=Salt}English Bill +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_english_bill_v2_h2" name="{=Salt}English Bill +2" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h2" Type="Handle" scale_factor="100" />
@@ -13164,7 +13164,7 @@
       <Piece id="crpg_english_bill_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_english_bill_v1_h3" name="{=Salt}English Bill +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_english_bill_v2_h3" name="{=Salt}English Bill +3" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h3" Type="Handle" scale_factor="100" />
@@ -13236,7 +13236,7 @@
       <Piece id="crpg_black_longdagger_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_v1_h0" name="{=Salt}Swiss Halberd" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_swiss_halberd_v2_h0" name="{=Salt}Swiss Halberd" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h0" Type="Handle" scale_factor="100" />
@@ -13244,7 +13244,7 @@
       <Piece id="crpg_swiss_halberd_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_v1_h1" name="{=Salt}Swiss Halberd +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_swiss_halberd_v2_h1" name="{=Salt}Swiss Halberd +1" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h1" Type="Handle" scale_factor="100" />
@@ -13252,7 +13252,7 @@
       <Piece id="crpg_swiss_halberd_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_v1_h2" name="{=Salt}Swiss Halberd +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_swiss_halberd_v2_h2" name="{=Salt}Swiss Halberd +2" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h2" Type="Handle" scale_factor="100" />
@@ -13260,7 +13260,7 @@
       <Piece id="crpg_swiss_halberd_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_swiss_halberd_v1_h3" name="{=Salt}Swiss Halberd +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_swiss_halberd_v2_h3" name="{=Salt}Swiss Halberd +3" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_swiss_halberd_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_swiss_halberd_handle_h3" Type="Handle" scale_factor="100" />

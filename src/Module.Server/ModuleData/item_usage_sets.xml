@@ -2255,4 +2255,78 @@
 				require_free_left_hand="False" />
 		</rider_idles>
 	</item_usage_set>
+	<item_usage_set
+        id="polearm_block_2dswing"
+        base_set="polearm_block"
+        has_single_stance="true">
+        <flags>
+            <flag
+                name="requires_no_mount" />
+            <flag
+                name="requires_no_shield" />
+        </flags>
+        <usages>
+            <usage
+                style="attack_up"
+                ready_action="act_ready_overswing_staff"
+                ready_from_up_action="act_ready_from_up_overswing_staff"
+                ready_from_left_action="act_ready_from_left_overswing_staff"
+                ready_from_right_action="act_ready_from_right_overswing_staff"
+                quick_release_action="act_quick_release_overswing_staff"
+                release_action="act_release_overswing_staff"
+                quick_blocked_action="act_quick_blocked_overswing_staff"
+                blocked_action="act_blocked_overswing_staff"
+                is_mounted="False"
+                require_free_left_hand="True"
+                strike_type="swing"
+                begin_hand_position="0,0,0"
+                begin_hand_rotation="0,108"
+                begin_arm_rotation="0,72"
+                begin_arm_length="0.5"
+                end_hand_position="0.1,0,0"
+                end_hand_rotation="0,-144"
+                end_arm_rotation="0,-72"
+                end_arm_length="1.0" />
+            <usage
+                style="attack_up"
+                ready_action="act_ready_overswing_staff_left_stance"
+                ready_from_up_action="act_ready_from_up_overswing_staff_left_stance"
+                ready_from_left_action="act_ready_from_left_overswing_staff_left_stance"
+                ready_from_right_action="act_ready_from_right_overswing_staff_left_stance"
+                quick_release_action="act_quick_release_overswing_staff_left_stance"
+                release_action="act_release_overswing_staff_left_stance"
+                quick_blocked_action="act_quick_blocked_overswing_staff_left_stance"
+                blocked_action="act_blocked_overswing_staff_left_stance"
+                is_mounted="False"
+                require_free_left_hand="True"
+                is_left_stance="True"
+                strike_type="swing"
+                begin_hand_position="0,0,0"
+                begin_hand_rotation="0,108"
+                begin_arm_rotation="0,72"
+                begin_arm_length="0.5"
+                end_hand_position="-0.1,0,0"
+                end_hand_rotation="0,-144"
+                end_arm_rotation="0,-72"
+                end_arm_length="1.0" />
+            <usage
+                style="attack_down"
+                ready_action="act_ready_thrust_staff"
+                quick_release_action="act_quick_release_thrust_staff"
+                release_action="act_release_thrust_staff"
+                quick_blocked_action="act_quick_blocked_thrust_staff"
+                blocked_action="act_blocked_thrust_staff"
+                is_mounted="False"
+                require_free_left_hand="True"
+                strike_type="thrust"
+                begin_hand_position="0,-0.6,-0.1"
+                begin_hand_rotation="0,-90"
+                begin_arm_rotation="0,0"
+                begin_arm_length="0"
+                end_hand_position="0,1.3,-0.1"
+                end_hand_rotation="0,-90"
+                end_arm_rotation="0,0"
+                end_arm_length="0" />
+        </usages>
+    </item_usage_set>
 </item_usage_sets>

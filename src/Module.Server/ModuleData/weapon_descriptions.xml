@@ -9365,6 +9365,10 @@
       <AvailablePiece id="crpg_polesword_pommel_h1" />
       <AvailablePiece id="crpg_polesword_pommel_h2" />
       <AvailablePiece id="crpg_polesword_pommel_h3" />
+      <AvailablePiece id="crpg_polesword_handle_h0" />
+      <AvailablePiece id="crpg_polesword_handle_h1" />
+      <AvailablePiece id="crpg_polesword_handle_h2" />
+      <AvailablePiece id="crpg_polesword_handle_h3" />
       <AvailablePiece id="crpg_glaive_pommel_h0" />
       <AvailablePiece id="crpg_glaive_pommel_h1" />
       <AvailablePiece id="crpg_glaive_pommel_h2" />
@@ -9633,10 +9637,6 @@
       <AvailablePiece id="crpg_druzhinnik_lance_handle_h1" />
       <AvailablePiece id="crpg_druzhinnik_lance_handle_h2" />
       <AvailablePiece id="crpg_druzhinnik_lance_handle_h3" />
-      <AvailablePiece id="crpg_polesword_handle_h0" />
-      <AvailablePiece id="crpg_polesword_handle_h1" />
-      <AvailablePiece id="crpg_polesword_handle_h2" />
-      <AvailablePiece id="crpg_polesword_handle_h3" />
       <AvailablePiece id="crpg_fine_steel_leaf_spear_handle_h0" />
       <AvailablePiece id="crpg_fine_steel_leaf_spear_handle_h1" />
       <AvailablePiece id="crpg_fine_steel_leaf_spear_handle_h2" />
@@ -14451,6 +14451,51 @@
       <AvailablePiece id="crpg_meowhammer_handle_h1" />
       <AvailablePiece id="crpg_meowhammer_handle_h2" />
       <AvailablePiece id="crpg_meowhammer_handle_h3" />
+    </AvailablePieces>
+  </WeaponDescription>
+  <WeaponDescription
+        id="crpg_TwoHandedPolearm_2dswing"
+        weapon_class="TwoHandedPolearm"
+        item_usage_features="polearm:block:2dswing">
+    <WeaponFlags>
+      <WeaponFlag value="MeleeWeapon" />
+      <WeaponFlag value="NotUsableWithOneHand" />
+      <WeaponFlag value="WideGrip" />
+      <WeaponFlag value="TwoHandIdleOnMount" />
+    </WeaponFlags>
+    <AvailablePieces>
+      <AvailablePiece id="crpg_swiss_halberd_blade_h0" />
+      <AvailablePiece id="crpg_swiss_halberd_blade_h1" />
+      <AvailablePiece id="crpg_swiss_halberd_blade_h2" />
+      <AvailablePiece id="crpg_swiss_halberd_blade_h3" />
+      <AvailablePiece id="crpg_swiss_halberd_handle_h0" />
+      <AvailablePiece id="crpg_swiss_halberd_handle_h1" />
+      <AvailablePiece id="crpg_swiss_halberd_handle_h2" />
+      <AvailablePiece id="crpg_swiss_halberd_handle_h3" />
+      <AvailablePiece id="crpg_swiss_halberd_guard_h0" />
+      <AvailablePiece id="crpg_swiss_halberd_guard_h1" />
+      <AvailablePiece id="crpg_swiss_halberd_guard_h2" />
+      <AvailablePiece id="crpg_swiss_halberd_guard_h3" />
+      <AvailablePiece id="crpg_swiss_halberd_pommel_h0" />
+      <AvailablePiece id="crpg_swiss_halberd_pommel_h1" />
+      <AvailablePiece id="crpg_swiss_halberd_pommel_h2" />
+      <AvailablePiece id="crpg_swiss_halberd_pommel_h3" />
+      <AvailablePiece id="crpg_english_bill_blade_h0" />
+      <AvailablePiece id="crpg_english_bill_blade_h1" />
+      <AvailablePiece id="crpg_english_bill_blade_h2" />
+      <AvailablePiece id="crpg_english_bill_blade_h3" />
+      <AvailablePiece id="crpg_english_bill_handle_h0" />
+      <AvailablePiece id="crpg_english_bill_handle_h1" />
+      <AvailablePiece id="crpg_english_bill_handle_h2" />
+      <AvailablePiece id="crpg_english_bill_handle_h3" />
+      <AvailablePiece id="crpg_english_bill_guard_h0" />
+      <AvailablePiece id="crpg_english_bill_guard_h1" />
+      <AvailablePiece id="crpg_english_bill_guard_h2" />
+      <AvailablePiece id="crpg_english_bill_guard_h3" />
+      <AvailablePiece id="crpg_english_bill_pommel_h0" />
+      <AvailablePiece id="crpg_english_bill_pommel_h1" />
+      <AvailablePiece id="crpg_english_bill_pommel_h2" />
+      <AvailablePiece id="crpg_english_bill_pommel_h3" />
     </AvailablePieces>
   </WeaponDescription>
 </WeaponDescriptions>
