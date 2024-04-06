@@ -34684,4 +34684,100 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_fightingaxe_blade_h0" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="0.75" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_fightingaxe_blade_h1" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="0.75" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_fightingaxe_blade_h2" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="0.75" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="3.9" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_fightingaxe_blade_h3" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="0.75" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_fightingaxe_handle_h0" name="Ancient Fighting Axe Handle" tier="2" piece_type="Handle" mesh="fighting_axe_handle" length="101" weight="0.1" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="3.5" piece_offset="27" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_fightingaxe_handle_h1" name="Ancient Fighting Axe Handle" tier="2" piece_type="Handle" mesh="fighting_axe_handle" length="101" weight="0.1" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="3.5" piece_offset="27" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_fightingaxe_handle_h2" name="Ancient Fighting Axe Handle" tier="2" piece_type="Handle" mesh="fighting_axe_handle" length="101" weight="0.1" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="3.5" piece_offset="27" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_fightingaxe_handle_h3" name="Ancient Fighting Axe Handle" tier="2" piece_type="Handle" mesh="fighting_axe_handle" length="101" weight="0.1" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="3.5" piece_offset="27" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h0" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.0" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h1" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.0" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="3.9" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h2" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.0" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="4.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h3" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.0" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_handle_h0" name="Ancient Fighting Axe Handle" tier="2" piece_type="Handle" mesh="fighting_axe_handle" length="101" weight="0.5" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="3.5" piece_offset="27" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_handle_h1" name="Ancient Fighting Axe Handle" tier="2" piece_type="Handle" mesh="fighting_axe_handle" length="101" weight="0.5" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="3.5" piece_offset="27" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_handle_h2" name="Ancient Fighting Axe Handle" tier="2" piece_type="Handle" mesh="fighting_axe_handle" length="101" weight="0.5" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="3.5" piece_offset="27" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_handle_h3" name="Ancient Fighting Axe Handle" tier="2" piece_type="Handle" mesh="fighting_axe_handle" length="101" weight="0.5" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="3.5" piece_offset="27" />
+  </CraftingPiece>
 </CraftingPieces>

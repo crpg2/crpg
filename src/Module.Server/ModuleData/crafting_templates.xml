@@ -5635,6 +5635,14 @@
       <UsablePiece piece_id="crpg_steel_pick_blade_h1" />
       <UsablePiece piece_id="crpg_steel_pick_blade_h2" />
       <UsablePiece piece_id="crpg_steel_pick_blade_h3" />
+      <UsablePiece piece_id="crpg_ringduva_fightingaxe_blade_h0" />
+      <UsablePiece piece_id="crpg_ringduva_fightingaxe_blade_h1" />
+      <UsablePiece piece_id="crpg_ringduva_fightingaxe_blade_h2" />
+      <UsablePiece piece_id="crpg_ringduva_fightingaxe_blade_h3" />
+      <UsablePiece piece_id="crpg_ringduva_fightingaxe_handle_h0" />
+      <UsablePiece piece_id="crpg_ringduva_fightingaxe_handle_h1" />
+      <UsablePiece piece_id="crpg_ringduva_fightingaxe_handle_h2" />
+      <UsablePiece piece_id="crpg_ringduva_fightingaxe_handle_h3" />
     </UsablePieces>
   </CraftingTemplate>
   <CraftingTemplate id="crpg_TwoHandedAxe" item_type="TwoHandedWeapon" modifier_group="axe" item_holsters="axe_back:axe_back_2:axe_back_3:axe_back_4" default_item_holster_position_offset="0,0,-0.65" use_weapon_as_holster_mesh="true">
@@ -6282,6 +6290,14 @@
       <UsablePiece piece_id="crpg_wooden_sword_pommel_h1" />
       <UsablePiece piece_id="crpg_wooden_sword_pommel_h2" />
       <UsablePiece piece_id="crpg_wooden_sword_pommel_h3" />
+      <UsablePiece piece_id="crpg_ringduva_twofightingaxe_blade_h0" />
+      <UsablePiece piece_id="crpg_ringduva_twofightingaxe_blade_h1" />
+      <UsablePiece piece_id="crpg_ringduva_twofightingaxe_blade_h2" />
+      <UsablePiece piece_id="crpg_ringduva_twofightingaxe_blade_h3" />
+      <UsablePiece piece_id="crpg_ringduva_twofightingaxe_handle_h0" />
+      <UsablePiece piece_id="crpg_ringduva_twofightingaxe_handle_h1" />
+      <UsablePiece piece_id="crpg_ringduva_twofightingaxe_handle_h2" />
+      <UsablePiece piece_id="crpg_ringduva_twofightingaxe_handle_h3" />
     </UsablePieces>
   </CraftingTemplate>
   <CraftingTemplate id="crpg_ThrowingAxe" item_type="Thrown" modifier_group="axe_throwing" item_holsters="throwing_axe:throwing_axe_2:axe_right_hip_2:axe_back" default_item_holster_position_offset="0,0,0.05" always_show_holster_with_weapon="true">
