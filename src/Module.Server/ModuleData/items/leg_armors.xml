@@ -1344,4 +1344,28 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_cb_samurai_boots_h0" name="{=Yeldur}Strange Boots" mesh="sam_bts_20" culture="Culture.empire" weight="1.799056" difficulty="0" appearance="3" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="23" covers_legs="true" has_gender_variations="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_boots_h1" name="{=Yeldur}Strange Boots +1" mesh="sam_bts_20" culture="Culture.empire" weight="1.799056" difficulty="0" appearance="3" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="24" covers_legs="true" has_gender_variations="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_boots_h2" name="{=Yeldur}Strange Boots +2" mesh="sam_bts_20" culture="Culture.empire" weight="1.799056" difficulty="0" appearance="3" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="26" covers_legs="true" has_gender_variations="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_boots_h3" name="{=Yeldur}Strange Boots +3" mesh="sam_bts_20" culture="Culture.empire" weight="1.799056" difficulty="0" appearance="3" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="28" covers_legs="true" has_gender_variations="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
 </Items>

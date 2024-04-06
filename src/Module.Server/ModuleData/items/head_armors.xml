@@ -8880,4 +8880,100 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_cb_samurai_helmet_one_h0" name="{=Yeldur}Strange Crested Helmet" mesh="sam_hlm_20" culture="Culture.empire" subtype="head_armor" weight="3.80764" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="45" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_one_h1" name="{=Yeldur}Strange Crested Helmet +1" mesh="sam_hlm_20" culture="Culture.empire" subtype="head_armor" weight="3.80764" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="47" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_one_h2" name="{=Yeldur}Strange Crested Helmet +2" mesh="sam_hlm_20" culture="Culture.empire" subtype="head_armor" weight="3.80764" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="49" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_one_h3" name="{=Yeldur}Strange Crested Helmet +3" mesh="sam_hlm_20" culture="Culture.empire" subtype="head_armor" weight="3.80764" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_two_h0" name="{=Yeldur}Strange Helmet" mesh="sam_hlm_21" culture="Culture.empire" subtype="head_armor" weight="3.228808" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="40" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_two_h1" name="{=Yeldur}Strange Helmet +1" mesh="sam_hlm_21" culture="Culture.empire" subtype="head_armor" weight="3.228808" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="42" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_two_h2" name="{=Yeldur}Strange Helmet +2" mesh="sam_hlm_21" culture="Culture.empire" subtype="head_armor" weight="3.228808" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="44" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_two_h3" name="{=Yeldur}Strange Helmet +3" mesh="sam_hlm_21" culture="Culture.empire" subtype="head_armor" weight="3.228808" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="46" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_three_h0" name="{=Yeldur}Strange Masked Crested Helmet" mesh="sam_hlm_22" culture="Culture.empire" subtype="head_armor" weight="5.696001" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="60" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_three_h1" name="{=Yeldur}Strange Masked Crested Helmet +1" mesh="sam_hlm_22" culture="Culture.empire" subtype="head_armor" weight="5.696001" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_three_h2" name="{=Yeldur}Strange Masked Crested Helmet +2" mesh="sam_hlm_22" culture="Culture.empire" subtype="head_armor" weight="5.696001" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_three_h3" name="{=Yeldur}Strange Masked Crested Helmet +3" mesh="sam_hlm_22" culture="Culture.empire" subtype="head_armor" weight="5.696001" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_four_h0" name="{=Yeldur}Strange Masked Helmet" mesh="sam_hlm_23" culture="Culture.empire" subtype="head_armor" weight="5.042735" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="55" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_four_h1" name="{=Yeldur}Strange Masked Helmet +1" mesh="sam_hlm_23" culture="Culture.empire" subtype="head_armor" weight="5.042735" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="57" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_four_h2" name="{=Yeldur}Strange Masked Helmet +2" mesh="sam_hlm_23" culture="Culture.empire" subtype="head_armor" weight="5.042735" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="59" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_helmet_four_h3" name="{=Yeldur}Strange Masked Helmet +3" mesh="sam_hlm_23" culture="Culture.empire" subtype="head_armor" weight="5.042735" difficulty="0" appearance="3.6" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="61" has_gender_variations="false" covers_head="false" hair_cover_type="type1" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
 </Items>

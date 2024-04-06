@@ -7824,4 +7824,28 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_cb_samurai_body_h0" name="{=Yeldur}Strange Armour" mesh="samurai_41" culture="Culture.empire" weight="10.98511" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="36" leg_armor="12" has_gender_variations="true" arm_armor="16" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_body_h1" name="{=Yeldur}Strange Armour +1" mesh="samurai_41" culture="Culture.empire" weight="10.98511" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="38" leg_armor="13" has_gender_variations="true" arm_armor="17" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_body_h2" name="{=Yeldur}Strange Armour +2" mesh="samurai_41" culture="Culture.empire" weight="10.98511" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="40" leg_armor="14" has_gender_variations="true" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_body_h3" name="{=Yeldur}Strange Armour +3" mesh="samurai_41" culture="Culture.empire" weight="10.98511" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="42" leg_armor="15" has_gender_variations="true" arm_armor="19" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
 </Items>

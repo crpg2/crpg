@@ -1032,4 +1032,28 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_cb_samurai_gloves_h0" name="{=Yeldur}Strange Gloves" mesh="sam_glv_20" culture="Culture.empire" weight="2.458775" appearance="3" Type="HandArmor">
+    <ItemComponent>
+      <Armor arm_armor="23" covers_hands="true" has_gender_variations="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_gloves_h1" name="{=Yeldur}Strange Gloves +1" mesh="sam_glv_20" culture="Culture.empire" weight="2.458775" appearance="3" Type="HandArmor">
+    <ItemComponent>
+      <Armor arm_armor="24" covers_hands="true" has_gender_variations="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_gloves_h2" name="{=Yeldur}Strange Gloves +2" mesh="sam_glv_20" culture="Culture.empire" weight="2.458775" appearance="3" Type="HandArmor">
+    <ItemComponent>
+      <Armor arm_armor="25" covers_hands="true" has_gender_variations="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_gloves_h3" name="{=Yeldur}Strange Gloves +3" mesh="sam_glv_20" culture="Culture.empire" weight="2.458775" appearance="3" Type="HandArmor">
+    <ItemComponent>
+      <Armor arm_armor="27" covers_hands="true" has_gender_variations="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
 </Items>

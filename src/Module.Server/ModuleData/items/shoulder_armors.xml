@@ -2808,4 +2808,76 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_cb_samurai_shoulders_one_h0" name="{=Yeldur}Strange Shoulders" mesh="sam_shldr_20" culture="Culture.sturgia" weight="4.603872" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="20" arm_armor="13" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_one_h1" name="{=Yeldur}Strange Shoulders +1" mesh="sam_shldr_20" culture="Culture.sturgia" weight="4.603872" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="22" arm_armor="13" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_one_h2" name="{=Yeldur}Strange Shoulders +2" mesh="sam_shldr_20" culture="Culture.sturgia" weight="4.603872" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="23" arm_armor="13" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_one_h3" name="{=Yeldur}Strange Shoulders +3" mesh="sam_shldr_20" culture="Culture.sturgia" weight="4.603872" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="24" arm_armor="14" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_two_h0" name="{=Yeldur}Strange Spaulders" mesh="sam_shldr_21" culture="Culture.sturgia" weight="3.230237" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="13" arm_armor="13" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_two_h1" name="{=Yeldur}Strange Spaulders +1" mesh="sam_shldr_21" culture="Culture.sturgia" weight="3.230237" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="15" arm_armor="13" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_two_h2" name="{=Yeldur}Strange Spaulders +2" mesh="sam_shldr_21" culture="Culture.sturgia" weight="3.230237" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="16" arm_armor="13" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_two_h3" name="{=Yeldur}Strange Spaulders +3" mesh="sam_shldr_21" culture="Culture.sturgia" weight="3.230237" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="17" arm_armor="14" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_three_h0" name="{=Yeldur}Strange Bevor" mesh="sam_shldr_22" culture="Culture.sturgia" weight="1.854047" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="12" arm_armor="5" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_three_h1" name="{=Yeldur}Strange Bevor +1" mesh="sam_shldr_22" culture="Culture.sturgia" weight="1.854047" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="14" arm_armor="5" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_three_h2" name="{=Yeldur}Strange Bevor +2" mesh="sam_shldr_22" culture="Culture.sturgia" weight="1.854047" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="15" arm_armor="5" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cb_samurai_shoulders_three_h3" name="{=Yeldur}Strange Bevor +3" mesh="sam_shldr_22" culture="Culture.sturgia" weight="1.854047" appearance="4" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="16" arm_armor="6" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
 </Items>
