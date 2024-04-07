@@ -31588,7 +31588,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tanto_blade_h0" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.75">
+  <CraftingPiece id="crpg_tanto_blade_h0" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.65">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
       <Thrust damage_type="Pierce" damage_factor="3.1" />
       <Swing damage_type="Cut" damage_factor="3.1" />
@@ -31626,7 +31626,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tanto_blade_h3" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.55">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
-      <Thrust damage_type="Pierce" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="3.4" />
       <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
     <Flags>
