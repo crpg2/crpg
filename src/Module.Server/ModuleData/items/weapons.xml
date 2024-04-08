@@ -12812,7 +12812,7 @@
       <Piece id="crpg_runic_axe_handle_h3" Type="Handle" scale_factor="121" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longdagger_v1_h0" name="{=Yeldur}Ancient Long Dagger" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_longdagger_v2_h0" name="{=Yeldur}Ancient Long Dagger" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_longdagger_blade_h0" Type="Blade" scale_factor="96" />
       <Piece id="crpg_longdagger_guard_h0" Type="Guard" scale_factor="100" />
@@ -12820,7 +12820,7 @@
       <Piece id="crpg_longdagger_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longdagger_v1_h1" name="{=Yeldur}Ancient Long Dagger +1" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_longdagger_v2_h1" name="{=Yeldur}Ancient Long Dagger +1" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_longdagger_blade_h1" Type="Blade" scale_factor="96" />
       <Piece id="crpg_longdagger_guard_h1" Type="Guard" scale_factor="100" />
@@ -12828,7 +12828,7 @@
       <Piece id="crpg_longdagger_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longdagger_v1_h2" name="{=Yeldur}Ancient Long Dagger +2" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_longdagger_v2_h2" name="{=Yeldur}Ancient Long Dagger +2" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_longdagger_blade_h2" Type="Blade" scale_factor="96" />
       <Piece id="crpg_longdagger_guard_h2" Type="Guard" scale_factor="100" />
@@ -12836,7 +12836,7 @@
       <Piece id="crpg_longdagger_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longdagger_v1_h3" name="{=Yeldur}Ancient Long Dagger +3" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_longdagger_v2_h3" name="{=Yeldur}Ancient Long Dagger +3" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_longdagger_blade_h3" Type="Blade" scale_factor="96" />
       <Piece id="crpg_longdagger_guard_h3" Type="Guard" scale_factor="100" />
