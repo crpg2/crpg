@@ -34906,8 +34906,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fabulousvoulge_blade_h0" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.65">
     <BladeData stack_amount="3" blade_length="42.0" blade_width="14.5" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
-      <Swing damage_type="Cut" damage_factor="4.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -34916,8 +34916,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fabulousvoulge_blade_h1" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.69">
     <BladeData stack_amount="3" blade_length="42.0" blade_width="14.5" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
-      <Swing damage_type="Cut" damage_factor="4.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -34926,8 +34926,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fabulousvoulge_blade_h2" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.69">
     <BladeData stack_amount="3" blade_length="42.0" blade_width="14.5" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.8" />
-      <Swing damage_type="Cut" damage_factor="4.9" />
+      <Thrust damage_type="Pierce" damage_factor="2.9" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -34937,7 +34937,7 @@
   <CraftingPiece id="crpg_fabulousvoulge_blade_h3" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.69">
     <BladeData stack_amount="3" blade_length="42.0" blade_width="14.5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.9" />
-      <Swing damage_type="Cut" damage_factor="5.0" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
