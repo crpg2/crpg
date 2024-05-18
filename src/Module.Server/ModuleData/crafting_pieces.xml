@@ -34839,37 +34839,41 @@
   <CraftingPiece id="crpg_ancientvoulge_blade_h0" name="{=Yeldur}Ancient Voulge Blade" tier="3" piece_type="Blade" mesh="ancientvoulge_blade" culture="Culture.vlandia" length="49.7" weight="0.50">
     <BladeData stack_amount="3" blade_length="49.7" blade_width="15.0" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="4.4" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_ancientvoulge_blade_h1" name="{=Yeldur}Ancient Voulge Blade" tier="3" piece_type="Blade" mesh="ancientvoulge_blade" culture="Culture.vlandia" length="49.7" weight="0.50">
     <BladeData stack_amount="3" blade_length="49.7" blade_width="15.0" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="4.5" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ancientvoulge_blade_h2" name="{=Yeldur}Ancient Voulge Blade" tier="3" piece_type="Blade" mesh="ancientvoulge_blade" culture="Culture.vlandia" length="49.7" weight="0.46">
+  <CraftingPiece id="crpg_ancientvoulge_blade_h2" name="{=Yeldur}Ancient Voulge Blade" tier="3" piece_type="Blade" mesh="ancientvoulge_blade" culture="Culture.vlandia" length="49.7" weight="0.48">
     <BladeData stack_amount="3" blade_length="49.7" blade_width="15.0" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
-      <Swing damage_type="Cut" damage_factor="4.5" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_ancientvoulge_blade_h3" name="{=Yeldur}Ancient Voulge Blade" tier="3" piece_type="Blade" mesh="ancientvoulge_blade" culture="Culture.vlandia" length="49.7" weight="0.44">
     <BladeData stack_amount="3" blade_length="49.7" blade_width="15.0" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Cut" damage_factor="4.6" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_ancientvoulge_handle_h0" name="{=Yeldur}Ancient Voulge Handle" tier="2" piece_type="Handle" mesh="ancientvoulge_handle" length="172" weight="0.2">
@@ -34907,6 +34911,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_fabulousvoulge_blade_h1" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.69">
@@ -34916,6 +34921,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_fabulousvoulge_blade_h2" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.69">
@@ -34925,6 +34931,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_fabulousvoulge_blade_h3" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.69">
@@ -34934,6 +34941,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_fabulousvoulge_handle_h0" name="{=Yeldur}Fabulous Voulge Handle" tier="2" piece_type="Handle" mesh="fabulous_voulge_handle" length="141" weight="0.2">
