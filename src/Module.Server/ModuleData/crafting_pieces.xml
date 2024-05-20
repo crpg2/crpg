@@ -35028,7 +35028,7 @@
     <BuildData piece_offset="-3.0" />
     <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.8" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Flags>
       <Flag name="BonusAgainstShield" />
@@ -35068,7 +35068,7 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horsemansaxe_handle_h0" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="0.9">
+  <CraftingPiece id="crpg_horsemansaxe_handle_h0" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.52">
     <BuildData piece_offset="40" next_piece_offset="13" />
   </CraftingPiece>
   <CraftingPiece id="crpg_horsemansaxe_handle_h1" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.52">
@@ -35095,8 +35095,8 @@
   <CraftingPiece id="crpg_horsemansaxe2_blade_h0" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.05">
     <BuildData piece_offset="-3.0" />
     <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.8" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
     </BladeData>
     <Flags>
       <Flag name="BonusAgainstShield" />
@@ -35107,7 +35107,7 @@
     <BuildData piece_offset="-3.0" />
     <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Flags>
       <Flag name="BonusAgainstShield" />
@@ -35118,7 +35118,7 @@
     <BuildData piece_offset="-3.0" />
     <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
-      <Swing damage_type="Cut" damage_factor="4.0" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
     <Flags>
       <Flag name="BonusAgainstShield" />
@@ -35136,16 +35136,16 @@
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_horsemansaxe2_handle_h0" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="0.9">
+  <CraftingPiece id="crpg_horsemansaxe2_handle_h0" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.1">
     <BuildData piece_offset="40" next_piece_offset="13" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_horsemansaxe2_handle_h1" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="0.9">
+  <CraftingPiece id="crpg_horsemansaxe2_handle_h1" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.0">
     <BuildData piece_offset="40" next_piece_offset="13" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_horsemansaxe2_handle_h2" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="0.9">
+  <CraftingPiece id="crpg_horsemansaxe2_handle_h2" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.0">
     <BuildData piece_offset="40" next_piece_offset="13" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_horsemansaxe2_handle_h3" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="0.88">
+  <CraftingPiece id="crpg_horsemansaxe2_handle_h3" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.0">
     <BuildData piece_offset="40" next_piece_offset="13" />
   </CraftingPiece>
   <CraftingPiece id="crpg_horsemansaxe2_pommel_h0" name="{=}Horseman's Axe Pommel" tier="4" piece_type="Pommel" mesh="horsemans_axe_pommel" culture="Culture.battania" length="6.85" weight="0.7">
