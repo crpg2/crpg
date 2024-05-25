@@ -14469,7 +14469,10 @@
       <AvailablePiece id="crpg_meowhammer_handle_h3" />
     </AvailablePieces>
   </WeaponDescription>
-  <WeaponDescription id="crpg_TwoHandedPolearm_2dswing" weapon_class="TwoHandedPolearm" item_usage_features="polearm:block:2dswing">
+  <WeaponDescription
+        id="crpg_TwoHandedPolearm_2dswing"
+        weapon_class="TwoHandedPolearm"
+        item_usage_features="polearm:block:2dswing">
     <WeaponFlags>
       <WeaponFlag value="MeleeWeapon" />
       <WeaponFlag value="NotUsableWithOneHand" />
