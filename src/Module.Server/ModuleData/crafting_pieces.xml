@@ -11962,8 +11962,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_seax_blade_h0" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.75">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Cut" damage_factor="3.0" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -11975,8 +11975,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_seax_blade_h1" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.60">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Cut" damage_factor="3.0" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -11988,8 +11988,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_seax_blade_h2" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.56">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="3.1" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -12001,8 +12001,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_seax_blade_h3" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.56">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -31588,10 +31588,10 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tanto_blade_h0" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.75">
+  <CraftingPiece id="crpg_tanto_blade_h0" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.65">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
       <Thrust damage_type="Pierce" damage_factor="3.1" />
-      <Swing damage_type="Cut" damage_factor="2.9" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31600,10 +31600,22 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tanto_blade_h1" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.6">
+  <CraftingPiece id="crpg_tanto_blade_h1" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.55">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
+      <Thrust damage_type="Pierce" damage_factor="3.1" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tanto_blade_h2" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.55">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
       <Thrust damage_type="Pierce" damage_factor="3.2" />
-      <Swing damage_type="Cut" damage_factor="2.9" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31612,22 +31624,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_tanto_blade_h2" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.5">
-    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
-      <Thrust damage_type="Pierce" damage_factor="3.3" />
-      <Swing damage_type="Cut" damage_factor="2.9" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_tanto_blade_h3" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.5">
+  <CraftingPiece id="crpg_tanto_blade_h3" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.55">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
       <Thrust damage_type="Pierce" damage_factor="3.4" />
-      <Swing damage_type="Cut" damage_factor="3.0" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31936,10 +31936,10 @@
   <CraftingPiece id="crpg_jian_handle_h3" name="{=}Jian Handle" tier="3" piece_type="Handle" mesh="jian_handle" culture="Culture.khuzait" length="27.3" weight="0.1">
     <BuildData piece_offset="1" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_longdagger_blade_h0" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.3">
+  <CraftingPiece id="crpg_longdagger_blade_h0" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.95">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="1.8" />
-      <Swing damage_type="Cut" damage_factor="1.7" />
+      <Thrust damage_type="Pierce" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="2.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31948,10 +31948,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_longdagger_blade_h1" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.3">
+  <CraftingPiece id="crpg_longdagger_blade_h1" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.95">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Cut" damage_factor="1.8" />
+      <Thrust damage_type="Pierce" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="2.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31960,10 +31960,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_longdagger_blade_h2" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.3">
+  <CraftingPiece id="crpg_longdagger_blade_h2" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.95">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="1.9" />
+      <Thrust damage_type="Pierce" damage_factor="3.5" />
+      <Swing damage_type="Cut" damage_factor="2.6" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31972,10 +31972,10 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_longdagger_blade_h3" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.3">
+  <CraftingPiece id="crpg_longdagger_blade_h3" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.95">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="2.0" />
+      <Thrust damage_type="Pierce" damage_factor="3.7" />
+      <Swing damage_type="Cut" damage_factor="2.7" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -33022,7 +33022,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_black_longdagger_blade_h1" name="{=Yeldur}Long Dagger Blade" tier="2" piece_type="Blade" mesh="black_longdagger_blade" full_scale="false" length="40.4" weight="0.01">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="black_longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
       <Swing damage_type="Cut" damage_factor="0.5" />
     </BladeData>
     <Flags>
@@ -33034,7 +33034,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_black_longdagger_blade_h2" name="{=Yeldur}Long Dagger Blade" tier="2" piece_type="Blade" mesh="black_longdagger_blade" full_scale="false" length="40.4" weight="0.01">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="black_longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="3.5" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
       <Swing damage_type="Cut" damage_factor="0.5" />
     </BladeData>
     <Flags>
@@ -33046,7 +33046,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_black_longdagger_blade_h3" name="{=Yeldur}Long Dagger Blade" tier="2" piece_type="Blade" mesh="black_longdagger_blade" full_scale="false" length="40.4" weight="0.01">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="black_longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="3.6" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
       <Swing damage_type="Cut" damage_factor="0.5" />
     </BladeData>
     <Flags>
@@ -34835,5 +34835,329 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_strangearmingsword_handle_h3" name="{=}Strange Armingsword Handle" tier="3" piece_type="Handle" mesh="armingsword_handle" full_scale="true" culture="Culture.khuzait" length="15.6" weight="0.3">
     <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_blade_h0" name="{=Yeldur}Ancient Voulge Blade" tier="3" piece_type="Blade" mesh="ancientvoulge_blade" culture="Culture.vlandia" length="49.7" weight="0.50">
+    <BladeData stack_amount="3" blade_length="49.7" blade_width="15.0" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_blade_h1" name="{=Yeldur}Ancient Voulge Blade" tier="3" piece_type="Blade" mesh="ancientvoulge_blade" culture="Culture.vlandia" length="49.7" weight="0.50">
+    <BladeData stack_amount="3" blade_length="49.7" blade_width="15.0" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_blade_h2" name="{=Yeldur}Ancient Voulge Blade" tier="3" piece_type="Blade" mesh="ancientvoulge_blade" culture="Culture.vlandia" length="49.7" weight="0.48">
+    <BladeData stack_amount="3" blade_length="49.7" blade_width="15.0" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_blade_h3" name="{=Yeldur}Ancient Voulge Blade" tier="3" piece_type="Blade" mesh="ancientvoulge_blade" culture="Culture.vlandia" length="49.7" weight="0.44">
+    <BladeData stack_amount="3" blade_length="49.7" blade_width="15.0" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_handle_h0" name="{=Yeldur}Ancient Voulge Handle" tier="2" piece_type="Handle" mesh="ancientvoulge_handle" length="172" weight="0.2">
+    <BuildData previous_piece_offset="0" next_piece_offset="21" piece_offset="40" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_handle_h1" name="{=Yeldur}Ancient Voulge Handle" tier="2" piece_type="Handle" mesh="ancientvoulge_handle" length="172" weight="0.2">
+    <BuildData previous_piece_offset="0" next_piece_offset="21" piece_offset="40" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_handle_h2" name="{=Yeldur}Ancient Voulge Handle" tier="2" piece_type="Handle" mesh="ancientvoulge_handle" length="172" weight="0.2">
+    <BuildData previous_piece_offset="0" next_piece_offset="21" piece_offset="40" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_handle_h3" name="{=Yeldur}Ancient Voulge Handle" tier="2" piece_type="Handle" mesh="ancientvoulge_handle" length="172" weight="0.2">
+    <BuildData previous_piece_offset="0" next_piece_offset="21" piece_offset="40" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_guard_h0" name="{=Yeldur}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_guard_h1" name="{=Yeldur}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_guard_h2" name="{=Yeldur}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_guard_h3" name="{=Yeldur}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_pommel_h0" name="{=Yeldur}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_pommel_h1" name="{=Yeldur}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_pommel_h2" name="{=Yeldur}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ancientvoulge_pommel_h3" name="{=Yeldur}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_blade_h0" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.65">
+    <BladeData stack_amount="3" blade_length="42.0" blade_width="14.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_blade_h1" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.69">
+    <BladeData stack_amount="3" blade_length="42.0" blade_width="14.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_blade_h2" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.69">
+    <BladeData stack_amount="3" blade_length="42.0" blade_width="14.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.9" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_blade_h3" name="{=Yeldur}Fabulous Voulge Blade" tier="3" piece_type="Blade" mesh="fabulous_voulge_head" culture="Culture.vlandia" length="65.5" weight="0.69">
+    <BladeData stack_amount="3" blade_length="42.0" blade_width="14.5" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.9" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_handle_h0" name="{=Yeldur}Fabulous Voulge Handle" tier="2" piece_type="Handle" mesh="fabulous_voulge_handle" length="141" weight="0.2">
+    <BuildData previous_piece_offset="0" next_piece_offset="30" piece_offset="30" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_handle_h1" name="{=Yeldur}Fabulous Voulge Handle" tier="2" piece_type="Handle" mesh="fabulous_voulge_handle" length="141" weight="0.1">
+    <BuildData previous_piece_offset="0" next_piece_offset="30" piece_offset="30" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_handle_h2" name="{=Yeldur}Fabulous Voulge Handle" tier="2" piece_type="Handle" mesh="fabulous_voulge_handle" length="141" weight="0.1">
+    <BuildData previous_piece_offset="0" next_piece_offset="30" piece_offset="30" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_handle_h3" name="{=Yeldur}Fabulous Voulge Handle" tier="2" piece_type="Handle" mesh="fabulous_voulge_handle" length="141" weight="0.1">
+    <BuildData previous_piece_offset="0" next_piece_offset="30" piece_offset="30" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_guard_h0" name="{=Yeldur}Fabulous Voulge Frills" tier="3" piece_type="Guard" mesh="spear_banner_17" culture="Culture.neutral_culture" length="4" weight="0.2" full_scale="true">
+    <BuildData next_piece_offset="22" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_guard_h1" name="{=Yeldur}Fabulous Voulge Frills" tier="3" piece_type="Guard" mesh="spear_banner_17" culture="Culture.neutral_culture" length="4" weight="0.15" full_scale="true">
+    <BuildData next_piece_offset="22" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_guard_h2" name="{=Yeldur}Fabulous Voulge Frills" tier="3" piece_type="Guard" mesh="spear_banner_17" culture="Culture.neutral_culture" length="4" weight="0.15" full_scale="true">
+    <BuildData next_piece_offset="22" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_guard_h3" name="{=BalanceMe}Fabulous Voulge Frills" tier="3" piece_type="Guard" mesh="spear_banner_17" culture="Culture.neutral_culture" length="4" weight="0.11" full_scale="true">
+    <BuildData next_piece_offset="22" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_pommel_h0" name="{=Yeldur}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_pommel_h1" name="{=Yeldur}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_pommel_h2" name="{=Yeldur}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_fabulousvoulge_pommel_h3" name="{=Yeldur}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_smallhammer_blade_h0" name="{=BalanceMe}Small Hammer Head" tier="2" piece_type="Blade" mesh="small_hammer_head" length="4.79" weight="1.42" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.2" />
+    </BladeData>
+      <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+      </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_smallhammer_blade_h1" name="{=Yeldur}Small Hammer Head" tier="2" piece_type="Blade" mesh="small_hammer_head" length="4.79" weight="0.61" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.3" />
+    </BladeData>
+      <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+      </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_smallhammer_blade_h2" name="{=Yeldur}Small Hammer Head" tier="2" piece_type="Blade" mesh="small_hammer_head" length="4.79" weight="0.61" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.4" />
+    </BladeData>
+      <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+      </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_smallhammer_blade_h3" name="{=Yeldur}Small Hammer Head" tier="2" piece_type="Blade" mesh="small_hammer_head" length="4.79" weight="0.61" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.5" />
+    </BladeData>
+      <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+      </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_smallhammer_handle_h0" name="{=Yeldur}Small Hammer Handle" tier="1" piece_type="Handle" mesh="small_hammer_handle" length="39.3" weight="0.1" full_scale="true" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+    <BuildData piece_offset="9" previous_piece_offset="0.0" next_piece_offset="6" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_smallhammer_handle_h1" name="{=Yeldur}Small Hammer Handle" tier="1" piece_type="Handle" mesh="small_hammer_handle" length="39.3" weight="0.1" full_scale="true" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+    <BuildData piece_offset="9" previous_piece_offset="0.0" next_piece_offset="6" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_smallhammer_handle_h2" name="{=Yeldur}Small Hammer Handle" tier="1" piece_type="Handle" mesh="small_hammer_handle" length="39.3" weight="0.1" full_scale="true" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+    <BuildData piece_offset="9" previous_piece_offset="0.0" next_piece_offset="6" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_smallhammer_handle_h3" name="{=Yeldur}Small Hammer Handle" tier="1" piece_type="Handle" mesh="small_hammer_handle" length="39.3" weight="0.1" full_scale="true" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
+    <BuildData piece_offset="9" previous_piece_offset="0.0" next_piece_offset="6" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_blade_h0" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.45">
+    <BuildData piece_offset="-3.0" />
+    <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_blade_h1" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.05">
+    <BuildData piece_offset="-3.0" />
+    <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_blade_h2" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.05">
+    <BuildData piece_offset="-3.0" />
+    <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_blade_h3" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.05">
+    <BuildData piece_offset="-3.0" />
+    <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_handle_h0" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.52">
+    <BuildData piece_offset="40" next_piece_offset="13" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_handle_h1" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.52">
+    <BuildData piece_offset="40" next_piece_offset="13" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_handle_h2" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.42">
+    <BuildData piece_offset="40" next_piece_offset="13" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_handle_h3" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.32">
+    <BuildData piece_offset="40" next_piece_offset="13" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_pommel_h0" name="{=}Horseman's Axe Pommel" tier="4" piece_type="Pommel" mesh="horsemans_axe_pommel" culture="Culture.battania" length="6.85" weight="0.7">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_pommel_h1" name="{=}Horseman's Axe Pommel" tier="4" piece_type="Pommel" mesh="horsemans_axe_pommel" culture="Culture.battania" length="6.85" weight="0.7">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_pommel_h2" name="{=}Horseman's Axe Pommel" tier="4" piece_type="Pommel" mesh="horsemans_axe_pommel" culture="Culture.battania" length="6.85" weight="0.7">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe_pommel_h3" name="{=}Horseman's Axe Pommel" tier="4" piece_type="Pommel" mesh="horsemans_axe_pommel" culture="Culture.battania" length="6.85" weight="0.7">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_blade_h0" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.05">
+    <BuildData piece_offset="-3.0" />
+    <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_blade_h1" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.05">
+    <BuildData piece_offset="-3.0" />
+    <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_blade_h2" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.05">
+    <BuildData piece_offset="-3.0" />
+    <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_blade_h3" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.05">
+    <BuildData piece_offset="-3.0" />
+    <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_handle_h0" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.1">
+    <BuildData piece_offset="40" next_piece_offset="13" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_handle_h1" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.0">
+    <BuildData piece_offset="40" next_piece_offset="13" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_handle_h2" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.0">
+    <BuildData piece_offset="40" next_piece_offset="13" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_handle_h3" name="{=}Horseman's Axe Handle" tier="2" piece_type="Handle" mesh="horsemans_axe_handle" length="99.2" weight="1.0">
+    <BuildData piece_offset="40" next_piece_offset="13" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_pommel_h0" name="{=}Horseman's Axe Pommel" tier="4" piece_type="Pommel" mesh="horsemans_axe_pommel" culture="Culture.battania" length="6.85" weight="0.7">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_pommel_h1" name="{=}Horseman's Axe Pommel" tier="4" piece_type="Pommel" mesh="horsemans_axe_pommel" culture="Culture.battania" length="6.85" weight="0.7">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_pommel_h2" name="{=}Horseman's Axe Pommel" tier="4" piece_type="Pommel" mesh="horsemans_axe_pommel" culture="Culture.battania" length="6.85" weight="0.7">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_horsemansaxe2_pommel_h3" name="{=}Horseman's Axe Pommel" tier="4" piece_type="Pommel" mesh="horsemans_axe_pommel" culture="Culture.battania" length="6.85" weight="0.7">
+    <BuildData next_piece_offset="0" />
   </CraftingPiece>
 </CraftingPieces>

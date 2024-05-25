@@ -4896,7 +4896,7 @@
       <Piece id="crpg_highland_dagger_pommel_h3" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_seax_v2_h0" name="{=Yeldur}Seax" crafting_template="crpg_Dagger" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_seax_v3_h0" name="{=Yeldur}Seax" crafting_template="crpg_Dagger" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_seax_blade_h0" Type="Blade" scale_factor="93" />
       <Piece id="crpg_seax_guard_h0" Type="Guard" scale_factor="90" />
@@ -4904,7 +4904,7 @@
       <Piece id="crpg_seax_pommel_h0" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_seax_v2_h1" name="{=Yeldur}Seax +1" crafting_template="crpg_Dagger" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_seax_v3_h1" name="{=Yeldur}Seax +1" crafting_template="crpg_Dagger" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_seax_blade_h1" Type="Blade" scale_factor="93" />
       <Piece id="crpg_seax_guard_h1" Type="Guard" scale_factor="90" />
@@ -4912,7 +4912,7 @@
       <Piece id="crpg_seax_pommel_h1" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_seax_v2_h2" name="{=Yeldur}Seax +2" crafting_template="crpg_Dagger" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_seax_v3_h2" name="{=Yeldur}Seax +2" crafting_template="crpg_Dagger" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_seax_blade_h2" Type="Blade" scale_factor="93" />
       <Piece id="crpg_seax_guard_h2" Type="Guard" scale_factor="90" />
@@ -4920,7 +4920,7 @@
       <Piece id="crpg_seax_pommel_h2" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_seax_v2_h3" name="{=Yeldur}Seax +3" crafting_template="crpg_Dagger" culture="Culture.sturgia" modifier_group="sword">
+  <CraftedItem id="crpg_seax_v3_h3" name="{=Yeldur}Seax +3" crafting_template="crpg_Dagger" culture="Culture.sturgia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_seax_blade_h3" Type="Blade" scale_factor="93" />
       <Piece id="crpg_seax_guard_h3" Type="Guard" scale_factor="90" />
@@ -12636,25 +12636,25 @@
       <Piece id="crpg_kopesh_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tanto_v1_h0" name="{=Yeldur}Tanto" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_tanto_v2_h0" name="{=Yeldur}Tanto" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_tanto_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tanto_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tanto_v1_h1" name="{=Yeldur}Tanto +1" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_tanto_v2_h1" name="{=Yeldur}Tanto +1" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_tanto_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tanto_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tanto_v1_h2" name="{=Yeldur}Tanto +2" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_tanto_v2_h2" name="{=Yeldur}Tanto +2" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_tanto_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tanto_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tanto_v1_h3" name="{=Yeldur}Tanto +3" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_tanto_v2_h3" name="{=Yeldur}Tanto +3" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_tanto_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tanto_handle_h3" Type="Handle" scale_factor="100" />
@@ -12812,7 +12812,7 @@
       <Piece id="crpg_runic_axe_handle_h3" Type="Handle" scale_factor="121" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longdagger_v1_h0" name="{=Yeldur}Ancient Long Dagger" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_longdagger_v2_h0" name="{=Yeldur}Ancient Long Dagger" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_longdagger_blade_h0" Type="Blade" scale_factor="96" />
       <Piece id="crpg_longdagger_guard_h0" Type="Guard" scale_factor="100" />
@@ -12820,7 +12820,7 @@
       <Piece id="crpg_longdagger_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longdagger_v1_h1" name="{=Yeldur}Ancient Long Dagger +1" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_longdagger_v2_h1" name="{=Yeldur}Ancient Long Dagger +1" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_longdagger_blade_h1" Type="Blade" scale_factor="96" />
       <Piece id="crpg_longdagger_guard_h1" Type="Guard" scale_factor="100" />
@@ -12828,7 +12828,7 @@
       <Piece id="crpg_longdagger_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longdagger_v1_h2" name="{=Yeldur}Ancient Long Dagger +2" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_longdagger_v2_h2" name="{=Yeldur}Ancient Long Dagger +2" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_longdagger_blade_h2" Type="Blade" scale_factor="96" />
       <Piece id="crpg_longdagger_guard_h2" Type="Guard" scale_factor="100" />
@@ -12836,7 +12836,7 @@
       <Piece id="crpg_longdagger_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longdagger_v1_h3" name="{=Yeldur}Ancient Long Dagger +3" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_longdagger_v2_h3" name="{=Yeldur}Ancient Long Dagger +3" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_longdagger_blade_h3" Type="Blade" scale_factor="96" />
       <Piece id="crpg_longdagger_guard_h3" Type="Guard" scale_factor="100" />
@@ -13204,7 +13204,7 @@
       <Piece id="crpg_longseax_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_black_longdagger_h0" name="{=BalanceMe}Decorative Long Dagger" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_black_longdagger_v1_h0" name="{=Yeldur}Decorative Long Dagger" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_black_longdagger_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_black_longdagger_guard_h0" Type="Guard" scale_factor="100" />
@@ -13212,7 +13212,7 @@
       <Piece id="crpg_black_longdagger_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_black_longdagger_h1" name="{=BalanceMe}Decorative Long Dagger +1" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_black_longdagger_v1_h1" name="{=Yeldur}Decorative Long Dagger +1" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_black_longdagger_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_black_longdagger_guard_h1" Type="Guard" scale_factor="100" />
@@ -13220,7 +13220,7 @@
       <Piece id="crpg_black_longdagger_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_black_longdagger_h2" name="{=BalanceMe}Decorative Long Dagger +2" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_black_longdagger_v1_h2" name="{=Yeldur}Decorative Long Dagger +2" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_black_longdagger_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_black_longdagger_guard_h2" Type="Guard" scale_factor="100" />
@@ -13228,7 +13228,7 @@
       <Piece id="crpg_black_longdagger_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_black_longdagger_h3" name="{=BalanceMe}Decorative Long Dagger +3" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_black_longdagger_v1_h3" name="{=Yeldur}Decorative Long Dagger +3" crafting_template="crpg_Dagger_Scabbard" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_black_longdagger_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_black_longdagger_guard_h3" Type="Guard" scale_factor="100" />
@@ -13722,6 +13722,150 @@
       <Piece id="crpg_strangearmingsword_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_strangearmingsword_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_strangearmingsword_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_ancientvoulge_h0" name="{=Yeldur}Ancient Long Voulge" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_ancientvoulge_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_ancientvoulge_handle_h0" Type="Handle" scale_factor="120" />
+      <Piece id="crpg_ancientvoulge_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_ancientvoulge_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_ancientvoulge_h1" name="{=Yeldur}Ancient Long Voulge +1" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_ancientvoulge_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_ancientvoulge_handle_h1" Type="Handle" scale_factor="120" />
+      <Piece id="crpg_ancientvoulge_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_ancientvoulge_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_ancientvoulge_h2" name="{=Yeldur}Ancient Long Voulge +2" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_ancientvoulge_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_ancientvoulge_handle_h2" Type="Handle" scale_factor="120" />
+      <Piece id="crpg_ancientvoulge_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_ancientvoulge_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_ancientvoulge_h3" name="{=Yeldur}Ancient Long Voulge +3" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_ancientvoulge_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_ancientvoulge_handle_h3" Type="Handle" scale_factor="120" />
+      <Piece id="crpg_ancientvoulge_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_ancientvoulge_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_fabulousvoulge_h0" name="{=Yeldur}Noble Short Voulge" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_fabulousvoulge_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_fabulousvoulge_handle_h0" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_fabulousvoulge_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_fabulousvoulge_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_fabulousvoulge_h1" name="{=Yeldur}Noble Short Voulge +1" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_fabulousvoulge_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_fabulousvoulge_handle_h1" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_fabulousvoulge_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_fabulousvoulge_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_fabulousvoulge_h2" name="{=Yeldur}Noble Voulge +2" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_fabulousvoulge_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_fabulousvoulge_handle_h2" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_fabulousvoulge_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_fabulousvoulge_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_fabulousvoulge_h3" name="{=Yeldur}Noble Voulge +3" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_fabulousvoulge_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_fabulousvoulge_handle_h3" Type="Handle" scale_factor="110" />
+      <Piece id="crpg_fabulousvoulge_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_fabulousvoulge_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_smallhammer_h0" name="{=}Small Hammer" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_smallhammer_blade_h0" Type="Blade" scale_factor="140" />
+      <Piece id="crpg_smallhammer_handle_h0" Type="Handle" scale_factor="140" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_smallhammer_h1" name="{=}Elder's Hammer +1" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_smallhammer_blade_h1" Type="Blade" scale_factor="140" />
+      <Piece id="crpg_smallhammer_handle_h1" Type="Handle" scale_factor="140" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_smallhammer_h2" name="{=}Elder's Hammer +2" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_smallhammer_blade_h2" Type="Blade" scale_factor="140" />
+      <Piece id="crpg_smallhammer_handle_h2" Type="Handle" scale_factor="140" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_smallhammer_h3" name="{=}Elder's Hammer +3" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_smallhammer_blade_h3" Type="Blade" scale_factor="140" />
+      <Piece id="crpg_smallhammer_handle_h3" Type="Handle" scale_factor="140" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_horsemansaxe_h0" name="{=BalanceMe}Horseman's Axe" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_horsemansaxe_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_horsemansaxe_h1" name="{=BalanceMe}Horseman's Axe" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_horsemansaxe_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_horsemansaxe_h2" name="{=BalanceMe}Horseman's Axe" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_horsemansaxe_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_horsemansaxe_h3" name="{=BalanceMe}Horseman's Axe" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_horsemansaxe_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_horsemansaxe2_h0" name="{=BalanceMe}Horseman's Axe" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_horsemansaxe2_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe2_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe2_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_horsemansaxe2_h1" name="{=BalanceMe}Horseman's Axe" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_horsemansaxe2_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe2_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe2_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_horsemansaxe2_h2" name="{=BalanceMe}Horseman's Axe" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_horsemansaxe2_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe2_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe2_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_horsemansaxe2_h3" name="{=BalanceMe}Horseman's Axe" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
+    <Pieces>
+      <Piece id="crpg_horsemansaxe2_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe2_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_horsemansaxe2_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
 </Items>
