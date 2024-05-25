@@ -13788,4 +13788,28 @@
       <Piece id="crpg_fabulousvoulge_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_smallhammer_h0" name="{=}Small Hammer" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_smallhammer_blade_h0" Type="Blade" scale_factor="140" />
+      <Piece id="crpg_smallhammer_handle_h0" Type="Handle" scale_factor="140" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_smallhammer_h1" name="{=}Elder's Hammer +1" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_smallhammer_blade_h1" Type="Blade" scale_factor="140" />
+      <Piece id="crpg_smallhammer_handle_h1" Type="Handle" scale_factor="140" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_smallhammer_h2" name="{=}Elder's Hammer +2" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_smallhammer_blade_h2" Type="Blade" scale_factor="140" />
+      <Piece id="crpg_smallhammer_handle_h2" Type="Handle" scale_factor="140" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_smallhammer_h3" name="{=}Elder's Hammer +3" crafting_template="crpg_Mace" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_smallhammer_blade_h3" Type="Blade" scale_factor="140" />
+      <Piece id="crpg_smallhammer_handle_h3" Type="Handle" scale_factor="140" />
+    </Pieces>
+  </CraftedItem>
 </Items>
