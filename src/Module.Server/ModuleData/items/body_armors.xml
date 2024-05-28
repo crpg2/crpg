@@ -7848,4 +7848,28 @@
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
+  <Item id="crpg_lederhosen_h0" name="{=Yeldur}Kremsie Lederhosen" mesh="cts_lederhosen" culture="Culture.looters" weight="2.958563" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="15" leg_armor="5" arm_armor="5" covers_body="false" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_lederhosen_h1" name="{=Yeldur}Kremsie Lederhosen +1" mesh="cts_lederhosen" culture="Culture.looters" weight="2.958563" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="17" leg_armor="6" arm_armor="6" covers_body="false" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_lederhosen_h2" name="{=Yeldur}Kremsie Lederhosen +2" mesh="cts_lederhosen" culture="Culture.looters" weight="2.958563" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="19" leg_armor="7" arm_armor="7" covers_body="false" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_lederhosen_h3" name="{=Yeldur}Kremsie Lederhosen +3" mesh="cts_lederhosen" culture="Culture.looters" weight="2.958563" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="21" leg_armor="8" arm_armor="8" covers_body="false" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
 </Items>

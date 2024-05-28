@@ -9000,4 +9000,244 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_sa_butterlord1_h0" name="{=BalanceMe}Great Helmet Antler Crest" subtype="head_armor" mesh="sa_butterlord1" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord1_h1" name="{=BalanceMe}Great Helmet Antler Crest +1" subtype="head_armor" mesh="sa_butterlord1" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord1_h2" name="{=BalanceMe}Great Helmet Antler Crest +2" subtype="head_armor" mesh="sa_butterlord1" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord1_h3" name="{=BalanceMe}Great Helmet Antler Crest +3" subtype="head_armor" mesh="sa_butterlord1" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord2_h0" name="{=BalanceMe}Great Helmet Eagle Crest" subtype="head_armor" mesh="sa_butterlord2" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord2_h1" name="{=BalanceMe}Great Helmet Eagle Crest +1" subtype="head_armor" mesh="sa_butterlord2" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord2_h2" name="{=BalanceMe}Great Helmet Eagle Crest +2" subtype="head_armor" mesh="sa_butterlord2" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord2_h3" name="{=BalanceMe}Great Helmet Eagle Crest +3" subtype="head_armor" mesh="sa_butterlord2" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord3_h0" name="{=BalanceMe}Great Helmet Grail Crest" subtype="head_armor" mesh="sa_butterlord3" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord3_h1" name="{=BalanceMe}Great Helmet Grail Crest +1" subtype="head_armor" mesh="sa_butterlord3" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord3_h2" name="{=BalanceMe}Great Helmet Grail Crest +2" subtype="head_armor" mesh="sa_butterlord3" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord3_h3" name="{=BalanceMe}Great Helmet Grail Crest +3" subtype="head_armor" mesh="sa_butterlord3" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord4_h0" name="{=BalanceMe}Painted Great Helmet" subtype="head_armor" mesh="sa_butterlord4" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord4_h1" name="{=BalanceMe}Painted Great Helmet +1" subtype="head_armor" mesh="sa_butterlord4" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord4_h2" name="{=BalanceMe}Painted Great Helmet +2" subtype="head_armor" mesh="sa_butterlord4" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord4_h3" name="{=BalanceMe}Painted Great Helmet +3" subtype="head_armor" mesh="sa_butterlord4" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord5_h0" name="{=BalanceMe}Brass Great Helmet Antler Crest" subtype="head_armor" mesh="sa_butterlord5" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord5_h1" name="{=BalanceMe}Brass Great Helmet Antler Crest +1" subtype="head_armor" mesh="sa_butterlord5" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord5_h2" name="{=BalanceMe}Brass Great Helmet Antler Crest +2" subtype="head_armor" mesh="sa_butterlord5" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord5_h3" name="{=BalanceMe}Brass Great Helmet Antler Crest +3" subtype="head_armor" mesh="sa_butterlord5" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord6_h0" name="{=BalanceMe}Brass Great Helmet Eagle Crest" subtype="head_armor" mesh="sa_butterlord6" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord6_h1" name="{=BalanceMe}Brass Great Helmet Eagle Crest +1" subtype="head_armor" mesh="sa_butterlord6" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord6_h2" name="{=BalanceMe}Brass Great Helmet Eagle Crest +2" subtype="head_armor" mesh="sa_butterlord6" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord6_h3" name="{=BalanceMe}Brass Great Helmet Eagle Crest +3" subtype="head_armor" mesh="sa_butterlord6" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord7_h0" name="{=BalanceMe}Brass Great Helmet Grail Crest" subtype="head_armor" mesh="sa_butterlord7" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord7_h1" name="{=BalanceMe}Brass Great Helmet Grail Crest +1" subtype="head_armor" mesh="sa_butterlord7" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord7_h2" name="{=BalanceMe}Brass Great Helmet Grail Crest +2" subtype="head_armor" mesh="sa_butterlord7" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_sa_butterlord7_h3" name="{=BalanceMe}Brass Great Helmet Grail Crest +3" subtype="head_armor" mesh="sa_butterlord7" culture="Culture.vlandia" weight="5.963575" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_swiss_hat_a_h0" name="{=Yeldur}Kremsie Hat (A)" mesh="cts_swis_hat_a" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="5" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_a_h1" name="{=Yeldur}Kremsie Hat (A) +1" mesh="cts_swis_hat_a" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="7" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_a_h2" name="{=Yeldur}Kremsie Hat (A) +2" mesh="cts_swis_hat_a" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="9" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_a_h3" name="{=Yeldur}Kremsie Hat (A) +3" mesh="cts_swis_hat_a" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="11" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_b_h0" name="{=Yeldur}Kremsie Hat (B)" mesh="cts_swis_hat_b" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="5" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_b_h1" name="{=Yeldur}Kremsie Hat (B) +1" mesh="cts_swis_hat_b" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="7" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_b_h2" name="{=Yeldur}Kremsie Hat (B) +2" mesh="cts_swis_hat_b" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="9" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_b_h3" name="{=Yeldur}Kremsie Hat (B) +3" mesh="cts_swis_hat_b" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="11" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_c_h0" name="{=Yeldur}Kremsie Hat (C)" mesh="cts_swis_hat_c" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="5" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_c_h1" name="{=Yeldur}Kremsie Hat (C) +1" mesh="cts_swis_hat_c" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="7" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_c_h2" name="{=Yeldur}Kremsie Hat (C) +2" mesh="cts_swis_hat_c" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="9" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_swiss_hat_c_h3" name="{=Yeldur}Kremsie Hat (C) +3" mesh="cts_swis_hat_c" culture="Culture.vlandia" weight="0.1756776" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="11" has_gender_variations="false" hair_cover_type="type1" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="none" />
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>

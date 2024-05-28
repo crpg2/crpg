@@ -1368,4 +1368,28 @@
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
+  <Item id="crpg_swiss_boots_h0" name="{=Yeldur}Kremsie Boots" mesh="cts_swiss_boots" culture="Culture.battania" weight="0.2124143" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="5" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_swiss_boots_h1" name="{=Yeldur}Kremsie Boots +1" mesh="cts_swiss_boots" culture="Culture.battania" weight="0.2124143" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="6" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_swiss_boots_h2" name="{=Yeldur}Kremsie Boots +2" mesh="cts_swiss_boots" culture="Culture.battania" weight="0.2124143" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="8" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_swiss_boots_h3" name="{=Yeldur}Kremsie Boots +3" mesh="cts_swiss_boots" culture="Culture.battania" weight="0.2124143" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="10" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
 </Items>
