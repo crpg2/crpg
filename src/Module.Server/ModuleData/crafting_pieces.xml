@@ -34976,41 +34976,41 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_fabulousvoulge_pommel_h3" name="{=Yeldur}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.2" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_smallhammer_blade_h0" name="{=BalanceMe}Small Hammer Head" tier="2" piece_type="Blade" mesh="small_hammer_head" length="4.79" weight="1.42" full_scale="true" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_smallhammer_blade_h0" name="{=Yeldur}Small Hammer Head" tier="2" piece_type="Blade" mesh="small_hammer_head" length="4.79" weight="0.61" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="2.2" />
     </BladeData>
-      <Flags>
+    <Flags>
       <Flag name="Civilian" type="ItemFlags" />
       <Flag name="CanKnockDown" />
-      </Flags>
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_smallhammer_blade_h1" name="{=Yeldur}Small Hammer Head" tier="2" piece_type="Blade" mesh="small_hammer_head" length="4.79" weight="0.61" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="2.3" />
     </BladeData>
-      <Flags>
+    <Flags>
       <Flag name="Civilian" type="ItemFlags" />
       <Flag name="CanKnockDown" />
-      </Flags>
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_smallhammer_blade_h2" name="{=Yeldur}Small Hammer Head" tier="2" piece_type="Blade" mesh="small_hammer_head" length="4.79" weight="0.61" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="2.4" />
     </BladeData>
-      <Flags>
+    <Flags>
       <Flag name="Civilian" type="ItemFlags" />
       <Flag name="CanKnockDown" />
-      </Flags>
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_smallhammer_blade_h3" name="{=Yeldur}Small Hammer Head" tier="2" piece_type="Blade" mesh="small_hammer_head" length="4.79" weight="0.61" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="2.5" />
     </BladeData>
-      <Flags>
+    <Flags>
       <Flag name="Civilian" type="ItemFlags" />
       <Flag name="CanKnockDown" />
-      </Flags>
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_smallhammer_handle_h0" name="{=Yeldur}Small Hammer Handle" tier="1" piece_type="Handle" mesh="small_hammer_handle" length="39.3" weight="0.1" full_scale="true" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
     <BuildData piece_offset="9" previous_piece_offset="0.0" next_piece_offset="6" />
@@ -35024,7 +35024,7 @@
   <CraftingPiece id="crpg_smallhammer_handle_h3" name="{=Yeldur}Small Hammer Handle" tier="1" piece_type="Handle" mesh="small_hammer_handle" length="39.3" weight="0.1" full_scale="true" excluded_item_usage_features="long" CraftingCost="100" is_default="true">
     <BuildData piece_offset="9" previous_piece_offset="0.0" next_piece_offset="6" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_horsemansaxe_blade_h0" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.45">
+  <CraftingPiece id="crpg_horsemansaxe_blade_h0" name="{=}Horseman's Axe Blade" tier="2" piece_type="Blade" mesh="horsemans_axe_head" length="33.3" weight="0.05">
     <BuildData piece_offset="-3.0" />
     <BladeData stack_amount="2" blade_length="33.3" blade_width="17.8" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Pierce" damage_factor="2.2" />
