@@ -34,12 +34,16 @@ public record UpdateClanMemberCommand : IMediatorRequest<ClanMemberViewModel>
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
         private readonly IClanService _clanService;
+        private readonly IActivityLogService _activityLogService;
+        private readonly IUserNotificationService _userNotificationService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService)
+        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
             _db = db;
             _mapper = mapper;
             _clanService = clanService;
+            _activityLogService = activityLogService;
+            _userNotificationService = userNotificationService;
         }
 
         public async Task<Result<ClanMemberViewModel>> Handle(UpdateClanMemberCommand req, CancellationToken cancellationToken)
@@ -70,12 +74,16 @@ public record UpdateClanMemberCommand : IMediatorRequest<ClanMemberViewModel>
                     user.ClanMembership.Role));
             }
 
+            var oldRole = toUpdateUser.ClanMembership!.Role;
             toUpdateUser.ClanMembership!.Role = req.Role;
             if (req.Role == ClanMemberRole.Leader) // If user is giving their leader role.
             {
                 user.ClanMembership.Role = ClanMemberRole.Officer;
             }
 
+            var activityLog = _activityLogService.CreateClanMemberRoleChangeLog(toUpdateUser.Id, req.ClanId, req.UserId, oldRole, req.Role);
+            _db.ActivityLogs.Add(activityLog);
+            _db.UserNotifications.Add(_userNotificationService.CreateClanMemberRoleChangedToUserNotification(toUpdateUser.Id, activityLog.Id));
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' updated member '{1}' from clan '{2}'", req.UserId,
                 req.MemberId, req.ClanId);

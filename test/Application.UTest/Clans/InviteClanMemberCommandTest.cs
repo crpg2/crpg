@@ -3,13 +3,16 @@ using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Users;
+using Moq;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Clans;
 
 public class InviteClanMemberCommandTest : TestBase
 {
-    private static readonly IClanService ClanService = new ClanService();
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly Mock<IUserNotificationService> UserNotificationService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly IClanService ClanService = new ClanService(ActivityLogService.Object, UserNotificationService.Object);
 
     [Test]
     public async Task ShouldReturnErrorIfUserNotFound()
@@ -18,7 +21,7 @@ public class InviteClanMemberCommandTest : TestBase
         ArrangeDb.Clans.Add(clan);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new InviteClanMemberCommand
+        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new InviteClanMemberCommand
         {
             UserId = 1,
             ClanId = clan.Id,
@@ -38,7 +41,7 @@ public class InviteClanMemberCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new InviteClanMemberCommand
+        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new InviteClanMemberCommand
         {
             UserId = user.Id,
             ClanId = clan.Id,
@@ -58,7 +61,7 @@ public class InviteClanMemberCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new InviteClanMemberCommand
+        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new InviteClanMemberCommand
         {
             UserId = user.Id,
             ClanId = clan.Id,
@@ -92,7 +95,7 @@ public class InviteClanMemberCommandTest : TestBase
         ArrangeDb.ClanInvitations.Add(invitation);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new InviteClanMemberCommand
+        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new InviteClanMemberCommand
         {
             UserId = user.Id,
             ClanId = clan.Id,
@@ -113,7 +116,7 @@ public class InviteClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(invitee, inviter);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new InviteClanMemberCommand
+        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new InviteClanMemberCommand
         {
             UserId = inviter.Id,
             ClanId = clan.Id,
@@ -127,6 +130,11 @@ public class InviteClanMemberCommandTest : TestBase
     [Test]
     public async Task IfOfferButInviterNotInAClanShouldReturnError()
     {
+        // Mock<IClanService> clanServiceMock = new();
+        // clanServiceMock
+        //     .Setup(c => c.GetClanOfficers())
+        //     .Returns(experienceForRetirementLevel);
+
         Clan clan = new();
         ArrangeDb.Clans.Add(clan);
         User invitee = new();
@@ -134,7 +142,7 @@ public class InviteClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(invitee, inviter);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new InviteClanMemberCommand
+        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new InviteClanMemberCommand
         {
             UserId = inviter.Id,
             ClanId = clan.Id,
@@ -155,7 +163,7 @@ public class InviteClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(invitee, inviter);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new InviteClanMemberCommand
+        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new InviteClanMemberCommand
         {
             UserId = inviter.Id,
             ClanId = clan.Id,
@@ -176,7 +184,7 @@ public class InviteClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(invitee, inviter);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new InviteClanMemberCommand
+        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new InviteClanMemberCommand
         {
             UserId = inviter.Id,
             ClanId = clan.Id,
@@ -206,7 +214,7 @@ public class InviteClanMemberCommandTest : TestBase
         ArrangeDb.ClanInvitations.Add(offer);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new InviteClanMemberCommand
+        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new InviteClanMemberCommand
         {
             UserId = inviter.Id,
             ClanId = clan.Id,
@@ -227,7 +235,7 @@ public class InviteClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(invitee, inviter);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new InviteClanMemberCommand
+        var res = await new InviteClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new InviteClanMemberCommand
         {
             UserId = inviter.Id,
             ClanId = clan.Id,

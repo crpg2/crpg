@@ -22,12 +22,13 @@ public record BorrowItemFromClanArmoryCommand : IMediatorRequest<ClanArmoryBorro
 
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
-        private readonly IActivityLogService _activityLogService;
         private readonly IClanService _clanService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IActivityLogService activityLogService, IClanService clanService)
+        public Handler(
+            ICrpgDbContext db,
+            IMapper mapper,
+            IClanService clanService)
         {
-            _activityLogService = activityLogService;
             _db = db;
             _mapper = mapper;
             _clanService = clanService;
@@ -57,8 +58,6 @@ public record BorrowItemFromClanArmoryCommand : IMediatorRequest<ClanArmoryBorro
             {
                 return new(result.Errors);
             }
-
-            _db.ActivityLogs.Add(_activityLogService.CreateBorrowItemFromClanArmory(user.Id, clan.Id, req.UserItemId));
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' borrowed item '{1}' from the armory '{2}'", req.UserId, req.UserItemId, req.ClanId);

@@ -10,6 +10,7 @@ using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
+using Crpg.Domain.Entities.Notification;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
@@ -37,12 +38,14 @@ public record SeedDataCommand : IMediatorRequest
         private readonly IApplicationEnvironment _appEnv;
         private readonly ICharacterService _characterService;
         private readonly IExperienceTable _experienceTable;
+        private readonly IActivityLogService _activityLogService;
+        private readonly IUserNotificationService _userNotificationService;
         private readonly IStrategusMap _strategusMap;
         private readonly ISettlementsSource _settlementsSource;
 
         public Handler(ICrpgDbContext db, IItemsSource itemsSource, IApplicationEnvironment appEnv,
             ICharacterService characterService, IExperienceTable experienceTable, IStrategusMap strategusMap,
-            ISettlementsSource settlementsSource)
+            ISettlementsSource settlementsSource, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
             _db = db;
             _itemsSource = itemsSource;
@@ -51,6 +54,8 @@ public record SeedDataCommand : IMediatorRequest
             _experienceTable = experienceTable;
             _strategusMap = strategusMap;
             _settlementsSource = settlementsSource;
+            _activityLogService = activityLogService;
+            _userNotificationService = userNotificationService;
         }
 
         public async Task<Result> Handle(SeedDataCommand request, CancellationToken cancellationToken)
@@ -61,14 +66,14 @@ public record SeedDataCommand : IMediatorRequest
 
             if (_appEnv.Environment == HostingEnvironment.Development)
             {
-                await AddDevelopmentData();
+                await AddDevelopmentData(cancellationToken);
                 await _db.SaveChangesAsync(cancellationToken);
             }
 
             return Result.NoErrors;
         }
 
-        private async Task AddDevelopmentData()
+        private async Task AddDevelopmentData(CancellationToken cancellationToken)
         {
             User takeo = new()
             {
@@ -117,7 +122,6 @@ public record SeedDataCommand : IMediatorRequest
                 PlatformUserId = "76561198023558734",
                 Platform = Platform.Steam,
                 Name = "droob",
-                ActiveCharacterId = 8,
                 Role = Role.Admin,
                 Gold = 1000000,
                 HeirloomPoints = 12,
@@ -532,6 +536,8 @@ public record SeedDataCommand : IMediatorRequest
                 }
             }
 
+            await _db.SaveChangesAsync(cancellationToken);
+
             UserItem takeoItem1 = new() { User = takeo, ItemId = "crpg_thamaskene_steel_spatha_v1_h3" };
             UserItem takeoItem2 = new() { User = takeo, ItemId = "crpg_winds_fury_v1_h2" };
             UserItem orleItem1 = new() { User = orle, ItemId = "crpg_armet_h1", PersonalItem = new() };
@@ -561,32 +567,7 @@ public record SeedDataCommand : IMediatorRequest
 
             UserItem[] newUserItems =
             {
-                takeoItem1,
-                takeoItem2,
-                orleItem1,
-                orleItem2,
-                orleItem3,
-                orleItem4,
-                orleItem5,
-                orleItem6,
-                orleItem7,
-                orleItem8,
-                orleItem9,
-                orleItem10,
-                orleItem11,
-                orleItem12,
-                orleItem13,
-                orleItem14,
-                orleItem15,
-                orleItem16,
-                orleItem17,
-                orleItem18,
-                orleItem19,
-                elmarykItem1,
-                elmarykItem2,
-                laHireItem1,
-                laHirekItem2,
-                laHirekItem3,
+                takeoItem1, takeoItem2, orleItem1, orleItem2, orleItem3, orleItem4, orleItem5, orleItem6, orleItem7, orleItem8, orleItem9, orleItem10, orleItem11, orleItem12, orleItem13, orleItem14, orleItem15, orleItem16, orleItem17, orleItem18, orleItem19, elmarykItem1, elmarykItem2, laHireItem1, laHirekItem2, laHirekItem3,
             };
 
             var existingUserItems = await _db.UserItems.ToDictionaryAsync(pi => pi.ItemId);
@@ -633,7 +614,7 @@ public record SeedDataCommand : IMediatorRequest
                 Type = RestrictionType.Join,
                 Reason = "INTERNAL REASON: Reason3",
                 PublicReason = "PUBLIC REASON: Reason31",
-                CreatedAt = DateTime.Parse("2023-07-12T02:07:52.453109Z"),
+                CreatedAt = DateTime.Parse("2023-07-12T02:07:52.453109Z").ToUniversalTime(),
             };
             Restriction orleRestriction1 = new()
             {
@@ -643,7 +624,7 @@ public record SeedDataCommand : IMediatorRequest
                 Type = RestrictionType.Join,
                 Reason = "INTERNAL REASON: Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate, dignissimos fugiat commodi, quibusdam necessitatibus mollitia neque, quam voluptatibus rem quas. Libero sapiente ullam aliquid.",
                 PublicReason = "PUBLIC REASON: Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt temporibus consectetur perferendis illo cupiditate",
-                CreatedAt = DateTime.Parse("2023-07-12T14:15:37.199511Z"),
+                CreatedAt = DateTime.Parse("2023-07-12T14:15:37.199511Z").ToUniversalTime(),
             };
 
             Restriction[] newRestrictions =
@@ -1010,260 +991,6 @@ public record SeedDataCommand : IMediatorRequest
                 }
             }
 
-            ActivityLog activityLogUserCreated1 = new()
-            {
-                Type = ActivityLogType.UserCreated,
-                User = namidaka,
-                Metadata = { },
-            };
-            ActivityLog activityLogUserDeleted1 = new()
-            {
-                Type = ActivityLogType.UserDeleted,
-                User = namidaka,
-                Metadata = { },
-            };
-            ActivityLog activityLogUserRenamed1 = new()
-            {
-                Type = ActivityLogType.UserRenamed,
-                User = namidaka,
-                Metadata =
-                {
-                    new("newName", "Salt"),
-                    new("oldName", "Duke Salt of Savoy"),
-                },
-            };
-            ActivityLog activityLogUserReward1 = new()
-            {
-                Type = ActivityLogType.UserRewarded,
-                User = namidaka,
-                Metadata =
-                {
-                    new("gold", "120000"),
-                    new("heirloomPoints", "3"),
-                    new("itemId", "crpg_ba_bolzanogreathelmet_h2"),
-                },
-            };
-            ActivityLog activityLogItemBought1 = new()
-            {
-                Type = ActivityLogType.ItemBought,
-                User = namidaka,
-                Metadata =
-                {
-                    new("itemId", "crpg_northern_round_shield"),
-                    new("price", "12000"),
-                },
-            };
-            ActivityLog activityLogItemSold1 = new()
-            {
-                Type = ActivityLogType.ItemSold,
-                User = namidaka,
-                Metadata =
-                {
-                    new("itemId", "crpg_northern_round_shield"),
-                    new("price", "12000"),
-                },
-            };
-            ActivityLog activityLogItemBroke1 = new()
-            {
-                Type = ActivityLogType.ItemBroke,
-                User = namidaka,
-                Metadata =
-                {
-                    new("itemId", "crpg_northern_round_shield"),
-                },
-            };
-            ActivityLog activityLogItemUpgraded1 = new()
-            {
-                Type = ActivityLogType.ItemUpgraded,
-                User = namidaka,
-                Metadata =
-                {
-                    new("itemId", "crpg_northern_round_shield"),
-                    new("price", "1000"),
-                    new("heirloomPoints", "1"),
-                },
-            };
-            ActivityLog activityLogCharacterCreated1 = new()
-            {
-                Type = ActivityLogType.CharacterCreated,
-                User = namidaka,
-                Metadata =
-                {
-                    new("characterId", "123"),
-                },
-            };
-            ActivityLog activityLogCharacterDeleted1 = new()
-            {
-                Type = ActivityLogType.CharacterDeleted,
-                User = namidaka,
-                Metadata =
-                {
-                    new("characterId", "123"),
-                    new("generation", "13"),
-                    new("level", "36"),
-                },
-            };
-            ActivityLog activityLogCharacterRespecialized1 = new()
-            {
-                Type = ActivityLogType.CharacterRespecialized,
-                User = namidaka,
-                Metadata =
-                {
-                    new("characterId", "123"),
-                    new("price", "120000"),
-                },
-            };
-            ActivityLog activityLogCharacterRetired1 = new()
-            {
-                Type = ActivityLogType.CharacterRetired,
-                User = namidaka,
-                Metadata =
-                {
-                    new("characterId", "123"),
-                    new("level", "34"),
-                },
-            };
-            ActivityLog activityLogCharacterRewarded1 = new()
-            {
-                Type = ActivityLogType.CharacterRewarded,
-                User = namidaka,
-                Metadata =
-                {
-                    new("characterId", "123"),
-                    new("experience", "1000000"),
-                },
-            };
-            ActivityLog activityLogServerJoined1 = new()
-            {
-                Type = ActivityLogType.ServerJoined,
-                User = namidaka,
-                Metadata = { },
-            };
-            ActivityLog activityLogChatMessageSent1 = new()
-            {
-                Type = ActivityLogType.ChatMessageSent,
-                User = namidaka,
-                Metadata =
-                {
-                    new("message", "Fluttershy is best"),
-                    new("instance", "crpg01a"),
-                },
-            };
-            ActivityLog activityLogChatMessageSent2 = new()
-            {
-                Type = ActivityLogType.ChatMessageSent,
-                User = takeo,
-                Metadata =
-                {
-                    new("message", "No, Rarity the best"),
-                    new("instance", "crpg01a"),
-                },
-            };
-            ActivityLog activityLogChatMessageSent3 = new()
-            {
-                Type = ActivityLogType.ChatMessageSent,
-                User = takeo,
-                CreatedAt = DateTime.UtcNow.AddMinutes(-3),
-                Metadata =
-                {
-                    new("message", "Do you get it?"),
-                    new("instance", "crpg01a"),
-                },
-            };
-            ActivityLog activityLogTeamHit1 = new()
-            {
-                Type = ActivityLogType.TeamHit,
-                User = namidaka,
-                CreatedAt = DateTime.UtcNow.AddMinutes(+3),
-                Metadata =
-                {
-                    new("targetUserId", "1"),
-                    new("damage", "123"),
-                    new("instance", "crpg01a"),
-                },
-            };
-            ActivityLog activityLogTeamHit2 = new()
-            {
-                Type = ActivityLogType.TeamHit,
-                User = takeo,
-                CreatedAt = DateTime.UtcNow.AddMinutes(-1),
-                Metadata =
-                {
-                    new("targetUserId", "2"),
-                    new("damage", "18"),
-                    new("instance", "crpg01a"),
-                },
-            };
-            ActivityLog activityLogClanArmoryAddItem = new()
-            {
-                Type = ActivityLogType.ClanArmoryAddItem,
-                User = takeo,
-                CreatedAt = DateTime.UtcNow.AddMinutes(-1),
-                Metadata =
-                {
-                    new("clanId", "2"),
-                    new("userItemId", "1"),
-                },
-            };
-            ActivityLog activityLogClanArmoryRemoveItem = new()
-            {
-                Type = ActivityLogType.ClanArmoryRemoveItem,
-                User = takeo,
-                CreatedAt = DateTime.UtcNow.AddMinutes(-1),
-                Metadata =
-                {
-                    new("clanId", "2"),
-                    new("userItemId", "1"),
-                },
-            };
-            ActivityLog activityLogClanArmoryReturnItem = new()
-            {
-                Type = ActivityLogType.ClanArmoryReturnItem,
-                User = takeo,
-                CreatedAt = DateTime.UtcNow.AddMinutes(-1),
-                Metadata =
-                {
-                    new("clanId", "2"),
-                    new("userItemId", "1"),
-                },
-            };
-            ActivityLog activityLogClanArmoryBorrowItem = new()
-            {
-                Type = ActivityLogType.ClanArmoryBorrowItem,
-                User = takeo,
-                CreatedAt = DateTime.UtcNow.AddMinutes(-1),
-                Metadata =
-                {
-                    new("clanId", "2"),
-                    new("userItemId", "1"),
-                },
-            };
-
-            ActivityLog[] newActivityLogCharacterEarned =
-            {
-                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-1), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "122000"), new("gold", "1244") } },
-                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-12), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "7000"), new("gold", "989") } },
-                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-15), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "32000"), new("gold", "-900") } },
-                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-25), Metadata = { new("characterId", orleCharacter1.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "32000"), new("gold", "1989") } },
-                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-35), Metadata = { new("characterId", orleCharacter1.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "322000"), new("gold", "989") } },
-                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-11), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "1400"), new("gold", "1244") } },
-                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-23), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "200"), new("gold", "-12") } },
-                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-17), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "993310"), new("gold", "133") } },
-                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-111), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "122234"), new("gold", "-1222") } },
-                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-112), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "3111"), new("gold", "-122") } },
-            };
-
-            ActivityLog[] newActivityLogs =
-            {
-                activityLogUserCreated1, activityLogUserDeleted1, activityLogUserRenamed1, activityLogUserReward1, activityLogItemBought1,
-                activityLogItemSold1, activityLogItemBroke1, activityLogItemUpgraded1, activityLogCharacterCreated1, activityLogCharacterDeleted1,
-                activityLogCharacterRespecialized1, activityLogCharacterRetired1, activityLogCharacterRewarded1, activityLogServerJoined1,
-                activityLogChatMessageSent1, activityLogChatMessageSent2, activityLogChatMessageSent3, activityLogTeamHit1, activityLogTeamHit2, activityLogClanArmoryAddItem, activityLogClanArmoryRemoveItem, activityLogClanArmoryReturnItem, activityLogClanArmoryBorrowItem,
-            };
-
-            _db.ActivityLogs.RemoveRange(await _db.ActivityLogs.ToArrayAsync());
-            _db.ActivityLogs.AddRange(newActivityLogs.Concat(newActivityLogCharacterEarned));
-
             Clan pecores = new()
             {
                 Tag = "PEC",
@@ -1286,7 +1013,6 @@ public record SeedDataCommand : IMediatorRequest
             };
 
             ClanMember droobMember = new() { User = droob, Clan = droobClan, Role = ClanMemberRole.Leader, };
-
             ClanMember takeoMember = new() { User = takeo, Clan = pecores, Role = ClanMemberRole.Officer, };
             ClanMember orleMember = new() { User = orle, Clan = pecores, Role = ClanMemberRole.Leader, };
             ClanMember elmarykMember = new() { User = elmaryk, Clan = pecores, Role = ClanMemberRole.Officer, };
@@ -1324,25 +1050,30 @@ public record SeedDataCommand : IMediatorRequest
 
             foreach (var newClanArmoryItem in newClanArmoryItems)
             {
-                // TODO: check if exist
-                // pecores.ArmoryItems.Add(newClanArmoryItem);
+                if (!pecores.ArmoryItems.Contains(newClanArmoryItem))
+                {
+                    pecores.ArmoryItems.Add(newClanArmoryItem);
+                }
             }
 
-            ClanArmoryBorrowedItem orleBorrowedItem1 = new() { UserItem = laHirekItem2, Borrower = orleMember, };
-            ClanArmoryBorrowedItem orleBorrowedItem2 = new() { UserItem = laHirekItem3, Borrower = orleMember, };
-            ClanArmoryBorrowedItem elmarykBorrowedItem1 = new() { UserItem = orleItem1, Borrower = elmarykMember, };
-            ClanArmoryBorrowedItem elmarykBorrowedItem2 = new() { UserItem = takeoItem1, Borrower = elmarykMember, };
-            ClanArmoryBorrowedItem laHireBorrowedItem1 = new() { UserItem = takeoItem2, Borrower = laHireMember, };
+            ClanArmoryBorrowedItem orleBorrowedItem1 = new() { UserItem = laHireClanArmoryItem2.UserItem, Borrower = orleMember };
+            ClanArmoryBorrowedItem orleBorrowedItem2 = new() { UserItem = laHireClanArmoryItem3.UserItem, Borrower = orleMember };
+            ClanArmoryBorrowedItem elmarykBorrowedItem1 = new() { UserItem = orleClanArmoryItem2.UserItem, Borrower = elmarykMember };
+            ClanArmoryBorrowedItem elmarykBorrowedItem2 = new() { UserItem = takeoClanArmoryItem1.UserItem, Borrower = elmarykMember };
+            ClanArmoryBorrowedItem laHireBorrowedItem1 = new() { UserItem = takeoClanArmoryItem2.UserItem, Borrower = laHireMember };
+            ClanArmoryBorrowedItem laHireBorrowedItem2 = new() { UserItem = orleClanArmoryItem15.UserItem, Borrower = laHireMember };
 
             ClanArmoryBorrowedItem[] newClanArmoryBorrowedItems =
             {
-                orleBorrowedItem1, orleBorrowedItem2, elmarykBorrowedItem1, elmarykBorrowedItem2, laHireBorrowedItem1,
+                orleBorrowedItem1, orleBorrowedItem2, elmarykBorrowedItem1, elmarykBorrowedItem2, laHireBorrowedItem1, laHireBorrowedItem2,
             };
 
             foreach (var newClanArmoryBorrowedItem in newClanArmoryBorrowedItems)
             {
-                // TODO: check if exist
-                // pecores.ArmoryBorrowedItems.Add(newClanArmoryBorrowedItem);
+                if (!pecores.ArmoryBorrowedItems.Contains(newClanArmoryBorrowedItem))
+                {
+                    pecores.ArmoryBorrowedItems.Add(newClanArmoryBorrowedItem);
+                }
             }
 
             Clan ats = new()
@@ -1538,8 +1269,8 @@ public record SeedDataCommand : IMediatorRequest
                 Status = ClanInvitationStatus.Pending,
             };
             ClanInvitation[] newClanInvitations = { schumetzqRequestForPecores, victorhh888MemberRequestForPecores, neostralieOfferToBrygganForPecores };
-            var existingClanInvitations =
-                await _db.ClanInvitations.ToDictionaryAsync(i => (i.InviteeId, i.InviterId));
+
+            var existingClanInvitations = await _db.ClanInvitations.ToDictionaryAsync(i => (i.InviteeId, i.InviterId));
             foreach (var newClanInvitation in newClanInvitations)
             {
                 if (!existingClanInvitations.ContainsKey((newClanInvitation.Invitee!.Id, newClanInvitation.Inviter!.Id)))
@@ -1547,6 +1278,99 @@ public record SeedDataCommand : IMediatorRequest
                     _db.ClanInvitations.Add(newClanInvitation);
                 }
             }
+
+            var activityLogUserCreated1 = _activityLogService.CreateUserCreatedLog(orle.Id);
+            var activityLogUserDeleted1 = _activityLogService.CreateUserDeletedLog(orle.Id);
+            var activityLogUserRenamed1 = _activityLogService.CreateUserRenamedLog(orle.Id, "Salt", "Duke Salt of Savoy");
+            var activityLogUserRewarded1 = _activityLogService.CreateUserRewardedLog(orle.Id, namidaka.Id, 120000, 3, orleItem1.ItemId);
+            activityLogUserRewarded1.CreatedAt = DateTime.UtcNow.AddDays(-1);
+            var activityLogUserRewarded2 = _activityLogService.CreateUserRewardedLog(orle.Id, namidaka.Id, 120000, 0, string.Empty);
+
+            var activityLogItemBought1 = _activityLogService.CreateItemBoughtLog(orle.Id, orleItem1.ItemId, 12000);
+            var activityLogItemSold1 = _activityLogService.CreateItemSoldLog(orle.Id, orleItem1.ItemId, 12000);
+            var activityLogItemBroke1 = _activityLogService.CreateItemBrokeLog(orle.Id, orleItem1.ItemId);
+            var activityLogItemUpgraded1 = _activityLogService.CreateItemUpgradedLog(orle.Id, orleItem1.ItemId, 2);
+            var activityLogItemReturned1 = _activityLogService.CreateItemReturnedLog(orle.Id, "crpg_item_1", 1, 1900);
+
+            var activityLogCharacterCreated1 = _activityLogService.CreateCharacterCreatedLog(orle.Id, orleCharacter0.Id);
+            var activityLogCharacterDeleted1 = _activityLogService.CreateCharacterDeletedLog(orle.Id, orleCharacter0.Id, 13, 36);
+            var activityLogCharacterRespecialized1 = _activityLogService.CreateCharacterRespecializedLog(orle.Id, orleCharacter0.Id, 120000);
+            var activityLogCharacterRetired1 = _activityLogService.CreateCharacterRetiredLog(orle.Id, orleCharacter0.Id, 34);
+            var activityLogCharacterRewarded1 = _activityLogService.CreateCharacterRewardedLog(orle.Id, takeo.Id, 5, 1000000);
+
+            var activityLogServerJoined1 = new ActivityLog() { Type = ActivityLogType.ServerJoined, User = orle };
+            var activityLogChatMessageSent1 = new ActivityLog() { Type = ActivityLogType.ChatMessageSent, User = orle, Metadata = { new("message", "Fluttershy is best"), new("instance", "crpg01a"), } };
+            var activityLogChatMessageSent2 = new ActivityLog() { Type = ActivityLogType.ChatMessageSent, User = orle, Metadata = { new("message", "No, Rarity the best"), new("instance", "crpg01a"), }, };
+            var activityLogChatMessageSent3 = new ActivityLog() { Type = ActivityLogType.ChatMessageSent, User = takeo, CreatedAt = DateTime.UtcNow.AddMinutes(-3), Metadata = { new("message", "Do you get it?"), new("instance", "crpg01a"), }, };
+            var activityLogTeamHit1 = new ActivityLog() { Type = ActivityLogType.TeamHit, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+3), Metadata = { new("targetUserId", "1"), new("damage", "123"), new("instance", "crpg01a"), }, };
+            var activityLogTeamHit2 = new ActivityLog() { Type = ActivityLogType.TeamHit, User = takeo, CreatedAt = DateTime.UtcNow.AddMinutes(-1), };
+
+            ActivityLog[] newActivityLogCharacterEarned =
+            {
+                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-1), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "122000"), new("gold", "1244") } },
+                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-12), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "7000"), new("gold", "989") } },
+                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-15), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "32000"), new("gold", "-900") } },
+                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-25), Metadata = { new("characterId", orleCharacter1.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "32000"), new("gold", "1989") } },
+                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-35), Metadata = { new("characterId", orleCharacter1.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "322000"), new("gold", "989") } },
+                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-11), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "1400"), new("gold", "1244") } },
+                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-23), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "200"), new("gold", "-12") } },
+                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-17), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "993310"), new("gold", "133") } },
+                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-111), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "122234"), new("gold", "-1222") } },
+                new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-112), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "3111"), new("gold", "-122") } },
+            };
+
+            var activityLogClanApplicationCreated1 = _activityLogService.CreateClanApplicationCreatedLog(takeo.Id, 1);
+            var activityLogClanApplicationCreated2 = _activityLogService.CreateClanApplicationCreatedLog(namidaka.Id, 1);
+            var activityLogClanApplicationCreated3 = _activityLogService.CreateClanApplicationCreatedLog(orle.Id, 1);
+            var activityLogClanApplicationAccepted1 = _activityLogService.CreateClanApplicationAcceptedLog(orle.Id, 1);
+            var activityLogClanApplicationDeclined1 = _activityLogService.CreateClanApplicationDeclinedLog(orle.Id, 1);
+            var activityLogClanMemberRoleChange1 = _activityLogService.CreateClanMemberRoleChangeLog(orle.Id, 1, takeo.Id, ClanMemberRole.Officer, ClanMemberRole.Leader);
+            var activityLogClanMemberLeaved1 = _activityLogService.CreateClanMemberLeavedLog(orle.Id, 1);
+            var activityLogClanMemberKicked1 = _activityLogService.CreateClanMemberKickedLog(orle.Id, 1, takeo.Id);
+            var activityLogClanCreatedl = _activityLogService.CreateClanCreatedLog(orle.Id, 1);
+            var activityLogClanDeletedl = _activityLogService.CreateClanDeletedLog(orle.Id, 1);
+            var activityLogClanArmoryAddItem1 = _activityLogService.CreateAddItemToClanArmoryLog(takeo.Id, pecores.Id, takeoItem1);
+            var activityLogClanArmoryRemoveItem1 = _activityLogService.CreateRemoveItemFromClanArmoryLog(takeo.Id, pecores.Id, takeoItem1);
+            var activityLogClanArmoryReturnItem1 = _activityLogService.CreateReturnItemToClanArmoryLog(takeo.Id, pecores.Id, orleItem1);
+            var activityLogClanArmoryBorrowItem1 = _activityLogService.CreateBorrowItemFromClanArmoryLog(takeo.Id, pecores.Id, orleItem1);
+
+            ActivityLog[] newActivityLogs =
+            {
+                activityLogUserCreated1, activityLogUserDeleted1, activityLogUserRenamed1, activityLogUserRewarded1, activityLogUserRewarded2, activityLogItemBought1, activityLogItemSold1, activityLogItemBroke1, activityLogItemUpgraded1, activityLogCharacterCreated1, activityLogCharacterDeleted1, activityLogCharacterRespecialized1, activityLogCharacterRetired1, activityLogCharacterRewarded1, activityLogServerJoined1, activityLogChatMessageSent1, activityLogChatMessageSent2, activityLogChatMessageSent3, activityLogTeamHit1, activityLogTeamHit2, activityLogClanArmoryAddItem1, activityLogClanArmoryRemoveItem1, activityLogClanArmoryReturnItem1, activityLogClanArmoryBorrowItem1, activityLogClanArmoryBorrowItem1, activityLogClanApplicationCreated1, activityLogClanApplicationCreated2, activityLogClanApplicationCreated3, activityLogClanApplicationAccepted1, activityLogClanApplicationDeclined1, activityLogItemReturned1, activityLogClanMemberRoleChange1, activityLogClanMemberLeaved1, activityLogClanMemberKicked1, activityLogClanCreatedl, activityLogClanDeletedl,
+            };
+
+            _db.ActivityLogs.RemoveRange(await _db.ActivityLogs.ToArrayAsync());
+            _db.ActivityLogs.AddRange(newActivityLogs.Concat(newActivityLogCharacterEarned));
+            await _db.SaveChangesAsync(cancellationToken);
+
+            var orleNotificationClanApplicationCreatedToOfficers1 = _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, activityLogClanApplicationCreated1.Id);
+            orleNotificationClanApplicationCreatedToOfficers1.CreatedAt = DateTime.UtcNow.AddMinutes(-112);
+            var orleNotificationClanApplicationCreatedToOfficers2 = _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, activityLogClanApplicationCreated2.Id);
+            orleNotificationClanApplicationCreatedToOfficers2.State = NotificationState.Read;
+            var orleNotificationClanApplicationCreatedToOfficers3 = _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, activityLogClanApplicationCreated3.Id);
+            var orleNotificatioUserRewardedToUser = _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, activityLogUserRewarded1.Id);
+            var orleNotificatioUserRewardedToUser2 = _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, activityLogUserRewarded2.Id);
+
+            var orleNotificationClanApplicationAcceptedToUser = _userNotificationService.CreateClanApplicationAcceptedToUserNotification(orle.Id, activityLogClanApplicationAccepted1.Id);
+            var orleNotificationClanApplicationDeclinedToUser = _userNotificationService.CreateClanApplicationDeclinedToUserNotification(orle.Id, activityLogClanApplicationDeclined1.Id);
+            var orleNotificationClanApplicationCreatedToUser = _userNotificationService.CreateClanApplicationCreatedToUserNotification(orle.Id, activityLogClanApplicationCreated1.Id);
+            var orleNotificationItemReturned = _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, activityLogItemReturned1.Id);
+            var orleNotificationClanMemberRoleChangedToUser = _userNotificationService.CreateClanMemberRoleChangedToUserNotification(orle.Id, activityLogClanMemberRoleChange1.Id);
+            var orleNotificationClanMemberLeavedToLeader = _userNotificationService.CreateClanMemberLeavedToLeaderNotification(orle.Id, activityLogClanMemberLeaved1.Id);
+            var orleNotificationClanMemberKickedToExMember = _userNotificationService.CreateClanMemberKickedToExMemberNotification(orle.Id, activityLogClanMemberKicked1.Id);
+            var orleNotificationCharacterRewardedToUser = _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, activityLogCharacterRewarded1.Id);
+            var orleNotificationClanArmoryBorrowItemToLender = _userNotificationService.CreateClanArmoryBorrowItemToLenderNotification(orle.Id, activityLogClanArmoryBorrowItem1.Id);
+            var orleNotificationClanArmoryRemoveItemToBorrower = _userNotificationService.CreateClanArmoryRemoveItemToBorrowerNotification(orle.Id, activityLogClanArmoryRemoveItem1.Id);
+
+            UserNotification[] userNotifications =
+            {
+                orleNotificationClanApplicationCreatedToOfficers1, orleNotificationClanApplicationCreatedToOfficers2, orleNotificationClanApplicationCreatedToOfficers3, orleNotificatioUserRewardedToUser, orleNotificatioUserRewardedToUser2, orleNotificationClanApplicationAcceptedToUser,
+                orleNotificationClanApplicationDeclinedToUser, orleNotificationClanApplicationCreatedToUser, orleNotificationItemReturned, orleNotificationClanMemberRoleChangedToUser, orleNotificationClanMemberLeavedToLeader,
+                orleNotificationClanMemberKickedToExMember, orleNotificationCharacterRewardedToUser, orleNotificationClanArmoryBorrowItemToLender, orleNotificationClanArmoryRemoveItemToBorrower,
+            };
+
+            _db.UserNotifications.RemoveRange(await _db.UserNotifications.ToArrayAsync());
+            _db.UserNotifications.AddRange(userNotifications);
 
             Task<Settlement> GetSettlementByName(string name) =>
                 _db.Settlements.FirstAsync(s => s.Name == name && s.Region == Region.Eu);
@@ -2231,6 +2055,9 @@ public record SeedDataCommand : IMediatorRequest
                     }
 
                     _db.UserItems.Remove(userItem);
+                    var activityLog = _activityLogService.CreateItemReturnedLog(userItem.User!.Id, userItem.Item!.Id, userItem.Item!.Rank, userItem.Item!.Price);
+                    _db.ActivityLogs.Add(activityLog);
+                    _db.UserNotifications.Add(_userNotificationService.CreateItemReturnedToUserNotification(userItem.User!.Id, activityLog.Id));
                 }
 
                 var itemsToDelete = dbItemsById.Values.Where(i => i.Id == dbItem.Id).ToArray();

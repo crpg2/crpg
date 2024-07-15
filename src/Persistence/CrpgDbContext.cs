@@ -9,6 +9,7 @@ using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
+using Crpg.Domain.Entities.Notification;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
@@ -49,6 +50,8 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
         NpgsqlConnection.GlobalTypeMapper.MapEnum<Languages>();
         NpgsqlConnection.GlobalTypeMapper.MapEnum<GameMode>();
         NpgsqlConnection.GlobalTypeMapper.MapEnum<ActivityLogType>();
+        NpgsqlConnection.GlobalTypeMapper.MapEnum<NotificationType>();
+        NpgsqlConnection.GlobalTypeMapper.MapEnum<NotificationState>();
         NpgsqlConnection.GlobalTypeMapper.MapEnum<UserUpdateStatus>();
 #pragma warning restore CS0618
     }
@@ -70,6 +73,7 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
     public DbSet<Character> Characters { get; set; } = default!;
     public DbSet<Item> Items { get; set; } = default!;
     public DbSet<UserItem> UserItems { get; set; } = default!;
+    public DbSet<UserNotification> UserNotifications { get; set; } = default!;
     public DbSet<PersonalItem> PersonalItems { get; set; } = default!;
     public DbSet<EquippedItem> EquippedItems { get; set; } = default!;
     public DbSet<CharacterLimitations> CharacterLimitations { get; set; } = default!;
@@ -154,6 +158,8 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
         modelBuilder.HasPostgresEnum<Languages>();
         modelBuilder.HasPostgresEnum<GameMode>();
         modelBuilder.HasPostgresEnum<ActivityLogType>();
+        modelBuilder.HasPostgresEnum<NotificationType>();
+        modelBuilder.HasPostgresEnum<NotificationState>();
         modelBuilder.HasPostgresEnum<UserUpdateStatus>();
 
         // Ensure that the PostGIS extension is installed.

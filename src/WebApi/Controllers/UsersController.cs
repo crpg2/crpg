@@ -11,7 +11,9 @@ using Crpg.Application.Items.Models;
 using Crpg.Application.Items.Queries;
 using Crpg.Application.Limitations.Models;
 using Crpg.Application.Limitations.Queries;
-using Crpg.Application.Parties.Commands;
+using Crpg.Application.Notifications.Commands;
+using Crpg.Application.Notifications.Models;
+using Crpg.Application.Notifications.Queries;
 using Crpg.Application.Restrictions.Models;
 using Crpg.Application.Restrictions.Queries;
 using Crpg.Application.Users.Commands;
@@ -569,4 +571,58 @@ public class UsersController : BaseController
     {
         return ResultToActionAsync(Mediator.Send(new RewardRecentUserCommand { }));
     }
+
+    /// <summary>
+    /// Gets user's notifications.
+    /// </summary>
+    /// <returns>The user's notifications.</returns>
+    /// <response code="200">Ok.</response>
+    [HttpGet("self/notifications")]
+    public Task<ActionResult<Result<UserNotificationsWithDictViewModel>>> GetUserNotifications()
+    {
+        GetUserNotificationsQuery req = new() { UserId = CurrentUser.User!.Id };
+        return ResultToActionAsync(Mediator.Send(req));
+    }
+
+    /// <summary>
+    /// Read user's notification.
+    /// </summary>
+    /// <returns>The updated notification.</returns>
+    /// <response code="200">Read.</response>
+    /// <response code="400">Bad Request.</response>
+    /// <response code="404">Notification was not found.</response>
+    [HttpPut("self/notifications/{id}")]
+    public Task<ActionResult<Result<UserNotificationViewModel>>> UpdateUserNotification([FromRoute] int id) =>
+        ResultToActionAsync(Mediator.Send(new ReadUserNotificationCommand { UserNotificationId = id, UserId = CurrentUser.User!.Id }));
+
+    /// <summary>
+    /// Read all user's notifications.
+    /// </summary>
+    /// <response code="204">Read.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpPut("self/notifications/readAll")]
+    [ProducesResponseType((int)HttpStatusCode.NoContent)]
+    public Task<ActionResult> ReadAllUserNotifications() =>
+        ResultToActionAsync(Mediator.Send(new ReadAllUserNotificationCommand { UserId = CurrentUser.User!.Id }));
+
+    /// <summary>
+    /// Delete user's notification.
+    /// </summary>
+    /// <response code="204">Deleted.</response>
+    /// <response code="400">Bad Request.</response>
+    /// <response code="404">Notification was not found.</response>
+    [HttpDelete("self/notifications/{id}")]
+    [ProducesResponseType((int)HttpStatusCode.NoContent)]
+    public Task<ActionResult> DeleteUserNotification([FromRoute] int id) =>
+        ResultToActionAsync(Mediator.Send(new DeleteUserNotificationCommand { UserNotificationId = id, UserId = CurrentUser.User!.Id }));
+
+    /// <summary>
+    /// Delete all user's notifications.
+    /// </summary>
+    /// <response code="204">Deleted.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("self/notifications/deleteAll")]
+    [ProducesResponseType((int)HttpStatusCode.NoContent)]
+    public Task<ActionResult> DeleteAllUserNotifications() =>
+        ResultToActionAsync(Mediator.Send(new DeleteAllUserNotificationsCommand { UserId = CurrentUser.User!.Id }));
 }

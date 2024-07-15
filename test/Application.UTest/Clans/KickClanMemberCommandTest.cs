@@ -3,13 +3,16 @@ using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Users;
+using Moq;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Clans;
 
 public class KickClanMemberCommandTest : TestBase
 {
-    private static readonly IClanService ClanService = new ClanService();
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly Mock<IUserNotificationService> UserNotificationService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly IClanService ClanService = new ClanService(ActivityLogService.Object, UserNotificationService.Object);
 
     [Test]
     public async Task ShouldLeaveClanIfUserKickedHimself()
@@ -19,7 +22,7 @@ public class KickClanMemberCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        var result = await new KickClanMemberCommand.Handler(ActDb, ClanService).Handle(new KickClanMemberCommand
+        var result = await new KickClanMemberCommand.Handler(ActDb, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new KickClanMemberCommand
         {
             UserId = user.Id,
             ClanId = clan.Id,
@@ -41,7 +44,7 @@ public class KickClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(user, kickedUser);
         await ArrangeDb.SaveChangesAsync();
 
-        var result = await new KickClanMemberCommand.Handler(ActDb, ClanService).Handle(new KickClanMemberCommand
+        var result = await new KickClanMemberCommand.Handler(ActDb, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new KickClanMemberCommand
         {
             UserId = user.Id,
             ClanId = clan.Id,
@@ -62,7 +65,7 @@ public class KickClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(user, kickedUser);
         await ArrangeDb.SaveChangesAsync();
 
-        var result = await new KickClanMemberCommand.Handler(ActDb, ClanService).Handle(new KickClanMemberCommand
+        var result = await new KickClanMemberCommand.Handler(ActDb, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new KickClanMemberCommand
         {
             UserId = user.Id,
             ClanId = clan.Id,

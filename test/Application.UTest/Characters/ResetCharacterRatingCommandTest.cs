@@ -10,6 +10,9 @@ namespace Crpg.Application.UTest.Characters;
 
 public class ResetCharacterRatingCommandTest : TestBase
 {
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly ICharacterService CharacterService = Mock.Of<ICharacterService>();
+
     [Test]
     public async Task Basic()
     {
@@ -21,10 +24,9 @@ public class ResetCharacterRatingCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         Mock<ICharacterService> characterServiceMock = new();
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
 
         ResetCharacterRatingCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object,
-            activityLogServiceMock.Object);
+            ActivityLogService.Object);
         await handler.Handle(new ResetCharacterRatingCommand
         {
             CharacterId = character.Id,
@@ -37,9 +39,7 @@ public class ResetCharacterRatingCommandTest : TestBase
     [Test]
     public async Task NotFoundIfUserDoesntExist()
     {
-        var characterService = Mock.Of<ICharacterService>();
-        var activityLogService = Mock.Of<IActivityLogService>();
-        ResetCharacterRatingCommand.Handler handler = new(ActDb, Mapper, characterService, activityLogService);
+        ResetCharacterRatingCommand.Handler handler = new(ActDb, Mapper, CharacterService, ActivityLogService.Object);
         var result = await handler.Handle(
             new ResetCharacterRatingCommand
             {
@@ -55,9 +55,7 @@ public class ResetCharacterRatingCommandTest : TestBase
         var user = ArrangeDb.Users.Add(new User());
         await ArrangeDb.SaveChangesAsync();
 
-        var characterService = Mock.Of<ICharacterService>();
-        var activityLogService = Mock.Of<IActivityLogService>();
-        ResetCharacterRatingCommand.Handler handler = new(ActDb, Mapper, characterService, activityLogService);
+        ResetCharacterRatingCommand.Handler handler = new(ActDb, Mapper, CharacterService, ActivityLogService.Object);
         var result = await handler.Handle(
             new ResetCharacterRatingCommand
             {

@@ -22,12 +22,10 @@ public record AddItemToClanArmoryCommand : IMediatorRequest<ClanArmoryItemViewMo
 
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
-        private readonly IActivityLogService _activityLogService;
         private readonly IClanService _clanService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IActivityLogService activityLogService, IClanService clanService)
+        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService)
         {
-            _activityLogService = activityLogService;
             _db = db;
             _mapper = mapper;
             _clanService = clanService;
@@ -57,8 +55,6 @@ public record AddItemToClanArmoryCommand : IMediatorRequest<ClanArmoryItemViewMo
             {
                 return new(result.Errors);
             }
-
-            _db.ActivityLogs.Add(_activityLogService.CreateAddItemToClanArmory(user.Id, clan.Id, req.UserItemId));
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' added item '{1}' to the armory '{2}'", req.UserId, req.UserItemId, req.ClanId);

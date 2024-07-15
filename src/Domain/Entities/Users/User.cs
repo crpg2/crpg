@@ -2,6 +2,7 @@ using Crpg.Domain.Common;
 using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Notification;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 
@@ -52,4 +53,5 @@ public class User : AuditableEntity
     public IList<Restriction> Restrictions { get; set; } = new List<Restriction>();
     public ClanMember? ClanMembership { get; set; }
     public Party? Party { get; set; }
+    public IList<UserNotification> Notifications { get; set; } = new List<UserNotification>();
 }

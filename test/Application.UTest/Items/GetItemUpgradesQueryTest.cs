@@ -1,6 +1,5 @@
 using Crpg.Application.Items.Queries;
 using Crpg.Domain.Entities.Items;
-using Crpg.Domain.Entities.Users;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Items;

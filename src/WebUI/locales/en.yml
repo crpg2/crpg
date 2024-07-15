@@ -183,6 +183,7 @@ shortcuts:
 
 setting:
   language: Language
+  notifications: Notifications
   settings: Settings
   logout: Logout
 
@@ -970,6 +971,8 @@ user:
         navigate: Navigate to our {modMailLink} channel
         follow: Follow the instructions in that channel to reach out to us
       outro: Please note that at this time, we do not accept appeals through any platform other than Discord.
+  notifications:
+    title: Notifications
 
 banned:
   title: You are banned
@@ -1433,26 +1436,49 @@ activityLog:
     UserCreated: The user was created
     UserDeleted: The user was deleted
     UserRenamed: 'The user {oldName} was renamed to {newName}'
-    UserRewarded: 'The user was rewarded with {gold} {heirloomPoints} {itemId} by user {actorUserId}'
-    ItemBought: 'User bought {itemId} for {price}'
-    ItemSold: 'User sold item {itemId} for {price}'
-    ItemBroke: 'The item {itemId} was broken'
-    ItemRepaired: 'The item {itemId} was repaired for {price}'
-    ItemUpgraded: 'The item {itemId} was upgraded for {price} {heirloomPoints}'
-    ItemReforged: 'The item {itemId} was reforged for {price}. {heirloomPoints} were received'
-    CharacterCreated: 'The character {characterId} was created'
-    CharacterDeleted: 'The character {characterId}, level {level}, generation {generation}, was deleted'
-    CharacterRespecialized: 'The character {characterId} was respecialized for {price}'
-    CharacterRetired: 'The character {characterId} was retired at level {level}'
-    CharacterRewarded: 'The character {characterId} was rewarded {experience} experience by user {actorUserId}'
+    UserRewarded: 'The user was rewarded with {gold} {heirloomPoints} {item} by user {actorUser}'
+    ItemBought: 'The user bought {item} for {price}'
+    ItemSold: 'The user sold item {item} for {price}'
+    ItemBroke: 'The item {item} was broken'
+    ItemRepaired: 'The item {item} was repaired for {price}'
+    ItemUpgraded: 'The item {item} was upgraded for {price} {heirloomPoints}'
+    ItemReforged: 'The item {item} was reforged for {price}. {heirloomPoints} were received'
+    ItemReturned: 'The item {item} has been returned. {refundedGold} {refundedHeirloomPoints} has been refunded'
+    CharacterCreated: 'The character {character} was created'
+    CharacterDeleted: 'The character {character}, level {level}, generation {generation}, was deleted'
+    CharacterRespecialized: 'The character {character} was respecialized for {price}'
+    CharacterRetired: 'The character {character} was retired at level {level}'
+    CharacterRewarded: 'The character {character} was rewarded {experience} experience by user {actorUser}'
+    CharacterEarned: 'The character {character} earned {experience} experience and {gold} gold in the {gameMode} game mode'
     ServerJoined: The user has joined the server
     ChatMessageSent: 'Wrote a message: {message} {instance}'
-    TeamHit: 'Dealt {damage} damage to {targetUserId} {instance}'
-    ClanArmoryAddItem: 'Item {userItemId} added to clan {clanId} armory'
-    ClanArmoryRemoveItem: 'Item {userItemId} removed from clan {clanId} armory'
-    ClanArmoryReturnItem: 'Item {userItemId} was returned from clan {clanId} armory'
-    ClanArmoryBorrowItem: 'Item {userItemId} was borrowed from clan {clanId} armory'
-    CharacterEarned: 'The character {characterId} earned {experience} experience and {gold} gold in the {gameMode} game mode'
+    TeamHit: 'Dealt {damage} damage to {targetUser} {instance}'
+    ClanCreated: 'The Сlan {clan} was created'
+    ClanDeleted: 'The Сlan {clan} was deleted'
+    ClanApplicationCreated: 'The application to join {clan} has been created'
+    ClanApplicationDeclined: 'The application to join {clan} has been declined'
+    ClanApplicationAccepted: 'The application to join {clan} has been approved'
+    ClanMemberKicked: 'The user was kicked from the clan {clan}'
+    ClanMemberLeaved: 'The user has left the clan {clan}'
+    ClanMemberRoleEdited: 'The Role {oldClanMemberRole} in the clan {clan} has been changed to {newClanMemberRole}'
+    ClanArmoryAddItem: 'The Item {userItem} added to clan {clan} armory'
+    ClanArmoryRemoveItem: 'Item {userItem} removed from clan {clan} armory'
+    ClanArmoryReturnItem: 'Item {userItem} was returned from clan {clan} armory'
+    ClanArmoryBorrowItem: 'Item {userItem} was borrowed from clan {clan} armory'
+notification:
+  tpl:
+    ItemReturned: 'The item {item} has been removed from your inventory. {refundedGold} {refundedHeirloomPoints} has been refunded'
+    ClanMemberRoleChangedToUser: 'Your role {oldClanMemberRole} in the clan {clan} has been changed to {newClanMemberRole}'
+    ClanMemberLeavedToLeader: '{user} has left your clan {clan}'
+    ClanMemberKickedToExMember: 'You were kicked out of clan {clan}'
+    ClanApplicationCreatedToUser: 'Your application for {clan} has been successfully created'
+    ClanApplicationCreatedToOfficers: '{user} has applied to join your clan {clan}'
+    ClanApplicationAcceptedToUser: 'Your application to join the {clan} has been approved'
+    ClanApplicationDeclinedToUser: 'Your application to join the {clan} has been declined'
+    ClanArmoryBorrowItemToLender: 'User {user} has borrowed your item {item} from the {clan} clan armory'
+    ClanArmoryRemoveItemToBorrower: 'User {user} has removed his item {item} from the {clan} clan armory'
+    UserRewardedToUser: 'You have been rewarded with {gold} {heirloomPoints} {item} by user {actorUser}'
+    CharacterRewardedToUser: 'Your character {character} has been rewarded {experience} experience by user {actorUser}'
 
 leaderboard:
   title: Leaderboard

@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ActivityLogItem: typeof import('./../components/moderator/ActivityLogItem.vue')['default']
+    ActivityLogMetadata: typeof import('./../components/app/ActivityLogMetadata.vue')['default']
     Bg: typeof import('./../components/app/Bg.vue')['default']
     CharacterCreateModal: typeof import('./../components/character/CharacterCreateModal.vue')['default']
     CharacterEditForm: typeof import('./../components/character/CharacterEditForm.vue')['default']
@@ -24,6 +25,7 @@ declare module 'vue' {
     ClanArmoryItemRelationBadge: typeof import('./../components/clan/armory/ClanArmoryItemRelationBadge.vue')['default']
     ClanForm: typeof import('./../components/clan/ClanForm.vue')['default']
     ClanMemberDetail: typeof import('./../components/clan/ClanMemberDetail.vue')['default']
+    ClanRole: typeof import('./../components/clan/ClanRole.vue')['default']
     ClanRoleIcon: typeof import('./../components/clan/ClanRoleIcon.vue')['default']
     ClanTagIcon: typeof import('./../components/clan/ClanTagIcon.vue')['default']
     ClosableTooltip: typeof import('./../components/ui/ClosableTooltip.vue')['default']
@@ -70,6 +72,7 @@ declare module 'vue' {
     MarkerSettlement: typeof import('./../components/strategus/map/markers/MarkerSettlement.vue')['default']
     Modal: typeof import('./../components/ui/Modal.vue')['default']
     MoreOptionsDropdownButton: typeof import('./../components/app/MoreOptionsDropdownButton.vue')['default']
+    NotificationCard: typeof import('./../components/app/NotificationCard.vue')['default']
     NumericInput: typeof import('./../components/ui/NumericInput.vue')['default']
     OnlinePlayers: typeof import('./../components/app/OnlinePlayers.vue')['default']
     Pagination: typeof import('./../components/ui/Pagination.vue')['default']

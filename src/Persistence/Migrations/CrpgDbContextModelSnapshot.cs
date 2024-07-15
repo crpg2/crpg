@@ -7,6 +7,7 @@ using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Notification;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
@@ -33,7 +34,7 @@ namespace Crpg.Persistence.Migrations
                 .HasAnnotation("ProductVersion", "8.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "activity_log_type", new[] { "user_created", "user_deleted", "user_renamed", "user_rewarded", "item_bought", "item_sold", "item_broke", "item_reforged", "item_repaired", "item_upgraded", "character_created", "character_deleted", "character_rating_reset", "character_respecialized", "character_retired", "character_rewarded", "character_earned", "server_joined", "chat_message_sent", "team_hit", "clan_armory_add_item", "clan_armory_remove_item", "clan_armory_return_item", "clan_armory_borrow_item" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "activity_log_type", new[] { "user_created", "user_deleted", "user_renamed", "user_rewarded", "item_bought", "item_sold", "item_broke", "item_reforged", "item_repaired", "item_upgraded", "item_returned", "character_created", "character_deleted", "character_rating_reset", "character_respecialized", "character_retired", "character_rewarded", "character_earned", "server_joined", "chat_message_sent", "team_hit", "clan_created", "clan_deleted", "clan_application_created", "clan_application_declined", "clan_application_accepted", "clan_member_kicked", "clan_member_leaved", "clan_member_role_edited", "clan_armory_add_item", "clan_armory_remove_item", "clan_armory_return_item", "clan_armory_borrow_item" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_fighter_application_status", new[] { "pending", "declined", "accepted" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_mercenary_application_status", new[] { "pending", "declined", "accepted" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "battle_phase", new[] { "preparation", "hiring", "scheduled", "live", "end" });
@@ -48,6 +49,8 @@ namespace Crpg.Persistence.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "item_slot", new[] { "head", "shoulder", "body", "hand", "leg", "mount_harness", "mount", "weapon0", "weapon1", "weapon2", "weapon3", "weapon_extra" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "item_type", new[] { "undefined", "head_armor", "shoulder_armor", "body_armor", "hand_armor", "leg_armor", "mount_harness", "mount", "shield", "bow", "crossbow", "one_handed_weapon", "two_handed_weapon", "polearm", "thrown", "arrows", "bolts", "pistol", "musket", "bullets", "banner" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "languages", new[] { "en", "zh", "ru", "de", "fr", "it", "es", "pl", "uk", "ro", "nl", "tr", "el", "hu", "sv", "cs", "pt", "sr", "bg", "hr", "da", "fi", "no", "be", "lv" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "notification_state", new[] { "unread", "read" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "notification_type", new[] { "user_rewarded_to_user", "character_rewarded_to_user", "item_returned", "clan_application_created_to_user", "clan_application_created_to_officers", "clan_application_accepted_to_user", "clan_application_declined_to_user", "clan_member_role_changed_to_user", "clan_member_leaved_to_leader", "clan_member_kicked_to_ex_member", "clan_armory_borrow_item_to_lender", "clan_armory_remove_item_to_borrower" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "party_status", new[] { "idle", "idle_in_settlement", "recruiting_in_settlement", "moving_to_point", "following_party", "moving_to_settlement", "moving_to_attack_party", "moving_to_attack_settlement", "in_battle" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "platform", new[] { "steam", "epic_games", "microsoft" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "region", new[] { "eu", "na", "as", "oc" });
@@ -837,6 +840,51 @@ namespace Crpg.Persistence.Migrations
                         .HasName("pk_character_limitations");
 
                     b.ToTable("character_limitations", (string)null);
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Notification.UserNotification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ActivityLogId")
+                        .HasColumnType("integer")
+                        .HasColumnName("activity_log_id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<NotificationState>("State")
+                        .HasColumnType("notification_state")
+                        .HasColumnName("state");
+
+                    b.Property<NotificationType>("Type")
+                        .HasColumnType("notification_type")
+                        .HasColumnName("type");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("Id")
+                        .HasName("pk_user_notifications");
+
+                    b.HasIndex("ActivityLogId")
+                        .HasDatabaseName("ix_user_notifications_activity_log_id");
+
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("ix_user_notifications_user_id");
+
+                    b.ToTable("user_notifications", (string)null);
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Parties.Party", b =>
@@ -2064,6 +2112,27 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("Character");
                 });
 
+            modelBuilder.Entity("Crpg.Domain.Entities.Notification.UserNotification", b =>
+                {
+                    b.HasOne("Crpg.Domain.Entities.ActivityLogs.ActivityLog", "ActivityLog")
+                        .WithMany()
+                        .HasForeignKey("ActivityLogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_user_notifications_activity_logs_activity_log_id");
+
+                    b.HasOne("Crpg.Domain.Entities.Users.User", "User")
+                        .WithMany("Notifications")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_user_notifications_users_user_id");
+
+                    b.Navigation("ActivityLog");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Crpg.Domain.Entities.Parties.Party", b =>
                 {
                     b.HasOne("Crpg.Domain.Entities.Users.User", "User")
@@ -2254,6 +2323,8 @@ namespace Crpg.Persistence.Migrations
                     b.Navigation("ClanMembership");
 
                     b.Navigation("Items");
+
+                    b.Navigation("Notifications");
 
                     b.Navigation("Party");
 

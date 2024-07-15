@@ -23,15 +23,17 @@ public record RewardUserCommand : IMediatorRequest<UserViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<RewardUserCommand>();
 
-        private readonly IActivityLogService _activityLogService;
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
+        private readonly IActivityLogService _activityLogService;
+        private readonly IUserNotificationService _userNotificationService;
 
-        public Handler(IActivityLogService activityLogService, ICrpgDbContext db, IMapper mapper)
+        public Handler(ICrpgDbContext db, IMapper mapper, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
-            _activityLogService = activityLogService;
             _db = db;
             _mapper = mapper;
+            _activityLogService = activityLogService;
+            _userNotificationService = userNotificationService;
         }
 
         public async Task<Result<UserViewModel>> Handle(RewardUserCommand req, CancellationToken cancellationToken)
@@ -72,7 +74,9 @@ public record RewardUserCommand : IMediatorRequest<UserViewModel>
                 });
             }
 
-            _db.ActivityLogs.Add(_activityLogService.CreateUserRewardedLog(req.UserId, req.ActorUserId, req.Gold, req.HeirloomPoints, req.ItemId));
+            var activityLog = _activityLogService.CreateUserRewardedLog(req.UserId, req.ActorUserId, req.Gold, req.HeirloomPoints, req.ItemId);
+            _db.ActivityLogs.Add(activityLog);
+            _db.UserNotifications.Add(_userNotificationService.CreateUserRewardedToUserNotification(req.UserId, activityLog.Id));
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' rewarded", req.UserId);

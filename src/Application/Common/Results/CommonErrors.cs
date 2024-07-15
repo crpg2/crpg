@@ -115,6 +115,12 @@ internal static class CommonErrors
         Detail = $"Clan with id '{clanId}' was not found",
     };
 
+    public static Error ClanLeaderNotFound(int clanId) => new(ErrorType.NotFound, ErrorCode.ClanLeaderFound)
+    {
+        Title = "Clan leader was not found",
+        Detail = $"Clan leader with clanId '{clanId}' was not found",
+    };
+
     public static Error ClanTagAlreadyUsed(string clanTag) => new(ErrorType.Validation, ErrorCode.ClanTagAlreadyUsed)
     {
         Title = "Clan tag is already used",
@@ -362,5 +368,11 @@ internal static class CommonErrors
     {
         Title = "Personal item already exist",
         Detail = $"User with id '{userId}' is already the owner of a personal item '{itemId}'",
+    };
+
+    public static Error UserNotificationNotFound(int userId, int userNotificationId) => new(ErrorType.NotFound, ErrorCode.UserNotificationNotFound)
+    {
+        Title = "User notification was not found",
+        Detail = $"User notification with id '{userNotificationId}' was not found",
     };
 }

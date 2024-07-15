@@ -239,8 +239,8 @@ await fetchPageData(character.value.id)
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl space-y-12 pb-12">
-    <div class="flex max-h-[90vh] min-w-[48rem] flex-col pl-5 pr-10 pt-8">
+  <div class="mx-auto max-w-4xl space-y-12 pb-12">
+    <div class="flex max-h-[90vh] flex-col pl-5 pr-10 pt-8">
       <div class="flex items-center gap-4">
         <OTabs
           v-model="statTypeModel"

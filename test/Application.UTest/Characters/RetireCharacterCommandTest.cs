@@ -10,6 +10,8 @@ namespace Crpg.Application.UTest.Characters;
 
 public class RetireCharacterCommandTest : TestBase
 {
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+
     [Test]
     public async Task Basic()
     {
@@ -21,10 +23,8 @@ public class RetireCharacterCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         Mock<ICharacterService> characterServiceMock = new();
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
         RetireCharacterCommand.Handler handler = new(ActDb, Mapper, characterServiceMock.Object,
-            activityLogServiceMock.Object);
+            ActivityLogService.Object);
         await handler.Handle(new RetireCharacterCommand
         {
             CharacterId = character.Id,
@@ -39,8 +39,7 @@ public class RetireCharacterCommandTest : TestBase
     public async Task NotFoundIfUserDoesntExist()
     {
         var characterService = Mock.Of<ICharacterService>();
-        var activityLogService = Mock.Of<IActivityLogService>();
-        RetireCharacterCommand.Handler handler = new(ActDb, Mapper, characterService, activityLogService);
+        RetireCharacterCommand.Handler handler = new(ActDb, Mapper, characterService, ActivityLogService.Object);
         var result = await handler.Handle(
             new RetireCharacterCommand
             {
@@ -57,8 +56,7 @@ public class RetireCharacterCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         var characterService = Mock.Of<ICharacterService>();
-        var activityLogService = Mock.Of<IActivityLogService>();
-        RetireCharacterCommand.Handler handler = new(ActDb, Mapper, characterService, activityLogService);
+        RetireCharacterCommand.Handler handler = new(ActDb, Mapper, characterService, ActivityLogService.Object);
         var result = await handler.Handle(
             new RetireCharacterCommand
             {

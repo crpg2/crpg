@@ -10,10 +10,11 @@ namespace Crpg.Application.Common.Services;
 internal interface IClanService
 {
     Task<Result<User>> GetClanMember(ICrpgDbContext db, int userId, int clanId, CancellationToken cancellationToken);
+    Task<Result<ClanMember>> GetClanLeader(ICrpgDbContext db, int clanId, CancellationToken cancellationToken);
+    Task<Result<IList<ClanMember>>> GetClanOfficers(ICrpgDbContext db, int clanId, CancellationToken cancellationToken);
     Error? CheckClanMembership(User user, int clanId);
     Task<Result<ClanMember>> JoinClan(ICrpgDbContext db, User user, int clanId, CancellationToken cancellationToken);
     Task<Result> LeaveClan(ICrpgDbContext db, ClanMember member, CancellationToken cancellationToken);
-
     Task<Result<ClanArmoryItem>> AddArmoryItem(ICrpgDbContext db, Clan clan, User user, int userItemId, CancellationToken cancellationToken = default);
     Task<Result> RemoveArmoryItem(ICrpgDbContext db, Clan clan, User user, int userItemId, CancellationToken cancellationToken = default);
     Task<Result<ClanArmoryBorrowedItem>> BorrowArmoryItem(ICrpgDbContext db, Clan clan, User user, int userItemId, CancellationToken cancellationToken = default);
@@ -22,6 +23,15 @@ internal interface IClanService
 
 internal class ClanService : IClanService
 {
+    private readonly IActivityLogService _activityLogService;
+    private readonly IUserNotificationService _userNotificationService;
+
+    public ClanService(IActivityLogService activityLogService, IUserNotificationService userNotificationService)
+    {
+        _activityLogService = activityLogService;
+        _userNotificationService = userNotificationService;
+    }
+
     public async Task<Result<User>> GetClanMember(ICrpgDbContext db, int userId, int clanId, CancellationToken cancellationToken)
     {
         var user = await db.Users
@@ -34,6 +44,30 @@ internal class ClanService : IClanService
 
         var error = CheckClanMembership(user, clanId);
         return error != null ? new(error) : new(user);
+    }
+
+    public async Task<Result<ClanMember>> GetClanLeader(ICrpgDbContext db, int clanId, CancellationToken cancellationToken)
+    {
+        var clanMember = await db.ClanMembers
+            .Include(cm => cm.User)
+            .FirstOrDefaultAsync(cm => cm.ClanId == clanId && cm.Role == ClanMemberRole.Leader, cancellationToken);
+        if (clanMember == null)
+        {
+            return new(CommonErrors.ClanLeaderNotFound(clanId));
+        }
+
+        return new(clanMember);
+    }
+
+    public async Task<Result<IList<ClanMember>>> GetClanOfficers(ICrpgDbContext db, int clanId, CancellationToken cancellationToken)
+    {
+        ClanMemberRole[] officersRoles = { ClanMemberRole.Officer, ClanMemberRole.Leader };
+        var clanOfficers = await db.ClanMembers
+            .Include(cm => cm.User)
+            .Where(cm => cm.ClanId == clanId && officersRoles.Contains(cm.Role))
+            .ToArrayAsync(cancellationToken);
+
+        return new(clanOfficers);
     }
 
     public Error? CheckClanMembership(User user, int clanId)
@@ -96,16 +130,23 @@ internal class ClanService : IClanService
             }
 
             db.Clans.Remove(member.Clan);
+
+            db.ActivityLogs.Add(_activityLogService.CreateClanDeletedLog(member.UserId, member.ClanId));
         }
 
         await db.Entry(member)
             .Collection(cm => cm.ArmoryItems)
-            .Query().Include(ci => ci.BorrowedItem!).ThenInclude(bi => bi.UserItem!).ThenInclude(ui => ui.EquippedItems)
+            .Query()
+            .Include(ci => ci.BorrowedItem!)
+                .ThenInclude(bi => bi.UserItem!)
+                .ThenInclude(ui => ui.EquippedItems)
             .LoadAsync();
 
         await db.Entry(member)
             .Collection(cm => cm.ArmoryBorrowedItems)
-            .Query().Include(bi => bi.UserItem!).ThenInclude(ui => ui.EquippedItems)
+            .Query()
+            .Include(bi => bi.UserItem!)
+                .ThenInclude(ui => ui.EquippedItems)
             .LoadAsync();
 
         db.EquippedItems.RemoveRange(member.ArmoryItems.SelectMany(ci => ci.BorrowedItem != null ? ci.BorrowedItem.UserItem!.EquippedItems : new()));
@@ -115,6 +156,19 @@ internal class ClanService : IClanService
         db.ClanArmoryItems.RemoveRange(member.ArmoryItems);
 
         db.ClanMembers.Remove(member);
+
+        var clanMemberLeavedActivityLog = _activityLogService.CreateClanMemberLeavedLog(member.UserId, member.ClanId);
+        db.ActivityLogs.Add(clanMemberLeavedActivityLog);
+
+        if (member.Role != ClanMemberRole.Leader)
+        {
+            var clanLeaderRes = await GetClanLeader(db, member.ClanId, cancellationToken);
+            if (clanLeaderRes.Errors == null)
+            {
+                db.UserNotifications.Add(_userNotificationService.CreateClanMemberLeavedToLeaderNotification(clanLeaderRes.Data!.UserId, clanMemberLeavedActivityLog.Id));
+            }
+        }
+
         return Result.NoErrors;
     }
 
@@ -159,6 +213,7 @@ internal class ClanService : IClanService
 
         var armoryItem = new ClanArmoryItem { LenderClanId = clan.Id, UserItemId = userItem.Id, LenderUserId = user.Id };
         db.ClanArmoryItems.Add(armoryItem);
+        db.ActivityLogs.Add(_activityLogService.CreateAddItemToClanArmoryLog(user.Id, clan.Id, userItem));
 
         return new(armoryItem);
     }
@@ -194,6 +249,14 @@ internal class ClanService : IClanService
 
         db.ClanArmoryItems.Remove(userItem.ClanArmoryItem);
 
+        var activityLog = _activityLogService.CreateRemoveItemFromClanArmoryLog(user.Id, clan.Id, userItem);
+        db.ActivityLogs.Add(activityLog);
+
+        if (userItem.ClanArmoryBorrowedItem != null)
+        {
+            db.UserNotifications.Add(_userNotificationService.CreateClanArmoryRemoveItemToBorrowerNotification(userItem.UserId, activityLog.Id));
+        }
+
         return Result.NoErrors;
     }
 
@@ -201,11 +264,11 @@ internal class ClanService : IClanService
     {
         await db.Entry(user)
             .Reference(u => u.ClanMembership)
-            .LoadAsync();
+            .LoadAsync(cancellationToken);
 
         await db.Entry(user)
             .Collection(u => u.Items)
-            .LoadAsync();
+            .LoadAsync(cancellationToken);
 
         var errors = CheckClanMembership(user, clan.Id);
         if (errors != null)
@@ -236,6 +299,10 @@ internal class ClanService : IClanService
         var borrowedItem = new ClanArmoryBorrowedItem { BorrowerClanId = clan.Id, UserItemId = armoryItem.UserItemId, BorrowerUserId = user.Id };
         db.ClanArmoryBorrowedItems.Add(borrowedItem);
 
+        var activityLog = _activityLogService.CreateBorrowItemFromClanArmoryLog(user.Id, clan.Id, armoryItem.UserItem!);
+        db.ActivityLogs.Add(activityLog);
+        db.UserNotifications.Add(_userNotificationService.CreateClanArmoryBorrowItemToLenderNotification(armoryItem.LenderUserId, activityLog.Id));
+
         return new(borrowedItem);
     }
 
@@ -243,7 +310,7 @@ internal class ClanService : IClanService
     {
         await db.Entry(user)
             .Reference(u => u.ClanMembership)
-            .LoadAsync();
+            .LoadAsync(cancellationToken);
 
         var errors = CheckClanMembership(user, clan.Id);
         if (errors != null)
@@ -254,8 +321,8 @@ internal class ClanService : IClanService
         var borrowedItem = await db.ClanArmoryBorrowedItems
             .Where(bi =>
                 bi.UserItemId == userItemId
-                && (bi.BorrowerUserId == user.Id || user.ClanMembership!.Role == ClanMemberRole.Leader) // force return by clan leader
-                && bi.BorrowerClanId == clan.Id)
+                && bi.BorrowerClanId == clan.Id
+                && (bi.BorrowerUserId == user.Id || user.ClanMembership!.Role == ClanMemberRole.Leader)) // force return by clan leader
             .Include(bi => bi.UserItem!).ThenInclude(ui => ui.EquippedItems)
             .FirstOrDefaultAsync(cancellationToken);
         if (borrowedItem == null)
@@ -265,6 +332,9 @@ internal class ClanService : IClanService
 
         db.EquippedItems.RemoveRange(borrowedItem.UserItem!.EquippedItems);
         db.ClanArmoryBorrowedItems.Remove(borrowedItem);
+        var activityLog = _activityLogService.CreateReturnItemToClanArmoryLog(user.Id, clan.Id, borrowedItem.UserItem);
+        db.ActivityLogs.Add(activityLog);
+        db.UserNotifications.Add(_userNotificationService.CreateClanArmoryRemoveItemToBorrowerNotification(borrowedItem.BorrowerUserId, activityLog.Id));
 
         return Result.NoErrors;
     }

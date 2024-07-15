@@ -17,6 +17,7 @@ public class RepairUserItemCommandTest : TestBase
         ItemRepairCostPerSecond = 0.0001f,
         BrokenItemRepairPenaltySeconds = 100,
     };
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
 
     [Test]
     public async Task ItemNotFound()
@@ -25,9 +26,7 @@ public class RepairUserItemCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
-        RepairUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object, Constants);
+        RepairUserItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object, Constants);
         var result = await handler.Handle(new RepairUserItemCommand
         {
             UserItemId = 1,
@@ -50,9 +49,7 @@ public class RepairUserItemCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
-        RepairUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object, Constants);
+        RepairUserItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object, Constants);
         var result = await handler.Handle(new RepairUserItemCommand
         {
             UserItemId = userItem.Id,
@@ -75,9 +72,7 @@ public class RepairUserItemCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
-        RepairUserItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object, Constants);
+        RepairUserItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object, Constants);
         var result = await handler.Handle(new RepairUserItemCommand
         {
             UserItemId = userItem.Id,

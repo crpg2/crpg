@@ -2,6 +2,7 @@ import { pick } from 'es-toolkit'
 import qs from 'qs'
 
 import type { Clan, ClanEdition, ClanMemberRole } from '~/models/clan'
+import type { CharacterCompetitive } from '~/models/competitive'
 import type { Item } from '~/models/item'
 import type { Platform } from '~/models/platform'
 import type { PublicRestriction, RestrictionWithActive } from '~/models/restriction'
@@ -9,6 +10,8 @@ import type {
   User,
   UserItem,
   UserItemsByType,
+  UserNotification,
+  UserNotificationsWithDicts,
   UserPrivate,
   UserPublic,
 } from '~/models/user'
@@ -111,3 +114,32 @@ export const mapUserToUserPublic = (user: User, userClan: Clan | null): UserPubl
   ...pick(user, ['id', 'platform', 'platformUserId', 'name', 'region', 'avatar']),
   clan: userClan,
 })
+
+// TODO: FIXME: SPEC
+export const getUserNotifications = async (): Promise<UserNotificationsWithDicts> => {
+  const { notifications, dict } = await get<{
+    notifications: UserNotification[]
+    dict: {
+      users: UserPublic[]
+      clans: ClanEdition[]
+      characters: CharacterCompetitive[]
+    }
+  }>('/users/self/notifications')
+
+  return {
+    notifications,
+    dict: {
+      ...dict,
+      clans: dict.clans.map(mapClanResponse), // TODO: mapping to backend side?
+    },
+  }
+}
+
+export const readUserNotification = (id: number) =>
+  put<UserNotification>(`/users/self/notifications/${id}`)
+
+export const readAllUserNotifications = () => put(`/users/self/notifications/readAll`)
+
+export const deleteUserNotification = (id: number) => del(`/users/self/notifications/${id}`)
+
+export const deleteAllUserNotifications = () => del(`/users/self/notifications/deleteAll`)

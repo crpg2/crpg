@@ -1,6 +1,5 @@
 ﻿using Crpg.Application.Common.Results;
 using Crpg.Application.Users.Commands;
-using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Users;
 using NUnit.Framework;
 

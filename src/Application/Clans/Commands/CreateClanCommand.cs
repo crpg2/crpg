@@ -5,6 +5,7 @@ using Crpg.Application.Common;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
+using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Clans;
 using FluentValidation;
@@ -73,10 +74,13 @@ public record CreateClanCommand : IMediatorRequest<ClanViewModel>
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
 
-        public Handler(ICrpgDbContext db, IMapper mapper)
+        private readonly IActivityLogService _activityLogService;
+
+        public Handler(ICrpgDbContext db, IMapper mapper, IActivityLogService activityLogService)
         {
             _db = db;
             _mapper = mapper;
+            _activityLogService = activityLogService;
         }
 
         public async Task<Result<ClanViewModel>> Handle(CreateClanCommand req, CancellationToken cancellationToken)
@@ -126,6 +130,7 @@ public record CreateClanCommand : IMediatorRequest<ClanViewModel>
             };
 
             _db.Clans.Add(clan);
+            _db.ActivityLogs.Add(_activityLogService.CreateClanCreatedLog(req.UserId, clan.Id));
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' created clan '[{1}] {2}' ({3})", req.UserId, req.Tag, req.Name, clan.Id);
             return new(_mapper.Map<ClanViewModel>(clan));

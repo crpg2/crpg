@@ -5,12 +5,9 @@ const { point = null } = defineProps<{ point?: number | null }>()
 <template>
   <div
     v-tooltip.bottom="$t('user.field.heirloom')"
-    class="inline-flex items-center gap-1.5 align-bottom font-bold text-primary"
+    class="inline-flex items-center gap-1.5 align-middle font-bold text-primary"
   >
-    <OIcon
-      icon="blacksmith"
-      size="lg"
-    />
+    <OIcon icon="blacksmith" size="lg" />
     <slot v-if="$slots.default" />
     <template v-else-if="point !== null">
       {{ $n(point) }}

@@ -26,12 +26,16 @@ public record RespondClanInvitationCommand : IMediatorRequest<ClanInvitationView
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
         private readonly IClanService _clanService;
+        private readonly IActivityLogService _activityLogService;
+        private readonly IUserNotificationService _userNotificationService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService)
+        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
             _db = db;
             _mapper = mapper;
             _clanService = clanService;
+            _activityLogService = activityLogService;
+            _userNotificationService = userNotificationService;
         }
 
         public async Task<Result<ClanInvitationViewModel>> Handle(RespondClanInvitationCommand req, CancellationToken cancellationToken)
@@ -103,6 +107,10 @@ public record RespondClanInvitationCommand : IMediatorRequest<ClanInvitationView
                 }
                 else // Request
                 {
+                    var activityLog = _activityLogService.CreateClanApplicationDeclinedLog(user.Id, invitation.ClanId);
+                    _db.ActivityLogs.Add(activityLog);
+                    _db.UserNotifications.Add(_userNotificationService.CreateClanApplicationDeclinedToUserNotification(user.Id, activityLog.Id));
+                    await _db.SaveChangesAsync(cancellationToken);
                     Logger.LogInformation("User '{0}' declined request to join '{1}' from user '{2}' to join clan '{3}'",
                         inviter.Id, invitation.Id, invitee.Id, invitation.ClanId);
                 }
@@ -129,30 +137,32 @@ public record RespondClanInvitationCommand : IMediatorRequest<ClanInvitationView
 
             invitation.Status = ClanInvitationStatus.Accepted;
             await _db.SaveChangesAsync(cancellationToken);
-            if (oldClanId == null)
+
+            if (invitation.Type == ClanInvitationType.Offer) // TODO: implement offer ui
             {
-                if (invitation.Type == ClanInvitationType.Offer)
+                if (oldClanId == null)
                 {
-                    Logger.LogInformation("User '{0}' accepted invitation '{1}' from user '{2}' to join clan '{3}'",
-                        invitee.Id, invitation.Id, inviter.Id, invitation.ClanId);
-                }
-                else // Request
-                {
-                    Logger.LogInformation("User '{0}' accepted request '{1}' from user '{2}' to join clan '{3}'",
-                        inviter.Id, invitation.Id, invitee.Id, invitation.ClanId);
-                }
-            }
-            else
-            {
-                if (invitation.Type == ClanInvitationType.Offer)
-                {
-                    Logger.LogInformation("User '{0}' left clan '{1}' and accepted invitation '{2}' from user '{3}' to join clan '{4}'",
-                        invitee.Id, oldClanId, invitation.Id, inviter.Id, invitation.ClanId);
+                    Logger.LogInformation("User '{0}' accepted invitation '{1}' from user '{2}' to join clan '{3}'", invitee.Id, invitation.Id, inviter.Id, invitation.ClanId);
                 }
                 else
                 {
-                    Logger.LogInformation("User '{0}' accepted request '{1}' from user '{2}' to join left clan '{3}' for clan '{4}'",
-                        inviter.Id, invitation.Id, invitee.Id, oldClanId, invitation.ClanId);
+                    Logger.LogInformation("User '{0}' left clan '{1}' and accepted invitation '{2}' from user '{3}' to join clan '{4}'", invitee.Id, oldClanId, invitation.Id, inviter.Id, invitation.ClanId);
+                }
+            }
+            else // Request
+            {
+                var invitationAcceptedActivityLog = _activityLogService.CreateClanApplicationAcceptedLog(user.Id, invitation.ClanId);
+                _db.ActivityLogs.Add(invitationAcceptedActivityLog);
+                _db.UserNotifications.Add(_userNotificationService.CreateClanApplicationAcceptedToUserNotification(invitee.Id, invitationAcceptedActivityLog.Id));
+                await _db.SaveChangesAsync(cancellationToken);
+
+                if (oldClanId == null)
+                {
+                    Logger.LogInformation("User '{0}' accepted request '{1}' from user '{2}' to join clan '{3}'", inviter.Id, invitation.Id, invitee.Id, invitation.ClanId);
+                }
+                else
+                {
+                    Logger.LogInformation("User '{0}' accepted request '{1}' from user '{2}' to join left clan '{3}' for clan '{4}'", inviter.Id, invitation.Id, invitee.Id, oldClanId, invitation.ClanId);
                 }
             }
 

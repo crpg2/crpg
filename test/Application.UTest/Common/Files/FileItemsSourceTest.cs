@@ -1,9 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using Crpg.Application.Common.Files;
-using Crpg.Application.Common.Services;
-using Crpg.Application.Items.Models;
-using Crpg.Domain.Entities.Items;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Common.Files;
@@ -95,7 +92,7 @@ public class FileItemsSourceTest
         var items = (await new FileItemsSource().LoadItems())
             .Select(i => i.Id)
             .ToHashSet();
-        string GetFilePath([CallerFilePath] string path = "")
+        static string GetFilePath([CallerFilePath] string path = "")
         {
             return path;
         }
@@ -140,8 +137,8 @@ public class FileItemsSourceTest
                 }
             }
 
-            //uncomment to automatically replace with suggestions
-            //charactersDoc.Save(charactersFilePath);
+            // uncomment to automatically replace with suggestions
+            // charactersDoc.Save(charactersFilePath);
         });
     }
 }

@@ -11,6 +11,8 @@ namespace Crpg.Application.UTest.Items;
 
 public class BuyItemCommandTest : TestBase
 {
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+
     [Test]
     public async Task Basic()
     {
@@ -26,9 +28,7 @@ public class BuyItemCommandTest : TestBase
         ArrangeDb.Items.Add(item1);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
-        BuyItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
+        BuyItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
         var result = await handler.Handle(new BuyItemCommand
         {
             ItemId = item0.Id,
@@ -53,7 +53,7 @@ public class BuyItemCommandTest : TestBase
         var user = ArrangeDb.Users.Add(new User { Gold = 100 });
         await ArrangeDb.SaveChangesAsync();
 
-        BuyItemCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IActivityLogService>());
+        BuyItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
         var result = await handler.Handle(new BuyItemCommand
         {
             ItemId = "1",
@@ -69,7 +69,7 @@ public class BuyItemCommandTest : TestBase
         var item = ArrangeDb.Items.Add(new Item { Price = 100, Enabled = true });
         await ArrangeDb.SaveChangesAsync();
 
-        BuyItemCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IActivityLogService>());
+        BuyItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
         var result = await handler.Handle(new BuyItemCommand
         {
             ItemId = item.Entity.Id,
@@ -85,7 +85,7 @@ public class BuyItemCommandTest : TestBase
         var item = ArrangeDb.Items.Add(new Item { Price = 100, Enabled = false });
         await ArrangeDb.SaveChangesAsync();
 
-        BuyItemCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IActivityLogService>());
+        BuyItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
         var result = await handler.Handle(new BuyItemCommand
         {
             ItemId = item.Entity.Id,
@@ -103,8 +103,7 @@ public class BuyItemCommandTest : TestBase
         var item = ArrangeDb.Items.Add(new Item { Type = ItemType.Banner, Price = 100, Enabled = true });
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-        BuyItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
+        BuyItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
         var result = await handler.Handle(new BuyItemCommand
         {
             ItemId = item.Entity.Id,
@@ -129,7 +128,7 @@ public class BuyItemCommandTest : TestBase
         var item = ArrangeDb.Items.Add(new Item { Price = 101, Enabled = true });
         await ArrangeDb.SaveChangesAsync();
 
-        BuyItemCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IActivityLogService>());
+        BuyItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
         var result = await handler.Handle(new BuyItemCommand
         {
             ItemId = item.Entity.Id,
@@ -141,7 +140,6 @@ public class BuyItemCommandTest : TestBase
     [Test]
     public async Task AlreadyOwningItem()
     {
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
         Item item = new() { Rank = 0, Price = 100, Enabled = true };
         User user = new()
         {
@@ -152,7 +150,7 @@ public class BuyItemCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        BuyItemCommand.Handler handler = new(ActDb, Mapper, activityLogServiceMock.Object);
+        BuyItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
         var result = await handler.Handle(new BuyItemCommand
         {
             ItemId = item.Id,
@@ -181,7 +179,7 @@ public class BuyItemCommandTest : TestBase
         ArrangeDb.Items.Add(item);
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
-        BuyItemCommand.Handler handler = new(ActDb, Mapper, Mock.Of<IActivityLogService>());
+        BuyItemCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
         var result = await handler.Handle(new BuyItemCommand
         {
             ItemId = item.Id,

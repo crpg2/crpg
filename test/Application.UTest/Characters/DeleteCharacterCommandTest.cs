@@ -11,6 +11,9 @@ namespace Crpg.Application.UTest.Characters;
 
 public class DeleteCharacterCommandTest : TestBase
 {
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly IDateTime DateTime = Mock.Of<IDateTime>();
+
     [Test]
     public async Task WhenCharacterExists()
     {
@@ -22,8 +25,7 @@ public class DeleteCharacterCommandTest : TestBase
         ArrangeDb.Characters.Add(character);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-        DeleteCharacterCommand.Handler handler = new(ActDb, Mock.Of<IDateTime>(), activityLogServiceMock.Object);
+        DeleteCharacterCommand.Handler handler = new(ActDb, DateTime, ActivityLogService.Object);
         await handler.Handle(new DeleteCharacterCommand
         {
             CharacterId = character.Id,
@@ -48,7 +50,7 @@ public class DeleteCharacterCommandTest : TestBase
         ArrangeDb.Characters.Add(character);
         await ArrangeDb.SaveChangesAsync();
 
-        DeleteCharacterCommand.Handler handler = new(ActDb, Mock.Of<IDateTime>(), Mock.Of<IActivityLogService>());
+        DeleteCharacterCommand.Handler handler = new(ActDb, DateTime, ActivityLogService.Object);
         var result = await handler.Handle(new DeleteCharacterCommand
         {
             CharacterId = character.Id,
@@ -61,7 +63,7 @@ public class DeleteCharacterCommandTest : TestBase
     [Test]
     public async Task WhenCharacterDoesntExist()
     {
-        DeleteCharacterCommand.Handler handler = new(ActDb, Mock.Of<IDateTime>(), Mock.Of<IActivityLogService>());
+        DeleteCharacterCommand.Handler handler = new(ActDb, DateTime, ActivityLogService.Object);
         var result = await handler.Handle(new DeleteCharacterCommand { CharacterId = 1 }, CancellationToken.None);
         Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.CharacterNotFound));
     }

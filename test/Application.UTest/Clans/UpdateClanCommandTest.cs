@@ -4,13 +4,15 @@ using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Users;
+using Moq;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Clans;
 
 public class UpdateClanCommandTest : TestBase
 {
-    private static readonly IClanService ClanService = new ClanService();
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly IClanService ClanService = new ClanService(ActivityLogService.Object, Mock.Of<IUserNotificationService>());
 
     [Test]
     public async Task ShouldReturnErrorIfClanNotFound()
@@ -58,7 +60,7 @@ public class UpdateClanCommandTest : TestBase
         ArrangeDb.Clans.Add(new Clan { Tag = "TW" });
         await ArrangeDb.SaveChangesAsync();
 
-        var result = await new CreateClanCommand.Handler(ActDb, Mapper).Handle(new CreateClanCommand
+        var result = await new CreateClanCommand.Handler(ActDb, Mapper, ActivityLogService.Object).Handle(new CreateClanCommand
         {
             UserId = user.Id,
             Tag = "TW",
@@ -83,7 +85,7 @@ public class UpdateClanCommandTest : TestBase
         ArrangeDb.Clans.Add(new Clan { Name = "TaleWorlds" });
         await ArrangeDb.SaveChangesAsync();
 
-        var result = await new CreateClanCommand.Handler(ActDb, Mapper).Handle(new CreateClanCommand
+        var result = await new CreateClanCommand.Handler(ActDb, Mapper, ActivityLogService.Object).Handle(new CreateClanCommand
         {
             UserId = user.Id,
             Tag = "TW",

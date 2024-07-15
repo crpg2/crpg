@@ -38,6 +38,11 @@ export const useUserStore = defineStore('user', {
   }),
 
   getters: {
+    hasUnreadNotifications: state =>
+      state.user?.unreadNotificationsCount !== undefined
+        ? state.user?.unreadNotificationsCount > 0
+        : false,
+
     activeCharacterId: state => state.user?.activeCharacterId || state.characters?.[0]?.id || null,
 
     isRecentUser: (state) => {

@@ -394,22 +394,7 @@ await fetchPageData(clanId.value)
             :label="$t('clan.table.column.role')"
             width="100"
           >
-            <div
-              class="flex items-center justify-end gap-1.5 text-right"
-              :class="
-                member.role === ClanMemberRole.Leader
-                  ? 'text-more-support'
-                  : member.role === ClanMemberRole.Officer
-                    ? 'text-content-100'
-                    : 'text-content-400'
-              "
-            >
-              <ClanRoleIcon
-                v-if="[ClanMemberRole.Leader, ClanMemberRole.Officer].includes(member.role)"
-                :role="member.role"
-              />
-              {{ $t(`clan.role.${member.role}`) }}
-            </div>
+            <ClanRole :role="member.role" />
           </OTableColumn>
         </OTable>
       </div>

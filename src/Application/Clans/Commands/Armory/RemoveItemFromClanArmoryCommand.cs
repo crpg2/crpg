@@ -19,12 +19,10 @@ public record RemoveItemFromClanArmoryCommand : IMediatorRequest
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<RemoveItemFromClanArmoryCommand>();
 
         private readonly ICrpgDbContext _db;
-        private readonly IActivityLogService _activityLogService;
         private readonly IClanService _clanService;
 
-        public Handler(ICrpgDbContext db, IActivityLogService activityLogService, IClanService clanService)
+        public Handler(ICrpgDbContext db, IClanService clanService)
         {
-            _activityLogService = activityLogService;
             _db = db;
             _clanService = clanService;
         }
@@ -53,8 +51,6 @@ public record RemoveItemFromClanArmoryCommand : IMediatorRequest
             {
                 return new(result.Errors);
             }
-
-            _db.ActivityLogs.Add(_activityLogService.CreateRemoveItemFromClanArmory(user.Id, clan.Id, req.UserItemId));
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' removed item '{1}' from the armory '{2}'", req.UserId, req.UserItemId, req.ClanId);

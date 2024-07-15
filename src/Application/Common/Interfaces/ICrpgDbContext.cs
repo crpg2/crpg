@@ -5,6 +5,7 @@ using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
+using Crpg.Domain.Entities.Notification;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Settlements;
@@ -20,6 +21,7 @@ public interface ICrpgDbContext
     DbSet<Character> Characters { get; }
     DbSet<Item> Items { get; }
     DbSet<UserItem> UserItems { get; }
+    DbSet<UserNotification> UserNotifications { get; }
     DbSet<PersonalItem> PersonalItems { get; }
     DbSet<EquippedItem> EquippedItems { get; }
     DbSet<CharacterLimitations> CharacterLimitations { get; }

@@ -10,6 +10,9 @@ namespace Crpg.Application.UTest.Items;
 
 public class SellUserItemCommandTest : TestBase
 {
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly IItemService ItemService = Mock.Of<IItemService>();
+
     [Test]
     public async Task ShouldCallItemService()
     {
@@ -28,9 +31,7 @@ public class SellUserItemCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         Mock<IItemService> itemServiceMock = new();
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
-        SellUserItemCommand.Handler handler = new(ActDb, itemServiceMock.Object, activityLogServiceMock.Object);
+        SellUserItemCommand.Handler handler = new(ActDb, itemServiceMock.Object, ActivityLogService.Object);
         await handler.Handle(new SellUserItemCommand
         {
             UserItemId = user.Items[0].Id,
@@ -46,8 +47,7 @@ public class SellUserItemCommandTest : TestBase
         var user = ArrangeDb.Users.Add(new User());
         await ArrangeDb.SaveChangesAsync();
 
-        var itemService = Mock.Of<IItemService>();
-        SellUserItemCommand.Handler handler = new(ActDb, itemService, Mock.Of<IActivityLogService>());
+        SellUserItemCommand.Handler handler = new(ActDb, ItemService, ActivityLogService.Object);
         var result = await handler.Handle(new SellUserItemCommand
         {
             UserItemId = 1,
@@ -63,8 +63,7 @@ public class SellUserItemCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        var itemService = Mock.Of<IItemService>();
-        SellUserItemCommand.Handler handler = new(ActDb, itemService, Mock.Of<IActivityLogService>());
+        SellUserItemCommand.Handler handler = new(ActDb, ItemService, ActivityLogService.Object);
         var result = await handler.Handle(new SellUserItemCommand
         {
             UserItemId = 1,
@@ -90,8 +89,7 @@ public class SellUserItemCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        IItemService itemService = Mock.Of<IItemService>();
-        SellUserItemCommand.Handler handler = new(ActDb, itemService, Mock.Of<IActivityLogService>());
+        SellUserItemCommand.Handler handler = new(ActDb, ItemService, ActivityLogService.Object);
         var result = await handler.Handle(new SellUserItemCommand
         {
             UserItemId = user.Items[0].Id,
@@ -119,8 +117,7 @@ public class SellUserItemCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        IItemService itemService = Mock.Of<IItemService>();
-        SellUserItemCommand.Handler handler = new(ActDb, itemService, Mock.Of<IActivityLogService>());
+        SellUserItemCommand.Handler handler = new(ActDb, ItemService, ActivityLogService.Object);
         var result = await handler.Handle(new SellUserItemCommand
         {
             UserItemId = user.Items[0].Id,

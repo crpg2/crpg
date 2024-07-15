@@ -16,6 +16,8 @@ public class RewardCharacterCommandTest : TestBase
         MinimumLevel = 1,
         MinimumRetirementLevel = 2,
     };
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly Mock<IUserNotificationService> UserNotificationService = new() { DefaultValue = DefaultValue.Mock };
 
     [Test]
     public async Task CharacterNotFound()
@@ -23,7 +25,8 @@ public class RewardCharacterCommandTest : TestBase
         RewardCharacterCommand.Handler handler = new(
             Mock.Of<ICharacterService>(),
             Mock.Of<IExperienceTable>(),
-            Mock.Of<IActivityLogService>(),
+            ActivityLogService.Object,
+            UserNotificationService.Object,
             ActDb,
             Mapper,
             Constants);
@@ -73,7 +76,6 @@ public class RewardCharacterCommandTest : TestBase
         ArrangeDb.Characters.Add(character);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
         Mock<ICompetitiveRatingModel> competitiveRatingModelMock = new();
 
         CharacterService characterService = new(experienceTableMock.Object, competitiveRatingModelMock.Object, Constants);
@@ -81,7 +83,8 @@ public class RewardCharacterCommandTest : TestBase
         RewardCharacterCommand.Handler handler = new(
             characterService,
             experienceTableMock.Object,
-            activityLogServiceMock.Object,
+            ActivityLogService.Object,
+            UserNotificationService.Object,
             ActDb,
             Mapper,
             Constants);
@@ -117,13 +120,12 @@ public class RewardCharacterCommandTest : TestBase
         await ArrangeDb.SaveChangesAsync();
 
         Mock<ICharacterService> characterServiceMock = new();
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-        Mock<IExperienceTable> experienceTableMock = new();
 
         RewardCharacterCommand.Handler handler = new(
             characterServiceMock.Object,
-            experienceTableMock.Object,
-            activityLogServiceMock.Object,
+            Mock.Of<IExperienceTable>(),
+            ActivityLogService.Object,
+            UserNotificationService.Object,
             ActDb,
             Mapper,
             Constants);

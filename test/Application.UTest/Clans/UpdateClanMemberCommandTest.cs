@@ -4,13 +4,16 @@ using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Clans;
 
 public class UpdateClanMemberCommandTest : TestBase
 {
-    private static readonly IClanService ClanService = new ClanService();
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly Mock<IUserNotificationService> UserNotificationService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly IClanService ClanService = new ClanService(ActivityLogService.Object, UserNotificationService.Object);
 
     [TestCase(ClanMemberRole.Member)]
     [TestCase(ClanMemberRole.Officer)]
@@ -22,7 +25,7 @@ public class UpdateClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(user, member);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new UpdateClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new UpdateClanMemberCommand
+        var res = await new UpdateClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new UpdateClanMemberCommand
         {
             UserId = user.Id,
             ClanId = clan.Id,
@@ -42,7 +45,7 @@ public class UpdateClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(user);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new UpdateClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new UpdateClanMemberCommand
+        var res = await new UpdateClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new UpdateClanMemberCommand
         {
             UserId = user.Id,
             ClanId = clan.Id,
@@ -63,7 +66,7 @@ public class UpdateClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(user, member);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new UpdateClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new UpdateClanMemberCommand
+        var res = await new UpdateClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new UpdateClanMemberCommand
         {
             UserId = user.Id,
             ClanId = clan.Id,
@@ -86,7 +89,7 @@ public class UpdateClanMemberCommandTest : TestBase
         ArrangeDb.Users.AddRange(user, member);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await new UpdateClanMemberCommand.Handler(ActDb, Mapper, ClanService).Handle(new UpdateClanMemberCommand
+        var res = await new UpdateClanMemberCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationService.Object).Handle(new UpdateClanMemberCommand
         {
             UserId = user.Id,
             ClanId = clan.Id,

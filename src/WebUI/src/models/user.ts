@@ -1,22 +1,25 @@
+import type { ActivityLog, ActivityLogMetadataDicts } from './activity-logs'
 import type { Clan } from './clan'
 import type { Item, ItemSlot, ItemType } from './item'
+import type { NotificationState, UserNotificationType } from './notificatios'
 import type { Platform } from './platform'
 import type { Region } from './region'
 import type Role from './role'
 
 export interface User {
   id: number
-  role: Role
-  name: string
-  gold: number
-  avatar: string
-  region: Region
-  isDonor: boolean
   platform: Platform
   platformUserId: string
+  name: string
+  gold: number
   heirloomPoints: number
-  experienceMultiplier: number
+  role: Role
+  avatar: string
   activeCharacterId: number | null
+  region: Region
+  experienceMultiplier: number
+  isDonor: boolean
+  unreadNotificationsCount: number
 }
 
 export interface UserPublic
@@ -52,3 +55,16 @@ export interface UserItemsByType {
 }
 
 export type UserItemsBySlot = Record<ItemSlot, UserItem>
+
+export interface UserNotification {
+  id: number
+  createdAt: Date
+  type: UserNotificationType
+  state: NotificationState
+  activityLog: ActivityLog
+}
+
+export interface UserNotificationsWithDicts {
+  notifications: UserNotification[]
+  dict: ActivityLogMetadataDicts
+}
