@@ -132,6 +132,11 @@ internal static class CommonErrors
         Title = "Fighter is not a commander in the battle",
         Detail = $"Fighter with id '{fighterId} is not a commander of the battle with id '{battleId}'",
     };
+    public static Error FighterNotFound(int fighterId, int battleId) => new(ErrorType.NotFound, ErrorCode.FighterNotFound)
+    {
+        Title = "Fighter was not found in the battle",
+        Detail = $"Fighter with id '{fighterId} was not found in the battle with id '{battleId}'",
+    };
 
     public static Error PartyFighter(int partyId, int battleId) => new(ErrorType.Validation, ErrorCode.PartyFighter)
     {
@@ -247,6 +252,12 @@ internal static class CommonErrors
     {
         Title = "Item is not sellable",
         Detail = $"Item with id '{itemId}' is not sellable",
+    };
+
+    public static Error MercenaryNotFound(int mercenaryId) => new(ErrorType.NotFound, ErrorCode.MercenaryNotFound)
+    {
+        Title = "Mercenary was not found",
+        Detail = $"Mercenary with id '{mercenaryId}' was not found",
     };
 
     public static Error NotEnoughAttributePoints(int requiredPoints, int actualPoints) => new(ErrorType.Validation, ErrorCode.NotEnoughAttributePoints)

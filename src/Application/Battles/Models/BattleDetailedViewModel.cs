@@ -15,4 +15,5 @@ public record BattleDetailedViewModel
     public BattleFighterViewModel? Defender { get; init; }
     public int DefenderTotalTroops { get; init; }
     public DateTime CreatedAt { get; set; }
+    public DateTime? ScheduledFor { get; set; }
 }

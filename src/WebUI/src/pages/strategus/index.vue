@@ -33,6 +33,7 @@ const router = useRouter()
 
 const mainHeaderHeight = useMainHeaderHeight()
 
+// prettier-ignore
 const {
   center,
   map,
@@ -53,6 +54,7 @@ const {
   onTerrainUpdated,
 } = useTerrains(map)
 
+// prettier-ignore
 const {
   isRegistered,
   moveParty,

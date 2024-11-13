@@ -12,4 +12,5 @@ public record BattleFighterViewModel : IMapFrom<BattleFighter>
     public SettlementPublicViewModel? Settlement { get; init; }
     public BattleSide Side { get; init; }
     public bool Commander { get; init; }
+    public int MercenarySlots { get; init; }
 }

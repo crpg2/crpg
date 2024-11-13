@@ -21,6 +21,6 @@ public record SettlementPublicViewModel : IMapFrom<Settlement>
     public void Mapping(Profile profile)
     {
         profile.CreateMap<Settlement, SettlementPublicViewModel>()
-            .ForMember(s => s.Owner, opt => opt.MapFrom(u => u.Owner!.User));
+            .ForMember(s => s.Owner, opt => opt.MapFrom(s => s.Owner!.User));
     }
 }
