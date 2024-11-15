@@ -16,6 +16,7 @@ import {
   freeRespecializePostWindowHours,
   healthPointsForIronFlesh,
   healthPointsForStrength,
+  highLevelCutoff,
   maxExperienceMultiplierForGeneration,
   maximumLevel,
   minimumLevel,
@@ -271,7 +272,15 @@ export const attributePointsForLevel = (level: number): number => {
   if (level <= 0) {
     level = minimumLevel
   }
-  return defaultAttributePoints + (level - 1) * attributePointsPerLevel
+
+  let points = defaultAttributePoints
+
+  for (let i = 1; i < level; i++) {
+    if (i < highLevelCutoff) {
+      points += attributePointsPerLevel
+    }
+  }
+  return points
 }
 
 export const skillPointsForLevel = (level: number): number => {

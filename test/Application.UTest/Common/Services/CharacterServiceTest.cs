@@ -21,6 +21,7 @@ public class CharacterServiceTest
         ExperienceMultiplierByGeneration = 0.03f,
         MaxExperienceMultiplierForGeneration = 1.48f,
         ExperienceForLevelCoefs = new[] { 2f, 0 },
+        HighLevelCutoff = 30,
         DefaultAttributePoints = 0,
         AttributePointsPerLevel = 1,
         DefaultSkillPoints = 2,

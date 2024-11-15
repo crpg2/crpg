@@ -265,6 +265,19 @@ public class UsersController : BaseController
     }
 
     /// <summary>
+    /// Respecializes every character.
+    /// </summary>>
+    /// <response code="200">Updated.</response>
+    /// <response code="400">Bad Request.</response>
+    [Authorize(AdminPolicy)]
+    [HttpPut("characters/respecialize")]
+    public Task RespecializeAllCharacters()
+    {
+        RespecializeAllCharactersCommand cmd = new();
+        return ResultToActionAsync(Mediator.Send(cmd));
+    }
+
+    /// <summary>
     /// Updates character characteristics for the current user.
     /// </summary>
     /// <param name="id">Character id.</param>

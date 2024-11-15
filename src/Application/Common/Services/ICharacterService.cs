@@ -77,11 +77,25 @@ internal class CharacterService : ICharacterService
     /// <inheritdoc />
     public void ResetCharacterCharacteristics(Character character, bool respecialization = false)
     {
+        int CalculateAttributePoints(int level)
+        {
+            int points = 0;
+            for (int i = 1; i < level; i++)
+            {
+                if (i < _constants.HighLevelCutoff)
+                {
+                    points += _constants.AttributePointsPerLevel;
+                }
+            }
+
+            return points;
+        }
+
         character.Characteristics = new CharacterCharacteristics
         {
             Attributes = new CharacterAttributes
             {
-                Points = _constants.DefaultAttributePoints + (respecialization ? (character.Level - 1) * _constants.AttributePointsPerLevel : 0),
+                Points = _constants.DefaultAttributePoints + (respecialization ? CalculateAttributePoints(character.Level) : 0),
                 Strength = _constants.DefaultStrength,
                 Agility = _constants.DefaultAgility,
             },
@@ -187,7 +201,14 @@ internal class CharacterService : ICharacterService
         int levelDiff = newLevel - character.Level;
         if (levelDiff != 0) // if character leveled up
         {
-            character.Characteristics.Attributes.Points += levelDiff * _constants.AttributePointsPerLevel;
+            for (int i = character.Level; i < newLevel; i++)
+            {
+                if (i < _constants.HighLevelCutoff) // reward attribute points for lower levels
+                {
+                    character.Characteristics.Attributes.Points += _constants.AttributePointsPerLevel;
+                }
+            }
+
             character.Characteristics.Skills.Points += levelDiff * _constants.SkillPointsPerLevel;
             character.Characteristics.WeaponProficiencies.Points += WeaponProficiencyPointsForLevel(newLevel) - WeaponProficiencyPointsForLevel(character.Level);
             character.Level = newLevel;

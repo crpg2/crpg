@@ -29,6 +29,7 @@ public class Constants
     public int TournamentLevel { get; set; }
     public int NewUserStartingCharacterLevel { get; set; }
     public float[] ExperienceForLevelCoefs { get; set; } = Array.Empty<float>();
+    public int HighLevelCutoff { get; set; }
     public int DefaultStrength { get; set; }
     public int DefaultAgility { get; set; }
     public int DefaultHealthPoints { get; set; }

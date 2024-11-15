@@ -184,21 +184,23 @@ it.each([
 })
 
 it.each([
-  [0, 0],
-  [1, 0],
-  [2, 1],
-  [10, 9],
-  [38, 37],
+  [0, 1],
+  [1, 1],
+  [2, 2],
+  [10, 10],
+  [30, 30],
+  [38, 30],
 ])('attributePointsForLevel - level: %s', (level, expectation) => {
   expect(attributePointsForLevel(level)).toEqual(expectation)
 })
 
 it.each([
-  [0, 2],
-  [1, 2],
-  [2, 3],
-  [10, 11],
-  [38, 39],
+  [0, 3],
+  [1, 3],
+  [2, 4],
+  [10, 12],
+  [30, 32],
+  [38, 40],
 ])('skillPointsForLevel - level: %s', (level, expectation) => {
   expect(skillPointsForLevel(level)).toEqual(expectation)
 })
