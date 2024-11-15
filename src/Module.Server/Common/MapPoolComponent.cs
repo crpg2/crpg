@@ -17,7 +17,7 @@ namespace Crpg.Module.Common;
 internal class MapPoolComponent : MissionLogic
 {
     private static int nextMapId;
-
+    private string _nextMode = string.Empty;
     private string? _forcedNextMap;
 
     public void ForceNextMap(string map)
@@ -29,10 +29,37 @@ internal class MapPoolComponent : MissionLogic
 
         _forcedNextMap = map;
     }
+
     protected override void OnEndMission()
     {
+        string nextMap = string.Empty;
+
+        if (CrpgServerConfiguration.LowPopulationGameMode != null && CrpgServerConfiguration.HighPopulationGameMode != null)
+        {
+            if (GameNetwork.NetworkPeerCount <= CrpgServerConfiguration.LowPopulationGameModeMaxPlayerCount)
+            {
+                _nextMode = CrpgServerConfiguration.LowPopulationGameMode;
+            }
+            else
+            {
+                _nextMode = CrpgServerConfiguration.HighPopulationGameMode;
+            }
+
+            if (CrpgGamemodeManager.LoadGameConfig(_nextMode))
+            {
+                CrpgGamemodeManager.MapCounter[_nextMode] = (CrpgGamemodeManager.MapCounter[_nextMode] + 1) % CrpgGamemodeManager.Maps[_nextMode].Count;
+                nextMap = _forcedNextMap ?? CrpgGamemodeManager.Maps[_nextMode][CrpgGamemodeManager.MapCounter[_nextMode]];
+
+                MultiplayerOptions.OptionType.Map.SetValue(nextMap, MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions);
+                Environment.SetEnvironmentVariable("CRPG_INSTANCE", CrpgGamemodeManager.Modes[_nextMode][0].ToString());
+                _forcedNextMap = null;
+            }
+
+            return;
+        }
+
         nextMapId = (nextMapId + 1) % ListedServerCommandManager.ServerSideIntermissionManager.AutomatedMapPool.Count;
-        string nextMap = _forcedNextMap ?? ListedServerCommandManager.ServerSideIntermissionManager.AutomatedMapPool[nextMapId];
+        nextMap = _forcedNextMap ?? ListedServerCommandManager.ServerSideIntermissionManager.AutomatedMapPool[nextMapId];
         MultiplayerOptions.OptionType.Map.SetValue(nextMap, MultiplayerOptions.MultiplayerOptionsAccessMode.NextMapOptions);
         _forcedNextMap = null;
     }

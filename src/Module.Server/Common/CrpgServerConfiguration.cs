@@ -14,7 +14,6 @@ internal static class CrpgServerConfiguration
         string? regionStr = Environment.GetEnvironmentVariable("CRPG_REGION");
         Region = Enum.TryParse(regionStr, ignoreCase: true, out CrpgRegion region) ? region : CrpgRegion.Eu;
         Service = Environment.GetEnvironmentVariable("CRPG_SERVICE") ?? "unknown-service";
-        Instance = Environment.GetEnvironmentVariable("CRPG_INSTANCE") ?? "unknown-instance";
     }
 
     public static void Init()
@@ -24,11 +23,21 @@ internal static class CrpgServerConfiguration
 
     public static CrpgRegion Region { get; }
     public static string Service { get; }
-    public static string Instance { get; }
+    public static string Instance
+    {
+        get
+        {
+            return Environment.GetEnvironmentVariable("CRPG_INSTANCE") ?? "unknown-instance";
+        }
+    }
+
     public static float TeamBalancerClanGroupSizePenalty { get; private set; } = 0f;
     public static float ServerExperienceMultiplier { get; private set; } = 1.0f;
     public static int RewardTick { get; private set; } = 60;
     public static bool TeamBalanceOnce { get; private set; }
+    public static string? HighPopulationGameMode { get; private set; }
+    public static string? LowPopulationGameMode { get; private set; }
+    public static int LowPopulationGameModeMaxPlayerCount { get; private set; } = 12;
     public static bool FrozenBots { get; private set; } = false;
     public static int ControlledBotsCount { get; private set; } = 0;
     public static int BaseNakedEquipmentValue { get; private set; } = 10000;
@@ -138,6 +147,40 @@ internal static class CrpgServerConfiguration
         FrozenBots = frozenBots;
         Debug.Print($"Set team balance once to {frozenBots}");
     }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_low_pop_gamemode", "Sets the gamemode for low population")]
+    private static void SetLowPopulationGamemode(string? lowPopGamemodeString)
+    {
+        LowPopulationGameMode = lowPopGamemodeString;
+        Debug.Print($"Setting low population gamemode: {LowPopulationGameMode}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_high_pop_gamemode", "Sets the gamemode for high population")]
+    private static void SetHighPopulationGamemode(string? highPopGamemodeString)
+    {
+        HighPopulationGameMode = highPopGamemodeString;
+        Debug.Print($"Setting high population gamemode: {HighPopulationGameMode}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_low_pop_gamemode_max_playercount", "Sets the maximum players for low population gamemode")]
+    private static void SetLowPopulationGamemodeMaxPlayerCount(string? lowPopGamemodeCountString)
+    {
+        if (lowPopGamemodeCountString == null ||
+        !int.TryParse(lowPopGamemodeCountString, out int lowPopMaxPlayerCount)
+        || lowPopMaxPlayerCount < 0
+        || lowPopMaxPlayerCount > 256)
+        {
+            Debug.Print($"Invalid playercount: {lowPopGamemodeCountString}");
+            return;
+        }
+
+        LowPopulationGameModeMaxPlayerCount = lowPopMaxPlayerCount;
+        Debug.Print($"Setting low population max player count: {LowPopulationGameModeMaxPlayerCount}");
+    }
+
     [UsedImplicitly]
     [ConsoleCommandMethod("crpg_happy_hours", "Sets the happy hours. Format: HH:MM-HH:MM,TZ")]
     private static void SetHappyHours(string? happHoursStr)

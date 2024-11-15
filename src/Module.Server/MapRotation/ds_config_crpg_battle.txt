@@ -28,3 +28,4 @@ set_automated_battle_count -1
 enable_automated_battle_switching
 crpg_frozen_bots False
 crpg_apply_harmony_patches
+

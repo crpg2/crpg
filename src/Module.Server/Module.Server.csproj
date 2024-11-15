@@ -28,7 +28,7 @@
     <Reference Include="$(MB_SERVER_PATH)\bin\Win64_Shipping_Server\TaleWorlds.*.dll">
       <Private>False</Private>
     </Reference>
-
+    
 
     <Reference Include="$(MB_SERVER_PATH)\bin\Win64_Shipping_Server\Newtonsoft.Json.dll">
       <Private>False</Private>

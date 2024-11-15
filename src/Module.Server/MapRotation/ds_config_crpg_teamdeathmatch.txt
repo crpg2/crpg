@@ -1,4 +1,4 @@
-ServerName cRPG Test
+ServerName cRPG Team Deathmatch
 GameType cRPGTeamDeathmatch
 GamePassword yoyo
 AllowPollsToKickPlayers True
@@ -27,3 +27,4 @@ start_game
 set_automated_battle_count -1
 enable_automated_battle_switching
 crpg_apply_harmony_patches
+
