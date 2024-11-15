@@ -7,8 +7,6 @@ namespace Crpg.Module.Modes.Siege;
 
 internal class CrpgSiegeSpawningBehavior : CrpgSpawningBehaviorBase
 {
-    private float _timeSinceSpawnEnabled;
-
     public CrpgSiegeSpawningBehavior(CrpgConstants constants)
         : base(constants)
     {

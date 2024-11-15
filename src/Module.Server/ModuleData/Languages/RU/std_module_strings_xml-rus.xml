@@ -89,6 +89,7 @@
     <string id="C7TYZ8s0" text="Вы не можете отдавать приказы когда мертвы!" />
     <string id="uRmpZM0q" text="Подождите {COOLDOWN} секунд для отдачи нового приказа!" />
     <string id="7WDWLbpV" text="Ты не Командир!" />
+    <string id="l81jAS1c" text="Вы возродитесь через {TIME} {?PLURAL}секунд!{?}секунду!{\?}" />
 
     <!-- Notifications -->
     <string id="pCIKeing" text="Вы будете удалены за бездействие через {SECONDS} секунд!" />

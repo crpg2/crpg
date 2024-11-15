@@ -1,0 +1,20 @@
+﻿<Prefab>
+  <Constants>
+  </Constants>
+  <Window>
+
+    <ListPanel WidthSizePolicy="CoverChildren"
+               HeightSizePolicy="CoverChildren"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Bottom"
+               MarginBottom="55">
+      <Children>
+        <ListPanel IsVisible="@IsVisible" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Left" StackLayout.LayoutMethod="HorizontalLeftToRight">
+          <Children>
+            <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginRight="10" MarginTop="5" Brush="MPHUD.CountdownText" Brush.FontSize="24" Text="@RespawnText" />
+          </Children>
+        </ListPanel>
+      </Children>
+    </ListPanel>
+  </Window>
+</Prefab>

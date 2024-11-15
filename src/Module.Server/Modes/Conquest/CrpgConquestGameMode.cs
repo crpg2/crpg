@@ -60,6 +60,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMissionScoreBoardUIHandler(mission, false),
             MultiplayerViewCreator.CreateMultiplayerEndOfBattleUIHandler(),
             MultiplayerViewCreator.CreatePollProgressUIHandler(),
+            new CrpgRespawnTimerUiHandler(),
             new CommanderPollingProgressUiHandler(),
             new MissionItemContourControllerView(), // Draw contour of item on the ground when pressing ALT.
             new MissionAgentContourControllerView(),
@@ -89,10 +90,12 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
 #if CRPG_SERVER
         ICrpgClient crpgClient = CrpgClient.Create();
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
+        CrpgSiegeSpawningBehavior spawnBehavior = new(_constants);
         CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent,
             () => (new SiegeSpawnFrameBehavior(), new CrpgSiegeSpawningBehavior(_constants)));
         CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, null, MultiplayerGameType.Siege);
         CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: false);
+        CrpgConquestServer conquestServer = new(scoreboardComponent, rewardServer);
 #else
         CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, null);
         CrpgTeamSelectClientComponent teamSelectComponent = new();
@@ -108,11 +111,11 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 // Shit that need to stay because BL code is extremely coupled to the visual spawning.
                 new MultiplayerMissionAgentVisualSpawnComponent(),
                 new CrpgCommanderBehaviorClient(),
+                new CrpgRespawnTimerClient(),
 #endif
                 warmupComponent,
                 new CrpgConquestClient(),
                 new MultiplayerTimerComponent(),
-                new SpawnComponent(new SiegeSpawnFrameBehavior(), new CrpgSiegeSpawningBehavior(_constants)),
                 teamSelectComponent,
                 new MissionHardBorderPlacer(),
                 new MissionBoundaryPlacer(),
@@ -131,8 +134,9 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 new MissionLobbyEquipmentNetworkComponent(),
 
 #if CRPG_SERVER
-                new CrpgConquestServer(scoreboardComponent, rewardServer),
+                conquestServer,
                 rewardServer,
+                new SpawnComponent(new SiegeSpawnFrameBehavior(), spawnBehavior),
                 new CrpgUserManagerServer(crpgClient, _constants),
                 new KickInactiveBehavior(inactiveTimeLimit: 90, warmupComponent),
                 new MapPoolComponent(),
@@ -143,6 +147,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 new DrowningBehavior(),
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
                 new CrpgCommanderBehaviorServer(),
+                new CrpgRespawnTimerServer(conquestServer, spawnBehavior),
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),

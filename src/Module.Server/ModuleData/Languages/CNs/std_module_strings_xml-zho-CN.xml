@@ -89,6 +89,7 @@
     <string id="C7TYZ8s0" text="你无法在死亡状态下下达命令！" />
     <string id="uRmpZM0q" text="请等待 {COOLDOWN} 秒再发出新的命令！" />
     <string id="7WDWLbpV" text="你不是指挥官！" />
+    <string id="l81jAS1c" text="您将在 {TIME} 秒后重生！" />
 
     <!-- Notifications -->
     <string id="pCIKeing" text="你将在 {SECONDS} 秒后因长时间不活动而被移除！" />

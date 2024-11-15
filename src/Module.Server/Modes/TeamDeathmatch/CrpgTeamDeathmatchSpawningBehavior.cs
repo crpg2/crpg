@@ -8,7 +8,6 @@ namespace Crpg.Module.Modes.TeamDeathmatch;
 
 internal class CrpgTeamDeathmatchSpawningBehavior : CrpgSpawningBehaviorBase
 {
-    private float _timeSinceSpawnEnabled;
     public CrpgTeamDeathmatchSpawningBehavior(CrpgConstants constants)
         : base(constants)
     {
