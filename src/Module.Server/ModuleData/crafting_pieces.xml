@@ -34012,7 +34012,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_greatlongaxe_blade_h0" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.16">
+  <CraftingPiece id="crpg_greatlongaxe_blade_h0" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.40">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Blunt" damage_factor="2.0" />
@@ -34027,7 +34027,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_greatlongaxe_blade_h1" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.16">
+  <CraftingPiece id="crpg_greatlongaxe_blade_h1" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.40">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Blunt" damage_factor="2.0" />
@@ -34042,7 +34042,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_greatlongaxe_blade_h2" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.16">
+  <CraftingPiece id="crpg_greatlongaxe_blade_h2" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.40">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Blunt" damage_factor="2.2" />
@@ -34057,7 +34057,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_greatlongaxe_blade_h3" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.16">
+  <CraftingPiece id="crpg_greatlongaxe_blade_h3" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.40">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Blunt" damage_factor="2.2" />
@@ -34072,28 +34072,28 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_greatlongaxe_handle_h0" name="{=Salt}Great Long Axe Handle" tier="5" piece_type="Handle" mesh="long_greataxe_handle" length="129" weight="2.0" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_greatlongaxe_handle_h0" name="{=Salt}Great Long Axe Handle" tier="5" piece_type="Handle" mesh="long_greataxe_handle" length="129" weight="0.9" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="28" next_piece_offset="12.0" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_greatlongaxe_handle_h1" name="{=Salt}Great Long Axe Handle" tier="5" piece_type="Handle" mesh="long_greataxe_handle" length="129" weight="1.9" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_greatlongaxe_handle_h1" name="{=Salt}Great Long Axe Handle" tier="5" piece_type="Handle" mesh="long_greataxe_handle" length="129" weight="0.85" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="28" next_piece_offset="12.0" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_greatlongaxe_handle_h2" name="{=Salt}Great Long Axe Handle" tier="5" piece_type="Handle" mesh="long_greataxe_handle" length="129" weight="1.9" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_greatlongaxe_handle_h2" name="{=Salt}Great Long Axe Handle" tier="5" piece_type="Handle" mesh="long_greataxe_handle" length="129" weight="0.8" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="28" next_piece_offset="12.0" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_greatlongaxe_handle_h3" name="{=Salt}Great Long Axe Handle" tier="5" piece_type="Handle" mesh="long_greataxe_handle" length="129" weight="1.8" item_holster_pos_shift="0,0,-0.1">
+  <CraftingPiece id="crpg_greatlongaxe_handle_h3" name="{=Salt}Great Long Axe Handle" tier="5" piece_type="Handle" mesh="long_greataxe_handle" length="129" weight="0.7" item_holster_pos_shift="0,0,-0.1">
     <BuildData piece_offset="28" next_piece_offset="12.0" />
     <Materials>
       <Material id="Wood" count="1" />

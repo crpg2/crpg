@@ -13460,25 +13460,25 @@
       <Piece id="crpg_karabela_pommel_h3" Type="Pommel" scale_factor="95" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_greatlongaxe_h0" name="{=Salt}Great Long Axe" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
+  <CraftedItem id="crpg_greatlongaxe_v1_h0" name="{=Salt}Great Long Axe" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_greatlongaxe_blade_h0" Type="Blade" scale_factor="125" />
       <Piece id="crpg_greatlongaxe_handle_h0" Type="Handle" scale_factor="165" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_greatlongaxe_h1" name="{=Salt}Great Long Axe +1" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
+  <CraftedItem id="crpg_greatlongaxe_v1_h1" name="{=Salt}Great Long Axe +1" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_greatlongaxe_blade_h1" Type="Blade" scale_factor="125" />
       <Piece id="crpg_greatlongaxe_handle_h1" Type="Handle" scale_factor="165" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_greatlongaxe_h2" name="{=Salt}Great Long Axe +2" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
+  <CraftedItem id="crpg_greatlongaxe_v1_h2" name="{=Salt}Great Long Axe +2" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_greatlongaxe_blade_h2" Type="Blade" scale_factor="125" />
       <Piece id="crpg_greatlongaxe_handle_h2" Type="Handle" scale_factor="165" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_greatlongaxe_h3" name="{=Salt}Great Long Axe +3" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
+  <CraftedItem id="crpg_greatlongaxe_v1_h3" name="{=Salt}Great Long Axe +3" crafting_template="crpg_TwoHandedPolearm" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_greatlongaxe_blade_h3" Type="Blade" scale_factor="125" />
       <Piece id="crpg_greatlongaxe_handle_h3" Type="Handle" scale_factor="165" />
