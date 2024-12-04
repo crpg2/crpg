@@ -1861,6 +1861,22 @@
       <AvailablePiece id="crpg_strangearmingsword_pommel_h1" />
       <AvailablePiece id="crpg_strangearmingsword_pommel_h2" />
       <AvailablePiece id="crpg_strangearmingsword_pommel_h3" />
+      <AvailablePiece id="crpg_onehand_langes_messer_blade_h0" />
+      <AvailablePiece id="crpg_onehand_langes_messer_blade_h1" />
+      <AvailablePiece id="crpg_onehand_langes_messer_blade_h2" />
+      <AvailablePiece id="crpg_onehand_langes_messer_blade_h3" />
+      <AvailablePiece id="crpg_onehand_langes_messer_guard_h0" />
+      <AvailablePiece id="crpg_onehand_langes_messer_guard_h1" />
+      <AvailablePiece id="crpg_onehand_langes_messer_guard_h2" />
+      <AvailablePiece id="crpg_onehand_langes_messer_guard_h3" />
+      <AvailablePiece id="crpg_onehand_langes_messer_handle_h0" />
+      <AvailablePiece id="crpg_onehand_langes_messer_handle_h1" />
+      <AvailablePiece id="crpg_onehand_langes_messer_handle_h2" />
+      <AvailablePiece id="crpg_onehand_langes_messer_handle_h3" />
+      <AvailablePiece id="crpg_onehand_langes_messer_pommel_h0" />
+      <AvailablePiece id="crpg_onehand_langes_messer_pommel_h1" />
+      <AvailablePiece id="crpg_onehand_langes_messer_pommel_h2" />
+      <AvailablePiece id="crpg_onehand_langes_messer_pommel_h3" />
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_OneHandedBastardSword" weapon_class="OneHandedSword" item_usage_features="onehanded:block:rshield:swing:thrust">
@@ -2796,22 +2812,6 @@
       <AvailablePiece id="crpg_northlander_wide_fullered_greatsword_pommel_h1" />
       <AvailablePiece id="crpg_northlander_wide_fullered_greatsword_pommel_h2" />
       <AvailablePiece id="crpg_northlander_wide_fullered_greatsword_pommel_h3" />
-      <AvailablePiece id="crpg_langes_messer_blade_h0" />
-      <AvailablePiece id="crpg_langes_messer_blade_h1" />
-      <AvailablePiece id="crpg_langes_messer_blade_h2" />
-      <AvailablePiece id="crpg_langes_messer_blade_h3" />
-      <AvailablePiece id="crpg_langes_messer_guard_h0" />
-      <AvailablePiece id="crpg_langes_messer_guard_h1" />
-      <AvailablePiece id="crpg_langes_messer_guard_h2" />
-      <AvailablePiece id="crpg_langes_messer_guard_h3" />
-      <AvailablePiece id="crpg_langes_messer_handle_h0" />
-      <AvailablePiece id="crpg_langes_messer_handle_h1" />
-      <AvailablePiece id="crpg_langes_messer_handle_h2" />
-      <AvailablePiece id="crpg_langes_messer_handle_h3" />
-      <AvailablePiece id="crpg_langes_messer_pommel_h0" />
-      <AvailablePiece id="crpg_langes_messer_pommel_h1" />
-      <AvailablePiece id="crpg_langes_messer_pommel_h2" />
-      <AvailablePiece id="crpg_langes_messer_pommel_h3" />
       <AvailablePiece id="crpg_ancientlongsword_blade_h0" />
       <AvailablePiece id="crpg_ancientlongsword_blade_h1" />
       <AvailablePiece id="crpg_ancientlongsword_blade_h2" />
@@ -3731,22 +3731,6 @@
       <AvailablePiece id="crpg_longsword_pommel_h1" />
       <AvailablePiece id="crpg_longsword_pommel_h2" />
       <AvailablePiece id="crpg_longsword_pommel_h3" />
-      <AvailablePiece id="crpg_langes_messer_blade_h0" />
-      <AvailablePiece id="crpg_langes_messer_blade_h1" />
-      <AvailablePiece id="crpg_langes_messer_blade_h2" />
-      <AvailablePiece id="crpg_langes_messer_blade_h3" />
-      <AvailablePiece id="crpg_langes_messer_guard_h0" />
-      <AvailablePiece id="crpg_langes_messer_guard_h1" />
-      <AvailablePiece id="crpg_langes_messer_guard_h2" />
-      <AvailablePiece id="crpg_langes_messer_guard_h3" />
-      <AvailablePiece id="crpg_langes_messer_handle_h0" />
-      <AvailablePiece id="crpg_langes_messer_handle_h1" />
-      <AvailablePiece id="crpg_langes_messer_handle_h2" />
-      <AvailablePiece id="crpg_langes_messer_handle_h3" />
-      <AvailablePiece id="crpg_langes_messer_pommel_h0" />
-      <AvailablePiece id="crpg_langes_messer_pommel_h1" />
-      <AvailablePiece id="crpg_langes_messer_pommel_h2" />
-      <AvailablePiece id="crpg_langes_messer_pommel_h3" />
       <AvailablePiece id="crpg_ancientlongsword_blade_h0" />
       <AvailablePiece id="crpg_ancientlongsword_blade_h1" />
       <AvailablePiece id="crpg_ancientlongsword_blade_h2" />
@@ -10105,6 +10089,22 @@
       <AvailablePiece id="crpg_swiss_halberd_pommel_h1" />
       <AvailablePiece id="crpg_swiss_halberd_pommel_h2" />
       <AvailablePiece id="crpg_swiss_halberd_pommel_h3" />
+      <AvailablePiece id="crpg_pole_zweihander_blade_h0" />
+      <AvailablePiece id="crpg_pole_zweihander_blade_h1" />
+      <AvailablePiece id="crpg_pole_zweihander_blade_h2" />
+      <AvailablePiece id="crpg_pole_zweihander_blade_h3" />
+      <AvailablePiece id="crpg_pole_zweihander_handle_h0" />
+      <AvailablePiece id="crpg_pole_zweihander_handle_h1" />
+      <AvailablePiece id="crpg_pole_zweihander_handle_h2" />
+      <AvailablePiece id="crpg_pole_zweihander_handle_h3" />
+      <AvailablePiece id="crpg_pole_zweihander_guard_h0" />
+      <AvailablePiece id="crpg_pole_zweihander_guard_h1" />
+      <AvailablePiece id="crpg_pole_zweihander_guard_h2" />
+      <AvailablePiece id="crpg_pole_zweihander_guard_h3" />
+      <AvailablePiece id="crpg_pole_zweihander_pommel_h0" />
+      <AvailablePiece id="crpg_pole_zweihander_pommel_h1" />
+      <AvailablePiece id="crpg_pole_zweihander_pommel_h2" />
+      <AvailablePiece id="crpg_pole_zweihander_pommel_h3" />
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_SpearDoubleThrust" weapon_class="TwoHandedPolearm" item_usage_features="polearm:block:long:shield:thrust">
