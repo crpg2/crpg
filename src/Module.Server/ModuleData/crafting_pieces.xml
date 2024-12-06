@@ -35352,4 +35352,80 @@
   <CraftingPiece id="crpg_horsemansaxe2_pommel_h3" name="{=}Horseman's Axe Pommel" tier="4" piece_type="Pommel" mesh="horsemans_axe_pommel" culture="Culture.battania" length="6.85" weight="0.7">
     <BuildData next_piece_offset="0" />
   </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_blade_h0" name="{=}Saxon Sword Blade" tier="4" piece_type="Blade" mesh="cts_saxon_sword_blade" culture="Culture.battania" length="74" weight="0.75">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="cts_saxon_sword_scabard" holster_mesh_length="101">
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_blade_h1" name="{=}Saxon Sword Blade" tier="4" piece_type="Blade" mesh="cts_saxon_sword_blade" culture="Culture.battania" length="74" weight="0.75">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="cts_saxon_sword_scabard" holster_mesh_length="101">
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_blade_h2" name="{=}Saxon Sword Blade" tier="4" piece_type="Blade" mesh="cts_saxon_sword_blade" culture="Culture.battania" length="74" weight="0.75">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="cts_saxon_sword_scabard" holster_mesh_length="101">
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_blade_h3" name="{=}Saxon Sword Blade" tier="4" piece_type="Blade" mesh="cts_saxon_sword_blade" culture="Culture.battania" length="74" weight="0.75">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="cts_saxon_sword_scabard" holster_mesh_length="101">
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_pommel_h0" name="{=}Saxon Sword Pommel" tier="4" piece_type="Pommel" mesh="cts_saxon_sword_pommel" full_scale="false" culture="Culture.battania" length="5.4" weight="0.5">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_pommel_h1" name="{=}Saxon Sword Pommel" tier="4" piece_type="Pommel" mesh="cts_saxon_sword_pommel" full_scale="false" culture="Culture.battania" length="5.4" weight="0.5">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_pommel_h2" name="{=}Saxon Sword Pommel" tier="4" piece_type="Pommel" mesh="cts_saxon_sword_pommel" full_scale="false" culture="Culture.battania" length="5.4" weight="0.5">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_pommel_h3" name="{=}Saxon Sword Pommel" tier="4" piece_type="Pommel" mesh="cts_saxon_sword_pommel" full_scale="false" culture="Culture.battania" length="5.4" weight="0.4">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_guard_h0" name="{=}Saxon Sword Guard" tier="5" piece_type="Guard" mesh="cts_saxon_sword_guard" full_scale="false" culture="Culture.battania" length="4.16" weight="0.5">
+    <BuildData next_piece_offset="2" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_guard_h1" name="{=}Saxon Sword Guard" tier="5" piece_type="Guard" mesh="cts_saxon_sword_guard" full_scale="false" culture="Culture.battania" length="4.16" weight="0.5">
+    <BuildData next_piece_offset="2" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_guard_h2" name="{=}Saxon Sword Guard" tier="5" piece_type="Guard" mesh="cts_saxon_sword_guard" full_scale="false" culture="Culture.battania" length="4.16" weight="0.5">
+    <BuildData next_piece_offset="2" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_guard_h3" name="{=}Saxon Sword Guard" tier="5" piece_type="Guard" mesh="cts_saxon_sword_guard" full_scale="false" culture="Culture.battania" length="4.16" weight="0.5">
+    <BuildData next_piece_offset="2" />
+    <StatContributions armor_bonus="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_handle_h0" name="{=}Saxon Sword Handle" tier="3" piece_type="Handle" mesh="cts_saxon_sword_handle" full_scale="false" culture="Culture.khuzait" length="14" weight="0.5">
+    <BuildData piece_offset="0" previous_piece_offset="1" next_piece_offset="2" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_handle_h1" name="{=}Saxon Sword Handle" tier="3" piece_type="Handle" mesh="cts_saxon_sword_handle" full_scale="false" culture="Culture.khuzait" length="14" weight="0.5">
+    <BuildData piece_offset="0" previous_piece_offset="1" next_piece_offset="2" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_handle_h2" name="{=}Saxon Sword Handle" tier="3" piece_type="Handle" mesh="cts_saxon_sword_handle" full_scale="false" culture="Culture.khuzait" length="14" weight="0.5">
+    <BuildData piece_offset="0" previous_piece_offset="1" next_piece_offset="2" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_cts_saxon_sword_handle_h3" name="{=}Saxon Sword Handle" tier="3" piece_type="Handle" mesh="cts_saxon_sword_handle" full_scale="false" culture="Culture.khuzait" length="14" weight="0.5">
+    <BuildData piece_offset="0" previous_piece_offset="1" next_piece_offset="2" />
+  </CraftingPiece>
 </CraftingPieces>

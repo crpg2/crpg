@@ -13932,4 +13932,36 @@
       <Piece id="crpg_horsemansaxe2_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_cts_saxon_sword_h0" name="{=Salt}Saxon Sword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_cts_saxon_sword_blade_h0" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_cts_saxon_sword_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_cts_saxon_sword_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_cts_saxon_sword_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_cts_saxon_sword_h1" name="{=Salt}Saxon Sword +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_cts_saxon_sword_blade_h1" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_cts_saxon_sword_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_cts_saxon_sword_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_cts_saxon_sword_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_cts_saxon_sword_h2" name="{=Salt}Saxon Sword +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_cts_saxon_sword_blade_h2" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_cts_saxon_sword_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_cts_saxon_sword_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_cts_saxon_sword_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_cts_saxon_sword_h3" name="{=Salt}Saxon Sword +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_cts_saxon_sword_blade_h3" Type="Blade" scale_factor="125" />
+      <Piece id="crpg_cts_saxon_sword_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_cts_saxon_sword_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_cts_saxon_sword_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
 </Items>
