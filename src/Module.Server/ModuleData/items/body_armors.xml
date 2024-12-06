@@ -7872,4 +7872,28 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
+  <Item id="crpg_be_rome_muscles_h0" name="{=Yeldur}Lorica Musculata" mesh="be_rome_muscles" culture="Culture.looters" weight="8.333118" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="40" leg_armor="5" arm_armor="5" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="false" />
+  </Item>
+  <Item id="crpg_be_rome_muscles_h1" name="{=Yeldur}Lorica Musculata +1" mesh="be_rome_muscles" culture="Culture.looters" weight="8.333118" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="42" leg_armor="6" arm_armor="6" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="false" />
+  </Item>
+  <Item id="crpg_be_rome_muscles_h2" name="{=Yeldur}Lorica Musculata +2" mesh="be_rome_muscles" culture="Culture.looters" weight="8.333118" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="44" leg_armor="7" arm_armor="7" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="false" />
+  </Item>
+  <Item id="crpg_be_rome_muscles_h3" name="{=Yeldur}Lorica Musculata +3" mesh="be_rome_muscles" culture="Culture.looters" weight="8.333118" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="false" />
+  </Item>
 </Items>
