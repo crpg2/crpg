@@ -424,7 +424,7 @@
       <Piece id="crpg_red_katana_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <Item id="snowball_v3_h0" name="Snowball" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
+  <Item id="crpg_disabled_snowball_v3_h0" name="Snowball" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
     <ItemComponent>
       <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="10" physics_material="missile" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="10" thrust_damage="8" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
         <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
@@ -432,7 +432,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="snowball_v3_h1" name="Snowball +1" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
+  <Item id="crpg_disabled_snowball_v3_h1" name="Snowball +1" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
     <ItemComponent>
       <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="10" physics_material="missile" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="10" thrust_damage="8" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
         <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
@@ -440,7 +440,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="snowball_v3_h2" name="Snowball +2" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
+  <Item id="crpg_disabled_snowball_v3_h2" name="Snowball +2" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
     <ItemComponent>
       <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="10" physics_material="missile" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="10" thrust_damage="8" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
         <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
@@ -448,7 +448,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="snowball_v3_h3" name="Snowball +3" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
+  <Item id="crpg_disabled_snowball_v3_h3" name="Snowball +3" is_merchandise="false" body_name="bo_throwing_stone" holster_body_name="bo_axe_short" holster_mesh="snowball_holster" holster_mesh_with_weapon="snowball_holster" mesh="snowball" weight="0.1" appearance="0.1" Type="Thrown" item_holsters="sword_back">
     <ItemComponent>
       <Weapon weapon_class="Stone" ammo_class="Stone" stack_amount="10" physics_material="missile" accuracy="100" thrust_speed="102" speed_rating="102" missile_speed="40" weapon_length="10" thrust_damage="8" item_usage="stone" rotation="100,30,20" passby_sound_code="" rotation_speed="0, -3.0, 0">
         <WeaponFlags RangedWeapon="true" Consumable="true" AutoReload="true" UnloadWhenSheathed="true" UseHandAsThrowBase="true" />
@@ -13004,7 +13004,7 @@
       <Piece id="crpg_joustinglance_striped_ry_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_pole_v1_h0" name="{=BalanceMe}Candycane Polearm" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_disabled_candycane_pole_v1_h0" name="{=BalanceMe}Candycane Polearm" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_candycane_pole_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_pole_handle_h0" Type="Handle" scale_factor="100" />
@@ -13012,7 +13012,7 @@
       <Piece id="crpg_candycane_pole_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_pole_v1_h1" name="{=BalanceMe}Candycane Polearm +1" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_disabled_candycane_pole_v1_h1" name="{=BalanceMe}Candycane Polearm +1" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_candycane_pole_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_pole_handle_h1" Type="Handle" scale_factor="100" />
@@ -13020,7 +13020,7 @@
       <Piece id="crpg_candycane_pole_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_pole_v1_h2" name="{=BalanceMe}Candycane Polearm +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_disabled_candycane_pole_v1_h2" name="{=BalanceMe}Candycane Polearm +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_candycane_pole_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_pole_handle_h2" Type="Handle" scale_factor="100" />
@@ -13028,7 +13028,7 @@
       <Piece id="crpg_candycane_pole_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_pole_v1_h3" name="{=BalanceMe}Candycane Polearm +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_disabled_candycane_pole_v1_h3" name="{=BalanceMe}Candycane Polearm +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_candycane_pole_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_pole_handle_h3" Type="Handle" scale_factor="100" />
@@ -13036,7 +13036,7 @@
       <Piece id="crpg_candycane_pole_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_2h_h0" name="{=BalanceMe}Candycane Twohanded Mace" crafting_template="crpg_TwoHandedMace">
+  <CraftedItem id="crpg_disabled_candycane_2h_h0" name="{=BalanceMe}Candycane Twohanded Mace" crafting_template="crpg_TwoHandedMace">
     <Pieces>
       <Piece id="crpg_candycane_2h_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_2h_handle_h0" Type="Handle" scale_factor="100" />
@@ -13044,7 +13044,7 @@
       <Piece id="crpg_candycane_2h_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_2h_h1" name="{=BalanceMe}Candycane Twohanded Mace +1" crafting_template="crpg_TwoHandedMace">
+  <CraftedItem id="crpg_disabled_candycane_2h_h1" name="{=BalanceMe}Candycane Twohanded Mace +1" crafting_template="crpg_TwoHandedMace">
     <Pieces>
       <Piece id="crpg_candycane_2h_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_2h_handle_h1" Type="Handle" scale_factor="100" />
@@ -13052,7 +13052,7 @@
       <Piece id="crpg_candycane_2h_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_2h_h2" name="{=BalanceMe}Candycane Twohanded Mace +2" crafting_template="crpg_TwoHandedMace">
+  <CraftedItem id="crpg_disabled_candycane_2h_h2" name="{=BalanceMe}Candycane Twohanded Mace +2" crafting_template="crpg_TwoHandedMace">
     <Pieces>
       <Piece id="crpg_candycane_2h_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_2h_handle_h2" Type="Handle" scale_factor="100" />
@@ -13060,7 +13060,7 @@
       <Piece id="crpg_candycane_2h_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_2h_h3" name="{=BalanceMe}Candycane Twohanded Mace +3" crafting_template="crpg_TwoHandedMace">
+  <CraftedItem id="crpg_disabled_candycane_2h_h3" name="{=BalanceMe}Candycane Twohanded Mace +3" crafting_template="crpg_TwoHandedMace">
     <Pieces>
       <Piece id="crpg_candycane_2h_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_2h_handle_h3" Type="Handle" scale_factor="100" />
@@ -13068,7 +13068,7 @@
       <Piece id="crpg_candycane_2h_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_1h_h0" name="{=BalanceMe}Candycane Onehanded Mace" crafting_template="crpg_Mace">
+  <CraftedItem id="crpg_disabled_candycane_1h_h0" name="{=BalanceMe}Candycane Onehanded Mace" crafting_template="crpg_Mace">
     <Pieces>
       <Piece id="crpg_candycane_1h_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_1h_handle_h0" Type="Handle" scale_factor="100" />
@@ -13076,7 +13076,7 @@
       <Piece id="crpg_candycane_1h_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_1h_h1" name="{=BalanceMe}Candycane Onehanded Mace +1" crafting_template="crpg_Mace">
+  <CraftedItem id="crpg_disabled_candycane_1h_h1" name="{=BalanceMe}Candycane Onehanded Mace +1" crafting_template="crpg_Mace">
     <Pieces>
       <Piece id="crpg_candycane_1h_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_1h_handle_h1" Type="Handle" scale_factor="100" />
@@ -13084,7 +13084,7 @@
       <Piece id="crpg_candycane_1h_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_1h_h2" name="{=BalanceMe}Candycane Onehanded Mace +2" crafting_template="crpg_Mace">
+  <CraftedItem id="crpg_disabled_candycane_1h_h2" name="{=BalanceMe}Candycane Onehanded Mace +2" crafting_template="crpg_Mace">
     <Pieces>
       <Piece id="crpg_candycane_1h_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_1h_handle_h2" Type="Handle" scale_factor="100" />
@@ -13092,7 +13092,7 @@
       <Piece id="crpg_candycane_1h_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="candycane_1h_h3" name="{=BalanceMe}Candycane Onehanded Mace +3" crafting_template="crpg_Mace">
+  <CraftedItem id="crpg_disabled_candycane_1h_h3" name="{=BalanceMe}Candycane Onehanded Mace +3" crafting_template="crpg_Mace">
     <Pieces>
       <Piece id="crpg_candycane_1h_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_candycane_1h_handle_h3" Type="Handle" scale_factor="100" />
