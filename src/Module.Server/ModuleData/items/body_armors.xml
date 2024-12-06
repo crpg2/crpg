@@ -7896,4 +7896,28 @@
     </ItemComponent>
     <Flags Civilian="false" />
   </Item>
+  <Item id="crpg_cts_saxon_tunic_h0" name="{=Salt}Sutton Tunic" mesh="cts_saxon_tunic" culture="Culture.looters" weight="15.30279" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="10" arm_armor="24" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_cts_saxon_tunic_h1" name="{=Salt}Sutton Tunic +1" mesh="cts_saxon_tunic" culture="Culture.looters" weight="15.30279" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="11" arm_armor="25" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_cts_saxon_tunic_h2" name="{=Salt}Sutton Tunic +2" mesh="cts_saxon_tunic" culture="Culture.looters" weight="15.30279" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="12" arm_armor="26" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_cts_saxon_tunic_h3" name="{=Salt}Sutton Tunic +3" mesh="cts_saxon_tunic" culture="Culture.looters" weight="15.30279" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="13" arm_armor="27" covers_body="true" modifier_group="Chainmail" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
 </Items>

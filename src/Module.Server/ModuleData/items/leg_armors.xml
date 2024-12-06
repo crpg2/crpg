@@ -1392,4 +1392,28 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
+  <Item id="crpg_cts_saxon_boots_h0" name="{=BalanceMe}Sutton Boots" mesh="saxon_boot" culture="Culture.battania" weight="0.2124143" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="5" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_cts_saxon_boots_h1" name="{=BalanceMe}Sutton Boots +1" mesh="saxon_boot" culture="Culture.battania" weight="0.2124143" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="6" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_cts_saxon_boots_h2" name="{=BalanceMe}Sutton Boots +2" mesh="saxon_boot" culture="Culture.battania" weight="0.2124143" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="8" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_cts_saxon_boots_h3" name="{=BalanceMe}Sutton Boots +3" mesh="saxon_boot" culture="Culture.battania" weight="0.2124143" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="10" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
 </Items>

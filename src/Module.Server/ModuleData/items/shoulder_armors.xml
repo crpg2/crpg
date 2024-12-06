@@ -2880,4 +2880,28 @@
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
+  <Item id="crpg_cts_saxon_cape_h0" name="{=Salt}Sutton Cape" mesh="cts_saxon_cape" is_merchandise="true" culture="Culture.vlandia" weight="0.8477576" appearance="2" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="5" arm_armor="5" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_cts_saxon_cape_h1" name="{=Salt}Sutton Cape +1" mesh="cts_saxon_cape" is_merchandise="true" culture="Culture.vlandia" weight="0.8477576" appearance="2" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="7" arm_armor="5" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_cts_saxon_cape_h2" name="{=Salt}Sutton Cape +2" mesh="cts_saxon_cape" is_merchandise="true" culture="Culture.vlandia" weight="0.8477576" appearance="2" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="8" arm_armor="5" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_cts_saxon_cape_h3" name="{=Salt}Sutton Cape +3" mesh="cts_saxon_cape" is_merchandise="true" culture="Culture.vlandia" weight="0.8477576" appearance="2" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="9" arm_armor="6" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>

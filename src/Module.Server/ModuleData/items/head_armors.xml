@@ -9240,4 +9240,28 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_cts_saxon_helmet_h0" name="{=Salt}Sutton Helmet" subtype="head_armor" mesh="cts_saxon_helmet" culture="Culture.vlandia" weight="5.042735" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="55" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cts_saxon_helmet_h1" name="{=Salt}Sutton Helmet +1" subtype="head_armor" mesh="cts_saxon_helmet" culture="Culture.vlandia" weight="5.042735" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="57" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cts_saxon_helmet_h2" name="{=Salt}Sutton Helmet +2" subtype="head_armor" mesh="cts_saxon_helmet" culture="Culture.vlandia" weight="5.042735" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="59" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_cts_saxon_helmet_h3" name="{=Salt}Sutton Helmet +3" subtype="head_armor" mesh="cts_saxon_helmet" culture="Culture.vlandia" weight="5.042735" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="61" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
 </Items>
