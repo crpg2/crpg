@@ -2904,4 +2904,52 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_aa_flutedpauldrons_h0" name="{=AppleTruce}Fluted Pauldrons" mesh="aa_flutedpauldrons" culture="Culture.vlandia" weight="3.467257" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="16" modifier_group="plate" material_type="Plate" arm_armor="11" head_armor="0" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_flutedpauldrons_h1" name="{=AppleTruce}Fluted Pauldrons +1" mesh="aa_flutedpauldrons" culture="Culture.vlandia" weight="3.467257" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="18" modifier_group="plate" material_type="Plate" arm_armor="11" head_armor="0" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_flutedpauldrons_h2" name="{=AppleTruce}Fluted Pauldrons +2" mesh="aa_flutedpauldrons" culture="Culture.vlandia" weight="3.467257" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="19" modifier_group="plate" material_type="Plate" arm_armor="11" head_armor="0" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_flutedpauldrons_h3" name="{=AppleTruce}Fluted Pauldrons +3" mesh="aa_flutedpauldrons" culture="Culture.vlandia" weight="3.467257" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="20" modifier_group="plate" material_type="Plate" arm_armor="12" head_armor="0" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_flutedgorgetpauldrons_h0" name="{=AppleTruce}Fluted Pauldrons with Gorget" mesh="aa_flutedgorgetpauldrons" culture="Culture.vlandia" weight="4.02408" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="18" modifier_group="plate" material_type="Plate" arm_armor="8" head_armor="4" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_flutedgorgetpauldrons_h1" name="{=AppleTruce}Fluted Pauldrons with Gorget +1" mesh="aa_flutedgorgetpauldrons" culture="Culture.vlandia" weight="4.02408" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="20" modifier_group="plate" material_type="Plate" arm_armor="8" head_armor="4" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_flutedgorgetpauldrons_h2" name="{=AppleTruce}Fluted Pauldrons with Gorget +2" mesh="aa_flutedgorgetpauldrons" culture="Culture.vlandia" weight="4.02408" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="21" modifier_group="plate" material_type="Plate" arm_armor="8" head_armor="4" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_flutedgorgetpauldrons_h3" name="{=AppleTruce}Fluted Pauldrons with Gorget +3" mesh="aa_flutedgorgetpauldrons" culture="Culture.vlandia" weight="4.02408" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="22" modifier_group="plate" material_type="Plate" arm_armor="9" head_armor="4" />
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>
