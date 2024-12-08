@@ -32600,6 +32600,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -32613,6 +32614,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -32621,11 +32623,12 @@
   <CraftingPiece id="crpg_candycane_pole_blade_h2" name="Candycane Pole Blade" tier="3" piece_type="Blade" mesh="candycane_pole_head" culture="Culture.vlandia" length="16.8" weight="0.9">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Blunt" damage_factor="2.2" />
-      <Swing damage_type="Blunt" damage_factor="2.8" />
+      <Swing damage_type="Blunt" damage_factor="2.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -32634,99 +32637,108 @@
   <CraftingPiece id="crpg_candycane_pole_blade_h3" name="Candycane Pole Blade" tier="3" piece_type="Blade" mesh="candycane_pole_head" culture="Culture.vlandia" length="16.8" weight="0.9">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Blunt" damage_factor="2.2" />
-      <Swing damage_type="Blunt" damage_factor="3" />
+      <Swing damage_type="Blunt" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_handle_h0" name="Candycane Pole Handle" tier="2" piece_type="Handle" mesh="candycane_pole_handle" length="143" weight="1.5">
+  <CraftingPiece id="crpg_candycane_pole_handle_h0" name="Candycane Pole Handle" tier="2" piece_type="Handle" mesh="candycane_pole_handle" length="143" weight="0.9">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_handle_h1" name="Candycane Pole Handle" tier="2" piece_type="Handle" mesh="candycane_pole_handle" length="143" weight="1.5">
+  <CraftingPiece id="crpg_candycane_pole_handle_h1" name="Candycane Pole Handle" tier="2" piece_type="Handle" mesh="candycane_pole_handle" length="143" weight="0.9">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_handle_h2" name="Candycane Pole Handle" tier="2" piece_type="Handle" mesh="candycane_pole_handle" length="143" weight="1.5">
+  <CraftingPiece id="crpg_candycane_pole_handle_h2" name="Candycane Pole Handle" tier="2" piece_type="Handle" mesh="candycane_pole_handle" length="143" weight="0.9">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_handle_h3" name="Candycane Pole Handle" tier="2" piece_type="Handle" mesh="candycane_pole_handle" length="143" weight="1.5">
+  <CraftingPiece id="crpg_candycane_pole_handle_h3" name="Candycane Pole Handle" tier="2" piece_type="Handle" mesh="candycane_pole_handle" length="143" weight="0.8">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_pole_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_pole_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_pole_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_pole_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_pole_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_pole_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_pole_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_pole_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_pole_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_blade_h0" name="Candycane 2H Blade" tier="3" piece_type="Blade" mesh="candycane_2h_head" culture="Culture.vlandia" length="15.5" weight="0.9">
+  <CraftingPiece id="crpg_candycane_2h_blade_h0" name="Candycane 2H Blade" tier="3" piece_type="Blade" mesh="candycane_2h_head" culture="Culture.vlandia" length="15.5" weight="1.5">
+    <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanKnockDown" />
+      <Flag name="CanCrushThrough" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_candycane_2h_blade_h1" name="Candycane 2H Blade" tier="3" piece_type="Blade" mesh="candycane_2h_head" culture="Culture.vlandia" length="15.5" weight="1.5">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="2.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanKnockDown" />
+      <Flag name="CanCrushThrough" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_blade_h1" name="Candycane 2H Blade" tier="3" piece_type="Blade" mesh="candycane_2h_head" culture="Culture.vlandia" length="15.5" weight="0.9">
+  <CraftingPiece id="crpg_candycane_2h_blade_h2" name="Candycane 2H Blade" tier="3" piece_type="Blade" mesh="candycane_2h_head" culture="Culture.vlandia" length="15.5" weight="1.5">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="2.7" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanKnockDown" />
+      <Flag name="CanCrushThrough" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_blade_h2" name="Candycane 2H Blade" tier="3" piece_type="Blade" mesh="candycane_2h_head" culture="Culture.vlandia" length="15.5" weight="0.9">
+  <CraftingPiece id="crpg_candycane_2h_blade_h3" name="Candycane 2H Blade" tier="3" piece_type="Blade" mesh="candycane_2h_head" culture="Culture.vlandia" length="15.5" weight="1.5">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_mace_a">
       <Swing damage_type="Blunt" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_blade_h3" name="Candycane 2H Blade" tier="3" piece_type="Blade" mesh="candycane_2h_head" culture="Culture.vlandia" length="15.5" weight="0.9">
-    <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="2.9" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanKnockDown" />
+      <Flag name="CanCrushThrough" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -32756,26 +32768,26 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_2h_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.5" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_2h_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.5" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_2h_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.5" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_2h_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.5" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_2h_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.5" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_2h_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.5" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_2h_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.5" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_2h_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_2h_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.5" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_blade_h0" name="Candycane 1H Blade" tier="3" piece_type="Blade" mesh="candycane_1h_head" culture="Culture.vlandia" length="14.3" weight="0.7">
+  <CraftingPiece id="crpg_candycane_1h_blade_h0" name="Candycane 1H Blade" tier="3" piece_type="Blade" mesh="candycane_1h_head" culture="Culture.vlandia" length="14.3" weight="1.2">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Blunt" damage_factor="1.5" />
-      <Swing damage_type="Blunt" damage_factor="2.0" />
+      <Thrust damage_type="Blunt" damage_factor="1.8" />
+      <Swing damage_type="Blunt" damage_factor="2.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -32785,10 +32797,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_blade_h1" name="Candycane 1H Blade" tier="3" piece_type="Blade" mesh="candycane_1h_head" culture="Culture.vlandia" length="14.3" weight="0.7">
+  <CraftingPiece id="crpg_candycane_1h_blade_h1" name="Candycane 1H Blade" tier="3" piece_type="Blade" mesh="candycane_1h_head" culture="Culture.vlandia" length="14.3" weight="1.2">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Blunt" damage_factor="1.5" />
-      <Swing damage_type="Blunt" damage_factor="2.1" />
+      <Thrust damage_type="Blunt" damage_factor="1.8" />
+      <Swing damage_type="Blunt" damage_factor="2.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -32798,10 +32810,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_blade_h2" name="Candycane 1H Blade" tier="3" piece_type="Blade" mesh="candycane_1h_head" culture="Culture.vlandia" length="14.3" weight="0.7">
+  <CraftingPiece id="crpg_candycane_1h_blade_h2" name="Candycane 1H Blade" tier="3" piece_type="Blade" mesh="candycane_1h_head" culture="Culture.vlandia" length="14.3" weight="1.2">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Blunt" damage_factor="1.5" />
-      <Swing damage_type="Blunt" damage_factor="2.2" />
+      <Thrust damage_type="Blunt" damage_factor="1.8" />
+      <Swing damage_type="Blunt" damage_factor="2.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -32811,10 +32823,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_blade_h3" name="Candycane 1H Blade" tier="3" piece_type="Blade" mesh="candycane_1h_head" culture="Culture.vlandia" length="14.3" weight="0.7">
+  <CraftingPiece id="crpg_candycane_1h_blade_h3" name="Candycane 1H Blade" tier="3" piece_type="Blade" mesh="candycane_1h_head" culture="Culture.vlandia" length="14.3" weight="1.2">
     <BladeData stack_amount="3" blade_length="109.0" blade_width="13.5" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Thrust damage_type="Blunt" damage_factor="1.5" />
-      <Swing damage_type="Blunt" damage_factor="2.3" />
+      <Thrust damage_type="Blunt" damage_factor="1.8" />
+      <Swing damage_type="Blunt" damage_factor="2.7" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -32824,45 +32836,45 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_handle_h0" name="Candycane 1H Handle" tier="2" piece_type="Handle" mesh="candycane_1h_handle" length="67.3" weight="1.0">
+  <CraftingPiece id="crpg_candycane_1h_handle_h0" name="Candycane 1H Handle" tier="2" piece_type="Handle" mesh="candycane_1h_handle" length="67.3" weight="0.4">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_handle_h1" name="Candycane 1H Handle" tier="2" piece_type="Handle" mesh="candycane_1h_handle" length="67.3" weight="1.0">
+  <CraftingPiece id="crpg_candycane_1h_handle_h1" name="Candycane 1H Handle" tier="2" piece_type="Handle" mesh="candycane_1h_handle" length="67.3" weight="0.4">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_handle_h2" name="Candycane 1H Handle" tier="2" piece_type="Handle" mesh="candycane_1h_handle" length="67.3" weight="1.0">
+  <CraftingPiece id="crpg_candycane_1h_handle_h2" name="Candycane 1H Handle" tier="2" piece_type="Handle" mesh="candycane_1h_handle" length="67.3" weight="0.4">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_handle_h3" name="Candycane 1H Handle" tier="2" piece_type="Handle" mesh="candycane_1h_handle" length="67.3" weight="1.0">
+  <CraftingPiece id="crpg_candycane_1h_handle_h3" name="Candycane 1H Handle" tier="2" piece_type="Handle" mesh="candycane_1h_handle" length="67.3" weight="0.4">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_1h_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_1h_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_1h_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_1h_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_1h_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_1h_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_1h_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_candycane_1h_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  <CraftingPiece id="crpg_candycane_1h_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.4" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_short_bardiche_blade_h0" name="{=}Short Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.9">
     <BuildData piece_offset="-12" />
