@@ -9264,4 +9264,100 @@
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
+  <Item id="crpg_aa_flutedbelowshelm_h0" name="{=AppleTruce}Fluted Bellows Close Helm" mesh="aa_flutedbelowshelm" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedbelowshelm_h1" name="{=AppleTruce}Fluted Bellows Close Helm +1" mesh="aa_flutedbelowshelm" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedbelowshelm_h2" name="{=AppleTruce}Fluted Bellows Close Helm +2" mesh="aa_flutedbelowshelm" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedbelowshelm_h3" name="{=AppleTruce}Fluted Bellows Close Helm +3" mesh="aa_flutedbelowshelm" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="70" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedgrotesqueangry_h0" name="{=AppleTruce}Fluted Angry Grotesque Close Helm" mesh="aa_flutedgrotesqueangry" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedgrotesqueangry_h1" name="{=AppleTruce}Fluted Angry Grotesque Close Helm +1" mesh="aa_flutedgrotesqueangry" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedgrotesqueangry_h2" name="{=AppleTruce}Fluted Angry Grotesque Close Helm +2" mesh="aa_flutedgrotesqueangry" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedgrotesqueangry_h3" name="{=AppleTruce}Fluted Angry Grotesque Close Helm +3" mesh="aa_flutedgrotesqueangry" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="70" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedgrotesquemustache_h0" name="{=AppleTruce}Fluted Moustache Grotesque Close Helm" mesh="aa_flutedgrotesquemustache" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedgrotesquemustache_h1" name="{=AppleTruce}Fluted Moustache Grotesque Close Helm +1" mesh="aa_flutedgrotesquemustache" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedgrotesquemustache_h2" name="{=AppleTruce}Fluted Moustache Grotesque Close Helm +2" mesh="aa_flutedgrotesquemustache" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedgrotesquemustache_h3" name="{=AppleTruce}Fluted Moustache Grotesque Close Helm +3" mesh="aa_flutedgrotesquemustache" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="70" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedfalcon_h0" name="{=AppleTruce}Fluted Falcon Grotesque Close Helm" mesh="aa_flutedfalcon" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedfalcon_h1" name="{=AppleTruce}Fluted Falcon Grotesque Close Helm +1" mesh="aa_flutedfalcon" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedfalcon_h2" name="{=AppleTruce}Fluted Falcon Grotesque Close Helm +2" mesh="aa_flutedfalcon" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_aa_flutedfalcon_h3" name="{=AppleTruce}Fluted Falcon Grotesque Close Helm +3" mesh="aa_flutedfalcon" culture="Culture.vlandia" weight="6.234625" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+    <ItemComponent>
+      <Armor head_armor="70" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
 </Items>
