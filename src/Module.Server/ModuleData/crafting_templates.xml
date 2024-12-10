@@ -10799,4 +10799,46 @@
       <UsablePiece piece_id="crpg_swiss_halberd_pommel_h3" />
     </UsablePieces>
   </CraftingTemplate>
+  <CraftingTemplate id="crpg_TwoHandedHalfsword" item_type="Polearm" modifier_group="polearm" item_holsters="sword_back:sword_back_2:sword_back_3:sword_back_4" default_item_holster_position_offset="0,0,-0.1" use_weapon_as_holster_mesh="true">
+    <PieceDatas>
+      <PieceData piece_type="Handle" build_order="0" />
+      <PieceData piece_type="Guard" build_order="1" />
+      <PieceData piece_type="Blade" build_order="2" />
+      <PieceData piece_type="Pommel" build_order="-1" />
+    </PieceDatas>
+    <WeaponDescriptions>
+      <WeaponDescription id="crpg_OneHandedPolearm" />
+      <WeaponDescription id="crpg_TwoHandedPolearm" />
+      <WeaponDescription id="crpg_TwoHandedPolearm_Couchable" />
+      <WeaponDescription id="crpg_TwoHandedPolearm_Bracing" />
+      <WeaponDescription id="crpg_TwoHandedPolearm_Thrown" />
+    </WeaponDescriptions>
+    <StatsData>
+      <StatData stat_type="Weight" max_value="7.0" />
+      <StatData stat_type="WeaponReach" max_value="300" />
+      <StatData stat_type="ThrustSpeed" max_value="200" />
+      <StatData stat_type="SwingSpeed" max_value="200" />
+      <StatData stat_type="ThrustDamage" max_value="500" />
+      <StatData stat_type="SwingDamage" max_value="500" />
+      <StatData stat_type="Handling" max_value="200" />
+    </StatsData>
+    <UsablePieces>
+      <UsablePiece piece_id="crpg_pole_zweihander_blade_h0" />
+      <UsablePiece piece_id="crpg_pole_zweihander_blade_h1" />
+      <UsablePiece piece_id="crpg_pole_zweihander_blade_h2" />
+      <UsablePiece piece_id="crpg_pole_zweihander_blade_h3" />
+      <UsablePiece piece_id="crpg_pole_zweihander_handle_h0" />
+      <UsablePiece piece_id="crpg_pole_zweihander_handle_h1" />
+      <UsablePiece piece_id="crpg_pole_zweihander_handle_h2" />
+      <UsablePiece piece_id="crpg_pole_zweihander_handle_h3" />
+      <UsablePiece piece_id="crpg_pole_zweihander_guard_h0" />
+      <UsablePiece piece_id="crpg_pole_zweihander_guard_h1" />
+      <UsablePiece piece_id="crpg_pole_zweihander_guard_h2" />
+      <UsablePiece piece_id="crpg_pole_zweihander_guard_h3" />
+      <UsablePiece piece_id="crpg_pole_zweihander_pommel_h0" />
+      <UsablePiece piece_id="crpg_pole_zweihander_pommel_h1" />
+      <UsablePiece piece_id="crpg_pole_zweihander_pommel_h2" />
+      <UsablePiece piece_id="crpg_pole_zweihander_pommel_h3" />
+    </UsablePieces>
+  </CraftingTemplate>
 </CraftingTemplates>
