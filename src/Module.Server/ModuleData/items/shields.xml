@@ -2530,7 +2530,7 @@
   </Item>
   <Item id="crpg_steel_heater_h0" name="{=Salt}Steel Heater Shield" body_name="bo_cap_steelheatershield" shield_body_name="bo_steelheatershield" recalculate_body="false" mesh="steelheatershield" culture="Culture.vlandia" using_tableau="false" weight="0.78125" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="30" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="steel_shield" item_usage="shield" position="0.12, 0.0, 0.01" rotation="10.0,20.0,40.00" weapon_length="50" center_of_mass="0.0,0.1,0.05" hit_points="250" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="30" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="metal_shield" item_usage="shield" position="0.12, 0.0, 0.01" rotation="10.0,20.0,40.00" weapon_length="50" center_of_mass="0.0,0.1,0.05" hit_points="250" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2538,7 +2538,7 @@
   </Item>
   <Item id="crpg_steel_heater_h1" name="{=Salt}Steel Heater Shield +1" body_name="bo_cap_steelheatershield" shield_body_name="bo_steelheatershield" recalculate_body="false" mesh="steelheatershield" culture="Culture.vlandia" using_tableau="false" weight="0.78125" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="31" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="steel_shield" item_usage="shield" position="0.12, 0.0, 0.01" rotation="10.0,20.0,40.00" weapon_length="50" center_of_mass="0.0,0.1,0.05" hit_points="270" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="31" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="metal_shield" item_usage="shield" position="0.12, 0.0, 0.01" rotation="10.0,20.0,40.00" weapon_length="50" center_of_mass="0.0,0.1,0.05" hit_points="270" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2546,7 +2546,7 @@
   </Item>
   <Item id="crpg_steel_heater_h2" name="{=Salt}Steel Heater Shield +2" body_name="bo_cap_steelheatershield" shield_body_name="bo_steelheatershield" recalculate_body="false" mesh="steelheatershield" culture="Culture.vlandia" using_tableau="false" weight="0.78125" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="32" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="steel_shield" item_usage="shield" position="0.12, 0.0, 0.01" rotation="10.0,20.0,40.00" weapon_length="50" center_of_mass="0.0,0.1,0.05" hit_points="290" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="32" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="metal_shield" item_usage="shield" position="0.12, 0.0, 0.01" rotation="10.0,20.0,40.00" weapon_length="50" center_of_mass="0.0,0.1,0.05" hit_points="290" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2554,7 +2554,7 @@
   </Item>
   <Item id="crpg_steel_heater_h3" name="{=Salt}Steel Heater Shield +3" body_name="bo_cap_steelheatershield" shield_body_name="bo_steelheatershield" recalculate_body="false" mesh="steelheatershield" culture="Culture.vlandia" using_tableau="false" weight="0.78125" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="33" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="steel_shield" item_usage="shield" position="0.12, 0.0, 0.01" rotation="10.0,20.0,40.00" weapon_length="50" center_of_mass="0.0,0.1,0.05" hit_points="310" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="33" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="metal_shield" item_usage="shield" position="0.12, 0.0, 0.01" rotation="10.0,20.0,40.00" weapon_length="50" center_of_mass="0.0,0.1,0.05" hit_points="310" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
