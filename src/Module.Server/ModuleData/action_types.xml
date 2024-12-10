@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<action_types>
+    <action name="act_equip_crossbow_light" type="actt_equip_unequip"/>
+    <action name="act_equip_crossbow_left_stance_light" type="actt_equip_unequip"/>
+    <action name="act_equip_crossbow_heavy" type="actt_equip_unequip"/>
+    <action name="act_equip_crossbow_left_stance_heavy" type="actt_equip_unequip"/>
+</action_types>

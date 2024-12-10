@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<action_sets>
+    <action_set id="as_human_warrior" skeleton="human_skeleton" movement_system="bipedal">
+	  <action type="act_equip_crossbow_light" animation="equip_crossbow_light"/>
+      <action type="act_equip_crossbow_left_stance_light" animation="equip_crossbow_left_stance_light"/>
+      <action type="act_equip_crossbow_heavy" animation="equip_crossbow_heavy"/>
+      <action type="act_equip_crossbow_left_stance_heavy" animation="equip_crossbow_left_stance_heavy"/>
+	</action_set>
+</action_sets>
