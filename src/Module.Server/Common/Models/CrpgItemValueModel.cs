@@ -26,10 +26,10 @@ internal class CrpgItemValueModel : ItemValueModel
         [ItemObject.ItemTypeEnum.LegArmor] = (3090, ArmorPriceCoeffs),
         [ItemObject.ItemTypeEnum.HorseHarness] = (9000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Horse] = (9000, ItemPriceCoeffs),
-        [ItemObject.ItemTypeEnum.Shield] = (7000, ItemPriceCoeffs),
+        [ItemObject.ItemTypeEnum.Shield] = (5000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Bow] = (14000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Crossbow] = (14000, ItemPriceCoeffs),
-        [ItemObject.ItemTypeEnum.OneHandedWeapon] = (7000, ItemPriceCoeffs),
+        [ItemObject.ItemTypeEnum.OneHandedWeapon] = (9000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.TwoHandedWeapon] = (14000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Polearm] = (14000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Thrown] = (6000, ItemPriceCoeffs),
@@ -170,7 +170,7 @@ internal class CrpgItemValueModel : ItemValueModel
             {
                 WeaponClass.OneHandedSword => 20.9f,
                 WeaponClass.OneHandedAxe => 25.3f,
-                WeaponClass.Mace => 25.3f,
+                WeaponClass.Mace => 20.0f,
                 WeaponClass.Dagger => 20.9f,
                 WeaponClass.TwoHandedSword => 27.5f,
                 WeaponClass.TwoHandedMace => 28.5f,
@@ -218,6 +218,8 @@ internal class CrpgItemValueModel : ItemValueModel
                     case WeaponClass.Dagger:
                     case WeaponClass.OneHandedSword:
                     case WeaponClass.TwoHandedSword:
+                    case WeaponClass.TwoHandedPolearm:
+                    case WeaponClass.Mace:
                         swingTier *= 1.2f;
                         break;
                     default:
@@ -233,7 +235,7 @@ internal class CrpgItemValueModel : ItemValueModel
 
             if (weapon.WeaponFlags.HasAnyFlag(WeaponFlags.CanKnockDown))
             {
-                swingTier *= 1.6f;
+                swingTier *= 1.45f;
             }
 
             if (weapon.WeaponFlags.HasAnyFlag(WeaponFlags.MultiplePenetration))
@@ -261,8 +263,10 @@ internal class CrpgItemValueModel : ItemValueModel
                 case WeaponClass.OneHandedSword:
                 case WeaponClass.Dagger:
                 case WeaponClass.OneHandedAxe:
-                case WeaponClass.Mace:
                     swingLengthTier = 0.455f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
+                    break;
+                case WeaponClass.Mace:
+                    swingLengthTier = 0.49f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
                     break;
                 case WeaponClass.TwoHandedSword:
                 case WeaponClass.TwoHandedMace:
@@ -313,7 +317,7 @@ internal class CrpgItemValueModel : ItemValueModel
     {
         return damageType switch
         {
-            DamageTypes.Blunt => 3f,
+            DamageTypes.Blunt => 3.3f,
             DamageTypes.Pierce => 2.2f,
             _ => 1.0f,
         };
