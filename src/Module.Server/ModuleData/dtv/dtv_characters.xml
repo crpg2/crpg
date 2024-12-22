@@ -1109,7 +1109,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_viking_berserkir" name="{=}Bersekir" race="light_bot">
+  <NPCCharacter id="crpg_dtv_viking_berserkir" name="{=}Berserkir" race="light_bot">
     <face>
       <BodyProperties version="4" age="39.64" weight="0.5" build="0.5"  key="00000C06C0E42A42886C869855BBA5796976C76B4977A53B75349AB5A62CCC7703B776350B7BA45900000000000000000000000000000000000000002D742086" />
     </face>
