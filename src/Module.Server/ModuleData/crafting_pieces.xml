@@ -35440,4 +35440,80 @@
   <CraftingPiece id="crpg_cts_saxon_sword_handle_h3" name="{=}Saxon Sword Handle" tier="3" piece_type="Handle" mesh="cts_saxon_sword_handle" full_scale="false" culture="Culture.khuzait" length="14" weight="0.5">
     <BuildData piece_offset="0" previous_piece_offset="1" next_piece_offset="2" />
   </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_handle_h0" name="{=Nhhmj7bz}Ashwood Pike Shaft" tier="2" piece_type="Handle" mesh="spear_handle_5" length="229" weight="1.5" CraftingCost="150">
+    <BuildData piece_offset="22.9" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_handle_h1" name="{=Nhhmj7bz}Ashwood Pike Shaft" tier="2" piece_type="Handle" mesh="spear_handle_5" length="229" weight="1.35" CraftingCost="150">
+    <BuildData piece_offset="22.9" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_handle_h2" name="{=Nhhmj7bz}Ashwood Pike Shaft" tier="2" piece_type="Handle" mesh="spear_handle_5" length="229" weight="1.35" CraftingCost="150">
+    <BuildData piece_offset="22.9" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_handle_h3" name="{=Nhhmj7bz}Ashwood Pike Shaft" tier="2" piece_type="Handle" mesh="spear_handle_5" length="229" weight="1.35" CraftingCost="150">
+    <BuildData piece_offset="22.9" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_blade_h0" name="{=S9zZO7qJ}Ashwood Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.05">
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="blunt" damage_factor="1.8" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_blade_h1" name="{=S9zZO7qJ}Ashwood Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.05">
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="blunt" damage_factor="1.9" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_blade_h2" name="{=S9zZO7qJ}Ashwood Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.05">
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="blunt" damage_factor="1.9" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_blade_h3" name="{=S9zZO7qJ}Ashwood Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.05">
+    <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="blunt" damage_factor="2.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.05" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.05" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.05" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.05" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_guard_h0" name="{=Yeldur}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.05" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_guard_h1" name="{=Yeldur}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.05" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_guard_h2" name="{=Yeldur}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.05" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ashwood_pike_guard_h3" name="{=Yeldur}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.05" is_default="true">
+  </CraftingPiece>
 </CraftingPieces>
