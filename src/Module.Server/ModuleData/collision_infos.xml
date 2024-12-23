@@ -1,0 +1,620 @@
+<base type="collision_infos">
+  <collision_infos>
+    <material id="smokebomb_h0">
+      <collision_info second_material="metal_weapon">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="metal">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_shield">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_weapon">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="stone">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="mud">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="grass">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="default">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="snow">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="sand">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="flesh">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_nonstick">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="pot">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="pot_breakable">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="siege_engines">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="path">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="adobe">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="adobe_nonstick">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="straw">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="straw_nonstick">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="fabric">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="metal_shield">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="soil">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="lambert1">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="smokebomb_h0">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="burning_jar_small">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="burning_ballista">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="water">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="ice">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="phymat2">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="phymat1">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="no_missile">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="punch_weapon">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="boulder_stone">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="throwing_stone">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="ballista_missile">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="missile">
+        <collision_effect particle="smokebomb_h0"
+                          decal="" />
+      </collision_info>
+    </material>
+	<material id="smokebomb_h1">
+      <collision_info second_material="metal_weapon">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="metal">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_shield">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_weapon">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="stone">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="mud">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="grass">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="default">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="snow">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="sand">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="flesh">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_nonstick">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="pot">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="pot_breakable">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="siege_engines">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="path">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="adobe">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="adobe_nonstick">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="straw">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="straw_nonstick">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="fabric">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="metal_shield">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="soil">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="lambert1">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="smokebomb_h1">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="burning_jar_small">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="burning_ballista">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="water">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="ice">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="phymat2">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="phymat1">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="no_missile">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="punch_weapon">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="boulder_stone">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="throwing_stone">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="ballista_missile">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="missile">
+        <collision_effect particle="smokebomb_h1"
+                          decal="" />
+      </collision_info>
+    </material>
+	<material id="smokebomb_h2">
+      <collision_info second_material="metal_weapon">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="metal">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_shield">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_weapon">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="stone">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="mud">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="grass">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="default">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="snow">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="sand">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="flesh">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_nonstick">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="pot">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="pot_breakable">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="siege_engines">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="path">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="adobe">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="adobe_nonstick">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="straw">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="straw_nonstick">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="fabric">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="metal_shield">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="soil">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="lambert1">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="smokebomb_h2">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="burning_jar_small">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="burning_ballista">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="water">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="ice">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="phymat2">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="phymat1">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="no_missile">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="punch_weapon">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="boulder_stone">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="throwing_stone">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="ballista_missile">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="missile">
+        <collision_effect particle="smokebomb_h2"
+                          decal="" />
+      </collision_info>
+    </material>
+	<material id="smokebomb_h3">
+      <collision_info second_material="metal_weapon">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="metal">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_shield">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_weapon">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="stone">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="mud">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="grass">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="default">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="snow">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="sand">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="flesh">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="wood_nonstick">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="pot">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="pot_breakable">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="siege_engines">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="path">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="adobe">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="adobe_nonstick">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="straw">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="straw_nonstick">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="fabric">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="metal_shield">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="soil">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="lambert1">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="smokebomb_h3">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="burning_jar_small">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="burning_ballista">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="water">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="ice">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="phymat2">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="phymat1">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="no_missile">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="punch_weapon">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="boulder_stone">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="throwing_stone">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="ballista_missile">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+      <collision_info second_material="missile">
+        <collision_effect particle="smokebomb_h3"
+                          decal="" />
+      </collision_info>
+    </material>
+  </collision_infos>	
+</base>
