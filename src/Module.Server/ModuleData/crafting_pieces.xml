@@ -8636,28 +8636,28 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_bardiche_handle_h0" name="{=}Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.7" excluded_item_usage_features="widegrip">
+  <CraftingPiece id="crpg_great_long_bardiche_handle_h0" name="{=}Great Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.7" excluded_item_usage_features="widegrip">
     <BuildData piece_offset="28.87" next_piece_offset="2.5" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_bardiche_handle_h1" name="{=}Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.7" excluded_item_usage_features="widegrip">
+  <CraftingPiece id="crpg_great_long_bardiche_handle_h1" name="{=}Great Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.7" excluded_item_usage_features="widegrip">
     <BuildData piece_offset="28.87" next_piece_offset="2.5" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_bardiche_handle_h2" name="{=}Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.7" excluded_item_usage_features="widegrip">
+  <CraftingPiece id="crpg_great_long_bardiche_handle_h2" name="{=}Great Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.7" excluded_item_usage_features="widegrip">
     <BuildData piece_offset="28.87" next_piece_offset="2.5" />
     <Materials>
       <Material id="Wood" count="1" />
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_bardiche_handle_h3" name="{=}Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.7" excluded_item_usage_features="widegrip">
+  <CraftingPiece id="crpg_great_long_bardiche_handle_h3" name="{=}Great Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.7" excluded_item_usage_features="widegrip">
     <BuildData piece_offset="28.87" next_piece_offset="2.5" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -9824,7 +9824,7 @@
       <Material id="Iron4" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_bardiche_blade_h0" name="{=kaikaikai}Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.72">
+  <CraftingPiece id="crpg_great_long_bardiche_blade_h0" name="{=kaikaikai}Great Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.72">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Cut" damage_factor="2.6" />
@@ -9838,7 +9838,7 @@
       <Material id="Iron4" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_bardiche_blade_h1" name="{=kaikaikai}Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.69">
+  <CraftingPiece id="crpg_great_long_bardiche_blade_h1" name="{=kaikaikai}Great Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.69">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Cut" damage_factor="2.6" />
@@ -9852,7 +9852,7 @@
       <Material id="Iron4" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_bardiche_blade_h2" name="{=kaikaikai}Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.63">
+  <CraftingPiece id="crpg_great_long_bardiche_blade_h2" name="{=kaikaikai}Great Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.63">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Cut" damage_factor="2.6" />
@@ -9866,7 +9866,7 @@
       <Material id="Iron4" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_bardiche_blade_h3" name="{=kaikaikai}Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.63">
+  <CraftingPiece id="crpg_great_long_bardiche_blade_h3" name="{=kaikaikai}Great Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.63">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Thrust damage_type="Cut" damage_factor="2.6" />
@@ -34934,6 +34934,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
   </CraftingPiece>
@@ -34943,6 +34944,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
   </CraftingPiece>
@@ -34952,6 +34954,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
   </CraftingPiece>
@@ -34961,6 +34964,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
     </Flags>
     <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
   </CraftingPiece>
@@ -35515,5 +35519,89 @@
   <CraftingPiece id="crpg_ashwood_pike_guard_h2" name="{=Yeldur}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.05" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_ashwood_pike_guard_h3" name="{=Yeldur}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.05" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_long_bardiche_handle_h0" name="{=}Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="1.0" excluded_item_usage_features="widegrip">
+    <BuildData piece_offset="28.87" next_piece_offset="2.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_long_bardiche_handle_h1" name="{=}Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.9" excluded_item_usage_features="widegrip">
+    <BuildData piece_offset="28.87" next_piece_offset="2.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_long_bardiche_handle_h2" name="{=}Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.9" excluded_item_usage_features="widegrip">
+    <BuildData piece_offset="28.87" next_piece_offset="2.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_long_bardiche_handle_h3" name="{=}Long Bardiche Handle" tier="4" piece_type="Handle" mesh="axe_craft_10_handle" length="132" weight="0.9" excluded_item_usage_features="widegrip">
+    <BuildData piece_offset="28.87" next_piece_offset="2.5" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_long_bardiche_blade_h0" name="{=}Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.8">
+    <BuildData piece_offset="-12" />
+    <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Cut" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_long_bardiche_blade_h1" name="{=}Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.8">
+    <BuildData piece_offset="-12" />
+    <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Cut" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_long_bardiche_blade_h2" name="{=}Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.75">
+    <BuildData piece_offset="-12" />
+    <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Cut" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_long_bardiche_blade_h3" name="{=}Long Bardiche Head" tier="4" piece_type="Blade" mesh="axe_craft_16_head" distance_to_next_piece="28.8" distance_to_previous_piece="6" weight="0.75">
+    <BuildData piece_offset="-12" />
+    <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Thrust damage_type="Cut" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="4" />
+    </Materials>
   </CraftingPiece>
 </CraftingPieces>
