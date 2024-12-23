@@ -15,6 +15,11 @@ public class DtvAiComponent : CommonAIComponent
     {
     }
 
+    public override void Initialize() // Not being called automatically when the component is instantiated
+    {
+        _targetTimer = new(ViscountTargetTimerDuration * 2);
+    }
+
     public override void OnTickAsAI(float dt)
     {
         _tickOccasionally ??= new(1f);

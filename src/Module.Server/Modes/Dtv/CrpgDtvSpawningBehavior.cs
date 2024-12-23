@@ -133,7 +133,9 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
             for (int i = 0; i < groupBotCount; i++)
             {
                 Agent agent = SpawnBotAgent(group.ClassDivisionId, Mission.AttackerTeam);
-                agent.AddComponent(new DtvAiComponent(agent));
+                DtvAiComponent component = new(agent);
+                agent.AddComponent(component);
+                component.Initialize();
             }
         }
 
@@ -145,7 +147,9 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
         {
             var group = groupsWithoutBoss[i % groupsWithoutBoss.Length];
             Agent agent = SpawnBotAgent(group.ClassDivisionId, Mission.AttackerTeam);
-            agent.AddComponent(new DtvAiComponent(agent));
+            DtvAiComponent component = new(agent);
+            agent.AddComponent(component);
+            component.Initialize();
         }
     }
 
