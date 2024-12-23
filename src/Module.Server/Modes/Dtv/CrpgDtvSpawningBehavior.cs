@@ -1,4 +1,5 @@
 ﻿using Crpg.Module.Common;
+using Crpg.Module.Common.AiComponents;
 using Crpg.Module.Common.Network;
 using Crpg.Module.Notifications;
 using TaleWorlds.Core;
@@ -20,6 +21,12 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
     {
         _notifiedPlayersAboutSpawnRestriction = new HashSet<PlayerId>();
         CurrentGameMode = MultiplayerGameType.FreeForAll;
+    }
+
+    public override void Initialize(SpawnComponent spawnComponent)
+    {
+        base.Initialize(spawnComponent);
+        Mission.Current.AllowAiTicking = true;
     }
 
     public override void OnTick(float dt)
@@ -125,7 +132,8 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
             Debug.Print($"Spawning {groupBotCount} {group.ClassDivisionId}(s)");
             for (int i = 0; i < groupBotCount; i++)
             {
-                SpawnBotAgent(group.ClassDivisionId, Mission.AttackerTeam);
+                Agent agent = SpawnBotAgent(group.ClassDivisionId, Mission.AttackerTeam);
+                agent.AddComponent(new DtvAiComponent(agent));
             }
         }
 
@@ -136,7 +144,8 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
         for (int i = 0; i < extraBotsToSpawn; i += 1)
         {
             var group = groupsWithoutBoss[i % groupsWithoutBoss.Length];
-            SpawnBotAgent(group.ClassDivisionId, Mission.AttackerTeam);
+            Agent agent = SpawnBotAgent(group.ClassDivisionId, Mission.AttackerTeam);
+            agent.AddComponent(new DtvAiComponent(agent));
         }
     }
 
