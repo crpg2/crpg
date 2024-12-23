@@ -35604,4 +35604,392 @@
       <Material id="Iron4" count="4" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_blade_h0" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="0.9" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" blade_length="10.1" blade_width="23.6" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="4.4" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_blade_h1" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="0.9" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" blade_length="10.1" blade_width="23.6" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="4.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_blade_h2" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="0.85" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" blade_length="10.1" blade_width="23.6" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="4.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_blade_h3" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="0.85" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" blade_length="10.1" blade_width="23.6" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="4.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_handle_h0" name="{=}Splitting Maul Handle" tier="2" piece_type="Handle" mesh="splittingmaul_handle" length="103" weight="0.7">
+    <BuildData previous_piece_offset="0" next_piece_offset="10" piece_offset="25" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_handle_h1" name="{=}Splitting Maul Handle" tier="2" piece_type="Handle" mesh="splittingmaul_handle" length="103" weight="0.7">
+    <BuildData previous_piece_offset="0" next_piece_offset="10" piece_offset="25" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_handle_h2" name="{=}Splitting Maul Handle" tier="2" piece_type="Handle" mesh="splittingmaul_handle" length="103" weight="0.7">
+    <BuildData previous_piece_offset="0" next_piece_offset="10" piece_offset="25" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_handle_h3" name="{=}Splitting Maul Handle" tier="2" piece_type="Handle" mesh="splittingmaul_handle" length="103" weight="0.7">
+    <BuildData previous_piece_offset="0" next_piece_offset="10" piece_offset="25" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_guard_h0" name="{=}None" tier="3" piece_type="Guard" mesh="" culture="Culture.neutral_culture" length="0" weight="0.01" full_scale="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_guard_h1" name="{=}None" tier="3" piece_type="Guard" mesh="" culture="Culture.neutral_culture" length="0" weight="0.01" full_scale="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_guard_h2" name="{=}None" tier="3" piece_type="Guard" mesh="" culture="Culture.neutral_culture" length="0" weight="0.01" full_scale="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_guard_h3" name="{=}None" tier="3" piece_type="Guard" mesh="" culture="Culture.neutral_culture" length="0" weight="0.01" full_scale="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_pommel_h0" name="{=}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.01" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_pommel_h1" name="{=}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.01" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_pommel_h2" name="{=}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.01" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_pommel_h3" name="{=}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.01" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_blade_h0" name="{=}Dragon Scimitar Blade" tier="4" piece_type="Blade" mesh="dragonscimitar_blade" culture="Culture.battania" length="71.9" weight="0.45" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Swing damage_type="Cut" damage_factor="3.1" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_blade_h1" name="{=}Dragon Scimitar Blade" tier="4" piece_type="Blade" mesh="dragonscimitar_blade" culture="Culture.battania" length="71.9" weight="0.35" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Swing damage_type="Cut" damage_factor="3.1" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_blade_h2" name="{=}Dragon Scimitar Blade" tier="4" piece_type="Blade" mesh="dragonscimitar_blade" culture="Culture.battania" length="71.9" weight="0.35" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Swing damage_type="Cut" damage_factor="3.2" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_blade_h3" name="{=}Dragon Scimitar Blade" tier="4" piece_type="Blade" mesh="dragonscimitar_blade" culture="Culture.battania" length="71.9" weight="0.3" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Swing damage_type="Cut" damage_factor="3.2" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_pommel_h0" name="{=}Dragon Scimitar Pommel" tier="4" piece_type="Pommel" mesh="dragonscimitar_pommel" full_scale="true" culture="Culture.battania" length="4.35" weight="0.38">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_pommel_h1" name="{=}Dragon Scimitar Pommel" tier="4" piece_type="Pommel" mesh="dragonscimitar_pommel" full_scale="true" culture="Culture.battania" length="4.35" weight="0.38">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_pommel_h2" name="{=}Dragon Scimitar Pommel" tier="4" piece_type="Pommel" mesh="dragonscimitar_pommel" full_scale="true" culture="Culture.battania" length="4.35" weight="0.38">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_pommel_h3" name="{=}Dragon Scimitar Pommel" tier="4" piece_type="Pommel" mesh="dragonscimitar_pommel" full_scale="true" culture="Culture.battania" length="4.35" weight="0.38">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_guard_h0" name="{=}Dragon Scimitar Guard" tier="5" piece_type="Guard" mesh="dragonscimitar_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.219">
+    <BuildData next_piece_offset="6" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_guard_h1" name="{=}Dragon Scimitar Guard" tier="5" piece_type="Guard" mesh="dragonscimitar_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.219">
+    <BuildData next_piece_offset="6" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_guard_h2" name="{=}Dragon Scimitar Guard" tier="5" piece_type="Guard" mesh="dragonscimitar_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.219">
+    <BuildData next_piece_offset="6" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_guard_h3" name="{=}Dragon Scimitar Guard" tier="5" piece_type="Guard" mesh="dragonscimitar_guard" full_scale="true" culture="Culture.battania" length="11.5" weight="0.219">
+    <BuildData next_piece_offset="6" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_handle_h0" name="{=}Dragon Scimitar Handle" tier="3" piece_type="Handle" mesh="dragonscimitar_handle" full_scale="true" culture="Culture.khuzait" length="13.2" weight="1.2">
+    <BuildData piece_offset="-3" previous_piece_offset="0" next_piece_offset="1.1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_handle_h1" name="{=}Dragon Scimitar Handle" tier="3" piece_type="Handle" mesh="dragonscimitar_handle" full_scale="true" culture="Culture.khuzait" length="13.2" weight="1.2">
+    <BuildData piece_offset="-3" previous_piece_offset="0" next_piece_offset="1.1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_handle_h2" name="{=}Dragon Scimitar Handle" tier="3" piece_type="Handle" mesh="dragonscimitar_handle" full_scale="true" culture="Culture.khuzait" length="13.2" weight="1.2">
+    <BuildData piece_offset="-3" previous_piece_offset="0" next_piece_offset="1.1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonscimitar_handle_h3" name="{=}Dragon Scimitar Handle" tier="3" piece_type="Handle" mesh="dragonscimitar_handle" full_scale="true" culture="Culture.khuzait" length="13.2" weight="1.2">
+    <BuildData piece_offset="-3" previous_piece_offset="0" next_piece_offset="1.1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_blade_h0" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="1.1">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_blade_h1" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="1.1">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_blade_h2" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="1.1">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_blade_h3" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="1.05">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_pommel_h0" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.03">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_pommel_h1" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.03">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_pommel_h2" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.03">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_pommel_h3" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.03">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_guard_h0" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.3">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_guard_h1" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.3">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_guard_h2" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.3">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_guard_h3" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.3">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_handle_h0" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.2">
+    <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_handle_h1" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.2">
+    <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_handle_h2" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.2">
+    <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_handle_h3" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.2">
+    <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_blade_h0" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="0.8">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_blade_h1" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="0.8">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_blade_h2" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="0.8">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_blade_h3" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="0.7">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h0" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.74">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h1" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.74">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h2" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.74">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h3" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.74">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_guard_h0" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.38">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_guard_h1" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.38">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_guard_h2" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.38">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_guard_h3" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.38">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_handle_h0" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.1">
+    <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_handle_h1" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.1">
+    <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_handle_h2" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.1">
+    <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ibelinsword_2h_handle_h3" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.1">
+    <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_blade_h0" name="{=}Dragonslayer Blade" tier="4" piece_type="Blade" mesh="dragonslayer_blade" culture="Culture.battania" length="104.0" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="10.015" />
+      <Swing damage_type="Cut" damage_factor="10.33" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_blade_h1" name="{=}Dragonslayer Blade" tier="4" piece_type="Blade" mesh="dragonslayer_blade" culture="Culture.battania" length="104.0" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="10.015" />
+      <Swing damage_type="Cut" damage_factor="10.33" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_blade_h2" name="{=}Dragonslayer Blade" tier="4" piece_type="Blade" mesh="dragonslayer_blade" culture="Culture.battania" length="104.0" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="10.015" />
+      <Swing damage_type="Cut" damage_factor="10.33" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_blade_h3" name="{=}Dragonslayer Blade" tier="4" piece_type="Blade" mesh="dragonslayer_blade" culture="Culture.battania" length="104.0" weight="1.0">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="10.015" />
+      <Swing damage_type="Cut" damage_factor="10.33" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_pommel_h0" name="{=}Dragonslayer Pommel" tier="4" piece_type="Pommel" mesh="dragonslayer_pommel" culture="Culture.battania" length="11.4" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_pommel_h1" name="{=}Dragonslayer Pommel" tier="4" piece_type="Pommel" mesh="dragonslayer_pommel" culture="Culture.battania" length="11.4" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_pommel_h2" name="{=}Dragonslayer Pommel" tier="4" piece_type="Pommel" mesh="dragonslayer_pommel" culture="Culture.battania" length="11.4" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_pommel_h3" name="{=}Dragonslayer Pommel" tier="4" piece_type="Pommel" mesh="dragonslayer_pommel" culture="Culture.battania" length="11.4" weight="0.12">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_guard_h0" name="{=}Dragonslayer Guard" tier="5" piece_type="Guard" mesh="dragonslayer_guard" culture="Culture.battania" length="12.9" weight="0.097">
+    <BuildData next_piece_offset="3" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_guard_h1" name="{=}Dragonslayer Guard" tier="5" piece_type="Guard" mesh="dragonslayer_guard" culture="Culture.battania" length="12.9" weight="0.097">
+    <BuildData next_piece_offset="3" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_guard_h2" name="{=}Dragonslayer Guard" tier="5" piece_type="Guard" mesh="dragonslayer_guard" culture="Culture.battania" length="12.9" weight="0.097">
+    <BuildData next_piece_offset="3" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_guard_h3" name="{=}Dragonslayer Guard" tier="5" piece_type="Guard" mesh="dragonslayer_guard" culture="Culture.battania" length="12.9" weight="0.097">
+    <BuildData next_piece_offset="3" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_handle_h0" name="{=}Dragonslayer Handle" tier="3" piece_type="Handle" mesh="dragonslayer_handle" culture="Culture.khuzait" length="37.9" weight="0.1">
+    <BuildData piece_offset="-5" previous_piece_offset="1.0" next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_handle_h1" name="{=}Dragonslayer Handle" tier="3" piece_type="Handle" mesh="dragonslayer_handle" culture="Culture.khuzait" length="37.9" weight="0.1">
+    <BuildData piece_offset="-5" previous_piece_offset="1.0" next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_handle_h2" name="{=}Dragonslayer Handle" tier="3" piece_type="Handle" mesh="dragonslayer_handle" culture="Culture.khuzait" length="37.9" weight="0.1">
+    <BuildData piece_offset="-5" previous_piece_offset="1.0" next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dragonslayer_handle_h3" name="{=}Dragonslayer Handle" tier="3" piece_type="Handle" mesh="dragonslayer_handle" culture="Culture.khuzait" length="37.9" weight="0.1">
+    <BuildData piece_offset="-5" previous_piece_offset="1.0" next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
 </CraftingPieces>

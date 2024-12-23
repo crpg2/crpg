@@ -20,6 +20,38 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_dragonscimitar_blade_h0" />
+      <UsablePiece piece_id="crpg_dragonscimitar_blade_h1" />
+      <UsablePiece piece_id="crpg_dragonscimitar_blade_h2" />
+      <UsablePiece piece_id="crpg_dragonscimitar_blade_h3" />
+      <UsablePiece piece_id="crpg_dragonscimitar_guard_h0" />
+      <UsablePiece piece_id="crpg_dragonscimitar_guard_h1" />
+      <UsablePiece piece_id="crpg_dragonscimitar_guard_h2" />
+      <UsablePiece piece_id="crpg_dragonscimitar_guard_h3" />
+      <UsablePiece piece_id="crpg_dragonscimitar_handle_h0" />
+      <UsablePiece piece_id="crpg_dragonscimitar_handle_h1" />
+      <UsablePiece piece_id="crpg_dragonscimitar_handle_h2" />
+      <UsablePiece piece_id="crpg_dragonscimitar_handle_h3" />
+      <UsablePiece piece_id="crpg_dragonscimitar_pommel_h0" />
+      <UsablePiece piece_id="crpg_dragonscimitar_pommel_h1" />
+      <UsablePiece piece_id="crpg_dragonscimitar_pommel_h2" />
+      <UsablePiece piece_id="crpg_dragonscimitar_pommel_h3" />
+      <UsablePiece piece_id="crpg_ibelinsword_blade_h0" />
+      <UsablePiece piece_id="crpg_ibelinsword_blade_h1" />
+      <UsablePiece piece_id="crpg_ibelinsword_blade_h2" />
+      <UsablePiece piece_id="crpg_ibelinsword_blade_h3" />
+      <UsablePiece piece_id="crpg_ibelinsword_guard_h0" />
+      <UsablePiece piece_id="crpg_ibelinsword_guard_h1" />
+      <UsablePiece piece_id="crpg_ibelinsword_guard_h2" />
+      <UsablePiece piece_id="crpg_ibelinsword_guard_h3" />
+      <UsablePiece piece_id="crpg_ibelinsword_handle_h0" />
+      <UsablePiece piece_id="crpg_ibelinsword_handle_h1" />
+      <UsablePiece piece_id="crpg_ibelinsword_handle_h2" />
+      <UsablePiece piece_id="crpg_ibelinsword_handle_h3" />
+      <UsablePiece piece_id="crpg_ibelinsword_pommel_h0" />
+      <UsablePiece piece_id="crpg_ibelinsword_pommel_h1" />
+      <UsablePiece piece_id="crpg_ibelinsword_pommel_h2" />
+      <UsablePiece piece_id="crpg_ibelinsword_pommel_h3" />
       <UsablePiece piece_id="crpg_cts_saxon_sword_blade_h0" />
       <UsablePiece piece_id="crpg_cts_saxon_sword_blade_h1" />
       <UsablePiece piece_id="crpg_cts_saxon_sword_blade_h2" />
@@ -3376,6 +3408,38 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_ibelinsword_2h_blade_h0" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_blade_h1" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_blade_h2" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_blade_h3" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_guard_h0" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_guard_h1" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_guard_h2" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_guard_h3" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_handle_h0" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_handle_h1" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_handle_h2" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_handle_h3" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_pommel_h0" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_pommel_h1" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_pommel_h2" />
+      <UsablePiece piece_id="crpg_ibelinsword_2h_pommel_h3" />
+      <UsablePiece piece_id="crpg_dragonslayer_blade_h0" />
+      <UsablePiece piece_id="crpg_dragonslayer_blade_h1" />
+      <UsablePiece piece_id="crpg_dragonslayer_blade_h2" />
+      <UsablePiece piece_id="crpg_dragonslayer_blade_h3" />
+      <UsablePiece piece_id="crpg_dragonslayer_guard_h0" />
+      <UsablePiece piece_id="crpg_dragonslayer_guard_h1" />
+      <UsablePiece piece_id="crpg_dragonslayer_guard_h2" />
+      <UsablePiece piece_id="crpg_dragonslayer_guard_h3" />
+      <UsablePiece piece_id="crpg_dragonslayer_handle_h0" />
+      <UsablePiece piece_id="crpg_dragonslayer_handle_h1" />
+      <UsablePiece piece_id="crpg_dragonslayer_handle_h2" />
+      <UsablePiece piece_id="crpg_dragonslayer_handle_h3" />
+      <UsablePiece piece_id="crpg_dragonslayer_pommel_h0" />
+      <UsablePiece piece_id="crpg_dragonslayer_pommel_h1" />
+      <UsablePiece piece_id="crpg_dragonslayer_pommel_h2" />
+      <UsablePiece piece_id="crpg_dragonslayer_pommel_h3" />
       <UsablePiece piece_id="crpg_large_falchion_blade_h0" />
       <UsablePiece piece_id="crpg_large_falchion_blade_h1" />
       <UsablePiece piece_id="crpg_large_falchion_blade_h2" />
@@ -9806,6 +9870,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_splittingmaul_blade_h0" />
+      <UsablePiece piece_id="crpg_splittingmaul_blade_h1" />
+      <UsablePiece piece_id="crpg_splittingmaul_blade_h2" />
+      <UsablePiece piece_id="crpg_splittingmaul_blade_h3" />
+      <UsablePiece piece_id="crpg_splittingmaul_handle_h0" />
+      <UsablePiece piece_id="crpg_splittingmaul_handle_h1" />
+      <UsablePiece piece_id="crpg_splittingmaul_handle_h2" />
+      <UsablePiece piece_id="crpg_splittingmaul_handle_h3" />
+      <UsablePiece piece_id="crpg_splittingmaul_guard_h0" />
+      <UsablePiece piece_id="crpg_splittingmaul_guard_h1" />
+      <UsablePiece piece_id="crpg_splittingmaul_guard_h2" />
+      <UsablePiece piece_id="crpg_splittingmaul_guard_h3" />
+      <UsablePiece piece_id="crpg_splittingmaul_pommel_h0" />
+      <UsablePiece piece_id="crpg_splittingmaul_pommel_h1" />
+      <UsablePiece piece_id="crpg_splittingmaul_pommel_h2" />
+      <UsablePiece piece_id="crpg_splittingmaul_pommel_h3" />
       <UsablePiece piece_id="crpg_candycane_2h_blade_h0" />
       <UsablePiece piece_id="crpg_candycane_2h_blade_h1" />
       <UsablePiece piece_id="crpg_candycane_2h_blade_h2" />
