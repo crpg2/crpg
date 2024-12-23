@@ -96,27 +96,27 @@
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_battania_noble_bracers_v2_h0" name="{=wLAL9NRB}Fian Bracers" mesh="battania_noble_bracers" culture="Culture.battania" weight="1.744542" appearance="3" Type="HandArmor" difficulty="0">
+  <Item id="crpg_battania_noble_bracers_v3_h0" name="{=AppleTruce}Fian Bracers" mesh="battania_noble_bracers" culture="Culture.battania" weight="1.227098" appearance="3" Type="HandArmor" difficulty="0">
+    <ItemComponent>
+      <Armor arm_armor="14" modifier_group="leather" material_type="Leather" covers_hands="true" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_battania_noble_bracers_v3_h1" name="{=AppleTruce}Fian Bracers +1" mesh="battania_noble_bracers" culture="Culture.battania" weight="1.227098" appearance="3" Type="HandArmor" difficulty="0">
+    <ItemComponent>
+      <Armor arm_armor="15" modifier_group="leather" material_type="Leather" covers_hands="true" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_battania_noble_bracers_v3_h2" name="{=AppleTruce}Fian Bracers +2" mesh="battania_noble_bracers" culture="Culture.battania" weight="1.227098" appearance="3" Type="HandArmor" difficulty="0">
+    <ItemComponent>
+      <Armor arm_armor="16" modifier_group="leather" material_type="Leather" covers_hands="true" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_battania_noble_bracers_v3_h3" name="{=AppleTruce}Fian Bracers +3" mesh="battania_noble_bracers" culture="Culture.battania" weight="1.227098" appearance="3" Type="HandArmor" difficulty="0">
     <ItemComponent>
       <Armor arm_armor="18" modifier_group="leather" material_type="Leather" covers_hands="true" />
-    </ItemComponent>
-    <Flags Civilian="true" />
-  </Item>
-  <Item id="crpg_battania_noble_bracers_v2_h1" name="{=wLAL9NRB}Fian Bracers +1" mesh="battania_noble_bracers" culture="Culture.battania" weight="1.744542" appearance="3" Type="HandArmor" difficulty="0">
-    <ItemComponent>
-      <Armor arm_armor="19" modifier_group="leather" material_type="Leather" covers_hands="true" />
-    </ItemComponent>
-    <Flags Civilian="true" />
-  </Item>
-  <Item id="crpg_battania_noble_bracers_v2_h2" name="{=wLAL9NRB}Fian Bracers +2" mesh="battania_noble_bracers" culture="Culture.battania" weight="1.744542" appearance="3" Type="HandArmor" difficulty="0">
-    <ItemComponent>
-      <Armor arm_armor="20" modifier_group="leather" material_type="Leather" covers_hands="true" />
-    </ItemComponent>
-    <Flags Civilian="true" />
-  </Item>
-  <Item id="crpg_battania_noble_bracers_v2_h3" name="{=wLAL9NRB}Fian Bracers +3" mesh="battania_noble_bracers" culture="Culture.battania" weight="1.744542" appearance="3" Type="HandArmor" difficulty="0">
-    <ItemComponent>
-      <Armor arm_armor="22" modifier_group="leather" material_type="Leather" covers_hands="true" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
@@ -384,27 +384,27 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_lamellar_plate_gauntlets_v2_h0" name="{=XGX6DbFL}Lamellar Plate Gauntlets" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.60973" appearance="3" Type="HandArmor">
-    <ItemComponent>
-      <Armor arm_armor="24" modifier_group="plate" material_type="Plate" covers_hands="true" />
-    </ItemComponent>
-    <Flags />
-  </Item>
-  <Item id="crpg_lamellar_plate_gauntlets_v2_h1" name="{=XGX6DbFL}Lamellar Plate Gauntlets +1" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.60973" appearance="3" Type="HandArmor">
-    <ItemComponent>
-      <Armor arm_armor="25" modifier_group="plate" material_type="Plate" covers_hands="true" />
-    </ItemComponent>
-    <Flags />
-  </Item>
-  <Item id="crpg_lamellar_plate_gauntlets_v2_h2" name="{=XGX6DbFL}Lamellar Plate Gauntlets +2" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.60973" appearance="3" Type="HandArmor">
+  <Item id="crpg_lamellar_plate_gauntlets_v3_h0" name="{=AppleTruce}Lamellar Plate Gauntlets" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.919191" appearance="3" Type="HandArmor">
     <ItemComponent>
       <Armor arm_armor="26" modifier_group="plate" material_type="Plate" covers_hands="true" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_lamellar_plate_gauntlets_v2_h3" name="{=XGX6DbFL}Lamellar Plate Gauntlets +3" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.60973" appearance="3" Type="HandArmor">
+  <Item id="crpg_lamellar_plate_gauntlets_v3_h1" name="{=AppleTruce}Lamellar Plate Gauntlets +1" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.919191" appearance="3" Type="HandArmor">
+    <ItemComponent>
+      <Armor arm_armor="27" modifier_group="plate" material_type="Plate" covers_hands="true" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_lamellar_plate_gauntlets_v3_h2" name="{=AppleTruce}Lamellar Plate Gauntlets +2" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.919191" appearance="3" Type="HandArmor">
     <ItemComponent>
       <Armor arm_armor="28" modifier_group="plate" material_type="Plate" covers_hands="true" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_lamellar_plate_gauntlets_v3_h3" name="{=AppleTruce}Lamellar Plate Gauntlets +3" mesh="imperial_gauntlets" culture="Culture.empire" weight="2.919191" appearance="3" Type="HandArmor">
+    <ItemComponent>
+      <Armor arm_armor="30" modifier_group="plate" material_type="Plate" covers_hands="true" />
     </ItemComponent>
     <Flags />
   </Item>
@@ -480,27 +480,27 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_lordly_padded_mitten_v2_h0" name="{=t01v8qW7}Decorated Padded Mittens" mesh="padded_vambrace_a_lordly" culture="Culture.empire" weight="1.744542" appearance="0.7" Type="HandArmor" difficulty="0">
+  <Item id="crpg_lordly_padded_mitten_v3_h0" name="{=AppleTruce}Decorated Padded Mittens" mesh="padded_vambrace_a_lordly" culture="Culture.empire" weight="1.479339" appearance="0.7" Type="HandArmor" difficulty="0">
+    <ItemComponent>
+      <Armor arm_armor="16" modifier_group="cloth" material_type="Cloth" covers_hands="true" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_lordly_padded_mitten_v3_h1" name="{=AppleTruce}Decorated Padded Mittens +1" mesh="padded_vambrace_a_lordly" culture="Culture.empire" weight="1.479339" appearance="0.7" Type="HandArmor" difficulty="0">
+    <ItemComponent>
+      <Armor arm_armor="17" modifier_group="cloth" material_type="Cloth" covers_hands="true" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_lordly_padded_mitten_v3_h2" name="{=AppleTruce}Decorated Padded Mittens +2" mesh="padded_vambrace_a_lordly" culture="Culture.empire" weight="1.479339" appearance="0.7" Type="HandArmor" difficulty="0">
     <ItemComponent>
       <Armor arm_armor="18" modifier_group="cloth" material_type="Cloth" covers_hands="true" />
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_lordly_padded_mitten_v2_h1" name="{=t01v8qW7}Decorated Padded Mittens +1" mesh="padded_vambrace_a_lordly" culture="Culture.empire" weight="1.744542" appearance="0.7" Type="HandArmor" difficulty="0">
-    <ItemComponent>
-      <Armor arm_armor="19" modifier_group="cloth" material_type="Cloth" covers_hands="true" />
-    </ItemComponent>
-    <Flags />
-  </Item>
-  <Item id="crpg_lordly_padded_mitten_v2_h2" name="{=t01v8qW7}Decorated Padded Mittens +2" mesh="padded_vambrace_a_lordly" culture="Culture.empire" weight="1.744542" appearance="0.7" Type="HandArmor" difficulty="0">
+  <Item id="crpg_lordly_padded_mitten_v3_h3" name="{=AppleTruce}Decorated Padded Mittens +3" mesh="padded_vambrace_a_lordly" culture="Culture.empire" weight="1.479339" appearance="0.7" Type="HandArmor" difficulty="0">
     <ItemComponent>
       <Armor arm_armor="20" modifier_group="cloth" material_type="Cloth" covers_hands="true" />
-    </ItemComponent>
-    <Flags />
-  </Item>
-  <Item id="crpg_lordly_padded_mitten_v2_h3" name="{=t01v8qW7}Decorated Padded Mittens +3" mesh="padded_vambrace_a_lordly" culture="Culture.empire" weight="1.744542" appearance="0.7" Type="HandArmor" difficulty="0">
-    <ItemComponent>
-      <Armor arm_armor="22" modifier_group="cloth" material_type="Cloth" covers_hands="true" />
     </ItemComponent>
     <Flags />
   </Item>
