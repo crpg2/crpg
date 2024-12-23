@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Crpg.Module.Helpers;
 using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.Common.AiComponents;
@@ -25,7 +26,7 @@ public class DtvAiComponent : CommonAIComponent
 
     public override void OnHit(Agent affectorAgent, int damage, in MissionWeapon affectorWeapon)
     {
-        if (damage > 0 && affectorAgent.Team == Mission.Current.Teams.Defender)
+        if (affectorAgent.Team == Mission.Current.Teams.Defender)
         {
             ResetTargetTimer();
         }
@@ -44,7 +45,7 @@ public class DtvAiComponent : CommonAIComponent
 
     private void CheckTargetTimer()
     {
-        _targetTimer ??= new(ViscountTargetTimerDuration);
+        _targetTimer ??= new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration, 0.2f));
         if (_targetTimer.Check(false))
         {
             FocusVip();

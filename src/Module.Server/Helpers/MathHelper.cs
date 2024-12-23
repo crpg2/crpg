@@ -65,4 +65,14 @@ internal static class MathHelper
             ? value >= bound1 && value <= bound2
             : value >= bound2 && value <= bound1;
     }
+
+    public static int RandomWithVariance(int value, double variancePercentage)
+    {
+        var random = new Random();
+        int variance = (int)(value * variancePercentage);
+        int min = value - variance;
+        int max = value + variance;
+
+        return random.Next(min, max + 1);
+    }
 }
