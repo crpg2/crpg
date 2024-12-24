@@ -535,7 +535,7 @@ internal class CrpgRewardServer : MissionLogic
         int? constantMultiplier)
     {
         float serverXpMultiplier = CrpgServerConfiguration.ServerExperienceMultiplier;
-        serverXpMultiplier *= IsHappyHour() ? 1.5f : 1f;
+        serverXpMultiplier *= (IsHappyHour() ? CrpgServerConfiguration.HappyHoursExperienceMultiplier : 0f) + 1f;
         userUpdate.Reward = new CrpgUserReward
         {
             Experience = (int)(serverXpMultiplier * durationRewarded * (_constants.BaseExperienceGainPerSecond
@@ -579,7 +579,7 @@ internal class CrpgRewardServer : MissionLogic
             if (_lastRewardDuringHappyHours)
             {
                 GameNetwork.BeginBroadcastModuleEvent();
-                GameNetwork.WriteMessage(new CrpgRewardHappyHour { Started = false });
+                GameNetwork.WriteMessage(new CrpgRewardHappyHour { Started = false, ExpMultiplier = CrpgServerConfiguration.HappyHoursExperienceMultiplier });
                 GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
             }
 
@@ -590,7 +590,7 @@ internal class CrpgRewardServer : MissionLogic
         if (!_lastRewardDuringHappyHours)
         {
             GameNetwork.BeginBroadcastModuleEvent();
-            GameNetwork.WriteMessage(new CrpgRewardHappyHour { Started = true });
+            GameNetwork.WriteMessage(new CrpgRewardHappyHour { Started = true, ExpMultiplier = CrpgServerConfiguration.HappyHoursExperienceMultiplier });
             GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
         }
 
