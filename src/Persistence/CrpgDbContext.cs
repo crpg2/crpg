@@ -1,4 +1,3 @@
-using Crpg.Application.Common.Exceptions;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Domain.Common;
 using Crpg.Domain.Entities.ActivityLogs;
@@ -89,14 +88,7 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
             }
         }
 
-        try
-        {
-            return await base.SaveChangesAsync(cancellationToken);
-        }
-        catch (DbUpdateConcurrencyException e)
-        {
-            throw new ConflictException(e);
-        }
+        return await base.SaveChangesAsync(cancellationToken);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

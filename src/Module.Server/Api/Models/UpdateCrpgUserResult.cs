@@ -8,6 +8,6 @@ namespace Crpg.Module.Api.Models;
 internal class UpdateCrpgUserResult
 {
     public CrpgUser User { get; set; } = default!;
-    public CrpgUserEffectiveReward EffectiveReward { get; set; } = default!;
+    public CrpgUserEffectiveReward? EffectiveReward { get; init; } = default!;
     public IList<CrpgRepairedItem> RepairedItems { get; set; } = Array.Empty<CrpgRepairedItem>();
 }
