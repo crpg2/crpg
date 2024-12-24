@@ -1,4 +1,5 @@
 ﻿using Crpg.Module.Common;
+using Crpg.Module.Common.AiComponents;
 using Crpg.Module.Common.Network;
 using Crpg.Module.Notifications;
 using TaleWorlds.Core;
@@ -20,6 +21,12 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
     {
         _notifiedPlayersAboutSpawnRestriction = new HashSet<PlayerId>();
         CurrentGameMode = MultiplayerGameType.FreeForAll;
+    }
+
+    public override void Initialize(SpawnComponent spawnComponent)
+    {
+        base.Initialize(spawnComponent);
+        Mission.Current.AllowAiTicking = true;
     }
 
     public override void OnTick(float dt)
@@ -93,21 +100,25 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
     }
 
     private void SpawnVip()
-{
-    MultiplayerClassDivisions.MPHeroClass vipClass = MultiplayerClassDivisions
-        .GetMPHeroClasses()
-        .GetRandomElementWithPredicate(x => x.StringId.StartsWith("crpg_dtv_vip_"));
-
-    var vipAgent = SpawnBotAgent(vipClass.StringId, Mission.DefenderTeam);
-    var vipSpawn = Mission.Scene.FindEntityWithTag("crpg_spawn_vip");
-    if (vipSpawn != null)
     {
-        vipAgent.TeleportToPosition(vipSpawn.GetGlobalFrame().origin);
-    }
+        MultiplayerClassDivisions.MPHeroClass vipClass = MultiplayerClassDivisions
+            .GetMPHeroClasses()
+            .GetRandomElementWithPredicate(x => x.StringId.StartsWith("crpg_dtv_vip_"));
 
-    // Prevent the VIP from moving.
-    vipAgent.SetTargetPosition(vipAgent.Position.AsVec2);
-}
+        var vipAgent = SpawnBotAgent(vipClass.StringId, Mission.DefenderTeam);
+        var vipSpawn = Mission.Scene.FindEntitiesWithTag("crpg_spawn_vip");
+        if (vipSpawn != null && vipSpawn.Count() > 0)
+        {
+            vipAgent.TeleportToPosition(vipSpawn.GetRandomElementInefficiently().GetGlobalFrame().origin);
+        }
+        else
+        {
+            throw new Exception("Vip spawn not found!");
+        }
+
+        // Prevent the VIP from moving.
+        vipAgent.SetTargetPosition(vipAgent.Position.AsVec2);
+    }
 
     private void SpawnAttackers(CrpgDtvWave wave, int defendersCount)
     {
@@ -125,7 +136,10 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
             Debug.Print($"Spawning {groupBotCount} {group.ClassDivisionId}(s)");
             for (int i = 0; i < groupBotCount; i++)
             {
-                SpawnBotAgent(group.ClassDivisionId, Mission.AttackerTeam);
+                Agent agent = SpawnBotAgent(group.ClassDivisionId, Mission.AttackerTeam);
+                DtvAiComponent component = new(agent);
+                agent.AddComponent(component);
+                component.Initialize();
             }
         }
 
@@ -136,7 +150,10 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
         for (int i = 0; i < extraBotsToSpawn; i += 1)
         {
             var group = groupsWithoutBoss[i % groupsWithoutBoss.Length];
-            SpawnBotAgent(group.ClassDivisionId, Mission.AttackerTeam);
+            Agent agent = SpawnBotAgent(group.ClassDivisionId, Mission.AttackerTeam);
+            DtvAiComponent component = new(agent);
+            agent.AddComponent(component);
+            component.Initialize();
         }
     }
 
