@@ -35984,4 +35984,116 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
+    <CraftingPiece id="crpg_jamescross_2h_handle_h0" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.90" CraftingCost="75">
+    <BuildData piece_offset="23" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_handle_h1" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.90" CraftingCost="75">
+    <BuildData piece_offset="23" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_handle_h2" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.90" CraftingCost="75">
+    <BuildData piece_offset="23" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_handle_h3" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.90" CraftingCost="75">
+    <BuildData piece_offset="23" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_blade_h0" name="{=Yeldur}Cross Head" tier="3" piece_type="Blade" mesh="acrecross_blade" length="33" weight="0.85" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.4" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_blade_h1" name="{=Yeldur}Cross Head" tier="3" piece_type="Blade" mesh="acrecross_blade" length="33" weight="0.85" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_blade_h2" name="{=Yeldur}Cross Head" tier="3" piece_type="Blade" mesh="acrecross_blade" length="33" weight="0.85" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_blade_h3" name="{=Yeldur}Cross Head" tier="3" piece_type="Blade" mesh="acrecross_blade" length="33" weight="0.85" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_pommel_h0" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.90">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_pommel_h1" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.90">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_pommel_h2" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.90">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_2h_pommel_h3" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.90">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_handle_h0" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.34" CraftingCost="75">
+    <BuildData piece_offset="23" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_handle_h1" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.25" CraftingCost="75">
+    <BuildData piece_offset="23" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_handle_h2" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.25" CraftingCost="75">
+    <BuildData piece_offset="23" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_handle_h3" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.25" CraftingCost="75">
+    <BuildData piece_offset="23" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_blade_h0" name="{=Yeldur}Cross Head" tier="3" piece_type="Blade" mesh="acrecross_blade" length="33" weight="0.75" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="1.7" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_blade_h1" name="{=Yeldur}Cross Head" tier="3" piece_type="Blade" mesh="acrecross_blade" length="33" weight="0.75" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="1.7" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_blade_h2" name="{=Yeldur}Cross Head" tier="3" piece_type="Blade" mesh="acrecross_blade" length="33" weight="0.75" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="1.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_blade_h3" name="{=Yeldur}Cross Head" tier="3" piece_type="Blade" mesh="acrecross_blade" length="33" weight="0.72" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="1.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_pommel_h0" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.37">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_pommel_h1" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.37">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_pommel_h2" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.37">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_jamescross_1h_pommel_h3" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.37">
+  </CraftingPiece>
 </CraftingPieces>
