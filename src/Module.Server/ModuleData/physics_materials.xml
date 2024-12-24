@@ -32,5 +32,21 @@
                       linear_damping="0.070"
                       angular_damping="0.030"
                       display_color="255, 124, 64, 161" />
+	<physics_material id="cla_explosion"
+                      dont_stick_missiles="true"
+                      static_friction="0.700"
+                      dynamic_friction="0.300"
+                      restitution="0.400"
+                      linear_damping="0.070"
+                      angular_damping="0.030"
+                      display_color="255, 124, 64, 161" />
+    <physics_material id="cla_explosion_small"
+                      dont_stick_missiles="true"
+                      static_friction="0.700"
+                      dynamic_friction="0.300"
+                      restitution="0.400"
+                      linear_damping="0.070"
+                      angular_damping="0.030"
+                      display_color="255, 124, 64, 161" />
   </physics_materials>
 </base>

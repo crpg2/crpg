@@ -4,4 +4,33 @@
     <action name="act_equip_crossbow_left_stance_light" type="actt_equip_unequip"/>
     <action name="act_equip_crossbow_heavy" type="actt_equip_unequip"/>
     <action name="act_equip_crossbow_left_stance_heavy" type="actt_equip_unequip"/>
+	  <action name="act_ready_musket_cla" type="actt_ready_ranged" action_stage="as_attack_ready" />
+    <action name="act_release_musket_cla" type="actt_release_ranged" action_stage="as_attack_release" />
+    <action name="act_ready_continue_musket_cla" type="actt_ready_ranged" action_stage="as_attack_ready" />
+    <action name="act_reload_musket_cla" type="actt_reload" action_stage="as_reload_mid_phase" />
+    <action name="act_reload_musket_continue_cla" type="actt_reload" action_stage="as_reload_last_phase" />
+    <action name="act_reload_musket_continue_fast_cla" type="actt_reload" action_stage="as_reload_last_phase" />
+    <action name="act_reload_musket_horseback_cla" type="actt_reload" action_stage="as_reload_mid_phase" />
+    <action name="act_reload_musket_continue_horseback_cla" type="actt_reload" action_stage="as_reload_last_phase" />
+    <action name="act_reload_musket_fast_cla" type="actt_reload" action_stage="as_reload_mid_phase" />
+    <action name="act_reload_musket_continue_fast_cla" type="actt_reload" action_stage="as_reload_last_phase" />
+    <action name="act_ready_pistol_cla" type="actt_ready_ranged" action_stage="as_attack_ready" />
+    <action name="act_release_pistol_cla" type="actt_release_ranged" action_stage="as_attack_release" />
+    <action name="act_ready_continue_pistol_cla" type="actt_ready_ranged" action_stage="as_attack_ready" />
+    <action name="act_release_revolver_cla" type="actt_release_ranged" action_stage="as_attack_release" />
+    <action name="act_ready_cannon_cla" type="actt_ready_ranged" action_stage="as_attack_ready" />
+    <action name="act_release_cannon_cla" type="actt_release_ranged" action_stage="as_attack_release" />
+    <action name="act_ready_continue_cannon_cla" type="actt_ready_ranged" action_stage="as_attack_ready" />
+    <action name="act_reload_cannon_cla" type="actt_reload" action_stage="as_reload_mid_phase" />
+    <action name="act_reload_cannon_continue_cla" type="actt_reload" action_stage="as_reload_last_phase" />
+    <action name="act_reload_cannon_horseback_cla" type="actt_reload" action_stage="as_reload_mid_phase" />
+    <action name="act_reload_cannon_continue_horseback_cla" type="actt_reload" action_stage="as_reload_last_phase" />
+    <action name="act_ready_rifle_cla" type="actt_ready_ranged" action_stage="as_attack_ready" />
+    <action name="act_release_rifle_cla" type="actt_release_ranged" action_stage="as_attack_release" />
+    <action name="act_ready_continue_rifle_cla" type="actt_ready_ranged" action_stage="as_attack_ready" />
+    <action name="act_reload_rifle_cla" type="actt_reload" action_stage="as_reload_mid_phase" />
+    <action name="act_reload_rifle_continue_cla" type="actt_reload" action_stage="as_reload_last_phase" />
+    <action name="act_release_bolt_rifle_cla" type="actt_release_ranged" action_stage="as_attack_release" />
+    <action name="act_reload_bolt_rifle_continue_cla" type="actt_reload" action_stage="as_reload_last_phase" />
+    <action name="cla_reload_bomb" type="actt_reload" action_stage="as_reload_last_phase" />
 </action_types>
