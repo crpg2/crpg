@@ -5,6 +5,38 @@
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_ibelinsword_blade_h0" />
+      <AvailablePiece id="crpg_ibelinsword_blade_h1" />
+      <AvailablePiece id="crpg_ibelinsword_blade_h2" />
+      <AvailablePiece id="crpg_ibelinsword_blade_h3" />
+      <AvailablePiece id="crpg_ibelinsword_guard_h0" />
+      <AvailablePiece id="crpg_ibelinsword_guard_h1" />
+      <AvailablePiece id="crpg_ibelinsword_guard_h2" />
+      <AvailablePiece id="crpg_ibelinsword_guard_h3" />
+      <AvailablePiece id="crpg_ibelinsword_handle_h0" />
+      <AvailablePiece id="crpg_ibelinsword_handle_h1" />
+      <AvailablePiece id="crpg_ibelinsword_handle_h2" />
+      <AvailablePiece id="crpg_ibelinsword_handle_h3" />
+      <AvailablePiece id="crpg_ibelinsword_pommel_h0" />
+      <AvailablePiece id="crpg_ibelinsword_pommel_h1" />
+      <AvailablePiece id="crpg_ibelinsword_pommel_h2" />
+      <AvailablePiece id="crpg_ibelinsword_pommel_h3" />
+      <AvailablePiece id="crpg_dragonscimitar_blade_h0" />
+      <AvailablePiece id="crpg_dragonscimitar_blade_h1" />
+      <AvailablePiece id="crpg_dragonscimitar_blade_h2" />
+      <AvailablePiece id="crpg_dragonscimitar_blade_h3" />
+      <AvailablePiece id="crpg_dragonscimitar_guard_h0" />
+      <AvailablePiece id="crpg_dragonscimitar_guard_h1" />
+      <AvailablePiece id="crpg_dragonscimitar_guard_h2" />
+      <AvailablePiece id="crpg_dragonscimitar_guard_h3" />
+      <AvailablePiece id="crpg_dragonscimitar_handle_h0" />
+      <AvailablePiece id="crpg_dragonscimitar_handle_h1" />
+      <AvailablePiece id="crpg_dragonscimitar_handle_h2" />
+      <AvailablePiece id="crpg_dragonscimitar_handle_h3" />
+      <AvailablePiece id="crpg_dragonscimitar_pommel_h0" />
+      <AvailablePiece id="crpg_dragonscimitar_pommel_h1" />
+      <AvailablePiece id="crpg_dragonscimitar_pommel_h2" />
+      <AvailablePiece id="crpg_dragonscimitar_pommel_h3" />
       <AvailablePiece id="crpg_cts_saxon_sword_blade_h0" />
       <AvailablePiece id="crpg_cts_saxon_sword_blade_h1" />
       <AvailablePiece id="crpg_cts_saxon_sword_blade_h2" />
@@ -3771,6 +3803,46 @@
       <WeaponFlag value="NotUsableWithOneHand" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_ringduva_twofightingaxe_blade_h0" />
+      <AvailablePiece id="crpg_ringduva_twofightingaxe_blade_h1" />
+      <AvailablePiece id="crpg_ringduva_twofightingaxe_blade_h2" />
+      <AvailablePiece id="crpg_ringduva_twofightingaxe_blade_h3" />
+      <AvailablePiece id="crpg_ringduva_twofightingaxe_handle_h0" />
+      <AvailablePiece id="crpg_ringduva_twofightingaxe_handle_h1" />
+      <AvailablePiece id="crpg_ringduva_twofightingaxe_handle_h2" />
+      <AvailablePiece id="crpg_ringduva_twofightingaxe_handle_h3" />
+      <AvailablePiece id="crpg_ibelinsword_2h_blade_h0" />
+      <AvailablePiece id="crpg_ibelinsword_2h_blade_h1" />
+      <AvailablePiece id="crpg_ibelinsword_2h_blade_h2" />
+      <AvailablePiece id="crpg_ibelinsword_2h_blade_h3" />
+      <AvailablePiece id="crpg_ibelinsword_2h_guard_h0" />
+      <AvailablePiece id="crpg_ibelinsword_2h_guard_h1" />
+      <AvailablePiece id="crpg_ibelinsword_2h_guard_h2" />
+      <AvailablePiece id="crpg_ibelinsword_2h_guard_h3" />
+      <AvailablePiece id="crpg_ibelinsword_2h_handle_h0" />
+      <AvailablePiece id="crpg_ibelinsword_2h_handle_h1" />
+      <AvailablePiece id="crpg_ibelinsword_2h_handle_h2" />
+      <AvailablePiece id="crpg_ibelinsword_2h_handle_h3" />
+      <AvailablePiece id="crpg_ibelinsword_2h_pommel_h0" />
+      <AvailablePiece id="crpg_ibelinsword_2h_pommel_h1" />
+      <AvailablePiece id="crpg_ibelinsword_2h_pommel_h2" />
+      <AvailablePiece id="crpg_ibelinsword_2h_pommel_h3" />
+      <AvailablePiece id="crpg_dragonslayer_blade_h0" />
+      <AvailablePiece id="crpg_dragonslayer_blade_h1" />
+      <AvailablePiece id="crpg_dragonslayer_blade_h2" />
+      <AvailablePiece id="crpg_dragonslayer_blade_h3" />
+      <AvailablePiece id="crpg_dragonslayer_guard_h0" />
+      <AvailablePiece id="crpg_dragonslayer_guard_h1" />
+      <AvailablePiece id="crpg_dragonslayer_guard_h2" />
+      <AvailablePiece id="crpg_dragonslayer_guard_h3" />
+      <AvailablePiece id="crpg_dragonslayer_handle_h0" />
+      <AvailablePiece id="crpg_dragonslayer_handle_h1" />
+      <AvailablePiece id="crpg_dragonslayer_handle_h2" />
+      <AvailablePiece id="crpg_dragonslayer_handle_h3" />
+      <AvailablePiece id="crpg_dragonslayer_pommel_h0" />
+      <AvailablePiece id="crpg_dragonslayer_pommel_h1" />
+      <AvailablePiece id="crpg_dragonslayer_pommel_h2" />
+      <AvailablePiece id="crpg_dragonslayer_pommel_h3" />
       <AvailablePiece id="crpg_large_falchion_blade_h0" />
       <AvailablePiece id="crpg_large_falchion_blade_h1" />
       <AvailablePiece id="crpg_large_falchion_blade_h2" />
@@ -10033,6 +10105,14 @@
       <AvailablePiece id="crpg_bo_staff_guard_h1" />
       <AvailablePiece id="crpg_bo_staff_guard_h2" />
       <AvailablePiece id="crpg_bo_staff_guard_h3" />
+      <AvailablePiece id="crpg_great_long_bardiche_blade_h0" />
+      <AvailablePiece id="crpg_great_long_bardiche_blade_h1" />
+      <AvailablePiece id="crpg_great_long_bardiche_blade_h2" />
+      <AvailablePiece id="crpg_great_long_bardiche_blade_h3" />
+      <AvailablePiece id="crpg_great_long_bardiche_handle_h0" />
+      <AvailablePiece id="crpg_great_long_bardiche_handle_h1" />
+      <AvailablePiece id="crpg_great_long_bardiche_handle_h2" />
+      <AvailablePiece id="crpg_great_long_bardiche_handle_h3" />
       <AvailablePiece id="crpg_long_bardiche_blade_h0" />
       <AvailablePiece id="crpg_long_bardiche_blade_h1" />
       <AvailablePiece id="crpg_long_bardiche_blade_h2" />
@@ -11363,6 +11443,22 @@
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_ashwood_pike_blade_h0" />
+      <AvailablePiece id="crpg_ashwood_pike_blade_h1" />
+      <AvailablePiece id="crpg_ashwood_pike_blade_h2" />
+      <AvailablePiece id="crpg_ashwood_pike_blade_h3" />
+      <AvailablePiece id="crpg_ashwood_pike_handle_h0" />
+      <AvailablePiece id="crpg_ashwood_pike_handle_h1" />
+      <AvailablePiece id="crpg_ashwood_pike_handle_h2" />
+      <AvailablePiece id="crpg_ashwood_pike_handle_h3" />
+      <AvailablePiece id="crpg_ashwood_pike_pommel_h0" />
+      <AvailablePiece id="crpg_ashwood_pike_pommel_h1" />
+      <AvailablePiece id="crpg_ashwood_pike_pommel_h2" />
+      <AvailablePiece id="crpg_ashwood_pike_pommel_h3" />
+      <AvailablePiece id="crpg_ashwood_pike_guard_h0" />
+      <AvailablePiece id="crpg_ashwood_pike_guard_h1" />
+      <AvailablePiece id="crpg_ashwood_pike_guard_h2" />
+      <AvailablePiece id="crpg_ashwood_pike_guard_h3" />
       <AvailablePiece id="crpg_polesword_handle_h0" />
       <AvailablePiece id="crpg_polesword_handle_h1" />
       <AvailablePiece id="crpg_polesword_handle_h2" />
@@ -13935,6 +14031,22 @@
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_splittingmaul_blade_h0" />
+      <AvailablePiece id="crpg_splittingmaul_blade_h1" />
+      <AvailablePiece id="crpg_splittingmaul_blade_h2" />
+      <AvailablePiece id="crpg_splittingmaul_blade_h3" />
+      <AvailablePiece id="crpg_splittingmaul_handle_h0" />
+      <AvailablePiece id="crpg_splittingmaul_handle_h1" />
+      <AvailablePiece id="crpg_splittingmaul_handle_h2" />
+      <AvailablePiece id="crpg_splittingmaul_handle_h3" />
+      <AvailablePiece id="crpg_splittingmaul_guard_h0" />
+      <AvailablePiece id="crpg_splittingmaul_guard_h1" />
+      <AvailablePiece id="crpg_splittingmaul_guard_h2" />
+      <AvailablePiece id="crpg_splittingmaul_guard_h3" />
+      <AvailablePiece id="crpg_splittingmaul_pommel_h0" />
+      <AvailablePiece id="crpg_splittingmaul_pommel_h1" />
+      <AvailablePiece id="crpg_splittingmaul_pommel_h2" />
+      <AvailablePiece id="crpg_splittingmaul_pommel_h3" />
       <AvailablePiece id="crpg_candycane_2h_blade_h0" />
       <AvailablePiece id="crpg_candycane_2h_blade_h1" />
       <AvailablePiece id="crpg_candycane_2h_blade_h2" />
@@ -14701,6 +14813,22 @@
       <AvailablePiece id="crpg_english_bill_pommel_h1" />
       <AvailablePiece id="crpg_english_bill_pommel_h2" />
       <AvailablePiece id="crpg_english_bill_pommel_h3" />
+      <AvailablePiece id="crpg_ashwood_pike_blade_h0" />
+      <AvailablePiece id="crpg_ashwood_pike_blade_h1" />
+      <AvailablePiece id="crpg_ashwood_pike_blade_h2" />
+      <AvailablePiece id="crpg_ashwood_pike_blade_h3" />
+      <AvailablePiece id="crpg_ashwood_pike_handle_h0" />
+      <AvailablePiece id="crpg_ashwood_pike_handle_h1" />
+      <AvailablePiece id="crpg_ashwood_pike_handle_h2" />
+      <AvailablePiece id="crpg_ashwood_pike_handle_h3" />
+      <AvailablePiece id="crpg_ashwood_pike_pommel_h0" />
+      <AvailablePiece id="crpg_ashwood_pike_pommel_h1" />
+      <AvailablePiece id="crpg_ashwood_pike_pommel_h2" />
+      <AvailablePiece id="crpg_ashwood_pike_pommel_h3" />
+      <AvailablePiece id="crpg_ashwood_pike_guard_h0" />
+      <AvailablePiece id="crpg_ashwood_pike_guard_h1" />
+      <AvailablePiece id="crpg_ashwood_pike_guard_h2" />
+      <AvailablePiece id="crpg_ashwood_pike_guard_h3" />
     </AvailablePieces>
   </WeaponDescription>
 </WeaponDescriptions>

@@ -624,27 +624,27 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_leather_cavalier_boots_v2_h0" name="{=oEvhhNNR}Leather Cavalier Boots" mesh="cav_boots" culture="Culture.vlandia" weight="0.2741811" appearance="1" Type="LegArmor">
+  <Item id="crpg_leather_cavalier_boots_v3_h0" name="{=AppleTruce}Leather Cavalier Boots" mesh="cav_boots" culture="Culture.vlandia" weight="0.8978525" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="6" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="14" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_leather_cavalier_boots_v2_h1" name="{=oEvhhNNR}Leather Cavalier Boots +1" mesh="cav_boots" culture="Culture.vlandia" weight="0.2741811" appearance="1" Type="LegArmor">
+  <Item id="crpg_leather_cavalier_boots_v3_h1" name="{=AppleTruce}Leather Cavalier Boots +1" mesh="cav_boots" culture="Culture.vlandia" weight="0.8978525" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="7" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="15" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_leather_cavalier_boots_v2_h2" name="{=oEvhhNNR}Leather Cavalier Boots +2" mesh="cav_boots" culture="Culture.vlandia" weight="0.2741811" appearance="1" Type="LegArmor">
+  <Item id="crpg_leather_cavalier_boots_v3_h2" name="{=AppleTruce}Leather Cavalier Boots +2" mesh="cav_boots" culture="Culture.vlandia" weight="0.8978525" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="9" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="17" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_leather_cavalier_boots_v2_h3" name="{=oEvhhNNR}Leather Cavalier Boots +3" mesh="cav_boots" culture="Culture.vlandia" weight="0.2741811" appearance="1" Type="LegArmor">
+  <Item id="crpg_leather_cavalier_boots_v3_h3" name="{=AppleTruce}Leather Cavalier Boots +3" mesh="cav_boots" culture="Culture.vlandia" weight="0.8978525" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="11" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="19" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
@@ -912,27 +912,27 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_rough_tied_boots_v2_h0" name="{=Oo0baNaq}Rough Tied Boots" mesh="bandit_3_boot" culture="Culture.battania" weight="0.2741811" appearance="1" Type="LegArmor">
+  <Item id="crpg_rough_tied_boots_v3_h0" name="{=AppleTruce}Rough Tied Boots" mesh="bandit_3_boot" culture="Culture.battania" weight="1.082415" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="6" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="16" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_rough_tied_boots_v2_h1" name="{=Oo0baNaq}Rough Tied Boots +1" mesh="bandit_3_boot" culture="Culture.battania" weight="0.2741811" appearance="1" Type="LegArmor">
+  <Item id="crpg_rough_tied_boots_v3_h1" name="{=AppleTruce}Rough Tied Boots +1" mesh="bandit_3_boot" culture="Culture.battania" weight="1.082415" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="7" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="17" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_rough_tied_boots_v2_h2" name="{=Oo0baNaq}Rough Tied Boots +2" mesh="bandit_3_boot" culture="Culture.battania" weight="0.2741811" appearance="1" Type="LegArmor">
+  <Item id="crpg_rough_tied_boots_v3_h2" name="{=AppleTruce}Rough Tied Boots +2" mesh="bandit_3_boot" culture="Culture.battania" weight="1.082415" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="9" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="19" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_rough_tied_boots_v2_h3" name="{=Oo0baNaq}Rough Tied Boots +3" mesh="bandit_3_boot" culture="Culture.battania" weight="0.2741811" appearance="1" Type="LegArmor">
+  <Item id="crpg_rough_tied_boots_v3_h3" name="{=AppleTruce}Rough Tied Boots +3" mesh="bandit_3_boot" culture="Culture.battania" weight="1.082415" appearance="1" Type="LegArmor">
     <ItemComponent>
-      <Armor leg_armor="11" covers_legs="true" modifier_group="leather" material_type="Leather" />
+      <Armor leg_armor="21" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
@@ -1272,27 +1272,27 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_wrapped_leather_boots_v2_h0" name="{=WahziEXA}Wrapped Leather Boots" mesh="bandit_leather_boots" culture="Culture.battania" weight="0.3402225" appearance="1" Type="LegArmor">
-    <ItemComponent>
-      <Armor leg_armor="7" covers_legs="true" modifier_group="leather" material_type="Leather" />
-    </ItemComponent>
-    <Flags Civilian="true" />
-  </Item>
-  <Item id="crpg_wrapped_leather_boots_v2_h1" name="{=WahziEXA}Wrapped Leather Boots +1" mesh="bandit_leather_boots" culture="Culture.battania" weight="0.3402225" appearance="1" Type="LegArmor">
-    <ItemComponent>
-      <Armor leg_armor="8" covers_legs="true" modifier_group="leather" material_type="Leather" />
-    </ItemComponent>
-    <Flags Civilian="true" />
-  </Item>
-  <Item id="crpg_wrapped_leather_boots_v2_h2" name="{=WahziEXA}Wrapped Leather Boots +2" mesh="bandit_leather_boots" culture="Culture.battania" weight="0.3402225" appearance="1" Type="LegArmor">
-    <ItemComponent>
-      <Armor leg_armor="10" covers_legs="true" modifier_group="leather" material_type="Leather" />
-    </ItemComponent>
-    <Flags Civilian="true" />
-  </Item>
-  <Item id="crpg_wrapped_leather_boots_v2_h3" name="{=WahziEXA}Wrapped Leather Boots +3" mesh="bandit_leather_boots" culture="Culture.battania" weight="0.3402225" appearance="1" Type="LegArmor">
+  <Item id="crpg_wrapped_leather_boots_v3_h0" name="{=AppleTruce}Wrapped Leather Boots" mesh="bandit_leather_boots" culture="Culture.battania" weight="0.7235683" appearance="1" Type="LegArmor">
     <ItemComponent>
       <Armor leg_armor="12" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_wrapped_leather_boots_v3_h1" name="{=AppleTruce}Wrapped Leather Boots +1" mesh="bandit_leather_boots" culture="Culture.battania" weight="0.7235683" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="13" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_wrapped_leather_boots_v3_h2" name="{=AppleTruce}Wrapped Leather Boots +2" mesh="bandit_leather_boots" culture="Culture.battania" weight="0.7235683" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="15" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_wrapped_leather_boots_v3_h3" name="{=AppleTruce}Wrapped Leather Boots +3" mesh="bandit_leather_boots" culture="Culture.battania" weight="0.7235683" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="17" covers_legs="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>

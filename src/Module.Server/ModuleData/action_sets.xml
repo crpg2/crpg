@@ -5,5 +5,19 @@
       <action type="act_equip_crossbow_left_stance_light" animation="equip_crossbow_left_stance_light"/>
       <action type="act_equip_crossbow_heavy" animation="equip_crossbow_heavy"/>
       <action type="act_equip_crossbow_left_stance_heavy" animation="equip_crossbow_left_stance_heavy"/>
+	    <action type="act_ready_musket_cla" animation="1_cla_ready_musket" />
+      <action type="act_release_musket_cla" animation="1_cla_release_musket" />
+      <action type="act_ready_continue_musket_cla" animation="1_cla_ready_continue_musket" />
+      <action type="act_reload_musket_cla" animation="1_cla_reload_musket" />
+      <action type="act_reload_musket_continue_cla" animation="1_cla_reload_musket_continue" />
+      <action type="act_reload_musket_horseback_cla" animation="1_cla_reload_musket_horseback" />
+      <action type="act_reload_musket_continue_horseback_cla" animation="1_cla_reload_musket_continue_horseback" />
+      <action type="act_ready_cannon_cla" animation="2_cla_ready_cannon" />
+      <action type="act_release_cannon_cla" animation="2_cla_release_cannon" />
+      <action type="act_ready_continue_cannon_cla" animation="2_cla_ready_continue_cannon" />
+      <action type="act_reload_cannon_cla" animation="2_cla_reload_cannon" />
+      <action type="act_reload_cannon_continue_cla" animation="2_cla_reload_cannon_continue" />
+      <action type="act_reload_cannon_horseback_cla" animation="2_cla_reload_cannon_horseback" />
+      <action type="act_reload_cannon_continue_horseback_cla" animation="2_cla_reload_cannon_continue_horseback" />
 	</action_set>
 </action_sets>
