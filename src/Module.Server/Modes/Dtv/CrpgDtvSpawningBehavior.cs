@@ -100,21 +100,25 @@ internal class CrpgDtvSpawningBehavior : CrpgSpawningBehaviorBase
     }
 
     private void SpawnVip()
-{
-    MultiplayerClassDivisions.MPHeroClass vipClass = MultiplayerClassDivisions
-        .GetMPHeroClasses()
-        .GetRandomElementWithPredicate(x => x.StringId.StartsWith("crpg_dtv_vip_"));
-
-    var vipAgent = SpawnBotAgent(vipClass.StringId, Mission.DefenderTeam);
-    var vipSpawn = Mission.Scene.FindEntityWithTag("crpg_spawn_vip");
-    if (vipSpawn != null)
     {
-        vipAgent.TeleportToPosition(vipSpawn.GetGlobalFrame().origin);
-    }
+        MultiplayerClassDivisions.MPHeroClass vipClass = MultiplayerClassDivisions
+            .GetMPHeroClasses()
+            .GetRandomElementWithPredicate(x => x.StringId.StartsWith("crpg_dtv_vip_"));
 
-    // Prevent the VIP from moving.
-    vipAgent.SetTargetPosition(vipAgent.Position.AsVec2);
-}
+        var vipAgent = SpawnBotAgent(vipClass.StringId, Mission.DefenderTeam);
+        var vipSpawn = Mission.Scene.FindEntitiesWithTag("crpg_spawn_vip");
+        if (vipSpawn != null && vipSpawn.Count() > 0)
+        {
+            vipAgent.TeleportToPosition(vipSpawn.GetRandomElementInefficiently().GetGlobalFrame().origin);
+        }
+        else
+        {
+            throw new Exception("Vip spawn not found!");
+        }
+
+        // Prevent the VIP from moving.
+        vipAgent.SetTargetPosition(vipAgent.Position.AsVec2);
+    }
 
     private void SpawnAttackers(CrpgDtvWave wave, int defendersCount)
     {
