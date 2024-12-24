@@ -35882,8 +35882,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_dragonslayer_blade_h0" name="{=}Dragonslayer Blade" tier="4" piece_type="Blade" mesh="dragonslayer_blade" culture="Culture.battania" length="104.0" weight="1.0">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="10.015" />
-      <Swing damage_type="Cut" damage_factor="10.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
@@ -35891,8 +35891,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_dragonslayer_blade_h1" name="{=}Dragonslayer Blade" tier="4" piece_type="Blade" mesh="dragonslayer_blade" culture="Culture.battania" length="104.0" weight="1.0">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="10.015" />
-      <Swing damage_type="Cut" damage_factor="10.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
@@ -35900,8 +35900,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_dragonslayer_blade_h2" name="{=}Dragonslayer Blade" tier="4" piece_type="Blade" mesh="dragonslayer_blade" culture="Culture.battania" length="104.0" weight="1.0">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="10.015" />
-      <Swing damage_type="Cut" damage_factor="10.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
@@ -35909,8 +35909,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_dragonslayer_blade_h3" name="{=}Dragonslayer Blade" tier="4" piece_type="Blade" mesh="dragonslayer_blade" culture="Culture.battania" length="104.0" weight="1.0">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="10.015" />
-      <Swing damage_type="Cut" damage_factor="10.33" />
+      <Thrust damage_type="Pierce" damage_factor="1.015" />
+      <Swing damage_type="Cut" damage_factor="1.33" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
