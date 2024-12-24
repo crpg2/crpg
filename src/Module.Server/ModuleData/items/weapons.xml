@@ -13860,7 +13860,7 @@
       <Piece id="crpg_fabulousvoulge_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fabulousvoulge_h2" name="{=Yeldur}Noble Voulge +2" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_fabulousvoulge_h2" name="{=Yeldur}Noble Short Voulge +2" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_fabulousvoulge_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_fabulousvoulge_handle_h2" Type="Handle" scale_factor="110" />
@@ -13868,7 +13868,7 @@
       <Piece id="crpg_fabulousvoulge_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_fabulousvoulge_h3" name="{=Yeldur}Noble Voulge +3" crafting_template="crpg_TwoHandedPolearm">
+  <CraftedItem id="crpg_fabulousvoulge_h3" name="{=Yeldur}Noble Short Voulge +3" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
       <Piece id="crpg_fabulousvoulge_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_fabulousvoulge_handle_h3" Type="Handle" scale_factor="110" />
