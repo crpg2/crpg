@@ -7,8 +7,6 @@ using Crpg.Module.Common.Network;
 using Crpg.Module.Modes.TrainingGround;
 using Crpg.Module.Modes.Warmup;
 using Crpg.Module.Rating;
-using Polly;
-using Polly.Retry;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
@@ -38,8 +36,6 @@ internal class CrpgRewardServer : MissionLogic
     private readonly bool _isTeamHitCompensationsEnabled;
     private readonly bool _isRatingEnabled;
     private readonly bool _isLowPopulationUpkeepEnabled;
-
-    private ResiliencePipeline _pipeline = default!;
     private bool _lastRewardDuringHappyHours;
 
     public CrpgRewardServer(
@@ -69,7 +65,6 @@ internal class CrpgRewardServer : MissionLogic
     public override void OnBehaviorInitialize()
     {
         base.OnBehaviorInitialize();
-        BuildResiliencePipeline();
         if (_warmupComponent != null)
         {
             _warmupComponent.OnWarmupEnded += OnWarmupEnded;
@@ -155,7 +150,6 @@ internal class CrpgRewardServer : MissionLogic
                 Rating = winnerStats.Rating,
             },
             BrokenItems = Array.Empty<CrpgUserDamagedItem>(),
-            Instance = CrpgServerConfiguration.Instance,
         };
         crpgPeerByCrpgUserId[winnerUpdate.UserId] = winnerPeer;
         _characterRatings[winnerUpdate.CharacterId] = winnerRating;
@@ -176,7 +170,6 @@ internal class CrpgRewardServer : MissionLogic
                 Rating = loserStats.Rating,
             },
             BrokenItems = Array.Empty<CrpgUserDamagedItem>(),
-            Instance = CrpgServerConfiguration.Instance,
         };
         crpgPeerByCrpgUserId[loserUpdate.UserId] = loserPeer;
         _characterRatings[loserUpdate.CharacterId] = loserRating;
@@ -194,27 +187,21 @@ internal class CrpgRewardServer : MissionLogic
             return;
         }
 
-        Guid idempotencyKey = Guid.NewGuid();
-
         try
         {
-            await _pipeline.ExecuteAsync(async cancellationToken =>
+            var request = new CrpgGameUsersUpdateRequest
             {
-                var request = new CrpgGameUsersUpdateRequest
-                {
-                    Updates = userUpdates,
-                    Key = idempotencyKey.ToString(),
-                };
+                Updates = userUpdates,
+                Instance = CrpgServerConfiguration.Instance,
+            };
 
-                SetUserAsLoading(userUpdates.Select(u => u.UserId), crpgPeerByCrpgUserId, loading: true);
-                var res = (await _crpgClient.UpdateUsersAsync(request)).Data!;
-                SendDuelResultToPeers(res.UpdateResults, crpgPeerByCrpgUserId, winnerUpdate.UserId);
-            });
+            SetUserAsLoading(userUpdates.Select(u => u.UserId), crpgPeerByCrpgUserId, loading: true);
+            var res = (await _crpgClient.UpdateUsersAsync(request)).Data!;
+            SendDuelResultToPeers(res.UpdateResults, crpgPeerByCrpgUserId, winnerUpdate.UserId);
         }
         catch (Exception e)
         {
             Debug.Print($"Couldn't update users - {e}");
-
             SendErrorToPeers(crpgPeerByCrpgUserId);
         }
         finally
@@ -314,7 +301,6 @@ internal class CrpgRewardServer : MissionLogic
                     Rating = crpgPeer.User.Character.Statistics.Rating,
                 },
                 BrokenItems = Array.Empty<CrpgUserDamagedItem>(),
-                Instance = CrpgServerConfiguration.Instance,
             };
 
             if (CrpgFeatureFlags.IsEnabled(CrpgFeatureFlags.FeatureTournament))
@@ -361,29 +347,34 @@ internal class CrpgRewardServer : MissionLogic
             return;
         }
 
-        Guid idempotencyKey = Guid.NewGuid();
-
         try
         {
-            await _pipeline.ExecuteAsync(async cancellationToken =>
+            var request = new CrpgGameUsersUpdateRequest
             {
-                var request = new CrpgGameUsersUpdateRequest
-                {
-                    Updates = userUpdates,
-                    Key = idempotencyKey.ToString(),
-                };
+                Updates = userUpdates,
+                Instance = CrpgServerConfiguration.Instance,
+            };
 
-                SetUserAsLoading(userUpdates.Select(u => u.UserId), crpgPeerByCrpgUserId, true);
-                var res = (await _crpgClient.UpdateUsersAsync(request)).Data!;
-                SendRewardToPeers(res.UpdateResults, crpgPeerByCrpgUserId, valorousPlayerIds, compensationByCrpgUserId, lowPopulationServer, isDuel);
-            });
+            SetUserAsLoading(userUpdates.Select(u => u.UserId), crpgPeerByCrpgUserId, true);
+            var res = (await _crpgClient.UpdateUsersAsync(request)).Data!;
+            var fulfilledUpdates = res.UpdateResults.Where(u => u.EffectiveReward != null);
+            var rejectedUpdates = res.UpdateResults.Where(u => u.EffectiveReward == null);
+
+            SendRewardToPeers(fulfilledUpdates, crpgPeerByCrpgUserId, valorousPlayerIds, compensationByCrpgUserId, lowPopulationServer, isDuel);
+
+            if (rejectedUpdates.Count() != 0)
+            {
+                var rejectedPeers = crpgPeerByCrpgUserId
+                    .Where(kvp => rejectedUpdates.Any(ur => ur.User.Id == kvp.Key))
+                    .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+                SendErrorToPeers(rejectedPeers);
+            }
         }
         catch (Exception e)
         {
             Debug.Print($"Couldn't update users - {e}");
-
             SendErrorToPeers(crpgPeerByCrpgUserId);
-
         }
         finally
         {
@@ -740,8 +731,13 @@ internal class CrpgRewardServer : MissionLogic
         }
     }
 
-    private void SendRewardToPeers(IList<UpdateCrpgUserResult> updateResults,
-        Dictionary<int, CrpgPeer> crpgPeerByCrpgUserId, HashSet<PlayerId> valorousPlayerIds, Dictionary<int, int> compensationByCrpgUserId, bool lowPopulation, bool isDuel = false)
+    private void SendRewardToPeers(
+        IList<UpdateCrpgUserResult> updateResults,
+        Dictionary<int, CrpgPeer> crpgPeerByCrpgUserId,
+        HashSet<PlayerId> valorousPlayerIds,
+        Dictionary<int, int> compensationByCrpgUserId,
+        bool lowPopulation,
+        bool isDuel = false)
     {
         foreach (var updateResult in updateResults)
         {
@@ -815,18 +811,5 @@ internal class CrpgRewardServer : MissionLogic
             GameNetwork.WriteMessage(new CrpgRewardError());
             GameNetwork.EndModuleEventAsServer();
         }
-    }
-
-    private void BuildResiliencePipeline()
-    {
-        _pipeline = new ResiliencePipelineBuilder()
-        .AddRetry(new RetryStrategyOptions
-        {
-            MaxRetryAttempts = 3,
-            Delay = TimeSpan.FromSeconds(2),
-            BackoffType = DelayBackoffType.Exponential,
-            UseJitter = true,
-        })
-        .Build();
     }
 }

@@ -49,21 +49,15 @@
 
   <ItemGroup>
     <PackageReference Include="Lib.Harmony" Version="2.3.3" GeneratePathProperty="true" />
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.0" GeneratePathProperty="true" />
-    <PackageReference Include="Microsoft.Bcl.TimeProvider" Version="9.0.0" GeneratePathProperty="true" />
     <PackageReference Include="MonoMod.Common" Version="22.6.3.1" GeneratePathProperty="true" />
     <PackageReference Include="Mono.Cecil" Version="0.11.6" GeneratePathProperty="true" />
-    <PackageReference Include="Polly.Core" Version="8.5.0" GeneratePathProperty="true" />
     <PackageReference Include="WindowsFirewallHelper" Version="2.2.0.86" GeneratePathProperty="true" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="$(PkgLib_Harmony)\lib\netcoreapp3.1\0Harmony.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
-    <None Include="$(PkgMicrosoft_Bcl_AsyncInterfaces)\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
-    <None Include="$(PkgMicrosoft_Bcl_TimeProvider)\lib\netstandard2.0\Microsoft.Bcl.TimeProvider.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
     <None Include="$(PkgMonoMod_Common)\lib\netstandard2.0\MonoMod.Common.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
     <None Include="$(PkgMono_Cecil)\lib\netstandard2.0\Mono.Cecil.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
-    <None Include="$(PkgPolly_Core)\lib\netstandard2.0\Polly.Core.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
     <None Include="$(PkgWindowsFirewallHelper)\lib\netstandard2.0\WindowsFirewallHelper.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
   </ItemGroup>
 

@@ -7,7 +7,7 @@ namespace Crpg.Application.Common;
 
 public static class DbSetExtensions
 {
-    public static async Task<int> RemoveRangeAsync<T>(this DbSet<T> entitySet,  Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default) where T : class
+    public static async Task<int> RemoveRangeAsync<T>(this DbSet<T> entitySet, Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default) where T : class
     {
         var list = await entitySet.Where(predicate).ToArrayAsync();
         entitySet.RemoveRange(list);

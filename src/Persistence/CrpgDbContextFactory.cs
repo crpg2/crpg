@@ -50,8 +50,7 @@ public class CrpgDbContextFactory : IDesignTimeDbContextFactory<CrpgDbContext>
                         .MapEnum<Languages>()
                         .MapEnum<GameMode>()
                         .MapEnum<ActivityLogType>()
-                        .MapEnum<UserUpdateStatus>()
-                        )
+                        .MapEnum<UserUpdateStatus>())
             .UseSnakeCaseNamingConvention()
             .Options;
         return new CrpgDbContext(options);
