@@ -94,7 +94,7 @@ internal class CrpgCommanderBehaviorServer : MissionNetwork
         {
             if (IsPlayerACommander(networkPeer))
             {
-                if (agentState == AgentState.Deleted)
+                if (agentState == AgentState.Deleted | agentState == AgentState.Routed)
                 {
                     return;
                 }
