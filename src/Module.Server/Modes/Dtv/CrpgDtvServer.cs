@@ -1,5 +1,6 @@
 ﻿using System.Xml.Serialization;
 using Crpg.Module.Common;
+using Crpg.Module.Common.AiComponents;
 using Crpg.Module.Rewards;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
@@ -218,6 +219,12 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         if (affectedAgent.IsAIControlled && affectedAgent.Team == Mission.DefenderTeam) // VIP under attack
         {
             SendDataToPeers(new CrpgDtvVipUnderAttackMessage { AgentAttackerIndex = affectorAgent.Index, AgentVictimIndex = affectedAgent.Index });
+        }
+
+        if (affectorAgent.Team == Mission.AttackerTeam && affectorAgent.IsAIControlled && affectedAgent.Team == Mission.DefenderTeam)
+        {
+            DtvAiComponent component = affectorAgent.GetComponent<DtvAiComponent>();
+            component?.ResetTargetTimer();
         }
     }
 

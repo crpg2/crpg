@@ -6,3 +6,4 @@ crpg_dtv_musapoint
 crpg_dtv_ruinsofrahiz
 crpg_dtv_encampment
 crpg_dtv_templeofposeidon
+crpg_dtv_simirafort
