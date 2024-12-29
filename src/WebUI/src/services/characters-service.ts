@@ -128,6 +128,7 @@ export enum CharacterEarningType {
 }
 
 // TODO: spec
+// TODO: move grouping to stats.vue so we can get raw data in it aswell to compute export properly
 export const getCharacterEarningStatistics = async (
   characterId: number,
   type: CharacterEarningType,
@@ -144,6 +145,7 @@ export const getCharacterEarningStatistics = async (
       currentEl.data.push([
         l.createdAt,
         Number.parseInt(type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold, 10),
+        Number.parseFloat(l.metadata.timeEffort)
       ])
     }
     else {
@@ -155,6 +157,7 @@ export const getCharacterEarningStatistics = async (
               type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold,
               10,
             ),
+            Number.parseFloat(l.metadata.timeEffort)
           ],
         ],
         name: t(`game-mode.${l.metadata.gameMode}`),

@@ -153,7 +153,7 @@ public class UpdateGameUsersCommandTest : TestBase
         gameModeServiceServiceMock.Verify(m =>
             m.GameModeByInstanceAlias(It.IsAny<GameModeAlias>()), Times.Once);
         activityLogServiceMock.Verify(m =>
-            m.CreateCharacterEarnedLog(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GameMode>(), It.IsAny<int>(), It.Is<int>(x => x == 200 - 30)), Times.Once);
+            m.CreateCharacterEarnedLog(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GameMode>(), It.IsAny<int>(), It.Is<int>(x => x == 200 - 30)), It.IsAny<double>(), Times.Once);
     }
 
     [Test]

@@ -197,6 +197,29 @@ const option = shallowRef<EChartsOption>({
     top: 0,
     feature: {
       dataView: {
+        // TODO i18n
+        title: 'Statistics per Game-Mode',
+        lang: ['Statistics per Game-Mode', 'Close', 'Refresh'],
+        optionToContent: () => {
+          console.log('values: ', characterEarningStatistics.value)
+          console.log(statTypeModel.value)
+          let r = ''
+          for (const gameModeResult of characterEarningStatistics.value) {
+            r += gameModeResult.name
+            let v = 0
+            let s = 0.0
+            for (const data of gameModeResult.data) {
+              console.log('data', data)
+              v += data[1] ?? 0
+              s += data[2] ?? 0.0
+            }
+            const vs = s > 0 ? v / s : Number.NaN
+            r += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${v} ${statTypeModel.value}`
+            r += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${s} Seconds`
+            r += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${vs} ${statTypeModel.value}/s<br>`
+          }
+          return r
+        },
         readOnly: true,
       },
     },

@@ -1,4 +1,4 @@
 export interface TimeSeries {
   name: string
-  data: [Date, number][]
+  data: [Date, number, number][]
 }

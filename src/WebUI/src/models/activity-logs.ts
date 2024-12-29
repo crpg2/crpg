@@ -28,6 +28,7 @@ export interface CharacterEarnedMetadata {
   gameMode: string
   experience: string
   gold: string
+  timeEffort: string
 }
 
 export interface ActivityLog<T = { [key: string]: string }> {
