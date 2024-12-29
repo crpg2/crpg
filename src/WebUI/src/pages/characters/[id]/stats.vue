@@ -24,12 +24,13 @@ import { SVGRenderer } from 'echarts/renderers'
 import { DateTime } from 'luxon'
 import VChart from 'vue-echarts'
 
+import type { CharacterEarnedMetadata } from '~/models/activity-logs'
 import type { TimeSeries } from '~/models/timeseries'
 
 import theme from '~/assets/themes/oruga-tailwind/echart-theme.json'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { CharacterEarningType, getCharacterEarningStatistics } from '~/services/characters-service'
-import { d } from '~/services/translate-service'
+import { d, n, t } from '~/services/translate-service'
 import { characterKey } from '~/symbols/character'
 
 use([ToolboxComponent, BarChart, TooltipComponent, LegendComponent, DataZoomComponent, GridComponent, SVGRenderer])
@@ -132,15 +133,49 @@ const onDataZoomChanged = () => {
   setDataZoom(option.dataZoom[0].startValue, option.dataZoom[0].endValue)
 }
 
-const { execute: loadCharacterEarningStatistics, state: characterEarningStatistics }
+// TODO: spec
+// contains raw api response for computing statistics for game-mode summary
+const { execute: loadCharacterEarningStatistics, state: rawEarningStatistics }
   = await useAsyncState(
-    ({ id }: { id: number }) => getCharacterEarningStatistics(id, statTypeModel.value, start.value),
+    ({ id }: { id: number }) => getCharacterEarningStatistics(id, start.value),
     [],
     {
       immediate: false,
       resetOnExecute: false,
     },
   )
+
+// TODO: spec
+// converts raw api response to array simplified timeSeries per gamemode for echart
+const characterEarningStatistics = computed(() => {
+  const type = statTypeModel.value
+  return rawEarningStatistics.value.reduce((out, l) => {
+    const currentEl = out.find(el => el.name === t(`game-mode.${l.metadata.gameMode}`))
+
+    if (currentEl) {
+      currentEl.data.push([
+        l.createdAt,
+        Number.parseInt(type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold, 10),
+      ])
+    }
+    else {
+      out.push({
+        data: [
+          [
+            l.createdAt,
+            Number.parseInt(
+              type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold,
+              10,
+            ),
+          ],
+        ],
+        name: t(`game-mode.${l.metadata.gameMode}`),
+      })
+    }
+
+    return out
+  }, [] as TimeSeries[])
+})
 
 const toBarSeries = (ts: TimeSeries): BarSeriesOption => ({ ...ts, type: 'bar' })
 const extractTSName = (ts: TimeSeries) => ts.name
@@ -198,28 +233,10 @@ const option = shallowRef<EChartsOption>({
     feature: {
       dataView: {
         // TODO i18n
-        title: 'Statistics per Game-Mode',
+        title: 'Summary per Game-Mode',
+        // TODO i18n
         lang: ['Statistics per Game-Mode', 'Close', 'Refresh'],
-        optionToContent: () => {
-          console.log('values: ', characterEarningStatistics.value)
-          console.log(statTypeModel.value)
-          let r = ''
-          for (const gameModeResult of characterEarningStatistics.value) {
-            r += gameModeResult.name
-            let v = 0
-            let s = 0.0
-            for (const data of gameModeResult.data) {
-              console.log('data', data)
-              v += data[1] ?? 0
-              s += data[2] ?? 0.0
-            }
-            const vs = s > 0 ? v / s : Number.NaN
-            r += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${v} ${statTypeModel.value}`
-            r += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${s} Seconds`
-            r += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${vs} ${statTypeModel.value}/s<br>`
-          }
-          return r
-        },
+        optionToContent: () => convertSummaryToFormattedHtml(sumGameModeValues()),
         readOnly: true,
       },
     },
@@ -274,6 +291,51 @@ const onLegendSelectChanged = (e: LegendSelectEvent) => {
   activeSeries.value = Object.entries(e.selected)
     .filter(([_legend, status]) => Boolean(status))
     .map(([legend, _status]) => legend)
+}
+
+// takes raw api-response and computes over the values per gameMode and adds them up into one earning-object
+// then returns a list with one earning-object per game-mode
+const sumGameModeValues = (): CharacterEarnedMetadata[] => {
+  const result: CharacterEarnedMetadata[] = []
+  for (const gameModeResult of rawEarningStatistics.value.map(res => res.metadata)) {
+    const currentGameModeSummary = result.find(gme => gme.gameMode === gameModeResult.gameMode)
+
+    // init game-mode if needed
+    if (currentGameModeSummary === undefined) {
+      result.push({
+        characterId: 'we dont care here',
+        gameMode: gameModeResult.gameMode,
+        experience: gameModeResult.experience,
+        gold: gameModeResult.gold,
+        timeEffort: gameModeResult.timeEffort,
+      })
+      continue
+    }
+
+    // TODO: fix ugly time conversions
+    currentGameModeSummary.experience = (Number.parseInt(currentGameModeSummary.experience, 10) + Number.parseInt(gameModeResult.experience, 10)).toString()
+    currentGameModeSummary.gold = (Number.parseInt(currentGameModeSummary.gold, 10) + Number.parseInt(gameModeResult.gold, 10)).toString()
+    currentGameModeSummary.timeEffort = (Number.parseFloat(currentGameModeSummary.timeEffort) + Number.parseFloat(gameModeResult.timeEffort)).toString()
+  }
+  return result
+}
+
+// convert a list of CharacterEarnedMetadata into a somewhat formatted HTML-string
+const convertSummaryToFormattedHtml = (gameModeSummaries: CharacterEarnedMetadata[]) => {
+  let result = ''
+  for (const gameModeSummary of gameModeSummaries) {
+    const experience = Number.parseInt(gameModeSummary.experience, 10)
+    const gold = Number.parseInt(gameModeSummary.gold, 10)
+    const seconds = Number.parseInt(gameModeSummary.timeEffort, 10)
+
+    result += t(`game-mode.${gameModeSummary.gameMode}`)
+    result += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${n(experience)} Exp`
+    result += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${n(gold)} Gold`
+    result += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${n(seconds)} Seconds`
+    result += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${n(experience / seconds)} Exp/s`
+    result += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${n(gold / seconds)} Gold/s<br>`
+  }
+  return result
 }
 
 const fetchPageData = (characterId: number) => Promise.all([onUpdate(characterId)])

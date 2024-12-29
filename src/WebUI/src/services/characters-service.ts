@@ -33,7 +33,6 @@ import { clamp } from 'es-toolkit'
 import qs from 'qs'
 
 import type { ActivityLog, CharacterEarnedMetadata } from '~/models/activity-logs'
-import type { TimeSeries } from '~/models/timeseries'
 
 import {
   type Character,
@@ -55,7 +54,6 @@ import { GameMode } from '~/models/game-mode'
 import { type Item, type ItemArmorComponent, ItemSlot, ItemType } from '~/models/item'
 import { del, get, put } from '~/services/crpg-client'
 import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-service'
-import { t } from '~/services/translate-service'
 import { getIndexToIns, range } from '~/utils/array'
 import { computeLeftMs } from '~/utils/date'
 import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
@@ -122,51 +120,15 @@ export const getCompetitiveValueByGameMode = (
   return statisticByGameMode ? statisticByGameMode.rating.competitiveValue : 0
 }
 
+// TODO: move? still needed here?
 export enum CharacterEarningType {
   Exp = 'Exp',
   Gold = 'Gold',
 }
 
 // TODO: spec
-// TODO: move grouping to stats.vue so we can get raw data in it aswell to compute export properly
-export const getCharacterEarningStatistics = async (
-  characterId: number,
-  type: CharacterEarningType,
-  from: Date,
-) => {
-  return (
-    await get<ActivityLog<CharacterEarnedMetadata>[]>(
-      `/users/self/characters/${characterId}/earning-statistics?${qs.stringify({ from })}`,
-    )
-  ).reduce((out, l) => {
-    const currentEl = out.find(el => el.name === t(`game-mode.${l.metadata.gameMode}`))
-
-    if (currentEl) {
-      currentEl.data.push([
-        l.createdAt,
-        Number.parseInt(type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold, 10),
-        Number.parseFloat(l.metadata.timeEffort)
-      ])
-    }
-    else {
-      out.push({
-        data: [
-          [
-            l.createdAt,
-            Number.parseInt(
-              type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold,
-              10,
-            ),
-            Number.parseFloat(l.metadata.timeEffort)
-          ],
-        ],
-        name: t(`game-mode.${l.metadata.gameMode}`),
-      })
-    }
-
-    return out
-  }, [] as TimeSeries[])
-}
+export const getCharacterEarningStatistics = (characterId: number,from: Date) =>
+  get<ActivityLog<CharacterEarnedMetadata>[]>(`/users/self/characters/${characterId}/earning-statistics?${qs.stringify({ from })}`)
 
 export const getCharacterLimitations = async (characterId: number) =>
   (await get<CharacterLimitations>(`/users/self/characters/${characterId}/limitations`)) || {
