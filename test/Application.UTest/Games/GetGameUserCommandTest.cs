@@ -492,7 +492,7 @@ public class GetGameUserCommandTest : TestBase
                     price += item.Price;
                 }
 
-                Assert.That(price, Is.LessThan(3521));
+                Assert.That(price, Is.LessThan(3703));
             }
         });
     }
