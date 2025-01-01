@@ -24,12 +24,25 @@ internal class CrpgItemRequirementModel
 
     private static int ComputeCrossbowRequirement(ItemObject item)
     {
-        int strengthRequirementForTierTenCrossbow = 24; // Tiers are calulated in CrpgValueModel. 0<Tier=<10 . By design the best is always at Ten.
+        int strengthRequirementForTierTenCrossbow;
+
+        // Check if the item is a crossbow
         if (item.ItemType != ItemObject.ItemTypeEnum.Crossbow)
         {
             throw new ArgumentException(item.Name.ToString() + " is not a crossbow");
         }
 
-        return ((int)(item.Tierf * (strengthRequirementForTierTenCrossbow / 9.9f)) / 3) * 3;
+        // Adjust the strength requirement for light crossbows
+        if (item.WeaponComponent.PrimaryWeapon.ItemUsage.Contains("crossbow_light"))
+        {
+            strengthRequirementForTierTenCrossbow = 18; // For light crossbows
+        }
+        else
+        {
+            strengthRequirementForTierTenCrossbow = 20; // Default for other crossbows
+        }
+
+        // Compute the strength requirement based on tier
+        return (int)(Math.Ceiling((item.Tierf * (strengthRequirementForTierTenCrossbow / 9.9f)) / 3) * 3);
     }
 }
