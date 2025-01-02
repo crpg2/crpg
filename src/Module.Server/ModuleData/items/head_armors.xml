@@ -9456,49 +9456,49 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_disabled_strawhatgreathelm_h0" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawhatgreathelm_h0" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawhatgreathelm_h1" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +1" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawhatgreathelm_h1" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +1" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawhatgreathelm_h2" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +2" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawhatgreathelm_h2" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +2" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawhatgreathelm_h3" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +3" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawhatgreathelm_h3" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +3" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="70" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawlord_helmet_h0" name="{=BalanceMe}[STAFF]Strawlord Helmet" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawlord_helmet_h0" name="{=BalanceMe}[STAFF]Strawlord Helmet" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawlord_helmet_h1" name="{=BalanceMe}[STAFF]Strawlord Helmet +1" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawlord_helmet_h1" name="{=BalanceMe}[STAFF]Strawlord Helmet +1" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="53" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawlord_helmet_h2" name="{=BalanceMe}[STAFF]Strawlord Helmet +2" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawlord_helmet_h2" name="{=BalanceMe}[STAFF]Strawlord Helmet +2" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="55" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawlord_helmet_h3" name="{=BalanceMe}[STAFF]Strawlord Helmet +3" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawlord_helmet_h3" name="{=BalanceMe}[STAFF]Strawlord Helmet +3" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="57" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
