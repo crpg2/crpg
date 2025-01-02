@@ -9552,4 +9552,28 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_at_morion_v1_h0" name="{=AppleTruce}Morion" mesh="at_morion" culture="Culture.empire" weight="4.914843" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_at_morion_v1_h1" name="{=AppleTruce}Morion" mesh="at_morion" culture="Culture.empire" weight="4.914843" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_at_morion_v1_h2" name="{=AppleTruce}Morion" mesh="at_morion" culture="Culture.empire" weight="4.914843" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="58" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_at_morion_v1_h3" name="{=AppleTruce}Morion" mesh="at_morion" culture="Culture.empire" weight="4.914843" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="60" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>
