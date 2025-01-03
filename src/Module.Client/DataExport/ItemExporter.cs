@@ -345,11 +345,6 @@ internal class ItemExporter : IDataExporter
             Flags = MbToCrpgItemFlags(mbItem.ItemFlags),
         };
 
-        if (mbItem.Type == ItemObject.ItemTypeEnum.Musket)
-        {
-
-        }
-
         if (mbItem.ArmorComponent != null)
         {
             crpgItem.Armor = new CrpgItemArmorComponent
