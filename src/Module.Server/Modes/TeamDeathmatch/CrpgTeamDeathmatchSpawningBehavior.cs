@@ -8,6 +8,7 @@ namespace Crpg.Module.Modes.TeamDeathmatch;
 
 internal class CrpgTeamDeathmatchSpawningBehavior : CrpgSpawningBehaviorBase
 {
+    private bool _haveBotsSpawned = false;
     public CrpgTeamDeathmatchSpawningBehavior(CrpgConstants constants)
         : base(constants)
     {
@@ -22,7 +23,7 @@ internal class CrpgTeamDeathmatchSpawningBehavior : CrpgSpawningBehaviorBase
         }
 
         SpawnAgents();
-        SpawnBotAgents();
+        SpawnBotAgents(!_haveBotsSpawned);
 
         TimeSinceSpawnEnabled += dt;
     }
@@ -41,7 +42,7 @@ internal class CrpgTeamDeathmatchSpawningBehavior : CrpgSpawningBehaviorBase
         {
             return false;
         }
-
+        _haveBotsSpawned = true;
         return true;
     }
 

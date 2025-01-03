@@ -258,7 +258,7 @@ private int totalNumberOfBots = 800;
         return characterObject;
     }
 
-    protected Agent SpawnBotAgent(string classDivisionId, Team team, MissionPeer? peer = null, int p = 0)
+    protected Agent SpawnBotAgent(string classDivisionId, Team team, MissionPeer? peer = null, int p = 0, bool isInitialSpawn = true)
     {
         var teamCulture = team.Side == BattleSideEnum.Attacker
             ? MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue())
@@ -270,7 +270,7 @@ private int totalNumberOfBots = 800;
         BasicCharacterObject character = botClass.HeroCharacter;
 
         bool hasMount = character.Equipment[EquipmentIndex.Horse].Item != null;
-        MatrixFrame spawnFrame = SpawnComponent.GetSpawnFrame(team, hasMount, true);
+        MatrixFrame spawnFrame = SpawnComponent.GetSpawnFrame(team, hasMount, isInitialSpawn);
         Vec2 initialDirection = spawnFrame.rotation.f.AsVec2.Normalized();
 
         AgentBuildData agentBuildData = new AgentBuildData(character)
@@ -330,7 +330,7 @@ private int totalNumberOfBots = 800;
         return agent;
     }
 
-    protected void SpawnBotAgents()
+    protected void SpawnBotAgents(bool isInitialSpawn = true)
     {
         int botsTeam1 = MultiplayerOptions.OptionType.NumberOfBotsTeam1.GetIntValue();
         int botsTeam2 = MultiplayerOptions.OptionType.NumberOfBotsTeam2.GetIntValue();
@@ -388,7 +388,7 @@ private int totalNumberOfBots = 800;
                 MultiplayerClassDivisions.MPHeroClass botClass = MultiplayerClassDivisions
                     .GetMPHeroClasses()
                     .GetRandomElementWithPredicate<MultiplayerClassDivisions.MPHeroClass>(x => x.StringId.StartsWith("crpg_bot_"));
-                SpawnBotAgent(botClass.StringId, team);
+                SpawnBotAgent(botClass.StringId, team, isInitialSpawn: isInitialSpawn);
             }
 
             k++;
