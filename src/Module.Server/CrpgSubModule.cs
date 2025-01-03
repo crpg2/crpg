@@ -20,6 +20,10 @@ using TaleWorlds.MountAndBlade.GameKeyCategory;
 using Crpg.Module.HarmonyPatches;
 #endif
 
+#if CRPG_EDITOR
+using Crpg.Module.HarmonyPatches;
+#endif
+
 #if CRPG_SERVER
 using Crpg.Module.Common.ChatCommands;
 using TaleWorlds.MountAndBlade.DedicatedCustomServer;
@@ -77,6 +81,8 @@ internal class CrpgSubModule : MBSubModuleBase
         CrpgServerConfiguration.Init();
         CrpgFeatureFlags.Init();
 #elif CRPG_CLIENT
+        BannerlordPatches.Apply();
+#elif CRPG_EDITOR
         BannerlordPatches.Apply();
 #endif
 
