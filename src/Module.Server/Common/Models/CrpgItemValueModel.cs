@@ -394,7 +394,7 @@ internal class CrpgItemValueModel : ItemValueModel
     {
         WeaponComponentData weapon = weaponComponent.Weapons[0];
         float heirloomLevel = ItemToHeirloomLevel(weaponComponent.Item);
-        if (weaponComponent.Item is { ItemType: ItemObject.ItemTypeEnum.Crossbow } || weaponComponent.Item is { ItemType: ItemObject.ItemTypeEnum.Musket })
+        if (weaponComponent.Item is { ItemType: ItemObject.ItemTypeEnum.Crossbow } || weaponComponent.Item is { ItemType: ItemObject.ItemTypeEnum.Musket } || weaponComponent.Item is { ItemType: ItemObject.ItemTypeEnum.Pistol })
         {
             float crossbowscaler = 1.5f;
             float crossbowTier = weapon.ThrustDamage / 100f * weapon.ThrustDamage / 100f
