@@ -25,7 +25,7 @@ internal interface IActivityLogService
     ActivityLog CreateRemoveItemFromClanArmory(int userId, int clanId, int userItemId);
     ActivityLog CreateBorrowItemFromClanArmory(int userId, int clanId, int userItemId);
     ActivityLog CreateReturnItemToClanArmory(int userId, int clanId, int userItemId);
-    ActivityLog CreateCharacterEarnedLog(int userId, int characterId, GameMode gameMode, int experience, int gold);
+    ActivityLog CreateCharacterEarnedLog(int userId, int characterId, GameMode gameMode, int experience, int gold, double timeEffort);
 }
 
 internal class ActivityLogService : IActivityLogService
@@ -204,7 +204,7 @@ internal class ActivityLogService : IActivityLogService
         });
     }
 
-    public ActivityLog CreateCharacterEarnedLog(int userId, int characterId, GameMode gameMode, int experience, int gold)
+    public ActivityLog CreateCharacterEarnedLog(int userId, int characterId, GameMode gameMode, int experience, int gold, double timeEffort)
     {
         return CreateLog(ActivityLogType.CharacterEarned, userId, new ActivityLogMetadata[]
         {
@@ -212,6 +212,7 @@ internal class ActivityLogService : IActivityLogService
             new("gameMode", gameMode.ToString()),
             new("experience", experience.ToString()),
             new("gold", gold.ToString()),
+            new("timeEffort", timeEffort.ToString()),
         });
     }
 

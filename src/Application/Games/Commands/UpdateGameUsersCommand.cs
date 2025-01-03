@@ -67,6 +67,7 @@ public record UpdateGameUsersCommand : IMediatorRequest<UpdateGameUsersResult>
                     }
 
                     var reward = GiveReward(character, update.Reward);
+                    double timeEffort = update.Statistics.PlayTime.TotalSeconds;
                     UpdateStatistics(updateGameMode, character, update.Statistics);
                     _characterService.UpdateRating(character, updateGameMode, update.Statistics.Rating.Value, update.Statistics.Rating.Deviation, update.Statistics.Rating.Volatility, isGameUserUpdate: true);
                     var brokenItems = await RepairOrBreakItems(character, update.BrokenItems, cancellationToken);
@@ -75,7 +76,7 @@ public record UpdateGameUsersCommand : IMediatorRequest<UpdateGameUsersResult>
                     if (reward.Experience != 0)
                     {
                         int totalRepairCost = brokenItems.Sum(item => item.RepairCost);
-                        _db.ActivityLogs.Add(_activityLogService.CreateCharacterEarnedLog(character.UserId, character.Id, updateGameMode, reward.Experience, reward.Gold - totalRepairCost));
+                        _db.ActivityLogs.Add(_activityLogService.CreateCharacterEarnedLog(character.UserId, character.Id, updateGameMode, reward.Experience, reward.Gold - totalRepairCost, timeEffort));
                     }
 
                     results.Add((character.User!, reward, brokenItems, updateGameMode));
