@@ -16,6 +16,8 @@ internal class CrpgItemRequirementModel
         switch (item.ItemType)
         {
             case ItemObject.ItemTypeEnum.Crossbow:
+            case ItemObject.ItemTypeEnum.Musket:
+            case ItemObject.ItemTypeEnum.Pistol:
                 return ComputeCrossbowRequirement(item);
         }
 
@@ -27,7 +29,7 @@ internal class CrpgItemRequirementModel
         int strengthRequirementForTierTenCrossbow;
 
         // Check if the item is a crossbow
-        if (item.ItemType != ItemObject.ItemTypeEnum.Crossbow)
+        if (item.ItemType != ItemObject.ItemTypeEnum.Crossbow && item.ItemType != ItemObject.ItemTypeEnum.Musket && item.ItemType != ItemObject.ItemTypeEnum.Pistol)
         {
             throw new ArgumentException(item.Name.ToString() + " is not a crossbow");
         }

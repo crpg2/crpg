@@ -15,6 +15,7 @@ public class FirearmsPatch
             __result = DefaultSkills.Crossbow;
             return false;
         }
+
         return true;
     }
 }
