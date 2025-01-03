@@ -7,6 +7,7 @@ public interface IDataExporter
     Task RefundArmor(string gitRepoPath);
     Task RefundWeapons(string gitRepoPath);
     Task RefundCrossbow(string gitRepoPath);
+    Task RefundFirearm(string gitRepoPath);
     Task RefundBow(string gitRepoPath);
     Task RefundThrowing(string gitRepoPath);
     Task RefundCav(string gitRepoPath);
