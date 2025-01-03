@@ -114,6 +114,7 @@ internal class CrpgStrikeMagnitudeModel : MultiplayerStrikeMagnitudeModel
         {
             WeaponClass.Arrow => 1.2f,
             WeaponClass.Bolt => 0.9f,
+            WeaponClass.Cartridge => 0.9f,
             WeaponClass.Stone => 0.95f,
             WeaponClass.Boulder => 0.9f,
             WeaponClass.ThrowingAxe => 1.3f,

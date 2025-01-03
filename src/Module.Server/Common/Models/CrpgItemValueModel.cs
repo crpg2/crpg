@@ -29,12 +29,15 @@ internal class CrpgItemValueModel : ItemValueModel
         [ItemObject.ItemTypeEnum.Shield] = (5000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Bow] = (14000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Crossbow] = (14000, ItemPriceCoeffs),
+        [ItemObject.ItemTypeEnum.Musket] = (14000, ItemPriceCoeffs),
+        [ItemObject.ItemTypeEnum.Pistol] = (14000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.OneHandedWeapon] = (9000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.TwoHandedWeapon] = (14000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Polearm] = (14000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Thrown] = (6000, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Arrows] = (4500, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Bolts] = (4500, ItemPriceCoeffs),
+        [ItemObject.ItemTypeEnum.Bullets] = (4500, ItemPriceCoeffs),
         [ItemObject.ItemTypeEnum.Banner] = (500, ItemPriceCoeffs),
     };
     public static float ComputeBowTier(int damage, int reloadSpeed, int missileSpeed, int aimSpeed, int accuracy, bool isLongBow, float heirloomLevel)
@@ -390,7 +393,7 @@ internal class CrpgItemValueModel : ItemValueModel
     {
         WeaponComponentData weapon = weaponComponent.Weapons[0];
         float heirloomLevel = ItemToHeirloomLevel(weaponComponent.Item);
-        if (weaponComponent.Item is { ItemType: ItemObject.ItemTypeEnum.Crossbow })
+        if (weaponComponent.Item is { ItemType: ItemObject.ItemTypeEnum.Crossbow } || weaponComponent.Item is { ItemType: ItemObject.ItemTypeEnum.Musket } || weaponComponent.Item is { ItemType: ItemObject.ItemTypeEnum.Pistol })
         {
             float crossbowscaler = 1.5f;
             float crossbowTier = weapon.ThrustDamage / 100f * weapon.ThrustDamage / 100f
