@@ -16,6 +16,10 @@ using TaleWorlds.InputSystem;
 using TaleWorlds.Engine.InputSystem;
 using TaleWorlds.MountAndBlade.GameKeyCategory;
 
+#if CRPG_CLIENT
+using Crpg.Module.HarmonyPatches;
+#endif
+
 #if CRPG_SERVER
 using Crpg.Module.Common.ChatCommands;
 using TaleWorlds.MountAndBlade.DedicatedCustomServer;
@@ -72,6 +76,8 @@ internal class CrpgSubModule : MBSubModuleBase
 #if CRPG_SERVER
         CrpgServerConfiguration.Init();
         CrpgFeatureFlags.Init();
+#elif CRPG_CLIENT
+        BannerlordPatches.Apply();
 #endif
 
 #if CRPG_EXPORT
@@ -79,11 +85,11 @@ internal class CrpgSubModule : MBSubModuleBase
             new TextObject("Export Data"), 4578, ExportData, () => (false, null)));
 #endif
 
-    // Uncomment to start watching UI changes.
+        // Uncomment to start watching UI changes.
 #if CRPG_CLIENT
-    // UIResourceManager.UIResourceDepot.StartWatchingChangesInDepot();
+        // UIResourceManager.UIResourceDepot.StartWatchingChangesInDepot();
 #endif
-}
+    }
 
     protected override void InitializeGameStarter(Game game, IGameStarter starterObject)
     {
