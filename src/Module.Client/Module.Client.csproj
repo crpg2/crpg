@@ -94,7 +94,11 @@
     <Content Include="DataExport\ItemExporter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Bannerlord.Lib.Harmony" Version="2.2.2" />
     <PackageReference Include="WindowsFirewallHelper" Version="2.2.0.86" />
+    <PackageReference Include="Lib.Harmony" Version="2.2.2" GeneratePathProperty="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(PkgLib_Harmony)\lib\netcoreapp3.1\0Harmony.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
   </ItemGroup>
 </Project>

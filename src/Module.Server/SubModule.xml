@@ -7,7 +7,6 @@
   <DependedModules>
     <DependedModule Id="Native" DependentVersion="v1.2.12" Optional="false"/>
     <DependedModule Id="Multiplayer" DependentVersion="v1.2.12" Optional="false"/>
-    <DependedModule Id="Bannerlord.Harmony" DependentVersion="v2.10.1" />
   </DependedModules>
   <SubModules>
     <SubModule>
