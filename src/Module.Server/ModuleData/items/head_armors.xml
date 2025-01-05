@@ -9534,21 +9534,21 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_kume_helmet_h1" name="{=Yeldur}Kume Helmet +1" mesh="kume_helmet" culture="Culture.aserai" weight="3.80764" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+  <Item id="crpg_kume_helmet_h1" name="{=Yeldur}Kume Helmet +1" mesh="kume_helmet" culture="Culture.aserai" weight="4.536872" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
+      <Armor head_armor="53" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_kume_helmet_h2" name="{=Yeldur}Kume Helmet +2" mesh="kume_helmet" culture="Culture.aserai" weight="3.80764" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+  <Item id="crpg_kume_helmet_h2" name="{=Yeldur}Kume Helmet +2" mesh="kume_helmet" culture="Culture.aserai" weight="4.536872" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
+      <Armor head_armor="55" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_kume_helmet_h3" name="{=Yeldur}Kume Helmet +3" mesh="kume_helmet" culture="Culture.aserai" weight="3.80764" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+  <Item id="crpg_kume_helmet_h3" name="{=Yeldur}Kume Helmet +3" mesh="kume_helmet" culture="Culture.aserai" weight="4.536872" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
+      <Armor head_armor="57" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -9558,19 +9558,19 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_at_morion_v1_h1" name="{=AppleTruce}Morion" mesh="at_morion" culture="Culture.empire" weight="4.914843" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+  <Item id="crpg_at_morion_v1_h1" name="{=AppleTruce}Morion +1" mesh="at_morion" culture="Culture.empire" weight="4.914843" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
     <ItemComponent>
       <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_at_morion_v1_h2" name="{=AppleTruce}Morion" mesh="at_morion" culture="Culture.empire" weight="4.914843" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+  <Item id="crpg_at_morion_v1_h2" name="{=AppleTruce}Morion +2" mesh="at_morion" culture="Culture.empire" weight="4.914843" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
     <ItemComponent>
       <Armor head_armor="58" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_at_morion_v1_h3" name="{=AppleTruce}Morion" mesh="at_morion" culture="Culture.empire" weight="4.914843" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+  <Item id="crpg_at_morion_v1_h3" name="{=AppleTruce}Morion +3" mesh="at_morion" culture="Culture.empire" weight="4.914843" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
     <ItemComponent>
       <Armor head_armor="60" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
     </ItemComponent>

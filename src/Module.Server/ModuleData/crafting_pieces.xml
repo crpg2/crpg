@@ -35984,7 +35984,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-    <CraftingPiece id="crpg_jamescross_2h_handle_h0" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.90" CraftingCost="75">
+  <CraftingPiece id="crpg_jamescross_2h_handle_h0" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.90" CraftingCost="75">
     <BuildData piece_offset="23" />
   </CraftingPiece>
   <CraftingPiece id="crpg_jamescross_2h_handle_h1" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.90" CraftingCost="75">
