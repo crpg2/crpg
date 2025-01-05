@@ -152,7 +152,24 @@ internal class ItemExporter : IDataExporter
         { 2, (16, 6) },
         { 3, (24, 9) },
     };
-
+    private static readonly Dictionary<int, (int damageBonus, int amountBonusPercentage)> BulletHeirloomBonus = new()
+    {
+        { 1, (1, 10) },
+        { 2, (2, 20) },
+        { 3, (3, 30) },
+    };
+    private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> MusketHeirloomBonus = new()
+    {
+        { 1, (1, 1, 0, 2, 1) },
+        { 2, (2, 2, 1, 4, 2) },
+        { 3, (3, 3, 2, 5, 3) },
+    };
+    private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> PistolHeirloomBonus = new()
+    {
+        { 1, (1, 1, 0, 2, 1) },
+        { 2, (2, 2, 1, 4, 2) },
+        { 3, (3, 3, 2, 5, 3) },
+    };
     public async Task ComputeAutoStats(string gitRepoPath)
     {
         foreach (string filePath in ItemFilePaths)
@@ -204,6 +221,20 @@ internal class ItemExporter : IDataExporter
         {
             ItemObject.ItemTypeEnum.Crossbow,
             ItemObject.ItemTypeEnum.Bolts,
+        };
+        var itemsDoc = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", typesToRefund);
+        itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
+        var itemsDoc2 = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", typesToRefund);
+        itemsDoc2.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
+    }
+
+    public async Task RefundFirearm(string gitRepoPath)
+    {
+        List<ItemObject.ItemTypeEnum> typesToRefund = new()
+        {
+            ItemObject.ItemTypeEnum.Musket,
+            ItemObject.ItemTypeEnum.Pistol,
+            ItemObject.ItemTypeEnum.Bullets,
         };
         var itemsDoc = XmlRefundItemType("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml", typesToRefund);
         itemsDoc.Save(Path.Combine("../../Modules/cRPG_Exporter/ModuleData/items", Path.GetFileName("../../Modules/cRPG_Exporter/ModuleData/items/weapons.xml")));
@@ -853,6 +884,15 @@ internal class ItemExporter : IDataExporter
 
                         break;
 
+                    case ItemObject.ItemTypeEnum.Bullets:
+                        if (BulletHeirloomBonus.TryGetValue(heirloomLevel, out var newBullet))
+                        {
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", newBullet.damageBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "stack_amount", 0, bonusPercentage: newBullet.amountBonusPercentage);
+                        }
+
+                        break;
+
                     case ItemObject.ItemTypeEnum.Shield:
                         if (ShieldHeirloomBonus.TryGetValue(heirloomLevel, out var newShield))
                         {
@@ -913,6 +953,32 @@ internal class ItemExporter : IDataExporter
                                 ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", newCrossbow.accuracyBonus);
                                 ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", newCrossbow.missileSpeedBonus);
                             }
+                        }
+
+                        break;
+
+                    case ItemObject.ItemTypeEnum.Musket:
+
+                        if (MusketHeirloomBonus.TryGetValue(heirloomLevel, out var newMusket))
+                        {
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", newMusket.damageBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", newMusket.reloadSpeedBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", newMusket.aimSpeedBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", newMusket.accuracyBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", newMusket.missileSpeedBonus);
+                        }
+
+                        break;
+
+                    case ItemObject.ItemTypeEnum.Pistol:
+
+                        if (PistolHeirloomBonus.TryGetValue(heirloomLevel, out var newPistol))
+                        {
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", newPistol.damageBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", newPistol.reloadSpeedBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", newPistol.aimSpeedBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", newPistol.accuracyBonus);
+                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", newPistol.missileSpeedBonus);
                         }
 
                         break;

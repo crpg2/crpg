@@ -124,7 +124,7 @@ static GameInstallationInfo? ResolveBannerlordSteamInstallation()
             return new GameInstallationInfo(
                 bannerlordPath,
                 bannerlordExePath,
-                "_MODULES_*Bannerlord.Harmony*Native*Multiplayer*cRPG_Exporter*_MODULES_ /singleplayer /no_watchdog",
+                "_MODULES_*Native*Multiplayer*cRPG_Exporter*_MODULES_ /singleplayer /no_watchdog",
                 Path.GetDirectoryName(bannerlordExePath));
         }
     }
