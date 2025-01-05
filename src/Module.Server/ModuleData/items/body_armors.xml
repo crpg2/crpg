@@ -6168,25 +6168,25 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="ccrpg_aa_brigandineprimarymail_h0" name="{=AppleTruce}Brigandine with Pauldrons and Mail Primary Color" mesh="aa_brigandineprimarymail" culture="Culture.vlandia" weight="15.7971" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_aa_brigandineprimarymail_h0" name="{=AppleTruce}Brigandine with Pauldrons and Mail Primary Color" mesh="aa_brigandineprimarymail" culture="Culture.vlandia" weight="15.7971" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="51" leg_armor="9" arm_armor="21" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="ccrpg_aa_brigandineprimarymail_h1" name="{=AppleTruce}Brigandine with Pauldrons and Mail Primary Color +1" mesh="aa_brigandineprimarymail" culture="Culture.vlandia" weight="15.7971" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_aa_brigandineprimarymail_h1" name="{=AppleTruce}Brigandine with Pauldrons and Mail Primary Color +1" mesh="aa_brigandineprimarymail" culture="Culture.vlandia" weight="15.7971" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="53" leg_armor="10" arm_armor="22" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="ccrpg_aa_brigandineprimarymail_h2" name="{=AppleTruce}Brigandine with Pauldrons and Mail Primary Color +2" mesh="aa_brigandineprimarymail" culture="Culture.vlandia" weight="15.7971" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_aa_brigandineprimarymail_h2" name="{=AppleTruce}Brigandine with Pauldrons and Mail Primary Color +2" mesh="aa_brigandineprimarymail" culture="Culture.vlandia" weight="15.7971" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="55" leg_armor="11" arm_armor="23" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="ccrpg_aa_brigandineprimarymail_h3" name="{=AppleTruce}Brigandine with Pauldrons and Mail Primary Color +3" mesh="aa_brigandineprimarymail" culture="Culture.vlandia" weight="15.7971" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
+  <Item id="crpg_aa_brigandineprimarymail_h3" name="{=AppleTruce}Brigandine with Pauldrons and Mail Primary Color +3" mesh="aa_brigandineprimarymail" culture="Culture.vlandia" weight="15.7971" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0" is_merchandise="true">
     <ItemComponent>
       <Armor body_armor="57" leg_armor="12" arm_armor="24" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
