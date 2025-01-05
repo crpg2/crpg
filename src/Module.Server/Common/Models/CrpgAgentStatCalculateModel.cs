@@ -70,10 +70,22 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             WeaponClass.Crossbow => 0.5f,
             WeaponClass.Musket => 0.5f,
             WeaponClass.Pistol => 0.5f,
+            WeaponClass.Stone => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1f,
+            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.65f,
+            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.65f,
+            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.65f,
+>>>>>>> d43d2f95 (mod: add firearm support for exporter & remove harmony module (#470))
+=======
             WeaponClass.Stone => 1.0f,
             WeaponClass.ThrowingAxe => 1.15f,
             WeaponClass.ThrowingKnife => 1.15f,
             WeaponClass.Javelin => 1.15f,
+=======
+            WeaponClass.Stone => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1f,
+            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.65f,
+            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.65f,
+            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.65f,
+>>>>>>> d43d2f95 (mod: add firearm support for exporter & remove harmony module (#470))
             _ => 1f,
         };
 

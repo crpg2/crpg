@@ -249,6 +249,23 @@ internal class CrpgSubModule : MBSubModuleBase
         }
     }
 
+    private void RefundFirearm()
+    {
+        IDataExporter[] exporters =
+        {
+            new ItemExporter(),
+            // new SettlementExporter(),
+        };
+
+        InformationManager.DisplayMessage(new InformationMessage("Refunding Firearms."));
+        Task.WhenAll(exporters.Select(e => e.RefundFirearm("lol"))).ContinueWith(t =>
+        {
+            InformationManager.DisplayMessage(t.IsFaulted
+                ? new InformationMessage(t.Exception!.Message)
+                : new InformationMessage("Firearms were refunded"));
+        });
+    }
+
     private void RefundCrossbow()
     {
         IDataExporter[] exporters =
@@ -477,6 +494,9 @@ internal class CrpgSubModule : MBSubModuleBase
             case 6:
                 RefundWeapons();
                 break;
+            case 7:
+                RefundFirearm();
+                break;
             default:
                 throw new ArgumentException("Invalid argument for 'toRefund'");
         }
@@ -484,7 +504,7 @@ internal class CrpgSubModule : MBSubModuleBase
 
     private void ChangeRefund()
     {
-        _toRefund = (_toRefund + 1) % 7;
+        _toRefund = (_toRefund + 1) % 8;
         string message = _toRefund switch
         {
             0 => "Refund Crossbows",
@@ -493,7 +513,8 @@ internal class CrpgSubModule : MBSubModuleBase
             3 => "Refund Shields",
             4 => "Refund Armors",
             5 => "Refund Cav",
-            6 => "Refund Weapons"
+            6 => "Refund Weapons",
+            7 => "Refund firearms"
         }
 
         + " has been selected";

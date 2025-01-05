@@ -51,23 +51,9 @@
     <Compile Remove="..\Module.Server\Common\NotAllPlayersReadyComponent.cs" />
     <Compile Remove="..\Module.Server\Common\MapPoolComponent.cs" />
     <Compile Remove="..\Module.Server\Common\ChatCommands\**\*" />
-    <Compile Remove="..\Module.Server\Firewall\*" />
-    <Compile Remove="..\Module.Server\HarmonyPatches\MissionNetworkComponentPatch.cs" />
-    <Compile Remove="..\Module.Server\HarmonyPatches\SendPeerInformationsToPeerPatch.cs"/>
-    <Compile Remove="..\Module.Server\Common\RemoveIpFromFirewallBehavior.cs" />
->>>>>>> 9e7a620f (final)
-    <Compile Remove="..\Module.Server\Common\CrpgCustomBannerServer.cs" />
-=======
     <Compile Remove="..\Module.Server\Rewards\CrpgRewardServer.cs" />
     <Compile Remove="..\Module.Server\Firewall\*" />
     <Compile Remove="..\Module.Server\Common\RemoveIpFromFirewallBehavior.cs" />
-    <Compile Remove="..\Module.Server\Common\CrpgCustomBannerServer.cs" />
-=======
-    <Compile Remove="..\Module.Server\Firewall\*" />
-    <Compile Remove="..\Module.Server\HarmonyPatches\MissionNetworkComponentPatch.cs" />
-    <Compile Remove="..\Module.Server\HarmonyPatches\SendPeerInformationsToPeerPatch.cs"/>
-    <Compile Remove="..\Module.Server\Common\RemoveIpFromFirewallBehavior.cs" />
->>>>>>> 9e7a620f (final)
     <Compile Remove="..\Module.Server\Common\CrpgCustomBannerServer.cs" />
     <Compile Remove="..\Module.Server\Common\FriendlyFireReport\FriendlyFireReportServerBehavior.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\ChargeDamageCallbackPatch.cs" />
@@ -101,13 +87,6 @@
   <ItemGroup>
     <Content Include="DataExport\ItemExporter.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Bannerlord.Lib.Harmony" Version="2.2.2" />
-    <PackageReference Include="WindowsFirewallHelper" Version="2.2.0.86" />
->>>>>>> 9e7a620f (final)
-=======
-    <Content Include="DataExport\ItemExporter.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Lib.Harmony" GeneratePathProperty="true" />
@@ -115,12 +94,5 @@
 
   <ItemGroup>
     <None Include="$(PkgLib_Harmony)\lib\net472\0Harmony.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" />
-=======
-    <Content Include="DataExport\ItemExporter.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Bannerlord.Lib.Harmony" Version="2.2.2" />
-    <PackageReference Include="WindowsFirewallHelper" Version="2.2.0.86" />
->>>>>>> 9e7a620f (final)
   </ItemGroup>
 </Project>

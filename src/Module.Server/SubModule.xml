@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Module>
   <Name value="cRPG_Exporter"/>
   <Id value="cRPG_Exporter"/>
@@ -7,27 +7,6 @@
   <DependedModules>
     <DependedModule Id="Native" DependentVersion="v1.2.12" Optional="false"/>
     <DependedModule Id="Multiplayer" DependentVersion="v1.2.12" Optional="false"/>
-    <DependedModule Id="Bannerlord.Harmony" DependentVersion="v2.10.1" />
->>>>>>> 9e7a620f (final)
-=======
-  <Name value="cRPG_Exporter"/>
-  <Id value="cRPG_Exporter"/>
-  <Version value="v1.2.12.114"/>
-  <ModuleCategory value="Singleplayer"/>
-  <DependedModules>
-    <DependedModule Id="Native" DependentVersion="v1.2.12" Optional="false"/>
-    <DependedModule Id="Multiplayer" DependentVersion="v1.2.12" Optional="false"/>
-    <DependedModule Id="Bannerlord.Harmony" DependentVersion="v2.10.1" />
-=======
-  <Name value="cRPG_Exporter"/>
-  <Id value="cRPG_Exporter"/>
-  <Version value="v1.2.12.114"/>
-  <ModuleCategory value="Singleplayer"/>
-  <DependedModules>
-    <DependedModule Id="Native" DependentVersion="v1.2.12" Optional="false"/>
-    <DependedModule Id="Multiplayer" DependentVersion="v1.2.12" Optional="false"/>
-    <DependedModule Id="Bannerlord.Harmony" DependentVersion="v2.10.1" />
->>>>>>> 9e7a620f (final)
   </DependedModules>
   <SubModules>
     <SubModule>

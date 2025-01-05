@@ -454,6 +454,7 @@ internal class CrpgItemValueModel : ItemValueModel
             ItemObject.ItemTypeEnum.Arrows => arrowsTier * arrowsTier / 10f,
 
             ItemObject.ItemTypeEnum.Bolts => boltsTier * boltsTier / 10f,
+            ItemObject.ItemTypeEnum.Bullets => boltsTier * boltsTier / 10f,
             _ => 10f,
         };
     }
