@@ -36096,4 +36096,76 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_jamescross_1h_pommel_h3" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.37">
   </CraftingPiece>
+      <CraftingPiece id="crpg_templarsword_blade_h0" name="{=Yeldur}Templarsword Blade" tier="4" piece_type="Blade" mesh="templarsword_blade" culture="Culture.battania" length="91" weight="0.8">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="templarsword_scabbard" holster_mesh_length="97.6">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_blade_h1" name="{=Yeldur}Templarsword Blade" tier="4" piece_type="Blade" mesh="templarsword_blade" culture="Culture.battania" length="91" weight="0.8">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="templarsword_scabbard" holster_mesh_length="97.6">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_blade_h2" name="{=Yeldur}Templarsword Blade" tier="4" piece_type="Blade" mesh="templarsword_blade" culture="Culture.battania" length="91" weight="0.8">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="templarsword_scabbard" holster_mesh_length="97.6">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_blade_h3" name="{=Yeldur}Templarsword Blade" tier="4" piece_type="Blade" mesh="templarsword_blade" culture="Culture.battania" length="91" weight="0.75">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="templarsword_scabbard" holster_mesh_length="97.6">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_pommel_h0" name="{=}Templarsword Armingsword Pommel" tier="4" piece_type="Pommel" mesh="templarsword_pommel" full_scale="false" culture="Culture.battania" length="6.54" weight="0.50">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_pommel_h1" name="{=}Templarsword Armingsword Pommel" tier="4" piece_type="Pommel" mesh="templarsword_pommel" full_scale="false" culture="Culture.battania" length="6.54" weight="0.45">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_pommel_h2" name="{=}Templarsword Armingsword Pommel" tier="4" piece_type="Pommel" mesh="templarsword_pommel" full_scale="false" culture="Culture.battania" length="6.54" weight="0.45">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_pommel_h3" name="{=}Templarsword Armingsword Pommel" tier="4" piece_type="Pommel" mesh="templarsword_pommel" full_scale="false" culture="Culture.battania" length="6.54" weight="0.43">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_guard_h0" name="{=}Templarsword Armingsword Guard" tier="5" piece_type="Guard" mesh="templarsword_guard" full_scale="false" culture="Culture.battania" length="1.49" weight="0.50">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_guard_h1" name="{=}Templarsword Armingsword Guard" tier="5" piece_type="Guard" mesh="templarsword_guard" full_scale="false" culture="Culture.battania" length="1.49" weight="0.50">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_guard_h2" name="{=}Templarsword Armingsword Guard" tier="5" piece_type="Guard" mesh="templarsword_guard" full_scale="false" culture="Culture.battania" length="1.49" weight="0.50">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_guard_h3" name="{=}Templarsword Armingsword Guard" tier="5" piece_type="Guard" mesh="templarsword_guard" full_scale="false" culture="Culture.battania" length="1.49" weight="0.50">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_handle_h0" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_handle_h1" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_handle_h2" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_handle_h3" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
 </CraftingPieces>
