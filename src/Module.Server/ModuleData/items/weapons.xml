@@ -600,6 +600,38 @@
       <Piece id="crpg_kama_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_claymore_v1_h0" name="{=}Claymore" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false">
+    <Pieces>
+      <Piece id="crpg_claymore_pole_blade_h0" Type="Blade" scale_factor="130" />
+      <Piece id="crpg_claymore_pole_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_claymore_pole_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_claymore_pole_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_claymore_v1_h1" name="{=}Claymore +1" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false">
+    <Pieces>
+      <Piece id="crpg_claymore_pole_blade_h1" Type="Blade" scale_factor="130" />
+      <Piece id="crpg_claymore_pole_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_claymore_pole_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_claymore_pole_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_claymore_v1_h2" name="{=}Claymore +2" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false">
+    <Pieces>
+      <Piece id="crpg_claymore_pole_blade_h2" Type="Blade" scale_factor="130" />
+      <Piece id="crpg_claymore_pole_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_claymore_pole_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_claymore_pole_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_claymore_v1_h3" name="{=}Claymore +3" crafting_template="crpg_TwoHandedPolearm" is_merchandise="false">
+    <Pieces>
+      <Piece id="crpg_claymore_pole_blade_h3" Type="Blade" scale_factor="130" />
+      <Piece id="crpg_claymore_pole_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_claymore_pole_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_claymore_pole_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
   <CraftedItem id="crpg_claymore_v1_h0" name="{=}Claymore" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_claymore_blade_h0" Type="Blade" scale_factor="130" />
