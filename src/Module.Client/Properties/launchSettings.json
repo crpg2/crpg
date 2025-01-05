@@ -3,9 +3,9 @@
   "profiles": {
     "Module.Client": {
       "commandName": "Executable",
-        "executablePath": "%MB_CLIENT_PATH%\\bin\\Win64_Shipping_Client\\Bannerlord.exe",
-        "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /multiplayer",
-        "workingDirectory": "%MB_CLIENT_PATH%\\bin\\Win64_Shipping_Client"
+      "executablePath": "%MB_CLIENT_PATH%\\bin\\Win64_Shipping_Client\\Bannerlord.exe",
+      "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG_Exporter*_MODULES_ /singleplayer",
+      "workingDirectory": "%MB_CLIENT_PATH%\\bin\\Win64_Shipping_Client"
     }
   }
 }

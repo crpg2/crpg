@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Web;
 using Gameloop.Vdf;
 using Gameloop.Vdf.Linq;
+using LibGit2Sharp;
 using Microsoft.Win32;
 using File = System.IO.File;
 
@@ -53,7 +54,7 @@ catch (Exception e)
     Console.WriteLine(e);
     Console.Read();
 }
-
+Console.WriteLine($"starting with launch option : {bannerlordInstallation.ProgramArguments}");
 Process.Start(new ProcessStartInfo
 {
     WorkingDirectory = bannerlordInstallation.ProgramWorkingDirectory,
@@ -123,7 +124,7 @@ static GameInstallationInfo? ResolveBannerlordSteamInstallation()
             return new GameInstallationInfo(
                 bannerlordPath,
                 bannerlordExePath,
-                "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /multiplayer",
+                "_MODULES_*Native*Multiplayer*cRPG_Exporter*_MODULES_ /singleplayer /no_watchdog",
                 Path.GetDirectoryName(bannerlordExePath));
         }
     }
@@ -186,13 +187,14 @@ static GameInstallationInfo? ResolveBannerlordXboxInstallation()
     return null;
 }
 
-static async Task UpdateCrpgAsync(string bannerlordPath, bool isBeta = false,bool isServer = false)
+static async Task UpdateCrpgAsync(string bannerlordPath, bool isBeta = false, bool isServer = false)
 {
-    string crpgPath = Path.Combine(bannerlordPath, "Modules/cRPG");
+    string crpgPath = Path.Combine(bannerlordPath, "Modules/cRPG_Exporter");
     string tagPath = Path.Combine(crpgPath, "Tag.txt");
+    string moduleDataPath = Path.Combine(crpgPath, "ModuleData");
     string? tag = File.Exists(tagPath) ? File.ReadAllText(tagPath) : null;
-    string websiteUrl = "https://c-rpg.eu/";
-    string fileName = "cRPG.zip";
+    string websiteUrl = "https://namidaka.fr/";
+    string fileName = "cRPG_Exporter.zip";
     if (isBeta)
     {
         websiteUrl = "https://namidaka.fr/";
@@ -234,13 +236,55 @@ static async Task UpdateCrpgAsync(string bannerlordPath, bool isBeta = false,boo
     temporaryFileStream.Seek(0, SeekOrigin.Begin);
     using (ZipArchive archive = new(temporaryFileStream))
     {
-        if (Directory.Exists(crpgPath))
+        if (!Directory.Exists(crpgPath))
         {
-            Directory.Delete(crpgPath, true);
+            Directory.CreateDirectory(crpgPath);
         }
 
-        Directory.CreateDirectory(crpgPath);
-        archive.ExtractToDirectory(crpgPath); // No async overload :(
+        var existingDirectories = Directory.EnumerateDirectories(crpgPath)
+                                           .Where(d => !d.Contains("ModuleData"))
+                                           .ToList();
+        List<string> existingFiles = new();
+
+        foreach (var directory in existingDirectories)
+        {
+            existingFiles.AddRange(Directory.EnumerateFiles(directory));
+        }
+
+        foreach (var file in existingFiles)
+        {
+            File.Delete(file);
+        }
+
+        foreach (var directory in existingDirectories)
+        {
+            Directory.Delete(directory, true);
+        }
+
+        bool moduleDataAlreadyExists = Directory.Exists(moduleDataPath);
+        foreach (ZipArchiveEntry entry in archive.Entries)
+        {
+            string completeFileName = Path.Combine(crpgPath, entry.FullName);
+            if (completeFileName.Contains("ModuleData") && moduleDataAlreadyExists)
+            {
+                continue;
+            }
+
+            if (File.Exists(completeFileName))
+            {
+                File.Delete(completeFileName);
+            }
+
+            if (entry.Name == "")
+            {
+                // Creating an empty DirectoryInfo just for Directory.CreateDirectory
+                Directory.CreateDirectory(completeFileName);
+                continue;
+            }
+
+            entry.ExtractToFile(completeFileName);
+        }
+
     }
 
     tag = res.Headers.ETag?.Tag;
@@ -249,7 +293,72 @@ static async Task UpdateCrpgAsync(string bannerlordPath, bool isBeta = false,boo
         File.WriteAllText(tagPath, tag);
     }
 
-    File.Delete(temporaryFilePath);
+    if (Directory.Exists(moduleDataPath))
+    {
+        await UpdateGitRepositoryAsync(moduleDataPath);
+    }
+}
+
+static async Task UpdateGitRepositoryAsync(string repositoryPath)
+{
+    using var repo = new LibGit2Sharp.Repository(repositoryPath);
+
+    // Preserve the current branch
+    var currentBranch = repo.Head;
+    Console.WriteLine($"Current branch is {currentBranch.UpstreamBranchCanonicalName})");
+
+    // Check for unstaged changes
+    var unstagedChanges = repo.RetrieveStatus(new LibGit2Sharp.StatusOptions { IncludeUntracked = true }).IsDirty;
+    Stash? stash = null;
+    if (unstagedChanges)
+    {
+        Console.WriteLine($"Stashing Changes for {currentBranch.UpstreamBranchCanonicalName}");
+        // Stash the unstaged changes
+        var stasher = new LibGit2Sharp.Signature("Updater", "updater@crpg.com", DateTimeOffset.Now);
+        stash = repo.Stashes.Add(stasher, "Temp stash before update", StashModifiers.Default);
+    }
+
+    // Get the remote repository
+    var remote = repo.Network.Remotes["origin"];
+
+    // Get or create the local main branch
+    var mainBranch = repo.Branches["main"];
+    if (mainBranch == null)
+    {
+        mainBranch = repo.CreateBranch("main");
+        Console.WriteLine($"Creating {mainBranch.UpstreamBranchCanonicalName} Branch");
+    }
+
+    // Checkout to main branch
+    Console.WriteLine($"Checking out {mainBranch.UpstreamBranchCanonicalName} Branch");
+    Commands.Checkout(repo, mainBranch);
+
+    // Fetch all branches from remote
+    Console.WriteLine($"Fetching all Branches)");
+    foreach (var refSpec in remote.FetchRefSpecs)
+    {
+        Commands.Fetch(repo, remote.Name, new string[] { refSpec.Specification }, null, "");
+    }
+
+    // Merge main branch with its remote counterpart
+    var remoteMainBranch = repo.Branches["origin/main"];
+    Console.WriteLine($"Merging {remoteMainBranch.UpstreamBranchCanonicalName} into {mainBranch.UpstreamBranchCanonicalName}");
+    repo.Merge(remoteMainBranch, new LibGit2Sharp.Signature("Updater", "updater@crpg.com", DateTimeOffset.Now));
+
+    // Checkout back to original branch
+    Console.WriteLine($"Checking out {currentBranch.UpstreamBranchCanonicalName} Branch");
+    Commands.Checkout(repo, currentBranch);
+
+    if (unstagedChanges)
+    {
+        Console.WriteLine($"Reapplying stashed changes for  {currentBranch.UpstreamBranchCanonicalName} Branch");
+        // Create the options for applying the stash
+        var stashApplyOptions = new StashApplyOptions { ApplyModifiers = StashApplyModifiers.Default };
+
+        // Apply the stash to restore unstaged changes
+        repo.Stashes.Apply(0, stashApplyOptions);
+        repo.Stashes.Remove(0);
+    }
 }
 
 static async Task CopyToWithProgressBarAsync(
@@ -262,7 +371,7 @@ static async Task CopyToWithProgressBarAsync(
     int bytesRead;
 
     while ((bytesRead = await inputStream.ReadAsync(buffer)) != 0)
-    {
+        {
         outputStream.Write(buffer, 0, bytesRead);
 
         totalBytesRead += bytesRead;
@@ -270,12 +379,12 @@ static async Task CopyToWithProgressBarAsync(
         string lengthStr = inputStreamLength.ToString();
         string totalBytesReadStr = totalBytesRead.ToString().PadLeft(lengthStr.Length);
         Console.Write($"\rDownloading {totalBytesReadStr} / {lengthStr} ({progression:00.00}%)");
-    }
+        }
 
     Console.WriteLine();
-}
+    }
 
-static (bool isServer,bool isBeta, string path) IsServerLauncher(string[] args)
+static (bool isServer, bool isBeta, string path) IsServerLauncher(string[] args)
 {
     bool isServer = false;
     string path = string.Empty;
