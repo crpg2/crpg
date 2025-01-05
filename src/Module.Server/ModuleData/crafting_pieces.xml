@@ -36276,4 +36276,100 @@
   <CraftingPiece id="crpg_templarsword_handle_h3" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
     <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
   </CraftingPiece>
+<CraftingPiece id="crpg_at_partisan_blade_h0" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="74.4" weight="0.1">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_blade_h1" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="74.4" weight="0.1">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_blade_h2" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="74.4" weight="0.1">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_blade_h3" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="74.4" weight="0.1">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_handle_h0" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="190" weight="2.0" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_handle_h1" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="190" weight="2.0" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_handle_h2" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="190" weight="1.9" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_handle_h3" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="190" weight="1.9" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_guard_h0" name="{=koX9okuG}Paritsan Dummy Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+    <BuildData next_piece_offset="18" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_guard_h1" name="{=koX9okuG}Paritsan Dummy Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+    <BuildData next_piece_offset="18" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_guard_h2" name="{=koX9okuG}Paritsan Dummy Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+    <BuildData next_piece_offset="18" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_guard_h3" name="{=koX9okuG}Paritsan Dummy Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+    <BuildData next_piece_offset="18" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_pommel_h0" name="{=koX9okuG}Paritsan Dummy Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_pommel_h1" name="{=koX9okuG}Paritsan Dummy Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_pommel_h2" name="{=koX9okuG}Paritsan Dummy Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_pommel_h3" name="{=koX9okuG}Paritsan Dummy Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
 </CraftingPieces>
