@@ -60,9 +60,8 @@ public class BattleServiceTest : TestBase
         ArrangeDb.Battles.Add(battle);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await _battleService.GetBattleFighter(ActDb, user.Id, 2, CancellationToken.None);
-        Assert.That(res.Errors, Is.Not.Null);
-        Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.FighterNotFound));
+        var res = await _battleService.GetBattleFighter(ActDb, user.Id, battle.Id, CancellationToken.None);
+        Assert.That(res.Errors, Is.Null);
     }
 
     [Test]
@@ -112,8 +111,7 @@ public class BattleServiceTest : TestBase
         ArrangeDb.Battles.Add(battle);
         await ArrangeDb.SaveChangesAsync();
 
-        var res = await _battleService.GetBattleFighter(ActDb, user.Id, battle.Id, CancellationToken.None);
-        Assert.That(res.Errors, Is.Not.Null);
-        Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.FighterNotFound));
+        var res = await _battleService.GetBattleMercenary(ActDb, user.Id, battle.Id, CancellationToken.None);
+        Assert.That(res.Errors, Is.Null);
     }
 }

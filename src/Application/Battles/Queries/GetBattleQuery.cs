@@ -50,7 +50,7 @@ public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
                     .Where(f => f.Side == BattleSide.Attacker)
                     .Sum(f => (int)Math.Floor(f.Party!.Troops)),
                 Defender = _mapper.Map<BattleFighterViewModel>(
-                    battle.Fighters.First(f => f.Side == BattleSide.Defender && f.Commander)),
+                    battle.Fighters.FirstOrDefault(f => f.Side == BattleSide.Defender && f.Commander)),
                 DefenderTotalTroops = battle.Fighters
                     .Where(f => f.Side == BattleSide.Defender)
                     .Sum(f => (int)Math.Floor(f.Party?.Troops ?? 0) + (f.Settlement?.Troops ?? 0)),

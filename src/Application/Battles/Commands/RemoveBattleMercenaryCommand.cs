@@ -46,16 +46,10 @@ public record RemoveBattleMercenaryCommand : IMediatorRequest
                 return new(CommonErrors.MercenaryNotFound(req.RemovedMercenaryId));
             }
 
-            var user = await _db.Users
-                .FirstOrDefaultAsync(u => u.Id == req.UserId, cancellationToken);
-            if (user == null)
-            {
-                return new(CommonErrors.UserNotFound(req.UserId));
-            }
-
             var fighterRes = await _battleService.GetBattleFighter(_db, req.UserId, req.BattleId, cancellationToken);
 
-            if (fighterRes.Errors != null ){
+            if (fighterRes.Errors != null)
+            {
                 return new Result(fighterRes.Errors);
             }
 

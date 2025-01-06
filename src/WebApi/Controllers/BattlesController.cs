@@ -28,7 +28,7 @@ public class BattlesController : BaseController
     /// Get strategus battle.
     /// </summary>
     [HttpGet("{battleId}")]
-    public Task<ActionResult<Result<BattleDetailedViewModel>>> GetBattles([FromRoute] int battleId) =>
+    public Task<ActionResult<Result<BattleDetailedViewModel>>> GetBattle([FromRoute] int battleId) =>
         ResultToActionAsync(Mediator.Send(new GetBattleQuery
         {
             BattleId = battleId,
