@@ -18,7 +18,7 @@ import { settlementIconByType } from '~/services/strategus-service/settlement'
 import { useUserStore } from '~/stores/user'
 
 const props = defineProps<{
-  id: number
+  id: string
 }>()
 
 const getIconByCulture = (cultureString: string) => itemCultureToIcon[Culture[cultureString as keyof typeof Culture] || Culture.Neutral]
@@ -55,7 +55,7 @@ const canManageBattle = computed(() =>
 )
 
 const canJoinAsMercenary = computed(() =>
-  selfFighter.value == null,
+  selfFighter.value == null && battle.value?.phase === BattlePhase.Hiring,
 )
 
 const applicationsCount = computed(() =>
@@ -83,269 +83,296 @@ const defenderCommander = computed(() => {
 )
 
 const fetchPageData = async (battleId: number) => {
-  await Promise.all([loadBattle(0, { id: battleId }), loadBattleFighters(0, { id: battleId }), loadBattleMercenaryApplications(0, { id: battleId }), loadBattleFighterApplications(0, { id: battleId })])
+  await Promise.all([loadBattle(0, { id: battleId }), loadBattleFighters(0, { id: battleId }), loadBattleMercenaries(0, { id: battleId }), loadBattleMercenaryApplications(0, { id: battleId }), loadBattleFighterApplications(0, { id: battleId })])
 }
 
-await fetchPageData(props.id)
+await fetchPageData(Number(props.id))
 </script>
 
 <template>
-  <div v-if="battle !== null" class="pb-4 pt-12">
-    <div class="container mb-1">
-      <Heading
-        class="mb-5" :title="battle.defender?.party === null ? $t('strategus.battle.settlement.title',
-                                                                  {
-                                                                    settlement: battle.defender?.settlement?.name,
-                                                                  }) : $t('strategus.battle.party.title',
-                {
-                  nearestSettlement: 'Settlementia',
-                  terrain: 'Desert',
-                })"
-      />
-      <div class="mx-auto mb-16 flex max-w-7xl flex-row gap-x-5">
-        <div class="basis-1/4 text-content-100">
-          <h1 class="mb-8 text-center text-xl">
-            {{ $t('strategus.battle.attackers') }}
-          </h1>
-          <div class="flex items-center gap-1 pb-4">
-            <UserMedia
-              :user="battle.attacker.party.user"
-              hidden-platform
-              size="xl"
-            />
-            <OIcon
-              icon="trophy-cup"
-              size="lg"
-            />
-          </div>
-          <div
-            v-for="fighter in battleFightersAttackers"
-            :key="fighter.id"
-            class="flex flex-col gap-3 pb-4 "
-          >
-            <div v-if="fighter.party?.user">
+  <div class="p-6">
+    <OButton
+      v-tooltip.bottom="$t('nav.back')"
+      tag="router-link"
+      :to="{ name: 'StrategusBattles' }"
+      variant="secondary"
+      size="xl"
+      outlined
+      rounded
+      icon-left="arrow-left"
+    />
+    <div v-if="battle !== null" class="pb-4">
+      <div class="container mb-1">
+        <Heading
+          class="mb-5" :title="battle.defender?.party === null ? $t('strategus.battle.settlement.title',
+                                                                    {
+                                                                      settlement: battle.defender?.settlement?.name,
+                                                                    }) : $t('strategus.battle.party.title',
+                  {
+                    nearestSettlement: 'Settlementia',
+                    terrain: 'Desert',
+                  })"
+        />
+        <div class="mx-auto mb-16 flex max-w-7xl flex-row gap-x-5">
+          <div class="basis-1/4 text-content-100">
+            <h1 class="mb-8 text-center text-xl">
+              {{ $t('strategus.battle.attackers') }}
+            </h1>
+            <div class="flex items-center gap-1 pb-4">
               <UserMedia
-                :user="fighter.party.user"
-                hidden-platform
-                size="xl"
-                :class="rowClass(fighter)"
-              />
-            </div>
-            <div v-if="fighter.settlement?.owner">
-              <UserMedia
-                :user="fighter.settlement.owner.user"
+                :user="battle.attacker.party.user"
                 hidden-platform
                 size="xl"
               />
-            </div>
-          </div>
-        </div>
-        <div class="basis-1/2 justify-center">
-          <div class="mb-8 flex flex-wrap items-center justify-center gap-4.5">
-            <template v-if="battle.scheduledFor">
-              <div class="flex items-center gap-1.5">
-                <OIcon
-                  icon="calendar"
-                  size="lg"
-                  class="text-content-100"
-                />
-                <span
-                  class="text-content-200"
-                  data-aq-clan-info="tag"
-                >{{ $d(battle.scheduledFor, 'date') }}</span>
-              </div>
-
-              <div class="h-8 w-px select-none bg-border-200" />
-
-              <div class="flex items-center gap-1.5">
-                <OIcon
-                  icon="clock"
-                  size="lg"
-                  class="text-content-100"
-                />
-                <span
-                  class="text-content-200"
-                  data-aq-clan-info="tag"
-                >{{ $d(battle.scheduledFor, 'time') }}</span>
-              </div>
-
-              <div class="h-8 w-px select-none bg-border-200" />
-            </template>
-            <div class="flex items-center gap-1.5">
               <OIcon
-                icon="region"
+                icon="trophy-cup"
                 size="lg"
-                class="text-content-100"
               />
-              <div
-                class="text-content-200"
-                data-aq-clan-info="region"
-              >
-                EU
-              </div>
             </div>
-
-            <div class="h-8 w-px select-none bg-border-200" />
-
-            <div class="flex items-center gap-1.5">
-              <OIcon
-                icon="member"
-                size="lg"
-                class="text-content-100"
-              />
-              <span
-                class="text-content-200"
-              >
-                {{ battleFightersCount }}
-              </span>
-            </div>
-
-            <div class="h-8 w-px select-none bg-border-200" />
-
-            <div class="flex items-center gap-1.5">
-              <OIcon
-                icon="flag"
-                size="lg"
-                class="text-content-100"
-              />
-              <span
-                class="text-content-200"
-              >
-                {{ battleMercenariesCount }}
-              </span>
-            </div>
-
-            <Divider />
-          </div>
-
-          <div class="mb-20 flex items-center justify-center gap-3">
-            <OButton
-              v-if="canJoinAsMercenary"
-              tag="router-link"
-              :to="{ name: '', params: { id: battleId } }"
-              variant="primary"
-              outlined
-              size="xl"
+            <div
+              v-for="fighter in battleFightersAttackers"
+              :key="fighter.id"
+              class="flex flex-col gap-3 pb-4 "
             >
-              {{ $t('strategus.battle.application.mercenary.title') }}
-            </OButton>
-            <template v-if="canManageApplications">
-              <OButton
-                v-if="canManageApplications"
-                tag="router-link"
-                :to="{ name: 'StrategusBattlesIdApplications', params: { id: battleId } }"
-                variant="primary"
-                outlined
-                size="xl"
-              >
-                {{ $t('strategus.battle.application.manage') }}
-                <template v-if="applicationsCount !== 0">
-                  ({{ applicationsCount }})
-                </template>
-              </OButton>
-              <OButton
-                v-if="canManageBattle"
-                tag="router-link"
-                :to="{ name: 'StrategusBattlesIdManage', params: { id: battleId } }"
-                variant="primary"
-                outlined
-                size="xl"
-              >
-                {{ $t('strategus.battle.manage.title') }}
-              </OButton>
-            </template>
+              <div v-if="fighter.party?.user">
+                <UserMedia
+                  :user="fighter.party.user"
+                  hidden-platform
+                  size="xl"
+                  :class="rowClass(fighter)"
+                />
+              </div>
+              <div v-if="fighter.settlement?.owner">
+                <UserMedia
+                  :user="fighter.settlement.owner.user"
+                  hidden-platform
+                  size="xl"
+                />
+              </div>
+            </div>
           </div>
+          <div class="basis-1/2 justify-center">
+            <div class="mb-8 flex flex-wrap items-center justify-center gap-4.5">
+              <div class="flex items-center gap-1.5">
+                <OIcon
+                  icon="flag"
+                  size="lg"
+                  class="text-content-100"
+                />
+                <span
+                  class="text-content-200"
+                >
+                  {{ $t(`strategus.battle.phase.${battle.phase}`) }}
+                </span>
+              </div>
 
-          <div>
-            <div class="grid grid-cols-2">
-              <div class="flex flex-row text-base text-white">
-                <div>
-                  <ClanTagIcon
-                    v-if="battle.attacker.party?.clan"
-                    :color="battle.attacker.party?.clan.primaryColor"
-                    size="4x"
+              <div class="h-8 w-px select-none bg-border-200" />
+
+              <template v-if="battle.scheduledFor">
+                <div class="flex items-center gap-1.5">
+                  <OIcon
+                    icon="calendar"
+                    size="lg"
+                    class="text-content-100"
                   />
+                  <span
+                    class="text-content-200"
+                    data-aq-clan-info="tag"
+                  >{{ $d(battle.scheduledFor, 'date') }}</span>
                 </div>
-                <div class="flex grow flex-col">
-                  <span v-if="battle.attacker.party?.clan">{{ battle.attacker.party?.clan.name }} </span>
-                  <span v-else>{{ battle.attacker.party?.user.name }} </span>
-                  <div class="text-2xs">
-                    <OIcon icon="child" size="sm" />{{ battle.attackerTotalTroops }} <span class="text-base-500">({{ (battle.attackerTotalTroops / (battle.attackerTotalTroops + battle.defenderTotalTroops) * 100).toFixed(2) }} %)</span>
+
+                <div class="h-8 w-px select-none bg-border-200" />
+
+                <div class="flex items-center gap-1.5">
+                  <OIcon
+                    icon="clock"
+                    size="lg"
+                    class="text-content-100"
+                  />
+                  <span
+                    class="text-content-200"
+                    data-aq-clan-info="tag"
+                  >{{ $d(battle.scheduledFor, 'time') }}</span>
+                </div>
+
+                <div class="h-8 w-px select-none bg-border-200" />
+              </template>
+              <div class="flex items-center gap-1.5">
+                <OIcon
+                  icon="region"
+                  size="lg"
+                  class="text-content-100"
+                />
+                <div
+                  class="text-content-200"
+                  data-aq-clan-info="region"
+                >
+                  EU
+                </div>
+              </div>
+
+              <div class="h-8 w-px select-none bg-border-200" />
+
+              <div class="flex items-center gap-1.5">
+                <OIcon
+                  icon="member"
+                  size="lg"
+                  class="text-content-100"
+                />
+                <span
+                  class="text-content-200"
+                >
+                  {{ battleFightersCount }}
+                </span>
+              </div>
+
+              <div class="h-8 w-px select-none bg-border-200" />
+
+              <div class="flex items-center gap-1.5">
+                <OIcon
+                  icon="game-mode-captain"
+                  size="lg"
+                  class="text-content-100"
+                />
+                <span
+                  class="text-content-200"
+                >
+                  {{ battleMercenariesCount }}
+                </span>
+              </div>
+
+              <Divider />
+            </div>
+
+            <div class="mb-20 flex items-center justify-center gap-3">
+              <OButton
+                v-if="canJoinAsMercenary"
+                tag="router-link"
+                :to="{ name: '', params: { id: battleId } }"
+                variant="primary"
+                outlined
+                size="xl"
+              >
+                {{ $t('strategus.battle.application.mercenary.title') }}
+              </OButton>
+              <template v-if="canManageApplications">
+                <OButton
+                  v-if="canManageApplications"
+                  tag="router-link"
+                  :to="{ name: 'StrategusBattlesIdApplications', params: { id: battleId } }"
+                  variant="primary"
+                  outlined
+                  size="xl"
+                >
+                  {{ $t('strategus.battle.application.manage') }}
+                  <template v-if="applicationsCount !== 0">
+                    ({{ applicationsCount }})
+                  </template>
+                </OButton>
+                <OButton
+                  v-if="canManageBattle"
+                  tag="router-link"
+                  :to="{ name: 'StrategusBattlesIdManage', params: { id: battleId } }"
+                  variant="primary"
+                  outlined
+                  size="xl"
+                >
+                  {{ $t('strategus.battle.manage.title') }}
+                </OButton>
+              </template>
+            </div>
+
+            <div>
+              <div class="grid grid-cols-2">
+                <div class="flex flex-row text-base text-white">
+                  <div>
+                    <ClanTagIcon
+                      v-if="battle.attacker.party?.clan"
+                      :color="battle.attacker.party?.clan.primaryColor"
+                      size="4x"
+                    />
+                  </div>
+                  <div class="flex grow flex-col">
+                    <span v-if="battle.attacker.party?.clan">{{ battle.attacker.party?.clan.name }} </span>
+                    <span v-else>{{ battle.attacker.party?.user.name }} </span>
+                    <div class="text-2xs">
+                      <OIcon icon="child" size="sm" />{{ battle.attackerTotalTroops }} <span class="text-base-500">({{ (battle.attackerTotalTroops / (battle.attackerTotalTroops + battle.defenderTotalTroops) * 100).toFixed(2) }} %)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row text-right text-base text-white">
+                  <div class="flex grow flex-col">
+                    <span v-if="battle.defender?.settlement?.owner?.clan">{{ battle.defender.settlement.owner.clan.name }}</span>
+                    <span v-else-if="battle.defender?.settlement">{{ battle.defender?.settlement.name }}</span>
+                    <span v-else>{{ battle.defender?.party?.user.name }}</span>
+                    <div class="text-2xs">
+                      <span class="text-base-500">({{ (battle.defenderTotalTroops / (battle.attackerTotalTroops + battle.defenderTotalTroops) * 100).toFixed(2) }} %) </span>{{ battle.defenderTotalTroops }}<OIcon icon="child" size="sm" />
+                    </div>
+                  </div>
+                  <div>
+                    <ClanTagIcon
+                      v-if="battle.attacker.party?.clan"
+                      :color="battle.attacker.party?.clan.primaryColor"
+                      size="4x"
+                    />
                   </div>
                 </div>
               </div>
-              <div class="flex flex-row text-right text-base text-white">
-                <div class="flex grow flex-col">
-                  <span v-if="battle.defender?.settlement?.owner?.clan">{{ battle.defender.settlement.owner.clan.name }}</span>
-                  <span v-else-if="battle.defender?.settlement">{{ battle.defender?.settlement.name }}</span>
-                  <span v-else>{{ battle.defender?.party?.user.name }}</span>
-                  <div class="text-2xs">
-                    <span class="text-base-500">({{ (battle.defenderTotalTroops / (battle.attackerTotalTroops + battle.defenderTotalTroops) * 100).toFixed(2) }} %) </span>{{ battle.defenderTotalTroops }}<OIcon icon="child" size="sm" />
-                  </div>
-                </div>
-                <div>
-                  <ClanTagIcon
-                    v-if="battle.attacker.party?.clan"
-                    :color="battle.attacker.party?.clan.primaryColor"
-                    size="4x"
+              <div class="my-4 h-2.5 w-full rounded-full bg-base-400">
+                <div class="h-2.5 rounded-full bg-base-500" :style="{ width: (battle.attackerTotalTroops / (battle.attackerTotalTroops + battle.defenderTotalTroops) * 100).toFixed(2).concat('%') }" />
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="inline-flex flex-row gap-1.5 text-base text-white">
+                  <OIcon
+                    icon="game-mode-captain"
+                    class="text-content-100"
                   />
+                  {{ battleMercenariesAttackers.length }}
+                </div>
+                <div class="inline-flex flex-row-reverse gap-1.5 text-base text-white">
+                  <OIcon
+                    icon="game-mode-captain"
+                    class="text-content-100"
+                  />
+                  {{ battleMercenariesDefenders.length }}
                 </div>
               </div>
             </div>
-            <div class="my-4 h-2.5 w-full rounded-full bg-base-400">
-              <div class="h-2.5 rounded-full bg-base-500" :style="{ width: (battle.attackerTotalTroops / (battle.attackerTotalTroops + battle.defenderTotalTroops) * 100).toFixed(2).concat('%') }" />
-            </div>
-            <div class="grid grid-cols-2">
-              <div class="inline-flex flex-row gap-1.5 text-base text-white">
-                <OIcon
-                  icon="flag"
-                  class="text-content-100"
-                />
-                {{ attackerMercenarySlots }}
-              </div>
-              <div class="inline-flex flex-row-reverse gap-1.5 text-base text-white">
-                <OIcon
-                  icon="flag"
-                  class="text-content-100"
-                />
-                {{ defenderMercenarySlots }}
-              </div>
-            </div>
           </div>
-        </div>
-        <div class="basis-1/4 text-right text-content-100">
-          <h1 class="mb-8 text-center text-xl">
-            {{ $t('strategus.battle.defenders') }}
-          </h1>
-          <div class="flex items-center gap-1 pb-4">
-            <UserMedia
-              :user="defenderCommander?.user"
-              hidden-platform
-              size="xl"
-            />
-            <OIcon
-              icon="trophy-cup"
-              size="lg"
-            />
-          </div>
-          <div
-            v-for="fighter in battleFightersDefenders"
-            :key="fighter.id"
-            class="flex flex-col gap-3 pb-4"
-          >
-            <div v-if="fighter.party?.user">
+          <div class="basis-1/4 text-right text-content-100">
+            <h1 class="mb-8 text-center text-xl">
+              {{ $t('strategus.battle.defenders') }}
+            </h1>
+            <div v-if="defenderCommander" class="flex items-center gap-1 pb-4">
               <UserMedia
-                :user="fighter.party.user"
+                :user="defenderCommander?.user"
                 hidden-platform
                 size="xl"
               />
-            </div>
-            <div v-else-if="fighter.settlement?.owner">
-              <UserMedia
-                :user="fighter.settlement.owner.user"
-                hidden-platform
-                size="xl"
+              <OIcon
+                icon="trophy-cup"
+                size="lg"
               />
+            </div>
+            <div
+              v-for="fighter in battleFightersDefenders"
+              :key="fighter.id"
+              class="flex flex-col gap-3 pb-4"
+            >
+              <div v-if="fighter.party?.user">
+                <UserMedia
+                  :user="fighter.party.user"
+                  hidden-platform
+                  size="xl"
+                />
+              </div>
+              <div v-else-if="fighter.settlement?.owner">
+                <UserMedia
+                  :user="fighter.settlement.owner.user"
+                  hidden-platform
+                  size="xl"
+                />
+              </div>
             </div>
           </div>
         </div>

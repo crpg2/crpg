@@ -119,7 +119,7 @@ await loadBattles()
           :label="$t('strategus.battle.table.column.phase')"
           :width="30"
         >
-          {{ battle.phase }}
+          {{ $t(`strategus.battle.phase.${battle.phase}`) }}
         </OTableColumn>
 
         <OTableColumn

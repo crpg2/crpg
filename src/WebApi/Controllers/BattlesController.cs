@@ -159,4 +159,21 @@ public class BattlesController : BaseController
         req = req with { PartyId = CurrentUser.User!.Id, MercenaryApplicationId = applicationId };
         return ResultToActionAsync(Mediator.Send(req));
     }
+
+    /// <summary>
+    /// Kick a clan member of leave a clan.
+    /// </summary>
+    /// <returns>The created clan.</returns>
+    /// <response code="204">Kicked or left.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/mercenaries/{userId}")]
+    public Task<ActionResult> RemoveMercenary(int battleId, int mercenaryId)
+    {
+        return ResultToActionAsync(Mediator.Send(new RemoveBattleMercenaryCommand
+        {
+            UserId = CurrentUser.User!.Id,
+            BattleId = battleId,
+            RemovedMercenaryId = mercenaryId,
+        }, CancellationToken.None));
+    }
 }

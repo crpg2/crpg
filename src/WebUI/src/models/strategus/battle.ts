@@ -40,6 +40,11 @@ export interface BattleFighter {
   mercenarySlots: number
 }
 
+export enum BattleApplicationType {
+  Fighter = 'Fighter',
+  Mercenary = 'Mercenary',
+}
+
 export enum BattleFighterApplicationStatus {
   Pending = 'Pending',
   Declined = 'Declined',

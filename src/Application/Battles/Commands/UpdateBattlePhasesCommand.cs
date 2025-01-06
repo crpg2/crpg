@@ -57,10 +57,12 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
                     case BattlePhase.Preparation:
                         int battleSlots = 100; // TODO: make it depend on the number of troops.
                         _battleMercenaryDistributionModel.DistributeMercenaries(battle.Fighters, battleSlots);
+                        // TODO: reject all pending fighter applications
                         battle.Phase = BattlePhase.Hiring;
                         break;
                     case BattlePhase.Hiring:
                         await _battleScheduler.ScheduleBattle(battle);
+                        // TODO: reject all pending mercenary applications
                         battle.Phase = BattlePhase.Scheduled;
                         break;
                     case BattlePhase.Scheduled:

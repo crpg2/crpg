@@ -33,7 +33,7 @@ export const useBattles = () => {
   }
 }
 
-export const useBattle = (id: number) => {
+export const useBattle = (id: string) => {
   const battleId = computed(() => Number(id))
 
   const { execute: loadBattle, state: battle } = useAsyncState(

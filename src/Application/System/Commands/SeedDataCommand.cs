@@ -2270,6 +2270,7 @@ public record SeedDataCommand : IMediatorRequest
                         Character = falcomCharacter0,
                         Side = BattleSide.Attacker,
                         Status = BattleMercenaryApplicationStatus.Pending,
+                        Note = "Lorem Ipsum",
                     },
                     new BattleMercenaryApplication
                     {

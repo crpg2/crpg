@@ -11,7 +11,7 @@ import { usePagination } from '~/composables/use-pagination'
 import { useRegion } from '~/composables/use-region'
 import { useSearchDebounced } from '~/composables/use-search-debounce'
 import { Culture } from '~/models/culture'
-import { BattlePhase, BattleSide } from '~/models/strategus/battle'
+import { BattleApplicationType, BattlePhase, BattleSide } from '~/models/strategus/battle'
 import { notify } from '~/services/notification-service'
 import { getBattleFighter, getBattles, respondToBattleFighterApplication, respondToBattleMercenaryApplication } from '~/services/strategus-service/battle-service'
 import { settlementIconByType } from '~/services/strategus-service/settlement'
@@ -19,7 +19,7 @@ import { t } from '~/services/translate-service'
 import { useUserStore } from '~/stores/user'
 
 const props = defineProps<{
-  id: number
+  id: string
 }>()
 
 definePage({
@@ -31,10 +31,32 @@ definePage({
   props: true,
 })
 
-const { battleId } = useBattle(props.id)
-const { mercenaryApplications, loadBattleMercenaryApplications } = useBattleMercenaryApplications()
-const { fighterApplications, loadBattleFighterApplications } = useBattleFighterApplications()
+const applicationTypes = Object.keys(BattleApplicationType)
+
+const route = useRoute()
+const router = useRouter()
+
+const { battle, battleId, loadBattle } = useBattle(props.id)
+const { mercenaryApplicationsCount, mercenaryApplications, loadBattleMercenaryApplications } = useBattleMercenaryApplications()
+const { fighterApplicationsCount, fighterApplications, loadBattleFighterApplications } = useBattleFighterApplications()
 const { pageModel, perPage } = usePagination()
+
+const applicationCountByApplicationType = (type: string) => {
+  if (type === BattleApplicationType.Fighter) {
+    return fighterApplicationsCount.value
+  }
+  else {
+    return mercenaryApplicationsCount.value
+  }
+}
+
+const canRecruitMercenaries = computed(() =>
+  battle.value?.phase === BattlePhase.Hiring,
+)
+
+const canRecruitFighters = computed(() =>
+  battle.value?.phase === BattlePhase.Preparation,
+)
 
 const respondToMercenary = async (application: BattleMercenaryApplication, status: boolean) => {
   await respondToBattleMercenaryApplication(battleId.value, application.id, status)
@@ -54,11 +76,12 @@ const respondToFighter = async (application: BattleFighterApplication, status: b
     : notify(t('clan.application.respond.decline.notify.success'))
 }
 
+// todo: conditional load?
 const fetchPageData = async (battleId: number) => {
-  await Promise.all([loadBattleMercenaryApplications(0, { id: battleId }), loadBattleFighterApplications(0, { id: battleId })])
+  await Promise.all([loadBattle(0, { id: battleId }), loadBattleMercenaryApplications(0, { id: battleId }), loadBattleFighterApplications(0, { id: battleId })])
 }
 
-await fetchPageData(props.id)
+await fetchPageData(Number(props.id))
 </script>
 
 <template>
@@ -81,6 +104,7 @@ await fetchPageData(props.id)
       <div class="container">
         <div class="mx-auto max-w-4xl">
           <OTable
+            v-if="canRecruitFighters"
             v-model:current-page="pageModel"
             :data="fighterApplications"
             :per-page="perPage"
@@ -136,6 +160,7 @@ await fetchPageData(props.id)
             </template>
           </OTable>
           <OTable
+            v-if="canRecruitMercenaries"
             v-model:current-page="pageModel"
             :data="mercenaryApplications"
             :per-page="perPage"

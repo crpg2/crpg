@@ -1,15 +1,25 @@
 <script setup lang="ts">
+import type { Battle, BattleFighterApplication, BattleMercenary, BattleMercenaryApplication } from '~/models/strategus/battle'
+
 import { useBattleFighters } from '~/composables/strategus/use-battle-fighters'
+import { useBattleFighterApplications } from '~/composables/strategus/use-battle-fighters-applications'
 import { useBattleMercenaries } from '~/composables/strategus/use-battle-mercenaries'
+import { useBattleMercenaryApplications } from '~/composables/strategus/use-battle-mercenaries-applications'
 import { useBattle } from '~/composables/strategus/use-battles'
-import { BattlePhase, BattleSide } from '~/models/strategus/battle'
+import { useLanguages } from '~/composables/use-language'
+import { usePagination } from '~/composables/use-pagination'
+import { useRegion } from '~/composables/use-region'
+import { useSearchDebounced } from '~/composables/use-search-debounce'
+import { Culture } from '~/models/culture'
+import { BattleApplicationType, BattlePhase, BattleSide } from '~/models/strategus/battle'
 import { notify } from '~/services/notification-service'
-import { getBattleFighter, getBattles } from '~/services/strategus-service/battle-service'
+import { getBattleFighter, getBattles, respondToBattleFighterApplication, respondToBattleMercenaryApplication } from '~/services/strategus-service/battle-service'
+import { settlementIconByType } from '~/services/strategus-service/settlement'
 import { t } from '~/services/translate-service'
 import { useUserStore } from '~/stores/user'
 
 const props = defineProps<{
-  id: number
+  id: string
 }>()
 
 definePage({
@@ -23,10 +33,15 @@ definePage({
 
 const userStore = useUserStore()
 const router = useRouter()
-
+const { battleMercenariesLoading, battleMercenaries, battleMercenariesCount, battleMercenariesAttackers, battleMercenariesDefenders, loadBattleMercenaries } = useBattleMercenaries()
 const { battle, battleId, loadBattle } = useBattle(props.id)
+const { pageModel, perPage } = usePagination()
 
-await Promise.all([loadBattle(0, { id: battleId.value })])
+const fetchPageData = async (battleId: number) => {
+  await Promise.all([loadBattle(0, { id: battleId }), loadBattleMercenaries(0, { id: battleId })])
+}
+
+await fetchPageData(Number(props.id))
 </script>
 
 <template>
@@ -54,8 +69,48 @@ await Promise.all([loadBattle(0, { id: battleId.value })])
         Abort?
         Manage gear / loadout for troops?
         Remove mercenaries
-        <div class="container">
-          <div class="mx-auto max-w-3xl" />
+        <div class="mx-auto max-w-4xl">
+          <OTable
+            v-model:current-page="pageModel"
+            :data="battleMercenaries"
+            :per-page="perPage"
+            bordered
+            :paginated="battleMercenaries.length > perPage"
+          >
+            <OTableColumn
+              v-slot="{ row: mercenary }: { row: BattleMercenary }"
+              field="name"
+              :label="$t('strategus.battle.application.table.column.name')"
+            >
+              <UserMedia
+                :user="mercenary.user"
+                hidden-clan
+              />
+            </OTableColumn>
+
+            <OTableColumn
+              v-slot="{ row: mercenary }: { row: BattleMercenary }"
+              field="action"
+              position="right"
+              :label="$t('strategus.battle.application.table.column.actions')"
+              width="160"
+            >
+              <div class="flex items-center justify-center gap-1">
+                <OButton
+                  variant="primary"
+                  inverted
+                  :label="$t('action.decline')"
+                  size="xs"
+                >
+                  X
+                </obutton>
+              </div>
+            </OTableColumn>
+
+            <template #empty>
+              <ResultNotFound />
+            </template>
+          </OTable>
         </div>
       </div>
     </div>
