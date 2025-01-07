@@ -91,6 +91,9 @@ dateTime:
   minutes:
     short: min
     long: minute | minutes
+  secondes:
+    short: s
+    long: secondes | secondes
 
 timeAgo:
   just-now: just now
@@ -117,6 +120,7 @@ dateTimeFormat:
   countdown: '{hours}:{minutes}:{seconds}'
   dd: '{days} @:dateTime.days.short'
   mm: '{minutes} @:dateTime.minutes.short'
+  ss: '{secondes} @:dateTime.secondes.short'
   hh: '{hours} @:dateTime.hours.short'
   'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
 

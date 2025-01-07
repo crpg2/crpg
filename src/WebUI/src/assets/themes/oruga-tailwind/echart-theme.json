@@ -148,25 +148,6 @@
       }
     }
   },
-  "toolbox": {
-    "iconStyle": {
-      "borderColor": "#aaaaaa"
-    },
-    "emphasis": {
-      "iconStyle": {
-        "borderColor": "#666"
-      }
-    },
-    "feature": {
-      "dataView": {
-        "backgroundColor": "rgba(0, 0, 0, 1)",
-        "textareaColor": "rgba(0, 0, 0, 1)",
-        "textColor": "rgb(255,255,255,1)",
-        "buttonColor": "rgba(210, 188, 138, 1)",
-        "buttonTextColor": "rgba(0, 0, 0, 1)"
-      }
-    }
-  },
   "legend": {
     "textStyle": {
       "color": "rgb(255,255,255,1)"

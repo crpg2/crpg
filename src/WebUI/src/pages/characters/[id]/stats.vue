@@ -5,7 +5,6 @@ import type {
   DataZoomComponentOption,
   GridComponentOption,
   LegendComponentOption,
-  ToolboxComponentOption,
   TooltipComponentOption,
 } from 'echarts/components'
 import type { ComposeOption } from 'echarts/core'
@@ -16,7 +15,6 @@ import {
   DataZoomComponent,
   GridComponent,
   LegendComponent,
-  ToolboxComponent,
   TooltipComponent,
 } from 'echarts/components'
 import { registerTheme, use } from 'echarts/core'
@@ -25,19 +23,22 @@ import { DateTime } from 'luxon'
 import VChart from 'vue-echarts'
 
 import type { CharacterEarnedMetadata } from '~/models/activity-logs'
+import type { CharacterEarnedData } from '~/models/character'
+import type { GameMode } from '~/models/game-mode'
 import type { TimeSeries } from '~/models/timeseries'
 
 import theme from '~/assets/themes/oruga-tailwind/echart-theme.json'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { CharacterEarningType, getCharacterEarningStatistics } from '~/services/characters-service'
-import { d, n, t } from '~/services/translate-service'
+import { CharacterEarningType } from '~/models/character'
+import { convertCharacterEarningStatisticsToTimeSeries, getCharacterEarningStatistics, summaryByGameModeCharacterEarningStatistics } from '~/services/characters-service'
+import { gameModeToIcon } from '~/services/game-mode-service'
+import { d } from '~/services/translate-service'
 import { characterKey } from '~/symbols/character'
 
-use([ToolboxComponent, BarChart, TooltipComponent, LegendComponent, DataZoomComponent, GridComponent, SVGRenderer])
+use([BarChart, TooltipComponent, LegendComponent, DataZoomComponent, GridComponent, SVGRenderer])
 registerTheme('crpg', theme)
 type EChartsOption = ComposeOption<
   | LegendComponentOption
-  | ToolboxComponentOption
   | TooltipComponentOption
   | GridComponentOption
   | BarSeriesOption
@@ -134,7 +135,6 @@ const onDataZoomChanged = () => {
 }
 
 // TODO: spec
-// contains raw api response for computing statistics for game-mode summary
 const { execute: loadCharacterEarningStatistics, state: rawEarningStatistics }
   = await useAsyncState(
     ({ id }: { id: number }) => getCharacterEarningStatistics(id, start.value),
@@ -145,37 +145,7 @@ const { execute: loadCharacterEarningStatistics, state: rawEarningStatistics }
     },
   )
 
-// TODO: spec
-// converts raw api response to array simplified timeSeries per gamemode for echart
-const characterEarningStatistics = computed(() => {
-  const type = statTypeModel.value
-  return rawEarningStatistics.value.reduce((out, l) => {
-    const currentEl = out.find(el => el.name === t(`game-mode.${l.metadata.gameMode}`))
-
-    if (currentEl) {
-      currentEl.data.push([
-        l.createdAt,
-        Number.parseInt(type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold, 10),
-      ])
-    }
-    else {
-      out.push({
-        data: [
-          [
-            l.createdAt,
-            Number.parseInt(
-              type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold,
-              10,
-            ),
-          ],
-        ],
-        name: t(`game-mode.${l.metadata.gameMode}`),
-      })
-    }
-
-    return out
-  }, [] as TimeSeries[])
-})
+const characterEarningStatistics = computed(() => convertCharacterEarningStatisticsToTimeSeries(rawEarningStatistics.value, statTypeModel.value))
 
 const toBarSeries = (ts: TimeSeries): BarSeriesOption => ({ ...ts, type: 'bar' })
 const extractTSName = (ts: TimeSeries) => ts.name
@@ -215,6 +185,15 @@ const total = computed(() =>
     .reduce((total, [_date, value]) => total + value, 0),
 )
 
+interface CharacterEarnedDataWithGameMode extends CharacterEarnedData {
+  gameMode: GameMode
+}
+
+const summary = computed<CharacterEarnedDataWithGameMode[]>(() => Object.entries(summaryByGameModeCharacterEarningStatistics(rawEarningStatistics.value)).map(([gameMode, data]) => ({
+  gameMode: gameMode as GameMode,
+  ...data,
+})))
+
 const chart = shallowRef<InstanceType<typeof VChart> | null>(null)
 
 const option = shallowRef<EChartsOption>({
@@ -226,21 +205,6 @@ const option = shallowRef<EChartsOption>({
     top: 'center',
   },
   series: characterEarningStatistics.value.map(toBarSeries),
-  toolbox: {
-    show: true,
-    right: 0,
-    top: 0,
-    feature: {
-      dataView: {
-        // TODO i18n
-        title: 'Summary per Game-Mode',
-        // TODO i18n
-        lang: ['Statistics per Game-Mode', 'Close', 'Refresh'],
-        optionToContent: () => convertSummaryToFormattedHtml(sumGameModeValues()),
-        readOnly: true,
-      },
-    },
-  },
   tooltip: {
     axisPointer: {
       label: {
@@ -293,51 +257,6 @@ const onLegendSelectChanged = (e: LegendSelectEvent) => {
     .map(([legend, _status]) => legend)
 }
 
-// takes raw api-response and computes over the values per gameMode and adds them up into one earning-object
-// then returns a list with one earning-object per game-mode
-const sumGameModeValues = (): CharacterEarnedMetadata[] => {
-  const result: CharacterEarnedMetadata[] = []
-  for (const gameModeResult of rawEarningStatistics.value.map(res => res.metadata)) {
-    const currentGameModeSummary = result.find(gme => gme.gameMode === gameModeResult.gameMode)
-
-    // init game-mode if needed
-    if (currentGameModeSummary === undefined) {
-      result.push({
-        characterId: 'we dont care here',
-        gameMode: gameModeResult.gameMode,
-        experience: gameModeResult.experience,
-        gold: gameModeResult.gold,
-        timeEffort: gameModeResult.timeEffort,
-      })
-      continue
-    }
-
-    // TODO: fix ugly time conversions
-    currentGameModeSummary.experience = (Number.parseInt(currentGameModeSummary.experience, 10) + Number.parseInt(gameModeResult.experience, 10)).toString()
-    currentGameModeSummary.gold = (Number.parseInt(currentGameModeSummary.gold, 10) + Number.parseInt(gameModeResult.gold, 10)).toString()
-    currentGameModeSummary.timeEffort = (Number.parseFloat(currentGameModeSummary.timeEffort) + Number.parseFloat(gameModeResult.timeEffort)).toString()
-  }
-  return result
-}
-
-// convert a list of CharacterEarnedMetadata into a somewhat formatted HTML-string
-const convertSummaryToFormattedHtml = (gameModeSummaries: CharacterEarnedMetadata[]) => {
-  let result = ''
-  for (const gameModeSummary of gameModeSummaries) {
-    const experience = Number.parseInt(gameModeSummary.experience, 10)
-    const gold = Number.parseInt(gameModeSummary.gold, 10)
-    const seconds = Number.parseInt(gameModeSummary.timeEffort, 10)
-
-    result += t(`game-mode.${gameModeSummary.gameMode}`)
-    result += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${n(experience)} Exp`
-    result += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${n(gold)} Gold`
-    result += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${n(seconds)} Seconds`
-    result += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${n(experience / seconds)} Exp/s`
-    result += `<br> &nbsp; &nbsp; &nbsp; &nbsp;${n(gold / seconds)} Gold/s<br>`
-  }
-  return result
-}
-
 const fetchPageData = (characterId: number) => Promise.all([onUpdate(characterId)])
 
 onBeforeRouteUpdate(async (to, from) => {
@@ -345,7 +264,6 @@ onBeforeRouteUpdate(async (to, from) => {
     const characterId = Number(to.params.id)
     await fetchPageData(characterId)
   }
-
   return true
 })
 
@@ -370,6 +288,7 @@ await fetchPageData(character.value.id)
             :label="$t('character.earningChart.type.gold')"
           />
         </OTabs>
+
         <OTabs
           v-model="zoomModel"
           type="fill-rounded"
@@ -387,12 +306,14 @@ await fetchPageData(character.value.id)
             "
           />
         </OTabs>
+
         <div class="flex-1 text-lg font-semibold">
           <Coin
             v-if="statTypeModel === CharacterEarningType.Gold"
             :value="total"
             :class="total < 0 ? 'text-status-danger' : 'text-status-success'"
           />
+
           <div
             v-else
             class="flex items-center gap-1.5 align-text-bottom font-bold text-primary"
@@ -408,7 +329,7 @@ await fetchPageData(character.value.id)
 
       <VChart
         ref="chart"
-        class="h-[30rem]"
+        class="mb-6 h-[30rem]"
         theme="crpg"
         :option="option"
         :loading="loading"
@@ -416,6 +337,67 @@ await fetchPageData(character.value.id)
         @legendselectchanged="onLegendSelectChanged"
         @datazoom="onDataZoomChanged"
       />
+
+      <OTable
+        :data="summary"
+        bordered
+        narrowed
+        sort-icon="chevron-up"
+        sort-icon-size="xs"
+      >
+        <OTableColumn
+          v-slot="{ row }: { row: CharacterEarnedDataWithGameMode }"
+          label="Game mode"
+        >
+          <div class="flex items-center gap-1.5 align-text-bottom font-bold">
+            <OIcon :icon="gameModeToIcon[row.gameMode as GameMode]" />
+            {{ $t(`game-mode.${row.gameMode}`) }}
+          </div>
+        </OTableColumn>
+
+        <OTableColumn
+          v-slot="{ row }: { row: CharacterEarnedDataWithGameMode }"
+          label="Time effort"
+          field="timeEffort"
+          sortable
+        >
+          {{ $t('dateTimeFormat.ss', { secondes: Number(row.timeEffort) }) }}
+        </OTableColumn>
+
+        <OTableColumn
+          field="experience"
+          sortable
+        >
+          <template #header>
+            <OIcon
+              icon="experience"
+              class="text-primary"
+              size="2xl"
+            />
+          </template>
+          <template #default="{ row }: { row: CharacterEarnedDataWithGameMode }">
+            {{ $n(Number(row.experience)) }}
+            ({{ $n(Number(row.experience) / Number(row.timeEffort)) }}/s)
+          </template>
+        </OTableColumn>
+
+        <OTableColumn
+          field="gold"
+          sortable
+        >
+          <template #header>
+            <Coin />
+          </template>
+          <template #default="{ row }: { row: CharacterEarnedDataWithGameMode }">
+            {{ $n(Number(row.gold)) }}
+            ({{ $n(Number(row.gold) / Number(row.timeEffort)) }}/s)
+          </template>
+        </OTableColumn>
+
+        <template #empty>
+          <ResultNotFound />
+        </template>
+      </OTable>
     </div>
   </div>
 </template>
