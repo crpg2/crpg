@@ -626,11 +626,12 @@ character:
       title: Avg repair cost
       desc: Average cost of upkeep of equipped items per hour
 
-  earningChart:
-    title: Earning chart
+  earningStats:
     type:
       experience: Exp
       gold: Gold
+    summary:
+      timeEffort: Time effort
 
   highUpkeepWarning:
     title: You cannot afford your current upkeep!

@@ -281,11 +281,11 @@ await fetchPageData(character.value.id)
         >
           <OTabItem
             :value="CharacterEarningType.Exp"
-            :label="$t('character.earningChart.type.experience')"
+            :label="$t('character.earningStats.type.experience')"
           />
           <OTabItem
             :value="CharacterEarningType.Gold"
-            :label="$t('character.earningChart.type.gold')"
+            :label="$t('character.earningStats.type.gold')"
           />
         </OTabs>
 
@@ -347,7 +347,6 @@ await fetchPageData(character.value.id)
       >
         <OTableColumn
           v-slot="{ row }: { row: CharacterEarnedDataWithGameMode }"
-          label="Game mode"
         >
           <div class="flex items-center gap-1.5 align-text-bottom font-bold">
             <OIcon :icon="gameModeToIcon[row.gameMode as GameMode]" />
@@ -357,8 +356,8 @@ await fetchPageData(character.value.id)
 
         <OTableColumn
           v-slot="{ row }: { row: CharacterEarnedDataWithGameMode }"
-          label="Time effort"
           field="timeEffort"
+          :label="$t('character.earningStats.summary.timeEffort')"
           sortable
         >
           {{ $t('dateTimeFormat.ss', { secondes: Number(row.timeEffort) }) }}

@@ -590,11 +590,12 @@ character:
       title: Ремонт
       desc: Усредненная стоимость содержания экипированных предметов в час
 
-  earningChart:
-    title: График
+  earningStats:
     type:
       experience: Опыт
       gold: Золото
+    summary:
+      timeEffort: Продолжительность
 
   highUpkeepWarning:
     title: Вы не можете позволить себе текущиее содержание предметов!
