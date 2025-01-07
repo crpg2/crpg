@@ -6336,25 +6336,25 @@
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_sa_bacinet_with_facemask_h0" name="bacinet with facemask" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_sa_bacinet_with_facemask_h0" name="Bascinet with Facemask" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="59" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_sa_bacinet_with_facemask_h1" name="bacinet with facemask +1" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_sa_bacinet_with_facemask_h1" name="Bascinet with Facemask +1" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="61" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_sa_bacinet_with_facemask_h2" name="bacinet with facemask +2" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_sa_bacinet_with_facemask_h2" name="Bascinet with Facemask +2" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="63" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_sa_bacinet_with_facemask_h3" name="bacinet with facemask +3" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_sa_bacinet_with_facemask_h3" name="Bascinet with Facemask +3" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="65" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
