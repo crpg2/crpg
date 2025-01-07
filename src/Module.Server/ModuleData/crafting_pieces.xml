@@ -36276,7 +36276,7 @@
   <CraftingPiece id="crpg_templarsword_handle_h3" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
     <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
   </CraftingPiece>
-<CraftingPiece id="crpg_at_partisan_blade_h0" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="74.4" weight="0.1">
+  <CraftingPiece id="crpg_at_partisan_blade_h0" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="74.4" weight="0.1">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="3.8" />
