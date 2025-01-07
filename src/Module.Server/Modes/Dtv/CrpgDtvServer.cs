@@ -216,8 +216,9 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             return;
         }
 
-        if (affectedAgent.IsAIControlled && affectedAgent.Team == Mission.DefenderTeam) // VIP under attack
+        if (affectedAgent.IsAIControlled && affectedAgent.Team == Mission.DefenderTeam && affectorAgent.Team != Mission.DefenderTeam) // VIP under attack
         {
+            affectedAgent.MakeVoice(SkinVoiceManager.VoiceType.Fear, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
             SendDataToPeers(new CrpgDtvVipUnderAttackMessage { AgentAttackerIndex = affectorAgent.Index, AgentVictimIndex = affectedAgent.Index });
         }
 
@@ -389,7 +390,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         {
             if (flag != StonePileRegenerateOptions.All && stonePile.GivenItemID != itemID)
             {
-               continue;
+                continue;
             }
 
             int ammoCount = stonePile.AmmoCount;
