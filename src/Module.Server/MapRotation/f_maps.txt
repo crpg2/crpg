@@ -1,3 +1,11 @@
 mp_tdm_map_001_spring
 mp_tdm_map_004a
 mp_tdm_map_003
+crpg_battle_nirvana
+crpg_battle_zemouri
+crpg_battle_tolstabeach
+crpg_battle_hadiiqa
+crpg_battle_killington
+crpg_battle_westveen
+crpg_battle_drakenburg
+crpg_battle_ketilsfarm

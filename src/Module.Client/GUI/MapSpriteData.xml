@@ -17,7 +17,7 @@
   <SpriteCategories>
     <SpriteCategory>
       <Name>ui_mploading</Name>
-      <SpriteSheetCount>152</SpriteSheetCount>
+      <SpriteSheetCount>154</SpriteSheetCount>
       <SpriteSheetSize ID="1" Width="3840" Height="1935" />
       <SpriteSheetSize ID="2" Width="3840" Height="1935" />
       <SpriteSheetSize ID="3" Width="3383" Height="1902" />
@@ -158,6 +158,8 @@
       <SpriteSheetSize ID="150" Width="1920" Height="1080" />
       <SpriteSheetSize ID="151" Width="1920" Height="1080" />
       <SpriteSheetSize ID="152" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="153" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="154" Width="1920" Height="1080" />
       <AlwaysLoad />
     </SpriteCategory>
   </SpriteCategories>
@@ -1413,6 +1415,24 @@
       <SheetY>0</SheetY>
       <CategoryName>ui_mploading</CategoryName>
     </SpritePart>
+    <SpritePart>
+      <SheetID>153</SheetID>
+      <Name>crpg_dtv_nirvana</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>154</SheetID>
+      <Name>crpg_battle_nirvana</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
   </SpriteParts>
   <Sprites>
     <GenericSprite>
@@ -1970,6 +1990,14 @@
     <GenericSprite>
       <Name>crpg_dtv_simirafort</Name>
       <SpritePartName>crpg_dtv_simirafort</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>crpg_dtv_nirvana</Name>
+      <SpritePartName>crpg_dtv_nirvana</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>crpg_battle_nirvana</Name>
+      <SpritePartName>crpg_battle_nirvana</SpritePartName>
     </GenericSprite>
   </Sprites>
 </SpriteData>
