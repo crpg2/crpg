@@ -2480,7 +2480,7 @@ public record SeedDataCommand : IMediatorRequest
                         Position = _strategusMap.TranslatePositionForRegion(settlementCreation.Position, Region.Eu, region),
                         Scene = settlementCreation.Scene,
                         Troops = StrategusSettlementDefaultTroops[settlementCreation.Type],
-                        OwnerId = null,
+                        Owner = settlementCreation.Owner,
                     };
 
                     if (dbSettlementsByNameRegion.TryGetValue((settlement.Name, settlement.Region), out Settlement? dbSettlement))

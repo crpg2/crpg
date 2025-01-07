@@ -1,4 +1,5 @@
 ﻿using Crpg.Domain.Entities;
+using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Settlements;
 using NetTopologySuite.Geometries;
 
@@ -11,4 +12,5 @@ public record SettlementCreation
     public Culture Culture { get; init; }
     public Point Position { get; init; } = default!;
     public string Scene { get; init; } = string.Empty;
+    public Party? Owner { get; init; }
 }
