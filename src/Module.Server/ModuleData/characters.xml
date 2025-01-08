@@ -317,7 +317,7 @@
         <equipment slot="Leg" id="Item.crpg_southern_moccasins_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_crossbow_f_v4_h0" />
         <equipment slot="Item1" id="Item.crpg_bolt_c_v4_h0" />
-        <equipment slot="Item2" id="Item.crpg_heavy_goedendag_v2_h0" />
+        <equipment slot="Item2" id="Item.crpg_heavy_goedendag_v3_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -380,7 +380,7 @@
     </skills>
     <Equipments>
       <EquipmentRoster>
-        <equipment slot="Item0" id="Item.crpg_bo_staff_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_bo_staff_v3_h0" />
         <equipment slot="Body" id="Item.crpg_vlandian_dress_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_ladys_shoe_v2_h0" />
       </EquipmentRoster>
@@ -663,7 +663,7 @@
         <equipment slot="Leg" id="Item.crpg_lamellar_plate_boots_v3_h0" />
         <equipment slot="Item0" id="Item.crpg_heavy_cavalry_lance_v2_h0" />
         <equipment slot="Item1" id="Item.crpg_noyans_shield_v4_h0" />
-        <equipment slot="Item2" id="Item.crpg_bone_crusher_v1_h0" />
+        <equipment slot="Item2" id="Item.crpg_bone_crusher_v2_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -876,7 +876,7 @@
         <equipment slot="Body" id="Item.crpg_khuzait_lamellar_strapped_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_eastern_plated_leather_vambraces_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_khuzait_curved_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_tall_tipped_war_spear_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_tall_tipped_war_spear_v3_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>

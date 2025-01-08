@@ -58,7 +58,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
                 ("crpg_mail_chausses_v2_h0", ItemSlot.Leg),
                 ("crpg_iron_arming_sword_v1_h0", ItemSlot.Weapon0),
                 ("crpg_heavy_round_shield_v4_h0", ItemSlot.Weapon1),
-                ("crpg_knob_headed_spear_v1_h0", ItemSlot.Weapon2),
+                ("crpg_knob_headed_spear_v2_h0", ItemSlot.Weapon2),
             },
         };
 
@@ -115,7 +115,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
                 ("crpg_baggy_trunks_v2_h0", ItemSlot.Body),
                 ("crpg_armwraps_v2_h0", ItemSlot.Hand),
                 ("crpg_ragged_boots_v2_h0", ItemSlot.Leg),
-                ("crpg_makeshift_sledgehammer_v1_h0", ItemSlot.Weapon0),
+                ("crpg_makeshift_sledgehammer_v2_h0", ItemSlot.Weapon0),
                 ("crpg_throwing_stone_v3_h0", ItemSlot.Weapon1),
             },
             // looters
@@ -124,7 +124,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
                 ("crpg_vlandia_bandit_cape_b_v2_h0", ItemSlot.Head),
                 ("crpg_vlandia_bandit_c_v2_h0", ItemSlot.Body),
                 ("crpg_rough_tied_boots_v3_h0", ItemSlot.Leg),
-                ("crpg_spiked_club_v1_h0", ItemSlot.Weapon0),
+                ("crpg_spiked_club_v2_h0", ItemSlot.Weapon0),
                 ("crpg_bound_adarga_v4_h0", ItemSlot.Weapon1),
             },
         };
