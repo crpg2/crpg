@@ -1,5 +1,6 @@
 ﻿using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common.TeamSelect;
+using Crpg.Module.Modes.Battle;
 using Crpg.Module.Notifications;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -18,7 +19,7 @@ internal class KickInactiveBehavior : MissionBehavior
     private readonly MultiplayerWarmupComponent _warmupComponent;
     private readonly Dictionary<PlayerId, ActivityStatus> _lastActiveStatuses;
     private readonly CrpgTeamSelectServerComponent? _crpgTeamSelectServerComponent;
-    private MultiplayerGameType _gameType;
+    private bool _isBattleServer;
     private Timer? _checkTimer;
     private Timer? _battleTimer;
 
@@ -37,12 +38,12 @@ internal class KickInactiveBehavior : MissionBehavior
 
     public override void OnBehaviorInitialize()
     {
-        _gameType = Mission.Current.GetMissionBehavior<MissionMultiplayerGameModeBase>().GetMissionType();
+        _isBattleServer = Mission.Current.GetMissionBehavior<CrpgBattleServer>()?.GetMissionType() == MultiplayerGameType.Battle;
     }
 
     public override void OnClearScene()
     {
-        if (_gameType == MultiplayerGameType.Battle)
+        if (_isBattleServer)
         {
             _battleTimer = new Timer(Mission.CurrentTime, 65f, false);
         }
@@ -61,7 +62,7 @@ internal class KickInactiveBehavior : MissionBehavior
             return;
         }
 
-        if (_gameType == MultiplayerGameType.Battle)
+        if (_isBattleServer)
         {
             _battleTimer ??= new Timer(Mission.CurrentTime, 65f, false);
             if (_battleTimer.Check(Mission.CurrentTime))
