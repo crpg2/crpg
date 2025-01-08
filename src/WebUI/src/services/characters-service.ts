@@ -33,14 +33,19 @@ import { clamp } from 'es-toolkit'
 import qs from 'qs'
 
 import type { ActivityLog, CharacterEarnedMetadata } from '~/models/activity-logs'
-import type { TimeSeries } from '~/models/timeseries'
+import type { TimeSeries, TimeSeriesItem } from '~/models/timeseries'
 
 import {
   type Character,
+
   type CharacterArmorOverall,
+
   CharacterArmorOverallKey,
+
   type CharacterCharacteristics,
   CharacterClass,
+  type CharacterEarnedData,
+  CharacterEarningType,
   type CharacteristicConversion,
   type CharacteristicKey,
   type CharacterLimitations,
@@ -122,47 +127,54 @@ export const getCompetitiveValueByGameMode = (
   return statisticByGameMode ? statisticByGameMode.rating.competitiveValue : 0
 }
 
-export enum CharacterEarningType {
-  Exp = 'Exp',
-  Gold = 'Gold',
-}
+// TODO: FIXME: SPEC
+export const getCharacterEarningStatistics = (characterId: number, from: Date): Promise<ActivityLog<CharacterEarnedMetadata>[]> =>
+  get<ActivityLog<CharacterEarnedMetadata>[]>(`/users/self/characters/${characterId}/earning-statistics?${qs.stringify({ from })}`)
 
-// TODO: spec
-export const getCharacterEarningStatistics = async (
-  characterId: number,
-  type: CharacterEarningType,
-  from: Date,
-) => {
-  return (
-    await get<ActivityLog<CharacterEarnedMetadata>[]>(
-      `/users/self/characters/${characterId}/earning-statistics?${qs.stringify({ from })}`,
-    )
-  ).reduce((out, l) => {
+export const convertCharacterEarningStatisticsToTimeSeries = (logs: ActivityLog<CharacterEarnedMetadata>[], type: CharacterEarningType): TimeSeries[] => {
+  return logs.reduce((out, l) => {
+    const timeSeriaItem: TimeSeriesItem = [
+      l.createdAt,
+      Number.parseInt(type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold, 10),
+    ]
+
     const currentEl = out.find(el => el.name === t(`game-mode.${l.metadata.gameMode}`))
 
     if (currentEl) {
-      currentEl.data.push([
-        l.createdAt,
-        Number.parseInt(type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold, 10),
-      ])
+      currentEl.data.push(timeSeriaItem)
     }
     else {
       out.push({
-        data: [
-          [
-            l.createdAt,
-            Number.parseInt(
-              type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold,
-              10,
-            ),
-          ],
-        ],
+        data: [timeSeriaItem],
         name: t(`game-mode.${l.metadata.gameMode}`),
       })
     }
-
     return out
   }, [] as TimeSeries[])
+}
+
+// TODO: FIXME: SPEC
+export const summaryByGameModeCharacterEarningStatistics = (logs: ActivityLog<CharacterEarnedMetadata>[]) => {
+  return logs.reduce((out, l) => {
+    const gameMode = l.metadata.gameMode as GameMode
+    const timeEffort = Number(l.metadata.timeEffort) || 0
+    const gold = Number(l.metadata.gold)
+    const experience = Number(l.metadata.experience)
+
+    if (gameMode in out) {
+      out[gameMode].timeEffort = out[gameMode].timeEffort + timeEffort
+      out[gameMode].gold = out[gameMode].gold + gold
+      out[gameMode].experience = out[gameMode].experience + experience
+    }
+    else {
+      out[gameMode] = {
+        timeEffort,
+        gold,
+        experience,
+      }
+    }
+    return out
+  }, {} as Record<GameMode, CharacterEarnedData>)
 }
 
 export const getCharacterLimitations = async (characterId: number) =>

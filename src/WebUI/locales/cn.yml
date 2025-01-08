@@ -620,11 +620,12 @@ character:
       title: 平均维修成本
       desc: 每小时已装备物品的平均维护费用
 
-  earningChart:
-    title: 收益图表
+  earningStats:
     type:
       experience: 经验
       gold: 金币
+    summary:
+      timeEffort: 时间精力
 
   highUpkeepWarning:
     title: 你无法负担当前的维护费用！

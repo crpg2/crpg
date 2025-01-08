@@ -141,3 +141,14 @@ export interface CharacterArmorOverall {
   value: number
   key: CharacterArmorOverallKey
 }
+
+export interface CharacterEarnedData {
+  experience: number
+  gold: number
+  timeEffort: number
+}
+
+export enum CharacterEarningType {
+  Exp = 'Exp',
+  Gold = 'Gold',
+}
