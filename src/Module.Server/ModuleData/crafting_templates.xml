@@ -20,6 +20,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_templarsword_blade_h0" />
+      <UsablePiece piece_id="crpg_templarsword_blade_h1" />
+      <UsablePiece piece_id="crpg_templarsword_blade_h2" />
+      <UsablePiece piece_id="crpg_templarsword_blade_h3" />
+      <UsablePiece piece_id="crpg_templarsword_handle_h0" />
+      <UsablePiece piece_id="crpg_templarsword_handle_h1" />
+      <UsablePiece piece_id="crpg_templarsword_handle_h2" />
+      <UsablePiece piece_id="crpg_templarsword_handle_h3" />
+      <UsablePiece piece_id="crpg_templarsword_guard_h0" />
+      <UsablePiece piece_id="crpg_templarsword_guard_h1" />
+      <UsablePiece piece_id="crpg_templarsword_guard_h2" />
+      <UsablePiece piece_id="crpg_templarsword_guard_h3" />
+      <UsablePiece piece_id="crpg_templarsword_pommel_h0" />
+      <UsablePiece piece_id="crpg_templarsword_pommel_h1" />
+      <UsablePiece piece_id="crpg_templarsword_pommel_h2" />
+      <UsablePiece piece_id="crpg_templarsword_pommel_h3" />
       <UsablePiece piece_id="crpg_dragonscimitar_blade_h0" />
       <UsablePiece piece_id="crpg_dragonscimitar_blade_h1" />
       <UsablePiece piece_id="crpg_dragonscimitar_blade_h2" />
@@ -2040,7 +2056,7 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
-	  <UsablePiece piece_id="crpg_dragonslayer_blade_h0" />
+      <UsablePiece piece_id="crpg_dragonslayer_blade_h0" />
       <UsablePiece piece_id="crpg_dragonslayer_blade_h1" />
       <UsablePiece piece_id="crpg_dragonslayer_blade_h2" />
       <UsablePiece piece_id="crpg_dragonslayer_blade_h3" />
@@ -6538,6 +6554,38 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_claymore_pole_blade_h0" />
+      <UsablePiece piece_id="crpg_claymore_pole_blade_h1" />
+      <UsablePiece piece_id="crpg_claymore_pole_blade_h2" />
+      <UsablePiece piece_id="crpg_claymore_pole_blade_h3" />
+      <UsablePiece piece_id="crpg_claymore_pole_guard_h0" />
+      <UsablePiece piece_id="crpg_claymore_pole_guard_h1" />
+      <UsablePiece piece_id="crpg_claymore_pole_guard_h2" />
+      <UsablePiece piece_id="crpg_claymore_pole_guard_h3" />
+      <UsablePiece piece_id="crpg_claymore_pole_handle_h0" />
+      <UsablePiece piece_id="crpg_claymore_pole_handle_h1" />
+      <UsablePiece piece_id="crpg_claymore_pole_handle_h2" />
+      <UsablePiece piece_id="crpg_claymore_pole_handle_h3" />
+      <UsablePiece piece_id="crpg_claymore_pole_pommel_h0" />
+      <UsablePiece piece_id="crpg_claymore_pole_pommel_h1" />
+      <UsablePiece piece_id="crpg_claymore_pole_pommel_h2" />
+      <UsablePiece piece_id="crpg_claymore_pole_pommel_h3" />
+      <UsablePiece piece_id="crpg_at_partisan_blade_h0" />
+      <UsablePiece piece_id="crpg_at_partisan_blade_h1" />
+      <UsablePiece piece_id="crpg_at_partisan_blade_h2" />
+      <UsablePiece piece_id="crpg_at_partisan_blade_h3" />
+      <UsablePiece piece_id="crpg_at_partisan_handle_h0" />
+      <UsablePiece piece_id="crpg_at_partisan_handle_h1" />
+      <UsablePiece piece_id="crpg_at_partisan_handle_h2" />
+      <UsablePiece piece_id="crpg_at_partisan_handle_h3" />
+      <UsablePiece piece_id="crpg_at_partisan_guard_h0" />
+      <UsablePiece piece_id="crpg_at_partisan_guard_h1" />
+      <UsablePiece piece_id="crpg_at_partisan_guard_h2" />
+      <UsablePiece piece_id="crpg_at_partisan_guard_h3" />
+      <UsablePiece piece_id="crpg_at_partisan_pommel_h0" />
+      <UsablePiece piece_id="crpg_at_partisan_pommel_h1" />
+      <UsablePiece piece_id="crpg_at_partisan_pommel_h2" />
+      <UsablePiece piece_id="crpg_at_partisan_pommel_h3" />
       <UsablePiece piece_id="crpg_pole_zweihander_blade_h0" />
       <UsablePiece piece_id="crpg_pole_zweihander_blade_h1" />
       <UsablePiece piece_id="crpg_pole_zweihander_blade_h2" />

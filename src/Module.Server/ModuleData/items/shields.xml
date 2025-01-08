@@ -2496,33 +2496,33 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_heraldic_heater_v1_h0" name="{=Salt}Heraldic Heater Shield" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="2.113125" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
+  <Item id="crpg_heraldic_heater_v1_h0" name="{=Salt}Heraldic Heater Shield" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="1.401131" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="18" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="70" center_of_mass="0.0,0.1,0.05" hit_points="345" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="18" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="57" center_of_mass="0.0,0.1,0.05" hit_points="345" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_heraldic_heater_v1_h1" name="{=Salt}Heraldic Heater Shield +1" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="2.113125" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
+  <Item id="crpg_heraldic_heater_v1_h1" name="{=Salt}Heraldic Heater Shield +1" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="1.401131" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="19" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="70" center_of_mass="0.0,0.1,0.05" hit_points="373" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="19" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="57" center_of_mass="0.0,0.1,0.05" hit_points="373" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_heraldic_heater_v1_h2" name="{=Salt}Heraldic Heater Shield +2" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="2.113125" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
+  <Item id="crpg_heraldic_heater_v1_h2" name="{=Salt}Heraldic Heater Shield +2" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="1.401131" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="20" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="70" center_of_mass="0.0,0.1,0.05" hit_points="401" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="20" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="57" center_of_mass="0.0,0.1,0.05" hit_points="401" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_heraldic_heater_v1_h3" name="{=Salt}Heraldic Heater Shield +3" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="2.113125" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
+  <Item id="crpg_heraldic_heater_v1_h3" name="{=Salt}Heraldic Heater Shield +3" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="1.401131" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
     <ItemComponent>
-      <Weapon weapon_class="SmallShield" body_armor="20" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="70" center_of_mass="0.0,0.1,0.05" hit_points="428" modifier_group="shield">
+      <Weapon weapon_class="SmallShield" body_armor="20" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="57" center_of_mass="0.0,0.1,0.05" hit_points="428" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2559,5 +2559,69 @@
       </Weapon>
     </ItemComponent>
     <Flags HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_disabled_orleshield_h0" name="{=BalanceMe}Orle's Shield" body_name="bo_cap_orleshield" shield_body_name="bo_orleshield" recalculate_body="false" mesh="orleshield" using_tableau="true" weight="4.6746" appearance="0.7" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0,0.025" culture="Culture.vlandia">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="4" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="87" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="84" center_of_mass="0.0,0.05,0.05" hit_points="530" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_disabled_orleshield_h1" name="{=BalanceMe}Orle's Shield +1" body_name="bo_cap_orleshield" shield_body_name="bo_orleshield" recalculate_body="false" mesh="orleshield" using_tableau="true" weight="4.6746" appearance="0.7" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0,0.025" culture="Culture.vlandia">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="5" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="87" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="84" center_of_mass="0.0,0.05,0.05" hit_points="573" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_disabled_orleshield_h2" name="{=BalanceMe}Orle's Shield +2" body_name="bo_cap_orleshield" shield_body_name="bo_orleshield" recalculate_body="false" mesh="orleshield" using_tableau="true" weight="4.6746" appearance="0.7" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0,0.025" culture="Culture.vlandia">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="5" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="87" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="84" center_of_mass="0.0,0.05,0.05" hit_points="615" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_disabled_orleshield_h3" name="{=BalanceMe}Orle's Shield +3" body_name="bo_cap_orleshield" shield_body_name="bo_orleshield" recalculate_body="false" mesh="orleshield" using_tableau="true" weight="4.6746" appearance="0.7" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0,0.025" culture="Culture.vlandia">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="5" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="87" physics_material="wood_shield" item_usage="shield" position="0.0, 0.00, 0.00" rotation="0.0,10.0,40.00" weapon_length="84" center_of_mass="0.0,0.05,0.05" hit_points="658" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_large_heraldic_heater_v1_h0" name="{=Salt}Large Heraldic Heater Shield" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="1.822031" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="18" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="65" center_of_mass="0.0,0.1,0.05" hit_points="345" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_large_heraldic_heater_v1_h1" name="{=Salt}Large Heraldic Heater Shield +1" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="1.822031" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="19" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="65" center_of_mass="0.0,0.1,0.05" hit_points="373" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_large_heraldic_heater_v1_h2" name="{=Salt}Large Heraldic Heater Shield +2" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="1.822031" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="20" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="65" center_of_mass="0.0,0.1,0.05" hit_points="401" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_large_heraldic_heater_v1_h3" name="{=Salt}Large Heraldic Heater Shield +3" body_name="bo_cap_heraldic_heater" shield_body_name="bo_heraldic_heater" recalculate_body="false" mesh="heraldic_heater" culture="Culture.vlandia" using_tableau="true" weight="1.822031" appearance="1" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="-0.1,0.0,0.0">
+    <ItemComponent>
+      <Weapon weapon_class="SmallShield" body_armor="20" thrust_speed="82" thrust_damage_type="Blunt" speed_rating="97" physics_material="wood_shield" item_usage="shield" position="0.10, -0.05, 0.025" rotation="10.0,20.0,40.00" weapon_length="65" center_of_mass="0.0,0.1,0.05" hit_points="428" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
 </Items>

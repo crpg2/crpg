@@ -6336,25 +6336,25 @@
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_sa_bacinet_with_facemask_h0" name="bacinet with facemask" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_sa_bacinet_with_facemask_h0" name="Bascinet with Facemask" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="59" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_sa_bacinet_with_facemask_h1" name="bacinet with facemask +1" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_sa_bacinet_with_facemask_h1" name="Bascinet with Facemask +1" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="61" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_sa_bacinet_with_facemask_h2" name="bacinet with facemask +2" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_sa_bacinet_with_facemask_h2" name="Bascinet with Facemask +2" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="63" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="false" />
   </Item>
-  <Item id="crpg_sa_bacinet_with_facemask_h3" name="bacinet with facemask +3" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_sa_bacinet_with_facemask_h3" name="Bascinet with Facemask +3" mesh="sa_bacinet_with_facemask" culture="Culture.vlandia" weight="5.56354" appearance="1" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="65" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
@@ -9456,49 +9456,49 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_disabled_strawhatgreathelm_h0" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawhatgreathelm_h0" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawhatgreathelm_h1" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +1" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawhatgreathelm_h1" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +1" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawhatgreathelm_h2" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +2" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawhatgreathelm_h2" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +2" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="68" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawhatgreathelm_h3" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +3" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawhatgreathelm_h3" name="{=BalanceMe}[STAFF]Strawhat over Great Helmet +3" subtype="head_armor" mesh="strawhat_over_great_helm_base" culture="Culture.vlandia" weight="6.234625" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="70" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawlord_helmet_h0" name="{=BalanceMe}[STAFF]Strawlord Helmet" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawlord_helmet_h0" name="{=BalanceMe}[STAFF]Strawlord Helmet" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawlord_helmet_h1" name="{=BalanceMe}[STAFF]Strawlord Helmet +1" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawlord_helmet_h1" name="{=BalanceMe}[STAFF]Strawlord Helmet +1" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="53" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawlord_helmet_h2" name="{=BalanceMe}[STAFF]Strawlord Helmet +2" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawlord_helmet_h2" name="{=BalanceMe}[STAFF]Strawlord Helmet +2" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="55" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_disabled_strawlord_helmet_h3" name="{=BalanceMe}[STAFF]Strawlord Helmet +3" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" value="40000" Type="HeadArmor">
+  <Item id="crpg_disabled_strawlord_helmet_h3" name="{=BalanceMe}[STAFF]Strawlord Helmet +3" subtype="head_armor" mesh="strawlord_helmet" culture="Culture.vlandia" weight="4.536872" difficulty="0" appearance="1" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="57" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
@@ -9534,22 +9534,70 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_kume_helmet_h1" name="{=Yeldur}Kume Helmet +1" mesh="kume_helmet" culture="Culture.aserai" weight="3.80764" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+  <Item id="crpg_kume_helmet_h1" name="{=Yeldur}Kume Helmet +1" mesh="kume_helmet" culture="Culture.aserai" weight="4.536872" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
+      <Armor head_armor="53" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_kume_helmet_h2" name="{=Yeldur}Kume Helmet +2" mesh="kume_helmet" culture="Culture.aserai" weight="3.80764" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+  <Item id="crpg_kume_helmet_h2" name="{=Yeldur}Kume Helmet +2" mesh="kume_helmet" culture="Culture.aserai" weight="4.536872" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
+      <Armor head_armor="55" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_kume_helmet_h3" name="{=Yeldur}Kume Helmet +3" mesh="kume_helmet" culture="Culture.aserai" weight="3.80764" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+  <Item id="crpg_kume_helmet_h3" name="{=Yeldur}Kume Helmet +3" mesh="kume_helmet" culture="Culture.aserai" weight="4.536872" appearance="4.5" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
     <ItemComponent>
-      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
+      <Armor head_armor="57" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type3" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_at_morion_v1_h0" name="{=AppleTruce}Morion" mesh="at_morion" culture="Culture.empire" weight="4.661901" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_at_morion_v1_h1" name="{=AppleTruce}Morion +1" mesh="at_morion" culture="Culture.empire" weight="4.661901" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_at_morion_v1_h2" name="{=AppleTruce}Morion +2" mesh="at_morion" culture="Culture.empire" weight="4.661901" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_at_morion_v1_h3" name="{=AppleTruce}Morion +3" mesh="at_morion" culture="Culture.empire" weight="4.661901" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="58" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_mb_berserkr_helm_h0" name="{=Yeldur}Berserker's Bear Helmet" mesh="berserkr_helm_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="51" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkr_helm_h1" name="{=Yeldur}Berserker's Bear Helmet +1" mesh="berserkr_helm_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="53" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkr_helm_h2" name="{=Yeldur}Berserker's Bear Helmet +2" mesh="berserkr_helm_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="55" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkr_helm_h3" name="{=Yeldur}Berserker's Bear Helmet +3" mesh="berserkr_helm_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="57" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
   </Item>
 </Items>

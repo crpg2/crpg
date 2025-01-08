@@ -1416,4 +1416,28 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
+  <Item id="crpg_mh_ornateboots_h0" name="{=AppleTruce}Ornate Imperial Boots" mesh="mh_ornateboots" culture="Culture.empire" weight="1.909508" appearance="2" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="24" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mh_ornateboots_h1" name="{=AppleTruce}Ornate Imperial Boots +1" mesh="mh_ornateboots" culture="Culture.empire" weight="1.909508" appearance="2" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="25" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mh_ornateboots_h2" name="{=AppleTruce}Ornate Imperial Boots +2" mesh="mh_ornateboots" culture="Culture.empire" weight="1.909508" appearance="2" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="27" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mh_ornateboots_h3" name="{=AppleTruce}Ornate Imperial Boots +3" mesh="mh_ornateboots" culture="Culture.empire" weight="1.909508" appearance="2" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="29" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>

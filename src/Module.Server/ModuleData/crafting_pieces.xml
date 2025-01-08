@@ -1010,11 +1010,10 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_morningstar_blade_h0" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.36" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Pierce" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -1022,11 +1021,10 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_morningstar_blade_h1" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.32" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Pierce" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -1034,11 +1032,10 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_morningstar_blade_h2" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.32" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Pierce" damage_factor="2.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -1046,11 +1043,10 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_morningstar_blade_h3" name="{=mU8oVsFW}Morningstar Head" tier="3" piece_type="Blade" mesh="mace_head_9" length="16.7" weight="0.32" full_scale="true" excluded_item_usage_features="thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Pierce" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
     </Flags>
     <Materials>
       <Material id="Iron3" count="2" />
@@ -26060,6 +26056,118 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_blade_h0" name="{=}Claymore Blade" tier="4" piece_type="Blade" mesh="claymore_blade" culture="Culture.battania" length="111" weight="0.78">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_blade_h1" name="{=}Claymore Blade" tier="4" piece_type="Blade" mesh="claymore_blade" culture="Culture.battania" length="111" weight="0.78">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_blade_h2" name="{=}Claymore Blade" tier="4" piece_type="Blade" mesh="claymore_blade" culture="Culture.battania" length="111" weight="0.78">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_blade_h3" name="{=}Claymore Blade" tier="4" piece_type="Blade" mesh="claymore_blade" culture="Culture.battania" length="111" weight="0.67">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_pommel_h0" name="{=}Claymore Pommel" tier="4" piece_type="Pommel" mesh="claymore_pommel" culture="Culture.battania" length="6.64" weight="0.4">
+    <BuildData next_piece_offset="5" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_pommel_h1" name="{=}Claymore Pommel" tier="4" piece_type="Pommel" mesh="claymore_pommel" culture="Culture.battania" length="6.64" weight="0.4">
+    <BuildData next_piece_offset="5" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_pommel_h2" name="{=}Claymore Pommel" tier="4" piece_type="Pommel" mesh="claymore_pommel" culture="Culture.battania" length="6.64" weight="0.4">
+    <BuildData next_piece_offset="5" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_pommel_h3" name="{=}Claymore Pommel" tier="4" piece_type="Pommel" mesh="claymore_pommel" culture="Culture.battania" length="6.64" weight="0.4">
+    <BuildData next_piece_offset="5" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_guard_h0" name="{=}Claymore Guard" tier="5" piece_type="Guard" mesh="claymore_guard" culture="Culture.battania" length="14.5" weight="0.3">
+    <BuildData next_piece_offset="15" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_guard_h1" name="{=}Claymore Guard" tier="5" piece_type="Guard" mesh="claymore_guard" culture="Culture.battania" length="14.5" weight="0.3">
+    <BuildData next_piece_offset="15" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_guard_h2" name="{=}Claymore Guard" tier="5" piece_type="Guard" mesh="claymore_guard" culture="Culture.battania" length="14.5" weight="0.3">
+    <BuildData next_piece_offset="15" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_guard_h3" name="{=}Claymore Guard" tier="5" piece_type="Guard" mesh="claymore_guard" culture="Culture.battania" length="14.5" weight="0.3">
+    <BuildData next_piece_offset="15" />
+    <StatContributions armor_bonus="3" />
+    <Materials>
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_handle_h0" name="{=}Claymore Handle" tier="3" piece_type="Handle" mesh="claymore_handle" culture="Culture.khuzait" length="27.9" weight="0.8">
+    <BuildData piece_offset="-8" previous_piece_offset="0.0" next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_handle_h1" name="{=}Claymore Handle" tier="3" piece_type="Handle" mesh="claymore_handle" culture="Culture.khuzait" length="27.9" weight="0.8">
+    <BuildData piece_offset="-8" previous_piece_offset="0.0" next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_handle_h2" name="{=}Claymore Handle" tier="3" piece_type="Handle" mesh="claymore_handle" culture="Culture.khuzait" length="27.9" weight="0.8">
+    <BuildData piece_offset="-8" previous_piece_offset="0.0" next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_claymore_pole_handle_h3" name="{=}Claymore Handle" tier="3" piece_type="Handle" mesh="claymore_handle" culture="Culture.khuzait" length="27.9" weight="0.8">
+    <BuildData piece_offset="-8" previous_piece_offset="0.0" next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_shepherd_axe_handle_h0" name="Sherpherd's Handle" tier="2" piece_type="Handle" mesh="sherpherds_handle" length="82.5" weight="0.346">
     <BuildData piece_offset="20" next_piece_offset="0" />
     <Materials>
@@ -26268,7 +26376,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="1" blade_length="30.5" blade_width="8.5" physics_material="metal_weapon" body_name="bo_mace_a">
       <Thrust damage_type="Pierce" damage_factor="3.0" />
-      <Swing damage_type="Blunt" damage_factor="2.9" />
+      <Swing damage_type="Blunt" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -26281,7 +26389,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="1" blade_length="30.5" blade_width="8.5" physics_material="metal_weapon" body_name="bo_mace_a">
       <Thrust damage_type="Pierce" damage_factor="3.0" />
-      <Swing damage_type="Blunt" damage_factor="3.0" />
+      <Swing damage_type="Blunt" damage_factor="2.9" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -26294,7 +26402,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="1" blade_length="30.5" blade_width="8.5" physics_material="metal_weapon" body_name="bo_mace_a">
       <Thrust damage_type="Pierce" damage_factor="3.0" />
-      <Swing damage_type="Blunt" damage_factor="3.1" />
+      <Swing damage_type="Blunt" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -26307,7 +26415,7 @@
     <BuildData piece_offset="0" />
     <BladeData stack_amount="1" blade_length="30.5" blade_width="8.5" physics_material="metal_weapon" body_name="bo_mace_a">
       <Thrust damage_type="Pierce" damage_factor="3.0" />
-      <Swing damage_type="Blunt" damage_factor="3.2" />
+      <Swing damage_type="Blunt" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -30700,7 +30808,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pole_zweihander_blade_h0" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="2.0">
+  <CraftingPiece id="crpg_pole_zweihander_blade_h0" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.8">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Thrust damage_type="Pierce" damage_factor="2.6" />
       <Swing damage_type="Cut" damage_factor="4.0" />
@@ -30709,28 +30817,28 @@
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pole_zweihander_blade_h1" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="2.0">
+  <CraftingPiece id="crpg_pole_zweihander_blade_h1" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.8">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
-      <Swing damage_type="Cut" damage_factor="4.1" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron5" count="4" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_pole_zweihander_blade_h2" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="2.0">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
       <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pole_zweihander_blade_h3" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="2.0">
+  <CraftingPiece id="crpg_pole_zweihander_blade_h2" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.8">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.9" />
-      <Swing damage_type="Cut" damage_factor="4.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron5" count="4" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pole_zweihander_blade_h3" name="{=}Zweihander Blade" tier="4" piece_type="Blade" mesh="zweihander_blade" culture="Culture.battania" length="100" weight="1.68">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Materials>
       <Material id="Iron5" count="4" />
@@ -35596,16 +35704,7 @@
       <Material id="Iron4" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_splittingmaul_blade_h0" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="0.9" excluded_item_usage_features="thrust">
-    <BladeData stack_amount="3" blade_length="10.1" blade_width="23.6" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="4.4" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
-    </Flags>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_splittingmaul_blade_h1" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="0.9" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_splittingmaul_blade_h0" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="1.0" excluded_item_usage_features="thrust">
     <BladeData stack_amount="3" blade_length="10.1" blade_width="23.6" physics_material="wood_weapon" body_name="bo_spear_b">
       <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
@@ -35614,18 +35713,27 @@
       <Flag name="BonusAgainstShield" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_splittingmaul_blade_h2" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="0.85" excluded_item_usage_features="thrust">
-    <BladeData stack_amount="3" blade_length="10.1" blade_width="23.6" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="4.6" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="BonusAgainstShield" />
-    </Flags>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_splittingmaul_blade_h3" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="0.85" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_splittingmaul_blade_h1" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="1.0" excluded_item_usage_features="thrust">
     <BladeData stack_amount="3" blade_length="10.1" blade_width="23.6" physics_material="wood_weapon" body_name="bo_spear_b">
       <Swing damage_type="Cut" damage_factor="4.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_blade_h2" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="0.95" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" blade_length="10.1" blade_width="23.6" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="4.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_splittingmaul_blade_h3" name="{=}Splitting Maul Blade" tier="3" piece_type="Blade" mesh="splittingmaul_blade" culture="Culture.vlandia" length="11.2" weight="0.95" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" blade_length="10.1" blade_width="23.6" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="5.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -35638,10 +35746,10 @@
   <CraftingPiece id="crpg_splittingmaul_handle_h1" name="{=}Splitting Maul Handle" tier="2" piece_type="Handle" mesh="splittingmaul_handle" length="103" weight="0.7">
     <BuildData previous_piece_offset="0" next_piece_offset="10" piece_offset="25" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_splittingmaul_handle_h2" name="{=}Splitting Maul Handle" tier="2" piece_type="Handle" mesh="splittingmaul_handle" length="103" weight="0.7">
+  <CraftingPiece id="crpg_splittingmaul_handle_h2" name="{=}Splitting Maul Handle" tier="2" piece_type="Handle" mesh="splittingmaul_handle" length="103" weight="0.65">
     <BuildData previous_piece_offset="0" next_piece_offset="10" piece_offset="25" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_splittingmaul_handle_h3" name="{=}Splitting Maul Handle" tier="2" piece_type="Handle" mesh="splittingmaul_handle" length="103" weight="0.7">
+  <CraftingPiece id="crpg_splittingmaul_handle_h3" name="{=}Splitting Maul Handle" tier="2" piece_type="Handle" mesh="splittingmaul_handle" length="103" weight="0.65">
     <BuildData previous_piece_offset="0" next_piece_offset="10" piece_offset="25" />
   </CraftingPiece>
   <CraftingPiece id="crpg_splittingmaul_guard_h0" name="{=}None" tier="3" piece_type="Guard" mesh="" culture="Culture.neutral_culture" length="0" weight="0.01" full_scale="true">
@@ -35984,7 +36092,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-    <CraftingPiece id="crpg_jamescross_2h_handle_h0" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.90" CraftingCost="75">
+  <CraftingPiece id="crpg_jamescross_2h_handle_h0" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.90" CraftingCost="75">
     <BuildData piece_offset="23" />
   </CraftingPiece>
   <CraftingPiece id="crpg_jamescross_2h_handle_h1" name="{=Yeldur}Iron Rod for Cross" tier="3" piece_type="Handle" mesh="acrecross_handle" full_scale="true" length="91.9" weight="0.90" CraftingCost="75">
@@ -36095,5 +36203,173 @@
   <CraftingPiece id="crpg_jamescross_1h_pommel_h2" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.37">
   </CraftingPiece>
   <CraftingPiece id="crpg_jamescross_1h_pommel_h3" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.37">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_blade_h0" name="{=Yeldur}Templarsword Blade" tier="4" piece_type="Blade" mesh="templarsword_blade" culture="Culture.battania" length="91" weight="0.8">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="templarsword_scabbard" holster_mesh_length="97.6">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_blade_h1" name="{=Yeldur}Templarsword Blade" tier="4" piece_type="Blade" mesh="templarsword_blade" culture="Culture.battania" length="91" weight="0.8">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="templarsword_scabbard" holster_mesh_length="97.6">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_blade_h2" name="{=Yeldur}Templarsword Blade" tier="4" piece_type="Blade" mesh="templarsword_blade" culture="Culture.battania" length="91" weight="0.8">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="templarsword_scabbard" holster_mesh_length="97.6">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_blade_h3" name="{=Yeldur}Templarsword Blade" tier="4" piece_type="Blade" mesh="templarsword_blade" culture="Culture.battania" length="91" weight="0.75">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="templarsword_scabbard" holster_mesh_length="97.6">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_pommel_h0" name="{=}Templarsword Armingsword Pommel" tier="4" piece_type="Pommel" mesh="templarsword_pommel" full_scale="false" culture="Culture.battania" length="6.54" weight="0.50">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_pommel_h1" name="{=}Templarsword Armingsword Pommel" tier="4" piece_type="Pommel" mesh="templarsword_pommel" full_scale="false" culture="Culture.battania" length="6.54" weight="0.45">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_pommel_h2" name="{=}Templarsword Armingsword Pommel" tier="4" piece_type="Pommel" mesh="templarsword_pommel" full_scale="false" culture="Culture.battania" length="6.54" weight="0.45">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_pommel_h3" name="{=}Templarsword Armingsword Pommel" tier="4" piece_type="Pommel" mesh="templarsword_pommel" full_scale="false" culture="Culture.battania" length="6.54" weight="0.43">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_guard_h0" name="{=}Templarsword Armingsword Guard" tier="5" piece_type="Guard" mesh="templarsword_guard" full_scale="false" culture="Culture.battania" length="1.49" weight="0.50">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_guard_h1" name="{=}Templarsword Armingsword Guard" tier="5" piece_type="Guard" mesh="templarsword_guard" full_scale="false" culture="Culture.battania" length="1.49" weight="0.50">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_guard_h2" name="{=}Templarsword Armingsword Guard" tier="5" piece_type="Guard" mesh="templarsword_guard" full_scale="false" culture="Culture.battania" length="1.49" weight="0.50">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_guard_h3" name="{=}Templarsword Armingsword Guard" tier="5" piece_type="Guard" mesh="templarsword_guard" full_scale="false" culture="Culture.battania" length="1.49" weight="0.50">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_handle_h0" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_handle_h1" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_handle_h2" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_templarsword_handle_h3" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
+    <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_blade_h0" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="74.4" weight="0.1">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_blade_h1" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="74.4" weight="0.1">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_blade_h2" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="74.4" weight="0.1">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_blade_h3" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="74.4" weight="0.1">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_handle_h0" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="190" weight="2.0" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_handle_h1" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="190" weight="2.0" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_handle_h2" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="190" weight="1.9" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_handle_h3" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="190" weight="1.9" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_guard_h0" name="{=koX9okuG}Paritsan Dummy Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+    <BuildData next_piece_offset="18" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_guard_h1" name="{=koX9okuG}Paritsan Dummy Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+    <BuildData next_piece_offset="18" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_guard_h2" name="{=koX9okuG}Paritsan Dummy Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+    <BuildData next_piece_offset="18" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_guard_h3" name="{=koX9okuG}Paritsan Dummy Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+    <BuildData next_piece_offset="18" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_pommel_h0" name="{=koX9okuG}Paritsan Dummy Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_pommel_h1" name="{=koX9okuG}Paritsan Dummy Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_pommel_h2" name="{=koX9okuG}Paritsan Dummy Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_at_partisan_pommel_h3" name="{=koX9okuG}Paritsan Dummy Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
 </CraftingPieces>
