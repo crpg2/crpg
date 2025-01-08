@@ -36204,7 +36204,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_jamescross_1h_pommel_h3" name="{=Yeldur}Cross Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.37">
   </CraftingPiece>
-      <CraftingPiece id="crpg_templarsword_blade_h0" name="{=Yeldur}Templarsword Blade" tier="4" piece_type="Blade" mesh="templarsword_blade" culture="Culture.battania" length="91" weight="0.8">
+  <CraftingPiece id="crpg_templarsword_blade_h0" name="{=Yeldur}Templarsword Blade" tier="4" piece_type="Blade" mesh="templarsword_blade" culture="Culture.battania" length="91" weight="0.8">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="templarsword_scabbard" holster_mesh_length="97.6">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Cut" damage_factor="3.5" />
