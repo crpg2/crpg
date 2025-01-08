@@ -74,6 +74,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             switch (weapon.CurrentUsageItem.WeaponClass)
             {
                 case WeaponClass.Bolt:
+                case WeaponClass.Cartridge:
                     finalDamage *= 2.5f;
                     break;
                 case WeaponClass.Arrow:
