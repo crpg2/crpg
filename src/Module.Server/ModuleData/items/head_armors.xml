@@ -9576,4 +9576,28 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_mb_berserkr_helm_h0" name="{=Yeldur}Berserker's Bear Helmet" mesh="berserkr_helm_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="51" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkr_helm_h1" name="{=Yeldur}Berserker's Bear Helmet +1" mesh="berserkr_helm_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="53" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkr_helm_h2" name="{=Yeldur}Berserker's Bear Helmet +2" mesh="berserkr_helm_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="55" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_mb_berserkr_helm_h3" name="{=Yeldur}Berserker's Bear Helmet +3" mesh="berserkr_helm_a" culture="Culture.sturgia" weight="4.536872" appearance="3" Type="HeadArmor" subtype="head_armor">
+    <ItemComponent>
+      <Armor head_armor="57" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>
