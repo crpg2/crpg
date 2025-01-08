@@ -2952,4 +2952,52 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_mh_empireplatesh_h0" name="{=AppleTruce}Decorated Imperial Pauldrons" mesh="mh_empireplatesh" culture="Culture.empire" weight="2.872144" appearance="1" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="18" arm_armor="5" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_mh_empireplatesh_h1" name="{=AppleTruce}Decorated Imperial Pauldrons +1" mesh="mh_empireplatesh" culture="Culture.empire" weight="2.872144" appearance="1" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="20" arm_armor="5" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_mh_empireplatesh_h2" name="{=AppleTruce}Decorated Imperial Pauldrons +2" mesh="mh_empireplatesh" culture="Culture.empire" weight="2.872144" appearance="1" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="21" arm_armor="5" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_mh_empireplatesh_h3" name="{=AppleTruce}Decorated Imperial Pauldrons +3" mesh="mh_empireplatesh" culture="Culture.empire" weight="2.872144" appearance="1" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="22" arm_armor="6" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_mh_ornatepauldron_h0" name="{=AppleTruce}Ornate Imperial Pauldrons" mesh="mh_ornatepauldron" culture="Culture.empire" weight="2.579334" appearance="1" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="12" arm_armor="10" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_mh_ornatepauldron_h1" name="{=AppleTruce}Ornate Imperial Pauldrons +1" mesh="mh_ornatepauldron" culture="Culture.empire" weight="2.579334" appearance="1" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="14" arm_armor="10" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_mh_ornatepauldron_h2" name="{=AppleTruce}Ornate Imperial Pauldrons +2" mesh="mh_ornatepauldron" culture="Culture.empire" weight="2.579334" appearance="1" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="15" arm_armor="10" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_mh_ornatepauldron_h3" name="{=AppleTruce}Ornate Imperial Pauldrons +3" mesh="mh_ornatepauldron" culture="Culture.empire" weight="2.579334" appearance="1" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="16" arm_armor="11" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>
