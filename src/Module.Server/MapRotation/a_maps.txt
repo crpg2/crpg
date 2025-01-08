@@ -18,6 +18,7 @@ crpg_battle_lighthouse
 crpg_battle_orionarena
 crpg_battle_sanctuary
 crpg_battle_verloren
+crpg_battle_nirvana
 crpg_battle_hexenbrennen
 crpg_battle_icelake
 crpg_battle_persia

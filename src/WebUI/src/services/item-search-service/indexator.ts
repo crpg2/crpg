@@ -95,7 +95,7 @@ const mapWeaponProps = (item: Item) => {
     }
   }
 
-  if ([ItemType.Bow, ItemType.Crossbow].includes(item.type)) {
+  if ([ItemType.Bow, ItemType.Crossbow, ItemType.Musket, ItemType.Pistol].includes(item.type)) {
     // add custom flag
     if (
       item.type === ItemType.Crossbow
@@ -112,7 +112,7 @@ const mapWeaponProps = (item: Item) => {
     }
   }
 
-  if ([ItemType.Bolts, ItemType.Arrows, ItemType.Thrown].includes(item.type)) {
+  if ([ItemType.Bolts, ItemType.Arrows, ItemType.Thrown, ItemType.Bullets].includes(item.type)) {
     return {
       ...weapon,
       damage: originalWeapon.thrustDamage,
