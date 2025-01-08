@@ -10,6 +10,7 @@ public class DtvAiComponent : CommonAIComponent
     private const int ViscountTargetTimerDuration = 30;
     private MissionTimer? _targetTimer;
     private MissionTimer? _tickOccasionally;
+    private bool _focusingVip = false;
     public DtvAiComponent(Agent agent)
         : base(agent)
     {
@@ -17,7 +18,7 @@ public class DtvAiComponent : CommonAIComponent
 
     public override void Initialize() // Not being called automatically when the component is instantiated
     {
-        _targetTimer = new(ViscountTargetTimerDuration * 2);
+        _targetTimer = new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration * 3, 0.5f));
     }
 
     public override void OnTickAsAI(float dt)
@@ -39,6 +40,7 @@ public class DtvAiComponent : CommonAIComponent
 
     public void ResetTargetTimer()
     {
+        _focusingVip = false;
         _targetTimer = null;
         Agent.SetAutomaticTargetSelection(true);
     }
@@ -51,7 +53,7 @@ public class DtvAiComponent : CommonAIComponent
     private void CheckTargetTimer()
     {
         _targetTimer ??= new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration, 0.2f));
-        if (_targetTimer.Check(true))
+        if (!_focusingVip && _targetTimer.Check(true))
         {
             FocusVip();
         }
@@ -66,6 +68,8 @@ public class DtvAiComponent : CommonAIComponent
             {
                 Agent.SetAutomaticTargetSelection(false);
                 Agent.SetTargetAgent(agent);
+                Agent.MakeVoice(SkinVoiceManager.VoiceType.Charge, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+                _focusingVip = true;
                 break;
             }
         }

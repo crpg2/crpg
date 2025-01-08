@@ -38,15 +38,15 @@
 
   <Round reward="150">
     <Wave>
-      <Group classDivisionId="crpg_dtv_looter" count="2.4" />
-      <Group classDivisionId="crpg_dtv_looter_lieutenant" />
-    </Wave>
-    <Wave>
       <Group classDivisionId="crpg_dtv_looter" count="2.6" />
       <Group classDivisionId="crpg_dtv_looter_lieutenant" />
     </Wave>
     <Wave>
       <Group classDivisionId="crpg_dtv_looter" count="2.8" />
+      <Group classDivisionId="crpg_dtv_looter_lieutenant" />
+    </Wave>
+    <Wave>
+      <Group classDivisionId="crpg_dtv_looter" count="3.0" />
       <Group classDivisionId="crpg_dtv_looter_boss" />
     </Wave>
   </Round>
@@ -232,9 +232,9 @@
     <Wave>
       <Group classDivisionId="crpg_dtv_reconquista_skirmisher" count="0.8" />
       <Group classDivisionId="crpg_dtv_reconquista_champion" count="0.8" />
-      <Group classDivisionId="crpg_dtv_reconquista_knight" count="0.6" />
+      <Group classDivisionId="crpg_dtv_reconquista_knight" count="0.5" />
       <Group classDivisionId="crpg_dtv_reconquista_guard" count="0.5" />
-      <Group classDivisionId="crpg_dtv_reconquista_washerwoman" count="0.3" />
+      <Group classDivisionId="crpg_dtv_reconquista_washerwoman" count="0.2" />
       <Group classDivisionId="crpg_dtv_reconquista_lieutenant_jimena" />
       <Group classDivisionId="crpg_dtv_reconquista_boss" />
     </Wave>
@@ -329,14 +329,14 @@
       <Group classDivisionId="crpg_dtv_dwarven_lieutenant" />
     </Wave>
     <Wave>
-      <Group classDivisionId="crpg_dtv_dwarven_engineer" count="1.0" />
-      <Group classDivisionId="crpg_dtv_dwarven_axelord" count="1.2" />
-      <Group classDivisionId="crpg_dtv_dwarven_hammerlord" count="1.2" />
+      <Group classDivisionId="crpg_dtv_dwarven_engineer" count="0.8" />
+      <Group classDivisionId="crpg_dtv_dwarven_axelord" count="1.0" />
+      <Group classDivisionId="crpg_dtv_dwarven_hammerlord" count="1.0" />
       <Group classDivisionId="crpg_dtv_dwarven_lieutenant" />
     </Wave>
     <Wave>
-      <Group classDivisionId="crpg_dtv_dwarven_engineer" count="1.2" />
-      <Group classDivisionId="crpg_dtv_dwarven_axelord" count="1.4" />
+      <Group classDivisionId="crpg_dtv_dwarven_engineer" count="1.0" />
+      <Group classDivisionId="crpg_dtv_dwarven_axelord" count="1.2" />
       <Group classDivisionId="crpg_dtv_dwarven_hammerlord" count="1.4" />
       <Group classDivisionId="crpg_dtv_dwarven_boss" />
     </Wave>
@@ -344,7 +344,7 @@
 
   <Round reward="870">
     <Wave>
-      <Group classDivisionId="crpg_dtv_greyorder_shielder" count="1.4" />
+      <Group classDivisionId="crpg_dtv_greyorder_shielder" count="1.0" />
       <Group classDivisionId="crpg_dtv_greyorder_kuyak_two_handed" count="0.4" />
       <Group classDivisionId="crpg_dtv_greyorder_balanced_infantry" count="1.0" />
       <Group classDivisionId="crpg_dtv_greyorder_lieutenant_varadin" />
@@ -353,15 +353,15 @@
     <Wave>
       <Group classDivisionId="crpg_dtv_greyorder_shielder" count="1.0" />
       <Group classDivisionId="crpg_dtv_greyorder_kuyak_two_handed" count="0.4" />
-      <Group classDivisionId="crpg_dtv_greyorder_balanced_infantry" count="1.0" />
-      <Group classDivisionId="crpg_dtv_greyorder_heavy_two_handed" count="0.5" />
-      <Group classDivisionId="crpg_dtv_greyorder_heavy_polearm" count="0.5" />
+      <Group classDivisionId="crpg_dtv_greyorder_balanced_infantry" count="0.8" />
+      <Group classDivisionId="crpg_dtv_greyorder_heavy_two_handed" count="0.2" />
+      <Group classDivisionId="crpg_dtv_greyorder_heavy_polearm" count="0.2" />
       <Group classDivisionId="crpg_dtv_greyorder_lieutenant_harpag" />
       <Group classDivisionId="crpg_dtv_greyorder_lieutenant_pawiu" />
     </Wave>
     <Wave>
-      <Group classDivisionId="crpg_dtv_greyorder_heavy_two_handed" count="2.0" />
-      <Group classDivisionId="crpg_dtv_greyorder_heavy_polearm" count="2.0" />
+      <Group classDivisionId="crpg_dtv_greyorder_heavy_two_handed" count="1.7" />
+      <Group classDivisionId="crpg_dtv_greyorder_heavy_polearm" count="1.7" />
       <Group classDivisionId="crpg_dtv_greyorder_boss_tamra" />
       <Group classDivisionId="crpg_dtv_greyorder_boss_hetman" />
     </Wave>
