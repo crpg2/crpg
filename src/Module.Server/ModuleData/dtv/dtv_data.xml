@@ -38,15 +38,15 @@
 
   <Round reward="150">
     <Wave>
-      <Group classDivisionId="crpg_dtv_looter" count="2.4" />
-      <Group classDivisionId="crpg_dtv_looter_lieutenant" />
-    </Wave>
-    <Wave>
       <Group classDivisionId="crpg_dtv_looter" count="2.6" />
       <Group classDivisionId="crpg_dtv_looter_lieutenant" />
     </Wave>
     <Wave>
       <Group classDivisionId="crpg_dtv_looter" count="2.8" />
+      <Group classDivisionId="crpg_dtv_looter_lieutenant" />
+    </Wave>
+    <Wave>
+      <Group classDivisionId="crpg_dtv_looter" count="3.0" />
       <Group classDivisionId="crpg_dtv_looter_boss" />
     </Wave>
   </Round>
@@ -337,7 +337,7 @@
     <Wave>
       <Group classDivisionId="crpg_dtv_dwarven_engineer" count="1.0" />
       <Group classDivisionId="crpg_dtv_dwarven_axelord" count="1.2" />
-      <Group classDivisionId="crpg_dtv_dwarven_hammerlord" count="1.2" />
+      <Group classDivisionId="crpg_dtv_dwarven_hammerlord" count="1.4" />
       <Group classDivisionId="crpg_dtv_dwarven_boss" />
     </Wave>
   </Round>
@@ -360,8 +360,8 @@
       <Group classDivisionId="crpg_dtv_greyorder_lieutenant_pawiu" />
     </Wave>
     <Wave>
-      <Group classDivisionId="crpg_dtv_greyorder_heavy_two_handed" count="1.5" />
-      <Group classDivisionId="crpg_dtv_greyorder_heavy_polearm" count="1.5" />
+      <Group classDivisionId="crpg_dtv_greyorder_heavy_two_handed" count="1.7" />
+      <Group classDivisionId="crpg_dtv_greyorder_heavy_polearm" count="1.7" />
       <Group classDivisionId="crpg_dtv_greyorder_boss_tamra" />
       <Group classDivisionId="crpg_dtv_greyorder_boss_hetman" />
     </Wave>

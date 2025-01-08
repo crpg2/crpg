@@ -480,7 +480,15 @@
         <equipment slot="Body" id="Item.crpg_torn_bandit_clothes_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_hosen_2_v1_h0" />
         <equipment slot="Item0" id="Item.crpg_iron_hand_axe_v2_h0" />
-        <equipment slot="Item1" id="Item.crpg_noyans_shield_v4_h0" />
+        <equipment slot="Item1" id="Item.crpg_battania_targe_b_v4_h0" />
+      </EquipmentRoster>
+      <EquipmentRoster>
+        <equipment slot="Head" id="Item.crpg_thinhide_coif_v2_h0" />
+        <equipment slot="Cape" id="Item.crpg_battania_civil_cape_v2_h0" />
+        <equipment slot="Body" id="Item.crpg_battania_woodland_outfit_v2_h0" />
+        <equipment slot="Leg" id="Item.crpg_hosen_2_v1_h0" />
+        <equipment slot="Item0" id="Item.crpg_longseax_h0" />
+        <equipment slot="Item1" id="Item.crpg_old_horsemans_kite_shield_v4_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -3386,7 +3394,7 @@
     <skills>
       <skill id="Strength" value="18" />
       <skill id="Agility" value="18" />
-      <skill id="IronFlesh" value="2" />
+      <skill id="IronFlesh" value="1" />
       <skill id="PowerStrike" value="4" />
       <skill id="PowerDraw" value="0" />
       <skill id="PowerThrow" value="0" />
@@ -3429,7 +3437,7 @@
     <skills>
       <skill id="Strength" value="18" />
       <skill id="Agility" value="27" />
-      <skill id="IronFlesh" value="2" />
+      <skill id="IronFlesh" value="1" />
       <skill id="PowerStrike" value="2" />
       <skill id="PowerDraw" value="4" />
       <skill id="PowerThrow" value="0" />
@@ -3545,7 +3553,7 @@
         <equipment slot="Horse" id="Item.crpg_mount1_charger_11_v1_h0" />
         <equipment slot="HorseHarness" id="Item.crpg_chain_horse_harness_v1_h0" />
         <equipment slot="Item0" id="Item.crpg_fine_steel_paramerion_v2_h0" />
-        <equipment slot="Item1" id="Item.crpg_fortified_kite_shield_v4_h0" />
+        <equipment slot="Item1" id="Item.crpg_simple_parma_v1_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_vaegir_helm_open_v2_h0" />
@@ -3633,6 +3641,7 @@
         <equipment slot="Gloves" id="Item.crpg_lamellar_plate_gauntlets_v3_h0" />
         <equipment slot="Leg" id="Item.crpg_lamellar_plate_boots_v3_h0" />
         <equipment slot="Item0" id="Item.crpg_thamaskene_steel_spathion_v1_h3" />
+        <equipment slot="Item1" id="Item.crpg_decorated_parma_v1_h3" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
