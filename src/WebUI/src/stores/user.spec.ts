@@ -1,7 +1,6 @@
 import { createPinia, setActivePinia } from 'pinia'
 
 import type { Character } from '~/models/character'
-import type { UserItem } from '~/models/user'
 
 import mockCharacters from '~/__mocks__/characters.json'
 import mockUserItems from '~/__mocks__/user-items.json'

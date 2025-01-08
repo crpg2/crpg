@@ -91,6 +91,9 @@ dateTime:
   minutes:
     short: min
     long: minute | minutes
+  secondes:
+    short: s
+    long: secondes | secondes
 
 timeAgo:
   just-now: just now
@@ -117,6 +120,7 @@ dateTimeFormat:
   countdown: '{hours}:{minutes}:{seconds}'
   dd: '{days} @:dateTime.days.short'
   mm: '{minutes} @:dateTime.minutes.short'
+  ss: '{secondes} @:dateTime.secondes.short'
   hh: '{hours} @:dateTime.hours.short'
   'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
 
@@ -622,11 +626,12 @@ character:
       title: Avg repair cost
       desc: Average cost of upkeep of equipped items per hour
 
-  earningChart:
-    title: Earning chart
+  earningStats:
     type:
       experience: Exp
       gold: Gold
+    summary:
+      timeEffort: Time effort
 
   highUpkeepWarning:
     title: You cannot afford your current upkeep!

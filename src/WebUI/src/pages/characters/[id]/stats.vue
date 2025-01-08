@@ -5,7 +5,6 @@ import type {
   DataZoomComponentOption,
   GridComponentOption,
   LegendComponentOption,
-  ToolboxComponentOption,
   TooltipComponentOption,
 } from 'echarts/components'
 import type { ComposeOption } from 'echarts/core'
@@ -16,7 +15,6 @@ import {
   DataZoomComponent,
   GridComponent,
   LegendComponent,
-  ToolboxComponent,
   TooltipComponent,
 } from 'echarts/components'
 import { registerTheme, use } from 'echarts/core'
@@ -24,19 +22,23 @@ import { SVGRenderer } from 'echarts/renderers'
 import { DateTime } from 'luxon'
 import VChart from 'vue-echarts'
 
+import type { CharacterEarnedMetadata } from '~/models/activity-logs'
+import type { CharacterEarnedData } from '~/models/character'
+import type { GameMode } from '~/models/game-mode'
 import type { TimeSeries } from '~/models/timeseries'
 
 import theme from '~/assets/themes/oruga-tailwind/echart-theme.json'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { CharacterEarningType, getCharacterEarningStatistics } from '~/services/characters-service'
+import { CharacterEarningType } from '~/models/character'
+import { convertCharacterEarningStatisticsToTimeSeries, getCharacterEarningStatistics, summaryByGameModeCharacterEarningStatistics } from '~/services/characters-service'
+import { gameModeToIcon } from '~/services/game-mode-service'
 import { d } from '~/services/translate-service'
 import { characterKey } from '~/symbols/character'
 
-use([ToolboxComponent, BarChart, TooltipComponent, LegendComponent, DataZoomComponent, GridComponent, SVGRenderer])
+use([BarChart, TooltipComponent, LegendComponent, DataZoomComponent, GridComponent, SVGRenderer])
 registerTheme('crpg', theme)
 type EChartsOption = ComposeOption<
   | LegendComponentOption
-  | ToolboxComponentOption
   | TooltipComponentOption
   | GridComponentOption
   | BarSeriesOption
@@ -132,15 +134,18 @@ const onDataZoomChanged = () => {
   setDataZoom(option.dataZoom[0].startValue, option.dataZoom[0].endValue)
 }
 
-const { execute: loadCharacterEarningStatistics, state: characterEarningStatistics }
+// TODO: spec
+const { execute: loadCharacterEarningStatistics, state: rawEarningStatistics }
   = await useAsyncState(
-    ({ id }: { id: number }) => getCharacterEarningStatistics(id, statTypeModel.value, start.value),
+    ({ id }: { id: number }) => getCharacterEarningStatistics(id, start.value),
     [],
     {
       immediate: false,
       resetOnExecute: false,
     },
   )
+
+const characterEarningStatistics = computed(() => convertCharacterEarningStatisticsToTimeSeries(rawEarningStatistics.value, statTypeModel.value))
 
 const toBarSeries = (ts: TimeSeries): BarSeriesOption => ({ ...ts, type: 'bar' })
 const extractTSName = (ts: TimeSeries) => ts.name
@@ -180,6 +185,15 @@ const total = computed(() =>
     .reduce((total, [_date, value]) => total + value, 0),
 )
 
+interface CharacterEarnedDataWithGameMode extends CharacterEarnedData {
+  gameMode: GameMode
+}
+
+const summary = computed<CharacterEarnedDataWithGameMode[]>(() => Object.entries(summaryByGameModeCharacterEarningStatistics(rawEarningStatistics.value)).map(([gameMode, data]) => ({
+  gameMode: gameMode as GameMode,
+  ...data,
+})))
+
 const chart = shallowRef<InstanceType<typeof VChart> | null>(null)
 
 const option = shallowRef<EChartsOption>({
@@ -191,16 +205,6 @@ const option = shallowRef<EChartsOption>({
     top: 'center',
   },
   series: characterEarningStatistics.value.map(toBarSeries),
-  toolbox: {
-    show: true,
-    right: 0,
-    top: 0,
-    feature: {
-      dataView: {
-        readOnly: true,
-      },
-    },
-  },
   tooltip: {
     axisPointer: {
       label: {
@@ -260,7 +264,6 @@ onBeforeRouteUpdate(async (to, from) => {
     const characterId = Number(to.params.id)
     await fetchPageData(characterId)
   }
-
   return true
 })
 
@@ -278,13 +281,14 @@ await fetchPageData(character.value.id)
         >
           <OTabItem
             :value="CharacterEarningType.Exp"
-            :label="$t('character.earningChart.type.experience')"
+            :label="$t('character.earningStats.type.experience')"
           />
           <OTabItem
             :value="CharacterEarningType.Gold"
-            :label="$t('character.earningChart.type.gold')"
+            :label="$t('character.earningStats.type.gold')"
           />
         </OTabs>
+
         <OTabs
           v-model="zoomModel"
           type="fill-rounded"
@@ -302,12 +306,14 @@ await fetchPageData(character.value.id)
             "
           />
         </OTabs>
+
         <div class="flex-1 text-lg font-semibold">
           <Coin
             v-if="statTypeModel === CharacterEarningType.Gold"
             :value="total"
             :class="total < 0 ? 'text-status-danger' : 'text-status-success'"
           />
+
           <div
             v-else
             class="flex items-center gap-1.5 align-text-bottom font-bold text-primary"
@@ -323,7 +329,7 @@ await fetchPageData(character.value.id)
 
       <VChart
         ref="chart"
-        class="h-[30rem]"
+        class="mb-6 h-[30rem]"
         theme="crpg"
         :option="option"
         :loading="loading"
@@ -331,6 +337,66 @@ await fetchPageData(character.value.id)
         @legendselectchanged="onLegendSelectChanged"
         @datazoom="onDataZoomChanged"
       />
+
+      <OTable
+        :data="summary"
+        bordered
+        narrowed
+        sort-icon="chevron-up"
+        sort-icon-size="xs"
+      >
+        <OTableColumn
+          v-slot="{ row }: { row: CharacterEarnedDataWithGameMode }"
+        >
+          <div class="flex items-center gap-1.5 align-text-bottom font-bold">
+            <OIcon :icon="gameModeToIcon[row.gameMode as GameMode]" />
+            {{ $t(`game-mode.${row.gameMode}`) }}
+          </div>
+        </OTableColumn>
+
+        <OTableColumn
+          v-slot="{ row }: { row: CharacterEarnedDataWithGameMode }"
+          field="timeEffort"
+          :label="$t('character.earningStats.summary.timeEffort')"
+          sortable
+        >
+          {{ $t('dateTimeFormat.ss', { secondes: Number(row.timeEffort) }) }}
+        </OTableColumn>
+
+        <OTableColumn
+          field="experience"
+          sortable
+        >
+          <template #header>
+            <OIcon
+              icon="experience"
+              class="text-primary"
+              size="2xl"
+            />
+          </template>
+          <template #default="{ row }: { row: CharacterEarnedDataWithGameMode }">
+            {{ $n(Number(row.experience)) }}
+            ({{ $n(Number(row.experience) / Number(row.timeEffort)) }}/s)
+          </template>
+        </OTableColumn>
+
+        <OTableColumn
+          field="gold"
+          sortable
+        >
+          <template #header>
+            <Coin />
+          </template>
+          <template #default="{ row }: { row: CharacterEarnedDataWithGameMode }">
+            {{ $n(Number(row.gold)) }}
+            ({{ $n(Number(row.gold) / Number(row.timeEffort)) }}/s)
+          </template>
+        </OTableColumn>
+
+        <template #empty>
+          <ResultNotFound />
+        </template>
+      </OTable>
     </div>
   </div>
 </template>

@@ -99,6 +99,23 @@ internal class CrpgTeamDeathmatchServer : MissionMultiplayerGameModeBase
         return winnerTeam;
     }
 
+    public Team? GetWinningTeam()
+    {
+        var sides = _scoreboardComponent.Sides;
+
+        Team? winningTeam = null;
+        if (sides[(int)BattleSideEnum.Attacker].SideScore < sides[(int)BattleSideEnum.Defender].SideScore)
+        {
+            winningTeam = Mission.Teams.Defender;
+        }
+        else if (sides[(int)BattleSideEnum.Defender].SideScore < sides[(int)BattleSideEnum.Attacker].SideScore)
+        {
+            winningTeam = Mission.Teams.Attacker;
+        }
+
+        return winningTeam;
+    }
+
     protected override void HandleEarlyNewClientAfterLoadingFinished(NetworkCommunicator networkPeer)
     {
         networkPeer.AddComponent<TeamDeathmatchMissionRepresentative>();
@@ -119,11 +136,25 @@ internal class CrpgTeamDeathmatchServer : MissionMultiplayerGameModeBase
         _rewardTickTimer ??= new MissionTimer(duration: CrpgServerConfiguration.RewardTick);
         if (_rewardTickTimer.Check(reset: true))
         {
+            Team? winningTeam = GetWinningTeam();
+
+            int defenderMultiplierGain = 0;
+            int attackerMultiplierGain = 0;
+
+
+            BattleSideEnum? valourSide = null;
+            if (winningTeam != null)
+            {
+                defenderMultiplierGain = winningTeam == Mission.Teams.Attacker ? -1 : 1;
+                attackerMultiplierGain = winningTeam == Mission.Teams.Defender ? -1 : 1;
+                valourSide = winningTeam.Side.GetOppositeSide();
+            }
+
             _ = _rewardServer.UpdateCrpgUsersAsync(
                 durationRewarded: _rewardTickTimer.GetTimerDuration(),
-                bothTeamsValour: true,
-                defenderMultiplierGain: -1,
-                attackerMultiplierGain: -1,
+                valourTeamSide: valourSide,
+                defenderMultiplierGain: defenderMultiplierGain,
+                attackerMultiplierGain: attackerMultiplierGain,
                 updateUserStats: true);
         }
     }

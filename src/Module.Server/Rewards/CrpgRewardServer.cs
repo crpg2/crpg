@@ -239,7 +239,6 @@ internal class CrpgRewardServer : MissionLogic
         int defenderMultiplierGain = 0,
         int attackerMultiplierGain = 0,
         BattleSideEnum? valourTeamSide = null,
-        bool bothTeamsValour = false,
         int? constantMultiplier = null,
         bool updateUserStats = true,
         bool isDuel = false)
@@ -266,20 +265,10 @@ internal class CrpgRewardServer : MissionLogic
             ? _periodStatsHelper.ComputePeriodStats()
             : new Dictionary<PlayerId, PeriodStats>();
 
-
         HashSet<PlayerId> valorousPlayerIds;
-        if (bothTeamsValour)
-        {
-            valorousPlayerIds = veryLowPopulationServer
-                ? new HashSet<PlayerId>()
-                : GetBothTeamValorousPlayers(networkPeers, periodStats);
-        }
-        else
-        {
-            valorousPlayerIds = veryLowPopulationServer || !valourTeamSide.HasValue
-                ? new HashSet<PlayerId>()
-                : GetValorousPlayers(networkPeers, periodStats, valourTeamSide.Value);
-        }
+        valorousPlayerIds = veryLowPopulationServer || !valourTeamSide.HasValue
+            ? new HashSet<PlayerId>()
+            : GetValorousPlayers(networkPeers, periodStats, valourTeamSide.Value);
 
         Dictionary<int, CrpgPeer> crpgPeerByCrpgUserId = new();
         List<CrpgUserUpdate> userUpdates = new();
@@ -598,50 +587,6 @@ internal class CrpgRewardServer : MissionLogic
         return true;
     }
 
-    /// <summary>Valorous players are the top X% of the round of both teams.</summary>
-    private HashSet<PlayerId> GetBothTeamValorousPlayers(NetworkCommunicator[] networkPeers,
-        Dictionary<PlayerId, PeriodStats> allPeriodStats)
-    {
-        var defenderTeamPlayersWithRoundScore = new List<(PlayerId playerId, int score)>();
-        var attackerTeamPlayersWithRoundScore = new List<(PlayerId playerId, int score)>();
-        foreach (var networkPeer in networkPeers)
-        {
-            var missionPeer = networkPeer.GetComponent<MissionPeer>();
-            var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
-            if (missionPeer == null || crpgPeer == null)
-            {
-                continue;
-            }
-
-            var playerId = networkPeer.VirtualPlayer.Id;
-            int roundScore = allPeriodStats.TryGetValue(playerId, out var s) ? s.Score : 0;
-
-            switch (crpgPeer.LastSpawnInfo?.Team.Side)
-            {
-                case BattleSideEnum.Defender:
-                    defenderTeamPlayersWithRoundScore.Add((playerId, roundScore));
-                    break;
-                case BattleSideEnum.Attacker:
-                    attackerTeamPlayersWithRoundScore.Add((playerId, roundScore));
-                    break;
-            }
-        }
-
-        int numberOfDefenderPlayersToGiveValour = Math.Max((int)(0.2f * defenderTeamPlayersWithRoundScore.Count), 1);
-        var valourousDefenders = defenderTeamPlayersWithRoundScore
-            .OrderByDescending(p => p.score)
-            .Take(numberOfDefenderPlayersToGiveValour)
-            .Select(p => p.playerId);
-
-        int numberOfAttackerPlayersToGiveValour = Math.Max((int)(0.2f * attackerTeamPlayersWithRoundScore.Count), 1);
-        var valourousAttackers = attackerTeamPlayersWithRoundScore
-            .OrderByDescending(p => p.score)
-            .Take(numberOfAttackerPlayersToGiveValour)
-            .Select(p => p.playerId);
-
-        return valourousDefenders.Concat(valourousAttackers).ToHashSet();
-    }
-
     /// <summary>Valorous players are the top X% of the round of the defeated team.</summary>
     private HashSet<PlayerId> GetValorousPlayers(NetworkCommunicator[] networkPeers,
         Dictionary<PlayerId, PeriodStats> allPeriodStats, BattleSideEnum valourTeamSide)
@@ -664,7 +609,9 @@ internal class CrpgRewardServer : MissionLogic
             }
         }
 
-        int numberOfPlayersToGiveValour = (int)(0.2f * defeatedTeamPlayersWithRoundScore.Count);
+        int numberOfPlayersToGiveValour = (defeatedTeamPlayersWithRoundScore.Count is >= 3 and <= 5)
+            ? 1
+            : (int)(0.2f * defeatedTeamPlayersWithRoundScore.Count);
         Debug.Print($"Giving valour to {numberOfPlayersToGiveValour} out of the {defeatedTeamPlayersWithRoundScore.Count} players in the defeated team");
         return defeatedTeamPlayersWithRoundScore
             .OrderByDescending(p => p.score)

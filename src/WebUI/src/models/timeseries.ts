@@ -1,4 +1,6 @@
 export interface TimeSeries {
   name: string
-  data: [Date, number][]
+  data: TimeSeriesItem[]
 }
+
+export type TimeSeriesItem = [Date, number]
