@@ -136,6 +136,7 @@
   <string id="str_multiplayer_scene_name.crpg_battle_frosthaven" text="{=FrStHv3N}Frosthaven" />
   <string id="str_multiplayer_scene_name.crpg_battle_westveen" text="{=W3stV33N}Westveen" />
   <string id="str_multiplayer_scene_name.crpg_battle_overgrown" text="{=0V3RGRO1}Overgrown" />
+  <string id="str_multiplayer_scene_name.crpg_battle_nirvana" text="{=NiRV4NA1}Nirvana" />
 
   <!-- Conquest Maps -->
   <string id="str_multiplayer_scene_name.crpg_conquest_acre" text="{=9Mpawm9h}Acre" />
@@ -170,6 +171,7 @@
   <string id="str_multiplayer_scene_name.crpg_dtv_templeofposeidon" text="{=T3MpL3OP}Temple of Poseidon" />
   <string id="str_multiplayer_scene_name.crpg_dtv_monolith" text="{=M0n0L1tH}Monolith" />
   <string id="str_multiplayer_scene_name.crpg_dtv_simirafort" text="{=S1M1R4Fo}Simira Fort" />
+  <string id="str_multiplayer_scene_name.crpg_dtv_nirvana" text="{=NiRV4NA0}Nirvana" />
 
   <!-- Captain Maps -->
   <string id="str_multiplayer_scene_name.crpg_captain_chauxforest" text="{=CH4XFORR}Chaux Forest" />
