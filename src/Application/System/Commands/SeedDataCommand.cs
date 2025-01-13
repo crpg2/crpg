@@ -161,6 +161,18 @@ public record SeedDataCommand : IMediatorRequest
                 ExperienceMultiplier = 1.09f,
                 Avatar = new Uri("https://avatars.akamai.steamstatic.com/8762690248c6809b0303cc803a1b2dacf3a12cd5_full.jpg"),
             };
+            User ladoea = new()
+            {
+                PlatformUserId = "76561198041553690",
+                Platform = Platform.Steam,
+                Name = "ladoea",
+                Role = Role.Moderator,
+                Region = Region.Eu,
+                Gold = 100000,
+                HeirloomPoints = 2,
+                ExperienceMultiplier = 1.09f,
+                Avatar = new Uri("https://avatars.cloudflare.steamstatic.com/d7f24cffe8b7ba1ccdf1ca0d5244883584beb179_full.jpg"),
+            };
             User laHire = new()
             {
                 PlatformUserId = "76561198012340299",
@@ -537,7 +549,7 @@ public record SeedDataCommand : IMediatorRequest
                 ecko, neostralie, zorguy, azuma, elmaryk, namidaka, laHire, manik, ajroselle, skrael, bedo, lambic,
                 sanasar, vlad007, canp0g, shark, noobAmphetamine, mundete, aroyFalconer, insanitoid, scarface,
                 xDem, disorot, ace, sagar, greenShadow, hannibaru, drexx, xarosh, tipsyToby, localAlpha, alex,
-                kedrynFuel, luqero, ilya, eztli, telesto, kypak, devoidDragon, krog, thradok, kinngrimm, kadse,
+                kedrynFuel, luqero, ilya, eztli, telesto, kypak, devoidDragon, krog, thradok, kinngrimm, kadse, ladoea,
             };
 
             var existingUsers = await _db.Users.ToDictionaryAsync(u => (u.Platform, u.PlatformUserId));
@@ -934,6 +946,39 @@ public record SeedDataCommand : IMediatorRequest
                     Skills = new CharacterSkills { Points = 100 },
                 },
             };
+            Character ladoeaCharacter0 = new()
+            {
+                User = ladoea,
+                Name = "ladoea woz ere",
+                Level = 33,
+                Generation = 3,
+                Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
+                Statistics = new List<CharacterStatistics>
+                {
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 1,
+                            Deaths = 30,
+                            Assists = 10,
+                            PlayTime = new TimeSpan(10, 7, 5, 20),
+                            GameMode = GameMode.CRPGDuel,
+                            Rating = new()
+                            {
+                                Value = 50,
+                                Deviation = 350,
+                                Volatility = 0.06f,
+                                CompetitiveValue = 50,
+                            },
+                        }
+                    },
+                },
+                Characteristics = new CharacterCharacteristics
+                {
+                    Attributes = new CharacterAttributes { Points = 100 },
+                    Skills = new CharacterSkills { Points = 100 },
+                },
+            };
             Character falcomCharacter0 = new()
             {
                 User = falcom,
@@ -967,7 +1012,7 @@ public record SeedDataCommand : IMediatorRequest
             Character[] newCharacters =
             {
                 takeoCharacter0, takeoCharacter1, takeoCharacter2, namidakaCharacter0, peekyCharacter0, orleCharacter0, orleCharacter1, orleCharacter2, droobCharacter0,
-                falcomCharacter0, victorhh888Character0, sellkaCharacter0, krogCharacter0, kadseCharacter0, noobAmphetamine0, baronCyborg0,
+                falcomCharacter0, victorhh888Character0, sellkaCharacter0, krogCharacter0, kadseCharacter0, noobAmphetamine0, baronCyborg0, ladoeaCharacter0,
             };
 
             var existingCharacters = await _db.Characters.ToDictionaryAsync(c => c.Name);
