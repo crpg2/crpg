@@ -9,5 +9,3 @@ export default {
   iconName: 'item-flag-can-knock-down',
   prefix: 'crpg',
 }
-
-
