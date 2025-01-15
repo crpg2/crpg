@@ -168,12 +168,12 @@ internal class CrpgItemValueModel : ItemValueModel
             float weaponSwingScaler = weapon.WeaponClass switch
             {
                 WeaponClass.OneHandedSword => 20.9f,
-                WeaponClass.OneHandedAxe => 25.3f,
+                WeaponClass.OneHandedAxe => 20.0f,
                 WeaponClass.Mace => 20.0f,
                 WeaponClass.Dagger => 20.9f,
                 WeaponClass.TwoHandedSword => 27.5f,
                 WeaponClass.TwoHandedMace => 28.5f,
-                WeaponClass.TwoHandedAxe => 36f,
+                WeaponClass.TwoHandedAxe => 28.0f,
                 WeaponClass.TwoHandedPolearm => 31f,
                 WeaponClass.OneHandedPolearm => 25f,
                 _ => float.MaxValue,
