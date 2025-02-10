@@ -712,6 +712,30 @@
       <Piece id="crpg_long_maul_handle_h3" Type="Handle" scale_factor="165" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_great_long_maul_v2_h0" name="{=}Great Long Maul" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_great_long_maul_blade_h0" Type="Blade" scale_factor="107" />
+      <Piece id="crpg_great_long_maul_handle_h0" Type="Handle" scale_factor="165" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_great_long_maul_v2_h1" name="{=}Great Long Maul +1" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_great_long_maul_blade_h1" Type="Blade" scale_factor="107" />
+      <Piece id="crpg_great_long_maul_handle_h1" Type="Handle" scale_factor="165" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_great_long_maul_v2_h2" name="{=}Great Long Maul +2" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_great_long_maul_blade_h2" Type="Blade" scale_factor="107" />
+      <Piece id="crpg_great_long_maul_handle_h2" Type="Handle" scale_factor="165" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_great_long_maul_v2_h3" name="{=}Great Long Maul +3" crafting_template="crpg_TwoHandedPolearm" modifier_group="cheap_weapon">
+    <Pieces>
+      <Piece id="crpg_great_long_maul_blade_h3" Type="Blade" scale_factor="107" />
+      <Piece id="crpg_great_long_maul_handle_h3" Type="Handle" scale_factor="165" />
+    </Pieces>
+  </CraftedItem>
   <CraftedItem id="crpg_iklwa_v2_h0" name="{=kaikaikai}Iklwa" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_iklwa_blade_h0" Type="Blade" scale_factor="90" />
@@ -2390,6 +2414,38 @@
       <Piece id="crpg_simple_javelin_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_simple_javelin_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_simple_javelin_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_war_darts_v4_h0" name="{=Diggles}War Darts" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
+    <Pieces>
+      <Piece id="crpg_war_darts_blade_h0" Type="Blade" scale_factor="75" />
+      <Piece id="crpg_war_darts_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_war_darts_handle_h0" Type="Handle" scale_factor="50" />
+      <Piece id="crpg_war_darts_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_war_darts_v4_h1" name="{=Diggles}War Darts +1" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
+    <Pieces>
+      <Piece id="crpg_war_darts_blade_h1" Type="Blade" scale_factor="75" />
+      <Piece id="crpg_war_darts_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_war_darts_handle_h1" Type="Handle" scale_factor="50" />
+      <Piece id="crpg_war_darts_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_war_darts_v4_h2" name="{=Diggles}War Darts +2" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
+    <Pieces>
+      <Piece id="crpg_war_darts_blade_h2" Type="Blade" scale_factor="75" />
+      <Piece id="crpg_war_darts_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_war_darts_handle_h2" Type="Handle" scale_factor="50" />
+      <Piece id="crpg_war_darts_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_war_darts_v4_h3" name="{=Diggles}War Darts +3" crafting_template="crpg_Javelin" modifier_group="spear_dart_throwing">
+    <Pieces>
+      <Piece id="crpg_war_darts_blade_h3" Type="Blade" scale_factor="75" />
+      <Piece id="crpg_war_darts_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_war_darts_handle_h3" Type="Handle" scale_factor="50" />
+      <Piece id="crpg_war_darts_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <Item id="crpg_crossbow_k_v4_h0" name="Templar's Light Crossbow" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="crossbow_g" weight="3.1" appearance="0.7" difficulty="40" Type="Crossbow" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="crossbow_back_light1:crossbow_back_light2:crossbow_back_light3:crossbow_back_light4" holster_position_shift="0.02,0,-0.4">
@@ -13284,7 +13340,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <CraftedItem id="crpg_english_bill_v2_h0" name="{=Salt}English Bill" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_english_bill_v3_h0" name="{=Salt}English Bill" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h0" Type="Handle" scale_factor="100" />
@@ -13292,7 +13348,7 @@
       <Piece id="crpg_english_bill_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_english_bill_v2_h1" name="{=Salt}English Bill +1" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_english_bill_v3_h1" name="{=Salt}English Bill +1" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h1" Type="Handle" scale_factor="100" />
@@ -13300,7 +13356,7 @@
       <Piece id="crpg_english_bill_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_english_bill_v2_h2" name="{=Salt}English Bill +2" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_english_bill_v3_h2" name="{=Salt}English Bill +2" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h2" Type="Handle" scale_factor="100" />
@@ -13308,7 +13364,7 @@
       <Piece id="crpg_english_bill_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_english_bill_v2_h3" name="{=Salt}English Bill +3" crafting_template="crpg_Polearm_2dswing">
+  <CraftedItem id="crpg_english_bill_v3_h3" name="{=Salt}English Bill +3" crafting_template="crpg_Polearm_2dswing">
     <Pieces>
       <Piece id="crpg_english_bill_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_english_bill_handle_h3" Type="Handle" scale_factor="100" />
