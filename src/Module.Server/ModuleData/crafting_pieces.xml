@@ -26892,6 +26892,82 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polehammer_knockdown_blade_h0" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Swing damage_type="Blunt" damage_factor="2.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polehammer_knockdown_blade_h1" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Blunt" damage_factor="2.7" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polehammer_knockdown_blade_h2" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Blunt" damage_factor="2.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polehammer_knockdown_blade_h3" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Blunt" damage_factor="2.9" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanKnockDown" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polehammer_knockdown_handle_h0" name="Spiked Polehammer Shaft" tier="2" piece_type="Handle" mesh="spiked_polehammer_shaft" length="156" weight="2.0" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="72" piece_offset="44" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polehammer_knockdown_handle_h1" name="Spiked Polehammer Shaft" tier="2" piece_type="Handle" mesh="spiked_polehammer_shaft" length="156" weight="2.0" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="72" piece_offset="44" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polehammer_knockdown_handle_h2" name="Spiked Polehammer Shaft" tier="2" piece_type="Handle" mesh="spiked_polehammer_shaft" length="156" weight="2.0" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="72" piece_offset="44" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polehammer_knockdown_handle_h3" name="Spiked Polehammer Shaft" tier="2" piece_type="Handle" mesh="spiked_polehammer_shaft" length="156" weight="2.0" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="72" piece_offset="44" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
   <CraftingPiece id="crpg_military_hammer_blade_h0" name="{=}Military Hammer Head" tier="4" piece_type="Blade" mesh="military_hammer_head" distance_to_next_piece="0.0" distance_to_previous_piece="0.0" length="20.4" weight="0.52" full_scale="true" excluded_item_usage_features="thrust">
     <BuildData piece_offset="0.0" />
     <BladeData stack_amount="1" physics_material="metal_weapon" body_name="bo_mace_a">

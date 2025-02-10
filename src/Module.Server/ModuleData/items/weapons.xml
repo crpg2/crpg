@@ -122,6 +122,30 @@
   </CraftedItem>
   <CraftedItem id="crpg_spiked_polehammer_v6_h0" name="{=kaikaikai}Spiked Polehammer" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
+      <Piece id="crpg_spiked_polehammer_knockdown_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spiked_polehammer_knockdown_handle_h0" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_spiked_polehammer_v6_h1" name="{=kaikaikai}Spiked Polehammer +1" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_spiked_polehammer_knockdown_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spiked_polehammer_knockdown_handle_h1" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_spiked_polehammer_v6_h2" name="{=kaikaikai}Spiked Polehammer +2" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_spiked_polehammer_knockdown_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spiked_polehammer_knockdown_handle_h2" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_spiked_polehammer_v6_h3" name="{=kaikaikai}Spiked Polehammer +3" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_spiked_polehammer_knockdown_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spiked_polehammer_knockdown_handle_h3" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_spiked_polehammer_v6_h0" name="{=kaikaikai}Spiked Polehammer" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
       <Piece id="crpg_spiked_polehammer_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_spiked_polehammer_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
@@ -13036,7 +13060,7 @@
       <Piece id="crpg_joustinglance_striped_ry_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_joustinglance_striped_ry_v2_h1" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
+  <CraftedItem id="crpg_joustinglance_striped_ry_v2_h1" name="{=}Jousting Lance +1 (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
     <Pieces>
       <Piece id="crpg_joustinglance_striped_ry_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_joustinglance_striped_ry_guard_h1" Type="Guard" scale_factor="100" />
@@ -13044,7 +13068,7 @@
       <Piece id="crpg_joustinglance_striped_ry_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_joustinglance_striped_ry_v2_h2" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
+  <CraftedItem id="crpg_joustinglance_striped_ry_v2_h2" name="{=}Jousting Lance +2 (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
     <Pieces>
       <Piece id="crpg_joustinglance_striped_ry_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_joustinglance_striped_ry_guard_h2" Type="Guard" scale_factor="100" />
@@ -13052,7 +13076,7 @@
       <Piece id="crpg_joustinglance_striped_ry_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_joustinglance_striped_ry_v2_h3" name="{=}Jousting Lance (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
+  <CraftedItem id="crpg_joustinglance_striped_ry_v2_h3" name="{=}Jousting Lance +3 (Striped Red Yellow)" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia">
     <Pieces>
       <Piece id="crpg_joustinglance_striped_ry_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_joustinglance_striped_ry_guard_h3" Type="Guard" scale_factor="100" />
@@ -14060,7 +14084,7 @@
       <Piece id="crpg_splittingmaul_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_splittingmaul_v1_h1" name="{=Salt}Splittingmaul" crafting_template="crpg_TwoHandedMace">
+  <CraftedItem id="crpg_splittingmaul_v1_h1" name="{=Salt}Splittingmaul +1" crafting_template="crpg_TwoHandedMace">
     <Pieces>
       <Piece id="crpg_splittingmaul_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_splittingmaul_handle_h1" Type="Handle" scale_factor="120" />
@@ -14068,7 +14092,7 @@
       <Piece id="crpg_splittingmaul_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_splittingmaul_v1_h2" name="{=Salt}Splittingmaul" crafting_template="crpg_TwoHandedMace">
+  <CraftedItem id="crpg_splittingmaul_v1_h2" name="{=Salt}Splittingmaul +2" crafting_template="crpg_TwoHandedMace">
     <Pieces>
       <Piece id="crpg_splittingmaul_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_splittingmaul_handle_h2" Type="Handle" scale_factor="120" />
@@ -14076,7 +14100,7 @@
       <Piece id="crpg_splittingmaul_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_splittingmaul_v1_h3" name="{=Salt}Splittingmaul" crafting_template="crpg_TwoHandedMace">
+  <CraftedItem id="crpg_splittingmaul_v1_h3" name="{=Salt}Splittingmaul +3" crafting_template="crpg_TwoHandedMace">
     <Pieces>
       <Piece id="crpg_splittingmaul_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_splittingmaul_handle_h3" Type="Handle" scale_factor="120" />
@@ -14092,7 +14116,7 @@
       <Piece id="crpg_dragonscimitar_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_dragonscimitar_h1" name="{=STAFF}Dragon Scimitar" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_disabled_dragonscimitar_h1" name="{=STAFF}Dragon Scimitar +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_dragonscimitar_blade_h1" Type="Blade" scale_factor="130" />
       <Piece id="crpg_dragonscimitar_guard_h1" Type="Guard" scale_factor="100" />
@@ -14100,7 +14124,7 @@
       <Piece id="crpg_dragonscimitar_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_dragonscimitar_h2" name="{=STAFF}Dragon Scimitar" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_disabled_dragonscimitar_h2" name="{=STAFF}Dragon Scimitar +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_dragonscimitar_blade_h2" Type="Blade" scale_factor="130" />
       <Piece id="crpg_dragonscimitar_guard_h2" Type="Guard" scale_factor="100" />
@@ -14108,7 +14132,7 @@
       <Piece id="crpg_dragonscimitar_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_dragonscimitar_h3" name="{=STAFF}Dragon Scimitar" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_disabled_dragonscimitar_h3" name="{=STAFF}Dragon Scimitar +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_dragonscimitar_blade_h3" Type="Blade" scale_factor="130" />
       <Piece id="crpg_dragonscimitar_guard_h3" Type="Guard" scale_factor="100" />
@@ -14124,7 +14148,7 @@
       <Piece id="crpg_ibelinsword_2h_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_ibelinsword_h1" name="{=STAFF}Ibelin Sword" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_disabled_ibelinsword_h1" name="{=STAFF}Ibelin Sword +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_ibelinsword_2h_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_ibelinsword_2h_guard_h1" Type="Guard" scale_factor="100" />
@@ -14132,7 +14156,7 @@
       <Piece id="crpg_ibelinsword_2h_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_ibelinsword_h2" name="{=STAFF}Ibelin Sword" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_disabled_ibelinsword_h2" name="{=STAFF}Ibelin Sword +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_ibelinsword_2h_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_ibelinsword_2h_guard_h2" Type="Guard" scale_factor="100" />
@@ -14140,7 +14164,7 @@
       <Piece id="crpg_ibelinsword_2h_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_ibelinsword_h3" name="{=STAFF}Ibelin Sword" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_disabled_ibelinsword_h3" name="{=STAFF}Ibelin Sword +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_ibelinsword_2h_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_ibelinsword_2h_guard_h3" Type="Guard" scale_factor="100" />
@@ -14188,7 +14212,7 @@
       <Piece id="crpg_dragonslayer_pommel_h0" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_dragonslayersword_h1" name="{=STAFF}Dragonslayer's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_disabled_dragonslayersword_h1" name="{=STAFF}Dragonslayer's Sword +1" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_dragonslayer_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_dragonslayer_guard_h1" Type="Guard" scale_factor="110" />
@@ -14196,7 +14220,7 @@
       <Piece id="crpg_dragonslayer_pommel_h1" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_dragonslayersword_h2" name="{=STAFF}Dragonslayer's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_disabled_dragonslayersword_h2" name="{=STAFF}Dragonslayer's Sword +2" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_dragonslayer_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_dragonslayer_guard_h2" Type="Guard" scale_factor="110" />
@@ -14204,7 +14228,7 @@
       <Piece id="crpg_dragonslayer_pommel_h2" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_dragonslayersword_h3" name="{=STAFF}Dragonslayer's Sword" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_disabled_dragonslayersword_h3" name="{=STAFF}Dragonslayer's Sword +3" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_dragonslayer_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_dragonslayer_guard_h3" Type="Guard" scale_factor="110" />
