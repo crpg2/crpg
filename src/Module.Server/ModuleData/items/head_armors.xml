@@ -1416,25 +1416,25 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_bretache_n1_v1_h0" name="Bretache, Decorated (EBA)" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
+  <Item id="crpg_bretache_n1_v1_h0" name="Bascinet with Aventail and Bretache (EBA)" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="39" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_bretache_n1_v1_h1" name="Bretache, Decorated (EBA) +1" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
+  <Item id="crpg_bretache_n1_v1_h1" name="Bascinet with Aventail and Bretache (EBA) +1" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="41" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_bretache_n1_v1_h2" name="Bretache, Decorated (EBA) +2" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
+  <Item id="crpg_bretache_n1_v1_h2" name="Bascinet with Aventail and Bretache (EBA) +2" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="43" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_bretache_n1_v1_h3" name="Bretache, Decorated (EBA) +3" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
+  <Item id="crpg_bretache_n1_v1_h3" name="Bascinet with Aventail and Bretache (EBA) +3" mesh="bretache_n1" culture="Culture.neutral_culture" weight="3.116368" appearance="10" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="45" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
