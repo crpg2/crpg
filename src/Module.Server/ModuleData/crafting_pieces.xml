@@ -21049,41 +21049,41 @@
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_decorated_great_saber_blade_h0" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.80">
+  <CraftingPiece id="crpg_decorated_great_saber_blade_h0" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.95">
     <BuildData previous_piece_offset="-0.25" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_noble_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_decorated_great_saber_blade_h1" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.70">
+  <CraftingPiece id="crpg_decorated_great_saber_blade_h1" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.95">
     <BuildData previous_piece_offset="-0.25" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_noble_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_decorated_great_saber_blade_h2" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.70">
+  <CraftingPiece id="crpg_decorated_great_saber_blade_h2" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.9">
     <BuildData previous_piece_offset="-0.25" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_noble_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="2.4" />
-      <Swing damage_type="Cut" damage_factor="3.5" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_decorated_great_saber_blade_h3" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.70">
+  <CraftingPiece id="crpg_decorated_great_saber_blade_h3" name="{=SJssgxmf}Decorated Ild Blade" tier="5" piece_type="Blade" mesh="khuzait_noble_blade_2" culture="Culture.khuzait" length="72.5" weight="0.85">
     <BuildData previous_piece_offset="-0.25" />
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="khuzait_noble_blade_2_scabbard_2">
       <Thrust damage_type="Pierce" damage_factor="2.6" />
-      <Swing damage_type="Cut" damage_factor="3.6" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Materials>
       <Material id="Iron6" count="2" />
@@ -21985,10 +21985,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northlander_wide_fullered_greatsword_blade_h0" name="{=GXhZ8NKv}Wide Fullered Northern Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_3" culture="Culture.sturgia" length="87.3" weight="0.75">
+  <CraftingPiece id="crpg_northlander_wide_fullered_greatsword_blade_h0" name="{=GXhZ8NKv}Wide Fullered Northern Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_3" culture="Culture.sturgia" length="87.3" weight="0.9">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_3_scabbard_3">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="3.8" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -21997,10 +21997,10 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northlander_wide_fullered_greatsword_blade_h1" name="{=GXhZ8NKv}Wide Fullered Northern Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_3" culture="Culture.sturgia" length="87.3" weight="0.60">
+  <CraftingPiece id="crpg_northlander_wide_fullered_greatsword_blade_h1" name="{=GXhZ8NKv}Wide Fullered Northern Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_3" culture="Culture.sturgia" length="87.3" weight="0.75">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_3_scabbard_3">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Cut" damage_factor="3.8" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -22009,22 +22009,22 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_northlander_wide_fullered_greatsword_blade_h2" name="{=GXhZ8NKv}Wide Fullered Northern Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_3" culture="Culture.sturgia" length="87.3" weight="0.60">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_3_scabbard_3">
-      <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="3" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_northlander_wide_fullered_greatsword_blade_h3" name="{=GXhZ8NKv}Wide Fullered Northern Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_3" culture="Culture.sturgia" length="87.3" weight="0.60">
+  <CraftingPiece id="crpg_northlander_wide_fullered_greatsword_blade_h2" name="{=GXhZ8NKv}Wide Fullered Northern Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_3" culture="Culture.sturgia" length="87.3" weight="0.75">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_3_scabbard_3">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
       <Swing damage_type="Cut" damage_factor="4.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="3" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_northlander_wide_fullered_greatsword_blade_h3" name="{=GXhZ8NKv}Wide Fullered Northern Blade" tier="3" piece_type="Blade" mesh="sturgian_blade_3" culture="Culture.sturgia" length="87.3" weight="0.7">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="sturgian_blade_3_scabbard_3">
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -24045,34 +24045,10 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_longsword_blade_h0" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="0.50">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_7_scabbard_7">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron5" count="3" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_longsword_blade_h1" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="0.30  ">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_7_scabbard_7">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron5" count="3" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_longsword_blade_h2" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="0.30">
+  <CraftingPiece id="crpg_longsword_blade_h0" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="0.75">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_7_scabbard_7">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="4.0" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -24081,10 +24057,34 @@
       <Material id="Iron5" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_longsword_blade_h3" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="0.30">
+  <CraftingPiece id="crpg_longsword_blade_h1" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="0.75">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_7_scabbard_7">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="4.2" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron5" count="3" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longsword_blade_h2" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="0.75">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_7_scabbard_7">
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron5" count="3" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_longsword_blade_h3" name="{=C89rbAz6}Knightly Arming Sword Blade" tier="4" piece_type="Blade" mesh="vlandian_blade_7" culture="Culture.vlandia" length="89.1" weight="0.65">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="vlandian_blade_7_scabbard_7">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -27193,441 +27193,441 @@
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_blade_h0" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.35">
+  <CraftingPiece id="crpg_red_katana_blade_h0" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_red">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_blade_h1" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.30">
+  <CraftingPiece id="crpg_red_katana_blade_h1" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_red">
-      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="3" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_red_katana_blade_h2" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_red">
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="3" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_red_katana_blade_h3" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.82">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_red">
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="3" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_blue_katana_blade_h0" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_blue">
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
       <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_blade_h2" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.25">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_red">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron3" count="3" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_blade_h3" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.25">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_red">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
+  <CraftingPiece id="crpg_blue_katana_blade_h1" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_blue">
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
       <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_blade_h0" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.31">
+  <CraftingPiece id="crpg_blue_katana_blade_h2" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_blue">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.5" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_blade_h1" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.30">
+  <CraftingPiece id="crpg_blue_katana_blade_h3" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.82">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_blue">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.6" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_blade_h2" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.2">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_blue">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.7" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron3" count="3" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_blade_h3" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.2">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_blue">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="3.8" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron3" count="3" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_blade_h0" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.35">
+  <CraftingPiece id="crpg_green_katana_blade_h0" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_green">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.7" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron3" count="3" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_blade_h1" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.30">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_green">
-      <Thrust damage_type="Pierce" damage_factor="1.7" />
-      <Swing damage_type="Cut" damage_factor="3.8" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron3" count="3" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_blade_h2" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.25">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_green">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.9" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron3" count="3" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_blade_h3" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.25">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_green">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
       <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_blade_h0" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.31">
+  <CraftingPiece id="crpg_green_katana_blade_h1" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_green">
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="3" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_green_katana_blade_h2" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_green">
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="3" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_green_katana_blade_h3" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.82">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_green">
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron3" count="3" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_yellow_katana_blade_h0" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_yellow">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.5" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_blade_h1" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.30">
+  <CraftingPiece id="crpg_yellow_katana_blade_h1" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_yellow">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.6" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_blade_h2" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.2">
+  <CraftingPiece id="crpg_yellow_katana_blade_h2" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_yellow">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_blade_h3" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.2">
+  <CraftingPiece id="crpg_yellow_katana_blade_h3" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.82">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_yellow">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="3.8" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_blade_h0" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.35">
+  <CraftingPiece id="crpg_black_katana_blade_h0" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_black">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_blade_h1" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.30">
+  <CraftingPiece id="crpg_black_katana_blade_h1" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_black">
-      <Thrust damage_type="Pierce" damage_factor="1.5" />
-      <Swing damage_type="Cut" damage_factor="3.5" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_blade_h2" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.25">
+  <CraftingPiece id="crpg_black_katana_blade_h2" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.95">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_black">
-      <Thrust damage_type="Pierce" damage_factor="1.8" />
-      <Swing damage_type="Cut" damage_factor="3.6" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_blade_h3" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.2">
+  <CraftingPiece id="crpg_black_katana_blade_h3" name="{=}Katana Blade" tier="2" piece_type="Blade" mesh="katana_blade" culture="Culture.aserai" length="93.7" weight="0.82">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="katana_sheath_black">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Materials>
       <Material id="Iron3" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_guard_h0" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_red_katana_guard_h0" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_guard_h1" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_red_katana_guard_h1" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_guard_h2" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_red_katana_guard_h2" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_guard_h3" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_red_katana_guard_h3" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_guard_h0" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_blue_katana_guard_h0" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_guard_h1" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_blue_katana_guard_h1" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_guard_h2" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_blue_katana_guard_h2" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_guard_h3" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_blue_katana_guard_h3" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_guard_h0" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_green_katana_guard_h0" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_guard_h1" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_green_katana_guard_h1" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_guard_h2" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_green_katana_guard_h2" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_guard_h3" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_green_katana_guard_h3" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_guard_h0" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_yellow_katana_guard_h0" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_guard_h1" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_yellow_katana_guard_h1" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_guard_h2" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_yellow_katana_guard_h2" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_guard_h3" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_yellow_katana_guard_h3" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_guard_h0" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_black_katana_guard_h0" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_guard_h1" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_black_katana_guard_h1" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_guard_h2" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_black_katana_guard_h2" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_guard_h3" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.01">
+  <CraftingPiece id="crpg_black_katana_guard_h3" name="{=}Katana Guard" tier="4" piece_type="Guard" mesh="katana_guard" culture="Culture.khuzait" length="3.73" weight="0.5">
     <BuildData next_piece_offset="0.2" />
     <StatContributions armor_bonus="4" />
     <Materials>
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_red_katana_handle_h0" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_red_katana_handle_h1" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_red_katana_handle_h2" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_red_katana_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_red_katana_handle_h3" name="{=}Red Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_red" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_handle_h0" name="{=}Blue Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_blue_katana_handle_h0" name="{=}Blue Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_handle_h1" name="{=}Blue Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_blue_katana_handle_h1" name="{=}Blue Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_handle_h2" name="{=}Blue Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_blue_katana_handle_h2" name="{=}Blue Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_blue_katana_handle_h3" name="{=}Blue Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_blue_katana_handle_h3" name="{=}Blue Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_blue" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_handle_h0" name="{=}Green Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_green_katana_handle_h0" name="{=}Green Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_handle_h1" name="{=}Green Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_green_katana_handle_h1" name="{=}Green Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_handle_h2" name="{=}Green Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_green_katana_handle_h2" name="{=}Green Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_green_katana_handle_h3" name="{=}Green Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_green_katana_handle_h3" name="{=}Green Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_green" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_handle_h0" name="{=}Yellow Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_yellow_katana_handle_h0" name="{=}Yellow Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_handle_h1" name="{=}Yellow Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_yellow_katana_handle_h1" name="{=}Yellow Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_handle_h2" name="{=}Yellow Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_yellow_katana_handle_h2" name="{=}Yellow Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_yellow_katana_handle_h3" name="{=}Yellow Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_yellow_katana_handle_h3" name="{=}Yellow Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_yellow" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_handle_h0" name="{=}Black Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_black_katana_handle_h0" name="{=}Black Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_handle_h1" name="{=}Black Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_black_katana_handle_h1" name="{=}Black Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_handle_h2" name="{=}Black Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_black_katana_handle_h2" name="{=}Black Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_black_katana_handle_h3" name="{=}Black Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="2">
+  <CraftingPiece id="crpg_black_katana_handle_h3" name="{=}Black Katana Handle" tier="4" piece_type="Handle" mesh="katana_handle_black" culture="Culture.khuzait" length="29.1" weight="1">
     <BuildData piece_offset="-9.5" previous_piece_offset="0.35" next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="3" />
@@ -28273,28 +28273,28 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_blade_h0" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.35">
+  <CraftingPiece id="crpg_langes_messer_blade_h0" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.45">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_blade_h1" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.40">
+  <CraftingPiece id="crpg_langes_messer_blade_h1" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.45">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="4.1" />
-    </BladeData>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_blade_h2" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.40">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="4.2" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_blade_h3" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.40">
+  <CraftingPiece id="crpg_langes_messer_blade_h2" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.45">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
-      <Swing damage_type="Cut" damage_factor="4.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_langes_messer_blade_h3" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.35">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_langes_messer_pommel_h0" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.72">
@@ -28303,19 +28303,19 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_pommel_h1" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.71">
+  <CraftingPiece id="crpg_langes_messer_pommel_h1" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.72">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_pommel_h2" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.71">
+  <CraftingPiece id="crpg_langes_messer_pommel_h2" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.72">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_pommel_h3" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.68">
+  <CraftingPiece id="crpg_langes_messer_pommel_h3" name="{=}Langes Messer Pommel" tier="4" piece_type="Pommel" mesh="langes_messer_pommel" culture="Culture.battania" length="6.21" weight="0.72">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
@@ -28333,20 +28333,20 @@
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_guard_h3" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.75">
+  <CraftingPiece id="crpg_langes_messer_guard_h3" name="{=}Langes Messer Guard" tier="5" piece_type="Guard" mesh="langes_messer_guard" culture="Culture.battania" length="0.96" weight="0.65">
     <BuildData next_piece_offset="0" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
   <CraftingPiece id="crpg_langes_messer_handle_h0" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.95">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_handle_h1" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.47">
+  <CraftingPiece id="crpg_langes_messer_handle_h1" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.95">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_handle_h2" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.47">
+  <CraftingPiece id="crpg_langes_messer_handle_h2" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.95">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_langes_messer_handle_h3" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.27">
+  <CraftingPiece id="crpg_langes_messer_handle_h3" name="{=}Langes Messer Handle" tier="3" piece_type="Handle" mesh="langes_messer_handle" culture="Culture.khuzait" length="24.6" weight="1.95">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.0" next_piece_offset="0" />
   </CraftingPiece>
   <CraftingPiece id="crpg_onehand_langes_messer_blade_h0" name="{=}Langes Messer Blade" tier="4" piece_type="Blade" mesh="langes_messer_blade" culture="Culture.battania" length="98.5" weight="0.5">
@@ -35197,9 +35197,9 @@
   <CraftingPiece id="crpg_ringduva_fightingaxe_handle_h3" name="Ancient Fighting Axe Handle" tier="2" piece_type="Handle" mesh="fighting_axe_handle" length="101" weight="0.1" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="3.5" piece_offset="27" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h0" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.0" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h0" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.3" excluded_item_usage_features="thrust">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="3.8" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -35207,9 +35207,9 @@
     </Flags>
     <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h1" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.0" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h1" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.3" excluded_item_usage_features="thrust">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="3.9" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -35217,9 +35217,9 @@
     </Flags>
     <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h2" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.0" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h2" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.3" excluded_item_usage_features="thrust">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="4.1" />
+      <Swing damage_type="Cut" damage_factor="5.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -35227,9 +35227,9 @@
     </Flags>
     <BuildData previous_piece_offset="9" next_piece_offset="0" piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h3" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.0" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_ringduva_twofightingaxe_blade_h3" name="Ancient Fighting Axe Blade" tier="3" piece_type="Blade" mesh="fighting_axe" culture="Culture.vlandia" length="21" weight="1.2" excluded_item_usage_features="thrust">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="4.2" />
+      <Swing damage_type="Cut" damage_factor="5.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
