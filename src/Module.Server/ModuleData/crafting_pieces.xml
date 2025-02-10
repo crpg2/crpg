@@ -36352,7 +36352,7 @@
   <CraftingPiece id="crpg_templarsword_handle_h3" name="{=}Templarsword Armingsword Handle" tier="3" piece_type="Handle" mesh="templarsword_handle" full_scale="false" culture="Culture.khuzait" length="20.6" weight="0.50">
     <BuildData piece_offset="0" previous_piece_offset="0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_at_partisan_blade_h0" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="48" weight="0.05">
+  <CraftingPiece id="crpg_at_partisan_blade_h0" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="48" weight="0.19">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="3.8" />
@@ -36365,7 +36365,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_at_partisan_blade_h1" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="48" weight="0.05">
+  <CraftingPiece id="crpg_at_partisan_blade_h1" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="48" weight="0.19">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="4.0" />
@@ -36378,7 +36378,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_at_partisan_blade_h2" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="48" weight="0.05">
+  <CraftingPiece id="crpg_at_partisan_blade_h2" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="48" weight="0.19">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Cut" damage_factor="4.0" />
@@ -36391,7 +36391,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_at_partisan_blade_h3" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="48" weight="0.05">
+  <CraftingPiece id="crpg_at_partisan_blade_h3" name="Partisan Blade" tier="3" piece_type="Blade" mesh="partisan_blade" culture="Culture.vlandia" length="48" weight="0.19">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Cut" damage_factor="4.2" />
@@ -36404,25 +36404,25 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_at_partisan_handle_h0" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="200.1" weight="2.0" CraftingCost="120">
+  <CraftingPiece id="crpg_at_partisan_handle_h0" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="200.1" weight="1.6" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_at_partisan_handle_h1" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="200.1" weight="2.0" CraftingCost="120">
+  <CraftingPiece id="crpg_at_partisan_handle_h1" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="200.1" weight="1.6" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_at_partisan_handle_h2" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="200.1" weight="1.9" CraftingCost="120">
+  <CraftingPiece id="crpg_at_partisan_handle_h2" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="200.1" weight="1.5" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_at_partisan_handle_h3" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="200.1" weight="1.9" CraftingCost="120">
+  <CraftingPiece id="crpg_at_partisan_handle_h3" name="Partisan Handle" tier="2" piece_type="Handle" mesh="partisan_handle" length="200.1" weight="1.5" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
