@@ -2276,14 +2276,6 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_warrazor_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
-  </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
-  </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
-  </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
-  </CraftingPiece>
   <CraftingPiece id="crpg_bludgeon_staff_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_bludgeon_staff_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
@@ -4044,30 +4036,6 @@
       <Material id="Wood" count="4" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_handle_h0" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.6" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
-    <BuildData piece_offset="19.4" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_handle_h1" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.6" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
-    <BuildData piece_offset="19.4" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_handle_h2" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.6" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
-    <BuildData piece_offset="19.4" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_handle_h3" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.6" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
-    <BuildData piece_offset="19.4" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
   <CraftingPiece id="crpg_jagged_spear_handle_h0" name="{=71588OX7}Bamboo Shaft" tier="2" piece_type="Handle" mesh="spear_handle_3" length="179" weight="1.3" excluded_item_usage_features="long" CraftingCost="100">
     <BuildData piece_offset="17.9" />
     <Materials>
@@ -4663,14 +4631,6 @@
   <CraftingPiece id="crpg_warrazor_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_warrazor_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
-  </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
-  </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
-  </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
-  </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
@@ -7800,49 +7760,94 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_blade_h0" name="{=kaikaikai}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.52" excluded_item_usage_features="shield:thrust">
+    <CraftingPiece id="crpg_billhook_handle_h0" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.2" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+    <BuildData piece_offset="19.4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_handle_h1" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.2" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+    <BuildData piece_offset="19.4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_handle_h2" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.2" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+    <BuildData piece_offset="19.4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_handle_h3" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.2" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+    <BuildData piece_offset="19.4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_blade_h0" name="{=Yeldur}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.52" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_blade_h1" name="{=kaikaikai}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.52" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_billhook_blade_h1" name="{=Yeldur}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.50" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="4.9" />
+      <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
+      
     </Flags>
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_blade_h2" name="{=kaikaikai}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.48" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_billhook_blade_h2" name="{=Yeldur}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.48" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="5" />
+      <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_billhook_blade_h3" name="{=kaikaikai}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.45" excluded_item_usage_features="shield:thrust">
+  <CraftingPiece id="crpg_billhook_blade_h3" name="{=Yeldur}Bill Head" tier="2" piece_type="Blade" mesh="spear_blade_33" length="35.5" weight="0.48" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Swing damage_type="Cut" damage_factor="5" />
+      <Swing damage_type="Cut" damage_factor="5.0" />
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron2" count="1" />
     </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.10" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.10" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.10" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.10" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.10" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.10" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.10" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_billhook_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.10" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_iron_pitchfork_blade_h0" name="{=SVBYn9KW}Iron Fork" tier="1" piece_type="Blade" mesh="spear_blade_32" length="32.7" weight="0.7176" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
@@ -33136,20 +33141,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_blade_h0" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.505">
-    <BuildData piece_offset="-7.6" />
-    <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="3.7" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="CanDismount" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_bill_blade_h1" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.505">
+  <CraftingPiece id="crpg_bill_blade_h0" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5">
     <BuildData piece_offset="-7.6" />
     <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Cut" damage_factor="3.8" />
@@ -33157,56 +33149,73 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook"/>
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_blade_h2" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.505">
+  <CraftingPiece id="crpg_bill_blade_h1" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5">
     <BuildData piece_offset="-7.6" />
     <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook"/>
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_blade_h3" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.505">
+  <CraftingPiece id="crpg_bill_blade_h2" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5">
     <BuildData piece_offset="-7.6" />
     <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Swing damage_type="Cut" damage_factor="4.1" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook"/>
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_handle_h0" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.6" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+  <CraftingPiece id="crpg_bill_blade_h3" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5">
+    <BuildData piece_offset="-7.6" />
+    <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Cut" damage_factor="4.2" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="CanDismount" />
+      <Flag name="CanHook"/>
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bill_handle_h0" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.5" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
     <BuildData piece_offset="19.4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_handle_h1" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.5" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+  <CraftingPiece id="crpg_bill_handle_h1" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.43" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
     <BuildData piece_offset="19.4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_handle_h2" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.5" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+  <CraftingPiece id="crpg_bill_handle_h2" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.43" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
     <BuildData piece_offset="19.4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_handle_h3" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="1.4" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+  <CraftingPiece id="crpg_bill_handle_h3" name="{=}Cheap Bill Handle" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.43" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
     <BuildData piece_offset="19.4" />
     <Materials>
       <Material id="Wood" count="1" />
