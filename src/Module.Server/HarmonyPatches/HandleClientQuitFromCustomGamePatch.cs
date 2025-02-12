@@ -28,8 +28,7 @@ public class HandleClientQuitFromCustomGamePatch
             {
                 networkCommunicator.QuitFromMission = true;
                 GameNetwork.AddNetworkPeerToDisconnectAsServer(networkCommunicator);
-                string text = "player with id ";
-                MBDebug.Print(text + playerId.ToString() + " quit from game");
+                MBDebug.Print("player with id " + playerId.ToString() + " quit from game");
             }
         });
 
