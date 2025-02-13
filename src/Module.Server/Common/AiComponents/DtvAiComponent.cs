@@ -7,7 +7,7 @@ using TaleWorlds.MountAndBlade;
 namespace Crpg.Module.Common.AiComponents;
 public class DtvAiComponent : CommonAIComponent
 {
-    private const int ViscountTargetTimerDuration = 30;
+    private const int ViscountTargetTimerDuration = 15;
     private MissionTimer? _targetTimer;
     private MissionTimer? _tickOccasionally;
     private bool _focusingVip = false;
@@ -18,7 +18,7 @@ public class DtvAiComponent : CommonAIComponent
 
     public override void Initialize() // Not being called automatically when the component is instantiated
     {
-        _targetTimer = new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration * 3, 0.5f));
+        _targetTimer = new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration + (ViscountTargetTimerDuration / 31 * (Mission.Current.DefenderTeam.ActiveAgents.Count - 1)) * 3, 0.5f));
     }
 
     public override void OnTickAsAI(float dt)
@@ -52,7 +52,7 @@ public class DtvAiComponent : CommonAIComponent
 
     private void CheckTargetTimer()
     {
-        _targetTimer ??= new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration, 0.2f));
+        _targetTimer ??= new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration + (ViscountTargetTimerDuration / 31 * (Mission.Current.DefenderTeam.ActiveAgents.Count - 1)), 0.2f));
         if (!_focusingVip && _targetTimer.Check(true))
         {
             FocusVip();
