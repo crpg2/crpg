@@ -409,9 +409,9 @@ private int totalNumberOfBots = 800;
 
     protected bool DoesEquipmentContainWeapon(Equipment equipment)
     {
-        foreach (var weaponClass in allowedSpawnWeaponClass)
+        for (var i = EquipmentIndex.Weapon0; i <= EquipmentIndex.Weapon3; i += 1)
         {
-            if (equipment.HasWeaponOfClass(weaponClass))
+            if (!equipment[i].IsEmpty && allowedSpawnWeaponClass.Contains(equipment[i].Item.PrimaryWeapon.WeaponClass))
             {
                 return true;
             }
