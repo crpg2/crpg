@@ -5221,6 +5221,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_wide_leaf_spear_blade_h1" name="{=8T7gNbfM}Drilled Wide Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_39" length="54.2" weight="0.4216" excluded_item_usage_features="swing">
@@ -5232,6 +5233,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_wide_leaf_spear_blade_h2" name="{=8T7gNbfM}Drilled Wide Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_39" length="54.2" weight="0.4216" excluded_item_usage_features="swing">
@@ -5243,6 +5245,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_wide_leaf_spear_blade_h3" name="{=8T7gNbfM}Drilled Wide Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_39" length="54.2" weight="0.4216" excluded_item_usage_features="swing">
@@ -5254,6 +5257,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_headed_spear_blade_h0" name="{=U30HpvtI}Triangular Iron Northern Spear Head" tier="3" piece_type="Blade" mesh="spear_blade_2" length="47.843" weight="0.3912">
@@ -5599,6 +5603,7 @@
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron1" count="2" />
@@ -5611,6 +5616,7 @@
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron1" count="2" />
@@ -5623,6 +5629,7 @@
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron1" count="2" />
@@ -5635,6 +5642,7 @@
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron1" count="2" />
@@ -6002,6 +6010,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -6013,6 +6022,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -6024,6 +6034,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -6035,6 +6046,7 @@
     </BladeData>
     <Flags>
       <Flag name="CanHook" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -6401,6 +6413,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
@@ -6412,6 +6425,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
@@ -6423,6 +6437,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_pilum_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="0.2136" excluded_item_usage_features="swing">
@@ -6434,6 +6449,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
@@ -6445,6 +6461,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
@@ -6456,6 +6473,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
@@ -6467,6 +6485,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_triangular_throwing_spear_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
@@ -6478,6 +6497,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
@@ -6489,6 +6509,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
@@ -6500,6 +6521,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
@@ -6511,6 +6533,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_jagged_throwing_spear_blade_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2136" excluded_item_usage_features="swing">
@@ -6522,6 +6545,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_short_raider_spear_blade_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="spear_blade_15" length="22.862" weight="0.2736">
@@ -6781,6 +6805,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_thin_fine_steel_hewing_spear_blade_h1" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
@@ -6792,6 +6817,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_thin_fine_steel_hewing_spear_blade_h2" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
@@ -6803,6 +6829,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_thin_fine_steel_hewing_spear_blade_h3" name="{=1rGNXUaJ}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
@@ -6814,6 +6841,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_mamluke_lance_blade_h0" name="{=Telford}Thin Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_27" length="69.5" weight="0.5" excluded_item_usage_features="swing">
@@ -6858,6 +6886,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_horseman_javelin_blade_h1" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
@@ -6870,6 +6899,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_horseman_javelin_blade_h2" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
@@ -6882,6 +6912,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_horseman_javelin_blade_h3" name="{=XSabsFbx}Weighted Awl Pike Head" tier="3" piece_type="Blade" mesh="spear_blade_37" length="23.7" weight="0.8" excluded_item_usage_features="swing">
@@ -6894,6 +6925,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_woodland_javelin_blade_h0" name="{=T1aiDuOp}Narrow Menavlon Head" tier="3" piece_type="Blade" mesh="spear_blade_14" length="46.28" weight="0.3768" excluded_item_usage_features="swing:TwoHandedPolearm_Bracing">
@@ -7313,6 +7345,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_fine_steel_spear_blade_h1" name="{=ZcUNAfKT}Extra Long Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_4" length="72.558" weight="0.6168" excluded_item_usage_features="swing">
@@ -7324,6 +7357,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_fine_steel_spear_blade_h2" name="{=ZcUNAfKT}Extra Long Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_4" length="72.558" weight="0.6168" excluded_item_usage_features="swing">
@@ -7335,6 +7369,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_fine_steel_spear_blade_h3" name="{=ZcUNAfKT}Extra Long Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_4" length="72.558" weight="0.6168" excluded_item_usage_features="swing">
@@ -7346,6 +7381,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_long_fine_steel_spear_blade_h0" name="{=ZcUNAfKT}Extra Long Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_4" length="72.558" weight="0.6168" excluded_item_usage_features="swing">
@@ -7357,6 +7393,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_long_fine_steel_spear_blade_h1" name="{=ZcUNAfKT}Extra Long Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_4" length="72.558" weight="0.6168" excluded_item_usage_features="swing">
@@ -7368,6 +7405,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_long_fine_steel_spear_blade_h2" name="{=ZcUNAfKT}Extra Long Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_4" length="72.558" weight="0.6168" excluded_item_usage_features="swing">
@@ -7379,6 +7417,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_long_fine_steel_spear_blade_h3" name="{=ZcUNAfKT}Extra Long Fine Steel Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_4" length="72.558" weight="0.6168" excluded_item_usage_features="swing">
@@ -7390,6 +7429,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_reinforced_highland_spear_blade_h0" name="{=CdBAvJdP}Kontos Head" tier="3" piece_type="Blade" mesh="spear_blade_8" length="60.153" weight="0.7" excluded_item_usage_features="swing">
@@ -7401,6 +7441,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_reinforced_highland_spear_blade_h1" name="{=CdBAvJdP}Kontos Head" tier="3" piece_type="Blade" mesh="spear_blade_8" length="60.153" weight="0.7" excluded_item_usage_features="swing">
@@ -7412,6 +7453,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_reinforced_highland_spear_blade_h2" name="{=CdBAvJdP}Kontos Head" tier="3" piece_type="Blade" mesh="spear_blade_8" length="60.153" weight="0.7" excluded_item_usage_features="swing">
@@ -7423,6 +7465,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_reinforced_highland_spear_blade_h3" name="{=CdBAvJdP}Kontos Head" tier="3" piece_type="Blade" mesh="spear_blade_8" length="60.153" weight="0.7" excluded_item_usage_features="swing">
@@ -7434,6 +7477,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_tall_tipped_long_spear_blade_h0" name="{=CdBAvJdP}Kontos Head" tier="3" piece_type="Blade" mesh="spear_blade_8" length="60.153" weight="0.7">
@@ -9885,6 +9929,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -9898,6 +9943,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -9911,6 +9957,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -9924,6 +9971,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -24947,6 +24995,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_awlpike_blade_h1" name="{=}Awlpike Blade" tier="4" piece_type="Blade" mesh="awlpike_blade" length="85.8" weight="0.4">
@@ -24959,6 +25008,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_awlpike_blade_h2" name="{=}Awlpike Blade" tier="4" piece_type="Blade" mesh="awlpike_blade" length="85.8" weight="0.4">
@@ -24971,6 +25021,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_awlpike_blade_h3" name="{=}Awlpike Blade" tier="4" piece_type="Blade" mesh="awlpike_blade" length="85.8" weight="0.35">
@@ -24983,6 +25034,7 @@
     </Materials>
     <Flags>
       <Flag name="CanDismount" />
+      <Flag name="CanHook" />
     </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_awlpike_handle_h0" name="{=}Awlpike Handle" tier="4" piece_type="Handle" mesh="awlpike_handle" length="160" weight="1.9" is_default="true">
@@ -32865,6 +32917,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
       <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
@@ -32879,6 +32932,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
       <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
@@ -32893,6 +32947,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
       <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
@@ -32907,6 +32962,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
       <Flag name="CanKnockDown" />
     </Flags>
     <Materials>
@@ -32960,6 +33016,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
       <Flag name="CanKnockDown" />
       <Flag name="CanCrushThrough" />
     </Flags>
@@ -32974,6 +33031,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
       <Flag name="CanKnockDown" />
       <Flag name="CanCrushThrough" />
     </Flags>
@@ -32988,6 +33046,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
       <Flag name="CanKnockDown" />
       <Flag name="CanCrushThrough" />
     </Flags>
@@ -33002,6 +33061,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
       <Flag name="CanKnockDown" />
       <Flag name="CanCrushThrough" />
     </Flags>
@@ -33057,6 +33117,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -33070,6 +33131,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -33083,6 +33145,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -33096,6 +33159,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanHook" type="WeaponFlags" />
+      <Flag name="CanDismount" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
