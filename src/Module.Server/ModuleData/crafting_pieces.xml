@@ -7804,7 +7804,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-    <CraftingPiece id="crpg_billhook_handle_h0" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.2" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
+  <CraftingPiece id="crpg_billhook_handle_h0" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.2" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
     <BuildData piece_offset="19.4" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -7847,7 +7847,6 @@
     <Flags>
       <Flag name="CanHook" />
       <Flag name="CanDismount" />
-      
     </Flags>
     <Materials>
       <Material id="Iron2" count="1" />
@@ -33297,7 +33296,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
-      <Flag name="CanHook"/>
+      <Flag name="CanHook" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -33311,7 +33310,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
-      <Flag name="CanHook"/>
+      <Flag name="CanHook" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -33325,7 +33324,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
-      <Flag name="CanHook"/>
+      <Flag name="CanHook" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
@@ -33339,7 +33338,7 @@
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="CanDismount" />
-      <Flag name="CanHook"/>
+      <Flag name="CanHook" />
     </Flags>
     <Materials>
       <Material id="Iron4" count="2" />
