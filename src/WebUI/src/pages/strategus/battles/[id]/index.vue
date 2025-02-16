@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Battle, BattleFighter, BattleMercenary } from '~/models/strategus/battle'
+import type { Battle, BattleFighter, BattleMercenary, BattleMercenaryApplicationCreation } from '~/models/strategus/battle'
 
 import { useBattleFighters } from '~/composables/strategus/use-battle-fighters'
 import { useBattleFighterApplications } from '~/composables/strategus/use-battle-fighters-applications'
@@ -13,7 +13,7 @@ import { useSearchDebounced } from '~/composables/use-search-debounce'
 import { Culture } from '~/models/culture'
 import { BattlePhase, BattleSide } from '~/models/strategus/battle'
 import { itemCultureToIcon } from '~/services/item-service' // TODO: culture service
-import { canManageApplicationsValidate, getBattleFighter, getBattles } from '~/services/strategus-service/battle-service'
+import { getBattleFighter, getBattles } from '~/services/strategus-service/battle-service'
 import { settlementIconByType } from '~/services/strategus-service/settlement'
 import { useUserStore } from '~/stores/user'
 
@@ -38,13 +38,33 @@ const route = useRoute()
 const router = useRouter()
 const userStore = useUserStore()
 
-const { mercenaryApplicationsCount, loadBattleMercenaryApplications } = useBattleMercenaryApplications()
+const { mercenaryApplicationsCount, mercenaryApplications, loadBattleMercenaryApplications } = useBattleMercenaryApplications()
 const { fighterApplicationsCount, loadBattleFighterApplications } = useBattleFighterApplications()
 
 const { battle, battleId, loadBattle } = useBattle(props.id)
 
 const isSelfUser = (row: BattleFighter) => row.party?.user.id === userStore.user?.id
 const selfFighter = computed(() => getBattleFighter(battleFighters.value, userStore.user!.id))
+
+const hasAppliedAsMercenary = computed(() =>
+  myMercenaryApplication.value != null,
+)
+
+const myApp = computed(() =>
+  mercenaryApplications.value.find(app => app.user.id === userStore.user?.id),
+)
+
+const myMercenaryApplication = computed(() => {
+  if (myApp.value != null) {
+    return {
+      characterId: myApp.value?.character.id,
+      side: myApp.value?.side,
+      wage: myApp.value?.wage,
+      note: myApp.value?.note,
+    } as Omit<BattleMercenaryApplicationCreation, 'userId'>
+  }
+  else { return undefined }
+})
 
 const canManageApplications = computed(() =>
   selfFighter.value !== null,
@@ -55,11 +75,15 @@ const canManageBattle = computed(() =>
 )
 
 const canJoinAsMercenary = computed(() =>
-  selfFighter.value == null && battle.value?.phase === BattlePhase.Hiring,
+  selfFighter.value == null && battle.value?.phase === BattlePhase.Hiring && battleMercenaries.value.length === 0,
 )
 
 const applicationsCount = computed(() =>
   fighterApplicationsCount.value + mercenaryApplicationsCount.value,
+)
+
+const hasOptions = computed(() =>
+  canManageApplications.value || canManageBattle.value || canJoinAsMercenary.value,
 )
 
 const rowClass = (row: BattleFighter): string =>
@@ -87,6 +111,9 @@ const fetchPageData = async (battleId: number) => {
 }
 
 await fetchPageData(Number(props.id))
+if (userStore.characters.length === 0) {
+  await userStore.fetchCharacters()
+}
 </script>
 
 <template>
@@ -116,7 +143,7 @@ await fetchPageData(Number(props.id))
         <div class="mx-auto mb-16 flex max-w-7xl flex-row gap-x-5">
           <div class="basis-1/4 text-content-100">
             <h1 class="mb-8 text-center text-xl">
-              {{ $t('strategus.battle.attackers') }}
+              {{ $t('strategus.battle.side.attackers') }}
             </h1>
             <div class="flex items-center gap-1 pb-4">
               <UserMedia
@@ -162,7 +189,7 @@ await fetchPageData(Number(props.id))
                 <span
                   class="text-content-200"
                 >
-                  {{ $t(`strategus.battle.phase.${battle.phase}`) }}
+                  {{ $t(`strategus.battle.phase.${battle.phase.toLowerCase()}`) }}
                 </span>
               </div>
 
@@ -244,17 +271,23 @@ await fetchPageData(Number(props.id))
               <Divider />
             </div>
 
-            <div class="mb-20 flex items-center justify-center gap-3">
-              <OButton
-                v-if="canJoinAsMercenary"
-                tag="router-link"
-                :to="{ name: '', params: { id: battleId } }"
-                variant="primary"
-                outlined
-                size="xl"
+            <div v-if="hasOptions" class="mb-20 flex items-center justify-center gap-3">
+              <BattleMercenaryApplicationForm
+                :application="myMercenaryApplication"
+                :battle="battle"
+                :update="hasAppliedAsMercenary"
+                @update="loadBattleMercenaryApplications(0, { id: battleId })"
               >
-                {{ $t('strategus.battle.application.mercenary.title') }}
-              </OButton>
+                <OButton
+                  v-if="canJoinAsMercenary"
+                  variant="primary"
+                  outlined
+                  size="xl"
+                >
+                  {{ hasAppliedAsMercenary ? $t('strategus.battle.application.update.title') : $t('strategus.battle.application.mercenary.title') }}
+                </OButton>
+              </BattleMercenaryApplicationForm>
+
               <template v-if="canManageApplications">
                 <OButton
                   v-if="canManageApplications"
@@ -341,7 +374,7 @@ await fetchPageData(Number(props.id))
           </div>
           <div class="basis-1/4 text-right text-content-100">
             <h1 class="mb-8 text-center text-xl">
-              {{ $t('strategus.battle.defenders') }}
+              {{ $t('strategus.battle.side.defenders') }}
             </h1>
             <div v-if="defenderCommander" class="flex items-center gap-1 pb-4">
               <UserMedia

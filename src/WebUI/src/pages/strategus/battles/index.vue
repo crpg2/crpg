@@ -68,7 +68,11 @@ await loadBattles()
     <div class="mx-auto max-w-6xl py-8 md:py-16">
       <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
         <OTabs v-model="regionModel" content-class="hidden">
-          <OTabItem v-for="region in regions" :label="$t(`region.${region}`, 0)" :value="region" />
+          <OTabItem
+            v-for="region in regions" :key="region"
+            :label="$t(`region.${region}`, 0)"
+            :value="region"
+          />
         </OTabs>
 
         <div class="flex items-center gap-2">
@@ -119,7 +123,7 @@ await loadBattles()
           :label="$t('strategus.battle.table.column.phase')"
           :width="30"
         >
-          {{ $t(`strategus.battle.phase.${battle.phase}`) }}
+          {{ $t(`strategus.battle.phase.${battle.phase.toLowerCase()}`) }}
         </OTableColumn>
 
         <OTableColumn

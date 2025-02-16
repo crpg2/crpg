@@ -59,6 +59,7 @@ export interface BattleFighterApplication {
 }
 
 export interface BattleMercenary {
+  id: number
   user: UserPublic
   character: Character
   captain: BattleFighter
@@ -75,8 +76,16 @@ export interface BattleMercenaryApplication {
   id: number
   user: UserPublic
   character: Character
-  battleSide: BattleSide
+  side: BattleSide
   wage: number
   note: string
   status: BattleMercenaryApplicationStatus
+}
+
+export interface BattleMercenaryApplicationCreation {
+  userId: number
+  characterId: number
+  side: BattleSide
+  wage: number
+  note: string
 }

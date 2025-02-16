@@ -148,6 +148,22 @@ public class BattlesController : BaseController
     }
 
     /// <summary>
+    /// Remove mercenary application.
+    /// </summary>
+    /// <param name="battleId">Battle id.</param>
+    /// <response code="204">Removed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/mercenary-applications")]
+    public Task<ActionResult> RemoveMercenaryApplication([FromRoute] int battleId)
+    {
+        return ResultToActionAsync(Mediator.Send(new RemoveBattleMercenaryApplicationCommand
+        {
+            UserId = CurrentUser.User!.Id,
+            BattleId = battleId,
+        }, CancellationToken.None));
+    }
+
+    /// <summary>
     /// Accept/Decline battle mercenary application.
     /// </summary>
     /// <response code="200">Ok.</response>
@@ -161,13 +177,14 @@ public class BattlesController : BaseController
     }
 
     /// <summary>
-    /// Kick a clan member of leave a clan.
+    /// Remove a mercenary from a battle.
     /// </summary>
-    /// <returns>The created clan.</returns>
-    /// <response code="204">Kicked or left.</response>
+    /// <param name="battleId">Battle id.</param>
+    /// <param name="mercenaryId">Mercenary id.</param>
+    /// <response code="204">Removed.</response>
     /// <response code="400">Bad Request.</response>
-    [HttpDelete("{battleId}/mercenaries/{userId}")]
-    public Task<ActionResult> RemoveMercenary(int battleId, int mercenaryId)
+    [HttpDelete("{battleId}/mercenaries/{mercenaryId}")]
+    public Task<ActionResult> RemoveMercenary([FromRoute] int battleId, [FromRoute] int mercenaryId)
     {
         return ResultToActionAsync(Mediator.Send(new RemoveBattleMercenaryCommand
         {

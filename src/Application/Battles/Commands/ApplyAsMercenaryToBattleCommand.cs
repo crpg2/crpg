@@ -104,7 +104,7 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
                 Logger.LogInformation("User '{0}' applied as a mercenary to battle '{1}' with character '{2}'",
                     character.UserId, battle.Id, character.Id);
             }
-
+            // todo: should update existing application if pending
             return new(new BattleMercenaryApplicationViewModel
             {
                 Id = application.Id,

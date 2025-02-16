@@ -2092,6 +2092,14 @@ public record SeedDataCommand : IMediatorRequest
                     new BattleFighter { Party = drexxParty, Side = BattleSide.Defender, Commander = true },
                     new BattleFighter { Party = hannibaruParty, Side = BattleSide.Defender, Commander = false },
                 },
+                Mercenaries =
+                {
+                    new BattleMercenary
+                    {
+                    Side = BattleSide.Attacker,
+                    Character = droobCharacter0,
+                    },
+                },
                 FighterApplications =
                 {
                     new BattleFighterApplication
@@ -2157,7 +2165,7 @@ public record SeedDataCommand : IMediatorRequest
             };
             Battle leblenionBattle = new()
             {
-                Phase = BattlePhase.Hiring,
+                Phase = BattlePhase.Scheduled,
                 Region = Region.Eu,
                 Position = leblenion.Position,
                 Fighters =
@@ -2176,25 +2184,27 @@ public record SeedDataCommand : IMediatorRequest
                         Commander = true,
                     },
                 },
-                MercenaryApplications =
+                Mercenaries =
                 {
-                    new BattleMercenaryApplication
+                    new BattleMercenary
                     {
-                        Character = falcomCharacter0,
-                        Side = BattleSide.Attacker,
-                        Status = BattleMercenaryApplicationStatus.Pending,
+                    Side = BattleSide.Attacker,
+                    Character = kadseCharacter0,
                     },
-                    new BattleMercenaryApplication
+                    new BattleMercenary
                     {
-                        Character = victorhh888Character0,
-                        Side = BattleSide.Defender,
-                        Status = BattleMercenaryApplicationStatus.Pending,
+                    Side = BattleSide.Defender,
+                    Character = takeoCharacter0,
                     },
-                    new BattleMercenaryApplication
+                    new BattleMercenary
                     {
-                        Character = sellkaCharacter0,
-                        Side = BattleSide.Defender,
-                        Status = BattleMercenaryApplicationStatus.Pending,
+                    Side = BattleSide.Attacker,
+                    Character = namidakaCharacter0,
+                    },
+                    new BattleMercenary
+                    {
+                    Side = BattleSide.Defender,
+                    Character = krogCharacter0,
                     },
                 },
                 ScheduledFor = DateTime.UtcNow.AddHours(10),

@@ -11,6 +11,8 @@ internal interface IBattleService
 {
     Task<Result<BattleFighter>> GetBattleFighter(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken);
     Task<Result<BattleMercenary>> GetBattleMercenary(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken);
+    Task<Result<BattleMercenaryApplication>> GetBattleMercenaryApplication(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken);
+
 }
 
 internal class BattleService : IBattleService
@@ -71,5 +73,33 @@ internal class BattleService : IBattleService
         }
 
         return new(mercenary);
+    }
+
+    public async Task<Result<BattleMercenaryApplication>> GetBattleMercenaryApplication(ICrpgDbContext db, int userId, int battleId, CancellationToken cancellationToken)
+    {
+        var user = await db.Users
+            .FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
+
+        if (user == null)
+        {
+            return new(CommonErrors.UserNotFound(userId));
+        }
+
+        var battle = await db.Battles
+            .FirstOrDefaultAsync(b => b.Id == battleId, cancellationToken);
+
+        if (battle == null)
+        {
+            return new(CommonErrors.BattleNotFound(battleId));
+        }
+
+        var mercenaryApplication = await db.BattleMercenaryApplications
+            .FirstOrDefaultAsync(u => u.Character!.UserId == userId, cancellationToken);
+        if (mercenaryApplication == null)
+        {
+            return new(CommonErrors.ApplicationNotFound(userId));
+        }
+
+        return new(mercenaryApplication);
     }
 }

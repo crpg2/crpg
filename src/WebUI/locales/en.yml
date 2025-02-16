@@ -163,6 +163,8 @@ action:
   copied: Copied
   start: Start
   ok: Ok
+  remove: Remove
+  update: Update
 
 login:
   label: Login with
@@ -1487,6 +1489,8 @@ strategus:
     hint: 'If this doesn''t seem right you can try re-login or contact an administrator'
   battle:
     application:
+      update:
+        title: Update Application
       page:
         title: Manage Applications
       table:
@@ -1500,16 +1504,31 @@ strategus:
       manage: Manage Applications
       mercenary:
         title: Apply as Mercenary
-    attackers: Attackers
-    defenders: Defenders
+      wage: Requested Wage
+      note: Note
+    side:
+      title: Side
+      attackers: Attackers
+      attacker: Attacker
+      defenders: Defenders
+      defender: Defender
     fighter: Fighters
     manage:
       title: Battle Management
-    mercenary: Mercenaries
+    mercenary:
+      title: Mercenaries
+      remove:
+        confirm: Are you sure you would like to remove this mercenary?
     settlement:
       title: Siege of {settlement}
     party:
       title: Battle of {nearestSettlement} {terrain}
+    phase:
+      hiring: Hiring
+      scheduled: Scheduled
+      live: Live
+      preparation: Preparation
+      end: End
     table:
       column:
         when: When

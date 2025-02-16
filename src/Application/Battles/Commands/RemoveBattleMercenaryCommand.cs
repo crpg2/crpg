@@ -47,8 +47,9 @@ public record RemoveBattleMercenaryCommand : IMediatorRequest
             }
 
             var fighterRes = await _battleService.GetBattleFighter(_db, req.UserId, req.BattleId, cancellationToken);
+            var mercenaryRes = await _battleService.GetBattleMercenary(_db, req.UserId, req.BattleId, cancellationToken);
 
-            if (fighterRes.Errors != null)
+            if (fighterRes.Errors != null && mercenaryRes?.Data?.Id != mercenary.Id )
             {
                 return new Result(fighterRes.Errors);
             }

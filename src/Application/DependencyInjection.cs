@@ -30,6 +30,7 @@ public static class DependencyInjection
             .AddSingleton<IUserService, UserService>()
             .AddSingleton<ICompetitiveRatingModel, CompetitiveRatingModel>()
             .AddSingleton<IItemService, ItemService>()
+            .AddSingleton<IBattleService, BattleService>()
             .AddSingleton<IClanService, ClanService>()
             .AddSingleton<IGameModeService, GameModeService>()
             .AddSingleton<IActivityLogService, ActivityLogService>()

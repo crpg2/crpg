@@ -141,7 +141,6 @@ if (userStore.characters.length === 0) {
                   @update:model-value="(val: boolean) => onActivateCharacter(char.id, val)"
                 />
               </DropdownItem>
-
               <DropdownItem
                 class="text-primary hover:text-primary-hover"
                 @click="
