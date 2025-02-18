@@ -6482,10 +6482,6 @@
       <AvailablePiece id="crpg_runic_axe_handle_h1" />
       <AvailablePiece id="crpg_runic_axe_handle_h2" />
       <AvailablePiece id="crpg_runic_axe_handle_h3" />
-      <AvailablePiece id="crpg_tribesman_throwing_axe_handle_h0" />
-      <AvailablePiece id="crpg_tribesman_throwing_axe_handle_h1" />
-      <AvailablePiece id="crpg_tribesman_throwing_axe_handle_h2" />
-      <AvailablePiece id="crpg_tribesman_throwing_axe_handle_h3" />
       <AvailablePiece id="crpg_highland_throwing_axe_handle_h0" />
       <AvailablePiece id="crpg_highland_throwing_axe_handle_h1" />
       <AvailablePiece id="crpg_highland_throwing_axe_handle_h2" />
@@ -6506,10 +6502,6 @@
       <AvailablePiece id="crpg_francesca_blade_h1" />
       <AvailablePiece id="crpg_francesca_blade_h2" />
       <AvailablePiece id="crpg_francesca_blade_h3" />
-      <AvailablePiece id="crpg_tribesman_throwing_axe_blade_h0" />
-      <AvailablePiece id="crpg_tribesman_throwing_axe_blade_h1" />
-      <AvailablePiece id="crpg_tribesman_throwing_axe_blade_h2" />
-      <AvailablePiece id="crpg_tribesman_throwing_axe_blade_h3" />
       <AvailablePiece id="crpg_highland_throwing_axe_blade_h0" />
       <AvailablePiece id="crpg_highland_throwing_axe_blade_h1" />
       <AvailablePiece id="crpg_highland_throwing_axe_blade_h2" />
@@ -7202,6 +7194,14 @@
       <AvailablePiece id="crpg_ringduva_fightingaxe_handle_h1" />
       <AvailablePiece id="crpg_ringduva_fightingaxe_handle_h2" />
       <AvailablePiece id="crpg_ringduva_fightingaxe_handle_h3" />
+      <AvailablePiece id="crpg_tribesman_throwing_axe_melee_blade_h0" />
+      <AvailablePiece id="crpg_tribesman_throwing_axe_melee_blade_h1" />
+      <AvailablePiece id="crpg_tribesman_throwing_axe_melee_blade_h2" />
+      <AvailablePiece id="crpg_tribesman_throwing_axe_melee_blade_h3" />
+      <AvailablePiece id="crpg_tribesman_throwing_axe_melee_handle_h0" />
+      <AvailablePiece id="crpg_tribesman_throwing_axe_melee_handle_h1" />
+      <AvailablePiece id="crpg_tribesman_throwing_axe_melee_handle_h2" />
+      <AvailablePiece id="crpg_tribesman_throwing_axe_melee_handle_h3" />
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_OneHandedBastardAxe" weapon_class="OneHandedAxe" item_usage_features="onehanded:rshield:axe">
@@ -8739,6 +8739,22 @@
       <AvailablePiece id="crpg_tall_tipped_war_spear_handle_h1" />
       <AvailablePiece id="crpg_tall_tipped_war_spear_handle_h2" />
       <AvailablePiece id="crpg_tall_tipped_war_spear_handle_h3" />
+      <AvailablePiece id="crpg_pilum_blade_melee_h0" />
+      <AvailablePiece id="crpg_pilum_blade_melee_h1" />
+      <AvailablePiece id="crpg_pilum_blade_melee_h2" />
+      <AvailablePiece id="crpg_pilum_blade_melee_h3" />
+      <AvailablePiece id="crpg_pilum_guard_melee_h0" />
+      <AvailablePiece id="crpg_pilum_guard_melee_h1" />
+      <AvailablePiece id="crpg_pilum_guard_melee_h2" />
+      <AvailablePiece id="crpg_pilum_guard_melee_h3" />
+      <AvailablePiece id="crpg_pilum_handle_melee_h0" />
+      <AvailablePiece id="crpg_pilum_handle_melee_h1" />
+      <AvailablePiece id="crpg_pilum_handle_melee_h2" />
+      <AvailablePiece id="crpg_pilum_handle_melee_h3" />
+      <AvailablePiece id="crpg_pilum_pommel_melee_h0" />
+      <AvailablePiece id="crpg_pilum_pommel_melee_h1" />
+      <AvailablePiece id="crpg_pilum_pommel_melee_h2" />
+      <AvailablePiece id="crpg_pilum_pommel_melee_h3" />
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_OneHandedPolearm_JavelinAlternative" weapon_class="OneHandedPolearm" item_usage_features="onehanded_polearm:block:shield:thrust">
@@ -8879,22 +8895,6 @@
       <AvailablePiece id="crpg_harpoon_pommel_h1" />
       <AvailablePiece id="crpg_harpoon_pommel_h2" />
       <AvailablePiece id="crpg_harpoon_pommel_h3" />
-      <AvailablePiece id="crpg_pilum_blade_h0" />
-      <AvailablePiece id="crpg_pilum_blade_h1" />
-      <AvailablePiece id="crpg_pilum_blade_h2" />
-      <AvailablePiece id="crpg_pilum_blade_h3" />
-      <AvailablePiece id="crpg_pilum_guard_h0" />
-      <AvailablePiece id="crpg_pilum_guard_h1" />
-      <AvailablePiece id="crpg_pilum_guard_h2" />
-      <AvailablePiece id="crpg_pilum_guard_h3" />
-      <AvailablePiece id="crpg_pilum_handle_h0" />
-      <AvailablePiece id="crpg_pilum_handle_h1" />
-      <AvailablePiece id="crpg_pilum_handle_h2" />
-      <AvailablePiece id="crpg_pilum_handle_h3" />
-      <AvailablePiece id="crpg_pilum_pommel_h0" />
-      <AvailablePiece id="crpg_pilum_pommel_h1" />
-      <AvailablePiece id="crpg_pilum_pommel_h2" />
-      <AvailablePiece id="crpg_pilum_pommel_h3" />
       <AvailablePiece id="crpg_glaive_pommel_h0" />
       <AvailablePiece id="crpg_glaive_pommel_h1" />
       <AvailablePiece id="crpg_glaive_pommel_h2" />
@@ -10443,6 +10443,22 @@
       <AvailablePiece id="crpg_steel_tipped_hooked_spear_pommel_h1" />
       <AvailablePiece id="crpg_steel_tipped_hooked_spear_pommel_h2" />
       <AvailablePiece id="crpg_steel_tipped_hooked_spear_pommel_h3" />
+      <AvailablePiece id="crpg_pilum_blade_melee_h0" />
+      <AvailablePiece id="crpg_pilum_blade_melee_h1" />
+      <AvailablePiece id="crpg_pilum_blade_melee_h2" />
+      <AvailablePiece id="crpg_pilum_blade_melee_h3" />
+      <AvailablePiece id="crpg_pilum_guard_melee_h0" />
+      <AvailablePiece id="crpg_pilum_guard_melee_h1" />
+      <AvailablePiece id="crpg_pilum_guard_melee_h2" />
+      <AvailablePiece id="crpg_pilum_guard_melee_h3" />
+      <AvailablePiece id="crpg_pilum_handle_melee_h0" />
+      <AvailablePiece id="crpg_pilum_handle_melee_h1" />
+      <AvailablePiece id="crpg_pilum_handle_melee_h2" />
+      <AvailablePiece id="crpg_pilum_handle_melee_h3" />
+      <AvailablePiece id="crpg_pilum_pommel_melee_h0" />
+      <AvailablePiece id="crpg_pilum_pommel_melee_h1" />
+      <AvailablePiece id="crpg_pilum_pommel_melee_h2" />
+      <AvailablePiece id="crpg_pilum_pommel_melee_h3" />
     </AvailablePieces>
   </WeaponDescription>
   <WeaponDescription id="crpg_TwoHandedPolearm_Couchable" weapon_class="TwoHandedPolearm" item_usage_features="polearm:couch">
@@ -12363,18 +12379,6 @@
       <AvailablePiece id="crpg_short_militia_spear_blade_h1" />
       <AvailablePiece id="crpg_short_militia_spear_blade_h2" />
       <AvailablePiece id="crpg_short_militia_spear_blade_h3" />
-      <AvailablePiece id="crpg_pilum_blade_h0" />
-      <AvailablePiece id="crpg_pilum_blade_h1" />
-      <AvailablePiece id="crpg_pilum_blade_h2" />
-      <AvailablePiece id="crpg_pilum_blade_h3" />
-      <AvailablePiece id="crpg_pilum_guard_h0" />
-      <AvailablePiece id="crpg_pilum_guard_h1" />
-      <AvailablePiece id="crpg_pilum_guard_h2" />
-      <AvailablePiece id="crpg_pilum_guard_h3" />
-      <AvailablePiece id="crpg_pilum_pommel_h0" />
-      <AvailablePiece id="crpg_pilum_pommel_h1" />
-      <AvailablePiece id="crpg_pilum_pommel_h2" />
-      <AvailablePiece id="crpg_pilum_pommel_h3" />
       <AvailablePiece id="crpg_decorated_steppe_lance_blade_h0" />
       <AvailablePiece id="crpg_decorated_steppe_lance_blade_h1" />
       <AvailablePiece id="crpg_decorated_steppe_lance_blade_h2" />

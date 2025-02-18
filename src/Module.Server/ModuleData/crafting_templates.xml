@@ -5779,6 +5779,14 @@
       <UsablePiece piece_id="crpg_ringduva_fightingaxe_handle_h1" />
       <UsablePiece piece_id="crpg_ringduva_fightingaxe_handle_h2" />
       <UsablePiece piece_id="crpg_ringduva_fightingaxe_handle_h3" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_blade_h0" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_blade_h1" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_blade_h2" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_blade_h3" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_handle_h0" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_handle_h1" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_handle_h2" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_handle_h3" />
     </UsablePieces>
   </CraftingTemplate>
   <CraftingTemplate id="crpg_TwoHandedAxe" item_type="TwoHandedWeapon" modifier_group="axe" item_holsters="axe_back:axe_back_2:axe_back_3:axe_back_4" default_item_holster_position_offset="0,0,-0.65" use_weapon_as_holster_mesh="true">
@@ -7194,18 +7202,6 @@
       <UsablePiece piece_id="crpg_short_militia_spear_handle_h1" />
       <UsablePiece piece_id="crpg_short_militia_spear_handle_h2" />
       <UsablePiece piece_id="crpg_short_militia_spear_handle_h3" />
-      <UsablePiece piece_id="crpg_pilum_blade_h0" />
-      <UsablePiece piece_id="crpg_pilum_blade_h1" />
-      <UsablePiece piece_id="crpg_pilum_blade_h2" />
-      <UsablePiece piece_id="crpg_pilum_blade_h3" />
-      <UsablePiece piece_id="crpg_pilum_guard_h0" />
-      <UsablePiece piece_id="crpg_pilum_guard_h1" />
-      <UsablePiece piece_id="crpg_pilum_guard_h2" />
-      <UsablePiece piece_id="crpg_pilum_guard_h3" />
-      <UsablePiece piece_id="crpg_pilum_pommel_h0" />
-      <UsablePiece piece_id="crpg_pilum_pommel_h1" />
-      <UsablePiece piece_id="crpg_pilum_pommel_h2" />
-      <UsablePiece piece_id="crpg_pilum_pommel_h3" />
       <UsablePiece piece_id="crpg_decorated_steppe_lance_blade_h0" />
       <UsablePiece piece_id="crpg_decorated_steppe_lance_blade_h1" />
       <UsablePiece piece_id="crpg_decorated_steppe_lance_blade_h2" />
@@ -7978,6 +7974,22 @@
       <UsablePiece piece_id="crpg_knob_headed_spear_handle_h1" />
       <UsablePiece piece_id="crpg_knob_headed_spear_handle_h2" />
       <UsablePiece piece_id="crpg_knob_headed_spear_handle_h3" />
+      <UsablePiece piece_id="crpg_pilum_blade_melee_h0" />
+      <UsablePiece piece_id="crpg_pilum_blade_melee_h1" />
+      <UsablePiece piece_id="crpg_pilum_blade_melee_h2" />
+      <UsablePiece piece_id="crpg_pilum_blade_melee_h3" />
+      <UsablePiece piece_id="crpg_pilum_guard_melee_h0" />
+      <UsablePiece piece_id="crpg_pilum_guard_melee_h1" />
+      <UsablePiece piece_id="crpg_pilum_guard_melee_h2" />
+      <UsablePiece piece_id="crpg_pilum_guard_melee_h3" />
+      <UsablePiece piece_id="crpg_pilum_handle_melee_h0" />
+      <UsablePiece piece_id="crpg_pilum_handle_melee_h1" />
+      <UsablePiece piece_id="crpg_pilum_handle_melee_h2" />
+      <UsablePiece piece_id="crpg_pilum_handle_melee_h3" />
+      <UsablePiece piece_id="crpg_pilum_pommel_melee_h0" />
+      <UsablePiece piece_id="crpg_pilum_pommel_melee_h1" />
+      <UsablePiece piece_id="crpg_pilum_pommel_melee_h2" />
+      <UsablePiece piece_id="crpg_pilum_pommel_melee_h3" />
     </UsablePieces>
   </CraftingTemplate>
   <CraftingTemplate id="crpg_Pike" item_type="Polearm" modifier_group="polearm" item_holsters="polearm_back:polearm_back_2:polearm_back_3:polearm_back_4" default_item_holster_position_offset="0,0,-0.30" use_weapon_as_holster_mesh="true">

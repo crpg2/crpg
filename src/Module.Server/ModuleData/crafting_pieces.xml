@@ -9255,7 +9255,7 @@
   <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.52" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.27" />
+      <Swing damage_type="Cut" damage_factor="1.26" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -36687,5 +36687,181 @@
   <CraftingPiece id="crpg_war_darts_pommel_h2" name="{=koX9okuG}War Darts Guard" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_war_darts_pommel_h3" name="{=koX9okuG}War Darts Guard" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tribesman_throwing_axe_melee_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="1.1" is_default="true">
+    <BuildData piece_offset="-2.966" />
+    <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="3" />
+    </Materials>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tribesman_throwing_axe_melee_blade_h1" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="1.1" is_default="true">
+    <BuildData piece_offset="-2.966" />
+    <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="3" />
+    </Materials>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tribesman_throwing_axe_melee_blade_h2" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="1.1" is_default="true">
+    <BuildData piece_offset="-2.966" />
+    <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="3" />
+    </Materials>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tribesman_throwing_axe_melee_blade_h3" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="1.1" is_default="true">
+    <BuildData piece_offset="-2.966" />
+    <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Cut" damage_factor="3.9" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="3" />
+    </Materials>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tribesman_throwing_axe_melee_handle_h0" name="{=Wkhv9ESv}Hardened Oaken Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_12_handle" length="70" weight="1.3">
+    <BuildData piece_offset="8.175" next_piece_offset="4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tribesman_throwing_axe_melee_handle_h1" name="{=Wkhv9ESv}Hardened Oaken Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_12_handle" length="70" weight="1.3">
+    <BuildData piece_offset="8.175" next_piece_offset="4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tribesman_throwing_axe_melee_handle_h2" name="{=Wkhv9ESv}Hardened Oaken Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_12_handle" length="70" weight="1.3">
+    <BuildData piece_offset="8.175" next_piece_offset="4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_tribesman_throwing_axe_melee_handle_h3" name="{=Wkhv9ESv}Hardened Oaken Throwing Axe Handle" tier="4" piece_type="Handle" mesh="axe_craft_12_handle" length="70" weight="1.3">
+    <BuildData piece_offset="8.175" next_piece_offset="4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_blade_melee_h0" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="1.0" excluded_item_usage_features="swing">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+    <Flags>
+      <Flag name="CanDismount" />
+      <Flag name="CanHook" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_blade_melee_h1" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="1.0" excluded_item_usage_features="swing">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+    <Flags>
+      <Flag name="CanDismount" />
+      <Flag name="CanHook" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_blade_melee_h2" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="1.0" excluded_item_usage_features="swing">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+    <Flags>
+      <Flag name="CanDismount" />
+      <Flag name="CanHook" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_blade_melee_h3" name="{=Y4tIQnS4}Short Simple Spear Head" tier="2" piece_type="Blade" mesh="pilum_blade" length="69.8" weight="1.0" excluded_item_usage_features="swing">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron2" count="1" />
+    </Materials>
+    <Flags>
+      <Flag name="CanDismount" />
+      <Flag name="CanHook" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_guard_melee_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_guard_melee_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_guard_melee_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_guard_melee_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_handle_melee_h0" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="pilum_handle" length="102" weight="1.3" excluded_item_usage_features="long" CraftingCost="80">
+    <BuildData piece_offset="0" previous_piece_offset="4.5" next_piece_offset="-4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_handle_melee_h1" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="pilum_handle" length="102" weight="1.3" excluded_item_usage_features="long" CraftingCost="80">
+    <BuildData piece_offset="0" previous_piece_offset="4.5" next_piece_offset="-4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_handle_melee_h2" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="pilum_handle" length="102" weight="1.3" excluded_item_usage_features="long" CraftingCost="80">
+    <BuildData piece_offset="0" previous_piece_offset="4.5" next_piece_offset="-4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_handle_melee_h3" name="{=gIm5Lnh8}Mahogany Javelin Shaft" tier="3" piece_type="Handle" mesh="pilum_handle" length="102" weight="1.3" excluded_item_usage_features="long" CraftingCost="80">
+    <BuildData piece_offset="0" previous_piece_offset="4.5" next_piece_offset="-4" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_pommel_melee_h0" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="pilum_pommel" culture="Culture.empire" length="10" weight="0">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_pommel_melee_h1" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="pilum_pommel" culture="Culture.empire" length="10" weight="0">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_pommel_melee_h2" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="pilum_pommel" culture="Culture.empire" length="10" weight="0">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pilum_pommel_melee_h3" name="{=E7cNp0rF}Riveted Spear Pommel" tier="4" piece_type="Pommel" mesh="pilum_pommel" culture="Culture.empire" length="10" weight="0">
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
   </CraftingPiece>
 </CraftingPieces>

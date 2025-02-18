@@ -2024,6 +2024,30 @@
       <Piece id="crpg_raider_throwing_axe_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_tribesman_throwing_axe_v3_h0" name="{=X31qND4N}Tribesman Throwing Axe" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe_throwing">
+    <Pieces>
+      <Piece id="crpg_tribesman_throwing_axe_melee_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_tribesman_throwing_axe_melee_handle_h0" Type="Handle" scale_factor="115" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_tribesman_throwing_axe_v3_h1" name="{=X31qND4N}Tribesman Throwing Axe +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe_throwing">
+    <Pieces>
+      <Piece id="crpg_tribesman_throwing_axe_melee_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_tribesman_throwing_axe_melee_handle_h1" Type="Handle" scale_factor="115" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_tribesman_throwing_axe_v3_h2" name="{=X31qND4N}Tribesman Throwing Axe +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe_throwing">
+    <Pieces>
+      <Piece id="crpg_tribesman_throwing_axe_melee_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_tribesman_throwing_axe_melee_handle_h2" Type="Handle" scale_factor="115" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_tribesman_throwing_axe_v3_h3" name="{=X31qND4N}Tribesman Throwing Axe +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="axe_throwing">
+    <Pieces>
+      <Piece id="crpg_tribesman_throwing_axe_melee_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_tribesman_throwing_axe_melee_handle_h3" Type="Handle" scale_factor="115" />
+    </Pieces>
+  </CraftedItem>
   <CraftedItem id="crpg_tribesman_throwing_axe_v3_h0" name="{=X31qND4N}Tribesman Throwing Axe" crafting_template="crpg_ThrowingAxe" culture="Culture.aserai" modifier_group="axe_throwing">
     <Pieces>
       <Piece id="crpg_tribesman_throwing_axe_blade_h0" Type="Blade" scale_factor="100" />
@@ -8886,6 +8910,38 @@
       <Piece id="crpg_wide_leaf_spear_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_wide_leaf_spear_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_wide_leaf_spear_pommel_h3" Type="Pommel" scale_factor="90" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_pilum_v6_h0" name="{=Diggles}Pilum Steel Throwing Spear" crafting_template="crpg_Spear4DMode" culture="Culture.empire" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_pilum_blade_melee_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_pilum_guard_melee_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_pilum_handle_melee_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_pilum_pommel_melee_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_pilum_v6_h1" name="{=Diggles}Pilum Steel Throwing Spear +1" crafting_template="crpg_Spear4DMode" culture="Culture.empire" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_pilum_blade_melee_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_pilum_guard_melee_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_pilum_handle_melee_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_pilum_pommel_melee_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_pilum_v6_h2" name="{=Diggles}Pilum Steel Throwing Spear +2" crafting_template="crpg_Spear4DMode" culture="Culture.empire" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_pilum_blade_melee_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_pilum_guard_melee_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_pilum_handle_melee_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_pilum_pommel_melee_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_pilum_v6_h3" name="{=Diggles}Pilum Steel Throwing Spear +3" crafting_template="crpg_Spear4DMode" culture="Culture.empire" modifier_group="polearm">
+    <Pieces>
+      <Piece id="crpg_pilum_blade_melee_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_pilum_guard_melee_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_pilum_handle_melee_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_pilum_pommel_melee_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_pilum_v6_h0" name="{=Diggles}Pilum Steel Throwing Spear" crafting_template="crpg_Javelin" culture="Culture.empire" modifier_group="polearm">
