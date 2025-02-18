@@ -36070,26 +36070,26 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_ibelinsword_blade_h0" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
       <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_ibelinsword_blade_h1" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
       <Swing damage_type="Cut" damage_factor="3.5" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_ibelinsword_blade_h2" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
       <Swing damage_type="Cut" damage_factor="3.6" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_ibelinsword_blade_h3" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="1.05">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
-      <Swing damage_type="Cut" damage_factor="3.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_ibelinsword_pommel_h0" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.03">
@@ -36128,16 +36128,16 @@
   <CraftingPiece id="crpg_ibelinsword_guard_h3" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.3">
     <BuildData next_piece_offset="1" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_handle_h0" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.2">
+  <CraftingPiece id="crpg_ibelinsword_handle_h0" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.4">
     <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_handle_h1" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.2">
+  <CraftingPiece id="crpg_ibelinsword_handle_h1" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.4">
     <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_handle_h2" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.2">
+  <CraftingPiece id="crpg_ibelinsword_handle_h2" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.4">
     <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_handle_h3" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.2">
+  <CraftingPiece id="crpg_ibelinsword_handle_h3" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.6">
     <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
   </CraftingPiece>
   <CraftingPiece id="crpg_ibelinsword_2h_blade_h0" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="0.8">
@@ -36160,29 +36160,29 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_ibelinsword_2h_blade_h3" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="0.7">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
-      <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Cut" damage_factor="4.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h0" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.74">
+  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h0" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.8">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h1" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.74">
+  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h1" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.8">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h2" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.74">
+  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h2" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.8">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h3" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.74">
+  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h3" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.8">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
