@@ -12,18 +12,10 @@ export const useBattleFighters = () => {
 
   const battleFightersCount = computed(() => battleFighters.value.length)
 
-  const battleFightersAttackers = computed(() =>
-    battleFighters.value.filter(fighter => fighter.side === BattleSide.Attacker && !fighter.commander))
-
-  const battleFightersDefenders = computed(() =>
-    battleFighters.value.filter(fighter => fighter.side === BattleSide.Defender && !fighter.commander))
-
   return {
     battleFightersLoading,
     battleFighters,
     battleFightersCount,
-    battleFightersAttackers,
-    battleFightersDefenders,
     loadBattleFighters,
   }
 }

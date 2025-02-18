@@ -1504,6 +1504,7 @@ strategus:
       manage: Manage Applications
       mercenary:
         title: Apply as Mercenary
+        resign: Resign as Mercenary
       wage: Requested Wage
       note: Note
     side:
@@ -1521,17 +1522,29 @@ strategus:
         confirm: Are you sure you would like to remove this mercenary?
     settlement:
       title: Siege of {settlement}
+    tooltip:
+      commander: Commander
+      phase: Current Phase
+      date: Start date
+      time: Start time
+      region: Region
+      fighters: Fighters
+      mercenaries: Mercenaries
+      troops: Troops
     party:
       title: Battle of {nearestSettlement} {terrain}
     phase:
       hiring: Hiring
       scheduled: Scheduled
+      title: Battle Phase
       live: Live
       preparation: Preparation
       end: End
     table:
       column:
-        when: When
+        attacker: Attacker
+        defender: Defender
+        when: Start Time
         phase: Current Phase
 
   movementType:
