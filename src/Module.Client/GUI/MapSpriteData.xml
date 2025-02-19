@@ -162,6 +162,7 @@
       <SpriteSheetSize ID="154" Width="1920" Height="1080" />
       <SpriteSheetSize ID="155" Width="1920" Height="1080" />
       <SpriteSheetSize ID="156" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="157" Width="1920" Height="1080" />
       <SpriteSheetSize ID="158" Width="1920" Height="1080" />
       <AlwaysLoad />
     </SpriteCategory>
@@ -1455,6 +1456,15 @@
       <CategoryName>ui_mploading</CategoryName>
     </SpritePart>
     <SpritePart>
+      <SheetID>157</SheetID>
+      <Name>crpg_dtv_isleofdismay</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
       <SheetID>158</SheetID>
       <Name>crpg_battle_purplehaze</Name>
       <Width>1920</Width>
@@ -2029,17 +2039,21 @@
       <Name>crpg_battle_nirvana</Name>
       <SpritePartName>crpg_battle_nirvana</SpritePartName>
     </GenericSprite>
- <GenericSprite>
+    <GenericSprite>
       <Name>crpg_battle_festival</Name>
       <SpritePartName>crpg_battle_festival</SpritePartName>
     </GenericSprite>
- <GenericSprite>
+    <GenericSprite>
       <Name>crpg_battle_ruins</Name>
       <SpritePartName>crpg_battle_ruins</SpritePartName>
     </GenericSprite>
     <GenericSprite>
       <Name>crpg_battle_purplehaze</Name>
       <SpritePartName>crpg_battle_purplehaze</SpritePartName>
+     </GenericSprite>
+    <GenericSprite>
+      <Name>crpg_dtv_isleofdismay</Name>
+      <SpritePartName>crpg_dtv_isleofdismay</SpritePartName>
     </GenericSprite>
   </Sprites>
 </SpriteData>
