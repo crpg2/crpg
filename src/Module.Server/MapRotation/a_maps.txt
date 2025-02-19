@@ -39,3 +39,6 @@ crpg_battle_banditvalley
 crpg_battle_vritannis
 crpg_battle_khamsin
 crpg_battle_westveen
+crpg_battle_festival
+crpg_battle_ruins
+crpg_battle_purplehaze
