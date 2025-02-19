@@ -70,7 +70,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
                 ("crpg_turban_v2_h0", ItemSlot.Head),
                 ("crpg_aserai_civil_e_v2_h0", ItemSlot.Body),
                 ("crpg_southern_moccasins_v2_h0", ItemSlot.Leg),
-                ("crpg_hoe_v2_h0", ItemSlot.Weapon0),
+                ("crpg_hoe_v3_h0", ItemSlot.Weapon0),
                 ("crpg_throwing_stone_v3_h0", ItemSlot.Weapon1),
             },
             // vlandia
@@ -97,7 +97,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
                 ("crpg_scarf_v2_h0", ItemSlot.Shoulder),
                 ("crpg_light_tunic_v2_h0", ItemSlot.Body),
                 ("crpg_leather_shoes_v2_h0", ItemSlot.Leg),
-                ("crpg_hoe_v2_h0", ItemSlot.Weapon0),
+                ("crpg_hoe_v3_h0", ItemSlot.Weapon0),
                 ("crpg_bound_adarga_v4_h0", ItemSlot.Weapon1),
             },
             // khuzait
@@ -106,7 +106,7 @@ public record GetGameUserCommand : IMediatorRequest<GameUserViewModel>
                 ("crpg_nomad_cap_v2_h0", ItemSlot.Head),
                 ("crpg_steppe_robe_v2_h0", ItemSlot.Body),
                 ("crpg_leather_boots_v2_h0", ItemSlot.Leg),
-                ("crpg_hatchet_v2_h0", ItemSlot.Weapon0),
+                ("crpg_hatchet_v4_h0", ItemSlot.Weapon0),
                 ("crpg_throwing_stone_v3_h0", ItemSlot.Weapon1),
             },
             // battania

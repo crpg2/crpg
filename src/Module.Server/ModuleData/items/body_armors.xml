@@ -8424,4 +8424,28 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_b_h0" name="{=Steve18}Dacian Noble Scale Mail" mesh="cts_dacian_noble_armor_b" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="10" arm_armor="10" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_b_h1" name="{=Steve18}Dacian Noble Scale Mail +1" mesh="cts_dacian_noble_armor_b" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="11" arm_armor="11" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_b_h2" name="{=Steve18}Dacian Noble Scale Mail +2" mesh="cts_dacian_noble_armor_b" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="12" arm_armor="12" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_b_h3" name="{=Steve18}Dacian Noble Scale Mail +3" mesh="cts_dacian_noble_armor_b" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="54" leg_armor="13" arm_armor="13" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
 </Items>
