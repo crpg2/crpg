@@ -6120,7 +6120,7 @@
       <Piece id="crpg_decorated_kaskara_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v3_h0" name="{=Diggles}Prefect's Spatha" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v4_h0" name="{=Diggles}Prefect's Spatha" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h0" Type="Blade" scale_factor="84" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_guard_h0" Type="Guard" scale_factor="90" />
@@ -6128,7 +6128,7 @@
       <Piece id="crpg_spatha_blade_with_ring_pommel_pommel_h0" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v3_h1" name="{=Diggles}Prefect's Spatha +1" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v4_h1" name="{=Diggles}Prefect's Spatha +1" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h1" Type="Blade" scale_factor="84" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_guard_h1" Type="Guard" scale_factor="90" />
@@ -6136,7 +6136,7 @@
       <Piece id="crpg_spatha_blade_with_ring_pommel_pommel_h1" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v3_h2" name="{=Diggles}Prefect's Spatha +2" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v4_h2" name="{=Diggles}Prefect's Spatha +2" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h2" Type="Blade" scale_factor="84" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_guard_h2" Type="Guard" scale_factor="90" />
@@ -6144,7 +6144,7 @@
       <Piece id="crpg_spatha_blade_with_ring_pommel_pommel_h2" Type="Pommel" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v3_h3" name="{=Diggles}Prefect's Spatha +3" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_blade_with_ring_pommel_v4_h3" name="{=Diggles}Prefect's Spatha +3" crafting_template="crpg_OneHandedSword" is_merchandise="false" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_blade_with_ring_pommel_blade_h3" Type="Blade" scale_factor="84" />
       <Piece id="crpg_spatha_blade_with_ring_pommel_guard_h3" Type="Guard" scale_factor="90" />
@@ -7464,7 +7464,7 @@
       <Piece id="crpg_slightly_ridged_flyssa_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_v3_h0" name="{=Diggles}Cavalry Spatha" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_v4_h0" name="{=Diggles}Cavalry Spatha" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_blade_h0" Type="Blade" scale_factor="107" />
       <Piece id="crpg_spatha_guard_h0" Type="Guard" scale_factor="100" />
@@ -7472,7 +7472,7 @@
       <Piece id="crpg_spatha_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_v3_h1" name="{=Diggles}Cavalry Spatha +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_v4_h1" name="{=Diggles}Cavalry Spatha +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_blade_h1" Type="Blade" scale_factor="107" />
       <Piece id="crpg_spatha_guard_h1" Type="Guard" scale_factor="100" />
@@ -7480,7 +7480,7 @@
       <Piece id="crpg_spatha_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_v3_h2" name="{=Diggles}Cavalry Spatha +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_v4_h2" name="{=Diggles}Cavalry Spatha +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_blade_h2" Type="Blade" scale_factor="107" />
       <Piece id="crpg_spatha_guard_h2" Type="Guard" scale_factor="100" />
@@ -7488,7 +7488,7 @@
       <Piece id="crpg_spatha_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_v3_h3" name="{=Diggles}Cavalry Spatha +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_v4_h3" name="{=Diggles}Cavalry Spatha +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_blade_h3" Type="Blade" scale_factor="107" />
       <Piece id="crpg_spatha_guard_h3" Type="Guard" scale_factor="100" />
@@ -7496,7 +7496,7 @@
       <Piece id="crpg_spatha_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_with_narrow_fuller_v3_h0" name="{=Diggles}Imperial Spatha" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_with_narrow_fuller_v4_h0" name="{=Diggles}Imperial Spatha" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_with_narrow_fuller_blade_h0" Type="Blade" scale_factor="87" />
       <Piece id="crpg_spatha_with_narrow_fuller_guard_h0" Type="Guard" scale_factor="100" />
@@ -7504,7 +7504,7 @@
       <Piece id="crpg_spatha_with_narrow_fuller_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_with_narrow_fuller_v3_h1" name="{=Diggles}Imperial Spatha +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_with_narrow_fuller_v4_h1" name="{=Diggles}Imperial Spatha +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_with_narrow_fuller_blade_h1" Type="Blade" scale_factor="87" />
       <Piece id="crpg_spatha_with_narrow_fuller_guard_h1" Type="Guard" scale_factor="100" />
@@ -7512,7 +7512,7 @@
       <Piece id="crpg_spatha_with_narrow_fuller_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_with_narrow_fuller_v3_h2" name="{=Diggles}Imperial Spatha +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_with_narrow_fuller_v4_h2" name="{=Diggles}Imperial Spatha +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_with_narrow_fuller_blade_h2" Type="Blade" scale_factor="87" />
       <Piece id="crpg_spatha_with_narrow_fuller_guard_h2" Type="Guard" scale_factor="100" />
@@ -7520,7 +7520,7 @@
       <Piece id="crpg_spatha_with_narrow_fuller_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spatha_with_narrow_fuller_v3_h3" name="{=Diggles}Imperial Spatha +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_spatha_with_narrow_fuller_v4_h3" name="{=Diggles}Imperial Spatha +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_spatha_with_narrow_fuller_blade_h3" Type="Blade" scale_factor="87" />
       <Piece id="crpg_spatha_with_narrow_fuller_guard_h3" Type="Guard" scale_factor="100" />
@@ -12072,97 +12072,97 @@
       <Piece id="crpg_short_western_mace_handle_h3" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_mainz_v1_h0" name="{=Diggles}Mainz Gladius" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_mainz_v2_h0" name="{=Diggles}Mainz Gladius" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_mainz_blade_h0" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_gladius_mainz_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_gladius_mainz_guard_h0" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_mainz_handle_h0" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_mainz_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_mainz_v1_h1" name="{=Diggles}Mainz Gladius +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_mainz_v2_h1" name="{=Diggles}Mainz Gladius +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_mainz_blade_h1" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_gladius_mainz_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_gladius_mainz_guard_h1" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_mainz_handle_h1" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_mainz_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_mainz_v1_h2" name="{=Diggles}Mainz Gladius +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_mainz_v2_h2" name="{=Diggles}Mainz Gladius +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_mainz_blade_h2" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_gladius_mainz_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_gladius_mainz_guard_h2" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_mainz_handle_h2" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_mainz_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_mainz_v1_h3" name="{=Diggles}Mainz Gladius +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_mainz_v2_h3" name="{=Diggles}Mainz Gladius +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_mainz_blade_h3" Type="Blade" scale_factor="105" />
+      <Piece id="crpg_gladius_mainz_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_gladius_mainz_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_mainz_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_mainz_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_pompeian_v1_h0" name="{=Diggles}Pompeian Gladius" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_pompeian_v2_h0" name="{=Diggles}Pompeian Gladius" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_pompeian_blade_h0" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_gladius_pompeian_blade_h0" Type="Blade" scale_factor="120" />
       <Piece id="crpg_gladius_pompeian_guard_h0" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_pompeian_handle_h0" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_pompeian_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_pompeian_v1_h1" name="{=Diggles}Pompeian Gladius +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_pompeian_v2_h1" name="{=Diggles}Pompeian Gladius +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_pompeian_blade_h1" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_gladius_pompeian_blade_h1" Type="Blade" scale_factor="120" />
       <Piece id="crpg_gladius_pompeian_guard_h1" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_pompeian_handle_h1" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_pompeian_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_pompeian_v1_h2" name="{=Diggles}Pompeian Gladius +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_pompeian_v2_h2" name="{=Diggles}Pompeian Gladius +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_pompeian_blade_h2" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_gladius_pompeian_blade_h2" Type="Blade" scale_factor="120" />
       <Piece id="crpg_gladius_pompeian_guard_h2" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_pompeian_handle_h2" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_pompeian_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_pompeian_v1_h3" name="{=Diggles}Pompeian Gladius +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_pompeian_v2_h3" name="{=Diggles}Pompeian Gladius +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_pompeian_blade_h3" Type="Blade" scale_factor="110" />
+      <Piece id="crpg_gladius_pompeian_blade_h3" Type="Blade" scale_factor="120" />
       <Piece id="crpg_gladius_pompeian_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_pompeian_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_pompeian_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_republican_v1_h0" name="{=Diggles}Republican Gladius" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_republican_v2_h0" name="{=Diggles}Republican Gladius" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_republican_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_gladius_republican_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_gladius_republican_guard_h0" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_republican_handle_h0" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_republican_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_republican_v1_h1" name="{=Diggles}Republican Gladius +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_republican_v2_h1" name="{=Diggles}Republican Gladius +1" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_republican_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_gladius_republican_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_gladius_republican_guard_h1" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_republican_handle_h1" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_republican_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_republican_v1_h2" name="{=Diggles}Republican Gladius +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_republican_v2_h2" name="{=Diggles}Republican Gladius +2" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_republican_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_gladius_republican_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_gladius_republican_guard_h2" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_republican_handle_h2" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_republican_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_gladius_republican_v1_h3" name="{=Diggles}Republican Gladius +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
+  <CraftedItem id="crpg_gladius_republican_v2_h3" name="{=Diggles}Republican Gladius +3" crafting_template="crpg_OneHandedSword" culture="Culture.empire" modifier_group="sword">
     <Pieces>
-      <Piece id="crpg_gladius_republican_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_gladius_republican_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_gladius_republican_guard_h3" Type="Guard" scale_factor="100" />
       <Piece id="crpg_gladius_republican_handle_h3" Type="Handle" scale_factor="100" />
       <Piece id="crpg_gladius_republican_pommel_h3" Type="Pommel" scale_factor="100" />
