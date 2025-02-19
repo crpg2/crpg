@@ -17,7 +17,7 @@
   <SpriteCategories>
     <SpriteCategory>
       <Name>ui_mploading</Name>
-      <SpriteSheetCount>156</SpriteSheetCount>
+      <SpriteSheetCount>158</SpriteSheetCount>
       <SpriteSheetSize ID="1" Width="3840" Height="1935" />
       <SpriteSheetSize ID="2" Width="3840" Height="1935" />
       <SpriteSheetSize ID="3" Width="3383" Height="1902" />
@@ -162,6 +162,7 @@
       <SpriteSheetSize ID="154" Width="1920" Height="1080" />
       <SpriteSheetSize ID="155" Width="1920" Height="1080" />
       <SpriteSheetSize ID="156" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="158" Width="1920" Height="1080" />
       <AlwaysLoad />
     </SpriteCategory>
   </SpriteCategories>
@@ -1453,6 +1454,15 @@
       <SheetY>0</SheetY>
       <CategoryName>ui_mploading</CategoryName>
     </SpritePart>
+    <SpritePart>
+      <SheetID>158</SheetID>
+      <Name>crpg_battle_purplehaze</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
   </SpriteParts>
   <Sprites>
     <GenericSprite>
@@ -2026,6 +2036,10 @@
  <GenericSprite>
       <Name>crpg_battle_ruins</Name>
       <SpritePartName>crpg_battle_ruins</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>crpg_battle_purplehaze</Name>
+      <SpritePartName>crpg_battle_purplehaze</SpritePartName>
     </GenericSprite>
   </Sprites>
 </SpriteData>
