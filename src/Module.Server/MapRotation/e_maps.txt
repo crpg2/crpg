@@ -3,6 +3,7 @@ crpg_dtv_qalat
 crpg_dtv_monolith
 crpg_dtv_weepinghill
 crpg_dtv_rosethornecastle
+crpg_dtv_isleofdismay
 crpg_dtv_musapoint
 crpg_dtv_ruinsofrahiz
 crpg_dtv_encampment
