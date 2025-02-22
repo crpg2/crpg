@@ -76,9 +76,6 @@ const mySide = computed (() => {
   if (selfFighter.value) {
     return selfFighter.value.side
   }
-  else if (selfMercenary.value) {
-    return selfMercenary.value.side
-  }
 
   return null
 })
