@@ -1,5 +1,7 @@
 import type { Point } from 'geojson'
 
+import type { PartyCommon } from '~/models/strategus/party'
+
 export enum SettlementType {
   Village = 'Village',
   Castle = 'Castle',
@@ -14,4 +16,5 @@ export interface SettlementPublic {
   culture: string
   position: Point
   type: SettlementType
+  owner: PartyCommon | null
 }

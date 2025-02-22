@@ -46,17 +46,19 @@ public record GetBattleMercenariesQuery : IMediatorRequest<IList<BattleMercenary
             {
                 return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
             }
-
             BattleFighter? fighter = battle.Fighters.FirstOrDefault(f => f.PartyId == req.UserId);
+            BattleMercenary? mercenary = battle.Mercenaries.FirstOrDefault(m => m.Character?.User?.Id == req.UserId);
+
             // During the hiring phase, only the fighters can see the mercenaries.
-            if (battle.Phase == BattlePhase.Hiring && fighter == null)
+            // If the user is not a fighter of that battle, only return its mercenary
+            if (battle.Phase == BattlePhase.Hiring && fighter == null && mercenary == null)
             {
                 return new(CommonErrors.PartyNotAFighter(req.UserId, req.BattleId));
             }
 
             // Return the mercenaries from the same side as the user during the hiring phase.
             var mercenaries = battle.Mercenaries
-                .Where(m => battle.Phase != BattlePhase.Hiring || m.Side == fighter!.Side)
+                .Where(m => battle.Phase != BattlePhase.Hiring || m.Side == fighter?.Side || m.Character?.User?.Id == req.UserId)
                 .Select(m => new BattleMercenaryViewModel
                 {
                     Id = m.Id,
