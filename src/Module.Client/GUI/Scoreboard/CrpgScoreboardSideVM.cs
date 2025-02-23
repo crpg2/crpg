@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
+using Crpg.Module.Common;
 using Crpg.Module.Common.Commander;
 using Crpg.Module.GUI.HudExtension;
 using Crpg.Module.GUI.Scoreboard;
@@ -227,6 +229,15 @@ public class CrpgScoreboardSideVM : ViewModel
             string[] valuesOf = _missionScoreboardSide.GetValuesOf(peer);
             string[] headerIds = _missionScoreboardSide.GetHeaderIds();
             MissionScoreboardPlayerVM missionScoreboardPlayerVM = new(peer, valuesOf, headerIds, score, _executeActivate);
+
+            // Use reflection to change the UserName property
+            var peerField = typeof(PeerComponent).GetField("_peer", BindingFlags.NonPublic | BindingFlags.Instance);
+            var virtualPlayerInstance = peerField.GetValue(peer);
+
+            var userNameProperty = typeof(VirtualPlayer).GetProperty("UserName", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+
+            userNameProperty.SetValue(virtualPlayerInstance, (peer.GetNetworkPeer().GetComponent<CrpgPeer>()).User?.Character.Name);
+
             _playersMap.Add(peer, missionScoreboardPlayerVM);
             Players.Add(missionScoreboardPlayerVM);
         }

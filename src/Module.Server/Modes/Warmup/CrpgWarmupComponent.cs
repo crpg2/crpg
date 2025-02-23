@@ -85,7 +85,7 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
         WarmupStateReflection = WarmupStates.InProgress;
         Mission.Current.ResetMission();
         GameModeReflection.MultiplayerTeamSelectComponent.BalanceTeams();
-        TimerComponentReflection.StartTimerAsServer(TotalWarmupDuration);
+        TimerComponentReflection.StartTimerAsServer(1f);
         GameModeReflection.SpawnComponent.SpawningBehavior.Clear();
         SpawnComponent spawnComponent = Mission.GetMissionBehavior<SpawnComponent>();
         spawnComponent.SetNewSpawnFrameBehavior(new FFASpawnFrameBehavior());
@@ -95,7 +95,7 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
     private void EndWarmupProgress()
     {
         WarmupStateReflection = WarmupStates.Ending;
-        TimerComponentReflection.StartTimerAsServer(30f);
+        TimerComponentReflection.StartTimerAsServer(1f);
         ReflectionHelper.RaiseEvent(this, nameof(OnWarmupEnding), Array.Empty<object>());
         if (!GameNetwork.IsDedicatedServer)
         {

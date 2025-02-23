@@ -75,6 +75,7 @@ internal sealed class UpdateCrpgUser : GameNetworkMessage
 
     private void WriteCharacterToPacket(BinaryWriter writer, CrpgCharacter character)
     {
+        writer.Write(character.Name);
         writer.Write(character.Generation);
         writer.Write(character.Level);
         writer.Write(character.Experience);
@@ -84,6 +85,7 @@ internal sealed class UpdateCrpgUser : GameNetworkMessage
 
     private CrpgCharacter ReadCharacterFromPacket(BinaryReader reader)
     {
+        string name = reader.ReadString();
         int generation = reader.ReadInt32();
         int level = reader.ReadInt32();
         int exp = reader.ReadInt32();
@@ -91,6 +93,7 @@ internal sealed class UpdateCrpgUser : GameNetworkMessage
         var equippedItems = ReadCharacterEquippedItemsFromPacket(reader);
         return new CrpgCharacter
         {
+            Name = name,
             Generation = generation,
             Level = level,
             Experience = exp,

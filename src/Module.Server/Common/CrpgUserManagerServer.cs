@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Reflection;
 using System.Text;
 using Crpg.Module.Api;
 using Crpg.Module.Api.Exceptions;

@@ -1,5 +1,6 @@
-ServerName Test Battle
+ServerName Wasch Test12
 GameType cRPGBattle
+GamePassword 12341
 WelcomeMessage yoyoyooooo
 AllowPollsToKickPlayers True
 AllowPollsToChangeMaps True
@@ -15,17 +16,17 @@ FriendlyFireDamageMeleeSelfPercent 0
 FriendlyFireDamageRangedFriendPercent 50
 FriendlyFireDamageRangedSelfPercent 0
 MinNumberOfPlayersForMatchStart 0
-NumberOfBotsTeam1 0
-NumberOfBotsTeam2 0
+NumberOfBotsTeam1 2
+NumberOfBotsTeam2 2
+crpg_controlled_bots_count 4
 NumberOfBotsPerFormation 10
 RoundTotal 10
 MapTimeLimit 8
-RoundTimeLimit 60
-WarmupTimeLimit 60
+RoundTimeLimit 600
+WarmupTimeLimit 30
 crpg_happy_hours 19:00-23:00,Central European Standard Time
 start_game
 set_automated_battle_count -1
 enable_automated_battle_switching
-crpg_frozen_bots False
+crpg_frozen_bots True
 crpg_apply_harmony_patches
-GamePassword yoyo
