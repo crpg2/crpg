@@ -243,6 +243,12 @@ internal class CrpgItemValueModel : ItemValueModel
                 thrustTier *= 1.10f;
             }
 
+            if (weapon.ItemUsage.Contains("2dswing"))
+            {
+                swingTier *= 0.95f;
+                thrustTier *= 0.95f;
+            }
+
             if (!weapon.ItemUsage.Contains("block")
                 && (weapon.ItemUsage.Contains("onehanded") || weapon.ItemUsage.Contains("twohanded") || weapon.ItemUsage.Contains("polearm"))
                 && !weapon.ItemUsage.Contains("axe")
