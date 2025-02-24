@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Battle, BattleFighter, BattleMercenary, BattleMercenaryApplicationCreation } from '~/models/strategus/battle'
+import type { BattleMercenaryApplicationCreation } from '~/models/strategus/battle'
 
 import BattleSideComparison from '~/components/strategus/battle/BattleSideComparison.vue'
 import { useBattleFighters } from '~/composables/strategus/use-battle-fighters'
@@ -7,16 +7,9 @@ import { useBattleFighterApplications } from '~/composables/strategus/use-battle
 import { useBattleMercenaries } from '~/composables/strategus/use-battle-mercenaries'
 import { useBattleMercenaryApplications } from '~/composables/strategus/use-battle-mercenaries-applications'
 import { useBattle } from '~/composables/strategus/use-battles'
-import { useLanguages } from '~/composables/use-language'
-import { usePagination } from '~/composables/use-pagination'
-import { useRegion } from '~/composables/use-region'
-import { useSearchDebounced } from '~/composables/use-search-debounce'
-import { Culture } from '~/models/culture'
 import { BattlePhase, BattleSide } from '~/models/strategus/battle'
-import { itemCultureToIcon } from '~/services/item-service' // TODO: culture service
 import { notify } from '~/services/notification-service'
 import { getBattleFighter, getBattles, removeBattleMercenary } from '~/services/strategus-service/battle-service'
-import { settlementIconByType } from '~/services/strategus-service/settlement'
 import { t } from '~/services/translate-service'
 import { useUserStore } from '~/stores/user'
 

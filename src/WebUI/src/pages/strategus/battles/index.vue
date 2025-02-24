@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import type { Battle, BattleFighter } from '~/models/strategus/battle'
+
 import { useBattles } from '~/composables/strategus/use-battles'
 import { useLanguages } from '~/composables/use-language'
 import { usePagination } from '~/composables/use-pagination'
 import { useRegion } from '~/composables/use-region'
 import { useSearchDebounced } from '~/composables/use-search-debounce'
 import { Culture } from '~/models/culture'
-import { type Battle, BattlePhase } from '~/models/strategus/battle'
 import { itemCultureToIcon } from '~/services/item-service' // TODO: culture service
 import { getBattles } from '~/services/strategus-service/battle-service'
 import { settlementIconByType } from '~/services/strategus-service/settlement'
@@ -18,7 +19,6 @@ definePage({
   },
 })
 
-const route = useRoute()
 const router = useRouter()
 const userStore = useUserStore()
 const { battlePhaseModel } = useBattles()
@@ -38,11 +38,34 @@ const {
 )
 
 watch(
-  () => route.query,
+  () => regionModel.value,
   async () => {
     await loadBattles()
   },
 )
+
+const filteredBattles = computed(() => {
+  const searchQuery = searchModel.value.toLowerCase()
+
+  return battles.value.filter((battle) => {
+    const getSearchableFields = (entity: BattleFighter | null) => [
+      entity?.party?.user?.name,
+      entity?.party?.user?.clan?.name,
+      entity?.party?.user?.clan?.tag,
+      entity?.settlement?.name,
+      entity?.settlement?.owner?.user?.name,
+      entity?.settlement?.owner?.user?.clan?.name,
+      entity?.settlement?.owner?.user?.clan?.tag,
+    ]
+
+    const searchableFields = [
+      ...getSearchableFields(battle.attacker),
+      ...getSearchableFields(battle.defender),
+    ]
+
+    return searchableFields.some(field => field?.toLowerCase().includes(searchQuery))
+  })
+})
 
 const getIconByCulture = (cultureString: string) => itemCultureToIcon[Culture[cultureString as keyof typeof Culture] || Culture.Neutral]
 
@@ -66,6 +89,7 @@ await loadBattles()
 <template>
   <div class="container">
     <div class="mx-auto max-w-6xl py-8 md:py-16">
+      <Heading :title="$t('strategus.battle.title')" />
       <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
         <OTabs v-model="regionModel" content-class="hidden">
           <OTabItem
@@ -86,7 +110,6 @@ await loadBattles()
               icon="search"
               rounded
               size="sm"
-              data-aq-search-clan-input
             />
           </div>
         </div>
@@ -94,7 +117,7 @@ await loadBattles()
 
       <OTable
         v-model:current-page="pageModel"
-        :data="battles"
+        :data="filteredBattles"
         :per-page="perPage"
         :paginated="battles.length > perPage"
         hoverable
@@ -102,8 +125,8 @@ await loadBattles()
         sort-icon="chevron-up"
         sort-icon-size="xs"
         :default-sort="['scheduledFor']"
-        :row-class="rowClass"
-        @click="onClickRow"
+        :row-class="(row) => rowClass(row as Battle)"
+        @click="(row) => onClickRow(row as Battle)"
       >
         <OTableColumn
           v-slot="{ row: battle }: { row: Battle }"

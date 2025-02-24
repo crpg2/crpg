@@ -1,22 +1,14 @@
 <script setup lang="ts">
-import type { Battle, BattleFighterApplication, BattleMercenary, BattleMercenaryApplication } from '~/models/strategus/battle'
+import type { BattleFighterApplication, BattleMercenaryApplication } from '~/models/strategus/battle'
 
-import { useBattleFighters } from '~/composables/strategus/use-battle-fighters'
 import { useBattleFighterApplications } from '~/composables/strategus/use-battle-fighters-applications'
-import { useBattleMercenaries } from '~/composables/strategus/use-battle-mercenaries'
 import { useBattleMercenaryApplications } from '~/composables/strategus/use-battle-mercenaries-applications'
 import { useBattle } from '~/composables/strategus/use-battles'
-import { useLanguages } from '~/composables/use-language'
 import { usePagination } from '~/composables/use-pagination'
-import { useRegion } from '~/composables/use-region'
-import { useSearchDebounced } from '~/composables/use-search-debounce'
-import { Culture } from '~/models/culture'
-import { BattleApplicationType, BattlePhase, BattleSide } from '~/models/strategus/battle'
+import { BattleApplicationType, BattlePhase } from '~/models/strategus/battle'
 import { notify } from '~/services/notification-service'
-import { getBattleFighter, getBattles, respondToBattleFighterApplication, respondToBattleMercenaryApplication } from '~/services/strategus-service/battle-service'
-import { settlementIconByType } from '~/services/strategus-service/settlement'
+import { respondToBattleFighterApplication, respondToBattleMercenaryApplication } from '~/services/strategus-service/battle-service'
 import { t } from '~/services/translate-service'
-import { useUserStore } from '~/stores/user'
 
 const props = defineProps<{
   id: string
@@ -31,24 +23,10 @@ definePage({
   props: true,
 })
 
-const applicationTypes = Object.keys(BattleApplicationType)
-
-const route = useRoute()
-const router = useRouter()
-
 const { battle, battleId, loadBattle } = useBattle(props.id)
-const { mercenaryApplicationsCount, mercenaryApplications, loadBattleMercenaryApplications } = useBattleMercenaryApplications()
-const { fighterApplicationsCount, fighterApplications, loadBattleFighterApplications } = useBattleFighterApplications()
+const { mercenaryApplications, loadBattleMercenaryApplications } = useBattleMercenaryApplications()
+const { fighterApplications, loadBattleFighterApplications } = useBattleFighterApplications()
 const { pageModel, perPage } = usePagination()
-
-const applicationCountByApplicationType = (type: string) => {
-  if (type === BattleApplicationType.Fighter) {
-    return fighterApplicationsCount.value
-  }
-  else {
-    return mercenaryApplicationsCount.value
-  }
-}
 
 const canRecruitMercenaries = computed(() =>
   battle.value?.phase === BattlePhase.Hiring,

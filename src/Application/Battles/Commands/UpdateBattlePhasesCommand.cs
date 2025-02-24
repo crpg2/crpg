@@ -62,7 +62,15 @@ public record UpdateBattlePhasesCommand : IMediatorRequest
                         break;
                     case BattlePhase.Hiring:
                         await _battleScheduler.ScheduleBattle(battle);
-                        // TODO: reject all pending mercenary applications
+
+                        var applications = battle.MercenaryApplications
+                            .Where(ma => ma.Status == BattleMercenaryApplicationStatus.Pending)
+                            .ToArray();
+                        foreach (BattleMercenaryApplication application in applications)
+                        {
+                            application.Status = BattleMercenaryApplicationStatus.Declined;
+                        }
+
                         battle.Phase = BattlePhase.Scheduled;
                         break;
                     case BattlePhase.Scheduled:

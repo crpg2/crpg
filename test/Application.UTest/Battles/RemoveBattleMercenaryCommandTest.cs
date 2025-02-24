@@ -70,7 +70,7 @@ public class RemoveBattleMercenaryCommandTest : TestBase
     }
 
     [Test]
-    public async Task ShouldNotReturnErrorIfBattleMercenaryFound()
+    public async Task ShouldRemoveBattleMercenary()
     {
         User user = new();
         Party party = new() { User = user };

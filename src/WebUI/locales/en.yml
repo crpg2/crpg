@@ -1531,6 +1531,7 @@ strategus:
       fighters: Fighters
       mercenaries: Mercenaries
       troops: Troops
+    title: Upcoming Battles
     party:
       title: Battle of {nearestSettlement} {terrain}
     phase:
