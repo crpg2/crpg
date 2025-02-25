@@ -52,7 +52,7 @@ await fetchPageData(Number(props.id))
           {{ $t('strategus.battle.manage.title') }}
         </h1>
         <BattleMercenaryManagement
-          v-if="canManageMercenaries.value"
+          v-if="canManageMercenaries"
           :battle
           :battle-mercenaries @mercenary-removed="
             () => {

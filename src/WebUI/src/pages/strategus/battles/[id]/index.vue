@@ -99,7 +99,7 @@ const hasOptions = computed(() =>
 
 const fetchPageData = async (battleId: number) => {
   await Promise.all([loadBattle(0, { id: battleId }), loadBattleFighters(0, { id: battleId })])
-  if (battle.BattlePhase === BattlePhase.Preparation) {
+  if (battle.BattlePhase !== BattlePhase.Preparation) {
     await Promise.all([loadBattleMercenaries(0, { id: battleId }), loadBattleMercenaryApplications(0, { id: battleId })])
   }
   else {
