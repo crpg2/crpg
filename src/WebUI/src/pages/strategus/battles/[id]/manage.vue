@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useBattleMercenaries } from '~/composables/strategus/use-battle-mercenaries'
 import { useBattle } from '~/composables/strategus/use-battles'
+import { BattlePhase } from '~/models/strategus/battle'
 
 const props = defineProps<{
   id: string
@@ -18,8 +19,15 @@ definePage({
 const { battleMercenaries, loadBattleMercenaries } = useBattleMercenaries()
 const { battle, battleId, loadBattle } = useBattle(props.id)
 
+const canManageMercenaries = computed(() =>
+  battle.value?.phase === BattlePhase.Hiring,
+)
+
 const fetchPageData = async (battleId: number) => {
-  await Promise.all([loadBattle(0, { id: battleId }), loadBattleMercenaries(0, { id: battleId })])
+  await Promise.all([loadBattle(0, { id: battleId })])
+  if (canManageMercenaries.value) {
+    await Promise.all([loadBattleMercenaries(0, { id: battleId })])
+  }
 }
 
 await fetchPageData(Number(props.id))
@@ -44,7 +52,7 @@ await fetchPageData(Number(props.id))
           {{ $t('strategus.battle.manage.title') }}
         </h1>
         <BattleMercenaryManagement
-          v-if="battle"
+          v-if="canManageMercenaries.value"
           :battle
           :battle-mercenaries @mercenary-removed="
             () => {

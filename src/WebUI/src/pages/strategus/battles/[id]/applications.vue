@@ -56,7 +56,13 @@ const respondToFighter = async (application: BattleFighterApplication, status: b
 
 // todo: conditional load?
 const fetchPageData = async (battleId: number) => {
-  await Promise.all([loadBattle(0, { id: battleId }), loadBattleMercenaryApplications(0, { id: battleId }), loadBattleFighterApplications(0, { id: battleId })])
+  await Promise.all([loadBattle(0, { id: battleId })])
+  if (canRecruitMercenaries.value) {
+    await Promise.all([loadBattleMercenaryApplications(0, { id: battleId })])
+  }
+  if (canRecruitFighters.value) {
+    await Promise.all([loadBattleFighterApplications(0, { id: battleId })])
+  }
 }
 
 await fetchPageData(Number(props.id))

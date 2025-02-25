@@ -2299,8 +2299,53 @@ public record SeedDataCommand : IMediatorRequest
                 CreatedAt = DateTime.UtcNow.AddHours(-4),
 
             };
+            Battle desertBattle = new(){
+                Phase = BattlePhase.Preparation,
+                Region = Region.Eu,
+                Position = new Point(107.187, -110.164),
+                Fighters =
+                {
+                    new BattleFighter
+                    {
+                        Party = droobParty,
+                        Side = BattleSide.Attacker,
+                        Commander = true,
+                        MercenarySlots = 7,
+                    },
+                    new BattleFighter
+                    {
+                        Party = luqeroParty,
+                        Side = BattleSide.Defender,
+                        Commander = true,
+                        MercenarySlots = 11,
+                    },
+                },
+                FighterApplications =
+                {
+                    new BattleFighterApplication
+                    {
+                        Party = orleParty,
+                        Side = BattleSide.Attacker,
+                        Status = BattleFighterApplicationStatus.Pending,
+                    },
+                    new BattleFighterApplication
+                    {
+                        Party = namidakaParty,
+                        Side = BattleSide.Attacker,
+                        Status = BattleFighterApplicationStatus.Pending,
+                    },
+                    new BattleFighterApplication
+                    {
+                        Party = ilyaParty,
+                        Side = BattleSide.Attacker,
+                        Status = BattleFighterApplicationStatus.Pending,
+                    },
+                },
+                CreatedAt = DateTime.UtcNow.AddHours(-4),
 
-            Battle[] newBattles = { nideonBattle, plainBattle, hertogeaBattle, leblenionBattle, epicroteaBattle };
+            };
+
+            Battle[] newBattles = { nideonBattle, plainBattle, hertogeaBattle, leblenionBattle, epicroteaBattle, desertBattle };
             if (!(await _db.Battles.AnyAsync()))
             {
                 _db.Battles.AddRange(newBattles);
