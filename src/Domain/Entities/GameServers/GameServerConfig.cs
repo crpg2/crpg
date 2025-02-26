@@ -48,5 +48,6 @@ public class GameServerConfig : AuditableEntity
     public int? Crpg_reward_tick { get; set; } // Sets the reward tick duration in seconds for Conquest/Siege/Team Deatmatch.
     public bool? Crpg_team_balance_once { get; set; } // Sets if the team balancer should balance only after warmup.
     public TimeSpan? Crpg_happy_hours { get; set; } // Sets the happy hours. Format: HH:MM-HH:MM,TZ
+    public float? Crpg_happy_hours_experience_multiplier { get; set; } // Sets the happy hours experience multipliers.
     public bool? Crpg_apply_harmony_patches { get; set; } // Apply Harmony patches
 }
