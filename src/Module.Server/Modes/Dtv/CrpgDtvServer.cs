@@ -17,7 +17,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private const int RewardMultiplier = 2;
     private const int MapDuration = 60 * 120;
 
-    private const float UpkeepMultiplier = 0.75f;
+    private const float UpkeepMultiplier = 0.80f;
     private const int BoulderRefillTime = 30;
     private const int FirePotRefillTime = 60;
 

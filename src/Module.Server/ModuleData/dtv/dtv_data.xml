@@ -191,7 +191,7 @@
     </Wave>
   </Round>
 
-  <Round reward="470">
+  <Round reward="460">
     <Wave>
       <Group classDivisionId="crpg_dtv_legion_soldier" count="1.7" />
       <Group classDivisionId="crpg_dtv_legion_archer" count="0.7" />
@@ -215,7 +215,7 @@
     </Wave>
   </Round>
 
-  <Round reward="495">
+  <Round reward="475">
     <Wave>
       <Group classDivisionId="crpg_dtv_reconquista_skirmisher" count="1.5" />
       <Group classDivisionId="crpg_dtv_reconquista_explorer" count="0.5" />
@@ -240,7 +240,7 @@
     </Wave>
   </Round>
 
-  <Round reward="520">
+  <Round reward="500">
     <Wave>
       <Group classDivisionId="crpg_dtv_aserai_warrior" count="1.8" />
       <Group classDivisionId="crpg_dtv_aserai_archer" count="0.5" />
@@ -260,7 +260,7 @@
     </Wave>
   </Round>
 
-  <Round reward="565">
+  <Round reward="540">
     <Wave>
       <Group classDivisionId="crpg_dtv_highland_ranger" count="0.8" />
       <Group classDivisionId="crpg_dtv_highland_soldier" count="1.5" />
@@ -280,7 +280,7 @@
     </Wave>
   </Round>
   
-  <Round reward="620">
+  <Round reward="600">
     <Wave>
       <Group classDivisionId="crpg_dtv_varangian_recruit" count="1.8" />
       <Group classDivisionId="crpg_dtv_varangian_guard" count="0.5" />
@@ -303,7 +303,7 @@
     </Wave>
   </Round>
 
-  <Round reward="700">
+  <Round reward="680">
     <Wave>
       <Group classDivisionId="crpg_dtv_khuzait_soldier" count="1.5" />
       <Group classDivisionId="crpg_dtv_khuzait_horseman" count="0.5" />
@@ -321,7 +321,7 @@
     </Wave>
   </Round>
 
-  <Round reward="805">
+  <Round reward="760">
     <Wave>
       <Group classDivisionId="crpg_dtv_dwarven_engineer" count="0.8" />
       <Group classDivisionId="crpg_dtv_dwarven_axelord" count="0.7" />
@@ -342,7 +342,7 @@
     </Wave>
   </Round>
 
-  <Round reward="870">
+  <Round reward="830">
     <Wave>
       <Group classDivisionId="crpg_dtv_greyorder_shielder" count="1.0" />
       <Group classDivisionId="crpg_dtv_greyorder_kuyak_two_handed" count="0.4" />
@@ -367,7 +367,7 @@
     </Wave>
   </Round>
 
-  <Round reward="930">
+  <Round reward="890">
     <Wave>
       <Group classDivisionId="crpg_dtv_tincan_soldier" count="2.0" />
       <Group classDivisionId="crpg_dtv_tincan_archer" count="1.0" />

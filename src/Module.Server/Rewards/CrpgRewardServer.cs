@@ -609,7 +609,7 @@ internal class CrpgRewardServer : MissionLogic
             }
         }
 
-        int numberOfPlayersToGiveValour = (defeatedTeamPlayersWithRoundScore.Count is >= 3 and <= 5)
+        int numberOfPlayersToGiveValour = (defeatedTeamPlayersWithRoundScore.Count is >= 2 and <= 5)
             ? 1
             : (int)(0.2f * defeatedTeamPlayersWithRoundScore.Count);
         Debug.Print($"Giving valour to {numberOfPlayersToGiveValour} out of the {defeatedTeamPlayersWithRoundScore.Count} players in the defeated team");

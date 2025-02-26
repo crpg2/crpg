@@ -19,6 +19,7 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
     private const float BattleMoraleGainMultiplierLastFlag = 2f;
     private const float SkirmishMoraleGainOnTick = 0.00125f;
     private const float SkirmishMoraleGainMultiplierLastFlag = 2f;
+    private const int LossMultiplier = 2;
 
     private readonly CrpgBattleClient _battleClient;
     private readonly MultiplayerGameType _gametype;
@@ -399,8 +400,8 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
         var roundWinner = RoundController.RoundWinner;
         _ = _rewardServer.UpdateCrpgUsersAsync(
             durationRewarded: roundDuration,
-            defenderMultiplierGain: roundWinner == BattleSideEnum.Defender ? 1 : -CrpgRewardServer.ExperienceMultiplierMax,
-            attackerMultiplierGain: roundWinner == BattleSideEnum.Attacker ? 1 : -CrpgRewardServer.ExperienceMultiplierMax,
+            defenderMultiplierGain: roundWinner == BattleSideEnum.Defender ? 1 : -LossMultiplier,
+            attackerMultiplierGain: roundWinner == BattleSideEnum.Attacker ? 1 : -LossMultiplier,
             valourTeamSide: roundWinner.GetOppositeSide());
     }
 

@@ -5779,6 +5779,14 @@
       <UsablePiece piece_id="crpg_ringduva_fightingaxe_handle_h1" />
       <UsablePiece piece_id="crpg_ringduva_fightingaxe_handle_h2" />
       <UsablePiece piece_id="crpg_ringduva_fightingaxe_handle_h3" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_blade_h0" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_blade_h1" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_blade_h2" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_blade_h3" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_handle_h0" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_handle_h1" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_handle_h2" />
+      <UsablePiece piece_id="crpg_tribesman_throwing_axe_melee_handle_h3" />
     </UsablePieces>
   </CraftingTemplate>
   <CraftingTemplate id="crpg_TwoHandedAxe" item_type="TwoHandedWeapon" modifier_group="axe" item_holsters="axe_back:axe_back_2:axe_back_3:axe_back_4" default_item_holster_position_offset="0,0,-0.65" use_weapon_as_holster_mesh="true">
@@ -5802,6 +5810,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_splittingmaul_blade_h0" />
+      <UsablePiece piece_id="crpg_splittingmaul_blade_h1" />
+      <UsablePiece piece_id="crpg_splittingmaul_blade_h2" />
+      <UsablePiece piece_id="crpg_splittingmaul_blade_h3" />
+      <UsablePiece piece_id="crpg_splittingmaul_handle_h0" />
+      <UsablePiece piece_id="crpg_splittingmaul_handle_h1" />
+      <UsablePiece piece_id="crpg_splittingmaul_handle_h2" />
+      <UsablePiece piece_id="crpg_splittingmaul_handle_h3" />
+      <UsablePiece piece_id="crpg_splittingmaul_guard_h0" />
+      <UsablePiece piece_id="crpg_splittingmaul_guard_h1" />
+      <UsablePiece piece_id="crpg_splittingmaul_guard_h2" />
+      <UsablePiece piece_id="crpg_splittingmaul_guard_h3" />
+      <UsablePiece piece_id="crpg_splittingmaul_pommel_h0" />
+      <UsablePiece piece_id="crpg_splittingmaul_pommel_h1" />
+      <UsablePiece piece_id="crpg_splittingmaul_pommel_h2" />
+      <UsablePiece piece_id="crpg_splittingmaul_pommel_h3" />
       <UsablePiece piece_id="crpg_greataxe_blade_h0" />
       <UsablePiece piece_id="crpg_greataxe_blade_h1" />
       <UsablePiece piece_id="crpg_greataxe_blade_h2" />
@@ -6554,6 +6578,14 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_great_long_maul_blade_h0" />
+      <UsablePiece piece_id="crpg_great_long_maul_blade_h1" />
+      <UsablePiece piece_id="crpg_great_long_maul_blade_h2" />
+      <UsablePiece piece_id="crpg_great_long_maul_blade_h3" />
+      <UsablePiece piece_id="crpg_great_long_maul_handle_h0" />
+      <UsablePiece piece_id="crpg_great_long_maul_handle_h1" />
+      <UsablePiece piece_id="crpg_great_long_maul_handle_h2" />
+      <UsablePiece piece_id="crpg_great_long_maul_handle_h3" />
       <UsablePiece piece_id="crpg_claymore_pole_blade_h0" />
       <UsablePiece piece_id="crpg_claymore_pole_blade_h1" />
       <UsablePiece piece_id="crpg_claymore_pole_blade_h2" />
@@ -6874,6 +6906,14 @@
       <UsablePiece piece_id="crpg_spiked_polehammer_handle_h1" />
       <UsablePiece piece_id="crpg_spiked_polehammer_handle_h2" />
       <UsablePiece piece_id="crpg_spiked_polehammer_handle_h3" />
+      <UsablePiece piece_id="crpg_spiked_polehammer_knockdown_blade_h0" />
+      <UsablePiece piece_id="crpg_spiked_polehammer_knockdown_blade_h1" />
+      <UsablePiece piece_id="crpg_spiked_polehammer_knockdown_blade_h2" />
+      <UsablePiece piece_id="crpg_spiked_polehammer_knockdown_blade_h3" />
+      <UsablePiece piece_id="crpg_spiked_polehammer_knockdown_handle_h0" />
+      <UsablePiece piece_id="crpg_spiked_polehammer_knockdown_handle_h1" />
+      <UsablePiece piece_id="crpg_spiked_polehammer_knockdown_handle_h2" />
+      <UsablePiece piece_id="crpg_spiked_polehammer_knockdown_handle_h3" />
       <UsablePiece piece_id="crpg_bec_de_corbin_handle_h0" />
       <UsablePiece piece_id="crpg_bec_de_corbin_handle_h1" />
       <UsablePiece piece_id="crpg_bec_de_corbin_handle_h2" />
@@ -7162,18 +7202,6 @@
       <UsablePiece piece_id="crpg_short_militia_spear_handle_h1" />
       <UsablePiece piece_id="crpg_short_militia_spear_handle_h2" />
       <UsablePiece piece_id="crpg_short_militia_spear_handle_h3" />
-      <UsablePiece piece_id="crpg_pilum_blade_h0" />
-      <UsablePiece piece_id="crpg_pilum_blade_h1" />
-      <UsablePiece piece_id="crpg_pilum_blade_h2" />
-      <UsablePiece piece_id="crpg_pilum_blade_h3" />
-      <UsablePiece piece_id="crpg_pilum_guard_h0" />
-      <UsablePiece piece_id="crpg_pilum_guard_h1" />
-      <UsablePiece piece_id="crpg_pilum_guard_h2" />
-      <UsablePiece piece_id="crpg_pilum_guard_h3" />
-      <UsablePiece piece_id="crpg_pilum_pommel_h0" />
-      <UsablePiece piece_id="crpg_pilum_pommel_h1" />
-      <UsablePiece piece_id="crpg_pilum_pommel_h2" />
-      <UsablePiece piece_id="crpg_pilum_pommel_h3" />
       <UsablePiece piece_id="crpg_decorated_steppe_lance_blade_h0" />
       <UsablePiece piece_id="crpg_decorated_steppe_lance_blade_h1" />
       <UsablePiece piece_id="crpg_decorated_steppe_lance_blade_h2" />
@@ -7946,6 +7974,22 @@
       <UsablePiece piece_id="crpg_knob_headed_spear_handle_h1" />
       <UsablePiece piece_id="crpg_knob_headed_spear_handle_h2" />
       <UsablePiece piece_id="crpg_knob_headed_spear_handle_h3" />
+      <UsablePiece piece_id="crpg_pilum_blade_melee_h0" />
+      <UsablePiece piece_id="crpg_pilum_blade_melee_h1" />
+      <UsablePiece piece_id="crpg_pilum_blade_melee_h2" />
+      <UsablePiece piece_id="crpg_pilum_blade_melee_h3" />
+      <UsablePiece piece_id="crpg_pilum_guard_melee_h0" />
+      <UsablePiece piece_id="crpg_pilum_guard_melee_h1" />
+      <UsablePiece piece_id="crpg_pilum_guard_melee_h2" />
+      <UsablePiece piece_id="crpg_pilum_guard_melee_h3" />
+      <UsablePiece piece_id="crpg_pilum_handle_melee_h0" />
+      <UsablePiece piece_id="crpg_pilum_handle_melee_h1" />
+      <UsablePiece piece_id="crpg_pilum_handle_melee_h2" />
+      <UsablePiece piece_id="crpg_pilum_handle_melee_h3" />
+      <UsablePiece piece_id="crpg_pilum_pommel_melee_h0" />
+      <UsablePiece piece_id="crpg_pilum_pommel_melee_h1" />
+      <UsablePiece piece_id="crpg_pilum_pommel_melee_h2" />
+      <UsablePiece piece_id="crpg_pilum_pommel_melee_h3" />
     </UsablePieces>
   </CraftingTemplate>
   <CraftingTemplate id="crpg_Pike" item_type="Polearm" modifier_group="polearm" item_holsters="polearm_back:polearm_back_2:polearm_back_3:polearm_back_4" default_item_holster_position_offset="0,0,-0.30" use_weapon_as_holster_mesh="true">
@@ -8468,6 +8512,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_war_darts_blade_h0" />
+      <UsablePiece piece_id="crpg_war_darts_blade_h1" />
+      <UsablePiece piece_id="crpg_war_darts_blade_h2" />
+      <UsablePiece piece_id="crpg_war_darts_blade_h3" />
+      <UsablePiece piece_id="crpg_war_darts_guard_h0" />
+      <UsablePiece piece_id="crpg_war_darts_guard_h1" />
+      <UsablePiece piece_id="crpg_war_darts_guard_h2" />
+      <UsablePiece piece_id="crpg_war_darts_guard_h3" />
+      <UsablePiece piece_id="crpg_war_darts_handle_h0" />
+      <UsablePiece piece_id="crpg_war_darts_handle_h1" />
+      <UsablePiece piece_id="crpg_war_darts_handle_h2" />
+      <UsablePiece piece_id="crpg_war_darts_handle_h3" />
+      <UsablePiece piece_id="crpg_war_darts_pommel_h0" />
+      <UsablePiece piece_id="crpg_war_darts_pommel_h1" />
+      <UsablePiece piece_id="crpg_war_darts_pommel_h2" />
+      <UsablePiece piece_id="crpg_war_darts_pommel_h3" />
       <UsablePiece piece_id="crpg_rhomphaia_guard_h0" />
       <UsablePiece piece_id="crpg_rhomphaia_guard_h1" />
       <UsablePiece piece_id="crpg_rhomphaia_guard_h2" />
@@ -9942,22 +10002,6 @@
       <UsablePiece piece_id="crpg_jamescross_2h_pommel_h1" />
       <UsablePiece piece_id="crpg_jamescross_2h_pommel_h2" />
       <UsablePiece piece_id="crpg_jamescross_2h_pommel_h3" />
-      <UsablePiece piece_id="crpg_splittingmaul_blade_h0" />
-      <UsablePiece piece_id="crpg_splittingmaul_blade_h1" />
-      <UsablePiece piece_id="crpg_splittingmaul_blade_h2" />
-      <UsablePiece piece_id="crpg_splittingmaul_blade_h3" />
-      <UsablePiece piece_id="crpg_splittingmaul_handle_h0" />
-      <UsablePiece piece_id="crpg_splittingmaul_handle_h1" />
-      <UsablePiece piece_id="crpg_splittingmaul_handle_h2" />
-      <UsablePiece piece_id="crpg_splittingmaul_handle_h3" />
-      <UsablePiece piece_id="crpg_splittingmaul_guard_h0" />
-      <UsablePiece piece_id="crpg_splittingmaul_guard_h1" />
-      <UsablePiece piece_id="crpg_splittingmaul_guard_h2" />
-      <UsablePiece piece_id="crpg_splittingmaul_guard_h3" />
-      <UsablePiece piece_id="crpg_splittingmaul_pommel_h0" />
-      <UsablePiece piece_id="crpg_splittingmaul_pommel_h1" />
-      <UsablePiece piece_id="crpg_splittingmaul_pommel_h2" />
-      <UsablePiece piece_id="crpg_splittingmaul_pommel_h3" />
       <UsablePiece piece_id="crpg_candycane_2h_blade_h0" />
       <UsablePiece piece_id="crpg_candycane_2h_blade_h1" />
       <UsablePiece piece_id="crpg_candycane_2h_blade_h2" />
