@@ -7,6 +7,7 @@ namespace Crpg.Module.Modes.Siege;
 
 internal class CrpgSiegeSpawningBehavior : CrpgSpawningBehaviorBase
 {
+    private const int AttackerSpawnDelay = 20;
     private bool _allowSpawnTimerOverride = false;
     private MissionTimer? _spawnTimerOverrideTimer;
 
@@ -53,7 +54,16 @@ internal class CrpgSiegeSpawningBehavior : CrpgSpawningBehaviorBase
             return false;
         }
 
-        int respawnPeriod = missionPeer.Team.Side == BattleSideEnum.Defender
+        BattleSideEnum side = missionPeer.Team.Side;
+        if (side == BattleSideEnum.Attacker)
+        {
+            if (TimeSinceSpawnEnabled < AttackerSpawnDelay)
+            {
+                return false;
+            }
+        }
+
+        int respawnPeriod = side == BattleSideEnum.Defender
             ? MultiplayerOptions.OptionType.RespawnPeriodTeam2.GetIntValue()
             : MultiplayerOptions.OptionType.RespawnPeriodTeam1.GetIntValue();
         if (TimeSinceSpawnEnabled != 0 && !_allowSpawnTimerOverride && TimeSinceSpawnEnabled % respawnPeriod > 1)

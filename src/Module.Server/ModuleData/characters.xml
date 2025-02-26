@@ -45,7 +45,7 @@
         <equipment slot="Body" id="Item.crpg_khuzait_sturdy_armor_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_guarded_armwraps_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_steppe_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_blue_katana_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_blue_katana_v3_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -111,7 +111,7 @@
         <equipment slot="Head" id="Item.crpg_bearhead_v2_h0" />
         <equipment slot="Cape" id="Item.crpg_rough_bearskin_v2_h0" />
         <equipment slot="Body" id="Item.crpg_bandit_fur_b_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_greataxe_v1_h0" />
+        <equipment slot="Item0" id="Item.crpg_greataxe_v2_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -145,7 +145,7 @@
         <equipment slot="Body" id="Item.crpg_battanian_savage_armor_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_highland_gloves_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_battania_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_norse_huscarl_axe_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_norse_huscarl_axe_v4_h0" />
         <equipment slot="Item1" id="Item.crpg_battania_targe_b_v4_h0" />
         <equipment slot="Item2" id="Item.dtv_simple_steppe_bow_v1_h0" />
         <equipment slot="Item3" id="Item.crpg_rangers_arrows_v2_h0" />
@@ -351,7 +351,7 @@
         <equipment slot="Body" id="Item.crpg_cloth_apron_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_sa_1ChurburghGauntlet_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_sa_1ChurburghBoots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_avalanche_v1_h0" />
+        <equipment slot="Item0" id="Item.crpg_avalanche_v2_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -557,7 +557,7 @@
         <equipment slot="Cape" id="Item.crpg_battania_shoulder_strap_v2_h0" />
         <equipment slot="Body" id="Item.crpg_scale_armor_v3_h0" />
         <equipment slot="Gloves" id="Item.crpg_battania_warlord_bracers_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_greataxe_v1_h0" />
+        <equipment slot="Item0" id="Item.crpg_greataxe_v2_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -804,7 +804,7 @@
         <equipment slot="Body" id="Item.crpg_northern_lamellar_armor_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_northern_brass_bracers_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_sturgia_boots_c_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_raider_battle_axe_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_raider_battle_axe_v4_h0" />
         <equipment slot="Item1" id="Item.crpg_viking_round_shield_v4_h0" />
       </EquipmentRoster>
     </Equipments>

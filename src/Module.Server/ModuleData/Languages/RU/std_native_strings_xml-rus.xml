@@ -136,6 +136,9 @@
     <string id="CH4XFORR" text= "Лес Шо" />
     <string id="vwrgB0YT" text= "Воющая поляна" />
     <string id="NiRV4NA1" text= "Нирвана" />
+    <string id="F3sT1Val" text= "Фестиваль" />
+    <string id="Ru1NsWaR" text= "Руины" />
+    <string id="JH3nDr1X" text= "Фиолетовая дымка" />
 
 
     <!-- Conquest Maps -->
@@ -172,5 +175,6 @@
     <string id="M0n0L1tH" text= "монолит" />
     <string id="S1M1R4Fo" text= "Форт Симира" />
     <string id="NiRV4NA0" text= "Нирвана" />
+    <string id="1Sl3OFD0" text= "Остров Отчаяния" />
   </strings>
 </base>

@@ -137,6 +137,9 @@
   <string id="str_multiplayer_scene_name.crpg_battle_westveen" text="{=W3stV33N}Westveen" />
   <string id="str_multiplayer_scene_name.crpg_battle_overgrown" text="{=0V3RGRO1}Overgrown" />
   <string id="str_multiplayer_scene_name.crpg_battle_nirvana" text="{=NiRV4NA1}Nirvana" />
+  <string id="str_multiplayer_scene_name.crpg_battle_festival" text="{=F3sT1Val}Festival" />
+  <string id="str_multiplayer_scene_name.crpg_battle_ruins" text="{=Ru1NsWaR}Ruins" />
+  <string id="str_multiplayer_scene_name.crpg_battle_purplehaze" text="{=JH3nDr1X}PurpleHaze" />
 
   <!-- Conquest Maps -->
   <string id="str_multiplayer_scene_name.crpg_conquest_acre" text="{=9Mpawm9h}Acre" />
