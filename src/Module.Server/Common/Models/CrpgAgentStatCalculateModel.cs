@@ -366,11 +366,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 // Reducing swing speed on horseback to be the same as infantry
                 if (HasSwingDamage(primaryItem))
                 {
-                    props.SwingSpeedMultiplier *= cappedSwingSpeedFactor * 0.91f;
-                }
-                else
-                {
-                    props.SwingSpeedMultiplier *= 0.91f;
+                    props.SwingSpeedMultiplier *= (equippedItem.WeaponLength < 135)
+                        ? cappedSwingSpeedFactor * 0.91f // Apply extra slowdown for short weapons
+                        : cappedSwingSpeedFactor; // Keep the standard adjustment for long weapons
                 }
 
                 // Thrustspeed Nerf on Horseback
