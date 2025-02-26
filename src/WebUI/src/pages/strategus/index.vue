@@ -29,6 +29,7 @@ definePage({
 
 const mainHeaderHeight = useMainHeaderHeight()
 
+// prettier-ignore
 const {
   center,
   map,
@@ -48,6 +49,7 @@ const {
   toggleTerrainVisibilityLayer,
 } = useTerrain(map)
 
+// prettier-ignore
 const {
   isRegistered,
   moveParty,

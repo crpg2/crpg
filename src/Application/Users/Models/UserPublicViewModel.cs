@@ -18,6 +18,6 @@ public record UserPublicViewModel : IMapFrom<User>
     public void Mapping(Profile profile)
     {
         profile.CreateMap<User, UserPublicViewModel>()
-            .ForMember(u => u.Clan, opt => opt.MapFrom(c => c.ClanMembership != null ? c.ClanMembership.Clan! : null));
+            .ForMember(u => u.Clan, opt => opt.MapFrom(c => c.ClanMembership!.Clan));
     }
 }

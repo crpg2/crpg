@@ -42,8 +42,8 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
         {
             var battles = await _db.Battles
                 .AsSplitQuery()
-                .Include(b => b.Fighters).ThenInclude(f => f.Party!.User)
-                .Include(b => b.Fighters).ThenInclude(f => f.Settlement)
+                .Include(b => b.Fighters).ThenInclude(f => f.Party!.User).ThenInclude(u => u!.ClanMembership).ThenInclude(c => c!.Clan)
+                .Include(b => b.Fighters).ThenInclude(f => f.Settlement).ThenInclude(s => s!.Owner).ThenInclude(o => o!.User).ThenInclude(u => u!.ClanMembership).ThenInclude(c => c!.Clan)
                 .Where(b => b.Region == req.Region && req.Phases.Contains(b.Phase))
                 .ToArrayAsync(cancellationToken);
 
@@ -64,6 +64,7 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
                     .Where(f => f.Side == BattleSide.Defender)
                     .Sum(f => (int)Math.Floor(f.Party?.Troops ?? 0) + (f.Settlement?.Troops ?? 0)),
                 CreatedAt = b.CreatedAt,
+                ScheduledFor = b.ScheduledFor,
             }).ToArray();
 
             return new(battlesVm);
