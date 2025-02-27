@@ -337,6 +337,11 @@ internal class CrpgRewardServer : MissionLogic
 
                 // TODO should probably implement compensation for disconnected users here
             }
+            else if (crpgPeer.LastSpawnInfo != null && isPlayerInSpectator) // update spectators multiplier based on their previous team
+            {
+                SetRewardForConnectedPlayer(userUpdate, crpgPeer, 0, 0, false,
+                    defenderMultiplierGain, attackerMultiplierGain, constantMultiplier);
+            }
 
             userUpdates.Add(userUpdate);
         }
