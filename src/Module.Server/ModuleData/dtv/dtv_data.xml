@@ -84,9 +84,10 @@
     </Wave>
     <Wave>
       <Group classDivisionId="crpg_dtv_pirate_deckhand" count="2.6" />
-      <Group classDivisionId="crpg_dtv_pirate_male" count="1.2" />
-      <Group classDivisionId="crpg_dtv_pirate_female" count="0.8" />
-      <Group classDivisionId="crpg_dtv_pirate_swashbuckler" count="0.5" />
+      <Group classDivisionId="crpg_dtv_pirate_male" count="1.1" />
+      <Group classDivisionId="crpg_dtv_pirate_female" count="0.7" />
+      <Group classDivisionId="crpg_dtv_pirate_swashbuckler" count="0.4" />
+      <Group classDivisionId="crpg_dtv_pirate_buccaneer" count="0.2" />
       <Group classDivisionId="crpg_dtv_pirate_boss" />
     </Wave>
   </Round>
