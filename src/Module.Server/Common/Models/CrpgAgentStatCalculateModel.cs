@@ -360,16 +360,8 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
                 double swingTimeFactor = 1 - Polynomial(125) + Polynomial(equippedItem.WeaponLength);
 
-                float cappedSwingSpeedFactor = MBMath.ClampFloat((float)(1 / swingTimeFactor), 0.25f, 1f);
+                float cappedSwingSpeedFactor = MBMath.ClampFloat((float)(1 / swingTimeFactor), 0.25f, 0.91f);
                 props.SwingSpeedMultiplier *= HasSwingDamage(primaryItem) ? cappedSwingSpeedFactor : 1f;
-
-                // Reducing swing speed on horseback to be the same as infantry
-                if (HasSwingDamage(primaryItem))
-                {
-                    props.SwingSpeedMultiplier *= (equippedItem.WeaponLength < 135)
-                        ? cappedSwingSpeedFactor * 0.91f // Apply extra slowdown for short weapons
-                        : cappedSwingSpeedFactor; // Keep the standard adjustment for long weapons
-                }
 
                 // Thrustspeed Nerf on Horseback
                 props.ThrustOrRangedReadySpeedMultiplier *= 0.84f;
