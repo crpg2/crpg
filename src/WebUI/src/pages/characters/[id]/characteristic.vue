@@ -334,7 +334,7 @@ onBeforeRouteUpdate(() => {
                 :disabled="!respecCapability.enabled"
                 icon-left="chevron-down-double"
                 data-aq-character-action="respecialize"
-                class="ring-1 ring-blue-500"
+                class="ring-1 ring-white/25"
               >
                 <div class="flex items-center gap-2">
                   <span>{{ $t('character.settings.respecialize.title') }}</span>
