@@ -2311,8 +2311,32 @@ public record SeedDataCommand : IMediatorRequest
                 },
                 CreatedAt = DateTime.UtcNow.AddHours(-4),
             };
+            Battle droobBattle = new()
+            {
+                Phase = BattlePhase.Scheduled,
+                Region = Region.Eu,
+                Position = leblenion.Position,
+                Fighters =
+                {
+                    new BattleFighter
+                    {
+                        Party = eztliParty,
+                        Side = BattleSide.Attacker,
+                        Commander = true,
+                    },
+                    new BattleFighter
+                    {
+                        Party = null,
+                        Settlement = leblenion,
+                        Side = BattleSide.Defender,
+                        Commander = true,
+                    },
+                },
+                ScheduledFor = DateTime.UtcNow,
+                CreatedAt = DateTime.UtcNow.AddHours(-4),
+            };
 
-            Battle[] newBattles = { nideonBattle, plainBattle, hertogeaBattle, leblenionBattle };
+            Battle[] newBattles = { nideonBattle, plainBattle, hertogeaBattle, leblenionBattle, droobBattle };
             if (!await _db.Battles.AnyAsync())
             {
                 _db.Battles.AddRange(newBattles);

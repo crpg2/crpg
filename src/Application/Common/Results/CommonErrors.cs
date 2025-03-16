@@ -36,6 +36,16 @@ internal static class CommonErrors
         Title = "Battle is too far",
         Detail = $"Battle with id '{battleId}' is too far to perform the requested action",
     };
+    public static Error BattleAlreadyClaimed(int battleId, string instance) => new(ErrorType.Conflict, ErrorCode.BattleAlreadyClaimed)
+    {
+        Title = "Battle already claimed",
+        Detail = $"Battle with id '{battleId}' has already been claimed by '{instance}'",
+    };
+    public static Error BattleNotClaimed(int battleId, string instance) => new(ErrorType.NotFound, ErrorCode.BattleNotClaimed)
+    {
+        Title = "Battle not claimed",
+        Detail = $"Battle with id '{battleId}' has not been claimed by '{instance}'",
+    };
 
     public static Error CharacterForTournament(int characterId) => new(ErrorType.Validation, ErrorCode.CharacterForTournament)
     {

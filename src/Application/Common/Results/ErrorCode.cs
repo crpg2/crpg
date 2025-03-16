@@ -67,4 +67,6 @@ public enum ErrorCode
     UserRoleNotMet,
     PersonalItemAlreadyExist,
     SettingNotFound,
+    BattleAlreadyClaimed,
+    BattleNotClaimed,
 }

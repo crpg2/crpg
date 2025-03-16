@@ -64,6 +64,7 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
                     .Where(f => f.Side == BattleSide.Defender)
                     .Sum(f => (int)Math.Floor(f.Party?.Troops ?? 0) + (f.Settlement?.Troops ?? 0)),
                 CreatedAt = b.CreatedAt,
+                ScheduledFor = b.ScheduledFor,
             }).ToArray();
 
             return new(battlesVm);
