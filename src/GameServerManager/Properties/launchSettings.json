@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GameServerManager": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "CRPG_INSTANCE": "crpg99"
+      }
+    }
+  }
+}

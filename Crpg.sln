@@ -32,6 +32,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{5C7B1CBA-1CE0-4E05-B9B4-53EF21B17746}"
 	ProjectSection(SolutionItems) = preProject
 		data\constants.json = data\constants.json
+		src\GameServerManager\GameServers\Configurations\GameServers.json = src\GameServerManager\GameServers\Configurations\GameServers.json
 		data\items.json = data\items.json
 		data\settlements.json = data\settlements.json
 	EndProjectSection
@@ -51,6 +52,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LauncherV3", "src\LauncherV3\LauncherV3.csproj", "{717B1275-8860-4DAA-A7BF-097F51761476}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module.Editor", "src\Module.Editor\Module.Editor.csproj", "{C124B0D6-E6A7-4871-BF54-3DEE04119490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameServerManager", "src\GameServerManager\GameServerManager.csproj", "{2B19D23D-A7FC-4E64-828D-0813B3893844}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -290,6 +293,18 @@ Global
 		{C124B0D6-E6A7-4871-BF54-3DEE04119490}.Release|x64.Build.0 = Release|Any CPU
 		{C124B0D6-E6A7-4871-BF54-3DEE04119490}.Release|x86.ActiveCfg = Release|Any CPU
 		{C124B0D6-E6A7-4871-BF54-3DEE04119490}.Release|x86.Build.0 = Release|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Debug|x64.Build.0 = Debug|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Debug|x86.Build.0 = Debug|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Release|x64.ActiveCfg = Release|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Release|x64.Build.0 = Release|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Release|x86.ActiveCfg = Release|Any CPU
+		{2B19D23D-A7FC-4E64-828D-0813B3893844}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -314,6 +329,7 @@ Global
 		{174D5F8B-46A4-476A-9AFB-ED1274A7368E} = {52AD2564-92E7-4BEC-BE3A-F2C4E4F841B1}
 		{717B1275-8860-4DAA-A7BF-097F51761476} = {52AD2564-92E7-4BEC-BE3A-F2C4E4F841B1}
 		{C124B0D6-E6A7-4871-BF54-3DEE04119490} = {52AD2564-92E7-4BEC-BE3A-F2C4E4F841B1}
+		{2B19D23D-A7FC-4E64-828D-0813B3893844} = {52AD2564-92E7-4BEC-BE3A-F2C4E4F841B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40CA755A-A917-468D-80F2-E4988A5ECE5C}

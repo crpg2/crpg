@@ -1,0 +1,40 @@
+[
+  {
+    "mode": "CRPGBattle",
+    "port": 7215,
+    "schedule": {
+      "turnOffTimes": [
+        {
+          "day": "Wednesday",
+          "startTime": "18:00",
+          "endTime": "22:00"
+        }
+      ]
+    }
+  },
+  //{
+  //  "mode": "CRPGConquest",
+  //  "port": 7215,
+  //  "schedule": {
+  //    "turnOnTimes": [
+  //      {
+  //        "day": "Wednesday",
+  //        "startTime": "18:00",
+  //        "endTime": "22:00"
+  //      }
+  //    ]
+  //  }
+  //},
+  //{
+  //  "mode": "CRPGDTV",
+  //  "port": 7210
+  //},
+  {
+    "mode": "CRPGDuel",
+    "port": 7209
+  }
+  //{
+  //  "mode": "CRPGTeamDeathmatch",
+  //  "port": 7211
+  //}
+]
