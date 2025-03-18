@@ -44,6 +44,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         _gameStarted = false;
         _currentRound = -1;
         _timerExpired = false;
+
     }
 
     public override bool IsGameModeHidingAllAgentVisuals => true;
@@ -52,6 +53,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     public override bool UseRoundController() => false;
 
     private CrpgDtvSpawningBehavior SpawningBehavior => (CrpgDtvSpawningBehavior)SpawnComponent.SpawningBehavior;
+
     private int RoundsCount => _dtvData.Rounds.Count;
     private CrpgDtvRound CurrentRoundData => _dtvData.Rounds[_currentRound];
     private CrpgDtvWave CurrentWaveData => _dtvData.Rounds[_currentRound].Waves[_currentWave];
@@ -118,7 +120,18 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
     public override void OnAgentBuild(Agent agent, Banner banner)
     {
+
+
         base.OnAgentBuild(agent, banner);
+        if (agent.IsAIControlled && agent.Team == Mission.DefenderTeam) // VIP under attack
+        {
+            agent.MakeVoice(SkinVoiceManager.VoiceType.Fear, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+            SendDataToPeers(new CrpgDtvVipSpawn { VipAgentIndex = agent.Index });
+
+
+        }
+
+
         // Synchronize health with all clients to make the spectator health bar work.
         agent.UpdateSyncHealthToAllClients(true);
     }

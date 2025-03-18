@@ -1,5 +1,8 @@
 ﻿using Crpg.Module.Modes.Dtv;
+using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
+using TaleWorlds.InputSystem;
+using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 using TaleWorlds.TwoDimension;
 
@@ -15,6 +18,13 @@ internal class DtvHudUiHandler : MissionView
     public DtvHudUiHandler()
     {
         ViewOrderPriority = 2;
+    }
+    private InputContext _input
+    {
+        get
+        {
+            return MissionScreen.SceneLayer.Input;
+        }
     }
 
     public override void OnMissionScreenInitialize()
@@ -60,6 +70,22 @@ internal class DtvHudUiHandler : MissionView
     {
         base.OnMissionScreenTick(dt);
         _dataSource!.Tick(dt);
+
+        if (_input.IsGameKeyDown(5))
+        {
+            if (_dtvClient._vipAgent != null)
+            {
+                uint focusedContourColor = new TaleWorlds.Library.Color(1f, 0.84f, 0.35f, 1f).ToUnsignedInteger();
+                _dtvClient._vipAgent.AgentVisuals?.SetContourColor(focusedContourColor, true);
+            }
+        }
+        else
+        {
+            if (_dtvClient._vipAgent != null)
+            { 
+                _dtvClient._vipAgent.AgentVisuals?.SetContourColor(null);
+            }
+        }
     }
 
     private void OnUpdateProgress()

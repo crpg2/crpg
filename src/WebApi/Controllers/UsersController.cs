@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Net;
 using Crpg.Application.ActivityLogs.Models;
 using Crpg.Application.Characters.Commands;
@@ -323,6 +324,7 @@ public class UsersController : BaseController
     [HttpGet("self/characters/{id}/items")]
     public Task<ActionResult<Result<IList<EquippedItemViewModel>>>> GetCharacterItems([FromRoute] int id)
     {
+        Debug.Print($"HELLO5555");
         return ResultToActionAsync(Mediator.Send(new GetUserCharacterItemsQuery
         {
             UserId = CurrentUser.User!.Id,
@@ -342,6 +344,8 @@ public class UsersController : BaseController
     public Task<ActionResult<Result<IList<EquippedItemViewModel>>>> UpdateCharacterItems([FromRoute] int id,
         [FromBody] UpdateCharacterItemsCommand req)
     {
+        Debug.Print($"HELLO5555");
+
         req = req with { CharacterId = id, UserId = CurrentUser.User!.Id };
         return ResultToActionAsync(Mediator.Send(req));
     }

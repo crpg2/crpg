@@ -56,6 +56,7 @@
     <Compile Remove="..\Module.Server\Common\NotAllPlayersReadyComponent.cs" />
     <Compile Remove="..\Module.Server\Common\MapPoolComponent.cs" />
     <Compile Remove="..\Module.Server\Common\ChatCommands\**\*" />
+    <Compile Remove="..\Module.Server\Common\EquipmentChestTimeoutBehavior.cs" />
     <Compile Remove="..\Module.Server\Rewards\CrpgRewardServer.cs" />
     <Compile Remove="..\Module.Server\Firewall\*" />
     <EmbeddedResource Remove="GUI\**" />
@@ -66,6 +67,8 @@
     <Compile Remove="..\Module.Server\Common\CrpgCustomBannerServer.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\MissionNetworkComponentPatch.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\SendPeerInformationsToPeerPatch.cs" />
+    <Compile Remove="..\Module.Server\Scripts\EquipmentChes2t.cs" />
+    <Compile Remove="..\Module.Server\Scripts\EquipmentChest.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -67,7 +67,9 @@
   <string id="str_notification.conquest_overtime" text="{=joWaOGco}The time limit was reached but some attackers are still around the flags. Defenders will need to wipe them to win the game." />
   <string id="str_notification.entities_removed" text="{=I5MWE5AR}{ENTITY_COUNT} entities were removed from the map given the population size." />
   <string id="str_notification.moved_to_spectator" text="{=iN5cT1v3}You have been moved to spectator due to inactivity!" />
-  
+  <string id="str_notification.rearm_gear_warning" text="{=pCIKein2}You should have at least one melee or throwing weapon equipped to rearm!" />
+  <string id="str_notification.rearm_gear_timeout" text="{=pCIKefn2}Next rearm available in {SECONDS} seconds!" />
+
   <!-- Battle Maps -->
   <string id="str_multiplayer_scene_name.crpg_battle_abandoned" text="{=PKVPlAeE}Abandoned" />
   <string id="str_multiplayer_scene_name.crpg_battle_acaciacitadel" text="{=tZJ32ZRQ}Acacia Citadel" />

@@ -10,9 +10,11 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
 {
     private int _currentWave;
     private int _currentRound;
+    public Agent? _vipAgent;
     public event Action OnUpdateCurrentProgress = default!;
     public event Action OnWaveStart = default!;
     public event Action OnRoundStart = default!;
+    
 
     public int CurrentRound
     {
@@ -67,6 +69,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
         registerer.Register<CrpgDtvWaveStartMessage>(HandleWaveStart);
         registerer.Register<CrpgDtvVipUnderAttackMessage>(HandleVipUnderAttack);
         registerer.Register<CrpgDtvGameEnd>(HandleVipDeath);
+        registerer.Register<CrpgDtvVipSpawn>(HandleVipSpawn);
         registerer.Register<CrpgDtvCurrentProgressMessage>(HandleCurrentProgress);
         registerer.Register<SetStonePileAmmo>(HandleServerEventSetStonePileAmmo);
         registerer.Register<SetRangedSiegeWeaponAmmo>(HandleServerSetRangedSiegeWeaponAmmo);
@@ -95,6 +98,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
             Color = new Color(0.48f, 0f, 1f),
             SoundEventPath = message.Round == 0 ? null : "event:/ui/notification/quest_finished",
         });
+
         CurrentRound = message.Round + 1;
         CurrentWave = 0;
 
@@ -109,6 +113,8 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
 
     private void HandleWaveStart(CrpgDtvWaveStartMessage message)
     {
+
+        Debug.WriteDebugLineOnScreen("AHhhhhhhhhhhhh");
         TextObject textObject = new("{=1y04FNHB}Wave {WAVE} started!",
             new Dictionary<string, object> { ["WAVE"] = message.Wave + 1 });
         InformationManager.DisplayMessage(new InformationMessage
@@ -121,7 +127,13 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
 
         OnWaveStart?.Invoke();
     }
+    private void HandleVipSpawn(CrpgDtvVipSpawn message)
+    {
+        //var agentToDefend = Mission.MissionNetworkHelper.GetAgentFromIndex(message.VipAgentIndex, true);
+        //uint focusedContourColor = new TaleWorlds.Library.Color(1f, 0.84f, 0.35f, 1f).ToUnsignedInteger();
+        _vipAgent = Mission.MissionNetworkHelper.GetAgentFromIndex(message.VipAgentIndex, true);
 
+    }
     private void HandleVipDeath(CrpgDtvGameEnd message)
     {
         var agentToDefend = Mission.MissionNetworkHelper.GetAgentFromIndex(message.VipAgentIndex, true);
