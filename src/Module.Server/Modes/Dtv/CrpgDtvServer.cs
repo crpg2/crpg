@@ -119,6 +119,12 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     public override void OnAgentBuild(Agent agent, Banner banner)
     {
         base.OnAgentBuild(agent, banner);
+        if (agent.IsAIControlled && agent.Team == Mission.DefenderTeam) // VIP under attack
+        {
+            agent.MakeVoice(SkinVoiceManager.VoiceType.Fear, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+            SendDataToPeers(new CrpgDtvVipSpawn { VipAgentIndex = agent.Index });
+        }
+
         // Synchronize health with all clients to make the spectator health bar work.
         agent.UpdateSyncHealthToAllClients(true);
     }

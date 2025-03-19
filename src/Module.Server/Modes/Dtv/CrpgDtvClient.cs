@@ -10,10 +10,11 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
 {
     private int _currentWave;
     private int _currentRound;
+    public Agent? _vipAgent;
     public event Action OnUpdateCurrentProgress = default!;
     public event Action OnWaveStart = default!;
     public event Action OnRoundStart = default!;
-
+    
     public int CurrentRound
     {
         get => _currentRound;
@@ -67,6 +68,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
         registerer.Register<CrpgDtvWaveStartMessage>(HandleWaveStart);
         registerer.Register<CrpgDtvVipUnderAttackMessage>(HandleVipUnderAttack);
         registerer.Register<CrpgDtvGameEnd>(HandleVipDeath);
+        registerer.Register<CrpgDtvVipSpawn>(HandleVipSpawn);
         registerer.Register<CrpgDtvCurrentProgressMessage>(HandleCurrentProgress);
         registerer.Register<SetStonePileAmmo>(HandleServerEventSetStonePileAmmo);
         registerer.Register<SetRangedSiegeWeaponAmmo>(HandleServerSetRangedSiegeWeaponAmmo);
@@ -120,6 +122,11 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
         CurrentWave = message.Wave + 1;
 
         OnWaveStart?.Invoke();
+    }
+    private void HandleVipSpawn(CrpgDtvVipSpawn message)
+    {
+        _vipAgent = Mission.MissionNetworkHelper.GetAgentFromIndex(message.VipAgentIndex, true);
+
     }
 
     private void HandleVipDeath(CrpgDtvGameEnd message)
