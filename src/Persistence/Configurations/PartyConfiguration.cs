@@ -12,5 +12,7 @@ public class PartyConfiguration : IEntityTypeConfiguration<Party>
         builder.HasOne<User>(h => h.User!)
             .WithOne(u => u.Party!)
             .HasForeignKey<Party>(u => u.Id);
+
+        builder.OwnsOne(h => h.VulnerabilityWindow);
     }
 }

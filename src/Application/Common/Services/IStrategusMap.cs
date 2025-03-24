@@ -23,6 +23,9 @@ internal interface IStrategusMap
     /// <summary>Translates a point from <paramref name="sourceRegion"/> to <paramref name="targetRegion"/>.</summary>
     Point TranslatePositionForRegion(Point pos, Region sourceRegion, Region targetRegion);
 
+    /// <summary>Returns the region which a <paramref name="pos"/>  is located within.</summary>
+    Region TranslateRegionForPosition(Point pos);
+
     /// <summary>Get the spawning position depending on the region.</summary>
     Point GetSpawnPosition(Region region);
 }
@@ -116,6 +119,26 @@ internal class StrategusMap : IStrategusMap
         };
 
         return new Point(x, pos.Y);
+    }
+
+    public Region TranslateRegionForPosition(Point pos)
+    {
+        if (pos.X <= _width)
+        {
+            return Region.Eu;
+        }
+        else if (pos.X > _width && pos.X <= 2 * _width)
+        {
+            return Region.Na;
+        }
+        else if (pos.X > 2 * _width && pos.X <= 4 * _width)
+        {
+            return Region.As;
+        }
+        else
+        {
+            throw new ArgumentOutOfRangeException($"Position {pos} is out of bounds.");
+        }
     }
 
     /// <inheritdoc />

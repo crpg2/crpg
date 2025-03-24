@@ -38,6 +38,11 @@ public class Party : AuditableEntity
     public PartyStatus Status { get; set; }
 
     /// <summary>
+    /// The timeslots where the party can be attacked. <see cref="VulnerabilityWindow"/>.
+    /// </summary>
+    public VulnerabilityWindow VulnerabilityWindow { get; set; } = new();
+
+    /// <summary>
     /// Sequence of points the user is moving to if <see cref="Status"/> == <see cref="PartyStatus.MovingToPoint"/>.
     /// </summary>
     public MultiPoint Waypoints { get; set; } = MultiPoint.Empty;
