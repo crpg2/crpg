@@ -92,7 +92,17 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
     public override bool CheckForWarmupEnd()
     {
-        return true;
+        int playersInTeam = 0;
+        foreach (NetworkCommunicator networkPeer in GameNetwork.NetworkPeers)
+        {
+            MissionPeer component = networkPeer.GetComponent<MissionPeer>();
+            if (networkPeer.IsSynchronized && component?.Team != null && component.Team.Side != BattleSideEnum.None)
+            {
+                playersInTeam += 1;
+            }
+        }
+
+        return playersInTeam >= MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue();
     }
 
     public override void OnPeerChangedTeam(NetworkCommunicator networkPeer, Team oldTeam, Team newTeam)
@@ -175,6 +185,11 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
     public void RewardIfEndOfMission(MissionLobbyComponent.MultiplayerGameState newState)
     {
+        if (!_gameStarted)
+        {
+            return;
+        }
+
         if (!_timerExpired && TimerComponent.CheckIfTimerPassed() && newState == MissionLobbyComponent.MultiplayerGameState.Ending) // Award players if timer expires
         {
             _timerExpired = true;

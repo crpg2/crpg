@@ -1,4 +1,7 @@
-﻿using TaleWorlds.Engine.GauntletUI;
+﻿using Crpg.Module.Common.Commander;
+using Crpg.Module.Modes.Dtv;
+using Crpg.Module.Modes.Warmup;
+using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 
 namespace Crpg.Module.GUI.Warmup;
@@ -7,6 +10,17 @@ internal class WarmupHudUiHandler : MissionView
 {
     private WarmupHudVm? _dataSource;
     private GauntletLayer? _gauntletLayer;
+    private CrpgWarmupComponent? _warmupComponent;
+
+    public override void AfterStart()
+    {
+        base.AfterStart();
+        _warmupComponent = Mission.GetMissionBehavior<CrpgWarmupComponent>();
+        if (_warmupComponent != null)
+        {
+            _warmupComponent.OnUpdatePlayerCount += OnUpdatePlayerCount;
+        }
+    }
 
     public override void OnMissionScreenInitialize()
     {
@@ -23,11 +37,20 @@ internal class WarmupHudUiHandler : MissionView
         MissionScreen.RemoveLayer(_gauntletLayer);
         _dataSource!.OnFinalize();
         base.OnMissionScreenFinalize();
+        if (_warmupComponent != null)
+        {
+            _warmupComponent.OnUpdatePlayerCount -= OnUpdatePlayerCount;
+        }
     }
 
     public override void OnMissionScreenTick(float dt)
     {
         base.OnMissionScreenTick(dt);
         _dataSource!.Tick(dt);
+    }
+
+    private void OnUpdatePlayerCount(int requiredPlayers)
+    {
+        _dataSource!.OnUpdateRequiredPlayers(requiredPlayers);
     }
 }
