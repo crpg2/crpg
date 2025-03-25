@@ -1,15 +1,12 @@
 ﻿using System.Reflection;
 using Crpg.Module.Common;
-using Crpg.Module.Common.Network;
 using Crpg.Module.Helpers;
 using Crpg.Module.Modes.Battle;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
-using TaleWorlds.Diamond;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using static TaleWorlds.MountAndBlade.MultiplayerWarmupComponent;
 
 namespace Crpg.Module.Modes.Warmup;
 
@@ -58,7 +55,7 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
                 GameNetwork.WriteMessage(new WarmupStateChange(WarmupStateReflection, _currentStateStartTime.NumberOfTicks));
                 GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
             }
-        } 
+        }
     }
 
     private MultiplayerTimerComponent TimerComponentReflection => (MultiplayerTimerComponent)TimerComponentField.GetValue(this)!;
@@ -74,12 +71,6 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
     {
         base.OnRemoveBehavior();
         MissionPeer.OnTeamChanged -= HandlePeerTeamChanged;
-    }
-
-    protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
-    {
-        base.AddRemoveMessageHandlers(registerer);
-        registerer.Register<WarmupStateChange>(HandleServerEventWarmupStateChange);
     }
 
     public override void OnPreDisplayMissionTick(float dt)
@@ -130,6 +121,14 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
 
         RewardUsers();
     }
+
+
+    protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
+    {
+        base.AddRemoveMessageHandlers(registerer);
+        registerer.Register<WarmupStateChange>(HandleServerEventWarmupStateChange);
+    }
+
     protected override void HandleNewClientAfterSynchronized(NetworkCommunicator networkPeer)
     {
         if (IsInWarmup && !networkPeer.IsServerPeer)
