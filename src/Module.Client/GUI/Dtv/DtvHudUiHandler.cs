@@ -1,8 +1,5 @@
 ﻿using Crpg.Module.Modes.Dtv;
-using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
-using TaleWorlds.InputSystem;
-using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 using TaleWorlds.TwoDimension;
 
@@ -14,18 +11,10 @@ internal class DtvHudUiHandler : MissionView
     private GauntletLayer? _gauntletLayer;
     private SpriteCategory? _mpMissionCategory;
     private CrpgDtvClient? _dtvClient;
-    private bool _isVipOutlined = false;
 
     public DtvHudUiHandler()
     {
         ViewOrderPriority = 2;
-    }
-    private InputContext _input
-    {
-        get
-        {
-            return MissionScreen.SceneLayer.Input;
-        }
     }
 
     public override void OnMissionScreenInitialize()
@@ -71,7 +60,6 @@ internal class DtvHudUiHandler : MissionView
     {
         base.OnMissionScreenTick(dt);
         _dataSource!.Tick(dt);
-
     }
 
     private void OnUpdateProgress()

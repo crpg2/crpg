@@ -120,10 +120,11 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     public override void OnAgentBuild(Agent agent, Banner banner)
     {
         base.OnAgentBuild(agent, banner);
-        if (agent.IsAIControlled && agent.Team == Mission.DefenderTeam) // VIP under attack
+        if (agent.IsAIControlled && agent.Team == Mission.DefenderTeam) // VIP agent spawned
         {
             _vipAgentIndex = agent.Index;
-            agent.MakeVoice(SkinVoiceManager.VoiceType.Fear, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
+
+            // Send VIP agent index to the players.
             SendDataToPeers(new CrpgDtvVipSpawn { VipAgentIndex = agent.Index });
         }
 
@@ -259,10 +260,10 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         });
         GameNetwork.EndModuleEventAsServer();
 
+        // If player joins after the VIP agent has spawned, then send them the vip agent index. (Could maybe use to rename the message since its not only used when the VIP spawns...)
         if (_vipAgentIndex != null)
         {
             GameNetwork.BeginModuleEventAsServer(networkPeer);
-
             GameNetwork.WriteMessage(new CrpgDtvVipSpawn { VipAgentIndex = (int)_vipAgentIndex });
             GameNetwork.EndModuleEventAsServer();
         }

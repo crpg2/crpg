@@ -43,6 +43,7 @@ internal class CrpgMissionMarkerVm : ViewModel
     private MBBindingList<MissionPeerMarkerTargetVM> _peerTargets = default!;
     private MBBindingList<MissionSiegeEngineMarkerTargetVM> _siegeEngineTargets = default!;
     private MBBindingList<MissionAlwaysVisibleMarkerTargetVM> _alwaysVisibleTargets = default!;
+    private bool _isVipOutlined = false;
 
     public CrpgMissionMarkerVm(Camera missionCamera, MissionMultiplayerGameModeBaseClient gameModeClient)
     {
@@ -214,7 +215,6 @@ internal class CrpgMissionMarkerVm : ViewModel
             {
                 _fadeOutTimerStarted = false;
             }
-
         }
 
         _prevEnabledState = IsEnabled;
@@ -262,22 +262,23 @@ internal class CrpgMissionMarkerVm : ViewModel
         }
     }
 
+    // Used to highlight the viscount when the info key is pressed
     private void HighlightVipAgent(bool enabled)
     {
         CrpgDtvClient dtvClient = (CrpgDtvClient)_gameModeClient;
 
-        if (dtvClient._vipAgent != null)
+        if (dtvClient.VipAgent != null)
         {
-            if (enabled && !dtvClient._isVipOutlined)
+            if (enabled && !_isVipOutlined)
             {
                 uint focusedContourColor = new TaleWorlds.Library.Color(1f, 0.84f, 0.35f, 1f).ToUnsignedInteger();
-                dtvClient._vipAgent.AgentVisuals?.SetContourColor(focusedContourColor, false);
-                dtvClient._isVipOutlined = true;
+                dtvClient.VipAgent.AgentVisuals?.SetContourColor(focusedContourColor, true);
+                _isVipOutlined = true;
             }
-            else if (!enabled && dtvClient._isVipOutlined)
+            else if (!enabled && _isVipOutlined)
             {
-                dtvClient._vipAgent.AgentVisuals?.SetContourColor(null);
-                dtvClient._isVipOutlined = false;
+                dtvClient.VipAgent.AgentVisuals?.SetContourColor(null);
+                _isVipOutlined = false;
             }
         }
     }

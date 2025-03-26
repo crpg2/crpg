@@ -10,8 +10,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
 {
     private int _currentWave;
     private int _currentRound;
-    public bool _isVipOutlined = false;
-    public Agent? _vipAgent;
+    public Agent? VipAgent;
     public event Action OnUpdateCurrentProgress = default!;
     public event Action OnWaveStart = default!;
     public event Action OnRoundStart = default!;
@@ -126,7 +125,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
     }
     private void HandleVipSpawn(CrpgDtvVipSpawn message)
     {
-        _vipAgent = Mission.MissionNetworkHelper.GetAgentFromIndex(message.VipAgentIndex, true);
+        VipAgent = Mission.MissionNetworkHelper.GetAgentFromIndex(message.VipAgentIndex, true);
     }
 
     private void HandleVipDeath(CrpgDtvGameEnd message)
