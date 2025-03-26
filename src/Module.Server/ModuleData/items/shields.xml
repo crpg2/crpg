@@ -2624,7 +2624,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
-  <Item id="crpg_aciv_cts_roman_republic_square_h0" name="{=Steve18}Republic Scutum 1" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square" culture="Culture.empire" using_tableau="true" weight="4.648838" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+  <Item id="crpg_aciv_cts_roman_republic_square_h0" name="{=Steve18}Republic Scutum 1" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
     <ItemComponent>
       <Weapon weapon_class="LargeShield" body_armor="4" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="530" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
@@ -2632,7 +2632,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
   </Item>
-  <Item id="crpg_aciv_cts_roman_republic_square_h1" name="{=Steve18}Republic Scutum 1 +1" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square" culture="Culture.empire" using_tableau="true" weight="4.648838" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+  <Item id="crpg_aciv_cts_roman_republic_square_h1" name="{=Steve18}Republic Scutum 1 +1" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
     <ItemComponent>
       <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="573" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
@@ -2640,7 +2640,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
   </Item>
-  <Item id="crpg_aciv_cts_roman_republic_square_h2" name="{=Steve18}Republic Scutum 1 +2" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square" culture="Culture.empire" using_tableau="true" weight="4.648838" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+  <Item id="crpg_aciv_cts_roman_republic_square_h2" name="{=Steve18}Republic Scutum 1 +2" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
     <ItemComponent>
       <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="615" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
@@ -2648,7 +2648,7 @@
     </ItemComponent>
     <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
   </Item>
-  <Item id="crpg_aciv_cts_roman_republic_square_h3" name="{=Steve18}Republic Scutum 1 +3" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square" culture="Culture.empire" using_tableau="true" weight="4.648838" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+  <Item id="crpg_aciv_cts_roman_republic_square_h3" name="{=Steve18}Republic Scutum 1 +3" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
     <ItemComponent>
       <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="658" modifier_group="shield">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
@@ -2656,4 +2656,4 @@
     </ItemComponent>
     <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
   </Item>
-  </Items>
+</Items>
