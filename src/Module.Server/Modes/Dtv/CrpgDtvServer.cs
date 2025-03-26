@@ -31,6 +31,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private bool _gameStarted;
     private bool _waveStarted;
     private bool _timerExpired;
+    private int? _vipAgentIndex;
     private MissionTimer? _waveStartTimer;
     private MissionTimer? _endGameTimer;
     private MissionTimer _refillBouldersTimer = default!;
@@ -121,11 +122,12 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         base.OnAgentBuild(agent, banner);
         if (agent.IsAIControlled && agent.Team == Mission.DefenderTeam) // VIP under attack
         {
+            _vipAgentIndex = agent.Index;
             agent.MakeVoice(SkinVoiceManager.VoiceType.Fear, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
             SendDataToPeers(new CrpgDtvVipSpawn { VipAgentIndex = agent.Index });
         }
 
-        // Synchronize health with all clients to make the spectator health bar work.
+            // Synchronize health with all clients to make the spectator health bar work.
         agent.UpdateSyncHealthToAllClients(true);
     }
 
@@ -256,6 +258,14 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             Round = _currentRound,
         });
         GameNetwork.EndModuleEventAsServer();
+
+        if (_vipAgentIndex != null)
+        {
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+
+            GameNetwork.WriteMessage(new CrpgDtvVipSpawn { VipAgentIndex = (int)_vipAgentIndex });
+            GameNetwork.EndModuleEventAsServer();
+        }
     }
 
     /// <summary>Work around the 60 minutes limit of MapTimeLimit.</summary>

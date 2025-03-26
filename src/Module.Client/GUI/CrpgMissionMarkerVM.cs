@@ -1,6 +1,7 @@
 ﻿using Crpg.Module.Common;
 using Crpg.Module.Common.Commander;
 using Crpg.Module.Helpers;
+using Crpg.Module.Modes.Dtv;
 using Crpg.Module.Modes.Duel;
 using Crpg.Module.Modes.Siege;
 using TaleWorlds.Core;
@@ -183,12 +184,21 @@ internal class CrpgMissionMarkerVm : ViewModel
             _fadeOutTimerStarted = false;
             _fadeOutTimer = 0f;
             _prevEnabledState = IsEnabled;
+            if (_gameModeClient is CrpgDtvClient)
+            {
+                HighlightVipAgent(true);
+            }
+
         }
         else
         {
             if (_prevEnabledState)
             {
                 _fadeOutTimerStarted = true;
+                if (_gameModeClient is CrpgDtvClient)
+               {
+                    HighlightVipAgent(false);
+               }
             }
 
             if (_fadeOutTimerStarted)
@@ -204,6 +214,7 @@ internal class CrpgMissionMarkerVm : ViewModel
             {
                 _fadeOutTimerStarted = false;
             }
+
         }
 
         _prevEnabledState = IsEnabled;
@@ -247,6 +258,26 @@ internal class CrpgMissionMarkerVm : ViewModel
             if (newTeam.Side == firstScriptOfType.Side)
             {
                 SiegeEngineTargets.Add(new MissionSiegeEngineMarkerTargetVM(firstScriptOfType));
+            }
+        }
+    }
+
+    private void HighlightVipAgent(bool enabled)
+    {
+        CrpgDtvClient dtvClient = (CrpgDtvClient)_gameModeClient;
+
+        if (dtvClient._vipAgent != null)
+        {
+            if (enabled && !dtvClient._isVipOutlined)
+            {
+                uint focusedContourColor = new TaleWorlds.Library.Color(1f, 0.84f, 0.35f, 1f).ToUnsignedInteger();
+                dtvClient._vipAgent.AgentVisuals?.SetContourColor(focusedContourColor, false);
+                dtvClient._isVipOutlined = true;
+            }
+            else if (!enabled && dtvClient._isVipOutlined)
+            {
+                dtvClient._vipAgent.AgentVisuals?.SetContourColor(null);
+                dtvClient._isVipOutlined = false;
             }
         }
     }

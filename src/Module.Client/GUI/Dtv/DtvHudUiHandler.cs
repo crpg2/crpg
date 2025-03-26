@@ -72,23 +72,6 @@ internal class DtvHudUiHandler : MissionView
         base.OnMissionScreenTick(dt);
         _dataSource!.Tick(dt);
 
-        if (_input.IsGameKeyDown(5))
-        {
-            if (_dtvClient._vipAgent != null && _isVipOutlined == false)
-            {
-                uint focusedContourColor = new TaleWorlds.Library.Color(1f, 0.84f, 0.35f, 1f).ToUnsignedInteger();
-                _dtvClient._vipAgent.AgentVisuals?.SetContourColor(focusedContourColor, true);
-                _isVipOutlined = true;
-            }
-        }
-        else
-        {
-            if (_dtvClient._vipAgent != null)
-            {
-                _dtvClient._vipAgent.AgentVisuals?.SetContourColor(null);
-                _isVipOutlined = false;
-            }
-        }
     }
 
     private void OnUpdateProgress()
