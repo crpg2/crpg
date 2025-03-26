@@ -183,6 +183,12 @@ internal static class CommonErrors
             Detail = $"Parties with ids '{partyId1}' and '{partyId2}' are not in the side in the battle with id '{battleId}'",
         };
 
+    public static Error PartyNotVulnerable(int partyId, int hour) => new(ErrorType.Validation, ErrorCode.PartyNotVulnerable)
+    {
+        Title = "Party was not found",
+        Detail = $"Party with id '{partyId}' was not found",
+    };
+
     public static Error ItemAlreadyOwned(string itemId) => new(ErrorType.Validation, ErrorCode.ItemAlreadyOwned)
     {
         Title = "Item is already owned",

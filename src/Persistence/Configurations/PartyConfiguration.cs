@@ -13,6 +13,7 @@ public class PartyConfiguration : IEntityTypeConfiguration<Party>
             .WithOne(u => u.Party!)
             .HasForeignKey<Party>(u => u.Id);
 
-        builder.OwnsOne(h => h.VulnerabilityWindow);
+        builder.OwnsOne(h => h.VulnerabilityWindow)
+            .OwnsMany(vw => vw.VulnerabilityTimes);
     }
 }

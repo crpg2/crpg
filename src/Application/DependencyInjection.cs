@@ -19,7 +19,6 @@ public static class DependencyInjection
     {
         var constants = new FileConstantsSource().LoadConstants();
         ExperienceTable experienceTable = new(constants);
-        BattleScheduler strategusBattleScheduler = new();
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly())
             .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
@@ -38,7 +37,7 @@ public static class DependencyInjection
             .AddSingleton<IGeoIpService>(CreateGeoIpService())
             .AddSingleton<IStrategusMap, StrategusMap>()
             .AddSingleton<IStrategusSpeedModel, StrategusSpeedModel>()
-            .AddSingleton<IBattleScheduler>(strategusBattleScheduler)
+            .AddSingleton<IBattleScheduler, BattleScheduler>()
             .AddSingleton<ICharacterClassResolver, CharacterClassResolver>()
             .AddSingleton<IBattleMercenaryDistributionModel, BattleMercenaryUniformDistributionModel>()
             .AddSingleton(constants)
