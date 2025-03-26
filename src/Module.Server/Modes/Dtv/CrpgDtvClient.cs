@@ -14,7 +14,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
     public event Action OnUpdateCurrentProgress = default!;
     public event Action OnWaveStart = default!;
     public event Action OnRoundStart = default!;
-    
+
     public int CurrentRound
     {
         get => _currentRound;

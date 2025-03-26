@@ -1,2 +1,7 @@
-﻿scn_doodoo_new_chest
-scn_doodoo_new_chest
+﻿crpg_dtv_qalat
+crpg_dtv_encampment
+crpg_dtv_weepinghill
+crpg_dtv_rosethornecastle
+crpg_dtv_ruinsofrahiz
+crpg_dtv_musapoint
+crpg_dtv_templeofposeidon
