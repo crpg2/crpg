@@ -1,4 +1,4 @@
-﻿ServerName cRPG - Test DTV - c-rpg.eu
+﻿ServerName cRPG - Test DTV3 - c-rpg.eu
 GameType cRPGDTV
 GamePassword yoyo
 AllowPollsToKickPlayers True

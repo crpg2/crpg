@@ -52,6 +52,7 @@
     <Compile Remove="..\Module.Server\Common\NotAllPlayersReadyComponent.cs" />
     <Compile Remove="..\Module.Server\Common\MapPoolComponent.cs" />
     <Compile Remove="..\Module.Server\Common\ChatCommands\**\*" />
+    <Compile Remove="..\Module.Server\Common\EquipmentChestTimeoutBehavior.cs" />
     <Compile Remove="..\Module.Server\Rewards\CrpgRewardServer.cs" />
     <Compile Remove="..\Module.Server\Firewall\*" />
     <Compile Remove="..\Module.Server\Common\RemoveIpFromFirewallBehavior.cs" />
