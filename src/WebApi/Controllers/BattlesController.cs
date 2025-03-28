@@ -159,4 +159,18 @@ public class BattlesController : BaseController
         req = req with { PartyId = CurrentUser.User!.Id, MercenaryApplicationId = applicationId };
         return ResultToActionAsync(Mediator.Send(req));
     }
+
+    /// <summary>
+    /// Create a battle, to be used for debugging or scheduled events.
+    /// </summary>
+    /// <param name="req">Battle.</param>
+    /// <response code="200">OK.</response>
+    /// <response code="400">Bad Request.</response>
+    [Authorize(Policy = AdminPolicy)]
+    [HttpPost("create")]
+    public Task<ActionResult<Result<BattleDetailedViewModel>>> CreateBattle([FromBody] CreateBattleCommand req)
+    {
+        req = req with { UserId = CurrentUser.User!.Id };
+        return ResultToActionAsync(Mediator.Send(req));
+    }
 }
