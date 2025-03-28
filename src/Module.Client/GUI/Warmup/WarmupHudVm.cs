@@ -10,6 +10,7 @@ internal class WarmupHudVm : ViewModel
     private readonly MissionMultiplayerGameModeBaseClient _gameMode;
 
     private string? _warmupInfoText;
+    private int _requiredPlayers;
     private bool _isInWarmup;
 
     public WarmupHudVm(Mission mission)
@@ -57,13 +58,20 @@ internal class WarmupHudVm : ViewModel
         base.RefreshValues();
 
         string gameType = MultiplayerOptions.OptionType.GameType.GetStrValue();
-        TextObject textObject = new("{=XJTX8w8M}Warmup Phase - {GAME_MODE}\nWaiting for players to join");
+        TextObject textObject = new("{=XJTX8w8M}Warmup Phase - {GAME_MODE}\nWaiting for {PLAYERS} player(s) to join");
         textObject.SetTextVariable("GAME_MODE", GameTexts.FindText("str_multiplayer_official_game_type_name", gameType));
+        textObject.SetTextVariable("PLAYERS", _requiredPlayers);
         WarmupInfoText = textObject.ToString();
     }
 
     public void Tick(float dt)
     {
         IsInWarmup = _gameMode.IsInWarmup;
+    }
+
+    public void OnUpdateRequiredPlayers(int requiredPlayers)
+    {
+        _requiredPlayers = requiredPlayers;
+        RefreshValues();
     }
 }

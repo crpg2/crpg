@@ -90,6 +90,8 @@
     <string id="uRmpZM0q" text="请等待 {COOLDOWN} 秒再发出新的命令！" />
     <string id="7WDWLbpV" text="你不是指挥官！" />
     <string id="l81jAS1c" text="您将在 {TIME} 秒后重生！" />
+    <string id="XJTX8w8Q" text="热身阶段 - {GAME_MODE}{newline}等待 {PLAYERS} 位玩家加入" />
+    
 
     <!-- Notifications -->
     <string id="pCIKeing" text="你将在 {SECONDS} 秒后因长时间不活动而被移除！" />

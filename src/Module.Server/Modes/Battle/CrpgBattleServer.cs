@@ -125,7 +125,7 @@ internal class CrpgBattleServer : MissionMultiplayerGameModeBase
             }
         }
 
-        return playersInTeam >= MultiplayerOptions.OptionType.MaxNumberOfPlayers.GetIntValue();
+        return playersInTeam >= MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue();
     }
 
     public override void OnMissionTick(float dt)
