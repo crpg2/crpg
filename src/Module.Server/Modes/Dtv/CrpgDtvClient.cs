@@ -70,6 +70,8 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
         registerer.Register<CrpgDtvCurrentProgressMessage>(HandleCurrentProgress);
         registerer.Register<SetStonePileAmmo>(HandleServerEventSetStonePileAmmo);
         registerer.Register<SetRangedSiegeWeaponAmmo>(HandleServerSetRangedSiegeWeaponAmmo);
+        registerer.Register<CrpgDtvEquipChestTimeoutMessage>(HandleEquipChestTimeout);
+
     }
 
     private void HandleSetTimer(CrpgDtvSetTimerMessage message)
@@ -175,4 +177,17 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
             rangedSiegeWeapon?.Activate();
         }
     }
+
+    private void HandleEquipChestTimeout(CrpgDtvEquipChestTimeoutMessage message)
+    {
+        float timeout = message.TimeoutDuration;
+        TextObject textObject = new("{=mfD3LkeB} Equipment chest is on cooldown for " + Math.Round(timeout / 1000, 1).ToString() + " seconds.");
+        InformationManager.DisplayMessage(new InformationMessage
+        {
+            Information = textObject.ToString(),
+            Color = new Color(0.90f, 0.25f, 0.25f),
+            SoundEventPath = "event:/ui/notification/alert",
+        });
+    }
+
 }

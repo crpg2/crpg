@@ -149,7 +149,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new DrowningBehavior(),
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
                 new CrpgCommanderBehaviorServer(),
-                new EquipmentChestTimeoutBehavior(rewardServer),
+                new EquipmentChestTimeoutBehavior(rewardServer, crpgClient),
 
 #else
                 new MultiplayerAchievementComponent(),

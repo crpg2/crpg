@@ -1,14 +1,24 @@
-﻿using System.Linq;
+﻿using System.Globalization;
+using System.Linq;
+using System.Xml.Linq;
 using Crpg.Module.Api;
 using Crpg.Module.Api.Models;
+using Crpg.Module.Api.Models.Characters;
+using Crpg.Module.Api.Models.Users;
+using Crpg.Module.Common.ChatCommands;
+using Crpg.Module.Modes.Dtv;
 using Crpg.Module.Notifications;
+using Crpg.Module.Rating;
 using Crpg.Module.Rewards;
 using Crpg.Module.Scripts;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.LinQuick;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.Diamond;
 using TaleWorlds.ObjectSystem;
+using TaleWorlds.PlayerServices;
+using Platform = Crpg.Module.Api.Models.Users.Platform;
 
 
 namespace Crpg.Module.Common;
@@ -17,14 +27,15 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
 {
     private Dictionary<CrpgPeer, int> timeSinceLastRearmed = new Dictionary<CrpgPeer, int>();
     private readonly CrpgRewardServer _rewardServer;
-    private int RearmTimeout = 3000;
-
+    private readonly ICrpgClient _crpgClient;
+    private float RearmTimeout = 3000; // Time between equipment chest uses in ms
 
     public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
 
-    public EquipmentChestTimeoutBehavior(CrpgRewardServer rewardServer)
+    public EquipmentChestTimeoutBehavior(CrpgRewardServer rewardServer, ICrpgClient crpgClient)
     {
         _rewardServer = rewardServer;
+        _crpgClient = crpgClient;
     }
 
 
@@ -67,44 +78,44 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
     }
 
 
-    public override void OnObjectUsed(Agent userAgent, UsableMissionObject usedObject)
+    public override async void OnObjectUsed(Agent userAgent, UsableMissionObject usedObject)
     {
         if (usedObject.GetType() == typeof(Scripts.CrpgStandingPoint))
         {
             CrpgStandingPoint crpgPoint = (CrpgStandingPoint)usedObject;
             if (crpgPoint != null)
             {
-
-                Debug.Print(crpgPoint.getParentUsableMachine().GetType().ToString());
-
                 if (crpgPoint.getParentUsableMachine().GetType() == typeof(EquipmentChest))
                 {
-
-
-
                     var networkPeer = userAgent.MissionPeer.GetNetworkPeer();
 
                     if (networkPeer != null)
                     {
-
                         CrpgPeer? crpgPeer = networkPeer.GetComponent<CrpgPeer>();
                         DateTime dateTime = DateTime.Now;
-                        int timeDiff = (int)dateTime.TimeOfDay.TotalMilliseconds - timeSinceLastRearmed[crpgPeer];
+                        float timeDiff = (float)dateTime.TimeOfDay.TotalMilliseconds - timeSinceLastRearmed[crpgPeer];
 
                         if (timeDiff > RearmTimeout)
                         {
 
-                            List<CrpgUserUpdate> userUpdates = new();
-                            Guid idempotencyKey = Guid.NewGuid();
+                            //await _rewardServer.UpdateCrpgUsersAsync(durationRewarded: 0, updateUserStats: false);
+                            //await UpdateUser(crpgPeer);
+                            VirtualPlayer vp = networkPeer.VirtualPlayer;
+                            TryConvertPlatform(vp.Id.ProvidedType, out Platform platform);
 
-                            var request = new CrpgGameUsersUpdateRequest
+
+                            // We can't resolve the xbox id from the player id so we wait for the player to send their xbox id. This is
+                            // as insecure as stupid but it is what it is.
+                            if (platform == Platform.Microsoft)
                             {
-                                Updates = userUpdates,
-                                Key = idempotencyKey.ToString(),
-                            };
-                            Debug.Print("hello");
-                            //_rewardServer.UpdateCrpgUsersAsync(durationRewarded: 0, updateUserStats: false);
-                            var task = Task.Run(async () => await _rewardServer.UpdateCrpgUsersAsync(durationRewarded: 0, updateUserStats: false));
+                                // Uhhh ask question...
+                            }
+
+                            string platformUserId = PlayerIdToPlatformUserId(vp.Id, platform);
+
+
+                            await _crpgClient.GetUserAsync(platform, platformUserId, CrpgServerConfiguration.Region);
+
                             base.OnObjectUsed(userAgent, usedObject);
                             timeSinceLastRearmed[crpgPeer] = (int)dateTime.TimeOfDay.TotalMilliseconds;
                             float previousHealth = userAgent.Health;
@@ -114,35 +125,18 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
                             {
                                 newAgent.Health = previousHealth;
                             }
-                            else
-                            {
-                                Debug.Print("NULLLLLL");
-                                //Do something because this shouldnt be null lol
-                            }
                         }
                         else
                         {
-
-                            Debug.Print(timeDiff.ToString());
-                            int nextAvailableRearm = RearmTimeout - timeDiff;
-
+                            float timeoutDuration = RearmTimeout - timeDiff;
                             GameNetwork.BeginModuleEventAsServer(networkPeer);
-                            GameNetwork.WriteMessage(new CrpgNotificationId
-                            {
-                                Type = CrpgNotificationType.Announcement,
-                                TextId = "str_notification",
-                                TextVariation = "rearm_gear_timeout",
-                                SoundEvent = string.Empty,
-                                Variables = { ["SECONDS"] = (nextAvailableRearm / 1000).ToString() },
-
-                            });
+                            GameNetwork.WriteMessage(new CrpgDtvEquipChestTimeoutMessage { TimeoutDuration = (float)timeoutDuration });
                             GameNetwork.EndModuleEventAsServer();
-
                             userAgent.StopUsingGameObject();
                         }
                     }
-                    return;
 
+                    return;
                 }
             }
         }
@@ -210,9 +204,81 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
         {
             agent.WieldInitialWeapons();
         }
-        Debug.Print("DONE");
         return agent;
     }
 
+    private async Task UpdateUser(CrpgPeer crpgPeer)
+    {
+        List<CrpgUserUpdate> userUpdates = new();
+
+        CrpgUserUpdate userUpdate = new()
+        {
+            UserId = crpgPeer.User.Id,
+            CharacterId = crpgPeer.User.Character.Id,
+            Reward = new CrpgUserReward { Experience = 0, Gold = 0 },
+            Statistics = new CrpgCharacterStatistics
+            {
+                Kills = 0,
+                Deaths = 0,
+                Assists = 0,
+                PlayTime = TimeSpan.Zero,
+                Rating = crpgPeer.User.Character.Statistics.Rating,
+            },
+        };
+
+        userUpdates.Add(userUpdate);
+
+        Guid idempotencyKey = Guid.NewGuid();
+
+        try
+        {
+
+                var request = new CrpgGameUsersUpdateRequest
+                {
+                    Updates = userUpdates,
+                    Key = idempotencyKey.ToString(),
+                };
+
+                await _crpgClient.UpdateUsersAsync(request);
+        }
+        catch (Exception e)
+        {
+            Debug.Print($"Couldn't update users - {e}");
+
+            // SendErrorToPeers(crpgPeerByCrpgUserId);
+        }
+    }
+    private bool TryConvertPlatform(PlayerIdProvidedTypes provider, out Platform platform)
+    {
+        switch (provider)
+        {
+            case PlayerIdProvidedTypes.Steam:
+                platform = Platform.Steam;
+                return true;
+            case PlayerIdProvidedTypes.Epic:
+                platform = Platform.EpicGames;
+                return true;
+            case PlayerIdProvidedTypes.GDK:
+                platform = Platform.Microsoft;
+                return true;
+            default:
+                platform = default;
+                return false;
+        }
+    }
+
+    private string PlayerIdToPlatformUserId(PlayerId playerId, Platform platform)
+    {
+        switch (platform)
+        {
+            case Platform.Steam:
+                return playerId.Id2.ToString(CultureInfo.InvariantCulture);
+            case Platform.EpicGames:
+                byte[] guidBytes = new ArraySegment<byte>(playerId.ToByteArray(), offset: 16, count: 16).ToArray();
+                return new Guid(guidBytes).ToString("N");
+            default:
+                throw new ArgumentOutOfRangeException(nameof(platform), platform, null);
+        }
+    }
 
 }
