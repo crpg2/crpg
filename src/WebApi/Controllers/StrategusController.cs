@@ -29,7 +29,7 @@ public class StrategusController : BaseController
     /// Get strategus battle.
     /// </summary>
     [HttpGet("battles/{battleId}")]
-    public Task<ActionResult<Result<BattleViewModel>>> GetBattles([FromRoute] int battleId) =>
+    public Task<ActionResult<Result<BattleViewModel>>> GetBattle([FromRoute] int battleId) =>
         ResultToActionAsync(Mediator.Send(new GetBattleQuery
         {
             BattleId = battleId,
@@ -73,7 +73,7 @@ public class StrategusController : BaseController
     /// <response code="200">Ok.</response>
     /// <response code="400">Bad request.</response>
     [HttpPut("battles/{battleId}")]
-    public Task<ActionResult<Result<BattleDetailedViewModel>>> ClaimBattle([FromRoute] int battleId, [FromQuery] string instance, [FromBody] UpdateBattleCommand req)
+    public Task<ActionResult<Result<BattleDetailedViewModel>>> UpdateBattle([FromRoute] int battleId, [FromQuery] string instance, [FromBody] UpdateBattleCommand req)
     {
         req = req with { BattleId = battleId, Instance = instance };
         return ResultToActionAsync(Mediator.Send(req));

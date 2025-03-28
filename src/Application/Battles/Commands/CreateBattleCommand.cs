@@ -8,6 +8,7 @@ using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Battles;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Sdk.Abstractions;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
@@ -23,6 +24,16 @@ public record CreateBattleCommand : IMediatorRequest<BattleDetailedViewModel>
     public int UserId { get; init; } = default!;
     public int AttackerTroops { get; init; } = default!;
     public int DefenderTroops { get; init; } = default!;
+    public class Validator : AbstractValidator<CreateBattleCommand>
+    {
+        public Validator(IDateTime dateTime)
+        {
+            RuleFor(a => a.AttackerId != a.DefenderId);
+            RuleFor(a => a.Region).IsInEnum();
+            RuleFor(a => a.ScheduledFor > dateTime.UtcNow);
+        }
+    }
+
     internal class Handler : IMediatorRequestHandler<CreateBattleCommand, BattleDetailedViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<CreateBattleCommand>();
@@ -88,7 +99,7 @@ public record CreateBattleCommand : IMediatorRequest<BattleDetailedViewModel>
                 newBattle.Id, req.AttackerId, req.DefenderId, req.UserId);
 
             await _db.SaveChangesAsync(cancellationToken);
-            return new(_mapper.Map<BattleDetailedViewModel>(req));
+            return new(_mapper.Map<BattleDetailedViewModel>(newBattle));
         }
     }
 }

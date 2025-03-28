@@ -47,27 +47,7 @@ public record GetBattlesQuery : IMediatorRequest<IList<BattleDetailedViewModel>>
                 .Where(b => b.Region == req.Region && req.Phases.Contains(b.Phase))
                 .ToArrayAsync(cancellationToken);
 
-            var battlesVm = battles.Select(b => new BattleDetailedViewModel
-            {
-                Id = b.Id,
-                Region = b.Region,
-                Position = b.Position,
-                Phase = b.Phase,
-                Attacker = _mapper.Map<BattleFighterViewModel>(
-                    b.Fighters.First(f => f.Side == BattleSide.Attacker && f.Commander)),
-                AttackerTotalTroops = b.Fighters
-                    .Where(f => f.Side == BattleSide.Attacker)
-                    .Sum(f => (int)Math.Floor(f.Party!.Troops)),
-                Defender = _mapper.Map<BattleFighterViewModel>(
-                    b.Fighters.First(f => f.Side == BattleSide.Defender && f.Commander)),
-                DefenderTotalTroops = b.Fighters
-                    .Where(f => f.Side == BattleSide.Defender)
-                    .Sum(f => (int)Math.Floor(f.Party?.Troops ?? 0) + (f.Settlement?.Troops ?? 0)),
-                CreatedAt = b.CreatedAt,
-                ScheduledFor = b.ScheduledFor,
-            }).ToArray();
-
-            return new(battlesVm);
+            return new(_mapper.Map<IList<BattleDetailedViewModel>>(battles));
         }
     }
 }
