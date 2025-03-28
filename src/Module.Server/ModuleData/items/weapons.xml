@@ -122,30 +122,6 @@
   </CraftedItem>
   <CraftedItem id="crpg_spiked_polehammer_v6_h0" name="{=kaikaikai}Spiked Polehammer" crafting_template="crpg_TwoHandedPolearm">
     <Pieces>
-      <Piece id="crpg_spiked_polehammer_knockdown_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_spiked_polehammer_knockdown_handle_h0" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v6_h1" name="{=kaikaikai}Spiked Polehammer +1" crafting_template="crpg_TwoHandedPolearm">
-    <Pieces>
-      <Piece id="crpg_spiked_polehammer_knockdown_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_spiked_polehammer_knockdown_handle_h1" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v6_h2" name="{=kaikaikai}Spiked Polehammer +2" crafting_template="crpg_TwoHandedPolearm">
-    <Pieces>
-      <Piece id="crpg_spiked_polehammer_knockdown_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_spiked_polehammer_knockdown_handle_h2" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v6_h3" name="{=kaikaikai}Spiked Polehammer +3" crafting_template="crpg_TwoHandedPolearm">
-    <Pieces>
-      <Piece id="crpg_spiked_polehammer_knockdown_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_spiked_polehammer_knockdown_handle_h3" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v6_h0" name="{=kaikaikai}Spiked Polehammer" crafting_template="crpg_TwoHandedPolearm">
-    <Pieces>
       <Piece id="crpg_spiked_polehammer_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_spiked_polehammer_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
@@ -166,6 +142,30 @@
     <Pieces>
       <Piece id="crpg_spiked_polehammer_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_spiked_polehammer_handle_h3" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_spiked_polehammer_v6_h0" name="{=kaikaikai}Spiked Polehammer" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_spiked_polehammer_knockdown_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spiked_polehammer_knockdown_handle_h0" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_spiked_polehammer_v6_h1" name="{=kaikaikai}Spiked Polehammer +1" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_spiked_polehammer_knockdown_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spiked_polehammer_knockdown_handle_h1" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_spiked_polehammer_v6_h2" name="{=kaikaikai}Spiked Polehammer +2" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_spiked_polehammer_knockdown_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spiked_polehammer_knockdown_handle_h2" Type="Handle" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_spiked_polehammer_v6_h3" name="{=kaikaikai}Spiked Polehammer +3" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_spiked_polehammer_knockdown_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_spiked_polehammer_knockdown_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
   <CraftedItem id="crpg_warhammer_v2_h0" name="{=}Warhammer" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
@@ -8084,25 +8084,25 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cataphract_lance_v2_h0" name="{=Telford}Cataphract Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_cataphract_lance_v3_h0" name="{=Telford}Cataphract Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cataphract_lance_blade_h0" Type="Blade" scale_factor="124" />
       <Piece id="crpg_cataphract_lance_handle_h0" Type="Handle" scale_factor="118" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cataphract_lance_v2_h1" name="{=Telford}Cataphract Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_cataphract_lance_v3_h1" name="{=Telford}Cataphract Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cataphract_lance_blade_h1" Type="Blade" scale_factor="124" />
       <Piece id="crpg_cataphract_lance_handle_h1" Type="Handle" scale_factor="118" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cataphract_lance_v2_h2" name="{=Telford}Cataphract Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_cataphract_lance_v3_h2" name="{=Telford}Cataphract Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cataphract_lance_blade_h2" Type="Blade" scale_factor="124" />
       <Piece id="crpg_cataphract_lance_handle_h2" Type="Handle" scale_factor="118" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cataphract_lance_v2_h3" name="{=Telford}Cataphract Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
+  <CraftedItem id="crpg_cataphract_lance_v3_h3" name="{=Telford}Cataphract Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.empire" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cataphract_lance_blade_h3" Type="Blade" scale_factor="124" />
       <Piece id="crpg_cataphract_lance_handle_h3" Type="Handle" scale_factor="118" />
@@ -14292,7 +14292,7 @@
       <Piece id="crpg_ibelinsword_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_ibelinsword_h1" name="{=STAFF}Ibelin Sword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_disabled_ibelinsword_h1" name="{=STAFF}Ibelin Sword +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_ibelinsword_blade_h1" Type="Blade" scale_factor="95" />
       <Piece id="crpg_ibelinsword_guard_h1" Type="Guard" scale_factor="100" />
@@ -14300,7 +14300,7 @@
       <Piece id="crpg_ibelinsword_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_ibelinsword_h2" name="{=STAFF}Ibelin Sword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_disabled_ibelinsword_h2" name="{=STAFF}Ibelin Sword +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_ibelinsword_blade_h2" Type="Blade" scale_factor="95" />
       <Piece id="crpg_ibelinsword_guard_h2" Type="Guard" scale_factor="100" />
@@ -14308,7 +14308,7 @@
       <Piece id="crpg_ibelinsword_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_disabled_ibelinsword_h3" name="{=STAFF}Ibelin Sword" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_disabled_ibelinsword_h3" name="{=STAFF}Ibelin Sword +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_ibelinsword_blade_h3" Type="Blade" scale_factor="95" />
       <Piece id="crpg_ibelinsword_guard_h3" Type="Guard" scale_factor="100" />
@@ -14348,7 +14348,7 @@
       <Piece id="crpg_dragonslayer_pommel_h3" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <Item id="crpg_disabled_cla_musket_ammo_h0" name="{=Meow}Black-powder Ammo" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" flying_mesh="lyon_bullet" mesh="torch_flame_base" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" weight="0.3" appearance="1.0" Type="Bullets" item_holsters="throwing_stone:throwing_stone_2" is_merchandise="true">
+  <Item id="crpg_cla_musket_ammo_h0" name="{=Meow}Black-powder Ammo" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" flying_mesh="lyon_bullet" mesh="torch_flame_base" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" weight="0.3" appearance="1.0" Type="Bullets" item_holsters="throwing_stone:throwing_stone_2" is_merchandise="true">
     <ItemComponent>
       <Weapon weapon_class="Cartridge" stack_amount="9" thrust_speed="0" speed_rating="0" missile_speed="10" thrust_damage="10" thrust_damage_type="Pierce" weapon_length="37" item_usage="" rotation="180, 0, 0" physics_material="missile" sticking_position="0,-0.37,0" sticking_rotation="90,0,0" trail_particle_name="cla_smoke_musket" passby_sound_code="event:/mission/combat/missile/passby" center_of_mass="0,0,0">
         <WeaponFlags Consumable="true" AmmoBreaksOnBounceBack="true" UseHandAsThrowBase="true" LeavesTrail="true" FirearmAmmo="true" />
@@ -14356,7 +14356,7 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_disabled_cla_musket_ammo_h1" name="{=Meow}Black-powder Ammo +1" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" flying_mesh="lyon_bullet" mesh="torch_flame_base" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" weight="0.3" appearance="1.0" Type="Bullets" item_holsters="throwing_stone:throwing_stone_2" is_merchandise="true">
+  <Item id="crpg_cla_musket_ammo_h1" name="{=Meow}Black-powder Ammo +1" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" flying_mesh="lyon_bullet" mesh="torch_flame_base" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" weight="0.3" appearance="1.0" Type="Bullets" item_holsters="throwing_stone:throwing_stone_2" is_merchandise="true">
     <ItemComponent>
       <Weapon weapon_class="Cartridge" stack_amount="10" thrust_speed="0" speed_rating="0" missile_speed="10" thrust_damage="11" thrust_damage_type="Pierce" weapon_length="37" item_usage="" rotation="180, 0, 0" physics_material="missile" sticking_position="0,-0.37,0" sticking_rotation="90,0,0" trail_particle_name="cla_smoke_musket" passby_sound_code="event:/mission/combat/missile/passby" center_of_mass="0,0,0">
         <WeaponFlags Consumable="true" AmmoBreaksOnBounceBack="true" UseHandAsThrowBase="true" LeavesTrail="true" FirearmAmmo="true" />
@@ -14364,7 +14364,7 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_disabled_cla_musket_ammo_h2" name="{=Meow}Black-powder Ammo +2" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" flying_mesh="lyon_bullet" mesh="torch_flame_base" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" weight="0.3" appearance="1.0" Type="Bullets" item_holsters="throwing_stone:throwing_stone_2" is_merchandise="true">
+  <Item id="crpg_cla_musket_ammo_h2" name="{=Meow}Black-powder Ammo +2" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" flying_mesh="lyon_bullet" mesh="torch_flame_base" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" weight="0.3" appearance="1.0" Type="Bullets" item_holsters="throwing_stone:throwing_stone_2" is_merchandise="true">
     <ItemComponent>
       <Weapon weapon_class="Cartridge" stack_amount="11" thrust_speed="0" speed_rating="0" missile_speed="10" thrust_damage="12" thrust_damage_type="Pierce" weapon_length="37" item_usage="" rotation="180, 0, 0" physics_material="missile" sticking_position="0,-0.37,0" sticking_rotation="90,0,0" trail_particle_name="cla_smoke_musket" passby_sound_code="event:/mission/combat/missile/passby" center_of_mass="0,0,0">
         <WeaponFlags Consumable="true" AmmoBreaksOnBounceBack="true" UseHandAsThrowBase="true" LeavesTrail="true" FirearmAmmo="true" />
@@ -14372,7 +14372,7 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_disabled_cla_musket_ammo_h3" name="{=Meow}Black-powder Ammo +3" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" flying_mesh="lyon_bullet" mesh="torch_flame_base" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" weight="0.3" appearance="1.0" Type="Bullets" item_holsters="throwing_stone:throwing_stone_2" is_merchandise="true">
+  <Item id="crpg_cla_musket_ammo_h3" name="{=Meow}Black-powder Ammo +3" body_name="bo_capsule_arrow" holster_body_name="bo_axe_short" flying_mesh="lyon_bullet" mesh="torch_flame_base" holster_mesh="stone_holster" holster_mesh_with_weapon="stone_holster" weight="0.3" appearance="1.0" Type="Bullets" item_holsters="throwing_stone:throwing_stone_2" is_merchandise="true">
     <ItemComponent>
       <Weapon weapon_class="Cartridge" stack_amount="12" thrust_speed="0" speed_rating="0" missile_speed="10" thrust_damage="13" thrust_damage_type="Pierce" weapon_length="37" item_usage="" rotation="180, 0, 0" physics_material="missile" sticking_position="0,-0.37,0" sticking_rotation="90,0,0" trail_particle_name="cla_smoke_musket" passby_sound_code="event:/mission/combat/missile/passby" center_of_mass="0,0,0">
         <WeaponFlags Consumable="true" AmmoBreaksOnBounceBack="true" UseHandAsThrowBase="true" LeavesTrail="true" FirearmAmmo="true" />
@@ -14380,7 +14380,7 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_disabled_handgonne_h0" name="{=Meow}Handgonne" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="handcannon" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,0,-0.4">
+  <Item id="crpg_handgonne_h0" name="{=Meow}Handgonne" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="handcannon" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,0,-0.4">
     <ItemComponent>
       <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="112" accuracy="95" thrust_damage="53" thrust_speed="80" speed_rating="55" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="cla_musket" reload_phase_count="1" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="false" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" FirearmAmmo="true" CantReloadOnHorseback="true" CanPenetrateShield="true" />
@@ -14388,7 +14388,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_disabled_handgonne_h1" name="{=Meow}Handgonne +1" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="handcannon" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,0,-0.4">
+  <Item id="crpg_handgonne_h1" name="{=Meow}Handgonne +1" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="handcannon" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,0,-0.4">
     <ItemComponent>
       <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="112" accuracy="96" thrust_damage="54" thrust_speed="81" speed_rating="57" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="cla_musket" reload_phase_count="1" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="false" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" FirearmAmmo="true" CantReloadOnHorseback="true" CanPenetrateShield="true" />
@@ -14396,7 +14396,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_disabled_handgonne_h2" name="{=Meow}Handgonne +2" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="handcannon" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,0,-0.4">
+  <Item id="crpg_handgonne_h2" name="{=Meow}Handgonne +2" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="handcannon" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,0,-0.4">
     <ItemComponent>
       <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="113" accuracy="97" thrust_damage="55" thrust_speed="82" speed_rating="59" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="cla_musket" reload_phase_count="1" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="false" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" FirearmAmmo="true" CantReloadOnHorseback="true" CanPenetrateShield="true" />
@@ -14404,7 +14404,7 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_disabled_handgonne_h3" name="{=Meow}Handgonne +3" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="handcannon" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,0,-0.4">
+  <Item id="crpg_handgonne_h3" name="{=Meow}Handgonne +3" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="handcannon" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,0,-0.4">
     <ItemComponent>
       <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="114" accuracy="98" thrust_damage="56" thrust_speed="83" speed_rating="60" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="cla_musket" reload_phase_count="1" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="false" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" FirearmAmmo="true" CantReloadOnHorseback="true" CanPenetrateShield="true" />

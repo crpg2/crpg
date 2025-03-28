@@ -7302,25 +7302,25 @@
   </Item>
   <Item id="crpg_ar_horse_armor_s_v1_h0" name="{=osa_ar_horse_armor_s}Western Heavy Harness, Red" mesh="AR_horse_armor_s" subtype="body_armor" weight="9" appearance="1" Type="HorseHarness" culture="Culture.vlandia">
     <ItemComponent>
-      <Armor body_armor="9" mane_cover_type="none" family_type="8" modifier_group="leather" reins_mesh="horse_harness_vlandia_b_rein" material_type="Leather" />
+      <Armor body_armor="9" mane_cover_type="none" family_type="1" modifier_group="leather" reins_mesh="horse_harness_vlandia_b_rein" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_ar_horse_armor_s_v1_h1" name="{=osa_ar_horse_armor_s}Western Heavy Harness, Red +1" mesh="AR_horse_armor_s" subtype="body_armor" weight="9" appearance="1" Type="HorseHarness" culture="Culture.vlandia">
     <ItemComponent>
-      <Armor body_armor="12" mane_cover_type="none" family_type="8" modifier_group="leather" reins_mesh="horse_harness_vlandia_b_rein" material_type="Leather" />
+      <Armor body_armor="12" mane_cover_type="none" family_type="1" modifier_group="leather" reins_mesh="horse_harness_vlandia_b_rein" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_ar_horse_armor_s_v1_h2" name="{=osa_ar_horse_armor_s}Western Heavy Harness, Red +2" mesh="AR_horse_armor_s" subtype="body_armor" weight="9" appearance="1" Type="HorseHarness" culture="Culture.vlandia">
     <ItemComponent>
-      <Armor body_armor="15" mane_cover_type="none" family_type="8" modifier_group="leather" reins_mesh="horse_harness_vlandia_b_rein" material_type="Leather" />
+      <Armor body_armor="15" mane_cover_type="none" family_type="1" modifier_group="leather" reins_mesh="horse_harness_vlandia_b_rein" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
   <Item id="crpg_ar_horse_armor_s_v1_h3" name="{=osa_ar_horse_armor_s}Western Heavy Harness, Red +3" mesh="AR_horse_armor_s" subtype="body_armor" weight="9" appearance="1" Type="HorseHarness" culture="Culture.vlandia">
     <ItemComponent>
-      <Armor body_armor="18" mane_cover_type="none" family_type="8" modifier_group="leather" reins_mesh="horse_harness_vlandia_b_rein" material_type="Leather" />
+      <Armor body_armor="18" mane_cover_type="none" family_type="1" modifier_group="leather" reins_mesh="horse_harness_vlandia_b_rein" material_type="Leather" />
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
