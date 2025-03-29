@@ -1,5 +1,6 @@
 import type { MultiPoint, Point } from 'geojson'
 
+import type { Clan } from '~/models/clan'
 import type { SettlementPublic } from '~/models/strategus/settlement'
 import type { UserPublic } from '~/models/user'
 
@@ -21,6 +22,7 @@ export interface PartyCommon {
   troops: number
   position: Point
   user: UserPublic
+  clan: Clan
 }
 
 export interface Party extends PartyCommon {
