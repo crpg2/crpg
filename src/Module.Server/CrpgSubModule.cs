@@ -7,6 +7,7 @@ using Crpg.Module.Modes.Duel;
 using Crpg.Module.Modes.Siege;
 using Crpg.Module.Modes.TeamDeathmatch;
 using Crpg.Module.Modes.TrainingGround;
+using Crpg.Module.Modes.Strategus;
 using Newtonsoft.Json;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
@@ -77,6 +78,7 @@ internal class CrpgSubModule : MBSubModuleBase
         TaleWorlds.MountAndBlade.Module.CurrentModule.AddMultiplayerGameMode(new CrpgDuelGameMode(_constants));
         TaleWorlds.MountAndBlade.Module.CurrentModule.AddMultiplayerGameMode(new CrpgDtvGameMode(_constants));
         TaleWorlds.MountAndBlade.Module.CurrentModule.AddMultiplayerGameMode(new CrpgTrainingGroundGameMode(_constants));
+        TaleWorlds.MountAndBlade.Module.CurrentModule.AddMultiplayerGameMode(new CrpgStrategusGameMode(_constants));
 #if CRPG_SERVER
         CrpgServerConfiguration.Init();
         CrpgFeatureFlags.Init();

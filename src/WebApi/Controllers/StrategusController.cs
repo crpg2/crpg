@@ -3,6 +3,7 @@ using Crpg.Application.Battles.Models;
 using Crpg.Application.Battles.Queries;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Items.Commands;
+using Crpg.Application.Parties.Models;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Battles;
 using Microsoft.AspNetCore.Authorization;
@@ -29,11 +30,23 @@ public class StrategusController : BaseController
     /// Get strategus battle.
     /// </summary>
     [HttpGet("battles/{battleId}")]
-    public Task<ActionResult<Result<BattleViewModel>>> GetBattle([FromRoute] int battleId) =>
+    public Task<ActionResult<Result<BattleDetailedViewModel>>> GetBattle([FromRoute] int battleId) =>
         ResultToActionAsync(Mediator.Send(new GetBattleQuery
         {
             BattleId = battleId,
         }));
+
+    /// <summary>
+    /// Get battle items.
+    /// </summary>
+    /// <returns>The party items.</returns>
+    /// <response code="200">Ok.</response>
+    /// <response code="400">Bad request.</response>
+    [HttpGet("battles/{battleId}/items")]
+    public Task<ActionResult<Result<IList<ItemStack>>>> GetBattleItems([FromRoute] int battleId)
+    {
+        throw new NotImplementedException();
+    }
 
     /// <summary>
     /// Get battle fighters.
@@ -59,9 +72,8 @@ public class StrategusController : BaseController
     [HttpGet("battles/{battleId}/mercenaries")]
     public Task<ActionResult<Result<IList<BattleMercenaryViewModel>>>> GetBattleMercenaries([FromRoute] int battleId)
     {
-        return ResultToActionAsync(Mediator.Send(new GetBattleMercenariesQuery
+        return ResultToActionAsync(Mediator.Send(new GetGameBattleMercenariesQuery
         {
-            UserId = CurrentUser.User!.Id,
             BattleId = battleId,
         }));
     }

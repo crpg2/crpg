@@ -4,6 +4,7 @@ using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
+using Crpg.Module.Api.Models.Strategus;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
 using TaleWorlds.Core;
@@ -121,6 +122,21 @@ internal class StubCrpgClient : ICrpgClient
     }
 
     public Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<CrpgStrategusBattle>> GetStrategusBattleAsync(int battleId, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<List<CrpgStrategusFighter>>> GetStrategusBattleFightersAsync(int battleId, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<CrpgResult<List<CrpgStrategusMercenary>>> GetStrategusBattleMercenariesAsync(int battleId, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }

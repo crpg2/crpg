@@ -913,6 +913,7 @@ public record SeedDataCommand : IMediatorRequest
                     Skills = new CharacterSkills { Points = 100 },
                 },
             };
+            droob.ActiveCharacterId = droobCharacter0.Id;
             Character kadseCharacter0 = new()
             {
                 User = kadse,
@@ -2125,7 +2126,14 @@ public record SeedDataCommand : IMediatorRequest
                 Status = PartyStatus.InBattle,
                 TargetedSettlement = leblenion,
             };
-
+            Party droobParty = new()
+            {
+                User = droob,
+                Troops = 3,
+                Position = leblenion.Position,
+                Status = PartyStatus.InBattle,
+                TargetedSettlement = leblenion,
+            };
             // Users with no party: telesto, kypak, devoidDragon.
 
             Party[] newParties =
@@ -2137,7 +2145,7 @@ public record SeedDataCommand : IMediatorRequest
                 manikParty, ajroselleParty, skraelParty, bedoParty, lambicParty, sanasarParty, vlad007Party,
                 canp0GParty, sharkParty, noobAmphetamineParty, mundeteParty, aroyFalconerParty, insanitoidParty,
                 namidakaParty, xDemParty, disorotParty, aceParty, sagarParty, greenShadowParty, hannibaruParty,
-                drexxParty, xaroshParty, tipsyTobyParty, localAlphaParty, eztliParty,
+                drexxParty, xaroshParty, tipsyTobyParty, localAlphaParty, eztliParty, droobParty,
             };
 
             var existingParties = (await _db.Parties.ToArrayAsync())
@@ -2320,7 +2328,7 @@ public record SeedDataCommand : IMediatorRequest
                 {
                     new BattleFighter
                     {
-                        Party = eztliParty,
+                        Party = droobParty,
                         Side = BattleSide.Attacker,
                         Commander = true,
                     },
@@ -2330,6 +2338,13 @@ public record SeedDataCommand : IMediatorRequest
                         Settlement = leblenion,
                         Side = BattleSide.Defender,
                         Commander = true,
+                    },
+                    new BattleFighter
+                    {
+                        Party = eztliParty,
+                        Settlement = null,
+                        Side = BattleSide.Defender,
+                        Commander = false,
                     },
                 },
                 ScheduledFor = DateTime.UtcNow,

@@ -1,0 +1,26 @@
+ServerName Test Strategus
+GameType cRPGStrategus
+disable_culture_voting
+disable_map_voting
+CultureTeam1 vlandia
+CultureTeam2 battania
+RoundPreparationTimeLimit 2
+MaxNumberOfPlayers 180
+AutoTeamBalanceThreshold 0
+FriendlyFireDamageMeleeFriendPercent 50
+FriendlyFireDamageMeleeSelfPercent 0
+FriendlyFireDamageRangedFriendPercent 50
+FriendlyFireDamageRangedSelfPercent 0
+MinNumberOfPlayersForMatchStart 0
+NumberOfBotsTeam1 0
+NumberOfBotsTeam2 0
+NumberOfBotsPerFormation 10
+MapTimeLimit 8
+RoundTimeLimit 60
+WarmupTimeLimit 60
+start_game
+set_automated_battle_count -1
+enable_automated_battle_switching
+crpg_strategus_battle_id 5
+crpg_apply_harmony_patches
+GamePassword yoyo

@@ -2,6 +2,7 @@
 using Crpg.Module.Api.Models.ActivityLogs;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Restrictions;
+using Crpg.Module.Api.Models.Strategus;
 using Crpg.Module.Api.Models.Users;
 
 namespace Crpg.Module.Api;
@@ -23,4 +24,8 @@ internal interface ICrpgClient : IDisposable
 
     Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req,
         CancellationToken cancellationToken = default);
+
+    Task<CrpgResult<CrpgStrategusBattle>> GetStrategusBattleAsync(int battleId, CancellationToken cancellationToken = default);
+    Task<CrpgResult<List<CrpgStrategusFighter>>> GetStrategusBattleFightersAsync(int battleId, CancellationToken cancellationToken = default);
+    Task<CrpgResult<List<CrpgStrategusMercenary>>> GetStrategusBattleMercenariesAsync(int battleId, CancellationToken cancellationToken = default);
 }

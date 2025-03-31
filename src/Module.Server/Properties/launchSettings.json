@@ -67,7 +67,18 @@
       "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
       "environmentVariables": {
         "CRPG_API_BASE_URL": "https://api.namidaka.fr",
-        "CRPG_INSTANCE": "crpg99c",
+        "CRPG_INSTANCE": "crpg99c"
+      }
+    },
+    "Strategus": {
+      "commandName": "Executable",
+      "executablePath": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server\\DedicatedCustomServer.Starter.exe",
+      "commandLineArgs": "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /dedicatedcustomserverconfigfile ..\\cRPG\\ds_config_crpg_strategusbattle.txt /port 7210 /no_watchdog",
+      "workingDirectory": "%MB_SERVER_PATH%\\bin\\Win64_Shipping_Server",
+      "environmentVariables": {
+        "CRPG_API_BASE_URL": "https://localhost:8000",
+        "CRPG_INSTANCE": "crpg99a",
+        "CRPG_API_KEY": "tototo"
       }
     }
   },

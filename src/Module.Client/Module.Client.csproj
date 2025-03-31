@@ -42,6 +42,8 @@
     <Compile Remove="..\Module.Server\Modes\TrainingGround\CrpgTrainingGroundServer.cs" />
     <Compile Remove="..\Module.Server\Modes\TrainingGround\CrpgTrainingGroundSpawningBehavior.cs" />
     <Compile Remove="..\Module.Server\Modes\TrainingGround\CrpgTrainingGroundSpawnFrameBehavior.cs" />
+    <Compile Remove="..\Module.Server\Modes\Strategus\CrpgStrategusServer.cs" />
+    <Compile Remove="..\Module.Server\Modes\Strategus\CrpgStrategusSpawningBehavior.cs" />
     <Compile Remove="..\Module.Server\Balancing\**\*" />
     <Compile Remove="..\Module.Server\Common\TeamSelect\CrpgTeamSelectServerComponent.cs" />
     <Compile Remove="..\Module.Server\Common\CrpgActivityLogsBehavior.cs" />

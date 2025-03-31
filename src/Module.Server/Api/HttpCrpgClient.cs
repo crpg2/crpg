@@ -6,6 +6,7 @@ using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.ActivityLogs;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Restrictions;
+using Crpg.Module.Api.Models.Strategus;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
 using Crpg.Module.Helpers.Json;
@@ -107,6 +108,21 @@ internal class HttpCrpgClient : ICrpgClient
     public Task<CrpgResult<CrpgRestriction>> RestrictUserAsync(CrpgRestrictionRequest req, CancellationToken cancellationToken = default)
     {
         return Post<CrpgRestrictionRequest, CrpgRestriction>("games/restrictions", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgStrategusBattle>> GetStrategusBattleAsync(int battleId, CancellationToken cancellationToken = default)
+    {
+        return Get<CrpgStrategusBattle>("strategus/battles/" + battleId, null, cancellationToken);
+    }
+
+    public Task<CrpgResult<List<CrpgStrategusFighter>>> GetStrategusBattleFightersAsync(int battleId, CancellationToken cancellationToken = default)
+    {
+        return Get<List<CrpgStrategusFighter>>("strategus/battles/" + battleId + "/fighters", null, cancellationToken);
+    }
+
+    public Task<CrpgResult<List<CrpgStrategusMercenary>>> GetStrategusBattleMercenariesAsync(int battleId, CancellationToken cancellationToken = default)
+    {
+        return Get<List<CrpgStrategusMercenary>>("strategus/battles/" + battleId + "/mercenaries", null, cancellationToken);
     }
 
     public void Dispose() => _httpClient.Dispose();

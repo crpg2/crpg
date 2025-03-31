@@ -32,6 +32,7 @@ internal static class CrpgServerConfiguration
     public static bool FrozenBots { get; private set; } = false;
     public static int ControlledBotsCount { get; private set; } = 0;
     public static int BaseNakedEquipmentValue { get; private set; } = 10000;
+    public static int StrategusBattleId { get; private set; }
     public static Tuple<TimeSpan, TimeSpan, TimeZoneInfo>? HappyHours { get; private set; }
 
     [UsedImplicitly]
@@ -137,6 +138,21 @@ internal static class CrpgServerConfiguration
 
         FrozenBots = frozenBots;
         Debug.Print($"Set team balance once to {frozenBots}");
+    }
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_strategus_battle_id", "Sets the upcoming strategus battle ID.")]
+    private static void SetStrategusBattleId(string? idStr)
+    {
+        if (idStr == null
+            || !int.TryParse(idStr, out int id)
+            || id < 0)
+        {
+            Debug.Print($"Invalid strategus battle ID string: {idStr}");
+            return;
+        }
+
+        StrategusBattleId = id;
+        Debug.Print($"Set upcoming Strategus Battle ID to {id}");
     }
     [UsedImplicitly]
     [ConsoleCommandMethod("crpg_happy_hours", "Sets the happy hours. Format: HH:MM-HH:MM,TZ")]

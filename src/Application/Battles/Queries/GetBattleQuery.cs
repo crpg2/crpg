@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Battles.Queries;
 
-public record GetBattleQuery : IMediatorRequest<BattleViewModel>
+public record GetBattleQuery : IMediatorRequest<BattleDetailedViewModel>
 {
     public int BattleId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetBattleQuery, BattleViewModel>
+    internal class Handler : IMediatorRequestHandler<GetBattleQuery, BattleDetailedViewModel>
     {
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
@@ -24,10 +24,10 @@ public record GetBattleQuery : IMediatorRequest<BattleViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<BattleViewModel>> Handle(GetBattleQuery req, CancellationToken cancellationToken)
+        public async Task<Result<BattleDetailedViewModel>> Handle(GetBattleQuery req, CancellationToken cancellationToken)
         {
             var battle = await _db.Battles
-                .ProjectTo<BattleViewModel>(_mapper.ConfigurationProvider)
+                .Include(b => b.Fighters).ThenInclude(f => f.Party)
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {
@@ -40,7 +40,7 @@ public record GetBattleQuery : IMediatorRequest<BattleViewModel>
                 return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
             }
 
-            return new(battle);
+            return new(_mapper.Map<BattleDetailedViewModel>(battle));
         }
     }
 }

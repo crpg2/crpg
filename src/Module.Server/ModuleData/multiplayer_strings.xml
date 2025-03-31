@@ -43,6 +43,11 @@
   <string id="str_multiplayer_official_game_type_explainer.cRPGTrainingGround" text="{=jz6NaOu6}·   Hone your skills!{newline}·   Challenge others to ranked duels!{newline}·   Upgrade your character on c-rpg.eu" />
   <string id="str_multiplayer_game_type.cRPGTrainingGround" text="{=RnggjkC0}Training Ground" />
 
+  <!-- Strategus -->
+  <string id="str_multiplayer_official_game_type_name.cRPGStrategus" text="{=Danzyf19}Strategus" />
+  <string id="str_multiplayer_official_game_type_explainer.cRPGStrategus" text="{=qa1ZUOxQ}·   Kill the enemy troops or capture all flags to win!{newline}·   Further your goals in Strategus!{newline}·   Upgrade your character on c-rpg.eu" />
+  <string id="str_multiplayer_game_type.cRPGStrategus" text="{=Danzyf19}Strategus" />
+
   <!-- Scoreboard -->
   <string id="str_scoreboard_header.life" text="{=fBDiQBrC}Life" />
   <string id="str_mp_scoreboard_context_promote_commander" text="{=sXF7LsGO}Promote Commander" />

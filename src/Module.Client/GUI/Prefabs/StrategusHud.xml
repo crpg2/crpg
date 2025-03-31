@@ -1,0 +1,66 @@
+﻿<Prefab>
+  <Constants>
+  </Constants>
+  <Window>
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" OrderEnabledAlpha="0.2">
+      <Children>
+
+        <ListPanel WidthSizePolicy="CoverChildren"
+                  HeightSizePolicy="CoverChildren"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Top"
+                  MarginTop="5">
+          <Children>
+
+            <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Left" StackLayout.LayoutMethod="HorizontalLeftToRight">
+              <Children>
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="25" SuggestedHeight="32" Sprite="MPHud\battle_mode_troop_count" Color="#f4e1c4ff"/>
+                <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginLeft="10" MarginRight="10" MarginTop="5" Brush="MPHUD.ScoreText" Brush.FontSize="32" IntText="@AttackerTicketCount" />
+              </Children>
+            </ListPanel>
+
+            <BannerHud WidthSizePolicy="Fixed"
+                      HeightSizePolicy="Fixed"
+                      SuggestedWidth="50"
+                      SuggestedHeight="50"
+                      DataSource="{AllyBanner}" />
+
+            <TimerHud DataSource="{Timer}"
+                      WidthSizePolicy="Fixed"
+                      HeightSizePolicy="Fixed"
+                      SuggestedWidth="90"
+                      SuggestedHeight="26"
+                      VerticalAlignment="Center" />
+
+            <BannerHud
+              WidthSizePolicy="Fixed"
+              HeightSizePolicy="Fixed"
+              SuggestedWidth="50"
+              SuggestedHeight="50"
+              DataSource="{EnemyBanner}" />
+
+            <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" StackLayout.LayoutMethod="HorizontalLeftToRight">
+              <Children>
+                <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginLeft="10" MarginRight="10" MarginTop="5" Brush="MPHUD.ScoreText" Brush.FontSize="32" IntText="@DefenderTicketCount" />
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="25" SuggestedHeight="32" Sprite="MPHud\battle_mode_troop_count" Color="#f4e1c4ff"/>
+              </Children>
+            </ListPanel>
+
+          </Children>
+        </ListPanel>
+
+        <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="30" HorizontalAlignment="Center" MarginTop="50">
+          <Children>
+            <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent" StackLayout.LayoutMethod="HorizontalSpaced">
+              <Children>
+
+              </Children>
+            </ListPanel>
+          </Children>
+        </Widget>
+
+      </Children>
+    </Widget>
+
+  </Window>
+</Prefab>
