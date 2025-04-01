@@ -193,6 +193,14 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
             agent.WieldInitialWeapons();
         }
 
+
+        if (agent.MissionPeer.ControlledFormation != null)
+        {
+            agent.Team.AssignPlayerAsSergeantOfFormation(agent.MissionPeer, agent.MissionPeer.ControlledFormation.FormationIndex);
+        }
+
+        crpgPeer.LastSpawnInfo = new SpawnInfo(agent.MissionPeer.Team, updatedUser.Character.EquippedItems);
+
         return agent;
     }
 }

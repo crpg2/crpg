@@ -242,7 +242,8 @@ internal class CrpgRewardServer : MissionLogic
         int? constantMultiplier = null,
         bool updateUserStats = true,
         bool isDuel = false,
-        NetworkCommunicator? singleUser = null)
+        NetworkCommunicator? singleUser = null,
+        Dictionary<int, float>? timeSinceEquipChestUsed = null)
     {
 
         NetworkCommunicator[] networkPeers = Array.Empty<NetworkCommunicator>();
@@ -396,7 +397,7 @@ internal class CrpgRewardServer : MissionLogic
         }
     }
 
-    private Dictionary<int, IList<CrpgUserDamagedItem>> GetBrokenItemsByCrpgUserId(NetworkCommunicator[] networkPeers, float duration)
+    private Dictionary<int, IList<CrpgUserDamagedItem>> GetBrokenItemsByCrpgUserId(NetworkCommunicator[] networkPeers, float duration, Dictionary<int, float>? timeSinceEquipChestUsed = null)
     {
         Dictionary<int, IList<CrpgUserDamagedItem>> brokenItems = new();
         foreach (NetworkCommunicator networkPeer in networkPeers)
@@ -406,6 +407,14 @@ internal class CrpgRewardServer : MissionLogic
             if (missionPeer == null || crpgPeer?.User == null)
             {
                 continue;
+            }
+
+            if (timeSinceEquipChestUsed != null)
+            {
+                if (timeSinceEquipChestUsed.TryGetValue(crpgPeer.User.Id, out float lastUsedChest))
+                {
+                    duration = duration - lastUsedChest;
+                }
             }
 
             if (crpgPeer.LastSpawnInfo != null)
@@ -659,6 +668,8 @@ internal class CrpgRewardServer : MissionLogic
         List<CrpgUserDamagedItem> brokenItems = new();
         foreach (var equippedItem in crpgPeer.LastSpawnInfo!.EquippedItems)
         {
+            Debug.Print(equippedItem.UserItem.ItemId.ToString());
+
             var mbItem = Game.Current.ObjectManager.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
             if (_random.NextDouble() >= _constants.ItemBreakChance)
             {

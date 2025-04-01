@@ -203,7 +203,8 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             _ = _rewardServer.UpdateCrpgUsersAsync(
                 durationRewarded: ComputeRoundReward(CurrentRoundData, wavesWon: Math.Max(_currentWave, 0)),
                 durationUpkeep: roundDuration * UpkeepMultiplier,
-                constantMultiplier: RewardMultiplier);
+                constantMultiplier: RewardMultiplier,
+                timeSinceEquipChestUsed: _equipmentChestUpkeepTracking);
         }
     }
 
@@ -272,13 +273,6 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         });
         GameNetwork.EndModuleEventAsServer();
 
-        CrpgPeer? crpgPeer = networkPeer.GetComponent<CrpgPeer>();
-        if (crpgPeer != null)
-        {
-            int crpgUserId = crpgPeer.User.Id;
-            Debug.Print(crpgUserId.ToString());
-            _equipmentChestUpkeepTracking.Add(crpgUserId, 0);
-        }
     }
 
     /// <summary>Work around the 60 minutes limit of MapTimeLimit.</summary>
@@ -343,7 +337,8 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             _ = _rewardServer.UpdateCrpgUsersAsync(
                 durationRewarded: ComputeRoundReward(CurrentRoundData, wavesWon: _currentWave),
                 durationUpkeep: roundDuration * UpkeepMultiplier,
-                constantMultiplier: RewardMultiplier);
+                constantMultiplier: RewardMultiplier,
+                timeSinceEquipChestUsed: _equipmentChestUpkeepTracking);
             EndGame(Mission.AttackerTeam);
             return;
         }
@@ -363,7 +358,8 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         _ = _rewardServer.UpdateCrpgUsersAsync(
             durationRewarded: ComputeRoundReward(CurrentRoundData, wavesWon: _currentWave + 1),
             durationUpkeep: roundDuration * UpkeepMultiplier,
-            constantMultiplier: RewardMultiplier);
+            constantMultiplier: RewardMultiplier,
+            timeSinceEquipChestUsed: _equipmentChestUpkeepTracking);
 
         if (_currentRound < RoundsCount - 1)
         {
@@ -522,12 +518,26 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     }
     private async void onEquipChestUsed(CrpgPeer crpgPeer)
     {
+
+        if (MissionLobbyComponent.IsInWarmup)
+        {
+            return;
+        }
+
         Debug.Print("AHhHH here 1");
         Debug.Print(crpgPeer.Name.ToString());
-        float upkeepDuration = _currentRoundStartTime.ElapsedSeconds - _equipmentChestUpkeepTracking[crpgPeer.User.Id];
+
+        if (!_equipmentChestUpkeepTracking.TryGetValue(crpgPeer.User.Id, out float lastUsedChest))
+        {
+            lastUsedChest = 0;
+        }
+
+        float upkeepDuration = _currentRoundStartTime.ElapsedSeconds - lastUsedChest;
+
         _equipmentChestUpkeepTracking[crpgPeer.User.Id] = _currentRoundStartTime.ElapsedSeconds;
+
         Debug.Print(upkeepDuration.ToString());
-        await _rewardServer.UpdateCrpgUsersAsync(0,durationUpkeep: upkeepDuration, singleUser: crpgPeer.GetNetworkPeer());
+        await _rewardServer.UpdateCrpgUsersAsync(0,durationUpkeep: upkeepDuration, singleUser: crpgPeer.GetNetworkPeer(),timeSinceEquipChestUsed: _equipmentChestUpkeepTracking);
 
     }
 }
