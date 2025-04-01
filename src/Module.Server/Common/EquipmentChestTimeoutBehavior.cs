@@ -1,11 +1,13 @@
 ﻿using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using Crpg.Module.Api;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common.ChatCommands;
+using Crpg.Module.Common.Commander;
 using Crpg.Module.Modes.Dtv;
 using Crpg.Module.Notifications;
 using Crpg.Module.Rating;
@@ -25,12 +27,15 @@ namespace Crpg.Module.Common;
 
 internal class EquipmentChestTimeoutBehavior : MissionBehavior
 {
+
+    public event Action<CrpgPeer> OnEquipChestUsed = default!;
+
     private Dictionary<CrpgPeer, int> timeSinceLastRearmed = new Dictionary<CrpgPeer, int>();
     private readonly CrpgRewardServer _rewardServer;
     private readonly ICrpgClient _crpgClient;
     private float RearmTimeout = 3000; // Time between equipment chest uses in ms
-
     public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
+    private CrpgUserManagerServer? _crpgUserManager;
 
     public EquipmentChestTimeoutBehavior(CrpgRewardServer rewardServer, ICrpgClient crpgClient)
     {
@@ -38,12 +43,8 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
         _crpgClient = crpgClient;
     }
 
-
-
     public override void OnAgentBuild(Agent agent, Banner banner)
     {
-
-
         if (agent == null)
         {
             return;
@@ -77,7 +78,6 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
         }
     }
 
-
     public override async void OnObjectUsed(Agent userAgent, UsableMissionObject usedObject)
     {
         if (usedObject.GetType() == typeof(Scripts.CrpgStandingPoint))
@@ -97,30 +97,18 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
 
                         if (timeDiff > RearmTimeout)
                         {
-
-                            //await _rewardServer.UpdateCrpgUsersAsync(durationRewarded: 0, updateUserStats: false);
-                            //await UpdateUser(crpgPeer);
-                            VirtualPlayer vp = networkPeer.VirtualPlayer;
-                            TryConvertPlatform(vp.Id.ProvidedType, out Platform platform);
-
-
-                            // We can't resolve the xbox id from the player id so we wait for the player to send their xbox id. This is
-                            // as insecure as stupid but it is what it is.
-                            if (platform == Platform.Microsoft)
-                            {
-                                // Uhhh ask question...
-                            }
-
-                            string platformUserId = PlayerIdToPlatformUserId(vp.Id, platform);
-
-
-                            await _crpgClient.GetUserAsync(platform, platformUserId, CrpgServerConfiguration.Region);
-
                             base.OnObjectUsed(userAgent, usedObject);
+                            OnEquipChestUsed?.Invoke(crpgPeer);
+
+                            _crpgUserManager = Mission.GetMissionBehavior<CrpgUserManagerServer>();
+                            CrpgUser crpgUser = await _crpgUserManager.GetUpdatedCrpgUser(networkPeer);
+
                             timeSinceLastRearmed[crpgPeer] = (int)dateTime.TimeOfDay.TotalMilliseconds;
                             float previousHealth = userAgent.Health;
 
-                            Agent? newAgent = RefreshPlayer(networkPeer);
+
+
+                            Agent? newAgent = RefreshPlayer(networkPeer, crpgUser);
                             if (newAgent != null)
                             {
                                 newAgent.Health = previousHealth;
@@ -142,7 +130,7 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
         }
     }
 
-    public Agent? RefreshPlayer(NetworkCommunicator networkPeer)
+    public Agent? RefreshPlayer(NetworkCommunicator networkPeer, CrpgUser updatedUser)
     {
         BasicCultureObject cultureTeam1 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue());
         BasicCultureObject cultureTeam2 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue());
@@ -157,14 +145,14 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
 
         BasicCultureObject teamCulture = missionPeer.Team == Mission.AttackerTeam ? cultureTeam1 : cultureTeam2;
         var peerClass = MBObjectManager.Instance.GetObject<MultiplayerClassDivisions.MPHeroClass>("crpg_captain_division_1");
-        var characterSkills = CrpgCharacterBuilder.CreateCharacterSkills(crpgPeer.User!.Character.Characteristics);
+        var characterSkills = CrpgCharacterBuilder.CreateCharacterSkills(updatedUser!.Character.Characteristics);
         var characterXml = peerClass.HeroCharacter;
 
-        var characterEquipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgPeer.User.Character.EquippedItems);
+        var characterEquipment = CrpgCharacterBuilder.CreateCharacterEquipment(updatedUser.Character.EquippedItems);
 
         MatrixFrame spawnFrame = controlledAgent.Frame;
         var troopOrigin = new CrpgBattleAgentOrigin(characterXml, characterSkills);
-        CrpgCharacterBuilder.AssignArmorsToTroopOrigin(troopOrigin, crpgPeer.User.Character.EquippedItems.ToList());
+        CrpgCharacterBuilder.AssignArmorsToTroopOrigin(troopOrigin, updatedUser.Character.EquippedItems.ToList());
         AgentBuildData agentBuildData = new AgentBuildData(characterXml)
             .MissionPeer(missionPeer)
             .Equipment(characterEquipment)
@@ -204,81 +192,7 @@ internal class EquipmentChestTimeoutBehavior : MissionBehavior
         {
             agent.WieldInitialWeapons();
         }
+
         return agent;
     }
-
-    private async Task UpdateUser(CrpgPeer crpgPeer)
-    {
-        List<CrpgUserUpdate> userUpdates = new();
-
-        CrpgUserUpdate userUpdate = new()
-        {
-            UserId = crpgPeer.User.Id,
-            CharacterId = crpgPeer.User.Character.Id,
-            Reward = new CrpgUserReward { Experience = 0, Gold = 0 },
-            Statistics = new CrpgCharacterStatistics
-            {
-                Kills = 0,
-                Deaths = 0,
-                Assists = 0,
-                PlayTime = TimeSpan.Zero,
-                Rating = crpgPeer.User.Character.Statistics.Rating,
-            },
-        };
-
-        userUpdates.Add(userUpdate);
-
-        Guid idempotencyKey = Guid.NewGuid();
-
-        try
-        {
-
-                var request = new CrpgGameUsersUpdateRequest
-                {
-                    Updates = userUpdates,
-                    Key = idempotencyKey.ToString(),
-                };
-
-                await _crpgClient.UpdateUsersAsync(request);
-        }
-        catch (Exception e)
-        {
-            Debug.Print($"Couldn't update users - {e}");
-
-            // SendErrorToPeers(crpgPeerByCrpgUserId);
-        }
-    }
-    private bool TryConvertPlatform(PlayerIdProvidedTypes provider, out Platform platform)
-    {
-        switch (provider)
-        {
-            case PlayerIdProvidedTypes.Steam:
-                platform = Platform.Steam;
-                return true;
-            case PlayerIdProvidedTypes.Epic:
-                platform = Platform.EpicGames;
-                return true;
-            case PlayerIdProvidedTypes.GDK:
-                platform = Platform.Microsoft;
-                return true;
-            default:
-                platform = default;
-                return false;
-        }
-    }
-
-    private string PlayerIdToPlatformUserId(PlayerId playerId, Platform platform)
-    {
-        switch (platform)
-        {
-            case Platform.Steam:
-                return playerId.Id2.ToString(CultureInfo.InvariantCulture);
-            case Platform.EpicGames:
-                byte[] guidBytes = new ArraySegment<byte>(playerId.ToByteArray(), offset: 16, count: 16).ToArray();
-                return new Guid(guidBytes).ToString("N");
-            default:
-                throw new ArgumentOutOfRangeException(nameof(platform), platform, null);
-        }
-    }
-
 }

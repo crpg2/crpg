@@ -1,6 +1,8 @@
 ﻿using System.Xml.Serialization;
+using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
 using Crpg.Module.Common.AiComponents;
+using Crpg.Module.Common.Network;
 using Crpg.Module.Rewards;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
@@ -36,6 +38,8 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private MissionTimer _refillBouldersTimer = default!;
     private MissionTimer _refillFirePotsTimer = default!;
     private MissionTime _currentRoundStartTime;
+    private EquipmentChestTimeoutBehavior? _equipmentChestTimeoutBehavior;
+    private Dictionary<int, float> _equipmentChestUpkeepTracking;
 
     public CrpgDtvServer(CrpgRewardServer rewardServer)
     {
@@ -44,8 +48,8 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         _gameStarted = false;
         _currentRound = -1;
         _timerExpired = false;
+        _equipmentChestUpkeepTracking = new Dictionary<int, float>();
     }
-
     public override bool IsGameModeHidingAllAgentVisuals => true;
     public override bool IsGameModeUsingOpposingTeams => true;
     public override bool AllowCustomPlayerBanners() => false;
@@ -82,6 +86,12 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     {
         base.OnBehaviorInitialize();
         MissionLobbyComponent.CurrentMultiplayerStateChanged += RewardIfEndOfMission;
+        _equipmentChestTimeoutBehavior = Mission.GetMissionBehavior<EquipmentChestTimeoutBehavior>();
+        if (_equipmentChestTimeoutBehavior != null)
+        {
+            _equipmentChestTimeoutBehavior.OnEquipChestUsed += onEquipChestUsed;
+
+        }
     }
 
     public override void OnRemoveBehavior()
@@ -121,6 +131,17 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         base.OnAgentBuild(agent, banner);
         // Synchronize health with all clients to make the spectator health bar work.
         agent.UpdateSyncHealthToAllClients(true);
+    }
+    public override void OnPlayerDisconnectedFromServer(NetworkCommunicator networkPeer)
+    {
+        base.OnPlayerDisconnectedFromServer(networkPeer);
+
+        CrpgPeer? crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+        if (crpgPeer != null)
+        {
+            int crpgUserId = crpgPeer.User.Id;
+            _equipmentChestUpkeepTracking.Remove(crpgUserId);
+        }
     }
 
     public override void OnMissionTick(float dt)
@@ -250,6 +271,14 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             Round = _currentRound,
         });
         GameNetwork.EndModuleEventAsServer();
+
+        CrpgPeer? crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+        if (crpgPeer != null)
+        {
+            int crpgUserId = crpgPeer.User.Id;
+            Debug.Print(crpgUserId.ToString());
+            _equipmentChestUpkeepTracking.Add(crpgUserId, 0);
+        }
     }
 
     /// <summary>Work around the 60 minutes limit of MapTimeLimit.</summary>
@@ -490,5 +519,15 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         XmlSerializer ser = new(typeof(CrpgDtvData));
         using StreamReader sr = new(ModuleHelper.GetXmlPath("Crpg", "dtv\\dtv_data"));
         return (CrpgDtvData)ser.Deserialize(sr);
+    }
+    private async void onEquipChestUsed(CrpgPeer crpgPeer)
+    {
+        Debug.Print("AHhHH here 1");
+        Debug.Print(crpgPeer.Name.ToString());
+        float upkeepDuration = _currentRoundStartTime.ElapsedSeconds - _equipmentChestUpkeepTracking[crpgPeer.User.Id];
+        _equipmentChestUpkeepTracking[crpgPeer.User.Id] = _currentRoundStartTime.ElapsedSeconds;
+        Debug.Print(upkeepDuration.ToString());
+        await _rewardServer.UpdateCrpgUsersAsync(0,durationUpkeep: upkeepDuration, singleUser: crpgPeer.GetNetworkPeer());
+
     }
 }

@@ -241,9 +241,21 @@ internal class CrpgRewardServer : MissionLogic
         BattleSideEnum? valourTeamSide = null,
         int? constantMultiplier = null,
         bool updateUserStats = true,
-        bool isDuel = false)
+        bool isDuel = false,
+        NetworkCommunicator? singleUser = null)
     {
-        var networkPeers = GameNetwork.NetworkPeers.ToArray();
+
+        NetworkCommunicator[] networkPeers = Array.Empty<NetworkCommunicator>();
+        if (singleUser == null)
+        {
+            networkPeers = GameNetwork.NetworkPeers.ToArray();
+        }
+        else
+        {
+            networkPeers = new NetworkCommunicator[] { singleUser };
+        }
+
+
         if (networkPeers.Length == 0)
         {
             return;
@@ -377,7 +389,6 @@ internal class CrpgRewardServer : MissionLogic
             Debug.Print($"Couldn't update users - {e}");
 
             SendErrorToPeers(crpgPeerByCrpgUserId);
-
         }
         finally
         {
@@ -731,6 +742,7 @@ internal class CrpgRewardServer : MissionLogic
                 BrokeItemIds = updateResult.RepairedItems.Where(r => r.Broke).Select(r => r.ItemId).ToList(),
             });
             GameNetwork.EndModuleEventAsServer();
+            Debug.Print("Rewarded users");
         }
     }
 
@@ -781,4 +793,5 @@ internal class CrpgRewardServer : MissionLogic
         })
         .Build();
     }
+
 }
