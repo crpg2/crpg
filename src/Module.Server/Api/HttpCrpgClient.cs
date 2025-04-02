@@ -115,6 +115,11 @@ internal class HttpCrpgClient : ICrpgClient
         return Get<CrpgStrategusBattle>("strategus/battles/" + battleId, null, cancellationToken);
     }
 
+    public Task<CrpgResult<CrpgStrategusBattle>> UpdateStrategusBattleAsync(int battleId, CrpgStrategusBattleUpdateRequest request, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgStrategusBattleUpdateRequest, CrpgStrategusBattle>("strategus/battles/" + battleId, request, cancellationToken);
+    }
+
     public Task<CrpgResult<List<CrpgStrategusFighter>>> GetStrategusBattleFightersAsync(int battleId, CancellationToken cancellationToken = default)
     {
         return Get<List<CrpgStrategusFighter>>("strategus/battles/" + battleId + "/fighters", null, cancellationToken);

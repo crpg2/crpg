@@ -1,7 +1,4 @@
-﻿using Crpg.Module.Api.Models.Characters;
-using Crpg.Module.Api.Models.Clans;
-using Crpg.Module.Api.Models.Restrictions;
-using Crpg.Module.Api.Models.Strategus;
+﻿using Crpg.Module.Api.Models.Strategus;
 
 namespace Crpg.Module.Api.Models.Users;
 
@@ -13,6 +10,7 @@ internal class CrpgStrategusBattle
     public List<CrpgStrategusMercenary> Mercenaries { get; set; } = default!;
     public int AttackerTotalTroops { get; set; }
     public int DefenderTotalTroops { get; set; }
+    public BattlePhase Phase { get; set; }
     public DateTime? ScheduledFor { get; set; }
 
     public CrpgStrategusFighter? GetFighterByUser(CrpgUser user)

@@ -131,6 +131,12 @@ internal class StubCrpgClient : ICrpgClient
         throw new NotImplementedException();
     }
 
+    public Task<CrpgResult<CrpgStrategusBattle>> UpdateStrategusBattleAsync(int battleId, CrpgStrategusBattleUpdateRequest request, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
+
     public Task<CrpgResult<List<CrpgStrategusFighter>>> GetStrategusBattleFightersAsync(int battleId, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();

@@ -26,6 +26,7 @@ internal interface ICrpgClient : IDisposable
         CancellationToken cancellationToken = default);
 
     Task<CrpgResult<CrpgStrategusBattle>> GetStrategusBattleAsync(int battleId, CancellationToken cancellationToken = default);
+    Task<CrpgResult<CrpgStrategusBattle>> UpdateStrategusBattleAsync(int battleId, CrpgStrategusBattleUpdateRequest request, CancellationToken cancellationToken = default);
     Task<CrpgResult<List<CrpgStrategusFighter>>> GetStrategusBattleFightersAsync(int battleId, CancellationToken cancellationToken = default);
     Task<CrpgResult<List<CrpgStrategusMercenary>>> GetStrategusBattleMercenariesAsync(int battleId, CancellationToken cancellationToken = default);
 }

@@ -64,7 +64,6 @@ internal class CrpgStrategusClient : MissionMultiplayerGameModeBaseClient
 
     private void HandleTicketCountUpdate(CrpgStrategusTicketCountUpdateMessage message)
     {
-
         AttackerTicketCount = message.AttackerTickets;
         DefenderTicketCount = message.DefenderTickets;
         OnUpdateTicketCount?.Invoke();

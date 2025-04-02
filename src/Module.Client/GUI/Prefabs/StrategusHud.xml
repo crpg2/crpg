@@ -15,7 +15,7 @@
             <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Left" StackLayout.LayoutMethod="HorizontalLeftToRight">
               <Children>
                 <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="25" SuggestedHeight="32" Sprite="MPHud\battle_mode_troop_count" Color="#f4e1c4ff"/>
-                <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginLeft="10" MarginRight="10" MarginTop="5" Brush="MPHUD.ScoreText" Brush.FontSize="32" IntText="@AttackerTicketCount" />
+                <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginLeft="10" MarginRight="10" MarginTop="5" Brush="MPHUD.ScoreText" Brush.FontSize="32" IntText="@AllyTicketCount" />
               </Children>
             </ListPanel>
 
@@ -41,7 +41,7 @@
 
             <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" StackLayout.LayoutMethod="HorizontalLeftToRight">
               <Children>
-                <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginLeft="10" MarginRight="10" MarginTop="5" Brush="MPHUD.ScoreText" Brush.FontSize="32" IntText="@DefenderTicketCount" />
+                <TextWidget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginLeft="10" MarginRight="10" MarginTop="5" Brush="MPHUD.ScoreText" Brush.FontSize="32" IntText="@EnemyTicketCount" />
                 <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="25" SuggestedHeight="32" Sprite="MPHud\battle_mode_troop_count" Color="#f4e1c4ff"/>
               </Children>
             </ListPanel>

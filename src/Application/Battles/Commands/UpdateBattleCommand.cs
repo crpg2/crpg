@@ -10,12 +10,11 @@ using LoggerFactory = Crpg.Logging.LoggerFactory;
 
 namespace Crpg.Application.Battles.Commands;
 
-public record UpdateBattleCommand : IMediatorRequest<BattleDetailedViewModel>
+public record UpdateBattleCommand : IMediatorRequest<BattleViewModel>
 {
     public StrategusBattleUpdate Update { get; init; } = default!;
     public int BattleId { get; init; }
-    public string Instance { get; init; } = string.Empty;
-    internal class Handler : IMediatorRequestHandler<UpdateBattleCommand, BattleDetailedViewModel>
+    internal class Handler : IMediatorRequestHandler<UpdateBattleCommand, BattleViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<ClaimBattleCommand>();
 
@@ -28,7 +27,7 @@ public record UpdateBattleCommand : IMediatorRequest<BattleDetailedViewModel>
             _mapper = mapper;
         }
 
-        public async Task<Result<BattleDetailedViewModel>> Handle(UpdateBattleCommand req, CancellationToken cancellationToken)
+        public async Task<Result<BattleViewModel>> Handle(UpdateBattleCommand req, CancellationToken cancellationToken)
         {
             var battle = await _db.Battles
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
@@ -38,16 +37,21 @@ public record UpdateBattleCommand : IMediatorRequest<BattleDetailedViewModel>
                 return new(CommonErrors.BattleNotFound(req.BattleId));
             }
 
-            if (battle.Instance != req.Instance)
+            if (battle.Instance != req.Update.Instance)
             {
-                return new(CommonErrors.BattleNotClaimed(battle.Id, req.Instance));
+                //return new(CommonErrors.BattleNotClaimed(battle.Id, req.Update.Instance));
+            }
+
+            if (req.Update.Winner != null)
+            {
+                battle.Phase = Domain.Entities.Battles.BattlePhase.End;
             }
 
             Logger.LogInformation("Battle '{0}' updated by instance '{1}'",
-                battle.Id, req.Instance);
+                battle.Id, req.Update.Instance);
 
             await _db.SaveChangesAsync(cancellationToken);
-            return new(_mapper.Map<BattleDetailedViewModel>(battle));
+            return new(_mapper.Map<BattleViewModel>(battle));
         }
     }
 }

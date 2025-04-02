@@ -1,8 +1,10 @@
 ﻿using Crpg.Module.GUI.Hud;
 using Crpg.Module.Modes.Strategus;
+using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.HUDExtensions;
 
 namespace Crpg.Module.GUI.Strategus;
 
@@ -10,14 +12,17 @@ internal class StrategusHudVm : ViewModel
 {
     private readonly CrpgStrategusClient _client;
     private BannerHudVm _allyBannerVm;
+    private Team? _allyTeam;
+    private Team? _enemyTeam;
     private BannerHudVm _enemyBannerVm;
     private TimerHudVm _timerVm;
-    private int _defenderTicketCount;
-    private int _attackerTicketCount;
+    private int _allyTicketCount;
+    private int _enemyTicketCount;
     private bool _isGameStarted;
 
     public StrategusHudVm(Mission mission)
     {
+        MissionPeer.OnTeamChanged += OnTeamChanged;
         _allyBannerVm = new BannerHudVm(mission, allyBanner: true);
         _enemyBannerVm = new BannerHudVm(mission, allyBanner: false);
         _timerVm = new TimerHudVm(mission);
@@ -59,28 +64,28 @@ internal class StrategusHudVm : ViewModel
     }
 
     [DataSourceProperty]
-    public int AttackerTicketCount
+    public int AllyTicketCount
     {
-        get => _attackerTicketCount;
+        get => _allyTicketCount;
         set
         {
-            if (value != _attackerTicketCount)
+            if (value != _allyTicketCount)
             {
-                _attackerTicketCount = value;
+                _allyTicketCount = value;
                 OnPropertyChangedWithValue(value);
             }
         }
     }
 
     [DataSourceProperty]
-    public int DefenderTicketCount
+    public int EnemyTicketCount
     {
-        get => _defenderTicketCount;
+        get => _enemyTicketCount;
         set
         {
-            if (value != _defenderTicketCount)
+            if (value != _enemyTicketCount)
             {
-                _defenderTicketCount = value;
+                _enemyTicketCount = value;
                 OnPropertyChangedWithValue(value);
             }
         }
@@ -124,7 +129,37 @@ internal class StrategusHudVm : ViewModel
 
     public void UpdateTicketCount()
     {
-        AttackerTicketCount = _client.AttackerTicketCount;
-        DefenderTicketCount = _client.DefenderTicketCount;
+        if (_allyTeam == null)
+        {
+            return;
+        }
+
+        AllyTicketCount = _allyTeam.Side == BattleSideEnum.Attacker ? _client.AttackerTicketCount : _client.DefenderTicketCount;
+        EnemyTicketCount = _allyTeam.Side == BattleSideEnum.Attacker ? _client.DefenderTicketCount : _client.AttackerTicketCount;
+    }
+
+    private void OnTeamChanged(NetworkCommunicator peer, Team previousTeam, Team newTeam)
+    {
+            OnTeamChanged();
+    }
+
+    private void OnTeamChanged()
+    {
+        _allyTeam = GameNetwork.MyPeer.GetComponent<MissionPeer>().Team;
+        if (_allyTeam == null)
+        {
+            return;
+        }
+
+        if (!GameNetwork.IsMyPeerReady)
+        {
+            return;
+        }
+
+        _enemyTeam = Mission.Current.Teams.FirstOrDefault(t => t.IsEnemyOf(_allyTeam));
+        if (_allyTeam.Side == BattleSideEnum.None)
+        {
+            _allyTeam = Mission.Current.AttackerTeam;
+        }
     }
 }

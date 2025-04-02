@@ -1,16 +1,11 @@
-﻿using System.Xml.Serialization;
+﻿using System.ComponentModel;
 using Crpg.Module.Api;
 using Crpg.Module.Api.Models.Strategus;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
-using Crpg.Module.Common.AiComponents;
-using Crpg.Module.Modes.Dtv;
 using Crpg.Module.Modes.TrainingGround;
 using Crpg.Module.Rewards;
-using NetworkMessages.FromServer;
 using TaleWorlds.Core;
-using TaleWorlds.Library;
-using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
 using TaleWorlds.ObjectSystem;
@@ -122,11 +117,6 @@ internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
         }
     }
 
-    public override void OnAgentRemoved(Agent affectedAgent, Agent? affectorAgent, AgentState agentState, KillingBlow blow)
-    {
-
-    }
-
     protected override void HandleEarlyNewClientAfterLoadingFinished(NetworkCommunicator networkPeer)
     {
         networkPeer.AddComponent<CrpgStrategusMissionRepresentative>();
@@ -188,13 +178,21 @@ internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
 
     private void CheckForEnd()
     {
+        bool isEnd = false;
         if (Mission.Current.AttackerTeam.ActiveAgents.Count <= 0 && SpawningBehavior.Tickets[BattleSideEnum.Attacker] <= 0)
         {
-            // attackers lose
+            _ = SendBattleUpdate(winner: BattleSide.Defender);
+            isEnd = true;
         }
         else if (Mission.Current.DefenderTeam.ActiveAgents.Count <= 0 && SpawningBehavior.Tickets[BattleSideEnum.Defender] <= 0)
         {
-            // defenders lose
+            _ = SendBattleUpdate(winner: BattleSide.Attacker);
+            isEnd = true;
+        }
+
+        if (isEnd)
+        {
+            MissionLobbyComponent.SetStateEndingAsServer();
         }
     }
 
@@ -208,10 +206,28 @@ internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
         Mission.Teams.Add(BattleSideEnum.Defender, defenderTeamCulture.BackgroundColor2, defenderTeamCulture.ForegroundColor2, bannerTeam2, false, true);
     }
 
+    private async Task SendBattleUpdate(BattleSide? winner)
+    {
+        CrpgStrategusBattleUpdate crpgStrategusBattleUpdate = new()
+        {
+            Instance = CrpgServerConfiguration.Instance,
+            BattleId = Battle.Id,
+            AttackerTickets = SpawningBehavior.Tickets[BattleSideEnum.Attacker],
+            DefenderTickets = SpawningBehavior.Tickets[BattleSideEnum.Defender],
+            Winner = winner,
+        };
+
+        var res = await _crpgClient.UpdateStrategusBattleAsync(Battle.Id, new() { Update = crpgStrategusBattleUpdate });
+        if (res.Errors != null)
+        {
+            // sad times
+        }
+    }
+
     private async Task GetStrategusBattle()
     {
         var battleRes = (await _crpgClient.GetStrategusBattleAsync(CrpgServerConfiguration.StrategusBattleId)).Data!;
-        if (battleRes == null)
+        if (battleRes.Phase != BattlePhase.Scheduled || battleRes.Phase != BattlePhase.Live)
         {
             // throw error that battle can't be found
             return;
