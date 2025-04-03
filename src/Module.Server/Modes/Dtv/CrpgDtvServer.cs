@@ -1,12 +1,9 @@
 ﻿using System.Xml.Serialization;
-using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
 using Crpg.Module.Common.AiComponents;
-using Crpg.Module.Common.Network;
 using Crpg.Module.Rewards;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
-using TaleWorlds.Library;
 using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
@@ -39,7 +36,6 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private MissionTimer _refillFirePotsTimer = default!;
     private MissionTime _currentRoundStartTime;
     private EquipmentChestTimeoutBehavior? _equipmentChestTimeoutBehavior;
-    private Dictionary<int, float> _equipmentChestUpkeepTracking;
 
     public CrpgDtvServer(CrpgRewardServer rewardServer)
     {
@@ -48,8 +44,8 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         _gameStarted = false;
         _currentRound = -1;
         _timerExpired = false;
-        _equipmentChestUpkeepTracking = new Dictionary<int, float>();
     }
+
     public override bool IsGameModeHidingAllAgentVisuals => true;
     public override bool IsGameModeUsingOpposingTeams => true;
     public override bool AllowCustomPlayerBanners() => false;
@@ -89,8 +85,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         _equipmentChestTimeoutBehavior = Mission.GetMissionBehavior<EquipmentChestTimeoutBehavior>();
         if (_equipmentChestTimeoutBehavior != null)
         {
-            _equipmentChestTimeoutBehavior.OnEquipChestUsed += onEquipChestUsed;
-
+            _equipmentChestTimeoutBehavior.OnEquipChestUsed += OnEquipChestUsed;
         }
     }
 
@@ -135,13 +130,6 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     public override void OnPlayerDisconnectedFromServer(NetworkCommunicator networkPeer)
     {
         base.OnPlayerDisconnectedFromServer(networkPeer);
-
-        CrpgPeer? crpgPeer = networkPeer.GetComponent<CrpgPeer>();
-        if (crpgPeer != null)
-        {
-            int crpgUserId = crpgPeer.User.Id;
-            _equipmentChestUpkeepTracking.Remove(crpgUserId);
-        }
     }
 
     public override void OnMissionTick(float dt)
@@ -200,11 +188,21 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         {
             _timerExpired = true;
             float roundDuration = _currentRoundStartTime.ElapsedSeconds;
+            Dictionary<int, float>? timeSinceLastRearmed;
+            if (_equipmentChestTimeoutBehavior != null)
+            {
+                timeSinceLastRearmed = _equipmentChestTimeoutBehavior.TimeSinceLastRearmed;
+            }
+            else
+            {
+                timeSinceLastRearmed = null;
+            }
+
             _ = _rewardServer.UpdateCrpgUsersAsync(
                 durationRewarded: ComputeRoundReward(CurrentRoundData, wavesWon: Math.Max(_currentWave, 0)),
                 durationUpkeep: roundDuration * UpkeepMultiplier,
                 constantMultiplier: RewardMultiplier,
-                timeSinceEquipChestUsed: _equipmentChestUpkeepTracking);
+                timeSinceEquipChestUsed: timeSinceLastRearmed);
         }
     }
 
@@ -307,6 +305,11 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         }
 
         _currentRoundStartTime = MissionTime.Now;
+        if (_equipmentChestTimeoutBehavior != null)
+        {
+            _equipmentChestTimeoutBehavior.CurrentRoundStartTime = _currentRoundStartTime;
+        }
+
         _waveStartTimer = new MissionTimer(15f);
         _waveStarted = false;
     }
@@ -327,6 +330,18 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         bool defendersDepleted = Mission.DefenderTeam.ActiveAgents.Count == (vipDead ? 0 : 1);
         float roundDuration = _currentRoundStartTime.ElapsedSeconds;
 
+        Dictionary<int, float>? timeSinceLastRearmed;
+        if (_equipmentChestTimeoutBehavior != null)
+        {
+            timeSinceLastRearmed = _equipmentChestTimeoutBehavior.TimeSinceLastRearmed;
+        }
+        else
+        {
+            timeSinceLastRearmed = null;
+        }
+
+
+
         if (defendersDepleted)
         {
             SendDataToPeers(new CrpgDtvGameEnd { VipDead = false });
@@ -334,13 +349,13 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
         if (vipDead || defendersDepleted)
         {
-            _ = _rewardServer.UpdateCrpgUsersAsync(
-                durationRewarded: ComputeRoundReward(CurrentRoundData, wavesWon: _currentWave),
-                durationUpkeep: roundDuration * UpkeepMultiplier,
-                constantMultiplier: RewardMultiplier,
-                timeSinceEquipChestUsed: _equipmentChestUpkeepTracking);
-            EndGame(Mission.AttackerTeam);
-            return;
+                _ = _rewardServer.UpdateCrpgUsersAsync(
+                    durationRewarded: ComputeRoundReward(CurrentRoundData, wavesWon: _currentWave),
+                    durationUpkeep: roundDuration * UpkeepMultiplier,
+                    constantMultiplier: RewardMultiplier,
+                    timeSinceEquipChestUsed: timeSinceLastRearmed);
+                EndGame(Mission.AttackerTeam);
+                return;
         }
 
         bool attackersDepleted = !Mission.AttackerTeam.HasBots;
@@ -359,7 +374,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             durationRewarded: ComputeRoundReward(CurrentRoundData, wavesWon: _currentWave + 1),
             durationUpkeep: roundDuration * UpkeepMultiplier,
             constantMultiplier: RewardMultiplier,
-            timeSinceEquipChestUsed: _equipmentChestUpkeepTracking);
+            timeSinceEquipChestUsed: timeSinceLastRearmed);
 
         if (_currentRound < RoundsCount - 1)
         {
@@ -516,28 +531,23 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         using StreamReader sr = new(ModuleHelper.GetXmlPath("Crpg", "dtv\\dtv_data"));
         return (CrpgDtvData)ser.Deserialize(sr);
     }
-    private async void onEquipChestUsed(CrpgPeer crpgPeer)
+    private async void OnEquipChestUsed(CrpgPeer crpgPeer)
     {
 
-        if (MissionLobbyComponent.IsInWarmup)
+        if (MissionLobbyComponent.IsInWarmup || _equipmentChestTimeoutBehavior == null || crpgPeer.User == null)
         {
             return;
         }
 
-        Debug.Print("AHhHH here 1");
-        Debug.Print(crpgPeer.Name.ToString());
+        int userId = crpgPeer.User.Id;
 
-        if (!_equipmentChestUpkeepTracking.TryGetValue(crpgPeer.User.Id, out float lastUsedChest))
+        if (!_equipmentChestTimeoutBehavior.TimeSinceLastRearmed.TryGetValue(userId, out float lastUsedChest))
         {
             lastUsedChest = 0;
         }
 
-        float upkeepDuration = _currentRoundStartTime.ElapsedSeconds - lastUsedChest;
+        float upkeepDuration = (_currentRoundStartTime.ElapsedMilliseconds - lastUsedChest) / 1000;
 
-        _equipmentChestUpkeepTracking[crpgPeer.User.Id] = _currentRoundStartTime.ElapsedSeconds;
-
-        Debug.Print(upkeepDuration.ToString());
-        await _rewardServer.UpdateCrpgUsersAsync(0,durationUpkeep: upkeepDuration, singleUser: crpgPeer.GetNetworkPeer(),timeSinceEquipChestUsed: _equipmentChestUpkeepTracking);
-
+        await _rewardServer.UpdateCrpgUsersAsync(0, durationUpkeep: upkeepDuration, singleUser: crpgPeer.GetNetworkPeer(), timeSinceEquipChestUsed: _equipmentChestTimeoutBehavior.TimeSinceLastRearmed);
     }
 }

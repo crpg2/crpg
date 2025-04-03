@@ -413,7 +413,7 @@ internal class CrpgRewardServer : MissionLogic
             {
                 if (timeSinceEquipChestUsed.TryGetValue(crpgPeer.User.Id, out float lastUsedChest))
                 {
-                    duration = duration - lastUsedChest;
+                    duration = duration - (lastUsedChest / 1000);
                 }
             }
 

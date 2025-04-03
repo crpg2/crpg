@@ -1,4 +1,5 @@
 ﻿using Crpg.Module.Api.Models.Characters;
+using Crpg.Module.Api.Models.Users;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
 using TaleWorlds.Diamond;
@@ -94,12 +95,85 @@ private int totalNumberOfBots = 800;
             {
                 _TeamNumberOfBots[team] = (int)(numerator / denominator);
             }
-            
         }
 
         base.RequestStartSpawnSession();
         ResetSpawnTeams();
     }
+    public Agent? RefreshPlayerWithNewLoadout(NetworkCommunicator networkPeer, CrpgUser updatedUser)
+    {
+        BasicCultureObject cultureTeam1 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue());
+        BasicCultureObject cultureTeam2 = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue());
+
+        MissionPeer missionPeer = networkPeer.GetComponent<MissionPeer>();
+        CrpgPeer crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+        Agent controlledAgent = missionPeer.ControlledAgent;
+
+
+        controlledAgent.ClearEquipment();
+        controlledAgent.FadeOut(true, true);
+
+        BasicCultureObject teamCulture = missionPeer.Team == Mission.AttackerTeam ? cultureTeam1 : cultureTeam2;
+        var peerClass = MBObjectManager.Instance.GetObject<MultiplayerClassDivisions.MPHeroClass>("crpg_captain_division_1");
+        var characterSkills = CrpgCharacterBuilder.CreateCharacterSkills(updatedUser!.Character.Characteristics);
+        var characterXml = peerClass.HeroCharacter;
+
+        var characterEquipment = CrpgCharacterBuilder.CreateCharacterEquipment(updatedUser.Character.EquippedItems);
+
+        MatrixFrame spawnFrame = controlledAgent.Frame;
+        var troopOrigin = new CrpgBattleAgentOrigin(characterXml, characterSkills);
+        CrpgCharacterBuilder.AssignArmorsToTroopOrigin(troopOrigin, updatedUser.Character.EquippedItems.ToList());
+        AgentBuildData agentBuildData = new AgentBuildData(characterXml)
+            .MissionPeer(missionPeer)
+            .Equipment(characterEquipment)
+            .TroopOrigin(troopOrigin)
+            .Team(missionPeer.Team)
+            .VisualsIndex(0)
+            .IsFemale(missionPeer.Peer.IsFemale)
+            .BodyProperties(characterXml.GetBodyPropertiesMin())
+            .InitialPosition(spawnFrame.origin)
+            .InitialDirection(spawnFrame.rotation.f.AsVec2);
+
+        if (crpgPeer.Clan != null)
+        {
+            agentBuildData.ClothingColor1(crpgPeer.Clan.PrimaryColor);
+            agentBuildData.ClothingColor2(crpgPeer.Clan.SecondaryColor);
+            if (!string.IsNullOrEmpty(crpgPeer.Clan.BannerKey))
+            {
+                agentBuildData.Banner(new Banner(crpgPeer.Clan.BannerKey));
+            }
+        }
+        else
+        {
+            agentBuildData.ClothingColor1(missionPeer.Team == Mission.AttackerTeam
+                ? teamCulture.Color
+                : teamCulture.ClothAlternativeColor);
+            agentBuildData.ClothingColor2(missionPeer.Team == Mission.AttackerTeam
+                ? teamCulture.Color2
+                : teamCulture.ClothAlternativeColor2);
+        }
+
+        Agent agent = Mission.SpawnAgent(agentBuildData);
+        CrpgAgentComponent agentComponent = new(agent);
+        agent.AddComponent(agentComponent);
+
+        bool hasExtraSlotEquipped = characterEquipment[EquipmentIndex.ExtraWeaponSlot].Item != null;
+        if (!agent.HasMount || hasExtraSlotEquipped)
+        {
+            agent.WieldInitialWeapons();
+        }
+
+
+        if (agent.MissionPeer.ControlledFormation != null)
+        {
+            agent.Team.AssignPlayerAsSergeantOfFormation(agent.MissionPeer, agent.MissionPeer.ControlledFormation.FormationIndex);
+        }
+
+        crpgPeer.LastSpawnInfo = new SpawnInfo(agent.MissionPeer.Team, updatedUser.Character.EquippedItems);
+
+        return agent;
+    }
+
 
     protected virtual bool IsPlayerAllowedToSpawn(NetworkCommunicator networkPeer)
     {

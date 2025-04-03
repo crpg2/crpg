@@ -34,14 +34,13 @@ internal class CrpgUserManagerServer : MissionNetwork
         _constants = constants;
         _clanTasks = new Dictionary<int, Task<CrpgResult<CrpgClan>>>();
     }
+
     public async Task<CrpgUser> GetUpdatedCrpgUser(NetworkCommunicator networkPeer)
     {
         var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
         VirtualPlayer vp = networkPeer.VirtualPlayer;
         string userName = vp.UserName;
         TryConvertPlatform(vp.Id.ProvidedType, out Platform platform);
-
-
         string platformUserId = PlayerIdToPlatformUserId(vp.Id, platform);
 
         CrpgUser crpgUser;
