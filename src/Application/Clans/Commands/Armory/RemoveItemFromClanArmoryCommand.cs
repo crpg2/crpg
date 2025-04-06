@@ -54,7 +54,7 @@ public record RemoveItemFromClanArmoryCommand : IMediatorRequest
                 return new(result.Errors);
             }
 
-            _db.ActivityLogs.Add(_activityLogService.CreateRemoveItemFromClanArmory(user.Id, clan.Id, req.UserItemId));
+            _db.ActivityLogs.Add(_activityLogService.CreateRemoveItemFromClanArmoryLog(user.Id, clan.Id, req.UserItemId));
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' removed item '{1}' from the armory '{2}'", req.UserId, req.UserItemId, req.ClanId);

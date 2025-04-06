@@ -22,10 +22,10 @@ internal interface IActivityLogService
     ActivityLog CreateCharacterRespecializedLog(int userId, int characterId, int price);
     ActivityLog CreateCharacterRetiredLog(int userId, int characterId, int level);
     ActivityLog CreateCharacterRewardedLog(int userId, int actorUserId, int characterId, int experience);
-    ActivityLog CreateAddItemToClanArmory(int userId, int clanId, int userItemId);
-    ActivityLog CreateRemoveItemFromClanArmory(int userId, int clanId, int userItemId);
-    ActivityLog CreateBorrowItemFromClanArmory(int userId, int clanId, int userItemId);
-    ActivityLog CreateReturnItemToClanArmory(int userId, int clanId, int userItemId);
+    ActivityLog CreateAddItemToClanArmoryLog(int userId, int clanId, int userItemId);
+    ActivityLog CreateRemoveItemFromClanArmoryLog(int userId, int clanId, int userItemId);
+    ActivityLog CreateBorrowItemFromClanArmoryLog(int userId, int clanId, int userItemId);
+    ActivityLog CreateReturnItemToClanArmoryLog(int userId, int clanId, int userItemId);
     ActivityLog CreateCharacterEarnedLog(int userId, int characterId, GameMode gameMode, int experience, int gold, double timeEffort);
 }
 
@@ -179,7 +179,7 @@ internal class ActivityLogService : IActivityLogService
         });
     }
 
-    public ActivityLog CreateAddItemToClanArmory(int userId, int clanId, int userItemId)
+    public ActivityLog CreateAddItemToClanArmoryLog(int userId, int clanId, int userItemId)
     {
         return CreateLog(ActivityLogType.ClanArmoryAddItem, userId, new ActivityLogMetadata[]
         {
@@ -188,7 +188,7 @@ internal class ActivityLogService : IActivityLogService
         });
     }
 
-    public ActivityLog CreateRemoveItemFromClanArmory(int userId, int clanId, int userItemId)
+    public ActivityLog CreateRemoveItemFromClanArmoryLog(int userId, int clanId, int userItemId)
     {
         return CreateLog(ActivityLogType.ClanArmoryRemoveItem, userId, new ActivityLogMetadata[]
         {
@@ -197,7 +197,7 @@ internal class ActivityLogService : IActivityLogService
         });
     }
 
-    public ActivityLog CreateBorrowItemFromClanArmory(int userId, int clanId, int userItemId)
+    public ActivityLog CreateBorrowItemFromClanArmoryLog(int userId, int clanId, int userItemId)
     {
         return CreateLog(ActivityLogType.ClanArmoryBorrowItem, userId, new ActivityLogMetadata[]
         {
@@ -206,7 +206,7 @@ internal class ActivityLogService : IActivityLogService
         });
     }
 
-    public ActivityLog CreateReturnItemToClanArmory(int userId, int clanId, int userItemId)
+    public ActivityLog CreateReturnItemToClanArmoryLog(int userId, int clanId, int userItemId)
     {
         return CreateLog(ActivityLogType.ClanArmoryReturnItem, userId, new ActivityLogMetadata[]
         {

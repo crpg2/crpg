@@ -54,7 +54,7 @@ public record ReturnItemToClanArmoryCommand : IMediatorRequest
                 return new(result.Errors);
             }
 
-            _db.ActivityLogs.Add(_activityLogService.CreateReturnItemToClanArmory(user.Id, clan.Id, req.UserItemId));
+            _db.ActivityLogs.Add(_activityLogService.CreateReturnItemToClanArmoryLog(user.Id, clan.Id, req.UserItemId));
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' returned item '{1}' to the armory '{2}'", req.UserId, req.UserItemId, req.ClanId);
