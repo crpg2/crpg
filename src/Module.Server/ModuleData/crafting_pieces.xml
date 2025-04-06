@@ -36952,4 +36952,76 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_blade_h0" name="{=}Broken Sword Blade" tier="4" piece_type="Blade" mesh="bob_brokensword_blade" culture="Culture.battania" length="66.5" weight="0.9">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.3" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_blade_h1" name="{=}Broken Sword Blade +1" tier="4" piece_type="Blade" mesh="bob_brokensword_blade" culture="Culture.battania" length="66.5" weight="0.9">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_blade_h2" name="{=}Broken Sword Blade +2" tier="4" piece_type="Blade" mesh="bob_brokensword_blade" culture="Culture.battania" length="66.5" weight="0.9">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_blade_h3" name="{=}Broken Sword Blade +3" tier="4" piece_type="Blade" mesh="bob_brokensword_blade" culture="Culture.battania" length="66.5" weight="0.9">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_pommel_h0" name="{=}Broken Sword Pommel" tier="4" piece_type="Pommel" mesh="bob_brokensword_pommel" full_scale="true" culture="Culture.battania" length="9.18" weight="0.76">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_pommel_h1" name="{=}Broken Sword Pommel +1" tier="4" piece_type="Pommel" mesh="bob_brokensword_pommel" full_scale="true" culture="Culture.battania" length="9.18" weight="0.76">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_pommel_h2" name="{=}Broken Sword Pommel +2" tier="4" piece_type="Pommel" mesh="bob_brokensword_pommel" full_scale="true" culture="Culture.battania" length="9.18" weight="0.76">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_pommel_h3" name="{=}Broken Sword Pommel +3" tier="4" piece_type="Pommel" mesh="bob_brokensword_pommel" full_scale="true" culture="Culture.battania" length="9.18" weight="0.76">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_guard_h0" name="{=}Broken Sword Guard" tier="5" piece_type="Guard" mesh="bob_brokensword_guard" full_scale="true" culture="Culture.battania" length="9.5" weight="0.22">
+    <BuildData next_piece_offset="8" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_guard_h1" name="{=}Broken Sword Guard +1" tier="5" piece_type="Guard" mesh="bob_brokensword_guard" full_scale="true" culture="Culture.battania" length="9.5" weight="0.22">
+    <BuildData next_piece_offset="8" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_guard_h2" name="{=}Broken Sword Guard +2" tier="5" piece_type="Guard" mesh="bob_brokensword_guard" full_scale="true" culture="Culture.battania" length="9.5" weight="0.22">
+    <BuildData next_piece_offset="8" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_guard_h3" name="{=}Broken Sword Guard +3" tier="5" piece_type="Guard" mesh="bob_brokensword_guard" full_scale="true" culture="Culture.battania" length="9.5" weight="0.22">
+    <BuildData next_piece_offset="8" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_handle_h0" name="{=}Broken Sword Handle" tier="3" piece_type="Handle" mesh="bob_brokensword_handle" full_scale="false" culture="Culture.khuzait" length="20.9" weight="0.22">
+    <BuildData piece_offset="0" previous_piece_offset="4" next_piece_offset="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_handle_h1" name="{=}Broken Sword Handle +1" tier="3" piece_type="Handle" mesh="bob_brokensword_handle" full_scale="false" culture="Culture.khuzait" length="20.9" weight="0.22">
+    <BuildData piece_offset="0" previous_piece_offset="4" next_piece_offset="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_handle_h2" name="{=}Broken Sword Handle +2" tier="3" piece_type="Handle" mesh="bob_brokensword_handle" full_scale="false" culture="Culture.khuzait" length="20.9" weight="0.22">
+    <BuildData piece_offset="0" previous_piece_offset="4" next_piece_offset="3" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_brokensword_handle_h3" name="{=}Broken Sword Handle +3" tier="3" piece_type="Handle" mesh="bob_brokensword_handle" full_scale="false" culture="Culture.khuzait" length="20.9" weight="0.22">
+    <BuildData piece_offset="0" previous_piece_offset="4" next_piece_offset="3" />
+  </CraftingPiece>
 </CraftingPieces>
