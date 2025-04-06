@@ -2,12 +2,10 @@ import type { FetchSpyInstance } from 'vi-fetch'
 
 import { mockGet } from 'vi-fetch'
 
-import type { ActivityLog } from '~/models/activity-logs'
-
 import { response } from '~/__mocks__/crpg-client'
 import { ActivityLogType } from '~/models/activity-logs'
 
-import { getActivityLogs, getActivityLogsWithUsers } from './activity-logs-service'
+import { getActivityLogs } from './activity-logs-service'
 
 const { mockedGetUsersByIds } = vi.hoisted(() => ({
   mockedGetUsersByIds: vi.fn().mockResolvedValue([]),
@@ -30,42 +28,63 @@ describe('getActivityLogs', () => {
     mock = mockGet(/\/activity-logs/).willDo((url) => {
       if (url.searchParams.getAll('type[]').length !== 0) {
         return {
-          body: response([
-            {
-              createdAt: new Date(),
-              id: 1,
-              metadata: {},
-              type: ActivityLogType.UserCreated,
-              userId: 123,
+          body: response({
+            activityLogs: [
+              {
+                createdAt: new Date(),
+                id: 1,
+                metadata: {},
+                type: ActivityLogType.UserCreated,
+                userId: 123,
+              },
+            ],
+            dict: {
+              users: [],
+              characters: [],
+              clans: [],
             },
-          ]),
+          }),
         }
       }
 
       if (url.searchParams.getAll('userId[]').length !== 0) {
         return {
-          body: response([
-            {
-              createdAt: new Date(),
-              id: 1,
-              metadata: {},
-              type: ActivityLogType.UserDeleted,
-              userId: 123,
+          body: response({
+            activityLogs: [
+              {
+                createdAt: new Date(),
+                id: 1,
+                metadata: {},
+                type: ActivityLogType.UserDeleted,
+                userId: 123,
+              },
+            ],
+            dict: {
+              users: [],
+              characters: [],
+              clans: [],
             },
-          ]),
+          }),
         }
       }
 
       return {
-        body: response([
-          {
-            createdAt: new Date(),
-            id: 1,
-            metadata: {},
-            type: ActivityLogType.UserRenamed,
-            userId: 123,
+        body: response({
+          activityLogs: [
+            {
+              createdAt: new Date(),
+              id: 1,
+              metadata: {},
+              type: ActivityLogType.UserRenamed,
+              userId: 123,
+            },
+          ],
+          dict: {
+            users: [],
+            characters: [],
+            clans: [],
           },
-        ]),
+        }),
       }
     })
   })
@@ -77,7 +96,7 @@ describe('getActivityLogs', () => {
   }
 
   it('base', async () => {
-    expect((await getActivityLogs(payload))[0]).toMatchObject({
+    expect((await getActivityLogs(payload)).activityLogs[0]).toMatchObject({
       type: ActivityLogType.UserRenamed,
     })
 
@@ -89,7 +108,7 @@ describe('getActivityLogs', () => {
 
   it('types', async () => {
     expect(
-      (await getActivityLogs({ ...payload, type: [ActivityLogType.UserCreated] }))[0],
+      (await getActivityLogs({ ...payload, type: [ActivityLogType.UserCreated] })).activityLogs[0],
     ).toMatchObject({ type: ActivityLogType.UserCreated })
 
     expect(mock).toHaveFetched()
@@ -99,7 +118,7 @@ describe('getActivityLogs', () => {
   })
 
   it('userIds', async () => {
-    expect((await getActivityLogs({ ...payload, userId: [123, 124] }))[0]).toMatchObject({
+    expect((await getActivityLogs({ ...payload, userId: [123, 124] })).activityLogs[0]).toMatchObject({
       type: ActivityLogType.UserDeleted,
     })
 
@@ -108,43 +127,4 @@ describe('getActivityLogs', () => {
       'from=2023-03-22T18%3A16%3A42.052Z&to=2023-04-01T18%3A16%3A42.052Z&userId%5B%5D=123&userId%5B%5D=124',
     )
   })
-})
-
-it('getActivityLogsWithUsers', async () => {
-  mockedGetUsersByIds.mockResolvedValue([{ id: 2 }, { id: 3 }])
-
-  const logsResponse = [
-    {
-      metadata: {
-        targetUserId: '2',
-      },
-      type: ActivityLogType.TeamHit,
-    },
-    {
-      metadata: {
-        targetUserId: '2',
-      },
-      type: ActivityLogType.TeamHit,
-    },
-    {
-      metadata: {
-        targetUserId: '3',
-      },
-      type: ActivityLogType.TeamHit,
-    },
-    {
-      metadata: {},
-      type: ActivityLogType.ChatMessageSent,
-    },
-  ] as Array<Partial<ActivityLog>>
-  mockGet(/\/activity-logs/).willResolve(response(logsResponse))
-
-  const result = await getActivityLogsWithUsers({
-    from: new Date(),
-    to: new Date(),
-    userId: [],
-  })
-
-  expect(mockedGetUsersByIds).toBeCalledWith([2, 3])
-  expect(result.users).toEqual({ 2: { id: 2 }, 3: { id: 3 } })
 })
