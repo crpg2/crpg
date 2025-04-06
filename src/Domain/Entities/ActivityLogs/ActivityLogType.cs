@@ -12,6 +12,7 @@ public enum ActivityLogType
     ItemReforged,
     ItemRepaired,
     ItemUpgraded,
+    ItemReturned,
     CharacterCreated,
     CharacterDeleted,
     CharacterRatingReset,
