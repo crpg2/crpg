@@ -44,7 +44,7 @@ public record SeedDataCommand : IMediatorRequest
 
         public Handler(ICrpgDbContext db, IItemsSource itemsSource, IApplicationEnvironment appEnv,
             ICharacterService characterService, IExperienceTable experienceTable, IStrategusMap strategusMap,
-            IActivityLogService activityLogService, ISettlementsSource settlementsSource)
+            ISettlementsSource settlementsSource, IActivityLogService activityLogService)
         {
             _db = db;
             _itemsSource = itemsSource;
