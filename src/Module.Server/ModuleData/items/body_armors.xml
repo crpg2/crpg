@@ -8448,4 +8448,364 @@
     </ItemComponent>
     <Flags UseTeamColor="false" Civilian="true" />
   </Item>
+  <Item id="crpg_aciv_cts_persian_linothorax_c2_h0" name="{=Steve18}Noble Persian Linothorax" mesh="cts_persian_linothorax_c2" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="10" body_armor="48" leg_armor="10" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_linothorax_c2_h1" name="{=Steve18}Noble Persian Linothorax +1" mesh="cts_persian_linothorax_c2" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="11" body_armor="50" leg_armor="11" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_linothorax_c2_h2" name="{=Steve18}Noble Persian Linothorax +2" mesh="cts_persian_linothorax_c2" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="12" body_armor="52" leg_armor="12" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_linothorax_c2_h3" name="{=Steve18}Noble Persian Linothorax +3" mesh="cts_persian_linothorax_c2" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="13" body_armor="54" leg_armor="13" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_linothorax_c1_h0" name="{=Steve18}Persian Linothorax" mesh="cts_persian_linothorax_c1" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="7.807695" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="10" body_armor="30" leg_armor="10" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_linothorax_c1_h1" name="{=Steve18}Persian Linothorax +1" mesh="cts_persian_linothorax_c1" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="7.807695" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="11" body_armor="32" leg_armor="11" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_linothorax_c1_h2" name="{=Steve18}Persian Linothorax +2" mesh="cts_persian_linothorax_c1" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="7.807695" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="12" body_armor="34" leg_armor="12" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_linothorax_c1_h3" name="{=Steve18}Persian Linothorax +3" mesh="cts_persian_linothorax_c1" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="7.807695" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="13" body_armor="36" leg_armor="13" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_lorica_scale_pterges_h0" name="{=Steve18}Iron Scale Lorica with Pteruges" mesh="cts_roman_lorica_scale_pterges" culture="Culture.empire" is_merchandise="true" weight="13.63921" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="48" arm_armor="15" leg_armor="10" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_lorica_scale_pterges_h1" name="{=Steve18}Iron Scale Lorica with Pteruges +1" mesh="cts_roman_lorica_scale_pterges" culture="Culture.empire" is_merchandise="true" weight="13.63921" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="50" arm_armor="16" leg_armor="11" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_lorica_scale_pterges_h2" name="{=Steve18}Iron Scale Lorica with Pteruges +2" mesh="cts_roman_lorica_scale_pterges" culture="Culture.empire" is_merchandise="true" weight="13.63921" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="52" arm_armor="17" leg_armor="12" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_lorica_scale_pterges_h3" name="{=Steve18}Iron Scale Lorica with Pteruges +3" mesh="cts_roman_lorica_scale_pterges" culture="Culture.empire" is_merchandise="true" weight="13.63921" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="54" arm_armor="18" leg_armor="13" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_lorica_scale_pterges_a_h0" name="{=Steve18}Bronze Scale Lorica with Pteruges" mesh="cts_roman_lorica_scale_pterges_a" culture="Culture.empire" is_merchandise="true" weight="13.63921" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="48" arm_armor="15" leg_armor="10" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_lorica_scale_pterges_a_h1" name="{=Steve18}Bronze Scale Lorica with Pteruges +1" mesh="cts_roman_lorica_scale_pterges_a" culture="Culture.empire" is_merchandise="true" weight="13.63921" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="50" arm_armor="16" leg_armor="11" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_lorica_scale_pterges_a_h2" name="{=Steve18}Bronze Scale Lorica with Pteruges +2" mesh="cts_roman_lorica_scale_pterges_a" culture="Culture.empire" is_merchandise="true" weight="13.63921" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="52" arm_armor="17" leg_armor="12" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_lorica_scale_pterges_a_h3" name="{=Steve18}Bronze Scale Lorica with Pteruges +3" mesh="cts_roman_lorica_scale_pterges_a" culture="Culture.empire" is_merchandise="true" weight="13.63921" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="54" arm_armor="18" leg_armor="13" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_cuiras_b_h0" name="{=Steve18}Imperial Musculata" mesh="cts_roman_cuiras_b" culture="Culture.empire" is_merchandise="true" weight="12.43413" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="48" arm_armor="10" leg_armor="10" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_cuiras_b_h1" name="{=Steve18}Imperial Musculata +1" mesh="cts_roman_cuiras_b" culture="Culture.empire" is_merchandise="true" weight="12.43413" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="50" arm_armor="11" leg_armor="11" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_cuiras_b_h2" name="{=Steve18}Imperial Musculata +2" mesh="cts_roman_cuiras_b" culture="Culture.empire" is_merchandise="true" weight="12.43413" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="52" arm_armor="12" leg_armor="12" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_cuiras_b_h3" name="{=Steve18}Imperial Musculata +3" mesh="cts_roman_cuiras_b" culture="Culture.empire" is_merchandise="true" weight="12.43413" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="54" arm_armor="13" leg_armor="13" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_1_h0" name="{=Steve18}White Decorated Linothorax" mesh="cts_greek_linothorax" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="10" body_armor="36" leg_armor="10" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_1_h1" name="{=Steve18}White Decorated Linothorax +1" mesh="cts_greek_linothorax" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="11" body_armor="38" leg_armor="11" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_1_h2" name="{=Steve18}White Decorated Linothorax +2" mesh="cts_greek_linothorax" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="12" body_armor="40" leg_armor="12" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_1_h3" name="{=Steve18}White Decorated Linothorax +3" mesh="cts_greek_linothorax" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="13" body_armor="42" leg_armor="13" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_2_h0" name="{=Steve18}Decorated Scaled Linothorax" mesh="cts_greek_linothorax_a" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="10" body_armor="48" leg_armor="10" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_2_h1" name="{=Steve18}Decorated Scaled Linothorax +1" mesh="cts_greek_linothorax_a" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="11" body_armor="50" leg_armor="11" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_2_h2" name="{=Steve18}Decorated Scaled Linothorax +2" mesh="cts_greek_linothorax_a" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="12" body_armor="52" leg_armor="12" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_2_h3" name="{=Steve18}Decorated Scaled Linothorax +3" mesh="cts_greek_linothorax_a" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="13" body_armor="54" leg_armor="13" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_3_h0" name="{=Steve18}Black Decorated Linothorax" mesh="cts_greek_linothorax_a1" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="10" body_armor="36" leg_armor="10" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_3_h1" name="{=Steve18}Black Decorated Linothorax +1" mesh="cts_greek_linothorax_a1" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="11" body_armor="38" leg_armor="11" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_3_h2" name="{=Steve18}Black Decorated Linothorax +2" mesh="cts_greek_linothorax_a1" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="12" body_armor="40" leg_armor="12" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_3_h3" name="{=Steve18}Black Decorated Linothorax +3" mesh="cts_greek_linothorax_a1" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="13" body_armor="42" leg_armor="13" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_4_h0" name="{=Steve18}Plain White Linothorax" mesh="cts_greek_linothorax_a2" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="10" body_armor="36" leg_armor="10" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_4_h1" name="{=Steve18}Plain White Linothorax +1" mesh="cts_greek_linothorax_a2" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="11" body_armor="38" leg_armor="11" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_4_h2" name="{=Steve18}Plain White Linothorax +2" mesh="cts_greek_linothorax_a2" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="12" body_armor="40" leg_armor="12" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_4_h3" name="{=Steve18}Plain White Linothorax +3" mesh="cts_greek_linothorax_a2" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="13" body_armor="42" leg_armor="13" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_5_h0" name="{=Steve18}Decorated Linothorax with Red Shirt" mesh="cts_greek_linothorax_a3" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="10" body_armor="36" leg_armor="10" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_5_h1" name="{=Steve18}Decorated Linothorax with Red Shirt +1" mesh="cts_greek_linothorax_a3" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="11" body_armor="38" leg_armor="11" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_5_h2" name="{=Steve18}Decorated Linothorax with Red Shirt +2" mesh="cts_greek_linothorax_a3" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="12" body_armor="40" leg_armor="12" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_5_h3" name="{=Steve18}Decorated Linothorax with Red Shirt +3" mesh="cts_greek_linothorax_a3" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="9.281129" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="13" body_armor="42" leg_armor="13" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_a_h0" name="{=Steve18}Lorica Segmentata" mesh="cts_lorica_segmentata_a" culture="Culture.empire" is_merchandise="true" weight="12.98451" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="10" arm_armor="10" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_a_h1" name="{=Steve18}Lorica Segmentata +1" mesh="cts_lorica_segmentata_a" culture="Culture.empire" is_merchandise="true" weight="12.98451" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="11" arm_armor="11" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_a_h2" name="{=Steve18}Lorica Segmentata +2" mesh="cts_lorica_segmentata_a" culture="Culture.empire" is_merchandise="true" weight="12.98451" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="54" leg_armor="12" arm_armor="12" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_a_h3" name="{=Steve18}Lorica Segmentata +3" mesh="cts_lorica_segmentata_a" culture="Culture.empire" is_merchandise="true" weight="12.98451" difficulty="0" appearance="0.1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="56" leg_armor="13" arm_armor="13" has_gender_variations="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="false" DoesNotHideChest="false" UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_a_h0" name="{=Steve18}Dacian Noble Scale Mail" mesh="cts_dacian_noble_armor_a" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="10" arm_armor="10" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_a_h1" name="{=Steve18}Dacian Noble Scale Mail +1" mesh="cts_dacian_noble_armor_a" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="11" arm_armor="11" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_a_h2" name="{=Steve18}Dacian Noble Scale Mail +2" mesh="cts_dacian_noble_armor_a" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="12" arm_armor="12" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_a_h3" name="{=Steve18}Dacian Noble Scale Mail +3" mesh="cts_dacian_noble_armor_a" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="54" leg_armor="13" arm_armor="13" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_c_h0" name="{=Steve18}Dacian Noble Scale Mail in Bronze" mesh="cts_dacian_noble_armor_c" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="10" arm_armor="10" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_c_h1" name="{=Steve18}Dacian Noble Scale Mail in Bronze +1" mesh="cts_dacian_noble_armor_c" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="11" arm_armor="11" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_c_h2" name="{=Steve18}Dacian Noble Scale Mail in Bronze +2" mesh="cts_dacian_noble_armor_c" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="12" arm_armor="12" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_noble_armor_c_h3" name="{=Steve18}Dacian Noble Scale Mail in Bronze +3" mesh="cts_dacian_noble_armor_c" subtype="body_armor" culture="Culture.empire" weight="12.43413" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="54" leg_armor="13" arm_armor="13" covers_body="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_leather_armor_h0" name="{=Steve18}Dacian Leather Vest" mesh="cts_dacian_leather_armor" culture="Culture.empire" weight="7.807695" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="30" leg_armor="10" arm_armor="10" covers_body="false" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_leather_armor_h1" name="{=Steve18}Dacian Leather Vest +1" mesh="cts_dacian_leather_armor" culture="Culture.empire" weight="7.807695" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="32" leg_armor="11" arm_armor="11" covers_body="false" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_leather_armor_h2" name="{=Steve18}Dacian Leather Vest +2" mesh="cts_dacian_leather_armor" culture="Culture.empire" weight="7.807695" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="34" leg_armor="12" arm_armor="12" covers_body="false" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_leather_armor_h3" name="{=Steve18}Dacian Leather Vest +3" mesh="cts_dacian_leather_armor" culture="Culture.empire" weight="7.807695" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="36" leg_armor="13" arm_armor="13" covers_body="false" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_thracian_linothorax_b_h0" name="{=Steve18}Thracian Scale Linothorax with Black Tunic" mesh="cts_thracian_linothorax_b" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.98451" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="10" body_armor="50" leg_armor="10" covers_body="false" covers_legs="false" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_thracian_linothorax_b_h1" name="{=Steve18}Thracian Scale Linothorax with Black Tunic +1" mesh="cts_thracian_linothorax_b" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.98451" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="11" body_armor="52" leg_armor="11" covers_body="false" covers_legs="false" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_thracian_linothorax_b_h2" name="{=Steve18}Thracian Scale Linothorax with Black Tunic +2" mesh="cts_thracian_linothorax_b" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.98451" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="12" body_armor="54" leg_armor="12" covers_body="false" covers_legs="false" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_thracian_linothorax_b_h3" name="{=Steve18}Thracian Scale Linothorax with Black Tunic +3" mesh="cts_thracian_linothorax_b" is_merchandise="true" subtype="body_armor" culture="Culture.neutral_culture" weight="12.98451" difficulty="0" appearance="3" Type="BodyArmor">
+    <ItemComponent>
+      <Armor arm_armor="13" body_armor="56" leg_armor="13" covers_body="false" covers_legs="false" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
 </Items>
