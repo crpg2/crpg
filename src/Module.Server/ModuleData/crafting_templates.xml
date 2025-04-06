@@ -8512,6 +8512,22 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
+      <UsablePiece piece_id="crpg_light_pilum_blade_h0" />
+      <UsablePiece piece_id="crpg_light_pilum_blade_h1" />
+      <UsablePiece piece_id="crpg_light_pilum_blade_h2" />
+      <UsablePiece piece_id="crpg_light_pilum_blade_h3" />
+      <UsablePiece piece_id="crpg_light_pilum_guard_h0" />
+      <UsablePiece piece_id="crpg_light_pilum_guard_h1" />
+      <UsablePiece piece_id="crpg_light_pilum_guard_h2" />
+      <UsablePiece piece_id="crpg_light_pilum_guard_h3" />
+      <UsablePiece piece_id="crpg_light_pilum_handle_h0" />
+      <UsablePiece piece_id="crpg_light_pilum_handle_h1" />
+      <UsablePiece piece_id="crpg_light_pilum_handle_h2" />
+      <UsablePiece piece_id="crpg_light_pilum_handle_h3" />
+      <UsablePiece piece_id="crpg_light_pilum_pommel_h0" />
+      <UsablePiece piece_id="crpg_light_pilum_pommel_h1" />
+      <UsablePiece piece_id="crpg_light_pilum_pommel_h2" />
+      <UsablePiece piece_id="crpg_light_pilum_pommel_h3" />
       <UsablePiece piece_id="crpg_war_darts_blade_h0" />
       <UsablePiece piece_id="crpg_war_darts_blade_h1" />
       <UsablePiece piece_id="crpg_war_darts_blade_h2" />
