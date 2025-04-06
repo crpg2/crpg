@@ -20,11 +20,13 @@ public record KickClanMemberCommand : IMediatorRequest
 
         private readonly ICrpgDbContext _db;
         private readonly IClanService _clanService;
+        private readonly IActivityLogService _activityLogService;
 
-        public Handler(ICrpgDbContext db, IClanService clanService)
+        public Handler(ICrpgDbContext db, IClanService clanService, IActivityLogService activityLogService)
         {
             _db = db;
             _clanService = clanService;
+            _activityLogService = activityLogService;
         }
 
         public async Task<Result> Handle(KickClanMemberCommand req, CancellationToken cancellationToken)
@@ -63,6 +65,8 @@ public record KickClanMemberCommand : IMediatorRequest
             }
 
             _db.ClanMembers.Remove(kickedUser.ClanMembership);
+
+            _db.ActivityLogs.Add(_activityLogService.CreateClanMemberKickedLog(req.KickedUserId, req.ClanId, req.UserId));
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' kicked user '{1}' out of clan '{2}'", req.UserId,
                 req.KickedUserId, req.ClanId);

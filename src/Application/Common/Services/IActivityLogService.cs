@@ -1,4 +1,5 @@
 ﻿using Crpg.Domain.Entities.ActivityLogs;
+using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Servers;
 
 namespace Crpg.Application.Common.Services;
@@ -22,11 +23,19 @@ internal interface IActivityLogService
     ActivityLog CreateCharacterRespecializedLog(int userId, int characterId, int price);
     ActivityLog CreateCharacterRetiredLog(int userId, int characterId, int level);
     ActivityLog CreateCharacterRewardedLog(int userId, int actorUserId, int characterId, int experience);
+    ActivityLog CreateCharacterEarnedLog(int userId, int characterId, GameMode gameMode, int experience, int gold, double timeEffort);
+    ActivityLog CreateClanCreatedLog(int userId, int clanId);
+    ActivityLog CreateClanDeletedLog(int userId, int clanId);
+    ActivityLog CreateClanApplicationCreatedLog(int userId, int clanId);
+    ActivityLog CreateClanApplicationDeclinedLog(int userId, int clanId);
+    ActivityLog CreateClanApplicationAcceptedLog(int userId, int clanId);
+    ActivityLog CreateClanMemberRoleChangeLog(int userId, int clanId, int actorUserId, ClanMemberRole oldClanMemberRole, ClanMemberRole newClanMemberRole);
+    ActivityLog CreateClanMemberLeavedLog(int userId, int clanId);
+    ActivityLog CreateClanMemberKickedLog(int userId, int clanId, int actorUserId);
     ActivityLog CreateAddItemToClanArmoryLog(int userId, int clanId, int userItemId);
     ActivityLog CreateRemoveItemFromClanArmoryLog(int userId, int clanId, int userItemId);
     ActivityLog CreateBorrowItemFromClanArmoryLog(int userId, int clanId, int userItemId);
     ActivityLog CreateReturnItemToClanArmoryLog(int userId, int clanId, int userItemId);
-    ActivityLog CreateCharacterEarnedLog(int userId, int characterId, GameMode gameMode, int experience, int gold, double timeEffort);
 }
 
 internal class ActivityLogService : IActivityLogService
@@ -179,6 +188,86 @@ internal class ActivityLogService : IActivityLogService
         });
     }
 
+    public ActivityLog CreateCharacterEarnedLog(int userId, int characterId, GameMode gameMode, int experience, int gold, double timeEffort)
+    {
+        return CreateLog(ActivityLogType.CharacterEarned, userId, new ActivityLogMetadata[]
+        {
+            new("characterId", characterId.ToString()),
+            new("gameMode", gameMode.ToString()),
+            new("experience", experience.ToString()),
+            new("gold", gold.ToString()),
+            new("timeEffort", timeEffort.ToString()),
+        });
+    }
+
+    public ActivityLog CreateClanCreatedLog(int userId, int clanId)
+    {
+        return CreateLog(ActivityLogType.ClanCreated, userId, new ActivityLogMetadata[]
+        {
+            new("clanId", clanId.ToString()),
+        });
+    }
+
+    public ActivityLog CreateClanDeletedLog(int userId, int clanId)
+    {
+        return CreateLog(ActivityLogType.ClanDeleted, userId, new ActivityLogMetadata[]
+        {
+            new("clanId", clanId.ToString()),
+        });
+    }
+
+    public ActivityLog CreateClanMemberRoleChangeLog(int userId, int clanId, int actorUserId, ClanMemberRole oldClanMemberRole, ClanMemberRole newClanMemberRole)
+    {
+        return CreateLog(ActivityLogType.ClanMemberRoleEdited, userId, new ActivityLogMetadata[]
+        {
+            new("clanId", clanId.ToString()),
+            new("actorUserId", actorUserId.ToString()),
+            new("oldClanMemberRole", oldClanMemberRole.ToString()),
+            new("newClanMemberRole", newClanMemberRole.ToString()),
+        });
+    }
+
+    public ActivityLog CreateClanMemberKickedLog(int userId, int clanId, int actorUserId)
+    {
+        return CreateLog(ActivityLogType.ClanMemberKicked, userId, new ActivityLogMetadata[]
+        {
+            new("clanId", clanId.ToString()),
+            new("actorUserId", actorUserId.ToString()),
+        });
+    }
+
+    public ActivityLog CreateClanMemberLeavedLog(int userId, int clanId)
+    {
+        return CreateLog(ActivityLogType.ClanMemberLeaved, userId, new ActivityLogMetadata[]
+        {
+            new("clanId", clanId.ToString()),
+        });
+    }
+
+    public ActivityLog CreateClanApplicationCreatedLog(int userId, int clanId)
+    {
+        return CreateLog(ActivityLogType.ClanApplicationCreated, userId, new ActivityLogMetadata[]
+        {
+            new("clanId", clanId.ToString()),
+        });
+    }
+
+    public ActivityLog CreateClanApplicationDeclinedLog(int userId, int clanId)
+    {
+        return CreateLog(ActivityLogType.ClanApplicationDeclined, userId, new ActivityLogMetadata[]
+        {
+            new("clanId", clanId.ToString()),
+        });
+    }
+
+    public ActivityLog CreateClanApplicationAcceptedLog(int userId, int clanId)
+    {
+        return CreateLog(ActivityLogType.ClanApplicationAccepted, userId, new ActivityLogMetadata[]
+        {
+            new("clanId", clanId.ToString()),
+        });
+    }
+
     public ActivityLog CreateAddItemToClanArmoryLog(int userId, int clanId, int userItemId)
     {
         return CreateLog(ActivityLogType.ClanArmoryAddItem, userId, new ActivityLogMetadata[]
@@ -212,18 +301,6 @@ internal class ActivityLogService : IActivityLogService
         {
             new("userItemId", userId.ToString()),
             new("clanId", clanId.ToString()),
-        });
-    }
-
-    public ActivityLog CreateCharacterEarnedLog(int userId, int characterId, GameMode gameMode, int experience, int gold, double timeEffort)
-    {
-        return CreateLog(ActivityLogType.CharacterEarned, userId, new ActivityLogMetadata[]
-        {
-            new("characterId", characterId.ToString()),
-            new("gameMode", gameMode.ToString()),
-            new("experience", experience.ToString()),
-            new("gold", gold.ToString()),
-            new("timeEffort", timeEffort.ToString()),
         });
     }
 

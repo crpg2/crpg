@@ -1405,7 +1405,7 @@ public record SeedDataCommand : IMediatorRequest
                 new() { Type = ActivityLogType.TeamHit, User = takeo, CreatedAt = DateTime.UtcNow.AddMinutes(-1), },
             };
 
-            ActivityLog[] activityLogCharacterEarned =
+            ActivityLog[] characterEarnedActivityLogs =
             {
                 new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-1), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "122000"), new("gold", "1244") } },
                 new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-12), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGBattle"), new("experience", "7000"), new("gold", "989") } },
@@ -1419,33 +1419,30 @@ public record SeedDataCommand : IMediatorRequest
                 new() { Type = ActivityLogType.CharacterEarned, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(-112), Metadata = { new("characterId", orleCharacter0.Id.ToString()), new("gameMode", "CRPGDTV"), new("experience", "3111"), new("gold", "-122") } },
             };
 
-            ActivityLog[] activityLogClan =
+            ActivityLog[] clanActivityLogs =
             {
-
+                _activityLogService.CreateClanApplicationCreatedLog(takeo.Id, 1),
+                _activityLogService.CreateClanApplicationCreatedLog(namidaka.Id, 1),
+                _activityLogService.CreateClanApplicationCreatedLog(orle.Id, 1),
+                _activityLogService.CreateClanApplicationAcceptedLog(orle.Id, 1),
+                _activityLogService.CreateClanApplicationDeclinedLog(orle.Id, 1),
+                _activityLogService.CreateClanMemberRoleChangeLog(orle.Id, 1, takeo.Id, ClanMemberRole.Officer, ClanMemberRole.Leader),
+                _activityLogService.CreateClanMemberLeavedLog(orle.Id, 1),
+                _activityLogService.CreateClanMemberKickedLog(orle.Id, 1, takeo.Id),
+                _activityLogService.CreateClanCreatedLog(orle.Id, 1),
+                _activityLogService.CreateClanDeletedLog(orle.Id, 1),
+                _activityLogService.CreateAddItemToClanArmoryLog(takeo.Id, pecores.Id, takeoItem1.Id),
+                _activityLogService.CreateRemoveItemFromClanArmoryLog(takeo.Id, pecores.Id, takeoItem1.Id),
+                _activityLogService.CreateReturnItemToClanArmoryLog(takeo.Id, pecores.Id, orleItem1.Id),
+                _activityLogService.CreateBorrowItemFromClanArmoryLog(takeo.Id, pecores.Id, orleItem1.Id),
             };
-
-            // var activityLogClanApplicationCreated1 = _activityLogService.CreateClanApplicationCreatedLog(takeo.Id, 1);
-            // var activityLogClanApplicationCreated2 = _activityLogService.CreateClanApplicationCreatedLog(namidaka.Id, 1);
-            // var activityLogClanApplicationCreated3 = _activityLogService.CreateClanApplicationCreatedLog(orle.Id, 1);
-
-            // var activityLogClanApplicationAccepted1 = _activityLogService.CreateClanApplicationAcceptedLog(orle.Id, 1);
-            // var activityLogClanApplicationDeclined1 = _activityLogService.CreateClanApplicationDeclinedLog(orle.Id, 1);
-            // var activityLogClanMemberRoleChange1 = _activityLogService.CreateClanMemberRoleChangeLog(orle.Id, 1, takeo.Id, ClanMemberRole.Officer, ClanMemberRole.Leader);
-            // var activityLogClanMemberLeaved1 = _activityLogService.CreateClanMemberLeavedLog(orle.Id, 1);
-            // var activityLogClanMemberKicked1 = _activityLogService.CreateClanMemberKickedLog(orle.Id, 1, takeo.Id);
-            // var activityLogClanCreatedl = _activityLogService.CreateClanCreatedLog(orle.Id, 1);
-            // var activityLogClanDeletedl = _activityLogService.CreateClanDeletedLog(orle.Id, 1);
-            // var activityLogClanArmoryAddItem1 = _activityLogService.CreateAddItemToClanArmoryLog(takeo.Id, pecores.Id, takeoItem1);
-            // var activityLogClanArmoryRemoveItem1 = _activityLogService.CreateRemoveItemFromClanArmoryLog(takeo.Id, pecores.Id, takeoItem1);
-            // var activityLogClanArmoryReturnItem1 = _activityLogService.CreateReturnItemToClanArmoryLog(takeo.Id, pecores.Id, orleItem1);
-            // var activityLogClanArmoryBorrowItem1 = _activityLogService.CreateBorrowItemFromClanArmoryLog(takeo.Id, pecores.Id, orleItem1);
 
             _db.ActivityLogs.RemoveRange(await _db.ActivityLogs.ToArrayAsync());
             _db.ActivityLogs.AddRange(
                             commonActivityLogs
                     .Concat(gameServerActivityLogs)
-                    .Concat(activityLogCharacterEarned)
-                    .Concat(activityLogClan));
+                    .Concat(characterEarnedActivityLogs)
+                    .Concat(clanActivityLogs));
             await _db.SaveChangesAsync(cancellationToken);
 
             ClanInvitation[] newClanInvitations = { schumetzqRequestForPecores, victorhh888MemberRequestForPecores, neostralieOfferToBrygganForPecores };
