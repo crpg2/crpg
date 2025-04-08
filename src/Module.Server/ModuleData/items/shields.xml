@@ -2656,4 +2656,324 @@
     </ItemComponent>
     <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
   </Item>
+  <Item id="crpg_aciv_cts_carthage_aspis_h0" name="{=Steve18}Aspis Horse Black" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="10" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="480">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_carthage_aspis_h1" name="{=Steve18}Aspis Horse Black +1" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="519">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_carthage_aspis_h2" name="{=Steve18}Aspis Horse Black +2" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="557">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_carthage_aspis_h3" name="{=Steve18}Aspis Horse Black +3" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="596">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_carthage_aspis_a_h0" name="{=Steve18}Simple Bronze Aspis" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis_a" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="10" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="480">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_carthage_aspis_a_h1" name="{=Steve18}Simple Bronze Aspis +1" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis_a" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="519">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_carthage_aspis_a_h2" name="{=Steve18}Simple Bronze Aspis +2" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis_a" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="557">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_carthage_aspis_a_h3" name="{=Steve18}Simple Bronze Aspis +3" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis_a" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="596">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a_h0" name="{=Steve18}Legion Scutum 1" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="570" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a_h1" name="{=Steve18}Legion Scutum 1 +1" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="616" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a_h2" name="{=Steve18}Legion Scutum 1 +2" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="662" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a_h3" name="{=Steve18}Legion Scutum 1 +3" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="707" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a1_h0" name="{=Steve18}Legion Scutum 2" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a1" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="570" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a1_h1" name="{=Steve18}Legion Scutum 2 +1" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a1" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="616" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a1_h2" name="{=Steve18}Legion Scutum 2 +2" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a1" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="662" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a1_h3" name="{=Steve18}Legion Scutum 2 +3" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a1" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="707" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a2_h0" name="{=Steve18}Legion Scutum 3" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a2" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="570" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a2_h1" name="{=Steve18}Legion Scutum 3 +1" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a2" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="616" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a2_h2" name="{=Steve18}Legion Scutum 3 +2" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a2" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="662" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a2_h3" name="{=Steve18}Legion Scutum 3 +3" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a2" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="707" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a3_h0" name="{=Steve18}Legion Scutum 4" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a3" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="570" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a3_h1" name="{=Steve18}Legion Scutum 4 +1" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a3" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="616" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a3_h2" name="{=Steve18}Legion Scutum 4 +2" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a3" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="662" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a3_h3" name="{=Steve18}Legion Scutum 4 +3" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a3" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="707" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a4_h0" name="{=Steve18}Legion Scutum 5" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a4" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="570" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a4_h1" name="{=Steve18}Legion Scutum 5 +1" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a4" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="616" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a4_h2" name="{=Steve18}Legion Scutum 5 +2" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a4" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="662" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_scutum_a4_h3" name="{=Steve18}Legion Scutum 5 +3" body_name="bo_cap_cts_roman_scutum_a" shield_body_name="bo_cts_roman_scutum_a" recalculate_body="false" mesh="cts_roman_scutum_a4" culture="Culture.empire" using_tableau="true" weight="7.558912" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="6" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="103" center_of_mass="0.0,0.065,0.05" hit_points="707" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square1_h0" name="{=Steve18}Republic Scutum 2" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square1" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="4" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="530" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square1_h1" name="{=Steve18}Republic Scutum 2 +1" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square1" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="573" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square1_h2" name="{=Steve18}Republic Scutum 2 +2" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square1" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="615" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square1_h3" name="{=Steve18}Republic Scutum 2 +3" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square1" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="658" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square2_h0" name="{=Steve18}Republic Scutum 3" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square2" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="4" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="530" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square2_h1" name="{=Steve18}Republic Scutum 3 +1" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square2" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="573" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square2_h2" name="{=Steve18}Republic Scutum 3 +2" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square2" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="615" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square2_h3" name="{=Steve18}Republic Scutum 3 +3" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square2" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="658" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square3_h0" name="{=Steve18}Republic Scutum 4" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square3" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="4" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="530" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square3_h1" name="{=Steve18}Republic Scutum 4 +1" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square3" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="573" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square3_h2" name="{=Steve18}Republic Scutum 4 +2" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square3" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="615" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_republic_square3_h3" name="{=Steve18}Republic Scutum 4 +3" body_name="bo_cap_cts_roman_republic_square" shield_body_name="bo_cts_roman_republic_square" recalculate_body="false" mesh="cts_roman_republic_square3" culture="Culture.empire" using_tableau="true" weight="5.729962" appearance="1.1" Type="Shield" item_holsters="shield_kite:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.0,0.1,0">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="5" thrust_speed="82" thrust_damage="5" thrust_damage_type="Blunt" speed_rating="82" physics_material="wood_shield" item_usage="hand_shield" position="0.05, -0.01, 0.00" rotation="-91.80,-62.90,0.00" weapon_length="93" center_of_mass="0.0,0.065,0.05" hit_points="658" modifier_group="shield">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
 </Items>
