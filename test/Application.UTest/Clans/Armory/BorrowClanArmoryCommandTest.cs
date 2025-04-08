@@ -29,7 +29,7 @@ public class BorrowClanArmoryCommandTest : TestBase
 
         var item = clan.Members.First(cm => cm.ArmoryItems.Count > 0).ArmoryItems.First();
 
-        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService);
+        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new BorrowItemFromClanArmoryCommand
         {
             UserItemId = item.UserItemId,
@@ -64,7 +64,7 @@ public class BorrowClanArmoryCommandTest : TestBase
 
         var item = clan.Members.First(cm => cm.ArmoryItems.Count > 0).ArmoryItems.First();
 
-        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService);
+        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new BorrowItemFromClanArmoryCommand
         {
             UserItemId = item.UserItemId,
@@ -98,7 +98,7 @@ public class BorrowClanArmoryCommandTest : TestBase
 
         var item = clan.Members.First(cm => cm.ArmoryItems.Count > 0).ArmoryItems.First();
 
-        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService);
+        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new BorrowItemFromClanArmoryCommand
         {
             UserItemId = item.UserItemId,
@@ -139,7 +139,7 @@ public class BorrowClanArmoryCommandTest : TestBase
             .Include(u => u.ClanMembership)
             .FirstAsync(u => u.Id == user.Id);
 
-        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService);
+        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new BorrowItemFromClanArmoryCommand
         {
             UserItemId = item.Id,

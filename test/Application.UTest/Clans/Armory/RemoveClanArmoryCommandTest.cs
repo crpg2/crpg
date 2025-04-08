@@ -22,7 +22,7 @@ public class RemoveClanArmoryCommandTest : TestBase
             .Include(u => u.ClanMembership).
             FirstAsync(u => u.Name == "user0");
 
-        var handler = new RemoveItemFromClanArmoryCommand.Handler(ActDb, ClanService);
+        var handler = new RemoveItemFromClanArmoryCommand.Handler(ActDb, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new RemoveItemFromClanArmoryCommand
         {
             UserItemId = user.Items.First(ui => ui.ClanArmoryItem != null).Id,
@@ -58,7 +58,7 @@ public class RemoveClanArmoryCommandTest : TestBase
         var items = clan.Members.SelectMany(cm => cm.ArmoryItems);
         int expectedCount = items.Count();
 
-        var handler = new RemoveItemFromClanArmoryCommand.Handler(ActDb, ClanService);
+        var handler = new RemoveItemFromClanArmoryCommand.Handler(ActDb, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new RemoveItemFromClanArmoryCommand
         {
             UserItemId = items.First().UserItemId,
@@ -82,7 +82,7 @@ public class RemoveClanArmoryCommandTest : TestBase
             .Include(u => u.ClanMembership)
             .FirstAsync(u => u.Name == "user0");
 
-        var handler = new RemoveItemFromClanArmoryCommand.Handler(ActDb, ClanService);
+        var handler = new RemoveItemFromClanArmoryCommand.Handler(ActDb, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new RemoveItemFromClanArmoryCommand
         {
             UserItemId = user.Items.First(ui => ui.ClanArmoryItem == null).Id,
@@ -109,7 +109,7 @@ public class RemoveClanArmoryCommandTest : TestBase
 
         var item = user.ClanMembership!.ArmoryItems.First(ci => ci.BorrowedItem != null);
 
-        var handler = new RemoveItemFromClanArmoryCommand.Handler(ActDb, ClanService);
+        var handler = new RemoveItemFromClanArmoryCommand.Handler(ActDb, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new RemoveItemFromClanArmoryCommand
         {
             UserItemId = item.UserItemId,

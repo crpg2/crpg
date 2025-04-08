@@ -24,7 +24,7 @@ public class ReturnClanArmoryCommandTest : TestBase
 
         var item = user.ClanMembership!.ArmoryBorrowedItems.First();
 
-        var handler = new ReturnItemToClanArmoryCommand.Handler(ActDb, ClanService);
+        var handler = new ReturnItemToClanArmoryCommand.Handler(ActDb, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new ReturnItemToClanArmoryCommand
         {
             UserItemId = item.UserItemId,
@@ -58,7 +58,7 @@ public class ReturnClanArmoryCommandTest : TestBase
 
         var item = user.Items.First(ui => ui.ClanArmoryBorrowedItem != null);
 
-        var handler = new ReturnItemToClanArmoryCommand.Handler(ActDb, ClanService);
+        var handler = new ReturnItemToClanArmoryCommand.Handler(ActDb, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new ReturnItemToClanArmoryCommand
         {
             UserItemId = item.Id,
@@ -88,7 +88,7 @@ public class ReturnClanArmoryCommandTest : TestBase
             .Include(u => u.Items).ThenInclude(ui => ui.ClanArmoryItem)
             .FirstAsync(u => u.Name == "user1");
 
-        var handler = new ReturnItemToClanArmoryCommand.Handler(ActDb, ClanService);
+        var handler = new ReturnItemToClanArmoryCommand.Handler(ActDb, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new ReturnItemToClanArmoryCommand
         {
             UserItemId = user.Items.First(ui => ui.ClanArmoryItem == null).Id,
@@ -122,7 +122,7 @@ public class ReturnClanArmoryCommandTest : TestBase
 
         var item = user.Items.First(ui => ui.ClanArmoryItem != null);
 
-        var handler = new ReturnItemToClanArmoryCommand.Handler(ActDb, ClanService);
+        var handler = new ReturnItemToClanArmoryCommand.Handler(ActDb, ClanService, ActivityLogService.Object);
         var result = await handler.Handle(new ReturnItemToClanArmoryCommand
         {
             UserItemId = item.Id,

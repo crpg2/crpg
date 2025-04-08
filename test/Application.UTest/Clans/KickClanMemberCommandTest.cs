@@ -10,10 +10,8 @@ namespace Crpg.Application.UTest.Clans;
 
 public class KickClanMemberCommandTest : TestBase
 {
-
     private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
     private static readonly IClanService ClanService = new ClanService(ActivityLogService.Object);
-
 
     [Test]
     public async Task ShouldLeaveClanIfUserKickedHimself()
