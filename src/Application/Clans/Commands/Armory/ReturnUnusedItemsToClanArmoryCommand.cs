@@ -1,6 +1,7 @@
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
+using Crpg.Application.Common.Services;
 using Crpg.Sdk.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -16,11 +17,13 @@ public record ReturnUnusedItemsToClanArmoryCommand : IMediatorRequest
 
         private readonly ICrpgDbContext _db;
         private readonly IDateTime _dateTime;
+        private readonly IActivityLogService _activityLogService;
 
-        public Handler(ICrpgDbContext db, IDateTime dateTime)
+        public Handler(ICrpgDbContext db, IDateTime dateTime, IActivityLogService activityLogService)
         {
             _db = db;
             _dateTime = dateTime;
+            _activityLogService = activityLogService;
         }
 
         public async Task<Result> Handle(ReturnUnusedItemsToClanArmoryCommand req, CancellationToken cancellationToken)
@@ -40,6 +43,10 @@ public record ReturnUnusedItemsToClanArmoryCommand : IMediatorRequest
                 var equipped = u.ClanMembership!.ArmoryBorrowedItems.SelectMany(bi => bi.UserItem!.EquippedItems);
                 _db.EquippedItems.RemoveRange(equipped);
                 _db.ClanArmoryBorrowedItems.RemoveRange(u.ClanMembership!.ArmoryBorrowedItems);
+                foreach (var bi in u.ClanMembership!.ArmoryBorrowedItems)
+                {
+                    _db.ActivityLogs.Add(_activityLogService.CreateReturnItemToClanArmoryLog(bi.UserItem!.UserId, u.ClanMembership.ClanId, bi.UserItemId));
+                }
             }
 
             await _db.SaveChangesAsync(cancellationToken);

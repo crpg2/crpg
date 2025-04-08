@@ -98,6 +98,7 @@ public record RespondClanInvitationCommand : IMediatorRequest<ClanInvitationView
                 invitation.Status = ClanInvitationStatus.Declined;
                 invitation.InviterId = inviter.Id; // If invitation was a request, invited == invitee.
                 await _db.SaveChangesAsync(cancellationToken);
+
                 if (invitation.Type == ClanInvitationType.Offer) // TODO: implement offer ui
                 {
                     Logger.LogInformation("User '{0}' declined invitation '{1}' from user '{2}' to join clan '{3}'",

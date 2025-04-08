@@ -58,7 +58,8 @@ public record GetActivityLogsQuery : IMediatorRequest<ActivityLogWithDictViewMod
 
             var entitiesFromMetadata = _activityLogService.ExtractEntitiesFromMetadata(activityLogs);
             var clans = await _db.Clans.Where(c => entitiesFromMetadata.ClansIds.Contains(c.Id)).ToArrayAsync();
-            var users = await _db.Users.Where(u => entitiesFromMetadata.UsersIds.Contains(u.Id)).ToArrayAsync();
+            var users = await _db.Users.Where(u =>
+                entitiesFromMetadata.UsersIds.Contains(u.Id) || req.UserIds.Contains(u.Id)).ToArrayAsync();
             var characters = await _db.Characters.Where(c => entitiesFromMetadata.CharactersIds.Contains(c.Id)).ToArrayAsync();
 
             return new(new ActivityLogWithDictViewModel()
