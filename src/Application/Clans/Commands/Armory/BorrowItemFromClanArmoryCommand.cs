@@ -23,12 +23,14 @@ public record BorrowItemFromClanArmoryCommand : IMediatorRequest<ClanArmoryBorro
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
         private readonly IClanService _clanService;
+        private readonly IActivityLogService _activityLogService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService)
+        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService, IActivityLogService activityLogService)
         {
             _db = db;
             _mapper = mapper;
             _clanService = clanService;
+            _activityLogService = activityLogService;
         }
 
         public async Task<Result<ClanArmoryBorrowedItemViewModel>> Handle(BorrowItemFromClanArmoryCommand req, CancellationToken cancellationToken)
@@ -55,6 +57,8 @@ public record BorrowItemFromClanArmoryCommand : IMediatorRequest<ClanArmoryBorro
             {
                 return new(result.Errors);
             }
+
+            _db.ActivityLogs.Add(_activityLogService.CreateBorrowItemFromClanArmoryLog(user.Id, clan.Id, req.UserItemId));
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' borrowed item '{1}' from the armory '{2}'", req.UserId, req.UserItemId, req.ClanId);
