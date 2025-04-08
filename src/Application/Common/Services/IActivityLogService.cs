@@ -55,6 +55,7 @@ internal record struct EntitiesFromMetadata
 
 internal class ActivityLogService : IActivityLogService
 {
+    // TODO: FIXME: SPEC
     public EntitiesFromMetadata ExtractEntitiesFromMetadata(ActivityLog[] activityLogs)
     {
         var output = new EntitiesFromMetadata();
@@ -72,7 +73,7 @@ internal class ActivityLogService : IActivityLogService
                     }
                 }
 
-                if (md.Key == "userId" || md.Key == "actorUserId")
+                if (md.Key == "userId" || md.Key == "actorUserId" || md.Key == "targetUserId")
                 {
                     int userId = Convert.ToInt32(md.Value);
                     if (!output.UsersIds.Contains(userId))

@@ -1401,7 +1401,8 @@ public record SeedDataCommand : IMediatorRequest
                 new() { Type = ActivityLogType.ChatMessageSent, User = orle, Metadata = { new("message", "Fluttershy is best"), new("instance", "crpg01a"), } },
                 new() { Type = ActivityLogType.ChatMessageSent, User = orle, Metadata = { new("message", "No, Rarity the best"), new("instance", "crpg01a"), }, },
                 new() { Type = ActivityLogType.ChatMessageSent, User = takeo, CreatedAt = DateTime.UtcNow.AddMinutes(-3), Metadata = { new("message", "Do you get it?"), new("instance", "crpg01a"), }, },
-                new() { Type = ActivityLogType.TeamHit, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+3), Metadata = { new("targetUserId", "1"), new("damage", "123"), new("instance", "crpg01a"), }, },
+                new() { Type = ActivityLogType.TeamHit, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+3), Metadata = { new("targetUserId", takeo.Id.ToString()), new("damage", "123"), new("instance", "crpg01a"), }, },
+                new() { Type = ActivityLogType.TeamHit, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+6), Metadata = { new("targetUserId", namidaka.Id.ToString()), new("damage", "333"), new("instance", "crpg01a"), }, },
                 new() { Type = ActivityLogType.TeamHit, User = takeo, CreatedAt = DateTime.UtcNow.AddMinutes(-1), },
             };
 

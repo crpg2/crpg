@@ -11,12 +11,12 @@ namespace Crpg.Application.UTest.Common.Services;
 
 public class ClanServiceTest : TestBase
 {
-    private static readonly IActivityLogService ActivityLogService = Mock.Of<IActivityLogService>();
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
 
     [Test]
     public async Task GetClanMemberShouldReturnErrorIfUserNotFound()
     {
-        ClanService clanService = new(ActivityLogService);
+        ClanService clanService = new(ActivityLogService.Object);
         var res = await clanService.GetClanMember(ActDb, 1, 2, CancellationToken.None);
         Assert.That(res.Errors, Is.Not.Null);
         Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.UserNotFound));
@@ -29,7 +29,7 @@ public class ClanServiceTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        ClanService clanService = new(ActivityLogService);
+        ClanService clanService = new(ActivityLogService.Object);
         var res = await clanService.GetClanMember(ActDb, user.Id, 2, CancellationToken.None);
         Assert.That(res.Errors, Is.Not.Null);
         Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.UserNotInAClan));
@@ -42,7 +42,7 @@ public class ClanServiceTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        ClanService clanService = new(ActivityLogService);
+        ClanService clanService = new(ActivityLogService.Object);
         var res = await clanService.GetClanMember(ActDb, user.Id, 3, CancellationToken.None);
         Assert.That(res.Errors, Is.Not.Null);
         Assert.That(res.Errors![0].Code, Is.EqualTo(ErrorCode.UserNotAClanMember));
@@ -55,7 +55,7 @@ public class ClanServiceTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        ClanService clanService = new(ActivityLogService);
+        ClanService clanService = new(ActivityLogService.Object);
         var res = await clanService.GetClanMember(ActDb, user.Id, user.ClanMembership.ClanId, CancellationToken.None);
         Assert.That(res.Errors, Is.Null);
     }
@@ -105,7 +105,7 @@ public class ClanServiceTest : TestBase
         ArrangeDb.ClanInvitations.AddRange(invitations);
         await ArrangeDb.SaveChangesAsync();
 
-        ClanService clanService = new(ActivityLogService);
+        ClanService clanService = new(ActivityLogService.Object);
         var u = await ActDb.Users.FirstAsync(u => u.Id == user.Id);
         var res = await clanService.JoinClan(ActDb, u, clan.Id, CancellationToken.None);
         await ActDb.SaveChangesAsync();
@@ -135,7 +135,7 @@ public class ClanServiceTest : TestBase
         ArrangeDb.Clans.Add(clan);
         await ArrangeDb.SaveChangesAsync();
 
-        ClanService clanService = new(ActivityLogService);
+        ClanService clanService = new(ActivityLogService.Object);
         var member = await ActDb.ClanMembers.FirstAsync(cm => cm.UserId == user.Id);
         var res = await clanService.LeaveClan(ActDb, member, CancellationToken.None);
         await ActDb.SaveChangesAsync();
@@ -153,7 +153,7 @@ public class ClanServiceTest : TestBase
         ArrangeDb.Clans.Add(clan);
         await ArrangeDb.SaveChangesAsync();
 
-        ClanService clanService = new(ActivityLogService);
+        ClanService clanService = new(ActivityLogService.Object);
         var member = await ActDb.ClanMembers.FirstAsync(cm => cm.UserId == user.Id);
         var res = await clanService.LeaveClan(ActDb, member, CancellationToken.None);
         await ActDb.SaveChangesAsync();
@@ -172,7 +172,7 @@ public class ClanServiceTest : TestBase
         ArrangeDb.Clans.Add(clan);
         await ArrangeDb.SaveChangesAsync();
 
-        ClanService clanService = new(ActivityLogService);
+        ClanService clanService = new(ActivityLogService.Object);
         var member = await ActDb.ClanMembers.FirstAsync(cm => cm.UserId == user.Id);
         var res = await clanService.LeaveClan(ActDb, member, CancellationToken.None);
         await ActDb.SaveChangesAsync();
@@ -199,7 +199,7 @@ public class ClanServiceTest : TestBase
 
         var item = user.Items.First();
 
-        var service = new ClanService(ActivityLogService);
+        ClanService service = new(ActivityLogService.Object);
         var result = await service.AddArmoryItem(ActDb, clan, user, item.Id);
         Assert.That(result.Errors, Is.Null.Or.Empty);
         Assert.That(result.Data, Is.Not.Null);
@@ -236,7 +236,7 @@ public class ClanServiceTest : TestBase
 
         var item = user.Items.First(ui => ui.ClanArmoryItem != null);
 
-        var service = new ClanService(ActivityLogService);
+        ClanService service = new(ActivityLogService.Object);
         var result = await service.RemoveArmoryItem(ActDb, clan, user, item.Id);
         Assert.That(result.Errors, Is.Null.Or.Empty);
 
@@ -269,7 +269,7 @@ public class ClanServiceTest : TestBase
 
         var item = clan.Members.First(cm => cm.ArmoryItems.Count > 0).ArmoryItems.First();
 
-        var service = new ClanService(ActivityLogService);
+        ClanService service = new(ActivityLogService.Object);
         var result = await service.BorrowArmoryItem(ActDb, clan, user, item.UserItemId);
         Assert.That(result.Errors, Is.Null.Or.Empty);
 
@@ -308,7 +308,7 @@ public class ClanServiceTest : TestBase
 
         var item = user.ClanMembership!.ArmoryBorrowedItems.First();
 
-        var service = new ClanService(ActivityLogService);
+        ClanService service = new(ActivityLogService.Object);
         var result = await service.ReturnArmoryItem(ActDb, clan, user, item.UserItemId);
         Assert.That(result.Errors, Is.Null.Or.Empty);
 
@@ -356,7 +356,7 @@ public class ClanServiceTest : TestBase
 
         var item = user1.ClanMembership!.ArmoryBorrowedItems.First();
 
-        var service = new ClanService(ActivityLogService);
+        ClanService service = new(ActivityLogService.Object);
         var result = await service.ReturnArmoryItem(ActDb, clan, user2, item.UserItemId);
 
         Assert.That(result.Errors![0].Code, Is.EqualTo(ErrorCode.UserItemNotFound));
@@ -390,7 +390,7 @@ public class ClanServiceTest : TestBase
 
         var item = user.ClanMembership!.ArmoryBorrowedItems.First();
 
-        var service = new ClanService(ActivityLogService);
+        ClanService service = new(ActivityLogService.Object);
         var result = await service.ReturnArmoryItem(ActDb, clan, clanLeader, item.UserItemId);
 
         Assert.That(result.Errors, Is.Null.Or.Empty);
