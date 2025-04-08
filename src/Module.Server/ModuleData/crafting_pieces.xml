@@ -37024,4 +37024,104 @@
   <CraftingPiece id="crpg_brokensword_handle_h3" name="{=}Broken Sword Handle +3" tier="3" piece_type="Handle" mesh="bob_brokensword_handle" full_scale="false" culture="Culture.khuzait" length="20.9" weight="0.22">
     <BuildData piece_offset="0" previous_piece_offset="4" next_piece_offset="3" />
   </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_handle_h0" name="{=Yeldur}Flangedmace Handle" tier="3" piece_type="Handle" mesh="flangedmace_handle" full_scale="false" length="91.85" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="23" next_piece_offset="1" previous_piece_offset="2" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_handle_h1" name="{=Yeldur}Flangedmace Handle" tier="3" piece_type="Handle" mesh="flangedmace_handle" full_scale="false" length="91.85" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="23" next_piece_offset="1" previous_piece_offset="2" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_handle_h2" name="{=Yeldur}Flangedmace Handle" tier="3" piece_type="Handle" mesh="flangedmace_handle" full_scale="false" length="91.85" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="23" next_piece_offset="1" previous_piece_offset="2" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_handle_h3" name="{=Yeldur}Flangedmace Handle" tier="3" piece_type="Handle" mesh="flangedmace_handle" full_scale="false" length="91.85" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="23" next_piece_offset="1" previous_piece_offset="2" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_blade_h0" name="{=Yeldur}Flangedmace Head" tier="3" piece_type="Blade" mesh="flangedmace_head" length="32.75" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.4" />
+    </BladeData>
+    <Flags>
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_blade_h1" name="{=Yeldur}Flangedmace Head" tier="3" piece_type="Blade" mesh="flangedmace_head" length="32.75" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.5" />
+    </BladeData>
+    <Flags>
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_blade_h2" name="{=Yeldur}Flangedmace Head" tier="3" piece_type="Blade" mesh="flangedmace_head" length="32.75" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.6" />
+    </BladeData>
+    <Flags>
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_blade_h3" name="{=Yeldur}Flangedmace Head" tier="3" piece_type="Blade" mesh="flangedmace_head" length="32.75" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="3.8" />
+    </BladeData>
+    <Flags>
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_pommel_h0" name="{=Yeldur}Flangedmace Pommel" tier="3" piece_type="Pommel" mesh="flangedmace_pommel" culture="Culture.empire" full_scale="true" length="12" weight="1.0">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_pommel_h1" name="{=Yeldur}Flangedmace Pommel" tier="3" piece_type="Pommel" mesh="flangedmace_pommel" culture="Culture.empire" full_scale="true" length="12" weight="1.0">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_pommel_h2" name="{=Yeldur}Flangedmace Pommel" tier="3" piece_type="Pommel" mesh="flangedmace_pommel" culture="Culture.empire" full_scale="true" length="12" weight="1.0">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_chankamace_pommel_h3" name="{=Yeldur}Flangedmace Pommel" tier="3" piece_type="Pommel" mesh="flangedmace_pommel" culture="Culture.empire" full_scale="true" length="12" weight="1.0">
+  </CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_handle_h0" name="{=Yeldur}Flangedmace Handle" tier="3" piece_type="Handle" mesh="flangedmace_handle" full_scale="false" length="91.85" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="23" next_piece_offset="1" previous_piece_offset="2" />
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_handle_h1" name="{=Yeldur}Flangedmace Handle" tier="3" piece_type="Handle" mesh="flangedmace_handle" full_scale="false" length="91.85" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="23" next_piece_offset="1" previous_piece_offset="2" />
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_handle_h2" name="{=Yeldur}Flangedmace Handle" tier="3" piece_type="Handle" mesh="flangedmace_handle" full_scale="false" length="91.85" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="23" next_piece_offset="1" previous_piece_offset="2" />
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_handle_h3" name="{=Yeldur}Flangedmace Handle" tier="3" piece_type="Handle" mesh="flangedmace_handle" full_scale="false" length="91.85" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="23" next_piece_offset="1" previous_piece_offset="2" />
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_blade_h0" name="{=Yeldur}Flangedmace Head" tier="3" piece_type="Blade" mesh="flangedmace_head" length="32.75" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.5" />
+    </BladeData>
+    <Flags>
+              <Flag name="CanKnockDown" />
+    </Flags>
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_blade_h1" name="{=Yeldur}Flangedmace Head" tier="3" piece_type="Blade" mesh="flangedmace_head" length="32.75" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.6" />
+    </BladeData>
+    <Flags>
+          <Flag name="CanKnockDown" />
+    </Flags>
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_blade_h2" name="{=Yeldur}Flangedmace Head" tier="3" piece_type="Blade" mesh="flangedmace_head" length="32.75" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.7" />
+    </BladeData>
+    <Flags>
+          <Flag name="CanKnockDown" />
+    </Flags>
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_blade_h3" name="{=Yeldur}Flangedmace Head" tier="3" piece_type="Blade" mesh="flangedmace_head" length="32.75" weight="1.15" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.8" />
+    </BladeData>
+    <Flags>
+          <Flag name="CanKnockDown" />
+    </Flags>
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_pommel_h0" name="{=Yeldur}Flangedmace Pommel" tier="3" piece_type="Pommel" mesh="flangedmace_pommel" culture="Culture.empire" full_scale="true" length="12" weight="1.0">
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_pommel_h1" name="{=Yeldur}Flangedmace Pommel" tier="3" piece_type="Pommel" mesh="flangedmace_pommel" culture="Culture.empire" full_scale="true" length="12" weight="1.0">
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_pommel_h2" name="{=Yeldur}Flangedmace Pommel" tier="3" piece_type="Pommel" mesh="flangedmace_pommel" culture="Culture.empire" full_scale="true" length="12" weight="1.0">
+</CraftingPiece>
+<CraftingPiece id="crpg_chankamace_altmode_pommel_h3" name="{=Yeldur}Flangedmace Pommel" tier="3" piece_type="Pommel" mesh="flangedmace_pommel" culture="Culture.empire" full_scale="true" length="12" weight="1.0">
+</CraftingPiece>
 </CraftingPieces>
