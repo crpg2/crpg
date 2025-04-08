@@ -7,7 +7,9 @@ using NUnit.Framework;
 namespace Crpg.Application.UTest.Clans.Armory;
 public class GetClanArmoryQueryTest : TestBase
 {
-    private static readonly IClanService ClanService = Mock.Of<IClanService>();
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+
+    private IClanService ClanService { get; } = new ClanService(ActivityLogService.Object);
 
     [Test]
     public async Task ShouldGetClanArmoryItems()
