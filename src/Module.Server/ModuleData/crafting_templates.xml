@@ -20,7 +20,7 @@
       <StatData stat_type="Handling" max_value="200" />
     </StatsData>
     <UsablePieces>
-	    <UsablePiece piece_id="crpg_brokensword_blade_h0" />
+      <UsablePiece piece_id="crpg_brokensword_blade_h0" />
       <UsablePiece piece_id="crpg_brokensword_blade_h1" />
       <UsablePiece piece_id="crpg_brokensword_blade_h2" />
       <UsablePiece piece_id="crpg_brokensword_blade_h3" />
