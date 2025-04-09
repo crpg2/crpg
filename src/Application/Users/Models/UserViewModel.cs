@@ -1,5 +1,7 @@
+using AutoMapper;
 using Crpg.Application.Common.Mappings;
 using Crpg.Domain.Entities;
+using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Users;
 
 namespace Crpg.Application.Users.Models;
@@ -18,4 +20,14 @@ public record UserViewModel : IMapFrom<User>
     public bool IsDonor { get; init; }
     public Uri? Avatar { get; init; }
     public int? ActiveCharacterId { get; init; }
+    public int UnreadNotificationsCount { get; init; }
+
+    public void Mapping(Profile profile)
+    {
+        profile.CreateMap<User, UserViewModel>()
+            .ForMember(u => u.UnreadNotificationsCount,
+                opt => opt.MapFrom(u => u.Notifications
+                    .Where(un => un.State == NotificationState.Unread)
+                    .Count()));
+    }
 }

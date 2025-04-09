@@ -10,10 +10,10 @@ using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
+using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
-using Crpg.Domain.Entities.Settings;
 using Crpg.Domain.Entities.Settlements;
 using Crpg.Domain.Entities.Users;
 using Crpg.Sdk.Abstractions;
@@ -39,12 +39,13 @@ public record SeedDataCommand : IMediatorRequest
         private readonly ICharacterService _characterService;
         private readonly IExperienceTable _experienceTable;
         private readonly IActivityLogService _activityLogService;
+        private readonly IUserNotificationService _userNotificationService;
         private readonly IStrategusMap _strategusMap;
         private readonly ISettlementsSource _settlementsSource;
 
         public Handler(ICrpgDbContext db, IItemsSource itemsSource, IApplicationEnvironment appEnv,
             ICharacterService characterService, IExperienceTable experienceTable, IStrategusMap strategusMap,
-            ISettlementsSource settlementsSource, IActivityLogService activityLogService)
+            ISettlementsSource settlementsSource, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
             _db = db;
             _itemsSource = itemsSource;
@@ -54,6 +55,7 @@ public record SeedDataCommand : IMediatorRequest
             _strategusMap = strategusMap;
             _settlementsSource = settlementsSource;
             _activityLogService = activityLogService;
+            _userNotificationService = userNotificationService;
         }
 
         public async Task<Result> Handle(SeedDataCommand request, CancellationToken cancellationToken)
@@ -1442,7 +1444,32 @@ public record SeedDataCommand : IMediatorRequest
                     .Concat(gameServerActivityLogs)
                     .Concat(characterEarnedActivityLogs)
                     .Concat(clanActivityLogs));
-            await _db.SaveChangesAsync(cancellationToken);
+
+            UserNotification[] orleNotifications =
+            {
+                _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, orleItem1.ItemId, 2, 1222),
+            };
+
+            // var orleNotificationClanApplicationCreatedToOfficers1.CreatedAt = DateTime.UtcNow.AddMinutes(-112);
+            // var orleNotificationClanApplicationCreatedToOfficers2 = _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, activityLogClanApplicationCreated2.Id);
+            // orleNotificationClanApplicationCreatedToOfficers2.State = NotificationState.Read;
+            // _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, activityLogClanApplicationCreated3.Id);
+            // _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, activityLogUserRewarded1.Id);
+            // _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, activityLogUserRewarded2.Id);
+
+            // _userNotificationService.CreateClanApplicationAcceptedToUserNotification(orle.Id, activityLogClanApplicationAccepted1.Id);
+            // _userNotificationService.CreateClanApplicationDeclinedToUserNotification(orle.Id, activityLogClanApplicationDeclined1.Id);
+            // _userNotificationService.CreateClanApplicationCreatedToUserNotification(orle.Id, activityLogClanApplicationCreated1.Id);
+            // _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, activityLogItemReturned1.Id);
+            // _userNotificationService.CreateClanMemberRoleChangedToUserNotification(orle.Id, activityLogClanMemberRoleChange1.Id);
+            // _userNotificationService.CreateClanMemberLeavedToLeaderNotification(orle.Id, activityLogClanMemberLeaved1.Id);
+            // _userNotificationService.CreateClanMemberKickedToExMemberNotification(orle.Id, activityLogClanMemberKicked1.Id);
+            // _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, activityLogCharacterRewarded1.Id);
+            // _userNotificationService.CreateClanArmoryBorrowItemToLenderNotification(orle.Id, activityLogClanArmoryBorrowItem1.Id);
+            // _userNotificationService.CreateClanArmoryRemoveItemToBorrowerNotification(orle.Id, activityLogClanArmoryRemoveItem1.Id);
+
+            _db.UserNotifications.RemoveRange(await _db.UserNotifications.ToArrayAsync());
+            _db.UserNotifications.AddRange(orleNotifications);
 
             ClanInvitation[] newClanInvitations = { schumetzqRequestForPecores, victorhh888MemberRequestForPecores, neostralieOfferToBrygganForPecores };
 
