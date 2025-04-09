@@ -33,13 +33,13 @@ public record GetActivityLogsQuery : IMediatorRequest<ActivityLogWithDictViewMod
     {
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
-        private readonly IActivityLogService _activityLogService;
+        private readonly IMetadataService _metadataService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IActivityLogService activityLogService)
+        public Handler(ICrpgDbContext db, IMapper mapper, IMetadataService metadataService)
         {
             _db = db;
             _mapper = mapper;
-            _activityLogService = activityLogService;
+            _metadataService = metadataService;
         }
 
         public async Task<Result<ActivityLogWithDictViewModel>> Handle(GetActivityLogsQuery req,
@@ -56,7 +56,9 @@ public record GetActivityLogsQuery : IMediatorRequest<ActivityLogWithDictViewMod
                 .Take(1000)
                 .ToArrayAsync(cancellationToken);
 
-            var entitiesFromMetadata = _activityLogService.ExtractEntitiesFromMetadata(activityLogs);
+            var entitiesFromMetadata = _metadataService.ExtractEntitiesFromMetadata(activityLogs
+                .SelectMany(al => al.Metadata)
+                .Select(m => new KeyValuePair<string, string>(m.Key, m.Value)));
             var clans = await _db.Clans.Where(c => entitiesFromMetadata.ClansIds.Contains(c.Id)).ToArrayAsync();
             var users = await _db.Users.Where(u =>
                 entitiesFromMetadata.UsersIds.Contains(u.Id) || req.UserIds.Contains(u.Id)).ToArrayAsync();
