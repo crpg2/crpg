@@ -1001,7 +1001,7 @@
       </EquipmentRoster>
       <EquipmentRoster>
         <equipment slot="Cape" id="Item.crpg_eyepatch_1_v1_h2" />
-        <equipment slot="Body" id="Item.crpg_khuzait_leather_stitched_v2_h0" />
+        <equipment slot="Body" id="Item.crpg_khuzait_leather_stitched_v3_h0" />
         <equipment slot="Leg" id="Item.crpg_fine_town_boots_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_langes_messer_v3_h1" />
       </EquipmentRoster>
@@ -1685,7 +1685,7 @@
         <equipment slot="Body" id="Item.crpg_battania_brass_plate_armor_v1_h0" />
         <equipment slot="Gloves" id="Item.crpg_northern_brass_bracers_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_steppe_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_hoplite_spear_v4_h0" />
+        <equipment slot="Item0" id="Item.crpg_hoplite_spear_v5_h0" />
         <equipment slot="Item1" id="Item.crpg_iron_spatha_v3_h0" />
         <equipment slot="Item2" id="Item.crpg_steel_round_shield_v4_h0" />
       </EquipmentRoster>
@@ -2998,7 +2998,7 @@
         <equipment slot="Body" id="Item.crpg_imperial_mail_vest_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_reinforced_padded_mitten_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_lamellar_plate_boots_v3_h0" />
-        <equipment slot="Item0" id="Item.crpg_hoplite_spear_v4_h0" />
+        <equipment slot="Item0" id="Item.crpg_hoplite_spear_v5_h0" />
         <equipment slot="Item1" id="Item.crpg_emirs_oval_shield_v5_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
@@ -3091,7 +3091,7 @@
         <equipment slot="Leg" id="Item.crpg_lamellar_plate_boots_v3_h0" />
         <equipment slot="Horse" id="Item.crpg_mount1_courser_8_v1_h0" />
         <equipment slot="HorseHarness" id="Item.crpg_half_scale_barding_v4_h0" />
-        <equipment slot="Item0" id="Item.crpg_cataphract_lance_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_cataphract_lance_v3_h0" />
         <equipment slot="Item1" id="Item.crpg_decorated_short_spatha_v1_h0" />
       </EquipmentRoster>
     </Equipments>
