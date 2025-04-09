@@ -2,6 +2,7 @@
 using Crpg.Module.Common;
 using Crpg.Module.Helpers;
 using Crpg.Module.Modes.Battle;
+using Crpg.Module.Modes.Strategus;
 using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.Modes.Warmup;
@@ -82,6 +83,9 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
 
     private void BeginWarmup()
     {
+#if CRPG_SERVER
+        var battle = Mission.Current.GetMissionBehavior<CrpgStrategusServer>().Battle;
+#endif
         WarmupStateReflection = WarmupStates.InProgress;
         Mission.Current.ResetMission();
         GameModeReflection.MultiplayerTeamSelectComponent.BalanceTeams();

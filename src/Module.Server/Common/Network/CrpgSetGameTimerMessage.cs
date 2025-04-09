@@ -1,10 +1,10 @@
 ﻿using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
 
-namespace Crpg.Module.Modes.Dtv;
+namespace Crpg.Module.Common.Network;
 
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
-internal sealed class CrpgDtvSetTimerMessage : GameNetworkMessage
+internal sealed class CrpgSetGameTimerMessage : GameNetworkMessage
 {
     public int StartTime { get; set; }
     public int Duration { get; set; }
@@ -30,6 +30,6 @@ internal sealed class CrpgDtvSetTimerMessage : GameNetworkMessage
 
     protected override string OnGetLogFormat()
     {
-        return nameof(CrpgDtvSetTimerMessage);
+        return nameof(CrpgSetGameTimerMessage);
     }
 }

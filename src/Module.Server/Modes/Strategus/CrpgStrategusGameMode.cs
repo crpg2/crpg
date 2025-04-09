@@ -2,7 +2,6 @@
 using Crpg.Module.Common.Commander;
 using Crpg.Module.Common.TeamSelect;
 using Crpg.Module.Modes.Siege;
-using Crpg.Module.Modes.Warmup;
 using Crpg.Module.Notifications;
 using Crpg.Module.Rewards;
 using TaleWorlds.Core;
@@ -21,7 +20,6 @@ using Crpg.Module.GUI;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Strategus;
 using Crpg.Module.GUI.Spectator;
-using Crpg.Module.GUI.Warmup;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
@@ -59,7 +57,7 @@ internal class CrpgStrategusGameMode : MissionBasedMultiplayerGameMode
             ViewCreator.CreateMissionMainAgentCheerBarkControllerView(mission),
             ViewCreatorManager.CreateMissionView<CrpgMissionMultiplayerEscapeMenu>(isNetwork: false, null, "cRPGStrategus", gameModeClient),
             ViewCreator.CreateMissionAgentLabelUIHandler(mission),
-            MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),
+           // MultiplayerViewCreator.CreateMultiplayerTeamSelectUIHandler(),
             MultiplayerViewCreator.CreateMissionScoreBoardUIHandler(mission, false),
             MultiplayerViewCreator.CreateMultiplayerEndOfBattleUIHandler(),
             MultiplayerViewCreator.CreatePollProgressUIHandler(),
@@ -68,7 +66,6 @@ internal class CrpgStrategusGameMode : MissionBasedMultiplayerGameMode
             new MissionAgentContourControllerView(),
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             new SpectatorHudUiHandler(),
-            new WarmupHudUiHandler(),
             new StrategusHudUiHandler(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
@@ -94,13 +91,9 @@ internal class CrpgStrategusGameMode : MissionBasedMultiplayerGameMode
         Game.Current.GetGameHandler<ChatCommandsComponent>()?.InitChatCommands(crpgClient);
         ChatBox chatBox = Game.Current.GetGameHandler<ChatBox>();
         CrpgStrategusSpawningBehavior spawnBehavior = new(_constants);
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent,
-            () => (new BattleSpawnFrameBehavior(), new CrpgStrategusSpawningBehavior(_constants)));
-        CrpgTeamSelectServerComponent teamSelectComponent = new(warmupComponent, null, MultiplayerGameType.Battle);
-        CrpgRewardServer rewardServer = new(crpgClient, _constants, warmupComponent, enableTeamHitCompensations: false, enableRating: false);
+        CrpgRewardServer rewardServer = new(crpgClient, _constants, null, enableTeamHitCompensations: false, enableRating: false);
         CrpgStrategusServer strategusServer = new(crpgClient, rewardServer);
 #else
-        CrpgWarmupComponent warmupComponent = new(_constants, notificationsComponent, null);
         CrpgTeamSelectClientComponent teamSelectComponent = new();
 #endif
 
@@ -116,10 +109,8 @@ internal class CrpgStrategusGameMode : MissionBasedMultiplayerGameMode
                 new CrpgCommanderBehaviorClient(),
                 new CrpgRespawnTimerClient(),
 #endif
-                warmupComponent,
                 new CrpgStrategusClient(),
                 new MultiplayerTimerComponent(),
-                teamSelectComponent,
                 new MissionHardBorderPlacer(),
                 new MissionBoundaryPlacer(),
                 new MissionBoundaryCrossingHandler(),
@@ -132,7 +123,6 @@ internal class CrpgStrategusGameMode : MissionBasedMultiplayerGameMode
                 new AgentHumanAILogic(),
                 new EquipmentControllerLeaveLogic(),
                 new MultiplayerPreloadHelper(),
-                new WelcomeMessageBehavior(warmupComponent),
                 new MissionLobbyEquipmentNetworkComponent(),
 
 #if CRPG_SERVER
@@ -140,9 +130,8 @@ internal class CrpgStrategusGameMode : MissionBasedMultiplayerGameMode
                 rewardServer,
                 new SpawnComponent(new BattleSpawnFrameBehavior(), spawnBehavior),
                 new CrpgUserManagerServer(crpgClient, _constants),
-                new KickInactiveBehavior(inactiveTimeLimit: 90, warmupComponent, teamSelectComponent),
                 new MapPoolComponent(),
-                new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),
+                new CrpgActivityLogsBehavior(null, chatBox, crpgClient),
                 new ServerMetricsBehavior(),
                 new NotAllPlayersReadyComponent(),
                 new DrowningBehavior(),

@@ -15,11 +15,11 @@ internal class CrpgStrategusBattle
 
     public CrpgStrategusFighter? GetFighterByUser(CrpgUser user)
     {
-        return Fighters.FirstOrDefault(f => f.Party?.User == user /*|| f.Settlement?.Owner.User == user*/);
+        return Fighters.FirstOrDefault(f => f.Party?.User.Id == user.Id /*|| f.Settlement?.Owner.User == user*/);
     }
 
     public CrpgStrategusMercenary? GetMercenaryByUser(CrpgUser user)
     {
-        return Mercenaries.FirstOrDefault(m => m.User == user);
+        return Mercenaries.FirstOrDefault(m => m.User.Id == user.Id);
     }
 }

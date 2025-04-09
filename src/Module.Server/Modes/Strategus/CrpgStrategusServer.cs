@@ -3,6 +3,8 @@ using Crpg.Module.Api;
 using Crpg.Module.Api.Models.Strategus;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
+using Crpg.Module.Common.Network;
+using Crpg.Module.Modes.Dtv;
 using Crpg.Module.Modes.TrainingGround;
 using Crpg.Module.Rewards;
 using TaleWorlds.Core;
@@ -15,8 +17,11 @@ namespace Crpg.Module.Modes.Strategus;
 internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
 {
     public CrpgStrategusBattle Battle = default!;
+    public bool IsInWarmup { get; private set; } = false;
+    private bool _battleStarted = false;
     private readonly ICrpgClient _crpgClient;
     private readonly CrpgRewardServer _rewardServer;
+    private MissionTimer? _startTimer;
 
     public CrpgStrategusServer(ICrpgClient crpgClient, CrpgRewardServer rewardServer)
     {
@@ -34,7 +39,7 @@ internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
 
     public override MultiplayerGameType GetMissionType()
     {
-        return MultiplayerGameType.Battle;
+        return MultiplayerGameType.Siege;
     }
 
     public override void AfterStart()
@@ -58,31 +63,6 @@ internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
         return true;
     }
 
-    public override void OnPeerChangedTeam(NetworkCommunicator networkPeer, Team oldTeam, Team newTeam)
-    {
-        // force peer onto correct team based on stratbattle
-
-        var missionPeer = networkPeer.GetComponent<MissionPeer>();
-        if (newTeam != Mission.SpectatorTeam)
-        {
-            var rep = networkPeer.GetComponent<CrpgStrategusMissionRepresentative>();
-            if (rep.Side == BattleSide.Defender)
-            {
-                missionPeer.Team = Mission.DefenderTeam;
-            }
-            else if (rep.Side == BattleSide.Attacker)
-            {
-                missionPeer.Team = Mission.AttackerTeam;
-            }
-            else
-            {
-                missionPeer.Team = Mission.SpectatorTeam;
-            }
-
-            return;
-        }
-    }
-
     public override void OnAgentBuild(Agent agent, Banner banner)
     {
         base.OnAgentBuild(agent, banner);
@@ -92,7 +72,7 @@ internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
 
     public void OnPeerSpwaned(Agent agent)
     {
-        if (!MissionLobbyComponent.IsInWarmup)
+        if (!IsInWarmup)
         {
             SendDataToPeers(new CrpgStrategusTicketCountUpdateMessage
             {
@@ -111,7 +91,13 @@ internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
             return;
         }
 
-        if (!MissionLobbyComponent.IsInWarmup)
+        if (!_battleStarted && !IsInWarmup)
+        {
+            CreateWarmup();
+            ConfigureBattle();
+        }
+
+        if (_battleStarted)
         {
             CheckForEnd();
         }
@@ -122,9 +108,9 @@ internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
         networkPeer.AddComponent<CrpgStrategusMissionRepresentative>();
     }
 
-    protected override void HandleNewClientAfterSynchronized(NetworkCommunicator networkPeer)
+    protected override void HandleLateNewClientAfterSynchronized(NetworkCommunicator networkPeer)
     {
-        if (!MissionLobbyComponent.IsInWarmup)
+        if (!IsInWarmup)
         {
             GameNetwork.BeginModuleEventAsServer(networkPeer);
             GameNetwork.WriteMessage(new CrpgStrategusTicketCountUpdateMessage
@@ -134,35 +120,61 @@ internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
             });
             GameNetwork.EndModuleEventAsServer();
         }
+        else
+        {
+            SendDataToPeers(new CrpgSetGameTimerMessage
+            {
+                StartTime = (int)TimerComponent.GetCurrentTimerStartTime().ToSeconds,
+                Duration = (int)_startTimer!.GetTimerDuration(),
+            });
+        }
 
         CrpgPeer crpgPeer = networkPeer.GetComponent<CrpgPeer>();
         if (crpgPeer?.User != null)
         {
+            var rep = networkPeer.GetComponent<CrpgStrategusMissionRepresentative>();
             CrpgStrategusFighter? fighter = Battle.GetFighterByUser(crpgPeer.User);
             if (fighter != null)
             {
-                networkPeer.GetComponent<CrpgStrategusMissionRepresentative>().Side = fighter.Side;
+                rep.Side = fighter.Side;
             }
             else
             {
                 CrpgStrategusMercenary? mercenary = Battle.GetMercenaryByUser(crpgPeer.User);
                 if (mercenary != null)
                 {
-                    networkPeer.GetComponent<CrpgStrategusMissionRepresentative>().Side = mercenary.Side;
+                    rep.Side = mercenary.Side;
                 }
                 else
                 {
                     // user is not signed up for this battle!
                 }
             }
+
+            MissionPeer missionPeer = networkPeer.GetComponent<MissionPeer>();
+
+            if (rep.Side == BattleSide.Defender)
+            {
+                missionPeer.Team = Mission.DefenderTeam;
+            }
+            else if (rep.Side == BattleSide.Attacker)
+            {
+                missionPeer.Team = Mission.AttackerTeam;
+            }
+            else
+            {
+                missionPeer.Team = Mission.SpectatorTeam;
+            }
         }
+
+        return;
     }
 
     /// <summary>Work around the 60 minutes limit of MapTimeLimit.</summary>
     private void SetTimeLimit()
     {
 /*        TimerComponent.StartTimerAsServer(MapDuration);
-        SendDataToPeers(new CrpgDtvSetTimerMessage
+        SendDataToPeers(new CrpgSetGameTimerMessage
         {
             StartTime = (int)TimerComponent.GetCurrentTimerStartTime().ToSeconds,
             Duration = MapDuration,
@@ -224,10 +236,29 @@ internal class CrpgStrategusServer : MissionMultiplayerGameModeBase
         }
     }
 
+    private void ConfigureBattle()
+    {
+        SpawningBehavior.SetTickets(BattleSideEnum.Attacker, Battle.AttackerTotalTroops);
+        SpawningBehavior.SetTickets(BattleSideEnum.Defender, Battle.DefenderTotalTroops);
+    }
+
+    private void CreateWarmup()
+    {
+        int secondsUntilBattle = (int)(Battle.ScheduledFor! - DateTime.UtcNow).Value.TotalSeconds;
+        _startTimer = new MissionTimer(secondsUntilBattle);
+        TimerComponent.StartTimerAsServer(secondsUntilBattle);
+        SendDataToPeers(new CrpgSetGameTimerMessage
+        {
+            StartTime = (int)TimerComponent.GetCurrentTimerStartTime().ToSeconds,
+            Duration = (int)_startTimer.GetTimerDuration(),
+        });
+        IsInWarmup = true;
+    }
+
     private async Task GetStrategusBattle()
     {
         var battleRes = (await _crpgClient.GetStrategusBattleAsync(CrpgServerConfiguration.StrategusBattleId)).Data!;
-        if (battleRes.Phase != BattlePhase.Scheduled || battleRes.Phase != BattlePhase.Live)
+        if (battleRes.Phase != BattlePhase.Scheduled && battleRes.Phase != BattlePhase.Live)
         {
             // throw error that battle can't be found
             return;

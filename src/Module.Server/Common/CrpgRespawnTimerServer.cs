@@ -28,7 +28,7 @@ internal class CrpgRespawnTimerServer : MissionNetwork
     public override void OnAgentBuild(Agent agent, Banner banner)
     {
         NetworkCommunicator? networkCommunicator = agent.MissionPeer?.GetNetworkPeer();
-        if (networkCommunicator != null && !_missionMultiplayerGameModeBase.WarmupComponent.IsInWarmup)
+        if (networkCommunicator != null && (_missionMultiplayerGameModeBase.WarmupComponent == null || !_missionMultiplayerGameModeBase.WarmupComponent.IsInWarmup))
         {
             GameNetwork.BeginModuleEventAsServer(networkCommunicator);
             GameNetwork.WriteMessage(new CrpgUpdateRespawnTimerMessage { TimeToSpawn = 0 });
@@ -44,7 +44,7 @@ internal class CrpgRespawnTimerServer : MissionNetwork
         }
 
         NetworkCommunicator? networkCommunicator = affectedAgent.MissionPeer?.GetNetworkPeer();
-        if (networkCommunicator != null && !_missionMultiplayerGameModeBase.WarmupComponent.IsInWarmup)
+        if (networkCommunicator != null && (_missionMultiplayerGameModeBase.WarmupComponent == null || !_missionMultiplayerGameModeBase.WarmupComponent.IsInWarmup))
         {
             float timeUntilRespawn = _spawnBehavior.TimeUntilRespawn(affectedAgent.Team);
             GameNetwork.BeginModuleEventAsServer(networkCommunicator);
@@ -55,7 +55,7 @@ internal class CrpgRespawnTimerServer : MissionNetwork
 
     private void HandlePeerTeamChanged(NetworkCommunicator peer, Team previousTeam, Team newTeam)
     {
-        if (peer != null && !_missionMultiplayerGameModeBase.WarmupComponent.IsInWarmup)
+        if (peer != null && (_missionMultiplayerGameModeBase.WarmupComponent == null || !_missionMultiplayerGameModeBase.WarmupComponent.IsInWarmup))
         {
             float timeUntilRespawn = _spawnBehavior.TimeUntilRespawn(newTeam);
             GameNetwork.BeginModuleEventAsServer(peer);

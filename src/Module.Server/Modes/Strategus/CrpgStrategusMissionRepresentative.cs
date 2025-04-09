@@ -7,7 +7,7 @@ namespace Crpg.Module.Modes.TrainingGround;
 
 public class CrpgStrategusMissionRepresentative : MissionRepresentativeBase
 {
-    public BattleSide Side { get; set; }
+    public BattleSide? Side { get; set; }
     public bool IsCommander { get; set; } = false;
 #if CRPG_SERVER
     private CrpgStrategusServer _mission = default!;

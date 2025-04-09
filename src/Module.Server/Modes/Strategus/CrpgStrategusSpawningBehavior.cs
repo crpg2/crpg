@@ -13,27 +13,17 @@ internal class CrpgStrategusSpawningBehavior : CrpgSpawningBehaviorBase
     public CrpgStrategusSpawningBehavior(CrpgConstants constants)
         : base(constants)
     {
-        CurrentGameMode = MultiplayerGameType.Battle;
+        CurrentGameMode = MultiplayerGameType.Siege;
     }
 
     public override void Initialize(SpawnComponent spawnComponent)
     {
         base.Initialize(spawnComponent);
         _server = Mission.Current.GetMissionBehavior<CrpgStrategusServer>();
-        if (_server?.Battle != null)
-        {
-            SetTickets(BattleSideEnum.Attacker, _server.Battle.AttackerTotalTroops);
-            SetTickets(BattleSideEnum.Defender, _server.Battle.DefenderTotalTroops);
-        }
     }
 
     public override void OnTick(float dt)
     {
-        if (!IsSpawningEnabled)
-        {
-            return;
-        }
-
         SpawnAgents();
 
         TimeSinceSpawnEnabled += dt;
@@ -47,6 +37,12 @@ internal class CrpgStrategusSpawningBehavior : CrpgSpawningBehaviorBase
     protected override void OnPeerSpawned(Agent agent)
     {
         base.OnPeerSpawned(agent);
+
+        if (_server!.IsInWarmup)
+        {
+            return;
+        }
+
         Tickets[agent.Team.Side] -= 1;
         _server!.OnPeerSpwaned(agent);
     }

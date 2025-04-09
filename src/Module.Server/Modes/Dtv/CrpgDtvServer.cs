@@ -1,6 +1,7 @@
 ﻿using System.Xml.Serialization;
 using Crpg.Module.Common;
 using Crpg.Module.Common.AiComponents;
+using Crpg.Module.Common.Network;
 using Crpg.Module.Rewards;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
@@ -237,7 +238,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         }
 
         GameNetwork.BeginModuleEventAsServer(networkPeer);
-        GameNetwork.WriteMessage(new CrpgDtvSetTimerMessage
+        GameNetwork.WriteMessage(new CrpgSetGameTimerMessage
         {
             StartTime = (int)TimerComponent.GetCurrentTimerStartTime().ToSeconds,
             Duration = MapDuration,
@@ -256,7 +257,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private void SetTimeLimit()
     {
         TimerComponent.StartTimerAsServer(MapDuration);
-        SendDataToPeers(new CrpgDtvSetTimerMessage
+        SendDataToPeers(new CrpgSetGameTimerMessage
         {
             StartTime = (int)TimerComponent.GetCurrentTimerStartTime().ToSeconds,
             Duration = MapDuration,

@@ -1,4 +1,5 @@
-﻿using NetworkMessages.FromServer;
+﻿using Crpg.Module.Common.Network;
+using NetworkMessages.FromServer;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
@@ -62,7 +63,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
         base.AddRemoveMessageHandlers(registerer);
-        registerer.Register<CrpgDtvSetTimerMessage>(HandleSetTimer);
+        registerer.Register<CrpgSetGameTimerMessage>(HandleSetTimer);
         registerer.Register<CrpgDtvRoundStartMessage>(HandleRoundStart);
         registerer.Register<CrpgDtvWaveStartMessage>(HandleWaveStart);
         registerer.Register<CrpgDtvVipUnderAttackMessage>(HandleVipUnderAttack);
@@ -72,7 +73,7 @@ internal class CrpgDtvClient : MissionMultiplayerGameModeBaseClient
         registerer.Register<SetRangedSiegeWeaponAmmo>(HandleServerSetRangedSiegeWeaponAmmo);
     }
 
-    private void HandleSetTimer(CrpgDtvSetTimerMessage message)
+    private void HandleSetTimer(CrpgSetGameTimerMessage message)
     {
         TimerComponent.StartTimerAsClient(message.StartTime, message.Duration);
     }

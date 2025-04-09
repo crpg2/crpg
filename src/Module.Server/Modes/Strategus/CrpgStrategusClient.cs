@@ -1,4 +1,5 @@
-﻿using Crpg.Module.Modes.Dtv;
+﻿using Crpg.Module.Common.Network;
+using Crpg.Module.Modes.Dtv;
 using NetworkMessages.FromServer;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
@@ -59,6 +60,7 @@ internal class CrpgStrategusClient : MissionMultiplayerGameModeBaseClient
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
         base.AddRemoveMessageHandlers(registerer);
+        registerer.Register<CrpgSetGameTimerMessage>(HandleSetTimer);
         registerer.Register<CrpgStrategusTicketCountUpdateMessage>(HandleTicketCountUpdate);
     }
 
@@ -67,5 +69,10 @@ internal class CrpgStrategusClient : MissionMultiplayerGameModeBaseClient
         AttackerTicketCount = message.AttackerTickets;
         DefenderTicketCount = message.DefenderTickets;
         OnUpdateTicketCount?.Invoke();
+    }
+
+    private void HandleSetTimer(CrpgSetGameTimerMessage message)
+    {
+        TimerComponent.StartTimerAsClient(message.StartTime, message.Duration);
     }
 }
