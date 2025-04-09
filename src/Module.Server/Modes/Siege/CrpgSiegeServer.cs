@@ -136,17 +136,17 @@ internal class CrpgSiegeServer : MissionMultiplayerGameModeBase, IAnalyticsFlagI
 
     public override bool CheckForWarmupEnd()
     {
-        int playersReady = 0;
+        int playersInTeam = 0;
         foreach (NetworkCommunicator networkPeer in GameNetwork.NetworkPeers)
         {
             MissionPeer component = networkPeer.GetComponent<MissionPeer>();
             if (networkPeer.IsSynchronized && component?.Team != null && component.Team.Side != BattleSideEnum.None)
             {
-                playersReady += 1;
+                playersInTeam += 1;
             }
         }
 
-        return playersReady >= MultiplayerOptions.OptionType.MaxNumberOfPlayers.GetIntValue();
+        return playersInTeam >= MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue();
     }
 
     public override void OnClearScene()

@@ -360,7 +360,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
                 double swingTimeFactor = 1 - Polynomial(125) + Polynomial(equippedItem.WeaponLength);
 
-                float cappedSwingSpeedFactor = MBMath.ClampFloat((float)(1 / swingTimeFactor), 0.25f, 1f);
+                float cappedSwingSpeedFactor = MBMath.ClampFloat((float)(1 / swingTimeFactor), 0.25f, 0.91f);
                 props.SwingSpeedMultiplier *= HasSwingDamage(primaryItem) ? cappedSwingSpeedFactor : 1f;
                 // Thrustspeed Nerf on Horseback
                 props.ThrustOrRangedReadySpeedMultiplier *= 0.84f;
