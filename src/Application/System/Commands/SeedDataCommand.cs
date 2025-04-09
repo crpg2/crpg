@@ -571,7 +571,6 @@ public record SeedDataCommand : IMediatorRequest
                 }
             }
 
-            // TODO:
             await _db.SaveChangesAsync(cancellationToken);
 
             UserItem takeoItem1 = new() { User = takeo, ItemId = "crpg_thamaskene_steel_spatha_v1_h3" };
@@ -585,21 +584,21 @@ public record SeedDataCommand : IMediatorRequest
             UserItem orleItem7 = new() { User = orle, ItemId = "crpg_battania_fur_boots_v2_h3" };
             UserItem orleItem8 = new() { User = orle, ItemId = "crpg_nordic_leather_cap_v2_h3" };
             UserItem orleItem9 = new() { User = orle, ItemId = "crpg_eastern_wrapped_armguards_v2_h3" };
-            UserItem orleItem10 = new() { User = orle, ItemId = "crpg_blacksmith_hammer_v2_h0" };
+            UserItem orleItem10 = new() { User = orle, ItemId = "crpg_blacksmith_hammer_v3_h0" };
             UserItem orleItem11 = new() { User = orle, ItemId = "crpg_scythe_v2_h3" };
             UserItem orleItem12 = new() { User = orle, ItemId = "crpg_rondel_v2_h3" };
             UserItem orleItem13 = new() { User = orle, ItemId = "crpg_crossbow_j_v4_h3" };
             UserItem orleItem14 = new() { User = orle, ItemId = "crpg_helping_hand_v3_h2" };
             UserItem orleItem15 = new() { User = orle, ItemId = "crpg_bolt_c_v4_h0" };
-            UserItem orleItem16 = new() { User = orle, ItemId = "crpg_wooden_sword_v2_h3" };
+            UserItem orleItem16 = new() { User = orle, ItemId = "crpg_wooden_sword_v3_h3" };
             UserItem orleItem17 = new() { User = orle, ItemId = "crpg_basic_imperial_leather_armor_v2_h3" };
-            UserItem orleItem18 = new() { User = orle, ItemId = "crpg_wooden_twohander_v2_h3" };
+            UserItem orleItem18 = new() { User = orle, ItemId = "crpg_wooden_twohander_v3_h3" };
             UserItem orleItem19 = new() { User = orle, ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h1" };
-            UserItem elmarykItem1 = new() { User = elmaryk, ItemId = "crpg_longsword_v1_h3" };
-            UserItem elmarykItem2 = new() { User = elmaryk, ItemId = "crpg_avalanche_v1_h2" };
+            UserItem elmarykItem1 = new() { User = elmaryk, ItemId = "crpg_longsword_v2_h3" };
+            UserItem elmarykItem2 = new() { User = elmaryk, ItemId = "crpg_avalanche_v2_h2" };
             UserItem laHireItem1 = new() { User = laHire, ItemId = "crpg_iron_cavalry_sword_v1_h1" };
             UserItem laHirekItem2 = new() { User = laHire, ItemId = "crpg_simple_saber_v1_h2" };
-            UserItem laHirekItem3 = new() { User = laHire, ItemId = "crpg_steel_round_shield_v3_h0" };
+            UserItem laHirekItem3 = new() { User = laHire, ItemId = "crpg_steel_round_shield_v4_h0" };
 
             UserItem[] newUserItems =
             {
@@ -1403,7 +1402,6 @@ public record SeedDataCommand : IMediatorRequest
                 new() { Type = ActivityLogType.ChatMessageSent, User = takeo, CreatedAt = DateTime.UtcNow.AddMinutes(-3), Metadata = { new("message", "Do you get it?"), new("instance", "crpg01a"), }, },
                 new() { Type = ActivityLogType.TeamHit, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+3), Metadata = { new("targetUserId", takeo.Id.ToString()), new("damage", "123"), new("instance", "crpg01a"), }, },
                 new() { Type = ActivityLogType.TeamHit, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+6), Metadata = { new("targetUserId", namidaka.Id.ToString()), new("damage", "333"), new("instance", "crpg01a"), }, },
-                new() { Type = ActivityLogType.TeamHit, User = takeo, CreatedAt = DateTime.UtcNow.AddMinutes(-1), },
             };
 
             ActivityLog[] characterEarnedActivityLogs =

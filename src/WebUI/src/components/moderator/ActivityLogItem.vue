@@ -17,6 +17,7 @@ const { user, activityLog, isSelfUser, dict } = defineProps<{
 
 const emit = defineEmits<{
   addType: [type: ActivityLogType]
+  addUser: [user: number]
 }>()
 
 const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
@@ -32,7 +33,7 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
         :to="{ name: 'ModeratorUserIdRestrictions', params: { id: user.id } }"
         class="inline-block hover:text-content-100"
       >
-        <UserMedia :user="user" />
+        <UserMedia :user />
       </RouterLink>
 
       <div class="text-2xs text-content-300">
@@ -43,7 +44,6 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
         class="ml-auto mr-0"
         variant="primary"
         :label="activityLog.type"
-        data-aq-addLogItem-type
         @click="emit('addType', activityLog.type)"
       />
     </div>
@@ -52,6 +52,31 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
       :keypath="`activityLog.tpl.${activityLog.type}`"
       :activity-log="activityLog"
       :dict
-    />
+    >
+      <template #user="{ user: scopeUser }">
+        <div
+          class="inline-flex items-center gap-1 align-middle"
+        >
+          <RouterLink
+            :to="{
+              name: 'ModeratorUserIdRestrictions',
+              params: { id: activityLog.metadata.targetUserId },
+            }"
+            class="inline-block hover:text-content-100"
+            target="_blank"
+          >
+            <UserMedia :user="scopeUser" class=" text-content-100" />
+          </RouterLink>
+          <OButton
+            v-if="isSelfUser"
+            size="2xs"
+            icon-left="add"
+            rounded
+            variant="secondary"
+            @click="$emit('addUser', scopeUser.id)"
+          />
+        </div>
+      </template>
+    </MetadataRender>
   </div>
 </template>

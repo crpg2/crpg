@@ -4,6 +4,7 @@ import { I18nT } from 'vue-i18n'
 
 import type { ActivityLog, ActivityLogMetadataDicts } from '~/models/activity-logs'
 import type { ClanMemberRole } from '~/models/clan'
+import type { UserPublic } from '~/models/user'
 
 import Coin from '~/components/app/Coin.vue'
 import Loom from '~/components/app/Loom.vue'
@@ -26,6 +27,10 @@ defineEmits<{
   delete: []
 }>()
 
+const slots = defineSlots<{
+  user: (props: { user: UserPublic }) => any
+}>()
+
 const getClanById = (clanId: number) => dict.clans.find(({ id }) => id === clanId)
 
 const getUserById = (userId: number) => dict.users.find(({ id }) => id === userId)
@@ -45,22 +50,20 @@ const renderUserClan = (clanId: number) => {
 
 const renderUser = (userId: number) => {
   const user = getUserById(userId)
+
   return user
-    ? h(UserMedia, {
-      user,
-      class: 'inline-flex items-center gap-1 align-middle font-bold text-content-100',
-    })
+    ? slots?.user({ user }) || h(UserMedia, { user, class: 'text-content-100' })
     : renderStrong(String(userId))
 }
 
-const renderCharacter = () => {
-  const character = getCharacterById(Number(activityLog.characterId))
+const renderCharacter = (characterId: number) => {
+  const character = getCharacterById(Number(characterId))
   return character
     ? h(CharacterMedia, {
-      character,
+      character, // TODO: FIXME:
       class: 'inline-flex items-center gap-1 align-middle font-bold text-content-100',
     })
-    : renderStrong(activityLog.characterId)
+    : renderStrong(String(characterId))
 }
 
 const renderItem = (itemId: string) => {
@@ -98,6 +101,7 @@ const Render = () => {
       userId,
       targetUserId,
       actorUserId,
+      characterId,
       generation,
       level,
       gold,
@@ -132,7 +136,7 @@ const Render = () => {
       ...((activityLog.userId || userId) && { user: () => renderUser(Number(activityLog.userId || userId)) }),
       ...(targetUserId && { targetUser: () => renderUser(Number(targetUserId)) }),
       ...(actorUserId && { actorUser: () => renderUser(Number(actorUserId)) }),
-      character: renderCharacter,
+      ...(characterId && { character: () => renderCharacter(Number(characterId)) }),
       ...(generation && { generation: () => renderStrong(generation) }),
       ...(level && { level: () => renderStrong(level) }),
       ...(gold && { gold: () => renderGold(Number(gold)) }),

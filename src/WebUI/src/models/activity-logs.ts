@@ -1,5 +1,5 @@
+import type { CharacterPublic } from './character'
 import type { Clan } from './clan'
-import type { CharacterCompetitive } from './competitive'
 import type { UserPublic } from './user'
 
 export enum ActivityLogType {
@@ -54,6 +54,6 @@ export interface ActivityLog<T = { [key: string]: string }> {
 
 export interface ActivityLogMetadataDicts {
   users: UserPublic[]
-  characters: CharacterCompetitive[]
+  characters: CharacterPublic[]
   clans: Clan[]
 }
