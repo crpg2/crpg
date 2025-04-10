@@ -1,7 +1,3 @@
-import type { CharacterPublic } from './character'
-import type { Clan } from './clan'
-import type { UserPublic } from './user'
-
 export enum ActivityLogType {
   UserCreated = 'UserCreated',
   UserDeleted = 'UserDeleted',
@@ -50,10 +46,4 @@ export interface ActivityLog<T = { [key: string]: string }> {
   userId: number
   createdAt: Date
   metadata: T
-}
-
-export interface ActivityLogMetadataDicts {
-  users: UserPublic[]
-  characters: CharacterPublic[]
-  clans: Clan[]
 }

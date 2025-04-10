@@ -56,6 +56,10 @@ export const useUserStore = defineStore('user', () => {
     )
   })
 
+  const hasUnreadNotifications = computed(() => user.value?.unreadNotificationsCount !== undefined
+    ? user.value.unreadNotificationsCount > 0
+    : false)
+
   const { state: restriction, execute: fetchUserRestriction } = useAsyncState(() => getUserRestriction(), null, { resetOnExecute: false, immediate: false })
 
   const subtractGold = (loss: number) => {
@@ -104,5 +108,7 @@ export const useUserStore = defineStore('user', () => {
 
     userClan,
     fetchUserClanAndRole,
+
+    hasUnreadNotifications,
   }
 })

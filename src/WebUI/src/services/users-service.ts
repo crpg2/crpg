@@ -9,10 +9,13 @@ import type {
   User,
   UserItem,
   UserItemsByType,
+  UserNotification,
+  UserNotificationsWithDicts,
   UserPrivate,
   UserPublic,
 } from '~/models/user'
 
+import { CharacterPublic } from '~/models/character'
 import { mapClanResponse } from '~/services/clan-service'
 import { del, get, post, put } from '~/services/crpg-client'
 import { mapRestrictions } from '~/services/restriction-service'
@@ -101,3 +104,26 @@ export const mapUserToUserPublic = (user: User, userClan: Clan | null): UserPubl
   ...pick(user, ['id', 'platform', 'platformUserId', 'name', 'region', 'avatar']),
   clan: userClan,
 })
+
+// TODO: FIXME: SPEC
+export const getUserNotifications = async (): Promise<UserNotificationsWithDicts> => {
+  const { notifications, dict } = await get<UserNotificationsWithDicts>('/users/self/notifications')
+
+  return {
+    notifications,
+    dict: {
+      ...dict,
+      // @ts-expect-error TODO:
+      clans: dict.clans.map(mapClanResponse),
+    },
+  }
+}
+
+export const readUserNotification = (id: number) =>
+  put<UserNotification>(`/users/self/notifications/${id}`)
+
+export const readAllUserNotifications = () => put(`/users/self/notifications/readAll`)
+
+export const deleteUserNotification = (id: number) => del(`/users/self/notifications/${id}`)
+
+export const deleteAllUserNotifications = () => del(`/users/self/notifications/deleteAll`)

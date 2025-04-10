@@ -72,6 +72,7 @@ declare module 'vue' {
     MetadataRender: typeof import('./../components/app/MetadataRender.vue')['default']
     Modal: typeof import('./../components/ui/Modal.vue')['default']
     MoreOptionsDropdownButton: typeof import('./../components/app/MoreOptionsDropdownButton.vue')['default']
+    NotificationCard: typeof import('./../components/app/NotificationCard.vue')['default']
     NumericInput: typeof import('./../components/ui/NumericInput.vue')['default']
     OnlinePlayers: typeof import('./../components/app/OnlinePlayers.vue')['default']
     Pagination: typeof import('./../components/ui/Pagination.vue')['default']

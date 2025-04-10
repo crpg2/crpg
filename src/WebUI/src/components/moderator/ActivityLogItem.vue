@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type {
   ActivityLog,
-  ActivityLogMetadataDicts,
   ActivityLogType,
 } from '~/models/activity-logs'
+import type { MetadataDict } from '~/models/metadata'
 import type { UserPublic } from '~/models/user'
 
 import { useLocaleTimeAgo } from '~/composables/use-locale-time-ago'
@@ -11,7 +11,7 @@ import { useLocaleTimeAgo } from '~/composables/use-locale-time-ago'
 const { user, activityLog, isSelfUser, dict } = defineProps<{
   activityLog: ActivityLog
   user: UserPublic
-  dict: ActivityLogMetadataDicts
+  dict: MetadataDict
   isSelfUser: boolean
 }>()
 
@@ -50,7 +50,7 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
 
     <MetadataRender
       :keypath="`activityLog.tpl.${activityLog.type}`"
-      :activity-log="activityLog"
+      :metadata="activityLog.metadata"
       :dict
     >
       <template #user="{ user: scopeUser }">
