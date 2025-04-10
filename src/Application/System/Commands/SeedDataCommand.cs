@@ -1447,21 +1447,16 @@ public record SeedDataCommand : IMediatorRequest
 
             UserNotification[] orleNotifications =
             {
+                _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, 100, 1, orleItem1.ItemId),
                 _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, orleItem1.ItemId, 2, 1222),
-            };
-
-            // var orleNotificationClanApplicationCreatedToOfficers1.CreatedAt = DateTime.UtcNow.AddMinutes(-112);
-            // var orleNotificationClanApplicationCreatedToOfficers2 = _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, activityLogClanApplicationCreated2.Id);
-            // orleNotificationClanApplicationCreatedToOfficers2.State = NotificationState.Read;
-            // _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, activityLogClanApplicationCreated3.Id);
-            // _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, activityLogUserRewarded1.Id);
-            // _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, activityLogUserRewarded2.Id);
-
-            // _userNotificationService.CreateClanApplicationAcceptedToUserNotification(orle.Id, activityLogClanApplicationAccepted1.Id);
-            // _userNotificationService.CreateClanApplicationDeclinedToUserNotification(orle.Id, activityLogClanApplicationDeclined1.Id);
-            // _userNotificationService.CreateClanApplicationCreatedToUserNotification(orle.Id, activityLogClanApplicationCreated1.Id);
-            // _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, activityLogItemReturned1.Id);
-            // _userNotificationService.CreateClanMemberRoleChangedToUserNotification(orle.Id, activityLogClanMemberRoleChange1.Id);
+                _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, pecores.Id),
+                _userNotificationService.CreateClanApplicationCreatedToUserNotification(orle.Id, pecores.Id),
+                _userNotificationService.CreateClanApplicationAcceptedToUserNotification(orle.Id, pecores.Id),
+                _userNotificationService.CreateClanApplicationDeclinedToUserNotification(orle.Id, pecores.Id),
+                _userNotificationService.CreateClanMemberRoleChangedToUserNotification(orle.Id, pecores.Id, takeo.Id, ClanMemberRole.Officer, ClanMemberRole.Leader),
+                _userNotificationService.CreateClanMemberLeavedToLeaderNotification(orle.Id, pecores.Id),
+        };
+            //
             // _userNotificationService.CreateClanMemberLeavedToLeaderNotification(orle.Id, activityLogClanMemberLeaved1.Id);
             // _userNotificationService.CreateClanMemberKickedToExMemberNotification(orle.Id, activityLogClanMemberKicked1.Id);
             // _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, activityLogCharacterRewarded1.Id);

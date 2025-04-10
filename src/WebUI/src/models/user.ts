@@ -1,22 +1,24 @@
 import type { Clan } from './clan'
 import type { Item, ItemSlot, ItemType } from './item'
+import type { NotificationState } from './notifications'
 import type { Platform } from './platform'
 import type { Region } from './region'
 import type Role from './role'
 
 export interface User {
   id: number
-  role: Role
+  platform: Platform
+  platformUserId: string
   name: string
   gold: number
   avatar: string
   region: Region
   isDonor: boolean
-  platform: Platform
-  platformUserId: string
+  role: Role
   heirloomPoints: number
   experienceMultiplier: number
   activeCharacterId: number | null
+  unreadNotificationsCount: number
 }
 
 export interface UserPublic
@@ -53,3 +55,11 @@ export interface UserItemsByType {
 }
 
 export type UserItemsBySlot = Record<ItemSlot, UserItem>
+
+export interface UserNotification {
+  id: number
+  createdAt: Date
+  type: string
+  state: NotificationState
+  metadata: Record<string, string>
+}
