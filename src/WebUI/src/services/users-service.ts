@@ -21,17 +21,6 @@ export const getUser = () => get<User>('/users/self')
 
 export const deleteUser = () => del('/users/self')
 
-// TODO: SPEC
-export const getUsersByIds = (payload: number[]) =>
-  get<UserPrivate[]>(
-    `/users?${qs.stringify(
-      { id: payload },
-      {
-        arrayFormat: 'brackets',
-      },
-    )}`,
-  )
-
 export const getUserById = (id: number) => get<UserPrivate>(`/users/${id}`)
 
 export const updateUserNote = (id: number, user: { note: string }) =>

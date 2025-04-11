@@ -1,4 +1,5 @@
-﻿using TaleWorlds.Core;
+﻿using Crpg.Module.Modes.Warmup;
+using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View;
@@ -17,10 +18,21 @@ internal class CrpgHudExtensionHandler : MissionView
     private GauntletLayer? _gauntletLayer;
     private SpriteCategory? _mpMissionCategory;
     private MissionLobbyComponent? _lobbyComponent;
+    private CrpgWarmupComponent? _warmupComponent;
 
     public CrpgHudExtensionHandler()
     {
         ViewOrderPriority = 2;
+    }
+
+    public override void AfterStart()
+    {
+        base.AfterStart();
+        _warmupComponent = Mission.GetMissionBehavior<CrpgWarmupComponent>();
+        if (_warmupComponent != null)
+        {
+            _warmupComponent.OnUpdatePlayerCount += OnUpdatePlayerCount;
+        }
     }
 
     public override void OnMissionScreenInitialize()
@@ -53,6 +65,10 @@ internal class CrpgHudExtensionHandler : MissionView
         _gauntletLayer = null;
         Game.Current.EventManager.UnregisterEvent<MissionPlayerToggledOrderViewEvent>(OnMissionPlayerToggledOrderViewEvent);
         base.OnMissionScreenFinalize();
+        if (_warmupComponent != null)
+        {
+            _warmupComponent.OnUpdatePlayerCount -= OnUpdatePlayerCount;
+        }
     }
 
     public override void OnMissionScreenTick(float dt)
@@ -69,5 +85,10 @@ internal class CrpgHudExtensionHandler : MissionView
     private void OnPostMatchEnded()
     {
         _dataSource!.ShowHud = false;
+    }
+
+    private void OnUpdatePlayerCount(int requiredPlayers)
+    {
+        _dataSource!.OnUpdateRequiredPlayers(requiredPlayers);
     }
 }

@@ -681,7 +681,7 @@ public class GetLeaderboardQueryTest : TestBase
 
         Assert.That(result.Data!.First().Id, Is.EqualTo(orleCharacter1.Id));
 
-        cache.TryGetValue("leaderboard", out IList<Application.Characters.Models.CharacterPublicViewModel>? resultFromCache);
+        cache.TryGetValue("leaderboard", out IList<Application.Characters.Models.CharacterPublicCompetitiveViewModel>? resultFromCache);
 
         Assert.That(resultFromCache?.First().Id, Is.EqualTo(orleCharacter1.Id));
     }

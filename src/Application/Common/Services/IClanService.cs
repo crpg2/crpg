@@ -13,7 +13,6 @@ internal interface IClanService
     Error? CheckClanMembership(User user, int clanId);
     Task<Result<ClanMember>> JoinClan(ICrpgDbContext db, User user, int clanId, CancellationToken cancellationToken);
     Task<Result> LeaveClan(ICrpgDbContext db, ClanMember member, CancellationToken cancellationToken);
-
     Task<Result<ClanArmoryItem>> AddArmoryItem(ICrpgDbContext db, Clan clan, User user, int userItemId, CancellationToken cancellationToken = default);
     Task<Result> RemoveArmoryItem(ICrpgDbContext db, Clan clan, User user, int userItemId, CancellationToken cancellationToken = default);
     Task<Result<ClanArmoryBorrowedItem>> BorrowArmoryItem(ICrpgDbContext db, Clan clan, User user, int userItemId, CancellationToken cancellationToken = default);
@@ -22,6 +21,13 @@ internal interface IClanService
 
 internal class ClanService : IClanService
 {
+    private readonly IActivityLogService _activityLogService;
+
+    public ClanService(IActivityLogService activityLogService)
+    {
+        _activityLogService = activityLogService;
+    }
+
     public async Task<Result<User>> GetClanMember(ICrpgDbContext db, int userId, int clanId, CancellationToken cancellationToken)
     {
         var user = await db.Users
@@ -96,17 +102,18 @@ internal class ClanService : IClanService
             }
 
             db.Clans.Remove(member.Clan);
+            db.ActivityLogs.Add(_activityLogService.CreateClanDeletedLog(member.UserId, member.ClanId));
         }
 
         await db.Entry(member)
             .Collection(cm => cm.ArmoryItems)
             .Query().Include(ci => ci.BorrowedItem!).ThenInclude(bi => bi.UserItem!).ThenInclude(ui => ui.EquippedItems)
-            .LoadAsync();
+            .LoadAsync(cancellationToken);
 
         await db.Entry(member)
             .Collection(cm => cm.ArmoryBorrowedItems)
             .Query().Include(bi => bi.UserItem!).ThenInclude(ui => ui.EquippedItems)
-            .LoadAsync();
+            .LoadAsync(cancellationToken);
 
         db.EquippedItems.RemoveRange(member.ArmoryItems.SelectMany(ci => ci.BorrowedItem != null ? ci.BorrowedItem.UserItem!.EquippedItems : new()));
         db.EquippedItems.RemoveRange(member.ArmoryBorrowedItems.SelectMany(bi => bi.UserItem!.EquippedItems));
@@ -115,6 +122,9 @@ internal class ClanService : IClanService
         db.ClanArmoryItems.RemoveRange(member.ArmoryItems);
 
         db.ClanMembers.Remove(member);
+
+        db.ActivityLogs.Add(_activityLogService.CreateClanMemberLeavedLog(member.UserId, member.ClanId));
+
         return Result.NoErrors;
     }
 
@@ -201,11 +211,11 @@ internal class ClanService : IClanService
     {
         await db.Entry(user)
             .Reference(u => u.ClanMembership)
-            .LoadAsync();
+            .LoadAsync(cancellationToken);
 
         await db.Entry(user)
             .Collection(u => u.Items)
-            .LoadAsync();
+            .LoadAsync(cancellationToken);
 
         var errors = CheckClanMembership(user, clan.Id);
         if (errors != null)
@@ -243,7 +253,7 @@ internal class ClanService : IClanService
     {
         await db.Entry(user)
             .Reference(u => u.ClanMembership)
-            .LoadAsync();
+            .LoadAsync(cancellationToken);
 
         var errors = CheckClanMembership(user, clan.Id);
         if (errors != null)

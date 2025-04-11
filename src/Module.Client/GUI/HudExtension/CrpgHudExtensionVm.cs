@@ -51,6 +51,7 @@ internal class CrpgHudExtensionVm : ViewModel
     private bool _isGeneralWarningCountdownActive;
     private ImageIdentifierVM? _allyBanner;
     private ImageIdentifierVM? _enemyBanner;
+    private int _requiredPlayers;
 
     public CrpgHudExtensionVm(Mission mission)
     {
@@ -580,8 +581,9 @@ internal class CrpgHudExtensionVm : ViewModel
     {
         base.RefreshValues();
         string strValue = MultiplayerOptions.OptionType.GameType.GetStrValue();
-        TextObject textObject = new("{=XJTX8w8M}Warmup Phase - {GAME_MODE}\nWaiting for players to join");
+        TextObject textObject = new("{=XJTX8w8Q}Warmup Phase - {GAME_MODE}\nWaiting for {PLAYERS} player(s) to join");
         textObject.SetTextVariable("GAME_MODE", GameTexts.FindText("str_multiplayer_official_game_type_name", strValue));
+        textObject.SetTextVariable("PLAYERS", _requiredPlayers);
         WarmupInfoText = textObject.ToString();
         SpectatorControls!.RefreshValues();
     }
@@ -636,6 +638,12 @@ internal class CrpgHudExtensionVm : ViewModel
         {
             ReflectionHelper.InvokeMethod(_spectatorControls, "OnSpectatedAgentFocusOut", new object[] { followedPeer });
         }
+    }
+
+    public void OnUpdateRequiredPlayers(int requiredPlayers)
+    {
+        _requiredPlayers = requiredPlayers;
+        RefreshValues();
     }
 
     private void OnMissionReset(object sender, PropertyChangedEventArgs e)

@@ -1,6 +1,7 @@
 ﻿using Crpg.Module.Common;
 using Crpg.Module.Common.Commander;
 using Crpg.Module.Helpers;
+using Crpg.Module.Modes.Dtv;
 using Crpg.Module.Modes.Duel;
 using Crpg.Module.Modes.Siege;
 using TaleWorlds.Core;
@@ -42,6 +43,7 @@ internal class CrpgMissionMarkerVm : ViewModel
     private MBBindingList<MissionPeerMarkerTargetVM> _peerTargets = default!;
     private MBBindingList<MissionSiegeEngineMarkerTargetVM> _siegeEngineTargets = default!;
     private MBBindingList<MissionAlwaysVisibleMarkerTargetVM> _alwaysVisibleTargets = default!;
+    private bool _isVipOutlined = false;
 
     public CrpgMissionMarkerVm(Camera missionCamera, MissionMultiplayerGameModeBaseClient gameModeClient)
     {
@@ -183,12 +185,21 @@ internal class CrpgMissionMarkerVm : ViewModel
             _fadeOutTimerStarted = false;
             _fadeOutTimer = 0f;
             _prevEnabledState = IsEnabled;
+            if (_gameModeClient is CrpgDtvClient)
+            {
+                HighlightVipAgent(true);
+            }
+
         }
         else
         {
             if (_prevEnabledState)
             {
                 _fadeOutTimerStarted = true;
+                if (_gameModeClient is CrpgDtvClient)
+               {
+                    HighlightVipAgent(false);
+               }
             }
 
             if (_fadeOutTimerStarted)
@@ -247,6 +258,27 @@ internal class CrpgMissionMarkerVm : ViewModel
             if (newTeam.Side == firstScriptOfType.Side)
             {
                 SiegeEngineTargets.Add(new MissionSiegeEngineMarkerTargetVM(firstScriptOfType));
+            }
+        }
+    }
+
+    // Used to highlight the viscount when the info key is pressed
+    private void HighlightVipAgent(bool enabled)
+    {
+        CrpgDtvClient dtvClient = (CrpgDtvClient)_gameModeClient;
+
+        if (dtvClient.VipAgent != null)
+        {
+            if (enabled && !_isVipOutlined)
+            {
+                uint focusedContourColor = new TaleWorlds.Library.Color(1f, 0.84f, 0.35f, 1f).ToUnsignedInteger();
+                dtvClient.VipAgent.AgentVisuals?.SetContourColor(focusedContourColor, true);
+                _isVipOutlined = true;
+            }
+            else if (!enabled && _isVipOutlined)
+            {
+                dtvClient.VipAgent.AgentVisuals?.SetContourColor(null);
+                _isVipOutlined = false;
             }
         }
     }

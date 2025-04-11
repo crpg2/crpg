@@ -171,7 +171,17 @@ internal class CrpgConquestServer : MissionMultiplayerGameModeBase, IAnalyticsFl
 
     public override bool CheckForWarmupEnd()
     {
-        return false;
+        int playersInTeam = 0;
+        foreach (NetworkCommunicator networkPeer in GameNetwork.NetworkPeers)
+        {
+            MissionPeer component = networkPeer.GetComponent<MissionPeer>();
+            if (networkPeer.IsSynchronized && component?.Team != null && component.Team.Side != BattleSideEnum.None)
+            {
+                playersInTeam += 1;
+            }
+        }
+
+        return playersInTeam >= MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue();
     }
 
     public override void OnClearScene()

@@ -73,6 +73,7 @@ internal class CrpgRewardServer : MissionLogic
         if (_warmupComponent != null)
         {
             _warmupComponent.OnWarmupEnded += OnWarmupEnded;
+            _warmupComponent.OnWarmupRewardTick += OnWarmupRewardTick;
         }
     }
 
@@ -83,6 +84,7 @@ internal class CrpgRewardServer : MissionLogic
         if (_warmupComponent != null)
         {
             _warmupComponent.OnWarmupEnded -= OnWarmupEnded;
+            _warmupComponent.OnWarmupRewardTick -= OnWarmupRewardTick;
         }
     }
 
@@ -251,7 +253,7 @@ internal class CrpgRewardServer : MissionLogic
 
         var playingPeers = networkPeers
             .Select(p => p.GetComponent<MissionPeer>())
-            .Where(mp => mp != null && mp.Team != Mission.SpectatorTeam)
+            .Where(mp => mp != null && mp.Team != null && mp.Team.Side != BattleSideEnum.None)
             .ToList();
 
         bool veryLowPopulationServer = playingPeers.Count < 2;
@@ -322,7 +324,7 @@ internal class CrpgRewardServer : MissionLogic
                 userUpdate.Statistics.Rating = GetNewRating(crpgPeer);
             }
 
-            bool isPlayerInSpectator = missionPeer.Team?.Side == BattleSideEnum.None;
+            bool isPlayerInSpectator = missionPeer.Team == null || missionPeer.Team?.Side == BattleSideEnum.None;
             if (crpgPeer.LastSpawnInfo != null && !isPlayerInSpectator)
             {
                 bool isValorousPlayer = valorousPlayerIds.Contains(playerId);
@@ -516,6 +518,11 @@ internal class CrpgRewardServer : MissionLogic
     private void OnWarmupEnded()
     {
         _ = UpdateCrpgUsersAsync(durationRewarded: 0, updateUserStats: false);
+    }
+
+    private void OnWarmupRewardTick(float durationReward)
+    {
+        _ = UpdateCrpgUsersAsync(durationRewarded: durationReward, durationUpkeep: 0, constantMultiplier: 2, updateUserStats: false);
     }
 
     private void SetRewardForConnectedPlayer(

@@ -22,7 +22,7 @@ const {
 </script>
 
 <template>
-  <div class="flex items-center gap-1.5">
+  <div class="inline-flex items-center gap-1 align-middle">
     <img
       :src="user.avatar"
       class="rounded-full"

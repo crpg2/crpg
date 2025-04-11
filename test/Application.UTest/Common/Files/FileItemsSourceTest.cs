@@ -95,7 +95,8 @@ public class FileItemsSourceTest
         var items = (await new FileItemsSource().LoadItems())
             .Select(i => i.Id)
             .ToHashSet();
-        string GetFilePath([CallerFilePath] string path = "")
+
+        static string GetFilePath([CallerFilePath] string path = "")
         {
             return path;
         }
@@ -155,9 +156,9 @@ public class FileItemsSourceTest
                 }
             }
 
-            //uncomment to automatically replace with suggestions
-            //charactersDoc.Save(charactersFilePath);
-            //dtvCharactersDoc.Save(dtvCharactersFilePath);
+            // uncomment to automatically replace with suggestions
+            // charactersDoc.Save(charactersFilePath);
+            // dtvCharactersDoc.Save(dtvCharactersFilePath);
         });
     }
 }

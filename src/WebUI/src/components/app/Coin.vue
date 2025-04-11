@@ -1,15 +1,11 @@
 <script setup lang="ts">
-const { value } = defineProps<{ value?: number }>()
+const { value = 0 } = defineProps<{ value?: number }>()
 </script>
 
 <template>
-  <span class="inline-flex gap-1.5 align-text-bottom font-bold text-primary">
-    <SvgSpriteImg
-      name="coin"
-      viewBox="0 0 18 18"
-      class="w-4"
-    />
+  <span class="inline-flex gap-1.5 align-middle font-bold text-primary">
+    <SvgSpriteImg name="coin" viewBox="0 0 18 18" class="w-4" />
     <slot v-if="$slots.default" />
-    <template v-else-if="value !== undefined">{{ $n(value) }}</template>
+    <template v-else>{{ $n(value) }}</template>
   </span>
 </template>

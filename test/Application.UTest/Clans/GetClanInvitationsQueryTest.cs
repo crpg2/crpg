@@ -3,13 +3,16 @@ using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Users;
+using Moq;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Clans;
 
 public class GetClanInvitationsQueryTest : TestBase
 {
-    private static readonly IClanService ClanService = new ClanService();
+    private static readonly IActivityLogService ActivityLogService = Mock.Of<IActivityLogService>();
+
+    private static readonly IClanService ClanService = new ClanService(ActivityLogService);
 
     [Test]
     public async Task ShouldReturnErrorIfUserNotFound()

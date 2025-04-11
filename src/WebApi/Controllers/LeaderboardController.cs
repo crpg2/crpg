@@ -19,7 +19,7 @@ public class LeaderboardController : BaseController
     /// <response code="200">Ok.</response>
     [HttpGet("leaderboard")]
     [ResponseCache(Duration = 1 * 60 * 1)] // 1 minutes
-    public Task<ActionResult<Result<IList<CharacterPublicViewModel>>>> GetLeaderboard(
+    public Task<ActionResult<Result<IList<CharacterPublicCompetitiveViewModel>>>> GetLeaderboard(
         [FromQuery] Region? region,
         [FromQuery] CharacterClass? characterClass,
         [FromQuery] GameMode? gameMode)

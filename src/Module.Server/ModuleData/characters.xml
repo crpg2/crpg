@@ -734,7 +734,7 @@
         <equipment slot="Body" id="Item.crpg_imperial_lamellar_over_leather_v3_h0" />
         <equipment slot="Gloves" id="Item.crpg_padded_vambrace_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_strapped_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_hoplite_spear_v4_h0" />
+        <equipment slot="Item0" id="Item.crpg_hoplite_spear_v5_h0" />
         <equipment slot="Item1" id="Item.crpg_leather_round_shield_v4_h0" />
         <equipment slot="Item2" id="Item.crpg_lion_imprinted_saber_v1_h0" />
       </EquipmentRoster>

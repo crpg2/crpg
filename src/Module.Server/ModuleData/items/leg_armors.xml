@@ -1440,4 +1440,148 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_aciv_cts_roman_long_pants_graves_a_h0" name="{=Dionysus}Heavy Roman Greaves with Pants" mesh="cts_roman_long_pants_graves_a" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="25" covers_legs="true" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_long_pants_graves_a_h1" name="{=Dionysus}Heavy Roman Greaves with Pants +1" mesh="cts_roman_long_pants_graves_a" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="26" covers_legs="true" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_long_pants_graves_a_h2" name="{=Dionysus}Heavy Roman Greaves with Pants +2" mesh="cts_roman_long_pants_graves_a" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="28" covers_legs="true" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_long_pants_graves_a_h3" name="{=Dionysus}Heavy Roman Greaves with Pants +3" mesh="cts_roman_long_pants_graves_a" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="30" covers_legs="true" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_bronze_greaves_dual_2_h0" name="{=Dionysus}Sandals with Decorated Bronze Greaves" mesh="cts_greek_greaves_b" is_merchandise="true" subtype="leg_armor" culture="Culture.neutral_culture" weight="1.479339" difficulty="0" appearance="3" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="20" covers_legs="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_bronze_greaves_dual_2_h1" name="{=Dionysus}Sandals with Decorated Bronze Greaves +1" mesh="cts_greek_greaves_b" is_merchandise="true" subtype="leg_armor" culture="Culture.neutral_culture" weight="1.479339" difficulty="0" appearance="3" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="21" covers_legs="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_bronze_greaves_dual_2_h2" name="{=Dionysus}Sandals with Decorated Bronze Greaves +2" mesh="cts_greek_greaves_b" is_merchandise="true" subtype="leg_armor" culture="Culture.neutral_culture" weight="1.479339" difficulty="0" appearance="3" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="23" covers_legs="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_bronze_greaves_dual_2_h3" name="{=Dionysus}Sandals with Decorated Bronze Greaves +3" mesh="cts_greek_greaves_b" is_merchandise="true" subtype="leg_armor" culture="Culture.neutral_culture" weight="1.479339" difficulty="0" appearance="3" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="25" covers_legs="false" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_greaves_a_h0" name="{=Dionysus}Gladiator Greaves" mesh="cts_roman_gladiator_greaves_a" culture="Culture.empire" weight="1.479339" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="20" covers_legs="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_greaves_a_h1" name="{=Dionysus}Gladiator Greaves +1" mesh="cts_roman_gladiator_greaves_a" culture="Culture.empire" weight="1.479339" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="21" covers_legs="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_greaves_a_h2" name="{=Dionysus}Gladiator Greaves +2" mesh="cts_roman_gladiator_greaves_a" culture="Culture.empire" weight="1.479339" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="23" covers_legs="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_greaves_a_h3" name="{=Dionysus}Gladiator Greaves +3" mesh="cts_roman_gladiator_greaves_a" culture="Culture.empire" weight="1.479339" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="25" covers_legs="false" covers_body="false" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_greave_a_h0" name="{=Dionysus}Dacian Greaves with Grey Pants" mesh="cts_dacian_greave_a" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="25" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_greave_a_h1" name="{=Dionysus}Dacian Greaves with Grey Pants +1" mesh="cts_dacian_greave_a" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="26" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_greave_a_h2" name="{=Dionysus}Dacian Greaves with Grey Pants +2" mesh="cts_dacian_greave_a" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="28" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_greave_a_h3" name="{=Dionysus}Dacian Greaves with Grey Pants +3" mesh="cts_dacian_greave_a" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="30" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_greave_b_h0" name="{=Dionysus}Dacian Greaves with Red Pants" mesh="cts_dacian_greave_b" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="25" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_greave_b_h1" name="{=Dionysus}Dacian Greaves with Red Pants +1" mesh="cts_dacian_greave_b" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="26" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_greave_b_h2" name="{=Dionysus}Dacian Greaves with Red Pants +2" mesh="cts_dacian_greave_b" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="28" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_greave_b_h3" name="{=Dionysus}Dacian Greaves with Red Pants +3" mesh="cts_dacian_greave_b" culture="Culture.empire" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="30" covers_legs="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_celtic_graves_pants_a_h0" name="{=Dionysus}Celtic Greaves with Plaid Pants" mesh="cts_celtic_graves_pants_a" culture="Culture.battania" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="25" covers_legs="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_celtic_graves_pants_a_h1" name="{=Dionysus}Celtic Greaves with Plaid Pants +1" mesh="cts_celtic_graves_pants_a" culture="Culture.battania" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="26" covers_legs="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_celtic_graves_pants_a_h2" name="{=Dionysus}Celtic Greaves with Plaid Pants +2" mesh="cts_celtic_graves_pants_a" culture="Culture.battania" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="28" covers_legs="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_celtic_graves_pants_a_h3" name="{=Dionysus}Celtic Greaves with Plaid Pants +3" mesh="cts_celtic_graves_pants_a" culture="Culture.battania" weight="2.021817" difficulty="0" appearance="1" Type="LegArmor">
+    <ItemComponent>
+      <Armor leg_armor="30" covers_legs="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
 </Items>

@@ -1,12 +1,15 @@
 ﻿using Crpg.Application.Clans.Queries;
 using Crpg.Application.Common.Services;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Clans.Armory;
 public class GetClanArmoryQueryTest : TestBase
 {
-    private IClanService ClanService { get; } = new ClanService();
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+
+    private IClanService ClanService { get; } = new ClanService(ActivityLogService.Object);
 
     [Test]
     public async Task ShouldGetClanArmoryItems()

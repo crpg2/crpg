@@ -188,7 +188,6 @@ public class ReforgeUpgradedItemCommandTest : TestBase
             .FirstAsync(u => u.Id == user.Id);
         Assert.That(userDb.Items.Count, Is.EqualTo(2));
         Assert.That(userDb.HeirloomPoints, Is.EqualTo(6));
-
     }
 
     [Test]

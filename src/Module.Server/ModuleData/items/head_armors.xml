@@ -9600,4 +9600,556 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_aciv_cts_roman_feathers_a_h0" name="{=Steve18}Roman Feathered Helmet" mesh="cts_roman_feathers_a" culture="Culture.empire" weight="4.046647" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="47" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_feathers_a_h1" name="{=Steve18}Roman Feathered Helmet +1" mesh="cts_roman_feathers_a" culture="Culture.empire" weight="4.046647" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="49" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_feathers_a_h2" name="{=Steve18}Roman Feathered Helmet +2" mesh="cts_roman_feathers_a" culture="Culture.empire" weight="4.046647" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_feathers_a_h3" name="{=Steve18}Roman Feathered Helmet +3" mesh="cts_roman_feathers_a" culture="Culture.empire" weight="4.046647" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_syrian_helmet_a_h0" name="{=DionysuSteve18}Syrian Auxiliary Helmet" mesh="cts_roman_syrian_helmet_a" culture="Culture.empire" weight="4.046647" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="47" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_syrian_helmet_a_h1" name="{=DionysuSteve18}Syrian Auxiliary Helmet +1" mesh="cts_roman_syrian_helmet_a" culture="Culture.empire" weight="4.046647" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="49" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_syrian_helmet_a_h2" name="{=DionysuSteve18}Syrian Auxiliary Helmet +2" mesh="cts_roman_syrian_helmet_a" culture="Culture.empire" weight="4.046647" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_syrian_helmet_a_h3" name="{=DionysuSteve18}Syrian Auxiliary Helmet +3" mesh="cts_roman_syrian_helmet_a" culture="Culture.empire" weight="4.046647" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_celtic_scordisci_b_h0" name="{=DionysuSteve18}Celtic Scordisci Helm" mesh="cts_celtic_scordisci_b" culture="Culture.battania" subtype="head_armor" weight="4.661901" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_celtic_scordisci_b_h1" name="{=DionysuSteve18}Celtic Scordisci Helm +1" mesh="cts_celtic_scordisci_b" culture="Culture.battania" subtype="head_armor" weight="4.661901" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_celtic_scordisci_b_h2" name="{=DionysuSteve18}Celtic Scordisci Helm +2" mesh="cts_celtic_scordisci_b" culture="Culture.battania" subtype="head_armor" weight="4.661901" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_celtic_scordisci_b_h3" name="{=DionysuSteve18}Celtic Scordisci Helm +3" mesh="cts_celtic_scordisci_b" culture="Culture.battania" subtype="head_armor" weight="4.661901" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="58" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_phrygian_9_h0" name="{=DionysuSteve18}Crested Masked Phrygian Helm" mesh="cts_greek_phrygian_mask_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_9_h1" name="{=DionysuSteve18}Crested Masked Phrygian Helm +1" mesh="cts_greek_phrygian_mask_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_9_h2" name="{=DionysuSteve18}Crested Masked Phrygian Helm +2" mesh="cts_greek_phrygian_mask_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="55" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_9_h3" name="{=DionysuSteve18}Crested Masked Phrygian Helm +3" mesh="cts_greek_phrygian_mask_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="57" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_10_h0" name="{=DionysuSteve18}Masked Phrygian Helm" mesh="cts_greek_phrygian_mask_a1" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_10_h1" name="{=DionysuSteve18}Masked Phrygian Helm +1" mesh="cts_greek_phrygian_mask_a1" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_10_h2" name="{=DionysuSteve18}Masked Phrygian Helm +2" mesh="cts_greek_phrygian_mask_a1" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="55" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_10_h3" name="{=DionysuSteve18}Masked Phrygian Helm +3" mesh="cts_greek_phrygian_mask_a1" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="57" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_11_h0" name="{=DionysuSteve18}Painted Masked Phrygian Helm" mesh="cts_greek_phrygian_mask_a_painted" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_11_h1" name="{=DionysuSteve18}Painted Masked Phrygian Helm +1" mesh="cts_greek_phrygian_mask_a_painted" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_11_h2" name="{=DionysuSteve18}Painted Masked Phrygian Helm +2" mesh="cts_greek_phrygian_mask_a_painted" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="55" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_11_h3" name="{=DionysuSteve18}Painted Masked Phrygian Helm +3" mesh="cts_greek_phrygian_mask_a_painted" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="57" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_12_h0" name="{=DionysuSteve18}Painted Masked Phrygian Helm with Plume" mesh="cts_greek_phrygian_mask_a_painted_a1" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_12_h1" name="{=DionysuSteve18}Painted Masked Phrygian Helm with Plume +1" mesh="cts_greek_phrygian_mask_a_painted_a1" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_12_h2" name="{=DionysuSteve18}Painted Masked Phrygian Helm with Plume +2" mesh="cts_greek_phrygian_mask_a_painted_a1" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="55" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_phrygian_12_h3" name="{=DionysuSteve18}Painted Masked Phrygian Helm with Plume +3" mesh="cts_greek_phrygian_mask_a_painted_a1" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="57" covers_head="false" hair_cover_type="type1" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_1_h0" name="{=DionysuSteve18}Painted Chalcidian Helm with Plume" mesh="cts_chalcidic_a" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="4.046647" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="47" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_1_h1" name="{=DionysuSteve18}Painted Chalcidian Helm with Plume +1" mesh="cts_chalcidic_a" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="4.046647" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="49" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_1_h2" name="{=DionysuSteve18}Painted Chalcidian Helm with Plume +2" mesh="cts_chalcidic_a" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="4.046647" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_1_h3" name="{=DionysuSteve18}Painted Chalcidian Helm with Plume +3" mesh="cts_chalcidic_a" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="4.046647" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_2_h0" name="{=DionysuSteve18}Painted Chalcidian Helm" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="4500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="46" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_2_h1" name="{=DionysuSteve18}Painted Chalcidian Helm +1" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="4500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="48" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_2_h2" name="{=DionysuSteve18}Painted Chalcidian Helm +2" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="4500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="50" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_2_h3" name="{=DionysuSteve18}Painted Chalcidian Helm +3" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="4500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_3_h0" name="{=DionysuSteve18}Bronze Chalcidian Helm" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="3500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="46" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_3_h1" name="{=DionysuSteve18}Bronze Chalcidian Helm +1" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="3500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="48" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_3_h2" name="{=DionysuSteve18}Bronze Chalcidian Helm +2" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="3500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="50" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_3_h3" name="{=DionysuSteve18}Bronze Chalcidian Helm +3" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="3500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_4_h0" name="{=DionysuSteve18}Bronze Chalcidian Helm with Plume" mesh="cts_chalcidic_a3" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="4.046647" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="47" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_4_h1" name="{=DionysuSteve18}Bronze Chalcidian Helm with Plume +1" mesh="cts_chalcidic_a3" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="4.046647" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="49" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_4_h2" name="{=DionysuSteve18}Bronze Chalcidian Helm with Plume +2" mesh="cts_chalcidic_a3" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="4.046647" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_chalcidian_4_h3" name="{=DionysuSteve18}Bronze Chalcidian Helm with Plume +3" mesh="cts_chalcidic_a3" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="4.046647" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_colus_a_crossguard_h0" name="{=DionysuSteve18}Roman Colus with Crossguard" mesh="cts_roman_colus_a_crossguard" culture="Culture.empire" weight="4.661901" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_colus_a_crossguard_h1" name="{=DionysuSteve18}Roman Colus with Crossguard +1" mesh="cts_roman_colus_a_crossguard" culture="Culture.empire" weight="4.661901" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_colus_a_crossguard_h2" name="{=DionysuSteve18}Roman Colus with Crossguard +2" mesh="cts_roman_colus_a_crossguard" culture="Culture.empire" weight="4.661901" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_colus_a_crossguard_h3" name="{=DionysuSteve18}Roman Colus with Crossguard +3" mesh="cts_roman_colus_a_crossguard" culture="Culture.empire" weight="4.661901" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="58" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_celt_helmet_boar_h0" name="{=DionysuSteve18}Celtic Boar Helmet" mesh="cts_celt_helmet_boar" culture="Culture.battania" subtype="head_armor" weight="3.228808" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="40" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_celt_helmet_boar_h1" name="{=DionysuSteve18}Celtic Boar Helmet +1" mesh="cts_celt_helmet_boar" culture="Culture.battania" subtype="head_armor" weight="3.228808" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="42" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_celt_helmet_boar_h2" name="{=DionysuSteve18}Celtic Boar Helmet +2" mesh="cts_celt_helmet_boar" culture="Culture.battania" subtype="head_armor" weight="3.228808" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="44" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_celt_helmet_boar_h3" name="{=DionysuSteve18}Celtic Boar Helmet +3" mesh="cts_celt_helmet_boar" culture="Culture.battania" subtype="head_armor" weight="3.228808" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_epirus_helmet_h0" name="{=DionysuSteve18}Epirus Plumed Helmet" mesh="cts_greek_epirus_helmet" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.661901" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_epirus_helmet_h1" name="{=DionysuSteve18}Epirus Plumed Helmet +1" mesh="cts_greek_epirus_helmet" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.661901" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="54" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_epirus_helmet_h2" name="{=DionysuSteve18}Epirus Plumed Helmet +2" mesh="cts_greek_epirus_helmet" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.661901" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="56" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_epirus_helmet_h3" name="{=DionysuSteve18}Epirus Plumed Helmet +3" mesh="cts_greek_epirus_helmet" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.661901" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="58" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_epirus_helmet_a_h0" name="{=DionysuSteve18}Epirus Helmet with Laurea" mesh="cts_greek_epirus_helmet_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_epirus_helmet_a_h1" name="{=DionysuSteve18}Epirus Helmet with Laurea +1" mesh="cts_greek_epirus_helmet_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_epirus_helmet_a_h2" name="{=DionysuSteve18}Epirus Helmet with Laurea +2" mesh="cts_greek_epirus_helmet_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="55" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_epirus_helmet_a_h3" name="{=DionysuSteve18}Epirus Helmet with Laurea +3" mesh="cts_greek_epirus_helmet_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="57" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g2_h0" name="{=DionysuSteve18}Griffon Embossed Domed Helm in Gold" subtype="head_armor" mesh="cts_dacian_helmet_g2" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g2_h1" name="{=DionysuSteve18}Griffon Embossed Domed Helm in Gold +1" subtype="head_armor" mesh="cts_dacian_helmet_g2" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g2_h2" name="{=DionysuSteve18}Griffon Embossed Domed Helm in Gold +2" subtype="head_armor" mesh="cts_dacian_helmet_g2" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g2_h3" name="{=DionysuSteve18}Griffon Embossed Domed Helm in Gold +3" subtype="head_armor" mesh="cts_dacian_helmet_g2" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g1_h0" name="{=DionysuSteve18}Griffon Embossed Domed Helm in Silver" subtype="head_armor" mesh="cts_dacian_helmet_g1" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g1_h1" name="{=DionysuSteve18}Griffon Embossed Domed Helm in Silver +1" subtype="head_armor" mesh="cts_dacian_helmet_g1" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g1_h2" name="{=DionysuSteve18}Griffon Embossed Domed Helm in Silver +2" subtype="head_armor" mesh="cts_dacian_helmet_g1" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g1_h3" name="{=DionysuSteve18}Griffon Embossed Domed Helm in Silver +3" subtype="head_armor" mesh="cts_dacian_helmet_g1" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g_h0" name="{=DionysuSteve18}Griffon Embossed Helm in Silver and Gold" subtype="head_armor" mesh="cts_dacian_helmet_g" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g_h1" name="{=DionysuSteve18}Griffon Embossed Helm in Silver and Gold +1" subtype="head_armor" mesh="cts_dacian_helmet_g" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g_h2" name="{=DionysuSteve18}Griffon Embossed Helm in Silver and Gold +2" subtype="head_armor" mesh="cts_dacian_helmet_g" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="54" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_dacian_helmet_g_h3" name="{=DionysuSteve18}Griffon Embossed Helm in Silver and Gold +3" subtype="head_armor" mesh="cts_dacian_helmet_g" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="1.5" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_provocatores_c_h0" name="{=DionysuSteve18}Gladiator Provocatores with Red Feathers" mesh="cts_roman_gladiator_provocatores_c" culture="Culture.empire" weight="5.696001" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="60" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_provocatores_c_h1" name="{=DionysuSteve18}Gladiator Provocatores with Red Feathers +1" mesh="cts_roman_gladiator_provocatores_c" culture="Culture.empire" weight="5.696001" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_provocatores_c_h2" name="{=DionysuSteve18}Gladiator Provocatores with Red Feathers +2" mesh="cts_roman_gladiator_provocatores_c" culture="Culture.empire" weight="5.696001" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_provocatores_c_h3" name="{=DionysuSteve18}Gladiator Provocatores with Red Feathers +3" mesh="cts_roman_gladiator_provocatores_c" culture="Culture.empire" weight="5.696001" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_provocatores_c1_h0" name="{=DionysuSteve18}Gladiator Provocatores with Blue Feathers" mesh="cts_roman_gladiator_provocatores_c1" culture="Culture.empire" weight="5.696001" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="60" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_provocatores_c1_h1" name="{=DionysuSteve18}Gladiator Provocatores with Blue Feathers +1" mesh="cts_roman_gladiator_provocatores_c1" culture="Culture.empire" weight="5.696001" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_provocatores_c1_h2" name="{=DionysuSteve18}Gladiator Provocatores with Blue Feathers +2" mesh="cts_roman_gladiator_provocatores_c1" culture="Culture.empire" weight="5.696001" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="64" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_roman_gladiator_provocatores_c1_h3" name="{=DionysuSteve18}Gladiator Provocatores with Blue Feathers +3" mesh="cts_roman_gladiator_provocatores_c1" culture="Culture.empire" weight="5.696001" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="66" has_gender_variations="false" hair_cover_type="all" beard_cover_type="type3" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_h0" name="{=DionysuSteve18}Corinthian Helmet" mesh="cts_greek_corinthian" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="50" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_h1" name="{=DionysuSteve18}Corinthian Helmet +1" mesh="cts_greek_corinthian" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_h2" name="{=DionysuSteve18}Corinthian Helmet +2" mesh="cts_greek_corinthian" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="54" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_h3" name="{=DionysuSteve18}Corinthian Helmet +3" mesh="cts_greek_corinthian" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.412821" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="56" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_crest_a_h0" name="{=DionysuSteve18}Decorated Corinthian Helmet with Red Plume" mesh="cts_greek_corinthian_crest_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_crest_a_h1" name="{=DionysuSteve18}Decorated Corinthian Helmet with Red Plume +1" mesh="cts_greek_corinthian_crest_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_crest_a_h2" name="{=DionysuSteve18}Decorated Corinthian Helmet with Red Plume +2" mesh="cts_greek_corinthian_crest_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="55" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_crest_a_h3" name="{=DionysuSteve18}Decorated Corinthian Helmet with Red Plume +3" mesh="cts_greek_corinthian_crest_a" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="57" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_crest_b_h0" name="{=DionysuSteve18}Decorated Corinthian Helmet with Black Plume" mesh="cts_greek_corinthian_crest_b" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="51" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_crest_b_h1" name="{=DionysuSteve18}Decorated Corinthian Helmet with Black Plume +1" mesh="cts_greek_corinthian_crest_b" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="53" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_crest_b_h2" name="{=DionysuSteve18}Decorated Corinthian Helmet with Black Plume +2" mesh="cts_greek_corinthian_crest_b" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="55" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_greek_corinthian_crest_b_h3" name="{=DionysuSteve18}Decorated Corinthian Helmet with Black Plume +3" mesh="cts_greek_corinthian_crest_b" is_merchandise="true" subtype="head_armor" culture="Culture.empire" weight="4.536872" difficulty="0" appearance="3" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="57" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
 </Items>

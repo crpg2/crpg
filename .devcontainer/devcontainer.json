@@ -24,7 +24,8 @@
         "naumovs.color-highlight",
         "streetsidesoftware.code-spell-checker",
         "cweijan.vscode-database-client2",
-        "ms-dotnettools.csdevkit"
+        "ms-dotnettools.csdevkit",
+        "vitest.explorer"
       ],
       "settings": {
         "tailwindCSS.experimental.classRegex": [

@@ -1,3 +1,7 @@
+import type { CharacterPublic } from './character'
+import type { Clan } from './clan'
+import type { UserPublic } from './user'
+
 export enum ActivityLogType {
   UserCreated = 'UserCreated',
   UserDeleted = 'UserDeleted',
@@ -8,6 +12,7 @@ export enum ActivityLogType {
   ItemBroke = 'ItemBroke',
   ItemRepaired = 'ItemRepaired',
   ItemUpgraded = 'ItemUpgraded',
+  ItemReturned = 'ItemReturned',
   CharacterCreated = 'CharacterCreated',
   CharacterDeleted = 'CharacterDeleted',
   CharacterRespecialized = 'CharacterRespecialized',
@@ -17,6 +22,14 @@ export enum ActivityLogType {
   ServerJoined = 'ServerJoined',
   ChatMessageSent = 'ChatMessageSent',
   TeamHit = 'TeamHit',
+  ClanCreated = 'ClanCreated',
+  ClanDeleted = 'ClanDeleted',
+  ClanMemberKicked = 'ClanMemberKicked',
+  ClanMemberLeaved = 'ClanMemberLeaved',
+  ClanMemberRoleEdited = 'ClanMemberRoleEdited',
+  ClanApplicationCreated = 'ClanApplicationCreated',
+  ClanApplicationAccepted = 'ClanApplicationAccepted',
+  ClanApplicationDeclined = 'ClanApplicationDeclined',
   ClanArmoryAddItem = 'ClanArmoryAddItem',
   ClanArmoryRemoveItem = 'ClanArmoryRemoveItem',
   ClanArmoryReturnItem = 'ClanArmoryReturnItem',
@@ -37,4 +50,10 @@ export interface ActivityLog<T = { [key: string]: string }> {
   userId: number
   createdAt: Date
   metadata: T
+}
+
+export interface ActivityLogMetadataDicts {
+  users: UserPublic[]
+  characters: CharacterPublic[]
+  clans: Clan[]
 }

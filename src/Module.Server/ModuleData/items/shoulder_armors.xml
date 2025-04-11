@@ -3000,4 +3000,172 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_1_h0" name="{=Dionysus}Plated Linothorax Shoulders" mesh="cts_greek_shoulder_linothorax_a" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="2.998086" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="10" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_1_h1" name="{=Dionysus}Plated Linothorax Shoulders +1" mesh="cts_greek_shoulder_linothorax_a" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="2.998086" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="12" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_1_h2" name="{=Dionysus}Plated Linothorax Shoulders +2" mesh="cts_greek_shoulder_linothorax_a" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="2.998086" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="13" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_1_h3" name="{=Dionysus}Plated Linothorax Shoulders +3" mesh="cts_greek_shoulder_linothorax_a" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="2.998086" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="16" body_armor="14" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_2_h0" name="{=Dionysus}Heavy Plated Linothorax Shoulders" mesh="cts_greek_shoulder_linothorax_a1" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="3.483779" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="18" body_armor="10" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_2_h1" name="{=Dionysus}Heavy Plated Linothorax Shoulders +1" mesh="cts_greek_shoulder_linothorax_a1" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="3.483779" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="18" body_armor="12" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_2_h2" name="{=Dionysus}Heavy Plated Linothorax Shoulders +2" mesh="cts_greek_shoulder_linothorax_a1" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="3.483779" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="18" body_armor="13" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_2_h3" name="{=Dionysus}Heavy Plated Linothorax Shoulders +3" mesh="cts_greek_shoulder_linothorax_a1" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="3.483779" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="19" body_armor="14" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_3_h0" name="{=Dionysus}Decorated Linothorax Shoulders" mesh="cts_greek_shoulder_linothorax_a2" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="2.998086" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="10" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_3_h1" name="{=Dionysus}Decorated Linothorax Shoulders +1" mesh="cts_greek_shoulder_linothorax_a2" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="2.998086" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="12" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_3_h2" name="{=Dionysus}Decorated Linothorax Shoulders +2" mesh="cts_greek_shoulder_linothorax_a2" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="2.998086" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="13" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_linothorax_shoulders_3_h3" name="{=Dionysus}Decorated Linothorax Shoulders +3" mesh="cts_greek_shoulder_linothorax_a2" is_merchandise="true" subtype="body_armor" culture="Culture.empire" weight="2.998086" difficulty="0" appearance="3" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="16" body_armor="14" covers_body="false" covers_legs="false" modifier_group="Leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a_h0" name="{=Dionysus}Lorica Segmentata with Leather Tassels" mesh="cts_lorica_segmentata_shoulder_a" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="18" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a_h1" name="{=Dionysus}Lorica Segmentata with Leather Tassels +1" mesh="cts_lorica_segmentata_shoulder_a" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="20" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a_h2" name="{=Dionysus}Lorica Segmentata with Leather Tassels +2" mesh="cts_lorica_segmentata_shoulder_a" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="21" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a_h3" name="{=Dionysus}Lorica Segmentata with Leather Tassels +3" mesh="cts_lorica_segmentata_shoulder_a" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor body_armor="22" modifier_group="plate" material_type="Plate" arm_armor="16" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a1_h0" name="{=Dionysus}Lorica Segmentata with Red Tassels" mesh="cts_lorica_segmentata_shoulder_a1" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="18" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a1_h1" name="{=Dionysus}Lorica Segmentata with Red Tassels +1" mesh="cts_lorica_segmentata_shoulder_a1" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="20" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a1_h2" name="{=Dionysus}Lorica Segmentata with Red Tassels +2" mesh="cts_lorica_segmentata_shoulder_a1" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="21" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a1_h3" name="{=Dionysus}Lorica Segmentata with Red Tassels +3" mesh="cts_lorica_segmentata_shoulder_a1" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="16" body_armor="22" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a2_h0" name="{=Dionysus}Lorica Segmentata Shoulders" mesh="cts_lorica_segmentata_shoulder_a2" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="18" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a2_h1" name="{=Dionysus}Lorica Segmentata Shoulders +1" mesh="cts_lorica_segmentata_shoulder_a2" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="20" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a2_h2" name="{=Dionysus}Lorica Segmentata Shoulders +2" mesh="cts_lorica_segmentata_shoulder_a2" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="21" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_lorica_segmentata_shoulder_a2_h3" name="{=Dionysus}Lorica Segmentata Shoulders +3" mesh="cts_lorica_segmentata_shoulder_a2" culture="Culture.empire" weight="4.55025" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="16" body_armor="22" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_shoulder_b_h0" name="{=Dionysus}Persian Linothorax Shoulders" mesh="cts_persian_shoulder_b" culture="Culture.empire" weight="2.998086" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="10" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_shoulder_b_h1" name="{=Dionysus}Persian Linothorax Shoulders +1" mesh="cts_persian_shoulder_b" culture="Culture.empire" weight="2.998086" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="12" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_shoulder_b_h2" name="{=Dionysus}Persian Linothorax Shoulders +2" mesh="cts_persian_shoulder_b" culture="Culture.empire" weight="2.998086" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="15" body_armor="13" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aciv_cts_persian_shoulder_b_h3" name="{=Dionysus}Persian Linothorax Shoulders +3" mesh="cts_persian_shoulder_b" culture="Culture.empire" weight="2.998086" appearance="8" Type="Cape">
+    <ItemComponent>
+      <Armor arm_armor="16" body_armor="14" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>

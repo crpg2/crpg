@@ -28,12 +28,14 @@ public record InviteClanMemberCommand : IMediatorRequest<ClanInvitationViewModel
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
         private readonly IClanService _clanService;
+        private readonly IActivityLogService _activityLogService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService)
+        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService, IActivityLogService activityLogService)
         {
             _db = db;
             _mapper = mapper;
             _clanService = clanService;
+            _activityLogService = activityLogService;
         }
 
         public async Task<Result<ClanInvitationViewModel>> Handle(InviteClanMemberCommand req, CancellationToken cancellationToken)
@@ -81,6 +83,7 @@ public record InviteClanMemberCommand : IMediatorRequest<ClanInvitationViewModel
                 Status = ClanInvitationStatus.Pending,
             };
             _db.ClanInvitations.Add(invitation);
+            _db.ActivityLogs.Add(_activityLogService.CreateClanApplicationCreatedLog(user.Id, clanId));
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' requested to join clan '{1}'", user.Id, clanId);
             return new(_mapper.Map<ClanInvitationViewModel>(invitation));

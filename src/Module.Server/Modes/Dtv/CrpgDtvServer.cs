@@ -31,6 +31,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private bool _gameStarted;
     private bool _waveStarted;
     private bool _timerExpired;
+    private int? _vipAgentIndex;
     private MissionTimer? _waveStartTimer;
     private MissionTimer? _endGameTimer;
     private MissionTimer _refillBouldersTimer = default!;
@@ -92,7 +93,17 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
     public override bool CheckForWarmupEnd()
     {
-        return true;
+        int playersInTeam = 0;
+        foreach (NetworkCommunicator networkPeer in GameNetwork.NetworkPeers)
+        {
+            MissionPeer component = networkPeer.GetComponent<MissionPeer>();
+            if (networkPeer.IsSynchronized && component?.Team != null && component.Team.Side != BattleSideEnum.None)
+            {
+                playersInTeam += 1;
+            }
+        }
+
+        return playersInTeam >= MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue();
     }
 
     public override void OnPeerChangedTeam(NetworkCommunicator networkPeer, Team oldTeam, Team newTeam)
@@ -119,7 +130,15 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     public override void OnAgentBuild(Agent agent, Banner banner)
     {
         base.OnAgentBuild(agent, banner);
-        // Synchronize health with all clients to make the spectator health bar work.
+        if (agent.IsAIControlled && agent.Team == Mission.DefenderTeam) // VIP agent spawned
+        {
+            _vipAgentIndex = agent.Index;
+
+            // Send VIP agent index to the players.
+            SendDataToPeers(new CrpgDtvVipSpawn { VipAgentIndex = agent.Index });
+        }
+
+            // Synchronize health with all clients to make the spectator health bar work.
         agent.UpdateSyncHealthToAllClients(true);
     }
 
@@ -175,6 +194,11 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
     public void RewardIfEndOfMission(MissionLobbyComponent.MultiplayerGameState newState)
     {
+        if (!_gameStarted)
+        {
+            return;
+        }
+
         if (!_timerExpired && TimerComponent.CheckIfTimerPassed() && newState == MissionLobbyComponent.MultiplayerGameState.Ending) // Award players if timer expires
         {
             _timerExpired = true;
@@ -250,6 +274,14 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             Round = _currentRound,
         });
         GameNetwork.EndModuleEventAsServer();
+
+        // If player joins after the VIP agent has spawned, then send them the vip agent index. (Could maybe use to rename the message since its not only used when the VIP spawns...)
+        if (_vipAgentIndex != null)
+        {
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new CrpgDtvVipSpawn { VipAgentIndex = (int)_vipAgentIndex });
+            GameNetwork.EndModuleEventAsServer();
+        }
     }
 
     /// <summary>Work around the 60 minutes limit of MapTimeLimit.</summary>
