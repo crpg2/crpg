@@ -28,7 +28,7 @@ defineEmits<{
 }>()
 
 const slots = defineSlots<{
-  user: (props: { user: UserPublic }) => any
+  user?: (props: { user: UserPublic }) => any
 }>()
 
 const getClanById = (clanId: number) => dict.clans.find(({ id }) => id === clanId)
@@ -52,7 +52,7 @@ const renderUser = (userId: number) => {
   const user = getUserById(userId)
 
   return user
-    ? slots?.user({ user }) || h(UserMedia, { user, class: 'text-content-100' })
+    ? slots?.user?.({ user }) || h(UserMedia, { user, class: 'text-content-100' })
     : renderStrong(String(userId))
 }
 
@@ -132,6 +132,7 @@ const Render = () => {
       oldClanMemberRole: () => h(ClanRole, { role: oldClanMemberRole as ClanMemberRole }),
       newClanMemberRole: () => h(ClanRole, { role: newClanMemberRole as ClanMemberRole }),
       ...(userId && { user: () => renderUser(Number(userId)) }),
+      //   ...(user && { user: () => renderUser(Number(user)) }),
       ...(targetUserId && { targetUser: () => renderUser(Number(targetUserId)) }),
       ...(actorUserId && { actorUser: () => renderUser(Number(actorUserId)) }),
       ...(characterId && { character: () => renderCharacter(Number(characterId)) }),

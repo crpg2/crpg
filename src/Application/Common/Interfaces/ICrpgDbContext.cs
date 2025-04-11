@@ -43,7 +43,7 @@ public interface ICrpgDbContext
     DbSet<ActivityLog> ActivityLogs { get; set; }
     DbSet<ActivityLogMetadata> ActivityLogMetadata { get; set; }
     DbSet<UserNotification> UserNotifications { get; set; }
-    DbSet<NotificationMetadata> NotificationMetadata { get; set; }
+    DbSet<UserNotificationMetadata> UserNotificationMetadata { get; set; }
     DbSet<IdempotencyKey> IdempotencyKeys { get; set; }
     DbSet<Setting> Settings { get; set; }
     EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;

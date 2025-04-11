@@ -1,14 +1,14 @@
 ﻿namespace Crpg.Domain.Entities.Notifications;
 
-public class NotificationMetadata
+public class UserNotificationMetadata
 {
-    public NotificationMetadata(string key, string value)
+    public UserNotificationMetadata(string key, string value)
     {
         Key = key;
         Value = value;
     }
 
-    public int NotificationId { get; set; }
+    public int UserNotificationId { get; set; }
     public string Key { get; set; }
     public string Value { get; set; }
 }
