@@ -9,7 +9,7 @@ public class UserNotification : AuditableEntity
     public NotificationType Type { get; set; }
     public NotificationState State { get; set; }
     public int UserId { get; set; }
-    public List<NotificationMetadata> Metadata { get; set; } = new();
+    public List<UserNotificationMetadata> Metadata { get; set; } = new();
 
     public User? User { get; set; }
 }

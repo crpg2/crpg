@@ -1448,20 +1448,18 @@ public record SeedDataCommand : IMediatorRequest
             UserNotification[] orleNotifications =
             {
                 _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, 100, 1, orleItem1.ItemId),
+                _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, orleCharacter0.Id, 122211),
                 _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, orleItem1.ItemId, 2, 1222),
-                _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, pecores.Id),
+                _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, pecores.Id, takeo.Id),
                 _userNotificationService.CreateClanApplicationCreatedToUserNotification(orle.Id, pecores.Id),
                 _userNotificationService.CreateClanApplicationAcceptedToUserNotification(orle.Id, pecores.Id),
                 _userNotificationService.CreateClanApplicationDeclinedToUserNotification(orle.Id, pecores.Id),
                 _userNotificationService.CreateClanMemberRoleChangedToUserNotification(orle.Id, pecores.Id, takeo.Id, ClanMemberRole.Officer, ClanMemberRole.Leader),
-                _userNotificationService.CreateClanMemberLeavedToLeaderNotification(orle.Id, pecores.Id),
-        };
-            //
-            // _userNotificationService.CreateClanMemberLeavedToLeaderNotification(orle.Id, activityLogClanMemberLeaved1.Id);
-            // _userNotificationService.CreateClanMemberKickedToExMemberNotification(orle.Id, activityLogClanMemberKicked1.Id);
-            // _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, activityLogCharacterRewarded1.Id);
-            // _userNotificationService.CreateClanArmoryBorrowItemToLenderNotification(orle.Id, activityLogClanArmoryBorrowItem1.Id);
-            // _userNotificationService.CreateClanArmoryRemoveItemToBorrowerNotification(orle.Id, activityLogClanArmoryRemoveItem1.Id);
+                _userNotificationService.CreateClanMemberLeavedToLeaderNotification(orle.Id, pecores.Id, takeo.Id),
+                _userNotificationService.CreateClanMemberKickedToExMemberNotification(orle.Id, pecores.Id),
+                _userNotificationService.CreateClanArmoryBorrowItemToLenderNotification(orle.Id, pecores.Id, orleItem1.ItemId, takeo.Id),
+                _userNotificationService.CreateClanArmoryRemoveItemToBorrowerNotification(orle.Id, pecores.Id, takeoItem1.ItemId, takeo.Id),
+            };
 
             _db.UserNotifications.RemoveRange(await _db.UserNotifications.ToArrayAsync());
             _db.UserNotifications.AddRange(orleNotifications);
