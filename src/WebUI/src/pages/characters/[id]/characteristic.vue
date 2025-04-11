@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import type { SkillKey } from '~/models/character'
 
+import { useAsyncState } from '@vueuse/core'
+import {
+  freeRespecializeIntervalDays,
+  freeRespecializePostWindowHours,
+} from '~root/data/constants.json'
+
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { CharacteristicConversion } from '~/models/character'
@@ -8,6 +14,9 @@ import {
   characteristicBonusByKey,
   computeHealthPoints,
   convertCharacterCharacteristics,
+  getCharacterLimitations,
+  getRespecCapability,
+  respecializeCharacter,
   updateCharacterCharacteristics,
 } from '~/services/characters-service'
 import { notify } from '~/services/notification-service'
@@ -19,6 +28,7 @@ import {
   characterKey,
 } from '~/symbols/character'
 import { sleep } from '~/utils/promise'
+import { parseTimestamp } from '~/utils/date'
 
 definePage({
   meta: {
@@ -58,6 +68,24 @@ const healthPoints = computed(() =>
   ),
 )
 
+const { execute: loadCharacterLimitations, state: characterLimitations } = useAsyncState(
+  ({ id }: { id: number }) => getCharacterLimitations(id),
+  { lastRespecializeAt: new Date() },
+  {
+    immediate: false,
+    resetOnExecute: false,
+  },
+)
+
+const respecCapability = computed(() =>
+  getRespecCapability(
+    character.value,
+    characterLimitations.value,
+    userStore.user!.gold,
+    userStore.isRecentUser,
+  ),
+)
+
 const { execute: onCommitCharacterCharacteristics, loading: commitingCharacterCharacteristics } = useAsyncCallback(async () => {
   setCharacterCharacteristics(
     await updateCharacterCharacteristics(character.value.id, characteristics.value),
@@ -76,6 +104,22 @@ const { execute: onConvertCharacterCharacteristics, loading: convertingCharacter
   ])
 })
 
+const { execute: onRespecializeCharacter, loading: respecializingCharacter } = useAsyncCallback(async () => {
+  userStore.replaceCharacter(await respecializeCharacter(character.value.id))
+  userStore.subtractGold(respecCapability.value.price)
+  await Promise.all([
+    loadCharacterLimitations(0, { id: character.value.id }),
+    setCharacterCharacteristics(
+      await convertCharacterCharacteristics(character.value.id, CharacteristicConversion.AttributesToSkills),
+    ),
+  ])
+  notify(t('character.settings.respecialize.notify.success'))
+})
+
+onBeforeMount(async () => {
+  await loadCharacterLimitations(0, { id: character.value.id })
+})
+
 onBeforeRouteUpdate(() => {
   reset()
   return true
@@ -85,7 +129,7 @@ onBeforeRouteUpdate(() => {
 <template>
   <div class="relative mx-auto max-w-4xl">
     <OLoading
-      :active="convertingCharacterCharacteristics || commitingCharacterCharacteristics"
+      :active="convertingCharacterCharacteristics || commitingCharacterCharacteristics || respecializingCharacter"
       icon-size="xl"
     />
     <div class="statsGrid mb-8 grid gap-6">
@@ -271,28 +315,135 @@ onBeforeRouteUpdate(() => {
     </div>
 
     <div
-      class="sticky bottom-0 left-0 flex w-full grid-cols-3 items-center justify-center gap-2  bg-opacity-10 py-4 backdrop-blur-sm"
+      class="sticky bottom-0 left-0 w-full backdrop-blur-sm py-4"
     >
-      <OButton
-        :disabled="!wasChangeMade"
-        variant="secondary"
-        size="lg"
-        icon-left="reset"
-        :label="$t('action.reset')"
-        data-aq-reset-action
-        @click="reset"
-      />
-
-      <ConfirmActionTooltip @confirm="onCommitCharacterCharacteristics">
+      <div class="mx-auto max-w-4xl flex items-center justify-center gap-4">
         <OButton
-          variant="primary"
+          :disabled="!wasChangeMade"
+          variant="secondary"
           size="lg"
-          icon-left="check"
-          :disabled="!wasChangeMade || !isChangeValid"
-          :label="$t('action.commit')"
-          data-aq-commit-action
+          icon-left="reset"
+          :label="$t('action.reset')"
+          data-aq-reset-action
+          @click="reset"
         />
-      </ConfirmActionTooltip>
+
+        <ConfirmActionTooltip @confirm="onCommitCharacterCharacteristics">
+          <OButton
+            variant="primary"
+            size="lg"
+            icon-left="check"
+            :disabled="!wasChangeMade || !isChangeValid"
+            :label="$t('action.commit')"
+            data-aq-commit-action
+          />
+        </ConfirmActionTooltip>
+        
+        <Modal :disabled="!respecCapability.enabled">
+          <VTooltip placement="auto">
+            <OButton
+              variant="info"
+              size="lg"
+              :disabled="!respecCapability.enabled"
+              icon-left="chevron-down-double"
+              data-aq-character-action="respecialize"
+              class="ring-1 ring-white/25"
+            >
+              <div class="flex items-center gap-2">
+                <span>{{ $t('character.settings.respecialize.title') }}</span>
+                <Tag
+                  v-if="respecCapability.price === 0"
+                  variant="success"
+                  size="sm"
+                  label="free"
+                />
+                <Coin v-else />
+              </div>
+            </OButton>
+
+            <template #popper>
+              <div class="prose prose-invert">
+                <h5>{{ $t('character.settings.respecialize.tooltip.title') }}</h5>
+                <div
+                  v-html="
+                    $t('character.settings.respecialize.tooltip.desc', {
+                      freeRespecPostWindow: $t('dateTimeFormat.hh', {
+                        hours: freeRespecializePostWindowHours,
+                      }),
+                      freeRespecInterval: $t('dateTimeFormat.dd', {
+                        days: freeRespecializeIntervalDays,
+                      }),
+                    })
+                  "
+                />
+
+                <div
+                  v-if="respecCapability.freeRespecWindowRemain > 0"
+                  v-html="
+                    $t('character.settings.respecialize.tooltip.freeRespecPostWindowRemaining', {
+                      remainingTime: $t('dateTimeFormat.dd:hh:mm', {
+                        ...parseTimestamp(respecCapability.freeRespecWindowRemain),
+                      }),
+                    })
+                  "
+                />
+
+                <template v-else-if="respecCapability.price > 0">
+                  <i18n-t
+                    scope="global"
+                    keypath="character.settings.respecialize.tooltip.paidRespec"
+                    tag="p"
+                  >
+                    <template #respecPrice>
+                      <Coin :value="respecCapability.price" />
+                    </template>
+                  </i18n-t>
+
+                  <div
+                    v-html="
+                      $t('character.settings.respecialize.tooltip.freeRespecIntervalNext', {
+                        nextFreeAt: $t('dateTimeFormat.dd:hh:mm', {
+                          ...parseTimestamp(respecCapability.nextFreeAt),
+                        }),
+                      })
+                    "
+                  />
+                </template>
+              </div>
+            </template>
+          </VTooltip>
+
+          <template #popper="{ hide }">
+            <ConfirmActionForm
+              :title="$t('character.settings.respecialize.dialog.title')"
+              :name="character.name"
+              :confirm-label="$t('action.apply')"
+              @cancel="hide"
+              @confirm="
+                () => {
+                  onRespecializeCharacter();
+                  hide();
+                }
+              "
+            >
+              <template #description>
+                <i18n-t
+                  scope="global"
+                  keypath="character.settings.respecialize.dialog.desc"
+                  tag="p"
+                >
+                  <template #respecializationPrice>
+                    <Coin
+                      :value="respecCapability.price"
+                      :class="{ 'text-status-danger': respecCapability.price > 0 }"
+                    />
+                  </template>
+                </i18n-t>
+              </template>
+            </ConfirmActionForm>
+          </template>
+        </Modal>
+      </div>
     </div>
   </div>
 </template>
