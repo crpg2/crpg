@@ -1,0 +1,15 @@
+<Prefab>
+  <Constants>
+  </Constants>
+  <Window>
+    <!-- Container -->
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center">
+      <Children>
+        <!-- Current Ammo Type Counter Visual -->
+        <AgentAmmoTextWidget DataSource="{..}" IsVisible="@ShowQuiverAmmoCount" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="80" SuggestedHeight="80" VerticalAlignment="Bottom" HorizontalAlignment="Right" MarginBottom="93" MarginRight="90" IntText="@QuiverAmmoLeft" Brush="AgentAmmoCountEx.Text" IsAlertEnabled="@IsQuiverAmmoCountAlertEnabled"/>
+        <!-- Current Quiver Text Visual -->
+        <TextWidget Id="QuiverName" IsVisible="@ShowQuiverName" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="400" SuggestedHeight="80" VerticalAlignment="Bottom" HorizontalAlignment="Right" MarginBottom="110" MarginRight="108" Brush="AgentAmmoType.Text" Text="@QuiverName" />
+      </Children>
+    </Widget>    
+  </Window>
+</Prefab>
