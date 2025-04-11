@@ -53,8 +53,7 @@ public class CrpgDbContextFactory : IDesignTimeDbContextFactory<CrpgDbContext>
                         .MapEnum<ActivityLogType>()
                         .MapEnum<NotificationState>()
                         .MapEnum<NotificationType>()
-                        .MapEnum<UserUpdateStatus>()
-                        )
+                        .MapEnum<UserUpdateStatus>())
             .UseSnakeCaseNamingConvention()
             .Options;
         return new CrpgDbContext(options);

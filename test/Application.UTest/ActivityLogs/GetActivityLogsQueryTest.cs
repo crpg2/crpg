@@ -11,7 +11,7 @@ namespace Crpg.Application.UTest.ActivityLogs;
 
 public class GetActivityLogsQueryTest : TestBase
 {
-    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly Mock<IMetadataService> MetadataService = new() { DefaultValue = DefaultValue.Mock };
 
     [Test]
     public async Task ShouldReturnAllLogsWithNoUserIdsAndNoTypes()
@@ -25,7 +25,7 @@ public class GetActivityLogsQueryTest : TestBase
         });
         await ArrangeDb.SaveChangesAsync();
 
-        GetActivityLogsQuery.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
+        GetActivityLogsQuery.Handler handler = new(ActDb, Mapper, MetadataService.Object);
         var res = await handler.Handle(new GetActivityLogsQuery
         {
             From = DateTime.UtcNow.AddMinutes(-7),
@@ -54,7 +54,7 @@ public class GetActivityLogsQueryTest : TestBase
         });
         await ArrangeDb.SaveChangesAsync();
 
-        GetActivityLogsQuery.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
+        GetActivityLogsQuery.Handler handler = new(ActDb, Mapper, MetadataService.Object);
         var res = await handler.Handle(new GetActivityLogsQuery
         {
             From = DateTime.UtcNow.AddMinutes(-10),
@@ -84,7 +84,7 @@ public class GetActivityLogsQueryTest : TestBase
         });
         await ArrangeDb.SaveChangesAsync();
 
-        GetActivityLogsQuery.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
+        GetActivityLogsQuery.Handler handler = new(ActDb, Mapper, MetadataService.Object);
         var res = await handler.Handle(new GetActivityLogsQuery
         {
             From = DateTime.UtcNow.AddMinutes(-10),
@@ -114,7 +114,7 @@ public class GetActivityLogsQueryTest : TestBase
         });
         await ArrangeDb.SaveChangesAsync();
 
-        GetActivityLogsQuery.Handler handler = new(ActDb, Mapper, ActivityLogService.Object);
+        GetActivityLogsQuery.Handler handler = new(ActDb, Mapper, MetadataService.Object);
         var res = await handler.Handle(new GetActivityLogsQuery
         {
             From = DateTime.UtcNow.AddMinutes(-10),
@@ -149,7 +149,7 @@ public class GetActivityLogsQueryTest : TestBase
             CharactersIds = new List<int> { 30 },
         };
 
-        ActivityLogService.Setup(s => s.ExtractEntitiesFromMetadata(It.IsAny<ActivityLog[]>()))
+        MetadataService.Setup(s => s.ExtractEntitiesFromMetadata(It.IsAny<IEnumerable<KeyValuePair<string, string>>>()))
             .Returns(extractedEntities);
 
         var query = new GetActivityLogsQuery
@@ -160,7 +160,7 @@ public class GetActivityLogsQueryTest : TestBase
             Types = Array.Empty<ActivityLogType>(),
         };
 
-        var handler = new GetActivityLogsQuery.Handler(ActDb, Mapper, ActivityLogService.Object);
+        var handler = new GetActivityLogsQuery.Handler(ActDb, Mapper, MetadataService.Object);
 
         var result = await handler.Handle(query, CancellationToken.None);
 

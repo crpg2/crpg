@@ -21,7 +21,6 @@ internal record struct EntitiesFromMetadata
 
 internal class MetadataService : IMetadataService
 {
-    // TODO: FIXME: SPEC FIXME: to utils
     public EntitiesFromMetadata ExtractEntitiesFromMetadata(IEnumerable<KeyValuePair<string, string>> metadata)
     {
         var output = new EntitiesFromMetadata();

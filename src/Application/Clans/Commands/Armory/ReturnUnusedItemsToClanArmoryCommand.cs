@@ -18,12 +18,14 @@ public record ReturnUnusedItemsToClanArmoryCommand : IMediatorRequest
         private readonly ICrpgDbContext _db;
         private readonly IDateTime _dateTime;
         private readonly IActivityLogService _activityLogService;
+        private readonly IUserNotificationService _userNotificationService;
 
-        public Handler(ICrpgDbContext db, IDateTime dateTime, IActivityLogService activityLogService)
+        public Handler(ICrpgDbContext db, IDateTime dateTime, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
             _db = db;
             _dateTime = dateTime;
             _activityLogService = activityLogService;
+            _userNotificationService = userNotificationService;
         }
 
         public async Task<Result> Handle(ReturnUnusedItemsToClanArmoryCommand req, CancellationToken cancellationToken)
@@ -46,6 +48,7 @@ public record ReturnUnusedItemsToClanArmoryCommand : IMediatorRequest
                 foreach (var bi in u.ClanMembership!.ArmoryBorrowedItems)
                 {
                     _db.ActivityLogs.Add(_activityLogService.CreateReturnItemToClanArmoryLog(bi.UserItem!.UserId, u.ClanMembership.ClanId, bi.UserItemId));
+                    _db.UserNotifications.Add(_userNotificationService.CreateClanArmoryRemoveItemToBorrowerNotification(u.Id, u.ClanMembership.ClanId, bi.UserItem.ItemId, bi.UserItem!.UserId));
                 }
             }
 

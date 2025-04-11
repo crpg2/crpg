@@ -2160,6 +2160,7 @@ public record SeedDataCommand : IMediatorRequest
 
                     _db.UserItems.Remove(userItem);
                     _db.ActivityLogs.Add(_activityLogService.CreateItemReturnedLog(userItem.User.Id, userItem.Item.Id, userItem.Item.Rank, userItem.Item.Price));
+                    _db.UserNotifications.Add(_userNotificationService.CreateItemReturnedToUserNotification(userItem.User.Id, userItem.Item.Id, userItem.Item.Rank, userItem.Item.Price));
                 }
 
                 var itemsToDelete = dbItemsById.Values.Where(i => i.Id == dbItem.Id).ToArray();

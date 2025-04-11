@@ -9,8 +9,9 @@ namespace Crpg.Application.UTest.Clans.Armory;
 public class BorrowClanArmoryCommandTest : TestBase
 {
     private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly Mock<IUserNotificationService> UserNotificationsService = new() { DefaultValue = DefaultValue.Mock };
 
-    private IClanService ClanService { get; } = new ClanService(ActivityLogService.Object);
+    private IClanService ClanService { get; } = new ClanService(ActivityLogService.Object, UserNotificationsService.Object);
 
     [Test]
     public async Task ShouldBorrow()
@@ -29,7 +30,7 @@ public class BorrowClanArmoryCommandTest : TestBase
 
         var item = clan.Members.First(cm => cm.ArmoryItems.Count > 0).ArmoryItems.First();
 
-        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object);
+        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationsService.Object);
         var result = await handler.Handle(new BorrowItemFromClanArmoryCommand
         {
             UserItemId = item.UserItemId,
@@ -64,7 +65,7 @@ public class BorrowClanArmoryCommandTest : TestBase
 
         var item = clan.Members.First(cm => cm.ArmoryItems.Count > 0).ArmoryItems.First();
 
-        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object);
+        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationsService.Object);
         var result = await handler.Handle(new BorrowItemFromClanArmoryCommand
         {
             UserItemId = item.UserItemId,
@@ -98,7 +99,7 @@ public class BorrowClanArmoryCommandTest : TestBase
 
         var item = clan.Members.First(cm => cm.ArmoryItems.Count > 0).ArmoryItems.First();
 
-        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object);
+        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationsService.Object);
         var result = await handler.Handle(new BorrowItemFromClanArmoryCommand
         {
             UserItemId = item.UserItemId,
@@ -139,7 +140,7 @@ public class BorrowClanArmoryCommandTest : TestBase
             .Include(u => u.ClanMembership)
             .FirstAsync(u => u.Id == user.Id);
 
-        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object);
+        var handler = new BorrowItemFromClanArmoryCommand.Handler(ActDb, Mapper, ClanService, ActivityLogService.Object, UserNotificationsService.Object);
         var result = await handler.Handle(new BorrowItemFromClanArmoryCommand
         {
             UserItemId = item.Id,

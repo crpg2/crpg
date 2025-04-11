@@ -34,7 +34,6 @@ internal class StrategusMap : IStrategusMap
     private readonly double _height;
     private readonly double _equivalentDistance;
     private readonly double _interactionDistance;
-    private readonly double _viewDistance;
     private readonly Point _spawningPositionCenter;
     private readonly double _spawningPositionRadius;
 
@@ -45,13 +44,13 @@ internal class StrategusMap : IStrategusMap
         _height = constants.StrategusMapHeight;
         _equivalentDistance = constants.StrategusEquivalentDistance;
         _interactionDistance = constants.StrategusInteractionDistance;
-        _viewDistance = constants.StrategusViewDistance;
+        ViewDistance = constants.StrategusViewDistance;
         double[] spawningPosition = constants.StrategusSpawningPositionCenter;
         _spawningPositionCenter = new Point(spawningPosition[0], spawningPosition[1]);
         _spawningPositionRadius = constants.StrategusSpawningPositionRadius;
     }
 
-    public double ViewDistance => _viewDistance;
+    public double ViewDistance { get; }
 
     /// <inheritdoc />
     public bool ArePointsEquivalent(Point pointA, Point pointB)

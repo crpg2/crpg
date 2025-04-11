@@ -11,6 +11,9 @@ namespace Crpg.Application.UTest.Characters;
 
 public class RewardCharacterCommandTest : TestBase
 {
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly Mock<IUserNotificationService> UserNotificationsService = new() { DefaultValue = DefaultValue.Mock };
+
     private static readonly Constants Constants = new()
     {
         MinimumLevel = 1,
@@ -23,7 +26,8 @@ public class RewardCharacterCommandTest : TestBase
         RewardCharacterCommand.Handler handler = new(
             Mock.Of<ICharacterService>(),
             Mock.Of<IExperienceTable>(),
-            Mock.Of<IActivityLogService>(),
+            ActivityLogService.Object,
+            UserNotificationsService.Object,
             ActDb,
             Mapper,
             Constants);
@@ -81,7 +85,8 @@ public class RewardCharacterCommandTest : TestBase
         RewardCharacterCommand.Handler handler = new(
             characterService,
             experienceTableMock.Object,
-            activityLogServiceMock.Object,
+            ActivityLogService.Object,
+            UserNotificationsService.Object,
             ActDb,
             Mapper,
             Constants);
@@ -123,7 +128,8 @@ public class RewardCharacterCommandTest : TestBase
         RewardCharacterCommand.Handler handler = new(
             characterServiceMock.Object,
             experienceTableMock.Object,
-            activityLogServiceMock.Object,
+            ActivityLogService.Object,
+            UserNotificationsService.Object,
             ActDb,
             Mapper,
             Constants);

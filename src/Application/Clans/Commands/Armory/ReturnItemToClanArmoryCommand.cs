@@ -21,12 +21,14 @@ public record ReturnItemToClanArmoryCommand : IMediatorRequest
         private readonly ICrpgDbContext _db;
         private readonly IClanService _clanService;
         private readonly IActivityLogService _activityLogService;
+        private readonly IUserNotificationService _userNotificationService;
 
-        public Handler(ICrpgDbContext db, IClanService clanService, IActivityLogService activityLogService)
+        public Handler(ICrpgDbContext db, IClanService clanService, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
             _db = db;
             _clanService = clanService;
             _activityLogService = activityLogService;
+            _userNotificationService = userNotificationService;
         }
 
         public async Task<Result> Handle(ReturnItemToClanArmoryCommand req, CancellationToken cancellationToken)
@@ -55,6 +57,7 @@ public record ReturnItemToClanArmoryCommand : IMediatorRequest
             }
 
             _db.ActivityLogs.Add(_activityLogService.CreateReturnItemToClanArmoryLog(user.Id, clan.Id, req.UserItemId));
+            _db.UserNotifications.Add(_userNotificationService.CreateClanArmoryRemoveItemToBorrowerNotification(result.Data!.BorrowerUserId, clan.Id, result.Data!.UserItem!.ItemId, result.Data!.UserItem.UserId));
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("User '{0}' returned item '{1}' to the armory '{2}'", req.UserId, req.UserItemId, req.ClanId);
