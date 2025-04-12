@@ -31,9 +31,7 @@ export const useItemsFilter = (items: Item[]) => {
       router.push({
         query: {
           type: val,
-          ...(weaponClasses.length !== 0 && {
-            weaponClass: weaponClasses[0],
-          }),
+          ...(weaponClasses.length !== 0 && { weaponClass: weaponClasses[0] }),
           ...pick(route.query, ['hideOwnedItems']),
         },
       })

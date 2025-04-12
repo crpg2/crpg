@@ -59,24 +59,24 @@ export const armorTypes: ItemType[] = [
 ]
 
 export const itemTypeByWeaponClass: Record<WeaponClass, ItemType> = {
-  [WeaponClass.Arrow]: ItemType.Arrows,
+  [WeaponClass.Arrow]: ItemType.Ammo,
   [WeaponClass.Banner]: ItemType.Banner,
-  [WeaponClass.Bolt]: ItemType.Bolts,
+  [WeaponClass.Bolt]: ItemType.Ammo,
   [WeaponClass.Boulder]: ItemType.Thrown,
-  [WeaponClass.Bow]: ItemType.Bow,
-  [WeaponClass.Cartridge]: ItemType.Bullets,
-  [WeaponClass.Crossbow]: ItemType.Crossbow,
+  [WeaponClass.Bow]: ItemType.Ranged,
+  [WeaponClass.Cartridge]: ItemType.Ammo,
+  [WeaponClass.Crossbow]: ItemType.Ranged,
   [WeaponClass.Dagger]: ItemType.OneHandedWeapon,
   [WeaponClass.Javelin]: ItemType.Thrown,
   [WeaponClass.LargeShield]: ItemType.Shield,
   [WeaponClass.LowGripPolearm]: ItemType.Polearm,
   [WeaponClass.Mace]: ItemType.OneHandedWeapon,
-  [WeaponClass.Musket]: ItemType.Musket,
+  [WeaponClass.Musket]: ItemType.Ranged,
   [WeaponClass.OneHandedAxe]: ItemType.OneHandedWeapon,
   [WeaponClass.OneHandedPolearm]: ItemType.Polearm,
   [WeaponClass.OneHandedSword]: ItemType.OneHandedWeapon,
   [WeaponClass.Pick]: ItemType.TwoHandedWeapon,
-  [WeaponClass.Pistol]: ItemType.Pistol,
+  [WeaponClass.Pistol]: ItemType.Ranged,
   [WeaponClass.SmallShield]: ItemType.Shield,
   [WeaponClass.Stone]: ItemType.Thrown,
   [WeaponClass.ThrowingAxe]: ItemType.Thrown,
@@ -100,17 +100,30 @@ const WeaponClassByItemType: Partial<Record<ItemType, WeaponClass[]>> = {
     WeaponClass.Mace,
     WeaponClass.Dagger,
   ],
-  [ItemType.Polearm]: [WeaponClass.TwoHandedPolearm, WeaponClass.OneHandedPolearm],
+  [ItemType.TwoHandedWeapon]: [
+    WeaponClass.TwoHandedSword,
+    WeaponClass.TwoHandedAxe,
+    WeaponClass.TwoHandedMace,
+  ],
+  [ItemType.Polearm]: [
+    WeaponClass.TwoHandedPolearm,
+    WeaponClass.OneHandedPolearm,
+  ],
   [ItemType.Thrown]: [
     WeaponClass.Javelin,
     WeaponClass.ThrowingAxe,
     WeaponClass.ThrowingKnife,
     WeaponClass.Stone,
   ],
-  [ItemType.TwoHandedWeapon]: [
-    WeaponClass.TwoHandedSword,
-    WeaponClass.TwoHandedAxe,
-    WeaponClass.TwoHandedMace,
+  [ItemType.Ranged]: [
+    WeaponClass.Bow,
+    WeaponClass.Crossbow,
+    WeaponClass.Pistol,
+    WeaponClass.Musket,
+  ],
+  [ItemType.Ammo]: [
+    WeaponClass.Arrow,
+    WeaponClass.Bolt,
   ],
 }
 
@@ -304,6 +317,8 @@ export const itemTypeToIcon: Record<ItemType, string> = {
   [ItemType.BodyArmor]: 'item-type-body-armor',
   [ItemType.Bolts]: 'item-type-bolt',
   [ItemType.Bow]: 'item-type-bow',
+  [ItemType.Ranged]: 'item-type-bow', // TODO: need a icon
+  [ItemType.Ammo]: 'item-type-arrow', // TODO: need a icon
   [ItemType.Bullets]: 'item-type-bullet',
   [ItemType.Crossbow]: 'item-type-crossbow',
   [ItemType.HandArmor]: 'item-type-hand-armor',
@@ -317,31 +332,30 @@ export const itemTypeToIcon: Record<ItemType, string> = {
   [ItemType.Polearm]: 'item-type-polearm',
   [ItemType.Shield]: 'item-type-shield',
   [ItemType.ShoulderArmor]: 'item-type-shoulder-armor',
-
   [ItemType.Thrown]: 'item-type-throwing-weapon',
   [ItemType.TwoHandedWeapon]: 'item-type-two-handed-weapon',
   [ItemType.Undefined]: '',
 }
 
 export const weaponClassToIcon: Record<WeaponClass, string> = {
-  [WeaponClass.Arrow]: '',
+  [WeaponClass.Arrow]: 'item-type-arrow',
   [WeaponClass.Banner]: '',
-  [WeaponClass.Bolt]: '',
+  [WeaponClass.Bolt]: 'item-type-bolt',
   [WeaponClass.Boulder]: '',
-  [WeaponClass.Bow]: '',
-  [WeaponClass.Cartridge]: '',
-  [WeaponClass.Crossbow]: '',
+  [WeaponClass.Bow]: 'item-type-bow',
+  [WeaponClass.Cartridge]: 'item-type-bullet',
+  [WeaponClass.Crossbow]: 'item-type-crossbow',
   [WeaponClass.Dagger]: 'weapon-class-one-handed-dagger',
   [WeaponClass.Javelin]: 'weapon-class-throwing-spear',
   [WeaponClass.LargeShield]: 'weapon-class-shield-large',
   [WeaponClass.LowGripPolearm]: '',
   [WeaponClass.Mace]: 'weapon-class-one-handed-mace',
-  [WeaponClass.Musket]: '',
+  [WeaponClass.Musket]: 'item-type-musket',
   [WeaponClass.OneHandedAxe]: 'weapon-class-one-handed-axe',
   [WeaponClass.OneHandedPolearm]: 'weapon-class-one-handed-polearm',
   [WeaponClass.OneHandedSword]: 'weapon-class-one-handed-sword',
   [WeaponClass.Pick]: '',
-  [WeaponClass.Pistol]: '',
+  [WeaponClass.Pistol]: 'item-type-pistol',
   [WeaponClass.SmallShield]: 'weapon-class-shield-small',
   [WeaponClass.Stone]: 'weapon-class-throwing-stone',
   [WeaponClass.ThrowingAxe]: 'weapon-class-throwing-axe',
@@ -492,7 +506,10 @@ export const humanizeBucket = (
     return createHumanBucket(
       t(`item.type.${bucket as ItemType}`),
       createIcon(IconBucketType.Svg, itemTypeToIcon[bucket as ItemType]),
-      null,
+      {
+        title: t(`item.type.${bucket}`),
+        description: '',
+      },
     )
   }
 
@@ -500,7 +517,10 @@ export const humanizeBucket = (
     return createHumanBucket(
       t(`item.weaponClass.${bucket as WeaponClass}`),
       createIcon(IconBucketType.Svg, weaponClassToIcon[bucket as WeaponClass]),
-      null,
+      {
+        title: t(`item.weaponClass.${bucket}`),
+        description: '',
+      },
     )
   }
 

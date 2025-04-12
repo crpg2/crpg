@@ -149,10 +149,17 @@ export enum ItemType {
   TwoHandedWeapon = 'TwoHandedWeapon',
   Polearm = 'Polearm',
   Thrown = 'Thrown',
+
+  Ranged = 'Ranged', // virtual
+  Ammo = 'Ammo', // virtual
+
   Bow = 'Bow',
   Crossbow = 'Crossbow',
+  Pistol = 'Pistol',
+  Musket = 'Musket',
   Arrows = 'Arrows',
   Bolts = 'Bolts',
+  Bullets = 'Bullets',
 
   Shield = 'Shield',
 
@@ -165,9 +172,6 @@ export enum ItemType {
   Mount = 'Mount',
   MountHarness = 'MountHarness',
 
-  Pistol = 'Pistol',
-  Musket = 'Musket',
-  Bullets = 'Bullets',
   Banner = 'Banner',
 }
 

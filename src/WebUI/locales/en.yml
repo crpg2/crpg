@@ -1091,6 +1091,8 @@ item:
     MountHarness: Mount harness
     Mount: Mount
     Shield: Shield
+    Ranged: Ranged
+    Ammo: Ammo
     Bow: Bow
     Crossbow: Crossbow
     OneHandedWeapon: One handed weapon
