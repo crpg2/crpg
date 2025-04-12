@@ -979,6 +979,8 @@ user:
         navigate: Navigate to our {modMailLink} channel
         follow: Follow the instructions in that channel to reach out to us
       outro: Please note that at this time, we do not accept appeals through any platform other than Discord.
+  notifications:
+    title: Notifications
 
 banned:
   title: You are banned
