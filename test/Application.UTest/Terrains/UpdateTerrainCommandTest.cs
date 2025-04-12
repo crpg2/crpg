@@ -16,7 +16,7 @@ public class UpdateTerrainCommandTest : TestBase
                 new()
                 {
                     Type = TerrainType.ThickForest,
-                    Boundary = new Polygon(new LinearRing(new Coordinate[] { new(1.1, 1.2), new(2.1, 2.2) })),
+                    Boundary = new Polygon(new LinearRing(new Coordinate[] { new(104.174348, -97.761932), new(104.130833, -98.066596), new(103.420365, -98.192822), new(102.686134, -97.974021), new(101.694142, -97.184773), new(101.819117, -97.0363), new(102.756433, -97.677076), new(103.365688, -97.91932), new(104.174348, -97.761932), })),
                 },
                 new()
                 {
@@ -32,11 +32,11 @@ public class UpdateTerrainCommandTest : TestBase
             new UpdateTerrainCommand
             {
                 Id = 1,
-                Boundary = new Polygon(new LinearRing(new Coordinate[] { new(5.1, 5.2), new(6.1, 6.2) })),
+                Boundary = new Polygon(new LinearRing(Array.Empty<Coordinate>())),
             }, CancellationToken.None);
 
         var terrain = result.Data!;
-        Assert.That(terrain.Boundary, Is.EqualTo(new Polygon(new LinearRing(new Coordinate[] { new(5.1, 5.2), new(6.1, 6.2) }))));
+        Assert.That(terrain.Boundary, Is.EqualTo(new Polygon(new LinearRing(Array.Empty<Coordinate>()))));
     }
 
     [Test]
