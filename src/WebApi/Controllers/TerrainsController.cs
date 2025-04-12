@@ -1,8 +1,7 @@
 using Crpg.Application.Common.Results;
-using Crpg.Application.Parties.Commands;
-using Crpg.Application.Settlements.Queries;
+using Crpg.Application.Terrains.Commands;
 using Crpg.Application.Terrains.Models;
-using Crpg.Application.Users.Commands;
+using Crpg.Application.Terrains.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

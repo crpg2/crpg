@@ -6,7 +6,7 @@ using Crpg.Application.Common.Results;
 using Crpg.Application.Terrains.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Crpg.Application.Settlements.Queries;
+namespace Crpg.Application.Terrains.Queries;
 
 public record GetTerrainsQuery : IMediatorRequest<IList<TerrainViewModel>>
 {

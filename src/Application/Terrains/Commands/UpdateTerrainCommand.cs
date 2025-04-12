@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using NetTopologySuite.Geometries;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
 
-namespace Crpg.Application.Users.Commands;
+namespace Crpg.Application.Terrains.Commands;
 
 public record UpdateTerrainCommand : IMediatorRequest<TerrainViewModel>
 {

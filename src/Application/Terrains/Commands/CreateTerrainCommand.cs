@@ -8,12 +8,13 @@ using Microsoft.Extensions.Logging;
 using NetTopologySuite.Geometries;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
 
-namespace Crpg.Application.Parties.Commands;
+namespace Crpg.Application.Terrains.Commands;
 
 public record CreateTerrainCommand : IMediatorRequest<TerrainViewModel>
 {
     public TerrainType Type { get; set; }
     public Polygon Boundary { get; set; } = default!;
+
     internal class Handler : IMediatorRequestHandler<CreateTerrainCommand, TerrainViewModel>
     {
         private static readonly ILogger Logger = LoggerFactory.CreateLogger<CreateTerrainCommand>();

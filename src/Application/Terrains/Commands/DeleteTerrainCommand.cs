@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
 
-namespace Crpg.Application.Users.Commands;
+namespace Crpg.Application.Terrains.Commands;
 
 public record DeleteTerrainCommand : IMediatorRequest
 {
