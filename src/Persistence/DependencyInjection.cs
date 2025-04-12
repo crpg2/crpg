@@ -11,6 +11,7 @@ using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
+using Crpg.Domain.Entities.Terrains;
 using Crpg.Domain.Entities.Users;
 using Crpg.Sdk.Abstractions;
 using Microsoft.EntityFrameworkCore;
@@ -67,6 +68,7 @@ public static class DependencyInjection
                                 .MapEnum<ActivityLogType>()
                                 .MapEnum<NotificationState>()
                                 .MapEnum<NotificationType>()
+                                .MapEnum<TerrainType>()
                                 .MapEnum<UserUpdateStatus>())
                     .UseSnakeCaseNamingConvention();
 

@@ -381,4 +381,11 @@ internal static class CommonErrors
         Title = "User notification was not found",
         Detail = $"User notification with id '{userNotificationId}' was not found",
     };
+
+    public static Error TerrainNotFound(int terrainId) => new(ErrorType.NotFound, ErrorCode.TerrainNotFound)
+    {
+        Title = "Terrain was not found",
+        Detail = $"Terrain with id '{terrainId}' was not found",
+    };
+
 }

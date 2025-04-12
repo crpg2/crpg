@@ -12,6 +12,7 @@ using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
+using Crpg.Domain.Entities.Terrains;
 using Crpg.Domain.Entities.Users;
 using Crpg.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -57,6 +58,7 @@ namespace Crpg.Persistence.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "restriction_type", new[] { "all", "chat", "join" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "role", new[] { "admin", "game_admin", "moderator", "user" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "settlement_type", new[] { "castle", "town", "village" });
+            NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "terrain_type", new[] { "barrier", "deep_water", "shallow_water", "sparse_forest", "thick_forest" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "user_update_status", new[] { "completed", "started" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "weapon_class", new[] { "arrow", "banner", "bolt", "boulder", "bow", "cartridge", "crossbow", "dagger", "javelin", "large_shield", "low_grip_polearm", "mace", "musket", "one_handed_axe", "one_handed_polearm", "one_handed_sword", "pick", "pistol", "small_shield", "stone", "throwing_axe", "throwing_knife", "two_handed_axe", "two_handed_mace", "two_handed_polearm", "two_handed_sword", "undefined" });
             NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "postgis");
@@ -1186,6 +1188,38 @@ namespace Crpg.Persistence.Migrations
                         .HasDatabaseName("ix_settlement_items_item_id");
 
                     b.ToTable("settlement_items", (string)null);
+                });
+
+            modelBuilder.Entity("Crpg.Domain.Entities.Terrains.Terrain", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<Polygon>("Boundary")
+                        .IsRequired()
+                        .HasColumnType("geometry")
+                        .HasColumnName("boundary");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<TerrainType>("Type")
+                        .HasColumnType("terrain_type")
+                        .HasColumnName("type");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id")
+                        .HasName("pk_terrains");
+
+                    b.ToTable("terrains", (string)null);
                 });
 
             modelBuilder.Entity("Crpg.Domain.Entities.Users.User", b =>
