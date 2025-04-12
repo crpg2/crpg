@@ -8,14 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Crpg.WebApi.Controllers;
 
-// [Authorize(Policy = UserPolicy)]
-[AllowAnonymous]
+[Authorize(Policy = ModeratorPolicy)]
 public class TerrainsController : BaseController
 {
     /// <summary>
     /// Get Strategus map terrains.
     /// </summary>
     [HttpGet]
+    [Authorize(Policy = UserPolicy)]
     public Task<ActionResult<Result<IList<TerrainViewModel>>>> GetTerrains()
         => ResultToActionAsync(Mediator.Send(new GetTerrainsQuery()));
 
