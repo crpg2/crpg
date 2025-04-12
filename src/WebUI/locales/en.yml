@@ -1530,6 +1530,13 @@ strategus:
     Castle: Castle
     Town: Town
 
+  terrainType:
+    Barrier: Barrier
+    ThickForest: Thick forest
+    SparseForest: Sparse forest
+    ShallowWater: Shallow water
+    DeepWater: Deep water
+
   control:
     locateParty: Locate party
     searchBySettlements: Search settlement
