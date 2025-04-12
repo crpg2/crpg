@@ -10,5 +10,7 @@
   "activeCharacterId": 1,
   "region": "Eu",
   "experienceMultiplier": 1,
-  "isDonor": false
+  "isDonor": false,
+  "unreadNotificationsCount": 0,
+  "clanMembership": null
 }

@@ -31,13 +31,13 @@ export const useMap = () => {
   ])
 
   const onMapMoveEnd = () => {
-    if (map.value === null) { return }
+    if (!map.value) { return }
     mapBounds.value = (map.value.leafletObject as Map).getBounds()
   }
 
   const zoom = ref<number>(mapOptions.minZoom)
 
-  const map = ref<typeof LMap | null>(null)
+  const map = useTemplateRef<typeof LMap>('map')
 
   return {
     center,

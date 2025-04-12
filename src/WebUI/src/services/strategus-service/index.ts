@@ -1,11 +1,8 @@
 import type { StrategusUpdate } from '~/models/strategus'
 import type { Party, PartyStatusUpdateRequest } from '~/models/strategus/party'
-import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { PartyStatus } from '~/models/strategus/party'
-import { get, post, put, tryGet } from '~/services/crpg-client'
-
-export const getSettlements = () => get<SettlementPublic[]>('/settlements')
+import { post, put, tryGet } from '~/services/crpg-client'
 
 export const getUpdate = () => tryGet<StrategusUpdate>('/parties/self/update')
 

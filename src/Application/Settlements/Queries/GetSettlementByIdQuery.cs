@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Settlements.Queries;
 
-public record GetSettlementsQuery : IMediatorRequest<IList<SettlementPublicViewModel>>
+public record GetSettlementByIdQuery : IMediatorRequest<SettlementPublicViewModel>
 {
-    internal class Handler : IMediatorRequestHandler<GetSettlementsQuery, IList<SettlementPublicViewModel>>
+    public int SettlementId { get; init; }
+
+    internal class Handler : IMediatorRequestHandler<GetSettlementByIdQuery, SettlementPublicViewModel>
     {
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
@@ -21,14 +23,16 @@ public record GetSettlementsQuery : IMediatorRequest<IList<SettlementPublicViewM
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<SettlementPublicViewModel>>> Handle(GetSettlementsQuery req, CancellationToken cancellationToken)
+        public async Task<Result<SettlementPublicViewModel>> Handle(GetSettlementByIdQuery req, CancellationToken cancellationToken)
         {
-            var settlements = await _db.Settlements
+            var settlement = await _db.Settlements
                 .Include(s => s.Owner!.User!.ClanMembership!.Clan)
                 .ProjectTo<SettlementPublicViewModel>(_mapper.ConfigurationProvider)
-                .ToArrayAsync(cancellationToken);
+                .FirstOrDefaultAsync(s => s.Id == req.SettlementId, cancellationToken);
 
-            return new(settlements);
+            return settlement == null
+                ? new(CommonErrors.UserNotFound(req.SettlementId)) // TODO: FIXME:L SettlementNotFound
+                : new(settlement);
         }
     }
 }

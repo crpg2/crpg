@@ -60,9 +60,9 @@ const renderCharacter = (characterId: number) => {
   const character = getCharacterById(Number(characterId))
   return character
     ? h(CharacterMedia, {
-      character, // TODO: FIXME:
-      class: 'inline-flex items-center gap-1 align-middle font-bold text-content-100',
-    })
+        character,
+        class: 'inline-flex items-center gap-1 align-middle font-bold text-content-100',
+      })
     : renderStrong(String(characterId))
 }
 

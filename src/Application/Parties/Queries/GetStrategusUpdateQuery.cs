@@ -44,6 +44,7 @@ public record GetStrategusUpdateQuery : IMediatorRequest<StrategusUpdate>
         {
             var party = await _db.Parties
                 .Include(h => h.User)
+                .Include(h => h.User!.ClanMembership!.Clan)
                 .Include(h => h.TargetedParty!.User)
                 .Include(h => h.TargetedSettlement)
                 .FirstOrDefaultAsync(h => h.Id == req.PartyId, cancellationToken);

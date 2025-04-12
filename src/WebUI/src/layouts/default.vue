@@ -24,7 +24,6 @@ const promises: Array<Promise<any>> = [
   loadPatchNotes(),
   loadGameServerStats(),
   userStore.fetchUserRestriction(),
-  userStore.fetchUserClanAndRole(),
   settingsStore.loadSettings(),
 ]
 
@@ -59,7 +58,7 @@ await Promise.all(promises)
     <header
       ref="mainHeader"
       class="z-20 border-b border-solid border-border-200 bg-bg-main"
-      :class="{ 'sticky top-0 bg-opacity-10 backdrop-blur-sm': !route.meta?.noStickyHeader }"
+      :class="{ 'sticky top-0 bg-bg-main/10 backdrop-blur-sm': !route.meta?.noStickyHeader }"
     >
       <UserRestrictionNotification
         v-if="userStore.restriction !== null"

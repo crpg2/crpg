@@ -1,7 +1,6 @@
 import type {
   Clan,
   ClanArmoryItem,
-  ClanEdition,
   ClanInvitation,
   ClanInvitationStatus,
   ClanInvitationType,
@@ -14,35 +13,11 @@ import type { UserItem } from '~/models/user'
 
 import { ClanMemberRole } from '~/models/clan'
 import { del, get, post, put } from '~/services/crpg-client'
-import { argbIntToRgbHexColor, rgbHexColorToArgbInt } from '~/utils/color'
 
-const mapClanRequest = (payload: Omit<Clan, 'id'>): Omit<ClanEdition, 'id'> => {
-  return {
-    ...payload,
-    primaryColor: rgbHexColorToArgbInt(payload.primaryColor),
-    secondaryColor: rgbHexColorToArgbInt(payload.secondaryColor),
-  }
-}
-
-export const mapClanResponse = (payload: ClanEdition): Clan => {
-  return {
-    ...payload,
-    primaryColor: argbIntToRgbHexColor(payload.primaryColor),
-    secondaryColor: argbIntToRgbHexColor(payload.secondaryColor),
-  }
-}
-
-// TODO: backend pagination/region query!
-export const getClans = async () => {
-  const clans = await get<ClanWithMemberCount<ClanEdition>[]>('/clans')
-  return clans.map(c => ({
-    ...c,
-    clan: mapClanResponse(c.clan),
-  }))
-}
+export const getClans = () => get<ClanWithMemberCount[]>('/clans')
 
 export const getFilteredClans = (
-  clans: ClanWithMemberCount<Clan>[],
+  clans: ClanWithMemberCount[],
   region: Region,
   languages: Language[],
   search: string,
@@ -57,14 +32,11 @@ export const getFilteredClans = (
   )
 }
 
-export const createClan = async (clan: Omit<Clan, 'id'>) =>
-  mapClanResponse(await post<ClanEdition>('/clans', mapClanRequest(clan)))
+export const createClan = (clan: Omit<Clan, 'id'>) => post<Clan>('/clans', clan)
 
-export const updateClan = async (clanId: number, clan: Clan) =>
-  mapClanResponse(await put<ClanEdition>(`/clans/${clanId}`, mapClanRequest(clan)))
+export const updateClan = (clanId: number, clan: Clan) => put<Clan>(`/clans/${clanId}`, clan)
 
-export const getClan = async (id: number) =>
-  mapClanResponse(await get<ClanEdition>(`/clans/${id}`))
+export const getClan = (id: number) => get<Clan>(`/clans/${id}`)
 
 export const getClanMembers = async (id: number) => get<ClanMember[]>(`/clans/${id}/members`)
 

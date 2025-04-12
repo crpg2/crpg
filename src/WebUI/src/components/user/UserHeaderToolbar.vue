@@ -11,7 +11,7 @@ const animatedUserGold = useTransition(toRef(() => userStore.user!.gold))
 </script>
 
 <template>
-  <div class="gap flex items-center gap-3">
+  <div class="flex items-center gap-3">
     <!-- TODO: improve tooltip, share heirloom, bla bla bla -->
     <Coin
       v-tooltip.bottom="$t('user.field.gold')"
@@ -28,9 +28,7 @@ const animatedUserGold = useTransition(toRef(() => userStore.user!.gold))
     <Divider inline />
 
     <UserMedia
-      :user="mapUserToUserPublic(userStore.user!, userStore.clan)"
-      :clan="userStore.clan"
-      :clan-role="userStore.clanMemberRole"
+      :user="mapUserToUserPublic(userStore.user!)"
       hidden-platform
       size="xl"
     />

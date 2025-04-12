@@ -41,7 +41,6 @@ const onSave = () => {
     >
       <UserMedia
         :user="member.user"
-        :clan-role="member.role"
         size="xl"
       />
     </div>

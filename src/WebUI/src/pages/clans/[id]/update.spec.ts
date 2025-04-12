@@ -106,7 +106,7 @@ it('emit - submit', async () => {
   await flushPromises()
 
   expect(mockedUpdateClan).toBeCalledWith(CLAN_ID, { ...CLAN, ...CLAN_FORM })
-  expect(userStore.fetchUserClanAndRole).toBeCalled()
+  expect(userStore.fetchUser).toBeCalled()
   expect(spyRouterReplace).toBeCalledWith({
     name: 'ClansId',
     params: {
@@ -143,7 +143,7 @@ describe('delete clan', () => {
     await ConfirmActionForm.vm.$emit('confirm')
     await flushPromises()
 
-    expect(userStore.fetchUserClanAndRole).toBeCalled()
+    expect(userStore.fetchUser).toBeCalled()
     expect(mockedNotify).toBeCalledWith('clan.delete.notify.success')
     expect(spyRouterReplace).toBeCalledWith({
       name: 'Clans',

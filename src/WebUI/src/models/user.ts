@@ -1,4 +1,4 @@
-import type { Clan } from './clan'
+import type { Clan, ClanMemberRole } from './clan'
 import type { Item, ItemSlot, ItemType } from './item'
 import type { NotificationState } from './notifications'
 import type { Platform } from './platform'
@@ -19,12 +19,11 @@ export interface User {
   experienceMultiplier: number
   activeCharacterId: number | null
   unreadNotificationsCount: number
+  clanMembership: UserClanMembership | null
 }
 
 export interface UserPublic
-  extends Pick<User, 'id' | 'platform' | 'platformUserId' | 'name' | 'region'> {
-  avatar: string
-  clan: Clan | null
+  extends Pick<User, 'id' | 'platform' | 'platformUserId' | 'name' | 'region' | 'avatar' | 'clanMembership'> {
 }
 
 export interface UserPrivate extends UserPublic {
@@ -36,6 +35,12 @@ export interface UserPrivate extends UserPublic {
   heirloomPoints: number
   experienceMultiplier: number
   activeCharacterId: number | null
+}
+
+// TODO: FIXME: RENAME??
+export interface UserClanMembership {
+  clan: Clan
+  role: ClanMemberRole
 }
 
 // TODO: to /models/item.ts

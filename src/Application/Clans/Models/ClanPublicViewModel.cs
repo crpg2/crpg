@@ -8,8 +8,8 @@ public record ClanPublicViewModel : IMapFrom<Clan>
 {
     public int Id { get; init; }
     public string Tag { get; init; } = string.Empty;
-    public string PrimaryColor { get; init; } = string.Empty;
-    public string SecondaryColor { get; init; } = string.Empty;
+    public uint PrimaryColor { get; init; }
+    public uint SecondaryColor { get; init; }
     public string Name { get; init; } = string.Empty;
     public string BannerKey { get; init; } = string.Empty;
     public Region Region { get; set; }

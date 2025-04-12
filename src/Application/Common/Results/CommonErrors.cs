@@ -387,5 +387,4 @@ internal static class CommonErrors
         Title = "Terrain was not found",
         Detail = $"Terrain with id '{terrainId}' was not found",
     };
-
 }

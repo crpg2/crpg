@@ -75,7 +75,7 @@ const canUpdateMember = computed(() =>
 
 const { execute: updateMember } = useAsyncCallback(async (userId: number, selectedRole: ClanMemberRole) => {
   await updateClanMember(clanId.value, userId, selectedRole)
-  await Promise.all([loadClanMembers(0, { id: clanId.value }), userStore.fetchUserClanAndRole()])
+  await Promise.all([loadClanMembers(0, { id: clanId.value })])
   notify(t('clan.member.update.notify.success'))
 })
 
@@ -91,8 +91,10 @@ const { execute: kickMember } = useAsyncCallback(async (member: ClanMember) => {
   const isSelfMember = checkIsSelfMember(member)
 
   if (isSelfMember) {
-    await userStore.fetchUserClanAndRole()
+    // update user clan info
+    await userStore.fetchUser()
   }
+
   notify(
     isSelfMember ? t('clan.member.leave.notify.success') : t('clan.member.kick.notify.success'),
   )

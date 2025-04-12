@@ -7,21 +7,14 @@ definePage({
   },
 })
 
-const { execute: loadRestrictions, state: restrictions } = useAsyncState(
+const { state: restrictions } = useAsyncState(
   () => getRestrictions(),
   [],
-  {
-    immediate: false,
-  },
 )
-
-await loadRestrictions()
 </script>
 
 <template>
   <div class="container">
-    <div class="mb-16">
-      <RestrictionsTable :restrictions="restrictions" />
-    </div>
+    <RestrictionsTable :restrictions />
   </div>
 </template>

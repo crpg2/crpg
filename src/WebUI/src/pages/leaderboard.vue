@@ -98,7 +98,7 @@ const rowClass = (row: CharacterCompetitiveNumbered): string =>
           </OTabs>
         </div>
         <Divider inline />
-        <div class="items-right flex">
+        <div class="flex items-end">
           <OTabs
             v-model="gameModeModel"
             content-class="hidden"
@@ -169,9 +169,9 @@ const rowClass = (row: CharacterCompetitiveNumbered): string =>
           :label="$t('leaderboard.table.cols.player')"
         >
           <UserMedia
+            class="max-w-80"
             :user="row.user"
             hidden-platform
-            class="max-w-[20rem]"
           />
         </OTableColumn>
 

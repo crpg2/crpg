@@ -1,4 +1,5 @@
 using AutoMapper;
+using Crpg.Application.Clans.Models;
 using Crpg.Application.Common.Mappings;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Notifications;
@@ -21,13 +22,11 @@ public record UserViewModel : IMapFrom<User>
     public Uri? Avatar { get; init; }
     public int? ActiveCharacterId { get; init; }
     public int UnreadNotificationsCount { get; init; }
+    public UserClanViewModel? ClanMembership { get; init; }
 
     public void Mapping(Profile profile)
     {
         profile.CreateMap<User, UserViewModel>()
-            .ForMember(u => u.UnreadNotificationsCount,
-                opt => opt.MapFrom(u => u.Notifications
-                    .Where(un => un.State == NotificationState.Unread)
-                    .Count()));
+            .ForMember(u => u.UnreadNotificationsCount, opt => opt.MapFrom(u => u.Notifications.Where(un => un.State == NotificationState.Unread).Count()));
     }
 }
