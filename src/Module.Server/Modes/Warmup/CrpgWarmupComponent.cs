@@ -190,7 +190,8 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
     private void RewardUsers()
     {
         _rewardTickTimer ??= new MissionTimer(duration: WarmupRewardTimer);
-        if (_rewardTickTimer.Check(reset: true))
+        // only set multi and reward players if not enough to start game
+        if (_rewardTickTimer.Check(reset: true) && MultiplayerOptions.OptionType.MinNumberOfPlayersForMatchStart.GetIntValue() - _players.Count() > 0)
         {
             OnWarmupRewardTick?.Invoke(_rewardTickTimer.GetTimerDuration());
         }
