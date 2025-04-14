@@ -789,7 +789,7 @@ export const reforgeCostByRank: Record<ItemRank, number> = {
   3: itemReforgeCostPerRank[3],
 }
 
-export const itemIsNewDays = 1
+export const itemIsNewDays = 14
 
 export const isWeaponBySlot = (slot: ItemSlot) => weaponSlots.includes(slot)
 
