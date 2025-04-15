@@ -5,6 +5,7 @@ import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { createClan } from '~/services/clan-service'
 import { notify } from '~/services/notification-service'
 import { t } from '~/services/translate-service'
+import { useUserStore } from '~/stores/user'
 
 definePage({
   meta: {
@@ -14,10 +15,12 @@ definePage({
   },
 })
 
+const userStore = useUserStore()
 const router = useRouter()
 
 const { execute: onCreateClan, loading: creatingClan } = useAsyncCallback(async (form: Omit<Clan, 'id'>) => {
   const clan = await createClan(form)
+  await userStore.fetchUser()
   notify(t('clan.create.notify.success'))
   return router.replace({ name: 'ClansId', params: { id: clan.id } })
 })
