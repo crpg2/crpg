@@ -24,7 +24,7 @@ const {
       :src="user.avatar"
       class="rounded-full"
       :alt="user.name"
-      :class="[size === 'xl' ? 'size-8' : 'size-6', { 'ring-2  ring-status-success': isSelf }]"
+      :class="[size === 'xl' ? 'size-8' : 'size-6', { 'ring-2 ring-status-success': isSelf }]"
     >
 
     <UserClan
