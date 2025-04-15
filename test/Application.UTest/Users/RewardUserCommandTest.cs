@@ -12,12 +12,13 @@ namespace Crpg.Application.UTest.Users;
 
 public class RewardUserCommandTest : TestBase
 {
+    private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly Mock<IUserNotificationService> UserNotificationsService = new() { DefaultValue = DefaultValue.Mock };
+
     [Test]
     public async Task UserNotFound()
     {
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
-        RewardUserCommand.Handler handler = new(activityLogServiceMock.Object, ActDb, Mapper);
+        RewardUserCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object, UserNotificationsService.Object);
         var res = await handler.Handle(new RewardUserCommand
         {
             UserId = 1,
@@ -40,9 +41,7 @@ public class RewardUserCommandTest : TestBase
         ArrangeDb.Users.Add(user);
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
-        RewardUserCommand.Handler handler = new(activityLogServiceMock.Object, ActDb, Mapper);
+        RewardUserCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object, UserNotificationsService.Object);
         var res = await handler.Handle(new RewardUserCommand
         {
             UserId = 1,
@@ -61,9 +60,7 @@ public class RewardUserCommandTest : TestBase
         ArrangeDb.Users.Add(new() { Items = { new() { Item = new() { Id = "crpg_personal_item_1" }, PersonalItem = new() } } });
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
-        RewardUserCommand.Handler handler = new(activityLogServiceMock.Object, ActDb, Mapper);
+        RewardUserCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object, UserNotificationsService.Object);
         var res = await handler.Handle(new RewardUserCommand
         {
             UserId = 1,
@@ -88,9 +85,7 @@ public class RewardUserCommandTest : TestBase
         ArrangeDb.Items.Add(new() { Id = "crpg_personal_item_1" });
         await ArrangeDb.SaveChangesAsync();
 
-        Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
-
-        RewardUserCommand.Handler handler = new(activityLogServiceMock.Object, ActDb, Mapper);
+        RewardUserCommand.Handler handler = new(ActDb, Mapper, ActivityLogService.Object, UserNotificationsService.Object);
         var res = await handler.Handle(new RewardUserCommand
         {
             UserId = user.Id,

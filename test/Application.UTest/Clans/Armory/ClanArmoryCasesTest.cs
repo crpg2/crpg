@@ -8,7 +8,8 @@ namespace Crpg.Application.UTest.Clans.Armory;
 public class ClanArmoryCasesTest : TestBase
 {
     private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
-    private static readonly IClanService ClanService = new ClanService(ActivityLogService.Object);
+    private static readonly Mock<IUserNotificationService> UserNotificationsService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly IClanService ClanService = new ClanService(ActivityLogService.Object, UserNotificationsService.Object);
 
     [Test]
     public async Task ShouldCascadeOnClanLeave()

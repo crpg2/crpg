@@ -5,10 +5,12 @@ using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
+using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Settings;
 using Crpg.Domain.Entities.Settlements;
+using Crpg.Domain.Entities.Terrains;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -41,6 +43,9 @@ public interface ICrpgDbContext
     DbSet<BattleMercenaryApplication> BattleMercenaryApplications { get; }
     DbSet<ActivityLog> ActivityLogs { get; set; }
     DbSet<ActivityLogMetadata> ActivityLogMetadata { get; set; }
+    DbSet<UserNotification> UserNotifications { get; set; }
+    DbSet<Terrain> Terrains { get; }
+    DbSet<UserNotificationMetadata> UserNotificationMetadata { get; set; }
     DbSet<IdempotencyKey> IdempotencyKeys { get; set; }
     DbSet<Setting> Settings { get; set; }
     EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;

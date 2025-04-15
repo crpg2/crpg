@@ -5,10 +5,12 @@ using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.GameServers;
 using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
+using Crpg.Domain.Entities.Terrains;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -50,8 +52,10 @@ public class CrpgDbContextFactory : IDesignTimeDbContextFactory<CrpgDbContext>
                         .MapEnum<Languages>()
                         .MapEnum<GameMode>()
                         .MapEnum<ActivityLogType>()
-                        .MapEnum<UserUpdateStatus>()
-                        )
+                        .MapEnum<NotificationState>()
+                        .MapEnum<NotificationType>()
+                        .MapEnum<TerrainType>()
+                        .MapEnum<UserUpdateStatus>())
             .UseSnakeCaseNamingConvention()
             .Options;
         return new CrpgDbContext(options);

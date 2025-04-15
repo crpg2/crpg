@@ -23,6 +23,7 @@ public enum ErrorCode
     ClanNameAlreadyUsed,
     ClanNeedLeader,
     ClanNotFound,
+    ClanLeaderFound,
     ClanTagAlreadyUsed,
     Conflict,
     FighterNotACommander,
@@ -63,8 +64,10 @@ public enum ErrorCode
     UserItemNotFound,
     UserNotAClanMember,
     UserNotFound,
+    UserNotificationNotFound,
     UserNotInAClan,
     UserRoleNotMet,
     PersonalItemAlreadyExist,
     SettingNotFound,
+    TerrainNotFound,
 }

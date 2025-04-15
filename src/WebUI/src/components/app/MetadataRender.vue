@@ -2,8 +2,8 @@
 import { Tooltip } from 'floating-vue'
 import { I18nT } from 'vue-i18n'
 
-import type { ActivityLog, ActivityLogMetadataDicts } from '~/models/activity-logs'
 import type { ClanMemberRole } from '~/models/clan'
+import type { MetadataDict } from '~/models/metadata'
 import type { UserPublic } from '~/models/user'
 
 import Coin from '~/components/app/Coin.vue'
@@ -16,10 +16,10 @@ import UserMedia from '~/components/user/UserMedia.vue'
 import { getItemImage } from '~/services/item-service'
 import { n } from '~/services/translate-service'
 
-const { keypath, activityLog, dict } = defineProps<{
+const { keypath, metadata, dict } = defineProps<{
   keypath: string
-  activityLog: ActivityLog
-  dict: ActivityLogMetadataDicts
+  metadata: Record<string, string>
+  dict: MetadataDict
 }>()
 
 defineEmits<{
@@ -28,7 +28,7 @@ defineEmits<{
 }>()
 
 const slots = defineSlots<{
-  user: (props: { user: UserPublic }) => any
+  user?: (props: { user: UserPublic }) => any
 }>()
 
 const getClanById = (clanId: number) => dict.clans.find(({ id }) => id === clanId)
@@ -52,7 +52,7 @@ const renderUser = (userId: number) => {
   const user = getUserById(userId)
 
   return user
-    ? slots?.user({ user }) || h(UserMedia, { user, class: 'text-content-100' })
+    ? slots?.user?.({ user }) || h(UserMedia, { user, class: 'text-content-100' })
     : renderStrong(String(userId))
 }
 
@@ -94,32 +94,30 @@ const renderLoom = (point: number) => h(Loom, { point })
 
 const Render = () => {
   const {
-    metadata: {
-      clanId,
-      oldClanMemberRole,
-      newClanMemberRole,
-      userId,
-      targetUserId,
-      actorUserId,
-      characterId,
-      generation,
-      level,
-      gold,
-      price,
-      refundedGold,
-      heirloomPoints,
-      refundedHeirloomPoints,
-      itemId,
-      userItemId,
-      experience,
-      damage,
-      instance,
-      gameMode,
-      oldName,
-      newName,
-      message,
-    },
-  } = activityLog
+    clanId,
+    oldClanMemberRole,
+    newClanMemberRole,
+    userId,
+    targetUserId,
+    actorUserId,
+    characterId,
+    generation,
+    level,
+    gold,
+    price,
+    refundedGold,
+    heirloomPoints,
+    refundedHeirloomPoints,
+    itemId,
+    userItemId,
+    experience,
+    damage,
+    instance,
+    gameMode,
+    oldName,
+    newName,
+    message,
+  } = metadata
 
   return h(
     I18nT,
@@ -133,7 +131,8 @@ const Render = () => {
       clan: () => renderUserClan(Number(clanId)),
       oldClanMemberRole: () => h(ClanRole, { role: oldClanMemberRole as ClanMemberRole }),
       newClanMemberRole: () => h(ClanRole, { role: newClanMemberRole as ClanMemberRole }),
-      ...((activityLog.userId || userId) && { user: () => renderUser(Number(activityLog.userId || userId)) }),
+      ...(userId && { user: () => renderUser(Number(userId)) }),
+      //   ...(user && { user: () => renderUser(Number(user)) }),
       ...(targetUserId && { targetUser: () => renderUser(Number(targetUserId)) }),
       ...(actorUserId && { actorUser: () => renderUser(Number(actorUserId)) }),
       ...(characterId && { character: () => renderCharacter(Number(characterId)) }),

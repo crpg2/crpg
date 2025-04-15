@@ -27,13 +27,15 @@ public record RespondClanInvitationCommand : IMediatorRequest<ClanInvitationView
         private readonly IMapper _mapper;
         private readonly IClanService _clanService;
         private readonly IActivityLogService _activityLogService;
+        private readonly IUserNotificationService _userNotificationService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService, IActivityLogService activityLogService)
+        public Handler(ICrpgDbContext db, IMapper mapper, IClanService clanService, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
             _db = db;
             _mapper = mapper;
             _clanService = clanService;
             _activityLogService = activityLogService;
+            _userNotificationService = userNotificationService;
         }
 
         public async Task<Result<ClanInvitationViewModel>> Handle(RespondClanInvitationCommand req, CancellationToken cancellationToken)
@@ -97,7 +99,6 @@ public record RespondClanInvitationCommand : IMediatorRequest<ClanInvitationView
             {
                 invitation.Status = ClanInvitationStatus.Declined;
                 invitation.InviterId = inviter.Id; // If invitation was a request, invited == invitee.
-                await _db.SaveChangesAsync(cancellationToken);
 
                 if (invitation.Type == ClanInvitationType.Offer) // TODO: implement offer ui
                 {
@@ -107,11 +108,11 @@ public record RespondClanInvitationCommand : IMediatorRequest<ClanInvitationView
                 else // Request
                 {
                     _db.ActivityLogs.Add(_activityLogService.CreateClanApplicationDeclinedLog(user.Id, invitation.ClanId));
-                    await _db.SaveChangesAsync(cancellationToken);
                     Logger.LogInformation("User '{0}' declined request to join '{1}' from user '{2}' to join clan '{3}'",
                         inviter.Id, invitation.Id, invitee.Id, invitation.ClanId);
                 }
 
+                await _db.SaveChangesAsync(cancellationToken);
                 return new(_mapper.Map<ClanInvitationViewModel>(invitation));
             }
 
@@ -133,7 +134,6 @@ public record RespondClanInvitationCommand : IMediatorRequest<ClanInvitationView
             }
 
             invitation.Status = ClanInvitationStatus.Accepted;
-            await _db.SaveChangesAsync(cancellationToken);
 
             if (invitation.Type == ClanInvitationType.Offer) // TODO: implement offer ui
             {
@@ -151,15 +151,16 @@ public record RespondClanInvitationCommand : IMediatorRequest<ClanInvitationView
                 if (oldClanId == null)
                 {
                     Logger.LogInformation("User '{0}' accepted request '{1}' from user '{2}' to join clan '{3}'", inviter.Id, invitation.Id, invitee.Id, invitation.ClanId);
+                    _db.ActivityLogs.Add(_activityLogService.CreateClanApplicationAcceptedLog(user.Id, invitation.ClanId));
+                    _db.UserNotifications.Add(_userNotificationService.CreateClanApplicationAcceptedToUserNotification(invitee.Id, invitation.ClanId));
                 }
                 else
                 {
                     Logger.LogInformation("User '{0}' accepted request '{1}' from user '{2}' to join left clan '{3}' for clan '{4}'", inviter.Id, invitation.Id, invitee.Id, oldClanId, invitation.ClanId);
                 }
-
-                _db.ActivityLogs.Add(_activityLogService.CreateClanApplicationAcceptedLog(user.Id, invitation.ClanId));
-                await _db.SaveChangesAsync(cancellationToken);
             }
+
+            await _db.SaveChangesAsync(cancellationToken);
 
             return new(_mapper.Map<ClanInvitationViewModel>(invitation));
         }

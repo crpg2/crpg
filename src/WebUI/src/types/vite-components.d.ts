@@ -17,6 +17,7 @@ declare module 'vue' {
     CharacterInventoryItemDetail: typeof import('./../components/character/inventory/CharacterInventoryItemDetail.vue')['default']
     CharacterInventoryItemUpgrades: typeof import('./../components/character/inventory/CharacterInventoryItemUpgrades.vue')['default']
     CharacterMedia: typeof import('./../components/character/CharacterMedia.vue')['default']
+    CharacterRespecButtonModal: typeof import('./../components/character/CharacterRespecButtonModal.vue')['default']
     CharacterSelectItem: typeof import('./../components/character/CharacterSelectItem.vue')['default']
     CharacterStats: typeof import('./../components/character/CharacterStats.vue')['default']
     ClanArmoryItemCard: typeof import('./../components/clan/armory/ClanArmoryItemCard.vue')['default']
@@ -71,6 +72,7 @@ declare module 'vue' {
     MetadataRender: typeof import('./../components/app/MetadataRender.vue')['default']
     Modal: typeof import('./../components/ui/Modal.vue')['default']
     MoreOptionsDropdownButton: typeof import('./../components/app/MoreOptionsDropdownButton.vue')['default']
+    NotificationCard: typeof import('./../components/app/NotificationCard.vue')['default']
     NumericInput: typeof import('./../components/ui/NumericInput.vue')['default']
     OnlinePlayers: typeof import('./../components/app/OnlinePlayers.vue')['default']
     Pagination: typeof import('./../components/ui/Pagination.vue')['default']
@@ -106,5 +108,6 @@ declare module 'vue' {
     UserPlatform: typeof import('./../components/user/UserPlatform.vue')['default']
     UserRestrictionNotification: typeof import('./../components/user/UserRestrictionNotification.vue')['default']
     Welcome: typeof import('./../components/app/Welcome.vue')['default']
+    'СharacterRespecButtonModal': typeof import('./../components/character/СharacterRespecButtonModal.vue')['default']
   }
 }

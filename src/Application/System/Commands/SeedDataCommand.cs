@@ -10,11 +10,12 @@ using Crpg.Domain.Entities.Characters;
 using Crpg.Domain.Entities.Clans;
 using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
+using Crpg.Domain.Entities.Notifications;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
-using Crpg.Domain.Entities.Settings;
 using Crpg.Domain.Entities.Settlements;
+using Crpg.Domain.Entities.Terrains;
 using Crpg.Domain.Entities.Users;
 using Crpg.Sdk.Abstractions;
 using Microsoft.EntityFrameworkCore;
@@ -39,12 +40,13 @@ public record SeedDataCommand : IMediatorRequest
         private readonly ICharacterService _characterService;
         private readonly IExperienceTable _experienceTable;
         private readonly IActivityLogService _activityLogService;
+        private readonly IUserNotificationService _userNotificationService;
         private readonly IStrategusMap _strategusMap;
         private readonly ISettlementsSource _settlementsSource;
 
         public Handler(ICrpgDbContext db, IItemsSource itemsSource, IApplicationEnvironment appEnv,
             ICharacterService characterService, IExperienceTable experienceTable, IStrategusMap strategusMap,
-            ISettlementsSource settlementsSource, IActivityLogService activityLogService)
+            ISettlementsSource settlementsSource, IActivityLogService activityLogService, IUserNotificationService userNotificationService)
         {
             _db = db;
             _itemsSource = itemsSource;
@@ -54,6 +56,7 @@ public record SeedDataCommand : IMediatorRequest
             _strategusMap = strategusMap;
             _settlementsSource = settlementsSource;
             _activityLogService = activityLogService;
+            _userNotificationService = userNotificationService;
         }
 
         public async Task<Result> Handle(SeedDataCommand request, CancellationToken cancellationToken)
@@ -1442,7 +1445,25 @@ public record SeedDataCommand : IMediatorRequest
                     .Concat(gameServerActivityLogs)
                     .Concat(characterEarnedActivityLogs)
                     .Concat(clanActivityLogs));
-            await _db.SaveChangesAsync(cancellationToken);
+
+            UserNotification[] orleNotifications =
+            {
+                _userNotificationService.CreateUserRewardedToUserNotification(orle.Id, 100, 1, orleItem1.ItemId),
+                _userNotificationService.CreateCharacterRewardedToUserNotification(orle.Id, orleCharacter0.Id, 122211),
+                _userNotificationService.CreateItemReturnedToUserNotification(orle.Id, orleItem1.ItemId, 2, 1222),
+                _userNotificationService.CreateClanApplicationCreatedToOfficersNotification(orle.Id, pecores.Id, takeo.Id),
+                _userNotificationService.CreateClanApplicationCreatedToUserNotification(orle.Id, pecores.Id),
+                _userNotificationService.CreateClanApplicationAcceptedToUserNotification(orle.Id, pecores.Id),
+                _userNotificationService.CreateClanApplicationDeclinedToUserNotification(orle.Id, pecores.Id),
+                _userNotificationService.CreateClanMemberRoleChangedToUserNotification(orle.Id, pecores.Id, takeo.Id, ClanMemberRole.Officer, ClanMemberRole.Leader),
+                _userNotificationService.CreateClanMemberLeavedToLeaderNotification(orle.Id, pecores.Id, takeo.Id),
+                _userNotificationService.CreateClanMemberKickedToExMemberNotification(orle.Id, pecores.Id),
+                _userNotificationService.CreateClanArmoryBorrowItemToLenderNotification(orle.Id, pecores.Id, orleItem1.ItemId, takeo.Id),
+                _userNotificationService.CreateClanArmoryRemoveItemToBorrowerNotification(orle.Id, pecores.Id, takeoItem1.ItemId, takeo.Id),
+            };
+
+            _db.UserNotifications.RemoveRange(await _db.UserNotifications.ToArrayAsync());
+            _db.UserNotifications.AddRange(orleNotifications);
 
             ClanInvitation[] newClanInvitations = { schumetzqRequestForPecores, victorhh888MemberRequestForPecores, neostralieOfferToBrygganForPecores };
 
@@ -2102,6 +2123,23 @@ public record SeedDataCommand : IMediatorRequest
             {
                 _db.Battles.AddRange(newBattles);
             }
+
+            Terrain[] terrains =
+            {
+                new()
+                {
+                    Type = TerrainType.ThickForest,
+                    Boundary = new Polygon(new LinearRing(new Coordinate[] { new(99.210197, -101.434375), new(100.263933, -100.115272), new(100.749973, -99.783815), new(101.136596, -99.253485), new(101.445895, -98.734204), new(101.920889, -98.557427), new(101.920889, -98.557427), new(102.561578, -98.634767), new(103.467381, -98.446942), new(104.085977, -98.38065), new(104.174348, -97.761932), new(104.59411, -97.342087), new(105.168522, -97.264747), new(105.787118, -97.640398), new(105.865278, -98.253125), new(105.732492, -98.95625), new(105.451157, -99.7625), new(104.810658, -100.004687), new(104.162348, -100.48125), new(102.95946, -100.410937), new(102.365826, -101.090625), new(101.944034, -101.309375), new(101.483188, -101.715625), new(101.194182, -101.965625), new(100.616171, -102.160937), new(100.584927, -102.746875), new(100.131891, -102.934375), new(99.460148, -102.403125), new(99.210197, -101.434375), })),
+                },
+                new()
+                {
+                    Type = TerrainType.ShallowWater,
+                    Boundary = new Polygon(new LinearRing(new Coordinate[] { new(104.174348, -97.761932), new(104.130833, -98.066596), new(103.420365, -98.192822), new(102.686134, -97.974021), new(101.694142, -97.184773), new(101.819117, -97.0363), new(102.756433, -97.677076), new(103.365688, -97.91932), new(104.174348, -97.761932), })),
+                },
+            };
+
+            _db.Terrains.RemoveRange(await _db.Terrains.ToArrayAsync());
+            _db.Terrains.AddRange(terrains);
         }
 
         private async Task CreateOrUpdateItems(CancellationToken cancellationToken)
@@ -2140,6 +2178,7 @@ public record SeedDataCommand : IMediatorRequest
 
                     _db.UserItems.Remove(userItem);
                     _db.ActivityLogs.Add(_activityLogService.CreateItemReturnedLog(userItem.User.Id, userItem.Item.Id, userItem.Item.Rank, userItem.Item.Price));
+                    _db.UserNotifications.Add(_userNotificationService.CreateItemReturnedToUserNotification(userItem.User.Id, userItem.Item.Id, userItem.Item.Rank, userItem.Item.Price));
                 }
 
                 var itemsToDelete = dbItemsById.Values.Where(i => i.Id == dbItem.Id).ToArray();

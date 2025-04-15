@@ -35,6 +35,9 @@ public record RewardCharacterCommand : IMediatorRequest<CharacterViewModel>
         private readonly ICharacterService _characterService;
         private readonly IExperienceTable _experienceTable;
         private readonly IActivityLogService _activityLogService;
+
+        private readonly IUserNotificationService _userNotificationService;
+
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
         private readonly Constants _constants;
@@ -43,6 +46,7 @@ public record RewardCharacterCommand : IMediatorRequest<CharacterViewModel>
             ICharacterService characterService,
             IExperienceTable experienceTable,
             IActivityLogService activityLogService,
+            IUserNotificationService userNotificationService,
             ICrpgDbContext db,
             IMapper mapper,
             Constants constants)
@@ -50,6 +54,7 @@ public record RewardCharacterCommand : IMediatorRequest<CharacterViewModel>
             _characterService = characterService;
             _experienceTable = experienceTable;
             _activityLogService = activityLogService;
+            _userNotificationService = userNotificationService;
             _db = db;
             _mapper = mapper;
             _constants = constants;
@@ -91,6 +96,7 @@ public record RewardCharacterCommand : IMediatorRequest<CharacterViewModel>
             }
 
             _db.ActivityLogs.Add(_activityLogService.CreateCharacterRewardedLog(req.UserId, req.ActorUserId, req.CharacterId, req.Experience));
+            _db.UserNotifications.Add(_userNotificationService.CreateCharacterRewardedToUserNotification(req.UserId, req.CharacterId, req.Experience));
 
             await _db.SaveChangesAsync(cancellationToken);
             Logger.LogInformation("Character '{0}' rewarded", req.CharacterId);

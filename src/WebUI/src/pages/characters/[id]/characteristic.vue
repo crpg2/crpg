@@ -2,6 +2,7 @@
 import type { SkillKey } from '~/models/character'
 
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
+import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { CharacteristicConversion } from '~/models/character'
 import {
@@ -30,9 +31,7 @@ definePage({
 const userStore = useUserStore()
 
 const character = injectStrict(characterKey)
-const { characterCharacteristics, setCharacterCharacteristics } = injectStrict(
-  characterCharacteristicsKey,
-)
+const { characterCharacteristics, setCharacterCharacteristics } = injectStrict(characterCharacteristicsKey)
 const itemsStats = injectStrict(characterItemsStatsKey)
 
 const {
@@ -76,6 +75,25 @@ const { execute: onConvertCharacterCharacteristics, loading: convertingCharacter
   ])
 })
 
+const { loadCharacterLimitations, respecCapability, respecializingCharacter, onRespecializeCharacter } = useCharacterRespec()
+
+const fetchPageData = (characterId: number) =>
+  Promise.all([
+    loadCharacterLimitations(0, { id: characterId }),
+  ])
+
+fetchPageData(character.value.id)
+
+onBeforeRouteUpdate(async (to, from) => {
+  if (to.name === from.name) {
+    // if character changed
+    // @ts-expect-error TODO:
+    const characterId = Number(to.params.id)
+    await fetchPageData(characterId)
+  }
+  return true
+})
+
 onBeforeRouteUpdate(() => {
   reset()
   return true
@@ -85,7 +103,7 @@ onBeforeRouteUpdate(() => {
 <template>
   <div class="relative mx-auto max-w-4xl">
     <OLoading
-      :active="convertingCharacterCharacteristics || commitingCharacterCharacteristics"
+      :active="convertingCharacterCharacteristics || commitingCharacterCharacteristics || respecializingCharacter"
       icon-size="xl"
     />
     <div class="statsGrid mb-8 grid gap-6">
@@ -271,28 +289,36 @@ onBeforeRouteUpdate(() => {
     </div>
 
     <div
-      class="sticky bottom-0 left-0 flex w-full grid-cols-3 items-center justify-center gap-2  bg-opacity-10 py-4 backdrop-blur-sm"
+      class="sticky bottom-0 left-0 w-full py-4 backdrop-blur-sm"
     >
-      <OButton
-        :disabled="!wasChangeMade"
-        variant="secondary"
-        size="lg"
-        icon-left="reset"
-        :label="$t('action.reset')"
-        data-aq-reset-action
-        @click="reset"
-      />
-
-      <ConfirmActionTooltip @confirm="onCommitCharacterCharacteristics">
+      <div class="flex max-w-4xl items-center justify-center gap-4">
         <OButton
-          variant="primary"
+          :disabled="!wasChangeMade"
+          variant="secondary"
           size="lg"
-          icon-left="check"
-          :disabled="!wasChangeMade || !isChangeValid"
-          :label="$t('action.commit')"
-          data-aq-commit-action
+          icon-left="reset"
+          :label="$t('action.reset')"
+          data-aq-reset-action
+          @click="reset"
         />
-      </ConfirmActionTooltip>
+
+        <ConfirmActionTooltip @confirm="onCommitCharacterCharacteristics">
+          <OButton
+            variant="primary"
+            size="lg"
+            icon-left="check"
+            :disabled="!wasChangeMade || !isChangeValid"
+            :label="$t('action.commit')"
+            data-aq-commit-action
+          />
+        </ConfirmActionTooltip>
+
+        <CharacterRespecButtonModal
+          :respec-capability
+          :character
+          @respec="() => onRespecializeCharacter(character.id)"
+        />
+      </div>
     </div>
   </div>
 </template>

@@ -2,8 +2,6 @@
 import { useToggle, useTransition } from '@vueuse/core'
 import {
   experienceMultiplierByGeneration,
-  freeRespecializeIntervalDays,
-  freeRespecializePostWindowHours,
   maxExperienceMultiplierForGeneration,
   maximumLevel,
   minimumRetirementLevel,
@@ -13,6 +11,7 @@ import type {
   HeirloomPointByLevelAggregation,
 } from '~/services/characters-service'
 
+import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { useGameMode } from '~/composables/use-game-mode'
 import { usePollInterval } from '~/composables/use-poll-interval'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
@@ -21,15 +20,12 @@ import {
   canRetireValidate,
   canSetCharacterForTournamentValidate,
   getCharacterKDARatio,
-  getCharacterLimitations,
   getCharacterStatistics,
   getDefaultCharacterStatistics,
   getExperienceForLevel,
   getExperienceMultiplierBonus,
   getHeirloomPointByLevel,
   getHeirloomPointByLevelAggregation,
-  getRespecCapability,
-  respecializeCharacter,
   retireCharacter,
   setCharacterForTournament,
   tournamentLevelThreshold,
@@ -44,7 +40,7 @@ import {
   characterKey,
   loadCharacterStatisticsKey,
 } from '~/symbols/character'
-import { msToHours, parseTimestamp } from '~/utils/date'
+import { msToHours } from '~/utils/date'
 import { percentOf } from '~/utils/math'
 
 definePage({
@@ -69,25 +65,6 @@ const experiencePercentToNextLEvel = computed(() =>
     nextLevelExperience.value - currentLevelExperience.value,
   ),
 )
-
-const respecCapability = computed(() =>
-  getRespecCapability(
-    character.value,
-    characterLimitations.value,
-    userStore.user!.gold,
-    userStore.isRecentUser,
-  ),
-)
-
-const { execute: onRespecializeCharacter, loading: respecializingCharacter } = useAsyncCallback(async () => {
-  userStore.replaceCharacter(await respecializeCharacter(character.value.id))
-  userStore.subtractGold(respecCapability.value.price)
-  await Promise.all([
-    loadCharacterLimitations(0, { id: character.value.id }),
-    loadCharacterCharacteristics(0, { id: character.value.id }),
-  ])
-  notify(t('character.settings.respecialize.notify.success'))
-})
 
 const canRetire = computed(() => canRetireValidate(character.value.level))
 
@@ -125,15 +102,6 @@ const { subscribe, unsubscribe } = usePollInterval()
 
 const rankTable = computed(() => createRankTable())
 
-const { execute: loadCharacterLimitations, state: characterLimitations } = useAsyncState(
-  ({ id }: { id: number }) => getCharacterLimitations(id),
-  { lastRespecializeAt: new Date() },
-  {
-    immediate: false,
-    resetOnExecute: false,
-  },
-)
-
 const gameMode = ref<GameMode>(GameMode.Battle)
 const isRankedGameMode = computed(() => checkIsRankedGameMode(gameMode.value))
 
@@ -153,6 +121,8 @@ const experienceMultiplierBonus = computed(() =>
 
 const heirloomPointByLevel = computed(() => getHeirloomPointByLevel(character.value.level))
 const retireTableData = computed(() => getHeirloomPointByLevelAggregation())
+
+const { loadCharacterLimitations, respecCapability, respecializingCharacter, onRespecializeCharacter } = useCharacterRespec()
 
 const fetchPageData = (characterId: number) =>
   Promise.all([
@@ -390,116 +360,11 @@ await fetchPageData(character.value.id)
       :collapsable="false"
     >
       <div class="grid grid-cols-3 gap-4">
-        <Modal :disabled="!respecCapability.enabled">
-          <VTooltip placement="auto">
-            <div>
-              <OButton
-                variant="secondary"
-                size="xl"
-                :disabled="!respecCapability.enabled"
-                expanded
-                icon-left="chevron-down-double"
-                data-aq-character-action="respecialize"
-              >
-                <div class="flex items-center gap-2">
-                  <span class="max-w-[100px] overflow-x-hidden text-ellipsis whitespace-nowrap">
-                    {{ $t('character.settings.respecialize.title') }}
-                  </span>
-
-                  <Tag
-                    v-if="respecCapability.price === 0"
-                    variant="success"
-                    size="sm"
-                    label="free"
-                  />
-
-                  <Coin v-else />
-                </div>
-              </OButton>
-            </div>
-
-            <template #popper>
-              <div class="prose prose-invert">
-                <h5>{{ $t('character.settings.respecialize.tooltip.title') }}</h5>
-                <div
-                  v-html="
-                    $t('character.settings.respecialize.tooltip.desc', {
-                      freeRespecPostWindow: $t('dateTimeFormat.hh', {
-                        hours: freeRespecializePostWindowHours,
-                      }),
-                      freeRespecInterval: $t('dateTimeFormat.dd', {
-                        days: freeRespecializeIntervalDays,
-                      }),
-                    })
-                  "
-                />
-
-                <div
-                  v-if="respecCapability.freeRespecWindowRemain > 0"
-                  v-html="
-                    $t('character.settings.respecialize.tooltip.freeRespecPostWindowRemaining', {
-                      remainingTime: $t('dateTimeFormat.dd:hh:mm', {
-                        ...parseTimestamp(respecCapability.freeRespecWindowRemain),
-                      }),
-                    })
-                  "
-                />
-
-                <template v-else-if="respecCapability.price > 0">
-                  <i18n-t
-                    scope="global"
-                    keypath="character.settings.respecialize.tooltip.paidRespec"
-                    tag="p"
-                  >
-                    <template #respecPrice>
-                      <Coin :value="respecCapability.price" />
-                    </template>
-                  </i18n-t>
-
-                  <div
-                    v-html="
-                      $t('character.settings.respecialize.tooltip.freeRespecIntervalNext', {
-                        nextFreeAt: $t('dateTimeFormat.dd:hh:mm', {
-                          ...parseTimestamp(respecCapability.nextFreeAt),
-                        }),
-                      })
-                    "
-                  />
-                </template>
-              </div>
-            </template>
-          </VTooltip>
-
-          <template #popper="{ hide }">
-            <ConfirmActionForm
-              :title="$t('character.settings.respecialize.dialog.title')"
-              :name="character.name"
-              :confirm-label="$t('action.apply')"
-              @cancel="hide"
-              @confirm="
-                () => {
-                  onRespecializeCharacter();
-                  hide();
-                }
-              "
-            >
-              <template #description>
-                <i18n-t
-                  scope="global"
-                  keypath="character.settings.respecialize.dialog.desc"
-                  tag="p"
-                >
-                  <template #respecializationPrice>
-                    <Coin
-                      :value="respecCapability.price"
-                      :class="{ 'text-status-danger': respecCapability.price > 0 }"
-                    />
-                  </template>
-                </i18n-t>
-              </template>
-            </ConfirmActionForm>
-          </template>
-        </Modal>
+        <CharacterRespecButtonModal
+          :respec-capability
+          :character
+          @respec="() => onRespecializeCharacter(character.id)"
+        />
 
         <template v-if="!character.forTournament">
           <!--  -->

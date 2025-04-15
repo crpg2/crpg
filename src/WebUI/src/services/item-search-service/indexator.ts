@@ -194,6 +194,22 @@ const mapMountProps = (item: Item) => {
   }
 }
 
+/**
+ *
+ * @description Change the type for grouping to UI (e.g., group ranged or ammo)
+ */
+const mapItemType = (type: ItemType): ItemType => {
+  if ([ItemType.Bow, ItemType.Crossbow, ItemType.Musket, ItemType.Pistol].includes(type)) {
+    return ItemType.Ranged
+  }
+
+  if ([ItemType.Arrows, ItemType.Bolts, ItemType.Bullets].includes(type)) {
+    return ItemType.Ammo
+  }
+
+  return type
+}
+
 const itemToFlat = (item: Item): ItemFlat => {
   const newItemDateThreshold = new Date().setDate(new Date().getDate() - itemIsNewDays)
 
@@ -211,10 +227,11 @@ const itemToFlat = (item: Item): ItemFlat => {
   }
 
   return {
+    id: item.id,
+    type: mapItemType(item.type),
     baseId: item.baseId,
     culture: item.culture,
     flags,
-    id: item.id,
     modId: generateModId(item, weaponProps?.weaponClass ?? undefined),
     name: item.name,
     new: new Date(item.createdAt).getTime() > newItemDateThreshold ? 1 : 0,
@@ -222,7 +239,6 @@ const itemToFlat = (item: Item): ItemFlat => {
     rank: item.rank,
     requirement: item.requirement,
     tier: roundFLoat(item.tier),
-    type: item.type,
     upkeep: computeAverageRepairCostPerHour(item.price),
     weaponUsage: [WeaponUsage.Primary],
     ...mapWeight(item),
@@ -289,7 +305,9 @@ const getPrimaryWeaponClass = (item: Item) => {
 export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false): ItemFlat[] => {
   // TODO: try to remove cloneDeep
   const result = cloneDeep(items).reduce((out, item) => {
-    if (item.weapons.length > 1) {
+    if (item.weapons.length > 1
+    // TODO: bows have 2 loading modes, so there are several objects in the weapons data structure
+      && item.type !== ItemType.Bow) {
       item.weapons.forEach((w, _idx) => {
         const weaponClass = normalizeWeaponClass(item.type, w)
 

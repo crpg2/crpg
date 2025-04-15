@@ -10,8 +10,9 @@ namespace Crpg.Application.UTest.Clans.Armory;
 public class AddClanArmoryCommandTest : TestBase
 {
     private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
+    private static readonly Mock<IUserNotificationService> UserNotificationsService = new() { DefaultValue = DefaultValue.Mock };
 
-    private IClanService ClanService { get; } = new ClanService(ActivityLogService.Object);
+    private IClanService ClanService { get; } = new ClanService(ActivityLogService.Object, UserNotificationsService.Object);
 
     [Test]
     public async Task ShouldAdd()
