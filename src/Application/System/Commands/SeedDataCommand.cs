@@ -2336,26 +2336,26 @@ public record SeedDataCommand : IMediatorRequest
                     };
 
                     // TODO: hack FIXME: only in dev START
-                    if (_appEnv.Environment == HostingEnvironment.Development)
-                    {
-                        if (settlement.Name == "Rhotae")
-                        {
-                            SettlementItem testitem1 = new() { ItemId = "crpg_14_decor_paltedboots_noble1_v1_h0", Count = 10 };
-                            var rhotaeItems = new List<SettlementItem>
-                        {
-                            testitem1,
-                        };
-                            settlement.OwnerId = 2;
-                            settlement.Items = rhotaeItems;
-                        }
+                    // if (_appEnv.Environment == HostingEnvironment.Development)
+                    // {
+                    //     if (settlement.Name == "Rhotae")
+                    //     {
+                    //         SettlementItem testitem1 = new() { ItemId = "crpg_14_decor_paltedboots_noble1_v1_h0", Count = 10 };
+                    //         var rhotaeItems = new List<SettlementItem>
+                    //     {
+                    //         testitem1,
+                    //     };
+                    //         settlement.OwnerId = 2;
+                    //         settlement.Items = rhotaeItems;
+                    //     }
 
-                        if (settlement.Name == "Thersenion")
-                        {
-                            settlement.OwnerId = 2;
-                        }
+                    //     if (settlement.Name == "Thersenion")
+                    //     {
+                    //         settlement.OwnerId = 2;
+                    //     }
 
-                        // TODO: hack FIXME: only in dev END
-                    }
+                    //     // TODO: hack FIXME: only in dev END
+                    // }
 
                     if (dbSettlementsByNameRegion.TryGetValue((settlement.Name, settlement.Region), out Settlement? dbSettlement))
                     {
