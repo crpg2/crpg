@@ -69,4 +69,5 @@ public enum ErrorCode
     UserRoleNotMet,
     PersonalItemAlreadyExist,
     SettingNotFound,
+    TerrainNotFound,
 }

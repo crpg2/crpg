@@ -10,6 +10,7 @@ using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Settings;
 using Crpg.Domain.Entities.Settlements;
+using Crpg.Domain.Entities.Terrains;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -43,6 +44,7 @@ public interface ICrpgDbContext
     DbSet<ActivityLog> ActivityLogs { get; set; }
     DbSet<ActivityLogMetadata> ActivityLogMetadata { get; set; }
     DbSet<UserNotification> UserNotifications { get; set; }
+    DbSet<Terrain> Terrains { get; }
     DbSet<UserNotificationMetadata> UserNotificationMetadata { get; set; }
     DbSet<IdempotencyKey> IdempotencyKeys { get; set; }
     DbSet<Setting> Settings { get; set; }

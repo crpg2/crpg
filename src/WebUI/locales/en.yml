@@ -1092,6 +1092,8 @@ item:
     MountHarness: Mount harness
     Mount: Mount
     Shield: Shield
+    Ranged: Ranged
+    Ammo: Ammo
     Bow: Bow
     Crossbow: Crossbow
     OneHandedWeapon: One handed weapon
@@ -1528,6 +1530,13 @@ strategus:
     Village: Village
     Castle: Castle
     Town: Town
+
+  terrainType:
+    Barrier: Barrier
+    ThickForest: Thick forest
+    SparseForest: Sparse forest
+    ShallowWater: Shallow water
+    DeepWater: Deep water
 
   control:
     locateParty: Locate party

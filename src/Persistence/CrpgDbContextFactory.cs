@@ -10,6 +10,7 @@ using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
 using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
+using Crpg.Domain.Entities.Terrains;
 using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -53,6 +54,7 @@ public class CrpgDbContextFactory : IDesignTimeDbContextFactory<CrpgDbContext>
                         .MapEnum<ActivityLogType>()
                         .MapEnum<NotificationState>()
                         .MapEnum<NotificationType>()
+                        .MapEnum<TerrainType>()
                         .MapEnum<UserUpdateStatus>())
             .UseSnakeCaseNamingConvention()
             .Options;
