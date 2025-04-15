@@ -2347,7 +2347,7 @@ public record SeedDataCommand : IMediatorRequest
                         Commander = false,
                     },
                 },
-                ScheduledFor = DateTime.UtcNow + TimeSpan.FromMinutes(50),
+                ScheduledFor = DateTime.UtcNow + TimeSpan.FromMinutes(2),
                 CreatedAt = DateTime.UtcNow.AddHours(-4),
             };
 

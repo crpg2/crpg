@@ -24,7 +24,10 @@ internal class CrpgStrategusSpawningBehavior : CrpgSpawningBehaviorBase
 
     public override void OnTick(float dt)
     {
-        SpawnAgents();
+        if (_server!.BattleState == CrpgStrategusServer.StrategusBattleState.InBattle)
+        {
+            SpawnAgents();
+        }
 
         TimeSinceSpawnEnabled += dt;
     }
@@ -38,7 +41,7 @@ internal class CrpgStrategusSpawningBehavior : CrpgSpawningBehaviorBase
     {
         base.OnPeerSpawned(agent);
 
-        if (_server!.IsInWarmup)
+        if (_server!.BattleState != CrpgStrategusServer.StrategusBattleState.InBattle)
         {
             return;
         }
@@ -78,12 +81,6 @@ internal class CrpgStrategusSpawningBehavior : CrpgSpawningBehaviorBase
         var characterEquipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgPeer.User.Character.EquippedItems);
 
         // allow spawning without weapon? what if they run out of weapons but not troops, can always pick up
-
-        //if (!DoesEquipmentContainWeapon(characterEquipment)) // Disallow spawning without weapons.
-        //{
-        //    KickHelper.Kick(networkPeer, DisconnectType.KickedByHost, "no_weapon");
-        //    return false;
-        //}
 
         return true;
     }
