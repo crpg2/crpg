@@ -2,14 +2,14 @@
 import type { BattleMercenaryApplicationCreation } from '~/models/strategus/battle'
 
 import BattleSideComparison from '~/components/strategus/battle/BattleSideComparison.vue'
-import { useBattleFighters } from '~/composables/strategus/use-battle-fighters'
-import { useBattleFighterApplications } from '~/composables/strategus/use-battle-fighters-applications'
-import { useBattleMercenaries } from '~/composables/strategus/use-battle-mercenaries'
-import { useBattleMercenaryApplications } from '~/composables/strategus/use-battle-mercenaries-applications'
-import { useBattle } from '~/composables/strategus/use-battles'
+import { useBattleFighters } from '~/composables/strategus/battle/use-battle-fighters'
+import { useBattleFighterApplications } from '~/composables/strategus/battle/use-battle-fighters-applications'
+import { useBattleMercenaries } from '~/composables/strategus/battle/use-battle-mercenaries'
+import { useBattleMercenaryApplications } from '~/composables/strategus/battle/use-battle-mercenaries-applications'
+import { useBattle } from '~/composables/strategus/battle/use-battles'
 import { BattlePhase, BattleSide } from '~/models/strategus/battle'
 import { notify } from '~/services/notification-service'
-import { getBattleFighter, getBattles, removeBattleMercenary } from '~/services/strategus-service/battle-service'
+import { getBattleFighter, getBattles, removeBattleMercenary } from '~/services/strategus-service/battle'
 import { t } from '~/services/translate-service'
 import { useUserStore } from '~/stores/user'
 
@@ -49,6 +49,7 @@ const RemoveBattleMercenary = async (battleId: number, mercenaryId: number) => {
   await fetchPageData(Number(props.id))
 }
 
+// rename
 const myApp = computed(() =>
   mercenaryApplications.value.find(app => app.user.id === userStore.user?.id),
 )
@@ -65,13 +66,7 @@ const myMercenaryApplication = computed(() => {
   else { return undefined }
 })
 
-const mySide = computed (() => {
-  if (selfFighter.value) {
-    return selfFighter.value.side
-  }
-
-  return null
-})
+const mySide = computed(() => selfFighter.value?.side ?? null)
 
 const canManageApplications = computed(() =>
   selfFighter.value !== null,
@@ -93,21 +88,41 @@ const applicationsCount = computed(() =>
   fighterApplicationsCount.value + mercenaryApplicationsCount.value,
 )
 
-const hasOptions = computed(() =>
+const hasSomeOptions = computed(() =>
   canManageApplications.value || canManageBattle.value || canJoinAsMercenary.value || selfMercenary.value,
 )
 
+// TODO: FIXME: add battle type
+const pageTitle = computed(
+  () => {
+    return battle.value?.defender?.party === null
+      ? t('strategus.battle.settlement.title', { settlement: battle.value!.defender.settlement?.name })
+      : t('strategus.battle.party.title', {
+          nearestSettlement: 'nearestSettlement', // TODO: get nearest settlement to point
+          terrain: 'terrain', // TODO: terrain service get terrain at point
+        })
+  },
+)
+
+// TODO: to context?
 const fetchPageData = async (battleId: number) => {
-  await Promise.all([loadBattle(0, { id: battleId }), loadBattleFighters(0, { id: battleId })])
-  if (battle.BattlePhase !== BattlePhase.Preparation) {
-    await Promise.all([loadBattleMercenaries(0, { id: battleId }), loadBattleMercenaryApplications(0, { id: battleId })])
-  }
-  else {
-    await Promise.all([loadBattleFighterApplications(0, { id: battleId })])
-  }
+  const promises: Promise<unknown>[] = [
+    loadBattle(0, { id: battleId }),
+    loadBattleFighters(0, { id: battleId }),
+    ...(battle.value?.phase !== BattlePhase.Preparation
+      ? [
+          loadBattleMercenaries(0, { id: battleId }),
+          loadBattleMercenaryApplications(0, { id: battleId }),
+        ]
+      : [loadBattleFighterApplications(0, { id: battleId })]),
+  ]
+
+  await Promise.all(promises)
 }
 
-await fetchPageData(Number(props.id))
+fetchPageData(Number(props.id))
+
+// TODO:
 if (userStore.characters.length === 0) {
   await userStore.fetchCharacters()
 }
@@ -125,22 +140,17 @@ if (userStore.characters.length === 0) {
       rounded
       icon-left="arrow-left"
     />
+
     <div v-if="battle !== null" class="pb-4">
       <div class="container mb-1">
-        <Heading
-          class="mb-5" :title="battle.defender?.party === null ? $t('strategus.battle.settlement.title',
-                                                                    {
-                                                                      settlement: battle.defender?.settlement?.name,
-                                                                    }) : $t('strategus.battle.party.title',
-                  {
-                    nearestSettlement: 'nearestSettlement', // TODO: get nearest settlement to point
-                    terrain: 'terrain', // TODO: terrain service get terrain at point
-                  })"
-        />
+        <Heading class="mb-5" :title="pageTitle" />
+
         <div class="mx-auto mb-16 flex max-w-7xl flex-row gap-x-5">
+          <!-- TODO: grid -->
           <div class="basis-1/4">
             <BattleSideFighters :battle="battle" :fighters="battleFighters" :side="BattleSide.Attacker" />
           </div>
+
           <div class="basis-1/2 justify-center">
             <div class="mb-8 flex flex-wrap items-center justify-center gap-4.5">
               <div class="flex items-center gap-1.5">
@@ -150,9 +160,7 @@ if (userStore.characters.length === 0) {
                   size="lg"
                   class="text-content-100"
                 />
-                <span
-                  class="text-content-200"
-                >
+                <span class="text-content-200">
                   {{ $t(`strategus.battle.phase.${battle.phase.toLowerCase()}`) }}
                 </span>
               </div>
@@ -190,6 +198,7 @@ if (userStore.characters.length === 0) {
 
                 <div class="h-8 w-px select-none bg-border-200" />
               </template>
+
               <div class="flex items-center gap-1.5">
                 <OIcon
                   v-tooltip.bottom="$t('strategus.battle.tooltip.region')"
@@ -197,15 +206,15 @@ if (userStore.characters.length === 0) {
                   size="lg"
                   class="text-content-100"
                 />
-                <div
-                  class="text-content-200"
-                >
+                <div class="text-content-200">
+                  <!-- TODO: FIXME: -->
                   EU
                 </div>
               </div>
 
               <div class="h-8 w-px select-none bg-border-200" />
 
+              <!-- TODO: to cmp -->
               <div class="flex items-center gap-1.5">
                 <OIcon
                   v-tooltip.bottom="$t('strategus.battle.tooltip.fighters')"
@@ -213,15 +222,14 @@ if (userStore.characters.length === 0) {
                   size="lg"
                   class="text-content-100"
                 />
-                <span
-                  class="text-content-200"
-                >
+                <span class="text-content-200">
                   {{ battleFightersCount }}
                 </span>
               </div>
 
               <div class="h-8 w-px select-none bg-border-200" />
 
+              <!-- TODO: to cmp -->
               <div class="flex items-center gap-1.5">
                 <OIcon
                   v-tooltip.bottom="$t('strategus.battle.tooltip.mercenaries')"
@@ -229,9 +237,9 @@ if (userStore.characters.length === 0) {
                   size="lg"
                   class="text-content-100"
                 />
-                <span
-                  class="text-content-200"
-                >
+
+                <span class="text-content-200">
+                  <!-- TODO: hmmm -->
                   {{ canViewMercenaries ? battleMercenariesCount : '?' }}
                 </span>
               </div>
@@ -239,7 +247,8 @@ if (userStore.characters.length === 0) {
               <Divider />
             </div>
 
-            <div v-if="hasOptions" class="mb-20 flex items-center justify-center gap-3">
+            <!-- TODO: to cmp? -->
+            <div v-if="hasSomeOptions" class="mb-20 flex items-center justify-center gap-3">
               <BattleMercenaryApplicationForm
                 :application="myMercenaryApplication"
                 :battle="battle"
@@ -255,6 +264,7 @@ if (userStore.characters.length === 0) {
                   {{ hasAppliedAsMercenary ? $t('strategus.battle.application.update.title') : $t('strategus.battle.application.mercenary.title') }}
                 </OButton>
               </BattleMercenaryApplicationForm>
+
               <ConfirmActionTooltip
                 v-if="selfMercenary"
                 :confirm-label="$t('action.ok')"
@@ -263,7 +273,6 @@ if (userStore.characters.length === 0) {
                 @confirm="RemoveBattleMercenary(battleId, selfMercenary.id)"
               >
                 <OButton
-                  v-if="selfMercenary"
                   variant="primary"
                   outlined
                   size="xl"
@@ -271,6 +280,7 @@ if (userStore.characters.length === 0) {
                   {{ $t('strategus.battle.application.mercenary.resign') }}
                 </OButton>
               </ConfirmActionTooltip>
+
               <template v-if="canManageApplications">
                 <OButton
                   tag="router-link"
@@ -284,6 +294,7 @@ if (userStore.characters.length === 0) {
                     ({{ applicationsCount }})
                   </template>
                 </OButton>
+
                 <OButton
                   v-if="canManageBattle"
                   tag="router-link"
@@ -296,13 +307,16 @@ if (userStore.characters.length === 0) {
                 </OButton>
               </template>
             </div>
+
             <BattleSideComparison
-              :battle :my-side
+              :battle
+              :my-side
               :can-view-mercenaries
               :attacker-mercenary-count="battleMercenariesAttackers.length"
               :defender-mercenary-count="battleMercenariesDefenders.length"
             />
           </div>
+
           <div class="basis-1/4 text-right">
             <BattleSideFighters :battle="battle" :fighters="battleFighters" :side="BattleSide.Defender" />
           </div>

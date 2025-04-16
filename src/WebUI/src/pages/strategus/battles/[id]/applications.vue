@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import type { BattleFighterApplication, BattleMercenaryApplication } from '~/models/strategus/battle'
 
-import { useBattleFighterApplications } from '~/composables/strategus/use-battle-fighters-applications'
-import { useBattleMercenaryApplications } from '~/composables/strategus/use-battle-mercenaries-applications'
-import { useBattle } from '~/composables/strategus/use-battles'
+import { useBattleFighterApplications } from '~/composables/strategus/battle/use-battle-fighters-applications'
+import { useBattleMercenaryApplications } from '~/composables/strategus/battle/use-battle-mercenaries-applications'
+import { useBattle } from '~/composables/strategus/battle/use-battles'
 import { usePagination } from '~/composables/use-pagination'
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { BattleApplicationType, BattlePhase } from '~/models/strategus/battle'
 import { notify } from '~/services/notification-service'
-import { respondToBattleFighterApplication, respondToBattleMercenaryApplication } from '~/services/strategus-service/battle-service'
+import { respondToBattleFighterApplication, respondToBattleMercenaryApplication } from '~/services/strategus-service/battle'
 import { t } from '~/services/translate-service'
 
 const props = defineProps<{
@@ -17,7 +18,7 @@ const props = defineProps<{
 definePage({
   meta: {
     layout: 'default',
-    middleware: '', // TODO: ['canManageApplications']
+    middleware: '', // TODO: FIXME: ['canManageApplications']
     roles: ['User', 'Moderator', 'Admin'],
   },
   props: true,
@@ -28,58 +29,39 @@ const { mercenaryApplications, loadBattleMercenaryApplications } = useBattleMerc
 const { fighterApplications, loadBattleFighterApplications } = useBattleFighterApplications()
 const { pageModel, perPage } = usePagination()
 
-const canRecruitMercenaries = computed(() =>
-  battle.value?.phase === BattlePhase.Hiring,
-)
+const canRecruitMercenaries = computed(() => battle.value?.phase === BattlePhase.Hiring)
+const canRecruitFighters = computed(() => battle.value?.phase === BattlePhase.Hiring)
 
-const canRecruitFighters = computed(() =>
-  battle.value?.phase === BattlePhase.Preparation,
-)
-
-const respondToMercenary = async (application: BattleMercenaryApplication, status: boolean) => {
+const { execute: respondToMercenary } = useAsyncCallback(async (application: BattleMercenaryApplication, status: boolean) => {
   await respondToBattleMercenaryApplication(battleId.value, application.id, status)
   await loadBattleMercenaryApplications(0, { id: battleId.value })
+  notify(status ? t('clan.application.respond.accept.notify.success') : t('clan.application.respond.decline.notify.success'))
+})
 
-  status
-    ? notify(t('clan.application.respond.accept.notify.success'))
-    : notify(t('clan.application.respond.decline.notify.success'))
-}
-
-const respondToFighter = async (application: BattleFighterApplication, status: boolean) => {
+const { execute: respondToFighter } = useAsyncCallback(async (application: BattleFighterApplication, status: boolean) => {
   await respondToBattleFighterApplication(battleId.value, application.id, status)
   await loadBattleFighterApplications(0, { id: battleId.value })
+  notify(status ? t('clan.application.respond.accept.notify.success') : t('clan.application.respond.decline.notify.success'))
+})
 
-  status
-    ? notify(t('clan.application.respond.accept.notify.success'))
-    : notify(t('clan.application.respond.decline.notify.success'))
-}
-
-// todo: conditional load?
 const fetchPageData = async (battleId: number) => {
-  await Promise.all([loadBattle(0, { id: battleId })])
-  if (canRecruitMercenaries.value) {
-    await Promise.all([loadBattleMercenaryApplications(0, { id: battleId })])
-  }
-  if (canRecruitFighters.value) {
-    await Promise.all([loadBattleFighterApplications(0, { id: battleId })])
-  }
+  await loadBattle(0, { id: battleId }) // TODO: move to context
+
+  const promises: Promise<unknown>[] = [
+    ...(canRecruitMercenaries.value ? [loadBattleMercenaryApplications(0, { id: battleId })] : []),
+    ...(canRecruitFighters.value ? [loadBattleFighterApplications(0, { id: battleId })] : []),
+  ]
+
+  await Promise.all(promises)
 }
 
-await fetchPageData(Number(props.id))
+fetchPageData(Number(props.id))
 </script>
 
 <template>
   <div class="p-6">
-    <OButton
-      v-tooltip.bottom="$t('nav.back')"
-      tag="router-link"
-      :to="{ name: 'StrategusBattlesId', params: { id: battleId } }"
-      variant="secondary"
-      size="xl"
-      outlined
-      rounded
-      icon-left="arrow-left"
-    />
+    <BackButton :to="{ name: 'StrategusBattlesId', params: { id: battleId } }" />
+
     <div class="mx-auto max-w-4xl py-6">
       <h1 class="mb-14 text-center text-xl text-content-100">
         {{ $t('strategus.battle.application.page.title') }}
@@ -143,6 +125,7 @@ await fetchPageData(Number(props.id))
               <ResultNotFound />
             </template>
           </OTable>
+
           <OTable
             v-if="canRecruitMercenaries"
             v-model:current-page="pageModel"
@@ -159,6 +142,16 @@ await fetchPageData(Number(props.id))
               <UserMedia
                 :user="application.user"
                 hidden-clan
+              />
+            </OTableColumn>
+
+            <OTableColumn
+              v-slot="{ row: application }: { row: BattleMercenaryApplication }"
+              field="name"
+              label="Char TODO:"
+            >
+              <CharacterMedia
+                :character="application.character"
               />
             </OTableColumn>
 

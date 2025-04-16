@@ -19,6 +19,7 @@ export enum BattleSide {
   Defender = 'Defender',
 }
 
+// TODO:
 export interface Battle {
   id: number
   phase: BattlePhase
@@ -27,16 +28,16 @@ export interface Battle {
   scheduledFor: Date | null
   attacker: BattleFighter
   attackerTotalTroops: number
-  defender: BattleFighter | null
+  defender: BattleFighter | null // TODO: no defender? PvE?
   defenderTotalTroops: number
 }
 
 export interface BattleFighter {
   id: number
-  commander: boolean
+  commander: boolean // who?
+  side: BattleSide
   party: PartyCommon | null
   settlement: SettlementPublic | null
-  side: BattleSide
   mercenarySlots: number
 }
 

@@ -1,7 +1,7 @@
 import { useAsyncState } from '@vueuse/core'
 
 import { BattleFighterApplication, BattleFighterApplicationStatus } from '~/models/strategus/battle'
-import { getBattleFighterApplications } from '~/services/strategus-service/battle-service'
+import { getBattleFighterApplications } from '~/services/strategus-service/battle'
 
 export const useBattleFighterApplications = () => {
   const { execute: loadBattleFighterApplications, state: fighterApplications } = useAsyncState(

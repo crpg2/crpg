@@ -1,5 +1,5 @@
 import { BattleSide } from '~/models/strategus/battle'
-import { getBattleMercenaries } from '~/services/strategus-service/battle-service'
+import { getBattleMercenaries } from '~/services/strategus-service/battle'
 
 export const useBattleMercenaries = () => {
   const { execute: loadBattleMercenaries, isLoading: battleMercenariesLoading, state: battleMercenaries } = useAsyncState(

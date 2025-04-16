@@ -2,7 +2,7 @@ import type { Position } from 'geojson'
 
 import battle from '~/assets/themes/oruga-tailwind/icons/game-mode/battle'
 import { BattlePhase } from '~/models/strategus/battle'
-import { getBattle, getBattles } from '~/services/strategus-service/battle-service'
+import { getBattle, getBattles } from '~/services/strategus-service/battle'
 import { shouldDisplaySettlement } from '~/services/strategus-service/map'
 import { positionToLatLng } from '~/utils/geometry'
 
@@ -36,7 +36,7 @@ export const useBattles = () => {
 export const useBattle = (id: string) => {
   const battleId = computed(() => Number(id))
 
-  const { execute: loadBattle, state: battle } = useAsyncState(
+  const { state: battle, execute: loadBattle } = useAsyncState(
     ({ id }: { id: number }) => getBattle(id),
     null,
     {

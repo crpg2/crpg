@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { useBattleMercenaries } from '~/composables/strategus/use-battle-mercenaries'
-import { useBattle } from '~/composables/strategus/use-battles'
+import BackButton from '~/components/app/BackButton.vue'
+import { useBattleMercenaries } from '~/composables/strategus/battle/use-battle-mercenaries'
+import { useBattle } from '~/composables/strategus/battle/use-battles'
 import { BattlePhase } from '~/models/strategus/battle'
 
 const props = defineProps<{
@@ -10,7 +11,7 @@ const props = defineProps<{
 definePage({
   meta: {
     layout: 'default',
-    middleware: '', // TODO: ['canManageBattle']
+    middleware: '', // TODO: FIXME: ['canManageBattle']
     roles: ['User', 'Moderator', 'Admin'],
   },
   props: true,
@@ -18,46 +19,35 @@ definePage({
 
 const { battleMercenaries, loadBattleMercenaries } = useBattleMercenaries()
 const { battle, battleId, loadBattle } = useBattle(props.id)
+const canManageMercenaries = computed(() => battle.value?.phase === BattlePhase.Hiring)
 
-const canManageMercenaries = computed(() =>
-  battle.value?.phase === BattlePhase.Hiring,
-)
+// TODO:
 
 const fetchPageData = async (battleId: number) => {
-  await Promise.all([loadBattle(0, { id: battleId })])
+  await loadBattle(0, { id: battleId })
   if (canManageMercenaries.value) {
-    await Promise.all([loadBattleMercenaries(0, { id: battleId })])
+    await loadBattleMercenaries(0, { id: battleId })
   }
 }
 
-await fetchPageData(Number(props.id))
+fetchPageData(Number(props.id))
 </script>
 
 <template>
   <div class="p-6">
-    <RouterLink :to="{ name: 'StrategusBattlesId', params: { id: battleId } }">
-      <OButton
-        v-tooltip.bottom="$t('nav.back')"
-        variant="secondary"
-        size="xl"
-        outlined
-        rounded
-        icon-left="arrow-left"
-      />
-    </RouterLink>
+    <BackButton :to="{ name: 'StrategusBattlesId', params: { id: battleId } }" />
 
     <div class="mx-auto max-w-2xl space-y-10 py-6">
       <div class="space-y-14">
         <h1 class="text-center text-xl text-content-100">
           {{ $t('strategus.battle.manage.title') }}
         </h1>
+
         <BattleMercenaryManagement
-          v-if="canManageMercenaries"
+          v-if="battle && canManageMercenaries"
           :battle
-          :battle-mercenaries @mercenary-removed="
-            () => {
-              loadBattleMercenaries(0, { id: battleId });
-            }"
+          :battle-mercenaries
+          @mercenary-removed="() => loadBattleMercenaries(0, { id: battleId })"
         />
       </div>
     </div>

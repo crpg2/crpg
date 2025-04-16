@@ -3,7 +3,7 @@ import type { Battle, BattleMercenary } from '~/models/strategus/battle'
 
 import { usePagination } from '~/composables/use-pagination'
 import { notify } from '~/services/notification-service'
-import { removeBattleMercenary } from '~/services/strategus-service/battle-service'
+import { removeBattleMercenary } from '~/services/strategus-service/battle'
 import { t } from '~/services/translate-service'
 
 const props = defineProps<{

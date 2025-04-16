@@ -21,28 +21,30 @@ export const battleSideToIcon: Record<BattleSide, string> = {
   [BattleSide.Defender]: 'shield',
 }
 
-export const getBattles = async (
+export const getBattles = (
   region: Region,
   phases: BattlePhase[],
 ) => {
   const params = new URLSearchParams()
   params.append('region', region)
   phases.forEach(p => params.append('phase[]', p))
-  return await get<Battle[]>(`/battles?${params}`)
+  return get<Battle[]>(`/battles?${params}`)
 }
 
-export const getBattle = async (
+export const getBattle = (
   id: number,
-) => {
-  return await get<Battle>(`/battles/${id}`)
-}
+) => get<Battle>(`/battles/${id}`)
 
-export const getBattleFighter = (battleFighters: BattleFighter[], userId: number) =>
-  battleFighters.find(f => (f.party?.user.id || f.settlement?.owner?.user) === userId) || null
+export const getBattleFighter = (
+  battleFighters: BattleFighter[],
+  userId: number,
+) => battleFighters.find(f => (f.party?.user.id || f.settlement?.owner) === userId) || null
 
-export const getBattleFighters = async (id: number) => get<BattleFighter[]>(`/battles/${id}/fighters`)
+export const getBattleFighters = (
+  id: number,
+) => get<BattleFighter[]>(`/battles/${id}/fighters`)
 
-export const getBattleFighterApplications = async (
+export const getBattleFighterApplications = (
   battleId: number,
   statuses: BattleFighterApplicationStatus[],
 ) => {
@@ -51,13 +53,13 @@ export const getBattleFighterApplications = async (
   return get<BattleFighterApplication[]>(`/battles/${battleId}/fighter-applications?${params}`)
 }
 
-export const respondToBattleFighterApplication = async (
+export const respondToBattleFighterApplication = (
   battleId: number,
   applicationId: number,
   accept: boolean,
 ) => put<BattleFighterApplication>(`/battles/${battleId}/fighter-applications/${applicationId}/response`, { accept })
 
-export const getBattleMercenaryApplications = async (
+export const getBattleMercenaryApplications = (
   battleId: number,
   statuses: BattleMercenaryApplicationStatus[],
 ) => {
@@ -66,24 +68,26 @@ export const getBattleMercenaryApplications = async (
   return get<BattleMercenaryApplication[]>(`/battles/${battleId}/mercenary-applications?${params}`)
 }
 
-export const applyToBattleAsMercenary = async (
+export const applyToBattleAsMercenary = (
   battleId: number,
   payload: BattleMercenaryApplicationCreation,
 ) => post<BattleMercenaryApplication>(`/battles/${battleId}/mercenary-applications`, payload)
 
-export const respondToBattleMercenaryApplication = async (
+export const respondToBattleMercenaryApplication = (
   battleId: number,
   applicationId: number,
   accept: boolean,
 ) => put<BattleMercenaryApplication>(`/battles/${battleId}/mercenary-applications/${applicationId}/response`, { accept })
 
-export const getBattleMercenaries = async (id: number) => get<BattleMercenary[]>(`/battles/${id}/mercenaries`)
+export const getBattleMercenaries = (
+  id: number,
+) => get<BattleMercenary[]>(`/battles/${id}/mercenaries`)
 
-export const removeBattleMercenary = async (
+export const removeBattleMercenary = (
   battleId: number,
   mercenaryId: number,
 ) => del(`/battles/${battleId}/mercenaries/${mercenaryId}`)
 
-export const removeBattleMercenaryApplication = async (
+export const removeBattleMercenaryApplication = (
   battleId: number,
 ) => del(`/battles/${battleId}/mercenary-applications`)

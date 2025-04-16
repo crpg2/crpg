@@ -9,7 +9,7 @@ import type { Battle, BattleMercenaryApplication, BattleMercenaryApplicationCrea
 
 import { BattleMercenary, BattleMercenaryApplicationStatus, BattleSide } from '~/models/strategus/battle'
 import { NotificationType, notify } from '~/services/notification-service'
-import { applyToBattleAsMercenary, battleSideToIcon, removeBattleMercenaryApplication } from '~/services/strategus-service/battle-service'
+import { applyToBattleAsMercenary, battleSideToIcon, removeBattleMercenaryApplication } from '~/services/strategus-service/battle'
 import { t } from '~/services/translate-service'
 import { mapUserToUserPublic } from '~/services/users-service'
 import {
