@@ -269,7 +269,7 @@ internal class CrpgMissionMarkerVm : ViewModel
 
         if (dtvClient.VipAgent != null)
         {
-            if (dtvClient.VipAgent.Health > 0)
+            if (dtvClient.VipAgent.Health > 0f)
             {
                 if (enabled && !_isVipOutlined)
                 {
