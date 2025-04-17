@@ -396,6 +396,24 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         return randomNumber / 10f < Math.Pow(attackerPower / defenderDefendPower / 2.5f, 1.8f) * 100f;
     }
 
+    // MissionCombatMechanicsHelper.cs/DecideMountRearedByBlow
+    public override bool DecideMountRearedByBlow(
+        Agent attackerAgent,
+        Agent victimAgent,
+        in AttackCollisionData collisionData,
+        WeaponComponentData attackerWeapon,
+        in Blow blow)
+    {
+        // Only allow if damage type is Pierce
+        if (blow.DamageType != DamageTypes.Pierce)
+        {
+            return false;
+        }
+
+        // Call the original/base logic (which evolves with TW updates)
+        return base.DecideMountRearedByBlow(attackerAgent, victimAgent, in collisionData, attackerWeapon, in blow);
+    }
+
     private int GetSkillValue(IAgentOriginBase agentOrigin, SkillObject skill)
     {
         if (agentOrigin is CrpgBattleAgentOrigin crpgOrigin)
