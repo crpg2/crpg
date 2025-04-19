@@ -13,7 +13,6 @@ import {
   extractItemFromUserItem,
   getUser,
   getUserById,
-  getUserClan,
   getUserItems,
   getUserRestrictions,
   groupUserItemsByType,
@@ -33,11 +32,6 @@ const { mockedMapRestrictions } = vi.hoisted(() => ({
 vi.mock('~/services/restriction-service', () => ({
   mapRestrictions: mockedMapRestrictions,
 }))
-
-const { mockedMapClanResponse } = vi.hoisted(() => ({
-  mockedMapClanResponse: vi.fn(),
-}))
-vi.mock('~/services/clan-service', () => ({ mapClanResponse: mockedMapClanResponse }))
 
 it('getUser', async () => {
   mockGet('/users/self').willResolve(response<User>(mockUser as User))
@@ -158,30 +152,6 @@ describe('userItems: filterBy, sortBy, groupBy', () => {
   })
 })
 
-describe('getUserClan', () => {
-  it('user does`t have a clan', async () => {
-    mockGet('/users/self/clan').willResolve(response(null))
-
-    expect(await getUserClan()).toEqual(null)
-    expect(mockedMapClanResponse).not.toBeCalled()
-  })
-
-  it('user has a clan', async () => {
-    mockGet('/users/self/clan').willResolve(
-      response({
-        clan: {
-          id: 1,
-          name: 'My Little Pony',
-          tag: 'mlp',
-        },
-      }),
-    )
-
-    await getUserClan()
-    expect(mockedMapClanResponse).toBeCalled()
-  })
-})
-
 it('getUserRestrictions', async () => {
   const USER_ID = 123
   const USER_RESTRICTIONS = [{ id: 1 }]
@@ -206,5 +176,5 @@ it('searchUser', async () => {
 })
 
 it('mapUserToUserPublic', async () => {
-  expect(mapUserToUserPublic(mockUser as User, null)).toEqual(mockUserPublic as UserPublic)
+  expect(mapUserToUserPublic(mockUser as User)).toEqual(mockUserPublic as UserPublic)
 })

@@ -116,26 +116,5 @@ describe('userStore', () => {
 
       expect(store.userItems).toEqual([mockUserItems[0]])
     })
-
-    describe('fetchUserClanAndRole', () => {
-      it('not in a clan', async () => {
-        mockedGetUserClan.mockResolvedValue({ clan: null, role: null })
-
-        await store.fetchUserClanAndRole()
-
-        expect(store.clan).toEqual(null)
-        expect(store.clanMemberRole).toEqual(null)
-      })
-
-      it('has some clan and role', async () => {
-        const USER_CLAN = { clan: { id: 1, tag: 'mlp' }, role: 'Member' }
-        mockedGetUserClan.mockResolvedValue(USER_CLAN)
-
-        await store.fetchUserClanAndRole()
-
-        expect(store.clan).toEqual(USER_CLAN.clan)
-        expect(store.clanMemberRole).toEqual(USER_CLAN.role)
-      })
-    })
   })
 })

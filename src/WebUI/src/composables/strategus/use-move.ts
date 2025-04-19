@@ -62,24 +62,29 @@ export const useMove = (map: Ref<typeof LMap | null>) => {
   }
 
   const onStartMove = (e: LeafletMouseEvent) => {
-    isMoveMode.value = true;
+    if (!map.value) { return }
+    const leafletObject = map.value.leafletObject as Map
 
-    (map.value!.leafletObject as Map).pm.enableDraw('Line', {});
-    // @ts-expect-error TODO:
-    (map.value!.leafletObject as Map).pm.Draw.Line._layer.addLatLng(e.latlng);
-    // @ts-expect-error TODO:
-    (map.value!.leafletObject as Map).pm.Draw.Line._createMarker(e.latlng)
+    isMoveMode.value = true
+    leafletObject.pm.enableDraw('Line', {})
+    // @ts-expect-error TODO: FIXME:
+    leafletObject.pm.Draw.Line._layer.addLatLng(e.latlng)
+    // @ts-expect-error TODO: FIXME:
+    leafletObject.pm.Draw.Line._createMarker(e.latlng)
   }
 
   const applyEvents = () => {
-    (map.value!.leafletObject as Map).on('pm:keyevent', (e) => {
+    if (!map.value) { return }
+    const leafletObject = map.value.leafletObject as Map
+
+    leafletObject.on('pm:keyevent', (e) => {
       if (isMoveMode.value && (e.event as KeyboardEvent).code === 'Escape') {
-        (map.value!.leafletObject as Map).pm.disableDraw()
+        leafletObject.pm.disableDraw()
         isMoveMode.value = false
       }
-    });
+    })
 
-    (map.value!.leafletObject as Map).on('pm:create', onCreateMovePath)
+    leafletObject.on('pm:create', onCreateMovePath)
   }
 
   return {

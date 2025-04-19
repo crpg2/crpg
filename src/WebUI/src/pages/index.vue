@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useGameServerStats } from '~/composables/use-game-server-stats'
 import { usePatchNotes } from '~/composables/use-patch-notes'
+import { useSettingsStore } from '~/stores/settings'
 
 definePage({
   meta: {
@@ -10,8 +11,9 @@ definePage({
 
 const { loadPatchNotes, patchNotes } = usePatchNotes()
 const { gameServerStats, loadGameServerStats } = useGameServerStats()
+const { loadSettings } = useSettingsStore()
 
-Promise.all([loadPatchNotes(), loadGameServerStats()])
+Promise.all([loadPatchNotes(), loadGameServerStats(), loadSettings()])
 </script>
 
 <template>

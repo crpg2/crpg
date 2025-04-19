@@ -16,13 +16,11 @@ public record PartyVisibleViewModel : IMapFrom<Party>
     public int Troops { get; init; }
     public Point Position { get; init; } = default!;
     public UserPublicViewModel User { get; init; } = default!;
-    public ClanPublicViewModel? Clan { get; init; }
 
     public void Mapping(Profile profile)
     {
         profile.CreateMap<Party, PartyVisibleViewModel>()
             .ForMember(h => h.Id, opt => opt.MapFrom(u => u.Id))
-            .ForMember(h => h.Troops, opt => opt.MapFrom(u => (int)u.Troops))
-            .ForMember(h => h.Clan, opt => opt.MapFrom(u => u.User!.ClanMembership!.Clan));
+            .ForMember(h => h.Troops, opt => opt.MapFrom(u => (int)u.Troops));
     }
 }

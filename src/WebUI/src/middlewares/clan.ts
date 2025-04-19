@@ -15,10 +15,6 @@ export const clanIdParamValidate: NavigationGuard = (to) => {
 export const clanExistValidate: NavigationGuard = async () => {
   const userStore = useUserStore()
 
-  if (userStore.clan === null) {
-    await userStore.fetchUserClanAndRole()
-  }
-
   if (userStore.clan !== null) {
     return {
       name: 'ClansId',
@@ -31,10 +27,6 @@ export const clanExistValidate: NavigationGuard = async () => {
 
 export const canUpdateClan: NavigationGuard = async (to) => {
   const userStore = useUserStore()
-
-  if (userStore.clan === null) {
-    await userStore.fetchUserClanAndRole()
-  }
 
   if (
     // @ts-expect-error TODO:
@@ -50,10 +42,6 @@ export const canUpdateClan: NavigationGuard = async (to) => {
 export const canManageApplications: NavigationGuard = async (to) => {
   const userStore = useUserStore()
 
-  if (userStore.clan === null) {
-    await userStore.fetchUserClanAndRole()
-  }
-
   if (
     // @ts-expect-error TODO:
     userStore.clan?.id !== Number(to.params.id as string)
@@ -67,10 +55,6 @@ export const canManageApplications: NavigationGuard = async (to) => {
 
 export const canUseClanArmory: NavigationGuard = async (to) => {
   const userStore = useUserStore()
-
-  if (userStore.clan === null) {
-    await userStore.fetchUserClanAndRole()
-  }
 
   // @ts-expect-error TODO:
   if (userStore.clan?.id !== Number(to.params.id as string)) {

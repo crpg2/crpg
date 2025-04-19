@@ -1,10 +1,6 @@
-import {
-  type Terrain,
-  type TerrainCreation,
-  type TerrainFeatureCollection,
-  TerrainType,
-  type TerrainUpdate,
-} from '~/models/strategus/terrain'
+import type { Terrain, TerrainCreation, TerrainFeatureCollection, TerrainUpdate } from '~/models/strategus/terrain'
+
+import { TerrainType } from '~/models/strategus/terrain'
 import { del, get, post, put } from '~/services/crpg-client'
 
 // TODO: colors

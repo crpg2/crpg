@@ -5,7 +5,6 @@ import { mockDelete, mockGet, mockPost, mockPut } from 'vi-fetch'
 import type {
   Clan,
   ClanArmoryItem,
-  ClanEdition,
   ClanInvitation,
   ClanMember,
   ClanWithMemberCount,
@@ -42,7 +41,6 @@ import {
   isClanArmoryItemInInventory,
   isOwnClanArmoryItem,
   kickClanMember,
-  mapClanResponse,
   removeItemFromClanArmory,
   respondToClanInvitation,
   returnItemToClanArmory,
@@ -66,22 +64,6 @@ vi.mock('~/utils/color', () => ({
   argbIntToRgbHexColor: mockedArgbIntToRgbHexColor,
   rgbHexColorToArgbInt: mockedRgbHexColorToArgbInt,
 }))
-
-it('mapClanResponse', () => {
-  const clan = {
-    primaryColor: 4278190080,
-    secondaryColor: 4278190080,
-    tag: 'mlp',
-  } as ClanEdition
-
-  expect(mapClanResponse(clan)).toEqual({
-    primaryColor: HEX_COLOR,
-    secondaryColor: HEX_COLOR,
-    tag: 'mlp',
-  })
-
-  expect(mockedArgbIntToRgbHexColor).toBeCalledTimes(2)
-})
 
 it('getClans', async () => {
   const mockGetClans = [
@@ -116,7 +98,7 @@ it.each<[Region, Language[], string, number[]]>([
       { clan: { id: 1, name: 'Foals', region: Region.Eu, tag: 'FOAL' } },
       { clan: { id: 2, name: 'Unicorns', region: Region.Na, tag: 'UNIC' } },
       { clan: { id: 3, languages: [Language.Fr], name: 'Ponies', region: Region.Eu, tag: 'PONY' } },
-    ] as ClanWithMemberCount<Clan>[]
+    ] as ClanWithMemberCount[]
 
     expect(getFilteredClans(clans, region, languages, searchQuery).map(c => c.clan.id)).toEqual(
       expectation,

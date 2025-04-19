@@ -1,4 +1,4 @@
-import type { CharacterClass, CharacterPublic, CharacterStatistics } from '~/models/character'
+import type { CharacterPublic, CharacterStatistics } from '~/models/character'
 import type { UserPublic } from '~/models/user'
 
 export interface CharacterCompetitive extends CharacterPublic {

@@ -29,6 +29,7 @@ public record SeedDataCommand : IMediatorRequest
     {
         private static readonly Dictionary<SettlementType, int> StrategusSettlementDefaultTroops = new()
         {
+            // TODO: to const
             [SettlementType.Village] = 1000,
             [SettlementType.Castle] = 4000,
             [SettlementType.Town] = 8000,
@@ -1502,9 +1503,13 @@ public record SeedDataCommand : IMediatorRequest
             {
                 User = orle,
                 Troops = 1,
-                Position = epicrotea.Position,
+                // Troops = 100,
+                // Position = epicrotea.Position,
+                Position = rhotae.Position,
+                // Position = new Point(114.21076699552688, -109.37351870100285),
                 Status = PartyStatus.IdleInSettlement,
-                TargetedSettlement = epicrotea,
+                // TargetedSettlement = epicrotea,
+                TargetedSettlement = rhotae,
             };
             Party brainfartParty = new()
             {
@@ -1936,7 +1941,7 @@ public record SeedDataCommand : IMediatorRequest
 
             Party[] newParties =
             {
-                brainfartParty, kiwiParty, ikaroozParty, laHireParty, brygganParty, elmarykParty, schumetzqParty,
+                orleParty, brainfartParty, kiwiParty, ikaroozParty, laHireParty, brygganParty, elmarykParty, schumetzqParty,
                 azumaParty, zorguyParty, eckoParty, firebatParty, laenirParty, opsetParty, falcomParty,
                 victorhh888Party, sellkaParty, distanceParty, bakhratParty, lancelotParty, buddhaParty, lerchParty,
                 tjensParty, knitlerParty, magnucleanParty, baronCyborgParty, scarfaceParty, neostralieParty,
@@ -2329,6 +2334,28 @@ public record SeedDataCommand : IMediatorRequest
                         Troops = StrategusSettlementDefaultTroops[settlementCreation.Type],
                         OwnerId = null,
                     };
+
+                    // TODO: hack FIXME: only in dev START
+                    // if (_appEnv.Environment == HostingEnvironment.Development)
+                    // {
+                    //     if (settlement.Name == "Rhotae")
+                    //     {
+                    //         SettlementItem testitem1 = new() { ItemId = "crpg_14_decor_paltedboots_noble1_v1_h0", Count = 10 };
+                    //         var rhotaeItems = new List<SettlementItem>
+                    //     {
+                    //         testitem1,
+                    //     };
+                    //         settlement.OwnerId = 2;
+                    //         settlement.Items = rhotaeItems;
+                    //     }
+
+                    //     if (settlement.Name == "Thersenion")
+                    //     {
+                    //         settlement.OwnerId = 2;
+                    //     }
+
+                    //     // TODO: hack FIXME: only in dev END
+                    // }
 
                     if (dbSettlementsByNameRegion.TryGetValue((settlement.Name, settlement.Region), out Settlement? dbSettlement))
                     {

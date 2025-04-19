@@ -321,7 +321,7 @@ describe('user in the clan', () => {
 
       expect(mockedKickClanMember).toBeCalledWith(CLAN_ID, CLAN_MEMBERS[1].user.id)
       expect(mockedGetClanMembers).toHaveBeenNthCalledWith(2, CLAN_ID)
-      expect(userStore.fetchUserClanAndRole).not.toHaveBeenCalled()
+      expect(userStore.fetchUser).not.toHaveBeenCalled()
       expect(mockedNotify).toBeCalledWith('clan.member.kick.notify.success')
     })
 
@@ -361,7 +361,7 @@ describe('user in the clan', () => {
 
       expect(mockedKickClanMember).toBeCalledWith(CLAN_ID, CLAN_MEMBERS[1].user.id)
       expect(mockedGetClanMembers).toHaveBeenNthCalledWith(2, CLAN_ID)
-      expect(userStore.fetchUserClanAndRole).toHaveBeenCalled()
+      expect(userStore.fetchUser).toHaveBeenCalled()
       expect(mockedNotify).toBeCalledWith('clan.member.leave.notify.success')
     })
   })

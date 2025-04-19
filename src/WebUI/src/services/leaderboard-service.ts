@@ -2,7 +2,6 @@ import { inRange } from 'es-toolkit'
 import qs from 'qs'
 
 import type { CharacterClass } from '~/models/character'
-import type { ClanEdition } from '~/models/clan'
 import type {
   CharacterCompetitive,
   CharacterCompetitiveNumbered,
@@ -10,20 +9,10 @@ import type {
 } from '~/models/competitive'
 import type { GameMode } from '~/models/game-mode'
 import type { Region } from '~/models/region'
-import type { UserPublic } from '~/models/user'
 
 import { RankGroup } from '~/models/competitive'
-import { mapClanResponse } from '~/services/clan-service'
 import { get } from '~/services/crpg-client'
 import { getEntries } from '~/utils/object'
-
-interface UserPublicRaw extends Omit<UserPublic, 'clan'> {
-  clan: ClanEdition | null
-}
-
-interface CharacterCompetitiveRaw extends Omit<CharacterCompetitive, 'user'> {
-  user: UserPublicRaw
-}
 
 export const getLeaderBoard = async ({
   characterClass,
@@ -43,15 +32,11 @@ export const getLeaderBoard = async ({
     },
   )
 
-  const res = await get<CharacterCompetitiveRaw[]>(`/leaderboard/leaderboard?${params}`)
+  const res = await get<CharacterCompetitive[]>(`/leaderboard/leaderboard?${params}`)
 
   return res.map((cr, idx) => ({
     ...cr,
     position: idx + 1,
-    user: {
-      ...cr.user,
-      clan: cr.user.clan === null ? null : mapClanResponse(cr.user.clan),
-    },
   }))
 }
 

@@ -57,14 +57,12 @@ describe('clan exist validate', () => {
 
     const result = await clanExistValidate(getRoute(), getRoute(), next)
 
-    expect(userStore.fetchUserClanAndRole).not.toHaveBeenCalled()
     expect(result).toEqual({ name: 'ClansId', params: { id: String(CLAN_ID) } })
   })
 
   it('user already have a clan TODO: change test title', async () => {
     const result = await clanExistValidate(getRoute(), getRoute(), next)
 
-    expect(userStore.fetchUserClanAndRole).toHaveBeenCalled()
     expect(result).toStrictEqual(true)
   })
 })
@@ -85,8 +83,6 @@ describe('can update clan', () => {
 
     const result = await canUpdateClan(to, getRoute(), next)
 
-    expect(userStore.fetchUserClanAndRole).not.toHaveBeenCalled()
-
     expect(result).toEqual({ name: 'Clans' })
   })
 
@@ -95,8 +91,6 @@ describe('can update clan', () => {
     userStore.clanMemberRole = ClanMemberRole.Leader
 
     const result = await canUpdateClan(to, getRoute(), next)
-
-    expect(userStore.fetchUserClanAndRole).not.toHaveBeenCalled()
 
     expect(result).toStrictEqual(true)
   })
@@ -119,8 +113,6 @@ describe('can manage clan application', () => {
 
     const result = await canManageApplications(to, getRoute(), next)
 
-    expect(userStore.fetchUserClanAndRole).not.toHaveBeenCalled()
-
     expect(result).toEqual({ name: 'Clans' })
   })
 
@@ -130,8 +122,6 @@ describe('can manage clan application', () => {
     userStore.clanMemberRole = ClanMemberRole.Leader
 
     const result = await canManageApplications(to, getRoute(), next)
-
-    expect(userStore.fetchUserClanAndRole).not.toHaveBeenCalled()
 
     expect(result).toStrictEqual(true)
   })
@@ -154,8 +144,6 @@ describe('can manage clan armory', () => {
 
     const result = await canUseClanArmory(to, getRoute(), next)
 
-    expect(userStore.fetchUserClanAndRole).not.toHaveBeenCalled()
-
     expect(result).toStrictEqual(true)
   })
 
@@ -164,8 +152,6 @@ describe('can manage clan armory', () => {
     userStore.clanMemberRole = ClanMemberRole.Leader
 
     const result = await canManageApplications(to, getRoute(), next)
-
-    expect(userStore.fetchUserClanAndRole).not.toHaveBeenCalled()
 
     expect(result).toEqual({ name: 'Clans' })
   })

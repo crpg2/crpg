@@ -14,9 +14,11 @@ import { useParty } from '~/composables/strategus/use-party'
 import { useSettlements } from '~/composables/strategus/use-settlements'
 import { useTerrains } from '~/composables/strategus/use-terrains'
 import useMainHeaderHeight from '~/composables/use-main-header-height'
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { MovementTargetType, MovementType } from '~/models/strategus'
 import { PartyStatus } from '~/models/strategus/party'
 import { inSettlementStatuses } from '~/services/strategus-service'
+import { partyKey } from '~/symbols/strategus'
 import { positionToLatLng } from '~/utils/geometry'
 
 definePage({
@@ -26,6 +28,8 @@ definePage({
     roles: ['User', 'Moderator', 'Admin'],
   },
 })
+
+const router = useRouter()
 
 const mainHeaderHeight = useMainHeaderHeight()
 
@@ -56,7 +60,43 @@ const {
   party,
   partySpawn,
   visibleParties,
+  toggleRecruitTroops,
+  isTogglingRecruitTroops,
 } = useParty()
+
+provide(partyKey, {
+  party,
+  moveParty,
+  toggleRecruitTroops,
+  isTogglingRecruitTroops,
+})
+
+// TODO: need refactoring
+// TODO: tweak routes nesting
+// enter/leave settlement
+
+// TODO: to route middleware? no
+
+// watchEffect(() => {
+
+//   if (party.value === null) {
+//     return
+//   }
+
+//   if (party.value.targetedSettlement !== null && inSettlementStatuses.has(party.value.status)) {
+//     router.push({
+//       name: 'StrategusSettlementId',
+//       params: { id: party.value.targetedSettlement.id },
+//     })
+//   }
+//   else {
+//     //
+//     // await moveParty
+//     // router.push({
+//     //   name: 'StrategusParent',
+//     // })
+//   }
+// })
 
 const {
   flyToSettlement,
@@ -129,19 +169,35 @@ const onMoveDialogConfirm = (mt: MovementType) => {
   closeMoveDialog()
 }
 
-const mapIsLoading = ref<boolean>(true)
-const onMapReady = async (map: Map) => {
+const { execute: onMapReady, loading: mapIsLoading } = useAsyncCallback(async (map: Map) => {
   mapBounds.value = map.getBounds()
   await Promise.all([loadSettlements(), loadTerrains(), partySpawn()])
+  party.value && locateToSelfParty()
+  applyMoveEvents()
 
-  if (party.value !== null) {
-    map.flyTo(positionToLatLng(party.value.position.coordinates), 5, {
-      animate: false,
-    })
+  redirectToSettlement()
+})
+
+const locateToSelfParty = () => {
+  if (!map.value || !party.value) { return }
+  const leafletObject = map.value.leafletObject as Map
+
+  leafletObject.flyTo(positionToLatLng(party.value.position.coordinates), 5, {
+    animate: false,
+  })
+}
+
+function redirectToSettlement(): void {
+  if (party.value === null) {
+    return
   }
 
-  applyMoveEvents()
-  mapIsLoading.value = false
+  if (party.value.targetedSettlement !== null && inSettlementStatuses.has(party.value.status)) {
+    router.push({
+      name: 'StrategusSettlementId',
+      params: { id: party.value.targetedSettlement.id },
+    })
+  }
 }
 </script>
 
@@ -187,7 +243,7 @@ const onMapReady = async (map: Map) => {
         @click="toggleEditMode"
       />
 
-      <ControlMousePosition />
+      <ControlMousePosition position="bottomright" />
       <ControlLocateParty
         v-if="party !== null"
         :party="party"
@@ -198,17 +254,6 @@ const onMapReady = async (map: Map) => {
         v-if="terrainVisibility"
         :data="terrainsFeatureCollection"
         @update="onTerrainUpdated"
-      />
-
-      <MarkerParty
-        v-if="party !== null"
-        :party="party"
-        is-self
-        @click="onStartMove"
-      />
-      <PartyMovementLine
-        v-if="party !== null && !isMoveMode"
-        :party="party"
       />
 
       <LMarkerClusterGroup
@@ -226,7 +271,7 @@ const onMapReady = async (map: Map) => {
       <MarkerSettlement
         v-for="settlement in visibleSettlements"
         :key="`settlement-${settlement.id}`"
-        :settlement="settlement"
+        :settlement
         @click="onSettlementClick(settlement)"
       />
 
@@ -237,6 +282,18 @@ const onMapReady = async (map: Map) => {
         @confirm="onMoveDialogConfirm"
         @cancel="closeMoveDialog"
       />
+
+      <template v-if="party">
+        <MarkerParty
+          :party
+          is-self
+          @click="onStartMove"
+        />
+        <PartyMovementLine
+          v-if="!isMoveMode"
+          :party
+        />
+      </template>
     </LMap>
 
     <!-- Dialogs -->
@@ -244,7 +301,7 @@ const onMapReady = async (map: Map) => {
       <!-- TODO: placement, design -->
       <SettlementSearch
         v-if="shownSearch"
-        :settlements="settlements"
+        :settlements
         @select="flyToSettlement"
       />
 
@@ -252,15 +309,25 @@ const onMapReady = async (map: Map) => {
         v-if="!isRegistered"
         @registered="onRegistered"
       />
-
-      <DialogSettlement
-        v-if="
-          party !== null
-            && party.targetedSettlement !== null
-            && inSettlementStatuses.has(party.status)
-        "
-      />
     </div>
+
+    <PartyProfile
+      v-if="party"
+      class="absolute right-10 top-12 z-[1000]"
+      :party
+      @locate="locateToSelfParty"
+    />
+
+    <RouterView v-slot="{ Component }" class="absolute left-16 top-6 z-[1000]">
+      <Suspense>
+        <div>
+          <component :is="Component" />
+        </div>
+        <template #fallback>
+          <OLoading full-page active icon-size="xl" />
+        </template>
+      </Suspense>
+    </RouterView>
   </div>
 </template>
 
@@ -329,5 +396,48 @@ const onMapReady = async (map: Map) => {
 
 .marker-cluster-large div {
   @apply bg-primary-hover text-content-100;
+}
+
+/* Popup */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  @apply border-transparent !bg-base-100/80 !text-content-100 !shadow-none;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  @apply !text-content-200;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover,
+.leaflet-container a.leaflet-popup-close-button:focus {
+  @apply !text-content-100;
+}
+
+.leaflet-oldie .leaflet-control-zoom,
+.leaflet-oldie .leaflet-control-layers,
+.leaflet-oldie .leaflet-popup-content-wrapper,
+.leaflet-oldie .leaflet-popup-tip {
+  @apply !border-base-100/80;
+}
+
+/* Tooltip */
+.leaflet-tooltip {
+  @apply !rounded-xl border-transparent !bg-base-100/80 !text-content-100 !shadow-none;
+}
+
+.leaflet-tooltip-top:before {
+  @apply !border-t-base-100/80;
+}
+
+.leaflet-tooltip-bottom:before {
+  @apply !border-b-base-100/80;
+}
+
+.leaflet-tooltip-left:before {
+  @apply !border-l-base-100/80;
+}
+
+.leaflet-tooltip-right:before {
+  @apply !border-r-base-100/80;
 }
 </style>

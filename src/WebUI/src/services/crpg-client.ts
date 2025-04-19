@@ -1,6 +1,8 @@
 import { StatusCodes } from 'http-status-codes'
 
-import { ErrorType, type Result } from '~/models/crpg-client-result'
+import type { Result } from '~/models/crpg-client-result'
+
+import { ErrorType } from '~/models/crpg-client-result'
 import { Platform } from '~/models/platform'
 import { getToken, login } from '~/services/auth-service'
 import { NotificationType, notify } from '~/services/notification-service'

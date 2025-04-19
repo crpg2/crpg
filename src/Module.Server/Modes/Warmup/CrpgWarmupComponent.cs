@@ -133,9 +133,9 @@ internal class CrpgWarmupComponent : MultiplayerWarmupComponent
     {
         if (IsInWarmup && !networkPeer.IsServerPeer)
         {
-            GameNetwork.BeginBroadcastModuleEvent();
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
             GameNetwork.WriteMessage(new WarmupStateChange(WarmupStateReflection, _currentStateStartTime.NumberOfTicks));
-            GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
+            GameNetwork.EndModuleEventAsServer();
         }
     }
 

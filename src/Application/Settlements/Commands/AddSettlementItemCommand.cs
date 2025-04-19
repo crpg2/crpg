@@ -58,6 +58,7 @@ public record AddSettlementItemCommand : IMediatorRequest<ItemStack>
                 .FirstOrDefaultAsync(hi => hi.PartyId == req.PartyId && hi.ItemId == req.ItemId, cancellationToken);
             var settlementItem = await _db.SettlementItems
                 .FirstOrDefaultAsync(si => si.SettlementId == req.SettlementId && si.ItemId == req.ItemId, cancellationToken);
+
             if (req.Count >= 0) // party -> settlement
             {
                 if (partyItem == null || partyItem.Count < req.Count)

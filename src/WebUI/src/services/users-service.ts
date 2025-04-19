@@ -1,8 +1,8 @@
 import { pick } from 'es-toolkit'
 import qs from 'qs'
 
-import type { Clan, ClanEdition, ClanMemberRole } from '~/models/clan'
 import type { Item } from '~/models/item'
+import type { MetadataDict } from '~/models/metadata'
 import type { Platform } from '~/models/platform'
 import type { PublicRestriction, RestrictionWithActive } from '~/models/restriction'
 import type {
@@ -10,13 +10,10 @@ import type {
   UserItem,
   UserItemsByType,
   UserNotification,
-  UserNotificationsWithDicts,
   UserPrivate,
   UserPublic,
 } from '~/models/user'
 
-import { CharacterPublic } from '~/models/character'
-import { mapClanResponse } from '~/services/clan-service'
 import { del, get, post, put } from '~/services/crpg-client'
 import { mapRestrictions } from '~/services/restriction-service'
 
@@ -80,44 +77,15 @@ export const groupUserItemsByType = (items: UserItem[]) =>
     }, [] as UserItemsByType[])
     .sort((a, b) => a.type.localeCompare(b.type))
 
-interface UserClan {
-  clan: ClanEdition
-  role: ClanMemberRole
-}
-
-export const getUserClan = async (): Promise<{ clan: Clan | null, role: ClanMemberRole | null }> => {
-  const userClan = await get<UserClan | null>('/users/self/clan')
-
-  if (userClan === null || userClan.clan === null) {
-    return { clan: null, role: null }
-  }
-  // do conversion since argb values are stored as numbers in db and we need strings
-  return { clan: mapClanResponse(userClan.clan), role: userClan.role }
-}
-
 export const getUserRestriction = () => get<PublicRestriction>('/users/self/restriction')
 
 export const getUserRestrictions = async (id: number) =>
   mapRestrictions(await get<RestrictionWithActive[]>(`/users/${id}/restrictions`))
 
-export const mapUserToUserPublic = (user: User, userClan: Clan | null): UserPublic => ({
-  ...pick(user, ['id', 'platform', 'platformUserId', 'name', 'region', 'avatar']),
-  clan: userClan,
-})
+export const mapUserToUserPublic = (user: User): UserPublic => pick(user, ['id', 'platform', 'platformUserId', 'name', 'region', 'avatar', 'clanMembership'])
 
 // TODO: FIXME: SPEC
-export const getUserNotifications = async (): Promise<UserNotificationsWithDicts> => {
-  const { notifications, dict } = await get<UserNotificationsWithDicts>('/users/self/notifications')
-
-  return {
-    notifications,
-    dict: {
-      ...dict,
-      // @ts-expect-error TODO:
-      clans: dict.clans.map(mapClanResponse),
-    },
-  }
-}
+export const getUserNotifications = () => get<{ notifications: UserNotification[], dict: MetadataDict }>('/users/self/notifications')
 
 export const readUserNotification = (id: number) =>
   put<UserNotification>(`/users/self/notifications/${id}`)

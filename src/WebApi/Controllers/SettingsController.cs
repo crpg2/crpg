@@ -15,8 +15,8 @@ public class SettingsController : BaseController
     /// <returns>The settings.</returns>
     /// <response code="200">Ok.</response>
     [HttpGet]
-    [Authorize(Policy = UserPolicy)]
-    // [ResponseCache(Duration = 1 * 60 * 1)] // 1 minutes
+    [AllowAnonymous]
+    [ResponseCache(Duration = 1 * 60 * 1)] // 1 minute
     public Task<ActionResult<Result<SettingsViewModel>>> GetSettings()
     {
         return ResultToActionAsync(Mediator.Send(new GetSettingsQuery()));

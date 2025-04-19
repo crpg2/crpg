@@ -13,11 +13,35 @@ namespace Crpg.WebApi.Controllers;
 public class SettlementsController : BaseController
 {
     /// <summary>
-    /// Get strategus settlements.
+    /// Get Strategus settlements.
     /// </summary>
     [HttpGet]
     public Task<ActionResult<Result<IList<SettlementPublicViewModel>>>> GetSettlements()
         => ResultToActionAsync(Mediator.Send(new GetSettlementsQuery()));
+
+
+    /// <summary>
+    /// Get settlement details by Id.
+    /// </summary>
+    ///
+    [HttpGet("{settlementId}")]
+    public Task<ActionResult<Result<SettlementPublicViewModel>>> UpdateSettlement([FromRoute] int settlementId)
+    {
+        return ResultToActionAsync(Mediator.Send(new GetSettlementByIdQuery() { SettlementId = settlementId }));
+    }
+
+    /// <summary>
+    /// Give (position count) or take (negative count) garrison troops from a settlement.
+    /// </summary>
+    ///
+    // TODO: Post || Put?
+    [HttpPost("{settlementId}")]
+    public Task<ActionResult<Result<SettlementPublicViewModel>>> UpdateSettlement([FromRoute] int settlementId,
+        [FromBody] UpdateSettlementCommand req)
+    {
+        req = req with { PartyId = CurrentUser.User!.Id, SettlementId = settlementId };
+        return ResultToActionAsync(Mediator.Send(req));
+    }
 
     /// <summary>
     /// Get garrison items from a settlement.
@@ -35,6 +59,8 @@ public class SettlementsController : BaseController
     /// <summary>
     /// Give (position count) or take (negative count) garrison items from a settlement.
     /// </summary>
+    ///
+    // TODO: Post + Put?
     [HttpPost("{settlementId}/items")]
     public Task<ActionResult<Result<ItemStack>>> UpdateSettlementItems([FromRoute] int settlementId,
         [FromBody] AddSettlementItemCommand req)
