@@ -138,7 +138,10 @@ internal class CrpgRewardClient : MissionNetwork
     private void HandleRewardHappyHour(CrpgRewardHappyHour message)
     {
         var textObject = message.Started
-            ? new TextObject("{=TWpiAeFe}It's happy hours time! Experience gain is increased by 50%.")
+            ? new TextObject("{=TWpiAeFe}It's happy hours time! Experience gain is increased by {XPMULTIPLIER}.", new Dictionary<string, object>
+            {
+                ["XPMULTIPLIER"] = $"{message.ExpMultiplier * 100:F0}%",
+            })
             : new TextObject("{=KoqNpPLa}Happy hours ended!");
         InformationManager.AddSystemNotification(textObject.ToString());
     }
