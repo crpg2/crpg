@@ -68,6 +68,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
             new SpectatorHudUiHandler(),
             new WarmupHudUiHandler(),
             new DtvHudUiHandler(),
+            new RangedWeaponAmmoMissionView(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -114,6 +115,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
                 new MultiplayerMissionAgentVisualSpawnComponent(), // expose method to spawn an agent
                 new CrpgCommanderBehaviorClient(),
+                new AmmoQuiverChangeMissionBehavior(),
 #endif
                 dtvClient,
                 new MultiplayerTimerComponent(), // round timer
@@ -125,6 +127,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new MissionBoundaryCrossingHandler(), // kills agent out of mission boundaries
                 new MultiplayerPollComponent(), // poll logic to kick player, ban player, change game
                 new CrpgCommanderPollComponent(),
+                new AmmoQuiverChangeComponent(),
                 new MissionOptionsComponent(),
                 new CrpgScoreboardComponent(new CrpgBattleScoreboardData()),
                 new MissionAgentPanicHandler(),
