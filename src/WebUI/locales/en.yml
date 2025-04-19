@@ -167,6 +167,8 @@ action:
   copied: Copied
   start: Start
   ok: Ok
+  remove: Remove
+  update: Update
 
 login:
   label: Login with
@@ -1519,6 +1521,66 @@ strategus:
       mercenary in scheduled battles on the cRPG servers.'
     join: 'You will join the campaign in region: {region}'
     hint: 'If this doesn''t seem right you can try re-login or contact an administrator'
+  battle:
+    application:
+      update:
+        title: Update Application
+      page:
+        title: Manage Applications
+      table:
+        column:
+          actions: Actions
+          name: Name
+          note: Note
+          troops: Troops
+          wage: Requested Wage
+      title: Applications
+      manage: Manage Applications
+      mercenary:
+        title: Apply as Mercenary
+        resign: Resign as Mercenary
+      wage: Requested Wage
+      note: Note
+    side:
+      title: Side
+      attackers: Attackers
+      attacker: Attacker
+      defenders: Defenders
+      defender: Defender
+    fighter: Fighters
+    manage:
+      title: Battle Management
+    mercenary:
+      title: Mercenaries
+      remove:
+        confirm: Are you sure you would like to remove this mercenary?
+    settlement:
+      title: Siege of {settlement}
+    tooltip:
+      commander: Commander
+      phase: Current Phase
+      date: Start date
+      time: Start time
+      region: Region
+      fighters: Fighters
+      mercenaries: Mercenaries
+      troops: Troops
+    title: Upcoming Battles
+    party:
+      title: Battle of {nearestSettlement} {terrain}
+    phase:
+      hiring: Hiring
+      scheduled: Scheduled
+      title: Battle Phase
+      live: Live
+      preparation: Preparation
+      end: End
+    table:
+      column:
+        attacker: Attacker
+        defender: Defender
+        when: Start Time
+        phase: Current Phase
 
   movementType:
     Move: Move

@@ -8,6 +8,11 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ActivityLogItem: typeof import('./../components/moderator/ActivityLogItem.vue')['default']
+    BackButton: typeof import('./../components/app/BackButton.vue')['default']
+    BattleMercenaryApplicationForm: typeof import('./../components/strategus/battle/BattleMercenaryApplicationForm.vue')['default']
+    BattleMercenaryManagement: typeof import('./../components/strategus/battle/manage/BattleMercenaryManagement.vue')['default']
+    BattleSideComparison: typeof import('./../components/strategus/battle/BattleSideComparison.vue')['default']
+    BattleSideFighters: typeof import('./../components/strategus/battle/BattleSideFighters.vue')['default']
     Bg: typeof import('./../components/app/Bg.vue')['default']
     CharacterCreateModal: typeof import('./../components/character/CharacterCreateModal.vue')['default']
     CharacterEditForm: typeof import('./../components/character/CharacterEditForm.vue')['default']
