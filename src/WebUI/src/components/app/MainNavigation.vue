@@ -125,6 +125,15 @@ const { settings } = storeToRefs(useSettingsStore())
     </RouterLink>
 
     <RouterLink
+      :to="{ name: 'Credits' }"
+      class="text-content-300 hover:text-content-100"
+      active-class="!text-content-100"
+    >
+      {{ $t('nav.main.Credits') }}
+</RouterLink>
+
+
+    <RouterLink
       v-if="[Role.Moderator, Role.Admin].includes(userStore.user!.role)"
       :to="{ name: 'Moderator' }"
       class="text-content-300 hover:text-content-100"
