@@ -2359,7 +2359,6 @@ public record SeedDataCommand : IMediatorRequest
                     },
                 },
                 CreatedAt = DateTime.UtcNow.AddHours(-4),
-
             };
 
             Battle[] newBattles = { orleAttackerSiegeBattle, nideonBattle, plainBattle, hertogeaBattle, leblenionBattle, epicroteaBattle, desertBattle };

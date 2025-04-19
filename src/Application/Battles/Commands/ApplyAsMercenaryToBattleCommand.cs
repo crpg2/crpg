@@ -5,7 +5,6 @@ using Crpg.Application.Common;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
-using Crpg.Application.Common.Services;
 using Crpg.Application.Users.Models;
 using Crpg.Domain.Entities.Battles;
 using FluentValidation;
@@ -112,7 +111,6 @@ public record ApplyAsMercenaryToBattleCommand : IMediatorRequest<BattleMercenary
                 await _db.SaveChangesAsync(cancellationToken);
                 Logger.LogInformation("User '{0}' updated application as a mercenary to battle '{1}' with character '{2}'",
                     character.UserId, battle.Id, character.Id);
-
             }
 
             return new(new BattleMercenaryApplicationViewModel

@@ -2,7 +2,6 @@ using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Common.Services;
-using Crpg.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
@@ -49,7 +48,7 @@ public record RemoveBattleMercenaryCommand : IMediatorRequest
             var fighterRes = await _battleService.GetBattleFighter(_db, req.UserId, req.BattleId, cancellationToken);
             var mercenaryRes = await _battleService.GetBattleMercenary(_db, req.UserId, req.BattleId, cancellationToken);
 
-            if (fighterRes.Errors != null && mercenaryRes?.Data?.Id != mercenary.Id )
+            if (fighterRes.Errors != null && mercenaryRes?.Data?.Id != mercenary.Id)
             {
                 return new Result(fighterRes.Errors);
             }

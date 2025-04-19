@@ -46,6 +46,7 @@ public record GetBattleMercenariesQuery : IMediatorRequest<IList<BattleMercenary
             {
                 return new(CommonErrors.BattleInvalidPhase(req.BattleId, battle.Phase));
             }
+
             BattleFighter? fighter = battle.Fighters.FirstOrDefault(f => f.PartyId == req.UserId);
             BattleMercenary? mercenary = battle.Mercenaries.FirstOrDefault(m => m.Character?.User?.Id == req.UserId);
 

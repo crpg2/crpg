@@ -10,8 +10,6 @@ import type {
   BattleMercenaryApplicationStatus,
   BattlePhase,
 } from '~/models/strategus/battle'
-import type { Party } from '~/models/strategus/party'
-import type { SettlementPublic } from '~/models/strategus/settlement'
 
 import { BattleSide } from '~/models/strategus/battle'
 import { del, get, post, put } from '~/services/crpg-client'
@@ -59,6 +57,7 @@ export const respondToBattleFighterApplication = (
   accept: boolean,
 ) => put<BattleFighterApplication>(`/battles/${battleId}/fighter-applications/${applicationId}/response`, { accept })
 
+//
 export const getBattleMercenaryApplications = (
   battleId: number,
   statuses: BattleMercenaryApplicationStatus[],
