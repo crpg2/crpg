@@ -29,7 +29,7 @@
 
     <!-- damage related -->
     <managed_core_parameter id="DamageInterruptAttackthresholdPierce" value="9"/>
-    <managed_core_parameter id="DamageInterruptAttackthresholdCut" value="9"/>
+    <managed_core_parameter id="DamageInterruptAttackthresholdCut" value="7"/>
     <managed_core_parameter id="DamageInterruptAttackthresholdBlunt" value="9"/>
     <managed_core_parameter id="MakesRearAttackDamageThreshold" value="15.0"/>
     <managed_core_parameter id="MissileMinimumDamageToStick" value="3.0"/>
