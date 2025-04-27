@@ -1,0 +1,188 @@
+<script setup lang="ts">
+import type { SortingConfig } from '~/services/item-search-service'
+
+import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
+import { useClan } from '~/composables/clan/use-clan'
+import { useClanArmory } from '~/composables/clan/use-clan-armory'
+import { useClanMembers } from '~/composables/clan/use-clan-members'
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { SomeRole } from '~/models/role'
+import {
+  getClanArmoryItemBorrower,
+  getClanArmoryItemLender,
+  isClanArmoryItemInInventory,
+  isOwnClanArmoryItem,
+} from '~/services/clan-service'
+import { createItemIndex } from '~/services/item-search-service/indexator'
+
+const props = defineProps<{
+  id: string
+}>()
+
+definePageMeta({
+  props: true,
+  roles: SomeRole,
+  middleware: [
+    'clan-id-param-validate',
+    'clan-foreign-validate',
+  ],
+})
+
+const clanId = computed(() => Number(props.id))
+
+const toast = useToast()
+const { t } = useI18n()
+
+const userStore = useUserStore()
+
+const { clan, loadClan, loadingClan } = useClan(clanId)
+
+const { clanMembers, loadClanMembers, getClanMember } = useClanMembers(clanId)
+
+const {
+  borrowItem,
+  clanArmory,
+  isLoadingClanArmory,
+  loadClanArmory,
+  removeItem,
+  returnItem,
+  getClanArmoryItem,
+} = useClanArmory(clanId)
+
+const {
+  execute: onBorrowFromClanArmory,
+} = useAsyncCallback(async (userItemId: number) => {
+  // await borrowItem(userItemId)
+  // await Promise.all([userStore.fetchUser(), userStore.fetchUserItems(), loadClanArmory()])
+  // notify(t('clan.armory.item.borrow.notify.success'))
+})
+
+const {
+  execute: onRemoveFromClanArmory,
+} = useAsyncCallback(async (userItemId: number) => {
+  // await removeItem(userItemId)
+  // await Promise.all([userStore.fetchUser(), userStore.fetchUserItems(), loadClanArmory()])
+  // notify(t('clan.armory.item.remove.notify.success'))
+})
+
+const {
+  execute: onReturnFromClanArmory,
+} = useAsyncCallback(async (userItemId: number) => {
+  // await returnItem(userItemId)
+  // await Promise.all([userStore.fetchUser(), userStore.fetchUserItems(), loadClanArmory()])
+  // notify(t('clan.armory.item.return.notify.success'))
+})
+
+// const flatItems = computed(() =>
+//   createItemIndex(
+//     clanArmory.value
+//       // .filter(
+//       //   item =>
+//       //     (hideOwnedItemsModel.value ? !isOwnClanArmoryItem(item, userStore.user!.id) : true)
+//       //     && (showOnlyAvailableItems.value
+//       //       ? item.borrowedItem === null
+//       //       && !isOwnClanArmoryItem(item, userStore.user!.id)
+//       //       && !isClanArmoryItemInInventory(item, userStore.userItems)
+//       //       : true),
+//       // )
+//       .map(ca => ca.userItem.item),
+//   ),
+// )
+
+const sortingConfig: SortingConfig = {
+  rank_desc: {
+    field: 'rank',
+    order: 'desc',
+  },
+  type_asc: {
+    field: 'type',
+    order: 'asc',
+  },
+}
+const sortingModel = ref<string>('rank_desc')
+
+const { closeItemDetail, toggleItemDetail } = useItemDetail()
+
+Promise.all([
+  userStore.fetchUserItems(),
+  loadClan(),
+  loadClanArmory(),
+  loadClanMembers(),
+])
+</script>
+
+<template>
+  <UContainer class="space-y-6 py-6">
+    <AppBackButton :to="{ name: 'clans-id', params: { id: clanId } }" data-aq-link="back-to-clan" />
+
+    <div class="mx-auto max-w-2xl">
+      <UiHeading
+        :title="$t('clan.armory.title')"
+        class="mb-14"
+      />
+
+      <ItemGrid
+        v-if="Boolean(clanArmory.length)"
+        v-model:sorting="sortingModel"
+        :items="clanArmory"
+        :sorting-config="sortingConfig"
+      >
+        <!-- <template v-if="hasArmoryItems" #filter-leading>
+        <UDropdownMenu
+          size="xl"
+          :items="additionalFilteritems"
+          :modal="false"
+        >
+          <UChip
+            inset
+            size="2xl"
+            :show="hideInArmoryItemsModel"
+            :ui="{ base: 'bg-[#53bc96]' }"
+          >
+            <UButton
+              variant="subtle"
+              color="neutral"
+              size="xl"
+              icon="crpg:dots"
+            />
+          </UChip>
+        </UDropdownMenu>
+      </template> -->
+
+        <template #item="clanArmoryItem">
+          <ClanArmoryItemCard
+            :clan-armory-item="clanArmoryItem"
+            :lender="getClanMember(clanArmoryItem.userId)!.user"
+            :borrower="getClanArmoryItemBorrower(clanArmoryItem.borrowerUserId, clanMembers)"
+            @click="(e: Event) => toggleItemDetail(e.target as HTMLElement, {
+              id: clanArmoryItem.item.id,
+              userItemId: clanArmoryItem.userItemId,
+            })"
+          />
+        </template>
+      </ItemGrid>
+    </div>
+
+    <ItemDetailGroup>
+      <template #default="di">
+        <ClanArmoryItemDetail
+          :clan-armory-item="getClanArmoryItem(di.userItemId)!"
+          :lender="getClanArmoryItemLender(getClanArmoryItem(di.userItemId)!.userId, clanMembers)!"
+          :borrower="getClanArmoryItemBorrower(getClanArmoryItem(di.userItemId)!.borrowerUserId, clanMembers)"
+          @borrow="(id) => {
+            closeItemDetail(di);
+            onBorrowFromClanArmory(id);
+          }"
+          @remove="(id) => {
+            closeItemDetail(di);
+            onRemoveFromClanArmory(id);
+          }"
+          @return="(id) => {
+            closeItemDetail(di);
+            onReturnFromClanArmory(id);
+          }"
+        />
+      </template>
+    </ItemDetailGroup>
+  </UContainer>
+</template>

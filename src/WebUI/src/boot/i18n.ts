@@ -12,6 +12,7 @@ export const i18n = createI18n({
   missingWarn: false,
   fallbackWarn: false,
   legacy: false,
+  messages: { en },
   datetimeFormats: {
     cn: {
       long: {
@@ -70,7 +71,6 @@ export const i18n = createI18n({
       },
     },
   },
-  messages: { en },
   numberFormats: {
     cn: {
       decimal: {
