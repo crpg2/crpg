@@ -668,7 +668,7 @@ public record SeedDataCommand : IMediatorRequest
 
             Restriction[] newRestrictions =
             {
-                takeoRestriction0, takeoRestriction1, baronCyborgRestriction0,
+                takeoRestriction0, takeoRestriction1, baronCyborgRestriction0, orleRestriction0, orleRestriction1
             };
 
             _db.Restrictions.RemoveRange(await _db.Restrictions.ToArrayAsync());

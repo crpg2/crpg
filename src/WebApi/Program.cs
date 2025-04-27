@@ -32,6 +32,7 @@ using Npgsql;
 using OpenIddict.Abstractions;
 using OpenIddict.Validation.AspNetCore;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using WebApi.Swagger;
 using LoggerFactory = Crpg.Logging.LoggerFactory;
 
 var appEnv = ApplicationEnvironmentProvider.FromEnvironment();
@@ -308,6 +309,12 @@ static void ConfigureSwagger(SwaggerGenOptions options)
             new List<string>()
         },
     });
+
+    options.SupportNonNullableReferenceTypes();
+    options.OperationFilter<MakeAllParametersRequiredOperationFilter>();
+    options.SchemaFilter<RequireAllPropertiesSchemaFilter>();
+    options.SchemaFilter<ResultSchemaFilter>();
+    options.SchemaFilter<FlagsEnumSchemaFilter>();
 }
 
 static void ConfigureSteamAuthentication(SteamAuthenticationOptions options, IConfiguration configuration)
