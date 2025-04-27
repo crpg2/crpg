@@ -1508,8 +1508,8 @@ public record SeedDataCommand : IMediatorRequest
                 // Position = epicrotea.Position,
                 Position = rhotae.Position,
                 // Position = new Point(114.21076699552688, -109.37351870100285),
-                // Status = PartyStatus.IdleInSettlement,
-                Status = PartyStatus.InBattle,
+                Status = PartyStatus.IdleInSettlement,
+                // Status = PartyStatus.InBattle,
                 // TargetedSettlement = epicrotea,
                 TargetedSettlement = rhotae,
             };

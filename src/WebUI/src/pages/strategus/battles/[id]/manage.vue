@@ -17,8 +17,10 @@ definePage({
   props: true,
 })
 
+const battleId = Number(props.id)
+
 const { battleMercenaries, loadBattleMercenaries } = useBattleMercenaries()
-const { battle, battleId, loadBattle } = useBattle(props.id)
+const { battle, loadBattle } = useBattle()
 const canManageMercenaries = computed(() => battle.value?.phase === BattlePhase.Hiring)
 
 // TODO:

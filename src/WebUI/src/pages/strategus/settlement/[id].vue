@@ -24,15 +24,15 @@ const { state: settlement, execute: loadSettlement, isLoading: loadingSettlement
 
 provide(settlementKey, settlement)
 
-const { party, moveParty } = injectStrict(partyKey)
+// const { party, moveParty } = injectStrict(partyKey)
 
 async function leaveFromSettlement(): Promise<void> {
-  await moveParty({
-    status: PartyStatus.Idle,
-  })
-  router.push({
-    name: 'Strategus',
-  })
+//   await moveParty({
+//     status: PartyStatus.Idle,
+//   })
+//   router.push({
+//     name: 'Strategus',
+//   })
 }
 </script>
 

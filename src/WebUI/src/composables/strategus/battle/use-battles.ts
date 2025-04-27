@@ -1,15 +1,11 @@
-import type { Position } from 'geojson'
-
-import battle from '~/assets/themes/oruga-tailwind/icons/game-mode/battle'
 import { BattlePhase } from '~/models/strategus/battle'
-import { getBattle, getBattles } from '~/services/strategus-service/battle'
-import { shouldDisplaySettlement } from '~/services/strategus-service/map'
-import { positionToLatLng } from '~/utils/geometry'
+import { getBattle } from '~/services/strategus-service/battle'
 
 export const useBattles = () => {
   const route = useRoute()
   const router = useRouter()
 
+  // TODO: vue-use query
   const battlePhaseModel = computed({
     get() {
       return (route.query?.battlePhase as BattlePhase[]) || [BattlePhase.Scheduled, BattlePhase.Hiring]
@@ -33,9 +29,7 @@ export const useBattles = () => {
   }
 }
 
-export const useBattle = (id: string) => {
-  const battleId = computed(() => Number(id))
-
+export const useBattle = () => {
   const { state: battle, execute: loadBattle } = useAsyncState(
     ({ id }: { id: number }) => getBattle(id),
     null,
@@ -46,7 +40,6 @@ export const useBattle = (id: string) => {
 
   return {
     battle,
-    battleId,
     loadBattle,
   }
 }

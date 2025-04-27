@@ -2,7 +2,6 @@
 import type { Battle, BattleFighter } from '~/models/strategus/battle'
 
 import { useBattles } from '~/composables/strategus/battle/use-battles'
-import { useLanguages } from '~/composables/use-language' // TODO:
 import { usePagination } from '~/composables/use-pagination'
 import { useRegion } from '~/composables/use-region'
 import { useSearchDebounced } from '~/composables/use-search-debounce'

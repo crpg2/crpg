@@ -34,7 +34,8 @@ const userStore = useUserStore()
 const { mercenaryApplicationsCount, mercenaryApplications, loadBattleMercenaryApplications } = useBattleMercenaryApplications()
 const { fighterApplicationsCount, loadBattleFighterApplications } = useBattleFighterApplications()
 
-const { battle, battleId, loadBattle } = useBattle(props.id)
+const battleId = Number(props.id)
+const { battle, loadBattle } = useBattle()
 
 const selfFighter = computed(() => getBattleFighter(battleFighters.value, userStore.user!.id))
 const selfMercenary = computed(() => battleMercenaries.value.find(merc => merc.user.id === userStore.user!.id))

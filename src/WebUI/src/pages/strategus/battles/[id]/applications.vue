@@ -6,7 +6,7 @@ import { useBattleMercenaryApplications } from '~/composables/strategus/battle/u
 import { useBattle } from '~/composables/strategus/battle/use-battles'
 import { usePagination } from '~/composables/use-pagination'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { BattleApplicationType, BattlePhase } from '~/models/strategus/battle'
+import { BattlePhase } from '~/models/strategus/battle'
 import { notify } from '~/services/notification-service'
 import { respondToBattleFighterApplication, respondToBattleMercenaryApplication } from '~/services/strategus-service/battle'
 import { t } from '~/services/translate-service'
@@ -24,7 +24,9 @@ definePage({
   props: true,
 })
 
-const { battle, battleId, loadBattle } = useBattle(props.id)
+const battleId = Number(props.id)
+
+const { battle, loadBattle } = useBattle()
 const { mercenaryApplications, loadBattleMercenaryApplications } = useBattleMercenaryApplications()
 const { fighterApplications, loadBattleFighterApplications } = useBattleFighterApplications()
 const { pageModel, perPage } = usePagination()
@@ -33,14 +35,14 @@ const canRecruitMercenaries = computed(() => battle.value?.phase === BattlePhase
 const canRecruitFighters = computed(() => battle.value?.phase === BattlePhase.Hiring)
 
 const { execute: respondToMercenary } = useAsyncCallback(async (application: BattleMercenaryApplication, status: boolean) => {
-  await respondToBattleMercenaryApplication(battleId.value, application.id, status)
-  await loadBattleMercenaryApplications(0, { id: battleId.value })
+  await respondToBattleMercenaryApplication(battleId, application.id, status)
+  await loadBattleMercenaryApplications(0, { id: battleId })
   notify(status ? t('clan.application.respond.accept.notify.success') : t('clan.application.respond.decline.notify.success'))
 })
 
 const { execute: respondToFighter } = useAsyncCallback(async (application: BattleFighterApplication, status: boolean) => {
-  await respondToBattleFighterApplication(battleId.value, application.id, status)
-  await loadBattleFighterApplications(0, { id: battleId.value })
+  await respondToBattleFighterApplication(battleId, application.id, status)
+  await loadBattleFighterApplications(0, { id: battleId })
   notify(status ? t('clan.application.respond.accept.notify.success') : t('clan.application.respond.decline.notify.success'))
 })
 

@@ -2,12 +2,10 @@
 import { useVuelidate } from '@vuelidate/core'
 import { maxValue } from '@vuelidate/validators'
 import { strategusMercenaryMaxWage, strategusMercenaryNoteMaxLength } from '~root/data/constants.json'
-import { drop } from 'es-toolkit'
-import { Console } from 'node:console'
 
-import type { Battle, BattleMercenaryApplication, BattleMercenaryApplicationCreation } from '~/models/strategus/battle'
+import type { Battle, BattleMercenaryApplicationCreation } from '~/models/strategus/battle'
 
-import { BattleMercenary, BattleMercenaryApplicationStatus, BattleSide } from '~/models/strategus/battle'
+import { BattleSide } from '~/models/strategus/battle'
 import { NotificationType, notify } from '~/services/notification-service'
 import { applyToBattleAsMercenary, battleSideToIcon, removeBattleMercenaryApplication } from '~/services/strategus-service/battle'
 import { t } from '~/services/translate-service'
@@ -21,24 +19,11 @@ import {
 } from '~/services/validators-service'
 import { useUserStore } from '~/stores/user'
 
-
-
-
-
-
-
-
-
-
-
-
-
 const props = withDefaults(
   defineProps<{
     update?: boolean
     battle: Battle
     application?: Omit<BattleMercenaryApplicationCreation, 'userId'>
-
   }>(),
   {
     update: false,
@@ -52,6 +37,7 @@ const props = withDefaults(
 )
 
 const emit = defineEmits<{ update: [] }>()
+
 const onRemove = async (popper: any) => {
   await removeBattleMercenaryApplication(props.battle.id)
   notify(t('battle.application.remove.notify.success'))
@@ -83,7 +69,7 @@ const userStore = useUserStore()
 const { characters, user } = toRefs(userStore)
 
 const userData = computed(() =>
-  mapUserToUserPublic(user.value!, userStore.clan),
+  mapUserToUserPublic(user.value!),
 )
 
 const mercenaryApplicationFormModel = ref<Omit<BattleMercenaryApplicationCreation, 'userId'>>(props.application)
@@ -114,8 +100,9 @@ const onSelectCharacter = (id: number) => {
   mercenaryApplicationFormModel.value.characterId = id
 }
 
+// TODO:
 if (userStore.characters.length === 0) {
-  await userStore.fetchCharacters()
+  userStore.fetchCharacters()
 }
 </script>
 
@@ -146,6 +133,7 @@ if (userStore.characters.length === 0) {
               </OTabs>
             </OField>
           </div>
+
           <div class="flex justify-center">
             <VDropdown
               :triggers="['click']"
@@ -190,6 +178,7 @@ if (userStore.characters.length === 0) {
               </template>
             </VDropdown>
           </div>
+
           <OField>
             <template #label>
               <div class="flex items-center gap-1.5">
@@ -212,6 +201,7 @@ if (userStore.characters.length === 0) {
               @focus="$v.wage.$reset"
             />
           </OField>
+
           <OField>
             <template #label>
               <div class="flex items-center gap-1.5">
@@ -258,6 +248,7 @@ if (userStore.characters.length === 0) {
               :label="$t('action.remove')"
             />
           </ConfirmActionTooltip>
+
           <OButton
             variant="primary"
             size="xl"
