@@ -17,7 +17,6 @@ const props = defineProps<{
 
 definePage({
   meta: {
-    layout: 'default',
     middleware: '', // TODO: FIXME: ['canManageApplications']
     roles: ['User', 'Moderator', 'Admin'],
   },

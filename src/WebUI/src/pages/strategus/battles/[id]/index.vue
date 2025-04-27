@@ -23,7 +23,6 @@ const { battleMercenaries, battleMercenariesCount, battleMercenariesAttackers, b
 definePage({
   meta: {
     bg: 'background-4.webp',
-    layout: 'default',
     roles: ['User', 'Moderator', 'Admin'],
   },
   props: true,

@@ -111,7 +111,8 @@ async function leaveFromSettlement(): Promise<void> {
     </nav>
 
     <div class="h-full overflow-y-auto overflow-x-hidden">
-      <RouterView />
+      TODO:
+      <!-- <RouterView /> -->
     </div>
 
     <footer class="flex items-center gap-5 border-t border-border-200 pt-2">

@@ -13,7 +13,6 @@ import { useUserStore } from '~/stores/user'
 
 definePage({
   meta: {
-    layout: 'default',
     roles: ['User', 'Moderator', 'Admin'],
   },
 })

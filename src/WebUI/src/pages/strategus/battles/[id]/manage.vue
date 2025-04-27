@@ -10,7 +10,6 @@ const props = defineProps<{
 
 definePage({
   meta: {
-    layout: 'default',
     middleware: '', // TODO: FIXME: ['canManageBattle']
     roles: ['User', 'Moderator', 'Admin'],
   },
