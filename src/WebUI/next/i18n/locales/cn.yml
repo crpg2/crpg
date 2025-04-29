@@ -1,0 +1,1503 @@
+locale:
+  en: English
+  ru: Русский
+  cn: 中文
+
+platform:
+  Steam: Steam
+  EpicGames: Epic Games
+  Microsoft: Xbox
+
+installation:
+  title: 安装
+  common:
+    watchVideoGuide: 视频教学
+    help: 安装遇到问题？来 {discordLink} 服务器联系我们！
+  platform:
+    steam:
+      subscribe: 订阅 {steamWorkshopsLink}
+      update: 要更新该模组，您可能需要在 Steam 创意工坊中取消订阅然后重新订阅该模组
+      bannerlordLauncher: 启动 Bannerlord
+      multiplayerModsTab: 导航到 Multiplayer Mods 标签页
+      activateMod: 单击选择 cRPG 模组并启用它
+      launchMultiplayerGame: 在 Multiplayer 中启动游戏！
+    other:
+      title: 游戏启动器
+      downloadLauncher: 下载我们的 {launcherLink}
+      startLauncher: 打开启动器并选择你的平台（Steam/Epic/Xbox）
+      detectinstall: 点击“Detect install”以自动检测您的安装位置，或通过“Change Location”手动设置。
+      update: 点击“Update cRPG”确保 cRPG 更新到最新版本
+      launch: 点击“Launch cRPG”启动该模组
+
+help:
+  title: 帮助中心
+
+  overview:
+    navTitle: 总览
+    title: 欢迎来到 cRPG！
+    intro: "
+      <p>如果你是新手，可能会在寻找帮助时找到此页面，那么你来对地方了！这将作为一个“新手礼包”，帮助你解答一些基础问题。</p>
+      <p>我们建议先查看<a href='/help/build-support'>配置指南</a>，这是学习我们的建造系统和开始创造你个性化角色的最佳途径！</p>"
+
+  buildSupport:
+    navTitle: 配置指南
+    title: 创建你的角色配置
+    content: "
+      <p>为你的角色建立一个良好的配置是在 cRPG 中主宰战场的基本工具。作为游戏新手，你需要一个简单、易用且清晰的配置，以便尽可能多地参与战斗。</p>
+      <p>关于配置最基本的规则是，属性提升（如力量和敏捷）应始终以<strong> 3 的倍数</strong>调整。</p>
+      <p>这样做的原因是，每当力量或敏捷增加 3 的倍数时，你就可以让相关属性的<strong>技能点数+1</strong>。</p>
+      <p>例如：</p>
+      <ul>
+      <li>在 3 级敏捷时，你可以将 1 点投入到你的“运动”技能中</li>
+      <li>增加 3 点使其达到 6 级后，你可以投入 2 点</li>
+      <li>如此反复，直到达到你想要的等级！</li>
+      </ul>
+      <p>你可以使用<a href='/builder' target='_blank'>这个工具</a>来尝试不同的配置，也可以在<a href='https://discord.com/channels/279063743839862805/1036085650849550376' target='_blank'>专门的 Discord 聊天频道</a>中提出问题。</p>"
+
+  joinClan:
+    title: 加入一个家族
+    navTitle: 加入家族
+    content: '
+      <p>在 cRPG 中加入家族是个不错的选择，有两个简单的理由：</p>
+      <ul>
+      <li>这让你更深入地参与社区——你可以向更有经验的玩家学习，从而提升自己的技术！</li>
+      <li>你可以访问他们的<strong>家族军械库</strong>——其中包含可以向其他玩家借用的物品！在游戏早期金币紧张时，这会是一个巨大的资源帮助！</li>
+      </ul>'
+
+  FAQ:
+    title: 常见问题
+    navTitle: FAQ
+    intro: "
+      <p>在这里你会找到一些常见问题的解答。如果有更多疑问，请在<a href='https://discord.com/channels/279063743839862805/1044686358066778112' target='_blank'> Discord 频道</a>中提问！</p>"
+    list:
+      - q: 力量需求如何运作？
+        a: 你可以穿戴任何装备，但如果你不满足使用该装备的需求，你将会面临<strong>惩罚</strong>。
+      - q: 如何赚取经验和金币？
+        a: 很简单！只需玩游戏即可！随着团队赢得回合，你会获得一个<strong>倍率</strong>，它会将经验和金币的获取率按屏幕右下角显示的倍率（如 x1、x2、x3、x4、x5）进行叠加。使用较差的装备可以<strong>增加收入</strong>，因为装备是需要消耗你的金币的。
+      - q: 大家都很强，为什么我感觉这么弱？
+        a: cRPG 拥有许多经验丰富的老玩家，平均技能水平高于原版玩家。因此，你可能会发现这里的战斗起初较难，尤其是你是新手的情况下！
+      - q: 什么是转生和转生点？
+        a: 转生是 cRPG 的一个功能，它允许你将角色回退到 1 级，作为交换，你会获得一个<strong>代数</strong>，这会提高你的经验获取率，同时你还会获得一个<strong>转生点</strong>，可以用来升级和增强装备属性。
+      - q: 为什么要转生 16 次？
+        a: 我们建议转生 16 次，因为这样可以让你的经验倍率达到最大，之后在超过 31 级时能够更快地升级。
+
+dateTime:
+  days:
+    short: d
+    long: 天 | 天
+  hours:
+    short: h
+    long: 小时 | 小时
+  minutes:
+    short: min
+    long: 分钟 | 分钟
+
+timeAgo:
+  just-now: 刚刚
+  ago: '{0} 前'
+  in: '在 {0}'
+  last-month: 上个月
+  next-month: 下个月
+  month: '个月 | 个月'
+  last-year: 去年
+  next-year: 明年
+  year: '年 | 年'
+  yesterday: 昨天
+  tomorrow: 明天
+  day: '天 | 天'
+  last-week: 上周
+  next-week: 下周
+  week: '周 | 周'
+  hour: '小时 | 小时'
+  minute: '分钟 | 分钟'
+  second: '秒 | 秒'
+
+dateTimeFormat:
+  # TODO: https://github.com/tc39/proposal-intl-duration-format
+  countdown: '{hours}:{minutes}:{seconds}'
+  dd: '{days} @:dateTime.days.short'
+  mm: '{minutes} @:dateTime.minutes.short'
+  hh: '{hours} @:dateTime.hours.short'
+  'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
+
+nav:
+  main:
+    Characters: 角色
+    Shop: 商店
+    Clans: 家族
+    Moderator: 管理员
+    Builder: 配置器
+    Leaderboard: 排行榜
+    Community: 社区
+    Installation: 安装指南
+  back: 返回
+
+action:
+  cancel: 取消
+  delete: 删除
+  save: 保存
+  leave: 离开
+  kick: 踢出
+  confirm: 确认
+  create: 创建
+  search: 搜索
+  apply: 申请
+  accept: 接受
+  decline: 拒绝
+  readMore: 查看更多
+  expand: 展开
+  collapse: 收起
+  find: 查找
+  reset: 重置
+  refresh: 刷新
+  commit: 提交
+  sort: 排序
+  share: 分享
+  sell: 出售
+  confirmation: 确认
+  upgrade: 升级
+  reforge: 重铸
+  enter: 进入
+  copy: 复制到剪切板
+  copied: 已复制
+  start: 开始
+  ok: 好
+
+login:
+  label: '登录 '
+
+confirmAction: 请确认操作
+
+scrollToTop: 回到顶部
+you: 你
+here: 这里
+not-found: 未找到
+results-not-found: 结果未找到...
+shortcuts:
+  keys:
+    ctrl: CTRL
+    lmb: 鼠标左键
+  hints:
+    equip: 装备/卸下物品
+
+setting:
+  language: 语言
+  settings: 设置
+  logout: 登出
+
+validations:
+  required: 值不能为空
+  url: 该值不是有效的 URL 地址
+  sameAs: 值应该等于 {value} 的值
+  integer: 数字必须是整数
+  minLength: 值的长度至少为 {min} 个字符
+  maxLength: 允许的最大长度为 {max}
+  minValue: '允许的最小值为 {min}'
+  maxValue: '允许的最大值为 {max}'
+  clanTagPattern: 值应该只包含数字和字母
+  clanBannerKeyPattern: 值应该只包含数字和小数点
+  discordLinkPattern: 值必须是有效的 Discord 链接
+
+sort:
+  directions:
+    asc: 升序
+    desc: 降序
+
+error:
+  title: 出错了...
+  intro: 如果你看到此页面，那是因为遇到了某种错误！
+  discord: 如果你愿意帮助我们修复此问题，请在我们的 {discordLink} 中提交一个工单。
+  modMail: 您可以通过使用 ModMail 来提交工单，如何操作的指南请查看 {modMailGuideLink}。
+  report:
+    title: 在提交工单时，请确保包含以下内容：
+    step:
+      reproduce: 在出现错误之前您正在做什么
+      repeat: 您是否能够稳定地重现此错误
+  goToHomePage: 回到首页
+
+form:
+  validate:
+    invalid: 表单内容有误
+  field:
+    optional: 可选
+    required: 必填
+
+confirm:
+  placeholder: 名称
+  name: '请输入以下内容确认：{name}'
+
+region:
+  Eu: 欧洲
+  Na: 北美
+  As: 亚洲
+  Oc: 大洋洲
+region-title: 区域
+
+language:
+  En: English
+  Fr: Français
+  Ru: Русский
+  Zh: 中文
+  De: Deutsch
+  It: Italiano
+  Es: Español
+  Pl: Polski
+  Uk: Українська
+  Ro: Română
+  Nl: Nederlands
+  Tr: Türkçe
+  El: Ελληνικά
+  Hu: Magyar
+  Sv: Svenska
+  Cs: Čeština
+  Pt: Português
+  Sr: Srpski
+  Bg: Български
+  Hr: Hrvatski
+  Da: Dansk
+  Fi: Suomi
+  No: Norsk
+  Be: Беларуская
+  Lv: Latviešu
+
+game-mode:
+  CRPGBattle: 战场
+  CRPGConquest: 征服
+  CRPGDTV: DTV
+  CRPGDuel: 决斗
+  CRPGSiege: 攻城战
+  CRPGTeamDeathmatch: 团队死斗
+  CRPGSkirmish: 遭遇战
+  CRPGCaptain: 领军战
+
+clanBalancingExplanation: '
+  <h3>你当前不属于任何家族</h3>
+  <p>为了与朋友在同一队伍中游戏，我们建议创建一个新的家族或加入现有家族</p>
+  <p>此外，加入家族还允许你共享和借用物品（家族军械库）</p>'
+
+welcome:
+  title: 欢迎，勇士！
+  intro: "
+    <p>欢迎来到 Bannerlord 中最受欢迎的线上模组之一！</p>
+    <p>为了让你有一个平稳的开始，我们为你提供了一个 30 级的初始角色，并附带了一些额外奖励帮助你起步。</p>
+    <p>请记住，cRPG 中有很多经验丰富的玩家，因此在初期遇到挑战是完全正常的。不要因此气馁！有任何问题，欢迎加入我们的 <a href='https://discord.gg/c-rpg' target='_blank'>Discord</a>！</p>"
+  bonusTitle: 你的初始奖励
+  bonusHint: '* 奖励在达到 {level} 级前有效（大约1-2周的游戏时间）'
+  bonus:
+    gold: '
+      <h5>起始金币</h5>
+      <p>金币用于<strong>购买</strong>、<strong>维护</strong>和<strong>重铸</strong>物品，以及重置角色技能</p>
+      <p>为了积累金币，请在<strong>角色的 @:character.nav.inventory 页面</strong>上留意装备的维护成本</p>
+      <p>在初始奖励期间，重置角色技能对你是<strong>免费的</strong></p>'
+    newUserStartingCharacter: '
+      <h5>初始角色</h5>
+      <p>你获得一个初始角色：一名<strong>{level} 级</strong>的战士，配备单手剑和盾牌，以及<strong>中等装备</strong><p>
+      <p>你可以在<strong>@:character.nav.overview 角色</strong>页面使用技能重置功能更换角色的职业<p>'
+    freeRespec: '
+      <h5>重新专精</h5>
+      <p>重新专精即重置角色技能</p>
+      <p>你拥有<strong>无限次</strong>的<strong>免费</strong>重新专精机会，可以尝试不同的配置</p>
+      <p>该奖励在您达到<strong> {level} 级</strong>前有效</p>
+      <p>你可以在<strong>@:character.nav.overview 角色页面</strong>更换角色职业<p>'
+  helpfulLinks:
+    label: 有帮助的链接
+
+character:
+  nav:
+    overview: 总览
+    inventory: 物品栏
+    characteristic: 角色属性
+    stats: 统计资料
+
+  format:
+    kda: '{kills}/{deaths}/{assists} ({ratio})'
+    select: '{name} ({level})'
+    expMultiplier: '×{multiplier}'
+
+  empty:
+    title: 你还没有角色
+    desc: 要创建角色，只需加入 cRPG 服务器
+
+  create:
+    title: 新角色
+    guide:
+      title: 创建新角色
+      intro: 要创建一个新角色，只需按照以下步骤操作：
+      step:
+        install: 启动安装了 cRPG 模组的 Bannerlord
+        join: 加入任意 cRPG 服务器（战场/攻城/决斗）
+        joined: 一旦你加入服务器，网站上将会生成一个新角色
+        refresh: '{refresh}网站，现在应该可以看到你的新角色'
+      outro: 你每小时只能创建一个新角色，否则将会被自动踢出服务器
+
+  status:
+    active:
+      title: 角色已激活
+      short: 活跃
+    forTournament:
+      title: 角色为竞技大赛专用
+      short: 竞技大赛
+
+  class:
+    Peasant: 农民
+    Infantry: 步兵
+    ShockInfantry: 突击步兵
+    Skirmisher: 散兵
+    Crossbowman: 弩手
+    Archer: 弓箭手
+    Cavalry: 骑兵
+    MountedArcher: 骑射手
+
+  statistics:
+    generation:
+      title: 代
+      tooltip:
+        title: 该角色转生的次数
+        desc:
+    experience:
+      title: 角色经验
+      format: '{exp} - {expPercent}'
+      tooltip: '
+        <h3>角色经验</h3>
+        <p>距离下一级还需：<strong>{remainExpToUp}</strong> 经验。</p>'
+    expMultiplier:
+      title: 经验倍率
+      tooltip:
+        title: '经验倍率，最大值：{maxExpMulti}'
+        desc: <p>要增加倍率，转生角色。</p><p>此倍率适用于所有角色。</p>
+    level:
+      title: 等级
+      tooltip:
+        title: '你的角色等级。最大值：{maxLevel}'
+        desc:
+      lockedTooltip:
+        title: 等级进度已锁定
+        desc:
+    kda:
+      title: KDA
+      tooltip:
+        title: 击杀/死亡/助攻
+        desc:
+    playTime:
+      title: 游戏时间
+    name:
+      title: 等级
+    rank:
+      title: 段位
+      tooltip:
+        title: 段位
+        # prettier-ignore
+        desc: '
+          <p>你的评分决定了你的段位，并直接与自动平衡器挂钩，系统会根据段位来决定将你分配到哪支队伍。我们使用的系统是 <strong>*Glicko2</strong>。</p>
+          <p>不要过于在意你的段位！最终它只是我们用来平衡队伍的工具，并不一定完全反映在 Bannerlord 中的实际技术水平。</p>
+          <p>通过对抗和攻击更强的玩家，并保持稳定的良好表现，你可以提升你的段位。</p>
+          <p>
+          <small>
+          <strong>*Glicko2</strong>
+          <br />
+          Glicko-2 评分系统是一种用于估算零和游戏（如国际象棋）中玩家技能水平的方法。它是 Elo 评分系统的扩展，增加了一个可靠性评分来优化系统。该系统不仅根据胜负结果调整评分，还考虑玩家表现的稳定性。
+          </small>
+          </p>'
+
+  settings:
+    group:
+      overview:
+        title: 总览
+      actions:
+        title: 操作
+    update:
+      title: 更新角色
+      form:
+        field:
+          name: 名称
+          active: 活跃
+      notify:
+        success: 角色更新成功
+    active:
+      title: 活跃
+      tooltip:
+        title: 活跃角色
+        desc: '
+          <p>选择一个活跃角色以在游戏中使用。</p>
+          <p>如果没有选择任何活跃角色，加入一个服务器将会创建一个新角色</p>
+          <p>请注意，你每小时只能创建一个角色。否则，你将被服务器自动踢出</p>'
+    respecialize:
+      title: 重新专精
+      tooltip:
+        title: 角色重新专精
+        desc: '
+          <p>在上次重置后的<strong>{freeRespecPostWindow}</strong>内，以及每隔<strong>{freeRespecInterval}</strong>，你可以免费重置角色的技能。</p>
+          <p>其余时间内重置技能是付费的，费用会随时间逐渐降低。</p>'
+        freeRespecPostWindowRemaining: '
+          <p>剩余免费技能重置时间：<strong>{remainingTime}</strong></p>'
+        paidRespec: 重置角色的技能需要 {respecPrice}
+        freeRespecIntervalNext: '
+          <p>下次免费技能重置时间：<strong>{nextFreeAt}</strong></p>'
+      dialog:
+        title: 重新专精角色
+        desc: 确定要花费 {respecializationPrice} 重新专精角色吗？此操作无法撤销
+      notify:
+        success: 角色重新专精成功
+    retire:
+      title: 转生
+      tooltip:
+        title: 角色转生
+        descTpl: '{desc1} {desc2}'
+        desc1: '将角色重置为 {resetLevel} 级以获得一个经验倍率奖励 {multiplierBonus}（最大：{maxMultiplierBonus}）。'
+        desc2: '你将根据角色的等级获得转生点 {heirloom}：'
+        requiredDesc: '需要 {requiredLevel} 级'
+      loomPointsTable:
+        cols:
+          level: 级别
+          loomsPoints: 积分
+      dialog:
+        title: 角色转生
+        desc: 确定要转生你的角色吗？此操作无法撤销
+        reward: '你将获得：{heirloom} 转生点，{multiplierBonus} 经验倍率。角色将重置为 {resetLevel} 级'
+      notify:
+        success: 角色已转生
+    tournament:
+      title: 竞技大赛
+      tooltip:
+        title: 竞技大赛角色
+        desc: 将此角色设置为仅可用于竞技大赛活动。其等级提升至 {tournamentLevel}，并永久锁定经验。
+        requiredDesc: '需要 {requiredLevel} 级'
+      dialog:
+        title: 竞技大赛角色
+        desc: 确定要将角色转换为竞技大赛角色吗？转换后无法在 cRPG 的主服务器上使用此角色，且此操作无法撤销。
+      notify:
+        success: 角色已更新
+    delete:
+      title: 你可以{link}，删除后将无法恢复
+      link: 删除你的角色
+      dialog:
+        title: 删除角色
+        desc: 确定要删除你的角色吗？此操作无法撤销
+      notify:
+        success: 角色已删除
+
+  characteristic:
+    convert:
+      attrsToSkills:
+        title: 转换为技能
+        tooltip: 将 {attribute} 属性点转换为 {skill} 技能点
+      skillsToAttrs:
+        title: 转换为属性
+        tooltip: 将 {skill} 技能点转换为 {attribute} 属性点
+
+    requires:
+      title: 要求
+      linked:
+        oneAttrs: 1点属性
+        threeStr: 每级3点力量
+        threeAgi: 每级3点敏捷
+        sixAgi: 每级6点敏捷
+
+    attributes:
+      title: 属性
+      children:
+        strength:
+          title: 力量
+          desc: 你的生命值增加 {value}
+          requires: '@:character.characteristic.requires.linked.oneAttrs'
+        agility:
+          title: 敏捷
+          desc: 增加你的武器点数并使你稍微移动更快
+          requires: '@:character.characteristic.requires.linked.oneAttrs'
+
+    skills:
+      title: 技能
+      children:
+        ironFlesh:
+          title: 铁骨
+          desc: 你的生命值增加 {value}
+          requires: '@:character.characteristic.requires.linked.threeStr'
+        powerStrike:
+          title: 强力打击
+          desc: 近战武器伤害增加 {value}
+          requires: '@:character.characteristic.requires.linked.threeStr'
+        powerDraw:
+          title: 强力射击
+          desc: 弓箭伤害和稳定性增加 {value}
+          requires: '@:character.characteristic.requires.linked.threeStr'
+        powerThrow:
+          title: 强力投掷
+          desc: 投掷武器的伤害和稳定性增加 {value}
+          requires: '@:character.characteristic.requires.linked.threeStr'
+        athletics:
+          title: 跑动
+          desc: 提高你的最大奔跑速度并减少达到该速度的时间
+          requires: '@:character.characteristic.requires.linked.threeAgi'
+        riding:
+          title: 骑术
+          desc: 提升骑行速度、加速度、操控性和抗摔性
+          requires: '@:character.characteristic.requires.linked.threeAgi'
+        weaponMaster:
+          title: 武器专精
+          desc: 获得武器熟练度点数
+          requires: '@:character.characteristic.requires.linked.threeAgi'
+        mountedArchery:
+          title: 骑射
+          desc: 减少在移动坐骑上使用远程武器的惩罚
+          requires: '@:character.characteristic.requires.linked.sixAgi'
+        shield:
+          title: 盾牌
+          desc: 提高盾牌的耐久度，增加对远程攻击的防护，并减少被击中时的晕眩
+          requires: '@:character.characteristic.requires.linked.sixAgi'
+
+    weaponProficiencies:
+      title: 武器熟练度
+      children:
+        oneHanded:
+          title: 单手
+          desc: ''
+          requires: ''
+        twoHanded:
+          title: 双手
+          desc: ''
+          requires: ''
+        polearm:
+          title: 长杆
+          desc: ''
+          requires: ''
+        bow:
+          title: 弓
+          desc: ''
+          requires: ''
+        crossbow:
+          title: 弩
+          desc: ''
+          requires: ''
+        throwing:
+          title: 投掷
+          desc: ''
+          requires: ''
+
+    commit:
+      notify: 更改已成功保存
+
+  stats:
+    hp:
+      title: 生命值
+      desc: ''
+    weight:
+      title: 负重
+      desc: ''
+    freeWeight:
+      title: 可用负重
+      desc: ''
+    weightReduction:
+      title: 负重减少
+      desc: '
+        <p>扣除<strong>可用负重</strong>后的剩余重量</p>
+        <p>受<strong>力量（STR）</strong>属性点数的影响</p>'
+    perceivedWeight:
+      title: 实际负重
+      desc: ''
+    timeToMaxSpeed:
+      title: 达到最大速度所需时间
+      desc: 加速度——达到最大奔跑速度所需的时间
+    nakedSpeed:
+      title: 裸奔速度
+      desc: 未穿戴任何装备时的奔跑速度
+    currentSpeed:
+      title: 当前速度
+      desc: ''
+    maxWeaponLength:
+      title: 最大武器长度
+      desc: '
+        <p>在战斗中不影响移动速度的最大武器长度。</p>
+        <p>受<strong>力量（STR）</strong>属性点数的影响</p>'
+    movementSpeedPenaltyWhenAttacking:
+      title: 移动速度惩罚
+      desc: '
+        <p>攻击时额外的移动速度惩罚。</p>
+        <p>受武器长度和<strong>力量（STR）</strong>属性点数的影响</p>'
+    price:
+      title: 总成本
+      desc: 已装备物品的总成本
+    avgRepairCost:
+      title: 平均维修成本
+      desc: 每小时已装备物品的平均维护费用
+
+  earningStats:
+    type:
+      experience: 经验
+      gold: 金币
+    summary:
+      timeEffort: 时间精力
+
+  highUpkeepWarning:
+    title: 你无法负担当前的维护费用！
+    desc: <p>如果在回合结束时无法支付维护费用，你的物品将会损坏。</p><p>你可以在物品栏中付费修理物品。</p>
+
+  inventory:
+    empty: 物品栏空空如也
+    total:
+      tpl: '{count} {sum}'
+      count: '... | {count} 件物品 | {count} 件物品'
+      sum: '价值 {sum}'
+
+    item:
+      sell:
+        title: 售价 {price}
+        confirm: 确定要出售该物品吗？
+        freeRefund: 下次 {dateTime} 内可获得 100% 退款
+        penaltyRefund: '物品将受到 {penalty} 的售价罚款'
+        notify:
+          success: 物品已成功售出
+      equipped: 物品已装备
+      broken:
+        tooltip:
+          title: 物品已损坏
+        notify:
+          warning: 物品已损坏，无法装备
+      repair:
+        tooltip:
+          title: 修理费用 {price}
+        notify:
+          success: 物品已成功修理
+      requirement:
+        tooltip:
+          title: 你的力量不足以使用该物品。物品属性将会降低。
+      cantUseOnHorseback:
+        notify:
+          warning: 大型盾牌无法在骑乘时使用
+      EBAArmorCompatible:
+        notify:
+          warning: 要装备 EBA 套装中的护甲，必须先穿戴 EBA 套装中的兼容腿甲
+      upgrade:
+        upgradesTitle: 物品升级
+        tooltip:
+          title: 升级物品
+          description: 你可以花费一个转生点来升级物品
+        validation:
+          maxRank: 该物品已升级至最高等级
+          loomPoints: 你的转生点不足
+        confirm:
+          description: 确定要花费 {loomPoints} 来升级该物品吗？你的物品 {oldItem} 将被更换为 {newItem}
+        currentItem: 当前物品
+        notify:
+          success: 物品已成功升级
+      reforge:
+        tooltip:
+          title: 重铸物品
+          description: 你可以花费金币重铸物品
+          costTable:
+            cols:
+              rank:
+                label: 物品等级
+              cost:
+                label: 价格
+              looms:
+                label: 获得转生点
+        validation:
+          rank: '物品等级必须大于 {minimumRank}'
+          gold: 金币不足，无法执行此操作
+        confirm:
+          description: 确定要花费 {gold} 来重铸该物品吗？你将获得 {loomPoints}，并且 {oldItem} 将被更换为 {newItem}
+        notify:
+          success: 物品已成功重铸
+      clanArmory:
+        inArmory:
+          title: 物品在家族军械库中
+          notify:
+            warning: 该物品在家族军械库中。请先从军械库中取出。
+    filter:
+      hideInArmory: 隐藏军械库中的物品
+      showInArmory: 显示军械库中的物品
+
+  doll:
+    slot:
+      Head:
+        title: 头部护甲
+        description: ''
+      Shoulder:
+        title: 肩部护甲
+        description: ''
+      Body:
+        title: 身体护甲
+        description: ''
+      Hand:
+        title: 手部护甲
+        description: ''
+      Leg:
+        title: 腿部护甲
+        description: ''
+      MountHarness:
+        title: 坐骑护具
+        description: ''
+      Mount:
+        title: 坐骑
+        description: ''
+      Weapon0:
+        title: 武器
+        description: ''
+      Weapon1:
+        title: 武器
+        description: ''
+      Weapon2:
+        title: 武器
+        description: ''
+      Weapon3:
+        title: 武器
+        description: ''
+      WeaponExtra:
+        title: 额外武器
+        description: 用于不可拔出的物品插槽，如旗帜或长矛
+    armorOverall:
+      ArmArmor: 手臂护甲
+      BodyArmor: 身体护甲
+      HeadArmor: 头部护甲
+      LegArmor: 腿部护甲
+      MountArmor: 坐骑护甲
+
+builder:
+  title: cRPG 角色配置器
+  levelTpl: '等级 {level}（{exp} 经验）'
+  levelIntervalTpl: '等级 {level}（{exp} 经验） - 距离 {nextLevel} 级还需 {nextExp} 经验'
+  levelChangeAttention: 等级变更时，角色属性将被重置
+  share:
+    notify:
+      success: 链接已复制到剪贴板
+  weight: 输入装备的估计重量以计算角色的属性
+  weaponLength:
+    title: 武器长度
+    description: 输入主武器的长度以计算角色的属性
+
+shop:
+  item:
+    buy:
+      notify:
+        success: 物品购买成功
+      tooltip:
+        buy: 购买物品
+        inInventory: '该物品已在你的物品栏中: {items}'
+        notEnoughGold: 金币不足
+    weaponUsage:
+      title: 不是主要使用模式
+      desc: 该武器有多种使用模式
+      secondary: '当前模式（次要）：{weaponClass}'
+      primary: '主要模式：{weaponClass}'
+    expensive: 你无法负担该物品的维护费用
+  filter:
+    reset: 重置筛选
+  pagination:
+    perPage: 每页物品数量
+  sort:
+    asc: 升序
+    desc: 降序
+  compare:
+    add: 添加到对比
+    addAll: 添加所有到对比
+    remove: 从对比中移除
+    removeAll: 移除所有对比项
+    title: 对比模式
+  nonPrimaryWeaponMode:
+    title: 显示额外物品
+    tooltip:
+      title: 次要武器模式
+      desc:
+        <p>某些物品具有多种武器模式，例如投掷斧头可以作为单手斧用于近战。</p>
+        <p>此选项将在商店列表中显示此类武器</p>
+  hideOwnedItems:
+    title: 隐藏已拥有的物品
+
+clan:
+  action:
+    create: 创建新家族
+    goToMyClan: 我的家族
+    settings: 家族设置
+  roleTitle: 身份
+  role:
+    Member: 成员
+    Officer: 指挥官
+    Leader: 族长
+  table:
+    column:
+      tag: 标签
+      region: 地区
+      languages: 语言
+      members: 成员
+      name: 名称
+      memberName: 名称
+      role: 身份
+  create:
+    page:
+      title: 创建家族
+    notify:
+      success: 家族已创建
+  update:
+    page:
+      title: 家族设置
+    form:
+      field:
+        mainInfo: 主要信息
+        name: 家族名称
+        tag: 标签
+        description: 描述
+        colors: 颜色
+        primaryColor: 主要颜色
+        secondaryColor: 次要颜色
+        bannerKey: 旗帜代码
+        discord: Discord 服务器
+        languages: 语言
+      group:
+        armory:
+          label: 军械库
+          field:
+            armoryTimeout:
+              label: 军械库超时（天数）
+              hint: 如果借用者在 N 天内未活跃，物品将自动归还
+    bannerKeyGeneratorTools: 在 {link} 上生成
+    notify:
+      success: 家族设置已更新
+  delete:
+    title: 你可以{link}。删除后将无法恢复
+    link: 删除你的家族
+    dialog:
+      title: 删除家族
+      desc: 确定要删除你的家族吗？此操作无法撤销
+    required: 要删除家族，家族必须仅剩一名成员
+    notify:
+      success: 家族已删除
+  member:
+    update:
+      transferRights: 转移管理权
+      confirmationDialog:
+        title: 确认
+        desc: 确认将家族管理权转移给另一成员
+      notify:
+        success: 成员信息已更新
+    kick:
+      title: 你可以{memberLink}。此操作无法撤销
+      memberLink: 踢出该用户
+      dialog:
+        title: 踢出 {memberName}？
+        desc: 此操作无法撤销。
+      notify:
+        success: 家族成员已被踢出
+    leave:
+      title: 退出家族
+      dialog:
+        title: 退出家族
+        desc: 确定要退出家族 {clanName} 吗？此操作无法撤销
+      notify:
+        success: 你已退出家族
+  application:
+    title: 申请
+    apply: 申请加入
+    sent: 申请已发送，请等待
+    page:
+      title: 当前申请
+    table:
+      column:
+        name: 名称
+        actions: 操作
+    respond:
+      accept:
+        notify:
+          success: 申请已被接受
+      decline:
+        notify:
+          success: 申请已被拒绝
+  armory:
+    title: 家族军械库
+    empty: 军械库为空
+    filter:
+      hideOwned: 隐藏已拥有的物品
+      showOnlyAvailable: 仅显示可用物品
+    item:
+      lender:
+        tooltip:
+          title: 出借者 {user}
+      borrow:
+        title: 从 {user} 处借用
+        validation:
+          borrowed: 该物品已被借出
+          isInInventory: 相同物品已在你的物品栏中
+        notify:
+          success: 物品已成功从军械库借用
+      borrowed:
+        title: 已被 {user} 借用
+      borrower:
+        tooltip:
+          title: 借用者 {user}
+      add:
+        title: 添加到军械库
+        confirm:
+          description: 确定要将物品添加到军械库吗？
+        notify:
+          success: 物品已成功添加到家族军械库
+      remove:
+        title: 从军械库移除
+        confirm:
+          description: 确定要将物品从军械库中取回吗？
+        notify:
+          success: 物品已成功归还至家族军械库
+      return:
+        title: 归还至军械库
+        notify:
+          success: 物品已成功归还至家族军械库
+
+user:
+  field:
+    name: 用户名
+    gold: 金币
+    heirloom: 转生点
+  settings:
+    title: 账户设置
+    dangerZone: 危险区域
+    delete:
+      title: '警告：你可以{link}。此过程将删除你所有的 cRPG 角色和数据，且无法恢复。'
+      link: 删除你的账户
+      validation:
+        hasChar: 只要你还有至少一个角色，就无法删除你的账户。
+      dialog:
+        title: '
+          <h5>警告</h5>
+          <h4>你即将删除你的账户</h4>
+          <h5>警告</h5>'
+        desc: 最终警告：此过程无法撤销 - 删除账户意味着它将永久消失。与你在 cRPG 中的所有数据、角色、物品、等级等有关的所有内容将永久删除。一旦执行，我们无法恢复任何数据。
+        enterToConfirm: 删除我的账户 {user}
+      notify:
+        success: 你的账户已被删除。
+  restriction:
+    notification: '你已被封禁，时长：{duration}'
+    guide:
+      intro: 如果你希望进一步讨论你的处罚，请按照以下步骤操作：
+      step:
+        join: 加入我们的 {discordLink}
+        navigate: 前往我们的 {modMailLink} 频道
+        follow: 按照频道中的指示联系我们
+      outro: 请注意，目前我们只接受通过 Discord 提出的申诉，不接受其他平台的申诉。
+
+banned:
+  title: 你已被封禁
+
+restriction:
+  title: 限制
+  type:
+    Join: 加入
+    Chat: 聊天
+    All: 全部
+  status:
+    active: 激活
+    inactive: 未激活
+  table:
+    column:
+      status: 状态
+      user: 用户
+      createdAt: 创建时间
+      duration: 时长
+      type: 类型
+      reason: 内部原因
+      publicReason: 公开原因
+      restrictedBy: 限制人
+  user:
+    title: 用户限制
+    history: 限制历史
+  create:
+    form:
+      title: 新增限制
+      field:
+        type:
+          label: 类型
+        days:
+          label: 天数
+        hours:
+          label: 小时
+        minutes:
+          label: 分钟
+        reason:
+          label: 内部原因
+        publicReason:
+          label: 公开原因
+      action:
+        submit: 添加限制
+    notify:
+      success: 用户已被限制
+
+findUser:
+  title: 查找用户
+  result:
+    title: 匹配的用户
+  mode:
+    Name:
+      label: 按名称
+      field:
+        name:
+          label: 昵称
+          placeholder: 用户昵称
+    Id:
+      label: 按 ID
+      field:
+        id:
+          label: 用户 ID
+          placeholder: 用户 ID
+    Platform:
+      label: 按平台
+      field:
+        platform:
+          label: 平台
+          placeholder: 用户 ID
+        platformId:
+          label: 用户平台 ID
+          placeholder: 特定平台的用户 ID
+
+onlinePlayers:
+  format: '{count} 在线'
+  tooltip:
+    title: 在线玩家
+
+homePage:
+  intro: cRPG 是一个 {link} 的模组
+  description: 《骑马与砍杀2：霸主》的 cRPG 模组将你从一名普通农民逐步培养成一位独特的战士。你将参与激烈的战斗，赢得金币和经验。通过这些奖励，你可以提升角色属性并升级装备。该模组巧妙地将角色成长与战斗紧密结合，每一场战斗都在推动着你的战士传奇不断发展。
+
+patreon: '
+  <p>你喜欢我们的项目吗？</p>
+  <p>你可以在此支持我们</p>'
+
+hh:
+  tooltip-trigger: '{region} 的快乐时光：'
+  tooltip-content:
+    template: '{title}{desc}{region}'
+    title: 快乐时光！
+    desc: '快乐时光是一项每日促销活动，在此期间{descHighlight}'
+    descHighlight: 你将获得 50% 的经验加成。
+    region: 促销在你的地区指定的时间内有效 - {currentRegion}。地区会自动检测。
+  notify:
+    started: 快乐时光开始咯 🙂
+    ended: 快乐时光结束了 😭
+
+item:
+  type:
+    Undefined: ''
+    HeadArmor: 头部护甲
+    ShoulderArmor: 肩部护甲
+    BodyArmor: 身体护甲
+    HandArmor: 手部护甲
+    LegArmor: 腿部护甲
+    MountHarness: 坐骑护具
+    Mount: 坐骑
+    Shield: 盾牌
+    Bow: 弓
+    Crossbow: 弩
+    OneHandedWeapon: 单手武器
+    TwoHandedWeapon: 双手武器
+    Polearm: 长柄武器
+    Thrown: 投掷武器
+    Arrows: 箭
+    Bolts: 弩矢
+    Pistol: 手枪
+    Musket: 火枪
+    Bullets: 子弹
+    Banner: 旗帜
+
+  flags:
+    ForceAttachOffHandPrimaryItemBone: ''
+    ForceAttachOffHandSecondaryItemBone: ''
+    NotUsableByFemale: ''
+    NotUsableByMale: ''
+    DropOnWeaponChange: 武器切换时掉落
+    DropOnAnyAction: 任意操作时掉落
+    CannotBePickedUp: ''
+    CanBePickedUpFromCorpse: ''
+    QuickFadeOut: ''
+    WoodenAttack: ''
+    WoodenParry: ''
+    HeldInOffHand: ''
+    HasToBeHeldUp: ''
+    UseTeamColor: 使用团队颜色
+    Civilian: ''
+    DoNotScaleBodyAccordingToWeaponLength: ''
+    DoesNotHideChest: ''
+    NotStackable: 不可堆叠
+
+  usage:
+    long_bow:
+      title: 长弓
+      description: ''
+    bow:
+      title: 弓
+      description: ''
+    crossbow:
+      title: 重弩
+      description: ''
+    crossbow_light:
+      title: 轻弩
+      description: ''
+    polearm_couch:
+      title: 冲锋
+      description: ''
+    polearm_bracing:
+      title: 架矛
+      description: ''
+    polearm_pike:
+      title: 长矛
+      description: ''
+    polearm:
+      title: 骑枪
+      description: 仅在骑枪冲刺模式下可用
+
+  weaponClass:
+    Undefined: ''
+    Dagger: 匕首
+    OneHandedSword: 单手剑
+    TwoHandedSword: 双手剑
+    OneHandedAxe: 单手斧
+    TwoHandedAxe: 双手斧
+    Mace: 钉头锤
+    Pick: 镐
+    TwoHandedMace: 双手钉头锤
+    OneHandedPolearm: 单手长杆武器
+    TwoHandedPolearm: 双手长杆武器
+    LowGripPolearm: 低握长柄武器
+    Arrow: 箭
+    Bolt: 弩矢
+    Cartridge: 弹药筒
+    Bow: 弓
+    Crossbow: 弩
+    Stone: 石头
+    Boulder: 巨石
+    ThrowingAxe: 投掷斧
+    ThrowingKnife: 投掷匕首
+    Javelin: 标枪
+    Pistol: 手枪
+    Musket: 火枪
+    SmallShield: 小盾牌
+    LargeShield: 大盾牌
+    Banner: 旗帜
+
+  weaponFlags:
+    AffectsAreaBig: 大范围影响
+    AffectsArea: 范围影响
+    AmmoBreaksOnBounceBack: ''
+    AmmoCanBreakOnBounceBack: ''
+    AmmoSticksWhenShot: ''
+    AttachAmmoToVisual: ''
+    AutoReload: 自动装填
+    BonusAgainstShield: 对盾牌有额外伤害
+    Burning: 燃烧
+    CanBlockRanged: 可阻挡远程攻击
+    CanCrushThrough: 可突破格挡
+    CanDismount: 可将敌人击下马
+    CanHook: 可以钩住
+    CanKnockDown: 可击倒
+    CanPenetrateShield: 可穿透盾牌
+    CantReloadOnHorseback: 不可在骑乘时装填
+    CanReloadOnHorseback: 可在骑乘时装填
+    CantUseOnHorseback: 不可在骑乘时使用
+    Consumable: ''
+    FirearmAmmo: ''
+    HasHitPoints: ''
+    HasString: ''
+    LeavesTrail: ''
+    MeleeWeapon: ''
+    MissileWithPhysics: ''
+    MultiplePenetration: 击倒
+    NoBlood: ''
+    NotUsableWithOneHand: 仅限双手使用
+    NotUsableWithTwoHand: 仅限单手使用
+    PenaltyWithShield: 携带盾牌时有惩罚
+    RangedWeapon: 远程武器
+    StringHeldByHand: ''
+    TwoHandIdleOnMount: 骑乘时双手空闲
+    UnloadWhenSheathed: ''
+    UseHandAsThrowBase: ''
+    WideGrip: 宽握
+
+  culture:
+    Neutral: 中立
+    Aserai: 阿塞莱
+    Battania: 巴旦尼亚
+    Empire: 帝国
+    Khuzait: 库赛特
+    Looters: 掠夺者
+    Sturgia: 斯特吉亚
+    Vlandia: 瓦兰迪亚
+
+  familyType:
+    1:
+      title: 马
+      description: ''
+    2:
+      title: 骆驼
+      description: ''
+    3:
+      title: EBA
+      description: 要装备 EBA 套装中的身体护甲，必须先穿戴 EBA 套装中兼容的腿部护甲
+
+  armorMaterialType:
+    Cloth:
+      title: 布甲
+      description: ''
+    Leather:
+      title: 皮甲
+      description: ''
+    Chainmail:
+      title: 锁子甲
+      description: ''
+    Plate:
+      title: 板甲
+      description: ''
+
+  damageTypeFormat: '{value} {type}'
+  damageType:
+    Cut:
+      long: 砍伤
+      short: 砍
+      title: 砍伤伤害
+      description: '
+        <p>砍伤伤害代表切割或劈砍攻击，通常由剑或斧等锋利武器造成。</p>
+        <p>这种攻击对低护甲或无护甲的敌人非常有效，能够充分利用他们的脆弱性。护甲越薄，砍伤伤害越具破坏性，反映了锋利武器能够切穿敌人暴露区域的能力。</p>'
+
+    Pierce:
+      long: 刺伤
+      short: 刺
+      title: 穿刺伤害
+      description: '
+        <p>穿刺伤害指由箭、矛或匕首等穿透性武器造成的伤害。</p>
+        <p>穿刺伤害的主要优势在于对付护甲敌人的效率。穿刺伤害在命中头部时具有更高的倍数加成，如果近战（穿刺）攻击击中敌人的头部，伤害将增加至 1.3 倍，而远程攻击则增加至 1.6 倍。</p>
+        <p>这使得穿刺伤害在因头部命中而增加伤害方面成为最具潜力的伤害类型。</p>'
+
+    Blunt:
+      long: 钝伤
+      short: 钝
+      title: 钝击伤害
+      description: '
+        <p>钝击伤害是由锤子、狼牙棒或棍棒等冲击性武器造成的创伤。</p>
+        <p>这种伤害类型在对付护甲敌人时与穿刺伤害类似，但与穿刺伤害不同，钝击伤害没有增加的头部命中倍数加成。这使得钝击在一般用途上相对更为实用。</p>'
+
+  requirementFormat: '{value} 力量'
+
+  aggregations:
+    type:
+      title: 物品类型
+      description: ''
+    price:
+      title: 价格
+      description: ''
+    upkeep:
+      title: 维修费
+      description: 平均每小时维护费用
+    culture:
+      title: 文化
+      description: ''
+    requirement:
+      title: 要求
+      description: 该物品对力量属性有最低要求
+    tier:
+      title: 物品等级
+      description: '
+        <p>cRPG 包含一个物品价值模型，用于预测和量化物品在游戏中的效率。根据属性将每个物品分为 0 到 10 级，以显示要求和价格。前段时间模型重做，重新调整了价格列表以更好地反映物品性能，通常使高等级武器更昂贵。不过，请记住，这一模型只是一个指示器，而非完美的物品平衡衡量标准。</p>'
+    flags:
+      title: 特性
+      description: ''
+    weight:
+      title: 重量
+      description: ''
+
+    armorMaterialType:
+      title: 材料
+      description: ''
+    headArmor:
+      title: 头部护甲
+      description: ''
+    bodyArmor:
+      title: 身体护甲
+      description: ''
+    armArmor:
+      title: 手臂护甲
+      description: ''
+    legArmor:
+      title: 腿部护甲
+      description: ''
+    armorFamilyType:
+      title: 盔甲套装
+      description: 某些护甲部件仅与同套装的护甲部件兼容
+    bodyLength:
+      title: 身长
+      description: ''
+    chargeDamage:
+      title: 冲撞伤害
+      description: ''
+    maneuver:
+      title: 操纵
+      description: ''
+    speed:
+      title: 速度
+      description: ''
+    hitPoints:
+      title: 生命值
+      description: ''
+    mountFamilyType:
+      title: 坐骑类型
+      description: ''
+    mountArmor:
+      title: 坐骑护甲
+      description: ''
+    mountArmorFamilyType:
+      title: 坐骑护甲类型
+      description: ''
+    weaponClass:
+      title: 武器类别
+      description: ''
+    length:
+      title: 武器长度
+      description: ''
+    handling:
+      title: 操控性
+      description: 操控性加快准备动画，使你在释放攻击前更快进入状态
+    thrustSpeed:
+      title: 刺击速度
+      description: ''
+    thrustDamage:
+      title: 穿刺伤害
+      description: ''
+    thrustDamageType:
+      title: 穿刺伤害类型
+      description: ''
+    swingSpeed:
+      title: 挥击速度
+      description: ''
+    swingDamage:
+      title: 挥砍伤害
+      description: ''
+    swingDamageType:
+      title: 挥砍伤害类型
+      description: ''
+
+    accuracy:
+      title: 精度
+      description: ''
+    missileSpeed:
+      title: 投掷物速度
+      description: ''
+    reloadSpeed:
+      title: 装填速度
+      description: ''
+    aimSpeed:
+      title: 瞄准速度
+      description: ''
+
+    damage:
+      title: 伤害
+      description: ''
+    damageType:
+      title: 伤害类型
+      description: ''
+    stackAmount:
+      title: 弹药数量
+      description: ''
+    stackWeight:
+      title: 弹药重量
+      description: ''
+
+    shieldSpeed:
+      title: 速度
+      description: ''
+    shieldDurability:
+      title: 耐久度
+      description: ''
+    shieldArmor:
+      title: 护甲
+      description: ''
+
+    rank:
+      title: 段位
+      description: ''
+
+    new:
+      title: 仅显示新物品
+      description: '显示最近 {days} 天内添加或重铸的物品'
+
+  format:
+    upkeep: '{upkeep} / @:dateTime.hours.short'
+    rank: '物品段位 {rank}'
+
+  sort:
+    price_asc: 价格（升序）
+    price_desc: 价格（降序）
+    type_asc: 按类型
+    rank_desc: 按段位
+
+  filter:
+    all: 全部
+
+activityLog:
+  form:
+    from: 从
+    to: 到
+    type: 类型
+    addUser: 添加用户
+  sort:
+    createdAt: 创建时间
+  tpl:
+    UserCreated: 用户已创建
+    UserDeleted: 用户已删除
+    UserRenamed: '用户 {oldName} 已重命名为 {newName}'
+    UserRewarded: '用户 {actorUserId} 奖励了用户 {gold} 金币和 {heirloomPoints} 转生点，物品 ID 为 {itemId}'
+    ItemBought: '用户以 {price} 金币购买了物品 {itemId}'
+    ItemSold: '用户以 {price} 金币出售了物品 {itemId}'
+    ItemBroke: '物品 {itemId} 已损坏'
+    ItemRepaired: '物品 {itemId} 已修复，花费 {price} 金币'
+    ItemUpgraded: '物品 {itemId} 已升级，花费 {price} 金币和 {heirloomPoints} 转生点'
+    ItemReforged: '物品 {itemId} 已重铸，花费 {price} 金币，获得 {heirloomPoints} 转生点'
+    CharacterCreated: '角色 {characterId} 已创建'
+    CharacterDeleted: '角色 {characterId}（等级 {level}，代数 {generation}）已删除'
+    CharacterRespecialized: '角色 {characterId} 已重新专精，花费 {price} 金币'
+    CharacterRetired: '角色 {characterId} 已在 {level} 级时转生'
+    CharacterRewarded: '用户 {actorUserId} 奖励了角色 {characterId} {experience} 点经验'
+    ServerJoined: 用户已加入服务器
+    ChatMessageSent: '发送消息：{message} {instance}'
+    TeamHit: '对 {targetUserId} 造成了 {damage} 点伤害 {instance}'
+    ClanArmoryAddItem: '物品 {userItemId} 已添加到家族 {clanId} 军械库'
+    ClanArmoryRemoveItem: '物品 {userItemId} 已从家族 {clanId} 军械库中移除'
+    ClanArmoryReturnItem: '物品 {userItemId} 已从家族 {clanId} 军械库中归还'
+    ClanArmoryBorrowItem: '物品 {userItemId} 已从家族 {clanId} 军械库中借出'
+    CharacterEarned: '角色 {characterId} 在游戏模式 {gameMode} 中获得了 {experience} 经验和 {gold} 金币'
+
+leaderboard:
+  title: 排行榜
+  table:
+    cols:
+      top: 前
+      rank: 段位
+      player: 玩家
+      class: 职业
+      level: 等级
+      region: 地区
+
+rankTable:
+  title: 段位表
+
+patchNotes:
+  showAllPatches: '+ {count} 个补丁 | + {count} 个补丁'
+  latestPatch: 最新补丁
+
+strategus:
+  registration:
+    welcome: 欢迎来到 Strategus！
+    description: '
+      Strategus 是 cRPG 的多人战役模式，玩家可以在实时地图上获取封地和土地，并集结军队。
+      Strategus 将 cRPG 的世界扩展到浏览器中的卡拉迪亚地图上，玩家可以带领军队与其他玩家作战，
+      或作为雇佣兵参与 cRPG 服务器上的预定战斗。'
+    join: '你将加入位于 {region} 的战役'
+    hint: 如果地区不正确，你可以尝试重新登录或联系管理员
+
+  movementType:
+    Move: 移动
+    Follow: 跟随
+    Attack: 攻击
+
+  settlementType:
+    Village: 村庄
+    Castle: 城堡
+    Town: 城镇
+
+  control:
+    locateParty: 定位队伍
+    searchBySettlements: 搜索定居点
+    terrainLayerToggle: 切换地形层
+    terrainEditorToggle: 切换地形编辑器
