@@ -1,29 +1,37 @@
 <script setup lang="ts">
+import { AppBg, AppLogin } from '#components'
 import type { GameServerModeStats, GameServerRegionStats, GameServerStats } from '~/models/game-server-stats'
 import type { PatchNote } from '~/models/patch-note'
 import { getGameServerStats } from '~/services/game-server-statistics-service'
-
 // import { useGameServerStats } from '~/composables/use-game-server-stats'
 // import { usePatchNotes } from '~/composables/use-patch-notes'
-// import { useSettingsStore } from '~/stores/settings'
+import { useSettingsStore } from '~/stores/settings'
 
-// const { loadPatchNotes, patchNotes } = usePatchNotes()
-// const { gameServerStats, loadGameServerStats } = useGameServerStats()
-// const { loadSettings } = useSettingsStore()
+definePageMeta({
+  layout: 'empty',
+})
 
-// Promise.all([loadPatchNotes(), loadGameServerStats(), loadSettings()])
+const { loadPatchNotes, patchNotes } = usePatchNotes()
+const { gameServerStats, loadGameServerStats } = useGameServerStats()
+const { loadSettings } = useSettingsStore()
 
-const { $api } = useNuxtApp()
+// const { $api } = useNuxtApp()
 
-const getPatchNotes = () => $api<PatchNote[]>('/patch-notes')
-getPatchNotes()
+// const getPatchNotes = () => $api<PatchNote[]>('/patch-notes')
+// getPatchNotes()
 
-getGameServerStats($api)
+// getGameServerStats($api)
+
+Promise.all([
+  loadPatchNotes(),
+  loadGameServerStats(),
+  loadSettings(),
+])
 </script>
 
 <template>
   <div class="relative h-screen p-4 md:p-8">
-    <!-- <Bg bg="background-1.webp" /> -->
+    <AppBg bg="background-1.webp" />
 
     <div class="relative flex h-full items-center border border-border-300 text-content-200">
       <!-- <PatchNotes
@@ -117,8 +125,8 @@ getGameServerStats($api)
         </div>
 
         <div class="flex justify-center gap-4">
-          <!-- <Login />
-          <InstallationGuide /> -->
+          <AppLogin />
+          <!--  <InstallationGuide /> -->
         </div>
 
         <!-- <Socials class="absolute bottom-6 left-6" /> -->

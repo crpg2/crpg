@@ -1,4 +1,4 @@
-import type { $Fetch } from 'ofetch'
+import type { $Fetch } from 'nitropack'
 import type { GameServerModeStats, GameServerRegionStats, GameServerStats } from '~/models/game-server-stats'
 
 // TODO: move to backend
