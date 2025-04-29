@@ -1,12 +1,13 @@
-declare module 'nuxt/schema' {
+import type { Role } from '~/models/role'
 
-  //   interface PageMeta {
-
-  //   }
+declare module '#app' {
+  interface PageMeta {
+    roles?: Role[]
+    skipAuth?: boolean
+  }
 
   //   interface AppConfig {
-
   //   }
 }
 
-export { }
+export {}
