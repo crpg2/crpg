@@ -8,26 +8,26 @@ platform:
   EpicGames: Epic Games
   Microsoft: Xbox
 
-# installation:
-#   title: Installation
-#   common:
-#     watchVideoGuide: Watch video guide
-#     help: Having issues getting the mod working or installing? Contact us on our {discordLink} Server!
-#   platform:
-#     steam:
-#       subscribe: Subscribe to the {steamWorkshopsLink}
-#       update: To update the mod, you may need to unsub/sub to the mod on the Steam Workshop
-#       bannerlordLauncher: Launch Bannerlord
-#       multiplayerModsTab: Navigate to the Multiplayer Mods tab
-#       activateMod: Click to select the cRPG Mod and enable it
-#       launchMultiplayerGame: Launch the game in Multiplayer!
-#     other:
-#       title: Launcher
-#       downloadLauncher: Download our {launcherLink}
-#       startLauncher: Open the launcher and select your Platform (Steam/Epic/Xbox)
-#       detectinstall: Click 'Detect install' to automatically detect your install location, or set manually via 'Change Location'
-#       update: Click 'Update cRPG' to ensure cRPG is fully up-to-date
-#       launch: Click 'Launch cRPG' to start the Mod
+installation:
+  title: Installation
+  common:
+    watchVideoGuide: Watch video guide
+    help: Having issues getting the mod working or installing? Contact us on our {discordLink} Server!
+  platform:
+    steam:
+      subscribe: Subscribe to the {steamWorkshopsLink}
+      update: To update the mod, you may need to unsub/sub to the mod on the Steam Workshop
+      bannerlordLauncher: Launch Bannerlord
+      multiplayerModsTab: Navigate to the Multiplayer Mods tab
+      activateMod: Click to select the cRPG Mod and enable it
+      launchMultiplayerGame: Launch the game in Multiplayer!
+    other:
+      title: Launcher
+      downloadLauncher: Download our {launcherLink}
+      startLauncher: Open the launcher and select your Platform (Steam/Epic/Xbox)
+      detectinstall: Click 'Detect install' to automatically detect your install location, or set manually via 'Change Location'
+      update: Click 'Update cRPG' to ensure cRPG is fully up-to-date
+      launch: Click 'Launch cRPG' to start the Mod
 
 # help:
 #   title: Help Hub
@@ -81,39 +81,39 @@ platform:
 #       - q: Why Retire 16 times?
 #         a: We recommend 16 times as this will put you at the maximum Experience multiplier which will then help you to level up faster once you get beyond level 31
 
-# dateTime:
-#   days:
-#     short: d
-#     long: day | days
-#   hours:
-#     short: h
-#     long: hour | hours
-#   minutes:
-#     short: min
-#     long: minute | minutes
-#   secondes:
-#     short: s
-#     long: secondes | secondes
+dateTime:
+  days:
+    short: d
+    long: day | days
+  hours:
+    short: h
+    long: hour | hours
+  minutes:
+    short: min
+    long: minute | minutes
+  secondes:
+    short: s
+    long: secondes | secondes
 
-# timeAgo:
-#   just-now: just now
-#   ago: '{0} ago'
-#   in: 'in {0}'
-#   last-month: last month
-#   next-month: next month
-#   month: 'month | months'
-#   last-year: last year
-#   next-year: next year
-#   year: 'year | years'
-#   yesterday: yesterday
-#   tomorrow: tomorrow
-#   day: 'day | days'
-#   last-week: last week
-#   next-week: next week
-#   week: 'week | weeks'
-#   hour: 'hour | hours'
-#   minute: 'minute | minutes'
-#   second: 'second | seconds'
+timeAgo:
+  just-now: just now
+  ago: '{0} ago'
+  in: 'in {0}'
+  last-month: last month
+  next-month: next month
+  month: 'month | months'
+  last-year: last year
+  next-year: next year
+  year: 'year | years'
+  yesterday: yesterday
+  tomorrow: tomorrow
+  day: 'day | days'
+  last-week: last week
+  next-week: next week
+  week: 'week | weeks'
+  hour: 'hour | hours'
+  minute: 'minute | minutes'
+  second: 'second | seconds'
 
 # dateTimeFormat:
 #   # TODO: https://github.com/tc39/proposal-intl-duration-format
@@ -233,49 +233,49 @@ login:
 #   placeholder: Name
 #   name: 'Enter the following to confirm: {name}'
 
-# region:
-#   Eu: Europe
-#   Na: North America
-#   As: Asia
-#   Oc: Oceania
-# region-title: Region
+region:
+  Eu: Europe
+  Na: North America
+  As: Asia
+  Oc: Oceania
+region-title: Region
 
-# language:
-#   En: English
-#   Fr: Français
-#   Ru: Русский
-#   Zh: 中文
-#   De: Deutsch
-#   It: Italiano
-#   Es: Español
-#   Pl: Polski
-#   Uk: Українська
-#   Ro: Română
-#   Nl: Nederlands
-#   Tr: Türkçe
-#   El: Ελληνικά
-#   Hu: Magyar
-#   Sv: Svenska
-#   Cs: Čeština
-#   Pt: Português
-#   Sr: Srpski
-#   Bg: Български
-#   Hr: Hrvatski
-#   Da: Dansk
-#   Fi: Suomi
-#   No: Norsk
-#   Be: Беларуская
-#   Lv: Latviešu
+language:
+  En: English
+  Fr: Français
+  Ru: Русский
+  Zh: 中文
+  De: Deutsch
+  It: Italiano
+  Es: Español
+  Pl: Polski
+  Uk: Українська
+  Ro: Română
+  Nl: Nederlands
+  Tr: Türkçe
+  El: Ελληνικά
+  Hu: Magyar
+  Sv: Svenska
+  Cs: Čeština
+  Pt: Português
+  Sr: Srpski
+  Bg: Български
+  Hr: Hrvatski
+  Da: Dansk
+  Fi: Suomi
+  No: Norsk
+  Be: Беларуская
+  Lv: Latviešu
 
-# game-mode:
-#   CRPGBattle: Battle
-#   CRPGConquest: Conquest
-#   CRPGDTV: DTV
-#   CRPGDuel: Duel
-#   CRPGSiege: Siege
-#   CRPGTeamDeathmatch: TDM
-#   CRPGSkirmish: Skirmish
-#   CRPGCaptain: Captain
+game-mode:
+  CRPGBattle: Battle
+  CRPGConquest: Conquest
+  CRPGDTV: DTV
+  CRPGDuel: Duel
+  CRPGSiege: Siege
+  CRPGTeamDeathmatch: TDM
+  CRPGSkirmish: Skirmish
+  CRPGCaptain: Captain
 
 # clanBalancingExplanation: '
 #   <h3>You''re not in any clan</h3>
@@ -1055,10 +1055,10 @@ login:
 #           label: User platform ID
 #           placeholder: Platform-specific User ID
 
-# onlinePlayers:
-#   format: '{count} online'
-#   tooltip:
-#     title: Players online
+onlinePlayers:
+  format: '{count} online'
+  tooltip:
+    title: Players online
 
 # homePage:
 #   intro: cRPG is a mod for {link}
@@ -1505,9 +1505,9 @@ login:
 # rankTable:
 #   title: Rank table
 
-# patchNotes:
-#   showAllPatches: '+ {count} patch | + {count} patches'
-#   latestPatch: Latest patch
+patchNotes:
+  showAllPatches: '+ {count} patch | + {count} patches'
+  latestPatch: Latest patch
 
 # strategus:
 #   registration:

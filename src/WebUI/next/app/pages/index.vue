@@ -1,10 +1,4 @@
 <script setup lang="ts">
-import { AppBg, AppLogin } from '#components'
-import type { GameServerModeStats, GameServerRegionStats, GameServerStats } from '~/models/game-server-stats'
-import type { PatchNote } from '~/models/patch-note'
-import { getGameServerStats } from '~/services/game-server-statistics-service'
-// import { useGameServerStats } from '~/composables/use-game-server-stats'
-// import { usePatchNotes } from '~/composables/use-patch-notes'
 import { useSettingsStore } from '~/stores/settings'
 
 definePageMeta({
@@ -14,13 +8,6 @@ definePageMeta({
 const { loadPatchNotes, patchNotes } = usePatchNotes()
 const { gameServerStats, loadGameServerStats } = useGameServerStats()
 const { loadSettings } = useSettingsStore()
-
-// const { $api } = useNuxtApp()
-
-// const getPatchNotes = () => $api<PatchNote[]>('/patch-notes')
-// getPatchNotes()
-
-// getGameServerStats($api)
 
 Promise.all([
   loadPatchNotes(),
@@ -34,17 +21,17 @@ Promise.all([
     <AppBg bg="background-1.webp" />
 
     <div class="relative flex h-full items-center border border-border-300 text-content-200">
-      <!-- <PatchNotes
+      <AppPatchNotes
         v-if="patchNotes.length !== 0"
         class="absolute left-6 top-6"
         :patch-notes="patchNotes"
-      /> -->
+      />
 
       <div class="absolute right-6 top-6 flex items-center gap-6">
-        <!-- <OnlinePlayers
+        <AppOnlinePlayers
           :game-server-stats="gameServerStats"
           show-label
-        /> -->
+        />
 
         <!-- <SwitchLanguageDropdown>
           <template #default="{ shown, locale }">

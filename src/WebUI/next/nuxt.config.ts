@@ -90,6 +90,7 @@ export default defineNuxtConfig({
   nitro: { compressPublicAssets: true },
   eslint: {
     config: {
+      standalone: false,
       stylistic: true,
     },
   },
