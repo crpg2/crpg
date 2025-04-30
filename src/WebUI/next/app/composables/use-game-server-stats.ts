@@ -1,6 +1,7 @@
-import { usePollInterval } from '~/composables/use-poll-interval'
 // import { getGameServerStats } from '~/services/game-server-statistics-service'
 import { getGameServerStatistics } from '#hey-api/sdk.gen'
+
+import { usePollInterval } from '~/composables/use-poll-interval'
 
 export const useGameServerStats = () => {
   const {
@@ -9,9 +10,10 @@ export const useGameServerStats = () => {
   } = useAsyncState(
     async () => {
       const { data } = await getGameServerStatistics({ composable: '$fetch' })
-      return data
+      return data!
     },
     {
+      // TODO: fix swagger types
       regions: {},
       total: { playingCount: 0 },
     },
@@ -20,7 +22,7 @@ export const useGameServerStats = () => {
     },
   )
 
-  // TODO:
+  // TODO: nuxt plugin
   const { subscribe, unsubscribe } = usePollInterval()
   const id = Symbol('loadGameServerStats')
 
