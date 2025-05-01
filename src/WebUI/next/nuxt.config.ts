@@ -131,7 +131,6 @@ export default defineNuxtConfig({
   i18n: {
     compilation: {
       strictMessage: false,
-      escapeHtml: true,
     },
     bundle: {
       runtimeOnly: true,

@@ -1,4 +1,3 @@
-// import { getGameServerStats } from '~/services/game-server-statistics-service'
 import { getGameServerStatistics } from '#hey-api/sdk.gen'
 
 import { usePollInterval } from '~/composables/use-poll-interval'

@@ -49,7 +49,10 @@
 }
 
 .v-popper__popper--no-positioning .v-popper__backdrop {
-  @apply block bg-bg-main bg-opacity-30 backdrop-blur-lg;
+  @apply block bg-bg-main/30;
+  /*
+  TODO:lags a lot
+  @apply backdrop-blur-lg; */
 }
 
 .v-popper__popper--no-positioning .v-popper__wrapper {

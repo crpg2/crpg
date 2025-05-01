@@ -24,11 +24,8 @@ export const useUserStore = defineStore('user', () => {
     execute: fetchUser,
   } = useAsyncState(async () => {
     const { data } = await getUsersSelf({ composable: '$fetch' })
-    return data
-  }, null, {
-    resetOnExecute: false,
-    immediate: false,
-  })
+    return data!
+  }, null, { resetOnExecute: false, immediate: false })
 
   const platform = useStorage<Platform>('user-platform', Platform.Steam) // Steam by default
 
@@ -36,11 +33,17 @@ export const useUserStore = defineStore('user', () => {
     platform.value = value
   }
 
-  // const { state: characters, execute: fetchCharacters } = useAsyncState(() => getCharacters(), [], { resetOnExecute: false, immediate: false })
+  const {
+    state: characters,
+    execute: fetchCharacters,
+  } = useAsyncState(async () => {
+    const { data } = await getUsersSelfCharacters({ composable: '$fetch' })
+    return data!
+  }, [], { resetOnExecute: false, immediate: false })
 
   // const { state: userItems, execute: fetchUserItems } = useAsyncState(() => getUserItems(), [], { resetOnExecute: false, immediate: false })
 
-  // const activeCharacterId = computed(() => user.value?.activeCharacterId || characters.value?.[0]?.id || null)
+  const activeCharacterId = computed(() => user.value?.activeCharacterId || characters.value?.[0]?.id || null)
 
   // const validateCharacter = (id: number) => {
   //   return characters.value.some(c => c.id === id)
@@ -73,7 +76,7 @@ export const useUserStore = defineStore('user', () => {
   //   )
   // })
 
-  // const hasUnreadNotifications = computed(() => Boolean(user.value?.unreadNotificationsCount))
+  const hasUnreadNotifications = computed(() => Boolean(user.value?.unreadNotificationsCount))
 
   // const { state: restriction, execute: fetchUserRestriction } = useAsyncState(() => getUserRestriction(), null, { resetOnExecute: false, immediate: false })
 
@@ -101,12 +104,12 @@ export const useUserStore = defineStore('user', () => {
     //   isRecentUser,
     //   subtractGold,
 
-    //   clan: toRef(() => user.value?.clanMembership?.clan || null),
+    clan: toRef(() => user.value?.clanMembership?.clan || null),
     //   clanMemberRole: toRef(() => user.value?.clanMembership?.role || null),
 
-    //   characters,
-    //   fetchCharacters,
-    //   activeCharacterId,
+    characters,
+    fetchCharacters,
+    activeCharacterId,
     //   validateCharacter,
     //   replaceCharacter,
 
@@ -119,6 +122,6 @@ export const useUserStore = defineStore('user', () => {
     //   restriction,
     //   fetchUserRestriction,
 
-    //   hasUnreadNotifications,
+    hasUnreadNotifications,
   }
 })

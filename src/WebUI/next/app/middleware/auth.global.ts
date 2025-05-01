@@ -1,5 +1,6 @@
-import type { NavigationGuard, RouteLocationNormalized } from 'vue-router'
-import { getUser, userManager } from '~/services/auth-service'
+import type { RouteLocationNormalized } from 'vue-router'
+
+import { getUser } from '~/services/auth-service'
 
 const routeHasAnyRoles = (route: RouteLocationNormalized): boolean =>
   Boolean(route.meta.roles?.length)

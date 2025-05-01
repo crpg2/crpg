@@ -1,15 +1,15 @@
 import type { User } from 'oidc-client-ts'
 
 import {
+//   Log,
   UserManager,
   WebStorageStateStore,
-  Log,
 } from 'oidc-client-ts'
 
 import type { Platform } from '~/models/platform'
 
-Log.setLogger(console)
-Log.setLevel(Log.DEBUG)
+// Log.setLogger(console)
+// Log.setLevel(Log.DEBUG)
 
 export const extractToken = (user: User | null): string | null =>
   user !== null ? user.access_token : null

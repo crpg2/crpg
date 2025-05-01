@@ -21,6 +21,7 @@
     "@types/eslint-plugin-tailwindcss": "^3.17.0",
     "@vueuse/nuxt": "^13.1.0",
     "body-scroll-lock": "^4.0.0-beta.0",
+    "es-toolkit": "^1.36.0",
     "eslint": "^9.25.1",
     "eslint-plugin-tailwindcss": "^3.18.0",
     "nuxt": "^3.17.1",
