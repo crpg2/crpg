@@ -3,6 +3,7 @@ import { useSettingsStore } from '~/stores/settings'
 
 definePageMeta({
   layout: 'empty',
+  skipAuth: true,
 })
 
 const { loadPatchNotes, patchNotes } = usePatchNotes()
@@ -33,7 +34,7 @@ Promise.all([
           show-label
         />
 
-        <!-- <SwitchLanguageDropdown>
+        <AppSwitchLanguageDropdown>
           <template #default="{ shown, locale }">
             <OButton
               :variant="shown ? 'transparent-active' : 'transparent'"
@@ -41,9 +42,11 @@ Promise.all([
             >
               <span class="text-xs font-normal">{{ locale.toUpperCase() }}</span>
               <div class="flex items-center gap-2.5">
-                <SvgSpriteImg
-                  :name="`locale-${locale}`"
+                <SpriteSymbol
+                  :key="locale"
+                  :name="`locale/${locale}`"
                   viewBox="0 0 18 18"
+                  inline
                   class="w-4"
                 />
                 <div class="h-4 w-px select-none bg-border-300" />
@@ -56,32 +59,35 @@ Promise.all([
               </div>
             </OButton>
           </template>
-        </SwitchLanguageDropdown> -->
+        </AppSwitchLanguageDropdown>
       </div>
 
       <div class="mx-auto flex flex-col items-center justify-center gap-14 md:w-1/2 2xl:w-1/3">
         <div class="space-y-6">
           <div class="flex select-none items-center justify-center gap-6 md:gap-12">
-            <!-- <SvgSpriteImg
+            <SpriteSymbol
               name="logo-decor"
               viewBox="0 0 108 10"
+              inline
               class="w-24 rotate-180"
             />
-            <SvgSpriteImg
+            <SpriteSymbol
               name="logo"
               viewBox="0 0 162 124"
+              inline
               class="w-24 xl:w-28 2xl:w-32"
             />
-            <SvgSpriteImg
+            <SpriteSymbol
               name="logo-decor"
               viewBox="0 0 108 10"
+              inline
               class="w-24"
-            /> -->
+            />
           </div>
         </div>
 
         <div class="prose prose-invert text-center">
-          <!-- <i18n-t
+          <i18n-t
             keypath="homePage.intro"
             tag="p"
             scope="global"
@@ -95,10 +101,9 @@ Promise.all([
                 Mount & Blade II: Bannerlord.
               </a>
             </template>
-          </i18n-t> -->
-
+          </i18n-t>
           <p>
-            <!-- {{ $t('homePage.description') }} -->
+            {{ $t('homePage.description') }}
           </p>
 
           <iframe
@@ -113,10 +118,10 @@ Promise.all([
 
         <div class="flex justify-center gap-4">
           <AppLogin />
-          <!--  <InstallationGuide /> -->
+          <AppInstallationGuide />
         </div>
 
-        <!-- <Socials class="absolute bottom-6 left-6" /> -->
+        <AppSocials class="absolute bottom-6 left-6" />
       </div>
     </div>
   </div>

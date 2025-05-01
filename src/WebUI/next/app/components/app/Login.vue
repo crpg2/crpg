@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { NuxtLink, UiDropdownItem } from '#components'
+
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { Platform } from '~/models/platform'
 import { login } from '~/services/auth-service'
@@ -8,6 +9,7 @@ import { useUserStore } from '~/stores/user'
 
 const userStore = useUserStore()
 const { user, platform } = toRefs(userStore)
+
 const {
   execute: loginUser,
   loading: logging,
