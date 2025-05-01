@@ -3,3 +3,5 @@ export enum Role {
   Moderator = 'Moderator',
   Admin = 'Admin',
 }
+
+export const SomeRole: Role[] = Object.values(Role)

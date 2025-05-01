@@ -9,9 +9,7 @@ export const usePatchNotes = () => {
     const res = await getPatchNotes({ composable: '$fetch' },
     )
     return res.data!
-  },
-  [],
-  {
+  }, [], {
     immediate: false,
   })
 
