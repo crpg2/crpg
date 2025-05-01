@@ -6,7 +6,6 @@ export default defineI18nConfig(() => {
     missingWarn: false,
     fallbackWarn: false,
     legacy: false,
-    // messages: { en },
     datetimeFormats: {
       en: {
         long: {

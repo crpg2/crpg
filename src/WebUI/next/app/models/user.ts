@@ -26,16 +26,16 @@ export interface UserPublic
   extends Pick<User, 'id' | 'platform' | 'platformUserId' | 'name' | 'region' | 'avatar' | 'clanMembership'> {
 }
 
-// export interface UserPrivate extends UserPublic {
-//   gold: number
-//   note: string
-//   createdAt: Date
-//   updatedAt: Date
-//   isDonor: boolean
-//   heirloomPoints: number
-//   experienceMultiplier: number
-//   activeCharacterId: number | null
-// }
+export interface UserPrivate extends UserPublic {
+  gold: number
+  note: string
+  createdAt: Date
+  updatedAt: Date
+  isDonor: boolean
+  heirloomPoints: number
+  experienceMultiplier: number
+  activeCharacterId: number | null
+}
 
 export interface UserClanMembership {
   clan: Clan

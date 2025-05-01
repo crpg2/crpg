@@ -8,7 +8,8 @@ import { platformToIcon } from '~/services/platform-service'
 import { useUserStore } from '~/stores/user'
 
 const userStore = useUserStore()
-const { user, platform } = toRefs(userStore)
+const { user } = toRefs(userStore)
+const { platform, changePlatform } = usePlatform()
 
 const {
   execute: loginUser,
@@ -54,7 +55,7 @@ const {
           data-aq-platform-item
           @click="
             () => {
-              userStore.changePlatform(p);
+              changePlatform(p);
               hide();
             }
           "

@@ -1,23 +1,21 @@
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    active?: boolean
-    checked?: boolean
-    tag?: string
-    label?: string
-    icon?: string // TODO: add size prop
-  }>(),
-  {
-    active: false,
-    checked: false,
-    tag: 'div',
-  },
-)
+import type { NuxtLinkProps } from '#app'
+
+import { NuxtLink } from '#components'
+
+const { active = false, checked = false } = defineProps<{
+  active?: boolean
+  checked?: boolean
+  link?: NuxtLinkProps
+  label?: string
+  icon?: string
+}>()
 </script>
 
 <template>
   <component
-    :is="tag"
+    :is="link ? NuxtLink : 'div'"
+    v-bind="{ ...(link && link) }"
     class="flex cursor-pointer flex-wrap items-center gap-3 bg-base-200 px-5 py-3"
     :class="[
       active || checked
@@ -25,9 +23,7 @@ withDefaults(
         : 'text-content-300 hover:text-content-100',
     ]"
   >
-    <slot v-if="$slots.default" />
-
-    <template v-else>
+    <slot>
       <OIcon
         v-if="icon"
         :icon="icon"
@@ -36,7 +32,7 @@ withDefaults(
       <div v-if="label">
         {{ label }}
       </div>
-    </template>
+    </slot>
 
     <FontAwesomeLayers
       v-if="checked"

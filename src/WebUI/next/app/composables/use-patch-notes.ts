@@ -1,17 +1,10 @@
-// import { getPatchNotes } from '~/services/patch-note-service'
-import { getPatchNotes } from '#hey-api/sdk.gen'
+import { getPatchNotes } from '~/services/patch-note-service'
 
 export const usePatchNotes = () => {
   const {
     execute: loadPatchNotes,
     state: patchNotes,
-  } = useAsyncState(async () => {
-    const res = await getPatchNotes({ composable: '$fetch' },
-    )
-    return res.data!
-  }, [], {
-    immediate: false,
-  })
+  } = useAsyncState(() => getPatchNotes(), [], { immediate: false })
 
   return {
     loadPatchNotes,
