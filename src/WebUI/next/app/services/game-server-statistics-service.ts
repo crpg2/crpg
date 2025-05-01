@@ -1,4 +1,5 @@
-import type { $Fetch } from 'nitropack'
+import { getGameServerStatistics } from '#hey-api/sdk.gen'
+
 import type { GameServerModeStats, GameServerRegionStats, GameServerStats } from '~/models/game-server-stats'
 
 // TODO: move to backend
@@ -18,8 +19,8 @@ const omitEmptyGameServerStats = (regions: GameServerRegionStats): GameServerReg
     .filter((region): region is [string, GameServerModeStats] => region !== null),
 )
 
-export const getGameServerStats = async (fetch: $Fetch) => {
-  const { regions, total } = await fetch<GameServerStats>('/game-server-statistics', { method: 'GET' })
+export const getGameServerStats = async (): Promise<GameServerStats> => {
+  const { data: { regions, total } } = await getGameServerStatistics({ composable: '$fetch' })
   return {
     total,
     regions: omitEmptyGameServerStats(regions),

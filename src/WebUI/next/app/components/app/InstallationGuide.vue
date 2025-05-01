@@ -2,18 +2,12 @@
 import { Platform } from '~/models/platform'
 import { platformToIcon } from '~/services/platform-service'
 
-const userStore = useUserStore()
-
 enum PossibleValues {
   Steam = 'Steam',
   Other = 'Other',
 }
 
-const tabsModel = ref<PossibleValues>(
-  userStore.platform === Platform.Steam
-    ? PossibleValues.Steam
-    : PossibleValues.Other,
-)
+const tabsModel = ref<PossibleValues>(PossibleValues.Other)
 </script>
 
 <template>
@@ -132,9 +126,7 @@ const tabsModel = ref<PossibleValues>(
               <a
                 target="_blank"
                 href="https://discord.com/channels/279063743839862805/761283333840699392"
-              >
-                Discord
-              </a>
+              >Discord</a>
             </template>
           </i18n-t>
         </div>

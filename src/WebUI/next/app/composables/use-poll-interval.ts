@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SubscriptionFn = () => Promise<any> | any
 
 const INTERVAL = 1000 * 60 * 2 // 2 min

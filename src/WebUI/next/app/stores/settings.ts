@@ -1,4 +1,4 @@
-import { getSettings } from '#hey-api/sdk.gen'
+import { getSettings } from '~/services/settings-service'
 
 export const useSettingsStore = defineStore('settings', () => {
   const {
@@ -6,10 +6,7 @@ export const useSettingsStore = defineStore('settings', () => {
     state: settings,
     isLoading: isLoadingSettings,
   } = useAsyncState(
-    async () => {
-      const { data } = await getSettings({ composable: '$fetch' })
-      return data
-    },
+    () => getSettings(),
     {
       discord: '',
       steam: '',
