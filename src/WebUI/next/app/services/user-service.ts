@@ -1,5 +1,7 @@
-// import { pick } from 'es-toolkit'
+import { pick } from 'es-toolkit'
 // import qs from 'qs'
+
+import type { User, UserPublic } from '~/models/user'
 
 // import type { Item } from '~/models/item'
 // import type { MetadataDict } from '~/models/metadata'
@@ -82,16 +84,26 @@
 // export const getUserRestrictions = async (id: number) =>
 //   mapRestrictions(await get<RestrictionWithActive[]>(`/users/${id}/restrictions`))
 
-// export const mapUserToUserPublic = (user: User): UserPublic => pick(user, ['id', 'platform', 'platformUserId', 'name', 'region', 'avatar', 'clanMembership'])
+export const mapUserToUserPublic = (user: User): UserPublic => pick(user, [
+  'id',
+  'platform',
+  'platformUserId',
+  'name',
+  'region',
+  'avatar',
+  'clanMembership',
+])
 
-// // TODO: FIXME: SPEC
-// export const getUserNotifications = () => get<{ notifications: UserNotification[], dict: MetadataDict }>('/users/self/notifications')
+// TODO: FIXME: SPEC
+export const getUserNotifications = async () => {
+  const { data } = await getUsersSelfNotifications({ composable: '$fetch' })
+  return data
+}
 
-// export const readUserNotification = (id: number) =>
-//   put<UserNotification>(`/users/self/notifications/${id}`)
+export const readUserNotification = (id: number) => putUsersSelfNotificationsById({ composable: '$fetch', path: { id } })
 
-// export const readAllUserNotifications = () => put(`/users/self/notifications/readAll`)
+export const readAllUserNotifications = () => putUsersSelfNotificationsReadAll({ composable: '$fetch' })
 
-// export const deleteUserNotification = (id: number) => del(`/users/self/notifications/${id}`)
+export const deleteUserNotification = (id: number) => deleteUsersSelfNotificationsById({ composable: '$fetch', path: { id } })
 
-// export const deleteAllUserNotifications = () => del(`/users/self/notifications/deleteAll`)
+export const deleteAllUserNotifications = () => deleteUsersSelfNotificationsDeleteAll({ composable: '$fetch' })

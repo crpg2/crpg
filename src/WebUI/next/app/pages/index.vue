@@ -3,7 +3,6 @@ import { useSettingsStore } from '~/stores/settings'
 
 definePageMeta({
   layout: 'empty',
-  skipAuth: true,
 })
 
 const { loadPatchNotes, patchNotes } = usePatchNotes()

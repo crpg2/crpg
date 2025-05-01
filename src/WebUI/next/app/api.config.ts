@@ -1,5 +1,6 @@
-import { getToken } from '~/services/auth-service'
 import type { CreateClientConfig } from '~/api/client.gen'
+
+import { getToken } from '~/services/auth-service'
 
 export const createClientConfig: CreateClientConfig = config => ({
   ...config,
