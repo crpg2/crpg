@@ -1,25 +1,27 @@
-import { pick } from 'es-toolkit'
 // import qs from 'qs'
-
-import type { User, UserPublic } from '~/models/user'
+import { getUsersSelf } from '#hey-api/sdk.gen'
+import { pick } from 'es-toolkit'
 
 // import type { Item } from '~/models/item'
 // import type { MetadataDict } from '~/models/metadata'
 // import type { Platform } from '~/models/platform'
 // import type { PublicRestriction, RestrictionWithActive } from '~/models/restriction'
-// import type {
-//   User,
-//   UserItem,
-//   UserItemsByType,
-//   UserNotification,
-//   UserPrivate,
-//   UserPublic,
-// } from '~/models/user'
+import type {
+  User,
+  UserItem,
+  UserItemsByType,
+  UserNotification,
+  UserPrivate,
+  UserPublic,
+} from '~/models/user'
 
 // import { del, get, post, put } from '~/services/crpg-client'
 // import { mapRestrictions } from '~/services/restriction-service'
 
-// export const getUser = () => get<User>('/users/self')
+export const getUser = async (): Promise<User> => {
+  const { data } = await getUsersSelf({ composable: '$fetch' })
+  return data as unknown as User // TODO: FIXME:
+}
 
 // export const deleteUser = () => del('/users/self')
 

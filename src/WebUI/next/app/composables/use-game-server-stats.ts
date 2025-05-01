@@ -1,18 +1,13 @@
-import { getGameServerStatistics } from '#hey-api/sdk.gen'
-
 import { usePollInterval } from '~/composables/use-poll-interval'
+import { getGameServerStats } from '~/services/game-server-statistics-service'
 
 export const useGameServerStats = () => {
   const {
     state: gameServerStats,
     execute: loadGameServerStats,
   } = useAsyncState(
-    async () => {
-      const { data } = await getGameServerStatistics({ composable: '$fetch' })
-      return data!
-    },
+    () => getGameServerStats(),
     {
-      // TODO: fix swagger types
       regions: {},
       total: { playingCount: 0 },
     },

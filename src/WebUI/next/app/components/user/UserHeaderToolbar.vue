@@ -71,8 +71,7 @@ const animatedUserGold = useTransition(() => user.gold)
         </AppSwitchLanguageDropdown>
 
         <UiDropdownItem
-          tag="NuxtLink"
-          :to="{ name: 'Notifications' }"
+          :link="{ to: { name: 'Notifications' } }"
           @click="hide"
         >
           <FontAwesomeLayers full-width class="fa-sm">
@@ -89,8 +88,7 @@ const animatedUserGold = useTransition(() => user.gold)
         </UiDropdownItem>
 
         <UiDropdownItem
-          tag="NuxtLink"
-          :to="{ name: 'Settings' }"
+          :link="{ to: { name: 'Settings' } }"
           icon="settings"
           :label="$t('setting.settings')"
           @click="hide"

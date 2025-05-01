@@ -1,5 +1,33 @@
+import type { Plugin } from 'vite'
+
+import json5 from 'json5'
 import { fileURLToPath } from 'node:url'
 
+function JSON5(): Plugin {
+  const fileRegex = /\.json$/
+
+  return {
+    enforce: 'pre', // before vite-json
+    name: 'vite-plugin-json5',
+    transform(src, id) {
+      if (fileRegex.test(id)) {
+        let value
+
+        try {
+          value = json5.parse(src)
+        }
+        catch (error) {
+          console.error(error)
+        }
+
+        return {
+          code: value ? JSON.stringify(value) : src,
+          map: null,
+        }
+      }
+    },
+  }
+}
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -12,7 +40,6 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     'nuxt-svg-icon-sprite',
   ],
-
   ssr: false,
   devtools: { enabled: false },
   app: {
@@ -81,6 +108,10 @@ export default defineNuxtConfig({
   css: [
     './assets/themes/oruga-tailwind/index.css',
   ],
+  alias: {
+    // TODO: FIXME: ../../../ -> ../../
+    '~root': fileURLToPath(new URL('../../../', import.meta.url)),
+  },
   devServer: {
     host: '0.0.0.0',
     port: 8080,
@@ -91,6 +122,11 @@ export default defineNuxtConfig({
   experimental: { typedPages: true },
   compatibilityDate: '2025-03-21',
   nitro: { compressPublicAssets: true },
+  vite: {
+    plugins: [
+      JSON5(),
+    ],
+  },
   eslint: {
     config: {
       standalone: false,

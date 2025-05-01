@@ -1,10 +1,13 @@
-import { type IconDefinition, library } from '@fortawesome/fontawesome-svg-core'
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   FontAwesomeIcon,
   FontAwesomeLayers,
   FontAwesomeLayersText,
 } from '@fortawesome/vue-fontawesome'
 import {
+  NotificationProgrammatic,
   OButton,
   OCheckbox,
   OCollapse,
@@ -23,16 +26,32 @@ import {
   OTableColumn,
   OTabs,
 } from '@oruga-ui/oruga-next'
+import FloatingVue from 'floating-vue'
 import VueSlider from 'vue-slider-component'
 
+enum NotificationType {
+  Success = 'success',
+  Warning = 'warning',
+  Danger = 'danger',
+}
+
+const notify = (message: string, type: NotificationType = NotificationType.Success) => {
+  NotificationProgrammatic.open({
+    duration: 5000,
+    message,
+    position: 'top',
+    queue: false,
+    variant: type,
+  })
+}
+
 export default defineNuxtPlugin((nuxtApp) => {
-  Object.values(
-    import.meta.glob<IconDefinition>('../assets/themes/oruga-tailwind/icons/**/*.ts', {
-      eager: true,
-      import: 'default',
-    }),
-  ).forEach((ic) => {
-    library.add(ic)
+  Object.values(import.meta.glob<IconDefinition>('../assets/themes/oruga-tailwind/icons/**/*.ts', { eager: true, import: 'default' }))
+    .forEach(ic => library.add(ic))
+
+  nuxtApp.vueApp.use(FloatingVue, {
+    disposeTimeout: 100,
+    distance: 16,
   })
 
   nuxtApp.vueApp
@@ -82,4 +101,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       iconPack: 'crpg',
       useHtml5Validation: false,
     })
+
+  return {
+    provide: {
+      notify,
+    },
+  }
 })

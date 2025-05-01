@@ -2,44 +2,29 @@
 //   defaultExperienceMultiplier,
 //   newUserStartingCharacterLevel,
 // } from '~root/data/constants.json'
-import { useStorage } from '@vueuse/core'
-
-import { Platform } from '~/models/platform'
-
 // import type { Character } from '~/models/character'
 // import type { UserItem } from '~/models/user'
-
 // import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-// import { getCharacters } from '~/services/characters-service'
-// import {
+import type { Character } from '~/models/character'
+
+import { getCharacters } from '~/services/character-service'
+import {
 //   buyUserItem,
-//   getUser,
+  getUser,
 //   getUserItems,
 //   getUserRestriction,
-// } from '~/services/users-service'
+} from '~/services/user-service'
 
 export const useUserStore = defineStore('user', () => {
   const {
     state: user,
     execute: fetchUser,
-  } = useAsyncState(async () => {
-    const { data } = await getUsersSelf({ composable: '$fetch' })
-    return data!
-  }, null, { resetOnExecute: false, immediate: false })
-
-  const platform = useStorage<Platform>('user-platform', Platform.Steam) // Steam by default
-
-  const changePlatform = (value: Platform) => {
-    platform.value = value
-  }
+  } = useAsyncState(() => getUser(), null, { resetOnExecute: false, immediate: false })
 
   const {
     state: characters,
     execute: fetchCharacters,
-  } = useAsyncState(async () => {
-    const { data } = await getUsersSelfCharacters({ composable: '$fetch' })
-    return data!
-  }, [], { resetOnExecute: false, immediate: false })
+  } = useAsyncState(() => getCharacters(), [], { resetOnExecute: false, immediate: false })
 
   // const { state: userItems, execute: fetchUserItems } = useAsyncState(() => getUserItems(), [], { resetOnExecute: false, immediate: false })
 
@@ -47,14 +32,6 @@ export const useUserStore = defineStore('user', () => {
 
   // const validateCharacter = (id: number) => {
   //   return characters.value.some(c => c.id === id)
-  // }
-
-  // const replaceCharacter = (character: Character) => {
-  //   characters.value.splice(
-  //     characters.value.findIndex(c => c.id === character.id),
-  //     1,
-  //     character,
-  //   )
   // }
 
   // // TODO: mby to backend?
@@ -98,20 +75,14 @@ export const useUserStore = defineStore('user', () => {
   return {
     user,
     fetchUser,
-
-    platform,
-    changePlatform,
     //   isRecentUser,
     //   subtractGold,
-
-    clan: toRef(() => user.value?.clanMembership?.clan || null),
+    clan: toRef(() => user.value?.clanMembership?.clan ?? null),
     //   clanMemberRole: toRef(() => user.value?.clanMembership?.role || null),
-
     characters,
     fetchCharacters,
     activeCharacterId,
     //   validateCharacter,
-    //   replaceCharacter,
 
     //   userItems,
     //   fetchUserItems,
