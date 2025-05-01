@@ -1,3 +1,5 @@
+import { fileURLToPath } from 'node:url'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -8,12 +10,13 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@hey-api/nuxt',
     '@nuxtjs/i18n',
+    'nuxt-svg-icon-sprite',
   ],
+
   ssr: false,
   devtools: { enabled: false },
   app: {
     head: {
-
       title: 'cRPG: Multiplayer Mod for Mount & Blade Bannerlord',
       htmlAttrs: {
         lang: 'en',
@@ -125,25 +128,39 @@ export default defineNuxtConfig({
       ],
     },
   },
-  //   compositionOnly: true,
-  //   include: [fileURLToPath(new URL('./locales/**', import.meta.url))],
-  //   runtimeOnly: true,
-  //   strictMessage: false,
   i18n: {
-    bundle: {
-      optimizeTranslationDirective: false,
+    compilation: {
+      strictMessage: false,
+      escapeHtml: true,
     },
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root', // recommended
+    bundle: {
+      runtimeOnly: true,
     },
     lazy: true,
-    // types: 'composition',
     strategy: 'no_prefix',
     defaultLocale: 'en',
     locales: [
-      { code: 'en', name: 'English', file: 'en.yml' },
+      { code: 'en', file: 'en.yml' },
+      { code: 'ru', file: 'ru.yml' },
     ],
+  },
+  svgIconSprite: {
+    sprites: {
+      default: {
+        importPatterns: [
+          fileURLToPath(new URL('./app/assets/themes/oruga-tailwind/img/*.svg', import.meta.url)),
+        ],
+      },
+      locale: {
+        importPatterns: [
+          fileURLToPath(new URL('./app/assets/themes/oruga-tailwind/img/locale/*.svg', import.meta.url)),
+        ],
+      },
+      culture: {
+        importPatterns: [
+          fileURLToPath(new URL('./app/assets/themes/oruga-tailwind/img/culture/*.svg', import.meta.url)),
+        ],
+      },
+    },
   },
 })

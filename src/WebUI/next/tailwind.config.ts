@@ -3,13 +3,13 @@ import type { Config } from 'tailwindcss'
 import typography from '@tailwindcss/typography'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
-// import forms from './src/assets/themes/oruga-tailwind/forms'
+import forms from './app/assets/themes/oruga-tailwind/forms'
 
 export default {
   content: ['index.html', './src/**/*.{js,jsx,ts,tsx,vue,html}'],
   plugins: [
     typography,
-    // forms
+    forms,
   ],
   theme: {
     container: {
@@ -146,8 +146,8 @@ export default {
       textUnderlineOffset: {
         6: '6px',
       },
-
       // ref: https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
+      // @ts-expect-error TODO:
       typography: ({ theme }) => {
         // console.log(theme('spacing'));
         return {
