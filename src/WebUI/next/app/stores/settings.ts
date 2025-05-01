@@ -1,4 +1,3 @@
-// import { getSettings } from '~/services/settings-service'
 import { getSettings } from '#hey-api/sdk.gen'
 
 export const useSettingsStore = defineStore('settings', () => {
