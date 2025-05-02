@@ -7,16 +7,19 @@ namespace Crpg.Module.Rewards;
 internal sealed class CrpgRewardHappyHour : GameNetworkMessage
 {
     public bool Started { get; set; }
+    public float ExpMultiplier { get; set; }
 
     protected override void OnWrite()
     {
         WriteBoolToPacket(Started);
+        WriteFloatToPacket(ExpMultiplier, new CompressionInfo.Float(0f, 2f, 8));
     }
 
     protected override bool OnRead()
     {
         bool bufferReadValid = true;
         Started = ReadBoolFromPacket(ref bufferReadValid);
+        ExpMultiplier = ReadFloatFromPacket(new CompressionInfo.Float(0f, 2f, 8), ref bufferReadValid);
         return bufferReadValid;
     }
 
@@ -27,6 +30,6 @@ internal sealed class CrpgRewardHappyHour : GameNetworkMessage
 
     protected override string OnGetLogFormat()
     {
-        return nameof(CrpgRewardHappyHour);
+        return $"{nameof(CrpgRewardHappyHour)}: Started={Started}, ExpMultiplier={ExpMultiplier}";
     }
 }
