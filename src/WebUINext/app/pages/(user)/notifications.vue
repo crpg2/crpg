@@ -35,7 +35,7 @@ const {
           @click="readAllNotifications"
         />
 
-        <ConfirmActionTooltip
+        <AppConfirmActionTooltip
           :confirm-label="$t('action.ok')"
           title="Are you sure you want to delete all notifications?"
           placement="bottom"
@@ -48,22 +48,22 @@ const {
             icon-left="close"
             label="Delete all"
           />
-        </ConfirmActionTooltip>
+        </AppConfirmActionTooltip>
       </div>
 
       <div class="flex flex-col flex-wrap gap-4">
         <OLoading :active="isLoading" :full-page="false" />
 
-        <NotificationCard
+        <UserNotificationCard
           v-for="notification in notifications.notifications"
           :key="notification.id"
-          :notification="notification"
+          :notification
           :dict="notifications.dict"
           @read="readNotification(notification.id)"
           @delete="deleteNotification(notification.id)"
         />
 
-        <ResultNotFound v-if="!isLoading && isEmpty" message="Notifications not found..." />
+        <AppResultNotFound v-if="!isLoading && isEmpty" message="Notifications not found..." />
       </div>
     </div>
   </div>

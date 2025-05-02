@@ -2,8 +2,6 @@
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import { logout } from '~/services/auth-service'
-import { notify } from '~/services/notification-service'
-import { t } from '~/services/translate-service'
 import { deleteUser } from '~/services/users-service'
 import { useUserStore } from '~/stores/user'
 
@@ -11,17 +9,18 @@ definePageMeta({
   roles: SomeRole,
 })
 
+const { $notify, $i18n } = useNuxtApp()
 const userStore = useUserStore()
-
-await userStore.fetchCharacters()
 
 const canDeleteUser = computed(() => !userStore.characters.length)
 
 const { execute: onDeleteUser } = useAsyncCallback(async () => {
   await deleteUser()
-  notify(t('user.settings.delete.notify.success'))
+  $notify($i18n.t('user.settings.delete.notify.success'))
   logout()
 })
+
+userStore.fetchCharacters()
 </script>
 
 <template>

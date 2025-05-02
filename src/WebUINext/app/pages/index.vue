@@ -20,7 +20,7 @@ Promise.all([
   <div class="relative h-screen p-4 md:p-8">
     <AppBg bg="background-1.webp" />
 
-    <div class="relative flex h-full items-center border border-border-300 text-content-200">
+    <div class="border-border-300 text-content-200 relative flex h-full items-center border">
       <AppPatchNotes
         v-if="patchNotes.length !== 0"
         class="absolute left-6 top-6"
@@ -48,7 +48,7 @@ Promise.all([
                   inline
                   class="w-4"
                 />
-                <div class="h-4 w-px select-none bg-border-300" />
+                <div class="bg-border-300 h-4 w-px select-none" />
                 <OIcon
                   icon="chevron-down"
                   size="lg"
