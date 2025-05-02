@@ -3,7 +3,7 @@ import { getUsersSelf } from '#hey-api/sdk.gen'
 import { pick } from 'es-toolkit'
 
 // import type { Item } from '~/models/item'
-// import type { MetadataDict } from '~/models/metadata'
+import type { MetadataDict } from '~/models/metadata'
 // import type { Platform } from '~/models/platform'
 // import type { PublicRestriction, RestrictionWithActive } from '~/models/restriction'
 import type {
@@ -96,10 +96,9 @@ export const mapUserToUserPublic = (user: User): UserPublic => pick(user, [
   'clanMembership',
 ])
 
-// TODO: FIXME: SPEC
-export const getUserNotifications = async () => {
+export const getUserNotifications = async (): Promise<{ notifications: UserNotification[], dict: MetadataDict }> => {
   const { data } = await getUsersSelfNotifications({ composable: '$fetch' })
-  return data
+  return data!
 }
 
 export const readUserNotification = (id: number) => putUsersSelfNotificationsById({ composable: '$fetch', path: { id } })

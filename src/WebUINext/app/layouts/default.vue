@@ -22,8 +22,8 @@ Promise.all([
 
     <header
       ref="mainHeader"
-      class="z-20 border-b border-solid border-border-200 bg-bg-main"
-      :class="{ 'sticky top-0 bg-bg-main/10 backdrop-blur-sm': !route.meta?.noStickyHeader }"
+      class="border-border-200 bg-bg-main z-20 border-b border-solid"
+      :class="{ 'bg-bg-main/10 sticky top-0 backdrop-blur-sm': !route.meta?.noStickyHeader }"
     >
       <!-- <UserRestrictionNotification
         v-if="userStore.restriction !== null"
