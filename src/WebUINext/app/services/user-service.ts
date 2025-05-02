@@ -1,5 +1,8 @@
 // import qs from 'qs'
-import { getUsersSelf } from '#hey-api/sdk.gen'
+import {
+  deleteUsersSelf,
+  getUsersSelf,
+} from '#hey-api/sdk.gen'
 import { pick } from 'es-toolkit'
 
 // import type { Item } from '~/models/item'
@@ -23,7 +26,7 @@ export const getUser = async (): Promise<User> => {
   return data as unknown as User // TODO: FIXME:
 }
 
-// export const deleteUser = () => del('/users/self')
+export const deleteUser = () => deleteUsersSelf({ composable: '$fetch' })
 
 // export const getUserById = (id: number) => get<UserPrivate>(`/users/${id}`)
 
