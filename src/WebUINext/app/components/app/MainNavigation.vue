@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { PatchNote } from '~/models/patch-note'
 
-// import Role from '~/models/role'
+import { Role } from '~/models/role'
 import { useSettingsStore } from '~/stores/settings'
 import { useUserStore } from '~/stores/user'
 
@@ -55,7 +55,7 @@ const { settings } = storeToRefs(useSettingsStore())
         />
       </AppInstallationGuide>
 
-      <!-- <NuxtLink :to="{ name: 'Help' }">
+      <NuxtLink :to="{ name: 'help' }">
         <OButton
           v-tooltip.bottom="$t('help.title')"
           variant="primary"
@@ -64,7 +64,7 @@ const { settings } = storeToRefs(useSettingsStore())
           rounded
           icon-left="help-circle"
         />
-      </NuxtLink> -->
+      </NuxtLink>
     </div>
 
     <NuxtLink
@@ -132,16 +132,16 @@ const { settings } = storeToRefs(useSettingsStore())
       data-aq-main-nav-link="Moderator"
     >
       {{ $t('nav.main.Moderator') }}
-    </NuxtLink>
+    </NuxtLink> -->
 
     <NuxtLink
       v-if="[Role.Admin].includes(userStore.user!.role)"
-      :to="{ name: 'Admin' }"
+      :to="{ name: 'admin' }"
       class="text-content-300 hover:text-content-100"
       active-class="!text-content-100"
       data-aq-main-nav-link="Admin"
     >
       {{ $t('nav.main.Admin') }}
-    </NuxtLink> -->
+    </NuxtLink>
   </nav>
 </template>

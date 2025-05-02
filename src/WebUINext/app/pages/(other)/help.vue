@@ -1,36 +1,37 @@
 <script setup lang="ts">
+import type { RouteNamedMap } from 'vue-router/auto-routes'
+
 const { t } = useI18n()
 
-definePage({
-  meta: {
+definePageMeta({
+  layoutOptions: {
     bg: 'background-3.webp',
-    layout: 'default',
   },
 })
 
-const helpHubNavigation: { name: string, label: string }[] = [
+const helpHubNavigation: { name: keyof RouteNamedMap, label: string }[] = [
   {
     label: t('help.overview.navTitle'),
-    name: 'Help',
+    name: 'help',
   },
   {
     label: t('help.buildSupport.navTitle'),
-    name: 'HelpBuildSupport',
+    name: 'help-build-support',
   },
   {
     label: t('help.joinClan.navTitle'),
-    name: 'HelpJoinClan',
+    name: 'help-join-clan',
   },
   {
     label: t('help.FAQ.navTitle'),
-    name: 'HelpFaq',
+    name: 'help-faq',
   },
 ]
 </script>
 
 <template>
   <div class="container py-8 md:py-16">
-    <Heading :title="$t('help.title')" />
+    <UiHeading :title="$t('help.title')" />
 
     <div class="mb-12 flex items-center justify-center gap-2">
       <NuxtLink
@@ -48,7 +49,7 @@ const helpHubNavigation: { name: string, label: string }[] = [
     </div>
 
     <div class="mx-auto max-w-4xl">
-      <RouterView />
+      <NuxtPage />
     </div>
   </div>
 </template>
