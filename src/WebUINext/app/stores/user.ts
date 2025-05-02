@@ -11,8 +11,8 @@ import { getCharacters } from '~/services/character-service'
 import {
 //   buyUserItem,
   getUser,
-//   getUserItems,
-//   getUserRestriction,
+  //   getUserItems,
+  getUserRestriction,
 } from '~/services/user-service'
 
 export const useUserStore = defineStore('user', () => {
@@ -55,7 +55,10 @@ export const useUserStore = defineStore('user', () => {
 
   const hasUnreadNotifications = computed(() => Boolean(user.value?.unreadNotificationsCount))
 
-  // const { state: restriction, execute: fetchUserRestriction } = useAsyncState(() => getUserRestriction(), null, { resetOnExecute: false, immediate: false })
+  const {
+    state: restriction,
+    execute: fetchUserRestriction,
+  } = useAsyncState(() => getUserRestriction(), null, { resetOnExecute: false, immediate: false })
 
   // const subtractGold = (loss: number) => {
   //   if (!user.value) { return }
@@ -90,8 +93,8 @@ export const useUserStore = defineStore('user', () => {
     //   buyItem,
     //   buyingItem,
 
-    //   restriction,
-    //   fetchUserRestriction,
+    restriction,
+    fetchUserRestriction,
 
     hasUnreadNotifications,
   }

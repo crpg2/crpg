@@ -7,10 +7,12 @@ const mainHeaderRef = useTemplateRef('mainHeader')
 const { loadPatchNotes, patchNotes } = usePatchNotes()
 const { gameServerStats, loadGameServerStats } = useGameServerStats()
 const settingsStore = useSettingsStore()
+const { HHEvent, HHEventRemaining, HHPollId, isHHCountdownEnded } = useHappyHours()
 
 Promise.all([
   loadPatchNotes(),
   loadGameServerStats(),
+  userStore.fetchUserRestriction(),
   settingsStore.loadSettings(),
 ])
 </script>
@@ -27,12 +29,12 @@ Promise.all([
       class="z-20 border-b border-solid border-border-200 bg-bg-main"
       :class="{ 'sticky top-0 bg-bg-main/10 backdrop-blur-sm': !route.meta?.noStickyHeader }"
     >
-      <!-- <UserRestrictionNotification
+      <UserRestrictionNotification
         v-if="userStore.restriction !== null"
         :restriction="userStore.restriction"
-      /> -->
+      />
 
-      <!-- <HHHeaderNotification v-if="!isHHCountdownEnded && HHEventRemaining !== 0" /> -->
+      <AppHHHeaderNotification v-if="!isHHCountdownEnded && HHEventRemaining !== 0" />
 
       <div class="flex flex-wrap items-center justify-between p-3">
         <div class="flex items-center gap-4">
@@ -63,9 +65,7 @@ Promise.all([
       <slot />
     </main>
 
-    <!-- <Footer
-      v-if="!route.meta.noFooter"
-      :HHEvent="HHEvent"
-    /> -->
+    <!-- TODO: v-if="!route.meta.noFooter" -->
+    <AppFooter :HHEvent />
   </div>
 </template>

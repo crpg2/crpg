@@ -1,6 +1,6 @@
 import type { Role } from '~/models/role'
 
-declare module '#app' {
+declare module 'nuxt/schema' {
   interface PageMeta {
     roles?: Role[]
     skipAuth?: boolean
@@ -10,8 +10,16 @@ declare module '#app' {
     }
   }
 
-  //   interface AppConfig {
-  //   }
+  interface AppConfig {
+  }
+
+  interface RuntimeConfig {
+
+  }
+
+  interface PublicRuntimeConfig {
+    HH: string
+  }
 }
 
 export {}
