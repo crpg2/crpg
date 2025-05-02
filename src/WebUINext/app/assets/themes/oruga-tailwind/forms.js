@@ -1,9 +1,9 @@
-const svgToDataUri = require('mini-svg-data-uri')
+// const svgToDataUri = require('mini-svg-data-uri')
 const plugin = require('tailwindcss/plugin')
 
 // TODO: rewrite to ts
 // ref: https://github.com/tailwindlabs/tailwindcss-forms/blob/master/src/index.js
-module.exports = plugin(({ addBase, theme }) => {
+module.exports = plugin(({ addBase }) => {
   addBase({
     [`[type = 'checkbox'], [type='radio']`]: {
       'appearance': 'none',
@@ -24,11 +24,12 @@ module.exports = plugin(({ addBase, theme }) => {
       },
     },
     [`[type='checkbox']:checked`]: {
-      backgroundImage: `url("${svgToDataUri(
-        `<svg xmlns="http://www.w3.org/2000/svg" fill="${theme(
-          'colors.content.600',
-        )}" viewBox="0 0 10 8"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.33 1.414 3.625 7.121 0 3.498l1.414-1.415 2.21 2.21L7.917 0 9.33 1.414Z"/></svg>`,
-      )}")`,
+    // TODO:
+      //   backgroundImage: `url("${svgToDataUri(
+    //     `<svg xmlns="http://www.w3.org/2000/svg" fill="${theme(
+    //       'colors.content.600',
+    //     )}" viewBox="0 0 10 8"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.33 1.414 3.625 7.121 0 3.498l1.414-1.415 2.21 2.21L7.917 0 9.33 1.414Z"/></svg>`,
+    //   )}")`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: '75%',
     },

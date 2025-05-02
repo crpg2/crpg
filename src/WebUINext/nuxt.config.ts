@@ -109,8 +109,10 @@ export default defineNuxtConfig({
     './assets/themes/oruga-tailwind/index.css',
   ],
   alias: {
-    // TODO: FIXME: ../../../ -> ../../
-    '~root': fileURLToPath(new URL('../../../', import.meta.url)),
+    '~root': fileURLToPath(new URL('../../', import.meta.url)),
+  },
+  build: {
+    transpile: [/vue-i18n/],
   },
   devServer: {
     host: '0.0.0.0',
@@ -119,7 +121,14 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  experimental: { typedPages: true },
+  experimental: {
+    typedPages: true,
+    defaults: {
+      nuxtLink: {
+        prefetch: false,
+      },
+    },
+  },
   compatibilityDate: '2025-03-21',
   nitro: { compressPublicAssets: true },
   vite: {
@@ -165,11 +174,13 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    debug: true,
     compilation: {
       strictMessage: false,
     },
     bundle: {
       runtimeOnly: true,
+      dropMessageCompiler: true,
     },
     lazy: true,
     strategy: 'no_prefix',

@@ -71,7 +71,7 @@ const animatedUserGold = useTransition(() => user.gold)
         </AppSwitchLanguageDropdown>
 
         <UiDropdownItem
-          :link="{ to: { name: 'Notifications' } }"
+          :link="{ to: { name: 'notifications' } }"
           @click="hide"
         >
           <FontAwesomeLayers full-width class="fa-sm">
@@ -88,7 +88,7 @@ const animatedUserGold = useTransition(() => user.gold)
         </UiDropdownItem>
 
         <UiDropdownItem
-          :link="{ to: { name: 'Settings' } }"
+          :link="{ to: { name: 'settings' } }"
           icon="settings"
           :label="$t('setting.settings')"
           @click="hide"
@@ -97,12 +97,10 @@ const animatedUserGold = useTransition(() => user.gold)
         <UiDropdownItem
           icon="logout"
           :label="$t('setting.logout')"
-          @click="
-            () => {
-              hide();
-              logout();
-            }
-          "
+          @click="() => {
+            hide();
+            logout();
+          }"
         />
       </template>
     </VDropdown>

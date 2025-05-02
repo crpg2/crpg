@@ -27,7 +27,8 @@ import {
   OTabs,
 } from '@oruga-ui/oruga-next'
 import FloatingVue from 'floating-vue'
-import VueSlider from 'vue-slider-component'
+// TODO:
+// import VueSlider from 'vue-slider-component'
 
 enum NotificationType {
   Success = 'success',
@@ -74,7 +75,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     .component('FontAwesomeIcon', FontAwesomeIcon)
     .component('FontAwesomeLayers', FontAwesomeLayers)
     .component('FontAwesomeLayersText', FontAwesomeLayersText)
-    .component('VueSlider', VueSlider)
+    // .component('VueSlider', VueSlider)
     .use(OrugaConfig, {
       // https://oruga.io/components/Icon.html
       customIconPacks: {
