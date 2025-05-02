@@ -2,7 +2,7 @@
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { SomeRole } from '~/models/role'
 import { logout } from '~/services/auth-service'
-import { deleteUser } from '~/services/users-service'
+import { deleteUser } from '~/services/user-service'
 import { useUserStore } from '~/stores/user'
 
 definePageMeta({
@@ -30,7 +30,7 @@ userStore.fetchCharacters()
         {{ $t('user.settings.title') }}
       </h1>
 
-      <FormGroup
+      <UiFormGroup
         icon="alert-circle"
         :label="$t('user.settings.dangerZone')"
         collapsed
@@ -53,7 +53,7 @@ userStore.fetchCharacters()
           data-aq-delete-user-group
         >
           <template #link>
-            <Modal :disabled="!canDeleteUser">
+            <UiModal :disabled="!canDeleteUser">
               <span
                 class="cursor-pointer border-b border-dashed border-status-danger text-status-danger hover:border-0"
               >
@@ -61,7 +61,7 @@ userStore.fetchCharacters()
               </span>
 
               <template #popper="{ hide }">
-                <ConfirmActionForm
+                <AppConfirmActionForm
                   :name="
                     $t('user.settings.delete.dialog.enterToConfirm', { user: userStore.user!.name })
                   "
@@ -86,12 +86,12 @@ userStore.fetchCharacters()
                       {{ $t('user.settings.delete.dialog.desc') }}
                     </p>
                   </template>
-                </ConfirmActionForm>
+                </AppConfirmActionForm>
               </template>
-            </Modal>
+            </UiModal>
           </template>
         </i18n-t>
-      </FormGroup>
+      </UiFormGroup>
     </div>
   </div>
 </template>

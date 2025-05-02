@@ -2,6 +2,7 @@
 const { t } = useI18n()
 
 const qaCount = 12
+// TODO: refactoring
 const qaList = computed(() =>
   Array.from({ length: qaCount })
     .fill(0)
@@ -27,14 +28,14 @@ const qaList = computed(() =>
 
       <UiDivider />
 
-      <FormGroup
+      <UiFormGroup
         v-for="({ q, a }, idx) in qaList"
         :key="idx"
         :label="`${idx + 1}. ${q}`"
         :collapsable="false"
       >
         <div v-html="a" />
-      </FormGroup>
+      </UiFormGroup>
     </div>
   </div>
 </template>
