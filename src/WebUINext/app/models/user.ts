@@ -66,3 +66,39 @@ export interface UserNotification {
   state: NotificationState
   metadata: Record<string, string>
 }
+
+export enum UserRestrictionType {
+  Join = 'Join',
+  Chat = 'Chat',
+  All = 'All',
+}
+
+export interface UserRestriction {
+  id: number
+  reason: string
+  createdAt: Date
+  duration: string
+  publicReason: string
+  type: UserRestrictionType
+  restrictedUser: UserPrivate
+  restrictedByUser: UserPublic
+}
+
+export interface UserRestrictionPublic {
+  id: number
+  reason: string
+  createdAt: Date
+  duration: string
+}
+
+export interface UserRestrictionWithActive extends UserRestriction {
+  active: boolean
+}
+
+export interface UserRestrictionCreation {
+  reason: string
+  duration: string
+  publicReason: string
+  type: UserRestrictionType
+  restrictedUserId: number
+}

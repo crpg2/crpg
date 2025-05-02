@@ -108,6 +108,11 @@ export default defineNuxtConfig({
   css: [
     './assets/themes/oruga-tailwind/index.css',
   ],
+  runtimeConfig: {
+    public: {
+      HH: import.meta.env.NUXT_PUBLIC_HH,
+    },
+  },
   alias: {
     '~root': fileURLToPath(new URL('../../', import.meta.url)),
   },
@@ -174,7 +179,7 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    debug: true,
+    // debug: true,
     compilation: {
       strictMessage: false,
     },

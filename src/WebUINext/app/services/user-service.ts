@@ -2,6 +2,7 @@
 import {
   deleteUsersSelf,
   getUsersSelf,
+  getUsersSelfRestriction,
 } from '#hey-api/sdk.gen'
 import { pick } from 'es-toolkit'
 
@@ -16,6 +17,8 @@ import type {
   UserNotification,
   UserPrivate,
   UserPublic,
+  UserRestriction,
+  UserRestrictionPublic,
 } from '~/models/user'
 
 // import { del, get, post, put } from '~/services/crpg-client'
@@ -84,7 +87,10 @@ export const deleteUser = () => deleteUsersSelf({ composable: '$fetch' })
 //     }, [] as UserItemsByType[])
 //     .sort((a, b) => a.type.localeCompare(b.type))
 
-// export const getUserRestriction = () => get<PublicRestriction>('/users/self/restriction')
+export const getUserRestriction = async (): Promise<UserRestrictionPublic> => {
+  const { data } = await getUsersSelfRestriction({ composable: '$fetch' })
+  return data
+}
 
 // export const getUserRestrictions = async (id: number) =>
 //   mapRestrictions(await get<RestrictionWithActive[]>(`/users/${id}/restrictions`))
