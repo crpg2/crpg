@@ -25,32 +25,34 @@ const scrollToTop = () =>
     />
 
     <div class="flex items-center gap-5">
-      <AppHHTooltip
-        v-slot="{ shown }"
-        :region="userStore.user!.region"
-      >
-        <div
-          class="group flex cursor-pointer select-none items-center gap-2 hover:text-content-100"
-          :class="{ 'text-content-100': shown }"
+      <div v-if="userStore.user">
+        <AppHHTooltip
+          v-slot="{ shown }"
+          :region="userStore.user!.region"
         >
-          <OIcon
-            icon="gift"
-            size="lg"
-            class="text-content-100"
-          />
-          {{
-            $t('hh.tooltip-trigger', {
-              region: $t(`region.${userStore.user!.region}`, 1),
-            })
-          }}
-          <span
-            class="group-hover:text-content-100"
-            :class="[shown ? 'text-content-100' : 'text-content-200']"
+          <div
+            class="group flex cursor-pointer select-none items-center gap-2 hover:text-content-100"
+            :class="{ 'text-content-100': shown }"
           >
-            {{ $d(HHEvent.start, 'time') }} - {{ $d(HHEvent.end, 'time') }}
-          </span>
-        </div>
-      </AppHHTooltip>
+            <OIcon
+              icon="gift"
+              size="lg"
+              class="text-content-100"
+            />
+            {{
+              $t('hh.tooltip-trigger', {
+                region: $t(`region.${userStore.user!.region}`, 1),
+              })
+            }}
+            <span
+              class="group-hover:text-content-100"
+              :class="[shown ? 'text-content-100' : 'text-content-200']"
+            >
+              {{ $d(HHEvent.start, 'time') }} - {{ $d(HHEvent.end, 'time') }}
+            </span>
+          </div>
+        </AppHHTooltip>
+      </div>
 
       <UiDivider inline />
 
