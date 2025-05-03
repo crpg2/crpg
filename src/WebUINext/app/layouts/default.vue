@@ -12,8 +12,9 @@ const { HHEvent, HHEventRemaining, HHPollId, isHHCountdownEnded } = useHappyHour
 Promise.all([
   loadPatchNotes(),
   loadGameServerStats(),
-  userStore.fetchUserRestriction(),
   settingsStore.loadSettings(),
+
+  // userStore.fetchUserRestriction(),
 ])
 </script>
 
@@ -34,7 +35,7 @@ Promise.all([
         :restriction="userStore.restriction"
       />
 
-      <AppHHHeaderNotification v-if="!isHHCountdownEnded && HHEventRemaining !== 0" />
+      <!-- <AppLayoutHHHeaderNotification v-if="!isHHCountdownEnded && HHEventRemaining !== 0" /> -->
 
       <div class="flex flex-wrap items-center justify-between p-3">
         <div class="flex items-center gap-4">
@@ -51,7 +52,7 @@ Promise.all([
 
           <UiDivider inline />
 
-          <AppMainNavigation :latest-patch="patchNotes[0]" />
+          <!-- <AppLayoutMainNavigation :latest-patch="patchNotes[0]" /> -->
         </div>
 
         <UserHeaderToolbar
@@ -66,6 +67,6 @@ Promise.all([
     </main>
 
     <!-- TODO: v-if="!route.meta.noFooter" -->
-    <AppFooter :HHEvent />
+    <!-- <AppLayoutFooter :HHEvent /> -->
   </div>
 </template>
