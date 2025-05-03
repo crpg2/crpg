@@ -143,13 +143,13 @@ export const deleteCharacter = (characterId: number) =>
 //   rating: { competitiveValue: 0, deviation: 0, value: 0, volatility: 0 },
 // })
 
-// export const getCompetitiveValueByGameMode = (
-//   statistics: CharacterStatistics[],
-//   gameMode: GameMode,
-// ) => {
-//   const statisticByGameMode = statistics.find(s => s.gameMode === gameMode)
-//   return statisticByGameMode ? statisticByGameMode.rating.competitiveValue : 0
-// }
+export const getCompetitiveValueByGameMode = (
+  statistics: CharacterStatistics[],
+  gameMode: GameMode,
+): number => {
+  const statisticByGameMode = statistics.find(s => s.gameMode === gameMode)
+  return statisticByGameMode ? statisticByGameMode.rating.competitiveValue : 0
+}
 
 // // TODO: FIXME: SPEC
 // export const getCharacterEarningStatistics = (characterId: number, from: Date): Promise<ActivityLog<CharacterEarnedMetadata>[]> =>

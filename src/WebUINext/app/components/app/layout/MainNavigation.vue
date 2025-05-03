@@ -111,8 +111,8 @@ const { settings } = storeToRefs(useSettingsStore())
       </NuxtLink> -->
     </div>
 
-    <!-- <NuxtLink
-      :to="{ name: 'Leaderboard' }"
+    <NuxtLink
+      :to="{ name: 'leaderboard' }"
       class="inline-flex items-center gap-1.5 text-content-300 hover:text-content-100"
       active-class="!text-content-100"
     >
@@ -124,7 +124,7 @@ const { settings } = storeToRefs(useSettingsStore())
       {{ $t('nav.main.Leaderboard') }}
     </NuxtLink>
 
-    <NuxtLink
+    <!--  <NuxtLink
       v-if="[Role.Moderator, Role.Admin].includes(userStore.user!.role)"
       :to="{ name: 'Moderator' }"
       class="text-content-300 hover:text-content-100"

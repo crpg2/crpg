@@ -1,6 +1,6 @@
 import type { Role } from '~/models/role'
 
-declare module 'nuxt/schema' {
+declare module '#app' {
   interface PageMeta {
     roles?: Role[]
     skipAuth?: boolean
@@ -9,6 +9,9 @@ declare module 'nuxt/schema' {
       noFooter?: boolean
     }
   }
+}
+
+declare module 'nuxt/schema' {
 
   interface AppConfig {
   }
