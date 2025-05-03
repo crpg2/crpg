@@ -7,6 +7,7 @@ import { login } from '~/services/auth-service'
 import { platformToIcon } from '~/services/platform-service'
 import { useUserStore } from '~/stores/user'
 
+const { size = 'xl' } = defineProps<{ size?: 'sm' | 'xl' }>()
 const userStore = useUserStore()
 const { user } = toRefs(userStore)
 const { platform, changePlatform } = usePlatform()
@@ -21,7 +22,7 @@ const {
   <OField v-if="user === null">
     <OButton
       variant="primary"
-      size="xl"
+      :size
       :icon-left="platformToIcon[platform]"
       :loading="logging"
       data-aq-login-btn
@@ -41,7 +42,7 @@ const {
         <OButton
           variant="primary"
           :icon-right="shown ? 'chevron-up' : 'chevron-down'"
-          size="xl"
+          :size
         />
       </template>
 

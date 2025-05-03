@@ -68,6 +68,7 @@ const { settings } = storeToRefs(useSettingsStore())
     </div>
 
     <NuxtLink
+      v-if="userStore.user"
       :to="{ name: 'characters' }"
       class="text-content-300 hover:text-content-100"
       active-class="!text-content-100"
@@ -83,7 +84,7 @@ const { settings } = storeToRefs(useSettingsStore())
       {{ $t('nav.main.Shop') }}
     </NuxtLink> -->
 
-    <div class="flex items-center gap-1.5">
+    <!-- <div class="flex items-center gap-1.5">
       <VTooltip
         v-if="userStore.clan === null"
         data-aq-main-nav-link-tooltip="Explanation"
@@ -102,14 +103,14 @@ const { settings } = storeToRefs(useSettingsStore())
         </template>
       </VTooltip>
 
-      <!-- <NuxtLink
+      <NuxtLink
         :to="{ name: 'Clans' }"
         class="text-content-300 hover:text-content-100"
         active-class="!text-content-100"
       >
         {{ $t('nav.main.Clans') }}
-      </NuxtLink> -->
-    </div>
+      </NuxtLink>
+    </div> -->
 
     <NuxtLink
       :to="{ name: 'leaderboard' }"
@@ -135,7 +136,7 @@ const { settings } = storeToRefs(useSettingsStore())
     </NuxtLink> -->
 
     <NuxtLink
-      v-if="[Role.Admin].includes(userStore.user!.role)"
+      v-if="userStore.user && [Role.Admin].includes(userStore.user.role)"
       :to="{ name: 'admin' }"
       class="text-content-300 hover:text-content-100"
       active-class="!text-content-100"

@@ -52,13 +52,15 @@ Promise.all([
 
           <UiDivider inline />
 
-          <!-- <AppLayoutMainNavigation :latest-patch="patchNotes[0]" /> -->
+          <AppLayoutMainNavigation :latest-patch="patchNotes[0]" />
         </div>
 
         <UserHeaderToolbar
           v-if="userStore.user"
           :user="userStore.user"
         />
+
+        <AppLogin v-else size="sm" />
       </div>
     </header>
 
@@ -67,6 +69,6 @@ Promise.all([
     </main>
 
     <!-- TODO: v-if="!route.meta.noFooter" -->
-    <!-- <AppLayoutFooter :HHEvent /> -->
+    <AppLayoutFooter :HHEvent />
   </div>
 </template>
