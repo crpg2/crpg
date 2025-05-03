@@ -5,8 +5,6 @@ import {
   activateCharacter,
   deleteCharacter,
   updateCharacter,
-//   deleteCharacter,
-//   updateCharacter,
 } from '~/services/character-service'
 
 definePageMeta({
@@ -14,7 +12,7 @@ definePageMeta({
   middleware: [
     /**
      * @description
-     * load characters character
+     * load characters
      */
     async () => {
       const userStore = useUserStore()
