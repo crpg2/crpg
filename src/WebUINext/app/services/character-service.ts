@@ -1,4 +1,5 @@
-// import type { PartialDeep } from 'type-fest'
+import type { PartialDeep } from 'type-fest'
+
 import {
   deleteUsersSelfCharactersById,
   getUsersByUserIdCharacters,
@@ -6,37 +7,37 @@ import {
   putUsersSelfCharactersById,
   putUsersSelfCharactersByIdActive,
 } from '#hey-api/sdk.gen'
+import {
+  attributePointsPerLevel,
+  damageFactorForPowerDraw,
+  damageFactorForPowerStrike,
+  damageFactorForPowerThrow,
+  defaultAgility,
+  defaultAttributePoints,
+  defaultHealthPoints,
+  defaultSkillPoints,
+  defaultStrength,
+  experienceForLevelCoefs,
+  experienceMultiplierByGeneration,
+  freeRespecializeIntervalDays,
+  freeRespecializePostWindowHours,
+  healthPointsForIronFlesh,
+  healthPointsForStrength,
+  highLevelCutoff,
+  maxExperienceMultiplierForGeneration,
+  maximumLevel,
+  minimumLevel,
+  minimumRetirementLevel,
+  respecializePriceForLevel30,
+  respecializePriceHalfLife,
+  skillPointsPerLevel,
+  weaponProficiencyPointsForAgility,
+  weaponProficiencyPointsForLevelCoefs,
+  weaponProficiencyPointsForWeaponMasterCoefs,
+} from '~root/data/constants.json'
+import { defu } from 'defu'
+import { clamp } from 'es-toolkit'
 
-// import {
-//   attributePointsPerLevel,
-//   damageFactorForPowerDraw,
-//   damageFactorForPowerStrike,
-//   damageFactorForPowerThrow,
-//   defaultAgility,
-//   defaultAttributePoints,
-//   defaultHealthPoints,
-//   defaultSkillPoints,
-//   defaultStrength,
-//   experienceForLevelCoefs,
-//   experienceMultiplierByGeneration,
-//   freeRespecializeIntervalDays,
-//   freeRespecializePostWindowHours,
-//   healthPointsForIronFlesh,
-//   healthPointsForStrength,
-//   highLevelCutoff,
-//   maxExperienceMultiplierForGeneration,
-//   maximumLevel,
-//   minimumLevel,
-//   minimumRetirementLevel,
-//   respecializePriceForLevel30,
-//   respecializePriceHalfLife,
-//   skillPointsPerLevel,
-//   weaponProficiencyPointsForAgility,
-//   weaponProficiencyPointsForLevelCoefs,
-//   weaponProficiencyPointsForWeaponMasterCoefs,
-// } from '~root/data/constants.json'
-// import { defu } from 'defu'
-// import { clamp } from 'es-toolkit'
 // import qs from 'qs'
 // import type { ActivityLog, CharacterEarnedMetadata } from '~/models/activity-logs'
 // import type { TimeSeries, TimeSeriesItem } from '~/models/timeseries'
@@ -61,15 +62,14 @@ import {
   CharacterClass,
   CharacterEarningType,
 } from '~/models/character'
-
-// import { GameMode } from '~/models/game-mode'
+import { GameMode } from '~/models/game-mode'
 // import { type Item, type ItemArmorComponent, ItemSlot, ItemType } from '~/models/item'
 // import { del, get, put } from '~/services/crpg-client'
 // import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-service'
 // import { t } from '~/services/translate-service'
-// import { getIndexToIns, range } from '~/utils/array'
+import { getIndexToIns, range } from '~/utils/array'
 // import { computeLeftMs } from '~/utils/date'
-// import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
+import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
 
 export const getCharacters = async (): Promise<Character[]> => {
   const { data } = await getUsersSelfCharacters({ composable: '$fetch' })
@@ -106,42 +106,36 @@ export const deleteCharacter = (characterId: number) =>
 // export const respecializeCharacter = (characterId: number) =>
 //   put<Character>(`/users/self/characters/${characterId}/respecialize`)
 
-// export const tournamentLevelThreshold = 20
+export const tournamentLevelThreshold = 20
 
-// export const canSetCharacterForTournamentValidate = (character: Character) =>
-//   !(
-//     character.forTournament
-//     || character.generation > 0
-//     || character.level >= tournamentLevelThreshold
-//   )
+export const canSetCharacterForTournamentValidate = (character: Character) =>
+  !(
+    character.forTournament
+    || character.generation > 0
+    || character.level >= tournamentLevelThreshold
+  )
 
 // export const setCharacterForTournament = (characterId: number) =>
 //   put<Character>(`/users/self/characters/${characterId}/tournament`)
 
-// export const canRetireValidate = (level: number) => level >= minimumRetirementLevel
+export const canRetireValidate = (level: number) => level >= minimumRetirementLevel
 
 // export const retireCharacter = (characterId: number) =>
 //   put<Character>(`/users/self/characters/${characterId}/retire`)
-
-// export const rewardCharacter = (
-//   userId: number,
-//   characterId: number,
-//   payload: { experience: number, autoRetire: boolean },
-// ) => put(`/users/${userId}/characters/${characterId}/rewards`, payload)
 
 // export const getCharacterStatistics = (characterId: number) =>
 //   get<Partial<Record<GameMode, CharacterStatistics>>>(
 //     `/users/self/characters/${characterId}/statistics`,
 //   )
 
-// export const getDefaultCharacterStatistics = (): CharacterStatistics => ({
-//   assists: 0,
-//   deaths: 0,
-//   gameMode: GameMode.Battle,
-//   kills: 0,
-//   playTime: 0,
-//   rating: { competitiveValue: 0, deviation: 0, value: 0, volatility: 0 },
-// })
+export const getDefaultCharacterStatistics = (): CharacterStatistics => ({
+  assists: 0,
+  deaths: 0,
+  gameMode: GameMode.Battle,
+  kills: 0,
+  playTime: 0,
+  rating: { competitiveValue: 0, deviation: 0, value: 0, volatility: 0 },
+})
 
 export const getCompetitiveValueByGameMode = (
   statistics: CharacterStatistics[],
@@ -222,250 +216,256 @@ export const getCompetitiveValueByGameMode = (
 //   req: CharacterCharacteristics,
 // ) => put<CharacterCharacteristics>(`/users/self/characters/${characterId}/characteristics`, req)
 
-// const computeExperienceDistribution = (level: number): number => {
-//   const [a, b] = experienceForLevelCoefs
-//   return (level - 1) ** a + b ** (a / 2.0) * (level - 1)
-// }
+const computeExperienceDistribution = (level: number): number => {
+  const [a, b] = experienceForLevelCoefs as [number, number]
+  return (level - 1) ** a + b ** (a / 2.0) * (level - 1)
+}
 
-// const experienceForLevel30 = 4420824
+// TODO: to const
+const experienceForLevel30 = 4420824
 
-// export const getExperienceForLevel = (level: number): number => {
-//   if (level <= 0) {
-//     return 0
-//   }
+export const getExperienceForLevel = (level: number): number => {
+  if (level <= 0) {
+    return 0
+  }
 
-//   if (level <= 30) {
-//     return Math.trunc(
-//       (experienceForLevel30 * computeExperienceDistribution(level))
-//       / computeExperienceDistribution(30),
-//     )
-//   }
+  if (level <= 30) {
+    return Math.trunc(
+      (experienceForLevel30 * computeExperienceDistribution(level))
+      / computeExperienceDistribution(30),
+    )
+  }
 
-//   return getExperienceForLevel(30) * 2 ** (level - 30)
-// }
+  return getExperienceForLevel(30) * 2 ** (level - 30)
+}
 
-// const computeExperienceTable = () => {
-//   const table: number[] = [maximumLevel - minimumLevel + 1]
+const computeExperienceTable = (): number[] => {
+  const table: number[] = [maximumLevel - minimumLevel + 1]
 
-//   for (let lvl = minimumLevel; lvl <= 30; lvl += 1) {
-//     table[lvl - minimumLevel] = Math.trunc(
-//       (experienceForLevel30 * computeExperienceDistribution(lvl))
-//       / computeExperienceDistribution(30),
-//     )
-//   }
+  for (let lvl = minimumLevel; lvl <= 30; lvl += 1) {
+    table[lvl - minimumLevel] = Math.trunc(
+      (experienceForLevel30 * computeExperienceDistribution(lvl))
+      / computeExperienceDistribution(30),
+    )
+  }
 
-//   for (let lvl = 31; lvl <= maximumLevel; lvl += 1) {
-//     table[lvl - minimumLevel] = table[lvl - minimumLevel - 1] * 2 // changing this require to change how much heirloompoint you get above level 31
-//   }
+  for (let lvl = 31; lvl <= maximumLevel; lvl += 1) {
+    table[lvl - minimumLevel] = table[lvl - minimumLevel - 1] * 2 // changing this require to change how much heirloompoint you get above level 31
+  }
 
-//   return table
-// }
-
-// const experienceTable = computeExperienceTable()
+  return table
+}
 
 // // TODO: SPEC
-// export const getLevelByExperience = (exp: number, expTable: number[] = experienceTable): number => {
-//   return getIndexToIns(expTable, exp)
-// }
+export const getLevelByExperience = (
+  exp: number,
+  expTable: number[] = computeExperienceTable(),
+): number => {
+  return getIndexToIns(expTable, exp)
+}
 
-// // TODO: spec
-// // from: src/Application/Characters/Commands/RewardCharacterCommand.cs:67
-// export const getAutoRetireCount = (exp: number, characterExperience: number) => {
-//   let retireCount = 0
-//   let remainingExperienceToGive = exp
-//   let remainExperience = characterExperience
+// TODO: spec
+// from: src/Application/Characters/Commands/RewardCharacterCommand.cs:67
+export const getAutoRetireCount = (
+  exp: number,
+  characterExperience: number,
+) => {
+  let retireCount = 0
+  let remainingExperienceToGive = exp
+  let remainExperience = characterExperience
 
-//   const totalExperienceForRetirementLevel = getExperienceForLevel(minimumRetirementLevel)
+  const totalExperienceForRetirementLevel = getExperienceForLevel(minimumRetirementLevel)
 
-//   while (remainingExperienceToGive > 0) {
-//     const experienceNeededToRetirementLevel = Math.max(
-//       totalExperienceForRetirementLevel - remainExperience,
-//       0,
-//     )
+  while (remainingExperienceToGive > 0) {
+    const experienceNeededToRetirementLevel = Math.max(
+      totalExperienceForRetirementLevel - remainExperience,
+      0,
+    )
 
-//     const [experienceToGive, retirementLevelReached]
-//       = remainingExperienceToGive >= experienceNeededToRetirementLevel
-//         ? [experienceNeededToRetirementLevel, true]
-//         : [remainingExperienceToGive, false]
+    const [experienceToGive, retirementLevelReached]
+      = remainingExperienceToGive >= experienceNeededToRetirementLevel
+        ? [experienceNeededToRetirementLevel, true]
+        : [remainingExperienceToGive, false]
 
-//     remainExperience += experienceToGive
-//     if (retirementLevelReached) {
-//       retireCount++
-//       remainExperience = 0
-//     }
+    remainExperience += experienceToGive
 
-//     remainingExperienceToGive -= experienceToGive
-//   }
+    if (retirementLevelReached) {
+      retireCount++
+      remainExperience = 0
+    }
 
-//   return {
-//     remainExperience,
-//     retireCount,
-//   }
-// }
+    remainingExperienceToGive -= experienceToGive
+  }
 
-// export const getMaximumExperience = () => getExperienceForLevel(maximumLevel)
+  return {
+    remainExperience,
+    retireCount,
+  }
+}
 
-// export const attributePointsForLevel = (level: number): number => {
-//   if (level <= 0) {
-//     level = minimumLevel
-//   }
+export const getMaximumExperience = () => getExperienceForLevel(maximumLevel)
 
-//   let points = defaultAttributePoints
+export const attributePointsForLevel = (level: number): number => {
+  if (level <= 0) {
+    level = minimumLevel
+  }
 
-//   for (let i = 1; i < level; i++) {
-//     if (i < highLevelCutoff) {
-//       points += attributePointsPerLevel
-//     }
-//   }
-//   return points
-// }
+  let points = defaultAttributePoints
 
-// export const skillPointsForLevel = (level: number): number => {
-//   if (level <= 0) {
-//     level = minimumLevel
-//   }
-//   return defaultSkillPoints + (level - 1) * skillPointsPerLevel
-// }
+  for (let i = 1; i < level; i++) {
+    if (i < highLevelCutoff) {
+      points += attributePointsPerLevel
+    }
+  }
+  return points
+}
 
-// export const wppForLevel = (level: number): number =>
-//   Math.floor(applyPolynomialFunction(level, weaponProficiencyPointsForLevelCoefs))
+export const skillPointsForLevel = (level: number): number => {
+  if (level <= 0) {
+    level = minimumLevel
+  }
+  return defaultSkillPoints + (level - 1) * skillPointsPerLevel
+}
 
-// export const wppForAgility = (agility: number): number =>
-//   agility * weaponProficiencyPointsForAgility
+export const wppForLevel = (level: number): number =>
+  Math.floor(applyPolynomialFunction(level, weaponProficiencyPointsForLevelCoefs))
 
-// export const wppForWeaponMaster = (weaponMaster: number): number =>
-//   Math.floor(applyPolynomialFunction(weaponMaster, weaponProficiencyPointsForWeaponMasterCoefs))
+export const wppForAgility = (agility: number): number =>
+  agility * weaponProficiencyPointsForAgility
 
-// export const createEmptyCharacteristic = (): CharacterCharacteristics => ({
-//   attributes: {
-//     agility: 0,
-//     points: 0,
-//     strength: 0,
-//   },
-//   skills: {
-//     athletics: 0,
-//     ironFlesh: 0,
-//     mountedArchery: 0,
-//     points: 0,
-//     powerDraw: 0,
-//     powerStrike: 0,
-//     powerThrow: 0,
-//     riding: 0,
-//     shield: 0,
-//     weaponMaster: 0,
-//   },
-//   weaponProficiencies: {
-//     bow: 0,
-//     crossbow: 0,
-//     oneHanded: 0,
-//     points: 0,
-//     polearm: 0,
-//     throwing: 0,
-//     twoHanded: 0,
-//   },
-// })
+export const wppForWeaponMaster = (weaponMaster: number): number =>
+  Math.floor(applyPolynomialFunction(weaponMaster, weaponProficiencyPointsForWeaponMasterCoefs))
 
-// export const createCharacteristics = (
-//   payload?: PartialDeep<CharacterCharacteristics>,
-// ): CharacterCharacteristics => defu(payload, createEmptyCharacteristic())
+export const createEmptyCharacteristic = (): CharacterCharacteristics => ({
+  attributes: {
+    agility: 0,
+    points: 0,
+    strength: 0,
+  },
+  skills: {
+    athletics: 0,
+    ironFlesh: 0,
+    mountedArchery: 0,
+    points: 0,
+    powerDraw: 0,
+    powerStrike: 0,
+    powerThrow: 0,
+    riding: 0,
+    shield: 0,
+    weaponMaster: 0,
+  },
+  weaponProficiencies: {
+    bow: 0,
+    crossbow: 0,
+    oneHanded: 0,
+    points: 0,
+    polearm: 0,
+    throwing: 0,
+    twoHanded: 0,
+  },
+})
 
-// export const createDefaultCharacteristic = (): CharacterCharacteristics =>
-//   createCharacteristics({
-//     attributes: {
-//       agility: defaultAgility,
-//       points: defaultAttributePoints,
-//       strength: defaultStrength,
-//     },
-//     skills: {
-//       points: defaultSkillPoints,
-//     },
-//     weaponProficiencies: {
-//       points: wppForLevel(minimumLevel),
-//     },
-//   })
+export const createCharacteristics = (
+  payload?: PartialDeep<CharacterCharacteristics>,
+): CharacterCharacteristics => defu(payload, createEmptyCharacteristic())
 
-// export const characteristicBonusByKey: Partial<
-//   Record<CharacteristicKey, { value: number, style: 'percent' | 'decimal' }>
-// > = {
-//   ironFlesh: {
-//     style: 'decimal',
-//     value: healthPointsForIronFlesh,
-//   },
-//   powerDraw: {
-//     style: 'percent',
-//     value: damageFactorForPowerDraw,
-//   },
-//   powerStrike: {
-//     style: 'percent',
-//     value: damageFactorForPowerStrike,
-//   },
-//   powerThrow: {
-//     style: 'percent',
-//     value: damageFactorForPowerThrow,
-//   },
-//   strength: {
-//     style: 'decimal',
-//     value: healthPointsForStrength,
-//   },
-// }
+export const createDefaultCharacteristic = (): CharacterCharacteristics =>
+  createCharacteristics({
+    attributes: {
+      agility: defaultAgility,
+      points: defaultAttributePoints,
+      strength: defaultStrength,
+    },
+    skills: {
+      points: defaultSkillPoints,
+    },
+    weaponProficiencies: {
+      points: wppForLevel(minimumLevel),
+    },
+  })
 
-// export const computeHealthPoints = (ironFlesh: number, strength: number): number =>
-//   defaultHealthPoints + ironFlesh * healthPointsForIronFlesh + strength * healthPointsForStrength
+export const characteristicBonusByKey: Partial<
+  Record<CharacteristicKey, { value: number, style: 'percent' | 'decimal' }>
+> = {
+  ironFlesh: {
+    style: 'decimal',
+    value: healthPointsForIronFlesh,
+  },
+  powerDraw: {
+    style: 'percent',
+    value: damageFactorForPowerDraw,
+  },
+  powerStrike: {
+    style: 'percent',
+    value: damageFactorForPowerStrike,
+  },
+  powerThrow: {
+    style: 'percent',
+    value: damageFactorForPowerThrow,
+  },
+  strength: {
+    style: 'decimal',
+    value: healthPointsForStrength,
+  },
+}
+
+export const computeHealthPoints = (ironFlesh: number, strength: number): number =>
+  defaultHealthPoints + ironFlesh * healthPointsForIronFlesh + strength * healthPointsForStrength
 
 // // TODO: unit?
-// export const computeSpeedStats = (
-//   strength: number,
-//   athletics: number,
-//   agility: number,
-//   totalEncumbrance: number,
-//   longestWeaponLength: number,
-// ): CharacterSpeedStats => {
-//   const awfulScaler = 3231477.548
-//   const weightReductionPolynomialFactor = [
-//     30 / awfulScaler,
-//     0.00005 / awfulScaler,
-//     1000000 / awfulScaler,
-//     0,
-//   ]
-//   const weightReductionFactor
-//     = 1 / (1 + applyPolynomialFunction(strength - 3, weightReductionPolynomialFactor))
-//   const freeWeight = 2.5 * (1 + (strength - 3) / 30)
-//   const perceivedWeight = Math.max(totalEncumbrance - freeWeight, 0) * weightReductionFactor
-//   const nakedSpeed = 0.58 + (0.034 * (20 * athletics + 2 * agility)) / 26.0
-//   const currentSpeed = clamp(
-//     nakedSpeed * (361 / (361 + perceivedWeight ** 5)) ** 0.055,
-//     0.1,
-//     1.5,
-//   )
-//   const maxWeaponLength = Math.min(
-//     22 + (strength - 3) * 7.5 + (Math.min(strength - 3, 24) * 0.133352143) ** 8,
-//     650,
-//   )
-//   const timeToMaxSpeedWeaponLenghthTerm = Math.max(
-//     (1.2 * (longestWeaponLength - maxWeaponLength)) / maxWeaponLength,
-//     0,
-//   )
+export const computeSpeedStats = (
+  strength: number,
+  athletics: number,
+  agility: number,
+  totalEncumbrance: number,
+  longestWeaponLength: number,
+): CharacterSpeedStats => {
+  const awfulScaler = 3231477.548
+  const weightReductionPolynomialFactor = [
+    30 / awfulScaler,
+    0.00005 / awfulScaler,
+    1000000 / awfulScaler,
+    0,
+  ]
+  const weightReductionFactor
+    = 1 / (1 + applyPolynomialFunction(strength - 3, weightReductionPolynomialFactor))
+  const freeWeight = 2.5 * (1 + (strength - 3) / 30)
+  const perceivedWeight = Math.max(totalEncumbrance - freeWeight, 0) * weightReductionFactor
+  const nakedSpeed = 0.58 + (0.034 * (20 * athletics + 2 * agility)) / 26.0
+  const currentSpeed = clamp(
+    nakedSpeed * (361 / (361 + perceivedWeight ** 5)) ** 0.055,
+    0.1,
+    1.5,
+  )
+  const maxWeaponLength = Math.min(
+    22 + (strength - 3) * 7.5 + (Math.min(strength - 3, 24) * 0.133352143) ** 8,
+    650,
+  )
+  const timeToMaxSpeedWeaponLenghthTerm = Math.max(
+    (1.2 * (longestWeaponLength - maxWeaponLength)) / maxWeaponLength,
+    0,
+  )
 
-//   const timeToMaxSpeed
-//     = 0.8
-//     * (1 + perceivedWeight / 15)
-//     * (20 / (20 + ((20 * athletics + 3 * agility) / 120) ** 2))
-//     + timeToMaxSpeedWeaponLenghthTerm
+  const timeToMaxSpeed
+    = 0.8
+      * (1 + perceivedWeight / 15)
+      * (20 / (20 + ((20 * athletics + 3 * agility) / 120) ** 2))
+      + timeToMaxSpeedWeaponLenghthTerm
 
-//   const movementSpeedPenaltyWhenAttacking
-//     = 100 * (Math.min(0.8 + (0.2 * (maxWeaponLength + 1)) / (longestWeaponLength + 1), 1) - 1)
+  const movementSpeedPenaltyWhenAttacking
+    = 100 * (Math.min(0.8 + (0.2 * (maxWeaponLength + 1)) / (longestWeaponLength + 1), 1) - 1)
 
-//   return {
-//     currentSpeed,
-//     freeWeight,
-//     maxWeaponLength,
-//     movementSpeedPenaltyWhenAttacking,
-//     nakedSpeed,
-//     perceivedWeight,
-//     timeToMaxSpeed,
-//     weightReductionFactor,
-//   }
-// }
+  return {
+    currentSpeed,
+    freeWeight,
+    maxWeaponLength,
+    movementSpeedPenaltyWhenAttacking,
+    nakedSpeed,
+    perceivedWeight,
+    timeToMaxSpeed,
+    weightReductionFactor,
+  }
+}
 
 // export const getCharacterItems = async (characterId: number) =>
 //   get<EquippedItem[]>(`/users/self/characters/${characterId}/items`)
@@ -564,21 +564,21 @@ export const getCompetitiveValueByGameMode = (
 // }
 
 // // TODO: Spec
-// export const getExperienceMultiplierBonusByRetireCount = (retireCount: number) => {
-//   let out = 0
+export const getExperienceMultiplierBonusByRetireCount = (retireCount: number) => {
+  let out = 0
 
-//   while (retireCount > 0) {
-//     out += experienceMultiplierByGeneration
-//     retireCount--
-//   }
+  while (retireCount > 0) {
+    out += experienceMultiplierByGeneration
+    retireCount--
+  }
 
-//   return out
-// }
+  return out
+}
 
 // // TODO: Spec
-// export const sumExperienceMultiplierBonus = (multiplierA: number, multiplierB: number) => {
-//   return clamp(multiplierA + multiplierB, 0, maxExperienceMultiplierForGeneration)
-// }
+export const sumExperienceMultiplierBonus = (multiplierA: number, multiplierB: number) => {
+  return clamp(multiplierA + multiplierB, 0, maxExperienceMultiplierForGeneration)
+}
 
 // export interface RespecCapability {
 //   price: number
@@ -756,9 +756,9 @@ export const characterClassToIcon: Record<CharacterClass, string> = {
 // }
 
 // // TODO: SPEC, more complicated logic?
-// export const checkUpkeepIsHigh = (userGold: number, upkeepPerHour: number) => {
-//   return userGold < upkeepPerHour * 2.5
-// }
+export const checkUpkeepIsHigh = (userGold: number, upkeepPerHour: number) => {
+  return userGold < upkeepPerHour * 2.5
+}
 
 // export const validateItemNotMeetRequirement = (
 //   item: Item,

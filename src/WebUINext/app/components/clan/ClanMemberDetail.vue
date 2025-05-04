@@ -118,12 +118,10 @@ const onSave = () => {
                     size="xl"
                     :label="$t('action.kick')"
                     data-aq-clan-member-action="kick"
-                    @click="
-                      () => {
-                        hide();
-                        emit('kick');
-                      }
-                    "
+                    @click="() => {
+                      hide();
+                      $emit('kick');
+                    }"
                   />
                 </div>
               </div>
@@ -140,7 +138,7 @@ const onSave = () => {
         size="xl"
         :label="$t('action.cancel')"
         data-aq-clan-member-action="close-detail"
-        @click="emit('cancel')"
+        @click="$emit('cancel')"
       />
 
       <OButton
@@ -153,7 +151,7 @@ const onSave = () => {
       />
     </div>
 
-    <Modal
+    <UiModal
       v-if="canUpdate"
       :shown="shownConfirmTransferDialog"
       data-aq-clan-member-action="confirm-transfer-dialog"
@@ -163,17 +161,15 @@ const onSave = () => {
         <AppConfirmActionForm
           :title="$t('clan.member.update.confirmationDialog.title')"
           :description="$t('clan.member.update.confirmationDialog.desc')"
-          :name="member.user.name"
           :confirm-label="$t('action.confirm')"
+          :name="member.user.name"
           @cancel="hide"
-          @confirm="
-            () => {
-              hide();
-              emit('update', memberRoleModel);
-            }
-          "
+          @confirm="() => {
+            $emit('update', memberRoleModel);
+            hide();
+          }"
         />
       </template>
-    </Modal>
+    </UiModal>
   </div>
 </template>
