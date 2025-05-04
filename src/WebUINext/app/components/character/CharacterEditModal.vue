@@ -22,17 +22,15 @@ defineEmits<{
       outlined
     />
 
-    <template #popper="{ hide }">
+    <template #popper="{ hide: hideParentModal }">
       <div class="min-w-[480px] max-w-2xl space-y-14 px-12 py-11">
         <CharacterEditForm
           :character
-          @cancel="hide"
-          @confirm="
-            data => {
-              hide();
-              $emit('update', data.name)
-            }
-          "
+          @cancel="hideParentModal"
+          @confirm="name => {
+            $emit('update', name)
+            hideParentModal();
+          }"
         />
         <i18n-t
           scope="global"

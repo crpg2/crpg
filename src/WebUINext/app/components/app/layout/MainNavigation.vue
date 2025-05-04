@@ -83,10 +83,9 @@ const { settings } = storeToRefs(useSettingsStore())
     >
       {{ $t('nav.main.Shop') }}
     </NuxtLink> -->
-
-    <!-- <div class="flex items-center gap-1.5">
+    <div class="flex items-center gap-1.5">
       <VTooltip
-        v-if="userStore.clan === null"
+        v-if="!userStore.clan"
         data-aq-main-nav-link-tooltip="Explanation"
       >
         <UiTag
@@ -104,13 +103,13 @@ const { settings } = storeToRefs(useSettingsStore())
       </VTooltip>
 
       <NuxtLink
-        :to="{ name: 'Clans' }"
+        :to="{ name: 'clans' }"
         class="text-content-300 hover:text-content-100"
         active-class="!text-content-100"
       >
         {{ $t('nav.main.Clans') }}
       </NuxtLink>
-    </div> -->
+    </div>
 
     <NuxtLink
       :to="{ name: 'leaderboard' }"

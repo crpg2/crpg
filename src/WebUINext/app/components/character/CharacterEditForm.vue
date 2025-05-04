@@ -19,8 +19,8 @@ const nameModel = ref<string>(character.name)
 const $v = useVuelidate(
   {
     nameModel: {
-      maxLength: maxLength()(32),
-      minLength: minLength()(2),
+      maxLength: maxLength(32),
+      minLength: minLength(2),
       required: required(),
     },
   },

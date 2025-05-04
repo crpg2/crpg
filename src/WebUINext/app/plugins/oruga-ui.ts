@@ -30,13 +30,9 @@ import FloatingVue from 'floating-vue'
 // TODO:
 // import VueSlider from 'vue-slider-component'
 
-enum NotificationType {
-  Success = 'success',
-  Warning = 'warning',
-  Danger = 'danger',
-}
+type NotificationType = 'success' | 'warning' | 'danger'
 
-const notify = (message: string, type: NotificationType = NotificationType.Success) => {
+const notify = (message: string, type: NotificationType = 'success') => {
   NotificationProgrammatic.open({
     duration: 5000,
     message,

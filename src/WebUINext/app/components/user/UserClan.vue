@@ -10,9 +10,9 @@ const { clan, clanRole } = defineProps<{
 </script>
 
 <template>
-  <!-- :to="{ name: 'ClansId', params: { id: clan.id } }" -->
   <NuxtLink
     class="group flex items-center gap-1 hover:opacity-75"
+    :to="{ name: 'clans-id', params: { id: clan.id } }"
   >
     <UiTooltip
       v-if="clanRole && [ClanMemberRole.Leader, ClanMemberRole.Officer].includes(clanRole)"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { PatchNote } from '~/models/patch-note'
 
-import { useLocaleTimeAgo } from '~/composables/use-locale-time-ago'
+import { useLocaleTimeAgo } from '~/composables/utils/use-locale-time-ago'
 
 const { patchNotes } = defineProps<{ patchNotes: PatchNote[] }>()
 

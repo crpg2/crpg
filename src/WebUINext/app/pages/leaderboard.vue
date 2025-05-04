@@ -230,7 +230,7 @@ const rowClass = (row: CharacterCompetitiveNumbered): string =>
         </OTableColumn>
 
         <template #empty>
-          <AppResultNotFound />
+          <UiResultNotFound />
         </template>
       </OTable>
     </div>
