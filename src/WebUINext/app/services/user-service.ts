@@ -1,8 +1,8 @@
-// import qs from 'qs'
 import {
   deleteUsersSelf,
   getUsersSelf,
   getUsersSelfRestriction,
+  putUsersByIdRewards,
 } from '#hey-api/sdk.gen'
 import { pick } from 'es-toolkit'
 
@@ -15,14 +15,9 @@ import type {
   UserItem,
   UserItemsByType,
   UserNotification,
-  UserPrivate,
   UserPublic,
-  UserRestriction,
   UserRestrictionPublic,
 } from '~/models/user'
-
-// import { del, get, post, put } from '~/services/crpg-client'
-// import { mapRestrictions } from '~/services/restriction-service'
 
 export const getUser = async (): Promise<User> => {
   const { data } = await getUsersSelf({ composable: '$fetch' })
@@ -30,20 +25,6 @@ export const getUser = async (): Promise<User> => {
 }
 
 export const deleteUser = () => deleteUsersSelf({ composable: '$fetch' })
-
-// export const getUserById = (id: number) => get<UserPrivate>(`/users/${id}`)
-
-// export const updateUserNote = (id: number, user: { note: string }) =>
-//   put<UserPrivate>(`/users/${id}/note`, user)
-
-// interface UserSearchQuery {
-//   name?: string
-//   platform?: Platform
-//   platformUserId?: string
-// }
-
-// export const searchUser = (payload: UserSearchQuery) =>
-//   get<UserPublic[]>(`/users/search/?${qs.stringify(payload)}`)
 
 // export const extractItemFromUserItem = (items: UserItem[]): Item[] => items.map(ui => ui.item)
 
@@ -59,11 +40,6 @@ export const deleteUser = () => deleteUsersSelf({ composable: '$fetch' })
 
 // export const reforgeUserItem = (userItemId: number) =>
 //   put<UserItem>(`/users/self/items/${userItemId}/reforge`)
-
-// export const rewardUser = (
-//   userId: number,
-//   payload: { gold: number, heirloomPoints: number, itemId: string },
-// ) => put(`/users/${userId}/rewards`, payload)
 
 // export const sellUserItem = (userItemId: number) => del(`/users/self/items/${userItemId}`)
 
@@ -91,9 +67,6 @@ export const getUserRestriction = async (): Promise<UserRestrictionPublic> => {
   const { data } = await getUsersSelfRestriction({ composable: '$fetch' })
   return data
 }
-
-// export const getUserRestrictions = async (id: number) =>
-//   mapRestrictions(await get<RestrictionWithActive[]>(`/users/${id}/restrictions`))
 
 export const mapUserToUserPublic = (user: User): UserPublic => pick(user, [
   'id',

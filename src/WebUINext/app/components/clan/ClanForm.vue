@@ -59,21 +59,6 @@ const clanFormModel = ref<Omit<Clan, 'id'>>(props.clan)
 
 const $v = useVuelidate(
   {
-    armoryTimeout: {
-      integer: integer(),
-      minValue: minValue(1),
-    },
-    bannerKey: {
-      required: required(),
-      clanBannerKeyPattern,
-      maxLength: maxLength(clanBannerKeyMaxLength),
-    },
-    description: {
-      maxLength: maxLength(clanDescriptionMaxLength),
-    },
-    discord: {
-      discordLinkPattern: discordLinkPattern(),
-    },
     name: {
       required: required(),
       maxLength: maxLength(clanNameMaxLength),
@@ -84,6 +69,21 @@ const $v = useVuelidate(
       clanTagPattern: clanTagPattern(),
       maxLength: maxLength(clanTagMaxLength),
       minLength: minLength(clanTagMinLength),
+    },
+    description: {
+      maxLength: maxLength(clanDescriptionMaxLength),
+    },
+    bannerKey: {
+      required: required(),
+      clanBannerKeyPattern: clanBannerKeyPattern(),
+      maxLength: maxLength(clanBannerKeyMaxLength),
+    },
+    discord: {
+      discordLinkPattern: discordLinkPattern(),
+    },
+    armoryTimeout: {
+      integer: integer(),
+      minValue: minValue(1),
     },
   },
   clanFormModel,
@@ -132,6 +132,7 @@ const onSubmit = async () => {
       >
         <div class="grid grid-cols-2 gap-4">
           <OField
+            :label="$t('clan.update.form.field.name')"
             v-bind="{
               ...($v.name.$error && {
                 variant: 'danger',
@@ -156,6 +157,7 @@ const onSubmit = async () => {
           </OField>
 
           <OField
+            :label="$t('clan.update.form.field.tag')"
             v-bind="{
               ...($v.tag.$error && {
                 variant: 'danger',
@@ -180,6 +182,7 @@ const onSubmit = async () => {
           </OField>
 
           <OField
+            :label="$t('clan.update.form.field.description')"
             class="col-span-2"
             v-bind="{
               ...($v.description.$error && {
@@ -191,9 +194,7 @@ const onSubmit = async () => {
           >
             <OInput
               v-model="clanFormModel.description"
-              :placeholder="`${$t('clan.update.form.field.description')} (${$t(
-                'form.field.optional',
-              )})`"
+              :placeholder="`${$t('clan.update.form.field.description')} (${$t('form.field.optional')})`"
               type="textarea"
               rows="5"
               counter

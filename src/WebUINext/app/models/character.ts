@@ -155,3 +155,11 @@ export enum CharacterEarningType {
   Exp = 'Exp',
   Gold = 'Gold',
 }
+
+export interface CharacterEarnedMetadata {
+  characterId: string
+  gameMode: string
+  experience: string
+  gold: string
+  timeEffort: string
+}

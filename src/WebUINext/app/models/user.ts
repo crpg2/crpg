@@ -97,7 +97,7 @@ export interface UserRestrictionWithActive extends UserRestriction {
 
 export interface UserRestrictionCreation {
   reason: string
-  duration: string
+  duration: number
   publicReason: string
   type: UserRestrictionType
   restrictedUserId: number
