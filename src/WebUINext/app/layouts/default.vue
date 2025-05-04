@@ -35,7 +35,7 @@ Promise.all([
         :restriction="userStore.restriction"
       />
 
-      <!-- <AppLayoutHHHeaderNotification v-if="!isHHCountdownEnded && HHEventRemaining !== 0" /> -->
+      <AppLayoutHHHeaderNotification v-if="!isHHCountdownEnded && HHEventRemaining !== 0" />
 
       <div class="flex flex-wrap items-center justify-between p-3">
         <div class="flex items-center gap-4">

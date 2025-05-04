@@ -1,12 +1,17 @@
 import type { RouteLocationNormalized } from 'vue-router'
 
+import type { Role } from '~/models/role'
+
 import { getUser } from '~/services/auth-service'
 
-const routeHasAnyRoles = (route: RouteLocationNormalized): boolean =>
-  Boolean(route.meta.roles?.length)
+const routeHasAnyRoles = (
+  route: RouteLocationNormalized,
+): boolean => Boolean(route.meta.roles?.length)
 
-const userAllowedAccess = (route: RouteLocationNormalized, role: Role): boolean =>
-  Boolean(route.meta.roles?.includes(role))
+const userAllowedAccess = (
+  route: RouteLocationNormalized,
+  role: Role,
+): boolean => Boolean(route.meta.roles?.includes(role))
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
   /*

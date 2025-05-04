@@ -19,15 +19,13 @@ definePageMeta({
   roles: SomeRole,
   middleware: [
     'clan-id-param-validate',
+    'clan-foreign-validate',
     /**
-     * @description clan and role check
+     * @description clan role check
      */
-    async (to) => {
+    () => {
       const userStore = useUserStore()
-
-      const isForeignClan = userStore.clan?.id !== Number((to as RouteLocationNormalizedLoaded<'clans-id-update'>).params.id)
-
-      if (isForeignClan || (userStore.clanMemberRole && !canUpdateClanValidate(userStore.clanMemberRole))) {
+      if (userStore.clanMemberRole && !canUpdateClanValidate(userStore.clanMemberRole)) {
         return navigateTo({ name: 'clans' })
       }
     },

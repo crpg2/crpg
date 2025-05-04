@@ -124,15 +124,15 @@ const { settings } = storeToRefs(useSettingsStore())
       {{ $t('nav.main.Leaderboard') }}
     </NuxtLink>
 
-    <!--  <NuxtLink
+    <NuxtLink
       v-if="[Role.Moderator, Role.Admin].includes(userStore.user!.role)"
-      :to="{ name: 'Moderator' }"
+      :to="{ name: 'moderator' }"
       class="text-content-300 hover:text-content-100"
       active-class="!text-content-100"
       data-aq-main-nav-link="Moderator"
     >
       {{ $t('nav.main.Moderator') }}
-    </NuxtLink> -->
+    </NuxtLink>
 
     <NuxtLink
       v-if="userStore.user && [Role.Admin].includes(userStore.user.role)"

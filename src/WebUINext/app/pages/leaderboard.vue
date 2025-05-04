@@ -145,7 +145,7 @@ const rowClass = (row: CharacterCompetitiveNumbered): string =>
             <div class="flex items-center gap-2">
               <span>{{ $t('leaderboard.table.cols.rank') }}</span>
               <UiModal closable>
-                <Tag
+                <UiTag
                   icon="help-circle"
                   rounded
                   size="lg"
