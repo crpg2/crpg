@@ -1,4 +1,4 @@
-import { usePollInterval } from '~/composables/use-poll-interval'
+import { usePollInterval } from '~/composables/utils/use-poll-interval'
 import { getGameServerStats } from '~/services/game-server-statistics-service'
 
 export const useGameServerStats = () => {
