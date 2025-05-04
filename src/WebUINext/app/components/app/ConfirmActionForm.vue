@@ -27,7 +27,7 @@ const confirmNameModel = ref<string>('')
 const $v = useVuelidate(
   {
     confirmNameModel: {
-      sameAs: sameAs()(name, name),
+      sameAs: sameAs(name, name),
     },
   },
   { confirmNameModel },

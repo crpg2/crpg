@@ -63,7 +63,7 @@ const {
           @delete="deleteNotification(notification.id)"
         />
 
-        <AppResultNotFound v-if="!isLoading && isEmpty" message="Notifications not found..." />
+        <UiResultNotFound v-if="!isLoading && isEmpty" message="Notifications not found..." />
       </div>
     </div>
   </div>

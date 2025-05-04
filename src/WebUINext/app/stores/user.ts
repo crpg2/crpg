@@ -81,7 +81,7 @@ export const useUserStore = defineStore('user', () => {
     //   isRecentUser,
     //   subtractGold,
     clan: toRef(() => user.value?.clanMembership?.clan ?? null),
-    //   clanMemberRole: toRef(() => user.value?.clanMembership?.role || null),
+    clanMemberRole: toRef(() => user.value?.clanMembership?.role || null),
     characters,
     fetchCharacters,
     activeCharacterId,

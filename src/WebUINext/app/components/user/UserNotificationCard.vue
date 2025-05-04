@@ -2,7 +2,7 @@
 import type { MetadataDict } from '~/models/metadata'
 import type { UserNotification } from '~/models/user'
 
-import { useLocaleTimeAgo } from '~/composables/use-locale-time-ago'
+import { useLocaleTimeAgo } from '~/composables/utils/use-locale-time-ago'
 import { NotificationState } from '~/models/notifications'
 
 const { notification, dict } = defineProps<{
