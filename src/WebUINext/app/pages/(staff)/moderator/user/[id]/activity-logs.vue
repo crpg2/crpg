@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import { Sort, useSort } from '~/composables/use-sort'
+import { Sort, useSort } from '~/composables/utils/use-sort'
 import { ActivityLogType } from '~/models/activity-logs'
 import { getActivityLogs } from '~/services/activity-logs-service'
 import { moderationUserKey } from '~/symbols/moderator'
 
 const props = defineProps<{ id: string }>()
 
-definePage({
-  meta: {
-    roles: ['Moderator', 'Admin'],
-  },
+definePageMeta({
   props: true,
 })
 
@@ -85,6 +82,7 @@ const additionalUsers = computed({
       },
     })
 
+    // eslint-disable-next-line ts/no-use-before-define
     fetchActivityLogs()
   },
 })
@@ -108,8 +106,8 @@ const {
     getActivityLogs({
       from: from.value,
       to: to.value,
-      type: types.value,
-      userId: [Number(props.id), ...additionalUsers.value.map(Number)],
+      types: types.value,
+      userIds: [Number(props.id), ...additionalUsers.value.map(Number)],
     }),
   {
     activityLogs: [],
@@ -158,7 +156,7 @@ fetchActivityLogs()
           </template>
           <template #popper>
             <div class="max-h-60 min-w-60 max-w-xs overflow-y-auto">
-              <DropdownItem
+              <UiDropdownItem
                 v-for="activityLogType in Object.keys(ActivityLogType)"
                 :key="activityLogType"
               >
@@ -168,7 +166,7 @@ fetchActivityLogs()
                 >
                   {{ activityLogType }}
                 </OCheckbox>
-              </DropdownItem>
+              </UiDropdownItem>
             </div>
           </template>
         </VDropdown>
@@ -227,18 +225,18 @@ fetchActivityLogs()
           @click="removeAdditionalUser(Number(additionalUserId))"
         />
 
-        <RouterLink
-          :to="{ name: 'ModeratorUserIdRestrictions', params: { id: additionalUserId } }"
+        <NuxtLink
+          :to="{ name: 'moderator-user-id-restrictions', params: { id: additionalUserId } }"
           class="inline-block hover:text-content-100"
         >
           <UserMedia
             v-if="activityLogs.dict.users.find(user => user.id === additionalUserId)"
             :user="activityLogs.dict.users.find(user => user.id === additionalUserId)!"
           />
-        </RouterLink>
+        </NuxtLink>
       </div>
 
-      <Modal
+      <UiModal
         closable
         :auto-hide="false"
         class="self-end"
@@ -255,7 +253,7 @@ fetchActivityLogs()
             <div class="pb-4 text-center text-xl text-content-100">
               {{ $t('findUser.title') }}
             </div>
-            <UserFinder>
+            <ModeratorUserFinder>
               <template #user-prepend="userData">
                 <OButton
                   size="2xs"
@@ -263,17 +261,16 @@ fetchActivityLogs()
                   :label="$t('activityLog.form.addUser')"
                   variant="secondary"
                   data-aq-activityLogs-userFinder-addUser-btn
-                  @click=" {
+                  @click="() => {
                     addAdditionalUser(userData.id);
                     hide();
-                  }
-                  "
+                  } "
                 />
               </template>
-            </UserFinder>
+            </ModeratorUserFinder>
           </div>
         </template>
-      </Modal>
+      </UiModal>
 
       <div class="ml-auto mr-0">
         <OButton
@@ -298,7 +295,7 @@ fetchActivityLogs()
       v-else
       class="flex flex-col flex-wrap gap-4"
     >
-      <ActivityLogItem
+      <ModeratorActivityLogItem
         v-for="activityLog in sortedActivityLogs"
         :key="activityLog.id"
         :activity-log="activityLog"
