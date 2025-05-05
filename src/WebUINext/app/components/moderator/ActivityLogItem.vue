@@ -40,7 +40,7 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
         {{ $d(activityLog.createdAt, 'long') }} ({{ timeAgo }})
       </div>
 
-      <Tag
+      <UiTag
         class="ml-auto mr-0"
         variant="primary"
         :label="activityLog.type"
@@ -48,7 +48,7 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
       />
     </div>
 
-    <MetadataRender
+    <AppMetadataRender
       :keypath="`activityLog.tpl.${activityLog.type}`"
       :metadata="activityLog.metadata"
       :dict
@@ -78,6 +78,6 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
           />
         </div>
       </template>
-    </MetadataRender>
+    </AppMetadataRender>
   </div>
 </template>
