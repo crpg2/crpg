@@ -9,12 +9,11 @@ const { gameServerStats, loadGameServerStats } = useGameServerStats()
 const settingsStore = useSettingsStore()
 const { HHEvent, HHEventRemaining, HHPollId, isHHCountdownEnded } = useHappyHours()
 
-Promise.all([
+await Promise.all([
   loadPatchNotes(),
   loadGameServerStats(),
   settingsStore.loadSettings(),
-
-  // userStore.fetchUserRestriction(),
+  userStore.fetchUserRestriction(),
 ])
 </script>
 

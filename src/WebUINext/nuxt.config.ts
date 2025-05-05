@@ -148,6 +148,7 @@ export default defineNuxtConfig({
     },
   },
   heyApi: {
+    autoImport: false,
     config: {
       // input: 'https://localhost:8000/swagger/v1/swagger.json',
       input: './app/swagger.json',
