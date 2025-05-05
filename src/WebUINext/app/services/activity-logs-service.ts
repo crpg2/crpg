@@ -12,7 +12,10 @@ export interface ActivityLogsPayload {
   types: ActivityLogType[]
 }
 
-interface GetActivityLogResponse { activityLogs: ActivityLog[], dict: MetadataDict }
+interface GetActivityLogResponse {
+  activityLogs: ActivityLog[]
+  dict: MetadataDict
+}
 
 export const getActivityLogs = async (
   payload: ActivityLogsPayload,

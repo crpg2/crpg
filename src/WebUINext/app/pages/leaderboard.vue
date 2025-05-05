@@ -5,8 +5,8 @@ import { useGameModeQuery } from '~/composables/use-gamemode'
 import { useRegionQuery } from '~/composables/use-region'
 import { CharacterClass } from '~/models/character'
 import { characterClassToIcon, getCompetitiveValueByGameMode } from '~/services/character-service'
-import { gameModeToIcon } from '~/services/game-mode-service'
-import { createRankTable, getLeaderBoard } from '~/services/leaderboard-service'
+import { gameModeToIcon, rankedGameModes } from '~/services/game-mode-service'
+import { getLeaderBoard } from '~/services/leaderboard-service'
 import { useUserStore } from '~/stores/user'
 
 definePageMeta({
@@ -24,7 +24,7 @@ const userStore = useUserStore()
 const route = useRoute()
 const router = useRouter()
 
-const { gameModeModel, rankedGameModes } = useGameModeQuery()
+const { gameModeModel } = useGameModeQuery()
 const { regionModel, regions } = useRegionQuery()
 
 const characterClassModel = computed<CharacterClass | undefined>({
@@ -62,8 +62,7 @@ watch(
   () => loadLeaderBoard(),
 )
 
-const rankTable = computed(() => createRankTable())
-
+const { rankTable } = useRankTable()
 const isSelfUser = (row: CharacterCompetitiveNumbered) => row.user.id === userStore.user?.id
 
 const rowClass = (row: CharacterCompetitiveNumbered): string =>
