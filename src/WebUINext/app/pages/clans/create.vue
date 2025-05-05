@@ -14,6 +14,7 @@ definePageMeta({
      */
     () => {
       const userStore = useUserStore()
+
       if (userStore.clan) {
         return navigateTo({
           name: 'clans-id',

@@ -1,16 +1,16 @@
 <script setup lang="ts">
 // import { useToggle, useTransition } from '@vueuse/core'
-// import {
-//   experienceMultiplierByGeneration,
-//   maxExperienceMultiplierForGeneration,
-//   maximumLevel,
-//   minimumRetirementLevel,
-// } from '~root/data/constants.json'
+import {
+  experienceMultiplierByGeneration,
+  maxExperienceMultiplierForGeneration,
+  maximumLevel,
+  minimumRetirementLevel,
+} from '~root/data/constants.json'
 
+import { getCharacterStatistics } from '~/services/character-service'
 // import type {
 //   HeirloomPointByLevelAggregation,
 // } from '~/services/characters-service'
-
 // import { useCharacterRespec } from '~/composables/character/use-character-respec'
 // import { useGameMode } from '~/composables/use-game-mode'
 // import { usePollInterval } from '~/composables/use-poll-interval'
@@ -35,25 +35,18 @@
 // import { notify } from '~/services/notification-service'
 // import { t } from '~/services/translate-service'
 // import { useUserStore } from '~/stores/user'
-// import {
-//   characterCharacteristicsKey,
-//   characterKey,
-//   loadCharacterStatisticsKey,
-// } from '~/symbols/character'
-// import { msToHours } from '~/utils/date'
+import {
+  // characterCharacteristicsKey,
+  characterKey,
+  // loadCharacterStatisticsKey,
+} from '~/symbols/character'
 // import { percentOf } from '~/utils/math'
 
-// definePage({
-//   meta: {
-//     roles: ['User', 'Moderator', 'Admin'],
-//   },
-// })
-
-// const userStore = useUserStore()
-
+const userStore = useUserStore()
+const route = useRoute('characters-id')
 // const { gameModes } = useGameMode()
 
-// const character = injectStrict(characterKey)
+const character = injectStrict(characterKey)
 // const { loadCharacterCharacteristics } = injectStrict(characterCharacteristicsKey)
 
 // const animatedCharacterExperience = useTransition(computed(() => character.value.experience))
@@ -89,11 +82,16 @@
 //   notify(t('character.settings.tournament.notify.success'))
 // })
 
-// const { execute: loadCharacterStatistics, state: characterStatistics } = useAsyncState(
+// TODO: FIXME: не реактивно
+const { data: characterStatistics } = await useAsyncData('character', () => getCharacterStatistics(Number(route.params.id)), {
+  watch: [() => route.params.id],
+})
+
+// const { state: characterStatistics, execute: loadCharacterStatistics } = useAsyncState(
 //   ({ id }: { id: number }) => getCharacterStatistics(id),
 //   {},
 //   {
-//     immediate: false,
+//     immediate: true,
 //     resetOnExecute: false,
 //   },
 // )
@@ -147,6 +145,301 @@
 
 <template>
   <div class="mx-auto max-w-2xl space-y-12 pb-12">
-    ddd
+    <!-- :active="respecializingCharacter || retiringCharacter" -->
+    <!-- TODO: FIXME: use global page loader, plugin -->
+    <OLoading
+      full-page
+      icon-size="xl"
+    />
+
+    <UiFormGroup
+      :label="$t('character.settings.group.overview.title')"
+      :collapsable="false"
+    >
+      <div class="space-y-6">
+        <CharacterOverview
+          :character
+          :user-experience-multiplier="userStore.user!.experienceMultiplier"
+        />
+
+        <UiDivider />
+
+        <CharacterOverviewCompetitive
+          v-if="!character.forTournament"
+          :character-statistics
+        />
+      </div>
+    </UiFormGroup>
+
+    <!--
+    <FormGroup
+      class="sticky bottom-0 bg-bg-main/50 backdrop-blur-sm"
+      icon="settings"
+      :label="$t('character.settings.group.actions.title')"
+      :collapsable="false"
+    >
+      <div class="grid grid-cols-3 gap-4">
+        <CharacterRespecButtonModal
+          :respec-capability
+          :character
+          @respec="() => onRespecializeCharacter(character.id)"
+        />
+
+        <template v-if="!character.forTournament">
+          <Modal
+            @apply-hide="
+              () => toggleRetireConfirmTooltip(false)
+            "
+          >
+            <VTooltip placement="auto">
+              <div>
+                <OButton
+                  variant="primary"
+                  outlined
+                  :disabled="!canRetire"
+                  size="xl"
+                  expanded
+                  icon-left="child"
+                  data-aq-character-action="retire"
+                  :label="$t('character.settings.retire.title')"
+                />
+              </div>
+
+              <template #popper>
+                <div class="prose prose-invert">
+                  <i18n-t
+                    v-if="!canRetire"
+                    scope="global"
+                    keypath="character.settings.retire.tooltip.requiredDesc"
+                    class="text-status-danger"
+                    tag="p"
+                  >
+                    {{ $t('character.settings.retire.tooltip.required') }}
+                    <template #requiredLevel>
+                      <span class="font-bold">{{ minimumRetirementLevel }}+</span>
+                    </template>
+                  </i18n-t>
+
+                  <h3 class="text-content-100">
+                    {{ $t('character.settings.retire.tooltip.title') }}
+                  </h3>
+
+                  <i18n-t
+                    scope="global"
+                    keypath="character.settings.retire.tooltip.descTpl"
+                  >
+                    <template #desc1>
+                      <i18n-t
+                        scope="global"
+                        keypath="character.settings.retire.tooltip.desc1"
+                        tag="p"
+                      >
+                        <template #resetLevel>
+                          <span class="font-bold text-status-danger">1</span>
+                        </template>
+                        <template #multiplierBonus>
+                          <span class="font-bold text-status-success">
+                            +{{
+                              $n(experienceMultiplierByGeneration, 'percent', {
+                                minimumFractionDigits: 0,
+                              })
+                            }}
+                          </span>
+                        </template>
+                        <template #maxMultiplierBonus>
+                          <span class="text-content-100">
+                            +{{
+                              $n(maxExperienceMultiplierForGeneration - 1, 'percent', {
+                                minimumFractionDigits: 0,
+                              })
+                            }}
+                          </span>
+                        </template>
+                      </i18n-t>
+                    </template>
+
+                    <template #desc2>
+                      <i18n-t
+                        scope="global"
+                        keypath="character.settings.retire.tooltip.desc2"
+                        tag="p"
+                      >
+                        <template #heirloom>
+                          <OIcon
+                            icon="blacksmith"
+                            size="sm"
+                            class="align-top text-primary"
+                          />
+                        </template>
+                      </i18n-t>
+                    </template>
+                  </i18n-t>
+
+                  <OTable
+                    :data="retireTableData"
+                    bordered
+                    narrowed
+                  >
+                    <OTableColumn
+                      v-slot="{ row }: { row: HeirloomPointByLevelAggregation }"
+                      field="level"
+                      :label="$t('character.settings.retire.loomPointsTable.cols.level')"
+                    >
+                      <span>{{ row.level.join(', ') }}</span>
+                    </OTableColumn>
+                    <OTableColumn field="points">
+                      <template #header>
+                        <div class="flex items-center gap-1">
+                          {{ $t('character.settings.retire.loomPointsTable.cols.loomsPoints') }}
+                          <OIcon
+                            icon="blacksmith"
+                            size="sm"
+                            class="text-primary"
+                          />
+                        </div>
+                      </template>
+
+                      <template #default="{ row }: { row: HeirloomPointByLevelAggregation }">
+                        <span>{{ row.points }}</span>
+                      </template>
+                    </OTableColumn>
+                  </OTable>
+                </div>
+              </template>
+            </VTooltip>
+
+            <template #popper="{ hide }">
+              <ConfirmActionForm
+                :name="`${character.name} - ${character.level}`"
+                :confirm-label="$t('action.apply')"
+                @cancel="hide"
+                @confirm="
+                  () => toggleRetireConfirmTooltip(true)
+                "
+              >
+                <template #title>
+                  <div class="flex flex-col items-center gap-2">
+                    <h4 class="text-xl">
+                      {{ $t('character.settings.retire.dialog.title') }}
+                    </h4>
+                    <CharacterMedia
+                      class="rounded-full border-border-300 bg-base-500/20 px-3 py-2.5 text-primary"
+                      :character="character"
+                      :is-active="character.id === userStore.user?.activeCharacterId"
+                      :for-tournament="character.forTournament"
+                    />
+                  </div>
+                </template>
+                <template #description>
+                  <p>
+                    {{ $t('character.settings.retire.dialog.desc') }}
+                  </p>
+                  <i18n-t
+                    scope="global"
+                    keypath="character.settings.retire.dialog.reward"
+                    tag="p"
+                  >
+                    <template #heirloom>
+                      <span class="inline-flex items-center text-sm font-bold text-primary">
+                        +{{ heirloomPointByLevel }}
+                        <OIcon
+                          icon="blacksmith"
+                          size="sm"
+                        />
+                      </span>
+                    </template>
+                    <template #multiplierBonus>
+                      <span class="text-sm font-bold text-status-success">
+                        +{{
+                          $n(experienceMultiplierBonus, 'percent', {
+                            minimumFractionDigits: 0,
+                          })
+                        }}
+                      </span>
+                    </template>
+                    <template #resetLevel>
+                      <span class="text-sm font-bold text-status-danger">1</span>
+                    </template>
+                  </i18n-t>
+                </template>
+              </ConfirmActionForm>
+
+              <ConfirmActionTooltip
+                :shown="shownRetireConfirmTooltip"
+                @confirm="
+                  () => {
+                    onRetireCharacter();
+                    hide();
+                  }
+                "
+              />
+            </template>
+          </Modal>
+
+          <Modal :disabled="!canSetCharacterForTournament">
+            <VTooltip placement="auto">
+              <div>
+                <OButton
+                  variant="secondary"
+                  size="xl"
+                  expanded
+                  icon-left="member"
+                  :disabled="!canSetCharacterForTournament"
+                  data-aq-character-action="forTournament"
+                  :label="$t('character.settings.tournament.title')"
+                />
+              </div>
+              <template #popper>
+                <div class="prose prose-invert">
+                  <h5 class="text-content-100">
+                    {{ $t('character.settings.tournament.tooltip.title') }}
+                  </h5>
+
+                  <i18n-t
+                    scope="global"
+                    keypath="character.settings.tournament.tooltip.desc"
+                    tag="p"
+                  >
+                    <template #tournamentLevel>
+                      <span class="text-sm font-bold text-content-100">
+                        {{ tournamentLevelThreshold }}
+                      </span>
+                    </template>
+                  </i18n-t>
+
+                  <i18n-t
+                    v-if="!canSetCharacterForTournament"
+                    scope="global"
+                    keypath="character.settings.tournament.tooltip.requiredDesc"
+                    class="text-status-danger"
+                    tag="p"
+                  >
+                    <template #requiredLevel>
+                      <span class="text-xs font-bold">{{ `<${tournamentLevelThreshold}` }}</span>
+                    </template>
+                  </i18n-t>
+                </div>
+              </template>
+            </VTooltip>
+
+            <template #popper="{ hide }">
+              <ConfirmActionForm
+                :title="$t('character.settings.tournament.dialog.title')"
+                :description="$t('character.settings.tournament.dialog.desc')"
+                :name="character.name"
+                :confirm-label="$t('action.apply')"
+                @cancel="hide"
+                @confirm="
+                  () => {
+                    onSetCharacterForTournament();
+                    hide();
+                  }
+                "
+              />
+            </template>
+          </Modal>
+        </template>
+      </div>
+    </FormGroup> -->
   </div>
 </template>

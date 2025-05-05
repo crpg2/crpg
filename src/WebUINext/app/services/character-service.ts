@@ -4,6 +4,7 @@ import {
   deleteUsersSelfCharactersById,
   getUsersByUserIdCharacters,
   getUsersSelfCharacters,
+  getUsersSelfCharactersByIdStatistics,
   putUsersSelfCharactersById,
   putUsersSelfCharactersByIdActive,
 } from '#hey-api/sdk.gen'
@@ -123,10 +124,10 @@ export const canRetireValidate = (level: number) => level >= minimumRetirementLe
 // export const retireCharacter = (characterId: number) =>
 //   put<Character>(`/users/self/characters/${characterId}/retire`)
 
-// export const getCharacterStatistics = (characterId: number) =>
-//   get<Partial<Record<GameMode, CharacterStatistics>>>(
-//     `/users/self/characters/${characterId}/statistics`,
-//   )
+export const getCharacterStatistics = async (characterId: number): Promise<Partial<Record<GameMode, CharacterStatistics>>> => {
+  const { data } = await getUsersSelfCharactersByIdStatistics({ composable: '$fetch', path: { id: characterId } })
+  return data!
+}
 
 export const getDefaultCharacterStatistics = (): CharacterStatistics => ({
   assists: 0,
@@ -702,16 +703,8 @@ export const sumExperienceMultiplierBonus = (multiplierA: number, multiplierB: n
 //   ],
 // ]
 
-// export const getCharacterKDARatio = (characterStatistics: CharacterStatistics) => {
-//   let _deaths = characterStatistics.deaths
-//   if (characterStatistics.deaths === 0) {
-//     _deaths = 1
-//   }
-
-//   return (
-//     Math.round((100 * (characterStatistics.kills + characterStatistics.assists)) / _deaths) / 100
-//   )
-// }
+export const getCharacterKDARatio = (characterStatistics: CharacterStatistics): number =>
+  Math.round((100 * (characterStatistics.kills + characterStatistics.assists)) / (characterStatistics.deaths || 1)) / 100
 
 export const characterClassToIcon: Record<CharacterClass, string> = {
   [CharacterClass.Archer]: 'item-type-bow',
