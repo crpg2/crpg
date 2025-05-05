@@ -1,15 +1,23 @@
 import {
   deleteUsersSelf,
+  deleteUsersSelfItemsById,
+  deleteUsersSelfNotificationsById,
+  deleteUsersSelfNotificationsDeleteAll,
   getUsersSelf,
+  getUsersSelfItems,
+  getUsersSelfNotifications,
   getUsersSelfRestriction,
-  putUsersByIdRewards,
+  postUsersSelfItems,
+  putUsersSelfItemsByIdReforge,
+  putUsersSelfItemsByIdRepair,
+  putUsersSelfItemsByIdUpgrade,
+  putUsersSelfNotificationsById,
+  putUsersSelfNotificationsReadAll,
 } from '#hey-api/sdk.gen'
 import { pick } from 'es-toolkit'
 
-// import type { Item } from '~/models/item'
+import type { Item } from '~/models/item'
 import type { MetadataDict } from '~/models/metadata'
-// import type { Platform } from '~/models/platform'
-// import type { PublicRestriction, RestrictionWithActive } from '~/models/restriction'
 import type {
   User,
   UserItem,
@@ -24,69 +32,78 @@ export const getUser = async (): Promise<User> => {
   return data as unknown as User // TODO: FIXME:
 }
 
-export const deleteUser = () => deleteUsersSelf({ composable: '$fetch' })
+export const mapUserToUserPublic = (user: User): UserPublic =>
+  pick(user, ['id', 'platform', 'platformUserId', 'name', 'region', 'avatar', 'clanMembership'])
 
-// export const extractItemFromUserItem = (items: UserItem[]): Item[] => items.map(ui => ui.item)
+export const deleteUser = () =>
+  deleteUsersSelf({ composable: '$fetch' })
 
-// export const getUserItems = () => get<UserItem[]>('/users/self/items')
+export const extractItemFromUserItem = (items: UserItem[]): Item[] =>
+  items.map(ui => ui.item)
 
-// export const buyUserItem = (itemId: string) => post<UserItem>('/users/self/items', { itemId })
+export const getUserItems = async (): Promise<UserItem[]> => {
+  const { data } = await getUsersSelfItems({ composable: '$fetch' })
+  return data!
+}
 
-// export const repairUserItem = (userItemId: number) =>
-//   put<UserItem>(`/users/self/items/${userItemId}/repair`)
+export const buyUserItem = (itemId: string) =>
+  postUsersSelfItems({ composable: '$fetch', body: { itemId } })
 
-// export const upgradeUserItem = (userItemId: number) =>
-//   put<UserItem>(`/users/self/items/${userItemId}/upgrade`)
+export const sellUserItem = (userItemId: number) =>
+  deleteUsersSelfItemsById({ composable: '$fetch', path: { id: userItemId } })
 
-// export const reforgeUserItem = (userItemId: number) =>
-//   put<UserItem>(`/users/self/items/${userItemId}/reforge`)
+export const repairUserItem = (userItemId: number) =>
+  putUsersSelfItemsByIdRepair({ composable: '$fetch', path: { id: userItemId } })
 
-// export const sellUserItem = (userItemId: number) => del(`/users/self/items/${userItemId}`)
+export const upgradeUserItem = (userItemId: number) =>
+  putUsersSelfItemsByIdUpgrade({ composable: '$fetch', path: { id: userItemId } })
 
-// export const groupUserItemsByType = (items: UserItem[]) =>
-//   items
-//     .reduce((itemsGroup, ui) => {
-//       const type = ui.item.type
-//       const currentGroup = itemsGroup.find(item => item.type === type)
+export const reforgeUserItem = (userItemId: number) =>
+  putUsersSelfItemsByIdReforge({ composable: '$fetch', path: { id: userItemId } })
 
-//       if (currentGroup) {
-//         currentGroup.items.push(ui)
-//       }
-//       else {
-//         itemsGroup.push({
-//           items: [ui],
-//           type,
-//         })
-//       }
+export const groupUserItemsByType = (items: UserItem[]) =>
+  items
+    .reduce((itemsGroup, ui) => {
+      const type = ui.item.type
+      const currentGroup = itemsGroup.find(item => item.type === type)
 
-//       return itemsGroup
-//     }, [] as UserItemsByType[])
-//     .sort((a, b) => a.type.localeCompare(b.type))
+      if (currentGroup) {
+        currentGroup.items.push(ui)
+      }
+      else {
+        itemsGroup.push({
+          items: [ui],
+          type,
+        })
+      }
+
+      return itemsGroup
+    }, [] as UserItemsByType[])
+    .sort((a, b) => a.type.localeCompare(b.type))
 
 export const getUserRestriction = async (): Promise<UserRestrictionPublic> => {
   const { data } = await getUsersSelfRestriction({ composable: '$fetch' })
   return data
 }
 
-export const mapUserToUserPublic = (user: User): UserPublic => pick(user, [
-  'id',
-  'platform',
-  'platformUserId',
-  'name',
-  'region',
-  'avatar',
-  'clanMembership',
-])
+interface GetUSerNotificationResponse {
+  notifications: UserNotification[]
+  dict: MetadataDict
+}
 
-export const getUserNotifications = async (): Promise<{ notifications: UserNotification[], dict: MetadataDict }> => {
+export const getUserNotifications = async (): Promise<GetUSerNotificationResponse> => {
   const { data } = await getUsersSelfNotifications({ composable: '$fetch' })
   return data!
 }
 
-export const readUserNotification = (id: number) => putUsersSelfNotificationsById({ composable: '$fetch', path: { id } })
+export const readUserNotification = (id: number) =>
+  putUsersSelfNotificationsById({ composable: '$fetch', path: { id } })
 
-export const readAllUserNotifications = () => putUsersSelfNotificationsReadAll({ composable: '$fetch' })
+export const readAllUserNotifications = () =>
+  putUsersSelfNotificationsReadAll({ composable: '$fetch' })
 
-export const deleteUserNotification = (id: number) => deleteUsersSelfNotificationsById({ composable: '$fetch', path: { id } })
+export const deleteUserNotification = (id: number) =>
+  deleteUsersSelfNotificationsById({ composable: '$fetch', path: { id } })
 
-export const deleteAllUserNotifications = () => deleteUsersSelfNotificationsDeleteAll({ composable: '$fetch' })
+export const deleteAllUserNotifications = () =>
+  deleteUsersSelfNotificationsDeleteAll({ composable: '$fetch' })

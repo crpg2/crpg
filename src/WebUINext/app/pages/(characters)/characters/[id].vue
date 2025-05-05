@@ -1,6 +1,8 @@
 <script setup lang="ts">
-// import type { CharacterCharacteristics, CharacterOverallItemsStats } from '~/models/character'
+import type { RouteLocationNormalizedLoaded } from 'vue-router'
+import type { RouteNamedMap } from 'vue-router/auto-routes'
 
+// import type { CharacterCharacteristics, CharacterOverallItemsStats } from '~/models/character'
 // import { usePollInterval } from '~/composables/use-poll-interval'
 // import { useWelcome } from '~/composables/use-welcome'
 // import {
@@ -15,26 +17,42 @@
 //   getCharacterItems,
 // } from '~/services/characters-service'
 // import { useUserStore } from '~/stores/user'
-// import {
-//   characterCharacteristicsKey,
-//   characterHealthPointsKey,
-//   characterItemsKey,
-//   characterItemsStatsKey,
-//   characterKey,
-// } from '~/symbols/character'
+import {
+  // characterCharacteristicsKey,
+  // characterHealthPointsKey,
+  // characterItemsKey,
+  // characterItemsStatsKey,
+  characterKey,
+} from '~/symbols/character'
 
-// const props = defineProps<{ id: string }>()
+const props = defineProps<{ id: string }>()
 
-// definePage({
-//   meta: {
-//     middleware: 'characterValidate',
-//     roles: ['User', 'Moderator', 'Admin'],
-//   },
-//   props: true,
-// })
+definePageMeta({
+  props: true,
+  middleware: [
+    /**
+     * @description Validate character
+     */
+    async (to) => {
+      const userStore = useUserStore()
 
-// const userStore = useUserStore()
-// const character = computed(() => userStore.characters.find(c => c.id === Number(props.id))!)
+      if (!userStore.validateCharacter(Number((to as RouteLocationNormalizedLoaded<'characters-id'>).params.id))) {
+        return navigateTo({
+          name: 'characters',
+        })
+      }
+    },
+  ],
+})
+
+const characterId = computed(() => Number(props.id))
+
+const userStore = useUserStore()
+
+// TODO: the character was validated in middleware, but still try to get rid of the "!"
+const character = computed(() => userStore.characters.find(c => c.id === characterId.value)!)
+
+provide(characterKey, character) // pass the character object further down the context, to the child pages
 
 // const { execute: loadCharacterItems, state: characterItems } = useAsyncState(
 //   ({ id }: { id: number }) => getCharacterItems(id),
@@ -76,7 +94,6 @@
 //   }
 // })
 
-// provide(characterKey, character)
 // provide(characterCharacteristicsKey, {
 //   characterCharacteristics: readonly(characterCharacteristics),
 //   loadCharacterCharacteristics,
@@ -127,59 +144,48 @@
 //   return true
 // })
 
-// const { onCloseWelcomeMessage, shownWelcomeMessage, showWelcomeMessage } = useWelcome()
-
 // await fetchPageData(character.value.id)
+
+const { onCloseWelcomeMessage, shownWelcomeMessage, showWelcomeMessage } = useWelcome()
+
+const { t } = useI18n()
+
+const links: { name: keyof RouteNamedMap, label: string }[] = [
+  {
+    name: 'characters-id',
+    label: t('character.nav.overview'),
+  },
+  {
+    name: 'characters-id-inventory',
+    label: t('character.nav.inventory'),
+  },
+  {
+    name: 'characters-id-characteristic',
+    label: t('character.nav.characteristic'),
+  },
+  {
+    name: 'characters-id-stats',
+    label: t('character.nav.stats'),
+  },
+]
 </script>
 
 <template>
   <div>
-    test
-    <!-- <Teleport to="#character-top-navbar">
+    <Teleport to="[data-teleport-target='character-navbar']" defer>
       <div class="order-2 flex items-center justify-center gap-2">
-        <RouterLink
+        <NuxtLink
+          v-for="{ name, label } in links"
+          :key="name"
           v-slot="{ isExactActive }"
-          :to="{ name: 'CharactersId', params: { id } }"
+          :to="{ name }"
         >
           <OButton
-            :variant="isExactActive ? 'transparent-active' : 'transparent'"
+            :variant="isExactActive ? 'transparent-active' : 'secondary'"
             size="lg"
-            :label="$t('character.nav.overview')"
+            :label
           />
-        </RouterLink>
-
-        <RouterLink
-          v-slot="{ isActive }"
-          :to="{ name: 'CharactersIdInventory', params: { id } }"
-        >
-          <OButton
-            :variant="isActive ? 'transparent-active' : 'transparent'"
-            size="lg"
-            :label="$t('character.nav.inventory')"
-          />
-        </RouterLink>
-
-        <RouterLink
-          v-slot="{ isActive }"
-          :to="{ name: 'CharactersIdCharacteristic', params: { id } }"
-        >
-          <OButton
-            :variant="isActive ? 'transparent-active' : 'transparent'"
-            size="lg"
-            :label="$t('character.nav.characteristic')"
-          />
-        </RouterLink>
-
-        <RouterLink
-          v-slot="{ isActive }"
-          :to="{ name: 'CharactersIdStats', params: { id } }"
-        >
-          <OButton
-            :variant="isActive ? 'transparent-active' : 'transparent'"
-            size="lg"
-            :label="$t('character.nav.stats')"
-          />
-        </RouterLink>
+        </NuxtLink>
       </div>
 
       <div class="order-3 flex items-center gap-2 place-self-end">
@@ -192,7 +198,8 @@
           icon-left="help-circle"
           @click="showWelcomeMessage"
         />
-        <RouterLink :to="{ name: 'Builder' }">
+        <!-- TODO: FIXME: to global nav -->
+        <!-- <RouterLink :to="{ name: 'Builder' }">
           <OButton
             variant="primary"
             outlined
@@ -200,15 +207,15 @@
             icon-left="calculator"
             :label="$t(`nav.main.Builder`)"
           />
-        </RouterLink>
+        </RouterLink> -->
       </div>
     </Teleport>
 
-    <RouterView />
+    <NuxtPage />
 
-    <Welcome
+    <AppWelcome
       v-if="shownWelcomeMessage"
       @close="onCloseWelcomeMessage"
-    /> -->
+    />
   </div>
 </template>

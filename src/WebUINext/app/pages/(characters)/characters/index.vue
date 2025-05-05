@@ -10,18 +10,13 @@ definePageMeta({
      */
     async () => {
       const userStore = useUserStore()
-      if (userStore.characters.length === 0) {
-        await userStore.fetchCharacters()
-      }
 
       if (userStore.activeCharacterId) {
         return navigateTo({
-          name: 'characters-id',
+          name: 'characters-id-inventory',
           params: { id: userStore.activeCharacterId },
         })
       }
-
-      return true
     },
   ],
 })

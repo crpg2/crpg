@@ -22,6 +22,7 @@ definePageMeta({
      */
     () => {
       const userStore = useUserStore()
+
       if (userStore.clanMemberRole && !canManageApplicationsValidate(userStore.clanMemberRole)) {
         return navigateTo({ name: 'clans' })
       }

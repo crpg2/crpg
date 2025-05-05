@@ -1,5 +1,4 @@
 import { GameMode } from '~/models/game-mode'
-import { rankedGameModes } from '~/services/game-mode-service'
 
 export const useGameModeQuery = () => {
   const route = useRoute()
@@ -25,6 +24,6 @@ export const useGameModeQuery = () => {
   return {
     gameModeModel,
     gameModes,
-    rankedGameModes,
+
   }
 }

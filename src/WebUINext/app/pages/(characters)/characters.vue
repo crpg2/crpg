@@ -16,10 +16,10 @@ definePageMeta({
      */
     async () => {
       const userStore = useUserStore()
+
       if (userStore.characters.length === 0) {
         await userStore.fetchCharacters()
       }
-      return true
     },
   ],
 })
