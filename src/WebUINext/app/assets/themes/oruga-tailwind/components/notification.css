@@ -27,7 +27,7 @@
 
 .o-notification__close {
   @apply absolute right-2 top-2 flex h-5 w-5 cursor-pointer items-center justify-center rounded-full;
-  @apply bg-base-300 bg-opacity-20 text-content-100;
+  @apply bg-base-300/20 text-content-100;
 }
 
 .o-notices {

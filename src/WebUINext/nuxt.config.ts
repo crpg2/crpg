@@ -1,5 +1,6 @@
 import type { Plugin } from 'vite'
 
+import tailwindcss from '@tailwindcss/vite'
 import json5 from 'json5'
 import { fileURLToPath } from 'node:url'
 
@@ -33,7 +34,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/test-utils/module',
     '@nuxt/eslint',
-    '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@hey-api/nuxt',
@@ -47,9 +47,6 @@ export default defineNuxtConfig({
       title: 'cRPG: Multiplayer Mod for Mount & Blade Bannerlord',
       htmlAttrs: {
         lang: 'en',
-      },
-      bodyAttrs: {
-        class: 'font-sans',
       },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
@@ -106,7 +103,7 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    './assets/themes/oruga-tailwind/index.css',
+    './assets/css/main.css',
   ],
   runtimeConfig: {
     public: {
@@ -138,6 +135,7 @@ export default defineNuxtConfig({
   nitro: { compressPublicAssets: true },
   vite: {
     plugins: [
+      tailwindcss(),
       JSON5(),
     ],
   },

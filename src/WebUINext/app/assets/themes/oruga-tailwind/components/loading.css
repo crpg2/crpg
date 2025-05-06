@@ -8,7 +8,7 @@
 
 .o-load__overlay {
   @apply absolute;
-  @apply inset-0 bg-base-100 bg-opacity-50;
+  @apply inset-0 bg-base-100/50;
 }
 
 .o-load__icon {
