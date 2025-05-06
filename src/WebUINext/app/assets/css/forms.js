@@ -1,8 +1,7 @@
-const plugin = require('tailwindcss/plugin')
+import plugin from 'tailwindcss/plugin'
 
-// TODO: rewrite to ts
 // ref: https://github.com/tailwindlabs/tailwindcss-forms/blob/master/src/index.js
-module.exports = plugin(({ addBase }) => {
+const forms = plugin(({ addBase }) => {
   addBase({
     [`[type = 'checkbox'], [type='radio']`]: {
       'appearance': 'none',
@@ -51,3 +50,6 @@ module.exports = plugin(({ addBase }) => {
     },
   })
 })
+
+export default forms
+// module.exports = forms

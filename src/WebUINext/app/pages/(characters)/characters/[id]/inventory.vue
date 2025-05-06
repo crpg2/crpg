@@ -396,7 +396,7 @@
           </div>
 
           <div
-            class="sticky bottom-4 left-0 z-10 flex w-full justify-center rounded-lg bg-base-200 bg-opacity-60 p-4 backdrop-blur-lg"
+            class="sticky bottom-4 left-0 z-10 flex w-full justify-center rounded-lg bg-base-200/60 p-4 backdrop-blur-lg"
             style="grid-area: footer"
           >
             <i18n-t

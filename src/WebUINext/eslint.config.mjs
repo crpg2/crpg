@@ -1,11 +1,12 @@
 // @ts-check
 import antfu from '@antfu/eslint-config'
-import tailwind from 'eslint-plugin-tailwindcss'
+// @ts-expect-error TODO:
+import tailwind from '@hyoban/eslint-plugin-tailwindcss'
+import { fileURLToPath } from 'node:url'
 
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
-  tailwind.configs['flat/recommended'],
   antfu({
     lessOpinionated: true,
     vue: true,
@@ -29,6 +30,14 @@ export default withNuxt(
       ],
     },
   }),
+  ...tailwind.configs['flat/recommended'],
+  {
+    settings: {
+      tailwindcss: {
+        config: fileURLToPath(new URL('./app/assets/css/main.css', import.meta.url)),
+      },
+    },
+  },
 ).overrideRules({
   '@typescript-eslint/no-unused-vars': ['warn'],
   'unused-imports/no-unused-vars': ['warn'],
