@@ -29,12 +29,12 @@
 
 .o-btn--loading::after {
   content: '';
-  @apply absolute inset-0 m-auto h-5 w-5 animate-spin rounded-full border-4 border-transparent  border-t-content-100;
+  @apply absolute inset-0 m-auto h-5 w-5 animate-spin rounded-full border-4 border-transparent border-t-content-100;
 }
 
 .o-btn--loading::before {
   content: '';
-  @apply absolute inset-0 block bg-black bg-opacity-25;
+  @apply absolute inset-0 block bg-black/25;
 }
 
 /* SIZES */
@@ -79,7 +79,7 @@
 }
 
 .o-btn--rounded {
-  @apply min-w-initial;
+  @apply min-w-[initial];
 }
 
 .o-btn--rounded.o-btn--xl {
@@ -117,7 +117,7 @@
 }
 
 .o-btn--primary.o-btn--disabled {
-  @apply bg-opacity-30;
+  /* @apply bg-opacity-30; */
 }
 
 /*  */
@@ -127,7 +127,7 @@
 }
 
 .o-btn--primary.o-btn--inverted-primary.o-btn--disabled {
-  @apply text-opacity-30;
+  /* @apply text-opacity-30; */
 }
 
 .o-btn--outlined-primary {
@@ -136,7 +136,7 @@
 }
 
 .o-btn--outlined-primary.o-btn--disabled {
-  @apply text-opacity-30;
+  /* @apply text-opacity-30; */
 }
 
 /*  */
@@ -179,12 +179,12 @@
 
 /*  */
 .o-btn--danger {
-  @apply bg-status-danger text-content-100 hover:bg-opacity-80;
+  /* @apply bg-status-danger text-content-100 hover:bg-opacity-80; */
 }
 
 /*  */
 .o-btn--success {
-  @apply bg-status-success text-content-100 hover:bg-opacity-80;
+  /* @apply bg-status-success text-content-100 hover:bg-opacity-80; */
 }
 
 .o-btn--success.o-btn--inverted-success {
@@ -194,9 +194,9 @@
 
 /*  */
 .o-btn--warning {
-  @apply bg-status-warning text-content-100 hover:bg-opacity-80;
+  /* @apply bg-status-warning text-content-100 hover:bg-opacity-80; */
 }
 
 .o-btn--warning.o-btn--disabled {
-  @apply bg-opacity-50 text-content-300;
+  /* @apply bg-opacity-50 text-content-300; */
 }
