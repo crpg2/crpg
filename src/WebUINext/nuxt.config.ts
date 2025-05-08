@@ -32,6 +32,7 @@ function JSON5(): Plugin {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
+    '@nuxt/ui',
     '@nuxt/test-utils/module',
     '@nuxt/eslint',
     '@pinia/nuxt',
@@ -105,6 +106,14 @@ export default defineNuxtConfig({
   css: [
     './assets/css/main.css',
   ],
+  // https://ui.nuxt.com/getting-started/installation/nuxt#options
+  ui: {
+    // TODO:
+    fonts: false,
+    theme: {
+      colors: ['primary', 'secondary', 'neutral'],
+    },
+  },
   runtimeConfig: {
     public: {
       HH: import.meta.env.NUXT_PUBLIC_HH,
@@ -193,6 +202,22 @@ export default defineNuxtConfig({
       { code: 'en', file: 'en.yml' },
       { code: 'ru', file: 'ru.yml' },
     ],
+  },
+  icon: {
+    mode: 'svg',
+    class: 'fill-current',
+    provider: 'server',
+    customCollections: [
+      {
+        prefix: 'crpg',
+        dir: './app/assets/icons',
+      },
+    ],
+    clientBundle: {
+      scan: true,
+      includeCustomCollections: true,
+      sizeLimitKb: 0,
+    },
   },
   svgIconSprite: {
     sprites: {

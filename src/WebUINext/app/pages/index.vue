@@ -23,11 +23,11 @@ Promise.all([
     <div class="relative flex h-full items-center border border-border-300 text-content-200">
       <AppPatchNotes
         v-if="patchNotes.length !== 0"
-        class="absolute left-6 top-6"
+        class="absolute top-6 left-6"
         :patch-notes="patchNotes"
       />
 
-      <div class="absolute right-6 top-6 flex items-center gap-6">
+      <div class="absolute top-6 right-6 flex items-center gap-6">
         <AppOnlinePlayers
           :game-server-stats="gameServerStats"
           show-label
@@ -61,7 +61,7 @@ Promise.all([
                   inline
                   class="w-4"
                 />
-                <div class="h-4 w-px select-none bg-border-300" />
+                <div class="h-4 w-px bg-border-300 select-none" />
                 <OIcon
                   icon="chevron-down"
                   size="lg"
@@ -72,11 +72,38 @@ Promise.all([
             </OButton>
           </template>
         </AppSwitchLanguageDropdown>
+
+        <AppSwitchLanguageDropdown>
+          <template #default="{ shown, locale }">
+            <UButton
+              size="md"
+              color="secondary"
+              variant="ghost"
+              active-variant="solid"
+              :active="shown"
+            >
+              <span>{{ locale.toUpperCase() }}</span>
+              <div class="flex items-center gap-2 ">
+                <SpriteSymbol
+                  :name="`locale/${locale}`"
+                  inline
+                  class="w-3"
+                />
+                <USeparator orientation="vertical" class="h-4" />
+                <UIcon
+                  name="crpg:chevron-down"
+                  class="size-4"
+                  :class="{ 'rotate-180': shown } "
+                />
+              </div>
+            </UButton>
+          </template>
+        </AppSwitchLanguageDropdown>
       </div>
 
       <div class="mx-auto flex flex-col items-center justify-center gap-14 md:w-1/2 2xl:w-1/3">
         <div class="space-y-6">
-          <div class="flex select-none items-center justify-center gap-6 md:gap-12">
+          <div class="flex items-center justify-center gap-6 select-none md:gap-12">
             <SpriteSymbol
               name="logo-decor"
               viewBox="0 0 108 10"
@@ -98,7 +125,7 @@ Promise.all([
           </div>
         </div>
 
-        <div class="prose prose-invert text-center">
+        <div class="prose text-center prose-invert">
           <i18n-t
             keypath="homePage.intro"
             tag="p"

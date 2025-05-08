@@ -112,8 +112,8 @@
 
 /* VARIANTS */
 .o-btn--primary {
-  @apply bg-primary text-content-600;
-  @apply hover:bg-primary-hover;
+  /* @apply bg-primary text-content-600; */
+  /* @apply hover:bg-primary-hover; */
 }
 
 .o-btn--primary.o-btn--disabled {
