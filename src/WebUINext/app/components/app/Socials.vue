@@ -1,10 +1,18 @@
 <script setup lang="ts">
+import type { ButtonProps } from '@nuxt/ui'
+
 import { useSettingsStore } from '~/stores/settings'
 
-const props = withDefaults(defineProps<{ patreonExpanded?: boolean, size?: string }>(), {
-  patreonExpanded: false,
-  size: 'xl',
-})
+const props = withDefaults(
+  defineProps<{
+    patreonExpanded?: boolean
+    size?: ButtonProps['size']
+  }>(),
+  {
+    patreonExpanded: false,
+    size: 'xl',
+  },
+)
 
 const { settings } = storeToRefs(useSettingsStore())
 
@@ -67,37 +75,36 @@ const patreonLink = computed(() => socialsLinks.value.find(l => l.id === 'patreo
 
 <template>
   <div class="flex flex-wrap items-center gap-6">
-    <template v-if="patreonExpanded">
+    <template v-if="!patreonExpanded">
       <div v-html="$t('patreon')" />
 
-      <OButton
-        variant="secondary"
-        :size="size"
-        outlined
-        tag="a"
-        :icon-left="patreonLink.icon"
-        :href="patreonLink.href"
-        target="_blank"
+      <UButton
         label="Patreon"
+        color="secondary"
+        variant="outline"
+        :size
+        :trailing-icon="`crpg:${patreonLink.icon}`"
+        :to="patreonLink.href"
+        target="_blank"
       />
-
-      <div class="h-8 w-px select-none bg-border-200" />
+      <USeparator orientation="vertical" class="h-8" />
     </template>
 
     <div class="flex flex-wrap items-center gap-4">
-      <OButton
+      <UTooltip
         v-for="social in links"
         :key="social.id"
-        v-tooltip.bottom="social.title"
-        variant="secondary"
-        :size="size"
-        outlined
-        rounded
-        tag="a"
-        :icon-left="social.icon"
-        :href="social.href"
-        target="_blank"
-      />
+        :text="social.title"
+      >
+        <UButton
+          color="secondary"
+          variant="outline"
+          :size
+          :trailing-icon="`crpg:${social.icon}`"
+          :to="social.href"
+          target="_blank"
+        />
+      </UTooltip>
     </div>
   </div>
 </template>
