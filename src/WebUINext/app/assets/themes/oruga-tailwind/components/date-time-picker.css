@@ -77,11 +77,11 @@
 }
 
 .o-dpck__table__cell--selectable {
-  @apply text-content-200 hover:bg-primary hover:text-content-100;
+  /* @apply text-content-200 hover:bg-primary hover:text-content-100; */
 }
 
 .o-dpck__table__cell--selected {
-  @apply bg-primary-hover text-content-100 hover:bg-primary-hover;
+  /* @apply bg-primary-hover text-content-100 hover:bg-primary-hover; */
 }
 
 .o-dtpck__time {

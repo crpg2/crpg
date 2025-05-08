@@ -14,12 +14,18 @@ const animatedPlayingCount = useTransition(() => gameServerStats.total.playingCo
 </script>
 
 <template>
-  <VTooltip :disabled="gameServerStats === null || Object.keys(gameServerStats.regions).length === 0">
-    <div class="flex select-none items-center gap-1.5 hover:text-content-100">
-      <FontAwesomeLayers class="fa-lg">
-        <FontAwesomeIcon class="text-[#53BC96]" :icon="['crpg', 'online']" />
-        <FontAwesomeIcon class="animate-ping text-[#53BC96] text-opacity-15" :icon="['crpg', 'online-ring']" />
-      </FontAwesomeLayers>
+  <UPopover
+    arrow
+    mode="hover"
+    :open-delay="300"
+    :close-delay="100"
+    :disabled="gameServerStats === null || Object.keys(gameServerStats.regions).length === 0"
+  >
+    <div class="flex items-center gap-1.5 select-none hover:text-content-100">
+      <div class="relative size-6">
+        <UIcon name="crpg:online" class="absolute inset-0 size-full text-[#53BC96]" />
+        <UIcon name="crpg:online-ring" class="absolute inset-0 size-full animate-ping text-[#53BC96]/50" />
+      </div>
 
       <div v-if="showLabel" data-aq-online-players-count>
         {{ $t('onlinePlayers.format', { count: $n(Number(animatedPlayingCount.toFixed(0))) }) }}
@@ -29,8 +35,8 @@ const animatedPlayingCount = useTransition(() => gameServerStats.total.playingCo
       </div>
     </div>
 
-    <template #popper>
-      <div class="prose prose-invert space-y-5">
+    <template #content>
+      <div class="prose space-y-5 p-4 prose-invert">
         <h5 class="text-content-100">
           {{ $t('onlinePlayers.tooltip.title') }}
         </h5>
@@ -60,5 +66,5 @@ const animatedPlayingCount = useTransition(() => gameServerStats.total.playingCo
         </div>
       </div>
     </template>
-  </VTooltip>
+  </UPopover>
 </template>

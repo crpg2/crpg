@@ -27,7 +27,7 @@
 }
 
 .o-switch__check--checked {
-  @apply bg-primary hover:bg-primary-hover;
+  /* @apply bg-primary hover:bg-primary-hover; */
 }
 
 .o-switch__check--checked .o-switch__check-switch {

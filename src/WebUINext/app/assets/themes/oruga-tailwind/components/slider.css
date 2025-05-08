@@ -13,7 +13,7 @@
 }
 
 .vue-slider .vue-slider-dot-handle {
-  @apply rotate-45 transform select-none rounded-sm border-2 border-bg-main bg-primary hover:bg-primary-hover;
+  /* @apply rotate-45 transform select-none rounded-sm border-2 border-bg-main bg-primary hover:bg-primary-hover; */
 }
 
 .vue-slider .vue-slider-mark-label {
