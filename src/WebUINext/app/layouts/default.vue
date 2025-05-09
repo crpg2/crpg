@@ -49,7 +49,7 @@ await Promise.all([
 
           <AppOnlinePlayers :game-server-stats="gameServerStats" />
 
-          <UiDivider inline />
+          <USeparator orientation="vertical" class="h-6" />
 
           <AppLayoutMainNavigation :latest-patch="patchNotes[0]" />
         </div>

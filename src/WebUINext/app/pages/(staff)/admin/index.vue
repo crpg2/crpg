@@ -24,24 +24,22 @@ const {
 </script>
 
 <template>
-  <div class="container">
-    <div class="mx-auto py-12">
-      <h1 class="mb-14 text-center text-xl text-content-100">
-        {{ $t('nav.main.Admin') }}
-      </h1>
+  <UContainer class="py-12">
+    <h1 class="mb-14 text-center text-xl text-content-100">
+      {{ $t('nav.main.Admin') }}
+    </h1>
 
-      <OLoading
-        v-if="settingStore.isLoadingSettings"
-        active
-        icon-size="xl"
-      />
+    <OLoading
+      :active="settingStore.isLoadingSettings"
+      icon-size="xl"
+    />
 
-      <AdminSettingsForm
-        :settings="settingStore.settings"
-        :loading="editingSetting"
-        @reset="settingStore.loadSettings"
-        @submit="onEditSettings"
-      />
-    </div>
-  </div>
+    <AdminSettingsForm
+      class="mx-auto xl:w-1/2"
+      :settings="settingStore.settings"
+      :loading="editingSetting"
+      @reset="settingStore.loadSettings"
+      @submit="onEditSettings"
+    />
+  </UContainer>
 </template>

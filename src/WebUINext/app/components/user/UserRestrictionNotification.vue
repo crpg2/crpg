@@ -9,7 +9,7 @@ const props = defineProps<{
 }>()
 
 const joinRestrictionRemainingDuration = computed(() =>
-  parseTimestamp(computeLeftMs(props.restriction.createdAt, props.restriction.duration)),
+  parseTimestamp(computeLeftMs(props.restriction.createdAt, Number(props.restriction.duration))),
 )
 
 const { settings } = storeToRefs(useSettingsStore())
@@ -20,42 +20,49 @@ const { settings } = storeToRefs(useSettingsStore())
     class="flex items-center justify-center gap-3 bg-status-danger px-8 py-1.5 text-center text-content-100"
   >
     {{ $t('user.restriction.notification', {
-      duration: $t('dateTimeFormat.dd:hh:mm', { ...joinRestrictionRemainingDuration }),
+      duration: $t('dateTimeFormat.dd:hh:mm', joinRestrictionRemainingDuration),
     }) }}
 
-    <div class="h-4 w-px select-none bg-base-600/30" />
+    <USeparator
+      orientation="vertical" class="h-4"
+      :ui="{ border: 'border-base-600/30' }"
+    />
 
-    <UiModal closable>
+    <UModal
+      :close="{
+        size: 'sm',
+        color: 'secondary',
+        variant: 'solid',
+      }"
+    >
       <span class="cursor-pointer underline hover:no-underline">{{ $t('action.readMore') }}</span>
 
-      <template #popper>
-        <div class="max-w-xl space-y-6 overflow-y-auto py-10">
-          <div class="space-y-6 px-12">
-            <i18n-t
-              scope="global"
-              keypath="user.restriction.notification"
-              tag="div"
-              class="text-center text-lg font-bold text-status-danger"
-            >
-              <template #duration>
-                {{ $t('dateTimeFormat.dd:hh:mm', { ...joinRestrictionRemainingDuration }) }}
-              </template>
-            </i18n-t>
+      <template #title>
+        <i18n-t
+          scope="global"
+          keypath="user.restriction.notification"
+          tag="div"
+          class="text-center text-lg font-bold text-status-danger"
+        >
+          <template #duration>
+            {{ $t('dateTimeFormat.dd:hh:mm', joinRestrictionRemainingDuration) }}
+          </template>
+        </i18n-t>
+      </template>
 
-            <UiDivider />
-
-            <div class="prose prose-invert">
-              <h5>Reason:</h5>
-              <p>
-                {{ restriction.reason }}
-              </p>
-            </div>
+      <template #body>
+        <div class="space-y-4">
+          <div class="prose prose-invert">
+            <h5>Reason:</h5>
+            <p>
+              {{ restriction.reason }}
+            </p>
           </div>
 
-          <UiDivider />
+          <USeparator />
 
-          <div class="prose prose-invert px-12">
-            <p class="">
+          <div class="prose prose-invert">
+            <p>
               {{ $t('user.restriction.guide.intro') }}
             </p>
 
@@ -91,16 +98,16 @@ const { settings } = storeToRefs(useSettingsStore())
               <li>{{ $t('user.restriction.guide.step.follow') }}</li>
             </ol>
           </div>
-
-          <UiDivider />
-
-          <div class="px-12">
-            <p class="text-content-400">
-              {{ $t('user.restriction.guide.outro') }}
-            </p>
-          </div>
         </div>
       </template>
-    </UiModal>
+
+      <template #footer>
+        <div class="prose prose-invert">
+          <p class="text-content-400">
+            {{ $t('user.restriction.guide.outro') }}
+          </p>
+        </div>
+      </template>
+    </UModal>
   </div>
 </template>

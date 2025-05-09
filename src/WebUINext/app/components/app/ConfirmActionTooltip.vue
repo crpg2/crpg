@@ -1,46 +1,45 @@
 <script setup lang="ts">
-const { disabled = false } = defineProps<{
+defineProps<{
   title?: string
   confirmLabel?: string
-  disabled?: boolean
 }>()
 
 defineEmits<{
   cancel: []
   confirm: []
 }>()
+
+const [open, toggle] = useToggle()
 </script>
 
 <template>
-  <VTooltip :triggers="['click']" :disabled>
+  <UPopover v-model:open="open" :ui="{ content: 'w-64' }">
     <slot />
-    <template #popper="{ hide }">
+    <template #content>
       <div class="space-y-3">
         <div>{{ title ?? $t('confirmAction') }}</div>
-
         <div class="flex items-center gap-2">
-          <OButton
-            variant="success"
-            size="2xs"
-            icon-left="check"
+          <UButton
+            size="xs"
+            icon="crpg:check"
             :label="confirmLabel ?? $t('action.confirm')"
             @click="() => {
-              $emit('confirm');
-              hide();
+              $emit('confirm')
+              toggle(false)
             }"
           />
-          <OButton
-            variant="danger"
-            size="2xs"
-            icon-left="close"
+          <UButton
+            variant="soft"
+            size="xs"
+            icon="crpg:close"
             :label="$t('action.cancel')"
             @click="() => {
-              $emit('cancel');
-              hide();
+              $emit('cancel')
+              toggle(false)
             }"
           />
         </div>
       </div>
     </template>
-  </VTooltip>
+  </UPopover>
 </template>

@@ -75,7 +75,7 @@ const patreonLink = computed(() => socialsLinks.value.find(l => l.id === 'patreo
 
 <template>
   <div class="flex flex-wrap items-center gap-6">
-    <template v-if="!patreonExpanded">
+    <template v-if="patreonExpanded">
       <div v-html="$t('patreon')" />
 
       <UButton
@@ -96,14 +96,16 @@ const patreonLink = computed(() => socialsLinks.value.find(l => l.id === 'patreo
         :key="social.id"
         :text="social.title"
       >
-        <UButton
-          color="secondary"
-          variant="outline"
-          :size
-          :trailing-icon="`crpg:${social.icon}`"
-          :to="social.href"
-          target="_blank"
-        />
+        <div>
+          <UButton
+            color="secondary"
+            variant="outline"
+            :size
+            :trailing-icon="`crpg:${social.icon}`"
+            :to="social.href"
+            target="_blank"
+          />
+        </div>
       </UTooltip>
     </div>
   </div>

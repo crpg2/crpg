@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import type { DropdownMenuItem } from '@nuxt/ui'
+
 import { useTransition } from '@vueuse/core'
 
 import type { User } from '~/models/user'
 
+import { Role } from '~/models/role'
 import { logout } from '~/services/auth-service'
 import { mapUserToUserPublic } from '~/services/user-service'
 
@@ -10,24 +13,75 @@ const { user } = defineProps<{
   user: User
 }>()
 
+const userStore = useUserStore()
+
 const animatedUserGold = useTransition(() => user.gold)
+const { t, locale, availableLocales, setLocale } = useI18n()
+
+const items = computed<DropdownMenuItem[][]>(() => [
+  [
+    {
+      label: `${t('setting.language')} | ${locale.value.toUpperCase()}`,
+      icon: `crpg:${locale.value}`,
+      children: availableLocales.map(l => ({
+        label: t(`locale.${l}`),
+        type: 'checkbox' as const,
+        icon: `crpg:${l}`,
+        checked: l === locale.value,
+        onUpdateChecked() {
+          setLocale(l)
+        },
+      })),
+    },
+    {
+      label: t('setting.notifications'),
+      icon: 'crpg:carillon',
+      to: { name: 'notifications' },
+      slot: 'notifications' as const,
+    },
+    {
+      label: t('setting.settings'),
+      icon: 'crpg:settings',
+      to: { name: 'settings' },
+    },
+  ],
+  [
+    ...([Role.Moderator, Role.Admin].includes(userStore.user!.role))
+      ? [
+          {
+            label: t('nav.main.Moderator'),
+            to: { name: 'moderator' },
+          },
+        ]
+      : [],
+    ...([Role.Admin].includes(userStore.user!.role))
+      ? [
+          {
+            label: t('nav.main.Admin'),
+            to: { name: 'admin' },
+          },
+        ]
+      : [],
+  ],
+  [
+    {
+      label: t('setting.logout'),
+      icon: 'crpg:logout',
+      onSelect: logout,
+    },
+  ],
+])
 </script>
 
 <template>
   <div class="flex items-center gap-3">
-    <AppCoin
-      v-tooltip.bottom="$t('user.field.gold')"
-      :value="Number(animatedUserGold.toFixed(0))"
-    />
+    <AppCoin :value="Number(animatedUserGold.toFixed(0))" />
 
-    <UiDivider inline />
+    <USeparator orientation="vertical" class="h-6" />
 
-    <AppLoom
-      v-tooltip.bottom="$t('user.field.heirloom')"
-      :point="user.heirloomPoints"
-    />
+    <AppLoom :point="user.heirloomPoints" />
 
-    <UiDivider inline />
+    <USeparator orientation="vertical" class="h-6" />
 
     <UserMedia
       :user="mapUserToUserPublic(user)"
@@ -35,74 +89,33 @@ const animatedUserGold = useTransition(() => user.gold)
       size="xl"
     />
 
-    <UiDivider inline />
+    <USeparator orientation="vertical" class="h-6" />
 
-    <VDropdown placement="bottom-end">
-      <template #default="{ shown }">
-        <OButton :variant="shown ? 'transparent-active' : 'transparent'" size="sm" rounded>
-          <FontAwesomeLayers full-width class="fa-2x">
-            <FontAwesomeIcon :icon="['crpg', 'dots']" />
-            <FontAwesomeLayersText
-              v-if="user.unreadNotificationsCount"
-              counter
-              value="●"
-              position="top-right"
-              :style="{ '--fa-counter-background-color': 'rgba(83, 188, 150, 1)' }"
-            />
-          </FontAwesomeLayers>
-        </OButton>
-      </template>
-
-      <template #popper="{ hide }">
-        <AppSwitchLanguageDropdown
-          v-slot="{ shown, locale }"
-          placement="left-start"
-        >
-          <UiDropdownItem :active="shown">
-            <SpriteSymbol
-              :key="locale"
-              :name="`locale/${locale}`"
-              viewBox="0 0 18 18"
-              inline
-              class="w-4"
-            />
-            {{ $t('setting.language') }} | {{ locale.toUpperCase() }}
-          </UiDropdownItem>
-        </AppSwitchLanguageDropdown>
-
-        <UiDropdownItem
-          :link="{ to: { name: 'notifications' } }"
-          @click="hide"
-        >
-          <FontAwesomeLayers full-width class="fa-sm">
-            <FontAwesomeIcon :icon="['crpg', 'carillon']" />
-            <FontAwesomeLayersText
-              v-if="user.unreadNotificationsCount"
-              counter
-              value="●"
-              position="top-right"
-              :style="{ '--fa-counter-background-color': 'rgba(83, 188, 150, 1)' }"
-            />
-          </FontAwesomeLayers>
-          <div>{{ $t('setting.notifications') }}</div>
-        </UiDropdownItem>
-
-        <UiDropdownItem
-          :link="{ to: { name: 'settings' } }"
-          icon="settings"
-          :label="$t('setting.settings')"
-          @click="hide"
+    <UDropdownMenu :items :modal="false">
+      <UChip
+        :show="Boolean(user.unreadNotificationsCount)"
+        color="secondary"
+        inset
+        size="xl"
+        :ui="{ base: 'bg-[#53bc96]' }"
+      >
+        <UButton
+          size="md"
+          color="secondary"
+          icon="crpg:dots"
         />
+      </UChip>
 
-        <UiDropdownItem
-          icon="logout"
-          :label="$t('setting.logout')"
-          @click="() => {
-            hide();
-            logout();
-          }"
-        />
+      <template #notifications-leading>
+        <UChip
+          :show="Boolean(user.unreadNotificationsCount)"
+          color="secondary"
+          inset
+          :ui="{ base: 'bg-[#53bc96]' }"
+        >
+          <UIcon name="crpg:carillon" class="size-[1.125rem]" />
+        </UChip>
       </template>
-    </VDropdown>
+    </UDropdownMenu>
   </div>
 </template>
