@@ -28,15 +28,21 @@ const animatedPlayingCount = useTransition(() => gameServerStats.total.playingCo
       </div>
 
       <div v-if="showLabel" data-aq-online-players-count>
-        {{ $t('onlinePlayers.format', { count: $n(Number(animatedPlayingCount.toFixed(0))) }) }}
+        {{ $t('onlinePlayers.format', {
+          count: $n(Number(animatedPlayingCount.toFixed(0))),
+        }) }}
       </div>
-      <div v-else class="w-8" data-aq-online-players-count>
+      <div
+        v-else
+        class="w-8"
+        data-aq-online-players-count
+      >
         {{ $n(Number(animatedPlayingCount.toFixed(0))) }}
       </div>
     </div>
 
     <template #content>
-      <div class="prose space-y-5 p-4 prose-invert">
+      <div class="prose space-y-5 prose-invert">
         <h5 class="text-content-100">
           {{ $t('onlinePlayers.tooltip.title') }}
         </h5>

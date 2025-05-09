@@ -8,7 +8,7 @@ const props = defineProps<{
   loading: boolean
 }>()
 
-const emit = defineEmits<{
+defineEmits<{
   submit: [settings: Settings]
   reset: []
 }>()
@@ -20,44 +20,46 @@ watch(() => props.settings, () => {
 </script>
 
 <template>
-  <UiFormGroup
+  <UCard
     label="Settings"
     icon="settings"
-    class="relative mx-auto w-1/2"
   >
-    <div class="mb-8 space-y-8">
-      <OField v-for="(_, key) in settingModel" :key="key" :label="capitalize(key)">
-        <OInput
+    <div class="space-y-6">
+      <UFormField
+        v-for="(_, key) in settingModel" :key
+        :label="capitalize(key)"
+      >
+        <UInput
           v-model="settingModel[key]"
-          :placeholder="key"
           type="text"
-          expanded
+          color="secondary"
+          variant="outline"
           size="lg"
+          class="w-full"
         />
-      </OField>
+      </UFormField>
     </div>
 
-    <div class="sticky bottom-0 flex items-center justify-center gap-4 bg-bg-main/50 py-4 backdrop-blur-sm">
-      <OButton
-        variant="primary"
-        size="lg"
-        outlined
-        :label="$t('action.reset')"
-        @click="emit('reset')"
-      />
-      <AppConfirmActionTooltip
-        class="inline"
-        :confirm-label="$t('action.ok')"
-        title="Are you sure you want to remove the setting?"
-        @confirm="emit('submit', settingModel)"
-      >
-        <OButton
-          variant="primary"
+    <template #footer>
+      <div class="flex items-center justify-center gap-4">
+        <UButton
+          variant="outline"
           size="lg"
-          :loading="loading"
-          :label="$t('action.save')"
+          :label="$t('action.reset')"
+          @click="$emit('reset')"
         />
-      </AppConfirmActionTooltip>
-    </div>
-  </UiFormGroup>
+        <AppConfirmActionTooltip
+          :confirm-label="$t('action.ok')"
+          title="Are you sure you want to remove the setting?"
+          @confirm="$emit('submit', settingModel)"
+        >
+          <UButton
+            size="lg"
+            :loading
+            :label="$t('action.save')"
+          />
+        </AppConfirmActionTooltip>
+      </div>
+    </template>
+  </UCard>
 </template>

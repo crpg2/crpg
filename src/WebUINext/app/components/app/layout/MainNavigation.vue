@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { PatchNote } from '~/models/patch-note'
 
-import { Role } from '~/models/role'
 import { useSettingsStore } from '~/stores/settings'
 import { useUserStore } from '~/stores/user'
 
@@ -14,67 +13,71 @@ const { settings } = storeToRefs(useSettingsStore())
 <template>
   <nav class="flex items-center gap-5">
     <div class="flex items-center rounded-full border border-border-200 hover:border-border-300">
-      <OButton
+      <UTooltip
         v-if="latestPatch"
-        v-tooltip.bottom="$t('patchNotes.latestPatch')"
-        variant="primary"
-        class="cursor-pointer"
-        size="sm"
-        inverted
-        tag="a"
-        icon-left="trumpet"
-        :href="latestPatch.url"
-        target="_blank"
+        :text="$t('patchNotes.latestPatch')"
       >
-        <UiTag
-          variant="primary"
-          :label="latestPatch.tagName"
-        />
-      </OButton>
+        <UButton
+          size="sm"
+          variant="ghost"
+          icon="crpg:trumpet"
+          :to="latestPatch.url"
+          target="_blank"
+        >
+          <UBadge
+            :label="latestPatch.tagName"
+            size="xs"
+            variant="soft"
+          />
+        </UButton>
+      </UTooltip>
 
-      <OButton
-        v-tooltip.bottom="$t('nav.main.Community')"
-        variant="primary"
-        size="sm"
-        inverted
-        rounded
-        tag="a"
-        icon-left="discord"
-        :href="settings.discord"
-        target="_blank"
-      />
+      <UTooltip
+        :text="$t('nav.main.Community')"
+      >
+        <UButton
+          size="sm"
+          variant="ghost"
+          icon="crpg:discord"
+          :to="settings.discord"
+          target="_blank"
+        />
+      </UTooltip>
 
       <AppInstallationGuide>
-        <OButton
-          v-tooltip.bottom="$t('nav.main.Installation')"
-          variant="primary"
-          inverted
-          rounded
-          size="sm"
-          icon-left="download"
-        />
+        <UTooltip
+          :text="$t('nav.main.Installation')"
+        >
+          <UButton
+            size="sm"
+            variant="ghost"
+            icon="crpg:download"
+          />
+        </UTooltip>
       </AppInstallationGuide>
 
-      <NuxtLink :to="{ name: 'help' }">
-        <OButton
-          v-tooltip.bottom="$t('help.title')"
-          variant="primary"
-          size="sm"
-          inverted
-          rounded
-          icon-left="help-circle"
-        />
-      </NuxtLink>
+      <!-- TODO: FIXME: create issue -->
+      <UTooltip
+        :text="$t('help.title')"
+      >
+        <div>
+          <UButton
+            size="sm"
+            variant="ghost"
+            icon="crpg:help-circle"
+            :to="{ name: 'help' }"
+          />
+        </div>
+      </UTooltip>
     </div>
 
-    <NuxtLink
+    <ULink
       v-if="userStore.user"
       :to="{ name: 'characters' }"
-      class="text-content-300 hover:text-content-100"
-      active-class="!text-content-100"
+      active-class="text-content-100"
     >
       {{ $t('nav.main.Characters') }}
-    </NuxtLink>
+    </ULink>
 
     <!--  <NuxtLink
       :to="{ name: 'Shop' }"
@@ -83,65 +86,44 @@ const { settings } = storeToRefs(useSettingsStore())
     >
       {{ $t('nav.main.Shop') }}
     </NuxtLink> -->
+
     <div class="flex items-center gap-1.5">
-      <VTooltip
+      <UTooltip
         v-if="!userStore.clan"
         data-aq-main-nav-link-tooltip="Explanation"
+        :ui="{ content: 'w-72' }"
       >
-        <UiTag
-          icon="tag"
-          variant="primary"
-          rounded
+        <UBadge
+          icon="crpg:tag"
+          variant="soft"
           size="sm"
         />
-        <template #popper>
+        <template #content>
           <div
             class="prose prose-invert"
             v-html="$t('clanBalancingExplanation')"
           />
         </template>
-      </VTooltip>
+      </UTooltip>
 
-      <NuxtLink
+      <ULink
         :to="{ name: 'clans' }"
-        class="text-content-300 hover:text-content-100"
-        active-class="!text-content-100"
+        active-class="text-content-100"
       >
         {{ $t('nav.main.Clans') }}
-      </NuxtLink>
+      </ULink>
     </div>
 
-    <NuxtLink
+    <ULink
       :to="{ name: 'leaderboard' }"
-      class="inline-flex items-center gap-1.5 text-content-300 hover:text-content-100"
-      active-class="!text-content-100"
+      class="flex gap-1.5"
+      active-class="text-content-100"
     >
-      <OIcon
-        icon="trophy-cup"
-        size="xl"
-        class="text-more-support"
+      <UIcon
+        name="crpg:trophy-cup"
+        class="size-6 text-more-support"
       />
       {{ $t('nav.main.Leaderboard') }}
-    </NuxtLink>
-
-    <NuxtLink
-      v-if="[Role.Moderator, Role.Admin].includes(userStore.user!.role)"
-      :to="{ name: 'moderator' }"
-      class="text-content-300 hover:text-content-100"
-      active-class="!text-content-100"
-      data-aq-main-nav-link="Moderator"
-    >
-      {{ $t('nav.main.Moderator') }}
-    </NuxtLink>
-
-    <NuxtLink
-      v-if="userStore.user && [Role.Admin].includes(userStore.user.role)"
-      :to="{ name: 'admin' }"
-      class="text-content-300 hover:text-content-100"
-      active-class="!text-content-100"
-      data-aq-main-nav-link="Admin"
-    >
-      {{ $t('nav.main.Admin') }}
-    </NuxtLink>
+    </ULink>
   </nav>
 </template>

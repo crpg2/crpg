@@ -46,58 +46,17 @@ Promise.all([
           {{ $t('nav.main.Leaderboard') }}
         </NuxtLink>
 
-        <AppSwitchLanguageDropdown>
-          <template #default="{ shown, locale }">
-            <OButton
-              :variant="shown ? 'transparent-active' : 'transparent'"
-              size="sm"
-            >
-              <span class="text-xs font-normal">{{ locale.toUpperCase() }}</span>
-              <div class="flex items-center gap-2.5">
-                <SpriteSymbol
-                  :key="locale"
-                  :name="`locale/${locale}`"
-                  viewBox="0 0 18 18"
-                  inline
-                  class="w-4"
-                />
-                <div class="h-4 w-px bg-border-300 select-none" />
-                <OIcon
-                  icon="chevron-down"
-                  size="lg"
-                  :rotation="shown ? 180 : 0"
-                  class="text-content-400"
-                />
-              </div>
-            </OButton>
-          </template>
-        </AppSwitchLanguageDropdown>
-
-        <AppSwitchLanguageDropdown>
-          <template #default="{ shown, locale }">
-            <UButton
-              size="md"
-              color="secondary"
-              variant="ghost"
-              active-variant="solid"
-              :active="shown"
-            >
-              <span>{{ locale.toUpperCase() }}</span>
-              <div class="flex items-center gap-2 ">
-                <SpriteSymbol
-                  :name="`locale/${locale}`"
-                  inline
-                  class="w-3"
-                />
-                <USeparator orientation="vertical" class="h-4" />
-                <UIcon
-                  name="crpg:chevron-down"
-                  class="size-4"
-                  :class="{ 'rotate-180': shown } "
-                />
-              </div>
-            </UButton>
-          </template>
+        <AppSwitchLanguageDropdown v-slot="{ open, locale }">
+          <UButton
+            size="lg"
+            color="secondary"
+            variant="ghost"
+            :leading-icon="`crpg:${locale}`"
+            :trailing-icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'"
+            active-variant="solid"
+            :active="open"
+            :label="locale.toUpperCase()"
+          />
         </AppSwitchLanguageDropdown>
       </div>
 
@@ -157,7 +116,14 @@ Promise.all([
 
         <div class="flex justify-center gap-4">
           <AppLogin />
-          <AppInstallationGuide />
+          <AppInstallationGuide>
+            <UButton
+              color="secondary"
+              size="xl"
+              icon="crpg:download"
+              :label="$t('installation.title')"
+            />
+          </AppInstallationGuide>
         </div>
 
         <AppSocials class="absolute bottom-6 left-6" />
