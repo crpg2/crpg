@@ -1,48 +1,42 @@
 <script setup lang="ts">
+import type { DropdownMenuItem } from '@nuxt/ui'
+
 import { useI18n } from 'vue-i18n'
 
 defineSlots<{
   default: (
     props: {
-      shown: boolean
+      open: boolean
       locale: typeof locale.value
     }
   ) => any
 }>()
 
 const { locale, availableLocales, setLocale } = useI18n()
+
+const { t } = useI18n()
+
+const items = computed(() =>
+  availableLocales.map(l => ({
+    label: t(`locale.${l}`),
+    type: 'checkbox' as const,
+    icon: `crpg:${l}`,
+    checked: l === locale.value,
+    onUpdateChecked() {
+      setLocale(l)
+    },
+  })) satisfies DropdownMenuItem[],
+)
 </script>
 
 <template>
-  <VDropdown
-    :triggers="['click']"
-    placement="bottom-end"
+  <UDropdownMenu
+    size="lg"
+    :modal="false"
+    :items
   >
-    <template #default="{ shown }">
-      <slot v-bind="{ shown: shown as boolean, locale }" />
+    <template #default="{ open }">
+      <slot v-bind="{ open, locale }" />
     </template>
-
-    <template #popper="{ hide }">
-      <UiDropdownItem
-        v-for="availableLocale in availableLocales"
-        :key="availableLocale"
-        :checked="availableLocale === locale"
-        data-aq-switch-lang-item
-        @click="
-          () => {
-            setLocale(availableLocale)
-            hide();
-          }
-        "
-      >
-        <SpriteSymbol
-          :name="`locale/${availableLocale}`"
-          viewBox="0 0 18 18"
-          inline
-          class="w-4"
-        />
-        {{ $t(`locale.${availableLocale}`) }}
-      </UiDropdownItem>
-    </template>
-  </VDropdown>
+  </UDropdownMenu>
 </template>

@@ -15,11 +15,11 @@ export default defineAppConfig({
       check: 'crpg:check',
       // chevronDoubleLeft: 'i-lucide-chevrons-left',
       // chevronDoubleRight: 'i-lucide-chevrons-right',
-      // chevronDown: 'i-lucide-chevron-down',
-      // chevronLeft: 'i-lucide-chevron-left',
-      // chevronRight: 'i-lucide-chevron-right',
-      // chevronUp: 'i-lucide-chevron-up',
-      // close: 'i-lucide-x',
+      chevronDown: 'crpg:chevron-down',
+      chevronLeft: 'crpg:chevron-left',
+      chevronRight: 'crpg:chevron-right',
+      chevronUp: 'crpg:chevron-up',
+      close: 'crpg:close',
       // ellipsis: 'i-lucide-ellipsis',
       // external: 'i-lucide-arrow-up-right',
       // folder: 'i-lucide-folder',
@@ -29,11 +29,62 @@ export default defineAppConfig({
       // plus: 'i-lucide-plus',
       // search: 'i-lucide-search',
     },
+    modal: {
+      slots: {
+        wrapper: 'w-full',
+        title: 'text-center text-lg',
+        close: '-right-4 -top-4',
+      },
+    },
+    input: {
+      variants: {
+        size: {
+          xl: {
+            base: 'py-[0.938rem] px-[1.125rem] h-[3.375rem]',
+          },
+          lg: {
+            base: 'py-[0.938rem] px-4 h-[3rem]',
+          },
+          md: {
+            base: 'p-3 h-[2.625rem]',
+          },
+          sm: {
+            base: 'py-[0.563rem] px-2.5h-[2.25rem]',
+          },
+          xs: {
+            base: 'p-1.5 h-[1.875rem]',
+          },
+        },
+      },
+    },
+
     dropdownMenu: {
       variants: {
         size: {
+          xl: {
+            item: 'px-2 py-2 gap-2.5 !text-title-md',
+            itemTrailingIcon: 'size-6',
+            itemLeadingIcon: 'size-6',
+          },
+          lg: {
+            item: 'px-2 py-2 gap-2.5 !text-title-md',
+            itemTrailingIcon: 'size-[1.125rem]',
+            itemLeadingIcon: 'size-[1.125rem]',
+          },
+          md: {
+            item: 'px-2 py-1.5 gap-2 !text-title-sm ',
+            itemTrailingIcon: 'size-[1.125rem]',
+            itemLeadingIcon: 'size-[1.125rem]',
+          },
+          sm: {
+            item: 'px-2 py-1.5 gap-2 !text-title-sm',
+            itemTrailingIcon: 'size-[1.125rem]',
+            itemLeadingIcon: 'size-[1.125rem]',
+          },
           xs: {
-            item: 'p-3 gap-2.5',
+            item: 'px-1.5 py-1 gap-2 !text-title-sm',
+            itemTrailingIcon: 'size-4',
+            itemLeadingIcon: 'size-4',
           },
         },
       },

@@ -75,7 +75,6 @@
     --color-status-success: #53825A;
     --color-status-warning: #C29F47;
 
-    --radius-sm: '0.188rem'; /* 2px */
 
     --text-*: initial;
     --text-3xs: 0.625rem; /* 10px */
@@ -126,7 +125,7 @@
 @import "@nuxt/ui";
 
 :root {
-    /* --ui-radius: 0.5rem; */
+    --ui-radius: 0.5rem;
     --ui-bg: var(--color-bg-main)
 }
 

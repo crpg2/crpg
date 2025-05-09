@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from '@nuxt/ui'
 
+import { Platform } from '~/models/platform'
+import { platformToIcon } from '~/services/platform-service'
+
 definePageMeta({
   layout: 'empty',
   skipAuth: true,
@@ -30,6 +33,21 @@ const items = computed(() => [
     },
   })),
 ] satisfies DropdownMenuItem[])
+
+const { platform, changePlatform } = usePlatform()
+const itemsPlatform = computed(() =>
+  Object.values(Platform).map(p => ({
+    label: t(`platform.${p}`),
+    icon: `crpg:${platformToIcon[p]}`,
+    type: 'checkbox' as const,
+    checked: p === platform.value,
+    onUpdateChecked() {
+      changePlatform(p)
+    },
+  })) satisfies DropdownMenuItem[],
+)
+
+const open = ref(true)
 </script>
 
 <template>
@@ -44,6 +62,26 @@ const items = computed(() => [
         <div class="relative size-6">
           <UIcon name="crpg:online" class="absolute inset-0 size-full text-[#53BC96]" />
           <UIcon name="crpg:online-ring" class="absolute inset-0 size-full animate-ping text-[#53BC96]/50" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-5 gap-2.5">
+        <div
+          v-for="size in ['xl', 'lg', 'md', 'sm', 'xs']"
+          :key="size"
+        >
+          <UDropdownMenu
+            v-model:open="open"
+            :size
+            :items="itemsPlatform"
+            :ui="{ content: 'w-56' }"
+          >
+            <template #default="{ open }">
+              <UButton
+                :icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'"
+              />
+            </template>
+          </UDropdownMenu>
         </div>
       </div>
 
