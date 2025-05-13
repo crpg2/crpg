@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import type { DropdownMenuItem, TableColumn } from '@nuxt/ui'
+import type { ColumnFiltersState, PaginationState } from '@tanstack/vue-table'
+
+import { functionalUpdate, getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
+import { ClanTagIcon, UBadge, UButton, UDropdownMenu } from '#components'
+import { h } from 'vue'
+
 import type { ClanWithMemberCount } from '~/models/clan'
 
 import { useLanguages } from '~/composables/use-language'
@@ -15,14 +22,13 @@ definePageMeta({
 
 const router = useRouter()
 const userStore = useUserStore()
+const { t } = useI18n()
 
 const { pageModel, perPage } = usePagination()
 const { searchModel } = useSearchDebounced()
 
 // TODO: region as query, pagination - improve REST API
-const { execute: loadClans, state: clans } = useAsyncState(() => getClans(), [], {
-  immediate: true,
-})
+const { state: clans, execute: loadClans } = useAsyncState(() => getClans(), [])
 
 const { regionModel, regions } = useRegionQuery()
 const { languages, languagesModel, resetLanguagesModel } = useLanguages()
@@ -45,11 +51,143 @@ const rowClass = (clan: ClanWithMemberCount) =>
 
 const onClickRow = (clan: ClanWithMemberCount) =>
   router.push({ name: 'clans-id', params: { id: clan.clan.id } })
+
+const columns: TableColumn<ClanWithMemberCount>[] = [
+  {
+    accessorFn: row => row.clan.tag,
+    header: t('clan.table.column.tag'),
+    cell: ({ row, column, getValue }) => h('div', {
+      class: 'flex items-center gap-2',
+    }, [
+      h(ClanTagIcon, { color: row.original.clan.primaryColor }),
+      h('div', row.original.clan.tag),
+    ]),
+  },
+  {
+    accessorFn: row => row.clan.name,
+    header: t('clan.table.column.name'),
+    cell: ({ row, column, getValue }) => h('div', {
+      class: 'flex items-center gap-2',
+    }, [
+      h('span', row.original.clan.name),
+      ...(userStore.clan?.id === row.original.clan.id
+        ? [
+            h('span', { 'data-aq-clan-row': 'self-clan' }, `(${t('you')})`),
+          ]
+        : []),
+    ]),
+  },
+  {
+    // :label="`${$t(`language.${l}`)} - ${l}`"
+    accessorKey: 'clan.languages',
+    header: ({ column }) => {
+      const isFiltered = column.getIsFiltered()
+      const filterValue = (column.getFilterValue() || []) as string[]
+
+      const uniqueKeys: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
+      const items = uniqueKeys.map(l => ({
+        label: `${t(`language.${l}`)} - ${l}`,
+        type: 'checkbox' as const,
+        checked: filterValue.includes(l),
+        onSelect(e: Event) {
+          e.preventDefault()
+        },
+        onUpdateChecked() {
+          column.setFilterValue(toggle(filterValue, l))
+        },
+      })) satisfies DropdownMenuItem[]
+
+      return h(UDropdownMenu, {
+        modal: false,
+        items,
+      }, () => h(UButton, {
+        color: 'neutral',
+        variant: 'ghost',
+        label: t('clan.table.column.languages'),
+        class: '-mx-2.5',
+        icon: isFiltered ? 'i-lucide-funnel-x' : 'i-lucide-funnel',
+      }))
+    },
+    filterFn: 'arrIncludesSome',
+    cell: ({ row, column, getValue }) => h('div', {
+      class: 'flex items-center gap-1.5',
+    }, row.original.clan.languages.map(l => h(UBadge, {
+      color: 'primary',
+      variant: 'soft',
+      size: 'sm',
+      label: l,
+    }))),
+  },
+  {
+    accessorKey: 'memberCount',
+    header: ({ column }) => {
+      const isSorted = column.getIsSorted()
+      return h(UButton, {
+        color: 'neutral',
+        variant: 'ghost',
+        label: t('clan.table.column.members'),
+        // TODO:
+        icon: isSorted
+          ? isSorted === 'asc'
+            ? 'i-lucide-arrow-up-narrow-wide'
+            : 'i-lucide-arrow-down-wide-narrow'
+          : 'i-lucide-arrow-up-down',
+        class: '-mx-2.5',
+        onClick: () => column.toggleSorting(column.getIsSorted() === 'asc'),
+      })
+    },
+
+  },
+]
+
+const pagination = ref<PaginationState>({
+  pageIndex: 0,
+  pageSize: 2,
+})
+
+const columnFilters = ref<ColumnFiltersState>([])
+
+const table = useTemplateRef('table')
 </script>
 
 <template>
   <div class="container">
     <div class="mx-auto max-w-4xl py-8 md:py-16">
+      <div>
+        <!-- TODO: wrapper -->
+        <UTable
+          ref="table"
+          v-model:pagination="pagination"
+          v-model:column-filters="columnFilters"
+          :data="clans"
+          :columns
+          :pagination-options="{
+            getPaginationRowModel: getPaginationRowModel(),
+          }"
+          :faceted-options="{
+            getFacetedRowModel: getFacetedRowModel(),
+            getFacetedUniqueValues: getFacetedUniqueValues(),
+          }"
+        />
+
+        <pre>{{ table?.tableApi?.getState() }}</pre>
+
+        <div class="flex justify-center border-t border-default pt-4">
+          <UPagination
+            variant="soft"
+            color="secondary"
+            active-variant="solid"
+            active-color="primary"
+            show-edges
+            :show-controls="false"
+            :default-page="(table?.tableApi?.getState().pagination.pageIndex || 0) + 1"
+            :items-per-page="table?.tableApi?.getState().pagination.pageSize"
+            :total="table?.tableApi?.getFilteredRowModel().rows.length"
+            @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
+          />
+        </div>
+      </div>
+
       <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
         <OTabs
           v-model="regionModel"

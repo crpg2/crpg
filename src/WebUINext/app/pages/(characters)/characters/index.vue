@@ -27,7 +27,7 @@ definePageMeta({
     <div class="space-y-8">
       <UiDivider />
 
-      <div class="prose prose-invert text-center">
+      <div class="prose text-center prose-invert">
         <h3 class="text-xl text-content-100">
           {{ $t('character.empty.title') }}
         </h3>
