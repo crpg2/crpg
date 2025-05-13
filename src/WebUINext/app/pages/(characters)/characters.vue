@@ -96,7 +96,7 @@ const { execute: onDeleteCharacter } = useAsyncCallback(
 </script>
 
 <template>
-  <div class="container relative py-6">
+  <div class="relative container py-6">
     <div
       v-if="currentCharacter"
       data-teleport-target="character-navbar"
