@@ -1,6 +1,6 @@
 export default defineAppConfig({
   // icon: {
-  // size: '1.5rem',
+  // size: '1.5rem', // TODO:
   // },
   ui: {
     colors: {
@@ -9,7 +9,6 @@ export default defineAppConfig({
       neutral: 'neutral',
     },
     icons: {
-      // TODO:
       // arrowLeft: 'i-lucide-arrow-left',
       // arrowRight: 'i-lucide-arrow-right',
       check: 'crpg:check',
@@ -27,7 +26,7 @@ export default defineAppConfig({
       loading: 'crpg:loading',
       // minus: 'i-lucide-minus',
       // plus: 'i-lucide-plus',
-      // search: 'i-lucide-search',
+      search: 'crpg:search',
     },
     modal: {
       slots: {
@@ -56,8 +55,10 @@ export default defineAppConfig({
           },
         },
       },
-    },
+      // compoundVariants: {
 
+      // },
+    },
     dropdownMenu: {
       variants: {
         size: {

@@ -3,6 +3,7 @@ import type { Plugin } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import json5 from 'json5'
 import { fileURLToPath } from 'node:url'
+import { forceCurrentColor, removeSizes } from 'nuxt-svg-icon-sprite/processors'
 
 function JSON5(): Plugin {
   const fileRegex = /\.json$/
@@ -143,6 +144,20 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-03-21',
   nitro: { compressPublicAssets: true },
   vite: {
+    optimizeDeps: {
+      include: [
+        /**
+         * in development mode we make a bundle of modules at once, so that we don't expect JIT bundling when switching between different pages where there are unbundled new modules.
+         */
+        '@vuelidate/core',
+        '@vuelidate/validators',
+        'tailwind-variants',
+        'body-scroll-lock',
+        '@chenfengyuan/vue-countdown',
+        'luxon',
+        '@tanstack/vue-table',
+      ],
+    },
     plugins: [
       tailwindcss(),
       JSON5(),
@@ -219,12 +234,14 @@ export default defineNuxtConfig({
       sizeLimitKb: 0,
     },
   },
+
   svgIconSprite: {
     sprites: {
       default: {
         importPatterns: [
           fileURLToPath(new URL('./app/assets/themes/oruga-tailwind/img/*.svg', import.meta.url)),
         ],
+        processSpriteSymbol: [removeSizes(), forceCurrentColor()],
       },
       locale: {
         importPatterns: [

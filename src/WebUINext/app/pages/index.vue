@@ -65,20 +65,14 @@ Promise.all([
           <div class="flex items-center justify-center gap-6 select-none md:gap-12">
             <SpriteSymbol
               name="logo-decor"
-              viewBox="0 0 108 10"
-              inline
               class="w-24 rotate-180"
             />
             <SpriteSymbol
               name="logo"
-              viewBox="0 0 162 124"
-              inline
-              class="w-24 xl:w-28 2xl:w-32"
+              class="w-24 fill-current text-white xl:w-28 2xl:w-32"
             />
             <SpriteSymbol
               name="logo-decor"
-              viewBox="0 0 108 10"
-              inline
               class="w-24"
             />
           </div>
