@@ -1,5 +1,6 @@
 ﻿using Crpg.Module.Common;
 using Crpg.Module.Common.Models;
+using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Modes.Battle;
 using Crpg.Module.Modes.Conquest;
 using Crpg.Module.Modes.Dtv;
@@ -81,7 +82,9 @@ internal class CrpgSubModule : MBSubModuleBase
         CrpgServerConfiguration.Init();
         CrpgFeatureFlags.Init();
 #elif CRPG_CLIENT
+        KeyBinder.Initialize();
         BannerlordPatches.Apply();
+        KeyBinder.RegisterContexts();
 #elif CRPG_EDITOR
         BannerlordPatches.Apply();
 #endif

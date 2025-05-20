@@ -198,3 +198,7 @@ end_of_line = lf
 indent_size = 2
 end_of_line = lf
 max_line_length = 140
+
+# Harmony needs some __result variables
+[**/HarmonyPatches/*.cs]
+dotnet_diagnostic.SA1313.severity = none
