@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ErrorResponse } from 'oidc-client-ts'
+
 import { userManager } from '~/services/auth-service'
 
 definePageMeta({
@@ -21,7 +22,8 @@ definePageMeta({
 
         return navigateTo({ name: 'index' })
       }
-    }],
+    },
+  ],
 })
 </script>
 
