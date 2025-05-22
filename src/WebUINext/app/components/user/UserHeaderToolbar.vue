@@ -1,0 +1,121 @@
+<script setup lang="ts">
+import type { DropdownMenuItem } from '@nuxt/ui'
+
+import { useTransition } from '@vueuse/core'
+
+import type { User } from '~/models/user'
+
+import { Role } from '~/models/role'
+import { logout } from '~/services/auth-service'
+import { mapUserToUserPublic } from '~/services/user-service'
+
+const { user } = defineProps<{
+  user: User
+}>()
+
+const userStore = useUserStore()
+
+const animatedUserGold = useTransition(() => user.gold)
+const { t, locale, availableLocales, setLocale } = useI18n()
+
+const items = computed<DropdownMenuItem[][]>(() => [
+  [
+    {
+      label: `${t('setting.language')} | ${locale.value.toUpperCase()}`,
+      icon: `crpg:${locale.value}`,
+      children: availableLocales.map(l => ({
+        label: t(`locale.${l}`),
+        type: 'checkbox' as const,
+        icon: `crpg:${l}`,
+        checked: l === locale.value,
+        onUpdateChecked() {
+          setLocale(l)
+        },
+      })),
+    },
+    {
+      label: t('setting.notifications'),
+      icon: 'crpg:carillon',
+      to: { name: 'notifications' },
+      slot: 'notifications' as const,
+    },
+    {
+      label: t('setting.settings'),
+      icon: 'crpg:settings',
+      to: { name: 'settings' },
+    },
+  ],
+  [
+    ...([Role.Moderator, Role.Admin].includes(userStore.user!.role))
+      ? [
+          {
+            label: t('nav.main.Moderator'),
+            to: { name: 'moderator' },
+          },
+        ]
+      : [],
+    ...([Role.Admin].includes(userStore.user!.role))
+      ? [
+          {
+            label: t('nav.main.Admin'),
+            to: { name: 'admin' },
+          },
+        ]
+      : [],
+  ],
+  [
+    {
+      label: t('setting.logout'),
+      icon: 'crpg:logout',
+      onSelect: logout,
+    },
+  ],
+])
+</script>
+
+<template>
+  <div class="flex items-center gap-3">
+    <AppCoin :value="Number(animatedUserGold.toFixed(0))" />
+
+    <USeparator orientation="vertical" class="h-6" />
+
+    <AppLoom :point="user.heirloomPoints" />
+
+    <USeparator orientation="vertical" class="h-6" />
+
+    <UserMedia
+      :user="mapUserToUserPublic(user)"
+      hidden-platform
+      size="xl"
+    />
+
+    <USeparator orientation="vertical" class="h-6" />
+
+    <UDropdownMenu :items :modal="false">
+      <UChip
+        :show="Boolean(user.unreadNotificationsCount)"
+        color="secondary"
+        inset
+        size="xl"
+        :ui="{ base: 'bg-[#53bc96]' }"
+      >
+        <UButton
+          size="md"
+          color="secondary"
+          icon="crpg:dots"
+        />
+      </UChip>
+
+      <template #notifications-leading>
+        <UChip
+          :show="Boolean(user.unreadNotificationsCount)"
+          color="secondary"
+          inset
+          :ui="{ base: 'bg-[#53bc96]' }"
+        >
+          <UIcon name="crpg:carillon" class="size-[1.125rem]" />
+        </UChip>
+      </template>
+    </UDropdownMenu>
+  </div>
+</template>
