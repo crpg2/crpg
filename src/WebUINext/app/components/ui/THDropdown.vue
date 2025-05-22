@@ -14,7 +14,7 @@ defineEmits<{
     <OIcon
       v-if="shownReset"
       v-tooltip.bottom="$t('action.reset')"
-      class="absolute -left-5 top-1/2 -translate-y-1/2 cursor-pointer hover:text-status-danger"
+      class="absolute top-1/2 -left-5 -translate-y-1/2 cursor-pointer hover:text-status-danger"
       icon="close"
       size="xs"
       @click="$emit('reset')"
@@ -22,7 +22,7 @@ defineEmits<{
 
     <VDropdown :triggers="['click']">
       <div
-        class="max-w-[90px] cursor-pointer select-none overflow-x-hidden text-ellipsis whitespace-nowrap text-2xs leading-loose underline decoration-dashed underline-offset-6 hover:text-content-100 hover:no-underline 2xl:max-w-[120px]"
+        class="max-w-[90px] cursor-pointer overflow-x-hidden text-2xs leading-loose text-ellipsis whitespace-nowrap underline decoration-dashed underline-offset-6 select-none hover:text-content-100 hover:no-underline 2xl:max-w-[120px]"
       >
         <slot name="label">
           {{ label }}
