@@ -28,6 +28,12 @@ export default defineAppConfig({
       // plus: 'i-lucide-plus',
       search: 'crpg:search',
     },
+    table: {
+      slots: {
+        th: 'text-2xs text-muted',
+        td: 'text-2xs text-inherit',
+      },
+    },
     modal: {
       slots: {
         wrapper: 'w-full',

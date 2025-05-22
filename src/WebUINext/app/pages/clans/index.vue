@@ -3,8 +3,9 @@ import type { DropdownMenuItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, PaginationState, VisibilityState } from '@tanstack/vue-table'
 
 import { functionalUpdate, getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { ClanTagIcon, UBadge, UButton, UDropdownMenu } from '#components'
-import { navigateTo } from '#imports'
+import { ClanTagIcon, UBadge, UButton, UDropdownMenu, UDropdownMenuContent, UiTableColumnHeader } from '#components'
+import { navigateTo, tw } from '#imports'
+import { DropdownMenuArrow, DropdownMenuRoot, DropdownMenuTrigger, useForwardPropsEmits } from 'reka-ui'
 import { h } from 'vue'
 
 import type { ClanWithMemberCount } from '~/models/clan'
@@ -123,37 +124,34 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
   },
   {
     id: 'clan_languages',
-    accessorKey: 'clan.languages',
+    // accessorKey: 'clan.languages',
+    accessorFn: row => row.clan.languages,
     enableGlobalFilter: false,
     header: ({ column }) => {
-      const isFiltered = column.getIsFiltered()
+      // console.log('d', column.getFacetedUniqueValues())
+      // setTimeout(() => {
+      //   console.log('d', column.getFacetedUniqueValues())
+      // }, 11)
       const filterValue = (column.getFilterValue() || []) as string[]
-
       const uniqueKeys: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
 
-      const items = uniqueKeys.map(l => ({
-        label: `${t(`language.${l}`)} - ${l}`,
-        type: 'checkbox' as const,
-        checked: filterValue.includes(l),
-        onSelect(e: Event) {
-          e.preventDefault()
-        },
-        onUpdateChecked() {
-          column.setFilterValue(toggle(filterValue, l))
-        },
-      })) satisfies DropdownMenuItem[]
-
-      // @ts-expect-error TODO: FIXME:
-      return h(UDropdownMenu, {
-        modal: false,
-        items,
-      }, () => h(UButton, {
-        color: 'neutral',
-        variant: 'ghost',
+      return h(UiTableColumnHeader, {
         label: t('clan.table.column.languages'),
-        class: '-mx-2.5',
-        icon: isFiltered ? 'i-lucide-funnel-x' : 'i-lucide-funnel',
-      }))
+        withFilter: true,
+        filtered: column.getIsFiltered(),
+        filterDropdownItems: uniqueKeys.map<DropdownMenuItem>(l => ({
+          label: `${t(`language.${l}`)} - ${l}`,
+          type: 'checkbox',
+          checked: filterValue.includes(l),
+          onSelect(e: Event) {
+            e.preventDefault()
+          },
+          onUpdateChecked() {
+            column.setFilterValue(toggle(filterValue, l))
+          },
+        })),
+        onResetFilter: () => column.setFilterValue(undefined),
+      })
     },
     filterFn: 'arrIncludesSome',
     cell: ({ row, column, getValue }) => h('div', {
@@ -161,30 +159,19 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
     }, row.original.clan.languages.map(l => h(UBadge, {
       color: 'primary',
       variant: 'soft',
-      size: 'sm',
+      size: 'xs',
       label: l,
     }))),
   },
   {
     accessorKey: 'memberCount',
     enableGlobalFilter: false,
-    header: ({ column }) => {
-      const isSorted = column.getIsSorted()
-      // TODO: to cmp
-      return h(UButton, {
-        color: 'neutral',
-        variant: 'ghost',
-        label: t('clan.table.column.members'),
-        // TODO:
-        icon: isSorted
-          ? isSorted === 'asc'
-            ? 'i-lucide-arrow-up-narrow-wide'
-            : 'i-lucide-arrow-down-wide-narrow'
-          : 'i-lucide-arrow-up-down',
-        class: '-mx-2.5',
-        onClick: () => column.toggleSorting(column.getIsSorted() === 'asc'),
-      })
-    },
+    header: ({ column }) => h(UiTableColumnHeader, {
+      label: t('clan.table.column.members'),
+      withSort: true,
+      sorted: column.getIsSorted(),
+      onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
+    }),
   },
   {
     id: 'clan_region',
@@ -259,6 +246,16 @@ const regionItems = regions.map<TabsItem>(region => ({
           :loading="loadingClans"
           :data="clans"
           :columns
+          :meta="{
+            class: {
+              tr: (row) => {
+                if (userStore.clan?.id === row.original.clan.id) {
+                  return tw`text-primary`
+                }
+                return ''
+              },
+            },
+          }"
           :initial-state="{
             pagination: getInitialPaginationState(),
           }"
