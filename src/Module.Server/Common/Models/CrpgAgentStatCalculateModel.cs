@@ -471,11 +471,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     props.WeaponUnsteadyEndTime = 3.0f + weaponSkill * 0.01f;
                 }
 
-                if (equippedItem.WeaponClass is WeaponClass.Mace or WeaponClass.OneHandedAxe or WeaponClass.OneHandedSword or WeaponClass.Dagger)
-                {
-                    props.ThrustOrRangedReadySpeedMultiplier *= 0.82f;
-                }
-
                 if (equippedItem.WeaponClass is WeaponClass.TwoHandedPolearm)
                 {
                     props.HandlingMultiplier *= 1.1f;
