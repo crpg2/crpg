@@ -158,6 +158,60 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             finalDamage *= 0.23f; // Decrease damage from couched lance.
         }
 
+        if (weapon.CurrentUsageItem.WeaponClass == WeaponClass.OneHandedSword
+            && collisionData.StrikeType != (int)StrikeType.Thrust
+            && collisionData.DamageType == (int)DamageTypes.Cut)
+        {
+            Agent attackerAgent = attackInformation.AttackerAgent;
+
+            bool hasRangedWeapon = false;
+            bool hasShield = false;
+
+            // Check offhand for shield
+            var offhandItem = attackerAgent.Equipment[EquipmentIndex.Weapon2];
+            if (offhandItem.Item?.PrimaryWeapon?.IsShield == true)
+            {
+                hasShield = true;
+            }
+
+            // Check inventory for ranged and shield
+            for (int i = 0; i < (int)EquipmentIndex.NumAllWeaponSlots; i++)
+            {
+                var equipmentElement = attackerAgent.Equipment[i];
+                var item = equipmentElement.Item;
+                if (item == null)
+                {
+                    continue;
+                }
+
+                var usage = item.PrimaryWeapon;
+                if (usage == null)
+                {
+                    continue;
+                }
+
+                if (!hasRangedWeapon && usage.IsRangedWeapon)
+                {
+                    hasRangedWeapon = true;
+                }
+
+                if (!hasShield && usage.IsShield)
+                {
+                    hasShield = true;
+                }
+
+                if (hasShield || hasRangedWeapon)
+                {
+                    break;
+                }
+            }
+
+            if (!attackerAgent.HasMount && !hasShield && !hasRangedWeapon)
+            {
+                finalDamage *= 1.10f;
+            }
+        }
+
         return finalDamage;
     }
 
