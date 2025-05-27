@@ -19,7 +19,6 @@ public class SettlementsController : BaseController
     public Task<ActionResult<Result<IList<SettlementPublicViewModel>>>> GetSettlements()
         => ResultToActionAsync(Mediator.Send(new GetSettlementsQuery()));
 
-
     /// <summary>
     /// Get settlement details by Id.
     /// </summary>

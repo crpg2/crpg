@@ -48,7 +48,7 @@ builder.Services
     .AddSdk(builder.Configuration, appEnv)
     .AddPersistence(builder.Configuration, appEnv)
     .AddApplication(builder.Configuration, appEnv)
-    .AddHostedService<StrategusWorker>() // Disable strategus for now.
+    // .AddHostedService<StrategusWorker>() // Disable strategus for now.
     .AddHostedService<DonorSynchronizerWorker>()
     .AddHostedService<ActivityLogsCleanerWorker>()
     .AddHostedService<IdempotencyKeysCleanerWorker>()
@@ -91,7 +91,7 @@ builder.Services.AddOpenIddict()
     .AddServer(options =>
     {
         options.SetAuthorizationEndpointUris("connect/authorize")
-            .SetLogoutEndpointUris("connect/logout")
+            .SetEndSessionEndpointUris("connect/logout")
             .SetTokenEndpointUris("connect/token");
 
         options.AllowAuthorizationCodeFlow()
@@ -104,8 +104,10 @@ builder.Services.AddOpenIddict()
 
         options.UseAspNetCore()
             .EnableAuthorizationEndpointPassthrough()
-            .EnableLogoutEndpointPassthrough()
+            .EnableEndSessionEndpointPassthrough()
             .EnableTokenEndpointPassthrough();
+
+        options.RegisterPromptValues("continue");
     })
     .AddClient(options =>
     {
