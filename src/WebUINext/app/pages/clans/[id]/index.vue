@@ -146,13 +146,13 @@ fetchPageData(clanId.value)
 <template>
   <div
     v-if="clan !== null"
-    class="pb-12 pt-24"
+    class="pt-24 pb-12"
   >
-    <div class="container mb-8">
+    <UContainer class="mb-8">
       <div class="mb-8 flex justify-center">
         <ClanTagIcon
           :color="clan.primaryColor"
-          size="4x"
+          class="size-12"
         />
       </div>
 
@@ -160,63 +160,75 @@ fetchPageData(clanId.value)
         :title="clan.name"
         data-aq-clan-info="name"
       />
-    </div>
+    </UContainer>
 
-    <div class="container">
+    <UContainer>
       <div class="mx-auto mb-10 max-w-lg space-y-6">
+        <!-- TODO: -->
         <UiDivider />
 
         <div class="flex flex-wrap items-center justify-center gap-4.5">
-          <div class="flex items-center gap-1.5">
-            <OIcon
-              icon="hash"
-              size="lg"
-              class="text-content-100"
-            />
-            <span
-              class="text-content-200"
-              data-aq-clan-info="tag"
-            >{{ clan.tag }}</span>
-          </div>
+          <UiDataCell>
+            <template #leftContent>
+              <OIcon
+                icon="hash"
+                size="lg"
+                class="text-content-100"
+              />
+              <!-- TODO: text view cmp? -->
+              <span class="text-content-200" data-aq-clan-info="tag">{{ clan.tag }}</span>
+            </template>
+          </UiDataCell>
 
-          <div class="h-8 w-px select-none bg-border-200" />
+          <USeparator orientation="vertical" class="h-8" />
 
-          <div class="flex items-center gap-1.5">
-            <OIcon
-              icon="region"
-              size="lg"
-              class="text-content-100"
-            />
+          <UiDataCell>
+            <template #leftContent>
+              <OIcon
+                icon="region"
+                size="lg"
+                class="text-content-100"
+              />
+            </template>
             <div
               class="text-content-200"
               data-aq-clan-info="region"
             >
               {{ $t(`region.${clan.region}`, 0) }}
             </div>
-            <UiTag
-              v-for="l in clan.languages"
-              :key="l"
-              v-tooltip="$t(`language.${l}`)"
-              :label="l"
-              variant="primary"
-            />
-          </div>
+            <template #rightContent>
+              <UTooltip
+                v-for="l in clan.languages"
+                :key="l"
+                :text="$t(`language.${l}`)"
+              >
+                <UBadge
+                  :label="l"
+                  size="sm"
+                  color="primary"
+                  variant="soft"
+                />
+              </UTooltip>
+            </template>
+          </UiDataCell>
 
-          <div class="h-8 w-px select-none bg-border-200" />
+          <USeparator orientation="vertical" class="h-8" />
 
-          <div class="flex items-center gap-1.5">
-            <OIcon
-              icon="member"
-              size="lg"
-              class="text-content-100"
-            />
+          <UiDataCell>
+            <template #leftContent>
+              <OIcon
+                icon="member"
+                size="lg"
+                class="text-content-100"
+              />
+            </template>
             <span
               class="text-content-200"
               data-aq-clan-info="member-count"
             >
               {{ clanMembersCount }}
             </span>
-          </div>
+          </UiDataCell>
         </div>
 
         <div
@@ -229,7 +241,7 @@ fetchPageData(clanId.value)
 
         <UiDivider />
       </div>
-    </div>
+    </UContainer>
 
     <div class="flex items-center justify-center gap-3">
       <NuxtLink

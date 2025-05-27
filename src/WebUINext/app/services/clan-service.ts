@@ -36,22 +36,6 @@ export const getClans = async (): Promise<ClanWithMemberCount[]> => {
   return data!
 }
 
-export const getFilteredClans = (
-  clans: ClanWithMemberCount[],
-  region: Region,
-  languages: Language[],
-  search: string,
-) => {
-  const searchQuery = search.toLowerCase()
-  return clans.filter(
-    c =>
-      c.clan.region === region
-      && (languages.length ? languages.some(l => c.clan.languages.includes(l)) : true)
-      && (c.clan.tag.toLowerCase().includes(searchQuery)
-        || c.clan.name.toLowerCase().includes(searchQuery)),
-  )
-}
-
 export const createClan = (
   clan: Omit<Clan, 'id'>,
 ): Promise<Clan> => postClans({ composable: '$fetch', body: { ...clan } })

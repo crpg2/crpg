@@ -2,32 +2,27 @@
 import type { DropdownMenuItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, PaginationState, VisibilityState } from '@tanstack/vue-table'
 
-import { functionalUpdate, getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { ClanTagIcon, UBadge, UButton, UDropdownMenu, UDropdownMenuContent, UiTableColumnHeader } from '#components'
+import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
+import { ClanTagIcon, UBadge, UButton, UiTableColumnHeader, UTooltip } from '#components'
 import { navigateTo, tw } from '#imports'
-import { DropdownMenuArrow, DropdownMenuRoot, DropdownMenuTrigger, useForwardPropsEmits } from 'reka-ui'
 import { h } from 'vue'
 
 import type { ClanWithMemberCount } from '~/models/clan'
 
-import { useLanguages } from '~/composables/use-language'
 import { useRegionQuery } from '~/composables/use-region'
-import { usePagination } from '~/composables/utils/use-pagination'
 import { useSearchDebounced } from '~/composables/utils/use-search-debounce'
 import { Region } from '~/models/region'
 import { SomeRole } from '~/models/role'
-import { getClans, getFilteredClans } from '~/services/clan-service'
+import { getClans } from '~/services/clan-service'
 import { useUserStore } from '~/stores/user'
 
 definePageMeta({
   roles: SomeRole,
 })
 
-const router = useRouter()
 const userStore = useUserStore()
 const { t } = useI18n()
 
-const { pageModel, perPage } = usePagination()
 const { searchModel } = useSearchDebounced()
 
 // TODO: region as query, pagination - improve REST API
@@ -38,7 +33,6 @@ const {
 } = useAsyncState(() => getClans(), [])
 
 const { regionModel, regions } = useRegionQuery()
-const { languages, languagesModel } = useLanguages()
 const table = useTemplateRef('table')
 
 const columnVisibility = ref<VisibilityState>({
@@ -53,7 +47,10 @@ const columnFilters = ref<ColumnFiltersState>([
 ])
 
 function getInitialPaginationState(): PaginationState {
-  return { pageIndex: 0, pageSize: 2 }
+  return {
+    pageIndex: 0,
+    pageSize: 2, // TODO: FIXME:
+  }
 }
 
 const pagination = ref<PaginationState>(getInitialPaginationState())
@@ -66,27 +63,11 @@ watch(regionModel, () => {
     },
   ])
 
-  // TODO:
+  // TODO: на search и сортировку тоже сбрасывать? сделать обертку мб с бызовым поведением
   table.value?.tableApi.resetPagination()
 })
 
-const filteredClans = computed(() =>
-  getFilteredClans(clans.value, regionModel.value, languagesModel.value, searchModel.value),
-)
-
-const aggregatedLanguages = computed(() =>
-  languages.filter(l =>
-    clans.value
-      .filter(c => c.clan.region === regionModel.value)
-      .some(c => c.clan.languages.includes(l))),
-)
-
-const rowClass = (clan: ClanWithMemberCount) =>
-  userStore.clan?.id === clan.clan.id ? tw`text-primary` : tw`text-content-100`
-
-const onClickRow = (clan: ClanWithMemberCount) =>
-  router.push({ name: 'clans-id', params: { id: clan.clan.id } })
-
+// TODO: to cmp
 const columns: TableColumn<ClanWithMemberCount>[] = [
   {
     accessorFn: row => row.clan.tag,
@@ -96,7 +77,7 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
       },
     },
     header: t('clan.table.column.tag'),
-    cell: ({ row, column, getValue }) => h('div', {
+    cell: ({ row }) => h('div', {
       class: 'flex items-center gap-2',
     }, [
       h(ClanTagIcon, { color: row.original.clan.primaryColor }),
@@ -111,30 +92,22 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
       },
     },
     header: t('clan.table.column.name'),
-    cell: ({ row, column, getValue }) => h('div', {
+    cell: ({ row }) => h('div', {
       class: 'flex items-center gap-2',
     }, [
       h('span', row.original.clan.name),
       ...(userStore.clan?.id === row.original.clan.id
-        ? [
-            h('span', { 'data-aq-clan-row': 'self-clan' }, `(${t('you')})`),
-          ]
+        ? [h('span', { 'data-aq-clan-row': 'self-clan' }, `(${t('you')})`)]
         : []),
     ]),
   },
   {
     id: 'clan_languages',
-    // accessorKey: 'clan.languages',
     accessorFn: row => row.clan.languages,
     enableGlobalFilter: false,
     header: ({ column }) => {
-      // console.log('d', column.getFacetedUniqueValues())
-      // setTimeout(() => {
-      //   console.log('d', column.getFacetedUniqueValues())
-      // }, 11)
       const filterValue = (column.getFilterValue() || []) as string[]
       const uniqueKeys: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
-
       return h(UiTableColumnHeader, {
         label: t('clan.table.column.languages'),
         withFilter: true,
@@ -154,14 +127,15 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
       })
     },
     filterFn: 'arrIncludesSome',
-    cell: ({ row, column, getValue }) => h('div', {
+    cell: ({ row }) => h('div', {
       class: 'flex items-center gap-1.5',
-    }, row.original.clan.languages.map(l => h(UBadge, {
-      color: 'primary',
-      variant: 'soft',
-      size: 'xs',
-      label: l,
-    }))),
+    }, row.original.clan.languages.map(l =>
+      h(UTooltip, { text: t(`language.${l}`) }, h(UBadge, {
+        color: 'primary',
+        variant: 'soft',
+        size: 'sm',
+        label: l,
+      })))),
   },
   {
     accessorKey: 'memberCount',
@@ -173,6 +147,7 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
       onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
     }),
   },
+  // Hack for region filtering. Need to declare a column but not render it.
   {
     id: 'clan_region',
     accessorFn: row => row.clan.region,
@@ -187,9 +162,9 @@ const regionItems = regions.map<TabsItem>(region => ({
 </script>
 
 <template>
-  <div class="container">
-    <div class="mx-auto max-w-4xl py-8 md:py-16">
-      <div class="space-y-3">
+  <UContainer>
+    <div class="mx-auto max-w-4xl space-y-3 py-8 md:py-16">
+      <div class="space-y-4">
         <div class="flex flex-wrap items-center justify-between gap-4">
           <UTabs
             v-model="regionModel"
@@ -266,9 +241,7 @@ const regionItems = regions.map<TabsItem>(region => ({
             getFacetedRowModel: getFacetedRowModel(),
             getFacetedUniqueValues: getFacetedUniqueValues(),
           }"
-          @select="(row) => {
-            navigateTo({ name: 'clans-id', params: { id: row.original.clan.id } })
-          }"
+          @select="(row) => navigateTo({ name: 'clans-id', params: { id: row.original.clan.id } })"
         >
           <template #empty>
             <UiResultNotFound />
@@ -291,160 +264,6 @@ const regionItems = regions.map<TabsItem>(region => ({
           />
         </div>
       </div>
-
-      <pre>{{ table?.tableApi?.getState() }}</pre>
-
-      <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
-        <OTabs
-          v-model="regionModel"
-          content-class="hidden"
-        >
-          <OTabItem
-            v-for="region in regions"
-            :key="region"
-            :label="$t(`region.${region}`, 0)"
-            :value="region"
-          />
-        </OTabs>
-
-        <div class="flex items-center gap-2">
-          <div class="w-44">
-            <OInput
-              v-model="searchModel"
-              type="text"
-              expanded
-              clearable
-              :placeholder="$t('action.search')"
-              icon="search"
-              rounded
-              size="sm"
-              data-aq-search-clan-input
-            />
-          </div>
-
-          <NuxtLink
-            v-if="userStore.clan"
-            :to="{ name: 'clans-id', params: { id: userStore.clan.id } }"
-          >
-            <OButton
-              v-tooltip.bottom="$t('clan.action.goToMyClan')"
-              data-aq-my-clan-button
-              rounded
-              icon-left="member"
-              size="sm"
-              variant="secondary"
-              data-aq-to-clan-button
-            />
-          </NuxtLink>
-
-          <NuxtLink
-            v-else
-            :to="{ name: 'clans-create' }"
-          >
-            <OButton
-              v-tooltip.bottom="$t('clan.action.create')"
-              rounded
-              icon-left="add"
-              variant="secondary"
-              size="sm"
-              data-aq-create-clan-button
-            />
-          </NuxtLink>
-        </div>
-      </div>
-
-      <OTable
-        v-model:current-page="pageModel"
-        :data="filteredClans"
-        :per-page="perPage"
-        :paginated="filteredClans.length > perPage"
-        hoverable
-        bordered
-        sort-icon="chevron-up"
-        sort-icon-size="xs"
-        :default-sort="['memberCount', 'desc']"
-        :row-class="rowClass"
-        @click="onClickRow"
-      >
-        <OTableColumn
-          v-slot="{ row: clan }: { row: ClanWithMemberCount }"
-          field="clan.tag"
-          :label="$t('clan.table.column.tag')"
-          :width="120"
-        >
-          <div class="flex items-center gap-2">
-            <ClanTagIcon :color="clan.clan.primaryColor" />
-            {{ clan.clan.tag }}
-          </div>
-        </OTableColumn>
-
-        <OTableColumn
-          v-slot="{ row: clan }: { row: ClanWithMemberCount }"
-          field="clan.name"
-          :label="$t('clan.table.column.name')"
-        >
-          {{ clan.clan.name }}
-          <span
-            v-if="userStore.clan?.id === clan.clan.id"
-            data-aq-clan-row="self-clan"
-          >
-            ({{ $t('you') }})
-          </span>
-        </OTableColumn>
-
-        <OTableColumn
-          field="clan.languages"
-          :width="220"
-        >
-          <template #header>
-            <UiTHDropdown
-              :label="$t('clan.table.column.languages')"
-              :shown-reset="Boolean(languagesModel.length)"
-              @reset="languagesModel = []"
-            >
-              <UiDropdownItem
-                v-for="l in aggregatedLanguages"
-                :key="l"
-              >
-                <OCheckbox
-                  v-model="languagesModel"
-                  :native-value="l"
-                  class="items-center"
-                  :label="`${$t(`language.${l}`)} - ${l}`"
-                />
-              </UiDropdownItem>
-            </UiTHDropdown>
-          </template>
-
-          <template #default="{ row: clan }: { row: ClanWithMemberCount }">
-            <div class="flex items-center gap-1.5">
-              <UiTag
-                v-for="l in clan.clan.languages"
-                :key="l"
-                v-tooltip="$t(`language.${l}`)"
-                :label="l"
-                variant="primary"
-              />
-            </div>
-          </template>
-        </OTableColumn>
-
-        <OTableColumn
-          v-slot="{ row: clan }: { row: ClanWithMemberCount }"
-          field="memberCount"
-          :label="$t('clan.table.column.members')"
-          :width="40"
-          position="right"
-          numeric
-          sortable
-        >
-          {{ clan.memberCount }}
-        </OTableColumn>
-
-        <template #empty>
-          <UiResultNotFound />
-        </template>
-      </OTable>
     </div>
-  </div>
+  </UContainer>
 </template>
