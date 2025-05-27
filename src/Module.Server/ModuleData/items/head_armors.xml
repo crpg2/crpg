@@ -9792,49 +9792,49 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aciv_chalcidian_2_h0" name="{=DionysuSteve18}Painted Chalcidian Helm" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="4500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+  <Item id="crpg_aciv_chalcidian_2_h0" name="{=DionysuSteve18}Painted Chalcidian Helm" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="46" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aciv_chalcidian_2_h1" name="{=DionysuSteve18}Painted Chalcidian Helm +1" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="4500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+  <Item id="crpg_aciv_chalcidian_2_h1" name="{=DionysuSteve18}Painted Chalcidian Helm +1" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="48" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aciv_chalcidian_2_h2" name="{=DionysuSteve18}Painted Chalcidian Helm +2" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="4500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+  <Item id="crpg_aciv_chalcidian_2_h2" name="{=DionysuSteve18}Painted Chalcidian Helm +2" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="50" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aciv_chalcidian_2_h3" name="{=DionysuSteve18}Painted Chalcidian Helm +3" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="4500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+  <Item id="crpg_aciv_chalcidian_2_h3" name="{=DionysuSteve18}Painted Chalcidian Helm +3" mesh="cts_chalcidic_a1" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="52" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aciv_chalcidian_3_h0" name="{=DionysuSteve18}Bronze Chalcidian Helm" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="3500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+  <Item id="crpg_aciv_chalcidian_3_h0" name="{=DionysuSteve18}Bronze Chalcidian Helm" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="46" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aciv_chalcidian_3_h1" name="{=DionysuSteve18}Bronze Chalcidian Helm +1" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="3500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+  <Item id="crpg_aciv_chalcidian_3_h1" name="{=DionysuSteve18}Bronze Chalcidian Helm +1" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="48" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aciv_chalcidian_3_h2" name="{=DionysuSteve18}Bronze Chalcidian Helm +2" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="3500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+  <Item id="crpg_aciv_chalcidian_3_h2" name="{=DionysuSteve18}Bronze Chalcidian Helm +2" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture"  weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="50" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aciv_chalcidian_3_h3" name="{=DionysuSteve18}Bronze Chalcidian Helm +3" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" value="3500" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+  <Item id="crpg_aciv_chalcidian_3_h3" name="{=DionysuSteve18}Bronze Chalcidian Helm +3" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="52" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
