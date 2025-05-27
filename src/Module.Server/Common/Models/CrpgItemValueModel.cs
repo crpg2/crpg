@@ -121,7 +121,7 @@ internal class CrpgItemValueModel : ItemValueModel
     private float CalculateHorseTier(ItemObject item, HorseComponent horseComponent)
     {
         float horsePower =
-          (float)Math.Pow(horseComponent.Speed, 1.65f)
+          (float)Math.Pow(horseComponent.Speed, 1.68f)
         * (float)Math.Pow(horseComponent.Maneuver, 1.9f)
         * (float)Math.Pow((horseComponent.HitPoints + horseComponent.HitPointBonus) / 100f, 0.8f) * 123f
         + (float)((300f * Math.Pow(horseComponent.ChargeDamage, 5f) + 2500000f * horseComponent.ChargeDamage) * Math.Pow(horseComponent.Speed / 47f, 2f));
