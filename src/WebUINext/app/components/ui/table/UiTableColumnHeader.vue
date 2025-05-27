@@ -32,16 +32,24 @@ defineEmits<{
     </UTooltip>
 
     <UDropdownMenu
+      v-if="withFilter"
       size="md"
       :modal="false"
       :items="filterDropdownItems"
     >
       <div
-        :class="{ 'cursor-pointer text-2xs underline decoration-dashed underline-offset-6 select-none hover:no-underline': withFilter }"
+        class="cursor-pointer text-2xs underline decoration-dashed underline-offset-6 select-none hover:no-underline"
       >
         {{ label }}
       </div>
     </UDropdownMenu>
+
+    <div
+      v-else
+      class="text-2xs"
+    >
+      {{ label }}
+    </div>
 
     <!-- <UPopover>
       <div

@@ -7,7 +7,9 @@ defineProps<{
 </script>
 
 <template>
-  <OIcon
+  <UIcon name="crpg:clan-tag" class="size-6" :style="{ color: argbIntToRgbHexColor(color) }" />
+
+  <!-- <OIcon
     icon="tag"
     size="sm"
     :style="{
@@ -15,5 +17,5 @@ defineProps<{
       '--fa-primary-opacity': 0.15,
       '--fa-secondary-color': argbIntToRgbHexColor(color),
     }"
-  />
+  /> -->
 </template>

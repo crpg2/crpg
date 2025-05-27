@@ -130,6 +130,7 @@ export default defineNuxtConfig({
     host: '0.0.0.0',
     port: 8080,
   },
+  watch: ['node_modules/@nuxt/ui/dist/runtime/components/Table.vue'],
   future: {
     compatibilityVersion: 4,
   },
