@@ -235,7 +235,7 @@ export default defineNuxtConfig({
       sizeLimitKb: 0,
     },
   },
-
+  //
   svgIconSprite: {
     sprites: {
       default: {

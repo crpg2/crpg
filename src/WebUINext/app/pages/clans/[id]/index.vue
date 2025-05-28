@@ -149,7 +149,7 @@ fetchPageData(clanId.value)
     class="pt-24 pb-12"
   >
     <UContainer class="mb-8">
-      <div class="mb-8 flex justify-center">
+      <div class="mb-5 flex justify-center">
         <ClanTagIcon
           :color="clan.primaryColor"
           class="size-12"

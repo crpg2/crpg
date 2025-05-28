@@ -24,6 +24,5 @@ export const useGameModeQuery = () => {
   return {
     gameModeModel,
     gameModes,
-
   }
 }

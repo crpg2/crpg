@@ -35,10 +35,6 @@ const {
 const { regionModel, regions } = useRegionQuery()
 const table = useTemplateRef('table')
 
-const columnVisibility = ref<VisibilityState>({
-  clan_region: false,
-})
-
 const columnFilters = ref<ColumnFiltersState>([
   {
     id: 'clan_region',
@@ -147,13 +143,17 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
       onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
     }),
   },
-  // Hack for region filtering. Need to declare a column but not render it.
   {
     id: 'clan_region',
     accessorFn: row => row.clan.region,
     enableGlobalFilter: false,
   },
 ]
+
+// Hack for region filtering. Need to declare a column but not render it.
+const columnVisibility = ref<VisibilityState>({
+  clan_region: false,
+})
 
 const regionItems = regions.map<TabsItem>(region => ({
   label: t(`region.${region}`),
@@ -223,12 +223,7 @@ const regionItems = regions.map<TabsItem>(region => ({
           :columns
           :meta="{
             class: {
-              tr: (row) => {
-                if (userStore.clan?.id === row.original.clan.id) {
-                  return tw`text-primary`
-                }
-                return ''
-              },
+              tr: (row) => userStore.clan?.id === row.original.clan.id ? tw`text-primary` : '',
             },
           }"
           :initial-state="{

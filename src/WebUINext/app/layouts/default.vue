@@ -30,11 +30,11 @@ await Promise.all([
       :class="{ 'sticky top-0 bg-bg-main/10 backdrop-blur-sm': !route.meta?.noStickyHeader }"
     >
       <UserRestrictionNotification
-        v-if="userStore.restriction !== null"
+        v-if="userStore.user && userStore.restriction !== null"
         :restriction="userStore.restriction"
       />
 
-      <AppLayoutHHHeaderNotification v-if="!isHHCountdownEnded && HHEventRemaining !== 0" />
+      <AppLayoutHHHeaderNotification v-if="userStore.user && !isHHCountdownEnded && HHEventRemaining !== 0" :region="userStore.user.region" />
 
       <div class="flex flex-wrap items-center justify-between p-3">
         <div class="flex items-center gap-4">
@@ -59,7 +59,23 @@ await Promise.all([
           :user="userStore.user"
         />
 
-        <AppLogin v-else size="sm" />
+        <!-- TODO: to cmp PublicHeaderToolbar -->
+        <div v-else class="flex items-center gap-4">
+          <AppLogin size="sm" />
+
+          <AppSwitchLanguageDropdown v-slot="{ open, locale }">
+            <UButton
+              size="lg"
+              color="secondary"
+              variant="ghost"
+              :leading-icon="`crpg:${locale}`"
+              :trailing-icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'"
+              active-variant="solid"
+              :active="open"
+              :label="locale.toUpperCase()"
+            />
+          </AppSwitchLanguageDropdown>
+        </div>
       </div>
     </header>
 

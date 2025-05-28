@@ -1,41 +1,75 @@
 <script setup lang="ts">
+import type { TableColumn } from '@nuxt/ui'
+
+import { tw } from '#imports'
 import { groupBy, inRange } from 'es-toolkit'
 
 import type { Rank } from '~/models/competitive'
 
-const { competitiveValue = null, rankTable } = defineProps<{
-  competitiveValue?: number | null
+const { competitiveValue, rankTable } = defineProps<{
+  competitiveValue?: number
   rankTable: Rank[]
 }>()
 
-const groupedRankTable = computed(() => groupBy([...rankTable].reverse(), r => r.groupTitle))
+interface RankGroup {
+  title: string
+  rank1: Rank
+  rank2: Rank
+  rank3: Rank
+  rank4: Rank
+  rank5: Rank
+}
+
+const groupedRankTable = computed<RankGroup[]>(() =>
+  Object
+    .entries(groupBy(rankTable.toReversed(), r => r.groupTitle))
+    .map(([title, values]) => ({
+      title,
+      ...values.reduce((out, it, idx) => {
+        out[`rank${idx + 1}`] = it
+        return out
+      }, {}),
+    })))
+
+const columns: TableColumn<RankGroup>[] = [
+  {
+    accessorKey: 'title',
+    header: '',
+    cell: ({ row }) => h('span', { style: `color: ${row.original.rank1.color}` }, row.original.title),
+  },
+  ...[
+    'rank1',
+    'rank2',
+    'rank3',
+    'rank4',
+    'rank5',
+  ].reverse().map<TableColumn<RankGroup>>((it, idx) => ({
+    accessorFn: row => row[it],
+    header: String(idx + 1),
+    cell: ({ row }) => {
+      const rank = row.original[it]
+      return h('span', { style: `color: ${rank.color}` }, `${rank.min} - ${rank.max}`)
+    },
+  })),
+]
 </script>
 
 <template>
-  <div class="max-h-[90vh] space-y-8 overflow-y-auto px-12 pb-6 pt-8 text-center">
-    <h4 class="text-xl">
-      {{ $t('rankTable.title') }}
-    </h4>
+  <div class="space-y-8">
+    <UTable
+      class="relative rounded-md border border-muted"
+      :data="groupedRankTable"
+      :columns
+      :meta="{
+        class: {
+          tr: (row) => tw`text-[${row.original.rank1.color}]`,
+        },
+      }"
+    />
 
-    <OTable
-      :data="Object.entries(groupedRankTable)"
-      bordered
-      hoverable
-    >
-      <!-- TODO: spec! refactoring FIXME: -->
-      <OTableColumn v-slot="{ row }: { row: [string, Rank[]] }">
-        <span :style="{ color: row[1][0].color }">
-          {{ row[0] }}
-        </span>
-      </OTableColumn>
-
-      <OTableColumn
-        v-for="(_col, idx) in 5"
-        :key="idx"
-        v-slot="{ row }: { row: [string, Rank[]] }"
-        :label="String(5 - idx)"
-      >
-        <span
+    <!--
+    TODO: FIXME:
+      <span
           v-if="
             competitiveValue !== null
               && inRange(competitiveValue, row[1][4 - idx].min, row[1][4 - idx].max)
@@ -44,19 +78,9 @@ const groupedRankTable = computed(() => groupBy([...rankTable].reverse(), r => r
           class="font-black"
         >
           {{ row[1][4 - idx].min }} - {{ row[1][4 - idx].max }} ({{ $t('you') }})
-        </span>
+        </span> -->
 
-        <span
-          v-else
-          v-tooltip="`${row[0]} ${5 - idx}`"
-          :style="{ color: row[1][4 - idx].color }"
-        >
-          {{ row[1][4 - idx].min }} - {{ row[1][4 - idx].max }}
-        </span>
-      </OTableColumn>
-    </OTable>
-
-    <div class="prose prose-invert space-y-3 text-left">
+    <div class="prose space-y-3 text-left prose-invert">
       <h5 class="text-content-100">
         {{ $t('character.statistics.rank.tooltip.title') }}
       </h5>
