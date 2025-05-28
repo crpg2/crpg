@@ -1133,7 +1133,7 @@ internal class ItemExporter : IDataExporter
             int.Parse(weaponNode.Attributes!["accuracy"].Value),
             weaponNode.Attributes!["item_usage"].Value == "long_bow",
             heirloomLevel);
-        return tier * int.Parse(weaponNode.Attributes!["thrust_damage"].Value) / 100f;
+        return 2f * tier * int.Parse(weaponNode.Attributes!["thrust_damage"].Value) / 100f;
     }
 
     private static float ModifyArrowWeight(XmlNode nonHeirloomNode, XmlNode node, ItemObject.ItemTypeEnum type, int heirloomLevel)
@@ -1153,7 +1153,7 @@ internal class ItemExporter : IDataExporter
                 weaponNode.Attributes!["thrust_damage"].Value)
             * CrpgItemValueModel.CalculateDamageTypeFactorForAmmo(damagetype) / 12f, 0f, 1f));
 
-        return weight;
+        return weight * 1.5f;
     }
 
     private static void ModifyChildHeirloomNodesAttribute(
