@@ -1,17 +1,40 @@
 using Crpg.Module.Common.AmmoQuiverChange;
+using Crpg.Module.Common.KeyBinder;
+using Crpg.Module.Common.KeyBinder.Models;
 using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
+using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 
 namespace Crpg.Module.GUI.AmmoQuiverChange;
 
-internal class AmmoQuiverChangeUiHandler : MissionView
+internal class AmmoQuiverChangeUiHandler : MissionView, IUseKeyBinder
 {
+    private static readonly string KeyCategoryId = KeyBinder.Categories.CrpgGeneral.CategoryId;
     private AmmoQuiverChangeVm _dataSource;
     private AmmoQuiverChangeBehaviorClient? _weaponChangeBehavior;
     private GauntletLayer? _gauntletLayer;
+
+    BindedKeyCategory IUseKeyBinder.BindedKeys => new()
+    {
+        CategoryId = KeyCategoryId,
+        Category = KeyBinder.Categories.CrpgGeneral.CategoryName,
+        Keys = new List<BindedKey>
+        {
+            new()
+            {
+                Id = "key_change_quiver",
+                Name = "Change Quiver",
+                Description = "Change ammo quiver",
+                DefaultInputKey = InputKey.C,
+            },
+        },
+    };
+
+    private GameKey? quiverChangeKey;
+
     public AmmoQuiverChangeUiHandler()
     {
         _dataSource = new AmmoQuiverChangeVm(Mission); // Guaranteed non-null
@@ -38,6 +61,11 @@ internal class AmmoQuiverChangeUiHandler : MissionView
         base.OnMissionScreenInitialize();
     }
 
+    public override void EarlyStart()
+    {
+        quiverChangeKey = HotKeyManager.GetCategory(KeyCategoryId).GetGameKey("key_change_quiver");
+    }
+
     public override void OnMissionScreenFinalize()
     {
         if (_weaponChangeBehavior != null)
@@ -59,13 +87,8 @@ internal class AmmoQuiverChangeUiHandler : MissionView
     public override void OnMissionScreenTick(float dt)
     {
         base.OnMissionScreenTick(dt);
-        /*
-                if (Input.IsGameKeyPressed(HotKeyManager.GetCategory("CombatHotKeyCategory").GetGameKey("ToggleWeaponMode").Id)) // default is X
-                {
-                    _weaponChangeBehavior?.RequestChangeRangedAmmo();
-                }
-        */
-        if (Input.IsKeyPressed(TaleWorlds.InputSystem.InputKey.C)) // C for now, i would like to make it customizable in game menu but couldnt figure it out
+
+        if (quiverChangeKey != null && (Input.IsKeyPressed(quiverChangeKey.KeyboardKey.InputKey) || Input.IsKeyPressed(quiverChangeKey.ControllerKey.InputKey)))
         {
             _weaponChangeBehavior?.RequestChangeRangedAmmo();
         }

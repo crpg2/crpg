@@ -471,11 +471,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     props.WeaponUnsteadyEndTime = 3.0f + weaponSkill * 0.01f;
                 }
 
-                if (equippedItem.WeaponClass is WeaponClass.Mace or WeaponClass.OneHandedAxe or WeaponClass.OneHandedSword or WeaponClass.Dagger)
-                {
-                    props.ThrustOrRangedReadySpeedMultiplier *= 0.82f;
-                }
-
                 if (equippedItem.WeaponClass is WeaponClass.TwoHandedPolearm)
                 {
                     props.HandlingMultiplier *= 1.1f;
@@ -593,7 +588,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
     private int MaxWeaponLengthForStrLevel(int strengthSkill)
     {
-        int uncappedMaxWeaponLength = (int)(22 + (strengthSkill - 3) * 7.5 + Math.Pow(Math.Min(strengthSkill - 3, 24) * 0.133352143f, 8f));
+        int uncappedMaxWeaponLength = (int)(22 + (strengthSkill - 3) * 7.5 + Math.Pow(Math.Min(strengthSkill - 3, 24) * 0.115f, 7.75f));
         return Math.Min(uncappedMaxWeaponLength, 650);
     }
 
