@@ -31,7 +31,7 @@ export default defineAppConfig({
     table: {
       slots: {
         th: 'text-2xs text-muted',
-        td: 'text- text-inherit',
+        td: 'text-xs text-inherit',
         tbody: '[&>tr]:data-[selectable=true]:cursor-pointer',
       },
     },

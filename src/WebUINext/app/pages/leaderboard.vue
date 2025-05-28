@@ -1,9 +1,18 @@
 <script setup lang="ts">
+import type { DropdownMenuItem, TableColumn, TabsItem } from '@nuxt/ui'
+import type { ColumnFiltersState } from '@tanstack/table-core'
+
+import { useRouteQuery } from '@vueuse/router'
+import { CompetitiveRank, CompetitiveRankTable, UIcon, UiTableColumnHeader, UModal, UserMedia, UTooltip } from '#components'
+import { tw } from '#imports'
+
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
 
 import { useGameModeQuery } from '~/composables/use-gamemode'
 import { useRegionQuery } from '~/composables/use-region'
 import { CharacterClass } from '~/models/character'
+import { GameMode } from '~/models/game-mode'
+import { Region } from '~/models/region'
 import { characterClassToIcon, getCompetitiveValueByGameMode } from '~/services/character-service'
 import { gameModeToIcon, rankedGameModes } from '~/services/game-mode-service'
 import { getLeaderBoard } from '~/services/leaderboard-service'
@@ -16,222 +25,213 @@ definePageMeta({
   },
 })
 
+const { t } = useI18n()
 const userStore = useUserStore()
-// if (userStore.user) {
-//   setPageLayout('default')
-// }
+const route = useRoute('leaderboard')
 
-const route = useRoute()
-const router = useRouter()
+const gameModeModel = useRouteQuery<GameMode>('gameMode', GameMode.Battle)
+const characterClassModel = useRouteQuery<CharacterClass | undefined>('class', undefined)
+const regionModel = useRouteQuery<Region>('region', Region.Eu)
 
-const { gameModeModel } = useGameModeQuery()
-const { regionModel, regions } = useRegionQuery()
+function setColumnFilters(state: ColumnFiltersState) {
+  if (!state.length) {
+    characterClassModel.value = undefined
+    return
+  }
 
-const characterClassModel = computed<CharacterClass | undefined>({
-  get() {
-    return (route.query?.class as CharacterClass) || undefined
-  },
-
-  set(characterClass: CharacterClass | undefined) {
-    router.replace({
-      query: {
-        ...route.query,
-        class: characterClass,
-      },
-    })
-  },
-})
-
-const characterClasses = Object.values(CharacterClass)
+  // TODO: FIXME: шляпа
+  characterClassModel.value = state[0]?.value[0] as CharacterClass
+}
 
 const {
   execute: loadLeaderBoard,
   isLoading: leaderBoardLoading,
   state: leaderboard,
-} = useAsyncState(
-  () => getLeaderBoard({
-    characterClass: characterClassModel.value,
-    gameMode: gameModeModel.value,
-    region: regionModel.value,
-  }),
-  [],
-)
+} = useAsyncState(() => getLeaderBoard({
+  characterClass: characterClassModel.value,
+  gameMode: gameModeModel.value,
+  region: regionModel.value,
+}), [])
 
 watch(
   () => route.query,
-  () => loadLeaderBoard(),
+  () => loadLeaderBoard(300),
 )
 
 const { rankTable } = useRankTable()
-const isSelfUser = (row: CharacterCompetitiveNumbered) => row.user.id === userStore.user?.id
 
-const rowClass = (row: CharacterCompetitiveNumbered): string =>
-  isSelfUser(row) ? 'text-primary' : 'text-content-100'
+const regionItems = Object.keys(Region).map<TabsItem>(region => ({
+  label: t(`region.${region}`),
+  value: region,
+}))
+
+const gameModeItems = rankedGameModes.map<TabsItem>(mode => ({
+  label: t(`game-mode.${mode}`),
+  icon: `crpg:${gameModeToIcon[mode]}`,
+  value: mode,
+}))
+
+const columnFilters = ref<ColumnFiltersState>([])
+
+const table = useTemplateRef('table')
+
+const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
+  {
+    accessorKey: 'position',
+    header: ({ column }) => h(UiTableColumnHeader, {
+      label: t('leaderboard.table.cols.rank'),
+      withSort: true,
+      sorted: column.getIsSorted(),
+      onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
+    }),
+    meta: {
+      class: {
+        th: tw`w-18`,
+      },
+    },
+  },
+  {
+    accessorKey: 'statistics',
+    header: () => h('div', {
+      class: 'flex items-center gap-1',
+    }, [
+      t('leaderboard.table.cols.rank'),
+      h(UModal, {
+        title: t('rankTable.title'),
+        close: {
+          size: 'sm',
+          color: 'secondary',
+          variant: 'solid',
+        },
+        ui: {
+          content: tw`max-w-5xl`,
+        },
+      }, {
+        default: () => h(UIcon, { name: 'crpg:help-circle', class: 'size-3.5 cursor-pointer flex-col text-muted hover:text-toned' }),
+        body: () => h(CompetitiveRankTable, { rankTable: rankTable.value }),
+      }),
+    ]),
+    cell: ({ row }) => h(CompetitiveRank, {
+      rankTable: rankTable.value,
+      competitiveValue: getCompetitiveValueByGameMode(row.original.statistics, gameModeModel.value),
+    }),
+    meta: {
+      class: {
+        th: tw`w-48`,
+      },
+    },
+  },
+  {
+    accessorKey: 'user',
+    header: t('leaderboard.table.cols.player'),
+    cell: ({ row }) => h(UserMedia, { user: row.original.user, hiddenPlatform: true }),
+    meta: {
+      class: {
+        th: tw`max-w-96`,
+      },
+    },
+  },
+  {
+    accessorKey: 'class',
+    header: ({ column }) => {
+      const filterValue = (column.getFilterValue() || []) as string[]
+      return h(UiTableColumnHeader, {
+        label: t('leaderboard.table.cols.class'),
+        withFilter: true,
+        filtered: column.getIsFiltered(),
+        filterDropdownItems: Object.values(CharacterClass).map<DropdownMenuItem>(charClass => ({
+          icon: `crpg:${characterClassToIcon[charClass]}`,
+          label: `${t(`character.class.${charClass}`)}`,
+          type: 'checkbox',
+          checked: filterValue.includes(charClass),
+          onUpdateChecked() {
+            column.setFilterValue([charClass])
+          },
+        })),
+        onResetFilter: () => column.setFilterValue(undefined),
+      })
+    },
+    cell: ({ row }) => h(UTooltip, { text: t(`character.class.${row.original.class}`) }, () => h(UIcon, {
+      name: `crpg:${characterClassToIcon[row.original.class]}`,
+      class: 'size-6',
+    })),
+    meta: {
+      class: {
+        th: tw`w-24`,
+      },
+    },
+  },
+  {
+    accessorKey: 'level',
+    header: ({ column }) => h(UiTableColumnHeader, {
+      label: t('leaderboard.table.cols.level'),
+      withSort: true,
+      sorted: column.getIsSorted(),
+      onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
+    }),
+    meta: {
+      class: {
+        th: tw`w-24`,
+      },
+    },
+  },
+]
 </script>
 
 <template>
-  <div class="container">
+  <UContainer>
     <div class="mx-auto max-w-4xl py-8 md:py-16">
       <div class="mb-20">
         <div class="mb-5 flex justify-center">
-          <OIcon
-            icon="trophy-cup"
-            size="5x"
-            class="text-more-support"
+          <UIcon
+            name="crpg:trophy-cup"
+            class="size-12 text-more-support"
           />
         </div>
+        <!-- TODO: cmp, TextView -->
         <UiHeading :title="$t('leaderboard.title')" />
       </div>
 
       <div class="mb-4 flex items-center gap-6">
-        <div class="flex items-center">
-          <OTabs
-            v-model="regionModel"
-            content-class="hidden"
-          >
-            <OTabItem
-              v-for="region in regions"
-              :key="region"
-              :label="$t(`region.${region}`, 0)"
-              :value="region"
-            />
-          </OTabs>
-        </div>
+        <UTabs
+          v-model="regionModel"
+          :items="regionItems"
+          size="xl"
+          variant="pill"
+          :content="false"
+        />
 
-        <UiDivider inline />
+        <USeparator orientation="vertical" class="h-8" />
 
-        <div class="flex items-end">
-          <OTabs
-            v-model="gameModeModel"
-            content-class="hidden"
-          >
-            <OTabItem
-              v-for="gameMode in rankedGameModes"
-              :key="gameMode"
-              :label="$t(`game-mode.${gameMode}`, 0)"
-              :icon="gameModeToIcon[gameMode]"
-              :value="gameMode"
-            />
-          </OTabs>
-        </div>
+        <UTabs
+          v-model="gameModeModel"
+          :items="gameModeItems"
+          size="xl"
+          variant="pill"
+          :content="false"
+        />
       </div>
 
-      <OTable
-        :data="leaderboard"
-        hoverable
-        bordered
-        sort-icon="chevron-up"
-        sort-icon-size="xs"
+      <UTable
+        ref="table"
+        class="relative rounded-md border border-muted"
         :loading="leaderBoardLoading"
-        :row-class="rowClass"
-        :default-sort="['position', 'asc']"
+        :data="leaderboard"
+        :columns
+        :state="{
+          columnFilters,
+        }"
+        :meta="{
+          class: {
+            tr: (row) => row.original.user.id === userStore.user?.id ? tw`text-primary` : '',
+          },
+        }"
+        @update:column-filters="setColumnFilters"
       >
-        <OTableColumn
-          v-slot="{ row }: { row: CharacterCompetitiveNumbered }"
-          field="position"
-          :label="$t('leaderboard.table.cols.top')"
-          :width="80"
-          sortable
-        >
-          {{ row.position }}
-        </OTableColumn>
-
-        <OTableColumn
-          field="rating.competitiveValue"
-          :width="230"
-        >
-          <template #header>
-            <div class="flex items-center gap-2">
-              <span>{{ $t('leaderboard.table.cols.rank') }}</span>
-              <UiModal closable>
-                <UiTag
-                  icon="help-circle"
-                  rounded
-                  size="lg"
-                  variant="primary"
-                />
-                <template #popper>
-                  <CompetitiveRankTable :rank-table="rankTable" />
-                </template>
-              </UiModal>
-            </div>
-          </template>
-
-          <template #default="{ row }: { row: CharacterCompetitiveNumbered }">
-            <CompetitiveRank
-              :rank-table="rankTable"
-              :competitive-value="getCompetitiveValueByGameMode(row.statistics, gameModeModel)"
-            />
-          </template>
-        </OTableColumn>
-
-        <OTableColumn
-          v-slot="{ row }: { row: CharacterCompetitiveNumbered }"
-          field="user.name"
-          :label="$t('leaderboard.table.cols.player')"
-        >
-          <UserMedia
-            class="max-w-80"
-            :user="row.user"
-            hidden-platform
-          />
-        </OTableColumn>
-
-        <OTableColumn
-          field="class"
-          :width="80"
-        >
-          <template #header>
-            <UiTHDropdown
-              :label="$t('leaderboard.table.cols.class')"
-              :shown-reset="Boolean(characterClassModel)"
-              @reset="characterClassModel = undefined"
-            >
-              <template #default="{ hide }">
-                <UiDropdownItem
-                  v-for="characterClass in characterClasses"
-                  :key="characterClass"
-                  :checked="characterClass === characterClassModel"
-                  @click="
-                    () => {
-                      characterClassModel = characterClass;
-                      hide();
-                    }
-                  "
-                >
-                  <OIcon
-                    :icon="characterClassToIcon[characterClass]"
-                    size="lg"
-                  />
-                  {{ $t(`character.class.${characterClass}`) }}
-                </UiDropdownItem>
-              </template>
-            </UiTHDropdown>
-          </template>
-
-          <template #default="{ row }: { row: CharacterCompetitiveNumbered }">
-            <OIcon
-              v-tooltip="$t(`character.class.${row.class}`)"
-              :icon="characterClassToIcon[row.class]"
-              size="lg"
-            />
-          </template>
-        </OTableColumn>
-
-        <OTableColumn
-          v-slot="{ row }: { row: CharacterCompetitiveNumbered }"
-          field="level"
-          :label="$t('leaderboard.table.cols.level')"
-          sortable
-          :width="80"
-        >
-          {{ row.level }}
-        </OTableColumn>
-
         <template #empty>
           <UiResultNotFound />
         </template>
-      </OTable>
+      </UTable>
     </div>
-  </div>
+  </UContainer>
 </template>
