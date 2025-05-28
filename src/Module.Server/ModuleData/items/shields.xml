@@ -2658,7 +2658,7 @@
   </Item>
   <Item id="crpg_aciv_cts_carthage_aspis_h0" name="{=Steve18}Aspis Horse Black" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="10" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="480">
+      <Weapon weapon_class="LargeShield" body_armor="10" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="480">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2666,7 +2666,7 @@
   </Item>
   <Item id="crpg_aciv_cts_carthage_aspis_h1" name="{=Steve18}Aspis Horse Black +1" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="519">
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="519">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2674,7 +2674,7 @@
   </Item>
   <Item id="crpg_aciv_cts_carthage_aspis_h2" name="{=Steve18}Aspis Horse Black +2" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="557">
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="557">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2682,7 +2682,7 @@
   </Item>
   <Item id="crpg_aciv_cts_carthage_aspis_h3" name="{=Steve18}Aspis Horse Black +3" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="596">
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="596">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2690,7 +2690,7 @@
   </Item>
   <Item id="crpg_aciv_cts_carthage_aspis_a_h0" name="{=Steve18}Simple Bronze Aspis" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis_a" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="10" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="480">
+      <Weapon weapon_class="LargeShield" body_armor="10" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="480">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2698,7 +2698,7 @@
   </Item>
   <Item id="crpg_aciv_cts_carthage_aspis_a_h1" name="{=Steve18}Simple Bronze Aspis +1" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis_a" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="519">
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="519">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2706,7 +2706,7 @@
   </Item>
   <Item id="crpg_aciv_cts_carthage_aspis_a_h2" name="{=Steve18}Simple Bronze Aspis +2" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis_a" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="557">
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="557">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2714,7 +2714,7 @@
   </Item>
   <Item id="crpg_aciv_cts_carthage_aspis_a_h3" name="{=Steve18}Simple Bronze Aspis +3" using_tableau="false" body_name="bo_cap_cts_greek_aspis" shield_body_name="bo_cts_greek_aspis" recalculate_body="false" mesh="cts_carthage_aspis_a" culture="Culture.empire" is_merchandise="true" weight="5.415" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.05,0.00">
     <ItemComponent>
-      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="wood_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="596">
+      <Weapon weapon_class="LargeShield" body_armor="11" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="hand_shield" position="-0.00, 0.09, 0.03" rotation="-15.30, 10.30, 0.90" weapon_length="95" center_of_mass="-0.0, 0.1, 0.1" hit_points="596">
         <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
       </Weapon>
     </ItemComponent>
@@ -2975,5 +2975,37 @@
       </Weapon>
     </ItemComponent>
     <Flags WoodenParry="true" ForceAttachOffHandPrimaryItemBone="true" HeldInOffHand="true" />
+  </Item>
+  <Item id="crpg_sunshield_h0" name="{=BalanceMe}Vergina Sun Shield" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="sunshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="28" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="295">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_sunshield_h1" name="{=BalanceMe}Vergina Sun Shield +1" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="sunshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="29" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="319">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_sunshield_h2" name="{=BalanceMe}Vergina Sun Shield +2" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="sunshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="30" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="343">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
+  </Item>
+  <Item id="crpg_sunshield_h3" name="{=BalanceMe}Vergina Sun Shield +3" using_tableau="false" body_name="bo_cap_sunshield" shield_body_name="bo_sunshield" recalculate_body="false" mesh="sunshield" culture="Culture.empire" is_merchandise="true" weight="2.243475" appearance="3" Type="Shield" item_holsters="shield:shield_2:shield_3:shield_4" has_lower_holster_priority="true" holster_position_shift="0.00,0.0,0.07">
+    <ItemComponent>
+      <Weapon weapon_class="LargeShield" body_armor="31" thrust_speed="70" thrust_damage_type="Blunt" speed_rating="70" physics_material="metal_shield" item_usage="shield" position="0.1, 0.1, 0.05" rotation="-15.30, 10.30, 0.90" weapon_length="78" center_of_mass="-0.0, 0.1, 0.1" hit_points="366">
+        <WeaponFlags CanBlockRanged="true" HasHitPoints="true" />
+      </Weapon>
+    </ItemComponent>
+    <Flags WoodenParry="false" HeldInOffHand="true" ForceAttachOffHandSecondaryItemBone="true" />
   </Item>
 </Items>
