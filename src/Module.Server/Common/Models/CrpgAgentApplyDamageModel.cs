@@ -174,7 +174,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 hasShield = true;
             }
 
-            // Check inventory for ranged and shield
+            // Check inventory for ranged, shield, or alternate throwable mode
             for (int i = 0; i < (int)EquipmentIndex.NumAllWeaponSlots; i++)
             {
                 var equipmentElement = attackerAgent.Equipment[i];
@@ -190,9 +190,26 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                     continue;
                 }
 
-                if (!hasRangedWeapon && usage.IsRangedWeapon)
+                if (!hasRangedWeapon)
                 {
-                    hasRangedWeapon = true;
+                    // Mark as ranged if it's an actual ranged weapon with ammo, or has any throwable alternate mode
+                    bool isAmmoEmpty = equipmentElement.Amount == 0 && usage.IsConsumable;
+                    bool hasAlternateThrowable = false;
+
+                    for (int j = 0; j < item.WeaponComponent?.Weapons?.Count; j++)
+                    {
+                        var altUsage = item.WeaponComponent.Weapons[j];
+                        if (altUsage != usage && altUsage.IsConsumable && altUsage.IsRangedWeapon)
+                        {
+                            hasAlternateThrowable = true;
+                            break;
+                        }
+                    }
+
+                    if ((usage.IsRangedWeapon && !isAmmoEmpty) || hasAlternateThrowable)
+                    {
+                        hasRangedWeapon = true;
+                    }
                 }
 
                 if (!hasShield && usage.IsShield)
