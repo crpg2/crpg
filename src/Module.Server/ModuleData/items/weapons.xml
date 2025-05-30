@@ -14808,4 +14808,36 @@
       <Piece id="crpg_bobs_ballmace_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_nagamaki_h0" name="{=BalanceMe}Nagamaki" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_nagamaki_blade_h0" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_nagamaki_handle_h0" Type="Handle" scale_factor="135" />
+      <Piece id="crpg_nagamaki_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_nagamaki_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_nagamaki_h1" name="{=BalanceMe}Nagamaki +1" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_nagamaki_blade_h1" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_nagamaki_handle_h1" Type="Handle" scale_factor="135" />
+      <Piece id="crpg_nagamaki_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_nagamaki_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_nagamaki_h2" name="{=BalanceMe}Nagamaki +2" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_nagamaki_blade_h2" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_nagamaki_handle_h2" Type="Handle" scale_factor="135" />
+      <Piece id="crpg_nagamaki_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_nagamaki_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_nagamaki_h3" name="{=BalanceMe}Nagamaki +3" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_nagamaki_blade_h3" Type="Blade" scale_factor="90" />
+      <Piece id="crpg_nagamaki_handle_h3" Type="Handle" scale_factor="135" />
+      <Piece id="crpg_nagamaki_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_nagamaki_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
 </Items>

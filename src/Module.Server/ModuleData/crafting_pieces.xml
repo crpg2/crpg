@@ -37344,4 +37344,88 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_bobs_ballmace_pommel_h3" name="{=BalanceMe}Bob's Ballmace Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.97">
   </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_blade_h0" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_blade_h1" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="3.9" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_blade_h2" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_blade_h3" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Cut" damage_factor="4.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_handle_h0" name="Nagamaki Handle" tier="2" piece_type="Handle" mesh="nagamaki_handle" length="80.1" weight="1.5" excluded_item_usage_features="long">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="10" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_handle_h1" name="Nagamaki Handle" tier="2" piece_type="Handle" mesh="nagamaki_handle" length="80.1" weight="1.3" excluded_item_usage_features="long">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="10" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_handle_h2" name="Nagamaki Handle" tier="2" piece_type="Handle" mesh="nagamaki_handle" length="80.1" weight="1.3" excluded_item_usage_features="long">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="10" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_handle_h3" name="Nagamaki Handle" tier="2" piece_type="Handle" mesh="nagamaki_handle" length="80.1" weight="1.1" excluded_item_usage_features="long">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="10" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_guard_h0" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="nagamaki_guard" culture="Culture.empire" length="4.57" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_guard_h1" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="nagamaki_guard" culture="Culture.empire" length="4.57" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_guard_h2" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="nagamaki_guard" culture="Culture.empire" length="4.57" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_guard_h3" name="{=koX9okuG}None" tier="1" piece_type="Guard" mesh="nagamaki_guard" culture="Culture.empire" length="4.57" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_pommel_h0" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_pommel_h1" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_pommel_h2" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_nagamaki_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
+  </CraftingPiece>
 </CraftingPieces>
