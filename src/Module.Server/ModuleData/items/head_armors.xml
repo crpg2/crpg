@@ -10152,4 +10152,28 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
+  <Item id="crpg_aa_morion_v1_h0" name="{=AppleTruce}Morion with collar" mesh="aa_morionwithcollar" culture="Culture.empire" weight="5.17156" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="56" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aa_morion_v1_h1" name="{=AppleTruce}Morion with collar +1" mesh="aa_morionwithcollar" culture="Culture.empire" weight="5.17156" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="58" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aa_morion_v1_h2" name="{=AppleTruce}Morion with collar +2" mesh="aa_morionwithcollar" culture="Culture.empire" weight="5.17156" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="60" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_aa_morion_v1_h3" name="{=AppleTruce}Morion with collar +3" mesh="aa_morionwithcollar" culture="Culture.empire" weight="5.17156" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
+    <ItemComponent>
+      <Armor head_armor="62" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>
