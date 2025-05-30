@@ -3256,7 +3256,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_thamaskene_tipped_spear_handle_h0" name="{=tgJ3dSOx}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.5">
+  <CraftingPiece id="crpg_long_thamaskene_tipped_spear_handle_h0" name="{=tgJ3dSOx}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.4">
     <BuildData piece_offset="22.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -5528,37 +5528,33 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_thamaskene_tipped_spear_blade_h0" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.1">
+  <CraftingPiece id="crpg_long_thamaskene_tipped_spear_blade_h0" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.3" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Blunt" damage_factor="2.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_thamaskene_tipped_spear_blade_h1" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.1">
+  <CraftingPiece id="crpg_long_thamaskene_tipped_spear_blade_h1" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.3" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Blunt" damage_factor="2.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_thamaskene_tipped_spear_blade_h2" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.1">
+  <CraftingPiece id="crpg_long_thamaskene_tipped_spear_blade_h2" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.3" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Blunt" damage_factor="2.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_thamaskene_tipped_spear_blade_h3" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.1">
+  <CraftingPiece id="crpg_long_thamaskene_tipped_spear_blade_h3" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.2" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
-      <Swing damage_type="Blunt" damage_factor="2.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="1" />

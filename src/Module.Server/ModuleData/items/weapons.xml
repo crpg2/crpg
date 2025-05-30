@@ -9016,7 +9016,7 @@
       <Piece id="crpg_triangular_throwing_spear_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_thamaskene_tipped_spear_v3_h0" name="{=vXYlLH6L}Long Thamaskene Tipped Spear" crafting_template="crpg_Spear4DMode" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_long_thamaskene_tipped_spear_v4_h0" name="{=vXYlLH6L}Long Thamaskene Tipped Spear" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_thamaskene_tipped_spear_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_thamaskene_tipped_spear_guard_h0" Type="Guard" scale_factor="100" />
@@ -9024,7 +9024,7 @@
       <Piece id="crpg_long_thamaskene_tipped_spear_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_thamaskene_tipped_spear_v3_h1" name="{=vXYlLH6L}Long Thamaskene Tipped Spear +1" crafting_template="crpg_Spear4DMode" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_long_thamaskene_tipped_spear_v4_h1" name="{=vXYlLH6L}Long Thamaskene Tipped Spear +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_thamaskene_tipped_spear_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_thamaskene_tipped_spear_guard_h1" Type="Guard" scale_factor="100" />
@@ -9032,7 +9032,7 @@
       <Piece id="crpg_long_thamaskene_tipped_spear_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_thamaskene_tipped_spear_v3_h2" name="{=vXYlLH6L}Long Thamaskene Tipped Spear +2" crafting_template="crpg_Spear4DMode" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_long_thamaskene_tipped_spear_v4_h2" name="{=vXYlLH6L}Long Thamaskene Tipped Spear +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_thamaskene_tipped_spear_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_thamaskene_tipped_spear_guard_h2" Type="Guard" scale_factor="100" />
@@ -9040,7 +9040,7 @@
       <Piece id="crpg_long_thamaskene_tipped_spear_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_thamaskene_tipped_spear_v3_h3" name="{=vXYlLH6L}Long Thamaskene Tipped Spear +3" crafting_template="crpg_Spear4DMode" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_long_thamaskene_tipped_spear_v4_h3" name="{=vXYlLH6L}Long Thamaskene Tipped Spear +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_thamaskene_tipped_spear_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_thamaskene_tipped_spear_guard_h3" Type="Guard" scale_factor="100" />
