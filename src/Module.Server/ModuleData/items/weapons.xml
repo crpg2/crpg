@@ -14780,4 +14780,32 @@
       <Piece id="crpg_katzbalger_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_bobs_ballmace_h0" name="{=Salt}Spiked Ballmace" crafting_template="crpg_Mace" modifier_group="mace">
+    <Pieces>
+      <Piece id="crpg_bobs_ballmace_head_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bobs_ballmace_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bobs_ballmace_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_bobs_ballmace_h1" name="{=Salt}Spiked Ballmace +1" crafting_template="crpg_Mace" modifier_group="mace">
+    <Pieces>
+      <Piece id="crpg_bobs_ballmace_head_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bobs_ballmace_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bobs_ballmace_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_bobs_ballmace_h2" name="{=Salt}Spiked Ballmace +2" crafting_template="crpg_Mace" modifier_group="mace">
+    <Pieces>
+      <Piece id="crpg_bobs_ballmace_head_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bobs_ballmace_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bobs_ballmace_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_bobs_ballmace_h3" name="{=Salt}Spiked Ballmace +3" crafting_template="crpg_Mace" modifier_group="mace">
+    <Pieces>
+      <Piece id="crpg_bobs_ballmace_head_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_bobs_ballmace_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_bobs_ballmace_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
 </Items>

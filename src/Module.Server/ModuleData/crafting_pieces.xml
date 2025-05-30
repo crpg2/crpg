@@ -37304,4 +37304,44 @@
   <CraftingPiece id="crpg_katzbalger_handle_h3" name="{=}Katzbalger Handle" tier="3" piece_type="Handle" mesh="katzbalger_handle" full_scale="false" culture="Culture.khuzait" length="10.9" weight="0.8">
     <BuildData piece_offset="-1" previous_piece_offset="0" next_piece_offset="1" />
   </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_handle_h0" name="{=BalanceMe}Bob's Ballmace Handle" tier="3" piece_type="Handle" mesh="bobs_ballmace_handle" full_scale="true" length="57.7" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="20" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_handle_h1" name="{=BalanceMe}Bob's Ballmace Handle" tier="3" piece_type="Handle" mesh="bobs_ballmace_handle" full_scale="true" length="57.7" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="20" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_handle_h2" name="{=BalanceMe}Bob's Ballmace Handle" tier="3" piece_type="Handle" mesh="bobs_ballmace_handle" full_scale="true" length="57.7" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="20" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_handle_h3" name="{=BalanceMe}Bob's Ballmace Handle" tier="3" piece_type="Handle" mesh="bobs_ballmace_handle" full_scale="true" length="57.7" weight="1.0" CraftingCost="75">
+    <BuildData piece_offset="20" next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_head_h0" name="{=BalanceMe}Bob's Ballmace Head" tier="3" piece_type="Blade" mesh="bobs_ballmace_head" length="24.8" weight="0.75" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.2" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_head_h1" name="{=BalanceMe}Bob's Ballmace Head" tier="3" piece_type="Blade" mesh="bobs_ballmace_head" length="24.8" weight="0.75" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.3" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_head_h2" name="{=BalanceMe}Bob's Ballmace Head" tier="3" piece_type="Blade" mesh="bobs_ballmace_head" length="24.8" weight="0.75" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.4" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_head_h3" name="{=BalanceMe}Bob's Ballmace Head" tier="3" piece_type="Blade" mesh="bobs_ballmace_head" length="24.8" weight="0.65" full_scale="true" excluded_item_usage_features="thrust">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Blunt" damage_factor="2.4" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_pommel_h0" name="{=BalanceMe}Bob's Ballmace Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="1.0">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_pommel_h1" name="{=BalanceMe}Bob's Ballmace Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="1.0">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_pommel_h2" name="{=BalanceMe}Bob's Ballmace Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="1.0">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_bobs_ballmace_pommel_h3" name="{=BalanceMe}Bob's Ballmace Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.97">
+  </CraftingPiece>
 </CraftingPieces>
