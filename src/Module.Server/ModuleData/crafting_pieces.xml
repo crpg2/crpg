@@ -37140,4 +37140,96 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_chankamace_altmode_pommel_h3" name="{=Yeldur}Flangedmace Pommel" tier="3" piece_type="Pommel" mesh="flangedmace_pommel" culture="Culture.empire" full_scale="true" length="12" weight="1.0">
   </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_blade_h0" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.4">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="3.8" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_blade_h1" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.4">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_blade_h2" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.4">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_blade_h3" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.4">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="4.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_handle_h0" name="Celtic Spear Handle" tier="2" piece_type="Handle" mesh="celticspear_handle" length="200" weight="0.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_handle_h1" name="Celtic Spear Handle" tier="2" piece_type="Handle" mesh="celticspear_handle" length="200" weight="0.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_handle_h2" name="Celtic Spear Handle" tier="2" piece_type="Handle" mesh="celticspear_handle" length="200" weight="0.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_handle_h3" name="Celtic Spear Handle" tier="2" piece_type="Handle" mesh="celticspear_handle" length="200" weight="0.3" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_guard_h0" name="{=koX9okuG}Celtic Spear Guard" tier="1" piece_type="Guard" mesh="celticspear_guard" culture="Culture.empire" length="17.2" weight="0.26" is_default="true">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_guard_h1" name="{=koX9okuG}Celtic Spear Guard" tier="1" piece_type="Guard" mesh="celticspear_guard" culture="Culture.empire" length="17.2" weight="0.26" is_default="true">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_guard_h2" name="{=koX9okuG}Celtic Spear Guard" tier="1" piece_type="Guard" mesh="celticspear_guard" culture="Culture.empire" length="17.2" weight="0.26" is_default="true">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_guard_h3" name="{=koX9okuG}Celtic Spear Guard" tier="1" piece_type="Guard" mesh="celticspear_guard" culture="Culture.empire" length="17.2" weight="0.26" is_default="true">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_pommel_h0" name="{=koX9okuG}Celtic Spear Pommel" tier="1" piece_type="Pommel" mesh="celticspear_pommel" culture="Culture.empire" length="9.71" weight="0.26" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_pommel_h1" name="{=koX9okuG}Celtic Spear Pommel" tier="1" piece_type="Pommel" mesh="celticspear_pommel" culture="Culture.empire" length="9.71" weight="0.26" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_pommel_h2" name="{=koX9okuG}Celtic Spear Pommel" tier="1" piece_type="Pommel" mesh="celticspear_pommel" culture="Culture.empire" length="9.71" weight="0.26" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_celticspear_pommel_h3" name="{=koX9okuG}Celtic Spear Pommel" tier="1" piece_type="Pommel" mesh="celticspear_pommel" culture="Culture.empire" length="9.71" weight="0.26" is_default="true">
+  </CraftingPiece>
 </CraftingPieces>

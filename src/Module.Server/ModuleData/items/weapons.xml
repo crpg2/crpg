@@ -14716,4 +14716,36 @@
       <Piece id="crpg_chankamace_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_celticspear_h0" name="{=BalanceMe}La Tene Spear" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_celticspear_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_celticspear_handle_h0" Type="Handle" scale_factor="80" />
+      <Piece id="crpg_celticspear_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_celticspear_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_celticspear_h1" name="{=BalanceMe}La Tene Spear +1" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_celticspear_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_celticspear_handle_h1" Type="Handle" scale_factor="80" />
+      <Piece id="crpg_celticspear_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_celticspear_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_celticspear_h2" name="{=BalanceMe}La Tene Spear +2" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_celticspear_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_celticspear_handle_h2" Type="Handle" scale_factor="80" />
+      <Piece id="crpg_celticspear_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_celticspear_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_celticspear_h3" name="{=BalanceMe}La Tene Spear +3" crafting_template="crpg_TwoHandedPolearm">
+    <Pieces>
+      <Piece id="crpg_celticspear_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_celticspear_handle_h3" Type="Handle" scale_factor="80" />
+      <Piece id="crpg_celticspear_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_celticspear_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
 </Items>

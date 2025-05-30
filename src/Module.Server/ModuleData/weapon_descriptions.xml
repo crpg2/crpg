@@ -9085,6 +9085,22 @@
       <WeaponFlag value="TwoHandIdleOnMount" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_celticspear_blade_h0" />
+      <AvailablePiece id="crpg_celticspear_blade_h1" />
+      <AvailablePiece id="crpg_celticspear_blade_h2" />
+      <AvailablePiece id="crpg_celticspear_blade_h3" />
+      <AvailablePiece id="crpg_celticspear_handle_h0" />
+      <AvailablePiece id="crpg_celticspear_handle_h1" />
+      <AvailablePiece id="crpg_celticspear_handle_h2" />
+      <AvailablePiece id="crpg_celticspear_handle_h3" />
+      <AvailablePiece id="crpg_celticspear_guard_h0" />
+      <AvailablePiece id="crpg_celticspear_guard_h1" />
+      <AvailablePiece id="crpg_celticspear_guard_h2" />
+      <AvailablePiece id="crpg_celticspear_guard_h3" />
+      <AvailablePiece id="crpg_celticspear_pommel_h0" />
+      <AvailablePiece id="crpg_celticspear_pommel_h1" />
+      <AvailablePiece id="crpg_celticspear_pommel_h2" />
+      <AvailablePiece id="crpg_celticspear_pommel_h3" />
       <AvailablePiece id="crpg_great_long_maul_blade_h0" />
       <AvailablePiece id="crpg_great_long_maul_blade_h1" />
       <AvailablePiece id="crpg_great_long_maul_blade_h2" />
