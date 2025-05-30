@@ -23,12 +23,15 @@ export const getLeaderBoard = async ({
   characterClass?: CharacterClass
   gameMode?: GameMode
 }): Promise<CharacterCompetitiveNumbered[]> => {
-  const { data } = await getLeaderboardLeaderboard({ composable: '$fetch', query: {
-    // TODO: FIXME: fix schema
-    region: region!,
-    gameMode: gameMode!,
-    characterClass: characterClass!,
-  } })
+  const { data } = await getLeaderboardLeaderboard({
+    composable: '$fetch',
+    query: {
+      // TODO: FIXME: fix schema
+      region: region!,
+      gameMode: gameMode!,
+      characterClass: characterClass!,
+    },
+  })
 
   // TODO: FIXME:
   return data!.map((cr, idx) => ({

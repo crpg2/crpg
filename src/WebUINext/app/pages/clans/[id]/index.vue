@@ -103,21 +103,18 @@ const { execute: kickMember } = useAsyncCallback(async (member: ClanMember) => {
   )
 })
 
-const clanMemberDetailModal = ref<boolean>(false)
-const selectedCLanMemberId = ref<number | null>(null)
-
+const selectedClanMemberId = ref<number | null>(null)
 const onOpenMemberDetail = (member: ClanMember) => {
   if (!selfMember.value || checkIsSelfMember(member)) {
     return
   }
 
   if (canKickMember(member)) {
-    selectedCLanMemberId.value = member.user.id
-    clanMemberDetailModal.value = true
+    selectedClanMemberId.value = member.user.id
   }
 }
 
-const selectedClanMember = computed(() => clanMembers.value.find(m => m.user.id === selectedCLanMemberId.value))
+const selectedClanMember = computed(() => clanMembers.value.find(m => m.user.id === selectedClanMemberId.value))
 
 const { pageModel, perPage } = usePagination()
 
@@ -170,32 +167,19 @@ fetchPageData(clanId.value)
         <div class="flex flex-wrap items-center justify-center gap-4.5">
           <UiDataCell>
             <template #leftContent>
-              <OIcon
-                icon="hash"
-                size="lg"
-                class="text-content-100"
-              />
-              <!-- TODO: text view cmp? -->
-              <span class="text-content-200" data-aq-clan-info="tag">{{ clan.tag }}</span>
+              <UIcon name="crpg:hash" class="size-6" />
             </template>
+            <!-- TODO: text view cmp? -->
+            <span data-aq-clan-info="tag">{{ clan.tag }}</span>
           </UiDataCell>
 
           <USeparator orientation="vertical" class="h-8" />
 
           <UiDataCell>
             <template #leftContent>
-              <OIcon
-                icon="region"
-                size="lg"
-                class="text-content-100"
-              />
+              <UIcon name="crpg:region" class="size-6" />
             </template>
-            <div
-              class="text-content-200"
-              data-aq-clan-info="region"
-            >
-              {{ $t(`region.${clan.region}`, 0) }}
-            </div>
+            <span data-aq-clan-info="region"> {{ $t(`region.${clan.region}`, 0) }}</span>
             <template #rightContent>
               <UTooltip
                 v-for="l in clan.languages"
@@ -216,18 +200,9 @@ fetchPageData(clanId.value)
 
           <UiDataCell>
             <template #leftContent>
-              <OIcon
-                icon="member"
-                size="lg"
-                class="text-content-100"
-              />
+              <UIcon name="crpg:member" class="size-6" />
             </template>
-            <span
-              class="text-content-200"
-              data-aq-clan-info="member-count"
-            >
-              {{ clanMembersCount }}
-            </span>
+            <span data-aq-clan-info="member-count">{{ clanMembersCount }}</span>
           </UiDataCell>
         </div>
 
@@ -239,72 +214,56 @@ fetchPageData(clanId.value)
           {{ clan.description }}
         </div>
 
+        <!-- TODO: -->
         <UiDivider />
       </div>
     </UContainer>
 
     <div class="flex items-center justify-center gap-3">
-      <NuxtLink
+      <UButton
         v-if="canUseClanArmory"
+        color="primary"
+        variant="outline"
+        icon="crpg:armory"
+        :label="$t('clan.armory.title')"
+        size="xl"
         :to="{ name: 'clans-id-armory', params: { id: clanId } }"
-      >
-        <OButton
-          variant="primary"
-          outlined
-          icon-left="armory"
-          :label="$t('clan.armory.title')"
-          size="xl"
-        />
-      </NuxtLink>
+      />
 
       <template v-if="canManageApplications || canUpdateClan">
-        <NuxtLink
-          v-if="canUseClanArmory"
+        <UButton
+          v-if="canManageApplications"
           :to="{ name: 'clans-id-applications', params: { id: clanId } }"
-        >
-          <OButton
-            variant="primary"
-            outlined
-            size="xl"
-            data-aq-clan-action="clan-application"
-          >
-            {{ $t('clan.application.title') }}
-            <template v-if="applicationsCount !== 0">
-              ({{ applicationsCount }})
-            </template>
-          </OButton>
-        </NuxtLink>
-
-        <NuxtLink
+          color="primary"
+          variant="outline"
+          size="xl"
+          data-aq-clan-action="clan-application"
+          :label="`${$t('clan.application.title')}${applicationsCount ? ` (${applicationsCount})` : ''}`"
+        />
+        <UButton
           v-if="canUpdateClan"
           :to="{ name: 'clans-id-update', params: { id: clanId } }"
-        >
-          <OButton
-            v-tooltip.bottom="$t('clan.action.settings')"
-            variant="secondary"
-            size="xl"
-            outlined
-            rounded
-            icon-left="settings"
-            data-aq-clan-action="clan-update"
-          />
-        </NuxtLink>
+          color="secondary"
+          variant="outline"
+          size="xl"
+          icon="crpg:settings"
+          data-aq-clan-action="clan-update"
+        />
       </template>
 
       <template v-else-if="!userStore.clan">
-        <OButton
+        <UButton
           v-if="applicationSent"
-          variant="secondary"
+          color="secondary"
+          variant="outline"
           size="xl"
           disabled
-          outlined
           data-aq-clan-action="application-sent"
           :label="$t('clan.application.sent')"
         />
-
-        <OButton
+        <UButton
           v-else
-          variant="primary"
+          color="primary"
           size="xl"
           :label="$t('clan.application.apply')"
           data-aq-clan-action="apply-to-join"
@@ -312,66 +271,68 @@ fetchPageData(clanId.value)
         />
       </template>
 
-      <UiModal v-if="!isLastMember && selfMember && canKickMember(selfMember)">
-        <OButton
-          variant="secondary"
+      <UModal
+        v-if="!isLastMember && selfMember && canKickMember(selfMember)"
+        :title="$t('clan.member.leave.dialog.title')"
+        :ui="{ footer: 'justify-center' }"
+        :close="{
+          size: 'sm',
+          color: 'secondary',
+          variant: 'solid',
+        }"
+      >
+        <UButton
+          color="secondary"
+          variant="outline"
           size="xl"
-          outlined
           :label="$t('clan.member.leave.title')"
           data-aq-clan-action="leave-clan"
         />
-
-        <template #popper="{ hide }">
-          <div class="space-y-6 px-12 py-11 text-center">
-            <h4 class="text-xl">
-              {{ $t('clan.member.leave.dialog.title') }}
-            </h4>
-
+        <template #body="{ close }">
+          <div class="space-y-6 text-center">
             <i18n-t
               scope="global"
               keypath="clan.member.leave.dialog.desc"
               tag="p"
             >
               <template #clanName>
-                <span class="font-bold">{{ clan.name }}</span>
+                <span class="inline-flex items-center gap-0.5 align-middle">
+                  <ClanTagIcon :color="clan.primaryColor" /> {{ clan.name }}
+                </span>
               </template>
             </i18n-t>
-
-            <div class="flex items-center justify-center gap-4">
-              <OButton
-                variant="primary"
-                outlined
-                size="xl"
-                :label="$t('action.cancel')"
-                data-aq-clan-action="leave-clan-cancel"
-                @click="hide"
-              />
-              <OButton
-                variant="primary"
-                size="xl"
-                :label="$t('action.leave')"
-                data-aq-clan-action="leave-clan-confirm"
-                @click="() => {
-                  selfMember && kickMember(selfMember);
-                  hide();
-                }"
-              />
-            </div>
           </div>
         </template>
-      </UiModal>
+        <template #footer="{ close }">
+          <UButton
+            color="primary"
+            variant="outline"
+            size="xl"
+            :label="$t('action.cancel')"
+            data-aq-clan-action="leave-clan-cancel"
+            @click="close"
+          />
+          <UButton
+            color="primary"
+            size="xl"
+            :label="$t('action.leave')"
+            data-aq-clan-action="leave-clan-confirm"
+            @click="() => {
+              selfMember && kickMember(selfMember);
+              close();
+            }"
+          />
+        </template>
+      </UModal>
 
-      <OButton
+      <UButton
         v-if="clan.discord"
-        v-tooltip.bottom="'Discord'"
-        variant="secondary"
+        color="secondary"
+        variant="outline"
         size="xl"
-        outlined
-        rounded
-        tag="a"
-        icon-left="discord"
-        :href="clan.discord"
+        icon="crpg:discord"
         target="_blank"
+        :href="clan.discord"
       />
     </div>
 
@@ -427,30 +388,48 @@ fetchPageData(clanId.value)
       </div>
     </div>
 
-    <UiModal
-      :shown="clanMemberDetailModal"
+    <!-- @apply-hide="selectedCLanMemberId = null"
+      @hide="clanMemberDetailModal = false" -->
+    <!-- @cancel="close" -->
+    <ClanMemberDetailModal
+      v-if="selectedClanMember"
+      open
+      data-aq-clan-member-detail-modal
+      :member="selectedClanMember"
+      :can-kick="canKickMember(selectedClanMember)"
+      :can-update="canUpdateMember"
+      @kick="() => {
+        kickMember(selectedClanMember!);
+        // close();
+      }"
+      @update="role => {
+        updateMember(selectedClanMember!.user.id, role);
+        // close();
+      }"
+    />
+    <!-- <UModal
+      :open="Boolean(selectedClanMember)"
+      title="dd"
       :auto-hide="false"
       data-aq-clan-member-detail-modal
-      @apply-hide="selectedCLanMemberId = null"
-      @hide="clanMemberDetailModal = false"
     >
-      <template #popper="{ hide }">
-        <ClanMemberDetail
+      <template #content="{ close }">
+        <ClanMemberDetailModal
           v-if="selectedClanMember"
           :member="selectedClanMember"
           :can-kick="canKickMember(selectedClanMember)"
           :can-update="canUpdateMember"
-          @cancel="hide"
+          @cancel="close"
           @kick="() => {
             kickMember(selectedClanMember!);
-            hide();
+            close();
           }"
           @update="role => {
             updateMember(selectedClanMember!.user.id, role);
-            hide();
+            close();
           }"
         />
       </template>
-    </UiModal>
+    </UModal> -->
   </div>
 </template>
