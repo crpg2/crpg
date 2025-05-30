@@ -216,25 +216,25 @@
       <Piece id="crpg_military_hammer_handle_h3" Type="Handle" scale_factor="135" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_goedendag_v3_h0" name="{=}Heavy Goedendag" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
+  <CraftedItem id="crpg_heavy_goedendag_v4_h0" name="{=}Heavy Goedendag" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
     <Pieces>
       <Piece id="crpg_heavy_goedendag_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_heavy_goedendag_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_goedendag_v3_h1" name="{=}Heavy Goedendag +1" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
+  <CraftedItem id="crpg_heavy_goedendag_v4_h1" name="{=}Heavy Goedendag +1" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
     <Pieces>
       <Piece id="crpg_heavy_goedendag_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_heavy_goedendag_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_goedendag_v3_h2" name="{=}Heavy Goedendag +2" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
+  <CraftedItem id="crpg_heavy_goedendag_v4_h2" name="{=}Heavy Goedendag +2" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
     <Pieces>
       <Piece id="crpg_heavy_goedendag_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_heavy_goedendag_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_goedendag_v3_h3" name="{=}Heavy Goedendag +3" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
+  <CraftedItem id="crpg_heavy_goedendag_v4_h3" name="{=}Heavy Goedendag +3" crafting_template="crpg_TwoHandedSword" culture="Culture.sturgia">
     <Pieces>
       <Piece id="crpg_heavy_goedendag_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_heavy_goedendag_handle_h3" Type="Handle" scale_factor="100" />
@@ -288,7 +288,7 @@
       <Piece id="crpg_light_goedendag_handle_h3" Type="Handle" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_black_katana_v3_h0" name="{=}Black Katana" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_black_katana_v4_h0" name="{=}Black Katana" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_black_katana_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_black_katana_guard_h0" Type="Guard" scale_factor="100" />
@@ -296,7 +296,7 @@
       <Piece id="crpg_black_katana_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_black_katana_v3_h1" name="{=}Black Katana +1" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_black_katana_v4_h1" name="{=}Black Katana +1" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_black_katana_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_black_katana_guard_h1" Type="Guard" scale_factor="100" />
@@ -304,7 +304,7 @@
       <Piece id="crpg_black_katana_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_black_katana_v3_h2" name="{=}Black Katana +2" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_black_katana_v4_h2" name="{=}Black Katana +2" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_black_katana_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_black_katana_guard_h2" Type="Guard" scale_factor="100" />
@@ -312,7 +312,7 @@
       <Piece id="crpg_black_katana_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_black_katana_v3_h3" name="{=}Black Katana +3" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_black_katana_v4_h3" name="{=}Black Katana +3" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_black_katana_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_black_katana_guard_h3" Type="Guard" scale_factor="100" />
@@ -320,7 +320,7 @@
       <Piece id="crpg_black_katana_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_yellow_katana_v3_h0" name="{=}Yellow Katana" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_yellow_katana_v4_h0" name="{=}Yellow Katana" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_yellow_katana_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_yellow_katana_guard_h0" Type="Guard" scale_factor="100" />
@@ -328,7 +328,7 @@
       <Piece id="crpg_yellow_katana_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_yellow_katana_v3_h1" name="{=}Yellow Katana +1" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_yellow_katana_v4_h1" name="{=}Yellow Katana +1" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_yellow_katana_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_yellow_katana_guard_h1" Type="Guard" scale_factor="100" />
@@ -336,7 +336,7 @@
       <Piece id="crpg_yellow_katana_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_yellow_katana_v3_h2" name="{=}Yellow Katana +2" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_yellow_katana_v4_h2" name="{=}Yellow Katana +2" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_yellow_katana_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_yellow_katana_guard_h2" Type="Guard" scale_factor="100" />
@@ -344,7 +344,7 @@
       <Piece id="crpg_yellow_katana_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_yellow_katana_v3_h3" name="{=}Yellow Katana +3" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_yellow_katana_v4_h3" name="{=}Yellow Katana +3" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_yellow_katana_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_yellow_katana_guard_h3" Type="Guard" scale_factor="100" />
@@ -352,7 +352,7 @@
       <Piece id="crpg_yellow_katana_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_green_katana_v3_h0" name="{=}Green Katana" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_green_katana_v4_h0" name="{=}Green Katana" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_green_katana_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_green_katana_guard_h0" Type="Guard" scale_factor="100" />
@@ -360,7 +360,7 @@
       <Piece id="crpg_green_katana_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_green_katana_v3_h1" name="{=}Green Katana +1" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_green_katana_v4_h1" name="{=}Green Katana +1" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_green_katana_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_green_katana_guard_h1" Type="Guard" scale_factor="100" />
@@ -368,7 +368,7 @@
       <Piece id="crpg_green_katana_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_green_katana_v3_h2" name="{=}Green Katana +2" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_green_katana_v4_h2" name="{=}Green Katana +2" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_green_katana_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_green_katana_guard_h2" Type="Guard" scale_factor="100" />
@@ -376,7 +376,7 @@
       <Piece id="crpg_green_katana_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_green_katana_v3_h3" name="{=}Green Katana +3" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_green_katana_v4_h3" name="{=}Green Katana +3" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_green_katana_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_green_katana_guard_h3" Type="Guard" scale_factor="100" />
@@ -384,7 +384,7 @@
       <Piece id="crpg_green_katana_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_blue_katana_v3_h0" name="{=}Blue Katana" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_blue_katana_v4_h0" name="{=}Blue Katana" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_blue_katana_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_blue_katana_guard_h0" Type="Guard" scale_factor="100" />
@@ -392,7 +392,7 @@
       <Piece id="crpg_blue_katana_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_blue_katana_v3_h1" name="{=}Blue Katana +1" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_blue_katana_v4_h1" name="{=}Blue Katana +1" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_blue_katana_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_blue_katana_guard_h1" Type="Guard" scale_factor="100" />
@@ -400,7 +400,7 @@
       <Piece id="crpg_blue_katana_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_blue_katana_v3_h2" name="{=}Blue Katana +2" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_blue_katana_v4_h2" name="{=}Blue Katana +2" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_blue_katana_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_blue_katana_guard_h2" Type="Guard" scale_factor="100" />
@@ -408,7 +408,7 @@
       <Piece id="crpg_blue_katana_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_blue_katana_v3_h3" name="{=}Blue Katana +3" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_blue_katana_v4_h3" name="{=}Blue Katana +3" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_blue_katana_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_blue_katana_guard_h3" Type="Guard" scale_factor="100" />
@@ -416,7 +416,7 @@
       <Piece id="crpg_blue_katana_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_red_katana_v3_h0" name="{=}Red Katana" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_red_katana_v4_h0" name="{=}Red Katana" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_red_katana_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_red_katana_guard_h0" Type="Guard" scale_factor="100" />
@@ -424,7 +424,7 @@
       <Piece id="crpg_red_katana_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_red_katana_v3_h1" name="{=}Red Katana +1" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_red_katana_v4_h1" name="{=}Red Katana +1" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_red_katana_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_red_katana_guard_h1" Type="Guard" scale_factor="100" />
@@ -432,7 +432,7 @@
       <Piece id="crpg_red_katana_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_red_katana_v3_h2" name="{=}Red Katana +2" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_red_katana_v4_h2" name="{=}Red Katana +2" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_red_katana_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_red_katana_guard_h2" Type="Guard" scale_factor="100" />
@@ -440,7 +440,7 @@
       <Piece id="crpg_red_katana_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_red_katana_v3_h3" name="{=}Red Katana +3" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_red_katana_v4_h3" name="{=}Red Katana +3" crafting_template="crpg_Katana" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_red_katana_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_red_katana_guard_h3" Type="Guard" scale_factor="100" />
@@ -480,25 +480,25 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <CraftedItem id="crpg_bone_breaker_v2_h0" name="{=}Bone Breaker" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_v3_h0" name="{=}Bone Breaker" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_bone_breaker_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bone_breaker_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bone_breaker_v2_h1" name="{=}Bone Breaker +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_v3_h1" name="{=}Bone Breaker +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_bone_breaker_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bone_breaker_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bone_breaker_v2_h2" name="{=}Bone Breaker +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_v3_h2" name="{=}Bone Breaker +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_bone_breaker_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bone_breaker_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_bone_breaker_v2_h3" name="{=}Bone Breaker +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_bone_breaker_v3_h3" name="{=}Bone Breaker +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_bone_breaker_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_bone_breaker_handle_h3" Type="Handle" scale_factor="100" />
@@ -528,49 +528,49 @@
       <Piece id="crpg_mallet_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_blacksmith_hammer_v3_h0" name="{=}Heavy Blacksmith Hammer" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_heavy_blacksmith_hammer_v4_h0" name="{=}Heavy Blacksmith Hammer" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_heavy_blacksmith_hammer_blade_h0" Type="Blade" scale_factor="132" />
       <Piece id="crpg_heavy_blacksmith_hammer_handle_h0" Type="Handle" scale_factor="132" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_blacksmith_hammer_v3_h1" name="{=}Heavy Blacksmith Hammer +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_heavy_blacksmith_hammer_v4_h1" name="{=}Heavy Blacksmith Hammer +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_heavy_blacksmith_hammer_blade_h1" Type="Blade" scale_factor="132" />
       <Piece id="crpg_heavy_blacksmith_hammer_handle_h1" Type="Handle" scale_factor="132" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_blacksmith_hammer_v3_h2" name="{=}Heavy Blacksmith Hammer +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_heavy_blacksmith_hammer_v4_h2" name="{=}Heavy Blacksmith Hammer +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_heavy_blacksmith_hammer_blade_h2" Type="Blade" scale_factor="132" />
       <Piece id="crpg_heavy_blacksmith_hammer_handle_h2" Type="Handle" scale_factor="132" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_blacksmith_hammer_v3_h3" name="{=}Heavy Blacksmith Hammer +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_heavy_blacksmith_hammer_v4_h3" name="{=}Heavy Blacksmith Hammer +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_heavy_blacksmith_hammer_blade_h3" Type="Blade" scale_factor="132" />
       <Piece id="crpg_heavy_blacksmith_hammer_handle_h3" Type="Handle" scale_factor="132" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_great_maul_v2_h0" name="{=}Great Maul" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_great_maul_v3_h0" name="{=}Great Maul" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_great_maul_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_great_maul_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_great_maul_v2_h1" name="{=}Great Maul +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_great_maul_v3_h1" name="{=}Great Maul +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_great_maul_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_great_maul_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_great_maul_v2_h2" name="{=}Great Maul +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_great_maul_v3_h2" name="{=}Great Maul +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_great_maul_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_great_maul_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_great_maul_v2_h3" name="{=}Great Maul +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_great_maul_v3_h3" name="{=}Great Maul +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_great_maul_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_great_maul_handle_h3" Type="Handle" scale_factor="100" />
@@ -688,25 +688,25 @@
       <Piece id="crpg_claymore_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_maul_v2_h0" name="{=}Long Maul" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_long_maul_v3_h0" name="{=}Long Maul" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_long_maul_blade_h0" Type="Blade" scale_factor="107" />
       <Piece id="crpg_long_maul_handle_h0" Type="Handle" scale_factor="165" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_maul_v2_h1" name="{=}Long Maul +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_long_maul_v3_h1" name="{=}Long Maul +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_long_maul_blade_h1" Type="Blade" scale_factor="107" />
       <Piece id="crpg_long_maul_handle_h1" Type="Handle" scale_factor="165" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_maul_v2_h2" name="{=}Long Maul +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_long_maul_v3_h2" name="{=}Long Maul +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_long_maul_blade_h2" Type="Blade" scale_factor="107" />
       <Piece id="crpg_long_maul_handle_h2" Type="Handle" scale_factor="165" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_maul_v2_h3" name="{=}Long Maul +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_long_maul_v3_h3" name="{=}Long Maul +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_long_maul_blade_h3" Type="Blade" scale_factor="107" />
       <Piece id="crpg_long_maul_handle_h3" Type="Handle" scale_factor="165" />
@@ -816,49 +816,49 @@
       <Piece id="crpg_long_hafted_spiked_mace_handle_h3" Type="Handle" scale_factor="290" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_greataxe_v2_h0" name="{=}Long Greataxe" crafting_template="crpg_TwoHandedAxe">
+  <CraftedItem id="crpg_long_greataxe_v3_h0" name="{=}Long Greataxe" crafting_template="crpg_TwoHandedAxe">
     <Pieces>
       <Piece id="crpg_long_greataxe_blade_h0" Type="Blade" scale_factor="120" />
       <Piece id="crpg_long_greataxe_handle_h0" Type="Handle" scale_factor="124" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_greataxe_v2_h1" name="{=}Long Greataxe +1" crafting_template="crpg_TwoHandedAxe">
+  <CraftedItem id="crpg_long_greataxe_v3_h1" name="{=}Long Greataxe +1" crafting_template="crpg_TwoHandedAxe">
     <Pieces>
       <Piece id="crpg_long_greataxe_blade_h1" Type="Blade" scale_factor="120" />
       <Piece id="crpg_long_greataxe_handle_h1" Type="Handle" scale_factor="124" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_greataxe_v2_h2" name="{=}Long Greataxe +2" crafting_template="crpg_TwoHandedAxe">
+  <CraftedItem id="crpg_long_greataxe_v3_h2" name="{=}Long Greataxe +2" crafting_template="crpg_TwoHandedAxe">
     <Pieces>
       <Piece id="crpg_long_greataxe_blade_h2" Type="Blade" scale_factor="120" />
       <Piece id="crpg_long_greataxe_handle_h2" Type="Handle" scale_factor="124" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_greataxe_v2_h3" name="{=}Long Greataxe +3" crafting_template="crpg_TwoHandedAxe">
+  <CraftedItem id="crpg_long_greataxe_v3_h3" name="{=}Long Greataxe +3" crafting_template="crpg_TwoHandedAxe">
     <Pieces>
       <Piece id="crpg_long_greataxe_blade_h3" Type="Blade" scale_factor="120" />
       <Piece id="crpg_long_greataxe_handle_h3" Type="Handle" scale_factor="124" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_greataxe_v2_h0" name="{=}Greataxe" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_greataxe_v3_h0" name="{=}Greataxe" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_greataxe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_greataxe_handle_h0" Type="Handle" scale_factor="108" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_greataxe_v2_h1" name="{=}Greataxe +1" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_greataxe_v3_h1" name="{=}Greataxe +1" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_greataxe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_greataxe_handle_h1" Type="Handle" scale_factor="108" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_greataxe_v2_h2" name="{=}Greataxe +2" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_greataxe_v3_h2" name="{=}Greataxe +2" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_greataxe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_greataxe_handle_h2" Type="Handle" scale_factor="108" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_greataxe_v2_h3" name="{=}Greataxe +3" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_greataxe_v3_h3" name="{=}Greataxe +3" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_greataxe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_greataxe_handle_h3" Type="Handle" scale_factor="108" />
@@ -888,25 +888,25 @@
       <Piece id="crpg_gada_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_barmace_v2_h0" name="{=}Barmace" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_barmace_v3_h0" name="{=}Barmace" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_barmace_blade_h0" Type="Blade" scale_factor="160" />
       <Piece id="crpg_barmace_handle_h0" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_barmace_v2_h1" name="{=}Barmace +1" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_barmace_v3_h1" name="{=}Barmace +1" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_barmace_blade_h1" Type="Blade" scale_factor="160" />
       <Piece id="crpg_barmace_handle_h1" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_barmace_v2_h2" name="{=}Barmace +2" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_barmace_v3_h2" name="{=}Barmace +2" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_barmace_blade_h2" Type="Blade" scale_factor="160" />
       <Piece id="crpg_barmace_handle_h2" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_barmace_v2_h3" name="{=}Barmace +3" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_barmace_v3_h3" name="{=}Barmace +3" crafting_template="crpg_TwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_barmace_blade_h3" Type="Blade" scale_factor="160" />
       <Piece id="crpg_barmace_handle_h3" Type="Handle" scale_factor="145" />
@@ -1024,25 +1024,25 @@
       <Piece id="crpg_war_scythe_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_boulder_on_a_stick_v2_h0" name="{=}Boulder on a Stick" crafting_template="crpg_TwoHandedMace" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_boulder_on_a_stick_v3_h0" name="{=}Boulder on a Stick" crafting_template="crpg_TwoHandedMace" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_boulder_on_a_stick_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_boulder_on_a_stick_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_boulder_on_a_stick_v2_h1" name="{=}Boulder on a Stick +1" crafting_template="crpg_TwoHandedMace" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_boulder_on_a_stick_v3_h1" name="{=}Boulder on a Stick +1" crafting_template="crpg_TwoHandedMace" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_boulder_on_a_stick_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_boulder_on_a_stick_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_boulder_on_a_stick_v2_h2" name="{=}Boulder on a Stick +2" crafting_template="crpg_TwoHandedMace" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_boulder_on_a_stick_v3_h2" name="{=}Boulder on a Stick +2" crafting_template="crpg_TwoHandedMace" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_boulder_on_a_stick_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_boulder_on_a_stick_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_boulder_on_a_stick_v2_h3" name="{=}Boulder on a Stick +3" crafting_template="crpg_TwoHandedMace" is_merchandise="false" culture="Culture.battania">
+  <CraftedItem id="crpg_boulder_on_a_stick_v3_h3" name="{=}Boulder on a Stick +3" crafting_template="crpg_TwoHandedMace" is_merchandise="false" culture="Culture.battania">
     <Pieces>
       <Piece id="crpg_boulder_on_a_stick_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_boulder_on_a_stick_handle_h3" Type="Handle" scale_factor="100" />
@@ -4568,28 +4568,28 @@
       <Piece id="crpg_fullered_western_mace_pommel_h3" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_morningstar_v3_h0" name="{=Meow}Heavy Morningstar" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
+  <CraftedItem id="crpg_heavy_morningstar_v4_h0" name="{=Meow}Heavy Morningstar" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_heavy_morningstar_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_heavy_morningstar_handle_h0" Type="Handle" scale_factor="110" />
       <Piece id="crpg_heavy_morningstar_pommel_h0" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_morningstar_v3_h1" name="{=Meow}Heavy Morningstar +1" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
+  <CraftedItem id="crpg_heavy_morningstar_v4_h1" name="{=Meow}Heavy Morningstar +1" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_heavy_morningstar_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_heavy_morningstar_handle_h1" Type="Handle" scale_factor="110" />
       <Piece id="crpg_heavy_morningstar_pommel_h1" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_morningstar_v3_h2" name="{=Meow}Heavy Morningstar +2" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
+  <CraftedItem id="crpg_heavy_morningstar_v4_h2" name="{=Meow}Heavy Morningstar +2" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_heavy_morningstar_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_heavy_morningstar_handle_h2" Type="Handle" scale_factor="110" />
       <Piece id="crpg_heavy_morningstar_pommel_h2" Type="Pommel" scale_factor="110" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_heavy_morningstar_v3_h3" name="{=Meow}Heavy Morningstar +3" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
+  <CraftedItem id="crpg_heavy_morningstar_v4_h3" name="{=Meow}Heavy Morningstar +3" crafting_template="crpg_TwoHandedMace" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_heavy_morningstar_blade_h3" Type="Blade" scale_factor="113" />
       <Piece id="crpg_heavy_morningstar_handle_h3" Type="Handle" scale_factor="110" />
@@ -5064,7 +5064,7 @@
       <Piece id="crpg_seax_pommel_h3" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_thamaskene_steel_two_hander_v1_h0" name="{=VAO11FSu}Thamaskene Steel Two Hander" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+  <CraftedItem id="crpg_thamaskene_steel_two_hander_v2_h0" name="{=VAO11FSu}Thamaskene Steel Two Hander" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_thamaskene_steel_two_hander_blade_h0" Type="Blade" scale_factor="117" />
       <Piece id="crpg_thamaskene_steel_two_hander_guard_h0" Type="Guard" scale_factor="100" />
@@ -5072,7 +5072,7 @@
       <Piece id="crpg_thamaskene_steel_two_hander_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_thamaskene_steel_two_hander_v1_h1" name="{=VAO11FSu}Thamaskene Steel Two Hander +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+  <CraftedItem id="crpg_thamaskene_steel_two_hander_v2_h1" name="{=VAO11FSu}Thamaskene Steel Two Hander +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_thamaskene_steel_two_hander_blade_h1" Type="Blade" scale_factor="117" />
       <Piece id="crpg_thamaskene_steel_two_hander_guard_h1" Type="Guard" scale_factor="100" />
@@ -5080,7 +5080,7 @@
       <Piece id="crpg_thamaskene_steel_two_hander_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_thamaskene_steel_two_hander_v1_h2" name="{=VAO11FSu}Thamaskene Steel Two Hander +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+  <CraftedItem id="crpg_thamaskene_steel_two_hander_v2_h2" name="{=VAO11FSu}Thamaskene Steel Two Hander +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_thamaskene_steel_two_hander_blade_h2" Type="Blade" scale_factor="117" />
       <Piece id="crpg_thamaskene_steel_two_hander_guard_h2" Type="Guard" scale_factor="100" />
@@ -5088,7 +5088,7 @@
       <Piece id="crpg_thamaskene_steel_two_hander_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_thamaskene_steel_two_hander_v1_h3" name="{=VAO11FSu}Thamaskene Steel Two Hander +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
+  <CraftedItem id="crpg_thamaskene_steel_two_hander_v2_h3" name="{=VAO11FSu}Thamaskene Steel Two Hander +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.vlandia" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_thamaskene_steel_two_hander_blade_h3" Type="Blade" scale_factor="117" />
       <Piece id="crpg_thamaskene_steel_two_hander_guard_h3" Type="Guard" scale_factor="100" />
@@ -5224,7 +5224,7 @@
       <Piece id="crpg_broad_kaskara_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_war_razor_v1_h0" name="{=4RTsybkx}War Razor" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
+  <CraftedItem id="crpg_war_razor_v2_h0" name="{=4RTsybkx}War Razor" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_war_razor_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_war_razor_guard_h0" Type="Guard" scale_factor="100" />
@@ -5232,7 +5232,7 @@
       <Piece id="crpg_war_razor_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_war_razor_v1_h1" name="{=4RTsybkx}War Razor +1" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
+  <CraftedItem id="crpg_war_razor_v2_h1" name="{=4RTsybkx}War Razor +1" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_war_razor_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_war_razor_guard_h1" Type="Guard" scale_factor="100" />
@@ -5240,7 +5240,7 @@
       <Piece id="crpg_war_razor_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_war_razor_v1_h2" name="{=4RTsybkx}War Razor +2" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
+  <CraftedItem id="crpg_war_razor_v2_h2" name="{=4RTsybkx}War Razor +2" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_war_razor_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_war_razor_guard_h2" Type="Guard" scale_factor="100" />
@@ -5248,7 +5248,7 @@
       <Piece id="crpg_war_razor_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_war_razor_v1_h3" name="{=4RTsybkx}War Razor +3" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
+  <CraftedItem id="crpg_war_razor_v2_h3" name="{=4RTsybkx}War Razor +3" crafting_template="crpg_TwoHandedSword" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_war_razor_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_war_razor_guard_h3" Type="Guard" scale_factor="100" />
@@ -5384,7 +5384,7 @@
       <Piece id="crpg_fine_steel_two_handed_sword_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_falx_v1_h0" name="{=QLcP8bIs}Falx" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
+  <CraftedItem id="crpg_falx_v2_h0" name="{=QLcP8bIs}Falx" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_falx_blade_h0" Type="Blade" scale_factor="129" />
       <Piece id="crpg_falx_guard_h0" Type="Guard" scale_factor="105" />
@@ -5392,7 +5392,7 @@
       <Piece id="crpg_falx_pommel_h0" Type="Pommel" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_falx_v1_h1" name="{=QLcP8bIs}Falx +1" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
+  <CraftedItem id="crpg_falx_v2_h1" name="{=QLcP8bIs}Falx +1" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_falx_blade_h1" Type="Blade" scale_factor="129" />
       <Piece id="crpg_falx_guard_h1" Type="Guard" scale_factor="105" />
@@ -5400,7 +5400,7 @@
       <Piece id="crpg_falx_pommel_h1" Type="Pommel" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_falx_v1_h2" name="{=QLcP8bIs}Falx +2" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
+  <CraftedItem id="crpg_falx_v2_h2" name="{=QLcP8bIs}Falx +2" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_falx_blade_h2" Type="Blade" scale_factor="129" />
       <Piece id="crpg_falx_guard_h2" Type="Guard" scale_factor="105" />
@@ -5408,7 +5408,7 @@
       <Piece id="crpg_falx_pommel_h2" Type="Pommel" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_falx_v1_h3" name="{=QLcP8bIs}Falx +3" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
+  <CraftedItem id="crpg_falx_v2_h3" name="{=QLcP8bIs}Falx +3" crafting_template="crpg_TwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_falx_blade_h3" Type="Blade" scale_factor="129" />
       <Piece id="crpg_falx_guard_h3" Type="Guard" scale_factor="105" />
@@ -5512,7 +5512,7 @@
       <Piece id="crpg_harvesting_season_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_northlander_wide_fullered_greatsword_v3_h0" name="{=NaaM2O2g}Northlander Wide Fullered Greatsword" crafting_template="crpg_SideTwoHandedSword" culture="Culture.battania" modifier_group="sword">
+  <CraftedItem id="crpg_northlander_wide_fullered_greatsword_v4_h0" name="{=NaaM2O2g}Northlander Wide Fullered Greatsword" crafting_template="crpg_SideTwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_northlander_wide_fullered_greatsword_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_northlander_wide_fullered_greatsword_guard_h0" Type="Guard" scale_factor="100" />
@@ -5520,7 +5520,7 @@
       <Piece id="crpg_northlander_wide_fullered_greatsword_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_northlander_wide_fullered_greatsword_v3_h1" name="{=NaaM2O2g}Northlander Wide Fullered Greatsword +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.battania" modifier_group="sword">
+  <CraftedItem id="crpg_northlander_wide_fullered_greatsword_v4_h1" name="{=NaaM2O2g}Northlander Wide Fullered Greatsword +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_northlander_wide_fullered_greatsword_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_northlander_wide_fullered_greatsword_guard_h1" Type="Guard" scale_factor="100" />
@@ -5528,7 +5528,7 @@
       <Piece id="crpg_northlander_wide_fullered_greatsword_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_northlander_wide_fullered_greatsword_v3_h2" name="{=NaaM2O2g}Northlander Wide Fullered Greatsword +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.battania" modifier_group="sword">
+  <CraftedItem id="crpg_northlander_wide_fullered_greatsword_v4_h2" name="{=NaaM2O2g}Northlander Wide Fullered Greatsword +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_northlander_wide_fullered_greatsword_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_northlander_wide_fullered_greatsword_guard_h2" Type="Guard" scale_factor="100" />
@@ -5536,7 +5536,7 @@
       <Piece id="crpg_northlander_wide_fullered_greatsword_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_northlander_wide_fullered_greatsword_v3_h3" name="{=NaaM2O2g}Northlander Wide Fullered Greatsword +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.battania" modifier_group="sword">
+  <CraftedItem id="crpg_northlander_wide_fullered_greatsword_v4_h3" name="{=NaaM2O2g}Northlander Wide Fullered Greatsword +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.battania" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_northlander_wide_fullered_greatsword_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_northlander_wide_fullered_greatsword_guard_h3" Type="Guard" scale_factor="100" />
@@ -9644,25 +9644,25 @@
       <Piece id="crpg_hooked_two_handed_axe_handle_h3" Type="Handle" scale_factor="106" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_drilled_two_handed_axe_v2_h0" name="{=jhFSLdve}Drilled Two Handed Axe" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_drilled_two_handed_axe_v3_h0" name="{=jhFSLdve}Drilled Two Handed Axe" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_drilled_two_handed_axe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_drilled_two_handed_axe_handle_h0" Type="Handle" scale_factor="78" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_drilled_two_handed_axe_v2_h1" name="{=jhFSLdve}Drilled Two Handed Axe +1" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_drilled_two_handed_axe_v3_h1" name="{=jhFSLdve}Drilled Two Handed Axe +1" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_drilled_two_handed_axe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_drilled_two_handed_axe_handle_h1" Type="Handle" scale_factor="78" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_drilled_two_handed_axe_v2_h2" name="{=jhFSLdve}Drilled Two Handed Axe +2" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_drilled_two_handed_axe_v3_h2" name="{=jhFSLdve}Drilled Two Handed Axe +2" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_drilled_two_handed_axe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_drilled_two_handed_axe_handle_h2" Type="Handle" scale_factor="78" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_drilled_two_handed_axe_v2_h3" name="{=jhFSLdve}Drilled Two Handed Axe +3" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_drilled_two_handed_axe_v3_h3" name="{=jhFSLdve}Drilled Two Handed Axe +3" crafting_template="crpg_TwoHandedAxe" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_drilled_two_handed_axe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_drilled_two_handed_axe_handle_h3" Type="Handle" scale_factor="78" />
@@ -9788,25 +9788,25 @@
       <Piece id="crpg_broad_two_handed_axe_handle_h3" Type="Handle" scale_factor="104" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_dane_axe_v2_h0" name="{=Mb0CuONB}Dane Axe" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_dane_axe_v3_h0" name="{=Mb0CuONB}Dane Axe" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_dane_axe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_dane_axe_handle_h0" Type="Handle" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_dane_axe_v2_h1" name="{=Mb0CuONB}Dane Axe +1" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_dane_axe_v3_h1" name="{=Mb0CuONB}Dane Axe +1" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_dane_axe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_dane_axe_handle_h1" Type="Handle" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_dane_axe_v2_h2" name="{=Mb0CuONB}Dane Axe +2" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_dane_axe_v3_h2" name="{=Mb0CuONB}Dane Axe +2" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_dane_axe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_dane_axe_handle_h2" Type="Handle" scale_factor="90" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_dane_axe_v2_h3" name="{=Mb0CuONB}Dane Axe +3" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_dane_axe_v3_h3" name="{=Mb0CuONB}Dane Axe +3" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_dane_axe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_dane_axe_handle_h3" Type="Handle" scale_factor="90" />
@@ -9836,25 +9836,25 @@
       <Piece id="crpg_great_bardiche_handle_h3" Type="Handle" scale_factor="114" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_short_battle_axe_v2_h0" name="{=gJPogg0J}Saxon Short Battle Axe" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_short_battle_axe_v3_h0" name="{=gJPogg0J}Saxon Short Battle Axe" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_short_battle_axe_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_short_battle_axe_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_short_battle_axe_v2_h1" name="{=gJPogg0J}Saxon Short Battle Axe +1" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_short_battle_axe_v3_h1" name="{=gJPogg0J}Saxon Short Battle Axe +1" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_short_battle_axe_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_short_battle_axe_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_short_battle_axe_v2_h2" name="{=gJPogg0J}Saxon Short Battle Axe +2" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_short_battle_axe_v3_h2" name="{=gJPogg0J}Saxon Short Battle Axe +2" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_short_battle_axe_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_short_battle_axe_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_saxon_short_battle_axe_v2_h3" name="{=gJPogg0J}Saxon Short Battle Axe +3" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
+  <CraftedItem id="crpg_saxon_short_battle_axe_v3_h3" name="{=gJPogg0J}Saxon Short Battle Axe +3" crafting_template="crpg_TwoHandedAxe" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_saxon_short_battle_axe_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_saxon_short_battle_axe_handle_h3" Type="Handle" scale_factor="100" />
@@ -10388,7 +10388,7 @@
       <Piece id="crpg_wood_splitter_axe_handle_h3" Type="Handle" scale_factor="123" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longsword_v2_h0" name="{=XIRtmaQt}Longsword" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_longsword_v3_h0" name="{=XIRtmaQt}Longsword" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_longsword_blade_h0" Type="Blade" scale_factor="109" />
       <Piece id="crpg_longsword_guard_h0" Type="Guard" />
@@ -10396,7 +10396,7 @@
       <Piece id="crpg_longsword_pommel_h0" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longsword_v2_h1" name="{=XIRtmaQt}Longsword +1" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_longsword_v3_h1" name="{=XIRtmaQt}Longsword +1" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_longsword_blade_h1" Type="Blade" scale_factor="109" />
       <Piece id="crpg_longsword_guard_h1" Type="Guard" />
@@ -10404,7 +10404,7 @@
       <Piece id="crpg_longsword_pommel_h1" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longsword_v2_h2" name="{=XIRtmaQt}Longsword +2" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_longsword_v3_h2" name="{=XIRtmaQt}Longsword +2" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_longsword_blade_h2" Type="Blade" scale_factor="109" />
       <Piece id="crpg_longsword_guard_h2" Type="Guard" />
@@ -10412,7 +10412,7 @@
       <Piece id="crpg_longsword_pommel_h2" Type="Pommel" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_longsword_v2_h3" name="{=XIRtmaQt}Longsword +3" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_longsword_v3_h3" name="{=XIRtmaQt}Longsword +3" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_longsword_blade_h3" Type="Blade" scale_factor="109" />
       <Piece id="crpg_longsword_guard_h3" Type="Guard" />
@@ -10668,7 +10668,7 @@
       <Piece id="crpg_early_retirement_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_the_ambassador_v2_h0" name="{=kxtSkGju}The Ambassador" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_the_ambassador_v3_h0" name="{=kxtSkGju}The Ambassador" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_the_ambassador_blade_h0" Type="Blade" scale_factor="105" />
       <Piece id="crpg_the_ambassador_guard_h0" Type="Guard" scale_factor="100" />
@@ -10676,7 +10676,7 @@
       <Piece id="crpg_the_ambassador_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_the_ambassador_v2_h1" name="{=kxtSkGju}The Ambassador +1" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_the_ambassador_v3_h1" name="{=kxtSkGju}The Ambassador +1" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_the_ambassador_blade_h1" Type="Blade" scale_factor="105" />
       <Piece id="crpg_the_ambassador_guard_h1" Type="Guard" scale_factor="100" />
@@ -10684,7 +10684,7 @@
       <Piece id="crpg_the_ambassador_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_the_ambassador_v2_h2" name="{=kxtSkGju}The Ambassador +2" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_the_ambassador_v3_h2" name="{=kxtSkGju}The Ambassador +2" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_the_ambassador_blade_h2" Type="Blade" scale_factor="105" />
       <Piece id="crpg_the_ambassador_guard_h2" Type="Guard" scale_factor="100" />
@@ -10692,7 +10692,7 @@
       <Piece id="crpg_the_ambassador_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_the_ambassador_v2_h3" name="{=kxtSkGju}The Ambassador +3" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_the_ambassador_v3_h3" name="{=kxtSkGju}The Ambassador +3" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_the_ambassador_blade_h3" Type="Blade" scale_factor="105" />
       <Piece id="crpg_the_ambassador_guard_h3" Type="Guard" scale_factor="100" />
@@ -11696,7 +11696,7 @@
       <Piece id="crpg_cutlass_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ancient_longsword_v1_h0" name="{=}Ancient Longsword" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_ancient_longsword_v2_h0" name="{=}Ancient Longsword" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_ancientlongsword_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_ancientlongsword_guard_h0" Type="Guard" scale_factor="100" />
@@ -11704,7 +11704,7 @@
       <Piece id="crpg_ancientlongsword_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ancient_longsword_v1_h1" name="{=}Ancient Longsword +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_ancient_longsword_v2_h1" name="{=}Ancient Longsword +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_ancientlongsword_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_ancientlongsword_guard_h1" Type="Guard" scale_factor="100" />
@@ -11712,7 +11712,7 @@
       <Piece id="crpg_ancientlongsword_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ancient_longsword_v1_h2" name="{=}Ancient Longsword +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_ancient_longsword_v2_h2" name="{=}Ancient Longsword +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_ancientlongsword_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_ancientlongsword_guard_h2" Type="Guard" scale_factor="100" />
@@ -11720,7 +11720,7 @@
       <Piece id="crpg_ancientlongsword_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ancient_longsword_v1_h3" name="{=}Ancient Longsword +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_ancient_longsword_v2_h3" name="{=}Ancient Longsword +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_ancientlongsword_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_ancientlongsword_guard_h3" Type="Guard" scale_factor="100" />
@@ -11728,25 +11728,25 @@
       <Piece id="crpg_ancientlongsword_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_le_bonke_v2_h0" name="{=Diggles}Norse Battle Hammer" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_le_bonke_v3_h0" name="{=Diggles}Norse Battle Hammer" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_meowhammer_head_h0" Type="Blade" scale_factor="95" />
       <Piece id="crpg_meowhammer_handle_h0" Type="Handle" scale_factor="109" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_le_bonke_v2_h1" name="{=Diggles}Norse Battle Hammer +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_le_bonke_v3_h1" name="{=Diggles}Norse Battle Hammer +1" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_meowhammer_head_h1" Type="Blade" scale_factor="95" />
       <Piece id="crpg_meowhammer_handle_h1" Type="Handle" scale_factor="109" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_le_bonke_v2_h2" name="{=Diggles}Norse Battle Hammer +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_le_bonke_v3_h2" name="{=Diggles}Norse Battle Hammer +2" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_meowhammer_head_h2" Type="Blade" scale_factor="95" />
       <Piece id="crpg_meowhammer_handle_h2" Type="Handle" scale_factor="109" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_le_bonke_v2_h3" name="{=Diggles}Norse Battle Hammer +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_le_bonke_v3_h3" name="{=Diggles}Norse Battle Hammer +3" crafting_template="crpg_TwoHandedMace" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_meowhammer_head_h3" Type="Blade" scale_factor="95" />
       <Piece id="crpg_meowhammer_handle_h3" Type="Handle" scale_factor="109" />
@@ -12168,25 +12168,25 @@
       <Piece id="crpg_gladius_republican_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tetsubo_v2_h0" name="{=Diggles}Tetsubo" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_tetsubo_v3_h0" name="{=Diggles}Tetsubo" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_tetsubo_head_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tetsubo_handle_h0" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tetsubo_v2_h1" name="{=Diggles}Tetsubo +1" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_tetsubo_v3_h1" name="{=Diggles}Tetsubo +1" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_tetsubo_head_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tetsubo_handle_h1" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tetsubo_v2_h2" name="{=Diggles}Tetsubo +2" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_tetsubo_v3_h2" name="{=Diggles}Tetsubo +2" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_tetsubo_head_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tetsubo_handle_h2" Type="Handle" scale_factor="120" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_tetsubo_v2_h3" name="{=Diggles}Tetsubo +3" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_tetsubo_v3_h3" name="{=Diggles}Tetsubo +3" crafting_template="crpg_TwoHandedMace" culture="Culture.khuzait" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_tetsubo_head_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_tetsubo_handle_h3" Type="Handle" scale_factor="120" />
@@ -12796,7 +12796,7 @@
       <Piece id="crpg_onehanded_barmace_handle_h3" Type="Handle" scale_factor="95" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_kriegsmesser_v2_h0" name="{=}Kriegsmesser" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_kriegsmesser_v3_h0" name="{=}Kriegsmesser" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_kriegsmesser_blade_h0" Type="Blade" scale_factor="118" />
       <Piece id="crpg_kriegsmesser_guard_h0" Type="Guard" scale_factor="100" />
@@ -12804,7 +12804,7 @@
       <Piece id="crpg_kriegsmesser_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_kriegsmesser_v2_h1" name="{=}Kriegsmesser +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_kriegsmesser_v3_h1" name="{=}Kriegsmesser +1" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_kriegsmesser_blade_h1" Type="Blade" scale_factor="118" />
       <Piece id="crpg_kriegsmesser_guard_h1" Type="Guard" scale_factor="100" />
@@ -12812,7 +12812,7 @@
       <Piece id="crpg_kriegsmesser_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_kriegsmesser_v2_h2" name="{=}Kriegsmesser +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_kriegsmesser_v3_h2" name="{=}Kriegsmesser +2" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_kriegsmesser_blade_h2" Type="Blade" scale_factor="118" />
       <Piece id="crpg_kriegsmesser_guard_h2" Type="Guard" scale_factor="100" />
@@ -12820,7 +12820,7 @@
       <Piece id="crpg_kriegsmesser_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_kriegsmesser_v2_h3" name="{=}Kriegsmesser +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
+  <CraftedItem id="crpg_kriegsmesser_v3_h3" name="{=}Kriegsmesser +3" crafting_template="crpg_SideTwoHandedSword" culture="Culture.aserai" modifier_group="sword">
     <Pieces>
       <Piece id="crpg_kriegsmesser_blade_h3" Type="Blade" scale_factor="118" />
       <Piece id="crpg_kriegsmesser_guard_h3" Type="Guard" scale_factor="100" />
@@ -12828,7 +12828,7 @@
       <Piece id="crpg_kriegsmesser_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ceremonial_executioner_sword_v2_h0" name="{=kaikaikai}Ceremonial Executioner's Sword" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_ceremonial_executioner_sword_v3_h0" name="{=kaikaikai}Ceremonial Executioner's Sword" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_executionerssword_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_executionerssword_guard_h0" Type="Guard" scale_factor="100" />
@@ -12836,7 +12836,7 @@
       <Piece id="crpg_executionerssword_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ceremonial_executioner_sword_v2_h1" name="{=kaikaikai}Ceremonial Executioner's Sword +1" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_ceremonial_executioner_sword_v3_h1" name="{=kaikaikai}Ceremonial Executioner's Sword +1" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_executionerssword_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_executionerssword_guard_h1" Type="Guard" scale_factor="100" />
@@ -12844,7 +12844,7 @@
       <Piece id="crpg_executionerssword_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ceremonial_executioner_sword_v2_h2" name="{=kaikaikai}Ceremonial Executioner's Sword +2" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_ceremonial_executioner_sword_v3_h2" name="{=kaikaikai}Ceremonial Executioner's Sword +2" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_executionerssword_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_executionerssword_guard_h2" Type="Guard" scale_factor="100" />
@@ -12852,7 +12852,7 @@
       <Piece id="crpg_executionerssword_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_ceremonial_executioner_sword_v2_h3" name="{=kaikaikai}Ceremonial Executioner's Sword +3" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
+  <CraftedItem id="crpg_ceremonial_executioner_sword_v3_h3" name="{=kaikaikai}Ceremonial Executioner's Sword +3" crafting_template="crpg_SideTwoHandedSword" is_merchandise="false">
     <Pieces>
       <Piece id="crpg_executionerssword_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_executionerssword_guard_h3" Type="Guard" scale_factor="100" />
@@ -14188,7 +14188,7 @@
       <Piece id="crpg_ashwood_pike_guard_h3" Type="Guard" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_splittingmaul_v2_h0" name="{=Salt}Splittingmaul" crafting_template="crpg_TwoHandedAxe">
+  <CraftedItem id="crpg_splittingmaul_v3_h0" name="{=Salt}Splittingmaul" crafting_template="crpg_TwoHandedAxe">
     <Pieces>
       <Piece id="crpg_splittingmaul_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_splittingmaul_handle_h0" Type="Handle" scale_factor="120" />
@@ -14196,7 +14196,7 @@
       <Piece id="crpg_splittingmaul_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_splittingmaul_v2_h1" name="{=Salt}Splittingmaul +1" crafting_template="crpg_TwoHandedAxe">
+  <CraftedItem id="crpg_splittingmaul_v3_h1" name="{=Salt}Splittingmaul +1" crafting_template="crpg_TwoHandedAxe">
     <Pieces>
       <Piece id="crpg_splittingmaul_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_splittingmaul_handle_h1" Type="Handle" scale_factor="120" />
@@ -14204,7 +14204,7 @@
       <Piece id="crpg_splittingmaul_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_splittingmaul_v2_h2" name="{=Salt}Splittingmaul +2" crafting_template="crpg_TwoHandedAxe">
+  <CraftedItem id="crpg_splittingmaul_v3_h2" name="{=Salt}Splittingmaul +2" crafting_template="crpg_TwoHandedAxe">
     <Pieces>
       <Piece id="crpg_splittingmaul_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_splittingmaul_handle_h2" Type="Handle" scale_factor="120" />
@@ -14212,7 +14212,7 @@
       <Piece id="crpg_splittingmaul_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_splittingmaul_v2_h3" name="{=Salt}Splittingmaul +3" crafting_template="crpg_TwoHandedAxe">
+  <CraftedItem id="crpg_splittingmaul_v3_h3" name="{=Salt}Splittingmaul +3" crafting_template="crpg_TwoHandedAxe">
     <Pieces>
       <Piece id="crpg_splittingmaul_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_splittingmaul_handle_h3" Type="Handle" scale_factor="120" />
