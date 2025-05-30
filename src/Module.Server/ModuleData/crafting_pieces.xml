@@ -37232,4 +37232,76 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_celticspear_pommel_h3" name="{=koX9okuG}Celtic Spear Pommel" tier="1" piece_type="Pommel" mesh="celticspear_pommel" culture="Culture.empire" length="9.71" weight="0.26" is_default="true">
   </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_blade_h0" name="{=}Katzbalger Blade" tier="4" piece_type="Blade" mesh="katzbalger_blade" culture="Culture.battania" length="62.1" weight="0.7">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh="katzbalger_scabbard" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_blade_h1" name="{=}Katzbalger Blade" tier="4" piece_type="Blade" mesh="katzbalger_blade" culture="Culture.battania" length="62.1" weight="0.7">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh="katzbalger_scabbard" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_blade_h2" name="{=}Katzbalger Blade" tier="4" piece_type="Blade" mesh="katzbalger_blade" culture="Culture.battania" length="62.1" weight="0.7">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh="katzbalger_scabbard" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_blade_h3" name="{=}Katzbalger Blade" tier="4" piece_type="Blade" mesh="katzbalger_blade" culture="Culture.battania" length="62.1" weight="0.7">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh="katzbalger_scabbard" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="3.7" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_pommel_h0" name="{=}Katzbalger Pommel" tier="4" piece_type="Pommel" mesh="katzbalger_pommel" full_scale="true" culture="Culture.battania" length="2.58" weight="0.7">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_pommel_h1" name="{=}Katzbalger Pommel" tier="4" piece_type="Pommel" mesh="katzbalger_pommel" full_scale="true" culture="Culture.battania" length="2.58" weight="0.7">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_pommel_h2" name="{=}Katzbalger Pommel" tier="4" piece_type="Pommel" mesh="katzbalger_pommel" full_scale="true" culture="Culture.battania" length="2.58" weight="0.65">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_pommel_h3" name="{=}Katzbalger Pommel" tier="4" piece_type="Pommel" mesh="katzbalger_pommel" full_scale="true" culture="Culture.battania" length="2.58" weight="0.60">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_guard_h0" name="{=}Katzbalger Guard" tier="5" piece_type="Guard" mesh="katzbalger_guard" full_scale="true" culture="Culture.battania" length="3.71" weight="0.85">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_guard_h1" name="{=}Katzbalger Guard" tier="5" piece_type="Guard" mesh="katzbalger_guard" full_scale="true" culture="Culture.battania" length="3.71" weight="0.85">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_guard_h2" name="{=}Katzbalger Guard" tier="5" piece_type="Guard" mesh="katzbalger_guard" full_scale="true" culture="Culture.battania" length="3.71" weight="0.85">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_guard_h3" name="{=}Katzbalger Guard" tier="5" piece_type="Guard" mesh="katzbalger_guard" full_scale="true" culture="Culture.battania" length="3.71" weight="0.85">
+    <BuildData next_piece_offset="0" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_handle_h0" name="{=}Katzbalger Handle" tier="3" piece_type="Handle" mesh="katzbalger_handle" full_scale="false" culture="Culture.khuzait" length="10.9" weight="0.8">
+    <BuildData piece_offset="-1" previous_piece_offset="0" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_handle_h1" name="{=}Katzbalger Handle" tier="3" piece_type="Handle" mesh="katzbalger_handle" full_scale="false" culture="Culture.khuzait" length="10.9" weight="0.8">
+    <BuildData piece_offset="-1" previous_piece_offset="0" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_handle_h2" name="{=}Katzbalger Handle" tier="3" piece_type="Handle" mesh="katzbalger_handle" full_scale="false" culture="Culture.khuzait" length="10.9" weight="0.8">
+    <BuildData piece_offset="-1" previous_piece_offset="0" next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_katzbalger_handle_h3" name="{=}Katzbalger Handle" tier="3" piece_type="Handle" mesh="katzbalger_handle" full_scale="false" culture="Culture.khuzait" length="10.9" weight="0.8">
+    <BuildData piece_offset="-1" previous_piece_offset="0" next_piece_offset="1" />
+  </CraftingPiece>
 </CraftingPieces>
