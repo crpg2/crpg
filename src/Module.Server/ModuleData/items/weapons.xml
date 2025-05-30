@@ -8260,25 +8260,25 @@
       <Piece id="crpg_cavalry_lance_handle_h3" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zaġāyah_v2_h0" name="{=Telford}Az-zaġāyah" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zagayah_v2_h0" name="{=Telford}Az-zaġāyah" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_az-zaġāyah_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_az-zaġāyah_handle_h0" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zaġāyah_v2_h1" name="{=Telford}Az-zaġāyah +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zagayah_v2_h1" name="{=Telford}Az-zaġāyah +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_az-zaġāyah_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_az-zaġāyah_handle_h1" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zaġāyah_v2_h2" name="{=Telford}Az-zaġāyah +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zagayah_v2_h2" name="{=Telford}Az-zaġāyah +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_az-zaġāyah_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_az-zaġāyah_handle_h2" Type="Handle" scale_factor="103" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_az-zaġāyah_v2_h3" name="{=Telford}Az-zaġāyah +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
+  <CraftedItem id="crpg_az-zagayah_v2_h3" name="{=Telford}Az-zaġāyah +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.aserai" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_az-zaġāyah_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_az-zaġāyah_handle_h3" Type="Handle" scale_factor="103" />
