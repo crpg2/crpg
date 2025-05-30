@@ -45,7 +45,7 @@
         <equipment slot="Body" id="Item.crpg_khuzait_sturdy_armor_v2_h0" />
         <equipment slot="Gloves" id="Item.crpg_guarded_armwraps_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_steppe_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_blue_katana_v3_h0" />
+        <equipment slot="Item0" id="Item.crpg_blue_katana_v4_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -111,7 +111,7 @@
         <equipment slot="Head" id="Item.crpg_bearhead_v2_h0" />
         <equipment slot="Cape" id="Item.crpg_rough_bearskin_v2_h0" />
         <equipment slot="Body" id="Item.crpg_bandit_fur_b_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_greataxe_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_greataxe_v3_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -148,7 +148,7 @@
         <equipment slot="Item0" id="Item.crpg_norse_huscarl_axe_v4_h0" />
         <equipment slot="Item1" id="Item.crpg_battania_targe_b_v4_h0" />
         <equipment slot="Item2" id="Item.dtv_simple_steppe_bow_v1_h0" />
-        <equipment slot="Item3" id="Item.crpg_rangers_arrows_v2_h0" />
+        <equipment slot="Item3" id="Item.crpg_rangers_arrows_v3_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -317,7 +317,7 @@
         <equipment slot="Leg" id="Item.crpg_southern_moccasins_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_crossbow_f_v4_h0" />
         <equipment slot="Item1" id="Item.crpg_bolt_c_v4_h0" />
-        <equipment slot="Item2" id="Item.crpg_heavy_goedendag_v3_h0" />
+        <equipment slot="Item2" id="Item.crpg_heavy_goedendag_v4_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -487,7 +487,7 @@
         <equipment slot="Gloves" id="Item.crpg_padded_mitten_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_folded_town_boots_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_simple_poleaxe_v2_h0" />
-        <equipment slot="ExtraWeaponSlot" id="Item.crpg_thamaskene_pike_v1_h0" />
+        <equipment slot="ExtraWeaponSlot" id="Item.crpg_thamaskene_pike_v2_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -522,9 +522,9 @@
         <equipment slot="Gloves" id="Item.crpg_battania_noble_bracers_v3_h0" />
         <equipment slot="Leg" id="Item.crpg_turndown_leather_boots_v2_h0" />
         <equipment slot="Item0" id="Item.dtv_noble_long_bow_v1_h0" />
-        <equipment slot="Item1" id="Item.crpg_piercing_arrows_v1_h0" />
-        <equipment slot="Item2" id="Item.crpg_piercing_arrows_v1_h0" />
-        <equipment slot="Item3" id="Item.crpg_thamaskene_steel_two_hander_v1_h0" />
+        <equipment slot="Item1" id="Item.crpg_piercing_arrows_v2_h0" />
+        <equipment slot="Item2" id="Item.crpg_piercing_arrows_v2_h0" />
+        <equipment slot="Item3" id="Item.crpg_thamaskene_steel_two_hander_v2_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -557,7 +557,7 @@
         <equipment slot="Cape" id="Item.crpg_battania_shoulder_strap_v2_h0" />
         <equipment slot="Body" id="Item.crpg_scale_armor_v3_h0" />
         <equipment slot="Gloves" id="Item.crpg_battania_warlord_bracers_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_greataxe_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_greataxe_v3_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -840,8 +840,8 @@
         <equipment slot="Gloves" id="Item.crpg_steppe_leather_vambraces_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_reinforced_suede_boots_v2_h0" />
         <equipment slot="Item0" id="Item.dtv_common_ranger_bow_v1_h0" />
-        <equipment slot="Item1" id="Item.crpg_light_broad_arrows_v2_h0" />
-        <equipment slot="Item2" id="Item.crpg_light_broad_arrows_v2_h0" />
+        <equipment slot="Item1" id="Item.crpg_light_broad_arrows_v3_h0" />
+        <equipment slot="Item2" id="Item.crpg_light_broad_arrows_v3_h0" />
         <equipment slot="Item3" id="Item.crpg_fine_steel_cavalry_saber_v1_h0" />
       </EquipmentRoster>
     </Equipments>
