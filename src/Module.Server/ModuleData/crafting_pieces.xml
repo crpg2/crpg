@@ -3556,49 +3556,49 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pike_handle_h0" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.4" excluded_item_usage_features="long" CraftingCost="150">
+  <CraftingPiece id="crpg_pike_handle_h0" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="1.5" excluded_item_usage_features="long" CraftingCost="150">
     <BuildData piece_offset="100" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pike_handle_h1" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.35" excluded_item_usage_features="long" CraftingCost="150">
+  <CraftingPiece id="crpg_pike_handle_h1" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="1.45" excluded_item_usage_features="long" CraftingCost="150">
     <BuildData piece_offset="100" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pike_handle_h2" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.35" excluded_item_usage_features="long" CraftingCost="150">
+  <CraftingPiece id="crpg_pike_handle_h2" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="1.4" excluded_item_usage_features="long" CraftingCost="150">
     <BuildData piece_offset="100" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pike_handle_h3" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.25" excluded_item_usage_features="long" CraftingCost="150">
+  <CraftingPiece id="crpg_pike_handle_h3" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="1.35" excluded_item_usage_features="long" CraftingCost="150">
     <BuildData piece_offset="100" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_pike_handle_h0" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.4" excluded_item_usage_features="long" CraftingCost="150">
+  <CraftingPiece id="crpg_fine_pike_handle_h0" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="1.2" excluded_item_usage_features="long" CraftingCost="150">
     <BuildData piece_offset="100.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_pike_handle_h1" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.35" excluded_item_usage_features="long" CraftingCost="150">
+  <CraftingPiece id="crpg_fine_pike_handle_h1" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="1.2" excluded_item_usage_features="long" CraftingCost="150">
     <BuildData piece_offset="100.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_pike_handle_h2" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.35" excluded_item_usage_features="long" CraftingCost="150">
+  <CraftingPiece id="crpg_fine_pike_handle_h2" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="1.2" excluded_item_usage_features="long" CraftingCost="150">
     <BuildData piece_offset="100.0" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_pike_handle_h3" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="0.3" excluded_item_usage_features="long" CraftingCost="150">
+  <CraftingPiece id="crpg_fine_pike_handle_h3" name="{=Nhhmj7bz}Hard Maple Pike Shaft" tier="5" piece_type="Handle" mesh="spear_handle_7" length="295" weight="1.2" excluded_item_usage_features="long" CraftingCost="150">
     <BuildData piece_offset="100.0" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -5484,9 +5484,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_pike_blade_h0" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.2096" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_fine_pike_blade_h0" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.2" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
     </BladeData>
     <Flags>
       <Flag name="DropOnWeaponChange" type="ItemFlags" />
@@ -5495,9 +5495,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_pike_blade_h1" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.2096" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_fine_pike_blade_h1" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.15" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
     </BladeData>
     <Flags>
       <Flag name="DropOnWeaponChange" type="ItemFlags" />
@@ -5506,9 +5506,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_pike_blade_h2" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.2096" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_fine_pike_blade_h2" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.1" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
     </BladeData>
     <Flags>
       <Flag name="DropOnWeaponChange" type="ItemFlags" />
@@ -5517,9 +5517,9 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_fine_pike_blade_h3" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.2096" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_fine_pike_blade_h3" name="{=S9zZO7qJ}Fine Steel Pike Head" tier="4" piece_type="Blade" mesh="spear_blade_11" length="34.56" weight="0.05" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
     </BladeData>
     <Flags>
       <Flag name="DropOnWeaponChange" type="ItemFlags" />
@@ -6316,7 +6316,7 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_thamaskene_pike_blade_h0" name="{=TKVxb6QD}Thamaskene Steel Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_41" length="53.2" weight="0.2792" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_thamaskene_pike_blade_h0" name="{=TKVxb6QD}Thamaskene Steel Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_41" length="53.2" weight="0.3" excluded_item_usage_features="swing">
     <BladeData stack_amount="0" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
     </BladeData>
@@ -6327,7 +6327,7 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_thamaskene_pike_blade_h1" name="{=TKVxb6QD}Thamaskene Steel Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_41" length="53.2" weight="0.2792" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_thamaskene_pike_blade_h1" name="{=TKVxb6QD}Thamaskene Steel Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_41" length="53.2" weight="0.24" excluded_item_usage_features="swing">
     <BladeData stack_amount="0" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
     </BladeData>
@@ -6338,9 +6338,9 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_thamaskene_pike_blade_h2" name="{=TKVxb6QD}Thamaskene Steel Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_41" length="53.2" weight="0.2792" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_thamaskene_pike_blade_h2" name="{=TKVxb6QD}Thamaskene Steel Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_41" length="53.2" weight="0.2" excluded_item_usage_features="swing">
     <BladeData stack_amount="0" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
     </BladeData>
     <Flags>
       <Flag name="DropOnWeaponChange" type="ItemFlags" />
@@ -6349,9 +6349,9 @@
       <Material id="Iron5" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_thamaskene_pike_blade_h3" name="{=TKVxb6QD}Thamaskene Steel Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_41" length="53.2" weight="0.2792" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_thamaskene_pike_blade_h3" name="{=TKVxb6QD}Thamaskene Steel Leaf Shaped Spear Head" tier="4" piece_type="Blade" mesh="spear_blade_41" length="53.2" weight="0.15" excluded_item_usage_features="swing">
     <BladeData stack_amount="0" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
     </BladeData>
     <Flags>
       <Flag name="DropOnWeaponChange" type="ItemFlags" />
@@ -7760,7 +7760,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pike_blade_h0" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.375" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_pike_blade_h0" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.2" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
     </BladeData>
@@ -7771,7 +7771,7 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pike_blade_h1" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.375" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_pike_blade_h1" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.15" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
     </BladeData>
@@ -7782,9 +7782,9 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pike_blade_h2" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.375" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_pike_blade_h2" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.1" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
     </BladeData>
     <Flags>
       <Flag name="DropOnWeaponChange" type="ItemFlags" />
@@ -7793,9 +7793,9 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pike_blade_h3" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.375" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_pike_blade_h3" name="{=S75vUGzK}Fine Steel Hewing Spear Head" tier="5" piece_type="Blade" mesh="spear_blade_6" length="84.4" weight="0.05" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
     </BladeData>
     <Flags>
       <Flag name="DropOnWeaponChange" type="ItemFlags" />
@@ -7803,6 +7803,22 @@
     <Materials>
       <Material id="Iron5" count="1" />
     </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pike_guard_h0" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pike_guard_h1" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pike_guard_h2" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pike_guard_h3" name="{=Salt}None" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pike_pommel_h0" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pike_pommel_h1" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pike_pommel_h2" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pike_pommel_h3" name="{=Salt}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
   </CraftingPiece>
   <CraftingPiece id="crpg_billhook_handle_h0" name="{=LSOXMCAW}Pine Shaft" tier="4" piece_type="Handle" mesh="spear_handle_4" length="190" weight="0.2" excluded_item_usage_features="long" item_holster_pos_shift="0,0,0.10" CraftingCost="100">
     <BuildData piece_offset="19.4" />
