@@ -10176,4 +10176,28 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_hoodedhelmet1_h0" name="{=BalanceMe}Hooded Ridged Helm" subtype="head_armor" mesh="hoodedhelmet1" culture="Culture.vlandia" weight="3.926624" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="46" has_gender_variations="false" covers_head="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="Type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_hoodedhelmet1_h1" name="{=BalanceMe}Hooded Ridged Helm +1" subtype="head_armor" mesh="hoodedhelmet1" culture="Culture.vlandia" weight="3.926624" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="48" has_gender_variations="false" covers_head="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="Type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_hoodedhelmet1_h2" name="{=BalanceMe}Hooded Ridged Helm +2" subtype="head_armor" mesh="hoodedhelmet1" culture="Culture.vlandia" weight="3.926624" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="50" has_gender_variations="false" covers_head="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="Type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_hoodedhelmet1_h3" name="{=BalanceMe}Hooded Ridged Helm +3" subtype="head_armor" mesh="hoodedhelmet1" culture="Culture.vlandia" weight="3.926624" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" covers_head="false" hair_cover_type="all" modifier_group="cloth_unarmoured" material_type="Cloth" beard_cover_type="Type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>
