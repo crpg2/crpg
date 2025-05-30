@@ -1584,4 +1584,28 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
+  <Item id="crpg_lombard_boots_h0" name="{=BalanceMe}Lombard Boots" mesh="cts_lombard_boots" culture="Culture.battania" weight="0.9889027" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="15" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_lombard_boots_h1" name="{=BalanceMe}Lombard Boots +1" mesh="cts_lombard_boots" culture="Culture.battania" weight="0.9889027" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="16" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_lombard_boots_h2" name="{=BalanceMe}Lombard Boots +2" mesh="cts_lombard_boots" culture="Culture.battania" weight="0.9889027" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="18" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_lombard_boots_h3" name="{=BalanceMe}Lombard Boots +3" mesh="cts_lombard_boots" culture="Culture.battania" weight="0.9889027" appearance="1" Type="LegArmor" difficulty="0">
+    <ItemComponent>
+      <Armor leg_armor="20" covers_legs="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
 </Items>

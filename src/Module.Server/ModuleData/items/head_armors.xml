@@ -9828,7 +9828,7 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aciv_chalcidian_3_h2" name="{=DionysuSteve18}Bronze Chalcidian Helm +2" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture"  weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
+  <Item id="crpg_aciv_chalcidian_3_h2" name="{=DionysuSteve18}Bronze Chalcidian Helm +2" mesh="cts_chalcidic_a2" is_merchandise="true" subtype="head_armor" culture="Culture.neutral_culture" weight="3.926624" difficulty="0" appearance="3" Type="HeadArmor">
     <ItemComponent>
       <Armor head_armor="50" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
@@ -10151,6 +10151,30 @@
       <Armor head_armor="57" covers_head="false" hair_cover_type="type2" beard_cover_type="none" modifier_group="Plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_lombard_helmet_h0" name="{=Salt}Lombard Helmet" subtype="head_armor" mesh="cts_lombard_helmet" culture="Culture.vlandia" weight="3.926624" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="46" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_lombard_helmet_h1" name="{=Salt}Lombard Helmet +1" subtype="head_armor" mesh="cts_lombard_helmet" culture="Culture.vlandia" weight="3.926624" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="48" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_lombard_helmet_h2" name="{=Salt}Lombard Helmet +2" subtype="head_armor" mesh="cts_lombard_helmet" culture="Culture.vlandia" weight="3.926624" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="50" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
+  </Item>
+  <Item id="crpg_lombard_helmet_h3" name="{=Salt}Lombard Helmet +3" subtype="head_armor" mesh="cts_lombard_helmet" culture="Culture.vlandia" weight="3.926624" difficulty="0" appearance="1" Type="HeadArmor">
+    <ItemComponent>
+      <Armor head_armor="52" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="type2" />
+    </ItemComponent>
+    <Flags UseTeamColor="false" />
   </Item>
   <Item id="crpg_aa_morion_v1_h0" name="{=AppleTruce}Morion with collar" mesh="aa_morionwithcollar" culture="Culture.empire" weight="5.17156" appearance="1.0" Type="HeadArmor" subtype="head_armor" difficulty="0" is_merchandise="false">
     <ItemComponent>

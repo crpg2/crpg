@@ -8808,6 +8808,30 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
+  <Item id="crpg_lombard_armor_h0" name="{=Salt}Lombard Armor" mesh="cts_lombard_armor" culture="Culture.looters" weight="14.60092" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="46" leg_armor="14" arm_armor="18" covers_body="true" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_lombard_armor_h1" name="{=Salt}Lombard Armor +1" mesh="cts_lombard_armor" culture="Culture.looters" weight="14.60092" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="48" leg_armor="15" arm_armor="19" covers_body="true" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_lombard_armor_h2" name="{=Salt}Lombard Armor +2" mesh="cts_lombard_armor" culture="Culture.looters" weight="14.60092" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="50" leg_armor="16" arm_armor="20" covers_body="true" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_lombard_armor_h3" name="{=Salt}Lombard Armor +3" mesh="cts_lombard_armor" culture="Culture.looters" weight="14.60092" appearance="0.1" Type="BodyArmor" difficulty="0">
+    <ItemComponent>
+      <Armor body_armor="52" leg_armor="17" arm_armor="21" covers_body="true" modifier_group="Plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
   <Item id="crpg_aa_landsnechtflutedbreastplate_h0" name="{=Apple}Landsknecht Fluted Breastplate" mesh="aa_landsnechtflutedbreastplate" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="14.20411" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
       <Armor body_armor="46" leg_armor="12" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate" />
