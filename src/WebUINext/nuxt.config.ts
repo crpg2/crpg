@@ -112,7 +112,7 @@ export default defineNuxtConfig({
     // TODO:
     fonts: false,
     theme: {
-      colors: ['primary', 'secondary', 'neutral'],
+      // colors: ['primary', 'secondary', 'neutral'],
     },
   },
   runtimeConfig: {

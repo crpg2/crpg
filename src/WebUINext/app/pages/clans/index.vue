@@ -45,7 +45,7 @@ const columnFilters = ref<ColumnFiltersState>([
 function getInitialPaginationState(): PaginationState {
   return {
     pageIndex: 0,
-    pageSize: 2, // TODO: FIXME:
+    pageSize: 10, // TODO: FIXME:
   }
 }
 
@@ -67,11 +67,7 @@ watch(regionModel, () => {
 const columns: TableColumn<ClanWithMemberCount>[] = [
   {
     accessorFn: row => row.clan.tag,
-    meta: {
-      class: {
-        td: tw`w-32`,
-      },
-    },
+
     header: t('clan.table.column.tag'),
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-2',
@@ -79,14 +75,15 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
       h(ClanTagIcon, { color: row.original.clan.primaryColor }),
       h('div', row.original.clan.tag),
     ]),
+    meta: {
+      class: {
+        td: tw`w-32`,
+      },
+    },
   },
   {
     accessorFn: row => row.clan.name,
-    meta: {
-      class: {
-        td: tw`w-64`,
-      },
-    },
+
     header: t('clan.table.column.name'),
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-2',
@@ -96,6 +93,11 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
         ? [h('span', { 'data-aq-clan-row': 'self-clan' }, `(${t('you')})`)]
         : []),
     ]),
+    meta: {
+      class: {
+        td: tw`w-64`,
+      },
+    },
   },
   {
     id: 'clan_languages',
@@ -142,6 +144,11 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
       sorted: column.getIsSorted(),
       onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
     }),
+    meta: {
+      class: {
+        th: tw`w-24`,
+      },
+    },
   },
   {
     id: 'clan_region',
@@ -249,11 +256,10 @@ const regionItems = regions.map<TabsItem>(region => ({
             color="secondary"
             active-variant="solid"
             active-color="primary"
-            show-edges
             :page="pagination.pageIndex + 1"
             :show-controls="false"
-            :default-page="(table?.tableApi?.getState().pagination.pageIndex || 0) + 1"
-            :items-per-page="table?.tableApi?.getState().pagination.pageSize"
+            :default-page="(table?.tableApi?.initialState.pagination.pageIndex || 0) + 1"
+            :items-per-page="table?.tableApi?.initialState.pagination.pageSize"
             :total="table?.tableApi?.getFilteredRowModel().rows.length"
             @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
           />
