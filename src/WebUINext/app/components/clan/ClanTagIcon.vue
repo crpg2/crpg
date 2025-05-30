@@ -7,5 +7,9 @@ defineProps<{
 </script>
 
 <template>
-  <UIcon name="crpg:clan-tag" class="size-6" :style="{ color: argbIntToRgbHexColor(color) }" />
+  <UIcon
+    name="crpg:clan-tag"
+    class="size-6"
+    :style="{ color: argbIntToRgbHexColor(color) }"
+  />
 </template>

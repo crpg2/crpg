@@ -134,4 +134,31 @@
   padding-inline: 1rem;
 }
 
+
+/* COLOR PICKER */
+input[type='color'] {
+  @apply cursor-pointer border-none;
+  @apply h-3.5 w-3.5;
+  @apply rotate-45 transform rounded-[0.188rem];
+}
+
+::-webkit-color-swatch-wrapper {
+  @apply p-0;
+}
+
+::-webkit-color-swatch {
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.15);
+  @apply h-full w-full rounded-none border-none hover:opacity-75;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner {
+  @apply border-none;
+}
+
+::-moz-focus-inner {
+  @apply p-0;
+}
+
 @import '../themes/oruga-tailwind/index.css';
+

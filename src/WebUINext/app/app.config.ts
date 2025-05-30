@@ -42,6 +42,24 @@ export default defineAppConfig({
         close: '-right-4 -top-4',
       },
     },
+
+    formField: {
+      slots: {
+        label: 'text-muted',
+      },
+      variants: {
+        size: {
+          md: {
+            root: 'text-xs',
+            label: 'text-xs',
+            hint: 'text-2xs',
+            help: 'text-2xs',
+            description: 'text-2xs',
+            error: 'text-2xs',
+          },
+        },
+      },
+    },
     input: {
       variants: {
         size: {

@@ -13,32 +13,36 @@ const [open, toggle] = useToggle()
 </script>
 
 <template>
-  <UPopover v-model:open="open" :ui="{ content: 'w-64' }">
+  <UPopover
+    v-model:open="open"
+    :ui="{ content: 'w-64 space-y-3' }"
+  >
     <slot />
+
     <template #content>
-      <div class="space-y-3">
-        <div>{{ title ?? $t('confirmAction') }}</div>
-        <div class="flex items-center gap-2">
-          <UButton
-            size="xs"
-            icon="crpg:check"
-            :label="confirmLabel ?? $t('action.confirm')"
-            @click="() => {
-              $emit('confirm')
-              toggle(false)
-            }"
-          />
-          <UButton
-            variant="soft"
-            size="xs"
-            icon="crpg:close"
-            :label="$t('action.cancel')"
-            @click="() => {
-              $emit('cancel')
-              toggle(false)
-            }"
-          />
-        </div>
+      <div>{{ title ?? $t('confirmAction') }}</div>
+
+      <div class="flex items-center gap-2">
+        <UButton
+          variant="soft"
+          size="sm"
+          icon="crpg:close"
+          :label="$t('action.cancel')"
+          @click="() => {
+            $emit('cancel')
+            toggle(false)
+          }"
+        />
+
+        <UButton
+          size="sm"
+          icon="crpg:check"
+          :label="confirmLabel ?? $t('action.confirm')"
+          @click="() => {
+            $emit('confirm')
+            toggle(false)
+          }"
+        />
       </div>
     </template>
   </UPopover>
