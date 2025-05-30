@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ModalSlots } from '@nuxt/ui' // or '#ui/types'
+
 import type { ClanMember } from '~/models/clan'
 
 import { useClan } from '~/composables/clan/use-clan'
@@ -390,7 +392,6 @@ fetchPageData(clanId.value)
 
     <!-- @apply-hide="selectedCLanMemberId = null"
       @hide="clanMemberDetailModal = false" -->
-    <!-- @cancel="close" -->
     <ClanMemberDetailModal
       v-if="selectedClanMember"
       open
@@ -400,11 +401,12 @@ fetchPageData(clanId.value)
       :can-update="canUpdateMember"
       @kick="() => {
         kickMember(selectedClanMember!);
-        // close();
       }"
       @update="role => {
         updateMember(selectedClanMember!.user.id, role);
-        // close();
+      }"
+      @cancel="() => {
+        selectedClanMemberId = null
       }"
     />
     <!-- <UModal

@@ -36,23 +36,21 @@ const onSave = () => {
 
 <template>
   <UModal
+    title="TODO:"
     :ui="{ footer: 'justify-center' }"
     :close="{
       size: 'sm',
       color: 'secondary',
       variant: 'solid',
     }"
+    @update:open="$emit('cancel')"
   >
-    <template #header>
-      <div class="flex flex-1 justify-center py-3">
-        <UserMedia :user="member.user" size="xl" />
-      </div>
+    <template #title>
+      <UserMedia :user="member.user" size="xl" class="my-3" />
     </template>
 
     <template #body>
-      <div
-        v-if="canUpdate"
-      >
+      <div v-if="canUpdate">
         <UiFormGroup
           icon="member"
           :label="$t('clan.roleTitle')"
@@ -139,17 +137,15 @@ const onSave = () => {
     </template>
 
     <template #footer>
-      <OButton
-        variant="primary"
-        outlined
+      <UButton
+        variant="outline"
         size="xl"
         :label="$t('action.cancel')"
         data-aq-clan-member-action="close-detail"
         @click="$emit('cancel')"
       />
 
-      <OButton
-        variant="primary"
+      <UButton
         size="xl"
         :label="$t('action.save')"
         :disabled="member.role === memberRoleModel"

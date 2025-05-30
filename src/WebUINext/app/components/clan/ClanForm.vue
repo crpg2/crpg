@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { RadioGroupItem, SelectItem } from '@nuxt/ui'
+
 import { useVuelidate } from '@vuelidate/core'
 import {
   clanBannerKeyMaxLength,
@@ -125,215 +127,170 @@ const onSubmit = async () => {
     data-aq-clan-form
     @submit.prevent="onSubmit"
   >
-    <div class="mb-8 space-y-4">
-      <UiFormGroup
-        icon="hash"
-        :label="$t('clan.update.form.field.mainInfo')"
-      >
-        <div class="grid grid-cols-2 gap-4">
-          <OField
-            :label="$t('clan.update.form.field.name')"
-            v-bind="{
-              ...($v.name.$error && {
-                variant: 'danger',
-                message: errorMessagesToString($v.name.$errors),
-              }),
-            }"
-            data-aq-clan-form-field="name"
-          >
-            <OInput
-              v-model="clanFormModel.name"
-              type="text"
-              counter
-              size="sm"
-              expanded
-              :placeholder="$t('clan.update.form.field.name')"
-              :minlength="clanNameMinLength"
-              :maxlength="clanNameMaxLength"
-              data-aq-clan-form-input="name"
-              @blur="$v.name.$touch"
-              @focus="$v.name.$reset"
-            />
-          </OField>
-
-          <OField
-            :label="$t('clan.update.form.field.tag')"
-            v-bind="{
-              ...($v.tag.$error && {
-                variant: 'danger',
-                message: errorMessagesToString($v.tag.$errors),
-              }),
-            }"
-            data-aq-clan-form-field="tag"
-          >
-            <OInput
-              v-model="clanFormModel.tag"
-              type="text"
-              counter
-              size="sm"
-              expanded
-              :placeholder="$t('clan.update.form.field.tag')"
-              :min-length="clanTagMinLength"
-              :maxlength="clanTagMaxLength"
-              data-aq-clan-form-input="tag"
-              @blur="$v.tag.$touch"
-              @focus="$v.tag.$reset"
-            />
-          </OField>
-
-          <OField
-            :label="$t('clan.update.form.field.description')"
-            class="col-span-2"
-            v-bind="{
-              ...($v.description.$error && {
-                variant: 'danger',
-                message: errorMessagesToString($v.description.$errors),
-              }),
-            }"
-            data-aq-clan-form-field="description"
-          >
-            <OInput
-              v-model="clanFormModel.description"
-              :placeholder="`${$t('clan.update.form.field.description')} (${$t('form.field.optional')})`"
-              type="textarea"
-              rows="5"
-              counter
-              size="sm"
-              expanded
-              :maxlength="clanDescriptionMaxLength"
-              data-aq-clan-form-input="description"
-              @blur="$v.description.$touch"
-              @focus="$v.description.$reset"
-            />
-          </OField>
-        </div>
-      </UiFormGroup>
-
-      <UiFormGroup
-        icon="region"
-        :label="$t('region-title')"
-      >
-        <div class="space-y-8">
-          <OField :addons="false">
-            <div class="flex flex-col gap-4">
-              <ORadio
-                v-for="region in Object.keys(Region)"
-                :key="region"
-                v-model="clanFormModel.region"
-                :native-value="region"
-                data-aq-clan-form-input="region"
-              >
-                {{ $t(`region.${region}`, 0) }}
-              </ORadio>
+    <div class="mb-6 space-y-6">
+      <UCard variant="outline">
+        <template #header>
+          <UiDataCell>
+            <template #leftContent>
+              <UIcon name="crpg:hash" class="size-6" />
+            </template>
+            <div class="text-sm">
+              {{ $t('clan.update.form.field.mainInfo') }}
             </div>
-          </OField>
-
-          <OField>
-            <VDropdown :triggers="['click']">
-              <template #default="{ shown }">
-                <OButton
-                  variant="secondary"
-                  outlined
-                  size="lg"
-                >
-                  {{ $t('clan.update.form.field.languages') }}
-                  <div class="flex items-center gap-1.5">
-                    <UiTag
-                      v-for="l in clanFormModel.languages"
-                      :key="l"
-                      v-tooltip="$t(`language.${l}`)"
-                      :label="l"
-                      variant="primary"
-                    />
-                  </div>
-
-                  <UiDivider inline />
-
-                  <OIcon
-                    icon="chevron-down"
-                    size="lg"
-                    :rotation="shown ? 180 : 0"
-                    class="text-content-400"
-                  />
-                </OButton>
-              </template>
-
-              <template #popper>
-                <div class="max-h-64 max-w-md overflow-y-auto">
-                  <UiDropdownItem
-                    v-for="l in Object.keys(Language)"
-                    :key="l"
-                  >
-                    <OCheckbox
-                      v-model="clanFormModel.languages"
-                      :native-value="l"
-                      class="items-center"
-                      :label="`${$t(`language.${l}`)} - ${l}`"
-                    />
-                  </UiDropdownItem>
-                </div>
-              </template>
-            </VDropdown>
-          </OField>
-        </div>
-      </UiFormGroup>
-
-      <UiFormGroup>
-        <template #label>
-          <ClanTagIcon
-            :color="clanFormModel.primaryColor"
-            size="lg"
-          />
-          {{ $t('clan.update.form.field.colors') }}
+          </UiDataCell>
         </template>
 
         <div class="grid grid-cols-2 gap-4">
-          <OField
-            :label="`${$t('clan.update.form.field.primaryColor')}:`"
-            horizontal
+          <UFormField
+            :label="$t('clan.update.form.field.name')"
+            :error="errorMessagesToString($v.name.$errors)"
+            data-aq-clan-form-field="name"
           >
-            <div class="text-content-100">
-              {{ primaryColorModel }}
-            </div>
-            <OInput
-              v-model="primaryColorModel"
-              type="color"
-              data-aq-clan-form-input="primaryColor"
-            />
-          </OField>
+            <UInput
+              v-model="clanFormModel.name"
+              :minlength="clanNameMinLength"
+              :maxlength="clanNameMaxLength"
+              size="sm"
+              aria-describedby="clan-name-count"
+              class="w-full"
+              data-aq-clan-form-input="name"
+            >
+              <!-- TODO: to cmp -->
+              <template #trailing>
+                <div
+                  id="clan-name-count"
+                  class="text-2xs text-muted tabular-nums"
+                  aria-live="polite"
+                  role="status"
+                >
+                  {{ clanFormModel.name.length }}/{{ clanNameMaxLength }}
+                </div>
+              </template>
+            </UInput>
+          </UFormField>
 
-          <OField
-            :label="`${$t('clan.update.form.field.secondaryColor')}:`"
-            horizontal
+          <UFormField
+            :label="$t('clan.update.form.field.tag')"
+            :error="errorMessagesToString($v.tag.$errors)"
+            data-aq-clan-form-field="tag"
           >
-            <div class="text-content-100">
-              {{ secondaryColorModel }}
-            </div>
-            <OInput
-              v-model="secondaryColorModel"
-              type="color"
-              data-aq-clan-form-input="secondaryColor"
-            />
-          </OField>
+            <UInput
+              v-model="clanFormModel.tag"
+              :minlength="clanTagMinLength"
+              :maxlength="clanTagMaxLength"
+              size="sm"
+              aria-describedby="clan-tag-count"
+              class="w-full"
+              data-aq-clan-form-input="tag"
+            >
+              <template #trailing>
+                <div
+                  id="clan-tag-count"
+                  class="text-2xs text-muted tabular-nums"
+                  aria-live="polite"
+                  role="status"
+                >
+                  {{ clanFormModel.tag.length }}/{{ clanTagMaxLength }}
+                </div>
+              </template>
+            </UInput>
+          </UFormField>
+
+          <UFormField
+            :label="`${$t('clan.update.form.field.description')} (${$t('form.field.optional')})`"
+            :error="errorMessagesToString($v.description.$errors)"
+            class="col-span-2"
+            data-aq-clan-form-field="description"
+          >
+            <UTextarea
+              v-model="clanFormModel.description"
+              :rows="5"
+              :maxlength="clanDescriptionMaxLength"
+              data-aq-clan-form-input="description"
+              aria-describedby="clan-description-count"
+              size="sm"
+              class="w-full"
+            >
+              <template #trailing>
+                <div
+                  id="clan-description-count"
+                  class="text-2xs text-muted tabular-nums"
+                  aria-live="polite"
+                  role="status"
+                >
+                  {{ clanFormModel.description.length }}/{{ clanDescriptionMaxLength }}
+                </div>
+              </template>
+            </UTextarea>
+          </UFormField>
         </div>
-      </UiFormGroup>
+      </UCard>
 
-      <UiFormGroup
-        icon="banner"
-        :label="$t('clan.update.form.field.bannerKey')"
+      <UCard
+        variant="outline"
+        :ui="{ body: 'grid grid-cols-2 gap-4' }"
       >
-        <OField
-          v-bind="{
-            ...($v.bannerKey.$error && {
-              variant: 'danger',
-            }),
-          }"
+        <template #header>
+          <UiDataCell>
+            <template #leftContent>
+              <UIcon name="crpg:region" class="size-6" />
+            </template>
+            <div class="text-sm">
+              {{ $t('region-title') }}
+            </div>
+          </UiDataCell>
+        </template>
+
+        <div class="space-y-6">
+          <URadioGroup
+            v-model="clanFormModel.region"
+            :items="Object.keys(Region).map<RadioGroupItem>((region) => ({
+              label: $t(`region.${region}`, 0),
+              value: region,
+            }))"
+            data-aq-clan-form-input="region"
+          />
+
+          <UFormField
+            :label="$t('clan.update.form.field.languages')"
+          >
+            <USelect
+              v-model="clanFormModel.languages"
+              multiple
+              :items="Object.keys(Language).map<SelectItem>((language) => ({
+                label: `${$t(`language.${language}`)} - ${language}`,
+                value: language,
+              }))"
+              size="sm"
+              class="w-full"
+            />
+          </UFormField>
+        </div>
+      </UCard>
+
+      <UCard
+        variant="outline"
+        :ui="{
+          body: 'space-y-6',
+        }"
+      >
+        <template #header>
+          <UiDataCell>
+            <template #leftContent>
+              <UIcon name="crpg:banner" class="size-6" />
+            </template>
+            <div class="text-sm">
+              {{ $t('clan.update.form.field.appearance') }}
+            </div>
+          </UiDataCell>
+        </template>
+
+        <UFormField
+          :error="errorMessagesToString($v.bannerKey.$errors)"
+          :label="$t('clan.update.form.field.bannerKey')"
           data-aq-clan-form-field="bannerKey"
         >
-          <template #message>
-            <div v-if="$v.bannerKey.$error" class="mb-1">
-              {{ errorMessagesToString($v.bannerKey.$errors) }}
-            </div>
+          <template #hint>
             <i18n-t
               scope="global"
               keypath="clan.update.bannerKeyGeneratorTools"
@@ -344,7 +301,7 @@ const onSubmit = async () => {
                 <a
                   href="https://bannerlord.party"
                   target="_blank"
-                  class="text-content-link hover:text-content-link-hover"
+                  class="hover:text- text-primary"
                 >
                   bannerlord.party
                 </a>
@@ -352,99 +309,165 @@ const onSubmit = async () => {
             </i18n-t>
           </template>
 
-          <OInput
+          <UInput
             v-model="clanFormModel.bannerKey"
-            counter
-            expanded
-            size="sm"
             :maxlength="clanBannerKeyMaxLength"
+            size="sm"
+            aria-describedby="clan-bannerKey-count"
+            class="w-full"
             data-aq-clan-form-input="bannerKey"
-            @blur="$v.bannerKey.$touch"
-            @focus="$v.bannerKey.$reset"
-          />
-        </OField>
-      </UiFormGroup>
+          >
+            <!-- TODO: to cmp -->
+            <template #trailing>
+              <div
+                id="clan-bannerKey-count"
+                class="text-2xs text-muted tabular-nums"
+                aria-live="polite"
+                role="status"
+              >
+                {{ clanFormModel.bannerKey.length }}/{{ clanBannerKeyMaxLength }}
+              </div>
+            </template>
+          </UInput>
+        </UFormField>
 
-      <UiFormGroup
-        icon="discord"
-        :label="$t('clan.update.form.field.discord')"
+        <UFormField>
+          <template #label>
+            <div class="mb-4 flex items-center gap-2">
+              <ClanTagIcon
+                :color="clanFormModel.primaryColor"
+                size="lg"
+              />
+              {{ $t('clan.update.form.field.colors') }}
+            </div>
+          </template>
+
+          <div class="grid grid-cols-2 gap-4">
+            <UFormField
+              :label="`${$t('clan.update.form.field.primaryColor')}:`"
+              :ui="{
+                root: 'flex items-center gap-2',
+                container: 'mt-0 flex items-center gap-2',
+              }"
+            >
+              <div class="text-content-100">
+                {{ primaryColorModel }}
+              </div>
+              <input
+                v-model="primaryColorModel"
+                variant="none"
+                type="color"
+                data-aq-clan-form-input="primaryColor"
+              >
+            </UFormField>
+
+            <UFormField
+              :label="`${$t('clan.update.form.field.secondaryColor')}:`"
+              :ui="{
+                root: 'flex items-center gap-2',
+                container: 'mt-0 flex items-center gap-2',
+              }"
+            >
+              <div class="text-content-100">
+                {{ secondaryColorModel }}
+              </div>
+              <input
+                v-model="secondaryColorModel"
+                variant="none"
+                type="color"
+                data-aq-clan-form-input="secondaryColor"
+              >
+            </UFormField>
+          </div>
+        </UFormField>
+      </UCard>
+
+      <UCard
+        variant="outline"
+        :ui="{
+          body: 'grid grid-cols-2 gap-4',
+        }"
       >
-        <OField
-          v-bind="{
-            ...($v.discord.$error && {
-              variant: 'danger',
-              message: errorMessagesToString($v.discord.$errors),
-            }),
-          }"
+        <template #header>
+          <UiDataCell>
+            <template #leftContent>
+              <UIcon name="crpg:discord" class="size-6" />
+            </template>
+            <div class="text-sm">
+              {{ $t('clan.update.form.field.discord') }}
+            </div>
+          </UiDataCell>
+        </template>
+
+        <UFormField
+          :error="errorMessagesToString($v.discord.$errors)"
           data-aq-clan-form-field="discord"
         >
-          <OInput
+          <UInput
             v-model="clanFormModel.discord"
-            type="text"
+            :maxlength="clanBannerKeyMaxLength"
             size="sm"
-            expanded
+            class="w-full"
             :placeholder="`${$t('clan.update.form.field.discord')} (${$t('form.field.optional')})`"
             data-aq-clan-form-input="discord"
-            @blur="$v.discord.$touch"
-            @focus="$v.discord.$reset"
           />
-        </OField>
-      </UiFormGroup>
+        </UFormField>
+      </UCard>
 
-      <UiFormGroup
-        icon="armory"
-        :label="$t('clan.update.form.group.armory.label')"
+      <UCard
+        variant="outline"
+        :ui="{
+          body: 'grid grid-cols-2 gap-4',
+        }"
       >
-        <div class="grid grid-cols-2 gap-4">
-          <OField
-            data-aq-clan-form-field="armoryTimeout"
-            :label="$t('clan.update.form.group.armory.field.armoryTimeout.label')"
-            v-bind="{
-              ...($v.armoryTimeout.$error
-                ? { variant: 'danger', message: errorMessagesToString($v.armoryTimeout.$errors) }
-                : { message: $t('clan.update.form.group.armory.field.armoryTimeout.hint') }),
-            }"
-          >
-            <OInput
-              :model-value="parseTimestamp(clanFormModel.armoryTimeout).days"
-              type="number"
-              size="sm"
-              expanded
-              data-aq-clan-form-input="armoryTimeout"
-              @update:model-value="(days: string) => { clanFormModel.armoryTimeout = daysToMs(Number(days)) }"
-              @blur="$v.armoryTimeout.$touch"
-              @focus="$v.armoryTimeout.$reset"
-            />
-          </OField>
-        </div>
-      </UiFormGroup>
+        <template #header>
+          <UiDataCell>
+            <template #leftContent>
+              <UIcon name="crpg:armory" class="size-6" />
+            </template>
+            <div class="text-sm">
+              {{ $t('clan.update.form.group.armory.label') }}
+            </div>
+          </UiDataCell>
+        </template>
+
+        <UFormField
+          :label="$t('clan.update.form.group.armory.field.armoryTimeout.label')"
+          :error="errorMessagesToString($v.armoryTimeout.$errors)"
+          :help="$t('clan.update.form.group.armory.field.armoryTimeout.hint')"
+          data-aq-clan-form-field="armoryTimeout"
+        >
+          <UInput
+            :model-value="parseTimestamp(clanFormModel.armoryTimeout).days"
+            :maxlength="clanBannerKeyMaxLength"
+            size="sm"
+            class="w-full"
+            type="number"
+            data-aq-clan-form-input="armoryTimeout"
+            @update:model-value="(days) => (clanFormModel.armoryTimeout = daysToMs(days))"
+          />
+        </UFormField>
+      </UCard>
     </div>
 
     <div class="flex items-center justify-center gap-4">
-      <template v-if="clanId === undefined">
-        <OButton
-          native-type="submit"
-          variant="primary"
-          size="xl"
-          :label="$t('action.create')"
-          data-aq-clan-form-action="create"
-        />
-      </template>
-
+      <UButton
+        v-if="clanId === undefined"
+        type="submit"
+        size="xl"
+        :label="$t('action.create')"
+        data-aq-clan-form-action="create"
+      />
       <template v-else>
-        <NuxtLink
+        <UButton
           :to="{ name: 'clans-id', params: { id: clanId } }"
+          variant="outline"
+          color="secondary"
+          size="xl"
+          :label="$t('action.cancel')"
           data-aq-clan-form-action="cancel"
-        >
-          <OButton
-            variant="primary"
-            outlined
-            size="xl"
-            :label="$t('action.cancel')"
-          />
-        </NuxtLink>
-        <OButton
-          variant="primary"
+        />
+        <UButton
           size="xl"
           :label="$t('action.save')"
           native-type="submit"

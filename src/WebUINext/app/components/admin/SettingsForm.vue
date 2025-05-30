@@ -14,6 +14,7 @@ defineEmits<{
 }>()
 
 const settingModel = ref<Settings>({ ...props.settings })
+
 watch(() => props.settings, () => {
   settingModel.value = { ...props.settings }
 })
@@ -23,6 +24,9 @@ watch(() => props.settings, () => {
   <UCard
     label="Settings"
     icon="settings"
+    :ui="{
+      footer: 'flex items-center justify-center gap-4',
+    }"
   >
     <div class="space-y-6">
       <UFormField
@@ -41,25 +45,23 @@ watch(() => props.settings, () => {
     </div>
 
     <template #footer>
-      <div class="flex items-center justify-center gap-4">
+      <UButton
+        variant="outline"
+        size="lg"
+        :label="$t('action.reset')"
+        @click="$emit('reset')"
+      />
+      <AppConfirmActionTooltip
+        :confirm-label="$t('action.ok')"
+        title="Are you sure you want to remove the setting?"
+        @confirm="$emit('submit', settingModel)"
+      >
         <UButton
-          variant="outline"
           size="lg"
-          :label="$t('action.reset')"
-          @click="$emit('reset')"
+          :loading
+          :label="$t('action.save')"
         />
-        <AppConfirmActionTooltip
-          :confirm-label="$t('action.ok')"
-          title="Are you sure you want to remove the setting?"
-          @confirm="$emit('submit', settingModel)"
-        >
-          <UButton
-            size="lg"
-            :loading
-            :label="$t('action.save')"
-          />
-        </AppConfirmActionTooltip>
-      </div>
+      </AppConfirmActionTooltip>
     </template>
   </UCard>
 </template>
