@@ -7158,14 +7158,6 @@
       <AvailablePiece id="crpg_norse_huscarl_axe_blade_h1" />
       <AvailablePiece id="crpg_norse_huscarl_axe_blade_h2" />
       <AvailablePiece id="crpg_norse_huscarl_axe_blade_h3" />
-      <AvailablePiece id="crpg_kama_blade_h0" />
-      <AvailablePiece id="crpg_kama_blade_h1" />
-      <AvailablePiece id="crpg_kama_blade_h2" />
-      <AvailablePiece id="crpg_kama_blade_h3" />
-      <AvailablePiece id="crpg_kama_handle_h0" />
-      <AvailablePiece id="crpg_kama_handle_h1" />
-      <AvailablePiece id="crpg_kama_handle_h2" />
-      <AvailablePiece id="crpg_kama_handle_h3" />
       <AvailablePiece id="crpg_shepherd_axe_blade_h0" />
       <AvailablePiece id="crpg_shepherd_axe_blade_h1" />
       <AvailablePiece id="crpg_shepherd_axe_blade_h2" />
@@ -7182,14 +7174,6 @@
       <AvailablePiece id="crpg_shepherds_axe_handle_h1" />
       <AvailablePiece id="crpg_shepherds_axe_handle_h2" />
       <AvailablePiece id="crpg_shepherds_axe_handle_h3" />
-      <AvailablePiece id="crpg_steel_pick_blade_h0" />
-      <AvailablePiece id="crpg_steel_pick_blade_h1" />
-      <AvailablePiece id="crpg_steel_pick_blade_h2" />
-      <AvailablePiece id="crpg_steel_pick_blade_h3" />
-      <AvailablePiece id="crpg_steel_pick_handle_h0" />
-      <AvailablePiece id="crpg_steel_pick_handle_h1" />
-      <AvailablePiece id="crpg_steel_pick_handle_h2" />
-      <AvailablePiece id="crpg_steel_pick_handle_h3" />
       <AvailablePiece id="crpg_shep_damast_handle_h0" />
       <AvailablePiece id="crpg_shep_damast_handle_h1" />
       <AvailablePiece id="crpg_shep_damast_handle_h2" />
@@ -13058,6 +13042,22 @@
       <WeaponFlag value="MeleeWeapon" />
     </WeaponFlags>
     <AvailablePieces>
+      <AvailablePiece id="crpg_kama_blade_h0" />
+      <AvailablePiece id="crpg_kama_blade_h1" />
+      <AvailablePiece id="crpg_kama_blade_h2" />
+      <AvailablePiece id="crpg_kama_blade_h3" />
+      <AvailablePiece id="crpg_kama_handle_h0" />
+      <AvailablePiece id="crpg_kama_handle_h1" />
+      <AvailablePiece id="crpg_kama_handle_h2" />
+      <AvailablePiece id="crpg_kama_handle_h3" />
+      <AvailablePiece id="crpg_steel_pick_blade_h0" />
+      <AvailablePiece id="crpg_steel_pick_blade_h1" />
+      <AvailablePiece id="crpg_steel_pick_blade_h2" />
+      <AvailablePiece id="crpg_steel_pick_blade_h3" />
+      <AvailablePiece id="crpg_steel_pick_handle_h0" />
+      <AvailablePiece id="crpg_steel_pick_handle_h1" />
+      <AvailablePiece id="crpg_steel_pick_handle_h2" />
+      <AvailablePiece id="crpg_steel_pick_handle_h3" />
       <AvailablePiece id="crpg_jamescross_1h_blade_h0" />
       <AvailablePiece id="crpg_jamescross_1h_blade_h1" />
       <AvailablePiece id="crpg_jamescross_1h_blade_h2" />

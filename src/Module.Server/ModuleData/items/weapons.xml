@@ -600,25 +600,25 @@
       <Piece id="crpg_shepherd_axe_handle_h3" Type="Handle" scale_factor="155" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_kama_v3_h0" name="{=}Kama" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_kama_v4_h0" name="{=}Kama" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_kama_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_kama_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_kama_v3_h1" name="{=}Kama +1" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_kama_v4_h1" name="{=}Kama +1" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_kama_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_kama_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_kama_v3_h2" name="{=}Kama +2" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_kama_v4_h2" name="{=}Kama +2" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_kama_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_kama_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_kama_v3_h3" name="{=}Kama +3" crafting_template="crpg_OneHandedAxe" culture="Culture.sturgia" modifier_group="axe">
+  <CraftedItem id="crpg_kama_v4_h3" name="{=}Kama +3" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_kama_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_kama_handle_h3" Type="Handle" scale_factor="100" />
@@ -11504,25 +11504,25 @@
       <Piece id="crpg_spiral_shuriken_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_pick_v3_h0" name="Steel Pick" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_steel_pick_v4_h0" name="Steel Pick" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_steel_pick_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_steel_pick_handle_h0" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_pick_v3_h1" name="Steel Pick +1" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_steel_pick_v4_h1" name="Steel Pick +1" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_steel_pick_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_steel_pick_handle_h1" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_pick_v3_h2" name="Steel Pick +2" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_steel_pick_v4_h2" name="Steel Pick +2" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_steel_pick_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_steel_pick_handle_h2" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_steel_pick_v3_h3" name="Steel Pick +3" crafting_template="crpg_OneHandedAxe" culture="Culture.aserai" modifier_group="mace">
+  <CraftedItem id="crpg_steel_pick_v4_h3" name="Steel Pick +3" crafting_template="crpg_Mace" culture="Culture.aserai" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_steel_pick_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_steel_pick_handle_h3" Type="Handle" scale_factor="100" />

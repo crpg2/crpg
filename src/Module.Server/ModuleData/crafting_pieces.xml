@@ -26024,7 +26024,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kama_blade_h0" name="{=}Kama Blade" tier="2" piece_type="Blade" mesh="kama_blade" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.99">
+  <CraftingPiece id="crpg_kama_blade_h0" name="{=}Kama Blade" tier="2" piece_type="Blade" mesh="kama_blade" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.99" excluded_item_usage_features="thrust">
     <BuildData piece_offset="-5.0" />
     <BladeData stack_amount="2" blade_length="6.66" blade_width="32.2" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Pierce" damage_factor="2.6" />
@@ -26037,7 +26037,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kama_blade_h1" name="{=}Kama Blade" tier="2" piece_type="Blade" mesh="kama_blade" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.99">
+  <CraftingPiece id="crpg_kama_blade_h1" name="{=}Kama Blade" tier="2" piece_type="Blade" mesh="kama_blade" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.99" excluded_item_usage_features="thrust">
     <BuildData piece_offset="-5.0" />
     <BladeData stack_amount="2" blade_length="6.66" blade_width="32.2" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Pierce" damage_factor="2.7" />
@@ -26050,7 +26050,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kama_blade_h2" name="{=}Kama Blade" tier="2" piece_type="Blade" mesh="kama_blade" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.99">
+  <CraftingPiece id="crpg_kama_blade_h2" name="{=}Kama Blade" tier="2" piece_type="Blade" mesh="kama_blade" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.99" excluded_item_usage_features="thrust">
     <BuildData piece_offset="-5.0" />
     <BladeData stack_amount="2" blade_length="6.66" blade_width="32.2" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Pierce" damage_factor="2.8" />
@@ -26063,7 +26063,7 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_kama_blade_h3" name="{=}Kama Blade" tier="2" piece_type="Blade" mesh="kama_blade" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.92">
+  <CraftingPiece id="crpg_kama_blade_h3" name="{=}Kama Blade" tier="2" piece_type="Blade" mesh="kama_blade" distance_to_next_piece="3.6" distance_to_previous_piece="2.7" weight="0.92" excluded_item_usage_features="thrust">
     <BuildData piece_offset="-5.0" />
     <BladeData stack_amount="2" blade_length="6.66" blade_width="32.2" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Pierce" damage_factor="2.8" />
@@ -28091,38 +28091,54 @@
   <CraftingPiece id="crpg_steel_pick_blade_h0" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.9" excluded_item_usage_features="thrust">
     <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Pierce" damage_factor="3.0" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+        <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+        </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_steel_pick_blade_h1" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.9" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
+      <Swing damage_type="Pierce" damage_factor="3.1" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+        <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+        </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_steel_pick_blade_h2" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.9" excluded_item_usage_features="thrust">
+    <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
       <Swing damage_type="Pierce" damage_factor="3.2" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_steel_pick_blade_h1" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.9" excluded_item_usage_features="thrust">
-    <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
-    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Pierce" damage_factor="3.4" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_steel_pick_blade_h2" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.9" excluded_item_usage_features="thrust">
-    <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
-    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Pierce" damage_factor="3.5" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
+        <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+        </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_steel_pick_blade_h3" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.85" excluded_item_usage_features="thrust">
     <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Pierce" damage_factor="3.5" />
+      <Swing damage_type="Pierce" damage_factor="3.3" />
     </BladeData>
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
+        <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+      <Flag name="BonusAgainstShield" />
+        </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_helpinghand_handle_h0" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="gp_helpinghand_handle" length="43.2" weight="0.05">
     <BuildData piece_offset="5" next_piece_offset="0" />
