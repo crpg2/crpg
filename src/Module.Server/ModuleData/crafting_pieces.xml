@@ -33308,7 +33308,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_blade_h0" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_bill_blade_h0" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5" excluded_item_usage_features="shield:thrust">
     <BuildData piece_offset="-7.6" />
     <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Cut" damage_factor="3.8" />
@@ -33322,7 +33322,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_blade_h1" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_bill_blade_h1" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5" excluded_item_usage_features="shield:thrust">
     <BuildData piece_offset="-7.6" />
     <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Cut" damage_factor="3.8" />
@@ -33336,7 +33336,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_blade_h2" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_bill_blade_h2" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5" excluded_item_usage_features="shield:thrust">
     <BuildData piece_offset="-7.6" />
     <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Cut" damage_factor="4.0" />
@@ -33350,7 +33350,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_bill_blade_h3" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_bill_blade_h3" name="{=}Cheap Bill Head" tier="4" piece_type="Blade" mesh="axe_craft_17_head" distance_to_next_piece="21" distance_to_previous_piece="3.8" weight="0.5" excluded_item_usage_features="shield:thrust">
     <BuildData piece_offset="-7.6" />
     <BladeData stack_amount="2" blade_length="33.887" blade_width="22.47" physics_material="metal_weapon" body_name="bo_axe_longer_b">
       <Swing damage_type="Cut" damage_factor="4.2" />
@@ -37356,7 +37356,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_bobs_ballmace_pommel_h3" name="{=BalanceMe}Bob's Ballmace Dummy Pommel" tier="3" piece_type="Pommel" mesh="" culture="Culture.empire" full_scale="true" length="0" weight="0.97">
   </CraftingPiece>
-  <CraftingPiece id="crpg_nagamaki_blade_h0" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_nagamaki_blade_h0" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
       <Swing damage_type="Cut" damage_factor="3.8" />
     </BladeData>
@@ -37367,7 +37367,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_nagamaki_blade_h1" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_nagamaki_blade_h1" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
       <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
@@ -37378,7 +37378,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_nagamaki_blade_h2" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_nagamaki_blade_h2" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
       <Swing damage_type="Cut" damage_factor="4.0" />
     </BladeData>
@@ -37389,7 +37389,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_nagamaki_blade_h3" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="thrust">
+  <CraftingPiece id="crpg_nagamaki_blade_h3" name="Nagamaki Blade" tier="3" piece_type="Blade" mesh="nagamaki_blade" culture="Culture.vlandia" length="88.1" weight="0.8" excluded_item_usage_features="shield:thrust">
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
       <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
