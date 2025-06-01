@@ -34,13 +34,12 @@ const onReady = (circleMarker: CircleMarker) => {
   <!-- <LMarker
     :lat-lng="positionToLatLng(party.position.coordinates)"
     :options="{ bubblingMouseEvents: false }"
-  > -->
-  <!-- <LIcon
+  >
+    <LIcon
       :icon-size="[32, 32]"
       class-name="!flex justify-center items-center"
-    > -->
-  <!-- TODO: FIXME: animate sprite png/webp -->
-  <!-- <svg width="32" height="32" viewBox="0 0 24 24">
+    >
+      <svg width="32" height="32" viewBox="0 0 24 24">
         <circle
           cx="12" cy="12"
           r="6"
@@ -57,16 +56,16 @@ const onReady = (circleMarker: CircleMarker) => {
             repeatCount="indefinite"
           />
         </circle>
-      </svg> -->
+      </svg>
 
-  <!-- <OIcon
+      <OIcon
         :icon="isSelf ? 'game-mode-battle' : 'char-class-peasant'"
         size="2xl"
         class="text-status-danger"
       />
-    </LIcon> -->
+    </LIcon>
 
-  <!-- <LTooltip :options="{ direction: 'top', offset: [0, -8] }">
+    <LTooltip :options="{ direction: 'top', offset: [0, -8] }">
       {{ party.user.name }} ({{ party.troops }})
     </LTooltip>
   </LMarker> -->

@@ -27,8 +27,8 @@ public record GetBattleFightersQuery : IMediatorRequest<IList<BattleFighterViewM
         {
             var battle = await _db.Battles
                 .AsSplitQuery()
-                .Include(b => b.Fighters).ThenInclude(f => f.Party!).ThenInclude(h => h.User)
-                .Include(b => b.Fighters).ThenInclude(f => f.Settlement)
+                .Include(b => b.Fighters).ThenInclude(f => f.Party!).ThenInclude(h => h.User!).ThenInclude(u => u.ClanMembership).ThenInclude(cm => cm!.Clan)
+                .Include(b => b.Fighters).ThenInclude(f => f.Settlement!).ThenInclude(s => s.Owner).ThenInclude(o => o!.User).ThenInclude(u => u!.ClanMembership).ThenInclude(cm => cm!.Clan)
                 .FirstOrDefaultAsync(b => b.Id == req.BattleId, cancellationToken);
             if (battle == null)
             {

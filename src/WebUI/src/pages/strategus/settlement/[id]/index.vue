@@ -9,11 +9,11 @@ definePage({
 })
 
 const settlement = injectStrict(settlementKey)
-const {
-  party,
-  toggleRecruitTroops,
-  isTogglingRecruitTroops,
-} = injectStrict(partyKey)
+// const {
+//   party,
+//   toggleRecruitTroops,
+//   isTogglingRecruitTroops,
+// } = injectStrict(partyKey)
 </script>
 
 <template>
