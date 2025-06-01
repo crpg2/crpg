@@ -1,7 +1,11 @@
 import { getClanMembers } from '~/services/clan-service'
 
 export const useClanMembers = () => {
-  const { state: clanMembers, execute: loadClanMembers } = useAsyncState(
+  const {
+    state: clanMembers,
+    execute: loadClanMembers,
+    isLoading: loadingClanMembers,
+  } = useAsyncState(
     ({ id }: { id: number }) => getClanMembers(id),
     [],
     {
@@ -17,5 +21,6 @@ export const useClanMembers = () => {
     clanMembersCount,
     isLastMember,
     loadClanMembers,
+    loadingClanMembers,
   }
 }

@@ -7,20 +7,17 @@ defineProps<{
 </script>
 
 <template>
-  <OIcon
-    :icon="role === ClanMemberRole.Leader ? 'leader' : 'officer'"
+  <UIcon
+    :name="role === ClanMemberRole.Leader ? 'crpg:clan-role-leader' : 'crpg:clan-role-officer'"
+    class="size-5"
     :class="
-      role === ClanMemberRole.Leader
-        ? 'text-more-support'
-        : role === ClanMemberRole.Officer
-          ? 'text-content-100'
-          : 'text-content-400'
+      [
+        role === ClanMemberRole.Leader
+          ? 'text-more-support'
+          : role === ClanMemberRole.Officer
+            ? 'text-content-100'
+            : 'text-content-400',
+      ]
     "
-    size="sm"
-    :style="{
-      '--fa-secondary-opacity': 1,
-      '--fa-secondary-color': '#fff',
-      '--fa-primary-color': '#626262',
-    }"
   />
 </template>

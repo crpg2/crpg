@@ -38,6 +38,9 @@ export default defineAppConfig({
     modal: {
       slots: {
         wrapper: 'w-full',
+        header: 'p-8 sm:px-6',
+        body: 'p-6 sm:p-8',
+        footer: 'p-8 sm:px-6',
         title: 'text-center text-lg',
         close: '-right-4 -top-4',
       },

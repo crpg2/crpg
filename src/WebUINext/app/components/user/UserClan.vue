@@ -11,20 +11,18 @@ const { clan, clanRole } = defineProps<{
 
 <template>
   <NuxtLink
-    class="group flex items-center gap-1 hover:opacity-75"
+    class="inline-flex items-center gap-1 hover:text-highlighted"
     :to="{ name: 'clans-id', params: { id: clan.id } }"
   >
-    <UiTooltip
+    <UTooltip
       v-if="clanRole && [ClanMemberRole.Leader, ClanMemberRole.Officer].includes(clanRole)"
-      placement="bottom"
-      :title="$t(`clan.role.${clanRole}`)"
+      :text="$t(`clan.role.${clanRole}`)"
     >
-      <ClanRoleIcon
-        :role="clanRole"
-      />
-    </UiTooltip>
+      <ClanRoleIcon :role="clanRole" />
+    </UTooltip>
 
     <ClanTagIcon :color="clan.primaryColor" />
+
     [{{ clan.tag }}]
   </NuxtLink>
 </template>
