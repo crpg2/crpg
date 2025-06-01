@@ -14,7 +14,7 @@ const groupedRankTable = computed(() => groupBy(rankTable, r => r.groupTitle))
 
 <template>
   <div class="space-y-8">
-    <div class="flex flex-col-reverse gap-5 overflow-x-auto p-4">
+    <div class="flex flex-col-reverse gap-5 overflow-x-auto">
       <div
         v-for="(ranks, groupTitle, groupIdx) in groupedRankTable"
         :key="groupIdx"

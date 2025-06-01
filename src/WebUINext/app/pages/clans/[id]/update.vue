@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { RouteLocationNormalizedLoaded } from 'vue-router'
-
 import type { Clan } from '~/models/clan'
 
 import { useClan } from '~/composables/clan/use-clan'
@@ -40,7 +38,7 @@ const clanId = computed(() => Number(props.id))
 
 const userStore = useUserStore()
 
-const { clan, loadClan } = useClan()
+const { clan, loadClan, loadingClan } = useClan()
 const { isLastMember, loadClanMembers } = useClanMembers()
 
 function backToClanPage() {
@@ -78,77 +76,86 @@ Promise.all([
 </script>
 
 <template>
-  <div class="p-6">
+  <div class="relative p-6">
+    <!-- TODO: new cmp -->
     <OLoading
       full-page
-      :active="updatingClan || deletingClan"
+      :active="loadingClan || updatingClan || deletingClan"
       icon-size="xl"
     />
-    <OButton
-      v-tooltip.bottom="$t('nav.back')"
-      variant="secondary"
+
+    <!-- TODO: to cmp -->
+    <UButton
+      color="secondary"
+      variant="outline"
       size="xl"
-      outlined
-      rounded
-      icon-left="arrow-left"
+      icon="crpg:arrow-left"
       @click="backToClanPage"
     />
 
-    <div v-if="clan" class="mx-auto max-w-2xl space-y-10 py-6">
-      <div class="space-y-14">
-        <h1 class="text-center text-xl text-content-100">
-          {{ $t('clan.update.page.title') }}
-        </h1>
+    <UContainer v-if="clan" class="py-6">
+      <div class="mx-auto max-w-2xl space-y-10">
+        <div class="space-y-14">
+          <h1 class="text-center text-xl text-content-100">
+            {{ $t('clan.update.page.title') }}
+          </h1>
 
-        <div class="container">
-          <div class="mx-auto max-w-3xl">
-            <ClanForm
-              :clan-id="clanId"
-              :clan
-              @submit="onUpdateClan"
-            />
+          <div class="container">
+            <div class="mx-auto max-w-3xl">
+              <ClanForm
+                :clan-id="clanId"
+                :clan="clan"
+                @submit="onUpdateClan"
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      <i18n-t
-        scope="global"
-        keypath="clan.delete.title"
-        tag="div"
-        class="text-center"
-      >
-        <template #link>
-          <UiModal closable>
-            <span class="cursor-pointer text-status-danger hover:text-opacity-80">
-              {{ $t('clan.delete.link') }}
-            </span>
-            <template #popper="{ hide }">
-              <AppConfirmActionForm
-                v-if="isLastMember"
-                :title="$t('clan.delete.dialog.title')"
-                :description="$t('clan.delete.dialog.desc')"
-                :name="clan.name"
-                :confirm-label="$t('action.delete')"
-                data-aq-clan-delete-confirm-action-form
-                @cancel="hide"
-                @confirm="
-                  () => {
+        <i18n-t
+          scope="global"
+          keypath="clan.delete.title"
+          tag="div"
+          class="text-center"
+        >
+          <template #link>
+            <UModal
+              :title="$t('clan.delete.dialog.title')"
+              :close="{
+                size: 'sm',
+                color: 'secondary',
+                variant: 'solid',
+              }"
+            >
+              <span class="cursor-pointer text-error">
+                {{ $t('clan.delete.link') }}
+              </span>
+
+              <template #body="{ close }">
+                <AppConfirmActionForm
+                  v-if="isLastMember"
+                  :description="$t('clan.delete.dialog.desc')"
+                  :name="clan!.name"
+                  :confirm-label="$t('action.delete')"
+                  data-aq-clan-delete-confirm-action-form
+                  @cancel="close"
+                  @confirm=" () => {
                     onDeleteClan();
-                    hide();
-                  }
-                "
-              />
-              <div
-                v-else
-                class="px-12 pb-11 pt-20 text-center"
-                data-aq-clan-delete-required-message
-              >
-                {{ $t('clan.delete.required') }}
-              </div>
-            </template>
-          </UiModal>
-        </template>
-      </i18n-t>
-    </div>
+                    close();
+                  }"
+                />
+
+                <div
+                  v-else
+                  class="text-center"
+                  data-aq-clan-delete-required-message
+                >
+                  {{ $t('clan.delete.required') }}
+                </div>
+              </template>
+            </UModal>
+          </template>
+        </i18n-t>
+      </div>
+    </UContainer>
   </div>
 </template>

@@ -14,7 +14,7 @@ defineProps<{
         ? 'text-more-support'
         : role === ClanMemberRole.Officer
           ? 'text-content-100'
-          : 'text-content-400'
+          : 'text-dimmed'
     "
   >
     <ClanRoleIcon v-if="[ClanMemberRole.Leader, ClanMemberRole.Officer].includes(role)" :role />

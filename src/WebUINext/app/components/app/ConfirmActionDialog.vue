@@ -3,19 +3,18 @@ import { useVuelidate } from '@vuelidate/core'
 
 import { errorMessagesToString, sameAs } from '~/services/validators-service'
 
-const {
-  confirmLabel,
-  description,
-  name,
-  noSelect = false,
-  title,
-} = defineProps<{
+const props = withDefaults(defineProps<{
+  // TODO: FIXME: use ModalProps after resolve https://github.com/nuxt/module-builder/issues/597#issuecomment-2862766112
+  open?: boolean
   title?: string
   description?: string
+
   name: string
   confirmLabel: string
   noSelect?: boolean
-}>()
+}>(), {
+  noSelect: false,
+})
 
 const emit = defineEmits<{
   cancel: []
@@ -27,7 +26,8 @@ const confirmNameModel = ref<string>('')
 const $v = useVuelidate(
   {
     confirmNameModel: {
-      sameAs: sameAs(name, name),
+      // TODO:
+      sameAs: sameAs(props.name, props.name),
     },
   },
   { confirmNameModel },
@@ -49,18 +49,22 @@ const onConfirm = async () => {
 </script>
 
 <template>
-  <div class="max-w-xl space-y-6 px-12 py-11 text-center">
-    <slot name="title">
-      <h4 class="text-xl">
-        {{ title }}
-      </h4>
-    </slot>
-
-    <div class="space-y-4">
-      <slot name="description">
-        <p>{{ description }}</p>
-      </slot>
-
+  <UModal
+    :open
+    :title
+    :description
+    :ui="{
+      body: 'space-y-6 text-center',
+      footer: 'flex items-center justify-center gap-4',
+    }"
+    :close="{
+      size: 'sm',
+      color: 'secondary',
+      variant: 'solid',
+    }"
+    @update:open="onCancel"
+  >
+    <template #body>
       <i18n-t
         scope="global"
         keypath="confirm.name"
@@ -76,45 +80,35 @@ const onConfirm = async () => {
         </template>
       </i18n-t>
 
-      <OField
-        v-bind="{
-          ...($v.confirmNameModel.$error && {
-            variant: 'danger',
-            message: errorMessagesToString($v.confirmNameModel.$errors),
-          }),
-        }"
+      <UFormField
+        :error="errorMessagesToString($v.confirmNameModel.$errors)"
         data-aq-confirm-field
-        class="mx-auto max-w-sm"
       >
-        <OInput
+        <UInput
           v-model="confirmNameModel"
           :placeholder="$t('confirm.placeholder')"
           size="sm"
-          expanded
+          class="w-full"
           data-aq-confirm-input
-          @blur="$v.$touch"
-          @focus="$v.$reset"
         />
-      </OField>
-    </div>
+      </UFormField>
+    </template>
 
-    <div class="flex items-center justify-center gap-4">
-      <OButton
-        variant="primary"
-        outlined
+    <template #footer>
+      <UButton
+        variant="outline"
         size="xl"
         :label="$t('action.cancel')"
         data-aq-confirm-action="cancel"
         @click="onCancel"
       />
-      <OButton
+      <UButton
         :disabled="$v.confirmNameModel.$invalid"
-        variant="primary"
         size="xl"
         :label="confirmLabel"
         data-aq-confirm-action="submit"
         @click="onConfirm"
       />
-    </div>
-  </div>
+    </template>
+  </UModal>
 </template>

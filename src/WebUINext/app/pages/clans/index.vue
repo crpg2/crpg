@@ -67,7 +67,6 @@ watch(regionModel, () => {
 const columns: TableColumn<ClanWithMemberCount>[] = [
   {
     accessorFn: row => row.clan.tag,
-
     header: t('clan.table.column.tag'),
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-2',
@@ -83,7 +82,6 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
   },
   {
     accessorFn: row => row.clan.name,
-
     header: t('clan.table.column.name'),
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-2',
@@ -250,20 +248,20 @@ const regionItems = regions.map<TabsItem>(region => ({
           </template>
         </UTable>
 
-        <div class="flex justify-center">
-          <UPagination
-            variant="soft"
-            color="secondary"
-            active-variant="solid"
-            active-color="primary"
-            :page="pagination.pageIndex + 1"
-            :show-controls="false"
-            :default-page="(table?.tableApi?.initialState.pagination.pageIndex || 0) + 1"
-            :items-per-page="table?.tableApi?.initialState.pagination.pageSize"
-            :total="table?.tableApi?.getFilteredRowModel().rows.length"
-            @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
-          />
-        </div>
+        <UPagination
+          v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()"
+          class="flex justify-center"
+          variant="soft"
+          color="secondary"
+          active-variant="solid"
+          active-color="primary"
+          :page="pagination.pageIndex + 1"
+          :show-controls="false"
+          :default-page="(table?.tableApi?.initialState.pagination.pageIndex || 0) + 1"
+          :items-per-page="table?.tableApi?.initialState.pagination.pageSize"
+          :total="table?.tableApi?.getFilteredRowModel().rows.length"
+          @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
+        />
       </div>
     </div>
   </UContainer>

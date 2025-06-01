@@ -29,6 +29,7 @@ const {
       {{ $t('nav.main.Admin') }}
     </h1>
 
+    <!-- TODO: -->
     <OLoading
       :active="settingStore.isLoadingSettings"
       icon-size="xl"
