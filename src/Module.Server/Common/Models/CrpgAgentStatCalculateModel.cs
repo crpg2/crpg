@@ -239,18 +239,33 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         int ridingSkill = agent.RiderAgent != null
             ? GetEffectiveSkill(agent.RiderAgent, DefaultSkills.Riding)
             : 100;
-        props.MountManeuver = mount.GetModifiedMountManeuver(in mountHarness) * (0.5f + ridingSkill * 0.0025f) * 1.15f;
-        float harnessWeight = mountHarness.Item?.Weight ?? 0;
 
-        const float maxHarnessWeight = 45f;
-        float harnessWeightPercentage = harnessWeight / maxHarnessWeight;
-        float weightImpactOnSpeed = 1f / (1f + 0.3333f * harnessWeightPercentage); // speed reduced by 25% for max weight
-        float ridingImpactOnSpeed = (float)(0.7f
-            + ridingSkill * 0.001f
-            + 1 / (2.2f + Math.Pow(2, -0.08f * (ridingSkill - 70f))));
+        props.MountManeuver = mount.GetModifiedMountManeuver(in mountHarness) * (0.5f + ridingSkill * 0.0025f) * 1.15f;
+
+        // Harness base weight (0 if no harness equipped)
+        float harnessWeight = mountHarness.Item?.Weight ?? 0f;
+
+        // Rider perceived weight
+        float riderPerceivedWeight = agent.RiderAgent != null
+            ? ComputePerceivedWeight(agent.RiderAgent)
+            : 0f;
+
+        float totalEffectiveLoad = harnessWeight + riderPerceivedWeight;
+
+        const float maxLoadReference = 45f;
+        float loadPercentage = totalEffectiveLoad / maxLoadReference;
+
+        // Testing penalty: Make it 9x more severe
+        float weightImpactOnSpeed = 1f / (1f + 3.0f * loadPercentage);
+        float ridingImpactOnSpeed = (float)(
+            0.7f +
+            ridingSkill * 0.001f +
+            1 / (2.2f + Math.Pow(2, -0.08f * (ridingSkill - 70f)))
+        );
+
         props.MountSpeed = (mount.GetModifiedMountSpeed(in mountHarness) + 1) * 0.209f * ridingImpactOnSpeed * weightImpactOnSpeed;
         props.TopSpeedReachDuration = Game.Current.BasicModels.RidingModel.CalculateAcceleration(in mount, in mountHarness, ridingSkill);
-        props.MountDashAccelerationMultiplier = 1f / (2f + 8f * harnessWeightPercentage); // native between 1 and 0.1 . cRPG between 0.5 and 0.1
+        props.MountDashAccelerationMultiplier = 1f / (2f + 8f * loadPercentage);
     }
 
     // WARNING : for some reasone UpdateHumanAgentStats is called twice everytime there is a change (respawn or weapon switch)
@@ -318,7 +333,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         float weightReductionFactor = 1f / (1f + MathHelper.ApplyPolynomialFunction(strengthSkill - 3, weightReductionPolynomialFactor));
         float totalEncumbrance = props.ArmorEncumbrance + props.WeaponsEncumbrance;
         float freeWeight = 2.5f * (1 + (strengthSkill - 3f) / 30f);
-        float perceivedWeight = Math.Max(totalEncumbrance - freeWeight, 0f) * weightReductionFactor;
+        float perceivedWeight = ComputePerceivedWeight(agent);
         props.TopSpeedReachDuration = 1.1f * (1f + perceivedWeight / 15f) * (20f / (20f + (float)Math.Pow(athleticsSkill / 120f, 2f))) + ImpactofStrAndWeaponLengthOnTimeToMaxSpeed(equippedItem != null ? equippedItem.WeaponLength : 22, strengthSkill);
         float speed = 0.58f + 0.034f * athleticsSkill / 26f;
         props.MaxSpeedMultiplier = MBMath.ClampFloat(
@@ -623,5 +638,27 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         }
 
         return equippedItem.WeaponComponent.Weapons.Any(a => a.SwingDamage > 0);
+    }
+    private float ComputePerceivedWeight(Agent agent)
+    {
+        if (agent == null || agent.AgentDrivenProperties == null)
+            return 0f;
+
+        int strengthSkill = Math.Max(GetEffectiveSkill(agent, CrpgSkills.Strength), 3);
+        const float awfulScaler = 3231477.548f;
+        float[] weightReductionPolynomialFactor =
+        {
+        30f / awfulScaler,
+        0.00005f / awfulScaler,
+        0.5f / awfulScaler,
+        1000000f / awfulScaler,
+        0f
+    };
+
+        float weightReductionFactor = 1f / (1f + MathHelper.ApplyPolynomialFunction(strengthSkill - 3, weightReductionPolynomialFactor));
+
+        float totalEncumbrance = agent.AgentDrivenProperties.ArmorEncumbrance + agent.AgentDrivenProperties.WeaponsEncumbrance;
+        float freeWeight = 2.5f * (1 + (strengthSkill - 3f) / 30f);
+        return Math.Max(totalEncumbrance - freeWeight, 0f) * weightReductionFactor;
     }
 }
