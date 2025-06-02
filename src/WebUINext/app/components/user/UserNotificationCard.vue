@@ -25,9 +25,8 @@ const isUnread = computed(() => notification.state === NotificationState.Unread)
     <div
       class="flex size-8 min-w-8 items-center justify-center gap-1.5 rounded-full bg-content-600"
     >
-      <SpriteSymbol
+      <UiSpriteSymbol
         name="logo"
-        inline
         viewBox="0 0 162 124"
         class="w-3/4"
       />
@@ -49,7 +48,7 @@ const isUnread = computed(() => notification.state === NotificationState.Unread)
           {{ timeAgo }}
         </span>
 
-        <div class="ml-auto mr-0 flex gap-3">
+        <div class="mr-0 ml-auto flex gap-3">
           <OButton
             v-if="isUnread"
             variant="transparent"
@@ -69,11 +68,11 @@ const isUnread = computed(() => notification.state === NotificationState.Unread)
       </div>
     </div>
 
-    <div class="absolute right-3 top-3 z-10">
+    <div class="absolute top-3 right-3 z-10">
       <span v-tooltip="`Unread notification`">
         <OIcon
           v-if="isUnread"
-          class="ml-auto mr-0"
+          class="mr-0 ml-auto"
           icon="rare-duotone"
           size="sm"
           :style="{

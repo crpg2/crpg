@@ -39,7 +39,7 @@ await Promise.all([
       <div class="flex flex-wrap items-center justify-between p-3">
         <div class="flex items-center gap-4">
           <NuxtLink :to="{ name: 'index' }">
-            <SpriteSymbol
+            <UiSpriteSymbol
               name="logo"
               inline
               viewBox="0 0 162 124"

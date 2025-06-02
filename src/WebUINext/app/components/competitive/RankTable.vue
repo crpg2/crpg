@@ -29,15 +29,19 @@ const groupedRankTable = computed(() => groupBy(rankTable, r => r.groupTitle))
         </div>
 
         <div class="flex flex-col-reverse gap-1.5">
-          <UTooltip v-for="(rank, idx) in ranks" :key="idx" :text="`${rank.title} • ${$n(rank.min)} – ${$n(rank.max)}`">
+          <UTooltip
+            v-for="(rank, idx) in ranks"
+            :key="idx"
+            :text="`${rank.title} • ${$n(rank.min)} – ${$n(rank.max)}`"
+          >
             <div
-              class="flex h-8 items-center rounded px-2 text-2xs text-white select-none text-shadow-lg/20"
+              class="flex h-8 items-center rounded px-2 text-2xs text-highlighted select-none text-shadow-lg/20"
               :style="{
                 backgroundColor: rank.color,
-                width: `calc(5rem + 0.5rem * ${groupIdx * ranks.length + idx + 1})`,
+                width: `calc(6rem + 0.5rem * ${groupIdx * ranks.length + idx + 1})`,
               }"
             >
-              {{ idx + 1 }} • {{ $n(rank.min) }} – {{ $n(rank.max) }}
+              {{ rank.title }}  • {{ $n(rank.min) }} – {{ $n(rank.max) }}
               <template v-if="competitiveValue && inRange(competitiveValue, rank.min, rank.max)">
                 ({{ $t('you') }} • {{ $n(competitiveValue) }})
               </template>

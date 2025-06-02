@@ -144,7 +144,7 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
     }),
     meta: {
       class: {
-        th: tw`w-24`,
+        td: tw`w-24 text-right`,
       },
     },
   },
@@ -174,7 +174,7 @@ const regionItems = regions.map<TabsItem>(region => ({
           <UTabs
             v-model="regionModel"
             :items="regionItems"
-            size="xl"
+            size="md"
             variant="pill"
             :content="false"
           />
@@ -184,12 +184,10 @@ const regionItems = regions.map<TabsItem>(region => ({
               v-model="searchModel"
               color="secondary"
               variant="outline"
-              size="md"
               :placeholder="$t('action.search')"
               icon="crpg:search"
               data-aq-search-clan-input
             />
-
             <UTooltip
               v-if="userStore.clan"
               :text="$t('clan.action.goToMyClan')"

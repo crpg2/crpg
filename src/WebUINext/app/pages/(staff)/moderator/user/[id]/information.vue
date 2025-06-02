@@ -267,7 +267,7 @@ const totalRewardValues = computed(() => {
             <OField>
               <template #label>
                 <div class="flex items-center gap-1.5">
-                  <SpriteSymbol
+                  <UiSpriteSymbol
                     name="coin"
                     inline
                     viewBox="0 0 18 18"
@@ -411,7 +411,7 @@ const totalRewardValues = computed(() => {
                 v-if="rewardFormModel.gold"
                 class="flex items-center gap-2 font-bold"
               >
-                <SpriteSymbol
+                <UiSpriteSymbol
                   name="coin"
                   inline
                   viewBox="0 0 18 18"

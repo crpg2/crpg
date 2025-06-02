@@ -62,16 +62,17 @@ Promise.all([
 
       <div class="mx-auto flex flex-col items-center justify-center gap-14 md:w-1/2 2xl:w-1/3">
         <div class="space-y-6">
+          <!-- TODO: to cmp -->
           <div class="flex items-center justify-center gap-6 select-none md:gap-12">
-            <SpriteSymbol
+            <UiSpriteSymbol
               name="logo-decor"
               class="w-24 rotate-180"
             />
-            <SpriteSymbol
+            <UiSpriteSymbol
               name="logo"
               class="w-24 fill-current text-white xl:w-28 2xl:w-32"
             />
-            <SpriteSymbol
+            <UiSpriteSymbol
               name="logo-decor"
               class="w-24"
             />

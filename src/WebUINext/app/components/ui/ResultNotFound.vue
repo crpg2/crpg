@@ -3,11 +3,10 @@ defineProps<{ message?: string }>()
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center gap-4 py-24 text-content-400">
-    <OIcon
-      icon="error"
-      size="4x"
-      class="text-content-400"
+  <div class="flex flex-col items-center gap-4 p-24 text-dimmed">
+    <UIcon
+      name="crpg:not-found"
+      class="size-10"
     />
     <div class="text-xs">
       {{ message ?? $t('results-not-found') }}

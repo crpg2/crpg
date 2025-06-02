@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { DropdownMenuItem, TableColumn, TabsItem } from '@nuxt/ui'
-import type { ColumnFiltersState } from '@tanstack/table-core'
+import type { ColumnFiltersState, SortingState } from '@tanstack/table-core'
 
 import { useRouteQuery } from '@vueuse/router'
-import { CompetitiveRank, CompetitiveRankTable, UIcon, UiTableColumnHeader, UModal, UserMedia, UTooltip } from '#components'
+import { CompetitiveRank, CompetitiveRankTable, UIcon, UInput, UiTableColumnHeader, UModal, UserMedia, UTooltip } from '#components'
 import { tw } from '#imports'
 
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
@@ -38,6 +38,9 @@ function setColumnFilters(state: ColumnFiltersState) {
     characterClassModel.value = undefined
     return
   }
+
+  console.log('state', state)
+  // const filterByName = state.find(el => el.id === 'user_name')
 
   // TODO: FIXME: шляпа
   characterClassModel.value = state[0]?.value[0] as CharacterClass
@@ -75,9 +78,12 @@ const columnFilters = ref<ColumnFiltersState>([])
 
 const table = useTemplateRef('table')
 
+const globalFilter = ref('')
 const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   {
     accessorKey: 'position',
+    enableGlobalFilter: false,
+    id: 'position',
     header: ({ column }) => h(UiTableColumnHeader, {
       label: t('leaderboard.table.cols.rank'),
       withSort: true,
@@ -92,6 +98,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   },
   {
     accessorKey: 'statistics',
+    enableGlobalFilter: false,
     header: () => h('div', {
       class: 'flex items-center gap-1',
     }, [
@@ -122,8 +129,15 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
     },
   },
   {
-    accessorKey: 'user',
-    header: t('leaderboard.table.cols.player'),
+    accessorKey: 'user.name',
+    header: ({ column }) => h(UInput, {
+      'icon': 'crpg:search',
+      'variant': 'ghost',
+      'size': 'xs',
+      'placeholder': t('leaderboard.table.cols.player'),
+      'modelValue': globalFilter.value,
+      'onUpdate:modelValue': val => globalFilter.value = val,
+    }),
     cell: ({ row }) => h(UserMedia, { user: row.original.user, hiddenPlatform: true }),
     meta: {
       class: {
@@ -133,6 +147,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   },
   {
     accessorKey: 'class',
+    enableGlobalFilter: false,
     header: ({ column }) => {
       const filterValue = (column.getFilterValue() || []) as string[]
       return h(UiTableColumnHeader, {
@@ -163,6 +178,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   },
   {
     accessorKey: 'level',
+    enableGlobalFilter: false,
     header: ({ column }) => h(UiTableColumnHeader, {
       label: t('leaderboard.table.cols.level'),
       withSort: true,
@@ -214,6 +230,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
 
       <UTable
         ref="table"
+        v-model:global-filter="globalFilter"
         class="relative rounded-md border border-muted"
         :loading="leaderBoardLoading"
         :data="leaderboard"

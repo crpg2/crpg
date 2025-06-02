@@ -39,6 +39,7 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value.createdAt)
     >
       <a
         href="https://github.com/namidaka/crpg/releases"
+        target="_blank"
         class="text-[0.85rem] text-content-300 underline hover:no-underline"
       >
         {{ $t('patchNotes.showAllPatches', { count: patchNotes.length - 1 }) }}

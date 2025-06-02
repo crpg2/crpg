@@ -30,9 +30,18 @@ export default defineAppConfig({
     },
     table: {
       slots: {
-        th: 'text-2xs text-muted',
+        th: 'text-xs text-muted',
         td: 'text-xs text-inherit',
         tbody: '[&>tr]:data-[selectable=true]:cursor-pointer',
+      },
+    },
+    tabs: {
+      variants: {
+        size: {
+          md: {
+            trigger: 'h-[2.125rem]', // same height (42px) with MD input and button
+          },
+        },
       },
     },
     modal: {
@@ -45,7 +54,6 @@ export default defineAppConfig({
         close: '-right-4 -top-4',
       },
     },
-
     formField: {
       slots: {
         label: 'text-muted',
@@ -83,9 +91,21 @@ export default defineAppConfig({
           },
         },
       },
-      // compoundVariants: {
-
-      // },
+      compoundVariants: {
+        leading: true,
+        size: 'md',
+        class: 'ps-10',
+      },
+    },
+    select: {
+      variants: {
+        size: {
+          md: {
+            base: 'h-[2.125rem] px-2.5 py-1.5 text-xs gap-1.5',
+            item: 'text-xs',
+          },
+        },
+      },
     },
     dropdownMenu: {
       variants: {
@@ -101,7 +121,7 @@ export default defineAppConfig({
             itemLeadingIcon: 'size-[1.125rem]',
           },
           md: {
-            item: 'px-2 py-1.5 gap-2 !text-title-sm ',
+            item: 'px-2 py-1.5 gap-2 !text-title-md',
             itemTrailingIcon: 'size-[1.125rem]',
             itemLeadingIcon: 'size-[1.125rem]',
           },
