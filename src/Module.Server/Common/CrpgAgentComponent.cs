@@ -1,41 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using TaleWorlds.Core;
+using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
-namespace Crpg.Module.Common;
-internal class CrpgAgentComponent : AgentComponent
+namespace Crpg.Module.Common
 {
-    public CrpgAgentComponent(Agent agent)
-        : base(agent)
+    internal class CrpgAgentComponent : AgentComponent
     {
-        agent.OnAgentWieldedItemChange = (Action)Delegate.Combine(agent.OnAgentWieldedItemChange, new Action(DropShieldIfNeeded));
-    }
-
-    public override void OnMount(Agent mount)
-    {
-        DropShieldIfNeeded();
-    }
-
-    public void DropShieldIfNeeded()
-    {
-        if (Agent.HasMount)
+        public CrpgAgentComponent(Agent agent)
+            : base(agent)
         {
-            MissionEquipment equipment = Agent.Equipment;
-            EquipmentIndex offHandItemIndex = Agent.GetWieldedItemIndex(Agent.HandIndex.OffHand);
-            WeaponComponentData? offHandItem = offHandItemIndex != EquipmentIndex.None
-                ? equipment[offHandItemIndex].CurrentUsageItem
-                : null;
-            if (offHandItem == null)
-            {
-                return;
-            }
+            agent.OnAgentWieldedItemChange = (Action)Delegate.Combine(agent.OnAgentWieldedItemChange, new Action(DropShieldIfNeeded));
+        }
 
-            if (offHandItem.WeaponClass == WeaponClass.LargeShield)
+        public override void OnMount(Agent mount)
+        {
+            DropShieldIfNeeded();
+            RecalculateMountStats();
+        }
+
+        public override void OnItemPickup(SpawnedItemEntity item)
+        {
+            RecalculateMountStats();
+        }
+
+        public override void OnWeaponDrop(MissionWeapon droppedWeapon)
+        {
+            RecalculateMountStats();
+        }
+
+        private void DropShieldIfNeeded()
+        {
+            if (!Agent.HasMount)
+                return;
+
+            var equipment = Agent.Equipment;
+            var offHandIndex = Agent.GetWieldedItemIndex(Agent.HandIndex.OffHand);
+            var offHandItem = offHandIndex != EquipmentIndex.None
+                ? equipment[offHandIndex].CurrentUsageItem
+                : null;
+
+            if (offHandItem?.WeaponClass == WeaponClass.LargeShield)
             {
-                Agent.DropItem(offHandItemIndex);
+                Agent.DropItem(offHandIndex);
             }
+        }
+
+        private void RecalculateMountStats()
+        {
+#if CRPG_SERVER
+            if (Agent.HasMount && Agent.MountAgent != null)
+            {
+                CrpgSubModule.AgentStatCalculateModel.UpdateMountAgentStats(Agent, Agent.MountAgent.AgentDrivenProperties);
+            }
+#endif
         }
     }
 }

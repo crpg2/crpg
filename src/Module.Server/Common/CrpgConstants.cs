@@ -1,7 +1,7 @@
 ﻿namespace Crpg.Module.Common;
 
 // To synchronize with Crpg.Application.Common.Constants.
-internal class CrpgConstants
+public class CrpgConstants
 {
     public int WeaponProficiencyPointsForAgility { get; set; }
     public float[] WeaponProficiencyPointsForWeaponMasterCoefs { get; set; } = Array.Empty<float>();

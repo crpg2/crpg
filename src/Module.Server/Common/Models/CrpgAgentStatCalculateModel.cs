@@ -9,7 +9,7 @@ namespace Crpg.Module.Common.Models;
 /// <summary>
 /// Mostly copied from <see cref="MultiplayerAgentStatCalculateModel"/> but with the class division system removed.
 /// </summary>
-internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
+public class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 {
     private static readonly HashSet<WeaponClass> WeaponClassesAffectedByPowerStrike = new()
     {
@@ -233,7 +233,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         ApplyMountedWeaponPenalty(agent, props);
     }
 
-    private void UpdateMountAgentStats(Agent agent, AgentDrivenProperties props)
+    public void UpdateMountAgentStats(Agent agent, AgentDrivenProperties props)
     {
         EquipmentElement mount = agent.SpawnEquipment[EquipmentIndex.ArmorItemEndSlot];
         EquipmentElement mountHarness = agent.SpawnEquipment[EquipmentIndex.HorseHarness];
@@ -671,8 +671,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 if (weapon == null || weapon.IsRangedWeapon)
                     continue;
 
-                float rawRatio = MaxWeaponLengthForStrLevel(strengthSkill) / weapon.WeaponLength;
-                float penalty = MathF.Clamp(MBMath.Lerp(0.5f, 1.0f, rawRatio), 0.5f, 1.0f); // never less than 0.5
+                float penalty = CrpgCombatHelpers.ComputeMountedWeaponPenalty(strengthSkill, weapon.WeaponLength);
 
                 if (penalty < worstPenalty)
                     worstPenalty = penalty;
