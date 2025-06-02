@@ -59,6 +59,7 @@ internal static class CrpgCharacterBuilder
             AddEquipment(equipment, index, equippedItem.UserItem.ItemId);
         }
 
+        AddEquipment(equipment, EquipmentIndex.Horse, "crpg_mount1_courser_14_v2_h0");
         return equipment;
     }
 
