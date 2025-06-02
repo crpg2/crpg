@@ -30,18 +30,18 @@ const helpHubNavigation: { name: keyof RouteNamedMap, label: string }[] = [
 </script>
 
 <template>
-  <div class="container py-8 md:py-16">
+  <UContainer class="space-y-12 py-8 md:py-16">
     <UiHeading :title="$t('help.title')" />
 
-    <div class="mb-12 flex items-center justify-center gap-2">
+    <div class="flex items-center justify-center gap-2">
       <NuxtLink
-        v-for="{ name, label } in helpHubNavigation"
-        :key="name"
+        v-for="{ name, label } in helpHubNavigation" :key="name"
         v-slot="{ isExactActive }"
         :to="{ name }"
       >
-        <OButton
-          :variant="isExactActive ? 'transparent-active' : 'secondary'"
+        <UButton
+          color="primary"
+          :variant="isExactActive ? 'subtle' : 'outline'"
           size="lg"
           :label
         />
@@ -51,5 +51,5 @@ const helpHubNavigation: { name: keyof RouteNamedMap, label: string }[] = [
     <div class="mx-auto max-w-4xl">
       <NuxtPage />
     </div>
-  </div>
+  </UContainer>
 </template>

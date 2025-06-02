@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { UiDecorSeparator } from '#components'
+
 const { t } = useI18n()
 
 const qaCount = 12
+
 // TODO: refactoring
 const qaList = computed(() =>
   Array.from({ length: qaCount })
@@ -15,7 +18,7 @@ const qaList = computed(() =>
 </script>
 
 <template>
-  <div class="prose prose-invert mx-auto">
+  <div class="mx-auto prose prose-invert">
     <h2 class="text-center">
       {{ $t('help.FAQ.title') }}
     </h2>
@@ -26,16 +29,19 @@ const qaList = computed(() =>
         v-html="$t('help.FAQ.intro')"
       />
 
-      <UiDivider />
+      <UiDecorSeparator />
 
-      <UiFormGroup
-        v-for="({ q, a }, idx) in qaList"
-        :key="idx"
-        :label="`${idx + 1}. ${q}`"
-        :collapsable="false"
+      <UCard
+        v-for="({ q, a }, idx) in qaList" :key="idx"
+        variant="outline"
       >
+        <template #header>
+          <h3 class="!m-0">
+            {{ `${idx + 1}. ${q}` }}
+          </h3>
+        </template>
         <div v-html="a" />
-      </UiFormGroup>
+      </UCard>
     </div>
   </div>
 </template>

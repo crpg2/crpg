@@ -12,27 +12,28 @@ const { character, isActive = false, forTournament = false } = defineProps<{
 
 <template>
   <div class="flex items-center gap-2">
-    <OIcon
-      v-tooltip="$t(`character.class.${character.class}`)"
-      :icon="characterClassToIcon[character.class]"
-      size="lg"
-    />
+    <UTooltip :text="$t(`character.class.${character.class}`)">
+      <UIcon
+        :name="`crpg:${characterClassToIcon[character.class]}`"
+        class="size-6"
+      />
+    </UTooltip>
 
     <div class="flex items-center gap-1">
-      <div class="max-w-[150px] overflow-x-hidden text-ellipsis whitespace-nowrap">
+      <span class="max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap">
         {{ character.name }}
-      </div>
-
-      <div>({{ character.level }})</div>
+      </span>
+      <span>({{ character.level }})</span>
     </div>
 
-    <UiTag
-      v-if="isActive"
-      v-tooltip="$t('character.status.active.title')"
-      :label="$t('character.status.active.short')"
-      variant="success"
-      size="sm"
-    />
+    <UTooltip v-if="isActive" :text="$t('character.status.active.title')">
+      <UBadge
+        :label="$t('character.status.active.short')"
+        color="success"
+        variant="soft"
+        size="sm"
+      />
+    </UTooltip>
 
     <UiTag
       v-if="forTournament"

@@ -50,13 +50,13 @@ const items = computed<DropdownMenuItem[][]>(() => [
       ? [{
           label: t('nav.main.Moderator'),
           to: { name: 'moderator' },
-        }]
+        } as DropdownMenuItem]
       : [],
     ...([Role.Admin].includes(userStore.user!.role))
       ? [{
           label: t('nav.main.Admin'),
           to: { name: 'admin' },
-        }]
+        } as DropdownMenuItem]
       : [],
   ],
   [
