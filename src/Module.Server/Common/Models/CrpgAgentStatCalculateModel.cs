@@ -229,6 +229,8 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.ArmorTorso = mountHarness.Item != null ? mountHarness.GetModifiedMountBodyArmor() : 0;
         props.MountChargeDamage = mount.GetModifiedMountCharge(in mountHarness) * 0.01f;
         props.MountDifficulty = mount.Item.Difficulty;
+
+        ApplyMountedWeaponPenalty(agent, props);
     }
 
     private void UpdateMountAgentStats(Agent agent, AgentDrivenProperties props)
@@ -251,6 +253,8 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.MountSpeed = (mount.GetModifiedMountSpeed(in mountHarness) + 1) * 0.209f * ridingImpactOnSpeed * weightImpactOnSpeed;
         props.TopSpeedReachDuration = Game.Current.BasicModels.RidingModel.CalculateAcceleration(in mount, in mountHarness, ridingSkill);
         props.MountDashAccelerationMultiplier = 1f / (2f + 8f * harnessWeightPercentage); // native between 1 and 0.1 . cRPG between 0.5 and 0.1
+
+        ApplyMountedWeaponPenalty(agent, props);
 
         // Mounted penalty using same calculation as combat speed from strength and weapon length
         if (agent.RiderAgent is Agent rider)
@@ -387,6 +391,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 props.SwingSpeedMultiplier *= HasSwingDamage(primaryItem) ? cappedSwingSpeedFactor : 1f;
                 // Thrustspeed Nerf on Horseback
                 props.ThrustOrRangedReadySpeedMultiplier *= 0.84f;
+
+                ApplyMountedWeaponPenalty(agent.MountAgent!, agent.MountAgent!.AgentDrivenProperties);
+                UpdateMountAgentStats(agent.MountAgent!, agent.MountAgent!.AgentDrivenProperties);
             }
 
             // Ranged Behavior
@@ -646,5 +653,38 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         }
 
         return equippedItem.WeaponComponent.Weapons.Any(a => a.SwingDamage > 0);
+    }
+    private void ApplyMountedWeaponPenalty(Agent agent, AgentDrivenProperties props)
+    {
+        if (agent.RiderAgent is Agent rider)
+        {
+            int strengthSkill = GetEffectiveSkill(rider, CrpgSkills.Strength);
+            float worstPenalty = 1.0f;
+
+            foreach (EquipmentIndex index in Enum.GetValues(typeof(EquipmentIndex)))
+            {
+                if (index < EquipmentIndex.Weapon0 || index > EquipmentIndex.Weapon3)
+                    continue;
+
+                WeaponComponentData? weapon = rider.Equipment[index].CurrentUsageItem;
+
+                if (weapon == null || weapon.IsRangedWeapon)
+                    continue;
+
+                float rawRatio = MaxWeaponLengthForStrLevel(strengthSkill) / weapon.WeaponLength;
+                float penalty = MathF.Clamp(MBMath.Lerp(0.5f, 1.0f, rawRatio), 0.5f, 1.0f); // never less than 0.5
+
+                if (penalty < worstPenalty)
+                    worstPenalty = penalty;
+            }
+
+            if (worstPenalty < 1.0f)
+            {
+                props.MountManeuver *= worstPenalty;
+                props.MountSpeed *= worstPenalty;
+                props.MountDashAccelerationMultiplier *= worstPenalty;
+                props.MountChargeDamage *= worstPenalty;
+            }
+        }
     }
 }
