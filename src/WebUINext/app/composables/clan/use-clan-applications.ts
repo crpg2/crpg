@@ -4,7 +4,11 @@ import { ClanInvitationStatus, ClanInvitationType } from '~/models/clan'
 import { getClanInvitations } from '~/services/clan-service'
 
 export const useClanApplications = () => {
-  const { state: applications, execute: loadClanApplications } = useAsyncState(
+  const {
+    state: applications,
+    execute: loadClanApplications,
+    isLoading: loadingClanApplications,
+  } = useAsyncState(
     ({ id }: { id: number }) =>
       getClanInvitations(id, [ClanInvitationType.Request], [ClanInvitationStatus.Pending]),
     [],
@@ -19,5 +23,6 @@ export const useClanApplications = () => {
     applications,
     applicationsCount,
     loadClanApplications,
+    loadingClanApplications,
   }
 }

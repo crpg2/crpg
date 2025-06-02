@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { UiHeading } from '#components'
+
 import { useSettingsStore } from '~/stores/settings'
 
 definePageMeta({
@@ -60,24 +62,14 @@ Promise.all([
         </AppSwitchLanguageDropdown>
       </div>
 
-      <div class="mx-auto flex flex-col items-center justify-center gap-14 md:w-1/2 2xl:w-1/3">
-        <div class="space-y-6">
-          <!-- TODO: to cmp -->
-          <div class="flex items-center justify-center gap-6 select-none md:gap-12">
-            <UiSpriteSymbol
-              name="logo-decor"
-              class="w-24 rotate-180"
-            />
-            <UiSpriteSymbol
-              name="logo"
-              class="w-24 fill-current text-white xl:w-28 2xl:w-32"
-            />
-            <UiSpriteSymbol
-              name="logo-decor"
-              class="w-24"
-            />
-          </div>
-        </div>
+      <div class="mx-auto flex flex-col items-center justify-center gap-8 md:w-1/2 2xl:w-1/3">
+        <UiHeading>
+          <UiSpriteSymbol
+            name="logo"
+            viewBox="0 0 162 124"
+            class="w-24 text-white xl:w-28 2xl:w-32"
+          />
+        </UiHeading>
 
         <div class="prose text-center prose-invert">
           <i18n-t
@@ -87,7 +79,7 @@ Promise.all([
           >
             <template #link>
               <a
-                class="text-content-link hover:text-content-link-hover"
+                class="text-link hover:text-link-hover"
                 href="https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord"
                 target="_blank"
               >
@@ -95,9 +87,8 @@ Promise.all([
               </a>
             </template>
           </i18n-t>
-          <p>
-            {{ $t('homePage.description') }}
-          </p>
+
+          <p>{{ $t('homePage.description') }}</p>
 
           <iframe
             class="mx-auto block aspect-video w-full rounded-lg lg:w-3/4 xl:w-2/3"

@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { UContainer } from '#components'
+
 import type { Clan } from '~/models/clan'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { SomeRole } from '~/models/role'
 import { createClan } from '~/services/clan-service'
 import { useUserStore } from '~/stores/user'
@@ -14,7 +17,6 @@ definePageMeta({
      */
     () => {
       const userStore = useUserStore()
-
       if (userStore.clan) {
         return navigateTo({
           name: 'clans-id',
@@ -25,11 +27,11 @@ definePageMeta({
   ],
 })
 
-const { $notify } = useNuxtApp()
+const toast = useToast()
 const { t } = useI18n()
+const { togglePageLoading } = usePageLoading()
 
 const userStore = useUserStore()
-const router = useRouter()
 
 const {
   execute: onCreateClan,
@@ -38,29 +40,32 @@ const {
   async (form: Omit<Clan, 'id'>) => {
     const clan = await createClan(form)
     await userStore.fetchUser()
-    $notify(t('clan.create.notify.success'))
-    return router.replace({ name: 'clans-id', params: { id: clan.id } })
+    toast.add({
+      title: t('clan.create.notify.success'),
+      close: false,
+      color: 'success',
+    })
+    navigateTo({ name: 'clans-id', params: { id: clan.id } }, { replace: true })
   },
 )
+
+watchEffect(() => {
+  togglePageLoading(creatingClan.value)
+})
 </script>
 
 <template>
   <div class="p-6">
-    <OLoading
-      full-page
-      :active="creatingClan"
-      icon-size="xl"
-    />
     <div class="mx-auto max-w-2xl py-6">
       <h1 class="mb-14 text-center text-xl text-content-100">
         {{ $t('clan.create.page.title') }}
       </h1>
 
-      <div class="container">
+      <UContainer>
         <div class="mx-auto max-w-3xl">
           <ClanForm @submit="onCreateClan" />
         </div>
-      </div>
+      </UContainer>
     </div>
   </div>
 </template>

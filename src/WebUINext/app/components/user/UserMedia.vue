@@ -35,7 +35,7 @@ const {
 
     <div
       v-if="!hiddenTitle"
-      class="max-w-full truncate"
+      class="max-w-52 truncate"
       :title="user.name"
     >
       {{ user.name }}

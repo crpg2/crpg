@@ -23,7 +23,7 @@ defineEmits<{
     />
 
     <template #popper="{ hide: hideParentModal }">
-      <div class="min-w-[480px] max-w-2xl space-y-14 px-12 py-11">
+      <div class="max-w-2xl min-w-[480px] space-y-14 px-12 py-11">
         <CharacterEditForm
           :character
           @cancel="hideParentModal"
@@ -40,7 +40,7 @@ defineEmits<{
         >
           <template #link>
             <UiModal>
-              <span class="cursor-pointer text-status-danger hover:text-opacity-80">
+              <span class="hover:text-opacity-80 cursor-pointer text-status-danger">
                 {{ $t('character.settings.delete.link') }}
               </span>
               <template #popper="{ hide }">

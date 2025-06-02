@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import type { TableColumn } from '@nuxt/ui'
+import type { PaginationState } from '@tanstack/vue-table'
+
+import { getPaginationRowModel } from '@tanstack/vue-table'
+import { UButton, UserMedia } from '#components'
+
 import type { ClanInvitation } from '~/models/clan'
 
 import { useClanApplications } from '~/composables/clan/use-clan-applications'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePagination } from '~/composables/utils/use-pagination'
+import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { SomeRole } from '~/models/role'
 import { canManageApplicationsValidate, respondToClanInvitation } from '~/services/clan-service'
 
@@ -22,7 +28,6 @@ definePageMeta({
      */
     () => {
       const userStore = useUserStore()
-
       if (userStore.clanMemberRole && !canManageApplicationsValidate(userStore.clanMemberRole)) {
         return navigateTo({ name: 'clans' })
       }
@@ -30,12 +35,13 @@ definePageMeta({
   ],
 })
 
-const { $notify } = useNuxtApp()
-const { t } = useI18n()
 const clanId = computed(() => Number(props.id))
 
-const { applications, loadClanApplications } = useClanApplications()
-const { pageModel, perPage } = usePagination()
+const toast = useToast()
+const { t } = useI18n()
+const { togglePageLoading } = usePageLoading()
+
+const { applications, loadClanApplications, loadingClanApplications } = useClanApplications()
 
 const {
   execute: respond,
@@ -44,94 +50,112 @@ const {
   async (application: ClanInvitation, status: boolean) => {
     await respondToClanInvitation(clanId.value, application.id, status)
     await loadClanApplications(0, { id: clanId.value })
-    status
-      ? $notify(t('clan.application.respond.accept.notify.success'))
-      : $notify(t('clan.application.respond.decline.notify.success'))
+    toast.add({
+      title: status
+        ? t('clan.application.respond.accept.notify.success')
+        : t('clan.application.respond.decline.notify.success'),
+      close: false,
+      color: 'success',
+    })
   },
 )
 
 loadClanApplications(0, { id: clanId.value })
+
+watchEffect(() => {
+  togglePageLoading(responding.value)
+})
+
+const table = useTemplateRef('table')
+
+const pagination = ref<PaginationState>(getInitialPaginationState())
+
+function getInitialPaginationState(): PaginationState {
+  return {
+    pageIndex: 0,
+    pageSize: 10, // TODO: FIXME:
+  }
+}
+
+const columns: TableColumn<ClanInvitation>[] = [
+  {
+    accessorKey: 'invitee',
+    header: t('clan.application.table.column.name'),
+    cell: ({ row }) => h(UserMedia, {
+      user: row.original.invitee,
+      hiddenClan: true,
+    }),
+  },
+  {
+    header: t('clan.application.table.column.actions'),
+    cell: ({ row }) => h('div', { class: 'flex items-center justify-end gap-2' }, [
+      h(UButton, {
+        label: t('action.decline'),
+        size: 'sm',
+        variant: 'soft',
+        icon: 'crpg:close',
+        onClick: () => respond(row.original, false),
+      }),
+      h(UButton, {
+        'label': t('action.accept'),
+        'icon': 'crpg:check',
+        'size': 'sm',
+        'data-aq-clan-application-action': 'accept',
+        'onClick': () => respond(row.original, true),
+      }),
+    ]),
+    meta: {
+      class: {
+        th: tw`text-right`,
+        td: tw``,
+      },
+    },
+  },
+]
 </script>
 
 <template>
-  <div class="p-6">
-    <OLoading
-      full-page
-      :active="responding"
-      icon-size="xl"
-    />
-    <NuxtLink
-      :to="{ name: 'clans-id', params: { id: clanId } }"
-    >
-      <OButton
-        v-tooltip.bottom="$t('nav.back')"
-        variant="secondary"
-        size="xl"
-        outlined
-        rounded
-        icon-left="arrow-left"
-        data-aq-link="back-to-clan"
-      />
-    </NuxtLink>
+  <UContainer class="space-y-6 py-6">
+    <AppBackButton :to="{ name: 'clans-id', params: { id: clanId } }" data-aq-link="back-to-clan" />
 
-    <div class="mx-auto max-w-2xl py-6">
-      <h1 class="mb-14 text-center text-xl text-content-100">
+    <div class="mx-auto max-w-2xl space-y-10">
+      <h1 class="text-center text-xl text-content-100">
         {{ $t('clan.application.page.title') }}
       </h1>
 
-      <div class="container">
-        <div class="mx-auto max-w-3xl">
-          <OTable
-            v-model:current-page="pageModel"
-            :data="applications"
-            :per-page="perPage"
-            bordered
-            :paginated="applications.length > perPage"
-          >
-            <OTableColumn
-              v-slot="{ row: application }: { row: ClanInvitation }"
-              field="name"
-              :label="$t('clan.application.table.column.name')"
-            >
-              <UserMedia
-                :user="application.invitee"
-                hidden-clan
-              />
-            </OTableColumn>
+      <UTable
+        ref="table"
+        v-model:pagination="pagination"
+        class="relative rounded-md border border-muted"
+        :loading="loadingClanApplications"
+        :data="applications"
+        :columns
+        :initial-state="{
+          pagination: getInitialPaginationState(),
+        }"
+        :pagination-options="{
+          getPaginationRowModel: getPaginationRowModel(),
+        }"
+      >
+        <template #empty>
+          <UiResultNotFound />
+        </template>
+      </UTable>
 
-            <OTableColumn
-              v-slot="{ row: application }: { row: ClanInvitation }"
-              field="action"
-              position="right"
-              :label="$t('clan.application.table.column.actions')"
-              width="160"
-            >
-              <div class="flex items-center justify-center gap-1">
-                <OButton
-                  variant="primary"
-                  inverted
-                  :label="$t('action.accept')"
-                  size="xs"
-                  data-aq-clan-application-action="accept"
-                  @click="respond(application, true)"
-                />
-                <OButton
-                  variant="primary"
-                  inverted
-                  :label="$t('action.decline')"
-                  size="xs"
-                  data-aq-clan-application-action="decline"
-                  @click="respond(application, false)"
-                />
-              </div>
-            </OTableColumn>
-
-            <template #empty>
-              <AppResultNotFound />
-            </template>
-          </OTable>
-        </div>
-      </div>
+      <UPagination
+        v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()"
+        class="flex justify-center"
+        variant="soft"
+        color="secondary"
+        active-variant="solid"
+        active-color="primary"
+        :page="pagination.pageIndex + 1"
+        :show-controls="false"
+        :default-page="(table?.tableApi.initialState.pagination.pageIndex || 0) + 1"
+        :items-per-page="table?.tableApi.initialState.pagination.pageSize"
+        :total="table?.tableApi.getFilteredRowModel().rows.length"
+        @update:page="(p) => table?.tableApi.setPageIndex(p - 1)"
+      />
     </div>
-  </div>
+  </UContainer>
 </template>

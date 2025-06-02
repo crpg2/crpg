@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { usePageLoading } from '~/composables/utils/use-page-loading'
+
+const { activePageLoading } = usePageLoading()
 </script>
 
 <template>
@@ -15,6 +18,7 @@
       color="rgb(210 187 138)"
     />
     <NuxtRouteAnnouncer />
+    <UiLoading :active="activePageLoading" full-page />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
