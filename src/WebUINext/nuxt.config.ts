@@ -3,7 +3,6 @@ import type { Plugin } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import json5 from 'json5'
 import { fileURLToPath } from 'node:url'
-import { forceCurrentColor, removeSizes } from 'nuxt-svg-icon-sprite/processors'
 
 function JSON5(): Plugin {
   const fileRegex = /\.json$/
@@ -40,7 +39,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@hey-api/nuxt',
     '@nuxtjs/i18n',
-    'nuxt-svg-icon-sprite',
   ],
   ssr: false,
   devtools: { enabled: false },
@@ -176,9 +174,12 @@ export default defineNuxtConfig({
       // input: 'https://localhost:8000/swagger/v1/swagger.json',
       input: './app/swagger.json',
       output: {
-        format: 'prettier',
-        lint: 'eslint',
         path: './app/api',
+        clean: false,
+        format: false,
+        // format: 'prettier',
+        lint: false,
+        // lint: 'eslint',
       },
       plugins: [
         {
@@ -233,27 +234,6 @@ export default defineNuxtConfig({
       scan: true,
       includeCustomCollections: true,
       sizeLimitKb: 0,
-    },
-  },
-  //
-  svgIconSprite: {
-    sprites: {
-      default: {
-        importPatterns: [
-          fileURLToPath(new URL('./app/assets/themes/oruga-tailwind/img/*.svg', import.meta.url)),
-        ],
-        processSpriteSymbol: [removeSizes(), forceCurrentColor()],
-      },
-      locale: {
-        importPatterns: [
-          fileURLToPath(new URL('./app/assets/themes/oruga-tailwind/img/locale/*.svg', import.meta.url)),
-        ],
-      },
-      culture: {
-        importPatterns: [
-          fileURLToPath(new URL('./app/assets/themes/oruga-tailwind/img/culture/*.svg', import.meta.url)),
-        ],
-      },
     },
   },
 })

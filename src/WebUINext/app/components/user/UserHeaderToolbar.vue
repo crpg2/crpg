@@ -47,20 +47,16 @@ const items = computed<DropdownMenuItem[][]>(() => [
   ],
   [
     ...([Role.Moderator, Role.Admin].includes(userStore.user!.role))
-      ? [
-          {
-            label: t('nav.main.Moderator'),
-            to: { name: 'moderator' },
-          },
-        ]
+      ? [{
+          label: t('nav.main.Moderator'),
+          to: { name: 'moderator' },
+        }]
       : [],
     ...([Role.Admin].includes(userStore.user!.role))
-      ? [
-          {
-            label: t('nav.main.Admin'),
-            to: { name: 'admin' },
-          },
-        ]
+      ? [{
+          label: t('nav.main.Admin'),
+          to: { name: 'admin' },
+        }]
       : [],
   ],
   [
@@ -94,7 +90,6 @@ const items = computed<DropdownMenuItem[][]>(() => [
     <UDropdownMenu :items :modal="false">
       <UChip
         :show="Boolean(user.unreadNotificationsCount)"
-        color="secondary"
         inset
         size="xl"
         :ui="{ base: 'bg-[#53bc96]' }"
@@ -109,7 +104,6 @@ const items = computed<DropdownMenuItem[][]>(() => [
       <template #notifications-leading>
         <UChip
           :show="Boolean(user.unreadNotificationsCount)"
-          color="secondary"
           inset
           :ui="{ base: 'bg-[#53bc96]' }"
         >

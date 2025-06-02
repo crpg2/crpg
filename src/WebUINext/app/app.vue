@@ -18,5 +18,6 @@
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+    <AppBundledSprite />
   </UApp>
 </template>

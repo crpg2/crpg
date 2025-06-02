@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { SpriteSymbol } from '#components'
 import { defaultGold, newUserStartingCharacterLevel } from '~root/data/constants.json'
 
 import { useSettingsStore } from '~/stores/settings'
@@ -27,28 +26,28 @@ const { settings } = storeToRefs(useSettingsStore())
             src="/images/bg/background-3.webp"
           >
           <!-- TODO: FIXME: heading cmp from clan-armory branch -->
-          <div class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 space-y-2">
+          <div class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 space-y-2">
             <div class="flex justify-center">
-              <SpriteSymbol
+              <UiSpriteSymbol
                 name="logo"
                 inline
                 viewBox="0 0 162 124"
                 class="w-16"
               />
             </div>
-            <div class="flex select-none items-center justify-center gap-8 text-center">
-              <SpriteSymbol
+
+            <!-- TODO: to cmp -->
+            <div class="flex items-center justify-center gap-8 text-center select-none">
+              <UiSpriteSymbol
                 name="logo-decor"
                 inline
                 viewBox="0 0 108 10"
                 class="w-24 rotate-180"
               />
-
               <h2 class="text-2xl text-white">
                 {{ $t('welcome.title') }}
               </h2>
-
-              <SpriteSymbol
+              <UiSpriteSymbol
                 name="logo-decor"
                 inline
                 viewBox="0 0 108 10"
@@ -60,12 +59,12 @@ const { settings } = storeToRefs(useSettingsStore())
 
         <div class="h-full space-y-10 overflow-y-auto px-12 py-8">
           <div
-            class="prose prose-invert text-center prose-p:my-1.5 prose-p:text-2xs"
+            class="prose text-center prose-invert prose-p:my-1.5 prose-p:text-2xs"
             v-html="$t('welcome.intro')"
           />
 
           <div class="relative rounded-3xl border border-border-200 px-6 py-10">
-            <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-base-100 px-3">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-base-100 px-3">
               <h4 class="text-sm text-primary">
                 {{ $t('welcome.bonusTitle') }}
               </h4>

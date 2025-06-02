@@ -261,7 +261,6 @@ const onSubmit = async () => {
                 label: `${$t(`language.${language}`)} - ${language}`,
                 value: language,
               }))"
-              size="sm"
               class="w-full"
             />
           </UFormField>
