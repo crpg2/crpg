@@ -41,7 +41,6 @@ await Promise.all([
           <NuxtLink :to="{ name: 'index' }">
             <UiSpriteSymbol
               name="logo"
-              inline
               viewBox="0 0 162 124"
               class="w-14"
             />

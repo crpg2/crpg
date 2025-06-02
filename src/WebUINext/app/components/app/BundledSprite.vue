@@ -27,18 +27,8 @@
         </linearGradient>
       </defs>
     </symbol>
-    <symbol id="divider" fill="none" viewBox="0 0 480 19">
-      <g clip-path="url(#divider_a)">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M240.146.646a.501.501 0 0 1 .708 0L249.207 9H480v1H249.207l-8.353 8.354a.501.501 0 0 1-.708 0L231.793 10H0V9h231.793l8.353-8.354ZM232.707 9.5l7.793 7.793 7.793-7.793-7.793-7.793-7.793 7.793Z"
-          fill="#232527"
-        />
-      </g>
-      <defs>
-        <clipPath id="divider_a"><path fill="#fff" d="M0 0h480v19H0z" /></clipPath>
-      </defs>
+    <symbol id="divider" viewBox="0 0 480 19">
+      <path d="M240.146.646a.501.501 0 0 1 .708 0L249.207 9H480v1H249.207l-8.353 8.354a.501.501 0 0 1-.708 0L231.793 10H0V9h231.793l8.353-8.354ZM232.707 9.5l7.793 7.793 7.793-7.793-7.793-7.793-7.793 7.793Z" />
     </symbol>
     <symbol id="logo-decor" fill="none" viewBox="0 0 108 10">
       <path d="M107.07 5H9.5M5.568 5 .5.5M5.568 5 .5 9.5M5.568 5H9.5m0 0L5 .5M9.5 5 5 9.5" stroke="url(#logo-decor_a)" />

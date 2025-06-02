@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { DropdownMenuItem, TableColumn, TabsItem } from '@nuxt/ui'
-import type { ColumnFiltersState, SortingState } from '@tanstack/table-core'
+import type { ColumnFiltersState } from '@tanstack/table-core'
 
 import { useRouteQuery } from '@vueuse/router'
 import { CompetitiveRank, CompetitiveRankTable, UIcon, UInput, UiTableColumnHeader, UModal, UserMedia, UTooltip } from '#components'
@@ -8,8 +8,6 @@ import { tw } from '#imports'
 
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
 
-import { useGameModeQuery } from '~/composables/use-gamemode'
-import { useRegionQuery } from '~/composables/use-region'
 import { CharacterClass } from '~/models/character'
 import { GameMode } from '~/models/game-mode'
 import { Region } from '~/models/region'
@@ -126,7 +124,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   },
   {
     accessorKey: 'user.name',
-    header: ({ column }) => h(UInput, {
+    header: () => h(UInput, {
       'icon': 'crpg:search',
       'variant': 'ghost',
       'size': 'xs',

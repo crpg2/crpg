@@ -20,6 +20,9 @@ const animatedPlayingCount = useTransition(() => gameServerStats.total.playingCo
     :open-delay="300"
     :close-delay="100"
     :disabled="gameServerStats === null || Object.keys(gameServerStats.regions).length === 0"
+    :ui="{
+      content: 'space-y-5',
+    }"
   >
     <div class="flex items-center gap-1.5 select-none hover:text-content-100">
       <div class="relative size-6">
@@ -28,9 +31,7 @@ const animatedPlayingCount = useTransition(() => gameServerStats.total.playingCo
       </div>
 
       <div v-if="showLabel" data-aq-online-players-count>
-        {{ $t('onlinePlayers.format', {
-          count: $n(Number(animatedPlayingCount.toFixed(0))),
-        }) }}
+        {{ $t('onlinePlayers.format', { count: $n(Number(animatedPlayingCount.toFixed(0))) }) }}
       </div>
       <div
         v-else
@@ -42,33 +43,33 @@ const animatedPlayingCount = useTransition(() => gameServerStats.total.playingCo
     </div>
 
     <template #content>
-      <div class="prose space-y-5 prose-invert">
-        <h5 class="text-content-100">
-          {{ $t('onlinePlayers.tooltip.title') }}
-        </h5>
+      <div class="text-sm text-highlighted">
+        {{ $t('onlinePlayers.tooltip.title') }}
+      </div>
 
-        <div v-if="gameServerStats !== null" class="space-y-6" data-aq-region-stats>
-          <div
-            v-for="(regionServerStats, regionKey) in gameServerStats.regions" :key="regionKey"
-            class="flex flex-col gap-3"
+      <div v-if="gameServerStats !== null" class="space-y-6" data-aq-region-stats>
+        <div
+          v-for="(regionServerStats, regionKey) in gameServerStats.regions" :key="regionKey"
+          class="flex flex-col gap-2"
+        >
+          <div class="text-highlighted">
+            {{ $t(`region.${regionKey}`, 0) }}
+          </div>
+
+          <UiDataCell
+            v-for="(regionServerMode, gameModeKey) in regionServerStats" :key="gameModeKey"
+            class="min-w-44"
           >
-            <div class="text-white">
-              {{ $t(`region.${regionKey}`, 0) }}
-            </div>
-
-            <div
-              v-for="(regionServerMode, gameModeKey) in regionServerStats" :key="gameModeKey"
-              class="flex w-44 items-center justify-between gap-2"
-            >
-              <div class="flex items-center gap-2">
-                <OIcon size="xl" :icon="gameModeToIcon[gameModeKey]" />
-                <div>{{ $t(`game-mode.${gameModeKey}`) }}</div>
-              </div>
-              <div class="text-white">
+            <template #leftContent>
+              <UIcon :name="`crpg:${gameModeToIcon[gameModeKey]}`" class="size-6" />
+            </template>
+            <div>{{ $t(`game-mode.${gameModeKey}`) }}</div>
+            <template #rightContent>
+              <div class="text-highlighted">
                 {{ regionServerMode!.playingCount }}
               </div>
-            </div>
-          </div>
+            </template>
+          </UiDataCell>
         </div>
       </div>
     </template>

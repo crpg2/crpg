@@ -212,8 +212,7 @@ const columns: TableColumn<ClanMember>[] = [
       />
 
       <div class="mx-auto mb-10 max-w-lg space-y-6">
-        <!-- TODO: -->
-        <UiDivider />
+        <UiDecorSeparator />
 
         <div class="flex flex-wrap items-center justify-center gap-4.5">
           <UiDataCell>
@@ -265,8 +264,7 @@ const columns: TableColumn<ClanMember>[] = [
           {{ clan.description }}
         </div>
 
-        <!-- TODO: -->
-        <UiDivider />
+        <UiDecorSeparator />
       </div>
 
       <div class="mb-12 flex items-center justify-center gap-3">

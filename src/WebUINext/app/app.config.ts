@@ -47,6 +47,15 @@ export default defineAppConfig({
         },
       },
     },
+    card: {
+      variants: {
+        variant: {
+          outline: {
+            root: 'bg-transparent ring ring-default divide-y divide-default',
+          },
+        },
+      },
+    },
     modal: {
       slots: {
         wrapper: 'w-full',

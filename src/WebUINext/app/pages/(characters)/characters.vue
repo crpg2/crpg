@@ -16,7 +16,6 @@ definePageMeta({
      */
     async () => {
       const userStore = useUserStore()
-
       if (userStore.characters.length === 0) {
         await userStore.fetchCharacters()
       }
@@ -25,7 +24,7 @@ definePageMeta({
 })
 
 const { t } = useI18n()
-const { $notify } = useNuxtApp()
+const toast = useToast()
 
 const userStore = useUserStore()
 const { characters, user } = toRefs(userStore)
@@ -57,7 +56,11 @@ const { execute: onUpdateCharacter } = useAsyncCallback(
     }
     await updateCharacter(currentCharacter.value.id, { name })
     await userStore.fetchUser()
-    $notify(t('character.settings.update.notify.success'))
+    toast.add({
+      title: t('character.settings.update.notify.success'),
+      close: false,
+      color: 'success',
+    })
   },
 )
 
@@ -66,10 +69,15 @@ const { execute: onActivateCharacter } = useAsyncCallback(
   async (id: number, status: boolean) => {
     await activateCharacter(id, status)
     await userStore.fetchUser()
-    $notify(t('character.settings.update.notify.success'))
+    toast.add({
+      title: t('character.settings.update.notify.success'),
+      close: false,
+      color: 'success',
+    })
   },
 )
 
+// TODO: spec
 const { execute: onDeleteCharacter } = useAsyncCallback(
   async () => {
     if (!currentCharacter.value) {
@@ -84,7 +92,11 @@ const { execute: onDeleteCharacter } = useAsyncCallback(
     await deleteCharacter(currentCharacter.value.id)
     await userStore.fetchCharacters()
 
-    $notify(t('character.settings.delete.notify.success'))
+    toast.add({
+      title: t('character.settings.delete.notify.success'),
+      close: false,
+      color: 'success',
+    })
 
     if (userStore.characters.length === 0) {
       return navigateTo({ name: 'characters' })
@@ -96,9 +108,9 @@ const { execute: onDeleteCharacter } = useAsyncCallback(
 </script>
 
 <template>
-  <div class="relative container py-6">
+  <UContainer class="relative py-6">
     <div
-      v-if="currentCharacter"
+      v-if="user && currentCharacter"
       data-teleport-target="character-navbar"
       class="mb-16 grid grid-cols-3 items-center justify-between gap-4"
     >
@@ -106,11 +118,10 @@ const { execute: onDeleteCharacter } = useAsyncCallback(
         <CharacterSelect
           :characters
           :current-character
-          :active-character-id="user!.activeCharacterId"
+          :active-character-id="user.activeCharacterId"
           @activate="onActivateCharacter"
           @create="onCreateNewCharacter"
         />
-
         <CharacterEditModal
           :character="currentCharacter"
           @update="onUpdateCharacter"
@@ -122,8 +133,8 @@ const { execute: onDeleteCharacter } = useAsyncCallback(
     <NuxtPage />
 
     <CharacterCreateModal
-      :shown="shownCreateCharacterGuideModal"
-      @apply-hide="toggleCreateCharacterGuideModal(false)"
+      :open="shownCreateCharacterGuideModal"
+      @update:open="toggleCreateCharacterGuideModal(false)"
     />
-  </div>
+  </UContainer>
 </template>

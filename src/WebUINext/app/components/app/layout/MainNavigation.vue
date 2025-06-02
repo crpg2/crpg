@@ -56,18 +56,15 @@ const { settings } = storeToRefs(useSettingsStore())
         </UTooltip>
       </AppInstallationGuide>
 
-      <!-- TODO: FIXME: create issue -->
       <UTooltip
         :text="$t('help.title')"
       >
-        <div>
-          <UButton
-            size="sm"
-            variant="ghost"
-            icon="crpg:help-circle"
-            :to="{ name: 'help' }"
-          />
-        </div>
+        <UButton
+          size="sm"
+          variant="ghost"
+          icon="crpg:help-circle"
+          :to="{ name: 'help' }"
+        />
       </UTooltip>
     </div>
 
