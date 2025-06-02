@@ -125,17 +125,32 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         {
             InitializeMountAgentStats(agent, spawnEquipment, agentDrivenProperties);
         }
+#if CRPG_SERVER
+        // Ensure mount stats are updated if agent is spawning already mounted
+        if (agent.IsHuman && agent.HasMount && agent.MountAgent?.AgentDrivenProperties != null)
+        {
+            UpdateMountAgentStats(agent.MountAgent, agent.MountAgent.AgentDrivenProperties);
+        }
+#endif
     }
 
-    public override void UpdateAgentStats(Agent agent, AgentDrivenProperties agentDrivenProperties)
+    public override void UpdateAgentStats(Agent agent, AgentDrivenProperties props)
     {
         if (agent.IsHuman)
         {
-            UpdateHumanAgentStats(agent, agentDrivenProperties);
+            UpdateHumanAgentStats(agent, props);
+
+#if CRPG_SERVER
+            // Update mount stats if already mounted
+            if (agent.HasMount && agent.MountAgent != null)
+            {
+                UpdateMountAgentStats(agent.MountAgent, agent.MountAgent.AgentDrivenProperties);
+            }
+#endif
         }
         else if (agent.IsMount)
         {
-            UpdateMountAgentStats(agent, agentDrivenProperties);
+            UpdateMountAgentStats(agent, props);
         }
     }
 
