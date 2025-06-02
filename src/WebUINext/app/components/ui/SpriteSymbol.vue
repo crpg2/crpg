@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  viewBox: string
+  viewBox?: string
   name: string
 }>()
 </script>

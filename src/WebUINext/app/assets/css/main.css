@@ -72,9 +72,19 @@
     --color-more-support: #C99E34;
 
     --color-status-danger: #BF3838;
-    --color-status-success: #53825A;
-    --color-status-warning: #C29F47;
+    --color-status-danger-300: #BF3838;
+    --color-status-danger-400: #BF3838;
+    --color-status-danger-500: #BF3838;
 
+    --color-status-success: #53825A;
+    --color-status-success-300: #53825A;
+    --color-status-success-400: #53825A;
+    --color-status-success-500: #53825A;
+
+    --color-status-warning: #C29F47;
+    --color-status-warning-300: #C29F47;
+    --color-status-warning-400: #C29F47;
+    --color-status-warning-500: #C29F47;
 
     --text-*: initial;
     --text-3xs: 0.625rem; /* 10px */
@@ -158,6 +168,10 @@ input[type='color'] {
 
 ::-moz-focus-inner {
   @apply p-0;
+}
+
+.fill-current{
+    fill: currentColor;
 }
 
 @import '../themes/oruga-tailwind/index.css';

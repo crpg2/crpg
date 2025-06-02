@@ -54,8 +54,8 @@ const emit = defineEmits<{
   submit: [Omit<Clan, 'id'>]
 }>()
 
-const { $notify } = useNuxtApp()
 const { t } = useI18n()
+const toast = useToast()
 
 const clanFormModel = ref<Omit<Clan, 'id'>>(props.clan)
 
@@ -111,7 +111,11 @@ const secondaryColorModel = computed({
 
 const onSubmit = async () => {
   if (!(await $v.value.$validate())) {
-    $notify(t('form.validate.invalid'), 'warning')
+    toast.add({
+      title: t('form.validate.invalid'),
+      close: false,
+      color: 'warning',
+    })
     return
   }
 
@@ -469,7 +473,7 @@ const onSubmit = async () => {
         <UButton
           size="xl"
           :label="$t('action.save')"
-          native-type="submit"
+          type="submit"
           data-aq-clan-form-action="save"
         />
       </template>

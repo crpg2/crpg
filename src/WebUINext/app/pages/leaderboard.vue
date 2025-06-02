@@ -38,10 +38,6 @@ function setColumnFilters(state: ColumnFiltersState) {
     characterClassModel.value = undefined
     return
   }
-
-  console.log('state', state)
-  // const filterByName = state.find(el => el.id === 'user_name')
-
   // TODO: FIXME: шляпа
   characterClassModel.value = state[0]?.value[0] as CharacterClass
 }
@@ -204,7 +200,6 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
             class="size-12 text-more-support"
           />
         </div>
-        <!-- TODO: cmp, TextView -->
         <UiHeading :title="$t('leaderboard.title')" />
       </div>
 

@@ -7,6 +7,9 @@ export default defineAppConfig({
       primary: 'crpg',
       secondary: 'zinc', // TODO:
       neutral: 'neutral',
+      success: 'status-success',
+      error: 'status-danger',
+      warning: 'status-warning',
     },
     icons: {
       // arrowLeft: 'i-lucide-arrow-left',
@@ -226,19 +229,6 @@ export default defineAppConfig({
           class: 'p-1.5',
         },
       ],
-    },
-    toast: {
-      slots: {
-        root: 'rounded-full',
-      },
-      variants: {
-        color: {
-          success: {
-            root: 'bg-status-success',
-            progress: 'opacity-0',
-          },
-        },
-      },
     },
   },
 })

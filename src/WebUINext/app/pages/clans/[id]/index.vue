@@ -37,7 +37,7 @@ definePageMeta({
   roles: SomeRole,
 })
 
-const { $notify } = useNuxtApp()
+const toast = useToast()
 const { t } = useI18n()
 
 const userStore = useUserStore()
@@ -80,8 +80,12 @@ const canUpdateMember = computed(() =>
 
 const { execute: updateMember } = useAsyncCallback(async (userId: number, selectedRole: ClanMemberRole) => {
   await updateClanMember(clanId.value, userId, selectedRole)
-  await Promise.all([loadClanMembers(0, { id: clanId.value })])
-  $notify(t('clan.member.update.notify.success'))
+  await loadClanMembers(0, { id: clanId.value })
+  toast.add({
+    color: 'success',
+    close: false,
+    title: t('clan.member.update.notify.success'),
+  })
 })
 
 const canKickMember = (member: ClanMember): boolean => {
@@ -101,10 +105,11 @@ const { execute: kickMember } = useAsyncCallback(async (member: ClanMember) => {
     await userStore.fetchUser() // update user clan info
   }
 
-  $notify(isSelfMember
-    ? t('clan.member.leave.notify.success')
-    : t('clan.member.kick.notify.success'),
-  )
+  toast.add({
+    title: isSelfMember ? t('clan.member.leave.notify.success') : t('clan.member.kick.notify.success'),
+    color: 'success',
+    close: false,
+  })
 })
 
 const selectedClanMemberId = ref<number | null>(null)
@@ -202,6 +207,7 @@ const columns: TableColumn<ClanMember>[] = [
 
       <UiHeading
         :title="clan.name"
+        class="mb-14"
         data-aq-clan-info="name"
       />
 
@@ -429,7 +435,10 @@ const columns: TableColumn<ClanMember>[] = [
       :can-kick="canKickMember(selectedClanMember)"
       :can-update="canUpdateMember"
       @kick="kickMember(selectedClanMember!)"
-      @update="role => updateMember(selectedClanMember!.user.id, role)"
+      @update="role => {
+        updateMember(selectedClanMember!.user.id, role)
+        selectedClanMemberId = null
+      }"
       @cancel="() => (selectedClanMemberId = null)"
     />
   </div>
