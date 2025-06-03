@@ -9,12 +9,12 @@ const modelValue = defineModel<boolean>({ default: false })
 </script>
 
 <template>
-  <div class="flex flex-1 items-center gap-2">
-    <VTooltip placement="auto">
-      <div @click.stop>
-        <OSwitch v-model="modelValue" />
+  <div class="flex items-center gap-2">
+    <UTooltip :ui="{ content: 'max-w-72' }" :content="{ side: 'right' }">
+      <div @click.prevent.stop>
+        <USwitch v-model="modelValue" color="success" />
       </div>
-      <template #popper>
+      <template #content>
         <div class="prose prose-invert">
           <h5 class="text-content-100">
             {{ $t('character.settings.active.tooltip.title') }}
@@ -22,11 +22,8 @@ const modelValue = defineModel<boolean>({ default: false })
           <div v-html="$t('character.settings.active.tooltip.desc')" />
         </div>
       </template>
-    </VTooltip>
+    </UTooltip>
 
-    <CharacterMedia
-      :character="character"
-      :is-active="modelValue!"
-    />
+    <CharacterMedia :character />
   </div>
 </template>

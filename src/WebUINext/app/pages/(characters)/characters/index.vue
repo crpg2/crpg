@@ -10,7 +10,6 @@ definePageMeta({
      */
     async () => {
       const userStore = useUserStore()
-
       if (userStore.activeCharacterId) {
         return navigateTo({
           name: 'characters-id-inventory',
@@ -23,18 +22,18 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="flex size-full min-h-[500px] items-center justify-center">
+  <div class="flex min-h-[500px] items-center justify-center">
     <div class="space-y-8">
-      <UiDivider />
+      <UiDecorSeparator />
 
       <div class="prose text-center prose-invert">
-        <h3 class="text-xl text-content-100">
+        <h3 class="text-xl">
           {{ $t('character.empty.title') }}
         </h3>
         <div>{{ $t('character.empty.desc') }}</div>
       </div>
 
-      <UiDivider />
+      <UiDecorSeparator />
     </div>
   </div>
 </template>
