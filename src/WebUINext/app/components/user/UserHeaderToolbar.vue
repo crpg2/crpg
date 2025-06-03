@@ -87,7 +87,11 @@ const items = computed<DropdownMenuItem[][]>(() => [
 
     <USeparator orientation="vertical" class="h-6" />
 
-    <UDropdownMenu :items :modal="false">
+    <UDropdownMenu
+      :modal="false"
+      size="xl"
+      :items
+    >
       <UChip
         :show="Boolean(user.unreadNotificationsCount)"
         inset
@@ -96,6 +100,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
       >
         <UButton
           size="md"
+          variant="soft"
           color="secondary"
           icon="crpg:dots"
         />

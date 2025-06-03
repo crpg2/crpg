@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { RouteLocationNormalizedLoaded } from 'vue-router'
+import type { RouteLocationNormalizedLoaded, RouteLocationRaw } from 'vue-router'
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
 // import type { CharacterCharacteristics, CharacterOverallItemsStats } from '~/models/character'
@@ -35,7 +35,6 @@ definePageMeta({
      */
     async (to) => {
       const userStore = useUserStore()
-
       if (!userStore.validateCharacter(Number((to as RouteLocationNormalizedLoaded<'characters-id'>).params.id))) {
         return navigateTo({
           name: 'characters',
@@ -146,8 +145,6 @@ provide(characterKey, character) // pass the character object further down the c
 
 // await fetchPageData(character.value.id)
 
-const { onCloseWelcomeMessage, shownWelcomeMessage, showWelcomeMessage } = useWelcome()
-
 const { t } = useI18n()
 
 const links: { name: keyof RouteNamedMap, label: string }[] = [
@@ -178,10 +175,11 @@ const links: { name: keyof RouteNamedMap, label: string }[] = [
           v-for="{ name, label } in links"
           :key="name"
           v-slot="{ isExactActive }"
-          :to="{ name }"
+          :to="({ name } as RouteLocationRaw)"
         >
-          <OButton
-            :variant="isExactActive ? 'transparent-active' : 'secondary'"
+          <UButton
+            color="secondary"
+            :variant="isExactActive ? 'solid' : 'soft'"
             size="lg"
             :label
           />
@@ -189,15 +187,6 @@ const links: { name: keyof RouteNamedMap, label: string }[] = [
       </div>
 
       <div class="order-3 flex items-center gap-2 place-self-end">
-        <OButton
-          v-if="userStore.isRecentUser"
-          size="xl"
-          rounded
-          variant="transparent"
-          outlined
-          icon-left="help-circle"
-          @click="showWelcomeMessage"
-        />
         <!-- TODO: FIXME: to global nav -->
         <!-- <RouterLink :to="{ name: 'Builder' }">
           <OButton
@@ -212,10 +201,5 @@ const links: { name: keyof RouteNamedMap, label: string }[] = [
     </Teleport>
 
     <NuxtPage />
-
-    <AppWelcome
-      v-if="shownWelcomeMessage"
-      @close="onCloseWelcomeMessage"
-    />
   </div>
 </template>

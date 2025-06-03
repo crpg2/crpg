@@ -10,7 +10,7 @@ import type { Character } from '~/models/character'
 
 import { getCharacters } from '~/services/character-service'
 import {
-//   buyUserItem,
+  //   buyUserItem,
   getUser,
   getUserItems,
   getUserRestriction,
@@ -46,9 +46,7 @@ export const useUserStore = defineStore('user', () => {
 
   const activeCharacterId = computed(() => user.value?.activeCharacterId || characters.value?.[0]?.id || null)
 
-  const validateCharacter = (id: number) => {
-    return characters.value.some(c => c.id === id)
-  }
+  const validateCharacter = (id: number) => characters.value.some(c => c.id === id)
 
   // // TODO: mby to backend?
   const isRecentUser = computed(() => {
