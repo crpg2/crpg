@@ -127,15 +127,15 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         }
     }
 
-    public override void UpdateAgentStats(Agent agent, AgentDrivenProperties props)
+    public override void UpdateAgentStats(Agent agent, AgentDrivenProperties agentDrivenProperties)
     {
         if (agent.IsHuman)
         {
-            UpdateHumanAgentStats(agent, props);
+            UpdateHumanAgentStats(agent, agentDrivenProperties);
         }
         else if (agent.IsMount)
         {
-            UpdateMountAgentStats(agent, props);
+            UpdateMountAgentStats(agent, agentDrivenProperties);
         }
     }
 
@@ -239,7 +239,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         int ridingSkill = agent.RiderAgent != null
             ? GetEffectiveSkill(agent.RiderAgent, DefaultSkills.Riding)
             : 100;
-
         props.MountManeuver = mount.GetModifiedMountManeuver(in mountHarness) * (0.5f + ridingSkill * 0.0025f) * 1.15f;
 
         // Harness base weight (0 if no harness equipped)
