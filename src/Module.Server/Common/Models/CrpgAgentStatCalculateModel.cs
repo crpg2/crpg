@@ -132,6 +132,12 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         if (agent.IsHuman)
         {
             UpdateHumanAgentStats(agent, agentDrivenProperties);
+
+            // If rider is mounted, update the mount's stats too
+            if (agent.HasMount && agent.MountAgent != null)
+            {
+                agent.MountAgent.UpdateAgentProperties();
+            }
         }
         else if (agent.IsMount)
         {
