@@ -3,10 +3,8 @@ import type { CharacterPublic } from '~/models/character'
 
 import { characterClassToIcon } from '~/services/character-service'
 
-const { character, isActive = false, forTournament = false } = defineProps<{
+const { character } = defineProps<{
   character: CharacterPublic
-  isActive?: boolean
-  forTournament?: boolean
 }>()
 </script>
 
@@ -25,22 +23,5 @@ const { character, isActive = false, forTournament = false } = defineProps<{
       </span>
       <span>({{ character.level }})</span>
     </div>
-
-    <UTooltip v-if="isActive" :text="$t('character.status.active.title')">
-      <UBadge
-        :label="$t('character.status.active.short')"
-        color="success"
-        variant="soft"
-        size="sm"
-      />
-    </UTooltip>
-
-    <UiTag
-      v-if="forTournament"
-      v-tooltip="$t('character.status.forTournament.title')"
-      :label="$t('character.status.forTournament.short')"
-      variant="warning"
-      size="sm"
-    />
   </div>
 </template>
