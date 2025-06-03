@@ -5,7 +5,7 @@ export default defineAppConfig({
   ui: {
     colors: {
       primary: 'crpg',
-      secondary: 'zinc', // TODO:
+      secondary: 'crpg-secondary', // TODO: FIXME:
       neutral: 'neutral',
       success: 'status-success',
       error: 'status-danger',
@@ -197,16 +197,43 @@ export default defineAppConfig({
           variant: 'outline',
           class: 'ring-2 ring-default',
         },
+        // TODO: FIXME: //////////////////////
         {
           color: 'secondary',
           variant: 'solid',
-          class: 'bg-base-200 text-content-200 hover:text-content-100 hover:bg-base-300',
+          class: 'text-content-200',
         },
         {
           color: 'secondary',
           variant: 'outline',
-          class: 'ring-2 text-content-200 hover:text-content-100 group-hover:ring-secondary/100',
+          class: 'text-content-200',
         },
+        {
+          color: 'secondary',
+          variant: 'ghost',
+          class: 'text-content-200',
+        },
+        {
+          color: 'secondary',
+          variant: 'outline',
+          class: 'text-content-200',
+        },
+        {
+          color: 'secondary',
+          variant: 'soft',
+          class: 'text-content-200',
+        },
+        {
+          color: 'secondary',
+          variant: 'subtle',
+          class: 'text-content-200',
+        },
+        {
+          color: 'secondary',
+          variant: 'link',
+          class: 'text-content-200',
+        },
+        // TODO: FIXME: //////////////////////
         {
           size: 'xl',
           square: true,

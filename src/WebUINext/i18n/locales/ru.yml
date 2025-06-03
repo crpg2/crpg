@@ -307,9 +307,16 @@ character:
     active:
       title: Активный персонаж
       short: active
+    inactive:
+      title: Персанаж не активен
+      short: inactive
     forTournament:
       title: Турнирный персонаж
       short: trnmt
+
+  noneSomeActive:
+    title: Нет ни одного активного персонажа
+    short: none active
 
   class:
     Peasant: Крестьянин
@@ -357,7 +364,7 @@ character:
       title: Ранг
       tooltip:
         title: Ранг
-        # prettier-igno                                        re
+        # prettier-igno                                                                                                    re
         desc: '
           <p>Ваш рейтинг присваивает вам ранг, который напрямую связан с автобалансом, используя который он решает, в какую команду вас поместить. Система, которую мы используем <strong>*Glicko2</strong>.</p>
           <p>Не беспокойтесь о своем ранге! В конце концов, это инструмент, который мы используем для балансировки команд, он не обязательно является идеальным показателем мастерства в Bannerlord.</p>

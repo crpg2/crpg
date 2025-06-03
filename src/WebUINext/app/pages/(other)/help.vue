@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router'
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
 const { t } = useI18n()
@@ -37,7 +38,7 @@ const helpHubNavigation: { name: keyof RouteNamedMap, label: string }[] = [
       <NuxtLink
         v-for="{ name, label } in helpHubNavigation" :key="name"
         v-slot="{ isExactActive }"
-        :to="{ name }"
+        :to="({ name } as RouteLocationRaw)"
       >
         <UButton
           color="primary"

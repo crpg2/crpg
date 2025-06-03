@@ -12,8 +12,9 @@ const modelValue = defineModel<boolean>({ default: false })
   <div class="flex items-center gap-2">
     <UTooltip :ui="{ content: 'max-w-72' }" :content="{ side: 'right' }">
       <div @click.prevent.stop>
-        <USwitch v-model="modelValue" color="success" />
+        <USwitch v-model="modelValue" />
       </div>
+
       <template #content>
         <div class="prose prose-invert">
           <h5 class="text-content-100">

@@ -44,6 +44,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
 <template>
   <UDropdownMenu
     :items="items"
+    :modal="false"
     size="xl"
   >
     <UButton
@@ -52,10 +53,29 @@ const items = computed<DropdownMenuItem[][]>(() => [
     >
       <CharacterMedia :character="currentCharacter" />
 
-      <UTooltip v-if="currentCharacter.id === activeCharacterId" :text="$t('character.status.active.title')">
+      <UTooltip v-if="!activeCharacterId" :text="$t('character.noneSomeActive.title')">
+        <UBadge
+          :label="$t('character.noneSomeActive.short')"
+          color="warning"
+          variant="soft"
+          size="sm"
+          icon="crpg:alert"
+        />
+      </UTooltip>
+
+      <UTooltip v-else-if="currentCharacter.id === activeCharacterId" :text="$t('character.status.active.title')">
         <UBadge
           :label="$t('character.status.active.short')"
           color="success"
+          variant="soft"
+          size="sm"
+        />
+      </UTooltip>
+
+      <UTooltip v-else :text="$t('character.status.inactive.title')">
+        <UBadge
+          :label="$t('character.status.inactive.short')"
+          color="neutral"
           variant="soft"
           size="sm"
         />

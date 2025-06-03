@@ -30,7 +30,6 @@ const userStore = useUserStore()
 const { characters, user } = toRefs(userStore)
 
 const route = useRoute('characters-id')
-const router = useRouter()
 
 const currentCharacterId = computed(() =>
   route.params.id ? Number(route.params.id) : null,

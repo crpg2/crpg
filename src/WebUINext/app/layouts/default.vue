@@ -15,6 +15,8 @@ await Promise.all([
   settingsStore.loadSettings(),
   userStore.fetchUserRestriction(),
 ])
+
+const { onCloseWelcomeMessage, shownWelcomeMessage, showWelcomeMessage } = useWelcome()
 </script>
 
 <template>
@@ -84,5 +86,11 @@ await Promise.all([
 
     <!-- TODO: v-if="!route.meta.noFooter" -->
     <AppLayoutFooter :HHEvent />
+
+    <!-- :open="shownWelcomeMessage" -->
+    <AppWelcome
+      open
+      @open:update="onCloseWelcomeMessage"
+    />
   </div>
 </template>
