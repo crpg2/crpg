@@ -257,7 +257,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
         float totalEffectiveLoad = harnessWeight + riderPerceivedWeight;
 
-        const float maxLoadReference = 45f;
+        const float maxLoadReference = 48f; // was 45f before perceived weight being added, will give balanced cavalry some more breathing room
         float loadPercentage = totalEffectiveLoad / maxLoadReference;
 
         float weightImpactOnSpeed = 1f / (1f + 0.333f * loadPercentage);
