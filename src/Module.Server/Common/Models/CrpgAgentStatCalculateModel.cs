@@ -260,8 +260,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         const float maxLoadReference = 45f;
         float loadPercentage = totalEffectiveLoad / maxLoadReference;
 
-        // Testing penalty: Make it 9x more severe
-        float weightImpactOnSpeed = 1f / (1f + 3.0f * loadPercentage);
+        float weightImpactOnSpeed = 1f / (1f + 0.333f * loadPercentage);
         float ridingImpactOnSpeed = (float)(
             0.7f +
             ridingSkill * 0.001f +
