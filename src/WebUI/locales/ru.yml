@@ -6,7 +6,6 @@ locale:
 platform:
   Steam: Steam
   EpicGames: Epic Games
-  Microsoft: Xbox
 
 installation:
   title: Установка
@@ -24,7 +23,7 @@ installation:
     other:
       title: Лаунчер
       downloadLauncher: Загрузите наш {launcherLink}
-      startLauncher: Откройте Launcher и выберите свою платформу (Steam/Epic/Xbox)
+      startLauncher: Откройте Launcher и выберите свою платформу (Steam/Epic)
       detectinstall: Нажмите "Detect Install", чтобы автоматически найти место установки, или задайте вручную c помощью "Change Location"
       update: Нажмите "Update cRPG", чтобы убедиться, что cRPG полностью обновлен
       launch: Нажмите "Launch cRPG", чтобы запустить модификацию
