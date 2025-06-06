@@ -1,14 +1,18 @@
 <script setup lang="ts">
-const { value } = defineProps<{ value: number }>()
+defineProps<{ value?: number }>()
 </script>
 
 <template>
   <UTooltip :text="$t('user.field.gold')">
-    <div class="inline-flex gap-1.5 align-middle font-bold text-primary">
-      <UiSpriteSymbol name="coin" viewBox="0 0 18 18" class="w-4" inline />
+    <UiDataCell>
+      <template #leftContent>
+        <UiSpriteSymbol name="coin" viewBox="0 0 18 18" class="size-4" />
+      </template>
       <slot>
-        {{ $n(value) }}
+        <span v-if="value !== undefined" class="font-bold text-primary">
+          {{ $n(value) }}
+        </span>
       </slot>
-    </div>
+    </UiDataCell>
   </UTooltip>
 </template>

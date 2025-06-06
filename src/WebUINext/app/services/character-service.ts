@@ -4,9 +4,11 @@ import {
   deleteUsersSelfCharactersById,
   getUsersByUserIdCharacters,
   getUsersSelfCharacters,
+  getUsersSelfCharactersByIdLimitations,
   getUsersSelfCharactersByIdStatistics,
   putUsersSelfCharactersById,
   putUsersSelfCharactersByIdActive,
+  putUsersSelfCharactersByIdRespecialize,
 } from '#hey-api/sdk.gen'
 import {
   attributePointsPerLevel,
@@ -82,30 +84,34 @@ export const getCharactersByUserId = async (userId: number): Promise<Character[]
   return data!
 }
 
-export const updateCharacter = (characterId: number, req: UpdateCharacterRequest) =>
-  putUsersSelfCharactersById({
-    composable: '$fetch',
-    path: { id: characterId },
-    // @ts-expect-error TODO: FIXME: 1/ разобраться, почему body не обязательный. 2/ разобарться, почему лишние поля (должны быть только name)
-    body: {
-      name: req.name,
-    },
-  })
+export const updateCharacter = (
+  characterId: number,
+  req: UpdateCharacterRequest,
+) => putUsersSelfCharactersById({
+  composable: '$fetch',
+  path: { id: characterId },
+  // @ts-expect-error TODO: FIXME: 1/ разобраться, почему body не обязательный. 2/ разобарться, почему лишние поля (должны быть только name)
+  body: {
+    name: req.name,
+  },
+})
 
-export const activateCharacter = (characterId: number, active: boolean) =>
-  putUsersSelfCharactersByIdActive({
-    composable: '$fetch',
-    path: { id: characterId },
-    body: {
-      active,
-    },
-  })
+export const activateCharacter = (
+  characterId: number,
+  active: boolean,
+) => putUsersSelfCharactersByIdActive({
+  composable: '$fetch',
+  path: { id: characterId },
+  body: {
+    active,
+  },
+})
 
 export const deleteCharacter = (characterId: number) =>
   deleteUsersSelfCharactersById({ composable: '$fetch', path: { id: characterId } })
 
-// export const respecializeCharacter = (characterId: number) =>
-//   put<Character>(`/users/self/characters/${characterId}/respecialize`)
+export const respecializeCharacter = (characterId: number) =>
+  putUsersSelfCharactersByIdRespecialize({ composable: '$fetch', path: { id: characterId } })
 
 export const tournamentLevelThreshold = 20
 
@@ -144,6 +150,11 @@ export const getCompetitiveValueByGameMode = (
 ): number => {
   const statisticByGameMode = statistics.find(s => s.gameMode === gameMode)
   return statisticByGameMode ? statisticByGameMode.rating.competitiveValue : 0
+}
+
+export const getCharacterLimitations = async (characterId: number): Promise<CharacterLimitations> => {
+  const { data } = await getUsersSelfCharactersByIdLimitations({ composable: '$fetch', path: { id: characterId } })
+  return data
 }
 
 // // TODO: FIXME: SPEC
@@ -195,11 +206,6 @@ export const getCompetitiveValueByGameMode = (
 //     return out
 //   }, {} as Record<GameMode, CharacterEarnedData>)
 // }
-
-// export const getCharacterLimitations = async (characterId: number) =>
-//   (await get<CharacterLimitations>(`/users/self/characters/${characterId}/limitations`)) || {
-//     lastRespecializeAt: new Date(),
-//   }
 
 // export const getCharacterCharacteristics = (characterId: number) =>
 //   get<CharacterCharacteristics>(`/users/self/characters/${characterId}/characteristics`)
@@ -449,9 +455,9 @@ export const computeSpeedStats = (
 
   const timeToMaxSpeed
     = 0.8
-      * (1 + perceivedWeight / 15)
-      * (20 / (20 + ((20 * athletics + 3 * agility) / 120) ** 2))
-      + timeToMaxSpeedWeaponLenghthTerm
+    * (1 + perceivedWeight / 15)
+    * (20 / (20 + ((20 * athletics + 3 * agility) / 120) ** 2))
+    + timeToMaxSpeedWeaponLenghthTerm
 
   const movementSpeedPenaltyWhenAttacking
     = 100 * (Math.min(0.8 + (0.2 * (maxWeaponLength + 1)) / (longestWeaponLength + 1), 1) - 1)
@@ -581,64 +587,64 @@ export const sumExperienceMultiplierBonus = (multiplierA: number, multiplierB: n
   return clamp(multiplierA + multiplierB, 0, maxExperienceMultiplierForGeneration)
 }
 
-// export interface RespecCapability {
-//   price: number
-//   enabled: boolean
-//   nextFreeAt: number
-//   freeRespecWindowRemain: number
-// }
+export interface RespecCapability {
+  price: number
+  enabled: boolean
+  nextFreeAt: number
+  freeRespecWindowRemain: number
+}
 
-// export const getRespecCapability = (
-//   character: Character,
-//   limitations: CharacterLimitations,
-//   userGold: number,
-//   isRecentUser: boolean,
-// ): RespecCapability => {
-//   if (isRecentUser || character.forTournament) {
-//     return {
-//       enabled: true,
-//       freeRespecWindowRemain: 0,
-//       nextFreeAt: 0,
-//       price: 0,
-//     }
-//   }
+export const getRespecCapability = (
+  character: Character,
+  limitations: CharacterLimitations,
+  userGold: number,
+  isRecentUser: boolean,
+): RespecCapability => {
+  if (isRecentUser || character.forTournament) {
+    return {
+      enabled: true,
+      freeRespecWindowRemain: 0,
+      nextFreeAt: 0,
+      price: 0,
+    }
+  }
 
-//   const freeRespecWindow = new Date(limitations.lastRespecializeAt)
-//   freeRespecWindow.setUTCHours(freeRespecWindow.getUTCHours() + freeRespecializePostWindowHours)
+  const freeRespecWindow = new Date(limitations.lastRespecializeAt)
+  freeRespecWindow.setUTCHours(freeRespecWindow.getUTCHours() + freeRespecializePostWindowHours)
 
-//   if (freeRespecWindow > new Date()) {
-//     return {
-//       enabled: true,
-//       freeRespecWindowRemain: computeLeftMs(freeRespecWindow, 0),
-//       nextFreeAt: 0,
-//       price: 0,
-//     }
-//   }
+  if (freeRespecWindow > new Date()) {
+    return {
+      enabled: true,
+      freeRespecWindowRemain: computeLeftMs(freeRespecWindow, 0),
+      nextFreeAt: 0,
+      price: 0,
+    }
+  }
 
-//   const lastRespecDate = new Date(limitations.lastRespecializeAt)
-//   const nextFreeAt = new Date(limitations.lastRespecializeAt)
-//   nextFreeAt.setUTCDate(nextFreeAt.getUTCDate() + freeRespecializeIntervalDays)
-//   nextFreeAt.setUTCMinutes(nextFreeAt.getUTCMinutes() + 5) // 5 minute margin just in case
+  const lastRespecDate = new Date(limitations.lastRespecializeAt)
+  const nextFreeAt = new Date(limitations.lastRespecializeAt)
+  nextFreeAt.setUTCDate(nextFreeAt.getUTCDate() + freeRespecializeIntervalDays)
+  nextFreeAt.setUTCMinutes(nextFreeAt.getUTCMinutes() + 5) // 5 minute margin just in case
 
-//   if (nextFreeAt < new Date()) {
-//     return { enabled: true, freeRespecWindowRemain: 0, nextFreeAt: 0, price: 0 }
-//   }
+  if (nextFreeAt < new Date()) {
+    return { enabled: true, freeRespecWindowRemain: 0, nextFreeAt: 0, price: 0 }
+  }
 
-//   const decayDivider
-//     = (new Date().getTime() - lastRespecDate.getTime()) / (respecializePriceHalfLife * 1000 * 3600)
+  const decayDivider
+    = (new Date().getTime() - lastRespecDate.getTime()) / (respecializePriceHalfLife * 1000 * 3600)
 
-//   const price = Math.floor(
-//     Math.floor((character.experience / getExperienceForLevel(30)) * respecializePriceForLevel30)
-//     / 2 ** decayDivider,
-//   )
+  const price = Math.floor(
+    Math.floor((character.experience / getExperienceForLevel(30)) * respecializePriceForLevel30)
+    / 2 ** decayDivider,
+  )
 
-//   return {
-//     enabled: price <= userGold,
-//     freeRespecWindowRemain: 0,
-//     nextFreeAt: computeLeftMs(nextFreeAt, 0),
-//     price,
-//   }
-// }
+  return {
+    enabled: price <= userGold,
+    freeRespecWindowRemain: 0,
+    nextFreeAt: computeLeftMs(nextFreeAt, 0),
+    price,
+  }
+}
 
 // export const getCharacterSLotsSchema = (): {
 //   key: ItemSlot

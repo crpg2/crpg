@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const route = useRoute()
+import { AppWelcome } from '#components'
+
+const route = useRoute('index') // index for stub, so TS doesn't swear
 const userStore = useUserStore()
 
 const mainHeaderRef = useTemplateRef('mainHeader')
@@ -16,7 +18,8 @@ await Promise.all([
   userStore.fetchUserRestriction(),
 ])
 
-const { onCloseWelcomeMessage, shownWelcomeMessage, showWelcomeMessage } = useWelcome()
+// TODO: FIXME:
+// useWelcome()
 </script>
 
 <template>
@@ -88,9 +91,6 @@ const { onCloseWelcomeMessage, shownWelcomeMessage, showWelcomeMessage } = useWe
     <AppLayoutFooter :HHEvent />
 
     <!-- :open="shownWelcomeMessage" -->
-    <AppWelcome
-      open
-      @open:update="onCloseWelcomeMessage"
-    />
+    <!-- TODO: FIXME: -->
   </div>
 </template>

@@ -116,7 +116,7 @@ timeAgo:
   second: 'second | seconds'
 
 dateTimeFormat:
-  # TODO: https://github.com/tc39/proposal-intl-duration-form                                                                                                                                                                                                        at
+  # TODO: https://github.com/tc39/proposal-intl-duration-form                                                                                                                                                                                                                                                                    at
   countdown: '{hours}:{minutes}:{seconds}'
   dd: '{days} @:dateTime.days.short'
   mm: '{minutes} @:dateTime.minutes.short'
@@ -173,7 +173,6 @@ login:
 
 confirmAction: Please confirm action
 
-scrollToTop: Scroll to top
 you: You
 here: here
 not-found: Not found
@@ -284,6 +283,7 @@ clanBalancingExplanation: '
 
 welcome:
   title: Welcome warrior!
+  shortTitle: Welcome!
   intro: '
     <p>Welcome to one of the most popular online modifications in Bannerlord!</p>
     <p>To start you out on the smoothest path possible, we''ve given you a lvl 30 Starter Character with some added bonuses to help you out</p>
@@ -400,7 +400,7 @@ character:
       title: Rank
       tooltip:
         title: Rank
-        # prettier-igno                                                                                                                                                                                                        re
+        # prettier-igno                                                                                                                                                                                                                                                                    re
         desc: '
           <p>Your rating assigns you a rank, which is tied directly to the autobalancer, using this it decides which team to place you on. The system we use is <strong>*Glicko2</strong>.</p>
           <p>Don''t fret over your rank! At the end of the day, it''s a tool we use to balance teams, it is not necessarily a perfect indicator of skill in Bannerlord.</p>

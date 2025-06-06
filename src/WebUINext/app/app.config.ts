@@ -155,6 +155,11 @@ export default defineAppConfig({
         content: 'rounded-lg px-4 py-3.5 h-auto',
       },
     },
+    slider: {
+      slots: {
+        thumb: 'rounded-[.188rem] origin-left rotate-45 transform bg-primary !ring-default ring-2 focus-visible:outline-2 focus-visible:outline-offset-2',
+      },
+    },
     button: {
       slots: {
         base: '!leading-none rounded-full group font-bold',
