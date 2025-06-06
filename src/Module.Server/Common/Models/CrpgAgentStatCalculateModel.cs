@@ -369,7 +369,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             // Ranged Behavior
             if (equippedItem.IsRangedWeapon)
             {
-                props.TopSpeedReachDuration += 1.0f;
+                props.TopSpeedReachDuration += 1.5f;
                 props.ThrustOrRangedReadySpeedMultiplier = equippedItem.ThrustSpeed / 160f + 0.0015f * itemSkill;
                 float maxMovementAccuracyPenaltyMultiplier = Math.Max(0.0f, 1.0f - weaponSkill / 500.0f);
                 float weaponMaxMovementAccuracyPenalty = 0.125f * maxMovementAccuracyPenaltyMultiplier;
@@ -469,11 +469,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 {
                     props.WeaponUnsteadyBeginTime = 1.0f + weaponSkill * 0.005f;
                     props.WeaponUnsteadyEndTime = 3.0f + weaponSkill * 0.01f;
-                }
-
-                if (equippedItem.WeaponClass is WeaponClass.Mace or WeaponClass.OneHandedAxe or WeaponClass.OneHandedSword or WeaponClass.Dagger)
-                {
-                    props.ThrustOrRangedReadySpeedMultiplier *= 0.82f;
                 }
 
                 if (equippedItem.WeaponClass is WeaponClass.TwoHandedPolearm)
@@ -593,7 +588,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
     private int MaxWeaponLengthForStrLevel(int strengthSkill)
     {
-        int uncappedMaxWeaponLength = (int)(22 + (strengthSkill - 3) * 7.5 + Math.Pow(Math.Min(strengthSkill - 3, 24) * 0.133352143f, 8f));
+        int uncappedMaxWeaponLength = (int)(22 + (strengthSkill - 3) * 7.5 + Math.Pow(Math.Min(strengthSkill - 3, 24) * 0.115f, 7.75f));
         return Math.Min(uncappedMaxWeaponLength, 650);
     }
 

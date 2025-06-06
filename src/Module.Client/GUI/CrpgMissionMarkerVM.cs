@@ -269,16 +269,19 @@ internal class CrpgMissionMarkerVm : ViewModel
 
         if (dtvClient.VipAgent != null)
         {
-            if (enabled && !_isVipOutlined)
+            if (dtvClient.VipAgent.Health > 0f)
             {
-                uint focusedContourColor = new TaleWorlds.Library.Color(1f, 0.84f, 0.35f, 1f).ToUnsignedInteger();
-                dtvClient.VipAgent.AgentVisuals?.SetContourColor(focusedContourColor, true);
-                _isVipOutlined = true;
-            }
-            else if (!enabled && _isVipOutlined)
-            {
-                dtvClient.VipAgent.AgentVisuals?.SetContourColor(null);
-                _isVipOutlined = false;
+                if (enabled && !_isVipOutlined)
+                {
+                    uint focusedContourColor = new TaleWorlds.Library.Color(1f, 0.84f, 0.35f, 1f).ToUnsignedInteger();
+                    dtvClient.VipAgent.AgentVisuals?.SetContourColor(focusedContourColor, true);
+                    _isVipOutlined = true;
+                }
+                else if (!enabled && _isVipOutlined)
+                {
+                    dtvClient.VipAgent.AgentVisuals?.SetContourColor(null);
+                    _isVipOutlined = false;
+                }
             }
         }
     }

@@ -158,6 +158,11 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             finalDamage *= 0.23f; // Decrease damage from couched lance.
         }
 
+        if (IsSwashbuckler(weapon, collisionData, attackInformation.AttackerAgent))
+        {
+            finalDamage *= 1.10f;
+        }
+
         return finalDamage;
     }
 
@@ -396,6 +401,24 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         return randomNumber / 10f < Math.Pow(attackerPower / defenderDefendPower / 2.5f, 1.8f) * 100f;
     }
 
+    // MissionCombatMechanicsHelper.cs/DecideMountRearedByBlow
+    public override bool DecideMountRearedByBlow(
+        Agent attackerAgent,
+        Agent victimAgent,
+        in AttackCollisionData collisionData,
+        WeaponComponentData attackerWeapon,
+        in Blow blow)
+    {
+        // Only allow if damage type is Pierce
+        if (blow.DamageType != DamageTypes.Pierce)
+        {
+            return false;
+        }
+
+        // Call the original/base logic (which evolves with TW updates)
+        return base.DecideMountRearedByBlow(attackerAgent, victimAgent, in collisionData, attackerWeapon, in blow);
+    }
+
     private int GetSkillValue(IAgentOriginBase agentOrigin, SkillObject skill)
     {
         if (agentOrigin is CrpgBattleAgentOrigin crpgOrigin)
@@ -446,6 +469,74 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         }
 
         return false;
+    }
+
+    private bool IsSwashbuckler(MissionWeapon weapon, AttackCollisionData collisionData, Agent attackerAgent)
+    {
+        if (weapon.CurrentUsageItem.WeaponClass != WeaponClass.OneHandedSword
+            || collisionData.StrikeType == (int)StrikeType.Thrust
+            || collisionData.DamageType != (int)DamageTypes.Cut)
+        {
+            return false;
+        }
+
+        bool hasRangedWeapon = false;
+        bool hasShield = false;
+
+        var offhandItem = attackerAgent.Equipment[EquipmentIndex.Weapon2];
+        if (offhandItem.Item?.PrimaryWeapon?.IsShield == true)
+        {
+            hasShield = true;
+        }
+
+        for (int i = 0; i < (int)EquipmentIndex.NumAllWeaponSlots; i++)
+        {
+            var equipmentElement = attackerAgent.Equipment[i];
+            var item = equipmentElement.Item;
+            if (item == null)
+            {
+                continue;
+            }
+
+            var usage = item.PrimaryWeapon;
+            if (usage == null)
+            {
+                continue;
+            }
+
+            if (!hasRangedWeapon)
+            {
+                bool isAmmoEmpty = equipmentElement.Amount == 0 && usage.IsConsumable;
+                bool hasAlternateThrowable = false;
+
+                for (int j = 0; j < item.WeaponComponent?.Weapons?.Count; j++)
+                {
+                    var altUsage = item.WeaponComponent.Weapons[j];
+                    if (altUsage != usage && altUsage.IsConsumable && altUsage.IsRangedWeapon)
+                    {
+                        hasAlternateThrowable = true;
+                        break;
+                    }
+                }
+
+                if ((usage.IsRangedWeapon && !isAmmoEmpty) || hasAlternateThrowable)
+                {
+                    hasRangedWeapon = true;
+                }
+            }
+
+            if (!hasShield && usage.IsShield)
+            {
+                hasShield = true;
+            }
+
+            if (hasShield || hasRangedWeapon)
+            {
+                break;
+            }
+        }
+
+        return !attackerAgent.HasMount && !hasShield && !hasRangedWeapon;
     }
 
     private int GetGloveArmor(IAgentOriginBase agentOrigin)

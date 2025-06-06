@@ -77,6 +77,19 @@
           </Children>
         </Widget>
 
+        <!-- VIP Health Bar -->
+        <Panel WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="194" SuggestedHeight="10" 
+           Sprite="BlankWhiteSquare" Color="#000000CC" IsVisible="@IsVipHealthBarVisible"
+           BorderColor="#000000FF" BorderThickness="1" MarginTop="90" HorizontalAlignment="Center">
+          <Children>
+            <!-- FillBar Layer -->
+            <FillBar WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="190" SuggestedHeight="8"
+                HorizontalAlignment="Center" VerticalAlignment="Top" 
+                MarginLeft="1" MarginRight="1" MarginTop="1" MarginBottom="1" Margin="1" 
+                Brush="@VipHealthBrush" InitialAmount="@VipHealth" 
+                IsVertical="false" MaxAmount="100" IsVisible="@IsVipHealthBarVisible" />
+          </Children>
+        </Panel>
       </Children>
     </Widget>
 

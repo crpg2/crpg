@@ -6,7 +6,6 @@ locale:
 platform:
   Steam: Steam
   EpicGames: Epic Games
-  Microsoft: Xbox
 
 installation:
   title: Installation
@@ -24,7 +23,7 @@ installation:
     other:
       title: Launcher
       downloadLauncher: Download our {launcherLink}
-      startLauncher: Open the launcher and select your Platform (Steam/Epic/Xbox)
+      startLauncher: Open the launcher and select your Platform (Steam/Epic)
       detectinstall: Click 'Detect install' to automatically detect your install location, or set manually via 'Change Location'
       update: Click 'Update cRPG' to ensure cRPG is fully up-to-date
       launch: Click 'Launch cRPG' to start the Mod

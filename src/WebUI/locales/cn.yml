@@ -6,7 +6,6 @@ locale:
 platform:
   Steam: Steam
   EpicGames: Epic Games
-  Microsoft: Xbox
 
 installation:
   title: 安装
@@ -24,7 +23,7 @@ installation:
     other:
       title: 游戏启动器
       downloadLauncher: 下载我们的 {launcherLink}
-      startLauncher: 打开启动器并选择你的平台（Steam/Epic/Xbox）
+      startLauncher: 打开启动器并选择你的平台（Steam/Epic）
       detectinstall: 点击“Detect install”以自动检测您的安装位置，或通过“Change Location”手动设置。
       update: 点击“Update cRPG”确保 cRPG 更新到最新版本
       launch: 点击“Launch cRPG”启动该模组

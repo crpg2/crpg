@@ -15,7 +15,7 @@ public class XboxUserInfoHandler : IOpenIddictClientHandler<OpenIddictClientEven
     public static OpenIddictClientHandlerDescriptor Descriptor { get; }
         = OpenIddictClientHandlerDescriptor.CreateBuilder<OpenIddictClientEvents.ProcessAuthenticationContext>()
             .UseSingletonHandler<XboxUserInfoHandler>()
-            .SetOrder(OpenIddictClientHandlers.EvaluateUserinfoRequest.Descriptor.Order + 250)
+            .SetOrder(OpenIddictClientHandlers.EvaluateUserInfoRequest.Descriptor.Order + 250)
             .SetType(OpenIddictClientHandlerType.BuiltIn)
             .Build();
 
@@ -29,7 +29,7 @@ public class XboxUserInfoHandler : IOpenIddictClientHandler<OpenIddictClientEven
 
         if (IsXboxRequest(context))
         {
-            context.SendUserinfoRequest = false;
+            context.SendUserInfoRequest = false;
         }
 
         return ValueTask.CompletedTask;

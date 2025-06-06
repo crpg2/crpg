@@ -62,7 +62,8 @@ public class FileItemsSourceTest
         List<string> errors = new();
         foreach (var item in items)
         {
-            if (item.Tier > 13.1)
+            // Only worry about tier if item is not disabled
+            if (item.Tier > 13.1 && !item.BaseId.Contains("disabled"))
             {
                 errors.Add(item.Id);
             }
