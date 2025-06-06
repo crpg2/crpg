@@ -132,6 +132,12 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         if (agent.IsHuman)
         {
             UpdateHumanAgentStats(agent, agentDrivenProperties);
+
+            // If rider is mounted, update the mount's stats too
+            if (agent.HasMount && agent.MountAgent != null)
+            {
+                agent.MountAgent.UpdateAgentProperties();
+            }
         }
         else if (agent.IsMount)
         {
@@ -251,6 +257,29 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.MountSpeed = (mount.GetModifiedMountSpeed(in mountHarness) + 1) * 0.209f * ridingImpactOnSpeed * weightImpactOnSpeed;
         props.TopSpeedReachDuration = Game.Current.BasicModels.RidingModel.CalculateAcceleration(in mount, in mountHarness, ridingSkill);
         props.MountDashAccelerationMultiplier = 1f / (2f + 8f * harnessWeightPercentage); // native between 1 and 0.1 . cRPG between 0.5 and 0.1
+
+        // Mounted penalty to mount stats based on weapon length and strength
+        if (agent.RiderAgent is Agent rider)
+        {
+            int strengthSkill = GetEffectiveSkill(rider, CrpgSkills.Strength);
+            EquipmentIndex weaponIndex = rider.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+            WeaponComponentData? riderWeapon = weaponIndex != EquipmentIndex.None
+                ? rider.Equipment[weaponIndex].CurrentUsageItem
+                : null;
+
+            if (riderWeapon != null)
+            {
+                float weaponLengthPenalty = Math.Min(
+                    MBMath.Lerp(0.8f, 1f, MaxWeaponLengthForStrLevel(strengthSkill) / riderWeapon.WeaponLength),
+                    1f
+                );
+
+                props.MountManeuver *= weaponLengthPenalty;
+                props.MountSpeed *= weaponLengthPenalty;
+                props.MountDashAccelerationMultiplier *= weaponLengthPenalty;
+                props.MountChargeDamage *= weaponLengthPenalty;
+            }
+        }
     }
 
     // WARNING : for some reasone UpdateHumanAgentStats is called twice everytime there is a change (respawn or weapon switch)
