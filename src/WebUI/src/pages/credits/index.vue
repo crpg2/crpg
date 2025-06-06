@@ -16,24 +16,33 @@
         :data="contributors"
         bordered
         hoverable
-        :per-page="10 "
+        :per-page="12"
         paginated
       >
         <OTableColumn field="profile" label="Profile">
           <template #default="{ row: contributor }">
-            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 text-white text-sm font-semibold overflow-hidden">
-              <template v-if="contributor.github">
-                <img
-                  :src="`https://github.com/${contributor.github}.png`"
-                  :alt="`${contributor.name}'s GitHub Profile`"
-                  class="object-cover w-full h-full rounded-full"
-                />
-              </template>
-              <template v-else>
-                {{ contributor.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() }}
-              </template>
-            </div>
-          </template>
+  <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 text-white text-sm font-semibold overflow-hidden">
+    <template v-if="contributor.github">
+      <a
+        :href="`https://github.com/${contributor.github}`"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full h-full"
+      >
+      <img
+          loading="lazy"
+          :src="`https://github.com/${contributor.github}.png`"
+          :alt="`${contributor.name}'s GitHub Profile`"
+          class="object-cover w-full h-full rounded-full"
+        />
+      </a>
+    </template>
+    <template v-else>
+      {{ contributor.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() }}
+    </template>
+  </div>
+</template>
+
         </OTableColumn>
 
         <OTableColumn field="name" label="Name">
@@ -64,8 +73,8 @@ const contributors = [
   { name: "Meowkov", role: "Lead 3D Artist, Lead Item Manager, Lead Item Crafter", github: "Meowkov" },
   { name: "Yeldur", role: "Community Manager, Lead Balancer, Lead Item Crafter", github: "Yeldur" },
   { name: "Salt", role: "Lead Balancer, Lead Item Crafter, Moderator", github: "Erdertus" },
-  { name: "Lemon", role: "Community Manager" },
   { name: "James of Acre", role: "Community Manager" },
+  { name: "Lemon", role: "Community Manager" },
   { name: "rfl", role: "Map Design Lead, Map Designer", github: "rf-l" },
   { name: "Telford", role: "Item Crafter", github: "Telfordski" },
   { name: "Truthful", role: "Item Crafter", github: "Truthful33" },
@@ -121,45 +130,44 @@ const contributors = [
   { name: "LastKaze", role: "Item Crafter", github: "LastKaze" },
   { name: "Lexxe", role: "Item Crafter", github: "SuperLexxe" },
   { name: "Steve", role: "Item Crafter", github: "Steve1833" },
-  { name: "Dupre", role: " " },
-  { name: "Redinb", role: " " },
-  { name: "081233468", role: " " },
-  { name: "Cajun", role: " " },
-  { name: "Caver", role: " " },
-  { name: "Demochi", role: " " },
-  { name: "Dill Pickle", role: " " },
-  { name: "Elindor", role: " " },
-  { name: "Axthenon", role: " " },
-  { name: "evilmagic", role: " " },
-  { name: "Gallonigher", role: " " },
-  { name: "IZA", role: " " },
-  { name: "Jimzy", role: " " },
-  { name: "Kadeth", role: " " },
-  { name: "ChesterOtab", role: " " },
-  { name: "Unrated", role: " " },
-  { name: "kschulz90", role: " " },
-  { name: "Falcomfr", role: " " },
-  { name: "mewtlu", role: " " },
-  { name: "Rogerdin13", role: " " },
-  { name: "thbolijn", role: " " },
-  { name: "petro-poroshenko", role: " " },
-  { name: "Thradok", role: " " },
-  { name: "kmiestmoore", role: " " },
-  { name: "winnie1069667084", role: " " },
-  { name: "grughub", role: " " },
-  { name: "EckoM89", role: " " },
-  { name: "havena", role: " " },
-  { name: "Brainbirb", role: " " },
-  { name: "Peeky", role: " " },
-  { name: "Steve1833", role: " " },
-  { name: "Swagathor", role: " " },
-  { name: "Summer", role: " " },
-  { name: "Zee", role: " " },
-  { name: "Suleyk", role: " " },
-  { name: "HawtMiniBoss", role: " " },
-  { name: "DelroWanep", role: " " },
-  { name: "Phoenix", role: " " },
-  { name: "Dionysus", role: " " }
+  { name: "Dupre", role: "Consultant/Server Host" },
+  { name: "Redinb", role: "Moderator" },
+  { name: "081233468", role: "Contributor ", github: "081233468" },
+  { name: "Cajun", role: "Moderator" },
+  { name: "Caver", role: "Moderator" },
+  { name: "Demochi", role: "Moderator " },
+  { name: "Dill Pickle", role: "Moderator " },
+  { name: "Elindor", role: "Moderator " },
+  { name: "evilmagic", role: "Moderator " },
+  { name: "Gallonigher", role: "Moderator " },
+  { name: "IZA", role: "Moderator " },
+  { name: "Jimzy", role: "Moderator " },
+  { name: "Kadeth", role: "Moderator " },
+  { name: "ChesterOtab", role: "Moderator " },
+  { name: "Unrated", role: "Contributor ", github: "Unrated" },
+  { name: "kschulz90", role: "Contributor ", github: "kschulz90" },
+  { name: "Falcom", role: "Contributor ", github: "Falcomfr" },
+  { name: "mewtlu", role: "Contributor ", github: "mewtlu" },
+  { name: "Rogerdin13", role: "Contributor ", github: "Rogerdin13" },
+  { name: "thbolijn", role: "Contributor ", github: "thbolijn" },
+  { name: "petro-poroshenko", role: "Contributor ", github: "petro-poroshenko" },
+  { name: "Thradok", role: "Contributor ", github: "Thradok" },
+  { name: "kmiestmoore", role: "Contributor ", github: "kmiestmoore" },
+  { name: "winnie1069667084", role: "Contributor ", github: "winnie1069667084" },
+  { name: "grughub", role: "Contributor ", github: "grughub" },
+  { name: "EckoM89", role: "Contributor ", github: "EckoM89" },
+  { name: "havena", role: "Contributor ", github: "havena" },
+  { name: "Brainbirb", role: "Contributor ", github: "Brainbirb" },
+  { name: "Peeky", role: "Contributor ", github: "Peeky" },
+  { name: "Swagathor", role: "QA " },
+  { name: "Summer", role: "QA " },
+  { name: "Zee", role: "QA " },
+  { name: "Suleyk", role: "QA " },
+  { name: "HawtMiniBoss", role: "QA " },
+  { name: "DelroWanep", role: "QA " },
+  { name: "Phoenix", role: "Balancer " },
+  { name: "Dionysus", role: "Balancer " },
+  { name: "Yoshie", role: "Balancer" }
 ]
 ;
 </script>
