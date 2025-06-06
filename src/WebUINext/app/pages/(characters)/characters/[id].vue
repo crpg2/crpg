@@ -2,6 +2,7 @@
 import type { RouteLocationNormalizedLoaded, RouteLocationRaw } from 'vue-router'
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
+import { useCharacterProvider } from '~/composables/character/use-character'
 // import type { CharacterCharacteristics, CharacterOverallItemsStats } from '~/models/character'
 // import { usePollInterval } from '~/composables/use-poll-interval'
 // import { useWelcome } from '~/composables/use-welcome'
@@ -18,11 +19,11 @@ import type { RouteNamedMap } from 'vue-router/auto-routes'
 // } from '~/services/characters-service'
 // import { useUserStore } from '~/stores/user'
 import {
-  // characterCharacteristicsKey,
-  // characterHealthPointsKey,
-  // characterItemsKey,
-  // characterItemsStatsKey,
-  characterKey,
+// characterCharacteristicsKey,
+// characterHealthPointsKey,
+// characterItemsKey,
+// characterItemsStatsKey,
+// characterKey,
 } from '~/symbols/character'
 
 const props = defineProps<{ id: string }>()
@@ -44,14 +45,14 @@ definePageMeta({
   ],
 })
 
-const characterId = computed(() => Number(props.id))
+const characterId = Number(props.id)
 
 const userStore = useUserStore()
 
 // TODO: the character was validated in middleware, but still try to get rid of the "!"
-const character = computed(() => userStore.characters.find(c => c.id === characterId.value)!)
+const character = computed(() => userStore.characters.find(c => c.id === characterId)!)
 
-provide(characterKey, character) // pass the character object further down the context, to the child pages
+useCharacterProvider(character)
 
 // const { execute: loadCharacterItems, state: characterItems } = useAsyncState(
 //   ({ id }: { id: number }) => getCharacterItems(id),

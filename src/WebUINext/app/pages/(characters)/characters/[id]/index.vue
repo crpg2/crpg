@@ -7,6 +7,10 @@ import {
   minimumRetirementLevel,
 } from '~root/data/constants.json'
 
+import { useCharacter } from '~/composables/character/use-character'
+import { useCharacterRespec } from '~/composables/character/use-character-respec'
+import { usePageLoading } from '~/composables/utils/use-page-loading'
+import { usePollInterval } from '~/composables/utils/use-poll-interval'
 import { getCharacterStatistics } from '~/services/character-service'
 // import type {
 //   HeirloomPointByLevelAggregation,
@@ -36,17 +40,17 @@ import { getCharacterStatistics } from '~/services/character-service'
 // import { t } from '~/services/translate-service'
 // import { useUserStore } from '~/stores/user'
 import {
-  // characterCharacteristicsKey,
-  characterKey,
-  // loadCharacterStatisticsKey,
+// characterCharacteristicsKey,
+// characterKey,
+// loadCharacterStatisticsKey,
 } from '~/symbols/character'
 // import { percentOf } from '~/utils/math'
 
 const userStore = useUserStore()
 const route = useRoute('characters-id')
-// const { gameModes } = useGameMode()
 
-const character = injectStrict(characterKey)
+const { character } = useCharacter()
+// const { gameModes } = useGameMode()
 // const { loadCharacterCharacteristics } = injectStrict(characterCharacteristicsKey)
 
 // const animatedCharacterExperience = useTransition(computed(() => character.value.experience))
@@ -83,20 +87,26 @@ const character = injectStrict(characterKey)
 // })
 
 // TODO: FIXME: не реактивно
-const { data: characterStatistics } = await useAsyncData('character', () => getCharacterStatistics(Number(route.params.id)), {
-  watch: [() => route.params.id],
-})
+// const {
+//   data: characterStatistics,
+// } = await useAsyncData('character', () => getCharacterStatistics(Number(route.params.id)), {
+//   watch: [() => route.params.id],
+// })
 
-// const { state: characterStatistics, execute: loadCharacterStatistics } = useAsyncState(
-//   ({ id }: { id: number }) => getCharacterStatistics(id),
-//   {},
-//   {
-//     immediate: true,
-//     resetOnExecute: false,
-//   },
-// )
+// const {
+//   data: characterStatistics,
+// } = useAsyncData('characterStatistics', () => getCharacterStatistics(Number(route.params.id)), { watch: [() => character.value.id] })
 
-// const { subscribe, unsubscribe } = usePollInterval()
+const {
+  state: characterStatistics,
+  execute: loadCharacterStatistics,
+} = useAsyncState(
+  (id: number) => getCharacterStatistics(id),
+  {},
+  { immediate: false, resetOnExecute: false },
+)
+
+const { subscribe, unsubscribe } = usePollInterval()
 
 // const rankTable = computed(() => createRankTable())
 
@@ -120,56 +130,148 @@ const { data: characterStatistics } = await useAsyncData('character', () => getC
 // const heirloomPointByLevel = computed(() => getHeirloomPointByLevel(character.value.level))
 // const retireTableData = computed(() => getHeirloomPointByLevelAggregation())
 
-// const { loadCharacterLimitations, respecCapability, respecializingCharacter, onRespecializeCharacter } = useCharacterRespec()
+const {
+  loadCharacterLimitations,
+  respecCapability,
+  respecializingCharacter,
+  onRespecializeCharacter,
+} = useCharacterRespec()
 
-// const fetchPageData = (characterId: number) =>
-//   Promise.all([
-//     loadCharacterStatistics(0, { id: characterId }),
-//     loadCharacterLimitations(0, { id: characterId }),
-//   ])
+const fetchPageData = (characterId: number) =>
+  Promise.all([
+    loadCharacterStatistics(0, characterId),
+    loadCharacterLimitations(0, characterId),
+  ])
 
-// onBeforeRouteUpdate(async (to, from) => {
-//   if (to.name === from.name && 'id' in to.params) {
-//     const characterId = Number(to.params.id)
-//     await fetchPageData(characterId)
-//     unsubscribe(loadCharacterStatisticsKey)
-//     subscribe(loadCharacterStatisticsKey, () => {
-//       loadCharacterStatistics(0, { id: characterId })
-//     })
-//   }
-//   return true
+const loadCharacterStatisticsKey = Symbol('loadCharacterStatistics')
+
+onBeforeRouteUpdate((to, from) => {
+  if (to.name === from.name && 'id' in to.params) {
+    const characterId = Number(to.params.id)
+    unsubscribe(loadCharacterStatisticsKey)
+    subscribe(loadCharacterStatisticsKey, () => {
+      loadCharacterStatistics(0, characterId)
+    })
+    fetchPageData(characterId)
+  }
+})
+
+fetchPageData(character.value.id)
+
+// TODO: FIXME:
+// const { togglePageLoading } = usePageLoading()
+
+// watchEffect(() => {
+//   togglePageLoading(respecializingCharacter.value || retiringCharacter.value)
 // })
-
-// await fetchPageData(character.value.id)
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl space-y-12 pb-12">
-    <!-- :active="respecializingCharacter || retiringCharacter" -->
-    <!-- TODO: FIXME: use global page loader, plugin -->
-    <OLoading
-      full-page
-      icon-size="xl"
-    />
-
-    <UiFormGroup
-      :label="$t('character.settings.group.overview.title')"
-      :collapsable="false"
+  <div class="mx-auto max-w-2xl space-y-12">
+    <UCard
+      :ui="{
+        body: 'space-y-6',
+        footer: 'sticky bottom-0 grid grid-cols-3 gap-4 bg-bg-main/50 backdrop-blur-sm',
+      }"
     >
-      <div class="space-y-6">
-        <CharacterOverview
+      <template #header>
+        <UiDataCell>
+          <div class="text-sm">
+            {{ $t('character.settings.group.overview.title') }}
+          </div>
+        </UiDataCell>
+      </template>
+
+      <CharacterOverview
+        :character
+        :user-experience-multiplier="userStore.user!.experienceMultiplier"
+      />
+
+      <UiDecorSeparator />
+
+      <CharacterOverviewCompetitive
+        v-if="!character.forTournament"
+        :character-statistics
+      />
+
+      <template #footer>
+        <CharacterActionRespec
           :character
-          :user-experience-multiplier="userStore.user!.experienceMultiplier"
+          :respec-capability
+          @respec="() => onRespecializeCharacter(character.id)"
         />
 
-        <UiDivider />
-
-        <CharacterOverviewCompetitive
-          v-if="!character.forTournament"
-          :character-statistics
+        <CharacterActionRetire
+          :character
+          :respec-capability
+          @respec="() => onRespecializeCharacter(character.id)"
         />
-      </div>
-    </UiFormGroup>
+        <!-- <template v-if="!character.forTournament"> -->
+        <!-- <Modal :disabled="!canSetCharacterForTournament">
+          <VTooltip placement="auto">
+            <div>
+              <OButton
+                variant="secondary"
+                size="xl"
+                expanded
+                icon-left="member"
+                :disabled="!canSetCharacterForTournament"
+                data-aq-character-action="forTournament"
+                :label="$t('character.settings.tournament.title')"
+              />
+            </div>
+            <template #popper>
+              <div class="prose prose-invert">
+                <h5 class="text-content-100">
+                  {{ $t('character.settings.tournament.tooltip.title') }}
+                </h5>
+
+                <i18n-t
+                  scope="global"
+                  keypath="character.settings.tournament.tooltip.desc"
+                  tag="p"
+                >
+                  <template #tournamentLevel>
+                    <span class="text-sm font-bold text-content-100">
+                      {{ tournamentLevelThreshold }}
+                    </span>
+                  </template>
+                </i18n-t>
+
+                <i18n-t
+                  v-if="!canSetCharacterForTournament"
+                  scope="global"
+                  keypath="character.settings.tournament.tooltip.requiredDesc"
+                  class="text-status-danger"
+                  tag="p"
+                >
+                  <template #requiredLevel>
+                    <span class="text-xs font-bold">{{ `<${tournamentLevelThreshold}` }}</span>
+                  </template>
+                </i18n-t>
+              </div>
+            </template>
+          </VTooltip>
+
+          <template #popper="{ hide }">
+            <ConfirmActionForm
+              :title="$t('character.settings.tournament.dialog.title')"
+              :description="$t('character.settings.tournament.dialog.desc')"
+              :name="character.name"
+              :confirm-label="$t('action.apply')"
+              @cancel="hide"
+              @confirm="
+                () => {
+                  onSetCharacterForTournament();
+                  hide();
+                }
+              "
+            />
+          </template>
+        </Modal> -->
+      <!-- </template> -->
+      </template>
+    </UCard>
 
     <!--
     <FormGroup

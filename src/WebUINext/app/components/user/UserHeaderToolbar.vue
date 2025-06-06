@@ -71,6 +71,14 @@ const items = computed<DropdownMenuItem[][]>(() => [
 
 <template>
   <div class="flex items-center gap-3">
+    <!-- TODO: condition -->
+    <UButton
+      size="md"
+      variant="subtle"
+      icon="crpg:gift"
+      :label="$t('welcome.shortTitle')"
+    />
+
     <AppCoin :value="Number(animatedUserGold.toFixed(0))" />
 
     <USeparator orientation="vertical" class="h-6" />

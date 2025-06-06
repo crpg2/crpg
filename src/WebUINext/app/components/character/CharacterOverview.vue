@@ -1,120 +1,99 @@
 <script setup lang="ts">
 import {
-  experienceMultiplierByGeneration,
   maxExperienceMultiplierForGeneration,
   maximumLevel,
-  minimumRetirementLevel,
 } from '~root/data/constants.json'
 
 import type { Character } from '~/models/character'
 
-const { character } = defineProps<{
+import { getExperienceForLevel } from '~/services/character-service'
+
+const props = defineProps<{
   character: Character
   userExperienceMultiplier: number
 }>()
+
+const animatedCharacterExperience = useTransition(() => props.character.experience)
+const currentLevelExperience = computed(() => getExperienceForLevel(props.character.level))
+const nextLevelExperience = computed(() => getExperienceForLevel(props.character.level + 1))
+const experiencePercentToNextLevel = computed(() =>
+  percentOf(
+    props.character.experience - currentLevelExperience.value,
+    nextLevelExperience.value - currentLevelExperience.value,
+  ),
+)
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-2 text-2xs">
+  <div class="grid grid-cols-2 gap-2">
     <UiSimpleTableRow
       :label="$t('character.statistics.level.title')"
-      :tooltip="
-        character.forTournament
-          ? { title: $t('character.statistics.level.lockedTooltip.title', { maxLevel: maximumLevel }) }
-          : { title: $t('character.statistics.level.tooltip.title', { maxLevel: maximumLevel }) }
+      :tooltip="character.forTournament
+        ? { title: $t('character.statistics.level.lockedTooltip.title', { maxLevel: maximumLevel }) }
+        : { title: $t('character.statistics.level.tooltip.title', { maxLevel: maximumLevel }) }
       "
     >
-      <div
-        class="flex gap-1.5"
-        :class="[character.forTournament ? 'text-status-warning' : 'text-content-100']"
-      >
+      <UiDataCell :class="{ 'text-warning': character.forTournament }">
         {{ character.level }}
-        <OIcon
-          v-if="character.forTournament"
-          icon="lock"
-          size="sm"
-        />
-      </div>
+        <template v-if="character.forTournament" #rightContent>
+          <UIcon name="crpg:lock" class="size-4" />
+        </template>
+      </UiDataCell>
     </UiSimpleTableRow>
 
     <template v-if="!character.forTournament">
       <UiSimpleTableRow
         :label="$t('character.statistics.generation.title')"
         :value="String(character.generation)"
-        :tooltip="{
-          title: $t('character.statistics.generation.tooltip.title'),
-        }"
+        :tooltip="{ title: $t('character.statistics.generation.tooltip.title') }"
       />
 
       <UiSimpleTableRow
         :label="$t('character.statistics.expMultiplier.title')"
-        :value=" $t('character.format.expMultiplier', { multiplier: $n(userExperienceMultiplier) })"
+        :value="$t('character.format.expMultiplier', { multiplier: $n(userExperienceMultiplier) })"
         :tooltip="{
-          title: $t('character.statistics.expMultiplier.tooltip.title', {
-            maxExpMulti: $t('character.format.expMultiplier', {
-              multiplier: $n(maxExperienceMultiplierForGeneration),
-            }),
-          }),
+          title: $t('character.statistics.expMultiplier.tooltip.title', { maxExpMulti: $t('character.format.expMultiplier', { multiplier: $n(maxExperienceMultiplierForGeneration) }) }),
           description: $t('character.statistics.expMultiplier.tooltip.desc'),
         }"
       />
 
-      <div class="col-span-2 mt-12 px-4 py-2.5">
-        TODO:
-        <!-- <VueSlider
-                :key="currentLevelExperience"
-                class="!cursor-default !opacity-100"
-                :model-value="Number(animatedCharacterExperience.toFixed(0))"
-                disabled
-                tooltip="always"
-                :min="currentLevelExperience"
-                :max="nextLevelExperience"
-                :marks="[currentLevelExperience, nextLevelExperience]"
-              >
-                <template #mark="{ pos, value, label }">
-                  <div
-                    class="absolute top-2.5 whitespace-nowrap"
-                    :class="{
-                      '-translate-x-full': value === nextLevelExperience,
-                    }"
-                    :style="{ left: `${pos}%` }"
-                  >
-                    {{ $n(label) }}
-                  </div>
-                </template>
-                <template #tooltip="{ value }">
-                  <div
-                    class="vue-slider-dot-tooltip-inner vue-slider-dot-tooltip-inner-top vue-slider-dot-tooltip-inner-disabled"
-                  >
-                    <div class="flex items-center">
-                      <VTooltip placement="bottom">
-                        <div class="flex items-center gap-1 font-semibold text-primary">
-                          <OIcon
-                            icon="experience"
-                            size="xl"
-                          />
-                          {{
-                            t('character.statistics.experience.format', {
-                              exp: $n(value),
-                              expPercent: $n(experiencePercentToNextLEvel / 100, 'percent'),
-                            })
-                          }}
-                        </div>
-                        <template #popper>
-                          <div
-                            class="prose prose-invert"
-                            v-html="
-                              $t('character.statistics.experience.tooltip', {
-                                remainExpToUp: $n(nextLevelExperience - character.experience),
-                              })
-                            "
-                          />
-                        </template>
-                      </VTooltip>
-                    </div>
-                  </div>
-                </template>
-              </VueSlider> -->
+      <div class="col-span-2 mt-16 px-4">
+        <UTooltip>
+          <USlider
+            :default-value="character.experience"
+            :min="currentLevelExperience"
+            :max="nextLevelExperience"
+            disabled
+            size="lg"
+            :tooltip="{
+              disableClosingTrigger: true,
+              open: true,
+              arrow: true,
+              text: $t('character.statistics.experience.format', {
+                exp: $n(Number(animatedCharacterExperience.toFixed(0))),
+                expPercent: $n(experiencePercentToNextLevel / 100, 'percent'),
+              }),
+              content: {
+                side: 'top',
+              },
+            }"
+          />
+          <template #content>
+            <div
+              class="prose prose-invert"
+              v-html="$t('character.statistics.experience.tooltip', { remainExpToUp: $n(nextLevelExperience - character.experience) })"
+            />
+          </template>
+        </UTooltip>
+
+        <div class="mt-1.5 flex justify-between">
+          <div class="text-2xs text-muted">
+            {{ $n(currentLevelExperience) }}
+          </div>
+          <div class="text-2xs text-muted">
+            {{ $n(nextLevelExperience) }}
+          </div>
+        </div>
       </div>
     </template>
   </div>

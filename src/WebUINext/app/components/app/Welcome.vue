@@ -3,14 +3,16 @@ import { defaultGold, newUserStartingCharacterLevel } from '~root/data/constants
 
 import { useSettingsStore } from '~/stores/settings'
 
-defineProps<{ open: boolean }>()
+defineEmits<{
+  close: []
+}>()
 
 const { settings } = storeToRefs(useSettingsStore())
 </script>
 
 <template>
   <UModal
-    :open
+    open
     :ui="{
       header: 'relative min-h-40 p-0 items-center justify-center overflow-hidden rounded-t-lg',
       content: 'max-w-[44rem]',
@@ -21,6 +23,7 @@ const { settings } = storeToRefs(useSettingsStore())
       color: 'secondary',
       variant: 'solid',
     }"
+    @update:open="$emit('close')"
   >
     <template #header>
       <div class="absolute inset-0">

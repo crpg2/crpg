@@ -31,7 +31,7 @@ const scrollToTop = () =>
           :region="userStore.user!.region"
         >
           <div
-            class="group flex cursor-pointer select-none items-center gap-2 hover:text-content-100"
+            class="group flex cursor-pointer items-center gap-2 select-none hover:text-content-100"
             :class="{ 'text-content-100': shown }"
           >
             <OIcon
@@ -54,14 +54,13 @@ const scrollToTop = () =>
         </AppHHTooltip>
       </div>
 
-      <UiDivider inline />
+      <USeparator orientation="vertical" class="h-8" />
 
-      <OButton
-        v-tooltip="$t('scrollToTop')"
-        variant="transparent"
+      <UButton
         size="xl"
-        icon-right="arrow-up"
-        rounded
+        color="secondary"
+        variant="subtle"
+        icon="crpg:arrow-up"
         @click="scrollToTop"
       />
     </div>
