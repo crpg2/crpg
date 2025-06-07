@@ -4,13 +4,17 @@ import {
   deleteUsersSelfCharactersById,
   getUsersByUserIdCharacters,
   getUsersSelfCharacters,
+  getUsersSelfCharactersByIdCharacteristics,
   getUsersSelfCharactersByIdLimitations,
   getUsersSelfCharactersByIdStatistics,
   putUsersSelfCharactersById,
   putUsersSelfCharactersByIdActive,
+  putUsersSelfCharactersByIdCharacteristics,
+  putUsersSelfCharactersByIdCharacteristicsConvert,
   putUsersSelfCharactersByIdRespecialize,
   putUsersSelfCharactersByIdRetire,
   putUsersSelfCharactersByIdTournament,
+
 } from '#hey-api/sdk.gen'
 import {
   attributePointsPerLevel,
@@ -132,6 +136,27 @@ export const canRetireValidate = (level: number) => level >= minimumRetirementLe
 export const retireCharacter = (characterId: number) =>
   putUsersSelfCharactersByIdRetire({ composable: '$fetch', path: { id: characterId } })
 
+export const getCharacterCharacteristics = async (characterId: number): Promise<CharacterCharacteristics> => {
+  const { data } = await getUsersSelfCharactersByIdCharacteristics({ composable: '$fetch', path: { id: characterId } })
+  return data
+}
+
+export const convertCharacterCharacteristics = async (
+  characterId: number,
+  conversion: CharacteristicConversion,
+): Promise<CharacterCharacteristics> => {
+  const { data } = await putUsersSelfCharactersByIdCharacteristicsConvert({ composable: '$fetch', path: { id: characterId }, body: { conversion } })
+  return data
+}
+
+export const updateCharacterCharacteristics = async (
+  characterId: number,
+  req: CharacterCharacteristics,
+) => {
+  const { data } = await putUsersSelfCharactersByIdCharacteristics({ composable: '$fetch', path: { id: characterId }, body: req })
+  return data
+}
+
 export const getCharacterStatistics = async (characterId: number): Promise<Partial<Record<GameMode, CharacterStatistics>>> => {
   const { data } = await getUsersSelfCharactersByIdStatistics({ composable: '$fetch', path: { id: characterId } })
   return data!
@@ -208,22 +233,6 @@ export const getCharacterLimitations = async (characterId: number): Promise<Char
 //     return out
 //   }, {} as Record<GameMode, CharacterEarnedData>)
 // }
-
-// export const getCharacterCharacteristics = (characterId: number) =>
-//   get<CharacterCharacteristics>(`/users/self/characters/${characterId}/characteristics`)
-
-// export const convertCharacterCharacteristics = (
-//   characterId: number,
-//   conversion: CharacteristicConversion,
-// ) =>
-//   put<CharacterCharacteristics>(`/users/self/characters/${characterId}/characteristics/convert`, {
-//     conversion,
-//   })
-
-// export const updateCharacterCharacteristics = (
-//   characterId: number,
-//   req: CharacterCharacteristics,
-// ) => put<CharacterCharacteristics>(`/users/self/characters/${characterId}/characteristics`, req)
 
 const computeExperienceDistribution = (level: number): number => {
   const [a, b] = experienceForLevelCoefs as [number, number]
@@ -393,9 +402,8 @@ export const createDefaultCharacteristic = (): CharacterCharacteristics =>
     },
   })
 
-export const characteristicBonusByKey: Partial<
-  Record<CharacteristicKey, { value: number, style: 'percent' | 'decimal' }>
-> = {
+export interface CharacteristicBonus { value: number, style: 'percent' | 'decimal' }
+export const characteristicBonusByKey: Partial<Record<CharacteristicKey, CharacteristicBonus>> = {
   ironFlesh: {
     style: 'decimal',
     value: healthPointsForIronFlesh,

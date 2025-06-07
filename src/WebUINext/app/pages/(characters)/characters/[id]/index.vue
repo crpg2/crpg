@@ -68,11 +68,10 @@ const {
   onRespecializeCharacter,
 } = useCharacterRespec()
 
-const fetchPageData = (characterId: number) =>
-  Promise.all([
-    loadCharacterStatistics(0, characterId),
-    loadCharacterLimitations(0, characterId),
-  ])
+const fetchPageData = (characterId: number) => Promise.all([
+  loadCharacterStatistics(0, characterId),
+  loadCharacterLimitations(0, characterId),
+])
 
 const loadCharacterStatisticsKey = Symbol('loadCharacterStatistics')
 
