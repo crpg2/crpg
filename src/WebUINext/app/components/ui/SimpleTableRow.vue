@@ -14,7 +14,7 @@ defineProps<{
     :disabled="!tooltip"
     :text="tooltip?.title"
     :ui="{
-      content: 'max-w-xl z-[1000]',
+      content: 'max-w-xl',
     }"
   >
     <UiDataCell class="rounded px-3 py-2.5 hover:bg-base-200">

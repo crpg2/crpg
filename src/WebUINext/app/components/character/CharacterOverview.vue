@@ -69,6 +69,7 @@ const experiencePercentToNextLevel = computed(() =>
               disableClosingTrigger: true,
               open: true,
               arrow: true,
+              portal: false,
               text: $t('character.statistics.experience.format', {
                 exp: $n(Number(animatedCharacterExperience.toFixed(0))),
                 expPercent: $n(experiencePercentToNextLevel / 100, 'percent'),

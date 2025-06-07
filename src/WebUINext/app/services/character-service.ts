@@ -9,6 +9,8 @@ import {
   putUsersSelfCharactersById,
   putUsersSelfCharactersByIdActive,
   putUsersSelfCharactersByIdRespecialize,
+  putUsersSelfCharactersByIdRetire,
+  putUsersSelfCharactersByIdTournament,
 } from '#hey-api/sdk.gen'
 import {
   attributePointsPerLevel,
@@ -122,13 +124,13 @@ export const canSetCharacterForTournamentValidate = (character: Character) =>
     || character.level >= tournamentLevelThreshold
   )
 
-// export const setCharacterForTournament = (characterId: number) =>
-//   put<Character>(`/users/self/characters/${characterId}/tournament`)
+export const setCharacterForTournament = (characterId: number) =>
+  putUsersSelfCharactersByIdTournament({ composable: '$fetch', path: { id: characterId } })
 
 export const canRetireValidate = (level: number) => level >= minimumRetirementLevel
 
-// export const retireCharacter = (characterId: number) =>
-//   put<Character>(`/users/self/characters/${characterId}/retire`)
+export const retireCharacter = (characterId: number) =>
+  putUsersSelfCharactersByIdRetire({ composable: '$fetch', path: { id: characterId } })
 
 export const getCharacterStatistics = async (characterId: number): Promise<Partial<Record<GameMode, CharacterStatistics>>> => {
   const { data } = await getUsersSelfCharactersByIdStatistics({ composable: '$fetch', path: { id: characterId } })
@@ -542,38 +544,38 @@ export const computeSpeedStats = (
 // export const computeOverallAverageRepairCostByHour = (items: Item[]) =>
 //   Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))
 
-// export const getHeirloomPointByLevel = (level: number) =>
-//   level < minimumRetirementLevel ? 0 : 2 ** (level - minimumRetirementLevel)
+export const getHeirloomPointByLevel = (level: number) =>
+  level < minimumRetirementLevel ? 0 : 2 ** (level - minimumRetirementLevel)
 
-// export interface HeirloomPointByLevelAggregation { level: number[], points: number }
+export interface HeirloomPointByLevelAggregation { level: number[], points: number }
 
-// export const getHeirloomPointByLevelAggregation = () =>
-//   range(minimumRetirementLevel, maximumLevel).reduce((out, level) => {
-//     const points = getHeirloomPointByLevel(level)
-//     const idx = out.findIndex(item => item.points === points)
+export const getHeirloomPointByLevelAggregation = () =>
+  range(minimumRetirementLevel, maximumLevel)
+    .reduce((out, level) => {
+      const points = getHeirloomPointByLevel(level)
+      const idx = out.findIndex(item => item.points === points)
 
-//     if (idx === -1) {
-//       out.push({ level: [level], points })
-//     }
-//     else {
-//       out[idx].level.push(level)
-//     }
+      if (idx === -1) {
+        out.push({ level: [level], points })
+      }
+      else {
+        out[idx].level.push(level)
+      }
 
-//     return out
-//   }, [] as HeirloomPointByLevelAggregation[])
+      return out
+    }, [] as HeirloomPointByLevelAggregation[])
 
-// export const getExperienceMultiplierBonus = (multiplier: number) => {
-//   if (multiplier < maxExperienceMultiplierForGeneration) {
-//     return experienceMultiplierByGeneration
-//   }
+export const getExperienceMultiplierBonus = (multiplier: number) => {
+  if (multiplier < maxExperienceMultiplierForGeneration) {
+    return experienceMultiplierByGeneration
+  }
 
-//   return 0
-// }
+  return 0
+}
 
-// // TODO: Spec
+// TODO: Spec
 export const getExperienceMultiplierBonusByRetireCount = (retireCount: number) => {
   let out = 0
-
   while (retireCount > 0) {
     out += experienceMultiplierByGeneration
     retireCount--
@@ -582,7 +584,7 @@ export const getExperienceMultiplierBonusByRetireCount = (retireCount: number) =
   return out
 }
 
-// // TODO: Spec
+// TODO: Spec
 export const sumExperienceMultiplierBonus = (multiplierA: number, multiplierB: number) => {
   return clamp(multiplierA + multiplierB, 0, maxExperienceMultiplierForGeneration)
 }

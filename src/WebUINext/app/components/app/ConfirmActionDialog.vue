@@ -65,6 +65,13 @@ const onConfirm = async () => {
     @update:open="onCancel"
   >
     <template #body>
+      <UAlert color="error">
+        <template #title>
+          Are you sure you want to retire your character? This action cannot be undone
+        </template>
+      </UAlert>
+      <slot name="description" />
+
       <i18n-t
         scope="global"
         keypath="confirm.name"
