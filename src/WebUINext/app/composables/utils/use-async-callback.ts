@@ -58,7 +58,9 @@ export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsy
       loading.value = false
       error.value = e
       onError(e)
-      if (throwError) { throw e }
+      if (throwError) {
+        throw e
+      }
     }
   }) as T
 
