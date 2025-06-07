@@ -1,42 +1,33 @@
 <script setup lang="ts">
 import { timeout } from 'es-toolkit'
 
-import type { CharacterCharacteristics, SkillKey } from '~/models/character'
+import type { CharacterCharacteristics } from '~/models/character'
 
 import { useCharacter } from '~/composables/character/use-character'
-import { useCharacterCharacteristic, useCharacterCharacteristicBuilder, useCharacterCharacteristicProvider } from '~/composables/character/use-character-characteristic'
+import { useCharacterCharacteristicBuilder, useCharacterCharacteristicProvider } from '~/composables/character/use-character-characteristic'
+import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
-// import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
-// import { useCharacterRespec } from '~/composables/character/use-character-respec'
-// import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { CharacteristicConversion } from '~/models/character'
-// import type { SkillKey } from '~/models/character'
-import { characteristicBonusByKey, computeHealthPoints, convertCharacterCharacteristics, createEmptyCharacteristic, getCharacterCharacteristics, updateCharacterCharacteristics } from '~/services/character-service'
+import {
+  computeHealthPoints,
+  convertCharacterCharacteristics,
+  createEmptyCharacteristic,
+  getCharacterCharacteristics,
+  updateCharacterCharacteristics,
+} from '~/services/character-service'
+
 // import {
-//   characteristicBonusByKey,
-//   computeHealthPoints,
-//   convertCharacterCharacteristics,
-//   updateCharacterCharacteristics,
-// } from '~/services/characters-service'
-// import { notify } from '~/services/notification-service'
-// import { t } from '~/services/translate-service'
-// import { useUserStore } from '~/stores/user'
-// import {
-//   characterCharacteristicsKey,
 //   characterItemsStatsKey,
-//   characterKey,
 // } from '~/symbols/character'
 
-// const userStore = useUserStore()
-
-// const { characterCharacteristics, setCharacterCharacteristics } = injectStrict(characterCharacteristicsKey)
 // const itemsStats = injectStrict(characterItemsStatsKey)
+
+const route = useRoute('characters-id-characteristic')
 const { t } = useI18n()
 const toast = useToast()
 
 const { character } = useCharacter()
-const route = useRoute('characters-id-characteristic')
 
 const {
   state: characterCharacteristics,
@@ -47,25 +38,19 @@ const {
   { immediate: false, resetOnExecute: false },
 )
 
+useCharacterCharacteristicProvider(characterCharacteristics)
+
 const setCharacterCharacteristicsSync = (characteristic: CharacterCharacteristics) => {
   characterCharacteristics.value = characteristic
 }
 
-// TODO:
-// const { characterCharacteristics } = useCharacterCharacteristicProvider()
-// useCharacterProvider(character)
-// const { characterCharacteristics } = useCharacterCharacteristic()
 const {
   characteristics,
-  //
   canConvertAttributesToSkills,
   canConvertSkillsToAttributes,
   currentSkillRequirementsSatisfied,
   isChangeValid,
   wasChangeMade,
-  //
-  formSchema,
-  //
   getInputProps,
   onInput,
   reset: resetCharacterCharacteristicBuilder,
@@ -81,7 +66,7 @@ const {
     setCharacterCharacteristicsSync(
       await convertCharacterCharacteristics(character.value.id, conversion),
     ),
-    timeout(400),
+    timeout(500),
   ])
 })
 
@@ -102,6 +87,16 @@ const {
   })
 })
 
+const { respecCapability, onRespecializeCharacter: respecializeCharacter } = useCharacterRespec()
+
+const {
+  execute: onRespecializeCharacter,
+  loading: respecializingCharacter,
+} = useAsyncCallback(async () => {
+  await respecializeCharacter(character.value.id)
+  loadCharacterCharacteristics(0, character.value.id)
+})
+
 const fetchPageData = (characterId: number) => Promise.all([
   loadCharacterCharacteristics(0, characterId),
 ])
@@ -117,217 +112,68 @@ fetchPageData(Number(route.params.id))
 const { togglePageLoading } = usePageLoading()
 
 watchEffect(() => {
-  togglePageLoading(commitingCharacterCharacteristics.value)
+  togglePageLoading(commitingCharacterCharacteristics.value || respecializingCharacter.value)
 })
 </script>
 
 <template>
   <div class="relative mx-auto max-w-4xl">
     <!-- eslint-disable-next-line tailwindcss/no-custom-classname -->
-    <div class="statsGrid mb-8 grid gap-6">
-      <CharacterCharacteristicsBuilderGroup
-        v-for="fieldsGroup in formSchema"
-        :id="fieldsGroup.key"
-        :key="fieldsGroup.key"
-        :fields="fieldsGroup.children"
-        :style="{ 'grid-area': fieldsGroup.key }"
-        :points="characteristics[fieldsGroup.key].points"
-      >
-        <template #title-trailing>
-          <UTooltip v-if="fieldsGroup.key === 'attributes'">
-            <UButton
-              variant="outline"
-              size="xs"
-              :disabled="!canConvertAttributesToSkills"
-              :loading="convertingCharacterCharacteristics"
-              icon="crpg:convert"
-              data-aq-convert-attributes-action
-              @click="onConvertCharacterCharacteristics(CharacteristicConversion.AttributesToSkills)"
-            />
-            <template #content>
-              <div class="prose prose-invert">
-                <h4>
-                  {{ $t('character.characteristic.convert.attrsToSkills.title') }}
-                </h4>
-                <i18n-t
-                  scope="global"
-                  keypath="character.characteristic.convert.attrsToSkills.tooltip"
-                  class="text-content-200"
-                  tag="p"
-                >
-                  <template #attribute>
-                    <span class="font-bold text-status-danger">1</span>
-                  </template>
-                  <template #skill>
-                    <span class="font-bold text-status-success">2</span>
-                  </template>
-                </i18n-t>
-              </div>
-            </template>
-          </UTooltip>
-          <UTooltip v-else-if="fieldsGroup.key === 'skills'">
-            <UButton
-              variant="outline"
-              size="xs"
-              :disabled="!canConvertSkillsToAttributes"
-              :loading="convertingCharacterCharacteristics"
-              icon="crpg:convert"
-              data-aq-convert-skills-action
-              @click="onConvertCharacterCharacteristics(CharacteristicConversion.SkillsToAttributes)"
-            />
-            <template #content>
-              <div class="prose prose-invert">
-                <h4>
-                  {{ $t('character.characteristic.convert.skillsToAttrs.title') }}
-                </h4>
-                <i18n-t
-                  scope="global"
-                  keypath="character.characteristic.convert.skillsToAttrs.tooltip"
-                  class="text-content-200"
-                  tag="p"
-                >
-                  <template #skill>
-                    <span class="font-bold text-status-danger">2</span>
-                  </template>
-                  <template #attribute>
-                    <span class="font-bold text-status-success">1</span>
-                  </template>
-                </i18n-t>
-              </div>
-            </template>
-          </UTooltip>
-        </template>
-
-        <template #default="{ field }">
-          <UInputNumber
-            :data-aq-control="`${fieldsGroup.key}:${field.key}`"
-            v-bind="getInputProps(fieldsGroup.key, field.key)"
-            variant="outline"
-            :ui="{
-              base: 'w-28',
-            }"
-            @update:model-value="(value) => onInput(fieldsGroup.key, field.key, value)"
-          />
-        </template>
-      </CharacterCharacteristicsBuilderGroup>
-
-      <!-- <div class="rounded-xl border border-border-200 py-2">
-          <div
-            v-for="field in fieldsGroup.children"
-            :key="field.key"
-            class="flex items-center justify-between gap-2 px-4 py-2.5 text-2xs hover:bg-base-200"
-          >
-            <VTooltip>
-              <div
-                class="flex items-center gap-1 text-2xs"
-                :class="{
-                  'text-status-danger':
-                    fieldsGroup.key === 'skills'
-                    && !currentSkillRequirementsSatisfied(field.key as SkillKey),
-                }"
-              >
-                {{ $t(`character.characteristic.${fieldsGroup.key}.children.${field.key}.title`) }}
-                <OIcon
-                  v-if="
-                    fieldsGroup.key === 'skills'
-                      && !currentSkillRequirementsSatisfied(field.key as SkillKey)
-                  "
-                  icon="alert-circle"
-                  size="xs"
-                />
-              </div>
-
-              <template #popper>
-                <div class="prose prose-invert">
-                  <h4>
-                    {{ $t(`character.characteristic.${fieldsGroup.key}.children.${field.key}.title`) }}
-                  </h4>
-
-                  <i18n-t
-                    scope="global"
-                    :keypath="`character.characteristic.${fieldsGroup.key}.children.${field.key}.desc`"
-                    tag="p"
-                  >
-                    <template
-                      v-if="field.key in characteristicBonusByKey"
-                      #value
-                    >
-                      <span class="font-bold text-content-100">
-                        {{
-                          $n(characteristicBonusByKey[field.key]!.value, {
-                            style: characteristicBonusByKey[field.key]!.style,
-                            minimumFractionDigits: 0,
-                          })
-                        }}
-                      </span>
-                    </template>
-                  </i18n-t>
-
-                  <p
-                    v-if="$t(`character.characteristic.${fieldsGroup.key}.children.${field.key}.requires`) !== ''"
-                    class="text-status-warning"
-                  >
-                    {{ $t('character.characteristic.requires.title') }}:
-                    {{ $t(`character.characteristic.${fieldsGroup.key}.children.${field.key}.requires`) }}
-                  </p>
-                </div>
-              </template>
-            </VTooltip>
-
-            <NumericInput
-              :exponential="0.5"
-              readonly
-              :data-aq-control="`${fieldsGroup.key}:${field.key}`"
-              v-bind="getInputProps(fieldsGroup.key, field.key)"
-              @update:model-value="onInput(fieldsGroup.key, field.key, $event)"
-            />
-          </div>
-        </div>
-    </div> -->
+    <div class="statsGrid grid gap-6">
+      <CharacterCharacteristicsBuilder
+        :get-input-props
+        :characteristics
+        :check-current-skill-requirements-satisfied="currentSkillRequirementsSatisfied"
+        :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, loading: convertingCharacterCharacteristics }"
+        :convert-skills-to-attributes-state="{ disabled: !canConvertSkillsToAttributes, loading: convertingCharacterCharacteristics }"
+        @input="onInput"
+        @convert-attributes-to-skills="onConvertCharacterCharacteristics(CharacteristicConversion.AttributesToSkills)"
+        @convert-skills-to-attributes="onConvertCharacterCharacteristics(CharacteristicConversion.SkillsToAttributes)"
+      />
 
       <div
         class="grid gap-2 self-start rounded-xl border border-border-200 py-2 text-2xs"
         style="grid-area: stats"
       >
-      <!-- <CharacterStats
-          :characteristics="characteristics!"
-          :weight="itemsStats.weight"
-          :longest-weapon-length="itemsStats.longestWeaponLength"
+        <!-- :weight="itemsStats.weight"
+      :longest-weapon-length="itemsStats.longestWeaponLength" -->
+        <CharacterStats
+          :characteristics
+          :weight="22"
+          :longest-weapon-length="33"
           :health-points="healthPoints"
-        /> -->
+        />
       </div>
     </div>
 
-    <div
-      class="sticky bottom-0 left-0 w-full py-4 backdrop-blur-sm"
-    >
-      <div class="flex max-w-4xl items-center justify-center gap-4">
+    <div class="sticky bottom-0 left-0 flex w-full max-w-4xl items-center justify-center gap-4 py-3 backdrop-blur-sm">
+      <UButton
+        :disabled="!wasChangeMade"
+        color="secondary"
+        variant="outline"
+        size="lg"
+        icon="crpg:reset"
+        :label="$t('action.reset')"
+        data-aq-reset-action
+        @click="resetCharacterCharacteristicBuilder"
+      />
+
+      <AppConfirmActionTooltip @confirm="onCommitCharacterCharacteristics">
         <UButton
-          :disabled="!wasChangeMade"
-          color="secondary"
           size="lg"
-          icon="crpg:reset"
-          :label="$t('action.reset')"
-          data-aq-reset-action
-          @click="resetCharacterCharacteristicBuilder"
+          icon="crpg:check"
+          :disabled="!wasChangeMade || !isChangeValid"
+          :label="$t('action.commit')"
+          data-aq-commit-action
         />
+      </AppConfirmActionTooltip>
 
-        <AppConfirmActionTooltip @confirm="onCommitCharacterCharacteristics">
-          <UButton
-            size="lg"
-            icon="crpg:check"
-            :disabled="!wasChangeMade || !isChangeValid"
-            :label="$t('action.commit')"
-            data-aq-commit-action
-          />
-        </AppConfirmActionTooltip>
-
-      <!-- <CharacterRespecButtonModal
-          :respec-capability
-          :character
-          @respec="() => onRespecializeCharacter(character.id)"
-        /> -->
-      </div>
+      <USeparator orientation="vertical" class="h-8" />
+      <CharacterActionRespec
+        :character
+        :respec-capability
+        @respec="onRespecializeCharacter"
+      />
     </div>
   </div>
 </template>

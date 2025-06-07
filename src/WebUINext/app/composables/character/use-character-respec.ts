@@ -1,7 +1,6 @@
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { getCharacterLimitations, getRespecCapability, respecializeCharacter } from '~/services/character-service'
 import { useUserStore } from '~/stores/user'
-import { characterCharacteristicsKey } from '~/symbols/character'
 
 import { useCharacter } from './use-character'
 
@@ -31,8 +30,6 @@ export const useCharacterRespec = () => {
     userStore.isRecentUser,
   ))
 
-  // const { loadCharacterCharacteristics } = injectStrict(characterCharacteristicsKey)
-
   const {
     execute: onRespecializeCharacter,
     loading: respecializingCharacter,
@@ -44,8 +41,8 @@ export const useCharacterRespec = () => {
         userStore.fetchUser(), // update gold
         userStore.fetchCharacters(), // update characters
         loadCharacterLimitations(0, characterId),
-        // loadCharacterCharacteristics(0, { id: characterId }), // TODO: FIXME: только на странице с характеристиками
       ])
+
       toast.add({
         title: t('character.settings.respecialize.notify.success'),
         close: false,

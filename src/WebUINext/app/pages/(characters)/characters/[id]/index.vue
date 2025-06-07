@@ -25,8 +25,8 @@ const {
 const {
   execute: onRetireCharacter,
   loading: retiringCharacter,
-} = useAsyncCallback(async (characterId: number) => {
-  await retireCharacter(characterId)
+} = useAsyncCallback(async () => {
+  await retireCharacter(character.value.id)
 
   await Promise.all([
     userStore.fetchUser(), // update user
@@ -44,8 +44,8 @@ const {
 const {
   execute: onSetCharacterForTournament,
   loading: settingCharacterForTournament,
-} = useAsyncCallback(async (characterId: number) => {
-  await setCharacterForTournament(characterId)
+} = useAsyncCallback(async () => {
+  await setCharacterForTournament(character.value.id)
 
   await Promise.all([
     userStore.fetchCharacters(), // update char
@@ -127,12 +127,12 @@ watchEffect(() => {
             :character
             :respec-capability
             :user-experience-multiplier="userStore.user!.experienceMultiplier"
-            @retire="() => onRetireCharacter(character.id)"
+            @retire="onRetireCharacter"
           />
 
           <CharacterActionTournament
             :character
-            @tournament="() => onSetCharacterForTournament(character.id)"
+            @tournament="onSetCharacterForTournament"
           />
         </template>
       </template>

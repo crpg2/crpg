@@ -429,7 +429,7 @@ export const characteristicBonusByKey: Partial<Record<CharacteristicKey, Charact
 export const computeHealthPoints = (ironFlesh: number, strength: number): number =>
   defaultHealthPoints + ironFlesh * healthPointsForIronFlesh + strength * healthPointsForStrength
 
-// // TODO: unit?
+// TODO: unit? to backend
 export const computeSpeedStats = (
   strength: number,
   athletics: number,
@@ -463,8 +463,7 @@ export const computeSpeedStats = (
     0,
   )
 
-  const timeToMaxSpeed
-    = 0.8
+  const timeToMaxSpeed = 0.8
     * (1 + perceivedWeight / 15)
     * (20 / (20 + ((20 * athletics + 3 * agility) / 120) ** 2))
     + timeToMaxSpeedWeaponLenghthTerm

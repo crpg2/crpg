@@ -18,82 +18,6 @@ import {
 import { applyPolynomialFunction } from '~/utils/math'
 import { mergeObjectWithSum } from '~/utils/object'
 
-export interface FormSchema {
-  key: CharacteristicSectionKey
-  children: {
-    key: CharacteristicKey
-  }[]
-}
-
-const formSchema: FormSchema[] = [
-  {
-    key: 'attributes',
-    children: [
-      {
-        key: 'strength',
-      },
-      {
-        key: 'agility',
-      },
-    ],
-  },
-  {
-    key: 'skills',
-    children: [
-      {
-        key: 'ironFlesh',
-      },
-      {
-        key: 'powerStrike',
-      },
-      {
-        key: 'powerDraw',
-      },
-      {
-        key: 'powerThrow',
-      },
-      {
-        key: 'athletics',
-      },
-      {
-        key: 'riding',
-      },
-      {
-        key: 'weaponMaster',
-      },
-      {
-        key: 'mountedArchery',
-      },
-      {
-        key: 'shield',
-      },
-    ],
-  },
-  {
-    key: 'weaponProficiencies',
-    children: [
-      {
-        key: 'oneHanded',
-      },
-      {
-        key: 'twoHanded',
-      },
-      {
-        key: 'polearm',
-      },
-      {
-        key: 'bow',
-      },
-      {
-        key: 'crossbow',
-      },
-      {
-        key: 'throwing',
-      },
-    ],
-  },
-]
-
 const characteristicCost = (
   characteristicSectionKey: CharacteristicSectionKey,
   characteristicKey: CharacteristicKey, // TODO:
@@ -111,7 +35,6 @@ const skillRequirementsSatisfied = (
   skill: number,
   characteristics: CharacterCharacteristics,
 ): boolean => {
-  // console.log({ skillKey, skill, characteristics });
   switch (skillKey) {
     case 'ironFlesh':
     case 'powerStrike':
@@ -165,12 +88,12 @@ export const useCharacterCharacteristic = () => {
 }
 
 export const useCharacterCharacteristicBuilder = (
-  characteristicsInitial: Ref<CharacterCharacteristics>,
+  characteristicsInitial: MaybeRefOrGetter<CharacterCharacteristics>,
 ) => {
   const characteristicsDelta = ref<CharacterCharacteristics>(createEmptyCharacteristic())
   const characteristicDefault = ref<CharacterCharacteristics>(createDefaultCharacteristic())
 
-  const characteristics = computed<CharacterCharacteristics>(() => Object.entries(characteristicsInitial.value).reduce(
+  const characteristics = computed<CharacterCharacteristics>(() => Object.entries(toValue(characteristicsInitial)).reduce(
     (obj, [key, values]: [string | CharacteristicSectionKey, Partial<CharacterCharacteristics>],
     ) => ({
       ...obj,
@@ -214,15 +137,17 @@ export const useCharacterCharacteristicBuilder = (
     characteristicKey: CharacteristicKey,
     newCharacteristicValue: number,
   ): void => {
-    const characteristicInitialSection = characteristicsInitial.value[characteristicSectionKey]
+    const characteristicInitialSection = toValue(characteristicsInitial)[characteristicSectionKey]
     const characteristicDeltaSection = characteristicsDelta.value[characteristicSectionKey]
     const characteristicSection = characteristics.value[characteristicSectionKey]
 
+    // @ts-expect-error FIXME: typeguard
     const oldCharacteristicValue = characteristicSection[characteristicKey]
 
     const costToIncrease = characteristicCost(characteristicSectionKey, characteristicKey, oldCharacteristicValue) - characteristicCost(characteristicSectionKey, characteristicKey, newCharacteristicValue)
 
     characteristicDeltaSection.points += costToIncrease
+    // @ts-expect-error FIXME: typeguard
     characteristicDeltaSection[characteristicKey] = newCharacteristicValue - characteristicInitialSection[characteristicKey]
 
     if (characteristicKey === 'agility') {
@@ -242,7 +167,7 @@ export const useCharacterCharacteristicBuilder = (
     //
     const initialValue = noLimit
       ? (characteristicDefault.value[characteristicSectionKey] as any)[characteristicKey]
-      : (characteristicsInitial.value[characteristicSectionKey] as any)[characteristicKey]
+      : (toValue(characteristicsInitial)[characteristicSectionKey] as any)[characteristicKey]
 
     const value = (characteristics.value[characteristicSectionKey] as any)[characteristicKey]
     const points = characteristics.value[characteristicSectionKey].points
@@ -285,13 +210,13 @@ export const useCharacterCharacteristicBuilder = (
   }
 
   const convertAttributeToSkills = () => {
-    characteristicsInitial.value.attributes.points -= 1
-    characteristicsInitial.value.skills.points += 2
+    toValue(characteristicsInitial).attributes.points -= 1
+    toValue(characteristicsInitial).skills.points += 2
   }
 
   const convertSkillsToAttribute = () => {
-    characteristicsInitial.value.attributes.points += 1
-    characteristicsInitial.value.skills.points -= 2
+    toValue(characteristicsInitial).attributes.points += 1
+    toValue(characteristicsInitial).skills.points -= 2
   }
 
   const reset = () => {
@@ -305,7 +230,6 @@ export const useCharacterCharacteristicBuilder = (
     convertAttributeToSkills,
     convertSkillsToAttribute,
     currentSkillRequirementsSatisfied,
-    formSchema,
     getInputProps,
     isChangeValid,
     onFullFillField,
