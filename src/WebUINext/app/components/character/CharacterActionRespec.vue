@@ -25,12 +25,13 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
   <div>
     <UTooltip
       :ui="{
-        content: 'max-w-72',
+        content: 'max-w-96',
       }"
     >
       <UButton
         size="lg"
         variant="outline"
+        class="w-full justify-center"
         :disabled="!respecCapability.enabled"
         icon="crpg:chevron-down-double"
         data-aq-character-action="respecialize"
@@ -53,15 +54,14 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
         <div class="prose prose-invert">
           <h5>{{ $t('character.settings.respecialize.tooltip.title') }}</h5>
           <div
-            v-html=" $t('character.settings.respecialize.tooltip.desc', {
+            v-html="$t('character.settings.respecialize.tooltip.desc', {
               freeRespecPostWindow: $t('dateTimeFormat.hh', { hours: freeRespecializePostWindowHours }),
               freeRespecInterval: $t('dateTimeFormat.dd', { days: freeRespecializeIntervalDays }),
             })"
           />
-
           <div
             v-if="respecCapability.freeRespecWindowRemain > 0"
-            v-html=" $t('character.settings.respecialize.tooltip.freeRespecPostWindowRemaining', {
+            v-html="$t('character.settings.respecialize.tooltip.freeRespecPostWindowRemaining', {
               remainingTime: $t('dateTimeFormat.dd:hh:mm', parseTimestamp(respecCapability.freeRespecWindowRemain)),
             })"
           />
@@ -77,35 +77,18 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
             </i18n-t>
 
             <div
-              v-html="
-                $t('character.settings.respecialize.tooltip.freeRespecIntervalNext', {
-                  nextFreeAt: $t('dateTimeFormat.dd:hh:mm', parseTimestamp(respecCapability.nextFreeAt)),
-                })
-              "
+              v-html="$t('character.settings.respecialize.tooltip.freeRespecIntervalNext', {
+                nextFreeAt: $t('dateTimeFormat.dd:hh:mm', parseTimestamp(respecCapability.nextFreeAt)),
+              }) "
             />
           </template>
         </div>
       </template>
     </UTooltip>
 
-    <!-- TODO: FIXME: -->
-    <!-- <template #description>
-          <i18n-t
-            scope="global"
-            keypath="character.settings.respecialize.dialog.desc"
-            tag="p"
-          >
-            <template #respecializationPrice>
-              <Coin
-                :value="respecCapability.price"
-                :class="{ 'text-status-danger': respecCapability.price > 0 }"
-              />
-            </template>
-          </i18n-t>
-        </template>
-         -->
     <AppConfirmActionDialog
-      :open="shownConfirmDialog"
+      v-if="shownConfirmDialog"
+      open
       :title="$t('character.settings.respecialize.dialog.title')"
       :name="character.name"
       :confirm-label="$t('action.confirm')"
@@ -115,6 +98,24 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
         toggleConfirmDialog(false);
       }"
       @update:open="toggleConfirmDialog(false)"
-    />
+    >
+      <template #description>
+        <i18n-t
+          scope="global"
+          keypath="character.settings.respecialize.dialog.desc"
+          tag="p"
+        >
+          <template #character>
+            <CharacterMedia :character class="font-bold text-primary" />
+          </template>
+          <template #respecializationPrice>
+            <AppCoin
+              :value="respecCapability.price"
+              :class="{ '!text-error': respecCapability.price > 0 }"
+            />
+          </template>
+        </i18n-t>
+      </template>
+    </AppConfirmActionDialog>
   </div>
 </template>

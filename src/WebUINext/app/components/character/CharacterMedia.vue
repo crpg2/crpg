@@ -9,7 +9,22 @@ const { character } = defineProps<{
 </script>
 
 <template>
-  <div class="flex items-center gap-2">
+  <UiDataCell>
+    <template #leftContent>
+      <UTooltip :text="$t(`character.class.${character.class}`)">
+        <UIcon
+          :name="`crpg:${characterClassToIcon[character.class]}`"
+          class="size-5"
+        />
+      </UTooltip>
+    </template>
+
+    <span class="max-w-[150px] truncate">
+      {{ character.name }}
+    </span>
+    ({{ character.level }})
+  </UiDataCell>
+  <!-- <div class="flex items-center gap-2">
     <UTooltip :text="$t(`character.class.${character.class}`)">
       <UIcon
         :name="`crpg:${characterClassToIcon[character.class]}`"
@@ -23,5 +38,5 @@ const { character } = defineProps<{
       </span>
       <span>({{ character.level }})</span>
     </div>
-  </div>
+  </div> -->
 </template>

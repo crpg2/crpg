@@ -19,7 +19,7 @@ await Promise.all([
 ])
 
 // TODO: FIXME:
-// useWelcome()
+useWelcome()
 </script>
 
 <template>

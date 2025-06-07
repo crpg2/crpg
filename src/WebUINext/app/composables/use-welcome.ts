@@ -28,6 +28,7 @@ export const useWelcome = () => {
     },
   })
 
+  // TODO: FIXME:
   // modal.open()
 
   // watch(shownWelcomeMessage, () => {
