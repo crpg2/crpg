@@ -481,7 +481,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 // Thrust speed nerf for OneHandedPolearms
                 if (equippedItem.WeaponClass == WeaponClass.OneHandedPolearm)
                 {
-                    props.ThrustOrRangedReadySpeedMultiplier *= 0.1f;
+                    props.ThrustOrRangedReadySpeedMultiplier *= 0.9f;
                 }
             }
 
