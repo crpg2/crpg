@@ -33,6 +33,7 @@ internal static class CrpgServerConfiguration
     public static int ControlledBotsCount { get; private set; } = 0;
     public static int BaseNakedEquipmentValue { get; private set; } = 10000;
     public static Tuple<TimeSpan, TimeSpan, TimeZoneInfo>? HappyHours { get; private set; }
+    public static float HappyHoursExperienceMultiplier { get; private set; } = 0.5f;
 
     [UsedImplicitly]
     [ConsoleCommandMethod("crpg_team_balancer_clan_group_size_penalty", "Apply a rating increase to members of the same clan that are playing in the same team")]
@@ -164,6 +165,23 @@ internal static class CrpgServerConfiguration
         var timeZone = TimeZoneInfo.FindSystemTimeZoneById(match.Groups[3].Value);
         HappyHours = Tuple.Create(startTime, endTime, timeZone);
         Debug.Print($"Set happy hours from {startTime} to {endTime} in time zone {timeZone.Id}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_happy_hours_experience_multiplier", "Sets the happy hours experience multiplier. Range: 0f - 2f")]
+    private static void SetHappyHoursExperienceMultiplier(string? happyMultiplierStr)
+    {
+        if (happyMultiplierStr == null
+            || !float.TryParse(happyMultiplierStr, out float happyMultiplier)
+            || happyMultiplier < 0f
+            || happyMultiplier > 2f)
+        {
+            Debug.Print($"Invalid happy hours experience multiplier: {happyMultiplierStr}");
+            return;
+        }
+
+        HappyHoursExperienceMultiplier = happyMultiplier;
+        Debug.Print($"Set happy hours experience multiplier to {happyMultiplier}");
     }
 
     [UsedImplicitly]
