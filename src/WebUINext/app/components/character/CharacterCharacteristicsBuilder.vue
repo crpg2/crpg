@@ -12,7 +12,8 @@ interface FormSchema {
 
 interface ConvertState {
   disabled: boolean
-  loading: boolean
+  loading?: boolean
+  count?: number
 }
 
 defineProps<{
@@ -103,7 +104,7 @@ const formSchema: FormSchema[] = [
   <UCard
     v-for="fieldGroup in formSchema"
     :key="fieldGroup.key"
-    :ui="{ body: '!p-0', header: '!px-4' }"
+    :ui="{ root: 'overflow-hidden', body: '!p-0 overflow-hidden', header: '!px-4 py-3' }"
     :style="{ 'grid-area': fieldGroup.key }"
   >
     <template #header>
@@ -116,6 +117,7 @@ const formSchema: FormSchema[] = [
               size="xs"
               :disabled="convertAttributesToSkillsState.disabled"
               :loading="convertAttributesToSkillsState.loading"
+              :label="convertAttributesToSkillsState.count !== undefined ? String(convertAttributesToSkillsState.count) : ''"
               icon="crpg:convert"
               data-aq-convert-attributes-action
               @click="$emit('convertAttributesToSkills')"
@@ -147,6 +149,7 @@ const formSchema: FormSchema[] = [
               size="xs"
               :disabled="convertSkillsToAttributesState.disabled"
               :loading="convertSkillsToAttributesState.loading"
+              :label="convertSkillsToAttributesState.count !== undefined ? String(convertSkillsToAttributesState.count) : ''"
               icon="crpg:convert"
               data-aq-convert-skills-action
               @click="$emit('convertSkillsToAttributes')"
@@ -179,7 +182,7 @@ const formSchema: FormSchema[] = [
     <UiDataCell
       v-for="field in fieldGroup.children"
       :key="field.key"
-      class="w-full px-4 py-2.5  hover:bg-base-200"
+      class="w-full px-4 py-2.5 hover:bg-neutral-900"
     >
       <UTooltip
         :ui="{ content: 'max-w-72' }"

@@ -17,7 +17,6 @@ import { getLeaderBoard } from '~/services/leaderboard-service'
 import { useUserStore } from '~/stores/user'
 
 definePageMeta({
-  layout: 'default',
   layoutOptions: {
     bg: 'background-2.webp',
   },

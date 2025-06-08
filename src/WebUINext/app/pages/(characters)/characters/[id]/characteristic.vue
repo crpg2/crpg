@@ -118,8 +118,7 @@ watchEffect(() => {
 
 <template>
   <div class="relative mx-auto max-w-4xl">
-    <!-- eslint-disable-next-line tailwindcss/no-custom-classname -->
-    <div class="statsGrid grid gap-6">
+    <div class="statsGrid grid items-start gap-6">
       <CharacterCharacteristicsBuilder
         :get-input-props
         :characteristics
@@ -131,19 +130,15 @@ watchEffect(() => {
         @convert-skills-to-attributes="onConvertCharacterCharacteristics(CharacteristicConversion.SkillsToAttributes)"
       />
 
-      <div
-        class="grid gap-2 self-start rounded-xl border border-border-200 py-2 text-2xs"
-        style="grid-area: stats"
-      >
-        <!-- :weight="itemsStats.weight"
+      <!-- :weight="itemsStats.weight"
       :longest-weapon-length="itemsStats.longestWeaponLength" -->
-        <CharacterStats
-          :characteristics
-          :weight="22"
-          :longest-weapon-length="33"
-          :health-points="healthPoints"
-        />
-      </div>
+      <CharacterStats
+        style="grid-area: stats"
+        :characteristics
+        :weight="22"
+        :longest-weapon-length="33"
+        :health-points="healthPoints"
+      />
     </div>
 
     <div class="sticky bottom-0 left-0 flex w-full max-w-4xl items-center justify-center gap-4 py-3 backdrop-blur-sm">

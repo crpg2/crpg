@@ -17,7 +17,7 @@ defineProps<{
       content: 'max-w-xl',
     }"
   >
-    <UiDataCell class="rounded px-3 py-2.5 hover:bg-base-200">
+    <UiDataCell class="rounded px-3 py-2.5 hover:bg-neutral-900">
       <slot name="label">
         {{ label }}
       </slot>
