@@ -3,6 +3,10 @@ import type { RouteLocationNormalizedLoaded, RouteLocationRaw } from 'vue-router
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
 import { useCharacterProvider } from '~/composables/character/use-character'
+import { useCharacterCharacteristicProvider } from '~/composables/character/use-character-characteristic'
+import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
+import { usePollInterval } from '~/composables/utils/use-poll-interval'
+import { createEmptyCharacteristic, getCharacterCharacteristics, getCharacterItems } from '~/services/character-service'
 // import type { CharacterCharacteristics, CharacterOverallItemsStats } from '~/models/character'
 // import { usePollInterval } from '~/composables/use-poll-interval'
 // import { useWelcome } from '~/composables/use-welcome'
@@ -26,10 +30,7 @@ import {
 // characterKey,
 } from '~/symbols/character'
 
-const props = defineProps<{ id: string }>()
-
 definePageMeta({
-  props: true,
   middleware: [
     /**
      * @description Validate character
@@ -45,23 +46,36 @@ definePageMeta({
   ],
 })
 
-const characterId = Number(props.id)
+const route = useRoute('characters-id')
 
 const userStore = useUserStore()
 
 // TODO: the character was validated in middleware, but still try to get rid of the "!"
-const character = computed(() => userStore.characters.find(c => c.id === characterId)!)
+const character = computed(() => userStore.characters.find(c => c.id === Number(route.params.id))!)
 
 useCharacterProvider(character)
 
-// const { execute: loadCharacterItems, state: characterItems } = useAsyncState(
-//   ({ id }: { id: number }) => getCharacterItems(id),
-//   [],
-//   {
-//     immediate: false,
-//     resetOnExecute: false,
-//   },
-// )
+const {
+  execute: loadCharacterItems,
+  state: characterItems,
+} = useAsyncState(
+  (id: number) => getCharacterItems(id),
+  [],
+  { immediate: false, resetOnExecute: false },
+)
+
+useCharacterItemsProvider(characterItems)
+
+const {
+  state: characterCharacteristics,
+  execute: loadCharacterCharacteristics,
+} = useAsyncState(
+  (id: number) => getCharacterCharacteristics(id),
+  createEmptyCharacteristic(),
+  { immediate: false, resetOnExecute: false },
+)
+
+useCharacterCharacteristicProvider(characterCharacteristics)
 
 // const { execute: loadCharacterCharacteristics, state: characterCharacteristics } = useAsyncState(
 //   ({ id }: { id: number }) => getCharacterCharacteristics(id),
@@ -106,14 +120,14 @@ useCharacterProvider(character)
 // })
 // provide(characterItemsStatsKey, itemsStats)
 
-// const { subscribe, unsubscribe } = usePollInterval()
-// const loadCharacterItemsSymbol = Symbol('loadCharacterItems')
-// const loadCharactersSymbol = Symbol('fetchCharacters')
-// const loadUserItemsSymbol = Symbol('fetchUserItems')
+const { subscribe, unsubscribe } = usePollInterval()
+const loadCharacterItemsSymbol = Symbol('loadCharacterItems')
+const loadCharactersSymbol = Symbol('fetchCharacters')
+const loadUserItemsSymbol = Symbol('fetchUserItems')
 
 // onMounted(() => {
 //   subscribe(loadCharactersSymbol, userStore.fetchCharacters)
-//   subscribe(loadCharacterItemsSymbol, () => loadCharacterItems(0, { id: character.value.id }))
+//   subscribe(loadCharacterItemsSymbol, () => loadCharacterItems(0, character.value.id))
 //   subscribe(loadUserItemsSymbol, userStore.fetchUserItems)
 // })
 
@@ -123,28 +137,24 @@ useCharacterProvider(character)
 //   unsubscribe(loadUserItemsSymbol)
 // })
 
-// const fetchPageData = (characterId: number) =>
-//   Promise.all([
-//     loadCharacterCharacteristics(0, { id: characterId }),
-//     loadCharacterItems(0, { id: characterId }),
-//   ])
+const fetchPageData = (characterId: number) => Promise.all([
+  loadCharacterCharacteristics(0, characterId),
+  loadCharacterItems(0, characterId),
+])
 
-// onBeforeRouteUpdate(async (to, from) => {
-//   if (to.name === from.name) {
-//     // if character changed
-//     unsubscribe(loadCharacterItemsSymbol)
+onBeforeRouteUpdate((to, from) => {
+  if (to.name === from.name) {
+    // if character changed
+    unsubscribe(loadCharacterItemsSymbol)
+    // @ts-expect-error TODO:
+    const characterId = Number(to.params.id)
+    fetchPageData(characterId)
 
-//     // @ts-expect-error TODO:
-//     const characterId = Number(to.params.id)
-//     await fetchPageData(characterId)
+    subscribe(loadCharacterItemsSymbol, () => loadCharacterItems(0, characterId))
+  }
+})
 
-//     subscribe(loadCharacterItemsSymbol, () => loadCharacterItems(0, { id: characterId }))
-//   }
-
-//   return true
-// })
-
-// await fetchPageData(character.value.id)
+fetchPageData(Number(route.params.id))
 
 const { t } = useI18n()
 
@@ -185,19 +195,6 @@ const links: { name: keyof RouteNamedMap, label: string }[] = [
             :label
           />
         </NuxtLink>
-      </div>
-
-      <div class="order-3 flex items-center gap-2 place-self-end">
-        <!-- TODO: FIXME: to global nav -->
-        <!-- <RouterLink :to="{ name: 'Builder' }">
-          <OButton
-            variant="primary"
-            outlined
-            size="lg"
-            icon-left="calculator"
-            :label="$t(`nav.main.Builder`)"
-          />
-        </RouterLink> -->
       </div>
     </Teleport>
 

@@ -1,4 +1,10 @@
 <script setup lang="ts">
+import type { EquippedItemId } from '~/models/character'
+
+import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
+import { useCharacterItems } from '~/composables/character/use-character-items'
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+
 // import { vOnLongPress } from '@vueuse/components'
 // import { useStorage } from '@vueuse/core'
 
@@ -69,10 +75,16 @@
 // )
 // const equippedItemsIds = computed(() => characterItems.value.map(ei => ei.userItem.id))
 
-// const { execute: onChangeEquippedItems, loading: changingEquippedItems } = useAsyncCallback(async (items: EquippedItemId[]) => {
-//   await updateCharacterItems(character.value.id, items)
-//   await loadCharacterItems(0, { id: character.value.id })
-// })
+const {
+  execute: onChangeEquippedItems,
+  loading: changingEquippedItems,
+} = useAsyncCallback(async (items: EquippedItemId[]) => {
+  // await updateCharacterItems(character.value.id, items)
+  // await loadCharacterItems(0, { id: character.value.id })
+})
+
+const { characterItems, equippedItemsBySlot, itemsOverallStats } = useCharacterItems()
+const { characterCharacteristics } = useCharacterCharacteristic()
 
 // const refreshData = async () => {
 //   await Promise.all([
@@ -241,12 +253,6 @@
 //   filteredUserItems.value.reduce((out, item) => out + item.item.price, 0),
 // )
 
-// const equippedItemsBySlot = computed(() =>
-//   characterItems.value.reduce((out, ei) => {
-//     out[ei.slot] = ei.userItem as UserItem
-//     return out
-//   }, {} as UserItemsBySlot),
-// )
 // provide(equippedItemsBySlotKey, equippedItemsBySlot)
 
 // const { onDragEnd, onDragStart, dragging } = useInventoryDnD(equippedItemsBySlot)
@@ -304,9 +310,10 @@
           || returningItemToClanArmory
           || removingItemToClanArmory"
       icon-size="xl"
-    />
+    /> -->
+
     <div class="col-span-5">
-      <template v-if="userItems.length !== 0">
+      <!-- <template v-if="userItems.length !== 0">
         <div class="inventoryGrid relative grid h-full gap-x-3 gap-y-4">
           <div
             ref="aside"
@@ -440,30 +447,37 @@
         v-else
         class="rounded-xl border border-dashed border-border-300"
         :message="$t('character.inventory.empty')"
-      />
+      /> -->
     </div>
 
+    <!-- :style="{ top: `${mainHeaderHeight + 16}px` }" -->
     <div
       class="sticky left-0 col-span-5 self-start"
-      :style="{ top: `${mainHeaderHeight + 16}px` }"
     >
-      <CharacterInventoryDoll @change="onChangeEquippedItems" />
+      <CharacterInventoryDoll
+        :character-characteristics="characterCharacteristics"
+        :equipped-items="equippedItemsBySlot"
+        :items-stats-overall="itemsOverallStats"
+        @change="onChangeEquippedItems"
+      />
+
       <div
         class="mt-3 flex w-full justify-center rounded-lg bg-base-200 p-4 backdrop-blur-lg"
         style="grid-area: footer"
       >
-        <KbdCombination
+        <UiKbdCombination
           :keys="[$t('shortcuts.keys.ctrl'), $t('shortcuts.keys.lmb')]"
           :label="$t('shortcuts.hints.equip')"
         />
       </div>
     </div>
 
+    <!-- :style="{ top: `${mainHeaderHeight + 16}px` }" -->
     <div
       class="sticky col-span-2 grid grid-cols-1 items-start gap-2 self-start rounded-lg border border-border-200 py-2 text-2xs"
-      :style="{ top: `${mainHeaderHeight + 16}px` }"
     >
-      <SimpleTableRow
+      dd
+      <!-- <SimpleTableRow
         :label="$t('character.stats.price.title')"
         :tooltip="{
           title: $t('character.stats.price.title'),
@@ -521,10 +535,10 @@
         :weight="itemsStats.weight"
         :longest-weapon-length="itemsStats.longestWeaponLength"
         :health-points="healthPoints"
-      />
+      /> -->
     </div>
 
-    <ItemDetailGroup>
+    <!-- <ItemDetailGroup>
       <template #default="di">
         <CharacterInventoryItemDetail
           :compare-result="

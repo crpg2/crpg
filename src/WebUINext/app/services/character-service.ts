@@ -5,13 +5,16 @@ import {
   getUsersByUserIdCharacters,
   getUsersSelfCharacters,
   getUsersSelfCharactersByIdCharacteristics,
+  getUsersSelfCharactersByIdItems,
   getUsersSelfCharactersByIdLimitations,
   getUsersSelfCharactersByIdStatistics,
   putUsersSelfCharactersById,
   putUsersSelfCharactersByIdActive,
   putUsersSelfCharactersByIdCharacteristics,
   putUsersSelfCharactersByIdCharacteristicsConvert,
+  putUsersSelfCharactersByIdItems,
   putUsersSelfCharactersByIdRespecialize,
+
   putUsersSelfCharactersByIdRetire,
   putUsersSelfCharactersByIdTournament,
 
@@ -65,6 +68,7 @@ import type {
   EquippedItemId,
   UpdateCharacterRequest,
 } from '~/models/character'
+import type { Item, ItemArmorComponent } from '~/models/item'
 
 import {
   CharacterArmorOverallKey,
@@ -72,9 +76,10 @@ import {
   CharacterEarningType,
 } from '~/models/character'
 import { GameMode } from '~/models/game-mode'
+import { ItemSlot, ItemType } from '~/models/item'
 // import { type Item, type ItemArmorComponent, ItemSlot, ItemType } from '~/models/item'
 // import { del, get, put } from '~/services/crpg-client'
-// import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-service'
+import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-service'
 // import { t } from '~/services/translate-service'
 import { getIndexToIns, range } from '~/utils/array'
 // import { computeLeftMs } from '~/utils/date'
@@ -483,73 +488,67 @@ export const computeSpeedStats = (
   }
 }
 
-// export const getCharacterItems = async (characterId: number) =>
-//   get<EquippedItem[]>(`/users/self/characters/${characterId}/items`)
+export const getCharacterItems = async (
+  characterId: number,
+): Promise<EquippedItem[]> => {
+  const { data } = await getUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId } })
+  return data!
+}
 
-// export const updateCharacterItems = (characterId: number, items: EquippedItemId[]) =>
-//   put<EquippedItem[]>(`/users/self/characters/${characterId}/items`, { items })
+export const updateCharacterItems = (
+  characterId: number,
+  items: EquippedItemId[],
+) =>
+  putUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId }, body: { items } })
 
-// export const computeOverallPrice = (items: Item[]) =>
-//   items.reduce((total, item) => total + item.price, 0)
+export const computeOverallPrice = (items: Item[]) =>
+  items.reduce((total, item) => total + item.price, 0)
 
-// export const computeOverallWeight = (items: Item[]) =>
-//   items
-//     .filter(item => ![ItemType.Mount, ItemType.MountHarness].includes(item.type))
-//     .reduce(
-//       (total, item) =>
-//         (total += [ItemType.Arrows, ItemType.Bolts, ItemType.Bullets, ItemType.Thrown].includes(
-//           item.type,
-//         )
-//           ? roundFLoat(item.weight * item.weapons[0].stackAmount)
-//           : item.weight),
-//       0,
-//     )
+export const computeOverallWeight = (items: Item[]) =>
+  items
+    .filter(item => ![ItemType.Mount, ItemType.MountHarness].includes(item.type))
+    .reduce((total, item) => (total += [ItemType.Arrows, ItemType.Bolts, ItemType.Bullets, ItemType.Thrown].includes(item.type)
+      ? roundFLoat(item.weight * (item.weapons[0]?.stackAmount ?? 1))
+      : item.weight), 0)
 
-// interface OverallArmor extends Omit<ItemArmorComponent, 'materialType' | 'familyType'> {
-//   mountArmor: number
-// }
+interface OverallArmor extends Omit<ItemArmorComponent, 'materialType' | 'familyType'> {
+  mountArmor: number
+}
 
-// export const computeOverallArmor = (items: Item[]): OverallArmor =>
-//   items.reduce(
-//     (total, item) => {
-//       if (item.type === ItemType.MountHarness) {
-//         total.mountArmor = item.armor!.bodyArmor
-//       }
-//       else if (armorTypes.includes(item.type)) {
-//         total.headArmor += item.armor!.headArmor
-//         total.bodyArmor += item.armor!.bodyArmor
-//         total.armArmor += item.armor!.armArmor
-//         total.legArmor += item.armor!.legArmor
-//       }
-//       return total
-//     },
-//     {
-//       armArmor: 0,
-//       bodyArmor: 0,
-//       headArmor: 0,
-//       legArmor: 0,
-//       mountArmor: 0,
-//     },
-//   )
+export const computeOverallArmor = (items: Item[]): OverallArmor =>
+  items.reduce(
+    (total, item) => {
+      if (item.type === ItemType.MountHarness) {
+        total.mountArmor = item.armor!.bodyArmor
+      }
+      else if (armorTypes.includes(item.type)) {
+        total.headArmor += item.armor!.headArmor
+        total.bodyArmor += item.armor!.bodyArmor
+        total.armArmor += item.armor!.armArmor
+        total.legArmor += item.armor!.legArmor
+      }
+      return total
+    },
+    {
+      armArmor: 0,
+      bodyArmor: 0,
+      headArmor: 0,
+      legArmor: 0,
+      mountArmor: 0,
+    },
+  )
 
 // // TODO: SPEC
-// export const computeLongestWeaponLength = (items: Item[]) => {
-//   return items.reduce((result, item) => {
-//     if (
-//       [ItemType.OneHandedWeapon, ItemType.TwoHandedWeapon, ItemType.Polearm].includes(item.type)
-//       && item.weapons.length !== 0
-//     ) {
-//       return Math.max(result, item.weapons[0].length)
-//     }
+export const computeLongestWeaponLength = (items: Item[]) => {
+  return items
+    .filter(item => [ItemType.OneHandedWeapon, ItemType.TwoHandedWeapon, ItemType.Polearm].includes(item.type))
+    .reduce((total, item) => (total += Math.max(total, item.weapons[0]?.length ?? 0)), 0)
+}
 
-//     return result
-//   }, 0 as number)
-// }
-
-// // TODO: handle upgrade items.
+// // TODO: handle upgrade items. ??
 // // TODO: SPEC
-// export const computeOverallAverageRepairCostByHour = (items: Item[]) =>
-//   Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))
+export const computeOverallAverageRepairCostByHour = (items: Item[]) =>
+  Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))
 
 export const getHeirloomPointByLevel = (level: number) =>
   level < minimumRetirementLevel ? 0 : 2 ** (level - minimumRetirementLevel)
@@ -655,71 +654,69 @@ export const getRespecCapability = (
   }
 }
 
-// export const getCharacterSLotsSchema = (): {
-//   key: ItemSlot
-//   placeholderIcon: string
-// }[][] => [
-//   // left col
-//   [
-//     {
-//       key: ItemSlot.Head,
-//       placeholderIcon: 'item-type-head-armor',
-//     },
-//     {
-//       key: ItemSlot.Shoulder,
-//       placeholderIcon: 'item-type-shoulder-armor',
-//     },
-//     {
-//       key: ItemSlot.Body,
-//       placeholderIcon: 'item-type-body-armor',
-//     },
-//     {
-//       key: ItemSlot.Hand,
-//       placeholderIcon: 'item-type-hand-armor',
-//     },
-//     {
-//       key: ItemSlot.Leg,
-//       placeholderIcon: 'item-type-leg-armor',
-//     },
-//   ],
-//   // center col
-//   [
-//     {
-//       key: ItemSlot.MountHarness,
-//       placeholderIcon: 'item-type-mount-harness',
-//     },
-//     {
-//       key: ItemSlot.Mount,
-//       placeholderIcon: 'item-type-mount',
-//     },
-//   ],
-//   // right col
-//   [
-//     {
-//       key: ItemSlot.Weapon0,
-//       placeholderIcon: 'weapons',
-//     },
-//     {
-//       key: ItemSlot.Weapon1,
-//       placeholderIcon: 'weapons',
-//     },
-//     {
-//       key: ItemSlot.Weapon2,
-//       placeholderIcon: 'weapons',
-//     },
-//     {
-//       key: ItemSlot.Weapon3,
-//       placeholderIcon: 'weapons',
-//     },
-//     {
-//       key: ItemSlot.WeaponExtra,
-//       placeholderIcon: 'item-flag-drop-on-change',
-//     },
-//   ],
-// ]
+interface SlotsSchema { key: ItemSlot, placeholderIcon: string }
 
-export const getCharacterKDARatio = (characterStatistics: CharacterStatistics): number =>
-  Math.round((100 * (characterStatistics.kills + characterStatistics.assists)) / (characterStatistics.deaths || 1)) / 100
+export const getCharacterSlotsSchema = (): SlotsSchema[][] => [
+  // left col
+  [
+    {
+      key: ItemSlot.Head,
+      placeholderIcon: 'item-type-head-armor',
+    },
+    {
+      key: ItemSlot.Shoulder,
+      placeholderIcon: 'item-type-shoulder-armor',
+    },
+    {
+      key: ItemSlot.Body,
+      placeholderIcon: 'item-type-body-armor',
+    },
+    {
+      key: ItemSlot.Hand,
+      placeholderIcon: 'item-type-hand-armor',
+    },
+    {
+      key: ItemSlot.Leg,
+      placeholderIcon: 'item-type-leg-armor',
+    },
+  ],
+  // center col
+  [
+    {
+      key: ItemSlot.MountHarness,
+      placeholderIcon: 'item-type-mount-harness',
+    },
+    {
+      key: ItemSlot.Mount,
+      placeholderIcon: 'item-type-mount',
+    },
+  ],
+  // right col
+  [
+    {
+      key: ItemSlot.Weapon0,
+      placeholderIcon: 'weapons',
+    },
+    {
+      key: ItemSlot.Weapon1,
+      placeholderIcon: 'weapons',
+    },
+    {
+      key: ItemSlot.Weapon2,
+      placeholderIcon: 'weapons',
+    },
+    {
+      key: ItemSlot.Weapon3,
+      placeholderIcon: 'weapons',
+    },
+    {
+      key: ItemSlot.WeaponExtra,
+      placeholderIcon: 'item-flag-drop-on-change',
+    },
+  ],
+]
+
+export const getCharacterKDARatio = (characterStatistics: CharacterStatistics): number => Math.round((100 * (characterStatistics.kills + characterStatistics.assists)) / (characterStatistics.deaths || 1)) / 100
 
 export const characterClassToIcon: Record<CharacterClass, string> = {
   [CharacterClass.Archer]: 'item-type-bow',
@@ -733,44 +730,47 @@ export const characterClassToIcon: Record<CharacterClass, string> = {
 }
 
 // // TODO: SPEC
-// export const getOverallArmorValueBySlot = (
-//   slot: ItemSlot,
-//   itemsStats: CharacterOverallItemsStats,
-// ) => {
-//   const itemSlotToArmorValue: Partial<Record<ItemSlot, CharacterArmorOverall>> = {
-//     [ItemSlot.Body]: {
-//       key: CharacterArmorOverallKey.BodyArmor,
-//       value: itemsStats.bodyArmor,
-//     },
-//     [ItemSlot.Hand]: {
-//       key: CharacterArmorOverallKey.ArmArmor,
-//       value: itemsStats.armArmor,
-//     },
-//     [ItemSlot.Leg]: {
-//       key: CharacterArmorOverallKey.LegArmor,
-//       value: itemsStats.legArmor,
-//     },
-//     [ItemSlot.Mount]: {
-//       key: CharacterArmorOverallKey.MountArmor,
-//       value: itemsStats.mountArmor,
-//     },
-//     [ItemSlot.Shoulder]: {
-//       key: CharacterArmorOverallKey.HeadArmor,
-//       value: itemsStats.headArmor,
-//     },
-//   }
+export const getOverallArmorValueBySlot = (
+  slot: ItemSlot,
+  itemsStats: CharacterOverallItemsStats,
+) => {
+  const itemSlotToArmorValue: Partial<Record<ItemSlot, CharacterArmorOverall>> = {
+    [ItemSlot.Body]: {
+      key: CharacterArmorOverallKey.BodyArmor,
+      value: itemsStats.bodyArmor,
+    },
+    [ItemSlot.Hand]: {
+      key: CharacterArmorOverallKey.ArmArmor,
+      value: itemsStats.armArmor,
+    },
+    [ItemSlot.Leg]: {
+      key: CharacterArmorOverallKey.LegArmor,
+      value: itemsStats.legArmor,
+    },
+    [ItemSlot.Mount]: {
+      key: CharacterArmorOverallKey.MountArmor,
+      value: itemsStats.mountArmor,
+    },
+    [ItemSlot.Shoulder]: {
+      key: CharacterArmorOverallKey.HeadArmor,
+      value: itemsStats.headArmor,
+    },
+  }
 
-//   return slot in itemSlotToArmorValue ? itemSlotToArmorValue[slot] : undefined
-// }
+  return slot in itemSlotToArmorValue ? itemSlotToArmorValue[slot] : undefined
+}
 
 // // TODO: SPEC, more complicated logic?
-export const checkUpkeepIsHigh = (userGold: number, upkeepPerHour: number) => {
+export const checkUpkeepIsHigh = (
+  userGold: number,
+  upkeepPerHour: number,
+) => {
   return userGold < upkeepPerHour * 2.5
 }
 
-// export const validateItemNotMeetRequirement = (
-//   item: Item,
-//   characterCharacteristics: CharacterCharacteristics,
-// ) => {
-//   return item.requirement > characterCharacteristics.attributes.strength
-// }
+export const validateItemNotMeetRequirement = (
+  item: Item,
+  characterCharacteristics: CharacterCharacteristics,
+) => {
+  return item.requirement > characterCharacteristics.attributes.strength
+}

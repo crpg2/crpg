@@ -231,18 +231,20 @@ const columns: TableColumn<ClanMember>[] = [
             </template>
             <span data-aq-clan-info="region"> {{ $t(`region.${clan.region}`, 0) }}</span>
             <template #rightContent>
-              <UTooltip
-                v-for="l in clan.languages"
-                :key="l"
-                :text="$t(`language.${l}`)"
-              >
-                <UBadge
-                  :label="l"
-                  size="sm"
-                  color="primary"
-                  variant="soft"
-                />
-              </UTooltip>
+              <div class="flex items-center gap-1">
+                <UTooltip
+                  v-for="l in clan.languages"
+                  :key="l"
+                  :text="$t(`language.${l}`)"
+                >
+                  <UBadge
+                    :label="l"
+                    size="sm"
+                    color="primary"
+                    variant="soft"
+                  />
+                </UTooltip>
+              </div>
             </template>
           </UiDataCell>
 

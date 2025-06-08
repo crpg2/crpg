@@ -1,12 +1,19 @@
-// import {
-//   brokenItemRepairPenaltySeconds,
-//   itemBreakChance,
-//   itemReforgeCostPerRank,
-//   itemRepairCostPerSecond,
-//   itemSellCostPenalty,
-//   itemSellGracePeriodMinutes,
-// } from '~root/data/constants.json'
+import {
+  brokenItemRepairPenaltySeconds,
+  itemBreakChance,
+  itemReforgeCostPerRank,
+  itemRepairCostPerSecond,
+  itemSellCostPenalty,
+  itemSellGracePeriodMinutes,
+} from '~root/data/constants.json'
 // import { omitBy } from 'es-toolkit'
+
+import type { EquippedItemsBySlot } from '~/models/character'
+import type { Item, ItemRank } from '~/models/item'
+import type { UserItem } from '~/models/user'
+
+import { Culture } from '~/models/culture'
+import { DamageType, ItemFamilyType, ItemFlags, ItemSlot, ItemType, ItemUsage, WeaponClass, WeaponFlags } from '~/models/item'
 
 // import type { EquippedItemsBySlot } from '~/models/character'
 // import type {
@@ -50,392 +57,393 @@ export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 //     // TODO: hotfix, avoid duplicate items with multiply weaponClass
 //     .filter(el => el?.weaponClass === item?.weaponClass)
 
-// export const armorTypes: ItemType[] = [
-//   ItemType.HeadArmor,
-//   ItemType.ShoulderArmor,
-//   ItemType.BodyArmor,
-//   ItemType.HandArmor,
-//   ItemType.LegArmor,
-// ]
+export const armorTypes: ItemType[] = [
+  ItemType.HeadArmor,
+  ItemType.ShoulderArmor,
+  ItemType.BodyArmor,
+  ItemType.HandArmor,
+  ItemType.LegArmor,
+]
 
-// export const itemTypeByWeaponClass: Record<WeaponClass, ItemType> = {
-//   [WeaponClass.Arrow]: ItemType.Ammo,
-//   [WeaponClass.Banner]: ItemType.Banner,
-//   [WeaponClass.Bolt]: ItemType.Ammo,
-//   [WeaponClass.Boulder]: ItemType.Thrown,
-//   [WeaponClass.Bow]: ItemType.Ranged,
-//   [WeaponClass.Cartridge]: ItemType.Ammo,
-//   [WeaponClass.Crossbow]: ItemType.Ranged,
-//   [WeaponClass.Dagger]: ItemType.OneHandedWeapon,
-//   [WeaponClass.Javelin]: ItemType.Thrown,
-//   [WeaponClass.LargeShield]: ItemType.Shield,
-//   [WeaponClass.LowGripPolearm]: ItemType.Polearm,
-//   [WeaponClass.Mace]: ItemType.OneHandedWeapon,
-//   [WeaponClass.Musket]: ItemType.Ranged,
-//   [WeaponClass.OneHandedAxe]: ItemType.OneHandedWeapon,
-//   [WeaponClass.OneHandedPolearm]: ItemType.Polearm,
-//   [WeaponClass.OneHandedSword]: ItemType.OneHandedWeapon,
-//   [WeaponClass.Pick]: ItemType.TwoHandedWeapon,
-//   [WeaponClass.Pistol]: ItemType.Ranged,
-//   [WeaponClass.SmallShield]: ItemType.Shield,
-//   [WeaponClass.Stone]: ItemType.Thrown,
-//   [WeaponClass.ThrowingAxe]: ItemType.Thrown,
-//   [WeaponClass.ThrowingKnife]: ItemType.Thrown,
-//   [WeaponClass.TwoHandedAxe]: ItemType.TwoHandedWeapon,
-//   [WeaponClass.TwoHandedMace]: ItemType.TwoHandedWeapon,
-//   [WeaponClass.TwoHandedPolearm]: ItemType.Polearm,
-//   [WeaponClass.TwoHandedSword]: ItemType.TwoHandedWeapon,
-//   [WeaponClass.Undefined]: ItemType.Undefined,
-// }
+export const itemTypeByWeaponClass: Record<WeaponClass, ItemType> = {
+  [WeaponClass.Arrow]: ItemType.Ammo,
+  [WeaponClass.Banner]: ItemType.Banner,
+  [WeaponClass.Bolt]: ItemType.Ammo,
+  [WeaponClass.Boulder]: ItemType.Thrown,
+  [WeaponClass.Bow]: ItemType.Ranged,
+  [WeaponClass.Cartridge]: ItemType.Ammo,
+  [WeaponClass.Crossbow]: ItemType.Ranged,
+  [WeaponClass.Dagger]: ItemType.OneHandedWeapon,
+  [WeaponClass.Javelin]: ItemType.Thrown,
+  [WeaponClass.LargeShield]: ItemType.Shield,
+  [WeaponClass.LowGripPolearm]: ItemType.Polearm,
+  [WeaponClass.Mace]: ItemType.OneHandedWeapon,
+  [WeaponClass.Musket]: ItemType.Ranged,
+  [WeaponClass.OneHandedAxe]: ItemType.OneHandedWeapon,
+  [WeaponClass.OneHandedPolearm]: ItemType.Polearm,
+  [WeaponClass.OneHandedSword]: ItemType.OneHandedWeapon,
+  [WeaponClass.Pick]: ItemType.TwoHandedWeapon,
+  [WeaponClass.Pistol]: ItemType.Ranged,
+  [WeaponClass.SmallShield]: ItemType.Shield,
+  [WeaponClass.Stone]: ItemType.Thrown,
+  [WeaponClass.ThrowingAxe]: ItemType.Thrown,
+  [WeaponClass.ThrowingKnife]: ItemType.Thrown,
+  [WeaponClass.TwoHandedAxe]: ItemType.TwoHandedWeapon,
+  [WeaponClass.TwoHandedMace]: ItemType.TwoHandedWeapon,
+  [WeaponClass.TwoHandedPolearm]: ItemType.Polearm,
+  [WeaponClass.TwoHandedSword]: ItemType.TwoHandedWeapon,
+  [WeaponClass.Undefined]: ItemType.Undefined,
+}
 
-// export const WeaponClassByItemUsage: Partial<Record<ItemUsage, WeaponClass>> = {
-//   [ItemUsage.Polearm]: WeaponClass.OneHandedPolearm, // jousting lances
-//   [ItemUsage.PolearmCouch]: WeaponClass.OneHandedPolearm,
-// }
+export const WeaponClassByItemUsage: Partial<Record<ItemUsage, WeaponClass>> = {
+  [ItemUsage.Polearm]: WeaponClass.OneHandedPolearm, // jousting lances
+  [ItemUsage.PolearmCouch]: WeaponClass.OneHandedPolearm,
+}
 
-// const WeaponClassByItemType: Partial<Record<ItemType, WeaponClass[]>> = {
-//   [ItemType.OneHandedWeapon]: [
-//     WeaponClass.OneHandedSword,
-//     WeaponClass.OneHandedAxe,
-//     WeaponClass.Mace,
-//     WeaponClass.Dagger,
-//   ],
-//   [ItemType.TwoHandedWeapon]: [
-//     WeaponClass.TwoHandedSword,
-//     WeaponClass.TwoHandedAxe,
-//     WeaponClass.TwoHandedMace,
-//   ],
-//   [ItemType.Polearm]: [
-//     WeaponClass.TwoHandedPolearm,
-//     WeaponClass.OneHandedPolearm,
-//   ],
-//   [ItemType.Thrown]: [
-//     WeaponClass.Javelin,
-//     WeaponClass.ThrowingAxe,
-//     WeaponClass.ThrowingKnife,
-//     WeaponClass.Stone,
-//   ],
-//   [ItemType.Ranged]: [
-//     WeaponClass.Bow,
-//     WeaponClass.Crossbow,
-//     WeaponClass.Pistol,
-//     WeaponClass.Musket,
-//   ],
-//   [ItemType.Ammo]: [
-//     WeaponClass.Arrow,
-//     WeaponClass.Bolt,
-//   ],
-// }
+const WeaponClassByItemType: Partial<Record<ItemType, WeaponClass[]>> = {
+  [ItemType.OneHandedWeapon]: [
+    WeaponClass.OneHandedSword,
+    WeaponClass.OneHandedAxe,
+    WeaponClass.Mace,
+    WeaponClass.Dagger,
+  ],
+  [ItemType.TwoHandedWeapon]: [
+    WeaponClass.TwoHandedSword,
+    WeaponClass.TwoHandedAxe,
+    WeaponClass.TwoHandedMace,
+  ],
+  [ItemType.Polearm]: [
+    WeaponClass.TwoHandedPolearm,
+    WeaponClass.OneHandedPolearm,
+  ],
+  [ItemType.Thrown]: [
+    WeaponClass.Javelin,
+    WeaponClass.ThrowingAxe,
+    WeaponClass.ThrowingKnife,
+    WeaponClass.Stone,
+  ],
+  [ItemType.Ranged]: [
+    WeaponClass.Bow,
+    WeaponClass.Crossbow,
+    WeaponClass.Pistol,
+    WeaponClass.Musket,
+  ],
+  [ItemType.Ammo]: [
+    WeaponClass.Arrow,
+    WeaponClass.Bolt,
+  ],
+}
 
-// export const hasWeaponClassesByItemType = (type: ItemType) =>
-//   Object.keys(WeaponClassByItemType).includes(type)
+export const hasWeaponClassesByItemType = (type: ItemType) =>
+  Object.keys(WeaponClassByItemType).includes(type)
 
-// export const getWeaponClassesByItemType = (type: ItemType): WeaponClass[] => {
-//   const weaponClasses = WeaponClassByItemType[type]
-//   return weaponClasses === undefined ? [] : weaponClasses
-// }
+export const getWeaponClassesByItemType = (type: ItemType): WeaponClass[] =>
+  WeaponClassByItemType?.[type] || []
 
-// const weaponTypes: ItemType[] = [
-//   ItemType.Shield,
-//   ItemType.Bow,
-//   ItemType.Crossbow,
-//   ItemType.Musket,
-//   ItemType.Pistol,
-//   ItemType.OneHandedWeapon,
-//   ItemType.TwoHandedWeapon,
-//   ItemType.Polearm,
-//   ItemType.Thrown,
-//   ItemType.Arrows,
-//   ItemType.Bolts,
-//   ItemType.Bullets,
-// ]
+const weaponTypes: ItemType[] = [
+  ItemType.Shield,
+  ItemType.Bow,
+  ItemType.Crossbow,
+  ItemType.Musket,
+  ItemType.Pistol,
+  ItemType.OneHandedWeapon,
+  ItemType.TwoHandedWeapon,
+  ItemType.Polearm,
+  ItemType.Thrown,
+  ItemType.Arrows,
+  ItemType.Bolts,
+  ItemType.Bullets,
+]
 
-// export const itemTypesBySlot: Record<ItemSlot, ItemType[]> = {
-//   [ItemSlot.Body]: [ItemType.BodyArmor],
-//   [ItemSlot.Hand]: [ItemType.HandArmor],
-//   [ItemSlot.Head]: [ItemType.HeadArmor],
-//   [ItemSlot.Leg]: [ItemType.LegArmor],
-//   [ItemSlot.Mount]: [ItemType.Mount],
-//   [ItemSlot.MountHarness]: [ItemType.MountHarness],
-//   [ItemSlot.Shoulder]: [ItemType.ShoulderArmor],
-//   [ItemSlot.Weapon0]: weaponTypes,
-//   [ItemSlot.Weapon1]: weaponTypes,
-//   [ItemSlot.Weapon2]: weaponTypes,
-//   [ItemSlot.Weapon3]: weaponTypes,
-//   [ItemSlot.WeaponExtra]: [ItemType.Banner],
-// }
+export const itemTypesBySlot: Record<ItemSlot, ItemType[]> = {
+  [ItemSlot.Body]: [ItemType.BodyArmor],
+  [ItemSlot.Hand]: [ItemType.HandArmor],
+  [ItemSlot.Head]: [ItemType.HeadArmor],
+  [ItemSlot.Leg]: [ItemType.LegArmor],
+  [ItemSlot.Mount]: [ItemType.Mount],
+  [ItemSlot.MountHarness]: [ItemType.MountHarness],
+  [ItemSlot.Shoulder]: [ItemType.ShoulderArmor],
+  [ItemSlot.Weapon0]: weaponTypes,
+  [ItemSlot.Weapon1]: weaponTypes,
+  [ItemSlot.Weapon2]: weaponTypes,
+  [ItemSlot.Weapon3]: weaponTypes,
+  [ItemSlot.WeaponExtra]: [ItemType.Banner],
+}
 
-// const weaponSlots: ItemSlot[] = [
-//   ItemSlot.Weapon0,
-//   ItemSlot.Weapon1,
-//   ItemSlot.Weapon2,
-//   ItemSlot.Weapon3,
-// ]
+const weaponSlots: ItemSlot[] = [
+  ItemSlot.Weapon0,
+  ItemSlot.Weapon1,
+  ItemSlot.Weapon2,
+  ItemSlot.Weapon3,
+]
 
-// export const itemSlotsByType: Partial<Record<ItemType, ItemSlot[]>> = {
-//   [ItemType.BodyArmor]: [ItemSlot.Body],
-//   [ItemType.HandArmor]: [ItemSlot.Hand],
-//   [ItemType.HeadArmor]: [ItemSlot.Head],
-//   [ItemType.LegArmor]: [ItemSlot.Leg],
-//   [ItemType.Mount]: [ItemSlot.Mount],
-//   [ItemType.MountHarness]: [ItemSlot.MountHarness],
-//   [ItemType.ShoulderArmor]: [ItemSlot.Shoulder],
-//   //
-//   [ItemType.Arrows]: weaponSlots,
-//   [ItemType.Bolts]: weaponSlots,
-//   [ItemType.Bullets]: weaponSlots,
-//   [ItemType.Bow]: weaponSlots,
-//   [ItemType.Crossbow]: weaponSlots,
-//   [ItemType.Musket]: weaponSlots,
-//   [ItemType.Pistol]: weaponSlots,
-//   [ItemType.OneHandedWeapon]: weaponSlots,
-//   [ItemType.Polearm]: weaponSlots,
-//   [ItemType.Shield]: weaponSlots,
-//   [ItemType.Thrown]: weaponSlots,
-//   [ItemType.TwoHandedWeapon]: weaponSlots,
-//   //
-//   [ItemType.Banner]: [ItemSlot.WeaponExtra],
-// }
+export const isWeaponBySlot = (slot: ItemSlot) => weaponSlots.includes(slot)
 
-// export const isLargeShield = (item: Item) =>
-//   item.type === ItemType.Shield && item.weapons[0].class === WeaponClass.LargeShield
+export const itemSlotsByType: Partial<Record<ItemType, ItemSlot[]>> = {
+  [ItemType.BodyArmor]: [ItemSlot.Body],
+  [ItemType.HandArmor]: [ItemSlot.Hand],
+  [ItemType.HeadArmor]: [ItemSlot.Head],
+  [ItemType.LegArmor]: [ItemSlot.Leg],
+  [ItemType.Mount]: [ItemSlot.Mount],
+  [ItemType.MountHarness]: [ItemSlot.MountHarness],
+  [ItemType.ShoulderArmor]: [ItemSlot.Shoulder],
+  //
+  [ItemType.Arrows]: weaponSlots,
+  [ItemType.Bolts]: weaponSlots,
+  [ItemType.Bullets]: weaponSlots,
+  [ItemType.Bow]: weaponSlots,
+  [ItemType.Crossbow]: weaponSlots,
+  [ItemType.Musket]: weaponSlots,
+  [ItemType.Pistol]: weaponSlots,
+  [ItemType.OneHandedWeapon]: weaponSlots,
+  [ItemType.Polearm]: weaponSlots,
+  [ItemType.Shield]: weaponSlots,
+  [ItemType.Thrown]: weaponSlots,
+  [ItemType.TwoHandedWeapon]: weaponSlots,
+  //
+  [ItemType.Banner]: [ItemSlot.WeaponExtra],
+}
 
-// export const getAvailableSlotsByItem = (
-//   item: Item,
-//   equippedItems: EquippedItemsBySlot,
-// ): ItemSlot[] => {
-//   // family type: compatibility with mount and mountHarness
-//   if (
-//     item.type === ItemType.MountHarness
-//     && ItemSlot.Mount in equippedItems
-//     && item.armor!.familyType !== equippedItems[ItemSlot.Mount].item.mount!.familyType
-//   ) {
-//     return []
-//   }
+export const isLargeShield = (item: Item) =>
+  item.type === ItemType.Shield && item.weapons[0]?.class === WeaponClass.LargeShield
 
-//   if (
-//     item.type === ItemType.Mount
-//     && ItemSlot.MountHarness in equippedItems
-//     && item.mount!.familyType !== equippedItems[ItemSlot.MountHarness].item.armor!.familyType
-//   ) {
-//     return []
-//   }
+export const getAvailableSlotsByItem = (
+  item: Item,
+  equippedItems: EquippedItemsBySlot,
+): ItemSlot[] => {
+  // family type: compatibility with mount and mountHarness
+  if (
+    item.type === ItemType.MountHarness
+    && ItemSlot.Mount in equippedItems
+    && item.armor!.familyType !== equippedItems[ItemSlot.Mount].item.mount!.familyType
+  ) {
+    return []
+  }
 
-//   // Pikes
-//   if (item.flags.includes(ItemFlags.DropOnWeaponChange)) {
-//     return [ItemSlot.WeaponExtra]
-//   }
+  if (
+    item.type === ItemType.Mount
+    && ItemSlot.MountHarness in equippedItems
+    && item.mount!.familyType !== equippedItems[ItemSlot.MountHarness].item.armor!.familyType
+  ) {
+    return []
+  }
 
-//   // Banning the use of large shields on horseback
-//   if (
-//     (ItemSlot.Mount in equippedItems && isLargeShield(item))
-//     || (item.type === ItemType.Mount
-//       && Object.values(equippedItems).some(item => isLargeShield(item.item)))
-//   ) {
-//     notify(
-//       t('character.inventory.item.cantUseOnHorseback.notify.warning'),
-//       NotificationType.Warning,
-//     )
-//     return []
-//   }
+  // Pikes
+  if (item.flags.includes(ItemFlags.DropOnWeaponChange)) {
+    return [ItemSlot.WeaponExtra]
+  }
 
-//   // family type: compatibility with EBA BodyArmor and EBA LegArmor
-//   if (
-//     (item.type === ItemType.BodyArmor
-//       && item.armor!.familyType === ItemFamilyType.EBA
-//       && (!(ItemSlot.Leg in equippedItems)
-//         || (ItemSlot.Leg in equippedItems
-//           && item.armor!.familyType !== equippedItems[ItemSlot.Leg].item.armor!.familyType)))
-//     //
-//         || (item.type === ItemType.LegArmor
-//           && ItemSlot.Body in equippedItems
-//           && equippedItems[ItemSlot.Body].item.armor!.familyType === ItemFamilyType.EBA
-//           && item.armor!.familyType !== equippedItems[ItemSlot.Body].item.armor!.familyType)
-//   ) {
-//     notify(
-//       t('character.inventory.item.EBAArmorCompatible.notify.warning'),
-//       NotificationType.Warning,
-//     )
-//     return []
-//   }
+  // Wanning the use of large shields on horseback
+  if (
+    (ItemSlot.Mount in equippedItems && isLargeShield(item))
+    || (item.type === ItemType.Mount
+      && Object.values(equippedItems).some(item => isLargeShield(item.item)))
+  ) {
+    // TODO: FIXME: // TODO: FIXME: // TODO: FIXME: // TODO: FIXME: // TODO: FIXME:
+    // notify(
+    //   t('character.inventory.item.cantUseOnHorseback.notify.warning'),
+    //   NotificationType.Warning,
+    // )
+    return []
+  }
 
-//   return itemSlotsByType[item.type]!
-// }
+  // Family type: compatibility with EBA BodyArmor and EBA LegArmor
+  // TODO: to fn
+  if (
+    (
+      item.type === ItemType.BodyArmor
+      && item.armor!.familyType === ItemFamilyType.EBA
+      && (!(ItemSlot.Leg in equippedItems)
+        || (ItemSlot.Leg in equippedItems
+          && item.armor!.familyType !== equippedItems[ItemSlot.Leg].item.armor!.familyType))
+    )
+    //
+    || (
+      item.type === ItemType.LegArmor
+      && ItemSlot.Body in equippedItems
+      && equippedItems[ItemSlot.Body].item.armor!.familyType === ItemFamilyType.EBA
+      && item.armor!.familyType !== equippedItems[ItemSlot.Body].item.armor!.familyType
+    )
+  ) {
+    // TODO: FIXME: // TODO: FIXME: // TODO: FIXME: // TODO: FIXME: // TODO: FIXME:
+    // notify(
+    //   t('character.inventory.item.EBAArmorCompatible.notify.warning'),
+    //   NotificationType.Warning,
+    // )
+    return []
+  }
 
-// export const getLinkedSlots = (slot: ItemSlot, equippedItems: EquippedItemsBySlot): ItemSlot[] => {
-//   // family type: compatibility with EBA BodyArmor and EBA LegArmor
-//   if (
-//     slot === ItemSlot.Leg
-//     && ItemSlot.Body in equippedItems
-//     && equippedItems[ItemSlot.Body].item.armor!.familyType === ItemFamilyType.EBA
-//   ) {
-//     return [ItemSlot.Body]
-//   }
+  return itemSlotsByType[item.type]!
+}
 
-//   return []
-// }
+export const getLinkedSlots = (slot: ItemSlot, equippedItems: EquippedItemsBySlot): ItemSlot[] => {
+  // Family type: compatibility with EBA BodyArmor and EBA LegArmor
+  if (
+    slot === ItemSlot.Leg
+    && ItemSlot.Body in equippedItems
+    && equippedItems[ItemSlot.Body].item.armor!.familyType === ItemFamilyType.EBA
+  ) {
+    return [ItemSlot.Body]
+  }
 
-// export const visibleItemFlags: ItemFlags[] = [
-//   ItemFlags.DropOnWeaponChange,
-//   ItemFlags.DropOnAnyAction,
-//   ItemFlags.UseTeamColor,
-// ]
+  return []
+}
 
-// export const visibleWeaponFlags: WeaponFlags[] = [
-//   // WeaponFlags.AffectsAreaBig,
-//   // WeaponFlags.AffectsArea,
-//   // WeaponFlags.AutoReload,
-//   WeaponFlags.BonusAgainstShield,
-//   // WeaponFlags.Burning,
-//   // WeaponFlags.CanBlockRanged,
-//   WeaponFlags.CanCrushThrough,
-//   WeaponFlags.CanDismount,
-//   WeaponFlags.CanHook,
-//   WeaponFlags.CanKnockDown,
-//   WeaponFlags.CanPenetrateShield,
-//   WeaponFlags.CantReloadOnHorseback,
-//   WeaponFlags.CanReloadOnHorseback, // TODO:
-//   WeaponFlags.MultiplePenetration,
-//   WeaponFlags.CantUseOnHorseback,
-//   // WeaponFlags.TwoHandIdleOnMount, TODO:
-// ]
+export const visibleItemFlags: ItemFlags[] = [
+  ItemFlags.DropOnWeaponChange,
+  ItemFlags.DropOnAnyAction,
+  ItemFlags.UseTeamColor,
+]
 
-// export const visibleItemUsage: ItemUsage[] = [
-//   ItemUsage.LongBow,
-//   ItemUsage.Bow,
-//   ItemUsage.Crossbow,
-//   ItemUsage.CrossbowLight,
-//   ItemUsage.PolearmCouch,
-//   ItemUsage.PolearmBracing,
-//   ItemUsage.PolearmPike,
-//   ItemUsage.Polearm,
-// ]
+export const visibleWeaponFlags: WeaponFlags[] = [
+  WeaponFlags.BonusAgainstShield,
+  WeaponFlags.CanCrushThrough,
+  WeaponFlags.CanDismount,
+  WeaponFlags.CanHook,
+  WeaponFlags.CanKnockDown,
+  WeaponFlags.CanPenetrateShield,
+  WeaponFlags.CantReloadOnHorseback,
+  WeaponFlags.CanReloadOnHorseback,
+  WeaponFlags.MultiplePenetration,
+  WeaponFlags.CantUseOnHorseback,
+]
 
-// export const itemTypeToIcon: Record<ItemType, string> = {
-//   [ItemType.Arrows]: 'item-type-arrow',
-//   [ItemType.Banner]: 'item-type-banner',
-//   [ItemType.BodyArmor]: 'item-type-body-armor',
-//   [ItemType.Bolts]: 'item-type-bolt',
-//   [ItemType.Bow]: 'item-type-bow',
-//   [ItemType.Ranged]: 'item-type-bow', // TODO: need a icon
-//   [ItemType.Ammo]: 'item-type-arrow', // TODO: need a icon
-//   [ItemType.Bullets]: 'item-type-bullet',
-//   [ItemType.Crossbow]: 'item-type-crossbow',
-//   [ItemType.HandArmor]: 'item-type-hand-armor',
-//   [ItemType.HeadArmor]: 'item-type-head-armor',
-//   [ItemType.LegArmor]: 'item-type-leg-armor',
-//   [ItemType.Mount]: 'item-type-mount',
-//   [ItemType.MountHarness]: 'item-type-mount-harness',
-//   [ItemType.Musket]: 'item-type-musket',
-//   [ItemType.OneHandedWeapon]: 'item-type-one-handed-weapon',
-//   [ItemType.Pistol]: 'item-type-pistol',
-//   [ItemType.Polearm]: 'item-type-polearm',
-//   [ItemType.Shield]: 'item-type-shield',
-//   [ItemType.ShoulderArmor]: 'item-type-shoulder-armor',
-//   [ItemType.Thrown]: 'item-type-throwing-weapon',
-//   [ItemType.TwoHandedWeapon]: 'item-type-two-handed-weapon',
-//   [ItemType.Undefined]: '',
-// }
+export const visibleItemUsage: ItemUsage[] = [
+  ItemUsage.LongBow,
+  ItemUsage.Bow,
+  ItemUsage.Crossbow,
+  ItemUsage.CrossbowLight,
+  ItemUsage.PolearmCouch,
+  ItemUsage.PolearmBracing,
+  ItemUsage.PolearmPike,
+  ItemUsage.Polearm,
+]
 
-// export const weaponClassToIcon: Record<WeaponClass, string> = {
-//   [WeaponClass.Arrow]: 'item-type-arrow',
-//   [WeaponClass.Banner]: '',
-//   [WeaponClass.Bolt]: 'item-type-bolt',
-//   [WeaponClass.Boulder]: '',
-//   [WeaponClass.Bow]: 'item-type-bow',
-//   [WeaponClass.Cartridge]: 'item-type-bullet',
-//   [WeaponClass.Crossbow]: 'item-type-crossbow',
-//   [WeaponClass.Dagger]: 'weapon-class-one-handed-dagger',
-//   [WeaponClass.Javelin]: 'weapon-class-throwing-spear',
-//   [WeaponClass.LargeShield]: 'weapon-class-shield-large',
-//   [WeaponClass.LowGripPolearm]: '',
-//   [WeaponClass.Mace]: 'weapon-class-one-handed-mace',
-//   [WeaponClass.Musket]: 'item-type-musket',
-//   [WeaponClass.OneHandedAxe]: 'weapon-class-one-handed-axe',
-//   [WeaponClass.OneHandedPolearm]: 'weapon-class-one-handed-polearm',
-//   [WeaponClass.OneHandedSword]: 'weapon-class-one-handed-sword',
-//   [WeaponClass.Pick]: '',
-//   [WeaponClass.Pistol]: 'item-type-pistol',
-//   [WeaponClass.SmallShield]: 'weapon-class-shield-small',
-//   [WeaponClass.Stone]: 'weapon-class-throwing-stone',
-//   [WeaponClass.ThrowingAxe]: 'weapon-class-throwing-axe',
-//   [WeaponClass.ThrowingKnife]: 'weapon-class-throwing-knife',
-//   [WeaponClass.TwoHandedAxe]: 'weapon-class-two-handed-axe',
-//   [WeaponClass.TwoHandedMace]: 'weapon-class-two-handed-mace',
-//   [WeaponClass.TwoHandedPolearm]: 'weapon-class-two-handed-polearm',
-//   [WeaponClass.TwoHandedSword]: 'weapon-class-two-handed-sword',
-//   [WeaponClass.Undefined]: '',
-// }
+export const itemTypeToIcon: Record<ItemType, string> = {
+  [ItemType.Arrows]: 'item-type-arrow',
+  [ItemType.Banner]: 'item-type-banner',
+  [ItemType.BodyArmor]: 'item-type-body-armor',
+  [ItemType.Bolts]: 'item-type-bolt',
+  [ItemType.Bow]: 'item-type-bow',
+  [ItemType.Ranged]: 'item-type-bow', // TODO: need a icon
+  [ItemType.Ammo]: 'item-type-arrow', // TODO: need a icon
+  [ItemType.Bullets]: 'item-type-bullet',
+  [ItemType.Crossbow]: 'item-type-crossbow',
+  [ItemType.HandArmor]: 'item-type-hand-armor',
+  [ItemType.HeadArmor]: 'item-type-head-armor',
+  [ItemType.LegArmor]: 'item-type-leg-armor',
+  [ItemType.Mount]: 'item-type-mount',
+  [ItemType.MountHarness]: 'item-type-mount-harness',
+  [ItemType.Musket]: 'item-type-musket',
+  [ItemType.OneHandedWeapon]: 'item-type-one-handed-weapon',
+  [ItemType.Pistol]: 'item-type-pistol',
+  [ItemType.Polearm]: 'item-type-polearm',
+  [ItemType.Shield]: 'item-type-shield',
+  [ItemType.ShoulderArmor]: 'item-type-shoulder-armor',
+  [ItemType.Thrown]: 'item-type-throwing-weapon',
+  [ItemType.TwoHandedWeapon]: 'item-type-two-handed-weapon',
+  [ItemType.Undefined]: '',
+}
 
-// export const itemFlagsToIcon: Record<ItemFlags, string | null> = {
-//   [ItemFlags.CanBePickedUpFromCorpse]: null,
-//   [ItemFlags.CannotBePickedUp]: null,
-//   [ItemFlags.Civilian]: null,
-//   [ItemFlags.DoesNotHideChest]: null,
-//   [ItemFlags.DoNotScaleBodyAccordingToWeaponLength]: null,
-//   [ItemFlags.DropOnAnyAction]: null,
-//   [ItemFlags.DropOnWeaponChange]: 'item-flag-drop-on-change',
-//   [ItemFlags.ForceAttachOffHandPrimaryItemBone]: null,
-//   [ItemFlags.ForceAttachOffHandSecondaryItemBone]: null,
-//   [ItemFlags.HasToBeHeldUp]: null,
-//   [ItemFlags.HeldInOffHand]: null,
-//   [ItemFlags.NotStackable]: null,
-//   [ItemFlags.NotUsableByFemale]: null,
-//   [ItemFlags.NotUsableByMale]: null,
-//   [ItemFlags.QuickFadeOut]: null,
-//   [ItemFlags.UseTeamColor]: 'item-flag-use-team-color',
-//   [ItemFlags.WoodenAttack]: null,
-//   [ItemFlags.WoodenParry]: null,
-// }
+export const weaponClassToIcon: Record<WeaponClass, string> = {
+  [WeaponClass.Arrow]: 'item-type-arrow',
+  [WeaponClass.Banner]: '',
+  [WeaponClass.Bolt]: 'item-type-bolt',
+  [WeaponClass.Boulder]: '',
+  [WeaponClass.Bow]: 'item-type-bow',
+  [WeaponClass.Cartridge]: 'item-type-bullet',
+  [WeaponClass.Crossbow]: 'item-type-crossbow',
+  [WeaponClass.Dagger]: 'weapon-class-one-handed-dagger',
+  [WeaponClass.Javelin]: 'weapon-class-throwing-spear',
+  [WeaponClass.LargeShield]: 'weapon-class-shield-large',
+  [WeaponClass.LowGripPolearm]: '',
+  [WeaponClass.Mace]: 'weapon-class-one-handed-mace',
+  [WeaponClass.Musket]: 'item-type-musket',
+  [WeaponClass.OneHandedAxe]: 'weapon-class-one-handed-axe',
+  [WeaponClass.OneHandedPolearm]: 'weapon-class-one-handed-polearm',
+  [WeaponClass.OneHandedSword]: 'weapon-class-one-handed-sword',
+  [WeaponClass.Pick]: '',
+  [WeaponClass.Pistol]: 'item-type-pistol',
+  [WeaponClass.SmallShield]: 'weapon-class-shield-small',
+  [WeaponClass.Stone]: 'weapon-class-throwing-stone',
+  [WeaponClass.ThrowingAxe]: 'weapon-class-throwing-axe',
+  [WeaponClass.ThrowingKnife]: 'weapon-class-throwing-knife',
+  [WeaponClass.TwoHandedAxe]: 'weapon-class-two-handed-axe',
+  [WeaponClass.TwoHandedMace]: 'weapon-class-two-handed-mace',
+  [WeaponClass.TwoHandedPolearm]: 'weapon-class-two-handed-polearm',
+  [WeaponClass.TwoHandedSword]: 'weapon-class-two-handed-sword',
+  [WeaponClass.Undefined]: '',
+}
 
-// export const weaponFlagsToIcon: Partial<Record<WeaponFlags, string | null>> = {
-//   [WeaponFlags.AutoReload]: 'item-flag-auto-reload',
-//   [WeaponFlags.BonusAgainstShield]: 'item-flag-bonus-against-shield',
-//   [WeaponFlags.CanDismount]: 'item-flag-can-dismount',
-//   [WeaponFlags.CanKnockDown]: 'item-flag-can-knock-down',
-//   [WeaponFlags.CanPenetrateShield]: 'item-flag-can-penetrate-shield',
-//   [WeaponFlags.CanReloadOnHorseback]: 'item-flag-can-reload-on-horseback',
-//   [WeaponFlags.CantReloadOnHorseback]: 'item-flag-cant-reload-on-horseback',
-//   [WeaponFlags.CantUseOnHorseback]: 'item-flag-cant-reload-on-horseback',
-//   [WeaponFlags.MultiplePenetration]: 'item-flag-multiply-penetration',
-//   [WeaponFlags.TwoHandIdleOnMount]: 'item-flag-two-hand-idle',
-// }
+export const itemFlagsToIcon: Record<ItemFlags, string | null> = {
+  [ItemFlags.CanBePickedUpFromCorpse]: null,
+  [ItemFlags.CannotBePickedUp]: null,
+  [ItemFlags.Civilian]: null,
+  [ItemFlags.DoesNotHideChest]: null,
+  [ItemFlags.DoNotScaleBodyAccordingToWeaponLength]: null,
+  [ItemFlags.DropOnAnyAction]: null,
+  [ItemFlags.DropOnWeaponChange]: 'item-flag-drop-on-change',
+  [ItemFlags.ForceAttachOffHandPrimaryItemBone]: null,
+  [ItemFlags.ForceAttachOffHandSecondaryItemBone]: null,
+  [ItemFlags.HasToBeHeldUp]: null,
+  [ItemFlags.HeldInOffHand]: null,
+  [ItemFlags.NotStackable]: null,
+  [ItemFlags.NotUsableByFemale]: null,
+  [ItemFlags.NotUsableByMale]: null,
+  [ItemFlags.QuickFadeOut]: null,
+  [ItemFlags.UseTeamColor]: 'item-flag-use-team-color',
+  [ItemFlags.WoodenAttack]: null,
+  [ItemFlags.WoodenParry]: null,
+}
 
-// export const itemUsageToIcon: Partial<Record<ItemUsage, string | null>> = {
-//   [ItemUsage.Bow]: 'item-flag-short-bow',
-//   [ItemUsage.Crossbow]: 'item-flag-heavy-crossbow',
-//   [ItemUsage.CrossbowLight]: 'item-flag-light-crossbow',
-//   [ItemUsage.LongBow]: 'item-flag-longbow',
-//   [ItemUsage.Polearm]: 'item-flag-jousting',
-//   [ItemUsage.PolearmBracing]: 'item-flag-brace',
-//   [ItemUsage.PolearmCouch]: 'item-flag-couch',
-//   [ItemUsage.PolearmPike]: 'item-flag-pike',
-// }
+export const weaponFlagsToIcon: Partial<Record<WeaponFlags, string | null>> = {
+  [WeaponFlags.AutoReload]: 'item-flag-auto-reload',
+  [WeaponFlags.BonusAgainstShield]: 'item-flag-bonus-against-shield',
+  [WeaponFlags.CanDismount]: 'item-flag-can-dismount',
+  [WeaponFlags.CanKnockDown]: 'item-flag-can-knock-down',
+  [WeaponFlags.CanPenetrateShield]: 'item-flag-can-penetrate-shield',
+  [WeaponFlags.CanReloadOnHorseback]: 'item-flag-can-reload-on-horseback',
+  [WeaponFlags.CantReloadOnHorseback]: 'item-flag-cant-reload-on-horseback',
+  [WeaponFlags.CantUseOnHorseback]: 'item-flag-cant-reload-on-horseback',
+  [WeaponFlags.MultiplePenetration]: 'item-flag-multiply-penetration',
+  [WeaponFlags.TwoHandIdleOnMount]: 'item-flag-two-hand-idle',
+}
 
-// export const itemFamilyTypeToIcon: Record<ItemFamilyType, string | null> = {
-//   [ItemFamilyType.Camel]: 'mount-type-camel',
-//   [ItemFamilyType.EBA]: null,
-//   [ItemFamilyType.Horse]: 'mount-type-horse',
-//   [ItemFamilyType.Undefined]: null,
-// }
+export const itemUsageToIcon: Partial<Record<ItemUsage, string | null>> = {
+  [ItemUsage.Bow]: 'item-flag-short-bow',
+  [ItemUsage.Crossbow]: 'item-flag-heavy-crossbow',
+  [ItemUsage.CrossbowLight]: 'item-flag-light-crossbow',
+  [ItemUsage.LongBow]: 'item-flag-longbow',
+  [ItemUsage.Polearm]: 'item-flag-jousting',
+  [ItemUsage.PolearmBracing]: 'item-flag-brace',
+  [ItemUsage.PolearmCouch]: 'item-flag-couch',
+  [ItemUsage.PolearmPike]: 'item-flag-pike',
+}
 
-// export const damageTypeToIcon: Record<DamageType, string | null> = {
-//   [DamageType.Blunt]: 'damage-type-blunt',
-//   [DamageType.Cut]: 'damage-type-cut',
-//   [DamageType.Pierce]: 'damage-type-pierce',
-//   [DamageType.Undefined]: null,
-// }
+export const itemFamilyTypeToIcon: Record<ItemFamilyType, string | null> = {
+  [ItemFamilyType.Camel]: 'mount-type-camel',
+  [ItemFamilyType.EBA]: null,
+  [ItemFamilyType.Horse]: 'mount-type-horse',
+  [ItemFamilyType.Undefined]: null,
+}
 
-// export const itemCultureToIcon: Record<Culture, string> = {
-//   [Culture.Aserai]: 'culture-aserai',
-//   [Culture.Battania]: 'culture-battania',
-//   [Culture.Empire]: 'culture-empire',
-//   [Culture.Khuzait]: 'culture-khuzait',
-//   [Culture.Looters]: 'culture-looters',
-//   [Culture.Neutral]: 'culture-neutrals',
-//   [Culture.Sturgia]: 'culture-sturgia',
-//   [Culture.Vlandia]: 'culture-vlandia',
-// }
+export const damageTypeToIcon: Record<DamageType, string | null> = {
+  [DamageType.Blunt]: 'damage-type-blunt',
+  [DamageType.Cut]: 'damage-type-cut',
+  [DamageType.Pierce]: 'damage-type-pierce',
+  [DamageType.Undefined]: null,
+}
+
+export const itemCultureToIcon: Record<Culture, string> = {
+  [Culture.Aserai]: 'culture-aserai',
+  [Culture.Battania]: 'culture-battania',
+  [Culture.Empire]: 'culture-empire',
+  [Culture.Khuzait]: 'culture-khuzait',
+  [Culture.Looters]: 'culture-looters',
+  [Culture.Neutral]: 'culture-neutrals',
+  [Culture.Sturgia]: 'culture-sturgia',
+  [Culture.Vlandia]: 'culture-vlandia',
+}
 
 // // TO MODEL:
 // export enum IconBucketType {
@@ -734,64 +742,62 @@ export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 //   return `+${n(roundFLoat(Math.abs(value - relativeValue)))}`
 // }
 
-// export const getItemGraceTimeEnd = (userItem: UserItem) => {
-//   const graceTimeEnd = new Date(userItem.createdAt)
-//   graceTimeEnd.setMinutes(graceTimeEnd.getMinutes() + itemSellGracePeriodMinutes)
-//   return graceTimeEnd
-// }
+export const getItemGraceTimeEnd = (userItem: UserItem) => {
+  const graceTimeEnd = new Date(userItem.createdAt)
+  graceTimeEnd.setMinutes(graceTimeEnd.getMinutes() + itemSellGracePeriodMinutes)
+  return graceTimeEnd
+}
 
-// export const isGraceTimeExpired = (itemGraceTimeEnd: Date) => itemGraceTimeEnd < new Date()
+export const isGraceTimeExpired = (itemGraceTimeEnd: Date) => itemGraceTimeEnd < new Date()
 
-// export const computeSalePrice = (userItem: UserItem) => {
-//   const graceTimeEnd = getItemGraceTimeEnd(userItem)
+export const computeSalePrice = (userItem: UserItem) => {
+  const graceTimeEnd = getItemGraceTimeEnd(userItem)
 
-//   if (isGraceTimeExpired(graceTimeEnd)) {
-//     return {
-//       graceTimeEnd: null,
-//       price: Math.floor(userItem.item.price * itemSellCostPenalty),
-//     }
-//   }
+  if (isGraceTimeExpired(graceTimeEnd)) {
+    return {
+      graceTimeEnd: null,
+      price: Math.floor(userItem.item.price * itemSellCostPenalty),
+    }
+  }
 
-//   // If the item was recently bought it is sold at 100% of its original price.
-//   return { graceTimeEnd, price: userItem.item.price }
-// }
+  // If the item was recently bought it is sold at 100% of its original price.
+  return { graceTimeEnd, price: userItem.item.price }
+}
 
-// export const computeAverageRepairCostPerHour = (price: number) =>
-//   Math.floor(price * itemRepairCostPerSecond * 3600 * itemBreakChance)
+export const computeAverageRepairCostPerHour = (price: number) =>
+  Math.floor(price * itemRepairCostPerSecond * 3600 * itemBreakChance)
 
-// export const computeBrokenItemRepairCost = (price: number) =>
-//   Math.floor(price * itemRepairCostPerSecond * brokenItemRepairPenaltySeconds)
+export const computeBrokenItemRepairCost = (price: number) =>
+  Math.floor(price * itemRepairCostPerSecond * brokenItemRepairPenaltySeconds)
 
-// export const getRankColor = (rank: ItemRank) => {
-//   switch (rank) {
-//     case 1:
-//       return '#4ade80'
+export const getRankColor = (rank: ItemRank) => {
+  switch (rank) {
+    case 1:
+      return '#4ade80'
 
-//     case 2:
-//       return '#60a5fa'
+    case 2:
+      return '#60a5fa'
 
-//     case 3:
-//       return '#c084fc'
+    case 3:
+      return '#c084fc'
 
-//     default:
-//       return '#fff'
-//   }
-// }
+    default:
+      return '#fff'
+  }
+}
 
-// export const canUpgrade = (type: ItemType) => type !== ItemType.Banner
+export const canUpgrade = (type: ItemType) => type !== ItemType.Banner
 
-// export const canAddedToClanArmory = (type: ItemType) => type !== ItemType.Banner
+export const canAddedToClanArmory = (type: ItemType) => type !== ItemType.Banner
 
-// export const reforgeCostByRank: Record<ItemRank, number> = {
-//   0: itemReforgeCostPerRank[0],
-//   1: itemReforgeCostPerRank[1],
-//   2: itemReforgeCostPerRank[2],
-//   3: itemReforgeCostPerRank[3],
-// }
+export const reforgeCostByRank: Record<ItemRank, number> = {
+  0: itemReforgeCostPerRank[0] ?? 0,
+  1: itemReforgeCostPerRank[1] ?? 0,
+  2: itemReforgeCostPerRank[2] ?? 0,
+  3: itemReforgeCostPerRank[3] ?? 0,
+}
 
-// export const itemIsNewDays = 14
-
-// export const isWeaponBySlot = (slot: ItemSlot) => weaponSlots.includes(slot)
+export const itemIsNewDays = 14
 
 // const itemParamIsEmpty = (field: keyof ItemFlat, itemFlat: ItemFlat) => {
 //   const value = itemFlat[field]

@@ -4,7 +4,7 @@ import { timeout } from 'es-toolkit'
 import type { CharacterCharacteristics } from '~/models/character'
 
 import { useCharacter } from '~/composables/character/use-character'
-import { useCharacterCharacteristicBuilder, useCharacterCharacteristicProvider } from '~/composables/character/use-character-characteristic'
+import { useCharacterCharacteristic, useCharacterCharacteristicBuilder, useCharacterCharacteristicProvider } from '~/composables/character/use-character-characteristic'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
@@ -29,16 +29,7 @@ const toast = useToast()
 
 const { character } = useCharacter()
 
-const {
-  state: characterCharacteristics,
-  execute: loadCharacterCharacteristics,
-} = useAsyncState(
-  (id: number) => getCharacterCharacteristics(id),
-  createEmptyCharacteristic(),
-  { immediate: false, resetOnExecute: false },
-)
-
-useCharacterCharacteristicProvider(characterCharacteristics)
+const { characterCharacteristics } = useCharacterCharacteristic()
 
 const setCharacterCharacteristicsSync = (characteristic: CharacterCharacteristics) => {
   characterCharacteristics.value = characteristic
