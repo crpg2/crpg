@@ -5,20 +5,15 @@ defineProps<{ region: Region }>()
 </script>
 
 <template>
-  <VTooltip>
-    <template #default="slotProps">
-      <slot
-        name="default"
-        v-bind="slotProps"
-      />
-    </template>
+  <UTooltip>
+    <slot name="default" />
 
-    <template #popper>
+    <template #content>
       <i18n-t
         scope="global"
         keypath="hh.tooltip-content.template"
         tag="div"
-        class="prose prose-invert max-w-xs pr-6"
+        class="prose max-w-xs pr-6 prose-invert"
       >
         <template #title>
           <h5>🎉 {{ $t('hh.tooltip-content.title') }} 🎉</h5>
@@ -53,5 +48,5 @@ defineProps<{ region: Region }>()
         </template>
       </i18n-t>
     </template>
-  </VTooltip>
+  </UTooltip>
 </template>

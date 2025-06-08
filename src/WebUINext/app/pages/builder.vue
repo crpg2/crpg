@@ -212,7 +212,7 @@ const onShare = () => {
 
         <div class="statsGrid grid items-start gap-6">
           <CharacterCharacteristicsBuilder
-            :get-input-props
+            :get-input-props="(group, field) => getInputProps(group, field, true) "
             :characteristics
             :check-current-skill-requirements-satisfied="currentSkillRequirementsSatisfied"
             :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, count: convertRateAttributesToSkills }"

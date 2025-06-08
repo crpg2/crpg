@@ -32,9 +32,7 @@ const { settings } = storeToRefs(useSettingsStore())
         </UButton>
       </UTooltip>
 
-      <UTooltip
-        :text="$t('nav.main.Community')"
-      >
+      <UTooltip :text="$t('nav.main.Community')">
         <UButton
           size="sm"
           variant="ghost"
@@ -45,9 +43,7 @@ const { settings } = storeToRefs(useSettingsStore())
       </UTooltip>
 
       <AppInstallationGuide>
-        <UTooltip
-          :text="$t('nav.main.Installation')"
-        >
+        <UTooltip :text="$t('nav.main.Installation')">
           <UButton
             size="sm"
             variant="ghost"
@@ -56,14 +52,21 @@ const { settings } = storeToRefs(useSettingsStore())
         </UTooltip>
       </AppInstallationGuide>
 
-      <UTooltip
-        :text="$t('help.title')"
-      >
+      <UTooltip :text="$t('help.title')">
         <UButton
           size="sm"
           variant="ghost"
           icon="crpg:help-circle"
           :to="{ name: 'help' }"
+        />
+      </UTooltip>
+
+      <UTooltip :text="$t('nav.main.Builder')">
+        <UButton
+          size="sm"
+          variant="ghost"
+          icon="crpg:calculator"
+          :to="{ name: 'builder' }"
         />
       </UTooltip>
     </div>

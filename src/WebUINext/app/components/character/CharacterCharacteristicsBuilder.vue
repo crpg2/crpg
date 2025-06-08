@@ -17,7 +17,7 @@ interface ConvertState {
 }
 
 defineProps<{
-  getInputProps: (group: CharacteristicSectionKey, field: CharacteristicKey, noLimit?: boolean) => { modelValue: number, min: number, max: number }
+  getInputProps: (group: CharacteristicSectionKey, field: CharacteristicKey) => { modelValue: number, min: number, max: number }
   checkCurrentSkillRequirementsSatisfied: (skillKey: SkillKey) => boolean
   characteristics: CharacterCharacteristics
   convertAttributesToSkillsState: ConvertState
@@ -143,6 +143,7 @@ const formSchema: FormSchema[] = [
               </div>
             </template>
           </UTooltip>
+
           <UTooltip v-else-if="fieldGroup.key === 'skills'">
             <UButton
               variant="outline"
