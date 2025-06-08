@@ -247,18 +247,15 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             : 100;
         props.MountManeuver = mount.GetModifiedMountManeuver(in mountHarness) * (0.5f + ridingSkill * 0.0025f) * 1.15f;
 
-        // Harness base weight (0 if no harness equipped)
         float harnessWeight = mountHarness.Item?.Weight ?? 0f;
-
-        // Rider perceived weight
         float riderPerceivedWeight = agent.RiderAgent != null
             ? ComputePerceivedWeight(agent.RiderAgent)
             : 0f;
 
         float totalEffectiveLoad = harnessWeight + riderPerceivedWeight;
 
-        const float maxLoadReference = 48f; // was 45f before perceived weight being added, will give balanced cavalry some more breathing room
-        float loadPercentage = totalEffectiveLoad / maxLoadReference;
+        const float maxLoadReference = 48f;
+        float loadPercentage = Math.Min(totalEffectiveLoad / maxLoadReference, 1f); // Cap at 1.0
 
         float weightImpactOnSpeed = 1f / (1f + 0.333f * loadPercentage);
         float ridingImpactOnSpeed = (float)(
@@ -269,7 +266,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
         props.MountSpeed = (mount.GetModifiedMountSpeed(in mountHarness) + 1) * 0.209f * ridingImpactOnSpeed * weightImpactOnSpeed;
         props.TopSpeedReachDuration = Game.Current.BasicModels.RidingModel.CalculateAcceleration(in mount, in mountHarness, ridingSkill);
-        props.MountDashAccelerationMultiplier = 1f / (2f + 8f * loadPercentage); // native between 1 and 0.1 . cRPG between 0.5 and 0.1
+        props.MountDashAccelerationMultiplier = 1f / (2f + 8f * loadPercentage);
     }
 
     // WARNING : for some reasone UpdateHumanAgentStats is called twice everytime there is a change (respawn or weapon switch)
