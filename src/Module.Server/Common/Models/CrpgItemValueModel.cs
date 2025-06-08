@@ -174,7 +174,7 @@ internal class CrpgItemValueModel : ItemValueModel
                 WeaponClass.TwoHandedSword => 27.5f,
                 WeaponClass.TwoHandedMace => 28.5f,
                 WeaponClass.TwoHandedAxe => 28.0f,
-                WeaponClass.TwoHandedPolearm => 31f,
+                WeaponClass.TwoHandedPolearm => 28f,
                 WeaponClass.OneHandedPolearm => 25f,
                 _ => float.MaxValue,
             };
