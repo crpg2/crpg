@@ -31,7 +31,7 @@ const speedStats = computed(() =>
 
 <template>
   <UCard
-    :ui="{ body: '!p-0', header: '!px-4 py-3' }"
+    :ui="{ root: 'overflow-hidden', body: '!p-0 overflow-hidden', header: '!px-4 py-3' }"
   >
     <!-- <template #header>
       <UiDataCell class="w-full text-sm">

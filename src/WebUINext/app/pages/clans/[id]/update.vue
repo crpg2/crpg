@@ -63,7 +63,7 @@ const {
 
 const {
   execute: onDeleteClan,
-  loading: deletingClan,
+  isLoading: deletingClan,
 } = useAsyncCallback(
   async () => {
     await kickClanMember(clanId.value, userStore.user!.id) // delete yourself from the clan as the only member === delete the clan

@@ -195,7 +195,7 @@ const regionItems = regions.map<TabsItem>(region => ({
               <UButton
                 :to="{ name: 'clans-id', params: { id: userStore.clan.id } }"
                 icon="crpg:member"
-                color="secondary"
+                variant="subtle"
                 data-aq-my-clan-button
               />
             </UTooltip>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { SomeRole } from '~/models/role'
 import {
   activateCharacter,
@@ -28,6 +29,7 @@ const toast = useToast()
 
 const userStore = useUserStore()
 const { characters, user } = toRefs(userStore)
+const { togglePageLoading } = usePageLoading()
 
 const route = useRoute('characters-id')
 
@@ -39,6 +41,7 @@ const currentCharacter = computed(() => characters.value.find(char => char.id ==
 
 // create
 const [shownCreateCharacterGuideModal, toggleCreateCharacterGuideModal] = useToggle()
+
 const { execute: onCreateNewCharacter } = useAsyncCallback(async () => {
   if (user.value!.activeCharacterId) {
     await activateCharacter(user.value!.activeCharacterId, false)
@@ -48,13 +51,13 @@ const { execute: onCreateNewCharacter } = useAsyncCallback(async () => {
 })
 
 // update name
-const { execute: onUpdateCharacter } = useAsyncCallback(
+const { execute: onUpdateCharacter, isLoading: updatingCharacter } = useAsyncCallback(
   async (name: string) => {
     if (!currentCharacter.value) {
       return
     }
     await updateCharacter(currentCharacter.value.id, { name })
-    await userStore.fetchUser()
+    await userStore.fetchCharacters()
     toast.add({
       title: t('character.settings.update.notify.success'),
       close: false,
@@ -64,7 +67,7 @@ const { execute: onUpdateCharacter } = useAsyncCallback(
 )
 
 // activate
-const { execute: onActivateCharacter } = useAsyncCallback(
+const { execute: onActivateCharacter, isLoading: activatingCharacter } = useAsyncCallback(
   async (id: number, status: boolean) => {
     await activateCharacter(id, status)
     await userStore.fetchUser()
@@ -77,7 +80,7 @@ const { execute: onActivateCharacter } = useAsyncCallback(
 )
 
 // TODO: spec
-const { execute: onDeleteCharacter } = useAsyncCallback(
+const { execute: onDeleteCharacter, isLoading: deletingCharacter } = useAsyncCallback(
   async () => {
     if (!currentCharacter.value) {
       return
@@ -104,6 +107,10 @@ const { execute: onDeleteCharacter } = useAsyncCallback(
     return navigateTo({ name: 'characters-id', params: { id: userStore.user!.activeCharacterId || userStore.characters[0]!.id } })
   },
 )
+
+watchEffect(() => {
+  togglePageLoading(updatingCharacter.value || activatingCharacter.value || deletingCharacter.value)
+})
 </script>
 
 <template>
@@ -121,6 +128,7 @@ const { execute: onDeleteCharacter } = useAsyncCallback(
           @activate="onActivateCharacter"
           @create="onCreateNewCharacter"
         />
+
         <CharacterEditModal
           :character="currentCharacter"
           @update="onUpdateCharacter"

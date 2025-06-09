@@ -31,6 +31,7 @@ const onConfirm = async () => {
   if (!(await $v.value.$validate())) {
     return
   }
+
   emit('update', nameModel.value)
 }
 
@@ -65,7 +66,7 @@ const [shownConfirmDeleteDialog, toggleConfirmDeleteDialog] = useToggle()
         />
       </UTooltip>
 
-      <template #body>
+      <template #body="{ close }">
         <UFormField
           :label="$t('character.settings.update.form.field.name')"
           :error="errorMessagesToString($v.nameModel.$errors)"
@@ -122,7 +123,8 @@ const [shownConfirmDeleteDialog, toggleConfirmDeleteDialog] = useToggle()
     </UModal>
 
     <AppConfirmActionDialog
-      :open="shownConfirmDeleteDialog"
+      v-if="shownConfirmDeleteDialog"
+      open
       :title="$t('character.settings.delete.dialog.title')"
       :description="$t('character.settings.delete.dialog.desc')"
       :name="`${character.name} - ${character.level}`"

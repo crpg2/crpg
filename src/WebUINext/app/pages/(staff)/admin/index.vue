@@ -2,9 +2,12 @@
 import type { Settings } from '~/models/setting'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { Role } from '~/models/role'
 import { editSettings } from '~/services/settings-service'
 import { useSettingsStore } from '~/stores/settings'
+
+const { togglePageLoading } = usePageLoading()
 
 definePageMeta({
   roles: [Role.Admin],
@@ -21,6 +24,10 @@ const {
     await settingStore.loadSettings()
   },
 )
+
+watchEffect(() => {
+  togglePageLoading(settingStore.isLoadingSettings || editingSetting.value)
+})
 </script>
 
 <template>
@@ -28,12 +35,6 @@ const {
     <h1 class="mb-14 text-center text-xl text-content-100">
       {{ $t('nav.main.Admin') }}
     </h1>
-
-    <!-- TODO: -->
-    <OLoading
-      :active="settingStore.isLoadingSettings"
-      icon-size="xl"
-    />
 
     <AdminSettingsForm
       class="mx-auto xl:w-1/2"

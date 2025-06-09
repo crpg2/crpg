@@ -22,12 +22,20 @@ watch(() => props.settings, () => {
 
 <template>
   <UCard
-    label="Settings"
-    icon="settings"
     :ui="{
       footer: 'flex items-center justify-center gap-4',
     }"
   >
+    <template #header>
+      <UiDataCell>
+        <template #leftContent>
+          <UIcon name="crpg:settings" class="size-6" />
+        </template>
+        <div class="text-sm">
+          Site Settings
+        </div>
+      </UiDataCell>
+    </template>
     <div class="space-y-6">
       <UFormField
         v-for="(_, key) in settingModel" :key
@@ -38,7 +46,6 @@ watch(() => props.settings, () => {
           type="text"
           color="secondary"
           variant="outline"
-          size="lg"
           class="w-full"
         />
       </UFormField>
