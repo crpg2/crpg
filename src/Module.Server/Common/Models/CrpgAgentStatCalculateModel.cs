@@ -269,10 +269,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
             if (riderWeapon != null)
             {
-                float weaponLengthPenalty = Math.Min(
-                    MBMath.Lerp(0.8f, 1f, MaxWeaponLengthForStrLevel(strengthSkill) / riderWeapon.WeaponLength),
-                    1f
-                );
+                float maxLength = MaxWeaponLengthForStrLevel(strengthSkill);
+                float ratio = Math.Min(maxLength / riderWeapon.WeaponLength, 1f);
+                float weaponLengthPenalty = 0.8f + 0.2f * ratio;
 
                 props.MountManeuver *= weaponLengthPenalty;
                 props.MountSpeed *= weaponLengthPenalty;
