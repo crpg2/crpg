@@ -265,7 +265,7 @@ internal class CrpgItemValueModel : ItemValueModel
                     swingLengthTier = 0.455f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
                     break;
                 case WeaponClass.Mace:
-                    swingLengthTier = 0.49f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
+                    swingLengthTier = 0.4f * (float)Math.Pow(0.8f + weapon.WeaponLength * 0.01f, 2f);
                     break;
                 case WeaponClass.TwoHandedSword:
                 case WeaponClass.TwoHandedMace:
