@@ -5,8 +5,8 @@ import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
 import { useInventoryEquipment } from '~/composables/character/inventory/use-inventory-equipment'
+import { useCharacterItems } from '~/composables/character/use-character-items'
 import { getAvailableSlotsByItem } from '~/services/item-service'
-import { useUserStore } from '~/stores/user'
 
 // Shared state
 const focusedItemId = ref<number | null>(null)
@@ -17,14 +17,14 @@ const toSlot = ref<ItemSlot | null>(null)
 export const useInventoryDnD = (equippedItemsBySlot: MaybeRefOrGetter<EquippedItemsBySlot>) => {
   const [dragging, toggleDragging] = useToggle()
 
-  const { user } = toRefs(useUserStore())
-  const { emit } = getCurrentInstance() as NonNullable<ReturnType<typeof getCurrentInstance>> // TODO: FIXME: refactoring
+  const { updateCharacterItems } = useCharacterItems()
 
   const { getUnEquipItemsLinked, isEquipItemAllowed } = useInventoryEquipment()
 
   const onDragStart = (item: UserItem | null = null, slot: ItemSlot | null = null) => {
     toggleDragging(true)
-    if (!item || !isEquipItemAllowed(item, user.value!.id)) {
+
+    if (!item || !isEquipItemAllowed(item)) {
       return
     }
 
@@ -47,8 +47,7 @@ export const useInventoryDnD = (equippedItemsBySlot: MaybeRefOrGetter<EquippedIt
   const onDragEnd = (_e: DragEvent | null = null, slot: ItemSlot | null = null) => {
     if (slot && !toSlot.value) {
       const items: EquippedItemId[] = getUnEquipItemsLinked(slot, toValue(equippedItemsBySlot))
-
-      emit('change', items) // drop outside
+      updateCharacterItems(items)
     }
 
     focusedItemId.value = null
@@ -69,11 +68,11 @@ export const useInventoryDnD = (equippedItemsBySlot: MaybeRefOrGetter<EquippedIt
     if (fromSlot.value) {
       items.push({
         slot: fromSlot.value,
-        userItemId: toValue(equippedItemsBySlot)[slot].id || null,
+        userItemId: toValue(equippedItemsBySlot)[slot]?.id ?? null,
       })
     }
 
-    emit('change', items)
+    updateCharacterItems(items)
   }
 
   return {

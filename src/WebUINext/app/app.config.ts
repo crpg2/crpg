@@ -147,12 +147,12 @@ export default defineAppConfig({
     },
     popover: {
       slots: {
-        content: 'rounded-lg px-4 py-3.5',
+        content: 'rounded-md px-4 py-3.5',
       },
     },
     tooltip: {
       slots: {
-        content: 'rounded-lg px-4 py-3.5 h-auto',
+        content: 'rounded-md px-4 py-3.5 h-auto',
       },
     },
     slider: {

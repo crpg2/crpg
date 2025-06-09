@@ -24,7 +24,7 @@ const {
 
 const {
   execute: onRetireCharacter,
-  loading: retiringCharacter,
+  isLoading: retiringCharacter,
 } = useAsyncCallback(async () => {
   await retireCharacter(character.value.id)
 
@@ -43,7 +43,7 @@ const {
 
 const {
   execute: onSetCharacterForTournament,
-  loading: settingCharacterForTournament,
+  isLoading: settingCharacterForTournament,
 } = useAsyncCallback(async () => {
   await setCharacterForTournament(character.value.id)
 

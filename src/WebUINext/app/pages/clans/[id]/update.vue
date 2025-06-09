@@ -46,7 +46,7 @@ function backToClanPage() {
 
 const {
   execute: onUpdateClan,
-  loading: updatingClan,
+  isLoading: updatingClan,
 } = useAsyncCallback(
   async (form: Omit<Clan, 'id'>) => {
     await updateClan(clanId.value, { ...form, id: clanId.value })

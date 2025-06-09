@@ -77,8 +77,8 @@ const {
     >
       <CharacterInventoryDollSlot
         v-for="slot in slotGroup"
-        :key="slot.key"
-        v-on-long-press="[() => { !dragging && onQuickUnEquip(slot.key) }, { delay: 500 }]"
+        :key="`${slot.key}_${equippedItems[slot.key]?.id ?? 'empty'}`"
+        v-on-long-press="[() => !dragging && onQuickUnEquip(slot.key), { delay: 500 }]"
         :item-slot="slot.key"
         :placeholder="slot.placeholderIcon"
         :user-item="equippedItems[slot.key]"

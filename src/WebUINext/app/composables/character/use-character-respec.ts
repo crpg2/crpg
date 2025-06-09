@@ -32,7 +32,7 @@ export const useCharacterRespec = () => {
 
   const {
     execute: onRespecializeCharacter,
-    loading: respecializingCharacter,
+    isLoading: respecializingCharacter,
   } = useAsyncCallback(
     async (characterId: number) => {
       await respecializeCharacter(characterId)

@@ -2,11 +2,14 @@
 import type { RouteLocationNormalizedLoaded, RouteLocationRaw } from 'vue-router'
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
+import type { EquippedItemId } from '~/models/character'
+
 import { useCharacterProvider } from '~/composables/character/use-character'
 import { useCharacterCharacteristicProvider } from '~/composables/character/use-character-characteristic'
-import { useCharacterItems, useCharacterItemsProvider } from '~/composables/character/use-character-items'
+import { useCharacterItemsProvider } from '~/composables/character/use-character-items'
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePollInterval } from '~/composables/utils/use-poll-interval'
-import { createEmptyCharacteristic, getCharacterCharacteristics, getCharacterItems } from '~/services/character-service'
+import { updateCharacterItems as _updateCharacterItems, createEmptyCharacteristic, getCharacterCharacteristics, getCharacterItems } from '~/services/character-service'
 // import type { CharacterCharacteristics, CharacterOverallItemsStats } from '~/models/character'
 // import { usePollInterval } from '~/composables/use-poll-interval'
 // import { useWelcome } from '~/composables/use-welcome'
@@ -55,17 +58,29 @@ const character = computed(() => userStore.characters.find(c => c.id === Number(
 
 useCharacterProvider(character)
 
+// try to provider
 const {
   execute: loadCharacterItems,
   state: characterItems,
-} = useAsyncState(
-  (id: number) => getCharacterItems(id),
-  [],
-  { immediate: false, resetOnExecute: false },
-)
+  isLoading: loadingCharacterItems,
+} = useAsyncState((id: number) => getCharacterItems(id), [], { immediate: false, resetOnExecute: false })
 
-useCharacterItemsProvider(characterItems)
+const {
+  execute: updateCharacterItems,
+  isLoading: updatingCharacterItems,
+} = useAsyncCallback(async (itemIds: EquippedItemId[]) => {
+  characterItems.value = await _updateCharacterItems(character.value.id, itemIds)
+})
 
+useCharacterItemsProvider({
+  characterItems,
+  loadCharacterItems: () => loadCharacterItems(0, character.value.id),
+  loadingCharacterItems,
+  updateCharacterItems,
+  updatingCharacterItems,
+})
+
+//
 const {
   state: characterCharacteristics,
   execute: loadCharacterCharacteristics,
@@ -75,7 +90,10 @@ const {
   { immediate: false, resetOnExecute: false },
 )
 
-useCharacterCharacteristicProvider(characterCharacteristics)
+useCharacterCharacteristicProvider({
+  characterCharacteristics,
+  loadCharacterCharacteristics,
+})
 
 // const { execute: loadCharacterCharacteristics, state: characterCharacteristics } = useAsyncState(
 //   ({ id }: { id: number }) => getCharacterCharacteristics(id),

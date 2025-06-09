@@ -33,11 +33,11 @@ const speedStats = computed(() =>
   <UCard
     :ui="{ body: '!p-0', header: '!px-4 py-3' }"
   >
-    <template #header>
+    <!-- <template #header>
       <UiDataCell class="w-full text-sm">
         Stats
       </UiDataCell>
-    </template>
+    </template> -->
 
     <div class="flex flex-col text-2xs">
       <slot name="leading" />

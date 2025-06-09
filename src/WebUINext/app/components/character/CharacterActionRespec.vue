@@ -72,7 +72,7 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
               tag="p"
             >
               <template #respecPrice>
-                <Coin :value="respecCapability.price" />
+                <AppCoin :value="respecCapability.price" />
               </template>
             </i18n-t>
 

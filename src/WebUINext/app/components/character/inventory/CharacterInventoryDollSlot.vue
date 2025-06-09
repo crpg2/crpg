@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import { FontAwesomeLayersText } from '@fortawesome/vue-fontawesome'
-
 import type { CharacterArmorOverall } from '~/models/character'
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
@@ -31,7 +29,7 @@ const {
 
 <template>
   <div
-    class="group relative flex h-28 items-center justify-center rounded-lg bg-base-200 ring"
+    class="group relative flex h-28 items-center justify-center rounded-md bg-base-200 ring-2"
     :class="[
       [available ? 'ring-border-300' : 'ring-transparent hover:ring-border-200'],
       {
@@ -44,18 +42,18 @@ const {
     <ItemCard
       v-if="userItem !== undefined"
       :item="userItem.item"
-      class="h-full cursor-grab !ring-0"
+      class="h-full max-w-full cursor-grab !ring-0"
       :class="{ 'bg-primary-hover/15': userItem.isPersonal }"
       data-aq-character-slot-item-thumb
     >
       <template #badges-top-right>
-        <Tag
-          v-if="notMeetRequirement"
-          v-tooltip="$t('character.inventory.item.requirement.tooltip.title')"
-          rounded
-          variant="danger"
-          icon="alert"
-        />
+        <UTooltip v-if="notMeetRequirement" :text="$t('character.inventory.item.requirement.tooltip.title')">
+          <UBadge
+            variant="soft"
+            color="error"
+            icon="crpg:alert"
+          />
+        </UTooltip>
       </template>
     </ItemCard>
 
@@ -66,10 +64,15 @@ const {
         data-aq-character-slot-item-placeholder
       />
       <template #content>
-        {{ $t(`character.doll.slot.${itemSlot}.title`) }}
-        <template v-if="$t(`character.doll.slot.${itemSlot}.description`) !== ''">
-          {{ $t(`character.doll.slot.${itemSlot}.description`) }}
-        </template>
+        <div>
+          <div>
+            {{ $t(`character.doll.slot.${itemSlot}.title`) }}
+          </div>
+          <!-- TODO: FIXME: -->
+          <div v-if="$t(`character.doll.slot.${itemSlot}.description`) !== ''">
+            {{ $t(`character.doll.slot.${itemSlot}.description`) }}
+          </div>
+        </div>
       </template>
     </UTooltip>
 

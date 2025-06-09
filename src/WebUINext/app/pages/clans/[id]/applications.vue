@@ -45,7 +45,7 @@ const { applications, loadClanApplications, loadingClanApplications } = useClanA
 
 const {
   execute: respond,
-  loading: responding,
+  isLoading: responding,
 } = useAsyncCallback(
   async (application: ClanInvitation, status: boolean) => {
     await respondToClanInvitation(clanId.value, application.id, status)

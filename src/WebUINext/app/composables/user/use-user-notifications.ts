@@ -37,31 +37,35 @@ export const useUsersNotifications = () => {
     notifications.value.notifications.some(n => n.state === NotificationState.Unread),
   )
 
-  const { execute: readNotification, loading: readingNotification } = useAsyncCallback(
+  function updateState() {
+    return Promise.all([loadNotifications(), userStore.fetchUser()])
+  }
+
+  const { execute: readNotification, isLoading: readingNotification } = useAsyncCallback(
     async (id: number) => {
       await readUserNotification(id)
-      await Promise.all([loadNotifications(), userStore.fetchUser()])
+      updateState()
     },
   )
 
-  const { execute: readAllNotifications, loading: readingAllNotification } = useAsyncCallback(
+  const { execute: readAllNotifications, isLoading: readingAllNotification } = useAsyncCallback(
     async () => {
       await readAllUserNotifications()
-      await Promise.all([loadNotifications(), userStore.fetchUser()])
+      updateState()
     },
   )
 
-  const { execute: deleteNotification, loading: deletingNotification } = useAsyncCallback(
+  const { execute: deleteNotification, isLoading: deletingNotification } = useAsyncCallback(
     async (id: number) => {
       await deleteUserNotification(id)
-      await Promise.all([loadNotifications(), userStore.fetchUser()])
+      updateState()
     },
   )
 
-  const { execute: deleteAllNotifications, loading: deletingAllNotification } = useAsyncCallback(
+  const { execute: deleteAllNotifications, isLoading: deletingAllNotification } = useAsyncCallback(
     async () => {
       await deleteAllUserNotifications()
-      await Promise.all([loadNotifications(), userStore.fetchUser()])
+      updateState()
     },
   )
 

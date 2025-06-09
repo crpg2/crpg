@@ -109,8 +109,8 @@ export const useUserStore = defineStore('user', () => {
     activeCharacterId,
     validateCharacter,
 
-    //   userItems,
-    //   fetchUserItems,
+    userItems,
+    fetchUserItems,
 
     //   buyItem,
     //   buyingItem,

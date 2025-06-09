@@ -7,11 +7,13 @@ defineProps<{
     description?: string
   }
 }>()
+
+const slots = useSlots()
 </script>
 
 <template>
   <UTooltip
-    :disabled="!tooltip"
+    :disabled="!tooltip && !slots['tooltip-content']"
     :text="tooltip?.title"
     :ui="{
       content: 'max-w-xl',
@@ -32,12 +34,14 @@ defineProps<{
     </UiDataCell>
 
     <template #content>
-      <div class="prose space-y-3 prose-invert">
-        <div v-if="tooltip?.title" class="text-sm">
-          {{ tooltip?.title }}
+      <slot name="tooltip-content">
+        <div class="prose space-y-3 prose-invert">
+          <div v-if="tooltip?.title" class="text-sm">
+            {{ tooltip?.title }}
+          </div>
+          <div v-if="tooltip?.description" class="text-muted" v-html="tooltip?.description" />
         </div>
-        <div v-if="tooltip?.description" class="text-muted" v-html="tooltip?.description" />
-      </div>
+      </slot>
     </template>
   </UTooltip>
 </template>

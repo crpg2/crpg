@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { AppWelcome } from '#components'
+import { useMainHeaderProvider } from '~/composables/app/use-main-header'
 
 const route = useRoute('index') // index for stub, so TS doesn't swear
 const userStore = useUserStore()
-
-const mainHeaderRef = useTemplateRef('mainHeader')
 
 const { loadPatchNotes, patchNotes } = usePatchNotes()
 const { gameServerStats, loadGameServerStats } = useGameServerStats()
@@ -20,6 +18,10 @@ await Promise.all([
 
 // TODO: FIXME:
 useWelcome()
+
+const mainHeader = useTemplateRef('mainHeader')
+const { height: mainHeaderHeight } = useElementSize(mainHeader, { height: 0, width: 0 }, { box: 'border-box' })
+useMainHeaderProvider(mainHeaderHeight)
 </script>
 
 <template>

@@ -227,7 +227,7 @@ const totalRewardValues = computed(() => {
             :value="$d(user.updatedAt, 'long')"
           />
           <UiSimpleTableRow label="Gold">
-            <Coin :value="user.gold" />
+            <AppCoin :value="user.gold" />
           </UiSimpleTableRow>
           <UiSimpleTableRow label="Heirloom">
             <Heirloom :value="user.heirloomPoints" />

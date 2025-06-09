@@ -14,7 +14,7 @@ const settingStore = useSettingsStore()
 
 const {
   execute: onEditSettings,
-  loading: editingSetting,
+  isLoading: editingSetting,
 } = useAsyncCallback(
   async (settings: Partial<Settings>) => {
     await editSettings(settings)

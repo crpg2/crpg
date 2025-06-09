@@ -25,8 +25,6 @@ import type {
   ClanMember,
   ClanWithMemberCount,
 } from '~/models/clan'
-import type { Language } from '~/models/language'
-import type { Region } from '~/models/region'
 import type { UserItem } from '~/models/user'
 
 import { ClanMemberRole } from '~/models/clan'
@@ -157,7 +155,7 @@ export const getClanArmoryItemLender = (userItem: UserItem, clanMembers: ClanMem
   if (!userItem.isArmoryItem) {
     return null
   }
-  return clanMembers.find(cm => cm.user.id === userItem.userId)?.user || null
+  return clanMembers.find(cm => cm.user.id === userItem.userId)?.user ?? null
 }
 
 export const isOwnClanArmoryItem = (

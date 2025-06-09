@@ -10,14 +10,11 @@ const rankColor = computed(() => getRankColor(rank))
 
 <template>
   <UTooltip>
-    <OIcon
-      icon="rare-duotone"
-      size="sm"
+    <UIcon
+      name="crpg:item-rank-duotone"
+      class="size-5 outline-0 select-none"
       :style="{
-        '--fa-primary-opacity': 0.15,
-        '--fa-primary-color': '#fff',
-        '--fa-secondary-opacity': 1,
-        '--fa-secondary-color': rankColor,
+        color: rankColor,
       }"
     />
     <template #content>
@@ -28,9 +25,11 @@ const rankColor = computed(() => getRankColor(rank))
       >
         <template #rank>
           <span
-            class="font-semibold"
+            class="font-bold"
             :style="{ color: rankColor }"
-          >+{{ rank }}</span>
+          >
+            +{{ rank }}
+          </span>
         </template>
       </i18n-t>
     </template>

@@ -27,7 +27,7 @@ export type UseAsyncCallbackReturn<Fn extends AnyPromiseFn> = readonly [
   Ref<any>,
 ] & {
   execute: Fn
-  loading: Ref<boolean>
+  isLoading: Ref<boolean>
   error: Ref<any>
 }
 
@@ -45,17 +45,17 @@ export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsy
   } = options ?? {}
 
   const error = ref()
-  const loading = ref(false)
+  const isLoading = ref(false)
 
   const execute = (async (...args: any[]) => {
     try {
-      loading.value = true
+      isLoading.value = true
       await fn(...args)
-      loading.value = false
+      isLoading.value = false
       onSuccess()
     }
     catch (e) {
-      loading.value = false
+      isLoading.value = false
       error.value = e
       onError(e)
       if (throwError) {
@@ -65,7 +65,7 @@ export function useAsyncCallback<T extends AnyPromiseFn>(fn: T, options?: UseAsy
   }) as T
 
   return makeDestructurable(
-    { error, execute, loading } as const,
-    [execute, loading, error] as const,
+    { error, execute, isLoading } as const,
+    [execute, isLoading, error] as const,
   )
 }

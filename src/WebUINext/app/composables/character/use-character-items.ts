@@ -1,16 +1,36 @@
-import type { CharacterOverallItemsStats, EquippedItem } from '~/models/character'
+import type { CharacterOverallItemsStats, EquippedItem, EquippedItemId } from '~/models/character'
 import type { UserItemsBySlot } from '~/models/user'
 
-import { computeLongestWeaponLength, computeOverallArmor, computeOverallAverageRepairCostByHour, computeOverallPrice, computeOverallWeight } from '~/services/character-service'
+import {
+  computeLongestWeaponLength,
+  computeOverallArmor,
+  computeOverallAverageRepairCostByHour,
+  computeOverallPrice,
+  computeOverallWeight,
+} from '~/services/character-service'
 
-const characterItemsKey: InjectionKey<Ref<EquippedItem[]>> = Symbol('CharacterItems')
+interface CharacterItemsContext {
+  characterItems: Ref<EquippedItem[]>
+  loadCharacterItems: () => Promise<EquippedItem[]>
+  loadingCharacterItems: Ref<boolean>
+  updateCharacterItems: (itemIds: EquippedItemId[]) => Promise<void>
+  updatingCharacterItems: Ref<boolean>
+}
 
-export const useCharacterItemsProvider = (characterItems: Ref<EquippedItem[]>) => {
-  provide(characterItemsKey, characterItems)
+const characterItemsKey: InjectionKey<CharacterItemsContext> = Symbol('CharacterItems')
+
+export const useCharacterItemsProvider = (ctx: CharacterItemsContext) => {
+  provide(characterItemsKey, ctx)
 }
 
 export const useCharacterItems = () => {
-  const characterItems = injectStrict(characterItemsKey)
+  const {
+    characterItems,
+    loadCharacterItems,
+    updateCharacterItems,
+    loadingCharacterItems,
+    updatingCharacterItems,
+  } = injectStrict(characterItemsKey)
 
   const equippedItemsBySlot = computed<UserItemsBySlot>(() =>
     characterItems.value.reduce((out, ei) => {
@@ -31,9 +51,17 @@ export const useCharacterItems = () => {
     }
   })
 
+  const equippedItemIds = computed(() => characterItems.value.map(ei => ei.userItem.id))
+
   return {
     characterItems,
     equippedItemsBySlot,
     itemsOverallStats,
+    equippedItemIds,
+
+    loadCharacterItems,
+    loadingCharacterItems,
+    updateCharacterItems,
+    updatingCharacterItems,
   }
 }

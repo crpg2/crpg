@@ -15,7 +15,7 @@ const { t } = useI18n()
 
 const {
   execute: loginUser,
-  loading: logging,
+  isLoading: logging,
 } = useAsyncCallback(() => login(platform.value))
 
 const items = computed(() =>

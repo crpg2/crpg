@@ -36,11 +36,11 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
           :src="thumb"
           :alt="item.name"
           :title="item.name"
-          class="pointer-events-none w-full select-none object-contain"
+          class="pointer-events-none w-full object-contain select-none"
         >
       </div>
 
-      <div class="absolute left-0 top-4 z-10 flex items-center gap-1">
+      <div class="absolute top-4 left-0 z-10 flex items-center gap-1">
         <ItemRankIcon
           v-if="item.rank > 0"
           :rank="item.rank"
@@ -49,7 +49,7 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
         <slot name="badges-top-left" />
       </div>
 
-      <div class="absolute right-0 top-4 z-10 flex items-center gap-1">
+      <div class="absolute top-4 right-0 z-10 flex items-center gap-1">
         <slot name="badges-top-right" />
       </div>
 
@@ -57,7 +57,7 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
         <slot name="badges-bottom-left" />
       </div>
 
-      <div class="absolute bottom-0 right-0 z-10 flex items-center gap-1">
+      <div class="absolute right-0 bottom-0 z-10 flex items-center gap-1">
         <slot name="badges-bottom-right" />
       </div>
     </div>
@@ -129,22 +129,22 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
             v-if="field === 'price'"
             #default="{ rawBuckets }"
           >
-            <Coin :value="(rawBuckets as number)" />
+            <AppCoin :value="(rawBuckets as number)" />
           </template>
 
           <template
             v-else-if="field === 'upkeep'"
             #default="{ rawBuckets }"
           >
-            <Coin>
+            <AppCoin>
               {{ $t('item.format.upkeep', { upkeep: $n((rawBuckets as number)) }) }}
-            </Coin>
+            </AppCoin>
           </template>
         </ItemParam>
       </div>
     </div>
 
-    <div class="-mx-4 -mb-4 mt-6 flex flex-wrap items-center gap-2 bg-base-400 p-2">
+    <div class="-mx-4 mt-6 -mb-4 flex flex-wrap items-center gap-2 bg-base-400 p-2">
       <slot name="actions" />
     </div>
   </article>

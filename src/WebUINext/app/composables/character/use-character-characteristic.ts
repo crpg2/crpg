@@ -10,6 +10,7 @@ import type {
 } from '~/models/character'
 
 import {
+  computeHealthPoints,
   createDefaultCharacteristic,
   createEmptyCharacteristic,
   wppForAgility,
@@ -74,16 +75,28 @@ const characteristicRequirementsSatisfied = (
   }
 }
 
-const characterCharacteristicsKey: InjectionKey<Ref<CharacterCharacteristics>> = Symbol('CharacterCharacteristics')
+// const characterCharacteristicsKey: InjectionKey<Ref<CharacterCharacteristics>> = Symbol('CharacterCharacteristics')
+interface CharacterCharacteristicsContext {
+  characterCharacteristics: Ref<CharacterCharacteristics>
+  // setCharacterCharacteristics: (payload: CharacterCharacteristics) => void
+  loadCharacterCharacteristics: (delay: number, characterId: number) => void
+}
 
-export const useCharacterCharacteristicProvider = (characterCharacteristics: Ref<CharacterCharacteristics>) => {
-  provide(characterCharacteristicsKey, characterCharacteristics)
+const characterCharacteristicsKey: InjectionKey<CharacterCharacteristicsContext> = Symbol('CharacterCharacteristics')
+
+export const useCharacterCharacteristicProvider = (ctx: CharacterCharacteristicsContext) => {
+  provide(characterCharacteristicsKey, ctx)
 }
 
 export const useCharacterCharacteristic = () => {
-  const characterCharacteristics = injectStrict(characterCharacteristicsKey)
+  const { characterCharacteristics, loadCharacterCharacteristics } = injectStrict(characterCharacteristicsKey)
+
+  const healthPoints = computed(() => computeHealthPoints(characterCharacteristics.value.skills.ironFlesh, characterCharacteristics.value.attributes.strength))
+
   return {
     characterCharacteristics,
+    loadCharacterCharacteristics,
+    healthPoints,
   }
 }
 

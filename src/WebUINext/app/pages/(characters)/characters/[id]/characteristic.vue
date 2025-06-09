@@ -4,24 +4,16 @@ import { timeout } from 'es-toolkit'
 import type { CharacterCharacteristics } from '~/models/character'
 
 import { useCharacter } from '~/composables/character/use-character'
-import { useCharacterCharacteristic, useCharacterCharacteristicBuilder, useCharacterCharacteristicProvider } from '~/composables/character/use-character-characteristic'
+import { useCharacterCharacteristic, useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic'
+import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { CharacteristicConversion } from '~/models/character'
 import {
-  computeHealthPoints,
   convertCharacterCharacteristics,
-  createEmptyCharacteristic,
-  getCharacterCharacteristics,
   updateCharacterCharacteristics,
 } from '~/services/character-service'
-
-// import {
-//   characterItemsStatsKey,
-// } from '~/symbols/character'
-
-// const itemsStats = injectStrict(characterItemsStatsKey)
 
 const route = useRoute('characters-id-characteristic')
 const { t } = useI18n()
@@ -29,7 +21,8 @@ const toast = useToast()
 
 const { character } = useCharacter()
 
-const { characterCharacteristics } = useCharacterCharacteristic()
+const { characterCharacteristics, loadCharacterCharacteristics, healthPoints } = useCharacterCharacteristic()
+const { itemsOverallStats } = useCharacterItems()
 
 const setCharacterCharacteristicsSync = (characteristic: CharacterCharacteristics) => {
   characterCharacteristics.value = characteristic
@@ -47,11 +40,9 @@ const {
   reset: resetCharacterCharacteristicBuilder,
 } = useCharacterCharacteristicBuilder(characterCharacteristics)
 
-const healthPoints = computed(() => computeHealthPoints(characteristics.value.skills.ironFlesh, characteristics.value.attributes.strength))
-
 const {
   execute: onConvertCharacterCharacteristics,
-  loading: convertingCharacterCharacteristics,
+  isLoading: convertingCharacterCharacteristics,
 } = useAsyncCallback(async (conversion: CharacteristicConversion) => {
   await Promise.all([
     setCharacterCharacteristicsSync(
@@ -63,7 +54,7 @@ const {
 
 const {
   execute: onCommitCharacterCharacteristics,
-  loading: commitingCharacterCharacteristics,
+  isLoading: commitingCharacterCharacteristics,
 } = useAsyncCallback(async () => {
   setCharacterCharacteristicsSync(
     await updateCharacterCharacteristics(character.value.id, characteristics.value),
@@ -82,7 +73,7 @@ const { respecCapability, onRespecializeCharacter: respecializeCharacter } = use
 
 const {
   execute: onRespecializeCharacter,
-  loading: respecializingCharacter,
+  isLoading: respecializingCharacter,
 } = useAsyncCallback(async () => {
   await respecializeCharacter(character.value.id)
   loadCharacterCharacteristics(0, character.value.id)
@@ -121,13 +112,11 @@ watchEffect(() => {
         @convert-skills-to-attributes="onConvertCharacterCharacteristics(CharacteristicConversion.SkillsToAttributes)"
       />
 
-      <!-- :weight="itemsStats.weight"
-      :longest-weapon-length="itemsStats.longestWeaponLength" -->
       <CharacterStats
         style="grid-area: stats"
         :characteristics
-        :weight="22"
-        :longest-weapon-length="33"
+        :weight="itemsOverallStats.weight"
+        :longest-weapon-length="itemsOverallStats.longestWeaponLength"
         :health-points="healthPoints"
       />
     </div>

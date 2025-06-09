@@ -35,7 +35,7 @@ const userStore = useUserStore()
 
 const {
   execute: onCreateClan,
-  loading: creatingClan,
+  isLoading: creatingClan,
 } = useAsyncCallback(
   async (form: Omit<Clan, 'id'>) => {
     const clan = await createClan(form)

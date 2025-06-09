@@ -31,15 +31,7 @@ function JSON5(): Plugin {
 }
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/ui',
-    '@nuxt/test-utils/module',
-    '@nuxt/eslint',
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
-    '@hey-api/nuxt',
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@nuxt/ui', '@nuxt/test-utils/module', '@nuxt/eslint', '@pinia/nuxt', '@vueuse/nuxt', '@hey-api/nuxt', '@nuxtjs/i18n', '@nuxt/image'],
   ssr: false,
   devtools: { enabled: false },
   app: {

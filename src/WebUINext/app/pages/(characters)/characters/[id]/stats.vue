@@ -308,7 +308,7 @@
         </OTabs>
 
         <div class="flex-1 text-lg font-semibold">
-          <Coin
+          <AppCoin
             v-if="statTypeModel === CharacterEarningType.Gold"
             :value="total"
             :class="total < 0 ? 'text-status-danger' : 'text-status-success'"
@@ -387,7 +387,7 @@
           sortable
         >
           <template #header>
-            <Coin />
+            <AppCoin />
           </template>
           <template #default="{ row }: { row: CharacterEarnedDataWithGameMode }">
             {{ $n(row.gold) }}

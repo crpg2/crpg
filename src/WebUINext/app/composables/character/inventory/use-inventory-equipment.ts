@@ -7,8 +7,9 @@ import { getLinkedSlots } from '~/services/item-service'
 export const useInventoryEquipment = () => {
   const { t } = useI18n()
   const toast = useToast()
+  const userStore = useUserStore()
 
-  const isEquipItemAllowed = (item: UserItem, userId: number) => {
+  const isEquipItemAllowed = (item: UserItem) => {
     if (item.isBroken) {
       toast.add({
         title: t('character.inventory.item.broken.notify.warning'),
@@ -18,7 +19,7 @@ export const useInventoryEquipment = () => {
       return false
     }
 
-    if (item.isArmoryItem && userId === item.userId) {
+    if (item.isArmoryItem && userStore.user?.id === item.userId) {
       toast.add({
         title: t('character.inventory.item.clanArmory.inArmory.notify.warning'),
         color: 'warning',

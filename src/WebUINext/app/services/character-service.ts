@@ -495,11 +495,13 @@ export const getCharacterItems = async (
   return data!
 }
 
-export const updateCharacterItems = (
+export const updateCharacterItems = async (
   characterId: number,
   items: EquippedItemId[],
-) =>
-  putUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId }, body: { items } })
+): Promise<EquippedItem[]> => {
+  const { data } = await putUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId }, body: { items } })
+  return data!
+}
 
 export const computeOverallPrice = (items: Item[]) =>
   items.reduce((total, item) => total + item.price, 0)
