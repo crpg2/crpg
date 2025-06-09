@@ -279,7 +279,9 @@ fetchPageData()
 const { togglePageLoading } = usePageLoading()
 
 watchEffect(() => {
-  togglePageLoading(updatingCharacterItems.value)
+  // console.log('d', updatingCharacterItems.value)
+  // TODO: FIXME:
+  // togglePageLoading(updatingCharacterItems.value)
 })
 </script>
 

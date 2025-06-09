@@ -59,7 +59,7 @@ const {
 
     <UTooltip v-else>
       <UIcon
-        class="size-12 text-muted select-none"
+        class="size-12 text-muted outline-0 select-none"
         :name="`crpg:${placeholder}`"
         data-aq-character-slot-item-placeholder
       />

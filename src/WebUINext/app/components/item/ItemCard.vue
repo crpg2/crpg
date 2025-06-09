@@ -8,6 +8,8 @@ const { item } = defineProps<{
 }>()
 
 const { thumb } = useItem(() => item)
+
+const error = ref<boolean>(false)
 </script>
 
 <template>
@@ -18,6 +20,7 @@ const { thumb } = useItem(() => item)
         :src="thumb"
         :alt="item.name"
         :custom="true"
+        @error="error = true"
       >
         <img
           v-if="isLoaded"
@@ -25,16 +28,17 @@ const { thumb } = useItem(() => item)
           class="size-full object-contain select-none"
           :src="src"
         >
-        <!-- placeholder -->
-        <div v-else class="flex size-full flex-col items-center justify-center gap-1 overflow-hidden p-2 text-center  text-dimmed">
+        <div v-else-if="error" class="flex size-full flex-col items-center justify-center gap-1 overflow-hidden p-2 text-center  text-dimmed">
           <UIcon
             name="crpg:error"
-            class="size-10"
+            class="size-8"
           />
           <div class="w-full truncate text-2xs">
             {{ item.name }}{{ item.name }}{{ item.name }}{{ item.name }}
           </div>
         </div>
+
+        <USkeleton v-else class="size-full" />
       </NuxtImg>
 
       <div class="absolute top-1 left-1 z-10 flex items-center gap-1">
