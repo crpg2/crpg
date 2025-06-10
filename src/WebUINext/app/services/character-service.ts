@@ -5,6 +5,7 @@ import {
   getUsersByUserIdCharacters,
   getUsersSelfCharacters,
   getUsersSelfCharactersByIdCharacteristics,
+  getUsersSelfCharactersByIdEarningStatistics,
   getUsersSelfCharactersByIdItems,
   getUsersSelfCharactersByIdLimitations,
   getUsersSelfCharactersByIdStatistics,
@@ -14,7 +15,6 @@ import {
   putUsersSelfCharactersByIdCharacteristicsConvert,
   putUsersSelfCharactersByIdItems,
   putUsersSelfCharactersByIdRespecialize,
-
   putUsersSelfCharactersByIdRetire,
   putUsersSelfCharactersByIdTournament,
 
@@ -49,8 +49,9 @@ import {
 } from '~root/data/constants.json'
 import { defu } from 'defu'
 import { clamp } from 'es-toolkit'
+import qs from 'qs'
 
-// import qs from 'qs'
+import type { ActivityLog } from '~/models/activity-logs'
 // import type { ActivityLog, CharacterEarnedMetadata } from '~/models/activity-logs'
 // import type { TimeSeries, TimeSeriesItem } from '~/models/timeseries'
 import type {
@@ -69,6 +70,7 @@ import type {
   UpdateCharacterRequest,
 } from '~/models/character'
 import type { Item, ItemArmorComponent } from '~/models/item'
+import type { TimeSeries, TimeSeriesItem } from '~/models/time-series'
 
 import {
   CharacterArmorOverallKey,
@@ -133,15 +135,21 @@ export const canSetCharacterForTournamentValidate = (character: Character) =>
     || character.level >= tournamentLevelThreshold
   )
 
-export const setCharacterForTournament = (characterId: number) =>
+export const setCharacterForTournament = (
+  characterId: number,
+) =>
   putUsersSelfCharactersByIdTournament({ composable: '$fetch', path: { id: characterId } })
 
 export const canRetireValidate = (level: number) => level >= minimumRetirementLevel
 
-export const retireCharacter = (characterId: number) =>
+export const retireCharacter = (
+  characterId: number,
+) =>
   putUsersSelfCharactersByIdRetire({ composable: '$fetch', path: { id: characterId } })
 
-export const getCharacterCharacteristics = async (characterId: number): Promise<CharacterCharacteristics> => {
+export const getCharacterCharacteristics = async (
+  characterId: number,
+): Promise<CharacterCharacteristics> => {
   const { data } = await getUsersSelfCharactersByIdCharacteristics({ composable: '$fetch', path: { id: characterId } })
   return data
 }
@@ -162,7 +170,9 @@ export const updateCharacterCharacteristics = async (
   return data
 }
 
-export const getCharacterStatistics = async (characterId: number): Promise<Partial<Record<GameMode, CharacterStatistics>>> => {
+export const getCharacterStatistics = async (
+  characterId: number,
+): Promise<Partial<Record<GameMode, CharacterStatistics>>> => {
   const { data } = await getUsersSelfCharactersByIdStatistics({ composable: '$fetch', path: { id: characterId } })
   return data!
 }
@@ -184,60 +194,83 @@ export const getCompetitiveValueByGameMode = (
   return statisticByGameMode ? statisticByGameMode.rating.competitiveValue : 0
 }
 
-export const getCharacterLimitations = async (characterId: number): Promise<CharacterLimitations> => {
+export const getCharacterLimitations = async (
+  characterId: number,
+): Promise<CharacterLimitations> => {
   const { data } = await getUsersSelfCharactersByIdLimitations({ composable: '$fetch', path: { id: characterId } })
   return data
 }
 
+export interface CharacterEarnedMetadata {
+  characterId: string
+  gameMode: string
+  experience: string
+  gold: string
+  timeEffort: string
+}
+
+export const getCharacterEarningStatistics = async (
+  characterId: number,
+  from: Date,
+): Promise<ActivityLog<CharacterEarnedMetadata>[]> => {
+  const { data } = await getUsersSelfCharactersByIdEarningStatistics({
+    composable: '$fetch',
+    path: { id: characterId },
+    query: { from },
+    // You have to manually stringify the date
+    onRequest: ({ request, options }) => {
+      options.query = options.query || {}
+      options.query.from = from.toISOString()
+    },
+  })
+  return data!
+}
+
+export const convertCharacterEarningStatisticsToTimeSeries = (logs: ActivityLog<CharacterEarnedMetadata>[], type: CharacterEarningType): TimeSeries[] => {
+  return logs.reduce((out, l) => {
+    const timeSeriaItem: TimeSeriesItem = [
+      l.createdAt,
+      Number.parseInt(type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold, 10),
+    ]
+
+    const currentEl = out.find(el => el.name === l.metadata.gameMode)
+
+    if (currentEl) {
+      currentEl.data.push(timeSeriaItem)
+    }
+    else {
+      out.push({
+        data: [timeSeriaItem],
+        name: l.metadata.gameMode,
+      })
+    }
+    return out
+  }, [] as TimeSeries[])
+}
+
 // // TODO: FIXME: SPEC
-// export const getCharacterEarningStatistics = (characterId: number, from: Date): Promise<ActivityLog<CharacterEarnedMetadata>[]> =>
-//   get<ActivityLog<CharacterEarnedMetadata>[]>(`/users/self/characters/${characterId}/earning-statistics?${qs.stringify({ from })}`)
+export const summaryByGameModeCharacterEarningStatistics = (logs: ActivityLog<CharacterEarnedMetadata>[]) => {
+  return logs.reduce((out, l) => {
+    const gameMode = l.metadata.gameMode as GameMode
+    const timeEffort = Number(l.metadata.timeEffort) || 0
+    const gold = Number(l.metadata.gold)
+    const experience = Number(l.metadata.experience)
 
-// export const convertCharacterEarningStatisticsToTimeSeries = (logs: ActivityLog<CharacterEarnedMetadata>[], type: CharacterEarningType): TimeSeries[] => {
-//   return logs.reduce((out, l) => {
-//     const timeSeriaItem: TimeSeriesItem = [
-//       l.createdAt,
-//       Number.parseInt(type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold, 10),
-//     ]
-
-//     const currentEl = out.find(el => el.name === t(`game-mode.${l.metadata.gameMode}`))
-
-//     if (currentEl) {
-//       currentEl.data.push(timeSeriaItem)
-//     }
-//     else {
-//       out.push({
-//         data: [timeSeriaItem],
-//         name: t(`game-mode.${l.metadata.gameMode}`),
-//       })
-//     }
-//     return out
-//   }, [] as TimeSeries[])
-// }
-
-// // TODO: FIXME: SPEC
-// export const summaryByGameModeCharacterEarningStatistics = (logs: ActivityLog<CharacterEarnedMetadata>[]) => {
-//   return logs.reduce((out, l) => {
-//     const gameMode = l.metadata.gameMode as GameMode
-//     const timeEffort = Number(l.metadata.timeEffort) || 0
-//     const gold = Number(l.metadata.gold)
-//     const experience = Number(l.metadata.experience)
-
-//     if (gameMode in out) {
-//       out[gameMode].timeEffort = out[gameMode].timeEffort + timeEffort
-//       out[gameMode].gold = out[gameMode].gold + gold
-//       out[gameMode].experience = out[gameMode].experience + experience
-//     }
-//     else {
-//       out[gameMode] = {
-//         timeEffort,
-//         gold,
-//         experience,
-//       }
-//     }
-//     return out
-//   }, {} as Record<GameMode, CharacterEarnedData>)
-// }
+    if (gameMode in out) {
+      out[gameMode].timeEffort = out[gameMode].timeEffort + timeEffort
+      out[gameMode].gold = out[gameMode].gold + gold
+      out[gameMode].experience = out[gameMode].experience + experience
+    }
+    else {
+      out[gameMode] = {
+        timeEffort,
+        gold,
+        experience,
+      }
+    }
+    return out
+  }, {} as Record<GameMode, CharacterEarnedData>)
+}
 
 const computeExperienceDistribution = (level: number): number => {
   const [a, b] = experienceForLevelCoefs as [number, number]

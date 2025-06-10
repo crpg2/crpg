@@ -37,6 +37,7 @@
     "@vueuse/nuxt": "^13.3.0",
     "@vueuse/router": "^13.3.0",
     "body-scroll-lock": "^4.0.0-beta.0",
+    "echarts": "^5.6.0",
     "es-toolkit": "^1.39.0",
     "eslint": "^9.28.0",
     "floating-vue": "^5.2.2",
@@ -53,6 +54,7 @@
     "type-fest": "^4.41.0",
     "vitest": "^3.2.0",
     "vue": "^3.5.16",
+    "vue-echarts": "^7.0.3",
     "vue-router": "^4.5.1"
   }
 }

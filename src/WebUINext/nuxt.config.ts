@@ -167,7 +167,7 @@ export default defineNuxtConfig({
       input: './app/swagger.json',
       output: {
         path: './app/api',
-        clean: false,
+        // clean: false,
         format: false,
         // format: 'prettier',
         lint: false,
@@ -203,6 +203,7 @@ export default defineNuxtConfig({
     bundle: {
       runtimeOnly: true,
       dropMessageCompiler: true,
+      optimizeTranslationDirective: false,
     },
     lazy: true,
     strategy: 'no_prefix',

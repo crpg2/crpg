@@ -1,278 +1,277 @@
 <script lang="ts" setup>
 // TODO: FIXME: composition + components
-// import type { BarSeriesOption } from 'echarts/charts'
-// import type {
-//   DataZoomComponentOption,
-//   GridComponentOption,
-//   LegendComponentOption,
-//   TooltipComponentOption,
-// } from 'echarts/components'
-// import type { ComposeOption } from 'echarts/core'
-// import type { DurationLike } from 'luxon'
+import type { BarSeriesOption } from 'echarts/charts'
+import type {
+  DataZoomComponentOption,
+  GridComponentOption,
+  LegendComponentOption,
+  TooltipComponentOption,
+} from 'echarts/components'
+import type { ComposeOption } from 'echarts/core'
+import type { DurationLike } from 'luxon'
 
-// import { BarChart } from 'echarts/charts'
-// import {
-//   DataZoomComponent,
-//   GridComponent,
-//   LegendComponent,
-//   TooltipComponent,
-// } from 'echarts/components'
-// import { registerTheme, use } from 'echarts/core'
-// import { SVGRenderer } from 'echarts/renderers'
-// import { DateTime } from 'luxon'
-// import VChart from 'vue-echarts'
+import { BarChart } from 'echarts/charts'
+import {
+  DataZoomComponent,
+  GridComponent,
+  LegendComponent,
+  TooltipComponent,
+} from 'echarts/components'
+import { registerTheme, use } from 'echarts/core'
+import { SVGRenderer } from 'echarts/renderers'
+import { DateTime } from 'luxon'
+import VChart from 'vue-echarts'
 
 // import type { CharacterEarnedMetadata } from '~/models/activity-logs'
-// import type { CharacterEarnedData } from '~/models/character'
-// import type { GameMode } from '~/models/game-mode'
-// import type { TimeSeries } from '~/models/timeseries'
+import type { CharacterEarnedData } from '~/models/character'
+import type { GameMode } from '~/models/game-mode'
+import type { TimeSeries } from '~/models/time-series'
 
-// import theme from '~/assets/themes/oruga-tailwind/echart-theme.json'
-// import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-// import { CharacterEarningType } from '~/models/character'
-// import { convertCharacterEarningStatisticsToTimeSeries, getCharacterEarningStatistics, summaryByGameModeCharacterEarningStatistics } from '~/services/characters-service'
-// import { gameModeToIcon } from '~/services/game-mode-service'
-// import { d } from '~/services/translate-service'
-// import { characterKey } from '~/symbols/character'
+import theme from '~/assets/echart-theme.json'
+import { useCharacter } from '~/composables/character/use-character'
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { CharacterEarningType } from '~/models/character'
+import {
+  convertCharacterEarningStatisticsToTimeSeries,
+  getCharacterEarningStatistics,
+  summaryByGameModeCharacterEarningStatistics,
+} from '~/services/character-service'
+import { gameModeToIcon } from '~/services/game-mode-service'
 
-// use([BarChart, TooltipComponent, LegendComponent, DataZoomComponent, GridComponent, SVGRenderer])
-// registerTheme('crpg', theme)
-// type EChartsOption = ComposeOption<
-//   | LegendComponentOption
-//   | TooltipComponentOption
-//   | GridComponentOption
-//   | BarSeriesOption
-//   | DataZoomComponentOption
-// >
+use([BarChart, TooltipComponent, LegendComponent, DataZoomComponent, GridComponent, SVGRenderer])
+registerTheme('crpg', theme)
 
-// definePage({
-//   meta: {
-//     roles: ['User', 'Moderator', 'Admin'],
-//   },
-//   props: true,
-// })
+type EChartsOption = ComposeOption<
+  | LegendComponentOption
+  | TooltipComponentOption
+  | GridComponentOption
+  | BarSeriesOption
+  | DataZoomComponentOption
+>
 
-// const character = injectStrict(characterKey)
+const route = useRoute('characters-id-stats')
 
-// enum Zoom {
-//   '1h' = '1h',
-//   '3h' = '3h',
-//   '12h' = '12h',
-//   '2d' = '2d',
-//   '7d' = '7d',
-//   '14d' = '14d',
-// }
+const { character } = useCharacter()
 
-// interface LegendSelectEvent {
-//   name: string
-//   type: 'legendselectchanged'
-//   selected: Record<string, boolean>
-// }
+const { d } = useI18n()
 
-// const loading = ref(false)
-// const loadingOptions = {
-//   color: '#4ea397',
-//   maskColor: 'rgba(255, 255, 255, 0.4)',
-//   text: 'Loading…',
-// }
+enum Zoom {
+  '1h' = '1h',
+  '3h' = '3h',
+  '12h' = '12h',
+  '2d' = '2d',
+  '7d' = '7d',
+  '14d' = '14d',
+}
 
-// const durationByZoom: Record<Zoom, DurationLike> = {
-//   [Zoom['1h']]: {
-//     hours: 1,
-//   },
-//   [Zoom['3h']]: {
-//     hours: 3,
-//   },
-//   [Zoom['12h']]: {
-//     hours: 12,
-//   },
-//   [Zoom['2d']]: {
-//     days: 2,
-//   },
-//   [Zoom['7d']]: {
-//     days: 7,
-//   },
-//   [Zoom['14d']]: {
-//     days: 14,
-//   },
-// }
+interface LegendSelectEvent {
+  name: string
+  type: 'legendselectchanged'
+  selected: Record<string, boolean>
+}
 
-// const getStart = (zoom: Zoom) => {
-//   switch (zoom) {
-//     case Zoom['1h']:
-//       return DateTime.local().minus(durationByZoom[Zoom['1h']]).toJSDate()
-//     case Zoom['3h']:
-//       return DateTime.local().minus(durationByZoom[Zoom['3h']]).toJSDate()
-//     case Zoom['12h']:
-//       return DateTime.local().minus(durationByZoom[Zoom['12h']]).toJSDate()
-//     case Zoom['2d']:
-//       return DateTime.local().minus(durationByZoom[Zoom['2d']]).toJSDate()
-//     case Zoom['7d']:
-//       return DateTime.local().minus(durationByZoom[Zoom['7d']]).toJSDate()
-//     case Zoom['14d']:
-//       return DateTime.local().minus(durationByZoom[Zoom['14d']]).toJSDate()
+const loading = ref(false)
+const loadingOptions = {
+  color: '#4ea397',
+  maskColor: 'rgba(255, 255, 255, 0.4)',
+  text: 'Loading…',
+}
 
-//     default:
-//       return DateTime.local().minus(durationByZoom[Zoom['1h']]).toJSDate()
-//   }
-// }
+const durationByZoom: Record<Zoom, DurationLike> = {
+  [Zoom['1h']]: {
+    hours: 1,
+  },
+  [Zoom['3h']]: {
+    hours: 3,
+  },
+  [Zoom['12h']]: {
+    hours: 12,
+  },
+  [Zoom['2d']]: {
+    days: 2,
+  },
+  [Zoom['7d']]: {
+    days: 7,
+  },
+  [Zoom['14d']]: {
+    days: 14,
+  },
+}
 
-// const zoomModel = ref<Zoom>(Zoom['1h'])
-// const start = computed(() => getStart(zoomModel.value))
-// const end = ref<Date>(new Date())
+const getStart = (zoom: Zoom) => {
+  switch (zoom) {
+    case Zoom['1h']:
+      return DateTime.local().minus(durationByZoom[Zoom['1h']]).toJSDate()
+    case Zoom['3h']:
+      return DateTime.local().minus(durationByZoom[Zoom['3h']]).toJSDate()
+    case Zoom['12h']:
+      return DateTime.local().minus(durationByZoom[Zoom['12h']]).toJSDate()
+    case Zoom['2d']:
+      return DateTime.local().minus(durationByZoom[Zoom['2d']]).toJSDate()
+    case Zoom['7d']:
+      return DateTime.local().minus(durationByZoom[Zoom['7d']]).toJSDate()
+    case Zoom['14d']:
+      return DateTime.local().minus(durationByZoom[Zoom['14d']]).toJSDate()
 
-// const statTypeModel = ref<CharacterEarningType>(CharacterEarningType.Exp)
+    default:
+      return DateTime.local().minus(durationByZoom[Zoom['1h']]).toJSDate()
+  }
+}
+const toBarSeries = (ts: TimeSeries): BarSeriesOption => ({ ...ts, type: 'bar' })
+const extractTSName = (ts: TimeSeries) => ts.name
 
-// const dataZoom = ref<[number, number]>([start.value.getTime(), end.value.getTime()])
-// const setDataZoom = (start: number, end: number) => {
-//   dataZoom.value = [start, end]
-// }
+const zoomModel = ref<Zoom>(Zoom['1h'])
+const start = computed(() => getStart(zoomModel.value))
+const end = ref<Date>(new Date())
 
-// const onDataZoomChanged = () => {
-//   const option = chart.value?.getOption()
-//   // @ts-expect-error TODO: write types
-//   setDataZoom(option.dataZoom[0].startValue, option.dataZoom[0].endValue)
-// }
+const {
+  execute: loadCharacterEarningStatistics,
+  state: rawEarningStatistics,
+} = await useAsyncState(
+  (id: number) => getCharacterEarningStatistics(id, start.value),
+  [],
+  {
+    immediate: false,
+    resetOnExecute: false,
+  },
+)
 
-// // TODO: spec
-// const { execute: loadCharacterEarningStatistics, state: rawEarningStatistics }
-//   = await useAsyncState(
-//     ({ id }: { id: number }) => getCharacterEarningStatistics(id, start.value),
-//     [],
-//     {
-//       immediate: false,
-//       resetOnExecute: false,
-//     },
-//   )
+const statTypeModel = ref<CharacterEarningType>(CharacterEarningType.Exp)
+const characterEarningStatistics = computed(() => convertCharacterEarningStatisticsToTimeSeries(rawEarningStatistics.value, statTypeModel.value))
 
-// const characterEarningStatistics = computed(() => convertCharacterEarningStatisticsToTimeSeries(rawEarningStatistics.value, statTypeModel.value))
+const dataZoom = ref<[number, number]>([start.value.getTime(), end.value.getTime()])
+const setDataZoom = (start: number, end: number) => {
+  dataZoom.value = [start, end]
+}
 
-// const toBarSeries = (ts: TimeSeries): BarSeriesOption => ({ ...ts, type: 'bar' })
-// const extractTSName = (ts: TimeSeries) => ts.name
+const chart = useTemplateRef('chart')
 
-// const legend = ref<string[]>(characterEarningStatistics.value.map(extractTSName))
-// const activeSeries = ref<string[]>(characterEarningStatistics.value.map(extractTSName))
+const legend = ref<string[]>(characterEarningStatistics.value.map(extractTSName))
+const activeSeries = ref<string[]>(characterEarningStatistics.value.map(extractTSName))
 
-// const { execute: onUpdate } = useAsyncCallback(async (characterId: number) => {
-//   await loadCharacterEarningStatistics(0, { id: characterId })
-//   option.value = {
-//     ...option.value,
-//     legend: {
-//       ...option.value.legend,
-//       data: characterEarningStatistics.value.map(extractTSName),
-//     },
-//     series: characterEarningStatistics.value.map(toBarSeries),
-//   }
-//   activeSeries.value = characterEarningStatistics.value.map(extractTSName)
-// })
+const option = shallowRef<EChartsOption>({
+  legend: {
+    data: legend.value,
+    itemGap: 16,
+    orient: 'vertical',
+    right: 0,
+    top: 'center',
+  },
+  series: characterEarningStatistics.value.map(toBarSeries),
+  tooltip: {
+    axisPointer: {
+      label: {
+        formatter: param => d(new Date(param.value), 'long'),
+      },
+      type: 'shadow',
+    },
+    trigger: 'axis',
+  },
+  xAxis: {
+    max: Date.now(),
+    min: getStart(Zoom['1h']),
+    splitArea: {
+      show: false,
+    },
+    splitLine: {
+      show: false,
+    },
+    type: 'time',
+  },
+  yAxis: {
+    splitArea: {
+      show: false,
+    },
+    type: 'value',
+  },
+  dataZoom: [
+    {
+      type: 'slider',
+      labelFormatter: value => d(new Date(value), 'short'),
+    },
+  ],
+})
 
-// watch(statTypeModel, () => onUpdate(character.value.id))
-// watch(zoomModel, () => {
-//   setZoom()
-//   onUpdate(character.value.id)
-//   setDataZoom(start.value.getTime(), end.value.getTime())
-// })
+const setZoom = () => {
+  end.value = new Date()
+  option.value = {
+    ...option.value,
+    xAxis: {
+      ...option.value.xAxis,
+      max: end.value,
+      min: start.value,
+    },
+  }
+}
 
-// const total = computed(() =>
-//   characterEarningStatistics.value
-//     .filter(ts => activeSeries.value.includes(ts.name))
-//     .flatMap(ts => ts.data)
-//     .filter(([date]) => {
-//       const time = date.getTime()
-//       const [from, to] = dataZoom.value
-//       return time >= from && time <= to
-//     })
-//     .reduce((total, [_date, value]) => total + value, 0),
-// )
+const onDataZoomChanged = () => {
+  const option = chart.value?.getOption()
+  // @ts-expect-error TODO: write types
+  setDataZoom(option.dataZoom[0].startValue, option.dataZoom[0].endValue)
+}
 
-// interface CharacterEarnedDataWithGameMode extends CharacterEarnedData {
-//   gameMode: GameMode
-// }
+const onLegendSelectChanged = (e: LegendSelectEvent) => {
+  activeSeries.value = Object.entries(e.selected)
+    .filter(([_legend, status]) => Boolean(status))
+    .map(([legend, _status]) => legend)
+}
 
-// const summary = computed<CharacterEarnedDataWithGameMode[]>(() => Object.entries(summaryByGameModeCharacterEarningStatistics(rawEarningStatistics.value)).map(([gameMode, data]) => ({
-//   gameMode: gameMode as GameMode,
-//   ...data,
-// })))
+const { execute: onUpdate } = useAsyncCallback(async (characterId: number) => {
+  await loadCharacterEarningStatistics(0, characterId)
+  option.value = {
+    ...option.value,
+    legend: {
+      ...option.value.legend,
+      data: characterEarningStatistics.value.map(extractTSName),
+    },
+    series: characterEarningStatistics.value.map(toBarSeries),
+  }
+  activeSeries.value = characterEarningStatistics.value.map(extractTSName)
+})
 
-// const chart = shallowRef<InstanceType<typeof VChart> | null>(null)
+watch(statTypeModel, () => onUpdate(character.value.id))
+watch(zoomModel, () => {
+  setZoom()
+  onUpdate(character.value.id)
+  setDataZoom(start.value.getTime(), end.value.getTime())
+})
 
-// const option = shallowRef<EChartsOption>({
-//   legend: {
-//     data: legend.value,
-//     itemGap: 16,
-//     orient: 'vertical',
-//     right: 0,
-//     top: 'center',
-//   },
-//   series: characterEarningStatistics.value.map(toBarSeries),
-//   tooltip: {
-//     axisPointer: {
-//       label: {
-//         formatter: param => d(new Date(param.value), 'long'),
-//       },
-//       type: 'shadow',
-//     },
-//     trigger: 'axis',
-//   },
-//   xAxis: {
-//     max: Date.now(),
-//     min: getStart(Zoom['1h']),
-//     splitArea: {
-//       show: false,
-//     },
-//     splitLine: {
-//       show: false,
-//     },
-//     type: 'time',
-//   },
-//   yAxis: {
-//     splitArea: {
-//       show: false,
-//     },
-//     type: 'value',
-//   },
-//   dataZoom: [
-//     {
-//       type: 'slider',
-//       labelFormatter: value => d(new Date(value), 'short'),
-//     },
-//   ],
-// })
+const total = computed(() =>
+  characterEarningStatistics.value
+    .filter(ts => activeSeries.value.includes(ts.name))
+    .flatMap(ts => ts.data)
+    .filter(([date]) => {
+      const time = date.getTime()
+      const [from, to] = dataZoom.value
+      return time >= from && time <= to
+    })
+    .reduce((total, [_date, value]) => total + value, 0),
+)
 
-// const setZoom = () => {
-//   end.value = new Date()
-//   option.value = {
-//     ...option.value,
-//     xAxis: {
-//       ...option.value.xAxis,
-//       max: end.value,
-//       min: start.value,
-//     },
-//   }
-// }
+interface CharacterEarnedDataWithGameMode extends CharacterEarnedData {
+  gameMode: GameMode
+}
 
-// const onLegendSelectChanged = (e: LegendSelectEvent) => {
-//   activeSeries.value = Object.entries(e.selected)
-//     .filter(([_legend, status]) => Boolean(status))
-//     .map(([legend, _status]) => legend)
-// }
+const summary = computed<CharacterEarnedDataWithGameMode[]>(() => Object.entries(summaryByGameModeCharacterEarningStatistics(rawEarningStatistics.value)).map(([gameMode, data]) => ({
+  gameMode: gameMode as GameMode,
+  ...data,
+})))
 
-// const fetchPageData = (characterId: number) => Promise.all([onUpdate(characterId)])
+const fetchPageData = (characterId: number) => Promise.all([onUpdate(characterId)])
 
-// onBeforeRouteUpdate(async (to, from) => {
-//   if (to.name === from.name && to.name === 'CharactersIdStats') {
-//     const characterId = Number(to.params.id)
-//     await fetchPageData(characterId)
-//   }
-//   return true
-// })
+onBeforeRouteUpdate(async (to, from) => {
+  if (to.name === from.name && to.name === 'characters-id-stats') {
+    const characterId = Number(to.params.id)
+    fetchPageData(characterId)
+  }
+})
 
-// await fetchPageData(character.value.id)
+fetchPageData(Number(route.params.id))
 </script>
 
 <template>
   <div class="mx-auto max-w-2xl space-y-12 pb-12">
-    <!-- <div class="flex max-h-[90vh] min-w-[56rem] flex-col pl-5 pr-10 pt-8">
+    <div class="flex max-h-[90vh] min-w-[56rem] flex-col pt-8 pr-10 pl-5">
       <div class="flex items-center gap-4">
         <OTabs
           v-model="statTypeModel"
@@ -327,16 +326,17 @@
         </div>
       </div>
 
-      <VChart
-        ref="chart"
-        class="mb-6 h-[30rem]"
-        theme="crpg"
-        :option="option"
-        :loading="loading"
-        :loading-options="loadingOptions"
-        @legendselectchanged="onLegendSelectChanged"
-        @datazoom="onDataZoomChanged"
-      />
+      <div class="mb-6 h-[30rem] ">
+        <VChart
+          ref="chart"
+          theme="crpg"
+          :option="option"
+          :loading="loading"
+          :loading-options="loadingOptions"
+          @legendselectchanged="onLegendSelectChanged"
+          @datazoom="onDataZoomChanged"
+        />
+      </div>
 
       <OTable
         :data="summary"
@@ -398,9 +398,9 @@
         </OTableColumn>
 
         <template #empty>
-          <ResultNotFound />
+          <UiResultNotFound />
         </template>
       </OTable>
-    </div> -->
+    </div>
   </div>
 </template>
