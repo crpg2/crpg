@@ -77,27 +77,29 @@ export interface UserRestriction {
   id: number
   reason: string
   createdAt: Date
-  duration: string
+  duration: string // seconds
   publicReason: string
   type: UserRestrictionType
   restrictedUser: UserPrivate
   restrictedByUser: UserPublic
+  status: UserRestrictionStatus
 }
 
 export interface UserRestrictionPublic {
   id: number
   reason: string
   createdAt: Date
-  duration: string
+  duration: string // seconds
 }
 
-export interface UserRestrictionWithActive extends UserRestriction {
-  active: boolean
+export enum UserRestrictionStatus {
+  Active = 'Active',
+  NonActive = 'NonActive',
 }
 
 export interface UserRestrictionCreation {
   reason: string
-  duration: number
+  duration: number // seconds
   publicReason: string
   type: UserRestrictionType
   restrictedUserId: number

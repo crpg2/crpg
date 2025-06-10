@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { DropdownMenuItem, TableColumn, TabsItem } from '@nuxt/ui'
-import type { ColumnFiltersState } from '@tanstack/table-core'
+import type { ColumnFiltersState, SortingState } from '@tanstack/table-core'
 
 import { useRouteQuery } from '@vueuse/router'
 import { CompetitiveRank, CompetitiveRankTable, UIcon, UInput, UiTableColumnHeader, UModal, UserMedia, UTooltip } from '#components'
@@ -51,7 +51,7 @@ const {
 
 watch(
   () => route.query,
-  () => loadLeaderBoard(300),
+  () => loadLeaderBoard(),
 )
 
 const { rankTable } = useRankTable()
@@ -68,6 +68,10 @@ const gameModeItems = rankedGameModes.map<TabsItem>(mode => ({
 }))
 
 const columnFilters = ref<ColumnFiltersState>([])
+
+const sorting = ref<SortingState>([
+  { id: 'position', desc: false },
+])
 
 const table = useTemplateRef('table')
 
@@ -224,13 +228,12 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
       <UTable
         ref="table"
         v-model:global-filter="globalFilter"
+        v-model:column-filters="columnFilters"
+        v-model:sorting="sorting"
         class="relative rounded-md border border-muted"
         :loading="leaderBoardLoading"
         :data="leaderboard"
         :columns
-        :state="{
-          columnFilters,
-        }"
         :meta="{
           class: {
             tr: (row) => row.original.user.id === userStore.user?.id ? tw`text-primary` : '',

@@ -7,20 +7,21 @@ import {
   putUsersByUserIdNote,
 } from '#hey-api/sdk.gen'
 
+import type { RestrictionViewModel } from '~/api'
 import type { Platform } from '~/models/platform'
-import type {
-  UserPrivate,
-  UserPublic,
-  UserRestriction,
-  UserRestrictionCreation,
-  UserRestrictionWithActive,
-} from '~/models/user'
 
+import {
+  type UserPrivate,
+  type UserPublic,
+  type UserRestriction,
+  type UserRestrictionCreation,
+  UserRestrictionStatus,
+} from '~/models/user'
 import { checkIsDateExpired } from '~/utils/date'
 
-export const checkIsRestrictionActive = (
-  restrictions: UserRestriction[],
-  { createdAt, id, restrictedUser, type }: UserRestriction,
+const checkIsRestrictionActive = (
+  restrictions: RestrictionViewModel[],
+  { createdAt, id, restrictedUser, type }: RestrictionViewModel,
 ): boolean => {
   return !restrictions.some(
     r =>
@@ -31,24 +32,23 @@ export const checkIsRestrictionActive = (
   )
 }
 
-export const mapRestrictions = (restrictions: UserRestriction[]): UserRestrictionWithActive[] => {
+const mapRestrictions = (restrictions: RestrictionViewModel[]): UserRestriction[] => {
   return restrictions.map((r) => {
     const isExpired = checkIsDateExpired(r.createdAt, Number(r.duration))
     const isRestrictionActive = checkIsRestrictionActive(restrictions, r)
-
     return ({
       ...r,
-      active: !isExpired && isRestrictionActive,
+      status: (!isExpired && isRestrictionActive) ? UserRestrictionStatus.Active : UserRestrictionStatus.NonActive,
     })
   })
 }
 
-export const getRestrictions = async (): Promise<UserRestrictionWithActive[]> => {
+export const getRestrictions = async (): Promise<UserRestriction[]> => {
   const { data } = await _getRestrictions({ composable: '$fetch' })
   return mapRestrictions(data!)
 }
 
-export const getUserRestrictions = async (id: number): Promise<UserRestrictionWithActive[]> => {
+export const getUserRestrictions = async (id: number): Promise<UserRestriction[]> => {
   const { data } = await getUsersByIdRestrictions({ composable: '$fetch', path: { id } })
   return mapRestrictions(data!)
 }

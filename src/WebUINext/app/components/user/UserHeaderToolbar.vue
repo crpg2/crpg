@@ -90,7 +90,6 @@ const items = computed<DropdownMenuItem[][]>(() => [
     <UserMedia
       :user="mapUserToUserPublic(user)"
       hidden-platform
-      size="xl"
     />
 
     <USeparator orientation="vertical" class="h-6" />

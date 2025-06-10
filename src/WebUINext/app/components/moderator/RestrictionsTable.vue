@@ -1,18 +1,17 @@
 <script setup lang="ts">
-import type { TableColumn } from '@nuxt/ui'
-import type { ColumnFiltersState, PaginationState } from '@tanstack/vue-table'
+import type { DropdownMenuItem, TableColumn } from '@nuxt/ui'
+import type { ColumnFiltersState, PaginationState, SortingState, VisibilityState } from '@tanstack/vue-table'
 
-import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
+import { getPaginationRowModel } from '@tanstack/vue-table'
 import { navigateTo } from '#app'
-import { NuxtLink, UBadge, UiCollapsibleText, UInput, UserMedia, UTooltip } from '#components'
+import { NuxtLink, UBadge, UiCollapsibleText, UInput, UiTableColumnHeader, UserMedia, UTooltip } from '#components'
 
-import type { UserRestrictionWithActive } from '~/models/user'
-
+import { type UserRestriction, UserRestrictionStatus, UserRestrictionType } from '~/models/user'
 import { computeLeftMs, parseTimestamp } from '~/utils/date'
 
-defineProps<{
-  restrictions: UserRestrictionWithActive[]
-  hiddenCols?: string[]
+const { hiddenRestrictedUser = false } = defineProps<{
+  restrictions: UserRestriction[]
+  hiddenRestrictedUser?: boolean
   loading?: boolean
 }>()
 
@@ -31,14 +30,30 @@ const table = useTemplateRef('table')
 
 const globalFilter = ref('')
 
-const columns: TableColumn<UserRestrictionWithActive>[] = [
+const columns: TableColumn<UserRestriction>[] = [
   {
     accessorKey: 'id',
   },
   {
-    accessorKey: 'active',
-    header: () => t('restriction.table.column.status'),
-    cell: ({ row }) => row.original.active
+    accessorKey: 'status',
+    header: ({ column }) => {
+      const filterValue = (column.getFilterValue() || []) as string[]
+      return h(UiTableColumnHeader, {
+        label: t('restriction.table.column.status'),
+        withFilter: true,
+        filtered: column.getIsFiltered(),
+        filterDropdownItems: Object.values(UserRestrictionStatus).map<DropdownMenuItem>(status => ({
+          label: status,
+          type: 'checkbox',
+          checked: filterValue.includes(status),
+          onUpdateChecked() {
+            column.setFilterValue([status])
+          },
+        })),
+        onResetFilter: () => column.setFilterValue(undefined),
+      })
+    },
+    cell: ({ row }) => row.original.status === UserRestrictionStatus.Active
       ? h(UTooltip, {
           text: t('dateTimeFormat.dd:hh:mm', { ...parseTimestamp(computeLeftMs(row.original.createdAt, Number(row.original.duration))) }),
         }, () => h(UBadge, { label: t('restriction.status.active'), size: 'sm', color: 'success', variant: 'subtle' }))
@@ -46,17 +61,37 @@ const columns: TableColumn<UserRestrictionWithActive>[] = [
   },
   {
     accessorKey: 'type',
-    header: () => t('restriction.table.column.type'),
+    // TODO: to cmp, to simple
+    header: ({ column }) => {
+      const filterValue = (column.getFilterValue() || []) as string[]
+      return h(UiTableColumnHeader, {
+        label: t('restriction.table.column.type'),
+        withFilter: true,
+        filtered: column.getIsFiltered(),
+        filterDropdownItems: Object.values(UserRestrictionType).map<DropdownMenuItem>(rt => ({
+          label: t(`restriction.type.${rt}`),
+          type: 'checkbox',
+          checked: filterValue.includes(rt),
+          onUpdateChecked() {
+            column.setFilterValue([rt])
+          },
+        })),
+        onResetFilter: () => column.setFilterValue(undefined),
+      })
+    },
     cell: ({ row }) => t(`restriction.type.${row.original.type}`),
   },
   {
     accessorKey: 'restrictedUser.name',
+    id: 'restrictedUser_name',
+    // @ts-expect-error TODO: FIXME:
     header: () => h(UInput, {
       'icon': 'crpg:search',
       'variant': 'ghost',
       'size': 'xs',
       'placeholder': t('restriction.table.column.user'),
       'modelValue': globalFilter.value,
+      // @ts-expect-error TODO: FIXME:
       'onUpdate:modelValue': val => globalFilter.value = val,
     }),
     cell: ({ row }) => h(NuxtLink, {
@@ -105,6 +140,25 @@ const columns: TableColumn<UserRestrictionWithActive>[] = [
     }),
   },
 ]
+
+const columnVisibility = ref<VisibilityState>(
+  { ...hiddenRestrictedUser && { restrictedUser_name: false } },
+)
+
+const sorting = ref<SortingState>([
+  { id: 'id', desc: true },
+])
+
+const columnFilters = ref<ColumnFiltersState>([])
+
+function setColumnFilters(state: ColumnFiltersState) {
+  // if (!state.length) {
+  //   characterClassModel.value = undefined
+  //   return
+  // }
+  // // TODO: FIXME: шляпа
+  // characterClassModel.value = state[0]?.value[0] as CharacterClass
+}
 </script>
 
 <template>
@@ -113,6 +167,8 @@ const columns: TableColumn<UserRestrictionWithActive>[] = [
       ref="table"
       v-model:global-filter="globalFilter"
       v-model:pagination="pagination"
+      v-model:column-visibility="columnVisibility"
+      v-model:sorting="sorting"
       class="rounded-md border border-muted"
       :data="restrictions"
       :columns
@@ -125,6 +181,7 @@ const columns: TableColumn<UserRestrictionWithActive>[] = [
       }"
       @select="(row) => navigateTo({ name: 'moderator-user-id-restrictions', params: { id: row.original.restrictedUser.id } })"
     >
+      <!-- @update:column-filters="setColumnFilters" -->
       <template #empty>
         <UiResultNotFound />
       </template>

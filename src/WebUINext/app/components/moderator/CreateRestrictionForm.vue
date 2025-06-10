@@ -1,26 +1,17 @@
 <script setup lang="ts">
+import type { SelectItem } from '@nuxt/ui'
+
 import type { HumanDuration } from '~/models/datetime'
 import type { UserRestrictionCreation } from '~/models/user'
 
 import { UserRestrictionType } from '~/models/user'
-import { restrictUser } from '~/services/restriction-service'
 import { convertHumanDurationToMs } from '~/utils/date'
 
-const props = defineProps<{ userId: number }>()
+defineProps<{ loading: boolean }>()
 
 const emit = defineEmits<{
-  restrictionCreated: []
+  submit: [data: Omit<UserRestrictionCreation, 'restrictedUserId'>]
 }>()
-
-const { t } = useI18n()
-const { $notify } = useNuxtApp()
-
-const newRestrictionModel = ref<Omit<UserRestrictionCreation, 'restrictedUserId'>>({
-  duration: 0,
-  publicReason: '',
-  reason: '',
-  type: UserRestrictionType.Join,
-})
 
 const durationModel = ref<HumanDuration>({
   days: 0,
@@ -28,130 +19,85 @@ const durationModel = ref<HumanDuration>({
   minutes: 0,
 })
 
-const durationSeconds = computed(() => convertHumanDurationToMs(durationModel.value))
+const newRestrictionModel = ref<Omit<UserRestrictionCreation, 'restrictedUserId' | 'duration'>>({
+  publicReason: '',
+  reason: '',
+  type: UserRestrictionType.Join,
+})
 
-const addRestriction = async () => {
-  await restrictUser({
+const onSubmit = () => {
+  emit('submit', {
     ...newRestrictionModel.value,
-    duration: durationSeconds.value,
-    restrictedUserId: props.userId,
+    duration: convertHumanDurationToMs(durationModel.value),
   })
-
-  $notify(t('restriction.create.notify.success'))
-
-  // durationModel.value = {
-  //   days: 0,
-  //   hours: 0,
-  //   minutes: 0,
-  // }
-
-  // newRestrictionModel.value = {
-  //   duration: 0,
-  //   publicReason: '',
-  //   reason: '',
-  //   type: RestrictionType.Join,
-  // }
-
-  emit('restrictionCreated')
 }
 </script>
 
 <template>
-  <form
+  <UForm
+    :state="newRestrictionModel"
     class="space-y-8"
-    @submit.prevent="addRestriction"
+    @submit="onSubmit"
   >
-    <OField>
-      <OField :label="$t('restriction.create.form.field.type.label')">
-        <VDropdown :triggers="['click']">
-          <template #default="{ shown }">
-            <OButton
-              :label="$t(`restriction.type.${newRestrictionModel.type}`)"
-              variant="secondary"
-              size="lg"
-              :icon-right="shown ? 'chevron-up' : 'chevron-down'"
-            />
-          </template>
+    <UFormField :label="$t('restriction.create.form.field.type.label')">
+      <USelect
+        v-model="newRestrictionModel.type"
+        :items="Object.values(UserRestrictionType).map<SelectItem>((rt) => ({
+          label: $t(`restriction.type.${rt}`),
+          value: rt,
+        }))"
+        class="w-full"
+      />
+    </UFormField>
 
-          <template #popper="{ hide }">
-            <UiDropdownItem
-              v-for="rt in Object.keys(UserRestrictionType)"
-              :key="rt"
-              class="min-w-60 max-w-xs"
-            >
-              <ORadio
-                v-model="newRestrictionModel.type"
-                :native-value="rt"
-                @change="hide"
-              >
-                {{ $t(`restriction.type.${rt}`) }}
-              </ORadio>
-            </UiDropdownItem>
-          </template>
-        </VDropdown>
-      </OField>
-
-      <OField message="Use a duration of 0 to un-restrict">
-        <OField :label="$t('restriction.create.form.field.days.label')">
-          <OInput
+    <UFormField help="Use a duration of 0 to un-restrict">
+      <div class="grid grid-cols-3 gap-2">
+        <UFormField :label="$t('restriction.create.form.field.days.label')" la>
+          <UInputNumber
             v-model="durationModel.days"
-            size="lg"
-            class="w-20"
-            required
-            type="number"
+            :min="0"
           />
-        </OField>
+        </UFormField>
 
-        <OField :label="$t('restriction.create.form.field.hours.label')">
-          <OInput
+        <UFormField :label="$t('restriction.create.form.field.hours.label')">
+          <UInputNumber
             v-model="durationModel.hours"
-            size="lg"
-            class="w-20"
-            required
-            type="number"
+            :min="0"
           />
-        </OField>
+        </UFormField>
 
-        <OField :label="$t('restriction.create.form.field.minutes.label')">
-          <OInput
+        <UFormField :label="$t('restriction.create.form.field.minutes.label')">
+          <UInputNumber
             v-model="durationModel.minutes"
-            size="lg"
-            class="w-20"
-            required
-            type="number"
+            :min="0"
           />
-        </OField>
-      </OField>
-    </OField>
+        </UFormField>
+      </div>
+    </UFormField>
 
-    <OField :label="$t('restriction.create.form.field.reason.label')">
-      <OInput
+    <UFormField required :label="$t('restriction.create.form.field.reason.label')">
+      <UTextarea
         v-model="newRestrictionModel.reason"
-        placeholder=""
-        size="lg"
-        class="w-96"
+        class="w-full"
         required
-        type="textarea"
-        rows="3"
+        autoresize
       />
-    </OField>
+    </UFormField>
 
-    <OField :label="$t('restriction.create.form.field.publicReason.label')">
-      <OInput
+    <UFormField :label="$t('restriction.create.form.field.publicReason.label')">
+      <UTextarea
         v-model="newRestrictionModel.publicReason"
-        placeholder=""
-        size="lg"
-        class="w-96"
-        type="textarea"
-        rows="3"
+        class="w-full"
+        autoresize
       />
-    </OField>
+    </UFormField>
 
-    <OButton
-      native-type="submit"
-      variant="primary"
-      size="lg"
+    <UButton
+      :loading
+      type="submit"
+      variant="subtle"
+      icon="crpg:plus"
       :label="$t('restriction.create.form.action.submit')"
     />
-  </form>
+  </UForm>
 </template>

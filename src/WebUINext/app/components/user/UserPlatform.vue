@@ -1,11 +1,37 @@
 <script setup lang="ts">
+import { tv } from 'tailwind-variants'
+
 import { Platform } from '~/models/platform'
 
-defineProps<{
+type Size = 'md' | 'lg' | 'xl'
+
+const { size = 'md' } = defineProps<{
   platform: Platform
   platformUserId: number | string
   userName: string
+  size?: Size
 }>()
+
+const variants = tv({
+  slots: {
+    icon: '',
+  },
+  variants: {
+    size: {
+      md: {
+        icon: 'size-5',
+      },
+      lg: {
+        icon: 'size-6',
+      },
+      xl: {
+        icon: 'size-8',
+      },
+    },
+  },
+})
+
+const classes = computed(() => variants({ size }))
 </script>
 
 <template>
@@ -16,14 +42,14 @@ defineProps<{
     target="_blank"
     @click.stop
   >
-    <UIcon name="crpg:steam-duotone" class="size-5" />
+    <UIcon name="crpg:steam-duotone" :class="classes.icon()" />
   </a>
 
   <!-- TODO: Epic doesn't have a public profile yet https://trello.com/c/FH3mNJ6b/297-profiles -->
   <UIcon
     v-else-if="platform === Platform.EpicGames"
     name="crpg:epic-games"
-    class="size-5"
+    :class="classes.icon()"
   />
 
   <a
@@ -33,6 +59,6 @@ defineProps<{
     target="_blank"
     @click.stop
   >
-    <UIcon name="crpg:xbox" class="size-5" />
+    <UIcon name="crpg:xbox" :class="classes.icon()" />
   </a>
 </template>

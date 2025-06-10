@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router'
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
 import { getUserById } from '~/services/restriction-service'
@@ -37,24 +38,20 @@ const links: { name: keyof RouteNamedMap, label: string }[] = [
 </script>
 
 <template>
-  <div class="container">
+  <UContainer>
     <div v-if="user" class="mb-14 flex items-center justify-center gap-8">
-      <h1 class="text-lg text-content-100">
-        <UserMedia
-          :user
-          size="xl"
-        />
-      </h1>
+      <UserMedia :user size="xl" />
 
       <div class="flex items-center justify-center gap-2">
         <NuxtLink
           v-for="{ name, label } in links"
           :key="name"
           v-slot="{ isExactActive }"
-          :to="{ name }"
+          :to="({ name } as RouteLocationRaw)"
         >
-          <OButton
-            :variant="isExactActive ? 'transparent-active' : 'secondary'"
+          <UButton
+            color="secondary"
+            :variant="isExactActive ? 'solid' : 'soft'"
             size="lg"
             :label
           />
@@ -63,5 +60,5 @@ const links: { name: keyof RouteNamedMap, label: string }[] = [
     </div>
 
     <NuxtPage @update="loadUser" />
-  </div>
+  </UContainer>
 </template>

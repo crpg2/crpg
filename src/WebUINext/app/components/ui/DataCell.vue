@@ -14,9 +14,11 @@ const columns = computed(() => [
     :style="{ gridTemplateColumns: columns }"
   >
     <slot name="leftContent" />
+
     <div class="row-span-2">
       <slot />
     </div>
+
     <slot name="rightContent" />
   </div>
 </template>

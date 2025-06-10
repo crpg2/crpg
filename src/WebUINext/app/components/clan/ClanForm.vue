@@ -255,9 +255,7 @@ const onSubmit = async () => {
             data-aq-clan-form-input="region"
           />
 
-          <UFormField
-            :label="$t('clan.update.form.field.languages')"
-          >
+          <UFormField :label="$t('clan.update.form.field.languages')">
             <USelect
               v-model="clanFormModel.languages"
               multiple

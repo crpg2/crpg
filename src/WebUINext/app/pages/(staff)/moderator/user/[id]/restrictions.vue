@@ -1,18 +1,39 @@
 <script setup lang="ts">
-import { ModeratorRestrictionsTable } from '#components'
+import type { UserRestrictionCreation } from '~/models/user'
 
-import { getUserRestrictions } from '~/services/restriction-service'
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { getUserRestrictions, restrictUser } from '~/services/restriction-service'
 
 const props = defineProps<{ id: string }>()
+const { t } = useI18n()
+const toast = useToast()
 
 definePageMeta({
   props: true,
 })
 
-const { execute: loadRestrictions, state: restrictions } = useAsyncState(
-  () => getUserRestrictions(Number(props.id)),
-  [],
-)
+const {
+  state: restrictions,
+  execute: loadRestrictions,
+  isLoading: loadingRestrictions,
+} = useAsyncState(() => getUserRestrictions(Number(props.id)), [], { resetOnExecute: false })
+
+const {
+  execute: onRestrictUser,
+  isLoading: restrictingUser,
+} = useAsyncCallback(async (restriction: Omit<UserRestrictionCreation, 'restrictedUserId'>) => {
+  await restrictUser({
+    ...restriction,
+    restrictedUserId: Number(props.id),
+  })
+  await loadRestrictions()
+
+  toast.add({
+    title: t('restriction.create.notify.success'),
+    color: 'success',
+    close: false,
+  })
+})
 </script>
 
 <template>
@@ -22,37 +43,37 @@ const { execute: loadRestrictions, state: restrictions } = useAsyncState(
         {{ $t('restriction.user.history') }}
       </h2>
 
-      <UiModal
-        closable
-        :auto-hide="false"
+      <UModal
+        :title="$t('restriction.create.form.title')"
+        :close="{
+          size: 'sm',
+          color: 'secondary',
+          variant: 'solid',
+        }"
       >
-        <OButton
-          native-type="submit"
-          variant="primary"
+        <UButton
           size="sm"
+          variant="subtle"
+          icon="crpg:plus"
           :label="$t('restriction.create.form.title')"
         />
-        <template #popper="{ hide }">
-          <div class="space-y-6 p-6">
-            <div class="pb-4 text-center text-xl text-content-100">
-              {{ $t('restriction.create.form.title') }}
-            </div>
 
-            <ModeratorCreateRestrictionForm
-              :user-id="Number(props.id)"
-              @restriction-created="() => {
-                hide();
-                loadRestrictions();
-              }"
-            />
-          </div>
+        <template #body="{ close }">
+          <ModeratorCreateRestrictionForm
+            :loading="restrictingUser"
+            @submit="(data) => {
+              onRestrictUser(data);
+              close();
+            }"
+          />
         </template>
-      </UiModal>
+      </UModal>
     </div>
 
     <ModeratorRestrictionsTable
       :restrictions="restrictions"
-      :hidden-cols="['restrictedUser']"
+      :loading="loadingRestrictions"
+      hidden-restricted-user
     />
   </div>
 </template>
