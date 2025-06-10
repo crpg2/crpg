@@ -481,22 +481,33 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
             // Mounted Archery
 
-            if (agent.HasMount)
+            if (agent.HasMount && equippedItem.IsRangedWeapon)
             {
                 int mountedArcherySkill = GetEffectiveSkill(agent, CrpgSkills.MountedArchery);
 
                 float weaponMaxMovementAccuracyPenalty = 0.03f / _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
                 float weaponMaxUnsteadyAccuracyPenalty = 0.15f / _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
+
                 if (equippedItem.RelevantSkill == DefaultSkills.Crossbow)
                 {
-                    weaponMaxUnsteadyAccuracyPenalty /= ImpactOfStrReqOnCrossbows(agent, 0.2f, primaryItem);
-                    weaponMaxMovementAccuracyPenalty /= ImpactOfStrReqOnCrossbows(agent, 0.2f, primaryItem);
+                    float crossbowPenaltyFactor = ImpactOfStrReqOnCrossbows(agent, 0.2f, primaryItem);
+                    weaponMaxUnsteadyAccuracyPenalty /= crossbowPenaltyFactor;
+                    weaponMaxMovementAccuracyPenalty /= crossbowPenaltyFactor;
                 }
 
                 props.WeaponMaxMovementAccuracyPenalty = Math.Min(weaponMaxMovementAccuracyPenalty, 1f);
                 props.WeaponMaxUnsteadyAccuracyPenalty = Math.Min(weaponMaxUnsteadyAccuracyPenalty, 1f);
+
                 props.WeaponInaccuracy /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
-                props.WeaponInaccuracy *= (0.8f + (float)Math.Pow(perceivedWeight / 6.5f, 2f)) / 0.3f;
+                props.ReloadSpeed /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
+                props.ThrustOrRangedReadySpeedMultiplier /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
+
+                float encumbranceRatio = totalEncumbrance / 15.0f;
+                float encumbranceMultiplier = MathF.Max((0.8f + MathF.Pow(encumbranceRatio, 2f)) / 0.3f, 1.0f);
+
+                props.WeaponInaccuracy *= encumbranceMultiplier;
+                props.ReloadSpeed *= encumbranceMultiplier;
+                props.ThrustOrRangedReadySpeedMultiplier *= encumbranceMultiplier;
             }
         }
 
