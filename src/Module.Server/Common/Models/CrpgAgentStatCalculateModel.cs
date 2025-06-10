@@ -501,18 +501,18 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 // Mounted skill penalty
                 props.WeaponInaccuracy /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
 
-                // Encumbrance-based inaccuracy penalty (neutral at 10, quadratic growth)
-                float encumbranceRatio = totalEncumbrance / 10.0f;
+                // Encumbrance-based inaccuracy penalty (neutral at 13, quadratic growth)
+                float encumbranceRatio = props.ArmorEncumbrance / 13.0f;
                 float encumbranceMultiplier = MathF.Max(
                     1.0f + (MathF.Pow(encumbranceRatio, 2f) - 1.0f) * 0.75f,
                     1.0f);
 
                 props.WeaponInaccuracy *= encumbranceMultiplier;
 
-                // Reload & thrust speed penalty: linearly drops from 1.0 at 10 to 0.25 at 35
-                float reloadThrustMultiplier = totalEncumbrance <= 10f
+                // Reload & thrust speed penalty: linear drop from 1.0 at 13 to 0.25 at 25
+                float reloadThrustMultiplier = props.ArmorEncumbrance <= 13f
                     ? 1.0f
-                    : MathF.Max(1.0f - 0.03f * (totalEncumbrance - 10f), 0.25f); // slope: (1.0 - 0.25) / (35 - 10)
+                    : MathF.Max(1.0f - ((props.ArmorEncumbrance - 13f) / (25f - 13f)) * 0.75f, 0.25f);
 
                 props.ReloadSpeed *= reloadThrustMultiplier;
                 props.ThrustOrRangedReadySpeedMultiplier *= reloadThrustMultiplier;
@@ -525,7 +525,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 if (agent.IsMainAgent)
                 {
                     InformationManager.DisplayMessage(new InformationMessage(
-                        $"[DEBUG] Enc: {totalEncumbrance:F1} | Rld: {props.ReloadSpeed:F2} | Thrust: {props.ThrustOrRangedReadySpeedMultiplier:F2} | Inacc: {props.WeaponInaccuracy:F2}"
+                        $"[DEBUG] Enc: {props.ArmorEncumbrance:F1} | Rld: {props.ReloadSpeed:F2} | Thrust: {props.ThrustOrRangedReadySpeedMultiplier:F2} | Inacc: {props.WeaponInaccuracy:F2}"
                     ));
                 }
             }
