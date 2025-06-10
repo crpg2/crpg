@@ -23,7 +23,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
     ...props.characters.map<DropdownMenuItem>(character => ({
       icon: `crpg:${characterClassToIcon[character.class]}`,
       label: character.name,
-      to: { name: 'characters-id-inventory', params: { id: character.id } },
+      to: { params: { id: character.id } },
       slot: 'character' as const,
       character,
     })),

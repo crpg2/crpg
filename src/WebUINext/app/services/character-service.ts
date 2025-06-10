@@ -206,7 +206,7 @@ export interface CharacterEarnedMetadata {
   gameMode: string
   experience: string
   gold: string
-  timeEffort: string
+  timeEffort: string // seconds
 }
 
 export const getCharacterEarningStatistics = async (

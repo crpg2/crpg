@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { TableColumn, TabsItem } from '@nuxt/ui'
 // TODO: FIXME: composition + components
 import type { BarSeriesOption } from 'echarts/charts'
 import type {
@@ -10,6 +11,7 @@ import type {
 import type { ComposeOption } from 'echarts/core'
 import type { DurationLike } from 'luxon'
 
+import { AppCoin, AppExperience, UIcon, UiDataCell } from '#components'
 import { BarChart } from 'echarts/charts'
 import {
   DataZoomComponent,
@@ -53,16 +55,7 @@ const route = useRoute('characters-id-stats')
 
 const { character } = useCharacter()
 
-const { d } = useI18n()
-
-enum Zoom {
-  '1h' = '1h',
-  '3h' = '3h',
-  '12h' = '12h',
-  '2d' = '2d',
-  '7d' = '7d',
-  '14d' = '14d',
-}
+const { d, n, t } = useI18n()
 
 interface LegendSelectEvent {
   name: string
@@ -77,25 +70,22 @@ const loadingOptions = {
   text: 'Loading…',
 }
 
+enum Zoom {
+  '1h' = '1h',
+  '3h' = '3h',
+  '12h' = '12h',
+  '2d' = '2d',
+  '7d' = '7d',
+  '14d' = '14d',
+}
+
 const durationByZoom: Record<Zoom, DurationLike> = {
-  [Zoom['1h']]: {
-    hours: 1,
-  },
-  [Zoom['3h']]: {
-    hours: 3,
-  },
-  [Zoom['12h']]: {
-    hours: 12,
-  },
-  [Zoom['2d']]: {
-    days: 2,
-  },
-  [Zoom['7d']]: {
-    days: 7,
-  },
-  [Zoom['14d']]: {
-    days: 14,
-  },
+  [Zoom['1h']]: { hours: 1 },
+  [Zoom['3h']]: { hours: 3 },
+  [Zoom['12h']]: { hours: 12 },
+  [Zoom['2d']]: { days: 2 },
+  [Zoom['7d']]: { days: 7 },
+  [Zoom['14d']]: { days: 14 },
 }
 
 const getStart = (zoom: Zoom) => {
@@ -118,15 +108,16 @@ const getStart = (zoom: Zoom) => {
   }
 }
 const toBarSeries = (ts: TimeSeries): BarSeriesOption => ({ ...ts, type: 'bar' })
-const extractTSName = (ts: TimeSeries) => ts.name
+const extractTSName = (ts: TimeSeries): string => ts.name
 
 const zoomModel = ref<Zoom>(Zoom['1h'])
 const start = computed(() => getStart(zoomModel.value))
 const end = ref<Date>(new Date())
 
 const {
-  execute: loadCharacterEarningStatistics,
   state: rawEarningStatistics,
+  execute: loadCharacterEarningStatistics,
+  isLoading: loadingEarningStatistics,
 } = await useAsyncState(
   (id: number) => getCharacterEarningStatistics(id, start.value),
   [],
@@ -153,6 +144,7 @@ const option = shallowRef<EChartsOption>({
   legend: {
     data: legend.value,
     itemGap: 16,
+    formatter: name => t(`game-mode.${name}`),
     orient: 'vertical',
     right: 0,
     top: 'center',
@@ -252,10 +244,48 @@ interface CharacterEarnedDataWithGameMode extends CharacterEarnedData {
   gameMode: GameMode
 }
 
-const summary = computed<CharacterEarnedDataWithGameMode[]>(() => Object.entries(summaryByGameModeCharacterEarningStatistics(rawEarningStatistics.value)).map(([gameMode, data]) => ({
-  gameMode: gameMode as GameMode,
-  ...data,
-})))
+const summary = computed<CharacterEarnedDataWithGameMode[]>(() =>
+  Object.entries(summaryByGameModeCharacterEarningStatistics(rawEarningStatistics.value))
+    .map(([gameMode, data]) => ({
+      gameMode: gameMode as GameMode,
+      ...data,
+    })))
+
+const statTypeItems = Object.keys(CharacterEarningType).map<TabsItem>(statType => ({
+  label: t(`character.earningStats.type.${statType}`),
+  value: statType,
+}))
+
+const zoomItems = Object.entries(durationByZoom).map<TabsItem>(([zoomKey, zoomValue]) => ({
+  label: t(`dateTimeFormat.${Object.keys(zoomValue).includes('days') ? 'dd' : 'hh'}`, zoomValue as any),
+  value: zoomKey,
+}))
+
+const columns: TableColumn<CharacterEarnedDataWithGameMode>[] = [
+  {
+    accessorKey: 'gameMode',
+    header: '',
+    cell: ({ row }) => h(UiDataCell, null, {
+      default: () => t(`game-mode.${row.original.gameMode}`),
+      leftContent: () => h(UIcon, { name: `crpg:${gameModeToIcon[row.original.gameMode]}`, class: 'size-6' }),
+    }),
+  },
+  {
+    accessorKey: 'timeEffort',
+    header: () => t('character.earningStats.summary.timeEffort'),
+    cell: ({ row }) => t('dateTimeFormat.ss', { secondes: Math.round(row.original.timeEffort) }),
+  },
+  {
+    accessorKey: 'experience',
+    header: () => h(AppExperience, { size: 'lg' }),
+    cell: ({ row }) => `${n(row.original.experience)}${row.original.timeEffort ? ` (${n(row.original.experience / row.original.timeEffort)}/s)` : ''}`,
+  },
+  {
+    accessorKey: 'gold',
+    header: () => h(AppCoin, { size: 'lg' }),
+    cell: ({ row }) => `${n(row.original.gold)}${row.original.timeEffort ? ` (${n(row.original.gold / row.original.timeEffort)}/s)` : ''}`,
+  },
+]
 
 const fetchPageData = (characterId: number) => Promise.all([onUpdate(characterId)])
 
@@ -270,63 +300,40 @@ fetchPageData(Number(route.params.id))
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl space-y-12 pb-12">
-    <div class="flex max-h-[90vh] min-w-[56rem] flex-col pt-8 pr-10 pl-5">
-      <div class="flex items-center gap-4">
-        <OTabs
-          v-model="statTypeModel"
-          type="fill-rounded"
-          content-class="hidden"
-        >
-          <OTabItem
-            :value="CharacterEarningType.Exp"
-            :label="$t('character.earningStats.type.experience')"
-          />
-          <OTabItem
-            :value="CharacterEarningType.Gold"
-            :label="$t('character.earningStats.type.gold')"
-          />
-        </OTabs>
-
-        <OTabs
+  <UContainer>
+    <div class="flex min-w-[56rem] flex-col pt-8 pr-10 pl-5">
+      <div class="flex items-center justify-center gap-4">
+        <UTabs
           v-model="zoomModel"
-          type="fill-rounded"
-          content-class="hidden"
-        >
-          <OTabItem
-            v-for="(zoomValue, zoomKey) in durationByZoom"
-            :key="zoomKey"
-            :value="zoomKey"
-            :label="
-              $t(
-                `dateTimeFormat.${Object.keys(zoomValue).includes('days') ? 'dd' : 'hh'}`,
-                zoomValue as any,
-              )
-            "
-          />
-        </OTabs>
+          :items="zoomItems"
+          size="xl"
+          variant="pill"
+          :content="false"
+        />
 
-        <div class="flex-1 text-lg font-semibold">
-          <AppCoin
-            v-if="statTypeModel === CharacterEarningType.Gold"
-            :value="total"
-            :class="total < 0 ? 'text-status-danger' : 'text-status-success'"
-          />
+        <UTabs
+          v-model="statTypeModel"
+          :items="statTypeItems"
+          size="xl"
+          variant="pill"
+          :content="false"
+        />
 
-          <div
-            v-else
-            class="flex items-center gap-1.5 align-text-bottom font-bold text-primary"
-          >
-            <OIcon
-              icon="experience"
-              size="2xl"
-            />
-            <span class="leading-none">{{ $n(total) }}</span>
-          </div>
-        </div>
+        <AppCoin
+          v-if="statTypeModel === CharacterEarningType.Gold"
+          :value="total"
+          size="xl"
+          :class="total < 0 ? 'text-status-danger' : 'text-status-success'"
+        />
+
+        <AppExperience
+          v-else
+          size="xl"
+          :value="total"
+        />
       </div>
 
-      <div class="mb-6 h-[30rem] ">
+      <div class="mb-6 h-[30rem]">
         <VChart
           ref="chart"
           theme="crpg"
@@ -338,69 +345,16 @@ fetchPageData(Number(route.params.id))
         />
       </div>
 
-      <OTable
+      <UTable
+        class="rounded-md border border-muted"
+        :loading="loadingEarningStatistics"
         :data="summary"
-        bordered
-        narrowed
-        sort-icon="chevron-up"
-        sort-icon-size="xs"
+        :columns
       >
-        <OTableColumn
-          v-slot="{ row }: { row: CharacterEarnedDataWithGameMode }"
-        >
-          <div class="flex items-center gap-1.5 align-text-bottom font-bold">
-            <OIcon :icon="gameModeToIcon[row.gameMode as GameMode]" />
-            {{ $t(`game-mode.${row.gameMode}`) }}
-          </div>
-        </OTableColumn>
-
-        <OTableColumn
-          v-slot="{ row }: { row: CharacterEarnedDataWithGameMode }"
-          field="timeEffort"
-          :label="$t('character.earningStats.summary.timeEffort')"
-          sortable
-        >
-          {{ $t('dateTimeFormat.ss', { secondes: Math.round(row.timeEffort) }) }}
-        </OTableColumn>
-
-        <OTableColumn
-          field="experience"
-          sortable
-        >
-          <template #header>
-            <OIcon
-              icon="experience"
-              class="text-primary"
-              size="2xl"
-            />
-          </template>
-          <template #default="{ row }: { row: CharacterEarnedDataWithGameMode }">
-            {{ $n(row.experience) }}
-            <template v-if="row.timeEffort">
-              ({{ $n(row.experience / row.timeEffort) }}/s)
-            </template>
-          </template>
-        </OTableColumn>
-
-        <OTableColumn
-          field="gold"
-          sortable
-        >
-          <template #header>
-            <AppCoin />
-          </template>
-          <template #default="{ row }: { row: CharacterEarnedDataWithGameMode }">
-            {{ $n(row.gold) }}
-            <template v-if="row.timeEffort">
-              ({{ $n(row.gold / row.timeEffort) }}/s)
-            </template>
-          </template>
-        </OTableColumn>
-
         <template #empty>
           <UiResultNotFound />
         </template>
-      </OTable>
+      </UTable>
     </div>
-  </div>
+  </UContainer>
 </template>
