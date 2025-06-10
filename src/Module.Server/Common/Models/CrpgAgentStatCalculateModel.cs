@@ -481,7 +481,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
             // Mounted Archery
 
-            if (agent.HasMount && equippedItem.IsRangedWeapon)
+            if (agent.HasMount)
             {
                 int mountedArcherySkill = GetEffectiveSkill(agent, CrpgSkills.MountedArchery);
 
@@ -498,16 +498,16 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 props.WeaponMaxMovementAccuracyPenalty = Math.Min(weaponMaxMovementAccuracyPenalty, 1f);
                 props.WeaponMaxUnsteadyAccuracyPenalty = Math.Min(weaponMaxUnsteadyAccuracyPenalty, 1f);
 
+                // Mounted skill penalty
                 props.WeaponInaccuracy /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
-                props.ReloadSpeed /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
-                props.ThrustOrRangedReadySpeedMultiplier /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
 
-                float encumbranceRatio = totalEncumbrance / 15.0f;
-                float encumbranceMultiplier = MathF.Max((0.8f + MathF.Pow(encumbranceRatio, 2f)) / 0.3f, 1.0f);
+                // Encumbrance-based penalty
+                float encumbranceRatio = totalEncumbrance / 10.0f;
+                float encumbranceMultiplier = MathF.Max(
+                    1.0f + (MathF.Pow(encumbranceRatio, 2f) - 1.0f) * 2.5f,
+                    1.0f);
 
                 props.WeaponInaccuracy *= encumbranceMultiplier;
-                props.ReloadSpeed *= encumbranceMultiplier;
-                props.ThrustOrRangedReadySpeedMultiplier *= encumbranceMultiplier;
             }
         }
 

@@ -60,6 +60,8 @@ internal static class CrpgCharacterBuilder
         }
 
         AddEquipment(equipment, EquipmentIndex.Horse, "crpg_mount1_courser_14_v2_h0");
+        AddEquipment(equipment, EquipmentIndex.Weapon1, "crpg_stacked_steppe_arrows_v3_h0");
+        AddEquipment(equipment, EquipmentIndex.Weapon2, "crpg_hassun_yumi_v2_h0");
         return equipment;
     }
 
