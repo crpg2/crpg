@@ -2,9 +2,9 @@
 </script>
 
 <template>
-  <div class="container">
+  <UContainer>
     <div class="mx-auto max-w-3xl">
       <ModeratorUserFinder />
     </div>
-  </div>
+  </UContainer>
 </template>

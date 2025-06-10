@@ -13,6 +13,7 @@ import { computeLeftMs, parseTimestamp } from '~/utils/date'
 defineProps<{
   restrictions: UserRestrictionWithActive[]
   hiddenCols?: string[]
+  loading?: boolean
 }>()
 
 const { t, d } = useI18n()
@@ -115,6 +116,7 @@ const columns: TableColumn<UserRestrictionWithActive>[] = [
       class="rounded-md border border-muted"
       :data="restrictions"
       :columns
+      :loading
       :initial-state="{
         pagination: getInitialPaginationState(),
       }"

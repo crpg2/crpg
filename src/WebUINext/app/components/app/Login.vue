@@ -53,9 +53,7 @@ const items = computed(() =>
       :modal="false"
     >
       <template #default="{ open }">
-        <UButton
-          :icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'"
-        />
+        <UButton :icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'" />
       </template>
     </UDropdownMenu>
   </UButtonGroup>

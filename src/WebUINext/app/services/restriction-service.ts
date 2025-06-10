@@ -7,6 +7,7 @@ import {
   putUsersByUserIdNote,
 } from '#hey-api/sdk.gen'
 
+import type { Platform } from '~/models/platform'
 import type {
   UserPrivate,
   UserPublic,
@@ -74,5 +75,5 @@ export const searchUser = async (query: UserSearchQuery): Promise<UserPublic[]> 
     query,
   })
 
-  return data
+  return data!
 }

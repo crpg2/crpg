@@ -2,8 +2,6 @@
 import type { RouteLocationRaw } from 'vue-router'
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
-import { UContainer } from '#components'
-
 import { Role } from '~/models/role'
 
 definePageMeta({

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { DropdownMenuItem, TabsItem } from '@nuxt/ui'
+
 import { Platform } from '~/models/platform'
 import { platformToIcon } from '~/services/platform-service'
 import { getUserById, searchUser } from '~/services/restriction-service'
@@ -9,9 +11,12 @@ enum SearchMode {
   Id = 'Id',
 }
 
+const { t } = useI18n()
+
 const activeSearchMode = ref<SearchMode>(SearchMode.Name)
+
 const searchByNameModel = ref<string>('')
-const searchByIdModel = ref<number>(0)
+const searchByIdModel = ref<number | null>(null)
 const searchByPlatformModel = ref<{ platform: Platform, platformUserId: string }>({
   platform: Platform.Steam,
   platformUserId: '',
@@ -20,14 +25,15 @@ const searchByPlatformModel = ref<{ platform: Platform, platformUserId: string }
 const {
   state: users,
   execute: search,
+  isLoading: searching,
+  isReady: loadedUsers,
 } = useAsyncState(
   async () => {
-    if (activeSearchMode.value === SearchMode.Id) {
+    if (activeSearchMode.value === SearchMode.Id && searchByIdModel.value) {
       return [await getUserById(searchByIdModel.value)]
     }
 
-    const payload
-    = activeSearchMode.value === SearchMode.Name
+    const payload = activeSearchMode.value === SearchMode.Name
       ? { name: searchByNameModel.value }
       : {
           platform: searchByPlatformModel.value.platform,
@@ -42,142 +48,138 @@ const {
 
 const clearUsers = () => {
   users.value = []
+  loadedUsers.value = false
 }
+
+const searchModeItems = Object.keys(SearchMode).map<TabsItem>(mode => ({
+  label: t(`findUser.mode.${mode}.label`),
+  value: mode,
+  slot: `${mode}` as const,
+}))
+
+const items = computed(() =>
+  Object.values(Platform).map<DropdownMenuItem>(p => ({
+    label: t(`platform.${p}`),
+    icon: `crpg:${platformToIcon[p]}`,
+    type: 'checkbox' as const,
+    checked: p === searchByPlatformModel.value.platform,
+    onUpdateChecked() {
+      searchByPlatformModel.value.platform = p
+    },
+  })),
+)
+
+//
 </script>
 
 <template>
-  <div>
-    <OTabs
+  <div class="space-y-6">
+    <UTabs
       v-model="activeSearchMode"
-      :animated="false"
-      class="mb-8"
+      :items="searchModeItems"
+      size="xl"
+      variant="pill"
     >
-      <OTabItem
-        :label="$t('findUser.mode.Name.label')"
-        :value="SearchMode.Name"
-      >
-        <form
-          class="rounded-xl border border-border-200 p-6"
-          @submit.prevent="search"
-        >
-          <OField :label="$t('findUser.mode.Name.field.name.label')">
-            <OInput
-              v-model="searchByNameModel"
-              :placeholder="$t('findUser.mode.Name.field.name.placeholder')"
-              size="lg"
-              class="w-72"
-              required
-              icon="search"
-              clearable
-              @input="clearUsers"
-            />
-            <OButton
-              class="w-28"
-              native-type="submit"
-              variant="primary"
-              size="lg"
-              :label="$t('action.find')"
-            />
-          </OField>
-        </form>
-      </OTabItem>
+      <template #Name>
+        <UCard>
+          <UForm :state="searchByNameModel" @submit="() => { search() }">
+            <UButtonGroup>
+              <UInput
+                v-model="searchByNameModel"
+                :placeholder="$t('findUser.mode.Name.field.name.placeholder')"
+                size="lg"
+                color="neutral"
+                icon="crpg:search"
+                variant="outline"
+                @input="clearUsers"
+              />
+              <UButton
+                size="lg"
+                color="neutral"
+                variant="subtle"
+                :label="$t('action.find')"
+                type="submit"
+              />
+            </UButtonGroup>
+          </UForm>
+        </UCard>
+      </template>
 
-      <OTabItem
-        :label="$t('findUser.mode.Platform.label')"
-        :value="SearchMode.Platform"
-      >
-        <form
-          class="rounded-xl border border-border-200 p-6"
-          @submit.prevent="search"
-        >
-          <OField>
-            <OField :label="$t('findUser.mode.Platform.field.platform.label')">
-              <VDropdown :triggers="['click']">
-                <template #default="{ shown }">
-                  <OButton
-                    variant="secondary"
+      <template #Platform>
+        <UCard>
+          <UForm :state="searchByPlatformModel" @submit="() => { search() }">
+            <UButtonGroup>
+              <UDropdownMenu
+                :items
+                :modal="false"
+              >
+                <template #default="{ open }">
+                  <UButton
                     size="lg"
-                    :icon-left="platformToIcon[searchByPlatformModel.platform]"
+                    color="neutral"
+                    variant="subtle"
                     :label="$t(`platform.${searchByPlatformModel.platform}`)"
-                    :icon-right="shown ? 'chevron-up' : 'chevron-down'"
+                    :leading-icon="`crpg:${platformToIcon[searchByPlatformModel.platform]}`"
+                    :trailing-icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'"
                   />
                 </template>
+              </UDropdownMenu>
 
-                <template #popper="{ hide }">
-                  <UiDropdownItem
-                    v-for="p in Object.values(Platform)"
-                    :key="p"
-                    :checked="p === searchByPlatformModel.platform"
-                    :label="$t(`platform.${p}`)"
-                    :icon="platformToIcon[p]"
-                    data-aq-platform-item
-                    @click="() => {
-                      searchByPlatformModel.platform = p;
-                      hide();
-                    }"
-                  />
-                </template>
-              </VDropdown>
-            </OField>
-
-            <OField :label="$t('findUser.mode.Platform.field.platformId.label')">
-              <OInput
+              <UInput
                 v-model="searchByPlatformModel.platformUserId"
                 :placeholder="$t('findUser.mode.Platform.field.platformId.placeholder')"
                 size="lg"
-                class="w-80"
-                required
-                icon="search"
-                clearable
+                color="neutral"
+                icon="crpg:search"
+                variant="outline"
                 @input="clearUsers"
               />
-              <OButton
-                class="w-28"
-                native-type="submit"
-                variant="primary"
+              <UButton
                 size="lg"
+                color="neutral"
+                variant="subtle"
                 :label="$t('action.find')"
+                @click="() => { search() }"
               />
-            </OField>
-          </OField>
-        </form>
-      </OTabItem>
+            </UButtonGroup>
+          </UForm>
+        </UCard>
+      </template>
 
-      <OTabItem
-        :label="$t('findUser.mode.Id.label')"
-        :value="SearchMode.Id"
-      >
-        <form
-          class="rounded-xl border border-border-200 p-6"
-          @submit.prevent="search"
-        >
-          <OField :label="$t('findUser.mode.Id.field.id.label')">
-            <OInput
-              v-model="searchByIdModel"
-              :placeholder="$t('findUser.mode.Id.field.id.placeholder')"
-              size="lg"
-              class="w-72"
-              icon="search"
-              type="number"
-              clearable
-              @input="clearUsers"
-            />
-            <OButton
-              class="w-28"
-              native-type="submit"
-              variant="primary"
-              size="lg"
-              :label="$t('action.find')"
-            />
-          </OField>
-        </form>
-      </OTabItem>
-    </OTabs>
+      <template #Id>
+        <UCard>
+          <UForm :state="searchByIdModel" @submit="() => { search() }">
+            <UButtonGroup>
+              <UInput
+                v-model="searchByIdModel"
+                :placeholder="$t('findUser.mode.Id.field.id.placeholder')"
+                size="lg"
+                color="neutral"
+                icon="crpg:search"
+                variant="outline"
+                type="number"
+                @input="clearUsers"
+              />
+              <UButton
+                size="lg"
+                color="neutral"
+                variant="subtle"
+                :label="$t('action.find')"
+                @click="() => { search() }"
+              />
+            </UButtonGroup>
+          </UForm>
+        </UCard>
+      </template>
+    </UTabs>
 
-    <template v-if="users.length">
+    <UiLoading :active="searching" />
+
+    <div v-if="users.length">
       <h4 class="mb-4">
         {{ $t('findUser.result.title') }}
       </h4>
+
       <div class="max-h-[480px] space-y-6 overflow-y-auto">
         <div
           v-for="user in users"
@@ -197,6 +199,6 @@ const clearUsers = () => {
           />
         </div>
       </div>
-    </template>
+    </div>
   </div>
 </template>
