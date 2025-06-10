@@ -95,54 +95,12 @@ useCharacterCharacteristicProvider({
   loadCharacterCharacteristics,
 })
 
-// const { execute: loadCharacterCharacteristics, state: characterCharacteristics } = useAsyncState(
-//   ({ id }: { id: number }) => getCharacterCharacteristics(id),
-//   createDefaultCharacteristic(),
-//   {
-//     immediate: false,
-//     resetOnExecute: false,
-//   },
-// )
+// const { subscribe, unsubscribe } = usePollInterval()
+// const loadCharacterItemsSymbol = Symbol('loadCharacterItems')
+// const loadCharactersSymbol = Symbol('fetchCharacters')
+// const loadUserItemsSymbol = Symbol('fetchUserItems')
 
-// const setCharacterCharacteristics = (characteristic: CharacterCharacteristics) => {
-//   characterCharacteristics.value = characteristic
-// }
-
-// const healthPoints = computed(() =>
-//   computeHealthPoints(
-//     characterCharacteristics.value.skills.ironFlesh,
-//     characterCharacteristics.value.attributes.strength,
-//   ),
-// )
-
-// const itemsStats = computed((): CharacterOverallItemsStats => {
-//   const items = characterItems.value.map(ei => ei.userItem.item)
-//   return {
-//     averageRepairCostByHour: computeOverallAverageRepairCostByHour(items),
-//     longestWeaponLength: computeLongestWeaponLength(items),
-//     price: computeOverallPrice(items),
-//     weight: computeOverallWeight(items),
-//     ...computeOverallArmor(items),
-//   }
-// })
-
-// provide(characterCharacteristicsKey, {
-//   characterCharacteristics: readonly(characterCharacteristics),
-//   loadCharacterCharacteristics,
-//   setCharacterCharacteristics,
-// })
-// provide(characterHealthPointsKey, healthPoints)
-// provide(characterItemsKey, {
-//   characterItems: readonly(characterItems),
-//   loadCharacterItems,
-// })
-// provide(characterItemsStatsKey, itemsStats)
-
-const { subscribe, unsubscribe } = usePollInterval()
-const loadCharacterItemsSymbol = Symbol('loadCharacterItems')
-const loadCharactersSymbol = Symbol('fetchCharacters')
-const loadUserItemsSymbol = Symbol('fetchUserItems')
-
+// TODO:
 // onMounted(() => {
 //   subscribe(loadCharactersSymbol, userStore.fetchCharacters)
 //   subscribe(loadCharacterItemsSymbol, () => loadCharacterItems(0, character.value.id))
@@ -163,12 +121,12 @@ const fetchPageData = (characterId: number) => Promise.all([
 onBeforeRouteUpdate((to, from) => {
   if (to.name === from.name) {
     // if character changed
-    unsubscribe(loadCharacterItemsSymbol)
+    // unsubscribe(loadCharacterItemsSymbol)
     // @ts-expect-error TODO:
     const characterId = Number(to.params.id)
     fetchPageData(characterId)
 
-    subscribe(loadCharacterItemsSymbol, () => loadCharacterItems(0, characterId))
+    // subscribe(loadCharacterItemsSymbol, () => loadCharacterItems(0, characterId))
   }
 })
 

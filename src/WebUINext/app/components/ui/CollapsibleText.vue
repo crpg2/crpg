@@ -7,34 +7,35 @@ const { charsLength = 50 } = defineProps<{ text: string, charsLength?: number }>
     {{ text }}
   </template>
 
-  <OCollapse
-    v-else
-    :open="false"
-    position="bottom"
+  <UCollapsible
+    v-else :ui="{
+      root: 'flex data-[state=open]:flex-col-reverse flex-col items-start gap-1',
+    }"
   >
-    <template #trigger="props">
-      <template v-if="!props.open">
+    <template #default="{ open }">
+      <div v-if="!open">
         {{ text.substring(0, charsLength) }}...
-        <OButton
-          v-tooltip="$t('action.expand')"
-          variant="secondary"
-          rounded
-          size="2xs"
-          :aria-expanded="props.open"
-          icon-right="chevron-down"
+        <UButton
+          color="neutral"
+          variant="subtle"
+          size="xs"
+          :label="$t('action.expand')"
+          :aria-expanded="open"
+          icon="crpg:chevron-down"
         />
-      </template>
-      <OButton
+      </div>
+      <UButton
         v-else
-        v-tooltip="$t('action.collapse')"
-        variant="secondary"
-        size="2xs"
-        rounded
-        :aria-expanded="props.open"
-        icon-right="chevron-up"
-        class="mt-1"
+        color="neutral"
+        size="xs"
+        variant="subtle"
+        :label="$t('action.collapse')"
+        icon="crpg:chevron-up"
       />
     </template>
-    {{ text }}
-  </OCollapse>
+
+    <template #content>
+      {{ text }}
+    </template>
+  </UCollapsible>
 </template>

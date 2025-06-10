@@ -26,7 +26,7 @@ const canSetCharacterForTournament = computed(() => canSetCharacterForTournament
       <UButton
         size="lg"
         variant="outline"
-        class="w-full justify-center"
+        block
         icon="crpg:member"
         :disabled="!canSetCharacterForTournament"
         data-aq-character-action="forTournament"

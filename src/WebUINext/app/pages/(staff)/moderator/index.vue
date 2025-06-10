@@ -3,14 +3,11 @@ import { getRestrictions } from '~/services/restriction-service'
 
 const {
   state: restrictions,
-} = useAsyncState(
-  () => getRestrictions(),
-  [],
-)
+} = useAsyncState(() => getRestrictions(), [])
 </script>
 
 <template>
-  <div class="container">
+  <UContainer>
     <ModeratorRestrictionsTable :restrictions />
-  </div>
+  </UContainer>
 </template>

@@ -72,6 +72,7 @@ const columnFilters = ref<ColumnFiltersState>([])
 const table = useTemplateRef('table')
 
 const globalFilter = ref('')
+
 const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   {
     accessorKey: 'position',

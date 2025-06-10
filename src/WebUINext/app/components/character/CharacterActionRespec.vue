@@ -31,7 +31,7 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
       <UButton
         size="lg"
         variant="outline"
-        class="w-full justify-center"
+        block
         :disabled="!respecCapability.enabled"
         icon="crpg:chevron-down-double"
         data-aq-character-action="respecialize"

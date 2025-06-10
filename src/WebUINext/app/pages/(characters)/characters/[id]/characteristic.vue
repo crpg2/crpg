@@ -144,6 +144,7 @@ watchEffect(() => {
       </AppConfirmActionTooltip>
 
       <USeparator orientation="vertical" class="h-8" />
+
       <CharacterActionRespec
         :character
         :respec-capability

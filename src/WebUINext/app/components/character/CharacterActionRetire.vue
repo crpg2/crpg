@@ -54,8 +54,8 @@ const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
       variant="outline"
       :disabled="!canRetire"
       size="lg"
+      block
       icon="crpg:child"
-      class="w-full justify-center"
       data-aq-character-action="retire"
       :label="$t('character.settings.retire.title')"
       @click="toggleConfirmDialog(true)"

@@ -116,7 +116,7 @@ timeAgo:
   second: 'second | seconds'
 
 dateTimeFormat:
-  # TODO: https://github.com/tc39/proposal-intl-duration-form                                                                                                                                                                                                                                                                                                                                                                                            at
+  # TODO: https://github.com/tc39/proposal-intl-duration-form                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  at
   countdown: '{hours}:{minutes}:{seconds}'
   dd: '{days} @:dateTime.days.short'
   mm: '{minutes} @:dateTime.minutes.short'
@@ -400,7 +400,7 @@ character:
       title: Rank
       tooltip:
         title: Rank
-        # prettier-igno                                                                                                                                                                                                                                                                                                                                                                                            re
+        # prettier-igno                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  re
         desc: '
           <p>Your rating assigns you a rank, which is tied directly to the autobalancer, using this it decides which team to place you on. The system we use is <strong>*Glicko2</strong>.</p>
           <p>Don''t fret over your rank! At the end of the day, it''s a tool we use to balance teams, it is not necessarily a perfect indicator of skill in Bannerlord.</p>
@@ -989,6 +989,17 @@ user:
       outro: Please note that at this time, we do not accept appeals through any platform other than Discord.
   notifications:
     title: Notifications
+    unreadNotification: Unread notification
+    action:
+      read:
+        title: Read
+      readAll:
+        title: Mark all as read
+      delete:
+        title: Delete
+      deleteAll:
+        title: Delete all
+        confirmTitle: Are you sure you want to delete all notifications?
 
 banned:
   title: You are banned

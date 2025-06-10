@@ -5,7 +5,7 @@ import type { UserNotification } from '~/models/user'
 import { useLocaleTimeAgo } from '~/composables/utils/use-locale-time-ago'
 import { NotificationState } from '~/models/notifications'
 
-const { notification, dict } = defineProps<{
+const { notification } = defineProps<{
   notification: UserNotification
   dict: MetadataDict
 }>()
@@ -21,10 +21,8 @@ const isUnread = computed(() => notification.state === NotificationState.Unread)
 </script>
 
 <template>
-  <div class="relative flex items-start gap-4 rounded-lg bg-base-200 p-3 text-content-200">
-    <div
-      class="flex size-8 min-w-8 items-center justify-center gap-1.5 rounded-full bg-content-600"
-    >
+  <div class="relative flex items-start gap-5 rounded-lg bg-base-200 p-3 text-content-200">
+    <div class="flex size-8 items-center justify-center gap-1.5 rounded-full bg-content-600">
       <UiSpriteSymbol
         name="logo"
         viewBox="0 0 162 124"
@@ -32,7 +30,7 @@ const isUnread = computed(() => notification.state === NotificationState.Unread)
       />
     </div>
 
-    <div class="flex-1 space-y-3">
+    <div class="flex-1 space-y-4">
       <AppMetadataRender
         :keypath="`notification.tpl.${notification.type}`"
         :metadata="notification.metadata"
@@ -41,48 +39,39 @@ const isUnread = computed(() => notification.state === NotificationState.Unread)
       />
 
       <div class="flex items-end gap-4">
-        <span
-          v-tooltip="$d(new Date(notification.createdAt), 'short')"
-          class="cursor-default text-3xs text-content-300"
-        >
-          {{ timeAgo }}
-        </span>
+        <UTooltip :text="$d(new Date(notification.createdAt), 'short')">
+          <UBadge size="xs" variant="soft" color="neutral" :label="timeAgo" />
+        </UTooltip>
 
         <div class="mr-0 ml-auto flex gap-3">
-          <OButton
+          <UButton
             v-if="isUnread"
-            variant="transparent"
+            variant="ghost"
+            color="neutral"
             size="xs"
-            label="Read"
+            :label="$t('user.notifications.action.read.title')"
             @click="$emit('read')"
           />
-          <OButton
-            variant="transparent"
-            outlined
+          <UButton
+            variant="ghost"
+            color="neutral"
             size="xs"
-            icon-left="close"
-            label="Delete"
+            icon="crpg:close"
+            :label="$t('user.notifications.action.delete.title')"
             @click="$emit('delete')"
           />
         </div>
       </div>
     </div>
 
-    <div class="absolute top-3 right-3 z-10">
-      <span v-tooltip="`Unread notification`">
-        <OIcon
-          v-if="isUnread"
-          class="mr-0 ml-auto"
-          icon="rare-duotone"
-          size="sm"
-          :style="{
-            '--fa-primary-opacity': 0.15,
-            '--fa-primary-color': 'rgba(255, 255, 255, 1)',
-            '--fa-secondary-opacity': 1,
-            '--fa-secondary-color': 'rgba(83, 188, 150, 1)',
-          }"
-        />
-      </span>
-    </div>
+    <UTooltip v-if="isUnread" :text="$t('user.notifications.unreadNotification')">
+      <UIcon
+        name="crpg:item-rank-duotone"
+        class="absolute top-3 right-3 z-10 size-4 outline-0 select-none"
+        :style="{
+          color: '#53bc96',
+        }"
+      />
+    </UTooltip>
   </div>
 </template>

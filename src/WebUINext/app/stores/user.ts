@@ -29,6 +29,7 @@ export const useUserStore = defineStore('user', () => {
   const {
     state: characters,
     execute: fetchCharacters,
+    isLoading: fetchingCharacters,
   } = useAsyncState(
     () => getCharacters(),
     [],
@@ -106,6 +107,7 @@ export const useUserStore = defineStore('user', () => {
 
     characters,
     fetchCharacters,
+    fetchingCharacters,
     activeCharacterId,
     validateCharacter,
 

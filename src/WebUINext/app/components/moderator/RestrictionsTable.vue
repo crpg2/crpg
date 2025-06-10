@@ -1,7 +1,13 @@
 <script setup lang="ts">
+import type { TableColumn } from '@nuxt/ui'
+import type { ColumnFiltersState, PaginationState } from '@tanstack/vue-table'
+
+import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
+import { navigateTo } from '#app'
+import { NuxtLink, UBadge, UiCollapsibleText, UInput, UserMedia, UTooltip } from '#components'
+
 import type { UserRestrictionWithActive } from '~/models/user'
 
-import { usePagination } from '~/composables/utils/use-pagination'
 import { computeLeftMs, parseTimestamp } from '~/utils/date'
 
 defineProps<{
@@ -9,145 +15,132 @@ defineProps<{
   hiddenCols?: string[]
 }>()
 
-const { pageModel, perPage } = usePagination()
+const { t, d } = useI18n()
+
+function getInitialPaginationState(): PaginationState {
+  return {
+    pageIndex: 0,
+    pageSize: 10, // TODO: FIXME:
+  }
+}
+
+const pagination = ref<PaginationState>(getInitialPaginationState())
+
+const table = useTemplateRef('table')
+
+const globalFilter = ref('')
+
+const columns: TableColumn<UserRestrictionWithActive>[] = [
+  {
+    accessorKey: 'id',
+  },
+  {
+    accessorKey: 'active',
+    header: () => t('restriction.table.column.status'),
+    cell: ({ row }) => row.original.active
+      ? h(UTooltip, {
+          text: t('dateTimeFormat.dd:hh:mm', { ...parseTimestamp(computeLeftMs(row.original.createdAt, Number(row.original.duration))) }),
+        }, () => h(UBadge, { label: t('restriction.status.active'), size: 'sm', color: 'success', variant: 'subtle' }))
+      : h(UBadge, { label: t('restriction.status.inactive'), size: 'sm', color: 'neutral', variant: 'subtle' }),
+  },
+  {
+    accessorKey: 'type',
+    header: () => t('restriction.table.column.type'),
+    cell: ({ row }) => t(`restriction.type.${row.original.type}`),
+  },
+  {
+    accessorKey: 'restrictedUser.name',
+    header: () => h(UInput, {
+      'icon': 'crpg:search',
+      'variant': 'ghost',
+      'size': 'xs',
+      'placeholder': t('restriction.table.column.user'),
+      'modelValue': globalFilter.value,
+      'onUpdate:modelValue': val => globalFilter.value = val,
+    }),
+    cell: ({ row }) => h(NuxtLink, {
+      to: { name: 'moderator-user-id-restrictions', params: { id: row.original.restrictedUser.id } },
+    }, () => h(UserMedia, {
+      user: row.original.restrictedUser,
+      hiddenClan: true,
+    })),
+  },
+  {
+    accessorKey: 'createdAt',
+    header: () => t('restriction.table.column.createdAt'),
+    cell: ({ row }) => d(row.original.createdAt, 'short'),
+  },
+  {
+    accessorKey: 'duration',
+    header: () => t('restriction.table.column.duration'),
+    cell: ({ row }) => t('dateTimeFormat.dd:hh:mm', { ...parseTimestamp(Number(row.original.duration)) }),
+  },
+  {
+    accessorKey: 'reason',
+    header: () => t('restriction.table.column.reason'),
+    cell: ({ row }) => h(UiCollapsibleText, { text: row.original.reason }),
+    meta: {
+      class: {
+        td: tw`max-w-96 whitespace-normal`,
+      },
+    },
+  },
+  {
+    accessorKey: 'publicReason',
+    header: () => t('restriction.table.column.publicReason'),
+    cell: ({ row }) => h(UiCollapsibleText, { text: row.original.publicReason }),
+    meta: {
+      class: {
+        td: tw`max-w-96 whitespace-normal`,
+      },
+    },
+  },
+  {
+    accessorKey: 'restrictedByUser',
+    header: () => t('restriction.table.column.restrictedBy'),
+    cell: ({ row }) => h(UserMedia, {
+      user: row.original.restrictedByUser,
+      hiddenClan: true,
+    }),
+  },
+]
 </script>
 
 <template>
-  <OTable
-    v-model:current-page="pageModel"
-    :data="restrictions"
-    :per-page="perPage"
-    :paginated="restrictions.length > perPage"
-    hoverable
-    bordered
-    narrowed
-    :debounce-search="300"
-    sort-icon="chevron-up"
-    sort-icon-size="xs"
-    :default-sort="['id', 'desc']"
-  >
-    <OTableColumn
-      v-slot="{ row: restriction }: { row: UserRestrictionWithActive }"
-      field="id"
-      :width="60"
-      label="id"
-      sortable
+  <div class="space-y-4">
+    <UTable
+      ref="table"
+      v-model:global-filter="globalFilter"
+      v-model:pagination="pagination"
+      class="rounded-md border border-muted"
+      :data="restrictions"
+      :columns
+      :initial-state="{
+        pagination: getInitialPaginationState(),
+      }"
+      :pagination-options="{
+        getPaginationRowModel: getPaginationRowModel(),
+      }"
+      @select="(row) => navigateTo({ name: 'moderator-user-id-restrictions', params: { id: row.original.restrictedUser.id } })"
     >
-      {{ restriction.id }}
-    </OTableColumn>
-    <OTableColumn
-      v-slot="{ row: restriction }: { row: UserRestrictionWithActive }"
-      field="active"
-      :label="$t('restriction.table.column.status')"
-      :width="90"
-      sortable
-    >
-      <UiTag
-        v-if="restriction.active"
-        v-tooltip="$t('dateTimeFormat.dd:hh:mm', parseTimestamp(computeLeftMs(restriction.createdAt, Number(restriction.duration))))"
-        :label="$t('restriction.status.active')"
-        variant="success"
-        size="sm"
-      />
-      <UiTag
-        v-else
-        variant="info"
-        size="sm"
-        disabled
-        :label="$t('restriction.status.inactive')"
-      />
-    </OTableColumn>
-
-    <OTableColumn
-      v-if="!hiddenCols?.includes('restrictedUser')"
-      field="restrictedUser.name"
-      :label="$t('restriction.table.column.user')"
-      searchable
-    >
-      <template #searchable="props">
-        <OInput
-          v-model="props.filters[props.column.field]"
-          :placeholder="$t('action.search')"
-          icon="search"
-          class="w-40"
-          size="xs"
-          clearable
-        />
+      <template #empty>
+        <UiResultNotFound />
       </template>
+    </UTable>
 
-      <template #default="{ row: restriction }: { row: UserRestrictionWithActive }">
-        <NuxtLink
-          :to="{ name: 'moderator-user-id-restrictions', params: { id: restriction.restrictedUser.id } }"
-          class="inline-block hover:text-content-100"
-        >
-          <UserMedia
-            class="max-w-48"
-            :user="restriction.restrictedUser"
-            hidden-clan
-          />
-        </NuxtLink>
-      </template>
-    </OTableColumn>
-
-    <OTableColumn
-      v-slot="{ row: restriction }: { row: UserRestrictionWithActive }"
-      field="createdAt"
-      :label="$t('restriction.table.column.createdAt')"
-      :width="160"
-      sortable
-    >
-      {{ $d(restriction.createdAt, 'short') }}
-    </OTableColumn>
-
-    <OTableColumn
-      v-slot="{ row: restriction }: { row: UserRestrictionWithActive }"
-      field="duration"
-      :label="$t('restriction.table.column.duration')"
-      :width="160"
-    >
-      {{ $t('dateTimeFormat.dd:hh:mm', parseTimestamp(Number(restriction.duration))) }}
-    </OTableColumn>
-
-    <OTableColumn
-      v-slot="{ row: restriction }: { row: UserRestrictionWithActive }"
-      field="type"
-      :label="$t('restriction.table.column.type')"
-      :width="60"
-    >
-      {{ $t(`restriction.type.${restriction.type}`) }}
-    </OTableColumn>
-
-    <OTableColumn
-      v-slot="{ row: restriction }: { row: UserRestrictionWithActive }"
-      field="reason"
-      :label="$t('restriction.table.column.reason')"
-    >
-      <UiCollapsibleText :text="restriction.reason" />
-    </OTableColumn>
-
-    <OTableColumn
-      v-slot="{ row: restriction }: { row: UserRestrictionWithActive }"
-      field="publicReason"
-      :label="$t('restriction.table.column.publicReason')"
-    >
-      <UiCollapsibleText :text="restriction.publicReason" />
-    </OTableColumn>
-
-    <OTableColumn
-      v-slot="{ row: restriction }: { row: UserRestrictionWithActive }"
-      field="restrictedByUser.name"
-      :label="$t('restriction.table.column.restrictedBy')"
-      :width="200"
-    >
-      <UserMedia
-        :user="restriction.restrictedByUser"
-        class="max-w-48"
-        hidden-clan
-      />
-    </OTableColumn>
-
-    <template #empty>
-      <UiResultNotFound />
-    </template>
-  </OTable>
+    <UPagination
+      v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()"
+      class="flex justify-center"
+      variant="soft"
+      color="secondary"
+      active-variant="solid"
+      active-color="primary"
+      :page="pagination.pageIndex + 1"
+      :show-controls="false"
+      :default-page="(table?.tableApi?.initialState.pagination.pageIndex || 0) + 1"
+      :items-per-page="table?.tableApi?.initialState.pagination.pageSize"
+      :total="table?.tableApi?.getFilteredRowModel().rows.length"
+      @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
+    />
+  </div>
 </template>

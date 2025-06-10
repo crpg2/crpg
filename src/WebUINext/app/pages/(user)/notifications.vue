@@ -19,40 +19,39 @@ const {
 </script>
 
 <template>
-  <div class="container">
+  <UContainer>
     <div class="mx-auto max-w-2xl py-12">
       <h1 class="mb-14 text-center text-xl text-content-100">
         {{ $t('user.notifications.title') }}
       </h1>
 
       <div v-if="!isEmpty" class="mb-4 flex justify-end gap-4">
-        <OButton
+        <UButton
           :disabled="!hasUnreadNotifications"
-          variant="transparent"
-          outlined
-          size="xs"
-          label="Mark all as read"
+          variant="ghost"
+          color="neutral"
+          size="sm"
+          :label="$t('user.notifications.action.readAll.title')"
           @click="readAllNotifications"
         />
 
         <AppConfirmActionTooltip
           :confirm-label="$t('action.ok')"
-          title="Are you sure you want to delete all notifications?"
-          placement="bottom"
+          :label="$t('user.notifications.action.deleteAll.confirmTitle')"
           @confirm="deleteAllNotifications"
         >
-          <OButton
-            variant="transparent"
-            outlined
-            size="xs"
-            icon-left="close"
-            label="Delete all"
+          <UButton
+            variant="ghost"
+            color="neutral"
+            size="sm"
+            icon="crpg:close"
+            :label="$t('user.notifications.action.deleteAll.title')"
           />
         </AppConfirmActionTooltip>
       </div>
 
       <div class="flex flex-col flex-wrap gap-4">
-        <OLoading :active="isLoading" :full-page="false" />
+        <UiLoading :active="isLoading" />
 
         <UserNotificationCard
           v-for="notification in notifications.notifications"
@@ -63,8 +62,8 @@ const {
           @delete="deleteNotification(notification.id)"
         />
 
-        <UiResultNotFound v-if="!isLoading && isEmpty" message="Notifications not found..." />
+        <UiResultNotFound v-if="!isLoading && isEmpty" />
       </div>
     </div>
-  </div>
+  </UContainer>
 </template>

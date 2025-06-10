@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AppCoin, AppLoom, CharacterMedia, ClanRole, UiTag, UiTooltip, UserClan, UserMedia } from '#components'
+import { AppCoin, AppLoom, CharacterMedia, ClanRole, UBadge, UserClan, UserMedia, UTooltip } from '#components'
 import { I18nT } from 'vue-i18n'
 
 import type { ClanMemberRole } from '~/models/clan'
@@ -65,14 +65,11 @@ const renderItem = (itemId: string) => {
     'span',
     { class: 'inline' },
     h(
-      UiTooltip,
-      {
-        placement: 'auto',
-        class: 'inline-block',
-      },
+      UTooltip,
+      null,
       {
         default: () => renderStrong(itemId),
-        popper: () =>
+        content: () =>
           h('img', {
             src: getItemImage(itemId),
             class: 'h-full w-full object-contain',
@@ -140,8 +137,8 @@ function Render() {
       ...(userItemId && { userItem: () => renderItem(userItemId) }),
       ...(experience && { experience: () => renderStrong(n(Number(experience))) }),
       ...(damage && { damage: () => renderDamage(damage) }),
-      ...(instance && { instance: () => h(UiTag, { variant: 'info', label: instance }) }),
-      ...(gameMode && { gameMode: () => h(UiTag, { variant: 'info', label: gameMode }) }),
+      ...(instance && { instance: () => h(UBadge, { color: 'info', variant: 'subtle', label: instance }) }),
+      ...(gameMode && { gameMode: () => h(UBadge, { color: 'info', variant: 'subtle', label: gameMode }) }),
       ...(oldName && { oldName: () => renderStrong(oldName) }),
       ...(newName && { newName: () => renderStrong(newName) }),
       ...(message && { message: () => renderStrong(message) }),
@@ -152,18 +149,4 @@ function Render() {
 
 <template>
   <Render />
-  <!-- <I18nT
-    scope="global"
-    :keypath
-  >
-    <template #gold>
-      <AppCoin :value="Number(metadata.gold)" />
-    </template>
-    <template #price>
-      <AppCoin :value="Number(metadata.price)" />
-    </template>
-    <template #level>
-      <strong class="font-bold text-content-100">{{ metadata.level }}</strong>
-    </template>
-  </I18nT> -->
 </template>
