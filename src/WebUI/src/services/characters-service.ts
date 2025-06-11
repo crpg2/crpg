@@ -738,7 +738,7 @@ export function computeMountSpeedStats(
   riderPerceivedWeight: number,
 ) {
   const totalEffectiveLoad = harnessWeight + riderPerceivedWeight
-  const maxLoadReference = 48
+  const maxLoadReference = 45
   const loadPercentage = Math.min(totalEffectiveLoad / maxLoadReference, 1)
 
   const weightImpactOnSpeed = 1 / (1 + 0.333 * loadPercentage)
