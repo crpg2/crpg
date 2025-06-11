@@ -254,7 +254,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
         float totalEffectiveLoad = harnessWeight + riderPerceivedWeight;
 
-        const float maxLoadReference = 48f;
+        const float maxLoadReference = 49.5f;
         float loadPercentage = Math.Min(totalEffectiveLoad / maxLoadReference, 1f); // Cap at 1.0
 
         float weightImpactOnSpeed = 1f / (1f + 0.333f * loadPercentage);
