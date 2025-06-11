@@ -495,24 +495,27 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     weaponMaxMovementAccuracyPenalty /= crossbowPenaltyFactor;
                 }
 
-                props.WeaponMaxMovementAccuracyPenalty = Math.Min(weaponMaxMovementAccuracyPenalty, 1f);
-                props.WeaponMaxUnsteadyAccuracyPenalty = Math.Min(weaponMaxUnsteadyAccuracyPenalty, 1f);
+                props.WeaponMaxMovementAccuracyPenalty = MathF.Clamp(weaponMaxMovementAccuracyPenalty, 0f, 1f);
+                props.WeaponMaxUnsteadyAccuracyPenalty = MathF.Clamp(weaponMaxUnsteadyAccuracyPenalty, 0f, 1f);
 
                 // Mounted skill penalty
                 props.WeaponInaccuracy /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
 
-                // Encumbrance-based inaccuracy penalty (neutral at 13, quadratic growth)
-                float encumbranceRatio = props.ArmorEncumbrance / 13.0f;
+                // Total encumbrance = armor + weapons
+                float totalEncumbrance = props.ArmorEncumbrance + props.WeaponsEncumbrance;
+
+                // Encumbrance-based inaccuracy penalty (neutral at 20, quadratic growth)
+                float encumbranceRatio = totalEncumbrance / 20.0f;
                 float encumbranceMultiplier = MathF.Max(
                     1.0f + (MathF.Pow(encumbranceRatio, 2f) - 1.0f) * 0.75f,
                     1.0f);
 
                 props.WeaponInaccuracy *= encumbranceMultiplier;
 
-                // Reload & thrust speed penalty: linearly drops from 1.0 at 13 to 0.25 at 23
-                float reloadThrustMultiplier = props.ArmorEncumbrance <= 13f
+                // Reload & draw speed penalty: linearly drops from 1.0 at 20 to 0.25 at 30
+                float reloadThrustMultiplier = totalEncumbrance <= 20f
                     ? 1.0f
-                    : MathF.Max(1.0f - ((props.ArmorEncumbrance - 15f) / 10f) * 0.75f, 0.25f);
+                    : MathF.Max(1.0f - ((totalEncumbrance - 20f) / 10f) * 0.75f, 0.25f);
 
                 props.ReloadSpeed *= reloadThrustMultiplier;
                 props.ThrustOrRangedReadySpeedMultiplier *= reloadThrustMultiplier;
@@ -525,7 +528,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 if (agent.IsMainAgent)
                 {
                     InformationManager.DisplayMessage(new InformationMessage(
-                        $"[DEBUG] Enc: {props.ArmorEncumbrance:F1} | Rld: {props.ReloadSpeed:F2} | Thrust: {props.ThrustOrRangedReadySpeedMultiplier:F2} | Inacc: {props.WeaponInaccuracy:F2}"
+                        $"[DEBUG] Enc: {totalEncumbrance:F1} | Rld: {props.ReloadSpeed:F2} | Thrust: {props.ThrustOrRangedReadySpeedMultiplier:F2} | Inacc: {props.WeaponInaccuracy:F2}"
                     ));
                 }
             }
