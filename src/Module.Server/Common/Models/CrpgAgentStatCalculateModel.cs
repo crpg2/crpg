@@ -501,16 +501,16 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 // Mounted skill penalty
                 props.WeaponInaccuracy /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
 
-                // Encumbrance-based inaccuracy penalty (neutral at 15, quadratic growth)
-                float encumbranceRatio = props.ArmorEncumbrance / 15.0f;
+                // Encumbrance-based inaccuracy penalty (neutral at 13, quadratic growth)
+                float encumbranceRatio = props.ArmorEncumbrance / 13.0f;
                 float encumbranceMultiplier = MathF.Max(
                     1.0f + (MathF.Pow(encumbranceRatio, 2f) - 1.0f) * 0.75f,
                     1.0f);
 
                 props.WeaponInaccuracy *= encumbranceMultiplier;
 
-                // Reload & thrust speed penalty: linearly drops from 1.0 at 15 to 0.25 at 25
-                float reloadThrustMultiplier = props.ArmorEncumbrance <= 15f
+                // Reload & thrust speed penalty: linearly drops from 1.0 at 13 to 0.25 at 23
+                float reloadThrustMultiplier = props.ArmorEncumbrance <= 13f
                     ? 1.0f
                     : MathF.Max(1.0f - ((props.ArmorEncumbrance - 15f) / 10f) * 0.75f, 0.25f);
 
