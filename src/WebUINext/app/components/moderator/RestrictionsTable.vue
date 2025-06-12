@@ -46,13 +46,17 @@ const columns: TableColumn<UserRestriction>[] = [
           label: status,
           type: 'checkbox',
           checked: filterValue.includes(status),
+          onSelect(e: Event) {
+            e.preventDefault()
+          },
           onUpdateChecked() {
-            column.setFilterValue([status])
+            column.setFilterValue(toggle(filterValue, status))
           },
         })),
         onResetFilter: () => column.setFilterValue(undefined),
       })
     },
+    filterFn: 'arrIncludesSome',
     cell: ({ row }) => row.original.status === UserRestrictionStatus.Active
       ? h(UTooltip, {
           text: t('dateTimeFormat.dd:hh:mm', { ...parseTimestamp(computeLeftMs(row.original.createdAt, Number(row.original.duration))) }),
@@ -61,7 +65,6 @@ const columns: TableColumn<UserRestriction>[] = [
   },
   {
     accessorKey: 'type',
-    // TODO: to cmp, to simple
     header: ({ column }) => {
       const filterValue = (column.getFilterValue() || []) as string[]
       return h(UiTableColumnHeader, {
@@ -72,13 +75,17 @@ const columns: TableColumn<UserRestriction>[] = [
           label: t(`restriction.type.${rt}`),
           type: 'checkbox',
           checked: filterValue.includes(rt),
+          onSelect(e: Event) {
+            e.preventDefault()
+          },
           onUpdateChecked() {
-            column.setFilterValue([rt])
+            column.setFilterValue(toggle(filterValue, rt))
           },
         })),
         onResetFilter: () => column.setFilterValue(undefined),
       })
     },
+    filterFn: 'arrIncludesSome',
     cell: ({ row }) => t(`restriction.type.${row.original.type}`),
   },
   {

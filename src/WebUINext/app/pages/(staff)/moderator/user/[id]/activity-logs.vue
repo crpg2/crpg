@@ -1,98 +1,57 @@
 <script setup lang="ts">
+import type { CalendarDate } from '@internationalized/date'
+
+import { today } from '@internationalized/date'
+import { parseDate } from '@internationalized/date'
+import { DateFormatter, getLocalTimeZone } from '@internationalized/date'
+
+import { useModerationUser } from '~/composables/moderator/use-moderation-user'
+import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { Sort, useSort } from '~/composables/utils/use-sort'
 import { ActivityLogType } from '~/models/activity-logs'
 import { getActivityLogs } from '~/services/activity-logs-service'
-import { moderationUserKey } from '~/symbols/moderator'
 
-const props = defineProps<{ id: string }>()
-
-definePageMeta({
-  props: true,
+const dateFormatter = new DateFormatter('en-US', {
+  dateStyle: 'medium',
 })
 
-const user = injectStrict(moderationUserKey)
-const router = useRouter()
-const route = useRoute()
+const { moderationUser } = useModerationUser()
 
-const from = computed({
-  get() {
-    if (route.query?.from === undefined) {
-      const fromDate = new Date()
-      fromDate.setMinutes(fromDate.getMinutes() - 5) // Show logs for the last 5 minutes by default
-      return fromDate
-    }
+const { t } = useI18n()
 
-    return new Date(route.query.from as string)
+// TODO: FIXME: use dateTime
+const from = useRouteQuery(
+  'from',
+  today(getLocalTimeZone()).toString(),
+  {
+    transform: {
+      set: (value: CalendarDate) => value.toString(),
+      get: parseDate,
+    },
   },
+)
 
-  set(val: Date) {
-    router.push({
-      query: {
-        ...route.query,
-        from: val.toISOString(),
-      },
-    })
+const to = useRouteQuery(
+  'to',
+  today(getLocalTimeZone()).toString(),
+  {
+    transform: {
+      set: (value: CalendarDate) => value.toString(),
+      get: parseDate,
+    },
   },
-})
+)
 
-const to = computed({
-  get() {
-    return route.query?.to ? new Date(route.query.to as string) : new Date()
-  },
-
-  set(val: Date) {
-    router.push({
-      query: {
-        ...route.query,
-        to: String(val.toISOString()),
-      },
-    })
-  },
-})
-
-const types = computed({
-  get() {
-    return (route.query?.types as ActivityLogType[]) || []
-  },
-
-  set(val: ActivityLogType[]) {
-    router.push({
-      query: {
-        ...route.query,
-        types: val,
-      },
-    })
-  },
-})
+const types = useRouteQuery<ActivityLogType[]>('types', [])
 
 const addType = (type: ActivityLogType) => {
-  types.value = [...new Set([...((route.query?.types as ActivityLogType[]) || []), type])]
+  types.value = [...new Set([...types.value]), type]
 }
 
-const additionalUsers = computed({
-  get() {
-    return ((route.query?.additionalUsers as string[]) || []).map(Number)
-  },
+const additionalUsers = useRouteQuery('additionalUsers', [], { transform: value => value.map(Number) })
 
-  async set(val: number[]) {
-    await router.push({
-      query: {
-        ...route.query,
-        additionalUsers: val,
-      },
-    })
-
-    // eslint-disable-next-line ts/no-use-before-define
-    fetchActivityLogs()
-  },
-})
-
-const addAdditionalUser = (id: number) => {
-  additionalUsers.value = [...new Set([...additionalUsers.value, id])]
-}
-
-const removeAdditionalUser = (userId: number) => {
-  additionalUsers.value = additionalUsers.value.filter(id => id !== userId)
+const toggleAdditionalUser = (userId: number) => {
+  additionalUsers.value = toggle(additionalUsers.value, userId)
 }
 
 const { sort, toggleSort } = useSort('createdAt')
@@ -102,13 +61,12 @@ const {
   execute: fetchActivityLogs,
   isLoading: isLoadingActivityLogs,
 } = useAsyncState(
-  () =>
-    getActivityLogs({
-      from: from.value,
-      to: to.value,
-      types: types.value,
-      userIds: [Number(props.id), ...additionalUsers.value.map(Number)],
-    }),
+  () => getActivityLogs({
+    from: from.value.toDate(getLocalTimeZone()),
+    to: to.value.toDate(getLocalTimeZone()),
+    types: types.value,
+    userIds: [moderationUser.value.id, ...additionalUsers.value.map(Number)],
+  }),
   {
     activityLogs: [],
     dict: {
@@ -118,195 +76,156 @@ const {
     },
   },
   {
-    immediate: false,
+    immediate: true,
     resetOnExecute: false,
   },
 )
 
-const sortedActivityLogs = computed(() =>
-  [...activityLogs.value.activityLogs].sort((a, b) =>
-    sort.value === Sort.ASC
-      ? a.createdAt.getTime() - b.createdAt.getTime()
-      : b.createdAt.getTime() - a.createdAt.getTime(),
-  ),
-)
+const sortedActivityLogs = computed(() => activityLogs.value.activityLogs.toSorted((a, b) =>
+  sort.value === Sort.ASC
+    ? a.createdAt.getTime() - b.createdAt.getTime()
+    : b.createdAt.getTime() - a.createdAt.getTime(),
+))
 
-fetchActivityLogs()
+watch([types, to, from, additionalUsers], () => {
+  fetchActivityLogs()
+})
+
+const { togglePageLoading } = usePageLoading()
+
+watchEffect(() => {
+  togglePageLoading(isLoadingActivityLogs.value)
+})
 </script>
 
 <template>
   <div class="mx-auto max-w-3xl space-y-8 pb-8">
-    <OField class="w-full">
-      <OField :label="$t('activityLog.form.type')">
-        <VDropdown :triggers="['click']">
-          <template #default="{ shown }">
-            <OInput
-              class="w-44 cursor-pointer overflow-x-hidden text-ellipsis"
-              :model-value="types.join(',')"
-              type="text"
-              size="sm"
-              expanded
-              :placeholder="$t('activityLog.form.type')"
-              :icon="shown ? 'chevron-up' : 'chevron-down'"
-              :icon-right="types.length !== 0 ? 'close' : undefined"
-              icon-right-clickable
-              readonly
-              @icon-right-click.stop="types = []"
-            />
-          </template>
-          <template #popper>
-            <div class="max-h-60 min-w-60 max-w-xs overflow-y-auto">
-              <UiDropdownItem
-                v-for="activityLogType in Object.keys(ActivityLogType)"
-                :key="activityLogType"
-              >
-                <OCheckbox
-                  v-model="types"
-                  :native-value="activityLogType"
-                >
-                  {{ activityLogType }}
-                </OCheckbox>
-              </UiDropdownItem>
-            </div>
-          </template>
-        </VDropdown>
-      </OField>
+    <UButtonGroup>
+      <USelectMenu
+        v-model="types"
+        class="max-w-44"
+        color="neutral"
+        variant="subtle"
+        :placeholder="$t('activityLog.form.type')"
+        multiple
+        :items="Object.values(ActivityLogType)"
+        :ui="{
+          content: 'w-auto',
+        }"
+      />
 
-      <OField :label="$t('activityLog.form.from')">
-        <ODateTimePicker
-          v-model="from"
-          size="sm"
-          locale="en"
-          clearable
-          expanded
-          icon-right="calendar"
-          datepicker-wrapper-class="w-44"
-        />
-      </OField>
-
-      <OField :label="$t('activityLog.form.to')">
-        <ODateTimePicker
-          v-model="to"
-          size="sm"
-          locale="en"
-          expanded
-          :max="new Date()"
-          icon-right="calendar"
-          datepicker-wrapper-class="w-44"
-        />
-      </OField>
-
-      <div class="flex items-end gap-4">
-        <OButton
-          size="sm"
-          icon-left="search"
-          :label="$t('action.search')"
-          expanded
-          variant="primary"
-          :loading="isLoadingActivityLogs"
-          @click="fetchActivityLogs"
-        />
-      </div>
-    </OField>
-
-    <div class="flex flex-wrap items-center gap-4">
-      <div
-        v-for="additionalUserId in additionalUsers"
-        :key="additionalUserId"
-        class="flex items-center gap-1"
-        data-aq-activityLogs-additionalUser
-      >
-        <OButton
-          size="2xs"
-          icon-left="close"
-          rounded
-          variant="transparent"
-          data-aq-activityLogs-additionalUser-remove
-          @click="removeAdditionalUser(Number(additionalUserId))"
-        />
-
-        <NuxtLink
-          :to="{ name: 'moderator-user-id-restrictions', params: { id: additionalUserId } }"
-          class="inline-block hover:text-content-100"
+      <!-- TODO: to datepicker -->
+      <UPopover>
+        <UButton
+          color="neutral"
+          variant="subtle"
+          icon="crpg:calendar"
         >
-          <UserMedia
-            v-if="activityLogs.dict.users.find(user => user.id === additionalUserId)"
-            :user="activityLogs.dict.users.find(user => user.id === additionalUserId)!"
+          {{ dateFormatter.format(from.toDate(getLocalTimeZone())) }}
+        </UButton>
+        <template #content>
+          <UCalendar v-model="from" :max-value="to" />
+        </template>
+      </UPopover>
+
+      <UPopover>
+        <UButton
+          color="neutral"
+          variant="subtle"
+          icon="crpg:calendar"
+        >
+          {{ dateFormatter.format(to.toDate(getLocalTimeZone())) }}
+        </UButton>
+        <template #content>
+          <UCalendar v-model="to" :min-value="from" />
+        </template>
+      </UPopover>
+    </UButtonGroup>
+
+    <div class="flex justify-between gap-4">
+      <div class="flex flex-1 flex-wrap items-center gap-4">
+        <div
+          v-for="additionalUserId in additionalUsers"
+          :key="additionalUserId"
+          class="flex items-center gap-1"
+          data-aq-activityLogs-additionalUser
+        >
+          <UButton
+            size="xs"
+            icon="crpg:close"
+            variant="ghost"
+            color="neutral"
+            data-aq-activityLogs-additionalUser-remove
+            @click="toggleAdditionalUser(Number(additionalUserId))"
           />
-        </NuxtLink>
-      </div>
+          <NuxtLink :to="{ name: 'moderator-user-id-restrictions', params: { id: additionalUserId } }">
+            <UserMedia
+              v-if="activityLogs.dict.users.find(user => user.id === additionalUserId)"
+              :user="activityLogs.dict.users.find(user => user.id === additionalUserId)!"
+            />
+          </NuxtLink>
+        </div>
 
-      <UiModal
-        closable
-        :auto-hide="false"
-        class="self-end"
-      >
-        <OButton
-          size="xs"
-          icon-left="add"
-          :label="$t('activityLog.form.addUser')"
-          variant="secondary"
-        />
+        <UModal
+          :close="{
+            size: 'sm',
+            color: 'secondary',
+            variant: 'solid',
+          }"
+          :title="t('findUser.title')"
+          :ui="{
+            content: 'min-w-[720px]',
+          }"
+        >
+          <UButton
+            icon="crpg:plus"
+            color="neutral"
+            variant="subtle"
+            :label="$t('activityLog.form.addUser')"
+          />
 
-        <template #popper="{ hide }">
-          <div class="min-w-[720px] space-y-6 px-12 py-8">
-            <div class="pb-4 text-center text-xl text-content-100">
-              {{ $t('findUser.title') }}
-            </div>
+          <template #body="{ close }">
             <ModeratorUserFinder>
               <template #user-prepend="userData">
-                <OButton
-                  size="2xs"
-                  icon-left="add"
+                <UButton
+                  size="xs"
+                  icon="crpg:plus"
+                  color="neutral"
+                  variant="subtle"
                   :label="$t('activityLog.form.addUser')"
-                  variant="secondary"
                   data-aq-activityLogs-userFinder-addUser-btn
                   @click="() => {
-                    addAdditionalUser(userData.id);
-                    hide();
+                    toggleAdditionalUser(userData.id);
+                    close();
                   } "
                 />
               </template>
             </ModeratorUserFinder>
-          </div>
-        </template>
-      </UiModal>
-
-      <div class="ml-auto mr-0">
-        <OButton
-          v-tooltip="sort === Sort.ASC ? $t('sort.directions.asc') : $t('sort.directions.desc')"
-          size="xs"
-          :icon-right="sort === Sort.ASC ? 'chevron-up' : 'chevron-down'"
-          variant="secondary"
-          :label="$t('activityLog.sort.createdAt')"
-          data-aq-activityLogs-sort-btn
-          @click="toggleSort"
-        />
+          </template>
+        </UModal>
       </div>
+
+      <UButton
+        :icon="sort === Sort.ASC ? 'crpg:chevron-up' : 'crpg:chevron-down'"
+        color="neutral"
+        variant="subtle"
+        :label="$t('activityLog.sort.createdAt')"
+        data-aq-activityLogs-sort-btn
+        @click="toggleSort"
+      />
     </div>
 
-    <OLoading
-      v-if="isLoadingActivityLogs" :full-page="false"
-      active
-      icon-size="xl"
-    />
-
-    <div
-      v-else
-      class="flex flex-col flex-wrap gap-4"
-    >
+    <div class="flex flex-col flex-wrap gap-4">
       <ModeratorActivityLogItem
         v-for="activityLog in sortedActivityLogs"
         :key="activityLog.id"
         :activity-log="activityLog"
-        :is-self-user="activityLog.userId === user!.id"
-        :user="
-          activityLog.userId === user!.id
-            ? user!
-            : activityLogs.dict.users.find(user => user.id === activityLog.userId)!
-        "
+        :is-self-user="activityLog.userId === moderationUser.id"
+        :user="activityLog.userId === moderationUser.id
+          ? moderationUser
+          : activityLogs.dict.users.find(user => user.id === activityLog.userId)!"
         :dict="activityLogs.dict"
-        @add-user="addAdditionalUser"
+        @add-user="toggleAdditionalUser"
         @add-type="addType"
       />
     </div>

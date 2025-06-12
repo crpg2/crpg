@@ -40,9 +40,11 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
         {{ $d(activityLog.createdAt, 'long') }} ({{ timeAgo }})
       </div>
 
-      <UiTag
-        class="ml-auto mr-0"
-        variant="primary"
+      <UBadge
+        class="mr-0 ml-auto"
+        variant="subtle"
+        size="sm"
+        color="neutral"
         :label="activityLog.type"
         @click="emit('addType', activityLog.type)"
       />
@@ -57,10 +59,7 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
         v-if="activityLog.metadata.targetUserId"
         #user="{ user: scopeUser }"
       >
-        <div
-
-          class="inline-flex items-center gap-1 align-middle"
-        >
+        <div class="inline-flex items-center gap-1 align-middle">
           <NuxtLink
             :to="{ name: 'moderator-user-id-restrictions', params: { id: activityLog.metadata.targetUserId } }"
             class="inline-block hover:text-content-100"
@@ -68,12 +67,12 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
           >
             <UserMedia :user="scopeUser" class=" text-content-100" />
           </NuxtLink>
-          <OButton
+          <UButton
             v-if="isSelfUser"
-            size="2xs"
-            icon-left="add"
-            rounded
-            variant="secondary"
+            size="xs"
+            icon="crpg:plus"
+            color="neutral"
+            variant="ghost"
             @click="$emit('addUser', scopeUser.id)"
           />
         </div>

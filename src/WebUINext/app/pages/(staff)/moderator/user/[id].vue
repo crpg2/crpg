@@ -2,22 +2,25 @@
 import type { RouteLocationRaw } from 'vue-router'
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
+import type { UserPrivate } from '~/models/user'
+
+import { useModerationUserProvider } from '~/composables/moderator/use-moderation-user'
 import { getUserById } from '~/services/restriction-service'
-import { moderationUserKey } from '~/symbols/moderator'
 
-const props = defineProps<{ id: string }>()
-
-definePageMeta({
-  props: true,
-})
+const route = useRoute('moderator-user-id')
 
 const { state: user, execute: loadUser } = await useAsyncState(
-  () => getUserById(Number(props.id)),
+  () => getUserById(Number(route.params.id)),
   null,
-  { resetOnExecute: false },
+  { immediate: true, resetOnExecute: false },
 )
 
-provide(moderationUserKey, user)
+// TODO:
+if (!user.value) {
+  navigateTo({ name: 'moderator' })
+}
+
+useModerationUserProvider(user as Ref<UserPrivate>)
 
 const { t } = useI18n()
 

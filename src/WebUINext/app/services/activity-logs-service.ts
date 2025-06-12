@@ -21,7 +21,6 @@ export const getActivityLogs = async (
   payload: ActivityLogsPayload,
 ): Promise<GetActivityLogResponse> => {
   const { to, from, userIds, types } = payload
-
   const { data } = await _getActivityLogs({
     composable: '$fetch',
     query: {
@@ -31,6 +30,5 @@ export const getActivityLogs = async (
       'userId[]': userIds,
     },
   })
-
   return data
 }

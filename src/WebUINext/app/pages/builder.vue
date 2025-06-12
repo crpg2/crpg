@@ -52,7 +52,7 @@ const {
   reset: resetCharacterBuilderState,
 } = useCharacterCharacteristicBuilder(initialCharacteristics)
 
-const level = useRouteQuery('level', minimumLevel, { mode: 'replace', route, router })
+const level = useRouteQuery('level', minimumLevel, { mode: 'replace' })
 
 const convertRateAttributesToSkills = useRouteQuery('convertRateAttributesToSkills', 0, { mode: 'replace' })
 const convertRateSkillsToAttributes = useRouteQuery('convertRateSkillsToAttributes', 0, { mode: 'replace' })

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { clamp } from 'es-toolkit'
 
+import { useModerationUser } from '~/composables/moderator/use-moderation-user'
 import { Role } from '~/models/role'
 import {
   getAutoRetireCount,
@@ -12,29 +13,22 @@ import {
 import { rewardCharacter, rewardUser } from '~/services/moderation-service'
 import { updateUserNote } from '~/services/restriction-service'
 import { useUserStore } from '~/stores/user'
-import { moderationUserKey } from '~/symbols/moderator'
-
-defineProps<{ id: string }>()
 
 const emit = defineEmits<{
   update: []
 }>()
 
+const { moderationUser } = useModerationUser()
+
 const { n } = useI18n()
 const { $notify } = useNuxtApp()
 
-definePageMeta({
-  props: true,
-})
-
 const userStore = useUserStore()
 
-const user = injectStrict(moderationUserKey)
+const note = ref<string>(moderationUser.value?.note || '')
 
-const note = ref<string>(user.value?.note || '')
-
-const { execute: loadCharacters, state: characters } = await useAsyncState(
-  () => getCharactersByUserId(user.value!.id),
+const { state: characters, execute: loadCharacters } = await useAsyncState(
+  () => getCharactersByUserId(moderationUser.value!.id),
   [],
   {
     resetOnExecute: false,
@@ -42,8 +36,8 @@ const { execute: loadCharacters, state: characters } = await useAsyncState(
 )
 
 const onSubmitNoteForm = async () => {
-  if (user.value!.note !== note.value) {
-    await updateUserNote(user.value!.id, { note: note.value })
+  if (moderationUser.value!.note !== note.value) {
+    await updateUserNote(moderationUser.value!.id, { note: note.value })
     $notify('The user note has been updated')
     emit('update')
   }
@@ -99,7 +93,7 @@ const goldModel = computed({
     return n(rewardFormModel.value.gold || 0)
   },
   set(val: string) {
-    rewardFormModel.value.gold = clamp(tryParseNumber(val), user.value!.gold * -1, Infinity)
+    rewardFormModel.value.gold = clamp(tryParseNumber(val), moderationUser.value.gold * -1, Infinity)
   },
 })
 
@@ -109,7 +103,7 @@ const heirloomPointsModel = computed({
     return n(rewardFormModel.value.heirloomPoints || 0)
   },
   set(val: string) {
-    rewardFormModel.value.heirloomPoints = clamp(tryParseNumber(val), user.value!.heirloomPoints * -1, Infinity)
+    rewardFormModel.value.heirloomPoints = clamp(tryParseNumber(val), moderationUser.value.heirloomPoints * -1, Infinity)
   },
 })
 
@@ -123,7 +117,7 @@ const onSubmitRewardForm = async () => {
     || rewardFormModel.value.heirloomPoints !== 0
     || rewardFormModel.value.itemId !== ''
   ) {
-    await rewardUser(user.value!.id, {
+    await rewardUser(moderationUser.value.id, {
       gold: rewardFormModel.value.gold,
       heirloomPoints: rewardFormModel.value.heirloomPoints,
       itemId: rewardFormModel.value.itemId,
@@ -132,7 +126,7 @@ const onSubmitRewardForm = async () => {
   }
 
   if (rewardFormModel.value.characterId && rewardFormModel.value.experience !== 0) {
-    await rewardCharacter(user.value!.id, rewardFormModel.value.characterId!, {
+    await rewardCharacter(moderationUser.value.id, rewardFormModel.value.characterId!, {
       autoRetire: rewardFormModel.value.autoRetire,
       experience: rewardFormModel.value.experience,
     })
@@ -149,8 +143,8 @@ const onSubmitRewardForm = async () => {
 }
 
 const totalRewardValues = computed(() => {
-  const gold = user.value!.gold + rewardFormModel.value.gold
-  const heirloomPoints = user.value!.heirloomPoints + rewardFormModel.value.heirloomPoints
+  const gold = moderationUser.value.gold + rewardFormModel.value.gold
+  const heirloomPoints = moderationUser.value.heirloomPoints + rewardFormModel.value.heirloomPoints
 
   if (rewardFormModel.value.autoRetire) {
     const { remainExperience, retireCount } = getAutoRetireCount(
@@ -161,7 +155,7 @@ const totalRewardValues = computed(() => {
     return {
       experience: remainExperience,
       experienceMultiplier: sumExperienceMultiplierBonus(
-        user.value!.experienceMultiplier,
+        moderationUser.value.experienceMultiplier,
         getExperienceMultiplierBonusByRetireCount(retireCount),
       ),
       gold,
@@ -172,7 +166,7 @@ const totalRewardValues = computed(() => {
 
   return {
     experience: selectedCharacter.value!.experience + rewardFormModel.value.experience,
-    experienceMultiplier: user.value!.experienceMultiplier,
+    experienceMultiplier: moderationUser.value.experienceMultiplier,
     gold,
     heirloomPoints,
     level: getLevelByExperience(
@@ -184,7 +178,7 @@ const totalRewardValues = computed(() => {
 
 <template>
   <div>
-    <div v-if="user" class="mx-auto max-w-3xl space-y-8 pb-8">
+    <div class="mx-auto max-w-3xl space-y-8 pb-8">
       <UiFormGroup
 
         label="User"
@@ -193,47 +187,47 @@ const totalRewardValues = computed(() => {
         <div class="grid grid-cols-2 gap-2 text-2xs">
           <UiSimpleTableRow
             label="Id"
-            :value="String(user.id)"
+            :value="String(moderationUser.id)"
           />
           <UiSimpleTableRow
             :label="$t('character.statistics.expMultiplier.title')"
-            :value="$t('character.format.expMultiplier', { multiplier: $n(user.experienceMultiplier) })"
+            :value="$t('character.format.expMultiplier', { multiplier: $n(moderationUser.experienceMultiplier) })"
           />
           <UiSimpleTableRow
             label="Region"
-            :value="$t(`region.${user.region}`, 0)"
+            :value="$t(`region.${moderationUser.region}`, 0)"
           />
           <UiSimpleTableRow label="Platform">
-            {{ user.platform }} {{ user.platformUserId }}
+            {{ moderationUser.platform }} {{ moderationUser.platformUserId }}
             <UserPlatform
-              :platform="user.platform"
-              :platform-user-id="user.platformUserId"
-              :user-name="user.name"
+              :platform="moderationUser.platform"
+              :platform-user-id="moderationUser.platformUserId"
+              :user-name="moderationUser.name"
             />
           </UiSimpleTableRow>
           <UiSimpleTableRow
-            v-if="user.clanMembership"
+            v-if="moderationUser.clanMembership"
             label="Clan"
           >
-            {{ user.clanMembership.clan.name }}
-            <UserClan :clan="user.clanMembership.clan" />
+            {{ moderationUser.clanMembership.clan.name }}
+            <UserClan :clan="moderationUser.clanMembership.clan" />
           </UiSimpleTableRow>
           <UiSimpleTableRow
             label="Created"
-            :value="$d(user.createdAt, 'long')"
+            :value="$d(moderationUser.createdAt, 'long')"
           />
           <UiSimpleTableRow
             label="Last activity"
-            :value="$d(user.updatedAt, 'long')"
+            :value="$d(moderationUser.updatedAt, 'long')"
           />
           <UiSimpleTableRow label="Gold">
-            <AppCoin :value="user.gold" />
+            <AppCoin :value="moderationUser.gold" />
           </UiSimpleTableRow>
           <UiSimpleTableRow label="Heirloom">
-            <Heirloom :value="user.heirloomPoints" />
+            <Heirloom :value="moderationUser.heirloomPoints" />
           </UiSimpleTableRow>
           <UiSimpleTableRow label="Donor">
-            {{ user.isDonor }}
+            {{ moderationUser.isDonor }}
           </UiSimpleTableRow>
         </div>
       </UiFormGroup>
@@ -248,7 +242,7 @@ const totalRewardValues = computed(() => {
             :key="character.id"
             class="rounded-full border border-border-200 px-3 py-2"
             :character="character"
-            :is-active="character.id === user?.activeCharacterId"
+            :is-active="character.id === moderationUser?.activeCharacterId"
           />
         </div>
       </UiFormGroup>
@@ -396,7 +390,7 @@ const totalRewardValues = computed(() => {
                   size="lg"
                   class="text-primary"
                 />
-                {{ $n(user.heirloomPoints) }}
+                {{ $n(moderationUser.heirloomPoints) }}
                 ->
                 <span
                   :class="[
@@ -417,7 +411,7 @@ const totalRewardValues = computed(() => {
                   viewBox="0 0 18 18"
                   class="w-4.5"
                 />
-                {{ $n(user.gold) }}
+                {{ $n(moderationUser.gold) }}
                 ->
                 <span
                   :class="[rewardFormModel.gold < 0 ? 'text-status-danger' : 'text-status-success']"
@@ -447,12 +441,12 @@ const totalRewardValues = computed(() => {
                 <div
                   v-if="
                     rewardFormModel.autoRetire
-                      && totalRewardValues.experienceMultiplier - user!.experienceMultiplier !== 0
+                      && totalRewardValues.experienceMultiplier - moderationUser.experienceMultiplier !== 0
                   "
                   class="flex items-center gap-2 font-bold"
                 >
                   <span>exp. multi</span>
-                  {{ $n(user!.experienceMultiplier) }}
+                  {{ $n(moderationUser.experienceMultiplier) }}
                   ->
                   <span class="text-status-success">
                     {{ $n(totalRewardValues.experienceMultiplier) }}
@@ -518,7 +512,7 @@ const totalRewardValues = computed(() => {
 
           <OButton
             native-type="submit"
-            :disabled="user.note === note"
+            :disabled="moderationUser.note === note"
             variant="primary"
             size="lg"
             label="Update"

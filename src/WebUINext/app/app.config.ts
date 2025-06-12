@@ -108,8 +108,11 @@ export default defineAppConfig({
       variants: {
         size: {
           md: {
-            base: 'h-[2.125rem] px-2.5 py-1.5 text-xs gap-1.5',
-            item: 'text-xs',
+            // TODO: FIXME:
+            // base: 'h-[2.125rem] px-2.5 py-1.5 text-xs gap-1.5',
+            // base: 'text-xs',
+
+            // item: 'text-xs',
           },
         },
       },

@@ -1,22 +1,19 @@
 <script setup lang="ts">
 import type { UserRestrictionCreation } from '~/models/user'
 
+import { useModerationUser } from '~/composables/moderator/use-moderation-user'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { getUserRestrictions, restrictUser } from '~/services/restriction-service'
 
-const props = defineProps<{ id: string }>()
 const { t } = useI18n()
 const toast = useToast()
-
-definePageMeta({
-  props: true,
-})
+const { moderationUser } = useModerationUser()
 
 const {
   state: restrictions,
   execute: loadRestrictions,
   isLoading: loadingRestrictions,
-} = useAsyncState(() => getUserRestrictions(Number(props.id)), [], { resetOnExecute: false })
+} = useAsyncState(() => getUserRestrictions(moderationUser.value.id), [], { resetOnExecute: false })
 
 const {
   execute: onRestrictUser,
@@ -24,7 +21,7 @@ const {
 } = useAsyncCallback(async (restriction: Omit<UserRestrictionCreation, 'restrictedUserId'>) => {
   await restrictUser({
     ...restriction,
-    restrictedUserId: Number(props.id),
+    restrictedUserId: moderationUser.value.id,
   })
   await loadRestrictions()
 

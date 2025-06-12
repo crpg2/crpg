@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DropdownMenuItem, TabsItem } from '@nuxt/ui'
+import type { SelectItem, TabsItem } from '@nuxt/ui'
 
 import { Platform } from '~/models/platform'
 import { platformToIcon } from '~/services/platform-service'
@@ -57,19 +57,11 @@ const searchModeItems = Object.keys(SearchMode).map<TabsItem>(mode => ({
   slot: `${mode}` as const,
 }))
 
-const items = computed(() =>
-  Object.values(Platform).map<DropdownMenuItem>(p => ({
-    label: t(`platform.${p}`),
-    icon: `crpg:${platformToIcon[p]}`,
-    type: 'checkbox' as const,
-    checked: p === searchByPlatformModel.value.platform,
-    onUpdateChecked() {
-      searchByPlatformModel.value.platform = p
-    },
-  })),
-)
-
-//
+const platformItems = computed(() => Object.values(Platform).map<SelectItem>(p => ({
+  value: p,
+  label: t(`platform.${p}`),
+  icon: `crpg:${platformToIcon[p]}`,
+})))
 </script>
 
 <template>
@@ -109,22 +101,15 @@ const items = computed(() =>
         <UCard>
           <UForm :state="searchByPlatformModel" @submit="() => { search() }">
             <UButtonGroup>
-              <UDropdownMenu
-                :items
-                :modal="false"
-              >
-                <template #default="{ open }">
-                  <UButton
-                    size="lg"
-                    color="neutral"
-                    variant="subtle"
-                    :label="$t(`platform.${searchByPlatformModel.platform}`)"
-                    :leading-icon="`crpg:${platformToIcon[searchByPlatformModel.platform]}`"
-                    :trailing-icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'"
-                  />
-                </template>
-              </UDropdownMenu>
-
+              <USelect
+                v-model="searchByPlatformModel.platform"
+                size="lg"
+                :items="platformItems"
+                :icon="`crpg:${platformToIcon[searchByPlatformModel.platform]}`"
+                :ui="{
+                  content: 'w-auto',
+                }"
+              />
               <UInput
                 v-model="searchByPlatformModel.platformUserId"
                 :placeholder="$t('findUser.mode.Platform.field.platformId.placeholder')"
@@ -190,7 +175,7 @@ const items = computed(() =>
             :to="{ name: 'moderator-user-id-restrictions', params: { id: user.id } }"
             class="inline-block hover:text-content-100"
           >
-            <UserMedia :user="user" size="xl" />
+            <UserMedia :user="user" />
           </NuxtLink>
 
           <slot
