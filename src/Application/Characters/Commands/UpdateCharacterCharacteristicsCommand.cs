@@ -161,7 +161,7 @@ public record UpdateCharacterCharacteristicsCommand : IMediatorRequest<Character
             return stats.Skills.IronFlesh <= stats.Attributes.Strength / 3
                    && stats.Skills.PowerStrike <= stats.Attributes.Strength / 3
                    && stats.Skills.PowerDraw <= stats.Attributes.Strength / 3
-                   && stats.Skills.PowerThrow <= stats.Attributes.Strength / 3
+                   && stats.Skills.PowerThrow <= stats.Attributes.Strength / 6
                    && stats.Skills.Athletics <= stats.Attributes.Agility / 3
                    && stats.Skills.Riding <= stats.Attributes.Agility / 3
                    && stats.Skills.WeaponMaster <= stats.Attributes.Agility / 3
