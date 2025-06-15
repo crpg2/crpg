@@ -28108,10 +28108,10 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
-        <Flags>
+    <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="BonusAgainstShield" />
-        </Flags>
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_steel_pick_blade_h1" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.9" excluded_item_usage_features="thrust">
     <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
@@ -28121,10 +28121,10 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
-        <Flags>
+    <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="BonusAgainstShield" />
-        </Flags>
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_steel_pick_blade_h2" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.9" excluded_item_usage_features="thrust">
     <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
@@ -28134,10 +28134,10 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
-        <Flags>
+    <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="BonusAgainstShield" />
-        </Flags>
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_steel_pick_blade_h3" name="{=}Steel Pick Blade" tier="4" piece_type="Blade" mesh="steel_pick_blade" length="4.2" weight="1.85" excluded_item_usage_features="thrust">
     <BuildData piece_offset="30" next_piece_offset="0" previous_piece_offset="0" />
@@ -28147,10 +28147,10 @@
     <Materials>
       <Material id="Iron4" count="2" />
     </Materials>
-        <Flags>
+    <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
       <Flag name="BonusAgainstShield" />
-        </Flags>
+    </Flags>
   </CraftingPiece>
   <CraftingPiece id="crpg_helpinghand_handle_h0" name="Helping Hand Handle" tier="3" piece_type="Handle" mesh="gp_helpinghand_handle" length="43.2" weight="0.05">
     <BuildData piece_offset="5" next_piece_offset="0" />
