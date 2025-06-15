@@ -28,10 +28,16 @@
         "vitest.explorer"
       ],
       "settings": {
+        "tailwindCSS.classAttributes": [
+          "class",
+          "ui",
+          "active-class",
+          "inactive-class"
+        ],
         "tailwindCSS.experimental.classRegex": [
           [
-            "/\\*@tw\\*/ ([^;]*);",
-            "'([^']*)'"
+            "ui:\\s*{([^)]*)\\s*}",
+            "(?:'|\"|`)([^']*)(?:'|\"|`)"
           ]
         ],
         "typescript.preferences.autoImportFileExcludePatterns": [

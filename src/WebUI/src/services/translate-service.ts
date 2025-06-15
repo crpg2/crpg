@@ -63,6 +63,5 @@ export const guessDefaultLocale = () => {
 }
 
 export const t = i18n.global.t
-
 export const n = i18n.global.n
 export const d = i18n.global.d
