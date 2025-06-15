@@ -8,7 +8,7 @@ const { size = 'md' } = defineProps<{
 
 const variants = tv({
   slots: {
-    icon: '',
+    icon: 'text-primary',
     label: 'font-bold',
   },
   variants: {
@@ -33,7 +33,7 @@ const classes = computed(() => variants({ size }))
 </script>
 
 <template>
-  <UiDataCell class="text-primary">
+  <UiDataCell>
     <template #leftContent>
       <!-- TODO: sandbox -->
       <!-- <div class="flex h-12 items-center">

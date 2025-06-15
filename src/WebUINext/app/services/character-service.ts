@@ -626,7 +626,10 @@ export const getExperienceMultiplierBonusByRetireCount = (retireCount: number) =
 }
 
 // TODO: Spec
-export const sumExperienceMultiplierBonus = (multiplierA: number, multiplierB: number) => {
+export const sumExperienceMultiplierBonus = (
+  multiplierA: number,
+  multiplierB: number,
+) => {
   return clamp(multiplierA + multiplierB, 0, maxExperienceMultiplierForGeneration)
 }
 

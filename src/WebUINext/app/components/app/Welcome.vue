@@ -149,9 +149,9 @@ const { settings } = storeToRefs(useSettingsStore())
                 :href="settings.discord"
                 class="!my-0 flex items-center gap-x-1"
               >
-                <OIcon
-                  icon="discord"
-                  size="sm"
+                <UIcon
+                  name="crpg:discord"
+                  class="size-4"
                 />
                 Community
               </a>

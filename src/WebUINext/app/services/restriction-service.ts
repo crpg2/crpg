@@ -55,7 +55,7 @@ export const getUserRestrictions = async (id: number): Promise<UserRestriction[]
 
 export const restrictUser = (restriction: UserRestrictionCreation) => postRestrictions({ composable: '$fetch', body: restriction })
 
-export const updateUserNote = (userId: number, user: { note: string }) =>
+export const updateUserNote = (userId: number, note: string) =>
   putUsersByUserIdNote({ composable: '$fetch', path: { userId }, body: { note } })
 
 export const getUserById = async (userId: number): Promise<UserPrivate> => {

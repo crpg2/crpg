@@ -40,10 +40,9 @@ Promise.all([
           class="inline-flex items-center gap-1.5 text-content-300 hover:text-content-100"
           active-class="!text-content-100"
         >
-          <OIcon
-            icon="trophy-cup"
-            size="xl"
-            class="text-more-support"
+          <UIcon
+            name="crpg:trophy-cup"
+            class="size-8 text-more-support"
           />
           {{ $t('nav.main.Leaderboard') }}
         </NuxtLink>

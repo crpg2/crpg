@@ -12,6 +12,11 @@ export default withNuxt(
     vue: true,
     typescript: true,
     stylistic: true,
+    settings:{
+        "better-tailwindcss": {
+            "entryPoint": "app/assets/css/main.css",
+        }
+    },
     rules: {
       'perfectionist/sort-imports': [
         'error',

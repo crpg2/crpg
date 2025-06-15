@@ -117,6 +117,11 @@ export default defineAppConfig({
         },
       },
     },
+    toast: {
+      slots: {
+        description: 'text-xs',
+      },
+    },
     dropdownMenu: {
       variants: {
         size: {

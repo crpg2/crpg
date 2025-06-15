@@ -180,5 +180,3 @@ input[type='color'] {
 .fill-current{
     fill: currentColor;
 }
-
-@import '../themes/oruga-tailwind/index.css';

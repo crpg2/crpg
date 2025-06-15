@@ -86,16 +86,6 @@ const open = ref(true)
       </div>
 
       <div class="flex items-center gap-4">
-        <OIcon
-          icon="tag"
-          size="xl"
-          :style="{
-            'color': '#fff',
-            '--fa-primary-opacity': 0.15,
-            '--fa-secondary-color': 'tomato',
-          }"
-        />
-
         <UIcon name="crpg:clan-tag" class="size-6 text-[tomato]" />
       </div>
 

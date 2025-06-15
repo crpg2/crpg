@@ -1,7 +1,7 @@
 import type { User } from 'oidc-client-ts'
 
 import {
-//   Log,
+  // Log,
   UserManager,
   WebStorageStateStore,
 } from 'oidc-client-ts'
@@ -15,10 +15,11 @@ export const extractToken = (user: User | null): string | null =>
   user !== null ? user.access_token : null
 
 export const parseJwt = (token: string) =>
+  // eslint-disable-next-line node/prefer-global/buffer
   JSON.parse(Buffer.from(token.split('.')[1] as string, 'base64').toString())
 
 export const userManager = new UserManager({
-//   authority: import.meta.env.VITE_API_BASE_URL,
+  //   authority: import.meta.env.VITE_API_BASE_URL,
   authority: 'https://localhost:8000', // TODO: FIXME:
   client_id: 'crpg-web-ui',
   post_logout_redirect_uri: window.location.origin,

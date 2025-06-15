@@ -33,7 +33,7 @@ const classes = computed(() => variants({ size }))
 </script>
 
 <template>
-  <UTooltip :text="$t('user.field.gold')" class="text-primary">
+  <UTooltip :text="$t('user.field.gold')">
     <UiDataCell>
       <template #leftContent>
         <!-- <div class="flex h-5 items-center">
