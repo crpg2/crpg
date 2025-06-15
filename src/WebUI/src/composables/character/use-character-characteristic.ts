@@ -135,7 +135,6 @@ const skillRequirementsSatisfied = (
     case 'ironFlesh':
     case 'powerStrike':
     case 'powerDraw':
-    case 'powerThrow':
       return skill <= Math.floor(characteristics.attributes.strength / 3) // TODO: move "3" to constants.json
 
     case 'athletics':
@@ -145,7 +144,10 @@ const skillRequirementsSatisfied = (
 
     case 'mountedArchery':
     case 'shield':
-      return skill <= Math.floor(characteristics.attributes.agility / 6)
+          return skill <= Math.floor(characteristics.attributes.agility / 6)
+
+      case 'powerThrow':
+          return skill <= Math.floor(characteristics.attributes.strength / 6)
 
     /* c8 ignore next 2 */
     default:
