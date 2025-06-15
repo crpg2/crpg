@@ -125,7 +125,7 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
     filterFn: 'arrIncludesSome',
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-1.5',
-    }, row.original.clan.languages.map(l =>
+    }, () => row.original.clan.languages.map(l =>
       h(UTooltip, { text: t(`language.${l}`) }, h(UBadge, {
         color: 'primary',
         variant: 'soft',
