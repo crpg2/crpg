@@ -254,15 +254,14 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
         float totalEffectiveLoad = harnessWeight + riderPerceivedWeight;
 
-        const float maxLoadReference = 45f;
+        const float maxLoadReference = 50f;
         float loadPercentage = Math.Min(totalEffectiveLoad / maxLoadReference, 1f); // Cap at 1.0
 
-        float weightImpactOnSpeed = 1f / (1f + 0.333f * loadPercentage);
+        float weightImpactOnSpeed = 1f / (1f + 0.25f * loadPercentage);
         float ridingImpactOnSpeed = (float)(
             0.7f +
             ridingSkill * 0.001f +
-            1 / (2.2f + Math.Pow(2, -0.08f * (ridingSkill - 70f)))
-        );
+            1 / (2.2f + Math.Pow(2, -0.08f * (ridingSkill - 70f))));
 
         props.MountSpeed = (mount.GetModifiedMountSpeed(in mountHarness) + 1) * 0.209f * ridingImpactOnSpeed * weightImpactOnSpeed;
         props.TopSpeedReachDuration = Game.Current.BasicModels.RidingModel.CalculateAcceleration(in mount, in mountHarness, ridingSkill);
