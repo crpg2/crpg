@@ -5,7 +5,7 @@ import type { Clan } from '~/models/clan'
 
 import { ClanMemberRole } from '~/models/clan'
 
-type Size = 'md' | 'lg' | 'xl'
+type Size = 'sm' | 'md' | 'lg' | 'xl'
 
 const { clan, clanRole, size = 'md' } = defineProps<{
   clan: Clan
@@ -21,6 +21,11 @@ const variants = tv({
   },
   variants: {
     size: {
+      sm: {
+        name: '',
+        roleIcon: '',
+        tagIcon: '',
+      },
       md: {
         name: '',
         roleIcon: 'size-5',

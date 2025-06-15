@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import type { CalendarDate } from '@internationalized/date'
+import type { ZonedDateTime } from '@internationalized/date'
 
-import { today } from '@internationalized/date'
-import { parseDate } from '@internationalized/date'
-import { DateFormatter, getLocalTimeZone } from '@internationalized/date'
+import { DateFormatter, getLocalTimeZone, now, parseZonedDateTime } from '@internationalized/date'
 
 import { useModerationUser } from '~/composables/moderator/use-moderation-user'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
@@ -19,25 +17,24 @@ const { moderationUser } = useModerationUser()
 
 const { t } = useI18n()
 
-// TODO: FIXME: use dateTime
 const from = useRouteQuery(
   'from',
-  today(getLocalTimeZone()).toString(),
+  now(getLocalTimeZone()).subtract({ minutes: 5 }).toString(), // Show logs for the last 5 minutes by default
   {
     transform: {
-      set: (value: CalendarDate) => value.toString(),
-      get: parseDate,
+      set: (value: ZonedDateTime) => value.toString(),
+      get: value => parseZonedDateTime(value, 'compatible'),
     },
   },
 )
 
 const to = useRouteQuery(
   'to',
-  today(getLocalTimeZone()).toString(),
+  now(getLocalTimeZone()).toString(),
   {
     transform: {
-      set: (value: CalendarDate) => value.toString(),
-      get: parseDate,
+      set: (value: ZonedDateTime) => value.toString(),
+      get: value => parseZonedDateTime(value, 'compatible'),
     },
   },
 )
@@ -62,8 +59,8 @@ const {
   isLoading: isLoadingActivityLogs,
 } = useAsyncState(
   () => getActivityLogs({
-    from: from.value.toDate(getLocalTimeZone()),
-    to: to.value.toDate(getLocalTimeZone()),
+    from: from.value.toDate(),
+    to: to.value.toDate(),
     types: types.value,
     userIds: [moderationUser.value.id, ...additionalUsers.value.map(Number)],
   }),
@@ -99,111 +96,49 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="mx-auto max-w-3xl space-y-8 pb-8">
-    <UButtonGroup>
-      <USelectMenu
-        v-model="types"
-        class="max-w-44"
-        color="neutral"
-        variant="subtle"
-        :placeholder="$t('activityLog.form.type')"
-        multiple
-        :items="Object.values(ActivityLogType)"
-        :ui="{
-          content: 'w-auto',
-        }"
-      />
-
-      <!-- TODO: to datepicker -->
-      <UPopover>
-        <UButton
-          color="neutral"
-          variant="subtle"
-          icon="crpg:calendar"
-        >
-          {{ dateFormatter.format(from.toDate(getLocalTimeZone())) }}
-        </UButton>
-        <template #content>
-          <UCalendar v-model="from" :max-value="to" />
-        </template>
-      </UPopover>
-
-      <UPopover>
-        <UButton
-          color="neutral"
-          variant="subtle"
-          icon="crpg:calendar"
-        >
-          {{ dateFormatter.format(to.toDate(getLocalTimeZone())) }}
-        </UButton>
-        <template #content>
-          <UCalendar v-model="to" :min-value="from" />
-        </template>
-      </UPopover>
-    </UButtonGroup>
-
+  <div class="mx-auto max-w-3xl space-y-4 pb-8">
     <div class="flex justify-between gap-4">
-      <div class="flex flex-1 flex-wrap items-center gap-4">
-        <div
-          v-for="additionalUserId in additionalUsers"
-          :key="additionalUserId"
-          class="flex items-center gap-1"
-          data-aq-activityLogs-additionalUser
-        >
-          <UButton
-            size="xs"
-            icon="crpg:close"
-            variant="ghost"
-            color="neutral"
-            data-aq-activityLogs-additionalUser-remove
-            @click="toggleAdditionalUser(Number(additionalUserId))"
-          />
-          <NuxtLink :to="{ name: 'moderator-user-id-restrictions', params: { id: additionalUserId } }">
-            <UserMedia
-              v-if="activityLogs.dict.users.find(user => user.id === additionalUserId)"
-              :user="activityLogs.dict.users.find(user => user.id === additionalUserId)!"
-            />
-          </NuxtLink>
-        </div>
-
-        <UModal
-          :close="{
-            size: 'sm',
-            color: 'secondary',
-            variant: 'solid',
-          }"
-          :title="t('findUser.title')"
+      <UButtonGroup>
+        <USelectMenu
+          v-model="types"
+          class="max-w-44"
+          color="neutral"
+          variant="subtle"
+          :placeholder="$t('activityLog.form.type')"
+          multiple
+          :items="Object.values(ActivityLogType)"
           :ui="{
-            content: 'min-w-[720px]',
+            content: 'w-auto',
           }"
-        >
+        />
+
+        <!-- TODO: to datepicker cpm -->
+        <UPopover>
           <UButton
-            icon="crpg:plus"
             color="neutral"
             variant="subtle"
-            :label="$t('activityLog.form.addUser')"
-          />
-
-          <template #body="{ close }">
-            <ModeratorUserFinder>
-              <template #user-prepend="userData">
-                <UButton
-                  size="xs"
-                  icon="crpg:plus"
-                  color="neutral"
-                  variant="subtle"
-                  :label="$t('activityLog.form.addUser')"
-                  data-aq-activityLogs-userFinder-addUser-btn
-                  @click="() => {
-                    toggleAdditionalUser(userData.id);
-                    close();
-                  } "
-                />
-              </template>
-            </ModeratorUserFinder>
+            icon="crpg:calendar"
+          >
+            {{ dateFormatter.format(from.toDate()) }}
+          </UButton>
+          <template #content>
+            <UCalendar v-model="from" :max-value="to" />
           </template>
-        </UModal>
-      </div>
+        </UPopover>
+
+        <UPopover>
+          <UButton
+            color="neutral"
+            variant="subtle"
+            icon="crpg:calendar"
+          >
+            {{ dateFormatter.format(to.toDate()) }}
+          </UButton>
+          <template #content>
+            <UCalendar v-model="to" :min-value="from" />
+          </template>
+        </UPopover>
+      </UButtonGroup>
 
       <UButton
         :icon="sort === Sort.ASC ? 'crpg:chevron-up' : 'crpg:chevron-down'"
@@ -213,6 +148,68 @@ watchEffect(() => {
         data-aq-activityLogs-sort-btn
         @click="toggleSort"
       />
+    </div>
+
+    <div class="flex flex-wrap items-center gap-4">
+      <div
+        v-for="additionalUserId in additionalUsers"
+        :key="additionalUserId"
+        class="flex items-center gap-1"
+        data-aq-activityLogs-additionalUser
+      >
+        <UButton
+          size="xs"
+          icon="crpg:close"
+          variant="ghost"
+          color="neutral"
+          data-aq-activityLogs-additionalUser-remove
+          @click="toggleAdditionalUser(Number(additionalUserId))"
+        />
+        <NuxtLink :to="{ name: 'moderator-user-id-restrictions', params: { id: additionalUserId } }">
+          <UserMedia
+            v-if="activityLogs.dict.users.find(user => user.id === additionalUserId)"
+            :user="activityLogs.dict.users.find(user => user.id === additionalUserId)!"
+          />
+        </NuxtLink>
+      </div>
+
+      <UModal
+        :close="{
+          size: 'sm',
+          color: 'secondary',
+          variant: 'solid',
+        }"
+        :title="t('findUser.title')"
+        :ui="{
+          content: 'min-w-[720px]',
+        }"
+      >
+        <UButton
+          icon="crpg:plus"
+          color="neutral"
+          variant="subtle"
+          :label="$t('activityLog.form.addUser')"
+        />
+
+        <template #body="{ close }">
+          <ModeratorUserFinder>
+            <template #user-prepend="userData">
+              <UButton
+                size="xs"
+                icon="crpg:plus"
+                color="neutral"
+                variant="subtle"
+                :label="$t('activityLog.form.addUser')"
+                data-aq-activityLogs-userFinder-addUser-btn
+                @click="() => {
+                  toggleAdditionalUser(userData.id);
+                  close();
+                } "
+              />
+            </template>
+          </ModeratorUserFinder>
+        </template>
+      </UModal>
     </div>
 
     <div class="flex flex-col flex-wrap gap-4">

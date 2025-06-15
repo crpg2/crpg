@@ -31,9 +31,9 @@ const getUserById = (userId: number) => dict.users.find(({ id }) => id === userI
 
 const getCharacterById = (characterId: number) => dict.characters.find(({ id }) => id === characterId)
 
-const renderStrong = (value: string) => h('strong', { class: 'font-bold text-content-100' }, value)
+const renderStrong = (value: string) => h('strong', { class: 'font-bold text-highlighted' }, value)
 
-const renderDamage = (value: string) => h('strong', { class: 'font-bold text-status-danger' }, n(Number(value)))
+const renderDamage = (value: string) => h('strong', { class: 'font-bold text-error' }, n(Number(value)))
 
 const renderUserClan = (clanId: number) => {
   const clan = getClanById(clanId)
@@ -44,9 +44,8 @@ const renderUserClan = (clanId: number) => {
 
 const renderUser = (userId: number) => {
   const user = getUserById(userId)
-
   return user
-    ? slots?.user?.({ user }) || h(UserMedia, { user, class: 'text-content-100' })
+    ? slots?.user?.({ user }) || h(UserMedia, { user, size: 'sm' })
     : renderStrong(String(userId))
 }
 
@@ -55,7 +54,7 @@ const renderCharacter = (characterId: number) => {
   return character
     ? h(CharacterMedia, {
         character,
-        class: 'inline-flex items-center gap-1 align-middle font-bold text-content-100',
+        class: 'inline-flex items-center gap-1 align-middle font-bold text-highlighted',
       })
     : renderStrong(String(characterId))
 }

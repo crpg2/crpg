@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants'
 
 import { ClanMemberRole } from '~/models/clan'
 
-type Size = 'md' | 'lg' | 'xl'
+type Size = 'sm' | 'md' | 'lg' | 'xl'
 
 const { hiddenLabel = false, size = 'md' } = defineProps<{
   hiddenLabel?: boolean
@@ -19,6 +19,10 @@ const variants = tv({
   },
   variants: {
     size: {
+      sm: {
+        label: '',
+        icon: '',
+      },
       md: {
         label: '',
         icon: 'size-5',

@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants'
 
 import { Platform } from '~/models/platform'
 
-type Size = 'md' | 'lg' | 'xl'
+type Size = 'sm' | 'md' | 'lg' | 'xl'
 
 const { size = 'md' } = defineProps<{
   platform: Platform
@@ -18,6 +18,9 @@ const variants = tv({
   },
   variants: {
     size: {
+      sm: {
+        icon: '',
+      },
       md: {
         icon: 'size-5',
       },

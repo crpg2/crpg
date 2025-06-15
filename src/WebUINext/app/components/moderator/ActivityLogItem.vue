@@ -8,7 +8,12 @@ import type { UserPublic } from '~/models/user'
 
 import { useLocaleTimeAgo } from '~/composables/utils/use-locale-time-ago'
 
-const { user, activityLog, isSelfUser, dict } = defineProps<{
+const {
+  user,
+  activityLog,
+  isSelfUser,
+  dict,
+} = defineProps<{
   activityLog: ActivityLog
   user: UserPublic
   dict: MetadataDict
@@ -29,19 +34,15 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
     :class="[isSelfUser ? 'self-start' : 'self-end']"
   >
     <div class="flex items-center gap-2">
-      <NuxtLink
-        :to="{ name: 'moderator-user-id-restrictions', params: { id: user.id } }"
-        class="inline-block hover:text-content-100"
-      >
-        <UserMedia :user />
+      <NuxtLink :to="{ name: 'moderator-user-id-restrictions', params: { id: user.id } }">
+        <UserMedia :user size="sm" />
       </NuxtLink>
 
-      <div class="text-2xs text-content-300">
+      <div class="text-2xs text-muted">
         {{ $d(activityLog.createdAt, 'long') }} ({{ timeAgo }})
       </div>
 
       <UBadge
-        class="mr-0 ml-auto"
         variant="subtle"
         size="sm"
         color="neutral"
@@ -65,7 +66,7 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
             class="inline-block hover:text-content-100"
             target="_blank"
           >
-            <UserMedia :user="scopeUser" class=" text-content-100" />
+            <UserMedia :user="scopeUser" size="sm" />
           </NuxtLink>
           <UButton
             v-if="isSelfUser"

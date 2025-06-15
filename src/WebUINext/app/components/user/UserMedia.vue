@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants'
 
 import type { UserPublic } from '~/models/user'
 
-type Size = 'md' | 'lg' | 'xl'
+type Size = 'sm' | 'md' | 'lg' | 'xl'
 
 const {
   user,
@@ -27,6 +27,9 @@ const variants = tv({
   },
   variants: {
     size: {
+      sm: {
+        name: '',
+      },
       md: {
         name: '',
       },
@@ -41,9 +44,9 @@ const variants = tv({
 })
 
 // TODO: use avatar props when resolve this issue https://github.com/nuxt/ui/issues/3973
-type AvatarSize = 'xs' | '3xs' | '2xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
+type AvatarSize = '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
 
-const avatarSize = computed(() => ({ md: 'md', lg: 'xl', xl: '3xl' } satisfies Record<Size, AvatarSize>)[size])
+const avatarSize = computed(() => ({ sm: 'xs', md: 'md', lg: 'xl', xl: '3xl' } satisfies Record<Size, AvatarSize>)[size])
 
 const classes = computed(() => variants({ size }))
 </script>
