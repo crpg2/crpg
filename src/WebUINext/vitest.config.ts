@@ -10,7 +10,7 @@ export default defineVitestConfig({
     // },
     environment: 'happy-dom',
     globals: true,
-    // include: ['./app/**/*.spec.ts'],
+    include: ['./app/**/*.spec.ts'],
     // setupFiles: ['./src/__test__/unit/setup.ts'],
   },
 })

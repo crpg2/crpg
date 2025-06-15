@@ -1,6 +1,5 @@
 import type { HumanDuration } from '~/models/datetime'
 
-// TODO: rename to humanizeTs
 export const parseTimestamp = (ts: number): HumanDuration => {
   const days = Math.floor(ts / 86400000)
   const hours = Math.floor((ts % 86400000) / 3600000)

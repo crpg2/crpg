@@ -9,8 +9,8 @@ import type {
   TooltipComponentOption,
 } from 'echarts/components'
 import type { ComposeOption } from 'echarts/core'
-import type { DurationLike } from 'luxon'
 
+import { type DateTimeDuration, getLocalTimeZone, now, type TimeDuration } from '@internationalized/date'
 import { AppCoin, AppExperience, UIcon, UiDataCell } from '#components'
 import { BarChart } from 'echarts/charts'
 import {
@@ -21,7 +21,6 @@ import {
 } from 'echarts/components'
 import { registerTheme, use } from 'echarts/core'
 import { SVGRenderer } from 'echarts/renderers'
-import { DateTime } from 'luxon'
 import VChart from 'vue-echarts'
 
 // import type { CharacterEarnedMetadata } from '~/models/activity-logs'
@@ -79,7 +78,7 @@ enum Zoom {
   '14d' = '14d',
 }
 
-const durationByZoom: Record<Zoom, DurationLike> = {
+const durationByZoom: Record<Zoom, DateTimeDuration> = {
   [Zoom['1h']]: { hours: 1 },
   [Zoom['3h']]: { hours: 3 },
   [Zoom['12h']]: { hours: 12 },
@@ -89,24 +88,10 @@ const durationByZoom: Record<Zoom, DurationLike> = {
 }
 
 const getStart = (zoom: Zoom) => {
-  switch (zoom) {
-    case Zoom['1h']:
-      return DateTime.local().minus(durationByZoom[Zoom['1h']]).toJSDate()
-    case Zoom['3h']:
-      return DateTime.local().minus(durationByZoom[Zoom['3h']]).toJSDate()
-    case Zoom['12h']:
-      return DateTime.local().minus(durationByZoom[Zoom['12h']]).toJSDate()
-    case Zoom['2d']:
-      return DateTime.local().minus(durationByZoom[Zoom['2d']]).toJSDate()
-    case Zoom['7d']:
-      return DateTime.local().minus(durationByZoom[Zoom['7d']]).toJSDate()
-    case Zoom['14d']:
-      return DateTime.local().minus(durationByZoom[Zoom['14d']]).toJSDate()
-
-    default:
-      return DateTime.local().minus(durationByZoom[Zoom['1h']]).toJSDate()
-  }
+  const duration = durationByZoom[zoom] ?? durationByZoom[Zoom['1h']]
+  return now(getLocalTimeZone()).subtract(duration).toDate()
 }
+
 const toBarSeries = (ts: TimeSeries): BarSeriesOption => ({ ...ts, type: 'bar' })
 const extractTSName = (ts: TimeSeries): string => ts.name
 
@@ -283,7 +268,11 @@ const columns: TableColumn<CharacterEarnedDataWithGameMode>[] = [
   {
     accessorKey: 'gold',
     header: () => h(AppCoin, { size: 'lg' }),
-    cell: ({ row }) => `${n(row.original.gold)}${row.original.timeEffort ? ` (${n(row.original.gold / row.original.timeEffort)}/s)` : ''}`,
+    cell: ({ row }) =>
+      h('span', {
+        class: row.original.gold < 0 ? 'text-error' : 'text-success',
+      }, `${n(row.original.gold)}${row.original.timeEffort ? ` (${n(row.original.gold / row.original.timeEffort)}/s)` : ''}`),
+
   },
 ]
 
@@ -323,12 +312,13 @@ fetchPageData(Number(route.params.id))
           v-if="statTypeModel === CharacterEarningType.Gold"
           :value="total"
           size="xl"
-          :class="total < 0 ? 'text-status-danger' : 'text-status-success'"
+          :class="total < 0 ? 'text-error' : 'text-success'"
         />
 
         <AppExperience
           v-else
           size="xl"
+          class="text-primary"
           :value="total"
         />
       </div>

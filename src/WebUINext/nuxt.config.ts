@@ -31,7 +31,16 @@ function JSON5(): Plugin {
 }
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui', '@nuxt/test-utils/module', '@nuxt/eslint', '@pinia/nuxt', '@vueuse/nuxt', '@hey-api/nuxt', '@nuxtjs/i18n', '@nuxt/image'],
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/test-utils/module',
+    '@nuxt/eslint',
+    '@pinia/nuxt',
+    '@vueuse/nuxt',
+    '@hey-api/nuxt',
+    '@nuxtjs/i18n',
+    '@nuxt/image',
+  ],
   ssr: false,
   devtools: { enabled: false },
   app: {
@@ -120,7 +129,6 @@ export default defineNuxtConfig({
     host: '0.0.0.0',
     port: 8080,
   },
-  watch: ['node_modules/@nuxt/ui/dist/runtime/components/Table.vue'],
   future: {
     compatibilityVersion: 4,
   },
@@ -161,7 +169,7 @@ export default defineNuxtConfig({
   heyApi: {
     autoImport: false,
     config: {
-      // input: 'https://localhost:8000/swagger/v1/swagger.json',
+      // TODO: FIXME: input: 'https://localhost:8000/swagger/v1/swagger.json',
       input: './app/swagger.json',
       output: {
         path: './app/api',

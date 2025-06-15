@@ -1,20 +1,21 @@
-import { DateTime } from 'luxon' // TODO: someday try to do without any library ;)
+import type { TimeDuration } from '@internationalized/date'
+
+import { now, toLocalTimeZone, } from '@internationalized/date'
 
 import type { Region } from '~/models/region'
 
 import { isBetween } from '~/utils/date'
 
-interface HHScheduleTime {
-  hours: number
-  minutes: number
-}
+type HHScheduleTime = Pick<TimeDuration, 'hours' | 'minutes'>
+
 interface HHScheduleConfig {
   tz: string
-  end: HHScheduleTime
   start: HHScheduleTime
+  end: HHScheduleTime
 }
 
-export const getHHScheduleConfig = (config: string) => {
+const getHHScheduleConfig = (config: string) => {
+  // TODO: FIXME: error handling
   return config.split(',').reduce(
     (out, cur) => {
       const [region, start, end, tz] = cur.split('|') as [Region, string, string, string]
@@ -23,17 +24,16 @@ export const getHHScheduleConfig = (config: string) => {
       const [endHours, endMinutes] = end.split(':')
 
       out[region] = {
-        end: {
-          hours: Number(endHours),
-          minutes: Number(endMinutes),
-        },
         start: {
           hours: Number(startHours),
           minutes: Number(startMinutes),
         },
+        end: {
+          hours: Number(endHours),
+          minutes: Number(endMinutes),
+        },
         tz,
       }
-
       return out
     },
     {} as Record<Region, HHScheduleConfig>,
@@ -46,27 +46,21 @@ export interface HHEvent {
 }
 
 export const getHHEventByRegion = (config: string, region: Region): HHEvent => {
-  const cfg = getHHScheduleConfig(config)[region]
+  const { start, end, tz } = getHHScheduleConfig(config)[region]
 
-  const startDt = DateTime.fromObject(
-    { hour: cfg.start.hours, minute: cfg.start.minutes, second: 0 },
-    { zone: cfg.tz },
-  )
-
-  const endDt = DateTime.fromObject(
-    { hour: cfg.end.hours, minute: cfg.end.minutes, second: 0 },
-    { zone: cfg.tz },
-  )
+  const startDt = now(tz).set({ hour: start.hours, minute: start.minutes })
+  const endDt = now(tz).set({ hour: end.hours, minute: end.minutes })
 
   return {
-    end: endDt.setZone(DateTime.local().zoneName!).toJSDate(),
-    start: startDt.setZone(DateTime.local().zoneName!).toJSDate(),
+    start: toLocalTimeZone(startDt).toDate(),
+    end: toLocalTimeZone(endDt).toDate(),
   }
 }
 
 export const getHHEventRemaining = (event: HHEvent) => {
-  if (!isBetween(new Date(), event.start, event.end)) {
+  const { start, end } = event
+  if (!isBetween(new Date(), start, end)) {
     return 0
   }
-  return event.end.getTime() - new Date().getTime()
+  return end.getTime() - new Date().getTime()
 }
