@@ -8834,145 +8834,145 @@
   </Item>
   <Item id="crpg_aa_landsnechtflutedbreastplate_h0" name="{=Apple}Landsknecht Fluted Breastplate" mesh="aa_landsnechtflutedbreastplate" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="14.20411" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="46" leg_armor="12" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="46" leg_armor="12" arm_armor="18" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_landsnechtflutedbreastplate_h1" name="{=Apple}Landsknecht Fluted Breastplate +1" mesh="aa_landsnechtflutedbreastplate" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="14.20411" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="48" leg_armor="13" arm_armor="19" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="48" leg_armor="13" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_landsnechtflutedbreastplate_h2" name="{=Apple}Landsknecht Fluted Breastplate +2" mesh="aa_landsnechtflutedbreastplate" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="14.20411" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="50" leg_armor="14" arm_armor="20" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="50" leg_armor="14" arm_armor="20" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_landsnechtflutedbreastplate_h3" name="{=Apple}Landsknecht Fluted Breastplate +3" mesh="aa_landsnechtflutedbreastplate" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="14.20411" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="52" leg_armor="15" arm_armor="21" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="15" arm_armor="21" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_landsnechtvestloosesleeves_h0" name="{=Apple}Landsknecht Leather Vest" mesh="aa_landsnechtvestloosesleeves" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="8.396823" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="30" leg_armor="6" arm_armor="16" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="30" leg_armor="6" arm_armor="16" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_landsnechtvestloosesleeves_h1" name="{=Apple}Landsknecht Leather Vest +1" mesh="aa_landsnechtvestloosesleeves" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="8.396823" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="32" leg_armor="7" arm_armor="17" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="32" leg_armor="7" arm_armor="17" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_landsnechtvestloosesleeves_h2" name="{=Apple}Landsknecht Leather Vest +2" mesh="aa_landsnechtvestloosesleeves" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="8.396823" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="34" leg_armor="8" arm_armor="18" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="34" leg_armor="8" arm_armor="18" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_landsnechtvestloosesleeves_h3" name="{=Apple}Landsknecht Leather Vest +3" mesh="aa_landsnechtvestloosesleeves" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="8.396823" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="36" leg_armor="9" arm_armor="19" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="36" leg_armor="9" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_buttondoublet_h0" name="{=Apple}Landsknecht Button Doublet" mesh="aa_buttondoublet" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="3.575049" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="15" leg_armor="6" arm_armor="8" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="15" leg_armor="6" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_buttondoublet_h1" name="{=Apple}Landsknecht Button Doublet +1" mesh="aa_buttondoublet" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="3.575049" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="17" leg_armor="7" arm_armor="9" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="17" leg_armor="7" arm_armor="9" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_buttondoublet_h2" name="{=Apple}Landsknecht Button Doublet +2" mesh="aa_buttondoublet" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="3.575049" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="19" leg_armor="8" arm_armor="10" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="19" leg_armor="8" arm_armor="10" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_buttondoublet_h3" name="{=Apple}Landsknecht Button Doublet +3" mesh="aa_buttondoublet" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="3.575049" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="21" leg_armor="9" arm_armor="11" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="21" leg_armor="9" arm_armor="11" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papaldoublet_h0" name="{=Apple}Papal Guard Doublet" mesh="aa_papaldoublet" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="2.763222" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="12" leg_armor="4" arm_armor="8" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="12" leg_armor="4" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papaldoublet_h1" name="{=Apple}Papal Guard Doublet +1" mesh="aa_papaldoublet" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="2.763222" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="14" leg_armor="5" arm_armor="9" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="14" leg_armor="5" arm_armor="9" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papaldoublet_h2" name="{=Apple}Papal Guard Doublet +2" mesh="aa_papaldoublet" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="2.763222" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="16" leg_armor="6" arm_armor="10" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="16" leg_armor="6" arm_armor="10" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papaldoublet_h3" name="{=Apple}Papal Guard Doublet +3" mesh="aa_papaldoublet" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="2.763222" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="18" leg_armor="7" arm_armor="11" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
+      <Armor body_armor="18" leg_armor="7" arm_armor="11" has_gender_variations="false" covers_body="true" modifier_group="cloth_unarmoured" material_type="Cloth" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papalleathervest_h0" name="{=Apple}Papal Guard Leather Vest" mesh="aa_papalleathervest" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="7.600286" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="30" leg_armor="5" arm_armor="13" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="30" leg_armor="5" arm_armor="13" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papalleathervest_h1" name="{=Apple}Papal Guard Leather Vest +1" mesh="aa_papalleathervest" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="7.600286" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="32" leg_armor="6" arm_armor="14" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="32" leg_armor="6" arm_armor="14" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papalleathervest_h2" name="{=Apple}Papal Guard Leather Vest +2" mesh="aa_papalleathervest" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="7.600286" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="34" leg_armor="7" arm_armor="15" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="34" leg_armor="7" arm_armor="15" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papalleathervest_h3" name="{=Apple}Papal Guard Leather Vest +3" mesh="aa_papalleathervest" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="7.600286" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="36" leg_armor="8" arm_armor="16" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="36" leg_armor="8" arm_armor="16" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papalcuirass_h0" name="{=Apple}Papal Guard Cuirass" mesh="aa_papalcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="13.08092" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="46" leg_armor="10" arm_armor="15" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="46" leg_armor="10" arm_armor="15" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papalcuirass_h1" name="{=Apple}Papal Guard Cuirass +1" mesh="aa_papalcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="13.08092" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="48" leg_armor="11" arm_armor="16" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="48" leg_armor="11" arm_armor="16" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papalcuirass_h2" name="{=Apple}Papal Guard Cuirass +2" mesh="aa_papalcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="13.08092" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="50" leg_armor="12" arm_armor="17" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="50" leg_armor="12" arm_armor="17" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
   <Item id="crpg_aa_papalcuirass_h3" name="{=Apple}Papal Guard Cuirass +3" mesh="aa_papalcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="13.08092" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="52" leg_armor="13" arm_armor="18" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="13" arm_armor="18" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
