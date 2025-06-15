@@ -126,25 +126,17 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             }
         }
 
-        // We want to decrease survivability of horses against melee weapon and especially against spears and pikes.
-        // By doing that we ensure that cavalry stays an archer predator while punishing cav errors like running into a wall or an obstacle
-        if (!attackInformation.IsVictimAgentHuman
-            && !attackInformation.DoesAttackerHaveMountAgent
-            && !weapon.CurrentUsageItem.IsConsumable
-            && weapon.CurrentUsageItem.IsMeleeWeapon
-            && !weapon.IsAnyConsumable())
+        // Horse HP and eHP is currently good. To adjust their performance, adjust global melee damage and global non-mounted ranged damage. Mounted ranged damage is not increase to help cavalry attack HA
+        if (!attackInformation.IsVictimAgentHuman && weapon.CurrentUsageItem.IsMeleeWeapon)
         {
-            if (
-                collisionData.StrikeType == (int)StrikeType.Thrust
-                && collisionData.DamageType == (int)DamageTypes.Pierce
-                && weapon.CurrentUsageItem.IsPolearm)
-            {
-                finalDamage *= 1.85f;
-            }
-            else
-            {
-                finalDamage *= 1.4f;
-            }
+            finalDamage *= 1.4f;
+        }
+
+        if (!attackInformation.IsVictimAgentHuman
+            && weapon.CurrentUsageItem.IsRangedWeapon
+            && !attackInformation.DoesAttackerHaveMountAgent)
+        {
+            finalDamage *= 1.3f;
         }
 
         // For bashes (with and without shield) - Not for allies cause teamdmg might reduce the "finalDamage" below zero. That will break teamhits with bashes.
