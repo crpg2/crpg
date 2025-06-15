@@ -434,7 +434,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     props.CombatMaxSpeedMultiplier *= 0.75f; // this is slowdown when ready to throw. Higher is better , do not go above 1.0
 
                     // These do not matter if props.WeaponMaxUnsteadyAccuracyPenalty is set to 0f
-                    props.WeaponUnsteadyBeginTime = 1.0f + weaponSkill * 0.006f + powerThrow * powerThrow / 10f * 0.4f; // Time at which your character becomes tired and the accuracy declines
+                    props.WeaponUnsteadyBeginTime = 1.0f + weaponSkill * 0.006f + powerThrow * powerThrow / 10f * 1.6f; // Time at which your character becomes tired and the accuracy declines
                     props.WeaponUnsteadyEndTime = 10f + props.WeaponUnsteadyBeginTime; // time at which your character is completely tired.
                 }
 
