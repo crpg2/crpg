@@ -620,6 +620,9 @@ character:
       desc: '
         <p>Extra movement speed when attacking penalty.</p>
         <p>Depends on the length of the weapon and <strong>STR</strong> attribute points</p>'
+    mountedWeaponPenalty:
+      title: Additional mount stats penalty
+      desc: Penalty to mount speed, maneuver, acceleration, and charge damage due to using a weapon too long for your strength.
     price:
       title: Cost
       desc: Total cost of equipped items
