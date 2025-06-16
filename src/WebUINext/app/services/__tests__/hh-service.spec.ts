@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { Region } from '~/models/region'
 
 import { getHHEventByRegion, getHHEventRemaining, } from '../hh-service'
+import type { TimeDuration } from '@internationalized/date';
 
 
 
@@ -39,12 +40,35 @@ describe('getHHEventRemaining', () => {
     end: new Date('2000-02-01T20:30:00.000Z'),
   }
 
-  it.each<[Date, number]>([
-    [new Date('2000-02-01T20:29:59.999Z'), 1],
-    [new Date('2000-02-01T20:30:00.000Z'), 0],
-    [new Date('2000-02-01T20:31:00.000Z'), 0],
-    [new Date('2000-02-01T18:30:00.000Z'), 7200000],
-    [new Date('2000-02-01T18:29:00.000Z'), 0],
+  it.each<[Date, TimeDuration | null]>([
+    [
+      new Date('2000-02-01T20:30:00.000Z'), {
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      }
+    ],
+    [
+      new Date('2000-02-01T20:31:00.000Z'), {
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      }
+    ],
+    [
+      new Date('2000-02-01T18:30:00.000Z'), {
+        hours: 2,
+        minutes: 0,
+        seconds: 0,
+      }
+    ],
+    [
+      new Date('2000-02-01T18:29:00.000Z'), {
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      }
+    ],
   ])('getHHEventRemaining - now: %s', (now, expectation) => {
     vi.setSystemTime(now)
     expect(getHHEventRemaining(event)).toEqual(expectation)

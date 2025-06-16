@@ -1,8 +1,8 @@
 // @ts-check
 import antfu from '@antfu/eslint-config'
-// @ts-expect-error TODO:
-import tailwind from '@hyoban/eslint-plugin-tailwindcss'
+import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss'
 import { fileURLToPath } from 'node:url'
+import eslintParserVue from 'vue-eslint-parser'
 
 import withNuxt from './.nuxt/eslint.config.mjs'
 
@@ -12,11 +12,6 @@ export default withNuxt(
     vue: true,
     typescript: true,
     stylistic: true,
-    settings:{
-        "better-tailwindcss": {
-            "entryPoint": "app/assets/css/main.css",
-        }
-    },
     rules: {
       'perfectionist/sort-imports': [
         'error',
@@ -35,11 +30,26 @@ export default withNuxt(
       ],
     },
   }),
-  ...tailwind.configs['flat/recommended'],
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parser: eslintParserVue,
+    },
+  },
+  {
+    plugins: {
+      'better-tailwindcss': eslintPluginBetterTailwindcss,
+    },
+    rules: {
+      ...eslintPluginBetterTailwindcss.configs['recommended-warn'].rules,
+      ...eslintPluginBetterTailwindcss.configs['recommended-error'].rules,
+      'better-tailwindcss/multiline': ['warn', { printWidth: 100 }],
+    },
+  },
   {
     settings: {
-      tailwindcss: {
-        config: fileURLToPath(new URL('./app/assets/css/main.css', import.meta.url)),
+      'better-tailwindcss': {
+        entryPoint: fileURLToPath(new URL('./app/assets/css/main.css', import.meta.url)),
       },
     },
   },

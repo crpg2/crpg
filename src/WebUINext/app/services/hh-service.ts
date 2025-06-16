@@ -57,10 +57,26 @@ export const getHHEventByRegion = (config: string, region: Region): HHEvent => {
   }
 }
 
-export const getHHEventRemaining = (event: HHEvent) => {
+function msToTimeDuration(ms: number): TimeDuration {
+  const totalSeconds = Math.floor(ms / 1000);
+
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return { hours, minutes, seconds };
+}
+
+export const getHHEventRemaining = (event: HHEvent): Required<Pick<TimeDuration, 'hours' | 'minutes' | 'seconds'>> => {
   const { start, end } = event
+
   if (!isBetween(new Date(), start, end)) {
-    return 0
+    return {
+      hours: 0,
+      minutes: 0,
+      seconds: 0
+    }
   }
-  return end.getTime() - new Date().getTime()
+
+  return msToTimeDuration(end.getTime() - new Date().getTime())
 }

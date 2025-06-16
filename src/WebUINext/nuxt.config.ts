@@ -151,8 +151,9 @@ export default defineNuxtConfig({
         '@vuelidate/core',
         '@vuelidate/validators',
         'tailwind-variants',
-        '@chenfengyuan/vue-countdown',
         '@tanstack/vue-table',
+        '@number-flow/vue',
+        '@internationalized/date'
       ],
     },
     plugins: [

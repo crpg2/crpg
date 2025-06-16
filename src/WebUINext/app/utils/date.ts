@@ -20,6 +20,10 @@ const minutesToMs = (minutes: number) => minutes * 60 * 1000
 
 export const msToHours = (ms: number) => Math.floor(ms / 60 / 60 / 1000)
 
+export const msToMinutes = (ms: number) => Math.floor(ms / 60 / 1000)
+
+export const msToSeconds = (ms: number) => Math.floor(ms / 60 / 1000)
+
 export const convertHumanDurationToMs = (duration: HumanDuration) => {
   return daysToMs(duration.days) + hoursToMs(duration.hours) + minutesToMs(duration.minutes)
 }

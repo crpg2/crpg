@@ -24,7 +24,7 @@ export const useHappyHours = () => {
 
   const onStartHHCountdown = () => {
     if (!alreadyShownHHStartedNotification.value) {
-      $notify(t('hh.notify.started'))
+      // $notify(t('hh.notify.started'))
       alreadyShownHHStartedNotification.value = true
     }
   }
@@ -32,18 +32,18 @@ export const useHappyHours = () => {
   const onEndHHCountdown = () => {
     isHHCountdownEnded.value = true
     alreadyShownHHStartedNotification.value = false
-    $notify(t('hh.notify.ended'))
+    // $notify(t('hh.notify.ended'))
   }
 
   // https://fengyuanchen.github.io/vue-countdown/
-  const transformSlotProps = (props: Record<string, number>) =>
-    Object.entries(props).reduce(
-      (out, [key, value]) => {
-        out[key] = value < 10 ? `0${value}` : String(value)
-        return out
-      },
-      {} as Record<string, string>,
-    )
+  // const transformSlotProps = (props: Record<string, number>) =>
+  //   Object.entries(props).reduce(
+  //     (out, [key, value]) => {
+  //       out[key] = value < 10 ? `0${value}` : String(value)
+  //       return out
+  //     },
+  //     {} as Record<string, string>,
+  //   )
 
   return {
     HHEvent,
@@ -52,6 +52,6 @@ export const useHappyHours = () => {
     isHHCountdownEnded,
     onEndHHCountdown,
     onStartHHCountdown,
-    transformSlotProps,
+    // transformSlotProps,
   }
 }
