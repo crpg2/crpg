@@ -72,6 +72,16 @@ internal class CrpgActivityLogsBehavior : MissionLogic
         }
     }
 
+    public void AddTeamHitReportedLogWrapper(int userId, int targetUserId, int reportedHits, int decayedHits, int unreportedHits, int onReporterHits, int damage, string weaponName)
+    {
+        AddTeamHitReportedLog(userId, targetUserId, reportedHits, decayedHits, unreportedHits, onReporterHits, damage, weaponName);
+    }
+
+    public void AddTeamHitReportedUserKickedLogWrapper(int userId, int reportedHits, int decayedHits, int unreportedHits)
+    {
+        AddTeamHitReportedUserKickedLog(userId, reportedHits, decayedHits, unreportedHits);
+    }
+
     private void OnMessageReceivedAtDedicatedServer(NetworkCommunicator fromPeer, string message)
     {
         int? userId = fromPeer.GetComponent<CrpgPeer>()?.User?.Id;
@@ -103,6 +113,30 @@ internal class CrpgActivityLogsBehavior : MissionLogic
         {
             ["targetUserId"] = targetUserId.ToString(),
             ["damage"] = damage.ToString(),
+        });
+    }
+
+    private void AddTeamHitReportedLog(int userId, int targetUserId, int reportedHits, int decayedHits, int unreportedHits, int onReporterHits, int damage, string weaponName)
+    {
+        AddLog(CrpgActivityLogType.TeamHitReported, userId, new Dictionary<string, string>
+        {
+            ["targetUserId"] = targetUserId.ToString(),
+            ["reportedHits"] = reportedHits.ToString(),
+            ["decayedHits"] = decayedHits.ToString(),
+            ["unreportedHits"] = unreportedHits.ToString(),
+            ["onReporterHits"] = onReporterHits.ToString(),
+            ["damage"] = damage.ToString(),
+            ["weapon"] = weaponName,
+        });
+    }
+
+    private void AddTeamHitReportedUserKickedLog(int userId, int reportedHits, int decayedHits, int unreportedHits)
+    {
+        AddLog(CrpgActivityLogType.TeamHitReportedUserKicked, userId, new Dictionary<string, string>
+        {
+            ["reportedHits"] = reportedHits.ToString(),
+            ["decayedHits"] = decayedHits.ToString(),
+            ["unreportedHits"] = unreportedHits.ToString(),
         });
     }
 
