@@ -6,6 +6,8 @@ import { useWelcome } from '~/composables/use-welcome'
 import {
   computeHealthPoints,
   computeLongestWeaponLength,
+  computeMountHarnessWeight,
+  computeMountSpeedBase,
   computeOverallArmor,
   computeOverallAverageRepairCostByHour,
   computeOverallPrice,
@@ -72,6 +74,8 @@ const itemsStats = computed((): CharacterOverallItemsStats => {
     longestWeaponLength: computeLongestWeaponLength(items),
     price: computeOverallPrice(items),
     weight: computeOverallWeight(items),
+    mountSpeedBase: computeMountSpeedBase(items),
+    mountHarnessWeight: computeMountHarnessWeight(items),
     ...computeOverallArmor(items),
   }
 })

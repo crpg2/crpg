@@ -33,18 +33,14 @@ import { clamp } from 'es-toolkit'
 import qs from 'qs'
 
 import type { ActivityLog, CharacterEarnedMetadata } from '~/models/activity-logs'
-import type { Character, CharacterArmorOverall, CharacterCharacteristics, CharacterEarnedData, CharacteristicConversion, CharacteristicKey, CharacterLimitations, CharacterOverallItemsStats, CharacterSpeedStats, CharacterStatistics, EquippedItem, EquippedItemId, UpdateCharacterRequest } from '~/models/character'
+import type { Character, CharacterArmorOverall, CharacterCharacteristics, CharacterEarnedData, CharacteristicConversion, CharacteristicKey, CharacterLimitations, CharacterMountSpeedStats, CharacterOverallItemsStats, CharacterSpeedStats, CharacterStatistics, EquippedItem, EquippedItemId, UpdateCharacterRequest } from '~/models/character'
 import type { Item, ItemArmorComponent } from '~/models/item'
 import type { TimeSeries, TimeSeriesItem } from '~/models/timeseries'
 
 import {
-
   CharacterArmorOverallKey,
-
   CharacterClass,
-
   CharacterEarningType,
-
 } from '~/models/character'
 import { GameMode } from '~/models/game-mode'
 import { ItemSlot, ItemType } from '~/models/item'
@@ -433,6 +429,33 @@ export const computeSpeedStats = (
   }
 }
 
+// copy from Module.Server/Common/Models/CrpgAgentStatCalculateModel.cs
+export function computeMountSpeedStats(
+  baseSpeed: number,
+  harnessWeight: number,
+  riderPerceivedWeight: number,
+): CharacterMountSpeedStats {
+  const totalEffectiveLoad = harnessWeight + riderPerceivedWeight
+  const maxLoadReference = 50 // to const?
+  const loadPercentage = Math.min(totalEffectiveLoad / maxLoadReference, 1)
+
+  const weightImpactOnSpeed = 1 / (1 + 0.333 * loadPercentage) // Cap at 1.0
+
+  const effectiveSpeed = (baseSpeed + 1) * 0.209 * weightImpactOnSpeed
+  const unmodifiedSpeed = (baseSpeed + 1) * 0.209
+
+  const speedReduction = (effectiveSpeed / unmodifiedSpeed) - 1 // e.g. -0.28 means 28% slower
+  const acceleration = 1 / (2 + 8 * loadPercentage)
+
+  return {
+    speedReduction,
+    mountAcceleration: acceleration,
+    effectiveSpeed,
+    weightImpactOnSpeed,
+    loadPercentage,
+  }
+}
+
 export const getCharacterItems = async (characterId: number) =>
   get<EquippedItem[]>(`/users/self/characters/${characterId}/items`)
 
@@ -500,6 +523,22 @@ export const computeLongestWeaponLength = (items: Item[]) => {
 // TODO: SPEC
 export const computeOverallAverageRepairCostByHour = (items: Item[]) =>
   Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))
+
+export const computeMountSpeedBase = (items: Item[]): number => {
+  const mount = items.find(item => item.type === ItemType.Mount)
+  if (!mount?.mount) {
+    return 0
+  }
+  return mount.mount.speed
+}
+
+export const computeMountHarnessWeight = (items: Item[]): number => {
+  const mountHarness = items.find(item => item.type === ItemType.MountHarness)
+  if (!mountHarness) {
+    return 0
+  }
+  return mountHarness.weight
+}
 
 export const getHeirloomPointByLevel = (level: number) =>
   level < minimumRetirementLevel ? 0 : 2 ** (level - minimumRetirementLevel)
@@ -731,29 +770,4 @@ export const validateItemNotMeetRequirement = (
   characterCharacteristics: CharacterCharacteristics,
 ) => {
   return item.requirement > characterCharacteristics.attributes.strength
-}
-export function computeMountSpeedStats(
-  baseSpeed: number,
-  harnessWeight: number,
-  riderPerceivedWeight: number,
-) {
-  const totalEffectiveLoad = harnessWeight + riderPerceivedWeight
-  const maxLoadReference = 50
-  const loadPercentage = Math.min(totalEffectiveLoad / maxLoadReference, 1)
-
-  const weightImpactOnSpeed = 1 / (1 + 0.333 * loadPercentage)
-
-  const effectiveSpeed = (baseSpeed + 1) * 0.209 * weightImpactOnSpeed
-  const unmodifiedSpeed = (baseSpeed + 1) * 0.209
-
-  const speedReduction = 1 - effectiveSpeed / unmodifiedSpeed // e.g. 0.28 means 28% slower
-  const acceleration = 1 / (2 + 8 * loadPercentage)
-
-  return {
-    speedReduction,
-    mountAcceleration: acceleration,
-    effectiveSpeed,
-    weightImpactOnSpeed,
-    loadPercentage,
-  }
 }

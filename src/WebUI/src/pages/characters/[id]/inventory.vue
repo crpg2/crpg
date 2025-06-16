@@ -521,6 +521,8 @@ await Promise.all(promises)
         :weight="itemsStats.weight"
         :longest-weapon-length="itemsStats.longestWeaponLength"
         :health-points="healthPoints"
+        :mount-speed-base="itemsStats.mountSpeedBase"
+        :mount-harness-weight="itemsStats.mountHarnessWeight"
       />
     </div>
 
