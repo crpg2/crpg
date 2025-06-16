@@ -125,7 +125,6 @@ watchEffect(() => {
         <template v-if="!character.forTournament">
           <CharacterActionRetire
             :character
-            :respec-capability
             :user-experience-multiplier="userStore.user!.experienceMultiplier"
             @retire="onRetireCharacter"
           />

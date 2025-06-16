@@ -41,7 +41,10 @@ useMainHeaderProvider(mainHeaderHeight)
         :restriction="userStore.restriction"
       />
 
-      <AppLayoutHHHeaderNotification v-if="userStore.user && !isHHCountdownEnded && HHEventRemaining !== 0" :region="userStore.user.region" />
+      <!-- v-if="userStore.user && !isHHCountdownEnded && HHEventRemaining !== 0" -->
+      <AppLayoutHHHeaderNotification
+        :region="userStore.user!.region"
+      />
 
       <div class="flex flex-wrap items-center justify-between p-3">
         <div class="flex items-center gap-4">

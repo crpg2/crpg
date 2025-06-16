@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import NumberFlow, { NumberFlowGroup } from '@number-flow/vue'
+import { useCountdown } from '@vueuse/core'
 
 import type { Region } from '~/models/region'
 
@@ -15,46 +16,51 @@ const {
   onStartHHCountdown,
 } = useHappyHours()
 
-const HHEventRemaining = computed(() => getHHEventRemaining(HHEvent.value))
+const { remaining } = useCountdown(() => getHHEventRemaining(HHEvent.value), {
+  immediate: true,
+})
+
+const hh = computed(() => Math.floor(remaining.value / 3600))
+const mm = computed(() => Math.floor((remaining.value % 3600) / 60))
+const ss = computed(() => remaining.value % 60)
 </script>
 
 <template>
-  <div class="flex items-center justify-center bg-status-success px-8 py-1">
+  <div class="bg-success px-8 py-1">
     <AppHHTooltip :region>
-      {{ HHEventRemaining }}
-      <div class="flex-1 cursor-pointer items-center gap-2 text-sm text-content-100">
+      <div
+        class="
+          flex cursor-pointer items-center justify-center gap-2 text-sm font-semibold
+          text-highlighted
+        "
+      >
         🎉
         <NumberFlowGroup>
-          <NumberFlow
-            :trend="-1"
-            :value="HHEventRemaining.hours"
-            :format="{ minimumIntegerDigits: 2 }"
-          />
-          <NumberFlow
-            prefix=":"
-            :trend="-1"
-            :value="HHEventRemaining.minutes"
-            :digits="{ 1: { max: 5 } }"
-            :format="{ minimumIntegerDigits: 2 }"
-          />
-          <NumberFlow
-            prefix=":"
-            :trend="-1"
-            :value="HHEventRemaining.seconds"
-            :digits="{ 1: { max: 5 } }"
-            :format="{ minimumIntegerDigits: 2 }"
-          />
+          <div
+            style="font-variant-numeric: tabular-nums; --number-flow-char-height: 0.85em"
+            class="font-semibold"
+          >
+            <NumberFlow
+              :trend="-1"
+              :value="hh"
+              :format="{ minimumIntegerDigits: 2 }"
+            />
+            <NumberFlow
+              prefix=":"
+              :trend="-1"
+              :value="mm"
+              :digits="{ 1: { max: 5 } }"
+              :format="{ minimumIntegerDigits: 2 }"
+            />
+            <NumberFlow
+              prefix=":"
+              :trend="-1"
+              :value="ss"
+              :digits="{ 1: { max: 5 } }"
+              :format="{ minimumIntegerDigits: 2 }"
+            />
+          </div>
         </NumberFlowGroup>
-        <!-- <VueCountdown
-          v-slot="{ hours, minutes, seconds }"
-          class="w-24"
-          :time="HHEventRemaining"
-          :transform="transformSlotProps"
-          @start="onStartHHCountdown"
-          @end="onEndHHCountdown"
-        >
-          {{ $t('dateTimeFormat.countdown', { hours, minutes, seconds }) }}
-        </VueCountdown> -->
         🎉
       </div>
     </AppHHTooltip>

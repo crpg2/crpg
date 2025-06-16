@@ -113,8 +113,6 @@ timeAgo:
   second: '秒 | 秒'
 
 dateTimeFormat:
-  # TODO: https://github.com/tc39/proposal-intl-duration-form                    at
-  countdown: '{hours}:{minutes}:{seconds}'
   dd: '{days} @:dateTime.days.short'
   mm: '{minutes} @:dateTime.minutes.short'
   hh: '{hours} @:dateTime.hours.short'
@@ -385,7 +383,7 @@ character:
       title: 段位
       tooltip:
         title: 段位
-        # prettier-igno                    re
+        # prettier-igno                                                                                re
         desc: '
           <p>你的评分决定了你的段位，并直接与自动平衡器挂钩，系统会根据段位来决定将你分配到哪支队伍。我们使用的系统是 <strong>*Glicko2</strong>。</p>
           <p>不要过于在意你的段位！最终它只是我们用来平衡队伍的工具，并不一定完全反映在 Bannerlord 中的实际技术水平。</p>

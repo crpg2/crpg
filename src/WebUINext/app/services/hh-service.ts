@@ -1,10 +1,10 @@
 import type { TimeDuration } from '@internationalized/date'
 
-import { now, toLocalTimeZone, } from '@internationalized/date'
+import { now, toLocalTimeZone } from '@internationalized/date'
 
 import type { Region } from '~/models/region'
 
-import { isBetween } from '~/utils/date'
+import { isBetween, msToSeconds } from '~/utils/date'
 
 type HHScheduleTime = Pick<TimeDuration, 'hours' | 'minutes'>
 
@@ -57,26 +57,20 @@ export const getHHEventByRegion = (config: string, region: Region): HHEvent => {
   }
 }
 
-function msToTimeDuration(ms: number): TimeDuration {
-  const totalSeconds = Math.floor(ms / 1000);
-
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
-
-  return { hours, minutes, seconds };
-}
-
-export const getHHEventRemaining = (event: HHEvent): Required<Pick<TimeDuration, 'hours' | 'minutes' | 'seconds'>> => {
+/**
+ * @returns seconds
+ */
+export const getHHEventRemaining = (event: HHEvent): number => {
   const { start, end } = event
 
-  if (!isBetween(new Date(), start, end)) {
-    return {
-      hours: 0,
-      minutes: 0,
-      seconds: 0
-    }
+  const now = new Date()
+
+  console.log({ start, end, now })
+
+  if (!isBetween(now, start, end)) {
+    console.log('!isBetween')
+    return 0
   }
 
-  return msToTimeDuration(end.getTime() - new Date().getTime())
+  return msToSeconds(end.getTime() - now.getTime())
 }
