@@ -54,10 +54,6 @@ watch(
                 size="xl"
               />
               <OIcon
-                :icon="platformToIcon[Platform.Microsoft]"
-                size="xl"
-              />
-              <OIcon
                 :icon="platformToIcon[Platform.EpicGames]"
                 size="xl"
               />

@@ -117,11 +117,11 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 if (weapon.CurrentUsageItem.WeaponFlags.HasAnyFlag(WeaponFlags.BonusAgainstShield))
                 {
                     // this bonus is on top of the native x2 in MissionCombatMechanicsHelper
-                    // so the final bonus is 4.0 for one- and two- handed axes and 3.0 for everything else. We do this instead of nerfing the impact of shield skill so shield can stay virtually unbreakable against sword.
+                    // so the final bonus is 5.0 for one- and two- handed axes and 3.5 for everything else. We do this instead of nerfing the impact of shield skill so shield can stay virtually unbreakable against sword.
                     // it is the same logic as arrows not dealing a lot of damage to horse but spears dealing extra damage to horses
                     // As we want archer to fear cavs and cavs to fear spears, we want swords to fear shielders and shielders to fear axes.
 
-                    finalDamage *= axeClass.Contains(weapon.CurrentUsageItem.WeaponClass) ? 2.0f : 1.5f;
+                    finalDamage *= axeClass.Contains(weapon.CurrentUsageItem.WeaponClass) ? 2.5f : 1.75f;
                 }
             }
         }

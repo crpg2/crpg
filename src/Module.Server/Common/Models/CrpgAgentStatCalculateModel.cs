@@ -492,6 +492,12 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 }
 
                 props.CombatMaxSpeedMultiplier *= ImpactOfStrAndWeaponLengthOnCombatMaxSpeedMultiplier(equippedItem.WeaponLength, strengthSkill);
+
+                // Thrust speed nerf for OneHandedPolearms
+                if (equippedItem.WeaponClass == WeaponClass.OneHandedPolearm)
+                {
+                    props.ThrustOrRangedReadySpeedMultiplier *= 0.9f;
+                }
             }
 
             // Mounted Archery
