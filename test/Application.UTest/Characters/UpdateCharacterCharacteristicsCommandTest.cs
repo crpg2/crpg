@@ -76,7 +76,7 @@ public class UpdateCharacterCharacteristicsCommandTest : TestBase
                     IronFlesh = 10,
                     PowerStrike = 10,
                     PowerDraw = 10,
-                    PowerThrow = 10,
+                    PowerThrow = 5,
                     Athletics = 10,
                     Riding = 10,
                     WeaponMaster = 10,
@@ -99,11 +99,11 @@ public class UpdateCharacterCharacteristicsCommandTest : TestBase
         Assert.That(stats.Attributes.Points, Is.EqualTo(0));
         Assert.That(stats.Attributes.Strength, Is.EqualTo(30));
         Assert.That(stats.Attributes.Agility, Is.EqualTo(60));
-        Assert.That(stats.Skills.Points, Is.EqualTo(0));
+        Assert.That(stats.Skills.Points, Is.EqualTo(5));
         Assert.That(stats.Skills.IronFlesh, Is.EqualTo(10));
         Assert.That(stats.Skills.PowerStrike, Is.EqualTo(10));
         Assert.That(stats.Skills.PowerDraw, Is.EqualTo(10));
-        Assert.That(stats.Skills.PowerThrow, Is.EqualTo(10));
+        Assert.That(stats.Skills.PowerThrow, Is.EqualTo(5));
         Assert.That(stats.Skills.Athletics, Is.EqualTo(10));
         Assert.That(stats.Skills.Riding, Is.EqualTo(10));
         Assert.That(stats.Skills.WeaponMaster, Is.EqualTo(10));

@@ -459,6 +459,7 @@ character:
       linked:
         oneAttrs: 1 очко атрибутов
         threeStr: 3 очка силы за каждый уровень
+        sixStr: 6 очков силы за каждый уровень
         threeAgi: 3 очка ловкости за каждый уровень
         sixAgi: 6 очков ловкости за каждый уровень
 
@@ -492,7 +493,7 @@ character:
         powerThrow:
           title: Мощный бросок
           desc: Увеличивает урон от метательного оружия на {value}
-          requires: '@:character.characteristic.requires.linked.threeStr'
+          requires: '@:character.characteristic.requires.linked.sixStr'
         athletics:
           title: Атлетика
           desc: Увеличивает вашу максимальную скорость бега и уменьшает время ее достижения
