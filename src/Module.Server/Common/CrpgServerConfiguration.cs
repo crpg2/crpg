@@ -33,6 +33,12 @@ internal static class CrpgServerConfiguration
     public static int ControlledBotsCount { get; private set; } = 0;
     public static int BaseNakedEquipmentValue { get; private set; } = 10000;
     public static Tuple<TimeSpan, TimeSpan, TimeZoneInfo>? HappyHours { get; private set; }
+    public static bool IsFriendlyFireReportEnabled { get; private set; } = true;
+    public static int FriendlyFireReportMaxHits { get; private set; } = 5;
+    public static bool IsFriendlyFireReportNotifyAdminsEnabled { get; private set; } = true;
+    public static int FriendlyFireReportDecaySeconds { get; private set; } = 60;
+    public static int FriendlyFireReportWindowSeconds { get; private set; } = 10;
+    public static bool IsFriendlyFireReportDecayOnRoundStartEnabled { get; private set; } = true;
 
     [UsedImplicitly]
     [ConsoleCommandMethod("crpg_team_balancer_clan_group_size_penalty", "Apply a rating increase to members of the same clan that are playing in the same team")]
@@ -171,5 +177,101 @@ internal static class CrpgServerConfiguration
     private static void ApplyHarmonyPatches()
     {
         BannerlordPatches.Apply();
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_ff_report_enabled", "Report friendly fire by pressing Ctrl+M")]
+    private static void SetFriendlyFireReportEnabled(string? inputStr)
+    {
+        if (inputStr == null
+            || !bool.TryParse(inputStr, out bool outputBool))
+        {
+            Debug.Print($"Invalid friendly fire report Enabled/Disabled setting: {inputStr} - must be true or false");
+            return;
+        }
+
+        IsFriendlyFireReportEnabled = outputBool;
+        Debug.Print($"--Changed: crpg_ff_report_enabled to: {outputBool}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_ff_report_max_hit_count", "Friendly fire report, max hits before kick")]
+    private static void SetFriendlyFireReportMaxHits(string? inputStr)
+    {
+        if (inputStr == null
+            || !int.TryParse(inputStr, out int outputInt)
+            || outputInt < 1
+            || outputInt > 10)
+        {
+            Debug.Print($"Invalid friendly fire report Max Hit Count setting: {inputStr} - must be an int between 1 and 10");
+            return;
+        }
+
+        FriendlyFireReportMaxHits = outputInt;
+        Debug.Print($"--Changed crpg_ff_report_max_hit_count to: {outputInt}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_ff_report_notify_admins", "Friendly fire report, notify admins")]
+    private static void SetControlMReportNotifyAdmins(string? inputStr)
+    {
+        if (inputStr == null
+            || !bool.TryParse(inputStr, out bool outputBool))
+        {
+            Debug.Print($"Invalid friendly fire report Notify Admins setting: {inputStr} - must be true or false");
+            return;
+        }
+
+        IsFriendlyFireReportNotifyAdminsEnabled = outputBool;
+        Debug.Print($"--Changed crpg_ff_report_notify_admins to: {outputBool}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_ff_report_decay_seconds", "Friendly fire report, decay time of a reported teamhit")]
+    private static void SetFriendlyFireReportDecaySeconds(string? inputStr)
+    {
+        if (inputStr == null
+            || !int.TryParse(inputStr, out int outputInt)
+            || outputInt < 0
+            || outputInt > 200)
+        {
+            Debug.Print($"Invalid friendly fire report decay seconds setting: {inputStr} - must be integer between 0 and 200");
+            return;
+        }
+
+        FriendlyFireReportDecaySeconds = outputInt;
+        Debug.Print($"--Changed crpg_ff_report_decay_seconds to: {outputInt}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_ff_report_window_seconds", "Friendly fire report, window of time to report a teamhit")]
+    private static void SetFriendlyFireReportWindowSeconds(string? inputStr)
+    {
+        if (inputStr == null
+            || !int.TryParse(inputStr, out int outputInt)
+            || outputInt < 0
+            || outputInt > 200)
+        {
+            Debug.Print($"Invalid friendly fire report window seconds setting: {inputStr} - must be integer between 0 and 200");
+            return;
+        }
+
+        FriendlyFireReportWindowSeconds = outputInt;
+        Debug.Print($"--Changed crpg_ff_report_window_seconds to: {outputInt}");
+    }
+
+    [UsedImplicitly]
+    [ConsoleCommandMethod("crpg_ff_report_decay_on_round_start", "Friendly fire report, decay all hits on round start")]
+    private static void SetFriendlyFireDecayOnRoundStart(string? inputStr)
+    {
+        if (inputStr == null
+             || !bool.TryParse(inputStr, out bool outputBool))
+        {
+            Debug.Print($"Invalid friendly fire report decay on round start setting: {inputStr} - must be true or false");
+            return;
+        }
+
+        IsFriendlyFireReportDecayOnRoundStartEnabled = outputBool;
+        Debug.Print($"--Changed crpg_ff_report_decay_on_round_start to: {outputBool}");
     }
 }

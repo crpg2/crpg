@@ -1,6 +1,7 @@
 using Crpg.Module.Common;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.Commander;
+using Crpg.Module.Common.FriendlyFireReport;
 using Crpg.Module.Common.TeamSelect;
 using Crpg.Module.Modes.Warmup;
 using Crpg.Module.Notifications;
@@ -118,6 +119,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new MultiplayerMissionAgentVisualSpawnComponent(), // expose method to spawn an agent
                 new CrpgCommanderBehaviorClient(),
                 new AmmoQuiverChangeBehaviorClient(),
+                new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
 #endif
                 dtvClient,
                 new MultiplayerTimerComponent(), // round timer
@@ -154,6 +156,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new DrowningBehavior(),
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
                 new CrpgCommanderBehaviorServer(),
+                new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),
