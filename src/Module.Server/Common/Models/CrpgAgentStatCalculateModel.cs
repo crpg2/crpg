@@ -501,8 +501,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 // Mounted skill penalty
                 props.WeaponInaccuracy /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
 
-                // Total encumbrance = armor + weapons
-                float totalEncumbrance = props.ArmorEncumbrance + props.WeaponsEncumbrance;
 
                 // Encumbrance-based inaccuracy penalty (neutral at 20, quadratic growth)
                 float encumbranceRatio = totalEncumbrance / 20.0f;
@@ -523,14 +521,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 // Clamp values to ensure gameplay safety
                 props.ReloadSpeed = MathF.Clamp(props.ReloadSpeed, 0.25f, 1.0f);
                 props.ThrustOrRangedReadySpeedMultiplier = MathF.Clamp(props.ThrustOrRangedReadySpeedMultiplier, 0.25f, 1.0f);
-
-                // In-game debug (only for player)
-                if (agent.IsMainAgent)
-                {
-                    InformationManager.DisplayMessage(new InformationMessage(
-                        $"[DEBUG] Enc: {totalEncumbrance:F1} | Rld: {props.ReloadSpeed:F2} | Thrust: {props.ThrustOrRangedReadySpeedMultiplier:F2} | Inacc: {props.WeaponInaccuracy:F2}"
-                    ));
-                }
             }
         }
 
