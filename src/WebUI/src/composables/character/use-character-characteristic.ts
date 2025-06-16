@@ -137,6 +137,9 @@ const skillRequirementsSatisfied = (
     case 'powerDraw':
       return skill <= Math.floor(characteristics.attributes.strength / 3) // TODO: move "3" to constants.json
 
+    case 'powerThrow':
+      return skill <= Math.floor(characteristics.attributes.strength / 6)
+
     case 'athletics':
     case 'riding':
     case 'weaponMaster':
@@ -144,10 +147,7 @@ const skillRequirementsSatisfied = (
 
     case 'mountedArchery':
     case 'shield':
-          return skill <= Math.floor(characteristics.attributes.agility / 6)
-
-      case 'powerThrow':
-          return skill <= Math.floor(characteristics.attributes.strength / 6)
+      return skill <= Math.floor(characteristics.attributes.agility / 6)
 
     /* c8 ignore next 2 */
     default:
@@ -217,21 +217,21 @@ export const useCharacterCharacteristic = (
     const oldCharacteristicValue = characteristicSection[characteristicKey]
 
     const costToIncrease
-      = characteristicCost(characteristicSectionKey, characteristicKey, oldCharacteristicValue)
-      - characteristicCost(characteristicSectionKey, characteristicKey, newCharacteristicValue)
+            = characteristicCost(characteristicSectionKey, characteristicKey, oldCharacteristicValue)
+              - characteristicCost(characteristicSectionKey, characteristicKey, newCharacteristicValue)
 
     characteristicDeltaSection.points += costToIncrease
 
     characteristicDeltaSection[characteristicKey]
-      = newCharacteristicValue - characteristicInitialSection[characteristicKey]
+            = newCharacteristicValue - characteristicInitialSection[characteristicKey]
 
     if (characteristicKey === 'agility') {
       characteristicsDelta.value.weaponProficiencies.points
-        += wppForAgility(newCharacteristicValue) - wppForAgility(oldCharacteristicValue)
+                += wppForAgility(newCharacteristicValue) - wppForAgility(oldCharacteristicValue)
     }
     else if (characteristicKey === 'weaponMaster') {
       characteristicsDelta.value.weaponProficiencies.points
-        += wppForWeaponMaster(newCharacteristicValue) - wppForWeaponMaster(oldCharacteristicValue)
+                += wppForWeaponMaster(newCharacteristicValue) - wppForWeaponMaster(oldCharacteristicValue)
     }
   }
 
@@ -271,8 +271,8 @@ export const useCharacterCharacteristic = (
     const points = characteristics.value[characteristicSectionKey].points
 
     const costToIncrease
-      = characteristicCost(characteristicSectionKey, characteristicKey, value + 1)
-      - characteristicCost(characteristicSectionKey, characteristicKey, value)
+            = characteristicCost(characteristicSectionKey, characteristicKey, value + 1)
+              - characteristicCost(characteristicSectionKey, characteristicKey, value)
 
     const requirementsSatisfied = characteristicRequirementsSatisfied(
       characteristicSectionKey,
