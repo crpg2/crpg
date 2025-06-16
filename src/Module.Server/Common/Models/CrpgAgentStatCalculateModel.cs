@@ -334,7 +334,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         float totalEncumbrance = props.ArmorEncumbrance + props.WeaponsEncumbrance;
         float freeWeight = 2.5f * (1 + (strengthSkill - 3f) / 30f);
         float perceivedWeight = ComputePerceivedWeight(agent);
-        props.TopSpeedReachDuration = 1.1f * (1f + perceivedWeight / 15f) * (20f / (20f + (float)Math.Pow(athleticsSkill / 120f, 2f))) + ImpactofStrAndWeaponLengthOnTimeToMaxSpeed(equippedItem != null ? equippedItem.WeaponLength : 22, strengthSkill);
+        props.TopSpeedReachDuration = 1.1f * (1f + perceivedWeight / 15f) * (20f / (20f + (float)Math.Pow(athleticsSkill / 120f, 2f))) + ImpactOfStrAndWeaponLengthOnTimeToMaxSpeed(equippedItem != null ? equippedItem.WeaponLength : 22, strengthSkill);
         float speed = 0.58f + 0.034f * athleticsSkill / 26f;
         props.MaxSpeedMultiplier = MBMath.ClampFloat(
             speed * (float)Math.Pow(361f / (361f + (float)Math.Pow(perceivedWeight, 5f)), 0.055f),
@@ -491,7 +491,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     props.HandlingMultiplier *= 1.1f;
                 }
 
-                props.CombatMaxSpeedMultiplier *= ImpactofStrAndWeaponLengthOnCombatMaxSpeedMultiplier(equippedItem.WeaponLength, strengthSkill);
+                props.CombatMaxSpeedMultiplier *= ImpactOfStrAndWeaponLengthOnCombatMaxSpeedMultiplier(equippedItem.WeaponLength, strengthSkill);
             }
 
             // Mounted Archery
@@ -591,14 +591,14 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         agentDrivenProperties.SetStat(DrivenProperty.UseRealisticBlocking, (agent.Controller != Agent.ControllerType.Player) ? 1f : 0f);
     }
 
-    private float ImpactofStrAndWeaponLengthOnCombatMaxSpeedMultiplier(int weaponLength, int strengthSkill)
+    private float ImpactOfStrAndWeaponLengthOnCombatMaxSpeedMultiplier(int weaponLength, int strengthSkill)
     {
         return Math.Min(MBMath.Lerp(0.8f, 1f, MaxWeaponLengthForStrLevel(strengthSkill) / weaponLength), 1f);
     }
 
-    private float ImpactofStrAndWeaponLengthOnTimeToMaxSpeed(int weaponLength, int strengthSkill)
+    private float ImpactOfStrAndWeaponLengthOnTimeToMaxSpeed(int weaponLength, int strengthSkill)
     {
-        return (float)Math.Max((1.2 * (weaponLength - MaxWeaponLengthForStrLevel(strengthSkill))) / MaxWeaponLengthForStrLevel(strengthSkill), 0f);
+        return (float)Math.Max(1.2 * (weaponLength - MaxWeaponLengthForStrLevel(strengthSkill)) / MaxWeaponLengthForStrLevel(strengthSkill), 0f);
     }
 
     private int MaxWeaponLengthForStrLevel(int strengthSkill)
@@ -639,6 +639,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
         return equippedItem.WeaponComponent.Weapons.Any(a => a.SwingDamage > 0);
     }
+
     private float ComputePerceivedWeight(Agent agent)
     {
         if (agent == null || agent.AgentDrivenProperties == null)
@@ -646,19 +647,20 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
         int strengthSkill = Math.Max(GetEffectiveSkill(agent, CrpgSkills.Strength), 3);
         const float awfulScaler = 3231477.548f;
+
         float[] weightReductionPolynomialFactor =
         {
-        30f / awfulScaler,
-        0.00005f / awfulScaler,
-        0.5f / awfulScaler,
-        1000000f / awfulScaler,
-        0f
-    };
+            30f / awfulScaler,
+            0.00005f / awfulScaler,
+            0.5f / awfulScaler,
+            1000000f / awfulScaler,
+            0f
+        };
 
         float weightReductionFactor = 1f / (1f + MathHelper.ApplyPolynomialFunction(strengthSkill - 3, weightReductionPolynomialFactor));
-
         float totalEncumbrance = agent.AgentDrivenProperties.ArmorEncumbrance + agent.AgentDrivenProperties.WeaponsEncumbrance;
         float freeWeight = 2.5f * (1 + (strengthSkill - 3f) / 30f);
+
         return Math.Max(totalEncumbrance - freeWeight, 0f) * weightReductionFactor;
     }
 }

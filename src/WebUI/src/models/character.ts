@@ -99,9 +99,16 @@ export interface CharacterSpeedStats {
   timeToMaxSpeed: number
   perceivedWeight: number
   maxWeaponLength: number
-
   weightReductionFactor: number
   movementSpeedPenaltyWhenAttacking: number
+}
+
+export interface CharacterMountSpeedStats {
+  speedReduction: number
+  mountAcceleration: number
+  effectiveSpeed: number
+  weightImpactOnSpeed: number
+  loadPercentage: number
 }
 
 export interface UpdateCharacterRequest {
@@ -130,6 +137,8 @@ export interface CharacterOverallItemsStats {
   mountArmor: number
   longestWeaponLength: number
   averageRepairCostByHour: number
+  mountSpeedBase: number
+  mountHarnessWeight: number
 }
 
 export enum CharacterArmorOverallKey {

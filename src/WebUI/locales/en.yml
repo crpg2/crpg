@@ -611,8 +611,8 @@ character:
       title: Current speed
       desc: ''
     mountSpeedPenalty:
-      title: "Mount Speed Penalty"
-      desc: "Reduces mount speed based on rider's perceived weight and harness weight."
+      title: Mount speed penalty
+      desc: 'Reduces mount speed based on rider''s perceived weight and harness weight'
     maxWeaponLength:
       title: Max weapon length
       desc: '
