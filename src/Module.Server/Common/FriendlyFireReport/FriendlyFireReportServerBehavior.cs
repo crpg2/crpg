@@ -1,4 +1,6 @@
 using Crpg.Module.Api.Models.Users;
+using Crpg.Module.Modes.Battle;
+using Crpg.Module.Modes.Dtv;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -43,14 +45,28 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
     // Track which peer last team-damaged a specific peer
     private readonly Dictionary<NetworkCommunicator, NetworkCommunicator> _lastTeamHitBy = new();
     private MultiplayerRoundController? _roundController;
+    private CrpgDtvServer? _dtvServerGameModeBase;
     public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
+
+    public override void OnBehaviorInitialize()
+    {
+        base.OnBehaviorInitialize();
+    }
 
     public override void AfterStart()
     {
         _roundController = Mission.Current.GetMissionBehavior<MultiplayerRoundController>();
+
         if (_roundController != null)
         {
+            _roundController.OnCurrentRoundStateChanged += OnRoundStateChanged;
             _roundController.OnRoundStarted += OnRoundStarted;
+        }
+
+        _dtvServerGameModeBase = Mission.Current.GetMissionBehavior<CrpgDtvServer>();
+        if (_dtvServerGameModeBase != null)
+        {
+            _dtvServerGameModeBase.DtvRoundStarted += OnDtvRoundStarted;
         }
     }
 
@@ -60,6 +76,11 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         if (_roundController != null)
         {
             _roundController.OnRoundStarted -= OnRoundStarted;
+        }
+
+        if (_dtvServerGameModeBase != null)
+        {
+            _dtvServerGameModeBase.DtvRoundStarted -= OnDtvRoundStarted;
         }
     }
 
@@ -77,9 +98,20 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
             return; // Still in warmup phase
         }
 
+        if (_roundController != null && _roundController.CurrentRoundState != MultiplayerRoundState.InProgress)
+        {
+            Debug.Print("MultiplayerRoundState not InProgress", 0, Debug.DebugColor.DarkYellow);
+            return; // battle ?
+        }
+
         if (affectedAgent == null || affectorAgent == null || affectedAgent == affectorAgent)
         {
             return;
+        }
+
+        if (attackCollisionData.InflictedDamage <= 0)
+        {
+            return; // blocked attacks
         }
 
         if (affectedAgent.IsMount) // Check if victim a mount
@@ -106,16 +138,16 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
             }
         }
 
+        // Same team
+        if (affectorAgent.Team == null || affectorAgent.Team.Side == BattleSideEnum.None || affectorAgent.Team != affectedAgent.Team)
+        {
+            return; // same team checks
+        }
+
         // Check if both agents are player controlled, use rider (set above) if mount was the attacker or victim
         if (!affectedAgent.IsPlayerControlled || !affectorAgent.IsPlayerControlled)
         {
             return;
-        }
-
-        // Same team
-        if (affectedAgent.Team?.TeamIndex != affectorAgent.Team?.TeamIndex)
-        {
-            return; // not a team hit
         }
 
         NetworkCommunicator? affectorNetworkPeer = affectorAgent.MissionPeer?.GetNetworkPeer(); // attacker
@@ -249,21 +281,59 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         }
     }
 
+    private void OnDtvRoundStarted(int roundNumber)
+    {
+        _lastTeamHitBy.Clear(); // clear last person to hit a peer
+
+        Debug.Print($"OnDtvRoundStarted() -- clear hits", 0, Debug.DebugColor.DarkYellow);
+        // mark all reported hits as decayed on round start but preserve data
+        if (CrpgServerConfiguration.IsFriendlyFireReportDecayOnRoundStartEnabled)
+        {
+            DecayReportedHits();
+        }
+    }
+
+    private void OnRoundStateChanged()
+    {
+        if (_roundController != null)
+        {
+            Debug.Print($"OnRoundStateChanged({_roundController.CurrentRoundState})", 0, Debug.DebugColor.DarkYellow);
+            if (_roundController.CurrentRoundState == MultiplayerRoundState.Ended)
+            {
+                Debug.Print($"Round Ended!", 0, Debug.DebugColor.DarkYellow);
+            }
+            else if (_roundController.CurrentRoundState == MultiplayerRoundState.InProgress)
+            {
+                Debug.Print($"Round Now In Progress!", 0, Debug.DebugColor.DarkYellow);
+            }
+            else if (_roundController.CurrentRoundState == MultiplayerRoundState.MatchEnded)
+            {
+                Debug.Print($"Round is MatchEnded!", 0, Debug.DebugColor.DarkYellow);
+            }
+        }
+    }
+
     private void OnRoundStarted()
     {
+        Debug.Print($"OnRoundStarted() -- clear hits", 0, Debug.DebugColor.DarkYellow);
         _lastTeamHitBy.Clear(); // clear last person to hit a peer
 
         // mark all reported hits as decayed on round start but preserve data
         if (CrpgServerConfiguration.IsFriendlyFireReportDecayOnRoundStartEnabled)
         {
-            foreach (var hitList in _teamHitHistory.Values)
+            DecayReportedHits();
+        }
+    }
+
+    private void DecayReportedHits()
+    {
+        foreach (var hitList in _teamHitHistory.Values)
+        {
+            foreach (var hit in hitList)
             {
-                foreach (var hit in hitList)
+                if (hit.WasReported)
                 {
-                    if (hit.WasReported)
-                    {
-                        hit.HasDecayed = true;
-                    }
+                    hit.HasDecayed = true;
                 }
             }
         }

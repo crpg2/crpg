@@ -187,6 +187,7 @@ internal static class CrpgServerConfiguration
             || !bool.TryParse(inputStr, out bool outputBool))
         {
             Debug.Print($"Invalid friendly fire report Enabled/Disabled setting: {inputStr} - must be true or false");
+            Debug.Print($"Current value: crpg_ff_report_enabled {IsFriendlyFireReportEnabled}");
             return;
         }
 
@@ -204,6 +205,7 @@ internal static class CrpgServerConfiguration
             || outputInt > 10)
         {
             Debug.Print($"Invalid friendly fire report Max Hit Count setting: {inputStr} - must be an int between 1 and 10");
+            Debug.Print($"Current value: crpg_ff_report_max_hit_count {FriendlyFireReportMaxHits}");
             return;
         }
 
@@ -219,6 +221,7 @@ internal static class CrpgServerConfiguration
             || !bool.TryParse(inputStr, out bool outputBool))
         {
             Debug.Print($"Invalid friendly fire report Notify Admins setting: {inputStr} - must be true or false");
+            Debug.Print($"Current value: crpg_ff_report_notify_admins {IsFriendlyFireReportNotifyAdminsEnabled}");
             return;
         }
 
@@ -236,6 +239,7 @@ internal static class CrpgServerConfiguration
             || outputInt > 200)
         {
             Debug.Print($"Invalid friendly fire report decay seconds setting: {inputStr} - must be integer between 0 and 200");
+            Debug.Print($"Current value: crpg_ff_report_decay_seconds {FriendlyFireReportDecaySeconds}");
             return;
         }
 
@@ -253,6 +257,7 @@ internal static class CrpgServerConfiguration
             || outputInt > 200)
         {
             Debug.Print($"Invalid friendly fire report window seconds setting: {inputStr} - must be integer between 0 and 200");
+            Debug.Print($"Current value: crpg_ff_report_window_seconds {FriendlyFireReportWindowSeconds}");
             return;
         }
 
@@ -268,6 +273,7 @@ internal static class CrpgServerConfiguration
              || !bool.TryParse(inputStr, out bool outputBool))
         {
             Debug.Print($"Invalid friendly fire report decay on round start setting: {inputStr} - must be true or false");
+            Debug.Print($"Current value: crpg_ff_report_decay_on_round_start {IsFriendlyFireReportDecayOnRoundStartEnabled}");
             return;
         }
 
