@@ -1,4 +1,8 @@
 import {
+  getItems as _getItems,
+} from '#hey-api/sdk.gen'
+// import { omitBy } from 'es-toolkit'
+import {
   brokenItemRepairPenaltySeconds,
   itemBreakChance,
   itemReforgeCostPerRank,
@@ -6,7 +10,6 @@ import {
   itemSellCostPenalty,
   itemSellGracePeriodMinutes,
 } from '~root/data/constants.json'
-// import { omitBy } from 'es-toolkit'
 
 import type { EquippedItemsBySlot } from '~/models/character'
 import type { Item, ItemRank } from '~/models/item'
@@ -14,7 +17,6 @@ import type { UserItem } from '~/models/user'
 
 import { Culture } from '~/models/culture'
 import { DamageType, ItemFamilyType, ItemFlags, ItemSlot, ItemType, ItemUsage, WeaponClass, WeaponFlags } from '~/models/item'
-
 // import type { EquippedItemsBySlot } from '~/models/character'
 // import type {
 //   ArmorMaterialType,
@@ -48,7 +50,10 @@ import { DamageType, ItemFamilyType, ItemFlags, ItemSlot, ItemType, ItemUsage, W
 
 // import { getAggregationsConfig, getVisibleAggregationsConfig } from './item-search-service'
 
-// export const getItems = () => get<Item[]>('/items')
+export const getItems = async (): Promise<Item[]> => {
+  const { data } = await _getItems({ composable: '$fetch' })
+  return data!
+}
 
 export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 

@@ -12,14 +12,13 @@ const { settings } = storeToRefs(useSettingsStore())
 
 <template>
   <nav class="flex items-center gap-5">
-    <div class="flex items-center rounded-full border border-border-200 hover:border-border-300">
+    <UButtonGroup size="sm">
       <UTooltip
         v-if="latestPatch"
         :text="$t('patchNotes.latestPatch')"
       >
         <UButton
-          size="sm"
-          variant="ghost"
+          variant="outline"
           icon="crpg:trumpet"
           :to="latestPatch.url"
           target="_blank"
@@ -34,8 +33,7 @@ const { settings } = storeToRefs(useSettingsStore())
 
       <UTooltip :text="$t('nav.main.Community')">
         <UButton
-          size="sm"
-          variant="ghost"
+          variant="outline"
           icon="crpg:discord"
           :to="settings.discord"
           target="_blank"
@@ -45,8 +43,7 @@ const { settings } = storeToRefs(useSettingsStore())
       <AppInstallationGuide>
         <UTooltip :text="$t('nav.main.Installation')">
           <UButton
-            size="sm"
-            variant="ghost"
+            variant="outline"
             icon="crpg:download"
           />
         </UTooltip>
@@ -54,8 +51,7 @@ const { settings } = storeToRefs(useSettingsStore())
 
       <UTooltip :text="$t('help.title')">
         <UButton
-          size="sm"
-          variant="ghost"
+          variant="outline"
           icon="crpg:help-circle"
           :to="{ name: 'help' }"
         />
@@ -63,13 +59,12 @@ const { settings } = storeToRefs(useSettingsStore())
 
       <UTooltip :text="$t('nav.main.Builder')">
         <UButton
-          size="sm"
-          variant="ghost"
+          variant="outline"
           icon="crpg:calculator"
           :to="{ name: 'builder' }"
         />
       </UTooltip>
-    </div>
+    </UButtonGroup>
 
     <ULink
       v-if="userStore.user"
@@ -79,13 +74,12 @@ const { settings } = storeToRefs(useSettingsStore())
       {{ $t('nav.main.Characters') }}
     </ULink>
 
-    <!--  <NuxtLink
-      :to="{ name: 'Shop' }"
-      class="text-content-300 hover:text-content-100"
-      active-class="!text-content-100"
+    <ULink
+      :to="{ name: 'shop' }"
+      active-class="text-highlighted"
     >
       {{ $t('nav.main.Shop') }}
-    </NuxtLink> -->
+    </ULink>
 
     <div class="flex items-center gap-1.5">
       <UTooltip
@@ -108,7 +102,7 @@ const { settings } = storeToRefs(useSettingsStore())
 
       <ULink
         :to="{ name: 'clans' }"
-        active-class="text-content-100"
+        active-class="text-highlighted"
       >
         {{ $t('nav.main.Clans') }}
       </ULink>
@@ -117,7 +111,7 @@ const { settings } = storeToRefs(useSettingsStore())
     <ULink
       :to="{ name: 'leaderboard' }"
       class="flex gap-1.5"
-      active-class="text-content-100"
+      active-class="text-highlighted"
     >
       <UIcon
         name="crpg:trophy-cup"

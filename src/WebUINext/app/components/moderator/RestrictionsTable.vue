@@ -149,7 +149,9 @@ const columns: TableColumn<UserRestriction>[] = [
 ]
 
 const columnVisibility = ref<VisibilityState>(
-  { ...hiddenRestrictedUser && { restrictedUser_name: false } },
+  {
+    ...(hiddenRestrictedUser && { restrictedUser_name: false }),
+  },
 )
 
 const sorting = ref<SortingState>([

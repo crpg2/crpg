@@ -208,7 +208,7 @@ export default defineAppConfig({
         {
           color: 'primary',
           variant: 'outline',
-          class: 'ring-2 ring-default',
+          class: 'ring-default',
         },
         // TODO: FIXME: //////////////////////
         {

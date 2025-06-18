@@ -16,7 +16,7 @@ const animatedPlayingCount = useTransition(() => gameServerStats.total.playingCo
 const d = ref(2)
 
 setInterval(() => {
-  d.value = Math.ceil((Math.random() * 111 + 2))
+  d.value = Math.ceil((Math.random() * 11 + 2))
 }, 1000)
 </script>
 
@@ -75,7 +75,7 @@ setInterval(() => {
           aria-hidden="true"
           will-change
         />
-        {{ $n(Number(animatedPlayingCount.toFixed(0))) }}
+        <!-- {{ $n(Number(animatedPlayingCount.toFixed(0))) }} -->
       </div>
     </div>
 
