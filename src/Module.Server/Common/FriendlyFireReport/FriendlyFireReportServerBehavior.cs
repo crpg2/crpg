@@ -1,5 +1,6 @@
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Modes.Battle;
+using Crpg.Module.Modes.Conquest;
 using Crpg.Module.Modes.Dtv;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
@@ -45,7 +46,11 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
     // Track which peer last team-damaged a specific peer
     private readonly Dictionary<NetworkCommunicator, NetworkCommunicator> _lastTeamHitBy = new();
     private MultiplayerRoundController? _roundController;
-    private CrpgDtvServer? _dtvServerGameModeBase;
+    private MultiplayerWarmupComponent? _warmupComponent;
+    private CrpgDtvServer? _crpgDtvServer;
+    private CrpgBattleServer? _crpgBattleServer;
+    private CrpgConquestServer? _crpgConquestServer;
+
     public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
 
     public override void OnBehaviorInitialize()
@@ -55,19 +60,31 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
 
     public override void AfterStart()
     {
-        _roundController = Mission.Current.GetMissionBehavior<MultiplayerRoundController>();
+        _crpgBattleServer = Mission.Current.GetMissionBehavior<CrpgBattleServer>();
+        _crpgDtvServer = Mission.Current.GetMissionBehavior<CrpgDtvServer>();
+        _crpgConquestServer = Mission.Current.GetMissionBehavior<CrpgConquestServer>();
 
-        if (_roundController != null)
+        if (_crpgBattleServer != null)
         {
-            _roundController.OnCurrentRoundStateChanged += OnRoundStateChanged;
-            _roundController.OnRoundStarted += OnRoundStarted;
+            _roundController = Mission.Current.GetMissionBehavior<MultiplayerRoundController>();
+
+            if (_roundController != null)
+            {
+                _roundController.OnRoundStarted += OnRoundControllerRoundStarted;
+            }
         }
 
-        _dtvServerGameModeBase = Mission.Current.GetMissionBehavior<CrpgDtvServer>();
-        if (_dtvServerGameModeBase != null)
+        if (_crpgDtvServer != null)
         {
-            _dtvServerGameModeBase.DtvRoundStarted += OnDtvRoundStarted;
+            _crpgDtvServer.DtvRoundStarted += OnDtvRoundStarted;
         }
+
+        if (_crpgConquestServer != null)
+        {
+            _crpgConquestServer.ConquestStageStarted += OnConquestStageStarted;
+        }
+
+        _warmupComponent = Mission.Current?.GetMissionBehavior<MultiplayerWarmupComponent>();
     }
 
     public override void OnRemoveBehavior()
@@ -75,12 +92,17 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         base.OnRemoveBehavior();
         if (_roundController != null)
         {
-            _roundController.OnRoundStarted -= OnRoundStarted;
+            _roundController.OnRoundStarted -= OnRoundControllerRoundStarted;
         }
 
-        if (_dtvServerGameModeBase != null)
+        if (_crpgDtvServer != null)
         {
-            _dtvServerGameModeBase.DtvRoundStarted -= OnDtvRoundStarted;
+            _crpgDtvServer.DtvRoundStarted -= OnDtvRoundStarted;
+        }
+
+        if (_crpgConquestServer != null)
+        {
+            _crpgConquestServer.ConquestStageStarted -= OnConquestStageStarted;
         }
     }
 
@@ -93,15 +115,17 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
             return; // If control M reporting is disabled, do not process team hits
         }
 
-        if (Mission.Current?.GetMissionBehavior<MultiplayerWarmupComponent>()?.IsInWarmup ?? false)
+        if (_warmupComponent != null && _warmupComponent.IsInWarmup)
         {
             return; // Still in warmup phase
         }
 
-        if (_roundController != null && _roundController.CurrentRoundState != MultiplayerRoundState.InProgress)
+        if (_crpgBattleServer != null)
         {
-            Debug.Print("MultiplayerRoundState not InProgress", 0, Debug.DebugColor.DarkYellow);
-            return; // battle ?
+            if (_roundController != null && _roundController.CurrentRoundState != MultiplayerRoundState.InProgress)
+            {
+                return;
+            }
         }
 
         if (affectedAgent == null || affectorAgent == null || affectedAgent == affectorAgent)
@@ -283,45 +307,28 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
 
     private void OnDtvRoundStarted(int roundNumber)
     {
-        _lastTeamHitBy.Clear(); // clear last person to hit a peer
-
-        Debug.Print($"OnDtvRoundStarted() -- clear hits", 0, Debug.DebugColor.DarkYellow);
-        // mark all reported hits as decayed on round start but preserve data
         if (CrpgServerConfiguration.IsFriendlyFireReportDecayOnRoundStartEnabled)
         {
             DecayReportedHits();
+            _lastTeamHitBy.Clear();
         }
     }
 
-    private void OnRoundStateChanged()
+    private void OnConquestStageStarted(int stageIndex)
     {
-        if (_roundController != null)
+        if (stageIndex == 0 && CrpgServerConfiguration.IsFriendlyFireReportDecayOnRoundStartEnabled)
         {
-            Debug.Print($"OnRoundStateChanged({_roundController.CurrentRoundState})", 0, Debug.DebugColor.DarkYellow);
-            if (_roundController.CurrentRoundState == MultiplayerRoundState.Ended)
-            {
-                Debug.Print($"Round Ended!", 0, Debug.DebugColor.DarkYellow);
-            }
-            else if (_roundController.CurrentRoundState == MultiplayerRoundState.InProgress)
-            {
-                Debug.Print($"Round Now In Progress!", 0, Debug.DebugColor.DarkYellow);
-            }
-            else if (_roundController.CurrentRoundState == MultiplayerRoundState.MatchEnded)
-            {
-                Debug.Print($"Round is MatchEnded!", 0, Debug.DebugColor.DarkYellow);
-            }
+            DecayReportedHits();
+            _lastTeamHitBy.Clear();
         }
     }
 
-    private void OnRoundStarted()
+    private void OnRoundControllerRoundStarted()
     {
-        Debug.Print($"OnRoundStarted() -- clear hits", 0, Debug.DebugColor.DarkYellow);
-        _lastTeamHitBy.Clear(); // clear last person to hit a peer
-
-        // mark all reported hits as decayed on round start but preserve data
         if (CrpgServerConfiguration.IsFriendlyFireReportDecayOnRoundStartEnabled)
         {
             DecayReportedHits();
+            _lastTeamHitBy.Clear();
         }
     }
 
@@ -356,7 +363,7 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
             return;
         }
 
-        if (Mission.Current?.GetMissionBehavior<MultiplayerWarmupComponent>()?.IsInWarmup ?? false)
+        if (_warmupComponent != null && _warmupComponent.IsInWarmup)
         {
             return; // Still in warmup phase
         }
