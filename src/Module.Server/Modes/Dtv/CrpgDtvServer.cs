@@ -58,7 +58,6 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private CrpgDtvWave CurrentWaveData => _dtvData.Rounds[_currentRound].Waves[_currentWave];
     private int WavesCountForCurrentRound => CurrentRoundData.Waves.Count;
     public event Action<int>? DtvRoundStarted;
-    public event Action? DtvMapEnded;
 
     [Flags]
     private enum StonePileRegenerateOptions

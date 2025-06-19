@@ -53,6 +53,7 @@ internal class CrpgConquestServer : MissionMultiplayerGameModeBase, IAnalyticsFl
     public override bool UseRoundController() => false;
 
     public MBReadOnlyList<FlagCapturePoint> AllCapturePoints { get; private set; } = new(new List<FlagCapturePoint>());
+    public event Action<int>? ConquestStageStarted;
 
     public override void OnBehaviorInitialize()
     {
@@ -335,6 +336,8 @@ internal class CrpgConquestServer : MissionMultiplayerGameModeBase, IAnalyticsFl
         {
             s.SetSpawnOverride(0.5f);
         }
+
+        ConquestStageStarted?.Invoke(stageIndex);
     }
 
     private void TickFlags()
