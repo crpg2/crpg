@@ -1,5 +1,4 @@
 import type { ItemFlat } from '~/models/item'
-// import type { AggregationConfig } from '~/models/item-search'
 
 import {
   ItemFieldCompareRule,
@@ -7,11 +6,14 @@ import {
   ItemType,
   WeaponClass,
 } from '~/models/item'
-// import { AggregationView } from '~/models/item-search'
 
-const size = 1000
+export interface AggregationOptions {
+  view: AggregationView
+  format?: ItemFieldFormat
+  compareRule?: ItemFieldCompareRule
+}
 
-export type AggregationConfig = Partial<Record<keyof ItemFlat, any>>
+export type AggregationConfig = Partial<Record<keyof ItemFlat, AggregationOptions>>
 
 export enum AggregationView {
   Range = 'Range',
@@ -21,83 +23,47 @@ export enum AggregationView {
 
 export const aggregationsConfig: AggregationConfig = {
   culture: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
   flags: {
-    chosen_filters_on_top: false,
-    conjunction: false,
     format: ItemFieldFormat.List,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
-    width: 160,
   },
   id: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    hidden: true,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
-  modId: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    hidden: true,
-    size,
-    sort: 'term',
-    view: AggregationView.Checkbox,
-  },
+  // modId: {
+  //   view: AggregationView.Checkbox,
+  // },
   new: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    hidden: true,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
   price: {
     compareRule: ItemFieldCompareRule.Less,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
-    width: 200,
   },
   requirement: {
     compareRule: ItemFieldCompareRule.Less,
     format: ItemFieldFormat.Requirement,
-    size,
     view: AggregationView.Range,
   },
   tier: {
-    chosen_filters_on_top: false,
     compareRule: ItemFieldCompareRule.Bigger,
-    conjunction: false,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   type: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    size,
-    sort: 'term',
     view: AggregationView.Radio,
   },
   upkeep: {
     compareRule: ItemFieldCompareRule.Less,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   weight: {
     compareRule: ItemFieldCompareRule.Less,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
 
@@ -105,79 +71,58 @@ export const aggregationsConfig: AggregationConfig = {
   armArmor: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   armorFamilyType: {
-    chosen_filters_on_top: false,
-    conjunction: false,
     format: ItemFieldFormat.List,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
   armorMaterialType: {
-    chosen_filters_on_top: false,
-    conjunction: false,
     format: ItemFieldFormat.List,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
   bodyArmor: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   headArmor: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   legArmor: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
 
   // Mount
   bodyLength: {
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   chargeDamage: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   hitPoints: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   maneuver: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   mountFamilyType: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
   speed: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
 
@@ -185,14 +130,9 @@ export const aggregationsConfig: AggregationConfig = {
   mountArmor: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   mountArmorFamilyType: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
 
@@ -200,68 +140,43 @@ export const aggregationsConfig: AggregationConfig = {
   handling: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   length: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   swingDamage: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Damage,
-    size,
     view: AggregationView.Range,
   },
   swingDamageType: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
   swingSpeed: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   thrustDamage: {
     compareRule: ItemFieldCompareRule.Bigger,
-    conjunction: false,
     format: ItemFieldFormat.Damage,
-    hide_zero_doc_count: true,
-    size,
     view: AggregationView.Range,
   },
   thrustDamageType: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
   thrustSpeed: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   weaponClass: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    size,
-    sort: 'term',
     view: AggregationView.Radio,
   },
   weaponUsage: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    hidden: true,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
 
@@ -269,13 +184,11 @@ export const aggregationsConfig: AggregationConfig = {
   accuracy: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   missileSpeed: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
 
@@ -283,13 +196,11 @@ export const aggregationsConfig: AggregationConfig = {
   aimSpeed: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   reloadSpeed: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
 
@@ -297,26 +208,19 @@ export const aggregationsConfig: AggregationConfig = {
   damage: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Damage,
-    size,
     view: AggregationView.Range,
   },
   damageType: {
-    chosen_filters_on_top: false,
-    conjunction: false,
-    size,
-    sort: 'term',
     view: AggregationView.Checkbox,
   },
   stackAmount: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   stackWeight: {
     compareRule: ItemFieldCompareRule.Less,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
 
@@ -324,19 +228,16 @@ export const aggregationsConfig: AggregationConfig = {
   shieldArmor: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   shieldDurability: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
   shieldSpeed: {
     compareRule: ItemFieldCompareRule.Bigger,
     format: ItemFieldFormat.Number,
-    size,
     view: AggregationView.Range,
   },
 }

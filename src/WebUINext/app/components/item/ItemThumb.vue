@@ -21,7 +21,13 @@ const error = ref<boolean>(false)
       class="size-full object-contain select-none"
       :src="src"
     >
-    <div v-else-if="error" class="flex size-full flex-col items-center justify-center gap-1 overflow-hidden p-2 text-center  text-dimmed">
+    <div
+      v-else-if="error"
+      class="
+        flex size-full flex-col items-center justify-center gap-1 overflow-hidden p-2 text-center
+        text-dimmed
+      "
+    >
       <UIcon
         name="crpg:error"
         class="size-8"

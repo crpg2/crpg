@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import type { TableColumn, TabsItem } from '@nuxt/ui'
-import type { ColumnFiltersState, PaginationState, VisibilityState } from '@tanstack/vue-table'
+import type { ColumnFiltersState, PaginationState, RowSelectionState, VisibilityState } from '@tanstack/vue-table'
 
-import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { UContainer } from '#components'
+import { createColumn, getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
+import { ShopGridItemMedia, UCheckbox, UContainer, UInput } from '#components'
+import { h } from '#imports'
 import { pick } from 'es-toolkit'
 
-import type { WeaponClass } from '~/models/item'
+import type { ItemFlat, WeaponClass } from '~/models/item'
+import type { AggregationOptions } from '~/services/item-search-service/aggregations'
 
-import { type Item, type ItemFlat, ItemType } from '~/models/item'
+import { ItemType } from '~/models/item'
 import { SomeRole } from '~/models/role'
 import { aggregationsConfig, aggregationsKeysByItemType, aggregationsKeysByWeaponClass } from '~/services/item-search-service/aggregations'
 import { createItemIndex } from '~/services/item-search-service/indexator'
@@ -131,70 +133,103 @@ function getInitialPaginationState(): PaginationState {
 
 const pagination = ref<PaginationState>(getInitialPaginationState())
 
-const globalFilter = ref('')
+// const globalFilter = ref('')
+
+const visibleAggregationKeys = computed(() => [
+  ...aggregationsKeysByItemType[itemType.value] ?? [],
+  ...(weaponClass.value ? (aggregationsKeysByWeaponClass[weaponClass.value] ?? []) : []),
+])
+
+function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
+  return { accessorKey: key }
+}
+
+const rowSelection = ref<RowSelectionState>({})
+const [isCompareMode, toggleCompareMode] = useToggle()
+watch(isCompareMode, () => {
+  table.value?.tableApi.getColumn('modId')?.setFilterValue(
+    isCompareMode.value
+      // ? ['crpg_black_longdagger_v1_h0_OneHandedWeapon_Dagger']
+      ? table.value?.tableApi.getSelectedRowModel().rows.map(row => row.original.modId)
+      : undefined,
+  )
+})
 
 const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
-    // {
-    //   accessorKey: 'type',
-    // },
-    // {
-    //   accessorKey: 'weaponClass',
-    // },
-    // {
-    //   accessorKey: 'name',
-    // },
-    // {
-    //   accessorKey: 'culture',
-    // },
-    ...Object.keys(aggregationsConfig).map(key => ({
-      accessorKey: key,
-    })),
+
+    {
+      id: 'select',
+      header: ({ table }) => h(UCheckbox, {
+        'modelValue': table.getIsSomePageRowsSelected()
+          ? 'indeterminate'
+          : table.getIsAllPageRowsSelected(),
+        'onUpdate:modelValue': (value: boolean | 'indeterminate') =>
+          table.toggleAllPageRowsSelected(!!value),
+        // 'aria-label': 'Select all',
+        'size': 'xl',
+      }),
+      cell: ({ row }) => h(UCheckbox, {
+        'modelValue': row.getIsSelected(),
+        'onUpdate:modelValue': (value: boolean | 'indeterminate') => row.toggleSelected(!!value),
+        // 'aria-label': 'Select row',
+        'size': 'xl',
+      }),
+    },
+    {
+      accessorKey: 'name',
+      // @ts-expect-error TODO:
+      header: ({ column }) => h(UInput, {
+        'icon': 'crpg:search',
+        'variant': 'ghost',
+        'size': 'xs',
+        'placeholder': t('action.search'),
+        'modelValue': column.getFilterValue() as string,
+        'onUpdate:modelValue': column.setFilterValue,
+      }),
+      cell: ({ row }) => h(ShopGridItemMedia, {
+        item: row.original,
+        showTier: true,
+      }),
+    },
+    {
+      accessorKey: 'modId',
+      filterFn: 'arrIncludesSome',
+    },
+    ...Object.entries(aggregationsConfig)
+      .sort(([a], [b]) => {
+        const indexA = visibleAggregationKeys.value.indexOf(a as keyof ItemFlat)
+        const indexB = visibleAggregationKeys.value.indexOf(b as keyof ItemFlat)
+        return indexA === -1 ? (indexB === -1 ? 0 : 1) : (indexB === -1 ? -1 : indexA - indexB)
+      })
+      .map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
   ]
 })
 
 // const c = computed()
 const columnVisibility = computed<VisibilityState>(() => {
-  const visibleKeys = [
-    ...aggregationsKeysByItemType[itemType.value] ?? [],
-    ...(weaponClass.value ? (aggregationsKeysByWeaponClass[weaponClass.value] ?? []) : []),
-  ]
   return {
     ...Object.keys(aggregationsConfig).reduce((out, key) => {
-      out[key] = visibleKeys.includes(key as keyof ItemFlat)
+      out[key] = visibleAggregationKeys.value.includes(key as keyof ItemFlat)
       return out
     }, {} as VisibilityState),
-    // ...Object.keys(aggregationsKeysByItemType[itemType.value])?.reduce((out, key) => {
-    //   out[key] = ture
-    //   return out
-    // }, {}),
-    // ...Object.keys(aggregationsConfig)
-    // ...aggregationsKeysByItemType
-    // // culture: true,
-    // ...(itemType.value === ItemType.Shield && {
-    //   culture: false,
-    // }),
-    // ...hiddenRestrictedUser && { restrictedUser_name: false }
+    modId: true,
   }
 })
 
 // preFacet
 const allTypes = computed<ItemType[]>(() => {
   // const rows = table.value?.tableApi.getPreFilteredRowModel().rows
-
   // if (!rows) {
   //   return []
   // }
-
   const set = new Set<ItemType>()
-
   for (const { type } of flatItems.value) {
     // const value = row.getValue('type')
     // if (value) {
     set.add(type)
     // }
   }
-
   return Array.from(set)
 })
 </script>
@@ -202,8 +237,11 @@ const allTypes = computed<ItemType[]>(() => {
 <template>
   <UContainer class="max-w-full py-6">
     <!-- {{ allTypes }} -->
-    {{ { itemType } }}
-    {{ { weaponClass } }}
+    <!-- {{ { itemType, weaponClass, rowSelection } }}
+
+    {{ table?.tableApi.getSelectedRowModel().rows.map(row => row.original.modId) }} -->
+    {{ table?.tableApi.getState().columnFilters }}
+
     <UTabs
       v-model="itemType"
       :items="(allTypes)
@@ -212,18 +250,31 @@ const allTypes = computed<ItemType[]>(() => {
           value: type,
         }))"
       :content="false"
+      size="xl"
+      :ui="{
+        list: 'w-auto',
+        root: 'flex-row',
+        trigger: 'min-w-16 h-16',
+        leadingIcon: 'size-7',
+      }"
     >
-      <template #default="{ item }">
+      <template v-if="hasWeaponClassesByItemType(itemType)" #default="{ item }">
         <UTabs
           v-if="hasWeaponClassesByItemType(itemType) && item.value === itemType && weaponClass"
           v-model="weaponClass"
           :items="([...table?.tableApi.getColumn('weaponClass')?.getFacetedUniqueValues().keys() || []] as WeaponClass[])
-            // .filter(weaponClass => getWeaponClassesByItemType(itemType).includes(weaponClass))
+            .filter(weaponClass => getWeaponClassesByItemType(itemType).includes(weaponClass))
             .map<TabsItem>((weaponClass) => ({
               icon: `crpg:${weaponClassToIcon[weaponClass]}`,
               value: weaponClass,
             }))"
           :content="false"
+          size="xl"
+          :ui="{
+            list: 'w-auto',
+            root: 'flex-row',
+            leadingIcon: 'size-7',
+          }"
         />
       </template>
     </UTabs>
@@ -235,6 +286,7 @@ const allTypes = computed<ItemType[]>(() => {
       v-model:pagination="pagination"
       v-model:column-filters="columnFilters"
       v-model:column-visibility="columnVisibility"
+      v-model:row-selection="rowSelection"
       class="relative rounded-md border border-muted"
       :data="flatItems"
       :columns
@@ -253,6 +305,18 @@ const allTypes = computed<ItemType[]>(() => {
         <UiResultNotFound />
       </template>
     </UTable>
+
+    <br>
+
+    <!-- v-if="Object.keys(rowSelection).length >= 2" -->
+    <UButton
+      size="lg"
+      variant="subtle"
+      :icon="isCompareMode ? 'crpg:close' : undefined"
+      data-aq-shop-handler="toggle-compare"
+      :label="$t('shop.compare.title')"
+      @click="() => { toggleCompareMode() }"
+    />
 
     <UPagination
       v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()"
