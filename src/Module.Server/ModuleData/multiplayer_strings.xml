@@ -68,6 +68,19 @@
   <string id="str_notification.entities_removed" text="{=I5MWE5AR}{ENTITY_COUNT} entities were removed from the map given the population size." />
   <string id="str_notification.moved_to_spectator" text="{=iN5cT1v3}You have been moved to spectator due to inactivity!" />
   
+  <!-- Friendly Fire Reporting -->
+  <string id="str_ff_teamhit_msg_notify_attacker" text="{=S4FzPA70}{VICTIM} reported your team hit. (Dmg: {DAMAGE}) {HITSACTIVE}/{HITSMAX}team hits until kick." />
+  <string id="str_ff_teamhit_msg_notify_victim" text="{=1Vw2P1hD}Reported {ATTACKER} for team hit (Dmg: {DAMAGE})." />
+  <string id="str_ff_teamhit_msg_notify_admins" text="{=vNmyS3cU}{ATTACKER} reported by {VICTIM}. [{HITSACTIVE}/{HITSMAX}] decayed: {HITSDECAYED} not reported: {HITSNOTREPORTED} on reporter: {HITSONVICTIM}" />
+  <string id="str_ff_teamhit_msg_kick_notify_attacker" text="{=uPwSqhuA}You have been kicked for excessive team hits ({HITSMAX})." />
+  <string id="str_ff_teamhit_msg_kick_notify_others" text="{=MdIKl2Bv}{ATTACKER} has been kicked for excessive team hits ({HITSMAX})." />
+  <string id="str_ff_teamhit_msg_reporting_disabled" text="{=Chi61w9L}Friendly fire reporting is currently disabled on this server." />
+  <string id="str_ff_teamhit_msg_no_peer_found" text="{=xq7QtuZ0}No connected attacker peer found for your report." />
+  <string id="str_ff_teamhit_msg_no_hit_found" text="{=zD8mGERY}No recent team hit found to report." />
+  <string id="str_ff_teamhit_msg_window_expired" text="{=KgZprgXA}Time expired to report {ATTACKER} for teamhit." />
+  <string id="str_ff_teamhit_msg_report_prompt" text="{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press Ctrl+M if you believe this was intentional." />
+  <string id="str_ff_teamhit_msg_report_prompt_window" text="{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press Ctrl+M if you believe this was intentional {TIMELEFT} seconds remaining." />
+
   <!-- Battle Maps -->
   <string id="str_multiplayer_scene_name.crpg_battle_abandoned" text="{=PKVPlAeE}Abandoned" />
   <string id="str_multiplayer_scene_name.crpg_battle_acaciacitadel" text="{=tZJ32ZRQ}Acacia Citadel" />

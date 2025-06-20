@@ -126,7 +126,7 @@ internal class CrpgActivityLogsBehavior : MissionLogic
             ["unreportedHits"] = unreportedHits.ToString(),
             ["onReporterHits"] = onReporterHits.ToString(),
             ["damage"] = damage.ToString(),
-            ["weapon"] = weaponName,
+            ["weapon"] = weaponName.ToString(),
         });
     }
 
