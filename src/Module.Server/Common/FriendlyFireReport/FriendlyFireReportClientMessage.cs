@@ -27,6 +27,6 @@ internal sealed class FriendlyFireReportClientMessage : GameNetworkMessage
 
     protected override string OnGetLogFormat()
     {
-        return "FriendlyFireReportClientMessage - Report Last Teamhit";
+        return "Report Last Teamhit";
     }
 }

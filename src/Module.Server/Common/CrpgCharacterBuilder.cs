@@ -59,8 +59,6 @@ internal static class CrpgCharacterBuilder
             AddEquipment(equipment, index, equippedItem.UserItem.ItemId);
         }
 
-        AddEquipment(equipment, EquipmentIndex.Weapon3, "crpg_bracketed_heater_shield_v4_h1");
-
         return equipment;
     }
 
