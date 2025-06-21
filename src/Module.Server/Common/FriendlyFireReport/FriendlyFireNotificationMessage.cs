@@ -47,6 +47,6 @@ internal sealed class FriendlyFireNotificationMessage : GameNetworkMessage
 
     protected override string OnGetLogFormat()
     {
-        return $"[FriendlyFireNotificationMessage ] ({Mode}) {Message}";
+        return $"({Mode}) {Message}";
     }
 }

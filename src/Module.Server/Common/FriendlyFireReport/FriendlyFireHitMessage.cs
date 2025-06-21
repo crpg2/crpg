@@ -46,6 +46,6 @@ internal sealed class FriendlyFireHitMessage : GameNetworkMessage
 
     protected override string OnGetLogFormat()
     {
-        return $"[FF Message] Hit by agent index {AttackerAgentIndex} for {Damage} damage. window: {ReportWindow}";
+        return $"Hit by agent index {AttackerAgentIndex} for {Damage} damage. window: {ReportWindow}";
     }
 }

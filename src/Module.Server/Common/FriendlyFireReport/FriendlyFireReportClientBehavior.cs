@@ -34,8 +34,6 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork
                     {
                         if (!_expiredMessageShown)
                         {
-                            // InformationManager.DisplayMessage(new InformationMessage($"[FF] Time expired to report {_lastAttackerName} for teamhit.", Colors.Yellow));
-                            // TextObject windowExpiredText = GameTexts.FindText("str_ff_teamhit_msg_window_expired");
                             TextObject windowExpiredText = new("{=KgZprgXA}Time expired to report {ATTACKER} for teamhit.");
                             windowExpiredText.SetTextVariable("ATTACKER", _lastAttackerName);
 
@@ -107,16 +105,12 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork
 
         if (_reportWindowSeconds <= 0) // no window
         {
-            // InformationManager.DisplayMessage(new InformationMessage($"[FF] Team hit by {_lastAttackerName} (Dmg: {message.Damage}). Press Ctrl+M to mark that you believe this was intentional.", Colors.Yellow));
-            // TextObject windowExpiredText = GameTexts.FindText("str_ff_teamhit_msg_report_prompt");
             TextObject reportPrompText = new("{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press Ctrl+M if you believe this was intentional.");
             reportPrompText.SetTextVariable("ATTACKER", _lastAttackerName);
             reportPrompText.SetTextVariable("DAMAGE", message.Damage);
         }
         else if (_reportWindowSeconds > 0) // has window
         {
-            // InformationManager.DisplayMessage(new InformationMessage($"[FF] Team hit by {_lastAttackerName} (Dmg: {message.Damage}). Press Ctrl+M to mark that you believe this was intentional {_reportWindowSeconds} seconds remaining."));
-            // TextObject windowExpiredText = GameTexts.FindText("str_ff_teamhit_msg_report_prompt_window");
             TextObject reportPrompNoTimeText = new("{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press Ctrl+M if you believe this was intentional {TIMELEFT} seconds remaining.");
             reportPrompNoTimeText.SetTextVariable("ATTACKER", _lastAttackerName);
             reportPrompNoTimeText.SetTextVariable("DAMAGE", message.Damage);
@@ -140,7 +134,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork
                 msgColor = Colors.Yellow;
                 break;
             case FriendlyFireMessageMode.TeamDamageReportForVictim:
-                msgColor = Colors.Blue;
+                msgColor = Colors.Cyan;
                 break;
             case FriendlyFireMessageMode.TeamDamageReportForAdmins:
                 msgColor = Colors.Magenta;

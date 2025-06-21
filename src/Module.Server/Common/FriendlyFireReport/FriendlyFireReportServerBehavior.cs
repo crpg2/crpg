@@ -353,8 +353,6 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         {
             if (peer != null && peer.IsConnectionActive)
             {
-                // SendClientDisplayMessage(peer, "[FF] Friendly fire reporting is currently disabled on this server.", FriendlyFireMessageMode.TeamDamageReportError);
-                // TextObject reportingDisabledText = GameTexts.FindText("str_ff_teamhit_msg_reporting_disabled");
                 TextObject reportingDisabledText = new("{=Chi61w9L}Friendly fire reporting is currently disabled on this server.");
                 SendClientDisplayMessage(peer, reportingDisabledText.ToString(), FriendlyFireMessageMode.TeamDamageReportError);
             }
@@ -379,8 +377,6 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
 
         if (attackingPeer == null || !attackingPeer.IsConnectionActive)
         {
-            // SendClientDisplayMessage(peer, "[FF] No connected attacker peer found for your report.", FriendlyFireMessageMode.TeamDamageReportError);
-            // TextObject noPeerFoundText = GameTexts.FindText("str_ff_teamhit_msg_no_peer_found");
             TextObject noPeerFoundText = new("{=xq7QtuZ0}No connected attacker peer found for your report.");
             SendClientDisplayMessage(peer, noPeerFoundText.ToString(), FriendlyFireMessageMode.TeamDamageReportError);
             return; // Attacker is not active
@@ -399,8 +395,6 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         }
         else
         {
-            // SendClientDisplayMessage(peer, "[FF] No recent team hit found to report.", FriendlyFireMessageMode.TeamDamageReportError);
-            // TextObject noRecentHitText = GameTexts.FindText("str_ff_teamhit_msg_no_hit_found");
             TextObject noRecentHitText = new("{=zD8mGERY}No recent team hit found to report.");
             SendClientDisplayMessage(peer, noRecentHitText.ToString(), FriendlyFireMessageMode.TeamDamageReportError);
             return; // No recent unreported hit found
@@ -412,8 +406,6 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         int maxHits = CrpgServerConfiguration.FriendlyFireReportMaxHits;
 
         // Notify the attacker about the report
-        // SendClientDisplayMessage(attackingPeer, $"[FF] {peer.UserName} reported your team hit (Dmg: {recentHit.Damage}). {countActive}/{maxHits} team hits until getting kicked.", FriendlyFireMessageMode.TeamDamageReportForAttacker);
-        // TextObject notifyAttackerText = GameTexts.FindText("str_ff_teamhit_msg_notify_attacker");
         TextObject notifyAttackerText = new("{=S4FzPA70}[FF] {VICTIM} reported your team hit. (Dmg: {DAMAGE}) {HITSACTIVE}/{HITSMAX} team hits until kick.");
         notifyAttackerText.SetTextVariable("VICTIM", peer.UserName);
         notifyAttackerText.SetTextVariable("DAMAGE", recentHit.Damage);
@@ -422,8 +414,6 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         SendClientDisplayMessage(attackingPeer, notifyAttackerText.ToString(), FriendlyFireMessageMode.TeamDamageReportForAttacker);
 
         // Notify the victim about the report
-        // SendClientDisplayMessage(peer, $"[FF] Reported {attackingPeer.UserName} for team hit (Dmg: {recentHit.Damage}).");
-        // TextObject notifyVictimText = GameTexts.FindText("str_ff_teamhit_msg_notify_victim");
         TextObject notifyVictimText = new("{=1Vw2P1hD}Reported {ATTACKER} for team hit (Dmg: {DAMAGE}).");
         notifyVictimText.SetTextVariable("ATTACKER", attackingPeer.UserName);
         notifyVictimText.SetTextVariable("DAMAGE", recentHit.Damage);
@@ -432,8 +422,6 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         // Notify all admins about the report
         if (CrpgServerConfiguration.IsFriendlyFireReportNotifyAdminsEnabled)
         {
-            // SendClientDisplayMessageToAdmins($"[FF] {attackingPeer.UserName} reported by {peer.UserName}. [{countActive}/{maxHits}] decayed: {countDecayed} not reported: {countNotReported} on reporter: {countAttacksOnVictim}");
-            // TextObject notifyAdminsText = GameTexts.FindText("str_ff_teamhit_msg_notify_admins");
             TextObject notifyAdminsText = new("{=vNmyS3cU}{ATTACKER} reported by {VICTIM}. [{HITSACTIVE}/{HITSMAX}] decayed: {HITSDECAYED} not reported: {HITSNOTREPORTED} on reporter: {HITSONVICTIM}");
             notifyAdminsText.SetTextVariable("ATTACKER", attackingPeer.UserName);
             notifyAdminsText.SetTextVariable("VICTIM", peer.UserName);
@@ -450,14 +438,10 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
 
         if (countActive >= maxHits)
         {
-            // SendClientDisplayMessage(attackingPeer, $"[FF] You have been kicked for excessive team hits ({maxHits})", FriendlyFireMessageMode.TeamDamageReportKick);
-            // TextObject notifyAttackerKickText = GameTexts.FindText("str_ff_teamhit_msg_kick_notify_attacker");
             TextObject notifyAttackerKickText = new("{=uPwSqhuA}You have been kicked for excessive team hits ({HITSMAX})");
             notifyAttackerKickText.SetTextVariable("HITSMAX", maxHits);
             SendClientDisplayMessage(attackingPeer, notifyAttackerKickText.ToString(), FriendlyFireMessageMode.TeamDamageReportKick);
 
-            // SendClientDisplayMessageToAllExcept(attackingPeer, $"[FF] {attackingPeer.UserName} has been kicked for excessive team hits ({maxHits}).", FriendlyFireMessageMode.TeamDamageReportKick);
-            // TextObject notifyOthersKickText = GameTexts.FindText("str_ff_teamhit_msg_kick_notify_others");
             TextObject notifyOthersKickText = new("{=MdIKl2Bv}{ATTACKER} has been kicked for excessive team hits ({HITSMAX}).");
             notifyOthersKickText.SetTextVariable("ATTACKER", attackingPeer.UserName);
             notifyOthersKickText.SetTextVariable("HITSMAX", maxHits);
