@@ -134,11 +134,6 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
             return;
         }
 
-        if (attackCollisionData.InflictedDamage <= 0)
-        {
-            return; // blocked attacks
-        }
-
         if (affectedAgent.IsMount) // Check if victim a mount
         {
             if (affectedAgent.RiderAgent != null && affectedAgent.RiderAgent.IsActive())
@@ -173,6 +168,11 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         if (!affectedAgent.IsPlayerControlled || !affectorAgent.IsPlayerControlled)
         {
             return;
+        }
+
+        if (attackCollisionData.InflictedDamage <= 0 || attackCollisionData.AttackBlockedWithShield)
+        {
+            return; // blocked attack or shield
         }
 
         NetworkCommunicator? affectorNetworkPeer = affectorAgent.MissionPeer?.GetNetworkPeer(); // attacker

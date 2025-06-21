@@ -140,7 +140,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork
                 msgColor = Colors.Yellow;
                 break;
             case FriendlyFireMessageMode.TeamDamageReportForVictim:
-                msgColor = Colors.Red;
+                msgColor = Colors.Blue;
                 break;
             case FriendlyFireMessageMode.TeamDamageReportForAdmins:
                 msgColor = Colors.Magenta;
