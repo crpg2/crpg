@@ -22,6 +22,7 @@
     <ContentWithTargetPath Include="MapRotation\*.txt" TargetPath="..\..\%(Filename).txt" CopyToOutputDirectory="Always" />
     <Compile Remove="..\Module.Server\HarmonyPatches\MissionNetworkComponentPatch.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\SendPeerInformationsToPeerPatch.cs" />
+    <Compile Remove="..\Module.Server\Common\FriendlyFireReport\FriendlyFireReportClientBehavior.cs" />
   </ItemGroup>
 
   <ItemGroup>
