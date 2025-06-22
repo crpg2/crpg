@@ -121,7 +121,11 @@ watchEffect(() => {
       />
     </div>
 
-    <div class="sticky bottom-0 left-0 flex w-full max-w-4xl items-center justify-center gap-4 py-3 backdrop-blur-sm">
+    <div
+      class="
+        sticky bottom-0 left-0 flex w-full max-w-4xl items-center justify-center
+        gap-4 py-3 backdrop-blur-sm
+      ">
       <UButton
         :disabled="!wasChangeMade"
         color="secondary"
@@ -133,7 +137,7 @@ watchEffect(() => {
         @click="resetCharacterCharacteristicBuilder"
       />
 
-      <AppConfirmActionTooltip @confirm="onCommitCharacterCharacteristics">
+      <AppConfirmActionPopover @confirm="onCommitCharacterCharacteristics">
         <UButton
           size="lg"
           icon="crpg:check"
@@ -141,7 +145,7 @@ watchEffect(() => {
           :label="$t('action.commit')"
           data-aq-commit-action
         />
-      </AppConfirmActionTooltip>
+      </AppConfirmActionPopover>
 
       <USeparator orientation="vertical" class="h-8" />
 

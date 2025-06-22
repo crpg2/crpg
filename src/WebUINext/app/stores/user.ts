@@ -6,11 +6,9 @@ import {
 // import type { Character } from '~/models/character'
 // import type { UserItem } from '~/models/user'
 // import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import type { Character } from '~/models/character'
-
 import { getCharacters } from '~/services/character-service'
 import {
-  //   buyUserItem,
+  buyUserItem,
   getUser,
   getUserItems,
   getUserRestriction,
@@ -79,28 +77,15 @@ export const useUserStore = defineStore('user', () => {
     { resetOnExecute: false, immediate: false },
   )
 
-  const subtractGold = (loss: number) => {
-    if (!user.value) {
-      return
-    }
-    user.value.gold -= loss
+  const buyItem = async (itemId: string) => {
+    await buyUserItem(itemId)
+    Promise.all([fetchUserItems(), fetchUser()])
   }
-
-  // const addUserItem = (userItem: UserItem) => {
-  //   userItems.value.push(userItem)
-  // }
-
-  // const { execute: buyItem, loading: buyingItem } = useAsyncCallback(async (itemId: string) => {
-  //   const userItem = await buyUserItem(itemId)
-  //   addUserItem(userItem)
-  //   subtractGold(userItem.item.price)
-  // })
 
   return {
     user,
     fetchUser,
     isRecentUser,
-    subtractGold,
 
     clan: toRef(() => user.value?.clanMembership?.clan ?? null),
     clanMemberRole: toRef(() => user.value?.clanMembership?.role || null),
@@ -114,8 +99,7 @@ export const useUserStore = defineStore('user', () => {
     userItems,
     fetchUserItems,
 
-    //   buyItem,
-    //   buyingItem,
+    buyItem,
 
     restriction,
     fetchUserRestriction,

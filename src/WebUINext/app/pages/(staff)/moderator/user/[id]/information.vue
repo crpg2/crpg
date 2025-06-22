@@ -294,7 +294,7 @@ const totalRewardValues = computed(() => {
             <USwitch v-model="rewardFormModel.autoRetire" />
           </UFormField>
 
-          <USeparator class="col-span-3 " />
+          <USeparator class="col-span-3" />
 
           <div class="col-span-3 space-y-4">
             <!-- TODO: to cmp -->
@@ -304,7 +304,11 @@ const totalRewardValues = computed(() => {
             >
               <AppLoom :point="moderationUser.heirloomPoints" />
               ->
-              <AppLoom :point="totalRewardValues.heirloomPoints" :class="[rewardFormModel.heirloomPoints < 0 ? 'text-status-danger' : 'text-status-success']" />
+              <AppLoom
+                :point="totalRewardValues.heirloomPoints" :class="[rewardFormModel.heirloomPoints < 0 ? `
+                  text-status-danger
+                ` : `text-status-success`]"
+              />
             </div>
 
             <div
@@ -313,14 +317,22 @@ const totalRewardValues = computed(() => {
             >
               <AppCoin :value="moderationUser.gold" />
               ->
-              <AppCoin :value="totalRewardValues.gold" :class="[rewardFormModel.gold < 0 ? 'text-status-danger' : 'text-status-success']" />
+              <AppCoin
+                :value="totalRewardValues.gold" :class="[rewardFormModel.gold < 0 ? `
+                  text-status-danger
+                ` : `text-status-success`]"
+              />
             </div>
 
             <template v-if="rewardFormModel.experience">
               <div class="flex items-center gap-2 font-bold">
                 <AppExperience :value="selectedCharacter.experience" />
                 ->
-                <AppExperience :value="totalRewardValues.experience" :class="[rewardFormModel.experience < 0 ? 'text-status-danger' : 'text-status-success']" />
+                <AppExperience
+                  :value="totalRewardValues.experience" :class="[rewardFormModel.experience < 0 ? `
+                    text-status-danger
+                  ` : `text-status-success`]"
+                />
               </div>
 
               <div
@@ -344,7 +356,9 @@ const totalRewardValues = computed(() => {
                 <span>-></span>
                 <span
                   class="text-status-success"
-                  :class="[rewardFormModel.experience < 0 ? 'text-status-danger' : 'text-status-success']"
+                  :class="[rewardFormModel.experience < 0 ? 'text-status-danger' : `
+                    text-status-success
+                  `]"
                 >
                   {{ totalRewardValues.level }}
                 </span>
@@ -353,14 +367,14 @@ const totalRewardValues = computed(() => {
           </div>
         </div>
 
-        <AppConfirmActionTooltip
+        <AppConfirmActionPopover
           :confirm-label="$t('action.ok')"
           title="Are you sure you want to reward this user?"
           placement="bottom"
           @confirm="onSubmitRewardForm"
         >
           <UButton size="lg" label="Submit" :loading="rewarding" />
-        </AppConfirmActionTooltip>
+        </AppConfirmActionPopover>
       </UForm>
     </UCard>
 

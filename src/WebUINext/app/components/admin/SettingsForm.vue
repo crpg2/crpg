@@ -58,7 +58,7 @@ watch(() => props.settings, () => {
         :label="$t('action.reset')"
         @click="$emit('reset')"
       />
-      <AppConfirmActionTooltip
+      <ConfirmActionPopover
         :confirm-label="$t('action.ok')"
         title="Are you sure you want to remove the setting?"
         @confirm="$emit('submit', settingModel)"
@@ -68,7 +68,7 @@ watch(() => props.settings, () => {
           :loading
           :label="$t('action.save')"
         />
-      </AppConfirmActionTooltip>
+      </ConfirmActionPopover>
     </template>
   </UCard>
 </template>

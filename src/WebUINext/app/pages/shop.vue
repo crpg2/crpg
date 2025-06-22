@@ -3,28 +3,37 @@ import type { TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, PaginationState, RowSelectionState, SortingState, VisibilityState } from '@tanstack/vue-table'
 
 import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { ItemParam, ShopGridItemMedia, UCheckbox, UContainer, UInput, UiTableColumnHeader, UTooltip } from '#components'
+import { AppCoin, ItemParam, ShopGridItemBuyBtn, ShopGridItemMedia, UCheckbox, UContainer, UInput, UiTableColumnHeader, UTooltip } from '#components'
 import { h } from '#imports'
 import { pick } from 'es-toolkit'
 
 import type { ItemFlat, WeaponClass } from '~/models/item'
 import type { AggregationOptions } from '~/services/item-search-service/aggregations'
 
-import { usePageLoading } from '~/composables/utils/use-page-loading'
-import { ItemType } from '~/models/item'
-import { SomeRole } from '~/models/role'
-import { aggregationsConfig, aggregationsKeysByItemType, aggregationsKeysByWeaponClass, AggregationView } from '~/services/item-search-service/aggregations'
-import { createItemIndex } from '~/services/item-search-service/indexator'
-import { getItems, getWeaponClassesByItemType, hasWeaponClassesByItemType, itemTypeToIcon, weaponClassToIcon } from '~/services/item-service'
-
-// import type { ItemFlat } from '~/models/item'
-
 // import { useItemsCompare } from '~/composables/shop/use-compare'
 // import { useItemsFilter } from '~/composables/shop/use-filters'
 // import { useItemsSort } from '~/composables/shop/use-sort'
 // import { usePagination } from '~/composables/use-pagination'
 // import { useSearchDebounced } from '~/composables/use-search-debounce'
-// import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { useAsyncCallback } from '~/composables/utils/use-async-callback'
+import { usePageLoading } from '~/composables/utils/use-page-loading'
+import { ItemType } from '~/models/item'
+import { SomeRole } from '~/models/role'
+import {
+  aggregationsConfig,
+  aggregationsKeysByItemType,
+  aggregationsKeysByWeaponClass,
+  AggregationView,
+} from '~/services/item-search-service/aggregations'
+import { createItemIndex } from '~/services/item-search-service/indexator'
+// import type { ItemFlat } from '~/models/item'
+import {
+  getItems,
+  getWeaponClassesByItemType,
+  hasWeaponClassesByItemType,
+  itemTypeToIcon,
+  weaponClassToIcon,
+} from '~/services/item-service'
 // import { WeaponUsage } from '~/models/item'
 // import { getSearchResult } from '~/services/item-search-service'
 // import {
@@ -44,6 +53,9 @@ definePageMeta({
   // }
 })
 
+const { t, n } = useI18n()
+const toast = useToast()
+
 const userStore = useUserStore()
 const router = useRouter()
 const route = useRoute()
@@ -56,21 +68,30 @@ const {
   immediate: false,
 })
 
+const {
+  execute: buyItem,
+} = useAsyncCallback(async (item: ItemFlat) => {
+  await userStore.buyItem(item.id)
+  toast.add({
+    title: t('shop.item.buy.notify.success'),
+    close: false,
+    color: 'success',
+  })
+})
+
 Promise.all([loadItems(), userStore.fetchUserItems()])
 
 const flatItems = computed((): ItemFlat[] => createItemIndex(items.value, true))
 
 // TODO: FIXME: no await
 
-// const userItemIds = computed(() => userStore.userItems.map(ui => ui.item.id))
+const userItemIds = computed(() => userStore.userItems.map(ui => ui.item.id))
 
-// const getInInventoryItems = (baseId: string) => {
-//   return userStore.userItems.filter(ui => ui.item.baseId === baseId)
-// }
+const getInInventoryItems = (baseId: string) => {
+  return userStore.userItems.filter(ui => ui.item.baseId === baseId)
+}
 
 const table = useTemplateRef('table')
-
-const { t } = useI18n()
 
 // FIXME: ед. точка ответственности
 const columnFilters = ref<ColumnFiltersState>([
@@ -192,10 +213,24 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
       item: row.original,
       // bestValue: compareItemsResult !== null ? compareItemsResult[field] : undefined,
       // isCompare: isCompareMode.value
+    }, {
+      ...(key === 'upkeep' && {
+        default: ({ rawBuckets }) => h(AppCoin, null, {
+          default: () => t('item.format.upkeep', { upkeep: n(rawBuckets as number) }),
+        }),
+      }),
+      ...(key === 'price' && {
+        default: ({ rawBuckets }) => h(ShopGridItemBuyBtn, {
+          price: rawBuckets as number,
+          upkeep: row.original.upkeep,
+          inInventoryItems: getInInventoryItems(row.original.baseId),
+          notEnoughGold: userStore.user!.gold < row.original.price,
+          onBuy: () => buyItem(row.original),
+        }),
+      }),
     }),
     header: ({ header, column }) => {
       const description = t(`item.aggregations.${header.id}.description`)
-
       return h(UiTableColumnHeader, {
         label: t(`item.aggregations.${header.id}.title`),
         withSort: options.view === AggregationView.Range,

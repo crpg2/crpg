@@ -90,11 +90,11 @@ const onSave = () => {
           class="text-center text-xs text-content-300"
         >
           <template #memberLink>
-            <AppConfirmActionTooltip @confirm="$emit('kick')">
+            <AppConfirmActionPopover @confirm="$emit('kick')">
               <span class="cursor-pointer text-error">
                 {{ $t('clan.member.kick.memberLink') }}
               </span>
-            </AppConfirmActionTooltip>
+            </AppConfirmActionPopover>
           </template>
         </i18n-t>
       </template>

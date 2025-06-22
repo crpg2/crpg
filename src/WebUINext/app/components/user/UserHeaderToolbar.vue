@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from '@nuxt/ui'
 
-import { useTransition } from '@vueuse/core'
+import NumberFlow, { continuous } from '@number-flow/vue'
 
 import type { User } from '~/models/user'
 
@@ -15,7 +15,6 @@ const { user } = defineProps<{
 
 const userStore = useUserStore()
 
-const animatedUserGold = useTransition(() => user.gold)
 const { t, locale, availableLocales, setLocale } = useI18n()
 
 const items = computed<DropdownMenuItem[][]>(() => [
@@ -71,7 +70,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
 
 <template>
   <div class="flex items-center gap-3">
-    <!-- TODO: condition -->
+    <!-- TODO: FIXME: condition -->
     <UButton
       size="md"
       variant="subtle"
@@ -79,7 +78,14 @@ const items = computed<DropdownMenuItem[][]>(() => [
       :label="$t('welcome.shortTitle')"
     />
 
-    <AppCoin :value="Number(animatedUserGold.toFixed(0))" />
+    <AppCoin>
+      <NumberFlow
+        :value="user.gold"
+        :plugins="[continuous]"
+        locales="en-US"
+        will-change
+      />
+    </AppCoin>
 
     <USeparator orientation="vertical" class="h-6" />
 

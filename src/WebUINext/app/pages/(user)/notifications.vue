@@ -35,7 +35,7 @@ const {
           @click="readAllNotifications"
         />
 
-        <AppConfirmActionTooltip
+        <AppConfirmActionPopover
           :confirm-label="$t('action.ok')"
           :label="$t('user.notifications.action.deleteAll.confirmTitle')"
           @confirm="deleteAllNotifications"
@@ -47,7 +47,7 @@ const {
             icon="crpg:close"
             :label="$t('user.notifications.action.deleteAll.title')"
           />
-        </AppConfirmActionTooltip>
+        </AppConfirmActionPopover>
       </div>
 
       <div class="flex flex-col flex-wrap gap-4">

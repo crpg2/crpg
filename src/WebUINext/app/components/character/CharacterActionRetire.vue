@@ -114,7 +114,11 @@ const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
                 tag="p"
               >
                 <template #heirloom>
-                  <UIcon name="crpg:blacksmith" class="inline-block size-6 text-primary" />
+                  <UIcon
+                    name="crpg:blacksmith" class="
+                      inline-block size-6 text-primary
+                    "
+                  />
                 </template>
               </i18n-t>
             </template>
@@ -179,7 +183,7 @@ const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
           () => toggleRetireConfirmTooltip(true)
         "
       >
-      <ConfirmActionTooltip
+      <AppConfirmActionPopover
         :shown="shownRetireConfirmTooltip"
         @confirm="
           () => {
