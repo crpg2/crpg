@@ -3,7 +3,7 @@ import type { TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, PaginationState, RowSelectionState, VisibilityState } from '@tanstack/vue-table'
 
 import { createColumn, getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { ShopGridItemMedia, UCheckbox, UContainer, UInput } from '#components'
+import { ItemParam, ShopGridItemMedia, UCheckbox, UContainer, UInput } from '#components'
 import { h } from '#imports'
 import { pick } from 'es-toolkit'
 
@@ -141,6 +141,18 @@ const visibleAggregationKeys = computed(() => [
 ])
 
 function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
+  // if (key === 'flags') {
+  return {
+    accessorKey: key,
+    cell: ({ row }) => h(ItemParam, {
+      field: key,
+      item: row.original,
+      // bestValue:compareItemsResult !== null ? compareItemsResult[field] : undefined,
+      // isCompare: isCompareMode.value
+    }),
+  }
+  // }
+
   return { accessorKey: key }
 }
 
@@ -149,7 +161,6 @@ const [isCompareMode, toggleCompareMode] = useToggle()
 watch(isCompareMode, () => {
   table.value?.tableApi.getColumn('modId')?.setFilterValue(
     isCompareMode.value
-      // ? ['crpg_black_longdagger_v1_h0_OneHandedWeapon_Dagger']
       ? table.value?.tableApi.getSelectedRowModel().rows.map(row => row.original.modId)
       : undefined,
   )
@@ -157,7 +168,6 @@ watch(isCompareMode, () => {
 
 const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
-
     {
       id: 'select',
       header: ({ table }) => h(UCheckbox, {
@@ -308,8 +318,8 @@ const allTypes = computed<ItemType[]>(() => {
 
     <br>
 
-    <!-- v-if="Object.keys(rowSelection).length >= 2" -->
     <UButton
+      v-if="Object.keys(rowSelection).length >= 2"
       size="lg"
       variant="subtle"
       :icon="isCompareMode ? 'crpg:close' : undefined"

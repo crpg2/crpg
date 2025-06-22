@@ -12,11 +12,13 @@ import {
 } from '~root/data/constants.json'
 
 import type { EquippedItemsBySlot } from '~/models/character'
-import type { Item, ItemRank } from '~/models/item'
+import type { ArmorMaterialType, Item, ItemFlat, ItemRank } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
 import { Culture } from '~/models/culture'
-import { DamageType, ItemFamilyType, ItemFlags, ItemSlot, ItemType, ItemUsage, WeaponClass, WeaponFlags } from '~/models/item'
+import { DamageType, ItemFamilyType, ItemFieldCompareRule, ItemFieldFormat, ItemFlags, ItemSlot, ItemType, ItemUsage, WeaponClass, WeaponFlags } from '~/models/item'
+
+import { aggregationsConfig } from './item-search-service/aggregations'
 // import type { EquippedItemsBySlot } from '~/models/character'
 // import type {
 //   ArmorMaterialType,
@@ -450,205 +452,204 @@ export const itemCultureToIcon: Record<Culture, string> = {
   [Culture.Vlandia]: 'culture-vlandia',
 }
 
-// // TO MODEL:
-// export enum IconBucketType {
-//   Asset = 'Asset',
-//   Svg = 'Svg',
-// }
+// TO MODEL:
+export enum IconBucketType {
+  Asset = 'Asset',
+  Svg = 'Svg',
+}
 
-// export interface IconedBucket {
-//   name: string
-//   type: IconBucketType
-// }
+export interface IconedBucket {
+  name: string
+  type: IconBucketType
+}
 
-// export interface HumanBucket {
-//   label: string
-//   icon: IconedBucket | null
-//   tooltip: {
-//     title: string
-//     description: string | null
-//   } | null
-// }
+export interface HumanBucket {
+  label: string
+  icon: IconedBucket | null
+  tooltip: {
+    title: string
+    description: string | null
+  } | null
+}
 
-// type ItemFlatDamageField = keyof Pick<ItemFlat, 'damage' | 'thrustDamage' | 'swingDamage'>
-// type ItemFlatDamageType = keyof Pick<ItemFlat, 'thrustDamageType' | 'swingDamageType'>
+type ItemFlatDamageField = keyof Pick<ItemFlat, 'damage' | 'thrustDamage' | 'swingDamage'>
+type ItemFlatDamageType = keyof Pick<ItemFlat, 'thrustDamageType' | 'swingDamageType'>
 
-// const damageTypeFieldByDamageField: Record<ItemFlatDamageField, ItemFlatDamageType> = {
-//   damage: 'thrustDamageType', // arrow/bolt
-//   swingDamage: 'swingDamageType',
-//   thrustDamage: 'thrustDamageType',
-// }
+const damageTypeFieldByDamageField: Record<ItemFlatDamageField, ItemFlatDamageType> = {
+  damage: 'thrustDamageType', // arrow/bolt
+  swingDamage: 'swingDamageType',
+  thrustDamage: 'thrustDamageType',
+}
 
-// export const getDamageType = (aggregationKey: keyof ItemFlat, item: ItemFlat) => {
-//   return item[damageTypeFieldByDamageField[aggregationKey as ItemFlatDamageField]]
-// }
+export const getDamageType = (aggregationKey: keyof ItemFlat, item: ItemFlat) => {
+  return item[damageTypeFieldByDamageField[aggregationKey as ItemFlatDamageField]]
+}
 
-// const createHumanBucket = (
-//   label: string,
-//   icon: IconedBucket | null,
-//   tooltip: {
-//     title: string
-//     description: string | null
-//   } | null,
-// ): HumanBucket => ({
-//   icon,
-//   label,
-//   tooltip,
-// })
+const createHumanBucket = (
+  label: string,
+  icon: IconedBucket | null,
+  tooltip: {
+    title: string
+    description: string | null
+  } | null,
+): HumanBucket => ({
+  icon,
+  label,
+  tooltip,
+})
 
-// const createIcon = (type: IconBucketType, name: string | null | undefined): IconedBucket | null =>
-//   name === null || name === undefined
-//     ? null
-//     : {
-//         name,
-//         type,
-//       }
+const createIcon = (type: IconBucketType, name: string | null | undefined): IconedBucket | null =>
+  name === null || name === undefined
+    ? null
+    : { name, type }
 
-// export const humanizeBucket = (
-//   aggregationKey: keyof ItemFlat,
-//   bucket: any,
-//   item?: ItemFlat,
-// ): HumanBucket => {
-//   if (bucket === null || bucket === undefined) {
-//     return createHumanBucket('', null, null)
-//   }
+export const humanizeBucket = (
+  aggregationKey: keyof ItemFlat,
+  bucket: any,
+  item?: ItemFlat,
+): HumanBucket => {
+  const { n, t } = useI18n() // TODO: FIXME:
 
-//   const format = aggregationsConfig[aggregationKey]?.format
+  if (bucket === null || bucket === undefined) {
+    return createHumanBucket('', null, null)
+  }
 
-//   if (aggregationKey === 'type') {
-//     return createHumanBucket(
-//       t(`item.type.${bucket as ItemType}`),
-//       createIcon(IconBucketType.Svg, itemTypeToIcon[bucket as ItemType]),
-//       {
-//         title: t(`item.type.${bucket}`),
-//         description: '',
-//       },
-//     )
-//   }
+  const format = aggregationsConfig[aggregationKey]?.format
 
-//   if (aggregationKey === 'weaponClass') {
-//     return createHumanBucket(
-//       t(`item.weaponClass.${bucket as WeaponClass}`),
-//       createIcon(IconBucketType.Svg, weaponClassToIcon[bucket as WeaponClass]),
-//       {
-//         title: t(`item.weaponClass.${bucket}`),
-//         description: '',
-//       },
-//     )
-//   }
+  if (aggregationKey === 'type') {
+    return createHumanBucket(
+      t(`item.type.${bucket as ItemType}`),
+      createIcon(IconBucketType.Svg, itemTypeToIcon[bucket as ItemType]),
+      {
+        title: t(`item.type.${bucket}`),
+        description: '',
+      },
+    )
+  }
 
-//   if (aggregationKey === 'damageType') {
-//     return createHumanBucket(
-//       t(`item.damageType.${bucket}.long`),
-//       createIcon(IconBucketType.Svg, damageTypeToIcon[bucket as DamageType]),
-//       {
-//         description: t(`item.damageType.${bucket}.description`),
-//         title: t(`item.damageType.${bucket}.title`),
-//       },
-//     )
-//   }
+  if (aggregationKey === 'weaponClass') {
+    return createHumanBucket(
+      t(`item.weaponClass.${bucket as WeaponClass}`),
+      createIcon(IconBucketType.Svg, weaponClassToIcon[bucket as WeaponClass]),
+      {
+        title: t(`item.weaponClass.${bucket}`),
+        description: '',
+      },
+    )
+  }
 
-//   if (aggregationKey === 'culture') {
-//     return createHumanBucket(
-//       t(`item.culture.${bucket}`),
-//       createIcon(IconBucketType.Asset, itemCultureToIcon[bucket as Culture]),
-//       {
-//         description: null,
-//         title: t(`item.culture.${bucket}`),
-//       },
-//     )
-//   }
+  if (aggregationKey === 'damageType') {
+    return createHumanBucket(
+      t(`item.damageType.${bucket}.long`),
+      createIcon(IconBucketType.Svg, damageTypeToIcon[bucket as DamageType]),
+      {
+        description: t(`item.damageType.${bucket}.description`),
+        title: t(`item.damageType.${bucket}.title`),
+      },
+    )
+  }
 
-//   if (['mountArmorFamilyType', 'mountFamilyType', 'armorFamilyType'].includes(aggregationKey)) {
-//     return createHumanBucket(
-//       t(`item.familyType.${bucket}.title`),
-//       createIcon(IconBucketType.Svg, itemFamilyTypeToIcon[bucket as ItemFamilyType]),
-//       {
-//         description: t(`item.familyType.${bucket}.description`),
-//         title: t(`item.familyType.${bucket}.title`),
-//       },
-//     )
-//   }
+  if (aggregationKey === 'culture') {
+    return createHumanBucket(
+      t(`item.culture.${bucket}`),
+      createIcon(IconBucketType.Asset, itemCultureToIcon[bucket as Culture]),
+      {
+        description: null,
+        title: t(`item.culture.${bucket}`),
+      },
+    )
+  }
 
-//   if (['armorMaterialType'].includes(aggregationKey)) {
-//     return createHumanBucket(
-//       t(`item.armorMaterialType.${bucket as ArmorMaterialType}.title`),
-//       null,
-//       null,
-//     )
-//   }
+  if (['mountArmorFamilyType', 'mountFamilyType', 'armorFamilyType'].includes(aggregationKey)) {
+    return createHumanBucket(
+      t(`item.familyType.${bucket}.title`),
+      createIcon(IconBucketType.Svg, itemFamilyTypeToIcon[bucket as ItemFamilyType]),
+      {
+        description: t(`item.familyType.${bucket}.description`),
+        title: t(`item.familyType.${bucket}.title`),
+      },
+    )
+  }
 
-//   if (aggregationKey === 'flags') {
-//     if (Object.values(ItemFlags).includes(bucket as ItemFlags)) {
-//       return createHumanBucket(
-//         t(`item.flags.${bucket}`),
-//         createIcon(IconBucketType.Svg, itemFlagsToIcon[bucket as ItemFlags]),
-//         {
-//           description: null,
-//           title: t(`item.flags.${bucket}`),
-//         },
-//       )
-//     }
+  if (['armorMaterialType'].includes(aggregationKey)) {
+    return createHumanBucket(
+      t(`item.armorMaterialType.${bucket as ArmorMaterialType}.title`),
+      null,
+      null,
+    )
+  }
 
-//     if (Object.values(WeaponFlags).includes(bucket as WeaponFlags)) {
-//       return createHumanBucket(
-//         t(`item.weaponFlags.${bucket}`),
-//         createIcon(IconBucketType.Svg, weaponFlagsToIcon[bucket as WeaponFlags]),
-//         {
-//           description: null,
-//           title: t(`item.weaponFlags.${bucket}`),
-//         },
-//       )
-//     }
+  if (aggregationKey === 'flags') {
+    if (Object.values(ItemFlags).includes(bucket as ItemFlags)) {
+      return createHumanBucket(
+        t(`item.flags.${bucket}`),
+        createIcon(IconBucketType.Svg, itemFlagsToIcon[bucket as ItemFlags]),
+        {
+          description: null,
+          title: t(`item.flags.${bucket}`),
+        },
+      )
+    }
 
-//     if (Object.values(ItemUsage).includes(bucket as ItemUsage)) {
-//       return createHumanBucket(
-//         t(`item.usage.${bucket}.title`),
-//         createIcon(IconBucketType.Svg, itemUsageToIcon[bucket as ItemUsage]),
-//         {
-//           description: t(`item.usage.${bucket}.description`),
-//           title: t(`item.usage.${bucket}.title`),
-//         },
-//       )
-//     }
-//   }
+    if (Object.values(WeaponFlags).includes(bucket as WeaponFlags)) {
+      return createHumanBucket(
+        t(`item.weaponFlags.${bucket}`),
+        createIcon(IconBucketType.Svg, weaponFlagsToIcon[bucket as WeaponFlags]),
+        {
+          description: null,
+          title: t(`item.weaponFlags.${bucket}`),
+        },
+      )
+    }
 
-//   if (format === ItemFieldFormat.Damage && item !== undefined) {
-//     const damageType = getDamageType(aggregationKey, item)
+    if (Object.values(ItemUsage).includes(bucket as ItemUsage)) {
+      return createHumanBucket(
+        t(`item.usage.${bucket}.title`),
+        createIcon(IconBucketType.Svg, itemUsageToIcon[bucket as ItemUsage]),
+        {
+          description: t(`item.usage.${bucket}.description`),
+          title: t(`item.usage.${bucket}.title`),
+        },
+      )
+    }
+  }
 
-//     if (damageType === null || damageType === undefined) {
-//       return createHumanBucket(String(bucket), null, null)
-//     }
+  if (format === ItemFieldFormat.Damage && item !== undefined) {
+    const damageType = getDamageType(aggregationKey, item)
 
-//     return createHumanBucket(
-//       t('item.damageTypeFormat', {
-//         type: t(`item.damageType.${damageType}.short`),
-//         value: bucket,
-//       }),
-//       null,
-//       {
-//         description: t(`item.damageType.${damageType}.description`),
-//         title: t(`item.damageType.${damageType}.title`),
-//       },
-//     )
-//   }
+    if (damageType === null || damageType === undefined) {
+      return createHumanBucket(String(bucket), null, null)
+    }
 
-//   if (format === ItemFieldFormat.Requirement) {
-//     return createHumanBucket(
-//       t('item.requirementFormat', {
-//         value: bucket,
-//       }),
-//       null,
-//       null,
-//     )
-//   }
+    return createHumanBucket(
+      t('item.damageTypeFormat', {
+        type: t(`item.damageType.${damageType}.short`),
+        value: bucket,
+      }),
+      null,
+      {
+        description: t(`item.damageType.${damageType}.description`),
+        title: t(`item.damageType.${damageType}.title`),
+      },
+    )
+  }
 
-//   if (format === ItemFieldFormat.Number) {
-//     return createHumanBucket(n(bucket as number), null, null)
-//   }
+  if (format === ItemFieldFormat.Requirement) {
+    return createHumanBucket(
+      t('item.requirementFormat', {
+        value: bucket,
+      }),
+      null,
+      null,
+    )
+  }
 
-//   return createHumanBucket(String(bucket), null, null)
-// }
+  if (format === ItemFieldFormat.Number) {
+    return createHumanBucket(n(bucket as number), null, null)
+  }
+
+  return createHumanBucket(String(bucket), null, null)
+}
 
 // interface GroupedItems {
 //   type: ItemType
@@ -706,46 +707,51 @@ export const itemCultureToIcon: Record<Culture, string> = {
 //     }, {} as CompareItemsResult)
 // }
 
-// export const getItemFieldAbsoluteDiffStr = (
-//   compareRule: ItemFieldCompareRule,
-//   value: number,
-//   bestValue: number,
-// ) => {
-//   const DEFAULT_STR = ''
+// TODO: description, spec
+export const getItemFieldAbsoluteDiffStr = (
+  compareRule: ItemFieldCompareRule,
+  value: number,
+  bestValue: number,
+) => {
+  const { n } = useI18n() // TODO: FIXME:
 
-//   if (value === bestValue) {
-//     return DEFAULT_STR
-//   }
+  const DEFAULT_STR = ''
 
-//   if (compareRule === ItemFieldCompareRule.Less) {
-//     if (bestValue > value) {
-//       return DEFAULT_STR
-//     }
+  if (value === bestValue) {
+    return DEFAULT_STR
+  }
 
-//     return `+${n(roundFLoat(Math.abs(value - bestValue)))}`
-//   }
+  if (compareRule === ItemFieldCompareRule.Less) {
+    if (bestValue > value) {
+      return DEFAULT_STR
+    }
 
-//   if (bestValue < value) {
-//     return DEFAULT_STR
-//   }
+    return `+${n(roundFLoat(Math.abs(value - bestValue)))}`
+  }
 
-//   return `-${n(roundFLoat(Math.abs(bestValue - value)))}`
-// }
+  if (bestValue < value) {
+    return DEFAULT_STR
+  }
 
-// // TODO: spec
-// export const getItemFieldRelativeDiffStr = (value: number, relativeValue: number) => {
-//   const DEFAULT_STR = ''
+  return `-${n(roundFLoat(Math.abs(bestValue - value)))}`
+}
 
-//   if (value === relativeValue) {
-//     return DEFAULT_STR
-//   }
+//  TODO: spec
+export const getItemFieldRelativeDiffStr = (value: number, relativeValue: number) => {
+  const { n } = useI18n() // TODO: FIXME:
 
-//   if (relativeValue > value) {
-//     return `-${n(roundFLoat(Math.abs(value - relativeValue)))}`
-//   }
+  const DEFAULT_STR = ''
 
-//   return `+${n(roundFLoat(Math.abs(value - relativeValue)))}`
-// }
+  if (value === relativeValue) {
+    return DEFAULT_STR
+  }
+
+  if (relativeValue > value) {
+    return `-${n(roundFLoat(Math.abs(value - relativeValue)))}`
+  }
+
+  return `+${n(roundFLoat(Math.abs(value - relativeValue)))}`
+}
 
 export const getItemGraceTimeEnd = (userItem: UserItem) => {
   const graceTimeEnd = new Date(userItem.createdAt)
