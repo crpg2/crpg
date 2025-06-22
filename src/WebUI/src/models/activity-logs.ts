@@ -18,6 +18,8 @@ export enum ActivityLogType {
   ServerJoined = 'ServerJoined',
   ChatMessageSent = 'ChatMessageSent',
   TeamHit = 'TeamHit',
+  TeamHitReported = 'TeamHitReported',
+  TeamHitReportedUserKicked = 'TeamHitReportedUserKicked',
   ClanCreated = 'ClanCreated',
   ClanDeleted = 'ClanDeleted',
   ClanMemberKicked = 'ClanMemberKicked',
