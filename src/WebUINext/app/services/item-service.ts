@@ -1,5 +1,6 @@
 import {
   getItems as _getItems,
+  getItemsUpgradesByBaseId,
 } from '#hey-api/sdk.gen'
 // import { omitBy } from 'es-toolkit'
 import {
@@ -12,24 +13,12 @@ import {
 } from '~root/data/constants.json'
 
 import type { EquippedItemsBySlot } from '~/models/character'
-import type { ArmorMaterialType, Item, ItemFlat, ItemRank } from '~/models/item'
+import type { ArmorMaterialType, CompareItemsResult, Item, ItemFlat, ItemRank } from '~/models/item'
+// import type { EquippedItemsBySlot } from '~/models/character'
 import type { UserItem } from '~/models/user'
 
 import { Culture } from '~/models/culture'
 import { DamageType, ItemFamilyType, ItemFieldCompareRule, ItemFieldFormat, ItemFlags, ItemSlot, ItemType, ItemUsage, WeaponClass, WeaponFlags } from '~/models/item'
-
-import { aggregationsConfig } from './item-search-service/aggregations'
-// import type { EquippedItemsBySlot } from '~/models/character'
-// import type {
-//   ArmorMaterialType,
-//   CompareItemsResult,
-//   Item,
-//   ItemFlat,
-//   ItemRank,
-// } from '~/models/item'
-// import type { AggregationConfig } from '~/models/item-search'
-// import type { UserItem } from '~/models/user'
-
 // import { Culture } from '~/models/culture'
 // import {
 //   DamageType,
@@ -45,7 +34,11 @@ import { aggregationsConfig } from './item-search-service/aggregations'
 // } from '~/models/item'
 // import { get } from '~/services/crpg-client'
 // import { aggregationsConfig } from '~/services/item-search-service/aggregations'
-// import { createItemIndex } from '~/services/item-search-service/indexator'
+import { createItemIndex } from '~/services/item-search-service/indexator'
+// import type { AggregationConfig } from '~/models/item-search'
+// import type { UserItem } from '~/models/user'
+
+import { aggregationsConfig } from './item-search-service/aggregations'
 // import { NotificationType, notify } from '~/services/notification-service'
 // import { n, t } from '~/services/translate-service'
 // import { roundFLoat } from '~/utils/math'
@@ -59,10 +52,12 @@ export const getItems = async (): Promise<Item[]> => {
 
 export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 
-// export const getItemUpgrades = async (item: ItemFlat) =>
-//   createItemIndex(await get<Item[]>(`/items/upgrades/${item.baseId}`))
-//     // TODO: hotfix, avoid duplicate items with multiply weaponClass
-//     .filter(el => el?.weaponClass === item?.weaponClass)
+export const getItemUpgrades = async (item: ItemFlat): Promise<ItemFlat[]> => {
+  const { data } = await getItemsUpgradesByBaseId({ composable: '$fetch', path: { baseId: item.baseId } })
+  return createItemIndex(data! as Item[])
+    // TODO: hotfix, avoid duplicate items with multiply weaponClass
+    .filter(el => el?.weaponClass === item?.weaponClass)
+}
 
 export const armorTypes: ItemType[] = [
   ItemType.HeadArmor,
@@ -696,6 +691,7 @@ export const humanizeBucket = (
 //     }, {} as CompareItemsResult)
 // }
 
+// TODO: FIXME: spec + desc
 // export const getRelativeEntries = (item: ItemFlat, aggregationsConfig: AggregationConfig) => {
 //   return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
 //     .filter(k => aggregationsConfig[k]?.compareRule !== undefined)

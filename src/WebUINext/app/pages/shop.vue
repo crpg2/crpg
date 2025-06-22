@@ -1,9 +1,31 @@
 <script setup lang="ts">
 import type { TableColumn, TabsItem } from '@nuxt/ui'
-import type { ColumnFiltersState, PaginationState, RowSelectionState, SortingState, VisibilityState } from '@tanstack/vue-table'
+import type {
+  ColumnFiltersState,
+  PaginationState,
+  RowSelectionState,
+  SortingState,
+  VisibilityState,
+} from '@tanstack/vue-table'
 
-import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { AppCoin, ItemParam, ShopGridItemBuyBtn, ShopGridItemMedia, UCheckbox, UContainer, UInput, UiTableColumnHeader, UTooltip } from '#components'
+import {
+  getExpandedRowModel,
+  getFacetedRowModel,
+  getFacetedUniqueValues,
+  getPaginationRowModel,
+} from '@tanstack/vue-table'
+import {
+  AppCoin,
+  ItemParam,
+  ShopGridItemBuyBtn,
+  ShopGridItemMedia,
+  UButton,
+  UCheckbox,
+  UContainer,
+  UInput,
+  UiTableColumnHeader,
+  UTooltip,
+} from '#components'
 import { h } from '#imports'
 import { pick } from 'es-toolkit'
 
@@ -257,6 +279,24 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
 const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
     {
+      id: 'expand',
+      cell: ({ row }) =>
+        h(UButton, {
+          'color': 'neutral',
+          'variant': 'ghost',
+          'icon': 'i-lucide-chevron-down',
+          'square': true,
+          'aria-label': 'Expand',
+          'ui': {
+            leadingIcon: [
+              'transition-transform',
+              row.getIsExpanded() ? 'duration-200 rotate-180' : '',
+            ],
+          },
+          'onClick': () => row.toggleExpanded(),
+        }),
+    },
+    {
       id: 'select',
       header: ({ table }) => h(UCheckbox, {
         'modelValue': table.getIsSomePageRowsSelected()
@@ -279,7 +319,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
       // @ts-expect-error TODO:
       header: ({ column }) => h(UInput, {
         'icon': 'crpg:search',
-        'variant': 'ghost',
+        'variant': 'soft',
         'size': 'xs',
         'placeholder': t('action.search'),
         'modelValue': column.getFilterValue() as string,
@@ -371,6 +411,7 @@ watchEffect(() => {
       class="relative rounded-md border border-muted"
       :data="flatItems"
       :columns
+
       :initial-state="{
         pagination: getInitialPaginationState(),
       }"
@@ -386,9 +427,11 @@ watchEffect(() => {
       <template #empty>
         <UiResultNotFound />
       </template>
-    </UTable>
 
-    <br>
+      <template #expanded="{ row }">
+        <ShopGridUpgradesTable :item="row.original" />
+      </template>
+    </UTable>
 
     <UButton
       v-if="Object.keys(rowSelection).length >= 2"
