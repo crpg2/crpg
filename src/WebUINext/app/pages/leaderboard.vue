@@ -194,7 +194,12 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
 
 <template>
   <UContainer>
-    <div class="mx-auto max-w-4xl py-8 md:py-16">
+    <div
+      class="
+        mx-auto max-w-4xl py-8
+        md:py-16
+      "
+    >
       <div class="mb-20">
         <div class="mb-5 flex justify-center">
           <UIcon

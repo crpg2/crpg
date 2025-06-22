@@ -168,7 +168,12 @@ const regionItems = regions.map<TabsItem>(region => ({
 
 <template>
   <UContainer>
-    <div class="mx-auto max-w-4xl space-y-3 py-8 md:py-16">
+    <div
+      class="
+        mx-auto max-w-4xl space-y-3 py-8
+        md:py-16
+      "
+    >
       <div class="space-y-4">
         <div class="flex flex-wrap items-center justify-between gap-4">
           <UTabs

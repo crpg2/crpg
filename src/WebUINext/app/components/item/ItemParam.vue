@@ -112,7 +112,12 @@ const fieldStyle = computed(() => {
       :key="idx"
     >
       <slot v-bind="{ rawBuckets, formattedValue, diffStr }">
-        <UTooltip>
+        <UTooltip
+          :ui="{
+            content: 'max-w-lg',
+          }"
+          :disabled="!formattedValue.tooltip"
+        >
           <ItemFieldIcon
             v-if="formattedValue.icon !== null"
             :icon="formattedValue.icon"
@@ -121,12 +126,13 @@ const fieldStyle = computed(() => {
 
           <UBadge
             v-else-if="
-              [ItemFieldFormat.List, ItemFieldFormat.Damage].includes(
-                aggregationsConfig[field]!.format!,
-              ) && formattedValue.label !== ''
+              aggregationsConfig[field]?.format
+                && [ItemFieldFormat.List, ItemFieldFormat.Damage].includes(aggregationsConfig[field].format)
+                && !['', '0'].includes(formattedValue.label)
             "
             :label="formattedValue.label"
-            size="lg"
+            color="neutral"
+            variant="subtle"
           />
 
           <div
@@ -137,11 +143,9 @@ const fieldStyle = computed(() => {
           </div>
 
           <template #content>
-            <div class="prose-invert">
-              <h5>{{ formattedValue.tooltip?.title }}</h5>
-              <p>
-                {{ formattedValue.tooltip?.description }}
-              </p>
+            <div class="prose prose-invert">
+              <h4>{{ formattedValue.tooltip?.title }}</h4>
+              <div v-html="formattedValue.tooltip?.description" />
             </div>
           </template>
         </UTooltip>

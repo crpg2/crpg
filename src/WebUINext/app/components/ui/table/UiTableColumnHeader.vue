@@ -23,9 +23,16 @@ defineEmits<{
 
 <template>
   <div class="relative flex items-center gap-1">
-    <UTooltip v-if="withFilter && filtered" :text="$t('action.reset')">
+    <UTooltip
+      v-if="withFilter && filtered"
+      :text="$t('action.reset')"
+    >
       <UIcon
-        class="absolute top-1/2 -left-5 size-4 -translate-y-1/2 cursor-pointer text-muted outline-0 select-none hover:text-toned"
+        class="
+          absolute top-1/2 -left-5 size-4 -translate-y-1/2 cursor-pointer
+          text-muted outline-0 select-none
+          hover:text-toned
+        "
         name="crpg:close"
         @click="$emit('resetFilter')"
       />
@@ -38,7 +45,11 @@ defineEmits<{
       :items="filterDropdownItems"
     >
       <div
-        class="cursor-pointer text-xs underline decoration-dashed underline-offset-6 select-none hover:no-underline"
+        class="
+          cursor-pointer text-xs underline decoration-dashed underline-offset-6
+          select-none
+          hover:no-underline
+        "
       >
         {{ label }}
       </div>
@@ -67,7 +78,10 @@ defineEmits<{
 
     <UTooltip v-if="withSort" :text="$t(sorted === 'asc' ? 'shop.sort.desc' : 'shop.sort.asc')">
       <div
-        class="flex cursor-pointer flex-col text-muted hover:text-toned"
+        class="
+          flex cursor-pointer flex-col text-muted
+          hover:text-toned
+        "
         @click="$emit('sort')"
       >
         <UIcon

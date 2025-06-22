@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import type { TableColumn, TabsItem } from '@nuxt/ui'
-import type { ColumnFiltersState, PaginationState, RowSelectionState, VisibilityState } from '@tanstack/vue-table'
+import type { ColumnFiltersState, PaginationState, RowSelectionState, SortingState, VisibilityState } from '@tanstack/vue-table'
 
-import { createColumn, getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { ItemParam, ShopGridItemMedia, UCheckbox, UContainer, UInput } from '#components'
+import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
+import { ItemParam, ShopGridItemMedia, UCheckbox, UContainer, UInput, UiTableColumnHeader, UTooltip } from '#components'
 import { h } from '#imports'
 import { pick } from 'es-toolkit'
 
 import type { ItemFlat, WeaponClass } from '~/models/item'
 import type { AggregationOptions } from '~/services/item-search-service/aggregations'
 
+import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { ItemType } from '~/models/item'
 import { SomeRole } from '~/models/role'
-import { aggregationsConfig, aggregationsKeysByItemType, aggregationsKeysByWeaponClass } from '~/services/item-search-service/aggregations'
+import { aggregationsConfig, aggregationsKeysByItemType, aggregationsKeysByWeaponClass, AggregationView } from '~/services/item-search-service/aggregations'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import { getItems, getWeaponClassesByItemType, hasWeaponClassesByItemType, itemTypeToIcon, weaponClassToIcon } from '~/services/item-service'
 
@@ -48,19 +49,18 @@ const router = useRouter()
 const route = useRoute()
 
 const {
-  execute: loadItems,
   state: items,
+  execute: loadItems,
+  isLoading: loadingItems,
 } = useAsyncState(() => getItems(), [], {
   immediate: false,
-  onSuccess: (data) => {
-    // insertMultiple(db, data)
-  },
 })
+
+Promise.all([loadItems(), userStore.fetchUserItems()])
 
 const flatItems = computed((): ItemFlat[] => createItemIndex(items.value, true))
 
 // TODO: FIXME: no await
-Promise.all([loadItems(), userStore.fetchUserItems()])
 
 // const userItemIds = computed(() => userStore.userItems.map(ui => ui.item.id))
 
@@ -100,6 +100,22 @@ const itemType = computed({
   },
 })
 
+// preFacet
+const allTypes = computed<ItemType[]>(() => {
+  // const rows = table.value?.tableApi.getPreFilteredRowModel().rows
+  // if (!rows) {
+  //   return []
+  // }
+  const set = new Set<ItemType>()
+  for (const { type } of flatItems.value) {
+    // const value = row.getValue('type')
+    // if (value) {
+    set.add(type)
+    // }
+  }
+  return Array.from(set)
+})
+
 // const weaponClass = useRouteQuery<WeaponClass | null>(
 //   'weaponClass',
 //   () => getWeaponClassesByItemType(itemType.value)?.[0] ?? null,
@@ -124,37 +140,28 @@ const weaponClass = computed({
   },
 })
 
+const visibleAggregationKeys = computed(() => [
+  ...aggregationsKeysByItemType[itemType.value] ?? [],
+  ...(weaponClass.value ? (aggregationsKeysByWeaponClass[weaponClass.value] ?? []) : []),
+])
+
 function getInitialPaginationState(): PaginationState {
   return {
     pageIndex: 0,
     pageSize: 10, // TODO: FIXME:
   }
 }
-
 const pagination = ref<PaginationState>(getInitialPaginationState())
 
-// const globalFilter = ref('')
-
-const visibleAggregationKeys = computed(() => [
-  ...aggregationsKeysByItemType[itemType.value] ?? [],
-  ...(weaponClass.value ? (aggregationsKeysByWeaponClass[weaponClass.value] ?? []) : []),
-])
-
-function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
-  // if (key === 'flags') {
-  return {
-    accessorKey: key,
-    cell: ({ row }) => h(ItemParam, {
-      field: key,
-      item: row.original,
-      // bestValue:compareItemsResult !== null ? compareItemsResult[field] : undefined,
-      // isCompare: isCompareMode.value
-    }),
-  }
-  // }
-
-  return { accessorKey: key }
+function getInitialSortingState(): SortingState {
+  return [
+    {
+      id: 'price',
+      desc: true,
+    },
+  ]
 }
+const sorting = ref<SortingState>(getInitialSortingState())
 
 const rowSelection = ref<RowSelectionState>({})
 const [isCompareMode, toggleCompareMode] = useToggle()
@@ -165,6 +172,52 @@ watch(isCompareMode, () => {
       : undefined,
   )
 })
+
+const columnVisibility = computed<VisibilityState>(() => {
+  return {
+    ...Object.keys(aggregationsConfig).reduce((out, key) => {
+      out[key] = visibleAggregationKeys.value.includes(key as keyof ItemFlat)
+      return out
+    }, {} as VisibilityState),
+    modId: false,
+    weaponUsage: false,
+  }
+})
+
+function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
+  return {
+    accessorKey: key,
+    cell: ({ row }) => h(ItemParam, {
+      field: key,
+      item: row.original,
+      // bestValue: compareItemsResult !== null ? compareItemsResult[field] : undefined,
+      // isCompare: isCompareMode.value
+    }),
+    header: ({ header, column }) => {
+      const description = t(`item.aggregations.${header.id}.description`)
+
+      return h(UiTableColumnHeader, {
+        label: t(`item.aggregations.${header.id}.title`),
+        withSort: options.view === AggregationView.Range,
+        sorted: column.getIsSorted(),
+        onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
+      })
+      // return h(UTooltip, {
+      //   delayDuration: 600,
+      //   disabled: !description,
+      //   ui: {
+      //     content: 'max-w-sm',
+      //   },
+      // }, {
+      //   default: () => h('div', null, t(`item.aggregations.${header.id}.title`)),
+      //   content: () => h('div', { class: 'prose prose-invert' }, [
+      //     h('h4', null, t(`item.aggregations.${header.id}.title`)),
+      //     h('div', { innerHTML: description }),
+      //   ]),
+      // })
+    },
+  }
+}
 
 const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
@@ -216,31 +269,10 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
   ]
 })
 
-// const c = computed()
-const columnVisibility = computed<VisibilityState>(() => {
-  return {
-    ...Object.keys(aggregationsConfig).reduce((out, key) => {
-      out[key] = visibleAggregationKeys.value.includes(key as keyof ItemFlat)
-      return out
-    }, {} as VisibilityState),
-    modId: true,
-  }
-})
+const { togglePageLoading } = usePageLoading()
 
-// preFacet
-const allTypes = computed<ItemType[]>(() => {
-  // const rows = table.value?.tableApi.getPreFilteredRowModel().rows
-  // if (!rows) {
-  //   return []
-  // }
-  const set = new Set<ItemType>()
-  for (const { type } of flatItems.value) {
-    // const value = row.getValue('type')
-    // if (value) {
-    set.add(type)
-    // }
-  }
-  return Array.from(set)
+watchEffect(() => {
+  togglePageLoading(loadingItems.value)
 })
 </script>
 
@@ -250,7 +282,10 @@ const allTypes = computed<ItemType[]>(() => {
     <!-- {{ { itemType, weaponClass, rowSelection } }}
 
     {{ table?.tableApi.getSelectedRowModel().rows.map(row => row.original.modId) }} -->
-    {{ table?.tableApi.getState().columnFilters }}
+
+    <!-- <pre>
+      {{ table?.tableApi.getState() }}
+    </pre> -->
 
     <UTabs
       v-model="itemType"
@@ -294,6 +329,7 @@ const allTypes = computed<ItemType[]>(() => {
     <UTable
       ref="table"
       v-model:pagination="pagination"
+      v-model:sorting="sorting"
       v-model:column-filters="columnFilters"
       v-model:column-visibility="columnVisibility"
       v-model:row-selection="rowSelection"
@@ -303,6 +339,7 @@ const allTypes = computed<ItemType[]>(() => {
       :initial-state="{
         pagination: getInitialPaginationState(),
       }"
+      :loading="loadingItems"
       :faceted-options="{
         getFacetedRowModel: getFacetedRowModel(),
         getFacetedUniqueValues: getFacetedUniqueValues(),
