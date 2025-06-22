@@ -11193,4 +11193,27 @@
       <UsablePiece piece_id="crpg_pole_zweihander_pommel_h3" />
     </UsablePieces>
   </CraftingTemplate>
+  <CraftingTemplate id="crpg_deployable" item_type="OneHandedWeapon" modifier_group="mace" item_holsters="mace_right_hip:axe_right_hip_2:axe_right_hip:axe_back" default_item_holster_position_offset="0,0,-0.40" use_weapon_as_holster_mesh="true">
+    <PieceDatas>
+      <PieceData piece_type="Handle" build_order="0" />
+      <PieceData piece_type="Blade" build_order="1" />
+      <PieceData piece_type="Pommel" build_order="-1" />
+    </PieceDatas>
+    <WeaponDescriptions>
+      <WeaponDescription id="crpg_deployable" />
+    </WeaponDescriptions>
+    <StatsData>
+      <StatData stat_type="Weight" max_value="7.0" />
+      <StatData stat_type="WeaponReach" max_value="300" />
+      <StatData stat_type="ThrustSpeed" max_value="200" />
+      <StatData stat_type="SwingSpeed" max_value="200" />
+      <StatData stat_type="ThrustDamage" max_value="500" />
+      <StatData stat_type="SwingDamage" max_value="500" />
+      <StatData stat_type="Handling" max_value="200" />
+    </StatsData>
+    <UsablePieces>
+      <UsablePiece piece_id="crpg_blacksmith_hammer_blade_h0" />
+      <UsablePiece piece_id="crpg_blacksmith_hammer_handle_h0" />
+    </UsablePieces>
+  </CraftingTemplate>
 </CraftingTemplates>

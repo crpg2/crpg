@@ -11272,7 +11272,7 @@
       <Piece id="crpg_blacksmith_warhammer_handle_h3" Type="Handle" scale_factor="145" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_blacksmith_hammer_v3_h0" name="{=6WcZ5Tr0}Blacksmith Hammer" crafting_template="crpg_Mace" modifier_group="cheap_weapon">
+  <CraftedItem id="crpg_blacksmith_hammer_v3_h0" name="{=6WcZ5Tr0}Blacksmith Hammer" crafting_template="crpg_deployable" modifier_group="cheap_weapon">
     <Pieces>
       <Piece id="crpg_blacksmith_hammer_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_blacksmith_hammer_handle_h0" Type="Handle" scale_factor="125" />

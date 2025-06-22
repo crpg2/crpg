@@ -2386,4 +2386,30 @@
         <usage style="attack_any" ready_action="act_ready_cannon_cla" release_action="act_release_cannon_cla" ready_continue_ranged_action="act_ready_continue_cannon_cla" reload_action="act_reload_cannon_horseback_cla" reload_continue_action="act_reload_cannon_continue_horseback_cla" is_mounted="True" require_free_left_hand="False" strike_type="thrust" />
       </usages>
     </item_usage_set>
+  <item_usage_set
+        id="deployable"
+        switch_to_alternate_action="act_switch_back_alternate_knife"
+		    switch_to_alternate_action_left_stance="act_switch_back_alternate_knife_left_stance"
+		    equip_sound="event:/mission/combat/equip/sword_equip"
+		    unequip_sound="event:/mission/combat/equip/sword_unequip">
+    <idles>
+      <idle
+				action="act_idle_1h_without_shield_1"
+				require_free_left_hand="False" />
+      <idle
+				action="act_idle_1h_without_shield_1_left_stance"
+				is_left_stance="True"
+				require_free_left_hand="False" />
+    </idles>
+        <flags>
+            <flag
+                name="requires_no_mount" />
+            <flag
+                name="requires_no_shield" />
+        </flags>
+    <movement_sets>
+      <movement_set
+				id="onehanded_swing_cantblock" />
+    </movement_sets>
+  </item_usage_set>
 </item_usage_sets>
