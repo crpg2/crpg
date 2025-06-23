@@ -135,4 +135,16 @@
     </Styles>
   </Brush>
 
+  <Brush Name="CrpgHUD.WeaponUsage.Index" Font="FiraSansExtraCondensed-Medium" TextHorizontalAlignment="Center" TextVerticalAlignment="Center">
+    <Styles>
+      <Style Name="Default" FontColor="#1087E8FF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="15" />
+    </Styles>
+  </Brush>
+
+  <Brush Name="CrpgHUD.WeaponUsage.Name" Font="FiraSansExtraCondensed-Medium" TextHorizontalAlignment="Center" TextVerticalAlignment="Center">
+    <Styles>
+      <Style Name="Default" FontColor="#7A8087FF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="15" />
+    </Styles>
+  </Brush>
+
 </Brushes>

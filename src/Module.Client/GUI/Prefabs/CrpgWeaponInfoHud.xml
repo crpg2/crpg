@@ -1,0 +1,29 @@
+<Prefab>
+  <Window>
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+      <Children>
+        <TextWidget WidthSizePolicy="CoverChildren" 
+                    HeightSizePolicy="CoverChildren" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Right" 
+                    TextHorizontalAlignment="Right"
+                    MarginBottom="130"
+                    MarginRight="50"
+                    Brush="CrpgHUD.WeaponUsage.Index" 
+                    IntText="@WeaponUsageIndex" 
+                    IsVisible="@ShowWeaponUsageInfo" 
+        />
+        <TextWidget WidthSizePolicy="CoverChildren" 
+                    HeightSizePolicy="CoverChildren" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Right"
+                    MarginBottom="190"
+                    MarginRight="15"
+                    Brush="CrpgHUD.WeaponUsage.Name" 
+                    Text="@WeaponUsageName" 
+                    IsVisible="@ShowWeaponUsageInfo" 
+        />
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

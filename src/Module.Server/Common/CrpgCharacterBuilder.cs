@@ -59,6 +59,10 @@ internal static class CrpgCharacterBuilder
             AddEquipment(equipment, index, equippedItem.UserItem.ItemId);
         }
 
+        AddEquipment(equipment, EquipmentIndex.Weapon0, "crpg_spiked_polehammer_v6_h0");
+        AddEquipment(equipment, EquipmentIndex.Weapon1, "crpg_noble_short_bow_v2_h3");
+        AddEquipment(equipment, EquipmentIndex.Weapon2, "crpg_light_bodkin_arrows_v4_h3");
+        AddEquipment(equipment, EquipmentIndex.Weapon3, "crpg_piercing_arrows_v2_h3");
         return equipment;
     }
 
