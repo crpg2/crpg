@@ -15,7 +15,7 @@ const { rankColor, thumb } = useItem(() => item)
 
 <template>
   <div class="flex items-center gap-4">
-    <div class="relative h-16 w-32">
+    <div class="relative h-16 w-32 min-w-32">
       <UTooltip
         :content="{ side: 'right' }"
         :ui="{ content: 'p-2 h-auto w-[512px] flex-col gap-2' }"
@@ -144,10 +144,7 @@ const { rankColor, thumb } = useItem(() => item)
       </div>
     </div>
 
-    <div
-      class="flex-1"
-      :style="{ color: rankColor }"
-    >
+    <div :style="{ color: rankColor }">
       {{ item.name }}
     </div>
   </div>

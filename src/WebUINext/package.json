@@ -6,12 +6,12 @@
     "dev": "nuxt dev --no-fork",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "postinstall": "patch-package && nuxt prepare",
     "openapi-ts": "openapi-ts",
     "test:unit": "vitest"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^4.15.0",
+    "@antfu/eslint-config": "^4.16.1",
     "@hey-api/client-nuxt": "^0.4.2",
     "@hey-api/nuxt": "^0.2.0",
     "@internationalized/date": "^3.8.2",
@@ -40,6 +40,7 @@
     "msw": "^2.10.2",
     "nuxt": "^3.17.5",
     "oidc-client-ts": "^3.3.0",
+    "patch-package": "^8.0.0",
     "pinia": "^3.0.3",
     "qs": "^6.14.0",
     "tailwind-variants": "^1.0.0",

@@ -36,6 +36,7 @@ export default defineAppConfig({
         th: 'text-xs text-muted',
         td: 'text-xs text-inherit',
         tbody: '[&>tr]:data-[selectable=true]:cursor-pointer',
+
       },
     },
     tabs: {

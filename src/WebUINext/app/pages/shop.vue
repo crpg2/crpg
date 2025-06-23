@@ -9,7 +9,6 @@ import type {
 } from '@tanstack/vue-table'
 
 import {
-  getExpandedRowModel,
   getFacetedRowModel,
   getFacetedUniqueValues,
   getPaginationRowModel,
@@ -24,13 +23,12 @@ import {
   UContainer,
   UInput,
   UiTableColumnHeader,
-  UTooltip,
 } from '#components'
 import { h } from '#imports'
-import { pick } from 'es-toolkit'
+import { uniq } from 'es-toolkit'
 
 import type { ItemFlat, WeaponClass } from '~/models/item'
-import type { AggregationOptions } from '~/services/item-search-service/aggregations'
+import type { AggregationConfig, AggregationOptions } from '~/services/item-search-service/aggregations'
 
 // import { useItemsCompare } from '~/composables/shop/use-compare'
 // import { useItemsFilter } from '~/composables/shop/use-filters'
@@ -50,6 +48,7 @@ import {
 import { createItemIndex } from '~/services/item-search-service/indexator'
 // import type { ItemFlat } from '~/models/item'
 import {
+  canUpgrade,
   getItems,
   getWeaponClassesByItemType,
   hasWeaponClassesByItemType,
@@ -70,9 +69,9 @@ import {
 
 definePageMeta({
   roles: SomeRole,
-  // layoutOptions:{
-  //   noStickyHeader: true,
-  // }
+  layoutOptions: {
+    noStickyHeader: true,
+  },
 })
 
 const { t, n } = useI18n()
@@ -105,41 +104,29 @@ Promise.all([loadItems(), userStore.fetchUserItems()])
 
 const flatItems = computed((): ItemFlat[] => createItemIndex(items.value, true))
 
-// TODO: FIXME: no await
-
-const userItemIds = computed(() => userStore.userItems.map(ui => ui.item.id))
-
 const getInInventoryItems = (baseId: string) => {
   return userStore.userItems.filter(ui => ui.item.baseId === baseId)
 }
 
 const table = useTemplateRef('table')
 
-// FIXME: ед. точка ответственности
-const columnFilters = ref<ColumnFiltersState>([
-  {
-    id: 'type',
-    value: ItemType.OneHandedWeapon,
-  },
-])
-
 // const itemType = useRouteQuery<ItemType>('itemType', ItemType.OneHandedWeapon)
-// TODO: use useRouteQuery
 const itemType = computed({
   get() {
     return (route.query?.type as ItemType) || ItemType.OneHandedWeapon
   },
   set(type: ItemType) {
-    const weaponClasses = getWeaponClassesByItemType(type)
+    const [weaponClass] = getWeaponClassesByItemType(type)
+    table.value?.tableApi.setColumnFilters([
+      { id: 'type', value: type },
+      { id: 'weaponClass', value: weaponClass },
+    ])
     router.replace({
       query: {
         type,
-        ...(weaponClasses.length !== 0 && { weaponClass: weaponClasses[0] }),
-        // TODO:
-        // ...pick(route.query, ['hideOwnedItems']),
+        weaponClass,
       },
     })
-    table.value?.tableApi?.getColumn('type')?.setFilterValue(type)
   },
 })
 
@@ -159,10 +146,7 @@ const allTypes = computed<ItemType[]>(() => {
   return Array.from(set)
 })
 
-// const weaponClass = useRouteQuery<WeaponClass | null>(
-//   'weaponClass',
-//   () => getWeaponClassesByItemType(itemType.value)?.[0] ?? null,
-// )
+// const weaponClass = useRouteQuery<WeaponClass | null>('weaponClass', () => getWeaponClassesByItemType(itemType.value)?.[0] ?? null)
 const weaponClass = computed({
   get() {
     if (route.query?.weaponClass) {
@@ -172,21 +156,43 @@ const weaponClass = computed({
     return weaponClasses.length !== 0 ? weaponClasses[0] : null
   },
   set(weaponClass: WeaponClass | null) {
+    table.value?.tableApi?.getColumn('weaponClass')?.setFilterValue(weaponClass ?? undefined)
     router.replace({
       query: {
         type: itemType.value,
         weaponClass: weaponClass ?? undefined,
-        // ...pick(route.query, ['hideOwnedItems']),
       },
     })
-    table.value?.tableApi?.getColumn('weaponClass')?.setFilterValue(weaponClass)
   },
 })
 
-const visibleAggregationKeys = computed(() => [
+function getInitialColumnFiltersState(): ColumnFiltersState {
+  return [
+    { id: 'type', value: itemType.value },
+    ...(weaponClass.value ? [{ id: 'weaponClass', value: weaponClass.value }] : []),
+  ]
+}
+
+const columnFilters = ref<ColumnFiltersState>(getInitialColumnFiltersState())
+
+// TODO: FIXME:
+const isUpgradableItemType = computed(() => canUpgrade(itemType.value))
+
+const visibleAggregationKeys = computed(() => uniq([
   ...aggregationsKeysByItemType[itemType.value] ?? [],
   ...(weaponClass.value ? (aggregationsKeysByWeaponClass[weaponClass.value] ?? []) : []),
-])
+]))
+
+const currentAggregations = computed<AggregationConfig>(
+  () => Object.fromEntries(
+    Object.entries(aggregationsConfig)
+      .sort(([a], [b]) => {
+        const indexA = visibleAggregationKeys.value.indexOf(a as keyof ItemFlat)
+        const indexB = visibleAggregationKeys.value.indexOf(b as keyof ItemFlat)
+        return indexA === -1 ? (indexB === -1 ? 0 : 1) : (indexB === -1 ? -1 : indexA - indexB)
+      }),
+  ),
+)
 
 function getInitialPaginationState(): PaginationState {
   return {
@@ -194,6 +200,7 @@ function getInitialPaginationState(): PaginationState {
     pageSize: 10, // TODO: FIXME:
   }
 }
+
 const pagination = ref<PaginationState>(getInitialPaginationState())
 
 function getInitialSortingState(): SortingState {
@@ -251,6 +258,12 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
         }),
       }),
     }),
+    meta: {
+      class: {
+        td: 'min-w-[140px]',
+        th: 'min-w-[140px]',
+      },
+    },
     header: ({ header, column }) => {
       const description = t(`item.aggregations.${header.id}.description`)
       return h(UiTableColumnHeader, {
@@ -280,20 +293,26 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
     {
       id: 'expand',
+      meta: {
+        class: {
+          th: 'px-1 w-[50px]',
+          td: 'px-1 w-[50px]',
+        },
+      },
       cell: ({ row }) =>
         h(UButton, {
-          'color': 'neutral',
-          'variant': 'ghost',
-          'icon': 'i-lucide-chevron-down',
-          'square': true,
-          'aria-label': 'Expand',
-          'ui': {
+          color: 'neutral',
+          variant: 'ghost',
+          icon: 'crpg:chevron-down',
+          square: true,
+          // 'aria-label': 'Expand',
+          ui: {
             leadingIcon: [
               'transition-transform',
               row.getIsExpanded() ? 'duration-200 rotate-180' : '',
             ],
           },
-          'onClick': () => row.toggleExpanded(),
+          onClick: () => row.toggleExpanded(),
         }),
     },
     {
@@ -313,6 +332,12 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
         // 'aria-label': 'Select row',
         'size': 'xl',
       }),
+      meta: {
+        class: {
+          th: 'px-1 w-[40px]',
+          td: 'px-1 w-[40px]',
+        },
+      },
     },
     {
       accessorKey: 'name',
@@ -322,24 +347,22 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
         'variant': 'soft',
         'size': 'xs',
         'placeholder': t('action.search'),
-        'modelValue': column.getFilterValue() as string,
+        'modelValue': column.getFilterValue(),
         'onUpdate:modelValue': column.setFilterValue,
       }),
       cell: ({ row }) => h(ShopGridItemMedia, {
         item: row.original,
         showTier: true,
       }),
+      meta: {
+        class: {
+          td: 'max-w-[320px]',
+          th: 'max-w-[320px]',
+        },
+      },
     },
-    {
-      accessorKey: 'modId',
-      filterFn: 'arrIncludesSome',
-    },
-    ...Object.entries(aggregationsConfig)
-      .sort(([a], [b]) => {
-        const indexA = visibleAggregationKeys.value.indexOf(a as keyof ItemFlat)
-        const indexB = visibleAggregationKeys.value.indexOf(b as keyof ItemFlat)
-        return indexA === -1 ? (indexB === -1 ? 0 : 1) : (indexB === -1 ? -1 : indexA - indexB)
-      })
+    ...Object.entries(currentAggregations.value)
+      .filter(([key]) => ['type', 'weaponClass'].includes(key) || visibleAggregationKeys.value.includes(key))
       .map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
   ]
 })
@@ -352,12 +375,12 @@ watchEffect(() => {
 </script>
 
 <template>
-  <UContainer class="max-w-full py-6">
+  <UContainer class="max-w-full space-y-6 py-3">
+    <pre>visibleAggregationKeys: {{ visibleAggregationKeys }}</pre>
     <!-- {{ allTypes }} -->
-    <!-- {{ { itemType, weaponClass, rowSelection } }}
-
-    {{ table?.tableApi.getSelectedRowModel().rows.map(row => row.original.modId) }} -->
-
+    <!-- <pre>{{ { itemType, weaponClass } }}</pre> -->
+    <pre>{{ columnFilters }}</pre>
+    <!-- <pre>{{ table?.tableApi.getState().columnFilters }}</pre> -->
     <!-- <pre>
       {{ table?.tableApi.getState() }}
     </pre> -->
@@ -401,6 +424,7 @@ watchEffect(() => {
 
     <!-- TODO: FIXME: dynamic columns, or visible columns -->
     <!-- :key="`${itemType}_${weaponClass}`" -->
+    {{ columns.map((i) => i.accessorKey || i.id) }}
     <UTable
       ref="table"
       v-model:pagination="pagination"
@@ -408,13 +432,10 @@ watchEffect(() => {
       v-model:column-filters="columnFilters"
       v-model:column-visibility="columnVisibility"
       v-model:row-selection="rowSelection"
-      class="relative rounded-md border border-muted"
+      class="relative overflow-clip rounded-md border border-muted"
       :data="flatItems"
       :columns
-
-      :initial-state="{
-        pagination: getInitialPaginationState(),
-      }"
+      sticky
       :loading="loadingItems"
       :faceted-options="{
         getFacetedRowModel: getFacetedRowModel(),
@@ -429,48 +450,46 @@ watchEffect(() => {
       </template>
 
       <template #expanded="{ row }">
-        <ShopGridUpgradesTable :item="row.original" />
+        <ShopGridUpgradesTable
+          :aggregation-config="Object.fromEntries(Object.entries(currentAggregations).filter(([key]) => Boolean(columnVisibility[key])))"
+          :item="row.original"
+        />
       </template>
     </UTable>
 
-    <UButton
-      v-if="Object.keys(rowSelection).length >= 2"
-      size="lg"
-      variant="subtle"
-      :icon="isCompareMode ? 'crpg:close' : undefined"
-      data-aq-shop-handler="toggle-compare"
-      :label="$t('shop.compare.title')"
-      @click="() => { toggleCompareMode() }"
-    />
+    <div
+      class="
+        sticky bottom-0 left-0 z-[1] grid grid-cols-3 items-center gap-6 bg-default/75 py-4
+        backdrop-blur
+      "
+    >
+      <UPagination
+        v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()"
+        variant="soft"
+        color="secondary"
+        active-variant="solid"
+        active-color="primary"
+        :page="pagination.pageIndex + 1"
+        :show-controls="false"
+        :default-page="(table?.tableApi?.initialState.pagination.pageIndex || 0) + 1"
+        :items-per-page="table?.tableApi?.initialState.pagination.pageSize"
+        :total="table?.tableApi?.getFilteredRowModel().rows.length"
+        @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
+      />
 
-    <UPagination
-      v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()"
-      class="flex justify-center"
-      variant="soft"
-      color="secondary"
-      active-variant="solid"
-      active-color="primary"
-      :page="pagination.pageIndex + 1"
-      :show-controls="false"
-      :default-page="(table?.tableApi?.initialState.pagination.pageIndex || 0) + 1"
-      :items-per-page="table?.tableApi?.initialState.pagination.pageSize"
-      :total="table?.tableApi?.getFilteredRowModel().rows.length"
-      @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
-    />
-    <!-- <div class="mb-2 flex items-center gap-6 overflow-x-auto pb-2">
-      <VDropdown
-        :triggers="['click']"
-        placement="bottom-end"
-      >
-        <MoreOptionsDropdownButton
-          :active="
-            hideOwnedItemsModel
-              || Boolean('weaponUsage' in filterModel && filterModel.weaponUsage!.length > 1)
-              || Boolean('new' in filterModel && filterModel.new!.length)
-          "
+      <div class="flex justify-center">
+        <UButton
+          v-if="Object.keys(rowSelection).length >= 2"
+          size="lg"
+          variant="subtle"
+          :icon="isCompareMode ? 'crpg:close' : undefined"
+          data-aq-shop-handler="toggle-compare"
+          :label="$t('shop.compare.title')"
+          @click="() => { toggleCompareMode() }"
         />
-
-        <template #popper="{ hide }">
+      </div>
+    </div>
+    <!--
           <DropdownItem>
             <Tooltip
               :title="$t('item.aggregations.new.title')"
@@ -513,204 +532,6 @@ watchEffect(() => {
               </OCheckbox>
             </Tooltip>
           </DropdownItem>
-        </template>
-      </VDropdown>
-
-      <div class="h-8 w-px select-none bg-border-200" />
-
-      <ShopItemTypeSelect
-        v-model:item-type="itemTypeModel"
-        v-model:weapon-class="weaponClassModel"
-        :item-type-buckets="aggregationByType.data.buckets"
-        :weapon-class-buckets="aggregationByClass.data.buckets"
-      />
-    </div> -->
-
-    <!-- <OTable
-      v-model:current-page="pageModel"
-      v-model:checked-rows="compareList"
-      :data="searchResult.data.items"
-      bordered
-      narrowed
-      hoverable
-      sort-icon="chevron-up"
-      sort-icon-size="xs"
-      sticky-header
-      :detailed="isUpgradableCategory"
-      detail-key="id"
-      custom-row-key="id"
-      :loading="userStore.buyingItem"
-    >
-      <OTableColumn
-        field="compare"
-        :width="36"
-      >
-        <template #header>
-          <span class="inline-flex items-center">
-            <OCheckbox
-              v-tooltip="
-                compareList.length ? $t('shop.compare.removeAll') : $t('shop.compare.addAll')
-              "
-              :model-value="compareList.length >= 1"
-              :native-value="true"
-              @update:model-value="
-                () =>
-                  compareList.length
-                    ? removeAllFromCompareList()
-                    : addAllToCompareList(searchResult.data.items.map(item => item.modId))
-              "
-            />
-          </span>
-        </template>
-        <template #default="{ row: item }: { row: ItemFlat }">
-          <span class="inline-flex items-center">
-            <OCheckbox
-              v-tooltip="
-                compareList.includes(item.modId)
-                  ? $t('shop.compare.remove')
-                  : $t('shop.compare.add')
-              "
-              :model-value="compareList.includes(item.modId)"
-              :native-value="true"
-              @update:model-value="() => toggleToCompareList(item.modId)"
-            />
-          </span>
-        </template>
-      </OTableColumn>
-
-      <OTableColumn field="name">
-        <template #header>
-          <div class="max-w-[220px]">
-            <OInput
-              v-model="searchModel"
-              type="text"
-              :placeholder="$t('action.search')"
-              icon="search"
-              rounded
-              expanded
-              clearable
-              size="sm"
-              icon-right-clickable
-              data-aq-search-shop-input
-            />
-          </div>
-        </template>
-
-        <template #default="{ row: item }: { row: ItemFlat }">
-          <ShopGridItemName
-            :item="item"
-            show-tier
-          />
-        </template>
-      </OTableColumn>
-
-      <OTableColumn
-        v-for="(field, idx) in (Object.keys(aggregationsConfigVisible) as Array<keyof ItemFlat>)"
-        :key="idx"
-        :field="field"
-        :width="aggregationsConfigVisible[field]?.width ?? 140"
-      >
-        <template #header>
-          <ShopGridFilter
-            v-if="field in searchResult.data.aggregations"
-            v-model:sorting="sortingModel"
-            :scope-aggregation="scopeAggregations[field]"
-            :aggregation="searchResult.data.aggregations[field]"
-            :aggregation-config="aggregationsConfig[field]!"
-            :filter="filterModel[field]!"
-            :sorting-config="getSortingConfigByField(field)"
-            @update:filter="val => updateFilter(field, val)"
-          />
-        </template>
-
-        <template #default="{ row: item }: { row: ItemFlat }">
-          <ItemParam
-            :item="item"
-            :field="field"
-            :best-value="compareItemsResult !== null ? compareItemsResult[field] : undefined"
-            :is-compare="isCompare"
-          >
-            <template
-              v-if="field === 'upkeep'"
-              #default="{ rawBuckets }"
-            >
-              <Coin>
-                {{ $t('item.format.upkeep', { upkeep: $n(rawBuckets as number) }) }}
-              </Coin>
-            </template>
-
-            <template
-              v-else-if="field === 'price'"
-              #default="{ rawBuckets }"
-            >
-              <ShopGridItemBuyBtn
-                :price="(rawBuckets as number)"
-                :upkeep="item.upkeep"
-                :in-inventory-items="getInInventoryItems(item.baseId)"
-                :not-enough-gold="user!.gold < item.price"
-                @buy="buyItem(item)"
-              />
-            </template>
-          </ItemParam>
-        </template>
-      </OTableColumn>
-
-      <template #detail="{ row: item }: { row: ItemFlat }">
-        <ShopGridUpgradesTable
-          :item="item"
-          :cols="aggregationsConfigVisible"
-        />
-      </template>
-
-      <template #empty>
-        <ResultNotFound />
-      </template>
-
-      <template #footer>
-        <div class="space-y-4 bg-base-100 py-4 pr-2 backdrop-blur-sm">
-          <div class="grid h-14 grid-cols-3 items-center gap-6">
-            <Pagination
-              v-model="pageModel"
-              :total="searchResult.pagination.total"
-              :per-page="searchResult.pagination.per_page"
-              order="left"
-              with-input
-            />
-
-            <div class="flex justify-center">
-              <OButton
-                v-if="compareList.length >= 2"
-                variant="primary"
-                size="lg"
-                outlined
-                :icon-right="isCompare ? 'close' : ''"
-                data-aq-shop-handler="toggle-compare"
-                :label="$t('shop.compare.title')"
-                @click="toggleCompare"
-              />
-            </div>
-
-            <div class="flex items-center justify-end gap-4">
-              <div class="text-content-400">
-                {{ $t('shop.pagination.perPage') }}
-              </div>
-              <OTabs
-                v-model="perPageModel"
-                size="xl"
-                type="bordered-rounded"
-                content-class="hidden"
-              >
-                <OTabItem
-                  v-for="pp in perPageConfig"
-                  :key="pp"
-                  :label="String(pp)"
-                  :value="pp"
-                />
-              </OTabs>
-            </div>
-          </div>
-        </div>
-      </template>
-    </OTable> -->
+         -->
   </UContainer>
 </template>

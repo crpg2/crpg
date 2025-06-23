@@ -54,9 +54,11 @@ export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 
 export const getItemUpgrades = async (item: ItemFlat): Promise<ItemFlat[]> => {
   const { data } = await getItemsUpgradesByBaseId({ composable: '$fetch', path: { baseId: item.baseId } })
+  console.log('data', createItemIndex(data! as Item[]))
+
   return createItemIndex(data! as Item[])
-    // TODO: hotfix, avoid duplicate items with multiply weaponClass
-    .filter(el => el?.weaponClass === item?.weaponClass)
+  // TODO: hotfix, avoid duplicate items with multiply weaponClass
+  // .filter(el => el?.weaponClass === item?.weaponClass)
 }
 
 export const armorTypes: ItemType[] = [
@@ -509,8 +511,6 @@ export const humanizeBucket = (
     return createHumanBucket('', null, null)
   }
 
-  const format = aggregationsConfig[aggregationKey]?.format
-
   if (aggregationKey === 'type') {
     return createHumanBucket(
       t(`item.type.${bucket as ItemType}`),
@@ -608,6 +608,8 @@ export const humanizeBucket = (
       )
     }
   }
+
+  const format = aggregationsConfig[aggregationKey]?.format
 
   if (format === ItemFieldFormat.Damage && item !== undefined) {
     const damageType = getDamageType(aggregationKey, item)

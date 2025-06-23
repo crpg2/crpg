@@ -7,6 +7,7 @@ declare module '#app' {
     layoutOptions?: {
       bg?: string
       noFooter?: boolean
+      noStickyHeader?: boolean
     }
   }
 }

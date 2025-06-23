@@ -1,77 +1,92 @@
 <script setup lang="ts">
-import type { ItemFlat } from '~/models/item'
+import type { TableColumn } from '@nuxt/ui'
 // import type { AggregationConfig } from '~/models/item-search'
+
+import { ItemParam, ShopGridItemMedia } from '#components'
+
+import type { ItemFlat } from '~/models/item'
+import type { AggregationConfig, AggregationOptions } from '~/services/item-search-service/aggregations'
 
 import { useItemUpgrades } from '~/composables/item/use-item-upgrades'
 import { ItemCompareMode } from '~/models/item'
 
 const {
-  // cols,
   item,
+  aggregationConfig,
 } = defineProps<{
   item: ItemFlat
-  // cols: AggregationConfig
+  aggregationConfig: AggregationConfig
 }>()
+
+const { t, n } = useI18n()
 
 const {
   isLoading,
   itemUpgrades,
-// relativeEntries
-} = useItemUpgrades(item,
-// cols
+  // relativeEntries
+} = useItemUpgrades(item, // cols
+)
+
+function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
+  return {
+    accessorKey: key,
+    header: '',
+    cell: ({ row }) => h(ItemParam, {
+      field: key,
+      item: row.original,
+      // bestValue: compareItemsResult !== null ? compareItemsResult[field] : undefined,
+      // isCompare: isCompareMode.value
+    }),
+    meta: {
+      class: {
+        td: 'min-w-[140px]',
+        th: 'min-w-[140px]',
+      },
+    },
+  }
+}
+
+const columns = computed<TableColumn<ItemFlat>[]>(() => [
+  {
+    id: 'fill',
+    meta: {
+      class: {
+        td: 'min-w-[60px]',
+      },
+    },
+  },
+  {
+    accessorKey: 'name',
+    cell: ({ row }) => h(ShopGridItemMedia, {
+      item: row.original,
+      showTier: true,
+    }),
+    meta: {
+      class: {
+        td: 'max-w-[320px]',
+        th: 'max-w-[320px]',
+      },
+    },
+  },
+  ...Object.entries(aggregationConfig).map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
+],
 )
 </script>
 
 <template>
-  <div>
-    ddd
+  <div class="relative">
+    <UiLoading :active="isLoading" />
+
+    <UTable
+      :data="itemUpgrades.slice(1)"
+      :columns
+      :ui="{
+        thead: 'hidden',
+      }"
+    >
+      <template #empty>
+        <UiResultNotFound />
+      </template>
+    </UTable>
   </div>
-  <!-- <OTable
-    :data="itemUpgrades.slice(1)"
-    :show-header="false"
-    :loading="isLoading"
-  >
-    <OTableColumn
-      v-slot
-      :width="78"
-    >
-      <template />
-    </OTableColumn>
-
-    <OTableColumn
-      v-slot="{ row: item }: { row: ItemFlat }"
-      field="name"
-    >
-      <ShopGridItemName
-        :item="item"
-        show-tier
-      />
-    </OTableColumn>
-
-    <OTableColumn
-      v-for="(field, idx) in (Object.keys(cols) as Array<keyof ItemFlat>)"
-      :key="idx"
-      v-slot="{ row: rowItem }: { row: ItemFlat }"
-      :field="field"
-      :width="cols[field]?.width ?? 140"
-    >
-      <ItemParam
-        :item="rowItem"
-        :field="field"
-        is-compare
-        :compare-mode="ItemCompareMode.Relative"
-        :relative-value="relativeEntries[field]"
-      />
-    </OTableColumn>
-
-    <template #empty>
-      <div class="relative min-h-40">
-        <OLoading
-          active
-          icon-size="xl"
-          :full-page="false"
-        />
-      </div>
-    </template>
-  </OTable> -->
 </template>
