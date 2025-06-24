@@ -31,7 +31,6 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         if (Mission.MainAgent != null)
         {
             Mission.MainAgent.OnMainAgentWieldedItemChange += HandleMainAgentWieldedItemChanged;
-            Mission.MainAgent.OnAgentHealthChanged += HandleAgentHealthChanged;
         }
 
         _processWeaponUsage = false;
@@ -65,7 +64,6 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         if (Mission.MainAgent != null)
         {
             Mission.MainAgent.OnMainAgentWieldedItemChange -= HandleMainAgentWieldedItemChanged;
-            Mission.MainAgent.OnAgentHealthChanged -= HandleAgentHealthChanged;
         }
 
         _dataSource!.OnFinalize();
@@ -120,57 +118,49 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         }
     }
 
-    private static (int usageIndex, string usageName, MissionWeapon mWeapon, Agent.HandIndex handIndex, string itemUsage, WeaponFlags? flags)? GetCurrentWeaponUsage(Agent agent)
+    private static (int usageIndex, string usageName, MissionWeapon mWeapon, Agent.HandIndex handIndex, WeaponComponentData? weaponData, WeaponFlags? flags)? GetCurrentWeaponUsage(Agent agent)
     {
         if (agent == null || !agent.IsActive())
         {
             return null;
         }
 
+        Agent.HandIndex handIndex;
         EquipmentIndex wieldedIndex = agent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
-        Agent.HandIndex handIndex = Agent.HandIndex.MainHand;
 
-        if (wieldedIndex == EquipmentIndex.None)
+        if (wieldedIndex != EquipmentIndex.None)
+        {
+            handIndex = Agent.HandIndex.MainHand;
+        }
+        else
         {
             wieldedIndex = agent.GetWieldedItemIndex(Agent.HandIndex.OffHand);
+            if (wieldedIndex == EquipmentIndex.None)
+            {
+                return null;
+            }
+
             handIndex = Agent.HandIndex.OffHand;
         }
 
-        if (wieldedIndex == EquipmentIndex.None || wieldedIndex < EquipmentIndex.WeaponItemBeginSlot || wieldedIndex > EquipmentIndex.ExtraWeaponSlot)
+        if (wieldedIndex < EquipmentIndex.WeaponItemBeginSlot || wieldedIndex > EquipmentIndex.ExtraWeaponSlot)
         {
             return null;
         }
 
         MissionWeapon mWeapon = agent.Equipment[wieldedIndex];
-
         if (mWeapon.IsEmpty || mWeapon.IsEqualTo(MissionWeapon.Invalid))
         {
             return null;
         }
 
         int usageIndex = mWeapon.CurrentUsageIndex;
-
         WeaponComponentData? weaponData = mWeapon.GetWeaponComponentDataForUsage(usageIndex);
-        string currentItemUsageText = mWeapon.CurrentUsageItem.ToString() ?? "Unknown";
-
-        string usageName = weaponData?.WeaponDescriptionId?.ToString() ?? "Unknown";
-        string itemUsage = weaponData?.ItemUsage?.ToString() ?? "Unknown";
-
         WeaponFlags? flags = weaponData?.WeaponFlags;
 
-        return (usageIndex, usageName, mWeapon, handIndex, itemUsage, flags);
-    }
+        string usageName = weaponData?.WeaponDescriptionId?.ToString() ?? "Unknown";
 
-    private void HandleAgentHealthChanged(Agent agent, float oldHealth, float newHealth)
-    {
-        if (agent == null || Mission.MainAgent == null || agent != Mission.MainAgent)
-        {
-            return;
-        }
-
-        if (newHealth <= 0) // agent died
-        {
-        }
+        return (usageIndex, usageName, mWeapon, handIndex, weaponData, flags);
     }
 
     private void HandleMainAgentWieldedItemChanged()
@@ -208,8 +198,7 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         string usageName = usageInfo.Value.usageName;
         MissionWeapon mWeapon = usageInfo.Value.mWeapon;
         Agent.HandIndex handIndex = usageInfo.Value.handIndex;
-        string itemUsage = usageInfo.Value.itemUsage;
-        string flagList = "Empty";
+        WeaponComponentData? weaponData = usageInfo.Value.weaponData;
         bool indexChanged = _dataSource.WeaponUsageIndex != usageInfo.Value.usageIndex;
         bool weaponChanged = !_lastWeapon.HasValue || !_lastWeapon.Value.IsEqualTo(mWeapon);
         bool shouldUpdate = weaponChanged || indexChanged || !_hasDisplayedOnce;
@@ -217,57 +206,63 @@ internal class CrpgWeaponInfoUiHandler : MissionView
 
         if (shouldUpdate)
         {
+            var sb = new System.Text.StringBuilder();
+
             if (maybeFlags.HasValue)
             {
-                WeaponFlags flags = maybeFlags.Value;
-                flagList = string.Empty;
+                var flags = maybeFlags.Value;
 
                 foreach (WeaponFlags flag in Enum.GetValues(typeof(WeaponFlags)))
                 {
-                    if ((int)flag == 0)
+                    if ((int)flag == 0 || (flags & flag) != flag)
                     {
-                        continue; // Skip zero-valued (non-useful) flags
+                        continue;
                     }
 
-                    if ((flags & flag) == flag)
+                    // Only include certain flags
+                    switch (flag)
                     {
-                        switch (flag)
-                        {
-                            case WeaponFlags.AutoReload:
-                            case WeaponFlags.BonusAgainstShield:
-                            case WeaponFlags.CanCrushThrough:
-                            case WeaponFlags.CanDismount:
-                            case WeaponFlags.CanHook:
-                            case WeaponFlags.CanKnockDown:
-                            case WeaponFlags.CanPenetrateShield:
-                            case WeaponFlags.CanBlockRanged:
-                            case WeaponFlags.HasHitPoints:
-                                flagList += $"\n{flag}";
-                                break;
-
-                            default:
-                                // skip other flags, do nothing
-                                flagList += $"\n{flag}";
-                                break;
-                        }
+                        case WeaponFlags.AutoReload:
+                        case WeaponFlags.BonusAgainstShield:
+                        case WeaponFlags.CanCrushThrough:
+                        case WeaponFlags.CanDismount:
+                        case WeaponFlags.CanHook:
+                        case WeaponFlags.CanKnockDown:
+                        case WeaponFlags.CanPenetrateShield:
+                        case WeaponFlags.CanBlockRanged:
+                        case WeaponFlags.HasHitPoints:
+                            sb.AppendLine(flag.ToString());
+                            break;
+                        // show all flags
+                        default:
+                            // sb.AppendLine(flag.ToString());
+                            break;
                     }
-                }
-
-                if (string.IsNullOrWhiteSpace(flagList))
-                {
-                    flagList = "No Flags";
                 }
             }
-            else
+
+            if (weaponData != null)
             {
-                flagList = "No Flags";
+                string itemUsageLower = weaponData.ItemUsage?.ToLower() ?? string.Empty;
+
+                if (itemUsageLower.Contains("couch"))
+                {
+                    sb.AppendLine("CanCouch");
+                }
+
+                if (itemUsageLower.Contains("bracing"))
+                {
+                    sb.AppendLine("CanBrace");
+                }
             }
+
+            string finalFlags = sb.Length > 0 ? sb.ToString().TrimEnd() : "No Flags";
 
             _dataSource.ShowWeaponUsageInfo = true;
             _timeSinceWeaponUsageChange = 0f;
             _lastWeapon = mWeapon;
             _dataSource.WeaponUsageIndex = usageInfo.Value.usageIndex;
-            _dataSource.WeaponUsageName = flagList;
+            _dataSource.WeaponUsageName = finalFlags;
             _hasDisplayedOnce = true;
         }
     }
