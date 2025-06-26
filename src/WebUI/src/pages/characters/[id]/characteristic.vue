@@ -280,10 +280,12 @@ onBeforeRouteUpdate(() => {
         style="grid-area: stats"
       >
         <CharacterStats
-          :characteristics="characteristics!"
+          :characteristics="characteristics"
           :weight="itemsStats.weight"
           :longest-weapon-length="itemsStats.longestWeaponLength"
           :health-points="healthPoints"
+          :mount-speed-base="itemsStats.mountSpeedBase"
+          :mount-harness-weight="itemsStats.mountHarnessWeight"
         />
       </div>
     </div>
