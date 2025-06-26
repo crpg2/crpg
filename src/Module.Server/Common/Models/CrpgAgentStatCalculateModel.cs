@@ -88,10 +88,10 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             WeaponClass.Crossbow => 0.5f,
             WeaponClass.Musket => 0.5f,
             WeaponClass.Pistol => 0.5f,
-            WeaponClass.Stone => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1f,
-            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.65f,
-            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.65f,
-            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.65f,
+            WeaponClass.Stone => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.0f,
+            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.2f,
+            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.2f,
+            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.2f,
             _ => 1f,
         };
 
@@ -431,25 +431,25 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 {
                     int powerThrow = GetEffectiveSkill(agent, CrpgSkills.PowerThrow);
 
-                    float wpfImpactOnWindUp = 180f; // lower is better 160f
+                    float wpfImpactOnWindUp = 100f; // lower is better 160f
                     float wpfImpactOnReloadSpeed = 240f; // lower is better 200f
 
                     float DamageImpactOnWindUp = equippedItem.ThrustDamage * CrpgItemValueModel.CalculateDamageTypeFactorForThrown(equippedItem.ThrustDamageType) / CrpgItemValueModel.CalculateDamageTypeFactorForThrown(DamageTypes.Cut);
 
                     props.WeaponMaxUnsteadyAccuracyPenalty = 0.0035f;
-                    props.WeaponMaxMovementAccuracyPenalty = 0.0010f;
+                    props.WeaponMaxMovementAccuracyPenalty = 0.15f;
 
-                    props.WeaponRotationalAccuracyPenaltyInRadians = 0.025f; // this is accuracy loss when turning lower is better
+                    props.WeaponRotationalAccuracyPenaltyInRadians = 0.15f; // this is accuracy loss when turning lower is better
 
                     props.WeaponBestAccuracyWaitTime = 0.00001f; // set to extremely low because as soon as windup is finished , thrower is accurate
 
-                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.2f, 0.3f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 3f) * 40f / DamageImpactOnWindUp); // WindupSpeed
-                    props.ReloadSpeed *= MBMath.Lerp(0.6f, 1.4f, itemSkill / wpfImpactOnReloadSpeed); // this only affect picking a new axe
+                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.25f, 0.25f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 3f) * 40f / DamageImpactOnWindUp); // WindupSpeed
+                    props.ReloadSpeed *= MBMath.Lerp(0.8f, 1.0f, itemSkill / wpfImpactOnReloadSpeed); // this only affect picking a new throwing weapon
 
-                    props.CombatMaxSpeedMultiplier *= 0.85f; // this is slowdown when ready to throw. Higher is better , do not go above 1.0
+                    props.CombatMaxSpeedMultiplier *= 0.75f; // this is slowdown when ready to throw. Higher is better , do not go above 1.0
 
                     // These do not matter if props.WeaponMaxUnsteadyAccuracyPenalty is set to 0f
-                    props.WeaponUnsteadyBeginTime = 1.0f + weaponSkill * 0.006f + powerThrow * powerThrow / 10f * 0.4f; // Time at which your character becomes tired and the accuracy declines
+                    props.WeaponUnsteadyBeginTime = 1.0f + weaponSkill * 0.006f + powerThrow * powerThrow / 10f * 1.6f; // Time at which your character becomes tired and the accuracy declines
                     props.WeaponUnsteadyEndTime = 10f + props.WeaponUnsteadyBeginTime; // time at which your character is completely tired.
                 }
 

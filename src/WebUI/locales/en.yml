@@ -497,6 +497,7 @@ character:
       linked:
         oneAttrs: 1 attributes
         threeStr: 3 strength per level
+        sixStr: 6 strength per level
         threeAgi: 3 agility per level
         sixAgi: 6 agility per level
 
@@ -530,7 +531,7 @@ character:
         powerThrow:
           title: Power throw
           desc: Increases damage by {value} and your steadiness with throwing weapons
-          requires: '@:character.characteristic.requires.linked.threeStr'
+          requires: '@:character.characteristic.requires.linked.sixStr'
         athletics:
           title: Athletics
           desc: Increases your maximum running speed and decreases the time to reach it
