@@ -164,8 +164,9 @@
       <SpriteSheetSize ID="156" Width="1920" Height="1080" />
       <SpriteSheetSize ID="157" Width="1920" Height="1080" />
       <SpriteSheetSize ID="158" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="159" Width="1920" Height="1080" />
       <SpriteSheetSize ID="160" Width="1920" Height="1080" />
-      <SpriteSheetSize ID="161" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="161" Width="1920" Height="1080" />      
       <AlwaysLoad />
     </SpriteCategory>
   </SpriteCategories>
@@ -1476,6 +1477,15 @@
       <CategoryName>ui_mploading</CategoryName>
     </SpritePart>
     <SpritePart>
+      <SheetID>159</SheetID>
+      <Name>crpg_battle_morass</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
       <SheetID>160</SheetID>
       <Name>crpg_battle_lycaronsdistricts</Name>
       <Width>1920</Width>
@@ -2082,6 +2092,10 @@
     <GenericSprite>
       <Name>crpg_dtv_isleofdismay</Name>
       <SpritePartName>crpg_dtv_isleofdismay</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>crpg_battle_morass</Name>
+      <SpritePartName>crpg_battle_morass</SpritePartName>
     </GenericSprite>
   </Sprites>
 </SpriteData>
