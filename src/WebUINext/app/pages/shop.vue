@@ -130,21 +130,15 @@ const itemType = computed({
   },
 })
 
-// preFacet
-const allTypes = computed<ItemType[]>(() => {
-  // const rows = table.value?.tableApi.getPreFilteredRowModel().rows
-  // if (!rows) {
-  //   return []
-  // }
-  const set = new Set<ItemType>()
-  for (const { type } of flatItems.value) {
-    // const value = row.getValue('type')
-    // if (value) {
-    set.add(type)
-    // }
-  }
-  return Array.from(set)
-})
+// pre facet
+const allTypes = computed<ItemType[]>(
+  () => {
+    const orders = Object.values(ItemType)
+    return uniq(flatItems.value.map(({ type }) => type)).sort(
+      (a, b) => orders.indexOf(a) - orders.indexOf(b),
+    )
+  },
+)
 
 // const weaponClass = useRouteQuery<WeaponClass | null>('weaponClass', () => getWeaponClassesByItemType(itemType.value)?.[0] ?? null)
 const weaponClass = computed({
@@ -376,10 +370,10 @@ watchEffect(() => {
 
 <template>
   <UContainer class="max-w-full space-y-6 py-3">
-    <pre>visibleAggregationKeys: {{ visibleAggregationKeys }}</pre>
+    <!-- <pre>visibleAggregationKeys: {{ visibleAggregationKeys }}</pre> -->
     <!-- {{ allTypes }} -->
     <!-- <pre>{{ { itemType, weaponClass } }}</pre> -->
-    <pre>{{ columnFilters }}</pre>
+    <!-- <pre>{{ columnFilters }}</pre> -->
     <!-- <pre>{{ table?.tableApi.getState().columnFilters }}</pre> -->
     <!-- <pre>
       {{ table?.tableApi.getState() }}
@@ -424,7 +418,7 @@ watchEffect(() => {
 
     <!-- TODO: FIXME: dynamic columns, or visible columns -->
     <!-- :key="`${itemType}_${weaponClass}`" -->
-    {{ columns.map((i) => i.accessorKey || i.id) }}
+    <!-- {{ columns.map((i) => i.accessorKey || i.id) }} -->
     <UTable
       ref="table"
       v-model:pagination="pagination"
@@ -459,8 +453,8 @@ watchEffect(() => {
 
     <div
       class="
-        sticky bottom-0 left-0 z-[1] grid grid-cols-3 items-center gap-6 bg-default/75 py-4
-        backdrop-blur
+        sticky bottom-0 left-0 z-[1] grid grid-cols-3 items-center gap-6
+        bg-default/75 py-4 backdrop-blur
       "
     >
       <UPagination

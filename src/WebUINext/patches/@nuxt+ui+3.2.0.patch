@@ -1,18 +1,13 @@
 diff --git a/node_modules/@nuxt/ui/dist/runtime/components/Table.vue b/node_modules/@nuxt/ui/dist/runtime/components/Table.vue
-index 3c56093..74865be 100644
+index d11389f..0ee1aad 100644
 --- a/node_modules/@nuxt/ui/dist/runtime/components/Table.vue
 +++ b/node_modules/@nuxt/ui/dist/runtime/components/Table.vue
-@@ -83,10 +83,17 @@ const groupingState = defineModel("grouping", { type: Array, ...{ default: [] }
- const expandedState = defineModel("expanded", { type: [Boolean, Object], ...{ default: {} } });
- const paginationState = defineModel("pagination", { type: Object, ...{ default: {} } });
- const tableRef = ref();
-+
+@@ -85,8 +85,12 @@ const paginationState = defineModel("pagination", { type: Object, ...{ default:
+ const tableRef = ref(null);
  const tableApi = useVueTable({
    ...reactiveOmit(props, "as", "data", "columns", "caption", "sticky", "loading", "loadingColor", "loadingAnimation", "class", "ui"),
 -  data,
 -  columns: columns.value,
-+  // data,
-+  // columns: columns.value,
 +  get data() {
 +    return data.value
 +  },
