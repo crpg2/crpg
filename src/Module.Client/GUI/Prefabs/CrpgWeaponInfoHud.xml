@@ -2,6 +2,7 @@
   <Window>
     <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
       <Children>
+        <!-- Weapon Usage Index (Int) -->
         <TextWidget WidthSizePolicy="CoverChildren" 
                     HeightSizePolicy="CoverChildren" 
                     VerticalAlignment="Bottom" 
@@ -13,6 +14,40 @@
                     IntText="@WeaponUsageIndex" 
                     IsVisible="@ShowWeaponUsageInfo" 
         />
+
+        <!-- Debug Text -->
+        <ListPanel WidthSizePolicy="CoverChildren"
+                   HeightSizePolicy="CoverChildren"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   MarginTop="200"
+                   StackLayout.LayoutMethod="VerticalBottomToTop">
+          <Children>
+            <TextWidget Text="Line1" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Brush="CrpgHUD.NotificationText" />
+            <TextWidget Text="Line2" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Brush="CrpgHUD.WeaponUsage.Index" />
+            <TextWidget Text="Line3" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Brush="CrpgHUD.WeaponUsage.Index"/>
+          </Children>
+        </ListPanel>
+
+        <!-- Testing dynamic listpanel -->
+        <ListPanel WidthSizePolicy="CoverChildren"
+           HeightSizePolicy="CoverChildren"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Top"
+           MarginTop="250"
+           MarginRight="15"
+           StackLayout.LayoutMethod="VerticalBottomToTop"
+           DataSource="{Lines}">
+          <ItemTemplate>
+            <TextWidget Text="@Text"
+                WidthSizePolicy="CoverChildren"
+                HeightSizePolicy="CoverChildren"
+                Brush="CrpgHUD.NotificationText"
+                Style="@Style" />
+          </ItemTemplate>
+        </ListPanel>
+
+        <!-- Weapon Flag/Info text-->
         <TextWidget WidthSizePolicy="CoverChildren" 
                     HeightSizePolicy="CoverChildren" 
                     VerticalAlignment="Bottom" 

@@ -1,16 +1,30 @@
+using Crpg.Module.Api.Models.Items;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.ClassLoadout;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 
 namespace Crpg.Module.GUI;
 
 internal class CrpgWeaponInfoUiHandler : MissionView
 {
-    private const float HideWeaponInfoDelay = 5f;
+    private const float HideWeaponInfoDelay = 3f;
+
+    private static readonly Dictionary<WeaponFlags, string> _friendlyFlagNames = new()
+    {
+        { WeaponFlags.AutoReload, "Auto Reload On" },
+        { WeaponFlags.BonusAgainstShield, "Bonus vs. Shield" },
+        { WeaponFlags.CanCrushThrough, "CrushThrough" },
+        { WeaponFlags.CanDismount, "Dismount on Stab" },
+        { WeaponFlags.CanHook, "Dismount on Swing" },
+        { WeaponFlags.CanKnockDown, "Knockdown" },
+        { WeaponFlags.CantReloadOnHorseback, "Can't Reload On Horseback" },
+    };
+
     private CrpgWeaponInfoVm _dataSource;
     private GauntletLayer? _gauntletLayer;
     private bool _processWeaponUsage = false;
@@ -28,9 +42,16 @@ internal class CrpgWeaponInfoUiHandler : MissionView
     {
         base.OnMissionScreenInitialize();
 
+        if (Mission.Current != null)
+        {
+            Mission.Current.OnItemPickUp += HandleAgentItemPickup;
+            Mission.Current.OnItemDrop += HandleAgentItemDrop;
+        }
+
         if (Mission.MainAgent != null)
         {
             Mission.MainAgent.OnMainAgentWieldedItemChange += HandleMainAgentWieldedItemChanged;
+            Mission.MainAgent.OnAgentMountedStateChanged += HandleMainAgentMountedStateChanged;
         }
 
         _processWeaponUsage = false;
@@ -61,9 +82,16 @@ internal class CrpgWeaponInfoUiHandler : MissionView
             _gauntletLayer = null;
         }
 
+        if (Mission.Current != null)
+        {
+            Mission.Current.OnItemPickUp -= HandleAgentItemPickup;
+            Mission.Current.OnItemDrop -= HandleAgentItemDrop;
+        }
+
         if (Mission.MainAgent != null)
         {
             Mission.MainAgent.OnMainAgentWieldedItemChange -= HandleMainAgentWieldedItemChanged;
+            Mission.MainAgent.OnAgentMountedStateChanged -= HandleMainAgentMountedStateChanged;
         }
 
         _dataSource!.OnFinalize();
@@ -88,6 +116,7 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         }
 
         UpdateWeaponUsageGui();
+        UpdateExpiringLines();
 
         _dataSource!.OnMissionScreenTick(dt);
     }
@@ -171,23 +200,116 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         UpdateWeaponUsageGui();
     }
 
+    private void HandleMainAgentMountedStateChanged()
+    {
+        _hasDisplayedOnce = false;
+        _processWeaponUsage = true;
+        _dataSource.WeaponUsageIndex = -1;
+        UpdateWeaponUsageGui();
+    }
+
+    private void HandleAgentItemDrop(Agent agent, SpawnedItemEntity spawnedItem)
+    {
+        if (agent != null && Mission.MainAgent != null && agent == Mission.MainAgent && agent.IsActive())
+        {
+            _hasDisplayedOnce = false;
+            _processWeaponUsage = true;
+            _dataSource.WeaponUsageIndex = -1;
+            UpdateWeaponUsageGui();
+        }
+    }
+
+    private void HandleAgentItemPickup(Agent agent, SpawnedItemEntity spawnedItem)
+    {
+        if (agent != null && Mission.MainAgent != null && agent == Mission.MainAgent && agent.IsActive())
+        {
+            _hasDisplayedOnce = false;
+            _processWeaponUsage = true;
+            _dataSource.WeaponUsageIndex = -1;
+            UpdateWeaponUsageGui();
+        }
+    }
+
     private void HideWeaponUsageGui()
     {
         _dataSource.ShowWeaponUsageInfo = false;
         _timeSinceWeaponUsageChange = 0f;
     }
 
+    private bool IsSwashbucklerPossible(Agent agent, MissionWeapon wieldedWeapon)
+    {
+        if (agent == null || !agent.IsActive())
+        {
+            return false;
+        }
+
+        if (wieldedWeapon.IsEmpty || wieldedWeapon.IsEqualTo(MissionWeapon.Invalid))
+        {
+            return false;
+        }
+
+        if (wieldedWeapon.CurrentUsageItem.WeaponClass != WeaponClass.OneHandedSword ||
+            wieldedWeapon.CurrentUsageItem.SwingDamageType != DamageTypes.Cut)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < (int)EquipmentIndex.NumAllWeaponSlots; i++)
+        {
+            MissionWeapon iWeapon = agent.Equipment[i];
+
+            if (iWeapon.IsEmpty || iWeapon.IsEqualTo(MissionWeapon.Invalid))
+            {
+                continue;
+            }
+
+            if (iWeapon.IsShield() || iWeapon.CurrentUsageItem?.IsRangedWeapon == true)
+            {
+                return false;
+            }
+
+            ItemObject item = iWeapon.Item;
+            if (item?.WeaponComponent?.Weapons == null)
+            {
+                continue;
+            }
+
+            foreach (WeaponComponentData wCompData in item.WeaponComponent.Weapons)
+            {
+                if (wCompData?.IsRangedWeapon == true)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private void UpdateExpiringLines()
+    {
+        float now = (float)MissionTime.Now.ToSeconds;
+        for (int i = _dataSource.Lines.Count - 1; i >= 0; i--)
+        {
+            var line = _dataSource.Lines[i];
+            if (line.IsExpired(now))
+            {
+                _dataSource.Lines.RemoveAt(i);
+            }
+        }
+    }
+
     private void UpdateWeaponUsageGui()
     {
-        Agent agent = Mission.MainAgent;
-        if (agent == null || !agent.IsActive())
+        Agent mainAgent = Mission.MainAgent;
+        if (mainAgent == null || !mainAgent.IsActive())
         {
             _dataSource.ShowWeaponUsageInfo = false;
             _timeSinceWeaponUsageChange = 0f;
             return;
         }
 
-        var usageInfo = GetCurrentWeaponUsage(agent);
+        var usageInfo = GetCurrentWeaponUsage(mainAgent);
         if (usageInfo == null)
         {
             _dataSource.ShowWeaponUsageInfo = false;
@@ -219,24 +341,9 @@ internal class CrpgWeaponInfoUiHandler : MissionView
                         continue;
                     }
 
-                    // Only include certain flags
-                    switch (flag)
+                    if (_friendlyFlagNames.TryGetValue(flag, out string friendlyName))
                     {
-                        case WeaponFlags.AutoReload:
-                        case WeaponFlags.BonusAgainstShield:
-                        case WeaponFlags.CanCrushThrough:
-                        case WeaponFlags.CanDismount:
-                        case WeaponFlags.CanHook:
-                        case WeaponFlags.CanKnockDown:
-                        case WeaponFlags.CanPenetrateShield:
-                        case WeaponFlags.CanBlockRanged:
-                        case WeaponFlags.HasHitPoints:
-                            sb.AppendLine(flag.ToString());
-                            break;
-                        // show all flags
-                        default:
-                            // sb.AppendLine(flag.ToString());
-                            break;
+                        sb.AppendLine(friendlyName);
                     }
                 }
             }
@@ -247,13 +354,18 @@ internal class CrpgWeaponInfoUiHandler : MissionView
 
                 if (itemUsageLower.Contains("couch"))
                 {
-                    sb.AppendLine("CanCouch");
+                    sb.AppendLine("Can Couch");
                 }
 
                 if (itemUsageLower.Contains("bracing"))
                 {
-                    sb.AppendLine("CanBrace");
+                    sb.AppendLine("Can Brace");
                 }
+            }
+
+            if (IsSwashbucklerPossible(mainAgent, mWeapon))
+            {
+                sb.AppendLine("Swashbuckler");
             }
 
             string finalFlags = sb.Length > 0 ? sb.ToString().TrimEnd() : "No Flags";
@@ -264,6 +376,14 @@ internal class CrpgWeaponInfoUiHandler : MissionView
             _dataSource.WeaponUsageIndex = usageInfo.Value.usageIndex;
             _dataSource.WeaponUsageName = finalFlags;
             _hasDisplayedOnce = true;
+
+            _dataSource.UpdateLines(new List<string>
+            {
+                "happy birthday",
+                "To me",
+                "hello",
+                "another one",
+            });
         }
     }
 }

@@ -1,16 +1,6 @@
-using System.Drawing.Text;
-using Crpg.Module.Common;
-using Crpg.Module.Common.Commander;
-using Crpg.Module.Helpers;
-using Crpg.Module.Modes.Dtv;
-using Crpg.Module.Modes.Duel;
-using Crpg.Module.Modes.Siege;
-using TaleWorlds.Core;
-using TaleWorlds.Engine;
+using Crpg.Module.GUI.Hud;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.FlagMarker.Targets;
-using TaleWorlds.MountAndBlade.Objects;
 
 namespace Crpg.Module.GUI;
 
@@ -20,11 +10,28 @@ internal class CrpgWeaponInfoVm : ViewModel
     private bool _showWeaponUsageInfo = false;
     private string _weaponUsageName = "Unset";
 
+    [DataSourceProperty]
+    public MBBindingList<HudTextLineVm> Lines { get; } = new MBBindingList<HudTextLineVm>();
+
     public CrpgWeaponInfoVm(Mission mission)
     {
         WeaponUsageIndex = 0;
         WeaponUsageName = "Unset";
         ShowWeaponUsageInfo = true;
+    }
+
+    public void UpdateLines(IEnumerable<string> newLines)
+    {
+        Lines.Clear();
+        foreach (string line in newLines)
+        {
+            Lines.Add(new HudTextLineVm(line));
+        }
+    }
+
+    public void AddLine(string text, string style = "Default", float lifetime = 10f)
+    {
+        Lines.Add(new HudTextLineVm(text, style, lifetime));
     }
 
     public void OnMissionScreenTick(float dt)

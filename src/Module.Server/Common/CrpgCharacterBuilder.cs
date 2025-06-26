@@ -62,7 +62,7 @@ internal static class CrpgCharacterBuilder
         AddEquipment(equipment, EquipmentIndex.Weapon0, "crpg_spiked_polehammer_v6_h0");
         AddEquipment(equipment, EquipmentIndex.Weapon1, "crpg_handgonne_h3");
         AddEquipment(equipment, EquipmentIndex.Weapon2, "crpg_cla_musket_ammo_h3");
-        AddEquipment(equipment, EquipmentIndex.Weapon3, "crpg_throwing_heavy_stone_v3_h3");
+        AddEquipment(equipment, EquipmentIndex.Weapon3, "crpg_simple_short_warsword_v1_h3");
         return equipment;
     }
 
