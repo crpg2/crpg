@@ -25,8 +25,7 @@ const { icon, size = 'xl' } = defineProps<{
     <UIcon
       v-else-if="icon.type === IconBucketType.Svg"
       :name="`crpg:${icon.name}`"
-      class="size-6"
+      :class="size === '2xl' ? 'size-8' : 'size-6'"
     />
-    <!-- :size="size" -->
   </div>
 </template>

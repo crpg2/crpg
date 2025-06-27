@@ -40,7 +40,7 @@ defineEmits<{
 
     <UDropdownMenu
       v-if="withFilter"
-      size="md"
+      size="xl"
       :modal="false"
       :items="filterDropdownItems"
     >

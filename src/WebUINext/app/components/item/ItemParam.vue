@@ -10,6 +10,7 @@ import { aggregationsConfig } from '~/services/item-search-service/aggregations'
 import {
   getItemFieldAbsoluteDiffStr,
   getItemFieldRelativeDiffStr,
+
   humanizeBucket,
 } from '~/services/item-service'
 

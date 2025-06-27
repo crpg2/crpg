@@ -21,13 +21,13 @@ import {
   UButton,
   UCheckbox,
   UContainer,
-  UInput,
+  // UInput,
   UiTableColumnHeader,
 } from '#components'
 import { h } from '#imports'
 import { uniq } from 'es-toolkit'
 
-import type { ItemFlat, WeaponClass } from '~/models/item'
+import type { ItemFlat } from '~/models/item'
 import type { AggregationConfig, AggregationOptions } from '~/services/item-search-service/aggregations'
 
 // import { useItemsCompare } from '~/composables/shop/use-compare'
@@ -37,7 +37,7 @@ import type { AggregationConfig, AggregationOptions } from '~/services/item-sear
 // import { useSearchDebounced } from '~/composables/use-search-debounce'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
-import { ItemType } from '~/models/item'
+import { ItemType, WeaponClass } from '~/models/item'
 import { SomeRole } from '~/models/role'
 import {
   aggregationsConfig,
@@ -73,7 +73,7 @@ definePageMeta({
     noStickyHeader: true,
   },
 })
-
+const UInput = resolveComponent('UInput')
 const { t, n } = useI18n()
 const toast = useToast()
 
@@ -108,86 +108,6 @@ const getInInventoryItems = (baseId: string) => {
   return userStore.userItems.filter(ui => ui.item.baseId === baseId)
 }
 
-const table = useTemplateRef('table')
-
-// const itemType = useRouteQuery<ItemType>('itemType', ItemType.OneHandedWeapon)
-const itemType = computed({
-  get() {
-    return (route.query?.type as ItemType) || ItemType.OneHandedWeapon
-  },
-  set(type: ItemType) {
-    const [weaponClass] = getWeaponClassesByItemType(type)
-    table.value?.tableApi.setColumnFilters([
-      { id: 'type', value: type },
-      { id: 'weaponClass', value: weaponClass },
-    ])
-    router.replace({
-      query: {
-        type,
-        weaponClass,
-      },
-    })
-  },
-})
-
-// pre facet
-const allTypes = computed<ItemType[]>(
-  () => {
-    const orders = Object.values(ItemType)
-    return uniq(flatItems.value.map(({ type }) => type)).sort(
-      (a, b) => orders.indexOf(a) - orders.indexOf(b),
-    )
-  },
-)
-
-// const weaponClass = useRouteQuery<WeaponClass | null>('weaponClass', () => getWeaponClassesByItemType(itemType.value)?.[0] ?? null)
-const weaponClass = computed({
-  get() {
-    if (route.query?.weaponClass) {
-      return route.query.weaponClass as WeaponClass
-    }
-    const weaponClasses = getWeaponClassesByItemType(itemType.value)
-    return weaponClasses.length !== 0 ? weaponClasses[0] : null
-  },
-  set(weaponClass: WeaponClass | null) {
-    table.value?.tableApi?.getColumn('weaponClass')?.setFilterValue(weaponClass ?? undefined)
-    router.replace({
-      query: {
-        type: itemType.value,
-        weaponClass: weaponClass ?? undefined,
-      },
-    })
-  },
-})
-
-function getInitialColumnFiltersState(): ColumnFiltersState {
-  return [
-    { id: 'type', value: itemType.value },
-    ...(weaponClass.value ? [{ id: 'weaponClass', value: weaponClass.value }] : []),
-  ]
-}
-
-const columnFilters = ref<ColumnFiltersState>(getInitialColumnFiltersState())
-
-// TODO: FIXME:
-const isUpgradableItemType = computed(() => canUpgrade(itemType.value))
-
-const visibleAggregationKeys = computed(() => uniq([
-  ...aggregationsKeysByItemType[itemType.value] ?? [],
-  ...(weaponClass.value ? (aggregationsKeysByWeaponClass[weaponClass.value] ?? []) : []),
-]))
-
-const currentAggregations = computed<AggregationConfig>(
-  () => Object.fromEntries(
-    Object.entries(aggregationsConfig)
-      .sort(([a], [b]) => {
-        const indexA = visibleAggregationKeys.value.indexOf(a as keyof ItemFlat)
-        const indexB = visibleAggregationKeys.value.indexOf(b as keyof ItemFlat)
-        return indexA === -1 ? (indexB === -1 ? 0 : 1) : (indexB === -1 ? -1 : indexA - indexB)
-      }),
-  ),
-)
-
 function getInitialPaginationState(): PaginationState {
   return {
     pageIndex: 0,
@@ -207,6 +127,93 @@ function getInitialSortingState(): SortingState {
 }
 const sorting = ref<SortingState>(getInitialSortingState())
 
+const columnVisibility = computed<VisibilityState>(() => {
+  return {
+    // ...Object.keys(aggregationsConfig).reduce((out, key) => {
+    //   out[key] = visibleAggregationKeys.value.includes(key as keyof ItemFlat)
+    //   return out
+    // }, {} as VisibilityState),
+    type: false,
+    weaponClass: false,
+    modId: false,
+    weaponUsage: false,
+  }
+})
+
+const table = useTemplateRef('table')
+
+// const itemType = useRouteQuery<ItemType>('itemType', ItemType.OneHandedWeapon)
+const itemType = computed({
+  get() {
+    return (route.query?.type as ItemType) || ItemType.OneHandedWeapon
+  },
+  set(type: ItemType) {
+    const [weaponClass] = getWeaponClassesByItemType(type)
+    table.value?.tableApi.setColumnFilters([
+      { id: 'type', value: type },
+      { id: 'weaponClass', value: weaponClass },
+    ])
+    router.replace({
+      query: {
+        type,
+        weaponClass,
+      },
+    })
+    table.value?.tableApi.setPageIndex(0)
+  },
+})
+
+// const weaponClass = useRouteQuery<WeaponClass | null>('weaponClass', () => getWeaponClassesByItemType(itemType.value)?.[0] ?? null)
+const weaponClass = computed({
+  get() {
+    if (route.query?.weaponClass) {
+      return route.query.weaponClass as WeaponClass
+    }
+    const weaponClasses = getWeaponClassesByItemType(itemType.value)
+    return weaponClasses.length !== 0 ? weaponClasses[0] : null
+  },
+  set(weaponClass: WeaponClass | null) {
+    table.value?.tableApi?.getColumn('weaponClass')?.setFilterValue(weaponClass ?? undefined)
+    router.replace({
+      query: {
+        type: itemType.value,
+        weaponClass: weaponClass ?? undefined,
+      },
+    })
+    table.value?.tableApi.setPageIndex(0)
+  },
+})
+
+function getInitialColumnFiltersState(): ColumnFiltersState {
+  return [
+    { id: 'type', value: itemType.value },
+    ...(weaponClass.value ? [{ id: 'weaponClass', value: weaponClass.value }] : []),
+  ]
+}
+
+const columnFilters = ref<ColumnFiltersState>(getInitialColumnFiltersState())
+
+// TODO: FIXME:
+const isUpgradableItemType = computed(() => canUpgrade(itemType.value))
+
+const visibleAggregationKeys = computed(() => {
+  if (weaponClass.value && weaponClass.value in aggregationsKeysByWeaponClass) {
+    return aggregationsKeysByWeaponClass[weaponClass.value]!
+  }
+  return aggregationsKeysByItemType[itemType.value] || []
+})
+
+const currentAggregations = computed<AggregationConfig>(
+  () => Object.fromEntries(
+    Object.entries(aggregationsConfig)
+      .sort(([a], [b]) => {
+        const indexA = visibleAggregationKeys.value.indexOf(a as keyof ItemFlat)
+        const indexB = visibleAggregationKeys.value.indexOf(b as keyof ItemFlat)
+        return indexA === -1 ? (indexB === -1 ? 0 : 1) : (indexB === -1 ? -1 : indexA - indexB)
+      }),
+  ),
+)
+
 const rowSelection = ref<RowSelectionState>({})
 const [isCompareMode, toggleCompareMode] = useToggle()
 watch(isCompareMode, () => {
@@ -215,17 +222,6 @@ watch(isCompareMode, () => {
       ? table.value?.tableApi.getSelectedRowModel().rows.map(row => row.original.modId)
       : undefined,
   )
-})
-
-const columnVisibility = computed<VisibilityState>(() => {
-  return {
-    ...Object.keys(aggregationsConfig).reduce((out, key) => {
-      out[key] = visibleAggregationKeys.value.includes(key as keyof ItemFlat)
-      return out
-    }, {} as VisibilityState),
-    modId: false,
-    weaponUsage: false,
-  }
 })
 
 function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
@@ -238,13 +234,13 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
       // isCompare: isCompareMode.value
     }, {
       ...(key === 'upkeep' && {
-        default: ({ rawBuckets }) => h(AppCoin, null, {
-          default: () => t('item.format.upkeep', { upkeep: n(rawBuckets as number) }),
+        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, null, {
+          default: () => t('item.format.upkeep', { upkeep: n(rawBuckets) }),
         }),
       }),
       ...(key === 'price' && {
-        default: ({ rawBuckets }) => h(ShopGridItemBuyBtn, {
-          price: rawBuckets as number,
+        default: ({ rawBuckets }: { rawBuckets: number }) => h(ShopGridItemBuyBtn, {
+          price: rawBuckets,
           upkeep: row.original.upkeep,
           inInventoryItems: getInInventoryItems(row.original.baseId),
           notEnoughGold: userStore.user!.gold < row.original.price,
@@ -335,14 +331,16 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
     },
     {
       accessorKey: 'name',
-      // @ts-expect-error TODO:
       header: ({ column }) => h(UInput, {
         'icon': 'crpg:search',
         'variant': 'soft',
         'size': 'xs',
         'placeholder': t('action.search'),
         'modelValue': column.getFilterValue(),
-        'onUpdate:modelValue': column.setFilterValue,
+        'onUpdate:modelValue': (value: string) => {
+          table.value?.tableApi.setPageIndex(0)
+          column.setFilterValue(value)
+        },
       }),
       cell: ({ row }) => h(ShopGridItemMedia, {
         item: row.original,
@@ -356,7 +354,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
       },
     },
     ...Object.entries(currentAggregations.value)
-      .filter(([key]) => ['type', 'weaponClass'].includes(key) || visibleAggregationKeys.value.includes(key))
+      .filter(([key]) => ['type', 'weaponClass'].includes(key) || visibleAggregationKeys.value.includes(key as keyof ItemFlat))
       .map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
   ]
 })
@@ -365,6 +363,27 @@ const { togglePageLoading } = usePageLoading()
 
 watchEffect(() => {
   togglePageLoading(loadingItems.value)
+})
+
+const itemTypeOptions = computed(() => {
+  const orders = Object.values(ItemType)
+  return uniq(flatItems.value.map(({ type }) => type))
+    .sort((a, b) => orders.indexOf(a) - orders.indexOf(b))
+    .map<TabsItem>(type => ({
+      icon: `crpg:${itemTypeToIcon[type]}`,
+      value: type,
+    }))
+})
+
+const weaponClassOptions = computed(() => {
+  const orders = Object.values(WeaponClass)
+  return uniq(flatItems.value.map<WeaponClass>(({ weaponClass }) => weaponClass as WeaponClass))
+    .filter(weaponClass => getWeaponClassesByItemType(itemType.value).includes(weaponClass))
+    .sort((a, b) => orders.indexOf(a) - orders.indexOf(b))
+    .map<TabsItem>(weaponClass => ({
+      icon: `crpg:${weaponClassToIcon[weaponClass]}`,
+      value: weaponClass,
+    }))
 })
 </script>
 
@@ -381,11 +400,7 @@ watchEffect(() => {
 
     <UTabs
       v-model="itemType"
-      :items="(allTypes)
-        .map<TabsItem>((type) => ({
-          icon: `crpg:${itemTypeToIcon[type]}`,
-          value: type,
-        }))"
+      :items="itemTypeOptions"
       :content="false"
       size="xl"
       :ui="{
@@ -397,14 +412,9 @@ watchEffect(() => {
     >
       <template v-if="hasWeaponClassesByItemType(itemType)" #default="{ item }">
         <UTabs
-          v-if="hasWeaponClassesByItemType(itemType) && item.value === itemType && weaponClass"
+          v-if="item.value === itemType && weaponClass"
           v-model="weaponClass"
-          :items="([...table?.tableApi.getColumn('weaponClass')?.getFacetedUniqueValues().keys() || []] as WeaponClass[])
-            .filter(weaponClass => getWeaponClassesByItemType(itemType).includes(weaponClass))
-            .map<TabsItem>((weaponClass) => ({
-              icon: `crpg:${weaponClassToIcon[weaponClass]}`,
-              value: weaponClass,
-            }))"
+          :items="weaponClassOptions"
           :content="false"
           size="xl"
           :ui="{
@@ -419,6 +429,8 @@ watchEffect(() => {
     <!-- TODO: FIXME: dynamic columns, or visible columns -->
     <!-- :key="`${itemType}_${weaponClass}`" -->
     <!-- {{ columns.map((i) => i.accessorKey || i.id) }} -->
+    <!--  -->
+
     <UTable
       ref="table"
       v-model:pagination="pagination"
@@ -445,7 +457,7 @@ watchEffect(() => {
 
       <template #expanded="{ row }">
         <ShopGridUpgradesTable
-          :aggregation-config="Object.fromEntries(Object.entries(currentAggregations).filter(([key]) => Boolean(columnVisibility[key])))"
+          :aggregation-config="Object.fromEntries(Object.entries(currentAggregations).filter(([key]) => visibleAggregationKeys.includes(key as keyof ItemFlat)))"
           :item="row.original"
         />
       </template>

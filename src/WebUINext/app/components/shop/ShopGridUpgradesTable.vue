@@ -51,7 +51,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
     id: 'fill',
     meta: {
       class: {
-        td: 'min-w-[60px]',
+        td: 'min-w-[50px]',
       },
     },
   },
@@ -76,7 +76,6 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
 <template>
   <div class="relative">
     <UiLoading :active="isLoading" />
-
     <UTable
       :data="itemUpgrades.slice(1)"
       :columns

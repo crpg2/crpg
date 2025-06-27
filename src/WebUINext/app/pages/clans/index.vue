@@ -3,9 +3,8 @@ import type { DropdownMenuItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, PaginationState, VisibilityState } from '@tanstack/vue-table'
 
 import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { ClanTagIcon, UBadge, UButton, UiTableColumnHeader, UTooltip } from '#components'
+import { ClanTagIcon, UBadge, UButton, UInput, UiTableColumnHeader, UTooltip } from '#components'
 import { navigateTo, tw } from '#imports'
-import { h } from 'vue'
 
 import type { ClanWithMemberCount } from '~/models/clan'
 
@@ -23,7 +22,7 @@ definePageMeta({
 const userStore = useUserStore()
 const { t } = useI18n()
 
-const { searchModel } = useSearchDebounced()
+const globalFilterByName = useRouteQuery<string | undefined>('searchModel', undefined)
 
 // TODO: region as query, pagination - improve REST API
 const {
@@ -64,9 +63,9 @@ watch(regionModel, () => {
 })
 
 // TODO: to cmp
-const columns: TableColumn<ClanWithMemberCount>[] = [
+const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
   {
-    accessorFn: row => row.clan.tag,
+    accessorKey: 'clan.tag',
     header: t('clan.table.column.tag'),
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-2',
@@ -81,8 +80,15 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
     },
   },
   {
-    accessorFn: row => row.clan.name,
-    header: t('clan.table.column.name'),
+    accessorKey: 'clan.name',
+    header: () => h(UInput, {
+      'icon': 'crpg:search',
+      'variant': 'ghost',
+      'size': 'xs',
+      'placeholder': t('action.search'),
+      'modelValue': globalFilterByName.value,
+      'onUpdate:modelValue': val => globalFilterByName.value = val,
+    }),
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-2',
     }, [
@@ -99,7 +105,7 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
   },
   {
     id: 'clan_languages',
-    accessorFn: row => row.clan.languages,
+    accessorKey: 'clan.languages',
     enableGlobalFilter: false,
     header: ({ column }) => {
       const filterValue = (column.getFilterValue() || []) as string[]
@@ -153,7 +159,7 @@ const columns: TableColumn<ClanWithMemberCount>[] = [
     accessorFn: row => row.clan.region,
     enableGlobalFilter: false,
   },
-]
+])
 
 // Hack for region filtering. Need to declare a column but not render it.
 const columnVisibility = ref<VisibilityState>({
@@ -185,14 +191,6 @@ const regionItems = regions.map<TabsItem>(region => ({
           />
 
           <div class="flex items-center gap-2">
-            <UInput
-              v-model="searchModel"
-              color="secondary"
-              variant="outline"
-              :placeholder="$t('action.search')"
-              icon="crpg:search"
-              data-aq-search-clan-input
-            />
             <UTooltip
               v-if="userStore.clan"
               :text="$t('clan.action.goToMyClan')"
@@ -223,7 +221,7 @@ const regionItems = regions.map<TabsItem>(region => ({
           ref="table"
           v-model:pagination="pagination"
           v-model:column-filters="columnFilters"
-          v-model:global-filter="searchModel"
+          v-model:global-filter="globalFilterByName"
           v-model:column-visibility="columnVisibility"
           class="relative rounded-md border border-muted"
           :loading="loadingClans"
