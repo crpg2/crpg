@@ -66,6 +66,8 @@
     <Compile Remove="..\Module.Server\Common\CrpgCustomBannerServer.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\MissionNetworkComponentPatch.cs" />
     <Compile Remove="..\Module.Server\HarmonyPatches\SendPeerInformationsToPeerPatch.cs" />
+    <Compile Remove="..\Module.Server\Common\FriendlyFireReport\FriendlyFireReportServerBehavior.cs" />
+    <Compile Remove="..\Module.Server\Common\FriendlyFireReport\FriendlyFireReportClientBehavior.cs" />
   </ItemGroup>
 
   <ItemGroup>

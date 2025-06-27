@@ -35,4 +35,6 @@ public enum ActivityLogType
     ClanArmoryRemoveItem,
     ClanArmoryReturnItem,
     ClanArmoryBorrowItem,
+    TeamHitReported,
+    TeamHitReportedUserKicked,
 }

@@ -1406,6 +1406,8 @@ public record SeedDataCommand : IMediatorRequest
                 new() { Type = ActivityLogType.ChatMessageSent, User = takeo, CreatedAt = DateTime.UtcNow.AddMinutes(-3), Metadata = { new("message", "Do you get it?"), new("instance", "crpg01a"), }, },
                 new() { Type = ActivityLogType.TeamHit, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+3), Metadata = { new("targetUserId", takeo.Id.ToString()), new("damage", "123"), new("instance", "crpg01a"), }, },
                 new() { Type = ActivityLogType.TeamHit, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+6), Metadata = { new("targetUserId", namidaka.Id.ToString()), new("damage", "333"), new("instance", "crpg01a"), }, },
+                new() { Type = ActivityLogType.TeamHitReported, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+6), Metadata = { new("targetUserId", namidaka.Id.ToString()), new("reportedHits", "333"), new("decayedHits", "111"), new("unreportedHits", "222"), new("onReporterHits", "11"), new("damage", "123"), new("weaponName", "crpg_item_1"), }, },
+                new() { Type = ActivityLogType.TeamHitReportedUserKicked, User = orle, CreatedAt = DateTime.UtcNow.AddMinutes(+6), Metadata = { new("reportedHits", "333"), new("decayedHits", "111"), new("unreportedHits", "222"), }, },
             };
 
             ActivityLog[] characterEarnedActivityLogs =

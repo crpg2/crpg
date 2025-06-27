@@ -117,6 +117,7 @@ const Render = () => {
     oldName,
     newName,
     message,
+    ...restKeys
   } = metadata
 
   return h(
@@ -152,6 +153,10 @@ const Render = () => {
       ...(oldName && { oldName: () => renderStrong(oldName) }),
       ...(newName && { newName: () => renderStrong(newName) }),
       ...(message && { message: () => renderStrong(message) }),
+      ...Object.entries(restKeys).reduce((out: Record<string, () => VNode>, [key, value]) => {
+        out[key] = () => renderStrong(value)
+        return out
+      }, {} as Record<string, () => any>),
     },
   )
 }
