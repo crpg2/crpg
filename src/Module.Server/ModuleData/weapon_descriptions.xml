@@ -15007,4 +15007,13 @@
       <AvailablePiece id="crpg_ashwood_pike_guard_h3" />
     </AvailablePieces>
   </WeaponDescription>
+  <WeaponDescription id="crpg_deployable" weapon_class="Mace" item_usage_features="deployable">
+    <WeaponFlags>
+      <WeaponFlag value="MeleeWeapon" />
+    </WeaponFlags>
+    <AvailablePieces>
+      <AvailablePiece id="crpg_blacksmith_hammer_blade_h0" />
+      <AvailablePiece id="crpg_blacksmith_hammer_handle_h0" />
+    </AvailablePieces>
+  </WeaponDescription>
 </WeaponDescriptions>
