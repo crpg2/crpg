@@ -9048,4 +9048,28 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
+  <Item id="crpg_meow_horseman_armor_v2_h0" name="{=}Tunic with Cloth Sash" mesh="meow_aserai_horseman" culture="Culture.aserai" weight="4.443546" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" lod_atlas_index="2">
+    <ItemComponent>
+      <Armor body_armor="18" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_meow_horseman_armor_v2_h1" name="{=}Tunic with Cloth Sash +1" mesh="meow_aserai_horseman" culture="Culture.aserai" weight="7.302398" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" lod_atlas_index="2">
+    <ItemComponent>
+      <Armor body_armor="18" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_meow_horseman_armor_v2_h2" name="{=}Tunic with Cloth Sash +2" mesh="meow_aserai_horseman" culture="Culture.aserai" weight="7.302398" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" lod_atlas_index="2">
+    <ItemComponent>
+      <Armor body_armor="18" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
+  <Item id="crpg_meow_horseman_armor_v2_h3" name="{=}Tunic with Cloth Sash +3" mesh="meow_aserai_horseman" culture="Culture.aserai" weight="7.302398" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" lod_atlas_index="2">
+    <ItemComponent>
+      <Armor body_armor="18" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" />
+  </Item>
 </Items>
