@@ -9072,4 +9072,28 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
+  <Item id="crpg_aa_landsnechtvestfancysleeve_h0" name="{=Apple}Slashed Landsknecht Leather Vest" mesh="aa_landsnechtvestfancysleeve" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="7.807695" difficulty="0" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="30" leg_armor="5" arm_armor="14" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aa_landsnechtvestfancysleeve_h1" name="{=Apple}Slashed Landsknecht Leather Vest +1" mesh="aa_landsnechtvestfancysleeve" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="7.807695" difficulty="0" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="32" leg_armor="6" arm_armor="15" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aa_landsnechtvestfancysleeve_h2" name="{=Apple}Slashed Landsknecht Leather Vest +2" mesh="aa_landsnechtvestfancysleeve" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="7.807695" difficulty="0" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="34" leg_armor="7" arm_armor="16" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_aa_landsnechtvestfancysleeve_h3" name="{=Apple}Slashed Landsknecht Leather Vest +3" mesh="aa_landsnechtvestfancysleeve" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="7.807695" difficulty="0" appearance="1" Type="BodyArmor">
+    <ItemComponent>
+      <Armor body_armor="36" leg_armor="8" arm_armor="17" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
 </Items>
