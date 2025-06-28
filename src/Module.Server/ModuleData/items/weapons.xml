@@ -144,30 +144,6 @@
       <Piece id="crpg_spiked_polehammer_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v6_h0" name="{=kaikaikai}Spiked Polehammer" crafting_template="crpg_TwoHandedPolearm">
-    <Pieces>
-      <Piece id="crpg_spiked_polehammer_knockdown_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_spiked_polehammer_knockdown_handle_h0" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v6_h1" name="{=kaikaikai}Spiked Polehammer +1" crafting_template="crpg_TwoHandedPolearm">
-    <Pieces>
-      <Piece id="crpg_spiked_polehammer_knockdown_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_spiked_polehammer_knockdown_handle_h1" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v6_h2" name="{=kaikaikai}Spiked Polehammer +2" crafting_template="crpg_TwoHandedPolearm">
-    <Pieces>
-      <Piece id="crpg_spiked_polehammer_knockdown_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_spiked_polehammer_knockdown_handle_h2" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_spiked_polehammer_v6_h3" name="{=kaikaikai}Spiked Polehammer +3" crafting_template="crpg_TwoHandedPolearm">
-    <Pieces>
-      <Piece id="crpg_spiked_polehammer_knockdown_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_spiked_polehammer_knockdown_handle_h3" Type="Handle" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
   <CraftedItem id="crpg_warhammer_v3_h0" name="{=}Warhammer" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="mace">
     <Pieces>
       <Piece id="crpg_warhammer_blade_h0" Type="Blade" scale_factor="110" />
