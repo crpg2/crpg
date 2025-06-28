@@ -26608,7 +26608,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_french_voulge_blade_h0" name="{=kaikaikai}French Voulge Blade" tier="3" piece_type="Blade" mesh="french_voulge_head" culture="Culture.vlandia" length="58.6" weight="0.01">
+  <CraftingPiece id="crpg_french_voulge_blade_h0" name="{=kaikaikai}French Voulge Blade" tier="3" piece_type="Blade" mesh="french_voulge_head" culture="Culture.vlandia" length="58.6" weight="0.5">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Cut" damage_factor="3.5" />
@@ -26620,7 +26620,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_french_voulge_blade_h1" name="{=kaikaikai}French Voulge Blade" tier="3" piece_type="Blade" mesh="french_voulge_head" culture="Culture.vlandia" length="58.6" weight="0.01">
+  <CraftingPiece id="crpg_french_voulge_blade_h1" name="{=kaikaikai}French Voulge Blade" tier="3" piece_type="Blade" mesh="french_voulge_head" culture="Culture.vlandia" length="58.6" weight="0.5">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Cut" damage_factor="3.7" />
@@ -26632,21 +26632,9 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_french_voulge_blade_h2" name="{=kaikaikai}French Voulge Blade" tier="3" piece_type="Blade" mesh="french_voulge_head" culture="Culture.vlandia" length="58.6" weight="0.01">
+  <CraftingPiece id="crpg_french_voulge_blade_h2" name="{=kaikaikai}French Voulge Blade" tier="3" piece_type="Blade" mesh="french_voulge_head" culture="Culture.vlandia" length="58.6" weight="0.5">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.3" />
-      <Swing damage_type="Cut" damage_factor="3.8" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_french_voulge_blade_h3" name="{=kaikaikai}French Voulge Blade" tier="3" piece_type="Blade" mesh="french_voulge_head" culture="Culture.vlandia" length="58.6" weight="0.01">
-    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Cut" damage_factor="3.9" />
     </BladeData>
     <Flags>
@@ -26656,25 +26644,37 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_french_voulge_handle_h0" name="Polearm Shaft with Langets" tier="2" piece_type="Handle" mesh="french_voulge_shaft" length="130" weight="3.1" CraftingCost="120">
+  <CraftingPiece id="crpg_french_voulge_blade_h3" name="{=kaikaikai}French Voulge Blade" tier="3" piece_type="Blade" mesh="french_voulge_head" culture="Culture.vlandia" length="58.6" weight="0.45">
+    <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.3" />
+      <Swing damage_type="Cut" damage_factor="3.9" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_french_voulge_handle_h0" name="Polearm Shaft with Langets" tier="2" piece_type="Handle" mesh="french_voulge_shaft" length="130" weight="1.5" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_french_voulge_handle_h1" name="Polearm Shaft with Langets" tier="2" piece_type="Handle" mesh="french_voulge_shaft" length="130" weight="3.1" CraftingCost="120">
+  <CraftingPiece id="crpg_french_voulge_handle_h1" name="Polearm Shaft with Langets" tier="2" piece_type="Handle" mesh="french_voulge_shaft" length="130" weight="1.5" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_french_voulge_handle_h2" name="Polearm Shaft with Langets" tier="2" piece_type="Handle" mesh="french_voulge_shaft" length="130" weight="3.1" CraftingCost="120">
+  <CraftingPiece id="crpg_french_voulge_handle_h2" name="Polearm Shaft with Langets" tier="2" piece_type="Handle" mesh="french_voulge_shaft" length="130" weight="1.5" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_french_voulge_handle_h3" name="Polearm Shaft with Langets" tier="2" piece_type="Handle" mesh="french_voulge_shaft" length="130" weight="3.1" CraftingCost="120">
+  <CraftingPiece id="crpg_french_voulge_handle_h3" name="Polearm Shaft with Langets" tier="2" piece_type="Handle" mesh="french_voulge_shaft" length="130" weight="1.5" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -26780,7 +26780,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_burgundian_poleaxe_blade_h2" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.59">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
       <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
@@ -26791,10 +26791,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_burgundian_poleaxe_blade_h3" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.59">
+  <CraftingPiece id="crpg_burgundian_poleaxe_blade_h3" name="{=kaikaikai}Burgundian Axe Blade" tier="3" piece_type="Blade" mesh="burgundian_poleaxe_head" culture="Culture.vlandia" length="37.8" weight="0.54">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
-      <Swing damage_type="Cut" damage_factor="4.6" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -26822,7 +26822,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_burgundian_poleaxe_handle_h3" name="Decorated Axe Shaft" tier="2" piece_type="Handle" mesh="burgundian_poleaxe_shaft" length="138" weight="1.17" CraftingCost="120">
+  <CraftingPiece id="crpg_burgundian_poleaxe_handle_h3" name="Decorated Axe Shaft" tier="2" piece_type="Handle" mesh="burgundian_poleaxe_shaft" length="138" weight="1.1" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="9.05" piece_offset="30" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -26990,7 +26990,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_spiked_polehammer_blade_h1" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Blunt" damage_factor="3.2" />
     </BladeData>
     <Flags>
@@ -27002,7 +27002,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_spiked_polehammer_blade_h2" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
       <Swing damage_type="Blunt" damage_factor="3.3" />
     </BladeData>
     <Flags>
@@ -27012,10 +27012,10 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spiked_polehammer_blade_h3" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
+  <CraftingPiece id="crpg_spiked_polehammer_blade_h3" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.38">
     <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Blunt" damage_factor="3.5" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+      <Swing damage_type="Blunt" damage_factor="3.3" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -27042,83 +27042,7 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spiked_polehammer_handle_h3" name="Spiked Polehammer Shaft" tier="2" piece_type="Handle" mesh="spiked_polehammer_shaft" length="156" weight="2.0" CraftingCost="120">
-    <BuildData previous_piece_offset="0" next_piece_offset="72" piece_offset="44" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_spiked_polehammer_knockdown_blade_h0" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="1.9" />
-      <Swing damage_type="Blunt" damage_factor="2.6" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_spiked_polehammer_knockdown_blade_h1" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Blunt" damage_factor="2.7" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_spiked_polehammer_knockdown_blade_h2" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Blunt" damage_factor="2.8" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_spiked_polehammer_knockdown_blade_h3" name="{=kaikaikai}Spiked Polehammer Blade" tier="3" piece_type="Blade" mesh="spiked_polehammer_head" culture="Culture.vlandia" length="98.3" weight="0.42">
-    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.0" />
-      <Swing damage_type="Blunt" damage_factor="2.9" />
-    </BladeData>
-    <Flags>
-      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
-      <Flag name="CanKnockDown" />
-    </Flags>
-    <Materials>
-      <Material id="Iron4" count="2" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_spiked_polehammer_knockdown_handle_h0" name="Spiked Polehammer Shaft" tier="2" piece_type="Handle" mesh="spiked_polehammer_shaft" length="156" weight="2.0" CraftingCost="120">
-    <BuildData previous_piece_offset="0" next_piece_offset="72" piece_offset="44" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_spiked_polehammer_knockdown_handle_h1" name="Spiked Polehammer Shaft" tier="2" piece_type="Handle" mesh="spiked_polehammer_shaft" length="156" weight="2.0" CraftingCost="120">
-    <BuildData previous_piece_offset="0" next_piece_offset="72" piece_offset="44" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_spiked_polehammer_knockdown_handle_h2" name="Spiked Polehammer Shaft" tier="2" piece_type="Handle" mesh="spiked_polehammer_shaft" length="156" weight="2.0" CraftingCost="120">
-    <BuildData previous_piece_offset="0" next_piece_offset="72" piece_offset="44" />
-    <Materials>
-      <Material id="Wood" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_spiked_polehammer_knockdown_handle_h3" name="Spiked Polehammer Shaft" tier="2" piece_type="Handle" mesh="spiked_polehammer_shaft" length="156" weight="2.0" CraftingCost="120">
+  <CraftingPiece id="crpg_spiked_polehammer_handle_h3" name="Spiked Polehammer Shaft" tier="2" piece_type="Handle" mesh="spiked_polehammer_shaft" length="156" weight="1.95" CraftingCost="120">
     <BuildData previous_piece_offset="0" next_piece_offset="72" piece_offset="44" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -31770,7 +31694,7 @@
   <CraftingPiece id="crpg_meowaxe_blade_h0" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.82">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Blunt" damage_factor="2.2" />
+      <Thrust damage_type="Blunt" damage_factor="1.2" />
       <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
     <Flags>
@@ -31785,7 +31709,7 @@
   <CraftingPiece id="crpg_meowaxe_blade_h1" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.78">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Blunt" damage_factor="2.2" />
+      <Thrust damage_type="Blunt" damage_factor="1.2" />
       <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
@@ -31800,7 +31724,7 @@
   <CraftingPiece id="crpg_meowaxe_blade_h2" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.75">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Blunt" damage_factor="2.5" />
+      <Thrust damage_type="Blunt" damage_factor="1.3" />
       <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Flags>
@@ -31815,7 +31739,7 @@
   <CraftingPiece id="crpg_meowaxe_blade_h3" name="{=}Meowaxe Blade" tier="5" piece_type="Blade" mesh="meowaxe_blade" length="27.4" weight="0.75">
     <BuildData piece_offset="-12" />
     <BladeData stack_amount="2" blade_length="57.435" blade_width="23.337" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Blunt" damage_factor="2.5" />
+      <Thrust damage_type="Blunt" damage_factor="1.3" />
       <Swing damage_type="Cut" damage_factor="5.0" />
     </BladeData>
     <Flags>
@@ -32327,9 +32251,33 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_ironrod_pommel_h3" name="{=}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
-  <CraftingPiece id="crpg_ironrod_blade_h0" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.1">
+  <CraftingPiece id="crpg_ironrod_blade_h0" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="1.5">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Blunt" damage_factor="2.4" />
+      <Thrust damage_type="Blunt" damage_factor="2.0" />
+      <Swing damage_type="Blunt" damage_factor="2.4" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+    <Flags>
+      <Flag name="NoBlood" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ironrod_blade_h1" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="1.5">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Blunt" damage_factor="2.1" />
+      <Swing damage_type="Blunt" damage_factor="2.5" />
+    </BladeData>
+    <Materials>
+      <Material id="Iron2" count="2" />
+    </Materials>
+    <Flags>
+      <Flag name="NoBlood" />
+    </Flags>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ironrod_blade_h2" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="1.5">
+    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Blunt" damage_factor="2.1" />
       <Swing damage_type="Blunt" damage_factor="2.6" />
     </BladeData>
     <Materials>
@@ -32339,9 +32287,9 @@
       <Flag name="NoBlood" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ironrod_blade_h1" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.1">
+  <CraftingPiece id="crpg_ironrod_blade_h3" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="1.45">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Blunt" damage_factor="2.5" />
+      <Thrust damage_type="Blunt" damage_factor="2.1" />
       <Swing damage_type="Blunt" damage_factor="2.7" />
     </BladeData>
     <Materials>
@@ -32351,37 +32299,13 @@
       <Flag name="NoBlood" />
     </Flags>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ironrod_blade_h2" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.1">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Blunt" damage_factor="2.5" />
-      <Swing damage_type="Blunt" damage_factor="2.7" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron2" count="2" />
-    </Materials>
-    <Flags>
-      <Flag name="NoBlood" />
-    </Flags>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_ironrod_blade_h3" name="{=}Blunt Practice Tip" tier="1" piece_type="Blade" mesh="spear_blade_34" length="18.3" weight="0.1">
-    <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Blunt" damage_factor="2.7" />
-      <Swing damage_type="Blunt" damage_factor="2.7" />
-    </BladeData>
-    <Materials>
-      <Material id="Iron2" count="2" />
-    </Materials>
-    <Flags>
-      <Flag name="NoBlood" />
-    </Flags>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_ironrod_handle_h0" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.3" excluded_item_usage_features="long" is_default="true">
+  <CraftingPiece id="crpg_ironrod_handle_h0" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.2" excluded_item_usage_features="long" is_default="true">
     <BuildData piece_offset="14.9" />
     <Materials>
       <Material id="Metal" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ironrod_handle_h1" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.3" excluded_item_usage_features="long" is_default="true">
+  <CraftingPiece id="crpg_ironrod_handle_h1" name="{=Uhc0KIdz}Pine Spear Staff" tier="1" piece_type="Handle" mesh="ironrod_handle" length="204" weight="2.2" excluded_item_usage_features="long" is_default="true">
     <BuildData piece_offset="14.9" />
     <Materials>
       <Material id="Metal" count="1" />
@@ -33495,8 +33419,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_english_bill_blade_h1" name="{=Salt}English Bill Blade" tier="3" piece_type="Blade" mesh="englishbill_blade" culture="Culture.vlandia" length="64.2" weight="0.53">
     <BladeData stack_amount="3" blade_length="64.2" blade_width="15.5" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.5" />
-      <Swing damage_type="Pierce" damage_factor="3.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Pierce" damage_factor="3.3" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -33509,8 +33433,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_english_bill_blade_h2" name="{=Salt}English Bill Blade" tier="3" piece_type="Blade" mesh="englishbill_blade" culture="Culture.vlandia" length="64.2" weight="0.53">
     <BladeData stack_amount="3" blade_length="64.2" blade_width="15.5" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
-      <Swing damage_type="Pierce" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Pierce" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -33523,8 +33447,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_english_bill_blade_h3" name="{=Salt}English Bill Blade" tier="3" piece_type="Blade" mesh="englishbill_blade" culture="Culture.vlandia" length="64.2" weight="0.48">
     <BladeData stack_amount="3" blade_length="64.2" blade_width="15.5" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
-      <Swing damage_type="Pierce" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Pierce" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -34582,7 +34506,7 @@
   <CraftingPiece id="crpg_greatlongaxe_blade_h0" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.40">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Blunt" damage_factor="1.9" />
+      <Thrust damage_type="Blunt" damage_factor="1.2" />
       <Swing damage_type="Cut" damage_factor="4.7" />
     </BladeData>
     <Flags>
@@ -34597,7 +34521,7 @@
   <CraftingPiece id="crpg_greatlongaxe_blade_h1" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.40">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Blunt" damage_factor="1.9" />
+      <Thrust damage_type="Blunt" damage_factor="1.2" />
       <Swing damage_type="Cut" damage_factor="4.8" />
     </BladeData>
     <Flags>
@@ -34612,7 +34536,7 @@
   <CraftingPiece id="crpg_greatlongaxe_blade_h2" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.40">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Blunt" damage_factor="2.1" />
+      <Thrust damage_type="Blunt" damage_factor="1.3" />
       <Swing damage_type="Cut" damage_factor="4.9" />
     </BladeData>
     <Flags>
@@ -34627,7 +34551,7 @@
   <CraftingPiece id="crpg_greatlongaxe_blade_h3" name="{=Salt}Great Long Axe Head" tier="3" piece_type="Blade" mesh="greataxe_blade" length="25.5" distance_to_next_piece="14.96" distance_to_previous_piece="2.712" weight="0.40">
     <BuildData piece_offset="-14.0" />
     <BladeData stack_amount="0" blade_length="28.366" blade_width="28.192" physics_material="metal_weapon" body_name="bo_axe_longer_b">
-      <Thrust damage_type="Blunt" damage_factor="2.1" />
+      <Thrust damage_type="Blunt" damage_factor="1.3" />
       <Swing damage_type="Cut" damage_factor="5.0" />
     </BladeData>
     <Flags>
@@ -36189,9 +36113,9 @@
       <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_2h_blade_h3" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="0.7">
+  <CraftingPiece id="crpg_ibelinsword_2h_blade_h3" name="{=}Ibelin Sword Blade" tier="4" piece_type="Blade" mesh="ibelinsword_blade" culture="Culture.battania" length="113" weight="1.5">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed" holster_mesh="ibelinsword_scabbard" holster_mesh_length="115">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
       <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
   </CraftingPiece>
@@ -36213,7 +36137,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h3" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.8">
+  <CraftingPiece id="crpg_ibelinsword_2h_pommel_h3" name="{=}Ibelin Sword Pommel" tier="4" piece_type="Pommel" mesh="ibelinsword_pommel" full_scale="true" culture="Culture.battania" length="7.88" weight="0.14">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
@@ -36228,7 +36152,7 @@
   <CraftingPiece id="crpg_ibelinsword_2h_guard_h2" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.38">
     <BuildData next_piece_offset="1" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_2h_guard_h3" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.38">
+  <CraftingPiece id="crpg_ibelinsword_2h_guard_h3" name="{=}Ibelin Sword Guard" tier="5" piece_type="Guard" mesh="ibelinsword_guard" full_scale="true" culture="Culture.battania" length="2.69" weight="0.33">
     <BuildData next_piece_offset="1" />
   </CraftingPiece>
   <CraftingPiece id="crpg_ibelinsword_2h_handle_h0" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.1">
@@ -36240,7 +36164,7 @@
   <CraftingPiece id="crpg_ibelinsword_2h_handle_h2" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.1">
     <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_ibelinsword_2h_handle_h3" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.1">
+  <CraftingPiece id="crpg_ibelinsword_2h_handle_h3" name="{=}Ibelin Sword Handle" tier="3" piece_type="Handle" mesh="ibelinsword_handle" full_scale="true" culture="Culture.khuzait" length="20.2" weight="0.9">
     <BuildData piece_offset="-5" previous_piece_offset="0" next_piece_offset="0" />
   </CraftingPiece>
   <CraftingPiece id="crpg_dragonslayer_blade_h0" name="{=}Dragonslayer Blade" tier="4" piece_type="Blade" mesh="dragonslayer_blade" culture="Culture.battania" length="104.0" weight="1.0">
@@ -37163,7 +37087,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_chankamace_altmode_pommel_h3" name="{=Yeldur}Flangedmace Pommel" tier="3" piece_type="Pommel" mesh="flangedmace_pommel" culture="Culture.empire" full_scale="true" length="12" weight="1.0">
   </CraftingPiece>
-  <CraftingPiece id="crpg_celticspear_blade_h0" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.4">
+  <CraftingPiece id="crpg_celticspear_blade_h0" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.45">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.2" />
       <Swing damage_type="Cut" damage_factor="3.8" />
@@ -37175,7 +37099,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_celticspear_blade_h1" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.4">
+  <CraftingPiece id="crpg_celticspear_blade_h1" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.45">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.3" />
       <Swing damage_type="Cut" damage_factor="3.9" />
@@ -37187,7 +37111,7 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_celticspear_blade_h2" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.4">
+  <CraftingPiece id="crpg_celticspear_blade_h2" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.45">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
       <Thrust damage_type="Pierce" damage_factor="2.6" />
       <Swing damage_type="Cut" damage_factor="4.0" />
@@ -37201,7 +37125,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_celticspear_blade_h3" name="Celtic Spear Blade" tier="3" piece_type="Blade" mesh="celticspear_blade" culture="Culture.vlandia" length="46" weight="0.4">
     <BladeData stack_amount="3" physics_material="wood_weapon" body_name="bo_spear_b">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
       <Swing damage_type="Cut" damage_factor="4.1" />
     </BladeData>
     <Flags>
