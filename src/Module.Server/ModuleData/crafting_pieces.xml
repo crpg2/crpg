@@ -37520,4 +37520,88 @@
       <Material id="Iron5" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_blade_h0" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.2">
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_blade_h1" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.2">
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.0" />
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_blade_h2" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.2">
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_blade_h3" name="{=BalanceMe}Ottoman Axe Blade" tier="3" piece_type="Blade" mesh="ottomanaxe_blade" culture="Culture.vlandia" length="53.3" weight="0.2">
+    <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_spear_b">
+      <Thrust damage_type="Pierce" damage_factor="2.2" />
+      <Swing damage_type="Cut" damage_factor="4.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="BonusAgainstShield" />
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_handle_h0" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="0.7" CraftingCost="120">
+    <BuildData previous_piece_offset="1" next_piece_offset="0" piece_offset="35" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_handle_h1" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="0.7" CraftingCost="120">
+    <BuildData previous_piece_offset="1" next_piece_offset="0" piece_offset="35" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_handle_h2" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="0.7" CraftingCost="120">
+    <BuildData previous_piece_offset="1" next_piece_offset="0" piece_offset="35" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_handle_h3" name="{=BalanceMe}Ottoman Axe Handle" tier="2" piece_type="Handle" mesh="ottomanaxe_handle" length="201" weight="0.45" CraftingCost="120">
+    <BuildData previous_piece_offset="1" next_piece_offset="0" piece_offset="35" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_pommel_h0" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.4" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_pommel_h1" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.4" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_pommel_h2" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.4" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_ottomanaxe_pommel_h3" name="{=BalanceMe}Ottoman Axe" tier="1" piece_type="Pommel" mesh="ottomanaxe_pommel" culture="Culture.empire" length="7.92" weight="0.4" is_default="true">
+  </CraftingPiece>
 </CraftingPieces>
