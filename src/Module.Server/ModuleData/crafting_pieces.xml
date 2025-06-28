@@ -9163,7 +9163,7 @@
   <CraftingPiece id="crpg_raider_throwing_axe_blade_h0" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.7">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.425" />
+      <Swing damage_type="Cut" damage_factor="1.4" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9177,7 +9177,7 @@
   <CraftingPiece id="crpg_raider_throwing_axe_blade_h1" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.7">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.485" />
+      <Swing damage_type="Cut" damage_factor="1.45" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9191,7 +9191,7 @@
   <CraftingPiece id="crpg_raider_throwing_axe_blade_h2" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.7">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.545" />
+      <Swing damage_type="Cut" damage_factor="1.5" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9205,7 +9205,7 @@
   <CraftingPiece id="crpg_raider_throwing_axe_blade_h3" name="{=hSSk6tTn}Throwing Axe Head" tier="4" piece_type="Blade" mesh="axe_craft_13_head" distance_to_next_piece="2.7" distance_to_previous_piece="1.6" weight="0.7">
     <BuildData piece_offset="-3.2" />
     <BladeData stack_amount="4" blade_length="8.707" blade_width="16.898" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.605" />
+      <Swing damage_type="Cut" damage_factor="1.55" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9218,8 +9218,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_francesca_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
-    <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.45" />
+    <BladeData stack_amount="4" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Cut" damage_factor="1.35" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9232,8 +9232,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_francesca_blade_h1" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
-    <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.475" />
+    <BladeData stack_amount="4" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Cut" damage_factor="1.4" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9246,8 +9246,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_francesca_blade_h2" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
-    <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.5" />
+    <BladeData stack_amount="4" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Cut" damage_factor="1.45" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9260,8 +9260,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_francesca_blade_h3" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.453" is_default="true">
     <BuildData piece_offset="-2.966" />
-    <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.585" />
+    <BladeData stack_amount="4" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
+      <Swing damage_type="Cut" damage_factor="1.5" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9275,7 +9275,7 @@
   <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.52" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.26" />
+      <Swing damage_type="Cut" damage_factor="1.2" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9288,7 +9288,7 @@
   <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h1" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.565" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.29" />
+      <Swing damage_type="Cut" damage_factor="1.21" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9301,7 +9301,7 @@
   <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h2" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.51" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.36" />
+      <Swing damage_type="Cut" damage_factor="1.3" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9314,7 +9314,7 @@
   <CraftingPiece id="crpg_tribesman_throwing_axe_blade_h3" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.54" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.4" />
+      <Swing damage_type="Cut" damage_factor="1.32" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9327,7 +9327,7 @@
   <CraftingPiece id="crpg_highland_throwing_axe_blade_h0" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.65" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.225" />
+      <Swing damage_type="Cut" damage_factor="1.2" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9341,7 +9341,7 @@
   <CraftingPiece id="crpg_highland_throwing_axe_blade_h1" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.55" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.375" />
+      <Swing damage_type="Cut" damage_factor="1.35" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9355,7 +9355,7 @@
   <CraftingPiece id="crpg_highland_throwing_axe_blade_h2" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.65" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.33" />
+      <Swing damage_type="Cut" damage_factor="1.3" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -9369,7 +9369,7 @@
   <CraftingPiece id="crpg_highland_throwing_axe_blade_h3" name="{=fdR6zYiP}Franziska Head" tier="4" piece_type="Blade" mesh="axe_craft_4_head" distance_to_next_piece="5.787" distance_to_previous_piece="1.483" weight="0.58" is_default="true">
     <BuildData piece_offset="-2.966" />
     <BladeData stack_amount="3" blade_length="10.566" blade_width="19.257" physics_material="metal_weapon" body_name="bo_axe_longer_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Cut" damage_factor="1.45" />
+      <Swing damage_type="Cut" damage_factor="1.4" />
       <Thrust damage_type="Cut" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -25795,7 +25795,7 @@
   <CraftingPiece id="crpg_throwing_hammers_blade_h0" name="{=}Maul Head" tier="1" piece_type="Blade" mesh="maul_head" length="12" weight="1.70" full_scale="true">
     <BuildData piece_offset="-11.0" next_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="0.75" />
+      <Swing damage_type="Blunt" damage_factor="0.72" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -25805,7 +25805,7 @@
   <CraftingPiece id="crpg_throwing_hammers_blade_h1" name="{=}Maul Head" tier="1" piece_type="Blade" mesh="maul_head" length="12" weight="1.70" full_scale="true">
     <BuildData piece_offset="-11.0" next_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="0.78" />
+      <Swing damage_type="Blunt" damage_factor="0.75" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -25815,7 +25815,7 @@
   <CraftingPiece id="crpg_throwing_hammers_blade_h2" name="{=}Maul Head" tier="1" piece_type="Blade" mesh="maul_head" length="12" weight="1.70" full_scale="true">
     <BuildData piece_offset="-11.0" next_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="0.81" />
+      <Swing damage_type="Blunt" damage_factor="0.78" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -25825,7 +25825,7 @@
   <CraftingPiece id="crpg_throwing_hammers_blade_h3" name="{=}Maul Head" tier="1" piece_type="Blade" mesh="maul_head" length="12" weight="1.70" full_scale="true">
     <BuildData piece_offset="-11.0" next_piece_offset="0" />
     <BladeData stack_amount="3" physics_material="metal_weapon" body_name="bo_mace_a">
-      <Swing damage_type="Blunt" damage_factor="0.84" />
+      <Swing damage_type="Blunt" damage_factor="0.8" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28190,7 +28190,7 @@
   <CraftingPiece id="crpg_helpinghand_head_h0" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="gp_helpinghand_head" length="12.9" weight="0.98" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="12.9" blade_width="8.16" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="0.965" />
+      <Swing damage_type="Blunt" damage_factor="0.92" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28200,7 +28200,7 @@
   <CraftingPiece id="crpg_helpinghand_head_h1" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="gp_helpinghand_head" length="12.9" weight="0.995" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="12.9" blade_width="8.16" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="0.995" />
+      <Swing damage_type="Blunt" damage_factor="0.98" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28210,7 +28210,7 @@
   <CraftingPiece id="crpg_helpinghand_head_h2" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="gp_helpinghand_head" length="12.9" weight="0.995" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="12.9" blade_width="8.16" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="1.05" />
+      <Swing damage_type="Blunt" damage_factor="1.0" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28220,7 +28220,7 @@
   <CraftingPiece id="crpg_helpinghand_head_h3" name="Helping Hand Head" tier="4" piece_type="Blade" mesh="gp_helpinghand_head" length="12.9" weight="0.995" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="2" blade_length="12.9" blade_width="8.16" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="1.085" />
+      <Swing damage_type="Blunt" damage_factor="1.05" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28254,7 +28254,7 @@
   <CraftingPiece id="crpg_throwingmace_head_h0" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="gp_throwing_mace_head" length="17.3" weight="0.6" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="17.3" blade_width="7.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="0.95" />
+      <Swing damage_type="Blunt" damage_factor="0.9" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28264,7 +28264,7 @@
   <CraftingPiece id="crpg_throwingmace_head_h1" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="gp_throwing_mace_head" length="17.3" weight="0.6" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="17.3" blade_width="7.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="1.0" />
+      <Swing damage_type="Blunt" damage_factor="0.95" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28274,7 +28274,7 @@
   <CraftingPiece id="crpg_throwingmace_head_h2" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="gp_throwing_mace_head" length="17.3" weight="0.6" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="17.3" blade_width="7.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="1.05" />
+      <Swing damage_type="Blunt" damage_factor="1.0" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28284,7 +28284,7 @@
   <CraftingPiece id="crpg_throwingmace_head_h3" name="Throwing Mace Head" tier="4" piece_type="Blade" mesh="gp_throwing_mace_head" length="17.3" weight="0.6" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="3" blade_length="17.3" blade_width="7.7" physics_material="metal_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="1.1" />
+      <Swing damage_type="Blunt" damage_factor="1.05" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28318,7 +28318,7 @@
   <CraftingPiece id="crpg_throwingclub_head_h0" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="gp_throwing_club_head" length="16.2" weight="0.35" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="4" blade_length="16.2" blade_width="12.9" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="1.15" />
+      <Swing damage_type="Blunt" damage_factor="1.1" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28328,7 +28328,7 @@
   <CraftingPiece id="crpg_throwingclub_head_h1" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="gp_throwing_club_head" length="16.2" weight="0.35" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="4" blade_length="16.2" blade_width="12.9" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="1.2" />
+      <Swing damage_type="Blunt" damage_factor="1.15" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28338,7 +28338,7 @@
   <CraftingPiece id="crpg_throwingclub_head_h2" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="gp_throwing_club_head" length="16.2" weight="0.35" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="4" blade_length="16.2" blade_width="12.9" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="1.25" />
+      <Swing damage_type="Blunt" damage_factor="1.2" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
@@ -28348,7 +28348,7 @@
   <CraftingPiece id="crpg_throwingclub_head_h3" name="Throwing Club Head" tier="4" piece_type="Blade" mesh="gp_throwing_club_head" length="16.2" weight="0.35" is_default="true">
     <BuildData piece_offset="0" />
     <BladeData stack_amount="4" blade_length="16.2" blade_width="12.9" physics_material="wood_weapon" body_name="bo_mace_b" holster_mesh="throwing_axe_quiver_1">
-      <Swing damage_type="Blunt" damage_factor="1.3" />
+      <Swing damage_type="Blunt" damage_factor="1.25" />
       <Thrust damage_type="Blunt" damage_factor="0" />
     </BladeData>
     <Materials>
