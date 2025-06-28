@@ -31827,80 +31827,80 @@
       <Material id="Iron4" count="2" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_blade_h0" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.7">
+  <CraftingPiece id="crpg_meowdao_blade_h0" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="4.3" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_blade_h1" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.64">
+  <CraftingPiece id="crpg_meowdao_blade_h1" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Thrust damage_type="Pierce" damage_factor="2.0" />
       <Swing damage_type="Cut" damage_factor="4.4" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_blade_h2" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.64">
+  <CraftingPiece id="crpg_meowdao_blade_h2" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Cut" damage_factor="4.5" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_blade_h3" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.6">
+  <CraftingPiece id="crpg_meowdao_blade_h3" name="{=}Meowdao Blade" tier="4" piece_type="Blade" mesh="meowdao_blade" culture="Culture.battania" length="118" weight="1.1">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
       <Thrust damage_type="Pierce" damage_factor="2.1" />
       <Swing damage_type="Cut" damage_factor="4.6" />
     </BladeData>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_pommel_h0" name="{=}Meowdao Pommel" tier="4" piece_type="Pommel" mesh="meowdao_pommel" culture="Culture.battania" length="2.5" weight="0.12">
+  <CraftingPiece id="crpg_meowdao_pommel_h0" name="{=}Meowdao Pommel" tier="4" piece_type="Pommel" mesh="meowdao_pommel" culture="Culture.battania" length="2.5" weight="0.55">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_pommel_h1" name="{=}Meowdao Pommel" tier="4" piece_type="Pommel" mesh="meowdao_pommel" culture="Culture.battania" length="2.5" weight="0.12">
+  <CraftingPiece id="crpg_meowdao_pommel_h1" name="{=}Meowdao Pommel" tier="4" piece_type="Pommel" mesh="meowdao_pommel" culture="Culture.battania" length="2.5" weight="0.51">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_pommel_h2" name="{=}Meowdao Pommel" tier="4" piece_type="Pommel" mesh="meowdao_pommel" culture="Culture.battania" length="2.5" weight="0.12">
+  <CraftingPiece id="crpg_meowdao_pommel_h2" name="{=}Meowdao Pommel" tier="4" piece_type="Pommel" mesh="meowdao_pommel" culture="Culture.battania" length="2.5" weight="0.49">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_pommel_h3" name="{=}Meowdao Pommel" tier="4" piece_type="Pommel" mesh="meowdao_pommel" culture="Culture.battania" length="2.5" weight="0.12">
+  <CraftingPiece id="crpg_meowdao_pommel_h3" name="{=}Meowdao Pommel" tier="4" piece_type="Pommel" mesh="meowdao_pommel" culture="Culture.battania" length="2.5" weight="0.45">
     <BuildData next_piece_offset="0" />
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_guard_h0" name="{=}Meowdao Guard" tier="5" piece_type="Guard" mesh="meowdao_guard" culture="Culture.battania" length="1.37" weight="0.097">
+  <CraftingPiece id="crpg_meowdao_guard_h0" name="{=}Meowdao Guard" tier="5" piece_type="Guard" mesh="meowdao_guard" culture="Culture.battania" length="1.37" weight="0.55">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_guard_h1" name="{=}Meowdao Guard" tier="5" piece_type="Guard" mesh="meowdao_guard" culture="Culture.battania" length="1.37" weight="0.097">
+  <CraftingPiece id="crpg_meowdao_guard_h1" name="{=}Meowdao Guard" tier="5" piece_type="Guard" mesh="meowdao_guard" culture="Culture.battania" length="1.37" weight="0.55">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_guard_h2" name="{=}Meowdao Guard" tier="5" piece_type="Guard" mesh="meowdao_guard" culture="Culture.battania" length="1.37" weight="0.097">
+  <CraftingPiece id="crpg_meowdao_guard_h2" name="{=}Meowdao Guard" tier="5" piece_type="Guard" mesh="meowdao_guard" culture="Culture.battania" length="1.37" weight="0.55">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_guard_h3" name="{=}Meowdao Guard" tier="5" piece_type="Guard" mesh="meowdao_guard" culture="Culture.battania" length="1.37" weight="0.097">
+  <CraftingPiece id="crpg_meowdao_guard_h3" name="{=}Meowdao Guard" tier="5" piece_type="Guard" mesh="meowdao_guard" culture="Culture.battania" length="1.37" weight="0.55">
     <BuildData next_piece_offset="1" />
     <StatContributions armor_bonus="3" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_handle_h0" name="{=}Meowdao Handle" tier="3" piece_type="Handle" mesh="meowdao_handle" culture="Culture.khuzait" length="44.5" weight="0.1">
+  <CraftingPiece id="crpg_meowdao_handle_h0" name="{=}Meowdao Handle" tier="3" piece_type="Handle" mesh="meowdao_handle" culture="Culture.khuzait" length="44.5" weight="0.55">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.1" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_handle_h1" name="{=}Meowdao Handle" tier="3" piece_type="Handle" mesh="meowdao_handle" culture="Culture.khuzait" length="44.5" weight="0.1">
+  <CraftingPiece id="crpg_meowdao_handle_h1" name="{=}Meowdao Handle" tier="3" piece_type="Handle" mesh="meowdao_handle" culture="Culture.khuzait" length="44.5" weight="0.55">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.1" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_handle_h2" name="{=}Meowdao Handle" tier="3" piece_type="Handle" mesh="meowdao_handle" culture="Culture.khuzait" length="44.5" weight="0.1">
+  <CraftingPiece id="crpg_meowdao_handle_h2" name="{=}Meowdao Handle" tier="3" piece_type="Handle" mesh="meowdao_handle" culture="Culture.khuzait" length="44.5" weight="0.55">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.1" next_piece_offset="0" />
   </CraftingPiece>
-  <CraftingPiece id="crpg_meowdao_handle_h3" name="{=}Meowdao Handle" tier="3" piece_type="Handle" mesh="meowdao_handle" culture="Culture.khuzait" length="44.5" weight="0.1">
+  <CraftingPiece id="crpg_meowdao_handle_h3" name="{=}Meowdao Handle" tier="3" piece_type="Handle" mesh="meowdao_handle" culture="Culture.khuzait" length="44.5" weight="0.39">
     <BuildData piece_offset="-6.5" previous_piece_offset="0.1" next_piece_offset="0" />
   </CraftingPiece>
   <CraftingPiece id="crpg_fangtian_ji_pommel_h0" name="{=}Fangtian Ji Pommel" tier="4" piece_type="Pommel" mesh="qinglong_pommel" culture="Culture.empire" length="7.17" weight="0" full_scale="true">
