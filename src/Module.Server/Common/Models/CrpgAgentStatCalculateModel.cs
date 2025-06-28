@@ -502,22 +502,46 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
             // Mounted Archery
 
-            if (agent.HasMount)
+            if (agent.HasMount && equippedItem.IsRangedWeapon)
             {
                 int mountedArcherySkill = GetEffectiveSkill(agent, CrpgSkills.MountedArchery);
 
                 float weaponMaxMovementAccuracyPenalty = 0.03f / _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
                 float weaponMaxUnsteadyAccuracyPenalty = 0.15f / _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
+
                 if (equippedItem.RelevantSkill == DefaultSkills.Crossbow)
                 {
-                    weaponMaxUnsteadyAccuracyPenalty /= ImpactOfStrReqOnCrossbows(agent, 0.2f, primaryItem);
-                    weaponMaxMovementAccuracyPenalty /= ImpactOfStrReqOnCrossbows(agent, 0.2f, primaryItem);
+                    float crossbowPenaltyFactor = ImpactOfStrReqOnCrossbows(agent, 0.2f, primaryItem);
+                    weaponMaxUnsteadyAccuracyPenalty /= crossbowPenaltyFactor;
+                    weaponMaxMovementAccuracyPenalty /= crossbowPenaltyFactor;
                 }
 
-                props.WeaponMaxMovementAccuracyPenalty = Math.Min(weaponMaxMovementAccuracyPenalty, 1f);
-                props.WeaponMaxUnsteadyAccuracyPenalty = Math.Min(weaponMaxUnsteadyAccuracyPenalty, 1f);
+                props.WeaponMaxMovementAccuracyPenalty = MathF.Clamp(weaponMaxMovementAccuracyPenalty, 0f, 1f);
+                props.WeaponMaxUnsteadyAccuracyPenalty = MathF.Clamp(weaponMaxUnsteadyAccuracyPenalty, 0f, 1f);
+
+                // Mounted skill penalty
                 props.WeaponInaccuracy /= _constants.MountedRangedSkillInaccuracy[mountedArcherySkill];
-                props.WeaponInaccuracy *= (0.8f + (float)Math.Pow(perceivedWeight / 6.5f, 2f)) / 0.3f;
+
+
+                // Encumbrance-based inaccuracy penalty (neutral at 20, quadratic growth)
+                float encumbranceRatio = totalEncumbrance / 20.0f;
+                float encumbranceMultiplier = MathF.Max(
+                    1.0f + (MathF.Pow(encumbranceRatio, 2f) - 1.0f) * 0.75f,
+                    1.0f);
+
+                props.WeaponInaccuracy *= encumbranceMultiplier;
+
+                // Reload & draw speed penalty: linearly drops from 1.0 at 20 to 0.25 at 30
+                float reloadThrustMultiplier = totalEncumbrance <= 20f
+                    ? 1.0f
+                    : MathF.Max(1.0f - ((totalEncumbrance - 20f) / 10f) * 0.75f, 0.25f);
+
+                props.ReloadSpeed *= reloadThrustMultiplier;
+                props.ThrustOrRangedReadySpeedMultiplier *= reloadThrustMultiplier;
+
+                // Clamp values to ensure gameplay safety
+                props.ReloadSpeed = MathF.Clamp(props.ReloadSpeed, 0.25f, 1.0f);
+                props.ThrustOrRangedReadySpeedMultiplier = MathF.Clamp(props.ThrustOrRangedReadySpeedMultiplier, 0.25f, 1.0f);
             }
         }
 
