@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TableColumn, TabsItem } from '@nuxt/ui'
+import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type {
   ColumnFiltersState,
   PaginationState,
@@ -9,6 +9,7 @@ import type {
 } from '@tanstack/vue-table'
 
 import {
+  getFacetedMinMaxValues,
   getFacetedRowModel,
   getFacetedUniqueValues,
   getPaginationRowModel,
@@ -21,8 +22,11 @@ import {
   UButton,
   UCheckbox,
   UContainer,
-  // UInput,
+  UiInputRange,
+  UInput,
   UiTableColumnHeader,
+  UPopover,
+  USelect,
 } from '#components'
 import { h } from '#imports'
 import { uniq } from 'es-toolkit'
@@ -52,6 +56,7 @@ import {
   getItems,
   getWeaponClassesByItemType,
   hasWeaponClassesByItemType,
+  humanizeBucket,
   itemTypeToIcon,
   weaponClassToIcon,
 } from '~/services/item-service'
@@ -73,7 +78,6 @@ definePageMeta({
     noStickyHeader: true,
   },
 })
-const UInput = resolveComponent('UInput')
 const { t, n } = useI18n()
 const toast = useToast()
 
@@ -224,6 +228,35 @@ watch(isCompareMode, () => {
   )
 })
 
+const getMinRange = (buckets: number[]): number => {
+  if (buckets.length === 0) {
+    return 0
+  }
+  return Math.floor(Math.min(...buckets))
+}
+
+const getMaxRange = (buckets: number[]): number => {
+  if (buckets.length === 0) {
+    return 0
+  }
+  return Math.ceil(Math.max(...buckets))
+}
+
+const getStepRange = (values: number[]): number => {
+  if (values.every(Number.isInteger)) {
+    return 1
+  } // Ammo, stackAmount
+
+  const [min, max] = [getMinRange(values), getMaxRange(values)]
+  const diff = max - min
+
+  if ((values.length < 20 && diff < 10) || (values.length > 20 && diff < 5)) {
+    return 0.1
+  }
+
+  return 1
+}
+
 function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
   return {
     accessorKey: key,
@@ -254,13 +287,91 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
         th: 'min-w-[140px]',
       },
     },
+    ...(options.view === AggregationView.Range) && {
+      filterFn: 'inNumberRange',
+    },
+    ...(options.view === AggregationView.Checkbox) && {
+      filterFn: 'arrIncludesSome',
+    },
     header: ({ header, column }) => {
       const description = t(`item.aggregations.${header.id}.description`)
       return h(UiTableColumnHeader, {
         label: t(`item.aggregations.${header.id}.title`),
         withSort: options.view === AggregationView.Range,
         sorted: column.getIsSorted(),
+        withFilter: true,
+        filtered: column.getIsFiltered(),
         onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
+        onResetFilter: () => column.setFilterValue(undefined),
+      }, {
+        filter: () => {
+          const trigger = () => h('div', {
+            class: 'cursor-pointer text-xs underline decoration-dashed underline-offset-6 select-none hover:no-underline',
+          }, t(`item.aggregations.${header.id}.title`))
+
+          if (options.view === AggregationView.Range) {
+            const [min, max] = column.getFacetedMinMaxValues() ?? [0, 1]
+            const buckets: number[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
+
+            return h(UPopover, {
+              ui: {
+                content: 'max-w-sm pt-8',
+              },
+              arrow: true,
+            }, {
+              default: trigger,
+              content: () => h(UiInputRange, {
+                'min': min,
+                'max': max,
+                'step': getStepRange(buckets),
+                'modelValue': column.getFilterValue() as [number, number],
+                'onUpdate:modelValue': (value) => {
+                  // table.value?.tableApi.setPageIndex(0) // TODO:
+                  column.setFilterValue(value)
+                },
+              }),
+            })
+          }
+          if (options.view === AggregationView.Checkbox) {
+            const buckets: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())].filter(Boolean)
+            // console.log('buckets', buckets)
+
+            // @ts-expect-error TODO:
+            return h(USelect, {
+              'class': 'w-full',
+              'multiple': true,
+              'variant': 'ghost',
+              'size': 'xl',
+              'ui': { content: 'min-w-fit' },
+              'items': buckets.map<SelectItem>((bucket) => {
+                const humanBucket = humanizeBucket(column.id as keyof ItemFlat, bucket)
+                return {
+                  value: bucket,
+                  label: humanBucket.label,
+                  ...(humanBucket.icon && { icon: `crpg:${humanBucket.icon}` }),
+                }
+              }),
+              'modelValue': column.getFilterValue(),
+              'onUpdate:modelValue': (value) => {
+                // table.value?.tableApi.setPageIndex(0) // TODO:
+                column.setFilterValue(value)
+              },
+            }, {
+              default: trigger,
+            })
+
+            // return h(UPopover, {
+            //   ui: {
+            //     content: 'max-w-sm pt-8',
+            //   },
+            //   arrow: true,
+            // }, {
+            //   default: trigger,
+            //   content: () => ,
+            // })
+          }
+          return undefined
+        },
       })
       // return h(UTooltip, {
       //   delayDuration: 600,
@@ -331,6 +442,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
     },
     {
       accessorKey: 'name',
+      // @ts-expect-error TODO:
       header: ({ column }) => h(UInput, {
         'icon': 'crpg:search',
         'variant': 'soft',
@@ -446,6 +558,7 @@ const weaponClassOptions = computed(() => {
       :faceted-options="{
         getFacetedRowModel: getFacetedRowModel(),
         getFacetedUniqueValues: getFacetedUniqueValues(),
+        getFacetedMinMaxValues: getFacetedMinMaxValues(),
       }"
       :pagination-options="{
         getPaginationRowModel: getPaginationRowModel(),

@@ -449,20 +449,9 @@ export const itemCultureToIcon: Record<Culture, string> = {
   [Culture.Vlandia]: 'culture-vlandia',
 }
 
-// TO MODEL:
-export enum IconBucketType {
-  Asset = 'Asset',
-  Svg = 'Svg',
-}
-
-export interface IconedBucket {
-  name: string
-  type: IconBucketType
-}
-
 export interface HumanBucket {
   label: string
-  icon: IconedBucket | null
+  icon: string | null
   tooltip: {
     title: string
     description: string | null
@@ -484,7 +473,7 @@ export const getDamageType = (aggregationKey: keyof ItemFlat, item: ItemFlat) =>
 
 const createHumanBucket = (
   label: string,
-  icon: IconedBucket | null,
+  icon: string | null,
   tooltip: {
     title: string
     description: string | null
@@ -494,11 +483,6 @@ const createHumanBucket = (
   label,
   tooltip,
 })
-
-const createIcon = (type: IconBucketType, name: string | null | undefined): IconedBucket | null =>
-  name === null || name === undefined
-    ? null
-    : { name, type }
 
 export const humanizeBucket = (
   aggregationKey: keyof ItemFlat,
@@ -514,7 +498,7 @@ export const humanizeBucket = (
   if (aggregationKey === 'type') {
     return createHumanBucket(
       t(`item.type.${bucket as ItemType}`),
-      createIcon(IconBucketType.Svg, itemTypeToIcon[bucket as ItemType]),
+      itemTypeToIcon[bucket as ItemType],
       {
         title: t(`item.type.${bucket}`),
         description: '',
@@ -525,7 +509,7 @@ export const humanizeBucket = (
   if (aggregationKey === 'weaponClass') {
     return createHumanBucket(
       t(`item.weaponClass.${bucket as WeaponClass}`),
-      createIcon(IconBucketType.Svg, weaponClassToIcon[bucket as WeaponClass]),
+      weaponClassToIcon[bucket as WeaponClass],
       {
         title: t(`item.weaponClass.${bucket}`),
         description: '',
@@ -536,7 +520,7 @@ export const humanizeBucket = (
   if (aggregationKey === 'damageType') {
     return createHumanBucket(
       t(`item.damageType.${bucket}.long`),
-      createIcon(IconBucketType.Svg, damageTypeToIcon[bucket as DamageType]),
+      damageTypeToIcon[bucket as DamageType],
       {
         description: t(`item.damageType.${bucket}.description`),
         title: t(`item.damageType.${bucket}.title`),
@@ -547,7 +531,7 @@ export const humanizeBucket = (
   if (aggregationKey === 'culture') {
     return createHumanBucket(
       t(`item.culture.${bucket}`),
-      createIcon(IconBucketType.Asset, itemCultureToIcon[bucket as Culture]),
+      itemCultureToIcon[bucket as Culture],
       {
         description: null,
         title: t(`item.culture.${bucket}`),
@@ -558,7 +542,7 @@ export const humanizeBucket = (
   if (['mountArmorFamilyType', 'mountFamilyType', 'armorFamilyType'].includes(aggregationKey)) {
     return createHumanBucket(
       t(`item.familyType.${bucket}.title`),
-      createIcon(IconBucketType.Svg, itemFamilyTypeToIcon[bucket as ItemFamilyType]),
+      itemFamilyTypeToIcon[bucket as ItemFamilyType],
       {
         description: t(`item.familyType.${bucket}.description`),
         title: t(`item.familyType.${bucket}.title`),
@@ -578,7 +562,7 @@ export const humanizeBucket = (
     if (Object.values(ItemFlags).includes(bucket as ItemFlags)) {
       return createHumanBucket(
         t(`item.flags.${bucket}`),
-        createIcon(IconBucketType.Svg, itemFlagsToIcon[bucket as ItemFlags]),
+        itemFlagsToIcon[bucket as ItemFlags],
         {
           description: null,
           title: t(`item.flags.${bucket}`),
@@ -589,7 +573,7 @@ export const humanizeBucket = (
     if (Object.values(WeaponFlags).includes(bucket as WeaponFlags)) {
       return createHumanBucket(
         t(`item.weaponFlags.${bucket}`),
-        createIcon(IconBucketType.Svg, weaponFlagsToIcon[bucket as WeaponFlags]),
+        weaponFlagsToIcon[bucket as WeaponFlags] ?? null,
         {
           description: null,
           title: t(`item.weaponFlags.${bucket}`),
@@ -600,7 +584,7 @@ export const humanizeBucket = (
     if (Object.values(ItemUsage).includes(bucket as ItemUsage)) {
       return createHumanBucket(
         t(`item.usage.${bucket}.title`),
-        createIcon(IconBucketType.Svg, itemUsageToIcon[bucket as ItemUsage]),
+        itemUsageToIcon[bucket as ItemUsage] ?? null,
         {
           description: t(`item.usage.${bucket}.description`),
           title: t(`item.usage.${bucket}.title`),

@@ -5,11 +5,11 @@ type SortDirection = 'asc' | 'desc'
 
 withDefaults(defineProps<{
   label: string
-  withFilter?: boolean
   withSort?: boolean
   sorted?: false | SortDirection
+  withFilter?: boolean
   filtered?: boolean
-  filterDropdownItems?: DropdownMenuProps['items']
+  // filterDropdownItems?: DropdownMenuProps['items']
 }>(), {
   withSort: false,
   withFilter: false,
@@ -29,8 +29,8 @@ defineEmits<{
     >
       <UIcon
         class="
-          absolute top-1/2 -left-5 size-4 -translate-y-1/2 cursor-pointer
-          text-muted outline-0 select-none
+          absolute top-1/2 -left-5 size-4 -translate-y-1/2 cursor-pointer text-muted outline-0
+          select-none
           hover:text-toned
         "
         name="crpg:close"
@@ -38,7 +38,8 @@ defineEmits<{
       />
     </UTooltip>
 
-    <UDropdownMenu
+    <slot v-if="withFilter" name="filter" />
+    <!-- <UDropdownMenu
       v-if="withFilter"
       size="xl"
       :modal="false"
@@ -46,14 +47,13 @@ defineEmits<{
     >
       <div
         class="
-          cursor-pointer text-xs underline decoration-dashed underline-offset-6
-          select-none
+          cursor-pointer text-xs underline decoration-dashed underline-offset-6 select-none
           hover:no-underline
         "
       >
         {{ label }}
       </div>
-    </UDropdownMenu>
+    </UDropdownMenu> -->
 
     <div
       v-else
@@ -76,7 +76,10 @@ defineEmits<{
       </template>
     </UPopover> -->
 
-    <UTooltip v-if="withSort" :text="$t(sorted === 'asc' ? 'shop.sort.desc' : 'shop.sort.asc')">
+    <UTooltip
+      v-if="withSort"
+      :text="$t(sorted === 'asc' ? 'shop.sort.desc' : 'shop.sort.asc')"
+    >
       <div
         class="
           flex cursor-pointer flex-col text-muted

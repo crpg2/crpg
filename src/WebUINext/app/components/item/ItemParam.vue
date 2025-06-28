@@ -119,10 +119,10 @@ const fieldStyle = computed(() => {
           }"
           :disabled="!formattedValue.tooltip"
         >
-          <ItemFieldIcon
+          <UIcon
             v-if="formattedValue.icon !== null"
-            :icon="formattedValue.icon"
-            size="2xl"
+            :name="`crpg:${formattedValue.icon}`"
+            class="size-8"
           />
 
           <UBadge

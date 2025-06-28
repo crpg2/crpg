@@ -81,6 +81,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
   },
   {
     accessorKey: 'clan.name',
+    // @ts-expect-error TODO:
     header: () => h(UInput, {
       'icon': 'crpg:search',
       'variant': 'ghost',
