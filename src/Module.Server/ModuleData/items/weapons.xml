@@ -14880,4 +14880,28 @@
       <Piece id="crpg_nagamaki_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_dsaxe_h0" name="{=}Double Headed Axe" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_dsaxe_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_dsaxe_handle_h0" Type="Handle" scale_factor="150" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_dsaxe_h1" name="{=}Double Headed Axe +1" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_dsaxe_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_dsaxe_handle_h1" Type="Handle" scale_factor="150" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_dsaxe_h2" name="{=}Double Headed Axe +2" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_dsaxe_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_dsaxe_handle_h2" Type="Handle" scale_factor="150" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_dsaxe_h3" name="{=}Double Headed Axe +3" crafting_template="crpg_TwoHandedAxe" is_merchandise="false" culture="Culture.battania">
+    <Pieces>
+      <Piece id="crpg_dsaxe_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_dsaxe_handle_h3" Type="Handle" scale_factor="150" />
+    </Pieces>
+  </CraftedItem>
 </Items>

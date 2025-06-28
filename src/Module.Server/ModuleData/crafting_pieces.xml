@@ -37440,4 +37440,84 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_nagamaki_pommel_h3" name="{=koX9okuG}None" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0" is_default="true">
   </CraftingPiece>
+  <CraftingPiece id="crpg_dsaxe_blade_h0" name="{=}Doublesided Axe Head" tier="3" piece_type="Blade" mesh="dsaxe_blade" length="17.9" weight="0.43776">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="0" blade_length="28.366" blade_width="14.5" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Cut" damage_factor="4.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="3" />
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dsaxe_blade_h1" name="{=}Doublesided Axe Head" tier="3" piece_type="Blade" mesh="dsaxe_blade" length="17.9" weight="0.43776">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="0" blade_length="28.366" blade_width="14.5" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Cut" damage_factor="4.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="3" />
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dsaxe_blade_h2" name="{=}Doublesided Axe Head" tier="3" piece_type="Blade" mesh="dsaxe_blade" length="17.9" weight="0.43776">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="0" blade_length="28.366" blade_width="14.5" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="3" />
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dsaxe_blade_h3" name="{=}Doublesided Axe Head" tier="3" piece_type="Blade" mesh="dsaxe_blade" length="17.9" weight="0.40">
+    <BuildData piece_offset="0.0" />
+    <BladeData stack_amount="0" blade_length="28.366" blade_width="14.5" physics_material="metal_weapon" body_name="bo_axe_longer_b">
+      <Swing damage_type="Cut" damage_factor="4.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron2" count="3" />
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dsaxe_handle_h0" name="{=}Doublesided Axe Handle" tier="5" piece_type="Handle" mesh="dsaxe_handle" length="82.3" weight="1.6" item_holster_pos_shift="0,0,-0.0">
+    <BuildData piece_offset="23" next_piece_offset="11.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dsaxe_handle_h1" name="{=}Doublesided Axe Handle" tier="5" piece_type="Handle" mesh="dsaxe_handle" length="82.3" weight="1.6" item_holster_pos_shift="0,0,-0.0">
+    <BuildData piece_offset="23" next_piece_offset="11.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dsaxe_handle_h2" name="{=}Doublesided Axe Handle" tier="5" piece_type="Handle" mesh="dsaxe_handle" length="82.3" weight="1.6" item_holster_pos_shift="0,0,-0.0">
+    <BuildData piece_offset="23" next_piece_offset="11.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_dsaxe_handle_h3" name="{=}Doublesided Axe Handle" tier="5" piece_type="Handle" mesh="dsaxe_handle" length="82.3" weight="1.6" item_holster_pos_shift="0,0,-0.0">
+    <BuildData piece_offset="23" next_piece_offset="11.0" />
+    <Materials>
+      <Material id="Wood" count="1" />
+      <Material id="Iron5" count="1" />
+    </Materials>
+  </CraftingPiece>
 </CraftingPieces>
