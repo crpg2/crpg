@@ -1,3 +1,4 @@
+using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
@@ -25,7 +26,15 @@ public class HudTextLineVm : ViewModel
     public string Style
     {
         get => _style;
-        set => SetField(ref _style, value, nameof(Style));
+        set
+        {
+            if (_style != value)
+            {
+                InformationManager.DisplayMessage(new InformationMessage($"Style changed to: {value}"));
+                SetField(ref _style, value, nameof(Style));
+
+            }
+        }
     }
 
     public float Lifetime { get; } // -1 means no expiration
@@ -42,6 +51,7 @@ public class HudTextLineVm : ViewModel
         _style = style;
         Lifetime = NormalizeLifetime(lifetime); // -1 means "no expiration"
         TimeCreated = (float)MissionTime.Now.ToSeconds;
+        // InformationManager.DisplayMessage(new InformationMessage($"[DEBUG] New HUD line: '{text}' with style '{_style}'"));
     }
 
     public HudTextLineVm(TextObject gameText, string style = "Default", float lifetime = LifetimeDefault)

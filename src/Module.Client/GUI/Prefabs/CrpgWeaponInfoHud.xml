@@ -2,20 +2,8 @@
   <Window>
     <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
       <Children>
-        <!-- Weapon Usage Index (Int) -->
-        <TextWidget WidthSizePolicy="CoverChildren" 
-                    HeightSizePolicy="CoverChildren" 
-                    VerticalAlignment="Bottom" 
-                    HorizontalAlignment="Right" 
-                    TextHorizontalAlignment="Right"
-                    MarginBottom="130"
-                    MarginRight="50"
-                    Brush="CrpgHUD.WeaponUsage.Index" 
-                    IntText="@WeaponUsageIndex" 
-                    IsVisible="@ShowWeaponUsageInfo" 
-        />
-
         <!-- Debug Text -->
+        <!--
         <ListPanel WidthSizePolicy="CoverChildren"
                    HeightSizePolicy="CoverChildren"
                    HorizontalAlignment="Center"
@@ -28,8 +16,9 @@
             <TextWidget Text="Line3" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Brush="CrpgHUD.WeaponUsage.Index"/>
           </Children>
         </ListPanel>
-
+        -->
         <!-- Testing dynamic listpanel -->
+        <!--
         <ListPanel WidthSizePolicy="CoverChildren"
            HeightSizePolicy="CoverChildren"
            HorizontalAlignment="Center"
@@ -46,8 +35,22 @@
                 Style="@Style" />
           </ItemTemplate>
         </ListPanel>
+        !-->
+        <!-- Weapon Usage Index (Int) -->
+        <TextWidget WidthSizePolicy="CoverChildren" 
+                    HeightSizePolicy="CoverChildren" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Right" 
+                    TextHorizontalAlignment="Right"
+                    MarginBottom="130"
+                    MarginRight="50"
+                    Brush="CrpgHUD.WeaponUsage.Index" 
+                    IntText="@WeaponUsageIndex" 
+                    IsVisible="@ShowWeaponUsageIndex" 
+        />
 
         <!-- Weapon Flag/Info text-->
+        <!--
         <TextWidget WidthSizePolicy="CoverChildren" 
                     HeightSizePolicy="CoverChildren" 
                     VerticalAlignment="Bottom" 
@@ -56,8 +59,9 @@
                     MarginRight="15"
                     Brush="CrpgHUD.WeaponUsage.Name" 
                     Text="@WeaponUsageName" 
-                    IsVisible="@ShowWeaponUsageInfo" 
+                    IsVisible="@ShowWeaponUsageIndex" 
         />
+        -->
       </Children>
     </Widget>
   </Window>

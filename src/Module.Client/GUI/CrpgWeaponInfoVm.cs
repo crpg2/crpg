@@ -7,8 +7,7 @@ namespace Crpg.Module.GUI;
 internal class CrpgWeaponInfoVm : ViewModel
 {
     private int _weaponUsageIndex = -1;
-    private bool _showWeaponUsageInfo = false;
-    private string _weaponUsageName = "Unset";
+    private bool _showWeaponUsageIndex = false;
 
     [DataSourceProperty]
     public MBBindingList<HudTextLineVm> Lines { get; } = new MBBindingList<HudTextLineVm>();
@@ -16,22 +15,7 @@ internal class CrpgWeaponInfoVm : ViewModel
     public CrpgWeaponInfoVm(Mission mission)
     {
         WeaponUsageIndex = 0;
-        WeaponUsageName = "Unset";
-        ShowWeaponUsageInfo = true;
-    }
-
-    public void UpdateLines(IEnumerable<string> newLines)
-    {
-        Lines.Clear();
-        foreach (string line in newLines)
-        {
-            Lines.Add(new HudTextLineVm(line));
-        }
-    }
-
-    public void AddLine(string text, string style = "Default", float lifetime = 10f)
-    {
-        Lines.Add(new HudTextLineVm(text, style, lifetime));
+        ShowWeaponUsageIndex = true;
     }
 
     public void OnMissionScreenTick(float dt)
@@ -58,28 +42,14 @@ internal class CrpgWeaponInfoVm : ViewModel
     }
 
     [DataSourceProperty]
-    public string WeaponUsageName
+    public bool ShowWeaponUsageIndex
     {
-        get => _weaponUsageName;
+        get => _showWeaponUsageIndex;
         set
         {
-            if (value != _weaponUsageName)
+            if (value != _showWeaponUsageIndex)
             {
-                _weaponUsageName = value;
-                OnPropertyChangedWithValue(value);
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public bool ShowWeaponUsageInfo
-    {
-        get => _showWeaponUsageInfo;
-        set
-        {
-            if (value != _showWeaponUsageInfo)
-            {
-                _showWeaponUsageInfo = value;
+                _showWeaponUsageIndex = value;
                 OnPropertyChangedWithValue(value);
             }
         }

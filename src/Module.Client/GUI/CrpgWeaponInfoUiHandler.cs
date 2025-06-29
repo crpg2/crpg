@@ -1,4 +1,5 @@
 using Crpg.Module.Api.Models.Items;
+using Crpg.Module.GUI.Hud;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Engine.GauntletUI;
@@ -24,12 +25,18 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         { WeaponFlags.CanKnockDown, "Knockdown" },
         { WeaponFlags.CantReloadOnHorseback, "Can't Reload On Horseback" },
     };
+    private static readonly Dictionary<string, string> _itemUsageKeywords = new()
+{
+    { "couch", "Can Couch" },
+    { "bracing", "Can Brace" },
+    // Add more as needed
+};
+    private readonly Dictionary<string, HudTextLineVm> _persistentLines = new();
+    private readonly Dictionary<string, HudTextLineVm> _weaponFlagLines = new();
+    private readonly Dictionary<string, HudTextLineVm> _weaponUsageLines = new();
 
     private CrpgWeaponInfoVm _dataSource;
     private GauntletLayer? _gauntletLayer;
-    private bool _processWeaponUsage = false;
-    private bool _hasDisplayedOnce = false;
-    private MissionWeapon? _lastWeapon;
     private float _timeSinceWeaponUsageChange = 0f;
 
     public CrpgWeaponInfoUiHandler()
@@ -54,9 +61,7 @@ internal class CrpgWeaponInfoUiHandler : MissionView
             Mission.MainAgent.OnAgentMountedStateChanged += HandleMainAgentMountedStateChanged;
         }
 
-        _processWeaponUsage = false;
-        _dataSource.ShowWeaponUsageInfo = false;
-        _hasDisplayedOnce = false;
+        _dataSource.ShowWeaponUsageIndex = false;
         _timeSinceWeaponUsageChange = 0f;
         _dataSource.WeaponUsageIndex = -1;
 
@@ -94,6 +99,10 @@ internal class CrpgWeaponInfoUiHandler : MissionView
             Mission.MainAgent.OnAgentMountedStateChanged -= HandleMainAgentMountedStateChanged;
         }
 
+        ClearTrackedHudLines(_persistentLines);
+        ClearTrackedHudLines(_weaponFlagLines);
+        ClearTrackedHudLines(_weaponUsageLines);
+
         _dataSource!.OnFinalize();
         _dataSource = null!;
     }
@@ -103,21 +112,14 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         base.OnMissionScreenTick(dt);
         Agent agent = Mission.Current.MainAgent;
 
-        if (!_processWeaponUsage)
-        {
-            return;
-        }
-
         _timeSinceWeaponUsageChange += dt;
 
         if (_timeSinceWeaponUsageChange >= HideWeaponInfoDelay)
         {
-            _dataSource.ShowWeaponUsageInfo = false;
+            _dataSource.ShowWeaponUsageIndex = false;
         }
 
         UpdateWeaponUsageGui();
-        UpdateExpiringLines();
-
         _dataSource!.OnMissionScreenTick(dt);
     }
 
@@ -130,8 +132,6 @@ internal class CrpgWeaponInfoUiHandler : MissionView
             return;
         }
 
-        _hasDisplayedOnce = false;
-        _processWeaponUsage = true;
         UpdateWeaponUsageGui();
     }
 
@@ -141,8 +141,9 @@ internal class CrpgWeaponInfoUiHandler : MissionView
 
         if (Mission.MainAgent != null && affectedAgent == Mission.MainAgent)
         {
-            _hasDisplayedOnce = false;
-            _processWeaponUsage = false;
+            ClearTrackedHudLines(_persistentLines);
+            ClearTrackedHudLines(_weaponFlagLines);
+            ClearTrackedHudLines(_weaponUsageLines);
             HideWeaponUsageGui();
         }
     }
@@ -194,28 +195,23 @@ internal class CrpgWeaponInfoUiHandler : MissionView
 
     private void HandleMainAgentWieldedItemChanged()
     {
-        _hasDisplayedOnce = false;
-        _processWeaponUsage = true;
         _dataSource.WeaponUsageIndex = -1;
-        UpdateWeaponUsageGui();
+        UpdateWeaponUsageGui(true);
     }
 
     private void HandleMainAgentMountedStateChanged()
     {
-        _hasDisplayedOnce = false;
-        _processWeaponUsage = true;
         _dataSource.WeaponUsageIndex = -1;
-        UpdateWeaponUsageGui();
+        UpdateWeaponUsageGui(true);
     }
 
     private void HandleAgentItemDrop(Agent agent, SpawnedItemEntity spawnedItem)
     {
         if (agent != null && Mission.MainAgent != null && agent == Mission.MainAgent && agent.IsActive())
         {
-            _hasDisplayedOnce = false;
-            _processWeaponUsage = true;
+            InformationManager.DisplayMessage(new InformationMessage($"HandleAgentItemDrop()"));
             _dataSource.WeaponUsageIndex = -1;
-            UpdateWeaponUsageGui();
+            UpdateWeaponUsageGui(true);
         }
     }
 
@@ -223,16 +219,15 @@ internal class CrpgWeaponInfoUiHandler : MissionView
     {
         if (agent != null && Mission.MainAgent != null && agent == Mission.MainAgent && agent.IsActive())
         {
-            _hasDisplayedOnce = false;
-            _processWeaponUsage = true;
+            InformationManager.DisplayMessage(new InformationMessage($"HandleAgentItemPickup()"));
             _dataSource.WeaponUsageIndex = -1;
-            UpdateWeaponUsageGui();
+            UpdateWeaponUsageGui(true);
         }
     }
 
     private void HideWeaponUsageGui()
     {
-        _dataSource.ShowWeaponUsageInfo = false;
+        _dataSource.ShowWeaponUsageIndex = false;
         _timeSinceWeaponUsageChange = 0f;
     }
 
@@ -286,105 +281,203 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         return true;
     }
 
-    private void UpdateExpiringLines()
+    private void UpdateSpecialUsageNotification(string key, bool shouldShow, string text, string style = "Default")
     {
-        float now = (float)MissionTime.Now.ToSeconds;
-        for (int i = _dataSource.Lines.Count - 1; i >= 0; i--)
+        if (shouldShow)
         {
-            var line = _dataSource.Lines[i];
-            if (line.IsExpired(now))
+            if (!_persistentLines.ContainsKey(key))
             {
-                _dataSource.Lines.RemoveAt(i);
+                var line = HudTextNotificationManager.Instance.AddRight(text, style, -1f); // permanent
+                _persistentLines[key] = line;
+            }
+        }
+        else
+        {
+            if (_persistentLines.TryGetValue(key, out var line))
+            {
+                HudTextNotificationManager.Instance.RightLines.Remove(line);
+                _persistentLines.Remove(key);
             }
         }
     }
 
-    private void UpdateWeaponUsageGui()
+    private void UpdateSpecialUsageInfo(Agent mainAgent, MissionWeapon mWeapon)
+    {
+        UpdateSpecialUsageNotification("Swashbuckler", IsSwashbucklerPossible(mainAgent, mWeapon), "Swashbuckler", "Yellow");
+        // Add more as needed
+    }
+
+    private void UpdateWeaponFlagLines(WeaponFlags flags)
+    {
+        HashSet<string> currentActiveKeys = new();
+
+        foreach (var kvp in _friendlyFlagNames)
+        {
+            WeaponFlags flag = kvp.Key;
+            string label = kvp.Value;
+
+            if ((flags & flag) == flag)
+            {
+                currentActiveKeys.Add(label);
+
+                if (!_weaponFlagLines.ContainsKey(label))
+                {
+                    var line = HudTextNotificationManager.Instance.AddRight(label, "Grey", 5f);
+                    _weaponFlagLines[label] = line;
+                }
+            }
+        }
+
+        // Clean up any no-longer-relevant flags
+        var keysToRemove = _weaponFlagLines.Keys
+            .Where(key => !currentActiveKeys.Contains(key))
+            .ToList();
+
+        foreach (string key in keysToRemove)
+        {
+            if (_weaponFlagLines.TryGetValue(key, out var line))
+            {
+                HudTextNotificationManager.Instance.RightLines.Remove(line);
+                _weaponFlagLines.Remove(key);
+            }
+        }
+    }
+
+    private void UpdateWeaponUsageLinesFromItemUsage(WeaponComponentData? weaponData)
+    {
+        if (weaponData == null)
+        {
+            return;
+        }
+
+        string itemUsageLower = weaponData.ItemUsage?.ToLower() ?? string.Empty;
+        HashSet<string> currentLabels = new();
+
+        foreach (var kvp in _itemUsageKeywords)
+        {
+            string keyword = kvp.Key;
+            string displayText = kvp.Value;
+
+            if (itemUsageLower.Contains(keyword))
+            {
+                currentLabels.Add(displayText);
+
+                if (!_weaponUsageLines.ContainsKey(displayText))
+                {
+                    var line = HudTextNotificationManager.Instance.AddRight(displayText, "Grey", 10f);
+                    _weaponUsageLines[displayText] = line;
+                }
+            }
+        }
+
+        // Remove stale usage lines
+        var staleKeys = _weaponUsageLines
+            .Where(pair => _itemUsageKeywords.ContainsValue(pair.Key) && !currentLabels.Contains(pair.Key))
+            .Select(pair => pair.Key)
+            .ToList();
+
+        foreach (string? staleKey in staleKeys)
+        {
+            if (_weaponUsageLines.TryGetValue(staleKey, out var line))
+            {
+                HudTextNotificationManager.Instance.RightLines.Remove(line);
+                _weaponUsageLines.Remove(staleKey);
+            }
+        }
+    }
+
+    private void ClearTrackedHudLines(Dictionary<string, HudTextLineVm> lineDict)
+    {
+        foreach (var line in lineDict.Values)
+        {
+            HudTextNotificationManager.Instance.RightLines.Remove(line);
+        }
+
+        lineDict.Clear();
+    }
+
+    private void UpdateWeaponUsageGui(bool forced = false)
     {
         Agent mainAgent = Mission.MainAgent;
         if (mainAgent == null || !mainAgent.IsActive())
         {
-            _dataSource.ShowWeaponUsageInfo = false;
+            _dataSource.ShowWeaponUsageIndex = false;
             _timeSinceWeaponUsageChange = 0f;
             return;
         }
 
-        var usageInfo = GetCurrentWeaponUsage(mainAgent);
-        if (usageInfo == null)
+        // start new logic
+        EquipmentIndex wIndexMainHand = mainAgent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
+        EquipmentIndex wIndexOffHand = mainAgent.GetWieldedItemIndex(Agent.HandIndex.OffHand);
+        MissionWeapon mWeapon = MissionWeapon.Invalid;
+        MissionWeapon mWeapon2 = MissionWeapon.Invalid;
+
+        if (wIndexMainHand != EquipmentIndex.None &&
+            (wIndexMainHand >= EquipmentIndex.WeaponItemBeginSlot && wIndexMainHand <= EquipmentIndex.ExtraWeaponSlot))
         {
-            _dataSource.ShowWeaponUsageInfo = false;
-            _timeSinceWeaponUsageChange = 0f; // Reset timer since we hid the UI
+            mWeapon = mainAgent.Equipment[wIndexMainHand];
+        }
+
+        if (wIndexOffHand != EquipmentIndex.None &&
+        (wIndexOffHand >= EquipmentIndex.WeaponItemBeginSlot && wIndexOffHand <= EquipmentIndex.ExtraWeaponSlot))
+        {
+            mWeapon2 = mainAgent.Equipment[wIndexOffHand];
+        }
+
+        if ((mWeapon.IsEmpty || mWeapon.IsEqualTo(MissionWeapon.Invalid)) && (mWeapon2.IsEmpty || mWeapon2.IsEqualTo(MissionWeapon.Invalid))) // no weapon wielded
+        {
+            ClearTrackedHudLines(_persistentLines);
+            ClearTrackedHudLines(_weaponFlagLines);
+            ClearTrackedHudLines(_weaponUsageLines);
+
+            _dataSource.ShowWeaponUsageIndex = false;
+            _timeSinceWeaponUsageChange = 0f;
             return;
         }
 
-        string usageName = usageInfo.Value.usageName;
-        MissionWeapon mWeapon = usageInfo.Value.mWeapon;
-        Agent.HandIndex handIndex = usageInfo.Value.handIndex;
-        WeaponComponentData? weaponData = usageInfo.Value.weaponData;
-        bool indexChanged = _dataSource.WeaponUsageIndex != usageInfo.Value.usageIndex;
-        bool weaponChanged = !_lastWeapon.HasValue || !_lastWeapon.Value.IsEqualTo(mWeapon);
-        bool shouldUpdate = weaponChanged || indexChanged || !_hasDisplayedOnce;
-        WeaponFlags? maybeFlags = usageInfo.Value.flags;
-
-        if (shouldUpdate)
+        if (!mWeapon.IsEmpty)
         {
-            var sb = new System.Text.StringBuilder();
+            int usageIndex = mWeapon.CurrentUsageIndex;
+            WeaponComponentData? weaponData = mWeapon.GetWeaponComponentDataForUsage(usageIndex);
+            WeaponFlags? maybeFlags = weaponData?.WeaponFlags;
 
+            UpdateSpecialUsageInfo(mainAgent, mWeapon);
             if (maybeFlags.HasValue)
             {
                 var flags = maybeFlags.Value;
-
-                foreach (WeaponFlags flag in Enum.GetValues(typeof(WeaponFlags)))
-                {
-                    if ((int)flag == 0 || (flags & flag) != flag)
-                    {
-                        continue;
-                    }
-
-                    if (_friendlyFlagNames.TryGetValue(flag, out string friendlyName))
-                    {
-                        sb.AppendLine(friendlyName);
-                    }
-                }
+                UpdateWeaponFlagLines(flags);
             }
 
-            if (weaponData != null)
-            {
-                string itemUsageLower = weaponData.ItemUsage?.ToLower() ?? string.Empty;
+            UpdateWeaponUsageLinesFromItemUsage(weaponData);
 
-                if (itemUsageLower.Contains("couch"))
-                {
-                    sb.AppendLine("Can Couch");
-                }
-
-                if (itemUsageLower.Contains("bracing"))
-                {
-                    sb.AppendLine("Can Brace");
-                }
-            }
-
-            if (IsSwashbucklerPossible(mainAgent, mWeapon))
-            {
-                sb.AppendLine("Swashbuckler");
-            }
-
-            string finalFlags = sb.Length > 0 ? sb.ToString().TrimEnd() : "No Flags";
-
-            _dataSource.ShowWeaponUsageInfo = true;
+            _dataSource.ShowWeaponUsageIndex = true;
             _timeSinceWeaponUsageChange = 0f;
-            _lastWeapon = mWeapon;
-            _dataSource.WeaponUsageIndex = usageInfo.Value.usageIndex;
-            _dataSource.WeaponUsageName = finalFlags;
-            _hasDisplayedOnce = true;
-
-            _dataSource.UpdateLines(new List<string>
-            {
-                "happy birthday",
-                "To me",
-                "hello",
-                "another one",
-            });
+            _dataSource.WeaponUsageIndex = usageIndex;
         }
+        else
+        {
+            if (!mWeapon2.IsEmpty)
+            {
+                int usageIndex = mWeapon2.CurrentUsageIndex;
+                WeaponComponentData? weaponData = mWeapon2.GetWeaponComponentDataForUsage(usageIndex);
+                WeaponFlags? maybeFlags = weaponData?.WeaponFlags;
+
+                UpdateSpecialUsageInfo(mainAgent, mWeapon2);
+                if (maybeFlags.HasValue)
+                {
+                    var flags = maybeFlags.Value;
+                    UpdateWeaponFlagLines(flags);
+                }
+
+                UpdateWeaponUsageLinesFromItemUsage(weaponData);
+
+                _dataSource.ShowWeaponUsageIndex = true;
+                _timeSinceWeaponUsageChange = 0f;
+                _dataSource.WeaponUsageIndex = usageIndex;
+            }
+        }
+
+        _dataSource.RefreshValues();
     }
 }
 
