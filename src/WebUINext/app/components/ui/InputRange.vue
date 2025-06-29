@@ -44,7 +44,7 @@ const change = (from: number, to: number) => {
 </script>
 
 <template>
-  <div class="space-y-8">
+  <div class="space-y-3">
     <div>
       <USlider
         v-model="localValue"

@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import type { DropdownMenuItem, TableColumn, TabsItem } from '@nuxt/ui'
+import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, PaginationState, VisibilityState } from '@tanstack/vue-table'
 
 import { getFacetedRowModel, getFacetedUniqueValues, getPaginationRowModel } from '@tanstack/vue-table'
-import { ClanTagIcon, UBadge, UButton, UInput, UiTableColumnHeader, UTooltip } from '#components'
+import { ClanTagIcon, UBadge, UButton, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, USelect, UTooltip } from '#components'
 import { navigateTo, tw } from '#imports'
 
 import type { ClanWithMemberCount } from '~/models/clan'
 
 import { useRegionQuery } from '~/composables/use-region'
-import { useSearchDebounced } from '~/composables/utils/use-search-debounce'
 import { Region } from '~/models/region'
 import { SomeRole } from '~/models/role'
 import { getClans } from '~/services/clan-service'
@@ -84,11 +83,11 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     // @ts-expect-error TODO:
     header: () => h(UInput, {
       'icon': 'crpg:search',
-      'variant': 'ghost',
+      'variant': 'soft',
       'size': 'xs',
-      'placeholder': t('action.search'),
+      'placeholder': t('clan.table.column.name'),
       'modelValue': globalFilterByName.value,
-      'onUpdate:modelValue': val => globalFilterByName.value = val,
+      'onUpdate:modelValue': (val: string) => globalFilterByName.value = val,
     }),
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-2',
@@ -109,24 +108,36 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     accessorKey: 'clan.languages',
     enableGlobalFilter: false,
     header: ({ column }) => {
-      const filterValue = (column.getFilterValue() || []) as string[]
       const uniqueKeys: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
       return h(UiTableColumnHeader, {
         label: t('clan.table.column.languages'),
         withFilter: true,
         filtered: column.getIsFiltered(),
-        filterDropdownItems: uniqueKeys.map<DropdownMenuItem>(l => ({
-          label: `${t(`language.${l}`)} - ${l}`,
-          type: 'checkbox',
-          checked: filterValue.includes(l),
-          onSelect(e: Event) {
-            e.preventDefault()
-          },
-          onUpdateChecked() {
-            column.setFilterValue(toggle(filterValue, l))
-          },
-        })),
         onResetFilter: () => column.setFilterValue(undefined),
+      }, {
+        filter: () =>
+          // @ts-expect-error TODO:
+          h(USelect, {
+            'variant': 'none',
+            'multiple': true,
+            'trailing-icon': '',
+            'size': 'xl',
+            'ui': {
+              content: 'min-w-fit',
+              base: 'px-0 py-0',
+            },
+            'items': uniqueKeys.map<SelectItem>(l => ({
+              value: l,
+              label: `${t(`language.${l}`)} - ${l}`,
+            })),
+            'modelValue': column.getFilterValue(),
+            'onUpdate:modelValue': column.setFilterValue,
+          }, {
+            default: () => h(UiTableColumnHeaderLabel, {
+              label: t('clan.table.column.languages'),
+              withFilter: true,
+            }),
+          }),
       })
     },
     filterFn: 'arrIncludesSome',

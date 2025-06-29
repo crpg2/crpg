@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
+import type { DropdownMenuItem, SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type {
   ColumnFiltersState,
   PaginationState,
@@ -22,9 +22,11 @@ import {
   UButton,
   UCheckbox,
   UContainer,
+  UDropdownMenu,
   UiInputRange,
   UInput,
   UiTableColumnHeader,
+  UiTableColumnHeaderLabel,
   UPopover,
   USelect,
 } from '#components'
@@ -184,7 +186,6 @@ const weaponClass = computed({
         weaponClass: weaponClass ?? undefined,
       },
     })
-    table.value?.tableApi.setPageIndex(0)
   },
 })
 
@@ -295,6 +296,7 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
     },
     header: ({ header, column }) => {
       const description = t(`item.aggregations.${header.id}.description`)
+
       return h(UiTableColumnHeader, {
         label: t(`item.aggregations.${header.id}.title`),
         withSort: options.view === AggregationView.Range,
@@ -304,45 +306,33 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
         onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
-        filter: () => {
-          const trigger = () => h('div', {
-            class: 'cursor-pointer text-xs underline decoration-dashed underline-offset-6 select-none hover:no-underline',
-          }, t(`item.aggregations.${header.id}.title`))
-
-          if (options.view === AggregationView.Range) {
+        ...(options.view === AggregationView.Range && {
+          'filter-content': () => {
             const [min, max] = column.getFacetedMinMaxValues() ?? [0, 1]
             const buckets: number[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())]
-
-            return h(UPopover, {
-              ui: {
-                content: 'max-w-sm pt-8',
-              },
-              arrow: true,
-            }, {
-              default: trigger,
-              content: () => h(UiInputRange, {
-                'min': min,
-                'max': max,
-                'step': getStepRange(buckets),
-                'modelValue': column.getFilterValue() as [number, number],
-                'onUpdate:modelValue': (value) => {
-                  // table.value?.tableApi.setPageIndex(0) // TODO:
-                  column.setFilterValue(value)
-                },
-              }),
+            return h(UiInputRange, {
+              'min': min,
+              'max': max,
+              'step': getStepRange(buckets),
+              'modelValue': column.getFilterValue() as [number, number],
+              'onUpdate:modelValue': column.setFilterValue,
             })
-          }
+          },
+        }),
+        filter: () => {
           if (options.view === AggregationView.Checkbox) {
             const buckets: string[] = [...new Set(Array.from(column.getFacetedUniqueValues().keys()).flat())].filter(Boolean)
-            // console.log('buckets', buckets)
-
             // @ts-expect-error TODO:
             return h(USelect, {
               'class': 'w-full',
               'multiple': true,
-              'variant': 'ghost',
+              'variant': 'none',
               'size': 'xl',
-              'ui': { content: 'min-w-fit' },
+              'trailing-icon': '',
+              'ui': {
+                content: 'min-w-fit',
+                base: 'px-0 py-0',
+              },
               'items': buckets.map<SelectItem>((bucket) => {
                 const humanBucket = humanizeBucket(column.id as keyof ItemFlat, bucket)
                 return {
@@ -352,23 +342,14 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
                 }
               }),
               'modelValue': column.getFilterValue(),
-              'onUpdate:modelValue': (value) => {
-                // table.value?.tableApi.setPageIndex(0) // TODO:
-                column.setFilterValue(value)
-              },
+              'onUpdate:modelValue': column.setFilterValue,
             }, {
-              default: trigger,
-            })
+              default: () => h(UiTableColumnHeaderLabel, {
+                label: t(`item.aggregations.${header.id}.title`),
+                withFilter: true,
+              }),
 
-            // return h(UPopover, {
-            //   ui: {
-            //     content: 'max-w-sm pt-8',
-            //   },
-            //   arrow: true,
-            // }, {
-            //   default: trigger,
-            //   content: () => ,
-            // })
+            })
           }
           return undefined
         },
@@ -449,10 +430,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
         'size': 'xs',
         'placeholder': t('action.search'),
         'modelValue': column.getFilterValue(),
-        'onUpdate:modelValue': (value: string) => {
-          table.value?.tableApi.setPageIndex(0)
-          column.setFilterValue(value)
-        },
+        'onUpdate:modelValue': column.setFilterValue,
       }),
       cell: ({ row }) => h(ShopGridItemMedia, {
         item: row.original,
@@ -460,8 +438,8 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
       }),
       meta: {
         class: {
-          td: 'max-w-[320px]',
-          th: 'max-w-[320px]',
+          td: 'w-[360px]',
+          th: 'w-[360px]',
         },
       },
     },
@@ -497,6 +475,10 @@ const weaponClassOptions = computed(() => {
       value: weaponClass,
     }))
 })
+
+function onColumnFiltersUpdate(): void {
+  table.value?.tableApi.setPageIndex(0)
+}
 </script>
 
 <template>
@@ -563,6 +545,7 @@ const weaponClassOptions = computed(() => {
       :pagination-options="{
         getPaginationRowModel: getPaginationRowModel(),
       }"
+      @update:column-filters="onColumnFiltersUpdate"
     >
       <template #empty>
         <UiResultNotFound />

@@ -33,7 +33,7 @@ export default defineAppConfig({
     },
     table: {
       slots: {
-        th: 'text-xs text-muted',
+        th: 'text-xs text-default',
         td: 'text-xs text-inherit',
         tbody: '[&>tr]:data-[selectable=true]:cursor-pointer',
 
@@ -105,19 +105,19 @@ export default defineAppConfig({
         },
       },
     },
-    select: {
-      variants: {
-        size: {
-          md: {
-            // TODO: FIXME:
-            // base: 'h-[2.125rem] px-2.5 py-1.5 text-xs gap-1.5',
-            // base: 'text-xs',
+    // select: {
+    //   variants: {
+    //     size: {
+    //       md: {
+    //         // TODO: FIXME:
+    //         // base: 'h-[2.125rem] px-2.5 py-1.5 text-xs gap-1.5',
+    //         // base: 'text-xs',
 
-            // item: 'text-xs',
-          },
-        },
-      },
-    },
+    //         // item: 'text-xs',
+    //       },
+    //     },
+    //   },
+    // },
     toast: {
       slots: {
         description: 'text-xs',

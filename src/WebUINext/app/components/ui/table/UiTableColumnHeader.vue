@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { DropdownMenuProps } from '@nuxt/ui'
-
 type SortDirection = 'asc' | 'desc'
 
 withDefaults(defineProps<{
@@ -9,7 +7,6 @@ withDefaults(defineProps<{
   sorted?: false | SortDirection
   withFilter?: boolean
   filtered?: boolean
-  // filterDropdownItems?: DropdownMenuProps['items']
 }>(), {
   withSort: false,
   withFilter: false,
@@ -21,83 +18,70 @@ defineEmits<{
 }>()
 </script>
 
+ <!-- class="
+          absolute top-1/2 -left-5 size-4 -translate-y-1/2 cursor-pointer
+          text-muted outline-0 select-none
+          hover:text-toned
+        " -->
 <template>
   <div class="relative flex items-center gap-1">
     <UTooltip
       v-if="withFilter && filtered"
       :text="$t('action.reset')"
     >
-      <UIcon
-        class="
-          absolute top-1/2 -left-5 size-4 -translate-y-1/2 cursor-pointer text-muted outline-0
-          select-none
-          hover:text-toned
-        "
-        name="crpg:close"
+      <UButton
+        class="absolute top-1/2 -left-9 -translate-y-1/2"
+        square
+        color="neutral"
+        variant="ghost"
+        size="xs"
+        icon="crpg:close"
         @click="$emit('resetFilter')"
       />
     </UTooltip>
 
-    <slot v-if="withFilter" name="filter" />
-    <!-- <UDropdownMenu
-      v-if="withFilter"
-      size="xl"
-      :modal="false"
-      :items="filterDropdownItems"
-    >
-      <div
-        class="
-          cursor-pointer text-xs underline decoration-dashed underline-offset-6 select-none
-          hover:no-underline
-        "
-      >
-        {{ label }}
-      </div>
-    </UDropdownMenu> -->
+    <template v-if="withFilter">
+      <slot name="filter">
+        <UPopover
+          :ui="{
+            content: 'max-w-76',
+          }"
+        >
+          <UiTableColumnHeaderLabel :with-filter :label />
 
-    <div
-      v-else
-      class="text-xs"
-    >
-      {{ label }}
-    </div>
+          <template #content>
+            <slot name="filter-content" />
+          </template>
+        </UPopover>
+      </slot>
+    </template>
 
-    <!-- <UPopover>
-      <div
-        :class="{ 'cursor-pointer text-2xs underline decoration-dashed underline-offset-6 select-none hover:no-underline': withFilter }"
-      >
-        {{ label }}
-      </div>
-
-      <template #content>
-        <div class="max-h-64 max-w-md overflow-y-auto">
-          <slot name="filter-dropdown" />
-        </div>
-      </template>
-    </UPopover> -->
+    <template v-else>
+      <UiTableColumnHeaderLabel
+        :with-filter="false"
+        :label
+      />
+      <slot name="label-trailing" />
+    </template>
 
     <UTooltip
       v-if="withSort"
-      :text="$t(sorted === 'asc' ? 'shop.sort.desc' : 'shop.sort.asc')"
+      :text="$t(sorted === 'asc'
+        ? 'shop.sort.desc'
+        : 'shop.sort.asc')"
     >
-      <div
-        class="
-          flex cursor-pointer flex-col text-muted
-          hover:text-toned
-        "
+      <UButton
+        square
+        color="neutral"
+        variant="ghost"
+        size="xs"
+        :icon="sorted
+          ? (sorted === 'asc'
+            ? 'crpg:arrow-up-narrow-wide'
+            : 'crpg:arrow-down-narrow-wide')
+          : 'crpg:arrow-up-down'"
         @click="$emit('sort')"
-      >
-        <UIcon
-          v-if="!sorted || sorted === 'asc'"
-          class="-my-[0.25rem] size-4"
-          name="crpg:chevron-up"
-        />
-        <UIcon
-          v-if="!sorted || sorted === 'desc'"
-          class="-my-[0.25rem] size-4"
-          name="crpg:chevron-down"
-        />
-      </div>
+      />
     </UTooltip>
   </div>
 </template>

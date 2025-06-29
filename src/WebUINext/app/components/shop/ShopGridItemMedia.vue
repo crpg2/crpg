@@ -144,8 +144,8 @@ const { rankColor, thumb } = useItem(() => item)
       </div>
     </div>
 
-    <div :style="{ color: rankColor }">
+    <span :style="{ color: rankColor }" class="whitespace-pre-wrap">
       {{ item.name }}
-    </div>
+    </span>
   </div>
 </template>

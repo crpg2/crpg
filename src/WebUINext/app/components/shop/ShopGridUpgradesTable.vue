@@ -51,7 +51,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
     id: 'fill',
     meta: {
       class: {
-        td: 'min-w-[50px]',
+        td: 'min-w-[70px]',
       },
     },
   },
@@ -63,8 +63,8 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
     }),
     meta: {
       class: {
-        td: 'max-w-[320px]',
-        th: 'max-w-[320px]',
+        td: 'w-[360px]',
+        th: 'w-[360px]',
       },
     },
   },

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { DropdownMenuItem, TableColumn, TabsItem } from '@nuxt/ui'
+import type { DropdownMenuItem, SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, SortingState } from '@tanstack/table-core'
 
 import { useRouteQuery } from '@vueuse/router'
-import { CompetitiveRank, CompetitiveRankTable, UIcon, UInput, UiTableColumnHeader, UModal, UserMedia, UTooltip } from '#components'
-import { tw } from '#imports'
+import { CompetitiveRank, CompetitiveRankTable, UButton, UDropdownMenuContent, UIcon, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, UModal, USelect, UserMedia, UTooltip } from '#components'
+import { h, tw } from '#imports'
 
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
 
@@ -29,15 +29,6 @@ const route = useRoute('leaderboard')
 const gameModeModel = useRouteQuery<GameMode>('gameMode', GameMode.Battle)
 const characterClassModel = useRouteQuery<CharacterClass | undefined>('class', undefined)
 const regionModel = useRouteQuery<Region>('region', Region.Eu)
-
-function setColumnFilters(state: ColumnFiltersState) {
-  if (!state.length) {
-    characterClassModel.value = undefined
-    return
-  }
-  // TODO: FIXME: шляпа
-  characterClassModel.value = state[0]?.value[0] as CharacterClass
-}
 
 const {
   execute: loadLeaderBoard,
@@ -83,7 +74,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
     enableGlobalFilter: false,
     id: 'position',
     header: ({ column }) => h(UiTableColumnHeader, {
-      label: t('leaderboard.table.cols.rank'),
+      label: t('leaderboard.table.cols.top'),
       withSort: true,
       sorted: column.getIsSorted(),
       onSort: () => column.toggleSorting(column.getIsSorted() === 'asc'),
@@ -97,11 +88,10 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   {
     accessorKey: 'statistics',
     enableGlobalFilter: false,
-    header: () => h('div', {
-      class: 'flex items-center gap-1',
-    }, [
-      t('leaderboard.table.cols.rank'),
-      h(UModal, {
+    header: () => h(UiTableColumnHeader, {
+      label: t('leaderboard.table.cols.rank'),
+    }, {
+      'label-trailing': () => h(UModal, {
         title: t('rankTable.title'),
         close: {
           size: 'sm',
@@ -112,10 +102,16 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
           content: tw`max-w-5xl`,
         },
       }, {
-        default: () => h(UIcon, { name: 'crpg:help-circle', class: 'size-3.5 cursor-pointer flex-col text-muted hover:text-toned' }),
+        default: () => h(UButton, {
+          color: 'neutral',
+          variant: 'ghost',
+          size: 'xs',
+          square: true,
+          icon: 'crpg:help-circle',
+        }),
         body: () => h(CompetitiveRankTable, { rankTable: rankTable.value }),
       }),
-    ]),
+    }),
     cell: ({ row }) => h(CompetitiveRank, {
       rankTable: rankTable.value,
       competitiveValue: getCompetitiveValueByGameMode(row.original.statistics, gameModeModel.value),
@@ -128,13 +124,14 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   },
   {
     accessorKey: 'user.name',
+    // @ts-expect-error TODO:
     header: () => h(UInput, {
       'icon': 'crpg:search',
-      'variant': 'ghost',
+      'variant': 'soft',
       'size': 'xs',
       'placeholder': t('leaderboard.table.cols.player'),
       'modelValue': globalFilter.value,
-      'onUpdate:modelValue': val => globalFilter.value = val,
+      'onUpdate:modelValue': (val: string) => globalFilter.value = val,
     }),
     cell: ({ row }) => h(UserMedia, { user: row.original.user, hiddenPlatform: true }),
     meta: {
@@ -147,21 +144,36 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
     accessorKey: 'class',
     enableGlobalFilter: false,
     header: ({ column }) => {
-      const filterValue = (column.getFilterValue() || []) as string[]
       return h(UiTableColumnHeader, {
         label: t('leaderboard.table.cols.class'),
         withFilter: true,
         filtered: column.getIsFiltered(),
-        filterDropdownItems: Object.values(CharacterClass).map<DropdownMenuItem>(charClass => ({
-          icon: `crpg:${characterClassToIcon[charClass]}`,
-          label: `${t(`character.class.${charClass}`)}`,
-          type: 'checkbox',
-          checked: filterValue.includes(charClass),
-          onUpdateChecked() {
-            column.setFilterValue([charClass])
-          },
-        })),
         onResetFilter: () => column.setFilterValue(undefined),
+      }, {
+        filter: () =>
+          // @ts-expect-error TODO:
+          h(USelect, {
+            'variant': 'none',
+            'multiple': false,
+            'trailing-icon': '',
+            'size': 'xl',
+            'ui': {
+              content: 'min-w-fit',
+              base: 'px-0 py-0',
+            },
+            'items': Object.values(CharacterClass).map<SelectItem>(charClass => ({
+              value: charClass,
+              icon: `crpg:${characterClassToIcon[charClass]}`,
+              label: t(`character.class.${charClass}`),
+            })),
+            'modelValue': column.getFilterValue(),
+            'onUpdate:modelValue': column.setFilterValue,
+          }, {
+            default: () => h(UiTableColumnHeaderLabel, {
+              label: t('leaderboard.table.cols.class'),
+              withFilter: true,
+            }),
+          }),
       })
     },
     cell: ({ row }) => h(UTooltip, { text: t(`character.class.${row.original.class}`) }, () => h(UIcon, {
@@ -244,7 +256,6 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
             tr: (row) => row.original.user.id === userStore.user?.id ? tw`text-primary` : '',
           },
         }"
-        @update:column-filters="setColumnFilters"
       >
         <template #empty>
           <UiResultNotFound />
