@@ -23,17 +23,18 @@ const isNew = computed(() => !isGraceTimeExpired(getItemGraceTimeEnd(userItem)))
 <template>
   <ItemCard
     :item="userItem.item"
-    :class="{ 'bg-primary-hover/15 ': userItem.isPersonal }"
+    :class="{ 'bg-primary/15': userItem.isPersonal }"
   >
     <template #badges-top-right>
-      <UBadge
-        v-if="userItem.isBroken"
-        v-tooltip="$t('character.inventory.item.broken.tooltip.title')"
-        variant="soft"
-        color="error"
-        icon="crpg:error"
-        class="cursor-default"
-      />
+      <UTooltip v-if="userItem.isBroken" :text="$t('character.inventory.item.broken.tooltip.title')">
+        <UBadge
+
+          variant="soft"
+          color="error"
+          icon="crpg:error"
+          class="cursor-default"
+        />
+      </UTooltip>
 
       <template v-if="userItem.isArmoryItem">
         <ClanArmoryItemRelationBadge

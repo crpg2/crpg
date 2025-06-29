@@ -19,6 +19,7 @@ const { user } = toRefs(useUserStore())
         hidden-platform
         hidden-title
         hidden-clan
+        size="sm"
         :is-self="user!.id === lender.id"
         :class="{ 'transition duration-200 ease-in group-hover:-translate-x-3': borrower }"
       />
@@ -31,10 +32,8 @@ const { user } = toRefs(useUserStore())
         >
           <template #user>
             <UserMedia
-              class="max-w-40"
               :user="lender"
               :is-self="user!.id === lender.id"
-              size="xl"
               hidden-platform
               hidden-clan
             />
@@ -49,6 +48,7 @@ const { user } = toRefs(useUserStore())
         hidden-platform
         hidden-title
         hidden-clan
+        size="sm"
         class="relative z-10 -ml-2.5"
         :is-self="user!.id === borrower.id"
       />
@@ -65,7 +65,6 @@ const { user } = toRefs(useUserStore())
                 class="max-w-40"
                 :user="borrower"
                 :is-self="user!.id === borrower.id"
-                size="xl"
                 hidden-platform
                 hidden-clan
               />

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DropdownMenuItem, SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
+import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type {
   ColumnFiltersState,
   PaginationState,
@@ -22,57 +22,34 @@ import {
   UButton,
   UCheckbox,
   UContainer,
-  UDropdownMenu,
   UiInputRange,
   UInput,
   UiTableColumnHeader,
   UiTableColumnHeaderLabel,
-  UPopover,
   USelect,
 } from '#components'
 import { h } from '#imports'
-import { uniq } from 'es-toolkit'
 
-import type { ItemFlat } from '~/models/item'
-import type { AggregationConfig, AggregationOptions } from '~/services/item-search-service/aggregations'
+import type { ItemFlat, WeaponClass } from '~/models/item'
+import type { AggregationOptions } from '~/services/item-search-service/aggregations'
 
-// import { useItemsCompare } from '~/composables/shop/use-compare'
-// import { useItemsFilter } from '~/composables/shop/use-filters'
-// import { useItemsSort } from '~/composables/shop/use-sort'
-// import { usePagination } from '~/composables/use-pagination'
-// import { useSearchDebounced } from '~/composables/use-search-debounce'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
-import { ItemType, WeaponClass } from '~/models/item'
+import { ItemType } from '~/models/item'
 import { SomeRole } from '~/models/role'
+import { getAggregationsConfig, getFacetsByItemType, getFacetsByWeaponClass } from '~/services/item-search-service'
 import {
-  aggregationsConfig,
-  aggregationsKeysByItemType,
-  aggregationsKeysByWeaponClass,
   AggregationView,
 } from '~/services/item-search-service/aggregations'
+import { getStepRange } from '~/services/item-search-service/helpers'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-// import type { ItemFlat } from '~/models/item'
 import {
   canUpgrade,
+  getCompareItemsResult,
   getItems,
   getWeaponClassesByItemType,
-  hasWeaponClassesByItemType,
   humanizeBucket,
-  itemTypeToIcon,
-  weaponClassToIcon,
 } from '~/services/item-service'
-// import { WeaponUsage } from '~/models/item'
-// import { getSearchResult } from '~/services/item-search-service'
-// import {
-//   canUpgrade,
-//   getCompareItemsResult,
-//   getItems,
-//   itemIsNewDays,
-// } from '~/services/item-service'
-// import { notify } from '~/services/notification-service'
-// import { t } from '~/services/translate-service'
-// import { useUserStore } from '~/stores/user'
 
 definePageMeta({
   roles: SomeRole,
@@ -80,20 +57,21 @@ definePageMeta({
     noStickyHeader: true,
   },
 })
+
 const { t, n } = useI18n()
 const toast = useToast()
 
 const userStore = useUserStore()
+userStore.fetchUserItems()
 const router = useRouter()
 const route = useRoute()
 
 const {
   state: items,
-  execute: loadItems,
   isLoading: loadingItems,
-} = useAsyncState(() => getItems(), [], {
-  immediate: false,
-})
+} = useAsyncState(() => getItems(), [])
+
+const flatItems = computed(() => createItemIndex(items.value, true))
 
 const {
   execute: buyItem,
@@ -106,13 +84,11 @@ const {
   })
 })
 
-Promise.all([loadItems(), userStore.fetchUserItems()])
-
-const flatItems = computed((): ItemFlat[] => createItemIndex(items.value, true))
-
 const getInInventoryItems = (baseId: string) => {
   return userStore.userItems.filter(ui => ui.item.baseId === baseId)
 }
+
+const table = useTemplateRef('table')
 
 function getInitialPaginationState(): PaginationState {
   return {
@@ -120,7 +96,6 @@ function getInitialPaginationState(): PaginationState {
     pageSize: 10, // TODO: FIXME:
   }
 }
-
 const pagination = ref<PaginationState>(getInitialPaginationState())
 
 function getInitialSortingState(): SortingState {
@@ -132,21 +107,6 @@ function getInitialSortingState(): SortingState {
   ]
 }
 const sorting = ref<SortingState>(getInitialSortingState())
-
-const columnVisibility = computed<VisibilityState>(() => {
-  return {
-    // ...Object.keys(aggregationsConfig).reduce((out, key) => {
-    //   out[key] = visibleAggregationKeys.value.includes(key as keyof ItemFlat)
-    //   return out
-    // }, {} as VisibilityState),
-    type: false,
-    weaponClass: false,
-    modId: false,
-    weaponUsage: false,
-  }
-})
-
-const table = useTemplateRef('table')
 
 // const itemType = useRouteQuery<ItemType>('itemType', ItemType.OneHandedWeapon)
 const itemType = computed({
@@ -168,6 +128,11 @@ const itemType = computed({
     table.value?.tableApi.setPageIndex(0)
   },
 })
+const itemTypes = computed(() => {
+  return getFacetsByItemType(flatItems.value)
+})
+
+const isUpgradableItemType = computed(() => canUpgrade(itemType.value))
 
 // const weaponClass = useRouteQuery<WeaponClass | null>('weaponClass', () => getWeaponClassesByItemType(itemType.value)?.[0] ?? null)
 const weaponClass = computed({
@@ -176,7 +141,7 @@ const weaponClass = computed({
       return route.query.weaponClass as WeaponClass
     }
     const weaponClasses = getWeaponClassesByItemType(itemType.value)
-    return weaponClasses.length !== 0 ? weaponClasses[0] : null
+    return weaponClasses.length !== 0 ? weaponClasses[0]! : null
   },
   set(weaponClass: WeaponClass | null) {
     table.value?.tableApi?.getColumn('weaponClass')?.setFilterValue(weaponClass ?? undefined)
@@ -188,6 +153,9 @@ const weaponClass = computed({
     })
   },
 })
+const weaponClasses = computed(() => {
+  return getFacetsByWeaponClass(flatItems.value, itemType.value)
+})
 
 function getInitialColumnFiltersState(): ColumnFiltersState {
   return [
@@ -198,26 +166,19 @@ function getInitialColumnFiltersState(): ColumnFiltersState {
 
 const columnFilters = ref<ColumnFiltersState>(getInitialColumnFiltersState())
 
-// TODO: FIXME:
-const isUpgradableItemType = computed(() => canUpgrade(itemType.value))
+const currentAggregations = computed(() => getAggregationsConfig(itemType.value, weaponClass.value))
 
-const visibleAggregationKeys = computed(() => {
-  if (weaponClass.value && weaponClass.value in aggregationsKeysByWeaponClass) {
-    return aggregationsKeysByWeaponClass[weaponClass.value]!
+const columnVisibility = computed<VisibilityState>(() => {
+  return {
+    ...Object.entries(currentAggregations.value)
+      .filter(([_, value]) => value.hidden)
+      .reduce((out, [key]) => {
+        out[key] = false
+        return out
+      }, {} as VisibilityState),
+    expand: isUpgradableItemType.value,
   }
-  return aggregationsKeysByItemType[itemType.value] || []
 })
-
-const currentAggregations = computed<AggregationConfig>(
-  () => Object.fromEntries(
-    Object.entries(aggregationsConfig)
-      .sort(([a], [b]) => {
-        const indexA = visibleAggregationKeys.value.indexOf(a as keyof ItemFlat)
-        const indexB = visibleAggregationKeys.value.indexOf(b as keyof ItemFlat)
-        return indexA === -1 ? (indexB === -1 ? 0 : 1) : (indexB === -1 ? -1 : indexA - indexB)
-      }),
-  ),
-)
 
 const rowSelection = ref<RowSelectionState>({})
 const [isCompareMode, toggleCompareMode] = useToggle()
@@ -228,35 +189,9 @@ watch(isCompareMode, () => {
       : undefined,
   )
 })
-
-const getMinRange = (buckets: number[]): number => {
-  if (buckets.length === 0) {
-    return 0
-  }
-  return Math.floor(Math.min(...buckets))
-}
-
-const getMaxRange = (buckets: number[]): number => {
-  if (buckets.length === 0) {
-    return 0
-  }
-  return Math.ceil(Math.max(...buckets))
-}
-
-const getStepRange = (values: number[]): number => {
-  if (values.every(Number.isInteger)) {
-    return 1
-  } // Ammo, stackAmount
-
-  const [min, max] = [getMinRange(values), getMaxRange(values)]
-  const diff = max - min
-
-  if ((values.length < 20 && diff < 10) || (values.length > 20 && diff < 5)) {
-    return 0.1
-  }
-
-  return 1
-}
+const compareItemsResult = computed(() => isCompareMode.value
+  ? getCompareItemsResult(table.value?.tableApi.getFilteredRowModel().rows.map(row => row.original) ?? [], currentAggregations.value)
+  : null)
 
 function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
   return {
@@ -264,8 +199,8 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
     cell: ({ row }) => h(ItemParam, {
       field: key,
       item: row.original,
-      // bestValue: compareItemsResult !== null ? compareItemsResult[field] : undefined,
-      // isCompare: isCompareMode.value
+      bestValue: compareItemsResult.value !== null ? compareItemsResult.value[key] : undefined,
+      isCompare: isCompareMode.value,
     }, {
       ...(key === 'upkeep' && {
         default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, null, {
@@ -374,28 +309,30 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
 const columns = computed<TableColumn<ItemFlat>[]>(() => {
   return [
     {
+      accessorKey: 'modId',
+      filterFn: 'arrIncludesSome',
+    },
+    {
       id: 'expand',
       meta: {
         class: {
-          th: 'px-1 w-[50px]',
-          td: 'px-1 w-[50px]',
+          th: '!px-0',
+          td: '!px-0',
         },
       },
-      cell: ({ row }) =>
-        h(UButton, {
-          color: 'neutral',
-          variant: 'ghost',
-          icon: 'crpg:chevron-down',
-          square: true,
-          // 'aria-label': 'Expand',
-          ui: {
-            leadingIcon: [
-              'transition-transform',
-              row.getIsExpanded() ? 'duration-200 rotate-180' : '',
-            ],
-          },
-          onClick: () => row.toggleExpanded(),
-        }),
+      cell: ({ row }) => h(UButton, {
+        color: 'neutral',
+        variant: 'link',
+        icon: 'crpg:chevron-down',
+        size: 'lg',
+        ui: {
+          leadingIcon: [
+            'transition-transform',
+            row.getIsExpanded() ? 'duration-200 rotate-180' : '',
+          ],
+        },
+        onClick: () => row.toggleExpanded(),
+      }),
     },
     {
       id: 'select',
@@ -405,19 +342,17 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
           : table.getIsAllPageRowsSelected(),
         'onUpdate:modelValue': (value: boolean | 'indeterminate') =>
           table.toggleAllPageRowsSelected(!!value),
-        // 'aria-label': 'Select all',
         'size': 'xl',
       }),
       cell: ({ row }) => h(UCheckbox, {
         'modelValue': row.getIsSelected(),
         'onUpdate:modelValue': (value: boolean | 'indeterminate') => row.toggleSelected(!!value),
-        // 'aria-label': 'Select row',
         'size': 'xl',
       }),
       meta: {
         class: {
-          th: 'px-1 w-[40px]',
-          td: 'px-1 w-[40px]',
+          th: '!px-2',
+          td: '!px-2',
         },
       },
     },
@@ -443,9 +378,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => {
         },
       },
     },
-    ...Object.entries(currentAggregations.value)
-      .filter(([key]) => ['type', 'weaponClass'].includes(key) || visibleAggregationKeys.value.includes(key as keyof ItemFlat))
-      .map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
+    ...Object.entries(currentAggregations.value).map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
   ]
 })
 
@@ -455,75 +388,28 @@ watchEffect(() => {
   togglePageLoading(loadingItems.value)
 })
 
-const itemTypeOptions = computed(() => {
-  const orders = Object.values(ItemType)
-  return uniq(flatItems.value.map(({ type }) => type))
-    .sort((a, b) => orders.indexOf(a) - orders.indexOf(b))
-    .map<TabsItem>(type => ({
-      icon: `crpg:${itemTypeToIcon[type]}`,
-      value: type,
-    }))
-})
-
-const weaponClassOptions = computed(() => {
-  const orders = Object.values(WeaponClass)
-  return uniq(flatItems.value.map<WeaponClass>(({ weaponClass }) => weaponClass as WeaponClass))
-    .filter(weaponClass => getWeaponClassesByItemType(itemType.value).includes(weaponClass))
-    .sort((a, b) => orders.indexOf(a) - orders.indexOf(b))
-    .map<TabsItem>(weaponClass => ({
-      icon: `crpg:${weaponClassToIcon[weaponClass]}`,
-      value: weaponClass,
-    }))
-})
-
 function onColumnFiltersUpdate(): void {
   table.value?.tableApi.setPageIndex(0)
 }
 </script>
 
 <template>
-  <UContainer class="max-w-full space-y-6 py-3">
-    <!-- <pre>visibleAggregationKeys: {{ visibleAggregationKeys }}</pre> -->
+  <UContainer class="max-w-full space-y-3 py-3">
     <!-- {{ allTypes }} -->
     <!-- <pre>{{ { itemType, weaponClass } }}</pre> -->
     <!-- <pre>{{ columnFilters }}</pre> -->
+    <!-- <pre>{{ columnVisibility }}</pre> -->
     <!-- <pre>{{ table?.tableApi.getState().columnFilters }}</pre> -->
     <!-- <pre>
       {{ table?.tableApi.getState() }}
     </pre> -->
 
-    <UTabs
-      v-model="itemType"
-      :items="itemTypeOptions"
-      :content="false"
-      size="xl"
-      :ui="{
-        list: 'w-auto',
-        root: 'flex-row',
-        trigger: 'min-w-16 h-16',
-        leadingIcon: 'size-7',
-      }"
-    >
-      <template v-if="hasWeaponClassesByItemType(itemType)" #default="{ item }">
-        <UTabs
-          v-if="item.value === itemType && weaponClass"
-          v-model="weaponClass"
-          :items="weaponClassOptions"
-          :content="false"
-          size="xl"
-          :ui="{
-            list: 'w-auto',
-            root: 'flex-row',
-            leadingIcon: 'size-7',
-          }"
-        />
-      </template>
-    </UTabs>
-
-    <!-- TODO: FIXME: dynamic columns, or visible columns -->
-    <!-- :key="`${itemType}_${weaponClass}`" -->
-    <!-- {{ columns.map((i) => i.accessorKey || i.id) }} -->
-    <!--  -->
+    <AppFilterItemsByType
+      v-model:item-type="itemType"
+      v-model:weapon-class="weaponClass"
+      :item-types="itemTypes"
+      :weapon-classes="weaponClasses"
+    />
 
     <UTable
       ref="table"
@@ -553,7 +439,7 @@ function onColumnFiltersUpdate(): void {
 
       <template #expanded="{ row }">
         <ShopGridUpgradesTable
-          :aggregation-config="Object.fromEntries(Object.entries(currentAggregations).filter(([key]) => visibleAggregationKeys.includes(key as keyof ItemFlat)))"
+          :aggregation-config="currentAggregations"
           :item="row.original"
         />
       </template>
@@ -561,18 +447,18 @@ function onColumnFiltersUpdate(): void {
 
     <div
       class="
-        sticky bottom-0 left-0 z-[1] grid grid-cols-3 items-center gap-6
-        bg-default/75 py-4 backdrop-blur
+        sticky bottom-0 left-0 z-[1] grid grid-cols-3 items-center gap-6 bg-default/75 py-4
+        backdrop-blur
       "
     >
       <UPagination
         v-if="table?.tableApi.getCanNextPage() || table?.tableApi.getCanPreviousPage()"
         variant="soft"
-        color="secondary"
         active-variant="solid"
         active-color="primary"
         :page="pagination.pageIndex + 1"
         :show-controls="false"
+        show-edges
         :default-page="(table?.tableApi?.initialState.pagination.pageIndex || 0) + 1"
         :items-per-page="table?.tableApi?.initialState.pagination.pageSize"
         :total="table?.tableApi?.getFilteredRowModel().rows.length"

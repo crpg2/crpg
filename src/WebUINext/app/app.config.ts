@@ -6,7 +6,7 @@ export default defineAppConfig({
     colors: {
       primary: 'crpg',
       secondary: 'crpg-secondary', // TODO: FIXME:
-      neutral: 'neutral',
+      neutral: 'crpg-neutral',
       success: 'status-success',
       error: 'status-danger',
       warning: 'status-warning',

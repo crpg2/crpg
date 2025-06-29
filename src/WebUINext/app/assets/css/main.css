@@ -36,6 +36,25 @@
     --color-crpg-secondary-500: #272723;
     --color-crpg-secondary-600: #171716;
 
+    --color-crpg-secondary-700: #171716;
+    --color-crpg-secondary-800: #171716;
+    --color-crpg-secondary-900: #171716;
+
+    --color-crpg-neutral-50: oklch(0.985 0 0);
+    --color-crpg-neutral-100: oklch(0.97 0 0);
+    --color-crpg-neutral-200: oklch(0.922 0 0);
+    --color-crpg-neutral-300: oklch(0.87 0 0);
+    --color-crpg-neutral-400: oklch(0.708 0 0);
+    --color-crpg-neutral-500: oklch(0.556 0 0);
+    --color-crpg-neutral-600: oklch(0.439 0 0);
+    --color-crpg-neutral-700: oklch(0.371 0 0);
+
+    /* --color-crpg-neutral-800: oklch(0.269 0 0); */
+     --color-crpg-neutral-800: #171716;
+
+    --color-crpg-neutral-900: oklch(0.205 0 0);
+    --color-crpg-neutral-950: oklch(0.145 0 0);
+
     --color-base-100: #0F0F0E;
     --color-base-200: #171716;
     --color-base-300: #272723;

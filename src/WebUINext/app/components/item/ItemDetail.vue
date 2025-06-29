@@ -7,123 +7,101 @@ import { useItem } from '~/composables/item/use-item'
 import { ItemCompareMode } from '~/models/item'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import { getItemAggregations } from '~/services/item-service'
-import { notify } from '~/services/notification-service'
-import { t } from '~/services/translate-service'
 
 const { compareResult, item } = defineProps<{
   item: Item
-  compareResult?: CompareItemsResult // TODO: hmm
+  compareResult?: CompareItemsResult // TODO: hmm // from provide/inject
 }>()
+
+const toast = useToast()
+const { t } = useI18n()
+const { copy } = useClipboard()
 
 const { rankColor, thumb } = useItem(() => item)
 
-const { copy } = useClipboard()
 const onNameCopy = () => {
   copy(item.name)
-  notify(t('action.copied'))
+  toast.add({
+    title: t('action.copied'),
+    close: false,
+    color: 'success',
+  })
 }
 
-const flatItem = computed(() => createItemIndex([item])[0])
-
+const flatItem = computed(() => createItemIndex([item])[0]!)
 const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
 </script>
 
 <template>
-  <article class="w-80 overflow-hidden p-4">
-    <div class="relative mb-3">
-      <div class="-mx-4 -mt-4">
-        <img
-          :src="thumb"
-          :alt="item.name"
-          :title="item.name"
-          class="pointer-events-none w-full object-contain select-none"
-        >
-      </div>
-
-      <div class="absolute top-4 left-0 z-10 flex items-center gap-1">
-        <ItemRankIcon
-          v-if="item.rank > 0"
-          :rank="item.rank"
-        />
-
+  <UCard
+    variant="soft"
+    :ui="{
+      root: 'w-80',
+      header: 'relative !p-0 h-40',
+      body: '',
+      footer: 'bg-elevated !p-2',
+    }"
+  >
+    <template #header>
+      <ItemThumb
+        :thumb
+        :name="item.name"
+        class="pointer-events-none h-full"
+      />
+      <div class="absolute top-4 left-4 z-10 flex items-center gap-1">
+        <ItemRankIcon v-if="item.rank > 0" :rank="item.rank" />
         <slot name="badges-top-left" />
       </div>
 
-      <div class="absolute top-4 right-0 z-10 flex items-center gap-1">
+      <div class="absolute top-4 right-48 z-10 flex items-center gap-1">
         <slot name="badges-top-right" />
       </div>
 
-      <div class="absolute bottom-0 left-0 z-10 flex items-center gap-1">
+      <div class="absolute bottom-4 left-4 z-10 flex items-center gap-1">
         <slot name="badges-bottom-left" />
       </div>
 
-      <div class="absolute right-0 bottom-0 z-10 flex items-center gap-1">
+      <div class="absolute right-4 bottom-4 z-10 flex items-center gap-1">
         <slot name="badges-bottom-right" />
       </div>
-    </div>
+    </template>
 
-    <h3
-      class="mb-6 font-bold"
-      :style="{ color: rankColor }"
-    >
-      {{ item.name }}
-
-      <Tag
-        v-tooltip.bottom="$t('action.copy')"
-        icon="popup"
-        variant="primary"
-        rounded
-        size="sm"
-        @click="onNameCopy"
-      />
-    </h3>
-
-    <div class="grid grid-cols-2 gap-4">
-      <div class="space-y-1">
-        <h6 class="text-2xs text-content-300">
-          Type/Class
-        </h6>
-        <div class="flex flex-wrap gap-2">
-          <ItemParam
-            :item="flatItem"
-            field="type"
+    <template #default>
+      <h3 class="mb-6 font-bold" :style="{ color: rankColor }">
+        {{ item.name }}
+        <UTooltip :text="$t('action.copy')">
+          <UBadge
+            class="cursor-pointer"
+            icon="crpg:copy"
+            variant="subtle"
+            size="sm"
+            square
+            @click="onNameCopy"
           />
-          <ItemParam
-            v-if="flatItem.weaponClass !== null"
-            :item="flatItem"
-            field="weaponClass"
-          />
-        </div>
-      </div>
+        </UTooltip>
+      </h3>
 
-      <div
-        v-for="(_agg, field) in aggregationConfig"
-        :key="field"
-        class="space-y-1"
-      >
-        <VTooltip :delay="{ show: 600 }">
-          <h6 class="text-2xs text-content-300">
-            {{ $t(`item.aggregations.${field}.title`) }}
-          </h6>
-
-          <template #popper>
-            <div class="prose prose-invert">
-              <h5 class="text-content-100">
-                {{ $t(`item.aggregations.${field}.title`) }}
-              </h5>
-              <p v-if="$t(`item.aggregations.${field}.description`)">
-                {{ $t(`item.aggregations.${field}.description`) }}
-              </p>
-            </div>
-          </template>
-        </VTooltip>
-
+      <div class="grid grid-cols-2 gap-4">
         <ItemParam
           :item="flatItem"
-          :field="field"
+          field="type"
+          show-label
+        />
+        <ItemParam
+          v-if="flatItem.weaponClass !== null"
+          :item="flatItem"
+          field="weaponClass"
+          show-label
+        />
+        <ItemParam
+          v-for="(_agg, field) in aggregationConfig"
+          :key="field"
+          :item="flatItem"
+          :field
+          show-label
           :is-compare="compareResult !== undefined"
           :compare-mode="ItemCompareMode.Absolute"
-          :best-value="compareResult !== undefined ? compareResult[field] : undefined"
+          :best-value="compareResult !== undefined ? compareResult[field]! : undefined"
         >
           <template
             v-if="field === 'price'"
@@ -131,21 +109,18 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
           >
             <AppCoin :value="(rawBuckets as number)" />
           </template>
-
           <template
             v-else-if="field === 'upkeep'"
             #default="{ rawBuckets }"
           >
-            <AppCoin>
-              {{ $t('item.format.upkeep', { upkeep: $n((rawBuckets as number)) }) }}
-            </AppCoin>
+            <AppCoin>{{ $t('item.format.upkeep', { upkeep: $n((rawBuckets as number)) }) }}</AppCoin>
           </template>
         </ItemParam>
       </div>
-    </div>
+    </template>
 
-    <div class="-mx-4 mt-6 -mb-4 flex flex-wrap items-center gap-2 bg-base-400 p-2">
+    <template #footer>
       <slot name="actions" />
-    </div>
-  </article>
+    </template>
+  </UCard>
 </template>

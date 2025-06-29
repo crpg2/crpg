@@ -29,9 +29,15 @@ const {
 
 <template>
   <div
-    class="group relative flex h-28 items-center justify-center rounded-md bg-base-200 ring-2"
+    class="
+      group relative flex h-28 items-center justify-center rounded-md
+      bg-base-200 ring-2
+    "
     :class="[
-      [available ? 'ring-border-300' : 'ring-transparent hover:ring-border-200'],
+      [available ? 'ring-border-300' : `
+        ring-transparent
+        hover:ring-border-200
+      `],
       {
         '!ring-status-success': focused,
         '!ring-status-warning': invalid,
@@ -42,7 +48,7 @@ const {
     <ItemCard
       v-if="userItem !== undefined"
       :item="userItem.item"
-      class="h-full max-w-full cursor-grab !ring-0"
+      class="h-full w-full cursor-grab !ring-0"
       :class="{ 'bg-primary-hover/15': userItem.isPersonal }"
       data-aq-character-slot-item-thumb
     >
@@ -80,9 +86,23 @@ const {
       v-if="armorOverall !== undefined"
       :text="$t(`character.doll.armorOverall.${armorOverall.key}`)"
     >
-      <div class="absolute top-0 right-0 translate-x-1/2 -translate-y-3/4 cursor-default">
-        <UIcon name="crpg:shield-duotone" class="size-10 text-dimmed group-hover:text-muted" />
-        <span class="absolute top-1/2 left-1/2 -translate-1/2 text-xs font-bold group-hover:text-highlighted">
+      <div
+        class="
+          absolute top-0 right-0 translate-x-1/2 -translate-y-3/4 cursor-default
+        "
+      >
+        <UIcon
+          name="crpg:shield-duotone" class="
+            size-10 text-dimmed
+            group-hover:text-muted
+          "
+        />
+        <span
+          class="
+            absolute top-1/2 left-1/2 -translate-1/2 text-xs font-bold
+            group-hover:text-highlighted
+          "
+        >
           {{ armorOverall.value }}
         </span>
       </div>

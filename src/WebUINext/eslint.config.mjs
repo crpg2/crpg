@@ -41,9 +41,13 @@ export default withNuxt(
       'better-tailwindcss': eslintPluginBetterTailwindcss,
     },
     rules: {
+      // @ts-ignore
       ...eslintPluginBetterTailwindcss.configs['recommended-warn'].rules,
+      // @ts-ignore
       ...eslintPluginBetterTailwindcss.configs['recommended-error'].rules,
       'better-tailwindcss/multiline': ['warn', { printWidth: 100 }],
+      'better-tailwindcss/no-unregistered-classes': ['warn'],
+      'better-tailwindcss/enforce-consistent-line-wrapping': ['off'],
     },
   },
   {

@@ -1,73 +1,75 @@
-// import itemsjs from 'itemsjs'
+import { uniq } from 'es-toolkit'
 
-// import type { ItemFlat } from '~/models/item'
-// import type {
-//   AggregationConfig,
-//   FiltersModel,
-//   SortingConfig,
-// } from '~/models/item-search'
+import type { ItemFlat } from '~/models/item'
 
-// import { ItemType, WeaponClass } from '~/models/item'
-// import { AggregationView } from '~/models/item-search'
+import { ItemType, WeaponClass } from '~/models/item'
 
-// import {
-//   aggregationsConfig,
-//   aggregationsKeysByItemType,
-//   aggregationsKeysByWeaponClass,
-// } from './aggregations'
-// import { applyFilters, excludeRangeFilters } from './helpers'
+import type { AggregationConfig } from './aggregations'
 
-// export const generateEmptyFiltersModel = (aggregations: AggregationConfig) => {
-//   return (Object.keys(aggregations) as [keyof ItemFlat]).reduce(
-//     (model, aggKey) => {
-//       // model[aggKey] = []; // alwaysArray? TODO: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/itemsjs/index.d.ts#L38
+import { getWeaponClassesByItemType } from '../item-service'
+import {
+  aggregationsConfig,
+  aggregationsKeysByItemType,
+  aggregationsKeysByWeaponClass,
+} from './aggregations'
 
-//       if (aggKey === 'weaponUsage') {
-//         model[aggKey] = ['Primary']
-//       }
-//       else {
-//         model[aggKey] = []
-//       }
+export type SortingConfig = Record<string, { field: keyof ItemFlat, order: 'desc' | 'asc' }>
 
-//       return model
-//     },
-//     {} as FiltersModel<string[]>,
-//   )
-// }
+export const getAggregationsConfig = (
+  itemType: ItemType,
+  weaponClass: WeaponClass | null,
+): AggregationConfig => {
+  const output: AggregationConfig = {
+    // common aggregations
+    type: aggregationsConfig.type,
+    weaponClass: aggregationsConfig.weaponClass,
+    modId: aggregationsConfig.modId,
+    new: aggregationsConfig.new,
+  }
 
-// export const getAggregationsConfig = (
-//   itemType: ItemType,
-//   weaponClass: WeaponClass | null,
-// ): AggregationConfig => {
-//   const output: AggregationConfig = {
-//     // common aggregations
-//     modId: aggregationsConfig.modId,
-//     new: aggregationsConfig.new,
-//   }
+  if (weaponClass !== null && weaponClass in aggregationsKeysByWeaponClass) {
+    aggregationsKeysByWeaponClass[weaponClass]!.forEach((aggKey) => {
+      if (aggKey in aggregationsConfig) {
+        output[aggKey] = aggregationsConfig[aggKey]
+      }
+    })
+  }
 
-//   if (weaponClass !== null && weaponClass in aggregationsKeysByWeaponClass) {
-//     aggregationsKeysByWeaponClass[weaponClass]!.forEach((aggKey) => {
-//       if (aggKey in aggregationsConfig) {
-//         output[aggKey] = aggregationsConfig[aggKey]!
-//       }
-//     })
-//   }
-//   else if (itemType in aggregationsKeysByItemType) {
-//     aggregationsKeysByItemType[itemType]!.forEach((aggKey) => {
-//       if (aggKey in aggregationsConfig) {
-//         output[aggKey] = aggregationsConfig[aggKey]!
-//       }
-//     })
-//   }
+  else if (itemType in aggregationsKeysByItemType) {
+    aggregationsKeysByItemType[itemType]!.forEach((aggKey) => {
+      if (aggKey in aggregationsConfig) {
+        output[aggKey] = aggregationsConfig[aggKey]
+      }
+    })
+  }
 
-//   return output
-// }
+  return output
+}
 
-// export const getVisibleAggregationsConfig = (aggregationsConfig: AggregationConfig) => {
-//   return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
-//     .filter(key => aggregationsConfig[key]?.hidden !== true)
-//     .reduce((obj, key) => ({ ...obj, [key]: aggregationsConfig[key] }), {} as AggregationConfig)
-// }
+export const getVisibleAggregationsConfig = (aggregationsConfig: AggregationConfig) => {
+  return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
+    .filter(key => aggregationsConfig[key]?.hidden !== true)
+    .reduce((obj, key) => ({ ...obj, [key]: aggregationsConfig[key] }), {} as AggregationConfig)
+}
+
+export const getFacetsByItemType = (items: ItemFlat[]) => {
+  const orders = Object.values(ItemType)
+  return uniq(items.map(({ type }) => type))
+    .sort((a, b) => orders.indexOf(a) - orders.indexOf(b))
+}
+
+export const getFacetsByWeaponClass = (items: ItemFlat[], itemType: ItemType) => {
+  const orders = Object.values(WeaponClass)
+  return uniq(items.map<WeaponClass>(({ weaponClass }) => weaponClass as WeaponClass))
+    .filter(weaponClass => getWeaponClassesByItemType(itemType).includes(weaponClass))
+    .sort((a, b) => orders.indexOf(a) - orders.indexOf(b))
+}
+
+export const filterItemsByType = (items: ItemFlat[], type: ItemType) =>
+  type === ItemType.Undefined ? items : items.filter(item => item.type === type)
+
+export const filterItemsByWeaponClass = (items: ItemFlat[], weaponClass: WeaponClass | null) =>
+  weaponClass === null ? items : items.filter(fi => fi.weaponClass === weaponClass)
 
 // export const getSortingConfig = (aggregations: AggregationConfig): SortingConfig => {
 //   return (Object.keys(aggregations) as Array<keyof ItemFlat>)
@@ -87,130 +89,20 @@
 //     }, {} as SortingConfig)
 // }
 
-// export const getAggregationBy = (items: ItemFlat[], key: keyof ItemFlat) => {
-//   const aggregations: Partial<Record<keyof ItemFlat, itemsjs.Aggregation>> = {
-//     [key]: aggregationsConfig[key],
-//   }
+// export const generateEmptyFiltersModel = (aggregations: AggregationConfig) => {
+//   return (Object.keys(aggregations) as [keyof ItemFlat]).reduce(
+//     (model, aggKey) => {
+//       // model[aggKey] = []; // alwaysArray? TODO: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/itemsjs/index.d.ts#L38
 
-//   const agg = itemsjs(items, {
-//     aggregations: aggregations as Record<keyof ItemFlat, itemsjs.Aggregation>,
-//   }).aggregation({
-//     name: key,
-//     per_page: 1000,
-//   })
+//       if (aggKey === 'weaponUsage') {
+//         model[aggKey] = ['Primary']
+//       }
+//       else {
+//         model[aggKey] = []
+//       }
 
-//   agg.data.buckets = sortAggregationBuckets(key, agg.data.buckets)
-
-//   return agg
-// }
-
-// // TODO: unit
-// export const getScopeAggregations = (items: ItemFlat[], aggregationConfig: AggregationConfig) => {
-//   const result = itemsjs(items, {
-//     aggregations: aggregationConfig as Record<keyof ItemFlat, itemsjs.Aggregation>,
-//   }).search({
-//     per_page: 1,
-//   })
-
-//   return result.data.aggregations
-// }
-
-// // TODO: FIXME: SPEC
-// const sortAggregationBuckets = (aggKey: keyof ItemFlat, buckets: any[]) => {
-//   switch (aggKey) {
-//     case 'type':
-//       return buckets.sort(
-//         (a, b) =>
-//           Object.values(ItemType).indexOf(a.key as ItemType)
-//           - Object.values(ItemType).indexOf(b.key as ItemType),
-//       )
-
-//     case 'weaponClass':
-//       return buckets.sort(
-//         (a, b) =>
-//           Object.values(WeaponClass).indexOf(a.key as WeaponClass)
-//           - Object.values(WeaponClass).indexOf(b.key as WeaponClass),
-//       )
-
-//     default:
-//       return buckets
-//   }
-// }
-
-// export const getSearchResult = ({
-//   aggregationConfig,
-//   filter,
-//   items,
-//   page,
-//   perPage,
-//   query,
-//   sort,
-//   sortingConfig,
-//   userItemsIds,
-// }: {
-//   items: ItemFlat[]
-//   userItemsIds: string[]
-//   aggregationConfig: AggregationConfig
-//   sortingConfig: SortingConfig
-//   sort: string
-//   page: number
-//   perPage: number
-//   query: string
-//   filter: FiltersModel<string[] | number[]>
-// }) => {
-//   const result = itemsjs(items, {
-//     aggregations: aggregationConfig as Record<keyof ItemFlat, itemsjs.Aggregation>,
-//     searchableFields: ['name'],
-//     sortings: sortingConfig,
-//   }).search({
-//     filter: item => applyFilters(item, filter, userItemsIds),
-//     filters: excludeRangeFilters(filter),
-//     page,
-//     per_page: perPage,
-//     query,
-//     sort,
-//   });
-
-//   // TODO: FIXME: SPEC
-//   (Object.keys(result.data.aggregations) as Array<keyof ItemFlat>).forEach((aggKey) => {
-//     result.data.aggregations[aggKey].buckets = sortAggregationBuckets(
-//       aggKey,
-//       result.data.aggregations[aggKey].buckets,
-//     )
-//   })
-
-//   return result
-// }
-
-// export const filterItemsByType = (items: ItemFlat[], type: ItemType) =>
-//   items.filter(fi => (type === ItemType.Undefined ? true : fi.type === type))
-
-// export const filterItemsByWeaponClass = (items: ItemFlat[], weaponClass: WeaponClass | null) =>
-//   weaponClass === null ? items : items.filter(fi => fi.weaponClass === weaponClass)
-
-// export const getBucketValues = <I>(buckets: itemsjs.Buckets<I>): number[] => {
-//   return buckets.filter(b => b.key !== 'null').map(b => Number(b.key))
-// }
-
-// export const getMinRange = (buckets: number[]): number => {
-//   if (buckets.length === 0) { return 0 }
-//   return Math.floor(Math.min(...buckets))
-// }
-
-// export const getMaxRange = (buckets: number[]): number => {
-//   if (buckets.length === 0) { return 0 }
-//   return Math.ceil(Math.max(...buckets))
-// }
-
-// export const getStepRange = (values: number[]): number => {
-//   if (values.every(Number.isInteger)) { return 1 } // Ammo, stackAmount
-
-//   const [min, max] = [getMinRange(values), getMaxRange(values)]
-//   const diff = max - min
-
-//   if ((values.length < 20 && diff < 10) || (values.length > 20 && diff < 5)) {
-//     return 0.1
-//   }
-
-//   return 1
+//       return model
+//     },
+//     {} as FiltersModel<string[]>,
+//   )
 // }

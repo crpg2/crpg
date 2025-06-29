@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { TableColumn } from '@nuxt/ui'
-// import type { AggregationConfig } from '~/models/item-search'
+import type { VisibilityState } from '@tanstack/vue-table'
 
-import { ItemParam, ShopGridItemMedia } from '#components'
+import { AppCoin, ItemParam, ShopGridItemMedia } from '#components'
 
 import type { ItemFlat } from '~/models/item'
-import type { AggregationConfig, AggregationOptions } from '~/services/item-search-service/aggregations'
+import type { AggregationConfig } from '~/services/item-search-service/aggregations'
 
 import { useItemUpgrades } from '~/composables/item/use-item-upgrades'
 import { ItemCompareMode } from '~/models/item'
@@ -23,19 +23,28 @@ const { t, n } = useI18n()
 const {
   isLoading,
   itemUpgrades,
-  // relativeEntries
-} = useItemUpgrades(item, // cols
-)
+  relativeEntries,
+} = useItemUpgrades(item, aggregationConfig)
 
-function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): TableColumn<ItemFlat> {
+function createTableColumn(key: keyof ItemFlat): TableColumn<ItemFlat> {
   return {
     accessorKey: key,
     header: '',
     cell: ({ row }) => h(ItemParam, {
       field: key,
       item: row.original,
-      // bestValue: compareItemsResult !== null ? compareItemsResult[field] : undefined,
-      // isCompare: isCompareMode.value
+      isCompare: true,
+      compareMode: ItemCompareMode.Relative,
+      relativeValue: relativeEntries.value[key]!,
+    }, {
+      ...(key === 'upkeep' && {
+        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, null, {
+          default: () => t('item.format.upkeep', { upkeep: n(rawBuckets) }),
+        }),
+      }),
+      ...(key === 'price' && {
+        default: ({ rawBuckets }: { rawBuckets: number }) => h(AppCoin, { value: rawBuckets }),
+      }),
     }),
     meta: {
       class: {
@@ -51,7 +60,7 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
     id: 'fill',
     meta: {
       class: {
-        td: 'min-w-[70px]',
+        td: 'w-[80px]',
       },
     },
   },
@@ -68,15 +77,26 @@ const columns = computed<TableColumn<ItemFlat>[]>(() => [
       },
     },
   },
-  ...Object.entries(aggregationConfig).map(([key, config]) => createTableColumn(key as keyof ItemFlat, config)),
-],
-)
+  ...Object.keys(aggregationConfig).map(key => createTableColumn(key as keyof ItemFlat)),
+])
+
+const columnVisibility = computed<VisibilityState>(() => {
+  return {
+    ...Object.entries(aggregationConfig)
+      .filter(([_, value]) => value.hidden)
+      .reduce((out, [key]) => {
+        out[key] = false
+        return out
+      }, {} as VisibilityState),
+  }
+})
 </script>
 
 <template>
   <div class="relative">
     <UiLoading :active="isLoading" />
     <UTable
+      v-model:column-visibility="columnVisibility"
       :data="itemUpgrades.slice(1)"
       :columns
       :ui="{

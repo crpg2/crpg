@@ -7,8 +7,7 @@ import type { UserItemsBySlot } from '~/models/user'
 
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
 import { useInventoryQuickEquip } from '~/composables/character/inventory/use-inventory-quick-equip'
-// import { useCharacterItems } from '~/composables/character/use-character-items'
-// import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
+import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
 import {
   getCharacterSlotsSchema,
   getOverallArmorValueBySlot,
@@ -26,7 +25,7 @@ defineEmits<{
 }>()
 
 const slotsSchema = getCharacterSlotsSchema()
-// const { toggleItemDetail } = useItemDetail()
+const { toggleItemDetail } = useItemDetail()
 
 const { onQuickUnEquip } = useInventoryQuickEquip(() => props.equippedItems)
 
@@ -39,10 +38,10 @@ const onClickInventoryDollSlot = (e: PointerEvent, slot: ItemSlot) => {
     onQuickUnEquip(slot)
   }
   else {
-    // toggleItemDetail(e.target as HTMLElement, {
-    //   id: equippedItemsBySlot.value[slot].item.id,
-    //   userItemId: equippedItemsBySlot.value[slot].id,
-    // })
+    toggleItemDetail(e.target as HTMLElement, {
+      id: props.equippedItems[slot].item.id,
+      userItemId: props.equippedItems[slot].id,
+    })
   }
 }
 
@@ -65,7 +64,10 @@ const {
       <UiSpriteSymbol
         name="body-silhouette"
         viewBox="0 0 970 2200"
-        class="w-52 2xl:w-64"
+        class="
+          w-52
+          2xl:w-64
+        "
       />
     </div>
 

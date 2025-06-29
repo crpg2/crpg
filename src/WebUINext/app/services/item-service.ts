@@ -2,7 +2,6 @@ import {
   getItems as _getItems,
   getItemsUpgradesByBaseId,
 } from '#hey-api/sdk.gen'
-// import { omitBy } from 'es-toolkit'
 import {
   brokenItemRepairPenaltySeconds,
   itemBreakChance,
@@ -11,39 +10,31 @@ import {
   itemSellCostPenalty,
   itemSellGracePeriodMinutes,
 } from '~root/data/constants.json'
+import { omitBy } from 'es-toolkit'
 
 import type { EquippedItemsBySlot } from '~/models/character'
 import type { ArmorMaterialType, CompareItemsResult, Item, ItemFlat, ItemRank } from '~/models/item'
-// import type { EquippedItemsBySlot } from '~/models/character'
 import type { UserItem } from '~/models/user'
 
 import { Culture } from '~/models/culture'
-import { DamageType, ItemFamilyType, ItemFieldCompareRule, ItemFieldFormat, ItemFlags, ItemSlot, ItemType, ItemUsage, WeaponClass, WeaponFlags } from '~/models/item'
-// import { Culture } from '~/models/culture'
-// import {
-//   DamageType,
-//   ItemFamilyType,
-//   ItemFieldCompareRule,
-//   ItemFieldFormat,
-//   ItemFlags,
-//   ItemSlot,
-//   ItemType,
-//   ItemUsage,
-//   WeaponClass,
-//   WeaponFlags,
-// } from '~/models/item'
-// import { get } from '~/services/crpg-client'
-// import { aggregationsConfig } from '~/services/item-search-service/aggregations'
+import {
+  DamageType,
+  ItemFamilyType,
+  ItemFieldCompareRule,
+  ItemFieldFormat,
+  ItemFlags,
+  ItemSlot,
+  ItemType,
+  ItemUsage,
+  WeaponClass,
+  WeaponFlags,
+} from '~/models/item'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-// import type { AggregationConfig } from '~/models/item-search'
-// import type { UserItem } from '~/models/user'
 
+import type { AggregationConfig } from './item-search-service/aggregations'
+
+import { getAggregationsConfig } from './item-search-service'
 import { aggregationsConfig } from './item-search-service/aggregations'
-// import { NotificationType, notify } from '~/services/notification-service'
-// import { n, t } from '~/services/translate-service'
-// import { roundFLoat } from '~/utils/math'
-
-// import { getAggregationsConfig, getVisibleAggregationsConfig } from './item-search-service'
 
 export const getItems = async (): Promise<Item[]> => {
   const { data } = await _getItems({ composable: '$fetch' })
@@ -54,7 +45,7 @@ export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 
 export const getItemUpgrades = async (item: ItemFlat): Promise<ItemFlat[]> => {
   const { data } = await getItemsUpgradesByBaseId({ composable: '$fetch', path: { baseId: item.baseId } })
-  console.log('data', createItemIndex(data! as Item[]))
+  // console.log('data', createItemIndex(data! as Item[]))
 
   return createItemIndex(data! as Item[])
   // TODO: hotfix, avoid duplicate items with multiply weaponClass
@@ -632,62 +623,57 @@ export const humanizeBucket = (
   return createHumanBucket(String(bucket), null, null)
 }
 
-// interface GroupedItems {
-//   type: ItemType
-//   items: ItemFlat[]
-//   weaponClass: WeaponClass | null
-// }
+interface GroupedItems {
+  type: ItemType
+  weaponClass: WeaponClass | null
+  items: ItemFlat[]
+}
 
-// export const groupItemsByTypeAndWeaponClass = (items: ItemFlat[]) => {
-//   return items.reduce((out, item) => {
-//     const currentEl = out.find((el) => {
-//       // merge Shield classes
-//       if (item.type === ItemType.Shield) {
-//         return el.type === item.type
-//       }
-
-//       return el.type === item.type && el.weaponClass === item.weaponClass
-//     })
-
-//     if (currentEl !== undefined) {
-//       currentEl.items.push(item)
-//     }
-//     else {
-//       out.push({
-//         items: [item],
-//         type: item.type,
-//         weaponClass: item.weaponClass,
-//       })
-//     }
-
-//     return out
-//   }, [] as GroupedItems[])
-// }
-
-// export const getCompareItemsResult = (items: ItemFlat[], aggregationsConfig: AggregationConfig) => {
-//   return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
-//     .filter(k => aggregationsConfig[k]?.compareRule !== undefined)
-//     .reduce((out, k) => {
-//       const values = items.map(fi => fi[k]).filter(v => typeof v === 'number') as number[]
-//       out[k]
-//         = aggregationsConfig[k]!.compareRule === ItemFieldCompareRule.Less
-//           ? Math.min(...values)
-//           : Math.max(...values)
-//       return out
-//     }, {} as CompareItemsResult)
-// }
+export const groupItemsByTypeAndWeaponClass = (items: ItemFlat[]) => {
+  return items.reduce((out, item) => {
+    const currentEl = out.find((el) => {
+      // merge Shield classes
+      if (item.type === ItemType.Shield) {
+        return el.type === item.type
+      }
+      return el.type === item.type && el.weaponClass === item.weaponClass
+    })
+    if (currentEl !== undefined) {
+      currentEl.items.push(item)
+    }
+    else {
+      out.push({
+        items: [item],
+        type: item.type,
+        weaponClass: item.weaponClass,
+      })
+    }
+    return out
+  }, [] as GroupedItems[])
+}
 
 // TODO: FIXME: spec + desc
-// export const getRelativeEntries = (item: ItemFlat, aggregationsConfig: AggregationConfig) => {
-//   return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
-//     .filter(k => aggregationsConfig[k]?.compareRule !== undefined)
-//     .reduce((out, k) => {
-//       if (typeof item[k] === 'number') {
-//         out[k] = item[k] as number
-//       }
-//       return out
-//     }, {} as CompareItemsResult)
-// }
+export const getCompareItemsResult = (items: ItemFlat[], aggregationsConfig: AggregationConfig) => {
+  return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
+    .filter(k => aggregationsConfig[k]?.compareRule !== undefined)
+    .reduce((out, k) => {
+      const values = items.map(fi => fi[k]).filter(v => typeof v === 'number') as number[]
+      out[k] = aggregationsConfig[k]!.compareRule === ItemFieldCompareRule.Less ? Math.min(...values) : Math.max(...values)
+      return out
+    }, {} as CompareItemsResult)
+}
+
+// TODO: FIXME: spec + desc
+export const getRelativeEntries = (item: ItemFlat, aggregationsConfig: AggregationConfig) => {
+  return (Object.keys(aggregationsConfig) as Array<keyof ItemFlat>)
+    .filter(k => aggregationsConfig[k]?.compareRule !== undefined)
+    .reduce((out, k) => {
+      if (typeof item[k] === 'number') {
+        out[k] = item[k] as number
+      }
+      return out
+    }, {} as CompareItemsResult)
+}
 
 // TODO: description, spec
 export const getItemFieldAbsoluteDiffStr = (
@@ -792,25 +778,27 @@ export const reforgeCostByRank: Record<ItemRank, number> = {
 
 export const itemIsNewDays = 14
 
-// const itemParamIsEmpty = (field: keyof ItemFlat, itemFlat: ItemFlat) => {
-//   const value = itemFlat[field]
+const itemParamIsEmpty = (field: keyof ItemFlat, itemFlat: ItemFlat) => {
+  const value = itemFlat[field]
 
-//   if (Array.isArray(value) && value.length === 0) {
-//     return true
-//   }
+  if (Array.isArray(value) && value.length === 0) {
+    return true
+  }
 
-//   if (value === 0) {
-//     return true
-//   }
+  if (value === 0) {
+    return true
+  }
 
-//   return false
-// }
+  return false
+}
 
 // // TODO: spec
-// export const getItemAggregations = (itemFlat: ItemFlat, omitEmpty = true) => {
-//   const aggsConfig = getVisibleAggregationsConfig(
-//     getAggregationsConfig(itemFlat.type, itemFlat.weaponClass),
-//   )
-
-//   return omitEmpty ? omitBy(aggsConfig, (_value, field) => itemParamIsEmpty(field, itemFlat)) : aggsConfig
-// }
+export const getItemAggregations = (itemFlat: ItemFlat, omitEmpty = true) => {
+  // const aggsConfig = getVisibleAggregationsConfig(
+  //   getAggregationsConfig(itemFlat.type, itemFlat.weaponClass),
+  // )
+  const aggsConfig = getAggregationsConfig(itemFlat.type, itemFlat.weaponClass)
+  return omitEmpty
+    ? omitBy(aggsConfig, (_value, field) => itemParamIsEmpty(field as keyof ItemFlat, itemFlat))
+    : aggsConfig
+}

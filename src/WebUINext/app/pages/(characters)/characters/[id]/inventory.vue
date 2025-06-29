@@ -1,27 +1,18 @@
 <script setup lang="ts">
 import { vOnLongPress } from '@vueuse/components'
+import { useStorage } from '@vueuse/core'
 
 import type { UserItem } from '~/models/user'
+import type { SortingConfig } from '~/services/item-search-service'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
 import { useInventoryQuickEquip } from '~/composables/character/inventory/use-inventory-quick-equip'
+import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
-// import { useStorage } from '@vueuse/core'
-// import type { EquippedItemId } from '~/models/character'
-// import type { AggregationConfig, SortingConfig } from '~/models/item-search'
-// import type { UserItem, UserItemsBySlot } from '~/models/user'
-// import { useInventoryDnD } from '~/composables/character/use-inventory-dnd'
-// import { useInventoryQuickEquip } from '~/composables/character/use-inventory-quick-equip'
-// import { useItemDetail } from '~/composables/character/use-item-detail'
-// import { useClanMembers } from '~/composables/clan/use-clan-members'
-// import { useStickySidebar } from '~/composables/use-sticky-sidebar'
-// import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-// import { ItemType } from '~/models/item'
-// import { AggregationView } from '~/models/item-search'
 import {
   checkUpkeepIsHigh,
   validateItemNotMeetRequirement,
@@ -32,26 +23,10 @@ import {
   removeItemFromClanArmory,
   returnItemToClanArmory,
 } from '~/services/clan-service'
-// import { getAggregationsConfig, getSearchResult } from '~/services/item-search-service'
-// import { createItemIndex } from '~/services/item-search-service/indexator'
-// import {
-//   getCompareItemsResult,
-//   getLinkedSlots,
-//   groupItemsByTypeAndWeaponClass,
-// } from '~/services/item-service'
-// import { notify } from '~/services/notification-service'
-// import { t } from '~/services/translate-service'
-// import { extractItemFromUserItem, reforgeUserItem, repairUserItem, sellUserItem, upgradeUserItem } from '~/services/users-service'
-// import { useUserStore } from '~/stores/user'
-// import {
-//   characterCharacteristicsKey,
-//   characterHealthPointsKey,
-//   characterItemsKey,
-//   characterItemsStatsKey,
-//   characterKey,
-//   equippedItemsBySlotKey,
-// } from '~/symbols/character'
-// import { scrollToTop } from '~/utils/scroll'
+import { getAggregationsConfig } from '~/services/item-search-service'
+import { createItemIndex } from '~/services/item-search-service/indexator'
+import { getCompareItemsResult, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
+import { extractItemFromUserItem } from '~/services/user-service'
 
 const userStore = useUserStore()
 const { clan, user, userItems } = toRefs(userStore)
@@ -65,6 +40,13 @@ const { characterCharacteristics, healthPoints } = useCharacterCharacteristic()
 const { onDragEnd, onDragStart, dragging } = useInventoryDnD(equippedItemsBySlot)
 
 const { onQuickEquip } = useInventoryQuickEquip(equippedItemsBySlot)
+
+const {
+  closeItemDetail,
+  getUniqueId,
+  openedItems,
+  toggleItemDetail,
+} = useItemDetail()
 
 const upkeepIsHigh = computed(() => checkUpkeepIsHigh(user.value!.gold, itemsOverallStats.value.averageRepairCostByHour))
 
@@ -142,27 +124,27 @@ const upkeepIsHigh = computed(() => checkUpkeepIsHigh(user.value!.gold, itemsOve
 const onClickInventoryItem = (e: PointerEvent, userItem: UserItem) => {
   if (e.ctrlKey) {
     onQuickEquip(userItem)
-    // return
+    return
   }
-
-  // toggleItemDetail(e.target as HTMLElement, {
-  //   id: userItem.item.id,
-  //   userItemId: userItem.id,
-  // })
+  toggleItemDetail(e.target as HTMLElement, {
+    id: userItem.item.id,
+    userItemId: userItem.id,
+  })
 }
 
 // const hideInArmoryItemsModel = useStorage<boolean>('character-inventory-in-armory-items', true)
 // const hasArmoryItems = computed(() => userItems.value.some(ui => ui.isArmoryItem))
 
-// const flatItems = computed(() =>
-//   createItemIndex(
-//     extractItemFromUserItem(
-//       userItems.value.filter(item =>
-//         hideInArmoryItemsModel.value && item.isArmoryItem ? item.userId !== user.value!.id : true,
-//       ),
-//     ),
-//   ),
-// )
+const flatItems = computed(() =>
+  createItemIndex(
+    extractItemFromUserItem(
+      userItems.value,
+      // .filter(item =>
+      //   hideInArmoryItemsModel.value && item.isArmoryItem ? item.userId !== user.value!.id : true,
+      // ),
+    ),
+  ),
+)
 
 // const sortingConfig: SortingConfig = {
 //   price_asc: {
@@ -182,6 +164,7 @@ const onClickInventoryItem = (e: PointerEvent, userItem: UserItem) => {
 //     order: 'asc',
 //   },
 // }
+
 // const aggregationConfig = {
 //   type: {
 //     chosen_filters_on_top: false,
@@ -195,8 +178,27 @@ const onClickInventoryItem = (e: PointerEvent, userItem: UserItem) => {
 // } as AggregationConfig
 
 // const filterByTypeModel = ref<ItemType[]>([])
-// const filterByNameModel = ref<string>('')
-// const sortingModel = useStorage<string>('character-inventory-sorting', 'rank_desc')
+const filterByNameModel = ref<string>('')
+
+const sortingConfig: SortingConfig = {
+  price_asc: {
+    field: 'price',
+    order: 'asc',
+  },
+  price_desc: {
+    field: 'price',
+    order: 'desc',
+  },
+  rank_desc: {
+    field: 'rank',
+    order: 'desc',
+  },
+  type_asc: {
+    field: 'type',
+    order: 'asc',
+  },
+}
+const sortingModel = useStorage<string>('character-inventory-sorting', 'rank_desc')
 
 // const searchResult = computed(() =>
 //   getSearchResult({
@@ -233,44 +235,36 @@ const onClickInventoryItem = (e: PointerEvent, userItem: UserItem) => {
 
 // const totalItemsCost = computed(() => filteredUserItems.value.reduce((out, item) => out + item.item.price, 0))
 
-// provide(equippedItemsBySlotKey, equippedItemsBySlot)
-
-// const { closeItemDetail, getUniqueId, openedItems, toggleItemDetail } = useItemDetail()
-
-// const compareItemsResult = computed(() => {
-//   // find the open items TODO: spec
-//   return groupItemsByTypeAndWeaponClass(
-//     createItemIndex(
-//       extractItemFromUserItem(
-//         userItems.value.filter(ui =>
-//           openedItems.value.some(oi => oi.uniqueId === getUniqueId(ui.item.id, ui.id)),
-//         ),
-//       ),
-//     ),
-//   )
-//     .filter(group => group.items.length >= 2) // there is no point in comparing 1 item;
-//     .map(group => ({
-//       compareResult: getCompareItemsResult(
-//         group.items,
-//         getAggregationsConfig(group.type, group.weaponClass),
-//       ),
-//       type: group.type,
-//       weaponClass: group.weaponClass,
-//     }))
-// })
-
-const aside = useTemplateRef('aside')
-// const { top: stickySidebarTop } = useStickySidebar(aside, mainHeaderHeight.value + 16, 16)
+// TODO:
+const compareItemsResult = computed(() => {
+  // find the open items TODO: spec
+  return groupItemsByTypeAndWeaponClass(
+    createItemIndex(
+      extractItemFromUserItem(
+        userItems.value.filter(ui =>
+          openedItems.value.some(oi => oi.uniqueId === getUniqueId(ui.item.id, ui.id)),
+        ),
+      ),
+    ),
+  )
+    .filter(group => group.items.length >= 2) // there is no point in comparing 1 item;
+    .map(group => ({
+      compareResult: getCompareItemsResult(
+        group.items,
+        getAggregationsConfig(group.type, group.weaponClass),
+      ),
+      type: group.type,
+      weaponClass: group.weaponClass,
+    }))
+})
 
 const { clanMembers, loadClanMembers } = useClanMembers()
 
 const fetchPageData = () => {
   const promises: Promise<any>[] = [userStore.fetchUserItems()]
-
   if (clan.value) {
     promises.push(loadClanMembers(0, { id: clan.value.id }))
   }
-
   Promise.all(promises)
 }
 
@@ -283,94 +277,21 @@ watchEffect(() => {
   // TODO: FIXME:
   // togglePageLoading(updatingCharacterItems.value)
 })
+
+// const openedItems = ref<OpenedItem[]>([])
 </script>
 
 <template>
   <div class="relative grid grid-cols-12 gap-5">
-    <!-- <OLoading
-      full-page
-      :active="
-        changingEquippedItems
-          || sellingUserItem
-          || repairingUserItem
-          || upgradingUserItem
-          || reforgingUserItem
-          || addingItemToClanArmory
-          || returningItemToClanArmory
-          || removingItemToClanArmory"
-      icon-size="xl"
-    /> -->
-
     <div class="col-span-5">
-      <div
+      <ItemGrid
         v-if="Boolean(userItems.length)"
-        class="inventoryGrid relative grid h-full gap-x-3 gap-y-4"
+        v-model:sorting="sortingModel"
+        :items="userItems"
+        :sorting-config="sortingConfig"
       >
-        <!-- :style="{ top: `${stickySidebarTop}px` }" -->
-        <div
-          ref="aside"
-          style="grid-area: filter"
-          class="sticky space-y-2"
-        >
-          dd
-          <!-- <OButton
-            v-if="hasArmoryItems"
-            v-tooltip.bottom="
-              hideInArmoryItemsModel
-                ? $t('character.inventory.filter.showInArmory')
-                : $t('character.inventory.filter.hideInArmory')
-            "
-            :variant="hideInArmoryItemsModel ? 'secondary' : 'primary'"
-            outlined
-            size="xl"
-            rounded
-            icon-left="armory"
-            @click="
-              () => {
-                hideInArmoryItemsModel = !hideInArmoryItemsModel;
-                filterByTypeModel = [];
-              }
-            "
-          />
-
-          <ItemGridFilter
-            v-if="'type' in searchResult.data.aggregations"
-            v-model="filterByTypeModel"
-            :buckets="searchResult.data.aggregations.type.buckets"
-            @click="scrollToTop"
-          /> -->
-        </div>
-
-        <div
-          class="grid grid-cols-3 gap-4 2xl:grid-cols-4"
-          style="grid-area: sort"
-        >
-          dd
-          <!-- <div class="col-span-2 2xl:col-span-3">
-            <OInput
-              v-model="filterByNameModel"
-              type="text"
-              expanded
-              clearable
-              :placeholder="$t('action.search')"
-              icon="search"
-              rounded
-              size="sm"
-            />
-          </div>
-
-          <ItemGridSearch
-            v-model="sortingModel"
-            class="col-span-1"
-            :config="sortingConfig"
-          /> -->
-        </div>
-
-        <div class="grid grid-cols-3 gap-2 2xl:grid-cols-4" style="grid-area: items">
-          <!-- v-for="userItem in filteredUserItems" -->
+        <template #item="userItem">
           <CharacterInventoryItemCard
-            v-for="userItem in userItems"
-            :key="userItem.id"
             v-on-long-press="[() => !dragging && onQuickEquip(userItem), { delay: 500 }]"
             class="cursor-grab"
             :user-item="userItem"
@@ -382,57 +303,16 @@ watchEffect(() => {
             @dragend="onDragEnd"
             @click="(e: PointerEvent) => onClickInventoryItem(e, userItem)"
           />
-        </div>
-
-        <div
-          class="sticky bottom-4 left-0 z-10 flex w-full justify-center rounded-lg bg-base-200/60 p-4 backdrop-blur-lg"
-          style="grid-area: footer"
-        >
-          вв
-          <!-- <i18n-t
-            scope="global"
-            keypath="character.inventory.total.tpl"
-            tag="div"
-            :plural="filteredUserItems.length"
-          >
-            <template #count>
-              <i18n-t
-                scope="global"
-                keypath="character.inventory.total.count"
-                tag="span"
-                :plural="filteredUserItems.length"
-              >
-                <template #count>
-                  <span class="font-bold text-content-100">
-                    {{ filteredUserItems.length }}
-                  </span>
-                </template>
-              </i18n-t>
-            </template>
-
-            <template #sum>
-              <i18n-t
-                scope="global"
-                tag="span"
-                keypath="character.inventory.total.sum"
-              >
-                <template #sum>
-                  <AppCoin :value="totalItemsCost" />
-                </template>
-              </i18n-t>
-            </template>
-          </i18n-t> -->
-        </div>
-      </div>
-
+        </template>
+      </ItemGrid>
       <UCard v-else>
         <UiResultNotFound :message="$t('character.inventory.empty')" />
       </UCard>
     </div>
 
     <div
+      class="sticky top-0 left-0 col-span-5 self-start"
       :style="{ top: `calc(${mainHeaderHeight}px + 1rem)` }"
-      class="sticky left-0 col-span-5 self-start"
     >
       <CharacterInventoryDoll
         :character-characteristics="characterCharacteristics"
@@ -441,7 +321,7 @@ watchEffect(() => {
       />
 
       <div
-        class="mt-3 flex w-full justify-center rounded-lg bg-base-200 p-4 backdrop-blur-lg"
+        class="mt-3 flex w-full justify-center rounded-lg bg-elevated p-4 backdrop-blur-lg"
         style="grid-area: footer"
       >
         <UiKbdCombination
@@ -500,18 +380,20 @@ watchEffect(() => {
       </CharacterStats>
     </div>
 
-    <!-- <ItemDetailGroup>
+    <ItemDetailGroup>
       <template #default="di">
         <CharacterInventoryItemDetail
-          :compare-result="
-            compareItemsResult.find(cr => cr.type === flatItems.find(fi => fi.id === di.id)!.type)
-              ?.compareResult
-          "
           :user-item="userItems.find(ui => ui.id === di.userItemId)!"
-          :equipped="equippedItemsIds.includes(di.userItemId)"
-          :lender="
-            getClanArmoryItemLender(userItems.find(ui => ui.id === di.userItemId)!, clanMembers)
-          "
+          :equipped="equippedItemIds.includes(di.userItemId)"
+          :lender="getClanArmoryItemLender(userItems.find(ui => ui.id === di.userItemId)!, clanMembers)"
+          :compare-result="compareItemsResult.find(cr => cr.type === flatItems.find(fi => fi.id === di.id)!.type)?.compareResult"
+        />
+      </template>
+    </ItemDetailGroup>
+  </div>
+</template>
+
+<!--
           @sell="
             () => {
               closeItemDetail(di);
@@ -553,12 +435,7 @@ watchEffect(() => {
               closeItemDetail(di);
               onAddItemToClanArmory(di.userItemId);
             }
-          "
-        />
-      </template>
-    </ItemDetailGroup> -->
-  </div>
-</template>
+          " -->
 
 <style lang="css">
 .inventoryGrid {

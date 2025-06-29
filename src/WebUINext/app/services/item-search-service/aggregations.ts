@@ -10,6 +10,7 @@ import {
 export interface AggregationOptions {
   view: AggregationView
   format?: ItemFieldFormat
+  hidden?: boolean
   compareRule?: ItemFieldCompareRule
 }
 
@@ -31,12 +32,15 @@ export const aggregationsConfig: AggregationConfig = {
   },
   id: {
     view: AggregationView.Checkbox,
+    hidden: true,
   },
-  // modId: {
-  //   view: AggregationView.Checkbox,
-  // },
+  modId: {
+    view: AggregationView.Checkbox,
+    hidden: true,
+  },
   new: {
     view: AggregationView.Checkbox,
+    hidden: true,
   },
   price: {
     compareRule: ItemFieldCompareRule.Less,
@@ -55,6 +59,7 @@ export const aggregationsConfig: AggregationConfig = {
   },
   type: {
     view: AggregationView.Radio,
+    hidden: true,
   },
   upkeep: {
     compareRule: ItemFieldCompareRule.Less,
@@ -175,9 +180,11 @@ export const aggregationsConfig: AggregationConfig = {
   },
   weaponClass: {
     view: AggregationView.Radio,
+    hidden: true,
   },
   weaponUsage: {
     view: AggregationView.Checkbox,
+    hidden: true,
   },
 
   // Throw/Bow/Xbow
