@@ -1,0 +1,87 @@
+<script setup lang="ts">
+type SortDirection = 'asc' | 'desc'
+
+withDefaults(defineProps<{
+  label: string
+  withSort?: boolean
+  sorted?: false | SortDirection
+  withFilter?: boolean
+  filtered?: boolean
+}>(), {
+  withSort: false,
+  withFilter: false,
+})
+
+defineEmits<{
+  sort: []
+  resetFilter: []
+}>()
+</script>
+
+ <!-- class="
+          absolute top-1/2 -left-5 size-4 -translate-y-1/2 cursor-pointer
+          text-muted outline-0 select-none
+          hover:text-toned
+        " -->
+<template>
+  <div class="relative flex items-center gap-1">
+    <UTooltip
+      v-if="withFilter && filtered"
+      :text="$t('action.reset')"
+    >
+      <UButton
+        class="absolute top-1/2 -left-9 -translate-y-1/2"
+        square
+        color="neutral"
+        variant="ghost"
+        size="xs"
+        icon="crpg:close"
+        @click="$emit('resetFilter')"
+      />
+    </UTooltip>
+
+    <template v-if="withFilter">
+      <slot name="filter">
+        <UPopover
+          :ui="{
+            content: 'max-w-76',
+          }"
+        >
+          <UiTableColumnHeaderLabel :with-filter :label />
+
+          <template #content>
+            <slot name="filter-content" />
+          </template>
+        </UPopover>
+      </slot>
+    </template>
+
+    <template v-else>
+      <UiTableColumnHeaderLabel
+        :with-filter="false"
+        :label
+      />
+      <slot name="label-trailing" />
+    </template>
+
+    <UTooltip
+      v-if="withSort"
+      :text="$t(sorted === 'asc'
+        ? 'shop.sort.desc'
+        : 'shop.sort.asc')"
+    >
+      <UButton
+        square
+        color="neutral"
+        variant="ghost"
+        size="xs"
+        :icon="sorted
+          ? (sorted === 'asc'
+            ? 'crpg:arrow-up-narrow-wide'
+            : 'crpg:arrow-down-narrow-wide')
+          : 'crpg:arrow-up-down'"
+        @click="$emit('sort')"
+      />
+    </UTooltip>
+  </div>
+</template>

@@ -1,0 +1,1421 @@
+locale:
+  en: English
+  ru: Русский
+  cn: 中文
+
+platform:
+  Steam: Steam
+  EpicGames: Epic Games
+  Microsoft: Xbox
+
+installation:
+  title: Установка
+  common:
+    watchVideoGuide: Видео инструкция
+    help: Если y вас возникли трудности c установкой модификации, пожалуйста, свяжитесь c нами c помощью {discordLink}
+  platform:
+    steam:
+      subscribe: Подпишитесь на {steamWorkshopsLink}
+      update: Чтобы обновить мод, вам может потребоваться отписаться/подписаться в Steam Workshop
+      bannerlordLauncher: Запустите Bannerlord
+      multiplayerModsTab: Перейдите на вкладку Многопользовательские моды
+      activateMod: Активируйте мод cRPG
+      launchMultiplayerGame: Запустите игру в многопользовательском режиме!
+    other:
+      title: Лаунчер
+      downloadLauncher: Загрузите наш {launcherLink}
+      startLauncher: Откройте Launcher и выберите свою платформу (Steam/Epic/Xbox)
+      detectinstall: Нажмите "Detect Install", чтобы автоматически найти место установки, или задайте вручную c помощью "Change Location"
+      update: Нажмите "Update cRPG", чтобы убедиться, что cRPG полностью обновлен
+      launch: Нажмите "Launch cRPG", чтобы запустить модификацию
+
+help:
+  title: Помощь
+
+  overview:
+    navTitle: Обзор
+    title: Добро пожаловать в cRPG!
+    intro: '
+      <p>Если вы новичок и, вероятно, нашли эту страницу в поисках помощи, то вы пришли по адресу! Это будет своего рода ''приветственный набор'', который поможет вам разобраться с основными вопросами.</p>
+      <p>Для начала мы рекомендуем ознакомиться с <a href=''/help/build-support''>билд-системой</a>, это лучший способ изучить нашу систему прогрессии и начать творчески подходить к созданию персонажа!</p>'
+
+  buildSupport:
+    navTitle: Билд-система
+    title: Создайте билд своего персонажа
+    content: '
+      <p>Создание хорошего билда для вашего персонажа - это фундаментальный инструмент для доминирования на поле боя в cRPG. Будучи новичком в игре, вы захотите получить что-то простое, легкое и понятное, чтобы как можно чаще участвовать в боях.</p>
+      <p>Самое основное правило, которое необходимо усвоить при составлении билда, заключается в том, что увеличение атрибутов (сила и ловкость) всегда должно происходить <strong>в количестве кратном трем</strong>.</p>
+      <p>Причина в том, что за каждое кратное трем число, вложенное в силу или ловкость, вы получаете возможность вложить <strong>+1 очко в навык</strong> (скилл), связанный с этим атрибутом.</p>
+      <p>Например:</p>
+      <ul>
+      <li>На 3-м уровне ловкости вы можете вложить 1 очко в навык Атлетика.</li>
+      <li>добавьте 3 очка и доведите его до 6-го уровня, теперь вы можете добавить 2 очка</li>
+      <li>повторяйте, пока не достигнете желаемого уровня!</li>
+      </ul>
+      <p>Вы можете поэкспериментировать с билдами с помощью <a href=''/builder'' target=''_blank''>этого инструмента</a>, а также задать вопросы в <a href=''https://discord.com/channels/279063743839862805/1036085650849550376'' target=''_blank''>специализированном чате Discord</a>.</p>'
+
+  joinClan:
+    title: Вступление в клан
+    navTitle: Вступить в клан
+    content: '
+      <p>Вступить в клан в cRPG - хорошая идея по двум простым причинам:</p>
+      <ul>
+      <li>Это вовлекает вас в сообщество - вы можете учиться у более опытных игроков и пользоваться этим для улучшения своих навыков!</li>
+      <li>Это дает вам доступ к их <strong>клановой оружейной</strong> - в ней хранятся предметы, которые вы можете позаимствовать у других игроков! Это огромное преимещуство на ранних этапах, когда с золотом туго!</li>
+      </ul>'
+
+  FAQ:
+    title: Часто задаваемые вопросы
+    navTitle: FAQ
+    intro: '
+      <p>Здесь вы найдете список распространенных вопросов. Задайте свой вопрос <a href=''https://discord.com/channels/279063743839862805/1044686358066778112'' target=''_blank''>в нашем Discord</a>!</p>'
+    list:
+      - q: Как работает требование к силе?
+        a: Вы можете носить все, что вам нравится, однако, если вы не обладаете необходимыми навыками владения этим предметом, вы столкнетесь с <strong>штрафами</strong>.
+      - q: Как заработать XP и золото?
+        a: Просто! Играя в игру! По мере того как ваша команда выигрывает раунды, вы получаете <strong>мульти</strong>, который умножает ваши XP и количество золота на значение, показанную в правом нижнем углу экрана и обозначенную (x1, x2, x3, x4, x5). Также, вы можете <strong>увеличить доход</strong>, используя худшее снаряжение, так как за содержание снаряжения необходимо платить.
+      - q: Все такие сильные, почему же я чувствую себя таким слабым?
+        a: В cRPG много опытных игроков, которые давно играют в эту игру, поэтому средний уровень мастерства здесь гораздо выше, чем у Native игроков. Возможно, вам покажется, что бои здесь намного сложнее, особенно если вы новичок!
+      - q: Что такое Отставка и очки наследия?
+        a: Отставка - это особенность cRPG, которая позволяет вам откатить своего персонажа на 1 уровень, взамен вы получаете <strong>генерацию</strong>, которая увеличивает ваш множетель XP, вы также получаете <strong>очки наследия</strong>, которые можно использовать для улучшения и повышения статов вашего снаряжения.
+      - q: Зачем надо уходить в отставку не менее 16 раз?
+        a: Мы рекомендуем уходить в отставку 16 раз, так как в этом случае вы получите максимальный множитель опыта, который поможет вам быстрее повысить уровень, когда вы перейдете за 31-й уровень.
+
+dateTime:
+  days:
+    short: д
+    long: день | дня | дней
+  hours:
+    short: ч
+    long: час | часа | часов
+  minutes:
+    short: мин
+    long: минута | минуты | минут
+
+timeAgo:
+  just-now: прямо сейчас
+  ago: '{0} назад'
+  in: 'через {0}'
+  last-month: в прошлом месяце
+  next-month: в следующем месяце
+  month: 'месяцев | месяц | месяца | месяцев'
+  last-year: в прошлом году
+  next-year: в следующем году
+  year: 'лет | год | года | лет'
+  yesterday: вчера
+  tomorrow: завтра
+  day: 'дней | день | дня | дней'
+  last-week: на прошлой неделе
+  next-week: на следующей неделе
+  week: 'недель | неделя | недели | недель'
+  hour: 'часов | час | часа | часов'
+  minute: 'минут | минуты | минуты | минут'
+  second: 'секунд | секунда | секунды | секунд'
+
+dateTimeFormat:
+  dd: '{days} @:dateTime.days.short'
+  mm: '{minutes} @:dateTime.minutes.short'
+  hh: '{hours} @:dateTime.hours.short'
+  'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
+
+nav:
+  main:
+    Characters: Персонаж
+    Shop: Магазин
+    Clans: Кланы
+    Moderator: Модератор
+    Admin: Админ
+    Builder: Калькулятор
+    Leaderboard: Лидеры
+    Community: Сообщество
+    Installation: Как установить
+  back: Назад
+
+action:
+  cancel: Отмена
+  delete: Удалить
+  save: Сохранить
+  leave: Выйти
+  kick: Выгнать
+  confirm: Подтверждаю
+  create: Создать
+  search: Поиск
+  apply: Принять
+  accept: Принять
+  decline: Отклонить
+  readMore: Подробнее
+  expand: Развернуть
+  collapse: Свернуть
+  find: Найти
+  reset: Сбросить
+  refresh: Обновить | Обновите
+  commit: Сохранить
+  sort: Сортировать
+  share: Поделиться
+  confirmation: Подтверждение
+  upgrade: Улучшить
+  reforge: Расплавить
+  enter: Войти
+  copied: Скопировано
+  start: Начать
+  copy: Копировать
+  ok: Ок
+
+login:
+  label: Вход
+
+confirmAction: Пожалуйста подтвердите действие
+
+you: Вы
+here: здесь
+not-found: Не найдено
+results-not-found: Результаты не найдены...
+
+shortcuts:
+  keys:
+    ctrl: CTRL
+    lmb: ЛКМ
+  hints:
+    equip: или долгое нажатие - экипировать/снять
+
+setting:
+  language: Язык
+  settings: Настройки
+  logout: Выйти
+
+validations:
+  required: Значение обязательно
+  url: Значение не является действительным адресом URL
+  sameAs: Значение должно быть равно значению {equalTo}.
+  integer: Число должно быть целым
+  minLength: Значение должно быть длиной не менее {min} символов
+  maxLength: Максимальная допустимая длина {max}
+  minValue: Значение должно быть не менее {min}
+  clanTagPattern: Значение должно содержать только целые числа и латинские символы
+  clanBannerKeyPattern: Значение должно содержать только целые числа и точки
+  discordLinkPattern: Значение должно быть валидной Дискорд ссылкой
+
+sort:
+  directions:
+    asc: Сортировать по возврастанию
+    desc: Сортировать по убыванию
+
+error:
+  title: Что то пошло не так
+  intro: Если вы видите эту страницу, это значит, что вы столкнулись с какой-то ошибкой!
+  discord: Если вы хотите помочь нам исправить это, пожалуйста, зарегистрируйте тикет в нашем {discordLink}
+  modMail: Вы можете зарегистрировать тикет с помощью ModMail. Руководство о том, как это сделать можно найти {modMailGuideLink}
+  report:
+    title: 'При регистрации тикета (обращения), пожалуйста, не забудьте указать:'
+    step:
+      reproduce: Что вы делали перед возникновением ошибки
+      repeat: Сможете ли вы последовательно воспроизвести эту ошибку.
+  goToHomePage: Перейти на главную страницу
+
+form:
+  validate:
+    invalid: Форма содержит ошибки
+  field:
+    optional: не обязательно
+    required: обязательно
+
+confirm:
+  placeholder: Имя
+  name: 'Введите следующее для подтверждения: {name}'
+
+region:
+  Eu: 'Европа | Европы | Европ'
+  Na: 'С. Америка | С. Америки | С. Америк'
+  As: 'Азия | Азии | Азий'
+  Oc: 'Океания | Океании | Океаний'
+
+region-title: Регион
+
+game-mode:
+  CRPGBattle: Битва
+  CRPGConquest: Завоевание
+  CRPGDTV: DTV
+  CRPGDuel: Дуэль
+  CRPGSiege: Осада
+  CRPGTeamDeathmatch: TDM
+  CRPGSkirmish: Скирмиш
+  CRPGSaptaint: Капитан
+
+clanBalancingExplanation: '
+  <h3>Вы не в клане</h3>
+  <p>Чтобы играть с друзьями в одной команде, мы рекомендуем создать новый клан или вступить в уже существующий.</p>
+  <p>Также, будучи в клане, можно делиться и одалжевать предметы (клановая оружейная).</p>'
+
+welcome:
+  title: Приветствуем воин!
+  shortTitle: Привет!
+  intro: '
+    <p>Добро пожаловуть в одну из самых популярных онлайн модификаций в Bannerlord!</p>
+    <p>Для того чтобы вы начали свой путь наиболее гладко, мы предоставили вам стартового персонажа 30-го уровня с некоторыми дополнительными бонусами, которые помогут вам.</p>
+    <p>Помните, что в cRPG много опытных игроков, поэтому столкнуться с трудностями на начальном этапе - совершенно нормально. Не позволяйте этому запугать вас! Если возникнут вопросы, присоединяйтесь к нашему <a href="https://discord.gg/c-rpg" target="_blank">дискорду</a>.</p>'
+  bonusTitle: Стартовый бонус
+  bonusHint: '* бонус активен до достижения {level} уровня (~1-2 недели игры)'
+  bonus:
+    gold: '
+      <h5>Стартовое золото</h5>
+      <p>Золото необходимо для <strong>покупки</strong>, <strong>содержания</strong> и <strong>переплавки</strong> предметов, а также для сброса нввыков персонажа</p>
+      <p>Чтобы золото накапливалось, следите за стоимостью содержания вашего снаряжения на странице <strong>@:character.nav.inventory персонажа</strong></p>
+      <p>Пока дейтвует стартовый бонус, сброс навыков персонажа для вас <strong>бесплатный</strong></p>'
+    newUserStartingCharacter: '
+      <h5>Стартовый персонаж</h5>
+      <p>Вы получаете стартового персонажа: воин с одноручным мечём и щитом <strong>{level} уровня</strong> и <strong>среднее снаряжение</strong><p>
+      <p>Вы можете изменить класс персонажа с помощью функции сброса навыков на странице <strong>@:character.nav.overview персонажа</strong><p>'
+    freeRespec: '
+      <h5>Сброс навыков</h5>
+      <p>Переспециализация - это сброс навыков персонажа</p>
+      <p>Вам доступно <strong>неограниченное</strong> количество <strong>бесплатных</strong> переспециализаций, чтобы попробовать разные билды</p>
+      <p>Бонус действует до тех пор, пока вы не достигнете <strong>{level} уровня</strong></p>
+      <p>Изменить класс персонажа можно на странице <strong>@:character.nav.overview персонажа</strong><p>'
+  helpfulLinks:
+    label: Полезные ссылки
+
+character:
+  nav:
+    overview: Обзор
+    inventory: Инвентарь
+    characteristic: Характеристики
+    stats: Статистика
+
+  format:
+    kda: '{kills}/{deaths}/{assists} ({ratio})'
+    select: '{name} ({level})'
+    expMultiplier: '×{multiplier}'
+
+  empty:
+    title: У вас нет персонажа
+    desc: Чтобы создать персонажа, зайдите на сервер cRPG
+
+  create:
+    title: Новый персонаж
+    guide:
+      title: Создание персонажа
+      intro: 'Чтобы создать нового персонажа, просто выполните следующие действия:'
+      step:
+        install: Запустите Bannerlord с установленным модом cRPG Mod
+        join: Присоединитесь к любому серверу cRPG (битва/осада/дуэль)
+        joined: Как только вы присоединитесь к серверу, новый персонаж будет создан на сайте
+        refresh: '{refresh} сайт - ваш новый персонаж должен появиться'
+      outro: Вы можете создавать нового персонажа только 1 раз в час. Иначе вы будете автоматически выкинуты с сервера
+
+  status:
+    active:
+      title: Активный персонаж
+      short: active
+    inactive:
+      title: Персанаж не активен
+      short: inactive
+    forTournament:
+      title: Турнирный персонаж
+      short: trnmt
+
+  noneSomeActive:
+    title: Нет ни одного активного персонажа
+    short: none active
+
+  class:
+    Peasant: Крестьянин
+    Infantry: Пехотинец
+    ShockInfantry: Ударная пехота
+    Skirmisher: Застрельщик
+    Crossbowman: Арбалетчик
+    Archer: Лучник
+    Cavalry: Всадник
+    MountedArcher: Конный лучник
+
+  statistics:
+    generation:
+      title: Поколение
+      tooltip:
+        title: Количество уходов в отставку
+        desc:
+    experience:
+      title: Опыт персонажа
+      format: '{exp} - {expPercent}'
+      tooltip: '
+        <h3>Опыт персонажа</h3>
+        <p>Осталось до следующего уровня: <strong>{remainExpToUp}</strong> оп.</p>'
+    expMultiplier:
+      title: Множитель опыта
+      tooltip:
+        title: 'Множитель опыта. Максимальное значение: {maxExpMulti}'
+        desc: Чтобы увеличить множитель, отправьте персонажа в отставку. <p>Множитель распространяется на всех персонажей</p>
+    level:
+      title: Уровень
+      tooltip:
+        title: 'Уровень вашего персонажа. Максимальный: {maxLevel}'
+        desc:
+      lockedTooltip:
+        title: Прогресс уровня заблокирован
+        desc:
+    kda:
+      title: KDA
+      tooltip:
+        title: Убийства/Смерти/Помощь
+        desc:
+    playTime:
+      title: Время в игре
+    rank:
+      title: Ранг
+      tooltip:
+        title: Ранг
+        # prettier-igno                                                                                                                                                                                                                                                                                                                      re
+        desc: '
+          <p>Ваш рейтинг присваивает вам ранг, который напрямую связан с автобалансом, используя который он решает, в какую команду вас поместить. Система, которую мы используем <strong>*Glicko2</strong>.</p>
+          <p>Не беспокойтесь о своем ранге! В конце концов, это инструмент, который мы используем для балансировки команд, он не обязательно является идеальным показателем мастерства в Bannerlord.</p>
+          <p>Вы можете повысить свой ранг, нанося урон, особенно по более сильным игрокам, а также стабильно хорошо играя.</p>
+          <p>
+          <small>
+          <strong>*Glicko2</strong>
+          <br />
+          Рейтинговая система Glicko2 - это метод оценки уровня мастерства игроков в играх с нулевой суммой, таких как шахматы. Она является продолжением рейтинговой системы Эло, добавляя рейтинг надежности для улучшения системы. Она корректирует рейтинги, основываясь не только на результатах побед и поражений, но и на последовательности действий игрока.
+          </small>
+          </p>'
+
+  settings:
+    group:
+      overview:
+        title: Общее
+      actions:
+        title: Действия
+    update:
+      title: Настройки персонажа
+      form:
+        field:
+          name: Имя
+          active: Активный
+      notify:
+        success: Персонаж успешно обновлен
+    active:
+      tooltip:
+        title: Активный персонаж
+        desc: '
+          <p>Включите, чтобы использовать этого персонажа в игре.</p>
+          <p>Если ни один из ваших персонажей не был выбран в качестве активного, то, присоединившись к серверу, вы создадите нового персонажа.</p>
+          <p>Имейте в виду, что вы можете создать только одного персонажа в час. После этого вы будете автоматически выкинуты с сервера.</p>'
+    respecialize:
+      title: Сброс навыков
+      tooltip:
+        title: Сброс навыков
+        desc: '
+          <p>Бесплатно сбросить навыки персонажа можно в течении <strong>{freeRespecPostWindow}</strong> после последнего сброса, а также спустя <strong>{freeRespecInterval}</strong>.</p>
+          <p>В остальное время сброс навыков платный, стоимость уменьшается со временем.</p>'
+        freeRespecPostWindowRemaining: '
+          <p>Оставшееся время бесплатного сброса навыков: <strong>{remainingTime}</strong></p>'
+        paidRespec: Сбросьте навыки персонажа за {respecPrice}
+        freeRespecIntervalNext: '
+          <p>Следующий бесплатный сброс навыков через: <strong>{nextFreeAt}</strong></p>'
+      dialog:
+        title: Сброс навыков
+        desc: Вы уверены что хотите сбросить навыки персонажа {character} за {respecializationPrice}? Это действие нельзя отменить
+      notify:
+        success: Навыки персонажа успешно сброшены
+    retire:
+      title: Отставка
+      tooltip:
+        title: Отставка персонажа
+        descTpl: '{desc1} {desc2}'
+        desc1: 'Уровень персонажа сбросится до {resetLevel}. Ваш модификатор опыта увеличится на {multiplierBonus} (макс: {maxMultiplierBonus}).'
+        desc2: 'Вы получите очки улучшения предметов {heirloom} в зависимости от уровня персонажа.'
+        requiredDesc: 'Требуется {requiredLevel} уровень'
+      loomPointsTable:
+        cols:
+          level: Уровень
+          loomsPoints: Очки
+      dialog:
+        title: Отставка персонажа
+        desc: Вы уверены что хотите отправить персонажа в отставку? Это действие нельзя отменить
+        reward: 'Вы получите: {heirloom}, {multiplierBonus} к модификатору опыта.'
+      notify:
+        success: Персонаж в отставке
+    tournament:
+      title: Турнир
+      tooltip:
+        title: Турнирный персонаж
+        desc: Сделайте персонажа турнирным. Его уровень станет {tournamentLevel} но дальнейшее повышение будет заблокировано. Играть таким персонажем можно только на турнирных серверах
+        requiredDesc: 'Необходим {requiredLevel} уровень'
+      dialog:
+        title: Турнирный персонаж
+        desc: Вы действительно хотите сделать этого персонажа турнирным? Это действие нельзя отменить
+      notify:
+        success: Персонаж обновлен
+    delete:
+      title: Вы можете {link}. Вы не сможете его восстановить.
+      link: удалить вашего персонажа
+      dialog:
+        title: Удаление персонажа
+        desc: Вы уверены, что хотите удалить персонажа? Это действие нельзя отменить.
+      notify:
+        success: Персонаж удален
+
+  characteristic:
+    convert:
+      attrsToSkills:
+        title: Конвертировать в умения
+        tooltip: Конвертировать {attribute} очко атрибутов в {skill} очка умений
+      skillsToAttrs:
+        title: Конвертировать в атрибуты
+        tooltip: Конвертировать {skill} очка умений в {attribute} очко атрибутов
+
+    requires:
+      title: Требования
+      linked:
+        oneAttrs: 1 очко атрибутов
+        threeStr: 3 очка силы за каждый уровень
+        threeAgi: 3 очка ловкости за каждый уровень
+        sixAgi: 6 очков ловкости за каждый уровень
+
+    attributes:
+      title: Атрибуты
+      children:
+        strength:
+          title: Сила
+          desc: Увеличивает количество очков здоровья на {value}
+          requires: '@:character.characteristic.requires.linked.oneAttrs'
+        agility:
+          title: Ловкость
+          desc: Увеличивает ваши очки оружия и заставляет вас двигаться немного быстрее
+          requires: '@:character.characteristic.requires.linked.oneAttrs'
+
+    skills:
+      title: Умения
+      children:
+        ironFlesh:
+          title: Железная кожа
+          desc: Увеличивает количество очков здоровья на {value}
+          requires: '@:character.characteristic.requires.linked.threeStr'
+        powerStrike:
+          title: Мощный удар
+          desc: Увеличивает урон в ближнем бою на {value}
+          requires: '@:character.characteristic.requires.linked.threeStr'
+        powerDraw:
+          title: Мощный выстрел
+          desc: Увеличивает урон от луков на {value}
+          requires: '@:character.characteristic.requires.linked.threeStr'
+        powerThrow:
+          title: Мощный бросок
+          desc: Увеличивает урон от метательного оружия на {value}
+          requires: '@:character.characteristic.requires.linked.threeStr'
+        athletics:
+          title: Атлетика
+          desc: Увеличивает вашу максимальную скорость бега и уменьшает время ее достижения
+          requires: '@:character.characteristic.requires.linked.threeAgi'
+        riding:
+          title: Верховая езда
+          desc: Увеличивает скорость езды, ускорение, маневренность и спопротивление спешиванию
+          requires: '@:character.characteristic.requires.linked.threeAgi'
+        weaponMaster:
+          title: Оружейный мастер
+          desc: Дает очки владения оружием
+          requires: '@:character.characteristic.requires.linked.threeAgi'
+        mountedArchery:
+          title: Стрельба верхом
+          desc: Снижает штраф за использование дальнобойного оружия верхом на 10%
+          requires: '@:character.characteristic.requires.linked.sixAgi'
+        shield:
+          title: Щит
+          desc: Повышает прочность щита. Увеличивает зону покрытия от дальнобойных атак. Уменьшает оглушение от ближнего оружия при попадании
+          requires: '@:character.characteristic.requires.linked.sixAgi'
+
+    weaponProficiencies:
+      title: Владение оружием
+      children:
+        oneHanded:
+          title: Одноручное
+          desc: ''
+          requires: ''
+        twoHanded:
+          title: Двуручное
+          desc: ''
+          requires: ''
+        polearm:
+          title: Древковое
+          desc: ''
+          requires: ''
+        bow:
+          title: Лук
+          desc: ''
+          requires: ''
+        crossbow:
+          title: Арбалет
+          desc: ''
+          requires: ''
+        throwing:
+          title: Метательное
+          desc: ''
+          requires: ''
+
+    commit:
+      notify: Изменения успешно сохранены
+
+  stats:
+    hp:
+      title: Очки здоровья
+      desc: ''
+    weight:
+      title: Вес
+      desc: ''
+    freeWeight:
+      title: Свободный вес
+      desc: ''
+    weightReduction:
+      title: Снижение веса
+      desc: '
+        <p>Оставшийся вес после вычета <strong>Свободного веса</strong>.</p>
+        <p>Можно уменьшить за счет очков атрибута <strong>силы</strong></p>'
+    perceivedWeight:
+      title: Воспринимаемый вес
+      desc: ''
+    timeToMaxSpeed:
+      title: Время до макс. скорости
+      desc: Ускорение - необходимое время для набора максимальной скорости бега
+    nakedSpeed:
+      title: Скорость без экипировки
+      desc: Значение скорости бега без экипировки
+    currentSpeed:
+      title: Текущая скорость
+      desc: ''
+    maxWeaponLength:
+      title: Макс. длина оружия
+      desc: '
+        <p>Максимальная длина оружия без штрафа к скорости передвижения во время сражения.</p>
+        <p>Зависит от очков атрибута <strong>силы</strong></p>'
+    movementSpeedPenaltyWhenAttacking:
+      title: Штраф к скорости передвижения
+      desc: '
+        <p>Дополнительный штраф к скорости передвижения во время нанесения удара.</p>
+        <p>Зависит от длины оружия и очков атрибута <strong>силы</strong></p>'
+    price:
+      title: Стоимость
+      desc: Общая стоимость экипированных предметов
+    avgRepairCost:
+      title: Ремонт
+      desc: Усредненная стоимость содержания экипированных предметов в час
+
+  earningStats:
+    type:
+      Exp: Опыт
+      Gold: Золото
+    summary:
+      timeEffort: Продолжительность
+
+  highUpkeepWarning:
+    title: Вы не можете позволить себе текущиее содержание предметов!
+    desc: <p>Если вы не сможете оплатить содержание в конце раунда, ваши предметы будут сломаны</p><p>Вы можете отремонтировать свои предметы в инвентаре за плату</p>
+
+  inventory:
+    empty: Инвентарь пуст..
+    total:
+      tpl: '{count} {sum}'
+      count: '... | {count} предмет | {count} предмета | {count} предметов'
+      sum: 'на сумму {sum}'
+
+    item:
+      sell:
+        title: Продать {price}
+        confirm: Вы уверены что хотите продать предмет?
+        freeRefund: Возврат без штрафа в течении {dateTime}
+        penaltyRefund: 'Предмет будет продан со штрафом {penalty}'
+        notify:
+          success: Предмет успешно продан
+      equipped: Экипировано
+      broken:
+        tooltip:
+          title: Предмет сломан
+        notify:
+          warning: Предмет сломан и не может быть экипирован
+      repair:
+        title: Починить за {price}
+        notify:
+          success: Предмет успешно отремонтирован
+      requirement:
+        tooltip:
+          title: У вас недостаточно сил для использования этого предмета. Показатели предмета будут снижены.
+      cantUseOnHorseback:
+        notify:
+          warning: Большой щит нельзя использовать верхом
+      EBAArmorCompatible:
+        notify:
+          warning: 'Чтобы экипировать доспех из набора EBA, необходимо сначала надеть совместимую защиту ног из набора EBA'
+      upgrade:
+        upgradesTitle: Улучшения предмета
+        tooltip:
+          title: Улучшить предмет
+          description: Вы можете улучшить предмет за очки улучшения (Heirloom)
+        validation:
+          maxRank: Предмет уже имеет максимальный ранг
+          loomPoints: У вас недостаточно очков улучшения
+        confirm:
+          description: 'Вы уверены, что хотите улучшить этот предмет за {loomPoints}? {oldItem} будет заменен на {newItem}'
+        currentItem: Текущий предмет
+        notify:
+          success: Предмет успешно улучшен
+      reforge:
+        tooltip:
+          title: Рассплавить предмет
+          description: Вы можете перековать свои предметы за золото
+          costTable:
+            cols:
+              rank:
+                label: Ранг предмета
+              cost:
+                label: Стоимость
+              looms:
+                label: Награда
+        validation:
+          rank: 'Предмет должен иметь ранг больше, чем {minimumRank}'
+          gold: У вас недостаточно золота
+        confirm:
+          description: 'Вы уверены, что хотите рассплавить этот предмет за {gold}? Вы получите {loomPoints}, также предмет {oldItem} будет заменен на {newItem}.'
+        notify:
+          success: Предмет успешно рассплавлен
+      clanArmory:
+        inArmory:
+          title: Предмет находится в клановой оружейной
+          notify:
+            warning: Предмет находится в клановой оружейной. Сначала верните его.
+    filter:
+      hideInArmory: Не показывать предметы в оружейной
+      showInArmory: Показывать предметы в оружейной
+
+  doll:
+    slot:
+      Head:
+        title: Голова
+        description: ''
+      Shoulder:
+        title: Шея/плечи
+        description: ''
+      Body:
+        title: Торс
+        description: ''
+      Hand:
+        title: Руки
+        description: ''
+      Leg:
+        title: Ноги
+        description: ''
+      MountHarness:
+        title: Защита ездового животного
+        description: ''
+      Mount:
+        title: Ездовое животное
+        description: ''
+      Weapon0:
+        title: Оружие
+        description: ''
+      Weapon1:
+        title: Оружие
+        description: ''
+      Weapon2:
+        title: Оружие
+        description: ''
+      Weapon3:
+        title: Оружие
+        description: ''
+      WeaponExtra:
+        title: Экстра оружие
+        description: 'Слот для предметов, не имеющих ножен, таких как знамена или пики'
+
+    armorOverall:
+      ArmArmor: Защита рук
+      BodyArmor: Защита тела
+      HeadArmor: Защита головы
+      LegArmor: Защита ног
+      MountArmor: Защита ездового животного
+
+builder:
+  title: Калькулятор персонажа cRPG
+  levelTpl: '{level} уровень ({exp} оп.)'
+  levelIntervalTpl: '{level} уровень ({exp} оп.) - {nextExp} оп. до {nextLevel} уровня'
+  levelChangeAttention: При изменении уровня характеристики сбросятся
+  share:
+    notify:
+      success: Ссылка скопирована в буфер обмена
+  weight: Введите предполагаемый вес экипировки для расчета характеристик персонажа
+  weaponLength:
+    title: Длина оружия
+    description: Введите длину основного оружия для расчета характеристик персонажа
+
+shop:
+  item:
+    buy:
+      notify:
+        success: Предмет успешно куплен
+      tooltip:
+        buy: Купить предмет
+        inInventory: 'Предмет уже в инвентаре: {items}'
+        inInventoryConfirm: Такой предмет уже в вашем инвентаре
+        notEnoughGold: Не хватает золота
+    weaponUsage:
+      title: Не является основным режимом использования
+      desc: Это оружие имеет несколько режимов использования
+      secondary: 'Текущий режим (второстепенный): {weaponClass}'
+      primary: 'Основной режим: {weaponClass}'
+    expensive: Сейчас вы не можете позволить себе содержание этого предмете
+  filter:
+    reset: Сбросить фильтр
+  pagination:
+    perPage: Предметов на странице
+  sort:
+    asc: Сортировать по возрастанию
+    desc: Сортировать по убыванию
+  compare:
+    add: Добавить в сравнение
+    addAll: Добавить все товары в сравнение
+    remove: Убрать из сравнения
+    removeAll: Убрать все товары из сравнения
+    title: Режим сравнения
+  nonPrimaryWeaponMode:
+    title: Показать дополнительны предметы
+    tooltip:
+      title: Второстепенный режим оружия
+      desc:
+        <p>Некоторые предметы имеют несколько режимов оружия, например метательный топор можно использовать в ближнем бою в качестве одноручного топора.</p>
+        <p>Данная опция покажет такое оружие в списке магазина</p>
+  hideOwnedItems:
+    title: Скрыть ваши предметы
+
+clan:
+  action:
+    create: Создать клан
+    goToMyClan: Мой клан
+    settings: Настройки клана
+  roleTitle: Роль
+  role:
+    Member: Рядовой
+    Officer: Офицер
+    Leader: Лидер
+  table:
+    column:
+      name: Имя
+      role: Роль
+      tag: Тег
+      region: Регион
+      languages: Язык
+      members: Участники
+      memberName: Имя
+  create:
+    page:
+      title: Создание клана
+    notify:
+      success: Клан создан
+  update:
+    page:
+      title: Настройки клана
+    form:
+      field:
+        mainInfo: Основная информация
+        name: Название клана
+        tag: Тег
+        description: Описание
+        colors: Цвета
+        appearance: Оформление
+        primaryColor: Основной
+        secondaryColor: Второстепенный
+        bannerKey: Герб
+        discord: Discord сервер
+        languages: Язык
+      group:
+        armory:
+          label: Оружейная
+          field:
+            armoryTimeout:
+              label: Тайм-аут оружейной (дней)
+              hint: Автоматический возврат предмета, если взявший предмет не проявляет активности в течение N дней
+    bannerKeyGeneratorTools: Создайте с помощью {link}
+    notify:
+      success: Настройки клана обновлены
+  delete:
+    title: Вы можете {link}. Действие нельзя будет отменить
+    link: удалить ваш клан
+    dialog:
+      title: Удаление клана
+      desc: Вы уверены, что хотите удалить клан? Действие нельзя будет отменить.
+    required: Чтобы удалить клан, в нем должен быть один участник
+    notify:
+      success: Клан был удален
+  member:
+    update:
+      transferRights: Передача прав на управление
+      confirmationDialog:
+        title: Подтверждение
+        desc: Подтвердите передачу клана другому участнику.
+      notify:
+        success: Участник клана обновлен
+    kick:
+      title: Вы можете {memberLink}. Действие нельзя будет отменить.
+      memberLink: исключить этого пользователя
+      dialog:
+        title: Выгнать {memberName} ?
+        desc: Это действие нельзя отменить.
+      notify:
+        success: Участник клана исключен
+    leave:
+      title: Выйти из клана
+      dialog:
+        title: Выйти из клана
+        desc: Вы уверены что хотите выйти из клана {clanName}? Действие нельзя будет отменить.
+      notify:
+        success: Вы покинули клан
+  application:
+    title: Заявки
+    apply: Подать заявку
+    sent: Заявка отправлена, пожалуйста, подождите
+    page:
+      title: Активные заявки
+    table:
+      column:
+        name: Имя
+        actions: Действия
+    respond:
+      accept:
+        notify:
+          success: Заявка принята
+      decline:
+        notify:
+          success: Заявка отклонена
+  armory:
+    title: Клановая оружейная
+    empty: Оружейная пуста
+    filter:
+      hideOwned: Скрывать ваши предметы
+      showOnlyAvailable: Показывать только доступные
+    item:
+      lender:
+        tooltip:
+          title: Владелец {user}
+      borrow:
+        title: Одолжить у {user}
+        validation:
+          borrowed: Предмет занят
+          isInInventory: Такой же предмет у вас уже есть
+        notify:
+          success: Предмет, успешно взят из оружейной комнаты
+      borrowed:
+        title: Предмет занят {user}
+      borrower:
+        tooltip:
+          title: Взял {user}
+      add:
+        title: Добавить в оружейную
+        confirm:
+          description: Вы уверены, что хотите добавить предмет в оружейную?
+        notify:
+          success: Предмет успешно добавлен в клановую оружейную
+      remove:
+        title: Удалить из оружейной
+        confirm:
+          description: Вы уверены, что хотите вернуть свой предмет из оружейной?
+        notify:
+          success: Предмет успешно возвращен в клановую оружейную
+      return:
+        title: Вернуть в оружейную
+        notify:
+          success: Предмет успешно возвращен в клановую оружейную
+
+user:
+  field:
+    name: Имя пользователя
+    gold: Золото
+    heirloom: Очки улучшения предметов
+  settings:
+    title: Настройки аккаунта
+    dangerZone: Опасная зона
+    delete:
+      title: 'ПРЕДУПРЕЖДЕНИЕ: Вы можете {link}. Этот процесс приведет к удалению ВСЕХ ваших персонажей и данных cRPG и НЕ является обратимым.'
+      link: удалить свою учетную запись
+      validation:
+        hasChar: Вы не можете удалить свою учетную запись до тех пор, пока у вас есть хотя бы 1 персонаж.
+      dialog:
+        title: '
+          <h5>ПРЕДУПРЕЖДЕНИЕ</h5>
+          <h4>Вы собираетесь удалить свою учетную запись</h4>
+          <h5>ПРЕДУПРЕЖДЕНИЕ</h5>'
+        desc: 'ФИНАЛЬНОЕ ПРЕДУПРЕЖДЕНИЕ: Этот процесс нельзя отменить - удаление вашей учетной записи означает ее окончательное исчезновение. Все данные, относящиеся к вашему пребыванию cRPG: персонажи, предметы, уровни и прочее будут окончательно удалены. Восстановить данные после удаления невозможно.'
+        enterToConfirm: 'Удалить моего персонажа {user}'
+      notify:
+        success: Ваша учетная запись была удалена
+  restriction:
+    notification: 'Вы забанены на: {duration}'
+    guide:
+      intro: 'Если вы хотите обсудить ваше наказание подробнее, пожалуйста, выполните следующие действия:'
+      step:
+        join: Присоединяйтесь к нашему {discordLink}
+        navigate: Перейдите на наш канал {modMailLink}.
+        follow: Следуйте инструкциям в этом канале, чтобы связаться с нами
+      outro: Обратите внимание, что в настоящее время мы не принимаем обращения через любую другую платформу, кроме Discord.
+
+banned:
+  title: Вы забанены
+
+restriction:
+  title: Ограничения пользователей
+  type:
+    Join: Вход
+    Chat: Чат
+    All: Всё
+  status:
+    active: Активно
+    inactive: Не активно
+  table:
+    column:
+      status: Статус
+      user: Пользователь
+      createdAt: Создано
+      duration: Длительность
+      type: Тип
+      reason: Причина
+      restrictedBy: Автор
+  user:
+    title: Ограничения пользователя
+    history: История ограничений
+  create:
+    form:
+      title: Создать ограничение
+      field:
+        type:
+          label: Тип
+        days:
+          label: Дни
+        hours:
+          label: Часы
+        minutes:
+          label: Минуты
+        reason:
+          label: Причина
+      action:
+        submit: Создать
+    notify:
+      success: Ограничение создано
+
+findUser:
+  title: Поиск пользователей
+  result:
+    title: Результаты
+  mode:
+    Name:
+      label: По имени
+      field:
+        name:
+          label: Никнейм
+          placeholder: Никнейм
+    Id:
+      label: По ID
+      field:
+        id:
+          label: ID пользователя
+          placeholder: ID пользователя
+    Platform:
+      label: По платформе
+      field:
+        platform:
+          label: Платформа
+          placeholder:
+        platformId:
+          label: ID пользователя
+          placeholder: ID пользователя
+
+onlinePlayers:
+  format: '{count} онлайн'
+  tooltip:
+    title: Игроки онлайн
+
+homePage:
+  intro: cRPG - это мод для {link}
+  description: 'cRPG для Mount and Blade: Bannerlord превращает вас из скромного крестьянина в выдающегося воина. Участвуйте в захватывающем игровом процессе, ориентированном на сражениях, зарабатывая золото и опыт. Используйте эти награды для повышения своих характеристик и улучшения снаряжения. Этот мод тонко сочетает постоянный рост персонажа с захватывающими сражениями, где каждый бой продолжает сагу о вашем воине.'
+
+patreon: '
+  <p>Нравится наш проект?</p>
+  <p>Вы можете поддержать нас на</p>'
+
+hh:
+  tooltip-trigger: 'Счастливые часы для {region}:'
+  tooltip-content:
+    template: '{title}{desc}{region}'
+    title: Счастливые часы!
+    desc: 'Счастливые часы - это ежедневная акция, во время которой {descHighlight}'
+    descHighlight: вы будете получать на 50% больше опыта.
+    region: Акция длится в течение времени, указанного для вашего региона - {currentRegion}. Регион определяется автоматически
+  notify:
+    started: Счастливые часы начались 🙂
+    ended: Счастливые часы закончились 😭
+
+item:
+  type:
+    Undefined: ''
+    HeadArmor: Защита головы
+    ShoulderArmor: Защита шеи
+    BodyArmor: Защита тела
+    HandArmor: Защита рук
+    LegArmor: Защита ног
+    MountHarness: Защита ездового животного
+    Mount: Ездовое животное
+    Shield: Щит
+    Bow: Лук
+    Crossbow: Арбалет
+    OneHandedWeapon: Одноручное оружие
+    TwoHandedWeapon: Двуручное оружие
+    Polearm: Древковое оружие
+    Thrown: Метательное оружие
+    Arrows: Стрелы
+    Bolts: Болты
+    Pistol: ''
+    Musket: ''
+    Bullets: ''
+    Banner: Знамя
+
+  flags:
+    ForceAttachOffHandPrimaryItemBone: ''
+    ForceAttachOffHandSecondaryItemBone: ''
+    NotUsableByFemale: ''
+    NotUsableByMale: ''
+    DropOnWeaponChange: Выбросить при смене
+    DropOnAnyAction: Drop on any action
+    CannotBePickedUp: ''
+    CanBePickedUpFromCorpse: ''
+    QuickFadeOut: ''
+    WoodenAttack: ''
+    WoodenParry: ''
+    HeldInOffHand: ''
+    HasToBeHeldUp: ''
+    UseTeamColor: Использует цвет команды
+    Civilian: ''
+    DoNotScaleBodyAccordingToWeaponLength: ''
+    DoesNotHideChest: ''
+    NotStackable: Not stackable
+
+  usage:
+    long_bow:
+      title: Длинный лук
+      description: ''
+    bow:
+      title: Короткий лук
+      description: ''
+    crossbow:
+      title: Тяжелый арбалет
+      description: ''
+    crossbow_light:
+      title: Легкий арбалет
+      description: ''
+    polearm_couch:
+      title: Рыцарский удар
+      description: ''
+    polearm_bracing:
+      title: Стена копий
+      description: ''
+    polearm_pike:
+      title: Пика
+      description: ''
+    polearm:
+      title: Копье для джостинга
+      description: Можно использовать только в режиме рыцарского удара
+
+  weaponClass:
+    Undefined: ''
+    Dagger: Кинжал
+    OneHandedSword: Одноручный меч
+    TwoHandedSword: Двуручный меч
+    OneHandedAxe: Одноручный топор
+    TwoHandedAxe: Двуручный топор
+    Mace: Булава
+    Pick: ''
+    TwoHandedMace: Двуручная булава
+    OneHandedPolearm: Одноручное древковое
+    TwoHandedPolearm: Двуручное древковое
+    LowGripPolearm: ''
+    Arrow: Стрела
+    Bolt: Болт
+    Cartridge: ''
+    Bow: Лук
+    Crossbow: Арбалет
+    Stone: Камень
+    Boulder: ''
+    ThrowingAxe: Метательный топор
+    ThrowingKnife: Метательный кинжал
+    Javelin: Дротик
+    Pistol: ''
+    Musket: ''
+    SmallShield: Маленький щит
+    LargeShield: Большой щит
+    Banner: Знамя
+
+  weaponFlags:
+    AffectsAreaBig: Affects area big
+    AffectsArea: Affects area
+    AmmoBreaksOnBounceBack: ''
+    AmmoCanBreakOnBounceBack: ''
+    AmmoSticksWhenShot: ''
+    AttachAmmoToVisual: ''
+    AutoReload: Автоматическая перезарядка
+    BonusAgainstShield: Бонус против щитов
+    Burning: ''
+    CanBlockRanged: Can block ranged
+    CanCrushThrough: Урон сквозь блок
+    CanDismount: Может спешить
+    CanHook: CanHook
+    CanKnockDown: Урон сквозь блок
+    CanPenetrateShield: Урон сквозь щит
+    CantReloadOnHorseback: Нельзя использовать верхом
+    CanReloadOnHorseback: Можно использовать верхом
+    CantUseOnHorseback: Нельзя использовать верхом
+    Consumable: ''
+    FirearmAmmo: ''
+    HasHitPoints: ''
+    HasString: ''
+    LeavesTrail: ''
+    MeleeWeapon: ''
+    MissileWithPhysics: ''
+    MultiplePenetration: Может опрокинуть
+    NoBlood: ''
+    NotUsableWithOneHand: Two hand only
+    NotUsableWithTwoHand: One hand only
+    PenaltyWithShield: Penalty with shield
+    RangedWeapon: Ranged weapon
+    StringHeldByHand: ''
+    TwoHandIdleOnMount: Two hand idle on mount
+    UnloadWhenSheathed: ''
+    UseHandAsThrowBase: ''
+    WideGrip: Wide grip
+
+  culture:
+    Neutral: Нейтралы
+    Aserai: Асераи
+    Battania: Баттания
+    Empire: Империя
+    Khuzait: Кузаиты
+    Looters: Бандиты
+    Sturgia: Стургия
+    Vlandia: Вландия
+
+  familyType:
+    1:
+      title: Лошадь
+      description: ''
+    2:
+      title: Верблюд
+      description: ''
+    3:
+      title: EBA
+      description: 'Чтобы экипировать доспех из набора EBA, необходимо сначала надеть совместимую защиту ног из набора EBA'
+
+  armorMaterialType:
+    Cloth:
+      title: Ткань
+      description: ''
+    Leather:
+      title: Кожа
+      description: ''
+    Chainmail:
+      title: Кольчуга
+      description: ''
+    Plate:
+      title: Латы
+      description: ''
+
+  damageTypeFormat: '{value} {type}'
+  damageType:
+    Cut:
+      long: Режущий
+      short: c
+      title: Режущий урон
+      description: '
+        <p>Рубящий урон представляет собой атаки, наносящие режущие или рассекающие удары, которые часто наносятся оружием с острыми концами - мечами или топорами.</p>
+        <p>Эти атаки особенно эффективны против противников с низкой броней или вообще без нее. Чем тоньше броня, тем более разрушительным является урон от порезов, что отражает способность острого оружия рассекать менее защищенные участки.</p>'
+    Pierce:
+      long: Проникающий
+      short: p
+      title: Проникающий урон
+      description: '
+        <p>Проникающий урон - это урон, наносимый оружием, предназначенным для пробивания или проникновения, например, стрелами, копьями или кинжалами.</p>
+        <p>Основное преимущество пробивного урона заключается в его эффективности против бронированных противников. Попадание в голову дает дополнительный бонус к урону: для атак ближнего боя - 1,3, для атак дальнего боя - в 1,6.</p>
+        <p>Таким образом, урон от пробития является потенциально самым сильным типом урона, учитывая его преимущество при попадании в голову.</p>'
+    Blunt:
+      long: Дробящий
+      short: b
+      title: Дробящий урон
+      description: '
+        <p>Под дробящим уроном понимается травма, наносимая ударным оружием, таким как молот или булава.</p>
+        <p>По эффективности против бронированных противников этот вид урона схож с проникающий. Однако, в отличие от него, дробящий урон не имеет дополнительного бонус при попадании в голову.</p>
+        <p>Это делает дробящий урон более эффективным для общего использования по сравнению с проникающим.</p>'
+
+  requirementFormat: '{value} str'
+
+  aggregations:
+    type:
+      title: Item type
+      description: ''
+    price:
+      title: Стоимость
+      description: ''
+    upkeep:
+      title: Стоимость ремонта
+      description: Средняя стоимость ремонта в час
+    culture:
+      title: Культура
+      description: ''
+    requirement:
+      title: Требования
+      description: Есть требование минимальногог значении атрибута силы для данного предмета
+    tier:
+      title: Ранг предмета
+      description: '<p>В cRPG используется модель стоимости предметов, которая предсказывает и количественно оценивает эффективность предметов в игре. Она присваивает каждому предмету уровень от 0 до 10 на основе статистики, требований к информации и цены. Некоторое время назад модель была переработана и изменила список цен, чтобы лучше отразить эффективность предметов, обычно делая оружие высшего уровня более дорогим. Однако помните, что модель служит индикатором, а не идеальным показателем баланса предметов.</p>'
+    flags:
+      title: Особенности
+      description: ''
+    weight:
+      title: Вес
+      description: ''
+
+    armorMaterialType:
+      title: Материал
+      description: ''
+    headArmor:
+      title: Защита головы
+      description: ''
+    bodyArmor:
+      title: Защита тела
+      description: ''
+    armArmor:
+      title: Защита рук
+      description: ''
+    legArmor:
+      title: Защита ног
+      description: ''
+    armorFamilyType:
+      title: Комплект
+      description: Некоторые элементы доспехов совместимы только элементами доспехов из этого же набора
+    bodyLength:
+      title: Длина
+      description: ''
+    chargeDamage:
+      title: Натиск
+      description: ''
+    maneuver:
+      title: Маневренность
+      description: ''
+    speed:
+      title: Скорость
+      description: ''
+    hitPoints:
+      title: Здоровье
+      description: ''
+    mountFamilyType:
+      title: Тип
+      description: ''
+    mountArmor:
+      title: Броня
+      description: ''
+    mountArmorFamilyType:
+      title: Тип
+      description: ''
+
+    weaponUsage:
+      title: Не основной режим использования
+      description: 'TODO:'
+    weaponClass:
+      title: Класс оружия
+      description: ''
+    length:
+      title: Длина
+      description: ''
+    handling:
+      title: Владение
+      description: Владение (Handling) ускоряет анимацию готовности удара перед выполнением замаха
+    thrustSpeed:
+      title: Скорость колющего удара
+      description: ''
+    thrustDamage:
+      title: Колющий урон
+      description: ''
+    thrustDamageType:
+      title: Тип колющего урона
+      description: ''
+    swingSpeed:
+      title: Скорость режущего удара
+      description: ''
+    swingDamage:
+      title: Режущий урон
+      description: ''
+    swingDamageType:
+      title: Тип режущего урона
+      description: ''
+
+    accuracy:
+      title: Точность
+      description: ''
+    missileSpeed:
+      title: Скорость полета снаряда
+      description: ''
+    reloadSpeed:
+      title: Скорость перезарядки
+      description: ''
+    aimSpeed:
+      title: Скорость прицеливания
+      description: ''
+
+    damage:
+      title: Урон
+      description: ''
+    damageType:
+      title: Тип урона
+      description: ''
+    stackAmount:
+      title: Количество
+      description: ''
+    stackWeight:
+      title: Вес
+      description: ''
+
+    shieldSpeed:
+      title: Скорость
+      description: ''
+    shieldDurability:
+      title: Прочность
+      description: ''
+    shieldArmor:
+      title: Броня
+      description: ''
+
+    rank:
+      title: Ранг
+      description: ''
+
+    new:
+      title: Только новые предметы
+      description: 'Показывать предметы добавленные или обновленные не позднее {days} дней'
+
+  format:
+    upkeep: '{upkeep} / @:dateTime.hours.short'
+    rank: 'Ранг предмета {rank}'
+
+  sort:
+    price_asc: Дешевле
+    price_desc: Дороже
+    type_asc: По типу
+    rank_desc: По рангу
+
+  filter:
+    all: Все
+
+leaderboard:
+  title: Таблица лидеров
+  table:
+    cols:
+      top: Топ
+      rank: Ранг
+      player: Игрок
+      class: Класс
+      level: Ур.
+      region: Регион
+
+rankTable:
+  title: Ранги
+
+patchNotes:
+  showAllPatches: '+ {count} патчей | + {count} патч | + {count} патча | + {count} патчей'
+  latestPatch: Последний патч

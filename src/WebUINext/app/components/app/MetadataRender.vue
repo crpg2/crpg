@@ -1,0 +1,151 @@
+<script setup lang="ts">
+import { AppCoin, AppLoom, CharacterMedia, ClanRole, UBadge, UserClan, UserMedia, UTooltip } from '#components'
+import { I18nT } from 'vue-i18n'
+
+import type { ClanMemberRole } from '~/models/clan'
+import type { MetadataDict } from '~/models/metadata'
+import type { UserPublic } from '~/models/user'
+
+import { getItemImage } from '~/services/item-service'
+
+const { keypath, metadata, dict } = defineProps<{
+  keypath: string
+  metadata: Record<string, string>
+  dict: MetadataDict
+}>()
+
+defineEmits<{
+  read: []
+  delete: []
+}>()
+
+const slots = defineSlots<{
+  user?: (props: { user: UserPublic }) => any
+}>()
+
+const { n } = useI18n()
+
+const getClanById = (clanId: number) => dict.clans.find(({ id }) => id === clanId)
+
+const getUserById = (userId: number) => dict.users.find(({ id }) => id === userId)
+
+const getCharacterById = (characterId: number) => dict.characters.find(({ id }) => id === characterId)
+
+const renderStrong = (value: string) => h('strong', { class: 'font-bold text-highlighted' }, value)
+
+const renderDamage = (value: string) => h('strong', { class: 'font-bold text-error' }, n(Number(value)))
+
+const renderUserClan = (clanId: number) => {
+  const clan = getClanById(clanId)
+  return clan
+    ? h(UserClan, { clan, class: 'inline-flex items-center gap-1 align-middle' })
+    : renderStrong(String(clanId))
+}
+
+const renderUser = (userId: number) => {
+  const user = getUserById(userId)
+  return user
+    ? slots?.user?.({ user }) || h(UserMedia, { user, size: 'sm' })
+    : renderStrong(String(userId))
+}
+
+const renderCharacter = (characterId: number) => {
+  const character = getCharacterById(Number(characterId))
+  return character
+    ? h(CharacterMedia, {
+        character,
+        class: 'inline-flex items-center gap-1 align-middle font-bold text-highlighted',
+      })
+    : renderStrong(String(characterId))
+}
+
+const renderItem = (itemId: string) => {
+  return h(
+    'span',
+    { class: 'inline' },
+    h(
+      UTooltip,
+      null,
+      {
+        default: () => renderStrong(itemId),
+        content: () =>
+          h('img', {
+            src: getItemImage(itemId),
+            class: 'h-full w-full object-contain',
+          }),
+      },
+    ),
+  )
+}
+
+const renderGold = (value: number) => h(AppCoin, { value })
+
+const renderLoom = (point: number) => h(AppLoom, { point })
+
+function Render() {
+  const {
+    clanId,
+    oldClanMemberRole,
+    newClanMemberRole,
+    userId,
+    targetUserId,
+    actorUserId,
+    characterId,
+    generation,
+    level,
+    gold,
+    price,
+    refundedGold,
+    heirloomPoints,
+    refundedHeirloomPoints,
+    itemId,
+    userItemId,
+    experience,
+    damage,
+    instance,
+    gameMode,
+    oldName,
+    newName,
+    message,
+  } = metadata
+
+  return h(
+    I18nT,
+    {
+      tag: 'div',
+      scope: 'global',
+      keypath,
+      class: 'leading-relaxed',
+    },
+    {
+      ...(clanId && { clan: () => renderUserClan(Number(clanId)) }),
+      ...(oldClanMemberRole && { oldClanMemberRole: () => h(ClanRole, { role: oldClanMemberRole as ClanMemberRole }) }),
+      ...(newClanMemberRole && { newClanMemberRole: () => h(ClanRole, { role: newClanMemberRole as ClanMemberRole }) }),
+      ...(userId && { user: () => renderUser(Number(userId)) }),
+      ...(targetUserId && { targetUser: () => renderUser(Number(targetUserId)) }),
+      ...(actorUserId && { actorUser: () => renderUser(Number(actorUserId)) }),
+      ...(characterId && { character: () => renderCharacter(Number(characterId)) }),
+      ...(generation && { generation: () => renderStrong(generation) }),
+      ...(level && { level: () => renderStrong(level) }),
+      ...(gold && { gold: () => renderGold(Number(gold)) }),
+      ...(price && { price: () => renderGold(Number(price)) }),
+      ...(refundedGold && { refundedGold: () => renderGold(Number(refundedGold)) }),
+      ...(heirloomPoints && { heirloomPoints: () => renderLoom(Number(heirloomPoints)) }),
+      ...(refundedHeirloomPoints && { refundedHeirloomPoints: () => renderLoom(Number(refundedHeirloomPoints)) }),
+      ...(itemId && { item: () => renderItem(itemId) }),
+      ...(userItemId && { userItem: () => renderItem(userItemId) }),
+      ...(experience && { experience: () => renderStrong(n(Number(experience))) }),
+      ...(damage && { damage: () => renderDamage(damage) }),
+      ...(instance && { instance: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'soft', label: instance }) }),
+      ...(gameMode && { gameMode: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'soft', label: gameMode }) }),
+      ...(oldName && { oldName: () => renderStrong(oldName) }),
+      ...(newName && { newName: () => renderStrong(newName) }),
+      ...(message && { message: () => renderStrong(message) }),
+    },
+  )
+}
+</script>
+
+<template>
+  <Render />
+</template>
