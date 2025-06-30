@@ -88,10 +88,10 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             WeaponClass.Crossbow => 0.5f,
             WeaponClass.Musket => 0.5f,
             WeaponClass.Pistol => 0.5f,
-            WeaponClass.Stone => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1f,
-            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.65f,
-            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.65f,
-            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.65f,
+            WeaponClass.Stone => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.0f,
+            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.2f,
+            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.2f,
+            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.2f,
             _ => 1f,
         };
 
@@ -132,6 +132,12 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         if (agent.IsHuman)
         {
             UpdateHumanAgentStats(agent, agentDrivenProperties);
+
+            // If rider is mounted, update the mount's stats too
+            if (agent.HasMount && agent.MountAgent != null)
+            {
+                agent.MountAgent.UpdateAgentProperties();
+            }
         }
         else if (agent.IsMount)
         {
@@ -240,17 +246,26 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             ? GetEffectiveSkill(agent.RiderAgent, DefaultSkills.Riding)
             : 100;
         props.MountManeuver = mount.GetModifiedMountManeuver(in mountHarness) * (0.5f + ridingSkill * 0.0025f) * 1.15f;
-        float harnessWeight = mountHarness.Item?.Weight ?? 0;
 
-        const float maxHarnessWeight = 45f;
-        float harnessWeightPercentage = harnessWeight / maxHarnessWeight;
-        float weightImpactOnSpeed = 1f / (1f + 0.3333f * harnessWeightPercentage); // speed reduced by 25% for max weight
-        float ridingImpactOnSpeed = (float)(0.7f
-            + ridingSkill * 0.001f
-            + 1 / (2.2f + Math.Pow(2, -0.08f * (ridingSkill - 70f))));
+        float harnessWeight = mountHarness.Item?.Weight ?? 0f;
+        float riderPerceivedWeight = agent.RiderAgent != null
+            ? ComputePerceivedWeight(agent.RiderAgent)
+            : 0f;
+
+        float totalEffectiveLoad = harnessWeight + riderPerceivedWeight;
+
+        const float maxLoadReference = 50f;
+        float loadPercentage = Math.Min(totalEffectiveLoad / maxLoadReference, 1f); // Cap at 1.0
+
+        float weightImpactOnSpeed = 1f / (1f + 0.25f * loadPercentage);
+        float ridingImpactOnSpeed = (float)(
+            0.7f +
+            ridingSkill * 0.001f +
+            1 / (2.2f + Math.Pow(2, -0.08f * (ridingSkill - 70f))));
+
         props.MountSpeed = (mount.GetModifiedMountSpeed(in mountHarness) + 1) * 0.209f * ridingImpactOnSpeed * weightImpactOnSpeed;
         props.TopSpeedReachDuration = Game.Current.BasicModels.RidingModel.CalculateAcceleration(in mount, in mountHarness, ridingSkill);
-        props.MountDashAccelerationMultiplier = 1f / (2f + 8f * harnessWeightPercentage); // native between 1 and 0.1 . cRPG between 0.5 and 0.1
+        props.MountDashAccelerationMultiplier = 1f / (2f + 8f * loadPercentage);
     }
 
     // WARNING : for some reasone UpdateHumanAgentStats is called twice everytime there is a change (respawn or weapon switch)
@@ -318,8 +333,8 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         float weightReductionFactor = 1f / (1f + MathHelper.ApplyPolynomialFunction(strengthSkill - 3, weightReductionPolynomialFactor));
         float totalEncumbrance = props.ArmorEncumbrance + props.WeaponsEncumbrance;
         float freeWeight = 2.5f * (1 + (strengthSkill - 3f) / 30f);
-        float perceivedWeight = Math.Max(totalEncumbrance - freeWeight, 0f) * weightReductionFactor;
-        props.TopSpeedReachDuration = 1.1f * (1f + perceivedWeight / 15f) * (20f / (20f + (float)Math.Pow(athleticsSkill / 120f, 2f))) + ImpactofStrAndWeaponLengthOnTimeToMaxSpeed(equippedItem != null ? equippedItem.WeaponLength : 22, strengthSkill);
+        float perceivedWeight = ComputePerceivedWeight(agent);
+        props.TopSpeedReachDuration = 1.1f * (1f + perceivedWeight / 15f) * (20f / (20f + (float)Math.Pow(athleticsSkill / 120f, 2f))) + ImpactOfStrAndWeaponLengthOnTimeToMaxSpeed(equippedItem != null ? equippedItem.WeaponLength : 22, strengthSkill);
         float speed = 0.58f + 0.034f * athleticsSkill / 26f;
         props.MaxSpeedMultiplier = MBMath.ClampFloat(
             speed * (float)Math.Pow(361f / (361f + (float)Math.Pow(perceivedWeight, 5f)), 0.055f),
@@ -416,25 +431,25 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 {
                     int powerThrow = GetEffectiveSkill(agent, CrpgSkills.PowerThrow);
 
-                    float wpfImpactOnWindUp = 180f; // lower is better 160f
+                    float wpfImpactOnWindUp = 100f; // lower is better 160f
                     float wpfImpactOnReloadSpeed = 240f; // lower is better 200f
 
                     float DamageImpactOnWindUp = equippedItem.ThrustDamage * CrpgItemValueModel.CalculateDamageTypeFactorForThrown(equippedItem.ThrustDamageType) / CrpgItemValueModel.CalculateDamageTypeFactorForThrown(DamageTypes.Cut);
 
                     props.WeaponMaxUnsteadyAccuracyPenalty = 0.0035f;
-                    props.WeaponMaxMovementAccuracyPenalty = 0.0010f;
+                    props.WeaponMaxMovementAccuracyPenalty = 0.15f;
 
-                    props.WeaponRotationalAccuracyPenaltyInRadians = 0.025f; // this is accuracy loss when turning lower is better
+                    props.WeaponRotationalAccuracyPenaltyInRadians = 0.15f; // this is accuracy loss when turning lower is better
 
                     props.WeaponBestAccuracyWaitTime = 0.00001f; // set to extremely low because as soon as windup is finished , thrower is accurate
 
-                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.2f, 0.3f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 3f) * 40f / DamageImpactOnWindUp); // WindupSpeed
-                    props.ReloadSpeed *= MBMath.Lerp(0.6f, 1.4f, itemSkill / wpfImpactOnReloadSpeed); // this only affect picking a new axe
+                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.25f, 0.25f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 3f) * 40f / DamageImpactOnWindUp); // WindupSpeed
+                    props.ReloadSpeed *= MBMath.Lerp(0.8f, 1.0f, itemSkill / wpfImpactOnReloadSpeed); // this only affect picking a new throwing weapon
 
-                    props.CombatMaxSpeedMultiplier *= 0.85f; // this is slowdown when ready to throw. Higher is better , do not go above 1.0
+                    props.CombatMaxSpeedMultiplier *= 0.75f; // this is slowdown when ready to throw. Higher is better , do not go above 1.0
 
                     // These do not matter if props.WeaponMaxUnsteadyAccuracyPenalty is set to 0f
-                    props.WeaponUnsteadyBeginTime = 1.0f + weaponSkill * 0.006f + powerThrow * powerThrow / 10f * 0.4f; // Time at which your character becomes tired and the accuracy declines
+                    props.WeaponUnsteadyBeginTime = 1.0f + weaponSkill * 0.006f + powerThrow * powerThrow / 10f * 1.6f; // Time at which your character becomes tired and the accuracy declines
                     props.WeaponUnsteadyEndTime = 10f + props.WeaponUnsteadyBeginTime; // time at which your character is completely tired.
                 }
 
@@ -476,7 +491,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     props.HandlingMultiplier *= 1.1f;
                 }
 
-                props.CombatMaxSpeedMultiplier *= ImpactofStrAndWeaponLengthOnCombatMaxSpeedMultiplier(equippedItem.WeaponLength, strengthSkill);
+                props.CombatMaxSpeedMultiplier *= ImpactOfStrAndWeaponLengthOnCombatMaxSpeedMultiplier(equippedItem.WeaponLength, strengthSkill);
 
                 // Thrust speed nerf for OneHandedPolearms
                 if (equippedItem.WeaponClass == WeaponClass.OneHandedPolearm)
@@ -582,14 +597,14 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         agentDrivenProperties.SetStat(DrivenProperty.UseRealisticBlocking, (agent.Controller != Agent.ControllerType.Player) ? 1f : 0f);
     }
 
-    private float ImpactofStrAndWeaponLengthOnCombatMaxSpeedMultiplier(int weaponLength, int strengthSkill)
+    private float ImpactOfStrAndWeaponLengthOnCombatMaxSpeedMultiplier(int weaponLength, int strengthSkill)
     {
         return Math.Min(MBMath.Lerp(0.8f, 1f, MaxWeaponLengthForStrLevel(strengthSkill) / weaponLength), 1f);
     }
 
-    private float ImpactofStrAndWeaponLengthOnTimeToMaxSpeed(int weaponLength, int strengthSkill)
+    private float ImpactOfStrAndWeaponLengthOnTimeToMaxSpeed(int weaponLength, int strengthSkill)
     {
-        return (float)Math.Max((1.2 * (weaponLength - MaxWeaponLengthForStrLevel(strengthSkill))) / MaxWeaponLengthForStrLevel(strengthSkill), 0f);
+        return (float)Math.Max(1.2 * (weaponLength - MaxWeaponLengthForStrLevel(strengthSkill)) / MaxWeaponLengthForStrLevel(strengthSkill), 0f);
     }
 
     private int MaxWeaponLengthForStrLevel(int strengthSkill)
@@ -629,5 +644,29 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         }
 
         return equippedItem.WeaponComponent.Weapons.Any(a => a.SwingDamage > 0);
+    }
+
+    private float ComputePerceivedWeight(Agent agent)
+    {
+        if (agent == null || agent.AgentDrivenProperties == null)
+            return 0f;
+
+        int strengthSkill = Math.Max(GetEffectiveSkill(agent, CrpgSkills.Strength), 3);
+        const float awfulScaler = 3231477.548f;
+
+        float[] weightReductionPolynomialFactor =
+        {
+            30f / awfulScaler,
+            0.00005f / awfulScaler,
+            0.5f / awfulScaler,
+            1000000f / awfulScaler,
+            0f
+        };
+
+        float weightReductionFactor = 1f / (1f + MathHelper.ApplyPolynomialFunction(strengthSkill - 3, weightReductionPolynomialFactor));
+        float totalEncumbrance = agent.AgentDrivenProperties.ArmorEncumbrance + agent.AgentDrivenProperties.WeaponsEncumbrance;
+        float freeWeight = 2.5f * (1 + (strengthSkill - 3f) / 30f);
+
+        return Math.Max(totalEncumbrance - freeWeight, 0f) * weightReductionFactor;
     }
 }

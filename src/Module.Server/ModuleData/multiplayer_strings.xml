@@ -153,6 +153,9 @@
   <string id="str_multiplayer_scene_name.crpg_battle_festival" text="{=F3sT1Val}Festival" />
   <string id="str_multiplayer_scene_name.crpg_battle_ruins" text="{=Ru1NsWaR}Ruins" />
   <string id="str_multiplayer_scene_name.crpg_battle_purplehaze" text="{=JH3nDr1X}PurpleHaze" />
+  <string id="str_multiplayer_scene_name.crpg_battle_morass" text="{=SHr3K666}Morass" />
+  <string id="str_multiplayer_scene_name.crpg_battle_lycaronsdistricts" text="{=LyCaR0nS}LycaronsDistricts" />
+  <string id="str_multiplayer_scene_name.crpg_battle_orsennia" text="{=0rS3nn1a}Orsennia" />
 
   <!-- Conquest Maps -->
   <string id="str_multiplayer_scene_name.crpg_conquest_acre" text="{=9Mpawm9h}Acre" />
@@ -188,6 +191,7 @@
   <string id="str_multiplayer_scene_name.crpg_dtv_monolith" text="{=M0n0L1tH}Monolith" />
   <string id="str_multiplayer_scene_name.crpg_dtv_simirafort" text="{=S1M1R4Fo}Simira Fort" />
   <string id="str_multiplayer_scene_name.crpg_dtv_nirvana" text="{=NiRV4NA0}Nirvana" />
+  <string id="str_multiplayer_scene_name.crpg_dtv_isleofdismay" text="{=1Sl3OFD0}Isle of Dismay" />
 
   <!-- Captain Maps -->
   <string id="str_multiplayer_scene_name.crpg_captain_chauxforest" text="{=CH4XFORR}Chaux Forest" />
