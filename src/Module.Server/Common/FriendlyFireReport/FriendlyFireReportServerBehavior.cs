@@ -347,6 +347,20 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         }
     }
 
+    private void DecayAllReportedHitsFromUser(NetworkCommunicator attacker)
+    {
+        if (_teamHitHistory.TryGetValue(attacker, out var hitList))
+        {
+            foreach (var hit in hitList)
+            {
+                if (hit.WasReported && !hit.HasDecayed)
+                {
+                    hit.HasDecayed = true;
+                }
+            }
+        }
+    }
+
     private void OnFriendlyFireReportRecieved(NetworkCommunicator peer, FriendlyFireReportClientMessage message)
     {
         if (!CrpgServerConfiguration.IsFriendlyFireReportEnabled)
@@ -438,6 +452,15 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
 
         if (countActive >= maxHits)
         {
+            // Prevent staff from being kicked, decay hits back to 0
+            var crpgPeer = attackingPeer.GetComponent<CrpgPeer>();
+            if (crpgPeer?.User?.Role == CrpgUserRole.Moderator || crpgPeer?.User?.Role == CrpgUserRole.Admin)
+            {
+                SendClientDisplayMessage(attackingPeer, "Excessive team hits reported, but you are a staff memeber and will not be kicked.", FriendlyFireMessageMode.TeamDamageReportForAdmins);
+                DecayAllReportedHitsFromUser(attackingPeer);
+                return;
+            }
+
             TextObject notifyAttackerKickText = new("{=uPwSqhuA}You have been kicked for excessive team hits ({HITSMAX})");
             notifyAttackerKickText.SetTextVariable("HITSMAX", maxHits);
             SendClientDisplayMessage(attackingPeer, notifyAttackerKickText.ToString(), FriendlyFireMessageMode.TeamDamageReportKick);
