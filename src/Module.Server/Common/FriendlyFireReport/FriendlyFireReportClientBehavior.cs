@@ -27,7 +27,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
             new()
             {
                 Id = "key_report_team_hit",
-                Name = "*Report Team Hit",
+                Name = "Report Team Hit",
                 Description = "Report a team hit you received",
                 DefaultInputKey = InputKey.M,
             },
