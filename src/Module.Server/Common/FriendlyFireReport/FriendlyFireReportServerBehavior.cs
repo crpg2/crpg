@@ -456,7 +456,7 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
             var crpgPeer = attackingPeer.GetComponent<CrpgPeer>();
             if (crpgPeer?.User?.Role == CrpgUserRole.Moderator || crpgPeer?.User?.Role == CrpgUserRole.Admin)
             {
-                SendClientDisplayMessage(attackingPeer, "Excessive team hits reported, but you are a staff memeber and will not be kicked.", FriendlyFireMessageMode.TeamDamageReportForAdmins);
+                SendClientDisplayMessage(attackingPeer, "Excessive team hits reported, but you are a staff member and will not be kicked.", FriendlyFireMessageMode.TeamDamageReportForAdmins);
                 DecayAllReportedHitsFromUser(attackingPeer);
                 return;
             }
