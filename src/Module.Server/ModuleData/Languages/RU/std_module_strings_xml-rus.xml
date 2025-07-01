@@ -108,7 +108,7 @@
     <string id="xq7QtuZ0" text="Атаковавший вас дружественный игрок не найден." />
     <string id="zD8mGERY" text="Данные о дружественном уроне по вам не найдены." />
     <string id="KgZprgXA" text="Время на жалобу о дружественном уроне от игрока {ATTACKER} истекло." />
-    <string id="WH15BANu" text="Дружественный урон от {ATTACKER} (Урон: {DAMAGE}). Нажмите Ctrl+M, если вы считаете что это было намеренно." />
-    <string id="KORWOuGO" text="Дружественный урон от {ATTACKER} (Урон: {DAMAGE}). Нажмите Ctrl+M, если вы считаете что это было намеренно. {TIMELEFT} секунд осталось." />
+    <string id="WH15BANu" text="Дружественный урон от {ATTACKER} (Урон: {DAMAGE}). Нажмите [{MODIFIERKEY}+{REPORTKEY}], если вы считаете что это было намеренно." />
+    <string id="KORWOuGO" text="Дружественный урон от {ATTACKER} (Урон: {DAMAGE}). Нажмите [{MODIFIERKEY}+{REPORTKEY}], если вы считаете что это было намеренно. {TIMELEFT} секунд осталось." />
   </strings>
 </base>

@@ -1,3 +1,6 @@
+using Crpg.Module.Common.KeyBinder;
+using Crpg.Module.Common.KeyBinder.Models;
+
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
@@ -5,8 +8,9 @@ using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.Common.FriendlyFireReport;
 
-internal class FriendlyFireReportClientBehavior : MissionNetwork
+internal class FriendlyFireReportClientBehavior : MissionNetwork, IUseKeyBinder
 {
+    private static readonly string KeyCategoryId = KeyBinder.KeyBinder.Categories.CrpgGeneral.CategoryId;
     private int _reportWindowSeconds = 0; // default unlimited, updated via FriendlyFireHitMessage
     private bool _ctrlMWasPressed;
     private DateTime? _lastHitMessageTime;
@@ -14,14 +18,39 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork
     private string _lastAttackerName = "Unknown";
     private bool _expiredMessageShown;
 
+    BindedKeyCategory IUseKeyBinder.BindedKeys => new()
+    {
+        CategoryId = KeyCategoryId,
+        Category = KeyBinder.KeyBinder.Categories.CrpgGeneral.CategoryName,
+        Keys = new List<BindedKey>
+        {
+            new()
+            {
+                Id = "key_report_team_hit",
+                Name = "*Report Team Hit",
+                Description = "Report a team hit you received",
+                DefaultInputKey = InputKey.M,
+            },
+        },
+    };
+
+    private GameKey? reportTeamHitKey;
+    private GameKey? commandModifierKey;
+
+    public override void EarlyStart()
+    {
+        reportTeamHitKey = HotKeyManager.GetCategory(KeyCategoryId).GetGameKey("key_report_team_hit");
+        commandModifierKey = HotKeyManager.GetCategory(KeyCategoryId).GetGameKey("key_command_modifier");
+    }
+
     public override void OnMissionTick(float dt)
     {
         base.OnMissionTick(dt);
 
-        bool isCtrlDown = Input.IsKeyDown(InputKey.LeftControl) || Input.IsKeyDown(InputKey.RightControl);
-        bool isMPressed = Input.IsKeyPressed(InputKey.M);
+        bool isCmdModifierDown = commandModifierKey != null && (Input.IsKeyDown(commandModifierKey.KeyboardKey.InputKey) || Input.IsKeyDown(commandModifierKey.ControllerKey.InputKey));
+        bool isMPressed = reportTeamHitKey != null && (Input.IsKeyPressed(reportTeamHitKey.KeyboardKey.InputKey) || Input.IsKeyPressed(reportTeamHitKey.ControllerKey.InputKey));
 
-        if (isCtrlDown && isMPressed && !_ctrlMWasPressed) // ctrl+m pressed
+        if (isCmdModifierDown && isMPressed && !_ctrlMWasPressed) // ctrl+m pressed
         {
             _ctrlMWasPressed = true;
 
@@ -60,7 +89,7 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork
             _lastAttackerName = "Unknown";
         }
 
-        if (!isCtrlDown || !Input.IsKeyDown(InputKey.M))
+        if (!isCmdModifierDown || !isMPressed)
         {
             _ctrlMWasPressed = false;
         }
@@ -102,19 +131,26 @@ internal class FriendlyFireReportClientBehavior : MissionNetwork
         }
 
         _lastAttackerName = agent?.Name?.ToString() ?? "Unknown";
+        string cmdModifierKeyStr = commandModifierKey?.KeyboardKey.InputKey.ToString() ?? "cmd modifier";
+        string mKeyStr = reportTeamHitKey?.KeyboardKey.InputKey.ToString() ?? "report key";
 
         if (_reportWindowSeconds <= 0) // no window
         {
-            TextObject reportPrompText = new("{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press Ctrl+M if you believe this was intentional.");
+            TextObject reportPrompText = new("{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional.");
             reportPrompText.SetTextVariable("ATTACKER", _lastAttackerName);
             reportPrompText.SetTextVariable("DAMAGE", message.Damage);
+            reportPrompText.SetTextVariable("MODIFIERKEY", cmdModifierKeyStr);
+            reportPrompText.SetTextVariable("REPORTKEY", mKeyStr);
+            InformationManager.DisplayMessage(new InformationMessage(reportPrompText.ToString(), Colors.Red));
         }
         else if (_reportWindowSeconds > 0) // has window
         {
-            TextObject reportPrompNoTimeText = new("{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press Ctrl+M if you believe this was intentional {TIMELEFT} seconds remaining.");
+            TextObject reportPrompNoTimeText = new("{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional {TIMELEFT} seconds remaining.");
             reportPrompNoTimeText.SetTextVariable("ATTACKER", _lastAttackerName);
             reportPrompNoTimeText.SetTextVariable("DAMAGE", message.Damage);
             reportPrompNoTimeText.SetTextVariable("TIMELEFT", _reportWindowSeconds);
+            reportPrompNoTimeText.SetTextVariable("MODIFIERKEY", cmdModifierKeyStr);
+            reportPrompNoTimeText.SetTextVariable("REPORTKEY", mKeyStr);
             InformationManager.DisplayMessage(new InformationMessage(reportPrompNoTimeText.ToString(), Colors.Red));
         }
 

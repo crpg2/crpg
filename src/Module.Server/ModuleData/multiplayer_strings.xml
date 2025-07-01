@@ -78,8 +78,8 @@
   <string id="str_ff_teamhit_msg_no_peer_found" text="{=xq7QtuZ0}No connected attacker peer found for your report." />
   <string id="str_ff_teamhit_msg_no_hit_found" text="{=zD8mGERY}No recent team hit found to report." />
   <string id="str_ff_teamhit_msg_window_expired" text="{=KgZprgXA}Time expired to report {ATTACKER} for teamhit." />
-  <string id="str_ff_teamhit_msg_report_prompt" text="{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press Ctrl+M if you believe this was intentional." />
-  <string id="str_ff_teamhit_msg_report_prompt_window" text="{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press Ctrl+M if you believe this was intentional {TIMELEFT} seconds remaining." />
+  <string id="str_ff_teamhit_msg_report_prompt" text="{=WH15BANu}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional." />
+  <string id="str_ff_teamhit_msg_report_prompt_window" text="{=KORWOuGO}Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional {TIMELEFT} seconds remaining." />
 
   <!-- Battle Maps -->
   <string id="str_multiplayer_scene_name.crpg_battle_abandoned" text="{=PKVPlAeE}Abandoned" />

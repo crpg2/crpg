@@ -108,7 +108,7 @@
     <string id="xq7QtuZ0" text="No connected attacker peer found for your report." />
     <string id="zD8mGERY" text="No recent team hit found to report." />
     <string id="KgZprgXA" text="Time expired to report {ATTACKER} for teamhit." />
-    <string id="WH15BANu" text="Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press Ctrl+M if you believe this was intentional." />
-    <string id="KORWOuGO" text="Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press Ctrl+M if you believe this was intentional. {TIMELEFT} seconds remaining." />
+    <string id="WH15BANu" text="Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional." />
+    <string id="KORWOuGO" text="Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional. {TIMELEFT} seconds remaining." />
   </strings>
 </base>
