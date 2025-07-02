@@ -91,12 +91,24 @@
     <string id="7WDWLbpV" text="你不是指挥官！" />
     <string id="l81jAS1c" text="您将在 {TIME} 秒后重生！" />
     <string id="XJTX8w8Q" text="热身阶段 - {GAME_MODE}{newline}等待 {PLAYERS} 位玩家加入" />
-    
 
     <!-- Notifications -->
     <string id="pCIKeing" text="你将在 {SECONDS} 秒后因长时间不活动而被移除！" />
     <string id="v1S1BAF4" text="骑兵将在 {SECONDS} 秒后出现！" />
     <string id="joWaOGco" text="到达时间限制，但仍有一些进攻者在旗帜周围。防守者需要消灭他们才能赢得游戏。" />
     <string id="I5MWE5AR" text="根据人口规模，已从地图中移除{ENTITY_COUNT}个实体。" />
+
+    <!-- Friendly Fire Reporting -->
+    <string id="S4FzPA70" text="{VICTIM} reported your team hit. (Dmg: {DAMAGE}) {HITSACTIVE}/{HITSMAX}team hits until kick." />
+    <string id="1Vw2P1hD" text="Reported {ATTACKER} for team hit (Dmg: {DAMAGE})." />
+    <string id="vNmyS3cU" text="{ATTACKER} reported by {VICTIM}. [{HITSACTIVE}/{HITSMAX}] decayed: {HITSDECAYED} not reported: {HITSNOTREPORTED} on reporter: {HITSONVICTIM}" />
+    <string id="uPwSqhuA" text="You have been kicked for excessive team hits ({HITSMAX})." />
+    <string id="MdIKl2Bv" text="{ATTACKER} has been kicked for excessive team hits ({HITSMAX})." />
+    <string id="Chi61w9L" text="Friendly fire reporting is currently disabled on this server." />
+    <string id="xq7QtuZ0" text="No connected attacker peer found for your report." />
+    <string id="zD8mGERY" text="No recent team hit found to report." />
+    <string id="KgZprgXA" text="Time expired to report {ATTACKER} for teamhit." />
+    <string id="WH15BANu" text="Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional." />
+    <string id="KORWOuGO" text="Team hit by {ATTACKER} (Dmg: {DAMAGE}). Press [{MODIFIERKEY}+{REPORTKEY}] if you believe this was intentional. {TIMELEFT} seconds remaining." />
   </strings>
 </base>

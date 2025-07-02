@@ -5,4 +5,6 @@ internal enum CrpgActivityLogType
     ServerJoined,
     ChatMessageSent,
     TeamHit,
+    TeamHitReported,
+    TeamHitReportedUserKicked,
 }

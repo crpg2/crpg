@@ -57,6 +57,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
     private CrpgDtvRound CurrentRoundData => _dtvData.Rounds[_currentRound];
     private CrpgDtvWave CurrentWaveData => _dtvData.Rounds[_currentRound].Waves[_currentWave];
     private int WavesCountForCurrentRound => CurrentRoundData.Waves.Count;
+    public event Action<int>? DtvRoundStarted;
 
     [Flags]
     private enum StonePileRegenerateOptions
@@ -138,7 +139,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
             SendDataToPeers(new CrpgDtvVipSpawn { VipAgentIndex = agent.Index });
         }
 
-            // Synchronize health with all clients to make the spectator health bar work.
+        // Synchronize health with all clients to make the spectator health bar work.
         agent.UpdateSyncHealthToAllClients(true);
     }
 
@@ -318,6 +319,8 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         _currentRoundStartTime = MissionTime.Now;
         _waveStartTimer = new MissionTimer(15f);
         _waveStarted = false;
+
+        DtvRoundStarted?.Invoke(_currentRound);
     }
 
     private void StartNextWave()

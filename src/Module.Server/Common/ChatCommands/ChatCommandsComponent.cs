@@ -47,6 +47,7 @@ internal class ChatCommandsComponent : GameHandler
                 new HotConstantUpdateCommand(this),
                 new OrderCommand(this),
                 new HelpCommand(this),
+                new FriendlyFireInfoCommand(this),
         };
 #else
         _commands = Array.Empty<ChatCommand>();
