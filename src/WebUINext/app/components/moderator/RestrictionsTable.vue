@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import type { DropdownMenuItem, TableColumn } from '@nuxt/ui'
-import type { ColumnFiltersState, PaginationState, SortingState, VisibilityState } from '@tanstack/vue-table'
+import type { DropdownMenuItem, SelectItem, TableColumn } from '@nuxt/ui'
+import type { PaginationState, SortingState, VisibilityState } from '@tanstack/vue-table'
 
 import { getPaginationRowModel } from '@tanstack/vue-table'
 import { navigateTo } from '#app'
-import { NuxtLink, UBadge, UiCollapsibleText, UInput, UiTableColumnHeader, UserMedia, UTooltip } from '#components'
+import { NuxtLink, UBadge, UiCollapsibleText, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, USelect, UserMedia, UTooltip } from '#components'
 
-import { type UserRestriction, UserRestrictionStatus, UserRestrictionType } from '~/models/user'
+import type { UserRestriction } from '~/models/user'
+
+import { UserRestrictionStatus, UserRestrictionType } from '~/models/user'
 import { computeLeftMs, parseTimestamp } from '~/utils/date'
 
 const { hiddenRestrictedUser = false } = defineProps<{
@@ -28,32 +30,49 @@ const pagination = ref<PaginationState>(getInitialPaginationState())
 
 const table = useTemplateRef('table')
 
-const globalFilter = ref('')
+const globalFilter = ref<string | undefined>(undefined)
 
 const columns: TableColumn<UserRestriction>[] = [
   {
     accessorKey: 'id',
+    meta: {
+      class: {
+        td: tw`min-w-16`,
+      },
+    },
   },
   {
     accessorKey: 'status',
     header: ({ column }) => {
-      const filterValue = (column.getFilterValue() || []) as string[]
       return h(UiTableColumnHeader, {
         label: t('restriction.table.column.status'),
         withFilter: true,
         filtered: column.getIsFiltered(),
-        filterDropdownItems: Object.values(UserRestrictionStatus).map<DropdownMenuItem>(status => ({
-          label: status,
-          type: 'checkbox',
-          checked: filterValue.includes(status),
-          onSelect(e: Event) {
-            e.preventDefault()
-          },
-          onUpdateChecked() {
-            column.setFilterValue(toggle(filterValue, status))
-          },
-        })),
         onResetFilter: () => column.setFilterValue(undefined),
+      }, {
+        filter: () =>
+          // @ts-expect-error TODO:
+          h(USelect, {
+            'variant': 'none',
+            'multiple': true,
+            'trailing-icon': '',
+            'size': 'xl',
+            'ui': {
+              content: 'min-w-fit',
+              base: 'px-0 py-0',
+            },
+            'items': Object.values(UserRestrictionStatus).map<SelectItem>(status => ({
+              value: status,
+              label: status,
+            })),
+            'modelValue': column.getFilterValue(),
+            'onUpdate:modelValue': column.setFilterValue,
+          }, {
+            default: () => h(UiTableColumnHeaderLabel, {
+              label: t('restriction.table.column.status'),
+              withFilter: true,
+            }),
+          }),
       })
     },
     filterFn: 'arrIncludesSome',
@@ -66,23 +85,35 @@ const columns: TableColumn<UserRestriction>[] = [
   {
     accessorKey: 'type',
     header: ({ column }) => {
-      const filterValue = (column.getFilterValue() || []) as string[]
       return h(UiTableColumnHeader, {
         label: t('restriction.table.column.type'),
         withFilter: true,
         filtered: column.getIsFiltered(),
-        filterDropdownItems: Object.values(UserRestrictionType).map<DropdownMenuItem>(rt => ({
-          label: t(`restriction.type.${rt}`),
-          type: 'checkbox',
-          checked: filterValue.includes(rt),
-          onSelect(e: Event) {
-            e.preventDefault()
-          },
-          onUpdateChecked() {
-            column.setFilterValue(toggle(filterValue, rt))
-          },
-        })),
         onResetFilter: () => column.setFilterValue(undefined),
+      }, {
+        filter: () =>
+          // @ts-expect-error TODO:
+          h(USelect, {
+            'variant': 'none',
+            'multiple': true,
+            'trailing-icon': '',
+            'size': 'xl',
+            'ui': {
+              content: 'min-w-fit',
+              base: 'px-0 py-0',
+            },
+            'items': Object.values(UserRestrictionType).map<SelectItem>(rt => ({
+              value: rt,
+              label: t(`restriction.type.${rt}`),
+            })),
+            'modelValue': column.getFilterValue(),
+            'onUpdate:modelValue': column.setFilterValue,
+          }, {
+            default: () => h(UiTableColumnHeaderLabel, {
+              label: t('restriction.table.column.type'),
+              withFilter: true,
+            }),
+          }),
       })
     },
     filterFn: 'arrIncludesSome',
@@ -98,8 +129,7 @@ const columns: TableColumn<UserRestriction>[] = [
       'size': 'xs',
       'placeholder': t('restriction.table.column.user'),
       'modelValue': globalFilter.value,
-      // @ts-expect-error TODO: FIXME:
-      'onUpdate:modelValue': val => globalFilter.value = val,
+      'onUpdate:modelValue': (val: string) => globalFilter.value = val,
     }),
     cell: ({ row }) => h(NuxtLink, {
       to: { name: 'moderator-user-id-restrictions', params: { id: row.original.restrictedUser.id } },
@@ -157,17 +187,6 @@ const columnVisibility = ref<VisibilityState>(
 const sorting = ref<SortingState>([
   { id: 'id', desc: true },
 ])
-
-const columnFilters = ref<ColumnFiltersState>([])
-
-function setColumnFilters(state: ColumnFiltersState) {
-  // if (!state.length) {
-  //   characterClassModel.value = undefined
-  //   return
-  // }
-  // // TODO: FIXME: шляпа
-  // characterClassModel.value = state[0]?.value[0] as CharacterClass
-}
 </script>
 
 <template>
@@ -190,7 +209,6 @@ function setColumnFilters(state: ColumnFiltersState) {
       }"
       @select="(row) => navigateTo({ name: 'moderator-user-id-restrictions', params: { id: row.original.restrictedUser.id } })"
     >
-      <!-- @update:column-filters="setColumnFilters" -->
       <template #empty>
         <UiResultNotFound />
       </template>

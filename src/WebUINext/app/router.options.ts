@@ -47,13 +47,13 @@ const parseQuery = (query: string) =>
 const stringifyQuery = (query: Record<string, any>) =>
   stringify(query, {
     arrayFormat: 'brackets',
-    encode: false,
+    encode: true,
     skipNulls: true,
     strictNullHandling: true,
   })
 
 // TODO: FIXME: work with date, ex 2025-06-14T15:34:07.502+03:00[Europe/Moscow]
 export default {
-  // parseQuery,
-  // stringifyQuery,
+  parseQuery,
+  stringifyQuery,
 } satisfies RouterConfig

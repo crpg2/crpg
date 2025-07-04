@@ -34,7 +34,7 @@ export const createClientConfig: CreateClientConfig = (config) => {
       const toast = useToast()
       const route = useRoute()
 
-      if (!route.meta.skipAuth) {
+      if (route.meta.roles) {
         if (response.status === 401) {
           toast.add({
             title: 'Session expired',

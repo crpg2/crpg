@@ -17,7 +17,6 @@ import { getLeaderBoard } from '~/services/leaderboard-service'
 import { useUserStore } from '~/stores/user'
 
 definePageMeta({
-  skipAuth: true,
   layoutOptions: {
     bg: 'background-2.webp',
   },
@@ -65,7 +64,7 @@ const sorting = ref<SortingState>([
   { id: 'position', desc: false },
 ])
 
-const globalFilter = ref('')
+const globalFilter = ref<string | undefined>(undefined)
 
 const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   {
