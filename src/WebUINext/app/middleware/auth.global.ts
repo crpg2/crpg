@@ -13,12 +13,12 @@ const userAllowedAccess = (
   role: Role,
 ): boolean => Boolean(route.meta.roles?.includes(role))
 
-export default defineNuxtRouteMiddleware(async (to, from) => {
+export default defineNuxtRouteMiddleware(async (to) => {
   /*
     (1) service/public route, for example - oidc callback pages: /signin-callback
     (2) user data is not loaded but user is logged in - get user data
     (3) to-route has a role requirement
-    (3) user has access
+    (4) user has access
   */
 
   // (1)
@@ -37,9 +37,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   if (routeHasAnyRoles(to)) {
     // (4)
     if (userStore.user === null || !userAllowedAccess(to, userStore.user.role)) {
-      return { name: 'index' }
+      navigateTo({ name: 'index' }, { replace: true })
     }
   }
-
-  return true
 })

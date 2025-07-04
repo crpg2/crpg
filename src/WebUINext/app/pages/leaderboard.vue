@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { DropdownMenuItem, SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
+import type { SelectItem, TableColumn, TabsItem } from '@nuxt/ui'
 import type { ColumnFiltersState, SortingState } from '@tanstack/table-core'
 
 import { useRouteQuery } from '@vueuse/router'
-import { CompetitiveRank, CompetitiveRankTable, UButton, UDropdownMenuContent, UIcon, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, UModal, USelect, UserMedia, UTooltip } from '#components'
+import { CompetitiveRank, CompetitiveRankTable, UButton, UIcon, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, UModal, USelect, UserMedia, UTooltip } from '#components'
 import { h, tw } from '#imports'
 
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
@@ -17,6 +17,7 @@ import { getLeaderBoard } from '~/services/leaderboard-service'
 import { useUserStore } from '~/stores/user'
 
 definePageMeta({
+  skipAuth: true,
   layoutOptions: {
     bg: 'background-2.webp',
   },
@@ -63,8 +64,6 @@ const columnFilters = ref<ColumnFiltersState>([])
 const sorting = ref<SortingState>([
   { id: 'position', desc: false },
 ])
-
-const table = useTemplateRef('table')
 
 const globalFilter = ref('')
 
@@ -243,7 +242,6 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
       </div>
 
       <UTable
-        ref="table"
         v-model:global-filter="globalFilter"
         v-model:column-filters="columnFilters"
         v-model:sorting="sorting"
