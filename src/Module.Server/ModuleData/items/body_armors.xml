@@ -9024,27 +9024,27 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aa_landsknechtcuirass_h0" name="{=Apple}Lansknecht Cuirass" mesh="aa_landsknechtcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="13.51728" difficulty="0" appearance="1" Type="BodyArmor">
+  <Item id="crpg_aa_landsknechtcuirass_h0" name="{=Apple}Landsknecht Cuirass" mesh="aa_landsknechtcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="12.93638" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="46" leg_armor="11" arm_armor="16" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="46" leg_armor="8" arm_armor="16" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aa_landsknechtcuirass_h1" name="{=Apple}Lansknecht Cuirass +1" mesh="aa_landsknechtcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="13.51728" difficulty="0" appearance="1" Type="BodyArmor">
+  <Item id="crpg_aa_landsknechtcuirass_h1" name="{=Apple}Landsknecht Cuirass +1" mesh="aa_landsknechtcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="12.93638" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="48" leg_armor="12" arm_armor="17" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="48" leg_armor="9" arm_armor="17" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aa_landsknechtcuirass_h2" name="{=Apple}Lansknecht Cuirass +2" mesh="aa_landsknechtcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="13.51728" difficulty="0" appearance="1" Type="BodyArmor">
+  <Item id="crpg_aa_landsknechtcuirass_h2" name="{=Apple}Landsknecht Cuirass +2" mesh="aa_landsknechtcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="12.93638" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="50" leg_armor="13" arm_armor="18" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="50" leg_armor="10" arm_armor="18" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_aa_landsknechtcuirass_h3" name="{=Apple}Lansknecht Cuirass +3" mesh="aa_landsknechtcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="13.51728" difficulty="0" appearance="1" Type="BodyArmor">
+  <Item id="crpg_aa_landsknechtcuirass_h3" name="{=Apple}Landsknecht Cuirass +3" mesh="aa_landsknechtcuirass" subtype="body_armor" culture="Culture.empire" is_merchandise="true" weight="12.93638" difficulty="0" appearance="1" Type="BodyArmor">
     <ItemComponent>
-      <Armor body_armor="52" leg_armor="14" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="52" leg_armor="11" arm_armor="19" has_gender_variations="false" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
@@ -9054,21 +9054,21 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_meow_horseman_armor_v2_h1" name="{=}Tunic with Cloth Sash +1" mesh="meow_aserai_horseman" culture="Culture.aserai" weight="7.302398" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" lod_atlas_index="2">
+  <Item id="crpg_meow_horseman_armor_v2_h1" name="{=}Tunic with Cloth Sash +1" mesh="meow_aserai_horseman" culture="Culture.aserai" weight="4.443546" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" lod_atlas_index="2">
     <ItemComponent>
-      <Armor body_armor="18" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="20" leg_armor="9" arm_armor="9" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_meow_horseman_armor_v2_h2" name="{=}Tunic with Cloth Sash +2" mesh="meow_aserai_horseman" culture="Culture.aserai" weight="7.302398" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" lod_atlas_index="2">
+  <Item id="crpg_meow_horseman_armor_v2_h2" name="{=}Tunic with Cloth Sash +2" mesh="meow_aserai_horseman" culture="Culture.aserai" weight="4.443546" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" lod_atlas_index="2">
     <ItemComponent>
-      <Armor body_armor="18" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="22" leg_armor="10" arm_armor="10" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_meow_horseman_armor_v2_h3" name="{=}Tunic with Cloth Sash +3" mesh="meow_aserai_horseman" culture="Culture.aserai" weight="7.302398" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" lod_atlas_index="2">
+  <Item id="crpg_meow_horseman_armor_v2_h3" name="{=}Tunic with Cloth Sash +3" mesh="meow_aserai_horseman" culture="Culture.aserai" weight="4.443546" appearance="1" Type="BodyArmor" subtype="body_armor" difficulty="0" lod_atlas_index="2">
     <ItemComponent>
-      <Armor body_armor="18" leg_armor="8" arm_armor="8" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
+      <Armor body_armor="24" leg_armor="11" arm_armor="11" has_gender_variations="false" covers_body="true" modifier_group="leather" material_type="Leather" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
