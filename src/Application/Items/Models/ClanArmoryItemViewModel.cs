@@ -8,7 +8,7 @@ public class ClanArmoryItemViewModel : IMapFrom<ClanArmoryItem>
 {
     public int UserItemId { get; set; }
     public int UserId { get; set; }
-    public int BorrowerUserId { get; set; }
+    public int BorrowerUserId { get; set; } // 0 - empty
     public ItemViewModel Item { get; init; } = default!;
 
     public void Mapping(Profile profile)
