@@ -35,6 +35,7 @@ declare module 'vue-router/auto-routes' {
     'ClansIdArmory': RouteRecordInfo<'ClansIdArmory', '/clans/:id/armory', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     'ClansIdUpdate': RouteRecordInfo<'ClansIdUpdate', '/clans/:id/update', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     'ClansCreate': RouteRecordInfo<'ClansCreate', '/clans/create', Record<never, never>, Record<never, never>>,
+    'Credits': RouteRecordInfo<'Credits', '/credits', Record<never, never>, Record<never, never>>,
     'HelpParent': RouteRecordInfo<'HelpParent', '/help', Record<never, never>, Record<never, never>>,
     'Help': RouteRecordInfo<'Help', '/help', Record<never, never>, Record<never, never>>,
     'HelpBuildSupport': RouteRecordInfo<'HelpBuildSupport', '/help/build-support', Record<never, never>, Record<never, never>>,

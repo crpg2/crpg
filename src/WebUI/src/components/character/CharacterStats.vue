@@ -6,6 +6,7 @@ import type { CharacterCharacteristics } from '~/models/character'
 import {
   computeMountSpeedStats,
   computeSpeedStats,
+  computeWeaponLengthMountPenalty,
 } from '~/services/characters-service'
 
 type Rows = 'weight' | 'hp'
@@ -41,6 +42,13 @@ const mountSpeedStats = computed(() => {
     props.mountSpeedBase,
     props.mountHarnessWeight,
     speedStats.value.perceivedWeight,
+  )
+})
+
+const mountPenaltyStats = computed(() => {
+  return computeWeaponLengthMountPenalty(
+    props.longestWeaponLength,
+    props.characteristics.attributes.strength,
   )
 })
 </script>
@@ -145,6 +153,29 @@ const mountSpeedStats = computed(() => {
       ]"
     >
       {{ $n(mountSpeedStats.speedReduction, 'percent') }}
+    </div>
+    <div v-else>
+      —
+    </div>
+  </SimpleTableRow>
+
+  <SimpleTableRow
+    :label="$t('character.stats.mountedWeaponPenalty.title')"
+    :tooltip="{
+      title: $t('character.stats.mountedWeaponPenalty.title'),
+      description: $t('character.stats.mountedWeaponPenalty.desc'),
+    }"
+  >
+    <div
+      v-if="mountPenaltyStats"
+      class="text-xs"
+      :class="[
+        mountPenaltyStats !== 1
+          ? 'text-status-danger'
+          : 'text-content-100',
+      ]"
+    >
+      {{ $n(mountPenaltyStats - 1, 'percent') }}
     </div>
     <div v-else>
       —
