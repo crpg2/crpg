@@ -611,9 +611,6 @@ character:
     currentSpeed:
       title: Current speed
       desc: ''
-    mountSpeedPenalty:
-      title: Mount speed penalty
-      desc: 'Reduces mount speed based on rider''s perceived weight and harness weight'
     maxWeaponLength:
       title: Max weapon length
       desc: '
@@ -624,9 +621,12 @@ character:
       desc: '
         <p>Extra movement speed when attacking penalty.</p>
         <p>Depends on the length of the weapon and <strong>STR</strong> attribute points</p>'
+    mountSpeedPenalty:
+      title: Mount speed penalty
+      desc: 'Reduces mount speed based on rider''s perceived weight and harness weight'
     mountedWeaponPenalty:
       title: Additional mount stats penalty
-      desc: Penalty to mount speed, maneuver, acceleration, and charge damage due to using a weapon too long for your strength.
+      desc: Penalty to mount speed, maneuver, acceleration, and charge damage due to using a weapon too long for your strength
     price:
       title: Cost
       desc: Total cost of equipped items
