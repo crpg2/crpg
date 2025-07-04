@@ -19,7 +19,7 @@ export const parseJwt = (token: string) =>
   JSON.parse(Buffer.from(token.split('.')[1] as string, 'base64').toString())
 
 export const userManager = new UserManager({
-  authority: import.meta.env.NUXT_API_BASE_URL,
+  authority: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
   client_id: 'crpg-web-ui',
   post_logout_redirect_uri: window.location.origin,
   redirect_uri: `${window.location.origin}/signin-callback`,

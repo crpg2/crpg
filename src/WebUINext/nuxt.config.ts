@@ -117,6 +117,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       HH: import.meta.env.NUXT_PUBLIC_HH,
+      api: {
+        baseUrl: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
+      },
     },
   },
   alias: {
@@ -160,6 +163,7 @@ export default defineNuxtConfig({
       tailwindcss(),
       JSON5(),
     ],
+    envPrefix: ['VITE_', 'NUXT_PUBLIC_'],
   },
   eslint: {
     config: {
