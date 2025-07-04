@@ -1,6 +1,10 @@
+import { delay } from 'es-toolkit'
+
 import type { CreateClientConfig } from '~/api/client.gen'
 
-import { getToken } from '~/services/auth-service'
+import { getToken, login } from '~/services/auth-service'
+
+import { Platform } from './models/platform'
 
 interface CrpgApiError {
   code: string
@@ -21,25 +25,37 @@ enum CrpgApiErrorType {
 
 export const createClientConfig: CreateClientConfig = config => ({
   ...config,
-  baseURL: 'https://localhost:8000', // TODO: FIXME: from env
-  async onRequest({ request, options, error }) {
-    // TODO: FIXME: auto refresh token
+  baseURL: import.meta.env.NUXT_API_BASE_URL,
+  async onRequest({ options }) {
     options.headers.set('Authorization', `Bearer ${await getToken()}`)
   },
-  onResponseError({ response }) {
+  async onResponseError({ response }) {
+    const toast = useToast()
+
+    if (response.status === 401) {
+      toast.add({
+        title: 'Session expired',
+        color: 'error',
+        duration: 3000,
+        icon: 'crpg:error',
+        close: false,
+      })
+      await delay(1000)
+      await login(globalThis.localStorage.getItem('user-platform') as Platform ?? Platform.Steam)
+      return
+    }
+
     const [error] = response._data?.errors as CrpgApiError[]
 
     if (error) {
-      const toast = useToast()
       toast.add({
         title: error?.title || 'Some Error',
         ...(error.detail && { description: error.detail }),
         color: 'error',
         duration: 5000,
         icon: 'crpg:error',
+        close: false,
       })
     }
-
-    console.log('error', response._data?.errors as CrpgApiError[])
   },
 })
