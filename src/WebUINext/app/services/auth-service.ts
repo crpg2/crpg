@@ -19,8 +19,7 @@ export const parseJwt = (token: string) =>
   JSON.parse(Buffer.from(token.split('.')[1] as string, 'base64').toString())
 
 export const userManager = new UserManager({
-  //   authority: import.meta.env.VITE_API_BASE_URL,
-  authority: 'https://localhost:8000', // TODO: FIXME:
+  authority: import.meta.env.NUXT_API_BASE_URL,
   client_id: 'crpg-web-ui',
   post_logout_redirect_uri: window.location.origin,
   redirect_uri: `${window.location.origin}/signin-callback`,
@@ -32,13 +31,11 @@ export const userManager = new UserManager({
 
 export const getUser = () => userManager.getUser()
 
-export const login = (platform: Platform) => {
-  return userManager.signinRedirect({
-    extraQueryParams: {
-      identity_provider: platform,
-    },
-  })
-}
+export const login = (platform: Platform) => userManager.signinRedirect({
+  extraQueryParams: {
+    identity_provider: platform,
+  },
+})
 
 export const logout = () => userManager.signoutRedirect()
 
