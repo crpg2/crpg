@@ -107,14 +107,19 @@ const [shownConfirmDeleteDialog, toggleConfirmDeleteDialog] = useToggle()
         </div>
       </template>
 
-      <template #footer="{ close }">
+      <template #footer>
         <i18n-t
           scope="global"
           keypath="character.settings.delete.title"
           tag="div"
         >
           <template #link>
-            <span class="cursor-pointer text-status-danger hover:text-status-danger/80" @click="toggleConfirmDeleteDialog(true)">
+            <span
+              class="
+                cursor-pointer text-status-danger
+                hover:text-status-danger/80
+              " @click="toggleConfirmDeleteDialog(true)"
+            >
               {{ $t('character.settings.delete.link') }}
             </span>
           </template>

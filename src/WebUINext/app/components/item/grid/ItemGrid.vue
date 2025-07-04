@@ -61,9 +61,11 @@ const filteredItemsCost = computed(() => filteredItems.value.reduce((out, wrappe
     <div
       ref="aside"
       style="grid-area: filter"
-      class="sticky top-0 left-0 space-y-2"
+      class="sticky top-0 left-0 flex flex-col items-center justify-center space-y-2"
       :style="{ top: `${stickySidebarTop}px` }"
     >
+      <slot name="filter-leading" />
+
       <ItemSearchFilterByType
         v-model:item-type="itemType"
         :item-types="itemTypes"
@@ -81,12 +83,10 @@ const filteredItemsCost = computed(() => filteredItems.value.reduce((out, wrappe
     >
       <div
         class="
-          col-span-2 flex items-center gap-4
+          col-span-2
           2xl:col-span-3
         "
       >
-        <slot name="filter-leading" />
-
         <UInput
           v-model="filterByNameModel"
           :placeholder="$t('action.search')"
@@ -130,7 +130,7 @@ const filteredItemsCost = computed(() => filteredItems.value.reduce((out, wrappe
 <style lang="css">
 .itemGrid {
   grid-template-areas:
-    'sort sort'
+    '... sort'
     'filter items'
     'filter footer';
   grid-template-columns: auto 1fr;

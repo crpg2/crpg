@@ -38,7 +38,7 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
         {{ $t('user.settings.title') }}
       </h1>
 
-      <UCard :ui="{ body: 'relative min-h-24' }">
+      <UCard :ui="{ body: 'relative min-h-24' }" variant="subtle">
         <template #header>
           <UiDataCell class="w-full text-sm text-error">
             <template #leftContent>
@@ -69,7 +69,10 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
           >
             <template #link>
               <span
-                class="cursor-pointer border-b border-dashed border-status-danger text-status-danger hover:border-0"
+                class="
+                  cursor-pointer border-b border-dashed border-status-danger text-status-danger
+                  hover:border-0
+                "
                 @click="() => toggleConfirmDialog()"
               >
                 {{ $t('user.settings.delete.link') }}
@@ -94,7 +97,11 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
     >
       <template #title>
         <div
-          class="prose prose-invert prose-h4:text-status-danger prose-h5:text-status-danger"
+          class="
+            prose prose-invert
+            prose-h4:text-status-danger
+            prose-h5:text-status-danger
+          "
           v-html="$t('user.settings.delete.dialog.title')"
         />
       </template>

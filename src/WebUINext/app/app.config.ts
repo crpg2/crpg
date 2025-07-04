@@ -59,6 +59,7 @@ export default defineAppConfig({
     },
     modal: {
       slots: {
+        content: '!overflow-visible',
         wrapper: 'w-full',
         header: 'p-8 sm:px-6',
         body: 'p-6 sm:p-8',
