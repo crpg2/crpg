@@ -45,7 +45,7 @@ public class AddClanArmoryCommandTest : TestBase
 
         var view = result.Data!;
         Assert.That(view.UserItemId, Is.Not.Null);
-        Assert.That(view.BorrowerUserId, Is.Null);
+        Assert.That(view.BorrowerUserId, Is.EqualTo(0));
     }
 
     [Test]
