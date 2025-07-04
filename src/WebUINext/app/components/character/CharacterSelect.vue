@@ -85,7 +85,10 @@ const items = computed<DropdownMenuItem[][]>(() => [
 
       <UIcon
         name="crpg:chevron-down"
-        class="size-5 text-dimmed  duration-200 group-data-[state=open]:rotate-180"
+        class="
+          size-5 text-dimmed duration-200
+          group-data-[state=open]:rotate-180
+        "
       />
     </UButton>
 

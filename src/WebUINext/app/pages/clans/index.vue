@@ -143,8 +143,8 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     filterFn: 'arrIncludesSome',
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-1.5',
-    }, () => row.original.clan.languages.map(l =>
-      h(UTooltip, { text: t(`language.${l}`) }, h(UBadge, {
+    }, row.original.clan.languages.map(l =>
+      h(UTooltip, { text: t(`language.${l}`) }, () => h(UBadge, {
         color: 'primary',
         variant: 'soft',
         size: 'sm',

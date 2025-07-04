@@ -140,14 +140,6 @@ const fetchPageData = async () => {
   }
 }
 
-// TODO: SPEC
-// onBeforeRouteUpdate(async (to, from) => {
-//   if (to.name === from.name) {
-//     await fetchPageData(Number((to as RouteLocationNormalized<'ClansId'>).params.id))
-//   }
-//   return true
-// })
-
 fetchPageData()
 
 const table = useTemplateRef('table')
@@ -158,7 +150,7 @@ const pagination = ref<PaginationState>(getInitialPaginationState())
 function getInitialPaginationState(): PaginationState {
   return {
     pageIndex: 0,
-    pageSize: 10, // TODO: FIXME:
+    pageSize: 10,
   }
 }
 
@@ -190,7 +182,8 @@ const columns: TableColumn<ClanMember>[] = [
     cell: ({ row }) => h(ClanRole, { role: row.original.role }),
     meta: {
       class: {
-        td: tw`w-36`,
+        th: tw`w-36 text-right`,
+        td: tw`w-36 text-right`,
       },
     },
   },

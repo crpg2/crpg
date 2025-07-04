@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
+import { UInputNumber } from '#components'
 import { maximumLevel, minimumLevel } from '~root/data/constants.json'
 import { defu } from 'defu'
 
@@ -243,9 +244,8 @@ const onShare = () => {
                   :label="$t('character.stats.weight.title')"
                   :tooltip="{ title: $t('builder.weight') }"
                 >
-                  <UInput
+                  <UInputNumber
                     v-model="weight"
-                    type="number"
                     size="xs"
                     class="max-w-24"
                   />
@@ -258,9 +258,8 @@ const onShare = () => {
                     description: $t('builder.weaponLength.desc'),
                   }"
                 >
-                  <UInput
+                  <UInputNumber
                     v-model="weaponLength"
-                    type="number"
                     size="xs"
                     class="max-w-24"
                   />

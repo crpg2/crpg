@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import type { DropdownMenuItem } from '@nuxt/ui'
+
+import { useStorage } from '@vueuse/core'
+
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
@@ -89,6 +93,36 @@ const {
 //   ),
 // )
 
+const hideOwnedItemsModel = useStorage<boolean>('clan-armory-hide-owned-items', true)
+const showOnlyAvailableItems = useStorage<boolean>('clan-armory-show-only-available-items', true)
+const additionalFilteritems = computed<DropdownMenuItem[]>(() => [
+  {
+    label: t('clan.armory.filter.hideOwned'),
+    type: 'checkbox' as const,
+    checked: hideOwnedItemsModel.value,
+    onUpdateChecked(checked: boolean) {
+      hideOwnedItemsModel.value = checked
+    },
+  },
+  {
+    label: t('clan.armory.filter.showOnlyAvailable'),
+    type: 'checkbox' as const,
+    checked: showOnlyAvailableItems.value,
+    onUpdateChecked(checked: boolean) {
+      showOnlyAvailableItems.value = checked
+    },
+  },
+])
+
+const items = computed(() => {
+  return clanArmory.value.filter(armoryItem => (hideOwnedItemsModel.value ? !isOwnClanArmoryItem(armoryItem, userStore.user!.id) : true)
+    && (showOnlyAvailableItems.value
+      ? armoryItem.borrowerUserId
+      && !isOwnClanArmoryItem(armoryItem, userStore.user!.id)
+      && !isClanArmoryItemInInventory(armoryItem, userStore.userItems)
+      : true))
+})
+
 const sortingConfig: SortingConfig = {
   rank_desc: {
     field: 'rank',
@@ -122,32 +156,32 @@ Promise.all([
       />
 
       <ItemGrid
-        v-if="Boolean(clanArmory.length)"
+        v-if="Boolean(items.length)"
         v-model:sorting="sortingModel"
-        :items="clanArmory"
+        :items="items"
         :sorting-config="sortingConfig"
       >
-        <!-- <template v-if="hasArmoryItems" #filter-leading>
-        <UDropdownMenu
-          size="xl"
-          :items="additionalFilteritems"
-          :modal="false"
-        >
-          <UChip
-            inset
-            size="2xl"
-            :show="hideInArmoryItemsModel"
-            :ui="{ base: 'bg-[#53bc96]' }"
+        <template #filter-leading>
+          <UDropdownMenu
+            size="xl"
+            :items="additionalFilteritems"
+            :modal="false"
           >
-            <UButton
-              variant="subtle"
-              color="neutral"
-              size="xl"
-              icon="crpg:dots"
-            />
-          </UChip>
-        </UDropdownMenu>
-      </template> -->
+            <UChip
+              inset
+              size="2xl"
+              :show="hideOwnedItemsModel || showOnlyAvailableItems"
+              :ui="{ base: 'bg-[#53bc96]' }"
+            >
+              <UButton
+                variant="subtle"
+                color="neutral"
+                size="xl"
+                icon="crpg:dots"
+              />
+            </UChip>
+          </UDropdownMenu>
+        </template>
 
         <template #item="clanArmoryItem">
           <ClanArmoryItemCard

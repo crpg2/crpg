@@ -42,7 +42,7 @@ const {
         >
           <UButton
             variant="ghost"
-            color="neutral"
+            color="error"
             size="sm"
             icon="crpg:close"
             :label="$t('user.notifications.action.deleteAll.title')"
