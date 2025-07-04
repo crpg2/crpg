@@ -3192,4 +3192,52 @@
     </ItemComponent>
     <Flags />
   </Item>
+  <Item id="crpg_aa_blackdreitershouldersheavy_h0" name="Black Reiter Pauldrons" mesh="aa_blackdreitershouldersheavy" culture="Culture.vlandia" weight="4.55025" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="18" modifier_group="plate" material_type="Plate" arm_armor="15" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_blackdreitershouldersheavy_h1" name="Black Reiter Pauldrons +1" mesh="aa_blackdreitershouldersheavy" culture="Culture.vlandia" weight="4.55025" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="20" modifier_group="plate" material_type="Plate" arm_armor="15" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_blackdreitershouldersheavy_h2" name="Black Reiter Pauldrons +2" mesh="aa_blackdreitershouldersheavy" culture="Culture.vlandia" weight="4.55025" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="21" modifier_group="plate" material_type="Plate" arm_armor="15" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_blackdreitershouldersheavy_h3" name="Black Reiter Pauldrons +3" mesh="aa_blackdreitershouldersheavy" culture="Culture.vlandia" weight="4.55025" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="22" modifier_group="plate" material_type="Plate" arm_armor="16" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_etchedreitershouldersheavy_h0" name="Etched Reiter Pauldrons" mesh="aa_etchedreitershouldersheavy" culture="Culture.vlandia" weight="4.55025" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="18" modifier_group="plate" material_type="Plate" arm_armor="15" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_etchedreitershouldersheavy_h1" name="Etched Reiter Pauldrons +1" mesh="aa_etchedreitershouldersheavy" culture="Culture.vlandia" weight="4.55025" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="20" modifier_group="plate" material_type="Plate" arm_armor="15" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_etchedreitershouldersheavy_h2" name="Etched Reiter Pauldrons +2" mesh="aa_etchedreitershouldersheavy" culture="Culture.vlandia" weight="4.55025" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="21" modifier_group="plate" material_type="Plate" arm_armor="15" />
+    </ItemComponent>
+    <Flags />
+  </Item>
+  <Item id="crpg_aa_etchedreitershouldersheavy_h3" name="Etched Reiter Pauldrons +3" mesh="aa_etchedreitershouldersheavy" culture="Culture.vlandia" weight="4.55025" appearance="1" Type="Cape" is_merchandise="true">
+    <ItemComponent>
+      <Armor body_armor="22" modifier_group="plate" material_type="Plate" arm_armor="16" />
+    </ItemComponent>
+    <Flags />
+  </Item>
 </Items>
