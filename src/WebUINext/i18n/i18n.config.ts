@@ -1,8 +1,7 @@
 export default defineI18nConfig(() => {
   return {
-    // fallbackLocale: import.meta.env.VITE_LOCALE_FALLBACK,
+    fallbackLocale: 'en',
     globalInjection: true,
-    // locale: import.meta.env.VITE_LOCALE_DEFAULT,
     missingWarn: false,
     fallbackWarn: false,
     legacy: false,

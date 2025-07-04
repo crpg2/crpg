@@ -23,39 +23,41 @@ enum CrpgApiErrorType {
   Validation = 'Validation',
 }
 
-export const createClientConfig: CreateClientConfig = config => ({
-  ...config,
-  baseURL: import.meta.env.NUXT_API_BASE_URL,
-  async onRequest({ options }) {
-    options.headers.set('Authorization', `Bearer ${await getToken()}`)
-  },
-  async onResponseError({ response }) {
-    const toast = useToast()
+export const createClientConfig: CreateClientConfig = (config) => {
+  return ({
+    ...config,
+    baseURL: import.meta.env.NUXT_PUBLIC_API_BASE_URL,
+    async onRequest({ options }) {
+      options.headers.set('Authorization', `Bearer ${await getToken()}`)
+    },
+    async onResponseError({ response }) {
+      const toast = useToast()
 
-    if (response.status === 401) {
-      toast.add({
-        title: 'Session expired',
-        color: 'error',
-        duration: 3000,
-        icon: 'crpg:error',
-        close: false,
-      })
-      await delay(1000)
-      await login(globalThis.localStorage.getItem('user-platform') as Platform ?? Platform.Steam)
-      return
-    }
+      if (response.status === 401) {
+        toast.add({
+          title: 'Session expired',
+          color: 'error',
+          duration: 3000,
+          icon: 'crpg:error',
+          close: false,
+        })
+        await delay(1000)
+        await login(globalThis.localStorage.getItem('user-platform') as Platform ?? Platform.Steam)
+        return
+      }
 
-    const [error] = response._data?.errors as CrpgApiError[]
+      const [error] = response._data?.errors as CrpgApiError[]
 
-    if (error) {
-      toast.add({
-        title: error?.title || 'Some Error',
-        ...(error.detail && { description: error.detail }),
-        color: 'error',
-        duration: 5000,
-        icon: 'crpg:error',
-        close: false,
-      })
-    }
-  },
-})
+      if (error) {
+        toast.add({
+          title: error?.title || 'Some Error',
+          ...(error.detail && { description: error.detail }),
+          color: 'error',
+          duration: 5000,
+          icon: 'crpg:error',
+          close: false,
+        })
+      }
+    },
+  })
+}

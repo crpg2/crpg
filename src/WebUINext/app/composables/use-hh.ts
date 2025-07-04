@@ -4,12 +4,13 @@ import { Region } from '~/models/region'
 import { getHHEventByRegion, getHHEventRemaining } from '~/services/hh-service'
 import { useUserStore } from '~/stores/user'
 
+// TODO: FIXME:
 export const useHappyHours = () => {
   const HHPollId = Symbol('hh')
 
   const userStore = useUserStore()
   const { t } = useI18n()
-  const { $notify, $config } = useNuxtApp()
+  const { $config } = useNuxtApp()
 
   const source = ref()
   const HHEvent = computedWithControl(
