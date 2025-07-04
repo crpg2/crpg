@@ -117,34 +117,26 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 if (weapon.CurrentUsageItem.WeaponFlags.HasAnyFlag(WeaponFlags.BonusAgainstShield))
                 {
                     // this bonus is on top of the native x2 in MissionCombatMechanicsHelper
-                    // so the final bonus is 4.0 for one- and two- handed axes and 3.0 for everything else. We do this instead of nerfing the impact of shield skill so shield can stay virtually unbreakable against sword.
+                    // so the final bonus is 5.0 for one- and two- handed axes and 3.5 for everything else. We do this instead of nerfing the impact of shield skill so shield can stay virtually unbreakable against sword.
                     // it is the same logic as arrows not dealing a lot of damage to horse but spears dealing extra damage to horses
                     // As we want archer to fear cavs and cavs to fear spears, we want swords to fear shielders and shielders to fear axes.
 
-                    finalDamage *= axeClass.Contains(weapon.CurrentUsageItem.WeaponClass) ? 2.0f : 1.5f;
+                    finalDamage *= axeClass.Contains(weapon.CurrentUsageItem.WeaponClass) ? 2.5f : 1.75f;
                 }
             }
         }
 
-        // We want to decrease survivability of horses against melee weapon and especially against spears and pikes.
-        // By doing that we ensure that cavalry stays an archer predator while punishing cav errors like running into a wall or an obstacle
-        if (!attackInformation.IsVictimAgentHuman
-            && !attackInformation.DoesAttackerHaveMountAgent
-            && !weapon.CurrentUsageItem.IsConsumable
-            && weapon.CurrentUsageItem.IsMeleeWeapon
-            && !weapon.IsAnyConsumable())
+        // Horse HP and eHP is currently good. To adjust their performance, adjust global melee damage and global non-mounted ranged damage. Mounted ranged damage is not increase to help cavalry attack HA
+        if (!attackInformation.IsVictimAgentHuman && weapon.CurrentUsageItem.IsMeleeWeapon)
         {
-            if (
-                collisionData.StrikeType == (int)StrikeType.Thrust
-                && collisionData.DamageType == (int)DamageTypes.Pierce
-                && weapon.CurrentUsageItem.IsPolearm)
-            {
-                finalDamage *= 1.85f;
-            }
-            else
-            {
-                finalDamage *= 1.4f;
-            }
+            finalDamage *= 1.4f;
+        }
+
+        if (!attackInformation.IsVictimAgentHuman
+            && weapon.CurrentUsageItem.IsRangedWeapon
+            && !attackInformation.DoesAttackerHaveMountAgent)
+        {
+            finalDamage *= 1.3f;
         }
 
         // For bashes (with and without shield) - Not for allies cause teamdmg might reduce the "finalDamage" below zero. That will break teamhits with bashes.

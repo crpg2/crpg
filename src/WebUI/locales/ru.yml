@@ -6,7 +6,6 @@ locale:
 platform:
   Steam: Steam
   EpicGames: Epic Games
-  Microsoft: Xbox
 
 installation:
   title: Установка
@@ -24,7 +23,7 @@ installation:
     other:
       title: Лаунчер
       downloadLauncher: Загрузите наш {launcherLink}
-      startLauncher: Откройте Launcher и выберите свою платформу (Steam/Epic/Xbox)
+      startLauncher: Откройте Launcher и выберите свою платформу (Steam/Epic)
       detectinstall: Нажмите "Detect Install", чтобы автоматически найти место установки, или задайте вручную c помощью "Change Location"
       update: Нажмите "Update cRPG", чтобы убедиться, что cRPG полностью обновлен
       launch: Нажмите "Launch cRPG", чтобы запустить модификацию
@@ -460,6 +459,7 @@ character:
       linked:
         oneAttrs: 1 очко атрибутов
         threeStr: 3 очка силы за каждый уровень
+        sixStr: 6 очков силы за каждый уровень
         threeAgi: 3 очка ловкости за каждый уровень
         sixAgi: 6 очков ловкости за каждый уровень
 
@@ -493,7 +493,7 @@ character:
         powerThrow:
           title: Мощный бросок
           desc: Увеличивает урон от метательного оружия на {value}
-          requires: '@:character.characteristic.requires.linked.threeStr'
+          requires: '@:character.characteristic.requires.linked.sixStr'
         athletics:
           title: Атлетика
           desc: Увеличивает вашу максимальную скорость бега и уменьшает время ее достижения
@@ -573,6 +573,9 @@ character:
     currentSpeed:
       title: Текущая скорость
       desc: ''
+    mountSpeedPenalty:
+      title: Штраф к скорости верхом
+      desc: Снижает скорость езды верхом в зависимости от веса всадника и веса доспеха лошади
     maxWeaponLength:
       title: Макс. длина оружия
       desc: '

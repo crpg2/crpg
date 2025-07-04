@@ -44,10 +44,10 @@ internal class ChatCommandsComponent : GameHandler
                 new AnnouncementCommand(this),
                 new MuteCommand(this, crpgClient),
                 new BanCommand(this, crpgClient),
-                new MapCommand(this),
                 new HotConstantUpdateCommand(this),
                 new OrderCommand(this),
                 new HelpCommand(this),
+                new FriendlyFireInfoCommand(this),
         };
 #else
         _commands = Array.Empty<ChatCommand>();

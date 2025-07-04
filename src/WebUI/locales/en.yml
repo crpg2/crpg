@@ -6,7 +6,6 @@ locale:
 platform:
   Steam: Steam
   EpicGames: Epic Games
-  Microsoft: Xbox
 
 installation:
   title: Installation
@@ -24,7 +23,7 @@ installation:
     other:
       title: Launcher
       downloadLauncher: Download our {launcherLink}
-      startLauncher: Open the launcher and select your Platform (Steam/Epic/Xbox)
+      startLauncher: Open the launcher and select your Platform (Steam/Epic)
       detectinstall: Click 'Detect install' to automatically detect your install location, or set manually via 'Change Location'
       update: Click 'Update cRPG' to ensure cRPG is fully up-to-date
       launch: Click 'Launch cRPG' to start the Mod
@@ -133,6 +132,7 @@ nav:
     Admin: Admin
     Builder: Builder
     Leaderboard: Leaderboard
+    Credits: Credits
     Community: Community
     Installation: Installation guide
   back: Back
@@ -497,6 +497,7 @@ character:
       linked:
         oneAttrs: 1 attributes
         threeStr: 3 strength per level
+        sixStr: 6 strength per level
         threeAgi: 3 agility per level
         sixAgi: 6 agility per level
 
@@ -530,7 +531,7 @@ character:
         powerThrow:
           title: Power throw
           desc: Increases damage by {value} and your steadiness with throwing weapons
-          requires: '@:character.characteristic.requires.linked.threeStr'
+          requires: '@:character.characteristic.requires.linked.sixStr'
         athletics:
           title: Athletics
           desc: Increases your maximum running speed and decreases the time to reach it
@@ -610,6 +611,9 @@ character:
     currentSpeed:
       title: Current speed
       desc: ''
+    mountSpeedPenalty:
+      title: Mount speed penalty
+      desc: 'Reduces mount speed based on rider''s perceived weight and harness weight'
     maxWeaponLength:
       title: Max weapon length
       desc: '
@@ -1466,6 +1470,8 @@ activityLog:
     ServerJoined: The user has joined the server
     ChatMessageSent: 'Wrote a message: {message} {instance}'
     TeamHit: 'Dealt {damage} damage to {targetUser} {instance}'
+    TeamHitReported: '{targetUser} has been reported. Damage {damage}; Reported hits {reportedHits}; Decayed hits {decayedHits}; Unreported hits {unreportedHits}; On reporter hits {onReporterHits}; Weapon {weaponName};'
+    TeamHitReportedUserKicked: 'Player has been kicked for excessive team hits. Reported hits {reportedHits}; Decayed hits {decayedHits}; Unreported hits {unreportedHits};'
     ClanCreated: 'The Сlan {clan} was created'
     ClanDeleted: 'The Сlan {clan} was deleted'
     ClanApplicationCreated: 'The application to join {clan} has been created'

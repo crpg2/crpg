@@ -97,5 +97,18 @@
     <string id="v1S1BAF4" text="Кавалерия появится через {SECONDS} секунд!" />
     <string id="joWaOGco" text="Достигнут лимит времени, но некоторые атакующие все еще находятся вокруг флагов. Защитникам нужно уничтожить их, чтобы победить в игре." />
     <string id="I5MWE5AR" text="С учетом размера населения было удалено {ENTITY_COUNT} объектов с карты." />
+
+    <!-- Friendly Fire Reporting -->
+    <string id="S4FzPA70" text="{VICTIM} пожаловался на вас из за дружественного урона. (Урон: {DAMAGE}) {HITSACTIVE}/{HITSMAX} дружественного урона осталось до авто-кика." />
+    <string id="1Vw2P1hD" text="Жалоба на {ATTACKER} за дружественный урон успешна (Урон: {DAMAGE})." />
+    <string id="vNmyS3cU" text="{VICTIM} пожаловался на {ATTACKER}. [{HITSACTIVE}/{HITSMAX}] decayed: {HITSDECAYED} not reported: {HITSNOTREPORTED} on reporter: {HITSONVICTIM}" />
+    <string id="uPwSqhuA" text="Вы были кикнуты за чрезмерный дружественный урон ({HITSMAX})." />
+    <string id="MdIKl2Bv" text="{ATTACKER} был кикнут за чрезмерный дружественный урон ({HITSMAX})." />
+    <string id="Chi61w9L" text="В текущий момент жалобы за нанесение дружественного урона выключены на сервере." />
+    <string id="xq7QtuZ0" text="Атаковавший вас дружественный игрок не найден." />
+    <string id="zD8mGERY" text="Данные о дружественном уроне по вам не найдены." />
+    <string id="KgZprgXA" text="Время на жалобу о дружественном уроне от игрока {ATTACKER} истекло." />
+    <string id="WH15BANu" text="Дружественный урон от {ATTACKER} (Урон: {DAMAGE}). Нажмите [{MODIFIERKEY}+{REPORTKEY}], если вы считаете что это было намеренно." />
+    <string id="KORWOuGO" text="Дружественный урон от {ATTACKER} (Урон: {DAMAGE}). Нажмите [{MODIFIERKEY}+{REPORTKEY}], если вы считаете что это было намеренно. {TIMELEFT} секунд осталось." />
   </strings>
 </base>

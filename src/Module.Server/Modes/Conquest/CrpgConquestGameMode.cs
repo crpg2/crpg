@@ -1,6 +1,7 @@
 ﻿using Crpg.Module.Common;
 using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.Commander;
+using Crpg.Module.Common.FriendlyFireReport;
 using Crpg.Module.Common.TeamSelect;
 using Crpg.Module.Modes.Siege;
 using Crpg.Module.Modes.Warmup;
@@ -117,6 +118,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 new CrpgCommanderBehaviorClient(),
                 new CrpgRespawnTimerClient(),
                 new AmmoQuiverChangeBehaviorClient(),
+                new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
 #endif
                 warmupComponent,
                 new CrpgConquestClient(),
@@ -152,6 +154,7 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 new DrowningBehavior(),
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
                 new CrpgCommanderBehaviorServer(),
+                new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
                 new CrpgRespawnTimerServer(conquestServer, spawnBehavior),
 #else
                 new MultiplayerAchievementComponent(),
