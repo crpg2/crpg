@@ -43,6 +43,7 @@ useMainHeaderProvider(mainHeaderHeight)
 
       <!-- v-if="userStore.user && !isHHCountdownEnded && HHEventRemaining !== 0" -->
       <AppLayoutHHHeaderNotification
+        v-if="userStore.user"
         :region="userStore.user!.region"
       />
 

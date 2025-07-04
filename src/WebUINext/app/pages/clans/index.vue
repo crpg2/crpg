@@ -15,6 +15,7 @@ import { getClans } from '~/services/clan-service'
 import { useUserStore } from '~/stores/user'
 
 definePageMeta({
+  skipAuth: true,
   roles: SomeRole,
 })
 

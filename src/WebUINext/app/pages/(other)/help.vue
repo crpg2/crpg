@@ -5,6 +5,7 @@ import type { RouteNamedMap } from 'vue-router/auto-routes'
 const { t } = useI18n()
 
 definePageMeta({
+  skipAuth: true,
   layoutOptions: {
     bg: 'background-3.webp',
   },
@@ -31,7 +32,12 @@ const helpHubNavigation: { name: keyof RouteNamedMap, label: string }[] = [
 </script>
 
 <template>
-  <UContainer class="space-y-12 py-8 md:py-16">
+  <UContainer
+    class="
+      space-y-12 py-8
+      md:py-16
+    "
+  >
     <UiHeading :title="$t('help.title')" />
 
     <div class="flex items-center justify-center gap-2">

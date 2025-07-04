@@ -66,47 +66,49 @@ const { settings } = storeToRefs(useSettingsStore())
       </UTooltip>
     </UButtonGroup>
 
-    <ULink
-      v-if="userStore.user"
-      :to="{ name: 'characters' }"
-      active-class="text-content-100"
-    >
-      {{ $t('nav.main.Characters') }}
-    </ULink>
-
-    <ULink
-      :to="{ name: 'shop' }"
-      active-class="text-highlighted"
-    >
-      {{ $t('nav.main.Shop') }}
-    </ULink>
-
-    <div class="flex items-center gap-1.5">
-      <UTooltip
-        v-if="!userStore.clan"
-        data-aq-main-nav-link-tooltip="Explanation"
-        :ui="{ content: 'w-72' }"
+    <template v-if="userStore.user">
+      <ULink
+        :to="{ name: 'characters' }"
+        active-class="text-content-100"
       >
-        <UBadge
-          icon="crpg:tag"
-          variant="soft"
-          size="sm"
-        />
-        <template #content>
-          <div
-            class="prose prose-invert"
-            v-html="$t('clanBalancingExplanation')"
-          />
-        </template>
-      </UTooltip>
+        {{ $t('nav.main.Characters') }}
+      </ULink>
 
       <ULink
-        :to="{ name: 'clans' }"
+        :to="{ name: 'shop' }"
         active-class="text-highlighted"
       >
-        {{ $t('nav.main.Clans') }}
+        {{ $t('nav.main.Shop') }}
       </ULink>
-    </div>
+
+      <div class="flex items-center gap-1.5">
+        <UTooltip
+          v-if="!userStore.clan"
+          data-aq-main-nav-link-tooltip="Explanation"
+          :ui="{ content: 'w-72' }"
+        >
+          <UBadge
+            icon="crpg:tag"
+            variant="soft"
+            size="sm"
+          />
+          <template #content>
+            <div
+              class="prose prose-invert"
+              v-html="$t('clanBalancingExplanation')"
+            />
+          </template>
+        </UTooltip>
+
+        <ULink
+
+          :to="{ name: 'clans' }"
+          active-class="text-highlighted"
+        >
+          {{ $t('nav.main.Clans') }}
+        </ULink>
+      </div>
+    </template>
 
     <ULink
       :to="{ name: 'leaderboard' }"

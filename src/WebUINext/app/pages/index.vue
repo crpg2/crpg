@@ -19,7 +19,12 @@ Promise.all([
 </script>
 
 <template>
-  <div class="relative h-screen p-4 md:p-8">
+  <div
+    class="
+      relative h-screen p-4
+      md:p-8
+    "
+  >
     <AppBg bg="background-1.webp" />
 
     <div class="relative flex h-full items-center border border-border-300 text-content-200">
@@ -37,7 +42,10 @@ Promise.all([
 
         <NuxtLink
           :to="{ name: 'leaderboard' }"
-          class="inline-flex items-center gap-1.5 text-content-300 hover:text-content-100"
+          class="
+            inline-flex items-center gap-1.5 text-content-300
+            hover:text-content-100
+          "
           active-class="!text-content-100"
         >
           <UIcon
@@ -61,12 +69,22 @@ Promise.all([
         </AppSwitchLanguageDropdown>
       </div>
 
-      <div class="mx-auto flex flex-col items-center justify-center gap-8 md:w-1/2 2xl:w-1/3">
+      <div
+        class="
+          mx-auto flex flex-col items-center justify-center gap-8
+          md:w-1/2
+          2xl:w-1/3
+        "
+      >
         <UiHeading>
           <UiSpriteSymbol
             name="logo"
             viewBox="0 0 162 124"
-            class="w-24 text-white xl:w-28 2xl:w-32"
+            class="
+              w-24 text-white
+              xl:w-28
+              2xl:w-32
+            "
           />
         </UiHeading>
 
@@ -78,7 +96,10 @@ Promise.all([
           >
             <template #link>
               <a
-                class="text-link hover:text-link-hover"
+                class="
+                  text-link
+                  hover:text-link-hover
+                "
                 href="https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord"
                 target="_blank"
               >
@@ -90,7 +111,11 @@ Promise.all([
           <p>{{ $t('homePage.description') }}</p>
 
           <iframe
-            class="mx-auto block aspect-video w-full rounded-lg lg:w-3/4 xl:w-2/3"
+            class="
+              mx-auto block aspect-video w-full rounded-lg
+              lg:w-3/4
+              xl:w-2/3
+            "
             src="https://www.youtube-nocookie.com/embed/MQnW_j6s1Jw"
             title="YouTube video player"
             frameborder="0"

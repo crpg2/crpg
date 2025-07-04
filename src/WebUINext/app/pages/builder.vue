@@ -22,6 +22,10 @@ import {
   wppForLevel,
 } from '~/services/character-service'
 
+definePageMeta({
+  skipAuth: true,
+})
+
 const { t } = useI18n()
 
 const route = useRoute('builder')
@@ -142,7 +146,12 @@ const onShare = () => {
 
 <template>
   <UContainer>
-    <div class="mx-auto max-w-4xl py-8 md:py-16">
+    <div
+      class="
+        mx-auto max-w-4xl py-8
+        md:py-16
+      "
+    >
       <h1 class="mb-14 text-center text-xl text-content-100">
         {{ $t('builder.title') }}
       </h1>
@@ -261,7 +270,12 @@ const onShare = () => {
           </CharacterStats>
         </div>
 
-        <div class="sticky bottom-0 left-0 flex w-full items-center justify-center gap-2 bg-bg-main/10 py-4 backdrop-blur-sm">
+        <div
+          class="
+            sticky bottom-0 left-0 flex w-full items-center justify-center gap-2 bg-bg-main/10 py-4
+            backdrop-blur-sm
+          "
+        >
           <UButton
             variant="outline"
             color="secondary"
