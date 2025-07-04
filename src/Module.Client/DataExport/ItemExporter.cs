@@ -175,6 +175,8 @@ internal class ItemExporter : IDataExporter
             {
                 ItemObject.ItemTypeEnum.Shield => ItemObject.ItemTypeEnum.Bow,
                 ItemObject.ItemTypeEnum.HandArmor => ItemObject.ItemTypeEnum.Animal,
+                ItemObject.ItemTypeEnum.Musket => ItemObject.ItemTypeEnum.Crossbow,
+                ItemObject.ItemTypeEnum.Pistol => ItemObject.ItemTypeEnum.Crossbow,
                 _ => mbItem.Type,
             };
 

@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { argbIntToRgbHexColor } from '~/utils/color'
+
 defineProps<{
-  color: string
+  color: number
 }>()
 </script>
 
@@ -11,7 +13,7 @@ defineProps<{
     :style="{
       'color': '#fff',
       '--fa-primary-opacity': 0.15,
-      '--fa-secondary-color': color,
+      '--fa-secondary-color': argbIntToRgbHexColor(color),
     }"
   />
 </template>

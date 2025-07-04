@@ -11,7 +11,6 @@ import { getCharacters } from '~/services/characters-service'
 import {
   buyUserItem,
   getUser,
-  getUserClan,
   getUserItems,
   getUserRestriction,
 } from '~/services/users-service'
@@ -56,6 +55,8 @@ export const useUserStore = defineStore('user', () => {
     )
   })
 
+  const hasUnreadNotifications = computed(() => Boolean(user.value?.unreadNotificationsCount))
+
   const { state: restriction, execute: fetchUserRestriction } = useAsyncState(() => getUserRestriction(), null, { resetOnExecute: false, immediate: false })
 
   const subtractGold = (loss: number) => {
@@ -73,16 +74,14 @@ export const useUserStore = defineStore('user', () => {
     subtractGold(userItem.item.price)
   })
 
-  const { state: userClan, execute: fetchUserClanAndRole } = useAsyncState(() => getUserClan(), {
-    clan: null,
-    role: null,
-  }, { resetOnExecute: false, immediate: false })
-
   return {
     user,
     fetchUser,
     isRecentUser,
     subtractGold,
+
+    clan: toRef(() => user.value?.clanMembership?.clan || null),
+    clanMemberRole: toRef(() => user.value?.clanMembership?.role || null),
 
     characters,
     fetchCharacters,
@@ -99,10 +98,6 @@ export const useUserStore = defineStore('user', () => {
     restriction,
     fetchUserRestriction,
 
-    clan: toRef(() => userClan.value.clan),
-    clanMemberRole: toRef(() => userClan.value.role),
-
-    userClan,
-    fetchUserClanAndRole,
+    hasUnreadNotifications,
   }
 })

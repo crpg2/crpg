@@ -2,13 +2,16 @@ import type { GameMode } from '~/models/game-mode'
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
-export interface Character {
+export interface CharacterPublic {
   id: number
   name: string
   level: number
+  class: CharacterClass
+}
+
+export interface Character extends CharacterPublic {
   generation: number
   experience: number
-  class: CharacterClass
   forTournament: boolean
 }
 
@@ -96,9 +99,16 @@ export interface CharacterSpeedStats {
   timeToMaxSpeed: number
   perceivedWeight: number
   maxWeaponLength: number
-
   weightReductionFactor: number
   movementSpeedPenaltyWhenAttacking: number
+}
+
+export interface CharacterMountSpeedStats {
+  speedReduction: number
+  mountAcceleration: number
+  effectiveSpeed: number
+  weightImpactOnSpeed: number
+  loadPercentage: number
 }
 
 export interface UpdateCharacterRequest {
@@ -127,6 +137,8 @@ export interface CharacterOverallItemsStats {
   mountArmor: number
   longestWeaponLength: number
   averageRepairCostByHour: number
+  mountSpeedBase: number
+  mountHarnessWeight: number
 }
 
 export enum CharacterArmorOverallKey {

@@ -22,7 +22,7 @@ public class ActivityLogsController : BaseController
     /// <response code="400">Bad Request.</response>
     [Authorize(Policy = ModeratorPolicy)]
     [HttpGet]
-    public async Task<ActionResult<Result<IList<ActivityLogViewModel>>>> GetActivityLogs(
+    public async Task<ActionResult<Result<ActivityLogWithDictViewModel>>> GetActivityLogs(
         [FromQuery] DateTime from,
         [FromQuery] DateTime to,
         [FromQuery(Name = "userId[]")] int[]? userIds,

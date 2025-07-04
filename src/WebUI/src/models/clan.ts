@@ -9,21 +9,15 @@ export interface Clan {
   region: Region
   bannerKey: string
   description: string
-  primaryColor: string
+  primaryColor: number
+  secondaryColor: number
   languages: Language[]
   armoryTimeout: number
-  secondaryColor: string
   discord: string | null
 }
 
-// TODO: rename
-export interface ClanEdition extends Omit<Clan, 'primaryColor' | 'secondaryColor'> {
-  primaryColor: number
-  secondaryColor: number
-}
-
-export interface ClanWithMemberCount<T> {
-  clan: T
+export interface ClanWithMemberCount {
+  clan: Clan
   memberCount: number
 }
 

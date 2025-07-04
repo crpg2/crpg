@@ -62,7 +62,8 @@ public class FileItemsSourceTest
         List<string> errors = new();
         foreach (var item in items)
         {
-            if (item.Tier > 13.1)
+            // Only worry about tier if item is not disabled
+            if (item.Tier > 13.1 && !item.BaseId.Contains("disabled"))
             {
                 errors.Add(item.Id);
             }
@@ -95,7 +96,8 @@ public class FileItemsSourceTest
         var items = (await new FileItemsSource().LoadItems())
             .Select(i => i.Id)
             .ToHashSet();
-        string GetFilePath([CallerFilePath] string path = "")
+
+        static string GetFilePath([CallerFilePath] string path = "")
         {
             return path;
         }
@@ -155,9 +157,9 @@ public class FileItemsSourceTest
                 }
             }
 
-            //uncomment to automatically replace with suggestions
-            //charactersDoc.Save(charactersFilePath);
-            //dtvCharactersDoc.Save(dtvCharactersFilePath);
+            // uncomment to automatically replace with suggestions
+            // charactersDoc.Save(charactersFilePath);
+            // dtvCharactersDoc.Save(dtvCharactersFilePath);
         });
     }
 }

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Crpg.Application.Clans.Models;
+﻿using Crpg.Application.Clans.Models;
 using Crpg.Application.Common.Mappings;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Users;
@@ -22,10 +21,5 @@ public record UserPrivateViewModel : IMapFrom<User>
     public bool IsDonor { get; set; }
     public string Note { get; init; } = string.Empty;
     public int? ActiveCharacterId { get; init; }
-    public ClanPublicViewModel? Clan { get; init; }
-    public void Mapping(Profile profile)
-    {
-        profile.CreateMap<User, UserPrivateViewModel>()
-            .ForMember(u => u.Clan, opt => opt.MapFrom(c => c.ClanMembership != null ? c.ClanMembership.Clan! : null));
-    }
+    public UserClanViewModel? ClanMembership { get; init; }
 }

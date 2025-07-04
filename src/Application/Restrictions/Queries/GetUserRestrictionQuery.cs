@@ -39,7 +39,6 @@ public record GetUserRestrictionQuery : IMediatorRequest<RestrictionPublicViewMo
                     : null)
                 .FirstOrDefaultAsync(cancellationToken);
 
-
             if (lastJoinOrAllRestriction != null && _dateTime.UtcNow >= (lastJoinOrAllRestriction.CreatedAt + lastJoinOrAllRestriction.Duration))
             {
                 return new(default(RestrictionPublicViewModel));

@@ -1,4 +1,4 @@
-import { useIntervalFn } from '@vueuse/core'
+import { useIntervalFn, useToggle } from '@vueuse/core'
 
 import type {
   Party,
@@ -11,6 +11,7 @@ import { PartyStatus } from '~/models/strategus/party'
 import { getUpdate, updatePartyStatus } from '~/services/strategus-service'
 
 // Shared state
+// TODO: FIXME: refactoring
 // TODO: https://vueuse.org/shared/createGlobalState/
 const party = ref<Party | null>(null)
 
@@ -18,15 +19,15 @@ const party = ref<Party | null>(null)
 const INTERVAL = 10000 // TODO:
 
 export const useParty = () => {
-  const isRegistered = ref<boolean>(true)
+  const [isRegistered, toggleRegistered] = useToggle(true)
   const visibleParties = ref<PartyCommon[]>([])
 
   const updateParty = async () => {
     const res = await getUpdate()
 
-    // Not registered to Strategus.
+    // TODO: Not registered to Strategus.
     if (res?.errors !== null) {
-      isRegistered.value = false
+      toggleRegistered(false)
       return
     }
 
@@ -38,7 +39,7 @@ export const useParty = () => {
     visibleParties.value = res.data.visibleParties
   }
 
-  const { resume: startUpdatePartyInterval } = useIntervalFn(() => updateParty(), INTERVAL, {
+  const { resume: startUpdatePartyInterval } = useIntervalFn(updateParty, INTERVAL, {
     immediate: false,
   })
 
@@ -71,28 +72,26 @@ export const useParty = () => {
   )
 
   const onRegistered = () => {
-    isRegistered.value = true
+    toggleRegistered(true)
     partySpawn()
   }
 
   const partySpawn = async () => {
     await updateParty()
-
     if (party.value === null) { return }
-
     startUpdatePartyInterval()
   }
 
   return {
     isRegistered,
-    isTogglingRecruitTroops,
 
+    party,
     moveParty,
     onRegistered,
-    party,
     partySpawn,
 
     toggleRecruitTroops,
+    isTogglingRecruitTroops,
 
     updateParty,
     visibleParties,

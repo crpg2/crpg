@@ -1,5 +1,7 @@
 using Crpg.Module.Common;
+using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.Commander;
+using Crpg.Module.Common.FriendlyFireReport;
 using Crpg.Module.Common.TeamSelect;
 using Crpg.Module.Modes.Warmup;
 using Crpg.Module.Notifications;
@@ -19,6 +21,7 @@ using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.Dtv;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
+using Crpg.Module.GUI.AmmoQuiverChange;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
@@ -68,6 +71,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
             new SpectatorHudUiHandler(),
             new WarmupHudUiHandler(),
             new DtvHudUiHandler(),
+            new AmmoQuiverChangeUiHandler(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -114,6 +118,8 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
                 new MultiplayerMissionAgentVisualSpawnComponent(), // expose method to spawn an agent
                 new CrpgCommanderBehaviorClient(),
+                new AmmoQuiverChangeBehaviorClient(),
+                new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
 #endif
                 dtvClient,
                 new MultiplayerTimerComponent(), // round timer
@@ -125,6 +131,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new MissionBoundaryCrossingHandler(), // kills agent out of mission boundaries
                 new MultiplayerPollComponent(), // poll logic to kick player, ban player, change game
                 new CrpgCommanderPollComponent(),
+                new AmmoQuiverChangeComponent(),
                 new MissionOptionsComponent(),
                 new CrpgScoreboardComponent(new CrpgBattleScoreboardData()),
                 new MissionAgentPanicHandler(),
@@ -149,6 +156,7 @@ internal class CrpgDtvGameMode : MissionBasedMultiplayerGameMode
                 new DrowningBehavior(),
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
                 new CrpgCommanderBehaviorServer(),
+                new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),

@@ -1,5 +1,7 @@
 using Crpg.Module.Common;
+using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Common.Commander;
+using Crpg.Module.Common.FriendlyFireReport;
 using Crpg.Module.Common.HotConstants;
 using Crpg.Module.Common.TeamSelect;
 using Crpg.Module.Modes.Skirmish;
@@ -18,6 +20,7 @@ using Crpg.Module.Common.ChatCommands;
 using TaleWorlds.MountAndBlade.Multiplayer.GauntletUI.Mission;
 using TaleWorlds.MountAndBlade.View.MissionViews.Order;
 using Crpg.Module.GUI;
+using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.EndOfRound;
 using Crpg.Module.GUI.HudExtension;
@@ -89,6 +92,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
             new MissionAgentContourControllerView(),
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             new CrpgHudExtensionHandler(),
+            new AmmoQuiverChangeUiHandler(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -144,6 +148,8 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
                     new MultiplayerMissionAgentVisualSpawnComponent(), // expose method to spawn an agent
                     new CrpgCommanderBehaviorClient(),
+                    new AmmoQuiverChangeBehaviorClient(),
+                    new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
 #endif
                     battleClient,
                     new MultiplayerTimerComponent(), // round timer
@@ -155,6 +161,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new MissionBoundaryCrossingHandler(), // kills agent out of mission boundaries
                     new MultiplayerPollComponent(), // poll logic to kick player, ban player, change game
                     new CrpgCommanderPollComponent(),
+                    new AmmoQuiverChangeComponent(),
                     new MissionOptionsComponent(),
                     new CrpgScoreboardComponent(_gameType switch
                             {
@@ -197,6 +204,7 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new BreakableWeaponsBehaviorServer(),
                     new CrpgCustomTeamBannersAndNamesServer(roundController),
                     new CrpgCommanderBehaviorServer(),
+                    new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
 #else
                     new MultiplayerRoundComponent(),
                     new MultiplayerAchievementComponent(),

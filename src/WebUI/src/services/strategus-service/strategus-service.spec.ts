@@ -3,12 +3,7 @@ import { mockGet, mockPost, mockPut } from 'vi-fetch'
 import { response } from '~/__mocks__/crpg-client'
 import { PartyStatus } from '~/models/strategus/party'
 
-import { getSettlements, getUpdate, registerUser, updatePartyStatus } from './index'
-
-it('getSettlements', async () => {
-  mockGet('/settlements').willResolve(response('ok'))
-  expect(await getSettlements()).toEqual('ok')
-})
+import { getUpdate, registerUser, updatePartyStatus } from './index'
 
 it('registerUser', async () => {
   mockPost('/parties').willResolve(response('ok'))

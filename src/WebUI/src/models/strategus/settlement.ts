@@ -1,5 +1,9 @@
 import type { Point } from 'geojson'
 
+import type { Culture } from '~/models/culture'
+import type { Item } from '~/models/item'
+import type { UserPublic } from '~/models/user'
+
 export enum SettlementType {
   Village = 'Village',
   Castle = 'Castle',
@@ -9,9 +13,16 @@ export enum SettlementType {
 export interface SettlementPublic {
   id: number
   name: string
+  type: SettlementType
+  culture: Culture
+  position: Point
   scene: string
   region: string
-  culture: string
-  position: Point
-  type: SettlementType
+  troops: number
+  owner: UserPublic | null
+}
+
+export interface SettlementItem {
+  item: Item
+  count: number
 }

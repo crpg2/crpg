@@ -30,14 +30,14 @@ const { isLastMember, loadClanMembers } = useClanMembers()
 
 const { execute: onUpdateClan, loading: updatingClan } = useAsyncCallback(async (form: Omit<Clan, 'id'>) => {
   const clan = await updateClan(clanId.value, { ...form, id: clanId.value })
-  await userStore.fetchUserClanAndRole()
+  await userStore.fetchUser() // update clan info
   notify(t('clan.update.notify.success'))
   router.replace({ name: 'ClansId', params: { id: clan.id } })
 })
 
 const { execute: onDeleteClan, loading: deletingClan } = useAsyncCallback(async () => {
   await kickClanMember(clanId.value, userStore.user!.id) // delete yourself from the clan as the only member === delete the clan
-  userStore.fetchUserClanAndRole()
+  userStore.fetchUser() // update clan info
   notify(t('clan.delete.notify.success'))
   return router.replace({ name: 'Clans' })
 })

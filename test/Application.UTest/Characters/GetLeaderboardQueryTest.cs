@@ -468,7 +468,7 @@ public class GetLeaderboardQueryTest : TestBase
         Assert.That(result.Errors, Is.Null);
         Assert.That(result.Data, Is.Not.Null);
         Assert.That(result.Data!.First().Class, Is.EqualTo(CharacterClass.Infantry));
-        Assert.That(result.Data!.First().User.Clan!.Name, Is.EqualTo("Orle Clan"));
+        Assert.That(result.Data!.First().User.ClanMembership!.Clan.Name, Is.EqualTo("Orle Clan"));
     }
 
     [Test]
@@ -681,7 +681,7 @@ public class GetLeaderboardQueryTest : TestBase
 
         Assert.That(result.Data!.First().Id, Is.EqualTo(orleCharacter1.Id));
 
-        cache.TryGetValue("leaderboard", out IList<Application.Characters.Models.CharacterPublicViewModel>? resultFromCache);
+        cache.TryGetValue("leaderboard", out IList<Application.Characters.Models.CharacterPublicCompetitiveViewModel>? resultFromCache);
 
         Assert.That(resultFromCache?.First().Id, Is.EqualTo(orleCharacter1.Id));
     }

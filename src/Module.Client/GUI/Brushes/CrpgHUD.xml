@@ -102,4 +102,37 @@
     </Styles>
   </Brush>
 
+  <Brush Name="CrpgHUD.Dtv.HealthBarBrush.Healthy">
+    <Layers>
+      <BrushLayer Name="EmptyFill" Sprite="BlankWhiteSquare" ColorFactor="1" Color="#404040FF" />
+      <BrushLayer Name="DefaultFill" Sprite="BlankWhiteSquare" ColorFactor="1" Color="#44FF44FF" /> <!-- Green -->
+      <BrushLayer Name="ChangeFill" Sprite="BlankWhiteSquare" ColorFactor="1" Color="#FFAAAAFF" />
+    </Layers>
+    <Styles>
+      <Style Name="Default" />
+    </Styles>
+  </Brush>
+
+  <Brush Name="CrpgHUD.Dtv.HealthBarBrush.Injured">
+    <Layers>
+      <BrushLayer Name="EmptyFill" Sprite="BlankWhiteSquare" ColorFactor="1" Color="#404040FF" />
+      <BrushLayer Name="DefaultFill" Sprite="BlankWhiteSquare" ColorFactor="1" Color="#FFAA00FF" /> <!-- Orange -->
+      <BrushLayer Name="ChangeFill" Sprite="BlankWhiteSquare" ColorFactor="1" Color="#FFAAAAFF" />
+    </Layers>
+    <Styles>
+      <Style Name="Default" />
+    </Styles>
+  </Brush>
+
+  <Brush Name="CrpgHUD.Dtv.HealthBarBrush.Critical">
+    <Layers>
+      <BrushLayer Name="EmptyFill" Sprite="BlankWhiteSquare" ColorFactor="1" Color="#404040FF" />
+      <BrushLayer Name="DefaultFill" Sprite="BlankWhiteSquare" ColorFactor="1" Color="#FF2222FF" /> <!-- Red -->
+      <BrushLayer Name="ChangeFill" Sprite="BlankWhiteSquare" ColorFactor="1" Color="#FFAAAAFF" />
+    </Layers>
+    <Styles>
+      <Style Name="Default" />
+    </Styles>
+  </Brush>
+
 </Brushes>

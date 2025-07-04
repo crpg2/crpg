@@ -1,4 +1,5 @@
 ﻿using Crpg.Module.Common;
+using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Notifications;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
@@ -11,6 +12,7 @@ using Crpg.Module.Common.ChatCommands;
 using Crpg.Module.Rewards;
 #else
 using Crpg.Module.GUI;
+using Crpg.Module.GUI.AmmoQuiverChange;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
@@ -59,6 +61,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
             ViewCreator.CreateMissionBoundaryCrossingView(),
+            new AmmoQuiverChangeUiHandler(),
             new MissionBoundaryWallView(),
             new MissionItemContourControllerView(),
             new MissionAgentContourControllerView(),
@@ -92,6 +95,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
 #if CRPG_CLIENT
                     new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
                     new MultiplayerMissionAgentVisualSpawnComponent(), // expose method to spawn an agent
+                    new AmmoQuiverChangeBehaviorClient(),
 #endif
                     duelClient,
                     new MultiplayerTimerComponent(), // round timer
@@ -103,6 +107,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
                     new MissionBoundaryPlacer(), // set walkable boundaries
                     new MissionBoundaryCrossingHandler(), // kills agent out of mission boundaries
                     new MultiplayerPollComponent(), // poll logic to kick player, ban player, change game
+                    new AmmoQuiverChangeComponent(),
                     new MissionOptionsComponent(),
                     new CrpgScoreboardComponent(new CrpgDuelScoreboardData()), // score board
                     new MultiplayerPreloadHelper(),

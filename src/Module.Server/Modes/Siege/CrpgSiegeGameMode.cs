@@ -1,4 +1,5 @@
 using Crpg.Module.Common;
+using Crpg.Module.Common.AmmoQuiverChange;
 using Crpg.Module.Modes.Warmup;
 using Crpg.Module.Notifications;
 using Crpg.Module.Rewards;
@@ -13,6 +14,7 @@ using Crpg.Module.Api;
 using Crpg.Module.Common.ChatCommands;
 #else
 using Crpg.Module.GUI;
+using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.HudExtension;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
@@ -59,6 +61,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
             new MissionAgentContourControllerView(),
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             new CrpgHudExtensionHandler(),
+            new AmmoQuiverChangeUiHandler(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             ViewCreator.CreateOptionsUIHandler(),
             ViewCreator.CreateMissionMainAgentEquipDropView(mission),
@@ -98,6 +101,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
 #if CRPG_CLIENT
                 new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
                 new MultiplayerMissionAgentVisualSpawnComponent(),
+                new AmmoQuiverChangeBehaviorClient(),
 #endif
                 warmupComponent,
                 siegeClient,
@@ -110,6 +114,7 @@ internal class CrpgSiegeGameMode : MissionBasedMultiplayerGameMode
                 new MultiplayerPollComponent(),
                 new MultiplayerAdminComponent(),
                 notificationsComponent,
+                new AmmoQuiverChangeComponent(),
                 new MissionOptionsComponent(),
                 scoreboardComponent,
                 new MissionAgentPanicHandler(),

@@ -26,6 +26,7 @@ import {
   required,
   url,
 } from '~/services/validators-service'
+import { argbIntToRgbHexColor, rgbHexColorToArgbInt } from '~/utils/color'
 import { daysToMs, parseTimestamp } from '~/utils/date'
 
 const props = withDefaults(
@@ -41,9 +42,9 @@ const props = withDefaults(
       discord: null,
       languages: [],
       name: '',
-      primaryColor: '#000000',
+      primaryColor: rgbHexColorToArgbInt('#000000'),
       region: Region.Eu,
-      secondaryColor: '#000000',
+      secondaryColor: rgbHexColorToArgbInt('#000000'),
       tag: '',
     }),
   },
@@ -87,6 +88,24 @@ const $v = useVuelidate(
   },
   clanFormModel,
 )
+
+const primaryColorModel = computed({
+  get() {
+    return argbIntToRgbHexColor(clanFormModel.value.primaryColor)
+  },
+  set(value) {
+    clanFormModel.value.primaryColor = rgbHexColorToArgbInt(value)
+  },
+})
+
+const secondaryColorModel = computed({
+  get() {
+    return argbIntToRgbHexColor(clanFormModel.value.secondaryColor)
+  },
+  set(value) {
+    clanFormModel.value.secondaryColor = rgbHexColorToArgbInt(value)
+  },
+})
 
 const onSubmit = async () => {
   if (!(await $v.value.$validate())) {
@@ -272,10 +291,10 @@ const onSubmit = async () => {
             horizontal
           >
             <div class="text-content-100">
-              {{ clanFormModel.primaryColor }}
+              {{ primaryColorModel }}
             </div>
             <OInput
-              v-model="clanFormModel.primaryColor"
+              v-model="primaryColorModel"
               type="color"
               data-aq-clan-form-input="primaryColor"
             />
@@ -287,10 +306,10 @@ const onSubmit = async () => {
             horizontal
           >
             <div class="text-content-100">
-              {{ clanFormModel.secondaryColor }}
+              {{ secondaryColorModel }}
             </div>
             <OInput
-              v-model="clanFormModel.secondaryColor"
+              v-model="secondaryColorModel"
               type="color"
               data-aq-clan-form-input="secondaryColor"
             />

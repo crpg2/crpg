@@ -117,34 +117,26 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
                 if (weapon.CurrentUsageItem.WeaponFlags.HasAnyFlag(WeaponFlags.BonusAgainstShield))
                 {
                     // this bonus is on top of the native x2 in MissionCombatMechanicsHelper
-                    // so the final bonus is 4.0 for one- and two- handed axes and 3.0 for everything else. We do this instead of nerfing the impact of shield skill so shield can stay virtually unbreakable against sword.
+                    // so the final bonus is 5.0 for one- and two- handed axes and 3.5 for everything else. We do this instead of nerfing the impact of shield skill so shield can stay virtually unbreakable against sword.
                     // it is the same logic as arrows not dealing a lot of damage to horse but spears dealing extra damage to horses
                     // As we want archer to fear cavs and cavs to fear spears, we want swords to fear shielders and shielders to fear axes.
 
-                    finalDamage *= axeClass.Contains(weapon.CurrentUsageItem.WeaponClass) ? 2.0f : 1.5f;
+                    finalDamage *= axeClass.Contains(weapon.CurrentUsageItem.WeaponClass) ? 2.5f : 1.75f;
                 }
             }
         }
 
-        // We want to decrease survivability of horses against melee weapon and especially against spears and pikes.
-        // By doing that we ensure that cavalry stays an archer predator while punishing cav errors like running into a wall or an obstacle
-        if (!attackInformation.IsVictimAgentHuman
-            && !attackInformation.DoesAttackerHaveMountAgent
-            && !weapon.CurrentUsageItem.IsConsumable
-            && weapon.CurrentUsageItem.IsMeleeWeapon
-            && !weapon.IsAnyConsumable())
+        // Horse HP and eHP is currently good. To adjust their performance, adjust global melee damage and global non-mounted ranged damage. Mounted ranged damage is not increase to help cavalry attack HA
+        if (!attackInformation.IsVictimAgentHuman && weapon.CurrentUsageItem.IsMeleeWeapon)
         {
-            if (
-                collisionData.StrikeType == (int)StrikeType.Thrust
-                && collisionData.DamageType == (int)DamageTypes.Pierce
-                && weapon.CurrentUsageItem.IsPolearm)
-            {
-                finalDamage *= 1.85f;
-            }
-            else
-            {
-                finalDamage *= 1.4f;
-            }
+            finalDamage *= 1.4f;
+        }
+
+        if (!attackInformation.IsVictimAgentHuman
+            && weapon.CurrentUsageItem.IsRangedWeapon
+            && !attackInformation.DoesAttackerHaveMountAgent)
+        {
+            finalDamage *= 1.3f;
         }
 
         // For bashes (with and without shield) - Not for allies cause teamdmg might reduce the "finalDamage" below zero. That will break teamhits with bashes.
@@ -156,6 +148,11 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         if (attackInformation.DoesAttackerHaveMountAgent && attackInformation.IsAttackerAgentDoingPassiveAttack)
         {
             finalDamage *= 0.23f; // Decrease damage from couched lance.
+        }
+
+        if (IsSwashbuckler(weapon, collisionData, attackInformation.AttackerAgent))
+        {
+            finalDamage *= 1.10f;
         }
 
         return finalDamage;
@@ -396,6 +393,24 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         return randomNumber / 10f < Math.Pow(attackerPower / defenderDefendPower / 2.5f, 1.8f) * 100f;
     }
 
+    // MissionCombatMechanicsHelper.cs/DecideMountRearedByBlow
+    public override bool DecideMountRearedByBlow(
+        Agent attackerAgent,
+        Agent victimAgent,
+        in AttackCollisionData collisionData,
+        WeaponComponentData attackerWeapon,
+        in Blow blow)
+    {
+        // Only allow if damage type is Pierce
+        if (blow.DamageType != DamageTypes.Pierce)
+        {
+            return false;
+        }
+
+        // Call the original/base logic (which evolves with TW updates)
+        return base.DecideMountRearedByBlow(attackerAgent, victimAgent, in collisionData, attackerWeapon, in blow);
+    }
+
     private int GetSkillValue(IAgentOriginBase agentOrigin, SkillObject skill)
     {
         if (agentOrigin is CrpgBattleAgentOrigin crpgOrigin)
@@ -446,6 +461,74 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
         }
 
         return false;
+    }
+
+    private bool IsSwashbuckler(MissionWeapon weapon, AttackCollisionData collisionData, Agent attackerAgent)
+    {
+        if (weapon.CurrentUsageItem.WeaponClass != WeaponClass.OneHandedSword
+            || collisionData.StrikeType == (int)StrikeType.Thrust
+            || collisionData.DamageType != (int)DamageTypes.Cut)
+        {
+            return false;
+        }
+
+        bool hasRangedWeapon = false;
+        bool hasShield = false;
+
+        var offhandItem = attackerAgent.Equipment[EquipmentIndex.Weapon2];
+        if (offhandItem.Item?.PrimaryWeapon?.IsShield == true)
+        {
+            hasShield = true;
+        }
+
+        for (int i = 0; i < (int)EquipmentIndex.NumAllWeaponSlots; i++)
+        {
+            var equipmentElement = attackerAgent.Equipment[i];
+            var item = equipmentElement.Item;
+            if (item == null)
+            {
+                continue;
+            }
+
+            var usage = item.PrimaryWeapon;
+            if (usage == null)
+            {
+                continue;
+            }
+
+            if (!hasRangedWeapon)
+            {
+                bool isAmmoEmpty = equipmentElement.Amount == 0 && usage.IsConsumable;
+                bool hasAlternateThrowable = false;
+
+                for (int j = 0; j < item.WeaponComponent?.Weapons?.Count; j++)
+                {
+                    var altUsage = item.WeaponComponent.Weapons[j];
+                    if (altUsage != usage && altUsage.IsConsumable && altUsage.IsRangedWeapon)
+                    {
+                        hasAlternateThrowable = true;
+                        break;
+                    }
+                }
+
+                if ((usage.IsRangedWeapon && !isAmmoEmpty) || hasAlternateThrowable)
+                {
+                    hasRangedWeapon = true;
+                }
+            }
+
+            if (!hasShield && usage.IsShield)
+            {
+                hasShield = true;
+            }
+
+            if (hasShield || hasRangedWeapon)
+            {
+                break;
+            }
+        }
+
+        return !attackerAgent.HasMount && !hasShield && !hasRangedWeapon;
     }
 
     private int GetGloveArmor(IAgentOriginBase agentOrigin)

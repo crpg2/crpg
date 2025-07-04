@@ -11,7 +11,7 @@ const animatedUserGold = useTransition(toRef(() => userStore.user!.gold))
 </script>
 
 <template>
-  <div class="gap flex items-center gap-3">
+  <div class="flex items-center gap-3">
     <!-- TODO: improve tooltip, share heirloom, bla bla bla -->
     <Coin
       v-tooltip.bottom="$t('user.field.gold')"
@@ -28,9 +28,7 @@ const animatedUserGold = useTransition(toRef(() => userStore.user!.gold))
     <Divider inline />
 
     <UserMedia
-      :user="mapUserToUserPublic(userStore.user!, userStore.clan)"
-      :clan="userStore.clan"
-      :clan-role="userStore.clanMemberRole"
+      :user="mapUserToUserPublic(userStore.user!)"
       hidden-platform
       size="xl"
     />
@@ -39,12 +37,18 @@ const animatedUserGold = useTransition(toRef(() => userStore.user!.gold))
 
     <VDropdown placement="bottom-end">
       <template #default="{ shown }">
-        <OButton
-          :variant="shown ? 'transparent-active' : 'transparent'"
-          size="sm"
-          rounded
-          icon-left="dots"
-        />
+        <OButton :variant="shown ? 'transparent-active' : 'transparent'" size="sm" rounded>
+          <FontAwesomeLayers full-width class="fa-2x">
+            <FontAwesomeIcon :icon="['crpg', 'dots']" />
+            <FontAwesomeLayersText
+              v-if="userStore.hasUnreadNotifications"
+              counter
+              value="●"
+              position="top-right"
+              :style="{ '--fa-counter-background-color': 'rgba(83, 188, 150, 1)' }"
+            />
+          </FontAwesomeLayers>
+        </OButton>
       </template>
 
       <template #popper="{ hide }">
@@ -61,6 +65,20 @@ const animatedUserGold = useTransition(toRef(() => userStore.user!.gold))
             {{ $t('setting.language') }} | {{ locale.toUpperCase() }}
           </DropdownItem>
         </SwitchLanguageDropdown>
+
+        <DropdownItem tag="RouterLink" :to="{ name: 'Notifications' }" @click="hide">
+          <FontAwesomeLayers full-width class="fa-sm">
+            <FontAwesomeIcon :icon="['crpg', 'carillon']" />
+            <FontAwesomeLayersText
+              v-if="userStore.hasUnreadNotifications"
+              counter
+              value="●"
+              position="top-right"
+              :style="{ '--fa-counter-background-color': 'rgba(83, 188, 150, 1)' }"
+            />
+          </FontAwesomeLayers>
+          <div>{{ $t('setting.notifications') }}</div>
+        </DropdownItem>
 
         <DropdownItem
           tag="RouterLink"

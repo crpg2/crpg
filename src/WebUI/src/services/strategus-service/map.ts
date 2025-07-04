@@ -14,6 +14,7 @@ export const shouldDisplaySettlement = (
     return false
   }
 
+  //   TODO: to constant
   return (
     zoom > 4
     || (zoom > 3 && settlement.type === SettlementType.Castle)

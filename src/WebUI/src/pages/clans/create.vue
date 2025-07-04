@@ -20,7 +20,7 @@ const router = useRouter()
 
 const { execute: onCreateClan, loading: creatingClan } = useAsyncCallback(async (form: Omit<Clan, 'id'>) => {
   const clan = await createClan(form)
-  await userStore.fetchUserClanAndRole()
+  await userStore.fetchUser()
   notify(t('clan.create.notify.success'))
   return router.replace({ name: 'ClansId', params: { id: clan.id } })
 })

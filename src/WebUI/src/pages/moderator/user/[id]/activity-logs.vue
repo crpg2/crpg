@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Sort, useSort } from '~/composables/use-sort'
 import { ActivityLogType } from '~/models/activity-logs'
-import { getActivityLogsWithUsers } from '~/services/activity-logs-service'
+import { getActivityLogs } from '~/services/activity-logs-service'
 import { moderationUserKey } from '~/symbols/moderator'
 
 const props = defineProps<{ id: string }>()
@@ -85,7 +85,7 @@ const additionalUsers = computed({
       },
     })
 
-    fetchActivityLogsWithUsers()
+    fetchActivityLogs()
   },
 })
 
@@ -100,18 +100,25 @@ const removeAdditionalUser = (userId: number) => {
 const { sort, toggleSort } = useSort('createdAt')
 
 const {
-  execute: fetchActivityLogsWithUsers,
-  isLoading: isLoadingActivityLogsWithUsers,
-  state: activityLogsWithUsers,
+  state: activityLogs,
+  execute: fetchActivityLogs,
+  isLoading: isLoadingActivityLogs,
 } = useAsyncState(
   () =>
-    getActivityLogsWithUsers({
+    getActivityLogs({
       from: from.value,
       to: to.value,
       type: types.value,
       userId: [Number(props.id), ...additionalUsers.value.map(Number)],
     }),
-  { logs: [], users: {} },
+  {
+    activityLogs: [],
+    dict: {
+      users: [],
+      characters: [],
+      clans: [],
+    },
+  },
   {
     immediate: false,
     resetOnExecute: false,
@@ -119,14 +126,14 @@ const {
 )
 
 const sortedActivityLogs = computed(() =>
-  [...activityLogsWithUsers.value.logs].sort((a, b) =>
+  [...activityLogs.value.activityLogs].sort((a, b) =>
     sort.value === Sort.ASC
       ? a.createdAt.getTime() - b.createdAt.getTime()
       : b.createdAt.getTime() - a.createdAt.getTime(),
   ),
 )
 
-await fetchActivityLogsWithUsers()
+fetchActivityLogs()
 </script>
 
 <template>
@@ -198,8 +205,8 @@ await fetchActivityLogsWithUsers()
           :label="$t('action.search')"
           expanded
           variant="primary"
-          :loading="isLoadingActivityLogsWithUsers"
-          @click="fetchActivityLogsWithUsers"
+          :loading="isLoadingActivityLogs"
+          @click="fetchActivityLogs"
         />
       </div>
     </OField>
@@ -225,8 +232,8 @@ await fetchActivityLogsWithUsers()
           class="inline-block hover:text-content-100"
         >
           <UserMedia
-            v-if="Number(additionalUserId) in activityLogsWithUsers.users"
-            :user="activityLogsWithUsers.users[Number(additionalUserId)]"
+            v-if="activityLogs.dict.users.find(user => user.id === additionalUserId)"
+            :user="activityLogs.dict.users.find(user => user.id === additionalUserId)!"
           />
         </RouterLink>
       </div>
@@ -282,8 +289,7 @@ await fetchActivityLogsWithUsers()
     </div>
 
     <OLoading
-      v-if="isLoadingActivityLogsWithUsers"
-      :full-page="false"
+      v-if="isLoadingActivityLogs" :full-page="false"
       active
       icon-size="xl"
     />
@@ -298,9 +304,11 @@ await fetchActivityLogsWithUsers()
         :activity-log="activityLog"
         :is-self-user="activityLog.userId === user!.id"
         :user="
-          activityLog.userId === user!.id ? user! : activityLogsWithUsers.users[activityLog.userId]
+          activityLog.userId === user!.id
+            ? user!
+            : activityLogs.dict.users.find(user => user.id === activityLog.userId)!
         "
-        :users="activityLogsWithUsers.users"
+        :dict="activityLogs.dict"
         @add-user="addAdditionalUser"
         @add-type="addType"
       />
