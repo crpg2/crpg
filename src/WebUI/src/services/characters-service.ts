@@ -456,6 +456,20 @@ export function computeMountSpeedStats(
   }
 }
 
+export function computeWeaponLengthMountPenalty(
+  weaponLength: number,
+  strength: number,
+): number {
+  if (!weaponLength || !strength) {
+    return 1 // No penalty
+  }
+
+  const maxLength = 22 + (strength - 3) * 7.5 + (Math.min(strength - 3, 24) * 0.115) ** 7.75
+  const ratio = Math.min(maxLength / weaponLength, 1)
+  const penaltyFactor = 0.8 + 0.2 * ratio
+  return penaltyFactor // 1 = no penalty, <1 = reduction
+}
+
 export const getCharacterItems = async (characterId: number) =>
   get<EquippedItem[]>(`/users/self/characters/${characterId}/items`)
 
@@ -770,18 +784,4 @@ export const validateItemNotMeetRequirement = (
   characterCharacteristics: CharacterCharacteristics,
 ) => {
   return item.requirement > characterCharacteristics.attributes.strength
-}
-export function computeWeaponLengthMountPenalty(
-    weaponLength: number,
-    strength: number
-): number {
-    if (!weaponLength || !strength) return 1 // No penalty
-
-    const maxLength =
-        22 + (strength - 3) * 7.5 + Math.pow(Math.min(strength - 3, 24) * 0.115, 7.75)
-
-    const ratio = Math.min(maxLength / weaponLength, 1)
-    const penaltyFactor = 0.8 + 0.2 * ratio
-
-    return penaltyFactor // 1 = no penalty, <1 = reduction
 }
