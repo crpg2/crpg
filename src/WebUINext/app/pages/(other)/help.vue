@@ -5,7 +5,6 @@ import type { RouteNamedMap } from 'vue-router/auto-routes'
 const { t } = useI18n()
 
 definePageMeta({
-  skipAuth: true,
   layoutOptions: {
     bg: 'background-3.webp',
   },

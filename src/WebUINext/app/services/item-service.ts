@@ -206,8 +206,6 @@ export const getAvailableSlotsByItem = (
   item: Item,
   equippedItems: EquippedItemsBySlot,
 ): { slots: ItemSlot[], warning: string | null } => {
-  const { t } = useI18n()
-
   // family type: compatibility with mount and mountHarness
   if (
     item.type === ItemType.MountHarness
@@ -236,7 +234,7 @@ export const getAvailableSlotsByItem = (
     || (item.type === ItemType.Mount
       && Object.values(equippedItems).some(item => isLargeShield(item.item)))
   ) {
-    return { slots: [], warning: t('character.inventory.item.cantUseOnHorseback.notify.warning') }
+    return { slots: [], warning: 'character.inventory.item.cantUseOnHorseback.notify.warning' }
   }
 
   // Family type: compatibility with EBA BodyArmor and EBA LegArmor
@@ -257,7 +255,7 @@ export const getAvailableSlotsByItem = (
       && item.armor!.familyType !== equippedItems[ItemSlot.Body].item.armor!.familyType
     )
   ) {
-    return { slots: [], warning: t('character.inventory.item.EBAArmorCompatible.notify.warning') }
+    return { slots: [], warning: 'character.inventory.item.EBAArmorCompatible.notify.warning' }
   }
 
   return { slots: itemSlotsByType[item.type] || [], warning: null }

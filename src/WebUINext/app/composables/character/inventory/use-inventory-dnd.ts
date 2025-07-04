@@ -17,6 +17,7 @@ const toSlot = ref<ItemSlot | null>(null)
 export const useInventoryDnD = (equippedItemsBySlot: MaybeRefOrGetter<EquippedItemsBySlot>) => {
   const [dragging, toggleDragging] = useToggle()
   const toast = useToast()
+  const { t } = useI18n()
 
   const { updateCharacterItems } = useCharacterItems()
 
@@ -34,7 +35,7 @@ export const useInventoryDnD = (equippedItemsBySlot: MaybeRefOrGetter<EquippedIt
 
     if (warning) {
       toast.add({
-        title: warning,
+        title: t(warning),
         color: 'warning',
         close: false,
       })

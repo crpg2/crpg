@@ -8,6 +8,7 @@ import { getAvailableSlotsByItem, isWeaponBySlot } from '~/services/item-service
 
 export const useInventoryQuickEquip = (equippedItemsBySlot: MaybeRefOrGetter<EquippedItemsBySlot>) => {
   const toast = useToast()
+  const { t } = useI18n()
   const { updateCharacterItems } = useCharacterItems()
   const { getUnEquipItemsLinked, isEquipItemAllowed } = useInventoryEquipment()
 
@@ -24,7 +25,7 @@ export const useInventoryQuickEquip = (equippedItemsBySlot: MaybeRefOrGetter<Equ
 
     if (warning) {
       toast.add({
-        title: warning,
+        title: t(warning),
         color: 'warning',
         close: false,
       })

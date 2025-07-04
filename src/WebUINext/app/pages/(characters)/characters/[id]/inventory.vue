@@ -13,7 +13,6 @@ import { useInventoryQuickEquip } from '~/composables/character/inventory/use-in
 import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems } from '~/composables/character/use-character-items'
-import { useClanMembers } from '~/composables/clan/use-clan-members'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
 import {
@@ -223,7 +222,7 @@ const compareItemsResult = computed(() => {
         ).map(extractItem),
     ),
   )
-    .filter(group => group.items.length >= 2) // there is no point in comparing 1 item;
+    .filter(group => group.items.length >= 2) // there is no point in comparing 1 item
     .map(group => ({
       compareResult: getCompareItemsResult(
         group.items,
@@ -264,7 +263,7 @@ fetchPageData()
 const hideInArmoryItemsModel = useStorage<boolean>('character-inventory-in-armory-items', true)
 const additionalFilteritems = computed<DropdownMenuItem[]>(() => [
   {
-    label: t('character.inventory.filter.showInArmory'),
+    label: t('character.inventory.filter.hideInArmory'),
     type: 'checkbox' as const,
     icon: 'crpg:armory',
     checked: hideInArmoryItemsModel.value,
@@ -307,7 +306,7 @@ const items = computed(() => {
               :ui="{ base: 'bg-[#53bc96]' }"
             >
               <UButton
-                variant="subtle"
+                variant="outline"
                 color="neutral"
                 size="xl"
                 icon="crpg:dots"
@@ -489,14 +488,3 @@ const items = computed(() => {
     </ItemDetailGroup>
   </div>
 </template>
-
-<style lang="css">
-.inventoryGrid {
-  grid-template-areas:
-    '...... sort'
-    'filter items'
-    'filter footer';
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr auto;
-}
-</style>

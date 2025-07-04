@@ -22,19 +22,8 @@ const from = useRouteQuery(
   now(getLocalTimeZone()).subtract({ minutes: 5 }).toString(), // Show logs for the last 5 minutes by default
   {
     transform: {
-      set: (value: ZonedDateTime) => {
-        // TODO: FIXME:
-        console.log('setsetsetsetsetsetsetsetset', value)
-        return value.toString()
-      },
-      get: (value) => {
-        // if (!value) {
-        //   return now(getLocalTimeZone()).subtract({ minutes: 5 })
-        // }
-        // TODO: FIXME:
-        console.log('getgetgetgetgetgetgetgetget', value)
-        return parseZonedDateTime(value, 'compatible')
-      },
+      set: (value: ZonedDateTime) => value.toString(),
+      get: value => parseZonedDateTime(value, 'compatible'),
     },
   },
 )
@@ -109,7 +98,6 @@ watchEffect(() => {
 
 <template>
   <div class="mx-auto max-w-3xl space-y-4 pb-8">
-    {{ from }}
     <div class="flex justify-between gap-4">
       <UButtonGroup>
         <USelectMenu
