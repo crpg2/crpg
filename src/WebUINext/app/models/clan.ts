@@ -22,7 +22,7 @@ export interface Clan {
   secondaryColor: number
   languages: Language[]
   armoryTimeout: string // TODO: contribute convert date-span format to number type
-  discord?: string | null // TODO: remove ?
+  discord: string | null
 }
 
 export interface ClanPublic
@@ -53,7 +53,7 @@ export const CLAN_INVITATION_TYPE = {
   Offer: 'Offer',
 } as const satisfies Record<_ClanInvitationType, _ClanInvitationType>
 
-export type ClanInvitationType = ValueOf<typeof CLAN_MEMBER_ROLE>
+export type ClanInvitationType = ValueOf<typeof CLAN_INVITATION_TYPE>
 
 export const CLAN_INVITATION_STATUS = {
   Pending: 'Pending',

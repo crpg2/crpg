@@ -49,8 +49,6 @@ export type ActivityLogWithDictViewModelResultWritable = {
 
 export type AddItemToClanArmoryCommand = {
     userItemId: number;
-    userId: number;
-    clanId: number;
 };
 
 export type AddSettlementItemCommand = {
@@ -275,8 +273,6 @@ export type CharacterCharacteristicsViewModelResultWritable = {
 
 export type CharacterClass = 'Peasant' | 'Infantry' | 'ShockInfantry' | 'Skirmisher' | 'Crossbowman' | 'Archer' | 'Cavalry' | 'MountedArcher';
 
-export type CharacterClassNullable = 'Peasant' | 'Infantry' | 'ShockInfantry' | 'Skirmisher' | 'Crossbowman' | 'Archer' | 'Cavalry' | 'MountedArcher' | null;
-
 export type CharacterLimitationsViewModel = {
     lastRespecializeAt: Date;
 };
@@ -496,7 +492,7 @@ export type ClanViewModel = {
     bannerKey: string;
     region: Region;
     languages: Array<Languages>;
-    discord?: string | null;
+    discord: string | null;
     armoryTimeout: string;
 };
 
@@ -575,7 +571,6 @@ export type CoordinateSequenceFactory = {
 };
 
 export type CreateClanCommand = {
-    userId: number;
     tag: string;
     name: string;
     description: string;
@@ -584,7 +579,7 @@ export type CreateClanCommand = {
     bannerKey: string;
     region: Region;
     languages: Array<Languages>;
-    discord?: string | null;
+    discord: string | null;
     armoryTimeout: string;
 };
 
@@ -733,8 +728,6 @@ export type GameModeCharacterStatisticsViewModelDictionaryResultWritable = {
         CRPGCaptain: CharacterStatisticsViewModel;
     } | null;
 };
-
-export type GameModeNullable = 'CRPGBattle' | 'CRPGConquest' | 'CRPGDTV' | 'CRPGDuel' | 'CRPGSiege' | 'CRPGTeamDeathmatch' | 'CRPGSkirmish' | 'CRPGUnknownGameMode' | 'CRPGCaptain' | null;
 
 export type GameRepairedItem = {
     itemId: string;
@@ -921,8 +914,6 @@ export type GeometryOverlay = {
 };
 
 export type InviteClanMemberCommand = {
-    userId: number;
-    clanId: number;
     inviteeId: number;
 };
 
@@ -984,7 +975,7 @@ export type ItemViewModel = {
     rank: number;
     requirement: number;
     weight: number;
-    flags: ItemFlags;
+    flags: Array<ItemFlags>;
     createdAt: Date;
     armor: ItemArmorComponentViewModel;
     mount: ItemMountComponentViewModel;
@@ -1011,7 +1002,7 @@ export type ItemWeaponComponentViewModel = {
     balance: number;
     handling: number;
     bodyArmor: number;
-    flags: WeaponFlags;
+    flags: Array<WeaponFlags>;
     thrustDamage: number;
     thrustDamageType: DamageType;
     thrustSpeed: number;
@@ -1352,12 +1343,7 @@ export type RefundItemCommand = {
 
 export type Region = 'Eu' | 'Na' | 'As' | 'Oc';
 
-export type RegionNullable = 'Eu' | 'Na' | 'As' | 'Oc' | null;
-
 export type RespondClanInvitationCommand = {
-    userId: number;
-    clanId: number;
-    clanInvitationId: number;
     accept: boolean;
 };
 
@@ -1379,7 +1365,6 @@ export type RestrictCommand = {
     type: RestrictionType;
     reason: string;
     publicReason: string;
-    restrictedByUserId: number;
 };
 
 export type RestrictionPublicViewModel = {
@@ -1430,16 +1415,11 @@ export type RestrictionViewModelResultWritable = {
 };
 
 export type RewardCharacterCommand = {
-    characterId: number;
-    userId: number;
-    actorUserId: number;
     experience: number;
     autoRetire: boolean;
 };
 
 export type RewardUserCommand = {
-    userId: number;
-    actorUserId: number;
     gold: number;
     heirloomPoints: number;
     itemId: string;
@@ -1575,8 +1555,6 @@ export type UpdateCharacterItemsCommand = {
 };
 
 export type UpdateClanCommand = {
-    userId: number;
-    clanId: number;
     tag: string;
     name: string;
     description: string;
@@ -1585,14 +1563,11 @@ export type UpdateClanCommand = {
     bannerKey: string;
     region: Region;
     languages: Array<Languages>;
-    discord?: string | null;
+    discord: string | null;
     armoryTimeout: string;
 };
 
 export type UpdateClanMemberCommand = {
-    userId: number;
-    clanId: number;
-    memberId: number;
     role: ClanMemberRole;
 };
 
@@ -1657,7 +1632,6 @@ export type UpdateUserCommand = {
 };
 
 export type UpdateUserNoteCommand = {
-    userId: number;
     note: string;
 };
 
@@ -1750,13 +1724,13 @@ export type UserPrivateViewModel = {
     experienceMultiplier: number;
     platformUserId: string;
     name: string;
-    avatar?: string | null;
+    avatar: string | null;
     region: Region;
     updatedAt: Date;
     createdAt: Date;
     isDonor: boolean;
     note: string;
-    activeCharacterId?: number | null;
+    activeCharacterId: number | null;
     clanMembership: UserClanViewModel;
 };
 
@@ -1792,7 +1766,7 @@ export type UserPublicViewModel = {
     platform: Platform;
     platformUserId: string;
     name: string;
-    avatar?: string | null;
+    avatar: string | null;
     region: Region;
     clanMembership: UserClanViewModel;
 };
@@ -1808,8 +1782,8 @@ export type UserViewModel = {
     role: Role;
     region: Region;
     isDonor: boolean;
-    avatar?: string | null;
-    activeCharacterId?: number | null;
+    avatar: string | null;
+    activeCharacterId: number | null;
     unreadNotificationsCount: number;
     clanMembership: UserClanViewModel;
 };
@@ -2861,9 +2835,9 @@ export type GetLeaderboardLeaderboardData = {
     body?: never;
     path?: never;
     query: {
-        region: RegionNullable;
-        characterClass: CharacterClassNullable;
-        gameMode: GameModeNullable;
+        region: Region;
+        characterClass: CharacterClass;
+        gameMode: GameMode;
     };
     url: '/Leaderboard/leaderboard';
 };
@@ -4396,5 +4370,5 @@ export type DeleteUsersSelfNotificationsDeleteAllResponses = {
 export type DeleteUsersSelfNotificationsDeleteAllResponse = DeleteUsersSelfNotificationsDeleteAllResponses[keyof DeleteUsersSelfNotificationsDeleteAllResponses];
 
 export type ClientOptions = {
-    baseURL: `${string}://${string}` | (string & {});
+    baseURL: 'https://localhost:8000' | (string & {});
 };

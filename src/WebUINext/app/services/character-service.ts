@@ -17,7 +17,6 @@ import {
   putUsersSelfCharactersByIdRespecialize,
   putUsersSelfCharactersByIdRetire,
   putUsersSelfCharactersByIdTournament,
-
 } from '#hey-api/sdk.gen'
 import {
   attributePointsPerLevel,

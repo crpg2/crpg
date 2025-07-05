@@ -15,13 +15,13 @@ export interface User {
   platformUserId: string
   name: string
   gold: number
-  avatar?: string | null // TODO: remove ?
+  avatar: string | null
   region: Region
   isDonor: boolean
   role: Role
   heirloomPoints: number
   experienceMultiplier: number
-  activeCharacterId?: number | null // TODO: remove ?
+  activeCharacterId: number | null
   unreadNotificationsCount: number
   clanMembership: UserClanMembership | null
 }

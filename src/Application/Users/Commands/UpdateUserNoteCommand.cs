@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -11,6 +12,7 @@ namespace Crpg.Application.Users.Commands;
 
 public record UpdateUserNoteCommand : IMediatorRequest<UserPrivateViewModel>
 {
+    [JsonIgnore]
     public int UserId { get; init; }
     public string Note { get; init; } = default!;
 

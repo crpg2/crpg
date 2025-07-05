@@ -10,28 +10,6 @@ import { useCharacterItemsProvider } from '~/composables/character/use-character
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePollInterval } from '~/composables/utils/use-poll-interval'
 import { updateCharacterItems as _updateCharacterItems, createEmptyCharacteristic, getCharacterCharacteristics, getCharacterItems } from '~/services/character-service'
-// import type { CharacterCharacteristics, CharacterOverallItemsStats } from '~/models/character'
-// import { usePollInterval } from '~/composables/use-poll-interval'
-// import { useWelcome } from '~/composables/use-welcome'
-// import {
-//   computeHealthPoints,
-//   computeLongestWeaponLength,
-//   computeOverallArmor,
-//   computeOverallAverageRepairCostByHour,
-//   computeOverallPrice,
-//   computeOverallWeight,
-//   createDefaultCharacteristic,
-//   getCharacterCharacteristics,
-//   getCharacterItems,
-// } from '~/services/characters-service'
-// import { useUserStore } from '~/stores/user'
-import {
-// characterCharacteristicsKey,
-// characterHealthPointsKey,
-// characterItemsKey,
-// characterItemsStatsKey,
-// characterKey,
-} from '~/symbols/character'
 
 definePageMeta({
   middleware: [

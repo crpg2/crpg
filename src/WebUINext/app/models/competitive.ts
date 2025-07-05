@@ -1,9 +1,12 @@
 import type { ValueOf } from 'type-fest'
 
-import type { CharacterPublic, CharacterStatistics } from '~/models/character'
+import type { CharacterClass, CharacterStatistics } from '~/models/character'
 import type { UserPublic } from '~/models/user'
 
-export interface CharacterCompetitive extends CharacterPublic {
+export interface CharacterCompetitive {
+  id: number
+  level: number
+  class: CharacterClass
   statistics: CharacterStatistics[]
   user: UserPublic
 }

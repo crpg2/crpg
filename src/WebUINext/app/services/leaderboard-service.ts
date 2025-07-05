@@ -1,17 +1,16 @@
-import {
-  getLeaderboardLeaderboard,
-} from '#hey-api/sdk.gen'
+import { getLeaderboardLeaderboard } from '#hey-api/sdk.gen'
 import { inRange } from 'es-toolkit'
 
 import type { CharacterClass } from '~/models/character'
 import type {
   CharacterCompetitiveNumbered,
   Rank,
+  RankGroup,
 } from '~/models/competitive'
 import type { GameMode } from '~/models/game-mode'
 import type { Region } from '~/models/region'
 
-import { RankGroup } from '~/models/competitive'
+import { RANK_GROUP } from '~/models/competitive'
 import { getEntries } from '~/utils/object'
 
 export const getLeaderBoard = async ({
@@ -26,29 +25,27 @@ export const getLeaderBoard = async ({
   const { data } = await getLeaderboardLeaderboard({
     composable: '$fetch',
     query: {
-      // TODO: FIXME: fix schema
       region: region!,
       gameMode: gameMode!,
       characterClass: characterClass!,
     },
   })
 
-  // TODO: FIXME:
-  return data!.map((cr, idx) => ({
-    ...cr,
+  return data!.map((item, idx) => ({
+    ...item,
     position: idx + 1,
   }))
 }
 
 const rankColors: Record<RankGroup, string> = {
-  [RankGroup.Iron]: '#A19D94',
-  [RankGroup.Copper]: '#B87333',
-  [RankGroup.Bronze]: '#CC6633',
-  [RankGroup.Silver]: '#C7CCCA',
-  [RankGroup.Gold]: '#EABC40',
-  [RankGroup.Platinum]: '#40A7B9',
-  [RankGroup.Diamond]: '#C289F5',
-  [RankGroup.Champion]: '#B73E6C',
+  [RANK_GROUP.Iron]: '#A19D94',
+  [RANK_GROUP.Copper]: '#B87333',
+  [RANK_GROUP.Bronze]: '#CC6633',
+  [RANK_GROUP.Silver]: '#C7CCCA',
+  [RANK_GROUP.Gold]: '#EABC40',
+  [RANK_GROUP.Platinum]: '#40A7B9',
+  [RANK_GROUP.Diamond]: '#C289F5',
+  [RANK_GROUP.Champion]: '#B73E6C',
 }
 
 const step = 50

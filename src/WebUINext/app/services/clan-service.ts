@@ -23,36 +23,37 @@ import type {
   ClanInvitationStatus,
   ClanInvitationType,
   ClanMember,
+  ClanMemberRole,
   ClanUpdate,
   ClanWithMemberCount,
 } from '~/models/clan'
 import type { UserItem } from '~/models/user'
 
-import { ClanMemberRole } from '~/models/clan'
+import { CLAN_MEMBER_ROLE } from '~/models/clan'
 
-export const getClans = async (): Promise<ClanWithMemberCount[]> => {
-  const { data } = await _getClans({ composable: '$fetch' })
-  return data!
-}
+export const getClans = async (): Promise<ClanWithMemberCount[]> => (await _getClans({ composable: '$fetch' })).data!
 
 export const createClan = (
   clan: ClanUpdate,
-): Promise<Clan> => postClans({ composable: '$fetch', body: clan })
+) => postClans({
+  composable: '$fetch',
+  // @ts-expect-error TODO:FIXME:
+  body: clan,
+})
 
 export const updateClan = (
   clanId: number,
   clan: ClanUpdate,
-): Promise<Clan> => putClansByClanId({ composable: '$fetch', path: { clanId }, body: clan })
+) => putClansByClanId({
+  composable: '$fetch',
+  path: { clanId },
+  // @ts-expect-error TODO:FIXME:
+  body: clan,
+})
 
-export const getClan = async (id: number): Promise<Clan> => {
-  const { data } = await getClansById({ composable: '$fetch', path: { id } })
-  return data
-}
+export const getClan = async (id: number): Promise<Clan> => (await getClansById({ composable: '$fetch', path: { id } })).data
 
-export const getClanMembers = async (id: number): Promise<ClanMember[]> => {
-  const { data } = await getClansByIdMembers({ composable: '$fetch', path: { id } })
-  return data!
-}
+export const getClanMembers = async (id: number): Promise<ClanMember[]> => (await getClansByIdMembers({ composable: '$fetch', path: { id } })).data!
 
 export const updateClanMember = (
   clanId: number,
@@ -68,17 +69,13 @@ export const kickClanMember = (
 export const inviteToClan = (
   clanId: number,
   inviteeId: number,
-) =>
-  postClansByClanIdInvitations({ composable: '$fetch', path: { clanId }, body: { inviteeId } })
+) => postClansByClanIdInvitations({ composable: '$fetch', path: { clanId }, body: { inviteeId } })
 
 export const getClanInvitations = async (
   clanId: number,
   types: ClanInvitationType[],
   statuses: ClanInvitationStatus[],
-): Promise<ClanInvitation[]> => {
-  const { data } = await getClansByClanIdInvitations({ composable: '$fetch', path: { clanId }, query: { 'status[]': statuses, 'type[]': types } })
-  return data!
-}
+): Promise<ClanInvitation[]> => (await getClansByClanIdInvitations({ composable: '$fetch', path: { clanId }, query: { 'status[]': statuses, 'type[]': types } })).data!
 
 export const respondToClanInvitation = (
   clanId: number,
@@ -87,13 +84,13 @@ export const respondToClanInvitation = (
 ) => putClansByClanIdInvitationsByInvitationIdResponse({ composable: '$fetch', path: { clanId, invitationId }, body: { accept } })
 
 export const canManageApplicationsValidate = (role: ClanMemberRole) =>
-  [ClanMemberRole.Leader, ClanMemberRole.Officer].includes(role)
+  ([CLAN_MEMBER_ROLE.Leader, CLAN_MEMBER_ROLE.Officer] as ClanMemberRole[]).includes(role)
 
 export const canUpdateClanValidate = (role: ClanMemberRole) =>
-  [ClanMemberRole.Leader].includes(role)
+  ([CLAN_MEMBER_ROLE.Leader] as ClanMemberRole[]).includes(role)
 
 export const canUpdateMemberValidate = (role: ClanMemberRole) =>
-  [ClanMemberRole.Leader].includes(role)
+  ([CLAN_MEMBER_ROLE.Leader] as ClanMemberRole[]).includes(role)
 
 export const canKickMemberValidate = (
   selfMember: ClanMember,
@@ -102,22 +99,19 @@ export const canKickMemberValidate = (
 ) => {
   if (
     member.user.id === selfMember.user.id
-    && (member.role !== ClanMemberRole.Leader || clanMembersCount === 1)
+    && (member.role !== CLAN_MEMBER_ROLE.Leader || clanMembersCount === 1)
   ) {
     return true
   }
 
   return (
-    (selfMember.role === ClanMemberRole.Leader
-      && [ClanMemberRole.Officer, ClanMemberRole.Member].includes(member.role))
-    || (selfMember.role === ClanMemberRole.Officer && member.role === ClanMemberRole.Member)
+    (selfMember.role === CLAN_MEMBER_ROLE.Leader
+      && ([CLAN_MEMBER_ROLE.Officer, CLAN_MEMBER_ROLE.Member] as ClanMemberRole[]).includes(member.role))
+    || (selfMember.role === CLAN_MEMBER_ROLE.Officer && member.role === CLAN_MEMBER_ROLE.Member)
   )
 }
 
-export const getClanArmory = async (clanId: number): Promise<ClanArmoryItem[]> => {
-  const { data } = await getClansByClanIdArmory({ composable: '$fetch', path: { clanId } })
-  return data!
-}
+export const getClanArmory = async (clanId: number): Promise<ClanArmoryItem[]> => (await getClansByClanIdArmory({ composable: '$fetch', path: { clanId } })).data!
 
 export const addItemToClanArmory = (
   clanId: number,

@@ -315,6 +315,8 @@ static void ConfigureSwagger(SwaggerGenOptions options)
     options.SchemaFilter<RequireAllPropertiesSchemaFilter>();
     options.SchemaFilter<ResultSchemaFilter>();
     options.SchemaFilter<FlagsEnumSchemaFilter>();
+    options.SchemaFilter<ItemFlagsSchemaFilter>();
+    options.SchemaFilter<WeaponFlagsSchemaFilter>();
 }
 
 static void ConfigureSteamAuthentication(SteamAuthenticationOptions options, IConfiguration configuration)
