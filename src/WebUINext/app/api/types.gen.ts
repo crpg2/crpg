@@ -935,7 +935,7 @@ export type ItemArmorComponentViewModel = {
     familyType: number;
 };
 
-export type ItemFlags = 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384 | 32768 | 65536 | 131072 | 262144 | 524288 | 1048576 | 2097152 | 4194304 | 8388608 | 16777216 | 33554432;
+export type ItemFlags = 'ForceAttachOffHandPrimaryItemBone' | 'ForceAttachOffHandSecondaryItemBone' | 'NotUsableByFemale' | 'NotUsableByMale' | 'DropOnWeaponChange' | 'DropOnAnyAction' | 'CannotBePickedUp' | 'CanBePickedUpFromCorpse' | 'QuickFadeOut' | 'WoodenAttack' | 'WoodenParry' | 'HeldInOffHand' | 'HasToBeHeldUp' | 'UseTeamColor' | 'Civilian' | 'DoNotScaleBodyAccordingToWeaponLength' | 'DoesNotHideChest' | 'NotStackable';
 
 export type ItemMountComponentViewModel = {
     bodyLength: number;
@@ -1150,7 +1150,7 @@ export type NtsGeometryServicesWritable = {
 
 export type OgcGeometryType = 'Point' | 'LineString' | 'Polygon' | 'MultiPoint' | 'MultiLineString' | 'MultiPolygon' | 'GeometryCollection' | 'CircularString' | 'CompoundCurve' | 'CurvePolygon' | 'MultiCurve' | 'MultiSurface' | 'Curve' | 'Surface' | 'PolyhedralSurface' | 'TIN';
 
-export type Ordinates = 0 | 1 | 2 | 3 | 4 | 7 | 8 | 16 | 32 | 64 | 128 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384 | 32768 | 65535 | 65536 | 65539 | 65543 | 131072 | 262144 | 524288 | 1048576 | 2097152 | 4194304 | 8388608 | 16777216 | 33554432 | 67108864 | 134217728 | 268435456 | 536870912 | 1073741824 | -2147483648 | -65536 | -1;
+export type Ordinates = 'None' | 'Spatial1' | 'Spatial2' | 'XY' | 'Spatial3' | 'XYZ' | 'Spatial4' | 'Spatial5' | 'Spatial6' | 'Spatial7' | 'Spatial8' | 'Spatial9' | 'Spatial10' | 'Spatial11' | 'Spatial12' | 'Spatial13' | 'Spatial14' | 'Spatial15' | 'Spatial16' | 'AllSpatialOrdinates' | 'Measure1' | 'XYM' | 'XYZM' | 'Measure2' | 'Measure3' | 'Measure4' | 'Measure5' | 'Measure6' | 'Measure7' | 'Measure8' | 'Measure9' | 'Measure10' | 'Measure11' | 'Measure12' | 'Measure13' | 'Measure14' | 'Measure15' | 'Measure16' | 'AllMeasureOrdinates' | 'AllOrdinates';
 
 export type PartyPublicViewModel = {
     id: number;
@@ -1825,7 +1825,7 @@ export type UserViewModelResultWritable = {
 
 export type WeaponClass = 'Undefined' | 'Dagger' | 'OneHandedSword' | 'TwoHandedSword' | 'OneHandedAxe' | 'TwoHandedAxe' | 'Mace' | 'Pick' | 'TwoHandedMace' | 'OneHandedPolearm' | 'TwoHandedPolearm' | 'LowGripPolearm' | 'Arrow' | 'Bolt' | 'Cartridge' | 'Bow' | 'Crossbow' | 'Stone' | 'Boulder' | 'ThrowingAxe' | 'ThrowingKnife' | 'Javelin' | 'Pistol' | 'Musket' | 'SmallShield' | 'LargeShield' | 'Banner';
 
-export type WeaponFlags = 1 | 2 | 4 | 16 | 32 | 64 | 128 | 256 | 512 | 1024 | 3072 | 4096 | 8192 | 16384 | 32768 | 65536 | 131072 | 262144 | 524288 | 2097152 | 4194304 | 8388608 | 16777216 | 33554432 | 67108864 | 134217728 | 268435456 | 536870912 | 1073741824 | 2147483648 | 4294967296 | 68719476736 | 137438953472 | 274877906944;
+export type WeaponFlags = 'MeleeWeapon' | 'RangedWeapon' | 'FirearmAmmo' | 'NotUsableWithOneHand' | 'NotUsableWithTwoHand' | 'WideGrip' | 'AttachAmmoToVisual' | 'Consumable' | 'HasHitPoints' | 'HasString' | 'StringHeldByHand' | 'UnloadWhenSheathed' | 'AffectsArea' | 'AffectsAreaBig' | 'Burning' | 'BonusAgainstShield' | 'CanPenetrateShield' | 'CantReloadOnHorseback' | 'AutoReload' | 'TwoHandIdleOnMount' | 'NoBlood' | 'PenaltyWithShield' | 'CanDismount' | 'CanHook' | 'CanKnockDown' | 'CanCrushThrough' | 'CanBlockRanged' | 'MissileWithPhysics' | 'MultiplePenetration' | 'LeavesTrail' | 'UseHandAsThrowBase' | 'AmmoBreaksOnBounceBack' | 'AmmoCanBreakOnBounceBack' | 'AmmoSticksWhenShot';
 
 export type GetActivityLogsData = {
     body?: never;
