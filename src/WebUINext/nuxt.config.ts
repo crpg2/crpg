@@ -174,8 +174,7 @@ export default defineNuxtConfig({
   heyApi: {
     autoImport: false,
     config: {
-      // TODO: FIXME: input: 'https://localhost:8000/swagger/v1/swagger.json',
-      input: './app/swagger.json',
+      input: 'https://localhost:8000/swagger/v1/swagger.json', // TODO: to env
       output: {
         path: './app/api',
         // clean: false,
@@ -196,7 +195,6 @@ export default defineNuxtConfig({
         {
           name: '@hey-api/sdk',
           transformer: '@hey-api/transformers',
-          asClass: false,
           auth: false,
         },
         {

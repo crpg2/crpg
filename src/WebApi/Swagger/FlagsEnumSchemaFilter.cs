@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 namespace WebApi.Swagger;
 
+// enum: [0, 1, ...] => ["String0", "String1", ...]
 public class FlagsEnumSchemaFilter : ISchemaFilter
 {
     public void Apply(OpenApiSchema schema, SchemaFilterContext context)
@@ -13,9 +14,9 @@ public class FlagsEnumSchemaFilter : ISchemaFilter
         {
             var enumValues = Enum.GetValues(type).Cast<Enum>();
 
-            schema.Type = "integer";
-            schema.Format = "int64";
-            schema.Enum.Clear(); // Убираем вложенные строки
+            schema.Type = "string";
+            schema.Format = string.Empty;
+            schema.Enum.Clear();
 
             var names = new OpenApiArray();
             foreach (var value in enumValues)
@@ -25,7 +26,7 @@ public class FlagsEnumSchemaFilter : ISchemaFilter
                 names.Add(new OpenApiString(value.ToString()));
             }
 
-            schema.Extensions["x-enumNames"] = names;
+            schema.Enum = names;
         }
     }
 }

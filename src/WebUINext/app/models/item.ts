@@ -26,7 +26,7 @@ export interface ItemArmorComponent {
   legArmor: number
   headArmor: number
   bodyArmor: number
-  familyType: ItemFamilyType
+  familyType: ItemFamilyType | number // TODO: to enum on backend
   materialType: ArmorMaterialType
 }
 
@@ -36,7 +36,7 @@ export interface ItemMountComponent {
   hitPoints: number
   bodyLength: number
   chargeDamage: number
-  familyType: ItemFamilyType
+  familyType: ItemFamilyType | number // TODO: to enum on backend
 }
 
 export const WEAPON_CLASS = {
@@ -112,7 +112,7 @@ export const WEAPON_FLAG = {
   AmmoSticksWhenShot: 'AmmoSticksWhenShot',
 } as const satisfies Record<_WeaponFlags, _WeaponFlags>
 
-export type WeaponFlag = ValueOf<typeof WEAPON_CLASS>
+export type WeaponFlag = ValueOf<typeof WEAPON_FLAG>
 
 export const DAMAGE_TYPE = {
   Undefined: 'Undefined',
@@ -133,11 +133,9 @@ export interface ItemWeaponComponent {
   stackAmount: number
   thrustSpeed: number
   swingDamage: number
-
-  itemUsage: ItemUsage
+  itemUsage: ItemUsage | string
   missileSpeed: number
   flags: WeaponFlag[]
-
   thrustDamage: number
   swingDamageType: DamageType
   thrustDamageType: DamageType
@@ -202,6 +200,7 @@ export const ITEM_TYPE = {
 export type ItemType = ValueOf<typeof ITEM_TYPE>
 
 export const ITEM_USAGE = {
+  LongBow: 'long_bow',
   Bow: 'bow',
   Crossbow: 'crossbow',
   CrossbowLight: 'crossbow_light',

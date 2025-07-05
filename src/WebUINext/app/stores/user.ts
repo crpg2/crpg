@@ -3,9 +3,6 @@ import {
   newUserStartingCharacterLevel,
 } from '~root/data/constants.json'
 
-// import type { Character } from '~/models/character'
-// import type { UserItem } from '~/models/user'
-// import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { getCharacters } from '~/services/character-service'
 import {
   buyUserItem,

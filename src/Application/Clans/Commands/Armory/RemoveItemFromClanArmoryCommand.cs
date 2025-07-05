@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -10,9 +11,13 @@ namespace Crpg.Application.Clans.Commands.Armory;
 
 public record RemoveItemFromClanArmoryCommand : IMediatorRequest
 {
-    public int UserItemId { get; init; }
+    [JsonIgnore]
     public int UserId { get; init; }
+
+    [JsonIgnore]
     public int ClanId { get; init; }
+
+    public int UserItemId { get; init; }
 
     internal class Handler : IMediatorRequestHandler<RemoveItemFromClanArmoryCommand>
     {
