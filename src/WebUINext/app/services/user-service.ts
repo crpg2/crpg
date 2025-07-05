@@ -16,7 +16,6 @@ import {
 } from '#hey-api/sdk.gen'
 import { pick } from 'es-toolkit'
 
-import type { Item } from '~/models/item'
 import type { MetadataDict } from '~/models/metadata'
 import type {
   User,
@@ -29,16 +28,13 @@ import type {
 
 export const getUser = async (): Promise<User> => {
   const { data } = await getUsersSelf({ composable: '$fetch' })
-  return data as unknown as User // TODO: FIXME:
+  return data
 }
 
 export const mapUserToUserPublic = (user: User): UserPublic =>
   pick(user, ['id', 'platform', 'platformUserId', 'name', 'region', 'avatar', 'clanMembership'])
 
-export const deleteUser = () =>
-  deleteUsersSelf({ composable: '$fetch' })
-
-export const extractItem = <T extends { item: Item }>(wrapper: T): Item => wrapper.item
+export const deleteUser = () => deleteUsersSelf({ composable: '$fetch' })
 
 export const getUserItems = async (): Promise<UserItem[]> => {
   const { data } = await getUsersSelfItems({ composable: '$fetch' })

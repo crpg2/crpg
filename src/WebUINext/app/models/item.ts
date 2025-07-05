@@ -193,15 +193,13 @@ export enum ItemFamilyType {
   EBA = 3,
 }
 
-export type ItemRank = 0 | 1 | 2 | 3
-
 export interface Item {
   id: string
   name: string
   tier: number
   price: number
   baseId: string
-  rank: ItemRank
+  rank: number
   type: ItemType
   weight: number
   createdAt: Date

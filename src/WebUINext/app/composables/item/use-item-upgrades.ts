@@ -1,6 +1,5 @@
 import { clamp } from 'es-toolkit'
 
-import type { ItemRank } from '~/models/item'
 import type { AggregationConfig } from '~/services/item-search-service/aggregations'
 
 import { getItemUpgrades, getRelativeEntries } from '~/services/item-service'
@@ -10,7 +9,7 @@ export interface ItemUpgradesOptions {
   item: {
     id: string
     baseId: string
-    rank: ItemRank
+    rank: number
   }
   aggregationConfig: AggregationConfig
 }

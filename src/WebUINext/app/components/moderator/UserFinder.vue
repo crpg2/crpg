@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { SelectItem, TabsItem } from '@nuxt/ui'
 
-import { Platform } from '~/models/platform'
+import type { Platform } from '~/models/platform'
+
+import { PLATFORM } from '~/models/platform'
 import { platformToIcon } from '~/services/platform-service'
 import { getUserById, searchUser } from '~/services/restriction-service'
 
@@ -18,7 +20,7 @@ const activeSearchMode = ref<SearchMode>(SearchMode.Name)
 const searchByNameModel = ref<string>('')
 const searchByIdModel = ref<number | null>(null)
 const searchByPlatformModel = ref<{ platform: Platform, platformUserId: string }>({
-  platform: Platform.Steam,
+  platform: PLATFORM.Steam,
   platformUserId: '',
 })
 
@@ -57,7 +59,7 @@ const searchModeItems = Object.keys(SearchMode).map<TabsItem>(mode => ({
   slot: `${mode}` as const,
 }))
 
-const platformItems = computed(() => Object.values(Platform).map<SelectItem>(p => ({
+const platformItems = computed(() => Object.values(PLATFORM).map<SelectItem>(p => ({
   value: p,
   label: t(`platform.${p}`),
   icon: `crpg:${platformToIcon[p]}`,
@@ -173,7 +175,10 @@ const platformItems = computed(() => Object.values(Platform).map<SelectItem>(p =
         >
           <NuxtLink
             :to="{ name: 'moderator-user-id-restrictions', params: { id: user.id } }"
-            class="inline-block hover:text-content-100"
+            class="
+              inline-block
+              hover:text-content-100
+            "
           >
             <UserMedia :user="user" />
           </NuxtLink>

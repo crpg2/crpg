@@ -13,8 +13,8 @@ import {
 
 import type { Clan } from '~/models/clan'
 
-import { Language } from '~/models/language'
-import { Region } from '~/models/region'
+import { LANGUAGE } from '~/models/language'
+import { REGION } from '~/models/region'
 import {
   clanBannerKeyPattern,
   clanTagPattern,
@@ -36,14 +36,14 @@ const props = withDefaults(
   }>(),
   {
     clan: () => ({
-      armoryTimeout: daysToMs(3),
+      armoryTimeout: String(daysToMs(3)),
       bannerKey: '',
       description: '',
       discord: null,
       languages: [],
       name: '',
       primaryColor: rgbHexColorToArgbInt('#000000'),
-      region: Region.Eu,
+      region: REGION.Eu,
       secondaryColor: rgbHexColorToArgbInt('#000000'),
       tag: '',
     }),
@@ -248,7 +248,7 @@ const onSubmit = async () => {
         <div class="space-y-6">
           <URadioGroup
             v-model="clanFormModel.region"
-            :items="Object.keys(Region).map<RadioGroupItem>((region) => ({
+            :items="Object.values(REGION).map<RadioGroupItem>((region) => ({
               label: $t(`region.${region}`, 0),
               value: region,
             }))"
@@ -259,7 +259,7 @@ const onSubmit = async () => {
             <USelect
               v-model="clanFormModel.languages"
               multiple
-              :items="Object.keys(Language).map<SelectItem>((language) => ({
+              :items="Object.values(LANGUAGE).map<SelectItem>((language) => ({
                 label: `${$t(`language.${language}`)} - ${language}`,
                 value: language,
               }))"
@@ -302,7 +302,10 @@ const onSubmit = async () => {
                 <a
                   href="https://bannerlord.party"
                   target="_blank"
-                  class="hover:text- text-primary"
+                  class="
+                    hover:text-
+                    text-primary
+                  "
                 >
                   bannerlord.party
                 </a>
@@ -438,14 +441,13 @@ const onSubmit = async () => {
           :help="$t('clan.update.form.group.armory.field.armoryTimeout.hint')"
           data-aq-clan-form-field="armoryTimeout"
         >
-          <UInput
-            :model-value="parseTimestamp(clanFormModel.armoryTimeout).days"
+          <UInputNumber
+            :model-value="parseTimestamp(Number(clanFormModel.armoryTimeout)).days"
             :maxlength="clanBannerKeyMaxLength"
             size="sm"
-            class="w-full"
-            type="number"
+            class="w-36"
             data-aq-clan-form-input="armoryTimeout"
-            @update:model-value="(days) => (clanFormModel.armoryTimeout = daysToMs(days))"
+            @update:model-value="(days) => (clanFormModel.armoryTimeout = String(daysToMs(days)))"
           />
         </UFormField>
       </UCard>

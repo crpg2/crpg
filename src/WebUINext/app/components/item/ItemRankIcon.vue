@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import type { ItemRank } from '~/models/item'
-
 import { getRankColor } from '~/services/item-service'
 
-const { rank } = defineProps<{ rank: ItemRank }>()
+const { rank } = defineProps<{ rank: number }>()
 
 const rankColor = computed(() => getRankColor(rank))
 </script>

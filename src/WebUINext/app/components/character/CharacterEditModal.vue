@@ -76,7 +76,6 @@ const [shownConfirmDeleteDialog, toggleConfirmDeleteDialog] = useToggle()
             :maxlength="characterNameMaxLength"
             aria-describedby="character-name-count"
             class="w-full"
-            data-aq-clan-form-input="armoryTimeout"
           >
             <template #trailing>
               <div

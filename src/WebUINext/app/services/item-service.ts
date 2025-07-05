@@ -13,7 +13,7 @@ import {
 import { omitBy } from 'es-toolkit'
 
 import type { EquippedItemsBySlot } from '~/models/character'
-import type { ArmorMaterialType, CompareItemsResult, Item, ItemFlat, ItemRank } from '~/models/item'
+import type { ArmorMaterialType, CompareItemsResult, Item, ItemFlat } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
 import { Culture } from '~/models/culture'
@@ -40,6 +40,8 @@ export const getItems = async (): Promise<Item[]> => {
   const { data } = await _getItems({ composable: '$fetch' })
   return data!
 }
+
+export const extractItem = <T extends { item: Item }>(wrapper: T): Item => wrapper.item
 
 export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 
@@ -739,7 +741,7 @@ export const computeAverageRepairCostPerHour = (price: number) =>
 export const computeBrokenItemRepairCost = (price: number) =>
   Math.floor(price * itemRepairCostPerSecond * brokenItemRepairPenaltySeconds)
 
-export const getRankColor = (rank: ItemRank) => {
+export const getRankColor = (rank: number) => {
   switch (rank) {
     case 1:
       return '#4ade80'
@@ -759,7 +761,7 @@ export const canUpgrade = (type: ItemType) => type !== ItemType.Banner
 
 export const canAddedToClanArmory = (type: ItemType) => type !== ItemType.Banner
 
-export const reforgeCostByRank: Record<ItemRank, number> = {
+export const reforgeCostByRank: Record<number, number> = {
   0: itemReforgeCostPerRank[0] ?? 0,
   1: itemReforgeCostPerRank[1] ?? 0,
   2: itemReforgeCostPerRank[2] ?? 0,

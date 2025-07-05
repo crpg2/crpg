@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TabsItem } from '@nuxt/ui'
 
-import { Platform } from '~/models/platform'
+import { PLATFORM } from '~/models/platform'
 import { platformToIcon } from '~/services/platform-service'
 
 enum PossibleValue {
@@ -45,21 +45,21 @@ const items = ref<TabsItem[]>([
         <template #leading="{ item }">
           <template v-if="item.value === PossibleValue.Other">
             <UIcon
-              :name="`crpg:${platformToIcon[Platform.Steam]}`"
+              :name="`crpg:${platformToIcon[PLATFORM.Steam]}`"
               class="size-6"
             />
             <UIcon
-              :name="`crpg:${platformToIcon[Platform.Microsoft]}`"
+              :name="`crpg:${platformToIcon[PLATFORM.Microsoft]}`"
               class="size-6"
             />
             <UIcon
-              :name="`crpg:${platformToIcon[Platform.EpicGames]}`"
+              :name="`crpg:${platformToIcon[PLATFORM.EpicGames]}`"
               class="size-6"
             />
           </template>
           <UIcon
             v-else
-            :name="`crpg:${platformToIcon[Platform.Steam]}`"
+            :name="`crpg:${platformToIcon[PLATFORM.Steam]}`"
             class="size-6"
           />
         </template>

@@ -2,7 +2,7 @@
 import type { ButtonProps, DropdownMenuItem } from '@nuxt/ui'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { Platform } from '~/models/platform'
+import { PLATFORM } from '~/models/platform'
 import { login } from '~/services/auth-service'
 import { platformToIcon } from '~/services/platform-service'
 import { useUserStore } from '~/stores/user'
@@ -19,7 +19,7 @@ const {
 } = useAsyncCallback(() => login(platform.value))
 
 const items = computed(() =>
-  Object.values(Platform).map(p => ({
+  Object.values(PLATFORM).map(p => ({
     label: t(`platform.${p}`),
     icon: `crpg:${platformToIcon[p]}`,
     type: 'checkbox' as const,

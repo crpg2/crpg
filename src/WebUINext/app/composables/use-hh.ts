@@ -1,6 +1,6 @@
 import { computedWithControl, useLocalStorage } from '@vueuse/core'
 
-import { Region } from '~/models/region'
+import { REGION } from '~/models/region'
 import { getHHEventByRegion, getHHEventRemaining } from '~/services/hh-service'
 import { useUserStore } from '~/stores/user'
 
@@ -15,7 +15,7 @@ export const useHappyHours = () => {
   const source = ref()
   const HHEvent = computedWithControl(
     () => source.value,
-    () => getHHEventByRegion($config.public.HH, userStore.user?.region || Region.Eu),
+    () => getHHEventByRegion($config.public.HH, userStore.user?.region || REGION.Eu),
   )
 
   const HHEventRemaining = computed(() => getHHEventRemaining(HHEvent.value))
