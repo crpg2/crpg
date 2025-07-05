@@ -1,3 +1,6 @@
+import type { ValueOf } from 'type-fest'
+
+import type { ClanMemberRole as _ClanMemberRole } from '~/api'
 import type { Language } from '~/models/language'
 import type { Region } from '~/models/region'
 import type { UserPublic } from '~/models/user'
@@ -14,9 +17,12 @@ export interface Clan {
   primaryColor: number
   secondaryColor: number
   languages: Language[]
-  armoryTimeout: number
-  discord: string | null
+  armoryTimeout: string // TODO: contribute convert date-span format to number type
+  discord?: string | null // TODO: remove ?
 }
+
+export interface ClanPublic
+  extends Pick<Clan, 'id' | 'tag' | 'primaryColor' | 'secondaryColor' | 'name' | 'bannerKey' | 'region' | 'languages'> {}
 
 export type ClanUpdate = Omit<Clan, 'id'>
 
@@ -30,11 +36,13 @@ export interface ClanMember {
   role: ClanMemberRole
 }
 
-export enum ClanMemberRole {
-  Member = 'Member',
-  Officer = 'Officer',
-  Leader = 'Leader',
-}
+export const CLAN_MEMBER_ROLE = {
+  Member: 'Member',
+  Officer: 'Officer',
+  Leader: 'Leader',
+} as const satisfies Record<_ClanMemberRole, _ClanMemberRole>
+
+export type ClanMemberRole = ValueOf<typeof CLAN_MEMBER_ROLE>
 
 export enum ClanInvitationType {
   Request = 'Request',

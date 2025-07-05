@@ -28,8 +28,8 @@ import {
 } from '~/services/clan-service'
 import { getAggregationsConfig } from '~/services/item-search-service'
 import { createItemIndex } from '~/services/item-search-service/indexator'
-import { getCompareItemsResult, getLinkedSlots, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
-import { extractItem, reforgeUserItem, repairUserItem, sellUserItem, upgradeUserItem } from '~/services/user-service'
+import { extractItem, getCompareItemsResult, getLinkedSlots, groupItemsByTypeAndWeaponClass } from '~/services/item-service'
+import { e reforgeUserItem, repairUserItem, sellUserItem, upgradeUserItem } from '~/services/user-service'
 
 const { t } = useI18n()
 const toast = useToast()

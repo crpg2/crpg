@@ -2,7 +2,7 @@ import { createTestingPinia } from '@pinia/testing'
 import { mount } from '@vue/test-utils'
 
 import Login from '~/components/app/Login.vue'
-import { Platform } from '~/models/platform'
+import { PLATFORM } from '~/models/platform'
 import { login } from '~/services/auth-service'
 import { useUserStore } from '~/stores/user'
 
@@ -27,7 +27,7 @@ describe('not logged in', () => {
     expect(wrapper.find('[data-aq-character-link]').exists()).toBeFalsy()
 
     await loginBtn.trigger('click')
-    expect(login).toBeCalledWith(Platform.Steam) // default platform
+    expect(login).toBeCalledWith(PLATFORM.Steam) // default platform
   })
 
   it('should render a few platform items', () => {
@@ -48,7 +48,7 @@ describe('not logged in', () => {
 
     const loginBtn = wrapper.find('[data-aq-login-btn]')
     await loginBtn.trigger('click')
-    expect(login).toBeCalledWith(Platform.EpicGames)
+    expect(login).toBeCalledWith(PLATFORM.EpicGames)
   })
 })
 

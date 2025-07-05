@@ -1,4 +1,6 @@
-import { Region } from '~/models/region'
+import type { Region } from '~/models/region'
+
+import { REGION } from '~/models/region'
 import { useUserStore } from '~/stores/user'
 
 export const useRegionQuery = () => {
@@ -8,7 +10,7 @@ export const useRegionQuery = () => {
 
   const regionModel = computed({
     get() {
-      return (route.query?.region as Region) || user.value?.region || Region.Eu
+      return (route.query?.region as Region) || user.value?.region || REGION.Eu
     },
 
     set(region: Region) {
@@ -21,7 +23,7 @@ export const useRegionQuery = () => {
     },
   })
 
-  const regions = Object.keys(Region)
+  const regions = Object.values(REGION)
 
   return {
     regionModel,

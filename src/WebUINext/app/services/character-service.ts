@@ -58,6 +58,7 @@ import type {
   Character,
   CharacterArmorOverall,
   CharacterCharacteristics,
+  CharacterClass,
   CharacterEarnedData,
   CharacteristicConversion,
   CharacteristicKey,
@@ -73,8 +74,8 @@ import type { Item, ItemArmorComponent } from '~/models/item'
 import type { TimeSeries, TimeSeriesItem } from '~/models/time-series'
 
 import {
+  CHARACTER_CLASS,
   CharacterArmorOverallKey,
-  CharacterClass,
   CharacterEarningType,
 } from '~/models/character'
 import { GameMode } from '~/models/game-mode'
@@ -757,14 +758,14 @@ export const getCharacterSlotsSchema = (): SlotsSchema[][] => [
 export const getCharacterKDARatio = (characterStatistics: CharacterStatistics): number => Math.round((100 * (characterStatistics.kills + characterStatistics.assists)) / (characterStatistics.deaths || 1)) / 100
 
 export const characterClassToIcon: Record<CharacterClass, string> = {
-  [CharacterClass.Archer]: 'item-type-bow',
-  [CharacterClass.Cavalry]: 'char-class-cav',
-  [CharacterClass.Crossbowman]: 'item-type-crossbow',
-  [CharacterClass.Infantry]: 'weapon-class-one-handed-polearm',
-  [CharacterClass.MountedArcher]: 'char-class-ha',
-  [CharacterClass.Peasant]: 'char-class-peasant',
-  [CharacterClass.ShockInfantry]: 'weapon-class-two-handed-axe',
-  [CharacterClass.Skirmisher]: 'weapon-class-throwing-spear',
+  [CHARACTER_CLASS.Archer]: 'item-type-bow',
+  [CHARACTER_CLASS.Cavalry]: 'char-class-cav',
+  [CHARACTER_CLASS.Crossbowman]: 'item-type-crossbow',
+  [CHARACTER_CLASS.Infantry]: 'weapon-class-one-handed-polearm',
+  [CHARACTER_CLASS.MountedArcher]: 'char-class-ha',
+  [CHARACTER_CLASS.Peasant]: 'char-class-peasant',
+  [CHARACTER_CLASS.ShockInfantry]: 'weapon-class-two-handed-axe',
+  [CHARACTER_CLASS.Skirmisher]: 'weapon-class-throwing-spear',
 }
 
 // // TODO: SPEC

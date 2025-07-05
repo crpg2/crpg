@@ -1,3 +1,6 @@
+import type { ValueOf } from 'type-fest'
+
+import type { CharacterClass as _CharacterClass } from '~/api'
 import type { GameMode } from '~/models/game-mode'
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
@@ -15,16 +18,18 @@ export interface Character extends CharacterPublic {
   forTournament: boolean
 }
 
-export enum CharacterClass {
-  Peasant = 'Peasant',
-  Infantry = 'Infantry',
-  ShockInfantry = 'ShockInfantry',
-  Skirmisher = 'Skirmisher',
-  Crossbowman = 'Crossbowman',
-  Archer = 'Archer',
-  Cavalry = 'Cavalry',
-  MountedArcher = 'MountedArcher',
-}
+export const CHARACTER_CLASS = {
+  Peasant: 'Peasant',
+  Infantry: 'Infantry',
+  ShockInfantry: 'ShockInfantry',
+  Skirmisher: 'Skirmisher',
+  Crossbowman: 'Crossbowman',
+  Archer: 'Archer',
+  Cavalry: 'Cavalry',
+  MountedArcher: 'MountedArcher',
+} as const satisfies Record<_CharacterClass, _CharacterClass>
+
+export type CharacterClass = ValueOf<typeof CHARACTER_CLASS>
 
 export interface CharacterAttributes {
   points: number

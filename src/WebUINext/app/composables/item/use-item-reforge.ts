@@ -1,5 +1,3 @@
-import type { ItemRank } from '~/models/item'
-
 import { reforgeCostByRank } from '~/services/item-service'
 import { useUserStore } from '~/stores/user'
 
@@ -8,10 +6,10 @@ export interface ReforgeCost {
   cost: number
 }
 
-export const useItemReforge = (itemRank: ItemRank) => {
+export const useItemReforge = (itemRank: number) => {
   const userStore = useUserStore()
 
-  const reforgeCost = computed(() => reforgeCostByRank[itemRank])
+  const reforgeCost = reforgeCostByRank[itemRank]
 
   const reforgeCostTable = computed(() => Object.entries(reforgeCostByRank)
     .slice(1) // + 0 not needed
@@ -21,7 +19,7 @@ export const useItemReforge = (itemRank: ItemRank) => {
     })))
 
   const validation = computed(() => ({
-    gold: userStore.user!.gold > reforgeCost.value,
+    gold: userStore.user!.gold > (reforgeCost ?? 0),
     rank: itemRank !== 0,
   }))
 

@@ -82,8 +82,8 @@ public class ClansController : BaseController
     [HttpPut("{clanId}")]
     public Task<ActionResult<Result<ClanViewModel>>> UpdateClan([FromRoute] int clanId, [FromBody] UpdateClanCommand clan)
     {
-       clan = clan with { UserId = CurrentUser.User!.Id, ClanId = clanId };
-       return ResultToActionAsync(Mediator.Send(clan));
+        clan = clan with { UserId = CurrentUser.User!.Id, ClanId = clanId };
+        return ResultToActionAsync(Mediator.Send(clan));
     }
 
     /// <summary>

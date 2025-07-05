@@ -29,27 +29,32 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
 </script>
 
 <template>
-  <div
-    class="inline-flex w-auto flex-col space-y-2 rounded-lg bg-base-200 p-4"
-    :class="[isSelfUser ? 'self-start' : 'self-end']"
+  <UCard
+    variant="subtle"
+    :ui="{
+      header: '',
+      body: '',
+    }"
   >
-    <div class="flex items-center gap-2">
-      <NuxtLink :to="{ name: 'moderator-user-id-restrictions', params: { id: user.id } }">
-        <UserMedia :user size="sm" />
-      </NuxtLink>
+    <template #header>
+      <div class="flex items-center gap-2">
+        <NuxtLink :to="{ name: 'moderator-user-id-restrictions', params: { id: user.id } }">
+          <UserMedia :user size="sm" />
+        </NuxtLink>
 
-      <div class="text-2xs text-muted">
-        {{ $d(activityLog.createdAt, 'long') }} ({{ timeAgo }})
+        <div class="text-2xs text-muted">
+          {{ $d(activityLog.createdAt, 'long') }} ({{ timeAgo }})
+        </div>
+
+        <UBadge
+          variant="subtle"
+          size="sm"
+          color="neutral"
+          :label="activityLog.type"
+          @click="emit('addType', activityLog.type)"
+        />
       </div>
-
-      <UBadge
-        variant="subtle"
-        size="sm"
-        color="neutral"
-        :label="activityLog.type"
-        @click="emit('addType', activityLog.type)"
-      />
-    </div>
+    </template>
 
     <AppMetadataRender
       :keypath="`activityLog.tpl.${activityLog.type}`"
@@ -63,7 +68,10 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
         <div class="inline-flex items-center gap-1 align-middle">
           <NuxtLink
             :to="{ name: 'moderator-user-id-restrictions', params: { id: activityLog.metadata.targetUserId } }"
-            class="inline-block hover:text-content-100"
+            class="
+              inline-block
+              hover:text-content-100
+            "
             target="_blank"
           >
             <UserMedia :user="scopeUser" size="sm" />
@@ -79,5 +87,5 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
         </div>
       </template>
     </AppMetadataRender>
-  </div>
+  </UCard>
 </template>

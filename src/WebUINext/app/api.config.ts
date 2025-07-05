@@ -4,7 +4,9 @@ import type { CreateClientConfig } from '~/api/client.gen'
 
 import { getToken, login } from '~/services/auth-service'
 
-import { Platform } from './models/platform'
+import type { Platform } from './models/platform'
+
+import { PLATFORM } from './models/platform'
 
 interface CrpgApiError {
   code: string
@@ -44,7 +46,7 @@ export const createClientConfig: CreateClientConfig = (config) => {
             close: false,
           })
           await delay(1000)
-          await login(globalThis.localStorage.getItem('user-platform') as Platform ?? Platform.Steam)
+          await login(globalThis.localStorage.getItem('user-platform') as Platform ?? PLATFORM.Steam)
           return
         }
       }

@@ -136,7 +136,7 @@ function Render() {
       ...(userItemId && { userItem: () => renderItem(userItemId) }),
       ...(experience && { experience: () => renderStrong(n(Number(experience))) }),
       ...(damage && { damage: () => renderDamage(damage) }),
-      ...(instance && { instance: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'soft', label: instance }) }),
+      ...(instance && { instance: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'subtle', label: instance }) }),
       ...(gameMode && { gameMode: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'soft', label: gameMode }) }),
       ...(oldName && { oldName: () => renderStrong(oldName) }),
       ...(newName && { newName: () => renderStrong(newName) }),

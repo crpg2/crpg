@@ -3,10 +3,12 @@ import type { ZonedDateTime } from '@internationalized/date'
 
 import { DateFormatter, getLocalTimeZone, now, parseZonedDateTime } from '@internationalized/date'
 
+import type { ActivityLogType } from '~/models/activity-logs'
+
 import { useModerationUser } from '~/composables/moderator/use-moderation-user'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { Sort, useSort } from '~/composables/utils/use-sort'
-import { ActivityLogType } from '~/models/activity-logs'
+import { ACTIVITY_LOG_TYPE } from '~/models/activity-logs'
 import { getActivityLogs } from '~/services/activity-logs-service'
 
 const dateFormatter = new DateFormatter('en-US', {
@@ -102,12 +104,12 @@ watchEffect(() => {
       <UButtonGroup>
         <USelectMenu
           v-model="types"
-          class="max-w-44"
+          class="max-w-64"
           color="neutral"
           variant="subtle"
           :placeholder="$t('activityLog.form.type')"
           multiple
-          :items="Object.values(ActivityLogType)"
+          :items="Object.values(ACTIVITY_LOG_TYPE)"
           :ui="{
             content: 'w-auto',
           }"
@@ -170,6 +172,7 @@ watchEffect(() => {
           <UserMedia
             v-if="activityLogs.dict.users.find(user => user.id === additionalUserId)"
             :user="activityLogs.dict.users.find(user => user.id === additionalUserId)!"
+            size="sm"
           />
         </NuxtLink>
       </div>
@@ -186,6 +189,7 @@ watchEffect(() => {
         }"
       >
         <UButton
+          size="sm"
           icon="crpg:plus"
           color="neutral"
           variant="subtle"
@@ -205,7 +209,7 @@ watchEffect(() => {
                 @click="() => {
                   toggleAdditionalUser(userData.id);
                   close();
-                } "
+                }"
               />
             </template>
           </ModeratorUserFinder>
@@ -213,10 +217,11 @@ watchEffect(() => {
       </UModal>
     </div>
 
-    <div class="flex flex-col flex-wrap gap-4">
+    <div class="flex flex-col flex-wrap gap-5">
       <ModeratorActivityLogItem
         v-for="activityLog in sortedActivityLogs"
         :key="activityLog.id"
+        :class="[activityLog.userId === moderationUser.id ? 'self-start' : 'self-end']"
         :activity-log="activityLog"
         :is-self-user="activityLog.userId === moderationUser.id"
         :user="activityLog.userId === moderationUser.id

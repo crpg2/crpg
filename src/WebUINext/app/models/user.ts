@@ -11,20 +11,19 @@ export interface User {
   platformUserId: string
   name: string
   gold: number
-  avatar: string
+  avatar?: string | null // TODO: remove ?
   region: Region
   isDonor: boolean
   role: Role
   heirloomPoints: number
   experienceMultiplier: number
-  activeCharacterId: number | null
+  activeCharacterId?: number | null // TODO: remove ?
   unreadNotificationsCount: number
   clanMembership: UserClanMembership | null
 }
 
 export interface UserPublic
-  extends Pick<User, 'id' | 'platform' | 'platformUserId' | 'name' | 'region' | 'avatar' | 'clanMembership'> {
-}
+  extends Pick<User, 'id' | 'platform' | 'platformUserId' | 'name' | 'region' | 'avatar' | 'clanMembership'> {}
 
 export interface UserPrivate extends UserPublic {
   gold: number

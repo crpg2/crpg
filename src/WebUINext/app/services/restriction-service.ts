@@ -9,14 +9,9 @@ import {
 
 import type { RestrictionViewModel } from '~/api'
 import type { Platform } from '~/models/platform'
+import type { UserPrivate, UserPublic, UserRestriction, UserRestrictionCreation } from '~/models/user'
 
-import {
-  type UserPrivate,
-  type UserPublic,
-  type UserRestriction,
-  type UserRestrictionCreation,
-  UserRestrictionStatus,
-} from '~/models/user'
+import { UserRestrictionStatus } from '~/models/user'
 import { checkIsDateExpired } from '~/utils/date'
 
 const checkIsRestrictionActive = (

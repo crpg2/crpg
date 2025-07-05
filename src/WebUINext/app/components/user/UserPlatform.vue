@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
 
-import { Platform } from '~/models/platform'
+import type { Platform } from '~/models/platform'
+
+import { PLATFORM } from '~/models/platform'
 
 type Size = 'sm' | 'md' | 'lg' | 'xl'
 
@@ -39,9 +41,12 @@ const classes = computed(() => variants({ size }))
 
 <template>
   <a
-    v-if="platform === Platform.Steam"
+    v-if="platform === PLATFORM.Steam"
     :href="`https://steamcommunity.com/profiles/${platformUserId}`"
-    class="inline-flex hover:opacity-80"
+    class="
+      inline-flex
+      hover:opacity-80
+    "
     target="_blank"
     @click.stop
   >
@@ -50,15 +55,18 @@ const classes = computed(() => variants({ size }))
 
   <!-- TODO: Epic doesn't have a public profile yet https://trello.com/c/FH3mNJ6b/297-profiles -->
   <UIcon
-    v-else-if="platform === Platform.EpicGames"
+    v-else-if="platform === PLATFORM.EpicGames"
     name="crpg:epic-games"
     :class="classes.icon()"
   />
 
   <a
-    v-else-if="platform === Platform.Microsoft"
+    v-else-if="platform === PLATFORM.Microsoft"
     :href="`https://account.xbox.com/en-us/profile?gamertag=${userName}`"
-    class="inline-flex hover:opacity-80"
+    class="
+      inline-flex
+      hover:opacity-80
+    "
     target="_blank"
     @click.stop
   >

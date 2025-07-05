@@ -9,7 +9,7 @@ import { navigateTo, tw } from '#imports'
 import type { ClanWithMemberCount } from '~/models/clan'
 
 import { useRegionQuery } from '~/composables/use-region'
-import { Region } from '~/models/region'
+import { REGION } from '~/models/region'
 import { SomeRole } from '~/models/role'
 import { getClans } from '~/services/clan-service'
 import { useUserStore } from '~/stores/user'
@@ -36,7 +36,7 @@ const table = useTemplateRef('table')
 const columnFilters = ref<ColumnFiltersState>([
   {
     id: 'clan_region',
-    value: Region.Eu,
+    value: REGION.Eu,
   },
 ])
 

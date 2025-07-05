@@ -54,6 +54,9 @@ export default defineAppConfig({
           outline: {
             root: 'bg-transparent ring ring-default divide-y divide-default',
           },
+          subtle: {
+            root: 'bg-elevated/50',
+          },
         },
       },
     },

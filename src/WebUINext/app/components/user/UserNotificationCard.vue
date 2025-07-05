@@ -22,7 +22,8 @@ const isUnread = computed(() => notification.state === NotificationState.Unread)
 
 <template>
   <UCard
-    variant="subtle" :ui="{
+    variant="subtle"
+    :ui="{
       footer: 'flex items-end gap-4',
       body: 'relative flex items-start gap-4',
     }"

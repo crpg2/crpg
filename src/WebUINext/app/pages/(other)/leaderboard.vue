@@ -6,11 +6,13 @@ import { useRouteQuery } from '@vueuse/router'
 import { CompetitiveRank, CompetitiveRankTable, UButton, UIcon, UInput, UiTableColumnHeader, UiTableColumnHeaderLabel, UModal, USelect, UserMedia, UTooltip } from '#components'
 import { h, tw } from '#imports'
 
+import type { CharacterClass } from '~/models/character'
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
+import type { Region } from '~/models/region'
 
-import { CharacterClass } from '~/models/character'
+import { CHARACTER_CLASS } from '~/models/character'
 import { GameMode } from '~/models/game-mode'
-import { Region } from '~/models/region'
+import { REGION } from '~/models/region'
 import { characterClassToIcon, getCompetitiveValueByGameMode } from '~/services/character-service'
 import { gameModeToIcon, rankedGameModes } from '~/services/game-mode-service'
 import { getLeaderBoard } from '~/services/leaderboard-service'
@@ -28,7 +30,7 @@ const route = useRoute('leaderboard')
 
 const gameModeModel = useRouteQuery<GameMode>('gameMode', GameMode.Battle)
 const characterClassModel = useRouteQuery<CharacterClass | undefined>('class', undefined)
-const regionModel = useRouteQuery<Region>('region', Region.Eu)
+const regionModel = useRouteQuery<Region>('region', REGION.Eu)
 
 const {
   execute: loadLeaderBoard,
@@ -47,7 +49,7 @@ watch(
 
 const { rankTable } = useRankTable()
 
-const regionItems = Object.keys(Region).map<TabsItem>(region => ({
+const regionItems = Object.values(REGION).map<TabsItem>(region => ({
   label: t(`region.${region}`),
   value: region,
 }))
@@ -159,7 +161,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
               content: 'min-w-fit',
               base: 'px-0 py-0',
             },
-            'items': Object.values(CharacterClass).map<SelectItem>(charClass => ({
+            'items': Object.values(CHARACTER_CLASS).map<SelectItem>(charClass => ({
               value: charClass,
               icon: `crpg:${characterClassToIcon[charClass]}`,
               label: t(`character.class.${charClass}`),
