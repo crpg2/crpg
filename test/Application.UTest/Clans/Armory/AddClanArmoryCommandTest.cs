@@ -7,6 +7,7 @@ using Moq;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Clans.Armory;
+
 public class AddClanArmoryCommandTest : TestBase
 {
     private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
@@ -43,8 +44,8 @@ public class AddClanArmoryCommandTest : TestBase
         Assert.That(AssertDb.ClanArmoryItems.Count(), Is.EqualTo(1));
 
         var view = result.Data!;
-        Assert.That(view.UserItem, Is.Not.Null);
-        Assert.That(view.BorrowedItem, Is.Null);
+        Assert.That(view.UserItemId, Is.Not.Null);
+        Assert.That(view.BorrowerUserId, Is.EqualTo(0));
     }
 
     [Test]

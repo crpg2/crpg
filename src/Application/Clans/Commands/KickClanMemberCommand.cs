@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -10,7 +11,10 @@ namespace Crpg.Application.Clans.Commands;
 
 public record KickClanMemberCommand : IMediatorRequest
 {
+    [JsonIgnore]
     public int UserId { get; init; }
+
+    [JsonIgnore]
     public int ClanId { get; init; }
     public int KickedUserId { get; init; }
 
