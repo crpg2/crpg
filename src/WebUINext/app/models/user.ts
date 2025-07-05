@@ -1,3 +1,7 @@
+import type { ValueOf } from 'type-fest'
+
+import type { RestrictionType as _RestrictionType } from '~/api'
+
 import type { Clan, ClanMemberRole } from './clan'
 import type { Item, ItemSlot, ItemType } from './item'
 import type { NotificationState } from './notifications'
@@ -66,11 +70,13 @@ export interface UserNotification {
   metadata: Record<string, string>
 }
 
-export enum UserRestrictionType {
-  Join = 'Join',
-  Chat = 'Chat',
-  All = 'All',
-}
+export const USER_RESTRICTION_TYPE = {
+  Join: 'Join',
+  Chat: 'Chat',
+  All: 'All',
+} as const satisfies Record<_RestrictionType, _RestrictionType>
+
+export type UserRestrictionType = ValueOf<typeof USER_RESTRICTION_TYPE>
 
 export interface UserRestriction {
   id: number
@@ -91,10 +97,12 @@ export interface UserRestrictionPublic {
   duration: string // seconds
 }
 
-export enum UserRestrictionStatus {
-  Active = 'Active',
-  NonActive = 'NonActive',
-}
+export const USER_RESTRICTION_STATUS = {
+  Active: 'Active',
+  NonActive: 'NonActive',
+} as const
+
+export type UserRestrictionStatus = ValueOf<typeof USER_RESTRICTION_STATUS>
 
 export interface UserRestrictionCreation {
   reason: string

@@ -1,6 +1,10 @@
 import type { ValueOf } from 'type-fest'
 
-import type { CharacterClass as _CharacterClass } from '~/api'
+import type {
+  CharacterCharacteristicConversion as _CharacterCharacteristicConversion,
+  CharacterClass as _CharacterClass,
+
+} from '~/api'
 import type { GameMode } from '~/models/game-mode'
 import type { ItemSlot } from '~/models/item'
 import type { UserItem } from '~/models/user'
@@ -72,10 +76,12 @@ export type SkillKey = keyof CharacterSkills
 export type WeaponProficienciesKey = keyof CharacterWeaponProficiencies
 export type CharacteristicKey = AttributeKey | SkillKey | WeaponProficienciesKey
 
-export enum CharacteristicConversion {
-  AttributesToSkills = 'AttributesToSkills',
-  SkillsToAttributes = 'SkillsToAttributes',
-}
+export const CHARACTERISTIC_CONVERSION = {
+  AttributesToSkills: 'AttributesToSkills',
+  SkillsToAttributes: 'SkillsToAttributes',
+} as const satisfies Record<_CharacterCharacteristicConversion, _CharacterCharacteristicConversion>
+
+export type CharacteristicConversion = ValueOf<typeof CHARACTERISTIC_CONVERSION>
 
 export interface CharacterLimitations {
   lastRespecializeAt: Date
@@ -137,13 +143,15 @@ export interface CharacterOverallItemsStats {
   averageRepairCostByHour: number
 }
 
-export enum CharacterArmorOverallKey {
-  ArmArmor = 'ArmArmor',
-  BodyArmor = 'BodyArmor',
-  HeadArmor = 'HeadArmor',
-  LegArmor = 'LegArmor',
-  MountArmor = 'MountArmor',
-}
+export const CHARACTER_ARMOR_OVERALL_KEY = {
+  ArmArmor: 'ArmArmor',
+  BodyArmor: 'BodyArmor',
+  HeadArmor: 'HeadArmor',
+  LegArmor: 'LegArmor',
+  MountArmor: 'MountArmor',
+} as const
+
+export type CharacterArmorOverallKey = ValueOf<typeof CHARACTER_ARMOR_OVERALL_KEY>
 
 export interface CharacterArmorOverall {
   value: number
@@ -156,10 +164,12 @@ export interface CharacterEarnedData {
   timeEffort: number
 }
 
-export enum CharacterEarningType {
-  Exp = 'Exp',
-  Gold = 'Gold',
-}
+export const CHARACTER_EARNING_TYPE = {
+  Exp: 'Exp',
+  Gold: 'Gold',
+} as const
+
+export type CharacterEarningType = ValueOf<typeof CHARACTER_EARNING_TYPE>
 
 export interface CharacterEarnedMetadata {
   characterId: string

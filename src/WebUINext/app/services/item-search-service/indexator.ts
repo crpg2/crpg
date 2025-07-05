@@ -3,13 +3,14 @@ import { cloneDeep } from 'es-toolkit'
 import type {
   Item,
   ItemFlat,
+  ItemType,
   ItemWeaponComponent,
 } from '~/models/item'
 
 import {
   DamageType,
+  ITEM_TYPE,
   ItemFamilyType,
-  ItemType,
   ItemUsage,
   WeaponClass,
   WeaponFlags,
@@ -90,7 +91,7 @@ const mapWeaponProps = (item: Item) => {
     weaponPrimaryClass: originalWeapon.class,
   }
 
-  if (item.type === ItemType.Shield) {
+  if (item.type === ITEM_TYPE.Shield) {
     return {
       ...weapon,
       shieldArmor: originalWeapon.bodyArmor,
@@ -99,10 +100,10 @@ const mapWeaponProps = (item: Item) => {
     }
   }
 
-  if ([ItemType.Bow, ItemType.Crossbow, ItemType.Musket, ItemType.Pistol].includes(item.type)) {
+  if ([ITEM_TYPE.Bow, ITEM_TYPE.Crossbow, ITEM_TYPE.Musket, ITEM_TYPE.Pistol].includes(item.type)) {
     // add custom flag
     if (
-      item.type === ItemType.Crossbow
+      item.type === ITEM_TYPE.Crossbow
       && !originalWeapon.flags.includes(WeaponFlags.CantReloadOnHorseback)
     ) {
       weapon.weaponFlags.push(WeaponFlags.CanReloadOnHorseback)
@@ -116,7 +117,7 @@ const mapWeaponProps = (item: Item) => {
     }
   }
 
-  if ([ItemType.Bolts, ItemType.Arrows, ItemType.Thrown, ItemType.Bullets].includes(item.type)) {
+  if ([ITEM_TYPE.Bolts, ITEM_TYPE.Arrows, ITEM_TYPE.Thrown, ITEM_TYPE.Bullets].includes(item.type)) {
     return {
       ...weapon,
       damage: originalWeapon.thrustDamage,
@@ -144,7 +145,7 @@ const mapArmorProps = (item: Item) => {
     }
   }
 
-  if (item.type === ItemType.MountHarness) {
+  if (item.type === ITEM_TYPE.MountHarness) {
     return {
       ...item.armor,
       armorFamilyType: null,
@@ -165,7 +166,7 @@ const mapArmorProps = (item: Item) => {
 }
 
 const mapWeight = (item: Item) => {
-  if ([ItemType.Thrown, ItemType.Bolts, ItemType.Arrows].includes(item.type)) {
+  if ([ITEM_TYPE.Thrown, ITEM_TYPE.Bolts, ITEM_TYPE.Arrows].includes(item.type)) {
     const [weapon] = item.weapons
 
     return {
@@ -207,11 +208,11 @@ const generateModId = (item: Item, weaponClass?: WeaponClass) => {
  * @description Change the type for grouping to UI (e.g., group ranged or ammo)
  */
 const mapItemType = (type: ItemType): ItemType => {
-  if ([ItemType.Bow, ItemType.Crossbow, ItemType.Musket, ItemType.Pistol].includes(type)) {
+  if ([ITEM_TYPE.Bow, ITEM_TYPE.Crossbow, ITEM_TYPE.Musket, ITEM_TYPE.Pistol].includes(type)) {
     return ItemType.Ranged
   }
 
-  if ([ItemType.Arrows, ItemType.Bolts, ItemType.Bullets].includes(type)) {
+  if ([ITEM_TYPE.Arrows, ITEM_TYPE.Bolts, ITEM_TYPE.Bullets].includes(type)) {
     return ItemType.Ammo
   }
 
@@ -273,7 +274,7 @@ const checkWeaponIsPrimaryUsage = (
 
   const weaponClass = normalizeWeaponClass(itemType, weapon)
 
-  if (itemType === ItemType.Polearm) {
+  if (itemType === ITEM_TYPE.Polearm) {
     const hasCouch = weapons.some(w => w.itemUsage === ItemUsage.PolearmCouch)
     // TODO: jousting lances
     const isJoustingLanceHack = weapons.some(w => w.itemUsage === ItemUsage.Polearm)
@@ -311,7 +312,7 @@ export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false)
   const result = cloneDeep(items).reduce((out, item) => {
     if (item.weapons.length > 1
     // TODO: bows have 2 loading modes, so there are several objects in the weapons data structure
-      && item.type !== ItemType.Bow) {
+      && item.type !== ITEM_TYPE.Bow) {
       item.weapons.forEach((w, _idx) => {
         const weaponClass = normalizeWeaponClass(item.type, w)
 

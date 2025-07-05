@@ -1,6 +1,10 @@
 import type { ValueOf } from 'type-fest'
 
-import type { ClanMemberRole as _ClanMemberRole } from '~/api'
+import type {
+  ClanInvitationStatus as _ClanInvitationStatus,
+  ClanInvitationType as _ClanInvitationType,
+  ClanMemberRole as _ClanMemberRole,
+} from '~/api'
 import type { Language } from '~/models/language'
 import type { Region } from '~/models/region'
 import type { UserPublic } from '~/models/user'
@@ -44,16 +48,20 @@ export const CLAN_MEMBER_ROLE = {
 
 export type ClanMemberRole = ValueOf<typeof CLAN_MEMBER_ROLE>
 
-export enum ClanInvitationType {
-  Request = 'Request',
-  Offer = 'Offer',
-}
+export const CLAN_INVITATION_TYPE = {
+  Request: 'Request',
+  Offer: 'Offer',
+} as const satisfies Record<_ClanInvitationType, _ClanInvitationType>
 
-export enum ClanInvitationStatus {
-  Pending = 'Pending',
-  Declined = 'Declined',
-  Accepted = 'Accepted',
-}
+export type ClanInvitationType = ValueOf<typeof CLAN_MEMBER_ROLE>
+
+export const CLAN_INVITATION_STATUS = {
+  Pending: 'Pending',
+  Declined: 'Declined',
+  Accepted: 'Accepted',
+} as const satisfies Record<_ClanInvitationStatus, _ClanInvitationStatus>
+
+export type ClanInvitationStatus = ValueOf<typeof CLAN_INVITATION_STATUS>
 
 export interface ClanInvitation {
   id: number

@@ -6632,28 +6632,6 @@
       },
       "ItemFlags": {
         "enum": [
-          256,
-          512,
-          1024,
-          2048,
-          4096,
-          8192,
-          16384,
-          32768,
-          65536,
-          131072,
-          262144,
-          524288,
-          1048576,
-          2097152,
-          4194304,
-          8388608,
-          16777216,
-          33554432
-        ],
-        "type": "integer",
-        "format": "int64",
-        "x-enumNames": [
           "ForceAttachOffHandPrimaryItemBone",
           "ForceAttachOffHandSecondaryItemBone",
           "NotUsableByFemale",
@@ -6672,7 +6650,9 @@
           "DoNotScaleBodyAccordingToWeaponLength",
           "DoesNotHideChest",
           "NotStackable"
-        ]
+        ],
+        "type": "string",
+        "format": ""
       },
       "ItemMountComponentViewModel": {
         "required": [
@@ -7417,54 +7397,6 @@
       },
       "Ordinates": {
         "enum": [
-          0,
-          1,
-          1,
-          2,
-          2,
-          3,
-          4,
-          4,
-          7,
-          8,
-          16,
-          32,
-          64,
-          128,
-          256,
-          512,
-          1024,
-          2048,
-          4096,
-          8192,
-          16384,
-          32768,
-          65535,
-          65536,
-          65536,
-          65539,
-          65543,
-          131072,
-          262144,
-          524288,
-          1048576,
-          2097152,
-          4194304,
-          8388608,
-          16777216,
-          33554432,
-          67108864,
-          134217728,
-          268435456,
-          536870912,
-          1073741824,
-          -2147483648,
-          -65536,
-          -1
-        ],
-        "type": "integer",
-        "format": "int64",
-        "x-enumNames": [
           "None",
           "Spatial1",
           "Spatial1",
@@ -7509,7 +7441,9 @@
           "Measure16",
           "AllMeasureOrdinates",
           "AllOrdinates"
-        ]
+        ],
+        "type": "string",
+        "format": ""
       },
       "PartyPublicViewModel": {
         "required": [
@@ -9558,44 +9492,6 @@
       },
       "WeaponFlags": {
         "enum": [
-          1,
-          2,
-          4,
-          16,
-          32,
-          64,
-          128,
-          256,
-          512,
-          1024,
-          3072,
-          4096,
-          8192,
-          16384,
-          32768,
-          65536,
-          131072,
-          262144,
-          524288,
-          2097152,
-          4194304,
-          8388608,
-          16777216,
-          33554432,
-          67108864,
-          134217728,
-          268435456,
-          536870912,
-          1073741824,
-          2147483648,
-          4294967296,
-          68719476736,
-          137438953472,
-          274877906944
-        ],
-        "type": "integer",
-        "format": "int64",
-        "x-enumNames": [
           "MeleeWeapon",
           "RangedWeapon",
           "FirearmAmmo",
@@ -9630,7 +9526,9 @@
           "AmmoBreaksOnBounceBack",
           "AmmoCanBreakOnBounceBack",
           "AmmoSticksWhenShot"
-        ]
+        ],
+        "type": "string",
+        "format": ""
       }
     },
     "securitySchemes": {
