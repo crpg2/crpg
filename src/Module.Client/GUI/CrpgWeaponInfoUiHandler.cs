@@ -1,8 +1,11 @@
+using System.Reflection;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.GUI.Hud;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Engine.GauntletUI;
+using TaleWorlds.GauntletUI;
+using TaleWorlds.GauntletUI.BaseTypes;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -31,9 +34,10 @@ internal class CrpgWeaponInfoUiHandler : MissionView
     { "bracing", "Can Brace" },
     // Add more as needed
 };
-    private readonly Dictionary<string, HudTextLineVm> _persistentLines = new();
-    private readonly Dictionary<string, HudTextLineVm> _weaponFlagLines = new();
-    private readonly Dictionary<string, HudTextLineVm> _weaponUsageLines = new();
+    private readonly Dictionary<string, HudTextNotificationWidget> _persistentLines = new();
+    private readonly Dictionary<string, HudTextNotificationWidget> _weaponFlagLines = new();
+    private readonly Dictionary<string, HudTextNotificationWidget> _weaponUsageLines = new();
+
 
     private CrpgWeaponInfoVm _dataSource;
     private GauntletLayer? _gauntletLayer;
@@ -69,12 +73,19 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         try
         {
             _gauntletLayer = new GauntletLayer(ViewOrderPriority);
-            _gauntletLayer.LoadMovie("CrpgWeaponInfoHud", _dataSource);
+            var movie = _gauntletLayer.LoadMovie("CrpgWeaponInfoHud", _dataSource);
+            CrpgHudNotificationManager.Instance.Initialize(movie, _gauntletLayer);
+
+
             MissionScreen.AddLayer(_gauntletLayer);
+
         }
         catch (Exception ex)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"UI crash: {ex.Message}"));
+            InformationManager.DisplayMessage(new InformationMessage($"UI crash CrpgWeaponInfoHandler: {ex.Message}"));
+            InformationManager.DisplayMessage(new InformationMessage(
+                $"UI crash CrpgWeaponInfoHandler: {ex.GetType().Name} - {ex.Message}\n{ex.StackTrace}"));
+            Debug.Print($"{ex.Message}\n{ex.StackTrace}", 0, Debug.DebugColor.DarkBlue);
         }
     }
 
@@ -120,7 +131,9 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         }
 
         UpdateWeaponUsageGui();
-        _dataSource!.OnMissionScreenTick(dt);
+        _dataSource?.OnMissionScreenTick(dt);
+
+        CrpgHudNotificationManager.Instance.Update(dt);
     }
 
     public override void OnAgentBuild(Agent agent, Banner banner)
@@ -281,25 +294,60 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         return true;
     }
 
-    private void UpdateSpecialUsageNotification(string key, bool shouldShow, string text, string style = "Default")
+    private void UpdateSpecialUsageNotification(string key, bool shouldShow, string text, string style = "Blue")
     {
+        if (CrpgHudNotificationManager.Instance == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("CrpgHudNotificationManager.Instance not initialized!"));
+            return;
+        }
+
         if (shouldShow)
         {
             if (!_persistentLines.ContainsKey(key))
             {
-                var line = HudTextNotificationManager.Instance.AddRight(text, style, -1f); // permanent
-                _persistentLines[key] = line;
+                HudTextNotificationWidget? widget = CrpgHudNotificationManager.Instance.AddRight(text, style, -1f); // infinite lifetime
+                if (widget != null)
+                {
+                    _persistentLines[key] = widget;
+                }
             }
         }
         else
         {
-            if (_persistentLines.TryGetValue(key, out var line))
+            if (_persistentLines.TryGetValue(key, out var widget))
             {
-                HudTextNotificationManager.Instance.RightLines.Remove(line);
+                CrpgHudNotificationManager.Instance.Remove(widget);
                 _persistentLines.Remove(key);
             }
         }
     }
+
+
+    /*
+        private void UpdateSpecialUsageNotification(string key, bool shouldShow, string text, string style = "Blue")
+        {
+            if (shouldShow)
+            {
+                if (!_persistentLines.ContainsKey(key))
+                {
+                    var line = HudTextNotificationManager.Instance.AddRight(text, style, -1f); // permanent
+                    line.RefreshValues();
+                    line.SetPropertyValue("Style", style);
+                    _dataSource.RefreshValues();
+                    _persistentLines[key] = line;
+                }
+            }
+            else
+            {
+                if (_persistentLines.TryGetValue(key, out var line))
+                {
+                    HudTextNotificationManager.Instance.RightLines.Remove(line);
+                    _persistentLines.Remove(key);
+                }
+            }
+        }
+    */
 
     private void UpdateSpecialUsageInfo(Agent mainAgent, MissionWeapon mWeapon)
     {
@@ -313,8 +361,8 @@ internal class CrpgWeaponInfoUiHandler : MissionView
 
         foreach (var kvp in _friendlyFlagNames)
         {
-            WeaponFlags flag = kvp.Key;
-            string label = kvp.Value;
+            var flag = kvp.Key;
+            var label = kvp.Value;
 
             if ((flags & flag) == flag)
             {
@@ -322,22 +370,22 @@ internal class CrpgWeaponInfoUiHandler : MissionView
 
                 if (!_weaponFlagLines.ContainsKey(label))
                 {
-                    var line = HudTextNotificationManager.Instance.AddRight(label, "Grey", 5f);
-                    _weaponFlagLines[label] = line;
+                    HudTextNotificationWidget? widget = CrpgHudNotificationManager.Instance.AddRight(label, "Grey", 5f);
+                    if (widget != null)
+                    {
+                        _weaponFlagLines[label] = widget;
+                    }
                 }
             }
         }
 
-        // Clean up any no-longer-relevant flags
-        var keysToRemove = _weaponFlagLines.Keys
-            .Where(key => !currentActiveKeys.Contains(key))
-            .ToList();
-
-        foreach (string key in keysToRemove)
+        // Remove stale lines
+        var toRemove = _weaponFlagLines.Keys.Where(k => !currentActiveKeys.Contains(k)).ToList();
+        foreach (string? key in toRemove)
         {
-            if (_weaponFlagLines.TryGetValue(key, out var line))
+            if (_weaponFlagLines.TryGetValue(key, out var widget))
             {
-                HudTextNotificationManager.Instance.RightLines.Remove(line);
+                CrpgHudNotificationManager.Instance.Remove(widget);
                 _weaponFlagLines.Remove(key);
             }
         }
@@ -364,37 +412,41 @@ internal class CrpgWeaponInfoUiHandler : MissionView
 
                 if (!_weaponUsageLines.ContainsKey(displayText))
                 {
-                    var line = HudTextNotificationManager.Instance.AddRight(displayText, "Grey", 10f);
-                    _weaponUsageLines[displayText] = line;
+                    HudTextNotificationWidget? widget = CrpgHudNotificationManager.Instance.AddRight(displayText, "Yellow", -1f); // infinite lifetime
+                    if (widget != null)
+                    {
+                        _weaponUsageLines[displayText] = widget;
+                    }
                 }
             }
         }
 
-        // Remove stale usage lines
-        var staleKeys = _weaponUsageLines
-            .Where(pair => _itemUsageKeywords.ContainsValue(pair.Key) && !currentLabels.Contains(pair.Key))
-            .Select(pair => pair.Key)
-            .ToList();
-
-        foreach (string? staleKey in staleKeys)
+        var staleKeys = _weaponUsageLines.Keys.Where(k => !currentLabels.Contains(k)).ToList();
+        foreach (var key in staleKeys)
         {
-            if (_weaponUsageLines.TryGetValue(staleKey, out var line))
+            if (_weaponUsageLines.TryGetValue(key, out var widget))
             {
-                HudTextNotificationManager.Instance.RightLines.Remove(line);
-                _weaponUsageLines.Remove(staleKey);
+                CrpgHudNotificationManager.Instance.Remove(widget);
+                _weaponUsageLines.Remove(key);
             }
         }
     }
 
-    private void ClearTrackedHudLines(Dictionary<string, HudTextLineVm> lineDict)
+    private void ClearTrackedHudLines(Dictionary<string, HudTextNotificationWidget> lineDict)
     {
-        foreach (var line in lineDict.Values)
+        if (CrpgHudNotificationManager.Instance == null)
         {
-            HudTextNotificationManager.Instance.RightLines.Remove(line);
+            return;
+        }
+
+        foreach (var widget in lineDict.Values)
+        {
+            CrpgHudNotificationManager.Instance.Remove(widget);
         }
 
         lineDict.Clear();
     }
+
 
     private void UpdateWeaponUsageGui(bool forced = false)
     {

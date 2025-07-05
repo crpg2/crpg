@@ -9,9 +9,6 @@ internal class CrpgWeaponInfoVm : ViewModel
     private int _weaponUsageIndex = -1;
     private bool _showWeaponUsageIndex = false;
 
-    [DataSourceProperty]
-    public MBBindingList<HudTextLineVm> Lines { get; } = new MBBindingList<HudTextLineVm>();
-
     public CrpgWeaponInfoVm(Mission mission)
     {
         WeaponUsageIndex = 0;

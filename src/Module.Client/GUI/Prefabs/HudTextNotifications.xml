@@ -1,42 +1,17 @@
 <Prefab>
   <Window>
-    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+    <Widget>
       <Children>
-        <!-- Left Side above chatbox text notification area -->
-          <ListPanel WidthSizePolicy="CoverChildren"
-           HeightSizePolicy="CoverChildren"
-           HorizontalAlignment="Left"
-           VerticalAlignment="Center"
-           MarginLeft="15"
-           StackLayout.LayoutMethod="VerticalBottomToTop"
-           DataSource="{LeftLines}">
-          <ItemTemplate>
-            <TextWidget Text="@Text"
-                WidthSizePolicy="CoverChildren"
-                HeightSizePolicy="CoverChildren"
-                Brush="CrpgHUD.NotificationText.Left"
-                Style="@Style" />
-          </ItemTemplate>
-        </ListPanel>
-
-        <!-- Right side above weapon text notification area -->
-        <ListPanel WidthSizePolicy="CoverChildren"
-           HeightSizePolicy="CoverChildren"
-           HorizontalAlignment="Right"
-           VerticalAlignment="Bottom"
-           MarginBottom="190"
-           MarginRight="15"
-           StackLayout.LayoutMethod="VerticalBottomToTop"
-           DataSource="{RightLines}">
-          <ItemTemplate>
-            <TextWidget Text="@Text"
-                WidthSizePolicy="CoverChildren"
-                HeightSizePolicy="CoverChildren"
-                Brush="CrpgHUD.NotificationText.Right"
-                Style="@Style" />
-          </ItemTemplate>
-        </ListPanel>
+      <TextWidget WidthSizePolicy="CoverChildren" 
+                    HeightSizePolicy="CoverChildren" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" 
+                    TextHorizontalAlignment="Right"
+                    Brush="CrpgHUD.WeaponUsage.Index" 
+                    Text="Debug Text" 
+        />
       </Children>
     </Widget>
   </Window>
-</Prefab>             
+</Prefab>
+<!-- needed for code only HudTextNotification system -->

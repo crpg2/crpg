@@ -73,7 +73,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
             new CrpgHudExtensionHandler(),
             new AmmoQuiverChangeUiHandler(),
             new CrpgWeaponInfoUiHandler(),
-            new HudTextNotificationUiHandler(),
+            // new CrpgHudTextNotificationUiHandler(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             //new SpectatorHudUiHandler(),
             ViewCreator.CreateOptionsUIHandler(),

@@ -147,6 +147,16 @@
     </Styles>
   </Brush>
 
+  <Brush Name="CrpgHUD.NotificationText.Default" Font="FiraSansExtraCondensed-Medium" TextHorizontalAlignment="Left" TextVerticalAlignment="Center">
+    <Styles>
+      <Style Name="Default" FontColor="#FFFFFFFF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
+      <Style Name="Red" FontColor="#E62C0BFF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
+      <Style Name="Yellow" FontColor="#E6A40BFF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
+      <Style Name="Blue" FontColor="#1087E8FF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
+      <Style Name="Grey" FontColor="#7A8087FF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
+    </Styles>
+  </Brush>
+
   <Brush Name="CrpgHUD.NotificationText.Left" Font="FiraSansExtraCondensed-Medium" TextHorizontalAlignment="Left" TextVerticalAlignment="Center">
     <Styles>
       <Style Name="Default" FontColor="#FFFFFFFF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
@@ -157,17 +167,13 @@
     </Styles>
   </Brush>
 
-  <Brush Name="CrpgHUD.NotificationText.Right" Font="FiraSansExtraCondensed-Medium" TextHorizontalAlignment="Right" TextVerticalAlignment="Center">
-    <Layers>
-      <BrushLayer Name="Default"/>
-    </Layers>
+  <Brush Name="CrpgHUD.NotificationText.Right" Font="FiraSansExtraCondensed-Medium" TextHorizontalAlignment="Left" TextVerticalAlignment="Center">
     <Styles>
       <Style Name="Default" FontColor="#FFFFFFFF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
       <Style Name="Red" FontColor="#E62C0BFF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
-      <Style Name="Alert" FontColor="#E6A40BFF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
+      <Style Name="Yellow" FontColor="#E6A40BFF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
       <Style Name="Blue" FontColor="#1087E8FF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
       <Style Name="Grey" FontColor="#7A8087FF" TextBlur="0" TextOutlineAmount="0.3" TextGlowRadius="0.2" FontSize="13" />
     </Styles>
-  </Brush>
-
+  </Brush>  
 </Brushes>
