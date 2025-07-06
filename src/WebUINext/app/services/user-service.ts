@@ -36,10 +36,7 @@ export const mapUserToUserPublic = (user: User): UserPublic =>
 
 export const deleteUser = () => deleteUsersSelf({ composable: '$fetch' })
 
-export const getUserItems = async (): Promise<UserItem[]> => {
-  const { data } = await getUsersSelfItems({ composable: '$fetch' })
-  return data!
-}
+export const getUserItems = async (): Promise<UserItem[]> => (await getUsersSelfItems({ composable: '$fetch' })).data!
 
 export const buyUserItem = (itemId: string) =>
   postUsersSelfItems({ composable: '$fetch', body: { itemId } })

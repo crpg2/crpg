@@ -37,10 +37,7 @@ import { cultureToIcon } from './culture-service'
 import { getAggregationsConfig, getVisibleAggregationsConfig } from './item-search-service'
 import { aggregationsConfig } from './item-search-service/aggregations'
 
-export const getItems = async (): Promise<Item[]> => {
-  const { data } = await _getItems({ composable: '$fetch' })
-  return data!
-}
+export const getItems = async (): Promise<Item[]> => (await _getItems({ composable: '$fetch' })).data!
 
 export const extractItem = <T extends { item: Item }>(wrapper: T): Item => wrapper.item
 
