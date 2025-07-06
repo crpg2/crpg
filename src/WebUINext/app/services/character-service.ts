@@ -512,6 +512,7 @@ export const updateCharacterItems = async (
   characterId: number,
   items: EquippedItemId[],
 ): Promise<EquippedItem[]> =>
+  // @ts-expect-error TODO: FIXME: WithRefs
   (await putUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId }, body: { items } })).data!
 
 export const computeOverallPrice = (
