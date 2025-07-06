@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { Settings } from '~/models/setting'
 
+import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { ROLE } from '~/models/role'
 import { editSettings } from '~/services/settings-service'
 import { useSettingsStore } from '~/stores/settings'

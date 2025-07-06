@@ -1,7 +1,7 @@
 import { useAsyncState } from '@vueuse/core'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { NotificationState } from '~/models/notifications'
+import { NOTIFICATION_STATE } from '~/models/notifications'
 import {
   deleteAllUserNotifications,
   deleteUserNotification,
@@ -34,7 +34,7 @@ export const useUsersNotifications = () => {
   )
 
   const hasUnreadNotifications = computed(() =>
-    notifications.value.notifications.some(n => n.state === NotificationState.Unread),
+    notifications.value.notifications.some(n => n.state === NOTIFICATION_STATE.Unread),
   )
 
   function updateState() {

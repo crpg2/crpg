@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { SomeRole } from '~/models/role'
 import {
   activateCharacter,

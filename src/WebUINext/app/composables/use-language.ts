@@ -1,4 +1,6 @@
-import { Language } from '~/models/language'
+import type { Language } from '~/models/language'
+
+import { LANGUAGE } from '~/models/language'
 
 export const useLanguages = () => {
   const route = useRoute()
@@ -19,7 +21,7 @@ export const useLanguages = () => {
     },
   })
 
-  const languages = Object.keys(Language) as Language[]
+  const languages = Object.values(LANGUAGE) as Language[]
 
   const resetLanguagesModel = () => {
     languagesModel.value = []

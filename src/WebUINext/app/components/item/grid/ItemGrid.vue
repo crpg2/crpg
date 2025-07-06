@@ -5,7 +5,7 @@ import type { Item, ItemType } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
-import { useStickySidebar } from '~/composables/character/use-sticky-sidebar'
+import { useStickySidebar } from '~/composables/use-sticky-sidebar'
 import { ITEM_TYPE } from '~/models/item'
 import {
   filterItemsByName,

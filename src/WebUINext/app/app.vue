@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePageLoading } from '~/composables/utils/use-page-loading'
+import { usePageLoading } from '~/composables/app/use-page-loading'
 
 const { activePageLoading } = usePageLoading()
 </script>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { usePollInterval } from '~/composables/utils/use-poll-interval'
 import { getCharacterStatistics, retireCharacter, setCharacterForTournament } from '~/services/character-service'
 
