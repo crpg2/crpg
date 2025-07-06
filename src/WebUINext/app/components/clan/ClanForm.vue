@@ -36,7 +36,7 @@ const props = withDefaults(
   }>(),
   {
     clan: () => ({
-      armoryTimeout: String(daysToMs(3)),
+      armoryTimeout: daysToMs(3),
       bannerKey: '',
       description: '',
       discord: null,
@@ -444,7 +444,7 @@ const onSubmit = async () => {
             size="sm"
             class="w-36"
             data-aq-clan-form-input="armoryTimeout"
-            @update:model-value="(days) => (clanFormModel.armoryTimeout = String(daysToMs(days)))"
+            @update:model-value="(days) => (clanFormModel.armoryTimeout = daysToMs(days))"
           />
         </UFormField>
       </UCard>

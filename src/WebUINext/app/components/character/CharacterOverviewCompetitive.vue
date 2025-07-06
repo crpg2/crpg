@@ -55,7 +55,7 @@ const kdaRatio = computed(() =>
 
       <UiSimpleTableRow
         :label="$t('character.statistics.playTime.title')"
-        :value="$t('dateTimeFormat.hh', { hours: msToHours(Number(gameModeCharacterStatistics.playTime)) })"
+        :value="$t('dateTimeFormat.hh', { hours: msToHours(gameModeCharacterStatistics.playTime) })"
       />
 
       <UiSimpleTableRow

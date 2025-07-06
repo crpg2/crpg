@@ -82,7 +82,7 @@ export interface UserRestriction {
   id: number
   reason: string
   createdAt: Date
-  duration: string // seconds
+  duration: number // seconds
   publicReason: string
   type: UserRestrictionType
   restrictedUser: UserPrivate
@@ -94,7 +94,7 @@ export interface UserRestrictionPublic {
   id: number
   reason: string
   createdAt: Date
-  duration: string // seconds
+  duration: number
 }
 
 export const USER_RESTRICTION_STATUS = {

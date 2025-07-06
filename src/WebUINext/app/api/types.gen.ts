@@ -22,12 +22,8 @@ export type ActivityLogViewModel = {
     createdAt: Date;
 };
 
-export type ActivityLogViewModelIListResultReadable = {
+export type ActivityLogViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<ActivityLogViewModel> | null;
-};
-
-export type ActivityLogViewModelIListResultWritable = {
     data: Array<ActivityLogViewModel> | null;
 };
 
@@ -36,12 +32,8 @@ export type ActivityLogWithDictViewModel = {
     dict: ActivityLogMetadataEntitiesDictViewModel;
 };
 
-export type ActivityLogWithDictViewModelResultReadable = {
+export type ActivityLogWithDictViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ActivityLogWithDictViewModel;
-};
-
-export type ActivityLogWithDictViewModelResultWritable = {
     data: ActivityLogWithDictViewModel;
 };
 
@@ -67,96 +59,53 @@ export type ApplyAsMercenaryToBattleCommand = {
 
 export type ArmorMaterialType = 'Undefined' | 'Cloth' | 'Leather' | 'Chainmail' | 'Plate';
 
-export type BattleDetailedViewModelReadable = {
+export type BattleDetailedViewModel = {
     id: number;
     region: Region;
-    position: PointReadable;
+    position: Point;
     phase: BattlePhase;
-    attacker: BattleFighterViewModelReadable;
+    attacker: BattleFighterViewModel;
     attackerTotalTroops: number;
-    defender: BattleFighterViewModelReadable;
+    defender: BattleFighterViewModel;
     defenderTotalTroops: number;
     createdAt: Date;
 };
 
-export type BattleDetailedViewModelWritable = {
-    id: number;
-    region: Region;
-    position: PointWritable;
-    phase: BattlePhase;
-    attacker: BattleFighterViewModelWritable;
-    attackerTotalTroops: number;
-    defender: BattleFighterViewModelWritable;
-    defenderTotalTroops: number;
-    createdAt: Date;
-};
-
-export type BattleDetailedViewModelIListResultReadable = {
+export type BattleDetailedViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<BattleDetailedViewModelReadable> | null;
-};
-
-export type BattleDetailedViewModelIListResultWritable = {
-    data: Array<BattleDetailedViewModelWritable> | null;
+    data: Array<BattleDetailedViewModel> | null;
 };
 
 export type BattleFighterApplicationStatus = 'Pending' | 'Declined' | 'Accepted';
 
-export type BattleFighterApplicationViewModelReadable = {
+export type BattleFighterApplicationViewModel = {
     id: number;
-    party: PartyVisibleViewModelReadable;
+    party: PartyVisibleViewModel;
     side: BattleSide;
     status: BattleFighterApplicationStatus;
 };
 
-export type BattleFighterApplicationViewModelWritable = {
-    id: number;
-    party: PartyVisibleViewModelWritable;
-    side: BattleSide;
-    status: BattleFighterApplicationStatus;
-};
-
-export type BattleFighterApplicationViewModelIListResultReadable = {
+export type BattleFighterApplicationViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<BattleFighterApplicationViewModelReadable> | null;
+    data: Array<BattleFighterApplicationViewModel> | null;
 };
 
-export type BattleFighterApplicationViewModelIListResultWritable = {
-    data: Array<BattleFighterApplicationViewModelWritable> | null;
-};
-
-export type BattleFighterApplicationViewModelResultReadable = {
+export type BattleFighterApplicationViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: BattleFighterApplicationViewModelReadable;
+    data: BattleFighterApplicationViewModel;
 };
 
-export type BattleFighterApplicationViewModelResultWritable = {
-    data: BattleFighterApplicationViewModelWritable;
-};
-
-export type BattleFighterViewModelReadable = {
+export type BattleFighterViewModel = {
     id: number;
     party: PartyPublicViewModel;
-    settlement: SettlementPublicViewModelReadable;
+    settlement: SettlementPublicViewModel;
     side: BattleSide;
     commander: boolean;
 };
 
-export type BattleFighterViewModelWritable = {
-    id: number;
-    party: PartyPublicViewModel;
-    settlement: SettlementPublicViewModelWritable;
-    side: BattleSide;
-    commander: boolean;
-};
-
-export type BattleFighterViewModelIListResultReadable = {
+export type BattleFighterViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<BattleFighterViewModelReadable> | null;
-};
-
-export type BattleFighterViewModelIListResultWritable = {
-    data: Array<BattleFighterViewModelWritable> | null;
+    data: Array<BattleFighterViewModel> | null;
 };
 
 export type BattleMercenaryApplicationStatus = 'Pending' | 'Declined' | 'Accepted';
@@ -171,21 +120,13 @@ export type BattleMercenaryApplicationViewModel = {
     status: BattleMercenaryApplicationStatus;
 };
 
-export type BattleMercenaryApplicationViewModelIListResultReadable = {
+export type BattleMercenaryApplicationViewModelIListResult = {
     readonly errors: Array<_Error> | null;
     data: Array<BattleMercenaryApplicationViewModel> | null;
 };
 
-export type BattleMercenaryApplicationViewModelIListResultWritable = {
-    data: Array<BattleMercenaryApplicationViewModel> | null;
-};
-
-export type BattleMercenaryApplicationViewModelResultReadable = {
+export type BattleMercenaryApplicationViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: BattleMercenaryApplicationViewModel;
-};
-
-export type BattleMercenaryApplicationViewModelResultWritable = {
     data: BattleMercenaryApplicationViewModel;
 };
 
@@ -196,12 +137,8 @@ export type BattleMercenaryViewModel = {
     side: BattleSide;
 };
 
-export type BattleMercenaryViewModelIListResultReadable = {
+export type BattleMercenaryViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<BattleMercenaryViewModel> | null;
-};
-
-export type BattleMercenaryViewModelIListResultWritable = {
     data: Array<BattleMercenaryViewModel> | null;
 };
 
@@ -209,29 +146,17 @@ export type BattlePhase = 'Preparation' | 'Hiring' | 'Scheduled' | 'Live' | 'End
 
 export type BattleSide = 'Attacker' | 'Defender';
 
-export type BattleViewModelReadable = {
+export type BattleViewModel = {
     id: number;
     region: Region;
-    position: PointReadable;
+    position: Point;
     phase: BattlePhase;
     createdAt: Date;
 };
 
-export type BattleViewModelWritable = {
-    id: number;
-    region: Region;
-    position: PointWritable;
-    phase: BattlePhase;
-    createdAt: Date;
-};
-
-export type BattleViewModelResultReadable = {
+export type BattleViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: BattleViewModelReadable;
-};
-
-export type BattleViewModelResultWritable = {
-    data: BattleViewModelWritable;
+    data: BattleViewModel;
 };
 
 export type BuyItemCommand = {
@@ -259,12 +184,8 @@ export type CharacterCharacteristicsViewModel = {
     weaponProficiencies: CharacterWeaponProficienciesViewModel;
 };
 
-export type CharacterCharacteristicsViewModelResultReadable = {
+export type CharacterCharacteristicsViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: CharacterCharacteristicsViewModel;
-};
-
-export type CharacterCharacteristicsViewModelResultWritable = {
     data: CharacterCharacteristicsViewModel;
 };
 
@@ -274,12 +195,8 @@ export type CharacterLimitationsViewModel = {
     lastRespecializeAt: Date;
 };
 
-export type CharacterLimitationsViewModelResultReadable = {
+export type CharacterLimitationsViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: CharacterLimitationsViewModel;
-};
-
-export type CharacterLimitationsViewModelResultWritable = {
     data: CharacterLimitationsViewModel;
 };
 
@@ -291,12 +208,8 @@ export type CharacterPublicCompetitiveViewModel = {
     user: UserPublicViewModel;
 };
 
-export type CharacterPublicCompetitiveViewModelIListResultReadable = {
+export type CharacterPublicCompetitiveViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<CharacterPublicCompetitiveViewModel> | null;
-};
-
-export type CharacterPublicCompetitiveViewModelIListResultWritable = {
     data: Array<CharacterPublicCompetitiveViewModel> | null;
 };
 
@@ -331,7 +244,7 @@ export type CharacterStatisticsViewModel = {
     kills: number;
     deaths: number;
     assists: number;
-    playTime: string;
+    playTime: number;
     gameMode: GameMode;
     rating: CharacterRatingViewModel;
 };
@@ -346,21 +259,13 @@ export type CharacterViewModel = {
     forTournament: boolean;
 };
 
-export type CharacterViewModelIListResultReadable = {
+export type CharacterViewModelIListResult = {
     readonly errors: Array<_Error> | null;
     data: Array<CharacterViewModel> | null;
 };
 
-export type CharacterViewModelIListResultWritable = {
-    data: Array<CharacterViewModel> | null;
-};
-
-export type CharacterViewModelResultReadable = {
+export type CharacterViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: CharacterViewModel;
-};
-
-export type CharacterViewModelResultWritable = {
     data: CharacterViewModel;
 };
 
@@ -379,12 +284,8 @@ export type ClanArmoryBorrowedItemViewModel = {
     userItemId: number;
 };
 
-export type ClanArmoryBorrowedItemViewModelResultReadable = {
+export type ClanArmoryBorrowedItemViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ClanArmoryBorrowedItemViewModel;
-};
-
-export type ClanArmoryBorrowedItemViewModelResultWritable = {
     data: ClanArmoryBorrowedItemViewModel;
 };
 
@@ -395,21 +296,13 @@ export type ClanArmoryItemViewModel = {
     item: ItemViewModel;
 };
 
-export type ClanArmoryItemViewModelIListResultReadable = {
+export type ClanArmoryItemViewModelIListResult = {
     readonly errors: Array<_Error> | null;
     data: Array<ClanArmoryItemViewModel> | null;
 };
 
-export type ClanArmoryItemViewModelIListResultWritable = {
-    data: Array<ClanArmoryItemViewModel> | null;
-};
-
-export type ClanArmoryItemViewModelResultReadable = {
+export type ClanArmoryItemViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ClanArmoryItemViewModel;
-};
-
-export type ClanArmoryItemViewModelResultWritable = {
     data: ClanArmoryItemViewModel;
 };
 
@@ -425,21 +318,13 @@ export type ClanInvitationViewModel = {
     status: ClanInvitationStatus;
 };
 
-export type ClanInvitationViewModelIListResultReadable = {
+export type ClanInvitationViewModelIListResult = {
     readonly errors: Array<_Error> | null;
     data: Array<ClanInvitationViewModel> | null;
 };
 
-export type ClanInvitationViewModelIListResultWritable = {
-    data: Array<ClanInvitationViewModel> | null;
-};
-
-export type ClanInvitationViewModelResultReadable = {
+export type ClanInvitationViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ClanInvitationViewModel;
-};
-
-export type ClanInvitationViewModelResultWritable = {
     data: ClanInvitationViewModel;
 };
 
@@ -450,21 +335,13 @@ export type ClanMemberViewModel = {
     role: ClanMemberRole;
 };
 
-export type ClanMemberViewModelIListResultReadable = {
+export type ClanMemberViewModelIListResult = {
     readonly errors: Array<_Error> | null;
     data: Array<ClanMemberViewModel> | null;
 };
 
-export type ClanMemberViewModelIListResultWritable = {
-    data: Array<ClanMemberViewModel> | null;
-};
-
-export type ClanMemberViewModelResultReadable = {
+export type ClanMemberViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ClanMemberViewModel;
-};
-
-export type ClanMemberViewModelResultWritable = {
     data: ClanMemberViewModel;
 };
 
@@ -490,15 +367,11 @@ export type ClanViewModel = {
     region: Region;
     languages: Array<Languages>;
     discord: string | null;
-    armoryTimeout: string;
+    armoryTimeout: number;
 };
 
-export type ClanViewModelResultReadable = {
+export type ClanViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: ClanViewModel;
-};
-
-export type ClanViewModelResultWritable = {
     data: ClanViewModel;
 };
 
@@ -507,12 +380,8 @@ export type ClanWithMemberCountViewModel = {
     memberCount: number;
 };
 
-export type ClanWithMemberCountViewModelIListResultReadable = {
+export type ClanWithMemberCountViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<ClanWithMemberCountViewModel> | null;
-};
-
-export type ClanWithMemberCountViewModelIListResultWritable = {
     data: Array<ClanWithMemberCountViewModel> | null;
 };
 
@@ -520,28 +389,20 @@ export type ConvertCharacterCharacteristicsCommand = {
     conversion: CharacterCharacteristicConversion;
 };
 
-export type CoordinateReadable = {
+export type Coordinate = {
     x: number;
     y: number;
     z: number;
     m: number;
-    coordinateValue: CoordinateReadable;
+    coordinateValue: Coordinate;
     readonly isValid: boolean;
-};
-
-export type CoordinateWritable = {
-    x: number;
-    y: number;
-    z: number;
-    m: number;
-    coordinateValue: CoordinateWritable;
 };
 
 export type CoordinateEqualityComparer = {
     [key: string]: never;
 };
 
-export type CoordinateSequenceReadable = {
+export type CoordinateSequence = {
     readonly dimension: number;
     readonly measures: number;
     readonly spatial: number;
@@ -550,15 +411,9 @@ export type CoordinateSequenceReadable = {
     readonly hasM: boolean;
     readonly zOrdinateIndex: number;
     readonly mOrdinateIndex: number;
-    first: CoordinateReadable;
-    last: CoordinateReadable;
+    first: Coordinate;
+    last: Coordinate;
     readonly count: number;
-};
-
-export type CoordinateSequenceWritable = {
-    ordinates: Ordinates;
-    first: CoordinateWritable;
-    last: CoordinateWritable;
 };
 
 export type CoordinateSequenceFactory = {
@@ -575,21 +430,16 @@ export type CreateClanCommand = {
     region: Region;
     languages: Array<Languages>;
     discord: string | null;
-    armoryTimeout: string;
+    armoryTimeout: number;
 };
 
 export type CreatePartyCommand = {
     userId: number;
 };
 
-export type CreateTerrainCommandReadable = {
+export type CreateTerrainCommand = {
     type: TerrainType;
-    boundary: PolygonReadable;
-};
-
-export type CreateTerrainCommandWritable = {
-    type: TerrainType;
-    boundary: PolygonWritable;
+    boundary: Polygon;
 };
 
 export type Culture = 'Neutral' | 'Aserai' | 'Battania' | 'Empire' | 'Khuzait' | 'Looters' | 'Sturgia' | 'Vlandia';
@@ -613,7 +463,7 @@ export type EnableItemCommand = {
     userId: number;
 };
 
-export type EnvelopeReadable = {
+export type Envelope = {
     readonly isNull: boolean;
     readonly width: number;
     readonly height: number;
@@ -625,11 +475,7 @@ export type EnvelopeReadable = {
     readonly area: number;
     readonly minExtent: number;
     readonly maxExtent: number;
-    centre: CoordinateReadable;
-};
-
-export type EnvelopeWritable = {
-    centre: CoordinateWritable;
+    centre: Coordinate;
 };
 
 export type EquippedItemIdViewModel = {
@@ -642,12 +488,8 @@ export type EquippedItemViewModel = {
     userItem: UserItemViewModel;
 };
 
-export type EquippedItemViewModelIListResultReadable = {
+export type EquippedItemViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<EquippedItemViewModel> | null;
-};
-
-export type EquippedItemViewModelIListResultWritable = {
     data: Array<EquippedItemViewModel> | null;
 };
 
@@ -695,22 +537,8 @@ export type GameEquippedItemViewModel = {
 
 export type GameMode = 'CRPGBattle' | 'CRPGConquest' | 'CRPGDTV' | 'CRPGDuel' | 'CRPGSiege' | 'CRPGTeamDeathmatch' | 'CRPGSkirmish' | 'CRPGUnknownGameMode' | 'CRPGCaptain';
 
-export type GameModeCharacterStatisticsViewModelDictionaryResultReadable = {
+export type GameModeCharacterStatisticsViewModelDictionaryResult = {
     readonly errors: Array<_Error> | null;
-    data: {
-        CRPGBattle: CharacterStatisticsViewModel;
-        CRPGConquest: CharacterStatisticsViewModel;
-        CRPGDTV: CharacterStatisticsViewModel;
-        CRPGDuel: CharacterStatisticsViewModel;
-        CRPGSiege: CharacterStatisticsViewModel;
-        CRPGTeamDeathmatch: CharacterStatisticsViewModel;
-        CRPGSkirmish: CharacterStatisticsViewModel;
-        CRPGUnknownGameMode: CharacterStatisticsViewModel;
-        CRPGCaptain: CharacterStatisticsViewModel;
-    } | null;
-};
-
-export type GameModeCharacterStatisticsViewModelDictionaryResultWritable = {
     data: {
         CRPGBattle: CharacterStatisticsViewModel;
         CRPGConquest: CharacterStatisticsViewModel;
@@ -780,12 +608,8 @@ export type GameServerStats = {
     };
 };
 
-export type GameServerStatsResultReadable = {
+export type GameServerStatsResult = {
     readonly errors: Array<_Error> | null;
-    data: GameServerStats;
-};
-
-export type GameServerStatsResultWritable = {
     data: GameServerStats;
 };
 
@@ -839,24 +663,20 @@ export type GameUserViewModel = {
     clanMembership: GameClanMemberViewModel;
 };
 
-export type GameUserViewModelResultReadable = {
+export type GameUserViewModelResult = {
     readonly errors: Array<_Error> | null;
     data: GameUserViewModel;
 };
 
-export type GameUserViewModelResultWritable = {
-    data: GameUserViewModel;
-};
-
-export type GeometryReadable = {
-    factory: GeometryFactoryReadable;
+export type Geometry = {
+    factory: GeometryFactory;
     userData?: unknown;
     srid: number;
     readonly geometryType?: string | null;
     ogcGeometryType: OgcGeometryType;
-    precisionModel: PrecisionModelReadable;
-    coordinate: CoordinateReadable;
-    readonly coordinates?: Array<CoordinateReadable> | null;
+    precisionModel: PrecisionModel;
+    coordinate: Coordinate;
+    readonly coordinates?: Array<Coordinate> | null;
     readonly numPoints: number;
     readonly numGeometries: number;
     readonly isSimple: boolean;
@@ -864,44 +684,22 @@ export type GeometryReadable = {
     readonly isEmpty: boolean;
     readonly area: number;
     readonly length: number;
-    centroid: PointReadable;
-    interiorPoint: PointReadable;
-    pointOnSurface: PointReadable;
+    centroid: Point;
+    interiorPoint: Point;
+    pointOnSurface: Point;
     dimension: Dimension;
-    boundary: GeometryReadable;
+    boundary: Geometry;
     boundaryDimension: Dimension;
-    envelope: GeometryReadable;
-    envelopeInternal: EnvelopeReadable;
+    envelope: Geometry;
+    envelopeInternal: Envelope;
     readonly isRectangle: boolean;
 };
 
-export type GeometryWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    ogcGeometryType: OgcGeometryType;
-    precisionModel: PrecisionModelWritable;
-    coordinate: CoordinateWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    dimension: Dimension;
-    boundary: GeometryWritable;
-    boundaryDimension: Dimension;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-};
-
-export type GeometryFactoryReadable = {
-    precisionModel: PrecisionModelReadable;
+export type GeometryFactory = {
+    precisionModel: PrecisionModel;
     coordinateSequenceFactory: CoordinateSequenceFactory;
     readonly srid: number;
-    geometryServices: NtsGeometryServicesReadable;
-};
-
-export type GeometryFactoryWritable = {
-    precisionModel: PrecisionModelWritable;
-    coordinateSequenceFactory: CoordinateSequenceFactory;
+    geometryServices: NtsGeometryServices;
 };
 
 export type GeometryOverlay = {
@@ -939,25 +737,17 @@ export type ItemStack = {
     count: number;
 };
 
-export type ItemStackIListResultReadable = {
+export type ItemStackIListResult = {
     readonly errors: Array<_Error> | null;
     data: Array<ItemStack> | null;
 };
 
-export type ItemStackIListResultWritable = {
-    data: Array<ItemStack> | null;
-};
-
-export type ItemStackResultReadable = {
+export type ItemStackResult = {
     readonly errors: Array<_Error> | null;
     data: ItemStack;
 };
 
-export type ItemStackResultWritable = {
-    data: ItemStack;
-};
-
-export type ItemType = 'Undefined' | 'HeadArmor' | 'ShoulderArmor' | 'BodyArmor' | 'HandArmor' | 'LegArmor' | 'MountHarness' | 'Mount' | 'Shield' | 'Bow' | 'Crossbow' | 'OneHandedWeapon' | 'TwoHandedWeapon' | 'Polearm' | 'Thrown' | 'Arrows' | 'Bolts' | 'Pistol' | 'Musket' | 'Bullets' | 'Banner';
+export type ItemType = 'Undefined' | 'HeadArmor' | 'ShoulderArmor' | 'BodyArmor' | 'HandArmor' | 'LegArmor' | 'MountHarness' | 'Mount' | 'Shield' | 'Bow' | 'Crossbow' | 'OneHandedWeapon' | 'TwoHandedWeapon' | 'Polearm' | 'Thrown' | 'Arrows' | 'Bolts' | 'Pistol' | 'Musket' | 'Bullets' | 'Banner' | 'Ranged' | 'Ammo';
 
 export type ItemViewModel = {
     id: string;
@@ -978,18 +768,14 @@ export type ItemViewModel = {
     enabled: boolean;
 };
 
-export type ItemViewModelIListResultReadable = {
+export type ItemViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<ItemViewModel> | null;
-};
-
-export type ItemViewModelIListResultWritable = {
     data: Array<ItemViewModel> | null;
 };
 
 export type ItemWeaponComponentViewModel = {
     class: WeaponClass;
-    itemUsage: string;
+    itemUsage: 'long_bow' | 'bow' | 'crossbow' | 'crossbow_light' | 'polearm_couch' | 'polearm_bracing' | 'polearm_pike' | 'polearm';
     accuracy: number;
     missileSpeed: number;
     stackAmount: number;
@@ -1008,86 +794,66 @@ export type ItemWeaponComponentViewModel = {
 
 export type Languages = 'En' | 'Zh' | 'Ru' | 'De' | 'Fr' | 'It' | 'Es' | 'Pl' | 'Uk' | 'Ro' | 'Nl' | 'Tr' | 'El' | 'Hu' | 'Sv' | 'Cs' | 'Pt' | 'Sr' | 'Bg' | 'Hr' | 'Da' | 'Fi' | 'No' | 'Be' | 'Lv';
 
-export type LineStringReadable = {
-    factory: GeometryFactoryReadable;
+export type LineString = {
+    factory: GeometryFactory;
     userData?: unknown;
     srid: number;
-    precisionModel: PrecisionModelReadable;
+    precisionModel: PrecisionModel;
     readonly numGeometries: number;
     readonly isSimple: boolean;
     readonly isValid: boolean;
     readonly area: number;
-    centroid: PointReadable;
-    interiorPoint: PointReadable;
-    pointOnSurface: PointReadable;
-    envelope: GeometryReadable;
-    envelopeInternal: EnvelopeReadable;
+    centroid: Point;
+    interiorPoint: Point;
+    pointOnSurface: Point;
+    envelope: Geometry;
+    envelopeInternal: Envelope;
     readonly isRectangle: boolean;
-    readonly coordinates?: Array<CoordinateReadable> | null;
-    coordinateSequence: CoordinateSequenceReadable;
-    coordinate: CoordinateReadable;
+    readonly coordinates?: Array<Coordinate> | null;
+    coordinateSequence: CoordinateSequence;
+    coordinate: Coordinate;
     dimension: Dimension;
     boundaryDimension: Dimension;
     readonly isEmpty: boolean;
     readonly numPoints: number;
-    startPoint: PointReadable;
-    endPoint: PointReadable;
+    startPoint: Point;
+    endPoint: Point;
     readonly isClosed: boolean;
     readonly isRing: boolean;
     readonly geometryType?: string | null;
     ogcGeometryType: OgcGeometryType;
     readonly length: number;
-    boundary: GeometryReadable;
+    boundary: Geometry;
     readonly count: number;
 };
 
-export type LineStringWritable = {
-    factory: GeometryFactoryWritable;
+export type LinearRing = {
+    factory: GeometryFactory;
     userData?: unknown;
     srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinateSequence: CoordinateSequenceWritable;
-    coordinate: CoordinateWritable;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    startPoint: PointWritable;
-    endPoint: PointWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-};
-
-export type LinearRingReadable = {
-    factory: GeometryFactoryReadable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelReadable;
+    precisionModel: PrecisionModel;
     readonly numGeometries: number;
     readonly isSimple: boolean;
     readonly isValid: boolean;
     readonly area: number;
-    centroid: PointReadable;
-    interiorPoint: PointReadable;
-    pointOnSurface: PointReadable;
-    envelope: GeometryReadable;
-    envelopeInternal: EnvelopeReadable;
+    centroid: Point;
+    interiorPoint: Point;
+    pointOnSurface: Point;
+    envelope: Geometry;
+    envelopeInternal: Envelope;
     readonly isRectangle: boolean;
-    readonly coordinates?: Array<CoordinateReadable> | null;
-    coordinateSequence: CoordinateSequenceReadable;
-    coordinate: CoordinateReadable;
+    readonly coordinates?: Array<Coordinate> | null;
+    coordinateSequence: CoordinateSequence;
+    coordinate: Coordinate;
     dimension: Dimension;
     readonly isEmpty: boolean;
     readonly numPoints: number;
-    startPoint: PointReadable;
-    endPoint: PointReadable;
+    startPoint: Point;
+    endPoint: Point;
     readonly isRing: boolean;
     ogcGeometryType: OgcGeometryType;
     readonly length: number;
-    boundary: GeometryReadable;
+    boundary: Geometry;
     readonly count: number;
     boundaryDimension: Dimension;
     readonly isClosed: boolean;
@@ -1095,43 +861,16 @@ export type LinearRingReadable = {
     readonly isCCW: boolean;
 };
 
-export type LinearRingWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinateSequence: CoordinateSequenceWritable;
-    coordinate: CoordinateWritable;
-    dimension: Dimension;
-    startPoint: PointWritable;
-    endPoint: PointWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-    boundaryDimension: Dimension;
-};
-
 export type NotificationState = 'Unread' | 'Read';
 
 export type NotificationType = 'UserRewardedToUser' | 'CharacterRewardedToUser' | 'ItemReturned' | 'ClanApplicationCreatedToUser' | 'ClanApplicationCreatedToOfficers' | 'ClanApplicationAcceptedToUser' | 'ClanApplicationDeclinedToUser' | 'ClanMemberRoleChangedToUser' | 'ClanMemberLeavedToLeader' | 'ClanMemberKickedToExMember' | 'ClanArmoryBorrowItemToLender' | 'ClanArmoryRemoveItemToBorrower';
 
-export type NtsGeometryServicesReadable = {
+export type NtsGeometryServices = {
     geometryOverlay: GeometryOverlay;
     coordinateEqualityComparer: CoordinateEqualityComparer;
     readonly defaultSRID: number;
     defaultCoordinateSequenceFactory: CoordinateSequenceFactory;
-    defaultPrecisionModel: PrecisionModelReadable;
-};
-
-export type NtsGeometryServicesWritable = {
-    geometryOverlay: GeometryOverlay;
-    coordinateEqualityComparer: CoordinateEqualityComparer;
-    defaultCoordinateSequenceFactory: CoordinateSequenceFactory;
-    defaultPrecisionModel: PrecisionModelWritable;
+    defaultPrecisionModel: PrecisionModel;
 };
 
 export type OgcGeometryType = 'Point' | 'LineString' | 'Polygon' | 'MultiPoint' | 'MultiLineString' | 'MultiPolygon' | 'GeometryCollection' | 'CircularString' | 'CompoundCurve' | 'CurvePolygon' | 'MultiCurve' | 'MultiSurface' | 'Curve' | 'Surface' | 'PolyhedralSurface' | 'TIN';
@@ -1145,50 +884,27 @@ export type PartyPublicViewModel = {
 
 export type PartyStatus = 'Idle' | 'IdleInSettlement' | 'RecruitingInSettlement' | 'MovingToPoint' | 'FollowingParty' | 'MovingToSettlement' | 'MovingToAttackParty' | 'MovingToAttackSettlement' | 'InBattle';
 
-export type PartyViewModelReadable = {
+export type PartyViewModel = {
     id: number;
     gold: number;
     troops: number;
-    position: PointReadable;
+    position: Point;
     status: PartyStatus;
-    waypoints: Array<GeometryReadable>;
-    targetedParty: PartyVisibleViewModelReadable;
-    targetedSettlement: SettlementPublicViewModelReadable;
+    waypoints: Array<Geometry>;
+    targetedParty: PartyVisibleViewModel;
+    targetedSettlement: SettlementPublicViewModel;
     user: UserPublicViewModel;
 };
 
-export type PartyViewModelWritable = {
-    id: number;
-    gold: number;
-    troops: number;
-    position: PointWritable;
-    status: PartyStatus;
-    waypoints: Array<GeometryWritable>;
-    targetedParty: PartyVisibleViewModelWritable;
-    targetedSettlement: SettlementPublicViewModelWritable;
-    user: UserPublicViewModel;
-};
-
-export type PartyViewModelResultReadable = {
+export type PartyViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: PartyViewModelReadable;
+    data: PartyViewModel;
 };
 
-export type PartyViewModelResultWritable = {
-    data: PartyViewModelWritable;
-};
-
-export type PartyVisibleViewModelReadable = {
+export type PartyVisibleViewModel = {
     id: number;
     troops: number;
-    position: PointReadable;
-    user: UserPublicViewModel;
-};
-
-export type PartyVisibleViewModelWritable = {
-    id: number;
-    troops: number;
-    position: PointWritable;
+    position: Point;
     user: UserPublicViewModel;
 };
 
@@ -1200,132 +916,82 @@ export type PatchNotes = {
     createdAt: Date;
 };
 
-export type PatchNotesIListResultReadable = {
+export type PatchNotesIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<PatchNotes> | null;
-};
-
-export type PatchNotesIListResultWritable = {
     data: Array<PatchNotes> | null;
 };
 
 export type Platform = 'Steam' | 'EpicGames' | 'Microsoft';
 
-export type PointReadable = {
-    factory: GeometryFactoryReadable;
+export type Point = {
+    factory: GeometryFactory;
     userData?: unknown;
     srid: number;
-    precisionModel: PrecisionModelReadable;
+    precisionModel: PrecisionModel;
     readonly numGeometries: number;
     readonly isSimple: boolean;
     readonly isValid: boolean;
     readonly area: number;
     readonly length: number;
-    centroid: PointReadable;
-    interiorPoint: PointReadable;
-    pointOnSurface: PointReadable;
-    envelope: GeometryReadable;
-    envelopeInternal: EnvelopeReadable;
+    centroid: Point;
+    interiorPoint: Point;
+    pointOnSurface: Point;
+    envelope: Geometry;
+    envelopeInternal: Envelope;
     readonly isRectangle: boolean;
-    coordinateSequence: CoordinateSequenceReadable;
-    readonly coordinates?: Array<CoordinateReadable> | null;
+    coordinateSequence: CoordinateSequence;
+    readonly coordinates?: Array<Coordinate> | null;
     readonly numPoints: number;
     readonly isEmpty: boolean;
     dimension: Dimension;
     boundaryDimension: Dimension;
     x: number;
     y: number;
-    coordinate: CoordinateReadable;
+    coordinate: Coordinate;
     readonly geometryType?: string | null;
     ogcGeometryType: OgcGeometryType;
-    boundary: GeometryReadable;
+    boundary: Geometry;
     z: number;
     m: number;
 };
 
-export type PointWritable = {
-    factory: GeometryFactoryWritable;
+export type Polygon = {
+    factory: GeometryFactory;
     userData?: unknown;
     srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    x: number;
-    y: number;
-    coordinate: CoordinateWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-    z: number;
-    m: number;
-};
-
-export type PolygonReadable = {
-    factory: GeometryFactoryReadable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelReadable;
+    precisionModel: PrecisionModel;
     readonly numGeometries: number;
     readonly isSimple: boolean;
     readonly isValid: boolean;
-    centroid: PointReadable;
-    interiorPoint: PointReadable;
-    pointOnSurface: PointReadable;
-    envelope: GeometryReadable;
-    envelopeInternal: EnvelopeReadable;
-    coordinate: CoordinateReadable;
-    readonly coordinates?: Array<CoordinateReadable> | null;
+    centroid: Point;
+    interiorPoint: Point;
+    pointOnSurface: Point;
+    envelope: Geometry;
+    envelopeInternal: Envelope;
+    coordinate: Coordinate;
+    readonly coordinates?: Array<Coordinate> | null;
     readonly numPoints: number;
     dimension: Dimension;
     boundaryDimension: Dimension;
     readonly isEmpty: boolean;
-    exteriorRing: LineStringReadable;
+    exteriorRing: LineString;
     readonly numInteriorRings: number;
-    readonly interiorRings?: Array<LineStringReadable> | null;
+    readonly interiorRings?: Array<LineString> | null;
     readonly geometryType?: string | null;
     ogcGeometryType: OgcGeometryType;
     readonly area: number;
     readonly length: number;
-    boundary: GeometryReadable;
+    boundary: Geometry;
     readonly isRectangle: boolean;
-    shell: LinearRingReadable;
-    holes?: Array<LinearRingReadable> | null;
+    shell: LinearRing;
+    holes?: Array<LinearRing> | null;
 };
 
-export type PolygonWritable = {
-    factory: GeometryFactoryWritable;
-    userData?: unknown;
-    srid: number;
-    precisionModel: PrecisionModelWritable;
-    centroid: PointWritable;
-    interiorPoint: PointWritable;
-    pointOnSurface: PointWritable;
-    envelope: GeometryWritable;
-    envelopeInternal: EnvelopeWritable;
-    coordinate: CoordinateWritable;
-    dimension: Dimension;
-    boundaryDimension: Dimension;
-    exteriorRing: LineStringWritable;
-    ogcGeometryType: OgcGeometryType;
-    boundary: GeometryWritable;
-    shell: LinearRingWritable;
-    holes?: Array<LinearRingWritable> | null;
-};
-
-export type PrecisionModelReadable = {
+export type PrecisionModel = {
     readonly isFloating: boolean;
     readonly maximumSignificantDigits: number;
     scale: number;
     readonly gridSize: number;
-    precisionModelType: PrecisionModels;
-};
-
-export type PrecisionModelWritable = {
-    scale: number;
     precisionModelType: PrecisionModels;
 };
 
@@ -1356,7 +1022,7 @@ export type RespondToBattleMercenaryApplicationCommand = {
 
 export type RestrictCommand = {
     restrictedUserId: number;
-    duration: string;
+    duration: number;
     type: RestrictionType;
     reason: string;
     publicReason: string;
@@ -1364,17 +1030,13 @@ export type RestrictCommand = {
 
 export type RestrictionPublicViewModel = {
     id: number;
-    duration: string;
+    duration: number;
     reason: string;
     createdAt: Date;
 };
 
-export type RestrictionPublicViewModelResultReadable = {
+export type RestrictionPublicViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: RestrictionPublicViewModel;
-};
-
-export type RestrictionPublicViewModelResultWritable = {
     data: RestrictionPublicViewModel;
 };
 
@@ -1383,7 +1045,7 @@ export type RestrictionType = 'All' | 'Join' | 'Chat';
 export type RestrictionViewModel = {
     id: number;
     restrictedUser: UserPrivateViewModel;
-    duration: string;
+    duration: number;
     type: RestrictionType;
     reason: string;
     publicReason: string;
@@ -1391,21 +1053,13 @@ export type RestrictionViewModel = {
     createdAt: Date;
 };
 
-export type RestrictionViewModelIListResultReadable = {
+export type RestrictionViewModelIListResult = {
     readonly errors: Array<_Error> | null;
     data: Array<RestrictionViewModel> | null;
 };
 
-export type RestrictionViewModelIListResultWritable = {
-    data: Array<RestrictionViewModel> | null;
-};
-
-export type RestrictionViewModelResultReadable = {
+export type RestrictionViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: RestrictionViewModel;
-};
-
-export type RestrictionViewModelResultWritable = {
     data: RestrictionViewModel;
 };
 
@@ -1431,110 +1085,62 @@ export type SettingsViewModel = {
     modDb: string;
 };
 
-export type SettingsViewModelResultReadable = {
+export type SettingsViewModelResult = {
     readonly errors: Array<_Error> | null;
     data: SettingsViewModel;
 };
 
-export type SettingsViewModelResultWritable = {
-    data: SettingsViewModel;
-};
-
-export type SettlementPublicViewModelReadable = {
+export type SettlementPublicViewModel = {
     id: number;
     name: string;
     type: SettlementType;
-    position: PointReadable;
+    position: Point;
     culture: Culture;
     region: Region;
     troops: number;
     owner: UserPublicViewModel;
 };
 
-export type SettlementPublicViewModelWritable = {
-    id: number;
-    name: string;
-    type: SettlementType;
-    position: PointWritable;
-    culture: Culture;
-    region: Region;
-    troops: number;
-    owner: UserPublicViewModel;
-};
-
-export type SettlementPublicViewModelIListResultReadable = {
+export type SettlementPublicViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<SettlementPublicViewModelReadable> | null;
+    data: Array<SettlementPublicViewModel> | null;
 };
 
-export type SettlementPublicViewModelIListResultWritable = {
-    data: Array<SettlementPublicViewModelWritable> | null;
-};
-
-export type SettlementPublicViewModelResultReadable = {
+export type SettlementPublicViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: SettlementPublicViewModelReadable;
-};
-
-export type SettlementPublicViewModelResultWritable = {
-    data: SettlementPublicViewModelWritable;
+    data: SettlementPublicViewModel;
 };
 
 export type SettlementType = 'Village' | 'Castle' | 'Town';
 
-export type StrategusUpdateReadable = {
-    party: PartyViewModelReadable;
-    visibleParties: Array<PartyVisibleViewModelReadable>;
-    visibleSettlements: Array<SettlementPublicViewModelReadable>;
-    visibleBattles: Array<BattleViewModelReadable>;
+export type StrategusUpdate = {
+    party: PartyViewModel;
+    visibleParties: Array<PartyVisibleViewModel>;
+    visibleSettlements: Array<SettlementPublicViewModel>;
+    visibleBattles: Array<BattleViewModel>;
 };
 
-export type StrategusUpdateWritable = {
-    party: PartyViewModelWritable;
-    visibleParties: Array<PartyVisibleViewModelWritable>;
-    visibleSettlements: Array<SettlementPublicViewModelWritable>;
-    visibleBattles: Array<BattleViewModelWritable>;
-};
-
-export type StrategusUpdateResultReadable = {
+export type StrategusUpdateResult = {
     readonly errors: Array<_Error> | null;
-    data: StrategusUpdateReadable;
-};
-
-export type StrategusUpdateResultWritable = {
-    data: StrategusUpdateWritable;
+    data: StrategusUpdate;
 };
 
 export type TerrainType = 'Barrier' | 'ThickForest' | 'SparseForest' | 'ShallowWater' | 'DeepWater';
 
-export type TerrainViewModelReadable = {
+export type TerrainViewModel = {
     id: number;
     type: TerrainType;
-    boundary: PolygonReadable;
+    boundary: Polygon;
 };
 
-export type TerrainViewModelWritable = {
-    id: number;
-    type: TerrainType;
-    boundary: PolygonWritable;
-};
-
-export type TerrainViewModelIListResultReadable = {
+export type TerrainViewModelIListResult = {
     readonly errors: Array<_Error> | null;
-    data: Array<TerrainViewModelReadable> | null;
+    data: Array<TerrainViewModel> | null;
 };
 
-export type TerrainViewModelIListResultWritable = {
-    data: Array<TerrainViewModelWritable> | null;
-};
-
-export type TerrainViewModelResultReadable = {
+export type TerrainViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: TerrainViewModelReadable;
-};
-
-export type TerrainViewModelResultWritable = {
-    data: TerrainViewModelWritable;
+    data: TerrainViewModel;
 };
 
 export type UpdateCharacterCommand = {
@@ -1555,7 +1161,7 @@ export type UpdateClanCommand = {
     region: Region;
     languages: Array<Languages>;
     discord: string | null;
-    armoryTimeout: string;
+    armoryTimeout: number;
 };
 
 export type UpdateClanMemberCommand = {
@@ -1577,27 +1183,15 @@ export type UpdateGameUsersResult = {
     updateResults: Array<UpdateGameUserResult>;
 };
 
-export type UpdateGameUsersResultResultReadable = {
+export type UpdateGameUsersResultResult = {
     readonly errors: Array<_Error> | null;
     data: UpdateGameUsersResult;
 };
 
-export type UpdateGameUsersResultResultWritable = {
-    data: UpdateGameUsersResult;
-};
-
-export type UpdatePartyStatusCommandReadable = {
+export type UpdatePartyStatusCommand = {
     partyId: number;
     status: PartyStatus;
-    waypoints: Array<GeometryReadable>;
-    targetedPartyId: number;
-    targetedSettlementId: number;
-};
-
-export type UpdatePartyStatusCommandWritable = {
-    partyId: number;
-    status: PartyStatus;
-    waypoints: Array<GeometryWritable>;
+    waypoints: Array<Geometry>;
     targetedPartyId: number;
     targetedSettlementId: number;
 };
@@ -1608,14 +1202,9 @@ export type UpdateSettlementCommand = {
     troops: number;
 };
 
-export type UpdateTerrainCommandReadable = {
+export type UpdateTerrainCommand = {
     id: number;
-    boundary: PolygonReadable;
-};
-
-export type UpdateTerrainCommandWritable = {
-    id: number;
-    boundary: PolygonWritable;
+    boundary: Polygon;
 };
 
 export type UpdateUserCommand = {
@@ -1631,12 +1220,8 @@ export type UserClanViewModel = {
     role: ClanMemberRole;
 };
 
-export type UserClanViewModelResultReadable = {
+export type UserClanViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserClanViewModel;
-};
-
-export type UserClanViewModelResultWritable = {
     data: UserClanViewModel;
 };
 
@@ -1650,21 +1235,13 @@ export type UserItemViewModel = {
     isPersonal: boolean;
 };
 
-export type UserItemViewModelIListResultReadable = {
+export type UserItemViewModelIListResult = {
     readonly errors: Array<_Error> | null;
     data: Array<UserItemViewModel> | null;
 };
 
-export type UserItemViewModelIListResultWritable = {
-    data: Array<UserItemViewModel> | null;
-};
-
-export type UserItemViewModelResultReadable = {
+export type UserItemViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserItemViewModel;
-};
-
-export type UserItemViewModelResultWritable = {
     data: UserItemViewModel;
 };
 
@@ -1684,12 +1261,8 @@ export type UserNotificationViewModel = {
     createdAt: Date;
 };
 
-export type UserNotificationViewModelResultReadable = {
+export type UserNotificationViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserNotificationViewModel;
-};
-
-export type UserNotificationViewModelResultWritable = {
     data: UserNotificationViewModel;
 };
 
@@ -1698,12 +1271,8 @@ export type UserNotificationsWithDictViewModel = {
     dict: UserNotificationMetadataEntitiesDictViewModel;
 };
 
-export type UserNotificationsWithDictViewModelResultReadable = {
+export type UserNotificationsWithDictViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserNotificationsWithDictViewModel;
-};
-
-export type UserNotificationsWithDictViewModelResultWritable = {
     data: UserNotificationsWithDictViewModel;
 };
 
@@ -1725,30 +1294,18 @@ export type UserPrivateViewModel = {
     clanMembership: UserClanViewModel;
 };
 
-export type UserPrivateViewModelArrayResultReadable = {
+export type UserPrivateViewModelArrayResult = {
     readonly errors: Array<_Error> | null;
     data: Array<UserPrivateViewModel> | null;
 };
 
-export type UserPrivateViewModelArrayResultWritable = {
-    data: Array<UserPrivateViewModel> | null;
-};
-
-export type UserPrivateViewModelIListResultReadable = {
+export type UserPrivateViewModelIListResult = {
     readonly errors: Array<_Error> | null;
     data: Array<UserPrivateViewModel> | null;
 };
 
-export type UserPrivateViewModelIListResultWritable = {
-    data: Array<UserPrivateViewModel> | null;
-};
-
-export type UserPrivateViewModelResultReadable = {
+export type UserPrivateViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserPrivateViewModel;
-};
-
-export type UserPrivateViewModelResultWritable = {
     data: UserPrivateViewModel;
 };
 
@@ -1779,18 +1336,14 @@ export type UserViewModel = {
     clanMembership: UserClanViewModel;
 };
 
-export type UserViewModelResultReadable = {
+export type UserViewModelResult = {
     readonly errors: Array<_Error> | null;
-    data: UserViewModel;
-};
-
-export type UserViewModelResultWritable = {
     data: UserViewModel;
 };
 
 export type WeaponClass = 'Undefined' | 'Dagger' | 'OneHandedSword' | 'TwoHandedSword' | 'OneHandedAxe' | 'TwoHandedAxe' | 'Mace' | 'Pick' | 'TwoHandedMace' | 'OneHandedPolearm' | 'TwoHandedPolearm' | 'LowGripPolearm' | 'Arrow' | 'Bolt' | 'Cartridge' | 'Bow' | 'Crossbow' | 'Stone' | 'Boulder' | 'ThrowingAxe' | 'ThrowingKnife' | 'Javelin' | 'Pistol' | 'Musket' | 'SmallShield' | 'LargeShield' | 'Banner';
 
-export type WeaponFlags = 'MeleeWeapon' | 'RangedWeapon' | 'FirearmAmmo' | 'NotUsableWithOneHand' | 'NotUsableWithTwoHand' | 'WideGrip' | 'AttachAmmoToVisual' | 'Consumable' | 'HasHitPoints' | 'HasString' | 'StringHeldByHand' | 'UnloadWhenSheathed' | 'AffectsArea' | 'AffectsAreaBig' | 'Burning' | 'BonusAgainstShield' | 'CanPenetrateShield' | 'CantReloadOnHorseback' | 'AutoReload' | 'TwoHandIdleOnMount' | 'NoBlood' | 'PenaltyWithShield' | 'CanDismount' | 'CanHook' | 'CanKnockDown' | 'CanCrushThrough' | 'CanBlockRanged' | 'MissileWithPhysics' | 'MultiplePenetration' | 'LeavesTrail' | 'UseHandAsThrowBase' | 'AmmoBreaksOnBounceBack' | 'AmmoCanBreakOnBounceBack' | 'AmmoSticksWhenShot';
+export type WeaponFlags = 'MeleeWeapon' | 'RangedWeapon' | 'FirearmAmmo' | 'NotUsableWithOneHand' | 'NotUsableWithTwoHand' | 'WideGrip' | 'AttachAmmoToVisual' | 'Consumable' | 'HasHitPoints' | 'HasString' | 'StringHeldByHand' | 'UnloadWhenSheathed' | 'AffectsArea' | 'AffectsAreaBig' | 'Burning' | 'BonusAgainstShield' | 'CanPenetrateShield' | 'CantReloadOnHorseback' | 'AutoReload' | 'TwoHandIdleOnMount' | 'NoBlood' | 'PenaltyWithShield' | 'CanDismount' | 'CanHook' | 'CanKnockDown' | 'CanCrushThrough' | 'CanBlockRanged' | 'MissileWithPhysics' | 'MultiplePenetration' | 'LeavesTrail' | 'UseHandAsThrowBase' | 'AmmoBreaksOnBounceBack' | 'AmmoCanBreakOnBounceBack' | 'AmmoSticksWhenShot' | 'CanReloadOnHorseback' | 'CantUseOnHorseback';
 
 export type GetActivityLogsData = {
     body?: never;
@@ -1798,8 +1351,8 @@ export type GetActivityLogsData = {
     query: {
         from: Date;
         to: Date;
-        'userId[]': Array<number>;
-        'type[]': Array<ActivityLogType>;
+        'userId[]'?: Array<number>;
+        'type[]'?: Array<ActivityLogType>;
     };
     url: '/activity-logs';
 };
@@ -1815,7 +1368,7 @@ export type GetActivityLogsResponses = {
     /**
      * Ok.
      */
-    200: ActivityLogWithDictViewModelResultReadable;
+    200: ActivityLogWithDictViewModelResult;
 };
 
 export type GetActivityLogsResponse = GetActivityLogsResponses[keyof GetActivityLogsResponses];
@@ -1825,7 +1378,7 @@ export type GetBattlesData = {
     path?: never;
     query: {
         region: Region;
-        'phase[]': Array<BattlePhase>;
+        'phase[]'?: Array<BattlePhase>;
     };
     url: '/Battles';
 };
@@ -1834,7 +1387,7 @@ export type GetBattlesResponses = {
     /**
      * OK
      */
-    200: BattleDetailedViewModelIListResultReadable;
+    200: BattleDetailedViewModelIListResult;
 };
 
 export type GetBattlesResponse = GetBattlesResponses[keyof GetBattlesResponses];
@@ -1852,7 +1405,7 @@ export type GetBattlesByBattleIdResponses = {
     /**
      * OK
      */
-    200: BattleViewModelResultReadable;
+    200: BattleViewModelResult;
 };
 
 export type GetBattlesByBattleIdResponse = GetBattlesByBattleIdResponses[keyof GetBattlesByBattleIdResponses];
@@ -1877,7 +1430,7 @@ export type GetBattlesByBattleIdFightersResponses = {
     /**
      * Ok.
      */
-    200: BattleFighterViewModelIListResultReadable;
+    200: BattleFighterViewModelIListResult;
 };
 
 export type GetBattlesByBattleIdFightersResponse = GetBattlesByBattleIdFightersResponses[keyof GetBattlesByBattleIdFightersResponses];
@@ -1902,7 +1455,7 @@ export type PostBattlesByBattleIdFightersResponses = {
     /**
      * Applied.
      */
-    200: BattleFighterApplicationViewModelResultReadable;
+    200: BattleFighterApplicationViewModelResult;
 };
 
 export type PostBattlesByBattleIdFightersResponse = PostBattlesByBattleIdFightersResponses[keyof PostBattlesByBattleIdFightersResponses];
@@ -1912,8 +1465,8 @@ export type GetBattlesByBattleIdFighterApplicationsData = {
     path: {
         battleId: number;
     };
-    query: {
-        'status[]': Array<BattleFighterApplicationStatus>;
+    query?: {
+        'status[]'?: Array<BattleFighterApplicationStatus>;
     };
     url: '/Battles/{battleId}/fighter-applications';
 };
@@ -1929,7 +1482,7 @@ export type GetBattlesByBattleIdFighterApplicationsResponses = {
     /**
      * Ok.
      */
-    200: BattleFighterApplicationViewModelIListResultReadable;
+    200: BattleFighterApplicationViewModelIListResult;
 };
 
 export type GetBattlesByBattleIdFighterApplicationsResponse = GetBattlesByBattleIdFighterApplicationsResponses[keyof GetBattlesByBattleIdFighterApplicationsResponses];
@@ -1955,7 +1508,7 @@ export type PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseRespon
     /**
      * Ok.
      */
-    200: BattleFighterApplicationViewModelResultReadable;
+    200: BattleFighterApplicationViewModelResult;
 };
 
 export type PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponses[keyof PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponses];
@@ -1980,7 +1533,7 @@ export type GetBattlesByBattleIdMercenariesResponses = {
     /**
      * Ok.
      */
-    200: BattleMercenaryViewModelIListResultReadable;
+    200: BattleMercenaryViewModelIListResult;
 };
 
 export type GetBattlesByBattleIdMercenariesResponse = GetBattlesByBattleIdMercenariesResponses[keyof GetBattlesByBattleIdMercenariesResponses];
@@ -1990,8 +1543,8 @@ export type GetBattlesByBattleIdMercenaryApplicationsData = {
     path: {
         battleId: number;
     };
-    query: {
-        'status[]': Array<BattleMercenaryApplicationStatus>;
+    query?: {
+        'status[]'?: Array<BattleMercenaryApplicationStatus>;
     };
     url: '/Battles/{battleId}/mercenary-applications';
 };
@@ -2007,7 +1560,7 @@ export type GetBattlesByBattleIdMercenaryApplicationsResponses = {
     /**
      * Ok.
      */
-    200: BattleMercenaryApplicationViewModelIListResultReadable;
+    200: BattleMercenaryApplicationViewModelIListResult;
 };
 
 export type GetBattlesByBattleIdMercenaryApplicationsResponse = GetBattlesByBattleIdMercenaryApplicationsResponses[keyof GetBattlesByBattleIdMercenaryApplicationsResponses];
@@ -2032,7 +1585,7 @@ export type PostBattlesByBattleIdMercenaryApplicationsResponses = {
     /**
      * Applied.
      */
-    200: BattleMercenaryApplicationViewModelResultReadable;
+    200: BattleMercenaryApplicationViewModelResult;
 };
 
 export type PostBattlesByBattleIdMercenaryApplicationsResponse = PostBattlesByBattleIdMercenaryApplicationsResponses[keyof PostBattlesByBattleIdMercenaryApplicationsResponses];
@@ -2058,7 +1611,7 @@ export type PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResp
     /**
      * Ok.
      */
-    200: BattleMercenaryApplicationViewModelResultReadable;
+    200: BattleMercenaryApplicationViewModelResult;
 };
 
 export type PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponses[keyof PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponses];
@@ -2083,7 +1636,7 @@ export type GetClansByIdResponses = {
     /**
      * Ok.
      */
-    200: ClanViewModelResultReadable;
+    200: ClanViewModelResult;
 };
 
 export type GetClansByIdResponse = GetClansByIdResponses[keyof GetClansByIdResponses];
@@ -2108,7 +1661,7 @@ export type GetClansByIdMembersResponses = {
     /**
      * Ok.
      */
-    200: ClanMemberViewModelIListResultReadable;
+    200: ClanMemberViewModelIListResult;
 };
 
 export type GetClansByIdMembersResponse = GetClansByIdMembersResponses[keyof GetClansByIdMembersResponses];
@@ -2173,7 +1726,7 @@ export type PutClansByClanIdMembersByUserIdResponses = {
     /**
      * Updated.
      */
-    200: ClanMemberViewModelResultReadable;
+    200: ClanMemberViewModelResult;
 };
 
 export type PutClansByClanIdMembersByUserIdResponse = PutClansByClanIdMembersByUserIdResponses[keyof PutClansByClanIdMembersByUserIdResponses];
@@ -2189,7 +1742,7 @@ export type GetClansResponses = {
     /**
      * Ok.
      */
-    200: ClanWithMemberCountViewModelIListResultReadable;
+    200: ClanWithMemberCountViewModelIListResult;
 };
 
 export type GetClansResponse = GetClansResponses[keyof GetClansResponses];
@@ -2215,7 +1768,7 @@ export type PostClansResponses = {
     /**
      * OK
      */
-    200: ClanViewModelResultReadable;
+    200: ClanViewModelResult;
 };
 
 export type PostClansResponse = PostClansResponses[keyof PostClansResponses];
@@ -2246,7 +1799,7 @@ export type PutClansByClanIdResponses = {
     /**
      * Updated.
      */
-    200: ClanViewModelResultReadable;
+    200: ClanViewModelResult;
 };
 
 export type PutClansByClanIdResponse = PutClansByClanIdResponses[keyof PutClansByClanIdResponses];
@@ -2256,9 +1809,9 @@ export type GetClansByClanIdInvitationsData = {
     path: {
         clanId: number;
     };
-    query: {
-        'type[]': Array<ClanInvitationType>;
-        'status[]': Array<ClanInvitationStatus>;
+    query?: {
+        'type[]'?: Array<ClanInvitationType>;
+        'status[]'?: Array<ClanInvitationStatus>;
     };
     url: '/Clans/{clanId}/invitations';
 };
@@ -2274,7 +1827,7 @@ export type GetClansByClanIdInvitationsResponses = {
     /**
      * Ok.
      */
-    200: ClanInvitationViewModelIListResultReadable;
+    200: ClanInvitationViewModelIListResult;
 };
 
 export type GetClansByClanIdInvitationsResponse = GetClansByClanIdInvitationsResponses[keyof GetClansByClanIdInvitationsResponses];
@@ -2299,7 +1852,7 @@ export type PostClansByClanIdInvitationsResponses = {
     /**
      * OK
      */
-    200: ClanInvitationViewModelResultReadable;
+    200: ClanInvitationViewModelResult;
     /**
      * Invitation created.
      */
@@ -2329,7 +1882,7 @@ export type PutClansByClanIdInvitationsByInvitationIdResponseResponses = {
     /**
      * Responded successfully.
      */
-    200: ClanInvitationViewModelResultReadable;
+    200: ClanInvitationViewModelResult;
 };
 
 export type PutClansByClanIdInvitationsByInvitationIdResponseResponse = PutClansByClanIdInvitationsByInvitationIdResponseResponses[keyof PutClansByClanIdInvitationsByInvitationIdResponseResponses];
@@ -2357,7 +1910,7 @@ export type GetClansByClanIdArmoryResponses = {
     /**
      * Ok.
      */
-    200: ClanArmoryItemViewModelIListResultReadable;
+    200: ClanArmoryItemViewModelIListResult;
 };
 
 export type GetClansByClanIdArmoryResponse = GetClansByClanIdArmoryResponses[keyof GetClansByClanIdArmoryResponses];
@@ -2392,7 +1945,7 @@ export type PostClansByClanIdArmoryResponses = {
     /**
      * OK
      */
-    200: ClanArmoryItemViewModelResultReadable;
+    200: ClanArmoryItemViewModelResult;
     /**
      * Item added to clan armory.
      */
@@ -2464,7 +2017,7 @@ export type PutClansByClanIdArmoryByUserItemIdBorrowResponses = {
     /**
      * Ok.
      */
-    200: ClanArmoryBorrowedItemViewModelResultReadable;
+    200: ClanArmoryBorrowedItemViewModelResult;
 };
 
 export type PutClansByClanIdArmoryByUserItemIdBorrowResponse = PutClansByClanIdArmoryByUserItemIdBorrowResponses[keyof PutClansByClanIdArmoryByUserItemIdBorrowResponses];
@@ -2594,7 +2147,7 @@ export type GetGameServerStatisticsResponses = {
     /**
      * OK
      */
-    200: GameServerStatsResultReadable;
+    200: GameServerStatsResult;
 };
 
 export type GetGameServerStatisticsResponse = GetGameServerStatisticsResponses[keyof GetGameServerStatisticsResponses];
@@ -2604,9 +2157,9 @@ export type GetGamesUsersData = {
     path?: never;
     query: {
         platform: Platform;
-        platformUserId: string;
+        platformUserId?: string;
         region: Region;
-        instance: string;
+        instance?: string;
     };
     url: '/Games/users';
 };
@@ -2615,7 +2168,7 @@ export type GetGamesUsersResponses = {
     /**
      * OK
      */
-    200: GameUserViewModelResultReadable;
+    200: GameUserViewModelResult;
 };
 
 export type GetGamesUsersResponse = GetGamesUsersResponses[keyof GetGamesUsersResponses];
@@ -2631,7 +2184,7 @@ export type PutGamesUsersResponses = {
     /**
      * OK
      */
-    200: UpdateGameUsersResultResultReadable;
+    200: UpdateGameUsersResultResult;
 };
 
 export type PutGamesUsersResponse = PutGamesUsersResponses[keyof PutGamesUsersResponses];
@@ -2641,7 +2194,7 @@ export type GetGamesTournamentUsersData = {
     path?: never;
     query: {
         platform: Platform;
-        platformUserId: string;
+        platformUserId?: string;
     };
     url: '/Games/tournament-users';
 };
@@ -2650,7 +2203,7 @@ export type GetGamesTournamentUsersResponses = {
     /**
      * OK
      */
-    200: GameUserViewModelResultReadable;
+    200: GameUserViewModelResult;
 };
 
 export type GetGamesTournamentUsersResponse = GetGamesTournamentUsersResponses[keyof GetGamesTournamentUsersResponses];
@@ -2699,7 +2252,7 @@ export type GetGamesClansByIdResponses = {
     /**
      * Ok.
      */
-    200: ClanViewModelResultReadable;
+    200: ClanViewModelResult;
 };
 
 export type GetGamesClansByIdResponse = GetGamesClansByIdResponses[keyof GetGamesClansByIdResponses];
@@ -2715,7 +2268,7 @@ export type PostGamesRestrictionsResponses = {
     /**
      * OK
      */
-    200: RestrictionViewModelResultReadable;
+    200: RestrictionViewModelResult;
 };
 
 export type PostGamesRestrictionsResponse = PostGamesRestrictionsResponses[keyof PostGamesRestrictionsResponses];
@@ -2731,15 +2284,15 @@ export type GetItemsResponses = {
     /**
      * Ok.
      */
-    200: ItemViewModelIListResultReadable;
+    200: ItemViewModelIListResult;
 };
 
 export type GetItemsResponse = GetItemsResponses[keyof GetItemsResponses];
 
 export type GetItemsUpgradesByBaseIdData = {
     body?: never;
-    path: {
-        baseId: string;
+    path?: {
+        baseId?: string;
     };
     query?: never;
     url: '/Items/upgrades/{baseId}';
@@ -2749,7 +2302,7 @@ export type GetItemsUpgradesByBaseIdResponses = {
     /**
      * OK
      */
-    200: ItemViewModelIListResultReadable;
+    200: ItemViewModelIListResult;
 };
 
 export type GetItemsUpgradesByBaseIdResponse = GetItemsUpgradesByBaseIdResponses[keyof GetItemsUpgradesByBaseIdResponses];
@@ -2759,11 +2312,11 @@ export type PutItemsByIdEnableData = {
      * Enabling value.
      */
     body?: EnableItemCommand;
-    path: {
+    path?: {
         /**
          * Item id.
          */
-        id: string;
+        id?: string;
     };
     query?: never;
     url: '/Items/{id}/enable';
@@ -2794,11 +2347,11 @@ export type PostItemsByIdRefundData = {
      * Value.
      */
     body?: RefundItemCommand;
-    path: {
+    path?: {
         /**
          * Item id.
          */
-        id: string;
+        id?: string;
     };
     query?: never;
     url: '/Items/{id}/refund';
@@ -2821,10 +2374,10 @@ export type PostItemsByIdRefundResponses = {
 export type GetLeaderboardLeaderboardData = {
     body?: never;
     path?: never;
-    query: {
-        region: Region;
-        characterClass: CharacterClass;
-        gameMode: GameMode;
+    query?: {
+        region?: Region;
+        characterClass?: CharacterClass;
+        gameMode?: GameMode;
     };
     url: '/Leaderboard/leaderboard';
 };
@@ -2833,7 +2386,7 @@ export type GetLeaderboardLeaderboardResponses = {
     /**
      * Ok.
      */
-    200: CharacterPublicCompetitiveViewModelIListResultReadable;
+    200: CharacterPublicCompetitiveViewModelIListResult;
 };
 
 export type GetLeaderboardLeaderboardResponse = GetLeaderboardLeaderboardResponses[keyof GetLeaderboardLeaderboardResponses];
@@ -2856,7 +2409,7 @@ export type GetPartiesSelfUpdateResponses = {
     /**
      * Ok.
      */
-    200: StrategusUpdateResultReadable;
+    200: StrategusUpdateResult;
 };
 
 export type GetPartiesSelfUpdateResponse = GetPartiesSelfUpdateResponses[keyof GetPartiesSelfUpdateResponses];
@@ -2879,13 +2432,13 @@ export type PostPartiesResponses = {
     /**
      * Registered.
      */
-    201: PartyViewModelResultReadable;
+    201: PartyViewModelResult;
 };
 
 export type PostPartiesResponse = PostPartiesResponses[keyof PostPartiesResponses];
 
 export type PutPartiesSelfStatusData = {
-    body?: UpdatePartyStatusCommandWritable;
+    body?: UpdatePartyStatusCommand;
     path?: never;
     query?: never;
     url: '/Parties/self/status';
@@ -2895,7 +2448,7 @@ export type PutPartiesSelfStatusResponses = {
     /**
      * Updated.
      */
-    200: PartyViewModelResultReadable;
+    200: PartyViewModelResult;
 };
 
 export type PutPartiesSelfStatusResponse = PutPartiesSelfStatusResponses[keyof PutPartiesSelfStatusResponses];
@@ -2918,7 +2471,7 @@ export type PostPartiesSelfItemsResponses = {
     /**
      * Bought.
      */
-    200: ItemStackResultReadable;
+    200: ItemStackResult;
 };
 
 export type PostPartiesSelfItemsResponse = PostPartiesSelfItemsResponses[keyof PostPartiesSelfItemsResponses];
@@ -2934,7 +2487,7 @@ export type GetPatchNotesResponses = {
     /**
      * OK
      */
-    200: PatchNotesIListResultReadable;
+    200: PatchNotesIListResult;
 };
 
 export type GetPatchNotesResponse = GetPatchNotesResponses[keyof GetPatchNotesResponses];
@@ -2950,7 +2503,7 @@ export type GetRestrictionsResponses = {
     /**
      * Ok.
      */
-    200: RestrictionViewModelIListResultReadable;
+    200: RestrictionViewModelIListResult;
 };
 
 export type GetRestrictionsResponse = GetRestrictionsResponses[keyof GetRestrictionsResponses];
@@ -2980,7 +2533,7 @@ export type PostRestrictionsResponses = {
     /**
      * OK
      */
-    200: RestrictionViewModelResultReadable;
+    200: RestrictionViewModelResult;
     /**
      * Restricted.
      */
@@ -3000,7 +2553,7 @@ export type GetSettingsResponses = {
     /**
      * Ok.
      */
-    200: SettingsViewModelResultReadable;
+    200: SettingsViewModelResult;
 };
 
 export type GetSettingsResponse = GetSettingsResponses[keyof GetSettingsResponses];
@@ -3023,7 +2576,7 @@ export type PatchSettingsResponses = {
     /**
      * OK
      */
-    200: SettingsViewModelResultReadable;
+    200: SettingsViewModelResult;
     /**
      * Created.
      */
@@ -3043,7 +2596,7 @@ export type GetSettlementsResponses = {
     /**
      * OK
      */
-    200: SettlementPublicViewModelIListResultReadable;
+    200: SettlementPublicViewModelIListResult;
 };
 
 export type GetSettlementsResponse = GetSettlementsResponses[keyof GetSettlementsResponses];
@@ -3061,7 +2614,7 @@ export type GetSettlementsBySettlementIdResponses = {
     /**
      * OK
      */
-    200: SettlementPublicViewModelResultReadable;
+    200: SettlementPublicViewModelResult;
 };
 
 export type GetSettlementsBySettlementIdResponse = GetSettlementsBySettlementIdResponses[keyof GetSettlementsBySettlementIdResponses];
@@ -3079,7 +2632,7 @@ export type PostSettlementsBySettlementIdResponses = {
     /**
      * OK
      */
-    200: SettlementPublicViewModelResultReadable;
+    200: SettlementPublicViewModelResult;
 };
 
 export type PostSettlementsBySettlementIdResponse = PostSettlementsBySettlementIdResponses[keyof PostSettlementsBySettlementIdResponses];
@@ -3097,7 +2650,7 @@ export type GetSettlementsBySettlementIdItemsResponses = {
     /**
      * OK
      */
-    200: ItemStackIListResultReadable;
+    200: ItemStackIListResult;
 };
 
 export type GetSettlementsBySettlementIdItemsResponse = GetSettlementsBySettlementIdItemsResponses[keyof GetSettlementsBySettlementIdItemsResponses];
@@ -3115,7 +2668,7 @@ export type PostSettlementsBySettlementIdItemsResponses = {
     /**
      * OK
      */
-    200: ItemStackResultReadable;
+    200: ItemStackResult;
 };
 
 export type PostSettlementsBySettlementIdItemsResponse = PostSettlementsBySettlementIdItemsResponses[keyof PostSettlementsBySettlementIdItemsResponses];
@@ -3133,7 +2686,7 @@ export type GetSettlementsBySettlementIdShopItemsResponses = {
     /**
      * OK
      */
-    200: ItemViewModelIListResultReadable;
+    200: ItemViewModelIListResult;
 };
 
 export type GetSettlementsBySettlementIdShopItemsResponse = GetSettlementsBySettlementIdShopItemsResponses[keyof GetSettlementsBySettlementIdShopItemsResponses];
@@ -3149,13 +2702,13 @@ export type GetTerrainsResponses = {
     /**
      * OK
      */
-    200: TerrainViewModelIListResultReadable;
+    200: TerrainViewModelIListResult;
 };
 
 export type GetTerrainsResponse = GetTerrainsResponses[keyof GetTerrainsResponses];
 
 export type PostTerrainsData = {
-    body?: CreateTerrainCommandWritable;
+    body?: CreateTerrainCommand;
     path?: never;
     query?: never;
     url: '/Terrains';
@@ -3165,7 +2718,7 @@ export type PostTerrainsResponses = {
     /**
      * OK
      */
-    200: TerrainViewModelResultReadable;
+    200: TerrainViewModelResult;
 };
 
 export type PostTerrainsResponse = PostTerrainsResponses[keyof PostTerrainsResponses];
@@ -3187,7 +2740,7 @@ export type DeleteTerrainsByIdResponses = {
 };
 
 export type PutTerrainsByIdData = {
-    body?: UpdateTerrainCommandWritable;
+    body?: UpdateTerrainCommand;
     path: {
         id: number;
     };
@@ -3199,7 +2752,7 @@ export type PutTerrainsByIdResponses = {
     /**
      * OK
      */
-    200: TerrainViewModelResultReadable;
+    200: TerrainViewModelResult;
 };
 
 export type PutTerrainsByIdResponse = PutTerrainsByIdResponses[keyof PutTerrainsByIdResponses];
@@ -3207,10 +2760,10 @@ export type PutTerrainsByIdResponse = PutTerrainsByIdResponses[keyof PutTerrains
 export type GetUsersSearchData = {
     body?: never;
     path?: never;
-    query: {
-        platform: Platform;
-        platformUserId: string;
-        name: string;
+    query?: {
+        platform?: Platform;
+        platformUserId?: string;
+        name?: string;
     };
     url: '/Users/search';
 };
@@ -3226,7 +2779,7 @@ export type GetUsersSearchResponses = {
     /**
      * Ok.
      */
-    200: UserPrivateViewModelArrayResultReadable;
+    200: UserPrivateViewModelArrayResult;
 };
 
 export type GetUsersSearchResponse = GetUsersSearchResponses[keyof GetUsersSearchResponses];
@@ -3265,7 +2818,7 @@ export type GetUsersSelfResponses = {
     /**
      * OK
      */
-    200: UserViewModelResultReadable;
+    200: UserViewModelResult;
 };
 
 export type GetUsersSelfResponse = GetUsersSelfResponses[keyof GetUsersSelfResponses];
@@ -3291,7 +2844,7 @@ export type PutUsersSelfResponses = {
     /**
      * Updated.
      */
-    200: UserViewModelResultReadable;
+    200: UserViewModelResult;
 };
 
 export type PutUsersSelfResponse = PutUsersSelfResponses[keyof PutUsersSelfResponses];
@@ -3323,7 +2876,7 @@ export type GetUsersByUserIdResponses = {
     /**
      * Ok.
      */
-    200: UserPrivateViewModelResultReadable;
+    200: UserPrivateViewModelResult;
 };
 
 export type GetUsersByUserIdResponse = GetUsersByUserIdResponses[keyof GetUsersByUserIdResponses];
@@ -3354,7 +2907,7 @@ export type PutUsersByUserIdNoteResponses = {
     /**
      * Updated.
      */
-    200: UserPrivateViewModelResultReadable;
+    200: UserPrivateViewModelResult;
 };
 
 export type PutUsersByUserIdNoteResponse = PutUsersByUserIdNoteResponses[keyof PutUsersByUserIdNoteResponses];
@@ -3375,7 +2928,7 @@ export type GetUsersByUserIdCharactersResponses = {
     /**
      * Ok.
      */
-    200: CharacterViewModelIListResultReadable;
+    200: CharacterViewModelIListResult;
 };
 
 export type GetUsersByUserIdCharactersResponse = GetUsersByUserIdCharactersResponses[keyof GetUsersByUserIdCharactersResponses];
@@ -3383,11 +2936,11 @@ export type GetUsersByUserIdCharactersResponse = GetUsersByUserIdCharactersRespo
 export type GetUsersData = {
     body?: never;
     path?: never;
-    query: {
+    query?: {
         /**
          * The user ids.
          */
-        'id[]': Array<number>;
+        'id[]'?: Array<number>;
     };
     url: '/Users';
 };
@@ -3403,7 +2956,7 @@ export type GetUsersResponses = {
     /**
      * Ok.
      */
-    200: UserPrivateViewModelIListResultReadable;
+    200: UserPrivateViewModelIListResult;
 };
 
 export type GetUsersResponse = GetUsersResponses[keyof GetUsersResponses];
@@ -3435,7 +2988,7 @@ export type GetUsersByIdRestrictionsResponses = {
     /**
      * Ok.
      */
-    200: RestrictionViewModelIListResultReadable;
+    200: RestrictionViewModelIListResult;
 };
 
 export type GetUsersByIdRestrictionsResponse = GetUsersByIdRestrictionsResponses[keyof GetUsersByIdRestrictionsResponses];
@@ -3458,7 +3011,7 @@ export type GetUsersSelfRestrictionResponses = {
     /**
      * Ok.
      */
-    200: RestrictionPublicViewModelResultReadable;
+    200: RestrictionPublicViewModelResult;
 };
 
 export type GetUsersSelfRestrictionResponse = GetUsersSelfRestrictionResponses[keyof GetUsersSelfRestrictionResponses];
@@ -3489,7 +3042,7 @@ export type PutUsersByIdRewardsResponses = {
     /**
      * Done.
      */
-    200: UserViewModelResultReadable;
+    200: UserViewModelResult;
 };
 
 export type PutUsersByIdRewardsResponse = PutUsersByIdRewardsResponses[keyof PutUsersByIdRewardsResponses];
@@ -3545,7 +3098,7 @@ export type GetUsersSelfCharactersByIdResponses = {
     /**
      * Ok.
      */
-    200: CharacterViewModelResultReadable;
+    200: CharacterViewModelResult;
 };
 
 export type GetUsersSelfCharactersByIdResponse = GetUsersSelfCharactersByIdResponses[keyof GetUsersSelfCharactersByIdResponses];
@@ -3576,7 +3129,7 @@ export type PutUsersSelfCharactersByIdResponses = {
     /**
      * Updated.
      */
-    200: CharacterViewModelResultReadable;
+    200: CharacterViewModelResult;
 };
 
 export type PutUsersSelfCharactersByIdResponse = PutUsersSelfCharactersByIdResponses[keyof PutUsersSelfCharactersByIdResponses];
@@ -3592,7 +3145,7 @@ export type GetUsersSelfCharactersResponses = {
     /**
      * Ok.
      */
-    200: CharacterViewModelIListResultReadable;
+    200: CharacterViewModelIListResult;
 };
 
 export type GetUsersSelfCharactersResponse = GetUsersSelfCharactersResponses[keyof GetUsersSelfCharactersResponses];
@@ -3613,7 +3166,7 @@ export type GetUsersSelfCharactersByIdCharacteristicsResponses = {
     /**
      * Ok.
      */
-    200: CharacterCharacteristicsViewModelResultReadable;
+    200: CharacterCharacteristicsViewModelResult;
 };
 
 export type GetUsersSelfCharactersByIdCharacteristicsResponse = GetUsersSelfCharactersByIdCharacteristicsResponses[keyof GetUsersSelfCharactersByIdCharacteristicsResponses];
@@ -3644,7 +3197,7 @@ export type PutUsersSelfCharactersByIdCharacteristicsResponses = {
     /**
      * Updated.
      */
-    200: CharacterCharacteristicsViewModelResultReadable;
+    200: CharacterCharacteristicsViewModelResult;
 };
 
 export type PutUsersSelfCharactersByIdCharacteristicsResponse = PutUsersSelfCharactersByIdCharacteristicsResponses[keyof PutUsersSelfCharactersByIdCharacteristicsResponses];
@@ -3717,7 +3270,7 @@ export type PutUsersSelfCharactersByIdCharacteristicsConvertResponses = {
     /**
      * Conversion performed.
      */
-    200: CharacterCharacteristicsViewModelResultReadable;
+    200: CharacterCharacteristicsViewModelResult;
 };
 
 export type PutUsersSelfCharactersByIdCharacteristicsConvertResponse = PutUsersSelfCharactersByIdCharacteristicsConvertResponses[keyof PutUsersSelfCharactersByIdCharacteristicsConvertResponses];
@@ -3738,7 +3291,7 @@ export type GetUsersSelfCharactersByIdItemsResponses = {
     /**
      * Ok.
      */
-    200: EquippedItemViewModelIListResultReadable;
+    200: EquippedItemViewModelIListResult;
 };
 
 export type GetUsersSelfCharactersByIdItemsResponse = GetUsersSelfCharactersByIdItemsResponses[keyof GetUsersSelfCharactersByIdItemsResponses];
@@ -3769,7 +3322,7 @@ export type PutUsersSelfCharactersByIdItemsResponses = {
     /**
      * Updated.
      */
-    200: EquippedItemViewModelIListResultReadable;
+    200: EquippedItemViewModelIListResult;
 };
 
 export type PutUsersSelfCharactersByIdItemsResponse = PutUsersSelfCharactersByIdItemsResponses[keyof PutUsersSelfCharactersByIdItemsResponses];
@@ -3825,7 +3378,7 @@ export type GetUsersSelfCharactersByIdStatisticsResponses = {
     /**
      * Ok.
      */
-    200: GameModeCharacterStatisticsViewModelDictionaryResultReadable;
+    200: GameModeCharacterStatisticsViewModelDictionaryResult;
 };
 
 export type GetUsersSelfCharactersByIdStatisticsResponse = GetUsersSelfCharactersByIdStatisticsResponses[keyof GetUsersSelfCharactersByIdStatisticsResponses];
@@ -3846,7 +3399,7 @@ export type GetUsersSelfCharactersByIdEarningStatisticsData = {
         /**
          * End of the queried time period. This parameter is optional.
          */
-        to: Date;
+        to?: Date;
     };
     url: '/Users/self/characters/{id}/earning-statistics';
 };
@@ -3855,7 +3408,7 @@ export type GetUsersSelfCharactersByIdEarningStatisticsResponses = {
     /**
      * Ok.
      */
-    200: ActivityLogViewModelIListResultReadable;
+    200: ActivityLogViewModelIListResult;
 };
 
 export type GetUsersSelfCharactersByIdEarningStatisticsResponse = GetUsersSelfCharactersByIdEarningStatisticsResponses[keyof GetUsersSelfCharactersByIdEarningStatisticsResponses];
@@ -3876,7 +3429,7 @@ export type GetUsersSelfCharactersByIdLimitationsResponses = {
     /**
      * Ok.
      */
-    200: CharacterLimitationsViewModelResultReadable;
+    200: CharacterLimitationsViewModelResult;
 };
 
 export type GetUsersSelfCharactersByIdLimitationsResponse = GetUsersSelfCharactersByIdLimitationsResponses[keyof GetUsersSelfCharactersByIdLimitationsResponses];
@@ -3912,7 +3465,7 @@ export type PutUsersByUserIdCharactersByIdRetireResponses = {
     /**
      * Character rating reset.
      */
-    200: CharacterViewModelResultReadable;
+    200: CharacterViewModelResult;
 };
 
 export type PutUsersByUserIdCharactersByIdRetireResponse = PutUsersByUserIdCharactersByIdRetireResponses[keyof PutUsersByUserIdCharactersByIdRetireResponses];
@@ -3944,7 +3497,7 @@ export type PutUsersSelfCharactersByIdRetireResponses = {
     /**
      * Retired.
      */
-    200: CharacterViewModelResultReadable;
+    200: CharacterViewModelResult;
 };
 
 export type PutUsersSelfCharactersByIdRetireResponse = PutUsersSelfCharactersByIdRetireResponses[keyof PutUsersSelfCharactersByIdRetireResponses];
@@ -3976,7 +3529,7 @@ export type PutUsersSelfCharactersByIdRespecializeResponses = {
     /**
      * Respecialized.
      */
-    200: CharacterViewModelResultReadable;
+    200: CharacterViewModelResult;
 };
 
 export type PutUsersSelfCharactersByIdRespecializeResponse = PutUsersSelfCharactersByIdRespecializeResponses[keyof PutUsersSelfCharactersByIdRespecializeResponses];
@@ -4004,7 +3557,7 @@ export type PutUsersSelfCharactersByIdTournamentResponses = {
     /**
      * Done.
      */
-    200: CharacterViewModelResultReadable;
+    200: CharacterViewModelResult;
 };
 
 export type PutUsersSelfCharactersByIdTournamentResponse = PutUsersSelfCharactersByIdTournamentResponses[keyof PutUsersSelfCharactersByIdTournamentResponses];
@@ -4039,7 +3592,7 @@ export type PutUsersByUserIdCharactersByCharacterIdRewardsResponses = {
     /**
      * Done.
      */
-    200: CharacterViewModelResultReadable;
+    200: CharacterViewModelResult;
 };
 
 export type PutUsersByUserIdCharactersByCharacterIdRewardsResponse = PutUsersByUserIdCharactersByCharacterIdRewardsResponses[keyof PutUsersByUserIdCharactersByCharacterIdRewardsResponses];
@@ -4055,7 +3608,7 @@ export type GetUsersSelfItemsResponses = {
     /**
      * OK
      */
-    200: UserItemViewModelIListResultReadable;
+    200: UserItemViewModelIListResult;
 };
 
 export type GetUsersSelfItemsResponse = GetUsersSelfItemsResponses[keyof GetUsersSelfItemsResponses];
@@ -4085,7 +3638,7 @@ export type PostUsersSelfItemsResponses = {
     /**
      * Bought.
      */
-    201: UserItemViewModelResultReadable;
+    201: UserItemViewModelResult;
 };
 
 export type PostUsersSelfItemsResponse = PostUsersSelfItemsResponses[keyof PostUsersSelfItemsResponses];
@@ -4113,7 +3666,7 @@ export type PutUsersSelfItemsByIdReforgeResponses = {
     /**
      * Reforged.
      */
-    200: UserItemViewModelResultReadable;
+    200: UserItemViewModelResult;
 };
 
 export type PutUsersSelfItemsByIdReforgeResponse = PutUsersSelfItemsByIdReforgeResponses[keyof PutUsersSelfItemsByIdReforgeResponses];
@@ -4141,7 +3694,7 @@ export type PutUsersSelfItemsByIdRepairResponses = {
     /**
      * repaired.
      */
-    200: UserItemViewModelResultReadable;
+    200: UserItemViewModelResult;
 };
 
 export type PutUsersSelfItemsByIdRepairResponse = PutUsersSelfItemsByIdRepairResponses[keyof PutUsersSelfItemsByIdRepairResponses];
@@ -4169,7 +3722,7 @@ export type PutUsersSelfItemsByIdUpgradeResponses = {
     /**
      * Upgraded.
      */
-    200: UserItemViewModelResultReadable;
+    200: UserItemViewModelResult;
 };
 
 export type PutUsersSelfItemsByIdUpgradeResponse = PutUsersSelfItemsByIdUpgradeResponses[keyof PutUsersSelfItemsByIdUpgradeResponses];
@@ -4217,7 +3770,7 @@ export type GetUsersSelfClanResponses = {
     /**
      * OK
      */
-    200: UserClanViewModelResultReadable;
+    200: UserClanViewModelResult;
 };
 
 export type GetUsersSelfClanResponse = GetUsersSelfClanResponses[keyof GetUsersSelfClanResponses];
@@ -4247,7 +3800,7 @@ export type GetUsersSelfNotificationsResponses = {
     /**
      * Ok.
      */
-    200: UserNotificationsWithDictViewModelResultReadable;
+    200: UserNotificationsWithDictViewModelResult;
 };
 
 export type GetUsersSelfNotificationsResponse = GetUsersSelfNotificationsResponses[keyof GetUsersSelfNotificationsResponses];
@@ -4305,7 +3858,7 @@ export type PutUsersSelfNotificationsByIdResponses = {
     /**
      * Read.
      */
-    200: UserNotificationViewModelResultReadable;
+    200: UserNotificationViewModelResult;
 };
 
 export type PutUsersSelfNotificationsByIdResponse = PutUsersSelfNotificationsByIdResponses[keyof PutUsersSelfNotificationsByIdResponses];

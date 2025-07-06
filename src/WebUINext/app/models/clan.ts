@@ -21,7 +21,7 @@ export interface Clan {
   primaryColor: number
   secondaryColor: number
   languages: Language[]
-  armoryTimeout: string // TODO: contribute convert date-span format to number type
+  armoryTimeout: number
   discord: string | null
 }
 

@@ -1,5 +1,4 @@
 using System.Net;
-using System.Text.Json.Serialization;
 using Crpg.Application.ActivityLogs.Models;
 using Crpg.Application.Characters.Commands;
 using Crpg.Application.Characters.Models;
