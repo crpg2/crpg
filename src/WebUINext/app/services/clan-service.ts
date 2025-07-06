@@ -114,7 +114,6 @@ export const canKickMemberValidate = (
   )
 }
 
-// @ts-expect-error TODO: fix type itemUsage
 export const getClanArmory = async (clanId: number): Promise<ClanArmoryItem[]> => (await getClansByClanIdArmory({ composable: '$fetch', path: { clanId } })).data!
 
 export const addItemToClanArmory = (
