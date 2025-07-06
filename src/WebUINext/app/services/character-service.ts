@@ -505,14 +505,14 @@ export const computeSpeedStats = (
 
 export const getCharacterItems = async (
   characterId: number,
-): Promise<EquippedItem[]> => (await getUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId } })).data!
+): Promise<EquippedItem[]> =>
+  (await getUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId } })).data!
 
 export const updateCharacterItems = async (
   characterId: number,
   items: EquippedItemId[],
-): Promise<EquippedItem[]> => (await putUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId },
-  // @ts-expect-error TODO:
-  body: { items } })).data!
+): Promise<EquippedItem[]> =>
+  (await putUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId }, body: { items } })).data!
 
 export const computeOverallPrice = (
   items: Item[],
