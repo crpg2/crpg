@@ -48,13 +48,9 @@ export const getUserRestrictions = async (id: number): Promise<UserRestriction[]
   return mapRestrictions(data!)
 }
 
-export const restrictUser = (restriction: UserRestrictionCreation) => postRestrictions({ composable: '$fetch', body: {
-  ...restriction,
-  duration: String(restriction.duration), // TODO: fix hey-api
-} })
+export const restrictUser = (restriction: UserRestrictionCreation) => postRestrictions({ composable: '$fetch', body: restriction })
 
-export const updateUserNote = (userId: number, note: string) =>
-  putUsersByUserIdNote({ composable: '$fetch', path: { userId }, body: { note } })
+export const updateUserNote = (userId: number, note: string) => putUsersByUserIdNote({ composable: '$fetch', path: { userId }, body: { note } })
 
 export const getUserById = async (userId: number): Promise<UserPrivate> => (await getUsersByUserId({ composable: '$fetch', path: { userId } })).data
 
@@ -64,12 +60,4 @@ interface UserSearchQuery {
   platformUserId?: string
 }
 
-export const searchUser = async (query: UserSearchQuery): Promise<UserPublic[]> => {
-  const { data } = await getUsersSearch({
-    composable: '$fetch',
-    // @ts-expect-error TODO: FIXME:
-    query,
-  })
-
-  return data!
-}
+export const searchUser = async (query: UserSearchQuery): Promise<UserPublic[]> => (await getUsersSearch({ composable: '$fetch', query })).data!

@@ -202,6 +202,43 @@ export default defineNuxtConfig({
           dates: true,
         },
       ],
+      parser: {
+        patch: {
+          schemas: {
+            CharacterStatisticsViewModel: schema => convertDateTimeToTimestamp(schema, 'playTime'),
+            ClanViewModel: schema => convertDateTimeToTimestamp(schema, 'armoryTimeout'),
+            UpdateClanCommand: schema => convertDateTimeToTimestamp(schema, 'armoryTimeout'),
+            CreateClanCommand: schema => convertDateTimeToTimestamp(schema, 'armoryTimeout'),
+            RestrictCommand: schema => convertDateTimeToTimestamp(schema, 'duration'),
+            RestrictionPublicViewModel: schema => convertDateTimeToTimestamp(schema, 'duration'),
+            RestrictionViewModel: schema => convertDateTimeToTimestamp(schema, 'duration'),
+            ItemWeaponComponentViewModel: (schema) => {
+              schema.properties.itemUsage.enum = [
+                'long_bow',
+                'bow',
+                'crossbow',
+                'crossbow_light',
+                'polearm_couch',
+                'polearm_bracing',
+                'polearm_pike',
+                'polearm',
+              ]
+            },
+            ItemType: (schema) => {
+              schema.enum.push(...['Ranged', 'Ammo'])
+            },
+            WeaponFlags: (schema) => {
+              schema.enum.push(...['CanReloadOnHorseback', 'CantUseOnHorseback'])
+            },
+          },
+          // parameters: {
+          //   // from: convertDateTimeToString,
+          //   region: (parameter) => {
+          //     // parameter.schema.type = 'integer'
+          //   },
+          // },
+        },
+      },
     },
   },
   i18n: {
@@ -239,3 +276,16 @@ export default defineNuxtConfig({
     },
   },
 })
+
+// convert date-time format to timestamp
+function convertDateTimeToTimestamp(schema: any, key: string) {
+  delete schema.properties[key].format
+  schema.properties[key].type = 'number'
+}
+
+// convert date-time format to timestamp
+function convertDateTimeToString(parameter: any) {
+  console.log('parameter', parameter)
+  delete parameter.schema.format
+  parameter.schema.type = 'string'
+}

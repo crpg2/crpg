@@ -90,10 +90,8 @@ export const WEAPON_FLAG = {
   BonusAgainstShield: 'BonusAgainstShield',
   CanPenetrateShield: 'CanPenetrateShield',
   CantReloadOnHorseback: 'CantReloadOnHorseback',
-
-  CanReloadOnHorseback: 'CanReloadOnHorseback', // TODO: custom flag
-  CantUseOnHorseback: 'CantUseOnHorseback', // TODO: custom flag
-
+  CanReloadOnHorseback: 'CanReloadOnHorseback', // custom flag
+  CantUseOnHorseback: 'CantUseOnHorseback', // custom flag
   AutoReload: 'AutoReload',
   TwoHandIdleOnMount: 'TwoHandIdleOnMount',
   NoBlood: 'NoBlood',
@@ -170,11 +168,8 @@ export const ITEM_TYPE = {
   TwoHandedWeapon: 'TwoHandedWeapon',
   Polearm: 'Polearm',
   Thrown: 'Thrown',
-
-  // TODO:
   Ranged: 'Ranged', // virtual
   Ammo: 'Ammo', // virtual
-
   Bow: 'Bow',
   Crossbow: 'Crossbow',
   Pistol: 'Pistol',
@@ -182,18 +177,14 @@ export const ITEM_TYPE = {
   Arrows: 'Arrows',
   Bolts: 'Bolts',
   Bullets: 'Bullets',
-
   Shield: 'Shield',
-
   HeadArmor: 'HeadArmor',
   ShoulderArmor: 'ShoulderArmor',
   BodyArmor: 'BodyArmor',
   HandArmor: 'HandArmor',
   LegArmor: 'LegArmor',
-
   Mount: 'Mount',
   MountHarness: 'MountHarness',
-
   Banner: 'Banner',
 } as const satisfies Record<_ItemType, _ItemType>
 

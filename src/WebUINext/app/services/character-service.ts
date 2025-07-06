@@ -151,7 +151,7 @@ export const getDefaultCharacterStatistics = (): CharacterStatistics => ({
   deaths: 0,
   gameMode: GAME_MODE.CRPGBattle,
   kills: 0,
-  playTime: '0',
+  playTime: 0,
   rating: { competitiveValue: 0, deviation: 0, value: 0, volatility: 0 },
 })
 
@@ -187,11 +187,11 @@ export const getCharacterEarningStatistics = async (
     composable: '$fetch',
     path: { id: characterId },
     query: { from, to: new Date() },
-    // // You have to manually stringify the date
-    // onRequest: ({ options }) => {
-    //   options.query = options.query || {}
-    //   options.query.from = from.toISOString()
-    // },
+    onRequest: ({ options }) => {
+      options.query = options.query || {}
+      options.query.from = from.toISOString()
+      options.query.to = new Date().toISOString()
+    },
   })
   return data!.map(log => ({
     ...log,

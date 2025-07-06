@@ -52,7 +52,6 @@ const stringifyQuery = (query: Record<string, any>) =>
     strictNullHandling: true,
   })
 
-// TODO: FIXME: work with date, ex 2025-06-14T15:34:07.502+03:00[Europe/Moscow]
 export default {
   parseQuery,
   stringifyQuery,

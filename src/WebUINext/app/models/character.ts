@@ -91,7 +91,7 @@ export interface CharacterStatistics {
   kills: number
   deaths: number
   assists: number
-  playTime: string // TODO: contribute convert date-span format to number type
+  playTime: number
   gameMode: GameMode
   rating: CharacterRating
 }
