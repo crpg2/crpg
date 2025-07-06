@@ -11,6 +11,10 @@ public class HudTextNotificationWidget : Widget
     private float _timeCreated;
     private float _lifetime = 10f;
 
+    private bool _isFlashing = false;
+    private float _flashFrequency = 4f; // flashes per second
+    private float _flashElapsed = 0f;
+
     public bool IsExpired { get; private set; }
 
     public HudTextNotificationWidget(UIContext context)
@@ -37,6 +41,9 @@ public class HudTextNotificationWidget : Widget
         _timeCreated = (float)MissionTime.Now.ToSeconds;
         _lifetime = lifetime;
         IsExpired = false;
+        _isFlashing = false;
+        _flashElapsed = 0f;
+        AlphaFactor = 0f; // reset alpha
     }
 
     public void Tick(float dt)
@@ -72,6 +79,17 @@ public class HudTextNotificationWidget : Widget
                 AlphaFactor = 1f;
             }
         }
+
+        // Flashing logic (overrides alpha smoothly)
+        if (_isFlashing)
+        {
+            _flashElapsed += dt;
+            float flashCycle = 1f / _flashFrequency;
+            float flashAlpha = (MathF.Sin(_flashElapsed * flashCycle * 2 * MathF.PI) + 1f) / 2f; // oscillates 0 to 1
+
+            // Combine base alpha with flash alpha
+            AlphaFactor *= flashAlpha;
+        }
     }
 
     public void SetBrush(string brushName)
@@ -82,4 +100,18 @@ public class HudTextNotificationWidget : Widget
             _textWidget.Brush = brush;
         }
     }
+
+    // Toggle flashing on/off, frequency in flashes per second
+    public void SetFlashing(bool flashing, float frequency = 4f)
+    {
+        _isFlashing = flashing;
+        _flashFrequency = frequency;
+        if (!flashing)
+        {
+            // Reset alpha if flashing stops
+            AlphaFactor = 1f;
+            _flashElapsed = 0f;
+        }
+    }
+
 }

@@ -36,20 +36,26 @@ public class CrpgHudNotificationManager
 
         _rootWidget = new HudTextNotificationRootWidget(context);
         root.AddChild(_rootWidget);
+
+        InformationManager.DisplayMessage(new InformationMessage("CrpgHudNotificationManager initialized successfully."));
     }
 
     public bool IsInitialized => _rootWidget != null;
 
     public void Update(float dt)
     {
-        _rootWidget?.Update(dt);
+        if (IsInitialized)
+        {
+            _rootWidget?.Update(dt);
+        }
     }
 
     public HudTextNotificationWidget? AddRight(string text, string style = "Default", float lifetime = 10f)
     {
-        if (_rootWidget == null)
+        if (!IsInitialized)
         {
-            throw new InvalidOperationException("CrpgHudNotificationManager must be initialized before use.");
+            InformationManager.DisplayMessage(new InformationMessage("CrpgHudNotificationManager not initialized (AddRight)."));
+            return null;
         }
 
         return _rootWidget?.AddRightNotificationWidget(text, style, lifetime);
@@ -57,21 +63,45 @@ public class CrpgHudNotificationManager
 
     public HudTextNotificationWidget? AddLeft(string text, string style = "Default", float lifetime = 10f)
     {
-        if (_rootWidget == null)
+        if (!IsInitialized)
         {
-            throw new InvalidOperationException("CrpgHudNotificationManager must be initialized before use.");
+            InformationManager.DisplayMessage(new InformationMessage("CrpgHudNotificationManager not initialized (AddLeft)."));
+            return null;
         }
 
         return _rootWidget?.AddLeftNotificationWidget(text, style, lifetime);
     }
 
+    public HudTextNotificationWidget? AddCustom(string text, Vec2 position, string style = "Default", float lifetime = 10f)
+    {
+        if (!IsInitialized)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("CrpgHudNotificationManager not initialized (AddCustom)."));
+            return null;
+        }
+
+        return _rootWidget?.AddCustomNotificationWidget(text, position, style, lifetime);
+    }
+
     public void Remove(HudTextNotificationWidget widget)
     {
+        if (!IsInitialized)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("CrpgHudNotificationManager not initialized."));
+            return;
+        }
+
         _rootWidget?.RemoveNotificationWidget(widget);
     }
 
     public void Cleanup()
     {
+        if (!IsInitialized)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("CrpgHudNotificationManager not initialized."));
+            return;
+        }
+
         _rootWidget = null;
     }
 

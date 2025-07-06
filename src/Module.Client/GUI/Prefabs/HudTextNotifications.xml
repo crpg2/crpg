@@ -1,15 +1,17 @@
 <Prefab>
   <Window>
-    <Widget>
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
       <Children>
+      <!--
       <TextWidget WidthSizePolicy="CoverChildren" 
                     HeightSizePolicy="CoverChildren" 
                     VerticalAlignment="Center" 
                     HorizontalAlignment="Center" 
-                    TextHorizontalAlignment="Right"
+                    TextHorizontalAlignment="Center"
                     Brush="CrpgHUD.WeaponUsage.Index" 
                     Text="Debug Text" 
         />
+        -->
       </Children>
     </Widget>
   </Window>

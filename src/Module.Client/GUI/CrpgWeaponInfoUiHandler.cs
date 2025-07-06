@@ -74,8 +74,7 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         {
             _gauntletLayer = new GauntletLayer(ViewOrderPriority);
             var movie = _gauntletLayer.LoadMovie("CrpgWeaponInfoHud", _dataSource);
-            CrpgHudNotificationManager.Instance.Initialize(movie, _gauntletLayer);
-
+            // CrpgHudNotificationManager.Instance.Initialize(movie, _gauntletLayer);
 
             MissionScreen.AddLayer(_gauntletLayer);
 
@@ -133,7 +132,7 @@ internal class CrpgWeaponInfoUiHandler : MissionView
         UpdateWeaponUsageGui();
         _dataSource?.OnMissionScreenTick(dt);
 
-        CrpgHudNotificationManager.Instance.Update(dt);
+        // CrpgHudNotificationManager.Instance.Update(dt);
     }
 
     public override void OnAgentBuild(Agent agent, Banner banner)
@@ -446,7 +445,6 @@ internal class CrpgWeaponInfoUiHandler : MissionView
 
         lineDict.Clear();
     }
-
 
     private void UpdateWeaponUsageGui(bool forced = false)
     {

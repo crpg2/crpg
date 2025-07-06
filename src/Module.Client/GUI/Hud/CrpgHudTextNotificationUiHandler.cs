@@ -7,11 +7,11 @@ namespace Crpg.Module.GUI.Hud;
 public class CrpgHudTextNotificationUiHandler : MissionView
 {
     private GauntletLayer? _gauntletLayer;
-    private DummyHudNotificationVm _dataSource;
+    private CrpgHudTextNotificationVm _dataSource;
 
     public CrpgHudTextNotificationUiHandler()
     {
-        _dataSource = new DummyHudNotificationVm();
+        _dataSource = new CrpgHudTextNotificationVm(Mission);
         ViewOrderPriority = 2;
     }
 
