@@ -5,7 +5,7 @@ const INTERVAL = 1000 * 60 * 2 // 2 min
 // global state
 const subscriptions = new Map<symbol, SubscriptionFn>()
 
-// TODO: to nuxt plugin
+// TODO: FIXME: to nuxt plugin
 setInterval(() => {
   for (const fn of subscriptions.values()) {
     fn()

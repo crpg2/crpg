@@ -7,9 +7,9 @@ import { UButton, UserMedia } from '#components'
 
 import type { ClanInvitation } from '~/models/clan'
 
+import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useClanApplications } from '~/composables/clan/use-clan-applications'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { SomeRole } from '~/models/role'
 import { canManageApplicationsValidate } from '~/services/clan-service'
 

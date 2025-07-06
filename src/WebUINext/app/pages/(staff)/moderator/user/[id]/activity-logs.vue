@@ -5,9 +5,9 @@ import { DateFormatter, getLocalTimeZone, now, parseZonedDateTime } from '@inter
 
 import type { ActivityLogType } from '~/models/activity-logs'
 
+import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useModerationUser } from '~/composables/moderator/use-moderation-user'
-import { usePageLoading } from '~/composables/utils/use-page-loading'
-import { Sort, useSort } from '~/composables/utils/use-sort'
+import { SORT, useSort } from '~/composables/utils/use-sort' // TODO:
 import { ACTIVITY_LOG_TYPE } from '~/models/activity-logs'
 import { getActivityLogs } from '~/services/activity-logs-service'
 
@@ -82,7 +82,7 @@ const {
 )
 
 const sortedActivityLogs = computed(() => activityLogs.value.activityLogs.toSorted((a, b) =>
-  sort.value === Sort.ASC
+  sort.value === SORT.ASC
     ? a.createdAt.getTime() - b.createdAt.getTime()
     : b.createdAt.getTime() - a.createdAt.getTime(),
 ))
@@ -144,7 +144,7 @@ watchEffect(() => {
       </UButtonGroup>
 
       <UButton
-        :icon="sort === Sort.ASC ? 'crpg:chevron-up' : 'crpg:chevron-down'"
+        :icon="sort === SORT.ASC ? 'crpg:chevron-up' : 'crpg:chevron-down'"
         color="neutral"
         variant="subtle"
         :label="$t('activityLog.sort.createdAt')"

@@ -1,4 +1,4 @@
-// TODO: use https://github.com/vueuse/vueuse/issues/2890
+// ref https://github.com/vueuse/vueuse/issues/2890
 import { makeDestructurable, noop } from '@vueuse/shared'
 
 export type AnyPromiseFn = (...args: any[]) => Promise<any>

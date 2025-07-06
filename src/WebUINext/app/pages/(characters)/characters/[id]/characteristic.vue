@@ -3,12 +3,12 @@ import { timeout } from 'es-toolkit'
 
 import type { CharacterCharacteristics, CharacteristicConversion } from '~/models/character'
 
+import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterCharacteristic, useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { CHARACTERISTIC_CONVERSION } from '~/models/character'
 import {
   convertCharacterCharacteristics,

@@ -8,13 +8,13 @@ import type { UserItem } from '~/models/user'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
+import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useInventoryDnD } from '~/composables/character/inventory/use-inventory-dnd'
 import { useInventoryQuickEquip } from '~/composables/character/inventory/use-inventory-quick-equip'
 import { useItemDetail } from '~/composables/character/inventory/use-item-detail'
 import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePageLoading } from '~/composables/utils/use-page-loading'
 import {
   checkUpkeepIsHigh,
   validateItemNotMeetRequirement,

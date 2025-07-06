@@ -3,8 +3,8 @@ import { UContainer } from '#components'
 
 import type { Clan } from '~/models/clan'
 
+import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { SomeRole } from '~/models/role'
 import { createClan } from '~/services/clan-service'
 import { useUserStore } from '~/stores/user'

@@ -1,6 +1,6 @@
 import { useAsyncState } from '@vueuse/core'
 
-import { ClanInvitationStatus, ClanInvitationType } from '~/models/clan'
+import { CLAN_INVITATION_STATUS, CLAN_INVITATION_TYPE } from '~/models/clan'
 import {
   inviteToClan as _inviteToClan,
   respondToClanInvitation as _respondToClanInvitation,
@@ -14,7 +14,7 @@ export const useClanApplications = (clanId: MaybeRefOrGetter<number>) => {
     execute: loadClanApplications,
     isLoading: loadingClanApplications,
   } = useAsyncState(
-    () => getClanInvitations(toValue(clanId), [ClanInvitationType.Request], [ClanInvitationStatus.Pending]),
+    () => getClanInvitations(toValue(clanId), [CLAN_INVITATION_TYPE.Request], [CLAN_INVITATION_STATUS.Pending]),
     [],
     {
       immediate: false,

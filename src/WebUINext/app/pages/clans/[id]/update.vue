@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { ClanUpdate } from '~/models/clan'
 
+import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useClan } from '~/composables/clan/use-clan'
 import { useClanMembers } from '~/composables/clan/use-clan-members'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { usePageLoading } from '~/composables/utils/use-page-loading'
 import { SomeRole } from '~/models/role'
 import { canUpdateClanValidate } from '~/services/clan-service'
 import { useUserStore } from '~/stores/user'
