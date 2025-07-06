@@ -8,10 +8,11 @@ import { h, tw } from '#imports'
 
 import type { CharacterClass } from '~/models/character'
 import type { CharacterCompetitiveNumbered } from '~/models/competitive'
+import type { GameMode } from '~/models/game-mode'
 import type { Region } from '~/models/region'
 
 import { CHARACTER_CLASS } from '~/models/character'
-import { GameMode } from '~/models/game-mode'
+import { GAME_MODE } from '~/models/game-mode'
 import { REGION } from '~/models/region'
 import { characterClassToIcon, getCompetitiveValueByGameMode } from '~/services/character-service'
 import { gameModeToIcon, rankedGameModes } from '~/services/game-mode-service'
@@ -28,7 +29,7 @@ const { t } = useI18n()
 const userStore = useUserStore()
 const route = useRoute('leaderboard')
 
-const gameModeModel = useRouteQuery<GameMode>('gameMode', GameMode.Battle)
+const gameModeModel = useRouteQuery<GameMode>('gameMode', GAME_MODE.CRPGBattle)
 const characterClassModel = useRouteQuery<CharacterClass | undefined>('class', undefined)
 const regionModel = useRouteQuery<Region>('region', REGION.Eu)
 

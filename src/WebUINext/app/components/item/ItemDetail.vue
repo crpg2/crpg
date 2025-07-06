@@ -4,7 +4,7 @@ import { useClipboard } from '@vueuse/core'
 import type { CompareItemsResult, Item } from '~/models/item'
 
 import { useItem } from '~/composables/item/use-item'
-import { ItemCompareMode } from '~/models/item'
+import { ITEM_COMPARE_MODE } from '~/models/item'
 import { createItemIndex } from '~/services/item-search-service/indexator'
 import { getItemAggregations } from '~/services/item-service'
 
@@ -89,7 +89,7 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
           :field
           show-label
           :is-compare="compareResult !== undefined"
-          :compare-mode="ItemCompareMode.Absolute"
+          :compare-mode="ITEM_COMPARE_MODE.Absolute"
           :best-value="compareResult !== undefined ? compareResult[field]! : undefined"
         >
           <template

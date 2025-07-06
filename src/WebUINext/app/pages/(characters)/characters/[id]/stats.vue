@@ -24,14 +24,14 @@ import { registerTheme, use } from 'echarts/core'
 import { SVGRenderer } from 'echarts/renderers'
 import VChart from 'vue-echarts'
 
-import type { CharacterEarnedData } from '~/models/character'
+import type { CharacterEarnedData, CharacterEarningType } from '~/models/character'
 import type { GameMode } from '~/models/game-mode'
 import type { TimeSeries } from '~/models/time-series'
 
 import theme from '~/assets/echart-theme.json'
 import { useCharacter } from '~/composables/character/use-character'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
-import { CharacterEarningType } from '~/models/character'
+import { CHARACTER_EARNING_TYPE } from '~/models/character'
 import {
   convertCharacterEarningStatisticsToTimeSeries,
   getCharacterEarningStatistics,
@@ -112,7 +112,7 @@ const {
   },
 )
 
-const statTypeModel = ref<CharacterEarningType>(CharacterEarningType.Exp)
+const statTypeModel = ref<CharacterEarningType>(CHARACTER_EARNING_TYPE.Exp)
 const characterEarningStatistics = computed(() => convertCharacterEarningStatisticsToTimeSeries(rawEarningStatistics.value, statTypeModel.value))
 
 const dataZoom = ref<[number, number]>([start.value.getTime(), end.value.getTime()])
@@ -236,7 +236,7 @@ const summary = computed<CharacterEarnedDataWithGameMode[]>(() =>
       ...data,
     })))
 
-const statTypeItems = Object.keys(CharacterEarningType).map<TabsItem>(statType => ({
+const statTypeItems = Object.values(CHARACTER_EARNING_TYPE).map<TabsItem>(statType => ({
   label: t(`character.earningStats.type.${statType}`),
   value: statType,
 }))
@@ -309,7 +309,7 @@ fetchPageData(Number(route.params.id))
         />
 
         <AppCoin
-          v-if="statTypeModel === CharacterEarningType.Gold"
+          v-if="statTypeModel === CHARACTER_EARNING_TYPE.Gold"
           :value="total"
           size="xl"
           :class="total < 0 ? 'text-error' : 'text-success'"

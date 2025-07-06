@@ -1,9 +1,8 @@
 import { uniq } from 'es-toolkit'
 
-import type { Item, ItemFlat } from '~/models/item'
-import type { UserItem } from '~/models/user'
+import type { Item, ItemFlat, ItemType, WeaponClass } from '~/models/item'
 
-import { ItemType, WeaponClass } from '~/models/item'
+import { ITEM_TYPE, WEAPON_CLASS } from '~/models/item'
 
 import type { AggregationConfig } from './aggregations'
 
@@ -55,20 +54,20 @@ export const getVisibleAggregationsConfig = (aggregationsConfig: AggregationConf
 }
 
 export const getFacetsByItemType = (itemTypes: ItemType[]) => {
-  const orders = Object.values(ItemType)
+  const orders = Object.values(ITEM_TYPE)
   return uniq(itemTypes)
     .sort((a, b) => orders.indexOf(a) - orders.indexOf(b))
 }
 
 export const getFacetsByWeaponClass = (weaponClasses: WeaponClass[], itemType: ItemType) => {
-  const orders = Object.values(WeaponClass)
+  const orders = Object.values(WEAPON_CLASS)
   return uniq(weaponClasses)
     .filter(weaponClass => getWeaponClassesByItemType(itemType).includes(weaponClass))
     .sort((a, b) => orders.indexOf(a) - orders.indexOf(b))
 }
 
 export const filterItemsByType = <T extends { item: Item }>(items: T[], type: ItemType): T[] =>
-  type === ItemType.Undefined ? items : items.filter(wrapper => wrapper.item.type === type)
+  type === ITEM_TYPE.Undefined ? items : items.filter(wrapper => wrapper.item.type === type)
 
 export const filterItemsByName = <T extends { item: Item }>(items: T[], term: string): T[] => {
   if (!term) {
@@ -86,7 +85,7 @@ export const sortItemsByField = <T extends { item: Item }>(items: T[], sortingOp
 
     // Special handling for 'type' field to preserve ItemType order
     if (field === 'type') {
-      const itemTypes = Object.values(ItemType)
+      const itemTypes = Object.values(ITEM_TYPE)
       return (itemTypes.indexOf(aValue as ItemType) - itemTypes.indexOf(bValue as ItemType)) * (order === 'asc' ? 1 : -1)
     }
 

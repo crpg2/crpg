@@ -30,12 +30,12 @@ import {
 } from '#components'
 import { h } from '#imports'
 
-import type { ItemFlat, WeaponClass } from '~/models/item'
+import type { ItemFlat, ItemType, WeaponClass } from '~/models/item'
 import type { AggregationOptions } from '~/services/item-search-service/aggregations'
 
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
-import { ItemType } from '~/models/item'
+import { ITEM_TYPE } from '~/models/item'
 import { SomeRole } from '~/models/role'
 import { getAggregationsConfig, getFacetsByItemType, getFacetsByWeaponClass } from '~/services/item-search-service'
 import {
@@ -111,7 +111,7 @@ const sorting = ref<SortingState>(getInitialSortingState())
 // const itemType = useRouteQuery<ItemType>('itemType', ItemType.OneHandedWeapon)
 const itemType = computed({
   get() {
-    return (route.query?.type as ItemType) || ItemType.OneHandedWeapon
+    return (route.query?.type as ItemType) || ITEM_TYPE.OneHandedWeapon
   },
   set(type: ItemType) {
     const [weaponClass] = getWeaponClassesByItemType(type)

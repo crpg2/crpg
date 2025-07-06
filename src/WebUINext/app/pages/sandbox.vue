@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from '@nuxt/ui'
 
-import { Platform } from '~/models/platform'
+import { PLATFORM } from '~/models/platform'
 import { platformToIcon } from '~/services/platform-service'
 
 definePageMeta({
@@ -36,7 +36,7 @@ const items = computed(() => [
 
 const { platform, changePlatform } = usePlatform()
 const itemsPlatform = computed(() =>
-  Object.values(Platform).map(p => ({
+  Object.values(PLATFORM).map(p => ({
     label: t(`platform.${p}`),
     icon: `crpg:${platformToIcon[p]}`,
     type: 'checkbox' as const,
@@ -61,7 +61,11 @@ const open = ref(true)
 
         <div class="relative size-6">
           <UIcon name="crpg:online" class="absolute inset-0 size-full text-[#53BC96]" />
-          <UIcon name="crpg:online-ring" class="absolute inset-0 size-full animate-ping text-[#53BC96]/50" />
+          <UIcon
+            name="crpg:online-ring" class="
+              absolute inset-0 size-full animate-ping text-[#53BC96]/50
+            "
+          />
         </div>
       </div>
 
@@ -112,7 +116,7 @@ const open = ref(true)
               :active="open"
             >
               <span>{{ locale.toUpperCase() }}</span>
-              <div class="flex items-center gap-2 ">
+              <div class="flex items-center gap-2">
                 <SpriteSymbol
                   :name="`locale/${locale}`"
                   inline
@@ -142,13 +146,15 @@ const open = ref(true)
             <div
               v-for="size in ['xl', 'lg', 'md', 'sm', 'xs']"
               :key="size"
-              class="flex flex-col items-center justify-center gap-2 rounded border border-border-200 p-2"
+              class="
+                flex flex-col items-center justify-center gap-2 rounded border border-border-200 p-2
+              "
             >
               <div class="text-center text-[8px]">
                 {{ variant }} {{ color }} {{ size }}
               </div>
 
-              <div class="flex items-center justify-center  gap-2.5">
+              <div class="flex items-center justify-center gap-2.5">
                 <UButton
                   icon="crpg:settings"
                   :variant

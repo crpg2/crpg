@@ -13,10 +13,11 @@ const { thumb } = useItem(() => item)
 <template>
   <article
     class="
-      relative h-24 items-center justify-center space-y-1 rounded-md bg-muted
-      ring-2 ring-transparent
+      relative h-24 items-center justify-center space-y-1 rounded-md bg-muted ring-2
+      ring-transparent
       hover:ring-border-200
-    ">
+    "
+  >
     <ItemThumb :thumb :name="item.name" />
 
     <div class="absolute top-1 left-1 z-10 flex items-center gap-1">

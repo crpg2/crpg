@@ -10,8 +10,7 @@ definePageMeta({
     async () => {
       try {
         await userManager.signinCallback()
-        //   TODO: CHARACTER
-        return navigateTo({ name: 'index' })
+        return navigateTo({ name: 'characters' })
       }
 
       catch (error: unknown) {

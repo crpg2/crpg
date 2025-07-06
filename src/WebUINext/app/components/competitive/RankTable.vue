@@ -35,7 +35,10 @@ const groupedRankTable = computed(() => groupBy(rankTable, r => r.groupTitle))
             :text="`${rank.title} • ${$n(rank.min)} – ${$n(rank.max)}`"
           >
             <div
-              class="flex h-8 items-center rounded px-2 text-2xs text-highlighted select-none text-shadow-lg/20"
+              class="
+                flex h-8 items-center rounded px-2 text-2xs text-highlighted select-none
+                text-shadow-lg/20
+              "
               :style="{
                 backgroundColor: rank.color,
                 width: `calc(6rem + 0.5rem * ${groupIdx * ranks.length + idx + 1})`,

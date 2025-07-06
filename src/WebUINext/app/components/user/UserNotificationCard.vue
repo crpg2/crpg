@@ -3,7 +3,7 @@ import type { MetadataDict } from '~/models/metadata'
 import type { UserNotification } from '~/models/user'
 
 import { useLocaleTimeAgo } from '~/composables/utils/use-locale-time-ago'
-import { NotificationState } from '~/models/notifications'
+import { NOTIFICATION_STATE } from '~/models/notifications'
 
 const { notification } = defineProps<{
   notification: UserNotification
@@ -17,7 +17,7 @@ defineEmits<{
 
 const timeAgo = useLocaleTimeAgo(notification.createdAt)
 
-const isUnread = computed(() => notification.state === NotificationState.Unread)
+const isUnread = computed(() => notification.state === NOTIFICATION_STATE.Unread)
 </script>
 
 <template>

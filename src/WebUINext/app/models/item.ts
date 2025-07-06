@@ -133,7 +133,7 @@ export interface ItemWeaponComponent {
   stackAmount: number
   thrustSpeed: number
   swingDamage: number
-  itemUsage: ItemUsage | string
+  itemUsage: ItemUsage
   missileSpeed: number
   flags: WeaponFlag[]
   thrustDamage: number

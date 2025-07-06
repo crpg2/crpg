@@ -61,7 +61,6 @@ public class ClansController : BaseController
     /// </summary>
     /// <param name="clan">Clan info.</param>
     /// <returns>The created clan.</returns>
-    /// <response code="201">Created.</response>
     /// <response code="400">Bad Request.</response>
     [HttpPost]
     public Task<ActionResult<Result<ClanViewModel>>> CreateClan([FromBody] CreateClanCommand clan)

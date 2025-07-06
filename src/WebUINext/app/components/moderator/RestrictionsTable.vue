@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DropdownMenuItem, SelectItem, TableColumn } from '@nuxt/ui'
+import type { SelectItem, TableColumn } from '@nuxt/ui'
 import type { PaginationState, SortingState, VisibilityState } from '@tanstack/vue-table'
 
 import { getPaginationRowModel } from '@tanstack/vue-table'
@@ -8,7 +8,7 @@ import { NuxtLink, UBadge, UiCollapsibleText, UInput, UiTableColumnHeader, UiTab
 
 import type { UserRestriction } from '~/models/user'
 
-import { UserRestrictionStatus, UserRestrictionType } from '~/models/user'
+import { USER_RESTRICTION_STATUS, USER_RESTRICTION_TYPE } from '~/models/user'
 import { computeLeftMs, parseTimestamp } from '~/utils/date'
 
 const { hiddenRestrictedUser = false } = defineProps<{
@@ -61,7 +61,7 @@ const columns: TableColumn<UserRestriction>[] = [
               content: 'min-w-fit',
               base: 'px-0 py-0',
             },
-            'items': Object.values(UserRestrictionStatus).map<SelectItem>(status => ({
+            'items': Object.values(USER_RESTRICTION_STATUS).map<SelectItem>(status => ({
               value: status,
               label: status,
             })),
@@ -76,7 +76,7 @@ const columns: TableColumn<UserRestriction>[] = [
       })
     },
     filterFn: 'arrIncludesSome',
-    cell: ({ row }) => row.original.status === UserRestrictionStatus.Active
+    cell: ({ row }) => row.original.status === USER_RESTRICTION_STATUS.Active
       ? h(UTooltip, {
           text: t('dateTimeFormat.dd:hh:mm', { ...parseTimestamp(computeLeftMs(row.original.createdAt, Number(row.original.duration))) }),
         }, () => h(UBadge, { label: t('restriction.status.active'), size: 'sm', color: 'success', variant: 'subtle' }))
@@ -102,7 +102,7 @@ const columns: TableColumn<UserRestriction>[] = [
               content: 'min-w-fit',
               base: 'px-0 py-0',
             },
-            'items': Object.values(UserRestrictionType).map<SelectItem>(rt => ({
+            'items': Object.values(USER_RESTRICTION_TYPE).map<SelectItem>(rt => ({
               value: rt,
               label: t(`restriction.type.${rt}`),
             })),

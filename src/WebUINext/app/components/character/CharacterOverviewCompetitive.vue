@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { tw } from '#imports'
-
 import type { CharacterStatistics } from '~/models/character'
+import type { GameMode } from '~/models/game-mode'
 
-import { GameMode } from '~/models/game-mode'
+import { GAME_MODE } from '~/models/game-mode'
 import { getCharacterKDARatio, getDefaultCharacterStatistics } from '~/services/character-service'
 import { checkIsRankedGameMode, gameModeToIcon } from '~/services/game-mode-service'
 import { msToHours } from '~/utils/date'
@@ -12,7 +11,7 @@ const { characterStatistics } = defineProps<{
   characterStatistics: Partial<Record<GameMode, CharacterStatistics>>
 }>()
 
-const gameMode = ref<GameMode>(GameMode.Battle)
+const gameMode = ref<GameMode>(GAME_MODE.CRPGBattle)
 const isRankedGameMode = computed(() => checkIsRankedGameMode(gameMode.value))
 
 const { rankTable } = useRankTable()
@@ -32,7 +31,7 @@ const kdaRatio = computed(() =>
   <div class="space-y-6">
     <div class="flex flex-wrap gap-1.5">
       <UButton
-        v-for="gm in Object.values(GameMode)"
+        v-for="gm in Object.values(GAME_MODE)"
         :key="gm"
         color="secondary"
         :variant="gm === gameMode ? 'solid' : 'soft'"
@@ -56,7 +55,7 @@ const kdaRatio = computed(() =>
 
       <UiSimpleTableRow
         :label="$t('character.statistics.playTime.title')"
-        :value="$t('dateTimeFormat.hh', { hours: msToHours(gameModeCharacterStatistics.playTime) })"
+        :value="$t('dateTimeFormat.hh', { hours: msToHours(Number(gameModeCharacterStatistics.playTime)) })"
       />
 
       <UiSimpleTableRow

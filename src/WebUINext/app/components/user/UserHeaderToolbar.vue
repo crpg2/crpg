@@ -3,9 +3,10 @@ import type { DropdownMenuItem } from '@nuxt/ui'
 
 import NumberFlow, { continuous } from '@number-flow/vue'
 
+import type { Role } from '~/models/role'
 import type { User } from '~/models/user'
 
-import { Role } from '~/models/role'
+import { ROLE } from '~/models/role'
 import { logout } from '~/services/auth-service'
 import { mapUserToUserPublic } from '~/services/user-service'
 
@@ -45,13 +46,13 @@ const items = computed<DropdownMenuItem[][]>(() => [
     },
   ],
   [
-    ...([Role.Moderator, Role.Admin].includes(userStore.user!.role))
+    ...(([ROLE.Moderator, ROLE.Admin] as Role[]).includes(userStore.user!.role))
       ? [{
           label: t('nav.main.Moderator'),
           to: { name: 'moderator' },
         } as DropdownMenuItem]
       : [],
-    ...([Role.Admin].includes(userStore.user!.role))
+    ...(userStore.user!.role === ROLE.Admin)
       ? [{
           label: t('nav.main.Admin'),
           to: { name: 'admin' },

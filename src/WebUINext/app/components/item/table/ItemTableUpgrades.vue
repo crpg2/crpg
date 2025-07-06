@@ -7,7 +7,7 @@ import { AppCoin, ItemParam, ItemTableMedia } from '#components'
 import type { CompareItemsResult, ItemFlat } from '~/models/item'
 import type { AggregationConfig } from '~/services/item-search-service/aggregations'
 
-import { ItemCompareMode } from '~/models/item'
+import { ITEM_COMPARE_MODE } from '~/models/item'
 
 const {
   items,
@@ -31,7 +31,7 @@ function createTableColumn(key: keyof ItemFlat): TableColumn<ItemFlat> {
       field: key,
       item: row.original,
       isCompare: true,
-      compareMode: ItemCompareMode.Relative,
+      compareMode: ITEM_COMPARE_MODE.Relative,
       relativeValue: compareItemsResult[key]!,
     }, {
       ...(key === 'upkeep' && {

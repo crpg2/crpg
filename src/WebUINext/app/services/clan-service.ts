@@ -33,13 +33,16 @@ import { CLAN_MEMBER_ROLE } from '~/models/clan'
 
 export const getClans = async (): Promise<ClanWithMemberCount[]> => (await _getClans({ composable: '$fetch' })).data!
 
-export const createClan = (
+export const createClan = async (
   clan: ClanUpdate,
-) => postClans({
-  composable: '$fetch',
-  // @ts-expect-error TODO:FIXME:
-  body: clan,
-})
+): Promise<Clan> => {
+  const { data } = await postClans({
+    composable: '$fetch',
+    // @ts-expect-error TODO: FIXME: fix hey-api - WithRefs
+    body: clan,
+  })
+  return data
+}
 
 export const updateClan = (
   clanId: number,
@@ -111,6 +114,7 @@ export const canKickMemberValidate = (
   )
 }
 
+// @ts-expect-error TODO: fix type itemUsage
 export const getClanArmory = async (clanId: number): Promise<ClanArmoryItem[]> => (await getClansByClanIdArmory({ composable: '$fetch', path: { clanId } })).data!
 
 export const addItemToClanArmory = (

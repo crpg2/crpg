@@ -29,10 +29,7 @@ const {
 
 <template>
   <div
-    class="
-      group relative flex h-28 items-center justify-center rounded-md
-      bg-base-200 ring-2
-    "
+    class="group relative flex h-28 items-center justify-center rounded-md bg-base-200 ring-2"
     :class="[
       [available ? 'ring-border-300' : `
         ring-transparent
@@ -87,9 +84,7 @@ const {
       :text="$t(`character.doll.armorOverall.${armorOverall.key}`)"
     >
       <div
-        class="
-          absolute top-0 right-0 translate-x-1/2 -translate-y-3/4 cursor-default
-        "
+        class="absolute top-0 right-0 translate-x-1/2 -translate-y-3/4 cursor-default"
       >
         <UIcon
           name="crpg:shield-duotone" class="

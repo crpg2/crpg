@@ -4,7 +4,7 @@ import type { SelectItem } from '@nuxt/ui'
 import type { HumanDuration } from '~/models/datetime'
 import type { UserRestrictionCreation } from '~/models/user'
 
-import { UserRestrictionType } from '~/models/user'
+import { USER_RESTRICTION_TYPE } from '~/models/user'
 import { convertHumanDurationToMs } from '~/utils/date'
 
 defineProps<{ loading: boolean }>()
@@ -22,7 +22,7 @@ const durationModel = ref<HumanDuration>({
 const newRestrictionModel = ref<Omit<UserRestrictionCreation, 'restrictedUserId' | 'duration'>>({
   publicReason: '',
   reason: '',
-  type: UserRestrictionType.Join,
+  type: USER_RESTRICTION_TYPE.Join,
 })
 
 const onSubmit = () => {
@@ -42,7 +42,7 @@ const onSubmit = () => {
     <UFormField :label="$t('restriction.create.form.field.type.label')">
       <USelect
         v-model="newRestrictionModel.type"
-        :items="Object.values(UserRestrictionType).map<SelectItem>((rt) => ({
+        :items="Object.values(USER_RESTRICTION_TYPE).map<SelectItem>((rt) => ({
           label: $t(`restriction.type.${rt}`),
           value: rt,
         }))"
