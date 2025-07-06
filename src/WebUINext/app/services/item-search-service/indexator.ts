@@ -5,25 +5,26 @@ import type {
   ItemFlat,
   ItemType,
   ItemWeaponComponent,
+  WeaponClass,
 } from '~/models/item'
 
 import {
-  DamageType,
+  DAMAGE_TYPE,
+  ITEM_FAMILY_TYPE,
   ITEM_TYPE,
-  ItemFamilyType,
-  ItemUsage,
-  WeaponClass,
-  WeaponFlags,
-  WeaponUsage,
+  ITEM_USAGE,
+  WEAPON_CLASS,
+  WEAPON_FLAG,
+  WEAPON_USAGE,
 } from '~/models/item'
 import {
   computeAverageRepairCostPerHour,
   isLargeShield,
   itemIsNewDays,
   itemTypeByWeaponClass,
-  visibleItemFlags,
-  visibleItemUsage,
-  visibleWeaponFlags,
+  VISIBLE_ITEM_FLAGS,
+  VISIBLE_ITEM_USAGE,
+  VISIBLE_WEAPON_FLAGS,
   WeaponClassByItemUsage,
 } from '~/services/item-service'
 import { roundFLoat } from '~/utils/math'
@@ -76,13 +77,13 @@ const mapWeaponProps = (item: Item) => {
     stackAmount: originalWeapon.stackAmount,
     swingDamage: originalWeapon.swingSpeed !== 0 ? originalWeapon.swingDamage : 0,
     swingDamageType:
-      originalWeapon.swingDamageType === DamageType.Undefined || originalWeapon.swingDamage === 0
+      originalWeapon.swingDamageType === DAMAGE_TYPE.Undefined || originalWeapon.swingDamage === 0
         ? undefined
         : originalWeapon.swingDamageType,
     swingSpeed: originalWeapon.swingDamage !== 0 ? originalWeapon.swingSpeed : 0,
     thrustDamage: originalWeapon.thrustSpeed !== 0 ? originalWeapon.thrustDamage : 0,
     thrustDamageType:
-      originalWeapon.thrustDamageType === DamageType.Undefined || originalWeapon.thrustDamage === 0
+      originalWeapon.thrustDamageType === DAMAGE_TYPE.Undefined || originalWeapon.thrustDamage === 0
         ? undefined
         : originalWeapon.thrustDamageType,
     thrustSpeed: originalWeapon.thrustDamage !== 0 ? originalWeapon.thrustSpeed : 0,
@@ -100,13 +101,13 @@ const mapWeaponProps = (item: Item) => {
     }
   }
 
-  if ([ITEM_TYPE.Bow, ITEM_TYPE.Crossbow, ITEM_TYPE.Musket, ITEM_TYPE.Pistol].includes(item.type)) {
+  if (([ITEM_TYPE.Bow, ITEM_TYPE.Crossbow, ITEM_TYPE.Musket, ITEM_TYPE.Pistol] as ItemType[]).includes(item.type)) {
     // add custom flag
     if (
       item.type === ITEM_TYPE.Crossbow
-      && !originalWeapon.flags.includes(WeaponFlags.CantReloadOnHorseback)
+      && !originalWeapon.flags.includes(WEAPON_FLAG.CantReloadOnHorseback)
     ) {
-      weapon.weaponFlags.push(WeaponFlags.CanReloadOnHorseback)
+      weapon.weaponFlags.push(WEAPON_FLAG.CanReloadOnHorseback)
     }
 
     return {
@@ -117,12 +118,12 @@ const mapWeaponProps = (item: Item) => {
     }
   }
 
-  if ([ITEM_TYPE.Bolts, ITEM_TYPE.Arrows, ITEM_TYPE.Thrown, ITEM_TYPE.Bullets].includes(item.type)) {
+  if (([ITEM_TYPE.Bolts, ITEM_TYPE.Arrows, ITEM_TYPE.Thrown, ITEM_TYPE.Bullets] as ItemType[]).includes(item.type)) {
     return {
       ...weapon,
       damage: originalWeapon.thrustDamage,
       damageType:
-        originalWeapon.thrustDamageType === DamageType.Undefined
+        originalWeapon.thrustDamageType === DAMAGE_TYPE.Undefined
           ? undefined
           : originalWeapon.thrustDamageType,
     }
@@ -158,7 +159,7 @@ const mapArmorProps = (item: Item) => {
   return {
     ...item.armor,
     armorFamilyType:
-      item.armor.familyType !== ItemFamilyType.Undefined ? item.armor.familyType : undefined,
+      item.armor.familyType !== ITEM_FAMILY_TYPE.Undefined ? item.armor.familyType : undefined,
     armorMaterialType: item.armor.materialType,
     mountArmor: null,
     mountArmorFamilyType: null,
@@ -166,7 +167,7 @@ const mapArmorProps = (item: Item) => {
 }
 
 const mapWeight = (item: Item) => {
-  if ([ITEM_TYPE.Thrown, ITEM_TYPE.Bolts, ITEM_TYPE.Arrows].includes(item.type)) {
+  if (([ITEM_TYPE.Thrown, ITEM_TYPE.Bolts, ITEM_TYPE.Arrows] as ItemType[]).includes(item.type)) {
     const [weapon] = item.weapons
 
     return {
@@ -208,12 +209,12 @@ const generateModId = (item: Item, weaponClass?: WeaponClass) => {
  * @description Change the type for grouping to UI (e.g., group ranged or ammo)
  */
 const mapItemType = (type: ItemType): ItemType => {
-  if ([ITEM_TYPE.Bow, ITEM_TYPE.Crossbow, ITEM_TYPE.Musket, ITEM_TYPE.Pistol].includes(type)) {
-    return ItemType.Ranged
+  if (([ITEM_TYPE.Bow, ITEM_TYPE.Crossbow, ITEM_TYPE.Musket, ITEM_TYPE.Pistol] as ItemType[]).includes(type)) {
+    return ITEM_TYPE.Ranged
   }
 
-  if ([ITEM_TYPE.Arrows, ITEM_TYPE.Bolts, ITEM_TYPE.Bullets].includes(type)) {
-    return ItemType.Ammo
+  if (([ITEM_TYPE.Arrows, ITEM_TYPE.Bolts, ITEM_TYPE.Bullets] as ItemType[]).includes(type)) {
+    return ITEM_TYPE.Ammo
   }
 
   return type
@@ -225,14 +226,14 @@ const itemToFlat = (item: Item): ItemFlat => {
   const weaponProps = mapWeaponProps(item)
 
   const flags = [
-    ...item.flags.filter(flag => visibleItemFlags.includes(flag)),
-    ...weaponProps.weaponFlags.filter(wf => visibleWeaponFlags.includes(wf)),
-    ...weaponProps.itemUsage.filter(iu => visibleItemUsage.includes(iu)),
+    ...item.flags.filter(flag => VISIBLE_ITEM_FLAGS.includes(flag)),
+    ...weaponProps.weaponFlags.filter(wf => VISIBLE_WEAPON_FLAGS.includes(wf)),
+    ...weaponProps.itemUsage.filter(iu => VISIBLE_ITEM_USAGE.includes(iu)),
   ]
 
   // Banning the use of large shields on horseback
   if (isLargeShield(item)) {
-    flags.push(WeaponFlags.CantUseOnHorseback)
+    flags.push(WEAPON_FLAG.CantUseOnHorseback)
   }
 
   return {
@@ -249,7 +250,7 @@ const itemToFlat = (item: Item): ItemFlat => {
     requirement: item.requirement,
     tier: roundFLoat(item.tier),
     upkeep: computeAverageRepairCostPerHour(item.price),
-    weaponUsage: [WeaponUsage.Primary],
+    weaponUsage: [WEAPON_USAGE.Primary],
     ...mapWeight(item),
     ...mapArmorProps(item),
     ...mapMountProps(item),
@@ -275,16 +276,10 @@ const checkWeaponIsPrimaryUsage = (
   const weaponClass = normalizeWeaponClass(itemType, weapon)
 
   if (itemType === ITEM_TYPE.Polearm) {
-    const hasCouch = weapons.some(w => w.itemUsage === ItemUsage.PolearmCouch)
-    // TODO: jousting lances
-    const isJoustingLanceHack = weapons.some(w => w.itemUsage === ItemUsage.Polearm)
-
-    // const hasBrace = weapons.some(w => w.itemUsage === ItemUsage.PolearmBracing);
-    // const hasPike = weapons.some(w => w.itemUsage === ItemUsage.PolearmPike);
-
-    // console.log({itemType, 'weapon.class': weapon.class, weaponClass, hasCouch });
-
-    if (!isJoustingLanceHack && hasCouch && weapon.class !== WeaponClass.OneHandedPolearm) {
+    const hasCouch = weapons.some(w => w.itemUsage === ITEM_USAGE.PolearmCouch)
+    // jousting lances
+    const isJoustingLanceHack = weapons.some(w => w.itemUsage === ITEM_USAGE.Polearm)
+    if (!isJoustingLanceHack && hasCouch && weapon.class !== WEAPON_CLASS.OneHandedPolearm) {
       return false
     }
   }
@@ -349,7 +344,7 @@ export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false)
 
         // merge itemUsage, if the weapon has several of the same class
         if (itemTypeAlreadyExistIdx !== -1) {
-          if (visibleItemUsage.includes(w.itemUsage)) {
+          if (VISIBLE_ITEM_USAGE.includes(w.itemUsage)) {
             out[itemTypeAlreadyExistIdx]?.flags.push(w.itemUsage)
           }
 
@@ -364,7 +359,7 @@ export const createItemIndex = (items: Item[], cloneMultipleUsageWeapon = false)
               weapons: [{ ...w, class: weaponClass }], // TODO:
             }),
             weaponPrimaryClass: isPrimaryUsage ? weaponClass : getPrimaryWeaponClass(item),
-            weaponUsage: [isPrimaryUsage ? WeaponUsage.Primary : WeaponUsage.Secondary],
+            weaponUsage: [isPrimaryUsage ? WEAPON_USAGE.Primary : WEAPON_USAGE.Secondary],
           })
         }
       })

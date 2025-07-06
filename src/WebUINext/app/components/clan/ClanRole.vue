@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
 
-import { ClanMemberRole } from '~/models/clan'
+import type { ClanMemberRole } from '~/models/clan'
+
+import { CLAN_MEMBER_ROLE } from '~/models/clan'
 
 type Size = 'sm' | 'md' | 'lg' | 'xl'
 
@@ -46,16 +48,16 @@ const classes = computed(() => variants({ size }))
   <div
     class="inline-flex items-center gap-1.5 align-middle"
     :class="
-      role === ClanMemberRole.Leader
+      role === CLAN_MEMBER_ROLE.Leader
         ? 'text-[#C99E34]'
-        : role === ClanMemberRole.Officer
+        : role === CLAN_MEMBER_ROLE.Officer
           ? 'text-highlighted'
           : 'text-dimmed'
     "
   >
     <UIcon
-      v-if="[ClanMemberRole.Leader, ClanMemberRole.Officer].includes(role)"
-      :name="role === ClanMemberRole.Leader ? 'crpg:clan-role-leader' : 'crpg:clan-role-officer'"
+      v-if="([CLAN_MEMBER_ROLE.Leader, CLAN_MEMBER_ROLE.Officer]as ClanMemberRole[]).includes(role)"
+      :name="role === CLAN_MEMBER_ROLE.Leader ? 'crpg:clan-role-leader' : 'crpg:clan-role-officer'"
       :class="classes.icon()"
     />
 

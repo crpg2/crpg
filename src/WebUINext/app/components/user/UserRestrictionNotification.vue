@@ -17,7 +17,10 @@ const { settings } = storeToRefs(useSettingsStore())
 
 <template>
   <div
-    class="flex items-center justify-center gap-3 bg-status-danger px-8 py-1.5 text-center text-content-100"
+    class="
+      flex items-center justify-center gap-3 bg-status-danger px-8 py-1.5 text-center
+      text-content-100
+    "
   >
     {{ $t('user.restriction.notification', {
       duration: $t('dateTimeFormat.dd:hh:mm', joinRestrictionRemainingDuration),
@@ -35,7 +38,12 @@ const { settings } = storeToRefs(useSettingsStore())
         variant: 'solid',
       }"
     >
-      <span class="cursor-pointer underline hover:no-underline">{{ $t('action.readMore') }}</span>
+      <span
+        class="
+          cursor-pointer underline
+          hover:no-underline
+        "
+      >{{ $t('action.readMore') }}</span>
 
       <template #title>
         <i18n-t
@@ -74,7 +82,6 @@ const { settings } = storeToRefs(useSettingsStore())
               >
                 <template #discordLink>
                   <a
-                    class="text-content-link hover:text-content-link-hover"
                     target="_blank"
                     :href="settings.discord"
                   >
@@ -89,7 +96,6 @@ const { settings } = storeToRefs(useSettingsStore())
               >
                 <template #modMailLink>
                   <a
-                    class="text-content-link hover:text-content-link-hover"
                     target="_blank"
                     href="https://discord.com/channels/279063743839862805/1034895358435799070"
                   >ModMail</a>

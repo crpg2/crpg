@@ -7,12 +7,13 @@ import { defu } from 'defu'
 import type {
   CharacterAttributes,
   CharacterCharacteristics,
+  CharacteristicConversion,
   CharacterSkills,
   CharacterWeaponProficiencies,
 } from '~/models/character'
 
 import { useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic'
-import { CharacteristicConversion } from '~/models/character'
+import { CHARACTERISTIC_CONVERSION } from '~/models/character'
 import {
   attributePointsForLevel,
   computeHealthPoints,
@@ -93,7 +94,7 @@ const weaponLength = useRouteQuery('weaponLength', 0, { mode: 'replace' })
 
 // TODO: unit
 const convertCharacteristics = (conversion: CharacteristicConversion) => {
-  if (conversion === CharacteristicConversion.AttributesToSkills) {
+  if (conversion === CHARACTERISTIC_CONVERSION.AttributesToSkills) {
     if (convertRateSkillsToAttributes.value > 0) {
       convertRateSkillsToAttributes.value -= 1
     }
@@ -227,8 +228,8 @@ const onShare = () => {
               :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, count: convertRateAttributesToSkills }"
               :convert-skills-to-attributes-state="{ disabled: !canConvertSkillsToAttributes, count: convertRateSkillsToAttributes }"
               @input="onInput"
-              @convert-attributes-to-skills="convertCharacteristics(CharacteristicConversion.AttributesToSkills)"
-              @convert-skills-to-attributes="convertCharacteristics(CharacteristicConversion.SkillsToAttributes)"
+              @convert-attributes-to-skills="convertCharacteristics(CHARACTERISTIC_CONVERSION.AttributesToSkills)"
+              @convert-skills-to-attributes="convertCharacteristics(CHARACTERISTIC_CONVERSION.SkillsToAttributes)"
             />
 
             <CharacterStats

@@ -1,10 +1,10 @@
-import type { ItemFlat } from '~/models/item'
+import type { ItemFieldCompareRule, ItemFieldFormat, ItemFlat, ItemType, WeaponClass } from '~/models/item'
 
 import {
-  ItemFieldCompareRule,
-  ItemFieldFormat,
-  ItemType,
-  WeaponClass,
+  ITEM_FIELD_COMPARE_RULE,
+  ITEM_FIELD_FORMAT,
+  ITEM_TYPE,
+  WEAPON_CLASS,
 } from '~/models/item'
 
 export interface AggregationOptions {
@@ -27,7 +27,7 @@ export const aggregationsConfig: AggregationConfig = {
     view: AggregationView.Checkbox,
   },
   flags: {
-    format: ItemFieldFormat.List,
+    format: ITEM_FIELD_FORMAT.List,
     view: AggregationView.Checkbox,
   },
   id: {
@@ -43,18 +43,18 @@ export const aggregationsConfig: AggregationConfig = {
     hidden: true,
   },
   price: {
-    compareRule: ItemFieldCompareRule.Less,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Less,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   requirement: {
-    compareRule: ItemFieldCompareRule.Less,
-    format: ItemFieldFormat.Requirement,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Less,
+    format: ITEM_FIELD_FORMAT.Requirement,
     view: AggregationView.Range,
   },
   tier: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   type: {
@@ -62,79 +62,79 @@ export const aggregationsConfig: AggregationConfig = {
     hidden: true,
   },
   upkeep: {
-    compareRule: ItemFieldCompareRule.Less,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Less,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   weight: {
-    compareRule: ItemFieldCompareRule.Less,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Less,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
 
   // Armor
   armArmor: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   armorFamilyType: {
-    format: ItemFieldFormat.List,
+    format: ITEM_FIELD_FORMAT.List,
     view: AggregationView.Checkbox,
   },
   armorMaterialType: {
-    format: ItemFieldFormat.List,
+    format: ITEM_FIELD_FORMAT.List,
     view: AggregationView.Checkbox,
   },
   bodyArmor: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   headArmor: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   legArmor: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
 
   // Mount
   bodyLength: {
-    format: ItemFieldFormat.Number,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   chargeDamage: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   hitPoints: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   maneuver: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   mountFamilyType: {
     view: AggregationView.Checkbox,
   },
   speed: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
 
   // Mount armor
   mountArmor: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   mountArmorFamilyType: {
@@ -143,39 +143,39 @@ export const aggregationsConfig: AggregationConfig = {
 
   // Weapon
   handling: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   length: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   swingDamage: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Damage,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Damage,
     view: AggregationView.Range,
   },
   swingDamageType: {
     view: AggregationView.Checkbox,
   },
   swingSpeed: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   thrustDamage: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Damage,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Damage,
     view: AggregationView.Range,
   },
   thrustDamageType: {
     view: AggregationView.Checkbox,
   },
   thrustSpeed: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   weaponClass: {
@@ -189,68 +189,68 @@ export const aggregationsConfig: AggregationConfig = {
 
   // Throw/Bow/Xbow
   accuracy: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   missileSpeed: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
 
   // Bow/Xbow
   aimSpeed: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   reloadSpeed: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
 
   // Arrows/Bolts/Thrown
   damage: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Damage,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Damage,
     view: AggregationView.Range,
   },
   damageType: {
     view: AggregationView.Checkbox,
   },
   stackAmount: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   stackWeight: {
-    compareRule: ItemFieldCompareRule.Less,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Less,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
 
   // SHIELD
   shieldArmor: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   shieldDurability: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
   shieldSpeed: {
-    compareRule: ItemFieldCompareRule.Bigger,
-    format: ItemFieldFormat.Number,
+    compareRule: ITEM_FIELD_COMPARE_RULE.Bigger,
+    format: ITEM_FIELD_FORMAT.Number,
     view: AggregationView.Range,
   },
 }
 
 export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof ItemFlat>>> = {
-  [ItemType.BodyArmor]: [
+  [ITEM_TYPE.BodyArmor]: [
     'armorFamilyType',
     'culture',
     'flags',
@@ -262,7 +262,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.HandArmor]: [
+  [ITEM_TYPE.HandArmor]: [
     'culture',
     'flags',
     'armorMaterialType',
@@ -271,7 +271,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.HeadArmor]: [
+  [ITEM_TYPE.HeadArmor]: [
     'culture',
     'flags',
     'armorMaterialType',
@@ -280,7 +280,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.LegArmor]: [
+  [ITEM_TYPE.LegArmor]: [
     'armorFamilyType',
     'culture',
     'armorMaterialType',
@@ -289,7 +289,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.Mount]: [
+  [ITEM_TYPE.Mount]: [
     'culture',
     'mountFamilyType',
     'bodyLength',
@@ -300,7 +300,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.MountHarness]: [
+  [ITEM_TYPE.MountHarness]: [
     'culture',
     'mountArmorFamilyType',
     'armorMaterialType',
@@ -309,7 +309,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.OneHandedWeapon]: [
+  [ITEM_TYPE.OneHandedWeapon]: [
     'weaponUsage',
     'flags',
     'weight',
@@ -322,7 +322,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.Polearm]: [
+  [ITEM_TYPE.Polearm]: [
     'weaponUsage',
     'flags',
     'weight',
@@ -335,7 +335,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.Shield]: [
+  [ITEM_TYPE.Shield]: [
     'flags',
     'weight',
     'length',
@@ -345,7 +345,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.ShoulderArmor]: [
+  [ITEM_TYPE.ShoulderArmor]: [
     'culture',
     'flags',
     'armorMaterialType',
@@ -356,7 +356,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.Thrown]: [
+  [ITEM_TYPE.Thrown]: [
     'damage',
     'missileSpeed',
     'stackWeight',
@@ -364,7 +364,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'upkeep',
     'price',
   ],
-  [ItemType.TwoHandedWeapon]: [
+  [ITEM_TYPE.TwoHandedWeapon]: [
     'flags',
     'weight',
     'length',
@@ -377,7 +377,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
     'price',
   ],
   // banners are all the same, no need for aggregation
-  [ItemType.Banner]: [
+  [ITEM_TYPE.Banner]: [
     'flags',
     'weight',
     'culture',
@@ -387,7 +387,7 @@ export const aggregationsKeysByItemType: Partial<Record<ItemType, Array<keyof It
 }
 
 export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<keyof ItemFlat>>> = {
-  [WeaponClass.Arrow]: [
+  [WEAPON_CLASS.Arrow]: [
     'damageType',
     'damage',
     'stackWeight',
@@ -395,7 +395,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.Bolt]: [
+  [WEAPON_CLASS.Bolt]: [
     'damageType',
     'damage',
     'stackWeight',
@@ -403,7 +403,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.Cartridge]: [
+  [WEAPON_CLASS.Cartridge]: [
     'damageType',
     'damage',
     'weight',
@@ -411,7 +411,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.Bow]: [
+  [WEAPON_CLASS.Bow]: [
     'flags',
     'weight',
     'damage',
@@ -422,7 +422,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.Crossbow]: [
+  [WEAPON_CLASS.Crossbow]: [
     'flags',
     'weight',
     'damage',
@@ -434,7 +434,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.Musket]: [
+  [WEAPON_CLASS.Musket]: [
     'flags',
     'weight',
     'damage',
@@ -446,7 +446,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.Pistol]: [
+  [WEAPON_CLASS.Pistol]: [
     'flags',
     'weight',
     'damage',
@@ -458,7 +458,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.Dagger]: [
+  [WEAPON_CLASS.Dagger]: [
     'length',
     'weight',
     'handling',
@@ -469,7 +469,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.Javelin]: [
+  [WEAPON_CLASS.Javelin]: [
     'flags',
     'damage',
     'missileSpeed',
@@ -478,7 +478,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.Mace]: [
+  [WEAPON_CLASS.Mace]: [
     'flags',
     'weight',
     'length',
@@ -490,7 +490,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.OneHandedAxe]: [
+  [WEAPON_CLASS.OneHandedAxe]: [
     'flags',
     'weight',
     'weaponUsage',
@@ -501,7 +501,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.OneHandedSword]: [
+  [WEAPON_CLASS.OneHandedSword]: [
     'weaponUsage',
     'weight',
     'length',
@@ -513,7 +513,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.ThrowingAxe]: [
+  [WEAPON_CLASS.ThrowingAxe]: [
     'flags',
     'damage',
     'missileSpeed',
@@ -522,7 +522,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.ThrowingKnife]: [
+  [WEAPON_CLASS.ThrowingKnife]: [
     'damage',
     'weaponUsage',
     'missileSpeed',
@@ -531,7 +531,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.TwoHandedAxe]: [
+  [WEAPON_CLASS.TwoHandedAxe]: [
     'flags',
     'weight',
     'length',
@@ -541,7 +541,7 @@ export const aggregationsKeysByWeaponClass: Partial<Record<WeaponClass, Array<ke
     'upkeep',
     'price',
   ],
-  [WeaponClass.TwoHandedMace]: [
+  [WEAPON_CLASS.TwoHandedMace]: [
     'flags',
     'weight',
     'length',

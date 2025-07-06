@@ -54,7 +54,7 @@ const classes = computed(() => variants({ size }))
 <template>
   <div class="inline-flex items-center gap-1.5 align-middle">
     <UAvatar
-      :src="user.avatar"
+      :src="user.avatar || ''"
       :size="avatarSize"
       :alt="user.name"
       :class="[{ 'ring-2 ring-status-success': isSelf }]"

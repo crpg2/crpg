@@ -24,8 +24,8 @@ const error = ref<boolean>(false)
     <div
       v-else-if="error"
       class="
-        flex size-full flex-col items-center justify-center gap-1
-        overflow-hidden p-2 text-center text-dimmed
+        flex size-full flex-col items-center justify-center gap-1 overflow-hidden p-2 text-center
+        text-dimmed
       "
     >
       <UIcon

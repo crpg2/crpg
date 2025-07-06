@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { ItemFlat } from '~/models/item'
+import type { ItemCompareMode, ItemFieldFormat, ItemFlat } from '~/models/item'
 
 import {
-  ItemCompareMode,
-  ItemFieldCompareRule,
-  ItemFieldFormat,
+  ITEM_COMPARE_MODE,
+  ITEM_FIELD_COMPARE_RULE,
+  ITEM_FIELD_FORMAT,
 } from '~/models/item'
 import { aggregationsConfig } from '~/services/item-search-service/aggregations'
 import {
@@ -18,7 +18,7 @@ const {
   field,
   showLabel = false,
   isCompare = false,
-  compareMode = ItemCompareMode.Absolute,
+  compareMode = ITEM_COMPARE_MODE.Absolute,
   bestValue,
   relativeValue,
 } = defineProps<{
@@ -32,7 +32,7 @@ const {
 }>()
 
 const rawBuckets = item[field]
-const compareRule = aggregationsConfig[field]?.compareRule || ItemFieldCompareRule.Bigger
+const compareRule = aggregationsConfig[field]?.compareRule || ITEM_FIELD_COMPARE_RULE.Bigger
 
 const isBest = computed(() => (bestValue !== undefined ? rawBuckets === bestValue : false))
 
@@ -41,7 +41,7 @@ const diffStr = computed(() => {
     return null
   }
 
-  if (compareMode === ItemCompareMode.Absolute) {
+  if (compareMode === ITEM_COMPARE_MODE.Absolute) {
     if (!isBest.value && bestValue !== undefined) {
       return getItemFieldAbsoluteDiffStr(compareRule, rawBuckets, bestValue)
     }
@@ -73,19 +73,19 @@ const fieldStyle = computed(() => {
     return ''
   }
 
-  if (compareMode === ItemCompareMode.Absolute) {
+  if (compareMode === ITEM_COMPARE_MODE.Absolute) {
     if (isBest.value) {
       return `color: ${colorPositive}`
     }
     else { return `color: ${colorNegative}` }
   }
 
-  if (compareMode === ItemCompareMode.Relative) {
+  if (compareMode === ITEM_COMPARE_MODE.Relative) {
     if (relativeValue === undefined || rawBuckets === relativeValue) {
       return ''
     }
 
-    if (compareRule === ItemFieldCompareRule.Less) {
+    if (compareRule === ITEM_FIELD_COMPARE_RULE.Less) {
       if (relativeValue > rawBuckets) {
         return `color: ${colorPositive}`
       }
@@ -144,7 +144,7 @@ const fieldStyle = computed(() => {
             <UBadge
               v-else-if="
                 aggregationsConfig[field]?.format
-                  && [ItemFieldFormat.List, ItemFieldFormat.Damage].includes(aggregationsConfig[field].format)
+                  && ([ITEM_FIELD_FORMAT.List, ITEM_FIELD_FORMAT.Damage] as ItemFieldFormat[]).includes(aggregationsConfig[field].format)
                   && !['', '0'].includes(formattedValue.label)
               "
               :label="formattedValue.label"

@@ -2,7 +2,7 @@
 import type { ClanArmoryItem } from '~/models/clan'
 import type { UserPublic } from '~/models/user'
 
-import { ClanMemberRole } from '~/models/clan'
+import { CLAN_MEMBER_ROLE } from '~/models/clan'
 import { isClanArmoryItemInInventory, isOwnClanArmoryItem } from '~/services/clan-service'
 import { useUserStore } from '~/stores/user'
 
@@ -23,7 +23,7 @@ const { clanMemberRole, user, userItems } = toRefs(useUserStore())
 const isOwnArmoryItem = computed(() => isOwnClanArmoryItem(clanArmoryItem, user.value!.id))
 const isInInventory = computed(() => isClanArmoryItemInInventory(clanArmoryItem, userItems.value))
 const canReturn = computed(
-  () => borrower?.id === user.value!.id || clanMemberRole.value === ClanMemberRole.Leader,
+  () => borrower?.id === user.value!.id || clanMemberRole.value === CLAN_MEMBER_ROLE.Leader,
 )
 </script>
 

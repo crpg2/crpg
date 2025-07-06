@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { RadioGroupItem } from '@nuxt/ui'
 
-import type { ClanMember } from '~/models/clan'
+import type { ClanMember, ClanMemberRole } from '~/models/clan'
 
-import { ClanMemberRole } from '~/models/clan'
+import { CLAN_MEMBER_ROLE } from '~/models/clan'
 
 const props = defineProps<{
   member: ClanMember
@@ -23,7 +23,7 @@ const memberRoleModel = ref<ClanMemberRole>(props.member.role)
 const [shownConfirmTransferDialog, toggleConfirmTransferDialog] = useToggle()
 
 const onSave = () => {
-  if (memberRoleModel.value === ClanMemberRole.Leader) {
+  if (memberRoleModel.value === CLAN_MEMBER_ROLE.Leader) {
     toggleConfirmTransferDialog(true)
     return
   }
@@ -72,10 +72,10 @@ const onSave = () => {
 
           <URadioGroup
             v-model="memberRoleModel"
-            :items="Object.keys(ClanMemberRole).map<RadioGroupItem>((role) => ({
+            :items="Object.values(CLAN_MEMBER_ROLE).map<RadioGroupItem>((role) => ({
               label: `
                 ${$t(`clan.role.${role}`)}
-                ${Boolean(role === ClanMemberRole.Leader) ? `(${$t('clan.member.update.transferRights')})` : ''}
+                ${Boolean(role === CLAN_MEMBER_ROLE.Leader) ? `(${$t('clan.member.update.transferRights')})` : ''}
               `,
               value: role,
             }))"

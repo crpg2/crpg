@@ -1,12 +1,12 @@
 <script setup lang="ts" generic="T extends { item: Item }">
 import type { SelectItem } from '@nuxt/ui'
 
-import type { Item } from '~/models/item'
+import type { Item, ItemType } from '~/models/item'
 import type { SortingConfig } from '~/services/item-search-service'
 
 import { useMainHeader } from '~/composables/app/use-main-header'
 import { useStickySidebar } from '~/composables/character/use-sticky-sidebar'
-import { ItemType } from '~/models/item'
+import { ITEM_TYPE } from '~/models/item'
 import {
   filterItemsByName,
   filterItemsByType,
@@ -33,7 +33,7 @@ const sortingItems = computed(() => Object.keys(sortingConfig).map<SelectItem>(k
   value: key,
 })))
 
-const itemType = ref<ItemType>(ItemType.Undefined)
+const itemType = ref<ItemType>(ITEM_TYPE.Undefined)
 const itemTypes = computed(() => getFacetsByItemType(items.map(wrapper => wrapper.item.type)))
 
 const filteredItems = computed(() => {
@@ -49,7 +49,7 @@ const filteredItems = computed(() => {
 watch(filteredItems, () => {
   // For example, if a product has been sold, you need to reset the filter by type.
   if (!filterByNameModel.value && !filteredItems.value.length) {
-    itemType.value = ItemType.Undefined
+    itemType.value = ITEM_TYPE.Undefined
   }
 })
 

@@ -2,10 +2,10 @@
 import type { RouteLocationRaw } from 'vue-router'
 import type { RouteNamedMap } from 'vue-router/auto-routes'
 
-import { Role } from '~/models/role'
+import { ROLE } from '~/models/role'
 
 definePageMeta({
-  roles: [Role.Admin, Role.Moderator],
+  roles: [ROLE.Admin, ROLE.Moderator],
 })
 
 const { t } = useI18n()

@@ -48,17 +48,15 @@ import {
 } from '~root/data/constants.json'
 import { defu } from 'defu'
 import { clamp } from 'es-toolkit'
-import qs from 'qs'
 
 import type { ActivityLog } from '~/models/activity-logs'
-// import type { ActivityLog, CharacterEarnedMetadata } from '~/models/activity-logs'
-// import type { TimeSeries, TimeSeriesItem } from '~/models/timeseries'
 import type {
   Character,
   CharacterArmorOverall,
   CharacterCharacteristics,
   CharacterClass,
   CharacterEarnedData,
+  CharacterEarningType,
   CharacteristicConversion,
   CharacteristicKey,
   CharacterLimitations,
@@ -69,120 +67,91 @@ import type {
   EquippedItemId,
   UpdateCharacterRequest,
 } from '~/models/character'
-import type { Item, ItemArmorComponent } from '~/models/item'
+import type { GameMode } from '~/models/game-mode'
+import type { Item, ItemArmorComponent, ItemSlot, ItemType } from '~/models/item'
 import type { TimeSeries, TimeSeriesItem } from '~/models/time-series'
 
 import {
+  CHARACTER_ARMOR_OVERALL_KEY,
   CHARACTER_CLASS,
-  CharacterArmorOverallKey,
-  CharacterEarningType,
+  CHARACTER_EARNING_TYPE,
 } from '~/models/character'
-import { GameMode } from '~/models/game-mode'
-import { ItemSlot, ItemType } from '~/models/item'
-// import { type Item, type ItemArmorComponent, ItemSlot, ItemType } from '~/models/item'
-// import { del, get, put } from '~/services/crpg-client'
+import { GAME_MODE } from '~/models/game-mode'
+import { ITEM_SLOT, ITEM_TYPE } from '~/models/item'
 import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-service'
-// import { t } from '~/services/translate-service'
 import { getIndexToIns, range } from '~/utils/array'
-// import { computeLeftMs } from '~/utils/date'
 import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
 
-export const getCharacters = async (): Promise<Character[]> => {
-  const { data } = await getUsersSelfCharacters({ composable: '$fetch' })
-  return data!
-}
+export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({ composable: '$fetch' })).data!
 
-export const getCharactersByUserId = async (userId: number): Promise<Character[]> => {
-  const { data } = await getUsersByUserIdCharacters({ composable: '$fetch', path: { userId } })
-  return data!
-}
+export const getCharactersByUserId = async (
+  userId: number,
+): Promise<Character[]> => (await getUsersByUserIdCharacters({ composable: '$fetch', path: { userId } })).data!
 
 export const updateCharacter = (
   characterId: number,
   req: UpdateCharacterRequest,
-) => putUsersSelfCharactersById({
-  composable: '$fetch',
-  path: { id: characterId },
-  // @ts-expect-error TODO: FIXME: 1/ разобраться, почему body не обязательный. 2/ разобарться, почему лишние поля (должны быть только name)
-  body: {
-    name: req.name,
-  },
-})
+) => putUsersSelfCharactersById({ composable: '$fetch', path: { id: characterId }, body: { name: req.name } })
 
 export const activateCharacter = (
   characterId: number,
   active: boolean,
-) => putUsersSelfCharactersByIdActive({
-  composable: '$fetch',
-  path: { id: characterId },
-  body: {
-    active,
-  },
-})
+) => putUsersSelfCharactersByIdActive({ composable: '$fetch', path: { id: characterId }, body: { active } })
 
-export const deleteCharacter = (characterId: number) =>
-  deleteUsersSelfCharactersById({ composable: '$fetch', path: { id: characterId } })
+export const deleteCharacter = (
+  characterId: number,
+) => deleteUsersSelfCharactersById({ composable: '$fetch', path: { id: characterId } })
 
-export const respecializeCharacter = (characterId: number) =>
-  putUsersSelfCharactersByIdRespecialize({ composable: '$fetch', path: { id: characterId } })
+export const respecializeCharacter = (
+  characterId: number,
+) => putUsersSelfCharactersByIdRespecialize({ composable: '$fetch', path: { id: characterId } })
 
 export const tournamentLevelThreshold = 20
 
-export const canSetCharacterForTournamentValidate = (character: Character) =>
-  !(
-    character.forTournament
-    || character.generation > 0
-    || character.level >= tournamentLevelThreshold
-  )
+export const canSetCharacterForTournamentValidate = (
+  character: Character,
+) => !(
+  character.forTournament
+  || character.generation > 0
+  || character.level >= tournamentLevelThreshold
+)
 
 export const setCharacterForTournament = (
   characterId: number,
-) =>
-  putUsersSelfCharactersByIdTournament({ composable: '$fetch', path: { id: characterId } })
+) => putUsersSelfCharactersByIdTournament({ composable: '$fetch', path: { id: characterId } })
 
-export const canRetireValidate = (level: number) => level >= minimumRetirementLevel
+export const canRetireValidate = (
+  level: number,
+) => level >= minimumRetirementLevel
 
 export const retireCharacter = (
   characterId: number,
-) =>
-  putUsersSelfCharactersByIdRetire({ composable: '$fetch', path: { id: characterId } })
+) => putUsersSelfCharactersByIdRetire({ composable: '$fetch', path: { id: characterId } })
 
 export const getCharacterCharacteristics = async (
   characterId: number,
-): Promise<CharacterCharacteristics> => {
-  const { data } = await getUsersSelfCharactersByIdCharacteristics({ composable: '$fetch', path: { id: characterId } })
-  return data
-}
+): Promise<CharacterCharacteristics> => (await getUsersSelfCharactersByIdCharacteristics({ composable: '$fetch', path: { id: characterId } })).data
 
 export const convertCharacterCharacteristics = async (
   characterId: number,
   conversion: CharacteristicConversion,
-): Promise<CharacterCharacteristics> => {
-  const { data } = await putUsersSelfCharactersByIdCharacteristicsConvert({ composable: '$fetch', path: { id: characterId }, body: { conversion } })
-  return data
-}
+): Promise<CharacterCharacteristics> => (await putUsersSelfCharactersByIdCharacteristicsConvert({ composable: '$fetch', path: { id: characterId }, body: { conversion } })).data
 
 export const updateCharacterCharacteristics = async (
   characterId: number,
   req: CharacterCharacteristics,
-) => {
-  const { data } = await putUsersSelfCharactersByIdCharacteristics({ composable: '$fetch', path: { id: characterId }, body: req })
-  return data
-}
+) => (await putUsersSelfCharactersByIdCharacteristics({ composable: '$fetch', path: { id: characterId }, body: req })).data
 
 export const getCharacterStatistics = async (
   characterId: number,
-): Promise<Partial<Record<GameMode, CharacterStatistics>>> => {
-  const { data } = await getUsersSelfCharactersByIdStatistics({ composable: '$fetch', path: { id: characterId } })
-  return data!
-}
+): Promise<Partial<Record<GameMode, CharacterStatistics>>> => (await getUsersSelfCharactersByIdStatistics({ composable: '$fetch', path: { id: characterId } })).data!
 
 export const getDefaultCharacterStatistics = (): CharacterStatistics => ({
   assists: 0,
   deaths: 0,
-  gameMode: GameMode.Battle,
+  gameMode: GAME_MODE.CRPGBattle,
   kills: 0,
-  playTime: 0,
+  playTime: '0',
   rating: { competitiveValue: 0, deviation: 0, value: 0, volatility: 0 },
 })
 
@@ -207,6 +176,7 @@ export interface CharacterEarnedMetadata {
   experience: string
   gold: string
   timeEffort: string // seconds
+  [key: string]: string // Явно разрешаем строковые ключи
 }
 
 export const getCharacterEarningStatistics = async (
@@ -216,21 +186,33 @@ export const getCharacterEarningStatistics = async (
   const { data } = await getUsersSelfCharactersByIdEarningStatistics({
     composable: '$fetch',
     path: { id: characterId },
-    query: { from },
-    // You have to manually stringify the date
-    onRequest: ({ request, options }) => {
-      options.query = options.query || {}
-      options.query.from = from.toISOString()
-    },
+    query: { from, to: new Date() },
+    // // You have to manually stringify the date
+    // onRequest: ({ options }) => {
+    //   options.query = options.query || {}
+    //   options.query.from = from.toISOString()
+    // },
   })
-  return data!
+  return data!.map(log => ({
+    ...log,
+    metadata: {
+      characterId: log.metadata.characterId ?? '',
+      gameMode: log.metadata.gameMode ?? '',
+      experience: log.metadata.experience ?? '',
+      gold: log.metadata.gold ?? '',
+      timeEffort: log.metadata.timeEffort ?? '',
+    },
+  }))
 }
 
-export const convertCharacterEarningStatisticsToTimeSeries = (logs: ActivityLog<CharacterEarnedMetadata>[], type: CharacterEarningType): TimeSeries[] => {
+export const convertCharacterEarningStatisticsToTimeSeries = (
+  logs: ActivityLog<CharacterEarnedMetadata>[],
+  type: CharacterEarningType,
+): TimeSeries[] => {
   return logs.reduce((out, l) => {
     const timeSeriaItem: TimeSeriesItem = [
       l.createdAt,
-      Number.parseInt(type === CharacterEarningType.Exp ? l.metadata.experience : l.metadata.gold, 10),
+      Number.parseInt(type === CHARACTER_EARNING_TYPE.Exp ? l.metadata.experience : l.metadata.gold, 10),
     ]
 
     const currentEl = out.find(el => el.name === l.metadata.gameMode)
@@ -305,8 +287,8 @@ const computeExperienceTable = (): number[] => {
     )
   }
 
-  for (let lvl = 31; lvl <= maximumLevel; lvl += 1) {
-    table[lvl - minimumLevel] = table[lvl - minimumLevel - 1] * 2 // changing this require to change how much heirloompoint you get above level 31
+  for (let lvl = minimumRetirementLevel; lvl <= maximumLevel; lvl += 1) {
+    table[lvl - minimumLevel] = (table[lvl - minimumLevel - 1] ?? 0) * 2 // changing this require to change how much heirloompoint you get above level 31
   }
 
   return table
@@ -467,7 +449,7 @@ export const characteristicBonusByKey: Partial<Record<CharacteristicKey, Charact
 export const computeHealthPoints = (ironFlesh: number, strength: number): number =>
   defaultHealthPoints + ironFlesh * healthPointsForIronFlesh + strength * healthPointsForStrength
 
-// TODO: unit? to backend
+// TODO: to backend?
 export const computeSpeedStats = (
   strength: number,
   athletics: number,
@@ -523,28 +505,26 @@ export const computeSpeedStats = (
 
 export const getCharacterItems = async (
   characterId: number,
-): Promise<EquippedItem[]> => {
-  const { data } = await getUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId } })
-  return data!
-}
+): Promise<EquippedItem[]> => (await getUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId } })).data!
 
 export const updateCharacterItems = async (
   characterId: number,
   items: EquippedItemId[],
-): Promise<EquippedItem[]> => {
-  const { data } = await putUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId }, body: { items } })
-  return data!
-}
+): Promise<EquippedItem[]> => (await putUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId },
+  // @ts-expect-error TODO:
+  body: { items } })).data!
 
-export const computeOverallPrice = (items: Item[]) =>
-  items.reduce((total, item) => total + item.price, 0)
+export const computeOverallPrice = (
+  items: Item[],
+) => items.reduce((total, item) => total + item.price, 0)
 
-export const computeOverallWeight = (items: Item[]) =>
-  items
-    .filter(item => ![ItemType.Mount, ItemType.MountHarness].includes(item.type))
-    .reduce((total, item) => (total += [ItemType.Arrows, ItemType.Bolts, ItemType.Bullets, ItemType.Thrown].includes(item.type)
-      ? roundFLoat(item.weight * (item.weapons[0]?.stackAmount ?? 1))
-      : item.weight), 0)
+export const computeOverallWeight = (
+  items: Item[],
+) => items
+  .filter(item => !([ITEM_TYPE.Mount, ITEM_TYPE.MountHarness] as ItemType[]).includes(item.type))
+  .reduce((total, item) => (total += ([ITEM_TYPE.Arrows, ITEM_TYPE.Bolts, ITEM_TYPE.Bullets, ITEM_TYPE.Thrown] as ItemType[]).includes(item.type)
+    ? roundFLoat(item.weight * (item.weapons[0]?.stackAmount ?? 1))
+    : item.weight), 0)
 
 interface OverallArmor extends Omit<ItemArmorComponent, 'materialType' | 'familyType'> {
   mountArmor: number
@@ -553,7 +533,7 @@ interface OverallArmor extends Omit<ItemArmorComponent, 'materialType' | 'family
 export const computeOverallArmor = (items: Item[]): OverallArmor =>
   items.reduce(
     (total, item) => {
-      if (item.type === ItemType.MountHarness) {
+      if (item.type === ITEM_TYPE.MountHarness) {
         total.mountArmor = item.armor!.bodyArmor
       }
       else if (armorTypes.includes(item.type)) {
@@ -576,35 +556,36 @@ export const computeOverallArmor = (items: Item[]): OverallArmor =>
 // // TODO: SPEC
 export const computeLongestWeaponLength = (items: Item[]) => {
   return items
-    .filter(item => [ItemType.OneHandedWeapon, ItemType.TwoHandedWeapon, ItemType.Polearm].includes(item.type))
+    .filter(item => ([ITEM_TYPE.OneHandedWeapon, ITEM_TYPE.TwoHandedWeapon, ITEM_TYPE.Polearm] as ItemType[]).includes(item.type))
     .reduce((total, item) => (total += Math.max(total, item.weapons[0]?.length ?? 0)), 0)
 }
 
 // // TODO: handle upgrade items. ??
 // // TODO: SPEC
-export const computeOverallAverageRepairCostByHour = (items: Item[]) =>
-  Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))
+export const computeOverallAverageRepairCostByHour = (
+  items: Item[],
+) => Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))
 
-export const getHeirloomPointByLevel = (level: number) =>
-  level < minimumRetirementLevel ? 0 : 2 ** (level - minimumRetirementLevel)
+export const getHeirloomPointByLevel = (
+  level: number,
+) => level < minimumRetirementLevel ? 0 : 2 ** (level - minimumRetirementLevel)
 
 export interface HeirloomPointByLevelAggregation { level: number[], points: number }
 
 export const getHeirloomPointByLevelAggregation = () =>
-  range(minimumRetirementLevel, maximumLevel)
-    .reduce((out, level) => {
-      const points = getHeirloomPointByLevel(level)
-      const idx = out.findIndex(item => item.points === points)
+  range(minimumRetirementLevel, maximumLevel).reduce((out, level) => {
+    const points = getHeirloomPointByLevel(level)
+    const idx = out.findIndex(item => item.points === points)
 
-      if (idx === -1) {
-        out.push({ level: [level], points })
-      }
-      else {
-        out[idx].level.push(level)
-      }
+    if (idx === -1) {
+      out.push({ level: [level], points })
+    }
+    else if (out[idx]) {
+      out[idx].level.push(level)
+    }
 
-      return out
-    }, [] as HeirloomPointByLevelAggregation[])
+    return out
+  }, [] as HeirloomPointByLevelAggregation[])
 
 export const getExperienceMultiplierBonus = (multiplier: number) => {
   if (multiplier < maxExperienceMultiplierForGeneration) {
@@ -629,9 +610,7 @@ export const getExperienceMultiplierBonusByRetireCount = (retireCount: number) =
 export const sumExperienceMultiplierBonus = (
   multiplierA: number,
   multiplierB: number,
-) => {
-  return clamp(multiplierA + multiplierB, 0, maxExperienceMultiplierForGeneration)
-}
+) => clamp(multiplierA + multiplierB, 0, maxExperienceMultiplierForGeneration)
 
 export interface RespecCapability {
   price: number
@@ -698,57 +677,57 @@ export const getCharacterSlotsSchema = (): SlotsSchema[][] => [
   // left col
   [
     {
-      key: ItemSlot.Head,
+      key: ITEM_SLOT.Head,
       placeholderIcon: 'item-type-head-armor',
     },
     {
-      key: ItemSlot.Shoulder,
+      key: ITEM_SLOT.Shoulder,
       placeholderIcon: 'item-type-shoulder-armor',
     },
     {
-      key: ItemSlot.Body,
+      key: ITEM_SLOT.Body,
       placeholderIcon: 'item-type-body-armor',
     },
     {
-      key: ItemSlot.Hand,
+      key: ITEM_SLOT.Hand,
       placeholderIcon: 'item-type-hand-armor',
     },
     {
-      key: ItemSlot.Leg,
+      key: ITEM_SLOT.Leg,
       placeholderIcon: 'item-type-leg-armor',
     },
   ],
   // center col
   [
     {
-      key: ItemSlot.MountHarness,
+      key: ITEM_SLOT.MountHarness,
       placeholderIcon: 'item-type-mount-harness',
     },
     {
-      key: ItemSlot.Mount,
+      key: ITEM_SLOT.Mount,
       placeholderIcon: 'item-type-mount',
     },
   ],
   // right col
   [
     {
-      key: ItemSlot.Weapon0,
+      key: ITEM_SLOT.Weapon0,
       placeholderIcon: 'weapons',
     },
     {
-      key: ItemSlot.Weapon1,
+      key: ITEM_SLOT.Weapon1,
       placeholderIcon: 'weapons',
     },
     {
-      key: ItemSlot.Weapon2,
+      key: ITEM_SLOT.Weapon2,
       placeholderIcon: 'weapons',
     },
     {
-      key: ItemSlot.Weapon3,
+      key: ITEM_SLOT.Weapon3,
       placeholderIcon: 'weapons',
     },
     {
-      key: ItemSlot.WeaponExtra,
+      key: ITEM_SLOT.WeaponExtra,
       placeholderIcon: 'item-flag-drop-on-change',
     },
   ],
@@ -773,42 +752,38 @@ export const getOverallArmorValueBySlot = (
   itemsStats: CharacterOverallItemsStats,
 ) => {
   const itemSlotToArmorValue: Partial<Record<ItemSlot, CharacterArmorOverall>> = {
-    [ItemSlot.Body]: {
-      key: CharacterArmorOverallKey.BodyArmor,
+    [ITEM_SLOT.Body]: {
+      key: CHARACTER_ARMOR_OVERALL_KEY.BodyArmor,
       value: itemsStats.bodyArmor,
     },
-    [ItemSlot.Hand]: {
-      key: CharacterArmorOverallKey.ArmArmor,
+    [ITEM_SLOT.Hand]: {
+      key: CHARACTER_ARMOR_OVERALL_KEY.ArmArmor,
       value: itemsStats.armArmor,
     },
-    [ItemSlot.Leg]: {
-      key: CharacterArmorOverallKey.LegArmor,
+    [ITEM_SLOT.Leg]: {
+      key: CHARACTER_ARMOR_OVERALL_KEY.LegArmor,
       value: itemsStats.legArmor,
     },
-    [ItemSlot.Mount]: {
-      key: CharacterArmorOverallKey.MountArmor,
+    [ITEM_SLOT.Mount]: {
+      key: CHARACTER_ARMOR_OVERALL_KEY.MountArmor,
       value: itemsStats.mountArmor,
     },
-    [ItemSlot.Shoulder]: {
-      key: CharacterArmorOverallKey.HeadArmor,
+    [ITEM_SLOT.Shoulder]: {
+      key: CHARACTER_ARMOR_OVERALL_KEY.HeadArmor,
       value: itemsStats.headArmor,
     },
   }
 
-  return slot in itemSlotToArmorValue ? itemSlotToArmorValue[slot] : undefined
+  return itemSlotToArmorValue[slot]
 }
 
 // // TODO: SPEC, more complicated logic?
 export const checkUpkeepIsHigh = (
   userGold: number,
   upkeepPerHour: number,
-) => {
-  return userGold < upkeepPerHour * 2.5
-}
+) => userGold < upkeepPerHour * 2.5
 
 export const validateItemNotMeetRequirement = (
   item: Item,
   characterCharacteristics: CharacterCharacteristics,
-) => {
-  return item.requirement > characterCharacteristics.attributes.strength
-}
+) => item.requirement > characterCharacteristics.attributes.strength

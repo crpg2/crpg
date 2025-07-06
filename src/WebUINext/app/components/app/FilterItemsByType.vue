@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { TabsItem } from '@nuxt/ui'
 
-import type { WeaponClass } from '~/models/item'
+import type { ItemType, WeaponClass } from '~/models/item'
 
-import { ItemType } from '~/models/item'
+import { ITEM_TYPE } from '~/models/item'
 import {
   hasWeaponClassesByItemType,
   itemTypeToIcon,
@@ -22,13 +22,13 @@ const {
   withAllCategories?: boolean
 }>()
 
-const itemType = defineModel<ItemType>('itemType', { default: () => ItemType.Undefined })
+const itemType = defineModel<ItemType>('itemType', { default: () => ITEM_TYPE.Undefined })
 
-const weaponClass = defineModel<WeaponClass | null>('weaponClass', { default: () => ItemType.OneHandedWeapon })
+const weaponClass = defineModel<WeaponClass | null>('weaponClass', { default: () => ITEM_TYPE.OneHandedWeapon })
 
 const itemTypeOptions = computed(() => {
   return [
-    ...(withAllCategories ? [{ value: ItemType.Undefined, icon: 'crpg:grid' }] : []),
+    ...(withAllCategories ? [{ value: ITEM_TYPE.Undefined, icon: 'crpg:grid' }] : []),
     ...itemTypes.map<TabsItem>(type => ({
       icon: `crpg:${itemTypeToIcon[type]}`,
       value: type,

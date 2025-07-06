@@ -15,14 +15,22 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value.createdAt)
     <a
       :href="latestPatch.url"
       target="_blank"
-      class="group flex flex-col gap-1 rounded-full bg-base-500/20 px-5 pt-4 pb-2.5 shadow-xl hover:shadow-none"
+      class="
+        group flex flex-col gap-1 rounded-full bg-base-500/20 px-5 pt-4 pb-2.5 shadow-xl
+        hover:shadow-none
+      "
     >
       <div class="flex items-center gap-2">
         <UIcon
           name="crpg:trumpet"
           class="size-6 text-primary"
         />
-        <div class="max-w-72 truncate font-bold text-content-100 group-hover:text-content-200">
+        <div
+          class="
+            max-w-72 truncate font-bold text-content-100
+            group-hover:text-content-200
+          "
+        >
           {{ latestPatch.title || $t('patchNotes.latestPatch') }}
         </div>
         <UBadge
@@ -40,7 +48,10 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value.createdAt)
       <a
         href="https://github.com/namidaka/crpg/releases"
         target="_blank"
-        class="text-[0.85rem] text-content-300 underline hover:no-underline"
+        class="
+          text-[0.85rem] text-content-300 underline
+          hover:no-underline
+        "
       >
         {{ $t('patchNotes.showAllPatches', { count: patchNotes.length - 1 }) }}
       </a>

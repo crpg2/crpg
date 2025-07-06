@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { timeout } from 'es-toolkit'
 
-import type { CharacterCharacteristics } from '~/models/character'
+import type { CharacterCharacteristics, CharacteristicConversion } from '~/models/character'
 
 import { useCharacter } from '~/composables/character/use-character'
 import { useCharacterCharacteristic, useCharacterCharacteristicBuilder } from '~/composables/character/use-character-characteristic'
@@ -9,7 +9,7 @@ import { useCharacterItems } from '~/composables/character/use-character-items'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePageLoading } from '~/composables/utils/use-page-loading'
-import { CharacteristicConversion } from '~/models/character'
+import { CHARACTERISTIC_CONVERSION } from '~/models/character'
 import {
   convertCharacterCharacteristics,
   updateCharacterCharacteristics,
@@ -108,8 +108,8 @@ watchEffect(() => {
         :convert-attributes-to-skills-state="{ disabled: !canConvertAttributesToSkills, loading: convertingCharacterCharacteristics }"
         :convert-skills-to-attributes-state="{ disabled: !canConvertSkillsToAttributes, loading: convertingCharacterCharacteristics }"
         @input="onInput"
-        @convert-attributes-to-skills="onConvertCharacterCharacteristics(CharacteristicConversion.AttributesToSkills)"
-        @convert-skills-to-attributes="onConvertCharacterCharacteristics(CharacteristicConversion.SkillsToAttributes)"
+        @convert-attributes-to-skills="onConvertCharacterCharacteristics(CHARACTERISTIC_CONVERSION.AttributesToSkills)"
+        @convert-skills-to-attributes="onConvertCharacterCharacteristics(CHARACTERISTIC_CONVERSION.SkillsToAttributes)"
       />
 
       <CharacterStats

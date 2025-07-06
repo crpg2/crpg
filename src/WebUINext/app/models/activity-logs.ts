@@ -40,10 +40,18 @@ export const ACTIVITY_LOG_TYPE = {
 
 export type ActivityLogType = ValueOf<typeof ACTIVITY_LOG_TYPE>
 
-export interface ActivityLog<T = { [key: string]: string }> {
+export interface ActivityLog<TMetaData = { [key: string]: string }> {
   id: number
   type: ActivityLogType
   userId: number
   createdAt: Date
-  metadata: T
+  metadata: TMetaData
+}
+
+export interface CharacterEarnedMetadata {
+  characterId: string
+  gameMode: string
+  experience: string
+  gold: string
+  timeEffort: string // seconds
 }

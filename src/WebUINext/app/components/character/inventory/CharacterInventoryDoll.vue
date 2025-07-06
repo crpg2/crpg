@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { PointerEvent } from 'happy-dom'
+
 import { vOnLongPress } from '@vueuse/components'
 
 import type { CharacterCharacteristics, CharacterOverallItemsStats, EquippedItemId } from '~/models/character'
@@ -38,7 +40,7 @@ const onClickInventoryDollSlot = (e: PointerEvent, slot: ItemSlot) => {
     onQuickUnEquip(slot)
   }
   else {
-    toggleItemDetail(e.target as HTMLElement, {
+    toggleItemDetail(e.target as unknown as HTMLElement, {
       id: props.equippedItems[slot].item.id,
       userItemId: props.equippedItems[slot].id,
     })
@@ -92,12 +94,12 @@ const {
         :remove="fromSlot === slot.key && !toSlot"
         draggable="true"
         @dragstart="onDragStart(equippedItems[slot.key], slot.key)"
-        @dragend="e => onDragEnd(e, slot.key)"
+        @dragend="(e:DragEvent) => onDragEnd(e, slot.key)"
         @drop="onDrop(slot.key)"
         @dragover.prevent="onDragEnter(slot.key)"
         @dragleave.prevent="onDragLeave"
         @dragenter.prevent
-        @click="e => onClickInventoryDollSlot(e, slot.key)"
+        @click="(e: PointerEvent) => onClickInventoryDollSlot(e, slot.key)"
       />
     </div>
   </div>

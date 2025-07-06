@@ -302,10 +302,7 @@ const onSubmit = async () => {
                 <a
                   href="https://bannerlord.party"
                   target="_blank"
-                  class="
-                    hover:text-
-                    text-primary
-                  "
+                  class="hover:text-primary"
                 >
                   bannerlord.party
                 </a>

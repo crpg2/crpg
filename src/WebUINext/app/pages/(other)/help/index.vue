@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="prose prose-invert mx-auto">
+  <div class="mx-auto prose prose-invert">
     <h2 class="text-center">
       {{ $t('help.overview.title') }}
     </h2>

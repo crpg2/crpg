@@ -4,7 +4,6 @@ import type { TableColumn } from '@nuxt/ui'
 import { AppCoin, AppLoom } from '#components'
 
 import type { ReforgeCost } from '~/composables/item/use-item-reforge'
-import type { ItemRank } from '~/models/item'
 import type { UserItem } from '~/models/user'
 
 import { useItemReforge } from '~/composables/item/use-item-reforge'
@@ -58,7 +57,7 @@ const reforgeTableInfoColumns: TableColumn<ReforgeCost>[] = [
   {
     header: t('character.inventory.item.reforge.tooltip.costTable.cols.rank.label'),
     cell: ({ row }) => h('span', { style: {
-      color: getRankColor(row.original.points as ItemRank),
+      color: getRankColor(row.original.points),
     } }, `+${row.index + 1}`),
   },
   {
