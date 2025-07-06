@@ -26,7 +26,7 @@ export interface ItemArmorComponent {
   legArmor: number
   headArmor: number
   bodyArmor: number
-  familyType: ItemFamilyType | number // TODO: to enum on backend
+  familyType: ItemFamilyType
   materialType: ArmorMaterialType
 }
 
@@ -36,7 +36,7 @@ export interface ItemMountComponent {
   hitPoints: number
   bodyLength: number
   chargeDamage: number
-  familyType: ItemFamilyType | number // TODO: to enum on backend
+  familyType: ItemFamilyType
 }
 
 export const WEAPON_CLASS = {
@@ -258,7 +258,7 @@ export interface ItemFlat {
   headArmor: number | null
   bodyArmor: number | null
   armorMaterialType: ArmorMaterialType | null
-  armorFamilyType: ItemFamilyType | null | undefined
+  armorFamilyType?: ItemFamilyType | null
   // weapons
   length: number | null
   itemUsage: ItemUsage[] // TODO: delete?
@@ -270,13 +270,13 @@ export interface ItemFlat {
   stackAmount: number | null
   missileSpeed: number | null
   weaponClass: WeaponClass | null
-  swingSpeed: number | null | undefined
+  swingSpeed?: number | null
   weaponPrimaryClass: WeaponClass | null
-  thrustSpeed: number | null | undefined
-  swingDamage: number | null | undefined
-  thrustDamage: number | null | undefined
-  swingDamageType: DamageType | null | undefined
-  thrustDamageType: DamageType | null | undefined
+  thrustSpeed?: number | null
+  swingDamage?: number | null
+  thrustDamage?: number | null
+  swingDamageType?: DamageType | null
+  thrustDamageType?: DamageType | null
 
   // Shield
   shieldSpeed: number | null

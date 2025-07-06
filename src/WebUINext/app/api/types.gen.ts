@@ -716,7 +716,7 @@ export type ItemArmorComponentViewModel = {
     armArmor: number;
     legArmor: number;
     materialType: ArmorMaterialType;
-    familyType: number;
+    familyType: 0 | 1 | 2 | 3;
 };
 
 export type ItemFlags = 'ForceAttachOffHandPrimaryItemBone' | 'ForceAttachOffHandSecondaryItemBone' | 'NotUsableByFemale' | 'NotUsableByMale' | 'DropOnWeaponChange' | 'DropOnAnyAction' | 'CannotBePickedUp' | 'CanBePickedUpFromCorpse' | 'QuickFadeOut' | 'WoodenAttack' | 'WoodenParry' | 'HeldInOffHand' | 'HasToBeHeldUp' | 'UseTeamColor' | 'Civilian' | 'DoNotScaleBodyAccordingToWeaponLength' | 'DoesNotHideChest' | 'NotStackable';
@@ -727,7 +727,7 @@ export type ItemMountComponentViewModel = {
     maneuver: number;
     speed: number;
     hitPoints: number;
-    familyType: number;
+    familyType: 0 | 1 | 2 | 3;
 };
 
 export type ItemSlot = 'Head' | 'Shoulder' | 'Body' | 'Hand' | 'Leg' | 'MountHarness' | 'Mount' | 'Weapon0' | 'Weapon1' | 'Weapon2' | 'Weapon3' | 'WeaponExtra';
