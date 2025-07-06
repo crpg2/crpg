@@ -230,6 +230,14 @@ export default defineNuxtConfig({
             WeaponFlags: (schema) => {
               schema.enum.push(...['CanReloadOnHorseback', 'CantUseOnHorseback'])
             },
+            ItemMountComponentViewModel: (schema) => {
+              schema.properties.familyType.enum = [0, 1, 2, 3] // Undefined: 0, Horse: 1, Camel: 2, EBA: 3
+              schema.properties.familyType.type = 'integer'
+            },
+            ItemArmorComponentViewModel: (schema) => {
+              schema.properties.familyType.enum = [0, 1, 2, 3] // Undefined: 0, Horse: 1, Camel: 2, EBA: 3
+              schema.properties.familyType.type = 'integer'
+            },
           },
           // parameters: {
           //   // from: convertDateTimeToString,
