@@ -153,7 +153,7 @@ const onShare = () => {
       <div
         class="mx-auto max-w-4xl"
       >
-        <h1 class="mb-14 text-center text-xl text-content-100">
+        <h1 class="mb-14 text-center text-xl">
           {{ $t('builder.title') }}
         </h1>
 
@@ -274,8 +274,7 @@ const onShare = () => {
 
     <div
       class="
-        sticky bottom-0 left-0 flex w-full items-center justify-center gap-2 bg-bg-main/10 py-4
-        backdrop-blur-sm
+        sticky bottom-0 left-0 flex w-full items-center justify-center gap-2 py-4 backdrop-blur-sm
       "
     >
       <UButton

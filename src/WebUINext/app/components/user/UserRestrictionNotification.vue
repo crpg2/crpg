@@ -17,14 +17,9 @@ const { settings } = storeToRefs(useSettingsStore())
 
 <template>
   <div
-    class="
-      flex items-center justify-center gap-3 bg-status-danger px-8 py-1.5 text-center
-      text-content-100
-    "
+    class="flex items-center justify-center gap-3 bg-error px-8 py-1.5 text-center text-highlighted"
   >
-    {{ $t('user.restriction.notification', {
-      duration: $t('dateTimeFormat.dd:hh:mm', joinRestrictionRemainingDuration),
-    }) }}
+    {{ $t('user.restriction.notification', { duration: $t('dateTimeFormat.dd:hh:mm', joinRestrictionRemainingDuration) }) }}
 
     <USeparator
       orientation="vertical" class="h-4"
@@ -50,7 +45,7 @@ const { settings } = storeToRefs(useSettingsStore())
           scope="global"
           keypath="user.restriction.notification"
           tag="div"
-          class="text-center text-lg font-bold text-status-danger"
+          class="text-center text-lg font-bold text-error"
         >
           <template #duration>
             {{ $t('dateTimeFormat.dd:hh:mm', joinRestrictionRemainingDuration) }}
