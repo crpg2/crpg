@@ -15,3 +15,12 @@ export const GAME_MODE = {
 } as const satisfies Record<_GameMode, _GameMode>
 
 export type GameMode = ValueOf<typeof GAME_MODE>
+
+export const ACTUAL_GAME_MODES: GameMode[] = [
+  GAME_MODE.CRPGBattle,
+  GAME_MODE.CRPGDuel,
+  GAME_MODE.CRPGDTV,
+  GAME_MODE.CRPGConquest,
+  GAME_MODE.CRPGTeamDeathmatch,
+  GAME_MODE.CRPGCaptain,
+]

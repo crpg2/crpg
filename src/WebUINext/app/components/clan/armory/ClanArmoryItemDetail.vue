@@ -22,9 +22,7 @@ const { clanMemberRole, user, userItems } = toRefs(useUserStore())
 
 const isOwnArmoryItem = computed(() => isOwnClanArmoryItem(clanArmoryItem, user.value!.id))
 const isInInventory = computed(() => isClanArmoryItemInInventory(clanArmoryItem, userItems.value))
-const canReturn = computed(
-  () => borrower?.id === user.value!.id || clanMemberRole.value === CLAN_MEMBER_ROLE.Leader,
-)
+const canReturn = computed(() => borrower?.id === user.value!.id || clanMemberRole.value === CLAN_MEMBER_ROLE.Leader)
 </script>
 
 <template>
@@ -37,7 +35,7 @@ const canReturn = computed(
     </template>
 
     <template #actions>
-      <div>ddd</div>
+      <div>TODO: FIXME:</div>
       <!-- <ConfirmActionTooltip
         v-if="isOwnArmoryItem"
         class="flex-auto"

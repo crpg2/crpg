@@ -149,7 +149,7 @@ export const getClanArmoryItemLender = (
 export const isOwnClanArmoryItem = (
   item: ClanArmoryItem,
   userId: number,
-) => item.userItemId === userId
+) => item.userId === userId
 
 export const isClanArmoryItemInInventory = (
   item: ClanArmoryItem,
