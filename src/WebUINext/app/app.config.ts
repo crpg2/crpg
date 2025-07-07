@@ -4,12 +4,12 @@ export default defineAppConfig({
   // },
   ui: {
     colors: {
-      primary: 'crpg',
-      secondary: 'crpg-secondary', // TODO: FIXME:
+      primary: 'crpg-gold',
+      secondary: 'crpg-stone',
       neutral: 'crpg-neutral',
-      success: 'status-success',
-      error: 'status-danger',
-      warning: 'status-warning',
+      success: 'crpg-green',
+      error: 'crpg-red',
+      warning: 'crpg-amber',
     },
     icons: {
       // arrowLeft: 'i-lucide-arrow-left',
