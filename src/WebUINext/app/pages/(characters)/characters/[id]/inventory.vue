@@ -65,13 +65,11 @@ const {
 
 const upkeepIsHigh = computed(() => checkUpkeepIsHigh(user.value!.gold, itemsOverallStats.value.averageRepairCostByHour))
 
-const refreshData = () => {
-  Promise.all([
-    userStore.fetchUser(),
-    userStore.fetchUserItems(),
-    loadCharacterItems(),
-  ])
-}
+const refreshData = () => Promise.all([
+  userStore.fetchUser(),
+  userStore.fetchUserItems(),
+  loadCharacterItems(),
+])
 
 const {
   execute: onSellUserItem,
@@ -191,22 +189,10 @@ const onClickInventoryItem = (e: PointerEvent, userItem: UserItem) => {
 }
 
 const sortingConfig: SortingConfig = {
-  price_asc: {
-    field: 'price',
-    order: 'asc',
-  },
-  price_desc: {
-    field: 'price',
-    order: 'desc',
-  },
-  rank_desc: {
-    field: 'rank',
-    order: 'desc',
-  },
-  type_asc: {
-    field: 'type',
-    order: 'asc',
-  },
+  price_asc: { field: 'price', order: 'asc' },
+  price_desc: { field: 'price', order: 'desc' },
+  rank_desc: { field: 'rank', order: 'desc' },
+  type_asc: { field: 'type', order: 'asc' },
 }
 const sortingModel = useStorage<string>('character-inventory-sorting', 'rank_desc')
 
@@ -292,6 +278,7 @@ const items = computed(() => {
         v-model:sorting="sortingModel"
         :items
         :sorting-config="sortingConfig"
+        :with-pagination="false"
       >
         <template v-if="hasArmoryItems" #filter-leading>
           <UDropdownMenu
@@ -331,11 +318,9 @@ const items = computed(() => {
         </template>
 
         <template #footer="{ filteredItemsCost, filteredItemsCount }">
-          <div
-            class="
-              sticky bottom-4 z-10 flex justify-center rounded-lg bg-elevated p-3 backdrop-blur-lg
-            "
-            style="grid-area: footer"
+          <UCard
+            variant="soft"
+            :ui="{ body: 'justify-center flex', root: 'backdrop-blur-lg' }"
           >
             <i18n-t
               scope="global"
@@ -370,9 +355,10 @@ const items = computed(() => {
                 </i18n-t>
               </template>
             </i18n-t>
-          </div>
+          </UCard>
         </template>
       </ItemGrid>
+
       <UCard v-else>
         <UiResultNotFound :message="$t('character.inventory.empty')" />
       </UCard>
@@ -388,15 +374,18 @@ const items = computed(() => {
         :items-stats-overall="itemsOverallStats"
       />
 
-      <div
-        class="mt-3 flex w-full justify-center rounded-lg bg-elevated p-4 backdrop-blur-lg"
+      <UCard
         style="grid-area: footer"
+        variant="soft"
+        class="mt-3"
+
+        :ui="{ body: 'justify-center flex', root: 'backdrop-blur-lg' }"
       >
         <UiKbdCombination
           :keys="[$t('shortcuts.keys.ctrl'), $t('shortcuts.keys.lmb')]"
           :label="$t('shortcuts.hints.equip')"
         />
-      </div>
+      </UCard>
     </div>
 
     <div

@@ -17,7 +17,6 @@ import {
   isClanArmoryItemInInventory,
   isOwnClanArmoryItem,
 } from '~/services/clan-service'
-import { createItemIndex } from '~/services/item-search-service/indexator'
 
 const props = defineProps<{
   id: string
@@ -53,45 +52,47 @@ const {
   getClanArmoryItem,
 } = useClanArmory(clanId)
 
+const refreshData = () => Promise.all([
+  userStore.fetchUser(),
+  userStore.fetchUserItems(),
+  loadClanArmory(),
+])
+
 const {
   execute: onBorrowFromClanArmory,
 } = useAsyncCallback(async (userItemId: number) => {
-  // await borrowItem(userItemId)
-  // await Promise.all([userStore.fetchUser(), userStore.fetchUserItems(), loadClanArmory()])
-  // notify(t('clan.armory.item.borrow.notify.success'))
+  await borrowItem(userItemId)
+  await refreshData()
+  toast.add({
+    title: t('clan.armory.item.borrow.notify.success'),
+    close: false,
+    color: 'success',
+  })
 })
 
 const {
   execute: onRemoveFromClanArmory,
 } = useAsyncCallback(async (userItemId: number) => {
-  // await removeItem(userItemId)
-  // await Promise.all([userStore.fetchUser(), userStore.fetchUserItems(), loadClanArmory()])
-  // notify(t('clan.armory.item.remove.notify.success'))
+  await removeItem(userItemId)
+  await refreshData()
+  toast.add({
+    title: t('clan.armory.item.remove.notify.success'),
+    close: false,
+    color: 'success',
+  })
 })
 
 const {
   execute: onReturnFromClanArmory,
 } = useAsyncCallback(async (userItemId: number) => {
-  // await returnItem(userItemId)
-  // await Promise.all([userStore.fetchUser(), userStore.fetchUserItems(), loadClanArmory()])
-  // notify(t('clan.armory.item.return.notify.success'))
+  await returnItem(userItemId)
+  await refreshData()
+  toast.add({
+    title: t('clan.armory.item.return.notify.success'),
+    close: false,
+    color: 'success',
+  })
 })
-
-// const flatItems = computed(() =>
-//   createItemIndex(
-//     clanArmory.value
-//       // .filter(
-//       //   item =>
-//       //     (hideOwnedItemsModel.value ? !isOwnClanArmoryItem(item, userStore.user!.id) : true)
-//       //     && (showOnlyAvailableItems.value
-//       //       ? item.borrowedItem === null
-//       //       && !isOwnClanArmoryItem(item, userStore.user!.id)
-//       //       && !isClanArmoryItemInInventory(item, userStore.userItems)
-//       //       : true),
-//       // )
-//       .map(ca => ca.userItem.item),
-//   ),
-// )
 
 const hideOwnedItemsModel = useStorage<boolean>('clan-armory-hide-owned-items', true)
 const showOnlyAvailableItems = useStorage<boolean>('clan-armory-show-only-available-items', true)
@@ -115,23 +116,32 @@ const additionalFilteritems = computed<DropdownMenuItem[]>(() => [
 ])
 
 const items = computed(() => {
-  return clanArmory.value.filter(armoryItem => (hideOwnedItemsModel.value ? !isOwnClanArmoryItem(armoryItem, userStore.user!.id) : true)
-    && (showOnlyAvailableItems.value
-      ? armoryItem.borrowerUserId
-      && !isOwnClanArmoryItem(armoryItem, userStore.user!.id)
-      && !isClanArmoryItemInInventory(armoryItem, userStore.userItems)
-      : true))
+  if (!clanArmory.value.length || !userStore.user) {
+    return []
+  }
+  return clanArmory.value.filter((armoryItem) => {
+    // Hide owned items if enabled
+    if (hideOwnedItemsModel.value && isOwnClanArmoryItem(armoryItem, userStore.user!.id)) {
+      return false
+    }
+    // Show only available items if enabled
+    if (showOnlyAvailableItems.value) {
+      // Item is available if not borrowed, not owned, and not in user's inventory
+      if (
+        armoryItem.borrowerUserId
+        || isOwnClanArmoryItem(armoryItem, userStore.user!.id)
+        || isClanArmoryItemInInventory(armoryItem, userStore.userItems)
+      ) {
+        return false
+      }
+    }
+    return true
+  })
 })
 
 const sortingConfig: SortingConfig = {
-  rank_desc: {
-    field: 'rank',
-    order: 'desc',
-  },
-  type_asc: {
-    field: 'type',
-    order: 'asc',
-  },
+  rank_desc: { field: 'rank', order: 'desc' },
+  type_asc: { field: 'type', order: 'asc' },
 }
 const sortingModel = ref<string>('rank_desc')
 
@@ -193,6 +203,10 @@ Promise.all([
               userItemId: clanArmoryItem.userItemId,
             })"
           />
+        </template>
+
+        <template #footer>
+          <div />
         </template>
       </ItemGrid>
     </div>

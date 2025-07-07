@@ -2,7 +2,7 @@
 import type { CharacterStatistics } from '~/models/character'
 import type { GameMode } from '~/models/game-mode'
 
-import { GAME_MODE } from '~/models/game-mode'
+import { ACTUAL_GAME_MODES, GAME_MODE } from '~/models/game-mode'
 import { getCharacterKDARatio, getDefaultCharacterStatistics } from '~/services/character-service'
 import { checkIsRankedGameMode, gameModeToIcon } from '~/services/game-mode-service'
 import { msToHours } from '~/utils/date'
@@ -29,9 +29,9 @@ const kdaRatio = computed(() =>
 
 <template>
   <div class="space-y-6">
-    <div class="flex flex-wrap gap-1.5">
+    <div class="flex flex-wrap gap-2">
       <UButton
-        v-for="gm in Object.values(GAME_MODE)"
+        v-for="gm in Object.values(ACTUAL_GAME_MODES)"
         :key="gm"
         color="secondary"
         :variant="gm === gameMode ? 'solid' : 'soft'"
