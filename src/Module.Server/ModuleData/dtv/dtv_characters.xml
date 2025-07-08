@@ -613,7 +613,7 @@
         <equipment slot="Cape" id="Item.crpg_rhkt_cape_sec_v1_h0" />
         <equipment slot="Body" id="Item.crpg_khuzait_civil_coat_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_steppe_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_rondel_reverse_v1_h0" />
+        <equipment slot="Item0" id="Item.crpg_rondel_reverse_v2_h0" />
         <equipment slot="Item1" id="Item.crpg_highland_throwing_dagger_v5_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
@@ -785,7 +785,7 @@
       <EquipmentRoster>
         <equipment slot="Body" id="Item.crpg_baggy_trunks_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_belted_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_longdagger_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_longdagger_v3_h0" />
         <equipment slot="Item1" id="Item.crpg_francesca_v4_h0" />
       </EquipmentRoster>
     </Equipments>
