@@ -249,7 +249,7 @@
     <Equipments>
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_pilgrim_hood_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_falx_knife_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_falx_knife_v3_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
