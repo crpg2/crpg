@@ -37719,4 +37719,88 @@
   <CraftingPiece id="crpg_kopis_handle_h3" name="{=}Kopis Handle" tier="3" piece_type="Handle" mesh="kopis_handle" full_scale="false" culture="Culture.khuzait" length="15.3" weight="0.73">
     <BuildData piece_offset="-1" previous_piece_offset="1" next_piece_offset="4" />
   </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_head_h0" name="Spiked Polemace Head" tier="3" piece_type="Blade" mesh="polemace_head" culture="Culture.vlandia" length="31.2" weight="0.4" excluded_item_usage_features="shield:thrust">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Pierce" damage_factor="3.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_head_h1" name="Spiked Polemace Head" tier="3" piece_type="Blade" mesh="polemace_head" culture="Culture.vlandia" length="31.2" weight="0.35" excluded_item_usage_features="shield:thrust">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Pierce" damage_factor="3.0" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_head_h2" name="Spiked Polemace Head" tier="3" piece_type="Blade" mesh="polemace_head" culture="Culture.vlandia" length="31.2" weight="0.35" excluded_item_usage_features="shield:thrust">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Pierce" damage_factor="3.1" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_head_h3" name="Spiked Polemace Head" tier="3" piece_type="Blade" mesh="polemace_head" culture="Culture.vlandia" length="31.2" weight="0.35" excluded_item_usage_features="shield:thrust">
+    <BladeData stack_amount="1" physics_material="wood_weapon" body_name="bo_spear_b">
+      <Swing damage_type="Pierce" damage_factor="3.3" />
+    </BladeData>
+    <Flags>
+      <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron4" count="2" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_handle_h0" name="Spiked Polemace Shaft" tier="2" piece_type="Handle" mesh="polemace_handle" length="145" weight="1.5" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_handle_h1" name="Spiked Polemace Shaft" tier="2" piece_type="Handle" mesh="polemace_handle" length="145" weight="1.5" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_handle_h2" name="Spiked Polemace Shaft" tier="2" piece_type="Handle" mesh="polemace_handle" length="145" weight="1.5" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_handle_h3" name="Spiked Polemace Shaft" tier="2" piece_type="Handle" mesh="polemace_handle" length="145" weight="1.5" CraftingCost="120">
+    <BuildData previous_piece_offset="0" next_piece_offset="0" piece_offset="20" />
+    <Materials>
+      <Material id="Wood" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_guard_h0" name="{=}Dummy Spiked Polemace Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_guard_h1" name="{=}Dummy Spiked Polemace Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_guard_h2" name="{=}Dummy Spiked Polemace Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_guard_h3" name="{=}Dummy Spiked Polemace Guard" tier="1" piece_type="Guard" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_pommel_h0" name="{=}Dummy Spiked Polemace Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_pommel_h1" name="{=}Dummy Spiked Polemace Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_pommel_h2" name="{=}Dummy Spiked Polemace Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
+  <CraftingPiece id="crpg_spiked_polemace_pommel_h3" name="{=}Dummy Spiked Polemace Pommel" tier="1" piece_type="Pommel" mesh="" culture="Culture.empire" length="0" weight="0.1" is_default="true">
+  </CraftingPiece>
 </CraftingPieces>
