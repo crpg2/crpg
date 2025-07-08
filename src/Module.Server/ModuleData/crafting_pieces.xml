@@ -11888,42 +11888,42 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_pugio_blade_h0" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="0.9" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_pugio_blade_h0" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="0.6" excluded_item_usage_features="swing">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pugio_blade_h1" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="0.6" excluded_item_usage_features="swing">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pugio_blade_h2" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="0.6" excluded_item_usage_features="swing">
+    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+    </BladeData>
+    <Flags>
+      <Flag name="Civilian" type="ItemFlags" />
+    </Flags>
+    <Materials>
+      <Material id="Iron3" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_pugio_blade_h3" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="0.6" excluded_item_usage_features="swing">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
       <Thrust damage_type="Pierce" damage_factor="2.8" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_pugio_blade_h1" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="0.75" excluded_item_usage_features="swing">
-    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="3.1" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_pugio_blade_h2" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="0.75" excluded_item_usage_features="swing">
-    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="3.2" />
-    </BladeData>
-    <Flags>
-      <Flag name="Civilian" type="ItemFlags" />
-    </Flags>
-    <Materials>
-      <Material id="Iron3" count="1" />
-    </Materials>
-  </CraftingPiece>
-  <CraftingPiece id="crpg_pugio_blade_h3" name="{=ykTYTbek}Throwing Knife Blade" tier="2" piece_type="Blade" mesh="dagger_blade_11" length="30" weight="0.70" excluded_item_usage_features="swing">
-    <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="3.5" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -11982,7 +11982,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_falx_knife_blade_h0" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.2" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="3.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -11993,7 +11993,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_falx_knife_blade_h1" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.01" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="3.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -12004,7 +12004,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_falx_knife_blade_h2" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.01" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -12015,7 +12015,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_falx_knife_blade_h3" name="{=SgJH5KtP}Sica Blade" tier="3" piece_type="Blade" mesh="dagger_blade_9" length="43" weight="0.01" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -12027,7 +12027,7 @@
   <CraftingPiece id="crpg_seax_blade_h0" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.75">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
       <Thrust damage_type="Pierce" damage_factor="1.7" />
-      <Swing damage_type="Cut" damage_factor="3.2" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -12037,10 +12037,10 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_seax_blade_h1" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.60">
+  <CraftingPiece id="crpg_seax_blade_h1" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.56">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="3.2" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -12052,8 +12052,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_seax_blade_h2" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.56">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
+      <Swing damage_type="Cut" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -12065,8 +12065,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_seax_blade_h3" name="{=aBnaaaHv}Long Seax Blade" tier="3" piece_type="Blade" mesh="dagger_blade_3" length="47" weight="1.56">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="">
-      <Thrust damage_type="Pierce" damage_factor="2.1" />
-      <Swing damage_type="Cut" damage_factor="3.5" />
+      <Thrust damage_type="Pierce" damage_factor="1.9" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="CanBePickedUpFromCorpse" type="ItemFlags" />
@@ -28769,7 +28769,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_rondel_blade_h0" name="{=}Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade" full_scale="true" length="31.4" weight="0.1" excluded_item_usage_features="swing">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="3.8" />
+      <Thrust damage_type="Pierce" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -28780,7 +28780,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_rondel_blade_h1" name="{=}Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade" full_scale="true" length="31.4" weight="0.1" excluded_item_usage_features="swing">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="3.9" />
+      <Thrust damage_type="Pierce" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -28791,7 +28791,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_rondel_blade_h2" name="{=}Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade" full_scale="true" length="31.4" weight="0.1" excluded_item_usage_features="swing">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="3.9" />
+      <Thrust damage_type="Pierce" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -28802,7 +28802,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_rondel_blade_h3" name="{=}Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade" full_scale="true" length="31.4" weight="0.1" excluded_item_usage_features="swing">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Thrust damage_type="Pierce" damage_factor="4.0" />
+      <Thrust damage_type="Pierce" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31477,7 +31477,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_rondel_reverse_blade_h0" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse" excluded_item_usage_features="thrust" length="31.4" weight="2.1">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Swing damage_type="Pierce" damage_factor="3.8" />
+      <Swing damage_type="Pierce" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31488,7 +31488,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_rondel_reverse_blade_h1" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse" excluded_item_usage_features="thrust" length="31.4" weight="2">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Swing damage_type="Pierce" damage_factor="3.9" />
+      <Swing damage_type="Pierce" damage_factor="3.1" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31499,7 +31499,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_rondel_reverse_blade_h2" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse" excluded_item_usage_features="thrust" length="31.4" weight="2">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Swing damage_type="Pierce" damage_factor="4.0" />
+      <Swing damage_type="Pierce" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -31508,9 +31508,9 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_rondel_reverse_blade_h3" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse" excluded_item_usage_features="thrust" length="31.4" weight="2">
+  <CraftingPiece id="crpg_rondel_reverse_blade_h3" name="{=}Reverse Rondel Blade" tier="2" piece_type="Blade" mesh="rondel_blade_reverse" excluded_item_usage_features="thrust" length="31.4" weight="1.9">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="throwing_dagger_quiver_2" holster_mesh_length="35.8">
-      <Swing damage_type="Pierce" damage_factor="4.2" />
+      <Swing damage_type="Pierce" damage_factor="3.2" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -32053,8 +32053,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tanto_blade_h0" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.65">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
-      <Thrust damage_type="Pierce" damage_factor="3.1" />
-      <Swing damage_type="Cut" damage_factor="3.1" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -32065,8 +32065,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tanto_blade_h1" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.55">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
-      <Thrust damage_type="Pierce" damage_factor="3.1" />
-      <Swing damage_type="Cut" damage_factor="3.1" />
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="2.8" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -32077,8 +32077,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tanto_blade_h2" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.55">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
-      <Thrust damage_type="Pierce" damage_factor="3.2" />
-      <Swing damage_type="Cut" damage_factor="3.2" />
+      <Thrust damage_type="Pierce" damage_factor="2.9" />
+      <Swing damage_type="Cut" damage_factor="2.9" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -32089,8 +32089,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_tanto_blade_h3" name="{=}Tanto Blade" tier="2" piece_type="Blade" mesh="tanto_blade" full_scale="true" length="40.4" weight="1.55">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="tanto_scabbard" holster_mesh_length="42">
-      <Thrust damage_type="Pierce" damage_factor="3.4" />
-      <Swing damage_type="Cut" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="3.0" />
+      <Swing damage_type="Cut" damage_factor="3.0" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -32401,7 +32401,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_longdagger_blade_h0" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.95">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="3.4" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
       <Swing damage_type="Cut" damage_factor="2.4" />
     </BladeData>
     <Flags>
@@ -32413,8 +32413,8 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_longdagger_blade_h1" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.95">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="3.4" />
-      <Swing damage_type="Cut" damage_factor="2.5" />
+      <Thrust damage_type="Pierce" damage_factor="2.4" />
+      <Swing damage_type="Cut" damage_factor="2.4" />
     </BladeData>
     <Flags>
       <Flag name="Civilian" type="ItemFlags" />
@@ -32425,7 +32425,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_longdagger_blade_h2" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.95">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="3.5" />
+      <Thrust damage_type="Pierce" damage_factor="2.5" />
       <Swing damage_type="Cut" damage_factor="2.6" />
     </BladeData>
     <Flags>
@@ -32437,7 +32437,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_longdagger_blade_h3" name="{=}Long Dagger Blade" tier="2" piece_type="Blade" mesh="longdagger_blade" full_scale="false" length="40.4" weight="0.95">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="3.7" />
+      <Thrust damage_type="Pierce" damage_factor="2.6" />
       <Swing damage_type="Cut" damage_factor="2.7" />
     </BladeData>
     <Flags>
@@ -32453,7 +32453,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_longdagger_handle_h1" name="{=}Long Dagger Grip" tier="2" piece_type="Handle" mesh="longdagger_handle" culture="Culture.sturgia" full_scale="false" length="12.0" weight="0.2">
+  <CraftingPiece id="crpg_longdagger_handle_h1" name="{=}Long Dagger Grip" tier="2" piece_type="Handle" mesh="longdagger_handle" culture="Culture.sturgia" full_scale="false" length="12.0" weight="0.1">
     <BuildData piece_offset="-1" previous_piece_offset="0.0" next_piece_offset="0.0" />
     <Materials>
       <Material id="Iron2" count="1" />
@@ -32485,7 +32485,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_longdagger_guard_h2" name="{=}Long Dagger Guard" tier="1" piece_type="Guard" mesh="longdagger_guard" culture="Culture.battania" full_scale="false" length="4.75" weight="0.2">
+  <CraftingPiece id="crpg_longdagger_guard_h2" name="{=}Long Dagger Guard" tier="1" piece_type="Guard" mesh="longdagger_guard" culture="Culture.battania" full_scale="false" length="4.75" weight="0.1">
     <BuildData next_piece_offset="1.7" />
     <StatContributions armor_bonus="0" />
     <Materials>
@@ -32504,7 +32504,7 @@
       <Material id="Iron4" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_longdagger_pommel_h1" name="{=}Long Dagger Pommel" tier="4" piece_type="Pommel" mesh="longdagger_pommel" culture="Culture.battania" full_scale="false" length="5.28" weight="0.2">
+  <CraftingPiece id="crpg_longdagger_pommel_h1" name="{=}Long Dagger Pommel" tier="4" piece_type="Pommel" mesh="longdagger_pommel" culture="Culture.battania" full_scale="false" length="5.28" weight="0.1">
     <Materials>
       <Material id="Iron4" count="1" />
     </Materials>
@@ -33513,7 +33513,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_black_longdagger_blade_h1" name="{=Yeldur}Long Dagger Blade" tier="2" piece_type="Blade" mesh="black_longdagger_blade" full_scale="false" length="40.4" weight="0.01">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="black_longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="2.6" />
+      <Thrust damage_type="Pierce" damage_factor="1.6" />
       <Swing damage_type="Cut" damage_factor="0.5" />
     </BladeData>
     <Flags>
@@ -33525,7 +33525,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_black_longdagger_blade_h2" name="{=Yeldur}Long Dagger Blade" tier="2" piece_type="Blade" mesh="black_longdagger_blade" full_scale="false" length="40.4" weight="0.01">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="black_longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Thrust damage_type="Pierce" damage_factor="1.7" />
       <Swing damage_type="Cut" damage_factor="0.5" />
     </BladeData>
     <Flags>
@@ -33537,7 +33537,7 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_black_longdagger_blade_h3" name="{=Yeldur}Long Dagger Blade" tier="2" piece_type="Blade" mesh="black_longdagger_blade" full_scale="false" length="40.4" weight="0.01">
     <BladeData stack_amount="9" physics_material="metal_weapon" body_name="bo_knife_a" holster_mesh="black_longdagger_scabbard" holster_mesh_length="43.3">
-      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Thrust damage_type="Pierce" damage_factor="1.8" />
       <Swing damage_type="Cut" damage_factor="0.5" />
     </BladeData>
     <Flags>
