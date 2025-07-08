@@ -29525,26 +29525,26 @@
   </CraftingPiece>
   <CraftingPiece id="crpg_gladius_pompeian_blade_h0" name="{=}Pompeian Gladius Blade" tier="4" piece_type="Blade" mesh="gladius_pompeian_blade" culture="Culture.empire" length="46.5" weight="1.5">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="3.6" />
-      <Swing damage_type="Cut" damage_factor="3.0" />
+      <Thrust damage_type="Pierce" damage_factor="3.2" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_gladius_pompeian_blade_h1" name="{=}Pompeian Gladius Blade" tier="4" piece_type="Blade" mesh="gladius_pompeian_blade" culture="Culture.battania" length="46.5" weight="1.4">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="3.6" />
-      <Swing damage_type="Cut" damage_factor="3.3" />
+      <Thrust damage_type="Pierce" damage_factor="3.2" />
+      <Swing damage_type="Cut" damage_factor="3.2" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_gladius_pompeian_blade_h2" name="{=}Pompeian Gladius Blade" tier="4" piece_type="Blade" mesh="gladius_pompeian_blade" culture="Culture.battania" length="46.5" weight="1.4">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="3.6" />
-      <Swing damage_type="Cut" damage_factor="3.6" />
+      <Thrust damage_type="Pierce" damage_factor="3.2" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_gladius_pompeian_blade_h3" name="{=}Pompeian Gladius Blade" tier="4" piece_type="Blade" mesh="gladius_pompeian_blade" culture="Culture.battania" length="46.5" weight="1.35">
     <BladeData stack_amount="2" physics_material="metal_weapon" body_name="bo_sword_one_handed">
-      <Thrust damage_type="Pierce" damage_factor="3.6" />
-      <Swing damage_type="Cut" damage_factor="3.6" />
+      <Thrust damage_type="Pierce" damage_factor="3.2" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
     </BladeData>
   </CraftingPiece>
   <CraftingPiece id="crpg_gladius_pompeian_pommel_h0" name="{=}Pompeian Gladius Pommel" tier="4" piece_type="Pommel" mesh="gladius_pompeian_pommel" culture="Culture.battania" length="8.45" weight="0.5">
