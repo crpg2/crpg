@@ -37647,4 +37647,76 @@
       <Material id="Iron3" count="1" />
     </Materials>
   </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_blade_h0" name="{=}Kopis Blade" tier="4" piece_type="Blade" mesh="kopis_blade" culture="Culture.battania" length="65.5" weight="0.73">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.7" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_blade_h1" name="{=}Kopis Blade" tier="4" piece_type="Blade" mesh="kopis_blade" culture="Culture.battania" length="65.5" weight="0.73">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="2.8" />
+      <Swing damage_type="Cut" damage_factor="3.4" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_blade_h2" name="{=}Kopis Blade" tier="4" piece_type="Blade" mesh="kopis_blade" culture="Culture.battania" length="65.5" weight="0.73">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="3.0" />
+      <Swing damage_type="Cut" damage_factor="3.5" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_blade_h3" name="{=}Kopis Blade" tier="4" piece_type="Blade" mesh="kopis_blade" culture="Culture.battania" length="65.5" weight="0.73">
+    <BladeData stack_amount="2" physics_material="metal_weapon" holster_mesh_length="64.4" body_name="bo_sword_one_handed">
+      <Thrust damage_type="Pierce" damage_factor="3.0" />
+      <Swing damage_type="Cut" damage_factor="3.6" />
+    </BladeData>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_pommel_h0" name="{=}Kopis Pommel" tier="4" piece_type="Pommel" mesh="kopis_pommel" full_scale="true" culture="Culture.battania" length="5.02" weight="0.73">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_pommel_h1" name="{=}Kopis Pommel" tier="4" piece_type="Pommel" mesh="kopis_pommel" full_scale="true" culture="Culture.battania" length="5.02" weight="0.70">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_pommel_h2" name="{=}Kopis Pommel" tier="4" piece_type="Pommel" mesh="kopis_pommel" full_scale="true" culture="Culture.battania" length="5.02" weight="0.70">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_pommel_h3" name="{=}Kopis Pommel" tier="4" piece_type="Pommel" mesh="kopis_pommel" full_scale="true" culture="Culture.battania" length="5.02" weight="0.60">
+    <BuildData next_piece_offset="0" />
+    <Materials>
+      <Material id="Iron4" count="1" />
+    </Materials>
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_guard_h0" name="{=}Kopis Guard" tier="5" piece_type="Guard" mesh="kopis_guard" full_scale="true" culture="Culture.battania" length="7.02" weight="0.73">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_guard_h1" name="{=}Kopis Guard" tier="5" piece_type="Guard" mesh="kopis_guard" full_scale="true" culture="Culture.battania" length="7.02" weight="0.73">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_guard_h2" name="{=}Kopis Guard" tier="5" piece_type="Guard" mesh="kopis_guard" full_scale="true" culture="Culture.battania" length="7.02" weight="0.73">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_guard_h3" name="{=}Kopis Guard" tier="5" piece_type="Guard" mesh="kopis_guard" full_scale="true" culture="Culture.battania" length="7.02" weight="0.73">
+    <BuildData next_piece_offset="1" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_handle_h0" name="{=}Kopis Handle" tier="3" piece_type="Handle" mesh="kopis_handle" full_scale="false" culture="Culture.khuzait" length="15.3" weight="0.73">
+    <BuildData piece_offset="-1" previous_piece_offset="1" next_piece_offset="4" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_handle_h1" name="{=}Kopis Handle" tier="3" piece_type="Handle" mesh="kopis_handle" full_scale="false" culture="Culture.khuzait" length="15.3" weight="0.73">
+    <BuildData piece_offset="-1" previous_piece_offset="1" next_piece_offset="4" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_handle_h2" name="{=}Kopis Handle" tier="3" piece_type="Handle" mesh="kopis_handle" full_scale="false" culture="Culture.khuzait" length="15.3" weight="0.73">
+    <BuildData piece_offset="-1" previous_piece_offset="1" next_piece_offset="4" />
+  </CraftingPiece>
+  <CraftingPiece id="crpg_kopis_handle_h3" name="{=}Kopis Handle" tier="3" piece_type="Handle" mesh="kopis_handle" full_scale="false" culture="Culture.khuzait" length="15.3" weight="0.73">
+    <BuildData piece_offset="-1" previous_piece_offset="1" next_piece_offset="4" />
+  </CraftingPiece>
 </CraftingPieces>

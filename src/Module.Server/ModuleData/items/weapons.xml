@@ -14940,4 +14940,36 @@
       <Piece id="crpg_dadao_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
+  <CraftedItem id="crpg_kopis_h0" name="{=Yeldur}Kopis" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_kopis_blade_h0" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_kopis_guard_h0" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_kopis_handle_h0" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_kopis_pommel_h0" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_kopis_h1" name="{=Yeldur}Kopis +1" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_kopis_blade_h1" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_kopis_guard_h1" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_kopis_handle_h1" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_kopis_pommel_h1" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_kopis_h2" name="{=Yeldur}Kopis +2" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_kopis_blade_h2" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_kopis_guard_h2" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_kopis_handle_h2" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_kopis_pommel_h2" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
+  <CraftedItem id="crpg_kopis_h3" name="{=Yeldur}Kopis +3" crafting_template="crpg_OneHandedSword" culture="Culture.aserai" modifier_group="sword">
+    <Pieces>
+      <Piece id="crpg_kopis_blade_h3" Type="Blade" scale_factor="100" />
+      <Piece id="crpg_kopis_guard_h3" Type="Guard" scale_factor="100" />
+      <Piece id="crpg_kopis_handle_h3" Type="Handle" scale_factor="100" />
+      <Piece id="crpg_kopis_pommel_h3" Type="Pommel" scale_factor="100" />
+    </Pieces>
+  </CraftedItem>
 </Items>
