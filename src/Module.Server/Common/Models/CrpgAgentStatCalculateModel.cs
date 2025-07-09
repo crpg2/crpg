@@ -463,9 +463,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
                     props.WeaponRotationalAccuracyPenaltyInRadians = 0.15f; // this is accuracy loss when turning lower is better
 
-                    props.WeaponBestAccuracyWaitTime = 0.00001f; // set to extremely low because as soon as windup is finished , thrower is accurate
+                    props.WeaponBestAccuracyWaitTime = 0.00001f; // set to extremely low because as soon as windup is finished thrower is accurate
 
-                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.25f, 0.25f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 3f) * 40f / DamageImpactOnWindUp); // WindupSpeed
+                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.5f, 0.75f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 3f) * 40f / DamageImpactOnWindUp); // WindupSpeed
                     props.ReloadSpeed *= MBMath.Lerp(0.8f, 1.0f, itemSkill / wpfImpactOnReloadSpeed); // this only affect picking a new throwing weapon
 
                     props.CombatMaxSpeedMultiplier *= 0.75f; // this is slowdown when ready to throw. Higher is better , do not go above 1.0
