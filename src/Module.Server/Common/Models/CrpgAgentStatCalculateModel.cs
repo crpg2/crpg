@@ -89,9 +89,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             WeaponClass.Musket => 0.5f,
             WeaponClass.Pistol => 0.5f,
             WeaponClass.Stone => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.0f,
-            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.2f,
-            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.2f,
-            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.2f,
+            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.15f,
+            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.15f,
+            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.15f,
             _ => 1f,
         };
 
@@ -459,9 +459,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                     float DamageImpactOnWindUp = equippedItem.ThrustDamage * CrpgItemValueModel.CalculateDamageTypeFactorForThrown(equippedItem.ThrustDamageType) / CrpgItemValueModel.CalculateDamageTypeFactorForThrown(DamageTypes.Cut);
 
                     props.WeaponMaxUnsteadyAccuracyPenalty = 0.0035f;
-                    props.WeaponMaxMovementAccuracyPenalty = 0.15f;
+                    props.WeaponMaxMovementAccuracyPenalty = 0.1f;
 
-                    props.WeaponRotationalAccuracyPenaltyInRadians = 0.15f; // this is accuracy loss when turning lower is better
+                    props.WeaponRotationalAccuracyPenaltyInRadians = 0.1f; // this is accuracy loss when turning lower is better
 
                     props.WeaponBestAccuracyWaitTime = 0.00001f; // set to extremely low because as soon as windup is finished thrower is accurate
 
