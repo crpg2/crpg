@@ -1,10 +1,21 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const router = useRouter()
+</script>
 
 <template>
-  <div class="mx-auto prose prose-invert">
-    <h2 class="text-center">
+  <div class="prose">
+    <h3 class="text-center">
       {{ $t('help.overview.title') }}
-    </h2>
-    <div v-html="$t('help.overview.intro')" />
+    </h3>
+
+    <div
+      v-html="
+        $t(
+          'help.overview.intro',
+          {
+            buildSupportLink: `<a href='${router.resolve({ name: 'help-build-support' }).path}'> ${$t('help.buildSupport.navTitle')}</a>`,
+          },
+        )"
+    />
   </div>
 </template>

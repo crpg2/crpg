@@ -1,10 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="mx-auto prose prose-invert">
-    <h2 class="text-center">
+  <div class="prose">
+    <h3 class="text-center">
       {{ $t('help.joinClan.title') }}
-    </h2>
+    </h3>
+
     <div v-html="$t('help.joinClan.content')" />
   </div>
 </template>

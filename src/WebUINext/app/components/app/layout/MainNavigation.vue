@@ -25,7 +25,7 @@ const { settings } = storeToRefs(useSettingsStore())
         >
           <UBadge
             :label="latestPatch.tagName"
-            size="xs"
+            size="sm"
             variant="soft"
           />
         </UButton>
@@ -94,14 +94,13 @@ const { settings } = storeToRefs(useSettingsStore())
           />
           <template #content>
             <div
-              class="prose prose-invert"
+              class="prose"
               v-html="$t('clanBalancingExplanation')"
             />
           </template>
         </UTooltip>
 
         <ULink
-
           :to="{ name: 'clans' }"
           active-class="text-highlighted"
         >
@@ -111,15 +110,27 @@ const { settings } = storeToRefs(useSettingsStore())
     </template>
 
     <ULink
+      active-class="text-highlighted"
+      :to="{ name: 'leaderboard' }"
+    >
+      <UiDataCell>
+        <template #leftContent>
+          <UIcon name="crpg:trophy-cup" class="size-6 text-primary-600" />
+        </template>
+        {{ $t('nav.main.Leaderboard') }}
+      </UiDataCell>
+    </ULink>
+
+    <!-- <ULink
       :to="{ name: 'leaderboard' }"
       class="flex gap-1.5"
       active-class="text-highlighted"
     >
       <UIcon
         name="crpg:trophy-cup"
-        class="size-6 text-more-support"
+        class="size-6"
       />
       {{ $t('nav.main.Leaderboard') }}
-    </ULink>
+    </ULink> -->
   </nav>
 </template>

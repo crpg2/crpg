@@ -1,10 +1,21 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const router = useRouter()
+</script>
 
 <template>
-  <div class="mx-auto prose prose-invert">
-    <h2 class="text-center">
+  <div class="prose">
+    <h3 class="text-center">
       {{ $t('help.buildSupport.title') }}
-    </h2>
-    <div v-html="$t('help.buildSupport.content')" />
+    </h3>
+
+    <div
+      v-html="
+        $t(
+          'help.buildSupport.content',
+          {
+            bulderLink: `<a href='${router.resolve({ name: 'builder' }).path}'> ${$t('nav.main.Builder', 1)}</a>`,
+          },
+        )"
+    />
   </div>
 </template>

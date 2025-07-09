@@ -33,8 +33,10 @@ useMainHeaderProvider(mainHeaderHeight)
 
     <header
       ref="mainHeader"
-      class="z-20 border-b border-solid border-border-200 bg-bg-main"
-      :class="{ 'sticky top-0 bg-bg-main/10 backdrop-blur-sm': !route.meta.layoutOptions?.noStickyHeader }"
+      class="ring ring-default"
+      :class="[
+        !route.meta.layoutOptions?.noStickyHeader
+          ? `sticky top-0 z-20 bg-default/10 backdrop-blur-sm` : `bg-default`]"
     >
       <UserRestrictionNotification
         v-if="userStore.user && userStore.restriction !== null"
