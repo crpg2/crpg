@@ -18,10 +18,10 @@ const qaList = computed(() =>
 </script>
 
 <template>
-  <div class="mx-auto prose prose-invert">
-    <h2 class="text-center">
+  <div class="prose">
+    <h3 class="text-center">
       {{ $t('help.FAQ.title') }}
-    </h2>
+    </h3>
 
     <div class="space-y-10">
       <div
@@ -36,9 +36,9 @@ const qaList = computed(() =>
         variant="outline"
       >
         <template #header>
-          <h3 class="!m-0">
+          <h4 class="!m-0">
             {{ `${idx + 1}. ${q}` }}
-          </h3>
+          </h4>
         </template>
         <div v-html="a" />
       </UCard>

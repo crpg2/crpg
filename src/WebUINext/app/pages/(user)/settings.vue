@@ -32,19 +32,29 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
 </script>
 
 <template>
-  <UContainer>
-    <div class="mx-auto max-w-2xl py-12">
-      <h1 class="mb-14 text-center text-xl text-content-100">
-        {{ $t('user.settings.title') }}
-      </h1>
+  <UContainer
+    class="
+      py-8
+      md:py-16
+    "
+  >
+    <div
+      class="
+        mx-auto
+        md:max-w-2xl
+      "
+    >
+      <UiHeading :title="$t('user.settings.title')" class="mb-14 text-center" />
 
-      <UCard :ui="{ body: 'relative min-h-24' }" variant="subtle">
+      <UCard :ui="{ body: 'relative min-h-24' }" variant="outline">
         <template #header>
           <UiDataCell class="w-full text-sm text-error">
             <template #leftContent>
-              <UIcon name="crpg:alert-circle" class="size-6" />
+              <UIcon name="crpg:alert-circle" class="size-8" />
             </template>
-            {{ $t('user.settings.dangerZone') }}
+            <h4 class="text-lg font-bold">
+              {{ $t('user.settings.dangerZone') }}
+            </h4>
           </UiDataCell>
         </template>
 
@@ -53,7 +63,7 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
         <template v-else>
           <div
             v-if="!canDeleteUser"
-            class="mb-5 text-status-warning"
+            class="mb-5 text-warning"
             data-aq-cant-delete-user-message
           >
             {{ $t('user.settings.delete.validation.hasChar') }}
@@ -63,14 +73,14 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
             scope="global"
             keypath="user.settings.delete.title"
             tag="div"
-            class="prose leading-relaxed prose-invert"
+            class="prose leading-relaxed"
             :class="{ 'pointer-events-none opacity-30': !canDeleteUser }"
             data-aq-delete-user-group
           >
             <template #link>
               <span
                 class="
-                  cursor-pointer border-b border-dashed border-status-danger text-status-danger
+                  cursor-pointer border-b border-dashed text-error
                   hover:border-0
                 "
                 @click="() => toggleConfirmDialog()"
@@ -98,7 +108,7 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
       <template #title>
         <div
           class="
-            prose prose-invert
+            prose
             prose-h4:text-status-danger
             prose-h5:text-status-danger
           "
@@ -106,7 +116,7 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
         />
       </template>
       <template #description>
-        <p class="leading-relaxed text-status-warning">
+        <p class="text-status-warning leading-relaxed">
           {{ $t('user.settings.delete.dialog.desc') }}
         </p>
       </template>

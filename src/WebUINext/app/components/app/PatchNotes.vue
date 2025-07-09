@@ -11,50 +11,44 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value.createdAt)
 </script>
 
 <template>
-  <div class="gap-6 space-y-1.5">
+  <div class="space-y-1">
     <a
       :href="latestPatch.url"
       target="_blank"
       class="
-        group flex flex-col gap-1 rounded-full bg-base-500/20 px-5 pt-4 pb-2.5 shadow-xl
+        group block rounded-full bg-elevated/50 px-5 py-4 shadow-xl backdrop-blur
         hover:shadow-none
       "
     >
-      <div class="flex items-center gap-2">
-        <UIcon
-          name="crpg:trumpet"
-          class="size-6 text-primary"
-        />
+      <UiDataCell>
+        <template #leftContent>
+          <UIcon name="crpg:trumpet" class="size-8 text-primary" />
+        </template>
         <div
           class="
-            max-w-72 truncate font-bold text-content-100
-            group-hover:text-content-200
+            max-w-72 truncate font-bold text-highlighted
+            group-hover:text-default
           "
         >
           {{ latestPatch.title || $t('patchNotes.latestPatch') }}
         </div>
-        <UBadge
-          color="primary"
-          variant="soft"
-          :label="latestPatch.tagName"
-        />
-      </div>
-      <div class="pl-8 text-[0.7rem] leading-none">{{ timeAgo }}</div>
+        <div class="text-2xs leading-none">{{ timeAgo }}</div>
+        <template #rightContent>
+          <UBadge :label="latestPatch.tagName" />
+        </template>
+      </UiDataCell>
     </a>
     <div
       v-if="patchNotes.length > 1"
       class="pl-5"
     >
-      <a
+      <ULink
         href="https://github.com/namidaka/crpg/releases"
         target="_blank"
-        class="
-          text-[0.85rem] text-content-300 underline
-          hover:no-underline
-        "
+        class="text-2xs"
       >
         {{ $t('patchNotes.showAllPatches', { count: patchNotes.length - 1 }) }}
-      </a>
+      </ULink>
     </div>
   </div>
 </template>

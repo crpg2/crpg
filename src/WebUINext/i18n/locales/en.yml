@@ -37,7 +37,7 @@ help:
     title: Welcome to cRPG!
     intro: '
       <p>If you''re new you''ve probably found this page looking for some help, you''ve come to the right place! This will serve as a ''welcome pack'' of sorts to help you out with basic questions.</p>
-      <p>We recommend checking out <a href=''/help/build-support''>Build Support</a> to start with, it''s the best way to learn our building system and to get started in being creative with your character!</p>'
+      <p>We recommend checking out {buildSupportLink} to start with, it''s the best way to learn our building system and to get started in being creative with your character!</p>'
 
   buildSupport:
     navTitle: Build support
@@ -46,13 +46,13 @@ help:
       <p>Establishing a good build for your character is a fundamental tool in being able to dominate the field in cRPG, being new to the game, you''re going to want something simple, easy and clean to get involved in combat as much as possible.</p>
       <p>The most fundamental rule to learn about building is that Attribute increases (That''s Strength, and Agility) should always be done in <strong>multiples of three</strong>.</p>
       <p>The reason this is the case is that for each multiple of three you put into either Strength, or Agility, you gain the ability to put <strong>+1 point into the Skill</strong> related to that Attribute.</p>
-      <p>For example:</p>
+      <h5>For example:</h5>
       <ul>
       <li>at level 3 Agility you can put 1 point into your Athletics skill</li>
       <li>add 3 points and bring it to level 6 and you can now put in 2 points</li>
       <li>rinse and repeat until you reach your desired level!</li>
       </ul>
-      <p>You can experiment with the build with the help of <a href=''/builder'' target=''_blank''>this tool</a> and also ask questions in the <a href=''https://discord.com/channels/279063743839862805/1036085650849550376'' target=''_blank''>specialized Discord chat</a></p>'
+      <p>You can experiment with the build with the help of {bulderLink} and also ask questions in the <a href=''https://discord.com/channels/279063743839862805/1036085650849550376'' target=''_blank''>specialized Discord chat</a></p>'
 
   joinClan:
     title: Joining a Clan
@@ -129,7 +129,7 @@ nav:
     Clans: Clans
     Moderator: Moderator
     Admin: Admin
-    Builder: Builder
+    Builder: Character Builder
     Leaderboard: Leaderboard
     Community: Community
     Installation: Installation guide

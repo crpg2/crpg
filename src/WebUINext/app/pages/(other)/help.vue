@@ -46,15 +46,20 @@ const helpHubNavigation: { name: keyof RouteNamedMap, label: string }[] = [
         :to="({ name } as RouteLocationRaw)"
       >
         <UButton
-          color="primary"
-          :variant="isExactActive ? 'subtle' : 'outline'"
+          color="secondary"
+          :variant="isExactActive ? 'solid' : 'subtle'"
           size="lg"
           :label
         />
       </NuxtLink>
     </div>
 
-    <div class="mx-auto max-w-4xl">
+    <div
+      class="
+        mx-auto
+        md:max-w-2xl
+      "
+    >
       <NuxtPage />
     </div>
   </UContainer>

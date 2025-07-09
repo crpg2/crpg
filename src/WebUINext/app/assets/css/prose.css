@@ -1,0 +1,55 @@
+@layer components {
+    .prose {
+        h1 {
+            @apply text-3xl text-highlighted font-bold mb-8;
+        }
+
+        h2 {
+            @apply text-2xl text-highlighted font-bold mt-12 mb-6;
+        }
+
+        h3 {
+            @apply text-xl text-highlighted font-bold mt-8 mb-3;
+        }
+
+        h4 {
+            @apply text-lg text-highlighted font-bold mt-6 mb-2;
+        }
+
+        h5 {
+            @apply text-md text-highlighted font-bold mt-6 mb-2;
+        }
+
+        h1, h2, h3, h4 {
+            @apply text-balance;
+
+            a {
+                @apply font-bold;
+            }
+        }
+
+        a {
+            @apply text-primary border-b border-transparent hover:border-primary font-medium focus-visible:outline-primary
+        }
+
+        p {
+            @apply my-5 leading-7 text-pretty;
+        }
+
+        ul {
+            @apply list-disc ps-6 my-5 marker:text-(--ui-border-accented);
+
+            li {
+                @apply my-1.5 ps-1.5 leading-7 [&>ul]:my-0
+            }
+        }
+
+        strong {
+            @apply font-semibold text-highlighted;
+        }
+    }
+
+    .prose-invert {
+
+    }
+}
