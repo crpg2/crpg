@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Characters.Models;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
@@ -12,8 +13,12 @@ namespace Crpg.Application.Characters.Commands;
 
 public record ConvertCharacterCharacteristicsCommand : IMediatorRequest<CharacterCharacteristicsViewModel>
 {
+    [JsonIgnore]
     public int CharacterId { get; init; }
+
+    [JsonIgnore]
     public int UserId { get; init; }
+
     public CharacterCharacteristicConversion Conversion { get; init; }
 
     public class Validator : AbstractValidator<ConvertCharacterCharacteristicsCommand>

@@ -42,7 +42,7 @@ public class UsersController : BaseController
     [HttpGet("search")]
     [Authorize(Policy = ModeratorPolicy)]
     public async Task<ActionResult<Result<UserPrivateViewModel[]>>> SearchUsers(
-        [FromQuery] Platform platform,
+        [FromQuery] Platform? platform,
         [FromQuery] string? platformUserId,
         [FromQuery] string? name)
     {
@@ -51,11 +51,11 @@ public class UsersController : BaseController
             return ResultToAction(await Mediator.Send(new GetUsersByNameQuery { Name = name }));
         }
 
-        if (platformUserId != null)
+        if (platformUserId != null && platform != null)
         {
             var res = await Mediator.Send(new GetUserByPlatformIdQuery
             {
-                Platform = platform,
+                Platform = (Platform)platform,
                 PlatformUserId = platformUserId,
             });
             return ResultToAction(res.Select(u => new[] { u }));

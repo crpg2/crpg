@@ -1,4 +1,5 @@
-﻿using Crpg.Application.Common.Interfaces;
+﻿using System.Text.Json.Serialization;
+using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
 using Microsoft.EntityFrameworkCore;
@@ -7,8 +8,12 @@ namespace Crpg.Application.Characters.Commands;
 
 public record ActivateCharacterCommand : IMediatorRequest
 {
+    [JsonIgnore]
     public int CharacterId { get; init; }
+
+    [JsonIgnore]
     public int UserId { get; init; }
+
     public bool Active { get; init; }
 
     internal class Handler : IMediatorRequestHandler<ActivateCharacterCommand>
