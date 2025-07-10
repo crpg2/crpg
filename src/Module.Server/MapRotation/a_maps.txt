@@ -57,3 +57,6 @@ crpg_battle_ugor
 crpg_battle_festival
 crpg_battle_ruins
 crpg_battle_purplehaze
+crpg_battle_morass
+crpg_battle_lycaronsdistricts
+crpg_battle_orsennia

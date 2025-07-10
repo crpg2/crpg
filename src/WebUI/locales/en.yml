@@ -497,6 +497,7 @@ character:
       linked:
         oneAttrs: 1 attributes
         threeStr: 3 strength per level
+        sixStr: 6 strength per level
         threeAgi: 3 agility per level
         sixAgi: 6 agility per level
 
@@ -530,7 +531,7 @@ character:
         powerThrow:
           title: Power throw
           desc: Increases damage by {value} and your steadiness with throwing weapons
-          requires: '@:character.characteristic.requires.linked.threeStr'
+          requires: '@:character.characteristic.requires.linked.sixStr'
         athletics:
           title: Athletics
           desc: Increases your maximum running speed and decreases the time to reach it
@@ -620,6 +621,12 @@ character:
       desc: '
         <p>Extra movement speed when attacking penalty.</p>
         <p>Depends on the length of the weapon and <strong>STR</strong> attribute points</p>'
+    mountSpeedPenalty:
+      title: Mount speed penalty
+      desc: 'Reduces mount speed based on rider''s perceived weight and harness weight'
+    mountedWeaponPenalty:
+      title: Additional mount stats penalty
+      desc: Penalty to mount speed, maneuver, acceleration, and charge damage due to using a weapon too long for your strength
     price:
       title: Cost
       desc: Total cost of equipped items
@@ -1463,6 +1470,8 @@ activityLog:
     ServerJoined: The user has joined the server
     ChatMessageSent: 'Wrote a message: {message} {instance}'
     TeamHit: 'Dealt {damage} damage to {targetUser} {instance}'
+    TeamHitReported: '{targetUser} has been reported. Damage {damage}; Reported hits {reportedHits}; Decayed hits {decayedHits}; Unreported hits {unreportedHits}; On reporter hits {onReporterHits}; Weapon {weaponName};'
+    TeamHitReportedUserKicked: 'Player has been kicked for excessive team hits. Reported hits {reportedHits}; Decayed hits {decayedHits}; Unreported hits {unreportedHits};'
     ClanCreated: 'The Сlan {clan} was created'
     ClanDeleted: 'The Сlan {clan} was deleted'
     ClanApplicationCreated: 'The application to join {clan} has been created'

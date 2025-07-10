@@ -33,31 +33,17 @@ import { clamp } from 'es-toolkit'
 import qs from 'qs'
 
 import type { ActivityLog, CharacterEarnedMetadata } from '~/models/activity-logs'
+import type { Character, CharacterArmorOverall, CharacterCharacteristics, CharacterEarnedData, CharacteristicConversion, CharacteristicKey, CharacterLimitations, CharacterMountSpeedStats, CharacterOverallItemsStats, CharacterSpeedStats, CharacterStatistics, EquippedItem, EquippedItemId, UpdateCharacterRequest } from '~/models/character'
+import type { Item, ItemArmorComponent } from '~/models/item'
 import type { TimeSeries, TimeSeriesItem } from '~/models/timeseries'
 
 import {
-  type Character,
-
-  type CharacterArmorOverall,
-
   CharacterArmorOverallKey,
-
-  type CharacterCharacteristics,
   CharacterClass,
-  type CharacterEarnedData,
   CharacterEarningType,
-  type CharacteristicConversion,
-  type CharacteristicKey,
-  type CharacterLimitations,
-  type CharacterOverallItemsStats,
-  type CharacterSpeedStats,
-  type CharacterStatistics,
-  type EquippedItem,
-  type EquippedItemId,
-  type UpdateCharacterRequest,
 } from '~/models/character'
 import { GameMode } from '~/models/game-mode'
-import { type Item, type ItemArmorComponent, ItemSlot, ItemType } from '~/models/item'
+import { ItemSlot, ItemType } from '~/models/item'
 import { del, get, put } from '~/services/crpg-client'
 import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-service'
 import { t } from '~/services/translate-service'
@@ -414,7 +400,7 @@ export const computeSpeedStats = (
     1.5,
   )
   const maxWeaponLength = Math.min(
-      22 + (strength - 3) * 7.5 + (Math.min(strength - 3, 24) * 0.115) ** 7.75,
+    22 + (strength - 3) * 7.5 + (Math.min(strength - 3, 24) * 0.115) ** 7.75,
     650,
   )
   const timeToMaxSpeedWeaponLenghthTerm = Math.max(
@@ -424,9 +410,9 @@ export const computeSpeedStats = (
 
   const timeToMaxSpeed
     = 0.8
-    * (1 + perceivedWeight / 15)
-    * (20 / (20 + ((20 * athletics + 3 * agility) / 120) ** 2))
-    + timeToMaxSpeedWeaponLenghthTerm
+      * (1 + perceivedWeight / 15)
+      * (20 / (20 + ((20 * athletics + 3 * agility) / 120) ** 2))
+      + timeToMaxSpeedWeaponLenghthTerm
 
   const movementSpeedPenaltyWhenAttacking
     = 100 * (Math.min(0.8 + (0.2 * (maxWeaponLength + 1)) / (longestWeaponLength + 1), 1) - 1)
@@ -441,6 +427,47 @@ export const computeSpeedStats = (
     timeToMaxSpeed,
     weightReductionFactor,
   }
+}
+
+// copy from Module.Server/Common/Models/CrpgAgentStatCalculateModel.cs
+export function computeMountSpeedStats(
+  baseSpeed: number,
+  harnessWeight: number,
+  riderPerceivedWeight: number,
+): CharacterMountSpeedStats {
+  const totalEffectiveLoad = harnessWeight + riderPerceivedWeight
+  const maxLoadReference = 50 // to const?
+  const loadPercentage = Math.min(totalEffectiveLoad / maxLoadReference, 1)
+
+  const weightImpactOnSpeed = 1 / (1 + 0.333 * loadPercentage) // Cap at 1.0
+
+  const effectiveSpeed = (baseSpeed + 1) * 0.209 * weightImpactOnSpeed
+  const unmodifiedSpeed = (baseSpeed + 1) * 0.209
+
+  const speedReduction = (effectiveSpeed / unmodifiedSpeed) - 1 // e.g. -0.28 means 28% slower
+  const acceleration = 1 / (2 + 8 * loadPercentage)
+
+  return {
+    speedReduction,
+    mountAcceleration: acceleration,
+    effectiveSpeed,
+    weightImpactOnSpeed,
+    loadPercentage,
+  }
+}
+
+export function computeWeaponLengthMountPenalty(
+  weaponLength: number,
+  strength: number,
+): number {
+  if (!weaponLength || !strength) {
+    return 1 // No penalty
+  }
+
+  const maxLength = 22 + (strength - 3) * 7.5 + (Math.min(strength - 3, 24) * 0.115) ** 7.75
+  const ratio = Math.min(maxLength / weaponLength, 1)
+  const penaltyFactor = 0.8 + 0.2 * ratio
+  return penaltyFactor // 1 = no penalty, <1 = reduction
 }
 
 export const getCharacterItems = async (characterId: number) =>
@@ -510,6 +537,22 @@ export const computeLongestWeaponLength = (items: Item[]) => {
 // TODO: SPEC
 export const computeOverallAverageRepairCostByHour = (items: Item[]) =>
   Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0))
+
+export const computeMountSpeedBase = (items: Item[]): number => {
+  const mount = items.find(item => item.type === ItemType.Mount)
+  if (!mount?.mount) {
+    return 0
+  }
+  return mount.mount.speed
+}
+
+export const computeMountHarnessWeight = (items: Item[]): number => {
+  const mountHarness = items.find(item => item.type === ItemType.MountHarness)
+  if (!mountHarness) {
+    return 0
+  }
+  return mountHarness.weight
+}
 
 export const getHeirloomPointByLevel = (level: number) =>
   level < minimumRetirementLevel ? 0 : 2 ** (level - minimumRetirementLevel)

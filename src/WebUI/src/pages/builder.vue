@@ -464,6 +464,8 @@ const onShare = () => {
               :longest-weapon-length="weaponLength"
               :hidden-rows="['weight']"
               :health-points="healthPoints"
+              :mount-speed-base="0"
+              :mount-harness-weight="0"
             />
           </div>
         </div>
