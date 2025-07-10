@@ -62,6 +62,7 @@
     <string id="rOhUOWX6" text="На этот сервер могут присоединиться только турнирые персонажи." />
     <string id="OsPW0okL" text="Основной сервер cRPG недоступен. Попробуйте позже." />
     <string id="hU3flm9q" text="Серверы cRPG поддерживают только Steam, Epic Games и Xbox." />
+    <string id="uPwSqhuD" text="Вы были кикнуты за чрезмерный дружественный урон." />
 
      <!-- Battle Maps -->
     <string id="PKVPlAeE" text="Заброшено" />

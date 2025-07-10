@@ -397,6 +397,12 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
         }
 
         // Mark the last hit as reported
+        if (!_teamHitHistory.TryGetValue(attackingPeer, out var hitList))
+        {
+            Debug.Print($"No hit history found for attacker {attackingPeer.UserName}.");
+            return;
+        }
+
         var recentHit = _teamHitHistory[attackingPeer].LastOrDefault(h =>
             h.Victim == peer &&
             !h.WasReported &&
@@ -461,9 +467,9 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
                 return;
             }
 
-            TextObject notifyAttackerKickText = new("{=uPwSqhuA}You have been kicked for excessive team hits ({HITSMAX})");
-            notifyAttackerKickText.SetTextVariable("HITSMAX", maxHits);
-            SendClientDisplayMessage(attackingPeer, notifyAttackerKickText.ToString(), FriendlyFireMessageMode.TeamDamageReportKick);
+            // TextObject notifyAttackerKickText = new("{=uPwSqhuA}You have been kicked for excessive team hits ({HITSMAX})");
+            // notifyAttackerKickText.SetTextVariable("HITSMAX", maxHits);
+            // SendClientDisplayMessage(attackingPeer, notifyAttackerKickText.ToString(), FriendlyFireMessageMode.TeamDamageReportKick);
 
             TextObject notifyOthersKickText = new("{=MdIKl2Bv}{ATTACKER} has been kicked for excessive team hits ({HITSMAX}).");
             notifyOthersKickText.SetTextVariable("ATTACKER", attackingPeer.UserName);
@@ -472,7 +478,7 @@ internal class FriendlyFireReportServerBehavior : MissionNetwork
 
             TryLogKickedForFriendlyFire(attackingPeer, countActive, countDecayed, countNotReported);
 
-            KickHelper.Kick(attackingPeer, DisconnectType.KickedDueToFriendlyDamage);
+            KickHelper.Kick(attackingPeer, DisconnectType.KickedDueToFriendlyDamage, "friendly_fire_reports");
         }
     }
 
