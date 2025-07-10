@@ -115,22 +115,10 @@ const { settings } = storeToRefs(useSettingsStore())
     >
       <UiDataCell>
         <template #leftContent>
-          <UIcon name="crpg:trophy-cup" class="size-6 text-primary-600" />
+          <UIcon name="crpg:trophy-cup" class="size-6 text-crpg-gold-600" />
         </template>
         {{ $t('nav.main.Leaderboard') }}
       </UiDataCell>
     </ULink>
-
-    <!-- <ULink
-      :to="{ name: 'leaderboard' }"
-      class="flex gap-1.5"
-      active-class="text-highlighted"
-    >
-      <UIcon
-        name="crpg:trophy-cup"
-        class="size-6"
-      />
-      {{ $t('nav.main.Leaderboard') }}
-    </ULink> -->
   </nav>
 </template>

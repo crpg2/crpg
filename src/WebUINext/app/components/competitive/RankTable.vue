@@ -54,14 +54,9 @@ const groupedRankTable = computed(() => groupBy(rankTable, r => r.groupTitle))
       </div>
     </div>
 
-    <div class="prose space-y-3 text-left prose-invert">
-      <h5 class="text-content-100">
-        {{ $t('character.statistics.rank.tooltip.title') }}
-      </h5>
-      <div
-        class="text-2xs"
-        v-html="$t('character.statistics.rank.tooltip.desc')"
-      />
+    <div class="prose">
+      <h4>{{ $t('character.statistics.rank.tooltip.title') }}</h4>
+      <div class="prose" v-html="$t('character.statistics.rank.tooltip.desc')" />
     </div>
   </div>
 </template>

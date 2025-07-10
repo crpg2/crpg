@@ -109,35 +109,36 @@ const formSchema: FormSchema[] = [
   >
     <template #header>
       <UiDataCell :data-aq-fields-group="fieldGroup.key" class="w-full text-sm">
-        {{ $t(`character.characteristic.${fieldGroup.key}.title`) }} - <span class="font-bold" :class="[characteristics[fieldGroup.key].points < 0 ? 'text-status-danger' : 'text-status-success']">{{ characteristics[fieldGroup.key].points }}</span>
+        {{ $t(`character.characteristic.${fieldGroup.key}.title`) }} - <span
+          class="font-bold"
+          :class="[characteristics[fieldGroup.key].points < 0 ? `text-error` : `text-success`]"
+        >{{ characteristics[fieldGroup.key].points }}</span>
+
         <template #rightContent>
           <UTooltip v-if="fieldGroup.key === 'attributes'">
             <UButton
               variant="outline"
-              size="xs"
+              size="sm"
               :disabled="convertAttributesToSkillsState.disabled"
               :loading="convertAttributesToSkillsState.loading"
-              :label="convertAttributesToSkillsState.count !== undefined ? String(convertAttributesToSkillsState.count) : ''"
+              :label="convertAttributesToSkillsState.count !== undefined ? String(convertAttributesToSkillsState.count) : undefined"
               icon="crpg:convert"
               data-aq-convert-attributes-action
               @click="$emit('convertAttributesToSkills')"
             />
             <template #content>
-              <div class="prose prose-invert">
-                <h4>
-                  {{ $t('character.characteristic.convert.attrsToSkills.title') }}
-                </h4>
+              <div class="prose">
+                <h5>{{ $t('character.characteristic.convert.attrsToSkills.title') }}</h5>
                 <i18n-t
                   scope="global"
                   keypath="character.characteristic.convert.attrsToSkills.tooltip"
-                  class="text-content-200"
                   tag="p"
                 >
                   <template #attribute>
-                    <span class="font-bold text-status-danger">1</span>
+                    <span class="font-bold text-error">1</span>
                   </template>
                   <template #skill>
-                    <span class="font-bold text-status-success">2</span>
+                    <span class="font-bold text-success">2</span>
                   </template>
                 </i18n-t>
               </div>
@@ -147,16 +148,16 @@ const formSchema: FormSchema[] = [
           <UTooltip v-else-if="fieldGroup.key === 'skills'">
             <UButton
               variant="outline"
-              size="xs"
+              size="sm"
               :disabled="convertSkillsToAttributesState.disabled"
               :loading="convertSkillsToAttributesState.loading"
-              :label="convertSkillsToAttributesState.count !== undefined ? String(convertSkillsToAttributesState.count) : ''"
+              :label="convertSkillsToAttributesState.count !== undefined ? String(convertSkillsToAttributesState.count) : undefined"
               icon="crpg:convert"
               data-aq-convert-skills-action
               @click="$emit('convertSkillsToAttributes')"
             />
             <template #content>
-              <div class="prose prose-invert">
+              <div class="prose-invert prose">
                 <h4>
                   {{ $t('character.characteristic.convert.skillsToAttrs.title') }}
                 </h4>
@@ -167,10 +168,10 @@ const formSchema: FormSchema[] = [
                   tag="p"
                 >
                   <template #skill>
-                    <span class="font-bold text-status-danger">2</span>
+                    <span class="text-status-danger font-bold">2</span>
                   </template>
                   <template #attribute>
-                    <span class="font-bold text-status-success">1</span>
+                    <span class="text-status-success font-bold">1</span>
                   </template>
                 </i18n-t>
               </div>
@@ -183,7 +184,10 @@ const formSchema: FormSchema[] = [
     <UiDataCell
       v-for="field in fieldGroup.children"
       :key="field.key"
-      class="w-full px-4 py-2.5 hover:bg-neutral-900"
+      class="
+        w-full px-4 py-2.5
+        hover:bg-neutral-900
+      "
     >
       <UTooltip
         :ui="{ content: 'max-w-72' }"
@@ -207,7 +211,7 @@ const formSchema: FormSchema[] = [
         </div>
 
         <template #content>
-          <div class="prose prose-invert">
+          <div class="prose-invert prose">
             <h4>
               {{ $t(`character.characteristic.${fieldGroup.key}.children.${field.key}.title`) }}
             </h4>
@@ -221,7 +225,7 @@ const formSchema: FormSchema[] = [
                 v-if="field.key in characteristicBonusByKey"
                 #value
               >
-                <span class="font-bold text-content-100">
+                <span class="text-content-100 font-bold">
                   {{ $n(characteristicBonusByKey[field.key]!.value, { style: characteristicBonusByKey[field.key]!.style, minimumFractionDigits: 0 }) }}
                 </span>
               </template>

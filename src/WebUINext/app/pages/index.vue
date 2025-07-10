@@ -55,7 +55,7 @@ Promise.all([
         <ULink :to="{ name: 'leaderboard' }">
           <UiDataCell>
             <template #leftContent>
-              <UIcon name="crpg:trophy-cup" class="size-8 text-primary-600" />
+              <UIcon name="crpg:trophy-cup" class="size-8 text-crpg-gold-600" />
             </template>
             {{ $t('nav.main.Leaderboard') }}
           </UiDataCell>

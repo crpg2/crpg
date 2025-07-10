@@ -65,7 +65,7 @@ const items = ref<TabsItem[]>([
         </template>
 
         <template #content="{ item }">
-          <div class="prose prose-invert">
+          <div class="prose">
             <template v-if="item.value === PossibleValue.Other">
               <ol>
                 <i18n-t
@@ -74,12 +74,12 @@ const items = ref<TabsItem[]>([
                   tag="li"
                 >
                   <template #launcherLink>
-                    <a
+                    <NuxtLink
                       target="_blank"
                       href="https://c-rpg.eu/LauncherV3.exe"
                     >
                       Launcher
-                    </a>
+                    </NuxtLink>
                   </template>
                 </i18n-t>
                 <li>{{ $t('installation.platform.other.startLauncher') }}</li>
@@ -129,19 +129,22 @@ const items = ref<TabsItem[]>([
     </template>
 
     <template #footer>
-      <i18n-t
-        scope="global"
-        keypath="installation.common.help"
-        tag="p"
-        class="prose prose-invert"
-      >
-        <template #discordLink>
-          <a
-            target="_blank"
-            href="https://discord.com/channels/279063743839862805/761283333840699392"
-          >Discord</a>
-        </template>
-      </i18n-t>
+      <div class="prose">
+        <i18n-t
+          scope="global"
+          keypath="installation.common.help"
+          tag="p"
+        >
+          <template #discordLink>
+            <NuxtLink
+              target="_blank"
+              href="https://discord.com/channels/279063743839862805/761283333840699392"
+            >
+              Discord
+            </NuxtLink>
+          </template>
+        </i18n-t>
+      </div>
     </template>
   </UModal>
 </template>

@@ -93,7 +93,7 @@ const table = useTemplateRef('table')
 function getInitialPaginationState(): PaginationState {
   return {
     pageIndex: 0,
-    pageSize: 10, // TODO: FIXME:
+    pageSize: 10,
   }
 }
 const pagination = ref<PaginationState>(getInitialPaginationState())
@@ -108,7 +108,6 @@ function getInitialSortingState(): SortingState {
 }
 const sorting = ref<SortingState>(getInitialSortingState())
 
-// const itemType = useRouteQuery<ItemType>('itemType', ItemType.OneHandedWeapon)
 const itemType = computed({
   get() {
     return (route.query?.type as ItemType) || ITEM_TYPE.OneHandedWeapon
@@ -126,6 +125,7 @@ const itemType = computed({
       },
     })
     table.value?.tableApi.setPageIndex(0)
+    table.value?.tableApi.resetSorting()
   },
 })
 const itemTypes = computed(() => {
@@ -134,7 +134,6 @@ const itemTypes = computed(() => {
 
 const isUpgradableItemType = computed(() => canUpgrade(itemType.value))
 
-// const weaponClass = useRouteQuery<WeaponClass | null>('weaponClass', () => getWeaponClassesByItemType(itemType.value)?.[0] ?? null)
 const weaponClass = computed({
   get() {
     if (route.query?.weaponClass) {
@@ -151,6 +150,8 @@ const weaponClass = computed({
         weaponClass: weaponClass ?? undefined,
       },
     })
+    table.value?.tableApi.setPageIndex(0)
+    table.value?.tableApi.resetSorting()
   },
 })
 const weaponClasses = computed(() => {
@@ -165,6 +166,9 @@ function getInitialColumnFiltersState(): ColumnFiltersState {
 }
 
 const columnFilters = ref<ColumnFiltersState>(getInitialColumnFiltersState())
+function onColumnFiltersUpdate(): void {
+  table.value?.tableApi.setPageIndex(0)
+}
 
 const currentAggregations = computed(() => getAggregationsConfig(itemType.value, weaponClass.value))
 
@@ -230,6 +234,7 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
       filterFn: 'arrIncludesSome',
     },
     header: ({ header, column }) => {
+      // TODO: FIXME:
       const description = t(`item.aggregations.${header.id}.description`)
       return h(UiTableColumnHeader, {
         label: t(`item.aggregations.${header.id}.title`),
@@ -386,10 +391,6 @@ const { togglePageLoading } = usePageLoading()
 watchEffect(() => {
   togglePageLoading(loadingItems.value)
 })
-
-function onColumnFiltersUpdate(): void {
-  table.value?.tableApi.setPageIndex(0)
-}
 </script>
 
 <template>

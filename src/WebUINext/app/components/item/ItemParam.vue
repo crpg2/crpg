@@ -105,21 +105,29 @@ const fieldStyle = computed(() => {
 
 <template>
   <div class="space-y-1">
-    <UTooltip v-if="showLabel">
-      <div class="text-2xs text-muted">
+    <UTooltip
+      v-if="showLabel" :ui="{
+        content: 'max-w-sm',
+      }"
+    >
+      <div class="text-xs text-muted">
         {{ $t(`item.aggregations.${field}.title`) }}
       </div>
+
       <template #content>
-        <div class="prose prose-invert">
-          <h5>
+        <div class="space-y-5">
+          <h5 class="text-md font-bold text-highlighted">
             {{ $t(`item.aggregations.${field}.title`) }}
           </h5>
-          <p v-if="$t(`item.aggregations.${field}.description`)">
-            {{ $t(`item.aggregations.${field}.description`) }}
-          </p>
+          <div v-if="$t(`item.aggregations.${field}.description`)" class="prose">
+            <p>
+              {{ $t(`item.aggregations.${field}.description`) }}
+            </p>
+          </div>
         </div>
       </template>
     </UTooltip>
+
     <div
       :style="fieldStyle"
       class="flex flex-wrap items-center gap-1"
@@ -131,7 +139,7 @@ const fieldStyle = computed(() => {
         <slot v-bind="{ rawBuckets, formattedValue, diffStr }">
           <UTooltip
             :ui="{
-              content: 'max-w-lg',
+              content: 'max-w-sm',
             }"
             :disabled="!formattedValue.tooltip"
           >
@@ -154,15 +162,21 @@ const fieldStyle = computed(() => {
 
             <div
               v-else
-              class="text-xs font-bold"
+              class="font-bold"
             >
               {{ formattedValue.label }}
             </div>
 
             <template #content>
-              <div class="prose prose-invert">
-                <h4>{{ formattedValue.tooltip?.title }}</h4>
-                <div v-html="formattedValue.tooltip?.description" />
+              <div class="space-y-5">
+                <h5 class="text-md font-bold text-highlighted">
+                  {{ formattedValue.tooltip?.title }}
+                </h5>
+                <div
+                  v-if="formattedValue.tooltip?.description"
+                  class="prose prose-sm"
+                  v-html="formattedValue.tooltip?.description"
+                />
               </div>
             </template>
           </UTooltip>
@@ -170,7 +184,7 @@ const fieldStyle = computed(() => {
 
         <div
           v-if="diffStr !== null"
-          class="text-2xs font-bold"
+          class="text-xs font-bold"
         >
           {{ diffStr }}
         </div>
