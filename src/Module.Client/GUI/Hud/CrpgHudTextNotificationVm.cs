@@ -17,5 +17,4 @@ public class CrpgHudTextNotificationVm : ViewModel
     {
         base.RefreshValues();
     }
-
 }

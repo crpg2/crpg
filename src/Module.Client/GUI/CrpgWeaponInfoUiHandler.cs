@@ -43,6 +43,9 @@ internal class CrpgWeaponInfoUiHandler : MissionView
     private GauntletLayer? _gauntletLayer;
     private float _timeSinceWeaponUsageChange = 0f;
 
+
+    private const InputKey DebugHudLineKey = InputKey.H;   // pick any free key
+    private int _debugHudLineCounter = 0;
     public CrpgWeaponInfoUiHandler()
     {
         _dataSource = new CrpgWeaponInfoVm(Mission); // Guaranteed non-null
@@ -121,6 +124,20 @@ internal class CrpgWeaponInfoUiHandler : MissionView
     {
         base.OnMissionScreenTick(dt);
         Agent agent = Mission.Current.MainAgent;
+
+        if (Input.IsKeyPressed(DebugHudLineKey)         // fire once per press
+            && CrpgHudNotificationManager.Instance != null)
+        {
+            string text = $"Debug line #{_debugHudLineCounter++}";
+            // lifetime: 5 s, style: Blue (pick any you defined in UI)
+
+            var scolors = new[] { "Default", "Red", "Yellow", "Blue", "Grey" };
+            var random = new Random();
+            int index = random.Next(scolors.Count());
+
+            string chosenColor = scolors[index];
+            CrpgHudNotificationManager.Instance.AddLeft(text, chosenColor, 8f);
+        }
 
         _timeSinceWeaponUsageChange += dt;
 

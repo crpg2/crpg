@@ -17,14 +17,37 @@ public class CrpgHudTextNotificationUiHandler : MissionView
 
     public override void OnMissionScreenInitialize()
     {
+        base.OnMissionScreenInitialize();
+
         // Initialize Gauntlet UI layer
         try
         {
+            _dataSource = new CrpgHudTextNotificationVm(Mission);
+
             _gauntletLayer = new GauntletLayer(ViewOrderPriority);
-            var movie = _gauntletLayer.LoadMovie("HudTextNotifications", _dataSource);
+
+            TaleWorlds.GauntletUI.Data.IGauntletMovie movie;
+            try
+            {
+                movie = _gauntletLayer.LoadMovie("HudTextNotifications", _dataSource);
+            }
+            catch (Exception ex)
+            {
+                InformationManager.DisplayMessage(new InformationMessage($"Failed to load HudTextNotifications movie: {ex.Message}"));
+                throw;
+            }
+
             CrpgHudNotificationManager.Instance.Initialize(movie, _gauntletLayer);
 
-            MissionScreen.AddLayer(_gauntletLayer);
+            try
+            {
+                MissionScreen.AddLayer(_gauntletLayer);
+            }
+            catch (Exception ex)
+            {
+                InformationManager.DisplayMessage(new InformationMessage($"Failed to add Gauntlet layer: {ex.Message}"));
+                throw;
+            }
         }
         catch (Exception ex)
         {
@@ -33,8 +56,6 @@ public class CrpgHudTextNotificationUiHandler : MissionView
                 $"UI crash HudTextNotificationUiHandler: {ex.GetType().Name} - {ex.Message}\n{ex.StackTrace}"));
             Debug.Print($"{ex.Message}\n{ex.StackTrace}", 0, Debug.DebugColor.DarkBlue);
         }
-
-        base.OnMissionScreenInitialize();
     }
 
     public override void OnMissionScreenTick(float dt)

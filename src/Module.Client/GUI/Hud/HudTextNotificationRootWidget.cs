@@ -3,13 +3,14 @@ using TaleWorlds.GauntletUI.BaseTypes;
 using TaleWorlds.GauntletUI.Canvas;
 using TaleWorlds.GauntletUI.Layout;
 using TaleWorlds.Library;
+using TaleWorlds.MountAndBlade.GauntletUI.Widgets.Chat;   // MissionGauntletChat
+using TaleWorlds.MountAndBlade.View.MissionViews;    // MissionView
 
 public class HudTextNotificationRootWidget : Widget
 {
     private readonly ListPanel _leftPanel;
     private readonly ListPanel _rightPanel;
-    private readonly CanvasWidget _customCanvas;
-
+    private readonly Widget _customPanel;
     public HudTextNotificationRootWidget(UIContext context)
         : base(context)
     {
@@ -22,8 +23,9 @@ public class HudTextNotificationRootWidget : Widget
             WidthSizePolicy = SizePolicy.CoverChildren,
             HeightSizePolicy = SizePolicy.CoverChildren,
             HorizontalAlignment = HorizontalAlignment.Left,
-            VerticalAlignment = VerticalAlignment.Center,
-            MarginLeft = 15f,
+            VerticalAlignment = VerticalAlignment.Bottom,
+            MarginLeft = 25f,
+            MarginBottom = 340f,
         };
 
         _leftPanel.StackLayout.LayoutMethod = LayoutMethod.VerticalBottomToTop;
@@ -41,16 +43,24 @@ public class HudTextNotificationRootWidget : Widget
 
         _rightPanel.StackLayout.LayoutMethod = LayoutMethod.VerticalBottomToTop;
 
-        // Custom Canvas Panel
-        _customCanvas = new CanvasWidget(context)
+        // Custom Panel
+        _customPanel = new Widget(context)
         {
             WidthSizePolicy = SizePolicy.StretchToParent,
             HeightSizePolicy = SizePolicy.StretchToParent,
         };
 
-        AddChild(_leftPanel);
-        AddChild(_rightPanel);
-        AddChild(_customCanvas);
+        try
+        {
+            AddChild(_leftPanel);
+            AddChild(_rightPanel);
+            AddChild(_customPanel);
+        }
+        catch (Exception ex)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"Failed to initialize HudTextNotificationRootWidget: {ex.Message}"));
+            Debug.Print($"HudTextNotificationRootWidget initialization error: {ex.Message}\n{ex.StackTrace}", 0, Debug.DebugColor.DarkBlue);
+        }
     }
 
     public HudTextNotificationWidget AddRightNotificationWidget(string text, string style = "Default", float lifetime = 10f)
@@ -82,7 +92,7 @@ public class HudTextNotificationRootWidget : Widget
         notif.PositionXOffset = position.X;
         notif.PositionYOffset = position.Y;
 
-        _customCanvas.AddChild(notif);
+        _customPanel.AddChild(notif);
         return notif;
     }
 
@@ -101,9 +111,9 @@ public class HudTextNotificationRootWidget : Widget
         {
             _rightPanel.RemoveChild(widget);
         }
-        else if (_customCanvas.Children.Contains(widget))
+        else if (_customPanel.Children.Contains(widget))
         {
-            _customCanvas.RemoveChild(widget);
+            _customPanel.RemoveChild(widget);
         }
     }
 
@@ -136,14 +146,14 @@ public class HudTextNotificationRootWidget : Widget
         }
 
         // Update and clean expired notifications from custom canvas
-        for (int i = _customCanvas.ChildCount - 1; i >= 0; i--)
+        for (int i = _customPanel.ChildCount - 1; i >= 0; i--)
         {
-            if (_customCanvas.GetChild(i) is HudTextNotificationWidget child)
+            if (_customPanel.GetChild(i) is HudTextNotificationWidget child)
             {
                 child.Tick(dt);
                 if (child.IsExpired)
                 {
-                    _customCanvas.RemoveChild(child);
+                    _customPanel.RemoveChild(child);
                 }
             }
         }

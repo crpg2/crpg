@@ -2,6 +2,7 @@
   <Window>
     <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
       <Children>
+      <!-- Debug Text -->
       <!--
       <TextWidget WidthSizePolicy="CoverChildren" 
                     HeightSizePolicy="CoverChildren" 
@@ -11,7 +12,7 @@
                     Brush="CrpgHUD.WeaponUsage.Index" 
                     Text="Debug Text" 
         />
-        -->
+      -->
       </Children>
     </Widget>
   </Window>
