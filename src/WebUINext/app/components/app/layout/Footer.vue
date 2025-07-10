@@ -4,7 +4,7 @@ import type { HHEvent as HHEventType } from '~/services/hh-service'
 import { useUserStore } from '~/stores/user'
 
 // eslint-disable-next-line vue/prop-name-casing
-defineProps<{ HHEvent: HHEventType }>()
+defineProps<{ HHEvent: HHEventType }>() // TODO: provide/inject
 
 const userStore = useUserStore()
 
@@ -16,7 +16,9 @@ const scrollToTop = () =>
 </script>
 
 <template>
-  <footer class="relative mt-auto flex flex-wrap items-center justify-between border-t border-solid border-border-200 px-6 py-5 text-2xs text-content-300">
+  <footer
+    class="relative mt-auto flex flex-wrap items-center justify-between px-6 py-5 text-2xs"
+  >
     <AppSocials
       patreon-expanded
       size="sm"
@@ -31,7 +33,7 @@ const scrollToTop = () =>
           <template #leftContent>
             <UIcon
               name="crpg:gift"
-              class="size-6 text-content-100"
+              class="text-content-100 size-6"
             />
           </template>
           {{ $t('hh.tooltip-trigger', { region: $t(`region.${userStore.user!.region}`, 1) }) }}

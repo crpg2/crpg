@@ -69,7 +69,7 @@ const columns = computed<TableColumn<ClanWithMemberCount>[]>(() => [
     cell: ({ row }) => h('div', {
       class: 'flex items-center gap-2',
     }, [
-      h(ClanTagIcon, { color: row.original.clan.primaryColor }),
+      h(ClanTagIcon, { color: row.original.clan.primaryColor, class: 'size-5' }),
       h('div', row.original.clan.tag),
     ]),
     meta: {

@@ -1,7 +1,4 @@
 export default defineAppConfig({
-  // icon: {
-  // size: '1.5rem', // TODO:
-  // },
   ui: {
     colors: {
       primary: 'crpg-gold',
@@ -12,7 +9,7 @@ export default defineAppConfig({
       warning: 'crpg-amber',
     },
     icons: {
-      // arrowLeft: 'i-lucide-arrow-left',
+      arrowLeft: 'crpg:arrow-left',
       // arrowRight: 'i-lucide-arrow-right',
       check: 'crpg:check',
       // chevronDoubleLeft: 'i-lucide-chevrons-left',
@@ -27,14 +24,14 @@ export default defineAppConfig({
       // folder: 'i-lucide-folder',
       // folderOpen: 'i-lucide-folder-open',
       loading: 'crpg:loading',
-      // minus: 'i-lucide-minus',
-      // plus: 'i-lucide-plus',
+      minus: 'crpg:minus',
+      plus: 'crpg:plus',
       search: 'crpg:search',
     },
     table: {
       slots: {
-        th: 'text-xs text-default',
-        td: 'text-xs text-inherit',
+        th: 'text-sm text-default',
+        td: 'text-sm text-inherit',
         tbody: '[&>tr]:data-[selectable=true]:cursor-pointer',
 
       },
@@ -62,6 +59,7 @@ export default defineAppConfig({
     },
     modal: {
       slots: {
+        overlay: 'bg-elevated/10 backdrop-blur',
         content: '!overflow-visible',
         wrapper: 'w-full',
         header: 'p-8 sm:px-6',
@@ -78,12 +76,12 @@ export default defineAppConfig({
       variants: {
         size: {
           md: {
-            root: 'text-xs',
-            label: 'text-xs',
-            hint: 'text-2xs',
-            help: 'text-2xs',
-            description: 'text-2xs',
-            error: 'text-2xs',
+            root: 'text-sm',
+            label: 'text-sm',
+            hint: 'text-xs',
+            help: 'text-xs',
+            description: 'text-xs',
+            error: 'text-xs',
           },
         },
       },
@@ -160,12 +158,12 @@ export default defineAppConfig({
     },
     popover: {
       slots: {
-        content: 'rounded-md px-4 py-3.5',
+        content: 'text-sm text-default rounded-md px-4 py-3.5 h-auto',
       },
     },
     tooltip: {
       slots: {
-        content: 'rounded-md px-4 py-3.5 h-auto',
+        content: 'text-sm text-default rounded-md px-4 py-3.5 h-auto',
       },
     },
     slider: {
@@ -175,38 +173,38 @@ export default defineAppConfig({
     },
     button: {
       slots: {
-        base: '!leading-none rounded-full group font-bold',
+        // base: '!leading-none rounded-full group font-bold',
       },
       variants: {
         variant: {
           outline: '',
         },
         size: {
-          xl: {
-            base: 'py-[0.938rem] px-[1.125rem] !text-title-md h-[3.375rem]',
-            trailingIcon: 'size-6',
-            leadingIcon: 'size-6',
-          },
-          lg: {
-            base: 'py-[0.938rem] px-4 !text-title-md h-[3rem]',
-            trailingIcon: 'size-[1.125rem]',
-            leadingIcon: 'size-[1.125rem]',
-          },
-          md: {
-            base: 'p-3 !text-title-sm h-[2.625rem]',
-            trailingIcon: 'size-[1.125rem]',
-            leadingIcon: 'size-[1.125rem]',
-          },
-          sm: {
-            base: 'py-[0.563rem] px-2.5 !text-title-sm h-[2.25rem]',
-            trailingIcon: 'size-[1.125rem]',
-            leadingIcon: 'size-[1.125rem]',
-          },
-          xs: {
-            base: 'p-1.5 !text-title-sm h-[1.875rem]',
-            trailingIcon: 'size-[1.125rem]',
-            leadingIcon: 'size-[1.125rem]',
-          },
+          // xl: {
+          //   base: 'py-[0.938rem] px-[1.125rem] !text-title-md h-[3.375rem]',
+          //   trailingIcon: 'size-6',
+          //   leadingIcon: 'size-6',
+          // },
+          // lg: {
+          //   base: 'py-[0.938rem] px-4 !text-title-md h-[3rem]',
+          //   trailingIcon: 'size-[1.125rem]',
+          //   leadingIcon: 'size-[1.125rem]',
+          // },
+          // md: {
+          //   base: 'p-3 !text-title-sm h-[2.625rem]',
+          //   trailingIcon: 'size-[1.125rem]',
+          //   leadingIcon: 'size-[1.125rem]',
+          // },
+          // sm: {
+          //   base: 'py-[0.563rem] px-2.5 !text-title-sm h-[2.25rem]',
+          //   trailingIcon: 'size-[1.125rem]',
+          //   leadingIcon: 'size-[1.125rem]',
+          // },
+          // xs: {
+          //   base: 'p-1.5 !text-title-sm h-[1.875rem]',
+          //   trailingIcon: 'size-[1.125rem]',
+          //   leadingIcon: 'size-[1.125rem]',
+          // },
         },
       },
       compoundVariants: [
@@ -216,67 +214,67 @@ export default defineAppConfig({
           class: 'ring-default',
         },
         // TODO: FIXME: //////////////////////
-        {
-          color: 'secondary',
-          variant: 'solid',
-          class: 'text-content-200',
-        },
-        {
-          color: 'secondary',
-          variant: 'outline',
-          class: 'text-content-200',
-        },
-        {
-          color: 'secondary',
-          variant: 'ghost',
-          class: 'text-content-200',
-        },
-        {
-          color: 'secondary',
-          variant: 'outline',
-          class: 'text-content-200',
-        },
-        {
-          color: 'secondary',
-          variant: 'soft',
-          class: 'text-content-200',
-        },
-        {
-          color: 'secondary',
-          variant: 'subtle',
-          class: 'text-content-200',
-        },
-        {
-          color: 'secondary',
-          variant: 'link',
-          class: 'text-content-200',
-        },
+        // {
+        //   color: 'secondary',
+        //   variant: 'solid',
+        //   class: 'text-content-200',
+        // },
+        // {
+        //   color: 'secondary',
+        //   variant: 'outline',
+        //   class: 'text-content-200',
+        // },
+        // {
+        //   color: 'secondary',
+        //   variant: 'ghost',
+        //   class: 'text-content-200',
+        // },
+        // {
+        //   color: 'secondary',
+        //   variant: 'outline',
+        //   class: 'text-content-200',
+        // },
+        // {
+        //   color: 'secondary',
+        //   variant: 'soft',
+        //   class: 'text-content-200',
+        // },
+        // {
+        //   color: 'secondary',
+        //   variant: 'subtle',
+        //   class: 'text-content-200',
+        // },
+        // {
+        //   color: 'secondary',
+        //   variant: 'link',
+        //   class: 'text-content-200',
+        // },
         // TODO: FIXME: //////////////////////
-        {
-          size: 'xl',
-          square: true,
-          class: 'p-[0.938rem]',
-        },
-        {
-          size: 'lg',
-          square: true,
-          class: 'p-[0.938rem]',
-        },
-        {
-          size: 'md',
-          square: true,
-          class: 'p-3',
-        },
-        {
-          size: 'sm',
-          square: true,
-          class: 'p-[0.563rem]',
-        },
-        {
-          size: 'xs',
-          square: true,
-          class: 'p-1.5',
-        },
+        // {
+        //   size: 'xl',
+        //   square: true,
+        //   class: 'p-[0.938rem]',
+        // },
+        // {
+        //   size: 'lg',
+        //   square: true,
+        //   class: 'p-[0.938rem]',
+        // },
+        // {
+        //   size: 'md',
+        //   square: true,
+        //   class: 'p-3',
+        // },
+        // {
+        //   size: 'sm',
+        //   square: true,
+        //   class: 'p-[0.563rem]',
+        // },
+        // {
+        //   size: 'xs',
+        //   square: true,
+        //   class: 'p-1.5',
+        // },
       ],
     },
   },

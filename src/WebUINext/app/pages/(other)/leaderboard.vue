@@ -217,7 +217,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
         <div class="mb-5 flex justify-center">
           <UIcon
             name="crpg:trophy-cup"
-            class="size-12 text-more-support"
+            class="size-12 text-crpg-gold-600"
           />
         </div>
         <UiHeading :title="$t('leaderboard.title')" />

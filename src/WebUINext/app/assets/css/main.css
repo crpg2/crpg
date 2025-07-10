@@ -64,16 +64,15 @@
     --color-crpg-green-900: #121C13;
     --color-crpg-green-950: #060906;
 
-    --color-crpg-neutral-50: #FCFCFC;
-    --color-crpg-neutral-100: #EDEDED;
-    --color-crpg-neutral-200: #CFCFCF;
-    --color-crpg-neutral-300: #B8B8B8;
-    --color-crpg-neutral-400: #A1A1A1;
-    --color-crpg-neutral-500: #8A8A8A;
-    --color-crpg-neutral-600: #737373;
-    --color-crpg-neutral-700: #616157;
-    --color-crpg-neutral-800: #464643;
-    /* --color-crpg-neutral-900: #2F2F2C; */
+    --color-crpg-neutral-50: #EDEDED;
+    --color-crpg-neutral-100: #CFCFCF;
+    --color-crpg-neutral-200: #B8B8B8;
+    --color-crpg-neutral-300: #A1A1A1;
+    --color-crpg-neutral-400: #8A8A8A;
+    --color-crpg-neutral-500: #737373;
+    --color-crpg-neutral-600: #616157;
+    --color-crpg-neutral-700: #464643;
+    --color-crpg-neutral-800: #2F2F2C;
     --color-crpg-neutral-900: #171717;
     --color-crpg-neutral-950: #171717;
 
@@ -127,6 +126,12 @@
     --ui-radius: 0.5rem;
     /* --ui-bg: var(--color-bg-main); */
     --ui-container: var(--container-8xl);
+
+    --ui-bg-elevated: var(--ui-color-neutral-800);
+}
+
+body {
+    @apply text-sm;
 }
 
 /* COLOR PICKER */

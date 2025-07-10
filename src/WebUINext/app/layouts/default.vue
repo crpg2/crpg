@@ -96,7 +96,7 @@ useMainHeaderProvider(mainHeaderHeight)
     </main>
 
     <!-- TODO: v-if="!route.meta.noFooter" -->
-    <AppLayoutFooter :HHEvent />
+    <AppLayoutFooter :HHEvent class="ring ring-default" />
 
     <!-- :open="shownWelcomeMessage" -->
     <!-- TODO: FIXME: -->
