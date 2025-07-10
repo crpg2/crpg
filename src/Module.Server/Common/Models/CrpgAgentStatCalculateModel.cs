@@ -453,7 +453,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 {
                     int powerThrow = GetEffectiveSkill(agent, CrpgSkills.PowerThrow);
 
-                    float wpfImpactOnWindUp = 100f; // lower is better 160f
+                    float wpfImpactOnWindUp = 140f; // lower is better 160f
                     float wpfImpactOnReloadSpeed = 240f; // lower is better 200f
 
                     float DamageImpactOnWindUp = equippedItem.ThrustDamage * CrpgItemValueModel.CalculateDamageTypeFactorForThrown(equippedItem.ThrustDamageType) / CrpgItemValueModel.CalculateDamageTypeFactorForThrown(DamageTypes.Cut);
@@ -465,7 +465,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
                     props.WeaponBestAccuracyWaitTime = 0.00001f; // set to extremely low because as soon as windup is finished thrower is accurate
 
-                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.5f, 0.75f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 3f) * 40f / DamageImpactOnWindUp); // WindupSpeed
+                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.3f, 0.75f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 2.5f) * 40f / DamageImpactOnWindUp); // WindupSpeed
                     props.ReloadSpeed *= MBMath.Lerp(0.8f, 1.0f, itemSkill / wpfImpactOnReloadSpeed); // this only affect picking a new throwing weapon
 
                     props.CombatMaxSpeedMultiplier *= 0.75f; // this is slowdown when ready to throw. Higher is better , do not go above 1.0
