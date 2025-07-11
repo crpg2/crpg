@@ -60,7 +60,8 @@
   <string id="str_kick_reason.tournament_only" text="{=rOhUOWX6}Only tournament characters can join this server." />
   <string id="str_kick_reason.unreachable_server" text="{=OsPW0okL}The cRPG main server is unreachable. Try again later." />
   <string id="str_kick_reason.unsupported_platform" text="{=hU3flm9q}cRPG servers only support Steam, Epic Games and Xbox." />
-
+  <string id="str_kick_reason.friendly_fire_reports" text="{=uPwSqhuD}You have been kicked for excessive team hits." />
+  
   <!-- Notifications -->
   <string id="str_notification.inactivity_warning" text="{=pCIKeing}You will be removed for inactivity after {SECONDS} seconds!" />
   <string id="str_notification.cavalry_spawn_delay" text="{=v1S1BAF4}Cavalry will spawn in {SECONDS} seconds!" />
