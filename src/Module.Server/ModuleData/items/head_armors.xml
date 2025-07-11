@@ -10272,25 +10272,25 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_tanzo_warmask_h0" name="{=BalanceMe}Spiked Grotesque War Mask" mesh="khuzait_helmet_f" culture="Culture.khuzait" weight="4.536872" appearance="2.4" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_tanzo_warmask_h0" name="{=BalanceMe}Spiked Grotesque War Mask" mesh="cuman_war_mask" culture="Culture.khuzait" weight="4.536872" appearance="2.4" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="51" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_tanzo_warmask_h1" name="{=BalanceMe}Spiked Grotesque War Mask +1" mesh="khuzait_helmet_f" culture="Culture.khuzait" weight="4.536872" appearance="2.4" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_tanzo_warmask_h1" name="{=BalanceMe}Spiked Grotesque War Mask +1" mesh="cuman_war_mask" culture="Culture.khuzait" weight="4.536872" appearance="2.4" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="53" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_tanzo_warmask_h2" name="{=BalanceMe}Spiked Grotesque War Mask +2" mesh="khuzait_helmet_f" culture="Culture.khuzait" weight="4.536872" appearance="2.4" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_tanzo_warmask_h2" name="{=BalanceMe}Spiked Grotesque War Mask +2" mesh="cuman_war_mask" culture="Culture.khuzait" weight="4.536872" appearance="2.4" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="55" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_tanzo_warmask_h3" name="{=BalanceMe}Spiked Grotesque War Mask +3" mesh="khuzait_helmet_f" culture="Culture.khuzait" weight="4.536872" appearance="2.4" Type="HeadArmor" subtype="head_armor" difficulty="0">
+  <Item id="crpg_tanzo_warmask_h3" name="{=BalanceMe}Spiked Grotesque War Mask +3" mesh="cuman_war_mask" culture="Culture.khuzait" weight="4.536872" appearance="2.4" Type="HeadArmor" subtype="head_armor" difficulty="0">
     <ItemComponent>
       <Armor head_armor="57" has_gender_variations="false" hair_cover_type="all" modifier_group="plate" material_type="Plate" beard_cover_type="all" />
     </ItemComponent>
