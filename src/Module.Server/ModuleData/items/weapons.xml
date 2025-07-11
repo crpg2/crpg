@@ -14052,34 +14052,6 @@
       <Piece id="crpg_smallhammer_handle_h3" Type="Handle" scale_factor="140" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_horsemansaxe_v2_h0" name="{=BalanceMe}Horseman's Axe" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
-    <Pieces>
-      <Piece id="crpg_horsemansaxe_blade_h0" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_horsemansaxe_handle_h0" Type="Handle" scale_factor="100" />
-      <Piece id="crpg_horsemansaxe_pommel_h0" Type="Pommel" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_horsemansaxe_v2_h1" name="{=BalanceMe}Horseman's Axe +1" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
-    <Pieces>
-      <Piece id="crpg_horsemansaxe_blade_h1" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_horsemansaxe_handle_h1" Type="Handle" scale_factor="100" />
-      <Piece id="crpg_horsemansaxe_pommel_h1" Type="Pommel" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_horsemansaxe_v2_h2" name="{=BalanceMe}Horseman's Axe +2" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
-    <Pieces>
-      <Piece id="crpg_horsemansaxe_blade_h2" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_horsemansaxe_handle_h2" Type="Handle" scale_factor="100" />
-      <Piece id="crpg_horsemansaxe_pommel_h2" Type="Pommel" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
-  <CraftedItem id="crpg_horsemansaxe_v2_h3" name="{=BalanceMe}Horseman's Axe +3" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
-    <Pieces>
-      <Piece id="crpg_horsemansaxe_blade_h3" Type="Blade" scale_factor="100" />
-      <Piece id="crpg_horsemansaxe_handle_h3" Type="Handle" scale_factor="100" />
-      <Piece id="crpg_horsemansaxe_pommel_h3" Type="Pommel" scale_factor="100" />
-    </Pieces>
-  </CraftedItem>
   <CraftedItem id="crpg_horsemansaxe2_v2_h0" name="{=BalanceMe}Horseman's Axe" crafting_template="crpg_Mace" culture="Culture.sturgia" modifier_group="axe">
     <Pieces>
       <Piece id="crpg_horsemansaxe2_blade_h0" Type="Blade" scale_factor="100" />
