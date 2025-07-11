@@ -89,9 +89,9 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
             WeaponClass.Musket => 0.5f,
             WeaponClass.Pistol => 0.5f,
             WeaponClass.Stone => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.0f,
-            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.2f,
-            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.2f,
-            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.2f,
+            WeaponClass.ThrowingAxe => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForSwingThrowing / 30f, 2f) * 1.15f,
+            WeaponClass.ThrowingKnife => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.15f,
+            WeaponClass.Javelin => (float)Math.Pow(weapon.ThrustDamage * damageTypeFactorForThrustThrowing / 30f, 2f) * 1.15f,
             _ => 1f,
         };
 
@@ -453,19 +453,19 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 {
                     int powerThrow = GetEffectiveSkill(agent, CrpgSkills.PowerThrow);
 
-                    float wpfImpactOnWindUp = 100f; // lower is better 160f
+                    float wpfImpactOnWindUp = 140f; // lower is better 160f
                     float wpfImpactOnReloadSpeed = 240f; // lower is better 200f
 
                     float DamageImpactOnWindUp = equippedItem.ThrustDamage * CrpgItemValueModel.CalculateDamageTypeFactorForThrown(equippedItem.ThrustDamageType) / CrpgItemValueModel.CalculateDamageTypeFactorForThrown(DamageTypes.Cut);
 
                     props.WeaponMaxUnsteadyAccuracyPenalty = 0.0035f;
-                    props.WeaponMaxMovementAccuracyPenalty = 0.15f;
+                    props.WeaponMaxMovementAccuracyPenalty = 0.1f;
 
-                    props.WeaponRotationalAccuracyPenaltyInRadians = 0.15f; // this is accuracy loss when turning lower is better
+                    props.WeaponRotationalAccuracyPenaltyInRadians = 0.1f; // this is accuracy loss when turning lower is better
 
-                    props.WeaponBestAccuracyWaitTime = 0.00001f; // set to extremely low because as soon as windup is finished , thrower is accurate
+                    props.WeaponBestAccuracyWaitTime = 0.00001f; // set to extremely low because as soon as windup is finished thrower is accurate
 
-                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.25f, 0.25f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 3f) * 40f / DamageImpactOnWindUp); // WindupSpeed
+                    props.ThrustOrRangedReadySpeedMultiplier = MBMath.Lerp(0.3f, 0.75f, (float)Math.Pow(itemSkill / wpfImpactOnWindUp, 2.5f) * 40f / DamageImpactOnWindUp); // WindupSpeed
                     props.ReloadSpeed *= MBMath.Lerp(0.8f, 1.0f, itemSkill / wpfImpactOnReloadSpeed); // this only affect picking a new throwing weapon
 
                     props.CombatMaxSpeedMultiplier *= 0.75f; // this is slowdown when ready to throw. Higher is better , do not go above 1.0
