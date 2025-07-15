@@ -10,7 +10,7 @@ const columns = computed(() => [
 
 <template>
   <div
-    class="inline-grid h-max auto-rows-max items-center gap-x-1.5"
+    class="inline-grid h-max auto-rows-max items-center gap-x-2"
     :style="{ gridTemplateColumns: columns }"
   >
     <slot name="leftContent" />

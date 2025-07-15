@@ -369,14 +369,14 @@ character:
     experience:
       title: Character experience
       format: '{exp} - {expPercent}'
-      tooltip: '
-        <h3>Character experience</h3>
-        <p>Left until level up: <strong>{remainExpToUp}</strong> exp.</p>'
+      tooltip:
+        title: Character experience
+        desc: '<p>Left until level up: <strong>{remainExpToUp}</strong> exp.</p>'
     expMultiplier:
       title: Exp. multiplier
       tooltip:
         title: 'Experience multiplier. The maximum: {maxExpMulti}'
-        desc: <p>To increase the multiplier, retire the character.</p><p>The multiplier applies to all characters</p>
+        desc: '<p>To increase the multiplier, retire the character. <br /> The multiplier applies to all characters</p>'
     level:
       title: Level
       tooltip:

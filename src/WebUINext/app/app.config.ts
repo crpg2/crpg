@@ -2,7 +2,7 @@ export default defineAppConfig({
   ui: {
     colors: {
       primary: 'crpg-gold',
-      secondary: 'crpg-stone',
+      // secondary: 'crpg-stone',
       neutral: 'crpg-neutral',
       success: 'crpg-green',
       error: 'crpg-red',
@@ -66,7 +66,7 @@ export default defineAppConfig({
         body: 'p-6 sm:p-8',
         footer: 'p-8 sm:px-6',
         title: 'text-center text-lg',
-        close: '-right-4 -top-4',
+        // close: '-right-4 -top-4',
       },
     },
     formField: {
@@ -213,43 +213,6 @@ export default defineAppConfig({
           variant: 'outline',
           class: 'ring-default',
         },
-        // TODO: FIXME: //////////////////////
-        // {
-        //   color: 'secondary',
-        //   variant: 'solid',
-        //   class: 'text-content-200',
-        // },
-        // {
-        //   color: 'secondary',
-        //   variant: 'outline',
-        //   class: 'text-content-200',
-        // },
-        // {
-        //   color: 'secondary',
-        //   variant: 'ghost',
-        //   class: 'text-content-200',
-        // },
-        // {
-        //   color: 'secondary',
-        //   variant: 'outline',
-        //   class: 'text-content-200',
-        // },
-        // {
-        //   color: 'secondary',
-        //   variant: 'soft',
-        //   class: 'text-content-200',
-        // },
-        // {
-        //   color: 'secondary',
-        //   variant: 'subtle',
-        //   class: 'text-content-200',
-        // },
-        // {
-        //   color: 'secondary',
-        //   variant: 'link',
-        //   class: 'text-content-200',
-        // },
-        // TODO: FIXME: //////////////////////
         // {
         //   size: 'xl',
         //   square: true,

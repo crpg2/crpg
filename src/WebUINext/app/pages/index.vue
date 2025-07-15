@@ -52,6 +52,7 @@ Promise.all([
           :game-server-stats="gameServerStats"
           show-label
         />
+
         <ULink :to="{ name: 'leaderboard' }">
           <UiDataCell>
             <template #leftContent>
@@ -64,11 +65,11 @@ Promise.all([
         <AppSwitchLanguageDropdown v-slot="{ open, locale }">
           <UButton
             size="lg"
-            color="secondary"
-            variant="soft"
+            color="neutral"
+            variant="ghost"
             :leading-icon="`crpg:${locale}`"
             :trailing-icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'"
-            active-variant="solid"
+            active-variant="soft"
             :active="open"
             :label="locale.toUpperCase()"
           />
@@ -128,7 +129,8 @@ Promise.all([
           <AppLogin />
           <AppInstallationGuide>
             <UButton
-              color="secondary"
+              color="neutral"
+              variant="subtle"
               size="xl"
               icon="crpg:download"
               :label="$t('installation.title')"

@@ -33,8 +33,10 @@ const kdaRatio = computed(() =>
       <UButton
         v-for="gm in Object.values(ACTUAL_GAME_MODES)"
         :key="gm"
-        color="secondary"
-        :variant="gm === gameMode ? 'solid' : 'soft'"
+        color="neutral"
+        variant="ghost"
+        active-variant="soft"
+        :active="gm === gameMode"
         :icon="`crpg:${gameModeToIcon[gm]}`"
         :label="$t(`game-mode.${gm}`, 0)"
         @click="gameMode = gm"
@@ -60,20 +62,13 @@ const kdaRatio = computed(() =>
 
       <UiSimpleTableRow
         v-if="isRankedGameMode"
-        :tooltip="{
-          title: $t('character.statistics.rank.tooltip.title'),
-          description: $t('character.statistics.rank.tooltip.desc') }"
+        :tooltip="{ title: $t('character.statistics.rank.tooltip.title'), description: $t('character.statistics.rank.tooltip.desc') }"
       >
         <template #label>
           <div class="flex items-center gap-1.5">
             {{ $t('character.statistics.rank.title') }}
             <UModal
               :title="$t('rankTable.title')"
-              :close="{
-                size: 'sm',
-                color: 'secondary',
-                variant: 'solid',
-              }"
               :ui="{
                 content: 'max-w-5xl',
               }"

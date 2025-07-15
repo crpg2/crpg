@@ -19,9 +19,11 @@ const { character } = defineProps<{
       </UTooltip>
     </template>
 
-    <span class="max-w-[150px] truncate">
-      {{ character.name }}
-    </span>
-    ({{ character.level }})
+    <div class="flex gap-1">
+      <div class="max-w-[150px] truncate">
+        {{ character.name }}
+      </div>
+      ({{ character.level }})
+    </div>
   </UiDataCell>
 </template>
