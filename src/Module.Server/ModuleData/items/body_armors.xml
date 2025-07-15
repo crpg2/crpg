@@ -1056,27 +1056,27 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_battania_brass_plate_armor_v1_h0" name="{=79I1U8OC}Bronze Breastplate" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="9.34682" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_battania_brass_plate_armor_v1_h0" name="{=79I1U8OC}Bronze Breastplate" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="9.412642" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="42" leg_armor="8" arm_armor="5" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="40" leg_armor="10" arm_armor="6" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" DoesNotHideChest="true" />
   </Item>
-  <Item id="crpg_battania_brass_plate_armor_v1_h1" name="{=79I1U8OC}Bronze Breastplate +1" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="9.34682" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_battania_brass_plate_armor_v1_h1" name="{=79I1U8OC}Bronze Breastplate +1" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="9.412642" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="44" leg_armor="9" arm_armor="6" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="42" leg_armor="11" arm_armor="7" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" DoesNotHideChest="true" />
   </Item>
-  <Item id="crpg_battania_brass_plate_armor_v1_h2" name="{=79I1U8OC}Bronze Breastplate +2" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="9.34682" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_battania_brass_plate_armor_v1_h2" name="{=79I1U8OC}Bronze Breastplate +2" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="9.412642" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="46" leg_armor="10" arm_armor="7" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="44" leg_armor="12" arm_armor="8" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" DoesNotHideChest="true" />
   </Item>
-  <Item id="crpg_battania_brass_plate_armor_v1_h3" name="{=79I1U8OC}Bronze Breastplate +3" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="9.34682" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_battania_brass_plate_armor_v1_h3" name="{=79I1U8OC}Bronze Breastplate +3" mesh="battania_brass_plate_armor" culture="Culture.battania" weight="9.412642" appearance="10" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="48" leg_armor="11" arm_armor="8" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="46" leg_armor="13" arm_armor="9" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" DoesNotHideChest="true" />
   </Item>
@@ -1440,27 +1440,27 @@
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_battania_warlord_armor_v3_h0" name="{=erlrhK2a}Scale Warlord Armor" mesh="battania_warlord_armor" culture="Culture.battania" weight="11.58651" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_battania_warlord_armor_v3_h0" name="{=erlrhK2a}Scale Warlord Armor" mesh="battania_warlord_armor" culture="Culture.battania" weight="11.82024" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="48" leg_armor="8" arm_armor="8" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="44" leg_armor="10" arm_armor="12" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_battania_warlord_armor_v3_h1" name="{=erlrhK2a}Scale Warlord Armor +1" mesh="battania_warlord_armor" culture="Culture.battania" weight="11.58651" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_battania_warlord_armor_v3_h1" name="{=erlrhK2a}Scale Warlord Armor +1" mesh="battania_warlord_armor" culture="Culture.battania" weight="11.82024" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="50" leg_armor="9" arm_armor="9" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="46" leg_armor="11" arm_armor="13" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_battania_warlord_armor_v3_h2" name="{=erlrhK2a}Scale Warlord Armor +2" mesh="battania_warlord_armor" culture="Culture.battania" weight="11.58651" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_battania_warlord_armor_v3_h2" name="{=erlrhK2a}Scale Warlord Armor +2" mesh="battania_warlord_armor" culture="Culture.battania" weight="11.82024" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="52" leg_armor="10" arm_armor="10" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="48" leg_armor="12" arm_armor="14" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_battania_warlord_armor_v3_h3" name="{=erlrhK2a}Scale Warlord Armor +3" mesh="battania_warlord_armor" culture="Culture.battania" weight="11.58651" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_battania_warlord_armor_v3_h3" name="{=erlrhK2a}Scale Warlord Armor +3" mesh="battania_warlord_armor" culture="Culture.battania" weight="11.82024" appearance="3" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="54" leg_armor="11" arm_armor="11" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="50" leg_armor="13" arm_armor="15" has_gender_variations="true" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -6576,27 +6576,27 @@
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
   </Item>
-  <Item id="crpg_scale_armor_v3_h0" name="{=4eOHPops}Rugged Scale Armor" mesh="battania_scale_armor_a" culture="Culture.battania" weight="9.478596" appearance="1.4" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_scale_armor_v3_h0" name="{=4eOHPops}Rugged Scale Armor" mesh="battania_scale_armor_a" culture="Culture.battania" weight="9.150146" appearance="1.4" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="42" leg_armor="15" arm_armor="0" has_gender_variations="true" covers_body="false" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="40" leg_armor="16" arm_armor="0" has_gender_variations="true" covers_body="false" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_scale_armor_v3_h1" name="{=4eOHPops}Rugged Scale Armor +1" mesh="battania_scale_armor_a" culture="Culture.battania" weight="9.478596" appearance="1.4" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_scale_armor_v3_h1" name="{=4eOHPops}Rugged Scale Armor +1" mesh="battania_scale_armor_a" culture="Culture.battania" weight="9.150146" appearance="1.4" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="44" leg_armor="16" arm_armor="1" has_gender_variations="true" covers_body="false" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="42" leg_armor="17" arm_armor="1" has_gender_variations="true" covers_body="false" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_scale_armor_v3_h2" name="{=4eOHPops}Rugged Scale Armor +2" mesh="battania_scale_armor_a" culture="Culture.battania" weight="9.478596" appearance="1.4" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_scale_armor_v3_h2" name="{=4eOHPops}Rugged Scale Armor +2" mesh="battania_scale_armor_a" culture="Culture.battania" weight="9.150146" appearance="1.4" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="46" leg_armor="17" arm_armor="2" has_gender_variations="true" covers_body="false" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="44" leg_armor="18" arm_armor="2" has_gender_variations="true" covers_body="false" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
-  <Item id="crpg_scale_armor_v3_h3" name="{=4eOHPops}Rugged Scale Armor +3" mesh="battania_scale_armor_a" culture="Culture.battania" weight="9.478596" appearance="1.4" Type="BodyArmor" subtype="body_armor" difficulty="0">
+  <Item id="crpg_scale_armor_v3_h3" name="{=4eOHPops}Rugged Scale Armor +3" mesh="battania_scale_armor_a" culture="Culture.battania" weight="9.150146" appearance="1.4" Type="BodyArmor" subtype="body_armor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="48" leg_armor="18" arm_armor="3" has_gender_variations="true" covers_body="false" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="46" leg_armor="19" arm_armor="3" has_gender_variations="true" covers_body="false" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" />
   </Item>
@@ -8352,27 +8352,27 @@
     </ItemComponent>
     <Flags Civilian="true" />
   </Item>
-  <Item id="crpg_be_rome_muscles_h0" name="{=Yeldur}Lorica Musculata" mesh="be_rome_muscles" culture="Culture.looters" weight="8.333118" appearance="0.1" Type="BodyArmor" difficulty="0">
+  <Item id="crpg_be_rome_muscles_h0" name="{=Yeldur}Lorica Musculata" mesh="be_rome_muscles" culture="Culture.looters" weight="9.50061" appearance="0.1" Type="BodyArmor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="40" leg_armor="5" arm_armor="5" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="40" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags Civilian="false" />
   </Item>
-  <Item id="crpg_be_rome_muscles_h1" name="{=Yeldur}Lorica Musculata +1" mesh="be_rome_muscles" culture="Culture.looters" weight="8.333118" appearance="0.1" Type="BodyArmor" difficulty="0">
+  <Item id="crpg_be_rome_muscles_h1" name="{=Yeldur}Lorica Musculata +1" mesh="be_rome_muscles" culture="Culture.looters" weight="9.50061" appearance="0.1" Type="BodyArmor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="42" leg_armor="6" arm_armor="6" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="42" leg_armor="9" arm_armor="9" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags Civilian="false" />
   </Item>
-  <Item id="crpg_be_rome_muscles_h2" name="{=Yeldur}Lorica Musculata +2" mesh="be_rome_muscles" culture="Culture.looters" weight="8.333118" appearance="0.1" Type="BodyArmor" difficulty="0">
+  <Item id="crpg_be_rome_muscles_h2" name="{=Yeldur}Lorica Musculata +2" mesh="be_rome_muscles" culture="Culture.looters" weight="9.50061" appearance="0.1" Type="BodyArmor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="44" leg_armor="7" arm_armor="7" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="44" leg_armor="10" arm_armor="10" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags Civilian="false" />
   </Item>
-  <Item id="crpg_be_rome_muscles_h3" name="{=Yeldur}Lorica Musculata +3" mesh="be_rome_muscles" culture="Culture.looters" weight="8.333118" appearance="0.1" Type="BodyArmor" difficulty="0">
+  <Item id="crpg_be_rome_muscles_h3" name="{=Yeldur}Lorica Musculata +3" mesh="be_rome_muscles" culture="Culture.looters" weight="9.50061" appearance="0.1" Type="BodyArmor" difficulty="0">
     <ItemComponent>
-      <Armor body_armor="46" leg_armor="8" arm_armor="8" covers_body="true" modifier_group="plate" material_type="Plate" />
+      <Armor body_armor="46" leg_armor="11" arm_armor="11" covers_body="true" modifier_group="plate" material_type="Plate" />
     </ItemComponent>
     <Flags Civilian="false" />
   </Item>
