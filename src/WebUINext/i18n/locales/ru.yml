@@ -336,14 +336,14 @@ character:
     experience:
       title: Опыт персонажа
       format: '{exp} - {expPercent}'
-      tooltip: '
-        <h3>Опыт персонажа</h3>
-        <p>Осталось до следующего уровня: <strong>{remainExpToUp}</strong> оп.</p>'
+      tooltip:
+        title: Опыт персонажа
+        desc: '<p>Осталось до следующего уровня: <strong>{remainExpToUp}</strong> оп.</p>'
     expMultiplier:
       title: Множитель опыта
       tooltip:
         title: 'Множитель опыта. Максимальное значение: {maxExpMulti}'
-        desc: Чтобы увеличить множитель, отправьте персонажа в отставку. <p>Множитель распространяется на всех персонажей</p>
+        desc: '<p>Чтобы увеличить множитель, отправьте персонажа в отставку.<br /> Множитель распространяется на всех персонажей</p>'
     level:
       title: Уровень
       tooltip:

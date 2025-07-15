@@ -61,7 +61,7 @@ const [shownConfirmDeleteDialog, toggleConfirmDeleteDialog] = useToggle()
         <UButton
           size="xl"
           icon="crpg:edit"
-          color="secondary"
+          color="neutral"
           variant="outline"
         />
       </UTooltip>
@@ -115,7 +115,7 @@ const [shownConfirmDeleteDialog, toggleConfirmDeleteDialog] = useToggle()
           <template #link>
             <span
               class="
-                cursor-pointer text-status-danger
+                text-status-danger cursor-pointer
                 hover:text-status-danger/80
               " @click="toggleConfirmDeleteDialog(true)"
             >

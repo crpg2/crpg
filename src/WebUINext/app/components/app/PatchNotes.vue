@@ -11,41 +11,48 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value.createdAt)
 </script>
 
 <template>
-  <div class="space-y-1">
-    <a
+  <div>
+    <NuxtLink
       :href="latestPatch.url"
       target="_blank"
-      class="
-        group block rounded-full bg-elevated/50 px-5 py-4 shadow-xl backdrop-blur
-        hover:shadow-none
-      "
     >
-      <UiDataCell>
-        <template #leftContent>
-          <UIcon name="crpg:trumpet" class="size-8 text-primary" />
-        </template>
-        <div
-          class="
-            max-w-72 truncate font-bold text-highlighted
-            group-hover:text-default
-          "
-        >
-          {{ latestPatch.title || $t('patchNotes.latestPatch') }}
-        </div>
-        <div class="text-2xs leading-none">{{ timeAgo }}</div>
-        <template #rightContent>
-          <UBadge :label="latestPatch.tagName" />
-        </template>
-      </UiDataCell>
-    </a>
+      <UCard
+        variant="soft"
+        :ui="{
+          root: 'rounded-full backdrop-blur group shadow-xl hover:shadow-none',
+          body: 'sm:p-4',
+        }"
+      >
+        <UiDataCell>
+          <template #leftContent>
+            <UIcon name="crpg:trumpet" class="size-8 text-primary" />
+          </template>
+          <div
+            class="
+              max-w-72 truncate font-bold text-highlighted
+              group-hover:text-default
+            "
+          >
+            {{ latestPatch.title || $t('patchNotes.latestPatch') }}
+          </div>
+          <div class="text-2xs leading-none">
+            {{ timeAgo }}
+          </div>
+          <template #rightContent>
+            <UBadge :label="latestPatch.tagName" />
+          </template>
+        </UiDataCell>
+      </UCard>
+    </NuxtLink>
+
     <div
       v-if="patchNotes.length > 1"
-      class="pl-5"
+      class="mt-2 pl-5"
     >
       <ULink
         href="https://github.com/namidaka/crpg/releases"
         target="_blank"
-        class="text-2xs"
+        class="text-xs"
       >
         {{ $t('patchNotes.showAllPatches', { count: patchNotes.length - 1 }) }}
       </ULink>

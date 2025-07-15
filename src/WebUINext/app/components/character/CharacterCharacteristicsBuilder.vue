@@ -108,16 +108,24 @@ const formSchema: FormSchema[] = [
     :style="{ 'grid-area': fieldGroup.key }"
   >
     <template #header>
-      <UiDataCell :data-aq-fields-group="fieldGroup.key" class="w-full text-sm">
-        {{ $t(`character.characteristic.${fieldGroup.key}.title`) }} - <span
+      <UiDataCell
+        :data-aq-fields-group="fieldGroup.key"
+        class="w-full"
+      >
+        {{ $t(`character.characteristic.${fieldGroup.key}.title`) }} -
+
+        <span
           class="font-bold"
           :class="[characteristics[fieldGroup.key].points < 0 ? `text-error` : `text-success`]"
-        >{{ characteristics[fieldGroup.key].points }}</span>
+        >
+          {{ characteristics[fieldGroup.key].points }}
+        </span>
 
         <template #rightContent>
           <UTooltip v-if="fieldGroup.key === 'attributes'">
             <UButton
               variant="outline"
+              color="neutral"
               size="sm"
               :disabled="convertAttributesToSkillsState.disabled"
               :loading="convertAttributesToSkillsState.loading"
@@ -127,27 +135,31 @@ const formSchema: FormSchema[] = [
               @click="$emit('convertAttributesToSkills')"
             />
             <template #content>
-              <div class="prose">
-                <h5>{{ $t('character.characteristic.convert.attrsToSkills.title') }}</h5>
-                <i18n-t
-                  scope="global"
-                  keypath="character.characteristic.convert.attrsToSkills.tooltip"
-                  tag="p"
-                >
-                  <template #attribute>
-                    <span class="font-bold text-error">1</span>
-                  </template>
-                  <template #skill>
-                    <span class="font-bold text-success">2</span>
-                  </template>
-                </i18n-t>
-              </div>
+              <UiTooltipContent
+                :title="$t('character.characteristic.convert.attrsToSkills.title')"
+              >
+                <template #description>
+                  <i18n-t
+                    scope="global"
+                    keypath="character.characteristic.convert.attrsToSkills.tooltip"
+                    tag="p"
+                  >
+                    <template #attribute>
+                      <span class="font-bold text-error">1</span>
+                    </template>
+                    <template #skill>
+                      <span class="font-bold text-success">2</span>
+                    </template>
+                  </i18n-t>
+                </template>
+              </UiTooltipContent>
             </template>
           </UTooltip>
 
           <UTooltip v-else-if="fieldGroup.key === 'skills'">
             <UButton
               variant="outline"
+              color="neutral"
               size="sm"
               :disabled="convertSkillsToAttributesState.disabled"
               :loading="convertSkillsToAttributesState.loading"
@@ -157,24 +169,24 @@ const formSchema: FormSchema[] = [
               @click="$emit('convertSkillsToAttributes')"
             />
             <template #content>
-              <div class="prose-invert prose">
-                <h4>
-                  {{ $t('character.characteristic.convert.skillsToAttrs.title') }}
-                </h4>
-                <i18n-t
-                  scope="global"
-                  keypath="character.characteristic.convert.skillsToAttrs.tooltip"
-                  class="text-content-200"
-                  tag="p"
-                >
-                  <template #skill>
-                    <span class="text-status-danger font-bold">2</span>
-                  </template>
-                  <template #attribute>
-                    <span class="text-status-success font-bold">1</span>
-                  </template>
-                </i18n-t>
-              </div>
+              <UiTooltipContent
+                :title="$t('character.characteristic.convert.skillsToAttrs.title')"
+              >
+                <template #description>
+                  <i18n-t
+                    scope="global"
+                    keypath="character.characteristic.convert.skillsToAttrs.tooltip"
+                    tag="p"
+                  >
+                    <template #skill>
+                      <span class="font-bold text-error">2</span>
+                    </template>
+                    <template #attribute>
+                      <span class="font-bold text-success">1</span>
+                    </template>
+                  </i18n-t>
+                </template>
+              </UiTooltipContent>
             </template>
           </UTooltip>
         </template>
@@ -196,13 +208,15 @@ const formSchema: FormSchema[] = [
         }"
       >
         <div
-          class="flex items-center gap-1 text-2xs"
+          class="flex items-center gap-1 text-xs"
           :class="{
-            'text-status-danger': fieldGroup.key === 'skills' && !checkCurrentSkillRequirementsSatisfied(field.key as SkillKey),
+            'text-error': fieldGroup.key === 'skills' && !checkCurrentSkillRequirementsSatisfied(field.key as SkillKey),
           }"
         >
           {{ $t(`character.characteristic.${fieldGroup.key}.children.${field.key}.title`) }}
+
           <slot name="field-title-trailing" />
+
           <UIcon
             v-if="fieldGroup.key === 'skills' && !checkCurrentSkillRequirementsSatisfied(field.key as SkillKey)"
             name="crpg:alert-circle"
@@ -211,34 +225,32 @@ const formSchema: FormSchema[] = [
         </div>
 
         <template #content>
-          <div class="prose-invert prose">
-            <h4>
-              {{ $t(`character.characteristic.${fieldGroup.key}.children.${field.key}.title`) }}
-            </h4>
-
-            <i18n-t
-              scope="global"
-              :keypath="`character.characteristic.${fieldGroup.key}.children.${field.key}.desc`"
-              tag="p"
-            >
-              <template
-                v-if="field.key in characteristicBonusByKey"
-                #value
+          <UiTooltipContent :title="$t(`character.characteristic.${fieldGroup.key}.children.${field.key}.title`)">
+            <template #description>
+              <i18n-t
+                scope="global"
+                :keypath="`character.characteristic.${fieldGroup.key}.children.${field.key}.desc`"
+                tag="p"
               >
-                <span class="text-content-100 font-bold">
-                  {{ $n(characteristicBonusByKey[field.key]!.value, { style: characteristicBonusByKey[field.key]!.style, minimumFractionDigits: 0 }) }}
-                </span>
-              </template>
-            </i18n-t>
+                <template
+                  v-if="field.key in characteristicBonusByKey"
+                  #value
+                >
+                  <span class="font-bold text-highlighted">
+                    {{ $n(characteristicBonusByKey[field.key]!.value, { style: characteristicBonusByKey[field.key]!.style, minimumFractionDigits: 0 }) }}
+                  </span>
+                </template>
+              </i18n-t>
 
-            <p
-              v-if="$t(`character.characteristic.${fieldGroup.key}.children.${field.key}.requires`)"
-              class="text-status-warning"
-            >
-              {{ $t('character.characteristic.requires.title') }}:
-              {{ $t(`character.characteristic.${fieldGroup.key}.children.${field.key}.requires`) }}
-            </p>
-          </div>
+              <p
+                v-if="$t(`character.characteristic.${fieldGroup.key}.children.${field.key}.requires`)"
+                class="text-warning"
+              >
+                {{ $t('character.characteristic.requires.title') }}:
+                {{ $t(`character.characteristic.${fieldGroup.key}.children.${field.key}.requires`) }}
+              </p>
+            </template>
+          </UiTooltipContent>
         </template>
       </UTooltip>
 
@@ -247,8 +259,8 @@ const formSchema: FormSchema[] = [
           :data-aq-control="`${fieldGroup.key}:${field.key}`"
           v-bind="getInputProps(fieldGroup.key, field.key)"
           variant="outline"
-          :color="fieldGroup.key === 'skills' && !checkCurrentSkillRequirementsSatisfied(field.key as SkillKey) ? 'error' : 'primary'"
           size="sm"
+          :color="fieldGroup.key === 'skills' && !checkCurrentSkillRequirementsSatisfied(field.key as SkillKey) ? 'error' : 'neutral'"
           :ui="{
             base: 'w-28',
           }"

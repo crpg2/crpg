@@ -73,7 +73,6 @@ const items = computed<DropdownMenuItem[][]>(() => [
   <div class="flex items-center gap-3">
     <!-- TODO: FIXME: condition -->
     <UButton
-      size="md"
       variant="subtle"
       icon="crpg:gift"
       :label="$t('welcome.shortTitle')"
@@ -106,19 +105,22 @@ const items = computed<DropdownMenuItem[][]>(() => [
       size="xl"
       :items
     >
-      <UChip
-        :show="Boolean(user.unreadNotificationsCount)"
-        inset
-        size="xl"
-        :ui="{ base: 'bg-[#53bc96]' }"
-      >
-        <UButton
-          size="md"
-          variant="soft"
-          color="secondary"
-          icon="crpg:dots"
-        />
-      </UChip>
+      <template #default="{ open }">
+        <UChip
+          :show="Boolean(user.unreadNotificationsCount)"
+          inset
+          size="xl"
+          :ui="{ base: 'bg-[#53bc96]' }"
+        >
+          <UButton
+            variant="ghost"
+            color="neutral"
+            icon="crpg:dots"
+            active-variant="soft"
+            :active="open"
+          />
+        </UChip>
+      </template>
 
       <template #notifications-leading>
         <UChip

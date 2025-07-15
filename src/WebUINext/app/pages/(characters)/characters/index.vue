@@ -26,11 +26,11 @@ definePageMeta({
     <div class="space-y-8">
       <UiDecorSeparator />
 
-      <div class="prose text-center prose-invert">
+      <div class="prose text-center">
         <h3 class="text-xl">
           {{ $t('character.empty.title') }}
         </h3>
-        <div>{{ $t('character.empty.desc') }}</div>
+        <p>{{ $t('character.empty.desc') }}</p>
       </div>
 
       <UiDecorSeparator />

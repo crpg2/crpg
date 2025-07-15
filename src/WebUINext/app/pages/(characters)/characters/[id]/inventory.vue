@@ -336,7 +336,7 @@ const items = computed(() => {
                   :plural="filteredItemsCount"
                 >
                   <template #count>
-                    <span class="font-bold text-content-100">
+                    <span class="font-bold text-highlighted">
                       {{ filteredItemsCount }}
                     </span>
                   </template>
@@ -425,7 +425,7 @@ const items = computed(() => {
 
             <!-- TODO: design -->
             <template v-if="upkeepIsHigh" #tooltip-content>
-              <div class="prose prose-invert">
+              <div class="prose-invert prose">
                 <h4 class="text-status-warning">
                   {{ $t('character.highUpkeepWarning.title') }}
                 </h4>

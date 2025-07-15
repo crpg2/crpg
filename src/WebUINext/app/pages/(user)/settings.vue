@@ -50,7 +50,7 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
         <template #header>
           <UiDataCell class="w-full text-sm text-error">
             <template #leftContent>
-              <UIcon name="crpg:alert-circle" class="size-8" />
+              <UIcon name="crpg:alert-circle" class="size-7" />
             </template>
             <h4 class="text-lg font-bold">
               {{ $t('user.settings.dangerZone') }}
@@ -108,9 +108,9 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
       <template #title>
         <div
           class="
-            prose
             prose-h4:text-status-danger
             prose-h5:text-status-danger
+            prose
           "
           v-html="$t('user.settings.delete.dialog.title')"
         />

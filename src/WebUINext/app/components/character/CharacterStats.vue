@@ -31,15 +31,12 @@ const speedStats = computed(() =>
 
 <template>
   <UCard
-    :ui="{ root: 'overflow-hidden', body: '!p-0 overflow-hidden', header: '!px-4 py-3' }"
+    :ui="{
+      root: 'overflow-hidden',
+      body: '!px-0 overflow-hidden !py-1.5',
+    }"
   >
-    <!-- <template #header>
-      <UiDataCell class="w-full text-sm">
-        Stats
-      </UiDataCell>
-    </template> -->
-
-    <div class="flex flex-col text-2xs">
+    <div class="flex flex-col">
       <slot name="leading" />
 
       <UiSimpleTableRow
@@ -128,11 +125,10 @@ const speedStats = computed(() =>
         }"
       >
         <div
-          class="text-xs"
           :class="[
             speedStats.movementSpeedPenaltyWhenAttacking !== 0
-              ? 'text-status-danger'
-              : 'text-content-100',
+              ? 'text-error'
+              : 'group-hover:text-highlighted',
           ]"
         >
           {{ $n(speedStats.movementSpeedPenaltyWhenAttacking / 100, 'percent') }}

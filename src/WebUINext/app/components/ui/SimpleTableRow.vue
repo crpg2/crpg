@@ -14,18 +14,31 @@ const slots = useSlots()
 <template>
   <UTooltip
     :disabled="!tooltip && !slots['tooltip-content']"
-    :text="tooltip?.title"
     :ui="{
-      content: 'max-w-xl',
+      content: 'max-w-sm',
     }"
   >
-    <UiDataCell class="rounded px-3 py-2.5 hover:bg-neutral-900">
-      <slot name="label">
-        {{ label }}
-      </slot>
+    <UiDataCell
+      class="
+        group rounded-xs px-3 py-2.5
+        hover:bg-muted
+      "
+    >
+      <div
+        class="text-muted"
+      >
+        <slot name="label">
+          {{ label }}
+        </slot>
+      </div>
 
       <template #rightContent>
-        <div class="text-xs">
+        <div
+          class="
+            font-bold
+            group-hover:text-highlighted
+          "
+        >
           <slot>
             {{ value }}
           </slot>
@@ -35,12 +48,10 @@ const slots = useSlots()
 
     <template #content>
       <slot name="tooltip-content">
-        <div class="prose space-y-3 prose-invert">
-          <div v-if="tooltip?.title" class="text-sm">
-            {{ tooltip?.title }}
-          </div>
-          <div v-if="tooltip?.description" class="text-muted" v-html="tooltip?.description" />
-        </div>
+        <UiTooltipContent
+          v-if="tooltip"
+          v-bind="{ ...tooltip }"
+        />
       </slot>
     </template>
   </UTooltip>

@@ -29,16 +29,16 @@ const {
 
 <template>
   <div
-    class="group relative flex h-28 items-center justify-center rounded-md bg-base-200 ring-2"
+    class="group relative flex h-28 items-center justify-center rounded-md bg-muted ring-2"
     :class="[
-      [available ? 'ring-border-300' : `
+      [available ? 'ring-default' : `
         ring-transparent
-        hover:ring-border-200
+        hover:ring-default
       `],
       {
-        '!ring-status-success': focused,
-        '!ring-status-warning': invalid,
-        '!ring-status-danger': remove,
+        '!ring-success': focused,
+        '!ring-warning': invalid,
+        '!ring-error': remove,
       },
     ]"
   >
@@ -46,7 +46,7 @@ const {
       v-if="userItem !== undefined"
       :item="userItem.item"
       class="h-full w-full cursor-grab !ring-0"
-      :class="{ 'bg-primary-hover/15': userItem.isPersonal }"
+      :class="{ 'bg-primary/30': userItem.isPersonal }"
       data-aq-character-slot-item-thumb
     >
       <template #badges-top-right>
@@ -62,16 +62,16 @@ const {
 
     <UTooltip v-else>
       <UIcon
-        class="size-12 text-muted outline-0 select-none"
+        class="size-12 text-toned outline-0 select-none"
         :name="`crpg:${placeholder}`"
         data-aq-character-slot-item-placeholder
       />
+      <!-- TODO: FIXME: -->
       <template #content>
         <div>
           <div>
             {{ $t(`character.doll.slot.${itemSlot}.title`) }}
           </div>
-          <!-- TODO: FIXME: -->
           <div v-if="$t(`character.doll.slot.${itemSlot}.description`) !== ''">
             {{ $t(`character.doll.slot.${itemSlot}.description`) }}
           </div>

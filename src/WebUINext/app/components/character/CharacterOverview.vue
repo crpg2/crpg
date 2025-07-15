@@ -57,7 +57,7 @@ const experiencePercentToNextLevel = computed(() =>
         }"
       />
 
-      <div class="col-span-2 mt-16 px-4">
+      <div class="col-span-2 mt-24 px-4">
         <UTooltip>
           <USlider
             :default-value="character.experience"
@@ -69,6 +69,9 @@ const experiencePercentToNextLevel = computed(() =>
               disableClosingTrigger: true,
               open: true,
               arrow: true,
+              ui: {
+                content: 'text-highlighted font-bold',
+              },
               portal: false,
               text: $t('character.statistics.experience.format', {
                 exp: $n(Number(animatedCharacterExperience.toFixed(0))),
@@ -80,18 +83,18 @@ const experiencePercentToNextLevel = computed(() =>
             }"
           />
           <template #content>
-            <div
-              class="prose prose-invert"
-              v-html="$t('character.statistics.experience.tooltip', { remainExpToUp: $n(nextLevelExperience - character.experience) })"
+            <UiTooltipContent
+              :title="$t('character.statistics.experience.tooltip.title')"
+              :description="$t('character.statistics.experience.tooltip.desc', { remainExpToUp: $n(nextLevelExperience - character.experience) })"
             />
           </template>
         </UTooltip>
 
         <div class="mt-1.5 flex justify-between">
-          <div class="text-2xs text-muted">
+          <div class="text-xs text-toned">
             {{ $n(currentLevelExperience) }}
           </div>
-          <div class="text-2xs text-muted">
+          <div class="text-xs text-toned">
             {{ $n(nextLevelExperience) }}
           </div>
         </div>

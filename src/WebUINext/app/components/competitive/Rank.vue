@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTransition } from '@vueuse/core'
+import NumberFlow from '@number-flow/vue'
 
 import type { Rank } from '~/models/competitive'
 
@@ -10,8 +10,6 @@ const { competitiveValue, rankTable } = defineProps<{
   rankTable: Rank[]
 }>()
 
-const animatedCompetitiveValue = useTransition(() => competitiveValue)
-
 const rank = computed(() => getRankByCompetitiveValue(rankTable, competitiveValue))
 </script>
 
@@ -20,6 +18,12 @@ const rank = computed(() => getRankByCompetitiveValue(rankTable, competitiveValu
     class="font-black"
     :style="{ color: rank.color }"
   >
-    {{ rank.title }} - {{ $n(animatedCompetitiveValue, { maximumFractionDigits: 0 }) }}
+    {{ rank.title }} -
+    <NumberFlow
+      :value="competitiveValue"
+      locales="en-US"
+      :format="{ useGrouping: false }"
+      will-change
+    />
   </div>
 </template>
