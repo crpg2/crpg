@@ -132,9 +132,6 @@ export default defineNuxtConfig({
     host: '0.0.0.0',
     port: 8080,
   },
-  future: {
-    compatibilityVersion: 4,
-  },
   experimental: {
     typedPages: true,
     defaults: {
@@ -143,7 +140,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  compatibilityDate: '2025-03-21',
+  compatibilityDate: '2025-07-15',
   nitro: { compressPublicAssets: true },
   vite: {
     optimizeDeps: {

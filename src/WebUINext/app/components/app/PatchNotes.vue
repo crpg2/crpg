@@ -19,7 +19,7 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value.createdAt)
       <UCard
         variant="soft"
         :ui="{
-          root: 'rounded-full backdrop-blur group shadow-xl hover:shadow-none',
+          root: 'bg-elevated rounded-full backdrop-blur group shadow-xl hover:shadow-none',
           body: 'sm:p-4',
         }"
       >
