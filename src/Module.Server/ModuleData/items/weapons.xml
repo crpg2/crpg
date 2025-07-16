@@ -7996,7 +7996,7 @@
       <Piece id="crpg_chinese_war_lance_handle_h3" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v2_h0" name="{=Telford}Spanish Full Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v3_h0" name="{=Telford}Spanish Full Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h0" Type="Guard" scale_factor="100" />
@@ -8004,7 +8004,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v2_h1" name="{=Telford}Spanish Full Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v3_h1" name="{=Telford}Spanish Full Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h1" Type="Guard" scale_factor="100" />
@@ -8012,7 +8012,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v2_h2" name="{=Telford}Spanish Full Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v3_h2" name="{=Telford}Spanish Full Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h2" Type="Guard" scale_factor="100" />
@@ -8020,7 +8020,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v2_h3" name="{=Telford}Spanish Full Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v3_h3" name="{=Telford}Spanish Full Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h3" Type="Guard" scale_factor="100" />
@@ -8028,7 +8028,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v2_h0" name="{=Telford}Noble Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v3_h0" name="{=Telford}Noble Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h0" Type="Guard" scale_factor="100" />
@@ -8036,7 +8036,7 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v2_h1" name="{=Telford}Noble Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v3_h1" name="{=Telford}Noble Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h1" Type="Guard" scale_factor="100" />
@@ -8044,7 +8044,7 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v2_h2" name="{=Telford}Noble Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v3_h2" name="{=Telford}Noble Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h2" Type="Guard" scale_factor="100" />
@@ -8052,7 +8052,7 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v2_h3" name="{=Telford}Noble Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v3_h3" name="{=Telford}Noble Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h3" Type="Guard" scale_factor="100" />
@@ -8212,25 +8212,25 @@
       <Piece id="crpg_courser_lance_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v2_h0" name="{=Telford}Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v3_h0" name="{=Telford}Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h0" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v2_h1" name="{=Telford}Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v3_h1" name="{=Telford}Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h1" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v2_h2" name="{=Telford}Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v3_h2" name="{=Telford}Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h2" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v2_h3" name="{=Telford}Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v3_h3" name="{=Telford}Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h3" Type="Handle" scale_factor="105" />
@@ -8312,25 +8312,25 @@
       <Piece id="crpg_sasanian_light_lance_handle_h3" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v2_h0" name="{=Telford}Long Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v3_h0" name="{=Telford}Long Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h0" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v2_h1" name="{=Telford}Long Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v3_h1" name="{=Telford}Long Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h1" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v2_h2" name="{=Telford}Long Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v3_h2" name="{=Telford}Long Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h2" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v2_h3" name="{=Telford}Long Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v3_h3" name="{=Telford}Long Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h3" Type="Handle" scale_factor="99" />
