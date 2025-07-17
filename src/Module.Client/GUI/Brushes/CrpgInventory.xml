@@ -1,0 +1,12 @@
+<Brushes>
+  <Brush Name="CrpgInventory.MainPanel">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare" Color="#FFAA0088" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="1"/>
+      </Style>
+    </Styles>
+  </Brush>
+</Brushes>

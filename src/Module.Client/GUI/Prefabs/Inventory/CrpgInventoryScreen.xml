@@ -1,0 +1,50 @@
+<Prefab>
+  <Constants>
+      <Constant Name="MainPanel.Width" Value="500"/>
+      <Constant Name="MainPanel.Height" Value="500"/>
+      <Constant Name="EquipmentImage.Width" Value="100"/>
+      <Constant Name="EquipmentImage.Height" Value="50"/>
+  </Constants>
+  <Window>
+    <!-- Main Panel -->
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!MainPanel.Width" SuggestedHeight="!MainPanel.Height" Sprite="BlankWhiteSquare_9" Color="#000000FF" AlphaFactor="0.4" >
+      <Children>
+        <!-- Character Preview -->
+        <CharacterPreview WidthSizePolicy="Fixed" SuggestedWidth="200" HeightSizePolicy ="Fixed" SuggestedHeight="400" HorizontalAlignment="Center" VerticalAlignment="Top" MarginLeft="25" />
+
+        <!-- Armor Selection -->
+        <ListPanel StackLayout.LayoutMethod="VerticalTopToBottom" HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" SuggestedWidth="300" HeightSizePolicy="Fixed" SuggestedHeight="500" MarginTop="20" MarginBottom="10" MarginLeft="25" MarginRight="25" Spacing="10">
+          <Children>
+            <!-- Head Armor -->
+            <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentImage.Height">
+              <Children>
+                <ImageIdentifierWidget DataSource="{HeadArmor}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"/>
+              </Children>
+            </ButtonWidget>
+            <!-- Cape Armor -->
+            <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentImage.Height">
+              <Children>
+                <ImageIdentifierWidget DataSource="{CapeArmor}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"/>
+              </Children>
+            </ButtonWidget>
+            <!-- Body Armor -->
+            <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentImage.Height">
+              <Children>
+                <ImageIdentifierWidget DataSource="{BodyArmor}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"/>
+              </Children>
+            </ButtonWidget>
+            <!-- Leg Armor -->
+            <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentImage.Height">
+              <Children>
+                <ImageIdentifierWidget DataSource="{HeadArmor}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"/>
+              </Children>
+            </ButtonWidget>
+          </Children>
+        </ListPanel>
+        <!-- End Armor Selection -->
+        
+      </Children>
+    </Widget>
+    <!-- End Main Panel -->
+  </Window>
+</Prefab>
