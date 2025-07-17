@@ -164,6 +164,12 @@ internal class ItemExporter : IDataExporter
         { 2, (2, 2, 1, 4, 2) },
         { 3, (3, 3, 2, 5, 3) },
     };
+    private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> LightMusketHeirloomBonus = new()
+    {
+        { 1, (0, 2, 1, 3, 3) },
+        { 2, (1, 2, 1, 4, 5) },
+        { 3, (2, 2, 2, 4, 5) },
+    };
     private static readonly Dictionary<int, (int damageBonus, int accuracyBonus, int missileSpeedBonus, int reloadSpeedBonus, int aimSpeedBonus)> PistolHeirloomBonus = new()
     {
         { 1, (1, 1, 0, 2, 1) },
@@ -958,17 +964,31 @@ internal class ItemExporter : IDataExporter
                         break;
 
                     case ItemObject.ItemTypeEnum.Musket:
-
-                        if (MusketHeirloomBonus.TryGetValue(heirloomLevel, out var newMusket))
                         {
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", newMusket.damageBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", newMusket.reloadSpeedBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", newMusket.aimSpeedBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", newMusket.accuracyBonus);
-                            ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", newMusket.missileSpeedBonus);
-                        }
+                            string musketItemUsage = node1.SelectSingleNode("ItemComponent/Weapon")?.Attributes["item_usage"]?.Value ?? string.Empty;
 
-                        break;
+                            if (musketItemUsage == "crpg_light_gun")
+                            {
+                                if (LightMusketHeirloomBonus.TryGetValue(heirloomLevel, out var lightMusket))
+                                {
+                                    ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", lightMusket.damageBonus);
+                                    ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", lightMusket.reloadSpeedBonus);
+                                    ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", lightMusket.aimSpeedBonus);
+                                    ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", lightMusket.accuracyBonus);
+                                    ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", lightMusket.missileSpeedBonus);
+                                }
+                            }
+                            else if (MusketHeirloomBonus.TryGetValue(heirloomLevel, out var standardMusket))
+                            {
+                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_damage", standardMusket.damageBonus);
+                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "speed_rating", standardMusket.reloadSpeedBonus);
+                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "thrust_speed", standardMusket.aimSpeedBonus);
+                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "accuracy", standardMusket.accuracyBonus);
+                                ModifyChildHeirloomNodesAttribute(nonHeirloomNode, node1, "ItemComponent/Weapon", "missile_speed", standardMusket.missileSpeedBonus);
+                            }
+
+                            break;
+                        }
 
                     case ItemObject.ItemTypeEnum.Pistol:
 
