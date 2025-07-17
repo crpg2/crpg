@@ -29,7 +29,9 @@ internal class CrpgItemRequirementModel
         int strengthRequirementForTierTenCrossbow;
 
         // Check if the item is a crossbow or firearm
-        if (item.ItemType != ItemObject.ItemTypeEnum.Crossbow && item.ItemType != ItemObject.ItemTypeEnum.Musket && item.ItemType != ItemObject.ItemTypeEnum.Pistol)
+        if (item.ItemType != ItemObject.ItemTypeEnum.Crossbow &&
+            item.ItemType != ItemObject.ItemTypeEnum.Musket &&
+            item.ItemType != ItemObject.ItemTypeEnum.Pistol)
         {
             throw new ArgumentException(item.Name.ToString() + " is not a crossbow or firearm");
 >>>>>>> d43d2f95 (mod: add firearm support for exporter & remove harmony module (#470))
@@ -40,14 +42,15 @@ internal class CrpgItemRequirementModel
 >>>>>>> d43d2f95 (mod: add firearm support for exporter & remove harmony module (#470))
         }
 
-        // Adjust the strength requirement for light crossbows
-        if (item.WeaponComponent.PrimaryWeapon.ItemUsage.Contains("crossbow_light"))
+        // Adjust the strength requirement for light crossbows and light guns
+        var usage = item.WeaponComponent.PrimaryWeapon.ItemUsage;
+        if (usage.Contains("crossbow_light") || usage.Contains("crpg_light_gun"))
         {
-            strengthRequirementForTierTenCrossbow = 18; // For light crossbows
+            strengthRequirementForTierTenCrossbow = 18; // For light xbows & guns
         }
         else
         {
-            strengthRequirementForTierTenCrossbow = 20; // Default for other crossbows
+            strengthRequirementForTierTenCrossbow = 20; // Default for xbows & guns
         }
 
         // Compute the strength requirement based on tier
