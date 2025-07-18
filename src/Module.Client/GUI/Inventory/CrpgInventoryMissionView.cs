@@ -4,6 +4,7 @@ using TaleWorlds.GauntletUI.Data;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.MissionViews;
+using TaleWorlds.TwoDimension;
 
 namespace Crpg.Module.GUI.Inventory;
 

@@ -1,11 +1,21 @@
 <Brushes>
   <Brush Name="CrpgInventory.MainPanel">
     <Layers>
-      <BrushLayer Name="Default" Sprite="BlankWhiteSquare" Color="#FFAA0088" />
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#FFAA00FF" AlphaFactor="1" />
     </Layers>
     <Styles>
       <Style Name="Default">
-        <BrushLayer Name="Default" AlphaFactor="1"/>
+        <BrushLayer Name="Default" AlphaFactor=".7"/>
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="CrpgInventory.EquipmentButton">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#2E2E2EFF" AlphaFactor="1" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor=".7" />
       </Style>
     </Styles>
   </Brush>
