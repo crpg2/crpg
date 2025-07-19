@@ -73,7 +73,7 @@ const kdaRatio = computed(() =>
                 content: 'max-w-5xl',
               }"
             >
-              <UIcon name="crpg:help-circle" class="size-4" />
+              <UButton icon="crpg:help-circle" size="sm" variant="ghost" />
               <template #body>
                 <CompetitiveRankTable
                   :rank-table="rankTable"

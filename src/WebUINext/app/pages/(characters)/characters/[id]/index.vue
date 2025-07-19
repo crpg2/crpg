@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { usePageLoading } from '~/composables/app/use-page-loading'
 import { useCharacter } from '~/composables/character/use-character'
+import { useCharacterCharacteristic } from '~/composables/character/use-character-characteristic'
 import { useCharacterRespec } from '~/composables/character/use-character-respec'
 import { useAsyncCallback } from '~/composables/utils/use-async-callback'
 import { usePollInterval } from '~/composables/utils/use-poll-interval'
@@ -12,6 +13,7 @@ const { t } = useI18n()
 const toast = useToast()
 
 const { character } = useCharacter()
+const { loadCharacterCharacteristics } = useCharacterCharacteristic()
 
 const {
   state: characterStatistics,
@@ -31,7 +33,7 @@ const {
   await Promise.all([
     userStore.fetchUser(), // update user
     userStore.fetchCharacters(), // update char
-    // loadCharacterCharacteristics(0, { id: character.value.id }),
+    loadCharacterCharacteristics(),
   ])
 
   toast.add({
@@ -48,8 +50,8 @@ const {
   await setCharacterForTournament(character.value.id)
 
   await Promise.all([
-    userStore.fetchCharacters(), // update char
-    // loadCharacterCharacteristics(0, { id: character.value.id }),
+    userStore.fetchCharacters(),
+    loadCharacterCharacteristics(),
   ])
 
   toast.add({

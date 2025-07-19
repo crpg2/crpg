@@ -254,9 +254,7 @@ export default defineNuxtConfig({
     bundle: {
       runtimeOnly: true,
       dropMessageCompiler: true,
-      optimizeTranslationDirective: false,
     },
-    lazy: true,
     strategy: 'no_prefix',
     defaultLocale: 'en',
     locales: [

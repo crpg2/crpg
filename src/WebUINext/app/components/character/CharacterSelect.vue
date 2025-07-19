@@ -53,7 +53,10 @@ const items = computed<DropdownMenuItem[][]>(() => [
     >
       <CharacterMedia :character="currentCharacter" />
 
-      <UTooltip v-if="!activeCharacterId" :text="$t('character.noneSomeActive.title')">
+      <UTooltip
+        v-if="!activeCharacterId"
+        :text="$t('character.noneSomeActive.title')"
+      >
         <UBadge
           :label="$t('character.noneSomeActive.short')"
           color="warning"
@@ -63,7 +66,10 @@ const items = computed<DropdownMenuItem[][]>(() => [
         />
       </UTooltip>
 
-      <UTooltip v-else-if="currentCharacter.id === activeCharacterId" :text="$t('character.status.active.title')">
+      <UTooltip
+        v-else-if="currentCharacter.id === activeCharacterId"
+        :text="$t('character.status.active.title')"
+      >
         <UBadge
           :label="$t('character.status.active.short')"
           color="success"
@@ -72,7 +78,10 @@ const items = computed<DropdownMenuItem[][]>(() => [
         />
       </UTooltip>
 
-      <UTooltip v-else :text="$t('character.status.inactive.title')">
+      <UTooltip
+        v-else
+        :text="$t('character.status.inactive.title')"
+      >
         <UBadge
           :label="$t('character.status.inactive.short')"
           color="neutral"
@@ -80,8 +89,6 @@ const items = computed<DropdownMenuItem[][]>(() => [
           size="sm"
         />
       </UTooltip>
-
-      <USeparator orientation="vertical" />
 
       <UIcon
         name="crpg:chevron-down"
