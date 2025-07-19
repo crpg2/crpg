@@ -16,12 +16,13 @@ const modelValue = defineModel<boolean>({ default: false })
       </div>
 
       <template #content>
-        <div class="prose prose-invert">
-          <h5 class="text-content-100">
-            {{ $t('character.settings.active.tooltip.title') }}
-          </h5>
-          <div v-html="$t('character.settings.active.tooltip.desc')" />
-        </div>
+        <UiTooltipContent :title="$t('character.settings.active.tooltip.title')">
+          <template #description>
+            <p v-for="(item, idx) in $tm('character.settings.active.tooltip.desc')" :key="idx">
+              {{ $rt(item) }}
+            </p>
+          </template>
+        </UiTooltipContent>
       </template>
     </UTooltip>
 

@@ -9,11 +9,14 @@ const props = withDefaults(defineProps<{
   title?: string
   description?: string
 
-  name: string
-  confirmLabel: string
+  confirm: string
+
+  confirmLabel?: string
   noSelect?: boolean
+  undone?: boolean
 }>(), {
-  noSelect: false,
+  noSelect: true,
+  undone: true,
 })
 
 const emit = defineEmits<{
@@ -21,20 +24,19 @@ const emit = defineEmits<{
   confirm: []
 }>()
 
-const confirmNameModel = ref<string>('')
+const confirmModel = ref<string>('')
 
 const $v = useVuelidate(
   {
-    confirmNameModel: {
-      // TODO:
-      sameAs: sameAs(props.name, props.name),
+    confirmModel: {
+      sameAs: sameAs(props.confirm, props.confirm),
     },
   },
-  { confirmNameModel },
+  { confirmModel },
 )
 
 const onCancel = () => {
-  confirmNameModel.value = ''
+  confirmModel.value = ''
   $v.value.$reset()
   emit('cancel')
 }
@@ -52,58 +54,62 @@ const onConfirm = async () => {
   <UModal
     :open
     :title
-    :description
     :ui="{
       body: 'space-y-6 text-center',
       footer: 'flex items-center justify-center gap-4',
     }"
-    :close="{
-      size: 'sm',
-      color: 'secondary',
-      variant: 'solid',
-    }"
     @update:open="onCancel"
   >
     <slot />
-    <template #body>
-      <slot name="title" />
 
-      <!-- TODO: FIXME: -->
-      <UAlert color="error">
-        <template #title>
-          Are you sure you want to retire your character? This action cannot be undone
+    <template #body>
+      <UAlert
+        color="warning"
+        variant="subtle"
+        icon="crpg:alert-circle"
+      >
+        <template #description>
+          <div class="flex flex-col gap-3">
+            <slot name="description">
+              {{ description }}
+            </slot>
+            <template v-if="undone">
+              <h5 class="text-md text-error">
+                {{ $t('action-undone') }}
+              </h5>
+            </template>
+          </div>
         </template>
       </UAlert>
 
-      <slot name="description" />
+      <div class="space-y-3">
+        <i18n-t
+          scope="global"
+          keypath="confirm.name"
+          tag="p"
+        >
+          <template #name>
+            <span
+              class="font-bold text-primary"
+              :class="{ 'select-none': noSelect }"
+            >
+              {{ confirm }}
+            </span>
+          </template>
+        </i18n-t>
 
-      <i18n-t
-        scope="global"
-        keypath="confirm.name"
-        tag="p"
-      >
-        <template #name>
-          <span
-            class="font-bold text-primary"
-            :class="{ 'select-none': noSelect }"
-          >
-            {{ name }}
-          </span>
-        </template>
-      </i18n-t>
-
-      <UFormField
-        :error="errorMessagesToString($v.confirmNameModel.$errors)"
-        data-aq-confirm-field
-      >
-        <UInput
-          v-model="confirmNameModel"
-          :placeholder="$t('confirm.placeholder')"
-          size="sm"
-          class="w-full"
-          data-aq-confirm-input
-        />
-      </UFormField>
+        <UFormField
+          :error="errorMessagesToString($v.confirmModel.$errors)"
+          data-aq-confirm-field
+        >
+          <UInput
+            v-model="confirmModel"
+            :placeholder="$t('confirm.placeholder')"
+            class="w-full"
+            data-aq-confirm-input
+          />
+        </UFormField>
+      </div>
     </template>
 
     <template #footer>
@@ -115,9 +121,9 @@ const onConfirm = async () => {
         @click="onCancel"
       />
       <UButton
-        :disabled="$v.confirmNameModel.$invalid"
+        :disabled="$v.confirmModel.$invalid"
         size="xl"
-        :label="confirmLabel"
+        :label="confirmLabel ?? $t('action.confirm')"
         data-aq-confirm-action="submit"
         @click="onConfirm"
       />

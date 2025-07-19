@@ -77,8 +77,7 @@ const characteristicRequirementsSatisfied = (
 
 interface CharacterCharacteristicsContext {
   characterCharacteristics: Ref<CharacterCharacteristics>
-  // setCharacterCharacteristics: (payload: CharacterCharacteristics) => void
-  loadCharacterCharacteristics: (delay: number, characterId: number) => void
+  loadCharacterCharacteristics: () => void
 }
 
 const characterCharacteristicsKey: InjectionKey<CharacterCharacteristicsContext> = Symbol('CharacterCharacteristics')

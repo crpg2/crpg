@@ -51,11 +51,6 @@ const [shownConfirmDeleteDialog, toggleConfirmDeleteDialog] = useToggle()
         body: 'space-y-6',
         footer: 'flex justify-center',
       }"
-      :close="{
-        size: 'sm',
-        color: 'secondary',
-        variant: 'solid',
-      }"
     >
       <UTooltip :text="$t('character.settings.update.title')">
         <UButton
@@ -113,25 +108,25 @@ const [shownConfirmDeleteDialog, toggleConfirmDeleteDialog] = useToggle()
           tag="div"
         >
           <template #link>
-            <span
+            <ULink
               class="
-                text-status-danger cursor-pointer
-                hover:text-status-danger/80
-              " @click="toggleConfirmDeleteDialog(true)"
+                cursor-pointer text-error
+                hover:text-error/80
+              "
+              @click="toggleConfirmDeleteDialog(true)"
             >
               {{ $t('character.settings.delete.link') }}
-            </span>
+            </ULink>
           </template>
         </i18n-t>
       </template>
     </UModal>
 
     <AppConfirmActionDialog
-      v-if="shownConfirmDeleteDialog"
-      open
+      :open="shownConfirmDeleteDialog"
       :title="$t('character.settings.delete.dialog.title')"
       :description="$t('character.settings.delete.dialog.desc')"
-      :name="`${character.name} - ${character.level}`"
+      :confirm="`${character.name} - ${character.level}`"
       :confirm-label="$t('action.delete')"
       @cancel="toggleConfirmDeleteDialog(false);"
       @confirm="() => {

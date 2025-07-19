@@ -10,14 +10,13 @@ const slots = useSlots()
 <template>
   <div class="prose">
     <slot name="title">
-      <h5 v-if="title" :class="{ 'mb-6': description && slots.description }">
+      <h5 v-if="title" :class="{ '!mb-4': description || slots.description }">
         {{ title }}
       </h5>
     </slot>
     <slot name="description">
       <div
         v-if="description"
-        class="prose"
         v-html="description"
       />
     </slot>

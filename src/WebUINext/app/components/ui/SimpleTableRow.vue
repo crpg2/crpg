@@ -24,9 +24,7 @@ const slots = useSlots()
         hover:bg-muted
       "
     >
-      <div
-        class="text-muted"
-      >
+      <div class="text-muted">
         <slot name="label">
           {{ label }}
         </slot>

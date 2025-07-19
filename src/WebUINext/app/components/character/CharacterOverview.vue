@@ -28,10 +28,6 @@ const experiencePercentToNextLevel = computed(() =>
   <div class="grid grid-cols-2 gap-2">
     <UiSimpleTableRow
       :label="$t('character.statistics.level.title')"
-      :tooltip="character.forTournament
-        ? { title: $t('character.statistics.level.lockedTooltip.title', { maxLevel: maximumLevel }) }
-        : { title: $t('character.statistics.level.tooltip.title', { maxLevel: maximumLevel }) }
-      "
     >
       <UiDataCell :class="{ 'text-warning': character.forTournament }">
         {{ character.level }}
@@ -39,6 +35,20 @@ const experiencePercentToNextLevel = computed(() =>
           <UIcon name="crpg:lock" class="size-4" />
         </template>
       </UiDataCell>
+
+      <template #tooltip-content>
+        <UiTooltipContent
+          :title="character.forTournament
+            ? $t('character.statistics.level.lockedTooltip.title')
+            : $t('character.statistics.level.tooltip.title')"
+        >
+          <template v-if="!character.forTournament" #description>
+            <p class="text-primary">
+              {{ $t('character.statistics.level.tooltip.maximum', { maxLevel: maximumLevel }) }}
+            </p>
+          </template>
+        </UiTooltipContent>
+      </template>
     </UiSimpleTableRow>
 
     <template v-if="!character.forTournament">
@@ -51,11 +61,20 @@ const experiencePercentToNextLevel = computed(() =>
       <UiSimpleTableRow
         :label="$t('character.statistics.expMultiplier.title')"
         :value="$t('character.format.expMultiplier', { multiplier: $n(userExperienceMultiplier) })"
-        :tooltip="{
-          title: $t('character.statistics.expMultiplier.tooltip.title', { maxExpMulti: $t('character.format.expMultiplier', { multiplier: $n(maxExperienceMultiplierForGeneration) }) }),
-          description: $t('character.statistics.expMultiplier.tooltip.desc'),
-        }"
-      />
+      >
+        <template #tooltip-content>
+          <UiTooltipContent
+            :title="$t('character.statistics.expMultiplier.tooltip.title')"
+          >
+            <template #description>
+              <p class="text-primary">
+                {{ $t('character.statistics.expMultiplier.tooltip.maximum', { maxExpMulti: $t('character.format.expMultiplier', { multiplier: $n(maxExperienceMultiplierForGeneration) }) }) }}
+              </p>
+              <p>{{ $t('character.statistics.expMultiplier.tooltip.desc') }}</p>
+            </template>
+          </UiTooltipContent>
+        </template>
+      </UiSimpleTableRow>
 
       <div class="col-span-2 mt-24 px-4">
         <UTooltip>
@@ -83,10 +102,19 @@ const experiencePercentToNextLevel = computed(() =>
             }"
           />
           <template #content>
-            <UiTooltipContent
-              :title="$t('character.statistics.experience.tooltip.title')"
-              :description="$t('character.statistics.experience.tooltip.desc', { remainExpToUp: $n(nextLevelExperience - character.experience) })"
-            />
+            <UiTooltipContent :title="$t('character.statistics.experience.tooltip.title')">
+              <template #description>
+                <i18n-t
+                  scope="global"
+                  keypath="character.statistics.experience.tooltip.desc"
+                  tag="p"
+                >
+                  <template #remainExpToUp>
+                    <strong>{{ $n(nextLevelExperience - character.experience) }}</strong>
+                  </template>
+                </i18n-t>
+              </template>
+            </UiTooltipContent>
           </template>
         </UTooltip>
 

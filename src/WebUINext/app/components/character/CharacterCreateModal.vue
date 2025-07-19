@@ -10,16 +10,11 @@ const refreshPage = () => navigateTo({
   <UModal
     :title="$t('character.create.guide.title')"
     :ui="{
-      content: 'max-w-3xl',
-    }"
-    :close="{
-      size: 'sm',
-      color: 'secondary',
-      variant: 'solid',
+      content: 'max-w-xl',
     }"
   >
     <template #body>
-      <div class="prose prose-invert">
+      <div class="prose">
         <p class="">
           {{ $t('character.create.guide.intro') }}
         </p>
@@ -34,7 +29,10 @@ const refreshPage = () => navigateTo({
           >
             <template #refresh>
               <span
-                class="cursor-pointer text-link underline hover:text-link-hover hover:no-underline"
+                class="
+                  cursor-pointer text-primary underline
+                  hover:no-underline
+                "
                 @click="refreshPage"
               >
                 {{ $t('action.refresh', 1) }}

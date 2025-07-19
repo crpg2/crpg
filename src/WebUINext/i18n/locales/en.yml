@@ -175,6 +175,7 @@ you: You
 here: here
 not-found: Not found
 results-not-found: Results not found...
+action-undone: This action cannot be undone!
 
 shortcuts:
   keys:
@@ -227,7 +228,7 @@ form:
     required: required
 
 confirm:
-  placeholder: Name
+  placeholder: Confirm...
   name: 'Enter the following to confirm: {name}'
 
 region:
@@ -371,16 +372,18 @@ character:
       format: '{exp} - {expPercent}'
       tooltip:
         title: Character experience
-        desc: '<p>Left until level up: <strong>{remainExpToUp}</strong> exp.</p>'
+        desc: 'Left until level up: {remainExpToUp} exp.'
     expMultiplier:
       title: Exp. multiplier
       tooltip:
-        title: 'Experience multiplier. The maximum: {maxExpMulti}'
-        desc: '<p>To increase the multiplier, retire the character. <br /> The multiplier applies to all characters</p>'
+        title: Experience multiplier
+        maximum: 'The maximum: {maxExpMulti}'
+        desc: To increase the multiplier, retire the character. The multiplier applies to all characters
     level:
       title: Level
       tooltip:
-        title: 'The level of your character. The maximum: {maxLevel}'
+        title: The level of your character
+        maximum: 'The maximum: {maxLevel}'
         desc:
       lockedTooltip:
         title: Level progress is locked
@@ -398,7 +401,6 @@ character:
       title: Rank
       tooltip:
         title: Rank
-        # prettier-igno                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              re
         desc: '
           <p>Your rating assigns you a rank, which is tied directly to the autobalancer, using this it decides which team to place you on. The system we use is <strong>*Glicko2</strong>.</p>
           <p>Don''t fret over your rank! At the end of the day, it''s a tool we use to balance teams, it is not necessarily a perfect indicator of skill in Bannerlord.</p>
@@ -429,25 +431,23 @@ character:
       title: Active
       tooltip:
         title: Active character
-        desc: '
-          <p>Switch on to use this character in game.</p>
-          <p>If none of your characters was chosen as active, joining a server will create a new character.</p>
-          <p>Beware that you can create only one character per hour. After that you will get automatically kicked by the server.</p>'
+        desc:
+          - Switch on to use this character in game.
+          - 'If none of your characters was chosen as active, joining a server will create a new character.'
+          - Beware that you can create only one character per hour. After that you will get automatically kicked by the server.
     respecialize:
       title: Respecialize
       tooltip:
         title: Respecialize character
-        desc: '
-          <p>You can reset a character''s skills for free within <strong>{freeRespecPostWindow}</strong> of the last reset, and after <strong>{freeRespecInterval}</strong>.</p>
-          <p>The rest of the time resetting skills is paid, the cost decreases over time.</p>'
-        freeRespecPostWindowRemaining: '
-          <p>Remaining free skill reset time: <strong>{remainingTime}</strong></p>'
-        paidRespec: Reset the character's skills for {respecPrice}
-        freeRespecIntervalNext: '
-          <p>The next free skill reset via: <strong>{nextFreeAt}</strong></p>'
+        desc:
+          - 'You can reset a character''s skills for free within {freeRespecPostWindow} of the last reset, and after {freeRespecInterval}'
+          - 'The rest of the time resetting skills is paid, the cost decreases over time.'
+        freeRespecPostWindowRemaining: 'Remaining free skill reset time: {remainingTime}'
+        paidRespec: 'Reset the character''s skills for {respecPrice}'
+        freeRespecIntervalNext: 'The next free skill reset via: {nextFreeAt}'
       dialog:
         title: Respecialize character
-        desc: Are you sure you want to respecialize your character {character} for {respecializationPrice}? This action cannot be undone
+        desc: Are you sure you want to respecialize your character {character} for {respecializationPrice}?
       notify:
         success: Character respecialized
     retire:
@@ -484,7 +484,7 @@ character:
       link: delete your character
       dialog:
         title: Deleting character
-        desc: Are you sure you want to delete your character? This action cannot be undone
+        desc: Are you sure you want to delete your character?
       notify:
         success: Character deleted
 

@@ -170,6 +170,7 @@ you: Вы
 here: здесь
 not-found: Не найдено
 results-not-found: Результаты не найдены...
+action-undone: Это действие нельзя отменить!
 
 shortcuts:
   keys:
@@ -220,7 +221,7 @@ form:
     required: обязательно
 
 confirm:
-  placeholder: Имя
+  placeholder: Подтвердите...
   name: 'Введите следующее для подтверждения: {name}'
 
 region:
@@ -338,16 +339,18 @@ character:
       format: '{exp} - {expPercent}'
       tooltip:
         title: Опыт персонажа
-        desc: '<p>Осталось до следующего уровня: <strong>{remainExpToUp}</strong> оп.</p>'
+        desc: 'Осталось до следующего уровня: {remainExpToUp} оп.'
     expMultiplier:
       title: Множитель опыта
       tooltip:
-        title: 'Множитель опыта. Максимальное значение: {maxExpMulti}'
-        desc: '<p>Чтобы увеличить множитель, отправьте персонажа в отставку.<br /> Множитель распространяется на всех персонажей</p>'
+        title: 'Множитель опыта. '
+        maximum: 'Максимальное значение: {maxExpMulti}'
+        desc: 'Чтобы увеличить множитель, отправьте персонажа в отставку. Множитель распространяется на всех персонажей'
     level:
       title: Уровень
       tooltip:
-        title: 'Уровень вашего персонажа. Максимальный: {maxLevel}'
+        title: Уровень вашего персонажа
+        maximum: 'Максимальный: {maxLevel}'
         desc:
       lockedTooltip:
         title: Прогресс уровня заблокирован
@@ -398,20 +401,18 @@ character:
           <p>Если ни один из ваших персонажей не был выбран в качестве активного, то, присоединившись к серверу, вы создадите нового персонажа.</p>
           <p>Имейте в виду, что вы можете создать только одного персонажа в час. После этого вы будете автоматически выкинуты с сервера.</p>'
     respecialize:
-      title: Сброс навыков
+      title: Сброс
       tooltip:
-        title: Сброс навыков
-        desc: '
-          <p>Бесплатно сбросить навыки персонажа можно в течении <strong>{freeRespecPostWindow}</strong> после последнего сброса, а также спустя <strong>{freeRespecInterval}</strong>.</p>
-          <p>В остальное время сброс навыков платный, стоимость уменьшается со временем.</p>'
-        freeRespecPostWindowRemaining: '
-          <p>Оставшееся время бесплатного сброса навыков: <strong>{remainingTime}</strong></p>'
-        paidRespec: Сбросьте навыки персонажа за {respecPrice}
-        freeRespecIntervalNext: '
-          <p>Следующий бесплатный сброс навыков через: <strong>{nextFreeAt}</strong></p>'
+        title: Сброс навыков персонажа
+        desc:
+          - 'Бесплатно сбросить навыки персонажа можно в течении {freeRespecPostWindow} после последнего сброса, а также спустя {freeRespecInterval}'
+          - 'В остальное время сброс навыков платный, стоимость уменьшается со временем'
+        freeRespecPostWindowRemaining: 'Оставшееся время бесплатного сброса навыков: {remainingTime}'
+        paidRespec: 'Сбросьте навыки персонажа за {respecPrice}'
+        freeRespecIntervalNext: 'Следующий бесплатный сброс навыков через: {nextFreeAt}'
       dialog:
-        title: Сброс навыков
-        desc: Вы уверены что хотите сбросить навыки персонажа {character} за {respecializationPrice}? Это действие нельзя отменить
+        title: Сброс навыков персонажа
+        desc: Вы уверены что хотите сбросить навыки персонажа {character} за {respecializationPrice}?
       notify:
         success: Навыки персонажа успешно сброшены
     retire:
@@ -448,7 +449,7 @@ character:
       link: удалить вашего персонажа
       dialog:
         title: Удаление персонажа
-        desc: Вы уверены, что хотите удалить персонажа? Это действие нельзя отменить.
+        desc: Вы уверены, что хотите удалить персонажа?
       notify:
         success: Персонаж удален
 

@@ -58,7 +58,7 @@ useCharacterItemsProvider({
   updatingCharacterItems,
 })
 
-//
+// TODO: FIXME:
 const {
   state: characterCharacteristics,
   execute: loadCharacterCharacteristics,
@@ -70,7 +70,7 @@ const {
 
 useCharacterCharacteristicProvider({
   characterCharacteristics,
-  loadCharacterCharacteristics,
+  loadCharacterCharacteristics: () => loadCharacterItems(0, character.value.id),
 })
 
 // const { subscribe, unsubscribe } = usePollInterval()

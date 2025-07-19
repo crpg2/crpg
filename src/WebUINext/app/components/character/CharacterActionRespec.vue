@@ -51,47 +51,64 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
       </UButton>
 
       <template #content>
-        <div class="prose prose-invert">
-          <h5>{{ $t('character.settings.respecialize.tooltip.title') }}</h5>
-          <div
-            v-html="$t('character.settings.respecialize.tooltip.desc', {
-              freeRespecPostWindow: $t('dateTimeFormat.hh', { hours: freeRespecializePostWindowHours }),
-              freeRespecInterval: $t('dateTimeFormat.dd', { days: freeRespecializeIntervalDays }),
-            })"
-          />
-          <div
-            v-if="respecCapability.freeRespecWindowRemain > 0"
-            v-html="$t('character.settings.respecialize.tooltip.freeRespecPostWindowRemaining', {
-              remainingTime: $t('dateTimeFormat.dd:hh:mm', parseTimestamp(respecCapability.freeRespecWindowRemain)),
-            })"
-          />
-          <template v-else-if="respecCapability.price > 0">
+        <UiTooltipContent :title="$t('character.settings.respecialize.tooltip.title')">
+          <template #description>
             <i18n-t
               scope="global"
-              keypath="character.settings.respecialize.tooltip.paidRespec"
+              keypath="character.settings.respecialize.tooltip.desc[0]"
               tag="p"
             >
-              <template #respecPrice>
-                <AppCoin :value="respecCapability.price" />
+              <template #freeRespecPostWindow>
+                <strong>{{ $t('dateTimeFormat.hh', { hours: freeRespecializePostWindowHours }) }}</strong>
+              </template>
+              <template #freeRespecInterval>
+                <strong>{{ $t('dateTimeFormat.hh', { hours: freeRespecializeIntervalDays }) }}</strong>
               </template>
             </i18n-t>
 
-            <div
-              v-html="$t('character.settings.respecialize.tooltip.freeRespecIntervalNext', {
-                nextFreeAt: $t('dateTimeFormat.dd:hh:mm', parseTimestamp(respecCapability.nextFreeAt)),
-              }) "
-            />
+            <p>{{ $t('character.settings.respecialize.tooltip.desc[1]') }}</p>
+
+            <i18n-t
+              v-if="respecCapability.freeRespecWindowRemain > 0"
+              scope="global"
+              keypath="character.settings.respecialize.tooltip.freeRespecPostWindowRemaining"
+              tag="p"
+            >
+              <template #remainingTime>
+                <strong>{{ $t('dateTimeFormat.dd:hh:mm', { ...parseTimestamp(respecCapability.freeRespecWindowRemain) }) }}</strong>
+              </template>
+            </i18n-t>
+
+            <template v-else-if="respecCapability.price > 0">
+              <i18n-t
+                scope="global"
+                keypath="character.settings.respecialize.tooltip.paidRespec"
+                tag="p"
+              >
+                <template #respecPrice>
+                  <AppCoin :value="respecCapability.price" />
+                </template>
+              </i18n-t>
+
+              <i18n-t
+                scope="global"
+                keypath="character.settings.respecialize.tooltip.freeRespecIntervalNext"
+                tag="p"
+              >
+                <template #nextFreeAt>
+                  <strong>{{ $t('dateTimeFormat.dd:hh:mm', { ...parseTimestamp(respecCapability.nextFreeAt) }) }}</strong>
+                </template>
+              </i18n-t>
+            </template>
           </template>
-        </div>
+        </UiTooltipContent>
       </template>
     </UTooltip>
 
     <AppConfirmActionDialog
-      v-if="shownConfirmDialog"
-      open
+      :open="shownConfirmDialog"
       :title="$t('character.settings.respecialize.dialog.title')"
-      :name="character.name"
-      :confirm-label="$t('action.confirm')"
+      :confirm="character.name"
       @cancel="toggleConfirmDialog(false);"
       @confirm="() => {
         $emit('respec');
@@ -103,7 +120,7 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
         <i18n-t
           scope="global"
           keypath="character.settings.respecialize.dialog.desc"
-          tag="p"
+          tag="div"
         >
           <template #character>
             <CharacterMedia :character class="font-bold text-primary" />
