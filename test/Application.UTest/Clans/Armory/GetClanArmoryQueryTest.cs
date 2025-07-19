@@ -5,6 +5,7 @@ using Moq;
 using NUnit.Framework;
 
 namespace Crpg.Application.UTest.Clans.Armory;
+
 public class GetClanArmoryQueryTest : TestBase
 {
     private static readonly Mock<IActivityLogService> ActivityLogService = new() { DefaultValue = DefaultValue.Mock };
@@ -36,8 +37,9 @@ public class GetClanArmoryQueryTest : TestBase
 
         Assert.That(result.Errors, Is.Null);
         Assert.That(items.Count, Is.EqualTo(count));
-        Assert.That(item.UserItem, Is.Not.Null);
-        Assert.That(item.UserItem!.Item, Is.Not.Null);
-        Assert.That(item.BorrowedItem, Is.Not.Null);
+        Assert.That(item.UserItemId, Is.Not.Null);
+        Assert.That(item.UserId, Is.Not.Null);
+        Assert.That(item.Item, Is.Not.Null);
+        Assert.That(item.BorrowerUserId, Is.Not.Null);
     }
 }

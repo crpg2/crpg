@@ -61,7 +61,6 @@ public class ClansController : BaseController
     /// </summary>
     /// <param name="clan">Clan info.</param>
     /// <returns>The created clan.</returns>
-    /// <response code="201">Created.</response>
     /// <response code="400">Bad Request.</response>
     [HttpPost]
     public Task<ActionResult<Result<ClanViewModel>>> CreateClan([FromBody] CreateClanCommand clan)
@@ -82,8 +81,8 @@ public class ClansController : BaseController
     [HttpPut("{clanId}")]
     public Task<ActionResult<Result<ClanViewModel>>> UpdateClan([FromRoute] int clanId, [FromBody] UpdateClanCommand clan)
     {
-       clan = clan with { UserId = CurrentUser.User!.Id, ClanId = clanId };
-       return ResultToActionAsync(Mediator.Send(clan));
+        clan = clan with { UserId = CurrentUser.User!.Id, ClanId = clanId };
+        return ResultToActionAsync(Mediator.Send(clan));
     }
 
     /// <summary>

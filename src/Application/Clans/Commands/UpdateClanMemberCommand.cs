@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Clans.Models;
 using Crpg.Application.Common.Interfaces;
@@ -14,8 +15,13 @@ namespace Crpg.Application.Clans.Commands;
 
 public record UpdateClanMemberCommand : IMediatorRequest<ClanMemberViewModel>
 {
+    [JsonIgnore]
     public int UserId { get; init; }
+
+    [JsonIgnore]
     public int ClanId { get; init; }
+
+    [JsonIgnore]
     public int MemberId { get; init; }
     public ClanMemberRole Role { get; init; }
 
