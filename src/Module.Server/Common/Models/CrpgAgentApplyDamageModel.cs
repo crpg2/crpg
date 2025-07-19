@@ -390,7 +390,7 @@ internal class CrpgAgentApplyDamageModel : MultiplayerAgentApplyDamageModel
             ? Math.Max(defenderShieldSkill * 6 + 3, defenderStrengthSkill)
             : defenderStrengthSkill;
         int randomNumber = MBRandom.RandomInt(0, 1000);
-        return randomNumber / 10f < Math.Pow(attackerPower / defenderDefendPower / 2.5f, 1.8f) * 100f;
+        return randomNumber / 10f < Math.Pow(attackerPower / defenderDefendPower / 2.6f, 2.6f) * 100f;
     }
 
     // MissionCombatMechanicsHelper.cs/DecideMountRearedByBlow
