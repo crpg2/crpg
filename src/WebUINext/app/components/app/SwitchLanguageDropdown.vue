@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from '@nuxt/ui'
 
-import { useI18n } from 'vue-i18n'
-
 defineSlots<{
   default: (
     props: {
@@ -12,9 +10,7 @@ defineSlots<{
   ) => any
 }>()
 
-const { locale, availableLocales, setLocale } = useI18n()
-
-const { t } = useI18n()
+const { t, locale, availableLocales, setLocale } = useI18n()
 
 const items = computed(() =>
   availableLocales.map(l => ({

@@ -76,18 +76,7 @@
     --color-crpg-neutral-900: #171717;
     --color-crpg-neutral-950: #171717;
 
-    /* --color-crpg-stone-50: #D0D0CD;
-    --color-crpg-stone-100: #A3A39F;
-    --color-crpg-stone-200: #757570;
-    --color-crpg-stone-300: #464643; */
-    /* --color-crpg-stone-400: #171716; */
-    /* --color-crpg-stone-400: #464643;
-    --color-crpg-stone-500: #151514;
-    --color-crpg-stone-600: #121211;
-    --color-crpg-stone-700: #10100F;
-    --color-crpg-stone-800: #0D0D0C;
-    --color-crpg-stone-900: #0A0A0A;
-    --color-crpg-stone-950: #080807; */
+    --color-notification: #53bc96;
 
     --text-*: initial;
     --text-2xs: 0.625rem; /* 10px */

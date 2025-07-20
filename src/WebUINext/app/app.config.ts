@@ -240,5 +240,14 @@ export default defineAppConfig({
         // },
       ],
     },
+    badge: {
+      compoundVariants: [
+        {
+          color: 'primary',
+          variant: 'outline',
+          class: 'ring-default',
+        },
+      ],
+    },
   },
 })

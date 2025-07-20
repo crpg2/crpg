@@ -13,7 +13,7 @@
   "dependencies": {
     "@antfu/eslint-config": "^4.17.0",
     "@hey-api/nuxt": "^0.2.0",
-    "@hey-api/openapi-ts": "^0.78.3",
+    "@hey-api/openapi-ts": "^0.79.0",
     "@internationalized/date": "^3.8.2",
     "@number-flow/vue": "^0.4.8",
     "@nuxt/eslint": "^1.6.0",

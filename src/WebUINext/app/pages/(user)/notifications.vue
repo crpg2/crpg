@@ -21,9 +21,7 @@ const {
 <template>
   <UContainer>
     <div class="mx-auto max-w-2xl py-12">
-      <h1 class="mb-14 text-center text-xl text-content-100">
-        {{ $t('user.notifications.title') }}
-      </h1>
+      <UiHeading :title="$t('user.notifications.title')" class="mb-14 text-center" />
 
       <div v-if="!isEmpty" class="mb-4 flex justify-end gap-4">
         <UButton

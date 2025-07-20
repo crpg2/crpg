@@ -32,16 +32,15 @@ const classes = computed(() => variants({ size }))
 </script>
 
 <template>
-  <UTooltip :text="$t('user.field.heirloom')">
-    <UiDataCell>
-      <template #leftContent>
-        <UIcon name="crpg:blacksmith" :class="classes.icon()" />
+  <UTooltip :text="$t('user.field.heirloom')" class="text-primary">
+    <UiDataMedia icon="crpg:blacksmith">
+      <template #default>
+        <slot>
+          <span v-if="point !== undefined" :class="classes.label()">
+            {{ $n(point) }}
+          </span>
+        </slot>
       </template>
-      <slot>
-        <span v-if="point !== undefined" :class="classes.label()">
-          {{ $n(point) }}
-        </span>
-      </slot>
-    </UiDataCell>
+    </UiDataMedia>
   </UTooltip>
 </template>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { AvatarProps } from '@nuxt/ui'
+
 import { tv } from 'tailwind-variants'
 
 import type { UserPublic } from '~/models/user'
@@ -43,48 +45,60 @@ const variants = tv({
   },
 })
 
-// TODO: use avatar props when resolve this issue https://github.com/nuxt/ui/issues/3973
-type AvatarSize = '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
-
-const avatarSize = computed(() => ({ sm: 'xs', md: 'md', lg: 'xl', xl: '3xl' } satisfies Record<Size, AvatarSize>)[size])
+const avatarSize = computed(() => ({
+  sm: 'xs',
+  md: 'lg',
+  lg: 'xl',
+  xl: '3xl',
+} satisfies Record<Size, AvatarProps['size']>)[size])
 
 const classes = computed(() => variants({ size }))
 </script>
 
 <template>
-  <div class="inline-flex items-center gap-1.5 align-middle">
-    <UAvatar
-      :src="user.avatar || ''"
-      :size="avatarSize"
-      :alt="user.name"
-      :class="[{ 'ring-2 ring-status-success': isSelf }]"
-    />
+  <UiDataCell inline>
+    <template #leftContent>
+      <UAvatar
+        :src="user.avatar || ''"
+        :size="avatarSize"
+        :alt="user.name"
+        :class="[{ 'ring-2 ring-success': isSelf }]"
+      />
+    </template>
 
-    <UserClan
-      v-if="!hiddenClan && user.clanMembership"
-      :clan="user.clanMembership.clan"
-      :size
-      :clan-role="user.clanMembership.role"
-    />
+    <div>
+      <UiDataMedia layout="reverse">
+        <template #icon>
+          <UserPlatform
+            v-if="hiddenPlatform"
+            :platform="user.platform"
+            size="sm"
+            :platform-user-id="user.platformUserId"
+            :user-name="user.name"
+          />
+        </template>
 
-    <div
-      v-if="!hiddenTitle"
-      class="max-w-52 truncate"
-      :class="classes.name()"
-      :title="user.name"
-    >
-      {{ user.name }}
-      <template v-if="isSelf">
-        ({{ $t('you') }})
-      </template>
+        <div
+          v-if="!hiddenTitle"
+          class="max-w-52 truncate"
+          :class="classes.name()"
+          :title="user.name"
+        >
+          {{ user.name }}
+          <template v-if="isSelf">
+            ({{ $t('you') }})
+          </template>
+        </div>
+      </UiDataMedia>
+
+      <div>
+        <UserClan
+          v-if="!hiddenClan && user.clanMembership"
+          :clan="user.clanMembership.clan"
+          size="sm"
+          :clan-role="user.clanMembership.role"
+        />
+      </div>
     </div>
-
-    <UserPlatform
-      v-if="!hiddenPlatform"
-      :platform="user.platform"
-      :size
-      :platform-user-id="user.platformUserId"
-      :user-name="user.name"
-    />
-  </div>
+  </UiDataCell>
 </template>

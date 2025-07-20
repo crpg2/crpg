@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
 const variants = tv({
   slots: {
     root: 'inset-0 flex items-center justify-center overflow-hidden',
-    overlay: 'absolute inset-0 bg-base-100/50',
+    overlay: 'absolute inset-0 bg-elevated/25',
     icon: 'animate-spin',
   },
   variants: {

@@ -15,6 +15,10 @@ const { clan, clanRole, size = 'md' } = defineProps<{
 
 const variants = tv({
   slots: {
+    root: `
+      inline-flex items-center gap-0.5 align-middle
+      hover:text-highlighted
+    `,
     name: '',
     roleIcon: '',
     tagIcon: '',
@@ -49,10 +53,7 @@ const classes = computed(() => variants({ size }))
 
 <template>
   <NuxtLink
-    class="
-      inline-flex items-center gap-1.5 align-middle
-      hover:text-highlighted
-    "
+    :class="classes.root()"
     :to="{ name: 'clans-id', params: { id: clan.id } }"
   >
     <UTooltip

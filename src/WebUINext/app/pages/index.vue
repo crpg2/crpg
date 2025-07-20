@@ -80,7 +80,6 @@ Promise.all([
         class="
           mx-auto flex w-full flex-col items-center justify-center gap-8
           lg:w-1/2
-          2xl:w-1/3
         "
       >
         <UiHeading>

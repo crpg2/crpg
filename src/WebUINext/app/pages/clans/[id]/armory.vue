@@ -181,7 +181,7 @@ Promise.all([
               inset
               size="2xl"
               :show="hideOwnedItemsModel || showOnlyAvailableItems"
-              :ui="{ base: 'bg-[#53bc96]' }"
+              :ui="{ base: 'bg-[var(--color-notification)]' }"
             >
               <UButton
                 variant="subtle"

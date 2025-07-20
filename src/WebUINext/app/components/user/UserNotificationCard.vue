@@ -25,30 +25,27 @@ const isUnread = computed(() => notification.state === NOTIFICATION_STATE.Unread
     variant="subtle"
     :ui="{
       footer: 'flex items-end gap-4',
-      body: 'relative flex items-start gap-4',
+      body: 'relative',
     }"
   >
-    <div class="flex size-8 items-center justify-center gap-1.5 rounded-full bg-accented">
-      <UiSpriteSymbol
-        name="logo"
-        class="w-3/4"
+    <UiDataCell>
+      <template #leftContent>
+        <UAvatar icon="crpg:logo" />
+      </template>
+      <AppMetadataRender
+        :keypath="`notification.tpl.${notification.type}`"
+        :metadata="notification.metadata"
+        :dict
+        class="flex-1 pr-8"
       />
-    </div>
-
-    <AppMetadataRender
-      :keypath="`notification.tpl.${notification.type}`"
-      :metadata="notification.metadata"
-      :dict
-      class="flex-1 pr-8"
-    />
+    </UiDataCell>
 
     <UTooltip v-if="isUnread" :text="$t('user.notifications.unreadNotification')">
       <UIcon
         name="crpg:item-rank-duotone"
-        class="absolute top-3 right-3 z-10 size-4 outline-0 select-none"
-        :style="{
-          color: '#53bc96',
-        }"
+        class="
+          absolute top-3 right-3 z-10 size-4 text-[var(--color-notification)] outline-0 select-none
+        "
       />
     </UTooltip>
 

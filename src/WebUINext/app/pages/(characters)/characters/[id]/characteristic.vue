@@ -76,11 +76,11 @@ const {
   isLoading: respecializingCharacter,
 } = useAsyncCallback(async () => {
   await respecializeCharacter(character.value.id)
-  loadCharacterCharacteristics(0, character.value.id)
+  loadCharacterCharacteristics()
 })
 
 const fetchPageData = (characterId: number) => Promise.all([
-  loadCharacterCharacteristics(0, characterId),
+  loadCharacterCharacteristics(),
 ])
 
 onBeforeRouteUpdate((to, from) => {
