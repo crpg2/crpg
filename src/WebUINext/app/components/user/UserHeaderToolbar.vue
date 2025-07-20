@@ -83,7 +83,6 @@ const items = computed<DropdownMenuItem[][]>(() => [
       <NumberFlow
         :value="user.gold"
         locales="en-US"
-        class="leading-none font-bold text-primary"
       />
     </AppCoin>
 

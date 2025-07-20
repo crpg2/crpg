@@ -61,7 +61,7 @@ const [shownUpgradesModal, toggleUpgradesModal] = useToggle()
   <ItemDetail
     :item="userItem.item"
     :compare-result="compareResult"
-    :class="{ 'bg-primary/15': userItem.isPersonal }"
+    :class="{ 'bg-primary/25': userItem.isPersonal }"
   >
     <template #badges-bottom-right>
       <UTooltip v-if="equipped" :text="$t('character.inventory.item.equipped')">
@@ -152,7 +152,7 @@ const [shownUpgradesModal, toggleUpgradesModal] = useToggle()
                   tag="div"
                 >
                   <template #penalty>
-                    <span class="font-bold text-status-danger">
+                    <span class="font-bold text-error">
                       {{ $n(itemSellCostPenalty, 'percent', { minimumFractionDigits: 0 }) }}
                     </span>
                   </template>

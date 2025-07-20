@@ -29,7 +29,7 @@ const {
 
 <template>
   <div
-    class="group relative flex h-28 items-center justify-center rounded-md bg-muted ring-2"
+    class="group relative flex h-28 items-center justify-center rounded-md bg-elevated ring-2"
     :class="[
       [available ? 'ring-default' : `
         ring-transparent
@@ -46,7 +46,7 @@ const {
       v-if="userItem !== undefined"
       :item="userItem.item"
       class="h-full w-full cursor-grab !ring-0"
-      :class="{ 'bg-primary/30': userItem.isPersonal }"
+      :class="{ 'bg-primary/25': userItem.isPersonal }"
       data-aq-character-slot-item-thumb
     >
       <template #badges-top-right>
@@ -66,16 +66,11 @@ const {
         :name="`crpg:${placeholder}`"
         data-aq-character-slot-item-placeholder
       />
-      <!-- TODO: FIXME: -->
       <template #content>
-        <div>
-          <div>
-            {{ $t(`character.doll.slot.${itemSlot}.title`) }}
-          </div>
-          <div v-if="$t(`character.doll.slot.${itemSlot}.description`) !== ''">
-            {{ $t(`character.doll.slot.${itemSlot}.description`) }}
-          </div>
-        </div>
+        <UiTooltipContent
+          :title="$t(`character.doll.slot.${itemSlot}.title`)"
+          :description="$t(`character.doll.slot.${itemSlot}.description`)"
+        />
       </template>
     </UTooltip>
 
@@ -87,9 +82,10 @@ const {
         class="absolute top-0 right-0 translate-x-1/2 -translate-y-3/4 cursor-default"
       >
         <UIcon
-          name="crpg:shield-duotone" class="
-            size-10 text-dimmed
-            group-hover:text-muted
+          name="crpg:shield-duotone"
+          class="
+            size-10 text-muted
+            group-hover:text-toned
           "
         />
         <span

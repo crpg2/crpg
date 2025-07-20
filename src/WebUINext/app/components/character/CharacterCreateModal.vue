@@ -30,8 +30,8 @@ const refreshPage = () => navigateTo({
             <template #refresh>
               <span
                 class="
-                  cursor-pointer text-primary underline
-                  hover:no-underline
+                  cursor-pointer text-primary
+                  hover:underline
                 "
                 @click="refreshPage"
               >

@@ -35,8 +35,20 @@ const canSetCharacterForTournament = computed(() => canSetCharacterForTournament
       />
 
       <template #content>
-        <div class="prose prose-invert">
-          <h5 class="text-content-100">
+        <div class="prose">
+          <i18n-t
+            v-if="!canSetCharacterForTournament"
+            scope="global"
+            keypath="character.settings.tournament.tooltip.required"
+            class="font-bold text-warning"
+            tag="p"
+          >
+            <template #requiredLevel>
+              <span>{{ `<${tournamentLevelThreshold}` }}</span>
+            </template>
+          </i18n-t>
+
+          <h5>
             {{ $t('character.settings.tournament.tooltip.title') }}
           </h5>
 
@@ -46,21 +58,9 @@ const canSetCharacterForTournament = computed(() => canSetCharacterForTournament
             tag="p"
           >
             <template #tournamentLevel>
-              <span class="text-sm font-bold text-content-100">
+              <span class="text-sm font-bold text-highlighted">
                 {{ tournamentLevelThreshold }}
               </span>
-            </template>
-          </i18n-t>
-
-          <i18n-t
-            v-if="!canSetCharacterForTournament"
-            scope="global"
-            keypath="character.settings.tournament.tooltip.requiredDesc"
-            class="text-status-danger"
-            tag="p"
-          >
-            <template #requiredLevel>
-              <span class="text-xs font-bold">{{ `<${tournamentLevelThreshold}` }}</span>
             </template>
           </i18n-t>
         </div>
@@ -68,10 +68,9 @@ const canSetCharacterForTournament = computed(() => canSetCharacterForTournament
     </UTooltip>
 
     <AppConfirmActionDialog
-      v-if="shownConfirmDialog"
-      open
+      :open="shownConfirmDialog"
       :title="$t('character.settings.tournament.dialog.title')"
-      :name="character.name"
+      :confirm="character.name"
       :confirm-label="$t('action.confirm')"
       @cancel="toggleConfirmDialog(false);"
       @confirm="() => {

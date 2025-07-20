@@ -68,7 +68,7 @@ help:
     title: Frequently Asked Questions
     navTitle: FAQ
     intro: '
-      <p>You''ll find a list of common questions here. Ask your question <a href=''https://discord.com/channels/279063743839862805/1044686358066778112'' target=''_blank''>in our Discord</a>!</p>'
+      <p>You''ll find a list of common questions here. Ask your question <a href=''https://discord.com/channels/279063743839862805/1044686358066778112'' target=''_blank''>in our Discord</a></p>'
     list:
       - q: How do strength requirements work?
         a: You can wear whatever you like, however, if you do not hold the requirement to wield said item you will face <strong>penalties</strong>.
@@ -454,17 +454,17 @@ character:
       title: Retire
       tooltip:
         title: Retire character
-        descTpl: '{desc1} {desc2}'
-        desc1: 'Reset character to level {resetLevel} to grant a bonus experience multiplier {multiplierBonus} (max: {maxMultiplierBonus}).'
-        desc2: 'You will get heirloom points {heirloom} depending on the level of your character:'
-        requiredDesc: '{requiredLevel} level required'
+        desc:
+          - 'Reset character to level {resetLevel} to grant a bonus experience multiplier {multiplierBonus} (max: {maxMultiplierBonus})'
+          - 'You will get heirloom points {heirloom} depending on the level of your character'
+        required: '{requiredLevel} level required'
       loomPointsTable:
         cols:
           level: Level
           loomsPoints: Points
       dialog:
         title: Retire character
-        desc: Are you sure you want to retire your character? This action cannot be undone
+        desc: Are you sure you want to retire your character?
         reward: 'You will get: {heirloom}, {multiplierBonus} exp. multiplier. The char will be reset to level {resetLevel}'
       notify:
         success: Character retired
@@ -473,7 +473,7 @@ character:
       tooltip:
         title: Tournament character
         desc: Sets this character to be usable in tournament events ONLY. Upgrades its level to {tournamentLevel} and locks its experience permanently.
-        requiredDesc: '{requiredLevel} level required'
+        required: '{requiredLevel} level required'
       dialog:
         title: Tournament character
         desc: Are you sure you wish to convert your character into a tournament event character? You CANNOT use this character on cRPG's main servers and THIS ACTION CANNOT BE UNDONE.

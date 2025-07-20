@@ -25,14 +25,7 @@ const items = ref<TabsItem[]>([
 </script>
 
 <template>
-  <UModal
-    :title="$t('installation.title')"
-    :close="{
-      size: 'sm',
-      color: 'secondary',
-      variant: 'solid',
-    }"
-  >
+  <UModal :title="$t('installation.title')">
     <slot />
 
     <template #body>

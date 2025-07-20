@@ -37,13 +37,17 @@ export default defineAppConfig({
       },
     },
     tabs: {
-      variants: {
-        size: {
-          md: {
-            trigger: 'h-[2.125rem]', // same height (42px) with MD input and button
+      compoundVariants: [
+        {
+          color: 'neutral',
+          variant: 'pill',
+          class: {
+            indicator: 'bg-accented',
+            trigger: 'data-[state=active]:text-accented',
           },
         },
-      },
+      ],
+
     },
     card: {
       variants: {
@@ -212,6 +216,11 @@ export default defineAppConfig({
           color: 'primary',
           variant: 'outline',
           class: 'ring-default',
+        },
+        {
+          color: 'neutral',
+          variant: 'outline',
+          class: 'bg-transparent',
         },
         // {
         //   size: 'xl',

@@ -1,42 +1,21 @@
 <script setup lang="ts">
-import { tv } from 'tailwind-variants'
+import type { DataMediaSize } from '~/components/ui/DataMedia.vue'
 
-const { size = 'md' } = defineProps<{
+defineProps<{
   point?: number
-  size?: 'md' | 'lg' | 'xl'
+  size?: DataMediaSize
 }>()
-
-const variants = tv({
-  slots: {
-    icon: 'text-primary',
-    label: 'font-bold',
-  },
-  variants: {
-    size: {
-      md: {
-        icon: 'size-4',
-        label: '',
-      },
-      lg: {
-        icon: 'size-6',
-        label: '',
-      },
-      xl: {
-        icon: 'size-8',
-        label: 'text-lg',
-      },
-    },
-  },
-})
-const classes = computed(() => variants({ size }))
 </script>
 
 <template>
-  <UTooltip :text="$t('user.field.heirloom')" class="text-primary">
+  <UTooltip :text="$t('user.field.heirloom')" class="font-bold text-primary">
     <UiDataMedia icon="crpg:blacksmith">
-      <template #default>
-        <slot>
-          <span v-if="point !== undefined" :class="classes.label()">
+      <template #default="{ classes }">
+        <slot v-bind="{ classes }">
+          <span
+            v-if="point !== undefined"
+            :class="classes()"
+          >
             {{ $n(point) }}
           </span>
         </slot>

@@ -11,10 +11,9 @@ const { thumb } = useItem(() => item)
 </script>
 
 <template>
-  <article
+  <div
     class="
-      relative h-24 items-center justify-center space-y-1 rounded-md bg-muted ring-2
-      ring-transparent
+      relative h-24 items-center justify-center rounded-md bg-elevated ring-2 ring-transparent
       hover:ring-accented
     "
   >
@@ -40,5 +39,5 @@ const { thumb } = useItem(() => item)
     <div class="absolute right-1 bottom-1 z-10 flex items-center gap-1">
       <slot name="badges-bottom-right" />
     </div>
-  </article>
+  </div>
 </template>

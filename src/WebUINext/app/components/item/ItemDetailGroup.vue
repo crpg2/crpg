@@ -20,7 +20,7 @@ const {
         y: computeDetailCardYPosition(oi.bound.y),
       }"
       class="
-        fixed cursor-move rounded-md bg-default shadow-lg ring-info select-none
+        fixed cursor-move rounded-md bg-default shadow-lg ring-muted select-none
         active:ring-2
       "
     >
@@ -28,8 +28,8 @@ const {
         class="!absolute -top-3 -right-3 z-10 cursor-pointer"
         icon="crpg:close"
         size="sm"
-        color="secondary"
-        variant="solid"
+        color="neutral"
+        variant="soft"
         @click="closeItemDetail(oi)"
       />
       <slot v-bind="oi" />
