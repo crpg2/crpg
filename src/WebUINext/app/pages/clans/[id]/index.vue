@@ -164,7 +164,7 @@ const columns: TableColumn<ClanMember>[] = [
     // @ts-expect-error TODO:
     header: ({ column }) => h(UInput, {
       'icon': 'crpg:search',
-      'variant': 'ghost',
+      'variant': 'soft',
       'size': 'xs',
       'placeholder': t('clan.table.column.name'),
       'modelValue': column.getFilterValue() as string,
@@ -217,7 +217,6 @@ const columns: TableColumn<ClanMember>[] = [
             <template #leftContent>
               <UIcon name="crpg:hash" class="size-6" />
             </template>
-            <!-- TODO: text view cmp? -->
             <span data-aq-clan-info="tag">{{ clan.tag }}</span>
           </UiDataCell>
 
@@ -258,7 +257,7 @@ const columns: TableColumn<ClanMember>[] = [
 
         <div
           v-if="clan.description"
-          class="mt-7 overflow-x-hidden text-center text-content-400"
+          class="mt-7 text-center text-toned"
           data-aq-clan-info="description"
         >
           {{ clan.description }}
@@ -282,7 +281,7 @@ const columns: TableColumn<ClanMember>[] = [
           <UButton
             v-if="canManageApplications"
             :to="{ name: 'clans-id-applications', params: { id: clanId } }"
-            color="primary"
+            color="neutral"
             variant="outline"
             size="xl"
             data-aq-clan-action="clan-application"
@@ -291,7 +290,7 @@ const columns: TableColumn<ClanMember>[] = [
           <UButton
             v-if="canUpdateClan"
             :to="{ name: 'clans-id-update', params: { id: clanId } }"
-            color="secondary"
+            color="neutral"
             variant="outline"
             size="xl"
             icon="crpg:settings"

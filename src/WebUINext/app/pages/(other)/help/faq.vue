@@ -1,20 +1,6 @@
 <script setup lang="ts">
-import { UiDecorSeparator } from '#components'
-
-const { t } = useI18n()
-
-const qaCount = 12
-
-// TODO: refactoring
-const qaList = computed(() =>
-  Array.from({ length: qaCount })
-    .fill(0)
-    .map((_, idx) => ({
-      a: t(`help.FAQ.list[${idx}].a`),
-      q: t(`help.FAQ.list[${idx}].q`),
-    }))
-    .filter((qa, idx) => qa.q !== `help.FAQ.list[${idx}].q`),
-)
+interface FaqItem { q: string, a: string }
+const faqList = $tm('help.FAQ.list') as FaqItem[]
 </script>
 
 <template>
@@ -29,18 +15,15 @@ const qaList = computed(() =>
         v-html="$t('help.FAQ.intro')"
       />
 
-      <UiDecorSeparator />
-
-      <UCard
-        v-for="({ q, a }, idx) in qaList" :key="idx"
-        variant="outline"
-      >
+      <UCard v-for="(item, idx) in faqList" :key="idx">
         <template #header>
           <h4 class="!m-0">
-            {{ `${idx + 1}. ${q}` }}
+            {{ `${idx + 1}. ${$rt(item.q)}` }}
           </h4>
         </template>
-        <div v-html="a" />
+        <div class="prose">
+          <p class="prose" v-html="$rt(item.a)" />
+        </div>
       </UCard>
     </div>
   </div>

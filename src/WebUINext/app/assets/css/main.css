@@ -74,9 +74,10 @@
     --color-crpg-neutral-700: #464643;
     --color-crpg-neutral-800: #2F2F2C;
     --color-crpg-neutral-900: #171717;
-    --color-crpg-neutral-950: #171717;
+    --color-crpg-neutral-950: #0f0f0e;
 
     --color-notification: #53bc96;
+    --color-gold: #C99E34;
 
     --text-*: initial;
     --text-2xs: 0.625rem; /* 10px */
@@ -113,10 +114,9 @@
 
 :root {
     --ui-radius: 0.75rem;
-    /* --ui-bg: var(--color-bg-main); */
     --ui-container: var(--container-8xl);
-
-    --ui-bg-elevated: var(--ui-color-neutral-800);
+    --ui-bg: var(--ui-color-neutral-950);
+    --ui-bg-elevated: var(--ui-color-neutral-900);
 }
 
 body {

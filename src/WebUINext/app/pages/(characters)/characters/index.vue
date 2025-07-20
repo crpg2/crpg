@@ -27,7 +27,7 @@ definePageMeta({
       <UiDecorSeparator />
 
       <div class="prose text-center">
-        <h3 class="text-xl">
+        <h3>
           {{ $t('character.empty.title') }}
         </h3>
         <p>{{ $t('character.empty.desc') }}</p>

@@ -49,17 +49,23 @@ const weaponClassOptions = computed(() => {
     v-model="itemType"
     :items="itemTypeOptions"
     :content="false"
-    color="secondary"
+    color="neutral"
     size="xl"
     :orientation
     :ui="{
       list: 'w-auto',
       root: 'flex-row',
-      trigger: ['min-w-16 h-16 data-[state=active]:text-primary', orientation === 'vertical' ? 'flex justify-center' : ''],
+      trigger: [
+        'min-w-12 h-12 p-1.5',
+        orientation === 'vertical' ? 'flex justify-center' : '',
+      ],
       leadingIcon: 'size-7',
     }"
   >
-    <template v-if="hasWeaponClassesByItemType(itemType) && Boolean(weaponClassOptions.length)" #default="{ item }">
+    <template
+      v-if="hasWeaponClassesByItemType(itemType) && Boolean(weaponClassOptions.length)"
+      #default="{ item }"
+    >
       <div v-if="item.value === itemType && weaponClass" class="flex items-center">
         <UIcon name="crpg:chevron-right" />
         <UTabs
@@ -73,6 +79,7 @@ const weaponClassOptions = computed(() => {
             list: 'w-auto',
             root: 'flex-row',
             leadingIcon: 'size-7',
+            trigger: 'p-1.5',
             indicator: 'hidden',
           }"
         />

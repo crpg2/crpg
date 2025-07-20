@@ -47,7 +47,6 @@ const { gameServerStats, showLabel = false } = defineProps<{
               :value="gameServerStats.total.playingCount"
               :plugins="[continuous]"
               locales="en-US"
-              class="min-w-8"
               will-change
             />
           </template>
@@ -56,7 +55,6 @@ const { gameServerStats, showLabel = false } = defineProps<{
 
       <div
         v-else
-        class="w-8"
         data-aq-online-players-count
       >
         <NumberFlow

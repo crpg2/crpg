@@ -7,7 +7,7 @@ defineProps<NuxtLinkProps>()
 <template>
   <UButton
     :to
-    color="secondary"
+    color="neutral"
     variant="outline"
     size="xl"
     icon="crpg:arrow-left"

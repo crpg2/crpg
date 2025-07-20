@@ -45,7 +45,7 @@ const renderUserClan = (clanId: number) => {
 const renderUser = (userId: number) => {
   const user = getUserById(userId)
   return user
-    ? slots?.user?.({ user }) || h(UserMedia, { user, size: 'sm' })
+    ? slots?.user?.({ user }) || h(UserMedia, { user, inline: true, size: 'sm' })
     : renderStrong(String(userId))
 }
 

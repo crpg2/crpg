@@ -39,7 +39,7 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
       root: 'w-80',
       header: 'relative !p-0 h-40',
       body: '',
-      footer: 'bg-elevated !p-2',
+      footer: '!p-2',
     }"
   >
     <template #header>

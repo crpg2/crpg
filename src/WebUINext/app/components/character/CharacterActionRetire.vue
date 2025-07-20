@@ -4,6 +4,7 @@ import type { TableColumn } from '@nuxt/ui'
 import {
   experienceMultiplierByGeneration,
   maxExperienceMultiplierForGeneration,
+  minimumLevel,
   minimumRetirementLevel,
 } from '~root/data/constants.json'
 
@@ -63,64 +64,50 @@ const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
 
     <template #content>
       <div class="space-y-3">
-        <div class="prose prose-invert">
+        <div class="prose">
           <i18n-t
             v-if="!canRetire"
             scope="global"
-            keypath="character.settings.retire.tooltip.requiredDesc"
-            class="text-status-danger"
+            keypath="character.settings.retire.tooltip.required"
+            class="font-bold text-warning"
             tag="p"
           >
-            {{ $t('character.settings.retire.tooltip.required') }}
             <template #requiredLevel>
-              <span class="font-bold">{{ minimumRetirementLevel }}+</span>
+              <span>{{ minimumRetirementLevel }}+</span>
             </template>
           </i18n-t>
 
-          <h3 class="text-content-100">
+          <h5>
             {{ $t('character.settings.retire.tooltip.title') }}
-          </h3>
+          </h5>
 
           <i18n-t
             scope="global"
-            keypath="character.settings.retire.tooltip.descTpl"
+            keypath="character.settings.retire.tooltip.desc[0]"
+            tag="p"
           >
-            <template #desc1>
-              <i18n-t
-                scope="global"
-                keypath="character.settings.retire.tooltip.desc1"
-                tag="p"
-              >
-                <template #resetLevel>
-                  <span class="font-bold text-status-danger">1</span>
-                </template>
-                <template #multiplierBonus>
-                  <span class="font-bold text-status-success">
-                    +{{ $n(experienceMultiplierByGeneration, 'percent', { minimumFractionDigits: 0 }) }}
-                  </span>
-                </template>
-                <template #maxMultiplierBonus>
-                  <span class="text-content-100">
-                    +{{ $n(maxExperienceMultiplierForGeneration - 1, 'percent', { minimumFractionDigits: 0 }) }}
-                  </span>
-                </template>
-              </i18n-t>
+            <template #resetLevel>
+              <span class="font-bold text-highlighted">{{ minimumLevel }}</span>
             </template>
+            <template #multiplierBonus>
+              <span class="font-bold text-success">
+                +{{ $n(experienceMultiplierByGeneration, 'percent', { minimumFractionDigits: 0 }) }}
+              </span>
+            </template>
+            <template #maxMultiplierBonus>
+              <span class="font-bold text-success">
+                +{{ $n(maxExperienceMultiplierForGeneration - 1, 'percent', { minimumFractionDigits: 0 }) }}
+              </span>
+            </template>
+          </i18n-t>
 
-            <template #desc2>
-              <i18n-t
-                scope="global"
-                keypath="character.settings.retire.tooltip.desc2"
-                tag="p"
-              >
-                <template #heirloom>
-                  <UIcon
-                    name="crpg:blacksmith" class="
-                      inline-block size-6 text-primary
-                    "
-                  />
-                </template>
-              </i18n-t>
+          <i18n-t
+            scope="global"
+            keypath="character.settings.retire.tooltip.desc[1]"
+            tag="p"
+          >
+            <template #heirloom>
+              <UIcon name="crpg:blacksmith" class="inline-block size-6 text-primary" />
             </template>
           </i18n-t>
         </div>
@@ -138,10 +125,9 @@ const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
   </UTooltip>
 
   <AppConfirmActionDialog
-    v-if="shownConfirmDialog"
-    open
+    :open="shownConfirmDialog"
     :title="$t('character.settings.respecialize.dialog.title')"
-    :name="character.name"
+    :confirm="character.name"
     :confirm-label="$t('action.confirm')"
     @cancel="toggleConfirmDialog(false);"
     @confirm="() => {
@@ -151,46 +137,26 @@ const columns: TableColumn<HeirloomPointByLevelAggregation>[] = [
     @update:open="toggleConfirmDialog(false)"
   >
     <template #description>
-      <p>
-        {{ $t('character.settings.retire.dialog.desc') }}
-      </p>
-      <i18n-t
-        scope="global"
-        keypath="character.settings.retire.dialog.reward"
-        tag="p"
-      >
-        <template #heirloom>
-          <AppLoom :point="heirloomPointByLevel" />
-        </template>
-        <template #multiplierBonus>
-          <span class="font-bold text-success">
-            +{{ $n(experienceMultiplierBonus, 'percent', { minimumFractionDigits: 0 }) }}
-          </span>
-        </template>
-        <template #resetLevel>
-          <span class="font-bold text-error">1</span>
-        </template>
-      </i18n-t>
+      <div>
+        <p>{{ $t('character.settings.retire.dialog.desc') }}</p>
+        <i18n-t
+          scope="global"
+          keypath="character.settings.retire.dialog.reward"
+          tag="p"
+        >
+          <template #heirloom>
+            <AppLoom :point="heirloomPointByLevel" />
+          </template>
+          <template #multiplierBonus>
+            <span class="font-bold text-success">
+              +{{ $n(experienceMultiplierBonus, 'percent', { minimumFractionDigits: 0 }) }}
+            </span>
+          </template>
+          <template #resetLevel>
+            <span class="font-bold">{{ minimumLevel }}</span>
+          </template>
+        </i18n-t>
+      </div>
     </template>
   </AppConfirmActionDialog>
-
-  <!-- <template #popper="{ hide }">
-      <ConfirmActionForm
-        :name="`${character.name} - ${character.level}`"
-        :confirm-label="$t('action.apply')"
-        @cancel="hide"
-        @confirm="
-          () => toggleRetireConfirmTooltip(true)
-        "
-      >
-      <AppConfirmActionPopover
-        :shown="shownRetireConfirmTooltip"
-        @confirm="
-          () => {
-            onRetireCharacter();
-            hide();
-          }
-        "
-      />
-    </template> -->
 </template>

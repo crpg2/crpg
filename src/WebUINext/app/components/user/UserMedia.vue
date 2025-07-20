@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import type { AvatarProps } from '@nuxt/ui'
 
-import { tv } from 'tailwind-variants'
-
+import type { DataMediaSize } from '~/components/ui/DataMedia.vue'
 import type { UserPublic } from '~/models/user'
-
-type Size = 'sm' | 'md' | 'lg' | 'xl'
 
 const {
   user,
@@ -13,50 +10,37 @@ const {
   hiddenPlatform = false,
   hiddenTitle = false,
   isSelf = false,
+  inline = false,
   size = 'md',
 } = defineProps<{
   user: UserPublic
   isSelf?: boolean
+  inline?: boolean
   hiddenPlatform?: boolean
   hiddenTitle?: boolean
   hiddenClan?: boolean
-  size?: Size
+  size?: DataMediaSize
 }>()
 
-const variants = tv({
-  slots: {
-    name: '',
-  },
-  variants: {
-    size: {
-      sm: {
-        name: '',
-      },
-      md: {
-        name: '',
-      },
-      lg: {
-        name: '',
-      },
-      xl: {
-        name: 'text-lg',
-      },
-    },
-  },
-})
-
 const avatarSize = computed(() => ({
+  xs: 'xs',
   sm: 'xs',
   md: 'lg',
   lg: 'xl',
   xl: '3xl',
-} satisfies Record<Size, AvatarProps['size']>)[size])
+} satisfies Record<DataMediaSize, AvatarProps['size']>)[size])
 
-const classes = computed(() => variants({ size }))
+const clanSize = computed(() => ({
+  xs: 'xs',
+  sm: 'xs',
+  md: 'sm',
+  lg: 'md',
+  xl: 'lg',
+} satisfies Record<DataMediaSize, DataMediaSize>)[size])
 </script>
 
 <template>
-  <UiDataCell inline>
+  <UiDataCell :inline>
     <template #leftContent>
       <UAvatar
         :src="user.avatar || ''"
@@ -66,39 +50,43 @@ const classes = computed(() => variants({ size }))
       />
     </template>
 
-    <div>
-      <UiDataMedia layout="reverse">
-        <template #icon>
+    <div class="flex flex-col items-start gap-0.5">
+      <UiDataMedia layout="reverse" :size>
+        <template
+          v-if="!hiddenPlatform"
+          #icon="{ classes: platformIconClasses }"
+        >
           <UserPlatform
-            v-if="hiddenPlatform"
             :platform="user.platform"
-            size="sm"
+            :class="platformIconClasses()"
             :platform-user-id="user.platformUserId"
             :user-name="user.name"
           />
         </template>
 
-        <div
+        <template
           v-if="!hiddenTitle"
-          class="max-w-52 truncate"
-          :class="classes.name()"
-          :title="user.name"
+          #default="{ classes: labelClasses }"
         >
-          {{ user.name }}
-          <template v-if="isSelf">
-            ({{ $t('you') }})
-          </template>
-        </div>
+          <div
+            class="max-w-52 truncate leading-none"
+            :class="labelClasses()"
+            :title="user.name"
+          >
+            {{ user.name }}
+            <template v-if="isSelf">
+              ({{ $t('you') }})
+            </template>
+          </div>
+        </template>
       </UiDataMedia>
 
-      <div>
-        <UserClan
-          v-if="!hiddenClan && user.clanMembership"
-          :clan="user.clanMembership.clan"
-          size="sm"
-          :clan-role="user.clanMembership.role"
-        />
-      </div>
+      <UserClan
+        v-if="!hiddenClan && user.clanMembership"
+        :clan="user.clanMembership.clan"
+        :size="clanSize"
+        :clan-role="user.clanMembership.role"
+      />
     </div>
   </UiDataCell>
 </template>

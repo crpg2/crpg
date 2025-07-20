@@ -1,13 +1,16 @@
-<script setup lang="ts">
-import { tv } from 'tailwind-variants'
+<script lang="ts">
+export type DataMediaSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+</script>
 
-type Size = 'md' | 'lg'
+<script setup lang="ts">
+// eslint-disable-next-line import/first
+import { tv } from 'tailwind-variants'
 
 const { size = 'md', layout } = defineProps<{
   icon?: string
   label?: string
   layout?: 'normal' | 'reverse'
-  size?: Size
+  size?: DataMediaSize
 }>()
 
 const variants = tv({
@@ -26,8 +29,18 @@ const variants = tv({
       },
     },
     size: {
-      md: {
+      xs: {
         root: 'gap-0.5',
+        icon: 'size-3',
+        label: 'text-2xs',
+      },
+      sm: {
+        root: 'gap-0.5',
+        icon: 'size-4',
+        label: 'text-xs',
+      },
+      md: {
+        root: 'gap-1',
         icon: 'size-5',
         label: 'text-sm',
       },
@@ -35,6 +48,11 @@ const variants = tv({
         root: 'gap-1',
         icon: 'size-6',
         label: 'text-md',
+      },
+      xl: {
+        root: '',
+        icon: '',
+        label: '',
       },
     },
   },
@@ -48,11 +66,19 @@ const classes = computed(() => variants({
 
 <template>
   <div :class="classes.root()">
-    <slot name="icon">
-      <UIcon v-if="icon" :name="icon" :class="classes.icon()" />
+    <slot name="icon" v-bind="{ classes: classes.icon }">
+      <UIcon
+        v-if="icon"
+        :name="icon"
+        :class="classes.icon()"
+      />
     </slot>
-    <slot>
-      <div v-if="label" :class="classes.label()">
+
+    <slot v-bind="{ classes: classes.label }">
+      <div
+        v-if="label"
+        :class="classes.label()"
+      >
         {{ label }}
       </div>
     </slot>

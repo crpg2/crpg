@@ -405,6 +405,7 @@ watchEffect(() => {
     </pre> -->
 
     <ItemSearchFilterByType
+      v-if="itemTypes.length"
       v-model:item-type="itemType"
       v-model:weapon-class="weaponClass"
       :item-types="itemTypes"
