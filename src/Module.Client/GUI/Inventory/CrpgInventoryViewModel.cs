@@ -11,6 +11,8 @@ public class CrpgInventoryViewModel : ViewModel
 {
     private bool _isVisible;
     private CharacterViewModel _characterPreview;
+    private List<ItemObject> _allItems;
+    private ItemPanelVM _itemPanelVM;
 
     private ImageIdentifierVM _headArmor;
     private ImageIdentifierVM _capeArmor;
@@ -26,6 +28,15 @@ public class CrpgInventoryViewModel : ViewModel
 
     private ImageIdentifierVM _horse;
     private ImageIdentifierVM _horseArmor;
+
+    private MBBindingList<ItemDisplayVM> _dummyGridData;
+
+    [DataSourceProperty]
+    public MBBindingList<ItemDisplayVM> DummyGridData
+    {
+        get => _dummyGridData;
+        set => SetField(ref _dummyGridData, value, nameof(DummyGridData));
+    }
 
     [DataSourceProperty]
     public bool IsVisible
@@ -67,6 +78,9 @@ public class CrpgInventoryViewModel : ViewModel
         Agent? agentMain = Agent.Main;
         _characterPreview = new CharacterViewModel();
 
+        _allItems = Game.Current.ObjectManager.GetObjectTypeList<ItemObject>().ToList();
+        _itemPanelVM = new ItemPanelVM(_allItems);
+
         _headArmor = new ImageIdentifierVM(ImageIdentifierType.Item);
         _capeArmor = new ImageIdentifierVM(ImageIdentifierType.Item);
         _bodyArmor = new ImageIdentifierVM(ImageIdentifierType.Item);
@@ -81,6 +95,15 @@ public class CrpgInventoryViewModel : ViewModel
         _extraWeaponSlot = new ImageIdentifierVM(ImageIdentifierType.Item);
         _horse = new ImageIdentifierVM(ImageIdentifierType.Item);
         _horseArmor = new ImageIdentifierVM(ImageIdentifierType.Item);
+
+        _dummyGridData = new MBBindingList<ItemDisplayVM>();
+
+        foreach (var item in _allItems.Take(32))
+        {
+            _dummyGridData.Add(new ItemDisplayVM(item));
+        }
+
+        DummyGridData = _dummyGridData;
 
         if (agentMain?.Character != null)
         {
@@ -275,6 +298,9 @@ public class CrpgInventoryViewModel : ViewModel
     }
 
     [DataSourceProperty]
+    public MBBindingList<ItemVM> Items => _itemPanelVM.Items;
+
+    [DataSourceProperty]
     public bool ShowDefaultWeapon0Icon => string.IsNullOrEmpty(_weapon0?.Id);
 
     [DataSourceProperty]
@@ -309,6 +335,8 @@ public class CrpgInventoryViewModel : ViewModel
 
     [DataSourceProperty]
     public bool ShowDefaultLegArmorIcon => string.IsNullOrEmpty(_legArmor?.Id);
+
+
 
     public void RefreshCharacterPreview()
     {
@@ -353,8 +381,8 @@ public class CrpgInventoryViewModel : ViewModel
         SetImageFromSpawnEquipment(equipment, EquipmentIndex.Leg, image => LegArmor = image, "LegArmor");
 
         SetImageFromSpawnEquipment(equipment, EquipmentIndex.ExtraWeaponSlot, image => Weapon3 = image, "ExtraWeaponSlot");
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Horse, image => Weapon3 = image, "Horse");
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.HorseHarness, image => Weapon3 = image, "HorseHarness");
+        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Horse, image => Horse = image, "Horse");
+        SetImageFromSpawnEquipment(equipment, EquipmentIndex.HorseHarness, image => HorseArmor = image, "HorseHarness");
 
         CharacterPreview.EquipmentCode = equipment.CalculateEquipmentCode();
 

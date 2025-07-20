@@ -1,0 +1,32 @@
+<Prefab>
+  <GridWidget
+      Id="TextGrid"
+      WidthSizePolicy="StretchToParent"
+      HeightSizePolicy="StretchToParent"
+      SuggestedWidth="800"
+      SuggestedHeight="500"
+      Margin="10"
+      ColumnCount="6"
+      DefaultCellWidth="96"
+      DefaultCellHeight="40"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Top"
+      Brush="Inventory.Grid"
+      DataSource="{TextEntries}">
+
+    <GridWidget.ItemTemplate>
+      <TextWidget 
+          Text="{Value}" 
+          Brush="Inventory.ItemSlot"
+          WidthSizePolicy="Fixed"
+          HeightSizePolicy="Fixed"
+          SuggestedWidth="96"
+          SuggestedHeight="40"
+          Margin="4"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Brush.FontSize="18"
+          Brush.Font="Arial_16" />
+    </GridWidget.ItemTemplate>
+  </GridWidget>
+</Prefab>
