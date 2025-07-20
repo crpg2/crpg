@@ -27,7 +27,15 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value.createdAt)
           <template #leftContent>
             <UIcon name="crpg:trumpet" class="size-8 text-primary" />
           </template>
-          <div
+
+          <UiDataContent
+            :label="latestPatch.title || $t('patchNotes.latestPatch')"
+            :caption="timeAgo"
+            ellipsis
+            class="max-w-72"
+          />
+
+          <!-- <div
             class="
               max-w-72 truncate font-bold text-highlighted
               group-hover:text-default
@@ -37,7 +45,7 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value.createdAt)
           </div>
           <div class="text-2xs leading-none">
             {{ timeAgo }}
-          </div>
+          </div> -->
           <template #rightContent>
             <UBadge :label="latestPatch.tagName" />
           </template>

@@ -25,10 +25,12 @@ const { gameServerStats, showLabel = false } = defineProps<{
     <UiDataCell>
       <template #leftContent>
         <div class="relative size-6">
-          <UIcon name="crpg:online" class="absolute inset-0 size-full text-[#53BC96]" />
+          <UIcon
+            name="crpg:online" class="absolute inset-0 size-full text-[var(--color-notification)]"
+          />
           <UIcon
             name="crpg:online-ring" class="
-              absolute inset-0 size-full animate-ping text-[#53BC96]/50
+              absolute inset-0 size-full animate-ping text-[var(--color-notification)]/50
             "
           />
         </div>

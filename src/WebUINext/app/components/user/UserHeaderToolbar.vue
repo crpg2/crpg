@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from '@nuxt/ui'
 
-import NumberFlow, { continuous } from '@number-flow/vue'
+import NumberFlow from '@number-flow/vue'
 
 import type { Role } from '~/models/role'
 import type { User } from '~/models/user'
@@ -77,17 +77,15 @@ const items = computed<DropdownMenuItem[][]>(() => [
       icon="crpg:gift"
       :label="$t('welcome.shortTitle')"
     />
+    <!-- TODO: FIXME: condition -->
 
     <AppCoin>
       <NumberFlow
         :value="user.gold"
-        :plugins="[continuous]"
         locales="en-US"
-        will-change
+        class="leading-none font-bold text-primary"
       />
     </AppCoin>
-
-    <USeparator orientation="vertical" class="h-6" />
 
     <AppLoom :point="user.heirloomPoints" />
 
@@ -110,13 +108,13 @@ const items = computed<DropdownMenuItem[][]>(() => [
           :show="Boolean(user.unreadNotificationsCount)"
           inset
           size="xl"
-          :ui="{ base: 'bg-[#53bc96]' }"
+          :ui="{ base: 'bg-[var(--color-notification)]' }"
         >
           <UButton
-            variant="ghost"
+            variant="outline"
             color="neutral"
             icon="crpg:dots"
-            active-variant="soft"
+            active-variant="subtle"
             :active="open"
           />
         </UChip>
@@ -126,7 +124,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
         <UChip
           :show="Boolean(user.unreadNotificationsCount)"
           inset
-          :ui="{ base: 'bg-[#53bc96]' }"
+          :ui="{ base: 'bg-[var(--color-notification)]' }"
         >
           <UIcon name="crpg:carillon" class="size-[1.125rem]" />
         </UChip>

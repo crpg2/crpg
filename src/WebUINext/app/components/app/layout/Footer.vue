@@ -21,7 +21,7 @@ const scrollToTop = () =>
   >
     <AppSocials
       patreon-expanded
-      size="sm"
+      size="md"
     />
 
     <div class="flex items-center gap-5">
@@ -29,11 +29,11 @@ const scrollToTop = () =>
         v-if="userStore.user"
         :region="userStore.user!.region"
       >
-        <UiDataCell class="hover:text-content-100">
+        <UiDataCell class="hover:text-highlighted">
           <template #leftContent>
             <UIcon
               name="crpg:gift"
-              class="text-content-100 size-6"
+              class="size-6"
             />
           </template>
           {{ $t('hh.tooltip-trigger', { region: $t(`region.${userStore.user!.region}`, 1) }) }}
@@ -47,8 +47,8 @@ const scrollToTop = () =>
 
       <UButton
         size="xl"
-        color="secondary"
-        variant="subtle"
+        color="neutral"
+        variant="outline"
         icon="crpg:arrow-up"
         @click="scrollToTop"
       />

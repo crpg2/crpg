@@ -15,7 +15,7 @@ const { thumb } = useItem(() => item)
     class="
       relative h-24 items-center justify-center space-y-1 rounded-md bg-muted ring-2
       ring-transparent
-      hover:ring-border-200
+      hover:ring-accented
     "
   >
     <ItemThumb :thumb :name="item.name" />

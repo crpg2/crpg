@@ -290,7 +290,7 @@ const items = computed(() => {
               inset
               size="2xl"
               :show="hideInArmoryItemsModel"
-              :ui="{ base: 'bg-[#53bc96]' }"
+              :ui="{ base: 'bg-[var(--color-notification)]' }"
             >
               <UButton
                 variant="outline"

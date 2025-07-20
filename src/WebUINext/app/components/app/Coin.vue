@@ -9,7 +9,7 @@ const { size = 'md' } = defineProps<{
 const variants = tv({
   slots: {
     icon: '',
-    label: 'font-bold',
+    label: 'font-bold text-primary',
   },
   variants: {
     size: {
@@ -34,17 +34,20 @@ const classes = computed(() => variants({ size }))
 
 <template>
   <UTooltip :text="$t('user.field.gold')">
-    <UiDataCell>
-      <template #leftContent>
-        <!-- <div class="flex h-5 items-center">
-        </div> -->
+    <UiDataMedia>
+      <template #icon>
         <UiSpriteSymbol name="coin" viewBox="0 0 18 18" :class="classes.icon()" />
       </template>
-      <slot>
-        <span v-if="value !== undefined" :class="classes.label()">
-          {{ $n(value) }}
-        </span>
-      </slot>
-    </UiDataCell>
+      <template #default>
+        <slot>
+          <span
+            v-if="value !== undefined"
+            :class="classes.label()"
+          >
+            {{ $n(value) }}
+          </span>
+        </slot>
+      </template>
+    </UiDataMedia>
   </UTooltip>
 </template>

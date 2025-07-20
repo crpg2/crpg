@@ -46,7 +46,7 @@ const classes = computed(() => variants({ size }))
 
 <template>
   <div
-    class="inline-flex items-center gap-1.5 align-middle"
+    class="inline-flex items-center gap-0.5 align-middle"
     :class="
       role === CLAN_MEMBER_ROLE.Leader
         ? 'text-[#C99E34]'

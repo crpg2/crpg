@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AppCoin, AppLoom, CharacterMedia, ClanRole, UBadge, UserClan, UserMedia, UTooltip } from '#components'
+import { AppCoin, AppLoom, CharacterMedia, ClanRole, ItemThumb, UBadge, UserClan, UserMedia, UTooltip } from '#components'
 import { I18nT } from 'vue-i18n'
 
 import type { ClanMemberRole } from '~/models/clan'
@@ -38,7 +38,7 @@ const renderDamage = (value: string) => h('strong', { class: 'font-bold text-err
 const renderUserClan = (clanId: number) => {
   const clan = getClanById(clanId)
   return clan
-    ? h(UserClan, { clan, class: 'inline-flex items-center gap-1 align-middle' })
+    ? h(UserClan, { clan })
     : renderStrong(String(clanId))
 }
 
@@ -52,10 +52,7 @@ const renderUser = (userId: number) => {
 const renderCharacter = (characterId: number) => {
   const character = getCharacterById(Number(characterId))
   return character
-    ? h(CharacterMedia, {
-        character,
-        class: 'inline-flex items-center gap-1 align-middle font-bold text-highlighted',
-      })
+    ? h(CharacterMedia, { character })
     : renderStrong(String(characterId))
 }
 
@@ -65,13 +62,15 @@ const renderItem = (itemId: string) => {
     { class: 'inline' },
     h(
       UTooltip,
-      null,
+      { ui: {
+        content: 'size-64',
+      } },
       {
         default: () => renderStrong(itemId),
         content: () =>
-          h('img', {
-            src: getItemImage(itemId),
-            class: 'h-full w-full object-contain',
+          h(ItemThumb, {
+            thumb: getItemImage(itemId),
+            name: itemId,
           }),
       },
     ),
@@ -91,8 +90,6 @@ function Render() {
     targetUserId,
     actorUserId,
     characterId,
-    generation,
-    level,
     gold,
     price,
     refundedGold,
@@ -100,13 +97,10 @@ function Render() {
     refundedHeirloomPoints,
     itemId,
     userItemId,
-    experience,
     damage,
     instance,
     gameMode,
-    oldName,
-    newName,
-    message,
+    ...restKeys
   } = metadata
 
   return h(
@@ -125,8 +119,6 @@ function Render() {
       ...(targetUserId && { targetUser: () => renderUser(Number(targetUserId)) }),
       ...(actorUserId && { actorUser: () => renderUser(Number(actorUserId)) }),
       ...(characterId && { character: () => renderCharacter(Number(characterId)) }),
-      ...(generation && { generation: () => renderStrong(generation) }),
-      ...(level && { level: () => renderStrong(level) }),
       ...(gold && { gold: () => renderGold(Number(gold)) }),
       ...(price && { price: () => renderGold(Number(price)) }),
       ...(refundedGold && { refundedGold: () => renderGold(Number(refundedGold)) }),
@@ -134,13 +126,13 @@ function Render() {
       ...(refundedHeirloomPoints && { refundedHeirloomPoints: () => renderLoom(Number(refundedHeirloomPoints)) }),
       ...(itemId && { item: () => renderItem(itemId) }),
       ...(userItemId && { userItem: () => renderItem(userItemId) }),
-      ...(experience && { experience: () => renderStrong(n(Number(experience))) }),
       ...(damage && { damage: () => renderDamage(damage) }),
       ...(instance && { instance: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'subtle', label: instance }) }),
       ...(gameMode && { gameMode: () => h(UBadge, { color: 'neutral', size: 'sm', variant: 'soft', label: gameMode }) }),
-      ...(oldName && { oldName: () => renderStrong(oldName) }),
-      ...(newName && { newName: () => renderStrong(newName) }),
-      ...(message && { message: () => renderStrong(message) }),
+      ...Object.entries(restKeys).reduce((out: Record<string, () => VNode>, [key, value]) => {
+        out[key] = () => renderStrong(value)
+        return out
+      }, {} as Record<string, () => any>),
     },
   )
 }

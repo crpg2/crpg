@@ -99,6 +99,12 @@ watchEffect(() => {
 
 <template>
   <div class="mx-auto max-w-2xl space-y-12">
+    <div class="prose">
+      <p>
+        Lorem ipsum dolor sit amet consectetur <CharacterMedia :character="{ class: 'Archer', id: 1, level: 33, name: 'Orle Shieldman' }" /> adipisicing elit. Ad, eos voluptatem explicabo nemo dolorum molestiae odit beatae sapiente assumenda? <AppCoin :value="1000" />
+        Soluta accusantium assumenda recusandae aspernatur accusamus explicabo voluptatem asperiores eveniet, laborum, nobis atque eaque, dolorem facere impedit doloribus <AppLoom :point="11" /> autem quaerat distinctio saepe sapiente quidem voluptas magni repellat cupiditate! Sunt, eius odit.
+      </p>
+    </div>
     <UCard
       :ui="{
         body: 'space-y-6',
