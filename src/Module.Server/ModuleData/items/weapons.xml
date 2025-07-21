@@ -7996,7 +7996,7 @@
       <Piece id="crpg_chinese_war_lance_handle_h3" Type="Handle" scale_factor="91" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v2_h0" name="{=Telford}Spanish Full Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v3_h0" name="{=Telford}Spanish Full Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h0" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h0" Type="Guard" scale_factor="100" />
@@ -8004,7 +8004,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v2_h1" name="{=Telford}Spanish Full Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v3_h1" name="{=Telford}Spanish Full Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h1" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h1" Type="Guard" scale_factor="100" />
@@ -8012,7 +8012,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v2_h2" name="{=Telford}Spanish Full Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v3_h2" name="{=Telford}Spanish Full Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h2" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h2" Type="Guard" scale_factor="100" />
@@ -8020,7 +8020,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_spanish_full_lance_v2_h3" name="{=Telford}Spanish Full Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_spanish_full_lance_v3_h3" name="{=Telford}Spanish Full Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_spanish_full_lance_blade_h3" Type="Blade" scale_factor="115" />
       <Piece id="crpg_spanish_full_lance_guard_h3" Type="Guard" scale_factor="100" />
@@ -8028,7 +8028,7 @@
       <Piece id="crpg_spanish_full_lance_pommel_h3" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v2_h0" name="{=Telford}Noble Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v3_h0" name="{=Telford}Noble Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h0" Type="Guard" scale_factor="100" />
@@ -8036,7 +8036,7 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h0" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v2_h1" name="{=Telford}Noble Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v3_h1" name="{=Telford}Noble Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h1" Type="Guard" scale_factor="100" />
@@ -8044,7 +8044,7 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h1" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v2_h2" name="{=Telford}Noble Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v3_h2" name="{=Telford}Noble Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h2" Type="Guard" scale_factor="100" />
@@ -8052,7 +8052,7 @@
       <Piece id="crpg_noble_cavalry_lance_pommel_h2" Type="Pommel" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_noble_cavalry_lance_v2_h3" name="{=Telford}Noble Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
+  <CraftedItem id="crpg_noble_cavalry_lance_v3_h3" name="{=Telford}Noble Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.khuzait" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_noble_cavalry_lance_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_noble_cavalry_lance_guard_h3" Type="Guard" scale_factor="100" />
@@ -8212,25 +8212,25 @@
       <Piece id="crpg_courser_lance_handle_h3" Type="Handle" scale_factor="100" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v2_h0" name="{=Telford}Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v3_h0" name="{=Telford}Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h0" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h0" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v2_h1" name="{=Telford}Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v3_h1" name="{=Telford}Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h1" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h1" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v2_h2" name="{=Telford}Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v3_h2" name="{=Telford}Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h2" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h2" Type="Handle" scale_factor="105" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_cavalry_lance_v2_h3" name="{=Telford}Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_cavalry_lance_v3_h3" name="{=Telford}Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_cavalry_lance_blade_h3" Type="Blade" scale_factor="110" />
       <Piece id="crpg_cavalry_lance_handle_h3" Type="Handle" scale_factor="105" />
@@ -8312,25 +8312,25 @@
       <Piece id="crpg_sasanian_light_lance_handle_h3" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v2_h0" name="{=Telford}Long Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v3_h0" name="{=Telford}Long Cavalry Lance" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h0" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h0" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v2_h1" name="{=Telford}Long Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v3_h1" name="{=Telford}Long Cavalry Lance +1" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h1" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h1" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v2_h2" name="{=Telford}Long Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v3_h2" name="{=Telford}Long Cavalry Lance +2" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h2" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h2" Type="Handle" scale_factor="99" />
     </Pieces>
   </CraftedItem>
-  <CraftedItem id="crpg_long_cavalry_lance_v2_h3" name="{=Telford}Long Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
+  <CraftedItem id="crpg_long_cavalry_lance_v3_h3" name="{=Telford}Long Cavalry Lance +3" crafting_template="crpg_TwoHandedPolearm" culture="Culture.vlandia" modifier_group="polearm">
     <Pieces>
       <Piece id="crpg_long_cavalry_lance_blade_h3" Type="Blade" scale_factor="100" />
       <Piece id="crpg_long_cavalry_lance_handle_h3" Type="Handle" scale_factor="99" />
@@ -14368,33 +14368,33 @@
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_disabled_wheellock_v1_h0" name="{=AppleTruce}Wheellock test" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="wheellock" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,-0.05,-0.05">
+  <Item id="crpg_disabled_wheellock_v1_h0" name="{=AppleTruce}Wheellock test v1" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="wheellock" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,-0.05,-0.05">
     <ItemComponent>
-      <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="97" accuracy="98" thrust_damage="34" thrust_speed="84" speed_rating="66" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crossbow_light" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
+      <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="97" accuracy="98" thrust_damage="34" thrust_speed="84" speed_rating="66" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crpg_light_gun" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="false" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" FirearmAmmo="true" CantReloadOnHorseback="true" CanPenetrateShield="true" />
       </Weapon>
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_disabled_wheellock_v1_h1" name="{=AppleTruce}Wheellock test +1" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="wheellock" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,-0.05,-0.05">
+  <Item id="crpg_disabled_wheellock_v1_h1" name="{=AppleTruce}Wheellock test v1 +1" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="wheellock" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,-0.05,-0.05">
     <ItemComponent>
-      <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="97" accuracy="99" thrust_damage="35" thrust_speed="85" speed_rating="68" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crossbow_light" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
+      <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="98" accuracy="100" thrust_damage="34" thrust_speed="87" speed_rating="69" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crpg_light_gun" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="false" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" FirearmAmmo="true" CantReloadOnHorseback="true" CanPenetrateShield="true" />
       </Weapon>
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_disabled_wheellock_v1_h2" name="{=AppleTruce}Wheellock test +2" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="wheellock" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,-0.05,-0.05">
+  <Item id="crpg_disabled_wheellock_v1_h2" name="{=AppleTruce}Wheellock test v1 +2" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="wheellock" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,-0.05,-0.05">
     <ItemComponent>
-      <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="98" accuracy="100" thrust_damage="36" thrust_speed="86" speed_rating="70" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crossbow_light" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
+      <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="98" accuracy="100" thrust_damage="35" thrust_speed="89" speed_rating="70" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crpg_light_gun" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="false" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" FirearmAmmo="true" CantReloadOnHorseback="true" CanPenetrateShield="true" />
       </Weapon>
     </ItemComponent>
     <Flags />
   </Item>
-  <Item id="crpg_disabled_wheellock_v1_h3" name="{=AppleTruce}Wheellock test +3" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="wheellock" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,-0.05,-0.05">
+  <Item id="crpg_disabled_wheellock_v1_h3" name="{=AppleTruce}Wheellock test v1 +3" body_name="bo_composite_crossbows" culture="Culture.vlandia" mesh="wheellock" weight="7.0" appearance="0.7" difficulty="40" Type="Musket" AmmoOffset="0.0, 0.02131, 0.22975" item_holsters="cla_firearms:cla_firearms2" holster_position_shift="0.02,-0.05,-0.05">
     <ItemComponent>
-      <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="99" accuracy="101" thrust_damage="37" thrust_speed="87" speed_rating="71" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crossbow_light" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
+      <Weapon weapon_class="Musket" ammo_class="Cartridge" missile_speed="99" accuracy="100" thrust_damage="36" thrust_speed="89" speed_rating="70" weapon_length="100" ammo_limit="1" thrust_damage_type="Pierce" item_usage="crpg_light_gun" reload_phase_count="2" physics_material="wood_weapon" center_of_mass="0,0,0.4" modifier_group="crossbow">
         <WeaponFlags RangedWeapon="true" HasString="false" NotUsableWithOneHand="true" TwoHandIdleOnMount="true" FirearmAmmo="true" CantReloadOnHorseback="true" CanPenetrateShield="true" />
       </Weapon>
     </ItemComponent>
