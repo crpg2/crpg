@@ -158,8 +158,8 @@ public class FileItemsSourceTest
             }
 
             // uncomment to automatically replace with suggestions
-            // charactersDoc.Save(charactersFilePath);
-            // dtvCharactersDoc.Save(dtvCharactersFilePath);
+            charactersDoc.Save(charactersFilePath);
+            dtvCharactersDoc.Save(dtvCharactersFilePath);
         });
     }
 }
