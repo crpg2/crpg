@@ -3192,25 +3192,25 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_noble_cavalry_lance_handle_h0" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.9">
+  <CraftingPiece id="crpg_noble_cavalry_lance_handle_h0" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="0.8">
     <BuildData piece_offset="25.4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_noble_cavalry_lance_handle_h1" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.8">
+  <CraftingPiece id="crpg_noble_cavalry_lance_handle_h1" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="0.55">
     <BuildData piece_offset="25.4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_noble_cavalry_lance_handle_h2" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.55">
+  <CraftingPiece id="crpg_noble_cavalry_lance_handle_h2" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="0.45">
     <BuildData piece_offset="25.4" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_noble_cavalry_lance_handle_h3" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.55">
+  <CraftingPiece id="crpg_noble_cavalry_lance_handle_h3" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="0.45">
     <BuildData piece_offset="25.4" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -3240,25 +3240,25 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cavalry_lance_handle_h0" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.4">
+  <CraftingPiece id="crpg_cavalry_lance_handle_h0" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="0.6">
     <BuildData piece_offset="27.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cavalry_lance_handle_h1" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.25">
+  <CraftingPiece id="crpg_cavalry_lance_handle_h1" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="0.44">
     <BuildData piece_offset="27.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cavalry_lance_handle_h2" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.05">
+  <CraftingPiece id="crpg_cavalry_lance_handle_h2" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="0.4">
     <BuildData piece_offset="27.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_cavalry_lance_handle_h3" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="1.05">
+  <CraftingPiece id="crpg_cavalry_lance_handle_h3" name="{=Telford}Oaken Long Spear Staff" tier="4" piece_type="Handle" mesh="spear_handle_20" length="220" weight="0.4">
     <BuildData piece_offset="27.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -3460,28 +3460,28 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_cavalry_lance_handle_h0" name="{=Telford}Reinforced Long Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_23" length="250" weight="1.95">
+  <CraftingPiece id="crpg_long_cavalry_lance_handle_h0" name="{=Telford}Reinforced Long Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_23" length="250" weight="0.6">
     <BuildData piece_offset="37.4" />
     <Materials>
       <Material id="Iron3" count="1" />
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_cavalry_lance_handle_h1" name="{=Telford}Reinforced Long Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_23" length="250" weight="1.85">
+  <CraftingPiece id="crpg_long_cavalry_lance_handle_h1" name="{=Telford}Reinforced Long Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_23" length="250" weight="0.4">
     <BuildData piece_offset="37.4" />
     <Materials>
       <Material id="Iron3" count="1" />
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_cavalry_lance_handle_h2" name="{=Telford}Reinforced Long Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_23" length="250" weight="1.6">
+  <CraftingPiece id="crpg_long_cavalry_lance_handle_h2" name="{=Telford}Reinforced Long Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_23" length="250" weight="0.35">
     <BuildData piece_offset="37.4" />
     <Materials>
       <Material id="Iron3" count="1" />
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_long_cavalry_lance_handle_h3" name="{=Telford}Reinforced Long Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_23" length="250" weight="1.6">
+  <CraftingPiece id="crpg_long_cavalry_lance_handle_h3" name="{=Telford}Reinforced Long Pine Shaft" tier="3" piece_type="Handle" mesh="spear_handle_23" length="250" weight="0.35">
     <BuildData piece_offset="37.4" />
     <Materials>
       <Material id="Iron3" count="1" />
@@ -4304,25 +4304,25 @@
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spanish_full_lance_handle_h0" name="{=Telford}Long Mahogany Shaft" tier="3" piece_type="Handle" mesh="spear_handle_25" length="270" weight="2.05">
+  <CraftingPiece id="crpg_spanish_full_lance_handle_h0" name="{=Telford}Long Mahogany Shaft" tier="3" piece_type="Handle" mesh="spear_handle_25" length="270" weight="0.7">
     <BuildData piece_offset="37.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spanish_full_lance_handle_h1" name="{=Telford}Long Mahogany Shaft" tier="3" piece_type="Handle" mesh="spear_handle_25" length="270" weight="1.95">
+  <CraftingPiece id="crpg_spanish_full_lance_handle_h1" name="{=Telford}Long Mahogany Shaft" tier="3" piece_type="Handle" mesh="spear_handle_25" length="270" weight="0.5">
     <BuildData piece_offset="37.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spanish_full_lance_handle_h2" name="{=Telford}Long Mahogany Shaft" tier="3" piece_type="Handle" mesh="spear_handle_25" length="270" weight="1.7">
+  <CraftingPiece id="crpg_spanish_full_lance_handle_h2" name="{=Telford}Long Mahogany Shaft" tier="3" piece_type="Handle" mesh="spear_handle_25" length="270" weight="0.45">
     <BuildData piece_offset="37.9" />
     <Materials>
       <Material id="Wood" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spanish_full_lance_handle_h3" name="{=Telford}Long Mahogany Shaft" tier="3" piece_type="Handle" mesh="spear_handle_25" length="270" weight="1.7">
+  <CraftingPiece id="crpg_spanish_full_lance_handle_h3" name="{=Telford}Long Mahogany Shaft" tier="3" piece_type="Handle" mesh="spear_handle_25" length="270" weight="0.45">
     <BuildData piece_offset="37.9" />
     <Materials>
       <Material id="Wood" count="1" />
@@ -6588,7 +6588,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spanish_full_lance_blade_h0" name="{=Telford}Short Simple Pike Head" tier="1" piece_type="Blade" mesh="spear_blade_9" length="23.328" weight="0.204" is_default="true" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_spanish_full_lance_blade_h0" name="{=Telford}Short Simple Pike Head" tier="1" piece_type="Blade" mesh="spear_blade_9" length="23.328" weight="0.4" is_default="true" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
       <Thrust damage_type="Pierce" damage_factor="2.6" />
     </BladeData>
@@ -6596,7 +6596,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spanish_full_lance_blade_h1" name="{=Telford}Short Simple Pike Head" tier="1" piece_type="Blade" mesh="spear_blade_9" length="23.328" weight="0.204" is_default="true" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_spanish_full_lance_blade_h1" name="{=Telford}Short Simple Pike Head" tier="1" piece_type="Blade" mesh="spear_blade_9" length="23.328" weight="0.4" is_default="true" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
       <Thrust damage_type="Pierce" damage_factor="2.6" />
     </BladeData>
@@ -6604,7 +6604,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spanish_full_lance_blade_h2" name="{=Telford}Short Simple Pike Head" tier="1" piece_type="Blade" mesh="spear_blade_9" length="23.328" weight="0.204" is_default="true" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_spanish_full_lance_blade_h2" name="{=Telford}Short Simple Pike Head" tier="1" piece_type="Blade" mesh="spear_blade_9" length="23.328" weight="0.4" is_default="true" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
       <Thrust damage_type="Pierce" damage_factor="2.6" />
     </BladeData>
@@ -6612,7 +6612,7 @@
       <Material id="Iron2" count="1" />
     </Materials>
   </CraftingPiece>
-  <CraftingPiece id="crpg_spanish_full_lance_blade_h3" name="{=Telford}Short Simple Pike Head" tier="1" piece_type="Blade" mesh="spear_blade_9" length="23.328" weight="0.204" is_default="true" excluded_item_usage_features="swing">
+  <CraftingPiece id="crpg_spanish_full_lance_blade_h3" name="{=Telford}Short Simple Pike Head" tier="1" piece_type="Blade" mesh="spear_blade_9" length="23.328" weight="0.4" is_default="true" excluded_item_usage_features="swing">
     <BladeData stack_amount="2" physics_material="wood_weapon" body_name="bo_spear_b" holster_mesh="throwing_spear_quiver_3_1" holster_body_name="bo_throwing_spear_quiver_3_1" holster_mesh_length="96.8">
       <Thrust damage_type="Pierce" damage_factor="2.7" />
     </BladeData>
