@@ -2386,4 +2386,215 @@
         <usage style="attack_any" ready_action="act_ready_cannon_cla" release_action="act_release_cannon_cla" ready_continue_ranged_action="act_ready_continue_cannon_cla" reload_action="act_reload_cannon_horseback_cla" reload_continue_action="act_reload_cannon_continue_horseback_cla" is_mounted="True" require_free_left_hand="False" strike_type="thrust" />
       </usages>
     </item_usage_set>
+	<item_usage_set
+		id="crpg_light_gun"
+		has_single_stance="true"
+		last_arrow_sound="event:/mission/combat/last_arrow"
+		equip_sound="event:/mission/combat/equip/bow_equip"
+		unequip_sound="event:/mission/combat/equip/bow_unequip">
+		<flags>
+			<flag
+				name="requires_no_shield" />
+		</flags>
+		<idles>
+			<idle
+				action="act_idle_crossbow_1"
+				is_left_stance="False"
+				require_free_left_hand="False" />
+		</idles>
+		<movement_sets>
+			<movement_set
+				id="crossbow" />
+		</movement_sets>
+		<rider_idles>
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_idle_crossbow_1"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_idle_1" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_idle_crossbow_2"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_idle_2" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_idle_crossbow_3"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_idle_3" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_idle_crossbow_4"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_idle_4" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_stand_crossbow_1"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_stand_1" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_stand_crossbow_2"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_stand_2" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_stand_crossbow_3"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_stand_3" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_stand_crossbow_4"
+				require_free_left_hand="True"
+				required_mount_action="act_horse_stand_4" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_idle_crossbow_1"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_idle_1" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_idle_crossbow_2"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_idle_2" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_idle_crossbow_3"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_idle_3" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_idle_crossbow_4"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_idle_4" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_idle_crossbow_5"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_idle_5" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_crossbow_1"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_stand_1" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_crossbow_2"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_stand_2" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_crossbow_3"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_stand_3" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_crossbow_4"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_stand_4" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_crossbow_5"
+				require_free_left_hand="True"
+				required_mount_action="act_camel_stand_5" />
+			<rider_idle
+				mount_id="horse"
+				pace="0"
+				action="act_rider_stand_crossbow_pace_0"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="horse"
+				pace="1"
+				action="act_rider_stand_crossbow_pace_1"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="horse"
+				pace="2"
+				action="act_rider_stand_crossbow_pace_2"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="horse"
+				pace="3"
+				action="act_rider_stand_crossbow_pace_3"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="horse"
+				pace="4"
+				action="act_rider_stand_crossbow_pace_4"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="horse"
+				pace="5"
+				action="act_rider_stand_crossbow_pace_5"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="0"
+				action="act_camel_rider_stand_crossbow_pace_0"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="1"
+				action="act_camel_rider_stand_crossbow_pace_1"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="2"
+				action="act_camel_rider_stand_crossbow_pace_2"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="3"
+				action="act_camel_rider_stand_crossbow_pace_3"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="4"
+				action="act_camel_rider_stand_crossbow_pace_4"
+				require_free_left_hand="True" />
+			<rider_idle
+				mount_id="camel"
+				pace="5"
+				action="act_camel_rider_stand_crossbow_pace_5"
+				require_free_left_hand="True" />
+		</rider_idles>
+		<usages>
+			<usage
+				style="attack_any"
+				ready_action="act_ready_crossbow"
+				release_action="act_release_cannon_cla"
+				ready_continue_ranged_action="act_ready_continue_crossbow"
+				reload_action="act_reload_crossbow_light"
+				is_mounted="False"
+				require_free_left_hand="False"
+				strike_type="thrust" />
+			<usage
+				style="attack_any"
+				ready_action="act_ready_crossbow"
+				release_action="act_release_cannon_cla"
+				ready_continue_ranged_action="act_ready_continue_crossbow"
+				reload_action="act_reload_crossbow_light"
+				is_mounted="True"
+				require_free_left_hand="False"
+				strike_type="thrust" />
+		</usages>
+	</item_usage_set>
 </item_usage_sets>
