@@ -555,7 +555,7 @@
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_battanian_noble_helmet_with_feather_v2_h0" />
         <equipment slot="Cape" id="Item.crpg_battania_shoulder_strap_v2_h0" />
-        <equipment slot="Body" id="Item.crpg_scale_armor_v3_h0" />
+        <equipment slot="Body" id="Item.crpg_scale_armor_v4_h0" />
         <equipment slot="Gloves" id="Item.crpg_battania_warlord_bracers_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_greataxe_v3_h0" />
       </EquipmentRoster>
