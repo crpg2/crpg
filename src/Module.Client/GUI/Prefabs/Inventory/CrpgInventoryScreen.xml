@@ -1,217 +1,105 @@
-<Prefab>
+<Prefab Name="CrpgInventoryScreen">
   <Constants>
-      <Constant Name="EquippedPanel.Width" Value="600"/>
-      <Constant Name="EquippedPanel.Height" Value="920"/>  <!-- 920 -->
-      <Constant Name="InventoryPanel.Width" Value="1000"/>
-      <Constant Name="InventoryPanel.Height" Value="800"/>
-      <Constant Name="EquipmentButton.Width" Value="110"/>
-      <Constant Name="EquipmentButton.Height" Value="70"/>
-      <Constant Name="EquipmentImage.Width" Value="100"/>
-      <Constant Name="EquipmentImage.Height" Value="50"/>
+      <Constant Name="EquippedPanel.Width" Value="420"/>
+      <Constant Name="EquippedPanel.Height" Value="450"/>
+      <Constant Name="InventoryPanel.Width" Value="600"/>
+      <Constant Name="InventoryPanel.Height" Value="650"/>
       <Constant Name="ArmorPanel.Width" Value="110"/>
       <Constant Name="ArmorPanel.Height" Value="400"/>
-      <Constant Name="CharacterPreview.Width" Value="130"/>
-      <Constant Name="CharacterPreview.Height" Value="650"/>
+      <Constant Name="CharacterPreview.Width" Value="160"/>
+      <Constant Name="CharacterPreview.Height" Value="400"/>
       <Constant Name="WeaponPanel.Width" Value="110"/>
       <Constant Name="WeaponPanel.Height" Value="400"/>
       <Constant Name="ExtraPanel.Width" Value="600"/>
-
-      <Constant Name="Default.Sprite.HeadArmor" Value="General\EquipmentIcons\equipment_type_head_armor" />
-      <Constant Name="Default.Sprite.CapeArmor" Value="General\EquipmentIcons\equipment_type_cape" />
-      <Constant Name="Default.Sprite.BodyArmor" Value="General\EquipmentIcons\equipment_type_body_armor" />
-      <Constant Name="Default.Sprite.HandArmor" Value="General\EquipmentIcons\equipment_type_hand_armor" />
-      <Constant Name="Default.Sprite.LegArmor" Value="General\EquipmentIcons\equipment_type_leg_armor" />
-      <Constant Name="Default.Sprite.Horse" Value="General\EquipmentIcons\equipment_type_mount" />
-
-      <Constant Name="Default.Sprite.HorseArmor" Value="General\EquipmentIcons\equipment_type_default" />
-
-      <Constant Name="Default.Sprite.ExtraSlot" Value="General\EquipmentIcons\equipment_type_banner" />
-      <Constant Name="Default.Sprite.WeaponEmpty" Value="General\EquipmentIcons\equipment_type_default" />
-
-
   </Constants>
   <Window>
     <!-- Main Container -->
-    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="20" MarginBottom="80">
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10">
       <Children>
-        <!-- Equipped Items Panel -->
-        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquippedPanel.Width" SuggestedHeight="!EquippedPanel.Height" >
-          <Children>
-            <!-- Vertical Layout Container Wrapping it all -->
-            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop"
-                      HorizontalAlignment="Center" VerticalAlignment="Center"
-                      WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
-                      Margin="10" Spacing="5" >
+        <!-- Centering Wrapper -->
+        <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="10" MarginTop="10" MarginRight="10" MarginBottom="10">
+          <Children>  
+            <BrushWidget Id="Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
               <Children>
-                <!-- Horizontal Layout Container -->
-                <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight"
-                          HorizontalAlignment="Center" VerticalAlignment="Center"
-                          WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
-                          MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="0"
-                          Spacing="30" >
+                <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="CrpgInventory.EquipmentSlot.BackGround">
+                </BrushWidget>
+              </Children>
+            </BrushWidget>    
+            <!-- Wrapper Panel -->
+            <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
+              <Children>
+                <!-- Equipped Items Panel -->
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquippedPanel.Width" SuggestedHeight="!EquippedPanel.Height" HorizontalAlignment="Left" VerticalAlignment="Center" MarginTop="10" MarginLeft="10">
                   <Children>
-                    <!-- Left: Armor Selection -->
-                    <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" SuggestedWidth="!ArmorPanel.Width" HeightSizePolicy="Fixed" SuggestedHeight="!ArmorPanel.Height" MarginTop="20" MarginBottom="10" MarginLeft="25" MarginRight="25" Spacing="15">
+                    <BrushWidget Id="EquippedItems.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
                       <Children>
-                        <!-- Head Armor -->
-                        <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true">
-                          <Children>
-                            <ImageWidget Sprite="!Default.Sprite.HeadArmor" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultHeadArmorIcon"/>
-                            <ImageIdentifierWidget DataSource="{HeadArmor}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                          </Children>
-                        </ButtonWidget>
-                        <!-- Cape Armor -->
-                        <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true">
-                          <Children>
-                            <ImageWidget Sprite="!Default.Sprite.CapeArmor" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultCapeArmorIcon"/>
-                            <ImageIdentifierWidget DataSource="{CapeArmor}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                          </Children>
-                        </ButtonWidget>
-                        <!-- Body Armor -->
-                        <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true" >
-                          <Children>
-                            <ImageWidget Sprite="!Default.Sprite.BodyArmor" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultBodyArmorIcon"/>
-                            <ImageIdentifierWidget DataSource="{BodyArmor}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                          </Children>
-                        </ButtonWidget>
+                        <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="CrpgInventory.EquipmentSlot.BackGround">
+                        </BrushWidget>
+                      </Children>
+                    </BrushWidget>
 
-                        <!-- Hand Armor -->
-                        <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true" >
-                          <Children>
-                            <ImageWidget Sprite="!Default.Sprite.HandArmor" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultHandArmorIcon"/>
-                            <ImageIdentifierWidget DataSource="{HandArmor}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                          </Children>
-                        </ButtonWidget>
+                    <!-- Modified Armor Values for Bodyparts -->
+                    <ArmorAmountPrefab DataSource="{AmountHeadArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="40" SuggestedHeight="40" HorizontalAlignment="Left" VerticalAlignment="Top" PositionYOffset="60" PositionXOffset="75"/>
+                    <ArmorAmountPrefab DataSource="{AmountBodyArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="40" SuggestedHeight="40" HorizontalAlignment="Left" VerticalAlignment="Top" PositionYOffset="135" PositionXOffset="75"/>
+                    <ArmorAmountPrefab DataSource="{AmountHandArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="40" SuggestedHeight="40" HorizontalAlignment="Left" VerticalAlignment="Top" PositionYOffset="200" PositionXOffset="75"/>
+                    <ArmorAmountPrefab DataSource="{AmountLegArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="40" SuggestedHeight="40" HorizontalAlignment="Left" VerticalAlignment="Top" PositionYOffset="275" PositionXOffset="75"/>
+                    <ArmorAmountPrefab DataSource="{AmountHorseArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="40" SuggestedHeight="40" HorizontalAlignment="Left" VerticalAlignment="Top" PositionYOffset="345" PositionXOffset="75"/>
 
-                        <!-- Leg Armor -->
-                        <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true">
+                    <!-- Vertical Layout Container Wrapping it all -->
+                    <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="0" Spacing="5" >
+                      <Children>
+                        <!-- Horizontal Layout Container -->
+                        <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Left" VerticalAlignment="Center" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginLeft="0" MarginRight="0" MarginTop="0" MarginBottom="0" Spacing="5" >
                           <Children>
-                            <ImageWidget Sprite="!Default.Sprite.LegArmor" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultLegArmorIcon"/>
-                            <ImageIdentifierWidget DataSource="{LegArmor}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
+                            <!-- Left: Armor Selection -->
+                            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top" WidthSizePolicy="Fixed" SuggestedWidth="!ArmorPanel.Width" HeightSizePolicy="Fixed" SuggestedHeight="!ArmorPanel.Height" MarginTop="5" MarginBottom="5" MarginLeft="5" MarginRight="5" Spacing="15">
+                              <Children>
+                                <EquipmentSlotPrefab DataSource="{HeadArmor}" />
+                                <EquipmentSlotPrefab DataSource="{CapeArmor}" />
+                                <EquipmentSlotPrefab DataSource="{BodyArmor}" />
+                                <EquipmentSlotPrefab DataSource="{HandArmor}" />
+                                <EquipmentSlotPrefab DataSource="{LegArmor}" />
+                                <EquipmentSlotPrefab DataSource="{HorseArmor}" />     
+                              </Children>
+                            </ListPanel>
+
+                            <!-- Center: Character Preview -->
+                            <CharacterPreview WidthSizePolicy="Fixed" SuggestedWidth="!CharacterPreview.Width" HeightSizePolicy ="Fixed" SuggestedHeight="!CharacterPreview.Height" HorizontalAlignment="Center" VerticalAlignment="Top" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5"/>
+                            
+                            <!-- Right: Weapon Selection -->
+                            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top" WidthSizePolicy="Fixed" SuggestedWidth="!WeaponPanel.Width" HeightSizePolicy="Fixed" SuggestedHeight="!WeaponPanel.Height" MarginTop="5" MarginBottom="5" MarginLeft="5" MarginRight="5" Spacing="15" >
+                              <Children>
+                                <EquipmentSlotPrefab DataSource="{Weapon0}" />
+                                <EquipmentSlotPrefab DataSource="{Weapon1}" />
+                                <EquipmentSlotPrefab DataSource="{Weapon2}" />
+                                <EquipmentSlotPrefab DataSource="{Weapon3}" />
+                                <EquipmentSlotPrefab DataSource="{ExtraWeaponSlot}" />
+                                <EquipmentSlotPrefab DataSource="{Horse}" />
+                              </Children>
+                            </ListPanel>
                           </Children>
-                        </ButtonWidget>
+                        </ListPanel>
+                        <!-- End Horizontal Layout Container -->
                       </Children>
                     </ListPanel>
-                    <!-- End Armor Selection -->
-
-                    <!-- Center: Character Preview -->
-                    <CharacterPreview WidthSizePolicy="Fixed" SuggestedWidth="!CharacterPreview.Width" HeightSizePolicy ="Fixed" SuggestedHeight="!CharacterPreview.Height" HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="25" MarginRight="25" MarginTop="20" MarginBottom="10" />
-
-                    <!-- Right: Weapon Selection -->
-                    <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" SuggestedWidth="!WeaponPanel.Width" HeightSizePolicy="Fixed" SuggestedHeight="!WeaponPanel.Height" MarginTop="20" MarginBottom="10" MarginLeft="25" MarginRight="25" Spacing="15" >
-                      <Children>
-                        <!-- Weapon0 -->
-                        <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true">
-                          <Children>
-                            <ImageWidget Sprite="!Default.Sprite.WeaponEmpty" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultWeapon0Icon"/>
-                            <ImageIdentifierWidget DataSource="{Weapon0}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                          </Children>
-                        </ButtonWidget>
-
-                        <!-- Weapon1 -->
-                        <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true">
-                          <Children>
-                            <ImageWidget Sprite="!Default.Sprite.WeaponEmpty" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultWeapon1Icon"/>
-                            <ImageIdentifierWidget DataSource="{Weapon1}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                          </Children>
-                        </ButtonWidget>
-
-                        <!-- Weapon2 -->
-                        <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true">
-                          <Children>
-                            <ImageWidget Sprite="!Default.Sprite.WeaponEmpty" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultWeapon2Icon"/>
-                            <ImageIdentifierWidget DataSource="{Weapon2}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                          </Children>
-                        </ButtonWidget>
-
-                        <!-- Weapon3 -->
-                        <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true">
-                          <Children>
-                            <ImageWidget Sprite="!Default.Sprite.WeaponEmpty" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultWeapon3Icon"/>
-                            <ImageIdentifierWidget DataSource="{Weapon3}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                          </Children>
-                        </ButtonWidget>
-
-                        <!-- ExtraWeapon -->
-                        <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true">
-                          <Children>
-                            <ImageWidget Sprite="!Default.Sprite.ExtraSlot" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultExtraWeaponSlotIcon"/>
-                            <ImageIdentifierWidget DataSource="{ExtraWeaponSlot}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                          </Children>
-                        </ButtonWidget>
-
-                      </Children>
-                    </ListPanel>
-                    <!-- End Weapon Selection -->
+                    <!-- End Vertical Panel Wrapper -->
                   </Children>
-                </ListPanel>
-                <!-- End Horizontal Layout Container -->
+                </Widget>
+                <!-- End Equipped Items Panel -->
 
-                <!-- Horse and Harness Selection -->
-                <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight"
-                          HorizontalAlignment="Left" VerticalAlignment="Center"
-                          WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
-                          SuggestedWidth="!ExtraPanel.Width" 
-                          MarginLeft="145" MarginRight="0" MarginTop="0" MarginBottom="10"
-                          Spacing="15" PositionYOffset="-20" >
+                <!-- Inventory Selection -->
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!InventoryPanel.Width" SuggestedHeight="!InventoryPanel.Height" VerticalAlignment="Center" MarginTop="10" MarginLeft="10" Brush="CrpgInventory.InventoryPanel" >
                   <Children>
-                    <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true">
-                      <Children>
-                        <ImageWidget Sprite="!Default.Sprite.Horse" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultHorseIcon"/>
-                        <ImageIdentifierWidget DataSource="{Horse}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                      </Children>
-                    </ButtonWidget>
-                    <ButtonWidget DoNotAcceptEvents="false" WidthSizePolicy="Fixed" SuggestedWidth="!EquipmentButton.Width" HeightSizePolicy="Fixed" SuggestedHeight="!EquipmentButton.Height" Brush="CrpgInventory.EquipmentButton" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" ClipContents="true">
-                      <Children>
-                        <ImageWidget Sprite="!Default.Sprite.HorseArmor" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" IsVisible="@ShowDefaultHorseArmorIcon"/>
-                        <ImageIdentifierWidget DataSource="{HorseHarness}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode"  HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquipmentImage.Width" SuggestedHeight="!EquipmentImage.Height" Margin="4" />
-                      </Children>
-                    </ButtonWidget>
-                    <!-- <GridWidgetPrefab DataSource="{DummyGridData}" /> -->
-                  <!--
-                    <GridWidget ColumnCount="3" 
-                        WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" 
-                        SuggestedWidth="300" SuggestedHeight="300"
-                        Margin="10"
-                        DataSource="{DummyGridData}">
-                      <ItemTemplate>
-                        <Widget StackLayout.LayoutMethod="VerticalTopToBottom" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
-                          <Children>
-                            <ImageIdentifierWidget 
-                                DataSource="." 
-                                ImageId="@Id" 
-                                AdditionalArgs="@AdditionalArgs" 
-                                ImageTypeCode="@ImageTypeCode"
-                                WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                                SuggestedWidth="90" SuggestedHeight="45"
-                                HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            <TextWidget Text="@DisplayName" 
-                                WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
-                                HorizontalAlignment="Center" VerticalAlignment="Top"
-                                FontSize="8" />
-                          </Children>
-                        </Widget>
-                      </ItemTemplate>
-                    </GridWidget>
-                  -->                 
+                    <InventoryGridPrefab Parameter.NumColumns="6" DataSource="{InventoryGrid}" />
                   </Children>
-                </ListPanel>
-                <!-- End Horse and Harness Selection -->
+                </Widget>
               </Children>
             </ListPanel>
-            <!-- End Vertical Panel Wrapper -->
+            <!-- End Wrapper Panel -->
           </Children>
-        </Widget>
-        <!-- End Equipped Items Panel -->
-
-        <!-- Inventory Selection -->
-        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!InventoryPanel.Width" SuggestedHeight="!InventoryPanel.Height" >
-          <Children>
-            <GridWidgetPrefab DataSource="{DummyGridData}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" />
-          </Children>
-        </Widget>
+        </Widget> <!-- End Centering Widget -->
       </Children>
     </Widget>
-    <!-- End Main Container -->
   </Window>
 </Prefab>

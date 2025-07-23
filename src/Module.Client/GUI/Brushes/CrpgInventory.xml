@@ -19,4 +19,104 @@
       </Style>
     </Styles>
   </Brush>
+  <Brush Name="CrpgInventory.EquipmentSlot.BackGround">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#202020FF" AlphaFactor="1" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor=".7"/>
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="CrpgInventory.Grid.BackGround">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#202020FF" AlphaFactor="1" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor=".7"/>
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="Inventory.ArmorAmount.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="18" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>  
+  <Brush Name="InventorySort.Button">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0" Color="#0586ffff" />
+      </Style>
+      <Style Name="Hovered">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#5bacf8ff" />
+      </Style>
+      <Style Name="Pressed">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#0586ffff" />
+      </Style>
+      <Style Name="Selected">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#91c2f0ff" />
+      </Style>      
+      <Style Name="Disabled">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#353636ff" />
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="EquipmentSlot.Button">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0" Color="#0586ffff" />
+      </Style>
+      <Style Name="Hovered">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#5bacf8ff" />
+      </Style>
+      <Style Name="Pressed">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#0586ffff" />
+      </Style>
+      <Style Name="Selected">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#91c2f0ff" />
+      </Style>          
+      <Style Name="Disabled">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#353636ff" />
+      </Style>
+    </Styles>
+  </Brush>
+  <Brush Name="InventorySlot.ItemName.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="10" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="InventoryGrid.Scrollbar.Handle">
+    <Layers>
+			<BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#24285eff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+				<BrushLayer Name="Default" ColorFactor="1" />
+      </Style>
+      <Style Name="Hovered">
+				<BrushLayer Name="Default" ColorFactor="1.2" />
+      </Style>
+      <Style Name="Pressed">
+        <BrushLayer Name="Default" ColorFactor="0.8" />
+      </Style>
+      <Style Name="Selected">
+        <BrushLayer Name="Default" ColorFactor="1.2" />
+      </Style>
+      <Style Name="Disabled">
+        <BrushLayer Name="Default" AlphaFactor="0.5" />
+      </Style>
+    </Styles>
+  </Brush>  
 </Brushes>

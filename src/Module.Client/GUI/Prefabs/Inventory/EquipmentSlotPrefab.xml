@@ -1,0 +1,44 @@
+<Prefab Name="EquipmentSlotPrefab">
+    <!-- Sprites:
+    SquareWRoundedCornersFrame_9
+    StdAssets\frame_small
+    
+    -->
+  <Window>
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="85" SuggestedHeight="70" >
+      <Children>
+        <BrushWidget Id="Background" AcceptDrop="true" Command.Drop="ExecuteTryEquipItem" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+          <Children>
+            <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="CrpgInventory.EquipmentSlot.BackGround">
+            </BrushWidget>
+          </Children>
+        </BrushWidget>
+        <!-- Default fallback icon -->
+        <ImageWidget Sprite="@DefaultSprite"
+                IsVisible="@ShouldShowDefaultIcon"
+                WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="48" SuggestedHeight="48" UseAlphaAsMask="True"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                DoNotAcceptEvents="True" PassEventsToParent="True" />
+
+        <ButtonWidget Id="Button" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
+                SuggestedWidth="75" SuggestedHeight="70" AcceptDrag="@CanAcceptDrag" DoNotPassEventsToChildren="true" IsEnabled="true"
+                ClipContents="true" DoNotAcceptEvents="False"
+                Command.AlternateClick="ExecuteAlternateClick" Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" Brush="EquipmentSlot.Button" >
+          <Children>
+            <!-- Equipped item icon -->
+            <ImageIdentifierWidget DataSource="{ImageIdentifier}"
+                            ImageId="@Id"
+                            AdditionalArgs="@AdditionalArgs"
+                            ImageTypeCode="@ImageTypeCode"
+                            WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                            SuggestedWidth="80" SuggestedHeight="40"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Margin="4" 
+                            DoNotAcceptEvents="True" PassEventsToParent="True" />
+          </Children>
+        </ButtonWidget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

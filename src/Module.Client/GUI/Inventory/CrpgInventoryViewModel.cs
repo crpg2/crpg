@@ -1,9 +1,10 @@
+using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
-using TaleWorlds.MountAndBlade;                   // For Agent, CharacterTableau
+using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -12,31 +13,26 @@ public class CrpgInventoryViewModel : ViewModel
     private bool _isVisible;
     private CharacterViewModel _characterPreview;
     private List<ItemObject> _allItems;
-    private ItemPanelVM _itemPanelVM;
-
-    private ImageIdentifierVM _headArmor;
-    private ImageIdentifierVM _capeArmor;
-    private ImageIdentifierVM _bodyArmor;
-    private ImageIdentifierVM _handArmor;
-    private ImageIdentifierVM _legArmor;
-
-    private ImageIdentifierVM _weapon0;
-    private ImageIdentifierVM _weapon1;
-    private ImageIdentifierVM _weapon2;
-    private ImageIdentifierVM _weapon3;
-    private ImageIdentifierVM _extraWeaponSlot;
-
-    private ImageIdentifierVM _horse;
-    private ImageIdentifierVM _horseArmor;
-
-    private MBBindingList<ItemDisplayVM> _dummyGridData;
+    private List<EquipmentSlotVM> _equipmentSlots;
 
     [DataSourceProperty]
-    public MBBindingList<ItemDisplayVM> DummyGridData
-    {
-        get => _dummyGridData;
-        set => SetField(ref _dummyGridData, value, nameof(DummyGridData));
-    }
+    public InventoryGridVM InventoryGrid { get; set; }
+
+    // testing
+    public EquipmentSlotVM HeadArmor { get; private set; }
+    public EquipmentSlotVM CapeArmor { get; private set; }
+    public EquipmentSlotVM BodyArmor { get; private set; }
+    public EquipmentSlotVM HandArmor { get; private set; }
+    public EquipmentSlotVM LegArmor { get; private set; }
+
+    public EquipmentSlotVM Weapon0 { get; private set; }
+    public EquipmentSlotVM Weapon1 { get; private set; }
+    public EquipmentSlotVM Weapon2 { get; private set; }
+    public EquipmentSlotVM Weapon3 { get; private set; }
+    public EquipmentSlotVM ExtraWeaponSlot { get; private set; }
+
+    public EquipmentSlotVM Horse { get; private set; }
+    public EquipmentSlotVM HorseArmor { get; private set; }
 
     [DataSourceProperty]
     public bool IsVisible
@@ -72,38 +68,68 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
+    [DataSourceProperty]
+    public ArmorAmountVM AmountHeadArmor
+    { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountBodyArmor
+    { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountLegArmor
+    { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountHandArmor
+    { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountHorseArmor
+    { get; set; }
+
     public CrpgInventoryViewModel()
     {
-
         Agent? agentMain = Agent.Main;
         _characterPreview = new CharacterViewModel();
 
         _allItems = Game.Current.ObjectManager.GetObjectTypeList<ItemObject>().ToList();
-        _itemPanelVM = new ItemPanelVM(_allItems);
 
-        _headArmor = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _capeArmor = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _bodyArmor = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _handArmor = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _legArmor = new ImageIdentifierVM(ImageIdentifierType.Item);
+        InventoryGrid = new InventoryGridVM();
+        var inventory = _allItems;
+        InventoryGrid.SetAvailableItems(inventory.Select(item => (item, 1)));
+        InventoryGrid.InitializeFilteredItemsList();
 
-        _weapon0 = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _weapon1 = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _weapon2 = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _weapon3 = new ImageIdentifierVM(ImageIdentifierType.Item);
+        OnPropertyChanged(nameof(InventoryGrid));
 
-        _extraWeaponSlot = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _horse = new ImageIdentifierVM(ImageIdentifierType.Item);
-        _horseArmor = new ImageIdentifierVM(ImageIdentifierType.Item);
+        InformationManager.DisplayMessage(new InformationMessage($"Inventory items: {InventoryGrid.AvailableItems.Count}"));
 
-        _dummyGridData = new MBBindingList<ItemDisplayVM>();
+        HeadArmor = GetImageIdentifierFromEquipment(EquipmentIndex.Head);
+        CapeArmor = GetImageIdentifierFromEquipment(EquipmentIndex.Cape);
+        BodyArmor = GetImageIdentifierFromEquipment(EquipmentIndex.Body);
+        HandArmor = GetImageIdentifierFromEquipment(EquipmentIndex.Gloves);
+        LegArmor = GetImageIdentifierFromEquipment(EquipmentIndex.Leg);
 
-        foreach (var item in _allItems.Take(32))
-        {
-            _dummyGridData.Add(new ItemDisplayVM(item));
-        }
+        Weapon0 = GetImageIdentifierFromEquipment(EquipmentIndex.Weapon0);
+        Weapon1 = GetImageIdentifierFromEquipment(EquipmentIndex.Weapon1);
+        Weapon2 = GetImageIdentifierFromEquipment(EquipmentIndex.Weapon2);
+        Weapon3 = GetImageIdentifierFromEquipment(EquipmentIndex.Weapon3);
+        ExtraWeaponSlot = GetImageIdentifierFromEquipment(EquipmentIndex.ExtraWeaponSlot);
 
-        DummyGridData = _dummyGridData;
+        Horse = GetImageIdentifierFromEquipment(EquipmentIndex.Horse);
+        HorseArmor = GetImageIdentifierFromEquipment(EquipmentIndex.HorseHarness);
+
+        // Create list with all slots
+        _equipmentSlots = new List<EquipmentSlotVM>
+    {
+        HeadArmor, CapeArmor, BodyArmor, HandArmor, LegArmor,
+        Weapon0, Weapon1, Weapon2, Weapon3, ExtraWeaponSlot,
+        Horse, HorseArmor,
+    };
+
+        SetEquipmentSlotEventSubscriptions(true);
+
+        AmountHeadArmor = new ArmorAmountVM(0);
+        AmountBodyArmor = new ArmorAmountVM(0);
+        AmountLegArmor = new ArmorAmountVM(0);
+        AmountHandArmor = new ArmorAmountVM(0);
+        AmountHorseArmor = new ArmorAmountVM(0);
 
         if (agentMain?.Character != null)
         {
@@ -117,228 +143,28 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    [DataSourceProperty]
-    public ImageIdentifierVM HeadArmor
+    public override void OnFinalize()
     {
-        get => _headArmor;
-        set
+        SetEquipmentSlotEventSubscriptions(false);
+        // Any other cleanup needed here
+    }
+
+    public void SetEquipmentSlotEventSubscriptions(bool subscribe)
+    {
+        foreach (var slot in _equipmentSlots)
         {
-            if (value != _headArmor)
+            if (subscribe)
             {
-                _headArmor = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(HeadArmor));
-                OnPropertyChanged(nameof(ShowDefaultHeadArmorIcon));
+                slot.PropertyChanged += EquipmentSlot_PropertyChanged;
+            }
+            else
+            {
+                slot.PropertyChanged -= EquipmentSlot_PropertyChanged;
             }
         }
     }
 
-    [DataSourceProperty]
-    public ImageIdentifierVM CapeArmor
-    {
-        get => _capeArmor;
-        set
-        {
-            if (value != _capeArmor)
-            {
-                _capeArmor = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(CapeArmor));
-                OnPropertyChanged(nameof(ShowDefaultCapeArmorIcon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM BodyArmor
-    {
-        get => _bodyArmor;
-        set
-        {
-            if (value != _bodyArmor)
-            {
-                _bodyArmor = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(BodyArmor));
-                OnPropertyChanged(nameof(ShowDefaultBodyArmorIcon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM HandArmor
-    {
-        get => _handArmor;
-        set
-        {
-            if (value != _handArmor)
-            {
-                _handArmor = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(HandArmor));
-                OnPropertyChanged(nameof(ShowDefaultHandArmorIcon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM LegArmor
-    {
-        get => _legArmor;
-        set
-        {
-            if (value != _legArmor)
-            {
-                _legArmor = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(LegArmor));
-                OnPropertyChanged(nameof(ShowDefaultLegArmorIcon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM Weapon0
-    {
-        get => _weapon0;
-        set
-        {
-            if (value != _weapon0)
-            {
-                _weapon0 = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(Weapon0));
-                OnPropertyChanged(nameof(ShowDefaultWeapon0Icon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM Weapon1
-    {
-        get => _weapon1;
-        set
-        {
-            if (value != _weapon1)
-            {
-                _weapon1 = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(Weapon1));
-                OnPropertyChanged(nameof(ShowDefaultWeapon1Icon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM Weapon2
-    {
-        get => _weapon2;
-        set
-        {
-            if (value != _weapon2)
-            {
-                _weapon2 = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(Weapon2));
-                OnPropertyChanged(nameof(ShowDefaultWeapon2Icon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM Weapon3
-    {
-        get => _weapon3;
-        set
-        {
-            if (value != _weapon3)
-            {
-                _weapon3 = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(Weapon3));
-                OnPropertyChanged(nameof(ShowDefaultWeapon3Icon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM ExtraWeaponSlot
-    {
-        get => _extraWeaponSlot;
-        set
-        {
-            if (value != _extraWeaponSlot)
-            {
-                _extraWeaponSlot = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(ExtraWeaponSlot));
-                OnPropertyChanged(nameof(ShowDefaultExtraWeaponSlotIcon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM Horse
-    {
-        get => _horse;
-        set
-        {
-            if (value != _horse)
-            {
-                _horse = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(Horse));
-                OnPropertyChanged(nameof(ShowDefaultHorseIcon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM HorseArmor
-    {
-        get => _horseArmor;
-        set
-        {
-            if (value != _horseArmor)
-            {
-                _horseArmor = value;
-                OnPropertyChangedWithValue<ImageIdentifierVM>(value, nameof(HorseArmor));
-                OnPropertyChanged(nameof(ShowDefaultHorseArmorIcon));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public MBBindingList<ItemVM> Items => _itemPanelVM.Items;
-
-    [DataSourceProperty]
-    public bool ShowDefaultWeapon0Icon => string.IsNullOrEmpty(_weapon0?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultWeapon1Icon => string.IsNullOrEmpty(_weapon1?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultWeapon2Icon => string.IsNullOrEmpty(_weapon2?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultWeapon3Icon => string.IsNullOrEmpty(_weapon3?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultExtraWeaponSlotIcon => string.IsNullOrEmpty(_extraWeaponSlot?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultHorseIcon => string.IsNullOrEmpty(_horse?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultHorseArmorIcon => string.IsNullOrEmpty(_horseArmor?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultHeadArmorIcon => string.IsNullOrEmpty(_headArmor?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultCapeArmorIcon => string.IsNullOrEmpty(_capeArmor?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultBodyArmorIcon => string.IsNullOrEmpty(_bodyArmor?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultHandArmorIcon => string.IsNullOrEmpty(_handArmor?.Id);
-
-    [DataSourceProperty]
-    public bool ShowDefaultLegArmorIcon => string.IsNullOrEmpty(_legArmor?.Id);
-
-
-
-    public void RefreshCharacterPreview()
+    public void RefreshCharacterPreview(Equipment? useEquipment = null)
     {
         if (CharacterPreview == null)
         {
@@ -352,15 +178,6 @@ public class CrpgInventoryViewModel : ViewModel
             return;
         }
 
-        Agent? agent = Agent.Main;
-
-        if (agent == null)
-        {
-            // Optionally log or fallback
-            InformationManager.DisplayMessage(new InformationMessage("Agent.Main or its character is null."));
-            return;
-        }
-
         var crpgUser = crpgPeer.User;
         if (crpgUser == null)
         {
@@ -368,58 +185,95 @@ public class CrpgInventoryViewModel : ViewModel
             return;
         }
 
-        Equipment equipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgUser.Character.EquippedItems);
+        if (useEquipment == null)
+        {
+            useEquipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgUser.Character.EquippedItems);
+        }
 
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Weapon0, image => Weapon0 = image, "Weapon0");
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Weapon1, image => Weapon1 = image, "Weapon1");
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Weapon2, image => Weapon2 = image, "Weapon2");
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Weapon3, image => Weapon3 = image, "Weapon3");
+        CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
 
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Head, image => HeadArmor = image, "HeadArmor");
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Cape, image => CapeArmor = image, "CapeArmor");
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Body, image => BodyArmor = image, "BodyArmor");
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Leg, image => LegArmor = image, "LegArmor");
-
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.ExtraWeaponSlot, image => Weapon3 = image, "ExtraWeaponSlot");
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.Horse, image => Horse = image, "Horse");
-        SetImageFromSpawnEquipment(equipment, EquipmentIndex.HorseHarness, image => HorseArmor = image, "HorseHarness");
-
-        CharacterPreview.EquipmentCode = equipment.CalculateEquipmentCode();
+        CalculateArmorFromEquipment(useEquipment);
 
         // CharacterPreview.BannerCodeText = agent?.Origin?.Banner?.Serialize() ?? string.Empty;
     }
 
-    private void SetImageFromSpawnEquipment(Equipment equipment, EquipmentIndex index, Action<ImageIdentifierVM> setter, string label)
+    private EquipmentSlotVM GetImageIdentifierFromEquipment(EquipmentIndex index)
     {
-        EquipmentElement ee = equipment[index];
-        if (!ee.IsEmpty && ee.Item != null)
+        Agent? agent = Agent.Main;
+
+        if (agent == null || agent.Character == null)
         {
-            setter(new ImageIdentifierVM(ee.Item));
-            InformationManager.DisplayMessage(new InformationMessage($"Updated {label} image."));
+            InformationManager.DisplayMessage(new InformationMessage("Agent or character is null."));
+            return new EquipmentSlotVM(new ImageIdentifierVM(ImageIdentifierType.Item), index);
         }
-        else
+
+        // Reconstruct equipment from character data
+        var crpgPeer = GameNetwork.MyPeer.GetComponent<CrpgPeer>();
+        if (crpgPeer?.User?.Character == null)
         {
-            InformationManager.DisplayMessage(new InformationMessage($"{label} is empty or invalid."));
+            return new EquipmentSlotVM(new ImageIdentifierVM(ImageIdentifierType.Item), index);
         }
+
+        Equipment equipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgPeer.User.Character.EquippedItems);
+        EquipmentElement element = equipment[index];
+
+        if (!element.IsEmpty && element.Item != null)
+        {
+            return new EquipmentSlotVM(new ImageIdentifierVM(element.Item), index);
+        }
+
+        return new EquipmentSlotVM(new ImageIdentifierVM(ImageIdentifierType.Item), index);
     }
 
-    private EquipmentElement? GetEquipmentElementFromMissionWeapon(MissionWeapon missionWeapon)
+    private void CalculateArmorFromEquipment(Equipment equipment)
     {
-        if (missionWeapon.IsEmpty)
+        AmountHeadArmor.ArmorAmount = 0;
+        AmountBodyArmor.ArmorAmount = 0;
+        AmountHandArmor.ArmorAmount = 0;
+        AmountLegArmor.ArmorAmount = 0;
+        AmountHorseArmor.ArmorAmount = 0;
+
+        if (equipment == null)
         {
-            return null;
+            InformationManager.DisplayMessage(new InformationMessage("Equipment is invalid or empty."));
+            return;
         }
 
-        // You can extract the base item and form a minimal EquipmentElement
-        ItemObject item = missionWeapon.Item;
-        if (item == null)
+        AmountHeadArmor.ArmorAmount = (int)equipment.GetHeadArmorSum();
+        AmountBodyArmor.ArmorAmount = (int)equipment.GetHumanBodyArmorSum();
+        AmountHandArmor.ArmorAmount = (int)equipment.GetArmArmorSum();
+        AmountLegArmor.ArmorAmount = (int)equipment.GetLegArmorSum();
+        AmountHorseArmor.ArmorAmount = (int)equipment.GetHorseArmorSum();
+    }
+
+    public Equipment BuildEquipmentFromSlots()
+    {
+        // Create Equipment with "false" to indicate not empty
+        Equipment equipment = new(false);
+
+        foreach (var slot in _equipmentSlots)
         {
-            return null;
+            if (slot.ImageIdentifier != null && slot.ItemObj != null)
+            {
+                equipment[slot.EquipmentSlot] = new EquipmentElement(slot.ItemObj);
+            }
+            else
+            {
+                equipment[slot.EquipmentSlot] = EquipmentElement.Invalid;
+            }
         }
 
-        // Try to preserve modifiers and usage index if needed
-        ItemModifier modifier = missionWeapon.ItemModifier;
-        EquipmentElement element = new(item, modifier);
-        return element;
+        return equipment;
+    }
+
+    private void EquipmentSlot_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(EquipmentSlotVM.ItemObj))
+        {
+            InformationManager.DisplayMessage(new InformationMessage("ItemObj changed"));
+            Equipment equipment = BuildEquipmentFromSlots();
+            RefreshCharacterPreview(equipment);
+            CalculateArmorFromEquipment(equipment);
+        }
     }
 }
