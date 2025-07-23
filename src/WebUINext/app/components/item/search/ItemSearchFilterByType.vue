@@ -56,7 +56,7 @@ const weaponClassOptions = computed(() => {
       list: 'w-auto',
       root: 'flex-row',
       trigger: [
-        'min-w-12 h-12 p-1.5',
+        'min-w-12 h-12 p-2',
         orientation === 'vertical' ? 'flex justify-center' : '',
       ],
       leadingIcon: 'size-7',
@@ -79,7 +79,7 @@ const weaponClassOptions = computed(() => {
             list: 'w-auto',
             root: 'flex-row',
             leadingIcon: 'size-7',
-            trigger: 'p-1.5',
+            trigger: 'p-2',
             indicator: 'hidden',
           }"
         />

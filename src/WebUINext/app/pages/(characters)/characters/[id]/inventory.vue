@@ -393,7 +393,6 @@ const items = computed(() => {
       class="sticky col-span-2 self-start"
     >
       <CharacterStats
-        class="text-2xs"
         :characteristics="characterCharacteristics"
         :weight="itemsOverallStats.weight"
         :longest-weapon-length="itemsOverallStats.longestWeaponLength"

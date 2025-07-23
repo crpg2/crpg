@@ -17,6 +17,7 @@ const slots = useSlots()
     <slot name="description">
       <div
         v-if="description"
+        class="prose"
         v-html="description"
       />
     </slot>

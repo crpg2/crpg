@@ -198,7 +198,7 @@ const formSchema: FormSchema[] = [
       :key="field.key"
       class="
         w-full px-4 py-2.5
-        hover:bg-neutral-900
+        hover:bg-muted
       "
     >
       <UTooltip

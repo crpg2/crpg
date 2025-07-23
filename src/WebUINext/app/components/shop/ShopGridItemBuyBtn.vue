@@ -62,13 +62,13 @@ const [open, toggle] = useToggle()
 
     <template #content>
       <UCard
-        :ui="{ footer: 'flex items-center gap-2' }"
+        :ui="{ footer: 'flex  items-center gap-2', header: 'prose' }"
       >
         <template #header>
           <h5>{{ $t('shop.item.buy.tooltip.buy') }}</h5>
         </template>
 
-        <div class="prose space-y-4 prose-invert">
+        <div class="prose space-y-4">
           <div class="flex items-center gap-2">
             {{ $t('item.aggregations.upkeep.title') }}:
             <AppCoin>{{ $t('item.format.upkeep', { upkeep: $n(upkeep) }) }}</AppCoin>
@@ -99,14 +99,14 @@ const [open, toggle] = useToggle()
 
           <p
             v-if="notEnoughGold"
-            class="text-status-danger"
+            class="text-error"
           >
             {{ $t('shop.item.buy.tooltip.notEnoughGold') }}
           </p>
 
           <p
-            v-if="isExpensive"
-            class="text-status-warning"
+            v-else-if="isExpensive"
+            class="text-warning"
           >
             {{ $t('shop.item.expensive') }}
           </p>
@@ -116,6 +116,7 @@ const [open, toggle] = useToggle()
           <UButton
             variant="soft"
             size="sm"
+            block
             icon="crpg:close"
             :label="$t('action.cancel')"
             @click="() => {
@@ -125,6 +126,7 @@ const [open, toggle] = useToggle()
 
           <UButton
             size="sm"
+            block
             icon="crpg:check"
             :label="$t('shop.item.buy.tooltip.buy')"
             @click="() => {

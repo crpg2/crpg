@@ -20,7 +20,7 @@ const slots = useSlots()
   >
     <UiDataCell
       class="
-        group rounded-xs px-3 py-2.5
+        group px-3 py-2.5
         hover:bg-muted
       "
     >
