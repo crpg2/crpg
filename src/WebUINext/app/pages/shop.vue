@@ -50,6 +50,7 @@ import {
   getWeaponClassesByItemType,
   humanizeBucket,
 } from '~/services/item-service'
+import { includesSome } from '~/utils/grid'
 
 definePageMeta({
   roles: SomeRole,
@@ -97,6 +98,9 @@ function getInitialPaginationState(): PaginationState {
   }
 }
 const pagination = ref<PaginationState>(getInitialPaginationState())
+function resetPagination() {
+  table.value?.tableApi.setPageIndex(0)
+}
 
 function getInitialSortingState(): SortingState {
   return [
@@ -107,6 +111,9 @@ function getInitialSortingState(): SortingState {
   ]
 }
 const sorting = ref<SortingState>(getInitialSortingState())
+function resetSorting() {
+  table.value?.tableApi.setSorting(getInitialSortingState())
+}
 
 const itemType = computed({
   get() {
@@ -124,8 +131,8 @@ const itemType = computed({
         weaponClass,
       },
     })
-    table.value?.tableApi.setPageIndex(0)
-    table.value?.tableApi.resetSorting()
+    resetPagination()
+    resetSorting()
   },
 })
 const itemTypes = computed(() => {
@@ -150,8 +157,8 @@ const weaponClass = computed({
         weaponClass: weaponClass ?? undefined,
       },
     })
-    table.value?.tableApi.setPageIndex(0)
-    table.value?.tableApi.resetSorting()
+    resetPagination()
+    resetSorting()
   },
 })
 const weaponClasses = computed(() => {
@@ -166,16 +173,12 @@ function getInitialColumnFiltersState(): ColumnFiltersState {
 }
 
 const columnFilters = ref<ColumnFiltersState>(getInitialColumnFiltersState())
-function onColumnFiltersUpdate(): void {
-  table.value?.tableApi.setPageIndex(0)
-}
-
 const currentAggregations = computed(() => getAggregationsConfig(itemType.value, weaponClass.value))
 
 const columnVisibility = computed<VisibilityState>(() => {
   return {
     ...Object.entries(currentAggregations.value)
-      .filter(([_, value]) => value.hidden)
+      .filter(([, value]) => value.hidden)
       .reduce((out, [key]) => {
         out[key] = false
         return out
@@ -228,10 +231,13 @@ function createTableColumn(key: keyof ItemFlat, options: AggregationOptions): Ta
       },
     },
     ...(options.view === AggregationView.Range) && {
-      filterFn: 'inNumberRange',
+      filterFn: '',
     },
     ...(options.view === AggregationView.Checkbox) && {
-      filterFn: 'arrIncludesSome',
+      filterFn: includesSome,
+    },
+    ...(key === 'type' || key === 'weaponClass') && {
+      filterFn: 'equals',
     },
     header: ({ header, column }) => {
       // TODO: FIXME:
@@ -404,6 +410,7 @@ watchEffect(() => {
       {{ table?.tableApi.getState() }}
     </pre> -->
 
+    {{ columnFilters }}
     <ItemSearchFilterByType
       v-if="itemTypes.length"
       v-model:item-type="itemType"
@@ -432,7 +439,7 @@ watchEffect(() => {
       :pagination-options="{
         getPaginationRowModel: getPaginationRowModel(),
       }"
-      @update:column-filters="onColumnFiltersUpdate"
+      @update:column-filters="() => { resetPagination() }"
     >
       <template #empty>
         <UiResultNotFound />

@@ -119,12 +119,7 @@ const { rankColor, thumb } = useItem(() => item)
           />
 
           <template #content>
-            <div class="prose prose-invert">
-              <h5 class="text-content-100">
-                {{ $t(`item.aggregations.tier.title`) }}
-              </h5>
-              <div v-html="$t(`item.aggregations.tier.description`)" />
-            </div>
+            <UiTooltipContent :title="$t(`item.aggregations.tier.title`)" :description="$t(`item.aggregations.tier.description`)" />
           </template>
         </UTooltip>
 

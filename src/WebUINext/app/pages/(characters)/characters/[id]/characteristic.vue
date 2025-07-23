@@ -129,7 +129,7 @@ watchEffect(() => {
     >
       <UButton
         :disabled="!wasChangeMade"
-        color="secondary"
+        color="neutral"
         variant="outline"
         size="lg"
         icon="crpg:reset"

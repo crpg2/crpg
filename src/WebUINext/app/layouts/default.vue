@@ -71,23 +71,7 @@ useMainHeaderProvider(mainHeaderHeight)
           :user="userStore.user"
         />
 
-        <!-- TODO: to cmp PublicHeaderToolbar -->
-        <div v-else class="flex items-center gap-4">
-          <AppLogin size="sm" />
-
-          <AppSwitchLanguageDropdown v-slot="{ open, locale }">
-            <UButton
-              size="lg"
-              color="secondary"
-              variant="ghost"
-              :leading-icon="`crpg:${locale}`"
-              :trailing-icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'"
-              active-variant="solid"
-              :active="open"
-              :label="locale.toUpperCase()"
-            />
-          </AppSwitchLanguageDropdown>
-        </div>
+        <AppLayoutPublicHeaderToolbar v-else />
       </div>
     </header>
 

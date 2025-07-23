@@ -168,16 +168,10 @@ const fieldStyle = computed(() => {
             </div>
 
             <template #content>
-              <div class="space-y-5">
-                <h5 class="text-md font-bold text-highlighted">
-                  {{ formattedValue.tooltip?.title }}
-                </h5>
-                <div
-                  v-if="formattedValue.tooltip?.description"
-                  class="prose prose-sm"
-                  v-html="formattedValue.tooltip?.description"
-                />
-              </div>
+              <UiTooltipContent
+                :title="formattedValue.tooltip?.title || ''"
+                :description="formattedValue.tooltip?.description || undefined"
+              />
             </template>
           </UTooltip>
         </slot>

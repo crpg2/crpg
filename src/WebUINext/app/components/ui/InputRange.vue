@@ -68,6 +68,7 @@ const change = (from: number, to: number) => {
         :min
         :max
         :step
+        color="neutral"
         :model-value="localValue[0]"
         @update:model-value="(value) => change(value, localValue[1])"
       />
@@ -76,6 +77,7 @@ const change = (from: number, to: number) => {
         :min
         :max
         :step
+        color="neutral"
         :model-value="localValue[1]"
         @update:model-value="(value) => change(localValue[0], value)"
       />
