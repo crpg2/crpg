@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Clans.Models;
 using Crpg.Application.Common.Interfaces;
@@ -12,9 +13,13 @@ namespace Crpg.Application.Clans.Commands.Armory;
 
 public record BorrowItemFromClanArmoryCommand : IMediatorRequest<ClanArmoryBorrowedItemViewModel>
 {
-    public int UserItemId { get; init; }
+    [JsonIgnore]
     public int UserId { get; init; }
+
+    [JsonIgnore]
     public int ClanId { get; init; }
+
+    public int UserItemId { get; init; }
 
     internal class Handler : IMediatorRequestHandler<BorrowItemFromClanArmoryCommand, ClanArmoryBorrowedItemViewModel>
     {
