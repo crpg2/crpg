@@ -84,7 +84,7 @@ internal class CrpgUserManagerServer : MissionNetwork
         var vp = networkPeer.VirtualPlayer;
         var bodyProperties = vp.BodyProperties;
         ulong height = (bodyProperties.KeyPart8 >> 19) & 0x3F;
-        if (height >= 15 && height <= 47) // Min/max height of the armory.
+        if (height >= 15) // Min/max height of the armory.
         {
             return false;
         }
