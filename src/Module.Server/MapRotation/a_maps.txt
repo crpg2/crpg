@@ -47,7 +47,6 @@ crpg_battle_moonlittownship
 crpg_battle_kalmara
 crpg_battle_helmspoint
 crpg_battle_bazaar
-crpg_battle_cabbagepatch
 crpg_battle_tavernbrawl
 crpg_battle_canals
 crpg_battle_acaciacitadel
