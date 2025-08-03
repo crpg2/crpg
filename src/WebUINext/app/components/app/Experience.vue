@@ -1,52 +1,26 @@
 <script setup lang="ts">
-import { tv } from 'tailwind-variants'
+import type { DataMediaSize } from '~/components/ui/DataMedia.vue'
 
-const { size = 'md' } = defineProps<{
+defineProps<{
   value?: number
-  size?: 'md' | 'lg' | 'xl'
+  size?: DataMediaSize
 }>()
-
-const variants = tv({
-  slots: {
-    icon: 'text-primary',
-    label: 'font-bold',
-  },
-  variants: {
-    size: {
-      md: {
-        icon: 'size-5',
-        label: '',
-      },
-      lg: {
-        icon: 'size-7',
-        label: '',
-      },
-      xl: {
-        icon: 'size-10',
-        label: 'text-lg',
-      },
-    },
-  },
-})
-
-const classes = computed(() => variants({ size }))
 </script>
 
 <template>
-  <UiDataCell>
-    <template #leftContent>
-      <!-- TODO: sandbox -->
-      <!-- <div class="flex h-12 items-center">
-      </div> -->
+  <UiDataMedia :size>
+    <template #icon="{ classes }">
       <UIcon
         name="crpg:experience"
-        :class="classes.icon()"
+        :class="classes()"
       />
     </template>
-    <slot>
-      <span v-if="value !== undefined" :class="classes.label()">
-        {{ $n(value) }}
-      </span>
-    </slot>
-  </UiDataCell>
+    <template #default="{ classes }">
+      <slot>
+        <span v-if="value !== undefined" :class="classes()">
+          {{ $n(value) }}
+        </span>
+      </slot>
+    </template>
+  </UiDataMedia>
 </template>

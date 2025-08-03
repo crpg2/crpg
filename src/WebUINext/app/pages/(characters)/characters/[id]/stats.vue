@@ -189,8 +189,8 @@ const onDataZoomChanged = () => {
 
 const onLegendSelectChanged = (e: LegendSelectEvent) => {
   activeSeries.value = Object.entries(e.selected)
-    .filter(([_legend, status]) => Boolean(status))
-    .map(([legend, _status]) => legend)
+    .filter(([, status]) => Boolean(status))
+    .map(([legend]) => legend)
 }
 
 const { execute: onUpdate } = useAsyncCallback(async (characterId: number) => {
@@ -222,7 +222,7 @@ const total = computed(() =>
       const [from, to] = dataZoom.value
       return time >= from && time <= to
     })
-    .reduce((total, [_date, value]) => total + value, 0),
+    .reduce((total, [, value]) => total + value, 0),
 )
 
 interface CharacterEarnedDataWithGameMode extends CharacterEarnedData {
@@ -311,7 +311,7 @@ fetchPageData(Number(route.params.id))
         <AppCoin
           v-if="statTypeModel === CHARACTER_EARNING_TYPE.Gold"
           :value="total"
-          size="xl"
+          size="lg"
           :class="total < 0 ? 'text-error' : 'text-success'"
         />
 
