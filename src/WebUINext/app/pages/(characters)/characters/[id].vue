@@ -112,7 +112,7 @@ fetchPageData(Number(route.params.id))
 
 const { t } = useI18n()
 
-const links: { name: keyof RouteNamedMap, label: string }[] = [
+const links = [
   {
     name: 'characters-id',
     label: t('character.nav.overview'),
@@ -140,11 +140,13 @@ const links: { name: keyof RouteNamedMap, label: string }[] = [
           v-for="{ name, label } in links"
           :key="name"
           v-slot="{ isExactActive }"
-          :to="({ name } as RouteLocationRaw)"
+          :to="({ name, params: { id: character.id } } as RouteLocationRaw)"
         >
           <UButton
             color="neutral"
-            :variant="isExactActive ? 'soft' : 'ghost'"
+            variant="ghost"
+            active-variant="soft"
+            :active="isExactActive"
             size="lg"
             :label
           />

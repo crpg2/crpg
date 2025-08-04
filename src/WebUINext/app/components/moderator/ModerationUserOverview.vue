@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-2 text-2xs">
+  <div class="grid grid-cols-2 gap-2">
     <UiSimpleTableRow
       label="Id"
       :value="String(user.id)"
@@ -24,12 +24,15 @@ defineProps<{
     />
 
     <UiSimpleTableRow label="Platform">
-      {{ user.platform }} {{ user.platformUserId }}
-      <UserPlatform
-        :platform="user.platform"
-        :platform-user-id="user.platformUserId"
-        :user-name="user.name"
-      />
+      <div class="flex items-center gap-2">
+        {{ user.platform }} {{ user.platformUserId }}
+        <UserPlatform
+          class="size-6"
+          :platform="user.platform"
+          :platform-user-id="user.platformUserId"
+          :user-name="user.name"
+        />
+      </div>
     </UiSimpleTableRow>
 
     <UiSimpleTableRow
@@ -59,7 +62,7 @@ defineProps<{
     </UiSimpleTableRow>
 
     <UiSimpleTableRow label="Donor">
-      {{ user.isDonor }}
+      <UCheckbox :model-value="user.isDonor" size="lg" disabled />
     </UiSimpleTableRow>
   </div>
 </template>

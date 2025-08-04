@@ -99,7 +99,7 @@ const onConfirm = async () => {
         </i18n-t>
 
         <UFormField
-          :error="errorMessagesToString($v.confirmModel.$errors)"
+          :error="errorMessagesToString($v.confirmModel.$errors) || false"
           data-aq-confirm-field
         >
           <UInput

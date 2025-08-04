@@ -41,16 +41,14 @@ const onSave = () => {
   <div>
     <UModal
       :open
-      :ui="{ footer: 'justify-center', body: 'space-y-6' }"
-      :close="{
-        size: 'sm',
-        color: 'secondary',
-        variant: 'solid',
-      }"
+      :ui="{
+        title: 'flex justify-center',
+        footer: 'justify-center',
+        body: 'space-y-6' }"
       @update:open="$emit('cancel')"
     >
       <template #title>
-        <UserMedia :user="member.user" size="xl" />
+        <UserMedia :user="member.user" size="xl" hidden-clan />
       </template>
 
       <template #body>
@@ -72,6 +70,7 @@ const onSave = () => {
 
           <URadioGroup
             v-model="memberRoleModel"
+            size="xl"
             :items="Object.values(CLAN_MEMBER_ROLE).map<RadioGroupItem>((role) => ({
               label: `
                 ${$t(`clan.role.${role}`)}
@@ -87,7 +86,7 @@ const onSave = () => {
           scope="global"
           keypath="clan.member.kick.title"
           tag="p"
-          class="text-center text-xs text-content-300"
+          class="text-center"
         >
           <template #memberLink>
             <AppConfirmActionPopover @confirm="$emit('kick')">
@@ -123,7 +122,7 @@ const onSave = () => {
       :open="shownConfirmTransferDialog"
       :title="$t('clan.member.update.confirmationDialog.title')"
       :description="$t('clan.member.update.confirmationDialog.desc')"
-      :name="member.user.name"
+      :confirm="member.user.name"
       :confirm-label="$t('action.confirm')"
       @cancel="toggleConfirmTransferDialog(false);"
       @confirm="() => {

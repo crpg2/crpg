@@ -29,31 +29,28 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
 </script>
 
 <template>
-  <UCard
-    variant="subtle"
-    :ui="{
-      header: '',
-      body: '',
-    }"
-  >
+  <UCard variant="outline">
     <template #header>
-      <div class="flex items-center gap-2">
-        <NuxtLink :to="{ name: 'moderator-user-id-restrictions', params: { id: user.id } }">
-          <UserMedia :user size="sm" />
-        </NuxtLink>
+      <UiDataCell>
+        <template #leftContent>
+          <NuxtLink :to="{ name: 'moderator-user-id-restrictions', params: { id: user.id } }">
+            <UserMedia :user size="md" />
+          </NuxtLink>
+        </template>
 
-        <div class="text-2xs text-muted">
+        <div class="text-xs text-muted">
           {{ $d(activityLog.createdAt, 'long') }} ({{ timeAgo }})
         </div>
 
-        <UBadge
-          variant="subtle"
-          size="sm"
-          color="neutral"
-          :label="activityLog.type"
-          @click="emit('addType', activityLog.type)"
-        />
-      </div>
+        <template #rightContent>
+          <UBadge
+            variant="subtle"
+            color="neutral"
+            :label="activityLog.type"
+            @click="emit('addType', activityLog.type)"
+          />
+        </template>
+      </UiDataCell>
     </template>
 
     <AppMetadataRender
@@ -68,14 +65,11 @@ const timeAgo = useLocaleTimeAgo(activityLog.createdAt)
         <div class="inline-flex items-center gap-1 align-middle">
           <NuxtLink
             :to="{ name: 'moderator-user-id-restrictions', params: { id: activityLog.metadata.targetUserId } }"
-            class="
-              inline-block
-              hover:text-content-100
-            "
             target="_blank"
           >
-            <UserMedia :user="scopeUser" size="sm" />
+            <UserMedia :user="scopeUser" size="md" />
           </NuxtLink>
+
           <UButton
             v-if="isSelfUser"
             size="xs"

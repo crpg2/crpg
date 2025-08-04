@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// TODO: FIXME: composition + components
 import type { DateTimeDuration } from '@internationalized/date'
 import type { TableColumn, TabsItem } from '@nuxt/ui'
 import type { BarSeriesOption } from 'echarts/charts'
@@ -12,6 +11,8 @@ import type {
 import type { ComposeOption } from 'echarts/core'
 
 import { getLocalTimeZone, now } from '@internationalized/date'
+// TODO: FIXME: composition + components
+import NumberFlow from '@number-flow/vue'
 import { AppCoin, AppExperience, UIcon, UiDataCell } from '#components'
 import { BarChart } from 'echarts/charts'
 import {
@@ -291,11 +292,10 @@ fetchPageData(Number(route.params.id))
 <template>
   <UContainer>
     <div class="flex min-w-[56rem] flex-col pt-8 pr-10 pl-5">
-      <div class="flex items-center justify-center gap-4">
+      <div class="flex items-center justify-center gap-3">
         <UTabs
           v-model="zoomModel"
           :items="zoomItems"
-          size="xl"
           variant="pill"
           :content="false"
         />
@@ -303,24 +303,32 @@ fetchPageData(Number(route.params.id))
         <UTabs
           v-model="statTypeModel"
           :items="statTypeItems"
-          size="xl"
           variant="pill"
           :content="false"
         />
 
-        <AppCoin
-          v-if="statTypeModel === CHARACTER_EARNING_TYPE.Gold"
-          :value="total"
-          size="lg"
-          :class="total < 0 ? 'text-error' : 'text-success'"
-        />
+        <div class="min-w-[140px]">
+          <AppCoin
+            v-if="statTypeModel === CHARACTER_EARNING_TYPE.Gold"
+            size="lg"
+            :class="total < 0 ? '!text-error' : '!text-success'"
+          >
+            <NumberFlow
+              :value="total"
+              locales="en-US"
+            />
+          </AppCoin>
 
-        <AppExperience
-          v-else
-          size="xl"
-          class="text-primary"
-          :value="total"
-        />
+          <AppExperience
+            v-else
+            size="lg"
+          >
+            <NumberFlow
+              :value="total"
+              locales="en-US"
+            />
+          </AppExperience>
+        </div>
       </div>
 
       <div class="mb-6 h-[30rem]">

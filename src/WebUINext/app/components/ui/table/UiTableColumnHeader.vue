@@ -18,11 +18,6 @@ defineEmits<{
 }>()
 </script>
 
- <!-- class="
-          absolute top-1/2 -left-5 size-4 -translate-y-1/2 cursor-pointer
-          text-muted outline-0 select-none
-          hover:text-toned
-        " -->
 <template>
   <div class="relative flex items-center gap-1">
     <UTooltip
@@ -30,7 +25,7 @@ defineEmits<{
       :text="$t('action.reset')"
     >
       <UButton
-        class="absolute top-1/2 -left-9 -translate-y-1/2"
+        class="absolute top-1/2 -left-7 -translate-y-1/2"
         square
         color="neutral"
         variant="ghost"

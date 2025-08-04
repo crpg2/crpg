@@ -116,12 +116,12 @@ watchEffect(() => {
 <template>
   <UContainer class="relative py-6">
     <div
-      v-if="user && currentCharacter"
       data-teleport-target="character-navbar"
       class="mb-16 grid grid-cols-3 items-center justify-between gap-4"
     >
       <div class="order-1 flex items-center gap-4">
         <CharacterSelect
+          v-if="user && currentCharacter"
           :characters
           :current-character
           :active-character-id="user.activeCharacterId"
@@ -130,6 +130,8 @@ watchEffect(() => {
         />
 
         <CharacterEditModal
+          v-if="currentCharacter"
+          :key="currentCharacter.id"
           :character="currentCharacter"
           @update="onUpdateCharacter"
           @delete="onDeleteCharacter"

@@ -35,7 +35,7 @@ const variants = tv({
         label: 'text-2xs',
       },
       sm: {
-        root: 'gap-0.5',
+        root: 'gap-1',
         icon: 'size-4',
         label: 'text-xs',
       },
@@ -50,9 +50,9 @@ const variants = tv({
         label: 'text-md',
       },
       xl: {
-        root: '',
-        icon: '',
-        label: '',
+        root: 'gap-1',
+        icon: 'size-7',
+        label: 'text-md',
       },
     },
   },

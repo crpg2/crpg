@@ -64,7 +64,7 @@ const [shownConfirmDeleteDialog, toggleConfirmDeleteDialog] = useToggle()
       <template #body="{ close }">
         <UFormField
           :label="$t('character.settings.update.form.field.name')"
-          :error="errorMessagesToString($v.nameModel.$errors)"
+          :error="errorMessagesToString($v.nameModel.$errors) || false"
         >
           <UInput
             v-model="nameModel"

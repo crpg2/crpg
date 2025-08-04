@@ -79,14 +79,18 @@ const items = computed<DropdownMenuItem[][]>(() => [
     />
     <!-- TODO: FIXME: condition -->
 
-    <AppCoin>
-      <NumberFlow
-        :value="user.gold"
-        locales="en-US"
-      />
-    </AppCoin>
+    <UTooltip :text="$t('user.field.gold')">
+      <AppCoin>
+        <NumberFlow
+          :value="user.gold"
+          locales="en-US"
+        />
+      </AppCoin>
+    </UTooltip>
 
-    <AppLoom :point="user.heirloomPoints" />
+    <UTooltip :text="$t('user.field.heirloom')">
+      <AppLoom :point="user.heirloomPoints" />
+    </UTooltip>
 
     <USeparator orientation="vertical" class="h-6" />
 

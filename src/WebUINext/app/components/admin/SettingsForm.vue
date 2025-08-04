@@ -31,7 +31,7 @@ watch(() => props.settings, () => {
         <template #leftContent>
           <UIcon name="crpg:settings" class="size-6" />
         </template>
-        <div class="text-sm">
+        <div class="text-md">
           Site Settings
         </div>
       </UiDataCell>
@@ -44,7 +44,7 @@ watch(() => props.settings, () => {
         <UInput
           v-model="settingModel[key]"
           type="text"
-          color="secondary"
+          color="neutral"
           variant="outline"
           class="w-full"
         />
