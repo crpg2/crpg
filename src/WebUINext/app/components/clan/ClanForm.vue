@@ -2,6 +2,7 @@
 import type { RadioGroupItem, SelectItem } from '@nuxt/ui'
 
 import { useVuelidate } from '@vuelidate/core'
+import { UiDataMedia } from '#components'
 import {
   clanBannerKeyMaxLength,
   clanDescriptionMaxLength,
@@ -134,14 +135,7 @@ const onSubmit = async () => {
     <div class="mb-6 space-y-6">
       <UCard variant="outline">
         <template #header>
-          <UiDataCell>
-            <template #leftContent>
-              <UIcon name="crpg:hash" class="size-6" />
-            </template>
-            <div class="text-sm">
-              {{ $t('clan.update.form.field.mainInfo') }}
-            </div>
-          </UiDataCell>
+          <UiDataMedia icon="crpg:hash" :label="$t('clan.update.form.field.mainInfo')" size="xl" />
         </template>
 
         <div class="grid grid-cols-2 gap-4">
@@ -154,7 +148,6 @@ const onSubmit = async () => {
               v-model="clanFormModel.name"
               :minlength="clanNameMinLength"
               :maxlength="clanNameMaxLength"
-              size="sm"
               aria-describedby="clan-name-count"
               class="w-full"
               data-aq-clan-form-input="name"
@@ -182,7 +175,6 @@ const onSubmit = async () => {
               v-model="clanFormModel.tag"
               :minlength="clanTagMinLength"
               :maxlength="clanTagMaxLength"
-              size="sm"
               aria-describedby="clan-tag-count"
               class="w-full"
               data-aq-clan-form-input="tag"
@@ -212,7 +204,6 @@ const onSubmit = async () => {
               :maxlength="clanDescriptionMaxLength"
               data-aq-clan-form-input="description"
               aria-describedby="clan-description-count"
-              size="sm"
               class="w-full"
             >
               <template #trailing>
@@ -235,19 +226,13 @@ const onSubmit = async () => {
         :ui="{ body: 'grid grid-cols-2 gap-4' }"
       >
         <template #header>
-          <UiDataCell>
-            <template #leftContent>
-              <UIcon name="crpg:region" class="size-6" />
-            </template>
-            <div class="text-sm">
-              {{ $t('region-title') }}
-            </div>
-          </UiDataCell>
+          <UiDataMedia icon="crpg:region" :label="$t('region-title')" size="xl" />
         </template>
 
         <div class="space-y-6">
           <URadioGroup
             v-model="clanFormModel.region"
+            size="xl"
             :items="Object.values(REGION).map<RadioGroupItem>((region) => ({
               label: $t(`region.${region}`, 0),
               value: region,
@@ -263,6 +248,7 @@ const onSubmit = async () => {
                 label: `${$t(`language.${language}`)} - ${language}`,
                 value: language,
               }))"
+              size="xl"
               class="w-full"
             />
           </UFormField>
@@ -276,14 +262,7 @@ const onSubmit = async () => {
         }"
       >
         <template #header>
-          <UiDataCell>
-            <template #leftContent>
-              <UIcon name="crpg:banner" class="size-6" />
-            </template>
-            <div class="text-sm">
-              {{ $t('clan.update.form.field.appearance') }}
-            </div>
-          </UiDataCell>
+          <UiDataMedia icon="crpg:banner" :label="$t('clan.update.form.field.appearance')" size="xl" />
         </template>
 
         <UFormField
@@ -296,13 +275,15 @@ const onSubmit = async () => {
               scope="global"
               keypath="clan.update.bannerKeyGeneratorTools"
               tag="div"
-              class="!text-content-200"
             >
               <template #link>
                 <a
                   href="https://bannerlord.party"
                   target="_blank"
-                  class="hover:text-primary"
+                  class="
+                    text-primary
+                    hover:underline
+                  "
                 >
                   bannerlord.party
                 </a>
@@ -313,7 +294,6 @@ const onSubmit = async () => {
           <UInput
             v-model="clanFormModel.bannerKey"
             :maxlength="clanBannerKeyMaxLength"
-            size="sm"
             aria-describedby="clan-bannerKey-count"
             class="w-full"
             data-aq-clan-form-input="bannerKey"
@@ -332,18 +312,22 @@ const onSubmit = async () => {
           </UInput>
         </UFormField>
 
-        <UFormField>
+        <UFormField :ui="{ labelWrapper: 'mb-2' }">
           <template #label>
-            <div class="mb-4 flex items-center gap-2">
-              <ClanTagIcon
-                :color="clanFormModel.primaryColor"
-                size="lg"
-              />
-              {{ $t('clan.update.form.field.colors') }}
-            </div>
+            <UiDataMedia
+              :label="$t('clan.update.form.field.colors')"
+              size="xl"
+            >
+              <template #icon="{ classes }">
+                <ClanTagIcon
+                  :color="clanFormModel.primaryColor"
+                  :class="classes()"
+                />
+              </template>
+            </UiDataMedia>
           </template>
 
-          <div class="grid grid-cols-2 gap-4">
+          <div class="flex items-center gap-4">
             <UFormField
               :label="`${$t('clan.update.form.field.primaryColor')}:`"
               :ui="{
@@ -351,7 +335,7 @@ const onSubmit = async () => {
                 container: 'mt-0 flex items-center gap-2',
               }"
             >
-              <div class="text-content-100">
+              <div class="text-highlighted">
                 {{ primaryColorModel }}
               </div>
               <input
@@ -362,6 +346,8 @@ const onSubmit = async () => {
               >
             </UFormField>
 
+            <USeparator orientation="vertical" class="h-6" />
+
             <UFormField
               :label="`${$t('clan.update.form.field.secondaryColor')}:`"
               :ui="{
@@ -369,7 +355,7 @@ const onSubmit = async () => {
                 container: 'mt-0 flex items-center gap-2',
               }"
             >
-              <div class="text-content-100">
+              <div class="text-highlighted">
                 {{ secondaryColorModel }}
               </div>
               <input
@@ -390,14 +376,7 @@ const onSubmit = async () => {
         }"
       >
         <template #header>
-          <UiDataCell>
-            <template #leftContent>
-              <UIcon name="crpg:discord" class="size-6" />
-            </template>
-            <div class="text-sm">
-              {{ $t('clan.update.form.field.discord') }}
-            </div>
-          </UiDataCell>
+          <UiDataMedia icon="crpg:discord" :label="$t('clan.update.form.field.discord')" size="xl" />
         </template>
 
         <UFormField
@@ -407,7 +386,6 @@ const onSubmit = async () => {
           <UInput
             v-model="clanFormModel.discord"
             :maxlength="clanBannerKeyMaxLength"
-            size="sm"
             class="w-full"
             :placeholder="`${$t('clan.update.form.field.discord')} (${$t('form.field.optional')})`"
             data-aq-clan-form-input="discord"
@@ -422,14 +400,7 @@ const onSubmit = async () => {
         }"
       >
         <template #header>
-          <UiDataCell>
-            <template #leftContent>
-              <UIcon name="crpg:armory" class="size-6" />
-            </template>
-            <div class="text-sm">
-              {{ $t('clan.update.form.group.armory.label') }}
-            </div>
-          </UiDataCell>
+          <UiDataMedia icon="crpg:armory" :label="$t('clan.update.form.group.armory.label')" size="xl" />
         </template>
 
         <UFormField
@@ -441,8 +412,8 @@ const onSubmit = async () => {
           <UInputNumber
             :model-value="parseTimestamp(Number(clanFormModel.armoryTimeout)).days"
             :maxlength="clanBannerKeyMaxLength"
-            size="sm"
             class="w-36"
+            color="neutral"
             data-aq-clan-form-input="armoryTimeout"
             @update:model-value="(days) => (clanFormModel.armoryTimeout = daysToMs(days))"
           />
@@ -462,7 +433,7 @@ const onSubmit = async () => {
         <UButton
           :to="{ name: 'clans-id', params: { id: clanId } }"
           variant="outline"
-          color="secondary"
+          color="neutral"
           size="xl"
           :label="$t('action.cancel')"
           data-aq-clan-form-action="cancel"

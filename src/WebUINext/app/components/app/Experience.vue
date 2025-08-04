@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <UiDataMedia :size>
+  <UiDataMedia :size class="font-bold text-primary">
     <template #icon="{ classes }">
       <UIcon
         name="crpg:experience"
@@ -16,7 +16,7 @@ defineProps<{
       />
     </template>
     <template #default="{ classes }">
-      <slot>
+      <slot v-bind="{ classes }">
         <span v-if="value !== undefined" :class="classes()">
           {{ $n(value) }}
         </span>

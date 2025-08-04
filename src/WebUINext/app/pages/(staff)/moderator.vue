@@ -32,8 +32,10 @@ const links: { name: keyof RouteNamedMap, label: string }[] = [
         :to="({ name } as RouteLocationRaw)"
       >
         <UButton
-          color="secondary"
-          :variant="isExactActive ? 'solid' : 'soft'"
+          color="neutral"
+          :active="isExactActive"
+          active-variant="soft"
+          variant="ghost"
           size="lg"
           :label
         />

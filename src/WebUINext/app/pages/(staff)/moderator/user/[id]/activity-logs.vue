@@ -218,7 +218,7 @@ watchEffect(() => {
     </div>
 
     <div class="flex flex-col flex-wrap gap-5">
-      <ModeratorActivityLogItem
+      <ModeratorActivityLogCard
         v-for="activityLog in sortedActivityLogs"
         :key="activityLog.id"
         :class="[activityLog.userId === moderationUser.id ? 'self-start' : 'self-end']"

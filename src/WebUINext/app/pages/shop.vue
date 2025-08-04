@@ -426,10 +426,9 @@ watchEffect(() => {
       v-model:column-filters="columnFilters"
       v-model:column-visibility="columnVisibility"
       v-model:row-selection="rowSelection"
-      class="relative overflow-clip rounded-md border border-muted"
+      class="relative rounded-md border border-muted"
       :data="flatItems"
       :columns
-      sticky
       :loading="loadingItems"
       :faceted-options="{
         getFacetedRowModel: getFacetedRowModel(),

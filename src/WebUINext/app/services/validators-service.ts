@@ -4,7 +4,7 @@ import type { withI18nMessage as _withI18nMessage } from '@vuelidate/validators'
 import * as validators from '@vuelidate/validators'
 import { clanBannerKeyRegex, clanTagRegex } from '~root/data/constants.json'
 
-export const errorMessagesToString = (errors: ErrorObject[]) => errors.map(e => e.$message).filter(Boolean).join(', ')
+export const errorMessagesToString = (errors: ErrorObject[]): string | boolean => errors.length ? errors.map(e => e.$message).filter(Boolean).join(', ') : false
 
 const withI18nMessage: typeof _withI18nMessage = (validator, options) => {
   const { t } = useI18n()

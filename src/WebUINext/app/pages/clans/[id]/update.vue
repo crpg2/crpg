@@ -92,7 +92,7 @@ watchEffect(() => {
     <AppBackButton @click="backToClanPage" />
 
     <div class="mx-auto max-w-2xl space-y-10">
-      <h1 class="text-center text-xl text-content-100">
+      <h1 class="text-content-100 text-center text-xl">
         {{ $t('clan.update.page.title') }}
       </h1>
 
@@ -109,14 +109,7 @@ watchEffect(() => {
         class="text-center"
       >
         <template #link>
-          <UModal
-            :title="$t('clan.delete.dialog.title')"
-            :close="{
-              size: 'sm',
-              color: 'secondary',
-              variant: 'solid',
-            }"
-          >
+          <UModal :title="$t('clan.delete.dialog.title')">
             <span class="cursor-pointer text-error">
               {{ $t('clan.delete.link') }}
             </span>

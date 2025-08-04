@@ -177,7 +177,6 @@ const totalRewardValues = computed(() => {
         <CharacterMedia
           v-for="character in characters"
           :key="character.id"
-          class="rounded-full border border-border-200 px-3 py-2"
           :character="character"
           :is-active="character.id === moderationUser?.activeCharacterId"
         />
@@ -309,11 +308,9 @@ const totalRewardValues = computed(() => {
             >
               <AppLoom :point="moderationUser.heirloomPoints" />
               ->
-              <AppLoom
-                :point="totalRewardValues.heirloomPoints" :class="[rewardFormModel.heirloomPoints < 0 ? `
-                  text-status-danger
-                ` : `text-status-success`]"
-              />
+              <span :class="[rewardFormModel.heirloomPoints < 0 ? 'text-error' : 'text-success']">
+                {{ $n(totalRewardValues.heirloomPoints) }}
+              </span>
             </div>
 
             <div
@@ -322,22 +319,18 @@ const totalRewardValues = computed(() => {
             >
               <AppCoin :value="moderationUser.gold" />
               ->
-              <AppCoin
-                :value="totalRewardValues.gold" :class="[rewardFormModel.gold < 0 ? `
-                  text-status-danger
-                ` : `text-status-success`]"
-              />
+              <span :class="[rewardFormModel.gold < 0 ? 'text-error' : 'text-success']">
+                {{ $n(totalRewardValues.gold) }}
+              </span>
             </div>
 
             <template v-if="rewardFormModel.experience">
               <div class="flex items-center gap-2 font-bold">
                 <AppExperience :value="selectedCharacter.experience" />
                 ->
-                <AppExperience
-                  :value="totalRewardValues.experience" :class="[rewardFormModel.experience < 0 ? `
-                    text-status-danger
-                  ` : `text-status-success`]"
-                />
+                <span :class="[rewardFormModel.experience < 0 ? 'text-error' : 'text-success']">
+                  {{ $n(totalRewardValues.experience) }}
+                </span>
               </div>
 
               <div
@@ -347,7 +340,7 @@ const totalRewardValues = computed(() => {
                 <span>exp. multi</span>
                 {{ $n(moderationUser.experienceMultiplier) }}
                 ->
-                <span class="text-status-success">
+                <span class="text-success">
                   {{ $n(totalRewardValues.experienceMultiplier) }}
                 </span>
               </div>
@@ -359,12 +352,7 @@ const totalRewardValues = computed(() => {
                 <span>lvl</span>
                 <span>{{ selectedCharacter.level }}</span>
                 <span>-></span>
-                <span
-                  class="text-status-success"
-                  :class="[rewardFormModel.experience < 0 ? 'text-status-danger' : `
-                    text-status-success
-                  `]"
-                >
+                <span :class="[rewardFormModel.experience < 0 ? 'text-error' : 'text-success']">
                   {{ totalRewardValues.level }}
                 </span>
               </div>

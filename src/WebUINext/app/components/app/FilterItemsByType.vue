@@ -49,7 +49,6 @@ const weaponClassOptions = computed(() => {
     v-model="itemType"
     :items="itemTypeOptions"
     :content="false"
-    color="secondary"
     size="xl"
     :orientation
     :ui="{

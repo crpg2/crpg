@@ -22,7 +22,7 @@ const isUnread = computed(() => notification.state === NOTIFICATION_STATE.Unread
 
 <template>
   <UCard
-    variant="subtle"
+    variant="outline"
     :ui="{
       footer: 'flex items-end gap-4',
       body: 'relative',
@@ -30,7 +30,7 @@ const isUnread = computed(() => notification.state === NOTIFICATION_STATE.Unread
   >
     <UiDataCell>
       <template #leftContent>
-        <UAvatar icon="crpg:logo" />
+        <UAvatar icon="crpg:logo" :ui="{ root: 'bg-muted', icon: 'text-highlighted' }" />
       </template>
       <AppMetadataRender
         :keypath="`notification.tpl.${notification.type}`"

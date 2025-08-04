@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { UiHeading } from '#components'
-
 import { useSettingsStore } from '~/stores/settings'
 
 definePageMeta({

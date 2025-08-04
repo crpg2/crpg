@@ -53,9 +53,11 @@ const links: { name: keyof RouteNamedMap, label: string }[] = [
           :to="({ name } as RouteLocationRaw)"
         >
           <UButton
-            color="secondary"
-            :variant="isExactActive ? 'solid' : 'soft'"
+            color="neutral"
             size="lg"
+            :active="isExactActive"
+            variant="ghost"
+            active-variant="soft"
             :label
           />
         </NuxtLink>
