@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text.Json.Serialization;
+using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
 using Crpg.Application.Common.Results;
@@ -13,8 +14,12 @@ namespace Crpg.Application.Users.Commands;
 
 public record RewardUserCommand : IMediatorRequest<UserViewModel>
 {
+    [JsonIgnore]
     public int UserId { get; init; }
+
+    [JsonIgnore]
     public int ActorUserId { get; init; }
+
     public int Gold { get; init; }
     public int HeirloomPoints { get; init; }
     public string ItemId { get; init; } = string.Empty;

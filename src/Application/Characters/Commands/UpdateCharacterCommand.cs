@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Characters.Models;
 using Crpg.Application.Common.Interfaces;
@@ -12,8 +13,12 @@ namespace Crpg.Application.Characters.Commands;
 
 public record UpdateCharacterCommand : IMediatorRequest<CharacterViewModel>
 {
+    [JsonIgnore]
     public int CharacterId { get; init; }
+
+    [JsonIgnore]
     public int UserId { get; init; }
+
     public string Name { get; init; } = default!;
 
     public class Validator : AbstractValidator<UpdateCharacterCommand>

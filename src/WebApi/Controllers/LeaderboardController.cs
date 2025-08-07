@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Crpg.WebApi.Controllers;
 
-[Authorize(Policy = UserPolicy)]
+[AllowAnonymous]
 public class LeaderboardController : BaseController
 {
     /// <summary>

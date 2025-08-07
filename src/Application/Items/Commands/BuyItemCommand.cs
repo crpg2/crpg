@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
@@ -15,6 +16,8 @@ namespace Crpg.Application.Items.Commands;
 public record BuyItemCommand : IMediatorRequest<UserItemViewModel>
 {
     public string ItemId { get; init; } = string.Empty;
+
+    [JsonIgnore]
     public int UserId { get; init; }
 
     internal class Handler : IMediatorRequestHandler<BuyItemCommand, UserItemViewModel>

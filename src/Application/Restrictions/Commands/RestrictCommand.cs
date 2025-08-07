@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Mediator;
@@ -13,12 +14,14 @@ namespace Crpg.Application.Restrictions.Commands;
 
 public record RestrictCommand : IMediatorRequest<RestrictionViewModel>
 {
+    [JsonIgnore]
+    public int RestrictedByUserId { get; init; }
+
     public int RestrictedUserId { get; init; }
     public TimeSpan Duration { get; init; }
     public RestrictionType Type { get; init; }
     public string Reason { get; init; } = default!;
     public string PublicReason { get; init; } = default!;
-    public int RestrictedByUserId { get; init; }
 
     public class Validator : AbstractValidator<RestrictCommand>
     {

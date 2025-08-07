@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using AutoMapper;
 using Crpg.Application.Clans.Models;
@@ -17,6 +19,7 @@ namespace Crpg.Application.Clans.Commands;
 
 public record CreateClanCommand : IMediatorRequest<ClanViewModel>
 {
+    [JsonIgnore]
     public int UserId { get; init; }
     public string Tag { get; init; } = string.Empty;
     public string Name { get; init; } = string.Empty;
@@ -26,6 +29,8 @@ public record CreateClanCommand : IMediatorRequest<ClanViewModel>
     public string BannerKey { get; init; } = string.Empty;
     public Region Region { get; init; }
     public IList<Languages> Languages { get; init; } = new List<Languages>();
+
+    [JsonRequired]
     public Uri? Discord { get; init; }
     public TimeSpan ArmoryTimeout { get; init; }
 
