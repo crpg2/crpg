@@ -1,12 +1,9 @@
 ﻿using System.Diagnostics;
-using Crpg.Application.Common.Interfaces;
 using Crpg.Application.Common.Results;
-using Crpg.Application.Items.Models;
 using Crpg.Common.Helpers;
 using Crpg.Domain.Entities.Characters;
-using Crpg.Domain.Entities.Items;
+using Crpg.Domain.Entities.Limitations;
 using Crpg.Domain.Entities.Servers;
-using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Common.Services;
 
@@ -37,45 +34,11 @@ internal interface ICharacterService
     Error? Retire(Character character);
 
     void GiveExperience(Character character, int experience, bool useExperienceMultiplier);
-
-    Task<Result> UpdateItems(ICrpgDbContext db, Character character, IList<EquippedItemIdViewModel> items, CancellationToken cancellationToken);
 }
 
 /// <inheritdoc />
 internal class CharacterService : ICharacterService
 {
-    private static readonly ItemSlot[] WeaponSlots =
-    {
-            ItemSlot.Weapon0,
-            ItemSlot.Weapon1,
-            ItemSlot.Weapon2,
-            ItemSlot.Weapon3,
-    };
-
-    private static readonly Dictionary<ItemType, ItemSlot[]> ItemSlotsByType = new()
-    {
-        [ItemType.HeadArmor] = new[] { ItemSlot.Head },
-        [ItemType.ShoulderArmor] = new[] { ItemSlot.Shoulder },
-        [ItemType.BodyArmor] = new[] { ItemSlot.Body },
-        [ItemType.HandArmor] = new[] { ItemSlot.Hand },
-        [ItemType.LegArmor] = new[] { ItemSlot.Leg },
-        [ItemType.MountHarness] = new[] { ItemSlot.MountHarness },
-        [ItemType.Mount] = new[] { ItemSlot.Mount },
-        [ItemType.Shield] = WeaponSlots,
-        [ItemType.Bow] = WeaponSlots,
-        [ItemType.Crossbow] = WeaponSlots,
-        [ItemType.OneHandedWeapon] = WeaponSlots,
-        [ItemType.TwoHandedWeapon] = WeaponSlots,
-        [ItemType.Polearm] = WeaponSlots,
-        [ItemType.Thrown] = WeaponSlots,
-        [ItemType.Arrows] = WeaponSlots,
-        [ItemType.Bolts] = WeaponSlots,
-        [ItemType.Pistol] = WeaponSlots,
-        [ItemType.Musket] = WeaponSlots,
-        [ItemType.Bullets] = WeaponSlots,
-        [ItemType.Banner] = new[] { ItemSlot.WeaponExtra },
-    };
-
     private readonly IExperienceTable _experienceTable;
     private readonly ICompetitiveRatingModel _competitiveRatingModel;
     private readonly Constants _constants;
@@ -88,86 +51,6 @@ internal class CharacterService : ICharacterService
         _experienceTable = experienceTable;
         _competitiveRatingModel = competitiveRatingModel;
         _constants = constants;
-    }
-
-    public async Task<Result> UpdateItems(ICrpgDbContext db, Character character, IList<EquippedItemIdViewModel> items, CancellationToken cancellationToken)
-    {
-        int[] newUserItemIds = items
-                .Where(ei => ei.UserItemId != null)
-                .Select(ei => ei.UserItemId!.Value)
-                .ToArray();
-
-        Dictionary<int, UserItem> userItemsById = await db.UserItems
-                        .Include(ui => ui.Item)
-                        .Include(ui => ui.ClanArmoryItem)
-                        .Include(ui => ui.PersonalItem)
-                        .Where(ui =>
-                            (ui.ClanArmoryBorrowedItem!.BorrowerUserId == character.UserId || (ui.UserId == character.UserId && ui.ClanArmoryItem == null))
-                            && newUserItemIds.Contains(ui.Id))
-                        .ToDictionaryAsync(ui => ui.Id, cancellationToken);
-
-        Dictionary<ItemSlot, EquippedItem> oldItemsBySlot = character.EquippedItems.ToDictionary(c => c.Slot);
-
-        foreach (EquippedItemIdViewModel newEquippedItem in items)
-        {
-            EquippedItem? equippedItem;
-            if (newEquippedItem.UserItemId == null) // If null, remove item in the slot.
-            {
-                if (oldItemsBySlot.TryGetValue(newEquippedItem.Slot, out equippedItem))
-                {
-                    character.EquippedItems.Remove(equippedItem);
-                }
-
-                continue;
-            }
-
-            if (!userItemsById.TryGetValue(newEquippedItem.UserItemId.Value, out UserItem? userItem))
-            {
-                return new(CommonErrors.UserItemNotFound(newEquippedItem.UserItemId.Value));
-            }
-
-            if (!userItem.Item!.Enabled && userItem.PersonalItem == null)
-            {
-                return new(CommonErrors.ItemDisabled(userItem.ItemId));
-            }
-
-            if (userItem.IsBroken)
-            {
-                return new(CommonErrors.ItemBroken(userItem.ItemId));
-            }
-
-            if ((userItem.Item!.Flags & (ItemFlags.DropOnAnyAction | ItemFlags.DropOnWeaponChange)) != 0)
-            {
-                if (newEquippedItem.Slot != ItemSlot.WeaponExtra)
-                {
-                    return new(CommonErrors.ItemBadSlot(userItem.ItemId, newEquippedItem.Slot));
-                }
-            }
-            else if (!ItemSlotsByType[userItem.Item!.Type].Contains(newEquippedItem.Slot))
-            {
-                return new(CommonErrors.ItemBadSlot(userItem.ItemId, newEquippedItem.Slot));
-            }
-
-            if (oldItemsBySlot.TryGetValue(newEquippedItem.Slot, out equippedItem))
-            {
-                // Character already has an item in this slot. Replace it.
-                equippedItem.UserItem = userItem;
-            }
-            else
-            {
-                // Character has no item in this slot. Create it.
-                equippedItem = new EquippedItem
-                {
-                    CharacterId = character.Id,
-                    Slot = newEquippedItem.Slot,
-                    UserItem = userItem,
-                };
-
-                character.EquippedItems.Add(equippedItem);
-            }
-        }
-
-        return Result.NoErrors;
     }
 
     public void SetValuesForNewUserStartingCharacter(Character character)
