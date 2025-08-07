@@ -5,6 +5,8 @@ using Crpg.Application.Clans.Queries;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Games.Commands;
 using Crpg.Application.Games.Models;
+using Crpg.Application.Items.Models;
+using Crpg.Application.Items.Queries;
 using Crpg.Application.Restrictions.Commands;
 using Crpg.Application.Restrictions.Models;
 using Crpg.Domain.Entities;
@@ -29,6 +31,30 @@ public class GamesController : BaseController
             PlatformUserId = platformUserId,
             Region = region,
             Instance = instance,
+        }));
+
+    /// <summary>
+    /// Get user items.
+    /// </summary>
+    [HttpGet("users/{id}/items")]
+    public Task<ActionResult<Result<IList<UserItemViewModel>>>> GetUserItems(
+        [FromRoute] int userId) =>
+        ResultToActionAsync(Mediator.Send(new GetGameUserItemsQuery
+        {
+            UserId = userId,
+        }));
+
+    /// <summary>
+    /// Update character items.
+    /// </summary>
+    [HttpPut("users/{userId}/character/{characterId}/items")]
+    public Task<ActionResult<Result<IList<EquippedItemViewModel>>>> UpdateCharacterItems(
+        [FromRoute] int userId, [FromRoute] int characterId, [FromBody] UpdateGameCharacterItemsCommand cmd) =>
+        ResultToActionAsync(Mediator.Send(new UpdateGameCharacterItemsCommand
+        {
+            UserId = userId,
+            CharacterId = characterId,
+            Items = cmd.Items,
         }));
 
     /// <summary>
