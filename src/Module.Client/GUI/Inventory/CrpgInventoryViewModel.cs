@@ -1,10 +1,12 @@
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
+using Crpg.Module.Helpers;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -131,16 +133,37 @@ public class CrpgInventoryViewModel : ViewModel
         AmountHandArmor = new ArmorAmountVM(0);
         AmountHorseArmor = new ArmorAmountVM(0);
 
-        if (agentMain?.Character != null)
+        // Get the dummy BasicCharacterObject used for the player character
+        var basicCharacter = MBObjectManager.Instance.GetObject<BasicCharacterObject>("mp_character");
+        if (basicCharacter == null)
         {
-            CharacterPreview.FillFrom(agentMain.Character);
-            RefreshCharacterPreview();
+            InformationManager.DisplayMessage(new InformationMessage("Failed to find 'mp_character' BasicCharacterObject."));
+            return;
         }
-        else
+
+        NetworkCommunicator? myPeer = GameNetwork.MyPeer;
+        VirtualPlayer? virtualPlayer = myPeer?.VirtualPlayer;
+
+        if (virtualPlayer != null)
         {
-            // Optionally log or fallback
-            InformationManager.DisplayMessage(new InformationMessage("Agent.Main or its character is null."));
+            basicCharacter.UpdatePlayerCharacterBodyProperties(
+                virtualPlayer.BodyProperties,
+                virtualPlayer.Race,
+                virtualPlayer.IsFemale);
+
+            basicCharacter.Age = virtualPlayer.BodyProperties.Age;
         }
+
+        CharacterPreview.FillFrom(basicCharacter);
+
+        var crpgUser = myPeer?.GetComponent<CrpgPeer>()?.User;
+        if (crpgUser != null)
+        {
+            var equipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgUser.Character.EquippedItems);
+            CharacterPreview.EquipmentCode = equipment.CalculateEquipmentCode();
+        }
+
+        RefreshCharacterPreview();
     }
 
     public override void OnFinalize()
@@ -199,15 +222,6 @@ public class CrpgInventoryViewModel : ViewModel
 
     private EquipmentSlotVM GetImageIdentifierFromEquipment(EquipmentIndex index)
     {
-        Agent? agent = Agent.Main;
-
-        if (agent == null || agent.Character == null)
-        {
-            InformationManager.DisplayMessage(new InformationMessage("Agent or character is null."));
-            return new EquipmentSlotVM(new ImageIdentifierVM(ImageIdentifierType.Item), index);
-        }
-
-        // Reconstruct equipment from character data
         var crpgPeer = GameNetwork.MyPeer.GetComponent<CrpgPeer>();
         if (crpgPeer?.User?.Character == null)
         {

@@ -30,6 +30,34 @@ public class InventoryGridVM : ViewModel
         }
     }
 
+    public void UpdateAvailableItems(IEnumerable<(ItemObject item, int quantity)> newInventory)
+    {
+        var newItemsDict = newInventory.ToDictionary(x => x.item, x => x.quantity);
+
+        // Remove items not in new inventory
+        _availableItems.RemoveAll(vm => !newItemsDict.ContainsKey(vm.ItemObj));
+
+        // Update quantities and add new items
+        foreach (var kvp in newItemsDict) // kvp is KeyValuePair<ItemObject, int>
+        {
+            var item = kvp.Key;
+            int quantity = kvp.Value;
+
+            var existingVm = _availableItems.FirstOrDefault(vm => vm.ItemObj == item);
+            if (existingVm != null)
+            {
+                existingVm.ItemQuantity = quantity;
+            }
+            else
+            {
+                _availableItems.Add(new InventorySlotVM(item, quantity));
+            }
+        }
+
+        // Update the filtered list based on current filters
+        RefreshFilteredItemsFast();
+    }
+
     [DataSourceProperty]
     public List<InventorySlotVM> AvailableItems
     {
@@ -64,7 +92,12 @@ public class InventoryGridVM : ViewModel
     {
         _filteredItems.Clear();
 
-        foreach (var slot in _availableItems)
+        var sortedItems = _availableItems
+            .OrderBy(item => item.ItemObj?.ItemType ?? ItemObject.ItemTypeEnum.Invalid)
+            .ThenBy(item => item.ItemName)
+            .ToList();
+
+        foreach (var slot in sortedItems)
         {
             _filteredItems.Add(slot);
         }
@@ -112,7 +145,7 @@ public class InventoryGridVM : ViewModel
         InformationManager.DisplayMessage(new InformationMessage($"Clicked sort icon: {clickedSort.IconSprite}"));
 
         // TODO: Apply filtering logic here and refresh visible items.
-        RefreshFilteredItems();
+        RefreshFilteredItemsFast();
     }
 
     private bool PassesFilters(InventorySlotVM slot)
@@ -147,6 +180,83 @@ public class InventoryGridVM : ViewModel
             {
                 FilteredItems.Add(slot);
             }
+        }
+    }
+
+    private void RefreshFilteredItems2()
+    {
+        // Update active filters from selected filters
+        _activeFilters = InventorySortTypesLeft
+            .Concat(InventorySortTypesTop)
+            .Where(f => f.IsSelected)
+            .ToList();
+
+        // Get the filtered items based on current filters
+        var newFiltered = AvailableItems
+            .Where(slot => PassesFilters(slot))
+            .ToList();
+
+        // Use a HashSet for fast lookup
+        var newFilteredSet = new HashSet<InventorySlotVM>(newFiltered);
+        var currentSet = new HashSet<InventorySlotVM>(FilteredItems);
+
+        // Remove items not in the new filtered list
+        for (int i = FilteredItems.Count - 1; i >= 0; i--)
+        {
+            var item = FilteredItems[i];
+            if (!newFilteredSet.Contains(item))
+            {
+                FilteredItems.RemoveAt(i);
+            }
+        }
+
+        // Add items that are new
+        foreach (var item in newFiltered)
+        {
+            if (!currentSet.Contains(item))
+            {
+                FilteredItems.Add(item);
+            }
+        }
+
+        // Sort the filtered list after update
+        SortFilteredItems();
+    }
+
+    private void RefreshFilteredItemsFast()
+    {
+        // Update active filters from selected filters
+        _activeFilters = InventorySortTypesLeft
+            .Concat(InventorySortTypesTop)
+            .Where(f => f.IsSelected)
+            .ToList();
+
+        // Filter and sort all items
+        var filteredSortedItems = AvailableItems
+            .Where(slot => PassesFilters(slot))
+            .OrderBy(item => item.ItemObj?.ItemType ?? ItemObject.ItemTypeEnum.Invalid)
+            .ThenBy(item => item.ItemName)
+            .ToList();
+
+        // Clear and bulk add (fewer UI notifications)
+        FilteredItems.Clear();
+        foreach (var item in filteredSortedItems)
+        {
+            FilteredItems.Add(item);
+        }
+    }
+
+    private void SortFilteredItems()
+    {
+        var sorted = FilteredItems
+            .OrderBy(item => item.ItemObj?.ItemType ?? ItemObject.ItemTypeEnum.Invalid)
+            .ThenBy(item => item.ItemName)
+            .ToList();
+
+        FilteredItems.Clear();
+        foreach (var item in sorted)
+        {
+            FilteredItems.Add(item);
         }
     }
 }

@@ -1,5 +1,7 @@
+using Crpg.Module.Api.Models.Characters;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
+using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -8,6 +10,7 @@ public class InventorySlotVM : ViewModel
     private string _itemName;
     private string _defaultSprite;
     private bool _showDefaultIcon;
+    private int _itemQuantity;
     private string _quantityText;
 
     private ImageIdentifierVM _imageIdentifier;
@@ -64,6 +67,19 @@ public class InventorySlotVM : ViewModel
     {
         get => _quantityText;
         set => SetField(ref _quantityText, value, nameof(QuantityText));
+    }
+
+    [DataSourceProperty]
+    public int ItemQuantity
+    {
+        get => _itemQuantity;
+        set
+        {
+            if (SetField(ref _itemQuantity, value, nameof(ItemQuantity)))
+            {
+                QuantityText = value > 1 ? value.ToString() : string.Empty;
+            }
+        }
     }
 
     [DataSourceProperty]

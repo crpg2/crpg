@@ -18,13 +18,14 @@ public class CrpgInventoryMissionView : MissionView
     private bool _initialized;
     private GauntletLayer? _gauntletLayer;
     private CrpgInventoryViewModel? _dataSource;
+    private IGauntletMovie? _movie;
 
     public override void OnMissionTick(float dt)
     {
         base.OnMissionTick(dt);
         if (_gauntletLayer != null && _gauntletLayer.IsActive && (_gauntletLayer.Input.IsHotKeyReleased("ToggleEscapeMenu") || _gauntletLayer.Input.IsHotKeyReleased("Exit")))
         {
-            Close();
+            Hide();
         }
     }
 
@@ -40,7 +41,36 @@ public class CrpgInventoryMissionView : MissionView
 
     public void Open()
     {
-        InitializeInventoryUI();
+        if (_initialized)
+        {
+            Show();
+        }
+        else
+        {
+            InitializeInventoryUI();
+        }
+    }
+
+    public void Show()
+    {
+        if (_gauntletLayer != null && _movie != null)
+        {
+            _gauntletLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
+            ScreenManager.TrySetFocus(_gauntletLayer);
+
+            _movie.RootWidget.IsVisible = true;
+        }
+    }
+
+    public void Hide()
+    {
+        if (_gauntletLayer != null && _movie != null)
+        {
+            _gauntletLayer.InputRestrictions.ResetInputRestrictions();
+            ScreenManager.TryLoseFocus(_gauntletLayer);
+
+            _movie.RootWidget.IsVisible = false;
+        }
     }
 
     public override void OnMissionScreenActivate()
@@ -53,38 +83,39 @@ public class CrpgInventoryMissionView : MissionView
         base.OnMissionScreenTick(dt);
         if (!_initialized && Mission.Current?.MainAgent != null)
         {
-            _initialized = true;
-            InitializeInventoryUI();
+            // _initialized = true;
+            // InitializeInventoryUI();
         }
     }
 
     public override void OnMissionScreenFinalize()
     {
         base.OnMissionScreenFinalize();
-
-        if (_gauntletLayer != null)
-        {
-            MissionScreen.RemoveLayer(_gauntletLayer);
-            _gauntletLayer = null;
-        }
-
-        _dataSource?.OnFinalize();
-        _dataSource = null;
+        CleanupUI();
     }
 
     private void InitializeInventoryUI()
     {
+        if (_initialized || MissionScreen == null)
+        {
+            return;
+        }
+
         try
         {
             _dataSource = new CrpgInventoryViewModel();
-            _gauntletLayer = new GauntletLayer(150);
-            _gauntletLayer.IsFocusLayer = true;
+            _gauntletLayer = new GauntletLayer(150)
+            {
+                IsFocusLayer = true,
+            };
+
             _gauntletLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
             _gauntletLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
-            _gauntletLayer.LoadMovie("CrpgInventoryScreen", _dataSource);
+            _movie = _gauntletLayer.LoadMovie("CrpgInventoryScreen", _dataSource);
             MissionScreen.AddLayer(_gauntletLayer);
             ScreenManager.TrySetFocus(_gauntletLayer);
 
+            _initialized = true;
         }
         catch (Exception ex)
         {
@@ -93,5 +124,21 @@ public class CrpgInventoryMissionView : MissionView
         }
     }
 
-    private void file() => throw new NotImplementedException();
+    private void CleanupUI()
+    {
+        if (_gauntletLayer != null)
+        {
+            _gauntletLayer.InputRestrictions.ResetInputRestrictions();
+            if (MissionScreen != null)
+            {
+                MissionScreen.RemoveLayer(_gauntletLayer);
+                _gauntletLayer = null;
+            }
+        }
+
+        _dataSource?.OnFinalize();
+        _dataSource = null;
+
+        _initialized = false;
+    }
 }
