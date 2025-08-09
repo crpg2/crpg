@@ -14,7 +14,7 @@
   </Constants>
   <Window>
     <!-- Main Container -->
-    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10">
+    <Widget IsVisible="@IsVisible" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10">
       <Children>
         <!-- Centering Wrapper -->
         <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"

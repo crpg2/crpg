@@ -44,7 +44,7 @@
                                   SuggestedWidth="120"
                                   SuggestedHeight="32"
                                   DoNotPassEventsToChildren="true"
-                                  Command.Click="OnOpenInventoryButtonClicked"
+                                  Command.Click="OpenInventory"
                                   HoverSound="HUD_Button">
                       <Children>
                         <TextWidget Text="Inventory"

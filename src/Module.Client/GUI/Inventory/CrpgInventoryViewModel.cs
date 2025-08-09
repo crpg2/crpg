@@ -171,7 +171,10 @@ public class CrpgInventoryViewModel : ViewModel
         SetEquipmentSlotEventSubscriptions(false);
         // Any other cleanup needed here
     }
+    public void Tick()
+    {
 
+    }
     public void SetEquipmentSlotEventSubscriptions(bool subscribe)
     {
         foreach (var slot in _equipmentSlots)
