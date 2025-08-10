@@ -36,7 +36,7 @@ public class GamesController : BaseController
     /// <summary>
     /// Get user items.
     /// </summary>
-    [HttpGet("users/{id}/items")]
+    [HttpGet("users/{userId}/items")]
     public Task<ActionResult<Result<IList<UserItemViewModel>>>> GetUserItems(
         [FromRoute] int userId) =>
         ResultToActionAsync(Mediator.Send(new GetGameUserItemsQuery
@@ -47,7 +47,7 @@ public class GamesController : BaseController
     /// <summary>
     /// Update character items.
     /// </summary>
-    [HttpPut("users/{userId}/character/{characterId}/items")]
+    [HttpPut("users/{userId}/characters/{characterId}/items")]
     public Task<ActionResult<Result<IList<EquippedItemViewModel>>>> UpdateCharacterItems(
         [FromRoute] int userId, [FromRoute] int characterId, [FromBody] UpdateGameCharacterItemsCommand cmd) =>
         ResultToActionAsync(Mediator.Send(new UpdateGameCharacterItemsCommand

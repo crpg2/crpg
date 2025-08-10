@@ -39,6 +39,8 @@ public record UpdateGameCharacterItemsCommand : IMediatorRequest<IList<EquippedI
             }
 
             await _characterService.UpdateItems(_db, character, req.Items, cancellationToken);
+
+            await _db.SaveChangesAsync(cancellationToken);
             return new(_mapper.Map<IList<EquippedItemViewModel>>(character.EquippedItems));
         }
     }
