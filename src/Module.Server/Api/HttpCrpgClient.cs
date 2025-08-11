@@ -78,6 +78,17 @@ internal class HttpCrpgClient : ICrpgClient
         return Get<CrpgUser>("games/users", queryParameters, cancellationToken);
     }
 
+    public Task<CrpgResult<IList<CrpgUserItem>>> GetUserItemsAsync(int UserId,
+        CancellationToken cancellationToken = default)
+    {
+        return Get<IList<CrpgUserItem>>("games/users/" + UserId + "items", null, cancellationToken);
+    }
+
+    public Task<CrpgResult<IList<CrpgEquippedItem>>> UpdateCharacterItemsAsync(int UserId, int CharacterId, CrpgGameCharacterItemsUpdateRequest req, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgGameCharacterItemsUpdateRequest, IList<CrpgEquippedItem>>("games/users/" + UserId + "/characters/" + CharacterId + "/items", req, cancellationToken);
+    }
+
     public Task<CrpgResult<CrpgUser>> GetTournamentUserAsync(Platform platform, string platformUserId,
         CancellationToken cancellationToken = default)
     {
