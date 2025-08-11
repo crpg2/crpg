@@ -1,0 +1,22 @@
+<Prefab Name="InventorySortTypePrefab">
+  <Window>
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="50" SuggestedHeight="50">
+      <Children>
+        <BrushWidget Id="Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="rounded_frame" Color="#FFFFFFFF">
+        </BrushWidget>
+        <ButtonWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
+                  SuggestedWidth="45" SuggestedHeight="45" AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="true"
+                  ClipContents="true" DoNotAcceptEvents="False" Brush="InventorySort.Button" IsSelected="@IsSelected">
+          <Children>
+            <ImageWidget Sprite="@IconSprite"
+                IsVisible="@ShowInventoryTypeIcon"
+                WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="40" SuggestedHeight="40"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                DoNotAcceptEvents="True" PassEventsToParent="True" /> 
+          </Children>
+        </ButtonWidget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

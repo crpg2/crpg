@@ -1,0 +1,58 @@
+<Prefab Name="InventorySlotPrefab">
+  <Window>
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedHeight="80" SuggestedWidth="80" >
+      <Children>
+        <BrushWidget Id="Background" AcceptDrop="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Color="#FFFFFFFF">
+          <!-- 
+          <Children>
+            <BrushWidget MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="CrpgInventory.EquipmentSlot.BackGround">
+            </BrushWidget>
+          </Children>
+          -->
+        </BrushWidget>
+        <ButtonWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
+                  SuggestedWidth="75" SuggestedHeight="75" AcceptDrag="true" DoNotPassEventsToChildren="true"
+                  ClipContents="true" DoNotAcceptEvents="False" >
+          <Children>
+
+            <!-- Default fallback icon -->
+            <ImageWidget Sprite="@DefaultSprite"
+                IsVisible="@ShowDefaultIcon"
+                WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="48" SuggestedHeight="48"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                DoNotAcceptEvents="True" PassEventsToParent="True" />
+
+            <!-- Equipped item icon -->
+            <ImageIdentifierWidget DataSource="{ImageIdentifier}"
+                ImageId="@Id"
+                AdditionalArgs="@AdditionalArgs"
+                ImageTypeCode="@ImageTypeCode"
+                WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="90" SuggestedHeight="45"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Margin="4"
+                DoNotAcceptEvents="True" PassEventsToParent="True" />
+
+            <!-- Quantity text (e.g., "12") -->
+            <TextWidget Text="@QuantityText"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                MarginRight="4"
+                MarginBottom="2"
+                Brush="Inventory.ItemCountText"
+                IsVisible="@QuantityText != ''"
+                DoNotAcceptEvents="True" />
+            <TextWidget Text="@ItemName"
+                WidthSizePolicy="StretchToParent"
+                HeightSizePolicy="CoverChildren"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Brush="InventorySlot.ItemName.Text"
+                DoNotAcceptEvents="True" PassEventsToParent="True" />
+          </Children>
+        </ButtonWidget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

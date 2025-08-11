@@ -13,6 +13,12 @@
       <SpriteSheetSize ID="1" Width="64" Height="32" />
       <AlwaysLoad />
     </SpriteCategory>
+    <SpriteCategory>
+      <Name>ui_crpg_equipicons</Name>
+      <SpriteSheetCount>1</SpriteSheetCount>
+      <SpriteSheetSize ID="1" Width="2048" Height="2048" />
+      <AlwaysLoad />
+    </SpriteCategory>
   </SpriteCategories>
   <SpriteParts>
     <SpritePart>
@@ -933,6 +939,114 @@
       <SheetY>4</SheetY>
       <CategoryName>ui_crpg_scoreboard</CategoryName>
     </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_0</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_1</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>512</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_2</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1024</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_3</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1536</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_4</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>0</SheetX>
+      <SheetY>512</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_5</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>512</SheetX>
+      <SheetY>512</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_6</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1024</SheetX>
+      <SheetY>512</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_7</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1536</SheetX>
+      <SheetY>512</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_8</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>0</SheetX>
+      <SheetY>1024</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_9</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>512</SheetX>
+      <SheetY>1024</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_10</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1024</SheetX>
+      <SheetY>1024</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>crpg_equipicon_11</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1536</SheetX>
+      <SheetY>1024</SheetY>
+      <CategoryName>ui_crpg_equipicons</CategoryName>
+    </SpritePart>    
   </SpriteParts>
   <Sprites>
     <GenericSprite>
@@ -1342,6 +1456,54 @@
     <GenericSprite>
       <Name>ui_crpg_scoreboard_context_menu_promote_commander</Name>
       <SpritePartName>ui_crpg_scoreboard_context_menu_promote_commander</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_0</Name>
+      <SpritePartName>crpg_equipicon_0</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_1</Name>
+      <SpritePartName>crpg_equipicon_1</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_2</Name>
+      <SpritePartName>crpg_equipicon_2</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_3</Name>
+      <SpritePartName>crpg_equipicon_3</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_4</Name>
+      <SpritePartName>crpg_equipicon_4</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_5</Name>
+      <SpritePartName>crpg_equipicon_5</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_6</Name>
+      <SpritePartName>crpg_equipicon_6</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_7</Name>
+      <SpritePartName>crpg_equipicon_7</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_8</Name>
+      <SpritePartName>crpg_equipicon_8</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_9</Name>
+      <SpritePartName>crpg_equipicon_9</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_10</Name>
+      <SpritePartName>crpg_equipicon_10</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_equipicon_11</Name>
+      <SpritePartName>crpg_equipicon_11</SpritePartName>
     </GenericSprite>
   </Sprites>
 </SpriteData>

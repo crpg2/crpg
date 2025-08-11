@@ -22,6 +22,7 @@ using Crpg.Module.GUI.AmmoQuiverChange;
 using Crpg.Module.GUI.Commander;
 using Crpg.Module.GUI.EndOfRound;
 using Crpg.Module.GUI.HudExtension;
+using Crpg.Module.GUI.Inventory;
 using Crpg.Module.GUI.Scoreboard;
 using Crpg.Module.GUI.Spectator;
 using Crpg.Module.GUI.Warmup;
@@ -72,6 +73,8 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
             MultiplayerViewCreator.CreateMissionKillNotificationUIHandler(),
             new CrpgHudExtensionHandler(),
             new AmmoQuiverChangeUiHandler(),
+            //new CrpgInventoryMissionView(),
+            new CrpgMainGuiMissionView(),
             MultiplayerViewCreator.CreateMultiplayerMissionDeathCardUIHandler(),
             //new SpectatorHudUiHandler(),
             new WarmupHudUiHandler(),
