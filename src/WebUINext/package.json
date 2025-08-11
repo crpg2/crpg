@@ -11,9 +11,8 @@
     "test:unit": "vitest"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^5.2.0",
-    "@hey-api/nuxt": "^0.2.0",
-    "@hey-api/openapi-ts": "^0.80.7",
+    "@antfu/eslint-config": "^5.2.1",
+    "@hey-api/openapi-ts": "^0.80.8",
     "@internationalized/date": "^3.8.2",
     "@number-flow/vue": "^0.4.8",
     "@nuxt/eslint": "^1.8.0",
@@ -33,7 +32,7 @@
     "echarts": "^6.0.0",
     "es-toolkit": "^1.39.9",
     "eslint": "^9.33.0",
-    "eslint-plugin-better-tailwindcss": "3.7.3",
+    "eslint-plugin-better-tailwindcss": "3.7.4",
     "happy-dom": "^18.0.1",
     "json5": "^2.2.3",
     "msw": "^2.10.4",
@@ -48,7 +47,7 @@
     "type-fest": "^4.41.0",
     "vitest": "^3.2.4",
     "vue": "^3.5.18",
-    "vue-echarts": "^7.0.3",
+    "vue-echarts": "^8.0.0-beta.1",
     "vue-eslint-parser": "^10.2.0",
     "vue-router": "^4.5.1"
   }

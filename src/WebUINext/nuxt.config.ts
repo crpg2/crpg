@@ -1,3 +1,4 @@
+import type { OpenApiSchemaObject } from '@hey-api/openapi-ts'
 import type { Plugin } from 'vite'
 
 import tailwindcss from '@tailwindcss/vite'
@@ -37,7 +38,6 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@pinia/nuxt',
     '@vueuse/nuxt',
-    '@hey-api/nuxt',
     '@nuxtjs/i18n',
     '@nuxt/image',
   ],
@@ -202,14 +202,15 @@ export default defineNuxtConfig({
       parser: {
         patch: {
           schemas: {
-            CharacterStatisticsViewModel: (schema: any) => convertDateTimeToTimestamp(schema, 'playTime'),
-            ClanViewModel: (schema: any) => convertDateTimeToTimestamp(schema, 'armoryTimeout'),
-            UpdateClanCommand: (schema: any) => convertDateTimeToTimestamp(schema, 'armoryTimeout'),
-            CreateClanCommand: (schema: any) => convertDateTimeToTimestamp(schema, 'armoryTimeout'),
-            RestrictCommand: (schema: any) => convertDateTimeToTimestamp(schema, 'duration'),
-            RestrictionPublicViewModel: (schema: any) => convertDateTimeToTimestamp(schema, 'duration'),
-            RestrictionViewModel: (schema: any) => convertDateTimeToTimestamp(schema, 'duration'),
-            ItemWeaponComponentViewModel: (schema: any) => {
+            CharacterStatisticsViewModel: schema => convertDateTimeToTimestamp(schema, 'playTime'),
+            ClanViewModel: schema => convertDateTimeToTimestamp(schema, 'armoryTimeout'),
+            UpdateClanCommand: schema => convertDateTimeToTimestamp(schema, 'armoryTimeout'),
+            CreateClanCommand: schema => convertDateTimeToTimestamp(schema, 'armoryTimeout'),
+            RestrictCommand: schema => convertDateTimeToTimestamp(schema, 'duration'),
+            RestrictionPublicViewModel: schema => convertDateTimeToTimestamp(schema, 'duration'),
+            RestrictionViewModel: schema => convertDateTimeToTimestamp(schema, 'duration'),
+            ItemWeaponComponentViewModel: (schema) => {
+              // @ts-expect-error ///
               schema.properties.itemUsage.enum = [
                 'long_bow',
                 'bow',
@@ -221,21 +222,26 @@ export default defineNuxtConfig({
                 'polearm',
               ]
             },
-            ItemType: (schema: any) => {
-              schema.enum.push(...['Ranged', 'Ammo'])
+            ItemType: (schema) => {
+              schema.enum = [...schema.enum || [], 'Ranged', 'Ammo']
             },
-            WeaponFlags: (schema: any) => {
-              schema.enum.push(...['CanReloadOnHorseback', 'CantUseOnHorseback'])
+            WeaponFlags: (schema) => {
+              schema.enum = [...schema.enum || [], 'CanReloadOnHorseback', 'CantUseOnHorseback']
             },
-            ItemMountComponentViewModel: (schema: any) => {
+            ItemMountComponentViewModel: (schema) => {
+              // @ts-expect-error ///
               schema.properties.familyType.enum = [0, 1, 2, 3] // Undefined: 0, Horse: 1, Camel: 2, EBA: 3
+              // @ts-expect-error ///
               schema.properties.familyType.type = 'integer'
             },
-            ItemArmorComponentViewModel: (schema: any) => {
+            ItemArmorComponentViewModel: (schema) => {
+              // @ts-expect-error ///
               schema.properties.familyType.enum = [0, 1, 2, 3] // Undefined: 0, Horse: 1, Camel: 2, EBA: 3
+              // @ts-expect-error ///
               schema.properties.familyType.type = 'integer'
             },
           },
+          // TODO:
           // parameters: {
           //   // from: convertDateTimeToString,
           //   region: (parameter) => {
@@ -281,14 +287,9 @@ export default defineNuxtConfig({
 })
 
 // convert date-time format to timestamp
-function convertDateTimeToTimestamp(schema: any, key: string) {
+function convertDateTimeToTimestamp(schema: OpenApiSchemaObject.V2_0_X | OpenApiSchemaObject.V3_0_X | OpenApiSchemaObject.V3_1_X, key: string) {
+  // @ts-expect-error ///
   delete schema.properties[key].format
+  // @ts-expect-error ///
   schema.properties[key].type = 'number'
-}
-
-// convert date-time format to timestamp
-function convertDateTimeToString(parameter: any) {
-  console.log('parameter', parameter)
-  delete parameter.schema.format
-  parameter.schema.type = 'string'
 }
