@@ -37,7 +37,7 @@ public class GamesController : BaseController
     /// Get user items.
     /// </summary>
     [HttpGet("users/{userId}/items")]
-    public Task<ActionResult<Result<IList<UserItemViewModel>>>> GetUserItems(
+    public Task<ActionResult<Result<IList<GameUserItemExtendedViewModel>>>> GetUserItems(
         [FromRoute] int userId) =>
         ResultToActionAsync(Mediator.Send(new GetGameUserItemsQuery
         {

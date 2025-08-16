@@ -1,16 +1,18 @@
-using TaleWorlds.Engine.GauntletUI;
-using TaleWorlds.MountAndBlade.View.MissionViews;
-using TaleWorlds.InputSystem;
-using TaleWorlds.Library;
-using TaleWorlds.ScreenSystem;
+using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
+using TaleWorlds.Engine.GauntletUI;
+using TaleWorlds.Engine.Screens;
 using TaleWorlds.GauntletUI;
 using TaleWorlds.GauntletUI.BaseTypes;
-using TaleWorlds.Engine.Screens;
+using TaleWorlds.GauntletUI.Data;
 using TaleWorlds.GauntletUI.ExtraWidgets;
 using TaleWorlds.GauntletUI.PrefabSystem;
-using TaleWorlds.GauntletUI.Data;
+using TaleWorlds.InputSystem;
+using TaleWorlds.Library;
+using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.View.MissionViews;
 using TaleWorlds.MountAndBlade.View.Screens;
+using TaleWorlds.ScreenSystem;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -124,7 +126,6 @@ public class CrpgMainGuiMissionView : MissionView
 
         // 5️⃣ Tick VMs
         _mainGuiVm?.Tick();
-        _inventoryVm?.Tick();
     }
 
     // Main GUI bar open/close/toggle methods
@@ -230,6 +231,11 @@ public class CrpgMainGuiMissionView : MissionView
             _inventoryLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
             ScreenManager.TrySetFocus(_inventoryLayer);
         }
+
+        // update available items
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new RequestCrpgUserItems());
+        GameNetwork.EndModuleEventAsClient();
 
         string openMessage = $"Inventory opened: VM={_inventoryVm != null}, IsVisible={_inventoryVm?.IsVisible}, Focus={_inventoryLayer?.IsFocusLayer}";
         InformationManager.DisplayMessage(new InformationMessage(openMessage));

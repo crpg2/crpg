@@ -42,7 +42,6 @@ declare module 'vue' {
     DialogBase: typeof import('./../components/strategus/dialogs/DialogBase.vue')['default']
     DialogMove: typeof import('./../components/strategus/dialogs/DialogMove.vue')['default']
     DialogRegistration: typeof import('./../components/strategus/dialogs/DialogRegistration.vue')['default']
-    DialogSettlement: typeof import('./../components/strategus/dialogs/DialogSettlement.vue')['default']
     Divider: typeof import('./../components/app/Divider.vue')['default']
     DropdownItem: typeof import('./../components/ui/DropdownItem.vue')['default']
     ErrorBoundary: typeof import('./../components/app/ErrorBoundary.vue')['default']
@@ -110,6 +109,5 @@ declare module 'vue' {
     UserPlatform: typeof import('./../components/user/UserPlatform.vue')['default']
     UserRestrictionNotification: typeof import('./../components/user/UserRestrictionNotification.vue')['default']
     Welcome: typeof import('./../components/app/Welcome.vue')['default']
-    'СharacterRespecButtonModal': typeof import('./../components/character/СharacterRespecButtonModal.vue')['default']
   }
 }

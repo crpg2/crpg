@@ -10,11 +10,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Items.Queries;
 
-public record GetGameUserItemsQuery : IMediatorRequest<IList<UserItemViewModel>>
+public record GetGameUserItemsQuery : IMediatorRequest<IList<GameUserItemExtendedViewModel>>
 {
     public int UserId { get; init; }
 
-    internal class Handler : IMediatorRequestHandler<GetGameUserItemsQuery, IList<UserItemViewModel>>
+    internal class Handler : IMediatorRequestHandler<GetGameUserItemsQuery, IList<GameUserItemExtendedViewModel>>
     {
         private readonly ICrpgDbContext _db;
         private readonly IMapper _mapper;
@@ -25,7 +25,7 @@ public record GetGameUserItemsQuery : IMediatorRequest<IList<UserItemViewModel>>
             _mapper = mapper;
         }
 
-        public async Task<Result<IList<UserItemViewModel>>> Handle(GetGameUserItemsQuery req, CancellationToken cancellationToken)
+        public async Task<Result<IList<GameUserItemExtendedViewModel>>> Handle(GetGameUserItemsQuery req, CancellationToken cancellationToken)
         {
             var user = await _db.Users
                .FirstOrDefaultAsync(u => u.Id == req.UserId,
@@ -47,7 +47,7 @@ public record GetGameUserItemsQuery : IMediatorRequest<IList<UserItemViewModel>>
                    && (ui.UserId == user.Id || ui.ClanArmoryBorrowedItem!.BorrowerUserId == user.Id))
                 .ToArrayAsync(cancellationToken);
 
-            return new(_mapper.Map<IList<UserItemViewModel>>(userItems));
+            return new(_mapper.Map<IList<GameUserItemExtendedViewModel>>(userItems));
         }
     }
 }

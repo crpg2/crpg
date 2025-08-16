@@ -12,13 +12,14 @@ public class InventorySlotVM : ViewModel
     private bool _showDefaultIcon;
     private int _itemQuantity;
     private string _quantityText;
+    private int _userItemId;
 
     private ImageIdentifierVM _imageIdentifier;
     private string _id;
 
     public ItemObject ItemObj { get; }
 
-    public InventorySlotVM(ItemObject item, int quantity = 1)
+    public InventorySlotVM(ItemObject item, int quantity = 1, int userItemId = -1)
     {
         ItemObj = item;
         if (item != null)
@@ -29,6 +30,7 @@ public class InventorySlotVM : ViewModel
             _showDefaultIcon = false;
             _quantityText = quantity > 1 ? quantity.ToString() : string.Empty;
             _defaultSprite = string.Empty;
+            _userItemId = userItemId;
         }
         else
         {
@@ -38,6 +40,21 @@ public class InventorySlotVM : ViewModel
             _showDefaultIcon = true;
             _quantityText = string.Empty;
             _defaultSprite = "general_placeholder";
+            _userItemId = -1;
+        }
+    }
+
+    [DataSourceProperty]
+    public int UserItemId
+    {
+        get => _userItemId;
+        set
+        {
+            if (_userItemId != value)
+            {
+                _userItemId = value;
+                OnPropertyChanged(nameof(UserItemId));
+            }
         }
     }
 

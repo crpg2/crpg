@@ -6,5 +6,5 @@
 internal class CrpgEquippedItemId
 {
     public CrpgItemSlot Slot { get; set; }
-    public CrpgUserItem UserItem { get; set; } = default!;
+    public int? UserItemId { get; set; }
 }

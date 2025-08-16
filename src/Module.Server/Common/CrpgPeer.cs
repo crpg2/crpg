@@ -2,6 +2,7 @@
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
+using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.Common;
@@ -76,6 +77,31 @@ internal class CrpgPeer : PeerComponent
         GameNetwork.BeginModuleEventAsServer(networkPeer);
         GameNetwork.WriteMessage(new UpdateCrpgUserClanInfo { Peer = Peer, Clan = Clan });
         GameNetwork.EndModuleEventAsServer();
+    }
+
+    public void SynchronizeUserItemsToPeer(NetworkCommunicator networkPeer)
+    {
+        try
+        {
+            Debug.Print("SynchronizeUserItemsToPeer()");
+
+            if (User == null || User.Items == null)
+            {
+                Debug.Print("User or User.Items is null");
+                return;
+            }
+
+            Debug.Print($"Sending {User.Items.Count} items to peer {networkPeer.Index}");
+
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new UpdateCrpgUserItems { Peer = Peer, Items = User.Items });
+            GameNetwork.EndModuleEventAsServer();
+        }
+        catch (Exception ex)
+        {
+            Debug.Print($"SynchronizeUserItemsToPeer() exception: {ex}");
+            Console.WriteLine($"SynchronizeUserItemsToPeer() exception: {ex}");
+        }
     }
 
     private void SynchronizeUserToEveryone()

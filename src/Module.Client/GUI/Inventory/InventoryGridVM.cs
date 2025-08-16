@@ -21,12 +21,12 @@ public class InventoryGridVM : ViewModel
         InitializeFilteredItemsList();
     }
 
-    public void SetAvailableItems(IEnumerable<(ItemObject item, int quantity)> inventory)
+    public void SetAvailableItems(IEnumerable<(ItemObject item, int quantity, int userItemId)> inventory)
     {
         _availableItems = new List<InventorySlotVM>();
-        foreach (var (item, quantity) in inventory)
+        foreach (var (item, quantity, userItemId) in inventory)
         {
-            _availableItems.Add(new InventorySlotVM(item, quantity));
+            _availableItems.Add(new InventorySlotVM(item, quantity, userItemId));
         }
     }
 

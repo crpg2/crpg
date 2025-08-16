@@ -1,5 +1,6 @@
-﻿namespace Crpg.Module.Api.Models;
+﻿using Crpg.Module.Api.Models.Items;
 
+namespace Crpg.Module.Api.Models;
 
 internal class CrpgGameCharacterItemsUpdateRequest
 {

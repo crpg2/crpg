@@ -125,6 +125,17 @@ internal class StubCrpgClient : ICrpgClient
         throw new NotImplementedException();
     }
 
+    public Task<CrpgResult<IList<CrpgUserItemExtended>>> GetUserItemsAsync(int userId, CancellationToken cancellationToken = default)
+    {
+        IList<CrpgUserItemExtended> dummyItems = GetDummyItems(userId);
+        return Task.FromResult(new CrpgResult<IList<CrpgUserItemExtended>> { Data = dummyItems });
+    }
+
+    public Task<CrpgResult<IList<CrpgEquippedItemId>>> UpdateCharacterEquippedItemsAsync(int userId, int characterId, CrpgGameCharacterItemsUpdateRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
     public void Dispose()
     {
     }
@@ -148,5 +159,46 @@ internal class StubCrpgClient : ICrpgClient
             .GetObjectTypeList<ItemObject>()
             .GetRandomElementWithPredicate(i => i.StringId.StartsWith("mp_", StringComparison.Ordinal) && i.Type == itemType)
             .StringId;
+    }
+
+    private IList<CrpgUserItemExtended> GetDummyItems(int userId)
+    {
+        var items = new List<CrpgUserItemExtended>();
+        DateTime now = DateTime.UtcNow;
+        var itemTypes = new[]
+        {
+            ItemObject.ItemTypeEnum.HeadArmor,
+            ItemObject.ItemTypeEnum.BodyArmor,
+            ItemObject.ItemTypeEnum.LegArmor,
+            ItemObject.ItemTypeEnum.OneHandedWeapon,
+            ItemObject.ItemTypeEnum.TwoHandedWeapon,
+            ItemObject.ItemTypeEnum.Bow,
+            ItemObject.ItemTypeEnum.Crossbow,
+            ItemObject.ItemTypeEnum.Bolts,
+            ItemObject.ItemTypeEnum.Arrows,
+            ItemObject.ItemTypeEnum.Shield,
+        };
+
+        int armoryUserId = 9999;  // different user ID for armory items
+
+        for (int i = 0; i < 20; i++)
+        {
+            var type = itemTypes[i % itemTypes.Length];
+            bool isArmory = i % 3 == 0;
+
+            items.Add(new CrpgUserItemExtended
+            {
+                Id = i + 1,
+                UserId = isArmory ? armoryUserId : userId,  // Different userId for armory items
+                Rank = 0,
+                ItemId = GetRandomItemId(type),
+                IsBroken = i % 5 == 0,
+                CreatedAt = now.AddDays(-i),
+                IsArmoryItem = isArmory,
+                IsPersonal = !isArmory,
+            });
+        }
+
+        return items;
     }
 }

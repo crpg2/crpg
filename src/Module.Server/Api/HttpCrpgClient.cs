@@ -5,6 +5,7 @@ using Crpg.Module.Api.Exceptions;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.ActivityLogs;
 using Crpg.Module.Api.Models.Clans;
+using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common;
@@ -78,15 +79,15 @@ internal class HttpCrpgClient : ICrpgClient
         return Get<CrpgUser>("games/users", queryParameters, cancellationToken);
     }
 
-    public Task<CrpgResult<IList<CrpgUserItem>>> GetUserItemsAsync(int UserId,
+    public Task<CrpgResult<IList<CrpgUserItemExtended>>> GetUserItemsAsync(int userId,
         CancellationToken cancellationToken = default)
     {
-        return Get<IList<CrpgUserItem>>("games/users/" + UserId + "items", null, cancellationToken);
+        return Get<IList<CrpgUserItemExtended>>("games/users/" + userId + "/items", null, cancellationToken);
     }
 
-    public Task<CrpgResult<IList<CrpgEquippedItem>>> UpdateCharacterItemsAsync(int UserId, int CharacterId, CrpgGameCharacterItemsUpdateRequest req, CancellationToken cancellationToken = default)
+    public Task<CrpgResult<IList<CrpgEquippedItemId>>> UpdateCharacterEquippedItemsAsync(int userId, int characterId, CrpgGameCharacterItemsUpdateRequest req, CancellationToken cancellationToken = default)
     {
-        return Put<CrpgGameCharacterItemsUpdateRequest, IList<CrpgEquippedItem>>("games/users/" + UserId + "/characters/" + CharacterId + "/items", req, cancellationToken);
+        return Put<CrpgGameCharacterItemsUpdateRequest, IList<CrpgEquippedItemId>>("games/users/" + userId + "/characters/" + characterId + "/items", req, cancellationToken);
     }
 
     public Task<CrpgResult<CrpgUser>> GetTournamentUserAsync(Platform platform, string platformUserId,
