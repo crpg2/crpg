@@ -1,6 +1,5 @@
 ﻿using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Common.Network;
-using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.PlatformService;
 
@@ -11,7 +10,6 @@ namespace Crpg.Module.Common;
 /// </summary>
 internal class CrpgUserManagerClient : MissionNetwork
 {
-    public static event Action? OnUserItemsUpdated;
     private MissionNetworkComponent? _missionNetworkComponent;
     private CrpgPeer? _crpgPeer;
 
@@ -34,7 +32,6 @@ internal class CrpgUserManagerClient : MissionNetwork
         registerer.Register<UpdateCrpgUser>(HandleUpdateCrpgUser);
         registerer.Register<UpdateCrpgUserClanInfo>(HandleUpdateCrpgUserClanInfo);
         registerer.Register<UpdateRewardMultiplier>(HandleUpdateRewardMultiplier);
-        registerer.Register<UpdateCrpgUserItems>(HandleUpdateCrpgUserItems);
     }
 
     private void HandleUpdateRewardMultiplier(UpdateRewardMultiplier message)
@@ -62,33 +59,6 @@ internal class CrpgUserManagerClient : MissionNetwork
         }
 
         crpgPeer.User = message.User;
-    }
-
-    private void HandleUpdateCrpgUserItems(UpdateCrpgUserItems message)
-    {
-        InformationManager.DisplayMessage(new InformationMessage($"HandleUpdateCrpgUserItems()"));
-        Debug.Print("HandleUpdateCrpgUserItems()");
-
-        if (message.Peer == null)
-        {
-            return;
-        }
-
-        // If the user has no CrpgPeer -> add one
-        CrpgPeer? crpgPeer = message.Peer.GetComponent<CrpgPeer>();
-        crpgPeer ??= message.Peer.AddComponent<CrpgPeer>();
-
-        if (crpgPeer.User == null)
-        {
-            return;
-        }
-
-        crpgPeer.User.Items = message.Items;
-        InformationManager.DisplayMessage(new InformationMessage($"HandleUpdateCrpgUserItems() updated crpgPeer.User.Items: count:{message.Items.Count}"));
-        Debug.Print($"Updated crpgPeer.User.Items: count:{message.Items.Count}");
-
-        // Trigger event for gui to listen to to know to update
-        OnUserItemsUpdated?.Invoke();
     }
 
     private void HandleUpdateCrpgUserClanInfo(UpdateCrpgUserClanInfo message)

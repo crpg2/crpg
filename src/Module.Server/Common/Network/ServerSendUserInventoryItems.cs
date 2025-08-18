@@ -7,23 +7,23 @@ using TaleWorlds.MountAndBlade.Network.Messages;
 namespace Crpg.Module.Common.Network;
 
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromServer)]
-internal sealed class UpdateCrpgUserItems : GameNetworkMessage
+internal sealed class ServerSendUserInventoryItems : GameNetworkMessage
 {
     private static readonly CompressionInfo.Integer PacketLengthCompressionInfo = new(0, int.MaxValue, true);
 
-    public VirtualPlayer? Peer { get; set; }
+    // public VirtualPlayer? Peer { get; set; }
     public IList<CrpgUserItemExtended> Items { get; set; } = Array.Empty<CrpgUserItemExtended>();
 
     protected override void OnWrite()
     {
-        WriteVirtualPlayerReferenceToPacket(Peer);
+        // WriteVirtualPlayerReferenceToPacket(Peer);
         WriteUserItemsToPacket(Items);
     }
 
     protected override bool OnRead()
     {
         bool bufferReadValid = true;
-        Peer = ReadVirtualPlayerReferenceToPacket(ref bufferReadValid);
+        // Peer = ReadVirtualPlayerReferenceToPacket(ref bufferReadValid);
         Items = ReadUserItemsFromPacket(ref bufferReadValid);
         return bufferReadValid;
     }
@@ -35,7 +35,7 @@ internal sealed class UpdateCrpgUserItems : GameNetworkMessage
 
     protected override string OnGetLogFormat()
     {
-        return "Update cRPG User Items";
+        return "Update cRPG User Inventory Items";
     }
 
     private void WriteUserItemsToPacket(IList<CrpgUserItemExtended> items)

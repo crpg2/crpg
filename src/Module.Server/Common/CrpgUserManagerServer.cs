@@ -4,7 +4,6 @@ using Crpg.Module.Api;
 using Crpg.Module.Api.Exceptions;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.Clans;
-using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common.Network;
@@ -240,7 +239,6 @@ internal class CrpgUserManagerServer : MissionNetwork
             RewardMultiplierByPlayerId.TryGetValue(vp.Id, out int lastMissionMultiplier)
                 ? lastMissionMultiplier
                 : 1;
-
         crpgPeer.UserLoading = false;
     }
 

@@ -166,7 +166,6 @@ internal sealed class UpdateCrpgUser : GameNetworkMessage
         writer.Write(equippedItems.Count);
         foreach (var equippedItem in equippedItems)
         {
-            writer.Write(equippedItem.UserItem.Id);
             // Use the internal id of the item that is smaller that the item id.
             var itemObject = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
             writer.Write(itemObject != null ? itemObject.Id.InternalValue : 0);
@@ -180,7 +179,6 @@ internal sealed class UpdateCrpgUser : GameNetworkMessage
         List<CrpgEquippedItem> equippedItems = new(equippedItemsLength);
         for (int i = 0; i < equippedItemsLength; i += 1)
         {
-            int userItemId = reader.ReadInt32();
             uint internalItemId = reader.ReadUInt32();
             CrpgItemSlot slot = (CrpgItemSlot)reader.ReadByte();
 
@@ -191,7 +189,7 @@ internal sealed class UpdateCrpgUser : GameNetworkMessage
                 {
                     UserItem = new CrpgUserItem
                     {
-                        Id = userItemId,
+                        Id = 0,
                         ItemId = ((ItemObject)itemObject).StringId,
                     },
                     Slot = slot,

@@ -25,7 +25,7 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
     public IReadOnlyList<CrpgUserItemExtended> UserInventoryItems => _userInventoryItems;
 
     internal static event Action? OnUserInventoryUpdated;
-    internal static event Action? OnUserEquippedItemsUpdated;
+    internal static event Action? OnUserCharacterEquippedItemsUpdated;
 
     public override void OnBehaviorInitialize()
     {
@@ -48,7 +48,7 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
     /// <summary>
     /// Builds a TaleWorlds Equipment object from the current equipped items.
     /// </summary>
-    public Equipment GetEquipment()
+    public Equipment GetCrpgUserCharacterEquipment()
     {
         // Convert extended equipped items to base CrpgEquippedItem
         var baseEquippedItems = EquippedItems
@@ -84,19 +84,39 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
         base.AddRemoveMessageHandlers(registerer);
-        // registerer.Register<UpdateCrpgUserItems>(HandleUpdateCrpgUserInventory); // recieve user items from server
-        // need to add reciever user character equipped items from server
+        registerer.Register<ServerSendUserInventoryItems>(HandleUpdateCrpgUserInventory); // recieve user items from server
+        registerer.Register<ServerSendUserCharacterEquippedItems>(HandleUpdateCrpgCharacterEquippedItems); // reciver equippped items for character from server
     }
 
-    private void HandleUpdateCrpgUserInventory(UpdateCrpgUserItems message)
+    private void HandleUpdateCrpgCharacterEquippedItems(ServerSendUserCharacterEquippedItems message)
+    {
+        string debugString = $"HandleUpdateCrpgCharacterEquippedItems";
+        InformationManager.DisplayMessage(new InformationMessage(debugString));
+        Debug.Print(debugString);
+
+        if (message.Items == null)
+        {
+            debugString = $"Error in HandleUpdateCrpgCharacterEquippedItems: message.Items was null";
+            InformationManager.DisplayMessage(new InformationMessage(debugString));
+            Debug.Print(debugString);
+            return;
+        }
+
+        SetEquippedItems(message.Items);
+
+        // Trigger event for gui to listen to to know to update
+        OnUserCharacterEquippedItemsUpdated?.Invoke();
+    }
+
+    private void HandleUpdateCrpgUserInventory(ServerSendUserInventoryItems message)
     {
         string debugString = $"HandleUpdateCrpgUserInventory";
         InformationManager.DisplayMessage(new InformationMessage(debugString));
         Debug.Print(debugString);
 
-        if (message.Peer == null || message.Items == null)
+        if (message.Items == null)
         {
-            debugString = $"Error in HandleUpdateCrpgUserInventory: message.Peer or message.Items was null";
+            debugString = $"Error in HandleUpdateCrpgUserInventory: message.Items was null";
             InformationManager.DisplayMessage(new InformationMessage(debugString));
             Debug.Print(debugString);
             return;

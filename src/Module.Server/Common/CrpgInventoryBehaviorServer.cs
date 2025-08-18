@@ -27,20 +27,18 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
 
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
-        //registerer.Register<UserRequestGetInventoryItems>(HandleUserRequestGetInventoryItems);
-        //registerer.Register<UserRequestGetEquippedItems>(HandleUserRequestGetEquippedItems);
-        //registerer.Register<UserRequestEquipCharacterItem>(HandleUserRequestEquipCharacterItem);
+        registerer.Register<UserRequestGetInventoryItems>(HandleUserRequestGetInventoryItems);
+        registerer.Register<UserRequestGetEquippedItems>(HandleUserRequestGetEquippedItems);
+        registerer.Register<UserRequestEquipCharacterItem>(HandleUserRequestEquipCharacterItem);
     }
 
     private bool HandleUserRequestGetInventoryItems(NetworkCommunicator networkPeer, UserRequestGetInventoryItems message)
     {
-        Debug.Print("OnRequestCrpgUserItems()");
+        Debug.Print("HandleUserRequestGetInventoryItems()");
         var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
         if (crpgPeer?.User != null)
         {
-            Debug.Print("OnRequestCrpgUserItems() -- Calling crpgPeer.SynchronizeUserItemsToPeer(networkPeer)");
             _ = UpdateUserItemsAsync(networkPeer);
-            // crpgPeer.SynchronizeUserItemsToPeer(networkPeer);
 
             return true;
         }
@@ -180,6 +178,7 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
             {
                 Debug.Print($"Errors in response");
             }
+
             if (equippedItemsRes.Data != null)
             {
                 var equippedItems = equippedItemsRes.Data;
@@ -188,6 +187,8 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
                 {
                     Debug.Print($"slot {item.Slot} itemId: {item.UserItem.ItemId} Id:{item.UserItem.Id}");
                 }
+
+                SynchronizeUserCharacterEquippedItemsToPeer(networkPeer, equippedItems);
             }
             else
             {
@@ -219,7 +220,7 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
             if (itemsRes.Data != null)
             {
                 var userItems = itemsRes.Data;
-                crpgPeer.User.Items = userItems;
+                // crpgPeer.User.Items = userItems;
 
                 Debug.Print($"User {crpgUser.Id} has {userItems.Count} items.");
                 foreach (var item in userItems)
@@ -234,7 +235,7 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
                     }
                 }
 
-                //crpgPeer.SynchronizeUserItemsToPeer(networkPeer);
+                SynchronizeUserInventoryItemsToPeer(networkPeer, userItems);
             }
 
             else
@@ -248,4 +249,53 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
         }
     }
 
+    private void SynchronizeUserInventoryItemsToPeer(NetworkCommunicator networkPeer, IList<CrpgUserItemExtended> items)
+    {
+        try
+        {
+            Debug.Print("SynchronizeUserInventoryItemsToPeer()");
+
+            if (networkPeer == null || items == null)
+            {
+                Debug.Print("networkPeer or items is null");
+                return;
+            }
+
+            Debug.Print($"Sending {items.Count} items to peer {networkPeer.Index}");
+
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new ServerSendUserInventoryItems { Items = items });
+            GameNetwork.EndModuleEventAsServer();
+        }
+        catch (Exception ex)
+        {
+            Debug.Print($"SynchronizeUserInventoryItemsToPeer() exception: {ex}");
+            Console.WriteLine($"SynchronizeUserInventoryItemsToPeer() exception: {ex}");
+        }
+    }
+
+    private void SynchronizeUserCharacterEquippedItemsToPeer(NetworkCommunicator networkPeer, IList<CrpgEquippedItemExtended> items)
+    {
+        try
+        {
+            Debug.Print("SynchronizeUserCharacterEquippedItemsToPeer()");
+
+            if (networkPeer == null || items == null)
+            {
+                Debug.Print("networkPeer or items is null");
+                return;
+            }
+
+            Debug.Print($"Sending {items.Count} items to peer {networkPeer.Index}");
+
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new ServerSendUserCharacterEquippedItems { Items = items });
+            GameNetwork.EndModuleEventAsServer();
+        }
+        catch (Exception ex)
+        {
+            Debug.Print($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
+            Console.WriteLine($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
+        }
+    }
 }

@@ -19,5 +19,4 @@ internal class CrpgUser
     public CrpgCharacter Character { get; set; } = default!;
     public IList<CrpgRestriction> Restrictions { get; set; } = Array.Empty<CrpgRestriction>();
     public CrpgClanMember? ClanMembership { get; set; }
-    public IList<CrpgUserItemExtended> Items { get; set; } = Array.Empty<CrpgUserItemExtended>();
 }

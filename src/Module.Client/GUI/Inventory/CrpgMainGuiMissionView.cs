@@ -237,6 +237,11 @@ public class CrpgMainGuiMissionView : MissionView
         GameNetwork.WriteMessage(new UserRequestGetInventoryItems());
         GameNetwork.EndModuleEventAsClient();
 
+        // update equipped items
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestGetEquippedItems());
+        GameNetwork.EndModuleEventAsClient();
+
         string openMessage = $"Inventory opened: VM={_inventoryVm != null}, IsVisible={_inventoryVm?.IsVisible}, Focus={_inventoryLayer?.IsFocusLayer}";
         InformationManager.DisplayMessage(new InformationMessage(openMessage));
         Debug.Print(openMessage, 0, Debug.DebugColor.DarkBlue);
