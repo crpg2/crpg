@@ -44,7 +44,7 @@ internal class CrpgUserManagerServer : MissionNetwork
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
         registerer.Register<XboxIdMessage>(OnXboxIdMessage);
-        registerer.Register<RequestCrpgUserItems>(OnRequestCrpgUserItems);
+        registerer.Register<RequestCrpgUserInventoryItems>(OnRequestCrpgUserItems);
         registerer.Register<UserRequestEquipCharacterItem>(OnRequestEquipCharacterItem);
     }
 
@@ -150,7 +150,7 @@ internal class CrpgUserManagerServer : MissionNetwork
         return true;
     }
 
-    private bool OnRequestCrpgUserItems(NetworkCommunicator networkPeer, RequestCrpgUserItems message)
+    private bool OnRequestCrpgUserItems(NetworkCommunicator networkPeer, RequestCrpgUserInventoryItems message)
     {
         Debug.Print("OnRequestCrpgUserItems()");
         var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
@@ -159,6 +159,9 @@ internal class CrpgUserManagerServer : MissionNetwork
             Debug.Print("OnRequestCrpgUserItems() -- Calling crpgPeer.SynchronizeUserItemsToPeer(networkPeer)");
             _ = UpdateUserItemsAsync(networkPeer);
             // crpgPeer.SynchronizeUserItemsToPeer(networkPeer);
+
+            _ = GetUserEquippedItemsAsync(networkPeer);
+
             return true;
         }
 
@@ -168,10 +171,15 @@ internal class CrpgUserManagerServer : MissionNetwork
     private bool OnRequestEquipCharacterItem(NetworkCommunicator networkPeer, UserRequestEquipCharacterItem message)
     {
         var slot = message.Slot;
-        int userItemId = message.UserItemId;
+        int? userItemId = message.UserItemId;
 
         Debug.Print($"OnRequestEquipCharacterItem() slot: {slot} uItemId: {userItemId}");
 
+        // remove item
+        if (userItemId == -1)
+        {
+            userItemId = null;
+        }
 
         // Build API request directly
         var apiRequest = new CrpgGameCharacterItemsUpdateRequest
@@ -185,7 +193,6 @@ internal class CrpgUserManagerServer : MissionNetwork
                 },
             },
         };
-
 
         // Debug print for verification
         Debug.Print("API Request Items:");
@@ -363,6 +370,46 @@ internal class CrpgUserManagerServer : MissionNetwork
         }
 
         crpgPeer.UserLoading = false;
+    }
+
+    private async Task GetUserEquippedItemsAsync(NetworkCommunicator networkPeer)
+    {
+        var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+
+        if (crpgPeer?.User == null || crpgPeer?.User?.Character == null)
+        {
+            Debug.Print($"[GetUserEquippedItemsAsync] No user data or character found for peer {networkPeer.UserName}");
+            return;
+        }
+
+        CrpgUser crpgUser = crpgPeer.User;
+
+        try
+        {
+            Debug.Print($"[GetUserEquippedItemsAsync] Sending Api Request");
+            var equippedItemsRes = await _crpgClient.GetCharacterEquippedItemsAsync(crpgUser.Id, crpgUser.Character.Id);
+            if (equippedItemsRes.Errors != null)
+            {
+                Debug.Print($"Errors in response");
+            }
+            if (equippedItemsRes.Data != null)
+            {
+                var equippedItems = equippedItemsRes.Data;
+                Debug.Print($"User {crpgUser.Id} Character {crpgUser.Character.Name} Equipped Items.");
+                foreach (var item in equippedItems)
+                {
+                    Debug.Print($"slot {item.Slot} itemId: {item.UserItem.ItemId} Id:{item.UserItem.Id}");
+                }
+            }
+            else
+            {
+                Debug.Print($"equippedItemsRes.Data was null");
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Print($"Error fetching equipped items for peer {networkPeer.UserName} character {crpgUser.Character.Name}: {e}");
+        }
     }
 
     private async Task UpdateUserItemsAsync(NetworkCommunicator networkPeer)

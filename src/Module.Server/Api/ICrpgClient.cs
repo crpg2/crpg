@@ -28,6 +28,9 @@ internal interface ICrpgClient : IDisposable
     Task<CrpgResult<IList<CrpgUserItemExtended>>> GetUserItemsAsync(int userId,
         CancellationToken cancellationToken = default);
 
+    Task<CrpgResult<IList<CrpgEquippedItemExtended>>> GetCharacterEquippedItemsAsync(int userId, int characterId,
+        CancellationToken cancellationToken = default);
+
     Task<CrpgResult<IList<CrpgEquippedItemId>>> UpdateCharacterEquippedItemsAsync(int userId, int characterId,
          CrpgGameCharacterItemsUpdateRequest req,
          CancellationToken cancellationToken = default);

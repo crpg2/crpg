@@ -131,6 +131,11 @@ internal class StubCrpgClient : ICrpgClient
         return Task.FromResult(new CrpgResult<IList<CrpgUserItemExtended>> { Data = dummyItems });
     }
 
+    public Task<CrpgResult<IList<CrpgEquippedItemExtended>>> GetCharacterEquippedItemsAsync(int userId, int characterId, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<CrpgResult<IList<CrpgEquippedItemId>>> UpdateCharacterEquippedItemsAsync(int userId, int characterId, CrpgGameCharacterItemsUpdateRequest req, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();

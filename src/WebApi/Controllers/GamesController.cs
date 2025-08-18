@@ -5,6 +5,7 @@ using Crpg.Application.Clans.Queries;
 using Crpg.Application.Common.Results;
 using Crpg.Application.Games.Commands;
 using Crpg.Application.Games.Models;
+using Crpg.Application.Games.Queries;
 using Crpg.Application.Items.Models;
 using Crpg.Application.Items.Queries;
 using Crpg.Application.Restrictions.Commands;
@@ -42,6 +43,18 @@ public class GamesController : BaseController
         ResultToActionAsync(Mediator.Send(new GetGameUserItemsQuery
         {
             UserId = userId,
+        }));
+
+    /// <summary>
+    /// Get character items.
+    /// </summary>
+    [HttpGet("users/{userId}/characters/{characterId}/items")]
+    public Task<ActionResult<Result<IList<GameEquippedItemExtendedViewModel>>>> GetCharacterEquippedItems(
+        [FromRoute] int userId, [FromRoute] int characterId) =>
+        ResultToActionAsync(Mediator.Send(new GetGameCharacterEquippedItemsQuery
+        {
+            UserId = userId,
+            CharacterId = characterId,
         }));
 
     /// <summary>

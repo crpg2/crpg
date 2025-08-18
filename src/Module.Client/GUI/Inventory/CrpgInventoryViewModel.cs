@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common;
 using Crpg.Module.Helpers;
@@ -181,6 +182,7 @@ public class CrpgInventoryViewModel : ViewModel
             {
                 vm.ImageIdentifier = new ImageIdentifierVM(itemObject);
                 vm.UserItemId = equippedItem.UserItem.Id; // This is your unique instance ID
+                vm.ItemObj = itemObject;
             }
         }
 

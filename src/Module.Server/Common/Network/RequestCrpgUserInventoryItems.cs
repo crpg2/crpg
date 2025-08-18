@@ -5,7 +5,7 @@ using TaleWorlds.MountAndBlade.Network.Messages;
 namespace Crpg.Module.Common.Network;
 
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromClient)]
-internal sealed class RequestCrpgUserItems : GameNetworkMessage
+internal sealed class RequestCrpgUserInventoryItems : GameNetworkMessage
 {
     // No payload needed; client just requests their items
 

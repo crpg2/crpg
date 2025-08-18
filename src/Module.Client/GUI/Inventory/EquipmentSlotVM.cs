@@ -43,6 +43,19 @@ namespace Crpg.Module.GUI.Inventory
         public void ExecuteAlternateClick()
         {
             _alternateClick?.Invoke(this);
+            if (this is EquipmentSlotVM)
+            {
+                if (ItemObj == null || UserItemId == null)
+                {
+                    InformationManager.DisplayMessage(new InformationMessage($"ExecuteAlternateClick() ItemObj or UserItemId is null"));
+                    return;
+                }
+
+                // send request with CrpgItemSlot
+                GameNetwork.BeginModuleEventAsClient();
+                GameNetwork.WriteMessage(new UserRequestEquipCharacterItem { Slot = CrpgItemSlotIndex, UserItemId = -1 });
+                GameNetwork.EndModuleEventAsClient();
+            }
             ClearItem();
         }
 
@@ -178,7 +191,18 @@ namespace Crpg.Module.GUI.Inventory
         }
 
         [DataSourceProperty]
-        public ItemObject? ItemObj => _itemObj;
+        public ItemObject? ItemObj
+        {
+            get => _itemObj;
+            set
+            {
+                if (_itemObj != value)
+                {
+                    _itemObj = value;
+                    OnPropertyChanged(nameof(ItemObj));
+                }
+            }
+        }
 
         [DataSourceProperty]
         public CrpgItemSlot CrpgItemSlotIndex
