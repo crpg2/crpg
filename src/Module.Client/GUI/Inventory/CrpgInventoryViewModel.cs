@@ -72,7 +72,8 @@ public class CrpgInventoryViewModel : ViewModel
     public CrpgInventoryViewModel()
     {
         _characterPreview = new CharacterViewModel();
-        CrpgUserManagerClient.OnUserItemsUpdated += UpdateAvailableItems;
+        CrpgInventoryBehaviorClient.OnUserInventoryUpdated += UpdateAvailableItems;
+
         InventoryGrid = new InventoryGridVM();
         UpdateAvailableItems();
 
@@ -191,13 +192,20 @@ public class CrpgInventoryViewModel : ViewModel
 
     private void UpdateAvailableItems()
     {
-        var crpgUser = GameNetwork.MyPeer?.GetComponent<CrpgPeer>()?.User;
-        if (crpgUser?.Items == null || crpgUser.Items.Count == 0)
+        var inventoryBehavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
+        if (inventoryBehavior == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("CrpgInventoryBehaviorClient not found in current mission."));
+            return;
+        }
+
+        var userItems = inventoryBehavior.UserInventoryItems;
+        if (userItems == null || userItems.Count == 0)
             return;
 
         var inventoryTuples = new List<(ItemObject, int, int)>();
 
-        foreach (var userItem in crpgUser.Items)
+        foreach (var userItem in userItems)
         {
             if (string.IsNullOrEmpty(userItem.ItemId))
                 continue;
@@ -252,14 +260,16 @@ public class CrpgInventoryViewModel : ViewModel
 
     public void RefreshCharacterPreview(Equipment? useEquipment = null)
     {
-        var crpgPeer = GameNetwork.MyPeer?.GetComponent<CrpgPeer>();
-        if (crpgPeer?.User?.Character == null)
-            return;
+        var behavior = Mission.Current.GetMissionBehavior<CrpgInventoryBehaviorClient>();
+        if (behavior != null && useEquipment == null)
+        {
+            useEquipment = behavior.GetEquipment();
+        }
 
-        useEquipment ??= CrpgCharacterBuilder.CreateCharacterEquipment(crpgPeer.User.Character.EquippedItems);
-        CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
-
-        CalculateArmorFromEquipment(useEquipment);
+        if (useEquipment != null)
+        {
+            CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
+            CalculateArmorFromEquipment(useEquipment);
+        }
     }
 }
-

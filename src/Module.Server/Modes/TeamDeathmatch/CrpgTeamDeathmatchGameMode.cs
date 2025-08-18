@@ -126,6 +126,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
                 new AmmoQuiverChangeBehaviorClient(),
                 new CrpgRespawnTimerClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
+                new CrpgInventoryBehaviorClient(), // Inventory & Equipment Sync for GUI
 #endif
                 new CrpgTeamDeathmatchClient(),
                 new MultiplayerTimerComponent(),
@@ -166,6 +167,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
                 new CrpgCommanderBehaviorServer(),
                 new CrpgRespawnTimerServer(teamDeathmatchServer, spawnBehavior),
                 new FriendlyFireReportServerBehavior(), // Ctrl+M to report friendly fire
+                new CrpgInventoryBehaviorServer(crpgClient), // Inventory & Equipment Sync for GUI
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),

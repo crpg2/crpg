@@ -234,7 +234,7 @@ public class CrpgMainGuiMissionView : MissionView
 
         // update available items
         GameNetwork.BeginModuleEventAsClient();
-        GameNetwork.WriteMessage(new RequestCrpgUserInventoryItems());
+        GameNetwork.WriteMessage(new UserRequestGetInventoryItems());
         GameNetwork.EndModuleEventAsClient();
 
         string openMessage = $"Inventory opened: VM={_inventoryVm != null}, IsVisible={_inventoryVm?.IsVisible}, Focus={_inventoryLayer?.IsFocusLayer}";

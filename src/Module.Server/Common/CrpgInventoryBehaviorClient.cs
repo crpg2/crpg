@@ -12,7 +12,7 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
 using TaleWorlds.PlayerServices;
 
-namespace Crpg.Module.Common.Inventory;
+namespace Crpg.Module.Common;
 
 internal class CrpgInventoryBehaviorClient : MissionNetwork
 {
@@ -25,16 +25,47 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
     public IReadOnlyList<CrpgUserItemExtended> UserInventoryItems => _userInventoryItems;
 
     internal static event Action? OnUserInventoryUpdated;
+    internal static event Action? OnUserEquippedItemsUpdated;
 
     public override void OnBehaviorInitialize()
     {
         base.OnBehaviorInitialize();
         // Initialize or fetch inventory/equipped items here
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestGetInventoryItems());
+        GameNetwork.EndModuleEventAsClient();
+
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestGetEquippedItems());
+        GameNetwork.EndModuleEventAsClient();
     }
 
     public override void OnRemoveBehavior()
     {
         base.OnRemoveBehavior();
+    }
+
+    /// <summary>
+    /// Builds a TaleWorlds Equipment object from the current equipped items.
+    /// </summary>
+    public Equipment GetEquipment()
+    {
+        // Convert extended equipped items to base CrpgEquippedItem
+        var baseEquippedItems = EquippedItems
+            .Select(e => new CrpgEquippedItem
+            {
+                Slot = e.Slot,
+                UserItem = new CrpgUserItem
+                {
+                    Id = e.UserItem.Id,
+                    ItemId = e.UserItem.ItemId,
+                    // You can add more properties if needed
+                },
+            })
+            .ToList();
+
+        // Build Equipment using CrpgCharacterBuilder
+        return CrpgCharacterBuilder.CreateCharacterEquipment(baseEquippedItems);
     }
 
     // Internal methods to modify the lists
@@ -53,7 +84,8 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
         base.AddRemoveMessageHandlers(registerer);
-        registerer.Register<UpdateCrpgUserItems>(HandleUpdateCrpgUserInventory); // recieve user items from server
+        // registerer.Register<UpdateCrpgUserItems>(HandleUpdateCrpgUserInventory); // recieve user items from server
+        // need to add reciever user character equipped items from server
     }
 
     private void HandleUpdateCrpgUserInventory(UpdateCrpgUserItems message)

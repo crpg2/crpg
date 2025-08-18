@@ -79,31 +79,6 @@ internal class CrpgPeer : PeerComponent
         GameNetwork.EndModuleEventAsServer();
     }
 
-    public void SynchronizeUserItemsToPeer(NetworkCommunicator networkPeer)
-    {
-        try
-        {
-            Debug.Print("SynchronizeUserItemsToPeer()");
-
-            if (User == null || User.Items == null)
-            {
-                Debug.Print("User or User.Items is null");
-                return;
-            }
-
-            Debug.Print($"Sending {User.Items.Count} items to peer {networkPeer.Index}");
-
-            GameNetwork.BeginModuleEventAsServer(networkPeer);
-            GameNetwork.WriteMessage(new UpdateCrpgUserItems { Peer = Peer, Items = User.Items });
-            GameNetwork.EndModuleEventAsServer();
-        }
-        catch (Exception ex)
-        {
-            Debug.Print($"SynchronizeUserItemsToPeer() exception: {ex}");
-            Console.WriteLine($"SynchronizeUserItemsToPeer() exception: {ex}");
-        }
-    }
-
     private void SynchronizeUserToEveryone()
     {
         if (_user == null || !GameNetwork.IsServerOrRecorder)

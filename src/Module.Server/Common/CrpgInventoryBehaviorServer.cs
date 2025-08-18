@@ -14,7 +14,7 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
 using TaleWorlds.PlayerServices;
 
-namespace Crpg.Module.Common.Inventory;
+namespace Crpg.Module.Common;
 
 internal class CrpgInventoryBehaviorServer : MissionNetwork
 {
@@ -27,12 +27,12 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
 
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
-        registerer.Register<RequestCrpgUserInventoryItems>(OnRequestCrpgUserItems);
-        registerer.Register<UserRequestEquipCharacterItem>(OnRequestEquipCharacterItem);
-        // registerer.Register<UserRequestEquipCharacterItem>(OnRequestEquipCharacterItem);
+        //registerer.Register<UserRequestGetInventoryItems>(HandleUserRequestGetInventoryItems);
+        //registerer.Register<UserRequestGetEquippedItems>(HandleUserRequestGetEquippedItems);
+        //registerer.Register<UserRequestEquipCharacterItem>(HandleUserRequestEquipCharacterItem);
     }
 
-    private bool OnRequestCrpgUserItems(NetworkCommunicator networkPeer, RequestCrpgUserInventoryItems message)
+    private bool HandleUserRequestGetInventoryItems(NetworkCommunicator networkPeer, UserRequestGetInventoryItems message)
     {
         Debug.Print("OnRequestCrpgUserItems()");
         var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
@@ -42,15 +42,13 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
             _ = UpdateUserItemsAsync(networkPeer);
             // crpgPeer.SynchronizeUserItemsToPeer(networkPeer);
 
-            _ = GetUserEquippedItemsAsync(networkPeer);
-
             return true;
         }
 
         return false;
     }
 
-    private bool OnRequestEquipCharacterItem(NetworkCommunicator networkPeer, UserRequestEquipCharacterItem message)
+    private bool HandleUserRequestEquipCharacterItem(NetworkCommunicator networkPeer, UserRequestEquipCharacterItem message)
     {
         var slot = message.Slot;
         int? userItemId = message.UserItemId;
@@ -90,8 +88,21 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
             }
         }
 
-        _ = TryEquipCharacterItemsAsync(networkPeer, apiRequest);
+        try
+        {
+            _ = TryEquipCharacterItemsAsync(networkPeer, apiRequest);
+        }
+        catch (Exception ex)
+        {
+            Debug.Print($"Failed to equip/unequip user items for {networkPeer.UserName}: {ex}");
+        }
 
+        return true;
+    }
+
+    private bool HandleUserRequestGetEquippedItems(NetworkCommunicator networkPeer, UserRequestGetEquippedItems message)
+    {
+        _ = GetUserEquippedItemsAsync(networkPeer);
         return true;
     }
 
@@ -223,7 +234,7 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
                     }
                 }
 
-                crpgPeer.SynchronizeUserItemsToPeer(networkPeer);
+                //crpgPeer.SynchronizeUserItemsToPeer(networkPeer);
             }
 
             else
@@ -236,6 +247,5 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
             Debug.Print($"Error fetching items for peer {networkPeer.UserName}: {e}");
         }
     }
-
 
 }
