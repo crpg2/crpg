@@ -1,75 +1,74 @@
 using TaleWorlds.Core.ViewModelCollection;
 using TaleWorlds.Library;
 
-namespace Crpg.Module.GUI.Inventory
+namespace Crpg.Module.GUI.Inventory;
+
+public class CrpgMainGuiVM : ViewModel
 {
-    public class CrpgMainGuiVM : ViewModel
+    private bool _isVisible;
+    private CrpgInventoryViewModel? _inventoryVm;
+
+
+
+    public event Action? OpenInventoryRequested;
+    public CrpgMainGuiVM()
     {
-        private bool _isVisible;
-        private CrpgInventoryViewModel? _inventoryVm;
 
+    }
 
+    public void OpenInventory()
+    {
+        OpenInventoryRequested?.Invoke();
+    }
 
-        public event Action? OpenInventoryRequested;
-        public CrpgMainGuiVM()
+    // This reflects the visibility of the main GUI bar prefab, 
+    // managed by MissionView toggling IsVisible
+    [DataSourceProperty]
+    public bool IsVisible
+    {
+        get => _isVisible;
+        set
         {
-
-        }
-
-        public void OpenInventory()
-        {
-            OpenInventoryRequested?.Invoke();
-        }
-
-        // This reflects the visibility of the main GUI bar prefab, 
-        // managed by MissionView toggling IsVisible
-        [DataSourceProperty]
-        public bool IsVisible
-        {
-            get => _isVisible;
-            set
+            if (value != _isVisible)
             {
-                if (value != _isVisible)
-                {
-                    _isVisible = value;
-                    OnPropertyChanged(nameof(IsVisible));
-                }
+                _isVisible = value;
+                OnPropertyChanged(nameof(IsVisible));
             }
         }
+    }
 
-        // Optional: you can expose InventoryVm here to bind inventory UI data,
-        // but creation and lifecycle of this is managed by MissionView now
-        [DataSourceProperty]
-        public CrpgInventoryViewModel? InventoryVm
+    // Optional: you can expose InventoryVm here to bind inventory UI data,
+    // but creation and lifecycle of this is managed by MissionView now
+    [DataSourceProperty]
+    public CrpgInventoryViewModel? InventoryVm
+    {
+        get => _inventoryVm;
+        set
         {
-            get => _inventoryVm;
-            set
+            if (_inventoryVm != value)
             {
-                if (_inventoryVm != value)
-                {
-                    _inventoryVm = value;
-                    OnPropertyChanged(nameof(InventoryVm));
-                }
+                _inventoryVm = value;
+                OnPropertyChanged(nameof(InventoryVm));
             }
         }
+    }
 
-        // You can keep this for any per-frame updates your VM needs,
-        // but input and layer toggling moves to MissionView
-        public void Tick()
+    // You can keep this for any per-frame updates your VM needs,
+    // but input and layer toggling moves to MissionView
+    public void Tick()
+    {
+        // Any ViewModel-only updates here
+    }
+
+    public override void OnFinalize()
+    {
+        // Clean up VM resources (but not UI layers)
+        if (_inventoryVm != null)
         {
-            // Any ViewModel-only updates here
+            _inventoryVm.OnFinalize();
+            _inventoryVm = null;
         }
 
-        public override void OnFinalize()
-        {
-            // Clean up VM resources (but not UI layers)
-            if (_inventoryVm != null)
-            {
-                _inventoryVm.OnFinalize();
-                _inventoryVm = null;
-            }
-
-            base.OnFinalize();
-        }
+        base.OnFinalize();
     }
 }

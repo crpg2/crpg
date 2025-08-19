@@ -103,7 +103,128 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
         _ = GetUserEquippedItemsAsync(networkPeer);
         return true;
     }
+    /*
+        private async Task TryEquipCharacterItemsAsync(NetworkCommunicator networkPeer, CrpgGameCharacterItemsUpdateRequest apiRequest)
+        {
+            try
+            {
+                var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+                var crpgUser = crpgPeer?.User;
+                var crpgCharacter = crpgUser?.Character;
 
+                if (crpgUser == null || crpgCharacter == null)
+                {
+                    Debug.Print($"[TryEquipCharacterItemsAsync] No user data found for peer {networkPeer.UserName}");
+                    return; 
+                }
+
+                var apiRes = await _crpgClient.UpdateCharacterEquippedItemsAsync(crpgUser.Id, crpgCharacter.Id, apiRequest);
+
+                if (apiRes == null)
+                {
+                    Debug.Print($"[TryEquipCharacterItemsAsync] apiRes was null");
+                    return;
+                }
+
+                if (apiRes.Errors == null || apiRes.Errors.Count == 0)
+                {
+                    var updatedItems = apiRes.Data;
+                    if (updatedItems == null)
+                    {
+                        Debug.Print($"[TryEquipCharacterItemsAsync] apiRes.Data was null");
+                        return;
+                    }
+
+                    foreach (var equippedItem in updatedItems)
+                    {
+                        if (equippedItem.UserItemId != null)
+                        {
+                            Debug.Print($"Slot: {equippedItem.Slot}, UserItemId: {equippedItem.UserItemId}");
+                        }
+
+                        // TODO: update client here
+                    }
+                }
+                else
+                {
+                    var firstError = apiRes.Errors[0];
+                    Debug.Print($"Error Code: {firstError.Code}, Message: {firstError.Type}, Detail: {firstError.Detail}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.Print($"[TryEquipCharacterItemsAsync] Exception for peer {networkPeer.UserName}: {ex}");
+                // optionally log to a server log for debugging
+            }
+        }
+    */
+    /*
+        private async Task TryEquipCharacterItemsAsync(NetworkCommunicator networkPeer, CrpgGameCharacterItemsUpdateRequest apiRequest)
+        {
+            try
+            {
+                var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+                var crpgUser = crpgPeer?.User;
+                var crpgCharacter = crpgUser?.Character;
+
+                if (crpgUser == null || crpgCharacter == null)
+                {
+                    Debug.Print($"[TryEquipCharacterItemsAsync] No user data found for peer {networkPeer.UserName}");
+                    return;
+                }
+
+                var itemsChanged = apiRequest.Items;
+
+                var apiRes = await _crpgClient.UpdateCharacterEquippedItemsAsync(crpgUser.Id, crpgCharacter.Id, apiRequest);
+
+                if (apiRes == null)
+                {
+                    Debug.Print($"[TryEquipCharacterItemsAsync] apiRes was null");
+                    return;
+                }
+
+                if (apiRes.Errors == null || apiRes.Errors.Count == 0)
+                {
+                    var updatedItems = apiRes.Data;
+                    if (updatedItems == null)
+                        return;
+
+                    foreach (var up in updatedItems)
+                    {
+                        // up is CrpgEquippedItemId → has Slot + (int?)UserItemId
+                        int userItemId = up.UserItemId ?? -1;
+                        Debug.Print($"ServerSendEquipItemResult(): true, {(int)up.Slot} {userItemId}");
+                        GameNetwork.BeginModuleEventAsServer(networkPeer);
+                        GameNetwork.WriteMessage(new ServerSendEquipItemResult
+                        {
+                            Success = true,
+                            SlotIndex = (int)up.Slot,
+                            UserItemId = userItemId,
+                        });
+                        GameNetwork.EndModuleEventAsServer();
+                    }
+                }
+                else
+                {
+                    var slot = (int)apiRequest.Items[0].Slot;
+                    GameNetwork.BeginModuleEventAsServer(networkPeer);
+                    GameNetwork.WriteMessage(new ServerSendEquipItemResult
+                    {
+                        Success = false,
+                        SlotIndex = slot,
+                        UserItemId = -1,
+                        ErrorMessage = apiRes.Errors[0].Detail ?? "Failed to equip item",
+                    });
+                    GameNetwork.EndModuleEventAsServer();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.Print($"[TryEquipCharacterItemsAsync] Exception for peer {networkPeer.UserName}: {ex}");
+                // optionally log to a server log for debugging
+            }
+        }
+    */
     private async Task TryEquipCharacterItemsAsync(NetworkCommunicator networkPeer, CrpgGameCharacterItemsUpdateRequest apiRequest)
     {
         try
@@ -118,6 +239,13 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
                 return;
             }
 
+            if (apiRequest?.Items == null || apiRequest.Items.Count == 0)
+            {
+                Debug.Print("[TryEquipCharacterItemsAsync] No items provided in the request");
+                return;
+            }
+
+            // Send the request to the API
             var apiRes = await _crpgClient.UpdateCharacterEquippedItemsAsync(crpgUser.Id, crpgCharacter.Id, apiRequest);
 
             if (apiRes == null)
@@ -126,37 +254,47 @@ internal class CrpgInventoryBehaviorServer : MissionNetwork
                 return;
             }
 
+            // Only one item change per request is expected
+            var requestedItem = apiRequest.Items[0];
+
             if (apiRes.Errors == null || apiRes.Errors.Count == 0)
             {
-                var updatedItems = apiRes.Data;
-                if (updatedItems == null)
-                {
-                    Debug.Print($"[TryEquipCharacterItemsAsync] apiRes.Data was null");
-                    return;
-                }
+                var updatedItem = apiRes.Data?.FirstOrDefault(up => up.Slot == requestedItem.Slot);
+                int userItemId = updatedItem?.UserItemId ?? -1;
 
-                foreach (var equippedItem in updatedItems)
-                {
-                    if (equippedItem.UserItemId != null)
-                    {
-                        Debug.Print($"Slot: {equippedItem.Slot}, UserItemId: {equippedItem.UserItemId}");
-                    }
+                Debug.Print($"Slot {requestedItem.Slot} updated successfully. UserItemId = {userItemId}");
 
-                    // TODO: update client here
-                }
+                GameNetwork.BeginModuleEventAsServer(networkPeer);
+                GameNetwork.WriteMessage(new ServerSendEquipItemResult
+                {
+                    Success = true,
+                    SlotIndex = (int)requestedItem.Slot,
+                    UserItemId = userItemId,
+                });
+                GameNetwork.EndModuleEventAsServer();
             }
             else
             {
-                var firstError = apiRes.Errors[0];
-                Debug.Print($"Error Code: {firstError.Code}, Message: {firstError.Type}, Detail: {firstError.Detail}");
+                // Send failure for the requested slot
+                Debug.Print($"Slot {requestedItem.Slot} failed to update. Error: {apiRes.Errors[0].Detail}");
+
+                GameNetwork.BeginModuleEventAsServer(networkPeer);
+                GameNetwork.WriteMessage(new ServerSendEquipItemResult
+                {
+                    Success = false,
+                    SlotIndex = (int)requestedItem.Slot,
+                    UserItemId = -1,
+                    ErrorMessage = apiRes.Errors[0].Detail ?? "Failed to equip/unequip item",
+                });
+                GameNetwork.EndModuleEventAsServer();
             }
         }
         catch (Exception ex)
         {
             Debug.Print($"[TryEquipCharacterItemsAsync] Exception for peer {networkPeer.UserName}: {ex}");
-            // optionally log to a server log for debugging
         }
     }
+
 
     private async Task GetUserEquippedItemsAsync(NetworkCommunicator networkPeer)
     {

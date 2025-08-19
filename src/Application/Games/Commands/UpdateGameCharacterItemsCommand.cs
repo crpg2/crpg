@@ -8,29 +8,31 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Crpg.Application.Games.Commands;
 
-public record UpdateGameCharacterItemsCommand : IMediatorRequest<IList<EquippedItemViewModel>>
+public record UpdateGameCharacterItemsCommand : IMediatorRequest<IList<EquippedItemIdViewModel>>
 {
     public int UserId { get; init; }
     public int CharacterId { get; init; }
     public IList<EquippedItemIdViewModel> Items { get; init; } = Array.Empty<EquippedItemIdViewModel>();
 
-    internal class Handler : IMediatorRequestHandler<UpdateGameCharacterItemsCommand, IList<EquippedItemViewModel>>
+    internal class Handler : IMediatorRequestHandler<UpdateGameCharacterItemsCommand, IList<EquippedItemIdViewModel>>
     {
         private readonly ICrpgDbContext _db;
-        private readonly IMapper _mapper;
         private readonly ICharacterService _characterService;
 
-        public Handler(ICrpgDbContext db, IMapper mapper, ICharacterService characterService)
+        public Handler(ICrpgDbContext db, ICharacterService characterService)
         {
             _db = db;
-            _mapper = mapper;
             _characterService = characterService;
         }
 
-        public async Task<Result<IList<EquippedItemViewModel>>> Handle(UpdateGameCharacterItemsCommand req, CancellationToken cancellationToken)
+        public async Task<Result<IList<EquippedItemIdViewModel>>> Handle(
+            UpdateGameCharacterItemsCommand req,
+            CancellationToken cancellationToken)
         {
+            // Load character with equipped items and their UserItems
             var character = await _db.Characters
-                .Include(c => c.EquippedItems).ThenInclude(ei => ei.UserItem!.Item)
+                .Include(c => c.EquippedItems)
+                    .ThenInclude(ei => ei.UserItem)
                 .FirstOrDefaultAsync(c => c.Id == req.CharacterId && c.UserId == req.UserId, cancellationToken);
 
             if (character == null)
@@ -38,10 +40,23 @@ public record UpdateGameCharacterItemsCommand : IMediatorRequest<IList<EquippedI
                 return new(CommonErrors.CharacterNotFound(req.CharacterId, req.UserId));
             }
 
+            // Update equipped items
             await _characterService.UpdateItems(_db, character, req.Items, cancellationToken);
 
+            // Save changes
             await _db.SaveChangesAsync(cancellationToken);
-            return new(_mapper.Map<IList<EquippedItemViewModel>>(character.EquippedItems));
+
+            // Manual projection to DTO
+            var equippedItems = character.EquippedItems
+                .Where(ei => ei.UserItem != null)
+                .Select(ei => new EquippedItemIdViewModel
+                {
+                    Slot = ei.Slot,
+                    UserItemId = ei.UserItem!.Id,
+                })
+                .ToList();
+
+            return new(equippedItems);
         }
     }
 }

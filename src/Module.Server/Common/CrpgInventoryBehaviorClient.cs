@@ -26,6 +26,7 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
 
     internal static event Action? OnUserInventoryUpdated;
     internal static event Action? OnUserCharacterEquippedItemsUpdated;
+    internal static event Action<CrpgItemSlot>? OnSlotUpdated;
 
     public override void OnBehaviorInitialize()
     {
@@ -75,6 +76,39 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
         _equippedItems.AddRange(items);
     }
 
+    internal void SetEquippedItem(CrpgItemSlot slot, CrpgUserItemExtended? userItem)
+    {
+        var existing = _equippedItems.FirstOrDefault(e => e.Slot == slot);
+
+        if (userItem == null)
+        {
+            // Unequip
+            if (existing != null)
+            {
+                _equippedItems.Remove(existing);
+            }
+        }
+        else
+        {
+            var newEq = new CrpgEquippedItemExtended
+            {
+                Slot = slot,
+                UserItem = userItem,
+            };
+
+            if (existing == null)
+            {
+                _equippedItems.Add(newEq);
+            }
+            else
+            {
+                _equippedItems[_equippedItems.IndexOf(existing)] = newEq;
+            }
+        }
+
+        OnSlotUpdated?.Invoke(slot); // notify VM of only this slot
+    }
+
     internal void SetUserInventoryItems(IEnumerable<CrpgUserItemExtended> items)
     {
         _userInventoryItems.Clear();
@@ -85,7 +119,8 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
     {
         base.AddRemoveMessageHandlers(registerer);
         registerer.Register<ServerSendUserInventoryItems>(HandleUpdateCrpgUserInventory); // recieve user items from server
-        registerer.Register<ServerSendUserCharacterEquippedItems>(HandleUpdateCrpgCharacterEquippedItems); // reciver equippped items for character from server
+        registerer.Register<ServerSendUserCharacterEquippedItems>(HandleUpdateCrpgCharacterEquippedItems); // recieve equipped items for character from server
+        registerer.Register<ServerSendEquipItemResult>(HandleEquipItemResult); // recieve result of attempt to equip item in slot on api from server
     }
 
     private void HandleUpdateCrpgCharacterEquippedItems(ServerSendUserCharacterEquippedItems message)
@@ -132,4 +167,39 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
         OnUserInventoryUpdated?.Invoke();
     }
 
+    private void HandleEquipItemResult(ServerSendEquipItemResult msg)
+    {
+        if (!msg.Success)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"Equip failed: {msg.ErrorMessage}"));
+            return;
+        }
+
+        var slot = (CrpgItemSlot)msg.SlotIndex;
+
+        CrpgUserItemExtended? userItem = null;
+
+        if (msg.UserItemId != -1)
+        {
+            // Find inventory entry to populate ItemId
+            var inv = _userInventoryItems.FirstOrDefault(i => i.Id == msg.UserItemId);
+            if (inv != null)
+            {
+                userItem = new CrpgUserItemExtended
+                {
+                    Id = inv.Id,
+                    UserId = inv.UserId,
+                    Rank = inv.Rank,
+                    ItemId = inv.ItemId,
+                    IsBroken = inv.IsBroken,
+                    CreatedAt = inv.CreatedAt,
+                    IsArmoryItem = inv.IsArmoryItem,
+                    IsPersonal = inv.IsPersonal,
+                };
+            }
+        }
+
+        // Update only the affected slot
+        SetEquippedItem(slot, userItem);
+    }
 }

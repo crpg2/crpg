@@ -15,7 +15,7 @@ public class CrpgInventoryViewModel : ViewModel
 {
     private bool _isVisible;
     private CharacterViewModel _characterPreview;
-    private List<EquipmentSlotVM> _equipmentSlots;
+    private readonly List<EquipmentSlotVM> _equipmentSlots;
 
     [DataSourceProperty] public InventoryGridVM InventoryGrid { get; set; }
 
@@ -62,7 +62,6 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    // Armor amounts remain unchanged
     [DataSourceProperty] public ArmorAmountVM AmountHeadArmor { get; set; }
     [DataSourceProperty] public ArmorAmountVM AmountBodyArmor { get; set; }
     [DataSourceProperty] public ArmorAmountVM AmountLegArmor { get; set; }
@@ -72,37 +71,30 @@ public class CrpgInventoryViewModel : ViewModel
     public CrpgInventoryViewModel()
     {
         _characterPreview = new CharacterViewModel();
-        CrpgInventoryBehaviorClient.OnUserInventoryUpdated += UpdateAvailableItems;
-        CrpgInventoryBehaviorClient.OnUserCharacterEquippedItemsUpdated += UpdateCharacterEquippedItems;
-
         InventoryGrid = new InventoryGridVM();
-        UpdateAvailableItems();
-        // UpdateCharacterEquippedItems();
 
-        // Initialize slots with CrpgItemSlot
-        HeadArmor = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.Head);
-        CapeArmor = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.Shoulder);
-        BodyArmor = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.Body);
-        HandArmor = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.Hand);
-        LegArmor = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.Leg);
+        // Initialize EquipmentSlots
+        HeadArmor = GetSlotVM(CrpgItemSlot.Head);
+        CapeArmor = GetSlotVM(CrpgItemSlot.Shoulder);
+        BodyArmor = GetSlotVM(CrpgItemSlot.Body);
+        HandArmor = GetSlotVM(CrpgItemSlot.Hand);
+        LegArmor = GetSlotVM(CrpgItemSlot.Leg);
 
-        Weapon0 = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.Weapon0);
-        Weapon1 = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.Weapon1);
-        Weapon2 = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.Weapon2);
-        Weapon3 = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.Weapon3);
-        ExtraWeaponSlot = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.WeaponExtra);
+        Weapon0 = GetSlotVM(CrpgItemSlot.Weapon0);
+        Weapon1 = GetSlotVM(CrpgItemSlot.Weapon1);
+        Weapon2 = GetSlotVM(CrpgItemSlot.Weapon2);
+        Weapon3 = GetSlotVM(CrpgItemSlot.Weapon3);
+        ExtraWeaponSlot = GetSlotVM(CrpgItemSlot.WeaponExtra);
 
-        Horse = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.Mount);
-        HorseArmor = GetImageIdentifierFromCrpgSlot(CrpgItemSlot.MountHarness);
+        Horse = GetSlotVM(CrpgItemSlot.Mount);
+        HorseArmor = GetSlotVM(CrpgItemSlot.MountHarness);
 
         _equipmentSlots = new List<EquipmentSlotVM>
-            {
-                HeadArmor, CapeArmor, BodyArmor, HandArmor, LegArmor,
-                Weapon0, Weapon1, Weapon2, Weapon3, ExtraWeaponSlot,
-                Horse, HorseArmor,
-            };
-
-        SetEquipmentSlotEventSubscriptions(true);
+        {
+            HeadArmor, CapeArmor, BodyArmor, HandArmor, LegArmor,
+            Weapon0, Weapon1, Weapon2, Weapon3, ExtraWeaponSlot,
+            Horse, HorseArmor
+        };
 
         AmountHeadArmor = new ArmorAmountVM(0);
         AmountBodyArmor = new ArmorAmountVM(0);
@@ -111,203 +103,112 @@ public class CrpgInventoryViewModel : ViewModel
         AmountHorseArmor = new ArmorAmountVM(0);
 
         InitializeCharacterPreview();
-        RefreshCharacterPreview();
+
+        // Subscribe to behavior events
+        CrpgInventoryBehaviorClient.OnSlotUpdated += HandleSlotUpdated;
+        CrpgInventoryBehaviorClient.OnUserInventoryUpdated += HandleInventoryUpdated;
+        CrpgInventoryBehaviorClient.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
+    }
+
+    private EquipmentSlotVM GetSlotVM(CrpgItemSlot slot)
+    {
+        return new EquipmentSlotVM(new ImageIdentifierVM(ImageIdentifierType.Item), slot);
+    }
+
+    private void HandleSlotUpdated(CrpgItemSlot updatedSlot)
+    {
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
+        if (behavior == null)
+        {
+            return;
+        }
+
+        // Only touch the VM that corresponds to the updated slot
+        var slotVm = _equipmentSlots.FirstOrDefault(s => s.CrpgItemSlotIndex == updatedSlot);
+        if (slotVm == null)
+        {
+            return;
+        }
+
+        var equippedItem = behavior.EquippedItems.FirstOrDefault(e => e.Slot == updatedSlot);
+        if (equippedItem != null)
+        {
+            var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
+            slotVm.SetItem(new ImageIdentifierVM(itemObj), equippedItem.UserItem.Id);
+        }
+        else
+        {
+            slotVm.ClearItem();
+        }
+
+        // Optionally only refresh if the slot is relevant for the preview
+        RefreshCharacterPreview(behavior.GetCrpgUserCharacterEquipment());
+    }
+
+    private void HandleInventoryUpdated()
+    {
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
+        if (behavior == null)
+            return;
+
+        var items = behavior.UserInventoryItems
+            .Where(ui => !string.IsNullOrEmpty(ui.ItemId))
+            .Select(ui =>
+            {
+                var obj = MBObjectManager.Instance.GetObject<ItemObject>(ui.ItemId);
+                return obj != null ? (obj, 1, ui.Id) : default;
+            })
+            .Where(t => t.Item1 != null)
+            .ToList();
+
+        InventoryGrid.SetAvailableItems(items);
+        InventoryGrid.InitializeFilteredItemsList();
+        OnPropertyChanged(nameof(InventoryGrid));
+    }
+
+    private void HandleEquippedItemsUpdated()
+    {
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
+        if (behavior == null)
+            return;
+
+        foreach (var slotVm in _equipmentSlots)
+        {
+            var equippedItem = behavior.EquippedItems.FirstOrDefault(e => e.Slot == slotVm.CrpgItemSlotIndex);
+            if (equippedItem != null)
+            {
+                var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
+                slotVm.SetItem(new ImageIdentifierVM(itemObj), equippedItem.UserItem.Id);
+            }
+            else
+            {
+                slotVm.ClearItem();
+            }
+        }
+
+        RefreshCharacterPreview(behavior.GetCrpgUserCharacterEquipment());
     }
 
     private void InitializeCharacterPreview()
     {
         var basicCharacter = MBObjectManager.Instance.GetObject<BasicCharacterObject>("mp_character");
         if (basicCharacter == null)
-        {
-            InformationManager.DisplayMessage(new InformationMessage("Failed to find 'mp_character'."));
             return;
-        }
-
-        var virtualPlayer = GameNetwork.MyPeer?.VirtualPlayer;
-        if (virtualPlayer != null)
-        {
-            basicCharacter.UpdatePlayerCharacterBodyProperties(
-                virtualPlayer.BodyProperties,
-                virtualPlayer.Race,
-                virtualPlayer.IsFemale);
-
-            basicCharacter.Age = virtualPlayer.BodyProperties.Age;
-        }
 
         CharacterPreview.FillFrom(basicCharacter);
-
-        var crpgUser = GameNetwork.MyPeer?.GetComponent<CrpgPeer>()?.User;
-        if (crpgUser != null)
-        {
-            var equipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgUser.Character.EquippedItems);
-            CharacterPreview.EquipmentCode = equipment.CalculateEquipmentCode();
-        }
     }
 
-    public override void OnFinalize()
+    public void RefreshCharacterPreview(Equipment? useEquipment = null)
     {
-        SetEquipmentSlotEventSubscriptions(false);
-    }
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
+        if (behavior != null && useEquipment == null)
+            useEquipment = behavior.GetCrpgUserCharacterEquipment();
 
-    public void SetEquipmentSlotEventSubscriptions(bool subscribe)
-    {
-        foreach (var slot in _equipmentSlots)
+        if (useEquipment != null)
         {
-            if (subscribe)
-            {
-                slot.PropertyChanged += EquipmentSlot_PropertyChanged;
-            }
-            else
-            {
-                slot.PropertyChanged -= EquipmentSlot_PropertyChanged;
-            }
+            CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
+            CalculateArmorFromEquipment(useEquipment);
         }
-    }
-
-    private EquipmentSlotVM GetImageIdentifierFromCrpgSlot(CrpgItemSlot slot)
-    {
-        var vm = new EquipmentSlotVM(new ImageIdentifierVM(ImageIdentifierType.Item), slot);
-
-        // Grab your inventory behavior
-        var inventoryBehavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
-        if (inventoryBehavior == null || inventoryBehavior.EquippedItems == null)
-        {
-            return vm;
-        }
-
-        // Find the equipped item in your behavior instead of crpgUser
-        var equippedItem = inventoryBehavior.EquippedItems
-            .FirstOrDefault(e => e.Slot == slot);
-
-        if (equippedItem != null)
-        {
-            var itemObject = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
-            if (itemObject != null)
-            {
-                vm.ImageIdentifier = new ImageIdentifierVM(itemObject);
-                vm.UserItemId = equippedItem.UserItem.Id; // still unique per instance
-                vm.ItemObj = itemObject;
-            }
-        }
-
-        return vm;
-    }
-
-    private void UpdateCharacterEquippedItems()
-    {
-
-        var inventoryBehavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
-        if (inventoryBehavior == null)
-        {
-            InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterEquippedItems(): CrpgInventoryBehaviorClient not found in current mission."));
-            return;
-        }
-
-        var userEquippedItems = inventoryBehavior.EquippedItems;
-        if (userEquippedItems == null || userEquippedItems.Count == 0)
-        {
-            InformationManager.DisplayMessage(new InformationMessage("UpdateCharacterEquippedItems(): userEquippedItems is null or count is 0."));
-            return;
-        }
-
-        foreach (var slot in _equipmentSlots)
-        {
-            var equippedItem = userEquippedItems.FirstOrDefault(e => e.Slot == slot.CrpgItemSlotIndex);
-
-            if (equippedItem != null)
-            {
-                var itemObject = MBObjectManager.Instance.GetObject<ItemObject>(equippedItem.UserItem.ItemId);
-                if (itemObject != null)
-                {
-                    slot.ImageIdentifier = new ImageIdentifierVM(itemObject);
-                    slot.UserItemId = equippedItem.UserItem.Id;
-                    slot.ItemObj = itemObject;
-                }
-                else
-                {
-                    // Reset if object not found
-                    slot.ImageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
-                    slot.UserItemId = 0;
-                    slot.ItemObj = null;
-                }
-            }
-            else
-            {
-                // Reset if no equipped item for this slot
-                slot.ImageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
-                slot.UserItemId = 0;
-                slot.ItemObj = null;
-            }
-        }
-
-        // After updating slots, rebuild equipment + refresh preview
-        var equipment = inventoryBehavior.GetCrpgUserCharacterEquipment();
-        RefreshCharacterPreview(equipment);
-        CalculateArmorFromEquipment(equipment);
-    }
-
-    private void UpdateAvailableItems()
-    {
-        var inventoryBehavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
-        if (inventoryBehavior == null)
-        {
-            InformationManager.DisplayMessage(new InformationMessage("CrpgInventoryBehaviorClient not found in current mission."));
-            return;
-        }
-
-        var userItems = inventoryBehavior.UserInventoryItems;
-        if (userItems == null || userItems.Count == 0)
-            return;
-
-        var inventoryTuples = new List<(ItemObject, int, int)>();
-
-        foreach (var userItem in userItems)
-        {
-            if (string.IsNullOrEmpty(userItem.ItemId))
-                continue;
-
-            var itemObj = MBObjectManager.Instance.GetObject<ItemObject>(userItem.ItemId);
-            if (itemObj == null)
-                continue;
-
-            inventoryTuples.Add((itemObj, 1, userItem.Id));
-        }
-
-        InventoryGrid.SetAvailableItems(inventoryTuples);
-        InventoryGrid.InitializeFilteredItemsList();
-        OnPropertyChanged(nameof(InventoryGrid));
-    }
-
-    private void EquipmentSlot_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-    {
-        if (e.PropertyName == nameof(EquipmentSlotVM.ItemObj))
-        {
-            // var equipment = BuildEquipmentFromSlots();
-            var inventoryBehavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
-            if (inventoryBehavior == null)
-                return;
-            var equipment = inventoryBehavior.GetCrpgUserCharacterEquipment();
-
-            RefreshCharacterPreview(equipment);
-            CalculateArmorFromEquipment(equipment);
-        }
-    }
-
-    public Equipment BuildEquipmentFromSlots()
-    {
-        var equipment = new Equipment(false);
-
-        foreach (var slot in _equipmentSlots)
-        {
-            var equipIndex = EquipmentSlotVM.ConvertToEquipmentIndex(slot.CrpgItemSlotIndex);
-
-            if (slot.ItemObj != null)
-                equipment[equipIndex] = new EquipmentElement(slot.ItemObj);
-            else
-                equipment[equipIndex] = EquipmentElement.Invalid;
-        }
-
-        return equipment;
     }
 
     private void CalculateArmorFromEquipment(Equipment equipment)
@@ -319,18 +220,10 @@ public class CrpgInventoryViewModel : ViewModel
         AmountHorseArmor.ArmorAmount = (int)equipment.GetHorseArmorSum();
     }
 
-    public void RefreshCharacterPreview(Equipment? useEquipment = null)
+    public override void OnFinalize()
     {
-        var behavior = Mission.Current.GetMissionBehavior<CrpgInventoryBehaviorClient>();
-        if (behavior != null && useEquipment == null)
-        {
-            useEquipment = behavior.GetCrpgUserCharacterEquipment();
-        }
-
-        if (useEquipment != null)
-        {
-            CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
-            CalculateArmorFromEquipment(useEquipment);
-        }
+        CrpgInventoryBehaviorClient.OnSlotUpdated -= HandleSlotUpdated;
+        CrpgInventoryBehaviorClient.OnUserInventoryUpdated -= HandleInventoryUpdated;
+        CrpgInventoryBehaviorClient.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
     }
 }

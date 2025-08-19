@@ -61,7 +61,7 @@ public class GamesController : BaseController
     /// Update character items.
     /// </summary>
     [HttpPut("users/{userId}/characters/{characterId}/items")]
-    public Task<ActionResult<Result<IList<EquippedItemViewModel>>>> UpdateCharacterItems(
+    public Task<ActionResult<Result<IList<EquippedItemIdViewModel>>>> UpdateCharacterItems(
         [FromRoute] int userId, [FromRoute] int characterId, [FromBody] UpdateGameCharacterItemsCommand cmd) =>
         ResultToActionAsync(Mediator.Send(new UpdateGameCharacterItemsCommand
         {
