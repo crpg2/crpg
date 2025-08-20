@@ -13,11 +13,12 @@ namespace Crpg.Module.GUI.Inventory;
 
 public class CrpgInventoryViewModel : ViewModel
 {
+    private readonly List<EquipmentSlotVM> _equipmentSlots;
     private bool _isVisible;
     private CharacterViewModel _characterPreview;
-    private readonly List<EquipmentSlotVM> _equipmentSlots;
 
-    [DataSourceProperty] public InventoryGridVM InventoryGrid { get; set; }
+    [DataSourceProperty]
+    public InventoryGridVM InventoryGrid { get; set; }
 
     public EquipmentSlotVM HeadArmor { get; private set; }
     public EquipmentSlotVM CapeArmor { get; private set; }
@@ -62,11 +63,16 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    [DataSourceProperty] public ArmorAmountVM AmountHeadArmor { get; set; }
-    [DataSourceProperty] public ArmorAmountVM AmountBodyArmor { get; set; }
-    [DataSourceProperty] public ArmorAmountVM AmountLegArmor { get; set; }
-    [DataSourceProperty] public ArmorAmountVM AmountHandArmor { get; set; }
-    [DataSourceProperty] public ArmorAmountVM AmountHorseArmor { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountHeadArmor { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountBodyArmor { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountLegArmor { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountHandArmor { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountHorseArmor { get; set; }
 
     public CrpgInventoryViewModel()
     {
@@ -93,7 +99,7 @@ public class CrpgInventoryViewModel : ViewModel
         {
             HeadArmor, CapeArmor, BodyArmor, HandArmor, LegArmor,
             Weapon0, Weapon1, Weapon2, Weapon3, ExtraWeaponSlot,
-            Horse, HorseArmor
+            Horse, HorseArmor,
         };
 
         AmountHeadArmor = new ArmorAmountVM(0);
@@ -105,9 +111,31 @@ public class CrpgInventoryViewModel : ViewModel
         InitializeCharacterPreview();
 
         // Subscribe to behavior events
-        CrpgInventoryBehaviorClient.OnSlotUpdated += HandleSlotUpdated;
-        CrpgInventoryBehaviorClient.OnUserInventoryUpdated += HandleInventoryUpdated;
-        CrpgInventoryBehaviorClient.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
+        CrpgCharacterLoadoutBehaviorClient.OnSlotUpdated += HandleSlotUpdated;
+        CrpgCharacterLoadoutBehaviorClient.OnUserInventoryUpdated += HandleInventoryUpdated;
+        CrpgCharacterLoadoutBehaviorClient.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
+    }
+
+    public override void OnFinalize()
+    {
+        CrpgCharacterLoadoutBehaviorClient.OnSlotUpdated -= HandleSlotUpdated;
+        CrpgCharacterLoadoutBehaviorClient.OnUserInventoryUpdated -= HandleInventoryUpdated;
+        CrpgCharacterLoadoutBehaviorClient.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
+    }
+
+    internal void RefreshCharacterPreview(Equipment? useEquipment = null)
+    {
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (behavior != null && useEquipment == null)
+        {
+            useEquipment = behavior.GetCrpgUserCharacterEquipment();
+        }
+
+        if (useEquipment != null)
+        {
+            CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
+            CalculateArmorFromEquipment(useEquipment);
+        }
     }
 
     private EquipmentSlotVM GetSlotVM(CrpgItemSlot slot)
@@ -117,7 +145,7 @@ public class CrpgInventoryViewModel : ViewModel
 
     private void HandleSlotUpdated(CrpgItemSlot updatedSlot)
     {
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
         {
             return;
@@ -147,9 +175,11 @@ public class CrpgInventoryViewModel : ViewModel
 
     private void HandleInventoryUpdated()
     {
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
+        {
             return;
+        }
 
         var items = behavior.UserInventoryItems
             .Where(ui => !string.IsNullOrEmpty(ui.ItemId))
@@ -168,9 +198,11 @@ public class CrpgInventoryViewModel : ViewModel
 
     private void HandleEquippedItemsUpdated()
     {
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
+        {
             return;
+        }
 
         foreach (var slotVm in _equipmentSlots)
         {
@@ -193,22 +225,11 @@ public class CrpgInventoryViewModel : ViewModel
     {
         var basicCharacter = MBObjectManager.Instance.GetObject<BasicCharacterObject>("mp_character");
         if (basicCharacter == null)
+        {
             return;
+        }
 
         CharacterPreview.FillFrom(basicCharacter);
-    }
-
-    public void RefreshCharacterPreview(Equipment? useEquipment = null)
-    {
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgInventoryBehaviorClient>();
-        if (behavior != null && useEquipment == null)
-            useEquipment = behavior.GetCrpgUserCharacterEquipment();
-
-        if (useEquipment != null)
-        {
-            CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
-            CalculateArmorFromEquipment(useEquipment);
-        }
     }
 
     private void CalculateArmorFromEquipment(Equipment equipment)
@@ -218,12 +239,5 @@ public class CrpgInventoryViewModel : ViewModel
         AmountHandArmor.ArmorAmount = (int)equipment.GetArmArmorSum();
         AmountLegArmor.ArmorAmount = (int)equipment.GetLegArmorSum();
         AmountHorseArmor.ArmorAmount = (int)equipment.GetHorseArmorSum();
-    }
-
-    public override void OnFinalize()
-    {
-        CrpgInventoryBehaviorClient.OnSlotUpdated -= HandleSlotUpdated;
-        CrpgInventoryBehaviorClient.OnUserInventoryUpdated -= HandleInventoryUpdated;
-        CrpgInventoryBehaviorClient.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
     }
 }

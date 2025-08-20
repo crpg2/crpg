@@ -14,11 +14,12 @@ using TaleWorlds.PlayerServices;
 
 namespace Crpg.Module.Common;
 
-internal class CrpgInventoryBehaviorClient : MissionNetwork
+internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 {
-    // Backing fields
     private readonly List<CrpgEquippedItemExtended> _equippedItems = new();
     private readonly List<CrpgUserItemExtended> _userInventoryItems = new();
+
+    private MissionNetworkComponent? _missionNetworkComponent;
 
     // Public read-only access
     public IReadOnlyList<CrpgEquippedItemExtended> EquippedItems => _equippedItems;
@@ -31,24 +32,26 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
     public override void OnBehaviorInitialize()
     {
         base.OnBehaviorInitialize();
-        // Initialize or fetch inventory/equipped items here
-        GameNetwork.BeginModuleEventAsClient();
-        GameNetwork.WriteMessage(new UserRequestGetInventoryItems());
-        GameNetwork.EndModuleEventAsClient();
-
-        GameNetwork.BeginModuleEventAsClient();
-        GameNetwork.WriteMessage(new UserRequestGetEquippedItems());
-        GameNetwork.EndModuleEventAsClient();
+        _missionNetworkComponent = Mission.GetMissionBehavior<MissionNetworkComponent>();
+        if (_missionNetworkComponent != null)
+        {
+            _missionNetworkComponent.OnMyClientSynchronized += OnMyClientSynchronized;
+        }
     }
 
     public override void OnRemoveBehavior()
     {
         base.OnRemoveBehavior();
+        if (_missionNetworkComponent != null)
+        {
+            _missionNetworkComponent.OnMyClientSynchronized -= OnMyClientSynchronized;
+        }
     }
 
     /// <summary>
     /// Builds a TaleWorlds Equipment object from the current equipped items.
     /// </summary>
+    /// <returns>An <see cref="Equipment"/> object representing the user's equipped items.</returns>
     public Equipment GetCrpgUserCharacterEquipment()
     {
         // Convert extended equipped items to base CrpgEquippedItem
@@ -60,7 +63,6 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
                 {
                     Id = e.UserItem.Id,
                     ItemId = e.UserItem.ItemId,
-                    // You can add more properties if needed
                 },
             })
             .ToList();
@@ -69,13 +71,22 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
         return CrpgCharacterBuilder.CreateCharacterEquipment(baseEquippedItems);
     }
 
-    // Internal methods to modify the lists
+    /// <summary>
+    /// Replaces the current list of equipped items with the given items.
+    /// </summary>
+    /// <param name="items">The new equipped items to set.</param>
     internal void SetEquippedItems(IEnumerable<CrpgEquippedItemExtended> items)
     {
         _equippedItems.Clear();
         _equippedItems.AddRange(items);
     }
 
+    /// <summary>
+    /// Sets a single equipped item in the specified slot.
+    /// Updates the list and triggers the <see cref="OnSlotUpdated"/> event.
+    /// </summary>
+    /// <param name="slot">The equipment slot to update.</param>
+    /// <param name="userItem">The item to equip, or null to unequip.</param>
     internal void SetEquippedItem(CrpgItemSlot slot, CrpgUserItemExtended? userItem)
     {
         var existing = _equippedItems.FirstOrDefault(e => e.Slot == slot);
@@ -109,6 +120,10 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
         OnSlotUpdated?.Invoke(slot); // notify VM of only this slot
     }
 
+    /// <summary>
+    /// Replaces the current list of user inventory items with the given items.
+    /// </summary>
+    /// <param name="items">The inventory items to set.</param>
     internal void SetUserInventoryItems(IEnumerable<CrpgUserItemExtended> items)
     {
         _userInventoryItems.Clear();
@@ -123,6 +138,22 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
         registerer.Register<ServerSendEquipItemResult>(HandleEquipItemResult); // recieve result of attempt to equip item in slot on api from server
     }
 
+    private void OnMyClientSynchronized()
+    {
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestGetInventoryItems());
+        GameNetwork.EndModuleEventAsClient();
+
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestGetEquippedItems());
+        GameNetwork.EndModuleEventAsClient();
+    }
+
+    /// <summary>
+    /// Handles a message from the server containing the user's equipped items.
+    /// Updates local state and triggers <see cref="OnUserCharacterEquippedItemsUpdated"/>.
+    /// </summary>
+    /// <param name="message">The server message containing equipped items.</param>
     private void HandleUpdateCrpgCharacterEquippedItems(ServerSendUserCharacterEquippedItems message)
     {
         string debugString = $"HandleUpdateCrpgCharacterEquippedItems";
@@ -143,6 +174,11 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
         OnUserCharacterEquippedItemsUpdated?.Invoke();
     }
 
+    /// <summary>
+    /// Handles a message from the server containing the user's inventory items.
+    /// Updates local state and triggers <see cref="OnUserInventoryUpdated"/>.
+    /// </summary>
+    /// <param name="message">The server message containing inventory items.</param>
     private void HandleUpdateCrpgUserInventory(ServerSendUserInventoryItems message)
     {
         string debugString = $"HandleUpdateCrpgUserInventory";
@@ -167,6 +203,11 @@ internal class CrpgInventoryBehaviorClient : MissionNetwork
         OnUserInventoryUpdated?.Invoke();
     }
 
+    /// <summary>
+    /// Handles a message from the server confirming the result of an equip/unequip action.
+    /// Updates the affected slot in local equipped items state.
+    /// </summary>
+    /// <param name="msg">The server message containing the equip result.</param>
     private void HandleEquipItemResult(ServerSendEquipItemResult msg)
     {
         if (!msg.Success)
