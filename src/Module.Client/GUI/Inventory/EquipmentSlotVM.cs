@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
-using TaleWorlds.Core.ViewModelCollection;
+using TaleWorlds.Core.ViewModelCollection.Information;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
@@ -17,15 +17,19 @@ public class EquipmentSlotVM : ViewModel
     private CrpgItemSlot _crpgItemSlotIndex;
     private ItemObject? _itemObj;
     private int _userItemId;
+    private bool _isButtonEnabled;
 
     public event Action<EquipmentSlotVM, ViewModel>? OnItemDropped;
     public event Action<EquipmentSlotVM>? OnSlotAlternateClicked;
+    public event Action<ItemObject>? OnItemDragBegin;
+    public event Action<ItemObject>? OnItemDragEnd;
 
     public EquipmentSlotVM(CrpgItemSlot crpgSlot)
     {
         _crpgItemSlotIndex = crpgSlot;
         _defaultSprite = GetDefaultSpriteForSlot(_crpgItemSlotIndex);
         _imageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
+        _isButtonEnabled = true;
         LogDebug($"[EquipmentSlotVM] Created slot {crpgSlot}");
     }
 
@@ -37,18 +41,43 @@ public class EquipmentSlotVM : ViewModel
 
     public void ExecuteDragBegin()
     {
-        IsDragging = true;
         LogDebug($"[EquipmentSlotVM] Drag begin on slot {CrpgItemSlotIndex}, item: {ItemObj?.Name}");
+        IsDragging = true;
+        if (ItemObj != null)
+        {
+            OnItemDragBegin?.Invoke(ItemObj);
+        }
+
     }
 
     public void ExecuteDragEnd()
     {
-        IsDragging = false;
         LogDebug($"[EquipmentSlotVM] Drag end on slot {CrpgItemSlotIndex}");
+        IsDragging = false;
+        if (ItemObj != null)
+        {
+            OnItemDragEnd?.Invoke(ItemObj);
+        }
+    }
+
+    public void ExecuteHoverBegin()
+    {
+        LogDebug($"[EquipmentSlotVM] Hover Begin {CrpgItemSlotIndex}");
+        if (ItemObj != null && IsDragging == true)
+        {
+            LogDebug($"[EquipmentSlotVM] Hover Begin with item dragged{CrpgItemSlotIndex}");
+            // MPLobby\Generic\exit_hover
+        }
+    }
+
+    public void ExecuteHoverEnd()
+    {
+        LogDebug($"[EquipmentSlotVM] Hover End {CrpgItemSlotIndex}");
     }
 
     public void ExecuteTryEquipItem(ViewModel draggedItem, int index)
     {
+
         LogDebug($"[EquipmentSlotVM] Drop attempt on slot {CrpgItemSlotIndex} with dragged item: {draggedItem.GetType().Name}");
         OnItemDropped?.Invoke(this, draggedItem);
     }
@@ -161,6 +190,21 @@ public class EquipmentSlotVM : ViewModel
         }
     }
 
+
+    [DataSourceProperty]
+    public bool IsButtonEnabled
+    {
+        get => _isButtonEnabled;
+        set
+        {
+            if (_isButtonEnabled != value)
+            {
+                _isButtonEnabled = value;
+                OnPropertyChanged(nameof(IsButtonEnabled));
+                LogDebug($"[EquipmentSlotVM] IsButtonEnabled changed to {value} on slot {CrpgItemSlotIndex}");
+            }
+        }
+    }
     public bool IsDragging
     {
         get => _isDragging;

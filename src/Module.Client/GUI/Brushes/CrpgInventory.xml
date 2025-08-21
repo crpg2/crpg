@@ -86,7 +86,7 @@
         <BrushLayer Name="Default" AlphaFactor="0.5" Color="#91c2f0ff" />
       </Style>          
       <Style Name="Disabled">
-        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#353636ff" />
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#660707ff" />
       </Style>
     </Styles>
   </Brush>

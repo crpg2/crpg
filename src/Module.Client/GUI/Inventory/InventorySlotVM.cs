@@ -18,6 +18,8 @@ public class InventorySlotVM : ViewModel
     private string _id;
 
     public ItemObject ItemObj { get; }
+    public event Action<ItemObject>? OnItemDragBegin;
+    public event Action<ItemObject>? OnItemDragEnd;
 
     public InventorySlotVM(ItemObject item, int quantity = 1, int userItemId = -1)
     {
@@ -111,5 +113,21 @@ public class InventorySlotVM : ViewModel
     {
         get => _id;
         set => SetField(ref _id, value, nameof(Id));
+    }
+
+    public void ExecuteDragBegin()
+    {
+        if (ItemObj != null)
+        {
+            OnItemDragBegin?.Invoke(ItemObj);
+        }
+    }
+
+    public void ExecuteDragEnd()
+    {
+        if (ItemObj != null)
+        {
+            OnItemDragEnd?.Invoke(ItemObj);
+        }
     }
 }

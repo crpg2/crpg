@@ -140,6 +140,8 @@ public class CrpgInventoryViewModel : ViewModel
         _equipmentSlots.Add(vm);
         vm.OnItemDropped += HandleItemDrop;
         vm.OnSlotAlternateClicked += HandleAlternateClick;
+        vm.OnItemDragBegin += HandleItemDragBegin;
+        vm.OnItemDragEnd += HandleItemDragEnd;
         LogDebug($"[CrpgInventoryVM] Created equipment slot: {slot}");
         return vm;
     }
@@ -239,6 +241,43 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
+    private void HandleDragBegin(ItemObject? draggedItem)
+    {
+        LogDebug($"[CrpgInventoryVM] HandleDragBegin for item: {draggedItem?.Name}");
+
+        if (draggedItem == null)
+            return;
+
+        foreach (var slotVm in _equipmentSlots)
+        {
+            // Disable slots where the item **cannot** be equipped
+            if (!Equipment.IsItemFitsToSlot(EquipmentSlotVM.ConvertToEquipmentIndex(slotVm.CrpgItemSlotIndex), draggedItem))
+            {
+                slotVm.IsButtonEnabled = false;
+            }
+        }
+    }
+
+    private void HandleDragEnd()
+    {
+        LogDebug("[CrpgInventoryVM] HandleDragEnd - resetting equipment slot states");
+
+        foreach (var slotVm in _equipmentSlots)
+        {
+            slotVm.IsButtonEnabled = true;
+        }
+    }
+
+    private void HandleItemDragBegin(ItemObject itemObj)
+    {
+        HandleDragBegin(itemObj);
+    }
+
+    private void HandleItemDragEnd(ItemObject itemObj)
+    {
+        HandleDragEnd();
+    }
+
     private void HandleAlternateClick(EquipmentSlotVM slot)
     {
         LogDebug($"[CrpgInventoryVM] Alternate click on slot: {slot.CrpgItemSlotIndex}");
@@ -304,6 +343,15 @@ public class CrpgInventoryViewModel : ViewModel
 
         InventoryGrid.SetAvailableItems(items);
         InventoryGrid.InitializeFilteredItemsList();
+
+        foreach (var slot in InventoryGrid.AvailableItems)
+        {
+            slot.OnItemDragBegin -= HandleItemDragBegin;
+            slot.OnItemDragEnd -= HandleItemDragEnd;
+
+            slot.OnItemDragBegin += HandleItemDragBegin;
+            slot.OnItemDragEnd += HandleItemDragEnd;
+        }
         OnPropertyChanged(nameof(InventoryGrid));
         LogDebug($"[CrpgInventoryVM] Inventory updated with {items.Count} items");
     }

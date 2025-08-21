@@ -12,7 +12,7 @@
         </BrushWidget>
         <ButtonWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
                   SuggestedWidth="75" SuggestedHeight="75" AcceptDrag="true" DoNotPassEventsToChildren="true"
-                  ClipContents="true" DoNotAcceptEvents="False" >
+                  ClipContents="true" DoNotAcceptEvents="False" Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" >
           <Children>
 
             <!-- Default fallback icon -->
