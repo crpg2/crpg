@@ -14,11 +14,12 @@ namespace Crpg.Module.GUI.Inventory;
 
 public class CrpgInventoryViewModel : ViewModel
 {
+    private readonly List<EquipmentSlotVM> _equipmentSlots;
     private bool _isVisible;
     private CharacterViewModel _characterPreview;
-    private readonly List<EquipmentSlotVM> _equipmentSlots;
 
-    [DataSourceProperty] public InventoryGridVM InventoryGrid { get; set; }
+    [DataSourceProperty]
+    public InventoryGridVM InventoryGrid { get; set; }
 
     public EquipmentSlotVM HeadArmor { get; private set; }
     public EquipmentSlotVM CapeArmor { get; private set; }
@@ -33,11 +34,16 @@ public class CrpgInventoryViewModel : ViewModel
     public EquipmentSlotVM Horse { get; private set; }
     public EquipmentSlotVM HorseArmor { get; private set; }
 
-    [DataSourceProperty] public ArmorAmountVM AmountHeadArmor { get; set; }
-    [DataSourceProperty] public ArmorAmountVM AmountBodyArmor { get; set; }
-    [DataSourceProperty] public ArmorAmountVM AmountLegArmor { get; set; }
-    [DataSourceProperty] public ArmorAmountVM AmountHandArmor { get; set; }
-    [DataSourceProperty] public ArmorAmountVM AmountHorseArmor { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountHeadArmor { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountBodyArmor { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountLegArmor { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountHandArmor { get; set; }
+    [DataSourceProperty]
+    public ArmorAmountVM AmountHorseArmor { get; set; }
 
     [DataSourceProperty]
     public bool IsVisible
@@ -101,17 +107,36 @@ public class CrpgInventoryViewModel : ViewModel
         InitializeCharacterPreview();
 
         LogDebug("[CrpgInventoryVM] Subscribing to CrpgCharacterLoadoutBehaviorClient events");
-        CrpgCharacterLoadoutBehaviorClient.OnSlotUpdated += HandleSlotUpdated;
-        CrpgCharacterLoadoutBehaviorClient.OnUserInventoryUpdated += HandleInventoryUpdated;
-        CrpgCharacterLoadoutBehaviorClient.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (behavior != null)
+        {
+            behavior.OnSlotUpdated += HandleSlotUpdated;
+            behavior.OnUserInventoryUpdated += HandleInventoryUpdated;
+            behavior.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
+        }
     }
 
     public override void OnFinalize()
     {
         LogDebug("[CrpgInventoryVM] Finalizing CrpgInventoryViewModel");
-        CrpgCharacterLoadoutBehaviorClient.OnSlotUpdated -= HandleSlotUpdated;
-        CrpgCharacterLoadoutBehaviorClient.OnUserInventoryUpdated -= HandleInventoryUpdated;
-        CrpgCharacterLoadoutBehaviorClient.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (behavior != null)
+        {
+            behavior.OnSlotUpdated -= HandleSlotUpdated;
+            behavior.OnUserInventoryUpdated -= HandleInventoryUpdated;
+            behavior.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
+        }
+    }
+
+    public void ExecuteDropDiscard(ViewModel draggedItem, int index)
+    {
+        LogDebug("[CrpgInventoryVM] ExecuteDropDiscard");
+        if (draggedItem is EquipmentSlotVM eqSlot)
+        {
+            GameNetwork.BeginModuleEventAsClient();
+            GameNetwork.WriteMessage(new UserRequestEquipCharacterItem { Slot = eqSlot.CrpgItemSlotIndex, UserItemId = -1 });
+            GameNetwork.EndModuleEventAsClient();
+        }
     }
 
     internal void RefreshCharacterPreview(Equipment? useEquipment = null)
@@ -157,8 +182,8 @@ public class CrpgInventoryViewModel : ViewModel
         int userItemId = 0;
         ItemObject draggedItemObject;
         EquipmentSlotVM? sourceEquipmentSlot = null;
-        string draggedItemName = string.Empty;
 
+        // Determine source item and type
         if (draggedItem is InventorySlotVM inv)
         {
             userItemId = inv.UserItemId;
@@ -167,6 +192,7 @@ public class CrpgInventoryViewModel : ViewModel
         }
         else if (draggedItem is EquipmentSlotVM eq)
         {
+            // 🔹 Prevent dropping onto the same slot or empty item
             if (eq.CrpgItemSlotIndex == targetSlot.CrpgItemSlotIndex || eq.ItemObj == null)
             {
                 LogDebug("[CrpgInventoryVM] Ignored drop: same slot or empty item dropped");
@@ -176,6 +202,7 @@ public class CrpgInventoryViewModel : ViewModel
             userItemId = eq.UserItemId;
             draggedItemObject = eq.ItemObj;
             sourceEquipmentSlot = eq;
+
             LogDebug($"[CrpgInventoryVM] Equipment item dropped: {eq.ItemObj?.Name} (UserItemId: {userItemId}) into slot {targetSlot.CrpgItemSlotIndex}");
         }
         else
@@ -186,39 +213,25 @@ public class CrpgInventoryViewModel : ViewModel
 
         if (draggedItemObject == null)
         {
-            LogDebug($"[CrpgInventoryVM] No Object to drag");
+            LogDebug("[CrpgInventoryVM] No Object to drag");
             return;
         }
 
-        // check if item fits to slot?
+        // Prevent equipping an item that does not fit the target slot
         if (!Equipment.IsItemFitsToSlot(EquipmentSlotVM.ConvertToEquipmentIndex(targetSlot.CrpgItemSlotIndex), draggedItemObject))
         {
-            LogDebug($"[CrpgInventoryVM] {draggedItemObject.Name} cant be equipped in slot :{targetSlot.CrpgItemSlotIndex}");
+            LogDebug($"[CrpgInventoryVM] {draggedItemObject.Name} cannot be equipped in slot {targetSlot.CrpgItemSlotIndex}");
             return;
         }
 
-        // check if targetSlot itemobj is the same as whats being dropped (already equipped in slot)
-        if (draggedItemObject == targetSlot.ItemObj)
+        // Prevent equipping the same item into the same slot
+        if (draggedItemObject == targetSlot.ItemObj && userItemId == targetSlot.UserItemId)
         {
-            // check if the same userItemId if user inventory
-            if (userItemId != 0)
-            {
-                // the same useritemId so dont send api request
-                if (userItemId == targetSlot.UserItemId)
-                {
-                    LogDebug($"[CrpgInventoryVM] userItemId: {userItemId} is already equipped in slot :{targetSlot.CrpgItemSlotIndex}");
-                    return;
-                }
-            }
-            else // not a userItem (maybe strat item)
-            {
-                LogDebug($"[CrpgInventoryVM] item: {draggedItemObject.Name} is already equipped in slot :{targetSlot.CrpgItemSlotIndex}");
-                return;
-            }
+            LogDebug("[CrpgInventoryVM] Ignored drop: item already equipped in target slot");
+            return;
         }
 
-        // Send Request to equip
-
+        // ✅ Send equip request
         LogDebug("[CrpgInventoryVM] Sending equip request to server");
         GameNetwork.BeginModuleEventAsClient();
         GameNetwork.WriteMessage(new UserRequestEquipCharacterItem
@@ -228,8 +241,8 @@ public class CrpgInventoryViewModel : ViewModel
         });
         GameNetwork.EndModuleEventAsClient();
 
-        // Clear the original equipment slot if it was another EquipmentSlotVM
-        if (sourceEquipmentSlot != null)
+        // ✅ Clear the source slot only if different from target
+        if (sourceEquipmentSlot != null && sourceEquipmentSlot.CrpgItemSlotIndex != targetSlot.CrpgItemSlotIndex)
         {
             GameNetwork.BeginModuleEventAsClient();
             GameNetwork.WriteMessage(new UserRequestEquipCharacterItem
@@ -241,41 +254,35 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
-    private void HandleDragBegin(ItemObject? draggedItem)
+    private void HandleItemDragBegin(ItemObject itemObj)
     {
-        LogDebug($"[CrpgInventoryVM] HandleDragBegin for item: {draggedItem?.Name}");
-
-        if (draggedItem == null)
-            return;
-
-        foreach (var slotVm in _equipmentSlots)
         {
-            // Disable slots where the item **cannot** be equipped
-            if (!Equipment.IsItemFitsToSlot(EquipmentSlotVM.ConvertToEquipmentIndex(slotVm.CrpgItemSlotIndex), draggedItem))
+            LogDebug($"[CrpgInventoryVM] HandleItemDragBegin for item: {itemObj?.Name}");
+
+            if (itemObj == null)
             {
-                slotVm.IsButtonEnabled = false;
+                return;
+            }
+
+            foreach (var slotVm in _equipmentSlots)
+            {
+                // Disable equipment slots where the item **cannot** be equipped
+                if (!Equipment.IsItemFitsToSlot(EquipmentSlotVM.ConvertToEquipmentIndex(slotVm.CrpgItemSlotIndex), itemObj))
+                {
+                    slotVm.IsButtonEnabled = false;
+                }
             }
         }
     }
 
-    private void HandleDragEnd()
+    private void HandleItemDragEnd(ItemObject itemObj)
     {
-        LogDebug("[CrpgInventoryVM] HandleDragEnd - resetting equipment slot states");
+        LogDebug("[CrpgInventoryVM] HandleItemDragEnd - resetting equipment slot states");
 
         foreach (var slotVm in _equipmentSlots)
         {
             slotVm.IsButtonEnabled = true;
         }
-    }
-
-    private void HandleItemDragBegin(ItemObject itemObj)
-    {
-        HandleDragBegin(itemObj);
-    }
-
-    private void HandleItemDragEnd(ItemObject itemObj)
-    {
-        HandleDragEnd();
     }
 
     private void HandleAlternateClick(EquipmentSlotVM slot)
@@ -338,7 +345,7 @@ public class CrpgInventoryViewModel : ViewModel
                 var obj = MBObjectManager.Instance.GetObject<ItemObject>(ui.ItemId);
                 return obj != null ? (obj, 1, ui.Id) : default;
             })
-            .Where(t => t.Item1 != null)
+            .Where(t => t.obj != null)
             .ToList();
 
         InventoryGrid.SetAvailableItems(items);
@@ -352,6 +359,7 @@ public class CrpgInventoryViewModel : ViewModel
             slot.OnItemDragBegin += HandleItemDragBegin;
             slot.OnItemDragEnd += HandleItemDragEnd;
         }
+
         OnPropertyChanged(nameof(InventoryGrid));
         LogDebug($"[CrpgInventoryVM] Inventory updated with {items.Count} items");
     }

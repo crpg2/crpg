@@ -47,7 +47,6 @@ public class EquipmentSlotVM : ViewModel
         {
             OnItemDragBegin?.Invoke(ItemObj);
         }
-
     }
 
     public void ExecuteDragEnd()
@@ -77,7 +76,6 @@ public class EquipmentSlotVM : ViewModel
 
     public void ExecuteTryEquipItem(ViewModel draggedItem, int index)
     {
-
         LogDebug($"[EquipmentSlotVM] Drop attempt on slot {CrpgItemSlotIndex} with dragged item: {draggedItem.GetType().Name}");
         OnItemDropped?.Invoke(this, draggedItem);
     }
@@ -190,7 +188,6 @@ public class EquipmentSlotVM : ViewModel
         }
     }
 
-
     [DataSourceProperty]
     public bool IsButtonEnabled
     {
@@ -205,6 +202,7 @@ public class EquipmentSlotVM : ViewModel
             }
         }
     }
+
     public bool IsDragging
     {
         get => _isDragging;

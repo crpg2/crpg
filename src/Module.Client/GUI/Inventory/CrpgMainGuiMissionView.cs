@@ -1,4 +1,7 @@
+using Crpg.Module.Common;
 using Crpg.Module.Common.Network;
+using Crpg.Module.Common.KeyBinder;
+using Crpg.Module.Common.KeyBinder.Models;
 using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.Engine.Screens;
@@ -16,8 +19,14 @@ using TaleWorlds.ScreenSystem;
 
 namespace Crpg.Module.GUI.Inventory;
 
-public class CrpgMainGuiMissionView : MissionView
+public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
 {
+    public enum InventoryOpenSource
+    {
+        MainGuiButton,
+        Hotkey,
+    }
+    private static readonly string KeyCategoryId = KeyBinder.Categories.CrpgGeneral.CategoryId;
     private GauntletLayer? _mainGuiLayer;
     private CrpgMainGuiVM? _mainGuiVm;
     private IGauntletMovie? _mainGuiMovie;
@@ -25,6 +34,25 @@ public class CrpgMainGuiMissionView : MissionView
     private GauntletLayer? _inventoryLayer;
     private CrpgInventoryViewModel? _inventoryVm;
     private IGauntletMovie? _inventoryMovie;
+    private bool _inventoryOpenedFromMainGui = false;
+
+    BindedKeyCategory IUseKeyBinder.BindedKeys => new()
+    {
+        CategoryId = KeyCategoryId,
+        Category = KeyBinder.Categories.CrpgGeneral.CategoryName,
+        Keys = new List<BindedKey>
+        {
+            new()
+            {
+                Id = "key_toggle_equip_select",
+                Name = "Open Equipment Manager",
+                Description = "Open equipment manager gui",
+                DefaultInputKey = InputKey.I,
+            },
+        },
+    };
+
+    private GameKey? toggleEquipmentSelectKey;
 
     public override void OnMissionScreenInitialize()
     {
@@ -34,7 +62,7 @@ public class CrpgMainGuiMissionView : MissionView
         {
             // Initialize main GUI bar
             _mainGuiVm = new CrpgMainGuiVM();
-            _mainGuiVm.OpenInventoryRequested += () => OpenInventory();
+            _mainGuiVm.OpenInventoryRequested += reason => ToggleInventory(reason);
             _mainGuiLayer = new GauntletLayer(100);
             _mainGuiMovie = _mainGuiLayer.LoadMovie("CrpgMainGuiBarPrefab", _mainGuiVm);
             _mainGuiVm.IsVisible = false;
@@ -57,6 +85,13 @@ public class CrpgMainGuiMissionView : MissionView
             InformationManager.DisplayMessage(new InformationMessage(errorMessage));
             Debug.Print($"{errorMessage}\n{ex.StackTrace}", 0, Debug.DebugColor.DarkBlue);
         }
+    }
+
+    public override void EarlyStart()
+    {
+        base.EarlyStart();
+
+        toggleEquipmentSelectKey = HotKeyManager.GetCategory(KeyCategoryId).GetGameKey("key_toggle_equip_select");
     }
 
     public override void OnMissionScreenTick(float dt)
@@ -87,18 +122,9 @@ public class CrpgMainGuiMissionView : MissionView
             Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
         }
 
-        // Debug layer and input state
-        /*
-        string tickMessage = $"Tick: invOpen={inventoryOpen} mainGuiOpen={mainGuiOpen} esc={escapePressed} " +
-                            $"invFocus={_inventoryLayer?.IsFocusLayer} mainGuiFocus={_mainGuiLayer?.IsFocusLayer}";
-        InformationManager.DisplayMessage(new InformationMessage(tickMessage));
-        Debug.Print(tickMessage, 0, Debug.DebugColor.DarkBlue);
-        */
-
         // 1️⃣ Priority: If inventory is open and Escape hotkey is pressed, close inventory
         if (inventoryOpen && escapePressed)
         {
-            //CloseInventory();
             HideInventory();
             return;
         }
@@ -118,9 +144,10 @@ public class CrpgMainGuiMissionView : MissionView
         }
 
         // 4️⃣ Other hotkeys
-        if (Input.IsKeyReleased(InputKey.I))
+        // if (Input.IsKeyReleased(InputKey.I))
+        if (toggleEquipmentSelectKey != null && (Input.IsKeyPressed(toggleEquipmentSelectKey.KeyboardKey.InputKey) || Input.IsKeyDown(toggleEquipmentSelectKey.ControllerKey.InputKey)))
         {
-            ToggleInventory();
+            ToggleInventory(InventoryOpenSource.Hotkey);
             return;
         }
 
@@ -132,18 +159,26 @@ public class CrpgMainGuiMissionView : MissionView
     private void ToggleMainGui()
     {
         if (_mainGuiLayer == null || _mainGuiVm == null)
+        {
             return;
+        }
 
         if (_mainGuiVm.IsVisible)
+        {
             CloseMainGui();
+        }
         else
+        {
             OpenMainGui();
+        }
     }
 
     private void OpenMainGui()
     {
         if (_mainGuiLayer == null || _mainGuiVm == null)
+        {
             return;
+        }
 
         _mainGuiVm.IsVisible = true;
         _mainGuiLayer.IsFocusLayer = true;
@@ -155,10 +190,30 @@ public class CrpgMainGuiMissionView : MissionView
         Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
     }
 
+    private void HideMainGui()
+    {
+        if (_mainGuiLayer == null || _mainGuiVm == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"HideMainGui() -- _mainGuiLayer or _mainGuiVm is null"));
+            return;
+        }
+
+        _mainGuiVm.IsVisible = false;
+        _mainGuiLayer.IsFocusLayer = false;
+        _mainGuiLayer.InputRestrictions.ResetInputRestrictions();
+        ScreenManager.TryLoseFocus(_mainGuiLayer);
+        string message = "Main GUI bar Hidden";
+        InformationManager.DisplayMessage(new InformationMessage(message));
+        Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
+    }
+
     private void CloseMainGui()
     {
         if (_mainGuiLayer == null || _mainGuiVm == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"CloseMainGui() -- _mainGuiLayer or _mainGuiVm is null"));
             return;
+        }
 
         _mainGuiVm.IsVisible = false;
         _mainGuiLayer.IsFocusLayer = false;
@@ -170,177 +225,72 @@ public class CrpgMainGuiMissionView : MissionView
     }
 
     // Inventory UI open/close/toggle methods
-    public void OpenInventory()
+    private void OpenInventory(bool openedFromMainGui = false)
     {
-        // If main GUI currently has focus, release it so inventory can receive input
-        if (_mainGuiLayer != null)
-        {
-            _mainGuiLayer.IsFocusLayer = false;
-            _mainGuiLayer.InputRestrictions.ResetInputRestrictions();
-            string message = "Main GUI focus released for inventory";
-            InformationManager.DisplayMessage(new InformationMessage(message));
-            Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
-        }
+        _inventoryOpenedFromMainGui = openedFromMainGui;
 
-        if (_inventoryLayer == null)
-        {
-            // Create and add layer once
-            _inventoryVm = new CrpgInventoryViewModel();
-            _inventoryVm.IsVisible = true;
-            _inventoryLayer = new GauntletLayer(110);
-            _inventoryLayer.IsFocusLayer = true;
+        // Hide main GUI if it has focus
+        HideMainGui();
 
-            // Give layer input control
-            _inventoryLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
-            _inventoryLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
+        ActivateLayer(ref _inventoryLayer, ref _inventoryMovie, _inventoryVm ??= new CrpgInventoryViewModel(), "CrpgInventoryScreen", 110);
+        _inventoryVm.IsVisible = true;
 
-            try
-            {
-                _inventoryMovie = _inventoryLayer.LoadMovie("CrpgInventoryScreen", _inventoryVm);
-            }
-            catch (Exception ex)
-            {
-                string errorMessage = $"Failed to load inventory UI: {ex.Message}";
-                InformationManager.DisplayMessage(new InformationMessage(errorMessage));
-                Debug.Print(errorMessage, 0, Debug.DebugColor.DarkBlue);
-                return;
-            }
-
-            if (ScreenManager.TopScreen is MissionScreen missionScreen)
-            {
-                missionScreen.AddLayer(_inventoryLayer);
-                string message = "Inventory layer added to MissionScreen";
-                InformationManager.DisplayMessage(new InformationMessage(message));
-                Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
-            }
-            else
-            {
-                ScreenManager.TopScreen?.AddLayer(_inventoryLayer);
-                string message = "Inventory layer added to TopScreen";
-                InformationManager.DisplayMessage(new InformationMessage(message));
-                Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
-            }
-
-            ScreenManager.TrySetFocus(_inventoryLayer);
-        }
-        else
-        {
-            // Already created, just show and enable input focus
-            _inventoryVm!.IsVisible = true;
-            _inventoryLayer!.IsFocusLayer = true;
-            _inventoryLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
-            ScreenManager.TrySetFocus(_inventoryLayer);
-        }
-
-        // update available items
-        GameNetwork.BeginModuleEventAsClient();
-        GameNetwork.WriteMessage(new UserRequestGetInventoryItems());
-        GameNetwork.EndModuleEventAsClient();
-
-        // update equipped items
-        GameNetwork.BeginModuleEventAsClient();
-        GameNetwork.WriteMessage(new UserRequestGetEquippedItems());
-        GameNetwork.EndModuleEventAsClient();
-
-        string openMessage = $"Inventory opened: VM={_inventoryVm != null}, IsVisible={_inventoryVm?.IsVisible}, Focus={_inventoryLayer?.IsFocusLayer}";
-        InformationManager.DisplayMessage(new InformationMessage(openMessage));
-        Debug.Print(openMessage, 0, Debug.DebugColor.DarkBlue);
+        // Fetch items from server
+        var loadout = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        loadout?.RequestGetUpdatedEquipmentAndItems();
     }
 
     // Hides the inventory UI (sets IsVisible = false, removes focus/input)
-    public void HideInventory()
+    private void HideInventory()
     {
         if (_inventoryLayer == null || _inventoryVm == null)
+        {
             return;
+        }
 
         _inventoryVm.IsVisible = false;
         _inventoryLayer.IsFocusLayer = false;
         _inventoryLayer.InputRestrictions.ResetInputRestrictions();
         ScreenManager.TryLoseFocus(_inventoryLayer);
-        string message = "Inventory hidden";
-        InformationManager.DisplayMessage(new InformationMessage(message));
-        Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
+
+        // Restore main GUI only if inventory was opened from it
+        if (_inventoryOpenedFromMainGui && _mainGuiVm != null)
+        {
+            OpenMainGui();
+        }
+
+        // Reset the flag
+        _inventoryOpenedFromMainGui = false;
     }
 
     // Fully closes inventory UI (removes the layer and disposes ViewModel)
-    public void CloseInventory()
+    private void CloseInventory()
     {
         if (_inventoryLayer == null)
         {
-            string message = "CloseInventory called but no layer exists";
-            InformationManager.DisplayMessage(new InformationMessage(message));
-            Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
             return;
         }
 
         try
         {
-            // Release focus/input from inventory layer
-            _inventoryLayer.InputRestrictions.ResetInputRestrictions();
-            _inventoryLayer.IsFocusLayer = false;
-            ScreenManager.TryLoseFocus(_inventoryLayer);
-            string focusMessage = "CloseInventory: Focus released";
-            InformationManager.DisplayMessage(new InformationMessage(focusMessage));
-            Debug.Print(focusMessage, 0, Debug.DebugColor.DarkBlue);
-
-            // Explicitly release the movie
-            _inventoryLayer?.ReleaseMovie(_inventoryMovie);
-            _inventoryMovie = null;
-            string movieMessage = "CloseInventory: Movie released";
-            InformationManager.DisplayMessage(new InformationMessage(movieMessage));
-            Debug.Print(movieMessage, 0, Debug.DebugColor.DarkBlue);
-
-            // Remove the layer from the screen
-            if (ScreenManager.TopScreen is MissionScreen missionScreen)
-            {
-                missionScreen.RemoveLayer(_inventoryLayer);
-                string layerMessage = "CloseInventory: Layer removed from MissionScreen";
-                InformationManager.DisplayMessage(new InformationMessage(layerMessage));
-                Debug.Print(layerMessage, 0, Debug.DebugColor.DarkBlue);
-            }
-            else
-            {
-                ScreenManager.TopScreen?.RemoveLayer(_inventoryLayer);
-                string layerMessage = "CloseInventory: Layer removed from TopScreen";
-                InformationManager.DisplayMessage(new InformationMessage(layerMessage));
-                Debug.Print(layerMessage, 0, Debug.DebugColor.DarkBlue);
-            }
-
-            // Finalize VM
+            // Hide the VM first
             if (_inventoryVm != null)
             {
-                // Hide first
                 _inventoryVm.IsVisible = false;
-                string hideMessage = "CloseInventory: VM hidden";
-                InformationManager.DisplayMessage(new InformationMessage(hideMessage));
-                Debug.Print(hideMessage, 0, Debug.DebugColor.DarkBlue);
-
                 _inventoryVm.OnFinalize();
                 _inventoryVm = null;
-                string finalizeMessage = "CloseInventory: VM finalized";
-                InformationManager.DisplayMessage(new InformationMessage(finalizeMessage));
-                Debug.Print(finalizeMessage, 0, Debug.DebugColor.DarkBlue);
             }
 
-            _inventoryLayer = null;
-            string clearMessage = "CloseInventory: Layer cleared";
-            InformationManager.DisplayMessage(new InformationMessage(clearMessage));
-            Debug.Print(clearMessage, 0, Debug.DebugColor.DarkBlue);
+            // Deactivate and remove the layer
+            DeactivateLayer(ref _inventoryLayer, ref _inventoryMovie);
 
-            // If the main GUI should get focus back, restore it
+            // Restore main GUI focus if it should be visible
             if (_mainGuiLayer != null && _mainGuiVm != null && _mainGuiVm.IsVisible)
             {
                 _mainGuiLayer.IsFocusLayer = true;
                 _mainGuiLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
                 ScreenManager.TrySetFocus(_mainGuiLayer);
-                string restoreMessage = "CloseInventory: Main GUI focus restored";
-                InformationManager.DisplayMessage(new InformationMessage(restoreMessage));
-                Debug.Print(restoreMessage, 0, Debug.DebugColor.DarkBlue);
             }
-
-            string closeMessage = "Inventory closed";
-            InformationManager.DisplayMessage(new InformationMessage(closeMessage));
-            Debug.Print(closeMessage, 0, Debug.DebugColor.DarkBlue);
         }
         catch (Exception ex)
         {
@@ -351,11 +301,91 @@ public class CrpgMainGuiMissionView : MissionView
     }
 
     // Toggle between open and hide (keep layer loaded)
-    public void ToggleInventory()
+    private void ToggleInventory(InventoryOpenSource reason)
     {
         if (_inventoryVm == null || !_inventoryVm.IsVisible)
-            OpenInventory();
+        {
+            if (reason == InventoryOpenSource.MainGuiButton)
+            {
+                OpenInventory(true); // track that we came from main gui
+            }
+            else if (reason == InventoryOpenSource.Hotkey)
+            {
+                OpenInventory(false); // came from hotkey, don’t restore main gui
+            }
+        }
         else
+        {
             HideInventory();
+        }
+    }
+
+    private void ActivateLayer(ref GauntletLayer? layer, ref IGauntletMovie? movie, ViewModel vm, string prefabName, int layerOrder = 100)
+    {
+        if (layer == null)
+        {
+            layer = new GauntletLayer(layerOrder) { IsFocusLayer = true };
+            layer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
+            layer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
+
+            movie = layer.LoadMovie(prefabName, vm);
+
+            if (ScreenManager.TopScreen is MissionScreen missionScreen)
+            {
+                missionScreen.AddLayer(layer);
+            }
+            else
+            {
+                ScreenManager.TopScreen?.AddLayer(layer);
+            }
+        }
+        else
+        {
+            layer.IsFocusLayer = true;
+            layer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
+            ScreenManager.TrySetFocus(layer);
+        }
+    }
+
+    private void DeactivateLayer(ref GauntletLayer? layer, ref IGauntletMovie? movie)
+    {
+        if (layer == null)
+        {
+            return;
+        }
+
+        try
+        {
+            // Remove focus and reset input
+            layer.IsFocusLayer = false;
+            layer.InputRestrictions.ResetInputRestrictions();
+            ScreenManager.TryLoseFocus(layer);
+
+            // Release movie if exists
+            if (movie != null)
+            {
+                layer.ReleaseMovie(movie);
+                movie = null;
+            }
+
+            // Remove the layer from the screen
+            if (ScreenManager.TopScreen is MissionScreen missionScreen)
+            {
+                missionScreen.RemoveLayer(layer);
+            }
+            else
+            {
+                ScreenManager.TopScreen?.RemoveLayer(layer);
+            }
+
+            // Nullify the layer reference
+            layer = null;
+        }
+        catch (Exception ex)
+        {
+            string errorMessage = $"DeactivateLayer exception: {ex.Message}";
+            InformationManager.DisplayMessage(new InformationMessage(errorMessage));
+            Debug.Print(errorMessage, 0, Debug.DebugColor.DarkBlue);
+        }
     }
 }

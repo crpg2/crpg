@@ -8,20 +8,28 @@ public class CrpgMainGuiVM : ViewModel
     private bool _isVisible;
     private CrpgInventoryViewModel? _inventoryVm;
 
+    public enum InventoryOpenSource
+    {
+        MainGuiButton,
+        Hotkey,
+    }
 
-
-    public event Action? OpenInventoryRequested;
+    public event Action<CrpgMainGuiMissionView.InventoryOpenSource>? OpenInventoryRequested;
     public CrpgMainGuiVM()
     {
-
     }
 
-    public void OpenInventory()
+    public void OpenInventoryFromButton()
     {
-        OpenInventoryRequested?.Invoke();
+        OpenInventory(CrpgMainGuiMissionView.InventoryOpenSource.MainGuiButton);
     }
 
-    // This reflects the visibility of the main GUI bar prefab, 
+    public void OpenInventory(CrpgMainGuiMissionView.InventoryOpenSource reason)
+    {
+        OpenInventoryRequested?.Invoke(reason);
+    }
+
+    // This reflects the visibility of the main GUI bar prefab,
     // managed by MissionView toggling IsVisible
     [DataSourceProperty]
     public bool IsVisible
@@ -62,12 +70,10 @@ public class CrpgMainGuiVM : ViewModel
 
     public override void OnFinalize()
     {
+        base.OnFinalize();
         // Clean up VM resources (but not UI layers)
-        if (_inventoryVm != null)
-        {
-            _inventoryVm.OnFinalize();
-            _inventoryVm = null;
-        }
+        _inventoryVm?.OnFinalize();
+        _inventoryVm = null;
 
         base.OnFinalize();
     }

@@ -14,11 +14,11 @@
   </Constants>
   <Window>
     <!-- Main Container -->
-    <Widget IsVisible="@IsVisible" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10">
+    <Widget IsVisible="@IsVisible" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="10" MarginBottom="60" MarginLeft="10" MarginRight="10">
       <Children>
         <!-- Centering Wrapper -->
         <Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
-                HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="10" MarginTop="10" MarginRight="10" MarginBottom="10">
+                HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="10" MarginTop="10" MarginRight="10" MarginBottom="10" AcceptDrop="true" Command.Drop="ExecuteDropDiscard">
           <Children>  
             <BrushWidget Id="Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
               <Children>

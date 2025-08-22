@@ -25,9 +25,9 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     public IReadOnlyList<CrpgEquippedItemExtended> EquippedItems => _equippedItems;
     public IReadOnlyList<CrpgUserItemExtended> UserInventoryItems => _userInventoryItems;
 
-    internal static event Action? OnUserInventoryUpdated;
-    internal static event Action? OnUserCharacterEquippedItemsUpdated;
-    internal static event Action<CrpgItemSlot>? OnSlotUpdated;
+    internal event Action? OnUserInventoryUpdated;
+    internal event Action? OnUserCharacterEquippedItemsUpdated;
+    internal event Action<CrpgItemSlot>? OnSlotUpdated;
 
     public override void OnBehaviorInitialize()
     {
@@ -69,6 +69,22 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
         // Build Equipment using CrpgCharacterBuilder
         return CrpgCharacterBuilder.CreateCharacterEquipment(baseEquippedItems);
+    }
+
+    /// <summary>
+    /// Requests the latest user inventory and equipped items from the server.
+    /// </summary>
+    internal void RequestGetUpdatedEquipmentAndItems()
+    {
+        // Inventory items
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestGetInventoryItems());
+        GameNetwork.EndModuleEventAsClient();
+
+        // Equipped items
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestGetEquippedItems());
+        GameNetwork.EndModuleEventAsClient();
     }
 
     /// <summary>
@@ -140,13 +156,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
     private void OnMyClientSynchronized()
     {
-        GameNetwork.BeginModuleEventAsClient();
-        GameNetwork.WriteMessage(new UserRequestGetInventoryItems());
-        GameNetwork.EndModuleEventAsClient();
-
-        GameNetwork.BeginModuleEventAsClient();
-        GameNetwork.WriteMessage(new UserRequestGetEquippedItems());
-        GameNetwork.EndModuleEventAsClient();
+        RequestGetUpdatedEquipmentAndItems();
     }
 
     /// <summary>

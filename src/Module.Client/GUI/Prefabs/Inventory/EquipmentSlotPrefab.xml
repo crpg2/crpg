@@ -2,39 +2,50 @@
     <!-- Sprites:
     SquareWRoundedCornersFrame_9
     StdAssets\frame_small
-    
-    -->
+  -->
+  <Constants>
+    <Constant Name="MainContainer.Width" Value="85"/>
+    <Constant Name="MainContainer.Height" Value="70"/>
+    <Constant Name="DefaultIcon.Width" Value="48"/>
+    <Constant Name="DefaultIcon.Height" Value="48"/>
+    <Constant Name="Button.Width" Value="65"/>
+    <Constant Name="Button.Height" Value="50"/>
+    <Constant Name="EquippedIcon.Width" Value="80"/>
+    <Constant Name="EquippedIcon.Height" Value="40"/>
+  </Constants>
+
   <Window>
-    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="85" SuggestedHeight="70" >
+    <Widget Id="MainContainer" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!MainContainer.Width" SuggestedHeight="!MainContainer.Height" >
       <Children>
-        <BrushWidget Id="Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff" DoNotAcceptEvents="True">
+        <BrushWidget Id="BackgroundFrame" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff" AcceptDrop="@IsButtonEnabled" DoNotAcceptEvents="True"> <!-- acceptdrop here to intercept event and stop from unequip if u drop slot on same slot. doesnt register on button if dragging-->
           <Children>
             <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10"
                   WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
                   Brush="CrpgInventory.EquipmentSlot.BackGround" DoNotAcceptEvents="True">
             </BrushWidget>
             <!-- Default fallback icon -->
-            <ImageWidget Sprite="@DefaultSprite"
+            <ImageWidget Id="DefaultIcon" Sprite="@DefaultSprite"
                     IsVisible="@ShouldShowDefaultIcon"
                     WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                    SuggestedWidth="48" SuggestedHeight="48" UseAlphaAsMask="True"
+                    SuggestedWidth="!DefaultIcon.Width" SuggestedHeight="!DefaultIcon.Height" UseAlphaAsMask="True"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     DoNotAcceptEvents="True" /> 
           </Children>
         </BrushWidget>
         <ButtonWidget Id="Button" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
-                SuggestedWidth="75" SuggestedHeight="70" AcceptDrag="@CanAcceptDrag" DoNotPassEventsToChildren="true"
+                SuggestedWidth="!Button.Width" SuggestedHeight="!Button.Height" AcceptDrag="@CanAcceptDrag" DoNotPassEventsToChildren="true"
                 ClipContents="true" DoNotAcceptEvents="False" IsEnabled="@IsButtonEnabled"
                 Command.AlternateClick="ExecuteAlternateClick" Command.DragBegin="ExecuteDragBegin" Command.DragEnd="ExecuteDragEnd" Brush="EquipmentSlot.Button"
                 AcceptDrop="true" Command.Drop="ExecuteTryEquipItem" Command.HoverBegin="ExecuteHoverBegin" Command.HoverEnd="ExecuteHoverEnd" AllowHoverWhileDragging="true" >
           <Children>
             <!-- Equipped item icon -->
             <ImageIdentifierWidget DataSource="{ImageIdentifier}"
+                            Id="EquippedIcon"
                             ImageId="@Id"
                             AdditionalArgs="@AdditionalArgs"
                             ImageTypeCode="@ImageTypeCode"
                             WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                            SuggestedWidth="80" SuggestedHeight="40"
+                            SuggestedWidth="!EquippedIcon.Width" SuggestedHeight="!EquippedIcon.Height"
                             HorizontalAlignment="Center" VerticalAlignment="Center"
                             Margin="4" 
                             DoNotAcceptEvents="True" PassEventsToParent="True" />

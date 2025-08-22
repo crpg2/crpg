@@ -49,7 +49,7 @@
                           <Children>            
                             <Widget Id="ClipRect" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" ClipContents="true" VerticalAlignment="Top">
                               <Children>
-                                <GridWidget Id="InventoryGrid" DataSource="{FilteredItems}" ColumnCount="*NumColumns" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" DefaultCellHeight = "80" DefaultCellWidth="80" HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="5" MarginBottom="5" SpacingX="2" SpacingY="5">
+                                <GridWidget Id="InventoryGrid" DataSource="{FilteredItems}" ColumnCount="*NumColumns" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" DefaultCellHeight = "80" DefaultCellWidth="80" HorizontalAlignment="Left" VerticalAlignment="Top" MarginTop="5" MarginBottom="5" SpacingX="2" SpacingY="5">
                                   <ItemTemplate>
                                     <InventorySlotPrefab DataSource="." />
                                   </ItemTemplate>
