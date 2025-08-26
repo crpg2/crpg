@@ -1,15 +1,73 @@
 <Prefab Name="CharacterInfoPlusMinusItem">
-    <!-- @ItemLabel @ItemValue @IsMinusButtonEnabled @IsPlusButtonEnabled-->
   <Window>
-    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
+    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight"
+               WidthSizePolicy="StretchToParent"
+               HeightSizePolicy="Fixed" SuggestedHeight="25"
+               Spacing="5">
       <Children>
-        <TextWidget Text="@ItemLabel" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
-        <ButtonWidget Id="ButtonMinus" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="10" SuggestedHeight="10" 
-                      AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="@IsButtonMinusEnabled" />      
-        <TextWidget Text="@ItemValue" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
-        <ButtonWidget Id="ButtonPlus" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="10" SuggestedHeight="10" 
-                    AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="@IsButtonPlusEnabled" />
+
+        <!-- Left-aligned label -->
+        <TextWidget Text="@ItemLabel" 
+                    WidthSizePolicy="Fixed" SuggestedWidth="120"
+                    HeightSizePolicy="Fixed" SuggestedHeight="20"
+                    HorizontalAlignment="Left"
+                    Brush="Inventory.ArmorAmount.Text" />
+
+        <!-- Spacer that stretches to push buttons to the right -->
+        <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" />
+
+        <!-- Right-aligned buttons & value -->
+        <BrushWidget Id="ButtonBackgroundFrame" 
+                    WidthSizePolicy="Fixed" SuggestedWidth="30"
+                    HeightSizePolicy="Fixed" SuggestedHeight="30"
+                    VerticalAlignment="Center"
+                    MarginBottom="5"
+                    PassEventsToParent="false"
+                    Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff"> <!-- acceptdrop here to intercept event and stop from unequip if u drop slot on same slot. doesnt register on button if dragging-->
+          <Children>
+            <ButtonWidget Id="ButtonMinus" Brush="CharacterEdit.Button"
+                      WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                      MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
+                      AcceptDrag="false"
+                      DoNotPassEventsToChildren="true"
+                      Command.Click="ExecuteClick"
+                      IsEnabled="true" /> <!-- @IsButtonMinusEnabled -->
+            <TextWidget Text="-" WidthSizePolicy="Fixed" SuggestedWidth="20" HeightSizePolicy="Fixed" SuggestedHeight="20"
+                      MarginTop="5"
+                      DoNotAcceptEvents="true"
+                      HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+          </Children>
+        </BrushWidget>
+
+        <TextWidget IntText="@ItemValue"
+                    WidthSizePolicy="Fixed" SuggestedWidth="20"
+                    HeightSizePolicy="Fixed" SuggestedHeight="20"
+                    HorizontalAlignment="Center"
+                    Brush="Inventory.ArmorAmount.Text" />
+      
+        <BrushWidget Id="ButtonBackgroundFrame" 
+                    WidthSizePolicy="Fixed" SuggestedWidth="30"
+                    HeightSizePolicy="Fixed" SuggestedHeight="30"
+                    VerticalAlignment="Center"
+                    MarginBottom="5"
+                    PassEventsToParent="false"
+                    Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff"> <!-- acceptdrop here to intercept event and stop from unequip if u drop slot on same slot. doesnt register on button if dragging-->
+          <Children>
+            <ButtonWidget Id="ButtonMinus" Brush="CharacterEdit.Button"
+                      WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                      MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
+                      AcceptDrag="false"
+                      DoNotPassEventsToChildren="true"
+                      Command.Click="ExecuteClick"
+                      IsEnabled="true" /> <!-- @IsButtonPlusEnabled -->
+            <TextWidget Text="+" WidthSizePolicy="Fixed" SuggestedWidth="20" HeightSizePolicy="Fixed" SuggestedHeight="20"
+                      MarginTop="5"
+                      DoNotAcceptEvents="true"
+                      HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+          </Children>
+        </BrushWidget>
+
       </Children>
     </ListPanel>
   </Window>
-<Prefab>
+</Prefab>

@@ -90,6 +90,28 @@
       </Style>
     </Styles>
   </Brush>
+  <Brush Name="CharacterEdit.Button">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0" Color="#0586ffff" />
+      </Style>
+      <Style Name="Hovered">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#5bacf8ff" />
+      </Style>
+      <Style Name="Pressed">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#0586ffff" />
+      </Style>
+      <Style Name="Selected">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#91c2f0ff" />
+      </Style>      
+      <Style Name="Disabled">
+        <BrushLayer Name="Default" AlphaFactor="0.5" Color="#353636ff" />
+      </Style>
+    </Styles>
+  </Brush>  
   <Brush Name="InventorySlot.ItemName.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
     <Layers>
     </Layers>

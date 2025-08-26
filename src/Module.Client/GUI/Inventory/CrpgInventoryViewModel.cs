@@ -64,6 +64,14 @@ public class CrpgInventoryViewModel : ViewModel
         }
     }
 
+    private CharacterInfoVM _characterInfo;
+    [DataSourceProperty]
+    public CharacterInfoVM CharacterInfo
+    {
+        get => _characterInfo;
+        set => SetField(ref _characterInfo, value, nameof(CharacterInfo));
+    }
+
     [DataSourceProperty]
     public CharacterViewModel CharacterPreview
     {
@@ -82,6 +90,8 @@ public class CrpgInventoryViewModel : ViewModel
     public CrpgInventoryViewModel()
     {
         LogDebug("[CrpgInventoryVM] Initializing CrpgInventoryViewModel");
+
+        _characterInfo = new CharacterInfoVM();
 
         _characterPreview = new CharacterViewModel();
         InventoryGrid = new InventoryGridVM();
@@ -156,11 +166,19 @@ public class CrpgInventoryViewModel : ViewModel
             CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
             CalculateArmorFromEquipment(useEquipment);
             LogDebug("[CrpgInventoryVM] Refreshed character preview and recalculated armor");
+
+            UpdateCharacterInfo();
+            LogDebug("[CrpgInventoryVM] UpdateCharacterInfo() in refreshcharacterpreview");
         }
         else
         {
             LogDebug("[CrpgInventoryVM] No equipment available to refresh character preview");
         }
+    }
+
+    private void UpdateCharacterInfo()
+    {
+        CharacterInfo = new CharacterInfoVM();
     }
 
     private EquipmentSlotVM CreateSlot(CrpgItemSlot slot)

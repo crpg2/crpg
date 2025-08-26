@@ -1,5 +1,6 @@
 using Crpg.Application.ActivityLogs.Commands;
 using Crpg.Application.ActivityLogs.Models;
+using Crpg.Application.Characters.Models;
 using Crpg.Application.Clans.Models;
 using Crpg.Application.Clans.Queries;
 using Crpg.Application.Common.Results;
@@ -52,6 +53,18 @@ public class GamesController : BaseController
     public Task<ActionResult<Result<IList<GameEquippedItemExtendedViewModel>>>> GetCharacterEquippedItems(
         [FromRoute] int userId, [FromRoute] int characterId) =>
         ResultToActionAsync(Mediator.Send(new GetGameCharacterEquippedItemsQuery
+        {
+            UserId = userId,
+            CharacterId = characterId,
+        }));
+
+    /// <summary>
+    /// Get character basic (no equipped items or statistics).
+    /// </summary>
+    [HttpGet("users/{userId}/characters/{characterId}")]
+    public Task<ActionResult<Result<GameCharacterViewModel>>> GetUserCharacterBasic(
+        [FromRoute] int userId, [FromRoute] int characterId) =>
+        ResultToActionAsync(Mediator.Send(new GetGameUserCharacterBasicQuery
         {
             UserId = userId,
             CharacterId = characterId,

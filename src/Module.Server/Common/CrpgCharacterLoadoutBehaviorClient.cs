@@ -1,12 +1,15 @@
 using Crpg.Module.Api;
 using Crpg.Module.Api.Exceptions;
 using Crpg.Module.Api.Models;
+using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
 using Crpg.Module.Api.Models.Users;
 using Crpg.Module.Common.Network;
+using Messages.FromClient.ToLobbyServer;
 using TaleWorlds.Core;
+using TaleWorlds.Diamond;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
@@ -18,15 +21,16 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 {
     private readonly List<CrpgEquippedItemExtended> _equippedItems = new();
     private readonly List<CrpgUserItemExtended> _userInventoryItems = new();
-
     private MissionNetworkComponent? _missionNetworkComponent;
 
     // Public read-only access
     public IReadOnlyList<CrpgEquippedItemExtended> EquippedItems => _equippedItems;
     public IReadOnlyList<CrpgUserItemExtended> UserInventoryItems => _userInventoryItems;
+    public CrpgCharacter UserCharacter { get; private set; } = new();
 
     internal event Action? OnUserInventoryUpdated;
     internal event Action? OnUserCharacterEquippedItemsUpdated;
+    internal event Action? OnUserCharacerBasicUpdated;
     internal event Action<CrpgItemSlot>? OnSlotUpdated;
 
     public override void OnBehaviorInitialize()
@@ -84,6 +88,11 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         // Equipped items
         GameNetwork.BeginModuleEventAsClient();
         GameNetwork.WriteMessage(new UserRequestGetEquippedItems());
+        GameNetwork.EndModuleEventAsClient();
+
+        // Character basic
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestGetCharacterBasic());
         GameNetwork.EndModuleEventAsClient();
     }
 
@@ -146,12 +155,18 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         _userInventoryItems.AddRange(items);
     }
 
+    internal void SetUserCharacterBasic(CrpgCharacter crpgCharacter)
+    {
+        UserCharacter = crpgCharacter;
+    }
+
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
         base.AddRemoveMessageHandlers(registerer);
         registerer.Register<ServerSendUserInventoryItems>(HandleUpdateCrpgUserInventory); // recieve user items from server
         registerer.Register<ServerSendUserCharacterEquippedItems>(HandleUpdateCrpgCharacterEquippedItems); // recieve equipped items for character from server
         registerer.Register<ServerSendEquipItemResult>(HandleEquipItemResult); // recieve result of attempt to equip item in slot on api from server
+        registerer.Register<ServerSendUserCharacterBasic>(HandleUpdateCrpgUserCharacterBasic); // recieve character basic from server
     }
 
     private void OnMyClientSynchronized()
@@ -211,6 +226,26 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
         // Trigger event for gui to listen to to know to update
         OnUserInventoryUpdated?.Invoke();
+    }
+
+    private void HandleUpdateCrpgUserCharacterBasic(ServerSendUserCharacterBasic msg)
+    {
+        string debugString = $"HandleUpdateCrpgUserCharacterBasic";
+        InformationManager.DisplayMessage(new InformationMessage(debugString));
+        Debug.Print(debugString);
+
+        if (msg.Character == null)
+        {
+            debugString = $"Error in HandleUpdateCrpgUserCharacterBasic: message.Character was null";
+            InformationManager.DisplayMessage(new InformationMessage(debugString));
+            Debug.Print(debugString);
+            return;
+        }
+
+        SetUserCharacterBasic(msg.Character);
+
+        // Trigger event for gui to listen to to know to update
+        OnUserCharacerBasicUpdated?.Invoke();
     }
 
     /// <summary>

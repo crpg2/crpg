@@ -3,6 +3,7 @@ using System.Text;
 using Crpg.Module.Api;
 using Crpg.Module.Api.Exceptions;
 using Crpg.Module.Api.Models;
+using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
@@ -30,6 +31,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         registerer.Register<UserRequestGetInventoryItems>(HandleUserRequestGetInventoryItems);
         registerer.Register<UserRequestGetEquippedItems>(HandleUserRequestGetEquippedItems);
         registerer.Register<UserRequestEquipCharacterItem>(HandleUserRequestEquipCharacterItem);
+        registerer.Register<UserRequestGetCharacterBasic>(HandleUserRequestGetCharacterBasic);
     }
 
     /// <summary>
@@ -51,6 +53,59 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Handles a client's request to fetch basic information about their character
+    /// and initiates an asynchronous request to retrieve the data from the API.
+    /// </summary>
+    /// <param name="networkPeer">The network peer representing the connected client.</param>
+    /// <param name="message">The message containing the request (empty payload).</param>
+    /// <returns>Returns true if the request was handled successfully.</returns>
+    private bool HandleUserRequestGetCharacterBasic(NetworkCommunicator networkPeer, UserRequestGetCharacterBasic message)
+    {
+        Debug.Print("HandleUserRequestGetCharacterBasic()");
+        _ = GetUserCharacterBasicAsync(networkPeer);
+        return true;
+    }
+
+    private async Task GetUserCharacterBasicAsync(NetworkCommunicator networkPeer)
+    {
+        var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+
+        if (crpgPeer?.User == null || crpgPeer?.User?.Character == null)
+        {
+            Debug.Print($"[GetUserCharacterBasicAsync] No user data or character found for peer {networkPeer.UserName}");
+            return;
+        }
+
+        CrpgUser crpgUser = crpgPeer.User;
+
+        try
+        {
+            Debug.Print($"[GetUserCharacterBasicAsync] Sending Api Request");
+            var characterRes = await _crpgClient.GetUserCharacterBasicAsync(crpgUser.Id, crpgUser.Character.Id);
+            if (characterRes.Errors != null)
+            {
+                Debug.Print($"Errors in response");
+            }
+
+            if (characterRes.Data != null)
+            {
+                var crpgCharacterBasic = characterRes.Data;
+                Debug.Print($"User {crpgUser.Id} Character {crpgUser.Character.Name} Basic fetched successfully");
+
+                SynchronizeUserCharacterBasicToPeer(networkPeer, crpgCharacterBasic);
+            }
+            else
+            {
+                Debug.Print($"characterRes.Data was null");
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Print($"Error fetching character basic for peer {networkPeer.UserName} character {crpgUser.Character.Name}: {e}");
+        }
     }
 
     /// <summary>
@@ -316,6 +371,31 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
             GameNetwork.BeginModuleEventAsServer(networkPeer);
             GameNetwork.WriteMessage(new ServerSendUserCharacterEquippedItems { Items = items });
+            GameNetwork.EndModuleEventAsServer();
+        }
+        catch (Exception ex)
+        {
+            Debug.Print($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
+            Console.WriteLine($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
+        }
+    }
+
+    private void SynchronizeUserCharacterBasicToPeer(NetworkCommunicator networkPeer, CrpgCharacter crpgCharacter)
+    {
+        try
+        {
+            Debug.Print("SynchronizeUserCharacterEquippedItemsToPeer()");
+
+            if (networkPeer == null || crpgCharacter == null)
+            {
+                Debug.Print("networkPeer or crpgCharacter is null");
+                return;
+            }
+
+            Debug.Print($"Sending Character basic ({crpgCharacter.Name}) to peer {networkPeer.Index}");
+
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new ServerSendUserCharacterBasic { Character = crpgCharacter });
             GameNetwork.EndModuleEventAsServer();
         }
         catch (Exception ex)

@@ -4,6 +4,7 @@ using System.Text;
 using Crpg.Module.Api.Exceptions;
 using Crpg.Module.Api.Models;
 using Crpg.Module.Api.Models.ActivityLogs;
+using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Api.Models.Items;
 using Crpg.Module.Api.Models.Restrictions;
@@ -83,6 +84,12 @@ internal class HttpCrpgClient : ICrpgClient
         CancellationToken cancellationToken = default)
     {
         return Get<IList<CrpgUserItemExtended>>("games/users/" + userId + "/items", null, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgCharacter>> GetUserCharacterBasicAsync(int userId, int characterId,
+        CancellationToken cancellationToken = default)
+    {
+        return Get<CrpgCharacter>("games/users/" + userId + "/characters/" + characterId, null, cancellationToken);
     }
 
     public Task<CrpgResult<IList<CrpgEquippedItemExtended>>> GetCharacterEquippedItemsAsync(int userId, int characterId,

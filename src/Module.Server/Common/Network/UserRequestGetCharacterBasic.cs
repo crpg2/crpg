@@ -5,7 +5,7 @@ using TaleWorlds.MountAndBlade.Network.Messages;
 namespace Crpg.Module.Common.Network;
 
 [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromClient)]
-internal sealed class UserRequestGetEquippedItems : GameNetworkMessage
+internal sealed class UserRequestGetCharacterBasic : GameNetworkMessage
 {
     // No payload needed; client just requests their items
 
@@ -17,5 +17,5 @@ internal sealed class UserRequestGetEquippedItems : GameNetworkMessage
 
     protected override MultiplayerMessageFilter OnGetLogFilter() => MultiplayerMessageFilter.GameMode;
 
-    protected override string OnGetLogFormat() => "Request cRPG User Character Equipped Items";
+    protected override string OnGetLogFormat() => "Request cRPG User Character";
 }

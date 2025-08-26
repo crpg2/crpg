@@ -29,6 +29,8 @@
             <!-- Wrapper Panel -->
             <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
               <Children>
+                <!-- Character Info Panel -->
+                <CharacterInfoPrefab DataSource="{CharacterInfo}" />
                 <!-- Equipped Items Panel -->
                 <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquippedPanel.Width" SuggestedHeight="!EquippedPanel.Height" HorizontalAlignment="Left" VerticalAlignment="Center" MarginTop="10" MarginLeft="10">
                   <Children>

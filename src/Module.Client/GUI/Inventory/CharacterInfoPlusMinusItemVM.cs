@@ -17,7 +17,7 @@ public class CharacterInfoPlusMinusItemVM : ViewModel
         _value = value;
         _minValue = minValue;
         _maxValue = maxValue;
-        RefreshValue();
+        // RefreshValue();
     }
 
     private readonly int _minValue;

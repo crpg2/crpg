@@ -11,7 +11,7 @@ public class CharacterInfoVM : ViewModel
     private string _characterExperienceText = string.Empty;
     private string _characterClassText = string.Empty;
 
-    private MBBindingList<CharacterInfoPlusMinusItemVM> _attributesAndWpf = new();
+    private MBBindingList<CharacterInfoPlusMinusItemVM> _weaponProficiencies = new();
     private MBBindingList<CharacterInfoPlusMinusItemVM> _skills = new();
 
     private CharacterInfoConvertItemVM _convertAttribute;
@@ -20,13 +20,13 @@ public class CharacterInfoVM : ViewModel
     public CharacterInfoVM()
     {
         // Example: init from some character model
-        CharacterNameText = string.Empty;
-        CharacterGenerationText = string.Empty;
-        CharacterLevelText = string.Empty;
-        CharacterExperienceText = string.Empty;
-        CharacterClassText = string.Empty;
+        CharacterNameText = "Dummy Name"; // string.Empty;
+        CharacterGenerationText = "3"; // string.Empty;
+        CharacterLevelText = "32";
+        CharacterExperienceText = "9000";
+        CharacterClassText = "Test class";
 
-        AttributesAndWpf = new MBBindingList<CharacterInfoPlusMinusItemVM>
+        WeaponProficiencies = new MBBindingList<CharacterInfoPlusMinusItemVM>
             {
                 new("One-Handed", 60, 0, 300),
                 new("Two-Handed", 40, 0, 300),
@@ -89,10 +89,10 @@ public class CharacterInfoVM : ViewModel
     }
 
     [DataSourceProperty]
-    public MBBindingList<CharacterInfoPlusMinusItemVM> AttributesAndWpf
+    public MBBindingList<CharacterInfoPlusMinusItemVM> WeaponProficiencies
     {
-        get => _attributesAndWpf;
-        set => SetField(ref _attributesAndWpf, value, nameof(AttributesAndWpf));
+        get => _weaponProficiencies;
+        set => SetField(ref _weaponProficiencies, value, nameof(WeaponProficiencies));
     }
 
     [DataSourceProperty]

@@ -1,13 +1,29 @@
 <Prefab Name="CharacterInfoConvertItem">
     <!-- @ItemLabel @ItemValue @IsButtonEnabled-->
   <Window>
-    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
+    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" 
+            WidthSizePolicy="CoverChildren" 
+            HeightSizePolicy="Fixed" SuggestedHeight="25"
+            HorizontalAlignment="Center"
+            MarginTop="5" MarginBottom="10" MarginLeft="10" MarginRight="10"
+            Spacing="5">
       <Children>
-        <TextWidget Text="@ItemLabel" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
-        <TextWidget IntText="@ItemValue" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+        <TextWidget Text="@ItemLabel"
+                    WidthSizePolicy="CoverChildren"
+                    HeightSizePolicy="Fixed" SuggestedHeight="20"
+                    HorizontalAlignment="Center"
+                    Brush="Inventory.ArmorAmount.Text" />
+        <TextWidget IntText="@ItemValue"
+                    WidthSizePolicy="Fixed" SuggestedWidth="20"
+                    HeightSizePolicy="Fixed" SuggestedHeight="20" 
+                    HorizontalAlignment="Left"
+                    Brush="Inventory.ArmorAmount.Text" />
+        <!-- Spacer that stretches to push buttons to the right -->
+        <!-- <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" /> -->
+
         <ButtonWidget Id="Button" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="10" SuggestedHeight="10" 
                       AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="@IsButtonEnabled" />
       </Children>
     </ListPanel>
   </Window>
-<Prefab>
+</Prefab>
