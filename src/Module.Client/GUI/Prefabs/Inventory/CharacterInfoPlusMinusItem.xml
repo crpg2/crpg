@@ -1,0 +1,15 @@
+<Prefab Name="CharacterInfoPlusMinusItem">
+    <!-- @ItemLabel @ItemValue @IsMinusButtonEnabled @IsPlusButtonEnabled-->
+  <Window>
+    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
+      <Children>
+        <TextWidget Text="@ItemLabel" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+        <ButtonWidget Id="ButtonMinus" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="10" SuggestedHeight="10" 
+                      AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="@IsButtonMinusEnabled" />      
+        <TextWidget Text="@ItemValue" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+        <ButtonWidget Id="ButtonPlus" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="10" SuggestedHeight="10" 
+                    AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="@IsButtonPlusEnabled" />
+      </Children>
+    </ListPanel>
+  </Window>
+<Prefab>

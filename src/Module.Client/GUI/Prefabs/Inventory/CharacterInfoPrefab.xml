@@ -1,0 +1,71 @@
+<Prefab Name="CharacterInfoPrefab">
+  <Window>
+    <Widget Id="MainContainer" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center">
+      <Children>
+        <!-- Frame -->
+        <BrushWidget Id="MainContainer.Frame" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+          <Children>
+            <!-- Vertical Layout Container -->
+            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="0" Spacing="5">
+              <Children>
+                <!-- Character General Info--> <!-- Name, Generation, Level, Experience, Class-->
+                <BrushWidget Id="CharacterInfo.Frame" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+                    <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="5" MarginBottom="5" MarginLeft="5" MarginRight="5">
+                      <Children>
+                        <TextWidget Text="@CharacterNameText" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                        <TextWidget Text="@CharacterGenerationText" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                        <TextWidget Text="@CharacterLevelText" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                        <TextWidget Text="@CharacterExperienceText" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                        <TextWidget Text="@CharacterClassText" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                      </Children>
+                    </ListPanel>
+                </BrushWidget>
+                <!-- End Character General Info -->
+
+                <!-- Horizontal LayoutContainer-->
+                <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Left" VerticalAlignment="Center" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginLeft="0" MarginRight="0" MarginTop="0" MarginBottom="0" Spacing="5" >
+                  <Children>
+                    <!-- Left: Attributes and Weapon Proficiencies -->
+                    <BrushWidget Id="CharacterInfo.AttributesAndWpf.Frame" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+                      <Children>
+                        <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="5" MarginBottom="5" MarginLeft="5" MarginRight="5">
+                          <Children>
+                            <CharacterInfoConvertItem DataSource="{ConvertAttribute}"> <!-- Attributes -->
+                            <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="VerticalTopToBottom" DataSource="{AttributesAndWpf}">
+                              <ItemTemplate>
+                                <CharacterInfoPlusMinusItem DataSource="{.}" MarginBottom="5" Spacing="5" /> 
+                              </ItemTemplate>      
+                            </ListPanel>            
+                          </Children>
+                        </ListPanel>    
+                      </Children>
+                    </BrushWidget>
+                    <!-- Right: Skills -->
+                    <BrushWidget Id="CharacterInfo.Skills.Frame" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+                      <Children>
+                        <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginTop="5" MarginBottom="5" MarginLeft="5" MarginRight="5"> 
+                          <Children>
+                            <CharacterInfoConvertItem DataSource="{ConvertSkill}"> <!-- Skills -->
+                            <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="VerticalTopToBottom" DataSource="{Skills}">
+                              <ItemTemplate>
+                                <CharacterInfoPlusMinusItem DataSource="{.}" MarginBottom="5" Spacing="5" /> 
+                              </ItemTemplate>      
+                            </ListPanel>     
+                          </Children>
+                        </ListPanel>
+                      </Children>
+                    </BrushWidget>
+                  </Children>
+                </ListPanel>
+                <!-- End horizontal layout container -->
+                <!-- Apply changes button -->
+                <ButtonWidget Id="ButtonApplyChanges" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="40" SuggestedHeight="10" 
+                    AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="@IsButtonAcceptChangesEnabled" />
+              </Children>
+            </ListPanel>
+          </Children>
+        </BrushWidget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

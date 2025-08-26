@@ -1,0 +1,13 @@
+<Prefab Name="CharacterInfoConvertItem">
+    <!-- @ItemLabel @ItemValue @IsButtonEnabled-->
+  <Window>
+    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Spacing="5">
+      <Children>
+        <TextWidget Text="@ItemLabel" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+        <TextWidget IntText="@ItemValue" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+        <ButtonWidget Id="Button" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedWidth="10" SuggestedHeight="10" 
+                      AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="@IsButtonEnabled" />
+      </Children>
+    </ListPanel>
+  </Window>
+<Prefab>

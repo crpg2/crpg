@@ -238,7 +238,21 @@ public class EquipmentSlotVM : ViewModel
 
     private string GetDefaultSpriteForSlot(CrpgItemSlot slot) => slot switch
     {
-        CrpgItemSlot.Head => "General\\EquipmentIcons\\equipment_type_head_armor",
+        CrpgItemSlot.Head => "ui_crpg_icon_white_headarmor",
+        CrpgItemSlot.Shoulder => "ui_crpg_icon_white_cape",
+        CrpgItemSlot.Body => "ui_crpg_icon_white_chestarmor",
+        CrpgItemSlot.Hand => "ui_crpg_icon_white_handarmor",
+        CrpgItemSlot.Leg => "ui_crpg_icon_white_legarmor",
+        CrpgItemSlot.Weapon0 => "ui_crpg_icon_white_weaponslot",
+        CrpgItemSlot.Weapon1 => "ui_crpg_icon_white_weaponslot",
+        CrpgItemSlot.Weapon2 => "ui_crpg_icon_white_weaponslot",
+        CrpgItemSlot.Weapon3 => "ui_crpg_icon_white_weaponslot",
+        CrpgItemSlot.WeaponExtra => "ui_crpg_icon_white_extraweapon",
+        CrpgItemSlot.Mount => "ui_crpg_icon_white_mount",
+        CrpgItemSlot.MountHarness => "ui_crpg_icon_white_mountharness",
+        _ => "ui_crpg_icon_white_weaponslot",
+        /*
+        CrpgItemSlot.Head => "ui_crpg\\equipment_category\\headarmor",
         CrpgItemSlot.Shoulder => "General\\EquipmentIcons\\equipment_type_cape",
         CrpgItemSlot.Body => "General\\EquipmentIcons\\equipment_type_body_armor",
         CrpgItemSlot.Hand => "General\\EquipmentIcons\\equipment_type_hand_armor",
@@ -251,5 +265,6 @@ public class EquipmentSlotVM : ViewModel
         CrpgItemSlot.Mount => "General\\EquipmentIcons\\equipment_type_mount",
         CrpgItemSlot.MountHarness => "General\\EquipmentIcons\\equipment_type_default",
         _ => "General\\EquipmentIcons\\equipment_type_default",
+        */
     };
 }

@@ -107,18 +107,18 @@ public class InventoryGridVM : ViewModel
     {
         InventorySortTypesLeft = new MBBindingList<InventorySortTypeVM>
         {
-            new("General\\EquipmentIcons\\equipment_type_one_handed", item => item.ItemType == ItemObject.ItemTypeEnum.OneHandedWeapon, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_two_handed", item => item.ItemType == ItemObject.ItemTypeEnum.TwoHandedWeapon, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_polearm", item => item.ItemType == ItemObject.ItemTypeEnum.Polearm, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_shield", item => item.ItemType == ItemObject.ItemTypeEnum.Shield, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_throwing", item => item.ItemType == ItemObject.ItemTypeEnum.Thrown, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_bow", item => item.ItemType == ItemObject.ItemTypeEnum.Bow, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_crossbow", item =>
-                item.ItemType == ItemObject.ItemTypeEnum.Crossbow ||
+            new("ui_crpg_icon_white_onehanded", item => item.ItemType == ItemObject.ItemTypeEnum.OneHandedWeapon, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_twohanded", item => item.ItemType == ItemObject.ItemTypeEnum.TwoHandedWeapon, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_polearm", item => item.ItemType == ItemObject.ItemTypeEnum.Polearm, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_shield", item => item.ItemType == ItemObject.ItemTypeEnum.Shield, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_thrown", item => item.ItemType == ItemObject.ItemTypeEnum.Thrown, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_bow", item => item.ItemType == ItemObject.ItemTypeEnum.Bow, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_crossbow", item => item.ItemType == ItemObject.ItemTypeEnum.Crossbow, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_musket", item =>
                 item.ItemType == ItemObject.ItemTypeEnum.Musket ||
                 item.ItemType == ItemObject.ItemTypeEnum.Pistol,
                 true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_quiver", item =>
+            new("ui_crpg_icon_white_arrow", item =>
                 item.ItemType == ItemObject.ItemTypeEnum.Arrows ||
                 item.ItemType == ItemObject.ItemTypeEnum.Bolts ||
                 item.ItemType == ItemObject.ItemTypeEnum.Bullets,
@@ -127,16 +127,14 @@ public class InventoryGridVM : ViewModel
 
         InventorySortTypesTop = new MBBindingList<InventorySortTypeVM>
         {
-            new("General\\EquipmentIcons\\equipment_type_head_armor", item => item.ItemType == ItemObject.ItemTypeEnum.HeadArmor, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_cape", item => item.ItemType == ItemObject.ItemTypeEnum.Cape, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_body_armor", item => item.ItemType == ItemObject.ItemTypeEnum.BodyArmor, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_hand_armor", item => item.ItemType == ItemObject.ItemTypeEnum.HandArmor, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_leg_armor", item => item.ItemType == ItemObject.ItemTypeEnum.LegArmor, true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_mount", item =>
-                item.ItemType == ItemObject.ItemTypeEnum.Horse ||
-                item.ItemType == ItemObject.ItemTypeEnum.HorseHarness,
-                true, OnSortTypeClicked),
-            new("General\\EquipmentIcons\\equipment_type_banner", item => item.ItemType == ItemObject.ItemTypeEnum.Banner, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_headarmor", item => item.ItemType == ItemObject.ItemTypeEnum.HeadArmor, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_cape", item => item.ItemType == ItemObject.ItemTypeEnum.Cape, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_chestarmor", item => item.ItemType == ItemObject.ItemTypeEnum.BodyArmor, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_handarmor", item => item.ItemType == ItemObject.ItemTypeEnum.HandArmor, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_legarmor", item => item.ItemType == ItemObject.ItemTypeEnum.LegArmor, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_mount", item => item.ItemType == ItemObject.ItemTypeEnum.Horse, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_mountharness", item => item.ItemType == ItemObject.ItemTypeEnum.HorseHarness, true, OnSortTypeClicked),
+            new("ui_crpg_icon_white_flag", item => item.ItemType == ItemObject.ItemTypeEnum.Banner, true, OnSortTypeClicked),
         };
     }
 

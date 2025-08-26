@@ -1,7 +1,7 @@
 using Crpg.Module.Common;
-using Crpg.Module.Common.Network;
 using Crpg.Module.Common.KeyBinder;
 using Crpg.Module.Common.KeyBinder.Models;
+using Crpg.Module.Common.Network;
 using TaleWorlds.Core;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.Engine.Screens;
@@ -16,6 +16,7 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 using TaleWorlds.MountAndBlade.View.Screens;
 using TaleWorlds.ScreenSystem;
+using TaleWorlds.TwoDimension;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -26,6 +27,7 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         MainGuiButton,
         Hotkey,
     }
+
     private static readonly string KeyCategoryId = KeyBinder.Categories.CrpgGeneral.CategoryId;
     private GauntletLayer? _mainGuiLayer;
     private CrpgMainGuiVM? _mainGuiVm;
@@ -122,28 +124,28 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             Debug.Print(message, 0, Debug.DebugColor.DarkBlue);
         }
 
-        // 1️⃣ Priority: If inventory is open and Escape hotkey is pressed, close inventory
+        // Priority: If inventory is open and Escape hotkey is pressed, close inventory
         if (inventoryOpen && escapePressed)
         {
             HideInventory();
             return;
         }
 
-        // 2️⃣ If no inventory is open and main GUI is open and Escape hotkey is pressed, close main GUI
+        // If no inventory is open and main GUI is open and Escape hotkey is pressed, close main GUI
         if (!inventoryOpen && mainGuiOpen && escapePressed)
         {
             CloseMainGui();
             return;
         }
 
-        // 3️⃣ If M is pressed and no inventory is open, open main GUI
+        // If M is pressed and no inventory is open, open main GUI
         if (!inventoryOpen && Input.IsKeyReleased(InputKey.M))
         {
             OpenMainGui();
             return;
         }
 
-        // 4️⃣ Other hotkeys
+        // Other hotkeys
         // if (Input.IsKeyReleased(InputKey.I))
         if (toggleEquipmentSelectKey != null && (Input.IsKeyPressed(toggleEquipmentSelectKey.KeyboardKey.InputKey) || Input.IsKeyDown(toggleEquipmentSelectKey.ControllerKey.InputKey)))
         {
@@ -151,8 +153,9 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             return;
         }
 
-        // 5️⃣ Tick VMs
+        // Tick VMs
         _mainGuiVm?.Tick();
+        // _inventoryVm?.Tick();
     }
 
     // Main GUI bar open/close/toggle methods

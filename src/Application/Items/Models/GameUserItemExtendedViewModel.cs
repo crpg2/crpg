@@ -20,8 +20,7 @@ public record GameUserItemExtendedViewModel : IMapFrom<UserItem>
     public void Mapping(Profile profile)
     {
         profile.CreateMap<UserItem, GameUserItemExtendedViewModel>()
-            //.ForMember(ui => ui.ItemId, config => config.MapFrom(src => src.Item != null ? src.Item.Id : "not found"));
+            // .ForMember(ui => ui.ItemId, config => config.MapFrom(src => src.Item != null ? src.Item.Id : "not found"));
             .ForMember(ui => ui.Rank, config => config.MapFrom(src => src.Item != null ? src.Item.Rank : 0));
     }
-
 }

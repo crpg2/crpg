@@ -36,12 +36,16 @@ public class CrpgInventoryViewModel : ViewModel
 
     [DataSourceProperty]
     public ArmorAmountVM AmountHeadArmor { get; set; }
+
     [DataSourceProperty]
     public ArmorAmountVM AmountBodyArmor { get; set; }
+
     [DataSourceProperty]
     public ArmorAmountVM AmountLegArmor { get; set; }
+
     [DataSourceProperty]
     public ArmorAmountVM AmountHandArmor { get; set; }
+
     [DataSourceProperty]
     public ArmorAmountVM AmountHorseArmor { get; set; }
 

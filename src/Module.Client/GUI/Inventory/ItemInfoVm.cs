@@ -17,7 +17,6 @@ public class ItemInfoVm : ViewModel
         // ItemObject _item = MBObjectManager.Instance.GetObject<ItemObject>("crpg_splittingmaul_v3_h3");
         ItemObj = item;
         _imageIdentifier = new ImageIdentifierVM(item);
-
     }
 
     [DataSourceProperty]
