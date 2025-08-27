@@ -38,6 +38,7 @@ internal sealed class ServerSendUserCharacterBasic : GameNetworkMessage
         using (GZipStream gZipStream = new(stream, CompressionMode.Compress, leaveOpen: true))
         using (BinaryWriter writer = new(gZipStream))
         {
+            writer.Write(character.Name);
             writer.Write(character.Generation);
             writer.Write(character.Level);
             writer.Write(character.Experience);
@@ -58,6 +59,15 @@ internal sealed class ServerSendUserCharacterBasic : GameNetworkMessage
             writer.Write((short)character.Characteristics.Skills.WeaponMaster);
             writer.Write((short)character.Characteristics.Skills.MountedArchery);
             writer.Write((short)character.Characteristics.Skills.Shield);
+
+            // Write Proficiencies
+            writer.Write((short)character.Characteristics.WeaponProficiencies.Points);
+            writer.Write((short)character.Characteristics.WeaponProficiencies.OneHanded);
+            writer.Write((short)character.Characteristics.WeaponProficiencies.TwoHanded);
+            writer.Write((short)character.Characteristics.WeaponProficiencies.Polearm);
+            writer.Write((short)character.Characteristics.WeaponProficiencies.Bow);
+            writer.Write((short)character.Characteristics.WeaponProficiencies.Crossbow);
+            writer.Write((short)character.Characteristics.WeaponProficiencies.Throwing);
         }
 
         byte[] compressedData = stream.ToArray();
@@ -78,6 +88,7 @@ internal sealed class ServerSendUserCharacterBasic : GameNetworkMessage
         using GZipStream gZipStream = new(stream, CompressionMode.Decompress);
         using BinaryReader reader = new(gZipStream);
 
+        string name = reader.ReadString();
         int generation = reader.ReadInt32();
         int level = reader.ReadInt32();
         int experience = reader.ReadInt32();
@@ -103,8 +114,20 @@ internal sealed class ServerSendUserCharacterBasic : GameNetworkMessage
             Shield = reader.ReadInt16(),
         };
 
+        var proficiencies = new CrpgCharacterWeaponProficiencies
+        {
+            Points = reader.ReadInt16(),
+            OneHanded = reader.ReadInt16(),
+            TwoHanded = reader.ReadInt16(),
+            Polearm = reader.ReadInt16(),
+            Bow = reader.ReadInt16(),
+            Crossbow = reader.ReadInt16(),
+            Throwing = reader.ReadInt16(),
+        };
+
         return new CrpgCharacter
         {
+            Name = name,
             Generation = generation,
             Level = level,
             Experience = experience,
@@ -112,6 +135,7 @@ internal sealed class ServerSendUserCharacterBasic : GameNetworkMessage
             {
                 Attributes = attributes,
                 Skills = skills,
+                WeaponProficiencies = proficiencies,
             },
         };
     }

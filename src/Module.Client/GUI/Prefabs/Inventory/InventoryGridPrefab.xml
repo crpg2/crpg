@@ -40,8 +40,8 @@
                       </ItemTemplate>
                     </ListPanel>
 
-                  <!-- Scrolling Item grid -->
-                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="0" MarginRight="10" MarginBottom="10" MarginTop="0">
+                    <!-- Scrolling Item grid -->
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="0" MarginRight="10" MarginBottom="0" MarginTop="0">
                       <Children>
                         <BrushWidget Id="ItemGridBackground" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
                         </BrushWidget> 
@@ -67,6 +67,28 @@
                       </Children>
                     </Widget>
                     <!-- end scrolling item grid -->
+                    <BrushWidget Id="ButtonBackgroundFrame" 
+                                WidthSizePolicy="Fixed" SuggestedWidth="120"
+                                HeightSizePolicy="Fixed" SuggestedHeight="40"
+                                VerticalAlignment="Center" HorizontalAlignment="Center"
+                                MarginBottom="5"
+                                PassEventsToParent="false"
+                                Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+                      <Children>
+                        <ButtonWidget Id="ButtonRefreshFromApi" Brush="CharacterEdit.Button"
+                                  WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                  MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
+                                  AcceptDrag="false"
+                                  DoNotPassEventsToChildren="true"
+                                  Command.Click="ExecuteClick"
+                                  IsEnabled="true" /> <!-- @IsButtonRefreshFromApiEnabled" -->
+                        <TextWidget Text="Refresh API" WidthSizePolicy="Fixed" SuggestedWidth="100" HeightSizePolicy="Fixed" SuggestedHeight="30"
+                          MarginTop="5"
+                          DoNotAcceptEvents="true"
+                          HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
+                      </Children>
+                    </BrushWidget>
+
                   </Children>
                 </ListPanel>
               </Children>           

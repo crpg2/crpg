@@ -111,7 +111,21 @@
         <BrushLayer Name="Default" AlphaFactor="0.5" Color="#353636ff" />
       </Style>
     </Styles>
-  </Brush>  
+  </Brush>
+  <Brush Name="CharacterEdit.Item.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="CharacterEdit.Item.Text.Medium" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="18" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>     
   <Brush Name="InventorySlot.ItemName.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center">
     <Layers>
     </Layers>

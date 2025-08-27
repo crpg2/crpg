@@ -127,6 +127,7 @@ public class CrpgInventoryViewModel : ViewModel
             behavior.OnSlotUpdated += HandleSlotUpdated;
             behavior.OnUserInventoryUpdated += HandleInventoryUpdated;
             behavior.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
+            behavior.OnUserCharacterBasicUpdated += HandleUserCharacterBasicUpdated;
         }
     }
 
@@ -139,6 +140,7 @@ public class CrpgInventoryViewModel : ViewModel
             behavior.OnSlotUpdated -= HandleSlotUpdated;
             behavior.OnUserInventoryUpdated -= HandleInventoryUpdated;
             behavior.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
+            behavior.OnUserCharacterBasicUpdated -= HandleUserCharacterBasicUpdated;
         }
     }
 
@@ -167,18 +169,12 @@ public class CrpgInventoryViewModel : ViewModel
             CalculateArmorFromEquipment(useEquipment);
             LogDebug("[CrpgInventoryVM] Refreshed character preview and recalculated armor");
 
-            UpdateCharacterInfo();
             LogDebug("[CrpgInventoryVM] UpdateCharacterInfo() in refreshcharacterpreview");
         }
         else
         {
             LogDebug("[CrpgInventoryVM] No equipment available to refresh character preview");
         }
-    }
-
-    private void UpdateCharacterInfo()
-    {
-        CharacterInfo = new CharacterInfoVM();
     }
 
     private EquipmentSlotVM CreateSlot(CrpgItemSlot slot)
@@ -414,6 +410,20 @@ public class CrpgInventoryViewModel : ViewModel
         }
 
         RefreshCharacterPreview(behavior.GetCrpgUserCharacterEquipment());
+    }
+
+    private void HandleUserCharacterBasicUpdated()
+    {
+        LogDebug("[CprgInventoryVM] HandleUserCharacterBasicUpdated called");
+
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (behavior == null)
+        {
+            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found");
+            return;
+        }
+
+        CharacterInfo.SetCrpgCharacterBasic(behavior.UserCharacter);
     }
 
     private void InitializeCharacterPreview()

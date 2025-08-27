@@ -30,32 +30,32 @@
                       <Children>
                         <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Left" VerticalAlignment="Center" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginLeft="0" MarginRight="0" MarginTop="0" MarginBottom="0" Spacing="5" >
                           <Children>
-                            <TextWidget Text="Character: " WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
-                            <TextWidget Text="@CharacterNameText" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                            <TextWidget Text="Character: " WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
+                            <TextWidget Text="@CharacterNameText" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
                           </Children>
                         </ListPanel>
                         <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Left" VerticalAlignment="Center" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Spacing="5" >
                           <Children>
-                            <TextWidget Text="Generation: " WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
-                            <TextWidget Text="@CharacterGenerationText" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                            <TextWidget Text="Generation: " WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
+                            <TextWidget IntText="@CharacterGeneration" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
                           </Children>
                         </ListPanel>
                         <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Left" VerticalAlignment="Center" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Spacing="5" >
                           <Children>
-                            <TextWidget Text="Level: " WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
-                            <TextWidget Text="@CharacterLevelText" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                            <TextWidget Text="Level: " WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
+                            <TextWidget IntText="@CharacterLevel" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
                           </Children>
                         </ListPanel>             
                         <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Left" VerticalAlignment="Center" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Spacing="5" >
                           <Children>
-                            <TextWidget Text="Experience: " WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
-                            <TextWidget Text="@CharacterExperienceText" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                            <TextWidget Text="Experience: " WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
+                            <TextWidget Text="@CharacterExperienceText" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
                           </Children>
                         </ListPanel>             
                         <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Left" VerticalAlignment="Center" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Spacing="5" >
                           <Children>
-                            <TextWidget Text="Class: " WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
-                            <TextWidget Text="@CharacterClassText" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                            <TextWidget Text="Class: " WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
+                            <TextWidget Text="@CharacterClassText" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
                           </Children>
                         </ListPanel>                                                                                                
                       </Children>
@@ -79,7 +79,15 @@
                                 WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
                                 MarginTop="5" MarginBottom="5" MarginLeft="10" MarginRight="10">
                           <Children>
-                            <CharacterInfoConvertItem DataSource="{ConvertAttribute}"/>                            
+                            <CharacterInfoConvertItem DataSource="{ConvertAttribute}"/>
+                            <CharacterInfoPlusMinusItem DataSource="{StrengthVm}"/>
+                            <CharacterInfoPlusMinusItem DataSource="{AgilityVm}"/> 
+                            <!-- Spacer -->
+                            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="10" />
+                            <TextWidget Text="Weapon Proficiencies" HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
+                                Brush="CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
+                            <!-- Spacer -->
+                            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="10" />                                
                             <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" VerticalAlignment="Top"
                                     WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren"
                                     DataSource="{WeaponProficiencies}" Spacing="5">
@@ -145,7 +153,7 @@
                         <TextWidget Text="Refresh API" WidthSizePolicy="Fixed" SuggestedWidth="100" HeightSizePolicy="Fixed" SuggestedHeight="30"
                           MarginTop="5"
                           DoNotAcceptEvents="true"
-                          HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                          HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
                       </Children>
                     </BrushWidget>
                     <BrushWidget Id="ButtonBackgroundFrame" 
@@ -166,7 +174,7 @@
                         <TextWidget Text="Apply Changes" WidthSizePolicy="Fixed" SuggestedWidth="100" HeightSizePolicy="Fixed" SuggestedHeight="30"
                           MarginTop="5"
                           DoNotAcceptEvents="true"
-                          HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                          HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
                       </Children>
                     </BrushWidget>
                   </Children>

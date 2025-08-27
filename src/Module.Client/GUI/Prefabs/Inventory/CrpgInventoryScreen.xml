@@ -1,7 +1,7 @@
 <Prefab Name="CrpgInventoryScreen">
   <Constants>
-      <Constant Name="EquippedPanel.Width" Value="420"/>
-      <Constant Name="EquippedPanel.Height" Value="450"/>
+      <Constant Name="EquippedPanel.Width" Value="395"/>
+      <Constant Name="EquippedPanel.Height" Value="465"/>
       <Constant Name="InventoryPanel.Width" Value="600"/>
       <Constant Name="InventoryPanel.Height" Value="650"/>
       <Constant Name="ArmorPanel.Width" Value="110"/>
@@ -32,7 +32,7 @@
                 <!-- Character Info Panel -->
                 <CharacterInfoPrefab DataSource="{CharacterInfo}" />
                 <!-- Equipped Items Panel -->
-                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquippedPanel.Width" SuggestedHeight="!EquippedPanel.Height" HorizontalAlignment="Left" VerticalAlignment="Center" MarginTop="10" MarginLeft="10">
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!EquippedPanel.Width" SuggestedHeight="!EquippedPanel.Height" HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="10" MarginLeft="10">
                   <Children>
                     <BrushWidget Id="EquippedItems.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
                       <Children>
@@ -70,7 +70,7 @@
                             <CharacterPreview WidthSizePolicy="Fixed" SuggestedWidth="!CharacterPreview.Width" HeightSizePolicy ="Fixed" SuggestedHeight="!CharacterPreview.Height" HorizontalAlignment="Center" VerticalAlignment="Top" MarginLeft="5" MarginRight="5" MarginTop="5" MarginBottom="5"/>
                             
                             <!-- Right: Weapon Selection -->
-                            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top" WidthSizePolicy="Fixed" SuggestedWidth="!WeaponPanel.Width" HeightSizePolicy="Fixed" SuggestedHeight="!WeaponPanel.Height" MarginTop="5" MarginBottom="5" MarginLeft="5" MarginRight="5" Spacing="15" >
+                            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top" WidthSizePolicy="Fixed" SuggestedWidth="!WeaponPanel.Width" HeightSizePolicy="Fixed" SuggestedHeight="!WeaponPanel.Height" MarginTop="5" MarginBottom="5" MarginLeft="5" MarginRight="0" Spacing="15" >
                               <Children>
                                 <EquipmentSlotPrefab DataSource="{Weapon0}" />
                                 <EquipmentSlotPrefab DataSource="{Weapon1}" />

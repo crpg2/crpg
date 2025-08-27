@@ -30,7 +30,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
     internal event Action? OnUserInventoryUpdated;
     internal event Action? OnUserCharacterEquippedItemsUpdated;
-    internal event Action? OnUserCharacerBasicUpdated;
+    internal event Action? OnUserCharacterBasicUpdated;
     internal event Action<CrpgItemSlot>? OnSlotUpdated;
 
     public override void OnBehaviorInitialize()
@@ -245,7 +245,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         SetUserCharacterBasic(msg.Character);
 
         // Trigger event for gui to listen to to know to update
-        OnUserCharacerBasicUpdated?.Invoke();
+        OnUserCharacterBasicUpdated?.Invoke();
     }
 
     /// <summary>

@@ -11,7 +11,7 @@
                     WidthSizePolicy="Fixed" SuggestedWidth="120"
                     HeightSizePolicy="Fixed" SuggestedHeight="20"
                     HorizontalAlignment="Left"
-                    Brush="Inventory.ArmorAmount.Text" />
+                    Brush="CharacterEdit.Item.Text" />
 
         <!-- Spacer that stretches to push buttons to the right -->
         <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" />
@@ -35,7 +35,7 @@
             <TextWidget Text="-" WidthSizePolicy="Fixed" SuggestedWidth="20" HeightSizePolicy="Fixed" SuggestedHeight="20"
                       MarginTop="5"
                       DoNotAcceptEvents="true"
-                      HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                      HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
           </Children>
         </BrushWidget>
 
@@ -43,7 +43,7 @@
                     WidthSizePolicy="Fixed" SuggestedWidth="20"
                     HeightSizePolicy="Fixed" SuggestedHeight="20"
                     HorizontalAlignment="Center"
-                    Brush="Inventory.ArmorAmount.Text" />
+                    Brush="CharacterEdit.Item.Text" />
       
         <BrushWidget Id="ButtonBackgroundFrame" 
                     WidthSizePolicy="Fixed" SuggestedWidth="30"
@@ -63,7 +63,7 @@
             <TextWidget Text="+" WidthSizePolicy="Fixed" SuggestedWidth="20" HeightSizePolicy="Fixed" SuggestedHeight="20"
                       MarginTop="5"
                       DoNotAcceptEvents="true"
-                      HorizontalAlignment="Center" Brush="Inventory.ArmorAmount.Text" />
+                      HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
           </Children>
         </BrushWidget>
 
