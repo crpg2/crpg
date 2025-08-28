@@ -84,8 +84,18 @@
                             <CharacterInfoPlusMinusItem DataSource="{AgilityVm}"/> 
                             <!-- Spacer -->
                             <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="10" />
-                            <TextWidget Text="Weapon Proficiencies" HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
-                                Brush="CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
+                            <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
+                                MarginLeft="0" MarginRight="0" MarginTop="0" MarginBottom="0" Spacing="5" >
+                              <Children>
+
+                                <TextWidget Text="Weapon Proficiencies " HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
+                                    Brush="CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
+                                    <TextWidget IntText="@WeaponProficiencyPoints" HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
+                                    Brush="CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
+                              </Children>
+                            </ListPanel>
+                            
                             <!-- Spacer -->
                             <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="10" />                                
                             <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" VerticalAlignment="Top"

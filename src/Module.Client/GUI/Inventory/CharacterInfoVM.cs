@@ -1,11 +1,17 @@
 using System.Collections.Generic;
+using System.Drawing;
 using Crpg.Module.Api.Models.Characters;
+using Crpg.Module.Common;
+using Crpg.Module.Helpers;
 using TaleWorlds.Library;
+using TaleWorlds.MountAndBlade;
 
 namespace Crpg.Module.GUI.Inventory;
 
 public class CharacterInfoVM : ViewModel
 {
+    private readonly CrpgConstants _constants = default!;
+    private bool _isEditing;
     private string _characterNameText = string.Empty;
     private int _characterGeneration;
     private int _characterLevel;
@@ -15,6 +21,7 @@ public class CharacterInfoVM : ViewModel
     private MBBindingList<CharacterInfoPlusMinusItemVM> _weaponProficiencies = new();
     private MBBindingList<CharacterInfoPlusMinusItemVM> _skills = new();
     private CrpgCharacter _crpgCharacterBasic = new();
+    private CrpgCharacterCharacteristics _newCrpgCharacteristics;
     private CharacterInfoConvertItemVM _convertAttribute;
     private CharacterInfoConvertItemVM _convertSkill;
     private CharacterInfoPlusMinusItemVM _strengthVm;
@@ -25,6 +32,7 @@ public class CharacterInfoVM : ViewModel
     private int _attributePoints;
     private int _strength;
     private int _agility;
+    private int _weaponProficiencyPoints;
 
     public CharacterInfoVM()
     {
@@ -62,6 +70,11 @@ public class CharacterInfoVM : ViewModel
         _convertSkill = new CharacterInfoConvertItemVM("Skills", 0, true);
         _strengthVm = new CharacterInfoPlusMinusItemVM("Strength", 0, 0, 50);
         _agilityVm = new CharacterInfoPlusMinusItemVM("Agility", 0, 0, 50);
+        _weaponProficiencyPoints = 0;
+        _newCrpgCharacteristics = new();
+
+        var behavior = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>() ?? throw new InvalidOperationException("CrpgCharacterLoadoutBehaviorClient is required for CharacterInfoVM");
+        _constants = behavior.Constants;
     }
 
     internal void SetCrpgCharacterBasic(CrpgCharacter newCharacter)
@@ -94,6 +107,8 @@ public class CharacterInfoVM : ViewModel
         new("Throwing", wp.Throwing, 0, 300),
     };
 
+        WeaponProficiencyPoints = character.Characteristics.WeaponProficiencies.Points;
+
         // Skills
         var sk = character.Characteristics.Skills;
         Skills = new MBBindingList<CharacterInfoPlusMinusItemVM>
@@ -118,6 +133,115 @@ public class CharacterInfoVM : ViewModel
         ConvertSkill = new CharacterInfoConvertItemVM("Skills", SkillPoints, true);
         StrengthVm = new CharacterInfoPlusMinusItemVM("Strength", Strength, 0, 50);
         AgilityVm = new CharacterInfoPlusMinusItemVM("Agility", Agility, 0, 50);
+
+        UpdateGuiStates();
+    }
+
+    private void OnCommandClick()
+    {
+
+    }
+
+
+    private int WeaponProficiencyCost(int wpf) =>
+        (int)MathHelper.ApplyPolynomialFunction(wpf, _constants.WeaponProficiencyCostCoefs);
+
+    private bool CheckSkillRequirement(string skillName, int level)
+    {
+        return skillName switch
+        {
+            "Iron Flesh" => level <= Strength / 3,
+            "Power Strike" => level <= Strength / 3,
+            "Power Draw" => level <= Strength / 3,
+            "Power Throw" => level <= Strength / 6,
+            "Athletics" => level <= Agility / 3,
+            "Riding" => level <= Agility / 3,
+            "Weapon Master" => level <= Agility / 3,
+            "Mounted Archery" => level <= Agility / 6,
+            "Shield" => level <= Agility / 6,
+            _ => true,
+        };
+    }
+
+    private void UpdateAllButtonStates()
+    {
+        // Attributes
+        StrengthVm.IsButtonMinusEnabled = StrengthVm.ItemValue > 0;
+        StrengthVm.IsButtonPlusEnabled = AttributePoints > 0;
+
+        AgilityVm.IsButtonMinusEnabled = AgilityVm.ItemValue > 0;
+        AgilityVm.IsButtonPlusEnabled = AttributePoints > 0;
+
+        ConvertAttribute.IsButtonEnabled = AttributePoints > 0;
+        ConvertSkill.IsButtonEnabled = SkillPoints >= 2;
+
+        // Skills
+        foreach (var skill in Skills)
+        {
+            skill.IsButtonMinusEnabled = skill.ItemValue > 0;
+            skill.IsButtonPlusEnabled = SkillPoints > 0 && CheckSkillRequirement(skill.ItemLabel, skill.ItemValue + 1);
+        }
+
+        // Weapon proficiencies
+        foreach (var wp in WeaponProficiencies)
+        {
+            wp.IsButtonMinusEnabled = wp.ItemValue > 0;
+            wp.IsButtonPlusEnabled = WeaponProficiencyPoints >= WeaponProficiencyCost(wp.ItemValue + 1) - WeaponProficiencyCost(wp.ItemValue);
+        }
+    }
+
+    private void UpdateGuiStates()
+    {
+        // no button has been clicked to edit values
+        if (!_isEditing)
+        {
+            foreach (var prof in WeaponProficiencies)
+            {
+                prof.IsButtonMinusEnabled = false;
+
+                if (WeaponProficiencyPoints > 0)
+                {
+                    prof.IsButtonPlusEnabled = true;
+                }
+            }
+
+            foreach (var sk in Skills)
+            {
+                sk.IsButtonMinusEnabled = false;
+
+                if (SkillPoints > 0)
+                {
+                    // check category for attribute requirement (some skills require 3 points per level)
+                    sk.IsButtonPlusEnabled = true;
+                }
+            }
+
+            // Skills & Attribute conversion button
+
+            if (SkillPoints >= 2)
+            {
+                ConvertSkill.IsButtonEnabled = true;
+            }
+            else
+            {
+                ConvertSkill.IsButtonEnabled = false;
+            }
+
+            if (AttributePoints > 0)
+            {
+                ConvertAttribute.IsButtonEnabled = true;
+            }
+            else
+            {
+                ConvertAttribute.IsButtonEnabled = false;
+            }
+        }
+
+        // an edit button has been clicked and no longer default values have to think about + and - now
+        else
+        {
+
+        }
     }
 
     private void PrintCharacterValues(CrpgCharacter character)
@@ -161,14 +285,26 @@ public class CharacterInfoVM : ViewModel
     public int SkillPoints
     {
         get => _skillPoints;
-        set => SetField(ref _skillPoints, value, nameof(SkillPoints));
+        set
+        {
+            if (SetField(ref _skillPoints, value, nameof(SkillPoints)))
+            {
+                UpdateAllButtonStates();
+            }
+        }
     }
 
     [DataSourceProperty]
     public int AttributePoints
     {
         get => _attributePoints;
-        set => SetField(ref _attributePoints, value, nameof(AttributePoints));
+        set
+        {
+            if (SetField(ref _attributePoints, value, nameof(AttributePoints)))
+            {
+                UpdateAllButtonStates();
+            }
+        }
     }
 
     [DataSourceProperty]
@@ -204,6 +340,19 @@ public class CharacterInfoVM : ViewModel
     {
         get => _characterLevel;
         set => SetField(ref _characterLevel, value, nameof(CharacterLevel));
+    }
+
+    [DataSourceProperty]
+    public int WeaponProficiencyPoints
+    {
+        get => _weaponProficiencyPoints;
+        set
+        {
+            if (SetField(ref _weaponProficiencyPoints, value, nameof(WeaponProficiencyPoints)))
+            {
+                UpdateAllButtonStates();
+            }
+        }
     }
 
     [DataSourceProperty]

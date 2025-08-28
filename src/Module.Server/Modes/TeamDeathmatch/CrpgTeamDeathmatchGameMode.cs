@@ -126,7 +126,7 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
                 new AmmoQuiverChangeBehaviorClient(),
                 new CrpgRespawnTimerClient(),
                 new FriendlyFireReportClientBehavior(), // Ctrl+M to report friendly fire
-                new CrpgCharacterLoadoutBehaviorClient(), // Inventory & Equipment Sync for GUI
+                new CrpgCharacterLoadoutBehaviorClient(_constants), // Inventory & Equipment Sync for GUI
 #endif
                 new CrpgTeamDeathmatchClient(),
                 new MultiplayerTimerComponent(),

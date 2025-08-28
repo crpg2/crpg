@@ -27,7 +27,7 @@ public record GetGameUserCharacterBasicQuery : IMediatorRequest<GameCharacterVie
         {
             // Load character
             var character = await _db.Characters
-                .Include(c => c.Characteristics)       // attributes + skills
+                .Include(c => c.Characteristics) // attributes + skills
                 .FirstOrDefaultAsync(c => c.Id == req.CharacterId && c.UserId == req.UserId,
                     cancellationToken);
 

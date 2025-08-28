@@ -52,7 +52,6 @@ public class CharacterInfoPlusMinusItemVM : ViewModel
         set => SetField(ref _isButtonPlusEnabled, value, nameof(IsButtonPlusEnabled));
     }
 
-    // Called by minus button
     public void ExecuteClick(ButtonWidget widget)
     {
         if (widget.Id == "ButtonMinus")
@@ -86,7 +85,7 @@ public class CharacterInfoPlusMinusItemVM : ViewModel
     private void RefreshValue()
     {
         ItemValue = _value;
-        IsButtonMinusEnabled = _value > _minValue;
-        IsButtonPlusEnabled = _value < _maxValue;
+        // IsButtonMinusEnabled = _value > _minValue;
+        // IsButtonPlusEnabled = _value < _maxValue;
     }
 }

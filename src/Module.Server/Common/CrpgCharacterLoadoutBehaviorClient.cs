@@ -27,6 +27,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     public IReadOnlyList<CrpgEquippedItemExtended> EquippedItems => _equippedItems;
     public IReadOnlyList<CrpgUserItemExtended> UserInventoryItems => _userInventoryItems;
     public CrpgCharacter UserCharacter { get; private set; } = new();
+    public CrpgConstants Constants { get; }
 
     internal event Action? OnUserInventoryUpdated;
     internal event Action? OnUserCharacterEquippedItemsUpdated;
@@ -50,6 +51,11 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         {
             _missionNetworkComponent.OnMyClientSynchronized -= OnMyClientSynchronized;
         }
+    }
+
+    public CrpgCharacterLoadoutBehaviorClient(CrpgConstants constants)
+    {
+        Constants = constants;
     }
 
     /// <summary>
