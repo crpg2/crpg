@@ -102,6 +102,16 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         GameNetwork.EndModuleEventAsClient();
     }
 
+    internal void RequestUpdateCharacterCharacteristics(CrpgCharacterCharacteristics characteristics)
+    {
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestUpdateCharacterCharacteristics
+        {
+            Characteristics = characteristics,
+        });
+        GameNetwork.EndModuleEventAsClient();
+    }
+
     /// <summary>
     /// Replaces the current list of equipped items with the given items.
     /// </summary>

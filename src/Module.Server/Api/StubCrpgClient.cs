@@ -146,6 +146,11 @@ internal class StubCrpgClient : ICrpgClient
         throw new NotImplementedException();
     }
 
+    public Task<CrpgResult<CrpgCharacterCharacteristics>> UpdateCharacterCharacteristicsAsync(int userId, int characterId, CrpgGameCharacterCharacteristicsUpdateRequest req, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
+    }
+
     public void Dispose()
     {
     }

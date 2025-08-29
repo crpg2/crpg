@@ -1,8 +1,8 @@
-using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Common;
 using Crpg.Module.Helpers;
-using Messages.FromClient.ToLobbyServer;
+using TaleWorlds.CampaignSystem.Extensions;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
@@ -11,11 +11,17 @@ namespace Crpg.Module.GUI.Inventory;
 public class CharacterInfoVM : ViewModel
 {
     private readonly CrpgConstants _constants = default!;
+    private readonly Dictionary<string, CharacterInfoPlusMinusItemVM> _skillMap = new();
+    private readonly Dictionary<string, CharacterInfoPlusMinusItemVM> _weaponMap = new();
+
     private string _characterNameText = string.Empty;
     private int _characterGeneration;
     private int _characterLevel;
     private string _characterExperienceText = string.Empty;
     private string _characterClassText = string.Empty;
+    private int _skillPoints;
+    private int _attributePoints;
+    private int _weaponProficiencyPoints;
 
     private MBBindingList<CharacterInfoPlusMinusItemVM> _weaponProficiencies = new();
     private MBBindingList<CharacterInfoPlusMinusItemVM> _skills = new();
@@ -23,17 +29,14 @@ public class CharacterInfoVM : ViewModel
     private CharacterInfoPlusMinusItemVM _agilityVm;
     private CharacterInfoConvertItemVM _convertAttributeVm;
     private CharacterInfoConvertItemVM _convertSkillVm;
-
     private CrpgCharacterCharacteristics _initialCharacteristics = new();
+    // private CrpgCharacter _crpgCharacterBasic = new();
 
-    private int _skillPoints;
-    private int _attributePoints;
-    private int _strength;
-    private int _agility;
-    private int _weaponProficiencyPoints;
-
-    private CrpgCharacter _crpgCharacterBasic = new();
-
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CharacterInfoVM"/> class.
+    /// with default values for attributes, skills, and weapon proficiencies.
+    /// Also wires event handlers and builds internal lookup dictionaries.
+    /// </summary>
     public CharacterInfoVM()
     {
         _characterNameText = string.Empty;
@@ -43,8 +46,8 @@ public class CharacterInfoVM : ViewModel
         _characterClassText = string.Empty;
 
         // Initialize attribute VMs
-        _strengthVm = new CharacterInfoPlusMinusItemVM("Strength", 0, 0, 50);
-        _agilityVm = new CharacterInfoPlusMinusItemVM("Agility", 0, 0, 50);
+        _strengthVm = new CharacterInfoPlusMinusItemVM("Strength", 0);
+        _agilityVm = new CharacterInfoPlusMinusItemVM("Agility", 0);
 
         // skillpoints
         _skillPoints = 0;
@@ -57,25 +60,37 @@ public class CharacterInfoVM : ViewModel
         _weaponProficiencyPoints = 0;
 
         // Wpf PlusMinus
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("One-Handed", 0, 0, 300));
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Two-Handed", 0, 0, 300));
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Polearm", 0, 0, 300));
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Crossbow", 0, 0, 300));
-        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Throwing", 0, 0, 300));
+        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("One-Handed", 0));
+        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Two-Handed", 0));
+        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Polearm", 0));
+        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Bow", 0));
+        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Crossbow", 0));
+        _weaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Throwing", 0));
 
         // Skill PlusMinus
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Iron Flesh", 0, 0, 20));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Power Strike", 0, 0, 20));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Power Draw", 0, 0, 20));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Power Throw", 0, 0, 20));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Athletics", 0, 0, 20));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Riding", 0, 0, 20));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Weapon Master", 0, 0, 20));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Mounted Archery", 0, 0, 20));
-        _skills.Add(new CharacterInfoPlusMinusItemVM("Shield", 0, 0, 20));
+        _skills.Add(new CharacterInfoPlusMinusItemVM("Iron Flesh", 0));
+        _skills.Add(new CharacterInfoPlusMinusItemVM("Power Strike", 0));
+        _skills.Add(new CharacterInfoPlusMinusItemVM("Power Draw", 0));
+        _skills.Add(new CharacterInfoPlusMinusItemVM("Power Throw", 0));
+        _skills.Add(new CharacterInfoPlusMinusItemVM("Athletics", 0));
+        _skills.Add(new CharacterInfoPlusMinusItemVM("Riding", 0));
+        _skills.Add(new CharacterInfoPlusMinusItemVM("Weapon Master", 0));
+        _skills.Add(new CharacterInfoPlusMinusItemVM("Mounted Archery", 0));
+        _skills.Add(new CharacterInfoPlusMinusItemVM("Shield", 0));
 
         // Subscribe clicks
-        SubscribeAllEvents();
+        WireAllEvents(true);
+
+        // Build the dictionaries after adding items to lists
+        foreach (var skill in _skills)
+        {
+            _skillMap[skill.ItemLabel] = skill;
+        }
+
+        foreach (var wp in _weaponProficiencies)
+        {
+            _weaponMap[wp.ItemLabel] = wp;
+        }
 
         var behavior = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>()
             ?? throw new InvalidOperationException("CrpgCharacterLoadoutBehaviorClient is required");
@@ -84,6 +99,175 @@ public class CharacterInfoVM : ViewModel
         // UpdateAllButtonStates();
     }
 
+
+    public void ExecuteClick()
+    {
+        // debug send attempt to update characteristics
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (behavior != null)
+        {
+            behavior.RequestUpdateCharacterCharacteristics(GetCrpgCharacteristicsFromVM());
+        }
+    }
+
+    /// <summary>
+    /// Loads a <see cref="CrpgCharacter"/> into the ViewModel, updating all attributes,
+    /// skills, weapon proficiencies, and available points. Also enforces min values,
+    /// rebuilds lookup dictionaries, and updates button states.
+    /// </summary>
+    internal void SetCrpgCharacterBasic(CrpgCharacter newCharacter)
+    {
+        if (newCharacter == null)
+        {
+            return;
+        }
+
+        // Basic info
+        CharacterNameText = newCharacter.Name;
+        CharacterLevel = newCharacter.Level;
+        CharacterGeneration = newCharacter.Generation;
+        CharacterExperienceText = newCharacter.Experience.ToString();
+        CharacterClassText = newCharacter.Class.ToString();
+
+        // Clone characteristics for min value enforcement
+        _initialCharacteristics = CloneCharacteristics(newCharacter.Characteristics);
+
+        // Attributes
+        StrengthVm.ItemValue = newCharacter.Characteristics.Attributes.Strength;
+        AgilityVm.ItemValue = newCharacter.Characteristics.Attributes.Agility;
+        AttributePoints = newCharacter.Characteristics.Attributes.Points;
+
+        // Skill points
+        SkillPoints = newCharacter.Characteristics.Skills.Points;
+
+        // Convert buttons
+        ConvertAttribute.ItemValue = AttributePoints;
+        ConvertSkill.ItemValue = SkillPoints;
+
+        // Rebuild dictionaries to match current lists
+        _skillMap.Clear();
+        foreach (var skill in Skills)
+        {
+            _skillMap[skill.ItemLabel] = skill;
+        }
+
+        _weaponMap.Clear();
+        foreach (var wpf in WeaponProficiencies)
+        {
+            _weaponMap[wpf.ItemLabel] = wpf;
+        }
+
+        var sk = newCharacter.Characteristics.Skills;
+
+        // Update skills safely
+        TrySetSkillValue("Iron Flesh", sk.IronFlesh);
+        TrySetSkillValue("Power Strike", sk.PowerStrike);
+        TrySetSkillValue("Power Draw", sk.PowerDraw);
+        TrySetSkillValue("Power Throw", sk.PowerThrow);
+        TrySetSkillValue("Athletics", sk.Athletics);
+        TrySetSkillValue("Riding", sk.Riding);
+        TrySetSkillValue("Weapon Master", sk.WeaponMaster);
+        TrySetSkillValue("Mounted Archery", sk.MountedArchery);
+        TrySetSkillValue("Shield", sk.Shield);
+
+        // Weapon proficiencies
+        WeaponProficiencyPoints = newCharacter.Characteristics.WeaponProficiencies.Points;
+        var wp = newCharacter.Characteristics.WeaponProficiencies;
+
+        TrySetWeaponProficiency("One-Handed", wp.OneHanded);
+        TrySetWeaponProficiency("Two-Handed", wp.TwoHanded);
+        TrySetWeaponProficiency("Polearm", wp.Polearm);
+        TrySetWeaponProficiency("Bow", wp.Bow);
+        TrySetWeaponProficiency("Crossbow", wp.Crossbow);
+        TrySetWeaponProficiency("Throwing", wp.Throwing);
+
+        // Update buttons & states
+        UpdateAllButtonStates();
+
+        // WireAllEvents(true);
+    }
+
+    internal CrpgCharacterCharacteristics GetCrpgCharacteristicsFromVM()
+    {
+        var characteristics = new CrpgCharacterCharacteristics
+        {
+            // Attributes
+            Attributes = new CrpgCharacterAttributes
+            {
+                Strength = StrengthVm.ItemValue,
+                Agility = AgilityVm.ItemValue,
+                Points = AttributePoints,
+            },
+
+            // Skills
+            Skills = new CrpgCharacterSkills
+            {
+                IronFlesh = _skillMap.TryGetValue("Iron Flesh", out var ironFlesh) ? ironFlesh.ItemValue : 0,
+                PowerStrike = _skillMap.TryGetValue("Power Strike", out var powerStrike) ? powerStrike.ItemValue : 0,
+                PowerDraw = _skillMap.TryGetValue("Power Draw", out var powerDraw) ? powerDraw.ItemValue : 0,
+                PowerThrow = _skillMap.TryGetValue("Power Throw", out var powerThrow) ? powerThrow.ItemValue : 0,
+                Athletics = _skillMap.TryGetValue("Athletics", out var athletics) ? athletics.ItemValue : 0,
+                Riding = _skillMap.TryGetValue("Riding", out var riding) ? riding.ItemValue : 0,
+                WeaponMaster = _skillMap.TryGetValue("Weapon Master", out var weaponMaster) ? weaponMaster.ItemValue : 0,
+                MountedArchery = _skillMap.TryGetValue("Mounted Archery", out var mountedArchery) ? mountedArchery.ItemValue : 0,
+                Shield = _skillMap.TryGetValue("Shield", out var shield) ? shield.ItemValue : 0,
+                Points = SkillPoints,
+            },
+
+            // Weapon Proficiencies
+            WeaponProficiencies = new CrpgCharacterWeaponProficiencies
+            {
+                OneHanded = _weaponMap.TryGetValue("One-Handed", out var oneHanded) ? oneHanded.ItemValue : 0,
+                TwoHanded = _weaponMap.TryGetValue("Two-Handed", out var twoHanded) ? twoHanded.ItemValue : 0,
+                Polearm = _weaponMap.TryGetValue("Polearm", out var polearm) ? polearm.ItemValue : 0,
+                Bow = _weaponMap.TryGetValue("Bow", out var bow) ? bow.ItemValue : 0,
+                Crossbow = _weaponMap.TryGetValue("Crossbow", out var crossbow) ? crossbow.ItemValue : 0,
+                Throwing = _weaponMap.TryGetValue("Throwing", out var throwing) ? throwing.ItemValue : 0,
+                Points = WeaponProficiencyPoints,
+            },
+        };
+
+        return characteristics;
+    }
+
+    /// <summary>
+    /// Safely updates the value of a skill in the UI, using its string key.
+    /// Displays an in-game message if the skill is not present in the lookup dictionary.
+    /// </summary>
+    private void TrySetSkillValue(string key, int value)
+    {
+        if (_skillMap.TryGetValue(key, out var vm))
+        {
+            vm.ItemValue = value;
+        }
+        else
+        {
+            InformationManager.DisplayMessage(
+                new InformationMessage($"[CharacterInfoVM] Skill '{key}' not found in _skillMap!"));
+        }
+    }
+
+    /// <summary>
+    /// Safely updates the value of a weapon proficiency in the UI, using its string key.
+    /// Displays an in-game message if the proficiency is not present in the lookup dictionary.
+    /// </summary>
+    private void TrySetWeaponProficiency(string key, int value)
+    {
+        if (_weaponMap.TryGetValue(key, out var vm))
+        {
+            vm.ItemValue = value;
+        }
+        else
+        {
+            InformationManager.DisplayMessage(
+                new InformationMessage($"[CharacterInfoVM] Weapon Proficiency '{key}' not found in _weaponMap!"));
+        }
+    }
+
+    /// <summary>
+    /// Creates a deep copy of a character's characteristics so that initial values
+    /// can be preserved for enforcing minimum values on reset/decrement operations.
+    /// </summary>
     private CrpgCharacterCharacteristics CloneCharacteristics(CrpgCharacterCharacteristics source)
     {
         return new CrpgCharacterCharacteristics
@@ -120,115 +304,85 @@ public class CharacterInfoVM : ViewModel
         };
     }
 
-    private void SubscribeAllEvents()
+    /// <summary>
+    /// Subscribes or unsubscribes all event handlers for attributes, skills,
+    /// weapon proficiencies, and conversion buttons in a single pass.
+    /// </summary>
+    private void WireAllEvents(bool subscribe)
     {
-        // Clean up before re-subscribing
-        UnsubscribeAllEvents();
-
+        // Convert buttons
         if (ConvertAttribute != null)
-            ConvertAttribute.OnConvertClickedEvent += OnConvertClicked;
+        {
+            if (subscribe)
+            {
+                ConvertAttribute.OnConvertClickedEvent += OnConvertClicked;
+            }
+            else
+            {
+                ConvertAttribute.OnConvertClickedEvent -= OnConvertClicked;
+            }
+        }
 
         if (ConvertSkill != null)
-            ConvertSkill.OnConvertClickedEvent += OnConvertClicked;
-
-        StrengthVm.OnPlusClickedEvent += OnPlusClicked;
-        StrengthVm.OnMinusClickedEvent += OnMinusClicked;
-        AgilityVm.OnPlusClickedEvent += OnPlusClicked;
-        AgilityVm.OnMinusClickedEvent += OnMinusClicked;
-
-        foreach (var skill in Skills)
         {
-            skill.OnPlusClickedEvent += OnPlusClicked;
-            skill.OnMinusClickedEvent += OnMinusClicked;
+            if (subscribe)
+            {
+                ConvertSkill.OnConvertClickedEvent += OnConvertClicked;
+            }
+            else
+            {
+                ConvertSkill.OnConvertClickedEvent -= OnConvertClicked;
+            }
         }
-
-        foreach (var wp in WeaponProficiencies)
-        {
-            wp.OnPlusClickedEvent += OnPlusClicked;
-            wp.OnMinusClickedEvent += OnMinusClicked;
-        }
-    }
-
-    private void UnsubscribeAllEvents()
-    {
-        if (ConvertAttribute != null)
-            ConvertAttribute.OnConvertClickedEvent -= OnConvertClicked;
-
-        if (ConvertSkill != null)
-            ConvertSkill.OnConvertClickedEvent -= OnConvertClicked;
-
-        StrengthVm.OnPlusClickedEvent -= OnPlusClicked;
-        StrengthVm.OnMinusClickedEvent -= OnMinusClicked;
-        AgilityVm.OnPlusClickedEvent -= OnPlusClicked;
-        AgilityVm.OnMinusClickedEvent -= OnMinusClicked;
-
-        foreach (var skill in Skills)
-        {
-            skill.OnPlusClickedEvent -= OnPlusClicked;
-            skill.OnMinusClickedEvent -= OnMinusClicked;
-        }
-
-        foreach (var wp in WeaponProficiencies)
-        {
-            wp.OnPlusClickedEvent -= OnPlusClicked;
-            wp.OnMinusClickedEvent -= OnMinusClicked;
-        }
-    }
-
-    internal void SetCrpgCharacterBasic(CrpgCharacter newCharacter)
-    {
-        _crpgCharacterBasic = newCharacter;
-        CharacterNameText = newCharacter.Name;
-        CharacterLevel = newCharacter.Level;
-        CharacterGeneration = newCharacter.Generation;
-        CharacterExperienceText = newCharacter.Experience.ToString();
-        CharacterClassText = newCharacter.Class.ToString();
-
-        // Clone characteristics to store initial values for min enforcement
-        _initialCharacteristics = CloneCharacteristics(newCharacter.Characteristics);
 
         // Attributes
-        StrengthVm.ItemValue = newCharacter.Characteristics.Attributes.Strength;
-        AgilityVm.ItemValue = newCharacter.Characteristics.Attributes.Agility;
-        AttributePoints = newCharacter.Characteristics.Attributes.Points;
+        WirePlusMinusEvents(StrengthVm, subscribe);
+        WirePlusMinusEvents(AgilityVm, subscribe);
 
         // Skills
-        SkillPoints = newCharacter.Characteristics.Skills.Points;
-
-        // Update ConvertItemVMs
-        ConvertAttribute.ItemValue = AttributePoints;
-        ConvertSkill.ItemValue = SkillPoints;
-
-        Skills.Clear();
-        var sk = newCharacter.Characteristics.Skills;
-        Skills.Add(new CharacterInfoPlusMinusItemVM("Iron Flesh", sk.IronFlesh, sk.IronFlesh, 20));
-        Skills.Add(new CharacterInfoPlusMinusItemVM("Power Strike", sk.PowerStrike, sk.PowerStrike, 20));
-        Skills.Add(new CharacterInfoPlusMinusItemVM("Power Draw", sk.PowerDraw, sk.PowerDraw, 20));
-        Skills.Add(new CharacterInfoPlusMinusItemVM("Power Throw", sk.PowerThrow, sk.PowerThrow, 20));
-        Skills.Add(new CharacterInfoPlusMinusItemVM("Athletics", sk.Athletics, sk.Athletics, 20));
-        Skills.Add(new CharacterInfoPlusMinusItemVM("Riding", sk.Riding, sk.Riding, 20));
-        Skills.Add(new CharacterInfoPlusMinusItemVM("Weapon Master", sk.WeaponMaster, sk.WeaponMaster, 20));
-        Skills.Add(new CharacterInfoPlusMinusItemVM("Mounted Archery", sk.MountedArchery, sk.MountedArchery, 20));
-        Skills.Add(new CharacterInfoPlusMinusItemVM("Shield", sk.Shield, sk.Shield, 20));
+        foreach (var skill in Skills)
+        {
+            WirePlusMinusEvents(skill, subscribe);
+        }
 
         // Weapon proficiencies
-        WeaponProficiencyPoints = newCharacter.Characteristics.WeaponProficiencies.Points;
-        WeaponProficiencies.Clear();
-        var wp = newCharacter.Characteristics.WeaponProficiencies;
-        WeaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("One-Handed", wp.OneHanded, wp.OneHanded, 300));
-        WeaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Two-Handed", wp.TwoHanded, wp.TwoHanded, 300));
-        WeaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Polearm", wp.Polearm, wp.Polearm, 300));
-        WeaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Bow", wp.Bow, wp.Bow, 300));
-        WeaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Crossbow", wp.Crossbow, wp.Crossbow, 300));
-        WeaponProficiencies.Add(new CharacterInfoPlusMinusItemVM("Throwing", wp.Throwing, wp.Throwing, 300));
-
-        // Subscribe events after adding all items
-        SubscribeAllEvents();
-
-        // Update button states for min/max enforcement
-        UpdateAllButtonStates();
+        foreach (var wp in WeaponProficiencies)
+        {
+            WirePlusMinusEvents(wp, subscribe);
+        }
     }
 
+    /// <summary>
+    /// Attaches or detaches plus/minus click event handlers for a given
+    /// <see cref="CharacterInfoPlusMinusItemVM"/> instance.
+    /// </summary>
+    private void WirePlusMinusEvents(CharacterInfoPlusMinusItemVM item, bool subscribe)
+    {
+        if (item == null)
+        {
+            return;
+        }
+
+        if (subscribe)
+        {
+            item.OnPlusClickedEvent += OnPlusClicked;
+            item.OnMinusClickedEvent += OnMinusClicked;
+        }
+        else
+        {
+            item.OnPlusClickedEvent -= OnPlusClicked;
+            item.OnMinusClickedEvent -= OnMinusClicked;
+        }
+    }
+
+    /// <summary>
+    /// Handles logic when a convert button is clicked. Supports conversion of:
+    /// <list type="bullet">
+    ///   <item>1 Attribute point → 2 Skill points</item>
+    ///   <item>2 Skill points → 1 Attribute point</item>
+    /// </list>
+    /// Updates skills, weapon proficiencies, and button states accordingly.
+    /// </summary>
     private void OnConvertClicked(CharacterInfoConvertItemVM vm)
     {
         InformationManager.DisplayMessage(new InformationMessage($"OnConvertClicked: {vm.ItemLabel} : {vm.ItemValue}"));
@@ -252,12 +406,16 @@ public class CharacterInfoVM : ViewModel
             }
         }
 
-        // EnforceSkillRequirements();
-        UpdateAllSkillTextStates();
+        ValidateAndUpdateAllSkills();
         UpdateWeaponProficiencyTextStates();
         UpdateAllButtonStates();
     }
 
+    /// <summary>
+    /// Handles logic when the plus button is clicked for attributes, skills,
+    /// or weapon proficiencies. Increases values if requirements and available
+    /// points are satisfied, and updates all related states.
+    /// </summary>
     private void OnPlusClicked(CharacterInfoPlusMinusItemVM item)
     {
         if (!item.IsButtonPlusEnabled)
@@ -309,11 +467,16 @@ public class CharacterInfoVM : ViewModel
             }
         }
 
-        UpdateAllSkillTextStates();
+        ValidateAndUpdateAllSkills();
         UpdateWeaponProficiencyTextStates();
         UpdateAllButtonStates();
     }
 
+    /// <summary>
+    /// Handles logic when the minus button is clicked for attributes, skills,
+    /// or weapon proficiencies. Decreases values down to their initial minimums,
+    /// refunds points, and updates all related states.
+    /// </summary>
     private void OnMinusClicked(CharacterInfoPlusMinusItemVM item)
     {
         if (!item.IsButtonMinusEnabled)
@@ -365,11 +528,16 @@ public class CharacterInfoVM : ViewModel
                 WeaponProficiencyPoints += WeaponProficiencyCost(oldValue) - WeaponProficiencyCost(item.ItemValue);
             }
         }
-        UpdateAllSkillTextStates();
+
+        ValidateAndUpdateAllSkills();
         UpdateWeaponProficiencyTextStates();
         UpdateAllButtonStates();
     }
 
+    /// <summary>
+    /// Recalculates and applies the enabled/disabled state of all plus, minus,
+    /// and convert buttons based on current points, requirements, and min/max rules.
+    /// </summary>
     private void UpdateAllButtonStates()
     {
         // Skill/Attribute Points
@@ -389,8 +557,7 @@ public class CharacterInfoVM : ViewModel
             int minValue = GetInitialSkillValue(skill.ItemLabel);
             skill.IsButtonMinusEnabled = skill.ItemValue > minValue;
             skill.IsButtonPlusEnabled = SkillPoints > 0 &&
-                                        CheckSkillRequirement(skill.ItemLabel, skill.ItemValue + 1) &&
-                                        skill.ItemValue < 20;
+                                        CheckSkillRequirement(skill.ItemLabel, skill.ItemValue + 1);
         }
 
         // Weapon proficiencies
@@ -400,12 +567,11 @@ public class CharacterInfoVM : ViewModel
             int nextCost = WeaponProficiencyCost(wp.ItemValue + 1) - WeaponProficiencyCost(wp.ItemValue);
 
             // Plus enabled only if we have enough scaled points
-            wp.IsButtonPlusEnabled = wp.ItemValue < 300 && WeaponProficiencyPoints >= nextCost;
+            wp.IsButtonPlusEnabled = WeaponProficiencyPoints >= nextCost;
             wp.IsButtonMinusEnabled = wp.ItemValue > minValue;
         }
     }
 
-    // Helper methods for min values
     private int GetInitialSkillValue(string skillName) => skillName switch
     {
         "Iron Flesh" => _initialCharacteristics.Skills.IronFlesh,
@@ -431,22 +597,37 @@ public class CharacterInfoVM : ViewModel
         _ => 0,
     };
 
-    // Matching methods
+    /// <summary>
+    /// Calculates the total weapon proficiency points granted by the given Agility stat.
+    /// </summary>
     private int WeaponProficienciesPointsForAgility(int agility) =>
         agility * _constants.WeaponProficiencyPointsForAgility;
 
+    /// <summary>
+    /// Calculates the total weapon proficiency points granted by the given Weapon Master skill,
+    /// using a polynomial curve defined in constants.
+    /// </summary>
     private int WeaponProficienciesPointsForWeaponMaster(int weaponMaster) =>
         (int)MathHelper.ApplyPolynomialFunction(weaponMaster, _constants.WeaponProficiencyPointsForWeaponMasterCoefs);
 
+    /// <summary>
+    /// Calculates the cost (in proficiency points) of raising a weapon proficiency to the given level,
+    /// based on a polynomial cost function.
+    /// </summary>
     private int WeaponProficiencyCost(int wpf) =>
         (int)MathHelper.ApplyPolynomialFunction(wpf, _constants.WeaponProficiencyCostCoefs);
 
     /// <summary>
-    /// Polynomial function for WPF points gained from level progression.
+    /// Calculates additional weapon proficiency points gained from character level progression,
+    /// using a polynomial function.
     /// </summary>
     private int WeaponProficienciesPointsForLevel(int level) =>
         (int)MathHelper.ApplyPolynomialFunction(level, _constants.WeaponProficiencyPointsForLevelCoefs);
 
+    /// <summary>
+    /// Checks if a skill can be leveled to the requested value based on the corresponding
+    /// attribute requirement rules (e.g., Strength or Agility thresholds).
+    /// </summary>
     private bool CheckSkillRequirement(string skillName, int level) => skillName switch
     {
         "Iron Flesh" => level <= StrengthVm.ItemValue / 3,
@@ -462,39 +643,20 @@ public class CharacterInfoVM : ViewModel
     };
 
     /// <summary>
-    /// Validates whether the given skill's current value satisfies its attribute requirements.
+    /// Validates all skills against their attribute requirements
+    /// and updates their TextStateDisabled accordingly.
     /// </summary>
-    private bool ValidateSkillRequirements(CharacterInfoPlusMinusItemVM vm)
-    {
-        if (vm == null)
-        {
-            return true;
-        }
-
-        return CheckSkillRequirement(vm.ItemLabel, vm.ItemValue);
-    }
-
-    /// <summary>
-    /// Updates the TextState of the given skill VM based on whether it satisfies requirements.
-    /// </summary>
-    private void UpdateSkillTextState(CharacterInfoPlusMinusItemVM vm)
-    {
-        if (vm == null)
-        {
-            return;
-        }
-
-        vm.TextStateDisabled = ValidateSkillRequirements(vm) ? false : true;
-    }
-
-    /// <summary>
-    /// Updates all skills' TextStates to reflect whether they are valid.
-    /// </summary>
-    private void UpdateAllSkillTextStates()
+    private void ValidateAndUpdateAllSkills()
     {
         foreach (var skill in Skills)
         {
-            UpdateSkillTextState(skill);
+            if (skill == null)
+            {
+                continue;
+            }
+
+            bool isValid = CheckSkillRequirement(skill.ItemLabel, skill.ItemValue);
+            skill.TextStateDisabled = !isValid;
         }
     }
 
@@ -514,7 +676,6 @@ public class CharacterInfoVM : ViewModel
     /// does not exceed the maximum possible points available
     /// based on Agility + Weapon Master + Level.
     /// </summary>
-
     private bool ValidateWeaponProficiencyCap()
     {
         int lvlPoints = WeaponProficienciesPointsForLevel(CharacterLevel);
@@ -533,24 +694,6 @@ public class CharacterInfoVM : ViewModel
         InformationManager.DisplayMessage(new InformationMessage(
             $"WPF Cap -> lvl:{lvlPoints}, agi:{agiPoints}, wm:{wmPoints}, max:{maxPoints}, spent:{totalSpent}"));
 
-        return totalSpent <= maxPoints;
-    }
-    private bool ValidateWeaponProficiencyCapOld()
-    {
-        // 1. Calculate the theoretical max points for this character
-        int lvlPoints = WeaponProficienciesPointsForLevel(CharacterLevel);
-        int agiPoints = WeaponProficienciesPointsForAgility(AgilityVm.ItemValue);
-        int wmPoints = WeaponProficienciesPointsForWeaponMaster(
-                Skills.FirstOrDefault(s => s.ItemLabel == "Weapon Master")?.ItemValue ?? 0);
-
-        int maxPoints = lvlPoints + agiPoints + wmPoints;
-
-        // 2. Calculate how much has been spent across all proficiencies
-        int totalSpent = WeaponProficiencies.Sum(wp => WeaponProficiencyCost(wp.ItemValue));
-
-        InformationManager.DisplayMessage(new InformationMessage($"UpdateWeaponProficiencyTextStates: lvl: {lvlPoints} agi: {agiPoints} wm: {wmPoints} max: {maxPoints} spent: {totalSpent}"));
-
-        // 3. Compare
         return totalSpent <= maxPoints;
     }
 

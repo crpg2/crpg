@@ -32,6 +32,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         registerer.Register<UserRequestGetEquippedItems>(HandleUserRequestGetEquippedItems);
         registerer.Register<UserRequestEquipCharacterItem>(HandleUserRequestEquipCharacterItem);
         registerer.Register<UserRequestGetCharacterBasic>(HandleUserRequestGetCharacterBasic);
+        registerer.Register<UserRequestUpdateCharacterCharacteristics>(HandleUserRequestUpdateCharacterCharacteristics);
     }
 
     /// <summary>
@@ -67,6 +68,51 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         Debug.Print("HandleUserRequestGetCharacterBasic()");
         _ = GetUserCharacterBasicAsync(networkPeer);
         return true;
+    }
+
+    private bool HandleUserRequestUpdateCharacterCharacteristics(NetworkCommunicator networkPeer, UserRequestUpdateCharacterCharacteristics message)
+    {
+        Debug.Print("HandleUserRequestUpdateCharacterCharacteristics");
+
+        var apiRequest = new CrpgGameCharacterCharacteristicsUpdateRequest
+        {
+            Characteristics = message.Characteristics,
+        };
+
+        _ = TryUpdateCharacterCharacteristicsAsync(networkPeer, apiRequest);
+        return true;
+    }
+
+    private async Task TryUpdateCharacterCharacteristicsAsync(NetworkCommunicator networkPeer, CrpgGameCharacterCharacteristicsUpdateRequest apiRequest)
+    {
+        try
+        {
+            var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+            var crpgUser = crpgPeer?.User;
+            var crpgCharacter = crpgUser?.Character;
+
+            if (crpgUser == null || crpgCharacter == null)
+            {
+                Debug.Print($"[TryUpdateCharacterCharacteristicsAsync] No user/character data found for peer {networkPeer.UserName}");
+                return;
+            }
+
+            if (apiRequest?.Characteristics == null)
+            {
+                Debug.Print("[TryUpdateCharacterCharacteristicsAsync] No characteristics provided in the request");
+                return;
+            }
+
+            // Send the request to the API
+            var apiRes = await _crpgClient.UpdateCharacterCharacteristicsAsync(crpgUser.Id, crpgCharacter.Id, apiRequest);
+
+            // Send respones to the Client
+            SynchronizeUserTryUpdateCharacteristicsResult(networkPeer, apiRequest, apiRes);
+        }
+        catch (Exception ex)
+        {
+            Debug.Print($"[TryUpdateCharacterCharacteristicsAsync] Exception for peer {networkPeer.UserName}: {ex}");
+        }
     }
 
     private async Task GetUserCharacterBasicAsync(NetworkCommunicator networkPeer)
@@ -402,6 +448,49 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         {
             Debug.Print($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
             Console.WriteLine($"SynchronizeUserCharacterEquippedItemsToPeer() exception: {ex}");
+        }
+    }
+
+    private void SynchronizeUserTryUpdateCharacteristicsResult(NetworkCommunicator networkPeer, CrpgGameCharacterCharacteristicsUpdateRequest apiRequest,
+        CrpgResult<CrpgCharacterCharacteristics> apiRes)
+    {
+        if (apiRes == null)
+        {
+            return;
+        }
+
+        if (apiRes.Errors == null || apiRes.Errors.Count == 0)
+        {
+            Debug.Print($"Characteristics recieved on server");
+            /*
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new ServerSendEquipItemResult
+            {
+                Success = true,
+                SlotIndex = (int)requestedItem.Slot,
+                UserItemId = userItemId,
+            });
+            GameNetwork.EndModuleEventAsServer();
+            */
+        }
+        else
+        {
+
+            foreach (var error in apiRes.Errors)
+            {
+                Debug.Print($"Characteristics failed to update. Error: {error.Detail}");
+            }
+            /*
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new ServerSendEquipItemResult
+            {
+                Success = false,
+                SlotIndex = (int)failedSlot,
+                UserItemId = -1,
+                ErrorMessage = apiRes.Errors[0].Detail ?? "Failed to equip/unequip item",
+            });
+            GameNetwork.EndModuleEventAsServer();
+            */
         }
     }
 

@@ -1,81 +1,70 @@
 using System;
 using TaleWorlds.Library;
 
-namespace Crpg.Module.GUI.Inventory
+namespace Crpg.Module.GUI.Inventory;
+
+public class CharacterInfoPlusMinusItemVM : ViewModel
 {
-    public class CharacterInfoPlusMinusItemVM : ViewModel
+    private string _itemLabel = string.Empty;
+    private int _itemValue;
+    private bool _isButtonMinusEnabled;
+    private bool _isButtonPlusEnabled;
+
+    public event Action<CharacterInfoPlusMinusItemVM>? OnPlusClickedEvent;
+    public event Action<CharacterInfoPlusMinusItemVM>? OnMinusClickedEvent;
+
+    public CharacterInfoPlusMinusItemVM(string label, int value)
     {
-        private string _itemLabel = string.Empty;
-        private int _itemValue;
-        private bool _isButtonMinusEnabled;
-        private bool _isButtonPlusEnabled;
+        _itemLabel = label;
+        _itemValue = value;
+    }
 
-        private readonly int _minValue;
-        private readonly int _maxValue;
+    [DataSourceProperty]
+    public string ItemLabel
+    {
+        get => _itemLabel;
+        set => SetField(ref _itemLabel, value, nameof(ItemLabel));
+    }
 
-        public event Action<CharacterInfoPlusMinusItemVM>? OnPlusClickedEvent;
-        public event Action<CharacterInfoPlusMinusItemVM>? OnMinusClickedEvent;
-
-        public CharacterInfoPlusMinusItemVM(string label, int value, int minValue, int maxValue)
+    [DataSourceProperty]
+    public int ItemValue
+    {
+        get => _itemValue;
+        set
         {
-            _itemLabel = label;
-            _itemValue = value;
-            _minValue = minValue;
-            _maxValue = maxValue;
+            SetField(ref _itemValue, value, nameof(ItemValue));
         }
+    }
 
-        [DataSourceProperty]
-        public string ItemLabel
-        {
-            get => _itemLabel;
-            set => SetField(ref _itemLabel, value, nameof(ItemLabel));
-        }
+    [DataSourceProperty]
+    public bool IsButtonMinusEnabled
+    {
+        get => _isButtonMinusEnabled;
+        set => SetField(ref _isButtonMinusEnabled, value, nameof(IsButtonMinusEnabled));
+    }
 
-        [DataSourceProperty]
-        public int ItemValue
-        {
-            get => _itemValue;
-            set
-            {
-                if (value < _minValue)
-                    value = _minValue;
-                if (value > _maxValue)
-                    value = _maxValue;
-                SetField(ref _itemValue, value, nameof(ItemValue));
-            }
-        }
+    [DataSourceProperty]
+    public bool IsButtonPlusEnabled
+    {
+        get => _isButtonPlusEnabled;
+        set => SetField(ref _isButtonPlusEnabled, value, nameof(IsButtonPlusEnabled));
+    }
 
-        [DataSourceProperty]
-        public bool IsButtonMinusEnabled
-        {
-            get => _isButtonMinusEnabled;
-            set => SetField(ref _isButtonMinusEnabled, value, nameof(IsButtonMinusEnabled));
-        }
+    private bool _textStateDisabled = false;
+    [DataSourceProperty]
+    public bool TextStateDisabled
+    {
+        get => _textStateDisabled;
+        set => SetField(ref _textStateDisabled, value, nameof(TextStateDisabled));
+    }
 
-        [DataSourceProperty]
-        public bool IsButtonPlusEnabled
-        {
-            get => _isButtonPlusEnabled;
-            set => SetField(ref _isButtonPlusEnabled, value, nameof(IsButtonPlusEnabled));
-        }
+    public void ExecutePlusClick()
+    {
+        OnPlusClickedEvent?.Invoke(this);
+    }
 
-        private bool _textStateDisabled = false;
-        [DataSourceProperty]
-        public bool TextStateDisabled
-        {
-            get => _textStateDisabled;
-            set => SetField(ref _textStateDisabled, value, nameof(TextStateDisabled));
-        }
-
-        public void ExecutePlusClick()
-        {
-            OnPlusClickedEvent?.Invoke(this);
-        }
-
-        public void ExecuteMinusClick()
-        {
-            OnMinusClickedEvent?.Invoke(this);
-        }
-
+    public void ExecuteMinusClick()
+    {
+        OnMinusClickedEvent?.Invoke(this);
     }
 }

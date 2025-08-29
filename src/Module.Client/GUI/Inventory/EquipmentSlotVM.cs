@@ -30,18 +30,15 @@ public class EquipmentSlotVM : ViewModel
         _defaultSprite = GetDefaultSpriteForSlot(_crpgItemSlotIndex);
         _imageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
         _isButtonEnabled = true;
-        LogDebug($"[EquipmentSlotVM] Created slot {crpgSlot}");
     }
 
     public void ExecuteAlternateClick()
     {
-        LogDebug($"[EquipmentSlotVM] Alternate click on slot {CrpgItemSlotIndex}");
         OnSlotAlternateClicked?.Invoke(this);
     }
 
     public void ExecuteDragBegin()
     {
-        LogDebug($"[EquipmentSlotVM] Drag begin on slot {CrpgItemSlotIndex}, item: {ItemObj?.Name}");
         IsDragging = true;
         if (ItemObj != null)
         {
@@ -51,7 +48,6 @@ public class EquipmentSlotVM : ViewModel
 
     public void ExecuteDragEnd()
     {
-        LogDebug($"[EquipmentSlotVM] Drag end on slot {CrpgItemSlotIndex}");
         IsDragging = false;
         if (ItemObj != null)
         {
@@ -59,24 +55,8 @@ public class EquipmentSlotVM : ViewModel
         }
     }
 
-    public void ExecuteHoverBegin()
-    {
-        LogDebug($"[EquipmentSlotVM] Hover Begin {CrpgItemSlotIndex}");
-        if (ItemObj != null && IsDragging == true)
-        {
-            LogDebug($"[EquipmentSlotVM] Hover Begin with item dragged{CrpgItemSlotIndex}");
-            // MPLobby\Generic\exit_hover
-        }
-    }
-
-    public void ExecuteHoverEnd()
-    {
-        LogDebug($"[EquipmentSlotVM] Hover End {CrpgItemSlotIndex}");
-    }
-
     public void ExecuteTryEquipItem(ViewModel draggedItem, int index)
     {
-        LogDebug($"[EquipmentSlotVM] Drop attempt on slot {CrpgItemSlotIndex} with dragged item: {draggedItem.GetType().Name}");
         OnItemDropped?.Invoke(this, draggedItem);
     }
 
@@ -88,14 +68,11 @@ public class EquipmentSlotVM : ViewModel
 
         OnPropertyChanged(nameof(ItemObj));
         OnPropertyChanged(nameof(CanAcceptDrag));
-
-        LogDebug($"[EquipmentSlotVM] SetItem called on slot {CrpgItemSlotIndex} with item: {ItemObj?.Name}, userItemId: {UserItemId}");
     }
 
     public void ClearItem()
     {
         SetItem(new ImageIdentifierVM(ImageIdentifierType.Item));
-        LogDebug($"[EquipmentSlotVM] ClearItem called on slot {CrpgItemSlotIndex}");
     }
 
     [DataSourceProperty]
@@ -110,8 +87,6 @@ public class EquipmentSlotVM : ViewModel
                 OnPropertyChanged(nameof(ImageIdentifier));
                 OnPropertyChanged(nameof(ShouldShowDefaultIcon));
                 OnPropertyChanged(nameof(CanAcceptDrag));
-
-                LogDebug($"[EquipmentSlotVM] ImageIdentifier changed on slot {CrpgItemSlotIndex} to {value?.Id}");
             }
         }
     }
@@ -132,7 +107,6 @@ public class EquipmentSlotVM : ViewModel
             {
                 _userItemId = value;
                 OnPropertyChanged(nameof(UserItemId));
-                LogDebug($"[EquipmentSlotVM] UserItemId updated on slot {CrpgItemSlotIndex}: {UserItemId}");
             }
         }
     }
@@ -147,15 +121,8 @@ public class EquipmentSlotVM : ViewModel
             {
                 _defaultSprite = value;
                 OnPropertyChanged(nameof(DefaultSprite));
-                LogDebug($"[EquipmentSlotVM] DefaultSprite changed on slot {CrpgItemSlotIndex}: {_defaultSprite}");
             }
         }
-    }
-
-    private void LogDebug(string message)
-    {
-        Debug.Print(message);
-        InformationManager.DisplayMessage(new InformationMessage(message));
     }
 
     [DataSourceProperty]
@@ -169,7 +136,6 @@ public class EquipmentSlotVM : ViewModel
                 _crpgItemSlotIndex = value;
                 DefaultSprite = GetDefaultSpriteForSlot(_crpgItemSlotIndex);
                 OnPropertyChanged(nameof(CrpgItemSlotIndex));
-                LogDebug($"[EquipmentSlotVM] CrpgItemSlotIndex updated to {value}");
             }
         }
     }
@@ -198,7 +164,6 @@ public class EquipmentSlotVM : ViewModel
             {
                 _isButtonEnabled = value;
                 OnPropertyChanged(nameof(IsButtonEnabled));
-                LogDebug($"[EquipmentSlotVM] IsButtonEnabled changed to {value} on slot {CrpgItemSlotIndex}");
             }
         }
     }
@@ -251,20 +216,5 @@ public class EquipmentSlotVM : ViewModel
         CrpgItemSlot.Mount => "ui_crpg_icon_white_mount",
         CrpgItemSlot.MountHarness => "ui_crpg_icon_white_mountharness",
         _ => "ui_crpg_icon_white_weaponslot",
-        /*
-        CrpgItemSlot.Head => "ui_crpg\\equipment_category\\headarmor",
-        CrpgItemSlot.Shoulder => "General\\EquipmentIcons\\equipment_type_cape",
-        CrpgItemSlot.Body => "General\\EquipmentIcons\\equipment_type_body_armor",
-        CrpgItemSlot.Hand => "General\\EquipmentIcons\\equipment_type_hand_armor",
-        CrpgItemSlot.Leg => "General\\EquipmentIcons\\equipment_type_leg_armor",
-        CrpgItemSlot.Weapon0 => "General\\EquipmentIcons\\equipment_type_default",
-        CrpgItemSlot.Weapon1 => "General\\EquipmentIcons\\equipment_type_default",
-        CrpgItemSlot.Weapon2 => "General\\EquipmentIcons\\equipment_type_default",
-        CrpgItemSlot.Weapon3 => "General\\EquipmentIcons\\equipment_type_default",
-        CrpgItemSlot.WeaponExtra => "General\\EquipmentIcons\\equipment_type_banner",
-        CrpgItemSlot.Mount => "General\\EquipmentIcons\\equipment_type_mount",
-        CrpgItemSlot.MountHarness => "General\\EquipmentIcons\\equipment_type_default",
-        _ => "General\\EquipmentIcons\\equipment_type_default",
-        */
     };
 }

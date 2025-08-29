@@ -71,6 +71,25 @@ public class GamesController : BaseController
         }));
 
     /// <summary>
+    /// Updates character characteristics for the user.
+    /// </summary>
+    /// <param name="userId">User id.</param>
+    /// <param name="characterId">Character id.</param>
+    /// <param name="cmd">The character characteristics with the updated values.</param>
+    /// <returns>The updated character characteristics.</returns>
+    /// <response code="200">Updated.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpPut("users/{userId}/characters/{characterId}/characteristics")]
+    public Task<ActionResult<Result<CharacterCharacteristicsViewModel>>> UpdateGameCharacterCharacteristics(
+        [FromRoute] int userId, [FromRoute] int characterId, [FromBody] UpdateGameCharacterCharacteristicsCommand cmd) =>
+        ResultToActionAsync(Mediator.Send(new UpdateGameCharacterCharacteristicsCommand
+        {
+            UserId = userId,
+            CharacterId = characterId,
+            Characteristics = cmd.Characteristics,
+        }));
+
+    /// <summary>
     /// Update character items.
     /// </summary>
     [HttpPut("users/{userId}/characters/{characterId}/items")]

@@ -9,7 +9,6 @@ namespace Crpg.Module.GUI.Inventory;
 
 public class InventorySortTypeVM : ViewModel
 {
-    // private ImageIdentifierVM _imageIdentifier;
     private readonly Action<InventorySortTypeVM>? _onClick;
     private bool _showInventoryTypeIcon;
     public Func<ItemObject, bool> Predicate { get; }
