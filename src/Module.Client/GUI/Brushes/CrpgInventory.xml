@@ -134,9 +134,11 @@
     </Styles>
   </Brush>
   <Brush Name="CharacterEdit.Value.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center" TextVerticalAlignment="Center">
+    <Layers>
+    </Layers>
     <Styles>
       <Style Name="Default" FontColor="#F9EAD2FF" TextAlphaFactor="1.0" TextBlur="0" TextOutlineAmount="0" TextGlowRadius="0" FontSize="15"/>
-      <Style Name="Disabled" FontColor="#FF0000FF" TextAlphaFactor="1.0" TextColorFactor="0.9"/>
+      <Style Name="Disabled" FontColor="#FF0000FF" TextAlphaFactor="1.0" TextColorFactor="0.9" />
     </Styles>
   </Brush>
   <Brush Name="InventoryGrid.Scrollbar.Handle">

@@ -8,7 +8,7 @@ public class CharacterInfoConvertItemVM : ViewModel
     private int _itemValue;
     private bool _isButtonEnabled;
 
-    public event Action<CharacterInfoConvertItemVM>? OnButtonClick;
+    public event Action<CharacterInfoConvertItemVM>? OnConvertClickedEvent;
 
     public CharacterInfoConvertItemVM(string label, int value, bool isEnabled)
     {
@@ -40,6 +40,6 @@ public class CharacterInfoConvertItemVM : ViewModel
 
     public void ExecuteClick()
     {
-        OnButtonClick?.Invoke(this);
+        OnConvertClickedEvent?.Invoke(this);
     }
 }
