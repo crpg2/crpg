@@ -128,6 +128,7 @@ public class CrpgInventoryViewModel : ViewModel
             behavior.OnUserInventoryUpdated += HandleInventoryUpdated;
             behavior.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
             behavior.OnUserCharacterBasicUpdated += HandleUserCharacterBasicUpdated;
+            behavior.OnUserCharacteristicsUpdated += HandleUserCharacteristicsUpdated;
         }
     }
 
@@ -141,6 +142,8 @@ public class CrpgInventoryViewModel : ViewModel
             behavior.OnUserInventoryUpdated -= HandleInventoryUpdated;
             behavior.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
             behavior.OnUserCharacterBasicUpdated -= HandleUserCharacterBasicUpdated;
+            behavior.OnUserCharacteristicsUpdated -= HandleUserCharacteristicsUpdated;
+
         }
     }
 
@@ -424,6 +427,21 @@ public class CrpgInventoryViewModel : ViewModel
         }
 
         CharacterInfo.SetCrpgCharacterBasic(behavior.UserCharacter);
+    }
+
+    private void HandleUserCharacteristicsUpdated()
+    {
+        LogDebug("[CprgInventoryVM] HandleUserCharacteristicsUpdated called");
+
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (behavior == null)
+        {
+            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found");
+            return;
+        }
+
+        CharacterInfo.SetInitialCharacteristics(behavior.UserCharacter.Characteristics);
+        LogDebug("[CrpgInventoryVm] Updated CHaracterInfoVM with new characteristics");
     }
 
     private void InitializeCharacterPreview()

@@ -89,7 +89,7 @@
                                 MarginLeft="0" MarginRight="0" MarginTop="0" MarginBottom="0" Spacing="5" >
                               <Children>
 
-                                <TextWidget Text="Weapon Proficiencies " HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
+                                <TextWidget Text="Weapon Proficiencies - " HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
                                     Brush="CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
                                     <TextWidget IntText="@WeaponProficiencyPoints" HeightSizePolicy="Fixed" SuggestedHeight="20" WidthSizePolicy="CoverChildren"
                                     Brush="CharacterEdit.Item.Text.Medium" HorizontalAlignment="Center"/>
@@ -145,48 +145,15 @@
                       DoNotPassEventsToChildren="false">
                       
                   <Children>
-                    <BrushWidget Id="ButtonBackgroundFrame" 
-                                WidthSizePolicy="Fixed" SuggestedWidth="120"
-                                HeightSizePolicy="Fixed" SuggestedHeight="40"
-                                VerticalAlignment="Center" HorizontalAlignment="Center"
-                                MarginBottom="5"
-                                PassEventsToParent="false"
-                                Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff"> <!-- acceptdrop here to intercept event and stop from unequip if u drop slot on same slot. doesnt register on button if dragging-->
-                      <Children>
-                        <ButtonWidget Id="ButtonRefreshFromApi" Brush="CharacterEdit.Button"
-                                  WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
-                                  MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
-                                  AcceptDrag="false"
-                                  DoNotPassEventsToChildren="true"
-                                  Command.Click="ExecuteClick"
-                                  IsEnabled="true" /> <!-- @IsButtonRefreshFromApiEnabled" -->
-                        <TextWidget Text="Refresh API" WidthSizePolicy="Fixed" SuggestedWidth="100" HeightSizePolicy="Fixed" SuggestedHeight="30"
-                          MarginTop="5"
-                          DoNotAcceptEvents="true"
-                          HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
-                      </Children>
-                    </BrushWidget>
-                    <BrushWidget Id="ButtonBackgroundFrame" 
-                                WidthSizePolicy="Fixed" SuggestedWidth="120"
-                                HeightSizePolicy="Fixed" SuggestedHeight="40"
-                                VerticalAlignment="Center" HorizontalAlignment="Center"
-                                MarginBottom="5"
-                                PassEventsToParent="false"
-                                Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff"> <!-- acceptdrop here to intercept event and stop from unequip if u drop slot on same slot. doesnt register on button if dragging-->
-                      <Children>
-                        <ButtonWidget Id="ButtonApplyChanges" Brush="CharacterEdit.Button"
-                                  WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
-                                  MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
-                                  AcceptDrag="false"
-                                  DoNotPassEventsToChildren="true"
-                                  Command.Click="ExecuteClick"
-                                  IsEnabled="true" /> <!-- @IsButtonAcceptChangesEnabled" -->
-                        <TextWidget Text="Apply Changes" WidthSizePolicy="Fixed" SuggestedWidth="100" HeightSizePolicy="Fixed" SuggestedHeight="30"
-                          MarginTop="5"
-                          DoNotAcceptEvents="true"
-                          HorizontalAlignment="Center" Brush="CharacterEdit.Item.Text" />
-                      </Children>
-                    </BrushWidget>
+                    <CrpgButtonPrefab Parameter.ButtonText="API Refresh" Parameter.ButtonId="ButtonApiRefreshInfo"
+                              Parameter.Width="120" Parameter.Height="40" Parameter.ButtonIsEnabled="true"
+                              Parameter.CommandClick="ExecuteClickRefreshApi" Parameter.ButtonIsVisible="true"/>
+                    <CrpgButtonPrefab Parameter.ButtonText="Apply Changes" Parameter.ButtonId="ButtonApplyChanges"
+                              Parameter.Width="120" Parameter.Height="40" Parameter.ButtonIsEnabled="true"
+                              Parameter.CommandClick="ExecuteClickApplyChanges" Parameter.ButtonIsVisible="true"/>
+                    <CrpgButtonPrefab Parameter.ButtonText="Reset Changes" Parameter.ButtonId="ButtonResetChanges"
+                              Parameter.Width="120" Parameter.Height="40" Parameter.ButtonIsEnabled="true"
+                              Parameter.CommandClick="ExecuteClickReset" Parameter.ButtonIsVisible="true"/>                              
                   </Children>
                 </ListPanel>       
               </Children>

@@ -10,9 +10,11 @@ using Crpg.Module.Common.Network;
 using Messages.FromClient.ToLobbyServer;
 using TaleWorlds.Core;
 using TaleWorlds.Diamond;
+using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
+using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.PlayerServices;
 
 namespace Crpg.Module.Common;
@@ -32,6 +34,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     internal event Action? OnUserInventoryUpdated;
     internal event Action? OnUserCharacterEquippedItemsUpdated;
     internal event Action? OnUserCharacterBasicUpdated;
+    internal event Action? OnUserCharacteristicsUpdated;
     internal event Action<CrpgItemSlot>? OnSlotUpdated;
 
     public override void OnBehaviorInitialize()
@@ -102,6 +105,14 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         GameNetwork.EndModuleEventAsClient();
     }
 
+    internal void RequestGetUpdatedCharacterBasic()
+    {
+        // Character basic
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestGetCharacterBasic());
+        GameNetwork.EndModuleEventAsClient();
+    }
+
     internal void RequestUpdateCharacterCharacteristics(CrpgCharacterCharacteristics characteristics)
     {
         GameNetwork.BeginModuleEventAsClient();
@@ -159,6 +170,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         }
 
         OnSlotUpdated?.Invoke(slot); // notify VM of only this slot
+        UISoundsHelper.PlayUISound("event:/ui/transfer");
     }
 
     /// <summary>
@@ -176,6 +188,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         UserCharacter = crpgCharacter;
     }
 
+
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
         base.AddRemoveMessageHandlers(registerer);
@@ -183,6 +196,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         registerer.Register<ServerSendUserCharacterEquippedItems>(HandleUpdateCrpgCharacterEquippedItems); // recieve equipped items for character from server
         registerer.Register<ServerSendEquipItemResult>(HandleEquipItemResult); // recieve result of attempt to equip item in slot on api from server
         registerer.Register<ServerSendUserCharacterBasic>(HandleUpdateCrpgUserCharacterBasic); // recieve character basic from server
+        registerer.Register<ServerSendUpdateCharacteristicsResult>(HandleUpdateCharacteristicsResult); // recieve result of attempt to update character characteristics on api from server
     }
 
     private void OnMyClientSynchronized()
@@ -303,5 +317,28 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
         // Update only the affected slot
         SetEquippedItem(slot, userItem);
+    }
+
+    private void HandleUpdateCharacteristicsResult(ServerSendUpdateCharacteristicsResult message)
+    {
+        if (!message.Success)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"Update Characteristics Failed: {message.ErrorMessage}"));
+            return;
+        }
+
+        if (message.Characteristics == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"Update Characteristics Failed: Characteristics was null"));
+            return;
+        }
+
+        UserCharacter.Characteristics = message.Characteristics;
+
+
+        UISoundsHelper.PlayUISound("event:/ui/panels/upgrade");
+        // Trigger event for gui to listen to to know to update
+        OnUserCharacteristicsUpdated?.Invoke();
+
     }
 }

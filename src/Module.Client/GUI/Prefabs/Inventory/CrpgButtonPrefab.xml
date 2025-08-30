@@ -12,13 +12,15 @@
     <Widget WidthSizePolicy="Fixed" SuggestedWidth="*Width"
               HeightSizePolicy="Fixed" SuggestedHeight="*Height"
               VerticalAlignment="Center" HorizontalAlignment="Center"
-              MarginBottom="5">
+              MarginBottom="5" DoNotPassEventsToChildren="false"
+              PassEventsToParent="false"> 
       <Children>
         <BrushWidget Id="ButtonBackgroundFrame" 
               WidthSizePolicy="StretchToParent"
               HeightSizePolicy="StretchToParent"
               VerticalAlignment="Center" HorizontalAlignment="Center"
               PassEventsToParent="false"
+              DoNotPassEventsToChildren="false"
               IsVisible="*ButtonIsVisible"
               Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
                                 

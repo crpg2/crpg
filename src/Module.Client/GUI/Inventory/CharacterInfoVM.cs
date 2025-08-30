@@ -5,6 +5,7 @@ using Crpg.Module.Helpers;
 using TaleWorlds.CampaignSystem.Extensions;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.View;
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -30,6 +31,11 @@ public class CharacterInfoVM : ViewModel
     private CharacterInfoConvertItemVM _convertAttributeVm;
     private CharacterInfoConvertItemVM _convertSkillVm;
     private CrpgCharacterCharacteristics _initialCharacteristics = new();
+
+    private DateTime _lastApiCharacteristicsRefreshClick = DateTime.MinValue;
+    private DateTime _lastApiCharacteristicsApplyClick = DateTime.MinValue;
+    private readonly TimeSpan _ApiUsageClickCooldown = TimeSpan.FromSeconds(5);
+
     // private CrpgCharacter _crpgCharacterBasic = new();
 
     /// <summary>
@@ -53,8 +59,8 @@ public class CharacterInfoVM : ViewModel
         _skillPoints = 0;
 
         // Convert buttons
-        _convertAttributeVm = new CharacterInfoConvertItemVM("Attributes", 0, true);
-        _convertSkillVm = new CharacterInfoConvertItemVM("Skills", 0, true);
+        _convertAttributeVm = new CharacterInfoConvertItemVM("Attributes - ", 0, true);
+        _convertSkillVm = new CharacterInfoConvertItemVM("Skills - ", 0, true);
 
         // Wpf points
         _weaponProficiencyPoints = 0;
@@ -99,15 +105,45 @@ public class CharacterInfoVM : ViewModel
         // UpdateAllButtonStates();
     }
 
-
-    public void ExecuteClick()
+    public void ExecuteClickApplyChanges()
     {
-        // debug send attempt to update characteristics
-        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
-        if (behavior != null)
+        var now = DateTime.UtcNow;
+        if (now - _lastApiCharacteristicsApplyClick < _ApiUsageClickCooldown)
         {
-            behavior.RequestUpdateCharacterCharacteristics(GetCrpgCharacteristicsFromVM());
+            InformationManager.DisplayMessage(new InformationMessage("Please wait to send another API request.", Colors.Yellow));
+            // too soon display msg or play sound
+            return;
         }
+
+        _lastApiCharacteristicsApplyClick = now;
+
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        behavior?.RequestUpdateCharacterCharacteristics(GetCrpgCharacteristicsFromVM());
+        InformationManager.DisplayMessage(new InformationMessage("Requesting to update API characteristics.", Colors.Cyan));
+    }
+
+    public void ExecuteClickReset()
+    {
+        InformationManager.DisplayMessage(new InformationMessage("Resetting to initial characteristics.", Colors.Cyan));
+        ResetToInitialCharacteristics();
+    }
+
+    public void ExecuteClickRefreshApi()
+    {
+        var now = DateTime.UtcNow;
+        if (now - _lastApiCharacteristicsRefreshClick < _ApiUsageClickCooldown)
+        {
+            // too soon display msg or play sound
+            InformationManager.DisplayMessage(new InformationMessage("Please wait to send another API request.", Colors.Yellow));
+            UISoundsHelper.PlayUISound("event:/ui/persuasion/critical_fail");
+            return;
+        }
+
+        _lastApiCharacteristicsRefreshClick = now;
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        behavior?.RequestGetUpdatedCharacterBasic();
+        InformationManager.DisplayMessage(new InformationMessage("Requesting to refresh character from API.", Colors.Cyan));
+        UISoundsHelper.PlayUISound("event:/ui/notification/trait_change");
     }
 
     /// <summary>
@@ -185,6 +221,63 @@ public class CharacterInfoVM : ViewModel
         UpdateAllButtonStates();
 
         // WireAllEvents(true);
+    }
+
+    internal void SetInitialCharacteristics(CrpgCharacterCharacteristics characteristics)
+    {
+        if (characteristics == null)
+        {
+            return;
+        }
+
+        _initialCharacteristics = CloneCharacteristics(characteristics);
+
+        ResetToInitialCharacteristics();
+    }
+
+    /// <summary>
+    /// Resets the VM to the initial characteristics stored in _initialCharacteristics.
+    /// Restores attributes, skills, weapon proficiencies, and available points.
+    /// </summary>
+    internal void ResetToInitialCharacteristics()
+    {
+        if (_initialCharacteristics == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"ResetToInitialCharacteristics(): _initialCharacteristics is null.", Colors.Yellow));
+            return;
+        }
+
+        // Restore attributes
+        StrengthVm.ItemValue = _initialCharacteristics.Attributes.Strength;
+        AgilityVm.ItemValue = _initialCharacteristics.Attributes.Agility;
+        AttributePoints = _initialCharacteristics.Attributes.Points;
+
+        // Restore skills
+        foreach (var skill in Skills)
+        {
+            skill.ItemValue = GetInitialSkillValue(skill.ItemLabel);
+        }
+
+        SkillPoints = _initialCharacteristics.Skills.Points;
+
+        // Restore weapon proficiencies
+        foreach (var wp in WeaponProficiencies)
+        {
+            wp.ItemValue = GetInitialWeaponProficiencyValue(wp.ItemLabel);
+        }
+
+        WeaponProficiencyPoints = _initialCharacteristics.WeaponProficiencies.Points;
+
+        // Optionally, update convert buttons
+        ConvertAttribute.ItemValue = _initialCharacteristics.Attributes.Points;
+        ConvertSkill.ItemValue = _initialCharacteristics.Skills.Points;
+
+        // Refresh button states and text states
+        UpdateAllButtonStates();
+        ValidateAndUpdateAllSkills();
+        UpdateWeaponProficiencyTextStates();
+
+        InformationManager.DisplayMessage(new InformationMessage($"ResetToInitialCharacteristics():  completed.", Colors.Cyan));
     }
 
     internal CrpgCharacterCharacteristics GetCrpgCharacteristicsFromVM()
@@ -386,8 +479,7 @@ public class CharacterInfoVM : ViewModel
     private void OnConvertClicked(CharacterInfoConvertItemVM vm)
     {
         InformationManager.DisplayMessage(new InformationMessage($"OnConvertClicked: {vm.ItemLabel} : {vm.ItemValue}"));
-        // convert attribute/skill points
-        if (vm.ItemLabel == "Attributes")
+        if (vm.Equals(ConvertAttribute))
         {
             // 1 attribute point = 2 skill points
             if (AttributePoints >= 1)
@@ -396,7 +488,7 @@ public class CharacterInfoVM : ViewModel
                 SkillPoints += 2;
             }
         }
-        else if (vm.ItemLabel == "Skills")
+        else if (vm.Equals(ConvertSkill))
         {
             // 2 skill points = 1 attribute point
             if (SkillPoints >= 2)
@@ -429,7 +521,6 @@ public class CharacterInfoVM : ViewModel
             {
                 item.ItemValue++;
                 AttributePoints--;
-                // ConvertAttribute.ItemValue = AttributePoints;
             }
         }
         else if (item == AgilityVm)
@@ -438,9 +529,6 @@ public class CharacterInfoVM : ViewModel
             {
                 item.ItemValue++;
                 AttributePoints--;
-                // ConvertAttribute.ItemValue = AttributePoints;
-                WeaponProficiencyPoints += WeaponProficienciesPointsForAgility(item.ItemValue)
-                                          - WeaponProficienciesPointsForAgility(item.ItemValue - 1);
             }
         }
         else if (Skills.Contains(item))
@@ -449,21 +537,14 @@ public class CharacterInfoVM : ViewModel
             {
                 item.ItemValue++;
                 SkillPoints--;
-                // ConvertSkill.ItemValue = SkillPoints;
-                if (item.ItemLabel == "Weapon Master")
-                {
-                    WeaponProficiencyPoints += WeaponProficienciesPointsForWeaponMaster(item.ItemValue)
-                                              - WeaponProficienciesPointsForWeaponMaster(item.ItemValue - 1);
-                }
             }
         }
         else if (WeaponProficiencies.Contains(item))
         {
-            int cost = WeaponProficiencyCost(item.ItemValue + 1) - WeaponProficiencyCost(item.ItemValue);
-            if (WeaponProficiencyPoints >= cost)
+            int nextCost = WeaponProficiencyCost(item.ItemValue + 1) - WeaponProficiencyCost(item.ItemValue);
+            if (WeaponProficiencyPointsRemaining >= nextCost)
             {
                 item.ItemValue++;
-                WeaponProficiencyPoints -= cost;
             }
         }
 
@@ -496,11 +577,8 @@ public class CharacterInfoVM : ViewModel
         {
             if (item.ItemValue > _initialCharacteristics.Attributes.Agility)
             {
-                int oldValue = item.ItemValue;
                 item.ItemValue--;
                 AttributePoints++;
-                WeaponProficiencyPoints -= WeaponProficienciesPointsForAgility(oldValue)
-                                          - WeaponProficienciesPointsForAgility(item.ItemValue);
             }
         }
         else if (Skills.Contains(item))
@@ -508,14 +586,8 @@ public class CharacterInfoVM : ViewModel
             int minValue = GetInitialSkillValue(item.ItemLabel);
             if (item.ItemValue > minValue)
             {
-                int oldValue = item.ItemValue;
                 item.ItemValue--;
                 SkillPoints++;
-                if (item.ItemLabel == "Weapon Master")
-                {
-                    WeaponProficiencyPoints -= WeaponProficienciesPointsForWeaponMaster(oldValue)
-                                              - WeaponProficienciesPointsForWeaponMaster(item.ItemValue);
-                }
             }
         }
         else if (WeaponProficiencies.Contains(item))
@@ -523,9 +595,7 @@ public class CharacterInfoVM : ViewModel
             int minValue = GetInitialWeaponProficiencyValue(item.ItemLabel);
             if (item.ItemValue > minValue)
             {
-                int oldValue = item.ItemValue;
                 item.ItemValue--;
-                WeaponProficiencyPoints += WeaponProficiencyCost(oldValue) - WeaponProficiencyCost(item.ItemValue);
             }
         }
 
@@ -561,15 +631,43 @@ public class CharacterInfoVM : ViewModel
         }
 
         // Weapon proficiencies
+        int remainingWP = WeaponProficiencyPointsRemaining;
         foreach (var wp in WeaponProficiencies)
         {
             int minValue = GetInitialWeaponProficiencyValue(wp.ItemLabel);
             int nextCost = WeaponProficiencyCost(wp.ItemValue + 1) - WeaponProficiencyCost(wp.ItemValue);
 
-            // Plus enabled only if we have enough scaled points
-            wp.IsButtonPlusEnabled = WeaponProficiencyPoints >= nextCost;
+            // Plus enabled only if we have enough scaled points (computed canonical remaining)
+            wp.IsButtonPlusEnabled = remainingWP >= nextCost;
             wp.IsButtonMinusEnabled = wp.ItemValue > minValue;
         }
+    }
+
+    private void UpdateWeaponProficiencyTextStates()
+    {
+        int rem = WeaponProficiencyPointsRemaining;
+        WeaponProficiencyPoints = rem; // or format how you want
+                                       // Optionally: show breakdown (initial + agility delta + wm delta - spent) for debugging
+        bool isStateDisabled = !ValidateWeaponProficiencyCap();
+
+        foreach (var wp in WeaponProficiencies)
+        {
+            wp.TextStateDisabled = isStateDisabled;
+        }
+
+        InformationManager.DisplayMessage(new InformationMessage(WeaponProficiencyDebugBreakdown()));
+    }
+
+    private string WeaponProficiencyDebugBreakdown()
+    {
+        int initial = _initialCharacteristics.WeaponProficiencies.Points;
+        int agilityDelta = WeaponProficienciesPointsForAgility(AgilityVm.ItemValue) - WeaponProficienciesPointsForAgility(_initialCharacteristics.Attributes.Agility);
+        int wmCurrent = Skills.First(s => s.ItemLabel == "Weapon Master").ItemValue;
+        int wmDelta = WeaponProficienciesPointsForWeaponMaster(wmCurrent) - WeaponProficienciesPointsForWeaponMaster(_initialCharacteristics.Skills.WeaponMaster);
+        int spent = WeaponProficiencies.Sum(wp => WeaponProficiencyCost(wp.ItemValue) - WeaponProficiencyCost(GetInitialWeaponProficiencyValue(wp.ItemLabel)));
+        int remaining = initial + agilityDelta + wmDelta - spent;
+
+        return $"WP initial={initial}, agilityDelta={agilityDelta}, wmDelta={wmDelta}, spent={spent}, remaining={remaining}";
     }
 
     private int GetInitialSkillValue(string skillName) => skillName switch
@@ -597,37 +695,44 @@ public class CharacterInfoVM : ViewModel
         _ => 0,
     };
 
-    /// <summary>
-    /// Calculates the total weapon proficiency points granted by the given Agility stat.
-    /// </summary>
-    private int WeaponProficienciesPointsForAgility(int agility) =>
-        agility * _constants.WeaponProficiencyPointsForAgility;
+    private int WeaponProficiencyPointsRemaining
+    {
+        get
+        {
+            // initial base points
+            int initialPoints = _initialCharacteristics.WeaponProficiencies.Points;
 
-    /// <summary>
-    /// Calculates the total weapon proficiency points granted by the given Weapon Master skill,
-    /// using a polynomial curve defined in constants.
-    /// </summary>
+            // agility contribution delta (current - initial)
+            int agilityDelta = WeaponProficienciesPointsForAgility(AgilityVm.ItemValue)
+                              - WeaponProficienciesPointsForAgility(_initialCharacteristics.Attributes.Agility);
+
+            // weapon-master skill contribution delta (current - initial)
+            var weaponMasterVm = Skills.FirstOrDefault(s => s.ItemLabel == "Weapon Master");
+            int weaponMasterCurrent = weaponMasterVm?.ItemValue ?? _initialCharacteristics.Skills.WeaponMaster;
+            int weaponMasterInitial = _initialCharacteristics.Skills.WeaponMaster;
+            int weaponMasterDelta = WeaponProficienciesPointsForWeaponMaster(weaponMasterCurrent)
+                                    - WeaponProficienciesPointsForWeaponMaster(weaponMasterInitial);
+
+            // cost already spent by weapon proficiencies (current - initial)
+            int spentOnWPs = WeaponProficiencies.Sum(wp =>
+                WeaponProficiencyCost(wp.ItemValue) - WeaponProficiencyCost(GetInitialWeaponProficiencyValue(wp.ItemLabel)));
+
+            // total remaining = initial + deltas - spent
+            return initialPoints + agilityDelta + weaponMasterDelta - spentOnWPs;
+        }
+    }
+
+    private int WeaponProficienciesPointsForAgility(int agility) => agility * _constants.WeaponProficiencyPointsForAgility;
+
     private int WeaponProficienciesPointsForWeaponMaster(int weaponMaster) =>
         (int)MathHelper.ApplyPolynomialFunction(weaponMaster, _constants.WeaponProficiencyPointsForWeaponMasterCoefs);
 
-    /// <summary>
-    /// Calculates the cost (in proficiency points) of raising a weapon proficiency to the given level,
-    /// based on a polynomial cost function.
-    /// </summary>
     private int WeaponProficiencyCost(int wpf) =>
         (int)MathHelper.ApplyPolynomialFunction(wpf, _constants.WeaponProficiencyCostCoefs);
 
-    /// <summary>
-    /// Calculates additional weapon proficiency points gained from character level progression,
-    /// using a polynomial function.
-    /// </summary>
     private int WeaponProficienciesPointsForLevel(int level) =>
         (int)MathHelper.ApplyPolynomialFunction(level, _constants.WeaponProficiencyPointsForLevelCoefs);
 
-    /// <summary>
-    /// Checks if a skill can be leveled to the requested value based on the corresponding
-    /// attribute requirement rules (e.g., Strength or Agility thresholds).
-    /// </summary>
     private bool CheckSkillRequirement(string skillName, int level) => skillName switch
     {
         "Iron Flesh" => level <= StrengthVm.ItemValue / 3,
@@ -642,10 +747,6 @@ public class CharacterInfoVM : ViewModel
         _ => true,
     };
 
-    /// <summary>
-    /// Validates all skills against their attribute requirements
-    /// and updates their TextStateDisabled accordingly.
-    /// </summary>
     private void ValidateAndUpdateAllSkills()
     {
         foreach (var skill in Skills)
@@ -660,41 +761,20 @@ public class CharacterInfoVM : ViewModel
         }
     }
 
-    private void UpdateWeaponProficiencyTextStates()
-    {
-        bool isValidWpf = ValidateWeaponProficiencyCap();
-
-        InformationManager.DisplayMessage(new InformationMessage($"UpdateWeaponProficiencyTextStates: isValidWpf{isValidWpf}"));
-        foreach (var wp in WeaponProficiencies)
-        {
-            wp.TextStateDisabled = !isValidWpf;
-        }
-    }
-
     /// <summary>
     /// Validates that the total spent weapon proficiency points
     /// does not exceed the maximum possible points available
-    /// based on Agility + Weapon Master + Level.
+    /// based on Agility + Weapon Master.
     /// </summary>
     private bool ValidateWeaponProficiencyCap()
     {
-        int lvlPoints = WeaponProficienciesPointsForLevel(CharacterLevel);
+        int remaining = WeaponProficiencyPointsRemaining;
 
-        int agiAllocated = AgilityVm.ItemValue - _initialCharacteristics.Attributes.Agility;
-        int agiPoints = WeaponProficienciesPointsForAgility(agiAllocated);
-
-        int wmAllocated = (Skills.FirstOrDefault(s => s.ItemLabel == "Weapon Master")?.ItemValue ?? 0)
-                          - _initialCharacteristics.Skills.WeaponMaster;
-        int wmPoints = WeaponProficienciesPointsForWeaponMaster(wmAllocated);
-
-        int maxPoints = lvlPoints + agiPoints + wmPoints;
-
+        // For debugging: show breakdown
         int totalSpent = WeaponProficiencies.Sum(wp => WeaponProficiencyCost(wp.ItemValue));
 
-        InformationManager.DisplayMessage(new InformationMessage(
-            $"WPF Cap -> lvl:{lvlPoints}, agi:{agiPoints}, wm:{wmPoints}, max:{maxPoints}, spent:{totalSpent}"));
-
-        return totalSpent <= maxPoints;
+        // valid if remaining >= 0
+        return remaining >= 0;
     }
 
     [DataSourceProperty]

@@ -66,6 +66,7 @@ public class CrpgMainGuiVM : ViewModel
     public void Tick()
     {
         // Any ViewModel-only updates here
+        // _inventoryVm?.CharacterInfo?.
     }
 
     public override void OnFinalize()
