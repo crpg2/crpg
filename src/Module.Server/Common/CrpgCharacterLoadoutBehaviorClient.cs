@@ -188,7 +188,6 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         UserCharacter = crpgCharacter;
     }
 
-
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
         base.AddRemoveMessageHandlers(registerer);
@@ -201,6 +200,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
     private void OnMyClientSynchronized()
     {
+        InformationManager.DisplayMessage(new InformationMessage("OnMyClientSynchronized:"));
         RequestGetUpdatedEquipmentAndItems();
     }
 

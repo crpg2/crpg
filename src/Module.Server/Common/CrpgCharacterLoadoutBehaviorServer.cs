@@ -452,45 +452,64 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
     }
 
     private void SynchronizeUserTryUpdateCharacteristicsResult(NetworkCommunicator networkPeer, CrpgGameCharacterCharacteristicsUpdateRequest apiRequest,
-        CrpgResult<CrpgCharacterCharacteristics> apiRes)
+    private void SynchronizeUserTryUpdateCharacteristicsResult(
+        NetworkCommunicator networkPeer,
+        CrpgGameCharacterCharacteristicsUpdateRequest apiRequest,
+        CrpgResult<CrpgCharacterCharacteristics>? apiRes) // <-- mark nullable
     {
         if (apiRes == null)
         {
             return;
         }
 
+        string newErrorMessage = string.Empty;
+        bool wasSuccess = true;
+
+        // Safe check for errors
         if (apiRes.Errors == null || apiRes.Errors.Count == 0)
         {
-            Debug.Print($"Characteristics recieved on server");
-            /*
-            GameNetwork.BeginModuleEventAsServer(networkPeer);
-            GameNetwork.WriteMessage(new ServerSendEquipItemResult
+            Debug.Print("Characteristics received on server");
+
+            if (apiRes.Data == null)
             {
-                Success = true,
-                SlotIndex = (int)requestedItem.Slot,
-                UserItemId = userItemId,
+                Debug.Print("Characteristics Data was null");
+                apiRes.Data = new CrpgCharacterCharacteristics(); // create safe default
+                wasSuccess = false;
+                newErrorMessage = "apiRes Data was null";
+            }
+
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new ServerSendUpdateCharacteristicsResult
+            {
+                Success = wasSuccess,
+                Characteristics = apiRes.Data,
+                ErrorMessage = newErrorMessage,
             });
             GameNetwork.EndModuleEventAsServer();
-            */
+            Debug.Print("Characteristics sent to client");
         }
         else
         {
+            // iterate safely
+            if (apiRes.Errors != null)
+            {
+                foreach (var error in apiRes.Errors)
+                {
+                    Debug.Print($"Characteristics failed to update. Error: {error?.Detail}");
+                }
 
-            foreach (var error in apiRes.Errors)
-            {
-                Debug.Print($"Characteristics failed to update. Error: {error.Detail}");
+                var firstError = apiRes.Errors.FirstOrDefault();
+                string errorMessage = firstError?.Detail ?? "Characteristics failed to update";
+
+                GameNetwork.BeginModuleEventAsServer(networkPeer);
+                GameNetwork.WriteMessage(new ServerSendUpdateCharacteristicsResult
+                {
+                    Success = false,
+                    Characteristics = new CrpgCharacterCharacteristics(),
+                    ErrorMessage = errorMessage,
+                });
+                GameNetwork.EndModuleEventAsServer();
             }
-            /*
-            GameNetwork.BeginModuleEventAsServer(networkPeer);
-            GameNetwork.WriteMessage(new ServerSendEquipItemResult
-            {
-                Success = false,
-                SlotIndex = (int)failedSlot,
-                UserItemId = -1,
-                ErrorMessage = apiRes.Errors[0].Detail ?? "Failed to equip/unequip item",
-            });
-            GameNetwork.EndModuleEventAsServer();
-            */
         }
     }
 

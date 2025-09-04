@@ -1,11 +1,19 @@
 using System.Runtime.InteropServices;
 using Crpg.Module.Api.Models.Characters;
 using Crpg.Module.Common;
+using Crpg.Module.Common.Models;
 using Crpg.Module.Helpers;
+using TaleWorlds.CampaignSystem.ComponentInterfaces;
 using TaleWorlds.CampaignSystem.Extensions;
+using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View;
+
+// item rank colors
+// 1 = #4ade80
+// 2 = #60a5fa
+// 3 = #c084fc
 
 namespace Crpg.Module.GUI.Inventory;
 
@@ -24,6 +32,7 @@ public class CharacterInfoVM : ViewModel
     private int _attributePoints;
     private int _weaponProficiencyPoints;
 
+    private UserAndCharacterInfoVM _userAndCharacterInfoVm;
     private MBBindingList<CharacterInfoPlusMinusItemVM> _weaponProficiencies = new();
     private MBBindingList<CharacterInfoPlusMinusItemVM> _skills = new();
     private CharacterInfoPlusMinusItemVM _strengthVm;
@@ -45,11 +54,15 @@ public class CharacterInfoVM : ViewModel
     /// </summary>
     public CharacterInfoVM()
     {
+        /*
         _characterNameText = string.Empty;
         _characterLevel = 0;
         _characterGeneration = 0;
         _characterExperienceText = string.Empty;
         _characterClassText = string.Empty;
+        */
+
+        _userAndCharacterInfoVm = new UserAndCharacterInfoVM();
 
         // Initialize attribute VMs
         _strengthVm = new CharacterInfoPlusMinusItemVM("Strength", 0);
@@ -159,6 +172,9 @@ public class CharacterInfoVM : ViewModel
         }
 
         // Basic info
+        // temp update UserAndCharacterInfoVM here
+        UserAndCharacterInfoVm.UpdateUserAndCharacterInfo();
+
         CharacterNameText = newCharacter.Name;
         CharacterLevel = newCharacter.Level;
         CharacterGeneration = newCharacter.Generation;
@@ -777,6 +793,8 @@ public class CharacterInfoVM : ViewModel
         return remaining >= 0;
     }
 
+
+
     [DataSourceProperty]
     public CharacterInfoConvertItemVM ConvertAttribute
     {
@@ -850,4 +868,7 @@ public class CharacterInfoVM : ViewModel
     public string CharacterExperienceText { get => _characterExperienceText; set => SetField(ref _characterExperienceText, value, nameof(CharacterExperienceText)); }
     [DataSourceProperty]
     public string CharacterClassText { get => _characterClassText; set => SetField(ref _characterClassText, value, nameof(CharacterClassText)); }
+    [DataSourceProperty]
+    public UserAndCharacterInfoVM UserAndCharacterInfoVm { get => _userAndCharacterInfoVm; set => SetField(ref _userAndCharacterInfoVm, value, nameof(UserAndCharacterInfoVm)); }
+
 }

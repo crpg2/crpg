@@ -72,6 +72,11 @@ public class CrpgInventoryViewModel : ViewModel
         set => SetField(ref _characterInfo, value, nameof(CharacterInfo));
     }
 
+    private CharacterInfoBuildEquipStatsVM _characterInfoBuildEquipStatsVm;
+    [DataSourceProperty]
+    public CharacterInfoBuildEquipStatsVM CharacterInfoBuildEquipStatsVm { get => _characterInfoBuildEquipStatsVm; set => SetField(ref _characterInfoBuildEquipStatsVm, value, nameof(CharacterInfoBuildEquipStatsVm)); }
+
+
     [DataSourceProperty]
     public CharacterViewModel CharacterPreview
     {
@@ -92,6 +97,7 @@ public class CrpgInventoryViewModel : ViewModel
         LogDebug("[CrpgInventoryVM] Initializing CrpgInventoryViewModel");
 
         _characterInfo = new CharacterInfoVM();
+        _characterInfoBuildEquipStatsVm = new CharacterInfoBuildEquipStatsVM();
 
         _characterPreview = new CharacterViewModel();
         InventoryGrid = new InventoryGridVM();
@@ -143,7 +149,6 @@ public class CrpgInventoryViewModel : ViewModel
             behavior.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
             behavior.OnUserCharacterBasicUpdated -= HandleUserCharacterBasicUpdated;
             behavior.OnUserCharacteristicsUpdated -= HandleUserCharacteristicsUpdated;
-
         }
     }
 
@@ -170,6 +175,8 @@ public class CrpgInventoryViewModel : ViewModel
         {
             CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
             CalculateArmorFromEquipment(useEquipment);
+            CharacterInfoBuildEquipStatsVm.UpdateCharacterBuildEquipmentStatDisplay();
+
             LogDebug("[CrpgInventoryVM] Refreshed character preview and recalculated armor");
 
             LogDebug("[CrpgInventoryVM] UpdateCharacterInfo() in refreshcharacterpreview");

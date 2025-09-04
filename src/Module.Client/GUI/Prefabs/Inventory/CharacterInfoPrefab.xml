@@ -24,6 +24,8 @@
                     MarginLeft="5" MarginRight="5" MarginTop="10" MarginBottom="10" Spacing="5">
               <Children>
                 <!-- Character General Info--> <!-- Name, Generation, Level, Experience, Class-->
+                <UserAndCharacterInfo DataSource="{UserAndCharacterInfoVm}"/>
+                <!--
                 <BrushWidget Id="CharacterInfo.Frame" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!CharacterInfo.Frame.Width" HorizontalAlignment="Center" VerticalAlignment="Center" SuggestedHeight="!CharacterInfo.Frame.Height" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff" Padding="5,10,5,10">
                   <Children>
                     <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Center" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginTop="5" MarginBottom="5" MarginLeft="5" MarginRight="5" Padding="10">
@@ -62,6 +64,7 @@
                     </ListPanel>
                   </Children>
                 </BrushWidget>
+                --> 
                 <!-- End Character General Info -->
 
                 <!-- Horizontal layout container -->

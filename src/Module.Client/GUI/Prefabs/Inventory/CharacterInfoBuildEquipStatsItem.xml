@@ -1,0 +1,40 @@
+<Prefab Name="CharacterInfoBuildEquipStatsItem">
+
+  <Constants>
+    <Constant Name="Label.Brush" Value="CharacterEdit.Item.Text" />
+    <Constant Name="Value.Brush" Value="CharacterEdit.Value.Text" />
+  </Constants>
+  <Parameters>
+    <Parameter Name="LabelText" DefaultValue="Label" />
+    <Parameter Name="ImgSprite" DefaultValue="" /> <!-- SPGeneral\SPCoin -->
+    <Parameter Name="ValueText" DefaultValue="" />
+  </Parameters> 
+  <Window>   
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center"
+        MarginLeft="5" MarginRight="5">
+      <Children>
+        <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HeightSizePolicy="Fixed" WidthSizePolicy="CoverChildren"
+            HorizontalAlignment="Center" MarginTop="2" MarginBottom="2" MarginLeft="10" MarginRight="10" Spacing="5">
+          <Children>
+          <!-- Left-aligned label -->
+            <TextWidget Text="*LabelText" 
+                WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20"
+                HorizontalAlignment="Left"
+                Brush="!Label.Brush" />
+          <!-- Spacer -->
+            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" />
+
+          <!-- Image if any Right-Aligned-->
+          <!-- <ImageWidget Sprite="*ImgSprite" WidthSizePolicy="Fixed" SuggestedWidth="20" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" VerticalAlignment="Center"  /> -->
+          
+          <!-- Value Right-Aligned-->
+            <TextWidget Text="*ValueText" 
+                WidthSizePolicy="CoverChildren" SuggestedWidth="70" HeightSizePolicy="Fixed" SuggestedHeight="20" 
+                HorizontalAlignment="Right" 
+                Brush="!Value.Brush" />
+          </Children>
+        </ListPanel>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

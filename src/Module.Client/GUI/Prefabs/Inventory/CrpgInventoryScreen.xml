@@ -11,6 +11,8 @@
       <Constant Name="WeaponPanel.Width" Value="110"/>
       <Constant Name="WeaponPanel.Height" Value="400"/>
       <Constant Name="ExtraPanel.Width" Value="600"/>
+      <Constant Name="BuildEquipStatsPanel.Width" Value="200"/>
+      <Constant Name="BuildEquipStatsPanel.Height" Value="600"/>
   </Constants>
   <Window>
     <!-- Main Container -->
@@ -94,6 +96,13 @@
                 <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!InventoryPanel.Width" SuggestedHeight="!InventoryPanel.Height" VerticalAlignment="Center" MarginTop="10" MarginLeft="10" Brush="CrpgInventory.InventoryPanel" >
                   <Children>
                     <InventoryGridPrefab Parameter.NumColumns="6" DataSource="{InventoryGrid}" />
+                  </Children>
+                </Widget>
+
+                <!-- BuildEquipStats -->
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!BuildEquipStatsPanel.Width" SuggestedHeight="!BuildEquipStatsPanel.Height" VerticalAlignment="Center" MarginTop="10" MarginLeft="10" Brush="CrpgInventory.InventoryPanel" >
+                  <Children>
+                    <CharacterInfoBuildEquipStats DataSource="{CharacterInfoBuildEquipStatsVm}" />
                   </Children>
                 </Widget>
               </Children>

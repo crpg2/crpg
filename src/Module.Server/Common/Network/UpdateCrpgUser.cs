@@ -50,6 +50,7 @@ internal sealed class UpdateCrpgUser : GameNetworkMessage
         {
             WriteCharacterToPacket(writer, user.Character);
             WriteClanMemberToPacket(writer, user.ClanMembership);
+            writer.Write(User.Gold);
         }
 
         WriteByteArrayToPacket(stream.ToArray(), 0, (int)stream.Length);
@@ -66,10 +67,12 @@ internal sealed class UpdateCrpgUser : GameNetworkMessage
 
         var character = ReadCharacterFromPacket(reader);
         var clanMember = ReadClanMemberFromPacket(reader);
+        int gold = reader.ReadInt32();
         return new CrpgUser
         {
             Character = character,
             ClanMembership = clanMember,
+            Gold = gold,
         };
     }
 
