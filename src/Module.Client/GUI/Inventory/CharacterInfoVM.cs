@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using Crpg.Module.Api.Models.Characters;
+using Crpg.Module.Api.Models;
 using Crpg.Module.Common;
 using Crpg.Module.Common.Models;
 using Crpg.Module.Helpers;
@@ -251,6 +252,14 @@ public class CharacterInfoVM : ViewModel
         ResetToInitialCharacteristics();
     }
 
+    internal void UpdateCharacteristicsPointsAfterConversion(int attributePoints, int skillPoints)
+    {
+        AttributePoints = attributePoints;
+        SkillPoints = skillPoints;
+        _initialCharacteristics.Attributes.Points = attributePoints;
+        _initialCharacteristics.Skills.Points = skillPoints;
+    }
+
     /// <summary>
     /// Resets the VM to the initial characteristics stored in _initialCharacteristics.
     /// Restores attributes, skills, weapon proficiencies, and available points.
@@ -500,8 +509,10 @@ public class CharacterInfoVM : ViewModel
             // 1 attribute point = 2 skill points
             if (AttributePoints >= 1)
             {
-                AttributePoints--;
-                SkillPoints += 2;
+                var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+                behavior?.RequestConvertCharacterCharacteristic(CrpgGameCharacteristicConversionRequest.AttributesToSkills);
+                // AttributePoints--;
+                // SkillPoints += 2;
             }
         }
         else if (vm.Equals(ConvertSkill))
@@ -509,8 +520,10 @@ public class CharacterInfoVM : ViewModel
             // 2 skill points = 1 attribute point
             if (SkillPoints >= 2)
             {
-                SkillPoints -= 2;
-                AttributePoints++;
+                var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+                behavior?.RequestConvertCharacterCharacteristic(CrpgGameCharacteristicConversionRequest.SkillsToAttributes);
+                // SkillPoints -= 2;
+                // AttributePoints++;
             }
         }
 
@@ -793,8 +806,6 @@ public class CharacterInfoVM : ViewModel
         return remaining >= 0;
     }
 
-
-
     [DataSourceProperty]
     public CharacterInfoConvertItemVM ConvertAttribute
     {
@@ -870,5 +881,4 @@ public class CharacterInfoVM : ViewModel
     public string CharacterClassText { get => _characterClassText; set => SetField(ref _characterClassText, value, nameof(CharacterClassText)); }
     [DataSourceProperty]
     public UserAndCharacterInfoVM UserAndCharacterInfoVm { get => _userAndCharacterInfoVm; set => SetField(ref _userAndCharacterInfoVm, value, nameof(UserAndCharacterInfoVm)); }
-
 }

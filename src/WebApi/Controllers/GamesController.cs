@@ -1,5 +1,6 @@
 using Crpg.Application.ActivityLogs.Commands;
 using Crpg.Application.ActivityLogs.Models;
+using Crpg.Application.Characters.Commands;
 using Crpg.Application.Characters.Models;
 using Crpg.Application.Clans.Models;
 using Crpg.Application.Clans.Queries;
@@ -13,8 +14,10 @@ using Crpg.Application.Restrictions.Commands;
 using Crpg.Application.Restrictions.Models;
 using Crpg.Domain.Entities;
 using Crpg.Domain.Entities.Users;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace Crpg.WebApi.Controllers;
 
@@ -87,6 +90,27 @@ public class GamesController : BaseController
             UserId = userId,
             CharacterId = characterId,
             Characteristics = cmd.Characteristics,
+        }));
+
+    /// <summary>
+    /// Convert character characteristics for the current user.
+    /// </summary>
+    /// <param name="userId">User id.</param>
+    /// <param name="characterId">Character id.</param>
+    /// <param name="conversion">Conversion.</param>
+    /// <returns>The updated character characteristics.</returns>
+    /// <response code="200">Conversion performed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpPut("users/{userId}/characters/{characterId}/characteristics/convert")]
+    public Task<ActionResult<Result<CharacterCharacteristicsViewModel>>> GameConvertCharacterCharacteristics(
+        [FromRoute] int userId,
+        [FromRoute] int characterId,
+        [FromBody] CharacterCharacteristicConversion conversion) =>
+        ResultToActionAsync(Mediator.Send(new GameConvertCharacterCharacteristicsCommand
+        {
+            UserId = userId,
+            CharacterId = characterId,
+            Conversion = conversion,
         }));
 
     /// <summary>

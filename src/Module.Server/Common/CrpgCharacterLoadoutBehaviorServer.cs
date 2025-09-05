@@ -33,6 +33,7 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         registerer.Register<UserRequestEquipCharacterItem>(HandleUserRequestEquipCharacterItem);
         registerer.Register<UserRequestGetCharacterBasic>(HandleUserRequestGetCharacterBasic);
         registerer.Register<UserRequestUpdateCharacterCharacteristics>(HandleUserRequestUpdateCharacterCharacteristics);
+        registerer.Register<UserRequestConvertCharacteristics>(HandleUserRequestConvertCharacteristics);
     }
 
     /// <summary>
@@ -81,6 +82,47 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
 
         _ = TryUpdateCharacterCharacteristicsAsync(networkPeer, apiRequest);
         return true;
+    }
+
+    private bool HandleUserRequestConvertCharacteristics(NetworkCommunicator networkPeer, UserRequestConvertCharacteristics message)
+    {
+        Debug.Print("HandleUserRequestConvertCharacteristics");
+
+        var apiRequest = message.ConversionRequest;
+        _ = TryConvertCharacterCharacteristicsAsync(networkPeer, apiRequest);
+        return true;
+    }
+
+    private async Task TryConvertCharacterCharacteristicsAsync(NetworkCommunicator networkPeer, CrpgGameCharacteristicConversionRequest apiRequest)
+    {
+        try
+        {
+            var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+            var crpgUser = crpgPeer?.User;
+            var crpgCharacter = crpgUser?.Character;
+
+            if (crpgUser == null || crpgCharacter == null)
+            {
+                Debug.Print($"[TryConvertCharacterCharacteristicsAsync] No user/character data found for peer {networkPeer.UserName}");
+                return;
+            }
+
+            if (apiRequest.Equals == null)
+            {
+                Debug.Print("[TryConvertCharacterCharacteristicsAsync] No Conversion provided in the request");
+                return;
+            }
+
+            // Send the request to the API
+            var apiRes = await _crpgClient.ConvertCharacterCharacteristicsAsync(crpgUser.Id, crpgCharacter.Id, apiRequest);
+
+            // Send respones to the Client
+            SynchronizeUserTryConverCharacteristicsResult(networkPeer, apiRequest, apiRes);
+        }
+        catch (Exception ex)
+        {
+            Debug.Print($"[TryConvertCharacterCharacteristicsAsync] Exception for peer {networkPeer.UserName}: {ex}");
+        }
     }
 
     private async Task TryUpdateCharacterCharacteristicsAsync(NetworkCommunicator networkPeer, CrpgGameCharacterCharacteristicsUpdateRequest apiRequest)
@@ -451,7 +493,66 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
     }
 
-    private void SynchronizeUserTryUpdateCharacteristicsResult(NetworkCommunicator networkPeer, CrpgGameCharacterCharacteristicsUpdateRequest apiRequest,
+    private void SynchronizeUserTryConverCharacteristicsResult(NetworkCommunicator networkPeer, CrpgGameCharacteristicConversionRequest crpgCharacter,
+         CrpgResult<CrpgCharacterCharacteristics>? apiRes)
+    {
+        if (apiRes == null)
+        {
+            return;
+        }
+
+        string newErrorMessage = string.Empty;
+        bool wasSuccess = true;
+
+        if (apiRes.Errors == null || apiRes.Errors.Count == 0)
+        {
+            Debug.Print("Conversion Result Characterists recieved on server.");
+
+            if (apiRes.Data == null)
+            {
+                Debug.Print("Characteristics Data was null");
+                apiRes.Data = new CrpgCharacterCharacteristics(); // create safe default
+                wasSuccess = false;
+                newErrorMessage = "apiRes Data was null";
+            }
+
+            GameNetwork.BeginModuleEventAsServer(networkPeer);
+            GameNetwork.WriteMessage(new ServerSendConvertCharacteristicsResult
+            {
+                Success = wasSuccess,
+                AttributesPoints = apiRes.Data.Attributes.Points,
+                SkillPoints = apiRes.Data.Skills.Points,
+                ErrorMessage = newErrorMessage,
+            });
+            GameNetwork.EndModuleEventAsServer();
+            Debug.Print("Converted AttributePoints and SkillPoints sent to client");
+        }
+        else
+        {
+            // iterate safely
+            if (apiRes.Errors != null)
+            {
+                foreach (var error in apiRes.Errors)
+                {
+                    Debug.Print($"Converting points of Characteristics failed. Error: {error?.Detail}");
+                }
+
+                var firstError = apiRes.Errors.FirstOrDefault();
+                string errorMessage = firstError?.Detail ?? "Converting points of Characteristics failed";
+
+                GameNetwork.BeginModuleEventAsServer(networkPeer);
+                GameNetwork.WriteMessage(new ServerSendConvertCharacteristicsResult
+                {
+                    Success = wasSuccess,
+                    AttributesPoints = -1, // -1 will mean failed i guess
+                    SkillPoints = -1,
+                    ErrorMessage = errorMessage,
+                });
+                GameNetwork.EndModuleEventAsServer();
+            }
+        }
+    }
+
     private void SynchronizeUserTryUpdateCharacteristicsResult(
         NetworkCommunicator networkPeer,
         CrpgGameCharacterCharacteristicsUpdateRequest apiRequest,

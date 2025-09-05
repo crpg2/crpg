@@ -41,4 +41,8 @@ internal interface ICrpgClient : IDisposable
     Task<CrpgResult<CrpgCharacterCharacteristics>> UpdateCharacterCharacteristicsAsync(int userId, int characterId,
         CrpgGameCharacterCharacteristicsUpdateRequest req,
         CancellationToken cancellationToken = default);
+
+    Task<CrpgResult<CrpgCharacterCharacteristics>> ConvertCharacterCharacteristicsAsync(int userId, int characterId,
+        CrpgGameCharacteristicConversionRequest req,
+        CancellationToken cancellationToken = default);
 }

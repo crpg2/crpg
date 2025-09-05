@@ -76,7 +76,6 @@ public class CrpgInventoryViewModel : ViewModel
     [DataSourceProperty]
     public CharacterInfoBuildEquipStatsVM CharacterInfoBuildEquipStatsVm { get => _characterInfoBuildEquipStatsVm; set => SetField(ref _characterInfoBuildEquipStatsVm, value, nameof(CharacterInfoBuildEquipStatsVm)); }
 
-
     [DataSourceProperty]
     public CharacterViewModel CharacterPreview
     {
@@ -135,6 +134,7 @@ public class CrpgInventoryViewModel : ViewModel
             behavior.OnUserCharacterEquippedItemsUpdated += HandleEquippedItemsUpdated;
             behavior.OnUserCharacterBasicUpdated += HandleUserCharacterBasicUpdated;
             behavior.OnUserCharacteristicsUpdated += HandleUserCharacteristicsUpdated;
+            behavior.OnUserCharacteristicsConverted += HandleUserCharacteristicsConverted;
         }
     }
 
@@ -149,6 +149,7 @@ public class CrpgInventoryViewModel : ViewModel
             behavior.OnUserCharacterEquippedItemsUpdated -= HandleEquippedItemsUpdated;
             behavior.OnUserCharacterBasicUpdated -= HandleUserCharacterBasicUpdated;
             behavior.OnUserCharacteristicsUpdated -= HandleUserCharacteristicsUpdated;
+            behavior.OnUserCharacteristicsConverted -= HandleUserCharacteristicsConverted;
         }
     }
 
@@ -449,6 +450,24 @@ public class CrpgInventoryViewModel : ViewModel
 
         CharacterInfo.SetInitialCharacteristics(behavior.UserCharacter.Characteristics);
         LogDebug("[CrpgInventoryVm] Updated CHaracterInfoVM with new characteristics");
+    }
+
+    private void HandleUserCharacteristicsConverted()
+    {
+        LogDebug("[CrpgInventoryVM] HandleUserCharacteristicsConverted called");
+
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (behavior == null)
+        {
+            LogDebug("[CrpgInventoryVM] No CrpgCharacterLoadoutBehaviorClient found");
+            return;
+        }
+
+        CharacterInfo.UpdateCharacteristicsPointsAfterConversion(
+            behavior.UserCharacter.Characteristics.Attributes.Points,
+            behavior.UserCharacter.Characteristics.Skills.Points);
+
+        LogDebug("[CrpgInventoryVM] HandleUserCharacteristicsConverted finished.");
     }
 
     private void InitializeCharacterPreview()

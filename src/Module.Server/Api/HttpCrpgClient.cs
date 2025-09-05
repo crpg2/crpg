@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
+using TaleWorlds.Core;
 using TaleWorlds.Library;
 using Platform = Crpg.Module.Api.Models.Users.Platform;
 
@@ -95,6 +96,11 @@ internal class HttpCrpgClient : ICrpgClient
     public Task<CrpgResult<CrpgCharacterCharacteristics>> UpdateCharacterCharacteristicsAsync(int userId, int characterId, CrpgGameCharacterCharacteristicsUpdateRequest req, CancellationToken cancellationToken = default)
     {
         return Put<CrpgGameCharacterCharacteristicsUpdateRequest, CrpgCharacterCharacteristics>("games/users/" + userId + "/characters/" + characterId + "/characteristics", req, cancellationToken);
+    }
+
+    public Task<CrpgResult<CrpgCharacterCharacteristics>> ConvertCharacterCharacteristicsAsync(int userId, int characterId, CrpgGameCharacteristicConversionRequest req, CancellationToken cancellationToken = default)
+    {
+        return Put<CrpgGameCharacteristicConversionRequest, CrpgCharacterCharacteristics>("games/users/" + userId + "/characters/" + characterId + "/characteristics/convert", req, cancellationToken);
     }
 
     public Task<CrpgResult<IList<CrpgEquippedItemExtended>>> GetCharacterEquippedItemsAsync(int userId, int characterId,

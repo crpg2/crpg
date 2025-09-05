@@ -35,6 +35,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     internal event Action? OnUserCharacterEquippedItemsUpdated;
     internal event Action? OnUserCharacterBasicUpdated;
     internal event Action? OnUserCharacteristicsUpdated;
+    internal event Action? OnUserCharacteristicsConverted;
     internal event Action<CrpgItemSlot>? OnSlotUpdated;
 
     public override void OnBehaviorInitialize()
@@ -123,6 +124,16 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         GameNetwork.EndModuleEventAsClient();
     }
 
+    internal void RequestConvertCharacterCharacteristic(CrpgGameCharacteristicConversionRequest conversionType)
+    {
+        GameNetwork.BeginModuleEventAsClient();
+        GameNetwork.WriteMessage(new UserRequestConvertCharacteristics
+        {
+            ConversionRequest = conversionType,
+        });
+        GameNetwork.EndModuleEventAsClient();
+    }
+
     /// <summary>
     /// Replaces the current list of equipped items with the given items.
     /// </summary>
@@ -196,6 +207,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         registerer.Register<ServerSendEquipItemResult>(HandleEquipItemResult); // recieve result of attempt to equip item in slot on api from server
         registerer.Register<ServerSendUserCharacterBasic>(HandleUpdateCrpgUserCharacterBasic); // recieve character basic from server
         registerer.Register<ServerSendUpdateCharacteristicsResult>(HandleUpdateCharacteristicsResult); // recieve result of attempt to update character characteristics on api from server
+        registerer.Register<ServerSendConvertCharacteristicsResult>(HandleConvertCharacteristicsResult);
     }
 
     private void OnMyClientSynchronized()
@@ -339,6 +351,27 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         UISoundsHelper.PlayUISound("event:/ui/panels/upgrade");
         // Trigger event for gui to listen to to know to update
         OnUserCharacteristicsUpdated?.Invoke();
+
+    }
+
+    private void HandleConvertCharacteristicsResult(ServerSendConvertCharacteristicsResult message)
+    {
+        if (!message.Success)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"Convert Characteristics Failed: {message.ErrorMessage}"));
+            return;
+        }
+
+        if (message.AttributesPoints < 0 || message.SkillPoints < 0)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"Convert Characteristics Failed: AttributePoints or SkillPoints < 0"));
+            return;
+        }
+
+        UserCharacter.Characteristics.Attributes.Points = message.AttributesPoints;
+        UserCharacter.Characteristics.Skills.Points = message.SkillPoints;
+
+        OnUserCharacteristicsConverted?.Invoke();
 
     }
 }
