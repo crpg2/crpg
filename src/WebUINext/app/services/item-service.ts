@@ -37,14 +37,14 @@ import { cultureToIcon } from './culture-service'
 import { getAggregationsConfig, getVisibleAggregationsConfig } from './item-search-service'
 import { aggregationsConfig } from './item-search-service/aggregations'
 
-export const getItems = async (): Promise<Item[]> => (await _getItems({ composable: '$fetch' })).data!
+export const getItems = async (): Promise<Item[]> => (await _getItems({ })).data!
 
 export const extractItem = <T extends { item: Item }>(wrapper: T): Item => wrapper.item
 
 export const getItemImage = (baseId: string) => `/items/${baseId}.webp`
 
 export const getItemUpgrades = async (baseId: string): Promise<ItemFlat[]> => {
-  const { data } = await getItemsUpgradesByBaseId({ composable: '$fetch', path: { baseId } })
+  const { data } = await getItemsUpgradesByBaseId({ path: { baseId } })
   // console.log('data', createItemIndex(data! as Item[]))
 
   return createItemIndex(data! as Item[])

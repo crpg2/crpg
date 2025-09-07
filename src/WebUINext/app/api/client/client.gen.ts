@@ -8,7 +8,9 @@ import {
 } from 'nuxt/app';
 import { reactive, ref, watch } from 'vue';
 
-import type { Client, Config } from './types.gen';
+import { createSseClient } from '../core/serverSentEvents.gen';
+import type { HttpMethod } from '../core/types.gen';
+import type { Client, Config, RequestOptions } from './types.gen';
 import {
   buildUrl,
   createConfig,
@@ -18,6 +20,7 @@ import {
   mergeInterceptors,
   serializeBody,
   setAuthParams,
+  unwrapRefs,
 } from './utils.gen';
 
 export const createClient = (config: Config = {}): Client => {
@@ -30,9 +33,35 @@ export const createClient = (config: Config = {}): Client => {
     return getConfig();
   };
 
+  const beforeRequest = async (options: RequestOptions) => {
+    const opts = {
+      ..._config,
+      ...options,
+      $fetch: options.$fetch ?? _config.$fetch ?? $fetch,
+      headers: mergeHeaders(_config.headers, options.headers),
+      onRequest: mergeInterceptors(_config.onRequest, options.onRequest),
+      onResponse: mergeInterceptors(_config.onResponse, options.onResponse),
+    };
+
+    if (opts.security) {
+      await setAuthParams({
+        ...opts,
+        security: opts.security,
+      });
+    }
+
+    if (opts.requestValidator) {
+      await opts.requestValidator(opts);
+    }
+
+    const url = buildUrl(opts);
+
+    return { opts, url };
+  };
+
   const request: Client['request'] = ({
     asyncDataOptions,
-    composable,
+    composable = '$fetch',
     ...options
   }) => {
     const key = options.key;
@@ -67,7 +96,11 @@ export const createClient = (config: Config = {}): Client => {
           }
 
           if (requestValidator) {
-            await requestValidator(options);
+            await requestValidator({
+              ...options,
+              // @ts-expect-error
+              body: options.rawBody,
+            });
           }
         },
         ...opts.onRequest,
@@ -105,10 +138,15 @@ export const createClient = (config: Config = {}): Client => {
     const fetchFn = opts.$fetch;
 
     if (composable === '$fetch') {
-      return executeFetchFn(opts, fetchFn);
+      return executeFetchFn(
+        // @ts-expect-error
+        opts,
+        fetchFn,
+      );
     }
 
     if (composable === 'useFetch' || composable === 'useLazyFetch') {
+      opts.rawBody = opts.body;
       const bodyParams = reactive({
         body: opts.body,
         bodySerializer: opts.bodySerializer,
@@ -123,7 +161,12 @@ export const createClient = (config: Config = {}): Client => {
         : useFetch(() => buildUrl(opts), opts);
     }
 
-    const handler: any = () => executeFetchFn(opts, fetchFn);
+    const handler: any = () =>
+      executeFetchFn(
+        // @ts-expect-error
+        opts,
+        fetchFn,
+      );
 
     if (composable === 'useAsyncData') {
       return key
@@ -140,19 +183,47 @@ export const createClient = (config: Config = {}): Client => {
     return undefined as any;
   };
 
+  const makeMethodFn =
+    (method: Uppercase<HttpMethod>) => (options: RequestOptions) =>
+      request({ ...options, method });
+
+  const makeSseFn =
+    (method: Uppercase<HttpMethod>) => async (options: RequestOptions) => {
+      const { opts, url } = await beforeRequest(options);
+      return createSseClient({
+        ...unwrapRefs(opts),
+        body: opts.body as BodyInit | null | undefined,
+        method,
+        onRequest: undefined,
+        signal: unwrapRefs(opts.signal) as AbortSignal,
+        url,
+      });
+    };
+
   return {
     buildUrl,
-    connect: (options) => request({ ...options, method: 'CONNECT' }),
-    delete: (options) => request({ ...options, method: 'DELETE' }),
-    get: (options) => request({ ...options, method: 'GET' }),
+    connect: makeMethodFn('CONNECT'),
+    delete: makeMethodFn('DELETE'),
+    get: makeMethodFn('GET'),
     getConfig,
-    head: (options) => request({ ...options, method: 'HEAD' }),
-    options: (options) => request({ ...options, method: 'OPTIONS' }),
-    patch: (options) => request({ ...options, method: 'PATCH' }),
-    post: (options) => request({ ...options, method: 'POST' }),
-    put: (options) => request({ ...options, method: 'PUT' }),
+    head: makeMethodFn('HEAD'),
+    options: makeMethodFn('OPTIONS'),
+    patch: makeMethodFn('PATCH'),
+    post: makeMethodFn('POST'),
+    put: makeMethodFn('PUT'),
     request,
     setConfig,
-    trace: (options) => request({ ...options, method: 'TRACE' }),
-  };
+    sse: {
+      connect: makeSseFn('CONNECT'),
+      delete: makeSseFn('DELETE'),
+      get: makeSseFn('GET'),
+      head: makeSseFn('HEAD'),
+      options: makeSseFn('OPTIONS'),
+      patch: makeSseFn('PATCH'),
+      post: makeSseFn('POST'),
+      put: makeSseFn('PUT'),
+      trace: makeSseFn('TRACE'),
+    },
+    trace: makeMethodFn('TRACE'),
+  } as Client;
 };

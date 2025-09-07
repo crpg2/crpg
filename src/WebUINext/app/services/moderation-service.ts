@@ -11,7 +11,7 @@ interface RewardUser {
 export const rewardUser = (
   userId: number,
   payload: RewardUser,
-) => putUsersByIdRewards({ composable: '$fetch', path: { id: userId }, body: payload })
+) => putUsersByIdRewards({ path: { id: userId }, body: payload })
 
 interface RewardCharacter {
   experience: number
@@ -21,4 +21,4 @@ export const rewardCharacter = (
   userId: number,
   characterId: number,
   payload: RewardCharacter,
-) => putUsersByUserIdCharactersByCharacterIdRewards({ composable: '$fetch', path: { userId, characterId }, body: payload })
+) => putUsersByUserIdCharactersByCharacterIdRewards({ path: { userId, characterId }, body: payload })

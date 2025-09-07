@@ -38,21 +38,20 @@ const mapRestrictions = (restrictions: RestrictionViewModel[]): UserRestriction[
   })
 }
 
-export const getRestrictions = async (): Promise<UserRestriction[]> => {
-  const { data } = await _getRestrictions({ composable: '$fetch' })
-  return mapRestrictions(data!)
-}
+export const getRestrictions = async (): Promise<UserRestriction[]> =>
+  mapRestrictions((await _getRestrictions({ })).data!)
 
-export const getUserRestrictions = async (id: number): Promise<UserRestriction[]> => {
-  const { data } = await getUsersByIdRestrictions({ composable: '$fetch', path: { id } })
-  return mapRestrictions(data!)
-}
+export const getUserRestrictions = async (id: number): Promise<UserRestriction[]> =>
+  mapRestrictions((await getUsersByIdRestrictions({ path: { id } })).data!)
 
-export const restrictUser = (restriction: UserRestrictionCreation) => postRestrictions({ composable: '$fetch', body: restriction })
+export const restrictUser = (restriction: UserRestrictionCreation) =>
+  postRestrictions({ body: restriction })
 
-export const updateUserNote = (userId: number, note: string) => putUsersByUserIdNote({ composable: '$fetch', path: { userId }, body: { note } })
+export const updateUserNote = (userId: number, note: string) =>
+  putUsersByUserIdNote({ path: { userId }, body: { note } })
 
-export const getUserById = async (userId: number): Promise<UserPrivate> => (await getUsersByUserId({ composable: '$fetch', path: { userId } })).data
+export const getUserById = async (userId: number): Promise<UserPrivate> =>
+  (await getUsersByUserId({ path: { userId } })).data
 
 interface UserSearchQuery {
   name?: string
@@ -60,4 +59,5 @@ interface UserSearchQuery {
   platformUserId?: string
 }
 
-export const searchUser = async (query: UserSearchQuery): Promise<UserPublic[]> => (await getUsersSearch({ composable: '$fetch', query })).data!
+export const searchUser = async (query: UserSearchQuery): Promise<UserPublic[]> =>
+  (await getUsersSearch({ query })).data!

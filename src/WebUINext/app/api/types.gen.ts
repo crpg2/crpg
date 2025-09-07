@@ -1345,6 +1345,359 @@ export type WeaponClass = 'Undefined' | 'Dagger' | 'OneHandedSword' | 'TwoHanded
 
 export type WeaponFlags = 'MeleeWeapon' | 'RangedWeapon' | 'FirearmAmmo' | 'NotUsableWithOneHand' | 'NotUsableWithTwoHand' | 'WideGrip' | 'AttachAmmoToVisual' | 'Consumable' | 'HasHitPoints' | 'HasString' | 'StringHeldByHand' | 'UnloadWhenSheathed' | 'AffectsArea' | 'AffectsAreaBig' | 'Burning' | 'BonusAgainstShield' | 'CanPenetrateShield' | 'CantReloadOnHorseback' | 'AutoReload' | 'TwoHandIdleOnMount' | 'NoBlood' | 'PenaltyWithShield' | 'CanDismount' | 'CanHook' | 'CanKnockDown' | 'CanCrushThrough' | 'CanBlockRanged' | 'MissileWithPhysics' | 'MultiplePenetration' | 'LeavesTrail' | 'UseHandAsThrowBase' | 'AmmoBreaksOnBounceBack' | 'AmmoCanBreakOnBounceBack' | 'AmmoSticksWhenShot' | 'CanReloadOnHorseback' | 'CantUseOnHorseback';
 
+export type ActivityLogViewModelIListResultWritable = {
+    data: Array<ActivityLogViewModel> | null;
+};
+
+export type ActivityLogWithDictViewModelResultWritable = {
+    data: ActivityLogWithDictViewModel;
+};
+
+export type BattleDetailedViewModelIListResultWritable = {
+    data: Array<BattleDetailedViewModel> | null;
+};
+
+export type BattleFighterApplicationViewModelIListResultWritable = {
+    data: Array<BattleFighterApplicationViewModel> | null;
+};
+
+export type BattleFighterApplicationViewModelResultWritable = {
+    data: BattleFighterApplicationViewModel;
+};
+
+export type BattleFighterViewModelIListResultWritable = {
+    data: Array<BattleFighterViewModel> | null;
+};
+
+export type BattleMercenaryApplicationViewModelIListResultWritable = {
+    data: Array<BattleMercenaryApplicationViewModel> | null;
+};
+
+export type BattleMercenaryApplicationViewModelResultWritable = {
+    data: BattleMercenaryApplicationViewModel;
+};
+
+export type BattleMercenaryViewModelIListResultWritable = {
+    data: Array<BattleMercenaryViewModel> | null;
+};
+
+export type BattleViewModelResultWritable = {
+    data: BattleViewModel;
+};
+
+export type CharacterCharacteristicsViewModelResultWritable = {
+    data: CharacterCharacteristicsViewModel;
+};
+
+export type CharacterLimitationsViewModelResultWritable = {
+    data: CharacterLimitationsViewModel;
+};
+
+export type CharacterPublicCompetitiveViewModelIListResultWritable = {
+    data: Array<CharacterPublicCompetitiveViewModel> | null;
+};
+
+export type CharacterViewModelIListResultWritable = {
+    data: Array<CharacterViewModel> | null;
+};
+
+export type CharacterViewModelResultWritable = {
+    data: CharacterViewModel;
+};
+
+export type ClanArmoryBorrowedItemViewModelResultWritable = {
+    data: ClanArmoryBorrowedItemViewModel;
+};
+
+export type ClanArmoryItemViewModelIListResultWritable = {
+    data: Array<ClanArmoryItemViewModel> | null;
+};
+
+export type ClanArmoryItemViewModelResultWritable = {
+    data: ClanArmoryItemViewModel;
+};
+
+export type ClanInvitationViewModelIListResultWritable = {
+    data: Array<ClanInvitationViewModel> | null;
+};
+
+export type ClanInvitationViewModelResultWritable = {
+    data: ClanInvitationViewModel;
+};
+
+export type ClanMemberViewModelIListResultWritable = {
+    data: Array<ClanMemberViewModel> | null;
+};
+
+export type ClanMemberViewModelResultWritable = {
+    data: ClanMemberViewModel;
+};
+
+export type ClanViewModelResultWritable = {
+    data: ClanViewModel;
+};
+
+export type ClanWithMemberCountViewModelIListResultWritable = {
+    data: Array<ClanWithMemberCountViewModel> | null;
+};
+
+export type CoordinateWritable = {
+    x: number;
+    y: number;
+    z: number;
+    m: number;
+    coordinateValue: CoordinateWritable;
+};
+
+export type CoordinateSequenceWritable = {
+    ordinates: Ordinates;
+    first: CoordinateWritable;
+    last: CoordinateWritable;
+};
+
+export type EnvelopeWritable = {
+    centre: CoordinateWritable;
+};
+
+export type EquippedItemViewModelIListResultWritable = {
+    data: Array<EquippedItemViewModel> | null;
+};
+
+export type GameModeCharacterStatisticsViewModelDictionaryResultWritable = {
+    data: {
+        CRPGBattle: CharacterStatisticsViewModel;
+        CRPGConquest: CharacterStatisticsViewModel;
+        CRPGDTV: CharacterStatisticsViewModel;
+        CRPGDuel: CharacterStatisticsViewModel;
+        CRPGSiege: CharacterStatisticsViewModel;
+        CRPGTeamDeathmatch: CharacterStatisticsViewModel;
+        CRPGSkirmish: CharacterStatisticsViewModel;
+        CRPGUnknownGameMode: CharacterStatisticsViewModel;
+        CRPGCaptain: CharacterStatisticsViewModel;
+    } | null;
+};
+
+export type GameServerStatsResultWritable = {
+    data: GameServerStats;
+};
+
+export type GameUserViewModelResultWritable = {
+    data: GameUserViewModel;
+};
+
+export type GeometryWritable = {
+    factory: GeometryFactoryWritable;
+    userData?: unknown;
+    srid: number;
+    ogcGeometryType: OgcGeometryType;
+    precisionModel: PrecisionModelWritable;
+    coordinate: CoordinateWritable;
+    centroid: PointWritable;
+    interiorPoint: PointWritable;
+    pointOnSurface: PointWritable;
+    dimension: Dimension;
+    boundary: GeometryWritable;
+    boundaryDimension: Dimension;
+    envelope: GeometryWritable;
+    envelopeInternal: EnvelopeWritable;
+};
+
+export type GeometryFactoryWritable = {
+    precisionModel: PrecisionModelWritable;
+    coordinateSequenceFactory: CoordinateSequenceFactory;
+    geometryServices: NtsGeometryServicesWritable;
+};
+
+export type ItemStackIListResultWritable = {
+    data: Array<ItemStack> | null;
+};
+
+export type ItemStackResultWritable = {
+    data: ItemStack;
+};
+
+export type ItemViewModelIListResultWritable = {
+    data: Array<ItemViewModel> | null;
+};
+
+export type LineStringWritable = {
+    factory: GeometryFactoryWritable;
+    userData?: unknown;
+    srid: number;
+    precisionModel: PrecisionModelWritable;
+    centroid: PointWritable;
+    interiorPoint: PointWritable;
+    pointOnSurface: PointWritable;
+    envelope: GeometryWritable;
+    envelopeInternal: EnvelopeWritable;
+    coordinateSequence: CoordinateSequenceWritable;
+    coordinate: CoordinateWritable;
+    dimension: Dimension;
+    boundaryDimension: Dimension;
+    startPoint: PointWritable;
+    endPoint: PointWritable;
+    ogcGeometryType: OgcGeometryType;
+    boundary: GeometryWritable;
+};
+
+export type LinearRingWritable = {
+    factory: GeometryFactoryWritable;
+    userData?: unknown;
+    srid: number;
+    precisionModel: PrecisionModelWritable;
+    centroid: PointWritable;
+    interiorPoint: PointWritable;
+    pointOnSurface: PointWritable;
+    envelope: GeometryWritable;
+    envelopeInternal: EnvelopeWritable;
+    coordinateSequence: CoordinateSequenceWritable;
+    coordinate: CoordinateWritable;
+    dimension: Dimension;
+    startPoint: PointWritable;
+    endPoint: PointWritable;
+    ogcGeometryType: OgcGeometryType;
+    boundary: GeometryWritable;
+    boundaryDimension: Dimension;
+};
+
+export type NtsGeometryServicesWritable = {
+    geometryOverlay: GeometryOverlay;
+    coordinateEqualityComparer: CoordinateEqualityComparer;
+    defaultCoordinateSequenceFactory: CoordinateSequenceFactory;
+    defaultPrecisionModel: PrecisionModelWritable;
+};
+
+export type PartyViewModelResultWritable = {
+    data: PartyViewModel;
+};
+
+export type PatchNotesIListResultWritable = {
+    data: Array<PatchNotes> | null;
+};
+
+export type PointWritable = {
+    factory: GeometryFactoryWritable;
+    userData?: unknown;
+    srid: number;
+    precisionModel: PrecisionModelWritable;
+    centroid: PointWritable;
+    interiorPoint: PointWritable;
+    pointOnSurface: PointWritable;
+    envelope: GeometryWritable;
+    envelopeInternal: EnvelopeWritable;
+    coordinateSequence: CoordinateSequenceWritable;
+    dimension: Dimension;
+    boundaryDimension: Dimension;
+    x: number;
+    y: number;
+    coordinate: CoordinateWritable;
+    ogcGeometryType: OgcGeometryType;
+    boundary: GeometryWritable;
+    z: number;
+    m: number;
+};
+
+export type PolygonWritable = {
+    factory: GeometryFactoryWritable;
+    userData?: unknown;
+    srid: number;
+    precisionModel: PrecisionModelWritable;
+    centroid: PointWritable;
+    interiorPoint: PointWritable;
+    pointOnSurface: PointWritable;
+    envelope: GeometryWritable;
+    envelopeInternal: EnvelopeWritable;
+    coordinate: CoordinateWritable;
+    dimension: Dimension;
+    boundaryDimension: Dimension;
+    exteriorRing: LineStringWritable;
+    ogcGeometryType: OgcGeometryType;
+    boundary: GeometryWritable;
+    shell: LinearRingWritable;
+    holes?: Array<LinearRingWritable> | null;
+};
+
+export type PrecisionModelWritable = {
+    scale: number;
+    precisionModelType: PrecisionModels;
+};
+
+export type RestrictionPublicViewModelResultWritable = {
+    data: RestrictionPublicViewModel;
+};
+
+export type RestrictionViewModelIListResultWritable = {
+    data: Array<RestrictionViewModel> | null;
+};
+
+export type RestrictionViewModelResultWritable = {
+    data: RestrictionViewModel;
+};
+
+export type SettingsViewModelResultWritable = {
+    data: SettingsViewModel;
+};
+
+export type SettlementPublicViewModelIListResultWritable = {
+    data: Array<SettlementPublicViewModel> | null;
+};
+
+export type SettlementPublicViewModelResultWritable = {
+    data: SettlementPublicViewModel;
+};
+
+export type StrategusUpdateResultWritable = {
+    data: StrategusUpdate;
+};
+
+export type TerrainViewModelIListResultWritable = {
+    data: Array<TerrainViewModel> | null;
+};
+
+export type TerrainViewModelResultWritable = {
+    data: TerrainViewModel;
+};
+
+export type UpdateGameUsersResultResultWritable = {
+    data: UpdateGameUsersResult;
+};
+
+export type UserClanViewModelResultWritable = {
+    data: UserClanViewModel;
+};
+
+export type UserItemViewModelIListResultWritable = {
+    data: Array<UserItemViewModel> | null;
+};
+
+export type UserItemViewModelResultWritable = {
+    data: UserItemViewModel;
+};
+
+export type UserNotificationViewModelResultWritable = {
+    data: UserNotificationViewModel;
+};
+
+export type UserNotificationsWithDictViewModelResultWritable = {
+    data: UserNotificationsWithDictViewModel;
+};
+
+export type UserPrivateViewModelArrayResultWritable = {
+    data: Array<UserPrivateViewModel> | null;
+};
+
+export type UserPrivateViewModelIListResultWritable = {
+    data: Array<UserPrivateViewModel> | null;
+};
+
+export type UserPrivateViewModelResultWritable = {
+    data: UserPrivateViewModel;
+};
+
+export type UserViewModelResultWritable = {
+    data: UserViewModel;
+};
+
 export type GetActivityLogsData = {
     body?: never;
     path?: never;

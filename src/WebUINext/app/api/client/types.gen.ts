@@ -13,6 +13,10 @@ import type { Ref } from 'vue';
 import type { Auth } from '../core/auth.gen';
 import type { QuerySerializerOptions } from '../core/bodySerializer.gen';
 import type {
+  ServerSentEventsOptions,
+  ServerSentEventsResult,
+} from '../core/serverSentEvents.gen';
+import type {
   Client as CoreClient,
   Config as CoreConfig,
 } from '../core/types.gen';
@@ -60,7 +64,7 @@ export interface Config<T extends ClientOptions = ClientOptions>
 }
 
 export interface RequestOptions<
-  TComposable extends Composable = Composable,
+  TComposable extends Composable = '$fetch',
   ResT = unknown,
   DefaultT = undefined,
   Url extends string = string,
@@ -74,9 +78,18 @@ export interface RequestOptions<
       body?: unknown;
       path?: FetchOptions<unknown>['query'];
       query?: FetchOptions<unknown>['query'];
-    }> {
+      rawBody?: unknown;
+    }>,
+    Pick<
+      ServerSentEventsOptions<ResT>,
+      | 'onSseError'
+      | 'onSseEvent'
+      | 'sseDefaultRetryDelay'
+      | 'sseMaxRetryAttempts'
+      | 'sseMaxRetryDelay'
+    > {
   asyncDataOptions?: AsyncDataOptions<ResT, ResT, KeysOf<ResT>, DefaultT>;
-  composable: TComposable;
+  composable?: TComposable;
   key?: string;
   /**
    * Security mechanism(s) to use for the request.
@@ -106,7 +119,7 @@ export interface ClientOptions {
 }
 
 type MethodFn = <
-  TComposable extends Composable,
+  TComposable extends Composable = '$fetch',
   ResT = unknown,
   TError = unknown,
   DefaultT = undefined,
@@ -114,8 +127,17 @@ type MethodFn = <
   options: Omit<RequestOptions<TComposable, ResT, DefaultT>, 'method'>,
 ) => RequestResult<TComposable, ResT, TError>;
 
+type SseFn = <
+  TComposable extends Composable = '$fetch',
+  ResT = unknown,
+  TError = unknown,
+  DefaultT = undefined,
+>(
+  options: Omit<RequestOptions<TComposable, ResT, DefaultT>, 'method'>,
+) => Promise<ServerSentEventsResult<RequestResult<TComposable, ResT, TError>>>;
+
 type RequestFn = <
-  TComposable extends Composable,
+  TComposable extends Composable = '$fetch',
   ResT = unknown,
   TError = unknown,
   DefaultT = undefined,
@@ -154,12 +176,12 @@ type BuildUrlFn = <TData extends Omit<TDataShape, 'headers'>>(
   options: BuildUrlOptions<TData>,
 ) => string;
 
-export type Client = CoreClient<RequestFn, Config, MethodFn, BuildUrlFn>;
+export type Client = CoreClient<RequestFn, Config, MethodFn, BuildUrlFn, SseFn>;
 
 type OmitKeys<T, K> = Pick<T, Exclude<keyof T, K>>;
 
 export type Options<
-  TComposable extends Composable,
+  TComposable extends Composable = '$fetch',
   TData extends TDataShape = TDataShape,
   ResT = unknown,
   DefaultT = undefined,

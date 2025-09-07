@@ -5,7 +5,7 @@ import type { GetActivityLogsResponse, GetActivityLogsData, GetBattlesResponse, 
 import { getActivityLogsResponseTransformer, getBattlesResponseTransformer, getBattlesByBattleIdResponseTransformer, getBattlesByBattleIdFightersResponseTransformer, postBattlesByBattleIdFightersResponseTransformer, getBattlesByBattleIdFighterApplicationsResponseTransformer, putBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponseTransformer, getClansByClanIdArmoryResponseTransformer, getGamesUsersResponseTransformer, putGamesUsersResponseTransformer, getGamesTournamentUsersResponseTransformer, postGamesRestrictionsResponseTransformer, getItemsResponseTransformer, getItemsUpgradesByBaseIdResponseTransformer, getPartiesSelfUpdateResponseTransformer, postPartiesResponseTransformer, putPartiesSelfStatusResponseTransformer, postPartiesSelfItemsResponseTransformer, getPatchNotesResponseTransformer, getRestrictionsResponseTransformer, getSettlementsResponseTransformer, getSettlementsBySettlementIdResponseTransformer, postSettlementsBySettlementIdResponseTransformer, getSettlementsBySettlementIdItemsResponseTransformer, postSettlementsBySettlementIdItemsResponseTransformer, getSettlementsBySettlementIdShopItemsResponseTransformer, getTerrainsResponseTransformer, postTerrainsResponseTransformer, putTerrainsByIdResponseTransformer, getUsersSearchResponseTransformer, getUsersByUserIdResponseTransformer, putUsersByUserIdNoteResponseTransformer, getUsersResponseTransformer, getUsersByIdRestrictionsResponseTransformer, getUsersSelfRestrictionResponseTransformer, getUsersSelfCharactersByIdItemsResponseTransformer, putUsersSelfCharactersByIdItemsResponseTransformer, getUsersSelfCharactersByIdEarningStatisticsResponseTransformer, getUsersSelfCharactersByIdLimitationsResponseTransformer, getUsersSelfItemsResponseTransformer, postUsersSelfItemsResponseTransformer, putUsersSelfItemsByIdReforgeResponseTransformer, putUsersSelfItemsByIdRepairResponseTransformer, putUsersSelfItemsByIdUpgradeResponseTransformer, getUsersSelfNotificationsResponseTransformer, putUsersSelfNotificationsByIdResponseTransformer } from './transformers.gen';
 import { client as _heyApiClient } from './client.gen';
 
-export type Options<TComposable extends Composable, TData extends TDataShape = TDataShape, ResT = unknown, DefaultT = undefined> = ClientOptions<TComposable, TData, ResT, DefaultT> & {
+export type Options<TComposable extends Composable = '$fetch', TData extends TDataShape = TDataShape, ResT = unknown, DefaultT = undefined> = ClientOptions<TComposable, TData, ResT, DefaultT> & {
     /**
      * You can provide a client instance returned by `createClient()` instead of
      * individual options. This might be also useful if you want to implement a
@@ -22,7 +22,7 @@ export type Options<TComposable extends Composable, TData extends TDataShape = T
 /**
  * Get activity logs. The result is limited too 1000 logs.
  */
-export const getActivityLogs = <TComposable extends Composable, DefaultT extends GetActivityLogsResponse = GetActivityLogsResponse>(options: Options<TComposable, GetActivityLogsData, GetActivityLogsResponse, DefaultT>) => {
+export const getActivityLogs = <TComposable extends Composable = '$fetch', DefaultT extends GetActivityLogsResponse = GetActivityLogsResponse>(options: Options<TComposable, GetActivityLogsData, GetActivityLogsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetActivityLogsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getActivityLogsResponseTransformer,
         url: '/activity-logs',
@@ -33,7 +33,7 @@ export const getActivityLogs = <TComposable extends Composable, DefaultT extends
 /**
  * Get strategus battles.
  */
-export const getBattles = <TComposable extends Composable, DefaultT extends GetBattlesResponse = GetBattlesResponse>(options: Options<TComposable, GetBattlesData, GetBattlesResponse, DefaultT>) => {
+export const getBattles = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesResponse = GetBattlesResponse>(options: Options<TComposable, GetBattlesData, GetBattlesResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetBattlesResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getBattlesResponseTransformer,
         url: '/Battles',
@@ -44,7 +44,7 @@ export const getBattles = <TComposable extends Composable, DefaultT extends GetB
 /**
  * Get strategus battle.
  */
-export const getBattlesByBattleId = <TComposable extends Composable, DefaultT extends GetBattlesByBattleIdResponse = GetBattlesByBattleIdResponse>(options: Options<TComposable, GetBattlesByBattleIdData, GetBattlesByBattleIdResponse, DefaultT>) => {
+export const getBattlesByBattleId = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdResponse = GetBattlesByBattleIdResponse>(options: Options<TComposable, GetBattlesByBattleIdData, GetBattlesByBattleIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetBattlesByBattleIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getBattlesByBattleIdResponseTransformer,
         url: '/Battles/{battleId}',
@@ -55,7 +55,7 @@ export const getBattlesByBattleId = <TComposable extends Composable, DefaultT ex
 /**
  * Get battle fighters.
  */
-export const getBattlesByBattleIdFighters = <TComposable extends Composable, DefaultT extends GetBattlesByBattleIdFightersResponse = GetBattlesByBattleIdFightersResponse>(options: Options<TComposable, GetBattlesByBattleIdFightersData, GetBattlesByBattleIdFightersResponse, DefaultT>) => {
+export const getBattlesByBattleIdFighters = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdFightersResponse = GetBattlesByBattleIdFightersResponse>(options: Options<TComposable, GetBattlesByBattleIdFightersData, GetBattlesByBattleIdFightersResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetBattlesByBattleIdFightersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getBattlesByBattleIdFightersResponseTransformer,
         url: '/Battles/{battleId}/fighters',
@@ -66,7 +66,7 @@ export const getBattlesByBattleIdFighters = <TComposable extends Composable, Def
 /**
  * Apply as a fighter to a battle.
  */
-export const postBattlesByBattleIdFighters = <TComposable extends Composable, DefaultT extends PostBattlesByBattleIdFightersResponse = PostBattlesByBattleIdFightersResponse>(options: Options<TComposable, PostBattlesByBattleIdFightersData, PostBattlesByBattleIdFightersResponse, DefaultT>) => {
+export const postBattlesByBattleIdFighters = <TComposable extends Composable = '$fetch', DefaultT extends PostBattlesByBattleIdFightersResponse = PostBattlesByBattleIdFightersResponse>(options: Options<TComposable, PostBattlesByBattleIdFightersData, PostBattlesByBattleIdFightersResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostBattlesByBattleIdFightersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postBattlesByBattleIdFightersResponseTransformer,
         url: '/Battles/{battleId}/fighters',
@@ -77,7 +77,7 @@ export const postBattlesByBattleIdFighters = <TComposable extends Composable, De
 /**
  * Get battle fighter applications.
  */
-export const getBattlesByBattleIdFighterApplications = <TComposable extends Composable, DefaultT extends GetBattlesByBattleIdFighterApplicationsResponse = GetBattlesByBattleIdFighterApplicationsResponse>(options: Options<TComposable, GetBattlesByBattleIdFighterApplicationsData, GetBattlesByBattleIdFighterApplicationsResponse, DefaultT>) => {
+export const getBattlesByBattleIdFighterApplications = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdFighterApplicationsResponse = GetBattlesByBattleIdFighterApplicationsResponse>(options: Options<TComposable, GetBattlesByBattleIdFighterApplicationsData, GetBattlesByBattleIdFighterApplicationsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetBattlesByBattleIdFighterApplicationsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getBattlesByBattleIdFighterApplicationsResponseTransformer,
         url: '/Battles/{battleId}/fighter-applications',
@@ -88,7 +88,7 @@ export const getBattlesByBattleIdFighterApplications = <TComposable extends Comp
 /**
  * Accept/Decline battle fighter application.
  */
-export const putBattlesByBattleIdFighterApplicationsByApplicationIdResponse = <TComposable extends Composable, DefaultT extends PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse>(options: Options<TComposable, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseData, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse, DefaultT>) => {
+export const putBattlesByBattleIdFighterApplicationsByApplicationIdResponse = <TComposable extends Composable = '$fetch', DefaultT extends PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse>(options: Options<TComposable, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseData, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putBattlesByBattleIdFighterApplicationsByApplicationIdResponseResponseTransformer,
         url: '/Battles/{battleId}/fighter-applications/{applicationId}/response',
@@ -103,7 +103,7 @@ export const putBattlesByBattleIdFighterApplicationsByApplicationIdResponse = <T
 /**
  * Get battle mercenaries.
  */
-export const getBattlesByBattleIdMercenaries = <TComposable extends Composable, DefaultT extends GetBattlesByBattleIdMercenariesResponse = GetBattlesByBattleIdMercenariesResponse>(options: Options<TComposable, GetBattlesByBattleIdMercenariesData, GetBattlesByBattleIdMercenariesResponse, DefaultT>) => {
+export const getBattlesByBattleIdMercenaries = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdMercenariesResponse = GetBattlesByBattleIdMercenariesResponse>(options: Options<TComposable, GetBattlesByBattleIdMercenariesData, GetBattlesByBattleIdMercenariesResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetBattlesByBattleIdMercenariesResponse | DefaultT, unknown, DefaultT>({
         url: '/Battles/{battleId}/mercenaries',
         ...options
@@ -113,7 +113,7 @@ export const getBattlesByBattleIdMercenaries = <TComposable extends Composable, 
 /**
  * Get battle mercenary applications.
  */
-export const getBattlesByBattleIdMercenaryApplications = <TComposable extends Composable, DefaultT extends GetBattlesByBattleIdMercenaryApplicationsResponse = GetBattlesByBattleIdMercenaryApplicationsResponse>(options: Options<TComposable, GetBattlesByBattleIdMercenaryApplicationsData, GetBattlesByBattleIdMercenaryApplicationsResponse, DefaultT>) => {
+export const getBattlesByBattleIdMercenaryApplications = <TComposable extends Composable = '$fetch', DefaultT extends GetBattlesByBattleIdMercenaryApplicationsResponse = GetBattlesByBattleIdMercenaryApplicationsResponse>(options: Options<TComposable, GetBattlesByBattleIdMercenaryApplicationsData, GetBattlesByBattleIdMercenaryApplicationsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetBattlesByBattleIdMercenaryApplicationsResponse | DefaultT, unknown, DefaultT>({
         url: '/Battles/{battleId}/mercenary-applications',
         ...options
@@ -123,7 +123,7 @@ export const getBattlesByBattleIdMercenaryApplications = <TComposable extends Co
 /**
  * Apply as a mercenary to a battle.
  */
-export const postBattlesByBattleIdMercenaryApplications = <TComposable extends Composable, DefaultT extends PostBattlesByBattleIdMercenaryApplicationsResponse = PostBattlesByBattleIdMercenaryApplicationsResponse>(options: Options<TComposable, PostBattlesByBattleIdMercenaryApplicationsData, PostBattlesByBattleIdMercenaryApplicationsResponse, DefaultT>) => {
+export const postBattlesByBattleIdMercenaryApplications = <TComposable extends Composable = '$fetch', DefaultT extends PostBattlesByBattleIdMercenaryApplicationsResponse = PostBattlesByBattleIdMercenaryApplicationsResponse>(options: Options<TComposable, PostBattlesByBattleIdMercenaryApplicationsData, PostBattlesByBattleIdMercenaryApplicationsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostBattlesByBattleIdMercenaryApplicationsResponse | DefaultT, unknown, DefaultT>({
         url: '/Battles/{battleId}/mercenary-applications',
         ...options,
@@ -137,7 +137,7 @@ export const postBattlesByBattleIdMercenaryApplications = <TComposable extends C
 /**
  * Accept/Decline battle mercenary application.
  */
-export const putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse = <TComposable extends Composable, DefaultT extends PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse>(options: Options<TComposable, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseData, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse, DefaultT>) => {
+export const putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse = <TComposable extends Composable = '$fetch', DefaultT extends PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse = PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse>(options: Options<TComposable, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseData, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutBattlesByBattleIdMercenaryApplicationsByApplicationIdResponseResponse | DefaultT, unknown, DefaultT>({
         url: '/Battles/{battleId}/mercenary-applications/{applicationId}/response',
         ...options,
@@ -151,7 +151,7 @@ export const putBattlesByBattleIdMercenaryApplicationsByApplicationIdResponse = 
 /**
  * Gets a clan from its id.
  */
-export const getClansById = <TComposable extends Composable, DefaultT extends GetClansByIdResponse = GetClansByIdResponse>(options: Options<TComposable, GetClansByIdData, GetClansByIdResponse, DefaultT>) => {
+export const getClansById = <TComposable extends Composable = '$fetch', DefaultT extends GetClansByIdResponse = GetClansByIdResponse>(options: Options<TComposable, GetClansByIdData, GetClansByIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetClansByIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{id}',
         ...options
@@ -161,7 +161,7 @@ export const getClansById = <TComposable extends Composable, DefaultT extends Ge
 /**
  * Gets the members of a clan.
  */
-export const getClansByIdMembers = <TComposable extends Composable, DefaultT extends GetClansByIdMembersResponse = GetClansByIdMembersResponse>(options: Options<TComposable, GetClansByIdMembersData, GetClansByIdMembersResponse, DefaultT>) => {
+export const getClansByIdMembers = <TComposable extends Composable = '$fetch', DefaultT extends GetClansByIdMembersResponse = GetClansByIdMembersResponse>(options: Options<TComposable, GetClansByIdMembersData, GetClansByIdMembersResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetClansByIdMembersResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{id}/members',
         ...options
@@ -171,7 +171,7 @@ export const getClansByIdMembers = <TComposable extends Composable, DefaultT ext
 /**
  * Kick a clan member of leave a clan.
  */
-export const deleteClansByClanIdMembersByUserId = <TComposable extends Composable, DefaultT extends DeleteClansByClanIdMembersByUserIdResponse = DeleteClansByClanIdMembersByUserIdResponse>(options: Options<TComposable, DeleteClansByClanIdMembersByUserIdData, DeleteClansByClanIdMembersByUserIdResponse, DefaultT>) => {
+export const deleteClansByClanIdMembersByUserId = <TComposable extends Composable = '$fetch', DefaultT extends DeleteClansByClanIdMembersByUserIdResponse = DeleteClansByClanIdMembersByUserIdResponse>(options: Options<TComposable, DeleteClansByClanIdMembersByUserIdData, DeleteClansByClanIdMembersByUserIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).delete<TComposable, DeleteClansByClanIdMembersByUserIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{clanId}/members/{userId}',
         ...options
@@ -181,7 +181,7 @@ export const deleteClansByClanIdMembersByUserId = <TComposable extends Composabl
 /**
  * Update a clan member.
  */
-export const putClansByClanIdMembersByUserId = <TComposable extends Composable, DefaultT extends PutClansByClanIdMembersByUserIdResponse = PutClansByClanIdMembersByUserIdResponse>(options: Options<TComposable, PutClansByClanIdMembersByUserIdData, PutClansByClanIdMembersByUserIdResponse, DefaultT>) => {
+export const putClansByClanIdMembersByUserId = <TComposable extends Composable = '$fetch', DefaultT extends PutClansByClanIdMembersByUserIdResponse = PutClansByClanIdMembersByUserIdResponse>(options: Options<TComposable, PutClansByClanIdMembersByUserIdData, PutClansByClanIdMembersByUserIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutClansByClanIdMembersByUserIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{clanId}/members/{userId}',
         ...options,
@@ -195,7 +195,7 @@ export const putClansByClanIdMembersByUserId = <TComposable extends Composable, 
 /**
  * Gets all clans.
  */
-export const getClans = <TComposable extends Composable, DefaultT extends GetClansResponse = GetClansResponse>(options: Options<TComposable, GetClansData, GetClansResponse, DefaultT>) => {
+export const getClans = <TComposable extends Composable = '$fetch', DefaultT extends GetClansResponse = GetClansResponse>(options: Options<TComposable, GetClansData, GetClansResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetClansResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans',
         ...options
@@ -205,7 +205,7 @@ export const getClans = <TComposable extends Composable, DefaultT extends GetCla
 /**
  * Creates a clan.
  */
-export const postClans = <TComposable extends Composable, DefaultT extends PostClansResponse = PostClansResponse>(options: Options<TComposable, PostClansData, PostClansResponse, DefaultT>) => {
+export const postClans = <TComposable extends Composable = '$fetch', DefaultT extends PostClansResponse = PostClansResponse>(options: Options<TComposable, PostClansData, PostClansResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostClansResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans',
         ...options,
@@ -219,7 +219,7 @@ export const postClans = <TComposable extends Composable, DefaultT extends PostC
 /**
  * Updates a clan.
  */
-export const putClansByClanId = <TComposable extends Composable, DefaultT extends PutClansByClanIdResponse = PutClansByClanIdResponse>(options: Options<TComposable, PutClansByClanIdData, PutClansByClanIdResponse, DefaultT>) => {
+export const putClansByClanId = <TComposable extends Composable = '$fetch', DefaultT extends PutClansByClanIdResponse = PutClansByClanIdResponse>(options: Options<TComposable, PutClansByClanIdData, PutClansByClanIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutClansByClanIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{clanId}',
         ...options,
@@ -233,7 +233,7 @@ export const putClansByClanId = <TComposable extends Composable, DefaultT extend
 /**
  * Get users invited to the clan or users requesting to join the clan.
  */
-export const getClansByClanIdInvitations = <TComposable extends Composable, DefaultT extends GetClansByClanIdInvitationsResponse = GetClansByClanIdInvitationsResponse>(options: Options<TComposable, GetClansByClanIdInvitationsData, GetClansByClanIdInvitationsResponse, DefaultT>) => {
+export const getClansByClanIdInvitations = <TComposable extends Composable = '$fetch', DefaultT extends GetClansByClanIdInvitationsResponse = GetClansByClanIdInvitationsResponse>(options: Options<TComposable, GetClansByClanIdInvitationsData, GetClansByClanIdInvitationsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetClansByClanIdInvitationsResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{clanId}/invitations',
         ...options
@@ -243,7 +243,7 @@ export const getClansByClanIdInvitations = <TComposable extends Composable, Defa
 /**
  * Invite user to clan or request to join a clan.
  */
-export const postClansByClanIdInvitations = <TComposable extends Composable, DefaultT extends PostClansByClanIdInvitationsResponse = PostClansByClanIdInvitationsResponse>(options: Options<TComposable, PostClansByClanIdInvitationsData, PostClansByClanIdInvitationsResponse, DefaultT>) => {
+export const postClansByClanIdInvitations = <TComposable extends Composable = '$fetch', DefaultT extends PostClansByClanIdInvitationsResponse = PostClansByClanIdInvitationsResponse>(options: Options<TComposable, PostClansByClanIdInvitationsData, PostClansByClanIdInvitationsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostClansByClanIdInvitationsResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{clanId}/invitations',
         ...options,
@@ -257,7 +257,7 @@ export const postClansByClanIdInvitations = <TComposable extends Composable, Def
 /**
  * Accept/Decline request/offer to join a clan.
  */
-export const putClansByClanIdInvitationsByInvitationIdResponse = <TComposable extends Composable, DefaultT extends PutClansByClanIdInvitationsByInvitationIdResponseResponse = PutClansByClanIdInvitationsByInvitationIdResponseResponse>(options: Options<TComposable, PutClansByClanIdInvitationsByInvitationIdResponseData, PutClansByClanIdInvitationsByInvitationIdResponseResponse, DefaultT>) => {
+export const putClansByClanIdInvitationsByInvitationIdResponse = <TComposable extends Composable = '$fetch', DefaultT extends PutClansByClanIdInvitationsByInvitationIdResponseResponse = PutClansByClanIdInvitationsByInvitationIdResponseResponse>(options: Options<TComposable, PutClansByClanIdInvitationsByInvitationIdResponseData, PutClansByClanIdInvitationsByInvitationIdResponseResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutClansByClanIdInvitationsByInvitationIdResponseResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{clanId}/invitations/{invitationId}/response',
         ...options,
@@ -271,7 +271,7 @@ export const putClansByClanIdInvitationsByInvitationIdResponse = <TComposable ex
 /**
  * Gets the armory items.
  */
-export const getClansByClanIdArmory = <TComposable extends Composable, DefaultT extends GetClansByClanIdArmoryResponse = GetClansByClanIdArmoryResponse>(options: Options<TComposable, GetClansByClanIdArmoryData, GetClansByClanIdArmoryResponse, DefaultT>) => {
+export const getClansByClanIdArmory = <TComposable extends Composable = '$fetch', DefaultT extends GetClansByClanIdArmoryResponse = GetClansByClanIdArmoryResponse>(options: Options<TComposable, GetClansByClanIdArmoryData, GetClansByClanIdArmoryResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetClansByClanIdArmoryResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getClansByClanIdArmoryResponseTransformer,
         url: '/Clans/{clanId}/armory',
@@ -282,7 +282,7 @@ export const getClansByClanIdArmory = <TComposable extends Composable, DefaultT 
 /**
  * Add an item to the armory.
  */
-export const postClansByClanIdArmory = <TComposable extends Composable, DefaultT extends PostClansByClanIdArmoryResponse = PostClansByClanIdArmoryResponse>(options: Options<TComposable, PostClansByClanIdArmoryData, PostClansByClanIdArmoryResponse, DefaultT>) => {
+export const postClansByClanIdArmory = <TComposable extends Composable = '$fetch', DefaultT extends PostClansByClanIdArmoryResponse = PostClansByClanIdArmoryResponse>(options: Options<TComposable, PostClansByClanIdArmoryData, PostClansByClanIdArmoryResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostClansByClanIdArmoryResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{clanId}/armory',
         ...options,
@@ -296,7 +296,7 @@ export const postClansByClanIdArmory = <TComposable extends Composable, DefaultT
 /**
  * Remove an item from the armory.
  */
-export const deleteClansByClanIdArmoryByUserItemId = <TComposable extends Composable, DefaultT extends DeleteClansByClanIdArmoryByUserItemIdResponse = DeleteClansByClanIdArmoryByUserItemIdResponse>(options: Options<TComposable, DeleteClansByClanIdArmoryByUserItemIdData, DeleteClansByClanIdArmoryByUserItemIdResponse, DefaultT>) => {
+export const deleteClansByClanIdArmoryByUserItemId = <TComposable extends Composable = '$fetch', DefaultT extends DeleteClansByClanIdArmoryByUserItemIdResponse = DeleteClansByClanIdArmoryByUserItemIdResponse>(options: Options<TComposable, DeleteClansByClanIdArmoryByUserItemIdData, DeleteClansByClanIdArmoryByUserItemIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).delete<TComposable, DeleteClansByClanIdArmoryByUserItemIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{clanId}/armory/{userItemId}',
         ...options
@@ -306,7 +306,7 @@ export const deleteClansByClanIdArmoryByUserItemId = <TComposable extends Compos
 /**
  * Borrow an item from the armory.
  */
-export const putClansByClanIdArmoryByUserItemIdBorrow = <TComposable extends Composable, DefaultT extends PutClansByClanIdArmoryByUserItemIdBorrowResponse = PutClansByClanIdArmoryByUserItemIdBorrowResponse>(options: Options<TComposable, PutClansByClanIdArmoryByUserItemIdBorrowData, PutClansByClanIdArmoryByUserItemIdBorrowResponse, DefaultT>) => {
+export const putClansByClanIdArmoryByUserItemIdBorrow = <TComposable extends Composable = '$fetch', DefaultT extends PutClansByClanIdArmoryByUserItemIdBorrowResponse = PutClansByClanIdArmoryByUserItemIdBorrowResponse>(options: Options<TComposable, PutClansByClanIdArmoryByUserItemIdBorrowData, PutClansByClanIdArmoryByUserItemIdBorrowResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutClansByClanIdArmoryByUserItemIdBorrowResponse | DefaultT, unknown, DefaultT>({
         url: '/Clans/{clanId}/armory/{userItemId}/borrow',
         ...options
@@ -316,56 +316,56 @@ export const putClansByClanIdArmoryByUserItemIdBorrow = <TComposable extends Com
 /**
  * Return an item to the armory.
  */
-export const putClansByClanIdArmoryByUserItemIdReturn = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, PutClansByClanIdArmoryByUserItemIdReturnData, unknown, DefaultT>) => {
+export const putClansByClanIdArmoryByUserItemIdReturn = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PutClansByClanIdArmoryByUserItemIdReturnData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Clans/{clanId}/armory/{userItemId}/return',
         ...options
     });
 };
 
-export const getConnectAuthorize = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, GetConnectAuthorizeData, unknown, DefaultT>) => {
+export const getConnectAuthorize = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetConnectAuthorizeData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Connect/authorize',
         ...options
     });
 };
 
-export const postConnectAuthorize = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, PostConnectAuthorizeData, unknown, DefaultT>) => {
+export const postConnectAuthorize = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PostConnectAuthorizeData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Connect/authorize',
         ...options
     });
 };
 
-export const postConnectToken = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, PostConnectTokenData, unknown, DefaultT>) => {
+export const postConnectToken = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PostConnectTokenData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Connect/token',
         ...options
     });
 };
 
-export const getConnectCallbackEpicGames = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, GetConnectCallbackEpicGamesData, unknown, DefaultT>) => {
+export const getConnectCallbackEpicGames = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetConnectCallbackEpicGamesData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Connect/callback-epic-games',
         ...options
     });
 };
 
-export const getConnectCallbackMicrosoft = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, GetConnectCallbackMicrosoftData, unknown, DefaultT>) => {
+export const getConnectCallbackMicrosoft = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetConnectCallbackMicrosoftData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Connect/callback-microsoft',
         ...options
     });
 };
 
-export const getConnectLogout = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, GetConnectLogoutData, unknown, DefaultT>) => {
+export const getConnectLogout = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetConnectLogoutData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Connect/logout',
         ...options
     });
 };
 
-export const getGameServerStatistics = <TComposable extends Composable, DefaultT extends GetGameServerStatisticsResponse = GetGameServerStatisticsResponse>(options: Options<TComposable, GetGameServerStatisticsData, GetGameServerStatisticsResponse, DefaultT>) => {
+export const getGameServerStatistics = <TComposable extends Composable = '$fetch', DefaultT extends GetGameServerStatisticsResponse = GetGameServerStatisticsResponse>(options: Options<TComposable, GetGameServerStatisticsData, GetGameServerStatisticsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetGameServerStatisticsResponse | DefaultT, unknown, DefaultT>({
         url: '/game-server-statistics',
         ...options
@@ -375,7 +375,7 @@ export const getGameServerStatistics = <TComposable extends Composable, DefaultT
 /**
  * Get or create user.
  */
-export const getGamesUsers = <TComposable extends Composable, DefaultT extends GetGamesUsersResponse = GetGamesUsersResponse>(options: Options<TComposable, GetGamesUsersData, GetGamesUsersResponse, DefaultT>) => {
+export const getGamesUsers = <TComposable extends Composable = '$fetch', DefaultT extends GetGamesUsersResponse = GetGamesUsersResponse>(options: Options<TComposable, GetGamesUsersData, GetGamesUsersResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetGamesUsersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getGamesUsersResponseTransformer,
         url: '/Games/users',
@@ -386,7 +386,7 @@ export const getGamesUsers = <TComposable extends Composable, DefaultT extends G
 /**
  * Give reward to users and break or repair items.
  */
-export const putGamesUsers = <TComposable extends Composable, DefaultT extends PutGamesUsersResponse = PutGamesUsersResponse>(options: Options<TComposable, PutGamesUsersData, PutGamesUsersResponse, DefaultT>) => {
+export const putGamesUsers = <TComposable extends Composable = '$fetch', DefaultT extends PutGamesUsersResponse = PutGamesUsersResponse>(options: Options<TComposable, PutGamesUsersData, PutGamesUsersResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutGamesUsersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putGamesUsersResponseTransformer,
         url: '/Games/users',
@@ -401,7 +401,7 @@ export const putGamesUsers = <TComposable extends Composable, DefaultT extends P
 /**
  * Get tournament user.
  */
-export const getGamesTournamentUsers = <TComposable extends Composable, DefaultT extends GetGamesTournamentUsersResponse = GetGamesTournamentUsersResponse>(options: Options<TComposable, GetGamesTournamentUsersData, GetGamesTournamentUsersResponse, DefaultT>) => {
+export const getGamesTournamentUsers = <TComposable extends Composable = '$fetch', DefaultT extends GetGamesTournamentUsersResponse = GetGamesTournamentUsersResponse>(options: Options<TComposable, GetGamesTournamentUsersData, GetGamesTournamentUsersResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetGamesTournamentUsersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getGamesTournamentUsersResponseTransformer,
         url: '/Games/tournament-users',
@@ -412,7 +412,7 @@ export const getGamesTournamentUsers = <TComposable extends Composable, DefaultT
 /**
  * Insert activity logs.
  */
-export const postGamesActivityLogs = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, PostGamesActivityLogsData, unknown, DefaultT>) => {
+export const postGamesActivityLogs = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PostGamesActivityLogsData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Games/activity-logs',
         ...options,
@@ -426,14 +426,14 @@ export const postGamesActivityLogs = <TComposable extends Composable, DefaultT =
 /**
  * Gets a clan from its id.
  */
-export const getGamesClansById = <TComposable extends Composable, DefaultT extends GetGamesClansByIdResponse = GetGamesClansByIdResponse>(options: Options<TComposable, GetGamesClansByIdData, GetGamesClansByIdResponse, DefaultT>) => {
+export const getGamesClansById = <TComposable extends Composable = '$fetch', DefaultT extends GetGamesClansByIdResponse = GetGamesClansByIdResponse>(options: Options<TComposable, GetGamesClansByIdData, GetGamesClansByIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetGamesClansByIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Games/clans/{id}',
         ...options
     });
 };
 
-export const postGamesRestrictions = <TComposable extends Composable, DefaultT extends PostGamesRestrictionsResponse = PostGamesRestrictionsResponse>(options: Options<TComposable, PostGamesRestrictionsData, PostGamesRestrictionsResponse, DefaultT>) => {
+export const postGamesRestrictions = <TComposable extends Composable = '$fetch', DefaultT extends PostGamesRestrictionsResponse = PostGamesRestrictionsResponse>(options: Options<TComposable, PostGamesRestrictionsData, PostGamesRestrictionsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostGamesRestrictionsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postGamesRestrictionsResponseTransformer,
         url: '/Games/restrictions',
@@ -448,7 +448,7 @@ export const postGamesRestrictions = <TComposable extends Composable, DefaultT e
 /**
  * Gets all enabled items of rank 0.
  */
-export const getItems = <TComposable extends Composable, DefaultT extends GetItemsResponse = GetItemsResponse>(options: Options<TComposable, GetItemsData, GetItemsResponse, DefaultT>) => {
+export const getItems = <TComposable extends Composable = '$fetch', DefaultT extends GetItemsResponse = GetItemsResponse>(options: Options<TComposable, GetItemsData, GetItemsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getItemsResponseTransformer,
         url: '/Items',
@@ -456,7 +456,7 @@ export const getItems = <TComposable extends Composable, DefaultT extends GetIte
     });
 };
 
-export const getItemsUpgradesByBaseId = <TComposable extends Composable, DefaultT extends GetItemsUpgradesByBaseIdResponse = GetItemsUpgradesByBaseIdResponse>(options: Options<TComposable, GetItemsUpgradesByBaseIdData, GetItemsUpgradesByBaseIdResponse, DefaultT>) => {
+export const getItemsUpgradesByBaseId = <TComposable extends Composable = '$fetch', DefaultT extends GetItemsUpgradesByBaseIdResponse = GetItemsUpgradesByBaseIdResponse>(options: Options<TComposable, GetItemsUpgradesByBaseIdData, GetItemsUpgradesByBaseIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetItemsUpgradesByBaseIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getItemsUpgradesByBaseIdResponseTransformer,
         url: '/Items/upgrades/{baseId}',
@@ -467,7 +467,7 @@ export const getItemsUpgradesByBaseId = <TComposable extends Composable, Default
 /**
  * Enable/Disable item.
  */
-export const putItemsByIdEnable = <TComposable extends Composable, DefaultT extends PutItemsByIdEnableResponse = PutItemsByIdEnableResponse>(options: Options<TComposable, PutItemsByIdEnableData, PutItemsByIdEnableResponse, DefaultT>) => {
+export const putItemsByIdEnable = <TComposable extends Composable = '$fetch', DefaultT extends PutItemsByIdEnableResponse = PutItemsByIdEnableResponse>(options: Options<TComposable, PutItemsByIdEnableData, PutItemsByIdEnableResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutItemsByIdEnableResponse | DefaultT, unknown, DefaultT>({
         url: '/Items/{id}/enable',
         ...options,
@@ -481,7 +481,7 @@ export const putItemsByIdEnable = <TComposable extends Composable, DefaultT exte
 /**
  * Refund item.
  */
-export const postItemsByIdRefund = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, PostItemsByIdRefundData, unknown, DefaultT>) => {
+export const postItemsByIdRefund = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PostItemsByIdRefundData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Items/{id}/refund',
         ...options,
@@ -495,7 +495,7 @@ export const postItemsByIdRefund = <TComposable extends Composable, DefaultT = u
 /**
  * Get top character competitive ratings.
  */
-export const getLeaderboardLeaderboard = <TComposable extends Composable, DefaultT extends GetLeaderboardLeaderboardResponse = GetLeaderboardLeaderboardResponse>(options: Options<TComposable, GetLeaderboardLeaderboardData, GetLeaderboardLeaderboardResponse, DefaultT>) => {
+export const getLeaderboardLeaderboard = <TComposable extends Composable = '$fetch', DefaultT extends GetLeaderboardLeaderboardResponse = GetLeaderboardLeaderboardResponse>(options: Options<TComposable, GetLeaderboardLeaderboardData, GetLeaderboardLeaderboardResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetLeaderboardLeaderboardResponse | DefaultT, unknown, DefaultT>({
         url: '/Leaderboard/leaderboard',
         ...options
@@ -505,7 +505,7 @@ export const getLeaderboardLeaderboard = <TComposable extends Composable, Defaul
 /**
  * Get an update of strategus for the current user.
  */
-export const getPartiesSelfUpdate = <TComposable extends Composable, DefaultT extends GetPartiesSelfUpdateResponse = GetPartiesSelfUpdateResponse>(options: Options<TComposable, GetPartiesSelfUpdateData, GetPartiesSelfUpdateResponse, DefaultT>) => {
+export const getPartiesSelfUpdate = <TComposable extends Composable = '$fetch', DefaultT extends GetPartiesSelfUpdateResponse = GetPartiesSelfUpdateResponse>(options: Options<TComposable, GetPartiesSelfUpdateData, GetPartiesSelfUpdateResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetPartiesSelfUpdateResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getPartiesSelfUpdateResponseTransformer,
         url: '/Parties/self/update',
@@ -516,7 +516,7 @@ export const getPartiesSelfUpdate = <TComposable extends Composable, DefaultT ex
 /**
  * Register user to strategus.
  */
-export const postParties = <TComposable extends Composable, DefaultT extends PostPartiesResponse = PostPartiesResponse>(options: Options<TComposable, PostPartiesData, PostPartiesResponse, DefaultT>) => {
+export const postParties = <TComposable extends Composable = '$fetch', DefaultT extends PostPartiesResponse = PostPartiesResponse>(options: Options<TComposable, PostPartiesData, PostPartiesResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostPartiesResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postPartiesResponseTransformer,
         url: '/Parties',
@@ -531,7 +531,7 @@ export const postParties = <TComposable extends Composable, DefaultT extends Pos
 /**
  * Update strategus party status.
  */
-export const putPartiesSelfStatus = <TComposable extends Composable, DefaultT extends PutPartiesSelfStatusResponse = PutPartiesSelfStatusResponse>(options: Options<TComposable, PutPartiesSelfStatusData, PutPartiesSelfStatusResponse, DefaultT>) => {
+export const putPartiesSelfStatus = <TComposable extends Composable = '$fetch', DefaultT extends PutPartiesSelfStatusResponse = PutPartiesSelfStatusResponse>(options: Options<TComposable, PutPartiesSelfStatusData, PutPartiesSelfStatusResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutPartiesSelfStatusResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putPartiesSelfStatusResponseTransformer,
         url: '/Parties/self/status',
@@ -546,7 +546,7 @@ export const putPartiesSelfStatus = <TComposable extends Composable, DefaultT ex
 /**
  * Buy items from a settlement.
  */
-export const postPartiesSelfItems = <TComposable extends Composable, DefaultT extends PostPartiesSelfItemsResponse = PostPartiesSelfItemsResponse>(options: Options<TComposable, PostPartiesSelfItemsData, PostPartiesSelfItemsResponse, DefaultT>) => {
+export const postPartiesSelfItems = <TComposable extends Composable = '$fetch', DefaultT extends PostPartiesSelfItemsResponse = PostPartiesSelfItemsResponse>(options: Options<TComposable, PostPartiesSelfItemsData, PostPartiesSelfItemsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostPartiesSelfItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postPartiesSelfItemsResponseTransformer,
         url: '/Parties/self/items',
@@ -558,7 +558,7 @@ export const postPartiesSelfItems = <TComposable extends Composable, DefaultT ex
     });
 };
 
-export const getPatchNotes = <TComposable extends Composable, DefaultT extends GetPatchNotesResponse = GetPatchNotesResponse>(options: Options<TComposable, GetPatchNotesData, GetPatchNotesResponse, DefaultT>) => {
+export const getPatchNotes = <TComposable extends Composable = '$fetch', DefaultT extends GetPatchNotesResponse = GetPatchNotesResponse>(options: Options<TComposable, GetPatchNotesData, GetPatchNotesResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetPatchNotesResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getPatchNotesResponseTransformer,
         url: '/patch-notes',
@@ -569,7 +569,7 @@ export const getPatchNotes = <TComposable extends Composable, DefaultT extends G
 /**
  * Get all restrictions.
  */
-export const getRestrictions = <TComposable extends Composable, DefaultT extends GetRestrictionsResponse = GetRestrictionsResponse>(options: Options<TComposable, GetRestrictionsData, GetRestrictionsResponse, DefaultT>) => {
+export const getRestrictions = <TComposable extends Composable = '$fetch', DefaultT extends GetRestrictionsResponse = GetRestrictionsResponse>(options: Options<TComposable, GetRestrictionsData, GetRestrictionsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetRestrictionsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getRestrictionsResponseTransformer,
         url: '/Restrictions',
@@ -581,7 +581,7 @@ export const getRestrictions = <TComposable extends Composable, DefaultT extends
  * Restrict a user. If a restriction of the same type already exists for the user, it is overriden. Use a duration
  * of 0 to un-restrict.
  */
-export const postRestrictions = <TComposable extends Composable, DefaultT extends PostRestrictionsResponse = PostRestrictionsResponse>(options: Options<TComposable, PostRestrictionsData, PostRestrictionsResponse, DefaultT>) => {
+export const postRestrictions = <TComposable extends Composable = '$fetch', DefaultT extends PostRestrictionsResponse = PostRestrictionsResponse>(options: Options<TComposable, PostRestrictionsData, PostRestrictionsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostRestrictionsResponse | DefaultT, unknown, DefaultT>({
         url: '/Restrictions',
         ...options,
@@ -595,7 +595,7 @@ export const postRestrictions = <TComposable extends Composable, DefaultT extend
 /**
  * Get settings.
  */
-export const getSettings = <TComposable extends Composable, DefaultT extends GetSettingsResponse = GetSettingsResponse>(options: Options<TComposable, GetSettingsData, GetSettingsResponse, DefaultT>) => {
+export const getSettings = <TComposable extends Composable = '$fetch', DefaultT extends GetSettingsResponse = GetSettingsResponse>(options: Options<TComposable, GetSettingsData, GetSettingsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetSettingsResponse | DefaultT, unknown, DefaultT>({
         url: '/Settings',
         ...options
@@ -605,7 +605,7 @@ export const getSettings = <TComposable extends Composable, DefaultT extends Get
 /**
  * Edit setting.
  */
-export const patchSettings = <TComposable extends Composable, DefaultT extends PatchSettingsResponse = PatchSettingsResponse>(options: Options<TComposable, PatchSettingsData, PatchSettingsResponse, DefaultT>) => {
+export const patchSettings = <TComposable extends Composable = '$fetch', DefaultT extends PatchSettingsResponse = PatchSettingsResponse>(options: Options<TComposable, PatchSettingsData, PatchSettingsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).patch<TComposable, PatchSettingsResponse | DefaultT, unknown, DefaultT>({
         url: '/Settings',
         ...options,
@@ -619,7 +619,7 @@ export const patchSettings = <TComposable extends Composable, DefaultT extends P
 /**
  * Get Strategus settlements.
  */
-export const getSettlements = <TComposable extends Composable, DefaultT extends GetSettlementsResponse = GetSettlementsResponse>(options: Options<TComposable, GetSettlementsData, GetSettlementsResponse, DefaultT>) => {
+export const getSettlements = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsResponse = GetSettlementsResponse>(options: Options<TComposable, GetSettlementsData, GetSettlementsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetSettlementsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getSettlementsResponseTransformer,
         url: '/Settlements',
@@ -630,7 +630,7 @@ export const getSettlements = <TComposable extends Composable, DefaultT extends 
 /**
  * Get settlement details by Id.
  */
-export const getSettlementsBySettlementId = <TComposable extends Composable, DefaultT extends GetSettlementsBySettlementIdResponse = GetSettlementsBySettlementIdResponse>(options: Options<TComposable, GetSettlementsBySettlementIdData, GetSettlementsBySettlementIdResponse, DefaultT>) => {
+export const getSettlementsBySettlementId = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsBySettlementIdResponse = GetSettlementsBySettlementIdResponse>(options: Options<TComposable, GetSettlementsBySettlementIdData, GetSettlementsBySettlementIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetSettlementsBySettlementIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getSettlementsBySettlementIdResponseTransformer,
         url: '/Settlements/{settlementId}',
@@ -641,7 +641,7 @@ export const getSettlementsBySettlementId = <TComposable extends Composable, Def
 /**
  * Give (position count) or take (negative count) garrison troops from a settlement.
  */
-export const postSettlementsBySettlementId = <TComposable extends Composable, DefaultT extends PostSettlementsBySettlementIdResponse = PostSettlementsBySettlementIdResponse>(options: Options<TComposable, PostSettlementsBySettlementIdData, PostSettlementsBySettlementIdResponse, DefaultT>) => {
+export const postSettlementsBySettlementId = <TComposable extends Composable = '$fetch', DefaultT extends PostSettlementsBySettlementIdResponse = PostSettlementsBySettlementIdResponse>(options: Options<TComposable, PostSettlementsBySettlementIdData, PostSettlementsBySettlementIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostSettlementsBySettlementIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postSettlementsBySettlementIdResponseTransformer,
         url: '/Settlements/{settlementId}',
@@ -656,7 +656,7 @@ export const postSettlementsBySettlementId = <TComposable extends Composable, De
 /**
  * Get garrison items from a settlement.
  */
-export const getSettlementsBySettlementIdItems = <TComposable extends Composable, DefaultT extends GetSettlementsBySettlementIdItemsResponse = GetSettlementsBySettlementIdItemsResponse>(options: Options<TComposable, GetSettlementsBySettlementIdItemsData, GetSettlementsBySettlementIdItemsResponse, DefaultT>) => {
+export const getSettlementsBySettlementIdItems = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsBySettlementIdItemsResponse = GetSettlementsBySettlementIdItemsResponse>(options: Options<TComposable, GetSettlementsBySettlementIdItemsData, GetSettlementsBySettlementIdItemsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetSettlementsBySettlementIdItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getSettlementsBySettlementIdItemsResponseTransformer,
         url: '/Settlements/{settlementId}/items',
@@ -667,7 +667,7 @@ export const getSettlementsBySettlementIdItems = <TComposable extends Composable
 /**
  * Give (position count) or take (negative count) garrison items from a settlement.
  */
-export const postSettlementsBySettlementIdItems = <TComposable extends Composable, DefaultT extends PostSettlementsBySettlementIdItemsResponse = PostSettlementsBySettlementIdItemsResponse>(options: Options<TComposable, PostSettlementsBySettlementIdItemsData, PostSettlementsBySettlementIdItemsResponse, DefaultT>) => {
+export const postSettlementsBySettlementIdItems = <TComposable extends Composable = '$fetch', DefaultT extends PostSettlementsBySettlementIdItemsResponse = PostSettlementsBySettlementIdItemsResponse>(options: Options<TComposable, PostSettlementsBySettlementIdItemsData, PostSettlementsBySettlementIdItemsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostSettlementsBySettlementIdItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postSettlementsBySettlementIdItemsResponseTransformer,
         url: '/Settlements/{settlementId}/items',
@@ -682,7 +682,7 @@ export const postSettlementsBySettlementIdItems = <TComposable extends Composabl
 /**
  * Get strategus settlement shop items.
  */
-export const getSettlementsBySettlementIdShopItems = <TComposable extends Composable, DefaultT extends GetSettlementsBySettlementIdShopItemsResponse = GetSettlementsBySettlementIdShopItemsResponse>(options: Options<TComposable, GetSettlementsBySettlementIdShopItemsData, GetSettlementsBySettlementIdShopItemsResponse, DefaultT>) => {
+export const getSettlementsBySettlementIdShopItems = <TComposable extends Composable = '$fetch', DefaultT extends GetSettlementsBySettlementIdShopItemsResponse = GetSettlementsBySettlementIdShopItemsResponse>(options: Options<TComposable, GetSettlementsBySettlementIdShopItemsData, GetSettlementsBySettlementIdShopItemsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetSettlementsBySettlementIdShopItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getSettlementsBySettlementIdShopItemsResponseTransformer,
         url: '/Settlements/{settlementId}/shop/items',
@@ -693,7 +693,7 @@ export const getSettlementsBySettlementIdShopItems = <TComposable extends Compos
 /**
  * Get Strategus map terrains.
  */
-export const getTerrains = <TComposable extends Composable, DefaultT extends GetTerrainsResponse = GetTerrainsResponse>(options: Options<TComposable, GetTerrainsData, GetTerrainsResponse, DefaultT>) => {
+export const getTerrains = <TComposable extends Composable = '$fetch', DefaultT extends GetTerrainsResponse = GetTerrainsResponse>(options: Options<TComposable, GetTerrainsData, GetTerrainsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetTerrainsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getTerrainsResponseTransformer,
         url: '/Terrains',
@@ -704,7 +704,7 @@ export const getTerrains = <TComposable extends Composable, DefaultT extends Get
 /**
  * Create terrain.
  */
-export const postTerrains = <TComposable extends Composable, DefaultT extends PostTerrainsResponse = PostTerrainsResponse>(options: Options<TComposable, PostTerrainsData, PostTerrainsResponse, DefaultT>) => {
+export const postTerrains = <TComposable extends Composable = '$fetch', DefaultT extends PostTerrainsResponse = PostTerrainsResponse>(options: Options<TComposable, PostTerrainsData, PostTerrainsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostTerrainsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postTerrainsResponseTransformer,
         url: '/Terrains',
@@ -719,7 +719,7 @@ export const postTerrains = <TComposable extends Composable, DefaultT extends Po
 /**
  * Delete terrain by Id.
  */
-export const deleteTerrainsById = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, DeleteTerrainsByIdData, unknown, DefaultT>) => {
+export const deleteTerrainsById = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, DeleteTerrainsByIdData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).delete<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Terrains/{id}',
         ...options
@@ -729,7 +729,7 @@ export const deleteTerrainsById = <TComposable extends Composable, DefaultT = un
 /**
  * Update terrain.
  */
-export const putTerrainsById = <TComposable extends Composable, DefaultT extends PutTerrainsByIdResponse = PutTerrainsByIdResponse>(options: Options<TComposable, PutTerrainsByIdData, PutTerrainsByIdResponse, DefaultT>) => {
+export const putTerrainsById = <TComposable extends Composable = '$fetch', DefaultT extends PutTerrainsByIdResponse = PutTerrainsByIdResponse>(options: Options<TComposable, PutTerrainsByIdData, PutTerrainsByIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutTerrainsByIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putTerrainsByIdResponseTransformer,
         url: '/Terrains/{id}',
@@ -745,7 +745,7 @@ export const putTerrainsById = <TComposable extends Composable, DefaultT extends
  * Search user. name or the pair (platform, platformUserId)
  * should be not null.
  */
-export const getUsersSearch = <TComposable extends Composable, DefaultT extends GetUsersSearchResponse = GetUsersSearchResponse>(options: Options<TComposable, GetUsersSearchData, GetUsersSearchResponse, DefaultT>) => {
+export const getUsersSearch = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSearchResponse = GetUsersSearchResponse>(options: Options<TComposable, GetUsersSearchData, GetUsersSearchResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSearchResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSearchResponseTransformer,
         url: '/Users/search',
@@ -756,7 +756,7 @@ export const getUsersSearch = <TComposable extends Composable, DefaultT extends 
 /**
  * Deletes current user.
  */
-export const deleteUsersSelf = <TComposable extends Composable, DefaultT extends DeleteUsersSelfResponse = DeleteUsersSelfResponse>(options: Options<TComposable, DeleteUsersSelfData, DeleteUsersSelfResponse, DefaultT>) => {
+export const deleteUsersSelf = <TComposable extends Composable = '$fetch', DefaultT extends DeleteUsersSelfResponse = DeleteUsersSelfResponse>(options: Options<TComposable, DeleteUsersSelfData, DeleteUsersSelfResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).delete<TComposable, DeleteUsersSelfResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self',
         ...options
@@ -766,7 +766,7 @@ export const deleteUsersSelf = <TComposable extends Composable, DefaultT extends
 /**
  * Gets current user information.
  */
-export const getUsersSelf = <TComposable extends Composable, DefaultT extends GetUsersSelfResponse = GetUsersSelfResponse>(options: Options<TComposable, GetUsersSelfData, GetUsersSelfResponse, DefaultT>) => {
+export const getUsersSelf = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfResponse = GetUsersSelfResponse>(options: Options<TComposable, GetUsersSelfData, GetUsersSelfResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self',
         ...options
@@ -776,7 +776,7 @@ export const getUsersSelf = <TComposable extends Composable, DefaultT extends Ge
 /**
  * Update the current user.
  */
-export const putUsersSelf = <TComposable extends Composable, DefaultT extends PutUsersSelfResponse = PutUsersSelfResponse>(options: Options<TComposable, PutUsersSelfData, PutUsersSelfResponse, DefaultT>) => {
+export const putUsersSelf = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfResponse = PutUsersSelfResponse>(options: Options<TComposable, PutUsersSelfData, PutUsersSelfResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self',
         ...options,
@@ -790,7 +790,7 @@ export const putUsersSelf = <TComposable extends Composable, DefaultT extends Pu
 /**
  * Get user by id.
  */
-export const getUsersByUserId = <TComposable extends Composable, DefaultT extends GetUsersByUserIdResponse = GetUsersByUserIdResponse>(options: Options<TComposable, GetUsersByUserIdData, GetUsersByUserIdResponse, DefaultT>) => {
+export const getUsersByUserId = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersByUserIdResponse = GetUsersByUserIdResponse>(options: Options<TComposable, GetUsersByUserIdData, GetUsersByUserIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersByUserIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersByUserIdResponseTransformer,
         url: '/Users/{userId}',
@@ -801,7 +801,7 @@ export const getUsersByUserId = <TComposable extends Composable, DefaultT extend
 /**
  * Update the user note.
  */
-export const putUsersByUserIdNote = <TComposable extends Composable, DefaultT extends PutUsersByUserIdNoteResponse = PutUsersByUserIdNoteResponse>(options: Options<TComposable, PutUsersByUserIdNoteData, PutUsersByUserIdNoteResponse, DefaultT>) => {
+export const putUsersByUserIdNote = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersByUserIdNoteResponse = PutUsersByUserIdNoteResponse>(options: Options<TComposable, PutUsersByUserIdNoteData, PutUsersByUserIdNoteResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersByUserIdNoteResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersByUserIdNoteResponseTransformer,
         url: '/Users/{userId}/note',
@@ -816,7 +816,7 @@ export const putUsersByUserIdNote = <TComposable extends Composable, DefaultT ex
 /**
  * Gets all characters by user id.
  */
-export const getUsersByUserIdCharacters = <TComposable extends Composable, DefaultT extends GetUsersByUserIdCharactersResponse = GetUsersByUserIdCharactersResponse>(options: Options<TComposable, GetUsersByUserIdCharactersData, GetUsersByUserIdCharactersResponse, DefaultT>) => {
+export const getUsersByUserIdCharacters = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersByUserIdCharactersResponse = GetUsersByUserIdCharactersResponse>(options: Options<TComposable, GetUsersByUserIdCharactersData, GetUsersByUserIdCharactersResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersByUserIdCharactersResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/{userId}/characters',
         ...options
@@ -826,7 +826,7 @@ export const getUsersByUserIdCharacters = <TComposable extends Composable, Defau
 /**
  * Get user by id.
  */
-export const getUsers = <TComposable extends Composable, DefaultT extends GetUsersResponse = GetUsersResponse>(options: Options<TComposable, GetUsersData, GetUsersResponse, DefaultT>) => {
+export const getUsers = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersResponse = GetUsersResponse>(options: Options<TComposable, GetUsersData, GetUsersResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersResponseTransformer,
         url: '/Users',
@@ -837,7 +837,7 @@ export const getUsers = <TComposable extends Composable, DefaultT extends GetUse
 /**
  * Get all restrictions for a user.
  */
-export const getUsersByIdRestrictions = <TComposable extends Composable, DefaultT extends GetUsersByIdRestrictionsResponse = GetUsersByIdRestrictionsResponse>(options: Options<TComposable, GetUsersByIdRestrictionsData, GetUsersByIdRestrictionsResponse, DefaultT>) => {
+export const getUsersByIdRestrictions = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersByIdRestrictionsResponse = GetUsersByIdRestrictionsResponse>(options: Options<TComposable, GetUsersByIdRestrictionsData, GetUsersByIdRestrictionsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersByIdRestrictionsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersByIdRestrictionsResponseTransformer,
         url: '/Users/{id}/restrictions',
@@ -848,7 +848,7 @@ export const getUsersByIdRestrictions = <TComposable extends Composable, Default
 /**
  * Get active restriction for a user.
  */
-export const getUsersSelfRestriction = <TComposable extends Composable, DefaultT extends GetUsersSelfRestrictionResponse = GetUsersSelfRestrictionResponse>(options: Options<TComposable, GetUsersSelfRestrictionData, GetUsersSelfRestrictionResponse, DefaultT>) => {
+export const getUsersSelfRestriction = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfRestrictionResponse = GetUsersSelfRestrictionResponse>(options: Options<TComposable, GetUsersSelfRestrictionData, GetUsersSelfRestrictionResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfRestrictionResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfRestrictionResponseTransformer,
         url: '/Users/self/restriction',
@@ -859,7 +859,7 @@ export const getUsersSelfRestriction = <TComposable extends Composable, DefaultT
 /**
  * Reward user.
  */
-export const putUsersByIdRewards = <TComposable extends Composable, DefaultT extends PutUsersByIdRewardsResponse = PutUsersByIdRewardsResponse>(options: Options<TComposable, PutUsersByIdRewardsData, PutUsersByIdRewardsResponse, DefaultT>) => {
+export const putUsersByIdRewards = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersByIdRewardsResponse = PutUsersByIdRewardsResponse>(options: Options<TComposable, PutUsersByIdRewardsData, PutUsersByIdRewardsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersByIdRewardsResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/{id}/rewards',
         ...options,
@@ -873,7 +873,7 @@ export const putUsersByIdRewards = <TComposable extends Composable, DefaultT ext
 /**
  * Deletes the specified current user's character.
  */
-export const deleteUsersSelfCharactersById = <TComposable extends Composable, DefaultT extends DeleteUsersSelfCharactersByIdResponse = DeleteUsersSelfCharactersByIdResponse>(options: Options<TComposable, DeleteUsersSelfCharactersByIdData, DeleteUsersSelfCharactersByIdResponse, DefaultT>) => {
+export const deleteUsersSelfCharactersById = <TComposable extends Composable = '$fetch', DefaultT extends DeleteUsersSelfCharactersByIdResponse = DeleteUsersSelfCharactersByIdResponse>(options: Options<TComposable, DeleteUsersSelfCharactersByIdData, DeleteUsersSelfCharactersByIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).delete<TComposable, DeleteUsersSelfCharactersByIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}',
         ...options
@@ -883,7 +883,7 @@ export const deleteUsersSelfCharactersById = <TComposable extends Composable, De
 /**
  * Gets the specified current user's character.
  */
-export const getUsersSelfCharactersById = <TComposable extends Composable, DefaultT extends GetUsersSelfCharactersByIdResponse = GetUsersSelfCharactersByIdResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdData, GetUsersSelfCharactersByIdResponse, DefaultT>) => {
+export const getUsersSelfCharactersById = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdResponse = GetUsersSelfCharactersByIdResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdData, GetUsersSelfCharactersByIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfCharactersByIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}',
         ...options
@@ -893,7 +893,7 @@ export const getUsersSelfCharactersById = <TComposable extends Composable, Defau
 /**
  * Updates a character for the current user.
  */
-export const putUsersSelfCharactersById = <TComposable extends Composable, DefaultT extends PutUsersSelfCharactersByIdResponse = PutUsersSelfCharactersByIdResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdData, PutUsersSelfCharactersByIdResponse, DefaultT>) => {
+export const putUsersSelfCharactersById = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdResponse = PutUsersSelfCharactersByIdResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdData, PutUsersSelfCharactersByIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfCharactersByIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}',
         ...options,
@@ -907,7 +907,7 @@ export const putUsersSelfCharactersById = <TComposable extends Composable, Defau
 /**
  * Gets all current user's characters.
  */
-export const getUsersSelfCharacters = <TComposable extends Composable, DefaultT extends GetUsersSelfCharactersResponse = GetUsersSelfCharactersResponse>(options: Options<TComposable, GetUsersSelfCharactersData, GetUsersSelfCharactersResponse, DefaultT>) => {
+export const getUsersSelfCharacters = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersResponse = GetUsersSelfCharactersResponse>(options: Options<TComposable, GetUsersSelfCharactersData, GetUsersSelfCharactersResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfCharactersResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters',
         ...options
@@ -917,7 +917,7 @@ export const getUsersSelfCharacters = <TComposable extends Composable, DefaultT 
 /**
  * Get character characteristics for the current user.
  */
-export const getUsersSelfCharactersByIdCharacteristics = <TComposable extends Composable, DefaultT extends GetUsersSelfCharactersByIdCharacteristicsResponse = GetUsersSelfCharactersByIdCharacteristicsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdCharacteristicsData, GetUsersSelfCharactersByIdCharacteristicsResponse, DefaultT>) => {
+export const getUsersSelfCharactersByIdCharacteristics = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdCharacteristicsResponse = GetUsersSelfCharactersByIdCharacteristicsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdCharacteristicsData, GetUsersSelfCharactersByIdCharacteristicsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfCharactersByIdCharacteristicsResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}/characteristics',
         ...options
@@ -927,7 +927,7 @@ export const getUsersSelfCharactersByIdCharacteristics = <TComposable extends Co
 /**
  * Updates character characteristics for the current user.
  */
-export const putUsersSelfCharactersByIdCharacteristics = <TComposable extends Composable, DefaultT extends PutUsersSelfCharactersByIdCharacteristicsResponse = PutUsersSelfCharactersByIdCharacteristicsResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdCharacteristicsData, PutUsersSelfCharactersByIdCharacteristicsResponse, DefaultT>) => {
+export const putUsersSelfCharactersByIdCharacteristics = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdCharacteristicsResponse = PutUsersSelfCharactersByIdCharacteristicsResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdCharacteristicsData, PutUsersSelfCharactersByIdCharacteristicsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfCharactersByIdCharacteristicsResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}/characteristics',
         ...options,
@@ -941,7 +941,7 @@ export const putUsersSelfCharactersByIdCharacteristics = <TComposable extends Co
 /**
  * Updates every character competitive rating.
  */
-export const putUsersCharactersCompetitiveRatings = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, PutUsersCharactersCompetitiveRatingsData, unknown, DefaultT>) => {
+export const putUsersCharactersCompetitiveRatings = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PutUsersCharactersCompetitiveRatingsData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Users/characters/competitive-ratings',
         ...options
@@ -951,7 +951,7 @@ export const putUsersCharactersCompetitiveRatings = <TComposable extends Composa
 /**
  * Respecializes every character.
  */
-export const putUsersCharactersRespecialize = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, PutUsersCharactersRespecializeData, unknown, DefaultT>) => {
+export const putUsersCharactersRespecialize = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, PutUsersCharactersRespecializeData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/Users/characters/respecialize',
         ...options
@@ -961,7 +961,7 @@ export const putUsersCharactersRespecialize = <TComposable extends Composable, D
 /**
  * Convert character characteristics for the current user.
  */
-export const putUsersSelfCharactersByIdCharacteristicsConvert = <TComposable extends Composable, DefaultT extends PutUsersSelfCharactersByIdCharacteristicsConvertResponse = PutUsersSelfCharactersByIdCharacteristicsConvertResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdCharacteristicsConvertData, PutUsersSelfCharactersByIdCharacteristicsConvertResponse, DefaultT>) => {
+export const putUsersSelfCharactersByIdCharacteristicsConvert = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdCharacteristicsConvertResponse = PutUsersSelfCharactersByIdCharacteristicsConvertResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdCharacteristicsConvertData, PutUsersSelfCharactersByIdCharacteristicsConvertResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfCharactersByIdCharacteristicsConvertResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}/characteristics/convert',
         ...options,
@@ -975,7 +975,7 @@ export const putUsersSelfCharactersByIdCharacteristicsConvert = <TComposable ext
 /**
  * Get character items for the current user.
  */
-export const getUsersSelfCharactersByIdItems = <TComposable extends Composable, DefaultT extends GetUsersSelfCharactersByIdItemsResponse = GetUsersSelfCharactersByIdItemsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdItemsData, GetUsersSelfCharactersByIdItemsResponse, DefaultT>) => {
+export const getUsersSelfCharactersByIdItems = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdItemsResponse = GetUsersSelfCharactersByIdItemsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdItemsData, GetUsersSelfCharactersByIdItemsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfCharactersByIdItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfCharactersByIdItemsResponseTransformer,
         url: '/Users/self/characters/{id}/items',
@@ -986,7 +986,7 @@ export const getUsersSelfCharactersByIdItems = <TComposable extends Composable, 
 /**
  * Updates a character's items for the current user.
  */
-export const putUsersSelfCharactersByIdItems = <TComposable extends Composable, DefaultT extends PutUsersSelfCharactersByIdItemsResponse = PutUsersSelfCharactersByIdItemsResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdItemsData, PutUsersSelfCharactersByIdItemsResponse, DefaultT>) => {
+export const putUsersSelfCharactersByIdItems = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdItemsResponse = PutUsersSelfCharactersByIdItemsResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdItemsData, PutUsersSelfCharactersByIdItemsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfCharactersByIdItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersSelfCharactersByIdItemsResponseTransformer,
         url: '/Users/self/characters/{id}/items',
@@ -1001,7 +1001,7 @@ export const putUsersSelfCharactersByIdItems = <TComposable extends Composable, 
 /**
  * Activate/deactivate character.
  */
-export const putUsersSelfCharactersByIdActive = <TComposable extends Composable, DefaultT extends PutUsersSelfCharactersByIdActiveResponse = PutUsersSelfCharactersByIdActiveResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdActiveData, PutUsersSelfCharactersByIdActiveResponse, DefaultT>) => {
+export const putUsersSelfCharactersByIdActive = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdActiveResponse = PutUsersSelfCharactersByIdActiveResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdActiveData, PutUsersSelfCharactersByIdActiveResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfCharactersByIdActiveResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}/active',
         ...options,
@@ -1015,7 +1015,7 @@ export const putUsersSelfCharactersByIdActive = <TComposable extends Composable,
 /**
  * Get character statistics for the current user.
  */
-export const getUsersSelfCharactersByIdStatistics = <TComposable extends Composable, DefaultT extends GetUsersSelfCharactersByIdStatisticsResponse = GetUsersSelfCharactersByIdStatisticsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdStatisticsData, GetUsersSelfCharactersByIdStatisticsResponse, DefaultT>) => {
+export const getUsersSelfCharactersByIdStatistics = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdStatisticsResponse = GetUsersSelfCharactersByIdStatisticsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdStatisticsData, GetUsersSelfCharactersByIdStatisticsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfCharactersByIdStatisticsResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}/statistics',
         ...options
@@ -1025,7 +1025,7 @@ export const getUsersSelfCharactersByIdStatistics = <TComposable extends Composa
 /**
  * Get character exp/gold stats for the current user.
  */
-export const getUsersSelfCharactersByIdEarningStatistics = <TComposable extends Composable, DefaultT extends GetUsersSelfCharactersByIdEarningStatisticsResponse = GetUsersSelfCharactersByIdEarningStatisticsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdEarningStatisticsData, GetUsersSelfCharactersByIdEarningStatisticsResponse, DefaultT>) => {
+export const getUsersSelfCharactersByIdEarningStatistics = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdEarningStatisticsResponse = GetUsersSelfCharactersByIdEarningStatisticsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdEarningStatisticsData, GetUsersSelfCharactersByIdEarningStatisticsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfCharactersByIdEarningStatisticsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfCharactersByIdEarningStatisticsResponseTransformer,
         url: '/Users/self/characters/{id}/earning-statistics',
@@ -1036,7 +1036,7 @@ export const getUsersSelfCharactersByIdEarningStatistics = <TComposable extends 
 /**
  * Get character limitations for the current user.
  */
-export const getUsersSelfCharactersByIdLimitations = <TComposable extends Composable, DefaultT extends GetUsersSelfCharactersByIdLimitationsResponse = GetUsersSelfCharactersByIdLimitationsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdLimitationsData, GetUsersSelfCharactersByIdLimitationsResponse, DefaultT>) => {
+export const getUsersSelfCharactersByIdLimitations = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfCharactersByIdLimitationsResponse = GetUsersSelfCharactersByIdLimitationsResponse>(options: Options<TComposable, GetUsersSelfCharactersByIdLimitationsData, GetUsersSelfCharactersByIdLimitationsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfCharactersByIdLimitationsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfCharactersByIdLimitationsResponseTransformer,
         url: '/Users/self/characters/{id}/limitations',
@@ -1047,7 +1047,7 @@ export const getUsersSelfCharactersByIdLimitations = <TComposable extends Compos
 /**
  * Resets a character rating.
  */
-export const putUsersByUserIdCharactersByIdRetire = <TComposable extends Composable, DefaultT extends PutUsersByUserIdCharactersByIdRetireResponse = PutUsersByUserIdCharactersByIdRetireResponse>(options: Options<TComposable, PutUsersByUserIdCharactersByIdRetireData, PutUsersByUserIdCharactersByIdRetireResponse, DefaultT>) => {
+export const putUsersByUserIdCharactersByIdRetire = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersByUserIdCharactersByIdRetireResponse = PutUsersByUserIdCharactersByIdRetireResponse>(options: Options<TComposable, PutUsersByUserIdCharactersByIdRetireData, PutUsersByUserIdCharactersByIdRetireResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersByUserIdCharactersByIdRetireResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/{userId}/characters/{id}/retire',
         ...options
@@ -1057,7 +1057,7 @@ export const putUsersByUserIdCharactersByIdRetire = <TComposable extends Composa
 /**
  * Retires character.
  */
-export const putUsersSelfCharactersByIdRetire = <TComposable extends Composable, DefaultT extends PutUsersSelfCharactersByIdRetireResponse = PutUsersSelfCharactersByIdRetireResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdRetireData, PutUsersSelfCharactersByIdRetireResponse, DefaultT>) => {
+export const putUsersSelfCharactersByIdRetire = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdRetireResponse = PutUsersSelfCharactersByIdRetireResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdRetireData, PutUsersSelfCharactersByIdRetireResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfCharactersByIdRetireResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}/retire',
         ...options
@@ -1067,7 +1067,7 @@ export const putUsersSelfCharactersByIdRetire = <TComposable extends Composable,
 /**
  * Respecializes character.
  */
-export const putUsersSelfCharactersByIdRespecialize = <TComposable extends Composable, DefaultT extends PutUsersSelfCharactersByIdRespecializeResponse = PutUsersSelfCharactersByIdRespecializeResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdRespecializeData, PutUsersSelfCharactersByIdRespecializeResponse, DefaultT>) => {
+export const putUsersSelfCharactersByIdRespecialize = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdRespecializeResponse = PutUsersSelfCharactersByIdRespecializeResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdRespecializeData, PutUsersSelfCharactersByIdRespecializeResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfCharactersByIdRespecializeResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}/respecialize',
         ...options
@@ -1077,7 +1077,7 @@ export const putUsersSelfCharactersByIdRespecialize = <TComposable extends Compo
 /**
  * Set the character as tournament character.
  */
-export const putUsersSelfCharactersByIdTournament = <TComposable extends Composable, DefaultT extends PutUsersSelfCharactersByIdTournamentResponse = PutUsersSelfCharactersByIdTournamentResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdTournamentData, PutUsersSelfCharactersByIdTournamentResponse, DefaultT>) => {
+export const putUsersSelfCharactersByIdTournament = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfCharactersByIdTournamentResponse = PutUsersSelfCharactersByIdTournamentResponse>(options: Options<TComposable, PutUsersSelfCharactersByIdTournamentData, PutUsersSelfCharactersByIdTournamentResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfCharactersByIdTournamentResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/characters/{id}/tournament',
         ...options
@@ -1087,7 +1087,7 @@ export const putUsersSelfCharactersByIdTournament = <TComposable extends Composa
 /**
  * Reward character.
  */
-export const putUsersByUserIdCharactersByCharacterIdRewards = <TComposable extends Composable, DefaultT extends PutUsersByUserIdCharactersByCharacterIdRewardsResponse = PutUsersByUserIdCharactersByCharacterIdRewardsResponse>(options: Options<TComposable, PutUsersByUserIdCharactersByCharacterIdRewardsData, PutUsersByUserIdCharactersByCharacterIdRewardsResponse, DefaultT>) => {
+export const putUsersByUserIdCharactersByCharacterIdRewards = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersByUserIdCharactersByCharacterIdRewardsResponse = PutUsersByUserIdCharactersByCharacterIdRewardsResponse>(options: Options<TComposable, PutUsersByUserIdCharactersByCharacterIdRewardsData, PutUsersByUserIdCharactersByCharacterIdRewardsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersByUserIdCharactersByCharacterIdRewardsResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/{userId}/characters/{characterId}/rewards',
         ...options,
@@ -1101,7 +1101,7 @@ export const putUsersByUserIdCharactersByCharacterIdRewards = <TComposable exten
 /**
  * Gets owned items.
  */
-export const getUsersSelfItems = <TComposable extends Composable, DefaultT extends GetUsersSelfItemsResponse = GetUsersSelfItemsResponse>(options: Options<TComposable, GetUsersSelfItemsData, GetUsersSelfItemsResponse, DefaultT>) => {
+export const getUsersSelfItems = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfItemsResponse = GetUsersSelfItemsResponse>(options: Options<TComposable, GetUsersSelfItemsData, GetUsersSelfItemsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfItemsResponseTransformer,
         url: '/Users/self/items',
@@ -1112,7 +1112,7 @@ export const getUsersSelfItems = <TComposable extends Composable, DefaultT exten
 /**
  * Buys item for the current user.
  */
-export const postUsersSelfItems = <TComposable extends Composable, DefaultT extends PostUsersSelfItemsResponse = PostUsersSelfItemsResponse>(options: Options<TComposable, PostUsersSelfItemsData, PostUsersSelfItemsResponse, DefaultT>) => {
+export const postUsersSelfItems = <TComposable extends Composable = '$fetch', DefaultT extends PostUsersSelfItemsResponse = PostUsersSelfItemsResponse>(options: Options<TComposable, PostUsersSelfItemsData, PostUsersSelfItemsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).post<TComposable, PostUsersSelfItemsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: postUsersSelfItemsResponseTransformer,
         url: '/Users/self/items',
@@ -1127,7 +1127,7 @@ export const postUsersSelfItems = <TComposable extends Composable, DefaultT exte
 /**
  * Reforge item.
  */
-export const putUsersSelfItemsByIdReforge = <TComposable extends Composable, DefaultT extends PutUsersSelfItemsByIdReforgeResponse = PutUsersSelfItemsByIdReforgeResponse>(options: Options<TComposable, PutUsersSelfItemsByIdReforgeData, PutUsersSelfItemsByIdReforgeResponse, DefaultT>) => {
+export const putUsersSelfItemsByIdReforge = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfItemsByIdReforgeResponse = PutUsersSelfItemsByIdReforgeResponse>(options: Options<TComposable, PutUsersSelfItemsByIdReforgeData, PutUsersSelfItemsByIdReforgeResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfItemsByIdReforgeResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersSelfItemsByIdReforgeResponseTransformer,
         url: '/Users/self/items/{id}/reforge',
@@ -1138,7 +1138,7 @@ export const putUsersSelfItemsByIdReforge = <TComposable extends Composable, Def
 /**
  * Repair item.
  */
-export const putUsersSelfItemsByIdRepair = <TComposable extends Composable, DefaultT extends PutUsersSelfItemsByIdRepairResponse = PutUsersSelfItemsByIdRepairResponse>(options: Options<TComposable, PutUsersSelfItemsByIdRepairData, PutUsersSelfItemsByIdRepairResponse, DefaultT>) => {
+export const putUsersSelfItemsByIdRepair = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfItemsByIdRepairResponse = PutUsersSelfItemsByIdRepairResponse>(options: Options<TComposable, PutUsersSelfItemsByIdRepairData, PutUsersSelfItemsByIdRepairResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfItemsByIdRepairResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersSelfItemsByIdRepairResponseTransformer,
         url: '/Users/self/items/{id}/repair',
@@ -1149,7 +1149,7 @@ export const putUsersSelfItemsByIdRepair = <TComposable extends Composable, Defa
 /**
  * Upgrade item.
  */
-export const putUsersSelfItemsByIdUpgrade = <TComposable extends Composable, DefaultT extends PutUsersSelfItemsByIdUpgradeResponse = PutUsersSelfItemsByIdUpgradeResponse>(options: Options<TComposable, PutUsersSelfItemsByIdUpgradeData, PutUsersSelfItemsByIdUpgradeResponse, DefaultT>) => {
+export const putUsersSelfItemsByIdUpgrade = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfItemsByIdUpgradeResponse = PutUsersSelfItemsByIdUpgradeResponse>(options: Options<TComposable, PutUsersSelfItemsByIdUpgradeData, PutUsersSelfItemsByIdUpgradeResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfItemsByIdUpgradeResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersSelfItemsByIdUpgradeResponseTransformer,
         url: '/Users/self/items/{id}/upgrade',
@@ -1160,7 +1160,7 @@ export const putUsersSelfItemsByIdUpgrade = <TComposable extends Composable, Def
 /**
  * Sells item for the current user.
  */
-export const deleteUsersSelfItemsById = <TComposable extends Composable, DefaultT extends DeleteUsersSelfItemsByIdResponse = DeleteUsersSelfItemsByIdResponse>(options: Options<TComposable, DeleteUsersSelfItemsByIdData, DeleteUsersSelfItemsByIdResponse, DefaultT>) => {
+export const deleteUsersSelfItemsById = <TComposable extends Composable = '$fetch', DefaultT extends DeleteUsersSelfItemsByIdResponse = DeleteUsersSelfItemsByIdResponse>(options: Options<TComposable, DeleteUsersSelfItemsByIdData, DeleteUsersSelfItemsByIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).delete<TComposable, DeleteUsersSelfItemsByIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/items/{id}',
         ...options
@@ -1170,14 +1170,14 @@ export const deleteUsersSelfItemsById = <TComposable extends Composable, Default
 /**
  * Gets user clan or null.
  */
-export const getUsersSelfClan = <TComposable extends Composable, DefaultT extends GetUsersSelfClanResponse = GetUsersSelfClanResponse>(options: Options<TComposable, GetUsersSelfClanData, GetUsersSelfClanResponse, DefaultT>) => {
+export const getUsersSelfClan = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfClanResponse = GetUsersSelfClanResponse>(options: Options<TComposable, GetUsersSelfClanData, GetUsersSelfClanResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfClanResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/clan',
         ...options
     });
 };
 
-export const getUsersRewardRecent = <TComposable extends Composable, DefaultT = undefined>(options: Options<TComposable, GetUsersRewardRecentData, unknown, DefaultT>) => {
+export const getUsersRewardRecent = <TComposable extends Composable = '$fetch', DefaultT = undefined>(options: Options<TComposable, GetUsersRewardRecentData, unknown, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, unknown | DefaultT, unknown, DefaultT>({
         url: '/users/reward-recent',
         ...options
@@ -1187,7 +1187,7 @@ export const getUsersRewardRecent = <TComposable extends Composable, DefaultT = 
 /**
  * Gets user's notifications.
  */
-export const getUsersSelfNotifications = <TComposable extends Composable, DefaultT extends GetUsersSelfNotificationsResponse = GetUsersSelfNotificationsResponse>(options: Options<TComposable, GetUsersSelfNotificationsData, GetUsersSelfNotificationsResponse, DefaultT>) => {
+export const getUsersSelfNotifications = <TComposable extends Composable = '$fetch', DefaultT extends GetUsersSelfNotificationsResponse = GetUsersSelfNotificationsResponse>(options: Options<TComposable, GetUsersSelfNotificationsData, GetUsersSelfNotificationsResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).get<TComposable, GetUsersSelfNotificationsResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: getUsersSelfNotificationsResponseTransformer,
         url: '/Users/self/notifications',
@@ -1198,7 +1198,7 @@ export const getUsersSelfNotifications = <TComposable extends Composable, Defaul
 /**
  * Delete user's notification.
  */
-export const deleteUsersSelfNotificationsById = <TComposable extends Composable, DefaultT extends DeleteUsersSelfNotificationsByIdResponse = DeleteUsersSelfNotificationsByIdResponse>(options: Options<TComposable, DeleteUsersSelfNotificationsByIdData, DeleteUsersSelfNotificationsByIdResponse, DefaultT>) => {
+export const deleteUsersSelfNotificationsById = <TComposable extends Composable = '$fetch', DefaultT extends DeleteUsersSelfNotificationsByIdResponse = DeleteUsersSelfNotificationsByIdResponse>(options: Options<TComposable, DeleteUsersSelfNotificationsByIdData, DeleteUsersSelfNotificationsByIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).delete<TComposable, DeleteUsersSelfNotificationsByIdResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/notifications/{id}',
         ...options
@@ -1208,7 +1208,7 @@ export const deleteUsersSelfNotificationsById = <TComposable extends Composable,
 /**
  * Read user's notification.
  */
-export const putUsersSelfNotificationsById = <TComposable extends Composable, DefaultT extends PutUsersSelfNotificationsByIdResponse = PutUsersSelfNotificationsByIdResponse>(options: Options<TComposable, PutUsersSelfNotificationsByIdData, PutUsersSelfNotificationsByIdResponse, DefaultT>) => {
+export const putUsersSelfNotificationsById = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfNotificationsByIdResponse = PutUsersSelfNotificationsByIdResponse>(options: Options<TComposable, PutUsersSelfNotificationsByIdData, PutUsersSelfNotificationsByIdResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfNotificationsByIdResponse | DefaultT, unknown, DefaultT>({
         responseTransformer: putUsersSelfNotificationsByIdResponseTransformer,
         url: '/Users/self/notifications/{id}',
@@ -1219,7 +1219,7 @@ export const putUsersSelfNotificationsById = <TComposable extends Composable, De
 /**
  * Read all user's notifications.
  */
-export const putUsersSelfNotificationsReadAll = <TComposable extends Composable, DefaultT extends PutUsersSelfNotificationsReadAllResponse = PutUsersSelfNotificationsReadAllResponse>(options: Options<TComposable, PutUsersSelfNotificationsReadAllData, PutUsersSelfNotificationsReadAllResponse, DefaultT>) => {
+export const putUsersSelfNotificationsReadAll = <TComposable extends Composable = '$fetch', DefaultT extends PutUsersSelfNotificationsReadAllResponse = PutUsersSelfNotificationsReadAllResponse>(options: Options<TComposable, PutUsersSelfNotificationsReadAllData, PutUsersSelfNotificationsReadAllResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).put<TComposable, PutUsersSelfNotificationsReadAllResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/notifications/readAll',
         ...options
@@ -1229,7 +1229,7 @@ export const putUsersSelfNotificationsReadAll = <TComposable extends Composable,
 /**
  * Delete all user's notifications.
  */
-export const deleteUsersSelfNotificationsDeleteAll = <TComposable extends Composable, DefaultT extends DeleteUsersSelfNotificationsDeleteAllResponse = DeleteUsersSelfNotificationsDeleteAllResponse>(options: Options<TComposable, DeleteUsersSelfNotificationsDeleteAllData, DeleteUsersSelfNotificationsDeleteAllResponse, DefaultT>) => {
+export const deleteUsersSelfNotificationsDeleteAll = <TComposable extends Composable = '$fetch', DefaultT extends DeleteUsersSelfNotificationsDeleteAllResponse = DeleteUsersSelfNotificationsDeleteAllResponse>(options: Options<TComposable, DeleteUsersSelfNotificationsDeleteAllData, DeleteUsersSelfNotificationsDeleteAllResponse, DefaultT>) => {
     return (options.client ?? _heyApiClient).delete<TComposable, DeleteUsersSelfNotificationsDeleteAllResponse | DefaultT, unknown, DefaultT>({
         url: '/Users/self/notifications/deleteAll',
         ...options

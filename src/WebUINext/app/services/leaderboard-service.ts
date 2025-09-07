@@ -23,7 +23,6 @@ export const getLeaderBoard = async ({
   gameMode?: GameMode
 }): Promise<CharacterCompetitiveNumbered[]> => {
   const { data } = await getLeaderboardLeaderboard({
-    composable: '$fetch',
     query: {
       region: region!,
       gameMode: gameMode!,

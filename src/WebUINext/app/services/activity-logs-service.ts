@@ -20,7 +20,6 @@ export const getActivityLogs = async (
 ): Promise<GetActivityLogResponse> => {
   const { to, from, userIds, types } = payload
   const { data } = await _getActivityLogs({
-    composable: '$fetch',
     query: {
       // @ts-expect-error TODO:
       'to': to.toISOString(),

@@ -82,29 +82,29 @@ import { armorTypes, computeAverageRepairCostPerHour } from '~/services/item-ser
 import { getIndexToIns, range } from '~/utils/array'
 import { applyPolynomialFunction, roundFLoat } from '~/utils/math'
 
-export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({ composable: '$fetch' })).data!
+export const getCharacters = async (): Promise<Character[]> => (await getUsersSelfCharacters({})).data!
 
 export const getCharactersByUserId = async (
   userId: number,
-): Promise<Character[]> => (await getUsersByUserIdCharacters({ composable: '$fetch', path: { userId } })).data!
+): Promise<Character[]> => (await getUsersByUserIdCharacters({ path: { userId } })).data!
 
 export const updateCharacter = (
   characterId: number,
   req: UpdateCharacterRequest,
-) => putUsersSelfCharactersById({ composable: '$fetch', path: { id: characterId }, body: { name: req.name } })
+) => putUsersSelfCharactersById({ path: { id: characterId }, body: { name: req.name } })
 
 export const activateCharacter = (
   characterId: number,
   active: boolean,
-) => putUsersSelfCharactersByIdActive({ composable: '$fetch', path: { id: characterId }, body: { active } })
+) => putUsersSelfCharactersByIdActive({ path: { id: characterId }, body: { active } })
 
 export const deleteCharacter = (
   characterId: number,
-) => deleteUsersSelfCharactersById({ composable: '$fetch', path: { id: characterId } })
+) => deleteUsersSelfCharactersById({ path: { id: characterId } })
 
 export const respecializeCharacter = (
   characterId: number,
-) => putUsersSelfCharactersByIdRespecialize({ composable: '$fetch', path: { id: characterId } })
+) => putUsersSelfCharactersByIdRespecialize({ path: { id: characterId } })
 
 export const tournamentLevelThreshold = 20
 
@@ -118,7 +118,7 @@ export const canSetCharacterForTournamentValidate = (
 
 export const setCharacterForTournament = (
   characterId: number,
-) => putUsersSelfCharactersByIdTournament({ composable: '$fetch', path: { id: characterId } })
+) => putUsersSelfCharactersByIdTournament({ path: { id: characterId } })
 
 export const canRetireValidate = (
   level: number,
@@ -126,25 +126,25 @@ export const canRetireValidate = (
 
 export const retireCharacter = (
   characterId: number,
-) => putUsersSelfCharactersByIdRetire({ composable: '$fetch', path: { id: characterId } })
+) => putUsersSelfCharactersByIdRetire({ path: { id: characterId } })
 
 export const getCharacterCharacteristics = async (
   characterId: number,
-): Promise<CharacterCharacteristics> => (await getUsersSelfCharactersByIdCharacteristics({ composable: '$fetch', path: { id: characterId } })).data
+): Promise<CharacterCharacteristics> => (await getUsersSelfCharactersByIdCharacteristics({ path: { id: characterId } })).data
 
 export const convertCharacterCharacteristics = async (
   characterId: number,
   conversion: CharacteristicConversion,
-): Promise<CharacterCharacteristics> => (await putUsersSelfCharactersByIdCharacteristicsConvert({ composable: '$fetch', path: { id: characterId }, body: { conversion } })).data
+): Promise<CharacterCharacteristics> => (await putUsersSelfCharactersByIdCharacteristicsConvert({ path: { id: characterId }, body: { conversion } })).data
 
 export const updateCharacterCharacteristics = async (
   characterId: number,
   req: CharacterCharacteristics,
-) => (await putUsersSelfCharactersByIdCharacteristics({ composable: '$fetch', path: { id: characterId }, body: req })).data
+) => (await putUsersSelfCharactersByIdCharacteristics({ path: { id: characterId }, body: req })).data
 
 export const getCharacterStatistics = async (
   characterId: number,
-): Promise<Partial<Record<GameMode, CharacterStatistics>>> => (await getUsersSelfCharactersByIdStatistics({ composable: '$fetch', path: { id: characterId } })).data!
+): Promise<Partial<Record<GameMode, CharacterStatistics>>> => (await getUsersSelfCharactersByIdStatistics({ path: { id: characterId } })).data!
 
 export const getDefaultCharacterStatistics = (): CharacterStatistics => ({
   assists: 0,
@@ -166,7 +166,7 @@ export const getCompetitiveValueByGameMode = (
 export const getCharacterLimitations = async (
   characterId: number,
 ): Promise<CharacterLimitations> => {
-  const { data } = await getUsersSelfCharactersByIdLimitations({ composable: '$fetch', path: { id: characterId } })
+  const { data } = await getUsersSelfCharactersByIdLimitations({ path: { id: characterId } })
   return data
 }
 
@@ -184,7 +184,6 @@ export const getCharacterEarningStatistics = async (
   from: Date,
 ): Promise<ActivityLog<CharacterEarnedMetadata>[]> => {
   const { data } = await getUsersSelfCharactersByIdEarningStatistics({
-    composable: '$fetch',
     path: { id: characterId },
     query: { from, to: new Date() },
     onRequest: ({ options }) => {
@@ -506,14 +505,14 @@ export const computeSpeedStats = (
 export const getCharacterItems = async (
   characterId: number,
 ): Promise<EquippedItem[]> =>
-  (await getUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId } })).data!
+  (await getUsersSelfCharactersByIdItems({ path: { id: characterId } })).data!
 
 export const updateCharacterItems = async (
   characterId: number,
   items: EquippedItemId[],
 ): Promise<EquippedItem[]> =>
   // @ts-expect-error TODO: FIXME: WithRefs
-  (await putUsersSelfCharactersByIdItems({ composable: '$fetch', path: { id: characterId }, body: { items } })).data!
+  (await putUsersSelfCharactersByIdItems({ path: { id: characterId }, body: { items } })).data!
 
 export const computeOverallPrice = (
   items: Item[],
