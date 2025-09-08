@@ -33,6 +33,19 @@
                 HorizontalAlignment="Center" VerticalAlignment="Center"
                 Margin="4"
                 DoNotAcceptEvents="True" PassEventsToParent="True" />
+            
+            <!-- Item rank icon (heirlooms)-->
+            <BrushWidget Id="ItemRank1" Brush="Item.Rank.Icon_1" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@Rank1Visible" />
+            <BrushWidget Id="ItemRank2" Brush="Item.Rank.Icon_2" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@Rank2Visible" />   
+            <BrushWidget Id="ItemRank3" Brush="Item.Rank.Icon_3" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+              SuggestedWidth="15" SuggestedHeight="15" IsVisible="@Rank3Visible" />
+
+            <!-- Item is Currently Equipped check mark -->
+            <BrushWidget Id="ItemEquipped" Brush="Item.Equipped.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+              SuggestedWidth="15" SuggestedHeight="15" HorizontalAlignment="Right" VerticalAlignment="Top"
+              PositionYOffset="30" IsVisible="@IsEquipped" />                                
 
             <!-- Quantity text (e.g., "12") -->
             <TextWidget Text="@QuantityText"

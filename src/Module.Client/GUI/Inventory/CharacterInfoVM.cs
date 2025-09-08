@@ -23,12 +23,10 @@ public class CharacterInfoVM : ViewModel
     private readonly CrpgConstants _constants = default!;
     private readonly Dictionary<string, CharacterInfoPlusMinusItemVM> _skillMap = new();
     private readonly Dictionary<string, CharacterInfoPlusMinusItemVM> _weaponMap = new();
+    private readonly TimeSpan _apiUsageClickCooldown = TimeSpan.FromSeconds(5);
 
-    private string _characterNameText = string.Empty;
-    private int _characterGeneration;
-    private int _characterLevel;
-    private string _characterExperienceText = string.Empty;
-    private string _characterClassText = string.Empty;
+    private bool _isVisible;
+
     private int _skillPoints;
     private int _attributePoints;
     private int _weaponProficiencyPoints;
@@ -44,9 +42,6 @@ public class CharacterInfoVM : ViewModel
 
     private DateTime _lastApiCharacteristicsRefreshClick = DateTime.MinValue;
     private DateTime _lastApiCharacteristicsApplyClick = DateTime.MinValue;
-    private readonly TimeSpan _ApiUsageClickCooldown = TimeSpan.FromSeconds(5);
-
-    // private CrpgCharacter _crpgCharacterBasic = new();
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CharacterInfoVM"/> class.
@@ -55,14 +50,6 @@ public class CharacterInfoVM : ViewModel
     /// </summary>
     public CharacterInfoVM()
     {
-        /*
-        _characterNameText = string.Empty;
-        _characterLevel = 0;
-        _characterGeneration = 0;
-        _characterExperienceText = string.Empty;
-        _characterClassText = string.Empty;
-        */
-
         _userAndCharacterInfoVm = new UserAndCharacterInfoVM();
 
         // Initialize attribute VMs
@@ -122,7 +109,7 @@ public class CharacterInfoVM : ViewModel
     public void ExecuteClickApplyChanges()
     {
         var now = DateTime.UtcNow;
-        if (now - _lastApiCharacteristicsApplyClick < _ApiUsageClickCooldown)
+        if (now - _lastApiCharacteristicsApplyClick < _apiUsageClickCooldown)
         {
             InformationManager.DisplayMessage(new InformationMessage("Please wait to send another API request.", Colors.Yellow));
             // too soon display msg or play sound
@@ -145,7 +132,7 @@ public class CharacterInfoVM : ViewModel
     public void ExecuteClickRefreshApi()
     {
         var now = DateTime.UtcNow;
-        if (now - _lastApiCharacteristicsRefreshClick < _ApiUsageClickCooldown)
+        if (now - _lastApiCharacteristicsRefreshClick < _apiUsageClickCooldown)
         {
             // too soon display msg or play sound
             InformationManager.DisplayMessage(new InformationMessage("Please wait to send another API request.", Colors.Yellow));
@@ -175,12 +162,6 @@ public class CharacterInfoVM : ViewModel
         // Basic info
         // temp update UserAndCharacterInfoVM here
         UserAndCharacterInfoVm.UpdateUserAndCharacterInfo();
-
-        CharacterNameText = newCharacter.Name;
-        CharacterLevel = newCharacter.Level;
-        CharacterGeneration = newCharacter.Generation;
-        CharacterExperienceText = newCharacter.Experience.ToString();
-        CharacterClassText = newCharacter.Class.ToString();
 
         // Clone characteristics for min value enforcement
         _initialCharacteristics = CloneCharacteristics(newCharacter.Characteristics);
@@ -807,6 +788,9 @@ public class CharacterInfoVM : ViewModel
     }
 
     [DataSourceProperty]
+    public bool IsVisible { get => _isVisible; set => SetField(ref _isVisible, value, nameof(IsVisible)); }
+
+    [DataSourceProperty]
     public CharacterInfoConvertItemVM ConvertAttribute
     {
         get => _convertAttributeVm;
@@ -869,16 +853,6 @@ public class CharacterInfoVM : ViewModel
     public MBBindingList<CharacterInfoPlusMinusItemVM> Skills { get => _skills; set => SetField(ref _skills, value, nameof(Skills)); }
     [DataSourceProperty]
     public MBBindingList<CharacterInfoPlusMinusItemVM> WeaponProficiencies { get => _weaponProficiencies; set => SetField(ref _weaponProficiencies, value, nameof(WeaponProficiencies)); }
-    [DataSourceProperty]
-    public string CharacterNameText { get => _characterNameText; set => SetField(ref _characterNameText, value, nameof(CharacterNameText)); }
-    [DataSourceProperty]
-    public int CharacterLevel { get => _characterLevel; set => SetField(ref _characterLevel, value, nameof(CharacterLevel)); }
-    [DataSourceProperty]
-    public int CharacterGeneration { get => _characterGeneration; set => SetField(ref _characterGeneration, value, nameof(CharacterGeneration)); }
-    [DataSourceProperty]
-    public string CharacterExperienceText { get => _characterExperienceText; set => SetField(ref _characterExperienceText, value, nameof(CharacterExperienceText)); }
-    [DataSourceProperty]
-    public string CharacterClassText { get => _characterClassText; set => SetField(ref _characterClassText, value, nameof(CharacterClassText)); }
     [DataSourceProperty]
     public UserAndCharacterInfoVM UserAndCharacterInfoVm { get => _userAndCharacterInfoVm; set => SetField(ref _userAndCharacterInfoVm, value, nameof(UserAndCharacterInfoVm)); }
 }

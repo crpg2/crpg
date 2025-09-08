@@ -238,6 +238,8 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         ActivateLayer(ref _inventoryLayer, ref _inventoryMovie, _inventoryVm ??= new CrpgInventoryViewModel(), "CrpgInventoryScreen", 110);
         _inventoryVm.IsVisible = true;
 
+        _inventoryVm.Movie = _inventoryMovie;
+
         // Fetch items from server
         var loadout = Mission.Current.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         loadout?.RequestGetUpdatedEquipmentAndItems();

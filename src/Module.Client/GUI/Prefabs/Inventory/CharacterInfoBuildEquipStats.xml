@@ -12,11 +12,16 @@
                 WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" SuggestedWidth="!Container.Width" SuggestedHeight="!Container.Height"
                 Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
           <Children>
+            <!-- Background -->
+            <BrushWidget Id="CharacterInfo.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.Generic.Panel.Background"
+                MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9"/>
+            <!-- Info Panel-->
             <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HeightSizePolicy="CoverChildren" WidthSizePolicy="StretchToParent"
-             MarginTop="8" MarginLeft="10" MarginRight="10" Spacing="2" >
+                MarginTop="8" MarginLeft="10" MarginRight="10" Spacing="2" >
               <Children>
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Cost" Parameter.ImgSprite="SPGeneral\SPCoin" Parameter.ValueText="@Cost" />
-                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Avg repair cost" Parameter.ImgSprite="SPGeneral\SPCoin" Parameter.ValueText="@AvgRepairCost" />
+                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Cost" Parameter.ShouldShowGold="true" Parameter.ValueText="@Cost" />
+                <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Avg repair cost" Parameter.ShouldShowGold="true" Parameter.ValueText="@AvgRepairCost" />
                 <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Health points" Parameter.ImgSprite="" Parameter.ValueText="@HealthPoints" />
                 <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Weight" Parameter.ImgSprite="" Parameter.ValueText="@Weight" />
                 <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Free weight" Parameter.ImgSprite="" Parameter.ValueText="@FreeWeight" />

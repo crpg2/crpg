@@ -71,6 +71,13 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         return true;
     }
 
+    /// <summary>
+    /// Handles a client's request to update their characters characteristics
+    /// and initiates an asynchronous request to the API.
+    /// </summary>
+    /// <param name="networkPeer">The network peer representing the connected client.</param>
+    /// <param name="message">The message containing the request (new Characteristics).</param>
+    /// <returns>Returns true if the request was handled successfully.</returns>
     private bool HandleUserRequestUpdateCharacterCharacteristics(NetworkCommunicator networkPeer, UserRequestUpdateCharacterCharacteristics message)
     {
         Debug.Print("HandleUserRequestUpdateCharacterCharacteristics");
@@ -468,6 +475,9 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
     }
 
+    /// <summary>
+    /// Sends a CrpgCharacter to the specific client.
+    /// </summary>
     private void SynchronizeUserCharacterBasicToPeer(NetworkCommunicator networkPeer, CrpgCharacter crpgCharacter)
     {
         try
@@ -485,6 +495,17 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
             GameNetwork.BeginModuleEventAsServer(networkPeer);
             GameNetwork.WriteMessage(new ServerSendUserCharacterBasic { Character = crpgCharacter });
             GameNetwork.EndModuleEventAsServer();
+
+            var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+            if (crpgPeer?.User != null && crpgPeer?.User?.Character != null)
+            {
+                Debug.Print($"Sending Character statistics also.");
+                GameNetwork.BeginModuleEventAsServer(networkPeer);
+                GameNetwork.WriteMessage(new ServerSendUserCharacterStatistics { CharacterStatistics = crpgPeer.User.Character.Statistics });
+                GameNetwork.EndModuleEventAsServer();
+
+            }
+
         }
         catch (Exception ex)
         {
@@ -493,6 +514,9 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
     }
 
+    /// <summary>
+    /// Sends the result of convert characteristics API request to the specific client.
+    /// </summary>
     private void SynchronizeUserTryConverCharacteristicsResult(NetworkCommunicator networkPeer, CrpgGameCharacteristicConversionRequest crpgCharacter,
          CrpgResult<CrpgCharacterCharacteristics>? apiRes)
     {
@@ -553,6 +577,9 @@ internal class CrpgCharacterLoadoutBehaviorServer : MissionNetwork
         }
     }
 
+    /// <summary>
+    /// Sends the reult of the update characteristics API request to the specified client.
+    /// </summary>
     private void SynchronizeUserTryUpdateCharacteristicsResult(
         NetworkCommunicator networkPeer,
         CrpgGameCharacterCharacteristicsUpdateRequest apiRequest,

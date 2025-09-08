@@ -26,6 +26,34 @@ public class UserAndCharacterInfoVM : ViewModel
     private string _assists = string.Empty;
     private string _playTimeText = string.Empty;
 
+    public static string FormatPlayTime(TimeSpan timeSpan)
+    {
+        List<string> parts = new();
+
+        if (timeSpan.Days > 0)
+        {
+            parts.Add($"{timeSpan.Days}d");
+        }
+
+        if (timeSpan.Hours > 0)
+        {
+            parts.Add($"{timeSpan.Hours}h");
+        }
+
+        if (timeSpan.Minutes > 0)
+        {
+            parts.Add($"{timeSpan.Minutes}m");
+        }
+
+        // If everything is zero, show "0m"
+        if (parts.Count == 0)
+        {
+            parts.Add("0m");
+        }
+
+        return string.Join(" ", parts);
+    }
+
     public UserAndCharacterInfoVM()
     {
         SetDefaults();
@@ -60,7 +88,7 @@ public class UserAndCharacterInfoVM : ViewModel
 
         var user = crpgPeer?.User;
         var character = user?.Character;
-        var stats = behavior.UserCharacter?.Statistics;
+        var stats = behavior.UserCharacterStatistics;
 
         UserName = user?.Name ?? "Unknown";
         ClanName = crpgPeer?.Clan?.Name ?? "No Clan";
@@ -75,8 +103,7 @@ public class UserAndCharacterInfoVM : ViewModel
         Kills = stats?.Kills.ToString() ?? "0";
         Deaths = stats?.Deaths.ToString() ?? "0";
         Assists = stats?.Assists.ToString() ?? "0";
-        PlayTimeText = stats?.PlayTime.ToString() ?? "0";
-
+        PlayTimeText = FormatPlayTime(stats?.PlayTime ?? TimeSpan.Zero);
     }
 
     private void SetDefaults()
@@ -93,13 +120,6 @@ public class UserAndCharacterInfoVM : ViewModel
         Deaths = "0";
         Assists = "0";
         PlayTimeText = "0m";
-    }
-
-    private static string FormatPlayTime(int playTimeMinutes)
-    {
-        var hours = playTimeMinutes / 60;
-        var minutes = playTimeMinutes % 60;
-        return hours > 0 ? $"{hours}h {minutes}m" : $"{minutes}m";
     }
 
     [DataSourceProperty]

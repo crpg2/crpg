@@ -9,11 +9,15 @@
   </Parameters>
   <Window>
     <!-- Character General Info--> <!-- Name, Generation, Level, Experience, Class-->
-    <BrushWidget Id="CharacterInfo.Frame" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+    <BrushWidget Id="UserAndCharacterInfo.Frame" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*MainContainerWidth" SuggestedHeight="*MainContainerHeight"
             HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff"
             Padding="5,10,5,10">
       <Children>
+      <!-- Background -->
+        <BrushWidget Id="UserAndCharacterInfo.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+          HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.Generic.Panel.Background"
+          MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9"/>
         <!-- body -->
         <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
               HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5" MarginTop="10" MarginLeft="10">
@@ -49,7 +53,7 @@
               <Children>
                 <UserAndCharacterInfoItem Parameter.LabelText="User:" Parameter.ValueText="@UserName" />
                 <UserAndCharacterInfoItem Parameter.LabelText="Clan:" Parameter.ValueText="@ClanName" />
-                <UserAndCharacterInfoItem Parameter.LabelText="Gold:" Parameter.ValueText="@Gold" />
+                <UserAndCharacterInfoItem Parameter.LabelText="Gold:" Parameter.ValueText="@Gold" Parameter.ShouldShowGold="true" />
               </Children>
             </ListPanel>                            
           </Children>

@@ -18,6 +18,10 @@ public class EquipmentSlotVM : ViewModel
     private ItemObject? _itemObj;
     private int _userItemId;
     private bool _isButtonEnabled;
+    private int _itemRank = 0;
+    private bool _rank1Visible = false;
+    private bool _rank2Visible = false;
+    private bool _rank3Visible = false;
 
     public event Action<EquipmentSlotVM, ViewModel>? OnItemDropped;
     public event Action<EquipmentSlotVM>? OnSlotAlternateClicked;
@@ -168,6 +172,14 @@ public class EquipmentSlotVM : ViewModel
         }
     }
 
+    public int ItemRank { get => _itemRank; set => SetField(ref _itemRank, value, nameof(ItemRank)); }
+    [DataSourceProperty]
+    public bool Rank1Visible { get => _rank1Visible; set => SetField(ref _rank1Visible, value, nameof(Rank1Visible)); }
+    [DataSourceProperty]
+    public bool Rank2Visible { get => _rank2Visible; set => SetField(ref _rank2Visible, value, nameof(Rank2Visible)); }
+    [DataSourceProperty]
+    public bool Rank3Visible { get => _rank3Visible; set => SetField(ref _rank3Visible, value, nameof(Rank3Visible)); }
+
     public bool IsDragging
     {
         get => _isDragging;
@@ -179,6 +191,34 @@ public class EquipmentSlotVM : ViewModel
                 OnPropertyChanged(nameof(IsDragging));
                 OnPropertyChanged(nameof(ShouldShowDefaultIcon));
             }
+        }
+    }
+
+    private void SetItemRankIconsVisible(int rank)
+    {
+        InformationManager.DisplayMessage(new InformationMessage($"ItemRank set to {rank}"));
+        switch (rank)
+        {
+            case 1:
+                Rank1Visible = true;
+                Rank2Visible = false;
+                Rank3Visible = false;
+                break;
+            case 2:
+                Rank1Visible = false;
+                Rank2Visible = true;
+                Rank3Visible = false;
+                break;
+            case 3:
+                Rank1Visible = false;
+                Rank2Visible = false;
+                Rank3Visible = true;
+                break;
+            default:
+                Rank1Visible = false;
+                Rank2Visible = false;
+                Rank3Visible = false;
+                break;
         }
     }
 

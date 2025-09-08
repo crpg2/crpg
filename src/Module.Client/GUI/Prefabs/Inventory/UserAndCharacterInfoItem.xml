@@ -6,6 +6,7 @@
   <Parameters>
       <Parameter Name="LabelText" DefaultValue="Label" />
       <Parameter Name="ImgSprite" DefaultValue="" /> <!-- SPGeneral\SPCoin -->
+      <Parameter Name="ShouldShowGold" DefaultValue="false" />
       <Parameter Name="ValueText" DefaultValue="Value" />
   </Parameters>    
   <Window>
@@ -21,8 +22,10 @@
               Brush="!Label.Brush" />
           <!-- Spacer -->
           <!--  <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" /> -->
-            
+            <BrushWidget Id="GoldIcon" Brush="Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+              SuggestedWidth="15" SuggestedHeight="15" IsVisible="*ShouldShowGold" PositionYOffset="2"/>
           <!-- Image if any Right-Aligned-->
+          
           <!--
             <ImageWidget Sprite="*ImgSprite" WidthSizePolicy="Fixed" SuggestedWidth="20" HeightSizePolicy="Fixed" SuggestedHeight="20" HorizontalAlignment="Center" VerticalAlignment="Center"  />
           -->

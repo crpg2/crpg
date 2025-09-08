@@ -6,6 +6,7 @@ using Crpg.Module.Helpers;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection;
 using TaleWorlds.Engine;
+using TaleWorlds.GauntletUI.Data;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.ObjectSystem;
@@ -14,6 +15,7 @@ namespace Crpg.Module.GUI.Inventory;
 
 public class CrpgInventoryViewModel : ViewModel
 {
+    public IGauntletMovie? Movie { get; set; }
     private readonly List<EquipmentSlotVM> _equipmentSlots;
     private bool _isVisible;
     private CharacterViewModel _characterPreview;

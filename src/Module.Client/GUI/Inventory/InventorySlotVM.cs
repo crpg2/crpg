@@ -1,5 +1,9 @@
 using Crpg.Module.Api.Models.Characters;
+using Crpg.Module.Api.Models.Items;
+using Crpg.Module.Common;
+using Messages.FromClient.ToLobbyServer;
 using TaleWorlds.Core;
+using TaleWorlds.GauntletUI.BaseTypes;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
@@ -13,6 +17,11 @@ public class InventorySlotVM : ViewModel
     private int _itemQuantity;
     private string _quantityText;
     private int _userItemId;
+    private bool _isEquipped;
+    private int _itemRank = 0;
+    private bool _rank1Visible = false;
+    private bool _rank2Visible = false;
+    private bool _rank3Visible = false;
 
     private ImageIdentifierVM _imageIdentifier;
     private string _id;
@@ -33,6 +42,27 @@ public class InventorySlotVM : ViewModel
             _quantityText = quantity > 1 ? quantity.ToString() : string.Empty;
             _defaultSprite = string.Empty;
             _userItemId = userItemId;
+            _itemRank = 0;
+
+            var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+            if (behavior == null || behavior.UserInventoryItems == null)
+            {
+                return;
+            }
+
+            var userItem = behavior.UserInventoryItems.FirstOrDefault(x => x.Id == _userItemId);
+            if (userItem != null)
+            {
+                _itemRank = userItem.Rank;
+            }
+
+            behavior.OnSlotUpdated += HandleUpdateEvent;
+            behavior.OnUserInventoryUpdated += HandleUpdateEvent;
+            behavior.OnUserCharacterEquippedItemsUpdated += HandleUpdateEvent;
+
+            SetItemRankIconsVisible(_itemRank);
+
+            CheckItemEquipped();
         }
         else
         {
@@ -43,7 +73,29 @@ public class InventorySlotVM : ViewModel
             _quantityText = string.Empty;
             _defaultSprite = "general_placeholder";
             _userItemId = -1;
+            _itemRank = 0;
         }
+    }
+
+    public override void OnFinalize()
+    {
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (behavior != null)
+        {
+            behavior.OnSlotUpdated -= HandleUpdateEvent;
+            behavior.OnUserInventoryUpdated -= HandleUpdateEvent;
+            behavior.OnUserCharacterEquippedItemsUpdated -= HandleUpdateEvent;
+        }
+    }
+
+    public void HandleUpdateEvent(CrpgItemSlot slot)
+    {
+        HandleUpdateEvent();
+    }
+
+    public void HandleUpdateEvent()
+    {
+        CheckItemEquipped();
     }
 
     [DataSourceProperty]
@@ -60,6 +112,16 @@ public class InventorySlotVM : ViewModel
         }
     }
 
+    [DataSourceProperty]
+    public bool IsEquipped { get => _isEquipped; set => SetField(ref _isEquipped, value, nameof(IsEquipped)); }
+    [DataSourceProperty]
+    public int ItemRank { get => _itemRank; set => SetField(ref _itemRank, value, nameof(ItemRank)); }
+    [DataSourceProperty]
+    public bool Rank1Visible { get => _rank1Visible; set => SetField(ref _rank1Visible, value, nameof(Rank1Visible)); }
+    [DataSourceProperty]
+    public bool Rank2Visible { get => _rank2Visible; set => SetField(ref _rank2Visible, value, nameof(Rank2Visible)); }
+    [DataSourceProperty]
+    public bool Rank3Visible { get => _rank3Visible; set => SetField(ref _rank3Visible, value, nameof(Rank3Visible)); }
     [DataSourceProperty]
     public string ItemName
     {
@@ -128,6 +190,62 @@ public class InventorySlotVM : ViewModel
         if (ItemObj != null)
         {
             OnItemDragEnd?.Invoke(ItemObj);
+        }
+    }
+
+    private void SetItemRankIconsVisible(int rank)
+    {
+        InformationManager.DisplayMessage(new InformationMessage($"ItemRank set to {rank}"));
+        switch (rank)
+        {
+            case 1:
+                Rank1Visible = true;
+                Rank2Visible = false;
+                Rank3Visible = false;
+                break;
+            case 2:
+                Rank1Visible = false;
+                Rank2Visible = true;
+                Rank3Visible = false;
+                break;
+            case 3:
+                Rank1Visible = false;
+                Rank2Visible = false;
+                Rank3Visible = true;
+                break;
+            default:
+                Rank1Visible = false;
+                Rank2Visible = false;
+                Rank3Visible = false;
+                break;
+        }
+    }
+
+    private void CheckItemEquipped()
+    {
+        var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        if (behavior == null || behavior.UserInventoryItems == null)
+        {
+            return;
+        }
+
+        var equipped = behavior.EquippedItems
+        .FirstOrDefault(e => e.UserItem.Id == _userItemId);
+
+        if (equipped != null)
+        {
+            // Item is equipped
+            InformationManager.DisplayMessage(
+                new InformationMessage($"Item {_itemName} is equipped in slot {equipped.Slot}")
+            );
+
+            // Example: you could set a flag for UI
+            IsEquipped = true;
+        }
+        else
+        {
+            // Item is not equipped
+            IsEquipped = false;
         }
     }
 }

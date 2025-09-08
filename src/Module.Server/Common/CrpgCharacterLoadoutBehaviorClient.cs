@@ -29,6 +29,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
     public IReadOnlyList<CrpgEquippedItemExtended> EquippedItems => _equippedItems;
     public IReadOnlyList<CrpgUserItemExtended> UserInventoryItems => _userInventoryItems;
     public CrpgCharacter UserCharacter { get; private set; } = new();
+    public CrpgCharacterStatistics UserCharacterStatistics { get; private set; } = new();
     public CrpgConstants Constants { get; }
 
     internal event Action? OnUserInventoryUpdated;
@@ -199,6 +200,11 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         UserCharacter = crpgCharacter;
     }
 
+    internal void SetUserCharacterStatistics(CrpgCharacterStatistics characteristics)
+    {
+        UserCharacterStatistics = characteristics;
+    }
+
     protected override void AddRemoveMessageHandlers(GameNetwork.NetworkMessageHandlerRegistererContainer registerer)
     {
         base.AddRemoveMessageHandlers(registerer);
@@ -208,6 +214,7 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
         registerer.Register<ServerSendUserCharacterBasic>(HandleUpdateCrpgUserCharacterBasic); // recieve character basic from server
         registerer.Register<ServerSendUpdateCharacteristicsResult>(HandleUpdateCharacteristicsResult); // recieve result of attempt to update character characteristics on api from server
         registerer.Register<ServerSendConvertCharacteristicsResult>(HandleConvertCharacteristicsResult);
+        registerer.Register<ServerSendUserCharacterStatistics>(HandleUpdateCharacterStatistics);
     }
 
     private void OnMyClientSynchronized()
@@ -288,6 +295,14 @@ internal class CrpgCharacterLoadoutBehaviorClient : MissionNetwork
 
         // Trigger event for gui to listen to to know to update
         OnUserCharacterBasicUpdated?.Invoke();
+    }
+
+    private void HandleUpdateCharacterStatistics(ServerSendUserCharacterStatistics msg)
+    {
+        if (msg.CharacterStatistics != null)
+        {
+            SetUserCharacterStatistics(msg.CharacterStatistics);
+        }
     }
 
     /// <summary>

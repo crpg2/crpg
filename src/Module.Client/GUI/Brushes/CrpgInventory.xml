@@ -9,6 +9,16 @@
       </Style>
     </Styles>
   </Brush>
+  <Brush Name="Crpg.Generic.Panel.Background">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#202020FF" AlphaFactor="1" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor=".8"/>
+      </Style>
+    </Styles>
+  </Brush>
   <Brush Name="CrpgInventory.EquipmentButton">
     <Layers>
       <BrushLayer Name="Default" Sprite="BlankWhiteSquare_9" Color="#2E2E2EFF" AlphaFactor="1" />
@@ -162,5 +172,74 @@
         <BrushLayer Name="Default" AlphaFactor="0.5" />
       </Style>
     </Styles>
-  </Brush>  
+  </Brush>
+  <Brush Name="Item.Rank.Icon">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_diamond" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#ebeeecff" />
+      </Style>
+      <Style Name="Rank1">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#4ade80ff" />
+      </Style>
+      <Style Name="Rank2">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#60a5faff" />
+      </Style>
+      <Style Name="Rank3">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#c084fcff" />
+      </Style>            
+    </Styles>
+  </Brush>
+  <Brush Name="Item.Rank.Icon_1">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_diamond" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#4ade80ff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Item.Rank.Icon_2">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_diamond" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#60a5faff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Item.Rank.Icon_3">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_diamond" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#c084fcff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Item.Equipped.Icon">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_imgi_17_default" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#089703ff" />
+      </Style>       
+    </Styles>
+  </Brush>
+    <Brush Name="Item.Gold.Icon">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_circle_large" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.7" Color="#e2c103ff" />
+      </Style>       
+    </Styles>
+  </Brush>
 </Brushes>
