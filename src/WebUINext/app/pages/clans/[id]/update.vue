@@ -31,7 +31,6 @@ definePageMeta({
 
 const toast = useToast()
 const { t } = useI18n()
-const { togglePageLoading } = usePageLoading()
 
 const clanId = computed(() => Number(props.id))
 
@@ -77,68 +76,74 @@ const {
   },
 )
 
+usePageLoading({
+  watch: [loadingClan, updatingClan, deletingClan],
+})
+
 Promise.all([
   loadClan(),
   loadClanMembers(),
 ])
 
-watchEffect(() => {
-  togglePageLoading(loadingClan.value || updatingClan.value || deletingClan.value)
-})
+const [shownConfirmDeleteClanDialog, toggleConfirmDeleteClanDialog] = useToggle()
 </script>
 
 <template>
-  <UContainer v-if="clan" class="space-y-6 py-6">
-    <AppBackButton @click="backToClanPage" />
+  <UContainer
+    class="space-y-12 py-6"
+  >
+    <AppPageHeaderGroup
+      :title="$t('clan.update.page.title')"
+      :back-to="{ name: 'clans-id', params: { id: clanId } }"
+    />
 
     <div class="mx-auto max-w-2xl space-y-10">
-      <h1 class="text-content-100 text-center text-xl">
-        {{ $t('clan.update.page.title') }}
-      </h1>
-
       <ClanForm
+        v-if="clan"
         :clan-id="clanId"
         :clan="clan"
         @submit="onUpdateClan"
       />
 
-      <i18n-t
-        scope="global"
-        keypath="clan.delete.title"
-        tag="div"
-        class="text-center"
-      >
-        <template #link>
-          <UModal :title="$t('clan.delete.dialog.title')">
-            <span class="cursor-pointer text-error">
+      <div class="space-y-2.5 text-center">
+        <div
+          v-if="!isLastMember"
+          class="text-warning"
+          data-aq-clan-delete-required-message
+        >
+          {{ t('clan.delete.required') }}
+        </div>
+
+        <i18n-t
+          scope="global"
+          keypath="clan.delete.title"
+          tag="div"
+          :class="{ 'pointer-events-none opacity-30': !isLastMember }"
+        >
+          <template #link>
+            <span
+              class="cursor-pointer text-error"
+              @click="toggleConfirmDeleteClanDialog(true)"
+            >
               {{ $t('clan.delete.link') }}
             </span>
-
-            <template #body="{ close }">
-              <AppConfirmActionForm
-                v-if="isLastMember"
-                :description="$t('clan.delete.dialog.desc')"
-                :name="clan!.name"
-                :confirm-label="$t('action.delete')"
-                data-aq-clan-delete-confirm-action-form
-                @cancel="close"
-                @confirm=" () => {
-                  onDeleteClan();
-                  close();
-                }"
-              />
-
-              <div
-                v-else
-                class="text-center"
-                data-aq-clan-delete-required-message
-              >
-                {{ $t('clan.delete.required') }}
-              </div>
-            </template>
-          </UModal>
-        </template>
-      </i18n-t>
+          </template>
+        </i18n-t>
+      </div>
     </div>
+
+    <AppConfirmActionDialog
+      v-if="clan"
+      :open="shownConfirmDeleteClanDialog"
+      :title="$t('clan.delete.dialog.title')"
+      :description="$t('clan.delete.dialog.desc')"
+      :confirm="clan!.name"
+      @cancel="toggleConfirmDeleteClanDialog(false);"
+      @confirm="() => {
+        onDeleteClan();
+        toggleConfirmDeleteClanDialog(false);
+      }"
+      @update:open="toggleConfirmDeleteClanDialog(false)"
+    />
   </UContainer>
 </template>

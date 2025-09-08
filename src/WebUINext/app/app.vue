@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { usePageLoading } from '~/composables/app/use-page-loading'
+import { usePageLoadingProvider } from '~/composables/app/use-page-loading'
 
-const { activePageLoading } = usePageLoading()
+const { state: activePageLoading } = usePageLoadingProvider()
 </script>
 
 <template>
@@ -24,6 +24,7 @@ const { activePageLoading } = usePageLoading()
       <NuxtPage />
     </NuxtLayout>
 
+    <!-- TODO: FIXME: -->
     <!-- <NuxtErrorBoundary>
       <NuxtLayout>
         <NuxtPage />

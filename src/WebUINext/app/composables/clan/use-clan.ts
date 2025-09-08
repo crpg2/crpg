@@ -8,7 +8,11 @@ import {
 } from '~/services/clan-service'
 
 export const useClan = (clanId: MaybeRefOrGetter<number>) => {
-  const { state: clan, execute: loadClan, isLoading: loadingClan } = useAsyncState(
+  const {
+    state: clan,
+    execute: loadClan,
+    isLoading: loadingClan,
+  } = useAsyncState(
     () => getClan(toValue(clanId)),
     null,
     {

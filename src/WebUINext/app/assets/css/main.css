@@ -151,3 +151,26 @@ input[type='color'] {
 .fill-current{
     fill: currentColor;
 }
+
+
+@layer utilities {
+  .h1 {
+    @apply text-xl text-highlighted;
+  }
+
+  .h2 {
+    @apply text-xl;
+  }
+
+  .h3 {
+    @apply text-xl;
+  }
+
+  .p {
+    @apply text-xl;
+  }
+
+  .caption {
+   @apply text-xl;
+  }
+}

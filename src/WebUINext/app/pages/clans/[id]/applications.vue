@@ -39,7 +39,6 @@ const clanId = computed(() => Number(props.id))
 
 const toast = useToast()
 const { t } = useI18n()
-const { togglePageLoading } = usePageLoading()
 
 const {
   applications,
@@ -47,6 +46,8 @@ const {
   loadingClanApplications,
   respondToClanInvitation,
 } = useClanApplications(clanId)
+
+loadClanApplications()
 
 const {
   execute: respond,
@@ -64,12 +65,6 @@ const {
     })
   },
 )
-
-loadClanApplications()
-
-watchEffect(() => {
-  togglePageLoading(responding.value)
-})
 
 const table = useTemplateRef('table')
 
@@ -124,19 +119,18 @@ const columns: TableColumn<ClanInvitation>[] = [
 </script>
 
 <template>
-  <UContainer class="space-y-6 py-6">
-    <AppBackButton :to="{ name: 'clans-id', params: { id: clanId } }" data-aq-link="back-to-clan" />
+  <UContainer class="space-y-12 py-6">
+    <AppPageHeaderGroup
+      :title="$t('clan.application.page.title')"
+      :back-to="{ name: 'clans-id', params: { id: clanId } }"
+    />
 
     <div class="mx-auto max-w-2xl space-y-10">
-      <h1 class="text-center text-xl text-content-100">
-        {{ $t('clan.application.page.title') }}
-      </h1>
-
       <UTable
         ref="table"
         v-model:pagination="pagination"
         class="relative rounded-md border border-muted"
-        :loading="loadingClanApplications"
+        :loading="loadingClanApplications || responding"
         :data="applications"
         :columns
         :initial-state="{

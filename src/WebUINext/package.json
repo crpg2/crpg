@@ -11,7 +11,7 @@
     "test:unit": "vitest"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^5.2.2",
+    "@antfu/eslint-config": "^5.3.0",
     "@hey-api/openapi-ts": "^0.82.5",
     "@internationalized/date": "^3.9.0",
     "@number-flow/vue": "^0.4.8",
@@ -32,7 +32,7 @@
     "echarts": "^6.0.0",
     "es-toolkit": "^1.39.10",
     "eslint": "^9.35.0",
-    "eslint-plugin-better-tailwindcss": "3.7.6",
+    "eslint-plugin-better-tailwindcss": "3.7.7",
     "happy-dom": "^18.0.1",
     "json5": "^2.2.3",
     "nuxt": "^4.1.1",

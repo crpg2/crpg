@@ -322,20 +322,15 @@ const columns: TableColumn<ClanMember>[] = [
           v-if="!isLastMember && selfMember && canKickMember(selfMember)"
           :title="$t('clan.member.leave.dialog.title')"
           :ui="{ footer: 'justify-center' }"
-          :close="{
-            size: 'sm',
-            color: 'secondary',
-            variant: 'solid',
-          }"
         >
           <UButton
-            color="secondary"
-            variant="outline"
+            color="warning"
             size="xl"
+            variant="outline"
+            icon="crpg:logout"
             :label="$t('clan.member.leave.title')"
             data-aq-clan-action="leave-clan"
           />
-
           <template #body>
             <div class="space-y-6 text-center">
               <i18n-t
@@ -344,9 +339,7 @@ const columns: TableColumn<ClanMember>[] = [
                 tag="p"
               >
                 <template #clanName>
-                  <span class="inline-flex items-center gap-0.5 align-middle">
-                    <ClanTagIcon :color="clan.primaryColor" /> {{ clan.name }}
-                  </span>
+                  <UserClan :clan />
                 </template>
               </i18n-t>
             </div>
@@ -375,7 +368,6 @@ const columns: TableColumn<ClanMember>[] = [
 
         <UButton
           v-if="clan.discord"
-          color="secondary"
           variant="outline"
           size="xl"
           icon="crpg:discord"

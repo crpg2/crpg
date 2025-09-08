@@ -29,7 +29,6 @@ definePageMeta({
 
 const toast = useToast()
 const { t } = useI18n()
-const { togglePageLoading } = usePageLoading()
 
 const userStore = useUserStore()
 
@@ -49,23 +48,19 @@ const {
   },
 )
 
-watchEffect(() => {
-  togglePageLoading(creatingClan.value)
-})
+usePageLoading({ watch: [creatingClan] })
 </script>
 
 <template>
-  <div class="p-6">
-    <div class="mx-auto max-w-2xl py-6">
-      <h1 class="mb-14 text-center text-xl text-content-100">
-        {{ $t('clan.create.page.title') }}
-      </h1>
+  <UContainer
+    class="space-y-12 py-6"
+  >
+    <AppPageHeaderGroup
+      :title="$t('clan.create.page.title')"
+    />
 
-      <UContainer>
-        <div class="mx-auto max-w-3xl">
-          <ClanForm @submit="onCreateClan" />
-        </div>
-      </UContainer>
+    <div class="mx-auto max-w-2xl space-y-10">
+      <ClanForm @submit="onCreateClan" />
     </div>
-  </div>
+  </UContainer>
 </template>

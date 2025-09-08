@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import type { NuxtLinkProps } from '#app'
+import type { RouteLocationRaw } from 'vue-router'
 
-defineProps<NuxtLinkProps>()
+interface Props {
+  to?: RouteLocationRaw
+}
+
+defineProps<Props>()
 </script>
 
 <template>

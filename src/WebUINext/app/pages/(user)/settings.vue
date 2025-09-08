@@ -96,7 +96,7 @@ const [shownConfirmDialog, toggleConfirmDialog] = useToggle()
     <AppConfirmActionDialog
       v-if="shownConfirmDialog"
       open
-      :name="$t('user.settings.delete.dialog.enterToConfirm', { user: userStore.user!.name })"
+      :confirm="$t('user.settings.delete.dialog.enterToConfirm', { user: userStore.user!.name })"
       :confirm-label="$t('action.delete')"
       @cancel="toggleConfirmDialog(false);"
       @confirm="() => {

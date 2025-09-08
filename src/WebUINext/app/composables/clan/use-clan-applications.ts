@@ -5,7 +5,6 @@ import {
   inviteToClan as _inviteToClan,
   respondToClanInvitation as _respondToClanInvitation,
   getClanInvitations,
-
 } from '~/services/clan-service'
 
 export const useClanApplications = (clanId: MaybeRefOrGetter<number>) => {
@@ -18,6 +17,7 @@ export const useClanApplications = (clanId: MaybeRefOrGetter<number>) => {
     [],
     {
       immediate: false,
+      resetOnExecute: false,
     },
   )
 
