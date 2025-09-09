@@ -5,9 +5,9 @@
     <Constant Name="CharacterInfo.Frame.Width" Value="250"/>
     <Constant Name="CharacterInfo.Frame.Height" Value="150"/>
     <Constant Name="AttributesAndWpf.Frame.Width" Value="220"/>
-    <Constant Name="AttributesAndWpf.Frame.Height" Value="340"/>
+    <Constant Name="AttributesAndWpf.Frame.Height" Value="325"/>
     <Constant Name="Skills.Frame.Width" Value="220"/>
-    <Constant Name="Skills.Frame.Height" Value="340"/>
+    <Constant Name="Skills.Frame.Height" Value="325"/>
   </Constants>
   <Window>
     <Widget Id="MainContainer" 
@@ -22,17 +22,26 @@
             <BrushWidget Id="CharacterInfo.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.Generic.Panel.Background"
                 MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9"/>
+            <!-- Close Button -->
+            <CrpgButtonPrefab Parameter.ButtonText="X" Parameter.ButtonId="ButtonClose"
+                  Parameter.Width="50" Parameter.Height="45" Parameter.ButtonIsEnabled="true"
+                  Parameter.CommandClick="ExecuteClickClose" Parameter.ButtonIsVisible="true"
+                  HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <!-- maybe put the status text here, left aligned -->                  
+
             <!-- Vertical Layout Container -->
             <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
-                    WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" 
-                    MarginLeft="5" MarginRight="5" MarginTop="10" MarginBottom="10" Spacing="5">
+                    WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
+                    MarginLeft="5" MarginRight="5" MarginTop="10" MarginBottom="10" Spacing="5"
+                    DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
               <Children>
                 <UserAndCharacterInfo DataSource="{UserAndCharacterInfoVm}"/>
 
                 <!-- Horizontal layout container -->
                 <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center" 
                         WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
-                        MarginLeft="0" MarginRight="0" MarginTop="0" MarginBottom="0" Spacing="5" >
+                        MarginLeft="0" MarginRight="0" MarginTop="0" MarginBottom="0" Spacing="5"
+                        DoNotAcceptEvents="true" DoNotPassEventsToChildren="false" >
                   <Children>
                     <!-- Attributes and Wpf Frame-->             
                     <BrushWidget Id="CharacterInfo.AttributesAndWpf.Frame" 
@@ -102,9 +111,9 @@
                 </ListPanel>
 
                 <!-- Buttons at bottom horizontal layout container -->
-                <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                      WidthSizePolicy="CoverChildren" HeightSizePolicy="StretchToParent"
-                      Spacing="5" MarginTop="10" MarginBottom="10" MarginLeft="10" MarginRight="10"
+                <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center"
+                      WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                      Spacing="5" MarginTop="0" MarginBottom="10" MarginLeft="10" MarginRight="10"
                       PassEventsToParent="false"
                       DoNotAcceptEvents="false"
                       DoNotPassEventsToChildren="false">

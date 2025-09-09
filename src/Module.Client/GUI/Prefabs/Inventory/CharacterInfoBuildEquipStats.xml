@@ -1,10 +1,14 @@
 <Prefab Name="CharacterInfoBuildEquipStats">
+  <Parameters>
+    <Parameter Name="Width" DefaultValue="220"/>
+    <Parameter Name="Height" DefaultValue="430"/>
+  </Parameters>
   <Constants>
     <Constant Name="Container.Width" Value="220" />
-    <Constant Name="Container.Height" Value="550" />
+    <Constant Name="Container.Height" Value="430" />
   </Constants>
   <Window>
-    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!Container.Width" SuggestedHeight="!Container.Height" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="*Width" SuggestedHeight="*Height" HorizontalAlignment="Center" VerticalAlignment="Center">
       <Children>
         <!-- Frame -->
         <BrushWidget Id="CharacterInfo.Skills.Frame"
@@ -17,8 +21,9 @@
                 HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.Generic.Panel.Background"
                 MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9"/>
             <!-- Info Panel-->
-            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HeightSizePolicy="CoverChildren" WidthSizePolicy="StretchToParent"
-                MarginTop="8" MarginLeft="10" MarginRight="10" Spacing="2" >
+            <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent"
+                VerticalAlignment="Center"
+                MarginTop="15" MarginBottom="15" MarginLeft="10" MarginRight="10" Spacing="2" >
               <Children>
                 <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Cost" Parameter.ShouldShowGold="true" Parameter.ValueText="@Cost" />
                 <CharacterInfoBuildEquipStatsItem Parameter.LabelText="Avg repair cost" Parameter.ShouldShowGold="true" Parameter.ValueText="@AvgRepairCost" />

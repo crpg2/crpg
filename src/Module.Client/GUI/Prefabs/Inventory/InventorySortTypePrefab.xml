@@ -1,19 +1,24 @@
 <Prefab Name="InventorySortTypePrefab">
+  <Constants>
+    <Constant Name="Widget.Width" Value="40"/>
+    <Constant Name="Widget.Height" Value="40"/>
+  </Constants>
   <Window>
-    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="50" SuggestedHeight="50">
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="!Widget.Width" SuggestedHeight="!Widget.Height">
       <Children>
-        <BrushWidget Id="Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="rounded_frame" Color="#FFFFFFFF">
+        <BrushWidget Id="Frame" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="rounded_frame" Color="#FFFFFFFF">
         </BrushWidget>
-        <ButtonWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" HorizontalAlignment="Center" VerticalAlignment="Center"
-                  SuggestedWidth="45" SuggestedHeight="45" AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="true"
-                  ClipContents="true" DoNotAcceptEvents="False" Brush="InventorySort.Button" IsSelected="@IsSelected">
+        <ButtonWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center"
+                  AcceptDrag="false" DoNotPassEventsToChildren="true" Command.Click="ExecuteClick" IsEnabled="true"
+                  ClipContents="true" DoNotAcceptEvents="False" Brush="InventorySort.Button" IsSelected="@IsSelected"
+                  MarginTop="2" MarginBottom="2" MarginLeft="2" MarginRight="2">
           <Children>
             <ImageWidget Sprite="@IconSprite"
                 IsVisible="@ShowInventoryTypeIcon"
-                WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                SuggestedWidth="40" SuggestedHeight="40"
+                WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
                 HorizontalAlignment="Center" VerticalAlignment="Center"
-                DoNotAcceptEvents="True" PassEventsToParent="True" /> 
+                DoNotAcceptEvents="True" PassEventsToParent="True" 
+                MarginTop="1" MarginBottom="1" MarginLeft="1" MarginRight="1"/> 
           </Children>
         </ButtonWidget>
       </Children>

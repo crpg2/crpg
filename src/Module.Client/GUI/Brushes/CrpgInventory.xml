@@ -232,13 +232,23 @@
       </Style>       
     </Styles>
   </Brush>
-    <Brush Name="Item.Gold.Icon">
+  <Brush Name="Item.Gold.Icon">
     <Layers>
       <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_circle_large" Color="#ffffffff" />
     </Layers>
     <Styles>
       <Style Name="Default">
         <BrushLayer Name="Default" AlphaFactor="0.7" Color="#e2c103ff" />
+      </Style>       
+    </Styles>
+  </Brush>
+  <Brush Name="Logo.Crpg.Icon">
+    <Layers>
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_crpg" Color="#ffffffff" />
+    </Layers>
+    <Styles>
+      <Style Name="Default">
+        <BrushLayer Name="Default" AlphaFactor="0.3" Color="#535353ff" />
       </Style>       
     </Styles>
   </Brush>

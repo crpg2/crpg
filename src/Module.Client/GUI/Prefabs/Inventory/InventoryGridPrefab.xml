@@ -1,6 +1,8 @@
 <Prefab Name="InventoryGridPrefab">
   <Parameters>
-    <Parameter Name="NumColumns" DefaultValue="5" />
+    <Parameter Name="NumColumns" DefaultValue="4" />
+    <Parameter Name="Width" DefaultValue="500"/>
+    <Parameter Name="Height" DefaultValue="550"/>
   </Parameters>
   <Constants>
     <Constant Name="Background.Width" Value="510"/>
@@ -9,13 +11,12 @@
   </Constants>
 
   <Window>
-    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" SuggestedWidth="!Background.Width" SuggestedHeight="!Background.Height">
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="*Width" SuggestedHeight="*Height">
       <Children>
         <!-- Main Background -->
-        <BrushWidget Id="MainBackGround" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
+        <BrushWidget Id="Inventory.Frame" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
           <Children>
-            <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="CrpgInventory.Grid.BackGround">
-            </BrushWidget>
+            <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Crpg.Generic.Panel.Background"/>
           </Children>
         </BrushWidget>
 
@@ -42,7 +43,8 @@
                 <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center" MarginLeft="0" MarginRight="10" MarginBottom="0" MarginTop="0">
                   <Children>
                     <BrushWidget Id="ItemGridBackground" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff">
-                    </BrushWidget> 
+                    </BrushWidget>
+                    <BrushWidget MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Logo.Crpg.Icon" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <ScrollablePanel Id="ScrollablePanel" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Center" AutoHideScrollBars="true" ClipRect="ClipRect" InnerPanel="ClipRect\InventoryGrid" VerticalScrollbar="..\VerticalScrollbar" MarginLeft="10" MarginRight="10" MarginTop="10" MarginBottom="10">
                       <Children>            
                         <Widget Id="ClipRect" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" ClipContents="true" VerticalAlignment="Top">

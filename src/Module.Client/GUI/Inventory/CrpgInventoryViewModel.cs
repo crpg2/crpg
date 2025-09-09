@@ -169,16 +169,16 @@ public class CrpgInventoryViewModel : ViewModel
     internal void RefreshCharacterPreview(Equipment? useEquipment = null)
     {
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
+        var characteristics = behavior?.UserCharacter.Characteristics;
         if (behavior != null && useEquipment == null)
         {
             useEquipment = behavior.GetCrpgUserCharacterEquipment();
         }
-
-        if (useEquipment != null)
+        if (useEquipment != null && characteristics != null)
         {
             CharacterPreview.EquipmentCode = useEquipment.CalculateEquipmentCode();
             CalculateArmorFromEquipment(useEquipment);
-            CharacterInfoBuildEquipStatsVm.UpdateCharacterBuildEquipmentStatDisplay();
+            CharacterInfoBuildEquipStatsVm.UpdateCharacterBuildEquipmentStatDisplay(useEquipment, characteristics);
 
             LogDebug("[CrpgInventoryVM] Refreshed character preview and recalculated armor");
 

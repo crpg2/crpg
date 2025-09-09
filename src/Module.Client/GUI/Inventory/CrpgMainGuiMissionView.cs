@@ -289,6 +289,9 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
             // Deactivate and remove the layer
             DeactivateLayer(ref _inventoryLayer, ref _inventoryMovie);
 
+            // Reset the flag
+            _inventoryOpenedFromMainGui = false;
+
             // Restore main GUI focus if it should be visible
             if (_mainGuiLayer != null && _mainGuiVm != null && _mainGuiVm.IsVisible)
             {
@@ -321,7 +324,8 @@ public class CrpgMainGuiMissionView : MissionView, IUseKeyBinder
         }
         else
         {
-            HideInventory();
+            // HideInventory();
+            CloseInventory();
         }
     }
 
