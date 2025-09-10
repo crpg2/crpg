@@ -252,4 +252,25 @@
       </Style>       
     </Styles>
   </Brush>
+  <Brush Name="ItemInfo.ItemName.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Left">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="ItemInfo.Category.Title.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Left">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>
+  <Brush Name="ItemInfo.Category.Value.Text" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Left">
+    <Layers>
+    </Layers>
+    <Styles>
+      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+    </Styles>
+  </Brush>  
 </Brushes>

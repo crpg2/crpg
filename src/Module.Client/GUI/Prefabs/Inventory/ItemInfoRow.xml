@@ -1,0 +1,23 @@
+<Prefab Name="ItemInfoRow">
+  <Parameters>
+    <Parameter Name="Width" DefaultValue="220"/>
+    <Parameter Name="Height" DefaultValue="430"/>
+  </Parameters>
+  <Constants>
+    <Constant Name="Icon.Width" Value="30"/>
+    <Constant Name="Icon.Height" Value="30"/>
+    <Constant Name="Gold.Icon.Width" Value="25"/>
+    <Constant Name="Gold.Icon.Height" Value="25"/>
+  </Constants>
+  <Window>
+    <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Top"
+            WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
+            Spacing="1"
+            DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
+      <Children>
+        <ItemInfoTuple>
+        <ItemInfoTuple>
+      </Children>
+    </ListPanel>
+  </Window>
+</Prefab>

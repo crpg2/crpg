@@ -29,6 +29,7 @@ public class InventorySlotVM : ViewModel
     public ItemObject ItemObj { get; }
     public event Action<ItemObject>? OnItemDragBegin;
     public event Action<ItemObject>? OnItemDragEnd;
+    public event Action<ItemObject>? OnItemClick;
 
     public InventorySlotVM(ItemObject item, int quantity = 1, int userItemId = -1)
     {
@@ -181,6 +182,7 @@ public class InventorySlotVM : ViewModel
     {
         if (ItemObj != null)
         {
+            InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteDragBegin()"));
             OnItemDragBegin?.Invoke(ItemObj);
         }
     }
@@ -189,7 +191,18 @@ public class InventorySlotVM : ViewModel
     {
         if (ItemObj != null)
         {
+            InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteDragdEnd()"));
+
             OnItemDragEnd?.Invoke(ItemObj);
+        }
+    }
+
+    public void ExecuteClick()
+    {
+        if (ItemObj != null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteClick()"));
+            OnItemClick?.Invoke(ItemObj);
         }
     }
 

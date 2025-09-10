@@ -1,17 +1,38 @@
 <Prefab Name="ItemInfoPrefab">
+  <Parameters>
+    <Parameter Name="Width" DefaultValue="220"/>
+    <Parameter Name="Height" DefaultValue="430"/>
+  </Parameters>
   <Window>
-    <Widget>
+    <BrushWidget Id="ItemInfo.Frame" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            SuggestedWidth="*Width" SuggestedHeight="*Height"
+            HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff"
+            Padding="5,10,5,10">
      <Children>
-        <ImageIdentifierWidget DataSource="{ImageIdentifier}"
-            ImageId="@Id"
-            AdditionalArgs="@AdditionalArgs"
-            ImageTypeCode="@ImageTypeCode"
-            WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-            SuggestedWidth="90" SuggestedHeight="45"
-            HorizontalAlignment="Center" VerticalAlignment="Center"
-            Margin="4"
-            DoNotAcceptEvents="True" />
+        <!-- Close Button -->
 
+        <!-- Vertical ListPanel Holding all -->
+        <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
+                WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
+                Spacing="2"
+                DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
+          <Children> 
+            <ImageIdentifierWidget DataSource="{ImageIdentifier}"
+                        ImageId="@Id"
+                        AdditionalArgs="@AdditionalArgs"
+                        ImageTypeCode="@ImageTypeCode"
+                        WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                        SuggestedWidth="90" SuggestedHeight="45"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Margin="4"
+                        DoNotAcceptEvents="True" />
+            <TextWidget Id="Item.Name" Text="@ItemName" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" Brush="ItemInfo.ItemName.Text" />
+
+          </Children>
+        <!-- 2 Column horizontal list panel -->
+        <!-- Title/Value item --> <!-- Title/Value item-->
+        
+        </ListPanel>
      </Children>
 
     
@@ -54,6 +75,6 @@
         Price
     -->
 
-    </Widget>
+    </BrushWidget>
   </Window>
 </Prefab>

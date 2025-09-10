@@ -13,6 +13,11 @@ namespace Crpg.Module.DataExport;
 
 internal class ItemExporter : IDataExporter
 {
+    public static CrpgItem MbToCrpgItemPub(ItemObject mbItem)
+    {
+        return MbToCrpgItem(mbItem);
+    }
+
     public async Task Export(string gitRepoPath)
     {
         var game = Game.CreateGame(new MultiplayerGame(), new MultiplayerGameManager());
