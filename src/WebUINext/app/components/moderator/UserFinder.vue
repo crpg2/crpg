@@ -77,7 +77,7 @@ const platformItems = computed(() => Object.values(PLATFORM).map<SelectItem>(p =
       <template #Name>
         <UCard>
           <UForm :state="searchByNameModel" @submit="() => { search() }">
-            <UButtonGroup>
+            <UFieldGroup>
               <UInput
                 v-model="searchByNameModel"
                 :placeholder="$t('findUser.mode.Name.field.name.placeholder')"
@@ -94,7 +94,7 @@ const platformItems = computed(() => Object.values(PLATFORM).map<SelectItem>(p =
                 :label="$t('action.find')"
                 type="submit"
               />
-            </UButtonGroup>
+            </UFieldGroup>
           </UForm>
         </UCard>
       </template>
@@ -102,7 +102,7 @@ const platformItems = computed(() => Object.values(PLATFORM).map<SelectItem>(p =
       <template #Platform>
         <UCard>
           <UForm :state="searchByPlatformModel" @submit="() => { search() }">
-            <UButtonGroup>
+            <UFieldGroup>
               <USelect
                 v-model="searchByPlatformModel.platform"
                 size="lg"
@@ -128,7 +128,7 @@ const platformItems = computed(() => Object.values(PLATFORM).map<SelectItem>(p =
                 :label="$t('action.find')"
                 @click="() => { search() }"
               />
-            </UButtonGroup>
+            </UFieldGroup>
           </UForm>
         </UCard>
       </template>
@@ -136,7 +136,7 @@ const platformItems = computed(() => Object.values(PLATFORM).map<SelectItem>(p =
       <template #Id>
         <UCard>
           <UForm :state="searchByIdModel" @submit="() => { search() }">
-            <UButtonGroup>
+            <UFieldGroup>
               <UInput
                 v-model="searchByIdModel"
                 :placeholder="$t('findUser.mode.Id.field.id.placeholder')"
@@ -154,7 +154,7 @@ const platformItems = computed(() => Object.values(PLATFORM).map<SelectItem>(p =
                 :label="$t('action.find')"
                 @click="() => { search() }"
               />
-            </UButtonGroup>
+            </UFieldGroup>
           </UForm>
         </UCard>
       </template>
@@ -176,8 +176,8 @@ const platformItems = computed(() => Object.values(PLATFORM).map<SelectItem>(p =
           <NuxtLink
             :to="{ name: 'moderator-user-id-restrictions', params: { id: user.id } }"
             class="
-              inline-block
               hover:text-content-100
+              inline-block
             "
           >
             <UserMedia :user="user" />

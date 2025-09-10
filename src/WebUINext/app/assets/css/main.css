@@ -1,8 +1,27 @@
 
 @import "tailwindcss" theme(static);
+@plugin "@tailwindcss/typography";
 @import "@nuxt/ui";
 @import './fonts.css';
-@import './prose.css';
+/* @import './prose.css'; */
+
+
+/* TODO: https://play.tailwindcss.com/T82BHgYuUp?file=css */
+@utility prose {
+  --tw-prose-body: var(--color-primary);
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-headings: var(--color-primary);
+
+  /* --tw-prose-headings: var(--color-primary);
+  --tw-prose-bold: var(--color-primary);
+  --tw-prose-quote-borders: var(--color-slate-300);
+  --tw-prose-quotes: var(--color-muted-foreground);
+  --tw-prose-code: var(--color-primary); */
+
+  blockquote {
+    font-weight: 400;
+  }
+}
 
 @theme static {
     --font-sans: "Merriweather", ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';

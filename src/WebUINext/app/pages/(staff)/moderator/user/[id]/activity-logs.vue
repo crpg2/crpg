@@ -101,7 +101,7 @@ watchEffect(() => {
 <template>
   <div class="mx-auto max-w-3xl space-y-4 pb-8">
     <div class="flex justify-between gap-4">
-      <UButtonGroup>
+      <UFieldGroup>
         <USelectMenu
           v-model="types"
           class="max-w-64"
@@ -141,7 +141,7 @@ watchEffect(() => {
             <UCalendar v-model="to" :min-value="from" />
           </template>
         </UPopover>
-      </UButtonGroup>
+      </UFieldGroup>
 
       <UButton
         :icon="sort === SORT.ASC ? 'crpg:chevron-up' : 'crpg:chevron-down'"

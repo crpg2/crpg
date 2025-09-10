@@ -32,7 +32,7 @@ const items = computed(() =>
 </script>
 
 <template>
-  <UButtonGroup
+  <UFieldGroup
     v-if="!user"
     :size
   >
@@ -56,7 +56,7 @@ const items = computed(() =>
         <UButton :icon="open ? 'crpg:chevron-up' : 'crpg:chevron-down'" />
       </template>
     </UDropdownMenu>
-  </UButtonGroup>
+  </UFieldGroup>
 
   <UButton
     v-else

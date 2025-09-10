@@ -12,7 +12,7 @@ const { settings } = storeToRefs(useSettingsStore())
 
 <template>
   <nav class="flex items-center gap-5">
-    <UButtonGroup size="sm">
+    <UFieldGroup size="sm">
       <UTooltip
         v-if="latestPatch"
         :text="$t('patchNotes.latestPatch')"
@@ -64,7 +64,7 @@ const { settings } = storeToRefs(useSettingsStore())
           :to="{ name: 'builder' }"
         />
       </UTooltip>
-    </UButtonGroup>
+    </UFieldGroup>
 
     <template v-if="userStore.user">
       <ULink

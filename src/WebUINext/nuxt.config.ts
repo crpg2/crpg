@@ -183,7 +183,7 @@ export default defineNuxtConfig({
       plugins: [
         {
           name: '@hey-api/client-nuxt',
-          runtimeConfigPath: './app/api.config.ts',
+          runtimeConfigPath: '../app/api.config.ts',
         },
         {
           name: '@hey-api/typescript',
