@@ -23,7 +23,6 @@ import { positionToLatLng } from '~/utils/geometry'
 
 definePage({
   meta: {
-    layout: 'default',
     noFooter: true,
     roles: ['User', 'Moderator', 'Admin'],
   },
@@ -64,6 +63,7 @@ const {
   isTogglingRecruitTroops,
 } = useParty()
 
+// TODO:
 provide(partyKey, {
   party,
   moveParty,
@@ -171,11 +171,16 @@ const onMoveDialogConfirm = (mt: MovementType) => {
 
 const { execute: onMapReady, loading: mapIsLoading } = useAsyncCallback(async (map: Map) => {
   mapBounds.value = map.getBounds()
-  await Promise.all([loadSettlements(), loadTerrains(), partySpawn()])
+  await Promise.all([
+    partySpawn(),
+    loadSettlements(),
+    loadTerrains(),
+  ])
   party.value && locateToSelfParty()
   applyMoveEvents()
 
-  redirectToSettlement()
+  //   TODO:
+//   redirectToSettlement()
 })
 
 const locateToSelfParty = () => {

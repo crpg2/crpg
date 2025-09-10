@@ -3,7 +3,7 @@ defineProps<{ message?: string }>()
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center gap-4 py-24 text-content-400">
+  <div class="flex flex-col items-center justify-center gap-4 py-6 text-content-400">
     <OIcon
       icon="error"
       size="4x"

@@ -28,7 +28,7 @@ public class BattlesController : BaseController
     /// Get strategus battle.
     /// </summary>
     [HttpGet("{battleId}")]
-    public Task<ActionResult<Result<BattleViewModel>>> GetBattles([FromRoute] int battleId) =>
+    public Task<ActionResult<Result<BattleDetailedViewModel>>> GetBattle([FromRoute] int battleId) =>
         ResultToActionAsync(Mediator.Send(new GetBattleQuery
         {
             BattleId = battleId,
@@ -148,6 +148,22 @@ public class BattlesController : BaseController
     }
 
     /// <summary>
+    /// Remove mercenary application.
+    /// </summary>
+    /// <param name="battleId">Battle id.</param>
+    /// <response code="204">Removed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/mercenary-applications")]
+    public Task<ActionResult> RemoveMercenaryApplication([FromRoute] int battleId)
+    {
+        return ResultToActionAsync(Mediator.Send(new RemoveBattleMercenaryApplicationCommand
+        {
+            UserId = CurrentUser.User!.Id,
+            BattleId = battleId,
+        }, CancellationToken.None));
+    }
+
+    /// <summary>
     /// Accept/Decline battle mercenary application.
     /// </summary>
     /// <response code="200">Ok.</response>
@@ -158,5 +174,23 @@ public class BattlesController : BaseController
     {
         req = req with { PartyId = CurrentUser.User!.Id, MercenaryApplicationId = applicationId };
         return ResultToActionAsync(Mediator.Send(req));
+    }
+
+    /// <summary>
+    /// Remove a mercenary from a battle.
+    /// </summary>
+    /// <param name="battleId">Battle id.</param>
+    /// <param name="mercenaryId">Mercenary id.</param>
+    /// <response code="204">Removed.</response>
+    /// <response code="400">Bad Request.</response>
+    [HttpDelete("{battleId}/mercenaries/{mercenaryId}")]
+    public Task<ActionResult> RemoveMercenary([FromRoute] int battleId, [FromRoute] int mercenaryId)
+    {
+        return ResultToActionAsync(Mediator.Send(new RemoveBattleMercenaryCommand
+        {
+            UserId = CurrentUser.User!.Id,
+            BattleId = battleId,
+            RemovedMercenaryId = mercenaryId,
+        }, CancellationToken.None));
     }
 }
