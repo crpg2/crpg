@@ -1,58 +1,58 @@
 <script setup lang="ts">
-import type { DropdownMenuItem } from '@nuxt/ui'
+// import type { DropdownMenuItem } from '@nuxt/ui'
 
-import { PLATFORM } from '~/models/platform'
-import { platformToIcon } from '~/services/platform-service'
+// import { PLATFORM } from '~/models/platform'
+// import { platformToIcon } from '~/services/platform-service'
 
 definePageMeta({
   layout: 'empty',
   skipAuth: true,
 })
 
-const toast = useToast()
-const { t } = useI18n()
+// const toast = useToast()
+// const { t } = useI18n()
 
-function showToast() {
-  toast.add({
-    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    color: 'success',
-    close: false,
-  })
-}
+// function showToast() {
+//   toast.add({
+//     title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+//     color: 'success',
+//     close: false,
+//   })
+// }
 
-const { locale, availableLocales, setLocale } = useI18n()
+// const { locale, availableLocales, setLocale } = useI18n()
 
-const items = computed(() => [
-  ...availableLocales.map(availableLocale => ({
-    label: t(`locale.${availableLocale}`),
-    type: 'checkbox' as const,
-    value: availableLocale,
-    checked: availableLocale === locale.value,
-    onUpdateChecked() {
-      setLocale(availableLocale)
-    },
-  })),
-] satisfies DropdownMenuItem[])
+// const items = computed(() => [
+//   ...availableLocales.map(availableLocale => ({
+//     label: t(`locale.${availableLocale}`),
+//     type: 'checkbox' as const,
+//     value: availableLocale,
+//     checked: availableLocale === locale.value,
+//     onUpdateChecked() {
+//       setLocale(availableLocale)
+//     },
+//   })),
+// ] satisfies DropdownMenuItem[])
 
-const { platform, changePlatform } = usePlatform()
-const itemsPlatform = computed(() =>
-  Object.values(PLATFORM).map(p => ({
-    label: t(`platform.${p}`),
-    icon: `crpg:${platformToIcon[p]}`,
-    type: 'checkbox' as const,
-    checked: p === platform.value,
-    onUpdateChecked() {
-      changePlatform(p)
-    },
-  })) satisfies DropdownMenuItem[],
-)
+// const { platform, changePlatform } = usePlatform()
+// const itemsPlatform = computed(() =>
+//   Object.values(PLATFORM).map(p => ({
+//     label: t(`platform.${p}`),
+//     icon: `crpg:${platformToIcon[p]}`,
+//     type: 'checkbox' as const,
+//     checked: p === platform.value,
+//     onUpdateChecked() {
+//       changePlatform(p)
+//     },
+//   })) satisfies DropdownMenuItem[],
+// )
 
-const open = ref(true)
+// const open = ref(true)
 </script>
 
 <template>
   <div class="p-4">
-    <div class="space-y-8">
+    <!-- <div class="space-y-8">
       <div class="flex items-center gap-4">
         <FontAwesomeLayers class="fa-lg">
           <FontAwesomeIcon class="text-[#53BC96]" :icon="['crpg', 'online']" />
@@ -182,6 +182,6 @@ const open = ref(true)
           </template>
         </template>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>

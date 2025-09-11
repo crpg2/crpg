@@ -91,10 +91,15 @@ Promise.all([
           />
         </UiHeading>
 
-        <div class="prose text-center">
+        <div
+          class="
+            prose text-center
+            prose-h1:text-lg
+          "
+        >
           <i18n-t
             keypath="homePage.intro"
-            tag="h4"
+            tag="h1"
             scope="global"
           >
             <template #link>

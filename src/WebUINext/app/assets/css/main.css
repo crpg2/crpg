@@ -3,23 +3,27 @@
 @plugin "@tailwindcss/typography";
 @import "@nuxt/ui";
 @import './fonts.css';
-/* @import './prose.css'; */
 
-
-/* TODO: https://play.tailwindcss.com/T82BHgYuUp?file=css */
 @utility prose {
-  --tw-prose-body: var(--color-primary);
-  --tw-prose-links: var(--color-primary);
-  --tw-prose-headings: var(--color-primary);
+  --tw-prose-body: var(--ui-text-default);
+  --tw-prose-headings: var(--ui-text-highlighted);
+  --tw-prose-links: var(--ui-primary);
+  --tw-prose-lead: var(--ui-text-highlighted);
+  --tw-prose-bold: var(--ui-text-highlighted);
+  --tw-prose-counters: var(--ui-text-toned);
+  --tw-prose-bullets: var(--ui-text-toned);
+  --tw-prose-captions: var(--ui-text-toned);
+  --tw-prose-th-borders: var(--ui-border);
+  --tw-prose-td-borders: var(--ui-border);
+  --tw-prose-quotes: var(--ui-text-highlighted);
+  --tw-prose-quote-borders: var(--ui-border-muted);
+  --tw-prose-hr: var(--ui-border-muted);
+  --tw-prose-code: var(--ui-text-highlighted);
+  --tw-prose-pre-code: var(--ui-text-default);
+  --tw-prose-pre-bg: var(--ui-bg-muted);
 
-  /* --tw-prose-headings: var(--color-primary);
-  --tw-prose-bold: var(--color-primary);
-  --tw-prose-quote-borders: var(--color-slate-300);
-  --tw-prose-quotes: var(--color-muted-foreground);
-  --tw-prose-code: var(--color-primary); */
-
-  blockquote {
-    font-weight: 400;
+  a:hover {
+    @apply text-primary/75;
   }
 }
 
@@ -98,9 +102,12 @@
     --color-notification: #53bc96;
     --color-gold: #C99E34;
 
-    --text-*: initial;
+    --text-*: initial; /* reset default tw values */
+
+
     --text-2xs: 0.625rem; /* 10px */
     --text-2xs--line-height: calc(1 / 0.71); /* ~14px */
+
     --text-xs: 0.75rem; /* 12px */
     --text-xs--line-height: calc(1 / 0.66); /* ~18px */
     --text-sm: 0.938rem; /* 15px */
