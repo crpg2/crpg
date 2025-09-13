@@ -58,54 +58,55 @@ const items = ref<TabsItem[]>([
         </template>
 
         <template #content="{ item }">
-          <div class="prose">
-            <template v-if="item.value === PossibleValue.Other">
-              <ol>
-                <i18n-t
-                  scope="global"
-                  keypath="installation.platform.other.downloadLauncher"
-                  tag="li"
-                >
-                  <template #launcherLink>
-                    <NuxtLink
-                      target="_blank"
-                      href="https://c-rpg.eu/LauncherV3.exe"
-                    >
-                      Launcher
-                    </NuxtLink>
-                  </template>
-                </i18n-t>
-                <li>{{ $t('installation.platform.other.startLauncher') }}</li>
-                <li>{{ $t('installation.platform.other.detectinstall') }}</li>
-                <li>{{ $t('installation.platform.other.update') }}</li>
-                <li>{{ $t('installation.platform.other.launch') }}</li>
-              </ol>
-            </template>
+          <UiListView v-if="item.value === PossibleValue.Other" variant="number">
+            <UiListViewItem>
+              <i18n-t
+                scope="global"
+                keypath="installation.platform.other.downloadLauncher"
+              >
+                <template #launcherLink>
+                  <ULink
+                    target="_blank"
+                    href="https://c-rpg.eu/LauncherV3.exe"
+                  >
+                    Launcher
+                  </ULink>
+                </template>
+              </i18n-t>
+            </UiListViewItem>
+            <UiListViewItem :label="$t('installation.platform.other.startLauncher')" />
+            <UiListViewItem :label="$t('installation.platform.other.detectinstall')" />
+            <UiListViewItem :label="$t('installation.platform.other.update')" />
+            <UiListViewItem :label="$t('installation.platform.other.detectinstall')" />
+          </UiListView>
 
-            <template v-else>
-              <ol>
+          <template v-else>
+            <UiListView variant="number">
+              <UiListViewItem>
                 <i18n-t
                   scope="global"
                   keypath="installation.platform.steam.subscribe"
-                  tag="li"
                 >
                   <template #steamWorkshopsLink>
-                    <a
+                    <ULink
                       target="_blank"
                       href="steam://openurl/https://steamcommunity.com/sharedfiles/filedetails/?id=2878356589"
-                    >Steam Workshop</a>
+                    >
+                      Steam Workshop
+                    </ULink>
                   </template>
                 </i18n-t>
-                <li>{{ $t('installation.platform.steam.bannerlordLauncher') }}</li>
-                <li>{{ $t('installation.platform.steam.multiplayerModsTab') }}</li>
-                <li>{{ $t('installation.platform.steam.activateMod') }}</li>
-                <li>{{ $t('installation.platform.steam.launchMultiplayerGame') }}</li>
-              </ol>
-              <p class="text-primary">
-                {{ $t('installation.platform.steam.update') }}
-              </p>
-            </template>
-          </div>
+              </UiListViewItem>
+              <UiListViewItem :label="$t('installation.platform.steam.bannerlordLauncher')" />
+              <UiListViewItem :label="$t('installation.platform.steam.multiplayerModsTab')" />
+              <UiListViewItem :label="$t('installation.platform.steam.activateMod')" />
+              <UiListViewItem :label="$t('installation.platform.steam.launchMultiplayerGame')" />
+            </UiListView>
+
+            <UiTextView variant="p" :margin-bottom="false" tag="p" class="text-primary">
+              {{ $t('installation.platform.steam.update') }}
+            </UiTextView>
+          </template>
         </template>
       </UTabs>
 
@@ -122,22 +123,21 @@ const items = ref<TabsItem[]>([
     </template>
 
     <template #footer>
-      <div class="prose">
+      <UiTextView variant="p" :margin-bottom="false" tag="p">
         <i18n-t
           scope="global"
           keypath="installation.common.help"
-          tag="p"
         >
           <template #discordLink>
-            <NuxtLink
+            <ULink
               target="_blank"
               href="https://discord.com/channels/279063743839862805/761283333840699392"
             >
               Discord
-            </NuxtLink>
+            </ULink>
           </template>
         </i18n-t>
-      </div>
+      </UiTextView>
     </template>
   </UModal>
 </template>

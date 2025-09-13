@@ -15,19 +15,19 @@ const variants = tv({
   slots: {
     root: 'flex',
     label: 'font-bold text-highlighted',
-    caption: 'leading-none',
+    caption: 'leading-none text-muted',
   },
   variants: {
     size: {
       md: {
         root: '',
         label: 'text-sm',
-        caption: 'text-2xs',
+        caption: 'text-sm',
       },
       lg: {
         root: '',
-        label: 'text-md',
-        caption: 'text-xs',
+        label: '',
+        caption: 'text-base',
       },
     },
     layout: {

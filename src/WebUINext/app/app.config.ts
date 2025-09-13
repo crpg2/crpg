@@ -258,5 +258,26 @@ export default defineAppConfig({
         },
       ],
     },
+    link: {
+      variants: {
+        active: {
+          true: 'text-primary',
+          false: 'text-primary',
+        },
+        disabled: {
+          true: 'cursor-not-allowed opacity-75',
+        },
+      },
+      compoundVariants: [
+        {
+          active: false,
+          disabled: false,
+          class: [
+            'hover:text-primary/75',
+            'transition-colors',
+          ],
+        },
+      ],
+    },
   },
 })

@@ -5,14 +5,15 @@ import { useLocaleTimeAgo } from '~/composables/utils/use-locale-time-ago'
 
 const { patchNotes } = defineProps<{ patchNotes: PatchNote[] }>()
 
-const latestPatch = computed(() => patchNotes[0]!)
+const latestPatch = computed(() => patchNotes.at(0))
 
-const timeAgo = useLocaleTimeAgo(latestPatch.value.createdAt)
+const timeAgo = useLocaleTimeAgo(latestPatch.value?.createdAt || new Date())
 </script>
 
 <template>
   <div>
     <NuxtLink
+      v-if="latestPatch"
       :href="latestPatch.url"
       target="_blank"
     >
@@ -35,35 +36,24 @@ const timeAgo = useLocaleTimeAgo(latestPatch.value.createdAt)
             class="max-w-72"
           />
 
-          <!-- <div
-            class="
-              max-w-72 truncate font-bold text-highlighted
-              group-hover:text-default
-            "
-          >
-            {{ latestPatch.title || $t('patchNotes.latestPatch') }}
-          </div>
-          <div class="text-2xs leading-none">
-            {{ timeAgo }}
-          </div> -->
           <template #rightContent>
-            <UBadge :label="latestPatch.tagName" />
+            <UBadge :label="latestPatch.tagName" variant="solid" />
           </template>
         </UiDataCell>
       </UCard>
     </NuxtLink>
 
-    <div
+    <UiTextView
       v-if="patchNotes.length > 1"
       class="mt-2 pl-5"
+      variant="caption-sm"
     >
       <ULink
         href="https://github.com/namidaka/crpg/releases"
         target="_blank"
-        class="text-xs"
       >
         {{ $t('patchNotes.showAllPatches', { count: patchNotes.length - 1 }) }}
       </ULink>
-    </div>
+    </UiTextView>
   </div>
 </template>

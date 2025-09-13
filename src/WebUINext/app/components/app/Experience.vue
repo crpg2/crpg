@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DataMediaSize } from '~/components/ui/DataMedia.vue'
+import type { DataMediaSize } from '~/components/ui/data/DataMedia.vue'
 
 defineProps<{
   value?: number

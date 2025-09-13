@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useSettingsStore } from '~/stores/settings'
-
 definePageMeta({
   layout: 'empty',
 })
@@ -9,11 +7,9 @@ const { loadPatchNotes, patchNotes } = usePatchNotes()
 const { gameServerStats, loadGameServerStats } = useGameServerStats()
 const { loadSettings } = useSettingsStore()
 
-Promise.all([
-  loadPatchNotes(),
-  loadGameServerStats(),
-  loadSettings(),
-])
+loadPatchNotes()
+loadGameServerStats()
+loadSettings()
 </script>
 
 <template>
@@ -42,7 +38,7 @@ Promise.all([
 
       <div
         class="
-          top-6 right-6 flex items-center gap-6
+          top-6 right-6 flex items-center gap-3
           lg:absolute
         "
       >
@@ -51,14 +47,12 @@ Promise.all([
           show-label
         />
 
-        <ULink :to="{ name: 'leaderboard' }">
-          <UiDataCell>
-            <template #leftContent>
-              <UIcon name="crpg:trophy-cup" class="size-8 text-crpg-gold-600" />
-            </template>
-            {{ $t('nav.main.Leaderboard') }}
-          </UiDataCell>
-        </ULink>
+        <UButton
+          variant="link"
+          size="xl"
+          :to="{ name: 'leaderboard' }"
+          icon="crpg:trophy-cup" :label="$t('nav.main.Leaderboard')"
+        />
 
         <AppSwitchLanguageDropdown v-slot="{ open, locale }">
           <UButton
@@ -92,27 +86,27 @@ Promise.all([
         </UiHeading>
 
         <div
-          class="
-            prose text-center
-            prose-h1:text-lg
-          "
+          class="max-w-2xl text-center"
         >
-          <i18n-t
-            keypath="homePage.intro"
-            tag="h1"
-            scope="global"
-          >
-            <template #link>
-              <NuxtLink
-                href="https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord"
-                target="_blank"
-              >
-                Mount & Blade II: Bannerlord
-              </NuxtLink>
-            </template>
-          </i18n-t>
+          <UiTextView tag="h1" variant="h2">
+            <i18n-t
+              keypath="homePage.intro"
+              scope="global"
+            >
+              <template #link>
+                <ULink
+                  href="https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord"
+                  target="_blank"
+                >
+                  Mount & Blade II: Bannerlord
+                </ULink>
+              </template>
+            </i18n-t>
+          </UiTextView>
 
-          <p>{{ $t('homePage.description') }}</p>
+          <UiTextView tag="p" variant="p">
+            {{ $t('homePage.description') }}
+          </UiTextView>
 
           <iframe
             class="

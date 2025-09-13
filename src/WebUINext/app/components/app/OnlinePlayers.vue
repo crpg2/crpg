@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NumberFlow, { continuous } from '@number-flow/vue'
+import NumberFlow from '@number-flow/vue'
 
 import type { GameServerStats } from '~/models/game-server-stats'
 
@@ -22,8 +22,8 @@ const { gameServerStats, showLabel = false } = defineProps<{
       content: 'space-y-5',
     }"
   >
-    <UiDataCell>
-      <template #leftContent>
+    <UButton variant="link" color="neutral" size="xl">
+      <template #leading>
         <div class="relative size-6">
           <UIcon
             name="crpg:online" class="absolute inset-0 size-full text-[var(--color-notification)]"
@@ -45,7 +45,6 @@ const { gameServerStats, showLabel = false } = defineProps<{
           <template #count>
             <NumberFlow
               :value="gameServerStats.total.playingCount"
-              :plugins="[continuous]"
               locales="en-US"
               will-change
             />
@@ -60,18 +59,21 @@ const { gameServerStats, showLabel = false } = defineProps<{
         <NumberFlow
           :value="gameServerStats.total.playingCount"
           locales="en-US"
-          :format="{ useGrouping: false }"
           will-change
         />
       </div>
-    </UiDataCell>
+    </UButton>
 
     <template #content>
       <div class="text-sm text-highlighted">
         {{ $t('onlinePlayers.tooltip.title') }}
       </div>
 
-      <div v-if="gameServerStats !== null" class="space-y-6" data-aq-region-stats>
+      <div
+        v-if="gameServerStats !== null"
+        class="space-y-6"
+        data-aq-region-stats
+      >
         <div
           v-for="(regionServerStats, regionKey) in gameServerStats.regions" :key="regionKey"
           class="flex flex-col gap-2"

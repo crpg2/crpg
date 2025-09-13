@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { AvatarProps } from '@nuxt/ui'
 
-import type { DataMediaSize } from '~/components/ui/DataMedia.vue'
+import type { DataMediaSize } from '~/components/ui/data/DataMedia.vue'
 import type { UserPublic } from '~/models/user'
 
 const {

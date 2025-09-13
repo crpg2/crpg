@@ -13,13 +13,9 @@ declare module '#app' {
 }
 
 declare module 'nuxt/schema' {
+  interface AppConfig { }
 
-  interface AppConfig {
-  }
-
-  interface RuntimeConfig {
-
-  }
+  interface RuntimeConfig { }
 
   interface PublicRuntimeConfig {
     HH: string
