@@ -13,14 +13,13 @@ using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.GUI.Inventory;
 
-public class ItemInfoVm : ViewModel
+public class ItemInfoVM : ViewModel
 {
+    private readonly CrpgConstants? _constants;
     private string _name = string.Empty;
     private MBBindingList<ItemInfoTupleVM> _tuples = new();
-    private CrpgConstants? _constants;
     private bool _isVisible;
-
-
+    private ItemObject? _itemObj;
 
     [DataSourceProperty]
     public MBBindingList<ItemInfoTupleVM> Tuples
@@ -38,14 +37,31 @@ public class ItemInfoVm : ViewModel
         set => SetField(ref _rows, value, nameof(Rows));
     }
 
-    private ImageIdentifierVM _imageIdentifier;
-    public ItemObject ItemObj { get; }
+    private ImageIdentifierVM? _imageIdentifier;
 
-    public ItemInfoVm(ItemObject item)
+    [DataSourceProperty]
+    public ItemObject? ItemObj
     {
-        ItemObj = item;
-        _imageIdentifier = new ImageIdentifierVM(item);
-        _name = item.Name.ToString();
+        get => _itemObj;
+        set => SetField(ref _itemObj, value, nameof(ItemObj));
+    }
+
+    public ItemInfoVM(ItemObject? item)
+    {
+        if (item == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM Constructed; item == null", Colors.Yellow));
+            _imageIdentifier = new ImageIdentifierVM(ImageIdentifierType.Item);
+            _itemObj = null;
+            Name = string.Empty;
+        }
+        else
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"ItemInfoVM Constructed; item is not null {item.Id}", Colors.Yellow));
+            ItemObj = item;
+            ImageIdentifier = new ImageIdentifierVM(ItemObj);
+            Name = item.Name.ToString();
+        }
 
         var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
         if (behavior == null)
@@ -54,11 +70,66 @@ public class ItemInfoVm : ViewModel
             return;
         }
 
+        TestTuple = new ItemInfoTupleVM
+        {
+            CategoryName = "Test",
+            ValueText = "Success",
+            BrushOne = "ui_crpg_icon_white_crushthrough",
+            // IsBrushOneVisible = true,
+        };
+
+        TestRow = new ItemInfoRowVM
+        {
+            Left = new ItemInfoTupleVM
+            {
+                CategoryName = "Test1",
+                ValueText = "Success",
+                BrushOne = "ui_crpg_icon_white_crushthrough",
+                // IsBrushOneVisible = true,
+            },
+            Right = new ItemInfoTupleVM
+            {
+                CategoryName = "Test1",
+                ValueText = "Success",
+                BrushOne = "ui_crpg_icon_white_crushthrough",
+                // IsBrushOneVisible = true,
+            },
+        };
+
+        Rows = new MBBindingList<ItemInfoRowVM>
+        {
+            new ItemInfoRowVM(
+                new ItemInfoTupleVM { CategoryName = "Damage", ValueText = "45", BrushOne = "ui_crpg_icon_white_crushthrough" },
+                new ItemInfoTupleVM { CategoryName = "Speed", ValueText = "90", BrushOne = "ui_crpg_icon_white_crushthrough"}
+            ),
+            new ItemInfoRowVM(
+                new ItemInfoTupleVM { CategoryName = "Weight", ValueText = "3.5", BrushOne = "ui_crpg_icon_white_crushthrough"},
+                new ItemInfoTupleVM { CategoryName = "Value", ValueText = "250", BrushOne = "ui_crpg_icon_white_crushthrough" }
+            ),
+        };
+
         _constants = behavior.Constants;
     }
 
+    private ItemInfoTupleVM? _testTuple;
     [DataSourceProperty]
-    public ImageIdentifierVM ImageIdentifier
+    public ItemInfoTupleVM? TestTuple
+    {
+        get => _testTuple;
+        set => SetField(ref _testTuple, value, nameof(TestTuple));
+    }
+
+    private ItemInfoRowVM? _testRow;
+    [DataSourceProperty]
+    public ItemInfoRowVM? TestRow
+    {
+        get => _testRow;
+        set => SetField(ref _testRow, value, nameof(TestRow));
+    }
+
+
+    [DataSourceProperty]
+    public ImageIdentifierVM? ImageIdentifier
     {
         get => _imageIdentifier;
         set => SetField(ref _imageIdentifier, value, nameof(ImageIdentifier));
@@ -78,17 +149,20 @@ public class ItemInfoVm : ViewModel
         set => SetField(ref _isVisible, value, nameof(IsVisible));
     }
 
-    private void GenerateItemInfo(ItemObject item)
+    internal void GenerateItemInfo(ItemObject item)
     {
+        InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateItemInfo", Colors.Yellow));
+        ItemObj = item;
         if (item == null)
         {
+            InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateItemInfo: item is null!!!", Colors.Yellow));
             return;
         }
 
-        // Name = item.Name;
+        Name = item.Name.ToString();
         ImageIdentifier = new ImageIdentifierVM(item);
 
-        // Type/Class
+        InformationManager.DisplayMessage(new InformationMessage($"ImageIdentifier Id={ImageIdentifier.Id}, Type={ImageIdentifier.ImageTypeCode}", Colors.Yellow));
 
         GenerateTuplesFromItem();
         GenerateRowsFromTuples();
@@ -96,8 +170,13 @@ public class ItemInfoVm : ViewModel
 
     private void GenerateTuplesFromItem()
     {
+        InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateTuplesFromItem", Colors.Yellow));
         Tuples.Clear();
-
+        if (ItemObj == null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateTuplesFromItem: Item is null!!!", Colors.Yellow));
+            return;
+        }
         var crpgItem = DataExport.ItemExporter.MbToCrpgItemPub(ItemObj);
 
         // General Type/Class
@@ -159,7 +238,7 @@ public class ItemInfoVm : ViewModel
             Tuples.Add(new ItemInfoTupleVM
             {
                 CategoryName = "Weight",
-                ValueText = crpgItem.Weight.ToString(),
+                ValueText = crpgItem.Weight.ToString("F2"),
             });
 
             // Armor Amounts
@@ -184,14 +263,19 @@ public class ItemInfoVm : ViewModel
             }
         }
 
+        // Mount only
         if (crpgItem.Mount != null)
         {
-            // Mount type (special, since it has a brush)
-            // TODO: check for camel/horse later
+            string familyIcon = "ui_crpg_icon_white_mount";
+            if (crpgItem.Mount.FamilyType == 2) // camel
+            {
+                familyIcon = "ui_crpg_icon_white_camel";
+            }
+
             Tuples.Add(new ItemInfoTupleVM
             {
                 CategoryName = "Mount type",
-                BrushOne = "ui_crpg_icon_white_mount",
+                BrushOne = familyIcon,
             });
 
             var mountStats = new (string label, int value)[]
@@ -213,17 +297,21 @@ public class ItemInfoVm : ViewModel
             }
         }
 
+        // Weapons
         if (crpgItem.Weapons != null && crpgItem.Weapons.Count > 0)
         {
             // Features for weapons?
             List<string> wFeats = GetWeaponFeatures(crpgItem, ItemObj);
-            Tuples.Add(new ItemInfoTupleVM
+            if (wFeats.Count > 0)
             {
-                CategoryName = "Features",
-                BrushOne = wFeats.Count > 0 ? wFeats[0] : string.Empty,
-                BrushTwo = wFeats.Count > 1 ? wFeats[1] : string.Empty,
-                BrushThree = wFeats.Count > 2 ? wFeats[2] : string.Empty,
-            });
+                Tuples.Add(new ItemInfoTupleVM
+                {
+                    CategoryName = "Features",
+                    BrushOne = wFeats.Count > 0 ? wFeats[0] : string.Empty,
+                    BrushTwo = wFeats.Count > 1 ? wFeats[1] : string.Empty,
+                    BrushThree = wFeats.Count > 2 ? wFeats[2] : string.Empty,
+                });
+            }
         }
 
         var iType = crpgItem.Type;
@@ -235,7 +323,7 @@ public class ItemInfoVm : ViewModel
         {
             var weapon = crpgItem.Weapons[0];
 
-            Tuples.Add(new ItemInfoTupleVM { CategoryName = "Weight", ValueText = crpgItem.Weight.ToString() });
+            Tuples.Add(new ItemInfoTupleVM { CategoryName = "Weight", ValueText = crpgItem.Weight.ToString("F2") });
             Tuples.Add(new ItemInfoTupleVM { CategoryName = "Reach", ValueText = weapon.Length.ToString() });
             Tuples.Add(new ItemInfoTupleVM { CategoryName = "Handling", ValueText = weapon.Handling.ToString() });
 
@@ -246,6 +334,7 @@ public class ItemInfoVm : ViewModel
             AddWeaponStat("Swing speed", weapon.SwingSpeed, skipIfZero: true);
         }
 
+        // Ammo
         if (crpgItem.Weapons != null && crpgItem.Weapons.Count > 0 &&
             (iType == CrpgItemType.Arrows ||
             iType == CrpgItemType.Bolts ||
@@ -276,7 +365,7 @@ public class ItemInfoVm : ViewModel
             Tuples.Add(new ItemInfoTupleVM
             {
                 CategoryName = "Stack weight",
-                ValueText = $"{crpgItem.Weight * weapon.StackAmount}",
+                ValueText = $"{crpgItem.Weight * weapon.StackAmount:F2}",
             });
 
             Tuples.Add(new ItemInfoTupleVM
@@ -286,12 +375,12 @@ public class ItemInfoVm : ViewModel
             });
         }
 
+        // Ranged weapon
         if (crpgItem.Weapons != null && crpgItem.Weapons.Count > 0 &&
-            (iType == CrpgItemType.Bow ||
-            iType == CrpgItemType.Crossbow ||
-            iType == CrpgItemType.Musket ||
-            iType == CrpgItemType.Pistol
-            ))
+           (iType == CrpgItemType.Bow ||
+                iType == CrpgItemType.Crossbow ||
+                iType == CrpgItemType.Musket ||
+                iType == CrpgItemType.Pistol))
         {
             var weapon = crpgItem.Weapons[0];
 
@@ -308,7 +397,7 @@ public class ItemInfoVm : ViewModel
             Tuples.Add(new ItemInfoTupleVM
             {
                 CategoryName = "Weight",
-                ValueText = crpgItem.Weight.ToString(),
+                ValueText = crpgItem.Weight.ToString("F2"),
             });
 
             Tuples.Add(new ItemInfoTupleVM
@@ -341,6 +430,39 @@ public class ItemInfoVm : ViewModel
             });
         }
 
+        // Shield
+        if (crpgItem.Weapons != null && crpgItem.Weapons.Count > 0 &&
+            (iType == CrpgItemType.Shield))
+        {
+            var weapon = crpgItem.Weapons[0];
+
+            Tuples.Add(new ItemInfoTupleVM
+            {
+                CategoryName = "Weight",
+                ValueText = crpgItem.Weight.ToString("F2"),
+            });
+            Tuples.Add(new ItemInfoTupleVM
+            {
+                CategoryName = "Reach",
+                ValueText = weapon.Length.ToString(),
+            });
+            Tuples.Add(new ItemInfoTupleVM
+            {
+                CategoryName = "Speed",
+                ValueText = weapon.ThrustSpeed.ToString(),
+            });
+            Tuples.Add(new ItemInfoTupleVM
+            {
+                CategoryName = "Durability",
+                ValueText = weapon.StackAmount.ToString(),
+            });
+            Tuples.Add(new ItemInfoTupleVM
+            {
+                CategoryName = "Armor",
+                ValueText = weapon.BodyArmor.ToString(),
+            });
+        }
+
         // Upkeep
         Tuples.Add(new ItemInfoTupleVM
         {
@@ -356,6 +478,8 @@ public class ItemInfoVm : ViewModel
             ValueText = $"{crpgItem.Price:N0}",
             IsGoldVisible = true,
         });
+
+        InformationManager.DisplayMessage(new InformationMessage($"Tuples Generated: {Tuples.Count} ", Colors.Yellow));
     }
 
     private int ComputeAverageRepairCostPerHour(int price)
@@ -375,7 +499,15 @@ public class ItemInfoVm : ViewModel
         for (int i = 0; i < Tuples.Count; i += 2)
         {
             var left = Tuples[i];
-            ItemInfoTupleVM? right = null;
+            // ItemInfoTupleVM? right = null;
+
+            ItemInfoTupleVM? right = new()
+            {
+                CategoryName = string.Empty,
+                ValueText = string.Empty,
+                BrushOne = string.Empty,
+                IsGoldVisible = false,
+            };
 
             if (i + 1 < Tuples.Count)
             {
@@ -388,6 +520,8 @@ public class ItemInfoVm : ViewModel
                 Right = right,
             });
         }
+
+        InformationManager.DisplayMessage(new InformationMessage($"Rows Generated: {Rows.Count} ", Colors.Yellow));
     }
 
     private void AddWeaponStat(string category, int value, CrpgDamageType? damageType = null, bool skipIfZero = true)
@@ -527,6 +661,20 @@ public class ItemInfoVm : ViewModel
                     features.Add("ui_crpg_icon_white_candismount"); // TODO: replace with CanHook-specific icon if available
                 }
             }
+            if (weapon.WeaponFlags.HasFlag(WeaponFlags.CanCrushThrough))
+            {
+                if (!features.Contains("ui_crpg_icon_white_crushthrough"))
+                {
+                    features.Add("ui_crpg_icon_white_crushthrough"); // TODO: not showing up normally for some reason for great maul
+                }
+            }
+            if (weapon.WeaponClass == WeaponClass.LargeShield)
+            {
+                if (!features.Contains("ui_crpg_icon_white_crushthrough"))
+                {
+                    features.Add("ui_crpg_icon_white_cantuseonhorseback");
+                }
+            }
         }
 
         return features;
@@ -566,8 +714,8 @@ public class ItemInfoVm : ViewModel
             CrpgWeaponClass.Javelin => "ui_crpg_icon_white_thrown_javelin",
             CrpgWeaponClass.Pistol => "ItemIcon.Pistol",
             CrpgWeaponClass.Musket => "ItemIcon.Musket",
-            CrpgWeaponClass.SmallShield => "ItemIcon.ShieldSmall",
-            CrpgWeaponClass.LargeShield => "ItemIcon.ShieldLarge",
+            CrpgWeaponClass.SmallShield => "ui_crpg_icon_white_shield_small",
+            CrpgWeaponClass.LargeShield => "ui_crpg_icon_white_shield_large",
             CrpgWeaponClass.Banner => "ItemIcon.Banner",
             _ => string.Empty,
         };

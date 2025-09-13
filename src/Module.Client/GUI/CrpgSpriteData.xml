@@ -13,14 +13,7 @@
       <SpriteSheetSize ID="1" Width="64" Height="32" />
       <AlwaysLoad />
     </SpriteCategory>
-	<SpriteCategory>
-      <Name>ui_crpg_icon_grey</Name>
-      <SpriteSheetCount>2</SpriteSheetCount>
-      <SpriteSheetSize ID="1" Width="4096" Height="4096" />
-      <SpriteSheetSize ID="2" Width="4096" Height="4096" />
-      <AlwaysLoad />
-    </SpriteCategory>
-    <SpriteCategory>
+	  <SpriteCategory>
       <Name>ui_crpg_icon_white</Name>
       <SpriteSheetCount>2</SpriteSheetCount>
       <SpriteSheetSize ID="1" Width="4096" Height="4096" />
@@ -947,736 +940,7 @@
       <SheetY>4</SheetY>
       <CategoryName>ui_crpg_scoreboard</CategoryName>
     </SpritePart>
-	<SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_3dots</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_4squares</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_ammo</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_armory</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_arrow</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_arrow_up</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_banner</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_bolt</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_bonusagainstshield</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_bow</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_bow_longbow</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>3124</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_brace</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>3124</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_bullets</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>3124</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_candismount</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>3124</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_cantreloadonhorseback</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>3124</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_cantuseonhorseback</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>3124</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_cape</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>3124</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_chestarmor</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_circle_large</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_circle_small</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_crossbow</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_crossbow_heavy</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_crossbow_light</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_crown</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_crpg</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_crushthrough</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_cut</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_dagger</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_diamond</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_droponchange</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_edit</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_exclaimation_point</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_extraweapon</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_flag</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_flag2</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_gift</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_handarmor</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_headarmor</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_heavycrossbow</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>2604</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_imgi_17_default</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_imgi_18_default</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>2604</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_knockdown</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>2604</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_legarmor</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_lightcrossbow</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_lineandcircle</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_mount</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_mountharness</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_musket</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_nav_close</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_nav_down</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_nav_right</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_nav_up</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_onehanded</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_onehanded_axe</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_onehanded_mace</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_onehanded_polearm</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_onehanded_sword</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_penetratesshield</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_pierce</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>524</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_pike</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_pitchfork</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_polearm</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>1044</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_ranged</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>2604</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_reforge</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>2604</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_search</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>2604</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_shield</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_steam</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_thrown</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_thrown_axe</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_thrown_javelin</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_thrown_knife</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_thrown_stone</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_twohanded</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_twohanded_axe</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_twohanded_mace</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_twohanded_polearm</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_twohanded_sword</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_useteamcolor</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>524</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_weaponslot</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>4</SheetX>
-      <SheetY>1564</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_grey_windows</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>2604</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_grey_wrench</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>2084</SheetY>
-      <CategoryName>ui_crpg_icon_grey</CategoryName>
-    </SpritePart>
-    <SpritePart>
+	  <SpritePart>
       <SheetID>1</SheetID>
       <Name>ui_crpg_icon_white_3dots</Name>
       <Width>512</Width>
@@ -1690,7 +954,7 @@
       <Name>ui_crpg_icon_white_4squares</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>524</SheetX>
+      <SheetX>3124</SheetX>
       <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1699,7 +963,7 @@
       <Name>ui_crpg_icon_white_ammo</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>2604</SheetX>
       <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1708,8 +972,8 @@
       <Name>ui_crpg_icon_white_armory</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>4</SheetY>
+      <SheetX>2084</SheetX>
+      <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1717,40 +981,13 @@
       <Name>ui_crpg_icon_white_arrow</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>4</SheetY>
+      <SheetX>1564</SheetX>
+      <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
       <SheetID>2</SheetID>
       <Name>ui_crpg_icon_white_arrow_up</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_white</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_white_banner</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_white</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_white_bolt</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>4</SheetY>
-      <CategoryName>ui_crpg_icon_white</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
-      <Name>ui_crpg_icon_white_bonusagainstshield</Name>
       <Width>512</Width>
       <Height>512</Height>
       <SheetX>1044</SheetX>
@@ -1759,7 +996,70 @@
     </SpritePart>
     <SpritePart>
       <SheetID>2</SheetID>
+      <Name>ui_crpg_icon_white_banner</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>524</SheetX>
+      <SheetY>524</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>2</SheetID>
+      <Name>ui_crpg_icon_white_bolt</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>4</SheetX>
+      <SheetY>524</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>2</SheetID>
+      <Name>ui_crpg_icon_white_bonusagainstshield</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>3124</SheetX>
+      <SheetY>4</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>2</SheetID>
       <Name>ui_crpg_icon_white_bow</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>4</SheetX>
+      <SheetY>1044</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>2</SheetID>
+      <Name>ui_crpg_icon_white_bow_longbow</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>2604</SheetX>
+      <SheetY>4</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>2</SheetID>
+      <Name>ui_crpg_icon_white_brace</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1564</SheetX>
+      <SheetY>4</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>2</SheetID>
+      <Name>ui_crpg_icon_white_bullets</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1044</SheetX>
+      <SheetY>4</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>2</SheetID>
+      <Name>ui_crpg_icon_white_camel</Name>
       <Width>512</Width>
       <Height>512</Height>
       <SheetX>524</SheetX>
@@ -1767,39 +1067,12 @@
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_white_bow_longbow</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>3124</SheetY>
-      <CategoryName>ui_crpg_icon_white</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_white_brace</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>3124</SheetY>
-      <CategoryName>ui_crpg_icon_white</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_white_bullets</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>3124</SheetY>
-      <CategoryName>ui_crpg_icon_white</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>1</SheetID>
+      <SheetID>2</SheetID>
       <Name>ui_crpg_icon_white_candismount</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>3124</SheetY>
+      <SheetX>4</SheetX>
+      <SheetY>4</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1807,7 +1080,7 @@
       <Name>ui_crpg_icon_white_cantreloadonhorseback</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1044</SheetX>
+      <SheetX>3124</SheetX>
       <SheetY>3124</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1816,7 +1089,7 @@
       <Name>ui_crpg_icon_white_cantuseonhorseback</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>524</SheetX>
+      <SheetX>2604</SheetX>
       <SheetY>3124</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1825,7 +1098,16 @@
       <Name>ui_crpg_icon_white_cape</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>2084</SheetX>
+      <SheetY>3124</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>ui_crpg_icon_white_checkmark</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1564</SheetX>
       <SheetY>3124</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1834,7 +1116,7 @@
       <Name>ui_crpg_icon_white_chestarmor</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>2084</SheetX>
       <SheetY>4</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1843,8 +1125,8 @@
       <Name>ui_crpg_icon_white_circle_large</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>524</SheetY>
+      <SheetX>1044</SheetX>
+      <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1852,8 +1134,17 @@
       <Name>ui_crpg_icon_white_circle_small</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>524</SheetY>
+      <SheetX>2604</SheetX>
+      <SheetY>1564</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>2</SheetID>
+      <Name>ui_crpg_icon_white_couch</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1564</SheetX>
+      <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1861,8 +1152,8 @@
       <Name>ui_crpg_icon_white_crossbow</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>524</SheetY>
+      <SheetX>4</SheetX>
+      <SheetY>2604</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1870,7 +1161,7 @@
       <Name>ui_crpg_icon_white_crossbow_heavy</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>524</SheetX>
+      <SheetX>3124</SheetX>
       <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1879,7 +1170,7 @@
       <Name>ui_crpg_icon_white_crossbow_light</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>2604</SheetX>
       <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1888,8 +1179,8 @@
       <Name>ui_crpg_icon_white_crown</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>1564</SheetY>
+      <SheetX>2084</SheetX>
+      <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1897,8 +1188,17 @@
       <Name>ui_crpg_icon_white_crpg</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>1564</SheetY>
+      <SheetX>1564</SheetX>
+      <SheetY>2084</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>2</SheetID>
+      <Name>ui_crpg_icon_white_crpg_logo</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1044</SheetX>
+      <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1906,8 +1206,8 @@
       <Name>ui_crpg_icon_white_crushthrough</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>1564</SheetY>
+      <SheetX>524</SheetX>
+      <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1915,8 +1215,8 @@
       <Name>ui_crpg_icon_white_cut</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>1564</SheetY>
+      <SheetX>4</SheetX>
+      <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1924,8 +1224,8 @@
       <Name>ui_crpg_icon_white_dagger</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>1564</SheetY>
+      <SheetX>524</SheetX>
+      <SheetY>2604</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1933,7 +1233,7 @@
       <Name>ui_crpg_icon_white_diamond</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>524</SheetX>
+      <SheetX>3124</SheetX>
       <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1942,7 +1242,7 @@
       <Name>ui_crpg_icon_white_droponchange</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>2084</SheetX>
       <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1951,8 +1251,8 @@
       <Name>ui_crpg_icon_white_edit</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>1044</SheetY>
+      <SheetX>1564</SheetX>
+      <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1960,8 +1260,8 @@
       <Name>ui_crpg_icon_white_exclaimation_point</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>1044</SheetY>
+      <SheetX>1044</SheetX>
+      <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1969,8 +1269,8 @@
       <Name>ui_crpg_icon_white_extraweapon</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>1044</SheetY>
+      <SheetX>524</SheetX>
+      <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1978,8 +1278,8 @@
       <Name>ui_crpg_icon_white_flag</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>1044</SheetY>
+      <SheetX>4</SheetX>
+      <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -1987,7 +1287,7 @@
       <Name>ui_crpg_icon_white_flag2</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1044</SheetX>
+      <SheetX>3124</SheetX>
       <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -1996,7 +1296,7 @@
       <Name>ui_crpg_icon_white_gift</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>524</SheetX>
+      <SheetX>2604</SheetX>
       <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2005,35 +1305,35 @@
       <Name>ui_crpg_icon_white_handarmor</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>2084</SheetX>
       <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
-      <SheetID>2</SheetID>
+      <SheetID>1</SheetID>
       <Name>ui_crpg_icon_white_headarmor</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>524</SheetY>
+      <SheetX>1044</SheetX>
+      <SheetY>3124</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>2</SheetID>
+      <Name>ui_crpg_icon_white_heavycrossbow</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>524</SheetX>
+      <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
       <SheetID>1</SheetID>
-      <Name>ui_crpg_icon_white_heavycrossbow</Name>
-      <Width>512</Width>
-      <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>2604</SheetY>
-      <CategoryName>ui_crpg_icon_white</CategoryName>
-    </SpritePart>
-    <SpritePart>
-      <SheetID>2</SheetID>
       <Name>ui_crpg_icon_white_imgi_17_default</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>2084</SheetY>
+      <SheetX>524</SheetX>
+      <SheetY>3124</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2041,8 +1341,8 @@
       <Name>ui_crpg_icon_white_imgi_18_default</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>2604</SheetY>
+      <SheetX>3124</SheetX>
+      <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2050,8 +1350,8 @@
       <Name>ui_crpg_icon_white_knockdown</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>2604</SheetY>
+      <SheetX>2084</SheetX>
+      <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2059,7 +1359,7 @@
       <Name>ui_crpg_icon_white_legarmor</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1044</SheetX>
+      <SheetX>1564</SheetX>
       <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2068,7 +1368,7 @@
       <Name>ui_crpg_icon_white_lightcrossbow</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>524</SheetX>
+      <SheetX>1044</SheetX>
       <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2077,7 +1377,7 @@
       <Name>ui_crpg_icon_white_lineandcircle</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>524</SheetX>
       <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2086,8 +1386,8 @@
       <Name>ui_crpg_icon_white_mount</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>524</SheetY>
+      <SheetX>4</SheetX>
+      <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2095,7 +1395,7 @@
       <Name>ui_crpg_icon_white_mountharness</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2604</SheetX>
+      <SheetX>3124</SheetX>
       <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2104,7 +1404,7 @@
       <Name>ui_crpg_icon_white_musket</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2084</SheetX>
+      <SheetX>2604</SheetX>
       <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2113,7 +1413,7 @@
       <Name>ui_crpg_icon_white_nav_close</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
+      <SheetX>2084</SheetX>
       <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2122,7 +1422,7 @@
       <Name>ui_crpg_icon_white_nav_down</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
+      <SheetX>2604</SheetX>
       <SheetY>1044</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2131,7 +1431,7 @@
       <Name>ui_crpg_icon_white_nav_right</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1044</SheetX>
+      <SheetX>1564</SheetX>
       <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2140,7 +1440,7 @@
       <Name>ui_crpg_icon_white_nav_up</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>524</SheetX>
       <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2149,8 +1449,8 @@
       <Name>ui_crpg_icon_white_onehanded</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>4</SheetY>
+      <SheetX>4</SheetX>
+      <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2158,7 +1458,7 @@
       <Name>ui_crpg_icon_white_onehanded_axe</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2604</SheetX>
+      <SheetX>3124</SheetX>
       <SheetY>4</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2167,7 +1467,7 @@
       <Name>ui_crpg_icon_white_onehanded_mace</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2084</SheetX>
+      <SheetX>2604</SheetX>
       <SheetY>4</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2176,7 +1476,7 @@
       <Name>ui_crpg_icon_white_onehanded_polearm</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
+      <SheetX>2084</SheetX>
       <SheetY>4</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2185,7 +1485,7 @@
       <Name>ui_crpg_icon_white_onehanded_sword</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1044</SheetX>
+      <SheetX>1564</SheetX>
       <SheetY>4</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2194,7 +1494,7 @@
       <Name>ui_crpg_icon_white_penetratesshield</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>524</SheetX>
+      <SheetX>1044</SheetX>
       <SheetY>4</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2204,7 +1504,7 @@
       <Width>512</Width>
       <Height>512</Height>
       <SheetX>524</SheetX>
-      <SheetY>524</SheetY>
+      <SheetY>4</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2212,8 +1512,8 @@
       <Name>ui_crpg_icon_white_pike</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>1044</SheetY>
+      <SheetX>1044</SheetX>
+      <SheetY>524</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2221,8 +1521,8 @@
       <Name>ui_crpg_icon_white_pitchfork</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>1044</SheetY>
+      <SheetX>4</SheetX>
+      <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2230,8 +1530,8 @@
       <Name>ui_crpg_icon_white_polearm</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>1044</SheetY>
+      <SheetX>1564</SheetX>
+      <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2239,8 +1539,8 @@
       <Name>ui_crpg_icon_white_ranged</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>2604</SheetY>
+      <SheetX>524</SheetX>
+      <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2248,7 +1548,7 @@
       <Name>ui_crpg_icon_white_reforge</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>524</SheetX>
+      <SheetX>2604</SheetX>
       <SheetY>2604</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2257,7 +1557,7 @@
       <Name>ui_crpg_icon_white_search</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>2084</SheetX>
       <SheetY>2604</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2266,8 +1566,26 @@
       <Name>ui_crpg_icon_white_shield</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>2084</SheetY>
+      <SheetX>1564</SheetX>
+      <SheetY>2604</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>ui_crpg_icon_white_shield_large</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>1044</SheetX>
+      <SheetY>2604</SheetY>
+      <CategoryName>ui_crpg_icon_white</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>1</SheetID>
+      <Name>ui_crpg_icon_white_shield_small</Name>
+      <Width>512</Width>
+      <Height>512</Height>
+      <SheetX>524</SheetX>
+      <SheetY>2604</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2275,8 +1593,8 @@
       <Name>ui_crpg_icon_white_steam</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>2084</SheetY>
+      <SheetX>4</SheetX>
+      <SheetY>2604</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2284,7 +1602,7 @@
       <Name>ui_crpg_icon_white_thrown</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2084</SheetX>
+      <SheetX>3124</SheetX>
       <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2293,7 +1611,7 @@
       <Name>ui_crpg_icon_white_thrown_axe</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
+      <SheetX>2604</SheetX>
       <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2302,8 +1620,8 @@
       <Name>ui_crpg_icon_white_thrown_javelin</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1044</SheetX>
-      <SheetY>2084</SheetY>
+      <SheetX>3124</SheetX>
+      <SheetY>2604</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2311,7 +1629,7 @@
       <Name>ui_crpg_icon_white_thrown_knife</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>524</SheetX>
+      <SheetX>2084</SheetX>
       <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2320,7 +1638,7 @@
       <Name>ui_crpg_icon_white_thrown_stone</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>1044</SheetX>
       <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2329,8 +1647,8 @@
       <Name>ui_crpg_icon_white_twohanded</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>3124</SheetX>
-      <SheetY>1564</SheetY>
+      <SheetX>524</SheetX>
+      <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2338,8 +1656,8 @@
       <Name>ui_crpg_icon_white_twohanded_axe</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2604</SheetX>
-      <SheetY>1564</SheetY>
+      <SheetX>4</SheetX>
+      <SheetY>2084</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2347,7 +1665,7 @@
       <Name>ui_crpg_icon_white_twohanded_mace</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2084</SheetX>
+      <SheetX>3124</SheetX>
       <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2356,7 +1674,7 @@
       <Name>ui_crpg_icon_white_twohanded_polearm</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
+      <SheetX>2604</SheetX>
       <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2365,7 +1683,7 @@
       <Name>ui_crpg_icon_white_twohanded_sword</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1044</SheetX>
+      <SheetX>2084</SheetX>
       <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2374,7 +1692,7 @@
       <Name>ui_crpg_icon_white_useteamcolor</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>524</SheetX>
+      <SheetX>1564</SheetX>
       <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2383,7 +1701,7 @@
       <Name>ui_crpg_icon_white_weaponslot</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>4</SheetX>
+      <SheetX>1044</SheetX>
       <SheetY>1564</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
@@ -2392,8 +1710,8 @@
       <Name>ui_crpg_icon_white_windows</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>2084</SheetX>
-      <SheetY>2604</SheetY>
+      <SheetX>4</SheetX>
+      <SheetY>3124</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
     <SpritePart>
@@ -2401,8 +1719,8 @@
       <Name>ui_crpg_icon_white_wrench</Name>
       <Width>512</Width>
       <Height>512</Height>
-      <SheetX>1564</SheetX>
-      <SheetY>2084</SheetY>
+      <SheetX>1044</SheetX>
+      <SheetY>2604</SheetY>
       <CategoryName>ui_crpg_icon_white</CategoryName>
     </SpritePart>
   </SpriteParts>
@@ -2815,331 +2133,7 @@
       <Name>ui_crpg_scoreboard_context_menu_promote_commander</Name>
       <SpritePartName>ui_crpg_scoreboard_context_menu_promote_commander</SpritePartName>
     </GenericSprite>
-	<GenericSprite>
-      <Name>ui_crpg_icon_grey_3dots</Name>
-      <SpritePartName>ui_crpg_icon_grey_3dots</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_4squares</Name>
-      <SpritePartName>ui_crpg_icon_grey_4squares</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_ammo</Name>
-      <SpritePartName>ui_crpg_icon_grey_ammo</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_armory</Name>
-      <SpritePartName>ui_crpg_icon_grey_armory</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_arrow</Name>
-      <SpritePartName>ui_crpg_icon_grey_arrow</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_arrow_up</Name>
-      <SpritePartName>ui_crpg_icon_grey_arrow_up</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_banner</Name>
-      <SpritePartName>ui_crpg_icon_grey_banner</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_bolt</Name>
-      <SpritePartName>ui_crpg_icon_grey_bolt</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_bonusagainstshield</Name>
-      <SpritePartName>ui_crpg_icon_grey_bonusagainstshield</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_bow</Name>
-      <SpritePartName>ui_crpg_icon_grey_bow</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_bow_longbow</Name>
-      <SpritePartName>ui_crpg_icon_grey_bow_longbow</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_brace</Name>
-      <SpritePartName>ui_crpg_icon_grey_brace</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_bullets</Name>
-      <SpritePartName>ui_crpg_icon_grey_bullets</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_candismount</Name>
-      <SpritePartName>ui_crpg_icon_grey_candismount</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_cantreloadonhorseback</Name>
-      <SpritePartName>ui_crpg_icon_grey_cantreloadonhorseback</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_cantuseonhorseback</Name>
-      <SpritePartName>ui_crpg_icon_grey_cantuseonhorseback</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_cape</Name>
-      <SpritePartName>ui_crpg_icon_grey_cape</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_chestarmor</Name>
-      <SpritePartName>ui_crpg_icon_grey_chestarmor</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_circle_large</Name>
-      <SpritePartName>ui_crpg_icon_grey_circle_large</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_circle_small</Name>
-      <SpritePartName>ui_crpg_icon_grey_circle_small</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_crossbow</Name>
-      <SpritePartName>ui_crpg_icon_grey_crossbow</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_crossbow_heavy</Name>
-      <SpritePartName>ui_crpg_icon_grey_crossbow_heavy</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_crossbow_light</Name>
-      <SpritePartName>ui_crpg_icon_grey_crossbow_light</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_crown</Name>
-      <SpritePartName>ui_crpg_icon_grey_crown</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_crpg</Name>
-      <SpritePartName>ui_crpg_icon_grey_crpg</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_crushthrough</Name>
-      <SpritePartName>ui_crpg_icon_grey_crushthrough</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_cut</Name>
-      <SpritePartName>ui_crpg_icon_grey_cut</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_dagger</Name>
-      <SpritePartName>ui_crpg_icon_grey_dagger</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_diamond</Name>
-      <SpritePartName>ui_crpg_icon_grey_diamond</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_droponchange</Name>
-      <SpritePartName>ui_crpg_icon_grey_droponchange</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_edit</Name>
-      <SpritePartName>ui_crpg_icon_grey_edit</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_exclaimation_point</Name>
-      <SpritePartName>ui_crpg_icon_grey_exclaimation_point</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_extraweapon</Name>
-      <SpritePartName>ui_crpg_icon_grey_extraweapon</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_flag</Name>
-      <SpritePartName>ui_crpg_icon_grey_flag</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_flag2</Name>
-      <SpritePartName>ui_crpg_icon_grey_flag2</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_gift</Name>
-      <SpritePartName>ui_crpg_icon_grey_gift</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_handarmor</Name>
-      <SpritePartName>ui_crpg_icon_grey_handarmor</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_headarmor</Name>
-      <SpritePartName>ui_crpg_icon_grey_headarmor</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_heavycrossbow</Name>
-      <SpritePartName>ui_crpg_icon_grey_heavycrossbow</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_imgi_17_default</Name>
-      <SpritePartName>ui_crpg_icon_grey_imgi_17_default</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_imgi_18_default</Name>
-      <SpritePartName>ui_crpg_icon_grey_imgi_18_default</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_knockdown</Name>
-      <SpritePartName>ui_crpg_icon_grey_knockdown</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_legarmor</Name>
-      <SpritePartName>ui_crpg_icon_grey_legarmor</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_lightcrossbow</Name>
-      <SpritePartName>ui_crpg_icon_grey_lightcrossbow</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_lineandcircle</Name>
-      <SpritePartName>ui_crpg_icon_grey_lineandcircle</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_mount</Name>
-      <SpritePartName>ui_crpg_icon_grey_mount</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_mountharness</Name>
-      <SpritePartName>ui_crpg_icon_grey_mountharness</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_musket</Name>
-      <SpritePartName>ui_crpg_icon_grey_musket</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_nav_close</Name>
-      <SpritePartName>ui_crpg_icon_grey_nav_close</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_nav_down</Name>
-      <SpritePartName>ui_crpg_icon_grey_nav_down</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_nav_right</Name>
-      <SpritePartName>ui_crpg_icon_grey_nav_right</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_nav_up</Name>
-      <SpritePartName>ui_crpg_icon_grey_nav_up</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_onehanded</Name>
-      <SpritePartName>ui_crpg_icon_grey_onehanded</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_onehanded_axe</Name>
-      <SpritePartName>ui_crpg_icon_grey_onehanded_axe</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_onehanded_mace</Name>
-      <SpritePartName>ui_crpg_icon_grey_onehanded_mace</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_onehanded_polearm</Name>
-      <SpritePartName>ui_crpg_icon_grey_onehanded_polearm</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_onehanded_sword</Name>
-      <SpritePartName>ui_crpg_icon_grey_onehanded_sword</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_penetratesshield</Name>
-      <SpritePartName>ui_crpg_icon_grey_penetratesshield</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_pierce</Name>
-      <SpritePartName>ui_crpg_icon_grey_pierce</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_pike</Name>
-      <SpritePartName>ui_crpg_icon_grey_pike</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_pitchfork</Name>
-      <SpritePartName>ui_crpg_icon_grey_pitchfork</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_polearm</Name>
-      <SpritePartName>ui_crpg_icon_grey_polearm</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_ranged</Name>
-      <SpritePartName>ui_crpg_icon_grey_ranged</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_reforge</Name>
-      <SpritePartName>ui_crpg_icon_grey_reforge</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_search</Name>
-      <SpritePartName>ui_crpg_icon_grey_search</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_shield</Name>
-      <SpritePartName>ui_crpg_icon_grey_shield</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_steam</Name>
-      <SpritePartName>ui_crpg_icon_grey_steam</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_thrown</Name>
-      <SpritePartName>ui_crpg_icon_grey_thrown</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_thrown_axe</Name>
-      <SpritePartName>ui_crpg_icon_grey_thrown_axe</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_thrown_javelin</Name>
-      <SpritePartName>ui_crpg_icon_grey_thrown_javelin</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_thrown_knife</Name>
-      <SpritePartName>ui_crpg_icon_grey_thrown_knife</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_thrown_stone</Name>
-      <SpritePartName>ui_crpg_icon_grey_thrown_stone</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_twohanded</Name>
-      <SpritePartName>ui_crpg_icon_grey_twohanded</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_twohanded_axe</Name>
-      <SpritePartName>ui_crpg_icon_grey_twohanded_axe</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_twohanded_mace</Name>
-      <SpritePartName>ui_crpg_icon_grey_twohanded_mace</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_twohanded_polearm</Name>
-      <SpritePartName>ui_crpg_icon_grey_twohanded_polearm</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_twohanded_sword</Name>
-      <SpritePartName>ui_crpg_icon_grey_twohanded_sword</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_useteamcolor</Name>
-      <SpritePartName>ui_crpg_icon_grey_useteamcolor</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_weaponslot</Name>
-      <SpritePartName>ui_crpg_icon_grey_weaponslot</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_windows</Name>
-      <SpritePartName>ui_crpg_icon_grey_windows</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
-      <Name>ui_crpg_icon_grey_wrench</Name>
-      <SpritePartName>ui_crpg_icon_grey_wrench</SpritePartName>
-    </GenericSprite>
-    <GenericSprite>
+	  <GenericSprite>
       <Name>ui_crpg_icon_white_3dots</Name>
       <SpritePartName>ui_crpg_icon_white_3dots</SpritePartName>
     </GenericSprite>
@@ -3192,6 +2186,10 @@
       <SpritePartName>ui_crpg_icon_white_bullets</SpritePartName>
     </GenericSprite>
     <GenericSprite>
+      <Name>ui_crpg_icon_white_camel</Name>
+      <SpritePartName>ui_crpg_icon_white_camel</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
       <Name>ui_crpg_icon_white_candismount</Name>
       <SpritePartName>ui_crpg_icon_white_candismount</SpritePartName>
     </GenericSprite>
@@ -3208,6 +2206,10 @@
       <SpritePartName>ui_crpg_icon_white_cape</SpritePartName>
     </GenericSprite>
     <GenericSprite>
+      <Name>ui_crpg_icon_white_checkmark</Name>
+      <SpritePartName>ui_crpg_icon_white_checkmark</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
       <Name>ui_crpg_icon_white_chestarmor</Name>
       <SpritePartName>ui_crpg_icon_white_chestarmor</SpritePartName>
     </GenericSprite>
@@ -3218,6 +2220,10 @@
     <GenericSprite>
       <Name>ui_crpg_icon_white_circle_small</Name>
       <SpritePartName>ui_crpg_icon_white_circle_small</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_icon_white_couch</Name>
+      <SpritePartName>ui_crpg_icon_white_couch</SpritePartName>
     </GenericSprite>
     <GenericSprite>
       <Name>ui_crpg_icon_white_crossbow</Name>
@@ -3238,6 +2244,10 @@
     <GenericSprite>
       <Name>ui_crpg_icon_white_crpg</Name>
       <SpritePartName>ui_crpg_icon_white_crpg</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_icon_white_crpg_logo</Name>
+      <SpritePartName>ui_crpg_icon_white_crpg_logo</SpritePartName>
     </GenericSprite>
     <GenericSprite>
       <Name>ui_crpg_icon_white_crushthrough</Name>
@@ -3402,6 +2412,14 @@
     <GenericSprite>
       <Name>ui_crpg_icon_white_shield</Name>
       <SpritePartName>ui_crpg_icon_white_shield</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_icon_white_shield_large</Name>
+      <SpritePartName>ui_crpg_icon_white_shield_large</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>ui_crpg_icon_white_shield_small</Name>
+      <SpritePartName>ui_crpg_icon_white_shield_small</SpritePartName>
     </GenericSprite>
     <GenericSprite>
       <Name>ui_crpg_icon_white_steam</Name>

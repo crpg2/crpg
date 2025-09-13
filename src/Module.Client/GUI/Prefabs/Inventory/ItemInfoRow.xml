@@ -1,7 +1,7 @@
 <Prefab Name="ItemInfoRow">
   <Parameters>
     <Parameter Name="Width" DefaultValue="220"/>
-    <Parameter Name="Height" DefaultValue="430"/>
+    <Parameter Name="Height" DefaultValue="50"/>
   </Parameters>
   <Constants>
     <Constant Name="Icon.Width" Value="30"/>
@@ -11,13 +11,14 @@
   </Constants>
   <Window>
     <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" HorizontalAlignment="Center" VerticalAlignment="Top"
-            WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
+            WidthSizePolicy="Fixed" SuggestedWidth="*Width"
+            HeightSizePolicy="Fixed" SuggestedHeight="*Height"
             Spacing="1"
             DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
-      <Children>
-        <ItemInfoTuple>
-        <ItemInfoTuple>
-      </Children>
+        <Children>
+          <ItemInfoTuple DataSource="{Left}"/>
+          <ItemInfoTuple DataSource="{Right}"/>
+        </Children>
     </ListPanel>
   </Window>
 </Prefab>

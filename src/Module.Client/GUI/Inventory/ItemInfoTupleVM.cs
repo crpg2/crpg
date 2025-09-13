@@ -12,9 +12,6 @@ public class ItemInfoTupleVM : ViewModel
     private string _categoryName = string.Empty;
     private string _valueText = string.Empty;
     private bool _isGoldVisible;
-    private bool _isBrushOneVisible;
-    private bool _isBrushTwoVisible;
-    private bool _isBrushThreeVisible;
     private string _brushOne = string.Empty;
     private string _brushTwo = string.Empty;
     private string _brushThree = string.Empty;
@@ -41,44 +38,50 @@ public class ItemInfoTupleVM : ViewModel
     }
 
     [DataSourceProperty]
-    public bool IsBrushOneVisible
-    {
-        get => _isBrushOneVisible;
-        set => SetField(ref _isBrushOneVisible, value, nameof(IsBrushOneVisible));
-    }
-
-    [DataSourceProperty]
-    public bool IsBrushTwoVisible
-    {
-        get => _isBrushTwoVisible;
-        set => SetField(ref _isBrushTwoVisible, value, nameof(IsBrushTwoVisible));
-    }
-
-    [DataSourceProperty]
-    public bool IsBrushThreeVisible
-    {
-        get => _isBrushThreeVisible;
-        set => SetField(ref _isBrushThreeVisible, value, nameof(IsBrushThreeVisible));
-    }
-
-    [DataSourceProperty]
     public string BrushOne
     {
         get => _brushOne;
-        set => SetField(ref _brushOne, value, nameof(BrushOne));
+        set
+        {
+            if (SetField(ref _brushOne, value, nameof(BrushOne)))
+            {
+                OnPropertyChanged(nameof(IsBrushOneVisible));
+            }
+        }
     }
 
     [DataSourceProperty]
     public string BrushTwo
     {
         get => _brushTwo;
-        set => SetField(ref _brushTwo, value, nameof(BrushTwo));
+        set
+        {
+            if (SetField(ref _brushTwo, value, nameof(BrushTwo)))
+            {
+                OnPropertyChanged(nameof(IsBrushTwoVisible));
+            }
+        }
     }
 
     [DataSourceProperty]
     public string BrushThree
     {
         get => _brushThree;
-        set => SetField(ref _brushThree, value, nameof(BrushTwo));
+        set
+        {
+            if (SetField(ref _brushThree, value, nameof(BrushThree)))
+            {
+                OnPropertyChanged(nameof(IsBrushThreeVisible));
+            }
+        }
     }
+
+    [DataSourceProperty]
+    public bool IsBrushOneVisible => !string.IsNullOrEmpty(BrushOne);
+
+    [DataSourceProperty]
+    public bool IsBrushTwoVisible => !string.IsNullOrEmpty(BrushTwo);
+
+    [DataSourceProperty]
+    public bool IsBrushThreeVisible => !string.IsNullOrEmpty(BrushThree);
 }

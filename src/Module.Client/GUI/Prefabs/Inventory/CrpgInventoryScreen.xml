@@ -45,6 +45,7 @@
                         </BrushWidget>
                       </Children>
                     </BrushWidget>
+                
 
                     <!-- Modified Armor Values for Bodyparts -->
                     <ArmorAmountPrefab DataSource="{AmountHeadArmor}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="40" SuggestedHeight="40" HorizontalAlignment="Left" VerticalAlignment="Top" PositionYOffset="60" PositionXOffset="75"/>
@@ -88,6 +89,7 @@
                           </Children>
                         </ListPanel>
                         <!-- End Horizontal Layout Container -->
+                        <ItemInfoPrefab DataSource="{ItemInfo}" HeightSizePolicy="Fixed" WidthSizePolicy="Fixed" SuggestedWidth="220" SuggestedHeight="430" IsVisible="true"/>
                       </Children>
                     </ListPanel>
                     <!-- End Vertical Panel Wrapper -->

@@ -1,18 +1,19 @@
 <Prefab Name="ItemInfoTuple">
   <Parameters>
-    <Parameter Name="Width" DefaultValue="220"/>
-    <Parameter Name="Height" DefaultValue="430"/>
+    <Parameter Name="Width" DefaultValue="110"/>
+    <Parameter Name="Height" DefaultValue="40"/>
   </Parameters>
   <Constants>
     <Constant Name="Icon.Width" Value="30"/>
     <Constant Name="Icon.Height" Value="30"/>
-    <Constant Name="Gold.Icon.Width" Value="25"/>
-    <Constant Name="Gold.Icon.Height" Value="25"/>
+    <Constant Name="Gold.Icon.Width" Value="18"/>
+    <Constant Name="Gold.Icon.Height" Value="18"/>
   </Constants>
   <Window>
     <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
-            WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
-            Spacing="5"
+            WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+            SuggestedWidth="*Width" SuggestedHeight="*Height"
+            Spacing="2"
             DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
       <Children>
         <TextWidget Id="CategoryName" Text="@CategoryName" Brush="ItemInfo.Category.Title.Text" 
@@ -20,8 +21,27 @@
         <!-- List Panel for multiples-->
         <ListPanel StackLayout.LayoutMethod="HorizontalLeftToRight" 
             WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="25"
-            HorizontalAlignment="Center" Spacing="5">
+            HorizontalAlignment="Left" Spacing="5">
           <Children>
+            <ImageWidget Id="BrushOne" Sprite="@BrushOne"
+                    IsVisible="@IsBrushOneVisible"
+                    WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                    SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height" UseAlphaAsMask="True"
+                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                    DoNotAcceptEvents="True" />
+            <ImageWidget Id="BrushTwo" Sprite="@BrushTwo"
+                    IsVisible="@IsBrushTwoVisible"
+                    WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                    SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height" UseAlphaAsMask="True"
+                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                    DoNotAcceptEvents="True" />
+            <ImageWidget Id="BrushThree" Sprite="@BrushThree"
+                    IsVisible="@IsBrushThreeVisible"
+                    WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                    SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height" UseAlphaAsMask="True"
+                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                    DoNotAcceptEvents="True" />                     
+          <!--
             <BrushWidget Brush="@BrushOne" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
                 SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height"
                 IsVisible="@IsBrushOneVisible" />
@@ -30,7 +50,8 @@
                 IsVisible="@IsBrushTwoVisible" />
             <BrushWidget Brush="@BrushThree" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
                 SuggestedWidth="!Icon.Width" SuggestedHeight="!Icon.Height"
-                IsVisible="@IsBrushThreeVisible" />                
+                IsVisible="@IsBrushThreeVisible" /> 
+            -->             
             <BrushWidget Brush="Item.Gold.Icon" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
                 SuggestedWidth="!Gold.Icon.Width" SuggestedHeight="!Gold.Icon.Height"
                 IsVisible="@IsGoldVisible" />

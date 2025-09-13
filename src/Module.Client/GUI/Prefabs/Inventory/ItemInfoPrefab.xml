@@ -4,77 +4,54 @@
     <Parameter Name="Height" DefaultValue="430"/>
   </Parameters>
   <Window>
+    <!-- Frame -->
     <BrushWidget Id="ItemInfo.Frame" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
             SuggestedWidth="*Width" SuggestedHeight="*Height"
             HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="SquareWRoundedCornersFrame_9" Color="#ffffffff"
             Padding="5,10,5,10">
      <Children>
+        <!-- Background -->
+        <BrushWidget Id="UserAndCharacterInfo.Background" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+          HorizontalAlignment="Center" VerticalAlignment="Center" Brush="Crpg.Generic.Panel.Background"
+          MarginTop="9" MarginBottom="9" MarginLeft="9" MarginRight="9"/>
         <!-- Close Button -->
-
         <!-- Vertical ListPanel Holding all -->
         <ListPanel StackLayout.LayoutMethod="VerticalBottomToTop" HorizontalAlignment="Center" VerticalAlignment="Top"
-                WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" 
-                Spacing="2"
+                WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="*Width" SuggestedHeight="*Height" Spacing="2"
+                MarginTop="10"
                 DoNotAcceptEvents="true" DoNotPassEventsToChildren="false">
-          <Children> 
+                
+          <Children>
             <ImageIdentifierWidget DataSource="{ImageIdentifier}"
                         ImageId="@Id"
                         AdditionalArgs="@AdditionalArgs"
                         ImageTypeCode="@ImageTypeCode"
                         WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
-                        SuggestedWidth="90" SuggestedHeight="45"
+                        SuggestedWidth="130" SuggestedHeight="65"
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         Margin="4"
-                        DoNotAcceptEvents="True" />
-            <TextWidget Id="Item.Name" Text="@ItemName" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20" Brush="ItemInfo.ItemName.Text" />
-
+                        DoNotAcceptEvents="True" IsVisible="true"/>
+            <TextWidget Id="ItemName" Text="@Name" WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="20"
+                HorizontalAlignment = "Center"
+                Brush="ItemInfo.ItemName.Text" />
+            <!--
+            <ItemInfoTuple DataSource="{TestTuple}" />
+            <ItemInfoRow DataSource="{TestRow}" />
+            -->
+            <ListPanel DataSource="{Rows}" StackLayout.LayoutMethod="VerticalBottomToTop"
+                WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+                SuggestedWidth="*Width" SuggestedHeight="*Height"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Spacing="2"
+                MarginLeft="25">
+              <ItemTemplate>
+                <ItemInfoRow DataSource="{.}"/>
+              </ItemTemplate>
+            </ListPanel>
           </Children>
-        <!-- 2 Column horizontal list panel -->
-        <!-- Title/Value item --> <!-- Title/Value item-->
         
         </ListPanel>
      </Children>
-
-    
-    <!-- Fields needed:
-    so basically need to be able to feed it a list of different info and it make a 2 column listpanel displaying
-    each entry in listpanel is [Title][Value]. Value can be text or sprites
-
-                Ranged
-
-                [IMG]
-                Item Name
-
-        Type/Class      Features
-        Weight          Damage
-        Accuracy        Missile speed
-        Reload speed    Aim speed
-        Requirement     Upkeep
-        Price
-    
-
-                Armor
-
-                [IMG]
-                Item Name
-        Type/Class      Armor set
-        Culture         Features
-        Material        Weight
-        Body Armor      Arm armor
-        Leg Armor       Upkeep
-        Price
-
-
-                Weapon
-                [IMG]
-                Item Name
-        Type/Class      Features
-        Weight          Reach
-        Handling        Thrust damage
-        Thrust speed    Upkeep
-        Price
-    -->
-
     </BrushWidget>
   </Window>
 </Prefab>

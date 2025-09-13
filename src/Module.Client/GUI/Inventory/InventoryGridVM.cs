@@ -6,6 +6,7 @@ namespace Crpg.Module.GUI.Inventory;
 
 public class InventoryGridVM : ViewModel
 {
+    internal event Action<InventorySlotVM>? OnInventorySlotClicked;
     private List<InventorySlotVM> _availableItems;
     private List<InventorySortTypeVM> _activeFilters = new();
     private MBBindingList<InventorySlotVM> _filteredItems;
@@ -26,7 +27,7 @@ public class InventoryGridVM : ViewModel
         _availableItems = new List<InventorySlotVM>();
         foreach (var (item, quantity, userItemId) in inventory)
         {
-            _availableItems.Add(new InventorySlotVM(item, quantity, userItemId));
+            _availableItems.Add(new InventorySlotVM(item, slot => OnItemClicked(slot), quantity, userItemId));
         }
     }
 
@@ -42,6 +43,7 @@ public class InventoryGridVM : ViewModel
         {
             var item = kvp.Key;
             int quantity = kvp.Value;
+            int userItemId = -1; // TODO Fix this
 
             var existingVm = _availableItems.FirstOrDefault(vm => vm.ItemObj == item);
             if (existingVm != null)
@@ -50,12 +52,21 @@ public class InventoryGridVM : ViewModel
             }
             else
             {
-                _availableItems.Add(new InventorySlotVM(item, quantity));
+                _availableItems.Add(new InventorySlotVM(item, slot => OnItemClicked(slot), quantity, userItemId));
             }
         }
 
         // Update the filtered list based on current filters
         RefreshFilteredItemsFast();
+    }
+
+    private void OnItemClicked(InventorySlotVM? slot)
+    {
+        if (slot?.ItemObj != null)
+        {
+            InformationManager.DisplayMessage(new InformationMessage($"Clicked: {slot.ItemName}"));
+            OnInventorySlotClicked?.Invoke(slot);
+        }
     }
 
     [DataSourceProperty]

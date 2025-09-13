@@ -19,6 +19,8 @@ public class CrpgInventoryViewModel : ViewModel
     private readonly List<EquipmentSlotVM> _equipmentSlots;
     private bool _isVisible;
     private CharacterViewModel _characterPreview;
+    private ItemInfoVM _itemInfo;
+
 
     [DataSourceProperty]
     public InventoryGridVM InventoryGrid { get; set; }
@@ -35,6 +37,13 @@ public class CrpgInventoryViewModel : ViewModel
     public EquipmentSlotVM ExtraWeaponSlot { get; private set; }
     public EquipmentSlotVM Horse { get; private set; }
     public EquipmentSlotVM HorseArmor { get; private set; }
+
+    [DataSourceProperty]
+    public ItemInfoVM ItemInfo
+    {
+        get => _itemInfo;
+        set => SetField(ref _itemInfo, value, nameof(ItemInfo));
+    }
 
     [DataSourceProperty]
     public ArmorAmountVM AmountHeadArmor { get; set; }
@@ -102,6 +111,7 @@ public class CrpgInventoryViewModel : ViewModel
 
         _characterPreview = new CharacterViewModel();
         InventoryGrid = new InventoryGridVM();
+
         _equipmentSlots = new List<EquipmentSlotVM>();
 
         HeadArmor = CreateSlot(CrpgItemSlot.Head);
@@ -125,6 +135,7 @@ public class CrpgInventoryViewModel : ViewModel
         AmountHandArmor = new ArmorAmountVM(0);
         AmountHorseArmor = new ArmorAmountVM(0);
 
+        _itemInfo = new ItemInfoVM(null);
         InitializeCharacterPreview();
 
         LogDebug("[CrpgInventoryVM] Subscribing to CrpgCharacterLoadoutBehaviorClient events");
@@ -138,6 +149,8 @@ public class CrpgInventoryViewModel : ViewModel
             behavior.OnUserCharacteristicsUpdated += HandleUserCharacteristicsUpdated;
             behavior.OnUserCharacteristicsConverted += HandleUserCharacteristicsConverted;
         }
+
+        InventoryGrid.OnInventorySlotClicked += HandleInventorySlotClicked;
     }
 
     public override void OnFinalize()
@@ -153,6 +166,8 @@ public class CrpgInventoryViewModel : ViewModel
             behavior.OnUserCharacteristicsUpdated -= HandleUserCharacteristicsUpdated;
             behavior.OnUserCharacteristicsConverted -= HandleUserCharacteristicsConverted;
         }
+
+        InventoryGrid.OnInventorySlotClicked -= HandleInventorySlotClicked;
     }
 
     public void ExecuteDropDiscard(ViewModel draggedItem, int index)
@@ -206,6 +221,14 @@ public class CrpgInventoryViewModel : ViewModel
     {
         Debug.Print(message);
         InformationManager.DisplayMessage(new InformationMessage(message));
+    }
+
+    private void HandleInventorySlotClicked(InventorySlotVM slot)
+    {
+        InformationManager.DisplayMessage(new InformationMessage($"[CrpgInventoryViewModel] HandleInventorySlotClicked() {slot.ItemName} "));
+        ItemInfo = new ItemInfoVM(slot.ItemObj);
+        ItemInfo.GenerateItemInfo(slot.ItemObj);
+        ItemInfo.IsVisible = true;
     }
 
     private void HandleItemDrop(EquipmentSlotVM targetSlot, ViewModel draggedItem)

@@ -11,6 +11,8 @@ namespace Crpg.Module.GUI.Inventory;
 
 public class InventorySlotVM : ViewModel
 {
+    private readonly Action<InventorySlotVM> _onClick;
+
     private string _itemName;
     private string _defaultSprite;
     private bool _showDefaultIcon;
@@ -31,7 +33,7 @@ public class InventorySlotVM : ViewModel
     public event Action<ItemObject>? OnItemDragEnd;
     public event Action<ItemObject>? OnItemClick;
 
-    public InventorySlotVM(ItemObject item, int quantity = 1, int userItemId = -1)
+    public InventorySlotVM(ItemObject item, Action<InventorySlotVM> onClick, int quantity = 1, int userItemId = -1)
     {
         ItemObj = item;
         if (item != null)
@@ -44,6 +46,7 @@ public class InventorySlotVM : ViewModel
             _defaultSprite = string.Empty;
             _userItemId = userItemId;
             _itemRank = 0;
+            _onClick = onClick;
 
             var behavior = Mission.Current?.GetMissionBehavior<CrpgCharacterLoadoutBehaviorClient>();
             if (behavior == null || behavior.UserInventoryItems == null)
@@ -75,6 +78,7 @@ public class InventorySlotVM : ViewModel
             _defaultSprite = "general_placeholder";
             _userItemId = -1;
             _itemRank = 0;
+            _onClick = _ => { }; // no-op
         }
     }
 
@@ -202,7 +206,9 @@ public class InventorySlotVM : ViewModel
         if (ItemObj != null)
         {
             InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteClick()"));
-            OnItemClick?.Invoke(ItemObj);
+            // OnItemClick?.Invoke(ItemObj);
+            _onClick?.Invoke(this);
+
         }
     }
 
@@ -248,9 +254,7 @@ public class InventorySlotVM : ViewModel
         if (equipped != null)
         {
             // Item is equipped
-            InformationManager.DisplayMessage(
-                new InformationMessage($"Item {_itemName} is equipped in slot {equipped.Slot}")
-            );
+            InformationManager.DisplayMessage(new InformationMessage($"Item {_itemName} is equipped in slot {equipped.Slot}"));
 
             // Example: you could set a flag for UI
             IsEquipped = true;

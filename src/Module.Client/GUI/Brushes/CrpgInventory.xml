@@ -224,7 +224,7 @@
   </Brush>
   <Brush Name="Item.Equipped.Icon">
     <Layers>
-      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_imgi_17_default" Color="#ffffffff" />
+      <BrushLayer Name="Default" Sprite="ui_crpg_icon_white_checkmark" Color="#ffffffff" />
     </Layers>
     <Styles>
       <Style Name="Default">
@@ -270,7 +270,7 @@
     <Layers>
     </Layers>
     <Styles>
-      <Style Name="Default" FontColor="#e9e7e7ff" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
+      <Style Name="Default" FontColor="#F9EAD2FF" FontSize="15" TextGlowColor="#000000FF" TextOutlineAmount="0.0" TextGlowRadius="0" TextOutlineColor="#FFFFFF00"/>
     </Styles>
-  </Brush>  
+  </Brush>
 </Brushes>

@@ -25,4 +25,11 @@ public class ItemInfoRowVM : ViewModel
         get => _right;
         set => SetField(ref _right, value, nameof(Right));
     }
+
+    public ItemInfoRowVM() { } // empty ctor
+    public ItemInfoRowVM(ItemInfoTupleVM left, ItemInfoTupleVM right)
+    {
+        Left = left;
+        Right = right;
+    }
 }
