@@ -197,35 +197,28 @@ const regionItems = regions.map<TabsItem>(region => ({
           <UTabs
             v-model="regionModel"
             :items="regionItems"
-            size="md"
             variant="pill"
             :content="false"
           />
 
           <div class="flex items-center gap-2">
-            <UTooltip
+            <UButton
               v-if="userStore.clan"
-              :text="$t('clan.action.goToMyClan')"
-            >
-              <UButton
-                :to="{ name: 'clans-id', params: { id: userStore.clan.id } }"
-                icon="crpg:member"
-                variant="subtle"
-                data-aq-my-clan-button
-              />
-            </UTooltip>
+              :to="{ name: 'clans-id', params: { id: userStore.clan.id } }"
+              icon="crpg:member"
+              variant="subtle"
+              :label="$t('clan.action.goToMyClan')"
+              data-aq-my-clan-button
+            />
 
-            <UTooltip
+            <UButton
               v-else
-              :text="$t('clan.action.create')"
-            >
-              <UButton
-                :to="{ name: 'clans-create' }"
-                icon="crpg:add"
-                variant="subtle"
-                data-aq-create-clan-button
-              />
-            </UTooltip>
+              :to="{ name: 'clans-create' }"
+              icon="crpg:add"
+              variant="subtle"
+              :label="$t('clan.action.create')"
+              data-aq-create-clan-button
+            />
           </div>
         </div>
 

@@ -23,7 +23,7 @@ loadSettings()
 
     <div
       class="
-        relative flex h-full flex-col items-center justify-center gap-10 p-4 ring ring-default
+        relative flex h-full flex-col items-center justify-center gap-5 p-4 ring ring-default
         lg:p-6
       "
     >
@@ -49,10 +49,15 @@ loadSettings()
 
         <UButton
           variant="link"
+          color="neutral"
           size="xl"
           :to="{ name: 'leaderboard' }"
-          icon="crpg:trophy-cup" :label="$t('nav.main.Leaderboard')"
-        />
+          :label="$t('nav.main.Leaderboard')"
+        >
+          <template #leading>
+            <UIcon name="crpg:trophy-cup" class="size-6 text-gold" />
+          </template>
+        </UButton>
 
         <AppSwitchLanguageDropdown v-slot="{ open, locale }">
           <UButton
@@ -69,25 +74,19 @@ loadSettings()
       </div>
 
       <div
-        class="
-          mx-auto flex w-full flex-col items-center justify-center gap-8
-          lg:w-1/2
-        "
+        class="mx-auto flex flex-col items-center justify-center gap-8"
       >
-        <UiHeading>
-          <UiSpriteSymbol
-            name="logo"
-            viewBox="0 0 162 124"
-            class="
-              w-28
-              2xl:w-32
-            "
-          />
-        </UiHeading>
+        <div class="max-w-2xl space-y-8 text-center">
+          <UiHeading class="mb-5">
+            <UIcon
+              name="crpg:logo"
+              class="
+                size-28 text-highlighted
+                2xl:size-32
+              "
+            />
+          </UiHeading>
 
-        <div
-          class="max-w-2xl text-center"
-        >
           <UiTextView tag="h1" variant="h2">
             <i18n-t
               keypath="homePage.intro"
@@ -119,19 +118,19 @@ loadSettings()
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           />
-        </div>
 
-        <div class="flex justify-center gap-4">
-          <AppLogin />
-          <AppInstallationGuide>
-            <UButton
-              color="neutral"
-              variant="subtle"
-              size="xl"
-              icon="crpg:download"
-              :label="$t('installation.title')"
-            />
-          </AppInstallationGuide>
+          <div class="flex justify-center gap-4">
+            <AppLogin />
+            <AppInstallationGuide>
+              <UButton
+                color="neutral"
+                variant="subtle"
+                size="xl"
+                icon="crpg:download"
+                :label="$t('installation.title')"
+              />
+            </AppInstallationGuide>
+          </div>
         </div>
 
         <AppSocials

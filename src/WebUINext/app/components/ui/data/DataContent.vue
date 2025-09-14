@@ -21,12 +21,12 @@ const variants = tv({
     size: {
       md: {
         root: '',
-        label: 'text-sm',
+        label: 'text-base',
         caption: 'text-sm',
       },
       lg: {
         root: '',
-        label: '',
+        label: 'text-lg',
         caption: 'text-base',
       },
     },

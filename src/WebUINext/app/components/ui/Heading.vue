@@ -17,14 +17,13 @@ defineProps<{ title?: string }>()
         md:w-28
       "
     />
+
     <slot>
-      <h1
-        v-if="title"
-        class="text-center text-3xl font-bold text-highlighted"
-      >
+      <UiTextView v-if="title" tag="h1" variant="h1" class="text-center">
         {{ title }}
-      </h1>
+      </UiTextView>
     </slot>
+
     <UiSpriteSymbol
       name="logo-decor"
       viewBox="0 0 108 10"

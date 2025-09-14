@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useMainHeaderProvider } from '~/composables/app/use-main-header'
 
-const route = useRoute('index') // index for stub, so TS doesn't swear
+const route = useRoute()
 const userStore = useUserStore()
 
 const { loadPatchNotes, patchNotes } = usePatchNotes()
@@ -35,33 +35,34 @@ useMainHeaderProvider(mainHeaderHeight)
       ref="mainHeader"
       class="ring ring-default"
       :class="[
-        !route.meta.layoutOptions?.noStickyHeader
-          ? `sticky top-0 z-20 bg-default/10 backdrop-blur-sm` : `bg-default`]"
+        !route.meta.layoutOptions?.noStickyHeader ? `
+          sticky top-0 z-20 bg-default/10 backdrop-blur-sm
+        ` : `bg-default`]"
     >
-      <UserRestrictionNotification
-        v-if="userStore.user && userStore.restriction !== null"
-        :restriction="userStore.restriction"
-      />
+      <template v-if="userStore.user">
+        <!-- TODO: тест -->
+        <UserRestrictionNotification
+          v-if="userStore.restriction !== null"
+          :restriction="userStore.restriction"
+        />
 
-      <!-- v-if="userStore.user && !isHHCountdownEnded && HHEventRemaining !== 0" -->
-      <AppLayoutHHHeaderNotification
-        v-if="userStore.user"
-        :region="userStore.user!.region"
-      />
+        <!-- v-if="userStore.user && !isHHCountdownEnded && HHEventRemaining !== 0" -->
+        <!-- TODO: тест -->
+        <AppLayoutHHHeaderNotification
+          :region="userStore.user!.region"
+        />
+      </template>
 
       <div class="flex flex-wrap items-center justify-between p-3">
         <div class="flex items-center gap-4">
           <NuxtLink :to="{ name: 'index' }">
-            <UiSpriteSymbol
-              name="logo"
-              viewBox="0 0 162 124"
-              class="w-14"
+            <UIcon
+              name="crpg:logo"
+              class="size-14"
             />
           </NuxtLink>
 
           <AppOnlinePlayers :game-server-stats="gameServerStats" />
-
-          <USeparator orientation="vertical" class="h-6" />
 
           <AppLayoutMainNavigation :latest-patch="patchNotes[0]" />
         </div>

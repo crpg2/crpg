@@ -43,11 +43,7 @@ const { gameServerStats, showLabel = false } = defineProps<{
           class="hover:text-highlighted"
         >
           <template #count>
-            <NumberFlow
-              :value="gameServerStats.total.playingCount"
-              locales="en-US"
-              will-change
-            />
+            <NumberFlow :value="gameServerStats.total.playingCount" />
           </template>
         </i18n-t>
       </div>
@@ -56,18 +52,14 @@ const { gameServerStats, showLabel = false } = defineProps<{
         v-else
         data-aq-online-players-count
       >
-        <NumberFlow
-          :value="gameServerStats.total.playingCount"
-          locales="en-US"
-          will-change
-        />
+        <NumberFlow :value="gameServerStats.total.playingCount" />
       </div>
     </UButton>
 
     <template #content>
-      <div class="text-sm text-highlighted">
+      <UiTextView variant="h4">
         {{ $t('onlinePlayers.tooltip.title') }}
-      </div>
+      </UiTextView>
 
       <div
         v-if="gameServerStats !== null"
