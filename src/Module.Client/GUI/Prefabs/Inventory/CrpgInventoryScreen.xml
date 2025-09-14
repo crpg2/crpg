@@ -89,7 +89,7 @@
                           </Children>
                         </ListPanel>
                         <!-- End Horizontal Layout Container -->
-                        <ItemInfoPrefab DataSource="{ItemInfo}" HeightSizePolicy="Fixed" WidthSizePolicy="Fixed" SuggestedWidth="220" SuggestedHeight="430" IsVisible="true"/>
+                        <!-- <ItemInfoPrefab DataSource="{ItemInfo}" HeightSizePolicy="Fixed" WidthSizePolicy="Fixed" SuggestedWidth="220" SuggestedHeight="430" IsVisible="true"/> -->
                       </Children>
                     </ListPanel>
                     <!-- End Vertical Panel Wrapper -->
@@ -98,6 +98,7 @@
                 <!-- End Equipped Items Panel -->
 
                 <CharacterInfoBuildEquipStats DataSource="{CharacterInfoBuildEquipStatsVm}" />
+                <ItemInfoPrefab DataSource="{ItemInfo}" HeightSizePolicy="Fixed" WidthSizePolicy="Fixed" SuggestedWidth="220" SuggestedHeight="430" IsVisible="true"/>
               </Children>
             </ListPanel>
             <!-- End Wrapper Panel -->

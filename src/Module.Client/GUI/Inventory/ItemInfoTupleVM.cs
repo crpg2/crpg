@@ -12,9 +12,6 @@ public class ItemInfoTupleVM : ViewModel
     private string _categoryName = string.Empty;
     private string _valueText = string.Empty;
     private bool _isGoldVisible;
-    private string _brushOne = string.Empty;
-    private string _brushTwo = string.Empty;
-    private string _brushThree = string.Empty;
 
     [DataSourceProperty]
     public string CategoryName
@@ -38,50 +35,5 @@ public class ItemInfoTupleVM : ViewModel
     }
 
     [DataSourceProperty]
-    public string BrushOne
-    {
-        get => _brushOne;
-        set
-        {
-            if (SetField(ref _brushOne, value, nameof(BrushOne)))
-            {
-                OnPropertyChanged(nameof(IsBrushOneVisible));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public string BrushTwo
-    {
-        get => _brushTwo;
-        set
-        {
-            if (SetField(ref _brushTwo, value, nameof(BrushTwo)))
-            {
-                OnPropertyChanged(nameof(IsBrushTwoVisible));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public string BrushThree
-    {
-        get => _brushThree;
-        set
-        {
-            if (SetField(ref _brushThree, value, nameof(BrushThree)))
-            {
-                OnPropertyChanged(nameof(IsBrushThreeVisible));
-            }
-        }
-    }
-
-    [DataSourceProperty]
-    public bool IsBrushOneVisible => !string.IsNullOrEmpty(BrushOne);
-
-    [DataSourceProperty]
-    public bool IsBrushTwoVisible => !string.IsNullOrEmpty(BrushTwo);
-
-    [DataSourceProperty]
-    public bool IsBrushThreeVisible => !string.IsNullOrEmpty(BrushThree);
+    public MBBindingList<ItemInfoIconVM> Icons { get; } = new();
 }

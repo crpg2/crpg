@@ -16,35 +16,30 @@ namespace Crpg.Module.GUI.Inventory;
 public class ItemInfoVM : ViewModel
 {
     private readonly CrpgConstants? _constants;
+    private bool _isVisible;
     private string _name = string.Empty;
     private MBBindingList<ItemInfoTupleVM> _tuples = new();
-    private bool _isVisible;
-    private ItemObject? _itemObj;
-
-    [DataSourceProperty]
-    public MBBindingList<ItemInfoTupleVM> Tuples
-    {
-        get => _tuples;
-        set => SetField(ref _tuples, value, nameof(Tuples));
-    }
-
     private MBBindingList<ItemInfoRowVM> _rows = new();
-
-    [DataSourceProperty]
-    public MBBindingList<ItemInfoRowVM> Rows
-    {
-        get => _rows;
-        set => SetField(ref _rows, value, nameof(Rows));
-    }
-
+    private ItemObject? _itemObj;
     private ImageIdentifierVM? _imageIdentifier;
 
     [DataSourceProperty]
-    public ItemObject? ItemObj
-    {
-        get => _itemObj;
-        set => SetField(ref _itemObj, value, nameof(ItemObj));
-    }
+    public MBBindingList<ItemInfoTupleVM> Tuples { get => _tuples; set => SetField(ref _tuples, value, nameof(Tuples)); }
+
+    [DataSourceProperty]
+    public MBBindingList<ItemInfoRowVM> Rows { get => _rows; set => SetField(ref _rows, value, nameof(Rows)); }
+
+    [DataSourceProperty]
+    public ItemObject? ItemObj { get => _itemObj; set => SetField(ref _itemObj, value, nameof(ItemObj)); }
+
+    [DataSourceProperty]
+    public ImageIdentifierVM? ImageIdentifier { get => _imageIdentifier; set => SetField(ref _imageIdentifier, value, nameof(ImageIdentifier)); }
+
+    [DataSourceProperty]
+    public string Name { get => _name; set => SetField(ref _name, value, nameof(Name)); }
+
+    [DataSourceProperty]
+    public bool IsVisible { get => _isVisible; set => SetField(ref _isVisible, value, nameof(IsVisible)); }
 
     public ItemInfoVM(ItemObject? item)
     {
@@ -70,12 +65,12 @@ public class ItemInfoVM : ViewModel
             return;
         }
 
+        /*
         TestTuple = new ItemInfoTupleVM
         {
             CategoryName = "Test",
             ValueText = "Success",
-            BrushOne = "ui_crpg_icon_white_crushthrough",
-            // IsBrushOneVisible = true,
+            IconOne = "ui_crpg_icon_white_crushthrough",
         };
 
         TestRow = new ItemInfoRowVM
@@ -84,29 +79,28 @@ public class ItemInfoVM : ViewModel
             {
                 CategoryName = "Test1",
                 ValueText = "Success",
-                BrushOne = "ui_crpg_icon_white_crushthrough",
-                // IsBrushOneVisible = true,
+                IconOne = "ui_crpg_icon_white_crushthrough",
             },
             Right = new ItemInfoTupleVM
             {
                 CategoryName = "Test1",
                 ValueText = "Success",
-                BrushOne = "ui_crpg_icon_white_crushthrough",
-                // IsBrushOneVisible = true,
+                IconOne = "ui_crpg_icon_white_crushthrough",
             },
         };
 
         Rows = new MBBindingList<ItemInfoRowVM>
         {
             new ItemInfoRowVM(
-                new ItemInfoTupleVM { CategoryName = "Damage", ValueText = "45", BrushOne = "ui_crpg_icon_white_crushthrough" },
-                new ItemInfoTupleVM { CategoryName = "Speed", ValueText = "90", BrushOne = "ui_crpg_icon_white_crushthrough"}
+                new ItemInfoTupleVM { CategoryName = "Damage", ValueText = "45"},
+                new ItemInfoTupleVM { CategoryName = "Speed", ValueText = "90", IconOne = "ui_crpg_icon_white_crushthrough"}
             ),
             new ItemInfoRowVM(
-                new ItemInfoTupleVM { CategoryName = "Weight", ValueText = "3.5", BrushOne = "ui_crpg_icon_white_crushthrough"},
-                new ItemInfoTupleVM { CategoryName = "Value", ValueText = "250", BrushOne = "ui_crpg_icon_white_crushthrough" }
+                new ItemInfoTupleVM { CategoryName = "Weight", ValueText = "3.5"},
+                new ItemInfoTupleVM { CategoryName = "Value", ValueText = "250", IconOne = "ui_crpg_icon_white_crushthrough" }
             ),
         };
+        */
 
         _constants = behavior.Constants;
     }
@@ -125,28 +119,6 @@ public class ItemInfoVM : ViewModel
     {
         get => _testRow;
         set => SetField(ref _testRow, value, nameof(TestRow));
-    }
-
-
-    [DataSourceProperty]
-    public ImageIdentifierVM? ImageIdentifier
-    {
-        get => _imageIdentifier;
-        set => SetField(ref _imageIdentifier, value, nameof(ImageIdentifier));
-    }
-
-    [DataSourceProperty]
-    public string Name
-    {
-        get => _name;
-        set => SetField(ref _name, value, nameof(Name));
-    }
-
-    [DataSourceProperty]
-    public bool IsVisible
-    {
-        get => _isVisible;
-        set => SetField(ref _isVisible, value, nameof(IsVisible));
     }
 
     internal void GenerateItemInfo(ItemObject item)
@@ -177,15 +149,19 @@ public class ItemInfoVM : ViewModel
             InformationManager.DisplayMessage(new InformationMessage("ItemInfoVM GenerateTuplesFromItem: Item is null!!!", Colors.Yellow));
             return;
         }
+
         var crpgItem = DataExport.ItemExporter.MbToCrpgItemPub(ItemObj);
 
         // General Type/Class
+
         var tup = new ItemInfoTupleVM
         {
             CategoryName = "Type/Class",
-            BrushOne = GetItemTypeIconString(crpgItem),
-            BrushTwo = GetItemWeaponClassIconString(crpgItem),
+            // IconOne = GetItemTypeIconString(crpgItem),
+            // IconTwo = GetItemWeaponClassIconString(crpgItem),
         };
+        tup.Icons.Add(new ItemInfoIconVM { IconSprite = GetItemTypeIconString(crpgItem) });
+        tup.Icons.Add(new ItemInfoIconVM { IconSprite = GetItemWeaponClassIconString(crpgItem) });
         Tuples.Add(tup);
 
         // Armor Only
@@ -222,8 +198,9 @@ public class ItemInfoVM : ViewModel
                 tup = new ItemInfoTupleVM
                 {
                     CategoryName = "Features",
-                    BrushOne = "ui_crpg_icon_white_useteamcolor",
+                    // IconOne = "ui_crpg_icon_white_useteamcolor",
                 };
+                tup.Icons.Add(new ItemInfoIconVM { IconSprite = "ui_crpg_icon_white_useteamcolor" });
                 Tuples.Add(tup);
             }
 
@@ -272,11 +249,13 @@ public class ItemInfoVM : ViewModel
                 familyIcon = "ui_crpg_icon_white_camel";
             }
 
-            Tuples.Add(new ItemInfoTupleVM
+            tup = new ItemInfoTupleVM
             {
                 CategoryName = "Mount type",
-                BrushOne = familyIcon,
-            });
+                // IconOne = familyIcon,
+            };
+            tup.Icons.Add(new ItemInfoIconVM { IconSprite = familyIcon });
+            Tuples.Add(tup);
 
             var mountStats = new (string label, int value)[]
             {
@@ -304,13 +283,16 @@ public class ItemInfoVM : ViewModel
             List<string> wFeats = GetWeaponFeatures(crpgItem, ItemObj);
             if (wFeats.Count > 0)
             {
-                Tuples.Add(new ItemInfoTupleVM
+                tup = new ItemInfoTupleVM
                 {
                     CategoryName = "Features",
-                    BrushOne = wFeats.Count > 0 ? wFeats[0] : string.Empty,
-                    BrushTwo = wFeats.Count > 1 ? wFeats[1] : string.Empty,
-                    BrushThree = wFeats.Count > 2 ? wFeats[2] : string.Empty,
-                });
+                };
+                foreach (string feat in wFeats)
+                {
+                    tup.Icons.Add(new ItemInfoIconVM { IconSprite = feat });
+                }
+
+                Tuples.Add(tup);
             }
         }
 
@@ -343,18 +325,20 @@ public class ItemInfoVM : ViewModel
             var weapon = crpgItem.Weapons[0];
 
             // Map damage type to brush and suffix
-            (string brush, string suffix) = weapon.ThrustDamageType switch
+            (string sprite, string suffix) = weapon.ThrustDamageType switch
             {
                 CrpgDamageType.Cut => ("ui_crpg_icon_white_cut", "c"),
                 CrpgDamageType.Pierce => ("ui_crpg_icon_white_pierce", "p"),
                 _ => (string.Empty, string.Empty),
             };
 
-            Tuples.Add(new ItemInfoTupleVM
+            tup = new ItemInfoTupleVM
             {
                 CategoryName = "Damage type",
-                BrushOne = brush,
-            });
+            };
+
+            tup.Icons.Add(new ItemInfoIconVM { IconSprite = sprite });
+            Tuples.Add(tup);
 
             Tuples.Add(new ItemInfoTupleVM
             {
@@ -378,9 +362,9 @@ public class ItemInfoVM : ViewModel
         // Ranged weapon
         if (crpgItem.Weapons != null && crpgItem.Weapons.Count > 0 &&
            (iType == CrpgItemType.Bow ||
-                iType == CrpgItemType.Crossbow ||
-                iType == CrpgItemType.Musket ||
-                iType == CrpgItemType.Pistol))
+            iType == CrpgItemType.Crossbow ||
+            iType == CrpgItemType.Musket ||
+            iType == CrpgItemType.Pistol))
         {
             var weapon = crpgItem.Weapons[0];
 
@@ -499,13 +483,10 @@ public class ItemInfoVM : ViewModel
         for (int i = 0; i < Tuples.Count; i += 2)
         {
             var left = Tuples[i];
-            // ItemInfoTupleVM? right = null;
-
-            ItemInfoTupleVM? right = new()
+            ItemInfoTupleVM? right = new() // make dummy right in case no right
             {
                 CategoryName = string.Empty,
                 ValueText = string.Empty,
-                BrushOne = string.Empty,
                 IsGoldVisible = false,
             };
 
@@ -527,7 +508,9 @@ public class ItemInfoVM : ViewModel
     private void AddWeaponStat(string category, int value, CrpgDamageType? damageType = null, bool skipIfZero = true)
     {
         if (skipIfZero && value <= 0)
+        {
             return;
+        }
 
         string valText = damageType.HasValue ? $"{value} {GetDamageTypeSuffixString(damageType.Value)}" : value.ToString();
 
@@ -563,7 +546,7 @@ public class ItemInfoVM : ViewModel
             CrpgItemType.Crossbow => "ui_crpg_icon_white_ranged",
             CrpgItemType.HandArmor => "ui_crpg_icon_white_handarmor",
             CrpgItemType.HeadArmor => "ui_crpg_icon_white_headarmor",
-            CrpgItemType.LegArmor => "i_crpg_icon_white_legarmor",
+            CrpgItemType.LegArmor => "ui_crpg_icon_white_legarmor",
             CrpgItemType.Mount => "ui_crpg_icon_white_mount",
             CrpgItemType.MountHarness => "ui_crpg_icon_white_mountharness",
             CrpgItemType.Musket => "ui_crpg_icon_white_ranged",
@@ -581,10 +564,11 @@ public class ItemInfoVM : ViewModel
 
     private List<string> GetWeaponFeatures(CrpgItem crpgItem, ItemObject item)
     {
-        var features = new List<string>();
+        var features = new HashSet<string>();
+
         if (crpgItem.Weapons == null || crpgItem.Weapons.Count == 0)
         {
-            return features;
+            return new List<string>();
         }
 
         if (crpgItem.Flags.HasFlag(CrpgItemFlags.DropOnWeaponChange))
@@ -592,8 +576,8 @@ public class ItemInfoVM : ViewModel
             features.Add("ui_crpg_icon_white_droponchange");
         }
 
-        // Map flags to feature names
-        var weaponFlagMap = new Dictionary<CrpgWeaponFlags, string>
+        // Map CrpgWeaponFlags → feature icons
+        var crpgWeaponFlagMap = new Dictionary<CrpgWeaponFlags, string>
     {
         { CrpgWeaponFlags.CanCrushThrough, "ui_crpg_icon_white_crushthrough" },
         { CrpgWeaponFlags.BonusAgainstShield, "ui_crpg_icon_white_bonusagainstshield" },
@@ -603,81 +587,57 @@ public class ItemInfoVM : ViewModel
         { CrpgWeaponFlags.CantReloadOnHorseback, "ui_crpg_icon_white_cantreloadonhorseback" },
     };
 
-        foreach (var weapon in crpgItem.Weapons)
-        {
-            if (weapon == null)
-            {
-                continue;
-            }
+        // Map ItemUsage → feature icons
+        var itemUsageMap = new Dictionary<string, string>
+    {
+        { "crossbow_light", "ui_crpg_icon_white_crossbow_light" },
+        { "crossbow", "ui_crpg_icon_white_crossbow_heavy" },
+        { "long_bow", "ui_crpg_icon_white_bow_longbow" },
+        { "bow", "ui_crpg_icon_white_bow" },
+        { "polearm_bracing", "ui_crpg_icon_white_brace" },
+        { "polearm_pike", "ui_crpg_icon_white_pike" },
+    };
 
-            // Check mapped weapon flags
-            foreach (var kvp in weaponFlagMap)
+        // Map native WeaponFlags / WeaponClass → feature icons
+        var nativeWeaponCheck = new List<Func<WeaponComponentData, string?>>
+    {
+        w => w.WeaponFlags.HasFlag(WeaponFlags.CanHook) ? "ui_crpg_icon_white_candismount" : null,
+        w => w.WeaponFlags.HasFlag(WeaponFlags.CanCrushThrough) ? "ui_crpg_icon_white_crushthrough" : null,
+        w => w.WeaponFlags.HasFlag(WeaponFlags.CanKnockDown) ? "ui_crpg_icon_white_knockdown" : null,
+        w => w.WeaponClass == WeaponClass.LargeShield ? "ui_crpg_icon_white_cantuseonhorseback" : null,
+    };
+
+        // Process CrpgItem weapons
+        foreach (var weapon in crpgItem.Weapons.Where(w => w != null))
+        {
+            foreach (var kvp in crpgWeaponFlagMap)
             {
-                if (weapon.Flags.HasFlag(kvp.Key) && !features.Contains(kvp.Value))
+                if (weapon.Flags.HasFlag(kvp.Key))
                 {
                     features.Add(kvp.Value);
                 }
             }
 
-            // Check ItemUsage-based features
-            if (!string.IsNullOrEmpty(weapon.ItemUsage))
+            if (!string.IsNullOrEmpty(weapon.ItemUsage) && itemUsageMap.TryGetValue(weapon.ItemUsage, out string icon))
             {
-                switch (weapon.ItemUsage)
-                {
-                    case "crossbow_light":
-                        features.Add("ui_crpg_icon_white_crossbow_light");
-                        break;
-                    case "crossbow":
-                        features.Add("ui_crpg_icon_white_crossbow_heavy");
-                        break;
-                    case "long_bow":
-                        features.Add("ui_crpg_icon_white_bow_longbow");
-                        break;
-                    case "bow":
-                        features.Add("ui_crpg_icon_white_bow");
-                        break;
-                    case "polearm_bracing":
-                        features.Add("ui_crpg_icon_white_brace");
-                        break;
-                    case "polearm_pike":
-                        features.Add("ui_crpg_icon_white_pike");
-                        break;
-                }
+                features.Add(icon);
             }
         }
 
-        // Not in CrpgItem
-        foreach (var weapon in item.Weapons)
+        // Process native ItemObject weapons
+        foreach (var weapon in item.Weapons.Where(w => w != null))
         {
-            if (weapon == null)
+            foreach (var check in nativeWeaponCheck)
             {
-                continue;
-            }
-
-            if (weapon.WeaponFlags.HasFlag(WeaponFlags.CanHook))
-            {
-                if (!features.Contains("ui_crpg_icon_white_candismount"))
+                string? icon = check(weapon);
+                if (icon != null)
                 {
-                    features.Add("ui_crpg_icon_white_candismount"); // TODO: replace with CanHook-specific icon if available
-                }
-            }
-            if (weapon.WeaponFlags.HasFlag(WeaponFlags.CanCrushThrough))
-            {
-                if (!features.Contains("ui_crpg_icon_white_crushthrough"))
-                {
-                    features.Add("ui_crpg_icon_white_crushthrough"); // TODO: not showing up normally for some reason for great maul
-                }
-            }
-            if (weapon.WeaponClass == WeaponClass.LargeShield)
-            {
-                if (!features.Contains("ui_crpg_icon_white_crushthrough"))
-                {
-                    features.Add("ui_crpg_icon_white_cantuseonhorseback");
+                    features.Add(icon);
                 }
             }
         }
 
-        return features;
+        return features.ToList();
     }
 
     private string GetItemWeaponClassIconString(CrpgItem crpgItem)
@@ -702,21 +662,21 @@ public class ItemInfoVM : ViewModel
             CrpgWeaponClass.OneHandedPolearm => "ui_crpg_icon_white_onehanded_polearm",
             CrpgWeaponClass.TwoHandedPolearm => "ui_crpg_icon_white_twohanded_polearm",
             CrpgWeaponClass.LowGripPolearm => "ItemIcon.PolearmLow",
-            CrpgWeaponClass.Arrow => "ItemIcon.Arrows",
-            CrpgWeaponClass.Bolt => "ItemIcon.Bolts",
-            CrpgWeaponClass.Cartridge => "ItemIcon.Cartridge",
-            CrpgWeaponClass.Bow => "ItemIcon.Bow",
-            CrpgWeaponClass.Crossbow => "ItemIcon.Crossbow",
+            CrpgWeaponClass.Arrow => "ui_crpg_icon_white_arrow",
+            CrpgWeaponClass.Bolt => "ui_crpg_icon_white_bolt",
+            CrpgWeaponClass.Cartridge => "ui_crpg_icon_white_bullets",
+            CrpgWeaponClass.Bow => "ui_crpg_icon_white_crossbow",
+            CrpgWeaponClass.Crossbow => "ui_crpg_icon_white_crossbow",
             CrpgWeaponClass.Stone => "ui_crpg_icon_white_thrown_stone",
             CrpgWeaponClass.Boulder => string.Empty,
             CrpgWeaponClass.ThrowingAxe => "ui_crpg_icon_white_thrown_axe",
             CrpgWeaponClass.ThrowingKnife => "ui_crpg_icon_white_thrown_knife",
             CrpgWeaponClass.Javelin => "ui_crpg_icon_white_thrown_javelin",
-            CrpgWeaponClass.Pistol => "ItemIcon.Pistol",
-            CrpgWeaponClass.Musket => "ItemIcon.Musket",
+            CrpgWeaponClass.Pistol => "ui_crpg_icon_white_musket",
+            CrpgWeaponClass.Musket => "ui_crpg_icon_white_musket",
             CrpgWeaponClass.SmallShield => "ui_crpg_icon_white_shield_small",
             CrpgWeaponClass.LargeShield => "ui_crpg_icon_white_shield_large",
-            CrpgWeaponClass.Banner => "ItemIcon.Banner",
+            CrpgWeaponClass.Banner => "ui_crpg_icon_white_banner",
             _ => string.Empty,
         };
     }

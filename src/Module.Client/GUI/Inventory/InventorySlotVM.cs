@@ -106,8 +106,7 @@ public class InventorySlotVM : ViewModel
     [DataSourceProperty]
     public int UserItemId
     {
-        get => _userItemId;
-        set
+        get => _userItemId; set
         {
             if (_userItemId != value)
             {
@@ -128,32 +127,22 @@ public class InventorySlotVM : ViewModel
     [DataSourceProperty]
     public bool Rank3Visible { get => _rank3Visible; set => SetField(ref _rank3Visible, value, nameof(Rank3Visible)); }
     [DataSourceProperty]
-    public string ItemName
-    {
-        get => _itemName;
-        set => SetField(ref _itemName, value, nameof(ItemName));
-    }
+    public string ItemName { get => _itemName; set => SetField(ref _itemName, value, nameof(ItemName)); }
 
     [DataSourceProperty]
-    public string DefaultSprite
-    {
-        get => _defaultSprite;
-        set => SetField(ref _defaultSprite, value, nameof(DefaultSprite));
-    }
+    public string DefaultSprite { get => _defaultSprite; set => SetField(ref _defaultSprite, value, nameof(DefaultSprite)); }
 
     [DataSourceProperty]
-    public bool ShowDefaultIcon
-    {
-        get => _showDefaultIcon;
-        set => SetField(ref _showDefaultIcon, value, nameof(ShowDefaultIcon));
-    }
+    public bool ShowDefaultIcon { get => _showDefaultIcon; set => SetField(ref _showDefaultIcon, value, nameof(ShowDefaultIcon)); }
 
     [DataSourceProperty]
-    public string QuantityText
-    {
-        get => _quantityText;
-        set => SetField(ref _quantityText, value, nameof(QuantityText));
-    }
+    public string QuantityText { get => _quantityText; set => SetField(ref _quantityText, value, nameof(QuantityText)); }
+
+    [DataSourceProperty]
+    public ImageIdentifierVM ImageIdentifier { get => _imageIdentifier; set => SetField(ref _imageIdentifier, value, nameof(ImageIdentifier)); }
+
+    [DataSourceProperty]
+    public string Id { get => _id; set => SetField(ref _id, value, nameof(Id)); }
 
     [DataSourceProperty]
     public int ItemQuantity
@@ -166,20 +155,6 @@ public class InventorySlotVM : ViewModel
                 QuantityText = value > 1 ? value.ToString() : string.Empty;
             }
         }
-    }
-
-    [DataSourceProperty]
-    public ImageIdentifierVM ImageIdentifier
-    {
-        get => _imageIdentifier;
-        set => SetField(ref _imageIdentifier, value, nameof(ImageIdentifier));
-    }
-
-    [DataSourceProperty]
-    public string Id
-    {
-        get => _id;
-        set => SetField(ref _id, value, nameof(Id));
     }
 
     public void ExecuteDragBegin()
@@ -208,7 +183,6 @@ public class InventorySlotVM : ViewModel
             InformationManager.DisplayMessage(new InformationMessage($"InventorySlotVM: ExecuteClick()"));
             // OnItemClick?.Invoke(ItemObj);
             _onClick?.Invoke(this);
-
         }
     }
 
