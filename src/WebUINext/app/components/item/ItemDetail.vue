@@ -69,6 +69,7 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
     <template #default>
       <h3 class="mb-6 font-bold" :style="{ color: rankColor }">
         {{ item.name }}
+
         <UTooltip :text="$t('action.copy')">
           <UBadge
             class="cursor-pointer"
@@ -96,13 +97,16 @@ const aggregationConfig = computed(() => getItemAggregations(flatItem.value))
             v-if="field === 'price'"
             #default="{ rawBuckets }"
           >
-            <AppCoin :value="(rawBuckets as number)" />
+            <AppCoin size="lg" :value="(rawBuckets as number)" />
           </template>
+
           <template
             v-else-if="field === 'upkeep'"
             #default="{ rawBuckets }"
           >
-            <AppCoin>{{ $t('item.format.upkeep', { upkeep: $n((rawBuckets as number)) }) }}</AppCoin>
+            <AppCoin size="lg">
+              {{ $t('item.format.upkeep', { upkeep: $n((rawBuckets as number)) }) }}
+            </AppCoin>
           </template>
         </ItemParam>
       </div>

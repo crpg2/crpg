@@ -58,7 +58,7 @@ useMainHeaderProvider(mainHeaderHeight)
           <NuxtLink :to="{ name: 'index' }">
             <UIcon
               name="crpg:logo"
-              class="size-14"
+              class="size-14 text-highlighted"
             />
           </NuxtLink>
 
@@ -82,7 +82,6 @@ useMainHeaderProvider(mainHeaderHeight)
 
     <!-- TODO: v-if="!route.meta.noFooter" -->
     <AppLayoutFooter :HHEvent class="ring ring-default" />
-
     <!-- :open="shownWelcomeMessage" -->
     <!-- TODO: FIXME: -->
   </div>

@@ -18,9 +18,6 @@ const { gameServerStats, showLabel = false } = defineProps<{
     :open-delay="300"
     :close-delay="100"
     :disabled="gameServerStats === null || Object.keys(gameServerStats.regions).length === 0"
-    :ui="{
-      content: 'space-y-5',
-    }"
   >
     <UButton variant="link" color="neutral" size="xl">
       <template #leading>
@@ -57,7 +54,7 @@ const { gameServerStats, showLabel = false } = defineProps<{
     </UButton>
 
     <template #content>
-      <UiTextView variant="h4">
+      <UiTextView variant="h4" margin-bottom>
         {{ $t('onlinePlayers.tooltip.title') }}
       </UiTextView>
 
@@ -70,9 +67,9 @@ const { gameServerStats, showLabel = false } = defineProps<{
           v-for="(regionServerStats, regionKey) in gameServerStats.regions" :key="regionKey"
           class="flex flex-col gap-2"
         >
-          <div class="text-highlighted">
+          <UiTextView variant="h5" class="text-highlighted">
             {{ $t(`region.${regionKey}`, 0) }}
-          </div>
+          </UiTextView>
 
           <UiDataCell
             v-for="(regionServerMode, gameModeKey) in regionServerStats" :key="gameModeKey"
@@ -82,12 +79,14 @@ const { gameServerStats, showLabel = false } = defineProps<{
               <UIcon :name="`crpg:${gameModeToIcon[gameModeKey]}`" class="size-6" />
             </template>
 
-            <div>{{ $t(`game-mode.${gameModeKey}`) }}</div>
+            <UiTextView variant="p-sm">
+              {{ $t(`game-mode.${gameModeKey}`) }}
+            </UiTextView>
 
             <template #rightContent>
-              <div class="text-highlighted">
+              <UiTextView variant="h5">
                 {{ regionServerMode!.playingCount }}
-              </div>
+              </UiTextView>
             </template>
           </UiDataCell>
         </div>

@@ -19,14 +19,15 @@ const groupedRankTable = computed(() => groupBy(rankTable, r => r.groupTitle))
         v-for="(ranks, groupTitle, groupIdx) in groupedRankTable"
         :key="groupIdx"
       >
-        <div
-          class="mb-1.5 text-xs font-bold"
+        <UiTextView
+          variant="h5"
+          margin-bottom
           :style="{
             color: ranks.at(0)!.color,
           }"
         >
           {{ groupTitle }} • {{ $n(ranks.at(0)!.min) }} – {{ $n(ranks.at(-1)!.max) }}
-        </div>
+        </UiTextView>
 
         <div class="flex flex-col-reverse gap-1.5">
           <UTooltip
@@ -36,18 +37,22 @@ const groupedRankTable = computed(() => groupBy(rankTable, r => r.groupTitle))
           >
             <div
               class="
-                flex h-8 items-center rounded px-2 text-2xs text-highlighted select-none
-                text-shadow-lg/20
+                flex h-8 items-center rounded px-2 text-highlighted select-none text-shadow-lg/20
               "
               :style="{
                 backgroundColor: rank.color,
                 width: `calc(6rem + 0.5rem * ${groupIdx * ranks.length + idx + 1})`,
               }"
             >
-              {{ rank.title }}  • {{ $n(rank.min) }} – {{ $n(rank.max) }}
-              <template v-if="competitiveValue && inRange(competitiveValue, rank.min, rank.max)">
-                ({{ $t('you') }} • {{ $n(competitiveValue) }})
-              </template>
+              <UiTextView
+                variant="p-xs"
+                :margin-bottom="false"
+              >
+                {{ rank.title }}  • {{ $n(rank.min) }} – {{ $n(rank.max) }}
+                <template v-if="competitiveValue && inRange(competitiveValue, rank.min, rank.max)">
+                  ({{ $t('you') }} • {{ $n(competitiveValue) }})
+                </template>
+              </UiTextView>
             </div>
           </UTooltip>
         </div>

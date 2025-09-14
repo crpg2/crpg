@@ -51,83 +51,84 @@ const items = computed(() => [
 </script>
 
 <template>
-  <nav class="flex items-center gap-5">
-    <UFieldGroup size="sm">
-      <UTooltip
-        v-if="latestPatch"
-        :text="$t('patchNotes.latestPatch')"
-      >
-        <UButton
-          variant="outline"
-          icon="crpg:trumpet"
-          :to="latestPatch.url"
-          target="_blank"
+  <UNavigationMenu color="neutral" variant="link" :items>
+    <template #list-leading>
+      <UFieldGroup>
+        <UTooltip
+          v-if="latestPatch"
+          :text="$t('patchNotes.latestPatch')"
         >
-          <UBadge
-            :label="latestPatch.tagName"
-            size="sm"
-            variant="soft"
-          />
-        </UButton>
-      </UTooltip>
-
-      <UTooltip :text="$t('nav.main.Community')">
-        <UButton
-          variant="outline"
-          icon="crpg:discord"
-          :to="settings.discord"
-          target="_blank"
-        />
-      </UTooltip>
-
-      <AppInstallationGuide>
-        <UTooltip :text="$t('nav.main.Installation')">
           <UButton
             variant="outline"
-            icon="crpg:download"
-          />
-        </UTooltip>
-      </AppInstallationGuide>
-
-      <UTooltip :text="$t('help.title')">
-        <UButton
-          variant="outline"
-          icon="crpg:help-circle"
-          :to="{ name: 'help' }"
-        />
-      </UTooltip>
-
-      <UTooltip :text="$t('nav.main.Builder')">
-        <UButton
-          variant="outline"
-          icon="crpg:calculator"
-          :to="{ name: 'builder' }"
-        />
-      </UTooltip>
-    </UFieldGroup>
-
-    <UNavigationMenu color="neutral" variant="link" :items>
-      <template #leaderboard-leading>
-        <UIcon name="crpg:trophy-cup" class="size-6 text-gold" />
-      </template>
-      <template v-if="!userStore.clan" #clans-leading>
-        <UTooltip
-          data-aq-main-nav-link-tooltip="Explanation"
-          :ui="{ content: 'w-72' }"
-        >
-          <UBadge
-            icon="crpg:tag"
-            variant="soft"
-            size="sm"
-          />
-          <template #content>
-            <div
-              class="prose"
-              v-html="$t('clanBalancingExplanation')"
+            icon="crpg:trumpet"
+            :to="latestPatch.url"
+            target="_blank"
+          >
+            <UBadge
+              :label="latestPatch.tagName"
+              size="sm"
+              variant="soft"
             />
-          </template>
+          </UButton>
         </UTooltip>
-      </template>
-    </UNavigationMenu>
-  </nav>
+
+        <UTooltip :text="$t('nav.main.Community')">
+          <UButton
+            variant="outline"
+            icon="crpg:discord"
+            :to="settings.discord"
+            target="_blank"
+          />
+        </UTooltip>
+
+        <AppInstallationGuide>
+          <UTooltip :text="$t('nav.main.Installation')">
+            <UButton
+              variant="outline"
+              icon="crpg:download"
+            />
+          </UTooltip>
+        </AppInstallationGuide>
+
+        <UTooltip :text="$t('help.title')">
+          <UButton
+            variant="outline"
+            icon="crpg:help-circle"
+            :to="{ name: 'help' }"
+          />
+        </UTooltip>
+
+        <UTooltip :text="$t('nav.main.Builder')">
+          <UButton
+            variant="outline"
+            icon="crpg:calculator"
+            :to="{ name: 'builder' }"
+          />
+        </UTooltip>
+      </UFieldGroup>
+    </template>
+
+    <template #leaderboard-leading>
+      <UIcon name="crpg:trophy-cup" class="size-6 text-gold" />
+    </template>
+
+    <template v-if="!userStore.clan" #clans-leading>
+      <UTooltip
+        data-aq-main-nav-link-tooltip="Explanation"
+        :ui="{ content: 'w-72' }"
+      >
+        <UBadge
+          icon="crpg:tag"
+          variant="soft"
+          size="sm"
+        />
+        <template #content>
+          <div
+            class="prose"
+            v-html="$t('clanBalancingExplanation')"
+          />
+        </template>
+      </UTooltip>
+    </template>
+  </UNavigationMenu>
 </template>

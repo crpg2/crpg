@@ -41,7 +41,7 @@ const {
   characterClass: characterClassModel.value,
   gameMode: gameModeModel.value,
   region: regionModel.value,
-}), [])
+}), [], { resetOnExecute: false })
 
 watch(
   () => route.query,
@@ -94,11 +94,6 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
     }, {
       'label-trailing': () => h(UModal, {
         title: t('rankTable.title'),
-        close: {
-          size: 'sm',
-          color: 'secondary',
-          variant: 'solid',
-        },
         ui: {
           content: tw`max-w-5xl`,
         },
@@ -125,7 +120,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   },
   {
     accessorKey: 'user.name',
-    // @ts-expect-error TODO:
+    // @ts-expect-error TODO:  https://github.com/nuxt/ui/issues/2968
     header: () => h(UInput, {
       'icon': 'crpg:search',
       'variant': 'soft',
@@ -133,7 +128,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
       'placeholder': t('leaderboard.table.cols.player'),
       'modelValue': globalFilter.value,
       'onUpdate:modelValue': (val: string) => globalFilter.value = val,
-    }),
+    }, {}),
     cell: ({ row }) => h(UserMedia, { user: row.original.user, hiddenPlatform: true }),
     meta: {
       class: {
@@ -152,7 +147,7 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
         onResetFilter: () => column.setFilterValue(undefined),
       }, {
         filter: () =>
-          // @ts-expect-error TODO:
+          // @ts-expect-error TODO:  https://github.com/nuxt/ui/issues/2968
           h(USelect, {
             'variant': 'none',
             'multiple': false,
@@ -209,11 +204,11 @@ const columns: TableColumn<CharacterCompetitiveNumbered>[] = [
   <UContainer>
     <div
       class="
-        mx-auto max-w-4xl py-8
-        md:py-16
+        mx-auto max-w-4xl py-6
+        md:py-10
       "
     >
-      <div class="mb-20">
+      <div class="mb-14">
         <div class="mb-5 flex justify-center">
           <UIcon
             name="crpg:trophy-cup"

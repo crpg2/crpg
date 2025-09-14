@@ -103,7 +103,7 @@ const items = ref<TabsItem[]>([
               <UiListViewItem :label="$t('installation.platform.steam.launchMultiplayerGame')" />
             </UiListView>
 
-            <UiTextView variant="p" :margin-bottom="false" tag="p" class="text-primary">
+            <UiTextView variant="p" tag="p" class="text-primary">
               {{ $t('installation.platform.steam.update') }}
             </UiTextView>
           </template>
@@ -123,7 +123,7 @@ const items = ref<TabsItem[]>([
     </template>
 
     <template #footer>
-      <UiTextView variant="p" :margin-bottom="false" tag="p">
+      <UiTextView variant="p" tag="p">
         <i18n-t
           scope="global"
           keypath="installation.common.help"

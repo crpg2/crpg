@@ -32,27 +32,27 @@ const variants = tv({
       xs: {
         root: 'gap-0.5',
         icon: 'size-3',
-        label: 'text-2xs',
+        label: 'text-xs',
       },
       sm: {
         root: 'gap-1',
         icon: 'size-4',
-        label: 'text-xs',
+        label: 'text-sm',
       },
       md: {
         root: 'gap-1',
         icon: 'size-5',
-        label: 'text-sm',
+        label: 'text-base',
       },
       lg: {
         root: 'gap-1',
         icon: 'size-6',
-        label: 'text-md',
+        label: 'text-lg',
       },
       xl: {
         root: 'gap-1',
         icon: 'size-7',
-        label: 'text-md',
+        label: 'text-xl',
       },
     },
   },

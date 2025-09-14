@@ -4,7 +4,6 @@ import { useVuelidate } from '@vuelidate/core'
 import { errorMessagesToString, sameAs } from '~/services/validators-service'
 
 const props = withDefaults(defineProps<{
-  // TODO: FIXME: use ModalProps after resolve https://github.com/nuxt/module-builder/issues/597#issuecomment-2862766112
   open?: boolean
   title?: string
   description?: string
@@ -74,7 +73,7 @@ const onConfirm = async () => {
               {{ description }}
             </slot>
             <template v-if="undone">
-              <h5 class="text-md text-error">
+              <h5 class="text-sm text-error">
                 {{ $t('action-undone') }}
               </h5>
             </template>

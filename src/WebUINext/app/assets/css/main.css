@@ -154,6 +154,10 @@ input[type='color'] {
     @apply text-lg text-highlighted font-semibold;
 }
 
+@utility h5 {
+    @apply text-base text-highlighted font-semibold;
+}
+
 @utility p {
     @apply text-base;
 }

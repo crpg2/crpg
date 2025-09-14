@@ -18,6 +18,7 @@ const { userItem } = defineProps<{
 }>()
 
 const emit = defineEmits<{
+  close: []
   upgrade: []
   reforge: []
 }>()
@@ -85,11 +86,8 @@ const [shownConfirmReforgeDialog, toggleConfirmReforgeDialog] = useToggle()
       header: 'pb-4',
       title: 'flex items-center justify-between gap-4',
     }"
-    :close="{
-      size: 'sm',
-      color: 'secondary',
-      variant: 'solid',
-    }"
+    @close="$emit('close')"
+    @update:open="$emit('close')"
   >
     <template #title>
       <div class="flex items-center gap-4">
@@ -124,14 +122,14 @@ const [shownConfirmReforgeDialog, toggleConfirmReforgeDialog] = useToggle()
                 v-if="!upgradeValidation.maxRank"
                 scope="global"
                 keypath="character.inventory.item.upgrade.validation.maxRank"
-                class="text-status-danger"
+                class="text-error"
                 tag="p"
               />
               <i18n-t
                 v-else-if="!upgradeValidation.points"
                 scope="global"
                 keypath="character.inventory.item.upgrade.validation.loomPoints"
-                class="text-status-danger"
+                class="text-error"
                 tag="p"
               />
             </div>
@@ -170,7 +168,7 @@ const [shownConfirmReforgeDialog, toggleConfirmReforgeDialog] = useToggle()
                   v-if="!reforgeValidation.rank"
                   scope="global"
                   keypath="character.inventory.item.reforge.validation.rank"
-                  class="text-status-danger"
+                  class="text-error"
                   tag="p"
                 >
                   <template #minimumRank>
@@ -181,7 +179,7 @@ const [shownConfirmReforgeDialog, toggleConfirmReforgeDialog] = useToggle()
                   v-else-if="!reforgeValidation.gold"
                   scope="global"
                   keypath="character.inventory.item.reforge.validation.gold"
-                  class="text-status-danger"
+                  class="text-error"
                   tag="p"
                 />
               </div>
@@ -207,8 +205,7 @@ const [shownConfirmReforgeDialog, toggleConfirmReforgeDialog] = useToggle()
         <AppConfirmActionDialog
           :open="shownConfirmUpgradeDialog"
           :title="$t('action.confirmation')"
-          name="Upgrade item"
-          :confirm-label="$t('action.confirm')"
+          confirm="Upgrade item"
           @confirm="() => {
             emit('upgrade');
             toggleConfirmUpgradeDialog(false)
@@ -249,8 +246,7 @@ const [shownConfirmReforgeDialog, toggleConfirmReforgeDialog] = useToggle()
         <AppConfirmActionDialog
           :open="shownConfirmReforgeDialog"
           :title="$t('action.confirmation')"
-          name="Reforge item"
-          :confirm-label="$t('action.confirm')"
+          confirm="Reforge item"
           @confirm="() => {
             emit('reforge');
             toggleConfirmReforgeDialog(false)

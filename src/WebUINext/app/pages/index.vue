@@ -87,7 +87,7 @@ loadSettings()
             />
           </UiHeading>
 
-          <UiTextView tag="h1" variant="h2">
+          <UiTextView tag="h1" variant="h2" margin-bottom>
             <i18n-t
               keypath="homePage.intro"
               scope="global"
@@ -103,7 +103,7 @@ loadSettings()
             </i18n-t>
           </UiTextView>
 
-          <UiTextView tag="p" variant="p">
+          <UiTextView tag="p" variant="p" margin-bottom>
             {{ $t('homePage.description') }}
           </UiTextView>
 

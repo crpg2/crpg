@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { tv } from 'tailwind-variants'
 
-type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'caption' | 'caption-sm' | 'caption-xs'
+type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'p-sm' | 'p-xs' | 'caption' | 'caption-sm' | 'caption-xs'
 
-const { tag = 'div', marginTop = false, marginBottom = true } = defineProps<{
+const { tag = 'div', marginTop = false, marginBottom = false } = defineProps<{
   tag?: string
   variant: Variant
   marginTop?: boolean
@@ -18,8 +18,11 @@ const variants = tv({
       'h2': 'h2',
       'h3': 'h3',
       'h4': 'h4',
+      'h5': 'h5',
       //
-      'p': 'p',
+      'p': 'text-base',
+      'p-sm': 'text-sm',
+      'p-xs': 'text-xs',
       //
       'caption': 'text-dimmed',
       'caption-sm': 'text-sm text-dimmed',
@@ -76,12 +79,42 @@ const variants = tv({
       class: 'mb-2',
     },
     {
+      variant: 'h5',
+      marginTop: true,
+      class: 'mt-5',
+    },
+    {
+      variant: 'h5',
+      marginBottom: true,
+      class: 'mb-1',
+    },
+    {
       variant: 'p',
       marginTop: true,
       class: 'mt-5',
     },
     {
       variant: 'p',
+      marginBottom: true,
+      class: 'mb-5',
+    },
+    {
+      variant: 'p-sm',
+      marginTop: true,
+      class: 'mt-5',
+    },
+    {
+      variant: 'p-sm',
+      marginBottom: true,
+      class: 'mb-5',
+    },
+    {
+      variant: 'p-xs',
+      marginTop: true,
+      class: 'mt-5',
+    },
+    {
+      variant: 'p-xs',
       marginBottom: true,
       class: 'mb-5',
     },
