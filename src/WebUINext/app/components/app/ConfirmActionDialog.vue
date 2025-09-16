@@ -27,7 +27,7 @@ const confirmModel = ref<string>('')
 const $v = useVuelidate(
   {
     confirmModel: {
-      sameAs: sameAs(props.confirm, props.confirm),
+      sameAs: sameAs(props.confirm),
     },
   },
   { confirmModel },
@@ -67,8 +67,11 @@ const onConfirm = async () => {
         <template #description>
           <div class="space-y-1">
             <slot name="description">
-              {{ description }}
+              <UiTextView variant="p">
+                {{ description }}
+              </UiTextView>
             </slot>
+
             <template v-if="undone">
               <UiTextView variant="h5" class="text-error">
                 {{ $t('action-undone') }}
@@ -82,7 +85,7 @@ const onConfirm = async () => {
         <i18n-t
           scope="global"
           keypath="confirm.name"
-          tag="p"
+          tag="div"
         >
           <template #name>
             <span
@@ -97,6 +100,7 @@ const onConfirm = async () => {
         <UFormField
           :error="errorMessagesToString($v.confirmModel.$errors)"
           data-aq-confirm-field
+          size="xl"
         >
           <UInput
             v-model="confirmModel"

@@ -14,7 +14,7 @@ const withI18nMessage: typeof _withI18nMessage = (validator, options) => {
 
 export const required = () => withI18nMessage(validators.required)
 
-export const sameAs = <E = string>(name: E | Ref<E>, compareName: string) => withI18nMessage(validators.sameAs(name, compareName), { withArguments: true })
+export const sameAs = <E = string>(name: E | Ref<E>) => withI18nMessage(validators.sameAs(name), { withArguments: true })
 
 export const minLength = (...params: Parameters<typeof validators.minLength>) => withI18nMessage(validators.minLength(...params), { withArguments: true })
 

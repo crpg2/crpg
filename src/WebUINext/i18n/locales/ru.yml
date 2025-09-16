@@ -160,6 +160,7 @@ action:
   start: Начать
   copy: Копировать
   ok: Ок
+  selectFromList: Выберите из списка
 
 login:
   label: Вход
@@ -820,6 +821,7 @@ clan:
         secondaryColor: Второстепенный
         bannerKey: Герб
         discord: Discord сервер
+        social: Медиа
         languages: Язык
       group:
         armory:
@@ -836,7 +838,7 @@ clan:
     link: удалить ваш клан
     dialog:
       title: Удаление клана
-      desc: Вы уверены, что хотите удалить клан? Действие нельзя будет отменить.
+      desc: Вы уверены, что хотите удалить клан?
     required: Чтобы удалить клан, в нем должен быть один участник
     notify:
       success: Клан был удален

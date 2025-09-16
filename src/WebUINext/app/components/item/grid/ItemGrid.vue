@@ -10,9 +10,7 @@ import type { SortingConfig } from '~/services/item-search-service'
 import { useMainHeader } from '~/composables/app/use-main-header'
 import { useStickySidebar } from '~/composables/use-sticky-sidebar'
 import { ITEM_TYPE } from '~/models/item'
-import {
-  getFacetsByItemType,
-} from '~/services/item-search-service'
+import { getFacetsByItemType } from '~/services/item-search-service'
 
 const { sortingConfig, items, withPagination = true } = defineProps<{
   items: T[]
@@ -72,15 +70,6 @@ const grid = useVueTable({
   getCoreRowModel: getCoreRowModel(),
   getFilteredRowModel: getFilteredRowModel(),
   getSortedRowModel: getSortedRowModel(),
-
-  ...(withPagination && {
-    getPaginationRowModel: getPaginationRowModel(),
-    initialState: {
-      pagination: {
-        pageSize: 11,
-      },
-    },
-  }),
   state: {
     get sorting() {
       return sorting.value
@@ -92,6 +81,9 @@ const grid = useVueTable({
       return columnFilters.value
     },
   },
+  ...(withPagination && {
+    getPaginationRowModel: getPaginationRowModel(),
+  }),
 })
 
 watch(() => items, () => {
@@ -112,8 +104,6 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
       class="sticky top-0 left-0 flex flex-col items-center justify-center space-y-2"
       :style="{ top: `${stickySidebarTop}px` }"
     >
-      <slot name="filter-leading" />
-
       <ItemSearchFilterByType
         v-model:item-type="itemType"
         :item-types="itemTypes"
@@ -131,30 +121,29 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
     >
       <div
         class="
-          col-span-2
-          2xl:col-span-3
+          col-span-2 flex gap-4
+          2xl:col-span-2
         "
       >
+        <slot name="filter-leading" />
+
         <UInput
           v-model="filterByNameModel"
           :placeholder="$t('action.search')"
           icon="crpg:search"
           variant="subtle"
           class="w-full"
+          size="xl"
         >
           <template v-if="filterByNameModel?.length" #trailing>
-            <UButton
-              color="neutral"
-              variant="link"
-              icon="crpg:close"
-              @click="filterByNameModel = ''"
-            />
+            <UiInputClear @click="filterByNameModel = ''" />
           </template>
         </UInput>
       </div>
 
       <USelect
         v-model="sortingModel"
+        class="col-span-2 w-full"
         :items="sortingItems"
         trailing-icon="crpg:arrow-up-down"
       />
@@ -198,7 +187,7 @@ const filteredItemsCost = computed(() => grid.getRowModel().rows.reduce((out, ro
 <style lang="css">
 .itemGrid {
   grid-template-areas:
-    '... sort'
+    'sort sort'
     'filter items'
     'filter footer';
   grid-template-columns: auto 1fr;

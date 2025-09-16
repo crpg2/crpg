@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useVuelidate } from '@vuelidate/core'
-import { AppConfirmActionDialog } from '#components'
+import { LazyAppConfirmActionDialog } from '#components'
 
 import type { Character } from '~/models/character'
 
@@ -43,7 +43,7 @@ const characterNameMaxLength = 32
 
 const overlay = useOverlay()
 
-const confirmDeleteDialog = overlay.create(AppConfirmActionDialog, {
+const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
   props: {
     title: t('character.settings.delete.dialog.title'),
     description: t('character.settings.delete.dialog.desc'),

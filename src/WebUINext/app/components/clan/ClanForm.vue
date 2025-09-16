@@ -133,16 +133,13 @@ const onSubmit = async () => {
     @submit.prevent="onSubmit"
   >
     <div class="mb-6 space-y-6">
-      <UCard variant="outline">
-        <template #header>
-          <UiDataMedia icon="crpg:hash" :label="$t('clan.update.form.field.mainInfo')" size="xl" />
-        </template>
-
+      <UiCard icon="crpg:hash" :label="$t('clan.update.form.field.mainInfo')">
         <div class="grid grid-cols-2 gap-4">
           <UFormField
             :label="$t('clan.update.form.field.name')"
             :error="errorMessagesToString($v.name.$errors)"
             data-aq-clan-form-field="name"
+            size="xl"
           >
             <UInput
               v-model="clanFormModel.name"
@@ -152,16 +149,12 @@ const onSubmit = async () => {
               class="w-full"
               data-aq-clan-form-input="name"
             >
-              <!-- TODO: to cmp -->
               <template #trailing>
-                <div
+                <UiInputCounter
                   id="clan-name-count"
-                  class="text-2xs text-muted tabular-nums"
-                  aria-live="polite"
-                  role="status"
-                >
-                  {{ clanFormModel.name.length }}/{{ clanNameMaxLength }}
-                </div>
+                  :current="clanFormModel.name.length"
+                  :max="clanNameMaxLength"
+                />
               </template>
             </UInput>
           </UFormField>
@@ -170,6 +163,7 @@ const onSubmit = async () => {
             :label="$t('clan.update.form.field.tag')"
             :error="errorMessagesToString($v.tag.$errors)"
             data-aq-clan-form-field="tag"
+            size="xl"
           >
             <UInput
               v-model="clanFormModel.tag"
@@ -180,14 +174,11 @@ const onSubmit = async () => {
               data-aq-clan-form-input="tag"
             >
               <template #trailing>
-                <div
+                <UiInputCounter
                   id="clan-tag-count"
-                  class="text-2xs text-muted tabular-nums"
-                  aria-live="polite"
-                  role="status"
-                >
-                  {{ clanFormModel.tag.length }}/{{ clanTagMaxLength }}
-                </div>
+                  :current="clanFormModel.tag.length"
+                  :max="clanTagMaxLength"
+                />
               </template>
             </UInput>
           </UFormField>
@@ -196,39 +187,29 @@ const onSubmit = async () => {
             :label="`${$t('clan.update.form.field.description')} (${$t('form.field.optional')})`"
             :error="errorMessagesToString($v.description.$errors)"
             class="col-span-2"
+            size="xl"
             data-aq-clan-form-field="description"
           >
             <UTextarea
               v-model="clanFormModel.description"
-              :rows="5"
+              autoresize
               :maxlength="clanDescriptionMaxLength"
               data-aq-clan-form-input="description"
               aria-describedby="clan-description-count"
               class="w-full"
-            >
-              <template #trailing>
-                <div
-                  id="clan-description-count"
-                  class="text-2xs text-muted tabular-nums"
-                  aria-live="polite"
-                  role="status"
-                >
-                  {{ clanFormModel.description.length }}/{{ clanDescriptionMaxLength }}
-                </div>
-              </template>
-            </UTextarea>
+            />
+            <template #hint>
+              <UiInputCounter
+                id="clan-description-count"
+                :current="clanFormModel.description.length"
+                :max="clanDescriptionMaxLength"
+              />
+            </template>
           </UFormField>
         </div>
-      </UCard>
+      </UiCard>
 
-      <UCard
-        variant="outline"
-        :ui="{ body: 'grid grid-cols-2 gap-4' }"
-      >
-        <template #header>
-          <UiDataMedia icon="crpg:region" :label="$t('region-title')" size="xl" />
-        </template>
-
+      <UiCard icon="crpg:region" :label="$t('region-title')">
         <div class="space-y-6">
           <URadioGroup
             v-model="clanFormModel.region"
@@ -240,7 +221,7 @@ const onSubmit = async () => {
             data-aq-clan-form-input="region"
           />
 
-          <UFormField :label="$t('clan.update.form.field.languages')">
+          <UFormField :label="$t('clan.update.form.field.languages')" size="xl">
             <USelect
               v-model="clanFormModel.languages"
               multiple
@@ -248,180 +229,110 @@ const onSubmit = async () => {
                 label: `${$t(`language.${language}`)} - ${language}`,
                 value: language,
               }))"
-              size="xl"
+              :placeholder="$t('action.selectFromList')"
               class="w-full"
             />
           </UFormField>
         </div>
-      </UCard>
+      </UiCard>
 
-      <UCard
-        variant="outline"
-        :ui="{
-          body: 'space-y-6',
-        }"
-      >
-        <template #header>
-          <UiDataMedia icon="crpg:banner" :label="$t('clan.update.form.field.appearance')" size="xl" />
-        </template>
-
-        <UFormField
-          :error="errorMessagesToString($v.bannerKey.$errors)"
-          :label="$t('clan.update.form.field.bannerKey')"
-          data-aq-clan-form-field="bannerKey"
-        >
-          <template #hint>
-            <i18n-t
-              scope="global"
-              keypath="clan.update.bannerKeyGeneratorTools"
-              tag="div"
-            >
-              <template #link>
-                <a
-                  href="https://bannerlord.party"
-                  target="_blank"
-                  class="
-                    text-primary
-                    hover:underline
-                  "
-                >
-                  bannerlord.party
-                </a>
-              </template>
-            </i18n-t>
-          </template>
-
-          <UInput
-            v-model="clanFormModel.bannerKey"
-            :maxlength="clanBannerKeyMaxLength"
-            aria-describedby="clan-bannerKey-count"
-            class="w-full"
-            data-aq-clan-form-input="bannerKey"
+      <UiCard icon="crpg:banner" :label="$t('clan.update.form.field.appearance')">
+        <div class="space-y-6">
+          <UFormField
+            :error="errorMessagesToString($v.bannerKey.$errors)"
+            :label="$t('clan.update.form.field.bannerKey')"
+            data-aq-clan-form-field="bannerKey"
+            size="xl"
           >
-            <!-- TODO: to cmp -->
-            <template #trailing>
-              <div
-                id="clan-bannerKey-count"
-                class="text-2xs text-muted tabular-nums"
-                aria-live="polite"
-                role="status"
+            <template #help>
+              <i18n-t
+                scope="global"
+                keypath="clan.update.bannerKeyGeneratorTools"
               >
-                {{ clanFormModel.bannerKey.length }}/{{ clanBannerKeyMaxLength }}
-              </div>
+                <template #link>
+                  <ULink
+                    href="https://bannerlord.party"
+                    target="_blank"
+                  >
+                    bannerlord.party
+                  </ULink>
+                </template>
+              </i18n-t>
             </template>
-          </UInput>
-        </UFormField>
 
-        <UFormField :ui="{ labelWrapper: 'mb-2' }">
-          <template #label>
-            <UiDataMedia
-              :label="$t('clan.update.form.field.colors')"
-              size="xl"
-            >
-              <template #icon="{ classes }">
-                <ClanTagIcon
-                  :color="clanFormModel.primaryColor"
-                  :class="classes()"
-                />
-              </template>
-            </UiDataMedia>
-          </template>
+            <template #hint>
+              <UiInputCounter
+                id="clan-bannerKey-count"
+                :current="clanFormModel.bannerKey.length"
+                :max="clanBannerKeyMaxLength"
+              />
+            </template>
 
-          <div class="flex items-center gap-4">
-            <UFormField
-              :label="`${$t('clan.update.form.field.primaryColor')}:`"
-              :ui="{
-                root: 'flex items-center gap-2',
-                container: 'mt-0 flex items-center gap-2',
-              }"
-            >
-              <div class="text-highlighted">
-                {{ primaryColorModel }}
-              </div>
-              <input
-                v-model="primaryColorModel"
-                variant="none"
-                type="color"
-                data-aq-clan-form-input="primaryColor"
-              >
-            </UFormField>
+            <UTextarea
+              v-model="clanFormModel.bannerKey"
+              :maxlength="clanBannerKeyMaxLength"
+              aria-describedby="clan-bannerKey-count"
+              class="w-full"
+              autoresize
+              data-aq-clan-form-input="bannerKey"
+            />
+          </UFormField>
 
-            <USeparator orientation="vertical" class="h-6" />
+          <UFormField
+            size="xl"
+            :label="$t('clan.update.form.field.colors')"
+          >
+            <ClanColorSelect
+              v-model:primary="primaryColorModel"
+              v-model:secondary="secondaryColorModel"
+              :color="clanFormModel.primaryColor"
+            />
+          </UFormField>
+        </div>
+      </UiCard>
 
-            <UFormField
-              :label="`${$t('clan.update.form.field.secondaryColor')}:`"
-              :ui="{
-                root: 'flex items-center gap-2',
-                container: 'mt-0 flex items-center gap-2',
-              }"
-            >
-              <div class="text-highlighted">
-                {{ secondaryColorModel }}
-              </div>
-              <input
-                v-model="secondaryColorModel"
-                variant="none"
-                type="color"
-                data-aq-clan-form-input="secondaryColor"
-              >
-            </UFormField>
-          </div>
-        </UFormField>
-      </UCard>
-
-      <UCard
-        variant="outline"
-        :ui="{
-          body: 'grid grid-cols-2 gap-4',
-        }"
-      >
-        <template #header>
-          <UiDataMedia icon="crpg:discord" :label="$t('clan.update.form.field.discord')" size="xl" />
-        </template>
-
+      <UiCard icon="crpg:discord" :label="$t('clan.update.form.field.social')">
         <UFormField
           :error="errorMessagesToString($v.discord.$errors)"
           data-aq-clan-form-field="discord"
+          size="xl"
         >
           <UInput
             v-model="clanFormModel.discord"
             :maxlength="clanBannerKeyMaxLength"
             class="w-full"
+            icon="crpg:discord"
             :placeholder="`${$t('clan.update.form.field.discord')} (${$t('form.field.optional')})`"
             data-aq-clan-form-input="discord"
           />
         </UFormField>
-      </UCard>
+      </UiCard>
 
-      <UCard
-        variant="outline"
-        :ui="{
-          body: 'grid grid-cols-2 gap-4',
-        }"
-      >
-        <template #header>
-          <UiDataMedia icon="crpg:armory" :label="$t('clan.update.form.group.armory.label')" size="xl" />
-        </template>
-
+      <UiCard icon="crpg:armory" :label="$t('clan.update.form.group.armory.label')">
         <UFormField
           :label="$t('clan.update.form.group.armory.field.armoryTimeout.label')"
           :error="errorMessagesToString($v.armoryTimeout.$errors)"
           :help="$t('clan.update.form.group.armory.field.armoryTimeout.hint')"
+          size="xl"
           data-aq-clan-form-field="armoryTimeout"
         >
           <UInputNumber
             :model-value="parseTimestamp(Number(clanFormModel.armoryTimeout)).days"
             :maxlength="clanBannerKeyMaxLength"
-            class="w-36"
+            class="w-32"
             color="neutral"
             data-aq-clan-form-input="armoryTimeout"
             @update:model-value="(days) => (clanFormModel.armoryTimeout = daysToMs(days))"
           />
         </UFormField>
-      </UCard>
+      </UiCard>
     </div>
 
-    <div class="flex items-center justify-center gap-4">
+    <div
+      class="
+        sticky bottom-0 left-0 flex w-full items-center justify-center gap-2 py-4 backdrop-blur-sm
+      "
+    >
       <UButton
         v-if="clanId === undefined"
         type="submit"

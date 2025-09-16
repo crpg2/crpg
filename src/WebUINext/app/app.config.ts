@@ -2,7 +2,6 @@ export default defineAppConfig({
   ui: {
     colors: {
       primary: 'crpg-gold',
-      // secondary: 'crpg-stone',
       neutral: 'crpg-neutral',
       success: 'crpg-green',
       error: 'crpg-red',
@@ -30,10 +29,9 @@ export default defineAppConfig({
     },
     table: {
       slots: {
-        th: 'text-sm text-default',
-        td: 'text-sm text-inherit',
+        th: 'text-default',
+        td: 'text-inherit',
         tbody: '[&>tr]:data-[selectable=true]:cursor-pointer',
-
       },
     },
     tabs: {
@@ -47,7 +45,6 @@ export default defineAppConfig({
           },
         },
       ],
-
     },
     card: {
       variants: {
@@ -66,11 +63,10 @@ export default defineAppConfig({
         overlay: 'bg-elevated/10 backdrop-blur',
         content: '!overflow-visible',
         wrapper: 'w-full',
-        header: 'p-8 sm:px-6',
-        body: 'p-6 sm:p-8',
-        footer: 'p-8 sm:px-6',
-        title: 'text-center text-lg',
-        // close: '-right-4 -top-4',
+        header: 'p-6',
+        body: 'p-6',
+        footer: 'p-6',
+        title: 'text-center h3',
       },
     },
     formField: {
@@ -90,40 +86,6 @@ export default defineAppConfig({
         },
       },
     },
-    input: {
-      variants: {
-        size: {
-          xl: {
-            base: 'py-[0.938rem] px-[1.125rem] h-[3.375rem]',
-          },
-          lg: {
-            base: 'py-[0.938rem] px-4 h-[3rem]',
-          },
-          md: {
-            base: 'p-3 h-[2.625rem]',
-          },
-          sm: {
-            base: 'py-[0.563rem] px-2.5h-[2.25rem]',
-          },
-          xs: {
-            base: 'p-1.5 h-[1.875rem]',
-          },
-        },
-      },
-    },
-    // select: {
-    //   variants: {
-    //     size: {
-    //       md: {
-    //         // TODO: FIXME:
-    //         // base: 'h-[2.125rem] px-2.5 py-1.5 text-xs gap-1.5',
-    //         // base: 'text-xs',
-
-    //         // item: 'text-xs',
-    //       },
-    //     },
-    //   },
-    // },
     toast: {
       slots: {
         description: 'text-xs',

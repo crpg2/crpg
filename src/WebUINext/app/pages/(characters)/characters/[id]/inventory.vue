@@ -140,9 +140,11 @@ const items = computed(() => {
         :sorting-config="sortingConfig"
         :with-pagination="false"
       >
-        <template v-if="hasArmoryItems" #filter-leading>
+        <template
+          v-if="hasArmoryItems"
+          #filter-leading
+        >
           <UDropdownMenu
-            size="xl"
             :items="additionalFilteritems"
             :modal="false"
           >
@@ -192,7 +194,6 @@ const items = computed(() => {
                 <i18n-t
                   scope="global"
                   keypath="character.inventory.total.count"
-                  tag="span"
                   :plural="filteredItemsCount"
                 >
                   <template #count>

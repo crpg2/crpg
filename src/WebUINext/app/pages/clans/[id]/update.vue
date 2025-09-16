@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { LazyAppConfirmActionDialog } from '#components'
+
 import type { ClanUpdate } from '~/models/clan'
 
 import { usePageLoading } from '~/composables/app/use-page-loading'
@@ -80,12 +82,22 @@ usePageLoading({
   watch: [loadingClan, updatingClan, deletingClan],
 })
 
-Promise.all([
-  loadClan(),
-  loadClanMembers(),
-])
+// TODO:
+await loadClan() // provider
+loadClanMembers()
 
-const [shownConfirmDeleteClanDialog, toggleConfirmDeleteClanDialog] = useToggle()
+const overlay = useOverlay()
+
+const confirmDeleteDialog = overlay.create(LazyAppConfirmActionDialog, {
+  props: {
+    title: t('clan.delete.dialog.title'),
+    description: t('clan.delete.dialog.desc'),
+    confirm: clan.value?.name || 'TODO: FIXME:',
+    confirmLabel: t('action.delete'),
+    onClose: () => confirmDeleteDialog.close(),
+    onConfirm: onDeleteClan,
+  },
+})
 </script>
 
 <template>
@@ -97,7 +109,7 @@ const [shownConfirmDeleteClanDialog, toggleConfirmDeleteClanDialog] = useToggle(
       :back-to="{ name: 'clans-id', params: { id: clanId } }"
     />
 
-    <div class="mx-auto max-w-2xl space-y-10">
+    <div class="mx-auto max-w-2xl space-y-4">
       <ClanForm
         v-if="clan"
         :clan-id="clanId"
@@ -118,12 +130,12 @@ const [shownConfirmDeleteClanDialog, toggleConfirmDeleteClanDialog] = useToggle(
           scope="global"
           keypath="clan.delete.title"
           tag="div"
-          :class="{ 'pointer-events-none opacity-30': !isLastMember }"
+          :class="{ 'pointer-events-none opacity-30': isLastMember }"
         >
           <template #link>
             <span
               class="cursor-pointer text-error"
-              @click="toggleConfirmDeleteClanDialog(true)"
+              @click="() => confirmDeleteDialog.open()"
             >
               {{ $t('clan.delete.link') }}
             </span>
@@ -131,19 +143,5 @@ const [shownConfirmDeleteClanDialog, toggleConfirmDeleteClanDialog] = useToggle(
         </i18n-t>
       </div>
     </div>
-
-    <AppConfirmActionDialog
-      v-if="clan"
-      :open="shownConfirmDeleteClanDialog"
-      :title="$t('clan.delete.dialog.title')"
-      :description="$t('clan.delete.dialog.desc')"
-      :confirm="clan!.name"
-      @cancel="toggleConfirmDeleteClanDialog(false);"
-      @confirm="() => {
-        onDeleteClan();
-        toggleConfirmDeleteClanDialog(false);
-      }"
-      @update:open="toggleConfirmDeleteClanDialog(false)"
-    />
   </UContainer>
 </template>

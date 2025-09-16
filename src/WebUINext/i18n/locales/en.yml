@@ -165,6 +165,7 @@ action:
   copied: Copied
   start: Start
   ok: Ok
+  selectFromList: Select from the list
 
 login:
   label: Login with
@@ -854,6 +855,7 @@ clan:
         secondaryColor: Secondary
         bannerKey: Banner key
         discord: Discord server
+        social: Social links
         languages: Language
       group:
         armory:
@@ -870,7 +872,7 @@ clan:
     link: delete your clan
     dialog:
       title: Deleting clan
-      desc: Are you sure you want to delete your clan? This action cannot be undone
+      desc: Are you sure you want to delete your clan?
     required: To delete a clan, it must have one member
     notify:
       success: The clan has been deleted
